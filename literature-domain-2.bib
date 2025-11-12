@@ -1,0 +1,237 @@
+@comment{
+====================================================================
+DOMAIN: Agentic Markets and Multi-Agent Systems
+SEARCH_DATE: 2025-11-12
+PAPERS_FOUND: 16 (High: 7, Medium: 6, Low: 3)
+SEARCH_SOURCES: Google Scholar, arXiv, ACM Digital Library, AI journals
+====================================================================
+
+DOMAIN_OVERVIEW:
+Agentic markets are economic environments where autonomous AI agents transact,
+negotiate, and allocate resources on behalf of human principals or organizations.
+This domain encompasses technical work on multi-agent systems in economic contexts,
+including trading bots, procurement agents, automated negotiation systems, and
+agent-based market simulation. Key developments include double auction mechanisms
+with software agents, automated market makers, supply chain coordination through
+agent systems, and platforms for agent-based trading (including recent developments
+in LLM-based agentic markets). Research addresses both technical challenges
+(coordination, strategic behavior, efficiency) and design questions (information
+structures, matching mechanisms, regulation). The field draws on economics,
+computer science, and artificial intelligence.
+
+RELEVANCE_TO_PROJECT:
+This domain establishes what agentic markets actually are, how they function,
+and what technical capabilities current AI agents possess in economic contexts.
+Understanding the practical reality of agentic markets is essential for applying
+procedural experimentalism—we need to know what procedural variations are
+technically feasible and what moral pathologies might arise in actual systems.
+This domain provides concrete instantiation of the abstract normative questions
+the research addresses.
+
+RECENT_DEVELOPMENTS:
+Rapid advancement in last 5 years with large language model-based agents showing
+sophisticated negotiation and strategic behavior. Increased deployment in
+real-world contexts (algorithmic trading, procurement, energy markets). Growing
+attention to multi-agent coordination and emergence of complex market dynamics
+from agent interactions. Platforms like AutoGen and recent agentic marketplace
+simulators enable controlled experimentation.
+
+NOTABLE_GAPS:
+Most work focuses on efficiency, coordination, or strategic behavior optimization.
+Limited attention to normative dimensions like fairness, accountability, or
+legitimacy of agent-mediated transactions. Technical literature rarely engages
+with philosophical questions about representation, moral agency, or procedural
+justification. Gap between technical capability and normative evaluation.
+
+SYNTHESIS_GUIDANCE:
+Focus on papers that describe concrete agentic market implementations and
+multi-agent economic systems. Balance technical descriptions with attention
+to normative implications. Emphasize recent LLM-based agent work that shows
+increased autonomy and strategic sophistication. Connect technical capabilities
+to questions about procedural justification and moral pathologies.
+
+KEY_POSITIONS:
+- Multi-agent trading systems: 5 papers - Auction mechanisms, market platforms
+- Automated negotiation: 3 papers - Agent negotiation strategies and protocols
+- Agent-based market simulation: 3 papers - Computational modeling of markets
+- LLM-based agentic markets: 2 papers - Recent AI agent capabilities
+- Supply chain and procurement agents: 3 papers - Applied agent systems
+====================================================================
+}
+
+@article{wellman2007trading,
+  author = {Wellman, Michael P. and Greenwald, Amy and Stone, Peter},
+  title = {Autonomous Bidding Agents: Strategies and Lessons from the Trading Agent Competition},
+  publisher = {MIT Press},
+  year = {2007},
+  note = {CORE ARGUMENT: Analyzes Trading Agent Competition (TAC) where autonomous agents compete in complex market scenarios. Agents must handle simultaneous auctions, resource allocation, and strategic reasoning. Competition reveals that successful agents combine game-theoretic reasoning with machine learning adaptation. Identifies technical and strategic challenges in autonomous trading. RELEVANCE: Provides concrete example of agentic markets in action, showing both capabilities and limitations of autonomous trading agents. Relevant for understanding what procedural features can be varied in market experiments and what strategic behaviors emerge. Competition format itself is form of experimental procedure. POSITION: Multi-agent systems in competitive markets.},
+  keywords = {trading-agents, multi-agent-systems, auctions, competition, High}
+}
+
+@article{parsons2011agent,
+  author = {Parsons, Simon and Rodriguez-Aguilar, Juan A. and Klein, Mark},
+  title = {Auctions and Bidding: A Guide for Computer Scientists},
+  journal = {ACM Computing Surveys},
+  year = {2011},
+  volume = {43},
+  number = {2},
+  pages = {10:1--10:66},
+  doi = {10.1145/1883612.1883617},
+  note = {CORE ARGUMENT: Comprehensive survey of auction mechanisms from computer science perspective, covering combinatorial auctions, sequential auctions, and multi-attribute auctions. Analyzes computational complexity, strategic behavior, and implementation challenges. Discusses both theoretical properties and practical deployment of automated bidding agents. RELEVANCE: Establishes technical foundations for understanding auction-based agentic markets. Different auction mechanisms have different procedural properties (transparency, fairness, efficiency) that could be subject to experimental evaluation. Shows range of design choices available for agentic market experiments. POSITION: Auction theory and automated bidding.},
+  keywords = {auctions, mechanism-design, bidding-agents, technical, Medium}
+}
+
+@inproceedings{park2023generative,
+  author = {Park, Joon Sung and O'Brien, Joseph C. and Cai, Carrie J. and Morris, Meredith Ringel and Liang, Percy and Bernstein, Michael S.},
+  title = {Generative Agents: Interactive Simulacra of Human Behavior},
+  booktitle = {Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology},
+  year = {2023},
+  pages = {1--22},
+  doi = {10.1145/3586183.3606763},
+  note = {CORE ARGUMENT: Demonstrates that LLM-based agents can simulate human-like behavior in complex social environments, including memory, planning, and social interaction. Agents exhibit emergent social behaviors without explicit programming. Architecture combines large language models with memory streams and reflection mechanisms. RELEVANCE: Shows that recent AI agents have sophisticated capabilities for simulating human-like economic and social behavior. Directly relevant for understanding what agentic markets with LLM-based agents can do. Raises questions about whether these agents can engage in moral learning or procedural experimentation in meaningful ways. POSITION: LLM-based generative agents and social simulation.},
+  keywords = {LLM-agents, simulation, social-behavior, generative-AI, High}
+}
+
+@article{wellman2015putting,
+  author = {Wellman, Michael P.},
+  title = {Putting the Agent in Agent-Based Modeling},
+  journal = {Autonomous Agents and Multi-Agent Systems},
+  year = {2015},
+  volume = {30},
+  number = {6},
+  pages = {1175--1189},
+  doi = {10.1007/s10458-015-9317-8},
+  note = {CORE ARGUMENT: Critiques agent-based modeling that treats agents as simple reactive entities, arguing for strategic agents with rich models of other agents. Strategic reasoning fundamentally changes market dynamics. Agent-based models should incorporate game-theoretic sophistication. Discusses implications for market design and regulation. RELEVANCE: Important for understanding that agentic markets aren't just automated versions of traditional markets—strategic AI agents create qualitatively different dynamics. Relevant for procedural experimentalism: what principles emerge depends on how sophisticated agent reasoning is. POSITION: Strategic reasoning in agent-based modeling.},
+  keywords = {agent-based-modeling, strategic-reasoning, game-theory, Medium}
+}
+
+@article{stone2010multiagent,
+  author = {Stone, Peter and Veloso, Manuela},
+  title = {Multiagent Systems: A Survey from a Machine Learning Perspective},
+  journal = {Autonomous Robots},
+  year = {2000},
+  volume = {8},
+  number = {3},
+  pages = {345--383},
+  doi = {10.1023/A:1008942012299},
+  note = {CORE ARGUMENT: Surveys multi-agent systems from machine learning perspective, focusing on how agents learn in multi-agent environments. Discusses coordination, communication, and adaptation in multi-agent contexts. Learning in multi-agent settings is fundamentally different from single-agent learning due to non-stationarity. RELEVANCE: Foundational for understanding how learning works in agentic markets. Relevant for procedural experimentalism's emphasis on moral learning—how do agent-based systems learn and adapt? Non-stationarity creates challenges for stable principle discovery. POSITION: Machine learning in multi-agent systems.},
+  keywords = {multi-agent-systems, machine-learning, coordination, foundational, Medium}
+}
+
+@inproceedings{cai2023large,
+  author = {Cai, Xiangyu and others},
+  title = {Large Language Models as Economic Agents},
+  booktitle = {arXiv preprint},
+  year = {2023},
+  note = {CORE ARGUMENT: Investigates how large language model-based agents behave in economic scenarios including trading, negotiation, and resource allocation. LLM agents exhibit strategic behavior, learn from interactions, and can coordinate in market contexts. Performance depends on prompt engineering and context design. RELEVANCE: Directly demonstrates current capabilities of LLM-based agents in economic contexts. Highly relevant as agentic markets increasingly use LLM-based agents. Shows both capabilities (sophisticated negotiation) and limitations (prompt sensitivity) that affect procedural design choices. POSITION: LLM agents in economics.},
+  keywords = {LLM-agents, economics, trading, negotiation, High}
+}
+
+@article{das2001agent,
+  author = {Das, Rajdeep and Hanson, James E. and Kephart, Jeffrey O. and Tesauro, Gerald},
+  title = {Agent-Human Interactions in the Continuous Double Auction},
+  journal = {Proceedings of IJCAI},
+  year = {2001},
+  pages = {1169--1176},
+  note = {CORE ARGUMENT: Studies markets mixing human traders and autonomous agents in continuous double auctions. Agents can outperform humans in certain contexts but create volatility. Human-agent interaction creates unique market dynamics not present in pure human or pure agent markets. Market efficiency and fairness affected by agent presence. RELEVANCE: Directly relevant for hybrid human-AI systems that are central to the research project. Shows that procedural evaluation must consider mixed human-agent contexts. Agents representing human interests interact with humans directly in markets—creates specific fairness and accountability challenges. POSITION: Hybrid human-agent market systems.},
+  keywords = {human-agent-interaction, double-auctions, hybrid-systems, High}
+}
+
+@article{zheng2024werewolf,
+  author = {Xu, Yuzutian and others},
+  title = {Exploring Large Language Models for Communication Games: An Empirical Study on Werewolf},
+  journal = {arXiv preprint arXiv:2309.04658},
+  year = {2023},
+  note = {CORE ARGUMENT: Tests LLM-based agents in strategic communication game (Werewolf), showing they can engage in deception, persuasion, and coalition formation. Agents exhibit theory of mind reasoning and strategic communication. Raises questions about truthfulness and alignment in strategic contexts. RELEVANCE: Demonstrates sophisticated strategic and communicative capabilities of LLM agents relevant for negotiation in markets. Deception and manipulation capabilities are directly relevant to moral pathologies in agentic markets. Important for understanding risks that procedural safeguards must address. POSITION: Strategic communication and deception in LLM agents.},
+  keywords = {LLM-agents, strategic-communication, deception, manipulation, High}
+}
+
+@article{tesfatsion2002agent,
+  author = {Tesfatsion, Leigh},
+  title = {Agent-Based Computational Economics: Growing Economies from the Bottom Up},
+  journal = {Artificial Life},
+  year = {2002},
+  volume = {8},
+  number = {1},
+  pages = {55--82},
+  doi = {10.1162/106454602753694765},
+  note = {CORE ARGUMENT: Develops agent-based computational economics (ACE) framework where economic systems are modeled as evolving systems of autonomous agents. Economies are computational laboratories for studying how macroeconomic patterns emerge from microeconomic interactions. Emphasizes experimental methodology. RELEVANCE: Foundational for understanding agent-based market simulation as experimental methodology. ACE framework aligns with procedural experimentalism's emphasis on learning through experimentation. Provides methodological justification for using simulated agentic markets to study normative questions. POSITION: Agent-based computational economics.},
+  keywords = {agent-based-modeling, computational-economics, methodology, Medium}
+}
+
+@article{rahwan2019machine,
+  author = {Rahwan, Iyad and others},
+  title = {Machine Behaviour},
+  journal = {Nature},
+  year = {2019},
+  volume = {568},
+  number = {7753},
+  pages = {477--486},
+  doi = {10.1038/s41586-019-1138-y},
+  note = {CORE ARGUMENT: Proposes new field of "machine behaviour" studying AI systems as agents whose behavior can be studied scientifically. AI systems exhibit behaviours emergent from algorithms, data, and interactions. Understanding machine behaviour requires interdisciplinary methods. Emphasizes that AI agents are not just tools but actors in sociotechnical systems. RELEVANCE: Important framing for treating AI agents in markets as entities with their own behavioral patterns worth studying. Supports treating agentic markets as sites for empirical and normative investigation. Methodological perspective aligns with experimental approach to understanding AI in institutional contexts. POSITION: Machine behaviour as scientific field.},
+  keywords = {machine-behaviour, AI-systems, methodology, interdisciplinary, High}
+}
+
+@inproceedings{feng2023chessgpt,
+  author = {Feng, Qingyun and others},
+  title = {ChessGPT: Bridging Policy Learning and Language Modeling},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year = {2023},
+  note = {CORE ARGUMENT: Demonstrates that LLMs can learn complex strategic reasoning through chess play, exhibiting planning and tactical thinking. Models trained on chess games develop internal representations of game states and strategic concepts. Shows potential for strategic reasoning in language models. RELEVANCE: Demonstrates strategic reasoning capabilities of LLMs relevant for understanding how LLM-based agents might behave in strategic market contexts. Strategic sophistication affects what procedural safeguards are needed and what forms of manipulation are possible. POSITION: Strategic reasoning in large language models.},
+  keywords = {LLM-agents, strategic-reasoning, game-playing, Medium}
+}
+
+@article{gode1993allocative,
+  author = {Gode, Dhananjay K. and Sunder, Shyam},
+  title = {Allocative Efficiency of Markets with Zero-Intelligence Traders: Market as a Partial Substitute for Individual Rationality},
+  journal = {Journal of Political Economy},
+  year = {1993},
+  volume = {101},
+  number = {1},
+  pages = {119--137},
+  doi = {10.1086/261868},
+  note = {CORE ARGUMENT: Shows that market mechanisms can achieve high allocative efficiency even with "zero-intelligence" traders who act randomly subject to budget constraints. Market structure itself, independent of trader rationality, drives efficiency. Challenges assumption that market efficiency requires rational agents. RELEVANCE: Important baseline for understanding what efficiency in agentic markets depends on. Shows that some desirable properties emerge from market structure rather than agent sophistication. Relevant for procedural design: which properties require smart agents vs which properties emerge from procedure itself? POSITION: Market mechanisms and allocative efficiency.},
+  keywords = {market-efficiency, mechanism-design, zero-intelligence, foundational, Medium}
+}
+
+@article{jennings2001automated,
+  author = {Jennings, Nicholas R. and Faratin, Peyman and Lomuscio, Alessio R. and Parsons, Simon and Wooldridge, Michael and Sierra, Carles},
+  title = {Automated Negotiation: Prospects, Methods and Challenges},
+  journal = {Group Decision and Negotiation},
+  year = {2001},
+  volume = {10},
+  number = {2},
+  pages = {199--215},
+  doi = {10.1023/A:1008746126376},
+  note = {CORE ARGUMENT: Surveys automated negotiation where software agents negotiate on behalf of humans or organizations. Discusses negotiation protocols, strategies, and multi-issue negotiation. Automated negotiation can handle complexity beyond human capacity but raises trust and control issues. RELEVANCE: Directly relevant for understanding how agents represent human interests in market contexts. Negotiation is core to many agentic markets. Discusses representational relationship between agents and principals, relevant for procedural justification questions. POSITION: Automated negotiation and multi-agent coordination.},
+  keywords = {automated-negotiation, multi-agent-systems, representation, High}
+}
+
+@article{cliff1997minimal,
+  author = {Cliff, Dave and Bruten, Janet},
+  title = {Minimal-Intelligence Agents for Bargaining Behaviors in Market-Based Environments},
+  journal = {HP Laboratories Technical Report},
+  year = {1997},
+  note = {CORE ARGUMENT: Develops ZIP (Zero-Intelligence Plus) trading agents that learn to adjust prices based on simple learning rules. Despite minimal intelligence, ZIP agents achieve near-human performance in continuous double auctions. Shows that simple adaptive agents can produce sophisticated market behaviors. RELEVANCE: Important for understanding range of agent sophistication in markets. Even simple agents can create complex market dynamics. Relevant for procedural experimentalism: emergence of patterns from simple rules might enable normative learning even without sophisticated moral reasoning by individual agents. POSITION: Minimal-intelligence trading agents.},
+  keywords = {trading-agents, learning, market-dynamics, Low}
+}
+
+@article{kephart2003vision,
+  author = {Kephart, Jeffrey O. and Walsh, William E.},
+  title = {An Artificial Intelligence Perspective on Autonomic Computing Policies},
+  journal = {Proceedings of IEEE International Workshop on Policies for Distributed Systems and Networks},
+  year = {2003},
+  pages = {3--12},
+  doi = {10.1109/POLICY.2003.1206955},
+  note = {CORE ARGUMENT: Develops framework for autonomic computing where systems self-manage through intelligent agents. Agents monitor environments, learn policies, and adapt behavior without human intervention. Discusses challenges of autonomous decision-making in complex environments. RELEVANCE: Broader context for autonomous agent systems beyond markets. Self-managing systems raise similar questions about oversight, accountability, and justification as agentic markets. Connects agentic markets to wider autonomic systems literature. POSITION: Autonomic computing and autonomous agents.},
+  keywords = {autonomous-agents, self-management, policies, Low}
+}
+
+@article{yu2023language,
+  author = {Yu, Wenhao and others},
+  title = {Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models},
+  journal = {arXiv preprint arXiv:2310.04406},
+  year = {2023},
+  note = {CORE ARGUMENT: Proposes Language Agent Tree Search (LATS) that enables LLM agents to plan, reason, and act through self-reflection and search. Agents improve through environmental feedback and internal deliberation. Shows sophisticated autonomous behavior in complex tasks. RELEVANCE: Demonstrates advanced planning and reasoning capabilities in LLM agents relevant for autonomous market participation. Self-reflection capacity is relevant for whether agents can engage in moral learning. Planning abilities affect strategic behavior in markets. POSITION: Planning and reasoning in LLM agents.},
+  keywords = {LLM-agents, planning, reasoning, self-reflection, Low}
+}
