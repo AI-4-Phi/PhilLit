@@ -6,12 +6,15 @@
 
 This directory contains a sophisticated 6-phase agent-based workflow for generating comprehensive, publication-ready state-of-the-art literature reviews for research proposals. The system is inspired by the LiRA (Literature Review Agents) framework but adapted specifically for philosophical research proposals.
 
+**Key Feature**: Domain researchers output **valid BibTeX files** (`.bib`) that can be directly imported into Zotero or other reference managers, while preserving rich metadata for synthesis agents.
+
 ## Recent Optimizations (Context Window Efficiency)
 
-- **Compact bibliographies**: Domain researchers now produce structured bibliographies (1500-3000 words) instead of prose reviews (8000+ words)
+- **BibTeX output**: Domain researchers now produce valid BibTeX files (`.bib`) instead of prose reviews
 - **Validation removed**: Phase 3 citation validation eliminated to reduce processing time
 - **Task persistence**: Added `task-progress.md` for cross-conversation resume capability
-- **Result**: Synthesis-planner can now read all 7 domains without context overflow
+- **Zotero integration**: Users can directly import BibTeX files into Zotero with one click
+- **Result**: Synthesis-planner can now read all 7 domains without context overflow; users get reference-manager-ready bibliographies
 
 ## Agent Architecture
 
@@ -21,7 +24,7 @@ This directory contains a sophisticated 6-phase agent-based workflow for generat
 ### Phase Agents
 
 1. **literature-review-planner.md** - Plans review structure and domain decomposition
-2. **domain-literature-researcher.md** - Produces compact structured bibliographies per domain (1500-3000 words)
+2. **domain-literature-researcher.md** - Produces valid BibTeX files (`.bib`) per domain with rich metadata in @comment entries and note fields
 3. **synthesis-planner.md** - Designs narrative structure for the review
 4. **synthesis-writer.md** - Writes publication-ready literature review
 5. **sota-review-editor.md** - Reviews and polishes against best practices
@@ -37,9 +40,13 @@ This directory contains a sophisticated 6-phase agent-based workflow for generat
 
 ### Phase 2: Parallel Literature Search
 - **Agent**: `@domain-literature-researcher` (multiple instances in parallel)
-- **Output**: `literature-domain-1.md`, `literature-domain-2.md`, etc. (compact bibliographies: 1500-3000 words each)
-- **Process**: Each agent searches and produces structured bibliographies with: Citation, Core Argument (2-3 sentences), Relevance (2-3 sentences), Position/Debate, Importance level
-- **Key Feature**: Parallel execution + compact format enables synthesis-planner to read all domains
+- **Output**: `literature-domain-1.bib`, `literature-domain-2.bib`, etc. (valid BibTeX files)
+- **Process**: Each agent searches and produces BibTeX bibliography with:
+  - Domain metadata in @comment entries (overview, gaps, synthesis guidance)
+  - Standard BibTeX entries (@article, @book, etc.) with proper citation data
+  - Rich metadata in `note` fields (Core Argument, Relevance, Position)
+  - Importance levels in `keywords` fields (High/Medium/Low)
+- **Key Feature**: Parallel execution + BibTeX format enables direct Zotero import AND synthesis-planner reading
 - **Architecture**: Multiple files (one per domain) created independently
 
 ### Phase 3: Synthesis Planning
@@ -69,8 +76,9 @@ This directory contains a sophisticated 6-phase agent-based workflow for generat
 ### Context Preservation
 - **Isolated Contexts**: Each agent uses its own context window
 - **Efficient Orchestration**: Orchestrator context stays minimal
-- **Compact Output**: Domain researchers produce 1500-3000 word bibliographies (not 8000+ word prose)
+- **BibTeX Output**: Domain researchers produce valid `.bib` files (not prose reviews)
 - **Section-by-Section Writing**: Synthesis-writer reads only relevant papers per section (~5k words, not all 24k)
+- **Zotero Integration**: BibTeX files can be directly imported into reference managers
 - **Task Persistence**: `task-progress.md` enables resume across conversations if context limit hit
 
 ### Parallelization
@@ -84,8 +92,10 @@ This directory contains a sophisticated 6-phase agent-based workflow for generat
 - **Editorial Polish**: Dedicated editing phase ensures quality
 
 ### Standardized Format
-- **Literature Entries**: Compact format with Citation, Core Argument (2-3 sentences), Relevance (2-3 sentences), Position/Debate, Importance (High/Medium/Low)
-- **Efficient for Synthesis**: Short entries enable synthesis-planner to read all domains without context overflow
+- **BibTeX Format**: Valid `.bib` files with standard citation fields (author, title, journal, year, doi, etc.)
+- **Rich Metadata**: Domain overview in @comment entries; paper analysis in note fields
+- **Direct Import**: Users can import BibTeX files directly into Zotero
+- **Agent-Readable**: Synthesis agents parse @comment and note fields for planning and writing
 - **Section Files**: Each synthesis section written to separate file, then assembled (mirrors Phase 2 architecture)
 - **Gap Integration**: Gaps identified throughout, not just at end
 
@@ -120,9 +130,9 @@ After complete workflow, you receive:
 research-proposal-literature-review/
 ├── task-progress.md                      # Progress tracker (enables resume)
 ├── lit-review-plan.md                    # Phase 1
-├── literature-domain-1.md                # Phase 2 (compact: 1500-3000 words)
-├── literature-domain-2.md                # Phase 2 (compact: 1500-3000 words)
-├── ...
+├── literature-domain-1.bib               # Phase 2 (BibTeX - import to Zotero)
+├── literature-domain-2.bib               # Phase 2 (BibTeX - import to Zotero)
+├── literature-domain-N.bib               # Phase 2 (BibTeX - import to Zotero)
 ├── synthesis-outline.md                  # Phase 3
 ├── synthesis-section-1.md                # Phase 4 (individual sections)
 ├── synthesis-section-2.md                # Phase 4 (individual sections)
@@ -172,34 +182,38 @@ The hybrid approach combines agent context isolation with skill domain knowledge
 
 ### Context Management
 - Each phase agent: Isolated context (can use 50k+ tokens for search)
-- Domain researchers: Output compact bibliographies (1500-3000 words, not 8000+)
-- Synthesis-writer: Reads only relevant papers per section (~5k words, not all 24k)
+- Domain researchers: Output valid BibTeX files (`.bib`) with structured metadata
+- Synthesis-writer: Reads only relevant BibTeX files per section (3-5 papers)
 - Orchestrator: Maintains minimal context via task-progress.md
-- Synthesis-planner: Can read all 7 domains (7 × 3000 = ~21k words max)
+- Synthesis-planner: Can read all 7 BibTeX domain files comfortably
 - Communication: File-based (agents write, orchestrator tracks progress and assembles)
 
 ### File-Based Communication
 - Agents write comprehensive results to files
 - Multi-file pattern: Phase 2 (domains) and Phase 4 (sections) write separate files
 - Orchestrator assembles multi-file outputs (concatenation)
+- BibTeX format: Phase 2 outputs are valid `.bib` files for Zotero import
 - Preserves all intermediate work for transparency
 - Enables human review at any checkpoint
 - Easy to revise individual sections or domains
+- Users can import BibTeX files to reference manager immediately
 
 ## Expected Performance
 
 ### Comprehensive Review (5-8 domains, 40-80 papers)
 - **Duration**: 60-90 minutes
 - **Output**: 6000-9000 word review
-- **Citations**: 40-80 papers (compact bibliographies: 10-15k total words for synthesis-planner)
+- **Citations**: 40-80 papers in BibTeX format (7 `.bib` files ready for Zotero import)
 - **Gaps**: 3-5 specific, actionable gaps identified
 - **Resume**: Can continue from interruption via task-progress.md
+- **Zotero Import**: All BibTeX files can be imported directly for reference management
 
 ### Focused Review (3-4 domains, 20-40 papers)
 - **Duration**: 30-45 minutes
 - **Output**: 3000-5000 word review
-- **Citations**: 20-40 papers (compact bibliographies: 5-8k total words)
+- **Citations**: 20-40 papers in BibTeX format (3-4 `.bib` files)
 - **Gaps**: 2-3 specific gaps identified
+- **Zotero Import**: BibTeX files ready for import
 
 ## Quality Standards
 
@@ -218,10 +232,11 @@ All outputs meet:
 Potential additions:
 - Specialized agents for interdisciplinary research
 - Optional validation phase for citation accuracy (if needed)
-- Integration with citation management tools
+- Enhanced Zotero integration (automated collection creation, tagging)
 - Automated figure generation for literature maps
 - Comparative analysis across multiple research ideas
 - Funder-specific formatting agents
+- Export to other formats (RIS, EndNote, etc.)
 
 ## References
 
