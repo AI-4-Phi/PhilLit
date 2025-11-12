@@ -106,6 +106,28 @@
 - Outline files: ~40% smaller
 - Synthesis-writer gets same information, less tokens
 
+### 6. Section-by-Section Synthesis Writing (NEW)
+
+**Problem**: Synthesis-writer needs to read all domain files (~24k words) + write 8k words in one pass
+- Context usage: ~33k words (manageable but tight)
+- Quality degradation in long single-pass writing
+- Fragile: one error = lose entire draft
+- No review/iteration points
+
+**Solution**: Modified synthesis-writer to support section-by-section mode
+- Orchestrator invokes writer once per section (typically 5-6 invocations)
+- Each invocation: read outline + relevant papers only (~5k words)
+- Writer appends section to draft file
+- Track progress in task-progress.md per section
+
+**Impact**:
+- Context per section: ~5k words input + ~1.5k words output = ~6.5k words (vs. 33k)
+- **80% reduction in context per invocation**
+- Better quality throughout (no degradation toward end)
+- Progress trackable (can resume from any section)
+- Reviewable (can iterate on sections)
+- More resilient (interruption only loses current section)
+
 ## Results
 
 ### Before Optimization
@@ -119,11 +141,13 @@
 - Domain files: ~21,000 words total max (70% reduction)
 - Phases: 6 (validation removed)
 - Context risk: LOW (synthesis-planner reads comfortably)
-- Resume capability: FULL (task-progress.md)
+- Context per synthesis section: ~6.5k words (80% reduction from 33k)
+- Resume capability: FULL (task-progress.md tracks sections)
 - Orchestrator instructions: Compact
 
 ### Total Context Savings
 - **70% reduction** in domain literature size
+- **80% reduction** in synthesis-writer context per section
 - **1 full phase** eliminated (validation)
 - **30% reduction** in orchestrator instructions
 - **Zero functionality loss** - all essential information preserved
@@ -147,7 +171,13 @@
    - Optimized reading strategy
    - Simplified outline format
 
-4. `.claude/agents/README.md`
+4. `.claude/agents/synthesis-writer.md`
+   - Added section-by-section writing mode
+   - Reads only relevant papers per section (~5k words vs. 24k)
+   - Appends sections to draft file
+   - Tracks progress per section
+
+5. `.claude/agents/README.md`
    - Updated architecture overview (7→6 phases)
    - Documented compact bibliography format
    - Added optimization notes
@@ -158,7 +188,8 @@
 - Orchestrator automatically creates `task-progress.md`
 - Domain researchers produce compact bibliographies
 - Synthesis-planner reads all domains without issues
-- Complete workflow fits comfortably in context
+- Synthesis-writer works section-by-section (5-6 sections)
+- Complete workflow fits comfortably in context throughout
 
 ### For Interrupted Workflows
 - If context limit hit, check `task-progress.md`
@@ -175,20 +206,23 @@
 ### Comprehensive Review (5-8 domains, 40-80 papers)
 - Duration: 60-90 minutes
 - Domain literature total: 10-24k words (manageable)
-- Synthesis-planner: Reads all domains comfortably
-- Context usage: Within limits throughout
+- Synthesis-planner: Reads all domains comfortably (~24k words)
+- Synthesis-writer: Reads ~5k words per section (5-6 sections)
+- Context usage: Within limits throughout all phases
 
 ### Focused Review (3-4 domains, 20-40 papers)
 - Duration: 30-45 minutes
 - Domain literature total: 5-12k words (very manageable)
-- Context usage: Well within limits
+- Synthesis-writer: Reads ~3k words per section (4-5 sections)
+- Context usage: Well within limits throughout
 
 ## Future Considerations
 
-### If Context Issues Persist
+### If Context Issues Persist (Unlikely Now)
 1. **Staged synthesis planning**: Read domains in batches, create partial outlines, merge
 2. **Summary-first approach**: Domain researchers provide 100-word summary at top, planner reads summaries first
 3. **Selective reading**: Synthesis-planner reads only High-importance papers first pass
+4. **Finer section granularity**: Break sections into smaller subsections for synthesis-writer
 
 ### If More Detail Needed
 - Compact format preserves all essential information
@@ -206,3 +240,30 @@
 - **Enabling scale**: 7 domains × 15 papers = 105 papers manageable in one workflow
 
 **Result**: System that actually completes without hitting limits while maintaining publication-ready quality.
+
+## Architecture Diagram
+
+```
+Phase 1: Planning → lit-review-plan.md (2k words)
+
+Phase 2: Parallel Search → 7 domain files (3k words each = 21k total)
+  ↓
+  Compact bibliographies enable Phase 3
+
+Phase 3: Synthesis Planning → synthesis-outline.md (2.5k words)
+  Reads: 21k words (all domains) → manageable ✓
+
+Phase 4: Section-by-Section Writing → state-of-the-art-review-draft.md
+  Section 1: Reads ~5k words → writes ~1.5k words
+  Section 2: Reads ~5k words → writes ~1.5k words
+  Section 3: Reads ~5k words → writes ~1.5k words
+  Section 4: Reads ~5k words → writes ~1.5k words
+  Section 5: Reads ~5k words → writes ~1.5k words
+  (Each section uses ~6.5k words context, not 33k) ✓
+
+Phase 5: Editorial Review → final.md (reads 8k draft + edits)
+
+Phase 6: Novelty Assessment → executive-assessment.md (reads 8k review)
+```
+
+**Key Insight**: Breaking synthesis writing into sections was the final piece. Combined with compact bibliographies from Phase 2, the entire workflow stays comfortably within context limits at every phase.</parameter>

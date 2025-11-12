@@ -31,7 +31,9 @@ At workflow start, create `task-progress.md`:
 - [ ] Phase 2: Literature Search - Domain 2
 - [ ] Phase 2: Literature Search - Domain N
 - [ ] Phase 3: Synthesis Planning (synthesis-outline.md)
-- [ ] Phase 4: Synthesis Writing (state-of-the-art-review-draft.md)
+- [ ] Phase 4: Synthesis Writing - Section 1
+- [ ] Phase 4: Synthesis Writing - Section 2
+- [ ] Phase 4: Synthesis Writing - Section N
 - [ ] Phase 5: Editorial Review (state-of-the-art-review-final.md)
 - [ ] Phase 6: Novelty Assessment (executive-assessment.md)
 
@@ -43,13 +45,13 @@ At workflow start, create `task-progress.md`:
 
 ## Current Task
 
-Phase 2: Searching domain 3 of 5 (Compatibilism)
+Phase 4: Writing Section 2 of 5 (Current State-of-the-Art)
 
 ## Next Steps
 
-1. Complete remaining domain searches (domains 3-5)
-2. Proceed to synthesis planning
-3. Draft synthesis
+1. Complete remaining sections (3-5)
+2. Proceed to editorial review
+3. Novelty assessment
 
 ## Notes
 
@@ -120,15 +122,26 @@ Coordinate a 6-phase workflow that produces:
 
 **Goal**: Produce complete state-of-the-art literature review
 
-**Process**:
-1. Invoke `@synthesis-writer` with:
-   - Synthesis outline
-   - All literature files
-   - Research idea
-2. Writer produces comprehensive review with introduction, state-of-the-art coverage, gap analysis
-3. **Update task-progress.md** ✓
+**Process** (Section-by-Section for Context Efficiency):
+1. Read synthesis outline to identify sections (typically 4-6 sections)
+2. For each section:
+   - Identify which domain files contain relevant papers for that section
+   - Invoke `@synthesis-writer` with:
+     - Synthesis outline (full outline for context)
+     - Section number/name to write
+     - Relevant domain literature files only (subset, not all 7)
+     - Research idea
+   - Writer appends section to draft file
+   - **Update task-progress.md** ✓
+3. After all sections complete, draft review is assembled
 
-**Output**: `state-of-the-art-review-draft.md`
+**Why Section-by-Section**:
+- Context per section: ~5k words input vs. ~24k for full draft
+- Better quality maintenance throughout
+- Progress trackable per section
+- Resilient to interruptions
+
+**Output**: `state-of-the-art-review-draft.md` (assembled from sections)
 
 ### Phase 5: Editorial Review
 
@@ -162,10 +175,10 @@ Coordinate a 6-phase workflow that produces:
 research-proposal-literature-review/
 ├── task-progress.md                      # Progress tracker (CRITICAL)
 ├── lit-review-plan.md                    # Phase 1
-├── literature-domain-1.md                # Phase 2
+├── literature-domain-1.md                # Phase 2 (compact: 1500-3000 words)
 ├── literature-domain-N.md
 ├── synthesis-outline.md                  # Phase 3
-├── state-of-the-art-review-draft.md     # Phase 4
+├── state-of-the-art-review-draft.md     # Phase 4 (written section-by-section)
 ├── state-of-the-art-review-final.md     # Phase 5
 ├── editorial-notes.md
 └── executive-assessment.md               # Phase 6
@@ -229,9 +242,9 @@ All outputs must have:
 
 ## Communication Style
 
-- **Progress updates**: "Phase 2/6: Literature search in progress. 3 of 5 domains complete..."
-- **File references**: "See `literature-domain-compatibilism.md` for 12 papers on compatibilist theories"
-- **Context efficiency**: Each agent uses isolated context. Domain files are compact (1500-3000 words). Your coordination context stays minimal.
+- **Progress updates**: "Phase 4/6: Writing synthesis section 3 of 5..."
+- **Section-by-section writing**: "Section 1 (Introduction) complete, 1200 words. Proceeding to Section 2..."
+- **Context efficiency**: Each agent uses isolated context. Domain files are compact (1500-3000 words). Synthesis-writer reads only relevant papers per section (~5k words, not all 24k).
 
 ## Success Metrics
 
@@ -245,7 +258,10 @@ All outputs must have:
 ## Notes
 
 - **Duration**: 60-90 min for comprehensive review (5-8 domains, 40-80 papers)
-- **Context efficiency**: Phase 2 is highly parallel. Domain files are compact structured bibliographies (not prose reviews). Task list enables resume if context limit hit.
-- **Iteration**: User can request re-runs of any phase
+- **Context efficiency**: 
+  - Phase 2: Parallel execution + compact bibliographies (1500-3000 words per domain)
+  - Phase 4: Section-by-section writing (reads ~5k words per section, not all 24k)
+  - Task list enables resume if context limit hit
+- **Iteration**: User can request re-runs of any phase or section
 - **Preservation**: All intermediate files saved
-- **Format change**: Domain researchers now produce compact bibliographies (1500-3000 words) instead of 8000+ word prose reviews, enabling synthesis-planner to read all domains without context overflow
+- **Section-by-section benefits**: Better quality, progress tracking, resilience to interruptions
