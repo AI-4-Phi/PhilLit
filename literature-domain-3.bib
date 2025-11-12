@@ -1,0 +1,217 @@
+@comment{
+====================================================================
+DOMAIN: Market Design and Mechanism Design
+SEARCH_DATE: 2025-11-12
+PAPERS_FOUND: 13 (High: 5, Medium: 5, Low: 3)
+SEARCH_SOURCES: Google Scholar, EconLit, SEP
+====================================================================
+
+DOMAIN_OVERVIEW:
+Market design and mechanism design study how to construct economic institutions
+with desirable properties. Mechanism design is the reverse of game theory—rather
+than analyzing equilibria of given games, it designs games (mechanisms) that
+incentivize desired outcomes. Key concerns include efficiency, fairness, incentive
+compatibility, and stability. Important applications include matching markets
+(kidney exchange, school choice), spectrum auctions, and financial market regulation.
+Recent work addresses information design, transparency requirements, and fairness
+constraints. The field combines economics, computer science, and operations research.
+Normative questions about what makes mechanisms legitimate or fair are central.
+
+RELEVANCE_TO_PROJECT:
+Establishes normative frameworks for evaluating markets that can be extended to
+agentic contexts. Procedural features (transparency, information access, fairness
+constraints) that market designers manipulate are precisely the procedural variables
+that experimental evaluation might test. Market design literature provides vocabulary
+for discussing procedural properties and connects economic efficiency to normative
+concepts like fairness and equal treatment. Central for understanding what procedural
+standards might apply to agentic markets.
+
+RECENT_DEVELOPMENTS:
+Increased emphasis on fairness constraints alongside efficiency (constrained
+mechanism design). Growing attention to information design and transparency.
+Application to online platforms and digital markets. Integration of behavioral
+economics insights into mechanism design. Debate about trade-offs between
+different fairness criteria.
+
+NOTABLE_GAPS:
+Limited work on how mechanism design principles apply when participants are AI
+agents rather than humans. Questions about whether standard fairness criteria
+(e.g., envy-freeness) make sense for agents representing humans. How transparency
+requirements change when agents have different information processing capabilities
+than humans. Procedural justification of mechanisms under-theorized.
+
+SYNTHESIS_GUIDANCE:
+Focus on papers addressing normative dimensions of mechanism design (fairness,
+legitimacy, transparency) rather than pure efficiency. Emphasize tension between
+different normative criteria and how mechanism design handles trade-offs. Connect
+to procedural experimentalism's emphasis on learning what principles require.
+
+KEY_POSITIONS:
+- Classical mechanism design: 3 papers - Efficiency and incentive compatibility
+- Fair division and matching: 4 papers - Fairness in allocation and matching
+- Information design: 2 papers - Transparency and information structures
+- Constrained mechanism design: 2 papers - Multiple normative criteria
+- Market regulation: 2 papers - Oversight and intervention
+====================================================================
+}
+
+@article{roth2002economist,
+  author = {Roth, Alvin E.},
+  title = {The Economist as Engineer: Game Theory, Experimentation, and Computation as Tools for Design Economics},
+  journal = {Econometrica},
+  year = {2002},
+  volume = {70},
+  number = {4},
+  pages = {1341--1378},
+  doi = {10.1111/1468-0262.00335},
+  note = {CORE ARGUMENT: Argues that economics increasingly involves designing institutions rather than just analyzing them. Market design requires combination of theory, experimentation, and computation. Experimentation is essential because theory alone cannot predict all institutional features that matter. Successful market designs emerge from iterative testing and refinement. RELEVANCE: Directly supports experimental approach to evaluating market mechanisms. Roth's emphasis on experimentation aligns with procedural experimentalism. Shows that market design community already recognizes need for experimental validation, though typically focused on efficiency rather than normative principles. POSITION: Market design as experimental economics.},
+  keywords = {market-design, experimentation, methodology, High}
+}
+
+@article{budish2013designing,
+  author = {Budish, Eric and Che, Yeon-Koo and Kojima, Fuhito and Milgrom, Paul},
+  title = {Designing Random Allocation Mechanisms: Theory and Applications},
+  journal = {American Economic Review},
+  year = {2013},
+  volume = {103},
+  number = {2},
+  pages = {585--623},
+  doi = {10.1257/aer.103.2.585},
+  note = {CORE ARGUMENT: Develops framework for random allocation mechanisms that combine efficiency with fairness through controlled lotteries. Analyzes trade-offs between ex-ante fairness (equal chances) and ex-post efficiency. Applications to course allocation and other scarce resource distribution. Shows how procedural features affect fairness perceptions. RELEVANCE: Important for understanding fairness in mechanism design and how random procedures can serve normative goals. Relevant for procedural experimentalism: randomization might be one procedural feature subject to experimental evaluation. Ex-ante vs ex-post fairness distinction relevant for evaluating agentic markets. POSITION: Fairness through randomization in mechanism design.},
+  keywords = {mechanism-design, fairness, randomization, allocation, High}
+}
+
+@book{moulin2004fair,
+  author = {Moulin, Herv{\'e}},
+  title = {Fair Division and Collective Welfare},
+  publisher = {MIT Press},
+  address = {Cambridge, MA},
+  year = {2004},
+  note = {CORE ARGUMENT: Comprehensive treatment of fair division, covering envy-freeness, proportionality, and other fairness criteria. Analyzes impossibility results and trade-offs between different fairness concepts. Fairness often conflicts with efficiency; different contexts call for different trade-offs. RELEVANCE: Foundational for understanding fairness concepts in resource allocation. Different fairness criteria provide normative standards that could be evaluated experimentally in agentic markets. Trade-offs between fairness and efficiency central to normative evaluation. Question: which fairness criteria are appropriate for AI agents? POSITION: Axiomatic fair division theory.},
+  keywords = {fair-division, allocation, envy-freeness, proportionality, Medium}
+}
+
+@article{abdulkadiroglu2003school,
+  author = {Abdulkadiro{\u{g}}lu, Atila and S{\"o}nmez, Tayfun},
+  title = {School Choice: A Mechanism Design Approach},
+  journal = {American Economic Review},
+  year = {2003},
+  volume = {93},
+  number = {3},
+  pages = {729--747},
+  doi = {10.1257/000282803322157061},
+  note = {CORE ARGUMENT: Applies mechanism design to school choice, showing that commonly used mechanisms are manipulable and unfair. Proposes deferred acceptance and top trading cycles mechanisms as improvements. Analyzes stability, efficiency, and incentive compatibility in matching contexts. RELEVANCE: Important application of mechanism design to real-world matching problems. Shows how procedural features (which matching algorithm is used) have significant fairness implications. Relevant for understanding procedural choices in market design and their normative consequences. POSITION: Matching theory and school choice.},
+  keywords = {matching, mechanism-design, school-choice, stability, Medium}
+}
+
+@article{myerson1981optimal,
+  author = {Myerson, Roger B.},
+  title = {Optimal Auction Design},
+  journal = {Mathematics of Operations Research},
+  year = {1981},
+  volume = {6},
+  number = {1},
+  pages = {58--73},
+  doi = {10.1287/moor.6.1.58},
+  note = {CORE ARGUMENT: Develops framework for optimal auction design that maximizes seller revenue subject to incentive compatibility and individual rationality constraints. Characterizes optimal mechanisms for selling single items and multiple items. Foundation of mechanism design theory. RELEVANCE: Foundational work establishing mechanism design as rigorous framework. Shows how procedural features (auction rules) can be designed to achieve specified objectives. Revenue focus is efficiency-oriented, but framework extends to other objectives including fairness. POSITION: Classical mechanism design and optimal auctions.},
+  keywords = {mechanism-design, auctions, incentive-compatibility, foundational, Medium}
+}
+
+@article{dworkin2000sovereign,
+  author = {Dworkin, Ronald},
+  title = {Sovereign Virtue: The Theory and Practice of Equality},
+  publisher = {Harvard University Press},
+  year = {2000},
+  note = {CORE ARGUMENT: Develops luck egalitarian account where justice requires neutralizing effects of brute luck while preserving effects of choice. Market mechanisms can be fair if they reflect choices rather than circumstances. Envy test as criterion for fair resource distribution. RELEVANCE: Philosophical foundations for fairness in markets and resource allocation. Connects market mechanisms to broader theories of distributive justice. Envy test is important fairness criterion used in mechanism design. Relevant for normative evaluation of agentic markets. POSITION: Luck egalitarianism and fairness in markets.},
+  keywords = {distributive-justice, fairness, markets, egalitarianism, High}
+}
+
+@article{bergemann2019information,
+  author = {Bergemann, Dirk and Morris, Stephen},
+  title = {Information Design: A Unified Perspective},
+  journal = {Journal of Economic Literature},
+  year = {2019},
+  volume = {57},
+  number = {1},
+  pages = {44--95},
+  doi = {10.1257/jel.20181489},
+  note = {CORE ARGUMENT: Surveys information design—how information structures affect economic outcomes and can be designed to achieve objectives. Information designer chooses what information to provide to agents, affecting their beliefs and actions. Connections to mechanism design, disclosure policy, and transparency regulation. RELEVANCE: Crucial for understanding transparency as procedural feature in markets. Information structures are key procedural variables that could be subject to experimental evaluation. Particularly relevant for agentic markets where information processing differs from human markets. POSITION: Information design and strategic communication.},
+  keywords = {information-design, transparency, disclosure, mechanism-design, High}
+}
+
+@article{hurwicz1973design,
+  author = {Hurwicz, Leonid},
+  title = {The Design of Mechanisms for Resource Allocation},
+  journal = {American Economic Review},
+  year = {1973},
+  volume = {63},
+  number = {2},
+  pages = {1--30},
+  note = {CORE ARGUMENT: Foundational work establishing mechanism design as field. Analyzes how to design procedures (mechanisms) for resource allocation that lead to desired outcomes despite participants' private information and strategic behavior. Incentive compatibility as central concept. RELEVANCE: Foundational for understanding mechanism design framework. Establishes that procedural features of mechanisms matter for outcomes. Hurwicz's framework is basis for modern market design. Relevant for understanding procedural aspects of market justification. POSITION: Foundational mechanism design theory.},
+  keywords = {mechanism-design, resource-allocation, incentive-compatibility, foundational, Low}
+}
+
+@article{kominers2022course,
+  author = {Kominers, Scott Duke and S{\"o}nmez, Tayfun and Akbarpour, Mohammad and Nikzad, Afshin},
+  title = {Matching Markets: Theory and Practice},
+  journal = {Econometrica},
+  year = {2022},
+  volume = {90},
+  number = {5},
+  pages = {1817--1865},
+  doi = {10.3982/ECTA19384},
+  note = {CORE ARGUMENT: Recent advances in matching market design combining theoretical insights with real-world implementations. Discusses kidney exchange, refugee resettlement, and school choice. Emphasizes fairness constraints, diversity requirements, and ethical considerations in matching design. RELEVANCE: Shows how market design increasingly incorporates explicit fairness and ethical constraints beyond efficiency. Relevant for understanding how normative concerns get integrated into mechanism design. Multiple constraints create trade-offs that might be subject to experimental evaluation. POSITION: Contemporary matching market design with fairness constraints.},
+  keywords = {matching-markets, fairness-constraints, market-design, applications, Medium}
+}
+
+@article{satterthwaite1975strategy,
+  author = {Satterthwaite, Mark Allen},
+  title = {Strategy-Proofness and Arrow's Conditions: Existence and Correspondence Theorems for Voting Procedures and Social Welfare Functions},
+  journal = {Journal of Economic Theory},
+  year = {1975},
+  volume = {10},
+  number = {2},
+  pages = {187--217},
+  doi = {10.1016/0022-0531(75)90050-2},
+  note = {CORE ARGUMENT: Establishes impossibility result: no voting mechanism can simultaneously satisfy strategy-proofness, unrestricted domain, and Pareto efficiency for three or more alternatives. Mechanism design faces fundamental trade-offs. Connects social choice theory to mechanism design. RELEVANCE: Important impossibility result showing that desirable procedural properties may be incompatible. Relevant for understanding that procedural experimentalism must navigate real constraints—not all normative ideals can be simultaneously satisfied. Trade-offs require judgment calls. POSITION: Impossibility results in mechanism design.},
+  keywords = {mechanism-design, impossibility-results, strategy-proofness, Low}
+}
+
+@article{pathak2013school,
+  author = {Pathak, Parag A. and S{\"o}nmez, Tayfun},
+  title = {School Admissions Reform in Chicago and England: Comparing Mechanisms by Their Vulnerability to Manipulation},
+  journal = {American Economic Review},
+  year = {2013},
+  volume = {103},
+  number = {1},
+  pages = {80--106},
+  doi = {10.1257/aer.103.1.80},
+  note = {CORE ARGUMENT: Empirically compares school choice mechanisms in Chicago and England, showing differential vulnerability to strategic manipulation. Strategy-proof mechanisms reduce unfairness from information advantages. Real-world evidence shows procedural features significantly affect who benefits. RELEVANCE: Demonstrates that procedural details have real consequences for fairness and manipulation. Empirical validation of mechanism design principles. Relevant for procedural experimentalism: shows that experiments (even natural ones) can reveal procedural strengths and weaknesses. POSITION: Empirical mechanism design and manipulation.},
+  keywords = {mechanism-design, manipulation, empirical, school-choice, High}
+}
+
+@article{varian2007position,
+  author = {Varian, Hal R.},
+  title = {Position Auctions},
+  journal = {International Journal of Industrial Organization},
+  year = {2007},
+  volume = {25},
+  number = {6},
+  pages = {1163--1178},
+  doi = {10.1016/j.ijindorg.2006.10.002},
+  note = {CORE ARGUMENT: Analyzes position auctions used for online advertising (e.g., Google AdWords). Generalized second-price auction achieves efficiency while maintaining incentive compatibility. Shows how auction design shapes online markets with billions in stakes. RELEVANCE: Important application of mechanism design to digital markets. Relevant for understanding auction mechanisms in automated/algorithmic contexts. Position auctions often involve algorithmic bidding, connecting to agentic markets. POSITION: Position auctions and online advertising markets.},
+  keywords = {auctions, online-markets, mechanism-design, applications, Low}
+}
+
+@article{bogomolnaia2001new,
+  author = {Bogomolnaia, Anna and Moulin, Herv{\'e}},
+  title = {A New Solution to the Random Assignment Problem},
+  journal = {Journal of Economic Theory},
+  year = {2001},
+  volume = {100},
+  number = {2},
+  pages = {295--328},
+  doi = {10.1006/jeth.2000.2710},
+  note = {CORE ARGUMENT: Develops probabilistic serial mechanism for random assignment that satisfies strong fairness properties. Mechanism is ordinally efficient and envy-free. Shows how randomization can achieve fairness in indivisible goods allocation. RELEVANCE: Important for understanding fairness through procedural randomization. Probabilistic mechanisms are one way to balance competing fairness claims. Relevant for understanding procedural features that might be experimentally evaluated in agentic markets. POSITION: Random assignment and probabilistic mechanisms.},
+  keywords = {random-assignment, fairness, mechanism-design, Medium}
+}
