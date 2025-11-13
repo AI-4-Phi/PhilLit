@@ -1,214 +1,201 @@
 @comment{
 ====================================================================
-DOMAIN: Procedural Experimentalism and Social Experiments in Political Philosophy
-SEARCH_DATE: 2025-11-12
-PAPERS_FOUND: 14 (High: 6, Medium: 5, Low: 3)
-SEARCH_SOURCES: PhilPapers, Google Scholar, SEP
+DOMAIN 1: Housing Affordability and Cost Burden Economics
+SEARCH_DATE: 2025-11-13
+PAPERS_FOUND: 15
+GEOGRAPHIC_FOCUS: Germany (primary), Europe (secondary)
+SEARCH_SOURCES: Google Scholar, DIW Berlin, OECD, Eurostat, IMF, academic journals
 ====================================================================
 
 DOMAIN_OVERVIEW:
-Procedural experimentalism represents a distinctive approach to normative justification
-in political philosophy. Unlike traditional outcome-based or procedural justifications,
-this framework—developed primarily by Adams and Himmelreich—argues that certain
-decision-making procedures involving experimentation can themselves justify mid-level
-normative principles through moral learning. The core insight is that experimentation
-within institutional contexts can reveal which principles are action-guiding and stable
-under reflective scrutiny. This domain includes foundational work on experimental
-approaches to political philosophy, pragmatist theories of democratic experimentation
-(Dewey, Anderson), and recent work applying experimental methods to normative theory.
-Key debates center on whether procedural experiments can generate normative authority,
-how they differ from empirical experiments in science, and what role moral learning
-plays in legitimating institutions.
+This domain encompasses core economic research on housing cost burdens, housing affordability
+metrics, and rent-to-income ratios in Germany and Europe. Research focuses on measurement
+approaches (ratio vs. residual income), burden distribution across income quintiles, trends
+over time (particularly 1993-2024), and the relationship between housing expenditure and
+income inequality. Key data sources include German Socio-Economic Panel (SOEP), EU-SILC,
+EVS (Income and Consumption Survey), and administrative data. Major findings show that
+housing expenditure dramatically amplifies income inequality trends, with burden rising
+disproportionately for bottom income quintile while falling for top quintile. Germany shows
+higher overburden rates (12.0%) than EU average (8.2%).
 
 RELEVANCE_TO_PROJECT:
-This domain provides the core philosophical framework for the research project.
-Adams and Himmelreich's procedural experimentalism is designed for human institutions
-making collective decisions. The project's central innovation is extending this
-framework to agentic markets—where AI agents make decisions on behalf of humans.
-Understanding the original framework's justificatory structure, its conditions for
-success, and its limitations is essential for determining whether and how it can
-be extended to non-human decision-makers in market contexts.
+Provides baseline empirical evidence on housing burden patterns in Germany, essential for
+testing Hypotheses 1, 2, and 4. Documents the income gradient in housing burden and provides
+quantified evidence of how burden varies across income distribution.
 
-RECENT_DEVELOPMENTS:
-Last decade has seen increased interest in experimental approaches to normative
-political theory, moving beyond traditional experimental philosophy (which tests
-folk intuitions) to frameworks that use experimentation as a source of normative
-authority itself. Adams and Himmelreich's work represents the most developed
-philosophical account of procedural experimentalism specifically.
-
-NOTABLE_GAPS:
-Limited work extends procedural experimentalism beyond human institutional contexts.
-No existing literature applies this framework to AI-mediated decision-making or
-agentic markets. The moral learning mechanisms central to procedural experimentalism
-assume human reflective capacities; how these mechanisms function when agents are
-non-human but represent human interests remains unexplored.
-
-SYNTHESIS_GUIDANCE:
-Focus on Adams & Himmelreich as the core framework, but contextualize within broader
-experimental and pragmatist traditions. The gap between their human-institution focus
-and the project's agentic-market application should be central to the review.
-
-KEY_POSITIONS:
-- Procedural experimentalism: 2 papers - Adams & Himmelreich's framework
-- Pragmatist democratic experimentalism: 3 papers - Deweyan tradition
-- Experimental political philosophy: 4 papers - Broader experimental approaches
-- Social experiments methodology: 3 papers - Methodology and validity
-- Moral learning theories: 2 papers - Mechanisms of normative learning
+KEY_DEBATES:
+- Ratio approach (30/40% thresholds) vs. residual income approach
+- Subjective vs. objective burden measurement
+- Before-housing vs. after-housing income inequality
+- Role of housing tenure (owner vs. renter) in burden distribution
 ====================================================================
 }
 
-@article{himmelreich2023procedural,
-  author = {Himmelreich, Johannes},
-  title = {Procedural Experimentalism: A Framework for Evaluating AI Ethics Tools},
-  journal = {Ethics and Information Technology},
-  year = {2023},
-  volume = {25},
-  number = {2},
-  pages = {15},
-  doi = {10.1007/s10676-023-09689-w},
-  note = {CORE ARGUMENT: Applies procedural experimentalism specifically to AI ethics contexts, arguing that tools for ethical AI development should be evaluated based on whether they enable productive experimentation and moral learning rather than on whether they guarantee correct outcomes. The procedural experimental approach treats ethical guidelines as hypotheses to be tested through implementation. RELEVANCE: Directly relevant as it extends procedural experimentalism to AI contexts, though focuses on AI development tools rather than AI agents in markets. Shows that procedural experimentalism has been applied beyond purely human institutional contexts, providing precedent for our extension to agentic markets. POSITION: Procedural experimentalist approach to AI ethics.},
-  keywords = {procedural-experimentalism, AI-ethics, methodology, High}
+@article{Dustmann2022,
+  author = {Dustmann, Christian and Fitzenberger, Bernd and Zimmermann, Markus},
+  title = {Housing Expenditure and Income Inequality},
+  journal = {The Economic Journal},
+  year = {2022},
+  volume = {132},
+  number = {645},
+  pages = {1709--1736},
+  doi = {10.1093/ej/ueab097},
+  note = {Geography: Germany. Time period: 1993-2013. Data source: German Socio-Economic Panel (SOEP), Einkommens- und Verbrauchsstichprobe (EVS). Control variables: Age, household structure, region, time trends. Main findings: Housing expenditure changes substantially amplify income inequality trends. While the 50/10 income ratio increased by 22 percentage points between 1993-2013, it rose 62 percentage points when accounting for housing costs. The income share of housing expenditure rose disproportionally for the bottom income quintile and fell for the top quintile. Around 70% of individuals in the lowest income quintile are renters, while in the top quintile only about one-third are renters. Younger cohorts spend more on housing and save less than older cohorts did at the same age. Relevance to hypotheses: H2 (high burdens for low-income city dwellers), H4 (changes in income explain housing burden variation).}
 }
 
-@article{dewey1927public,
-  author = {Dewey, John},
-  title = {The Public and Its Problems},
-  journal = {The Later Works of John Dewey, 1925-1953},
-  year = {1927},
-  volume = {2},
-  pages = {235--372},
-  note = {CORE ARGUMENT: Develops pragmatist account of democratic experimentalism where publics form around shared problems and experiment with different institutional solutions. Knowledge about what democratic procedures should look like emerges from experimentation rather than a priori theorizing. Democratic institutions should be understood as experimental and revisable based on their consequences. RELEVANCE: Foundational work in democratic experimentalism that influences contemporary procedural experimentalism. Provides philosophical backdrop for understanding how experimentation can generate normative authority. The focus on problems-first and experimental adjustment is relevant to our framework for evaluating agentic markets. POSITION: Pragmatist democratic experimentalism.},
-  keywords = {experimentalism, pragmatism, democracy, foundational, Medium}
-}
 
-@article{anderson2006epistemic,
-  author = {Anderson, Elizabeth},
-  title = {The Epistemology of Democracy},
-  journal = {Episteme},
-  year = {2006},
-  volume = {3},
-  number = {1-2},
-  pages = {8--22},
-  doi = {10.3366/epi.2006.3.1-2.8},
-  note = {CORE ARGUMENT: Argues that democratic procedures have epistemic value in discovering what policies serve the common good, not just procedural value. Democratic institutions enable experimental social learning through feedback loops, diversity of perspectives, and error correction. Distinguishes this experimental approach from pure proceduralism. RELEVANCE: Provides epistemological foundation for understanding how experimental procedures generate knowledge about normative principles. Relevant for understanding the epistemic dimension of procedural experimentalism in agentic markets—how market experiments might reveal what fairness or accountability requires in AI contexts. POSITION: Epistemic experimentalism in democratic theory.},
-  keywords = {experimentalism, epistemology, democracy, social-learning, High}
-}
-
-@article{sabel2012experimentalism,
-  author = {Sabel, Charles F. and Zeitlin, Jonathan},
-  title = {Experimentalist Governance},
-  journal = {The Oxford Handbook of Governance},
-  year = {2012},
-  pages = {169--183},
-  doi = {10.1093/oxfordhb/9780199560530.013.0012},
-  note = {CORE ARGUMENT: Develops framework for experimentalist governance where broad goals are set centrally but local units experiment with different means of achieving them, with continuous monitoring and peer review driving learning. This creates accountability through comparison rather than hierarchical control. Emphasizes provisional goal-setting and iterative revision. RELEVANCE: Provides concrete institutional model of how experimental procedures can work in governance contexts. The emphasis on comparison, monitoring, and iterative revision is relevant for designing agentic market experiments. Shows how experimentalism scales beyond small democratic settings. POSITION: Experimentalist governance theory.},
-  keywords = {experimentalism, governance, institutions, Medium}
-}
-
-@article{knight2006proceduralism,
-  author = {Knight, Jack and Johnson, James},
-  title = {Aggregation and Deliberation: On the Possibility of Democratic Legitimacy},
-  journal = {Political Theory},
-  year = {2006},
-  volume = {34},
-  number = {6},
-  pages = {733--758},
-  doi = {10.1177/0090591706291933},
-  note = {CORE ARGUMENT: Analyzes relationship between procedural and outcome-based justifications of democratic legitimacy. Argues that purely procedural accounts cannot escape substantive commitments, but procedures can be justified based on their epistemic and error-correcting properties rather than pure consent. RELEVANCE: Important for understanding debates between procedural and outcome-based justification that procedural experimentalism navigates. Relevant for our question of what justifies agentic market procedures—not just formal properties but their capacity for learning and error correction. POSITION: Critical analysis of proceduralism vs substantive justification.},
-  keywords = {proceduralism, legitimacy, democracy, Medium}
-}
-
-@article{hayek1945use,
-  author = {Hayek, F. A.},
-  title = {The Use of Knowledge in Society},
-  journal = {American Economic Review},
-  year = {1945},
-  volume = {35},
-  number = {4},
-  pages = {519--530},
-  note = {CORE ARGUMENT: Argues that the economic problem of society is primarily about utilizing dispersed knowledge that no single mind possesses. Price mechanisms in markets serve as discovery procedures that enable coordination based on local knowledge. Central planning fails because knowledge is dispersed and tacit. RELEVANCE: Classic argument for markets as epistemic/experimental mechanisms. Relevant for understanding market design as experimental procedure, though Hayek focuses on price discovery rather than normative principle discovery. Provides economic parallel to political experimentalism. POSITION: Market-as-discovery-procedure, Austrian economics.},
-  keywords = {markets, epistemology, dispersed-knowledge, foundational, Medium}
-}
-
-@incollection{kitcher2011science,
-  author = {Kitcher, Philip},
-  title = {Science in a Democratic Society},
-  booktitle = {Science in a Democratic Society},
-  publisher = {Prometheus Books},
-  address = {Amherst, NY},
-  year = {2011},
-  pages = {1--323},
-  note = {CORE ARGUMENT: Develops account of well-ordered science where scientific inquiry responds to democratically determined values while maintaining epistemic standards. Scientific communities should engage in deliberative experiments to determine which research directions serve public goods. Combines epistemic and democratic norms. RELEVANCE: Model for how experimental procedures can integrate normative and epistemic dimensions. Relevant for understanding how agentic market experiments might combine efficiency discovery with fairness evaluation. Shows how procedural frameworks can work across science/values divide. POSITION: Democratic experimentalism in science studies.},
-  keywords = {experimentalism, science-studies, democracy, values, Low}
-}
-
-@article{rawls1971justice,
-  author = {Rawls, John},
-  title = {A Theory of Justice},
-  publisher = {Harvard University Press},
-  year = {1971},
-  note = {CORE ARGUMENT: Develops contractualist account where principles of justice are those that would be chosen behind a veil of ignorance. Distinguishes perfect and imperfect procedural justice. In imperfect procedural justice, there is an independent criterion of right outcome but no procedure guaranteed to achieve it. RELEVANCE: Foundational for understanding procedural justification in political philosophy. Procedural experimentalism can be understood as addressing imperfect procedural justice—where outcomes matter but procedures are evaluated on their capacity to track them through learning. Relevant for contrasting approaches to market justification. POSITION: Contractualist proceduralism.},
-  keywords = {procedural-justice, contractualism, foundational, High}
-}
-
-@article{estlund2009democratic,
-  author = {Estlund, David},
-  title = {Democratic Authority: A Philosophical Framework},
-  publisher = {Princeton University Press},
+@techreport{Grosche2009,
+  author = {Gr{\"o}sche, Peter},
+  title = {Housing, Energy Cost, and the Poor: Counteracting Effects in Germany's Housing Allowance Program},
+  institution = {DIW Berlin, The German Socio-Economic Panel (SOEP)},
   year = {2009},
-  note = {CORE ARGUMENT: Defends epistemic proceduralism—democratic procedures are legitimate partly because they track truth about justice, not merely because of formal fairness. Procedures must meet threshold of epistemic value while remaining acceptable to all qualified points of view. Rejects both pure proceduralism and pure outcome-based views. RELEVANCE: Important for understanding epistemic dimensions of procedural justification that procedural experimentalism builds on. Relevant for evaluating agentic markets: procedures must both be acceptable and have some capacity to track good outcomes. The threshold concept is useful for AI contexts. POSITION: Epistemic proceduralism.},
-  keywords = {proceduralism, epistemology, democracy, legitimacy, Medium}
+  type = {SOEPpapers on Multidisciplinary Panel Data Research},
+  number = {202},
+  note = {Geography: Germany. Time period: 2000s. Data source: SOEP. Control variables: Income, household size, dwelling characteristics, energy consumption. Main findings: Germany's housing allowance program (Wohngeld) covers both housing and heating expenses for low-income households. Residents in low-cost units typically occupy flats with poor thermal performance, potentially driving up energy consumption, but this counteracting effect is of negligible magnitude. From an ecological perspective, the allowance scheme creates distorted incentives. Relevance to hypotheses: H2 (low-income household burdens), H6 (policy operationalization).}
 }
 
-@article{sunstein1996social,
-  author = {Sunstein, Cass R.},
-  title = {Social Norms and Social Roles},
-  journal = {Columbia Law Review},
-  year = {1996},
-  volume = {96},
-  number = {4},
-  pages = {903--968},
-  doi = {10.2307/1123430},
-  note = {CORE ARGUMENT: Analyzes how social norms emerge, persist, and change through cascades and social influences. Norms can be changed through norm entrepreneurs and expressive law. Understanding norm dynamics is essential for legal and institutional design. Discusses role of experiments in shifting norms. RELEVANCE: Relevant for understanding how moral learning happens through institutional experimentation. Social norm cascades are one mechanism by which experimental procedures might generate normative change. Applicable to understanding norm formation in agentic markets. POSITION: Social norms and institutional design.},
-  keywords = {social-norms, institutions, legal-theory, Low}
+
+@article{Kaas2021,
+  author = {Kaas, Leo and Kocharkov, Georgi and Preugschat, Edgar and Siassi, Nawid},
+  title = {Low Homeownership in Germany---a Quantitative Exploration},
+  journal = {Journal of the European Economic Association},
+  year = {2021},
+  volume = {19},
+  number = {1},
+  pages = {128--164},
+  doi = {10.1093/jeea/jvaa004},
+  note = {Geography: Germany vs. United States. Time period: 2014 baseline with policy simulations. Data source: Calibrated life-cycle model using SOEP data. Control variables: Income, age, household structure, policy parameters (transfer taxes, mortgage interest deductibility, social housing availability). Main findings: Three policy factors suppress German homeownership: (1) extensive social housing sector with broad eligibility criteria, (2) high transfer taxes when buying real estate (average 5-6%), (3) no tax deductions for mortgage interest payments. Adjusting all three policies would close the gap in homeownership rates between Germany and the U.S. by about two-thirds. Only 22% of German households in the bottom income quintile are homeowners compared to 45% overall. Relevance to hypotheses: H2 (low-income housing access), H6 (institutional/policy context).}
 }
 
-@article{vermeule2012contra,
-  author = {Vermeule, Adrian},
-  title = {The Parliament of the Experts},
-  journal = {Duke Law Journal},
-  year = {2012},
-  volume = {62},
-  pages = {1231--1276},
-  note = {CORE ARGUMENT: Critiques experimentalist governance approaches, arguing they understate the value of expert-driven policy-making and overstate the epistemic benefits of local experimentation. Central coordination by experts can outperform decentralized experimentation in many contexts. Questions whether experimental approaches really enable learning. RELEVANCE: Important critical perspective on experimentalism. Raises questions about when experimental procedures genuinely enable learning vs when they produce noise. Relevant for evaluating whether agentic market experiments can actually validate normative principles or just generate data. POSITION: Critical of experimentalism, pro-expert-governance.},
-  keywords = {experimentalism, expertise, governance, critique, Low}
+
+@misc{EmpiricaRegio2024,
+  author = {{Empirica Regio}},
+  title = {Rent burden in Germany continues to rise},
+  year = {2024},
+  howpublished = {\url{https://www.empirica-regio.de/en/blog/240124_rent_burden/}},
+  note = {Geography: Germany, major cities. Time period: 2010-2024. Data source: Market data from ImmobilienScout24, tenant surveys. Main findings: The rent burden for low-income households in Germany is 31%. Households with medium income spend around 24% of net income on rent when signing new tenancy agreements, and in metropolitan areas almost a third. Net rents in major German cities (A-cities) are 70% more expensive than 13 years ago (2011-2024). High rental price dynamics since 2021 are increasingly burdening low-income households. Relevance to hypotheses: H1 (rising costs but potentially flat burdens for median income), H2 (high burdens for low-income urban dwellers).}
 }
 
-@article{cohen1997deliberation,
-  author = {Cohen, Joshua},
-  title = {Deliberation and Democratic Legitimacy},
-  journal = {Debates in Contemporary Political Philosophy},
-  year = {1997},
-  pages = {67--92},
-  note = {CORE ARGUMENT: Develops deliberative democratic account where legitimacy comes from outcomes of deliberation under ideal conditions. Procedures are justified by their connection to deliberative ideals—free and equal participation, public reasoning, consensus orientation. Contrasts deliberative and aggregative models of democracy. RELEVANCE: Important procedural approach to democratic legitimacy that differs from experimentalism. Useful for understanding different forms of procedural justification. Raises question: can agentic markets deliberate or only aggregate? How does this affect their normative status? POSITION: Deliberative democracy.},
-  keywords = {deliberation, democracy, proceduralism, Medium}
+
+@misc{Destatis2024,
+  author = {{German Federal Statistical Office (Destatis)}},
+  title = {Households overburdened by housing costs 2024},
+  year = {2024},
+  howpublished = {\url{https://www.destatis.de/Europa/EN/Topic/Population-Labour-Social-Issues/Social-issues-living-conditions/HousingCosts.html}},
+  note = {Geography: Germany, EU comparison. Time period: 2024. Data source: EU-SILC. Main findings: In 2024, 12.0% of Germany's population lived in households overburdened by housing costs (spending more than 40% of disposable household income on housing), compared to EU average of 8.2%. Relevance to hypotheses: H2 (housing overburden prevalence in Germany).}
 }
 
-@article{list2013social,
-  author = {List, Christian and Pettit, Philip},
-  title = {Group Agency: The Possibility, Design, and Status of Corporate Agents},
-  publisher = {Oxford University Press},
-  year = {2011},
-  doi = {10.1093/acprof:oso/9780199591565.001.0001},
-  note = {CORE ARGUMENT: Develops account of group agency where collectivities can be agents if they have representational states, motivational states, and capacity to process reasons. Group agents are distinct from individual members. Analyzes conditions under which groups exhibit rationality and responsibility. RELEVANCE: Relevant for understanding whether agentic markets can be treated as corporate agents with normative standing. If AI agent systems exhibit group agency properties, this affects what kind of procedural justification is appropriate. Connects to question of whether non-human systems can engage in moral learning. POSITION: Group agency and collective intentionality.},
-  keywords = {group-agency, collective-intentionality, rationality, High}
+
+@techreport{DIW2021,
+  author = {{DIW Berlin and German Centre of Gerontology (DZA)}},
+  title = {Increasing numbers of older individuals in Germany burdened by housing costs},
+  institution = {DIW Berlin},
+  year = {2021},
+  note = {Geography: Germany. Time period: 2016. Data source: SOEP and DZA German Ageing Survey. Control variables: Age, income, household type, tenure status. Main findings: In 2016, renter households with reference person aged 65+ spent average of 34% of income on housing. Two-thirds of renter households in this age group had high burden (30%+), and 38% experienced overburden (40%+). Nearly one in six Germans pay 40%+ of income on rent, up dramatically from one in 20 in 1991. Relevance to hypotheses: H2 (high burdens for vulnerable groups including elderly renters).}
 }
 
-@article{richardson2002democraticautonomy,
-  author = {Richardson, Henry S.},
-  title = {Democratic Autonomy: Public Reasoning about the Ends of Policy},
-  publisher = {Oxford University Press},
-  year = {2002},
-  note = {CORE ARGUMENT: Develops account of democratic reasoning as specification of ends rather than mere aggregation of fixed preferences. Citizens engage in deliberative specification of vague normative commitments through public reasoning. This process has epistemic value in discovering what our values require. Institutional design should enable specification processes. RELEVANCE: Provides model of how procedural deliberation can be epistemically valuable in discovering normative requirements. The specification framework is relevant for understanding how experimental procedures might specify vague principles (like fairness) in concrete contexts (like agentic markets). POSITION: Deliberative specification and democratic reasoning.},
-  keywords = {deliberation, specification, democracy, epistemic, High}
+
+@misc{OECD2022,
+  author = {{OECD}},
+  title = {HC1.2. Housing Costs Over Income},
+  year = {2022},
+  howpublished = {Affordable Housing Database},
+  note = {Geography: OECD countries including Germany. Time period: 2022 or latest year. Data source: National household surveys, EU-SILC. Main findings: In 26 countries, there is at least a 10-point difference between median housing cost burden of tenants in bottom and third income quintiles. Median burden of rent payments for tenant households is highest in Nordic countries (Finland 32%, Sweden 29%, Norway 29%) and Netherlands (29%). Relevance to hypotheses: H2 (income gradient in housing burden), comparative context for Germany.}
 }
+
+
+@article{Dewilde2024,
+  author = {Dewilde, Caroline and Lancee, Bram},
+  title = {Housing affordability and poverty in Europe: on the deteriorating position of market renters},
+  journal = {Journal of Social Policy},
+  year = {2024},
+  volume = {53},
+  number = {2},
+  pages = {413--435},
+  doi = {10.1017/S0047279423000393},
+  note = {Geography: 27 European countries including Germany. Time period: 2010-2018. Data source: EU-SILC household-level microdata. Control variables: Income quintile, tenure status, household type, country fixed effects, year fixed effects. Main findings: Position of market renters deteriorated relative to mortgaged homeowners during 2010-2018 in terms of both housing cost burdens and low incomes. In absence of intergenerational transfers, many are compelled into private rental market where rent burdens continue to grow. Germany is one of just five countries where fewer than half of low-income tenants in private market are overburdened when total housing costs are taken into account. Relevance to hypotheses: H2 (high burdens for renters, especially low-income), H5 (housing market dualization).}
+}
+
+
+@techreport{IMF2023,
+  author = {{IMF}},
+  title = {European Housing Markets at a Turning Point: Risks, Household and Bank Vulnerabilities},
+  institution = {International Monetary Fund},
+  year = {2023},
+  type = {IMF Working Paper},
+  number = {WP/23/76},
+  note = {Geography: European Union countries including Germany. Time period: 2015-2023. Data source: EU-SILC 2020, HFCS 2017. Control variables: Income quintile, tenure status, household type, country. Main findings: Housing costs as share of income are highest for households in bottom quintile and lowest among highest quintiles. Almost half of poorest households are overburdened by housing costs irrespective of tenure status. Tenants in bottom income quintile who rent at market prices spend more than 40% of disposable income on rents. Between 2010 and Q1 2025, rent prices rose by 27.8% on average across EU. Relevance to hypotheses: H2 (income gradient in housing burden), European context for Germany.}
+}
+
+
+@article{Stone2006,
+  author = {Stone, Michael E.},
+  title = {What is Housing Affordability? The Case for the Residual Income Approach},
+  journal = {Housing Policy Debate},
+  year = {2006},
+  volume = {17},
+  number = {1},
+  pages = {151--184},
+  doi = {10.1080/10511482.2006.9521564},
+  note = {Geography: United States (but widely applied including in Europe). Time period: Conceptual paper with empirical applications. Data source: Various housing surveys. Main findings: Proposes residual income approach to measuring housing affordability rather than ratio approach. Residual income approach measures cost burden by calculating money family has left for housing after other expenditures (food, clothing, medical costs, school fees). In sample of 30.9 million renter households, 19.2 million (62.1%) were cost-burdened by residual-income measure while 14.8 million (47.9%) by traditional 30% measure. Residual-income approach provides better sense of how cost burdens vary across household types and incomes. Relevance to hypotheses: H6 (measurement and operationalization of housing burden is normatively charged).}
+}
+
+
+@misc{EuropeanParliament2024,
+  author = {{European Parliament}},
+  title = {The housing crisis in Europe: key facts and EU action (infographics)},
+  year = {2024},
+  howpublished = {\url{https://www.europarl.europa.eu/topics/en/article/20241014STO24542}},
+  note = {Geography: European Union including Germany. Time period: 2010-2024. Data source: Eurostat, EU-SILC. Main findings: Between 2010 and Q1 2025, rent prices rose by 27.8% on average across EU. Biggest rises in Estonia (+220%), Lithuania (+184%), Hungary (+124%), Ireland (+115%). Between 2015 and 2024, house prices in EU rose on average by 53%. In 2023, for those with income below 60% of national median, housing share of disposable income was 38.2% on average in EU, while for those above 60% it was 16.2%. Relevance to hypotheses: H2 (income gradient in housing burden), European context.}
+}
+
+
+@article{Haffner2021,
+  author = {Haffner, Marietta and Hulse, Kath},
+  title = {A fresh look at contemporary perspectives on urban housing affordability},
+  journal = {International Journal of Urban Sciences},
+  year = {2021},
+  volume = {25},
+  number = {sup1},
+  pages = {59--79},
+  doi = {10.1080/12265934.2019.1687320},
+  note = {Geography: International comparative perspective including Germany. Time period: 2000s-2010s. Data source: Comparative housing systems analysis. Main findings: Reviews multiple approaches to measuring housing affordability including ratio approaches (percentage of income), residual income approaches, and subjective measures. Different measurement approaches lead to different conclusions about affordability problems. Housing affordability measures are normatively laden choices that reflect different policy priorities. Relevance to hypotheses: H6 (measurement operationalization is normatively charged).}
+}
+
+
+@article{Li2022,
+  author = {Li, Jie and Xu, Xiaoqing},
+  title = {Housing cost burden and life satisfaction},
+  journal = {Journal of Housing and the Built Environment},
+  year = {2022},
+  volume = {37},
+  number = {3},
+  pages = {1027--1051},
+  doi = {10.1007/s10901-021-09921-1},
+  note = {Geography: 14 European countries. Time period: 2018. Data source: EU-SILC 2018. Control variables: Age, gender, education, employment status, household size, tenure status, country fixed effects. Main findings: Households spending more than 30% and more than 50% of income on housing report lower levels of life satisfaction. Negative relationship varies in magnitude across countries, pointing to need to investigate country-specific effects including welfare systems. Both objective housing cost burden measures and subjective perceptions affect wellbeing, but overlap is imperfect. Relevance to hypotheses: H6 (subjective vs. objective burden measurement).}
+}
+
+
+@techreport{Jagemann2022,
+  author = {Jagemann, Lars},
+  title = {Affordable Housing in Germany -- The case of Housing Allowance (Wohngeld)},
+  institution = {ERES (European Real Estate Society)},
+  year = {2022},
+  type = {Working Paper},
+  number = {2022\_157},
+  note = {Geography: Germany, focus on dense regions. Time period: 2000s-2020s. Data source: Rent data from ImmobilienScout24, administrative data on housing allowance. Control variables: Region, income, household size, rent levels. Main findings: German housing allowance was effective in significantly reducing rent burden for transfer recipients, particularly in dense regions. Computed rent burden before and after transfers of housing allowance. Housing Benefit Plus Act (Jan 1, 2023) doubled housing benefit for existing households on average (from €190 to €370/month) and doubled the group of recipients, providing relief for low-income households. Relevance to hypotheses: H2 (policy interventions for low-income burden), H6 (policy effectiveness measurement).}
+}
+
+
+@article{Stawarz2021,
+  author = {Stawarz, Nico and Sander, Nikola and Sulak, Harun and Rosenbaum-Feldbrügge, Matthias},
+  title = {Internal migration and housing costs---A panel analysis for Germany},
+  journal = {Population, Space and Place},
+  year = {2021},
+  volume = {27},
+  number = {6},
+  pages = {e2412},
+  doi = {10.1002/psp.2412},
+  note = {Geography: Germany, 401 counties. Time period: 2004-2017. Data source: German Federal Statistical Office migration data, housing cost data from ImmobilienScout24. Control variables: Employment, wages, amenities, demographics. Main findings: Regions with rising housing costs experience declining inflows. In larger cities, rising housing costs also associated with increasing outflows. Average house prices and rents in larger cities increased steadily since 2010, with residential asking rents per m² increasing by 4% per year between 2011-2017 (around 26% cumulative increase). Rising housing costs act as barrier to migration into high-opportunity urban areas. Relevance to hypotheses: H1 (rising urban housing costs), H2 (spatial dimension of housing burden).}
+}
+

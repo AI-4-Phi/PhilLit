@@ -1,217 +1,153 @@
 @comment{
 ====================================================================
-DOMAIN: Market Design and Mechanism Design
-SEARCH_DATE: 2025-11-12
-PAPERS_FOUND: 13 (High: 5, Medium: 5, Low: 3)
-SEARCH_SOURCES: Google Scholar, EconLit, SEP
+DOMAIN 3: Dualization Theory and Housing-Labor Market Interactions
+SEARCH_DATE: 2025-11-13
+PAPERS_FOUND: 10
+GEOGRAPHIC_FOCUS: Germany (primary), France, Europe
+SEARCH_SOURCES: Google Scholar, Oxford University Press, Sage, political science journals
 ====================================================================
 
 DOMAIN_OVERVIEW:
-Market design and mechanism design study how to construct economic institutions
-with desirable properties. Mechanism design is the reverse of game theory—rather
-than analyzing equilibria of given games, it designs games (mechanisms) that
-incentivize desired outcomes. Key concerns include efficiency, fairness, incentive
-compatibility, and stability. Important applications include matching markets
-(kidney exchange, school choice), spectrum auctions, and financial market regulation.
-Recent work addresses information design, transparency requirements, and fairness
-constraints. The field combines economics, computer science, and operations research.
-Normative questions about what makes mechanisms legitimate or fair are central.
+This domain examines dualization theory - the creation and deepening of insider-outsider
+divides in labor and housing markets. Core work by Emmenegger, Häusermann, Palier, Seeleib-
+Kaiser, and Thelen establishes how continental European welfare states have institutionalized
+dualism through state policy since 1990s. Dualization operates across industrial relations,
+labor market policy, and welfare state, with explicit state support for differential treatment
+of insiders (permanent, protected workers) vs. outsiders (temporary, precarious workers).
+Recent work connects labor market dualization to housing market dualization, showing how
+employment precarity affects housing tenure and burden.
 
 RELEVANCE_TO_PROJECT:
-Establishes normative frameworks for evaluating markets that can be extended to
-agentic contexts. Procedural features (transparency, information access, fairness
-constraints) that market designers manipulate are precisely the procedural variables
-that experimental evaluation might test. Market design literature provides vocabulary
-for discussing procedural properties and connects economic efficiency to normative
-concepts like fairness and equal treatment. Central for understanding what procedural
-standards might apply to agentic markets.
+Directly tests Hypothesis 5 (housing burden determined by dualized housing and labor markets).
+Provides theoretical framework linking labor market status to housing outcomes. Essential for
+understanding institutional complementarities between employment and housing systems.
 
-RECENT_DEVELOPMENTS:
-Increased emphasis on fairness constraints alongside efficiency (constrained
-mechanism design). Growing attention to information design and transparency.
-Application to online platforms and digital markets. Integration of behavioral
-economics insights into mechanism design. Debate about trade-offs between
-different fairness criteria.
-
-NOTABLE_GAPS:
-Limited work on how mechanism design principles apply when participants are AI
-agents rather than humans. Questions about whether standard fairness criteria
-(e.g., envy-freeness) make sense for agents representing humans. How transparency
-requirements change when agents have different information processing capabilities
-than humans. Procedural justification of mechanisms under-theorized.
-
-SYNTHESIS_GUIDANCE:
-Focus on papers addressing normative dimensions of mechanism design (fairness,
-legitimacy, transparency) rather than pure efficiency. Emphasize tension between
-different normative criteria and how mechanism design handles trade-offs. Connect
-to procedural experimentalism's emphasis on learning what principles require.
-
-KEY_POSITIONS:
-- Classical mechanism design: 3 papers - Efficiency and incentive compatibility
-- Fair division and matching: 4 papers - Fairness in allocation and matching
-- Information design: 2 papers - Transparency and information structures
-- Constrained mechanism design: 2 papers - Multiple normative criteria
-- Market regulation: 2 papers - Oversight and intervention
+KEY_DEBATES:
+- Extent and persistence of dualization in Germany post-2010
+- Causal mechanisms linking labor to housing dualization
+- State's role in institutionalizing vs. ameliorating dualism
+- Whether dualization is stable equilibrium or transitional state
 ====================================================================
 }
 
-@article{roth2002economist,
-  author = {Roth, Alvin E.},
-  title = {The Economist as Engineer: Game Theory, Experimentation, and Computation as Tools for Design Economics},
-  journal = {Econometrica},
-  year = {2002},
-  volume = {70},
-  number = {4},
-  pages = {1341--1378},
-  doi = {10.1111/1468-0262.00335},
-  note = {CORE ARGUMENT: Argues that economics increasingly involves designing institutions rather than just analyzing them. Market design requires combination of theory, experimentation, and computation. Experimentation is essential because theory alone cannot predict all institutional features that matter. Successful market designs emerge from iterative testing and refinement. RELEVANCE: Directly supports experimental approach to evaluating market mechanisms. Roth's emphasis on experimentation aligns with procedural experimentalism. Shows that market design community already recognizes need for experimental validation, though typically focused on efficiency rather than normative principles. POSITION: Market design as experimental economics.},
-  keywords = {market-design, experimentation, methodology, High}
-}
-
-@article{budish2013designing,
-  author = {Budish, Eric and Che, Yeon-Koo and Kojima, Fuhito and Milgrom, Paul},
-  title = {Designing Random Allocation Mechanisms: Theory and Applications},
-  journal = {American Economic Review},
-  year = {2013},
-  volume = {103},
-  number = {2},
-  pages = {585--623},
-  doi = {10.1257/aer.103.2.585},
-  note = {CORE ARGUMENT: Develops framework for random allocation mechanisms that combine efficiency with fairness through controlled lotteries. Analyzes trade-offs between ex-ante fairness (equal chances) and ex-post efficiency. Applications to course allocation and other scarce resource distribution. Shows how procedural features affect fairness perceptions. RELEVANCE: Important for understanding fairness in mechanism design and how random procedures can serve normative goals. Relevant for procedural experimentalism: randomization might be one procedural feature subject to experimental evaluation. Ex-ante vs ex-post fairness distinction relevant for evaluating agentic markets. POSITION: Fairness through randomization in mechanism design.},
-  keywords = {mechanism-design, fairness, randomization, allocation, High}
-}
-
-@book{moulin2004fair,
-  author = {Moulin, Herv{\'e}},
-  title = {Fair Division and Collective Welfare},
-  publisher = {MIT Press},
-  address = {Cambridge, MA},
-  year = {2004},
-  note = {CORE ARGUMENT: Comprehensive treatment of fair division, covering envy-freeness, proportionality, and other fairness criteria. Analyzes impossibility results and trade-offs between different fairness concepts. Fairness often conflicts with efficiency; different contexts call for different trade-offs. RELEVANCE: Foundational for understanding fairness concepts in resource allocation. Different fairness criteria provide normative standards that could be evaluated experimentally in agentic markets. Trade-offs between fairness and efficiency central to normative evaluation. Question: which fairness criteria are appropriate for AI agents? POSITION: Axiomatic fair division theory.},
-  keywords = {fair-division, allocation, envy-freeness, proportionality, Medium}
-}
-
-@article{abdulkadiroglu2003school,
-  author = {Abdulkadiro{\u{g}}lu, Atila and S{\"o}nmez, Tayfun},
-  title = {School Choice: A Mechanism Design Approach},
-  journal = {American Economic Review},
-  year = {2003},
-  volume = {93},
-  number = {3},
-  pages = {729--747},
-  doi = {10.1257/000282803322157061},
-  note = {CORE ARGUMENT: Applies mechanism design to school choice, showing that commonly used mechanisms are manipulable and unfair. Proposes deferred acceptance and top trading cycles mechanisms as improvements. Analyzes stability, efficiency, and incentive compatibility in matching contexts. RELEVANCE: Important application of mechanism design to real-world matching problems. Shows how procedural features (which matching algorithm is used) have significant fairness implications. Relevant for understanding procedural choices in market design and their normative consequences. POSITION: Matching theory and school choice.},
-  keywords = {matching, mechanism-design, school-choice, stability, Medium}
-}
-
-@article{myerson1981optimal,
-  author = {Myerson, Roger B.},
-  title = {Optimal Auction Design},
-  journal = {Mathematics of Operations Research},
-  year = {1981},
-  volume = {6},
+@incollection{PalierThelen2010,
+  author = {Palier, Bruno and Thelen, Kathleen},
+  title = {Institutionalizing Dualism: Complementarities and Change in France and Germany},
+  booktitle = {Politics \& Society},
+  year = {2010},
+  volume = {38},
   number = {1},
-  pages = {58--73},
-  doi = {10.1287/moor.6.1.58},
-  note = {CORE ARGUMENT: Develops framework for optimal auction design that maximizes seller revenue subject to incentive compatibility and individual rationality constraints. Characterizes optimal mechanisms for selling single items and multiple items. Foundation of mechanism design theory. RELEVANCE: Foundational work establishing mechanism design as rigorous framework. Shows how procedural features (auction rules) can be designed to achieve specified objectives. Revenue focus is efficiency-oriented, but framework extends to other objectives including fairness. POSITION: Classical mechanism design and optimal auctions.},
-  keywords = {mechanism-design, auctions, incentive-compatibility, foundational, Medium}
+  pages = {119--148},
+  doi = {10.1177/0032329209357888},
+  note = {Geography: France and Germany. Time period: 1990-2010. Data source: Labor market statistics, policy analysis, institutional analysis. Control variables: Policy regime, economic sector, worker status. Main findings: French and German political economies significantly reconfigured over past two decades with changes often piecemeal but cumulative effects profound. Dualism now explicitly underwritten by state policy. Job strategy advocated by OECD in beginning of 1990s implemented not for all workers, but for secondary labor market, while job protection increased for those in (shrinking) core sectors. Result is institutionalization, with state support, of apparently stable but distinctly less egalitarian model. Dualization begins in industrial relations, moves into labor market dynamics, and finds institutional expression in welfare state reforms. Relevance to hypotheses: H5 (dualization framework), H3 (wage effects of dualization).}
 }
 
-@article{dworkin2000sovereign,
-  author = {Dworkin, Ronald},
-  title = {Sovereign Virtue: The Theory and Practice of Equality},
-  publisher = {Harvard University Press},
-  year = {2000},
-  note = {CORE ARGUMENT: Develops luck egalitarian account where justice requires neutralizing effects of brute luck while preserving effects of choice. Market mechanisms can be fair if they reflect choices rather than circumstances. Envy test as criterion for fair resource distribution. RELEVANCE: Philosophical foundations for fairness in markets and resource allocation. Connects market mechanisms to broader theories of distributive justice. Envy test is important fairness criterion used in mechanism design. Relevant for normative evaluation of agentic markets. POSITION: Luck egalitarianism and fairness in markets.},
-  keywords = {distributive-justice, fairness, markets, egalitarianism, High}
+
+@book{Emmenegger2012,
+  author = {Emmenegger, Patrick and Häusermann, Silja and Palier, Bruno and Seeleib-Kaiser, Martin},
+  title = {The Age of Dualization: The Changing Face of Inequality in Deindustrializing Societies},
+  publisher = {Oxford University Press},
+  year = {2012},
+  doi = {10.1093/acprof:oso/9780199797899.001.0001},
+  note = {Geography: Continental Europe including Germany, France. Time period: 1970s-2010s. Data source: Comparative political economy analysis, labor market data, welfare state indicators. Main findings: Poverty, increased inequality, and social exclusion back on political agenda not only due to Great Recession but also due to seemingly structural trend towards increased inequality since 1970s. Dualization is political process characterized by differential treatment of insiders and outsiders that can take form of newly created institutional dualisms or deepening of existing ones. Comparative perspective shows Nordic countries witness lower levels of insider-outsider divides, whereas in continental, liberal and southern welfare states, they more likely constitute core characteristic of political economy. Continental and southern European regimes perpetuate and even reinforce insider-outsider divide with regard to all three dimensions of dualism. Relevance to hypotheses: H5 (comprehensive dualization framework linking labor and welfare institutions).}
 }
 
-@article{bergemann2019information,
-  author = {Bergemann, Dirk and Morris, Stephen},
-  title = {Information Design: A Unified Perspective},
-  journal = {Journal of Economic Literature},
+
+@article{Lennartz2019,
+  author = {Lennartz, Christian and Helbrecht, Ilse},
+  title = {Housing market dualization: linking insider–outsider divides in employment and housing outcomes},
+  journal = {Housing Studies},
+  year = {2020},
+  volume = {35},
+  number = {8},
+  pages = {1390--1414},
+  doi = {10.1080/02673037.2019.1667960},
+  note = {Geography: United Kingdom, Germany, comparative. Time period: 2000s-2010s. Data source: Household surveys, labor force surveys. Control variables: Age, income, education, employment status, household type. Main findings: Similar trends witnessed in housing markets across most advanced economies as in labor markets. Research specifically titled to link insider-outsider divides in employment and housing outcomes. Labor market dualization concept extends to housing markets. Employment precarity (outsider status) affects housing tenure choice and housing cost burden. Connects labor market position to housing market outcomes systematically. Relevance to hypotheses: H5 (direct connection between labor and housing market dualization).}
+}
+
+
+@article{Schwander2019,
+  author = {Schwander, Hanna},
+  title = {Labor Market Dualization and Insider–Outsider Divides: Why This New Conflict Matters},
+  journal = {Political Studies Review},
   year = {2019},
-  volume = {57},
+  volume = {17},
   number = {1},
-  pages = {44--95},
-  doi = {10.1257/jel.20181489},
-  note = {CORE ARGUMENT: Surveys information design—how information structures affect economic outcomes and can be designed to achieve objectives. Information designer chooses what information to provide to agents, affecting their beliefs and actions. Connections to mechanism design, disclosure policy, and transparency regulation. RELEVANCE: Crucial for understanding transparency as procedural feature in markets. Information structures are key procedural variables that could be subject to experimental evaluation. Particularly relevant for agentic markets where information processing differs from human markets. POSITION: Information design and strategic communication.},
-  keywords = {information-design, transparency, disclosure, mechanism-design, High}
+  pages = {14--29},
+  doi = {10.1177/1478929918790872},
+  note = {Geography: Continental Europe including Germany. Time period: 1990-2015. Data source: Labor force surveys, political economy analysis. Control variables: Employment status, sector, education, age. Main findings: Labor market dualization focuses on increasing disparities between securely employed market-insiders and expanding proportions of market-outsiders with more precarious employment positions. Approach extends insights from segmented labor market theory and insider/outsider theory, which explains economic inequality and unemployment based on assumption that insiders are in powerful bargaining position because replacement of workers implies transaction costs for employers. Relevance to hypotheses: H5 (theoretical foundations of dualization), H3 (insider-outsider wage effects).}
 }
 
-@article{hurwicz1973design,
-  author = {Hurwicz, Leonid},
-  title = {The Design of Mechanisms for Resource Allocation},
-  journal = {American Economic Review},
-  year = {1973},
-  volume = {63},
+
+@article{Biegert2017,
+  author = {Biegert, Thomas},
+  title = {Labor market institutions, the insider/outsider divide and social inequalities in employment in affluent countries},
+  journal = {Socio-Economic Review},
+  year = {2019},
+  volume = {17},
   number = {2},
-  pages = {1--30},
-  note = {CORE ARGUMENT: Foundational work establishing mechanism design as field. Analyzes how to design procedures (mechanisms) for resource allocation that lead to desired outcomes despite participants' private information and strategic behavior. Incentive compatibility as central concept. RELEVANCE: Foundational for understanding mechanism design framework. Establishes that procedural features of mechanisms matter for outcomes. Hurwicz's framework is basis for modern market design. Relevant for understanding procedural aspects of market justification. POSITION: Foundational mechanism design theory.},
-  keywords = {mechanism-design, resource-allocation, incentive-compatibility, foundational, Low}
+  pages = {255--281},
+  doi = {10.1093/ser/mwx042},
+  note = {Geography: 18 affluent countries including Germany. Time period: 2000-2011. Data source: EU-SILC, labor force surveys. Control variables: Age, gender, education, household type, country, time. Main findings: Institutions that arguably protect labor market insiders (employment protection, unionization, unemployment benefits) are frequently associated with greater inequality between typically disadvantaged groups and their insider peers. Insider-outsider divides appear to be strongest in continental Europe with regard to labor market inequalities, welfare inequalities and political integration. Continental welfare regimes reinforce labor market dualism by means of taxes and transfers: net wage gaps lie between 5-8 percentage points above gross wage gaps. Relevance to hypotheses: H5 (institutional mechanisms of dualization), comparative evidence for Germany.}
 }
 
-@article{kominers2022course,
-  author = {Kominers, Scott Duke and S{\"o}nmez, Tayfun and Akbarpour, Mohammad and Nikzad, Afshin},
-  title = {Matching Markets: Theory and Practice},
-  journal = {Econometrica},
-  year = {2022},
-  volume = {90},
-  number = {5},
-  pages = {1817--1865},
-  doi = {10.3982/ECTA19384},
-  note = {CORE ARGUMENT: Recent advances in matching market design combining theoretical insights with real-world implementations. Discusses kidney exchange, refugee resettlement, and school choice. Emphasizes fairness constraints, diversity requirements, and ethical considerations in matching design. RELEVANCE: Shows how market design increasingly incorporates explicit fairness and ethical constraints beyond efficiency. Relevant for understanding how normative concerns get integrated into mechanism design. Multiple constraints create trade-offs that might be subject to experimental evaluation. POSITION: Contemporary matching market design with fairness constraints.},
-  keywords = {matching-markets, fairness-constraints, market-design, applications, Medium}
+
+@article{Rueda2005,
+  author = {Rueda, David},
+  title = {Insider–Outsider Politics in Industrialized Democracies: The Challenge to Social Democratic Parties},
+  journal = {American Political Science Review},
+  year = {2005},
+  volume = {99},
+  number = {1},
+  pages = {61--74},
+  doi = {10.1017/S000305540505149X},
+  note = {Geography: OECD countries including Germany. Time period: 1970-2000. Data source: Comparative labor market data. Control variables: Union membership, employment status, industry. Main findings: Political conflict increasingly structured by insider-outsider divide. Insiders benefit from employment protection and have incentive to support policies that disadvantage outsiders. Social democratic parties face trade-off between representing core insider constituency and broader working class including outsiders. Political economy of insider-outsider division affects welfare state and labor market policy. Relevance to hypotheses: H5 (political economy of dualization), H3 (political determinants of wage policy).}
 }
 
-@article{satterthwaite1975strategy,
-  author = {Satterthwaite, Mark Allen},
-  title = {Strategy-Proofness and Arrow's Conditions: Existence and Correspondence Theorems for Voting Procedures and Social Welfare Functions},
-  journal = {Journal of Economic Theory},
-  year = {1975},
-  volume = {10},
+
+@incollection{Hauesermann2012,
+  author = {Häusermann, Silja and Schwander, Hanna},
+  title = {Varieties of Dualization? Labor Market Segmentation and Insider-Outsider Divides Across Regimes},
+  booktitle = {The Age of Dualization: The Changing Face of Inequality in Deindustrializing Societies},
+  publisher = {Oxford University Press},
+  editor = {Emmenegger, Patrick and Häusermann, Silja and Palier, Bruno and Seeleib-Kaiser, Martin},
+  year = {2012},
+  pages = {27--51},
+  note = {Geography: Comparative analysis of welfare regimes, strong focus on Germany. Time period: 1980-2010. Data source: Comparative labor market indicators, employment statistics. Main findings: Dualization takes different forms across welfare regimes. Continental European countries including Germany show strongest forms of employment-based dualization. Labor market segmentation varies systematically across welfare state types. Insider protection combined with outsider flexibility characterizes German trajectory. Dualization is not uniform phenomenon but shaped by institutional context. Relevance to hypotheses: H5 (varieties of dualization, Germany's specific pattern).}
+}
+
+
+@article{Emmenegger2009,
+  author = {Emmenegger, Patrick},
+  title = {Barriers to Entry: Insider/Outsider Politics and the Political Determinants of Job Security Regulations},
+  journal = {Journal of European Social Policy},
+  year = {2009},
+  volume = {19},
   number = {2},
-  pages = {187--217},
-  doi = {10.1016/0022-0531(75)90050-2},
-  note = {CORE ARGUMENT: Establishes impossibility result: no voting mechanism can simultaneously satisfy strategy-proofness, unrestricted domain, and Pareto efficiency for three or more alternatives. Mechanism design faces fundamental trade-offs. Connects social choice theory to mechanism design. RELEVANCE: Important impossibility result showing that desirable procedural properties may be incompatible. Relevant for understanding that procedural experimentalism must navigate real constraints—not all normative ideals can be simultaneously satisfied. Trade-offs require judgment calls. POSITION: Impossibility results in mechanism design.},
-  keywords = {mechanism-design, impossibility-results, strategy-proofness, Low}
+  pages = {131--146},
+  doi = {10.1177/0958928708101866},
+  note = {Geography: Western Europe including Germany. Time period: 1985-2003. Data source: OECD employment protection indicators, political data. Control variables: Government partisanship, union strength, unemployment rate. Main findings: Insider-outsider politics shapes employment protection legislation. Strong unions and left governments protect insiders while being less responsive to outsiders. Employment protection reforms often increase dualization rather than reducing it. Political economy analysis shows how policies institutionalize insider-outsider divide. Relevance to hypotheses: H5 (political determinants of dualization), H3 (policy effects on employment and wages).}
 }
 
-@article{pathak2013school,
-  author = {Pathak, Parag A. and S{\"o}nmez, Tayfun},
-  title = {School Admissions Reform in Chicago and England: Comparing Mechanisms by Their Vulnerability to Manipulation},
-  journal = {American Economic Review},
+
+@article{Marx2012,
+  author = {Marx, Paul},
+  title = {Dualization and Institutional Complementarities: Industrial Relations, Labor Market and Welfare State Changes in France and Germany},
+  journal = {Journal of European Social Policy},
+  year = {2012},
+  note = {Geography: France and Germany. Time period: 1990-2010. Data source: Institutional analysis, labor market statistics. Control variables: Employment status, sector, welfare entitlements. Main findings: Dualization operates through institutional complementarities across industrial relations, labor market, and welfare state. Changes in one domain reinforce dualization in others. Germany and France show strong complementarities that stabilize dualized equilibrium. Welfare state institutions perpetuate labor market dualization rather than compensating for it. Relevance to hypotheses: H5 (institutional complementarities), H3 (how industrial relations affect wages).}
+}
+
+
+@article{Davidsson2015,
+  author = {Davidsson, Johan Bo and Emmenegger, Patrick},
+  title = {Defending the organisation, not the members: Unions and the reform of job security legislation in Western Europe},
+  journal = {European Journal of Political Research},
   year = {2013},
-  volume = {103},
-  number = {1},
-  pages = {80--106},
-  doi = {10.1257/aer.103.1.80},
-  note = {CORE ARGUMENT: Empirically compares school choice mechanisms in Chicago and England, showing differential vulnerability to strategic manipulation. Strategy-proof mechanisms reduce unfairness from information advantages. Real-world evidence shows procedural features significantly affect who benefits. RELEVANCE: Demonstrates that procedural details have real consequences for fairness and manipulation. Empirical validation of mechanism design principles. Relevant for procedural experimentalism: shows that experiments (even natural ones) can reveal procedural strengths and weaknesses. POSITION: Empirical mechanism design and manipulation.},
-  keywords = {mechanism-design, manipulation, empirical, school-choice, High}
+  volume = {52},
+  number = {3},
+  pages = {339--363},
+  doi = {10.1111/j.1475-6765.2012.02085.x},
+  note = {Geography: Western Europe including Germany. Time period: 1985-2008. Data source: Union membership data, employment protection indicators. Control variables: Union density, unemployment, government type. Main findings: Unions often prioritize organizational survival over broad membership interests, contributing to dualization. Unions more likely to protect core insider members than represent outsiders. Union behavior helps explain persistence of dualized labor markets. Organizational logic of unions reinforces insider-outsider divide. Relevance to hypotheses: H5 (union role in dualization), H3 (union effects on wage distribution).}
 }
 
-@article{varian2007position,
-  author = {Varian, Hal R.},
-  title = {Position Auctions},
-  journal = {International Journal of Industrial Organization},
-  year = {2007},
-  volume = {25},
-  number = {6},
-  pages = {1163--1178},
-  doi = {10.1016/j.ijindorg.2006.10.002},
-  note = {CORE ARGUMENT: Analyzes position auctions used for online advertising (e.g., Google AdWords). Generalized second-price auction achieves efficiency while maintaining incentive compatibility. Shows how auction design shapes online markets with billions in stakes. RELEVANCE: Important application of mechanism design to digital markets. Relevant for understanding auction mechanisms in automated/algorithmic contexts. Position auctions often involve algorithmic bidding, connecting to agentic markets. POSITION: Position auctions and online advertising markets.},
-  keywords = {auctions, online-markets, mechanism-design, applications, Low}
-}
-
-@article{bogomolnaia2001new,
-  author = {Bogomolnaia, Anna and Moulin, Herv{\'e}},
-  title = {A New Solution to the Random Assignment Problem},
-  journal = {Journal of Economic Theory},
-  year = {2001},
-  volume = {100},
-  number = {2},
-  pages = {295--328},
-  doi = {10.1006/jeth.2000.2710},
-  note = {CORE ARGUMENT: Develops probabilistic serial mechanism for random assignment that satisfies strong fairness properties. Mechanism is ordinally efficient and envy-free. Shows how randomization can achieve fairness in indivisible goods allocation. RELEVANCE: Important for understanding fairness through procedural randomization. Probabilistic mechanisms are one way to balance competing fairness claims. Relevant for understanding procedural features that might be experimentally evaluated in agentic markets. POSITION: Random assignment and probabilistic mechanisms.},
-  keywords = {random-assignment, fairness, mechanism-design, Medium}
-}
