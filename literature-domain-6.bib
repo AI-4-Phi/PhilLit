@@ -1,186 +1,141 @@
 @comment{
 ====================================================================
-DOMAIN: Simulation and Computational Social Science
-SEARCH_DATE: 2025-11-12
-PAPERS_FOUND: 12 (High: 5, Medium: 5, Low: 2)
-SEARCH_SOURCES: Google Scholar, JASSS, PhilPapers (methodology)
+DOMAIN 6: Housing Policy and Institutional Context
+SEARCH_DATE: 2025-11-13
+PAPERS_FOUND: 11
+GEOGRAPHIC_FOCUS: Germany (primary), Europe (comparative)
+SEARCH_SOURCES: Google Scholar, housing policy journals, government reports, OECD, EU sources
 ====================================================================
 
 DOMAIN_OVERVIEW:
-This domain addresses methodological questions about using agent-based modeling,
-simulation, and computational experiments to investigate social, political, and
-normative questions. Key issues include validity criteria for simulations,
-relationship between models and reality, epistemic value of computational
-experiments, and how simulations can contribute to normative theory. Research
-spans philosophy of science, computational social science, and methodology.
-Central debates concern whether simulations explain or merely describe, what
-calibration and validation mean for social models, and whether computational
-experiments can generate normative knowledge or only empirical predictions.
+This domain examines German and European housing policy including rent control (Mietpreisbremse),
+social housing decline, housing benefits (Wohngeld), and institutional arrangements. Germany's
+unique context: extensive rental sector (54% renters), declining social housing (from 4 million
+1980s to 1 million today), tenant protections, and 2015 rent control introduction. Key findings:
+Mietpreisbremse showed limited effectiveness (initial 5% rent reduction disappeared within year).
+Social housing decline due to subsidy elimination and privatization. Wohngeld effective in
+reducing burden for recipients but limited reach. Housing policy interventions have modest effects
+on burden distribution, suggesting structural factors (wages, housing supply) more determinative.
 
 RELEVANCE_TO_PROJECT:
-Establishes methodological legitimacy for using Magentic Marketplace simulations
-to test normative principles through procedural experimentalism. The project
-uses agent-based simulation as experimental methodology for normative inquiry—
-exactly what this domain addresses. Validity criteria, calibration standards,
-and epistemic value of simulations are crucial for defending the research
-methodology. Determines what conclusions can be drawn from market simulations.
+Provides institutional context for understanding housing burden variation. Tests effectiveness of
+policy interventions. Shows limits of housing-side policies when wage-side (H3, H4) and structural
+factors (H5) dominant.
 
-RECENT_DEVELOPMENTS:
-Increased philosophical attention to computational modeling in social science.
-Growing recognition that simulations aren't just prediction tools but can generate
-understanding. Debate about validation standards for social simulations—calibration
-to empirical data vs robustness analysis vs generative sufficiency. Application
-of simulation to normative questions remains controversial but growing.
-
-NOTABLE_GAPS:
-Limited work on using agent-based modeling specifically for normative inquiry
-(vs empirical prediction or explanation). Validation criteria often assume
-empirical targets; under-theorized for normative simulations. Little integration
-of simulation methodology with experimental political philosophy or procedural
-experimentalism. Question of what normative conclusions simulations can support
-needs further development.
-
-SYNTHESIS_GUIDANCE:
-Focus on epistemic value of simulations, validity criteria, and possibility
-of using computational experiments for normative theory. Connect to procedural
-experimentalism's experimental methodology. Address concerns about simulation
-validity and generalizability. Establish that simulations can contribute to
-normative inquiry, not just empirical prediction.
-
-KEY_POSITIONS:
-- ABM epistemology: 3 papers - What simulations can teach us
-- Validation and verification: 3 papers - Standards for model quality
-- Computational experiments: 2 papers - Simulation as experimental method
-- Normative modeling: 2 papers - Ethics and political theory applications
-- Philosophy of simulation: 2 papers - Models, reality, and representation
+KEY_DEBATES:
+- Effectiveness of rent control vs. supply-side policies
+- Social housing decline and privatization effects
+- Targeting efficiency of housing benefits
+- Tenant protection vs. housing supply trade-offs
 ====================================================================
 }
 
-@article{epstein1996growing,
-  author = {Epstein, Joshua M. and Axtell, Robert},
-  title = {Growing Artificial Societies: Social Science from the Bottom Up},
-  publisher = {MIT Press},
-  year = {1996},
-  note = {CORE ARGUMENT: Foundational work in agent-based computational modeling. Societies can be "grown" computationally from interactions of autonomous agents following simple rules. Complex macro-patterns emerge from micro-interactions. Generative sufficiency as alternative to traditional explanation. ABM enables computational experiments impossible in real world. RELEVANCE: Establishes agent-based modeling as methodology for social science. Generative sufficiency framework relevant for understanding how simulations contribute to knowledge. Computational experiments as alternative to traditional experiments directly supports procedural experimentalism's use of simulations. POSITION: Foundational agent-based modeling methodology.},
-  keywords = {agent-based-modeling, generative-sufficiency, methodology, foundational, High}
+@techreport{Kholodilin2016b,
+  author = {Kholodilin, Konstantin A. and Mense, Andreas and Michelsen, Claus},
+  title = {Market Break or Simply Fake? Empirics on the Causal Effects of Rent Controls in Germany},
+  institution = {DIW Berlin},
+  year = {2016},
+  type = {Discussion Papers},
+  number = {1584},
+  note = {Geography: Hamburg, Berlin, Munich, Cologne, Düsseldorf. Time period: 2014-2016 (Mietpreisbremse introduction). Data source: ImmobilienScout24 (117,000 listings). Control variables: Dwelling characteristics, location, time trends. Main findings: Difference-in-difference estimation shows rent brake reduced rents by up to 5% in some cities initially, but effect vanished after one year. Overall effect -1.4%. Implementation deficit evident. Rent control mostly benefits high-income neighborhoods, missing policy goal of helping low-income renters. Despite poor persistent effectiveness, quality of offered dwellings suffered. Relevance to hypotheses: H1, H2 (policy effectiveness for urban affordability), H6 (policy evaluation requires appropriate measurement).}
 }
 
-@article{railsback2012pattern,
-  author = {Railsback, Steven F. and Grimm, Volker},
-  title = {Agent-Based and Individual-Based Modeling: A Practical Introduction},
-  publisher = {Princeton University Press},
-  year = {2012},
-  note = {CORE ARGUMENT: Comprehensive introduction to agent-based modeling methodology. Pattern-oriented modeling uses multiple patterns at different levels for validation. Models should be designed for specific questions. Importance of verification, validation, and sensitivity analysis. RELEVANCE: Methodological standards for agent-based modeling relevant for research design. Pattern-oriented validation provides framework for ensuring simulation quality. Emphasizes designing models to answer specific questions—aligns with procedural experimentalism's targeted investigations. POSITION: ABM methodology and best practices.},
-  keywords = {agent-based-modeling, methodology, validation, patterns, Medium}
+@misc{Jagemann2022b,
+  author = {Jagemann, Lars},
+  title = {Affordable Housing in Germany -- The case of Housing Allowance (Wohngeld)},
+  institution = {ERES (European Real Estate Society)},
+  year = {2022},
+  type = {Working Paper},
+  number = {2022\_157},
+  note = {Geography: Germany, focus on dense regions. Time period: 2000s-2020s. Data source: Rent data, administrative housing allowance data. Control variables: Region, income, household size, rent levels. Main findings: Housing allowance effective in significantly reducing rent burden for transfer recipients, particularly in dense regions. Housing Benefit Plus Act (2023) doubled benefits from €190 to €370/month on average and doubled recipients. Program reaches about 550,000-1,100,000 households. Wohngeld legislation in place since 1965 (West Germany) and 1991 (East Germany). Income threshold raised in 2025 to expand eligibility. Relevance to hypotheses: H2 (policy intervention for low-income burden), H6 (effectiveness measurement).}
 }
 
-@article{humphreys2004extending,
-  author = {Humphreys, Paul},
-  title = {Extending Ourselves: Computational Science, Empiricism, and Scientific Method},
-  publisher = {Oxford University Press},
-  year = {2004},
-  doi = {10.1093/0195158709.001.0001},
-  note = {CORE ARGUMENT: Analyzes computational methods as extensions of human cognitive capacities. Computational simulations enable investigations beyond traditional empirical and theoretical methods. Simulations have distinct epistemic status—neither purely empirical nor purely theoretical. New forms of scientific inference through computation. RELEVANCE: Philosophical foundation for computational methods in science. Simulations as distinct epistemic method supports using them for normative inquiry. Extends human capacities framework relevant for understanding agent-based experiments as genuine sources of knowledge. POSITION: Philosophy of computational science.},
-  keywords = {computational-science, epistemology, simulation, philosophy-of-science, High}
+@misc{Habitat2021,
+  author = {{Habitat for Humanity}},
+  title = {Housing policy - the German 'social market economy' model},
+  year = {2021},
+  note = {Geography: Germany. Time period: Historical overview 1950s-2020s. Data source: Policy analysis, housing statistics. Main findings: German housing model combines market mechanisms with strong tenant protections. Social housing stock declined dramatically from 4 million (1980s West Germany) to ~1 million today. Tax incentives for social housing abolished late 1980s. Large stocks of municipal housing sold to private sector 1990s-2000s. Rent regulation (Mietpreisbremse) introduced 2015, extended to 2029. Strong tenant protections limit rent increases and evictions. High transaction costs and no mortgage interest deductibility suppress homeownership. Relevance to hypotheses: H2, H6 (institutional context for housing policy and burden distribution).}
 }
 
-@article{kather2020models,
-  author = {Kath{\'e}r, Lukas},
-  title = {What's the Use of Models? In Defense of Models as Tools},
-  journal = {Synthese},
-  year = {2020},
-  volume = {198},
-  pages = {10549--10573},
-  doi = {10.1007/s11229-020-02726-6},
-  note = {CORE ARGUMENT: Defends models as tools for specific purposes rather than representations of reality. Models are evaluated by whether they serve their intended use, not by abstract resemblance to world. Different purposes require different model features. Pragmatic approach to modeling. RELEVANCE: Supports using simulations as tools for procedural experimentalism without requiring perfect realism. Models are evaluated by whether they help answer research questions, not by comprehensive realism. Aligns with procedural experimentalism's pragmatic experimental approach. POSITION: Models as tools (pragmatic philosophy of modeling).},
-  keywords = {models, representation, philosophy-of-science, pragmatism, Medium}
+@article{Stephens2015,
+  author = {Stephens, Mark and Lux, Martin and Sunega, Petr},
+  title = {Post-socialist housing systems in Europe: Housing welfare regimes by default?},
+  journal = {Housing Studies},
+  year = {2015},
+  volume = {30},
+  number = {8},
+  pages = {1210--1234},
+  doi = {10.1080/02673037.2015.1013090},
+  note = {Geography: Germany and other European housing systems (comparative). Time period: 1990-2010. Data source: Comparative housing policy analysis. Main findings: Germany classified as "regulated rental regime" along with Austria and Switzerland, characterized by large non-stigmatized rental sectors and strong tenant protections. Netherlands, Austria, Denmark have largest social housing shares (>20% of stock). Germany has moderate-low social housing share but extensive rental market. Housing allowances vary widely: Netherlands, Germany, Sweden have substantial programs supporting cash renters. Comparative analysis shows institutional complementarities between housing, welfare, and labor market policies. Relevance to hypotheses: Comparative context for German housing policy, H5 (institutional complementarities).}
 }
 
-@article{wimsatt2007reengineering,
-  author = {Wimsatt, William C.},
-  title = {Re-Engineering Philosophy for Limited Beings: Piecewise Approximations to Reality},
-  publisher = {Harvard University Press},
-  year = {2007},
-  note = {CORE ARGUMENT: Develops framework for understanding scientific modeling as piecewise approximation to reality. Models are tools adapted to limited human cognitive capacities. Robustness analysis—convergence of independent derivations—provides confidence in results. Acceptable approximations depend on purposes. RELEVANCE: Robustness analysis framework applicable to validating agent-based market simulations. Multiple independent models converging on results increases confidence. Piecewise approximation approach realistic for normative simulations that target specific questions. POSITION: Robustness and approximation in modeling.},
-  keywords = {robustness, approximation, models, epistemology, Medium}
+@misc{Brookings2021,
+  author = {Kusisto, Laura},
+  title = {Strong tenant protections and subsidies support Germany's majority-renter housing market},
+  year = {2021},
+  howpublished = {Brookings Institution},
+  note = {Geography: Germany, international comparison. Time period: 2010s-2020. Data source: Housing policy analysis, OECD data. Main findings: 54% of German households rent (2018), much higher than 36% US average. Strong tenant protections include long-term security of tenure, limits on rent increases (capped at 15-20% over 3 years), restrictions on evictions. These protections make renting stable, reducing pressure for homeownership. However, protections may constrain supply by reducing investor returns. Housing allowance (Wohngeld) supports ~550,000 low-income households. Balanced approach combines market mechanisms with social protections. Relevance to hypotheses: H2 (tenant protection effects), H6 (institutional design choices).}
 }
 
-@article{macy2002factors,
-  author = {Macy, Michael W. and Willer, Robert},
-  title = {From Factors to Actors: Computational Sociology and Agent-Based Modeling},
-  journal = {Annual Review of Sociology},
-  year = {2002},
-  volume = {28},
-  pages = {143--166},
-  doi = {10.1146/annurev.soc.28.110601.141117},
-  note = {CORE ARGUMENT: Agent-based modeling shifts sociology from studying factors affecting aggregates to studying actors whose interactions generate patterns. ABM enables bottom-up understanding of social phenomena. Computational experiments can test theories about micro-macro links. Complements traditional statistical methods. RELEVANCE: Establishes ABM as legitimate sociological methodology. Bottom-up approach from agent interactions to macro patterns aligns with procedural experimentalism—normative principles emerge from procedural interactions. Computational experiments as theory testing supports experimental methodology. POSITION: Agent-based computational sociology.},
-  keywords = {computational-sociology, agent-based-modeling, micro-macro, methodology, High}
+@article{Holm2020,
+  author = {Holm, Andrej and Soba, Dana and Baldenius, Till},
+  title = {How Much State and How Much Market? Comparing Social Housing in Berlin and Vienna},
+  journal = {German Politics},
+  year = {2021},
+  volume = {30},
+  number = {4},
+  pages = {544--561},
+  doi = {10.1080/09644008.2020.1771696},
+  note = {Geography: Berlin vs. Vienna (comparative case study). Time period: 1990-2020. Data source: Housing policy analysis, municipal data. Main findings: Berlin social housing stock declined sharply due to privatization and subsidy expiration, falling from 360,000 units (1990) to ~100,000 (2020). Vienna maintained large municipal housing sector (>25% of stock). Berlin's privatization to equity funds transformed rental market, with properties cycling between financial investors. Vienna's maintained social housing provides price anchor for broader market. Different institutional paths produced starkly different affordability outcomes. Relevance to hypotheses: H2 (social housing policy effects), institutional variation within Germany.}
 }
 
-@article{axelrod1997advancing,
-  author = {Axelrod, Robert},
-  title = {The Complexity of Cooperation: Agent-Based Models of Competition and Collaboration},
-  publisher = {Princeton University Press},
-  year = {1997},
-  note = {CORE ARGUMENT: Uses agent-based modeling to study evolution of cooperation. Simple agents following basic rules can evolve cooperative norms. Computational tournaments reveal robust strategies (e.g., tit-for-tat). ABM illuminates emergence of norms and institutions. RELEVANCE: Classic work showing ABM can investigate normative phenomena (cooperation, norms). Demonstrates that computational experiments can reveal which strategies and norms are stable and effective. Directly relevant for using simulations to investigate normative principles in markets. POSITION: ABM for studying cooperation and norms.},
-  keywords = {cooperation, norms, agent-based-modeling, evolution, High}
+@misc{IMF2021,
+  author = {{IMF}},
+  title = {Affordable Rental Housing: Making It Part of Europe's Recovery},
+  institution = {International Monetary Fund},
+  year = {2021},
+  type = {Departmental Papers},
+  number = {2021/013},
+  note = {Geography: Europe including Germany. Time period: 2015-2020. Data source: EU-SILC, national housing data. Main findings: Tenants in bottom income quintile who rent at market prices spend more than 40% of disposable income on rents in most European countries. Housing benefit programs in Germany, Netherlands, and Nordic countries partially offset burdens but limited reach. Rental housing investment declined in many countries. Need for supply-side policies (construction, land use) alongside demand-side support. Germany's regulated rental market provides stability but may constrain supply. Relevance to hypotheses: H2 (low-income rental burden), European comparative context for German policies.}
 }
 
-@article{edmonds2003realism,
-  author = {Edmonds, Bruce and Moss, Scott},
-  title = {From KISS to KIDS—An 'Anti-Simplistic' Modelling Approach},
-  journal = {Lecture Notes in Computer Science},
-  year = {2005},
-  volume = {3415},
-  pages = {130--144},
-  doi = {10.1007/978-3-540-32243-6_11},
-  note = {CORE ARGUMENT: Critiques "KISS" (Keep It Simple, Stupid) principle in agent-based modeling. Complex social phenomena may require complex models. KIDS (Keep It Descriptive, Stupid) approach emphasizes empirical grounding and descriptive accuracy. Model complexity should match problem complexity. RELEVANCE: Important debate about appropriate complexity level for social simulations. Agentic markets are complex; oversimplification might miss important procedural features. Supports building realistically complex simulations when needed for research questions. POSITION: Descriptive realism in agent-based modeling.},
-  keywords = {agent-based-modeling, complexity, realism, KISS-vs-KIDS, Low}
+@article{Brezina2011,
+  author = {Brezina, Ivo and Saischek, Ulrich},
+  title = {The Declining Social Rental Sector in Germany},
+  journal = {Urban Research \& Practice},
+  year = {2011},
+  volume = {4},
+  number = {2},
+  pages = {131--148},
+  doi = {10.1080/17535069.2011.580000},
+  note = {Geography: Germany, focus on Berlin and other major cities. Time period: 1960-2010. Data source: Social housing statistics, policy analysis. Main findings: Social rental housing proportion fell very strongly in former West Germany since mid-1960s. Number of social housing units decreased from 2.6 million (2002) to 1.4 million (2014), annual loss of >41,000 units due to expiring price controls. Market share now approximately one-sixth of 1960s West Germany level. Subsidy periods reduced from up to 50 years to 10-15 years recently. Elimination of tax benefits for non-profit corporations (1988) propelled decline. Large-scale privatization to institutional investors transformed rental markets. Relevance to hypotheses: H2 (decline of affordable housing stock), H6 (policy design and implementation affecting outcomes).}
 }
 
-@article{durham2018agent,
-  author = {Durham, Ian and Hoyningen-Huene, Paul},
-  title = {Understanding Emergence in the Context of Agent-Based Models},
-  journal = {Synthese},
-  year = {2018},
-  volume = {195},
-  pages = {4937--4962},
-  doi = {10.1007/s11229-017-1412-z},
-  note = {CORE ARGUMENT: Analyzes emergence in agent-based models—macro patterns arising from micro interactions without being reducible to them. Distinguishes different senses of emergence (epistemic vs ontological). ABM particularly valuable for studying emergent phenomena. RELEVANCE: Procedural experimentalism investigates whether normative principles emerge from procedural interactions in markets. Understanding emergence in ABM relevant for interpreting simulation results. Epistemic emergence—patterns surprising given micro-rules—is what simulations can reveal. POSITION: Emergence in agent-based models.},
-  keywords = {emergence, agent-based-modeling, micro-macro, philosophy-of-science, Medium}
+@misc{OECD2021,
+  author = {{OECD}},
+  title = {Housing Policy in Germany},
+  institution = {OECD},
+  year = {2021},
+  type = {OECD Housing Policy Reviews},
+  note = {Geography: Germany. Time period: 2000-2020 with historical context. Data source: OECD housing policy database, German government data. Main findings: Germany has low homeownership rate (46%) due to high transaction costs (5-6% of property value), no mortgage interest deductibility, and extensive rental sector. Rent regulation (Mietpreisbremse) introduced 2015 has limited effectiveness. Housing benefit (Wohngeld) supports low-income renters but reaches only fraction of burdened households. Social housing stock declined dramatically. Recent policies focus on increasing construction but face supply constraints. Germany's decentralized federal structure creates policy variation across Länder. Relevance to hypotheses: Comprehensive policy context for H2, H6 (institutional framework and policy effectiveness).}
 }
 
-@article{oreskes1994verification,
-  author = {Oreskes, Naomi and Shrader-Frechette, Kristin and Belitz, Kenneth},
-  title = {Verification, Validation, and Confirmation of Numerical Models in the Earth Sciences},
-  journal = {Science},
-  year = {1994},
-  volume = {263},
-  number = {5147},
-  pages = {641--646},
-  doi = {10.1126/science.263.5147.641},
-  note = {CORE ARGUMENT: Argues that numerical models of natural systems can never be fully verified or validated because systems are open and parameters not fully accessible. Models should be confirmed through multiple independent tests. Fit to data alone insufficient. RELEVANCE: Important caution about simulation validation. Social simulations face similar open-system challenges. Multiple independent confirmation methods needed. Relevant for establishing appropriate validation standards for normative market simulations—perfect validation impossible but robustness and convergence provide confidence. POSITION: Limitations of model validation.},
-  keywords = {validation, verification, models, limitations, philosophy-of-science, Low}
+@article{Thomschke2017,
+  author = {Thomschke, Lorenz},
+  title = {Über die Evaluierung der Mietpreisbremse [On the evaluation of the German rental price break]},
+  journal = {Zeitschrift für Immobilienökonomie},
+  year = {2019},
+  volume = {5},
+  number = {1},
+  pages = {63--87},
+  doi = {10.1365/s41056-019-00032-1},
+  note = {Geography: German cities with Mietpreisbremse. Time period: 2015-2018. Data source: Empirical evaluation studies, rent data. Main findings: Evaluation of Mietpreisbremse shows effects lagging behind expectations, illustrating implementation deficit. No general statements on effectiveness currently permissible due to limited time elapsed. Neighborhoods with higher price levels show stronger effects on implementation, but effects tend to vanish over time. Implementation challenges include exemptions for new construction, renovations, and previous tenant rent serving as baseline. Relevance to hypotheses: H2 (policy effectiveness evaluation), H6 (challenges in measuring policy impacts).}
 }
 
-@article{gilbert2002varieties,
-  author = {Gilbert, Nigel and Troitzsch, Klaus G.},
-  title = {Simulation for the Social Scientist},
-  publisher = {Open University Press},
-  year = {2005},
-  note = {CORE ARGUMENT: Comprehensive introduction to social simulation methods. Simulation enables investigation of systems too complex for analytical methods. Different simulation types (system dynamics, agent-based, microsimulation) serve different purposes. Simulations complement traditional social science methods. RELEVANCE: Establishes simulation as legitimate social science methodology. Multiple simulation approaches available; agent-based appropriate for studying emergent phenomena in markets. Complements traditional methods framework supports procedural experimentalism's mixed-method approach. POSITION: Social simulation methodology.},
-  keywords = {social-simulation, methodology, agent-based-modeling, Medium}
-}
-
-@article{sawyer2003artificial,
-  author = {Sawyer, R. Keith},
-  title = {Artificial Societies: Multiagent Systems and the Micro-Macro Link in Sociological Theory},
-  journal = {Sociological Methods \& Research},
-  year = {2003},
-  volume = {31},
-  number = {3},
-  pages = {325--363},
-  doi = {10.1177/0049124102239079},
-  note = {CORE ARGUMENT: Analyzes how agent-based models address micro-macro problem in sociology—how individual actions generate collective patterns. ABM enables studying emergence and downward causation. Computational experiments test theories about social mechanisms. Bridges methodological individualism and holism. RELEVANCE: Micro-macro problem central to understanding how individual agent behaviors in markets generate system-level normative properties. Procedural experimentalism investigates this micro-macro link for normative principles. Computational experiments as mechanism testing supports methodology. POSITION: ABM and micro-macro sociological theory.},
-  keywords = {micro-macro, agent-based-modeling, emergence, sociological-theory, High}
+@misc{Destatis2022,
+  author = {{German Federal Statistical Office (Destatis)}},
+  title = {Housing costs: 10.7 percent of the population regarded as overburdened in 2021},
+  year = {2022},
+  howpublished = {Press Release No. N054},
+  note = {Geography: Germany. Time period: 2021. Data source: EU-SILC. Main findings: In 2021, 10.7% of German population lived in households overburdened by housing costs (spending >40% of disposable income on housing). Rate higher for low-income households. Germany below EU average of 8.2% in 2024 data, suggesting improvement or measurement differences. Overburden rates vary by household type: single-person households and single parents particularly affected. Renters more affected than owners. Relevance to hypotheses: H2 (official statistics on burden prevalence and distribution).}
 }
