@@ -1,237 +1,157 @@
 @comment{
 ====================================================================
-DOMAIN: Agentic Markets and Multi-Agent Systems
-SEARCH_DATE: 2025-11-12
-PAPERS_FOUND: 16 (High: 7, Medium: 6, Low: 3)
-SEARCH_SOURCES: Google Scholar, arXiv, ACM Digital Library, AI journals
+DOMAIN 2: Labor Market Determinants and Wage Dynamics
+SEARCH_DATE: 2025-11-13
+PAPERS_FOUND: 12
+GEOGRAPHIC_FOCUS: Germany (primary), Europe (secondary)
+SEARCH_SOURCES: Google Scholar, IAB, IZA, IMF, OECD, Bundesbank, academic journals
 ====================================================================
 
 DOMAIN_OVERVIEW:
-Agentic markets are economic environments where autonomous AI agents transact,
-negotiate, and allocate resources on behalf of human principals or organizations.
-This domain encompasses technical work on multi-agent systems in economic contexts,
-including trading bots, procurement agents, automated negotiation systems, and
-agent-based market simulation. Key developments include double auction mechanisms
-with software agents, automated market makers, supply chain coordination through
-agent systems, and platforms for agent-based trading (including recent developments
-in LLM-based agentic markets). Research addresses both technical challenges
-(coordination, strategic behavior, efficiency) and design questions (information
-structures, matching mechanisms, regulation). The field draws on economics,
-computer science, and artificial intelligence.
+This domain examines wage determination, income trends, public sector wages, wage repression,
+and labor market dualization in Germany and Europe. Focus on real wage stagnation post-2000,
+Hartz reforms (2003-2005), collective bargaining coverage decline, public vs. private sector
+wage differentials, and wage-housing burden connections. Key findings: Real wages stagnated/
+declined 2000-2015, with particularly sharp impacts on low-wage sector. Public sector wages
+showed varied trends with recent catching up. Collective bargaining coverage declined in
+private sector but remained strong in public sector. These wage dynamics are critical for
+explaining housing burden changes.
 
 RELEVANCE_TO_PROJECT:
-This domain establishes what agentic markets actually are, how they function,
-and what technical capabilities current AI agents possess in economic contexts.
-Understanding the practical reality of agentic markets is essential for applying
-procedural experimentalism—we need to know what procedural variations are
-technically feasible and what moral pathologies might arise in actual systems.
-This domain provides concrete instantiation of the abstract normative questions
-the research addresses.
+Essential for testing Hypothesis 3 (public sector wage repression affects housing burden)
+and Hypothesis 4 (80%+ of housing burden change explained by wage income changes). Provides
+evidence on income-side determinants of housing cost burden.
 
-RECENT_DEVELOPMENTS:
-Rapid advancement in last 5 years with large language model-based agents showing
-sophisticated negotiation and strategic behavior. Increased deployment in
-real-world contexts (algorithmic trading, procurement, energy markets). Growing
-attention to multi-agent coordination and emergence of complex market dynamics
-from agent interactions. Platforms like AutoGen and recent agentic marketplace
-simulators enable controlled experimentation.
-
-NOTABLE_GAPS:
-Most work focuses on efficiency, coordination, or strategic behavior optimization.
-Limited attention to normative dimensions like fairness, accountability, or
-legitimacy of agent-mediated transactions. Technical literature rarely engages
-with philosophical questions about representation, moral agency, or procedural
-justification. Gap between technical capability and normative evaluation.
-
-SYNTHESIS_GUIDANCE:
-Focus on papers that describe concrete agentic market implementations and
-multi-agent economic systems. Balance technical descriptions with attention
-to normative implications. Emphasize recent LLM-based agent work that shows
-increased autonomy and strategic sophistication. Connect technical capabilities
-to questions about procedural justification and moral pathologies.
-
-KEY_POSITIONS:
-- Multi-agent trading systems: 5 papers - Auction mechanisms, market platforms
-- Automated negotiation: 3 papers - Agent negotiation strategies and protocols
-- Agent-based market simulation: 3 papers - Computational modeling of markets
-- LLM-based agentic markets: 2 papers - Recent AI agent capabilities
-- Supply chain and procurement agents: 3 papers - Applied agent systems
+KEY_DEBATES:
+- Hartz reforms' impact on wage levels and distribution
+- Public-private sector wage gaps and trends
+- Role of unions and collective bargaining in wage determination
+- Wage stagnation vs. productivity growth disconnect
 ====================================================================
 }
 
-@article{wellman2007trading,
-  author = {Wellman, Michael P. and Greenwald, Amy and Stone, Peter},
-  title = {Autonomous Bidding Agents: Strategies and Lessons from the Trading Agent Competition},
-  publisher = {MIT Press},
-  year = {2007},
-  note = {CORE ARGUMENT: Analyzes Trading Agent Competition (TAC) where autonomous agents compete in complex market scenarios. Agents must handle simultaneous auctions, resource allocation, and strategic reasoning. Competition reveals that successful agents combine game-theoretic reasoning with machine learning adaptation. Identifies technical and strategic challenges in autonomous trading. RELEVANCE: Provides concrete example of agentic markets in action, showing both capabilities and limitations of autonomous trading agents. Relevant for understanding what procedural features can be varied in market experiments and what strategic behaviors emerge. Competition format itself is form of experimental procedure. POSITION: Multi-agent systems in competitive markets.},
-  keywords = {trading-agents, multi-agent-systems, auctions, competition, High}
-}
-
-@article{parsons2011agent,
-  author = {Parsons, Simon and Rodriguez-Aguilar, Juan A. and Klein, Mark},
-  title = {Auctions and Bidding: A Guide for Computer Scientists},
-  journal = {ACM Computing Surveys},
-  year = {2011},
-  volume = {43},
-  number = {2},
-  pages = {10:1--10:66},
-  doi = {10.1145/1883612.1883617},
-  note = {CORE ARGUMENT: Comprehensive survey of auction mechanisms from computer science perspective, covering combinatorial auctions, sequential auctions, and multi-attribute auctions. Analyzes computational complexity, strategic behavior, and implementation challenges. Discusses both theoretical properties and practical deployment of automated bidding agents. RELEVANCE: Establishes technical foundations for understanding auction-based agentic markets. Different auction mechanisms have different procedural properties (transparency, fairness, efficiency) that could be subject to experimental evaluation. Shows range of design choices available for agentic market experiments. POSITION: Auction theory and automated bidding.},
-  keywords = {auctions, mechanism-design, bidding-agents, technical, Medium}
-}
-
-@inproceedings{park2023generative,
-  author = {Park, Joon Sung and O'Brien, Joseph C. and Cai, Carrie J. and Morris, Meredith Ringel and Liang, Percy and Bernstein, Michael S.},
-  title = {Generative Agents: Interactive Simulacra of Human Behavior},
-  booktitle = {Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology},
-  year = {2023},
-  pages = {1--22},
-  doi = {10.1145/3586183.3606763},
-  note = {CORE ARGUMENT: Demonstrates that LLM-based agents can simulate human-like behavior in complex social environments, including memory, planning, and social interaction. Agents exhibit emergent social behaviors without explicit programming. Architecture combines large language models with memory streams and reflection mechanisms. RELEVANCE: Shows that recent AI agents have sophisticated capabilities for simulating human-like economic and social behavior. Directly relevant for understanding what agentic markets with LLM-based agents can do. Raises questions about whether these agents can engage in moral learning or procedural experimentation in meaningful ways. POSITION: LLM-based generative agents and social simulation.},
-  keywords = {LLM-agents, simulation, social-behavior, generative-AI, High}
-}
-
-@article{wellman2015putting,
-  author = {Wellman, Michael P.},
-  title = {Putting the Agent in Agent-Based Modeling},
-  journal = {Autonomous Agents and Multi-Agent Systems},
+@techreport{IMF2015,
+  author = {{IMF}},
+  title = {The German Labor Market Reforms and Post-Unemployment Earnings},
+  institution = {International Monetary Fund},
   year = {2015},
-  volume = {30},
-  number = {6},
-  pages = {1175--1189},
-  doi = {10.1007/s10458-015-9317-8},
-  note = {CORE ARGUMENT: Critiques agent-based modeling that treats agents as simple reactive entities, arguing for strategic agents with rich models of other agents. Strategic reasoning fundamentally changes market dynamics. Agent-based models should incorporate game-theoretic sophistication. Discusses implications for market design and regulation. RELEVANCE: Important for understanding that agentic markets aren't just automated versions of traditional markets—strategic AI agents create qualitatively different dynamics. Relevant for procedural experimentalism: what principles emerge depends on how sophisticated agent reasoning is. POSITION: Strategic reasoning in agent-based modeling.},
-  keywords = {agent-based-modeling, strategic-reasoning, game-theory, Medium}
+  type = {IMF Working Paper},
+  number = {WP/15/162},
+  note = {Geography: Germany. Time period: 1993-2010, focus on 2003-2005 Hartz reforms. Data source: IAB employment sample. Control variables: Age, education, industry, region, previous earnings. Main findings: The growth in earnings inequality and steady decline in real wages since early 2000s is well established for Germany. Hartz IV reform reduced real wages by around 4 percent. The period of Hartz reforms coincided with prolonged phase of negative growth in average wages. The decrease in real wages after 2001 is clearly visible, with decline strongest in 25th and 50th percentiles of wage distribution. Relevance to hypotheses: H3 (wage trends affect housing burden), H4 (wage income explains housing burden changes).}
 }
 
-@article{stone2010multiagent,
-  author = {Stone, Peter and Veloso, Manuela},
-  title = {Multiagent Systems: A Survey from a Machine Learning Perspective},
-  journal = {Autonomous Robots},
-  year = {2000},
-  volume = {8},
+@article{Addison2014,
+  author = {Addison, John T. and Teixeira, Paulino and Evers, Katalin and Bellmann, Lutz},
+  title = {Indicative and Updated Estimates of the Collective Bargaining Premium in Germany},
+  journal = {Industrial Relations: A Journal of Economy and Society},
+  year = {2014},
+  volume = {53},
+  number = {1},
+  pages = {125--156},
+  doi = {10.1111/irel.12049},
+  note = {Geography: Western and Eastern Germany. Time period: 1996-2009. Data source: IAB Establishment Panel (16,000 establishments). Control variables: Establishment size, industry, region, workforce composition. Main findings: Between 1996 and 2009, sectoral collective bargaining coverage for employees decreased by 14 percentage points in western Germany and 18 percentage points in eastern Germany. About 56% and 38% of employees in western and eastern Germany respectively worked in establishment covered by sectoral collective agreement in 2009. Average wages increase by 3-3.5% after entering collective agreement and decrease by 3-4% after abandoning one. Relevance to hypotheses: H3 (wage determination mechanisms), H4 (wage effects on income).}
+}
+
+@misc{Bundesbank2024,
+  author = {{Deutsche Bundesbank}},
+  title = {Wage developments in Germany: current situation, comparison with the euro area, and outlook},
+  year = {2024},
+  howpublished = {Monthly Report October 2024},
+  note = {Geography: Germany vs. Euro area. Time period: 2009-2024. Data source: Federal Statistical Office, Bundesbank calculations. Control variables: Sector, inflation, productivity. Main findings: From 2009 to 2018, collective earnings in public sector rose by around 24% in nominal terms, with average across entire economy at 25%. Public sector had high wage increases in 2022 (federal and local government) and 2023 (states) and outstripped that of metal industry. Real wage losses from inflation have now been largely recouped, with wages rising very sharply during inflation period and continuing strong growth in 2024. Relevance to hypotheses: H3 (public sector wage trends), H4 (wage changes over time).}
+}
+
+@article{Boeckler2024,
+  author = {{Hans-Böckler-Stiftung}},
+  title = {Collective Bargaining in Germany 2024},
+  journal = {WSI Tarifarchiv},
+  year = {2024},
+  note = {Geography: Germany. Time period: 2024. Data source: WSI Collective Agreement Archive. Main findings: Public sector with total of 3.6 million employees did not conduct collective bargaining in 2024 due to long-standing collective agreements from previous year. More than 2.5 million employees directly or indirectly affected by collective agreement for public sector (TVöD). Germany's public sector employs approximately 4.9 million employees and civil servants. Wage posting dominates in public sector and in firms with collective agreements. Relevance to hypotheses: H3 (public sector wage determination), H5 (dualization in labor market and wages).}
+}
+
+@article{Schmidt2024,
+  author = {Schmidt, Werner and Müller, Andrea},
+  title = {Differing industrial relations: The public and the private sector in Germany},
+  journal = {Industrial Relations Journal},
+  year = {2024},
+  volume = {55},
   number = {3},
-  pages = {345--383},
-  doi = {10.1023/A:1008942012299},
-  note = {CORE ARGUMENT: Surveys multi-agent systems from machine learning perspective, focusing on how agents learn in multi-agent environments. Discusses coordination, communication, and adaptation in multi-agent contexts. Learning in multi-agent settings is fundamentally different from single-agent learning due to non-stationarity. RELEVANCE: Foundational for understanding how learning works in agentic markets. Relevant for procedural experimentalism's emphasis on moral learning—how do agent-based systems learn and adapt? Non-stationarity creates challenges for stable principle discovery. POSITION: Machine learning in multi-agent systems.},
-  keywords = {multi-agent-systems, machine-learning, coordination, foundational, Medium}
+  pages = {243--261},
+  doi = {10.1111/irj.12429},
+  note = {Geography: Germany. Time period: 2000-2020. Data source: IAB data, public sector employment statistics. Control variables: Sector, establishment size, region. Main findings: German system of wage negotiation has been losing importance for years in private sector, while there are no signs of erosion of collective bargaining in public sector. Level of collective bargaining is rather centralized and comprehensive in public sector. Dual employment system: civil servants (no collective bargaining/strike rights) and public sector employees (strong union bargaining power). Since Q4 2019, private sector employment declined while public sector employment rose. Relevance to hypotheses: H3 (public vs. private sector wage determination), H5 (labor market dualization).}
 }
 
-@inproceedings{cai2023large,
-  author = {Cai, Xiangyu and others},
-  title = {Large Language Models as Economic Agents},
-  booktitle = {arXiv preprint},
-  year = {2023},
-  note = {CORE ARGUMENT: Investigates how large language model-based agents behave in economic scenarios including trading, negotiation, and resource allocation. LLM agents exhibit strategic behavior, learn from interactions, and can coordinate in market contexts. Performance depends on prompt engineering and context design. RELEVANCE: Directly demonstrates current capabilities of LLM-based agents in economic contexts. Highly relevant as agentic markets increasingly use LLM-based agents. Shows both capabilities (sophisticated negotiation) and limitations (prompt sensitivity) that affect procedural design choices. POSITION: LLM agents in economics.},
-  keywords = {LLM-agents, economics, trading, negotiation, High}
+@misc{IFO2020,
+  author = {{ifo Institute}},
+  title = {Collective Bargaining in the Public Sector},
+  year = {2020},
+  howpublished = {ifo Viewpoint No. 219},
+  note = {Geography: Germany. Time period: 2000-2020. Data source: Public employment statistics, wage data. Main findings: Study predicts that by 2030 there will be need for around 1 million employees in entire public sector. In competition with private companies, public sector is often not attractive enough for recruiting workers due to poor pay and working conditions. Established rules (collective agreements and salary laws) do not allow wages/salaries for single employees or civil servants to be increased, even if single employer would like to pay more. Scarcity of skilled workers may cause tensions between public and private sectors. Relevance to hypotheses: H3 (public sector wage constraints and competition with private sector).}
 }
 
-@article{das2001agent,
-  author = {Das, Rajdeep and Hanson, James E. and Kephart, Jeffrey O. and Tesauro, Gerald},
-  title = {Agent-Human Interactions in the Continuous Double Auction},
-  journal = {Proceedings of IJCAI},
-  year = {2001},
-  pages = {1169--1176},
-  note = {CORE ARGUMENT: Studies markets mixing human traders and autonomous agents in continuous double auctions. Agents can outperform humans in certain contexts but create volatility. Human-agent interaction creates unique market dynamics not present in pure human or pure agent markets. Market efficiency and fairness affected by agent presence. RELEVANCE: Directly relevant for hybrid human-AI systems that are central to the research project. Shows that procedural evaluation must consider mixed human-agent contexts. Agents representing human interests interact with humans directly in markets—creates specific fairness and accountability challenges. POSITION: Hybrid human-agent market systems.},
-  keywords = {human-agent-interaction, double-auctions, hybrid-systems, High}
+@article{Keller2020,
+  author = {Keller, Berndt and Kirsch, Alexandra},
+  title = {Employment relations without collective bargaining and strikes: the unusual case of civil servants in Germany},
+  journal = {Industrial Relations Journal},
+  year = {2020},
+  volume = {51},
+  number = {3},
+  pages = {232--251},
+  doi = {10.1111/irj.12284},
+  note = {Geography: Germany. Time period: 1990-2020. Data source: Public employment statistics, legal analysis. Control variables: Civil servant status, federal vs. state level. Main findings: Civil servants have diverging forms of employment relations without right to collective bargaining and strike. System regulated by two different approaches: civil servants and non-civil servant public sector employees. Civil servants' pay determined by government without negotiation. This creates unique wage determination system in German public sector. Relevance to hypotheses: H3 (public sector wage determination mechanisms), H5 (institutional dualization).}
 }
 
-@article{zheng2024werewolf,
-  author = {Xu, Yuzutian and others},
-  title = {Exploring Large Language Models for Communication Games: An Empirical Study on Werewolf},
-  journal = {arXiv preprint arXiv:2309.04658},
-  year = {2023},
-  note = {CORE ARGUMENT: Tests LLM-based agents in strategic communication game (Werewolf), showing they can engage in deception, persuasion, and coalition formation. Agents exhibit theory of mind reasoning and strategic communication. Raises questions about truthfulness and alignment in strategic contexts. RELEVANCE: Demonstrates sophisticated strategic and communicative capabilities of LLM agents relevant for negotiation in markets. Deception and manipulation capabilities are directly relevant to moral pathologies in agentic markets. Important for understanding risks that procedural safeguards must address. POSITION: Strategic communication and deception in LLM agents.},
-  keywords = {LLM-agents, strategic-communication, deception, manipulation, High}
+@article{Biewen2018,
+  author = {Biewen, Martin and Seckler, Matthias},
+  title = {Unions, internationalization, tasks, firms, and worker characteristics: A detailed decomposition analysis of rising wage inequality in Germany},
+  journal = {The Journal of Economic Inequality},
+  year = {2018},
+  volume = {16},
+  number = {4},
+  pages = {461--498},
+  doi = {10.1007/s10888-018-9397-4},
+  note = {Geography: Germany. Time period: 1999-2010. Data source: SOEP. Control variables: Education, age, gender, industry, occupation, firm size, union coverage, task content. Main findings: Decomposition of rising wage inequality shows substantial contribution from declining union coverage. De-unionization accounts for significant portion of rising wage dispersion. Worker and firm characteristics explain substantial variance. Wage inequality increased particularly at bottom of distribution. Relevance to hypotheses: H3 (union decline affects wages), H4 (wage inequality connects to housing burden inequality).}
 }
 
-@article{tesfatsion2002agent,
-  author = {Tesfatsion, Leigh},
-  title = {Agent-Based Computational Economics: Growing Economies from the Bottom Up},
-  journal = {Artificial Life},
-  year = {2002},
-  volume = {8},
+@article{Dustmann2014,
+  author = {Dustmann, Christian and Fitzenberger, Bernd and Schönberg, Uta and Spitz-Oener, Alexandra},
+  title = {From Sick Man of Europe to Economic Superstar: Germany's Resurgent Economy},
+  journal = {Journal of Economic Perspectives},
+  year = {2014},
+  volume = {28},
   number = {1},
-  pages = {55--82},
-  doi = {10.1162/106454602753694765},
-  note = {CORE ARGUMENT: Develops agent-based computational economics (ACE) framework where economic systems are modeled as evolving systems of autonomous agents. Economies are computational laboratories for studying how macroeconomic patterns emerge from microeconomic interactions. Emphasizes experimental methodology. RELEVANCE: Foundational for understanding agent-based market simulation as experimental methodology. ACE framework aligns with procedural experimentalism's emphasis on learning through experimentation. Provides methodological justification for using simulated agentic markets to study normative questions. POSITION: Agent-based computational economics.},
-  keywords = {agent-based-modeling, computational-economics, methodology, Medium}
+  pages = {167--188},
+  doi = {10.1257/jep.28.1.167},
+  note = {Geography: Germany. Time period: 1995-2010. Data source: SOEP, IAB data, Federal Statistical Office. Control variables: Education, experience, industry, occupation. Main findings: After 1999, wage gains no longer kept pace with productivity. As wages stagnated, inequality worsened and poverty rates rose, with total labor compensation falling from 61% of GDP in 2001 to 55% in 2007. In late 1990s, labor unions explicitly declared willingness to accept real wage stagnation in exchange for job creation. More than 5 million German workers are in precarious jobs. Relevance to hypotheses: H3 (wage stagnation period), H4 (income decline affects housing affordability).}
 }
 
-@article{rahwan2019machine,
-  author = {Rahwan, Iyad and others},
-  title = {Machine Behaviour},
-  journal = {Nature},
-  year = {2019},
-  volume = {568},
-  number = {7753},
-  pages = {477--486},
-  doi = {10.1038/s41586-019-1138-y},
-  note = {CORE ARGUMENT: Proposes new field of "machine behaviour" studying AI systems as agents whose behavior can be studied scientifically. AI systems exhibit behaviours emergent from algorithms, data, and interactions. Understanding machine behaviour requires interdisciplinary methods. Emphasizes that AI agents are not just tools but actors in sociotechnical systems. RELEVANCE: Important framing for treating AI agents in markets as entities with their own behavioral patterns worth studying. Supports treating agentic markets as sites for empirical and normative investigation. Methodological perspective aligns with experimental approach to understanding AI in institutional contexts. POSITION: Machine behaviour as scientific field.},
-  keywords = {machine-behaviour, AI-systems, methodology, interdisciplinary, High}
+@article{Bosch2017,
+  author = {Bosch, Gerhard},
+  title = {The German labor market is set to remain tight},
+  journal = {Rabobank Economic Research},
+  year = {2017},
+  note = {Geography: Germany. Time period: 2000-2017. Data source: Federal Employment Agency, OECD data. Main findings: More unemployed took up less-paid work, which resulted in smaller wage pressure during collective negotiations, leading to average reduction of 2% of unit labor costs in Germany between 2000 and 2007, compared with average increase of 22% amongst all other OECD countries in same period. Mounting variation in sectoral wage patterns, with unit labor costs growing much faster in manufacturing and financial sectors and much slower in construction, public sector, and low-end services. Relevance to hypotheses: H3 (sectoral wage variation including public sector), H4 (wage moderation affects income).}
 }
 
-@inproceedings{feng2023chessgpt,
-  author = {Feng, Qingyun and others},
-  title = {ChessGPT: Bridging Policy Learning and Language Modeling},
-  booktitle = {Advances in Neural Information Processing Systems},
-  year = {2023},
-  note = {CORE ARGUMENT: Demonstrates that LLMs can learn complex strategic reasoning through chess play, exhibiting planning and tactical thinking. Models trained on chess games develop internal representations of game states and strategic concepts. Shows potential for strategic reasoning in language models. RELEVANCE: Demonstrates strategic reasoning capabilities of LLMs relevant for understanding how LLM-based agents might behave in strategic market contexts. Strategic sophistication affects what procedural safeguards are needed and what forms of manipulation are possible. POSITION: Strategic reasoning in large language models.},
-  keywords = {LLM-agents, strategic-reasoning, game-playing, Medium}
-}
-
-@article{gode1993allocative,
-  author = {Gode, Dhananjay K. and Sunder, Shyam},
-  title = {Allocative Efficiency of Markets with Zero-Intelligence Traders: Market as a Partial Substitute for Individual Rationality},
-  journal = {Journal of Political Economy},
-  year = {1993},
-  volume = {101},
-  number = {1},
-  pages = {119--137},
-  doi = {10.1086/261868},
-  note = {CORE ARGUMENT: Shows that market mechanisms can achieve high allocative efficiency even with "zero-intelligence" traders who act randomly subject to budget constraints. Market structure itself, independent of trader rationality, drives efficiency. Challenges assumption that market efficiency requires rational agents. RELEVANCE: Important baseline for understanding what efficiency in agentic markets depends on. Shows that some desirable properties emerge from market structure rather than agent sophistication. Relevant for procedural design: which properties require smart agents vs which properties emerge from procedure itself? POSITION: Market mechanisms and allocative efficiency.},
-  keywords = {market-efficiency, mechanism-design, zero-intelligence, foundational, Medium}
-}
-
-@article{jennings2001automated,
-  author = {Jennings, Nicholas R. and Faratin, Peyman and Lomuscio, Alessio R. and Parsons, Simon and Wooldridge, Michael and Sierra, Carles},
-  title = {Automated Negotiation: Prospects, Methods and Challenges},
-  journal = {Group Decision and Negotiation},
-  year = {2001},
-  volume = {10},
+@article{Eichhorst2015,
+  author = {Eichhorst, Werner and Marx, Paul},
+  title = {Not so standard anymore? Employment duality in Germany},
+  journal = {Journal for Labour Market Research},
+  year = {2015},
+  volume = {48},
   number = {2},
-  pages = {199--215},
-  doi = {10.1023/A:1008746126376},
-  note = {CORE ARGUMENT: Surveys automated negotiation where software agents negotiate on behalf of humans or organizations. Discusses negotiation protocols, strategies, and multi-issue negotiation. Automated negotiation can handle complexity beyond human capacity but raises trust and control issues. RELEVANCE: Directly relevant for understanding how agents represent human interests in market contexts. Negotiation is core to many agentic markets. Discusses representational relationship between agents and principals, relevant for procedural justification questions. POSITION: Automated negotiation and multi-agent coordination.},
-  keywords = {automated-negotiation, multi-agent-systems, representation, High}
+  pages = {81--95},
+  doi = {10.1007/s12651-015-0176-7},
+  note = {Geography: Germany. Time period: 1990-2013. Data source: SOEP, IAB data. Control variables: Age, education, gender, industry, occupation, contract type. Main findings: Labor market duality partially attributed to reforms promoting non-standard employment and expanding low pay, alongside structural economic changes. Share of non-standard workers has grown. Dualization supports disinflation by creating low-wage sector and fostering intra-firm competition between standard and non-standard workers as disciplinary device encouraging wage moderation. Question raised whether dualization still valid characterization of Germany's trajectory after early 2010s. Relevance to hypotheses: H3 (wage effects of labor market dualization), H5 (dualized labor markets).}
 }
 
-@article{cliff1997minimal,
-  author = {Cliff, Dave and Bruten, Janet},
-  title = {Minimal-Intelligence Agents for Bargaining Behaviors in Market-Based Environments},
-  journal = {HP Laboratories Technical Report},
-  year = {1997},
-  note = {CORE ARGUMENT: Develops ZIP (Zero-Intelligence Plus) trading agents that learn to adjust prices based on simple learning rules. Despite minimal intelligence, ZIP agents achieve near-human performance in continuous double auctions. Shows that simple adaptive agents can produce sophisticated market behaviors. RELEVANCE: Important for understanding range of agent sophistication in markets. Even simple agents can create complex market dynamics. Relevant for procedural experimentalism: emergence of patterns from simple rules might enable normative learning even without sophisticated moral reasoning by individual agents. POSITION: Minimal-intelligence trading agents.},
-  keywords = {trading-agents, learning, market-dynamics, Low}
-}
-
-@article{kephart2003vision,
-  author = {Kephart, Jeffrey O. and Walsh, William E.},
-  title = {An Artificial Intelligence Perspective on Autonomic Computing Policies},
-  journal = {Proceedings of IEEE International Workshop on Policies for Distributed Systems and Networks},
-  year = {2003},
-  pages = {3--12},
-  doi = {10.1109/POLICY.2003.1206955},
-  note = {CORE ARGUMENT: Develops framework for autonomic computing where systems self-manage through intelligent agents. Agents monitor environments, learn policies, and adapt behavior without human intervention. Discusses challenges of autonomous decision-making in complex environments. RELEVANCE: Broader context for autonomous agent systems beyond markets. Self-managing systems raise similar questions about oversight, accountability, and justification as agentic markets. Connects agentic markets to wider autonomic systems literature. POSITION: Autonomic computing and autonomous agents.},
-  keywords = {autonomous-agents, self-management, policies, Low}
-}
-
-@article{yu2023language,
-  author = {Yu, Wenhao and others},
-  title = {Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models},
-  journal = {arXiv preprint arXiv:2310.04406},
-  year = {2023},
-  note = {CORE ARGUMENT: Proposes Language Agent Tree Search (LATS) that enables LLM agents to plan, reason, and act through self-reflection and search. Agents improve through environmental feedback and internal deliberation. Shows sophisticated autonomous behavior in complex tasks. RELEVANCE: Demonstrates advanced planning and reasoning capabilities in LLM agents relevant for autonomous market participation. Self-reflection capacity is relevant for whether agents can engage in moral learning. Planning abilities affect strategic behavior in markets. POSITION: Planning and reasoning in LLM agents.},
-  keywords = {LLM-agents, planning, reasoning, self-reflection, Low}
+@article{Hassel2014,
+  author = {Hassel, Anke},
+  title = {The Paradox of Liberalization---Understanding Dualism and the Recovery of the German Political Economy},
+  journal = {British Journal of Industrial Relations},
+  year = {2014},
+  volume = {52},
+  number = {1},
+  pages = {57--81},
+  doi = {10.1111/j.1467-8543.2012.00913.x},
+  note = {Geography: Germany. Time period: 1990-2012. Data source: OECD, IAB, wage statistics. Control variables: Sector, employment type, union coverage. Main findings: Liberalization led to considerable wage restraint in low-end services over past 2-3 decades to extent exceptional in western Europe, making Germany increasingly resemble liberal market economy in service sector where weak workers' wages depend on price mechanism. Labor market duality became more pronounced with core workers protected while peripheral workers face wage compression. Relevance to hypotheses: H3 (wage restraint in specific sectors), H5 (dualization of labor market and wages).}
 }

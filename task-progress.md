@@ -9,12 +9,12 @@
 ## Progress Status
 
 - [X] Phase 1: Planning (lit-review-plan.md)
-- [ ] Phase 2: Literature Search - Domain 1 (Housing Affordability Economics)
-- [ ] Phase 2: Literature Search - Domain 2 (Labor Market & Wage Dynamics)
-- [ ] Phase 2: Literature Search - Domain 3 (Dualization Theory)
-- [ ] Phase 2: Literature Search - Domain 4 (Urban Housing Markets)
-- [ ] Phase 2: Literature Search - Domain 5 (Measurement & Operationalization)
-- [ ] Phase 2: Literature Search - Domain 6 (Housing Policy)
+- [X] Phase 2: Literature Search - Domain 1 (Housing Affordability Economics) - 15 papers
+- [X] Phase 2: Literature Search - Domain 2 (Labor Market & Wage Dynamics) - 12 papers
+- [X] Phase 2: Literature Search - Domain 3 (Dualization Theory) - 10 papers
+- [X] Phase 2: Literature Search - Domain 4 (Urban Housing Markets) - 12 papers
+- [X] Phase 2: Literature Search - Domain 5 (Measurement & Operationalization) - 8 papers
+- [X] Phase 2: Literature Search - Domain 6 (Housing Policy) - 11 papers
 - [ ] Phase 3: Citation Validation (validation-report.md, unverified-sources.bib)
 - [ ] Phase 4: Synthesis Planning (synthesis-outline.md)
 - [ ] Phase 5: Synthesis Writing - Sections
@@ -31,24 +31,48 @@
   - Domain 6: Housing Policy and Institutional Context (8-12 papers expected)
   - Total expected: 54-81 papers
 
+[2025-11-13] Phase 2 Complete: All 6 domain literature searches finished
+  - Domain 1: literature-domain-1.bib (15 papers) - Housing affordability economics, burden measurement, income inequality
+  - Domain 2: literature-domain-2.bib (12 papers) - Wage stagnation, Hartz reforms, public sector wages, collective bargaining
+  - Domain 3: literature-domain-3.bib (10 papers) - Dualization theory (Palier, Thelen, Emmenegger, Häusermann), insider-outsider divides
+  - Domain 4: literature-domain-4.bib (12 papers) - Urban rent dynamics, gentrification, rent control effectiveness, Berlin/Munich
+  - Domain 5: literature-domain-5.bib (8 papers) - Measurement methodologies, ratio vs. residual income, subjective vs. objective
+  - Domain 6: literature-domain-6.bib (11 papers) - Mietpreisbremse, Wohngeld, social housing decline, policy effectiveness
+  - **Total papers found: 68 papers (within expected range of 54-81)**
+
+## Key Findings by Domain
+
+**Domain 1**: Dustmann et al. 2022 shows housing expenditure amplifies income inequality by 3x (22pp→62pp). 12% of German population overburdened (>40% of income) vs. EU average 8.2%. Residual income approach identifies 62% burdened vs. 48% by ratio approach.
+
+**Domain 2**: IMF 2015 documents Hartz IV reduced real wages ~4%. Wage stagnation 2000-2015. Public sector wages showed varied trends, recent catching up 2022-2024. Collective bargaining coverage declined 14-18pp in private sector but remained strong in public sector.
+
+**Domain 3**: Palier & Thelen 2010 establish dualization explicitly underwritten by state policy in Germany/France. Continental European regimes perpetuate insider-outsider divide. Lennartz & Helbrecht 2020 link labor market dualization to housing market outcomes.
+
+**Domain 4**: Rents in German A-cities increased 70% (2011-2024). Mietpreisbremse showed limited effectiveness (-5% initial, vanished after 1 year). Berlin: 15% experienced displacement, 40,000 new residents/year but only 15,000 new dwellings.
+
+**Domain 5**: Stone 2006 shows measurement choice matters: residual income identifies 62% burdened vs. 48% by 30% ratio. Subjective and objective burden imperfectly overlap. Measurement operationalization is normatively charged.
+
+**Domain 6**: Social housing declined from 4 million (1980s) to 1 million today. Wohngeld effective for recipients (€370/month average) but limited reach (550k-1.1m households). Rent control limited effectiveness suggests structural factors dominant.
+
 ## Current Task
 
-Phase 1 Complete - Waiting for user approval to proceed to Phase 2
+**Phase 2 COMPLETE**. Ready for user approval before proceeding to Phase 3: Citation Validation.
 
 ## Next Steps
 
-1. Get user approval of literature review plan
-2. Proceed to Phase 2: Parallel literature search across 6 domains
-3. Execute citation validation (Phase 3)
-4. Create synthesis plan (Phase 4)
-5. Write focused literature review (Phase 5)
+1. **AWAIT USER APPROVAL** to proceed to Phase 3
+2. Phase 3: Citation Validation (verify all 68 papers, remove unverified sources)
+3. Phase 4: Synthesis Planning (design tight 3000-4000 word outline, select 15-25 papers to cite)
+4. Phase 5: Synthesis Writing (section-by-section, then assemble)
 
 ## Notes
 
 - User specified 6 specific hypotheses to investigate
 - Studies must have housing costs/burden as outcome variable
-- Need to extract: geography, time period, control variables, quantified findings
+- Extracted: geography, time period, control variables, quantified findings mapped to hypotheses
 - Emphasis on quantitative empirical evidence
-- Execution mode: Human-in-the-Loop (wait for approval between phases)
+- **Execution mode: Human-in-the-Loop (STOPPING NOW FOR USER APPROVAL before Phase 3)**
 - Geographic focus: Germany (primary), Europe (secondary)
-- Target output: 3000-4000 words, 15-25 papers cited
+- Target final output: 3000-4000 words, 15-25 papers cited
+- **Phase 2 completed with 68 papers across 6 domains**
+- All BibTeX files ready for Zotero import after validation (Phase 3)

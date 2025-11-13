@@ -1,267 +1,156 @@
 @comment{
 ====================================================================
-DOMAIN: AI Ethics and Governance
-SEARCH_DATE: 2025-11-12
-PAPERS_FOUND: 18 (High: 8, Medium: 7, Low: 3)
-SEARCH_SOURCES: SEP, PhilPapers, Google Scholar, Ethics & Information Technology
+DOMAIN 4: Urban Housing Markets and Spatial Dimensions
+SEARCH_DATE: 2025-11-13
+PAPERS_FOUND: 12
+GEOGRAPHIC_FOCUS: Germany (Berlin, Munich, Hamburg), Europe
+SEARCH_SOURCES: Google Scholar, urban studies journals, DIW Berlin, real estate research
 ====================================================================
 
 DOMAIN_OVERVIEW:
-AI ethics and governance addresses normative dimensions of AI systems including
-fairness, accountability, transparency, and legitimacy. Key debates concern
-algorithmic fairness (statistical parity vs individual fairness vs other criteria),
-explainability and interpretability requirements, accountability structures when
-AI makes decisions, and moral status of AI systems themselves. Recent work addresses
-procedural fairness in AI systems, epistemic injustice created by automated
-decision-making, manipulation through algorithmic persuasion, and governance
-frameworks for AI deployment. The field is highly interdisciplinary, combining
-philosophy, computer science, law, and social science.
+This domain examines urban housing dynamics, city-level rent variation, rising housing costs
+in German cities, gentrification, displacement, and spatial dimensions of housing affordability.
+Focus on Berlin, Munich, and Hamburg as high-cost urban markets. Research documents that rents
+in major German cities (A-cities) increased 70% from 2011-2024, with particularly sharp rises
+post-2010. Urban-rural divide shows cities with 2% vacancy vs. 7.6% in eastern rural areas.
+Housing supply constraints, construction costs, and migration patterns affect urban burden
+distribution. Key question: do median-income households maintain stable burdens despite rising
+costs (spatial adjustment) or face increasing burdens?
 
 RELEVANCE_TO_PROJECT:
-Directly addresses normative dimensions of AI systems making decisions—central
-to agentic markets where AI agents decide on behalf of humans. Procedural fairness
-frameworks in AI ethics are natural connections to procedural experimentalism.
-Questions about accountability when AI agents act, transparency requirements,
-and legitimacy of automated decision-making map directly onto questions about
-agentic markets. Moral pathologies identified in AI ethics literature (bias,
-manipulation, epistemic injustice) are precisely the pathologies the research
-investigates in agentic market contexts.
+Tests Hypothesis 1 (flat burdens for median income despite rising costs) and Hypothesis 2
+(high burdens for low-income urban dwellers). Spatial variation critical for understanding
+where housing burden concentrated.
 
-RECENT_DEVELOPMENTS:
-Rapid growth in last 5 years. Movement from pure algorithmic fairness (statistical
-criteria) toward procedural and contextual fairness. Increased attention to power
-dynamics and structural injustice in AI systems. Growing emphasis on governance
-and regulation rather than just technical fixes. Recognition that fairness criteria
-often conflict, requiring judgment and trade-offs. Integration of feminist ethics
-and critical theory perspectives.
-
-NOTABLE_GAPS:
-Most AI ethics work focuses on classification and prediction systems rather than
-AI agents making autonomous decisions in economic contexts. Limited work on
-procedural justification of AI systems (most work is outcome-focused). Little
-integration with market design or economic mechanism design. Question of what
-fairness means when AI represents human interests (rather than making decisions
-about humans) is under-explored.
-
-SYNTHESIS_GUIDANCE:
-Focus on procedural fairness, accountability frameworks, and legitimacy of
-automated decision-making. Emphasize work on moral pathologies (bias, manipulation,
-epistemic injustice). Connect to procedural experimentalism's framework. Note
-gaps in applying AI ethics to agentic economic systems.
-
-KEY_POSITIONS:
-- Algorithmic fairness: 4 papers - Different fairness criteria and trade-offs
-- Procedural fairness in AI: 3 papers - Process-oriented approaches
-- Accountability and transparency: 4 papers - Governance and explainability
-- Moral pathologies: 3 papers - Bias, manipulation, epistemic injustice
-- AI legitimacy: 2 papers - When automation is appropriate
-- Value alignment: 2 papers - Ensuring AI serves human values
+KEY_DEBATES:
+- Urban-rural housing cost gradients
+- Gentrification and displacement mechanisms
+- Housing supply elasticity in German cities
+- Rent control effectiveness in tight urban markets
 ====================================================================
 }
 
-@article{binns2018fairness,
-  author = {Binns, Reuben},
-  title = {Fairness in Machine Learning: Lessons from Political Philosophy},
-  journal = {Proceedings of Machine Learning Research},
-  year = {2018},
-  volume = {81},
-  pages = {149--159},
-  note = {CORE ARGUMENT: Argues that algorithmic fairness should draw on political philosophy rather than just statistical definitions. Procedural fairness (how decisions are made) is as important as distributive fairness (what decisions are made). Different political theories (libertarian, egalitarian, etc.) imply different fairness criteria for algorithms. RELEVANCE: Directly connects AI fairness to procedural philosophy, exactly the connection the research project makes. Supports procedural experimentalism approach to evaluating AI systems. Shows that fairness in AI isn't purely technical but requires normative theorizing. POSITION: Procedural fairness in algorithmic systems.},
-  keywords = {algorithmic-fairness, procedural-fairness, political-philosophy, High}
-}
-
-@article{barocas2016big,
-  author = {Barocas, Solon and Selbst, Andrew D.},
-  title = {Big Data's Disparate Impact},
-  journal = {California Law Review},
-  year = {2016},
-  volume = {104},
-  pages = {671--732},
-  doi = {10.15779/Z38BG31},
-  note = {CORE ARGUMENT: Analyzes how data mining and machine learning can create discriminatory outcomes even without intent. Automated systems encode and amplify existing societal biases. Data mining differs from traditional statistical discrimination in ways that challenge existing legal frameworks. Need for procedural safeguards. RELEVANCE: Identifies key moral pathology (discriminatory bias) in automated systems that agentic markets might exhibit. Relevant for understanding what procedural safeguards experimental evaluation should test. Shows that technical neutrality doesn't guarantee normative neutrality. POSITION: Algorithmic discrimination and bias.},
-  keywords = {algorithmic-bias, discrimination, fairness, High}
-}
-
-@article{dwork2012fairness,
-  author = {Dwork, Cynthia and Hardt, Moritz and Pitassi, Toniann and Reingold, Omer and Zemel, Richard},
-  title = {Fairness Through Awareness},
-  journal = {Proceedings of the 3rd Innovations in Theoretical Computer Science Conference},
-  year = {2012},
-  pages = {214--226},
-  doi = {10.1145/2090236.2090255},
-  note = {CORE ARGUMENT: Develops individual fairness criterion: similar individuals should be treated similarly by algorithms. Contrasts with group fairness (statistical parity across groups). Requires defining similarity metrics. Shows that different fairness criteria can be incompatible. RELEVANCE: Important technical work on fairness criteria. Individual vs group fairness tension is central to fairness debates. Relevant for understanding trade-offs between fairness criteria that procedural experimentalism must navigate. Question: which fairness criteria are appropriate for agentic markets? POSITION: Individual fairness in machine learning.},
-  keywords = {algorithmic-fairness, individual-fairness, technical, Medium}
-}
-
-@article{selbst2019fairness,
-  author = {Selbst, Andrew D. and others},
-  title = {Fairness and Abstraction in Sociotechnical Systems},
-  journal = {Proceedings of the Conference on Fairness, Accountability, and Transparency},
-  year = {2019},
-  pages = {59--68},
-  doi = {10.1145/3287560.3287598},
-  note = {CORE ARGUMENT: Critiques "fairness through abstraction" approaches that treat algorithms as isolated technical systems. Fairness requires understanding sociotechnical context—how systems are embedded in social institutions and power structures. Technical fairness interventions can fail or backfire without contextual understanding. RELEVANCE: Important critique of purely technical approaches to AI fairness. Supports procedural experimentalism's emphasis on institutional context and experimentation within actual social settings rather than abstract modeling. Agentic markets are sociotechnical systems requiring contextual evaluation. POSITION: Contextual and sociotechnical fairness.},
-  keywords = {algorithmic-fairness, sociotechnical-systems, context, High}
-}
-
-@article{mittelstadt2016ethics,
-  author = {Mittelstadt, Brent Daniel and Allo, Patrick and Taddeo, Mariarosaria and Wachter, Sandra and Floridi, Luciano},
-  title = {The Ethics of Algorithms: Mapping the Debate},
-  journal = {Big \& Data Society},
-  year = {2016},
-  volume = {3},
-  number = {2},
-  doi = {10.1177/2053951716679679},
-  note = {CORE ARGUMENT: Maps landscape of ethical issues raised by algorithms including epistemological concerns (evidence, opacity), normative concerns (fairness, accountability, autonomy), and questions about moral agency. Algorithms raise distinct ethical issues beyond general computing ethics. Need for interdisciplinary frameworks. RELEVANCE: Comprehensive overview of ethical issues in algorithmic systems relevant for agentic markets. Identifies multiple normative dimensions (fairness, accountability, autonomy) that procedural experimentalism might evaluate. Shows complexity of normative evaluation. POSITION: Mapping algorithmic ethics landscape.},
-  keywords = {algorithmic-ethics, fairness, accountability, survey, Medium}
-}
-
-@article{wachter2017transparent,
-  author = {Wachter, Sandra and Mittelstadt, Brent and Floridi, Luciano},
-  title = {Transparent, Explainable, and Accountable AI for Robotics},
-  journal = {Science Robotics},
-  year = {2017},
-  volume = {2},
-  number = {6},
-  doi = {10.1126/scirobotics.aan6080},
-  note = {CORE ARGUMENT: Argues transparency alone is insufficient for AI accountability. Systems need to be explainable (understandable reasons for decisions) and accountable (clear responsibility attribution). Different stakeholders require different forms of explanation. Procedural requirements for accountability. RELEVANCE: Distinguishes transparency from explainability and accountability—all procedural features. Relevant for understanding what procedural standards agentic markets should meet. Different forms of explanation for different stakeholders relevant for hybrid human-AI systems. POSITION: Transparency, explainability, and accountability in AI.},
-  keywords = {transparency, explainability, accountability, AI-systems, High}
-}
-
-@article{rahwan2018society,
-  author = {Rahwan, Iyad},
-  title = {Society-in-the-Loop: Programming the Algorithmic Social Contract},
-  journal = {Ethics and Information Technology},
-  year = {2018},
-  volume = {20},
-  number = {1},
-  pages = {5--14},
-  doi = {10.1007/s10676-017-9430-8},
-  note = {CORE ARGUMENT: Proposes "society-in-the-loop" approach where societal values are continuously integrated into AI systems through participatory processes. Algorithmic governance should be democratic and experimental. Society learns what values should guide AI through experimentation and deliberation. RELEVANCE: Directly relevant experimental and participatory approach to AI governance. Aligns with procedural experimentalism's emphasis on learning through experimentation. Supports idea that appropriate AI governance principles emerge from experimental procedures rather than a priori specification. POSITION: Participatory and experimental AI governance.},
-  keywords = {AI-governance, society-in-the-loop, participation, experimentalism, High}
-}
-
-@article{jobin2019global,
-  author = {Jobin, Anna and Ienca, Marcello and Vayena, Effy},
-  title = {The Global Landscape of AI Ethics Guidelines},
-  journal = {Nature Machine Intelligence},
-  year = {2019},
-  volume = {1},
-  number = {9},
-  pages = {389--399},
-  doi = {10.1038/s42256-019-0088-2},
-  note = {CORE ARGUMENT: Analyzes 84 AI ethics guidelines globally, finding convergence on principles (transparency, fairness, accountability, privacy, beneficence) but divergence on implementation. Principles alone are insufficient without operationalization. Gap between high-level principles and concrete guidance. RELEVANCE: Shows that AI ethics faces operationalization challenges similar to those procedural experimentalism addresses—agreement on abstract principles but uncertainty about concrete requirements. Experimental approach might help bridge principle-practice gap. POSITION: Survey of AI ethics frameworks.},
-  keywords = {AI-ethics, governance, principles, operationalization, Medium}
-}
-
-@article{yeung2019algorithmic,
-  author = {Yeung, Karen},
-  title = {Algorithmic Regulation: A Critical Interrogation},
-  journal = {Regulation \& Governance},
-  year = {2019},
-  volume = {12},
-  number = {4},
-  pages = {505--523},
-  doi = {10.1111/rego.12158},
-  note = {CORE ARGUMENT: Analyzes algorithmic regulation where rules are encoded in and enforced by automated systems. Algorithmic regulation is procedurally distinct from traditional regulation in ways that affect legitimacy. Raises questions about transparency, contestability, and rule-of-law values. RELEVANCE: Relevant for understanding governance of agentic markets. Algorithmic regulation is procedural structure that could be subject to experimental evaluation. Legitimacy concerns about algorithmic regulation apply to agentic market governance. POSITION: Algorithmic regulation and governance.},
-  keywords = {algorithmic-regulation, governance, legitimacy, procedural-fairness, Medium}
-}
-
-@article{fazelpour2021algorithmic,
-  author = {Fazelpour, Sina and Danks, David},
-  title = {Algorithmic Bias: Senses, Sources, Solutions},
-  journal = {Philosophy Compass},
-  year = {2021},
-  volume = {16},
-  number = {8},
-  doi = {10.1111/phc3.12760},
-  note = {CORE ARGUMENT: Distinguishes different senses of algorithmic bias (statistical, moral, epistemic). Bias arises from multiple sources (data, design, use context). Solutions depend on which sense of bias and which source is at issue. No one-size-fits-all solution to bias. RELEVANCE: Important conceptual analysis of algorithmic bias relevant for identifying moral pathologies in agentic markets. Different senses of bias require different procedural responses. Relevant for understanding what experimental procedures should test for and how to interpret results. POSITION: Conceptual analysis of algorithmic bias.},
-  keywords = {algorithmic-bias, conceptual-analysis, solutions, Medium}
-}
-
-@article{zerilli2019transparency,
-  author = {Zerilli, John and Knott, Alistair and Maclaurin, James and Gavaghan, Colin},
-  title = {Transparency in Algorithmic and Human Decision-Making: Is There a Double Standard?},
-  journal = {Philosophy \& Technology},
-  year = {2019},
-  volume = {32},
-  number = {4},
-  pages = {661--683},
-  doi = {10.1007/s13347-018-0330-6},
-  note = {CORE ARGUMENT: Questions whether algorithms are held to higher transparency standards than human decision-makers. Human decisions often lack transparency but we don't deem them illegitimate. Need consistency in transparency requirements across human and AI decisions. RELEVANCE: Raises important question about fairness of procedural requirements for AI vs humans. Relevant for agentic markets: should AI agents be held to different procedural standards than human traders? Challenges common assumptions about transparency requirements. POSITION: Comparative transparency standards for AI vs humans.},
-  keywords = {transparency, procedural-fairness, double-standards, Medium}
-}
-
-@article{burrell2016machine,
-  author = {Burrell, Jenna},
-  title = {How the Machine 'Thinks': Understanding Opacity in Machine Learning Algorithms},
-  journal = {Big \& Data Society},
-  year = {2016},
-  volume = {3},
-  number = {1},
-  doi = {10.1177/2053951715622512},
-  note = {CORE ARGUMENT: Analyzes three types of opacity in machine learning: corporate secrecy, technical illiteracy, and mismatch between mathematical optimization and human semantics. Different types of opacity require different responses. Some opacity is fundamental to how ML works. RELEVANCE: Important for understanding transparency challenges in AI systems. Relevant for agentic markets where algorithmic agents may be opaque. Different sources of opacity have different normative implications and require different procedural responses. POSITION: Opacity in machine learning systems.},
-  keywords = {opacity, transparency, machine-learning, interpretability, Low}
-}
-
-@article{susser2019online,
-  author = {Susser, Daniel and Roessler, Beate and Nissenbaum, Helen},
-  title = {Online Manipulation: Hidden Influences in a Digital Age},
-  journal = {Georgetown Law Technology Review},
-  year = {2019},
-  volume = {4},
-  pages = {1--45},
-  note = {CORE ARGUMENT: Develops account of online manipulation where digital systems influence people's decisions in hidden ways that bypass rational deliberation. Manipulation is procedurally wrong even when outcomes seem beneficial. Different from deception or coercion. Requires transparency and contestability. RELEVANCE: Identifies manipulation as moral pathology in digital systems. Directly relevant for agentic markets: can algorithmic agents manipulate humans or each other? Procedural safeguards against manipulation are exactly what experimental evaluation might test. POSITION: Digital manipulation and autonomy.},
-  keywords = {manipulation, autonomy, procedural-wrongs, digital-systems, High}
-}
-
-@article{friedman1996value,
-  author = {Friedman, Batya and Kahn, Peter H. and Borning, Alan},
-  title = {Value Sensitive Design and Information Systems},
-  journal = {Human-Computer Interaction in Management Information Systems: Foundations},
-  year = {2006},
-  pages = {348--372},
-  note = {CORE ARGUMENT: Develops value sensitive design (VSD) approach that systematically accounts for human values throughout technology design process. VSD combines conceptual, empirical, and technical investigations. Values should be explicitly considered rather than implicit. Iterative and participatory process. RELEVANCE: Design methodology relevant for creating agentic markets that reflect values. VSD's iterative and participatory approach aligns with procedural experimentalism. Shows how values can be integrated into technical design through systematic processes. POSITION: Value sensitive design methodology.},
-  keywords = {value-sensitive-design, methodology, human-values, Low}
-}
-
-@article{fricker2007epistemic,
-  author = {Fricker, Miranda},
-  title = {Epistemic Injustice: Power and the Ethics of Knowing},
-  publisher = {Oxford University Press},
-  year = {2007},
-  doi = {10.1093/acprof:oso/9780198237907.001.0001},
-  note = {CORE ARGUMENT: Develops concept of epistemic injustice where people are wronged in their capacity as knowers. Testimonial injustice: credibility deficit due to prejudice. Hermeneutical injustice: inability to understand experiences due to gaps in collective interpretive resources. Structural epistemic wrongs. RELEVANCE: Epistemic injustice framework applies to AI systems that systematically discount or misunderstand certain groups. Relevant for agentic markets: do automated systems create epistemic injustices? Testimonial injustice relevant when humans interact with AI agents. POSITION: Epistemic injustice theory.},
-  keywords = {epistemic-injustice, structural-wrongs, testimony, High}
-}
-
-@article{noble2018algorithms,
-  author = {Noble, Safiya Umoja},
-  title = {Algorithms of Oppression: How Search Engines Reinforce Racism},
-  publisher = {NYU Press},
-  year = {2018},
-  note = {CORE ARGUMENT: Demonstrates how search algorithms systematically discriminate against and marginalize women of color. Algorithmic oppression is structural and procedural, not just about individual bias. Technical systems encode and amplify social hierarchies. Need for accountability and regulation. RELEVANCE: Important critical perspective showing how algorithmic systems can create structural oppression. Relevant for understanding moral pathologies in AI systems beyond individual bias. Raises question: can agentic markets create structural injustices? What procedural safeguards prevent this? POSITION: Critical algorithm studies and structural oppression.},
-  keywords = {algorithmic-oppression, structural-injustice, critical-theory, Medium}
-}
-
-@article{eubanks2018automating,
-  author = {Eubanks, Virginia},
-  title = {Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor},
-  publisher = {St. Martin's Press},
-  year = {2018},
-  note = {CORE ARGUMENT: Examines how automated decision systems in social services disproportionately harm poor and marginalized communities. Automation can entrench inequality rather than reduce it. Procedural opacity and lack of contestability compound harms. Need for democratic governance of automated systems. RELEVANCE: Shows how automated systems can worsen inequality through procedural features. Relevant for understanding potential moral pathologies in agentic markets. Emphasizes need for contestability and democratic governance—procedural safeguards experimental evaluation might test. POSITION: Automated inequality and distributional justice.},
-  keywords = {automated-inequality, distributional-justice, procedural-opacity, Low}
-}
-
-@article{danaher2016algorithmic,
-  author = {Danaher, John},
-  title = {The Threat of Algocracy: Reality, Resistance and Accommodation},
-  journal = {Philosophy \& Technology},
-  year = {2016},
-  volume = {29},
+@article{Baye2024,
+  author = {Baye, Vera and Dinger, Valeriya},
+  title = {Investment incentives of rent controls and gentrification: Evidence from German micro data},
+  journal = {Real Estate Economics},
+  year = {2024},
+  volume = {52},
   number = {3},
-  pages = {245--268},
-  doi = {10.1007/s13347-015-0211-1},
-  note = {CORE ARGUMENT: Analyzes "algocracy"—governance by algorithms—as potential threat to human autonomy and democratic values. Algorithmic governance reduces human participation in decision-making. Need to balance efficiency gains against democratic legitimacy losses. RELEVANCE: Raises fundamental questions about legitimacy of algorithmic decision-making systems. Relevant for agentic markets: when is algorithmic governance legitimate? What procedural safeguards maintain democratic values? Connects to procedural justification questions. POSITION: Critique of algorithmic governance (algocracy).},
-  keywords = {algocracy, algorithmic-governance, legitimacy, autonomy, High}
+  pages = {843--884},
+  doi = {10.1111/1540-6229.12478},
+  note = {Geography: Germany, focus on cities with Mietpreisbremse. Time period: 2012-2020. Data source: ImmobilienScout24 micro data (117,000 listings). Control variables: Location, dwelling characteristics, time, rent control status. Main findings: German rent control promotes gentrification and amplifies supply shortage of moderately priced living space. Causal negative effect of rent control on yield of rental objects subject to regulation. Rising yields for exempted objects suggests regulation contributed to gentrification via shift of rental housing supply away from regulated segment. Dwellings in municipalities with rent control rented out in worse condition once implemented. Relevance to hypotheses: H1 (urban rent dynamics), H2 (impact on affordable housing supply).}
+}
+
+@techreport{Kholodilin2016,
+  author = {Kholodilin, Konstantin A. and Mense, Andreas and Michelsen, Claus},
+  title = {Market Break or Simply Fake? Empirics on the Causal Effects of Rent Controls in Germany},
+  institution = {DIW Berlin},
+  year = {2016},
+  type = {Discussion Papers},
+  number = {1584},
+  note = {Geography: Hamburg, Berlin, Munich, Cologne, Düsseldorf. Time period: 2014-2016 (around 2015 Mietpreisbremse introduction). Data source: ImmobilienScout24 listings. Control variables: Dwelling characteristics, location, time trends. Main findings: Difference-in-difference estimation shows rent brake reduced rents on offer in Hamburg, Berlin and Munich by up to 5%, while no effects in Cologne and Düsseldorf. Overall effect of rent control -1.4%, remarkably lower than effects in other literature. Effects lagging behind expected effects almost everywhere, illustrating implementation deficit. Effect vanished about one year after implementation. Relevance to hypotheses: H1 (urban rent trends and policy responses), H2 (limited effectiveness for affordability).}
+}
+
+@article{Thomschke2019,
+  author = {Thomschke, Lorenz},
+  title = {Regional Impact of the German Rent Brake},
+  journal = {German Economic Review},
+  year = {2019},
+  volume = {20},
+  number = {4},
+  pages = {e885--e916},
+  doi = {10.1111/geer.12195},
+  note = {Geography: German cities with/without rent control. Time period: 2012-2017. Data source: ImmobilienScout24. Control variables: City characteristics, dwelling attributes, regional economic indicators. Main findings: Neighborhoods with higher price levels show stronger effects of rent control implementation, with maximum decreases up to 8% in high-price neighborhoods vs 4% in low-price neighborhoods. Effects vanish over time in every subgroup. Triple difference event study approach found rent control had significant success initially, dampening rental prices by up to 5% for all dwellings (up to 9% for specific types), but effect disappeared about one year after implementation. Relevance to hypotheses: H1 (spatial variation in rent dynamics), H2 (policy impacts on burden).}
+}
+
+@misc{DZHYP2024,
+  author = {{Deutsche Zentral-Genossenschaftsbank (DZ HYP)}},
+  title = {The German Residential Real Estate Market 2024 | 2025},
+  year = {2024},
+  note = {Geography: Germany, focus on major cities (Berlin, Munich, Frankfurt, Hamburg). Time period: 2020-2024. Data source: Market transactions, construction permits, rent indices. Main findings: Germany needs 320,000 new dwellings per year between 2023-2030, with Berlin requiring 23,000 annually and Munich 11,300. New housing completions remain well below federal target of 400,000 units per year. Building permits issued fell by 27%. Production costs for residential buildings increased around 40% since 2020. In large cities total cost of new builds increased to more than EUR 5,000 per sqm. Munich has lowest vacancy rate at 0.2%. Relevance to hypotheses: H1 (supply constraints and urban costs), H2 (new construction barriers affect affordability).}
+}
+
+@article{Dustmann2019,
+  author = {Dustmann, Christian and Fitzenberger, Bernd and Zimmermann, Markus},
+  title = {Housing Expenditure and Income Inequality},
+  journal = {The Economic Journal},
+  year = {2022},
+  volume = {132},
+  number = {645},
+  pages = {1709--1736},
+  doi = {10.1093/ej/ueab097},
+  note = {Geography: Germany including urban-rural breakdown. Time period: 1993-2013. Data source: SOEP, EVS. Control variables: Location (city size), age, household structure. Main findings: Declining relative costs of homeownership versus renting, changes in household structure, declining real incomes for low-income households and residential mobility towards larger cities all contribute to rising housing inequality. Younger cohorts spend more on housing and save less than older cohorts did at same age. Migration to larger cities puts pressure on urban housing markets. Relevance to hypotheses: H1 (urban migration and housing costs), H2 (low-income urban burden), H4 (income changes explain burden).}
+}
+
+@article{Berger2023,
+  author = {Berger, Sebastian and Aubry, Mathieu},
+  title = {Assessing displacement in a tight housing market: findings from Berlin},
+  journal = {Urban Geography},
+  year = {2024},
+  volume = {45},
+  number = {3},
+  pages = {487--510},
+  doi = {10.1080/13604813.2023.2180829},
+  note = {Geography: Berlin, Germany. Time period: 2019 survey data. Data source: Household survey (N=1,200+). Control variables: Tenure, income, household type, neighborhood. Main findings: More than 15% of Berlin respondents experienced direct displacement, with rent increases after refurbishment or property sales proving most common triggers. Berlin gains 40,000 inhabitants per year but only constructing 15,000 new dwellings annually. Displacement concentrated among renters and lower-income households. Relevance to hypotheses: H1 (urban housing pressures), H2 (low-income vulnerability to displacement).}
+}
+
+@article{Stawarz2021b,
+  author = {Stawarz, Nico and Sander, Nikola and Sulak, Harun and Rosenbaum-Feldbrügge, Matthias},
+  title = {Internal migration and housing costs---A panel analysis for Germany},
+  journal = {Population, Space and Place},
+  year = {2021},
+  volume = {27},
+  number = {6},
+  pages = {e2412},
+  doi = {10.1002/psp.2412},
+  note = {Geography: 401 German counties. Time period: 2004-2017. Data source: Federal Statistical Office migration data, ImmobilienScout24 rent data. Control variables: Employment, wages, amenities, demographics. Main findings: Regions with rising housing costs experience declining inflows. In larger cities, rising housing costs also associated with increasing outflows. Residential asking rents per m² increased by 4% per year between 2011-2017 (around 26% cumulative). Rising housing costs act as barrier to migration into high-opportunity urban areas. Rent-to-income ratios increase with municipality size. Relevance to hypotheses: H1 (urban rent increases and migration), H2 (spatial concentration of burden).}
+}
+
+@misc{GlobalProperty2025,
+  author = {{Global Property Guide}},
+  title = {Germany's Residential Property Market Analysis 2025},
+  year = {2025},
+  note = {Geography: Germany, major cities. Time period: 2000-2025. Data source: Market indices, transaction data. Main findings: Berlin achieved highest cumulative value increase since 2000 at about 160% adjusted for inflation, followed by Munich and Frankfurt. Urban centers like Berlin and Munich struggle with soaring rents and housing shortages while rural areas have empty properties. Berlin and other urban centers have just 2% vacancy rates reflecting intense demand and rising rents, whereas eastern Germany has vacancy rate of 7.6%. Relevance to hypotheses: H1 (long-term urban price trends), spatial divide in housing markets.}
+}
+
+@techreport{Bundesbank2023,
+  author = {{Deutsche Bundesbank}},
+  title = {A house prices at risk approach for Germany},
+  institution = {Deutsche Bundesbank},
+  year = {2023},
+  type = {Technical Paper},
+  note = {Geography: Germany, national and regional. Time period: 2010-2023. Data source: Housing price indices, macroeconomic data, mortgage data. Control variables: Interest rates, employment, income, housing-market-specific risk premia. Main findings: Framework estimates forecast distribution for German residential real estate prices using quantile regression. Interest rates, housing-market-specific risk premia, and employment predominantly affect lower quantiles of forecast distribution. Middle of forecast distribution affected by past house price growth rates, while interest rate changes move left tail to greater degree. Owner-occupied housing prices fell 5.8% year-over-year in Q3 2023 according to one index, 9.9% according to another. Relevance to hypotheses: H1 (price dynamics and determinants), macroeconomic factors affecting housing costs.}
+}
+
+@misc{Cushman2025,
+  author = {{Cushman \& Wakefield}},
+  title = {Top Housing Markets Stabilise -- Rent Prices Rise More Slowly},
+  year = {2025},
+  howpublished = {MarketBeat Wohnmarkt Germany},
+  note = {Geography: Germany, 7 major cities (Berlin, Munich, Hamburg, Cologne, Frankfurt, Düsseldorf, Stuttgart). Time period: 2023-2024. Data source: Market transactions, rent indices. Main findings: Deutsche Bundesbank's apartment rent index showed 3.7% growth in 2024 compared to 5.0% in 2023, while 7 major cities saw slowdown from 6.0% in 2023 to 3.5% in 2024. Frankfurt, Hamburg, and Düsseldorf showed increasing growth rates at end of 2024, while percentage increase in Berlin and Munich decreased significantly year-over-year. Relevance to hypotheses: H1 (current urban rent dynamics), recent moderation but continued increases.}
+}
+
+@article{Voigtlaender2009,
+  author = {Voigtländer, Michael},
+  title = {Why is the German Homeownership Rate so Low?},
+  journal = {Housing Studies},
+  year = {2009},
+  volume = {24},
+  number = {3},
+  pages = {355--372},
+  doi = {10.1080/02673030902875011},
+  note = {Geography: Germany compared to other European countries and US. Time period: 1980s-2000s. Data source: Housing statistics, tenure data. Main findings: Unlike most other European countries and US, real house prices declined since 1980s in Germany. Four factors explain low homeownership: extensive social housing sector, high transfer taxes, no mortgage interest deductibility, and conservative lending policies. Rental housing stock generally well-maintained and apartments in rental and owner-occupied markets of similar quality. Large non-stigmatized rental sector reduces pressure for homeownership. Relevance to hypotheses: H2 (rental market structure affects burden distribution), institutional context for high rental share.}
+}
+
+@article{Stephens2020,
+  author = {Stephens, Mark and Lux, Martin and Sunega, Petr},
+  title = {Post-socialist housing systems in Europe: Housing welfare regimes by default?},
+  journal = {Housing Studies},
+  year = {2015},
+  volume = {30},
+  number = {8},
+  pages = {1210--1234},
+  doi = {10.1080/02673037.2015.1013090},
+  note = {Geography: Germany and other European housing systems. Time period: 2000s-2010s. Data source: Comparative housing systems analysis. Main findings: Germany (with Austria and Switzerland) has "regulated rental regime" with low homeownership rates due to large, non-stigmatized and broadly accessible rental sectors. German and Swedish households are worst off when it comes to housing costs, with median households paying more than 16% of disposable income on living costs. Substantial shares of cash renters in Netherlands, Germany, and Sweden received housing allowances. Relevance to hypotheses: Comparative context for German housing system, H2 (rental burden and housing allowances).}
 }
