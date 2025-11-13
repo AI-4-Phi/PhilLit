@@ -1,197 +1,274 @@
-# Literature Review Plan: Social Experiments in the Agentic Economy
+# Literature Review Plan: Housing Cost Burdens
 
-## Research Idea Summary
+**Research Question**: What explains what proportion of income people spend on housing?
 
-This project applies social experimentation methodology to agentic markets—markets where AI agents transact, negotiate, and allocate resources on behalf of humans. Drawing on Adams and Himmelreich's procedural experimentalism in political philosophy, the research investigates whether decision-making procedures involving experimentation can justify normative principles when decision-makers are non-human but represent human interests. The project will use Magentic Marketplace (an open-source platform for simulating two-sided agentic markets) to conduct controlled normative simulations.
+**Geographic Focus**: Germany (primary), Europe (secondary)
 
-## Key Research Questions
+**Disciplines**: Economics and Political Science
 
-1. Can procedural standards of fairness or accountability be realized and evaluated within agentic markets?
-2. What counts as procedural justification when decision-makers are non-human but represent human interests?
-3. Do agentic markets exhibit moral pathologies analogous to those in human institutions (bias, manipulation, epistemic injustice), and can procedural reforms mitigate them?
-4. Can social-experimental reasoning be extended to hybrid systems of human and AI agents, yielding new criteria for legitimate automation?
+**Target Output**: 3000-4000 word focused literature review
 
-## Literature Review Domains
+## Research Hypotheses to Investigate
 
-### Domain 1: Procedural Experimentalism and Social Experiments in Political Philosophy
+1. Even in cities with quickly rising housing costs, housing cost burdens are flat for median incomes
+2. High housing burdens are an issue for city dwellers with low incomes
+3. High housing burdens are an issue for public servants, or at least people where the government controls wages / The rise of housing-burden among lower-income recipients is due to wage repression in the public sector (unions and collective bargaining agreements)
+4. More than 80% of the change in housing-burden is explicable by changes in wage income
+5. Housing burden is determined by dualized housing and labor markets
+6. The answer depends on how labor income and housing costs are operationalized, and how to do this is normatively charged (e.g., subjective vs. objective housing cost burden, or difference between the two)
 
-**Focus**: Philosophical foundations of procedural experimentalism, social experimentation as normative methodology, and the distinction between procedural and outcome-based justification.
+## Literature Search Domains
+
+### Domain 1: Housing Affordability and Cost Burden Economics
+**Focus**: Core economic research on housing cost burdens, housing affordability metrics, rent-to-income ratios
 
 **Key Questions**:
-- What is procedural experimentalism and how does it justify normative principles?
-- How do Adams and Himmelreich's framework differ from traditional experimental philosophy?
-- What role does moral learning play in institutional experimentation?
-- How can social experiments validate mid-level normative principles?
+- How do economists measure and define housing cost burden?
+- What are the main economic determinants of housing burden identified in the literature?
+- What empirical findings exist on housing burden trends in Germany and Europe?
+- How does housing burden vary across income distributions?
 
-**Search Strategy**:
-- Primary sources: PhilPapers (political philosophy, experimental philosophy), Google Scholar for Adams & Himmelreich specifically
-- Key terms: ["procedural experimentalism", "social experiments", "Adams Himmelreich", "experimental political philosophy", "procedural justification", "institutional experimentation"]
-- Expected papers: 10-15 key papers
-- Inclusion criteria: Papers directly addressing social experimentation as normative methodology, procedural justification frameworks, moral learning through institutions
+**Search Terms**: "housing cost burden", "rent burden", "housing affordability", "rent-to-income ratio", Germany, Europe, "income quartiles", "income distribution"
 
-**Relevance to Project**: This domain provides the core philosophical framework—the project extends procedural experimentalism from human institutions to agentic markets. Understanding Adams & Himmelreich's original framework is essential.
+**Target Sources**:
+- Economic journals (Journal of Urban Economics, Regional Science and Urban Economics, Journal of Housing Economics)
+- Working papers (DIW Berlin, ifo Institute, IZA)
+- European Central Bank research
+- Bundesbank studies
+
+**Expected Papers**: 12-18 papers
+
+**Relevance**: Core economic research directly addressing the research question and providing baseline empirical evidence for hypothesis testing.
 
 ---
 
-### Domain 2: Agentic Markets and Multi-Agent Systems
-
-**Focus**: AI agents operating in economic contexts, autonomous agents in market environments, multi-agent simulation for market design, and concrete examples of trading bots, procurement agents, and automated negotiation systems.
+### Domain 2: Labor Market Determinants and Wage Dynamics
+**Focus**: Wage determination, income trends, public sector wages, wage repression, labor market dualization
 
 **Key Questions**:
-- What are agentic markets and how do they differ from traditional markets?
-- What capabilities do current AI trading and procurement agents possess?
-- How are multi-agent systems used to simulate and design markets?
-- What are the key technical and design challenges in agentic marketplaces?
+- What explains wage income trends in Germany and Europe over past 2-3 decades?
+- Is there evidence of wage repression in the public sector?
+- How do collective bargaining agreements and unions affect wages?
+- What is the relationship between wage changes and housing burden changes?
+- How do labor market institutions affect housing affordability?
 
-**Search Strategy**:
-- Primary sources: Google Scholar (AI, economics, multi-agent systems), arXiv (cs.AI, cs.MA), journals (AI & Society, Autonomous Agents and Multi-Agent Systems)
-- Key terms: ["agentic markets", "autonomous agents markets", "AI trading agents", "multi-agent systems economics", "automated procurement", "algorithmic trading", "agent-based market simulation"]
-- Expected papers: 12-18 papers (mix of technical and conceptual)
-- Inclusion criteria: Papers on AI agents in economic contexts, multi-agent market simulation, design of automated trading/negotiation systems
+**Search Terms**: "wage stagnation", "public sector wages", "wage bargaining", "labor market dualization", Germany, Europe, "income trends", "wage compression", "union density"
 
-**Relevance to Project**: Establishes the technical and practical landscape of agentic markets that the research investigates normatively. Provides concrete examples for applying procedural experimentalism.
+**Target Sources**:
+- Labor economics journals (Journal of Labor Economics, Labour Economics)
+- Industrial relations journals
+- OECD employment studies
+- IAB (Institute for Employment Research) Germany publications
+
+**Expected Papers**: 10-15 papers
+
+**Relevance**: Critical for Hypothesis 3 (public sector wage repression) and Hypothesis 4 (wage income explains 80%+ of housing burden changes).
 
 ---
 
-### Domain 3: Market Design and Mechanism Design
-
-**Focus**: Fairness in market design, transparency and information structures, oversight and regulation mechanisms, and procedural features affecting market legitimacy.
+### Domain 3: Dualization Theory and Housing-Labor Market Interactions
+**Focus**: Dualized labor markets, dualized housing markets, insider-outsider dynamics, institutional complementarities
 
 **Key Questions**:
-- What makes a market design fair or legitimate?
-- How do information structures affect procedural fairness?
-- What oversight mechanisms exist for market regulation?
-- How do procedural features (transparency, access, appeal) affect legitimacy?
+- What is dualization theory and how does it apply to housing and labor markets?
+- Is there empirical evidence of dualized housing markets in Germany/Europe?
+- How do labor market status (permanent vs. temporary, public vs. private) affect housing outcomes?
+- What are the interactions between housing market and labor market institutions?
 
-**Search Strategy**:
-- Primary sources: Google Scholar (economics, market design), SEP (markets, mechanism design if available), key journals (American Economic Review, Journal of Economic Theory)
-- Key terms: ["market design fairness", "mechanism design", "market transparency", "information asymmetry", "market regulation", "procedural fairness markets"]
-- Expected papers: 10-15 papers
-- Inclusion criteria: Papers on normative aspects of market design, fairness criteria, transparency requirements, regulatory mechanisms
+**Search Terms**: "labor market dualization", "housing market segmentation", "insider-outsider", "dual labor market", Germany, Europe, "institutional complementarities", "varieties of capitalism"
 
-**Relevance to Project**: Provides established normative frameworks for evaluating markets that can be extended to agentic contexts. Connects procedural experimentalism to market design literature.
+**Target Sources**:
+- Political science journals (Comparative Political Studies, European Journal of Political Research)
+- Sociology journals (Socio-Economic Review)
+- MPIfG (Max Planck Institute for the Study of Societies) working papers
+- WZB (Berlin Social Science Center) publications
+
+**Expected Papers**: 8-12 papers
+
+**Relevance**: Directly addresses Hypothesis 5 (housing burden determined by dualized housing and labor markets).
 
 ---
 
-### Domain 4: AI Ethics and Governance
-
-**Focus**: Procedural fairness when AI agents represent human interests, accountability and transparency in AI systems, moral pathologies in AI systems (bias, manipulation), epistemic injustice in automated systems, and legitimacy of automated decision-making.
+### Domain 4: Urban Housing Markets and Spatial Dimensions
+**Focus**: Urban housing dynamics, city-level variation, rising rents in cities, spatial inequality
 
 **Key Questions**:
-- What constitutes procedural fairness when AI systems make decisions on behalf of humans?
-- How should accountability be distributed in AI-mediated systems?
-- What moral pathologies (bias, manipulation, epistemic injustice) arise in AI systems?
-- What makes automated decision-making legitimate or illegitimate?
+- How do housing burdens differ between cities and rural areas?
+- What explains rising urban housing costs in Germany and Europe?
+- Is there evidence that median-income households maintain flat housing burdens despite rising rents?
+- How do housing supply constraints affect burden distribution?
 
-**Search Strategy**:
-- Primary sources: SEP (AI ethics, algorithmic fairness), PhilPapers (AI ethics, technology ethics), Google Scholar, journals (Ethics and Information Technology, Philosophy & Technology)
-- Key terms: ["AI ethics", "algorithmic fairness", "AI accountability", "procedural fairness AI", "AI bias", "algorithmic manipulation", "epistemic injustice AI", "legitimate automation", "AI governance"]
-- Expected papers: 15-20 papers (active research area)
-- Inclusion criteria: Papers on procedural and normative aspects of AI systems, fairness frameworks, accountability structures, moral pathologies in AI
+**Search Terms**: "urban housing", "rent increase", "city housing markets", Germany, Europe, Berlin, Munich, Hamburg, "housing supply", "rent regulation", "gentrification"
 
-**Relevance to Project**: Directly addresses the normative dimensions of AI decision-making that procedural experimentalism must grapple with in agentic markets. Key for Questions 2 and 3.
+**Target Sources**:
+- Urban studies journals (Urban Studies, Journal of Urban Affairs)
+- Regional economics journals
+- City-level housing market reports (empirica, CBRE, Savills Germany)
+- German Federal Institute for Research on Building, Urban Affairs and Spatial Development (BBSR)
+
+**Expected Papers**: 10-14 papers
+
+**Relevance**: Addresses Hypothesis 1 (flat burdens for median incomes despite rising costs) and Hypothesis 2 (high burdens for low-income city dwellers).
 
 ---
 
-### Domain 5: Human-AI Interaction and Hybrid Systems
-
-**Focus**: AI agents as proxies or representatives for humans, trust and legitimacy in human-AI collaboration, cognitive bias exploitation by autonomous systems, and alignment between AI behavior and human values.
+### Domain 5: Measurement and Operationalization of Housing Burden
+**Focus**: Methodological approaches, subjective vs. objective burden, measurement debates, data sources
 
 **Key Questions**:
-- When can AI agents legitimately represent human interests?
-- What conditions support trust in AI representatives?
-- How might autonomous agents exploit human cognitive biases?
-- What does value alignment mean in representative AI systems?
+- How is housing cost burden operationalized in empirical research?
+- What are the differences between subjective and objective burden measures?
+- What normative assumptions underlie different measurement approaches?
+- What data sources are used (household surveys, administrative data)?
+- What control variables are standard in housing burden research?
 
-**Search Strategy**:
-- Primary sources: Google Scholar (HCI, AI), PhilPapers (philosophy of AI), journals (International Journal of Human-Computer Studies, AI & Society)
-- Key terms: ["AI agents representatives", "human-AI collaboration", "AI proxy agents", "trust AI systems", "cognitive bias AI", "value alignment", "AI fiduciary duty", "algorithmic persuasion"]
-- Expected papers: 12-15 papers
-- Inclusion criteria: Papers on representational relationships between humans and AI, trust in AI systems, exploitation concerns, value alignment frameworks
+**Search Terms**: "housing cost burden measurement", "subjective housing burden", "objective housing burden", "housing affordability metrics", "residual income approach", "ratio approach", Germany, Europe, SOEP, EU-SILC
 
-**Relevance to Project**: Central to Question 2 (what counts as justification when decision-makers are non-human). Establishes criteria for legitimate AI representation in markets.
+**Target Sources**:
+- Methodological papers in housing research journals
+- SOEP (German Socio-Economic Panel) documentation and research
+- EU-SILC (Statistics on Income and Living Conditions) studies
+- Eurostat housing statistics reports
+
+**Expected Papers**: 6-10 papers
+
+**Relevance**: Directly addresses Hypothesis 6 (how operationalization affects findings and is normatively charged).
 
 ---
 
-### Domain 6: Simulation and Computational Social Science
-
-**Focus**: Agent-based modeling for normative inquiry, social simulation as experimental methodology, computational experiments in ethics and political theory, and validity criteria for normative simulations.
+### Domain 6: Housing Policy and Institutional Context
+**Focus**: German and European housing policy, rent control, social housing, policy impacts on burden distribution
 
 **Key Questions**:
-- How can agent-based modeling contribute to normative theory?
-- What methodological standards apply to social simulations?
-- Can computational experiments validate ethical or political principles?
-- What are the limitations and validity criteria for simulations in normative contexts?
+- What housing policies exist in Germany and Europe (rent control, social housing, housing benefits)?
+- How do these policies affect housing cost burden distribution?
+- What is the institutional context for housing markets in Germany vs. other European countries?
+- What policy gaps exist regarding housing affordability?
 
-**Search Strategy**:
-- Primary sources: Google Scholar (computational social science, agent-based modeling), PhilPapers (experimental philosophy, methodology), journals (Journal of Artificial Societies and Social Simulation)
-- Key terms: ["agent-based modeling normative", "computational social science ethics", "simulation methodology philosophy", "virtual experiments political theory", "ABM ethics", "normative simulation"]
-- Expected papers: 10-12 papers
-- Inclusion criteria: Papers on using simulation for normative inquiry, methodological discussions of ABM in philosophy, validity criteria for computational experiments
+**Search Terms**: "housing policy", "rent control", "social housing", "housing benefit", "Wohngeld", Germany, Europe, "rent regulation", "Mietpreisbremse", "housing allowance"
 
-**Relevance to Project**: Establishes methodological legitimacy for using Magentic Marketplace simulations to test normative principles. Critical for defending the research methodology.
+**Target Sources**:
+- Housing policy journals (Housing Studies, International Journal of Housing Policy)
+- Government reports (Federal Ministry of Interior Germany)
+- OECD housing policy reviews
+- European Commission housing reports
+
+**Expected Papers**: 8-12 papers
+
+**Relevance**: Provides institutional context for understanding housing burden variation and policy interventions.
 
 ---
 
 ## Coverage Rationale
 
-These six domains provide comprehensive coverage of the research space by addressing:
+These six domains provide comprehensive coverage by addressing:
+1. **Economic foundations** (Domain 1): Core housing economics and burden measurement
+2. **Labor market determinants** (Domain 2): Wage dynamics and income side of burden equation
+3. **Institutional theory** (Domain 3): Dualization framework linking labor and housing markets
+4. **Spatial dynamics** (Domain 4): Urban context and geographic variation
+5. **Methodological issues** (Domain 5): How burden is measured and what this means
+6. **Policy context** (Domain 6): Institutional arrangements and interventions
 
-1. **Philosophical foundations** (Domain 1): Core framework of procedural experimentalism
-2. **Technical substrate** (Domain 2): What agentic markets actually are and how they work
-3. **Normative frameworks** (Domain 3): Established market design principles to extend
-4. **AI-specific ethics** (Domain 4): Moral dimensions of AI decision-making systems
-5. **Representational legitimacy** (Domain 5): When AI can legitimately represent human interests
-6. **Methodological grounding** (Domain 6): Validity of simulation-based normative inquiry
+## Search Strategy
 
-The domains are strategically organized to move from philosophical foundations → technical realization → normative application → methodological validation.
+### Phase 1: Academic Database Search
+- Google Scholar (primary)
+- EconLit
+- JSTOR
+- ScienceDirect
+- Springer
+
+### Phase 2: Working Papers and Grey Literature
+- SSRN
+- RePEc (Research Papers in Economics)
+- German economic research institutes (DIW, ifo, IZA, IAB, BBSR)
+- European research institutions (ECB, OECD, Eurostat)
+
+### Phase 3: Specialized Sources
+- Bundesbank publications
+- Deutsche Bundesbank Monthly Reports
+- European Central Bank working papers
+- German Federal Statistical Office (Destatis) reports
+
+## Inclusion Criteria
+
+**REQUIRED**:
+- Study must have housing costs OR housing cost burden as the outcome variable (dependent variable)
+- Study must be empirical with quantitative analysis
+- Study must cover Germany and/or Europe
+- Must be published in last 25 years (1999-2024) for recent context
+
+**PREFERRED**:
+- Peer-reviewed academic publications
+- Studies using household-level data (SOEP, EU-SILC, national surveys)
+- Studies with clear control variables and methodology
+- Studies reporting quantified findings (coefficients, percentages, specific numbers)
+
+## Data Extraction Requirements
+
+For each study identified, extract:
+1. **Geography**: Specific countries/cities covered
+2. **Time period**: Years analyzed
+3. **Data source**: Which dataset used (SOEP, EU-SILC, administrative data, etc.)
+4. **Dependent variable**: How housing cost burden is measured/operationalized
+5. **Control variables**: What factors are controlled for
+6. **Main findings**: Quantified results (coefficients, effect sizes, percentages) related to:
+   - Income effects on housing burden
+   - Public vs. private sector differences
+   - Urban vs. rural differences
+   - Low-income vs. median-income burden patterns
+   - Labor market status effects
+   - Policy effects
+7. **Relevance to hypotheses**: Which of the 6 hypotheses does this study inform?
+
+## Scope and Boundaries
+
+### In Scope:
+- Housing cost burden as outcome variable
+- Rent burden and homeownership costs
+- Germany and European countries
+- Economic and political science perspectives
+- Quantitative empirical studies
+- Both micro (household) and macro (regional/national) level studies
+
+### Out of Scope:
+- Studies where housing is only a control variable (not the outcome)
+- Non-European contexts (unless highly relevant comparative studies)
+- Purely theoretical papers without empirical analysis
+- Studies focusing only on homelessness or extreme housing deprivation
+- Real estate investment perspectives (unless relevant to burden distribution)
 
 ## Expected Gaps
 
-Preliminary analysis suggests several gaps that the research could fill:
-
-1. **Extension of procedural experimentalism**: Adams & Himmelreich focus on human institutions; no existing work extends their framework to AI-mediated or fully automated systems.
-
-2. **Normative evaluation of agentic markets**: While technical literature describes agentic markets and AI ethics literature discusses fairness, there's likely limited integration—philosophical evaluation using established frameworks like procedural experimentalism.
-
-3. **Moral pathologies in multi-agent systems**: General AI ethics discusses bias and manipulation, but specific application to agentic market contexts (where agents negotiate on behalf of humans) is probably under-explored.
-
-4. **Methodological bridge**: Computational social science and normative philosophy rarely intersect explicitly. Using agent-based simulation to test procedural principles represents a methodological innovation.
-
-5. **Hybrid system legitimacy**: Most work treats either human decision-making or AI decision-making; the specific case of AI agents representing human interests in markets creates unique legitimacy questions.
+Preliminary analysis suggests potential gaps:
+1. **Public sector wage effects**: Limited research on how public sector wage dynamics specifically affect housing burden
+2. **Dualization mechanisms**: Few studies explicitly test dualization theory as explanation for housing burden patterns
+3. **Measurement normativity**: Limited critical analysis of normative assumptions in burden operationalization
+4. **Wage-burden relationship**: Few studies quantify exactly how much of housing burden variation is explained by wage changes
+5. **Urban median-income stability**: Limited evidence on whether median-income households maintain stable burdens in high-cost cities
 
 ## Estimated Scope
 
 - **Total domains**: 6
-- **Estimated papers**: 70-90 papers total across all domains
-- **Key positions/debates**:
-  - Procedural vs outcome-based justification (Domain 1)
-  - Fairness criteria in market design (Domain 3)
-  - Accountability frameworks for AI systems (Domain 4)
-  - Conditions for legitimate AI representation (Domain 5)
-  - Validity of computational normative experiments (Domain 6)
-- **Time frame**:
-  - Domain 1: Focus on Adams & Himmelreich recent work (last 10 years) plus foundational experimental philosophy
-  - Domains 2, 4, 5: Emphasize recent work (last 5-10 years) given rapid AI development
-  - Domains 3, 6: Mix of foundational work and recent applications
+- **Estimated papers**: 54-81 papers total across all domains
+- **Final synthesis citations**: 15-25 papers (selective from total)
+- **Target review length**: 3000-4000 words
+- **Emphasis**: Quantitative findings, methodological approaches, research gaps relative to hypotheses
 
-## Search Priorities
+## Timeline
 
-1. **Foundational framework**: Adams & Himmelreich's work on procedural experimentalism must be thoroughly covered (Domain 1)
+- **Phase 1: Planning** - Complete ✓
+- **Phase 2: Domain Literature Search** - Parallel execution (6 domains)
+- **Phase 3: Citation Validation** - Verify all entries
+- **Phase 4: Synthesis Planning** - Create focused outline
+- **Phase 5: Synthesis Writing** - 3-4 sections, 3000-4000 words total
 
-2. **Recent AI developments**: Agentic markets and AI ethics are rapidly evolving; prioritize last 5 years (Domains 2, 4, 5)
+## Success Criteria
 
-3. **Normative integration**: Seek papers that bridge technical and normative concerns—not just technical descriptions of AI systems or purely abstract ethics
-
-4. **Methodological validation**: Papers defending or critiquing simulation-based normative inquiry (Domain 6)
-
-5. **Interdisciplinary connections**: Papers that explicitly connect philosophy, AI, economics, and political theory
-
-## Notes for Researchers
-
-- **Domain 1**: Adams & Himmelreich may have limited publication volume; expand to broader experimental political philosophy and social epistemology if needed
-- **Domain 2**: Balance technical AI/multi-agent papers with more accessible conceptual discussions
-- **Domain 4**: Huge literature on AI ethics; focus on procedural fairness, accountability, and governance (not just bias detection or general ML ethics)
-- **Domain 5**: Look for work on AI fiduciary relationships, algorithmic agents as representatives/proxies
-- **All domains**: Prioritize papers that address normative dimensions, not purely technical or descriptive work
-- **Cross-domain synthesis**: Note papers that bridge multiple domains (e.g., AI ethics + market design, procedural experimentalism + simulation methodology)
+1. Comprehensive coverage of housing burden determinants in German/European context
+2. Clear assessment of evidence for/against each of the 6 hypotheses
+3. Systematic analysis of how housing burden is measured and operationalized
+4. Identification of specific research gaps
+5. All studies include extracted data (geography, time period, controls, quantified findings)
+6. BibTeX files ready for Zotero import
+7. Review is focused, analytical, and emphasizes empirical evidence
