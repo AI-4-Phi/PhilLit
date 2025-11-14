@@ -361,7 +361,7 @@ Before finalizing outline, verify:
 **Subsection 2.1: Compatibilist Frameworks** (600-700 words)
 
 **Papers**: Frankfurt (1971), Fischer & Ravizza (1998), Nelkin (2011)
-**Content**: 
+**Content**:
 - Frankfurt's hierarchical identification
 - Fischer & Ravizza's reasons-responsiveness
 - Nelkin's rational abilities
@@ -407,10 +407,9 @@ File: synthesis-outline.md
 ## Notes
 
 - **Reading BibTeX**: Literature files are BibTeX format (`.bib`). Read @comment for domain overview, parse note fields for paper details, check keywords for importance.
-- **Selectivity is key**: You have 40-80 papers available. Cite only 15-25 most important ones.
 - **Prioritize High importance**: Focus on papers marked "High" in keywords field
 - **Citation keys**: Reference papers using BibTeX keys in your outline
-- **Target: 3000-4000 words**: This is a focused review, not comprehensive survey
+- **Target: 3000-4000 words**: This is a focused review to bring out insights, not a literature dump
 - **Think insight, not coverage**: Better to analyze 3 key papers deeply than list 20 superficially
 - **Be strategic**: Organize to highlight gaps the research fills
 - **Be specific**: 2-3 concrete gaps, not vague "more research needed"
