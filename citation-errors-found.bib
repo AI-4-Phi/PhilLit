@@ -1,0 +1,135 @@
+@comment{
+====================================================================
+CITATION ERRORS FOUND DURING VALIDATION
+VALIDATION_DATE: 2025-11-14
+TOTAL_ERRORS: 3 entries
+====================================================================
+
+These entries contain citation errors discovered during validation.
+All papers exist and are verifiable, but the BibTeX metadata is
+incorrect in the listed domain files.
+
+NOTE: These are NOT unverified sources - all papers are real and
+published. The errors are metadata issues (wrong author names, wrong
+publication type, wrong page numbers, etc.).
+
+ACTIONS REQUIRED:
+1. Domain 1: DELETE duplicate dummer2025housing entry
+2. Domain 2: REPLACE bidadanure2021justice with correct book entry
+3. Domain 2: UPDATE lippertrasmussen2025intergenerational metadata
+
+DO NOT import this file to Zotero - make corrections to domain files instead.
+====================================================================
+}
+
+@comment{
+ERROR TYPE: Duplicate entry with wrong metadata
+REMOVED FROM: domain1-distributive-justice.bib
+REASON: Incorrect author name (Oliver vs. Niklas & Neuhäuser),
+        wrong issue number (1 vs. 4), wrong pages (147-162 vs. 1247-1269)
+CORRECT VERSION: Exists in domain3-housing-justice.bib
+VALIDATION_DATE: 2025-11-14
+ACTION: DELETE this entry from domain1-distributive-justice.bib
+}
+
+@article{dummer2025housing_INCORRECT_VERSION,
+  author = {Dummer, Oliver},  % WRONG - Should be: Dummer, Niklas and Neuhäuser, Christian
+  title = {Housing Justice, Basic Capabilities, and Self-Respect},
+  journal = {Journal of Applied Philosophy},
+  year = {2025},
+  volume = {42},
+  number = {1},  % WRONG - Should be: 4
+  pages = {147--162},  % WRONG - Should be: 1247--1269
+  doi = {10.1111/japp.70020},  % CORRECT DOI
+  note = {[INCORRECT METADATA: Wrong author, wrong issue, wrong pages. Correct version in domain3-housing-justice.bib]},
+  keywords = {housing-justice, capabilities-critique, self-respect, positional-goods, relational, recent-2025, High, CITATION-ERROR}
+}
+
+@comment{
+ERROR TYPE: Wrong publication type
+LISTED IN: domain2-temporal-justice.bib
+REASON: Listed as @article in journal "Politics, Philosophy & Economics"
+        but is actually a BOOK published by Oxford University Press
+CORRECT ENTRY: See replacement below
+VALIDATION_DATE: 2025-11-14
+ACTION: REPLACE with correct @book entry
+}
+
+@article{bidadanure2021justice_INCORRECT_TYPE,
+  author = {Bidadanure, Juliana Uhuru},
+  title = {Justice Across Ages: Treating Young and Old as Equals},
+  journal = {Politics, Philosophy \& Economics},  % WRONG - This is a BOOK, not an article
+  year = {2021},  % CORRECT
+  volume = {20},  % NO SUCH ARTICLE EXISTS
+  number = {4},  % NO SUCH ARTICLE EXISTS
+  pages = {361--381},  % NO SUCH ARTICLE EXISTS
+  note = {[WRONG PUBLICATION TYPE: This is a book by Oxford University Press, not a journal article. No such article exists in Politics, Philosophy & Economics vol. 20 (2021)]},
+  keywords = {age-group-justice, diachronic-evaluation, intergenerational-justice, temporal-framing, Medium, CITATION-ERROR}
+}
+
+% CORRECT REPLACEMENT:
+@book{bidadanure2021justice_CORRECT,
+  author = {Bidadanure, Juliana Uhuru},
+  title = {Justice Across Ages: Treating Young and Old as Equals},
+  publisher = {Oxford University Press},
+  address = {Oxford},
+  year = {2021},
+  isbn = {9780198792185},
+  note = {CORE ARGUMENT: Develops theory of age-group justice combining complete life egalitarianism, lifespan prudence, and relational egalitarianism. Some inequalities between age groups matter independently of their diachronic impact - relational reasons for equality at each life stage. Distinguishes temporary age-group inequalities (acceptable if everyone experiences them across complete life) from generational inequalities (problematic when temporary inequalities become permanent for cohorts, as after 2008 recession). Temporal perspective essential: justice assessment requires both synchronic (moment-in-time) and diachronic (across lifespan) evaluation. RELEVANCE: Housing allocation has profound age-group dimensions. Young adults priced out of urban housing face both age-group inequality (synchronic) and potential generational inequality if they never recover access (diachronic). Elderly longtime residents facing displacement lose life-stage appropriate housing. Bidadanure's framework suggests housing justice must consider: (1) fair distribution across age groups at given time, (2) fair distribution across complete lives, (3) relational equality at each life stage. Temporal framing matters: policy benefiting young today may be prudent life-course investment, but systematic exclusion of cohort is unjust. The project should assess whether housing inequality between age groups reflects acceptable life-course variation or unjust generational stratification. POSITION: Age-group justice requires both complete-life diachronic equality and moment-in-time relational equality.},
+  keywords = {age-group-justice, diachronic-evaluation, intergenerational-justice, temporal-framing, Medium}
+}
+
+@comment{
+ERROR TYPE: Incorrect issue number and pages
+LISTED IN: domain2-temporal-justice.bib
+REASON: Wrong issue number (1 vs. 3) and wrong pages (1-18 vs. 382-401)
+CORRECT METADATA: See correction below
+VALIDATION_DATE: 2025-11-14
+ACTION: UPDATE issue number and pages
+}
+
+@article{lippertrasmussen2025intergenerational_INCORRECT_METADATA,
+  author = {Lippert-Rasmussen, Kasper},
+  title = {Intergenerational justice and the Argument from Temporal Non-Overlap},
+  journal = {Critical Review of International Social and Political Philosophy},
+  year = {2025},  % CORRECT
+  volume = {28},  % CORRECT
+  number = {1},  % WRONG - Should be: 3
+  pages = {1--18},  % WRONG - Should be: 382--401
+  note = {[INCORRECT METADATA: Wrong issue number and pages. Correct: vol. 28, no. 3, pages 382-401. Full title: "How should relational egalitarians think of social relations? Intergenerational justice and the Argument from Temporal Non-Overlap"]},
+  keywords = {intergenerational-justice, relational-egalitarianism, temporal-non-overlap, Low, CITATION-ERROR}
+}
+
+% CORRECT VERSION:
+@article{lippertrasmussen2025intergenerational_CORRECT,
+  author = {Lippert-Rasmussen, Kasper},
+  title = {How should relational egalitarians think of social relations? Intergenerational Justice and the Argument from Temporal Non-Overlap},
+  journal = {Critical Review of International Social and Political Philosophy},
+  year = {2025},
+  volume = {28},
+  number = {3},  % CORRECTED from 1
+  pages = {382--401},  % CORRECTED from 1--18
+  doi = {10.1080/13698230.2025.2462359},
+  note = {CORE ARGUMENT: Examines whether relational egalitarianism can handle intergenerational justice given temporal non-overlap. Argument from Temporal Non-Overlap: if social relations are crucial for justice (relational egalitarianism), but we don't socially relate to non-overlapping future generations, then relational egalitarianism provides incomplete justice theory. Defends relational egalitarianism by arguing temporal non-overlap doesn't preclude relevant relationships. However, acknowledges tension: standard relational accounts emphasize reciprocal relationships, but future people can't reciprocate. Examines scope and time-frame of egalitarian justice. RELEVANCE: Displacement involves temporal non-overlap. Former residents no longer present in neighborhood don't overlap with current/future residents. Can relational justice framework handle their claims? If justice requires actual relationships, do displaced people lose claims once they leave? Or do past relationships create enduring obligations? Housing project faces this puzzle: gentrification disrupts actual relationships (people scatter), but claims seem to persist. Lippert-Rasmussen's analysis suggests need for justice theory that handles both: relational dimensions (actual communities) and non-relational dimensions (obligations to non-overlapping past/future residents). Temporal framing matters: should we assess housing justice at moment-in-time (who's currently here?) or across time (who was here, who will be here?). POSITION: Temporal non-overlap creates theoretical challenge for relational egalitarianism requiring modification to handle intergenerational justice.},
+  keywords = {intergenerational-justice, relational-egalitarianism, temporal-non-overlap, Low}
+}
+
+@comment{
+====================================================================
+SUMMARY OF ERRORS
+
+Total entries with errors: 3
+- Wrong author name: 1 (dummer2025housing in domain1)
+- Wrong publication type: 1 (bidadanure2021justice in domain2)
+- Wrong metadata (issue/pages): 1 (lippertrasmussen2025intergenerational in domain2)
+
+All papers are real and verifiable. Errors are metadata issues only.
+
+Affected domains:
+- Domain 1: 1 error (4.5% of 22 entries) - DELETE duplicate
+- Domain 2: 2 errors (9.5% of 21 entries) - REPLACE + UPDATE
+- Domains 3-6: 0 errors (0% of 83 entries)
+
+Overall error rate: 2.4% (3 of 126 entries)
+====================================================================
+}
