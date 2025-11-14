@@ -40,10 +40,11 @@ This project develops a temporal theory of housing justice centered on **located
   - Tommie Shelby (spatial justice, urban segregation), Edward Soja (spatial justice)
   - Fred Hirsch (positional goods), Frank Knight (scarcity and location)
 - **WebSearch emphasis**:
-  - "spatial justice philosophy 2023-2025"
-  - "located goods distributive justice recent"
+  - "spatial justice philosophy 2010-2025"
+  - "located goods distributive justice"
   - "non-fungible goods allocation theory"
-- **Expected papers**: 10-12 key papers
+  - "geography of justice recent work"
+- **Expected papers**: 18-22 key papers
 - **Inclusion criteria**:
   - Theoretical work on distributive justice that addresses spatiality or positionality
   - Discussion of how location/place affects distributive claims
@@ -80,11 +81,13 @@ This project develops a temporal theory of housing justice centered on **located
   - Janna Thompson (historical injustice), Jeremy Waldron (superseding historical injustice)
   - Robert Goodin (temporal framing), Hillel Steiner (temporal rights)
 - **WebSearch emphasis**:
-  - "diachronic justice 2022-2025"
+  - "diachronic justice 2010-2025"
   - "path dependency normative theory"
   - "temporal priority principles philosophy"
   - "historical claims housing gentrification"
-- **Expected papers**: 10-12 key papers
+  - "justice over time philosophy"
+  - "backward looking forward looking justice"
+- **Expected papers**: 18-22 key papers
 - **Inclusion criteria**:
   - Theoretical work on how justice claims evolve over time
   - Analysis of competing temporal frames (past/present/future)
@@ -126,12 +129,14 @@ This project develops a temporal theory of housing justice centered on **located
   - Tommie Shelby (ghetto injustice), Elizabeth Anderson (integration)
   - Loretta Lees, Tom Slater (gentrification studies)
 - **WebSearch emphasis**:
-  - "gentrification philosophy ethics 2023-2025"
+  - "gentrification philosophy ethics 2010-2025"
   - "displacement ethics housing justice"
-  - "right to housing moral philosophy recent"
+  - "right to housing moral philosophy"
   - "incumbent vs newcomer housing claims"
   - "housing justice climate migration"
-- **Expected papers**: 12-15 key papers
+  - "eviction ethics philosophy"
+  - "affordable housing distributive justice"
+- **Expected papers**: 22-25 key papers
 - **Inclusion criteria**:
   - Philosophical analysis of housing justice issues
   - Normative evaluation of gentrification and displacement
@@ -177,10 +182,12 @@ This project develops a temporal theory of housing justice centered on **located
   - Seyla Benhabib (cosmopolitanism, territory)
 - **WebSearch emphasis**:
   - "territorial rights neighborhood level"
-  - "place attachment normative significance 2023-2025"
+  - "place attachment normative significance 2010-2025"
   - "mobility vs stability rights philosophy"
   - "occupancy theory housing"
-- **Expected papers**: 8-10 key papers
+  - "cosmopolitanism localism philosophy"
+  - "community membership territorial claims"
+- **Expected papers**: 15-18 key papers
 - **Inclusion criteria**:
   - Theoretical work on territorial rights (especially sub-state level)
   - Philosophical analysis of place attachment and its moral weight
@@ -223,11 +230,14 @@ This project develops a temporal theory of housing justice centered on **located
   - Joseph Gyourko (housing regulation)
   - Richard Florida (creative class, urban clustering)
 - **WebSearch emphasis**:
-  - "agglomeration effects housing 2023-2025"
-  - "spatial lock-in urban economics recent"
+  - "agglomeration effects housing 2010-2025"
+  - "spatial lock-in urban economics"
   - "path dependency cities empirical"
   - "housing supply elasticity justice"
-- **Expected papers**: 8-10 key papers
+  - "spatial mismatch hypothesis recent"
+  - "gentrification economics neighborhood change"
+  - "land use regulation housing affordability"
+- **Expected papers**: 18-22 key papers
 - **Inclusion criteria**:
   - Economic analysis of location-specific value creation
   - Empirical or theoretical work on spatial dynamics
@@ -272,11 +282,13 @@ This project develops a temporal theory of housing justice centered on **located
   - Seana Shiffrin, Hillel Steiner (left-libertarian property theory)
   - Anna Stilz (occupancy theory - bridges with Domain 4)
 - **WebSearch emphasis**:
-  - "occupancy theory property philosophy recent"
-  - "use rights housing philosophy 2023-2025"
+  - "occupancy theory property philosophy 2010-2025"
+  - "use rights housing philosophy"
   - "property rights tenants renters philosophy"
   - "adverse possession normative theory"
-- **Expected papers**: 8-10 key papers
+  - "bundle of rights housing"
+  - "lockean property theory housing application"
+- **Expected papers**: 15-18 key papers
 - **Inclusion criteria**:
   - Philosophical analysis of property foundations
   - Work on occupancy, use, and possession as grounds for claims
@@ -318,13 +330,13 @@ Based on this domain structure, the research project is positioned to fill sever
 ## Estimated Scope
 
 - **Total domains**: 6
-- **Estimated papers**: 56-69 papers total
-  - Domain 1: 10-12 papers
-  - Domain 2: 10-12 papers
-  - Domain 3: 12-15 papers
-  - Domain 4: 8-10 papers
-  - Domain 5: 8-10 papers
-  - Domain 6: 8-10 papers
+- **Estimated papers**: 106-127 papers total (targeting ~120)
+  - Domain 1: 18-22 papers
+  - Domain 2: 18-22 papers
+  - Domain 3: 22-25 papers
+  - Domain 4: 15-18 papers
+  - Domain 5: 18-22 papers
+  - Domain 6: 15-18 papers
 
 - **Key positions/debates to cover**:
   - Egalitarian vs. libertarian vs. sufficientarian distributive frameworks
@@ -336,11 +348,11 @@ Based on this domain structure, the research project is positioned to fill sever
 
 - **Time frame**:
   - **Foundational/classic works**: Include seminal works regardless of date (Rawls, Walzer, Locke on property, etc.)
-  - **Contemporary emphasis**: Strong focus on last 10 years (2015-2025), especially for:
-    - Domain 2 (temporal justice - emerging field)
-    - Domain 3 (housing justice - rapidly evolving with recent gentrification debates)
-    - Domain 5 (urban economics - current empirical findings)
-  - **Very recent work**: Use WebSearch extensively to capture 2023-2025 publications
+  - **Contemporary emphasis**: Strong focus on last 10-15 years (2010-2025), especially for:
+    - Domain 2 (temporal justice - emerging field, significant developments since 2010)
+    - Domain 3 (housing justice - rapidly evolving with gentrification debates, housing crisis discourse)
+    - Domain 5 (urban economics - empirical findings on agglomeration, housing supply, path dependency)
+  - **Recent developments**: Use WebSearch extensively to capture 2015-2025 publications, including cutting-edge work from 2023-2025
 
 ## Search Priorities
 
