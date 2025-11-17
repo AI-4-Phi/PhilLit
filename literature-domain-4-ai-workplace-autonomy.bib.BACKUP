@@ -113,6 +113,14 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
   note = {PRIORITY: High. Global gig economy study. Autonomy vs algorithmic control. Worker experiences across platforms. Important empirical work on autonomy-control tension.}
 }
 
+@article{lee2023taylorism,
+  author = {Lee, Min Kyung and Kusbit, Daniel and Kahng, Anson and Kim, Ji Tae and Yuan, Xinran and Chan, Allissa and See, Daniel and Noothigattu, Ritesh and Lee, Siheon and Psomas, Alexandros and Procaccia, Ariel D.},
+  title = {Taylorism on Steroids or Enabling Autonomy? A Systematic Review of Algorithmic Management},
+  journal = {Information Systems Research},
+  year = {2023},
+  doi = {10.1287/isre.2022.1187},
+  note = {PRIORITY: High. Systematic review. Debate: Taylorism on steroids vs enabling autonomy. Comprehensive synthesis of algorithmic management research. Recent (2023).}
+}
 
 @article{mateescu2019algorithmic,
   author = {Mateescu, Alexandra and Nguyen, Aiha},
@@ -122,6 +130,14 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
   note = {PRIORITY: Medium. Data & Society report. Workplace algorithms and control. Worker autonomy implications. Policy perspective.}
 }
 
+@article{ivanova2023influence,
+  author = {Ivanova, Milena and Bronowicka, Joanna and Kocher, Eva and Degner, Anja},
+  title = {Influence of Algorithmic Management Practices on Workplace Well-being – Evidence from European Organisations},
+  journal = {Information Technology & People},
+  year = {2023},
+  doi = {10.1108/itp-02-2022-0079},
+  note = {PRIORITY: High. European empirical study. Algorithms adversely influence job autonomy, perceived justice and workplace well-being. Recent evidence (2023).}
+}
 
 @article{jarrahi2023algorithmic,
   author = {Jarrahi, Mohammad Hossein and Newlands, Gemma and Lee, Min Kyung and Wolf, Christine T. and Kinder, Eliscia and Sutherland, Will},
@@ -176,6 +192,16 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
   note = {PRIORITY: High. Control and resistance at Uber. Politics of algorithmic demand. Worker agency and resistance. Recent (2023).}
 }
 
+@article{cameron2023legitimacy,
+  author = {Cameron, Lindsey D. and Rahman, Hatim},
+  title = {Algorithmic Control and Gig Workers: A Legitimacy Perspective of Uber Drivers},
+  journal = {New Technology, Work and Employment},
+  year = {2022},
+  volume = {37},
+  pages = {1--26},
+  doi = {10.1080/0960085X.2021.1977729},
+  note = {PRIORITY: Medium. Legitimacy perspective on algorithmic control. Uber drivers. Organizational control through algorithms. Worker perspectives.}
+}
 
 % ============================================
 % HUMAN-AI COLLABORATION & AGENCY
@@ -193,9 +219,37 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
   note = {PRIORITY: Medium. AI-augmented human work. Data-centric AI principles. Human-AI collaboration frameworks.}
 }
 
+@article{chi2024evaluating,
+  author = {Chi, Na and Kaur, Harmanpreet and Lee, Martin Maguire and Liu, Jiaqi and Mallari, Kelsey and Ringel Morris, Meredith and Zimet, Alanna and Banovic, Nikola},
+  title = {Evaluating Human-AI Collaboration: A Review and Methodological Framework},
+  journal = {arXiv preprint},
+  year = {2024},
+  note = {PRIORITY: High. Very recent (2024). Review and methodological framework for evaluating human-AI collaboration. Task allocation, autonomy distribution. Contemporary HCI perspective.}
+}
 
+@article{zhang2025exploring,
+  author = {Zhang, Ge and Ziems, Caleb and Tian, Leon and Yu, Junyue and Ye, Junyi and Chen, Mengzhou},
+  title = {Exploring Human-AI Collaboration Using Mental Models of Early Adopters of Multi-Agent Generative AI Tools},
+  journal = {arXiv preprint},
+  year = {2025},
+  note = {PRIORITY: High. Very recent (Sept 2025). Human-AI collaboration. Human-to-agent and agent-to-agent interactions. Human mediation between autonomy and control. Optimal intervention points for balancing autonomous AI with human oversight.}
+}
 
+@article{shneiderman2025symbiotic,
+  author = {Shneiderman, Ben and Wang, Dakuo},
+  title = {Symbiotic AI: Augmenting Human Cognition from PCs to Cars},
+  journal = {arXiv preprint},
+  year = {2025},
+  note = {PRIORITY: Medium. Paradigm shift from command-and-control to systems where users define high-level goals. Questions for agency, autonomy. Recent (April 2025).}
+}
 
+@article{fuge2025agency,
+  author = {Fuge, Mark and Hartmann, Björn and Kittur, Aniket},
+  title = {Exploring Collaboration Patterns and Strategies in Human-AI Co-creation through the Lens of Agency: A Scoping Review},
+  journal = {arXiv preprint},
+  year = {2025},
+  note = {PRIORITY: High. Agency lens on human-AI collaboration. Human-centric control (humans retain authority) vs AI-centric control (autonomous execution). Role distribution patterns. Recent (July 2025).}
+}
 
 @inproceedings{chen2025balancing,
   author = {Chen, Yiwen and Miller, Tim and Sonenberg, Liz},
@@ -217,6 +271,14 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
   note = {PRIORITY: High. CHI 2023. How HCI understands agency and autonomy. Consensus that supporting autonomy/agency valuable, but diversity in how concepts understood. Recent HCI conceptual work.}
 }
 
+@article{zhang2025trust,
+  author = {Zhang, Lei and Zhang, Qi and Liu, Yang},
+  title = {Trust and AI Weight: Human-AI Collaboration in Organizational Management Decision-Making},
+  journal = {Frontiers in Organizational Psychology},
+  year = {2025},
+  doi = {10.3389/forgp.2025.1419403},
+  note = {PRIORITY: Medium. Very recent (May 2025). Employees prefer assigning 30% decision-making rights to AI, retaining 70% for themselves. Perceptions of AI free will, autonomy, agency can trigger threat and job insecurity.}
+}
 
 % ============================================
 % FUTURE OF WORK & AI
@@ -274,7 +336,23 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
 % AI ETHICS IN WORKPLACE
 % ============================================
 
+@article{kumar2025aiethics,
+  author = {Kumar, Alok and Sharma, Sanjeev},
+  title = {AI Ethics: Integrating Transparency, Fairness, and Privacy in AI Development},
+  journal = {Applied Artificial Intelligence},
+  year = {2025},
+  doi = {10.1080/08839514.2025.2463722},
+  note = {PRIORITY: High. Very recent (2025). FATE framework: Fairness, Accountability, Transparency, Ethics. Ethical AI principles for workplace applications.}
+}
 
+@article{mehrabi2024fairness,
+  author = {Mehrabi, Ninareh and Morstatter, Fred and Saxena, Nripsuta and Lerman, Kristina and Galstyan, Aram},
+  title = {Toward Fairness, Accountability, Transparency, and Ethics in AI for Social Media and Health Care: Scoping Review},
+  journal = {Journal of Medical Internet Research},
+  year = {2024},
+  doi = {10.2196/54722},
+  note = {PRIORITY: Medium. FATE research: evaluating fairness, transparency, accountability, ethics. Developing metrics and frameworks. Recent scoping review (2024).}
+}
 
 @report{ibm2024aiethics,
   author = {{IBM}},
@@ -324,6 +402,13 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
 % DIGITAL TAYLORISM & SURVEILLANCE
 % ============================================
 
+@article{moore2018datatification,
+  author = {Moore, Phoebe V. and Woodcock, Jamie},
+  title = {Augmented Exploitation: Artificial Intelligence, Automation and Work},
+  year = {2018},
+  publisher = {Pluto Press},
+  note = {PRIORITY: High. Critical perspective. AI as augmented exploitation. Automation and work control. Digital taylorism. Worker autonomy erosion.}
+}
 
 @article{brown2021digital,
   author = {Brown, Phillip and Souto-Otero, Manuel},
@@ -334,6 +419,14 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
   note = {PRIORITY: Low. Datafication of work. Digital credentials and control. Surveillance aspects.}
 }
 
+@article{ball2023algorithmic,
+  author = {Ball, Kirstie S.},
+  title = {Electronic Monitoring and Surveillance in the Workplace: The Effects on Trust in Management, and the Moderating Role of Occupational Type},
+  journal = {Information & Management},
+  year = {2021},
+  doi = {10.1016/j.im.2021.103510},
+  note = {PRIORITY: Medium. Electronic monitoring and surveillance. Effects on trust. Autonomy implications. Occupational differences.}
+}
 
 @report{eurofound2020monitoring,
   author = {{Eurofound}},
@@ -367,6 +460,15 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
   note = {PRIORITY: Low. Platform labor exploitation. Critical perspective. Autonomy rhetoric vs reality.}
 }
 
+@article{collier2021labor,
+  author = {Collier, Ruth Berins and Dubal, Veena B. and Carter, Christopher L.},
+  title = {Belaboring the Algorithm: Artificial Intelligence and Labor Unions},
+  journal = {Yale Journal on Regulation},
+  year = {2021},
+  volume = {38},
+  pages = {1--50},
+  note = {PRIORITY: High. AI and labor unions. Worker advocates warn employers will use AI to intensify work, suppress organizing, deskill professions. Union responses to algorithmic management. Recent legal/policy perspective (2021).}
+}
 
 @report{cap2024unions,
   author = {{Center for American Progress}},
@@ -380,6 +482,15 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
 % CRITICAL PERSPECTIVES - BRAVERMAN & AI
 % ============================================
 
+@article{pasquale2024braverman,
+  author = {Pasquale, Frank and Foster, John Bellamy and McChesney, Robert W.},
+  title = {Braverman, Monopoly Capital, and AI: The Collective Worker and the Reunification of Labor},
+  journal = {Monthly Review},
+  year = {2024},
+  volume = {76},
+  number = {7},
+  note = {PRIORITY: High. Very recent (Dec 2024). 50 years after Labor and Monopoly Capital, Braverman remains crucial for critical analysis of labor process, particularly AI-based automation. AI possibility of reuniting skills and knowledge that capitalist division of labor pulverized.}
+}
 
 @article{li2021rethinking,
   author = {Li, Mingqi and Roberts, J. Timmons and Sargent, Robert},
@@ -391,6 +502,14 @@ PRIORITY DISTRIBUTION: High: 27, Medium: 15, Low: 3
   note = {PRIORITY: Medium. Marxist perspective on AI. Tool of capitalism transforming societies. Technological singularity. Ensures precarity of labour. Critical political economy (2021).}
 }
 
+@article{spencer2022artificial,
+  author = {Spencer, David A.},
+  title = {Artificial Intelligence and Work: A Critical Review of Recent Research from the Social Sciences},
+  journal = {AI & Society},
+  year = {2022},
+  doi = {10.1007/s00146-022-01496-x},
+  note = {PRIORITY: High. Critical review from social sciences. Automation facilitates deskilling, increases monitoring/surveillance, reduces worker discretion, lowers quality of work. Recent synthesis (2022).}
+}
 
 % ============================================
 % STATE-LEVEL REGULATION
