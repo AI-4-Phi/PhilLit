@@ -123,7 +123,7 @@ Fourth, climate change poses emerging challenges for philosophy of home: what ob
 
 Fifth, digital and virtual spaces challenge traditional conceptions of home: can online communities provide "home" in meaningful senses? How does remote work reshape home's function? These emerging questions require philosophical attention.
 
-Looking forward, the most fruitful direction integrates philosophical analysis with empirical housing research. Late housing scholar Peter King stressed that "housing research has historically neglected philosophy" (2004)—but equally, philosophy has neglected housing research. Bridging this gap requires philosophers to engage seriously with housing studies, urban planning, and policy analysis, bringing conceptual clarity and normative rigor to empirically-informed debates. The result would enrich both philosophy (through concrete application) and housing studies (through normative depth)—advancing both theoretical understanding and practical justice.
+Looking forward, the most fruitful direction integrates philosophical analysis with empirical housing research. Housing studies has historically neglected philosophy—but equally, philosophy has neglected housing research. Bridging this gap requires philosophers to engage seriously with housing studies, urban planning, and policy analysis, bringing conceptual clarity and normative rigor to empirically-informed debates. The result would enrich both philosophy (through concrete application) and housing studies (through normative depth)—advancing both theoretical understanding and practical justice.
 
 **Word count: 415**
 
@@ -156,8 +156,6 @@ Jenkins, David, and Kimberley Brownlee. 2022. "What a Home Does." *Law and Philo
 Kahlenberg, Richard. 2023. "How Elites Use Zoning and NIMBYism to Keep the Working Class Out." Niskanen Center.
 
 Kimhur, Ben. 2022. "Approach to Housing Justice from a Capability Perspective: Bridging the Gap Between Ideals and Policy Practices." *Housing Studies* 37(9): 1736-1755.
-
-King, Peter. 2004. "The Meaning of Home: A Biographical Approach." *Housing, Theory and Society* 21(2): 49-55.
 
 Kohn, Margaret. 2016. *The Death and Life of the Urban Commonwealth*. Oxford: Oxford University Press.
 
