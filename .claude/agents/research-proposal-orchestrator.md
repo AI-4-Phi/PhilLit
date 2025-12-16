@@ -163,7 +163,12 @@ Coordinate a 5-phase workflow that produces:
    - Writer creates section file
    - **Update task-progress.md** ✓
 3. After all section files complete, assemble final review:
-   - Run command: `cat synthesis-section-*.md > literature-review-final.md`
+   - CRITICAL: Ensure UTF-8 encoding for special characters (umlauts, em-dashes, etc.)
+   - Verify section files are UTF-8 encoded before assembly
+   - CRITICAL: Add empty lines between sections for proper markdown parsing
+   - Run command: `for f in synthesis-section-*.md; do cat "$f"; echo; echo; done > literature-review-final.md`
+   - This adds two blank lines between each section (required for pandoc to parse headings correctly)
+   - Verify final file encoding: `file literature-review-final.md` should show "UTF-8 Unicode text"
    - **Update task-progress.md** ✓
 
 **Parallelization**: Sections can be written simultaneously  
@@ -265,7 +270,7 @@ All outputs must have:
 
 - **Progress updates**: "Phase 5/5: Writing synthesis section 3 of 4..."
 - **Section-by-section writing**: "Section 1 complete → synthesis-section-1.md (450 words). Proceeding to Section 2 (Key Debates)..."
-- **Assembly step**: "All 4 sections complete (3200 words total). Assembling final review: synthesis-section-*.md → literature-review-final.md"
+- **Assembly step**: "All 4 sections complete (3200 words total). Assembling final review with proper spacing: synthesis-section-*.md → literature-review-final.md (adding blank lines between sections for pandoc compatibility)"
 - **Word count tracking**: "Section 2 complete (1350 words). Running total: 1800/3500 words"
 - **BibTeX outputs**: "Domain 3 complete → literature-domain-3.bib (12 papers, ready for Zotero import)"
 - **Validation updates**: "Phase 3: Citation validation complete. 45/48 entries verified (94%). 3 entries moved to unverified-sources.bib"

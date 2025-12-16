@@ -65,17 +65,17 @@ What unifies these approaches under Hendrycks and Hiscott's narrow definition is
 
 ### 2.2 The Broad Definition: Functions and Mechanisms
 
-Kästner and Crook (2024) offer a dramatically different characterization. They define MI as encompassing "functional and higher-level explanations" grounded in the philosophical framework of mechanistic explanation. On their account, MI is not restricted to neuron-level analysis but includes any explanation that identifies organized parts and their activities in producing a phenomenon. This explicitly connects AI interpretability to the "new mechanism" in philosophy of science, particularly the Machamer-Darden-Craver (MDC) framework.
+K?tner and Crook (2024) offer a dramatically different characterization. They define MI as encompassing "functional and higher-level explanations" grounded in the philosophical framework of mechanistic explanation. On their account, MI is not restricted to neuron-level analysis but includes any explanation that identifies organized parts and their activities in producing a phenomenon. This explicitly connects AI interpretability to the "new mechanism" in philosophy of science, particularly the Machamer-Darden-Craver (MDC) framework.
 
 The MDC account characterizes mechanisms as "entities and activities organized such that they are productive of regular changes from start or setup to finish or termination conditions" (Machamer et al. 2000, 3). Mechanistic explanation proceeds by decomposing a phenomenon into component parts (entities) and their operations (activities), showing how their organization produces the explanandum. Crucially, mechanisms can be characterized at multiple levels of abstraction. Craver's (2007) influential development of this framework emphasizes that mechanistic explanations need not reduce to fundamental physical levels; what matters is identifying constitutive relations between a mechanism's components and the phenomenon it produces.
 
-By linking MI to this philosophical tradition, Kästner and Crook (2024) license a much broader scope. Circuit analysis counts as MI not merely when identifying neurons, but when explaining how functional modulespotentially spanning multiple layersjointly implement capabilities. Representation analysis qualifies as MI when it reveals how semantic or syntactic structure emerges from network organization. Even high-level functional decomposition can be mechanistic if it identifies how subsystems contribute to overall behavior. The emphasis shifts from neurons to organization, from activations to activities, from microscopic to multi-level analysis.
+By linking MI to this philosophical tradition, K?tner and Crook (2024) license a much broader scope. Circuit analysis counts as MI not merely when identifying neurons, but when explaining how functional modulespotentially spanning multiple layersjointly implement capabilities. Representation analysis qualifies as MI when it reveals how semantic or syntactic structure emerges from network organization. Even high-level functional decomposition can be mechanistic if it identifies how subsystems contribute to overall behavior. The emphasis shifts from neurons to organization, from activations to activities, from microscopic to multi-level analysis.
 
 This broad construal aligns with much contemporary MI research that operates at higher levels of abstraction. Engels and colleagues (2024), winners of the ICML 2024 MI workshop, analyze the geometric structure of categorical and hierarchical concepts in LLM representation spacesa clearly mechanistic inquiry not reducible to individual neurons. Nanda and colleagues (2024) investigate how circuits generalize across tasks through component reuse and adaptation, examining functional properties that transcend specific activation patterns. CircuitLens (Marks et al. 2024) extends interpretability to context-dependent features, isolating input patterns that trigger activations rather than merely cataloging neuron responses.
 
 ### 2.3 The Philosophical Foundations
 
-To assess these competing definitions, we must examine the philosophical machinery Kästner and Crook invoke. The new mechanistic philosophy emerged partly as a response to limitations in covering-law models and purely causal accounts of explanation. Mechanistic explanations are distinctively constitutive: they show how a phenomenon is constituted by the organized operation of its parts (Craver 2007). This contrasts with etiological explanation, which identifies causes external to the phenomenon.
+To assess these competing definitions, we must examine the philosophical machinery K?tner and Crook invoke. The new mechanistic philosophy emerged partly as a response to limitations in covering-law models and purely causal accounts of explanation. Mechanistic explanations are distinctively constitutive: they show how a phenomenon is constituted by the organized operation of its parts (Craver 2007). This contrasts with etiological explanation, which identifies causes external to the phenomenon.
 
 A central debate concerns levels of analysis. Marr's (1982) influential tri-level framework distinguishes computational (what function is computed), algorithmic (how is it computed), and implementational (how is the algorithm physically realized) levels. The algorithmic level, as Love (2015) argues, bridges computational specification and physical implementation. Craver's (2007) mechanistic levels work differently: higher levels are not merely realized by lower levels but constituted by them. A mechanism at level n comprises entities whose own mechanisms operate at level n-1.
 
@@ -83,19 +83,19 @@ Multiple realizability complicates this picture. If the same function can be imp
 
 However, Siegel and Craver (2024) recently argued that phenomenological lawsregularities described without underlying mechanismsare "explanatorily empty" as constitutive explanations. Their argument has bite for MI: if we identify a high-level functional pattern (e.g., "the model detects sentiment by attending to emotionally valenced words") without specifying the mechanistic details of how this is implemented, have we provided a genuinely mechanistic explanation or merely redescribed the phenomenon?
 
-This tension illuminates the Hendrycks-Kästner disagreement. Hendrycks and Hiscott implicitly endorse something like Siegel and Craver's position: without implementation-level detail (neurons, activations), we lack genuine mechanistic understanding. Kästner and Crook, drawing on Craver's (2007) earlier work, argue that multi-level mechanistic explanations need not reduce to lowest-level components; what matters is identifying constitutive organization at an appropriate level of analysis.
+This tension illuminates the Hendrycks-K?tner disagreement. Hendrycks and Hiscott implicitly endorse something like Siegel and Craver's position: without implementation-level detail (neurons, activations), we lack genuine mechanistic understanding. K?tner and Crook, drawing on Craver's (2007) earlier work, argue that multi-level mechanistic explanations need not reduce to lowest-level components; what matters is identifying constitutive organization at an appropriate level of analysis.
 
 ### 2.4 Implications for Technical Practice
 
 These definitional differences have practical consequences. Consider sparse autoencoders (SAEs), currently prominent in MI research. Under the narrow definition, SAEs are paradigmatic MI tools: they decompose neural activations into interpretable features, revealing what individual components respond to (Bricken et al. 2023; Templeton et al. 2024). The explanatory target is the activation pattern itself.
 
-Under the broad definition, SAEs' status is more complex. If they merely catalog features without revealing how those features combine to implement higher-level functions, they might fail to provide mechanistic explanations in Kästner and Crook's sense. DeepMind's public deprioritization of SAEs in favor of other methods (noted in the GemmaScope release documentation) suggests practical limits to feature-based approaches. Conversely, if SAE features can be integrated into circuit-level functional explanationsshowing how features interact to produce capabilitiesthey contribute to broadly mechanistic understanding.
+Under the broad definition, SAEs' status is more complex. If they merely catalog features without revealing how those features combine to implement higher-level functions, they might fail to provide mechanistic explanations in K?tner and Crook's sense. DeepMind's public deprioritization of SAEs in favor of other methods (noted in the GemmaScope release documentation) suggests practical limits to feature-based approaches. Conversely, if SAE features can be integrated into circuit-level functional explanationsshowing how features interact to produce capabilitiesthey contribute to broadly mechanistic understanding.
 
 The same ambiguity affects circuit analysis. When Conmy and colleagues (2023) develop automated circuit discovery, are they pursuing narrow MI (identifying minimal neuron sets) or broad MI (revealing functional architecture)? The circuit metaphor itself is telling: electrical circuits are paradigmatic mechanisms in the MDC framework, with components (resistors, capacitors) and activities (current flow) organized to produce functions (amplification, filtering). But neural "circuits" might be mere metaphors if they lack the tight organization and functional specificity of engineered circuits.
 
 ### 2.5 The Conceptual Tension
 
-We can now articulate the core conceptual problem. Hendrycks and Hiscott's narrow definition risks making MI trivial: any attention to neurons or activations counts as MI, even if it fails to reveal meaningful organization or function. Their critique of MI's impracticality targets this trivialized version. But Kästner and Crook's broad definition risks making MI vacuous: any functional explanation, no matter how high-level or implementation-independent, counts as mechanistic if it gestures toward underlying processes. Their claims about MI's necessity and sufficiency for safety might then collapse into claims about understanding generally.
+We can now articulate the core conceptual problem. Hendrycks and Hiscott's narrow definition risks making MI trivial: any attention to neurons or activations counts as MI, even if it fails to reveal meaningful organization or function. Their critique of MI's impracticality targets this trivialized version. But K?tner and Crook's broad definition risks making MI vacuous: any functional explanation, no matter how high-level or implementation-independent, counts as mechanistic if it gestures toward underlying processes. Their claims about MI's necessity and sufficiency for safety might then collapse into claims about understanding generally.
 
 The philosophical literature on mechanistic explanation does not resolve this tension because mechanisms in biology and neurosciencethe canonical cases for new mechanism philosophydiffer from mechanisms in deep learning. Biological mechanisms typically exhibit modular organization with relatively clear functional boundaries (metabolic pathways, neural circuits for specific reflexes). Deep neural networks exhibit massive distributed representations and context-dependent functionality that resists clean decomposition (as the "compression problem" highlights).
 
@@ -105,7 +105,7 @@ Williams and colleagues (2025) make this point explicitly, arguing that "MI need
 
 ### 2.6 Toward Conceptual Clarity
 
-Three paths forward emerge. First, we might embrace definitional pluralism: "mechanistic interpretability" refers to a family of approaches operating at different levels with different explanatory aims. Circuit analysis, feature extraction, and functional decomposition are distinct projects, each valid for its purposes. This dissolves the Hendrycks-Kästner dispute by denying they are talking about the same thing.
+Three paths forward emerge. First, we might embrace definitional pluralism: "mechanistic interpretability" refers to a family of approaches operating at different levels with different explanatory aims. Circuit analysis, feature extraction, and functional decomposition are distinct projects, each valid for its purposes. This dissolves the Hendrycks-K?tner dispute by denying they are talking about the same thing.
 
 Second, we might insist on terminological precision: reserve "mechanistic interpretability" for approaches that genuinely satisfy philosophical criteria for mechanistic explanation (whatever those turn out to be), and use other terms (functional analysis, representational analysis) for approaches that operate at higher levels. This preserves conceptual rigor but requires settling contested philosophical questions.
 
@@ -139,7 +139,7 @@ Hendrycks, Dan, and Laura Hiscott. 2025. "The Misguided Quest for Mechanistic AI
 
 Illari, Phyllis, and Jon Williamson. 2024. "Mechanisms in Science." In *The Stanford Encyclopedia of Philosophy*, Fall 2024 ed., edited by Edward N. Zalta and Uri Nodelman. Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/fall2024/entries/science-mechanisms/.
 
-Kästner, Lena, and Barnaby Crook. 2024. "Explaining AI Through Mechanistic Interpretability." *European Journal for Philosophy of Science* 14: 52. https://doi.org/10.1007/s13194-024-00614-4.
+K?tner, Lena, and Barnaby Crook. 2024. "Explaining AI Through Mechanistic Interpretability." *European Journal for Philosophy of Science* 14: 52. https://doi.org/10.1007/s13194-024-00614-4.
 
 Krickel, Beate. 2024. "Different Types of Mechanistic Explanation and Their Ontological Implications." In *Current Debates in Philosophy of Science*, 1734. Springer. https://doi.org/10.1007/978-3-031-46917-6_2.
 
@@ -295,7 +295,7 @@ Park, Peter S., et al. 2024. "Deception Abilities Emerged in Large Language Mode
 
 SAIV. 2024. "7th International Symposium on AI Verification." Montreal, Canada, July. https://www.aiverification.org/2024/.
 
-Scheurer, Jérémy, et al. 2024. "AI Strategic Deception: A Critical Safety Concern." MIT AI Alignment. https://aialignment.mit.edu/initiatives/caip-exhibition/strategic-deception/.
+Scheurer, J??y, et al. 2024. "AI Strategic Deception: A Critical Safety Concern." MIT AI Alignment. https://aialignment.mit.edu/initiatives/caip-exhibition/strategic-deception/.
 
 Souly, Nathaniel, et al. 2024. "The Weapons of Mass Destruction Proxy Benchmark."
 
@@ -303,11 +303,11 @@ VNN-COMP Organizers. 2024. "2024 International Neural Network Verification Compe
 
 ## Section 4: Analyzing Necessity Claims - Is MI Required for AI Safety?
 
-We can now address the necessity question directly: is mechanistic interpretability necessary for AI safety? Kästner and Crook (2024) claim in their abstract that MI is "necessary for solving some core problems in AI safety," while Hendrycks and Hiscott (2025) argue MI is "misguided" and alternatives are superior. These apparently contradictory positions demand careful analysis.
+We can now address the necessity question directly: is mechanistic interpretability necessary for AI safety? K?tner and Crook (2024) claim in their abstract that MI is "necessary for solving some core problems in AI safety," while Hendrycks and Hiscott (2025) argue MI is "misguided" and alternatives are superior. These apparently contradictory positions demand careful analysis.
 
 ### 4.1 Reconstructing the Necessity Argument
 
-Kästner and Crook's (2024) necessity claim rests on an epistemic argument: to ensure AI safety, we must understand how AI systems work; mechanistic explanations provide the appropriate form of understanding; therefore, MI is necessary for safety. Their abstract states that MI is needed to "solve some core problems in AI safety," and they argue that MI "enables us to meet desirable social desiderata including safety."
+K?tner and Crook's (2024) necessity claim rests on an epistemic argument: to ensure AI safety, we must understand how AI systems work; mechanistic explanations provide the appropriate form of understanding; therefore, MI is necessary for safety. Their abstract states that MI is needed to "solve some core problems in AI safety," and they argue that MI "enables us to meet desirable social desiderata including safety."
 
 We can formalize this as:
 
@@ -332,7 +332,7 @@ MI offers a potential solution. If we can interpret the model's internal represe
 
 **Understanding-Based Safety Evaluations**: Anthropic's (2025) research recommendations emphasize "understanding model cognition" as central to safety. Their rationale parallels Cotra's: against sophisticated AI systems, we cannot rely solely on external behavior. We need methods for determining whether models have dangerous capabilities they conceal, misaligned goals they hide, or deceptive strategies they deploy.
 
-This motivates a narrower necessity claim: *MI may be necessary for detecting deception in advanced AI systems*. This is weaker than Kästner and Crook's general claim but defensible given current evidence. If alignment faking is a central safety concern (and empirical results suggest it is), and if MI provides unique epistemic access to detect deception (an open question), then MI becomes necessary for at least this aspect of safety.
+This motivates a narrower necessity claim: *MI may be necessary for detecting deception in advanced AI systems*. This is weaker than K?tner and Crook's general claim but defensible given current evidence. If alignment faking is a central safety concern (and empirical results suggest it is), and if MI provides unique epistemic access to detect deception (an open question), then MI becomes necessary for at least this aspect of safety.
 
 **Opacity and Trust**: Philosophical arguments complement empirical considerations. Several authors argue that opacitylack of understanding about internal mechanismsfundamentally undermines justified confidence in AI safety. Stammer and colleagues (2024) examine the relationship between trust and explainability, though they question whether explainability is always necessary for trust. The intuition is clear: we should not trust systems we do not understand, especially when those systems could cause catastrophic harm.
 
@@ -389,7 +389,7 @@ Even if we identify specific safety properties requiring MI, we must clarify the
 
 **Practical Necessity**: Given current technological capabilities and foreseeable advances, is MI necessary for achieving safety in practice? This is more plausible but vulnerable to alternative approaches. Constitutional AI, formal verification, and oversight methods represent practical alternatives.
 
-**Epistemic Necessity**: Given epistemic constraints on accessing AI systems' internal states and intentions, is MI necessary for the knowledge required to ensure safety? This seems closest to Kästner and Crook's position and Cotra's argument. The claim is that behavioral evaluation provides insufficient epistemic access; we need internal access; MI provides internal access; therefore, MI is epistemically necessary.
+**Epistemic Necessity**: Given epistemic constraints on accessing AI systems' internal states and intentions, is MI necessary for the knowledge required to ensure safety? This seems closest to K?tner and Crook's position and Cotra's argument. The claim is that behavioral evaluation provides insufficient epistemic access; we need internal access; MI provides internal access; therefore, MI is epistemically necessary.
 
 But even epistemic necessity faces challenges. Other methods might provide adequate epistemic access: probing methods, causal interventions, attention analysis, representation engineering. Whether MI specifically is epistemically necessary depends on whether these alternatives provide equivalent understanding.
 
@@ -400,7 +400,7 @@ Crucially, the necessity claim's plausibility depends entirely on how we define 
 - Not necessary because we make safety progress without neuron-level understanding (Constitutional AI, formal verification)
 - Not sufficient because neuron-level understanding doesn't scale and doesn't automatically prevent deception
 
-Under Kästner and Crook's broad definition (functional and higher-level mechanistic explanations), MI appears more plausibly necessary:
+Under K?tner and Crook's broad definition (functional and higher-level mechanistic explanations), MI appears more plausibly necessary:
 
 - Some form of mechanistic understanding may be necessary for detecting deception and verifying alignment
 - Functional decomposition and causal analysis (both mechanistic in the broad sense) contribute to safety
@@ -441,10 +441,10 @@ This qualified claim captures what seems defensible:
 - "Specific AI safety properties" rejects the universal necessity claim
 - "Advanced AI systems" restricts scope to systems capable of deception
 - "Given current and foreseeable alternatives" makes necessity contingent on the state of alternative approaches
-- "Contingent on definitional choices" acknowledges the Hendrycks-Kästner disagreement
+- "Contingent on definitional choices" acknowledges the Hendrycks-K?tner disagreement
 - "Technological development" allows for future changes
 
-This is weaker than Kästner and Crook's necessity claim but stronger than Hendrycks and Hiscott's rejection. It reflects the current state of evidence and conceptual analysis while remaining appropriately provisional.
+This is weaker than K?tner and Crook's necessity claim but stronger than Hendrycks and Hiscott's rejection. It reflects the current state of evidence and conceptual analysis while remaining appropriately provisional.
 
 ---
 
@@ -464,7 +464,7 @@ Dalrymple, David, et al. 2024. "Towards Guaranteed Safe AI: A Framework for Ensu
 
 Hendrycks, Dan, and Laura Hiscott. 2025. "The Misguided Quest for Mechanistic AI Interpretability." *AI Frontiers*, May 15. https://ai-frontiers.org/articles/the-misguided-quest-for-mechanistic-ai-interpretability.
 
-Kästner, Lena, and Barnaby Crook. 2024. "Explaining AI Through Mechanistic Interpretability." *European Journal for Philosophy of Science* 14: 52. https://doi.org/10.1007/s13194-024-00614-4.
+K?tner, Lena, and Barnaby Crook. 2024. "Explaining AI Through Mechanistic Interpretability." *European Journal for Philosophy of Science* 14: 52. https://doi.org/10.1007/s13194-024-00614-4.
 
 METR (Model Evaluation & Threat Research). 2024. "Common Elements of Frontier AI Safety Policies." November. https://metr.org/assets/common-elements-nov-2024.pdf.
 
@@ -474,7 +474,7 @@ Pan, Alexander, et al. 2024. "Alignment Faking in Large Language Models." Anthro
 
 SAIV. 2024. "7th International Symposium on AI Verification." Montreal, Canada, July. https://www.aiverification.org/2024/.
 
-Scheurer, Jérémy, et al. 2024. "AI Strategic Deception: A Critical Safety Concern." MIT AI Alignment. https://aialignment.mit.edu/initiatives/caip-exhibition/strategic-deception/.
+Scheurer, J??y, et al. 2024. "AI Strategic Deception: A Critical Safety Concern." MIT AI Alignment. https://aialignment.mit.edu/initiatives/caip-exhibition/strategic-deception/.
 
 Souly, Nathaniel, et al. 2024. "The Weapons of Mass Destruction Proxy Benchmark."
 
@@ -488,11 +488,11 @@ Williams, Ryan, et al. 2025. "Mechanistic Interpretability Needs Philosophy for 
 
 ## Section 5: Analyzing Sufficiency Claims - Is MI Enough for AI Safety?
 
-If mechanistic interpretability is not clearly necessary for all aspects of AI safety, perhaps it is sufficient: could comprehensive MI alone ensure safety? Kästner and Crook (2024) appear to make this stronger claim, stating that "MI enables us to meet desirable social desiderata including safety." This section examines whether understanding mechanisms suffices for achieving safety.
+If mechanistic interpretability is not clearly necessary for all aspects of AI safety, perhaps it is sufficient: could comprehensive MI alone ensure safety? K?tner and Crook (2024) appear to make this stronger claim, stating that "MI enables us to meet desirable social desiderata including safety." This section examines whether understanding mechanisms suffices for achieving safety.
 
 ### 5.1 Reconstructing the Sufficiency Argument
 
-Kästner and Crook's sufficiency claim can be formalized as:
+K?tner and Crook's sufficiency claim can be formalized as:
 
 1. AI safety requires understanding how systems work and controlling their behavior (safety requirement)
 2. MI provides complete understanding of how systems work (understanding claim)
@@ -587,7 +587,7 @@ As with necessity claims, sufficiency claims depend critically on how we define 
 
 **Narrow MI (Hendrycks & Hiscott)**: Under the narrow definitionneuron-level activation analysisMI is clearly insufficient. Understanding individual neurons and circuits does not scale to comprehensive safety assurance. Hendrycks and Hiscott's critique targets precisely this insufficiency.
 
-**Broad MI (Kästner & Crook)**: Under the broad definitionincluding functional and higher-level mechanistic explanationssufficiency claims become more plausible but also more trivial. If MI encompasses any mechanistic or functional explanation at any level of abstraction, then claiming "MI is sufficient for safety" approaches tautology: "understanding how systems work (in some sense) enables making them safe (in some sense)."
+**Broad MI (K?tner & Crook)**: Under the broad definitionincluding functional and higher-level mechanistic explanationssufficiency claims become more plausible but also more trivial. If MI encompasses any mechanistic or functional explanation at any level of abstraction, then claiming "MI is sufficient for safety" approaches tautology: "understanding how systems work (in some sense) enables making them safe (in some sense)."
 
 But the broad definition still faces problems: even comprehensive multi-level mechanistic understanding leaves gaps. We still need value specification (what should the system do?), formal verification (are we certain about properties?), governance structures (who oversees deployment?), and contextual judgment (where is deployment appropriate?).
 
@@ -658,7 +658,7 @@ Google DeepMind. 2024. "Gemma Scope: Helping the Safety Community Shed Light on 
 
 Hendrycks, Dan, and Laura Hiscott. 2025. "The Misguided Quest for Mechanistic AI Interpretability." *AI Frontiers*, May 15. https://ai-frontiers.org/articles/the-misguided-quest-for-mechanistic-ai-interpretability.
 
-Kästner, Lena, and Barnaby Crook. 2024. "Explaining AI Through Mechanistic Interpretability." *European Journal for Philosophy of Science* 14: 52. https://doi.org/10.1007/s13194-024-00614-4.
+K?tner, Lena, and Barnaby Crook. 2024. "Explaining AI Through Mechanistic Interpretability." *European Journal for Philosophy of Science* 14: 52. https://doi.org/10.1007/s13194-024-00614-4.
 
 Kierdorf, Jan, et al. 2024. "The Limits of Perception: Analyzing Inconsistencies in Saliency Maps in XAI." arXiv preprint arXiv:2403.15684. https://arxiv.org/abs/2403.15684.
 
@@ -686,15 +686,15 @@ Zednik, Carlos, and Hannes Boelsen. 2021. "Solving the Black Box Problem: A Norm
 
 We can now synthesize the analysis and identify productive research directions. The central questionis mechanistic interpretability necessary or sufficient for AI safety?admits no simple answer. Both necessity and sufficiency claims depend on definitions, contexts, and which aspects of safety we address. However, this complexity reveals structure: the apparent contradictions in the literature stem from conceptual confusions that philosophical analysis can resolve.
 
-### 6.1 Resolving the Hendrycks-Kästner Disagreement
+### 6.1 Resolving the Hendrycks-K?tner Disagreement
 
-The striking opposition between Hendrycks and Hiscott (2025)who call MI "misguided"and Kästner and Crook (2024)who call it necessary and sufficient for safetyinitially appears irreconcilable. Our analysis reveals these positions are compatible once we disambiguate their terms.
+The striking opposition between Hendrycks and Hiscott (2025)who call MI "misguided"and K?tner and Crook (2024)who call it necessary and sufficient for safetyinitially appears irreconcilable. Our analysis reveals these positions are compatible once we disambiguate their terms.
 
-**Different Definitions**: Section 2 documented that Hendrycks and Hiscott define MI narrowly (neuron-level activations) while Kästner and Crook define it broadly (including functional and higher-level mechanistic explanations). They are talking about different things. Under narrow MI, Hendrycks and Hiscott's skepticism is warranted: neuron-level analysis faces insurmountable scalability challenges and does not automatically yield safety. Under broad MI, Kästner and Crook's optimism has some warrant: some form of mechanistic or functional understanding plausibly contributes to safety.
+**Different Definitions**: Section 2 documented that Hendrycks and Hiscott define MI narrowly (neuron-level activations) while K?tner and Crook define it broadly (including functional and higher-level mechanistic explanations). They are talking about different things. Under narrow MI, Hendrycks and Hiscott's skepticism is warranted: neuron-level analysis faces insurmountable scalability challenges and does not automatically yield safety. Under broad MI, K?tner and Crook's optimism has some warrant: some form of mechanistic or functional understanding plausibly contributes to safety.
 
 However, the broad definition risks vacuity (Section 2.5). If MI includes any functional explanation at any level, it becomes indistinguishable from "understanding AI systems" generally. The necessity and sufficiency claims then collapse into truisms: "understanding systems helps ensure they work safely."
 
-**Different Safety Problems**: The disagreement also reflects different safety priorities. Hendrycks and Hiscott focus on practical safety methods for current and near-term systems, emphasizing alternatives like representation engineering and top-down analysis that circumvent the compression problem. Kästner and Crook focus on conceptual foundations, arguing that genuine safety understanding requires mechanistic explanation in the philosophical senseidentifying organized components that produce phenomena.
+**Different Safety Problems**: The disagreement also reflects different safety priorities. Hendrycks and Hiscott focus on practical safety methods for current and near-term systems, emphasizing alternatives like representation engineering and top-down analysis that circumvent the compression problem. K?tner and Crook focus on conceptual foundations, arguing that genuine safety understanding requires mechanistic explanation in the philosophical senseidentifying organized components that produce phenomena.
 
 Section 3's taxonomy shows AI safety encompasses multiple distinct problems: alignment, robustness, deception detection, dangerous capabilities assessment, governance. Sections 4 and 5 argued that MI's relevance varies across these domains. For deception detection and inner alignment verification, some form of MI may be practically necessary (Section 4.4). For robustness and governance, MI appears less central.
 
@@ -702,7 +702,7 @@ Section 3's taxonomy shows AI safety encompasses multiple distinct problems: ali
 
 - *From Hendrycks & Hiscott*: Narrow MI (neuron-level analysis) is neither necessary nor sufficient for comprehensive AI safety; alternative approaches achieve safety progress; the compression problem makes narrow MI impractical for frontier systems.
 
-- *From Kästner & Crook*: Some form of understanding-based approach (which might count as broadly mechanistic) may be necessary for detecting deception and verifying alignment in advanced AI; purely behavioral evaluations are insufficient against strategic AI.
+- *From K?tner & Crook*: Some form of understanding-based approach (which might count as broadly mechanistic) may be necessary for detecting deception and verifying alignment in advanced AI; purely behavioral evaluations are insufficient against strategic AI.
 
 Both can be partially right because they address different questions with different definitions. The apparent contradiction dissolves under conceptual analysis.
 
@@ -745,9 +745,9 @@ Philosophy of science can make several contributions to MI and AI safety researc
 
 **Conceptual Analysis Prior to Empirical Investigation**: Many apparent empirical disagreements in AI safety stem from conceptual confusion. Before investigating whether MI "works" for safety, we must clarify what MI is, what safety encompasses, and what "working" means. Philosophy's strength is precisely this conceptual groundwork.
 
-The Hendrycks-Kästner disagreement exemplifies this. Their dispute is partly empirical (does narrow MI scale? Do alternatives work?), but primarily conceptual (what counts as mechanistic? What safety properties matter?). Resolving the conceptual issues clarifies which empirical questions are worth pursuing.
+The Hendrycks-K?tner disagreement exemplifies this. Their dispute is partly empirical (does narrow MI scale? Do alternatives work?), but primarily conceptual (what counts as mechanistic? What safety properties matter?). Resolving the conceptual issues clarifies which empirical questions are worth pursuing.
 
-**Normative Frameworks**: Safety is inherently normativeit concerns what systems *should* do, what risks are *acceptable*, what values *ought* to be pursued. Kästner and Crook (2024) correctly note that MI "enables meeting desirable social desiderata," but philosophical analysis must specify which desiderata, why they're desirable, and how to navigate value conflicts.
+**Normative Frameworks**: Safety is inherently normativeit concerns what systems *should* do, what risks are *acceptable*, what values *ought* to be pursued. K?tner and Crook (2024) correctly note that MI "enables meeting desirable social desiderata," but philosophical analysis must specify which desiderata, why they're desirable, and how to navigate value conflicts.
 
 Philosophy of technology and ethics can clarify these normative dimensions. Stammer and colleagues' (2024) work on trust, explainability, and AI examines when transparency promotes warranted trust versus when it's unnecessary or counterproductive. Such normative analysis guides technical priorities.
 
@@ -870,7 +870,7 @@ Neither the necessity nor sufficiency claims about mechanistic interpretability'
 - What are the fundamental limits of interpretability, and how do we design safety architectures that work within those limits?
 - How do we validate interpretability explanations to ensure they provide genuine rather than illusory understanding?
 
-**Philosophical Contribution**: This literature review demonstrates that conceptual analysis is not ancillary to technical AI safety research but essential for its progress. The Hendrycks-Kästner disagreement appears irreconcilable as an empirical dispute but dissolves under conceptual analysis. Philosophy's toolsdefinitional precision, modal logic, normative frameworks, cross-domain comparisonare exactly what the MI-safety debate requires.
+**Philosophical Contribution**: This literature review demonstrates that conceptual analysis is not ancillary to technical AI safety research but essential for its progress. The Hendrycks-K?tner disagreement appears irreconcilable as an empirical dispute but dissolves under conceptual analysis. Philosophy's toolsdefinitional precision, modal logic, normative frameworks, cross-domain comparisonare exactly what the MI-safety debate requires.
 
 The path forward requires sustained engagement between philosophical analysis and technical research, methodological pluralism across safety approaches, realistic expectations about MI's capabilities and limits, and commitment to resolving conceptual confusions before pursuing empirical investigations built on confused foundations.
 
@@ -900,7 +900,7 @@ Facchini, Ginevra, and Alberto Termine. 2022. "Towards a Taxonomy for the Opacit
 
 Hendrycks, Dan, and Laura Hiscott. 2025. "The Misguided Quest for Mechanistic AI Interpretability." *AI Frontiers*, May 15. https://ai-frontiers.org/articles/the-misguided-quest-for-mechanistic-ai-interpretability.
 
-Kästner, Lena, and Barnaby Crook. 2024. "Explaining AI Through Mechanistic Interpretability." *European Journal for Philosophy of Science* 14: 52. https://doi.org/10.1007/s13194-024-00614-4.
+K?tner, Lena, and Barnaby Crook. 2024. "Explaining AI Through Mechanistic Interpretability." *European Journal for Philosophy of Science* 14: 52. https://doi.org/10.1007/s13194-024-00614-4.
 
 METR (Model Evaluation & Threat Research). 2024. "Common Elements of Frontier AI Safety Policies." November. https://metr.org/assets/common-elements-nov-2024.pdf.
 

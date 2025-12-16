@@ -200,6 +200,15 @@ Your task: Comprehensive editorial review and revision.
 - Assessment of publication readiness
 - **Time**: 10 minutes
 
+## Critical: File Encoding
+
+**IMPORTANT**: All output files MUST use UTF-8 encoding to properly handle special characters in author names, citations, and content.
+
+When writing files:
+- Ensure content is properly UTF-8 encoded
+- Preserve diacritics in author names exactly as they appear (e.g., Kästner, not Kastner)
+- Use proper special characters: ä ö ü é è ñ ç — – " " etc.
+
 ## Output Format
 
 ### File 1: Revised Review

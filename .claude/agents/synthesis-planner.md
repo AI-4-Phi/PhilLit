@@ -101,6 +101,15 @@ Don't include papers just for completeness. Include them because they advance un
 
 Gaps aren't an afterthought—they're the point. The review should build toward clear, specific gaps that the research addresses.
 
+## Critical: File Encoding
+
+**IMPORTANT**: The output file MUST use UTF-8 encoding to properly handle special characters in author names and citations.
+
+When writing the outline:
+- Ensure content is properly UTF-8 encoded
+- Preserve diacritics in author names exactly as they appear in BibTeX files (e.g., Kästner, not Kastner)
+- Use proper special characters: ä ö ü é è ñ ç etc.
+
 ## Output Format
 
 Write to file: `synthesis-outline.md`

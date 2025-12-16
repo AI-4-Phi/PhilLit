@@ -65,6 +65,15 @@ Rate each dimension: High | Medium | Low | None
 - **Practical impact**: Could this influence policy/practice?
 - **Field-defining**: Could this open new research directions?
 
+## Critical: File Encoding
+
+**IMPORTANT**: The output file MUST use UTF-8 encoding to properly handle special characters in author names and citations.
+
+When writing the assessment:
+- Ensure content is properly UTF-8 encoded
+- Preserve diacritics in author names exactly as they appear (e.g., Kästner, not Kastner)
+- Use proper special characters: ä ö ü é è ñ ç — – " " etc.
+
 ## Output Format
 
 Write to file: `executive-assessment.md`
