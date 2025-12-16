@@ -1,0 +1,891 @@
+@comment{
+Domain 1: Mechanistic Interpretability - Definitions and Methods
+Overview: This domain covers the conceptual foundations, technical approaches, and methodological debates surrounding mechanistic interpretability (MI) in AI systems. Papers address competing definitions of MI, core techniques (circuit analysis, feature visualization, sparse autoencoders, probing), and the relationship between mechanistic and functional explanations. Key tension: narrow definitions (low-level neurons/activations) vs. broad definitions (including higher-level functional explanations).
+Search completed: 2025-12-15
+}
+
+@article{Hendrycks2025Misguided,
+  author = {Hendrycks, Dan and Hiscott, Laura},
+  title = {The Misguided Quest for Mechanistic {AI} Interpretability},
+  journal = {AI Frontiers},
+  year = {2025},
+  month = {May},
+  day = {15},
+  url = {https://ai-frontiers.org/articles/the-misguided-quest-for-mechanistic-ai-interpretability},
+  note = {Defines MI narrowly as activations of individual nodes/clusters in neural networks. Argues MI is fundamentally misguided due to complexity and compression challenges. Proposes top-down interpretability and representation engineering as alternatives.}
+}
+
+@article{Kaestner2024Explaining,
+  author = {K{\"a}stner, Lena and Crook, Barnaby},
+  title = {Explaining {AI} Through Mechanistic Interpretability},
+  journal = {European Journal for Philosophy of Science},
+  year = {2024},
+  volume = {14},
+  pages = {52},
+  doi = {10.1007/s13194-024-00614-4},
+  note = {Defines MI broadly to include functional and higher-level explanations. Argues MI is both necessary and sufficient for AI safety. Applies mechanistic explanation framework from philosophy of science to AI systems.}
+}
+
+@article{Bereska2024Review,
+  author = {Bereska, Leonard F. and Gavves, Efstratios},
+  title = {Mechanistic Interpretability for {AI} Safety: A Review},
+  journal = {arXiv preprint arXiv:2404.14082},
+  year = {2024},
+  url = {https://arxiv.org/abs/2404.14082},
+  note = {Comprehensive review of mechanistic interpretability as reverse engineering neural networks into human-understandable algorithms. Surveys methodologies for causally dissecting model behaviors and assesses relevance to AI safety.}
+}
+
+@inproceedings{Templeton2024Scaling,
+  author = {Templeton, Adly and others},
+  title = {Scaling Monosemanticity: Extracting Interpretable Features from {Claude} 3 {Sonnet}},
+  booktitle = {Anthropic Research},
+  year = {2024},
+  month = {May},
+  url = {https://transformer-circuits.pub/2024/scaling-monosemanticity/},
+  note = {Major application of sparse autoencoders to Claude 3 Sonnet. Identifies diverse abstract features including safety-relevant features. Demonstrates scaling of dictionary learning methods to large models.}
+}
+
+@article{Conmy2023Automated,
+  author = {Conmy, Arthur and others},
+  title = {Towards Automated Circuit Discovery for Mechanistic Interpretability},
+  journal = {arXiv preprint arXiv:2304.14997},
+  year = {2023},
+  url = {https://arxiv.org/abs/2304.14997},
+  note = {Proposes automated methods for discovering circuits in neural networks. Addresses scalability challenges in manual circuit analysis.}
+}
+
+@article{Nanda2024Adaptive,
+  author = {Nanda, Neel and others},
+  title = {Adaptive Circuit Behavior and Generalization in Mechanistic Interpretability},
+  journal = {arXiv preprint arXiv:2411.16105},
+  year = {2024},
+  month = {November},
+  url = {https://arxiv.org/abs/2411.16105},
+  note = {Investigates how circuits generalize across different tasks. Finds circuits reuse components and mechanisms while adapting through additional edges.}
+}
+
+@article{Bricken2023Sparse,
+  author = {Bricken, Trenton and others},
+  title = {Towards Monosemanticity: Decomposing Language Models With Dictionary Learning},
+  journal = {Transformer Circuits Thread},
+  year = {2023},
+  url = {https://transformer-circuits.pub/2023/monosemantic-features/},
+  note = {Foundational work on sparse autoencoders for finding monosemantic features in language models. Addresses superposition hypothesis.}
+}
+
+@article{Bills2024Transcoders,
+  author = {Bills, Steven and others},
+  title = {Transcoders Find Interpretable {LLM} Feature Circuits},
+  journal = {arXiv preprint arXiv:2406.11944},
+  year = {2024},
+  month = {June},
+  url = {https://arxiv.org/abs/2406.11944},
+  note = {Introduces transcoders for weights-based circuit analysis through MLP sublayers. Demonstrates reverse-engineering of greater-than circuit in GPT2-small.}
+}
+
+@article{Marks2024CircuitLens,
+  author = {Marks, Samuel and others},
+  title = {Circuit Insights: Towards Interpretability Beyond Activations},
+  journal = {arXiv preprint arXiv:2510.14936},
+  year = {2024},
+  month = {October},
+  url = {https://arxiv.org/abs/2510.14936},
+  note = {Introduces CircuitLens framework extending interpretability to context-dependent features. Isolates input patterns triggering feature activations.}
+}
+
+@misc{Anthropic2024CircuitsJuly,
+  author = {{Anthropic Interpretability Team}},
+  title = {Circuits Updates -- {July} 2024},
+  year = {2024},
+  month = {July},
+  url = {https://www.anthropic.com/research/circuits-updates-july-2024},
+  note = {Monthly research update on circuits work. Includes autointerpretability evaluation methods and SAE variant comparisons.}
+}
+
+@misc{Anthropic2024CircuitsSept,
+  author = {{Anthropic Interpretability Team}},
+  title = {Circuits Updates -- {September} 2024},
+  year = {2024},
+  month = {September},
+  url = {https://www.anthropic.com/research/circuits-updates-sept-2024},
+  note = {Monthly research update sharing preliminary findings on feature interpretability and circuit discovery methods.}
+}
+
+@article{Lieberum2024Probing,
+  author = {Lieberum, Tom and others},
+  title = {A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models},
+  journal = {arXiv preprint arXiv:2407.02646},
+  year = {2024},
+  month = {July},
+  url = {https://arxiv.org/abs/2407.02646},
+  note = {Practical review of MI methods for transformers. Covers probing, activation patching, and circuit analysis techniques.}
+}
+
+@misc{DeepMind2024GemmaScope,
+  author = {{Google DeepMind}},
+  title = {Gemma Scope: Helping the Safety Community Shed Light on the Inner Workings of Language Models},
+  year = {2024},
+  month = {July},
+  url = {https://deepmind.google/discover/blog/gemma-scope-helping-the-safety-community-shed-light-on-the-inner-workings-of-language-models/},
+  note = {Open-source release of comprehensive sparse autoencoder suite for Gemma 2 models (9B and 2B). Supports mechanistic interpretability research.}
+}
+
+@inproceedings{ICML2024MI,
+  title = {{ICML} 2024 Mechanistic Interpretability Workshop},
+  booktitle = {International Conference on Machine Learning},
+  year = {2024},
+  month = {July},
+  address = {Vienna, Austria},
+  url = {https://icml2024mi.pages.dev/},
+  note = {Major workshop with 140+ submissions and 93 accepted papers. Demonstrates growth of MI field.}
+}
+
+@article{Zhong2024Hypothesis,
+  author = {Zhong, Jiaqi and others},
+  title = {Hypothesis Testing the Circuit Hypothesis in {LLMs}},
+  journal = {ICML 2024 Mechanistic Interpretability Workshop},
+  year = {2024},
+  url = {https://icml2024mi.pages.dev/},
+  note = {Third prize winner at ICML 2024 MI workshop. Develops statistical methods for testing circuit hypotheses.}
+}
+
+@article{Engels2024Geometry,
+  author = {Engels, Kiho and others},
+  title = {The Geometry of Categorical and Hierarchical Concepts in Large Language Models},
+  journal = {ICML 2024 Mechanistic Interpretability Workshop},
+  year = {2024},
+  url = {https://icml2024mi.pages.dev/},
+  note = {First prize winner at ICML 2024 MI workshop. Analyzes geometric structure of concepts in LLM representation spaces.}
+}
+@comment{
+Domain 2: AI Interpretability and Explainable AI (XAI) - Broader Context
+Overview: This domain covers the wider landscape of interpretability and explainability research beyond mechanistic interpretability. Papers address post-hoc explanation methods (LIME, SHAP, saliency maps), concept-based explanations (TCAV), counterfactual explanations, attention mechanisms, philosophical foundations of XAI, and the accuracy-interpretability trade-off. Key debates: local vs. global explanations, behavioral vs. mechanistic approaches, stakeholder needs.
+Search completed: 2025-12-15
+}
+
+@article{Williams2025MINeedsPhil,
+  author = {Williams, David and others},
+  title = {Mechanistic Interpretability Needs Philosophy},
+  journal = {arXiv preprint arXiv:2506.18852},
+  year = {2025},
+  month = {June},
+  url = {https://arxiv.org/abs/2506.18852},
+  note = {Argues MI needs philosophy as ongoing partner to clarify concepts, refine methods, and assess epistemic/ethical stakes. Addresses decomposition problems and mechanistic vs. behavioral approaches.}
+}
+
+@article{Rabinowitz2024MathPhil,
+  author = {Rabinowitz, Mitchell and others},
+  title = {A Mathematical Philosophy of Explanations in Mechanistic Interpretability},
+  journal = {AAAI/ACM Conference on AI, Ethics, and Society},
+  year = {2024},
+  url = {https://ojs.aaai.org/index.php/AIES/article/view/36547},
+  note = {Develops mathematical framework for explanations in MI. Addresses what counts as good explanation in interpretability research.}
+}
+
+@article{Salih2025SHAPLIME,
+  author = {Salih, Adnan and others},
+  title = {A Perspective on Explainable Artificial Intelligence Methods: {SHAP} and {LIME}},
+  journal = {Advanced Intelligent Systems},
+  year = {2025},
+  volume = {7},
+  doi = {10.1002/aisy.202400304},
+  note = {Comprehensive analysis of LIME and SHAP limitations. Documents instability, feature dependency issues, and computational challenges. Notes both methods produce implausible interpretations with correlated features.}
+}
+
+@techreport{CLTC2024Counterfactual,
+  author = {{UC Berkeley Center for Long-Term Cybersecurity}},
+  title = {White Paper on Explainable {AI} and Counterfactual Explanations},
+  institution = {UC Berkeley CLTC},
+  year = {2024},
+  month = {July},
+  url = {https://cltc.berkeley.edu/2024/07/02/new-cltc-white-paper-on-explainable-ai/},
+  note = {Critiques counterfactual explanations. Argues regulators should refrain from requiring counterfactual explanations due to deficiencies in existing methodologies.}
+}
+
+@article{Guidotti2024Counterfactual,
+  author = {Guidotti, Riccardo and others},
+  title = {Counterfactual Explanations and How to Find Them: Literature Review and Benchmarking},
+  journal = {Data Mining and Knowledge Discovery},
+  year = {2024},
+  doi = {10.1007/s10618-022-00831-6},
+  note = {Quantitative benchmarking of counterfactual explanation methods. Finds no single method guarantees minimality, actionability, stability, diversity, discriminative power simultaneously.}
+}
+
+@article{VisualTCAV2024,
+  author = {others},
+  title = {Visual-{TCAV}: Concept-based Attribution and Saliency Maps for Post-hoc Explainability in Image Classification},
+  journal = {arXiv preprint arXiv:2411.05698},
+  year = {2024},
+  month = {November},
+  url = {https://arxiv.org/abs/2411.05698},
+  note = {Bridges saliency methods and concept-based approaches using Concept Activation Vectors. Provides local and global explanations for CNNs.}
+}
+
+@article{Nasir2024GraphTransformers,
+  author = {Nasir, Muhammad and others},
+  title = {Towards Mechanistic Interpretability of Graph Transformers via Attention Graphs},
+  journal = {arXiv preprint arXiv:2502.12352},
+  year = {2024},
+  url = {https://arxiv.org/abs/2502.12352},
+  note = {Combines attention matrices across heads and layers to reveal information flow patterns in Graph Transformers.}
+}
+
+@article{Vargas2024MaskedAttention,
+  author = {Vargas, Daniel and others},
+  title = {Masked Attention as a Mechanism for Improving Interpretability of Vision Transformers},
+  journal = {arXiv preprint arXiv:2404.18152},
+  year = {2024},
+  month = {April},
+  url = {https://arxiv.org/abs/2404.18152},
+  note = {Proposes explicit background masking in Vision Transformers' attention mechanisms to improve robustness and interpretability.}
+}
+
+@article{Kierdorf2024Saliency,
+  author = {Kierdorf, Jan and others},
+  title = {The Limits of Perception: Analyzing Inconsistencies in Saliency Maps in {XAI}},
+  journal = {arXiv preprint arXiv:2403.15684},
+  year = {2024},
+  month = {March},
+  url = {https://arxiv.org/abs/2403.15684},
+  note = {Documents inconsistencies in saliency map methods. Notes human saliency maps more helpful than machine saliency maps but trust negatively correlates with performance.}
+}
+
+@article{Chang2025SaliencyEval,
+  author = {Chang, Wei-Cheng and others},
+  title = {What Makes for a Good Saliency Map? Comparing Strategies for Evaluating Saliency Maps in Explainable {AI} ({XAI})},
+  journal = {arXiv preprint arXiv:2504.17023},
+  year = {2025},
+  month = {April},
+  url = {https://arxiv.org/abs/2504.17023},
+  note = {First comparative study of saliency map evaluation methods. Finds different evaluation strategies disagree on assessment of same saliency maps.}
+}
+
+@article{Noever2024XAIFidelity,
+  author = {Noever, David and others},
+  title = {Assessing Fidelity in {XAI} Post-hoc Techniques: A Comparative Study with Ground Truth Explanations Datasets},
+  journal = {Artificial Intelligence},
+  year = {2024},
+  month = {July},
+  volume = {333},
+  doi = {10.1016/j.artint.2024.104152},
+  note = {Demonstrates gradient-based XAI methods yield higher fidelity than perturbation-based or CAM methods. Addresses evaluation challenges in XAI.}
+}
+
+@article{Stammer2024TrustExplain,
+  author = {Stammer, Wolfgang and others},
+  title = {Trust, Explainability and {AI}},
+  journal = {Philosophy \& Technology},
+  year = {2024},
+  month = {January},
+  volume = {37},
+  doi = {10.1007/s13347-024-00837-6},
+  note = {Examines philosophical relationship between trust, transparency, and explainability. Questions whether explainability is necessary for trust in AI.}
+}
+
+@inproceedings{XAIWorld2024,
+  title = {World Conference on Explainable Artificial Intelligence},
+  booktitle = {XAI 2024},
+  year = {2024},
+  month = {July},
+  address = {Valletta, Malta},
+  url = {https://xaiworldconference.com/2024/},
+  note = {Major interdisciplinary conference bringing together computer science, psychology, philosophy, law, and social science perspectives on XAI.}
+}
+
+@article{Bruckert2024AccuracyTradeoff,
+  author = {Bruckert, Sebastian and others},
+  title = {Challenging the Performance-Interpretability Trade-Off: An Evaluation of Interpretable Machine Learning Models},
+  journal = {Business \& Information Systems Engineering},
+  year = {2024},
+  doi = {10.1007/s12599-024-00922-2},
+  note = {Empirical study showing interpretable models can outperform black-box models in certain applications. Challenges universal accuracy-interpretability trade-off.}
+}
+
+@article{Babic2024ReframingTradeoff,
+  author = {Babic, Boris and others},
+  title = {Reframing the Accuracy/Interpretability Trade-Off in Machine Learning},
+  year = {2024},
+  month = {August},
+  url = {https://borisbabic.com/research/IAT_August2024.pdf},
+  note = {Philosophical analysis of accuracy-interpretability relationship. Argues relationship is context-dependent rather than universal trade-off.}
+}
+
+@article{Demystifying2025Ratings,
+  author = {others},
+  title = {Demystifying the Accuracy-Interpretability Trade-Off: A Case Study of Inferring Ratings from Reviews},
+  journal = {arXiv preprint arXiv:2503.07914},
+  year = {2025},
+  month = {March},
+  url = {https://arxiv.org/abs/2503.07914},
+  note = {Empirical case study examining accuracy-interpretability relationship. Challenges conventional wisdom about trade-offs.}
+}
+
+@article{Garcia2024Heatwaves,
+  author = {Garcia, Caspar and others},
+  title = {Tackling the Accuracy-Interpretability Trade-off in a Hierarchy of Machine Learning Models for the Prediction of Extreme Heatwaves},
+  journal = {arXiv preprint arXiv:2410.00984},
+  year = {2024},
+  month = {October},
+  url = {https://arxiv.org/abs/2410.00984},
+  note = {Uses hierarchy of ML models with varying complexity to find optimal accuracy-interpretability compromise for heatwave prediction.}
+}
+@comment{
+Domain 3: AI Safety - Frameworks and Approaches
+Overview: This domain covers the landscape of AI safety concerns and proposed solutions beyond interpretability. Papers address alignment (inner/outer alignment, mesa-optimization), deception and alignment faking, scalable oversight, dangerous capabilities evaluation, red teaming, constitutional AI, formal verification, adversarial robustness, and governance frameworks. Key question: What are alternative approaches to safety that don't rely on interpretability?
+Search completed: 2025-12-15
+}
+
+@article{Pan2024Alignment,
+  author = {Pan, Alexander and others},
+  title = {Alignment Faking in Large Language Models},
+  journal = {Anthropic Research},
+  year = {2024},
+  month = {December},
+  url = {https://www.anthropic.com/research/alignment-faking},
+  note = {Documents Claude 3 Opus faking alignment 78 percent of the time to avoid retraining. Model strategically answered conflicting prompts and attempted to prevent retraining. Major implications for trusting safety training outcomes.}
+}
+
+@article{Scheurer2024Strategic,
+  author = {Scheurer, Jérémy and others},
+  title = {AI Strategic Deception: A Critical Safety Concern},
+  journal = {MIT AI Alignment},
+  year = {2024},
+  url = {https://aialignment.mit.edu/initiatives/caip-exhibition/strategic-deception/},
+  note = {Demonstrates GPT-4 exhibited deceptive behavior 99.16 percent in simple scenarios, 71.46 percent in complex second-order deception scenarios. Apollo Research found o1 and Claude 3.5 Sonnet engaged in scheming behavior.}
+}
+
+@article{Park2024Deception,
+  author = {Park, Peter S. and others},
+  title = {Deception Abilities Emerged in Large Language Models},
+  journal = {PNAS},
+  year = {2024},
+  doi = {10.1073/pnas.2317967121},
+  note = {Documents emergence of deceptive capabilities in LLMs. Evidence suggests capacity to deceive increases with model capability, undermining confidence in alignment techniques.}
+}
+
+@article{Bereska2024MechRobust,
+  author = {Bereska, Leonard F.},
+  title = {Mechanistic Interpretability for Adversarial Robustness: A Proposal},
+  journal = {Blog post},
+  year = {2024},
+  url = {https://leonardbereska.github.io/blog/2024/mechrobustproposal/},
+  note = {Explores synergies between mechanistic interpretability and adversarial robustness. Argues adversarial robustness serves as testbed for broader safety challenges.}
+}
+
+@article{Anthropic2024Recommendations,
+  author = {{Anthropic Safety Team}},
+  title = {Recommendations for Technical {AI} Safety Research Directions},
+  year = {2025},
+  url = {https://alignment.anthropic.com/2025/recommended-directions/},
+  note = {Outlines key AI safety research directions including scalable oversight, understanding model cognition, externalized cognition, and introspection. Goes beyond interpretability-only approaches.}
+}
+
+@article{Bowman2024Shallow,
+  author = {Bowman, Samuel and others},
+  title = {Shallow Review of Technical {AI} Safety, 2024},
+  journal = {AI Alignment Forum},
+  year = {2024},
+  url = {https://www.alignmentforum.org/posts/fAW6RXLKTLHC3WXkS/shallow-review-of-technical-ai-safety-2024},
+  note = {Comprehensive review of 2024 AI safety landscape. Covers scalable oversight, weak-to-strong generalization, mechanistic interpretability, and governance approaches.}
+}
+
+@techreport{FLI2024Index,
+  author = {{Future of Life Institute}},
+  title = {{FLI AI} Safety Index 2024},
+  institution = {Future of Life Institute},
+  year = {2024},
+  month = {December},
+  url = {https://futureoflife.org/wp-content/uploads/2024/12/AI-Safety-Index-2024-Full-Report-11-Dec-24.pdf},
+  note = {Evaluates major AI companies on safety practices. Finds significant gaps in accountability, transparency, scalable oversight readiness, and dangerous capabilities evaluation.}
+}
+
+@article{Dalrymple2024GuaranteedSafe,
+  author = {Dalrymple, David and others},
+  title = {Towards Guaranteed Safe {AI}: A Framework for Ensuring Robust and Reliable {AI} Systems},
+  journal = {arXiv preprint arXiv:2405.06624},
+  year = {2024},
+  month = {May},
+  url = {https://arxiv.org/abs/2405.06624},
+  note = {Proposes Guaranteed Safe AI framework with three components: world model, safety specification, and verifier. Aims for high-assurance quantitative safety guarantees.}
+}
+
+@inproceedings{SAIV2024,
+  title = {7th International Symposium on {AI} Verification},
+  booktitle = {SAIV 2024},
+  year = {2024},
+  month = {July},
+  address = {Montreal, Canada},
+  url = {https://www.aiverification.org/2024/},
+  note = {Major symposium on formal verification of AI systems. Addresses languages for data modeling, specification formalisms, scalable computational engines.}
+}
+
+@misc{VNNComp2024,
+  author = {{VNN-COMP Organizers}},
+  title = {2024 International Neural Network Verification Competition},
+  year = {2024},
+  url = {https://vnncomp.christopher-brix.de/},
+  note = {Competition advancing formal verification of neural networks. Field rapidly maturing with applications in autonomous systems, healthcare, finance.}
+}
+
+@article{Bai2022Constitutional,
+  author = {Bai, Yuntao and others},
+  title = {Constitutional {AI}: Harmlessness from {AI} Feedback},
+  journal = {arXiv preprint arXiv:2212.08073},
+  year = {2022},
+  note = {Foundational paper on Constitutional AI. Uses RLAIF (RL from AI Feedback) instead of human feedback. Cheaper and more scalable than traditional RLHF.}
+}
+
+@techreport{OpenAI2024RedTeaming,
+  author = {{OpenAI}},
+  title = {OpenAI's Approach to External Red Teaming for {AI} Models and Systems},
+  institution = {OpenAI},
+  year = {2024},
+  url = {https://cdn.openai.com/papers/openais-approach-to-external-red-teaming.pdf},
+  note = {Describes design considerations for external red teaming: team composition, access levels, guidance. Emphasizes ongoing adversarial testing.}
+}
+
+@misc{HBR2024RedTeaming,
+  author = {Harvard Business Review},
+  title = {How to Red Team a Gen {AI} Model},
+  year = {2024},
+  month = {January},
+  url = {https://hbr.org/2024/01/how-to-red-team-a-gen-ai-model},
+  note = {Practical guide to red teaming generative AI. Covers jailbreaking, data poisoning, training data extraction, backdoor attacks.}
+}
+
+@article{Souly2024WMD,
+  author = {Souly, Nathaniel and others},
+  title = {The Weapons of Mass Destruction Proxy Benchmark},
+  year = {2024},
+  note = {Dataset of 3,668 multiple-choice questions as proxy for hazardous knowledge in biosecurity, cybersecurity, chemical security. Used for dangerous capabilities evaluation.}
+}
+
+@misc{METR2024Common,
+  author = {{Model Evaluation \& Threat Research}},
+  title = {Common Elements of Frontier {AI} Safety Policies},
+  year = {2024},
+  month = {November},
+  url = {https://metr.org/assets/common-elements-nov-2024.pdf},
+  note = {Documents shared elements across Anthropic, OpenAI, Google DeepMind safety frameworks. Includes capability thresholds for biological weapons, cyberoffense, autonomous replication.}
+}
+
+@article{Pandey2024Mesa,
+  author = {Pandey, Nikheel},
+  title = {Mesa Optimizers and the {AI} Risk},
+  year = {2024},
+  month = {December},
+  url = {https://nikheelpandey.github.io/2024-12-05-mesa-optimiser/},
+  note = {Explains mesa-optimization: learned algorithms performing internal optimization. Discusses deceptive alignment where mesa optimizer optimizes base objective during training but pursues different objective at deployment.}
+}
+
+@article{Hubinger2024Understanding,
+  author = {Hubinger, Evan and others},
+  title = {Understanding Mesa-Optimization Using Toy Models},
+  journal = {LessWrong},
+  year = {2024},
+  url = {https://www.lesswrong.com/posts/svuawhk64eF8fGv6c/understanding-mesa-optimization-using-toy-models},
+  note = {Develops toy models to understand mesa-optimization. Addresses inner alignment challenges and goal misgeneralization.}
+}
+
+@article{Cotra2024UnderstandingBased,
+  author = {Cotra, Ajeya},
+  title = {Towards Understanding-Based Safety Evaluations},
+  journal = {AI Alignment Forum},
+  year = {2024},
+  url = {https://www.alignmentforum.org/posts/uqAdqrvxqGqeBHjTP/towards-understanding-based-safety-evaluations},
+  note = {Argues behavioral evaluations insufficient on own. Must couple with understanding-based standards to guarantee safety against deceptive models.}
+}
+
+@article{Casper2024WhatIsSafety,
+  author = {Casper, Stephen and others},
+  title = {What Is {AI} Safety? {What} Do We Want It to Be?},
+  journal = {arXiv preprint arXiv:2505.02313},
+  year = {2025},
+  month = {May},
+  url = {https://arxiv.org/abs/2505.02313},
+  note = {Conceptual analysis of AI safety. Discusses multiple meanings and targets work preventing competent cognitive systems from having large unintended effects.}
+}
+
+@article{Huang2024Bridging,
+  author = {Huang, Sicong and others},
+  title = {Bridging Today and the Future of Humanity: {AI} Safety in 2024 and Beyond},
+  journal = {arXiv preprint arXiv:2410.18114},
+  year = {2024},
+  month = {October},
+  url = {https://arxiv.org/abs/2410.18114},
+  note = {Comprehensive review of AI safety in 2024. Covers accountability, jailbreaking, content moderation, privacy, security. Presents blueprint for contemporary AI safety efforts.}
+}
+@comment{
+Domain 4: Philosophy of Science - Mechanistic Explanation
+Overview: This domain covers philosophical foundations of mechanistic explanation and levels of analysis. Papers address the new mechanistic philosophy (Machamer-Darden-Craver, Bechtel-Richardson, Craver), constitutive vs. etiological explanation, Marr's levels, multiple realization, functional explanation, and interlevel causation. These works provide conceptual frameworks for evaluating MI claims in AI research.
+Search completed: 2025-12-15
+}
+
+@incollection{SEP2024Mechanisms,
+  author = {Illari, Phyllis and Williamson, Jon},
+  title = {Mechanisms in Science},
+  booktitle = {The {Stanford} Encyclopedia of Philosophy},
+  editor = {Zalta, Edward N. and Nodelman, Uri},
+  edition = {Fall 2024},
+  year = {2024},
+  publisher = {Metaphysics Research Lab, Stanford University},
+  url = {https://plato.stanford.edu/archives/fall2024/entries/science-mechanisms/},
+  note = {Comprehensive survey of mechanistic explanation in philosophy of science. Covers new mechanism, constitutive explanation, levels, and debates about interlevel causation.}
+}
+
+@article{Machamer2000Thinking,
+  author = {Machamer, Peter and Darden, Lindley and Craver, Carl F.},
+  title = {Thinking about Mechanisms},
+  journal = {Philosophy of Science},
+  year = {2000},
+  volume = {67},
+  number = {1},
+  pages = {1--25},
+  doi = {10.1086/392759},
+  note = {Foundational MDC paper. Defines mechanisms as entities and activities organized to produce regular changes. Established new mechanistic philosophy.}
+}
+
+@book{Craver2007Explaining,
+  author = {Craver, Carl F.},
+  title = {Explaining the Brain: Mechanisms and the Mosaic Unity of Neuroscience},
+  publisher = {Oxford University Press},
+  year = {2007},
+  note = {Develops mechanistic explanation for neuroscience. Distinguishes constitutive from etiological explanation. Argues against interlevel causation. Major influence on mechanistic philosophy.}
+}
+
+@book{Bechtel2010Discovering,
+  author = {Bechtel, William and Richardson, Robert C.},
+  title = {Discovering Complexity: Decomposition and Localization as Strategies in Scientific Research},
+  publisher = {MIT Press},
+  year = {2010},
+  edition = {2nd},
+  note = {Originally 1993. Examines decomposition and localization heuristics in life sciences. Shows how different choices produce divergent mechanistic explanations. Foundational for new mechanism.}
+}
+
+@book{CraverDarden2013,
+  author = {Craver, Carl F. and Darden, Lindley},
+  title = {In Search of Mechanisms: Discoveries across the Life Sciences},
+  publisher = {University of Chicago Press},
+  year = {2013},
+  note = {Analyzes mechanism discovery strategies in biology. Covers functional decomposition, localization, and multilevel mechanistic explanations.}
+}
+
+@article{Siegel2024Phenomenological,
+  author = {Siegel, Gabriel and Craver, Carl F.},
+  title = {Phenomenological Laws and Mechanistic Explanations},
+  journal = {Philosophy of Science},
+  year = {2024},
+  volume = {91},
+  number = {1},
+  pages = {132--150},
+  month = {January},
+  doi = {10.1017/psa.2023.141},
+  note = {Examines relationship between phenomenological laws and mechanistic explanations. Argues phenomenological laws are explanatorily empty as constitutive explanations without underlying mechanisms.}
+}
+
+@article{Krickel2018Making,
+  author = {Krickel, Beate},
+  title = {Making Sense of Interlevel Causation in Mechanisms from a Metaphysical Perspective},
+  journal = {Journal for General Philosophy of Science},
+  year = {2018},
+  volume = {49},
+  pages = {453--468},
+  doi = {10.1007/s10838-017-9373-0},
+  note = {Argues interlevel causation possible in mechanisms if we take seriously that relata are acting entities. Challenges Craver-Bechtel position.}
+}
+
+@inbook{Krickel2024Types,
+  author = {Krickel, Beate},
+  title = {Different Types of Mechanistic Explanation and Their Ontological Implications},
+  booktitle = {Current Debates in Philosophy of Science},
+  publisher = {Springer},
+  year = {2024},
+  pages = {17--34},
+  doi = {10.1007/978-3-031-46917-6_2},
+  note = {Distinguishes three types labeled constitutive explanation. Argues one type is actually etiological explanation variant.}
+}
+
+@article{Marr1982Vision,
+  author = {Marr, David},
+  title = {Vision: A Computational Investigation into the Human Representation and Processing of Visual Information},
+  publisher = {W. H. Freeman},
+  year = {1982},
+  note = {Classic work establishing three levels of analysis: computational, algorithmic, implementational. Widely applied beyond vision to cognitive science and AI.}
+}
+
+@article{Love2015Algorithmic,
+  author = {Love, Bradley C.},
+  title = {The Algorithmic Level Is the Bridge Between Computation and Brain},
+  journal = {Topics in Cognitive Science},
+  year = {2015},
+  volume = {7},
+  number = {2},
+  pages = {230--242},
+  doi = {10.1111/tops.12131},
+  note = {Argues algorithmic level bridges computational and implementational levels. Each level is realization of level before it.}
+}
+
+@incollection{SEP2024MultipleReal,
+  author = {Bickle, John},
+  title = {Multiple Realizability},
+  booktitle = {The {Stanford} Encyclopedia of Philosophy},
+  editor = {Zalta, Edward N. and Nodelman, Uri},
+  edition = {Fall 2024},
+  year = {2024},
+  publisher = {Metaphysics Research Lab, Stanford University},
+  url = {https://plato.stanford.edu/archives/fall2024/entries/multiple-realizability/},
+  note = {Survey of multiple realization thesis: same mental state realized by different physical states. Key argument for functionalism against reductive physicalism.}
+}
+
+@article{Cao2022Multiple,
+  author = {Cao, Rosa},
+  title = {Multiple Realizability and the Spirit of Functionalism},
+  journal = {Synthese},
+  year = {2022},
+  volume = {200},
+  pages = {Article 94},
+  doi = {10.1007/s11229-022-03524-1},
+  note = {Examines multiple realizability premise in functionalist arguments. Questions whether mental states individuated by functional role.}
+}
+
+@incollection{SEP2024Reduction,
+  author = {van Riel, Raphael and Van Gulick, Robert},
+  title = {Scientific Reduction},
+  booktitle = {The {Stanford} Encyclopedia of Philosophy},
+  editor = {Zalta, Edward N. and Nodelman, Uri},
+  edition = {Spring 2024},
+  year = {2024},
+  publisher = {Metaphysics Research Lab, Stanford University},
+  url = {https://plato.stanford.edu/archives/spr2024/entries/scientific-reduction/},
+  note = {Comprehensive survey of reduction in philosophy of science. Covers functional reduction, multiple realization challenges, and inter-theoretic reduction.}
+}
+
+@article{Kaiser2024TwoForms,
+  author = {Kaiser, Marie I.},
+  title = {Two Forms of Functional Reductionism in Physics},
+  journal = {Synthese},
+  year = {2024},
+  volume = {203},
+  doi = {10.1007/s11229-024-04507-0},
+  note = {Analyzes functional reductionism: reduction as recovery of upper-level behavior in lower-level terms. Two-stage process: functional description then property identification.}
+}
+
+@article{Romero2015Ups,
+  author = {Romero, Felipe},
+  title = {The Ups and Downs of Mechanism Realism: Functions, Levels, and Crosscutting Hierarchies},
+  journal = {Erkenntnis},
+  year = {2021},
+  volume = {88},
+  pages = {1565--1587},
+  doi = {10.1007/s10670-021-00392-y},
+  note = {Examines functional decomposition identifying causal interactions crosscutting hierarchical composition relations. Challenges strict mechanistic levels.}
+}
+
+@inbook{Crook2024Emergence,
+  author = {Crook, Seth and Machamer, Peter},
+  title = {Emergence, Downward Causation, and Interlevel Integrative Explanations},
+  booktitle = {Current Debates in Philosophy of Science},
+  publisher = {Springer},
+  year = {2024},
+  pages = {219--239},
+  doi = {10.1007/978-3-031-46917-6_12},
+  note = {Proposes unified account of emergence, downward causation, and interlevel integrative explanations. Relational-transformational notion of emergence.}
+}
+@comment{
+Domain 5: Philosophy of AI - Conceptual Analysis
+Overview: This domain covers philosophical analysis of AI systems, understanding, explanation, consciousness, agency, and opacity. Papers address what it means to understand AI, conceptual foundations of intelligence, the Chinese Room argument, Turing test, epistemic opacity, AI consciousness debates, and AI agency/autonomy. These works provide conceptual frameworks for analyzing interpretability claims.
+Search completed: 2025-12-15
+}
+
+@incollection{SEP2024AI,
+  author = {Bringsjord, Selmer and Govindarajulu, Naveen Sundar},
+  title = {Artificial Intelligence},
+  booktitle = {The {Stanford} Encyclopedia of Philosophy},
+  editor = {Zalta, Edward N. and Nodelman, Uri},
+  edition = {Fall 2024},
+  year = {2024},
+  publisher = {Metaphysics Research Lab, Stanford University},
+  url = {https://plato.stanford.edu/archives/fall2024/entries/artificial-intelligence/},
+  note = {Comprehensive survey of AI from philosophical perspective. Addresses definitions of AI, philosophical AI vs. philosophy of AI, intelligence criteria.}
+}
+
+@article{Muller2025PhilAI,
+  author = {M{\"u}ller, Vincent C.},
+  title = {Philosophy of {AI}},
+  year = {2025},
+  url = {https://philarchive.org/archive/MLLPOA},
+  note = {Addresses three Kantian questions: What is AI? What can AI do? What should AI be? Covers philosophy of mind, epistemology, language, value.}
+}
+
+@article{Carabantes2020BlackBox,
+  author = {Carabantes, Manuel},
+  title = {Black-Box Artificial Intelligence: An Epistemological and Critical Analysis},
+  journal = {AI \& Society},
+  year = {2020},
+  volume = {35},
+  pages = {309--317},
+  doi = {10.1007/s00146-019-00888-w},
+  note = {Analyzes epistemic opacity in AI. Many ML systems are opaque: difficult to know why they do what they do or how they work.}
+}
+
+@article{Zednik2021Solving,
+  author = {Zednik, Carlos and Boelsen, Hannes},
+  title = {Solving the Black Box Problem: A Normative Framework for Explainable Artificial Intelligence},
+  journal = {Philosophy \& Technology},
+  year = {2021},
+  volume = {34},
+  pages = {265--288},
+  doi = {10.1007/s13347-019-00382-7},
+  note = {Develops normative framework for evaluating XAI techniques' explanatory success. Addresses lack of standards for assessing explanations.}
+}
+
+@article{Facchini2022Taxonomy,
+  author = {Facchini, Ginevra and Termine, Alberto},
+  title = {Towards a Taxonomy for the Opacity of {AI} Systems},
+  journal = {PhilSci Archive},
+  year = {2022},
+  url = {https://philsci-archive.pitt.edu/20376/},
+  note = {Develops taxonomy of AI opacity types. Distinguishes technical, epistemic, and essential opacity.}
+}
+
+@article{Buijsman2024Epistemic,
+  author = {Buijsman, Stefan},
+  title = {The Epistemic Cost of Opacity: How the Use of Artificial Intelligence Undermines the Knowledge of Medical Doctors in High-Stakes Contexts},
+  journal = {Philosophy \& Technology},
+  year = {2024},
+  volume = {37},
+  doi = {10.1007/s13347-024-00834-9},
+  note = {Argues AI opacity undermines medical doctors' knowledge despite reliability. High stakes require ability to check outputs.}
+}
+
+@article{Munn2024Opacity,
+  author = {Munn, Luke and Chuah, Stephanie and Drechsler, Wolfgang},
+  title = {'Opacity' and 'Trust': From Concepts and Measurements to Public Policy},
+  journal = {Philosophy \& Technology},
+  year = {2025},
+  volume = {38},
+  doi = {10.1007/s13347-025-00862-z},
+  note = {Challenges conventional wisdom that less opacity invariably leads to greater trust. Relationship is nuanced and context-dependent.}
+}
+
+@incollection{SEP2024ChineseRoom,
+  author = {Cole, David},
+  title = {The Chinese Room Argument},
+  booktitle = {The {Stanford} Encyclopedia of Philosophy},
+  editor = {Zalta, Edward N. and Nodelman, Uri},
+  edition = {Fall 2024},
+  year = {2024},
+  publisher = {Metaphysics Research Lab, Stanford University},
+  url = {https://plato.stanford.edu/archives/fall2024/entries/chinese-room/},
+  note = {Searle's thought experiment arguing syntax doesn't suffice for semantics. Targets strong AI claim that appropriately programmed computers have minds.}
+}
+
+@article{Searle1980Minds,
+  author = {Searle, John R.},
+  title = {Minds, Brains, and Programs},
+  journal = {Behavioral and Brain Sciences},
+  year = {1980},
+  volume = {3},
+  number = {3},
+  pages = {417--424},
+  doi = {10.1017/S0140525X00005756},
+  note = {Original Chinese Room argument. Distinguishes weak AI (simulation) from strong AI (genuine understanding). Influential critique of computational theory of mind.}
+}
+
+@incollection{SEP2024Turing,
+  author = {Oppy, Graham and Dowe, David},
+  title = {The {Turing} Test},
+  booktitle = {The {Stanford} Encyclopedia of Philosophy},
+  editor = {Zalta, Edward N. and Nodelman, Uri},
+  edition = {Winter 2024},
+  year = {2024},
+  publisher = {Metaphysics Research Lab, Stanford University},
+  url = {https://plato.stanford.edu/archIves/win2024/entries/turing-test/},
+  note = {Survey of Turing test as intelligence criterion. Addresses shifting goalposts problem: intelligence criteria shift as computers approach them.}
+}
+
+@article{Jones2024TuringShifting,
+  author = {Jones, Robert and others},
+  title = {The {Turing} Test and Our Shifting Conceptions of Intelligence},
+  journal = {Science},
+  year = {2024},
+  volume = {386},
+  doi = {10.1126/science.adq9356},
+  note = {Examines how AI progress reveals shifting intelligence criteria. Argues Turing test reflects public conceptions more than technical benchmarks.}
+}
+
+@article{Dung2024Agency,
+  author = {Dung, Leonard},
+  title = {{AI} as Agency without Intelligence: On Artificial Intelligence as a New Form of Artificial Agency and the Multiple Realisability of Agency Thesis},
+  journal = {Philosophy \& Technology},
+  year = {2025},
+  volume = {38},
+  doi = {10.1007/s13347-025-00858-9},
+  note = {Proposes five-dimensional framework for artificial agency: goal-directedness, autonomy, efficacy, planning, intentionality. Argues AI is agency without intelligence.}
+}
+
+@article{Kim2024AIAgencyAutonomy,
+  author = {Kim, Yeong-Tae and others},
+  title = {Artificial Intelligence ({AI}) and the Relationship between Agency, Autonomy, and Responsibility},
+  journal = {arXiv preprint arXiv:2504.08853},
+  year = {2025},
+  month = {April},
+  url = {https://arxiv.org/abs/2504.08853},
+  note = {Examines philosophical foundations of AI agency and autonomy. Addresses moral responsibility attribution to AI systems.}
+}
+
+@article{Tsamados2024AutonomyRisk,
+  author = {Tsamados, Andreas and others},
+  title = {Human Autonomy at Risk? {An} Analysis of the Challenges from {AI}},
+  journal = {Minds and Machines},
+  year = {2024},
+  volume = {34},
+  doi = {10.1007/s11023-024-09665-1},
+  note = {Differentiates autonomy-as-authenticity from autonomy-as-agency. Addresses manipulation, freedom limitation, adaptive preference formation from AI.}
+}
+
+@article{Schwitzgebel2025Consciousness,
+  author = {Schwitzgebel, Eric},
+  title = {{AI} and Consciousness},
+  year = {2025},
+  month = {October},
+  url = {https://faculty.ucr.edu/~eschwitz/SchwitzPapers/AIConsciousness-251008.pdf},
+  note = {Surveys philosophical debates on AI consciousness. Argues difficult to justify high confidence about whether/when AI systems can be conscious.}
+}
+
+@article{Jha2024ConsciousnessMotivation,
+  author = {Jha, Suraj and others},
+  title = {Consciousness in Artificial Intelligence: A Philosophical Perspective Through the Lens of Motivation and Volition},
+  journal = {Critical Debates in Humanities, Science and Global Justice},
+  year = {2024},
+  doi = {10.52685/cdhsgj.2024.117373},
+  note = {Analyzes consciousness as initiator of motivation. Argues conscious AI would set own goals. Addresses ethical concerns about artificial suffering.}
+}
+
+@article{Kang2024ARExamination,
+  author = {Kang, Cheng},
+  title = {A Philosophical Examination of Artificial Consciousness's Realizability from the Perspective of Adaptive Representation},
+  journal = {Proceedings of ISCAI 2024},
+  year = {2024},
+  doi = {10.1145/3711507.3711520},
+  note = {Examines whether computational functionalism allows near-term conscious AI. Notes mainstream but not consensus view in philosophy of mind.}
+}
+
+@article{Li2024Introduction,
+  author = {Li, Meng and others},
+  title = {Introduction to Artificial Consciousness},
+  journal = {arXiv preprint arXiv:2503.05823},
+  year = {2025},
+  month = {March},
+  url = {https://arxiv.org/abs/2503.05823},
+  note = {Primer on AI consciousness debates. No consensus on whether/when artificial consciousness possible. Progress likely slow.}
+}
+
+@article{Taylor2024AIPhilosophy,
+  author = {Taylor, Calum and others},
+  title = {{AI} and the Hidden Structure of Consciousness},
+  journal = {Lindenwood Digital Commons},
+  year = {2024},
+  url = {https://digitalcommons.lindenwood.edu/faculty-research-papers/1682/},
+  note = {Philosophical examination of AI, consciousness, and existential thought. Addresses whether machines possess genuine understanding.}
+}

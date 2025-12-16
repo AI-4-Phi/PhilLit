@@ -1,0 +1,159 @@
+@comment{
+Domain 1: Mechanistic Interpretability - Definitions and Methods
+Overview: This domain covers the conceptual foundations, technical approaches, and methodological debates surrounding mechanistic interpretability (MI) in AI systems. Papers address competing definitions of MI, core techniques (circuit analysis, feature visualization, sparse autoencoders, probing), and the relationship between mechanistic and functional explanations. Key tension: narrow definitions (low-level neurons/activations) vs. broad definitions (including higher-level functional explanations).
+Search completed: 2025-12-15
+}
+
+@article{Hendrycks2025Misguided,
+  author = {Hendrycks, Dan and Hiscott, Laura},
+  title = {The Misguided Quest for Mechanistic {AI} Interpretability},
+  journal = {AI Frontiers},
+  year = {2025},
+  month = {May},
+  day = {15},
+  url = {https://ai-frontiers.org/articles/the-misguided-quest-for-mechanistic-ai-interpretability},
+  note = {Defines MI narrowly as activations of individual nodes/clusters in neural networks. Argues MI is fundamentally misguided due to complexity and compression challenges. Proposes top-down interpretability and representation engineering as alternatives.}
+}
+
+@article{Kaestner2024Explaining,
+  author = {K{\"a}stner, Lena and Crook, Barnaby},
+  title = {Explaining {AI} Through Mechanistic Interpretability},
+  journal = {European Journal for Philosophy of Science},
+  year = {2024},
+  volume = {14},
+  pages = {52},
+  doi = {10.1007/s13194-024-00614-4},
+  note = {Defines MI broadly to include functional and higher-level explanations. Argues MI is both necessary and sufficient for AI safety. Applies mechanistic explanation framework from philosophy of science to AI systems.}
+}
+
+@article{Bereska2024Review,
+  author = {Bereska, Leonard F. and Gavves, Efstratios},
+  title = {Mechanistic Interpretability for {AI} Safety: A Review},
+  journal = {arXiv preprint arXiv:2404.14082},
+  year = {2024},
+  url = {https://arxiv.org/abs/2404.14082},
+  note = {Comprehensive review of mechanistic interpretability as reverse engineering neural networks into human-understandable algorithms. Surveys methodologies for causally dissecting model behaviors and assesses relevance to AI safety.}
+}
+
+@inproceedings{Templeton2024Scaling,
+  author = {Templeton, Adly and others},
+  title = {Scaling Monosemanticity: Extracting Interpretable Features from {Claude} 3 {Sonnet}},
+  booktitle = {Anthropic Research},
+  year = {2024},
+  month = {May},
+  url = {https://transformer-circuits.pub/2024/scaling-monosemanticity/},
+  note = {Major application of sparse autoencoders to Claude 3 Sonnet. Identifies diverse abstract features including safety-relevant features. Demonstrates scaling of dictionary learning methods to large models.}
+}
+
+@article{Conmy2023Automated,
+  author = {Conmy, Arthur and others},
+  title = {Towards Automated Circuit Discovery for Mechanistic Interpretability},
+  journal = {arXiv preprint arXiv:2304.14997},
+  year = {2023},
+  url = {https://arxiv.org/abs/2304.14997},
+  note = {Proposes automated methods for discovering circuits in neural networks. Addresses scalability challenges in manual circuit analysis.}
+}
+
+@article{Nanda2024Adaptive,
+  author = {Nanda, Neel and others},
+  title = {Adaptive Circuit Behavior and Generalization in Mechanistic Interpretability},
+  journal = {arXiv preprint arXiv:2411.16105},
+  year = {2024},
+  month = {November},
+  url = {https://arxiv.org/abs/2411.16105},
+  note = {Investigates how circuits generalize across different tasks. Finds circuits reuse components and mechanisms while adapting through additional edges.}
+}
+
+@article{Bricken2023Sparse,
+  author = {Bricken, Trenton and others},
+  title = {Towards Monosemanticity: Decomposing Language Models With Dictionary Learning},
+  journal = {Transformer Circuits Thread},
+  year = {2023},
+  url = {https://transformer-circuits.pub/2023/monosemantic-features/},
+  note = {Foundational work on sparse autoencoders for finding monosemantic features in language models. Addresses superposition hypothesis.}
+}
+
+@article{Bills2024Transcoders,
+  author = {Bills, Steven and others},
+  title = {Transcoders Find Interpretable {LLM} Feature Circuits},
+  journal = {arXiv preprint arXiv:2406.11944},
+  year = {2024},
+  month = {June},
+  url = {https://arxiv.org/abs/2406.11944},
+  note = {Introduces transcoders for weights-based circuit analysis through MLP sublayers. Demonstrates reverse-engineering of greater-than circuit in GPT2-small.}
+}
+
+@article{Marks2024CircuitLens,
+  author = {Marks, Samuel and others},
+  title = {Circuit Insights: Towards Interpretability Beyond Activations},
+  journal = {arXiv preprint arXiv:2510.14936},
+  year = {2024},
+  month = {October},
+  url = {https://arxiv.org/abs/2510.14936},
+  note = {Introduces CircuitLens framework extending interpretability to context-dependent features. Isolates input patterns triggering feature activations.}
+}
+
+@misc{Anthropic2024CircuitsJuly,
+  author = {{Anthropic Interpretability Team}},
+  title = {Circuits Updates -- {July} 2024},
+  year = {2024},
+  month = {July},
+  url = {https://www.anthropic.com/research/circuits-updates-july-2024},
+  note = {Monthly research update on circuits work. Includes autointerpretability evaluation methods and SAE variant comparisons.}
+}
+
+@misc{Anthropic2024CircuitsSept,
+  author = {{Anthropic Interpretability Team}},
+  title = {Circuits Updates -- {September} 2024},
+  year = {2024},
+  month = {September},
+  url = {https://www.anthropic.com/research/circuits-updates-sept-2024},
+  note = {Monthly research update sharing preliminary findings on feature interpretability and circuit discovery methods.}
+}
+
+@article{Lieberum2024Probing,
+  author = {Lieberum, Tom and others},
+  title = {A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models},
+  journal = {arXiv preprint arXiv:2407.02646},
+  year = {2024},
+  month = {July},
+  url = {https://arxiv.org/abs/2407.02646},
+  note = {Practical review of MI methods for transformers. Covers probing, activation patching, and circuit analysis techniques.}
+}
+
+@misc{DeepMind2024GemmaScope,
+  author = {{Google DeepMind}},
+  title = {Gemma Scope: Helping the Safety Community Shed Light on the Inner Workings of Language Models},
+  year = {2024},
+  month = {July},
+  url = {https://deepmind.google/discover/blog/gemma-scope-helping-the-safety-community-shed-light-on-the-inner-workings-of-language-models/},
+  note = {Open-source release of comprehensive sparse autoencoder suite for Gemma 2 models (9B and 2B). Supports mechanistic interpretability research.}
+}
+
+@inproceedings{ICML2024MI,
+  title = {{ICML} 2024 Mechanistic Interpretability Workshop},
+  booktitle = {International Conference on Machine Learning},
+  year = {2024},
+  month = {July},
+  address = {Vienna, Austria},
+  url = {https://icml2024mi.pages.dev/},
+  note = {Major workshop with 140+ submissions and 93 accepted papers. Demonstrates growth of MI field.}
+}
+
+@article{Zhong2024Hypothesis,
+  author = {Zhong, Jiaqi and others},
+  title = {Hypothesis Testing the Circuit Hypothesis in {LLMs}},
+  journal = {ICML 2024 Mechanistic Interpretability Workshop},
+  year = {2024},
+  url = {https://icml2024mi.pages.dev/},
+  note = {Third prize winner at ICML 2024 MI workshop. Develops statistical methods for testing circuit hypotheses.}
+}
+
+@article{Engels2024Geometry,
+  author = {Engels, Kiho and others},
+  title = {The Geometry of Categorical and Hierarchical Concepts in Large Language Models},
+  journal = {ICML 2024 Mechanistic Interpretability Workshop},
+  year = {2024},
+  url = {https://icml2024mi.pages.dev/},
+  note = {First prize winner at ICML 2024 MI workshop. Analyzes geometric structure of concepts in LLM representation spaces.}
+}

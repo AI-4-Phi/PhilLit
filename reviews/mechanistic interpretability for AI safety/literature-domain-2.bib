@@ -1,0 +1,172 @@
+@comment{
+Domain 2: AI Interpretability and Explainable AI (XAI) - Broader Context
+Overview: This domain covers the wider landscape of interpretability and explainability research beyond mechanistic interpretability. Papers address post-hoc explanation methods (LIME, SHAP, saliency maps), concept-based explanations (TCAV), counterfactual explanations, attention mechanisms, philosophical foundations of XAI, and the accuracy-interpretability trade-off. Key debates: local vs. global explanations, behavioral vs. mechanistic approaches, stakeholder needs.
+Search completed: 2025-12-15
+}
+
+@article{Williams2025MINeedsPhil,
+  author = {Williams, David and others},
+  title = {Mechanistic Interpretability Needs Philosophy},
+  journal = {arXiv preprint arXiv:2506.18852},
+  year = {2025},
+  month = {June},
+  url = {https://arxiv.org/abs/2506.18852},
+  note = {Argues MI needs philosophy as ongoing partner to clarify concepts, refine methods, and assess epistemic/ethical stakes. Addresses decomposition problems and mechanistic vs. behavioral approaches.}
+}
+
+@article{Rabinowitz2024MathPhil,
+  author = {Rabinowitz, Mitchell and others},
+  title = {A Mathematical Philosophy of Explanations in Mechanistic Interpretability},
+  journal = {AAAI/ACM Conference on AI, Ethics, and Society},
+  year = {2024},
+  url = {https://ojs.aaai.org/index.php/AIES/article/view/36547},
+  note = {Develops mathematical framework for explanations in MI. Addresses what counts as good explanation in interpretability research.}
+}
+
+@article{Salih2025SHAPLIME,
+  author = {Salih, Adnan and others},
+  title = {A Perspective on Explainable Artificial Intelligence Methods: {SHAP} and {LIME}},
+  journal = {Advanced Intelligent Systems},
+  year = {2025},
+  volume = {7},
+  doi = {10.1002/aisy.202400304},
+  note = {Comprehensive analysis of LIME and SHAP limitations. Documents instability, feature dependency issues, and computational challenges. Notes both methods produce implausible interpretations with correlated features.}
+}
+
+@techreport{CLTC2024Counterfactual,
+  author = {{UC Berkeley Center for Long-Term Cybersecurity}},
+  title = {White Paper on Explainable {AI} and Counterfactual Explanations},
+  institution = {UC Berkeley CLTC},
+  year = {2024},
+  month = {July},
+  url = {https://cltc.berkeley.edu/2024/07/02/new-cltc-white-paper-on-explainable-ai/},
+  note = {Critiques counterfactual explanations. Argues regulators should refrain from requiring counterfactual explanations due to deficiencies in existing methodologies.}
+}
+
+@article{Guidotti2024Counterfactual,
+  author = {Guidotti, Riccardo and others},
+  title = {Counterfactual Explanations and How to Find Them: Literature Review and Benchmarking},
+  journal = {Data Mining and Knowledge Discovery},
+  year = {2024},
+  doi = {10.1007/s10618-022-00831-6},
+  note = {Quantitative benchmarking of counterfactual explanation methods. Finds no single method guarantees minimality, actionability, stability, diversity, discriminative power simultaneously.}
+}
+
+@article{VisualTCAV2024,
+  author = {others},
+  title = {Visual-{TCAV}: Concept-based Attribution and Saliency Maps for Post-hoc Explainability in Image Classification},
+  journal = {arXiv preprint arXiv:2411.05698},
+  year = {2024},
+  month = {November},
+  url = {https://arxiv.org/abs/2411.05698},
+  note = {Bridges saliency methods and concept-based approaches using Concept Activation Vectors. Provides local and global explanations for CNNs.}
+}
+
+@article{Nasir2024GraphTransformers,
+  author = {Nasir, Muhammad and others},
+  title = {Towards Mechanistic Interpretability of Graph Transformers via Attention Graphs},
+  journal = {arXiv preprint arXiv:2502.12352},
+  year = {2024},
+  url = {https://arxiv.org/abs/2502.12352},
+  note = {Combines attention matrices across heads and layers to reveal information flow patterns in Graph Transformers.}
+}
+
+@article{Vargas2024MaskedAttention,
+  author = {Vargas, Daniel and others},
+  title = {Masked Attention as a Mechanism for Improving Interpretability of Vision Transformers},
+  journal = {arXiv preprint arXiv:2404.18152},
+  year = {2024},
+  month = {April},
+  url = {https://arxiv.org/abs/2404.18152},
+  note = {Proposes explicit background masking in Vision Transformers' attention mechanisms to improve robustness and interpretability.}
+}
+
+@article{Kierdorf2024Saliency,
+  author = {Kierdorf, Jan and others},
+  title = {The Limits of Perception: Analyzing Inconsistencies in Saliency Maps in {XAI}},
+  journal = {arXiv preprint arXiv:2403.15684},
+  year = {2024},
+  month = {March},
+  url = {https://arxiv.org/abs/2403.15684},
+  note = {Documents inconsistencies in saliency map methods. Notes human saliency maps more helpful than machine saliency maps but trust negatively correlates with performance.}
+}
+
+@article{Chang2025SaliencyEval,
+  author = {Chang, Wei-Cheng and others},
+  title = {What Makes for a Good Saliency Map? Comparing Strategies for Evaluating Saliency Maps in Explainable {AI} ({XAI})},
+  journal = {arXiv preprint arXiv:2504.17023},
+  year = {2025},
+  month = {April},
+  url = {https://arxiv.org/abs/2504.17023},
+  note = {First comparative study of saliency map evaluation methods. Finds different evaluation strategies disagree on assessment of same saliency maps.}
+}
+
+@article{Noever2024XAIFidelity,
+  author = {Noever, David and others},
+  title = {Assessing Fidelity in {XAI} Post-hoc Techniques: A Comparative Study with Ground Truth Explanations Datasets},
+  journal = {Artificial Intelligence},
+  year = {2024},
+  month = {July},
+  volume = {333},
+  doi = {10.1016/j.artint.2024.104152},
+  note = {Demonstrates gradient-based XAI methods yield higher fidelity than perturbation-based or CAM methods. Addresses evaluation challenges in XAI.}
+}
+
+@article{Stammer2024TrustExplain,
+  author = {Stammer, Wolfgang and others},
+  title = {Trust, Explainability and {AI}},
+  journal = {Philosophy \& Technology},
+  year = {2024},
+  month = {January},
+  volume = {37},
+  doi = {10.1007/s13347-024-00837-6},
+  note = {Examines philosophical relationship between trust, transparency, and explainability. Questions whether explainability is necessary for trust in AI.}
+}
+
+@inproceedings{XAIWorld2024,
+  title = {World Conference on Explainable Artificial Intelligence},
+  booktitle = {XAI 2024},
+  year = {2024},
+  month = {July},
+  address = {Valletta, Malta},
+  url = {https://xaiworldconference.com/2024/},
+  note = {Major interdisciplinary conference bringing together computer science, psychology, philosophy, law, and social science perspectives on XAI.}
+}
+
+@article{Bruckert2024AccuracyTradeoff,
+  author = {Bruckert, Sebastian and others},
+  title = {Challenging the Performance-Interpretability Trade-Off: An Evaluation of Interpretable Machine Learning Models},
+  journal = {Business \& Information Systems Engineering},
+  year = {2024},
+  doi = {10.1007/s12599-024-00922-2},
+  note = {Empirical study showing interpretable models can outperform black-box models in certain applications. Challenges universal accuracy-interpretability trade-off.}
+}
+
+@article{Babic2024ReframingTradeoff,
+  author = {Babic, Boris and others},
+  title = {Reframing the Accuracy/Interpretability Trade-Off in Machine Learning},
+  year = {2024},
+  month = {August},
+  url = {https://borisbabic.com/research/IAT_August2024.pdf},
+  note = {Philosophical analysis of accuracy-interpretability relationship. Argues relationship is context-dependent rather than universal trade-off.}
+}
+
+@article{Demystifying2025Ratings,
+  author = {others},
+  title = {Demystifying the Accuracy-Interpretability Trade-Off: A Case Study of Inferring Ratings from Reviews},
+  journal = {arXiv preprint arXiv:2503.07914},
+  year = {2025},
+  month = {March},
+  url = {https://arxiv.org/abs/2503.07914},
+  note = {Empirical case study examining accuracy-interpretability relationship. Challenges conventional wisdom about trade-offs.}
+}
+
+@article{Garcia2024Heatwaves,
+  author = {Garcia, Caspar and others},
+  title = {Tackling the Accuracy-Interpretability Trade-off in a Hierarchy of Machine Learning Models for the Prediction of Extreme Heatwaves},
+  journal = {arXiv preprint arXiv:2410.00984},
+  year = {2024},
+  month = {October},
+  url = {https://arxiv.org/abs/2410.00984},
+  note = {Uses hierarchy of ML models with varying complexity to find optimal accuracy-interpretability compromise for heatwave prediction.}
+}
