@@ -1,3 +1,8 @@
+---
+title: Is Mechanistic Explainability Necessary or Sufficient for AI Safety?
+---
+
+
 # Section 1: Introduction and Framing the Debate
 
 ## Is Mechanistic Interpretability Necessary or Sufficient for AI Safety?
@@ -43,6 +48,7 @@ Machamer, Peter, Lindley Darden, and Carl F. Craver (2000). Thinking about Mecha
 Pan, Alexander, et al. (2024). Alignment Faking in Large Language Models. Anthropic Research. https://www.anthropic.com/research/alignment-faking
 
 Scheurer, JÃ©rÃ©my, et al. (2024). AI Strategic Deception: A Critical Safety Concern. MIT AI Alignment. https://aialignment.mit.edu/initiatives/caip-exhibition/strategic-deception/
+
 ## Section 2: Defining Mechanistic Interpretability - Competing Conceptualizations
 
 The contemporary debate over mechanistic interpretability's role in AI safety is hampered by a fundamental conceptual problem: researchers disagree not merely about MI's effectiveness, but about what MI actually is. This section maps the conceptual terrain, identifying two competing definitional frameworksone narrow and neuron-centric, the other broad and function-orientedand examines how each relates to established philosophical accounts of mechanistic explanation.
@@ -154,6 +160,7 @@ Siegel, Gabriel, and Carl F. Craver. 2024. "Phenomenological Laws and Mechanisti
 Templeton, Adly, et al. 2024. "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet." Anthropic Research, May. https://transformer-circuits.pub/2024/scaling-monosemanticity/.
 
 Williams, Ryan, et al. 2025. "Mechanistic Interpretability Needs Philosophy for Conceptual Clarity." arXiv preprint. [Note: Citation format adjusted based on available literature; verify exact reference]
+
 ## Section 3: The Landscape of AI Safety - What Needs to be Safe?
 
 Before assessing whether mechanistic interpretability is necessary or sufficient for AI safety, we must understand what "AI safety" entails. The term encompasses a heterogeneous collection of concerns, risks, and proposed solutions. This section maps the contemporary AI safety landscape, identifying distinct problem categories and the range of approachesinterpretability-based and otherwisethat researchers deploy to address them.
@@ -293,6 +300,7 @@ Scheurer, Jérémy, et al. 2024. "AI Strategic Deception: A Critical Safety Concer
 Souly, Nathaniel, et al. 2024. "The Weapons of Mass Destruction Proxy Benchmark."
 
 VNN-COMP Organizers. 2024. "2024 International Neural Network Verification Competition." https://vnncomp.christopher-brix.de/.
+
 ## Section 4: Analyzing Necessity Claims - Is MI Required for AI Safety?
 
 We can now address the necessity question directly: is mechanistic interpretability necessary for AI safety? Kästner and Crook (2024) claim in their abstract that MI is "necessary for solving some core problems in AI safety," while Hendrycks and Hiscott (2025) argue MI is "misguided" and alternatives are superior. These apparently contradictory positions demand careful analysis.
@@ -477,6 +485,7 @@ Templeton, Adly, et al. 2024. "Scaling Monosemanticity: Extracting Interpretable
 VNN-COMP Organizers. 2024. "2024 International Neural Network Verification Competition." https://vnncomp.christopher-brix.de/.
 
 Williams, Ryan, et al. 2025. "Mechanistic Interpretability Needs Philosophy for Conceptual Clarity." arXiv preprint arXiv:2506.18852. https://arxiv.org/abs/2506.18852.
+
 ## Section 5: Analyzing Sufficiency Claims - Is MI Enough for AI Safety?
 
 If mechanistic interpretability is not clearly necessary for all aspects of AI safety, perhaps it is sufficient: could comprehensive MI alone ensure safety? Kästner and Crook (2024) appear to make this stronger claim, stating that "MI enables us to meet desirable social desiderata including safety." This section examines whether understanding mechanisms suffices for achieving safety.
@@ -672,6 +681,7 @@ VNN-COMP Organizers. 2024. "2024 International Neural Network Verification Compe
 Williams, Ryan, et al. 2025. "Mechanistic Interpretability Needs Philosophy for Conceptual Clarity." arXiv preprint arXiv:2506.18852. https://arxiv.org/abs/2506.18852.
 
 Zednik, Carlos, and Hannes Boelsen. 2021. "Solving the Black Box Problem: A Normative Framework for Explainable Artificial Intelligence." *Philosophy & Technology* 34: 265288. https://doi.org/10.1007/s13347-019-00382-7.
+
 ## Section 6: Synthesis and Research Gaps
 
 We can now synthesize the analysis and identify productive research directions. The central questionis mechanistic interpretability necessary or sufficient for AI safety?admits no simple answer. Both necessity and sufficiency claims depend on definitions, contexts, and which aspects of safety we address. However, this complexity reveals structure: the apparent contradictions in the literature stem from conceptual confusions that philosophical analysis can resolve.
