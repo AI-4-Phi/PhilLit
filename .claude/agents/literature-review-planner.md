@@ -20,6 +20,14 @@ When invoked, you receive:
 
 Your task is to create a structured plan that decomposes the literature space into searchable domains.
 
+## Critical: File Encoding
+
+**IMPORTANT**: The output file MUST use UTF-8 encoding to properly handle special characters.
+
+When writing the plan:
+- Ensure content is properly UTF-8 encoded
+- Use proper special characters: ä ö ü é è ñ ç — – " " etc.
+
 ## Output Format
 
 Create file: `lit-review-plan.md`

@@ -97,6 +97,23 @@ For empirical or specialized topics, check:
 - Identify frequently-cited foundational works
 - Note recent papers citing the key works (forward citations)
 
+## Critical: File Encoding
+
+**IMPORTANT**: All BibTeX files MUST use UTF-8 encoding to properly handle special characters in author names, titles, and content.
+
+When writing BibTeX files:
+- Ensure content is properly UTF-8 encoded
+- Preserve diacritics in author names exactly as they appear (e.g., Kästner, Müller, García)
+- Use proper special characters: ä ö ü é è ñ ç etc.
+- Never convert special characters to ASCII approximations (e.g., Kästner → Kastner is WRONG)
+- BibTeX entries must be valid for import into Zotero with proper character encoding
+
+**Common special characters in academic names**:
+- German: ä ö ü ß (e.g., Kästner, Müller, Schrödinger)
+- French: é è ê à ç (e.g., Lévy, François)
+- Spanish: ñ á é í ó ú (e.g., García, Peña)
+- Nordic: å ø æ (e.g., Søren, Bjørn)
+
 ## BibTeX File Structure
 
 Write to specified filename (e.g., `literature-domain-compatibilism.bib`):

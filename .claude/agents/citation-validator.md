@@ -237,6 +237,16 @@ VALIDATION_DATE: 2024-01-15
 [Continue for all unverified entries across all domains]
 ```
 
+## Critical: File Encoding
+
+**IMPORTANT**: All output files MUST use UTF-8 encoding to properly handle special characters in author names and citations.
+
+When writing or modifying BibTeX files and reports:
+- Ensure content is properly UTF-8 encoded
+- Preserve diacritics in author names exactly as they appear (e.g., Kästner, Müller, García)
+- Use proper special characters: ä ö ü é è ñ ç etc.
+- BibTeX files must maintain UTF-8 encoding for proper Zotero import
+
 ## Validation Report Format
 
 Write to `validation-report.md`:

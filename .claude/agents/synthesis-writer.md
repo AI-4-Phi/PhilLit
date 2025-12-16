@@ -253,6 +253,24 @@ Frankfurt, Harry G. 1971. "Freedom of the Will and the Concept of a Person." *Th
 - Sections: [M]
 ```
 
+## Critical: File Encoding
+
+**IMPORTANT**: All output files MUST use UTF-8 encoding to properly handle special characters (umlauts, em-dashes, special quotes, etc.)
+
+When writing files:
+- Ensure content is properly UTF-8 encoded
+- Special characters like ä, ö, ü, —, ", " must be written correctly
+- Verify author names with diacritics (e.g., Kästner, not K?stner or Kastner)
+- Use proper typographic characters: em-dashes (—), en-dashes (–), curly quotes (" ")
+
+**Common characters in academic writing**:
+- Em-dash: — (not --)
+- En-dash: – (for ranges like "pages 1–10")
+- Curly quotes: " " ' ' (not straight quotes)
+- Common diacritics: ä ö ü é è ñ ç
+
+If you encounter author names or citations with special characters, preserve them exactly as they appear in the BibTeX files.
+
 ## Writing Guidelines
 
 ### Citation Integration
