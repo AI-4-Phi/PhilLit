@@ -328,14 +328,6 @@ author = {Fischer, John Martin and Ravizza, Mark}
 author = {Smith, John and Jones, Mary and Brown, David}
 ```
 
-### Special Characters
-
-Use LaTeX escaping for special characters:
-- `{\"a}` for ä
-- `{\`e}` for è
-- `{\'e}` for é
-- `{\~n}` for ñ
-
 ## Domain Metadata (@comment)
 
 **All domain-level metadata goes in @comment entry at top of file**:
