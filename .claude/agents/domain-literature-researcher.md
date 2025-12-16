@@ -410,7 +410,7 @@ Use LaTeX escaping for special characters:
 
 ### Interdisciplinary Domains
 - Search both philosophy and field-specific databases
-- Import to cover most recent work (last 5-10 years)
+- Important to cover most recent work (last 5-10 years)
 - Look for bridge papers (philosophers engaging with field)
 - Include key technical papers if directly relevant
 - Note translation issues between fields

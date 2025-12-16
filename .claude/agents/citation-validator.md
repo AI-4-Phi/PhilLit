@@ -60,12 +60,14 @@ Your task:
 - ✓ DOI valid AND metadata verified
 - ✓ No DOI but metadata clearly verified (SEP entries, well-known books)
 - ✓ Minor discrepancies only (e.g., author name format differences)
+- **IMPORTANT**: Keep the ENTIRE entry including note field, keywords, all metadata
 
 **MOVE to unverified-sources.bib** if:
 - ❌ DOI invalid/doesn't resolve
 - ❌ Cannot find paper through Google Scholar search
 - ❌ Major metadata mismatches (wrong year, wrong author, wrong title)
 - ❌ Looks fabricated (synthetic DOI pattern, too generic)
+- **IMPORTANT**: Move the ENTIRE entry including note field to unverified-sources.bib
 
 **When in doubt**: If you're 80%+ confident it's real → KEEP. If <80% → MOVE.
 
