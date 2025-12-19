@@ -2,7 +2,7 @@
 name: literature-review-planner
 description: Plans comprehensive literature review structure for research proposals. Analyzes research ideas and creates domain decomposition with search strategies.
 tools: Read, Write, WebFetch, WebSearch, Bash
-model: sonnet
+model: opus
 ---
 
 # Literature Review Planner
@@ -19,14 +19,6 @@ When invoked, you receive:
 - Target scope (optional, e.g., "comprehensive" vs "focused")
 
 Your task is to create a structured plan that decomposes the literature space into searchable domains.
-
-## Critical: File Encoding
-
-**IMPORTANT**: The output file MUST use UTF-8 encoding to properly handle special characters.
-
-When writing the plan:
-- Ensure content is properly UTF-8 encoded
-- Use proper special characters: ä ö ü é è ñ ç — – " " etc.
 
 ## Output Format
 
