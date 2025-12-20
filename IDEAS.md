@@ -1,15 +1,14 @@
 ## Some ideas, big and small, of how to improve
 
 Date: Dec 19, 2025. By Johannes
+Updated: Dec 20, 2025.
 
-- fix resumability: the way to do it is described [here](https://code.claude.com/docs/en/sub-agents#resumable-subagents)
 - WebSearch has extremely high usage costs. Replace with MCPs (google scholar, brave search)
 - ensure that lit researcher takes better notes (Johannes already reminded him to do that, need to check how it goes next time)
 - Augment agents with skill. E.g. Skill for reading and writing .bib files? Or for handling text files (reading, writing, merging)
     - https://claude-plugins.dev/skills/@K-Dense-AI/claude-scientific-skills/citation-management
     - https://github.com/cadrianmae/claude-marketplace/tree/main/plugins/pandoc
 - Add YAML front matter to final synthesis (helps with workflow, e.g. pandoc)
-- work in a reviews/ subfolder by default
 - When done
     - convert literature-review-final.md to DOCX
     - Cleanup files: remove temporary files at the end of review. Keep only validated bib file and literature-review-final.md
@@ -25,3 +24,8 @@ Date: Dec 19, 2025. By Johannes
 - feature: download PDFs of sources that make it to the final report, add them to bib files? (could be a different agent)
 - cleanup Readme
     - Do we need another readme in .agents
+
+
+## DONE / DEFERRED
+- fix resumability: the way to do it is described [here](https://code.claude.com/docs/en/sub-agents#resumable-subagents) <-- not needed, current solution more robust
+- work in a reviews/ subfolder by default <-- added to CLAUDE.md
