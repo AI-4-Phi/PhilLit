@@ -4,32 +4,31 @@
 
 ## Overview
 
-This directory contains a sophisticated 5-phase agent-based workflow for generating focused, insight-driven literature reviews for research proposals. The system is inspired by the LiRA (Literature Review Agents) framework but adapted specifically for philosophical research proposals, emphasizing analytical depth over comprehensive coverage.
+This directory contains a 4-phase agent-based workflow for generating focused, insight-driven literature reviews for research proposals. The system is adapted specifically for philosophical research proposals, emphasizing analytical depth over comprehensive coverage.
 
-**Key Features**: 
-- Domain researchers output **valid BibTeX files** (`.bib`) for direct Zotero import
+**Key Features**:
+- Domain researchers use the `philosophy-research` skill for structured API searches
+- Output **valid BibTeX files** (`.bib`) for direct Zotero import
 - Focused reviews emphasizing key debates and research gaps
-
-## Recent Optimizations (Context Window Efficiency)
-
-- **BibTeX output**: Domain researchers now produce valid BibTeX files (`.bib`) instead of prose reviews
-- **Citation validation**: Phase 3 validates citations, removes unverified entries to `unverified-sources.bib`
-- **Task persistence**: Added `task-progress.md` for cross-conversation resume capability
-- **Zotero integration**: Users can directly import BibTeX files into Zotero
-- **Result**: Synthesis-planner can now read all 7 domains without context overflow; users get verified, reference-manager-ready bibliographies
+- Papers verified at search time via structured APIs (no separate validation phase needed)
 
 ## Agent Architecture
 
 ### Meta-Orchestrator
-- **research-proposal-orchestrator.md** - Coordinates the entire 6-phase workflow with task persistence
+- **research-proposal-orchestrator.md** - Coordinates the 4-phase workflow with task persistence
 
 ### Phase Agents
 
 1. **literature-review-planner.md** - Plans review structure and domain decomposition
-2. **domain-literature-researcher.md** - Produces valid BibTeX files (`.bib`) per domain with rich metadata in @comment entries and note fields
-3. **citation-validator.md** - Validates citations, removes unverified entries to `unverified-sources.bib`
-4. **synthesis-planner.md** - Designs tight narrative structure for focused  review
-5. **synthesis-writer.md** - Writes focused, insight-driven literature review emphasizing key debates and gaps
+2. **domain-literature-researcher.md** - Uses `philosophy-research` skill to produce valid BibTeX files (`.bib`) per domain
+3. **synthesis-planner.md** - Designs tight narrative structure for focused review
+4. **synthesis-writer.md** - Writes focused, insight-driven literature review emphasizing key debates and gaps
+
+### Optional Agents
+
+- **sota-review-editor.md** - Editorial review and polish
+- **novelty-assessor.md** - Strategic novelty assessment
+- **citation-validator.md** - Validates external BibTeX files (not needed for in-workflow use)
 
 ## Workflow Phases
 
@@ -41,34 +40,27 @@ This directory contains a sophisticated 5-phase agent-based workflow for generat
 
 ### Phase 2: Parallel Literature Search
 - **Agent**: `@domain-literature-researcher` (multiple instances in parallel)
+- **Skill**: `philosophy-research` (structured API searches)
 - **Output**: `literature-domain-1.bib`, `literature-domain-2.bib`, etc. (BibTeX files)
-- **Process**: Each agent searches and produces BibTeX bibliography with:
+- **Process**: Each agent uses skill scripts to search and produce BibTeX bibliography with:
   - Domain metadata in @comment entries (overview, gaps, synthesis guidance)
   - Standard BibTeX entries (@article, @book, etc.) with proper citation data
   - Content summary in `note` fields (Core Argument, Relevance, Position)
   - Importance levels in `keywords` fields (High/Medium/Low)
-- **Key Feature**: Parallel execution + BibTeX format enables direct Zotero import AND synthesis-planner reading
+- **Key Feature**: Papers verified at search time via structured APIs (Semantic Scholar, OpenAlex, arXiv, CrossRef)
 - **Architecture**: Multiple files (one per domain) created independently
 
-### Phase 3: Citation Validation
-- **Agent**: `@citation-validator`
-- **Output**: `validation-report.md`, `unverified-sources.bib`, modified domain BibTeX `.bib` files (now validated)
-- **Process**: Validates every BibTeX entry (DOI check, Google Scholar verification), removes unverified entries to `unverified-sources.bib`, preserves only verified papers in domain files
-- **Key Feature**: Ensures only real, verified papers make it to Zotero import and synthesis phases
-
-### Phase 4: Synthesis Planning
+### Phase 3: Synthesis Planning
 - **Agent**: `@synthesis-planner`
 - **Output**: `synthesis-outline.md`
 - **Process**: Designs tight narrative structure (3-4 sections, 3000-4000 words), selects 15-25 papers to cite, emphasizes key debates and specific gaps
 - **Key Feature**: Focus on analytical insight over comprehensive coverage
 
-### Phase 5: Synthesis Writing (Multi-Section)
+### Phase 4: Synthesis Writing (Multi-Section)
 - **Agent**: `@synthesis-writer` (invoked once per section)
 - **Output**: `synthesis-section-1.md`, `synthesis-section-2.md`, etc. → assembled into `literature-review-final.md`
 - **Process**: Each section written to separate file with specific word targets; orchestrator assembles into final review
-- **Key Feature**: 
-  - Section-by-section writing 
-  - Analytical depth over comprehensive coverage
+- **Key Feature**: Section-by-section writing with analytical depth
 - **Architecture**: Multiple files (one per section) created independently, then concatenated
 
 ## Key Features
@@ -86,11 +78,11 @@ This directory contains a sophisticated 5-phase agent-based workflow for generat
 - **Speed**: 5x faster than sequential for comprehensive reviews
 - **Scalability**: Can deploy 2-8 researchers based on project scope
 
-### Iterative Refinement
-- **User Checkpoints**: Human-in-the-loop mode allows review at each phase
-- **Citation Validation**: Ensures only verified papers proceed to synthesis
-- **Resume Capability**: Task list enables picking up from interruption
-- **Editorial Polish**: Dedicated editing phase ensures quality
+### Structured API Search
+- **philosophy-research skill**: Domain researchers use structured API searches
+- **Sources**: Semantic Scholar, OpenAlex, arXiv, SEP, PhilPapers, CrossRef
+- **Verification**: Papers verified at search time (no separate validation phase)
+- **Reliability**: Structured APIs return verified metadata with DOIs
 
 ### Standardized Format
 - **BibTeX Format**: Valid `.bib` files with standard citation fields (author, title, journal, year, doi, etc.)
@@ -128,29 +120,34 @@ The `@research-proposal-orchestrator` will automatically activate and guide you 
 After complete workflow, you receive:
 
 ```
-research-proposal-literature-review/
+reviews/[project-name]/
 ├── task-progress.md                      # Progress tracker (enables resume)
 ├── lit-review-plan.md                    # Phase 1
 ├── literature-domain-1.bib               # Phase 2 (BibTeX - import to Zotero)
 ├── literature-domain-2.bib               # Phase 2 (BibTeX - import to Zotero)
 ├── literature-domain-N.bib               # Phase 2 (BibTeX - import to Zotero)
-├── validation-report.md                  # Phase 3 (validation results)
-├── unverified-sources.bib                # Phase 3 (removed entries - DO NOT import)
-├── synthesis-outline.md                  # Phase 4
-├── synthesis-section-1.md                # Phase 5 (individual sections)
-├── synthesis-section-2.md                # Phase 5 (individual sections)
-├── synthesis-section-N.md                # Phase 5 (individual sections)
-└── literature-review-final.md            # Phase 5 (assembled, 3000-4000 words)
+├── synthesis-outline.md                  # Phase 3
+├── synthesis-section-1.md                # Phase 4 (individual sections)
+├── synthesis-section-2.md                # Phase 4 (individual sections)
+├── synthesis-section-N.md                # Phase 4 (individual sections)
+└── literature-review-final.md            # Phase 4 (assembled, 3000-4000 words)
 ```
 
-## Integration with Existing Skills
+## Philosophy-Research Skill
 
-These agents can reference your existing analytical philosophy skills:
-- `philosophical-literature` skill provides search strategies
-- `argument-reconstruction` skill guides argument analysis
-- `conceptual-analysis` skill informs gap identification
+Domain researchers use the `philosophy-research` skill (`.claude/skills/philosophy-research/`) which provides structured API access:
 
-The hybrid approach combines agent context isolation with skill domain knowledge.
+| Script | Purpose |
+|--------|---------|
+| `s2_search.py` | Semantic Scholar paper discovery |
+| `s2_citations.py` | Citation traversal |
+| `search_openalex.py` | OpenAlex broad search (250M+ works) |
+| `search_arxiv.py` | arXiv preprints |
+| `search_sep.py` / `fetch_sep.py` | SEP discovery and content |
+| `search_philpapers.py` | PhilPapers search |
+| `verify_paper.py` | CrossRef DOI verification |
+
+See `SKILL.md` in the skill folder for full documentation.
 
 ## Comparison with Skill-Based Approach
 
@@ -163,11 +160,11 @@ The hybrid approach combines agent context isolation with skill domain knowledge
 
 ### Agent-Based Orchestrator (This System)
 - ✅ Context isolation per agent
-- ✅ Parallel execution (Phase 2: domains, Phase 5: sections)
-- ✅ Citation validation (Phase 3: ensures only verified papers)
+- ✅ Parallel execution (Phase 2: domains, Phase 4: sections)
+- ✅ Papers verified at search time via structured APIs
 - ✅ Orchestrator context preserved
 - ✅ Scalable to large projects
-- ✅ Multi-file-then-assemble pattern (Phase 2 & 5)
+- ✅ Multi-file-then-assemble pattern (Phase 2 & 4)
 - ✅ Can still use skill knowledge
 
 ## Technical Details
@@ -175,8 +172,7 @@ The hybrid approach combines agent context isolation with skill domain knowledge
 ### Models Used
 - **Orchestrator**: Sonnet (strategic reasoning + task persistence)
 - **Researchers**: Sonnet (literature search + BibTeX generation)
-- **Validator**: Sonnet (citation verification)
-- **Planner**: Sonnet (strategic planning for focused reviews)
+- **Planner**: Sonnet/Opus (strategic planning for focused reviews)
 - **Writer**: Sonnet (tight, analytical academic prose)
 
 ### Context Management
