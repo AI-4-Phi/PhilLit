@@ -1,7 +1,7 @@
 # Philosophy Research Skill - Implementation Plan
 
 **Status**: Planning complete, ready for implementation
-**Last updated**: 2025-12-21
+**Last updated**: 2025-12-21 (Added OpenAlex)
 
 ## Objective
 
@@ -23,6 +23,7 @@ Replace `WebSearch` in `domain-literature-researcher` and `citation-validator` a
 │   ├── s2_batch.py             # Batch paper details
 │   ├── s2_recommend.py         # Paper recommendations
 │   ├── search_arxiv.py         # arXiv preprint search
+│   ├── search_openalex.py      # OpenAlex broad academic search
 │   ├── search_sep.py           # SEP discovery via Brave API
 │   ├── fetch_sep.py            # SEP content extraction via BeautifulSoup
 │   ├── search_philpapers.py    # PhilPapers via Brave API
@@ -38,6 +39,7 @@ Replace `WebSearch` in `domain-literature-researcher` and `citation-validator` a
 | Source | Method | Auth Required | Rate Limit | Notes |
 |--------|--------|---------------|------------|-------|
 | Semantic Scholar | Direct API | Optional (recommended) | 1 req/sec | Primary paper source, citations, recommendations |
+| OpenAlex | pyalex library | None (email recommended) | 10 req/sec | Broad academic coverage, 250M+ works, open access |
 | arXiv | arxiv.py library | None | 3 sec delay | Preprints, recent work, full abstracts |
 | SEP (discovery) | Brave API + `site:plato.stanford.edu` | BRAVE_API_KEY | 1/sec free | Find relevant articles |
 | SEP (content) | requests + BeautifulSoup | None | Polite (1/sec) | Extract structured content, bibliography |
@@ -339,6 +341,288 @@ search = arxiv.Search(
     query='ti:"Attention Is All You Need" AND au:Vaswani',
     max_results=5
 )
+```
+
+---
+
+## OpenAlex API — Detailed Specification
+
+**Base URL**: `https://api.openalex.org`
+
+**Python Library**: `pyalex` (recommended over raw API)
+
+### Why OpenAlex for Philosophy Research?
+
+- **Massive coverage**: 250M+ works, far larger than Semantic Scholar
+- **Open and free**: No authentication required, generous rate limits
+- **Rich metadata**: Abstracts, citations, open access status, topics
+- **Cross-disciplinary**: Excellent for philosophy papers published in non-philosophy venues
+- **Citation analysis**: Both incoming and outgoing citations
+- **DOI/ROR/ORCID linking**: Strong identifier coverage
+
+### Installation
+
+```bash
+pip install pyalex
+```
+
+### Configuration
+
+**Polite Pool Access** (recommended for consistent response times):
+```python
+import pyalex
+pyalex.config.email = "your@email.com"  # Highly recommended
+```
+
+**Retry Settings**:
+```python
+from pyalex import config
+config.max_retries = 3
+config.retry_backoff_factor = 0.1
+config.retry_http_codes = [429, 500, 503]
+```
+
+### Rate Limits
+
+| Limit | Value |
+|-------|-------|
+| Daily maximum | 100,000 calls |
+| Per-second maximum | 10 requests |
+| Polite pool benefit | More consistent response times |
+
+**429 Response**: Exceeding limits returns 429 error. Implement exponential backoff.
+
+### Core Entities
+
+OpenAlex provides seven entity types:
+
+| Entity | Class | Use Case |
+|--------|-------|----------|
+| Works | `Works()` | Papers, articles, books |
+| Authors | `Authors()` | Researcher profiles |
+| Sources | `Sources()` | Journals, repositories |
+| Institutions | `Institutions()` | Universities, organizations |
+| Topics | `Topics()` | Subject classifications |
+| Publishers | `Publishers()` | Publishing organizations |
+| Funders | `Funders()` | Funding bodies |
+
+### Works Search Methods
+
+**Text Search** (full-text across title, abstract):
+```python
+from pyalex import Works
+
+results = Works().search("free will compatibilism").get()
+```
+
+**Field-Specific Search**:
+```python
+Works().search_filter(title="free will").get()
+Works().search_filter(display_name="Frankfurt").get()  # For authors
+```
+
+**Single Entity Retrieval**:
+```python
+Works()["W2741809807"]           # By OpenAlex ID
+Works()["doi:10.2307/2024717"]   # By DOI
+```
+
+### Filtering
+
+**Basic Filters**:
+```python
+Works().filter(
+    publication_year=2020,
+    is_oa=True,
+    type="journal-article"
+).get()
+```
+
+**Nested Attribute Filters**:
+```python
+Works().filter(
+    authorships={"institutions": {"ror": "04pp8hn57"}}
+).get()
+```
+
+**Multiple Values (max 100 items)**:
+```python
+Works().filter_or(
+    doi=["10.1016/...", "10.1002/..."]
+).get()
+```
+
+**Logical Operators**:
+- Inequality: `Works().filter(works_count=">1000")`
+- Negation: `Works().filter(country_code="!us")`
+- OR within field: `Works().filter(institutions={"country_code": "fr|gb"})`
+- AND: Chain multiple `.filter()` calls
+
+### Useful Filters for Philosophy Research
+
+| Filter | Example | Use Case |
+|--------|---------|----------|
+| `publication_year` | `2020` or `"2020-2024"` | Date range |
+| `is_oa` | `True` | Open access only |
+| `type` | `"journal-article"` | Work type |
+| `has_doi` | `True` | Only DOI works |
+| `cites` | `"W2741809807"` | Papers citing a work |
+| `cited_by_count` | `">50"` | Citation threshold |
+| `authorships.author.id` | `"A123"` | By author |
+| `primary_topic.field.id` | `"fields/31"` | Philosophy field |
+
+### Citation Analysis
+
+**Papers citing a work** (incoming citations):
+```python
+Works().filter(cites="W2741809807").get()
+```
+
+**Papers cited by a work** (outgoing references):
+```python
+work = Works()["W2741809807"]
+referenced_ids = work.get("referenced_works", [])
+Works()[referenced_ids]  # Batch lookup
+```
+
+### Pagination
+
+**Cursor Paging** (default, recommended):
+```python
+pager = Works().search("epistemology").paginate(per_page=200)
+for page in pager:
+    for work in page:
+        process(work)
+```
+
+**Limits**:
+- Default: 25 results per page
+- Maximum: 200 per page
+- Total via cursor: unlimited (use `n_max=None`)
+- Total via basic paging: 10,000 results
+
+### Abstract Access
+
+Abstracts are generated on-the-fly from inverted indices:
+```python
+work = Works()["W3128349626"]
+abstract = work.get("abstract")  # Plaintext abstract
+```
+
+### Autocomplete
+
+For entity discovery and suggestions:
+```python
+from pyalex import autocomplete
+
+# Global autocomplete
+autocomplete("frankfurt philosophy")
+
+# Entity-specific
+Works().autocomplete("free will")
+Authors().autocomplete("Harry Frankfurt")
+```
+
+### Sampling
+
+For random subsets:
+```python
+Works().sample(100, seed=42).get()
+Works().filter(publication_year=2023).sample(50).get()
+```
+
+### Field Selection
+
+Limit returned fields for faster responses:
+```python
+Works().filter(publication_year=2020).select(
+    ["id", "doi", "title", "authorships", "cited_by_count", "abstract_inverted_index"]
+).get()
+```
+
+### Open Access Information
+
+```python
+work = Works()["W2741809807"]
+oa_info = work.get("open_access")
+# Returns: {'is_oa': True, 'oa_status': 'gold', 'oa_url': '...'}
+```
+
+### Batch Operations
+
+Use OR syntax for efficient batching (up to 50 items):
+```python
+Works().filter_or(
+    doi=["10.xxx/1", "10.xxx/2", "10.xxx/3", ...]  # up to 50
+).get()
+```
+
+### Rate Limiting Strategy
+
+```python
+import time
+
+class OpenAlexRateLimiter:
+    """Enforces 10 req/sec with exponential backoff on 429 errors."""
+
+    def __init__(self):
+        self.last_request = 0
+        self.min_interval = 0.11  # Slightly over 0.1 sec for safety
+
+    def wait(self):
+        elapsed = time.time() - self.last_request
+        if elapsed < self.min_interval:
+            time.sleep(self.min_interval - elapsed)
+        self.last_request = time.time()
+
+    def backoff(self, attempt: int, max_attempts: int = 5) -> bool:
+        """Exponential backoff. Returns False if max attempts exceeded."""
+        if attempt >= max_attempts:
+            return False
+        delay = (2 ** attempt) + random.uniform(0, 1)
+        time.sleep(delay)
+        return True
+```
+
+**Note**: pyalex handles retries automatically with `config.max_retries`.
+
+### Key Response Fields for Works
+
+| Field | Description | Notes |
+|-------|-------------|-------|
+| `id` | OpenAlex ID | Format: `W1234567890` |
+| `doi` | DOI | Full URL or bare DOI |
+| `title` | Title | String |
+| `authorships` | Author list | Includes names, IDs, affiliations |
+| `publication_year` | Year | Integer |
+| `publication_date` | Full date | YYYY-MM-DD |
+| `abstract_inverted_index` | Abstract data | Use `.get("abstract")` for text |
+| `cited_by_count` | Citation count | Integer |
+| `referenced_works` | Outgoing citations | List of OpenAlex IDs |
+| `primary_topic` | Main topic | Includes field, subfield |
+| `type` | Work type | journal-article, book, etc. |
+| `open_access` | OA status | is_oa, oa_status, oa_url |
+| `primary_location` | Publication venue | Journal/source info |
+
+### Verification Use Case
+
+OpenAlex can verify papers by:
+1. **DOI lookup**: `Works()["doi:10.xxx"]`
+2. **Title search**: `Works().search_filter(title="...").get()`
+3. **OpenAlex ID**: `Works()["W1234567890"]`
+
+```python
+# Verify by DOI
+try:
+    work = Works()[f"doi:{doi}"]
+    verified = True
+except:
+    verified = False
+
+# Verify by title + author
+results = Works().search_filter(title="Freedom of the Will").filter(
+    publication_year="1970-1972"
+).get()
 ```
 
 ---
@@ -933,6 +1217,87 @@ Phase 4: Topic Expansion
 # Note: Best for AI ethics, computational philosophy, formal epistemology
 ```
 
+### search_openalex.py
+```python
+# Search OpenAlex for broad academic paper discovery and verification
+
+# Usage:
+#   python search_openalex.py "free will compatibilism"
+#   python search_openalex.py "moral responsibility" --year 2020-2024 --limit 50
+#   python search_openalex.py --doi "10.2307/2024717"
+#   python search_openalex.py --id "W2741809807"
+#   python search_openalex.py "epistemic injustice" --oa-only --min-citations 10
+#   python search_openalex.py --cites "W2741809807" --limit 100
+#   python search_openalex.py "Frankfurt" --author --limit 20
+
+# Input:
+#   query: Search terms (searches title and abstract)
+#   --doi DOI: Direct lookup by DOI (returns single paper)
+#   --id OPENALEX_ID: Direct lookup by OpenAlex ID (e.g., W2741809807)
+#   --author: Search for authors instead of works
+#   --cites OPENALEX_ID: Find papers citing a specific work
+#   --refs OPENALEX_ID: Find papers referenced by a work
+#   --year YYYY or YYYY-YYYY: Filter by publication year or range
+#   --limit N: Max results (default 25, max 200 per page)
+#   --oa-only: Only open access papers
+#   --min-citations N: Minimum citation count
+#   --type TYPE: Filter by work type (journal-article, book, book-chapter, etc.)
+#   --select FIELDS: Comma-separated fields to return (for efficiency)
+#   --sample N: Random sample of N papers (for exploratory search)
+
+# Output: JSON array (or single object for --doi/--id)
+# [
+#   {
+#     "openalex_id": "W2741809807",
+#     "doi": "10.2307/2024717",
+#     "title": "Freedom of the Will and the Concept of a Person",
+#     "authors": [
+#       {
+#         "name": "Harry G. Frankfurt",
+#         "openalex_id": "A5027479191",
+#         "orcid": "0000-0001-2345-6789",  # if available
+#         "institutions": ["Princeton University"]
+#       }
+#     ],
+#     "publication_year": 1971,
+#     "publication_date": "1971-01-01",
+#     "abstract": "Full abstract text...",  # Generated from inverted index
+#     "cited_by_count": 3500,
+#     "type": "journal-article",
+#     "source": {
+#       "name": "The Journal of Philosophy",
+#       "issn": "0022-362X",
+#       "type": "journal"
+#     },
+#     "open_access": {
+#       "is_oa": true,
+#       "oa_status": "gold",
+#       "oa_url": "https://..."
+#     },
+#     "referenced_works_count": 15,
+#     "topics": ["Free Will", "Moral Responsibility"],
+#     "url": "https://openalex.org/W2741809807"
+#   }
+# ]
+
+# Author search output (--author):
+# [
+#   {
+#     "openalex_id": "A5027479191",
+#     "name": "Harry G. Frankfurt",
+#     "orcid": "0000-0001-2345-6789",
+#     "works_count": 47,
+#     "cited_by_count": 12500,
+#     "affiliations": ["Princeton University"],
+#     "url": "https://openalex.org/A5027479191"
+#   }
+# ]
+
+# Implements: pyalex library with polite pool (config.email)
+# Rate limiting: 10 req/sec, automatic retries on 429
+# Note: Larger database than Semantic Scholar, good for comprehensive coverage
+```
+
 ### search_sep.py
 ```python
 # DISCOVERY: Find relevant SEP articles via Brave API
@@ -1151,6 +1516,7 @@ requests>=2.31.0
 beautifulsoup4>=4.12.0
 lxml>=5.0.0
 arxiv>=2.0.0
+pyalex>=0.14
 ```
 
 **Dependency notes**:
@@ -1158,6 +1524,7 @@ arxiv>=2.0.0
 - `beautifulsoup4`: HTML parsing for SEP content extraction
 - `lxml`: Fast HTML parser backend for BeautifulSoup (recommended over html.parser)
 - `arxiv`: Python wrapper for arXiv API with built-in rate limiting
+- `pyalex`: Python wrapper for OpenAlex API with polite pool and retry handling
 
 ---
 
@@ -1181,6 +1548,7 @@ Brief description of available capabilities and when to use this skill.
 - SEP (concepts and overviews) → `search_sep.py` → `fetch_sep.py`
 - PhilPapers (philosophy-specific papers) → `search_philpapers.py`
 - Semantic Scholar (broad academic search) → `s2_search.py`
+- OpenAlex (250M+ works, cross-disciplinary) → `search_openalex.py`
 - arXiv (preprints, AI ethics, recent work) → `search_arxiv.py`
 
 **Phase 2: SEP Content Extraction**
@@ -1250,6 +1618,7 @@ Parse bibliography → s2_search.py or verify_paper.py
 | `s2_citations.py` | Citation traversal | `--references`, `--citations`, `--influential-only` |
 | `s2_batch.py` | Batch paper details | `--ids`, `--file` |
 | `s2_recommend.py` | Find similar papers | `--positive`, `--negative`, `--for-paper` |
+| `search_openalex.py` | Broad academic search | `--year`, `--doi`, `--id`, `--cites`, `--oa-only` |
 | `search_arxiv.py` | arXiv preprints | `--category`, `--author`, `--recent`, `--id` |
 | `search_sep.py` | SEP discovery | `--limit`, `--all-pages` |
 | `fetch_sep.py` | SEP content extraction | `--sections`, `--bibliography-only`, `--related-only` |
@@ -1269,7 +1638,8 @@ Parse bibliography → s2_search.py or verify_paper.py
 export S2_API_KEY="your-semantic-scholar-key"  # Recommended
 export BRAVE_API_KEY="your-brave-key"           # Required for SEP/PhilPapers discovery
 export CROSSREF_MAILTO="your@email.com"         # Required for CrossRef polite pool
-pip install requests beautifulsoup4 lxml
+export OPENALEX_EMAIL="your@email.com"          # Recommended for OpenAlex polite pool
+pip install requests beautifulsoup4 lxml pyalex arxiv
 ```
 
 ---
@@ -1297,7 +1667,8 @@ Update search process instructions to use skill scripts:
 1. **SEP**: `search_sep.py "{topic}"` → get article URLs and entry_names
 2. **PhilPapers**: `search_philpapers.py "{topic}"` → note key papers
 3. **Semantic Scholar**: `s2_search.py "{topic}" --field Philosophy --year 2015-2025`
-4. **arXiv**: `search_arxiv.py "{topic}" --category cs.AI --recent` → preprints, AI ethics
+4. **OpenAlex**: `search_openalex.py "{topic}" --year 2015-2025` → broad coverage, cross-disciplinary
+5. **arXiv**: `search_arxiv.py "{topic}" --category cs.AI --recent` → preprints, AI ethics
 
 **Phase 2: SEP Content Extraction**
 1. `fetch_sep.py {entry_name} --sections "preamble,1,2,bibliography"`
@@ -1321,6 +1692,14 @@ Update search process instructions to use skill scripts:
 - Recent/cutting-edge work not yet in journals
 - Computational philosophy, formal epistemology
 - Cross-disciplinary philosophy-CS research
+
+**When to prioritize OpenAlex**:
+- Comprehensive literature coverage (250M+ works)
+- Cross-disciplinary topics (philosophy published in non-philosophy venues)
+- Finding open access versions of paywalled papers
+- Papers not in Semantic Scholar or arXiv
+- Author searches with affiliation information
+- Citation analysis with high coverage
 
 ### 2. citation-validator
 
@@ -1365,6 +1744,13 @@ Update validation workflow to use skill scripts:
 - Useful for: AI ethics papers, recent preprints, CS/philosophy cross-disciplinary work
 - arXiv provides: full abstract, DOI (if published), journal_ref
 
+**Validation Method 6: OpenAlex Lookup** (broad coverage)
+- `search_openalex.py --doi "{doi}"` for direct DOI verification
+- `search_openalex.py "{title}"` for title search with year filtering
+- Useful for: Papers not found in S2 or arXiv, cross-disciplinary work
+- OpenAlex provides: 250M+ works, open access links, comprehensive metadata
+- **Batch validation**: `search_openalex.py --doi "{doi1}" --doi "{doi2}"...` (up to 50)
+
 **Updated Validation Workflow**:
 ```
 For each BibTeX entry:
@@ -1377,15 +1763,17 @@ For each BibTeX entry:
 3. If no DOI/arXiv ID:
    a. s2_search.py "{title}" → find in Semantic Scholar
    b. If found, extract DOI from S2 response
-   c. If not in S2, try search_arxiv.py for preprints
-   d. If not in arXiv, search_philpapers.py or search_sep.py
+   c. If not in S2, try search_openalex.py "{title}" → broader coverage
+   d. If not in OpenAlex, try search_arxiv.py for preprints
+   e. If not in arXiv, search_philpapers.py or search_sep.py
 4. Compare metadata: authors, year (±1), venue
 5. Decision: KEEP (verified), CORRECT (minor fixes), or REMOVE (unverified)
 ```
 
 **Batch Validation** (efficiency):
 - Collect all DOIs from BibTeX file
-- `s2_batch.py --ids "DOI:10.xxx,DOI:10.yyy,..."`
+- `s2_batch.py --ids "DOI:10.xxx,DOI:10.yyy,..."` (up to 500)
+- For DOIs not found in S2, use OpenAlex batch: `Works().filter_or(doi=[...])` (up to 50)
 - Compare batch response against BibTeX metadata
 - Only use individual lookups for entries not found in batch
 - For arXiv entries, use individual lookups (no batch API)
@@ -1394,20 +1782,21 @@ For each BibTeX entry:
 
 ## Implementation Order
 
-1. **Rate limiter module** — shared utility for S2, Brave, SEP, CrossRef, arXiv
+1. **Rate limiter module** — shared utility for S2, Brave, SEP, CrossRef, arXiv, OpenAlex
 2. `verify_paper.py` — foundation for accuracy (CrossRef)
 3. `s2_search.py` — primary paper discovery
 4. `s2_citations.py` — citation traversal
 5. `s2_batch.py` — efficient batch retrieval
 6. `s2_recommend.py` — expansion via recommendations
-7. `search_arxiv.py` — arXiv preprint search (arxiv.py)
-8. `search_sep.py` — SEP discovery (Brave API)
-9. `fetch_sep.py` — SEP content extraction (BeautifulSoup)
-10. `search_philpapers.py` — PhilPapers search (Brave API)
-11. `SKILL.md` — documentation
-12. Test all scripts
-13. Update `domain-literature-researcher.md`
-14. Update `citation-validator.md`
+7. `search_openalex.py` — broad academic search (pyalex)
+8. `search_arxiv.py` — arXiv preprint search (arxiv.py)
+9. `search_sep.py` — SEP discovery (Brave API)
+10. `fetch_sep.py` — SEP content extraction (BeautifulSoup)
+11. `search_philpapers.py` — PhilPapers search (Brave API)
+12. `SKILL.md` — documentation
+13. Test all scripts
+14. Update `domain-literature-researcher.md`
+15. Update `citation-validator.md`
 
 ---
 
@@ -1417,7 +1806,8 @@ For each BibTeX entry:
 export S2_API_KEY="your-key-here"        # Semantic Scholar (recommended)
 export BRAVE_API_KEY="your-key-here"     # Required for SEP/PhilPapers
 export CROSSREF_MAILTO="your@email.com"  # Required for CrossRef polite pool
-pip install requests
+export OPENALEX_EMAIL="your@email.com"   # Recommended for OpenAlex polite pool
+pip install requests beautifulsoup4 lxml pyalex arxiv
 ```
 
 ---
@@ -1445,6 +1835,18 @@ pip install requests
 - [ ] arXiv rate limiter enforces 3 sec delay between requests
 - [ ] Output includes: arxiv_id, title, authors, abstract, doi (if available), pdf_url
 
+### OpenAlex Scripts
+- [ ] `search_openalex.py "free will"` returns papers with abstracts and DOIs
+- [ ] `search_openalex.py --doi "10.2307/2024717"` returns verified Frankfurt (1971) metadata
+- [ ] `search_openalex.py --id "W2741809807"` returns paper by OpenAlex ID
+- [ ] `search_openalex.py --cites "W2741809807"` returns papers citing a work
+- [ ] `search_openalex.py --year 2020-2024` filters by publication year range
+- [ ] `search_openalex.py --oa-only` filters to open access papers only
+- [ ] `search_openalex.py --author "Frankfurt"` searches for authors
+- [ ] pyalex polite pool configured with OPENALEX_EMAIL
+- [ ] Rate limiter enforces 10 req/sec with exponential backoff on 429
+- [ ] Output includes: openalex_id, doi, title, authors, abstract, cited_by_count, open_access
+
 ### Brave Search Scripts
 - [ ] `search_sep.py "free will"` returns SEP article URLs with snippets
 - [ ] `search_sep.py` extracts `entry_name` for use with `fetch_sep.py`
@@ -1467,7 +1869,9 @@ pip install requests
 - [ ] `domain-literature-researcher` can complete a search without WebSearch
 - [ ] `domain-literature-researcher` uses `fetch_sep.py` for SEP content (not WebFetch)
 - [ ] `domain-literature-researcher` uses `search_arxiv.py` for AI ethics/preprints
+- [ ] `domain-literature-researcher` uses `search_openalex.py` for broad academic coverage
 - [ ] `citation-validator` can validate entries without WebSearch
 - [ ] `citation-validator` can validate arXiv entries via `search_arxiv.py --id`
+- [ ] `citation-validator` can validate via OpenAlex when S2 fails via `search_openalex.py`
 - [ ] `citation-validator` batch validates DOIs efficiently via `s2_batch.py`
 - [ ] No fabricated citations possible
