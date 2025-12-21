@@ -1544,23 +1544,20 @@ Brief description of available capabilities and when to use this skill.
 
 ### 2. Search Workflow
 
-**Phase 1: Discovery**
-- SEP (concepts and overviews) → `search_sep.py` → `fetch_sep.py`
-- PhilPapers (philosophy-specific papers) → `search_philpapers.py`
-- Semantic Scholar (broad academic search) → `s2_search.py`
-- OpenAlex (250M+ works, cross-disciplinary) → `search_openalex.py`
-- arXiv (preprints, AI ethics, recent work) → `search_arxiv.py`
-
-**Phase 2: SEP Content Extraction**
-- Use `fetch_sep.py {entry}` to get structured article content
-- Extract specific sections: `--sections "preamble,1,2,bibliography"`
-- Parse bibliography for citation chaining
+**Phase 1: SEP (Most Authoritative)**
+- `search_sep.py "{topic}"` → discover relevant SEP articles
+- `fetch_sep.py {entry}` → extract structured content (preamble, sections, bibliography)
+- Parse bibliography for foundational works
 - Follow related entries for topic expansion
 
-**Phase 3: Deep Retrieval**
-- Use `s2_search.py --bulk` for comprehensive collection
-- Use `search_arxiv.py --recent` for latest preprints
-- Filter by year, field, citation count as needed
+**Phase 2: PhilPapers**
+- `search_philpapers.py "{topic}"` → philosophy-specific papers
+- Cross-reference with SEP bibliography
+
+**Phase 3: Extended Academic Search**
+- Semantic Scholar → `s2_search.py` (broad academic search)
+- OpenAlex → `search_openalex.py` (250M+ works, cross-disciplinary)
+- arXiv → `search_arxiv.py` (preprints, AI ethics, recent work)
 
 **Phase 4: Citation Traversal**
 - Get references for foundational papers → `s2_citations.py --references`
@@ -1663,26 +1660,33 @@ model: sonnet
 
 Update search process instructions to use skill scripts:
 
-**Phase 1: Primary Source Search**
-1. **SEP**: `search_sep.py "{topic}"` → get article URLs and entry_names
-2. **PhilPapers**: `search_philpapers.py "{topic}"` → note key papers
-3. **Semantic Scholar**: `s2_search.py "{topic}" --field Philosophy --year 2015-2025`
-4. **OpenAlex**: `search_openalex.py "{topic}" --year 2015-2025` → broad coverage, cross-disciplinary
-5. **arXiv**: `search_arxiv.py "{topic}" --category cs.AI --recent` → preprints, AI ethics
+**Phase 1: SEP (Stanford Encyclopedia of Philosophy)**
+*Most authoritative source for philosophy — start here*
+1. `search_sep.py "{topic}"` → discover relevant SEP articles
+2. `fetch_sep.py {entry_name} --sections "preamble,1,2,bibliography"` → extract content
+3. Read preamble and key sections for domain overview
+4. Parse bibliography for foundational works cited
+5. `fetch_sep.py {entry_name} --related-only` → expand to related topics
 
-**Phase 2: SEP Content Extraction**
-1. `fetch_sep.py {entry_name} --sections "preamble,1,2,bibliography"`
-2. Read preamble and key sections for domain overview
-3. Parse bibliography for works cited in SEP article
-4. `fetch_sep.py {entry_name} --related-only` → expand to related topics
+**Phase 2: PhilPapers**
+*Philosophy-specific academic papers*
+1. `search_philpapers.py "{topic}"` → note key papers
+2. Cross-reference with SEP bibliography entries
+3. Identify papers not covered by SEP
 
-**Phase 3: Citation Chaining**
-1. Identify foundational papers from SEP bibliography + S2 search
+**Phase 3: Extended Academic Search**
+*Broader coverage and cross-disciplinary work*
+1. **Semantic Scholar**: `s2_search.py "{topic}" --field Philosophy --year 2015-2025`
+2. **OpenAlex**: `search_openalex.py "{topic}" --year 2015-2025` → broad coverage, cross-disciplinary
+3. **arXiv**: `search_arxiv.py "{topic}" --category cs.AI --recent` → preprints, AI ethics
+
+**Phase 4: Citation Chaining**
+1. Identify foundational papers from SEP bibliography + PhilPapers + S2 search
 2. `s2_citations.py {paper_id} --both --influential-only`
 3. `s2_recommend.py --positive {foundational_ids}`
 4. Parse SEP bibliographies → `verify_paper.py` → get DOIs
 
-**Phase 4: Batch Metadata**
+**Phase 5: Batch Metadata**
 1. Collect all paper IDs from all phases
 2. `s2_batch.py --ids "{all_ids}"`
 3. Use structured SEP content for writing CORE ARGUMENT notes
