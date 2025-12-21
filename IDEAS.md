@@ -1,9 +1,8 @@
 ## Some ideas, big and small, of how to improve
 
 Date: Dec 19, 2025. By Johannes
-Updated: Dec 20, 2025.
+Updated: Dec 21, 2025.
 
-- WebSearch has extremely high usage costs. Replace with Skill → **Plan ready**: `.claude/skills/philosophy-research/IMPLEMENTATION-PLAN.md`
 - ensure that lit researcher takes better notes (Johannes already reminded him to do that, need to check how it goes next time)
 - Augment agents with skill. E.g. Skill for reading and writing .bib files? Or for handling text files (reading, writing, merging)
     - https://claude-plugins.dev/skills/@K-Dense-AI/claude-scientific-skills/citation-management
@@ -22,10 +21,9 @@ Updated: Dec 20, 2025.
 - Check Anthropic docs to understand how to refactor agents, some of them seem very extensive (harder to steer, context expensive)
     - Could some agents be skills
 - feature: download PDFs of sources that make it to the final report, add them to bib files? (could be a different agent)
-- cleanup Readme
-    - Do we need another readme in .agents
-
 
 ## DONE / DEFERRED
 - fix resumability: the way to do it is described [here](https://code.claude.com/docs/en/sub-agents#resumable-subagents) <-- not needed, current solution more robust
 - work in a reviews/ subfolder by default <-- added to CLAUDE.md
+- WebSearch has extremely high usage costs. Replace with Skill → **DONE**: `.claude/skills/philosophy-research/`
+- cleanup Readme, do we need another readme in .agents → **DONE**: Rewrote README.md, deleted .claude/agents/README.md, created GETTING_STARTED.md
