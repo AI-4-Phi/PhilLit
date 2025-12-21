@@ -90,3 +90,7 @@ logs/
 
 #project
 local_workspace/
+
+# Claude Code local files (not shared)
+.claude/CLAUDE.local.md
+.claude/settings.local.json
