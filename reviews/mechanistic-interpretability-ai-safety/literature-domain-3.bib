@@ -1,0 +1,285 @@
+@comment{
+====================================================================
+DOMAIN: Explainable AI (XAI) in Philosophy of Science
+SEARCH_DATE: 2025-12-21
+PAPERS_FOUND: 12 total (High: 8, Medium: 3, Low: 1)
+SEARCH_SOURCES: PhilPapers, Semantic Scholar, OpenAlex
+====================================================================
+
+DOMAIN_OVERVIEW:
+This domain addresses philosophical treatments of explanation, interpretability,
+and understanding in AI systems from philosophy of science perspectives. The
+literature reveals several key debates: (1) What makes an explanation "mechanistic"
+versus other forms of explanation in XAI? (2) What are the epistemic standards
+for evaluating AI explanations? (3) How does opacity affect scientific understanding
+when using ML models? (4) What is the relationship between interpretability methods
+and genuine scientific understanding?
+
+Key positions include: (a) those who argue XAI requires applying philosophy of
+science frameworks (mechanistic explanation, scientific understanding) directly
+to AI systems (Duran, Sullivan, Boge & Mosig); (b) those who emphasize the
+social-epistemic dimensions of XAI, arguing technical solutions alone are
+insufficient (Huang et al., Smart & Kasirzadeh); (c) those who analyze opacity
+as an epistemic challenge that may be overcome through proper methodology
+(Duede, Buchholz); and (d) those exploring normative foundations for rights
+to explanation (Jongepier & Keymolen).
+
+Recent work (2023-2025) shows increasing integration of XAI with traditional
+philosophy of science concepts, particularly mechanistic explanation and
+scientific understanding. There is also growing recognition that XAI must
+address both technical interpretability and broader social-structural factors.
+
+RELEVANCE_TO_PROJECT:
+This domain is central to the research project as it examines what it means
+for AI systems to provide genuine explanations and whether mechanistic
+interpretability methods meet epistemic standards from philosophy of science.
+The literature reveals tensions between technical XAI approaches and philosophical
+requirements for explanation and understanding, directly relevant to evaluating
+whether mechanistic interpretability achieves its stated goals.
+
+NOTABLE_GAPS:
+Few papers directly engage with recent mechanistic interpretability techniques
+(circuits, features, etc.) from an explicitly mechanistic explanation framework.
+Most philosophical XAI work focuses on post-hoc explanation methods rather than
+the emerging paradigm of reverse-engineering neural network internals. Limited
+engagement with debates from new mechanism literature in philosophy of science.
+
+SYNTHESIS_GUIDANCE:
+When synthesizing, emphasize the distinction between different types of opacity
+(internal vs external, link vs structure) and different explanatory goals
+(prediction, control, understanding). Pay attention to how different papers
+operationalize "understanding" and "explanation" - these terms are used
+inconsistently across the literature. Consider how the social-epistemic
+dimension identified by several papers relates to safety-critical applications.
+
+KEY_POSITIONS:
+- Philosophy of Science Framework (8 papers): Applying traditional philosophy
+  of science concepts to XAI
+- Social-Epistemic Approach (3 papers): Emphasizing stakeholder involvement
+  and social context
+- Opacity Analysis (4 papers): Examining different types and implications of opacity
+- Normative Foundations (2 papers): Analyzing moral/epistemic rights to explanation
+====================================================================
+}
+
+@article{ohara2020explainable,
+  author = {O'Hara, Kieron},
+  title = {Explainable {AI} and the Philosophy and Practice of Explanation},
+  journal = {Computer Law and Security Review},
+  year = {2020},
+  volume = {39},
+  pages = {105474},
+  doi = {10.1016/j.clsr.2020.105474},
+  note = {
+  CORE ARGUMENT: Examines XAI from philosophical perspective, arguing that understanding what counts as adequate explanation requires engaging with philosophy of explanation. Different stakeholders require different types of explanations, and technical XAI methods must be evaluated against philosophical standards for what constitutes genuine explanation. XAI developers often operate with implicit assumptions about explanation that may not align with actual epistemic needs.
+
+  RELEVANCE: Provides philosophical foundation for evaluating XAI methods, directly relevant to assessing whether mechanistic interpretability methods provide genuine explanations or merely descriptions. Highlights that technical sophistication does not guarantee explanatory adequacy - a key concern for mechanistic interpretability approaches that claim to "explain" neural networks.
+
+  POSITION: Philosophy-of-explanation framework for XAI (pluralist about explanation types).
+  },
+  keywords = {xai-philosophy, explanation-theory, High}
+}
+
+@article{sullivan2020understanding,
+  author = {Sullivan, Emily},
+  title = {Understanding from Machine Learning Models},
+  journal = {The British Journal for the Philosophy of Science},
+  year = {2020},
+  volume = {73},
+  number = {1},
+  pages = {109--133},
+  doi = {10.1093/bjps/axz035},
+  note = {
+  CORE ARGUMENT: Challenges assumption that opacity or complexity inherently limits understanding from ML models. Argues the primary obstacle to understanding is not the black-box nature but rather lack of scientific and empirical evidence linking the model to target phenomena. Simple idealized models do not automatically provide more understanding than complex ones; what matters is the evidential support for model-target connections.
+
+  RELEVANCE: Highly relevant to mechanistic interpretability's claims about providing understanding of neural networks. Sullivan's framework suggests that mechanistic interpretability must establish strong evidential links between identified circuits/features and actual network behavior, not merely provide transparent descriptions. This sets a high epistemic bar for interpretability methods.
+
+  POSITION: Link-uncertainty account of understanding from opaque models.
+  },
+  keywords = {scientific-understanding, ml-opacity, philosophy-of-science, High}
+}
+
+@article{duran2021dissecting,
+  author = {Dur\'{a}n, Juan Manuel},
+  title = {Dissecting Scientific Explanation in {AI} ({sXAI}): A Case for Medicine and Healthcare},
+  journal = {Artificial Intelligence},
+  year = {2021},
+  volume = {297},
+  pages = {103498},
+  doi = {10.1016/j.artint.2021.103498},
+  note = {
+  CORE ARGUMENT: Proposes "scientific XAI" (sXAI) framework that applies philosophy of science standards to AI explanations, distinguishing it from technical XAI. Argues medical AI requires explanations that meet scientific criteria: they must be testable, provide causal information, and support counterfactual reasoning. Current XAI methods often fail these criteria, providing descriptions rather than genuine scientific explanations.
+
+  RELEVANCE: Directly applicable to evaluating mechanistic interpretability in safety-critical domains. Duran's framework provides concrete criteria for assessing whether identified circuits or features constitute scientific explanations or merely correlational descriptions. The emphasis on testability and causal information is crucial for safety applications of mechanistic interpretability.
+
+  POSITION: Scientific explanation standards for XAI (mechanistic-causal framework).
+  },
+  keywords = {sxai, mechanistic-explanation, medical-ai, High}
+}
+
+@article{buchholz2022means,
+  author = {Buchholz, Oliver},
+  title = {A Means-End Account of Explainable Artificial Intelligence},
+  journal = {Synthese},
+  year = {2022},
+  volume = {202},
+  number = {1},
+  pages = {1--23},
+  doi = {10.1007/s11229-023-04260-w},
+  note = {
+  CORE ARGUMENT: Applies means-end epistemology to structure XAI field, arguing different epistemic goals require different explanatory methods. Proposes taxonomy based on topic (what to explain), stakeholder (to whom), instrument (how), and goal (why). Suitability of XAI methods depends on alignment between these dimensions. No single XAI approach serves all purposes; method selection must be goal-directed.
+
+  RELEVANCE: Provides framework for assessing when mechanistic interpretability is appropriate versus other XAI approaches. Suggests mechanistic interpretability may excel for certain goals (e.g., model debugging) but not others (e.g., end-user accountability). Highlights need to clarify what mechanistic interpretability aims to achieve before evaluating its success.
+
+  POSITION: Means-end epistemology for XAI (methodological pluralism).
+  },
+  keywords = {means-end-epistemology, xai-taxonomy, High}
+}
+
+@article{jongepier2022explanation,
+  author = {Jongepier, Fleur and Keymolen, Esther},
+  title = {Explanation and Agency: Exploring the Normative-Epistemic Landscape of the ``Right to Explanation''},
+  journal = {Ethics and Information Technology},
+  year = {2022},
+  volume = {24},
+  number = {4},
+  doi = {10.1007/s10676-022-09654-x},
+  note = {
+  CORE ARGUMENT: Defends "symmetry thesis" arguing there is no special normative reason for right to explanation specifically for machine decisions versus human decisions. Right to explanation exists when automated processing significantly affects core deliberative agency and the affected party cannot understand the decision. Focuses on agency and autonomy rather than technical properties of systems.
+
+  RELEVANCE: Provides normative foundation for when mechanistic interpretability matters from user perspective. Suggests interpretability is ethically required not because AI is different from human decision-making, but when lack of understanding threatens autonomy. This reframes mechanistic interpretability as tool for protecting agency rather than just technical transparency.
+
+  POSITION: Agency-based normative account of explanation rights (symmetry thesis).
+  },
+  keywords = {right-to-explanation, agency, normative-foundations, High}
+}
+
+@article{fazi2020beyond,
+  author = {Fazi, M. Beatrice},
+  title = {Beyond Human: Deep Learning, Explainability and Representation},
+  journal = {Theory, Culture \& Society},
+  year = {2020},
+  volume = {38},
+  number = {7-8},
+  pages = {55--77},
+  doi = {10.1177/0263276420966386},
+  note = {
+  CORE ARGUMENT: Addresses deep learning through concept of incommensurability from philosophy of science, arguing explanations face fundamental representational challenges. DL operates through abstractive operations not constrained by human modes of representation, creating genuine epistemic gaps. XAI attempts to "re-present" algorithmic procedures to human understanding but may fail to capture algorithmic operations that exceed phenomenological comparison.
+
+  RELEVANCE: Raises deep question about whether mechanistic interpretability can truly bridge gap between neural network computations and human understanding. If DL involves genuinely incommensurable operations, mechanistic interpretability may provide useful approximations but not complete understanding. Challenges optimistic claims about transparency through reverse-engineering.
+
+  POSITION: Incommensurability thesis for algorithmic thought (fundamental opacity).
+  },
+  keywords = {deep-learning, incommensurability, representation, Medium}
+}
+
+@article{duede2022deep,
+  author = {Duede, Eamon},
+  title = {Deep Learning Opacity in Scientific Discovery},
+  journal = {Philosophy of Science},
+  year = {2022},
+  volume = {90},
+  number = {5},
+  pages = {1089--1099},
+  doi = {10.1017/psa.2023.8},
+  note = {
+  CORE ARGUMENT: Argues disconnect between philosophical pessimism and scientific optimism about AI opacity stems from failure to examine AI-infused science as practice. Through case studies, demonstrates epistemic opacity need not prevent justified scientific breakthroughs when AI is properly integrated into wider discovery process. Opacity matters differently depending on role AI plays in overall methodology.
+
+  RELEVANCE: Suggests mechanistic interpretability may be less critical than philosophers assume if proper scientific methodology surrounds opaque models. However, this assumes robust experimental validation and theoretical integration - conditions that may not hold in safety-critical AI deployment. Highlights difference between discovery context and justification context.
+
+  POSITION: Practice-based defense of opaque AI in science (conditional tolerance of opacity).
+  },
+  keywords = {scientific-discovery, opacity, practice-turn, High}
+}
+
+@article{huang2022ameliorating,
+  author = {Huang, Linus Ta-Lun and Chen, Hsiang-Yun and Lin, Ying-Tung and Huang, Tsung-Ren and Hung, Tzu-Wei},
+  title = {Ameliorating Algorithmic Bias, or Why Explainable {AI} Needs Feminist Philosophy},
+  journal = {Feminist Philosophy Quarterly},
+  year = {2022},
+  volume = {8},
+  number = {3-4},
+  doi = {10.5206/fpq/2022.3/4.14347},
+  note = {
+  CORE ARGUMENT: Argues against "technical XAI" that treats bias detection as purely technical problem solvable by specialists. Drawing on feminist epistemology, demonstrates proper detection of algorithmic bias requires interpretive resources only available through diverse stakeholder involvement. Proposes "integrated XAI" as inclusive social-epistemic process. Technical explainability alone cannot identify all problematic biases without situated knowledge.
+
+  RELEVANCE: Challenges mechanistic interpretability's assumption that technical transparency alone suffices for identifying problems. Suggests mechanistic understanding of circuits/features may miss biases visible only to those with relevant social-epistemic standpoints. Important for safety applications where bias detection is critical - purely technical interpretability may be necessary but insufficient.
+
+  POSITION: Feminist epistemology for XAI (social-epistemic integration required).
+  },
+  keywords = {feminist-epistemology, algorithmic-bias, social-epistemology, High}
+}
+
+@article{smart2024beyond,
+  author = {Smart, Andrew and Kasirzadeh, Atoosa},
+  title = {Beyond Model Interpretability: Socio-Structural Explanations in Machine Learning},
+  journal = {AI \& Society},
+  year = {2024},
+  volume = {40},
+  number = {4},
+  pages = {2045--2053},
+  doi = {10.1007/s00146-024-02056-1},
+  note = {
+  CORE ARGUMENT: Introduces "socio-structural explanations" as third explanation type beyond mechanistic and non-mechanistic model interpretations. ML models are embedded within and shaped by social structures; understanding outputs may require explaining how social structures contribute to model behavior. Mechanistic and approximation-based explanations alone cannot capture this structural dimension. Healthcare allocation algorithm case study demonstrates necessity of socio-structural analysis.
+
+  RELEVANCE: Extends scope of what mechanistic interpretability must explain beyond internal mechanisms to encompass social embedding. For safety-critical applications, understanding mechanistic internals may be insufficient without also explaining how social structures shape training data and deployment context. Mechanistic interpretability addresses only one layer of required explanation.
+
+  POSITION: Socio-structural explanation framework (expanded explanation scope).
+  },
+  keywords = {socio-structural-explanation, social-embedding, Medium}
+}
+
+@article{boge2025put,
+  author = {Boge, Florian J. and Mosig, Axel},
+  title = {Put It to the Test: Getting Serious About Explanation in Explainable Artificial Intelligence},
+  journal = {Minds and Machines},
+  year = {2025},
+  volume = {35},
+  number = {1},
+  doi = {10.1007/s11023-025-09724-1},
+  note = {
+  CORE ARGUMENT: Argues XAI must take explanation seriously by meeting testability standards from philosophy of science. Genuine explanations support interventions and counterfactuals, not just descriptions. Many XAI methods provide post-hoc rationalizations rather than testable explanations. Proposes concrete criteria for evaluating whether XAI output constitutes genuine explanation.
+
+  RELEVANCE: Provides testability framework crucial for evaluating mechanistic interpretability claims. If mechanistic interpretability identifies causal circuits, these should support specific interventional predictions. This offers concrete methodology for distinguishing genuine mechanistic explanations from mere redescriptions. Especially important for safety applications requiring reliable understanding.
+
+  POSITION: Testability criterion for XAI explanations (interventionist framework).
+  },
+  keywords = {testability, interventionism, explanation-standards, High}
+}
+
+@article{paez2024understanding,
+  author = {P\'{a}ez, Andr\'{e}s},
+  title = {Understanding with Toy Surrogate Models in Machine Learning},
+  journal = {Minds and Machines},
+  year = {2024},
+  volume = {34},
+  number = {4},
+  doi = {10.1007/s11023-024-09700-1},
+  note = {
+  CORE ARGUMENT: Analyzes toy surrogate models (simple models approximating complex ML models) as new object for theories of understanding. Unlike scientific toy models targeting world phenomena, surrogate models target other models. Provides account of global understanding of opaque ML through simplified surrogates that highlight relevant features. This model-to-model understanding differs from traditional scientific understanding.
+
+  RELEVANCE: Relevant to mechanistic interpretability's use of simplified circuits or features to understand complex networks. Paez's framework suggests understanding neural networks through simplified mechanistic descriptions may be legitimate form of understanding, though different from understanding world phenomena. Helps clarify what mechanistic interpretability can and cannot provide.
+
+  POSITION: Toy model account of ML understanding (model-centric understanding).
+  },
+  keywords = {toy-models, surrogate-models, understanding, Medium}
+}
+
+@article{meskhidze2021can,
+  author = {Meskhidze, Helen},
+  title = {Can Machine Learning Provide Understanding? {How} Cosmologists Use Machine Learning to Understand Observations of the Universe},
+  journal = {Erkenntnis},
+  year = {2021},
+  volume = {88},
+  number = {5},
+  pages = {1895--1909},
+  doi = {10.1007/s10670-021-00434-5},
+  note = {
+  CORE ARGUMENT: Through cosmology case study, argues ML algorithms can deliver genuine scientific understanding when properly integrated into scientific practice. ML should not be considered black-box when scientists understand methodological role and can validate outputs through independent means. Understanding types of questions ML is capable of answering is crucial to evaluating its epistemic contribution.
+
+  RELEVANCE: Provides empirical case of ML delivering scientific understanding, suggesting mechanistic interpretability is not always necessary for epistemic value. However, cosmology case involves extensive independent validation unavailable in safety-critical AI deployment. Highlights importance of broader scientific context beyond just model transparency.
+
+  POSITION: Practice-based defense of ML understanding (methodological integration).
+  },
+  keywords = {scientific-understanding, cosmology, practice-based, Low}
+}

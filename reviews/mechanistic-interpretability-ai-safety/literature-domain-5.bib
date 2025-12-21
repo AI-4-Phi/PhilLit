@@ -1,0 +1,280 @@
+@comment{
+====================================================================
+DOMAIN: Technical Methods in Mechanistic Interpretability
+SEARCH_DATE: 2025-12-21
+PAPERS_FOUND: 12 total (High: 10, Medium: 2, Low: 0)
+SEARCH_SOURCES: Semantic Scholar, OpenAlex
+====================================================================
+
+DOMAIN_OVERVIEW:
+This domain covers the concrete technical approaches that have been developed
+and deployed under the label "mechanistic interpretability" in machine learning
+research, particularly for transformer-based language models. The field has rapidly
+evolved from 2022-2025, moving from manual circuit discovery to increasingly
+automated methods. Key technical approaches include: (1) circuit discovery through
+activation patching and its variants (ACDC, attribution patching), which identify
+minimal subgraphs responsible for specific behaviors; (2) sparse autoencoders (SAEs)
+that decompose neuron activations into interpretable features to address superposition;
+(3) feature attribution and visualization methods that trace model decisions to specific
+components; and (4) attention head analysis that reveals functional roles of transformer
+components. The most influential papers demonstrate these methods on small to medium-
+scale models (GPT-2 Small to Chinchilla 70B), establishing benchmarks like the Indirect
+Object Identification (IOI) task. Recent work has begun addressing scalability challenges
+and developing comprehensive benchmarks to evaluate method effectiveness.
+
+RELEVANCE_TO_PROJECT:
+This domain is critical for understanding what "mechanistic interpretability" actually
+means in practice for ML researchers. The technical methods reviewed here embody specific
+theoretical commitments about what counts as an explanation, what level of analysis is
+appropriate (neuron vs. circuit vs. feature), and what standards of evidence are required.
+The gap between the ambitious conceptual claims made for MI ("reverse-engineering neural
+networks into human-understandable algorithms") and the actual technical capabilities
+revealed in this literature directly informs philosophical questions about the epistemic
+status of MI explanations and their reliability for AI safety applications.
+
+NOTABLE_GAPS:
+Most methods focus on language models; vision and multimodal models receive less attention.
+Very few papers address the limitations of current approaches systematically. The relationship
+between different methods (e.g., whether SAEs and circuit discovery identify the same
+structures) remains unclear. Limited work on how these methods scale to frontier models
+or perform on safety-critical tasks beyond toy examples.
+
+SYNTHESIS_GUIDANCE:
+Organize by method type (circuit discovery, sparse autoencoders, feature attribution,
+attention analysis) rather than chronologically. Emphasize methodological assumptions
+and limitations of each approach. Connect technical capabilities to philosophical questions
+about mechanistic understanding and explanation. Note tensions between different methods'
+definitions of "interpretable features" and "faithful explanations."
+
+KEY_POSITIONS:
+- Circuit Discovery (5 papers): Automated methods to identify minimal subnetworks
+- Sparse Autoencoders (4 papers): Disentangling superposed features for interpretability
+- Activation Patching & Attribution (4 papers): Causal intervention and feature importance
+- Comprehensive Reviews (2 papers): State-of-the-art surveys and AI safety connections
+====================================================================
+}
+
+@article{bereska2024mechanistic,
+  author = {Bereska, Leonard and Gavves, Efstratios},
+  title = {Mechanistic Interpretability for {AI} Safety -- A Review},
+  journal = {Transactions on Machine Learning Research},
+  year = {2024},
+  volume = {abs/2404.14082},
+  doi = {10.48550/arXiv.2404.14082},
+  arxivId = {2404.14082},
+  url = {https://www.semanticscholar.org/paper/8b750488d139f9beba0815ff8f46ebe15ebb3e58},
+  note = {
+  CORE ARGUMENT: Provides comprehensive review of mechanistic interpretability (MI) as reverse-engineering neural networks into human-understandable algorithms and concepts to enable granular, causal understanding. Survey covers foundational concepts (features as knowledge encodings, hypotheses about representation and computation), methodologies for causal dissection, and explicit connections to AI safety benefits (understanding, control, alignment) and risks (capability gains, dual-use concerns). Argues MI could prevent catastrophic outcomes as AI systems become more powerful and inscrutable, but faces scalability and automation challenges.
+
+  RELEVANCE: Essential overview paper that explicitly bridges MI technical methods and AI safety applications, directly addressing our project's core question about whether MI provides reliable understanding for safety. Defines the field's scope, establishes key concepts (features, circuits, mechanistic understanding), and acknowledges both promises and limitations. Its treatment of safety relevance and challenges provides crucial context for evaluating philosophical claims about MI's epistemic value.
+
+  POSITION: Comprehensive review advocating for MI as safety-relevant but acknowledging major challenges in scalability and comprehensiveness.
+  },
+  keywords = {mechanistic-interpretability, ai-safety, review, High}
+}
+
+@article{rai2024practical,
+  author = {Rai, Daking and Zhou, Yilun and Feng, Shi and Saparov, Abulhair and Yao, Ziyu},
+  title = {A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2407.02646},
+  doi = {10.48550/arXiv.2407.02646},
+  arxivId = {2407.02646},
+  url = {https://www.semanticscholar.org/paper/2ac231b9cff4f5f9054d86c9b540429d4dd687f4},
+  note = {
+  CORE ARGUMENT: Presents task-centric taxonomy of MI research for transformer language models, organizing work around specific research questions rather than methods. Outlines fundamental objects of study (neurons, attention heads, circuits, features), techniques (activation patching, probing, ablation), evaluation methods, and key findings for each task category. Provides practical roadmap for beginners to identify impactful problems and leverage MI methods. Emphasizes that mechanistic interpretability is emerging field with many open questions about best practices and evaluation.
+
+  RELEVANCE: Complements Bereska review by focusing specifically on transformer architectures and providing task-oriented organization that makes methodological diversity more tractable. The taxonomic approach helps clarify what different MI methods actually accomplish and reveals gaps in current understanding. Particularly valuable for understanding the empirical basis (or lack thereof) for claims about "mechanistic understanding" in specific task domains.
+
+  POSITION: Practical survey establishing task-centric framework for MI in transformers, acknowledging methodological diversity and open questions.
+  },
+  keywords = {mechanistic-interpretability, transformers, survey, High}
+}
+
+@inproceedings{conmy2023automated,
+  author = {Conmy, Arthur and Mavor-Parker, Augustine N. and Lynch, Aengus and Heimersheim, Stefan and Garriga-Alonso, Adrià},
+  title = {Towards Automated Circuit Discovery for Mechanistic Interpretability},
+  booktitle = {Neural Information Processing Systems},
+  year = {2023},
+  volume = {abs/2304.14997},
+  doi = {10.48550/arXiv.2304.14997},
+  arxivId = {2304.14997},
+  url = {https://www.semanticscholar.org/paper/eefbd8b384a58f464827b19e30a6920ba976def9},
+  note = {
+  CORE ARGUMENT: Systematizes the mechanistic interpretability process followed by prior manual circuit discovery work and proposes ACDC algorithm to automate identifying circuits in computational graphs. Process involves choosing metric/dataset to elicit behavior, applying activation patching to find involved units, and varying dataset/metric/units to understand functionality. ACDC algorithm successfully rediscovered 5/5 component types in manually-found Greater-Than circuit in GPT-2 Small, selecting only 68 of 32,000 edges. Demonstrates that automation is possible but requires significant computational resources and careful design choices.
+
+  RELEVANCE: Landmark paper demonstrating feasibility of automated circuit discovery, which is essential for scaling MI to larger models. The systematization of prior manual work reveals implicit methodological assumptions about what constitutes a "circuit" and how to validate circuit discoveries. The success on Greater-Than task but need for careful validation highlights both promise and challenges of automated approaches. Critical for understanding practical limitations of circuit-based explanations.
+
+  POSITION: Automated circuit discovery via activation patching, demonstrating feasibility while revealing computational and methodological challenges.
+  },
+  keywords = {circuit-discovery, automation, activation-patching, High}
+}
+
+@inproceedings{syed2023attribution,
+  author = {Syed, Aaquib and Rager, Can and Conmy, Arthur},
+  title = {Attribution Patching Outperforms Automated Circuit Discovery},
+  booktitle = {BlackboxNLP Workshop on Analyzing and Interpreting Neural Networks for NLP},
+  year = {2023},
+  volume = {abs/2310.10348},
+  doi = {10.48550/arXiv.2310.10348},
+  arxivId = {2310.10348},
+  url = {https://www.semanticscholar.org/paper/27f7aa77bf343fefd3984c6b23265af672bcc0a3},
+  note = {
+  CORE ARGUMENT: Proposes attribution patching, a simple method using linear approximation to activation patching that estimates edge importance in computational subgraph with just two forward passes and one backward pass (versus expensive iterative methods). Shows this method outperforms existing automated circuit discovery approaches on multiple tasks while requiring dramatically less computation. Demonstrates trade-off between computational efficiency and exact causal isolation—linear approximation is much faster but makes stronger assumptions about circuit structure.
+
+  RELEVANCE: Reveals methodological tension in circuit discovery between computational tractability and causal faithfulness. The success of linear approximation suggests that for some purposes, approximate methods suffice, but raises questions about when exactness matters. Important for understanding what different circuit discovery methods actually measure and whether simpler proxies can replace expensive causal intervention. Highlights that "circuit discovery" is not a single well-defined task but involves choices about approximation and validation.
+
+  POSITION: Efficient approximate circuit discovery via linear attribution, trading exactness for computational efficiency.
+  },
+  keywords = {circuit-discovery, attribution-patching, efficiency, High}
+}
+
+@article{cunningham2023sparse,
+  author = {Cunningham, Hoagy and Ewart, Aidan and Smith, Logan Riggs and Huben, Robert and Sharkey, Lee},
+  title = {Sparse Autoencoders Find Highly Interpretable Features in Language Models},
+  journal = {ArXiv},
+  year = {2023},
+  volume = {abs/2309.08600},
+  doi = {10.48550/arXiv.2309.08600},
+  arxivId = {2309.08600},
+  url = {https://www.semanticscholar.org/paper/edb548fe7574d99454b352ffdb61bca93c3072ba},
+  note = {
+  CORE ARGUMENT: Addresses polysemanticity (neurons activating in multiple semantically distinct contexts) by using sparse autoencoders (SAEs) to decompose activations into overcomplete set of sparse, monosemantic features. Shows SAE features are more interpretable than individual neurons or other decomposition methods when measured by automated interpretability metrics. Demonstrates that SAE features enable finer-grained causal attribution on Indirect Object Identification task than prior methods. Proposes SAEs as scalable, unsupervised method to resolve superposition and identify the true computational primitives of neural networks.
+
+  RELEVANCE: Foundational work establishing sparse autoencoders as major MI technique, directly addressing superposition problem that limits neuron-level interpretability. The automated interpretability metrics and causal validation provide concrete standards for evaluating whether features are "meaningful." However, the reliance on automated metrics and specific tasks raises questions about whether SAE features genuinely capture model computations or merely correlate with them. Critical for understanding debates about feature realism versus instrumentalism.
+
+  POSITION: Sparse autoencoders as unsupervised method to disentangle superposed features, establishing interpretability and causality standards.
+  },
+  keywords = {sparse-autoencoders, superposition, features, High}
+}
+
+@article{rajamanoharan2024jumping,
+  author = {Rajamanoharan, Senthooran and Lieberum, Tom and Sonnerat, Nicolas and Conmy, Arthur and Varma, Vikrant and Kramár, János and Nanda, Neel},
+  title = {Jumping Ahead: Improving Reconstruction Fidelity with {JumpReLU} Sparse Autoencoders},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2407.14435},
+  doi = {10.48550/arXiv.2407.14435},
+  arxivId = {2407.14435},
+  url = {https://www.semanticscholar.org/paper/1a80429448d7379ca1157a33a36bd5130257e3e9},
+  note = {
+  CORE ARGUMENT: Introduces JumpReLU SAEs that achieve state-of-the-art reconstruction fidelity at given sparsity level on Gemma 2 9B by replacing ReLU with discontinuous JumpReLU activation and using straight-through-estimators for training. Directly optimizes L0 sparsity instead of L1 proxy, avoiding shrinkage problems. Shows improvement doesn't sacrifice interpretability through manual and automated studies. Addresses fundamental tension in SAE design between reconstruction fidelity (faithfulness to model) and sparsity (human interpretability).
+
+  RELEVANCE: Demonstrates ongoing technical refinement of SAE methods and reveals key design choices that affect both reconstruction quality and interpretability. The fidelity-sparsity tradeoff is philosophically significant—it reflects deeper questions about whether interpretability requires exact reconstruction or whether approximate but sparse representations suffice. The success of JumpReLU suggests activation function choice significantly impacts what features are learned, raising questions about whether different SAE variants discover "the same" features.
+
+  POSITION: Improved SAE architecture achieving better fidelity-sparsity tradeoff through JumpReLU activation and direct L0 optimization.
+  },
+  keywords = {sparse-autoencoders, architecture, fidelity, High}
+}
+
+@article{lieberum2024gemma,
+  author = {Lieberum, Tom and Rajamanoharan, Senthooran and Conmy, Arthur and Smith, Lewis and Sonnerat, Nicolas and Varma, Vikrant and Kramár, János and Dragan, Anca and Shah, Rohin and Nanda, Neel},
+  title = {Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on {Gemma 2}},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2408.05147},
+  doi = {10.48550/arXiv.2408.05147},
+  arxivId = {2408.05147},
+  url = {https://www.semanticscholar.org/paper/890efc891e9b59e8cb5e8c244428f6b81ec0a4da},
+  note = {
+  CORE ARGUMENT: Releases comprehensive suite of JumpReLU SAEs trained on all layers and sublayers of Gemma 2 2B, 9B and select layers of 27B models, making SAEs more accessible for interpretability research. Provides standardized quality metrics and interactive exploration tools. Demonstrates that training SAEs at scale across full model is feasible and can support mechanistic interpretability research without requiring researchers to train their own SAEs. Aims to lower barriers to entry and standardize SAE evaluation.
+
+  RELEVANCE: Important infrastructure contribution that enables broader MI research community to use SAEs without massive computational resources. The standardization of metrics and public release of trained SAEs addresses reproducibility concerns and allows comparison across studies. However, concentration on Gemma 2 architecture and specific training choices may introduce path dependencies—researchers may converge on these particular SAEs even if alternative training would reveal different features. Illustrates how resource constraints shape research directions in MI.
+
+  POSITION: Open-source SAE suite providing standardized infrastructure for mechanistic interpretability research.
+  },
+  keywords = {sparse-autoencoders, infrastructure, open-science, High}
+}
+
+@article{zhang2023towards,
+  author = {Zhang, Fred and Nanda, Neel},
+  title = {Towards Best Practices of Activation Patching in Language Models: Metrics and Methods},
+  journal = {ArXiv},
+  year = {2023},
+  volume = {abs/2309.16042},
+  doi = {10.48550/arXiv.2309.16042},
+  arxivId = {2309.16042},
+  url = {https://www.semanticscholar.org/paper/c16c05ca0a3d24519405849fd24604fc1ce47751},
+  note = {
+  CORE ARGUMENT: Systematically examines impact of methodological details in activation patching (causal tracing/interchange intervention) on interpretability results, including evaluation metrics and corruption methods. Shows that varying hyperparameters can lead to disparate conclusions about which components are important for circuit discovery and localization. Provides conceptual arguments and empirical evidence for preferring certain metrics and methods. Demonstrates that activation patching is not single well-defined technique but family of related methods requiring careful choices.
+
+  RELEVANCE: Critical methodological paper revealing that interpretability results are highly sensitive to seemingly minor technical choices, threatening reproducibility and comparability across studies. The lack of consensus on "best practices" suggests the field lacks principled foundations for determining what counts as valid evidence for component importance. This methodological fragility is philosophically significant—it suggests that circuit discoveries may be artifacts of measurement choices rather than objective features of models. Essential for evaluating reliability of circuit-based claims.
+
+  POSITION: Methodological analysis revealing sensitivity of activation patching to hyperparameter choices and proposing best practices.
+  },
+  keywords = {activation-patching, methodology, best-practices, High}
+}
+
+@article{heimersheim2024how,
+  author = {Heimersheim, Stefan and Nanda, Neel},
+  title = {How to use and interpret activation patching},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2404.15255},
+  doi = {10.48550/arXiv.2404.15255},
+  arxivId = {2404.15255},
+  url = {https://www.semanticscholar.org/paper/a0b775b9ff82ce1fb7dd34d53a7d09f70b171895},
+  note = {
+  CORE ARGUMENT: Provides comprehensive practical guide for applying activation patching and interpreting results based on extensive experience. Covers different application methods (path patching, resample ablation, etc.), how to choose metrics, and common pitfalls in interpretation. Emphasizes that activation patching provides evidence about circuits but requires careful reasoning to avoid overinterpreting results. Discusses what causal interventions can and cannot tell us about model mechanisms, and how to validate circuit hypotheses.
+
+  RELEVANCE: Valuable practitioner's guide that makes explicit the interpretive judgments required to move from activation patching data to mechanistic claims. The emphasis on pitfalls and limitations provides reality check on optimistic claims about circuit discovery. The discussion of what evidence activation patching provides (and what it doesn't) is philosophically important for understanding epistemic status of circuit-based explanations. Reveals gap between what methods measure (causal importance) and what researchers want to know (mechanistic function).
+
+  POSITION: Practical methodology guide for activation patching emphasizing careful interpretation and limitations.
+  },
+  keywords = {activation-patching, methodology, interpretation, High}
+}
+
+@inproceedings{geiger2023causal,
+  author = {Geiger, Atticus and Ibeling, Duligur and Zur, Amir and Chaudhary, Maheep and Chauhan, Sonakshi and Huang, Jing and Arora, Aryaman and Wu, Zhengxuan and Goodman, Noah D. and Potts, Christopher and Icard, Thomas F.},
+  title = {Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability},
+  year = {2023},
+  arxivId = {2301.04709},
+  url = {https://www.semanticscholar.org/paper/6247d7bb9093b4f6c222c6c224b3df4335d4b8bd},
+  note = {
+  CORE ARGUMENT: Develops causal abstraction as theoretical framework unifying mechanistic interpretability methods, generalizing from mechanism replacement to arbitrary mechanism transformation. Provides formal definitions for polysemantic neurons, linear representation hypothesis, modular features, and graded faithfulness. Shows how activation patching, path patching, causal mediation analysis, causal scrubbing, circuit analysis, concept erasure, SAEs, and other MI methods can be understood as instances of causal abstraction. Offers principled foundation for evaluating when interpretability methods provide faithful explanations.
+
+  RELEVANCE: Essential theoretical work providing formal foundations for evaluating MI methods' validity. The causal abstraction framework enables precise questions about when low-level model details correctly implement high-level interpretable algorithms. The unification of diverse methods reveals their shared commitments and differences. However, the framework's reliance on causal models raises questions about whether neural network computations genuinely have causal structure or whether causal framing is merely convenient fiction. Critical for philosophical analysis of MI's theoretical foundations.
+
+  POSITION: Causal abstraction as unifying theoretical framework for mechanistic interpretability methods.
+  },
+  keywords = {causal-abstraction, theory, foundations, High}
+}
+
+@article{lieberum2023does,
+  author = {Lieberum, Tom and Rahtz, Matthew and Kramár, János and Irving, Geoffrey and Shah, Rohin and Mikulik, Vladimir},
+  title = {Does Circuit Analysis Interpretability Scale? {E}vidence from Multiple Choice Capabilities in {Chinchilla}},
+  journal = {ArXiv},
+  year = {2023},
+  volume = {abs/2307.09458},
+  doi = {10.48550/arXiv.2307.09458},
+  arxivId = {2307.09458},
+  url = {https://www.semanticscholar.org/paper/77f02ff24909896856fec410968aef7999c29440},
+  note = {
+  CORE ARGUMENT: Tests whether circuit analysis techniques (logit attribution, attention visualization, activation patching) scale to 70B parameter Chinchilla model by studying multiple-choice question answering. Finds techniques do scale and successfully identify small set of output nodes (attention heads and MLPs) responsible for behavior. However, attempts to understand semantics of identified heads reveal only partial success—features work well on normal distributions but explanations break down on randomized inputs. Demonstrates scalability of methods but reveals limits of current interpretability.
+
+  RELEVANCE: Crucial empirical test of whether MI methods developed on toy models (GPT-2 Small) work on near-frontier models. The mixed results—successful component identification but limited semantic understanding—suggest important gap between localizing important components and genuinely understanding their function. The failure on out-of-distribution inputs indicates that mechanistic explanations may be more fragile than hoped. Essential evidence for evaluating optimistic claims about MI enabling robust understanding of large models.
+
+  POSITION: Empirical evaluation showing circuit analysis scales to large models but semantic understanding remains partial and distribution-dependent.
+  },
+  keywords = {circuit-discovery, scalability, chinchilla, Medium}
+}
+
+@article{miller2024transformer,
+  author = {Miller, Joseph and Chughtai, Bilal and Saunders, William},
+  title = {Transformer Circuit Faithfulness Metrics are not Robust},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2407.08734},
+  doi = {10.48550/arXiv.2407.08734},
+  arxivId = {2407.08734},
+  url = {https://www.semanticscholar.org/paper/09ee330d1d58621a28e33755955c1637f6594700},
+  note = {
+  CORE ARGUMENT: Shows that existing circuit faithfulness scores (metrics measuring how well identified circuit replicates full model performance) are highly sensitive to seemingly insignificant changes in ablation methodology. Demonstrates that same circuit can receive very different faithfulness scores depending on technical choices about how to ablate portions of model. Argues this sensitivity reflects both methodological choices and actual circuit components—the task a circuit is required to perform depends on ablation method used to test it. Calls for clarity about precise claims being made about circuits.
+
+  RELEVANCE: Devastating critique of current circuit evaluation practices, showing that faithfulness metrics do not provide objective measure of circuit quality but rather reflect experimenter choices. This threatens validity of comparative claims across studies and suggests that "circuit discovery" results may not be robust. Philosophically significant because it reveals that what counts as "the circuit" for a behavior is not model-intrinsic fact but depends on how we probe the model. Challenges realist interpretation of circuits as objective model components.
+
+  POSITION: Critical analysis revealing fragility of circuit faithfulness metrics and calling for methodological clarity.
+  },
+  keywords = {circuit-discovery, faithfulness, critique, Medium}
+}
