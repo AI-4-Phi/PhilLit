@@ -6,9 +6,9 @@ Assume that user is intending to perform an academic literature review, unless u
 
 - `reviews/` — All existing and new literature reviews. Each review has its own subdirectory with an informative short name.
 - `.claude/agents/` — Agent definitions for the literature review pipeline.
-  - `ARCHITECTURE.md` — Design patterns and multi-file-then-assemble workflow documentation.
-  - further .md files with agents
-- `README.md` — Comprehensive project documentation.
+  - `ARCHITECTURE.md` — Design patterns and multi-file-then-assemble workflow.
+  - `conventions.md` — Shared specifications (BibTeX format, citation style).
+- `.claude/skills/philosophy-research/` — Structured API search scripts (Semantic Scholar, OpenAlex, arXiv, SEP, PhilPapers, CrossRef).
 
 # Typical Usage: Literature Review
 
@@ -21,14 +21,17 @@ When asked to perform a new literature review:
 
 # Agents
 
+**Core workflow (4 phases):**
 - `@research-proposal-orchestrator` — Coordinates all phases, tracks progress, assembles outputs. **Default entry point.**
 - `@literature-review-planner` — Decomposes research idea into domains and search strategies.
-- `@domain-literature-researcher` — Searches web sources per domain; outputs valid BibTeX files.
-- `@citation-validator` — Verifies citations via web search; moves unverified to separate file.
-- `@synthesis-planner` — Reads validated BibTeX; designs tight outline emphasizing debates and gaps.
+- `@domain-literature-researcher` — Uses `philosophy-research` skill for structured API searches; outputs valid BibTeX files.
+- `@synthesis-planner` — Reads BibTeX files; designs tight outline emphasizing debates and gaps.
 - `@synthesis-writer` — Writes sections one-by-one using relevant BibTeX subsets.
-- `@sota-review-editor` — Reviews draft for structure, clarity, and citation practice. (Optional)
-- `@novelty-assessor` — Produces executive assessment of novelty and positioning. (Optional)
+
+**Optional:**
+- `@citation-validator` — Validates external BibTeX files (not needed for in-workflow use; APIs verify at search time).
+- `@sota-review-editor` — Reviews draft for structure, clarity, and citation practice.
+- `@novelty-assessor` — Produces executive assessment of novelty and positioning.
 
 # Development
 
