@@ -1,0 +1,281 @@
+@comment{
+====================================================================
+DOMAIN: Critiques and Limitations of Interpretability
+SEARCH_DATE: 2025-12-21
+PAPERS_FOUND: 12 total (High: 8, Medium: 3, Low: 1)
+SEARCH_SOURCES: Semantic Scholar, OpenAlex, arXiv
+====================================================================
+
+DOMAIN_OVERVIEW:
+This domain examines critical perspectives on interpretability approaches
+in AI, particularly focusing on mechanistic interpretability of neural
+networks. The literature reveals several fundamental challenges: (1) the
+faithfulness problem - explanations may be convincing but not actually
+reflect how models work; (2) the robustness problem - saliency maps and
+attribution methods often lack consistency under perturbation; (3) the
+false confidence problem - interpretability tools can create illusions of
+understanding while missing actual failure modes; and (4) the scalability
+problem - techniques that work for small models may not scale to modern
+large language models. Recent work has particularly scrutinized the
+reliability of gradient-based saliency maps, showing they can be manipulated
+through adversarial attacks and often fail sanity checks. The mechanistic
+interpretability movement, while promising reverse-engineering of neural
+circuits, faces challenges in automation, comprehensive coverage, and
+potential dual-use risks (attackers using interpretability to craft better
+adversarial examples).
+
+RELEVANCE_TO_PROJECT:
+This domain is essential for the review as it provides a critical counterweight
+to optimistic claims about interpretability as a path to AI safety. Understanding
+the limitations helps identify when interpretability provides genuine safety
+benefits versus creating false confidence. This is particularly relevant for
+assessing whether mechanistic interpretability can serve as a reliable alignment
+technique or if alternative safety approaches are needed.
+
+NOTABLE_GAPS:
+Limited empirical work comparing different interpretability paradigms on
+standardized safety-relevant tasks. Few papers explicitly examine the
+trade-offs between interpretability and other safety desiderata like
+robustness or capability. The philosophical foundations of what constitutes
+a "good explanation" in the context of AI safety remain underdeveloped.
+
+SYNTHESIS_GUIDANCE:
+When synthesizing, emphasize the tension between the promise and limitations
+of interpretability. Consider organizing around failure modes (faithfulness,
+robustness, scalability) and their implications for safety applications.
+Connect to Domain 4 (mechanistic interpretability) to show how the field
+is aware of and attempting to address these limitations.
+
+KEY_POSITIONS:
+- Faithfulness Skeptics: 6 papers - Question whether explanations reflect actual model behavior
+- Robustness Critics: 4 papers - Demonstrate fragility of attribution methods
+- Paradigm Reformers: 3 papers - Propose new frameworks to address limitations
+- Safety Pragmatists: 2 papers - Focus on practical utility despite theoretical concerns
+====================================================================
+}
+
+@article{madsen2024interpretability,
+  author = {Madsen, Andreas and Lakkaraju, Himabindu and Reddy, Siva and Chandar, Sarath},
+  title = {Interpretability Needs a New Paradigm},
+  journal = {arXiv},
+  year = {2024},
+  volume = {abs/2405.05386},
+  doi = {10.48550/arXiv.2405.05386},
+  arxivId = {2405.05386},
+  url = {https://www.semanticscholar.org/paper/5a93e89d01dc3ba61a3bd2a3ac64aa895859f471},
+  note = {
+  CORE ARGUMENT: Argues that current interpretability is divided into incompatible paradigms (intrinsic vs post-hoc) that both struggle with faithfulness - ensuring explanations truly reflect model behavior rather than being merely convincing. Proposes three emerging paradigms: designing models for measurable faithfulness, optimizing models to make explanations faithful, and developing models that jointly produce predictions and explanations. The core critique is that false but convincing explanations create dangerous unsupported confidence in AI systems.
+
+  RELEVANCE: Directly addresses a foundational limitation of interpretability for AI safety: the faithfulness problem. This is crucial for our review as it questions whether current interpretability methods can reliably support safety assessments or if they might create false confidence. The proposal for new paradigms suggests interpretability research is aware of limitations and actively seeking solutions, which is important context for evaluating the field's maturity for safety applications.
+
+  POSITION: Paradigm-critical position arguing for fundamental rethinking of interpretability approaches beyond intrinsic vs post-hoc debate.
+  },
+  keywords = {interpretability-critique, faithfulness-problem, paradigm-analysis, High}
+}
+
+@article{bereska2024mechanistic,
+  author = {Bereska, Leonard and Gavves, Efstratios},
+  title = {Mechanistic Interpretability for AI Safety - A Review},
+  journal = {Transactions on Machine Learning Research},
+  year = {2024},
+  doi = {10.48550/arXiv.2404.14082},
+  arxivId = {2404.14082},
+  url = {https://www.semanticscholar.org/paper/8b750488d139f9beba0815ff8f46ebe15ebb3e58},
+  note = {
+  CORE ARGUMENT: Comprehensive review of mechanistic interpretability that explicitly examines both benefits and risks for AI safety. While mechanistic interpretability aims to reverse-engineer neural networks into human-understandable algorithms, the paper identifies critical challenges: scalability limitations, automation difficulties, comprehensive interpretation barriers, and dual-use concerns where interpretability tools could enable more sophisticated attacks. Also notes potential capability gains from interpretability work that could accelerate dangerous AI development.
+
+  RELEVANCE: Essential for our review as it provides the most comprehensive assessment of mechanistic interpretability's safety implications, including often-overlooked risks. The explicit discussion of dual-use concerns and capability gains challenges naive assumptions that interpretability is uniformly beneficial for safety. The scalability and automation challenges identified are particularly relevant for assessing whether mechanistic interpretability can scale to frontier AI systems.
+
+  POSITION: Safety-oriented but critically balanced review acknowledging both benefits and risks of mechanistic interpretability for AI safety.
+  },
+  keywords = {mechanistic-interpretability, safety-assessment, dual-use-risk, scalability-challenges, High}
+}
+
+@article{rai2024practical,
+  author = {Rai, Daking and Zhou, Yilun and Feng, Shi and Saparov, Abulhair and Yao, Ziyu},
+  title = {A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models},
+  journal = {arXiv},
+  year = {2024},
+  volume = {abs/2407.02646},
+  doi = {10.48550/arXiv.2407.02646},
+  arxivId = {2407.02646},
+  url = {https://www.semanticscholar.org/paper/2ac231b9cff4f5f9054d86c9b540429d4dd687f4},
+  note = {
+  CORE ARGUMENT: Provides task-centric survey of mechanistic interpretability for transformer language models, organizing the field around specific research questions. While documenting many insights, implicitly reveals gaps: most work focuses on small models and simple tasks, evaluation methods remain inconsistent, and there's limited understanding of how findings generalize across models and scales. The comprehensive nature of the review inadvertently highlights how much remains unknown about even well-studied architectures.
+
+  RELEVANCE: Useful for understanding the current state and limitations of mechanistic interpretability research. The task-centric organization helps identify which safety-relevant questions (e.g., deception detection, goal representations) have been addressed versus neglected. The gaps revealed - particularly around scaling and generalization - are important for assessing readiness for safety applications on frontier models.
+
+  POSITION: Comprehensive but implicitly critical through revelation of field's limitations and gaps in coverage.
+  },
+  keywords = {mechanistic-interpretability, transformer-models, survey, evaluation-gaps, Medium}
+}
+
+@inproceedings{conmy2023automated,
+  author = {Conmy, Arthur and Mavor-Parker, Augustine N. and Lynch, Aengus and Heimersheim, Stefan and Garriga-Alonso, Adrià},
+  title = {Towards Automated Circuit Discovery for Mechanistic Interpretability},
+  booktitle = {Neural Information Processing Systems},
+  year = {2023},
+  doi = {10.48550/arXiv.2304.14997},
+  arxivId = {2304.14997},
+  url = {https://www.semanticscholar.org/paper/eefbd8b384a58f464827b19e30a6920ba976def9},
+  note = {
+  CORE ARGUMENT: Proposes automated algorithms (particularly ACDC) to identify circuits implementing specific behaviors in neural networks, addressing the labor-intensive nature of manual circuit discovery. While demonstrating successful replication of manually found circuits (e.g., 68 of 32,000 edges in GPT-2 Small for greater-than operation), the work implicitly reveals limitations: circuit discovery requires pre-specified behaviors and datasets that elicit them, circuits identified may not generalize to out-of-distribution inputs, and automation still requires substantial human guidance in framing the search problem.
+
+  RELEVANCE: Important for understanding both the promise and practical limitations of mechanistic interpretability at scale. The need for pre-specified target behaviors limits applicability to novel or emergent capabilities where we don't know what to look for - a key safety concern. The small fraction of edges identified (68/32,000) shows how sparse interpretable circuits might be, raising questions about completeness. Success on simple arithmetic but unclear generalization matters for safety-critical applications.
+
+  POSITION: Technical advancement in mechanistic interpretability that inadvertently reveals methodological constraints and scalability questions.
+  },
+  keywords = {circuit-discovery, automation, mechanistic-interpretability, generalization-limits, High}
+}
+
+@article{mueller2024explainable,
+  author = {Müller, Romy},
+  title = {How Explainable AI Affects Human Performance: A Systematic Review of the Behavioural Consequences of Saliency Maps},
+  journal = {International Journal of Human-Computer Interaction},
+  year = {2024},
+  volume = {41},
+  pages = {2020--2051},
+  doi = {10.1080/10447318.2024.2381929},
+  arxivId = {2404.16042},
+  url = {https://www.semanticscholar.org/paper/ec91e178fd514f1b165dc57b094a9f9f33763a85},
+  note = {
+  CORE ARGUMENT: Systematic review of 68 user studies examining whether saliency maps actually help humans, finding that benefits are inconsistent - null effects or even performance costs are common. Critical finding: AI accuracy strongly modulated outcomes while XAI method quality had surprisingly little impact, suggesting humans may be responding to AI correctness more than explanation quality. In image-focused tasks (where humans make decisions), benefits were less common than in AI-focused tasks (where humans evaluate the AI), raising questions about real-world utility.
+
+  RELEVANCE: Crucial empirical evidence challenging assumptions about interpretability's practical value for human oversight and alignment. If saliency maps don't reliably improve human performance even in controlled settings, their utility for safety-critical decisions is questionable. The finding that AI accuracy matters more than explanation quality suggests humans may not effectively use explanations to catch errors - a key failure mode for interpretability-based safety approaches. The task-dependence of benefits complicates recommendations for when to deploy interpretability tools.
+
+  POSITION: Empirically grounded skepticism about practical utility of saliency-based explanations for human decision-making and AI oversight.
+  },
+  keywords = {saliency-maps, human-performance, empirical-evaluation, practical-limitations, High}
+}
+
+@article{balestra2023consistency,
+  author = {Balestra, Chiara and Li, Bin and Müller, Emmanuel},
+  title = {On the Consistency and Robustness of Saliency Explanations for Time Series Classification},
+  journal = {arXiv},
+  year = {2023},
+  volume = {abs/2309.01457},
+  doi = {10.48550/arXiv.2309.01457},
+  arxivId = {2309.01457},
+  url = {https://www.semanticscholar.org/paper/0d0dcb1a5ea52520387a55330680648d7b69d715},
+  note = {
+  CORE ARGUMENT: Analyzes consistency and robustness of saliency map explanations (both perturbation-based and gradient-based) for time series classification, finding they "all lack consistent and robust performances to some extent" across five real-world datasets. The complex temporal patterns in time series expose fragility that might be less visible in static images - saliency methods not naturally designed for sequential data exhibit various failures when adapted. This challenges the generalizability of saliency-based interpretability beyond well-studied image domains.
+
+  RELEVANCE: Important for understanding domain-specific limitations of interpretability methods. Time series data is common in safety-critical applications (system monitoring, financial markets, medical signals), so failures here have practical implications. The finding that methods successful in vision don't transfer reliably to other data types suggests interpretability techniques may be more brittle and domain-specific than commonly assumed, complicating their deployment for safety across diverse AI applications.
+
+  POSITION: Domain-specific critique showing fragility of saliency methods outside their primary development context (computer vision).
+  },
+  keywords = {saliency-maps, robustness-analysis, time-series, domain-limitations, Medium}
+}
+
+@article{pinhasov2024xai,
+  author = {Pinhasov, Ben and Lapid, Raz and Ohayon, Rony and Sipper, Moshe and Aperstein, Yehudit},
+  title = {XAI-Based Detection of Adversarial Attacks on Deepfake Detectors},
+  journal = {Transactions on Machine Learning Research},
+  year = {2024},
+  volume = {2024},
+  doi = {10.48550/arXiv.2403.02955},
+  arxivId = {2403.02955},
+  url = {https://www.semanticscholar.org/paper/c92ea4a9f9efa6f74fd4f035c220d7f0936c6a54},
+  note = {
+  CORE ARGUMENT: Demonstrates a dual-use dynamic where XAI (explainable AI) tools can be exploited by adversaries while also being used defensively. Proposes using XAI-generated saliency maps with pretrained feature extractors to detect adversarial attacks on deepfake detectors. The methodology reveals that interpretability tools themselves become part of the attack surface - adversaries can craft attacks that manipulate saliency maps to appear benign, requiring a meta-level of interpretation to detect such manipulations.
+
+  RELEVANCE: Illustrates a critical limitation of interpretability for safety: interpretability mechanisms can be gamed by sophisticated adversaries. This dual-use concern is particularly relevant for AI safety where potential adversaries (whether human bad actors or misaligned AI systems) might manipulate interpretability tools to hide malicious behavior. The arms race between adversarial attacks and interpretation-based defenses highlights that interpretability alone cannot guarantee safety without additional robustness guarantees.
+
+  POSITION: Dual-use analysis showing interpretability as both defensive tool and potential vulnerability in adversarial contexts.
+  },
+  keywords = {adversarial-attacks, XAI-manipulation, dual-use, deepfake-detection, High}
+}
+
+@article{winninger2025mechanistic,
+  author = {Winninger, Thomas and Addad, Bilel and Kapusta, Katarzyna},
+  title = {Using Mechanistic Interpretability to Craft Adversarial Attacks against Large Language Models},
+  journal = {arXiv},
+  year = {2025},
+  volume = {abs/2503.06269},
+  doi = {10.48550/arXiv.2503.06269},
+  arxivId = {2503.06269},
+  url = {https://www.semanticscholar.org/paper/64ed6233414430222c24779ce59a6b61174678b7},
+  note = {
+  CORE ARGUMENT: Demonstrates that mechanistic interpretability can be weaponized to create more efficient adversarial attacks on LLMs. By identifying "acceptance subspaces" (feature vectors that don't trigger refusal mechanisms) through mechanistic analysis, achieves 80-95% jailbreak success rates on state-of-the-art models in minutes rather than hours. The approach uses gradient-based optimization to reroute embeddings from refusal to acceptance subspaces. This directly shows how interpretability tools provide actionable attack surface information to adversaries.
+
+  RELEVANCE: Stark demonstration of dual-use risks in mechanistic interpretability research. If interpretability reveals the internal mechanisms that implement safety constraints (like refusal behaviors), that knowledge can be exploited to circumvent those constraints more efficiently. This creates a fundamental tension: the same mechanistic understanding needed for alignment verification also enables more sophisticated attacks. Critical for evaluating whether publishing mechanistic interpretability research accelerates offense more than defense in AI safety.
+
+  POSITION: Offensive security research demonstrating weaponization of mechanistic interpretability for adversarial attacks on safety mechanisms.
+  },
+  keywords = {mechanistic-interpretability, adversarial-attacks, jailbreaking, dual-use-risk, High}
+}
+
+@article{hedstroem2024fresh,
+  author = {Hedström, Anna and Weber, Leander and Lapuschkin, Sebastian and Höhne, Marina M.-C.},
+  title = {A Fresh Look at Sanity Checks for Saliency Maps},
+  journal = {Proceedings of xAI Workshop},
+  year = {2024},
+  pages = {403--420},
+  doi = {10.48550/arXiv.2405.02383},
+  arxivId = {2405.02383},
+  url = {https://www.semanticscholar.org/paper/db4b5757ae7200cd2e78b1552b2cd56f67f83909},
+  note = {
+  CORE ARGUMENT: Addresses methodological concerns with the Model Parameter Randomisation Test (MPRT), a widely-used sanity check for saliency map reliability. Identifies that MPRT suffers from noise-induced variations and biased similarity measurements that can lead to incorrect evaluations. Proposes Smooth MPRT (using sampling to reduce noise) and Efficient MPRT (reinterpreting the test through explanation complexity increases) as modifications. The need for these corrections reveals that even meta-level tools for validating interpretability methods have reliability issues.
+
+  RELEVANCE: Important methodological critique showing that even our tools for evaluating interpretability have problems. The unreliability of MPRT means we may have incorrect confidence in which saliency methods are trustworthy. This meta-level uncertainty compounds the challenge of using interpretability for safety: not only might explanations be unfaithful, but our methods for detecting unfaithful explanations may themselves be unreliable. The proposed modifications help but don't eliminate uncertainty about saliency map validity.
+
+  POSITION: Methodological critique of interpretability evaluation tools, revealing meta-level reliability concerns.
+  },
+  keywords = {saliency-maps, evaluation-methods, sanity-checks, methodological-critique, Medium}
+}
+
+@article{koenen2024toward,
+  author = {Koenen, Niklas and Wright, Marvin N.},
+  title = {Toward Understanding the Disagreement Problem in Neural Network Feature Attribution},
+  journal = {arXiv},
+  year = {2024},
+  volume = {abs/2404.11330},
+  doi = {10.48550/arXiv.2404.11330},
+  arxivId = {2404.11330},
+  url = {https://www.semanticscholar.org/paper/a857fc4af02d7b3e1a2e1bcacb21fd9f89766dc8},
+  note = {
+  CORE ARGUMENT: Investigates the fundamental problem that different feature attribution methods (gradient-based, perturbation-based, etc.) often disagree on which features are important, even for the same model and input. Through simulation studies, demonstrates that disagreement stems from different methods capturing different aspects of model behavior - some measure marginal importance, others conditional importance, and these can conflict. Also shows that common data preprocessing (scaling, encoding) significantly affects attribution quality and disagreement patterns.
+
+  RELEVANCE: The disagreement problem is critical for safety applications: if multiple interpretability methods give contradictory explanations, which should we trust for safety-critical decisions? The finding that preprocessing choices affect attributions suggests explanations may reflect artifact of analysis pipeline rather than true model behavior. For AI safety, reliance on any single attribution method could miss important features identified by other methods, while combining methods raises the question of how to adjudicate disagreements. This fundamentally challenges the reliability of feature-attribution-based safety assessments.
+
+  POSITION: Fundamental critique of feature attribution reliability based on systematic disagreement across methods and sensitivity to analysis choices.
+  },
+  keywords = {feature-attribution, method-disagreement, evaluation-metrics, reliability-concerns, High}
+}
+
+@article{kiourti2025rethinking,
+  author = {Kiourti, Panagiota and Singh, Anu and Duraipandian, Preeti and Zhou, Weichao and Li, Wenchao},
+  title = {Rethinking Robustness: A New Approach to Evaluating Feature Attribution Methods},
+  journal = {arXiv},
+  year = {2025},
+  volume = {abs/2512.06665},
+  arxivId = {2512.06665},
+  url = {https://www.semanticscholar.org/paper/b43daa72e2b7b49e6b459c0942e8916815125221},
+  note = {
+  CORE ARGUMENT: Challenges the current notion of attributional robustness that conflates model robustness with attribution method robustness. Proposes new definition of "similar inputs" and robustness metric that reveals weaknesses of attribution methods rather than just the underlying neural network. Develops GAN-based method to generate inputs that should have similar attributions but often don't. Findings show attribution methods are less robust than commonly believed when evaluated with this more objective metric.
+
+  RELEVANCE: Addresses a key conflation in interpretability evaluation: when attributions change dramatically for similar inputs, is this revealing model instability or attribution method unreliability? For safety applications, this distinction matters - we need robust explanations that reliably track true model behavior, not fragile explanations that vary unpredictably. The proposed framework helps identify when attribution methods are failing independent of model quality, which is essential for deciding when interpretability-based safety assurances are trustworthy.
+
+  POSITION: Methodological contribution reframing how to evaluate robustness of attribution methods, revealing greater fragility than conventional metrics suggest.
+  },
+  keywords = {attribution-robustness, evaluation-framework, fragility, methodological-innovation, High}
+}
+
+@article{madsen2024interpretability,
+  author = {Madsen, Andreas and Lakkaraju, Himabindu and Reddy, Siva and Chandar, Sarath},
+  title = {Interpretability Needs a New Paradigm},
+  journal = {arXiv},
+  year = {2024},
+  volume = {abs/2405.05386},
+  doi = {10.48550/arXiv.2405.05386},
+  arxivId = {2405.05386},
+  url = {https://www.semanticscholar.org/paper/5a93e89d01dc3ba61a3bd2a3ac64aa895859f471},
+  note = {
+  CORE ARGUMENT: Current interpretability paradigms (intrinsic models designed for interpretability vs. post-hoc explanation of black-boxes) both struggle with ensuring faithfulness - that explanations accurately reflect model behavior rather than being merely plausible. Proposes three emerging paradigms: (1) designing models where faithfulness can be easily measured, (2) optimizing models to make their explanations faithful, and (3) developing models that jointly produce predictions and explanations. Emphasizes that false but convincing explanations create dangerous overconfidence in AI systems.
+
+  RELEVANCE: Foundational critique for AI safety applications of interpretability. The faithfulness problem means we can't necessarily trust explanations even when they seem compelling - they might be post-hoc rationalizations rather than true mechanistic insights. For safety-critical decisions, this creates serious risks: stakeholders might trust an AI based on plausible-seeming explanations that don't reflect actual decision-making. The proposed new paradigms suggest current approaches may need fundamental rethinking for safety applications.
+
+  POSITION: Paradigmatic critique advocating fundamental restructuring of interpretability research priorities around faithfulness guarantees.
+  },
+  keywords = {interpretability-paradigms, faithfulness, safety-implications, Low}
+}
