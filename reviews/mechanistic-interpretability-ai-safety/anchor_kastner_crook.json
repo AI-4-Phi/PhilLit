@@ -1,0 +1,37 @@
+[verify_paper.py] Searching CrossRef: title='Explaining AI through Mechanistic Interpretability...' author=Kästner year=2024
+[verify_paper.py] Paper found: Explaining AI through mechanistic interpretability... (score: 54.2)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Explaining AI through Mechanistic Interpretability",
+    "author": "K\u00e4stner",
+    "year": 2024
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s13194-024-00614-4",
+      "title": "Explaining AI through mechanistic interpretability",
+      "authors": [
+        {
+          "family": "K\u00e4stner",
+          "given": "Lena"
+        },
+        {
+          "family": "Crook",
+          "given": "Barnaby"
+        }
+      ],
+      "year": 2024,
+      "container_title": "European Journal for Philosophy of Science",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1007/s13194-024-00614-4",
+      "score": 54.240345
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

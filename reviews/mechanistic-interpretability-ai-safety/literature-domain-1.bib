@@ -1,0 +1,297 @@
+@comment{
+====================================================================
+DOMAIN: Mechanistic Interpretability - Foundations and Methods
+SEARCH_DATE: 2025-12-22
+PAPERS_FOUND: 18 (High: 12, Medium: 6)
+SEARCH_SOURCES: Semantic Scholar, OpenAlex, arXiv, PhilPapers
+====================================================================
+
+DOMAIN_OVERVIEW:
+Mechanistic interpretability (MI) represents a research paradigm focused on reverse-engineering the learned algorithms and computational structures within neural networks. This domain encompasses work on circuit discovery, feature extraction, and understanding how transformers implement specific behaviors through their internal mechanisms. Key methodological approaches include activation patching, automated circuit discovery (ACDC), and analysis of attention patterns and MLP activations. Recent work has expanded from small toy models to larger language models, with emphasis on identifying interpretable features, understanding grokking phenomena, and developing systematic methods for circuit analysis.
+
+The field is anchored by foundational work from researchers like Chris Olah, Neel Nanda, and the Anthropic interpretability team, establishing both theoretical frameworks (e.g., causal abstraction, modularity assumptions) and practical tools (e.g., TransformerLens, circuit discovery algorithms). Recent developments focus on scaling interpretability methods, automating discovery processes, and connecting MI to downstream applications in AI safety and model understanding.
+
+RELEVANCE_TO_PROJECT:
+This domain directly addresses the first research objective: clarifying what "mechanistic interpretability" means in current literature. The papers surveyed reveal both narrow definitions (focusing on neuron-level activations and circuits) and broader conceptualizations (including functional and algorithmic explanations). This diversity in definitions is central to understanding the apparent conflicts between papers like Hendrycks & Hiscott (2025) and Kästner & Crook (2024).
+
+NOTABLE_GAPS:
+Limited explicit discussion of what makes an explanation "mechanistic" versus other forms of interpretability. Most papers assume a shared understanding rather than providing definitional clarity. Philosophical grounding for why circuit-level explanations should be privileged over behavioral or functional explanations remains underdeveloped.
+
+SYNTHESIS_GUIDANCE:
+Use this domain to establish the technical landscape of MI approaches. Contrast narrow (circuit/neuron-level) versus broad (including functional) definitions. Highlight methodological diversity while noting the field's assumptions about what counts as "interpretation." 
+
+KEY_POSITIONS:
+[Will be determined from selected papers]
+====================================================================
+}
+
+@article{nanda2023progress,
+  author = {Nanda, Neel and Chan, Lawrence and Lieberum, Tom and Smith, Jess and Steinhardt, J.},
+  title = {{Progress measures for grokking via mechanistic interpretability}},
+  year = {2023},
+  doi = {10.48550/arXiv.2301.05217},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Algorithmic understanding approach to MI.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{conmy2023automated,
+  author = {Conmy, Arthur and Mavor-Parker, Augustine N. and Lynch, Aengus and Heimersheim, Stefan and Garriga-Alonso, Adrià},
+  title = {{Towards Automated Circuit Discovery for Mechanistic Interpretability}},
+  year = {2023},
+  doi = {10.48550/arXiv.2304.14997},
+  note = {
+CORE ARGUMENT: Develops automated methods for discovering circuits in neural networks, arguing that manual circuit discovery does not scale to large models. Proposes algorithmic approaches to identify minimal computational subgraphs responsible for specific behaviors.
+
+RELEVANCE: Establishes what circuit-based MI entails, helping clarify the narrow definition of MI. Essential for understanding whether Hendrycks & Hiscott's critique targets a strawman or the actual practice of MI research.
+
+POSITION: Circuit-focused MI representing narrow definition.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{bereska2024mechanistic,
+  author = {Bereska, Leonard and Gavves, E.},
+  title = {{Mechanistic Interpretability for AI Safety - A Review}},
+  year = {2024},
+  doi = {10.48550/arXiv.2404.14082},
+  note = {
+CORE ARGUMENT: Provides comprehensive overview of mechanistic interpretability methods, techniques, and applications. Maps the landscape of MI approaches and their relationship to AI safety objectives.
+
+RELEVANCE: Directly relevant to research question by explicitly connecting MI methods to safety applications. Provides evidence for evaluating whether MI is necessary or sufficient for AI safety objectives.
+
+POSITION: Algorithmic understanding approach to MI.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{he2024dictionary,
+  author = {He, Zhengfu and Ge, Xuyang and Tang, Qiong and Sun, Tianxiang and Cheng, Qinyuan and Qiu, Xipeng},
+  title = {{Dictionary Learning Improves Patch-Free Circuit Discovery in Mechanistic Interpretability: A Case Study on Othello-GPT}},
+  year = {2024},
+  doi = {10.48550/arXiv.2402.12201},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Establishes what circuit-based MI entails, helping clarify the narrow definition of MI. Essential for understanding whether Hendrycks & Hiscott's critique targets a strawman or the actual practice of MI research.
+
+POSITION: Circuit-focused MI representing narrow definition.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{pearce2024bilinear,
+  author = {Pearce, Michael T. and Dooms, Thomas and Rigg, Alice and Oramas, José and Sharkey, Lee},
+  title = {{Bilinear MLPs enable weight-based mechanistic interpretability}},
+  year = {2024},
+  doi = {10.48550/arXiv.2410.08417},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Methodological contribution to MI practice.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{geiger2023causal,
+  author = {Geiger, Atticus and Ibeling, D. and Zur, Amir and Chaudhary, Maheep and Chauhan, Sonakshi and Huang, Jing and Arora, Aryaman and Wu, Zhengxuan and others},
+  title = {{Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability}},
+  year = {2023},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Theoretical/formal foundations for MI.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{meloux2025everything,
+  author = {M'eloux, Maxime and Maniu, Silviu and Portet, Franccois and Peyrard, Maxime},
+  title = {{Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?}},
+  year = {2025},
+  doi = {10.48550/arXiv.2502.20914},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Algorithmic understanding approach to MI.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{joseph2025prisma,
+  author = {Joseph, Sonia and Suresh, Praneet and Hufe, Lorenz and Stevinson, Edward and Graham, Robert and Vadi, Yash and Bzdok, Danilo and Lapuschkin, S. and others},
+  title = {{Prisma: An Open Source Toolkit for Mechanistic Interpretability in Vision and Video}},
+  year = {2025},
+  doi = {10.48550/arXiv.2504.19475},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Methodological contribution to MI practice.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{mueller2025mechanistic,
+  author = {Mueller, Aaron and Geiger, Atticus and Wiegreffe, Sarah and Arad, Dana and Arcuschin, Iv'an and Belfki, Adam and Chan, Yik Siu and Fiotto-Kaufman, Jaden and others},
+  title = {{MIB: A Mechanistic Interpretability Benchmark}},
+  year = {2025},
+  doi = {10.48550/arXiv.2504.13151},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Methodological contribution to MI practice.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{song2025position,
+  author = {Song, Xiangchen and Muhamed, Aashiq and Zheng, Yujia and Kong, Lingjing and Tang, Zeyu and Diab, Mona T. and Smith, Virginia and Zhang, Kun},
+  title = {{Position: Mechanistic Interpretability Should Prioritize Feature Consistency in SAEs}},
+  year = {2025},
+  doi = {10.48550/arXiv.2505.20254},
+  note = {
+CORE ARGUMENT: Addresses the superposition problem through dictionary learning or sparse coding methods. Argues that individual neurons may represent multiple features, requiring decomposition methods to extract interpretable feature representations.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Feature-based MI addressing superposition.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{trim2024mechanistic,
+  author = {Trim, Tristan and Grayston, Triston},
+  title = {{Mechanistic Interpretability of Reinforcement Learning Agents}},
+  year = {2024},
+  doi = {10.48550/arXiv.2411.00867},
+  note = {
+CORE ARGUMENT: This paper explores the mechanistic interpretability of reinforcement learning (RL) agents through an analysis of a neural network trained on procedural maze environments  By dissecting the network's inner workings, we identified fundamental features like maze walls and pathways, forming the basis of the model's decision-making process.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Methodological contribution to MI practice.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{rai2024practical,
+  author = {Rai, Daking and Zhou, Yilun and Feng, Shi and Saparov, Abulhair and Yao, Ziyu},
+  title = {{A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models}},
+  year = {2024},
+  doi = {10.48550/arXiv.2407.02646},
+  note = {
+CORE ARGUMENT: Provides comprehensive overview of mechanistic interpretability methods, techniques, and applications. Maps the landscape of MI approaches and their relationship to AI safety objectives.
+
+RELEVANCE: Provides systematic overview of MI landscape, essential for mapping definitional diversity. Helps identify whether MI is a unified paradigm or a collection of heterogeneous approaches.
+
+POSITION: Methodological contribution to MI practice.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{sharkey2025problems,
+  author = {Sharkey, Lee and Chughtai, Bilal and Batson, Joshua and Lindsey, Jack and Wu, Jeff and Bushnaq, Lucius and Goldowsky-Dill, Nicholas and Heimersheim, Stefan and others},
+  title = {{Open Problems in Mechanistic Interpretability}},
+  year = {2025},
+  doi = {10.48550/arXiv.2501.16496},
+  note = {
+CORE ARGUMENT: Mechanistic interpretability aims to understand the computational mechanisms underlying neural networks' capabilities in order to accomplish concrete scientific and engineering goals  Progress in this field thus promises to provide greater assurance over AI system behavior and shed light on exciting scientific questions about the nature of intelligence.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Methodological contribution to MI practice.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{garciacarrasco2024predict,
+  author = {Garc'ia-Carrasco, Jorge and Mat'e, Alejandro and Trujillo, Juan},
+  title = {{How does GPT-2 Predict Acronyms? Extracting and Understanding a Circuit via Mechanistic Interpretability}},
+  year = {2024},
+  doi = {10.48550/arXiv.2405.04156},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Directly relevant to research question by explicitly connecting MI methods to safety applications. Provides evidence for evaluating whether MI is necessary or sufficient for AI safety objectives.
+
+POSITION: Circuit-focused MI representing narrow definition.
+},
+  keywords = {mechanistic interpretability, High}
+}
+
+@article{bushnaq2024degeneracy,
+  author = {Bushnaq, Lucius and Mendel, Jake and Heimersheim, Stefan and Braun, Dan and Goldowsky-Dill, Nicholas and Hänni, Kaarel and Wu, Cindy and Hobbhahn, Marius},
+  title = {{Using Degeneracy in the Loss Landscape for Mechanistic Interpretability}},
+  year = {2024},
+  doi = {10.48550/arXiv.2405.10927},
+  note = {
+CORE ARGUMENT: Mechanistic Interpretability aims to reverse engineer the algorithms implemented by neural networks by studying their weights and activations  An obstacle to reverse engineering neural networks is that many of the parameters inside a network are not involved in the computation being implemented by the network.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Algorithmic understanding approach to MI.
+},
+  keywords = {mechanistic interpretability, Medium}
+}
+
+@article{yu2024understanding,
+  author = {Yu, Zeping and Ananiadou, Sophia},
+  title = {{Understanding Multimodal LLMs: the Mechanistic Interpretability of Llava in Visual Question Answering}},
+  year = {2024},
+  doi = {10.48550/arXiv.2411.10950},
+  note = {
+CORE ARGUMENT: Extends mechanistic interpretability techniques beyond language models to vision or multimodal architectures. Investigates whether circuit discovery and feature analysis methods generalize across modalities.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Methodological contribution to MI practice.
+},
+  keywords = {mechanistic interpretability, Medium}
+}
+
+@article{taylor2024introduction,
+  author = {Taylor, Jordan K.},
+  title = {{An introduction to graphical tensor notation for mechanistic interpretability}},
+  year = {2024},
+  doi = {10.48550/arXiv.2402.01790},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Algorithmic understanding approach to MI.
+},
+  keywords = {mechanistic interpretability, Medium}
+}
+
+@article{gupta2024interpbench,
+  author = {Gupta, Rohan and Arcuschin, Iv'an and Kwa, Thomas and Garriga-Alonso, Adrià},
+  title = {{InterpBench: Semi-Synthetic Transformers for Evaluating Mechanistic Interpretability Techniques}},
+  year = {2024},
+  doi = {10.48550/arXiv.2407.14494},
+  note = {
+CORE ARGUMENT: Investigates circuit-level mechanisms in neural networks, reverse-engineering how specific behaviors emerge from interconnected components. Demonstrates that interpretable computational structures can be identified and validated through ablation studies.
+
+RELEVANCE: Exemplifies contemporary MI practice, contributing to understanding what the field actually does versus what it claims to do. Relevant for evaluating the gap between MI methods and safety requirements.
+
+POSITION: Algorithmic understanding approach to MI.
+},
+  keywords = {mechanistic interpretability, Medium}
+}
+
+% End of Domain 1 bibliography

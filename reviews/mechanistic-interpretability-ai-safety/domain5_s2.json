@@ -1,0 +1,1539 @@
+[s2_search.py] Searching Semantic Scholar: 'interpretability safety robustness' (year=2023-2025), limit=40
+[s2_search.py] Retrieved 40/40 papers...
+[s2_search.py] Cached results (cache key: s2_83d0d8d80174ee0d)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "interpretability safety robustness",
+  "results": [
+    {
+      "paperId": "0c46de181f5e2f10ac1a1433cef6bc8e41664ecd",
+      "title": "Exploring the Interplay of Interpretability and Robustness in Deep Neural Networks: A Saliency-Guided Approach",
+      "authors": [
+        {
+          "name": "Amira Guesmi",
+          "authorId": "153290110"
+        },
+        {
+          "name": "Nishant Aswani",
+          "authorId": "2300097390"
+        },
+        {
+          "name": "Muhammad Shafique",
+          "authorId": "2283769762"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Adversarial attacks pose a significant challenge to deploying deep learning models in safety-critical applications. Maintaining model robustness while ensuring interpretability is vital for fostering trust and comprehension in these models. This study investigates the impact of Saliency-guided Training (SGT) on model robustness, a technique aimed at improving the clarity of saliency maps to deepen understanding of the model\u2019s decision-making process. Experiments were conducted on standard benchmark datasets using various deep learning architectures trained with and without SGT. Findings demonstrate that SGT enhances both model robustness and interpretability. Additionally, we propose a novel approach combining SGT with standard adversarial training to achieve even greater robustness while preserving saliency map quality. Our strategy is grounded in the assumption that preserving salient features crucial for correctly classifying adversarial examples enhances model robustness, while masking non-relevant features improves interpretability. Our technique yields significant gains, achieving a 35% and 20% improvement in robustness against PGD attack with noise magnitudes of 0.2 and 0.02 for the MNIST and CIFAR-10 datasets, respectively, while producing high-quality saliency maps.",
+      "citationCount": 6,
+      "doi": "10.1109/ICIPCW64161.2024.10769124",
+      "arxivId": "2405.06278",
+      "url": "https://www.semanticscholar.org/paper/0c46de181f5e2f10ac1a1433cef6bc8e41664ecd",
+      "venue": "2024 IEEE International Conference on Image Processing Challenges and Workshops (ICIPCW)",
+      "journal": {
+        "name": "2024 IEEE International Conference on Image Processing Challenges and Workshops (ICIPCW)",
+        "pages": "4066-4072"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9d0da56c7bb5d96d18be2f231b5afcbaab0134b2",
+      "title": "Trustworthy Machine Learning: Robustness, Generalization, and Interpretability",
+      "authors": [
+        {
+          "name": "Jindong Wang",
+          "authorId": "1519290245"
+        },
+        {
+          "name": "Hao Li",
+          "authorId": "144966714"
+        },
+        {
+          "name": "Haohan Wang",
+          "authorId": "2256768919"
+        },
+        {
+          "name": "Sinno Jialin Pan",
+          "authorId": "1746914"
+        },
+        {
+          "name": "Xingxu Xie",
+          "authorId": "1576441343"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Machine learning is becoming increasingly important in today's world. Beyond its powerful performances, there has been an emerging concern about the trustworthiness of machine learning, including but not limited to: robustness to malicious attacks, generalization to unseen datasets, and interpretability to explain its outputs. Such concerns are even more urgent in some safety-critical applications such as medical diagnosis and autonomous driving. Trustworthy machine learning (TrustML) aims to tackle these challenges from the perspectives of theory, algorithm, and applications. In this tutorial, we will give a comprehensive introduction to the recent advance of trustworthy machine learning in robustness, generalization, and interpretability. We will cover their problem formulation, related research, popular algorithms, and successful applications. Additionally, we will also introduce some potential challenges for future research. We do hope that this tutorial will not only serve as a platform to understand TrustML, but also raise the awareness of everyone for more trustworthy applications.",
+      "citationCount": 9,
+      "doi": "10.1145/3580305.3599574",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9d0da56c7bb5d96d18be2f231b5afcbaab0134b2",
+      "venue": "Knowledge Discovery and Data Mining",
+      "journal": {
+        "name": "Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "72dca2e7769ae3dc84d156fce76ddc9b56b243a2",
+      "title": "Certified Interpretability Robustness for Class Activation Mapping",
+      "authors": [
+        {
+          "name": "Alex Gu",
+          "authorId": "2060030589"
+        },
+        {
+          "name": "Tsui-Wei Weng",
+          "authorId": "27836724"
+        },
+        {
+          "name": "Pin-Yu Chen",
+          "authorId": "153191489"
+        },
+        {
+          "name": "Sijia Liu",
+          "authorId": "143743061"
+        },
+        {
+          "name": "Lucani E. Daniel",
+          "authorId": "103706192"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Interpreting machine learning models is challenging but crucial for ensuring the safety of deep networks in autonomous driving systems. Due to the prevalence of deep learning based perception models in autonomous vehicles, accurately interpreting their predictions is crucial. While a variety of such methods have been proposed, most are shown to lack robustness. Yet, little has been done to provide certificates for interpretability robustness. Taking a step in this direction, we present CORGI, short for Certifiably prOvable Robustness Guarantees for Interpretability mapping. CORGI is an algorithm that takes in an input image and gives a certifiable lower bound for the robustness of the top k pixels of its CAM interpretability map. We show the effectiveness of CORGI via a case study on traffic sign data, certifying lower bounds on the minimum adversarial perturbation not far from (4-5x) state-of-the-art attack methods.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2301.11324",
+      "arxivId": "2301.11324",
+      "url": "https://www.semanticscholar.org/paper/72dca2e7769ae3dc84d156fce76ddc9b56b243a2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2301.11324"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "24814384a9a8ffca6758ab64f9d084e1b17788a1",
+      "title": "Evaluation of the Robustness, Transparency, Reliability and Safety of AI Systems",
+      "authors": [
+        {
+          "name": "Jenifer Mahilraj",
+          "authorId": "72756356"
+        },
+        {
+          "name": "M. Pandian",
+          "authorId": "2195287166"
+        },
+        {
+          "name": "Muthuraman Subbiah",
+          "authorId": "2216345837"
+        },
+        {
+          "name": "S. Kalyan",
+          "authorId": "143739247"
+        },
+        {
+          "name": "Vadivel R",
+          "authorId": "2302586192"
+        },
+        {
+          "name": "Nirmala S",
+          "authorId": "2216267871"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Advances in artificial intelligence have been promising in recent years. AI-related activities such as international conferences, academic research, and technological challenges have proliferated over the globe. The technologies and applications are always being improved and expanded in the modern age. In addition, humans\u2019 studies, job, and personal lives have been greatly improved by the ongoing development of intelligent devices. Efforts have been dedicated to identify some of these issues and to present policymakers with possible remedies, which focus on reconciling the valid expectations of AI in terms of resilience and interpretability with the existing scientific environment of AI on these aspects. In this paper, the individual aims are to present an objective picture of the current environment of Artificial Intelligence (AI), emphasizing on the issues of robustness and explanability, transparency, reliability and safety. AI's present cybersecurity, security, and information security problems are discussed in detail, as well as the scientific approaches that are now being developed in the AI world to address these risks.",
+      "citationCount": 5,
+      "doi": "10.1109/ICACCS57279.2023.10113057",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/24814384a9a8ffca6758ab64f9d084e1b17788a1",
+      "venue": "2023 9th International Conference on Advanced Computing and Communication Systems (ICACCS)",
+      "journal": {
+        "name": "2023 9th International Conference on Advanced Computing and Communication Systems (ICACCS)",
+        "pages": "2526-2535",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a0d2a54ed05a424f5eee35ea579cf54ef0f2c2aa",
+      "title": "Large Language Model Safety: A Holistic Survey",
+      "authors": [
+        {
+          "name": "Dan Shi",
+          "authorId": "2064971269"
+        },
+        {
+          "name": "Tianhao Shen",
+          "authorId": "2057973326"
+        },
+        {
+          "name": "Yufei Huang",
+          "authorId": "2263648395"
+        },
+        {
+          "name": "Zhigen Li",
+          "authorId": "2336878264"
+        },
+        {
+          "name": "Yongqi Leng",
+          "authorId": "2301582549"
+        },
+        {
+          "name": "Renren Jin",
+          "authorId": "2184143149"
+        },
+        {
+          "name": "Chuang Liu",
+          "authorId": "2316008862"
+        },
+        {
+          "name": "Xinwei Wu",
+          "authorId": "2051972795"
+        },
+        {
+          "name": "Zishan Guo",
+          "authorId": "2246789578"
+        },
+        {
+          "name": "Linhao Yu",
+          "authorId": "2217579802"
+        },
+        {
+          "name": "Ling Shi",
+          "authorId": "2292418827"
+        },
+        {
+          "name": "Bojian Jiang",
+          "authorId": "2310398675"
+        },
+        {
+          "name": "Deyi Xiong",
+          "authorId": "2263617513"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The rapid development and deployment of large language models (LLMs) have introduced a new frontier in artificial intelligence, marked by unprecedented capabilities in natural language understanding and generation. However, the increasing integration of these models into critical applications raises substantial safety concerns, necessitating a thorough examination of their potential risks and associated mitigation strategies. This survey provides a comprehensive overview of the current landscape of LLM safety, covering four major categories: value misalignment, robustness to adversarial attacks, misuse, and autonomous AI risks. In addition to the comprehensive review of the mitigation methodologies and evaluation resources on these four aspects, we further explore four topics related to LLM safety: the safety implications of LLM agents, the role of interpretability in enhancing LLM safety, the technology roadmaps proposed and abided by a list of AI companies and institutes for LLM safety, and AI governance aimed at LLM safety with discussions on international cooperation, policy proposals, and prospective regulatory directions. Our findings underscore the necessity for a proactive, multifaceted approach to LLM safety, emphasizing the integration of technical solutions, ethical considerations, and robust governance frameworks. This survey is intended to serve as a foundational resource for academy researchers, industry practitioners, and policymakers, offering insights into the challenges and opportunities associated with the safe integration of LLMs into society. Ultimately, it seeks to contribute to the safe and beneficial development of LLMs, aligning with the overarching goal of harnessing AI for societal advancement and well-being. A curated list of related papers has been publicly available at https://github.com/tjunlp-lab/Awesome-LLM-Safety-Papers.",
+      "citationCount": 34,
+      "doi": "10.48550/arXiv.2412.17686",
+      "arxivId": "2412.17686",
+      "url": "https://www.semanticscholar.org/paper/a0d2a54ed05a424f5eee35ea579cf54ef0f2c2aa",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.17686"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "fbee10fbc1e758099d8ee382cd1d9ef73b8ec968",
+      "title": "Explainability of Point Cloud Neural Networks Using SMILE: Statistical Model-Agnostic Interpretability with Local Explanations",
+      "authors": [
+        {
+          "name": "Seyed Mohammad Ahmadi",
+          "authorId": "2326964330"
+        },
+        {
+          "name": "K. Aslansefat",
+          "authorId": "2377794490"
+        },
+        {
+          "name": "Ruben Valcarce-Dineiro",
+          "authorId": "2326989935"
+        },
+        {
+          "name": "Joshua Barnfather",
+          "authorId": "2326991276"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In today's world, the significance of explainable AI (XAI) is growing in robotics and point cloud applications, as the lack of transparency in decision-making can pose considerable safety risks, particularly in autonomous systems. As these technologies are integrated into real-world environments, ensuring that model decisions are interpretable and trustworthy is vital for operational reliability and safety assurance. This study explores the implementation of SMILE, a novel explainability method originally designed for deep neural networks, on point cloud-based models. SMILE builds on LIME by incorporating Empirical Cumulative Distribution Function (ECDF) statistical distances, offering enhanced robustness and interpretability, particularly when the Anderson-Darling distance is used. The approach demonstrates superior performance in terms of fidelity loss, R2 scores, and robustness across various kernel widths, perturbation numbers, and clustering configurations. Moreover, this study introduces a stability analysis for point cloud data using the Jaccard index, establishing a new benchmark and baseline for model stability in this field. The study further identifies dataset biases in the classification of the 'person' category, emphasizing the necessity for more comprehensive datasets in safety-critical applications like autonomous driving and robotics. The results underscore the potential of advanced explainability models and highlight areas for future research, including the application of alternative surrogate models and explainability techniques in point cloud data.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2410.15374",
+      "arxivId": "2410.15374",
+      "url": "https://www.semanticscholar.org/paper/fbee10fbc1e758099d8ee382cd1d9ef73b8ec968",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.15374"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "db34a83ae0b87dedc7aabe9e4195aa5f9ed042a6",
+      "title": "A Model Interpretability-Based Defense Against Clean-Label Backdoor Attacks",
+      "authors": [
+        {
+          "name": "Shuhan Zhang",
+          "authorId": "2346252627"
+        },
+        {
+          "name": "Jiang Wenbo",
+          "authorId": "2346144600"
+        },
+        {
+          "name": "Lu Yuxin",
+          "authorId": "2346138966"
+        },
+        {
+          "name": "Hongwei Li",
+          "authorId": "2240254064"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The widespread application of deep learning in autonomous driving and intelligent transportation has brought attention to the security of traffic sign recognition systems. Clean-label backdoor attacks present a significant threat to model robustness. This paper proposes a defense method that integrates model interpretability techniques, combining gradient-based and perturbation-based approaches. The method generates image heat maps and filters perturbed images to construct an effective data cleaning framework for identifying and removing backdoor triggers. Experiments on the Traffic Sign Recognition Dataset show that this integrated approach maintains high detection accuracy across various attack modes, achieving a Matthews correlation coefficient of 0.975 under random triggers. The method also demonstrates strong adaptability to different attack patterns. This research enhances the security of deep learning models in safety-critical applications and has broad implications for future work in securing AI systems.",
+      "citationCount": 0,
+      "doi": "10.1109/ICCWAMTIP64812.2024.10873733",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/db34a83ae0b87dedc7aabe9e4195aa5f9ed042a6",
+      "venue": "2024 21st International Computer Conference on Wavelet Active Media Technology and Information Processing (ICCWAMTIP)",
+      "journal": {
+        "name": "2024 21st International Computer Conference on Wavelet Active Media Technology and Information Processing (ICCWAMTIP)",
+        "pages": "1-8"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "6fb7103327c0232258a577ac7d9c7c7fc26a6abe",
+      "title": "A Method for Robustness Testing of Intelligent Classification Models: Adversarial Sample Generation under Score-based Gray-box Single-pixel Attacks",
+      "authors": [
+        {
+          "name": "Yeyang Liu",
+          "authorId": "2339572175"
+        },
+        {
+          "name": "Yangyang Sun",
+          "authorId": "2329533561"
+        },
+        {
+          "name": "Yiwei Wang",
+          "authorId": "2339562784"
+        },
+        {
+          "name": "Changjian Wu",
+          "authorId": "2339592952"
+        },
+        {
+          "name": "Changdi Zhao",
+          "authorId": "2394564200"
+        },
+        {
+          "name": "Feng Jiang",
+          "authorId": "2328628202"
+        },
+        {
+          "name": "Liang Ni",
+          "authorId": "2395926692"
+        },
+        {
+          "name": "Xiaobin Li",
+          "authorId": "2339547597"
+        },
+        {
+          "name": "Dezhen Yang",
+          "authorId": "2395992374"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Utilizing adversarial samples is essential for assessing the robustness of intelligent classification models. However, certain adversarial sample generation methods based on the grey-box approach face challenges, including low attack efficiency and limited interpretability. This paper presents the Score-based Gray-box Single-pixel Attacks (SGSA) method, a novel approach for generating adversarial samples. Initially, the feature map of the model\u2019s final layer is extracted, along with computing the discrepancy between the predicted score of each feature map and the original prediction score. By employing the Leaky ReLU activation function, the score of each pixel is computed. Subsequently, these scores are sorted in ascending order. Initiating the attack from the pixel with the lowest score, the most effective attack direction is determined by comparing the outcomes of both forward and reverse adversarial attacks on each pixel. The results demonstrate that this method not only achieves high attack efficiency but also offers interpretability in selecting attack locations, and the attack efficiency has doubled. Furthermore, this method offers valuable guidance for both testing and enhancing the model\u2019s robustness to some degree.",
+      "citationCount": 0,
+      "doi": "10.1109/ICRMS63553.2024.00170",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6fb7103327c0232258a577ac7d9c7c7fc26a6abe",
+      "venue": "International Conference on Reliability, Maintainability and Safety",
+      "journal": {
+        "name": "2024 15th International Conference on Reliability, Maintenance and Safety (ICRMS)",
+        "pages": "1067-1073"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "87102f3ffb2bb2b6cb4989336b6e0605b126388d",
+      "title": "Interpretability and Fairness in Machine Learning: A Formal Methods Approach",
+      "authors": [
+        {
+          "name": "Bishwamittra Ghosh",
+          "authorId": "49522533"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The last decades have witnessed significant progress in machine learning with a host of applications of algorithmic decision-making in different safety-critical domains, such as medical, law, education, and transportation. In high-stake domains, machine learning predictions have far-reaching consequences on the end-users. With the aim of applying machine learning for societal goods, there have been increasing efforts to regulate machine learning by imposing interpretability, fairness, robustness, etc. in predictions. Towards responsible and trustworthy machine learning, we propose two research themes in our dissertation research: interpretability and fairness of machine learning classifiers. In particular, we design algorithms to learn interpretable rule-based classifiers, formally verify fairness, and explain the sources of unfairness. Prior approaches to these problems are often limited by scalability, accuracy, or both. To overcome these limitations, we closely integrate automated reasoning, formal methods, and statistics with fairness and interpretability to develop scalable and accurate solutions.",
+      "citationCount": 3,
+      "doi": "10.24963/ijcai.2023/816",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/87102f3ffb2bb2b6cb4989336b6e0605b126388d",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "7083-7084"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "aa3def6c0d6eef8183e9b78894a711ed9e092df6",
+      "title": "Online Safety Analysis for LLMs: a Benchmark, an Assessment, and a Path Forward",
+      "authors": [
+        {
+          "name": "Xuan Xie",
+          "authorId": "2241988861"
+        },
+        {
+          "name": "Jiayang Song",
+          "authorId": "3427937"
+        },
+        {
+          "name": "Zhehua Zhou",
+          "authorId": "2239501205"
+        },
+        {
+          "name": "Yuheng Huang",
+          "authorId": "2239386159"
+        },
+        {
+          "name": "Da Song",
+          "authorId": "2261460069"
+        },
+        {
+          "name": "Lei Ma",
+          "authorId": "2296654713"
+        }
+      ],
+      "year": 2024,
+      "abstract": "While Large Language Models (LLMs) have seen widespread applications across numerous fields, their limited interpretability poses concerns regarding their safe operations from multiple aspects, e.g., truthfulness, robustness, and fairness. Recent research has started developing quality assurance methods for LLMs, introducing techniques such as offline detector-based or uncertainty estimation methods. However, these approaches predominantly concentrate on post-generation analysis, leaving the online safety analysis for LLMs during the generation phase an unexplored area. To bridge this gap, we conduct in this work a comprehensive evaluation of the effectiveness of existing online safety analysis methods on LLMs. We begin with a pilot study that validates the feasibility of detecting unsafe outputs in the early generation process. Following this, we establish the first publicly available benchmark of online safety analysis for LLMs, including a broad spectrum of methods, models, tasks, datasets, and evaluation metrics. Utilizing this benchmark, we extensively analyze the performance of state-of-the-art online safety analysis methods on both open-source and closed-source LLMs. This analysis reveals the strengths and weaknesses of individual methods and offers valuable insights into selecting the most appropriate method based on specific application scenarios and task requirements. Furthermore, we also explore the potential of using hybridization methods, i.e., combining multiple methods to derive a collective safety conclusion, to enhance the efficacy of online safety analysis for LLMs. Our findings indicate a promising direction for the development of innovative and trustworthy quality assurance methodologies for LLMs, facilitating their reliable deployments across diverse domains.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2404.08517",
+      "arxivId": "2404.08517",
+      "url": "https://www.semanticscholar.org/paper/aa3def6c0d6eef8183e9b78894a711ed9e092df6",
+      "venue": "IEEE Transactions on Artificial Intelligence",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.08517"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "02930d9a116eaec470a31c6a758386276e090f55",
+      "title": "A Systematic Literature Review on AI Safety: Identifying Trends, Challenges, and Future Directions",
+      "authors": [
+        {
+          "name": "Wissam Salhab",
+          "authorId": "2274001571"
+        },
+        {
+          "name": "Darine Ameyed",
+          "authorId": "2222983"
+        },
+        {
+          "name": "Fehmi Jaafar",
+          "authorId": "2238156285"
+        },
+        {
+          "name": "Hamid Mcheick",
+          "authorId": "2332976568"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Artificial intelligence (AI) is revolutionizing many aspects of our lives, except it raises fundamental safety and ethical issues. In this survey paper, we review the current state of research on safe and trustworthy AI. This work provides a structured and systematic overview of AI safety. In which, we emphasize the significance of designing AI systems with safety focus, encompassing elements from data management, model development, and deployment. We underscore the need for AI systems to align with human values and operate within mounted ethical frameworks. In addition, we notice the need for a complete safety framework that courses the development and implementation of AI systems, ensuring they do not inadvertently cause damage to humans. Our results show that AI safety is associated with model learning techniques, verification and validation methods, failure modes, and managing AI autonomy. As discussed in the literature, the main concerns include explainability, interpretability, robustness, reliability, fairness, bias, and adversarial attacks.",
+      "citationCount": 11,
+      "doi": "10.1109/ACCESS.2024.3440647",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/02930d9a116eaec470a31c6a758386276e090f55",
+      "venue": "IEEE Access",
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "131762-131784",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "766717ff0cec19ef5d3918fe8ea93f1b0384cc93",
+      "title": "Mechanistic Interpretability of Fine-Tuned Vision Transformers on Distorted Images: Decoding Attention Head Behavior for Transparent and Trustworthy AI",
+      "authors": [
+        {
+          "name": "N. Bahador",
+          "authorId": "46596235"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability improves the safety, reliability, and robustness of large AI models. This study examined individual attention heads in vision transformers (ViTs) fine tuned on distorted 2D spectrogram images containing non relevant content (axis labels, titles, color bars). By introducing extraneous features, the study analyzed how transformer components processed unrelated information, using mechanistic interpretability to debug issues and reveal insights into transformer architectures. Attention maps assessed head contributions across layers. Heads in early layers (1 to 3) showed minimal task impact with ablation increased MSE loss slightly ({\\mu}=0.11%, {\\sigma}=0.09%), indicating focus on less critical low level features. In contrast, deeper heads (e.g., layer 6) caused a threefold higher loss increase ({\\mu}=0.34%, {\\sigma}=0.02%), demonstrating greater task importance. Intermediate layers (6 to 11) exhibited monosemantic behavior, attending exclusively to chirp regions. Some early heads (1 to 4) were monosemantic but non task relevant (e.g. text detectors, edge or corner detectors). Attention maps distinguished monosemantic heads (precise chirp localization) from polysemantic heads (multiple irrelevant regions). These findings revealed functional specialization in ViTs, showing how heads processed relevant vs. extraneous information. By decomposing transformers into interpretable components, this work enhanced model understanding, identified vulnerabilities, and advanced safer, more transparent AI.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2503.18762",
+      "arxivId": "2503.18762",
+      "url": "https://www.semanticscholar.org/paper/766717ff0cec19ef5d3918fe8ea93f1b0384cc93",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.18762"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a59294408839f9389912c3468467d264cc119878",
+      "title": "Mechanistic Interpretability of Emotion Inference in Large Language Models",
+      "authors": [
+        {
+          "name": "Ala Nekouvaght Tak",
+          "authorId": "1658812302"
+        },
+        {
+          "name": "Amin Banayeeanzade",
+          "authorId": "2373610491"
+        },
+        {
+          "name": "Anahita Bolourani",
+          "authorId": "2078343895"
+        },
+        {
+          "name": "Mina Kian",
+          "authorId": "2344751339"
+        },
+        {
+          "name": "Robin Jia",
+          "authorId": "2344788490"
+        },
+        {
+          "name": "Jonathan Gratch",
+          "authorId": "2267332230"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) show promising capabilities in predicting human emotions from text. However, the mechanisms through which these models process emotional stimuli remain largely unexplored. Our study addresses this gap by investigating how autoregressive LLMs infer emotions, showing that emotion representations are functionally localized to specific regions in the model. Our evaluation includes diverse model families and sizes and is supported by robustness checks. We then show that the identified representations are psychologically plausible by drawing on cognitive appraisal theory, a well-established psychological framework positing that emotions emerge from evaluations (appraisals) of environmental stimuli. By causally intervening on construed appraisal concepts, we steer the generation and show that the outputs align with theoretical and intuitive expectations. This work highlights a novel way to causally intervene and precisely shape emotional text generation, potentially benefiting safety and alignment in sensitive affective domains.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2502.05489",
+      "arxivId": "2502.05489",
+      "url": "https://www.semanticscholar.org/paper/a59294408839f9389912c3468467d264cc119878",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "13090-13120"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8d847724985d036b4a2df8985450191aed43a8f7",
+      "title": "A hyper-parameter tuned Random Forest algorithm-based on Artificial Bee Colony for improving accuracy, precision and interpretability of crime prediction",
+      "authors": [
+        {
+          "name": "Hauwa Abubakar",
+          "authorId": "2290815469"
+        },
+        {
+          "name": "S. Boukari",
+          "authorId": "52414496"
+        },
+        {
+          "name": "A. Y. Gital",
+          "authorId": "2287132791"
+        },
+        {
+          "name": "F. Zambuk",
+          "authorId": "118824799"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Crime prediction plays a crucial role in enhancing public safety and optimizing resource allocation for law enforcement. Traditional methods often fall short in addressing the complex and dynamic nature of crime data, relying on oversimplified assumptions and limited datasets that reduce accuracy and effectiveness. Advanced machine learning techniques, particularly a hyper-parameter tuned Random Forest model optimized using Artificial Bee Colony (ABC) algorithms, present a promising solution. This study proposes an enhanced crime prediction methodology that incorporates ABC-based hyperparameter tuning and Recursive Feature Elimination with Cross-Validation (RFECV) to improve accuracy, interpretability, and robustness. The model leverages ensemble techniques to integrate diverse features from historical crime data, capturing intricate crime patterns more effectively. Performance evaluations will compare the proposed approach with existing models using metrics such as Predictive Accuracy Index (PAI), Predictive Efficiency Index (PEI), Recapture Rate Index (RRI), and SHapley Additive exPlanations (SHAP) values. By prioritizing accuracy, transparency, and stakeholder engagement, this research aims to develop reliable, interpretable, and data-driven crime prediction models, fostering informed decision-making and proactive crime prevention.The work emphasizes improving crime prediction models through advanced machine learning techniques, including enhanced model development, integration of diverse data sources, focus on interpretability, continuous optimization, and stakeholder engagement. These recommendations aim to create robust, interpretable, and data-driven models that support law enforcement decision-making while addressing biases and existing limitations.",
+      "citationCount": 2,
+      "doi": "10.4314/dujopas.v10i4a.34",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8d847724985d036b4a2df8985450191aed43a8f7",
+      "venue": "Dutse Journal of Pure and Applied Sciences",
+      "journal": {
+        "name": "Dutse Journal of Pure and Applied Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cfb00bd03bdbc4c2dbb9e7893ec1a69bf593d638",
+      "title": "Intelligent Prediction Based on NRBO\u2013LightGBM Model of Reservoir Slope Deformation and Interpretability Analysis",
+      "authors": [
+        {
+          "name": "Jiang Chen",
+          "authorId": "2392679074"
+        },
+        {
+          "name": "Jiwan Sun",
+          "authorId": "2392652503"
+        },
+        {
+          "name": "Yang Xia",
+          "authorId": "2392680210"
+        },
+        {
+          "name": "Fangjin Xiong",
+          "authorId": "2392672603"
+        },
+        {
+          "name": "Xuefei Li",
+          "authorId": "2392659447"
+        },
+        {
+          "name": "Chenrui Liu",
+          "authorId": "2392654640"
+        },
+        {
+          "name": "Yating Hu",
+          "authorId": "2386588083"
+        },
+        {
+          "name": "Chenfei Shao",
+          "authorId": "2392672126"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Predicting slope deformation is pivotal for reservoir safety management; however, quantitative attribution to hydrologic\u2013temporal factors with interpretable and hyperparameter-robust models under multi-point temporal dependence is still rare. Hence, we develop an interpretable hybrid framework that couples a Light Gradient Boosting Machine (LightGBM) with a Newton\u2013Raphson-based optimizer (NRBO) for hyperparameter tuning. Unsupervised clustering is first employed to capture intrinsic temporal associations among multiple monitoring points. Subsequently, the NRBO\u2013LightGBM framework is proposed to enhance prediction accuracy and model robustness in slope deformation prediction. Finally, SHAP analysis is integrated to quantify the contribution of influencing factors, thereby strengthening the physical interpretability and credibility of the model. The proposed framework is validated using long-term deformation monitoring data from the Lijiaxia Hydropower Station. Comparative experiments indicate that the NRBO\u2013LightGBM model achieves a 22.8% reduction in RMSE and an 11.4% increase in R2 relative to conventional statistical models, improving prediction accuracy with a 21.5% lower RMSE and a 15.5% higher R2 compared with the baseline LightGBM. Furthermore, SHAP interpretability analysis elucidates the internal predictive mechanism, revealing that deformation evolution is primarily governed by temporal accumulation and seasonal variations represented by the time variable t and periodic components. Overall, the NRBO\u2013LightGBM model provides high-precision and interpretable deformation prediction for reservoir slopes, effectively bridging predictive performance with mechanistic understanding and offering actionable insights for landslide early warning and risk management.",
+      "citationCount": 0,
+      "doi": "10.3390/w17223248",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cfb00bd03bdbc4c2dbb9e7893ec1a69bf593d638",
+      "venue": "Water",
+      "journal": {
+        "name": "Water"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "300e8cfd42bbabf1f23a98272604a525f807f116",
+      "title": "Quantifying Attribution-based Explainable AI for Robustness Evaluations",
+      "authors": [
+        {
+          "name": "Leo Wilms",
+          "authorId": "2224730364"
+        },
+        {
+          "name": "Arndt von Twickel",
+          "authorId": "2908838"
+        },
+        {
+          "name": "Matthias Neu",
+          "authorId": "2066065768"
+        },
+        {
+          "name": "Christian Berghoff",
+          "authorId": "103220106"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11623-023-1805-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/300e8cfd42bbabf1f23a98272604a525f807f116",
+      "venue": "Datenschutz und Datensicherheit - DuD",
+      "journal": {
+        "name": "Datenschutz und Datensicherheit - DuD",
+        "pages": "492 - 496",
+        "volume": "47"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7cfaec8004c6d9f4fb5cf10287d15513c35b0a63",
+      "title": "Towards Safer Generative Language Models: A Survey on Safety Risks, Evaluations, and Improvements",
+      "authors": [
+        {
+          "name": "Jiawen Deng",
+          "authorId": "2090444914"
+        },
+        {
+          "name": "Hao Sun",
+          "authorId": "144990601"
+        },
+        {
+          "name": "Zhexin Zhang",
+          "authorId": "101371510"
+        },
+        {
+          "name": "Jiale Cheng",
+          "authorId": "2109077637"
+        },
+        {
+          "name": "Minlie Huang",
+          "authorId": "2196817617"
+        }
+      ],
+      "year": 2023,
+      "abstract": "As generative large model capabilities advance, safety concerns become more pronounced in their outputs. To ensure the sustainable growth of the AI ecosystem, it's imperative to undertake a holistic evaluation and refinement of associated safety risks. This survey presents a framework for safety research pertaining to large models, delineating the landscape of safety risks as well as safety evaluation and improvement methods. We begin by introducing safety issues of wide concern, then delve into safety evaluation methods for large models, encompassing preference-based testing, adversarial attack approaches, issues detection, and other advanced evaluation methods. Additionally, we explore the strategies for enhancing large model safety from training to deployment, highlighting cutting-edge safety approaches for each stage in building large models. Finally, we discuss the core challenges in advancing towards more responsible AI, including the interpretability of safety mechanisms, ongoing safety issues, and robustness against malicious attacks. Through this survey, we aim to provide clear technical guidance for safety researchers and encourage further study on the safety of large models.",
+      "citationCount": 22,
+      "doi": null,
+      "arxivId": "2302.09270",
+      "url": "https://www.semanticscholar.org/paper/7cfaec8004c6d9f4fb5cf10287d15513c35b0a63",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "fcd65e4387fe8a49a11fb818e5cb8994b87da757",
+      "title": "X-Boundary: Establishing Exact Safety Boundary to Shield LLMs from Multi-Turn Jailbreaks without Compromising Usability",
+      "authors": [
+        {
+          "name": "Xiaoya Lu",
+          "authorId": "2293761661"
+        },
+        {
+          "name": "Dongrui Liu",
+          "authorId": "2289139082"
+        },
+        {
+          "name": "Yi Yu",
+          "authorId": "2346441401"
+        },
+        {
+          "name": "Luxin Xu",
+          "authorId": "2345758134"
+        },
+        {
+          "name": "Jing Shao",
+          "authorId": "2326115911"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Despite the rapid development of safety alignment techniques for LLMs, defending against multi-turn jailbreaks is still a challenging task. In this paper, we conduct a comprehensive comparison, revealing that some existing defense methods can improve the robustness of LLMs against multi-turn jailbreaks but compromise usability, i.e., reducing general capabilities or causing the over-refusal problem. From the perspective of mechanism interpretability of LLMs, we discover that these methods fail to establish a boundary that exactly distinguishes safe and harmful feature representations. Therefore, boundary-safe representations close to harmful representations are inevitably disrupted, leading to a decline in usability. To address this issue, we propose X-Boundary to push harmful representations away from boundary-safe representations and obtain an exact distinction boundary. In this way, harmful representations can be precisely erased without disrupting safe ones. Experimental results show that X-Boundary achieves state-of-the-art defense performance against multi-turn jailbreaks, while reducing the over-refusal rate by about 20% and maintaining nearly complete general capability. Furthermore, we theoretically prove and empirically verify that X-Boundary can accelerate the convergence process during training. Please see our code at: https://github.com/AI45Lab/X-Boundary.",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2502.09990",
+      "arxivId": "2502.09990",
+      "url": "https://www.semanticscholar.org/paper/fcd65e4387fe8a49a11fb818e5cb8994b87da757",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.09990"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ce8fd5f05ebe5bc0ca325c8c8a7b5133a6834eb5",
+      "title": "AI safety for everyone",
+      "authors": [
+        {
+          "name": "Balint Gyevnar",
+          "authorId": "2007920131"
+        },
+        {
+          "name": "Atoosa Kasirzadeh",
+          "authorId": "51880633"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent discussions and research in artificial intelligence (AI) safety have increasingly emphasized the deep connection between AI safety and existential risk from advanced AI systems, suggesting that work on AI safety necessarily entails serious consideration of potential existential threats. However, this framing has three potential drawbacks: it may exclude researchers and practitioners who are committed to AI safety but approach the field from different angles; it could lead the public to mistakenly view AI safety as focused solely on existential scenarios rather than addressing a wide spectrum of safety challenges; and it risks creating resistance to safety measures among those who disagree with predictions of existential AI risks. Here, through a systematic literature review of primarily peer-reviewed research, we find a vast array of concrete safety work that addresses immediate and practical concerns with current AI systems. This includes crucial areas such as adversarial robustness and interpretability, highlighting how AI safety research naturally extends existing technological and systems safety concerns and practices. Our findings suggest the need for an epistemically inclusive and pluralistic conception of AI safety that can accommodate the full range of safety considerations, motivations and perspectives that currently shape the field. A systematic review of peer-reviewed AI safety research reveals extensive work on practical and immediate concerns. The findings advocate for an inclusive approach to AI safety that embraces diverse motivations and perspectives.",
+      "citationCount": 11,
+      "doi": "10.1038/s42256-025-01020-y",
+      "arxivId": "2502.09288",
+      "url": "https://www.semanticscholar.org/paper/ce8fd5f05ebe5bc0ca325c8c8a7b5133a6834eb5",
+      "venue": "Nature Machine Intelligence",
+      "journal": {
+        "name": "Nature Machine Intelligence",
+        "pages": "531 - 542",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8f6bebb47d6779cc2777353a2850a916d1cba055",
+      "title": "Physics-Informed Surrogate Modelling in Fire Safety Engineering: A Systematic Review",
+      "authors": [
+        {
+          "name": "R. Yarmohammadian",
+          "authorId": "2368004343"
+        },
+        {
+          "name": "Florian Put",
+          "authorId": "2283069500"
+        },
+        {
+          "name": "Ruben Van Coile",
+          "authorId": "147984603"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Surrogate modelling is increasingly used in engineering to improve computational efficiency in complex simulations. However, traditional data-driven surrogate models often face limitations in generalizability, physical consistency, and extrapolation\u2014issues that are especially critical in safety-sensitive fields such as fire safety engineering (FSE). To address these concerns, physics-informed surrogate modelling (PISM) integrates physical laws into machine learning models, enhancing their accuracy, robustness, and interpretability. This systematic review synthesises existing applications of PISM in FSE, classifies the strategies used to embed physical knowledge, and outlines key research challenges. A comprehensive search was conducted across Google Scholar, ResearchGate, ScienceDirect, and arXiv up to May 2025, supported by backward and forward snowballing. Studies were screened against predefined criteria, and relevant data were analysed through narrative synthesis. A total of 100 studies were included, covering five core FSE domains: fire dynamics, wildfire behaviour, structural fire engineering, material response, and heat transfer. Four main strategies for embedding physics into machine learning were identified: feature engineering techniques (FETs), loss-constrained techniques (LCTs), architecture-constrained techniques (ACTs), and offline-constrained techniques (OCTs). While LCT and ACT offer strict enforcement of physical laws, hybrid approaches combining multiple strategies often produce better results. A stepwise framework is proposed to guide the development of PISM in FSE, aiming to balance computational efficiency with physical realism. Common challenges include handling nonlinear behaviour, improving data efficiency, quantifying uncertainty, and supporting multi-physics integration. Still, PISM shows strong potential to improve the reliability and transparency of machine learning in fire safety applications.",
+      "citationCount": 2,
+      "doi": "10.3390/app15158740",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8f6bebb47d6779cc2777353a2850a916d1cba055",
+      "venue": "Applied Sciences",
+      "journal": {
+        "name": "Applied Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "6c66239b174b13dc41cda1635a43e572df95dc20",
+      "title": "Proactive Failure Prediction in Train Air Production Units Using XGBoost for Enhanced Safety",
+      "authors": [
+        {
+          "name": "Lydia Yahiaoui",
+          "authorId": "2369626264"
+        },
+        {
+          "name": "Anouar Aggoune",
+          "authorId": "2369625293"
+        },
+        {
+          "name": "Khalil Amrani",
+          "authorId": "2369637488"
+        },
+        {
+          "name": "Mohamed Mohammedi",
+          "authorId": "2268561901"
+        },
+        {
+          "name": "Khaled Hamouid",
+          "authorId": "2291904804"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The growing complexity of autonomous railway systems poses significant challenges for predictive maintenance, often resulting in unexpected failures, increased costs, and safety risks. This study proposes an advanced method utilizing the XGBoost algorithm to detect failures early in train air production units (APUs). By integrating sophisticated feature engineering with robust machine learning, the proposed method identifies anomalies up to three days in advance, enabling proactive maintenance interventions. An integrated SHAP analysis clarifies the model\u2019s decision-making process, enhancing interpretability and fostering trust in predictions. Experimental evaluations demonstrate exceptional performance, achieving precision, recall, and F1-Score of 99.95%. The model\u2019s robustness is validated by a Mean Cross-Validation Accuracy of 99.95% (\u00b10.003%) and a Test Set Accuracy of 99.95%, surpassing prior studies. These findings highlight the proposed method\u2019s potential to significantly enhance the safety, resilience, and efficiency of autonomous railway systems.",
+      "citationCount": 0,
+      "doi": "10.1109/IWCMC65282.2025.11059524",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6c66239b174b13dc41cda1635a43e572df95dc20",
+      "venue": "International Conference on Wireless Communications and Mobile Computing",
+      "journal": {
+        "name": "2025 International Wireless Communications and Mobile Computing (IWCMC)",
+        "pages": "155-160"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bd3e045c03d6b6acd4fb0a17d3793dc7848ac9c5",
+      "title": "ConceptGuard: Neuro-Symbolic Safety Guardrails via Sparse Interpretable Jailbreak Concepts",
+      "authors": [
+        {
+          "name": "Darpan Aswal",
+          "authorId": "2346109056"
+        },
+        {
+          "name": "C'eline Hudelot",
+          "authorId": "2376502958"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models have found success in a variety of applications. However, their safety remains a concern due to the existence of various jailbreaking methods. Despite significant efforts, alignment and safety fine-tuning only provide a certain degree of robustness against jailbreak attacks that covertly mislead LLMs towards the generation of harmful content. This leaves them prone to a range of vulnerabilities, including targeted misuse and accidental user profiling. This work introduces \\textbf{ConceptGuard}, a novel framework that leverages Sparse Autoencoders (SAEs) to identify interpretable concepts within LLM internals associated with different jailbreak themes. By extracting semantically meaningful internal representations, ConceptGuard enables building robust safety guardrails -- offering fully explainable and generalizable defenses without sacrificing model capabilities or requiring further fine-tuning. Leveraging advances in the mechanistic interpretability of LLMs, our approach provides evidence for a shared activation geometry for jailbreak attacks in the representation space, a potential foundation for designing more interpretable and generalizable safeguards against attackers.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2508.16325",
+      "url": "https://www.semanticscholar.org/paper/bd3e045c03d6b6acd4fb0a17d3793dc7848ac9c5",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "105716739d5b198316cd75bdaec775a904fcdda5",
+      "title": "TriGuard: Testing Model Safety with Attribution Entropy, Verification, and Drift",
+      "authors": [
+        {
+          "name": "Dipesh Mahato",
+          "authorId": "2268066654"
+        },
+        {
+          "name": "Rohan Poudel",
+          "authorId": "2367276657"
+        },
+        {
+          "name": "Pramod Dhungana",
+          "authorId": "95044422"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deep neural networks often achieve high accuracy, but ensuring their reliability under adversarial and distributional shifts remains a pressing challenge. We propose TriGuard, a unified safety evaluation framework that combines (1) formal robustness verification, (2) attribution entropy to quantify saliency concentration, and (3) a novel Attribution Drift Score measuring explanation stability. TriGuard reveals critical mismatches between model accuracy and interpretability: verified models can still exhibit unstable reasoning, and attribution-based signals provide complementary safety insights beyond adversarial accuracy. Extensive experiments across three datasets and five architectures show how TriGuard uncovers subtle fragilities in neural reasoning. We further demonstrate that entropy-regularized training reduces explanation drift without sacrificing performance. TriGuard advances the frontier in robust, interpretable model evaluation.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.14217",
+      "arxivId": "2506.14217",
+      "url": "https://www.semanticscholar.org/paper/105716739d5b198316cd75bdaec775a904fcdda5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.14217"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "28cda62a597537d11b0c8df83d7d4a3ed8752781",
+      "title": "Open Opportunities in AI Safety, Alignment, and Ethics (AI SAE)",
+      "authors": [
+        {
+          "name": "Dylan Waldner",
+          "authorId": "2344749578"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.24065",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/28cda62a597537d11b0c8df83d7d4a3ed8752781",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.24065"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "80889bd3267d722849dd1b5ee0aaada598226d10",
+      "title": "Foundation Models as Guardrails: LLM-and VLM-Based Approaches to Safety and Alignment",
+      "authors": [
+        {
+          "name": "Huy H. Nguyen",
+          "authorId": "2395233315"
+        },
+        {
+          "name": "Pride Kavumba",
+          "authorId": "1399133648"
+        },
+        {
+          "name": "Tomoya Kurosawa",
+          "authorId": "2395007116"
+        },
+        {
+          "name": "Koki Wataoka",
+          "authorId": "2394997348"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The growing deployment of large language models (LLMs) and vision-language models (VLMs) raises urgent concerns about safety and alignment. While alignment techniques such as supervised fine-tuning (SFT) and reinforcement learning from human feedback (RLHF) improve model behavior, they are not sufficient to prevent harmful outputs. This paper reviews recent approaches that use foundation models themselves as guardrails systems that monitor or filter inputs and outputs for safety. We cover LLM-based moderation, neural classifiers, and multimodal safety filters, highlighting both academic advances and industry tools. We also discuss empirical evaluation methods such as red teaming and adversarial prompting. Finally, we outline open challenges in robustness, interpretability, and policy adaptation, pointing to key directions for building trustworthy guardrails for generative AI.",
+      "citationCount": 0,
+      "doi": "10.1109/APSIPAASC65261.2025.11249402",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/80889bd3267d722849dd1b5ee0aaada598226d10",
+      "venue": "Asia-Pacific Signal and Information Processing Association Annual Summit and Conference",
+      "journal": {
+        "name": "2025 Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC)",
+        "pages": "2564-2569"
+      },
+      "publicationTypes": [
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1560c6692680433df35346336044bdaf2b335c12",
+      "title": "Safety evaluation of customized equipment for information and communication mobile dispatch based on fuzzy logic optimization",
+      "authors": [
+        {
+          "name": "Zichen Wu",
+          "authorId": "2294382299"
+        },
+        {
+          "name": "Yicheng Wang",
+          "authorId": "2294390657"
+        },
+        {
+          "name": "Bin Gu",
+          "authorId": "2294470563"
+        },
+        {
+          "name": "Yunxiang Zhang",
+          "authorId": "2322452311"
+        },
+        {
+          "name": "Hao Hu",
+          "authorId": "2335855242"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper proposes an optimized fuzzy logic\u2013based security assessment model for customized information and communication mobility dispatch equipment. The research focuses on improving adaptability, interpretability, and computational efficiency in complex operational environments. The model integrates a cloud-model-based fuzzification process, an adaptive fuzzy rule reasoning mechanism, and a dual-layer interpretability enhancement module. Through experiments on the CIC-IDS-2017 dataset, the model achieves 92.3% accuracy with stable robustness under noise and variable loads. Statistical significance analysis (p < 0.001) confirms that the performance gains are non-random. The study also evaluates computational efficiency, reaching a throughput of 235 samples per second, and compares the results with several state-of-the-art models including neural networks and decision tree algorithms. Furthermore, limitations related to dataset representativeness are analyzed, and future research directions are proposed to expand validation using industrial-scale data. Overall, this work establishes a robust, interpretable, and efficient framework for security evaluation in information and communication systems, demonstrating clear practical and theoretical contributions.",
+      "citationCount": 0,
+      "doi": "10.1088/2631-8695/ae2191",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1560c6692680433df35346336044bdaf2b335c12",
+      "venue": "Engineering Research Express",
+      "journal": {
+        "name": "Engineering Research Express",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "509d4c6778baf9d42abd86e56be69488804ddeda",
+      "title": "Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)",
+      "authors": [
+        {
+          "name": "K. Kenthapadi",
+          "authorId": "1769861"
+        },
+        {
+          "name": "M. Sameki",
+          "authorId": "2128305"
+        },
+        {
+          "name": "Ankur Taly",
+          "authorId": "40511120"
+        }
+      ],
+      "year": 2024,
+      "abstract": "With the ongoing rapid adoption of Artificial Intelligence (AI)-based systems in high-stakes domains, ensuring the trustworthiness, safety, and observability of these systems has become crucial. It is essential to evaluate and monitor AI systems not only for accuracy and quality-related metrics but also for robustness, bias, security, interpretability, and other responsible AI dimensions. We focus on large language models (LLMs) and other generative AI models, which present additional challenges such as hallucinations, harmful and manipulative content, and copyright infringement. In this survey article accompanying our tutorial, we highlight a wide range of harms associated with generative AI systems, and survey state of the art approaches (along with open challenges) to address these harms.",
+      "citationCount": 28,
+      "doi": "10.1145/3637528.3671467",
+      "arxivId": "2407.12858",
+      "url": "https://www.semanticscholar.org/paper/509d4c6778baf9d42abd86e56be69488804ddeda",
+      "venue": "Knowledge Discovery and Data Mining",
+      "journal": {
+        "name": "Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "cacb915b877bc9fa51a71d54a6399e805478fe96",
+      "title": "Deep-Learning-Based Lithium Battery Defect Detection via Cross-Domain Generalization",
+      "authors": [
+        {
+          "name": "Xuhesheng Chen",
+          "authorId": "2277747465"
+        },
+        {
+          "name": "Mingyue Liu",
+          "authorId": "2304651335"
+        },
+        {
+          "name": "Yongjie Niu",
+          "authorId": "2304926530"
+        },
+        {
+          "name": "Xukang Wang",
+          "authorId": "2244240468"
+        },
+        {
+          "name": "Ying Cheng Wu",
+          "authorId": "2305175748"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This research addresses the critical challenge of classifying surface defects in lithium electronic components, crucial for ensuring the reliability and safety of lithium batteries. With a scarcity of specific defect data, we introduce an innovative Cross-Domain Generalization (CDG) approach, incorporating Cross-domain Augmentation, Multi-task Learning, and Iteration Learning. Leveraging a steel surface defect dataset as foundational knowledge, our approach compensates for the limited lithium-specific data and enhances model generalization. We also introduce the Lithium Electronic Surface Defect Classification (IESDC) dataset, demonstrating significant accuracy improvements over baseline methods. Our comprehensive evaluation covers model interpretability, robustness, and adaptability. Beyond battery technology, this methodology offers a framework for data scarcity challenges in various industries, emphasizing the importance of adaptable learning methods.",
+      "citationCount": 26,
+      "doi": "10.1109/ACCESS.2024.3408718",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cacb915b877bc9fa51a71d54a6399e805478fe96",
+      "venue": "IEEE Access",
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "78505-78514",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a929afcf3c78db99d73a5532926ff2484514d037",
+      "title": "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents",
+      "authors": [
+        {
+          "name": "Haoyu Wang",
+          "authorId": "2298938382"
+        },
+        {
+          "name": "Christopher M. Poskitt",
+          "authorId": "1717595"
+        },
+        {
+          "name": "Jun Sun",
+          "authorId": "2321600541"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Agents built on LLMs are increasingly deployed across diverse domains, automating complex decision-making and task execution. However, their autonomy introduces safety risks, including security vulnerabilities, legal violations, and unintended harmful actions. Existing mitigation methods, such as model-based safeguards and early enforcement strategies, fall short in robustness, interpretability, and adaptability. To address these challenges, we propose AgentSpec, a lightweight domain-specific language for specifying and enforcing runtime constraints on LLM agents. With AgentSpec, users define structured rules that incorporate triggers, predicates, and enforcement mechanisms, ensuring agents operate within predefined safety boundaries. We implement AgentSpec across multiple domains, including code execution, embodied agents, and autonomous driving, demonstrating its adaptability and effectiveness. Our evaluation shows that AgentSpec successfully prevents unsafe executions in over 90% of code agent cases, eliminates all hazardous actions in embodied agent tasks, and enforces 100% compliance by autonomous vehicles (AVs). Despite its strong safety guarantees, AgentSpec remains computationally lightweight, with overheads in milliseconds. By combining interpretability, modularity, and efficiency, AgentSpec provides a practical and scalable solution for enforcing LLM agent safety across diverse applications. We also automate the generation of rules using LLMs and assess their effectiveness. Our evaluation shows that the rules generated by OpenAI o1 achieve a precision of 95.56% and recall of 70.96% for embodied agents, successfully identify 87.26% of the risky code, and prevent AVs from breaking laws in 5 out of 8 scenarios.",
+      "citationCount": 15,
+      "doi": "10.48550/arXiv.2503.18666",
+      "arxivId": "2503.18666",
+      "url": "https://www.semanticscholar.org/paper/a929afcf3c78db99d73a5532926ff2484514d037",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.18666"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "de50f7e36b9013a9ffa321c156ce129309722de8",
+      "title": "Can LVLMs Obtain a Driver's License? A Benchmark Towards Reliable AGI for Autonomous Driving",
+      "authors": [
+        {
+          "name": "Yuhang Lu",
+          "authorId": "2271985590"
+        },
+        {
+          "name": "Yichen Yao",
+          "authorId": "2285100599"
+        },
+        {
+          "name": "Jiadong Tu",
+          "authorId": "2268758926"
+        },
+        {
+          "name": "Jiangnan Shao",
+          "authorId": "2319634505"
+        },
+        {
+          "name": "Yuexin Ma",
+          "authorId": "2316329530"
+        },
+        {
+          "name": "Xinge Zhu",
+          "authorId": "2292305124"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Vision-Language Models (LVLMs) have recently garnered significant attention, with many efforts aimed at harnessing their general knowledge to enhance the interpretability and robustness of autonomous driving models. However, LVLMs typically rely on large, general-purpose datasets and lack the specialized expertise required for professional and safe driving. Existing vision-language driving datasets focus primarily on scene understanding and decision-making, without providing explicit guidance on traffic rules and driving skills, which are critical aspects directly related to driving safety. To bridge this gap, we propose IDKB, a large-scale dataset containing over one million data items collected from various countries, including driving handbooks, theory test data, and simulated road test data. Much like the process of obtaining a driver's license, IDKB encompasses nearly all the explicit knowledge needed for driving from theory to practice. In particular, we conducted comprehensive tests on 15 LVLMs using IDKB to assess their reliability in the context of autonomous driving and provided extensive analysis. We also fine-tuned popular models, achieving notable performance improvements, which further validate the significance of our dataset.",
+      "citationCount": 17,
+      "doi": "10.48550/arXiv.2409.02914",
+      "arxivId": "2409.02914",
+      "url": "https://www.semanticscholar.org/paper/de50f7e36b9013a9ffa321c156ce129309722de8",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "5838-5846"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "042deff1b1011d3734ac6f1bef35c55e2f22e440",
+      "title": "A Survey of Reinforcement Learning for Optimization in Automation",
+      "authors": [
+        {
+          "name": "Ahmad Farooq",
+          "authorId": "2327237780"
+        },
+        {
+          "name": "K. Iqbal",
+          "authorId": "48177129"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Reinforcement Learning (RL) has become a critical tool for optimization challenges within automation, leading to significant advancements in several areas. This review article examines the present landscape of RL within automation, with a particular focus on its roles in manufacturing, energy systems, and robotics. It delves into state-of-the-art methods, major challenges, and upcoming avenues of research within each sector, highlighting RL\u2019s capacity to solve intricate optimization challenges. The paper reviews the advantages and constraints of RL-driven optimization methods in automation. It points out prevalent challenges encountered in RL optimization, including issues related to sample efficiency and scalability; safety and robustness; interpretability and trustworthiness; transfer learning and meta-learning; and real-world deployment and integration. It further explores prospective strategies and future research pathways to navigate these challenges. Additionally, the survey includes an comprehensive list of relevant research papers, making it an indispensable guide for scholars and practitioners keen on exploring this domain.",
+      "citationCount": 13,
+      "doi": "10.1109/CASE59546.2024.10711718",
+      "arxivId": "2502.09417",
+      "url": "https://www.semanticscholar.org/paper/042deff1b1011d3734ac6f1bef35c55e2f22e440",
+      "venue": "2024 IEEE 20th International Conference on Automation Science and Engineering (CASE)",
+      "journal": {
+        "name": "2024 IEEE 20th International Conference on Automation Science and Engineering (CASE)",
+        "pages": "2487-2494"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "502f7f76b3b01741b9c2e5184595e3546ef0b746",
+      "title": "Context-based Interpretable Spatio-Temporal Graph Convolutional Network for Human Motion Forecasting",
+      "authors": [
+        {
+          "name": "Edgar Medina",
+          "authorId": "2288267156"
+        },
+        {
+          "name": "Leyong Loh",
+          "authorId": "2288269959"
+        },
+        {
+          "name": "Namrata Gurung",
+          "authorId": "2089771780"
+        },
+        {
+          "name": "Kyung Hun Oh",
+          "authorId": "2288172520"
+        },
+        {
+          "name": "Niels Heller",
+          "authorId": "2288266711"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Human motion prediction is still an open problem extremely important for autonomous driving and safety applications. Due to the complex spatiotemporal relation of motion sequences, this remains a challenging problem not only for movement prediction but also to perform a preliminary interpretation of the joint connections. In this work, we present a Context-based Interpretable Spatio-Temporal Graph Convolutional Network (CIST-GCN), as an efficient 3D human pose forecasting model based on GCNs that encompasses specific layers, aiding model interpretability and providing information that might be useful when analyzing motion distribution and body behavior. Our architecture extracts meaningful information from pose sequences, aggregates displacements and accelerations into the input model, and finally predicts the output displacements. Extensive experiments on Human 3.6M, AMASS, 3DPW, and ExPI datasets demonstrate that CIST-GCN outperforms previous methods in human motion prediction and robustness. Since the idea of enhancing interpretability for motion prediction has its merits, we showcase experiments towards it and provide preliminary evaluations of such insights here.1",
+      "citationCount": 13,
+      "doi": "10.1109/WACV57701.2024.00320",
+      "arxivId": "2402.19237",
+      "url": "https://www.semanticscholar.org/paper/502f7f76b3b01741b9c2e5184595e3546ef0b746",
+      "venue": "IEEE Workshop/Winter Conference on Applications of Computer Vision",
+      "journal": {
+        "name": "2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+        "pages": "3220-3229"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "fdbca3a9138540d4394518a243871a2b513d8abb",
+      "title": "Automated seismic event detection considering faulty data interference using deep learning and Bayesian fusion",
+      "authors": [
+        {
+          "name": "Zhiyi Tang",
+          "authorId": "2281423061"
+        },
+        {
+          "name": "Jiaxing Guo",
+          "authorId": "2332522180"
+        },
+        {
+          "name": "Yinhao Wang",
+          "authorId": "2332287293"
+        },
+        {
+          "name": "Wei Xu",
+          "authorId": "2216441375"
+        },
+        {
+          "name": "Yuequan Bao",
+          "authorId": "2253453306"
+        },
+        {
+          "name": "Jingran He",
+          "authorId": "2332079935"
+        },
+        {
+          "name": "Youqi Zhang",
+          "authorId": "2331977656"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Structural health monitoring (SHM) aims to assess civil infrastructures' performance and ensure safety. Automated detection of in situ events of interest, such as earthquakes, from extensive continuous monitoring data, is important to ensure the timeliness of subsequent data analysis. To overcome the poor timeliness of manual identification and the inconsistency of sensors, this paper proposes an automated seismic event detection procedure with interpretability and robustness. The sensor\u2010wise raw time series is transformed into image data, enhancing the separability of classification while endowing with visual understandability. Vision Transformers (ViTs) and Residual Networks (ResNets) aided by a heat map\u2013based visual interpretation technique are used for image classification. Multitype faulty data that could disturb the seismic event detection are considered in the classification. Then, divergent results from multiple sensors are fused by Bayesian fusion, outputting a consistent seismic detection result. A real\u2010world monitoring data set of four seismic responses of a pair of long\u2010span bridges is used for method validation. At the classification stage, ResNet 34 achieved the best accuracy of over 90% with minimal training cost. After Bayesian fusion, globally consistent and accurate seismic detection results can be obtained using a ResNet or ViT. The proposed approach effectively localizes seismic events within multisource, multifault monitoring data, achieving automated and consistent seismic event detection.",
+      "citationCount": 13,
+      "doi": "10.1111/mice.13377",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fdbca3a9138540d4394518a243871a2b513d8abb",
+      "venue": "Computer-Aided Civil and Infrastructure Engineering",
+      "journal": {
+        "name": "Computer\u2010Aided Civil and Infrastructure Engineering",
+        "pages": "1910 - 1931",
+        "volume": "40"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d34ce232efa32530e3e6663e7ff89a66f27cb0f4",
+      "title": "A Novel Altitude Measurement Channel Reconstruction Method Based on Symbolic Regression and Information Fusion",
+      "authors": [
+        {
+          "name": "Jie Zhong",
+          "authorId": "2332323198"
+        },
+        {
+          "name": "Heng Zhang",
+          "authorId": "2153526504"
+        },
+        {
+          "name": "Qiang Miao",
+          "authorId": "2265013094"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Accurate altitude data are imperative for precise aircraft flight control, navigation planning, and air traffic management, especially in global positioning system (GPS)-denied environments. While deep learning methods offer promising solutions for altitude prediction through complex predictive models, their inherent lack of interpretability raises safety concerns, particularly in safety-critical aviation contexts. This article introduces a novel symbolic regression (SR)-based approach to altitude prediction. Initially, raw data undergo random projection (RP) to a feature space, addressing challenges associated with feature extraction in SR. Subsequently, altitude-related information is discerned from the inertial navigation system (INS) and atmospheric system (AS), employing genetic programming (GP) to formulate fully interpretable altitude prediction equations. To enhance robustness, information fusion (IF) technology integrates the prediction equations with vertical velocity, establishing a resilient virtual altitude channel. In scenarios where the GPS is entirely unavailable, our proposed method undergoes effective validation across diverse aircraft types and under various flight conditions. Furthermore, the robustness of our fusion algorithm is verified across different noise levels, underscoring its reliability in challenging conditions.",
+      "citationCount": 7,
+      "doi": "10.1109/TIM.2024.3502815",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d34ce232efa32530e3e6663e7ff89a66f27cb0f4",
+      "venue": "IEEE Transactions on Instrumentation and Measurement",
+      "journal": {
+        "name": "IEEE Transactions on Instrumentation and Measurement",
+        "pages": "1-12",
+        "volume": "74"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2a17e6809266abb13c52547dbd25529f334f7e79",
+      "title": "Improving Harmful Text Detection with Joint Retrieval and External Knowledge",
+      "authors": [
+        {
+          "name": "Zidong Yu",
+          "authorId": "2344186706"
+        },
+        {
+          "name": "Shuodi Wang",
+          "authorId": "2221040648"
+        },
+        {
+          "name": "Nan Jiang",
+          "authorId": "2353391456"
+        },
+        {
+          "name": "Weiqiang Huang",
+          "authorId": "2353567697"
+        },
+        {
+          "name": "Xu Han",
+          "authorId": "2353514532"
+        },
+        {
+          "name": "Junliang Du",
+          "authorId": "2353559334"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Harmful text detection has become a crucial task in the development and deployment of large language models, especially as AI-generated content continues to expand across digital platforms. This study proposes a joint retrieval framework that integrates pre-trained language models with knowledge graphs to improve the accuracy and robustness of harmful text detection. Experimental results demonstrate that the joint retrieval approach significantly outperforms single-model baselines, particularly in low-resource training scenarios and multilingual environments. The proposed method effectively captures nuanced harmful content by leveraging external contextual information, addressing the limitations of traditional detection models. Future research should focus on optimizing computational efficiency, enhancing model interpretability, and expanding multimodal detection capabilities to better tackle evolving harmful content patterns. This work contributes to the advancement of AI safety, ensuring more trustworthy and reliable content moderation systems.",
+      "citationCount": 7,
+      "doi": "10.1109/AINIT65432.2025.11035218",
+      "arxivId": "2504.02310",
+      "url": "https://www.semanticscholar.org/paper/2a17e6809266abb13c52547dbd25529f334f7e79",
+      "venue": "2025 IEEE 6th International Seminar on Artificial Intelligence, Networking and Information Technology (AINIT)",
+      "journal": {
+        "name": "2025 IEEE 6th International Seminar on Artificial Intelligence, Networking and Information Technology (AINIT)",
+        "pages": "1950-1954"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "aacdf3f94bfb3aace878c75deb1a33759d3b8a22",
+      "title": "Harnessing Metacognition for Safe and Responsible AI",
+      "authors": [
+        {
+          "name": "Peter B. Walker",
+          "authorId": "2349009378"
+        },
+        {
+          "name": "Jonathan J. Haase",
+          "authorId": "2267649709"
+        },
+        {
+          "name": "Melissa L. Mehalick",
+          "authorId": "5163978"
+        },
+        {
+          "name": "Christopher T. Steele",
+          "authorId": "2348968075"
+        },
+        {
+          "name": "Dale W. Russell",
+          "authorId": "2167367781"
+        },
+        {
+          "name": "Ian N. Davidson",
+          "authorId": "2348962322"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancement of artificial intelligence (AI) technologies has transformed various sectors, significantly enhancing processes and augmenting human capabilities. However, these advancements have also introduced critical concerns related to the safety, ethics, and responsibility of AI systems. To address these challenges, the principles of the robustness, interpretability, controllability, and ethical alignment framework are essential. This paper explores the integration of metacognition\u2014defined as \u201cthinking about thinking\u201d\u2014into AI systems as a promising approach to meeting these requirements. Metacognition enables AI systems to monitor, control, and regulate the system\u2019s cognitive processes, thereby enhancing their ability to self-assess, correct errors, and adapt to changing environments. By embedding metacognitive processes within AI, this paper proposes a framework that enhances the transparency, accountability, and adaptability of AI systems, fostering trust and mitigating risks associated with autonomous decision-making. Additionally, the paper examines the current state of AI safety and responsibility, discusses the applicability of metacognition to AI, and outlines a mathematical framework for incorporating metacognitive strategies into active learning processes. The findings aim to contribute to the development of safe, responsible, and ethically aligned AI systems.",
+      "citationCount": 7,
+      "doi": "10.3390/technologies13030107",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aacdf3f94bfb3aace878c75deb1a33759d3b8a22",
+      "venue": "Technologies",
+      "journal": {
+        "name": "Technologies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "28d16b71e154cb59f394b4c6fe2fbd823a2192eb",
+      "title": "The ethical evaluation of large language models and its optimization",
+      "authors": [
+        {
+          "name": "Yujing Lyu",
+          "authorId": "2339815941"
+        },
+        {
+          "name": "Yanyong Du",
+          "authorId": "2339981830"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/s43681-024-00654-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/28d16b71e154cb59f394b4c6fe2fbd823a2192eb",
+      "venue": "AI and Ethics",
+      "journal": {
+        "name": "AI and Ethics",
+        "pages": "4579 - 4592",
+        "volume": "5"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c597941bf6d2b52f45d78291b65d29e1405884bb",
+      "title": "An Interpretable Image Denoising Framework via Dual Disentangled Representation Learning",
+      "authors": [
+        {
+          "name": "Yunji Liang",
+          "authorId": "1710232"
+        },
+        {
+          "name": "Jiayuan Fan",
+          "authorId": "2266716843"
+        },
+        {
+          "name": "Xiaolong Zheng",
+          "authorId": "2157999082"
+        },
+        {
+          "name": "Yutong Wang",
+          "authorId": "2108070100"
+        },
+        {
+          "name": "Luwen Huangfu",
+          "authorId": "2715342"
+        },
+        {
+          "name": "Vedant Ghavate",
+          "authorId": "1750892311"
+        },
+        {
+          "name": "Zhiwen Yu",
+          "authorId": "2266654213"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Various unfavourable conditions such as fog, snow and rain may degrade image quality and pose tremendous threats to the safety of autonomous driving. Numerous image-denoising solutions have been proposed to improve visibility under adverse weather conditions. However, previous studies have been limited in robustness, generalization ability, and interpretability as they were designed for specific scenarios. To address this problem, we introduce an interpretable image denoising framework via Dual Disentangled Representation Learning (DDRL) to enhance robustness and interpretability by decomposing an image into content factors (e.g., objects) and context factors (e.g., weather conditions). DDRL consists of two Disentangled Representation Learning (DRL) blocks. In each DRL block, an input image is deconstructed into the latent content distribution and the weather distribution by minimizing their mutual information. To mitigate the impacts of weather styles, we incorporated a content discriminator and adversarial objectives to learn the decomposable interaction between two DRL blocks. Furthermore, we standardized the weather feature space, enabling our method to be applicable to various downstream tasks such as diverse degraded image generation. We evaluated DDRL under three weather conditions including fog, rain, and snow. The experimental results demonstrate that DDRL shows competitive performance with good generalization capability and high robustness under numerous weather conditions. Furthermore, quantitative analysis shows that DDRL can capture interpretable variations of weather factors and decompose them for safe and reliable all-weather autonomous driving.",
+      "citationCount": 9,
+      "doi": "10.1109/TIV.2023.3331017",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c597941bf6d2b52f45d78291b65d29e1405884bb",
+      "venue": "IEEE Transactions on Intelligent Vehicles",
+      "journal": {
+        "name": "IEEE Transactions on Intelligent Vehicles",
+        "pages": "2016-2030",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8bbe791688f7c738b1487937b969605bed9c881c",
+      "title": "From Texts to Shields: Convergence of Large Language Models and Cybersecurity",
+      "authors": [
+        {
+          "name": "Tao Li",
+          "authorId": "1876824505"
+        },
+        {
+          "name": "Ya-Ting Yang",
+          "authorId": "2253790344"
+        },
+        {
+          "name": "Yunian Pan",
+          "authorId": "2044590502"
+        },
+        {
+          "name": "Quanyan Zhu",
+          "authorId": "2238232076"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This report explores the convergence of large language models (LLMs) and cybersecurity, synthesizing interdisciplinary insights from network security, artificial intelligence, formal methods, and human-centered design. It examines emerging applications of LLMs in software and network security, 5G vulnerability analysis, and generative security engineering. The report highlights the role of agentic LLMs in automating complex tasks, improving operational efficiency, and enabling reasoning-driven security analytics. Socio-technical challenges associated with the deployment of LLMs -- including trust, transparency, and ethical considerations -- can be addressed through strategies such as human-in-the-loop systems, role-specific training, and proactive robustness testing. The report further outlines critical research challenges in ensuring interpretability, safety, and fairness in LLM-based systems, particularly in high-stakes domains. By integrating technical advances with organizational and societal considerations, this report presents a forward-looking research agenda for the secure and effective adoption of LLMs in cybersecurity.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2505.00841",
+      "arxivId": "2505.00841",
+      "url": "https://www.semanticscholar.org/paper/8bbe791688f7c738b1487937b969605bed9c881c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.00841"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "70de198c9d3e1744804a2e07987858f31582f09d",
+      "title": "Federated Episodic Learning to Extrapolate Unseen From Seen Conditions for Industrial IoT Monitoring",
+      "authors": [
+        {
+          "name": "Baoxue Li",
+          "authorId": "2283875003"
+        },
+        {
+          "name": "Chunhui Zhao",
+          "authorId": "2115602412"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Online monitoring is essential for the safety of Industrial IoT (IIoT). Most existing methods seek low-dimensional representations to assess the overall operation status. However, we reveal that the existing methods face some unsolved and interrelated limitations, including coarse granularity, tight boundary, and weak extrapolation. This article proposes a federated episodic learning method for IIoT monitoring that simultaneously enhances interpretability, robustness, and extrapolation. The method centers on a dual-level normality bank (DLNB) with a normality contrastive separation network (NCSN) and an episodic training strategy (ETS), designed within a cloud-edge collaborative manner. To solve the coarse granularity issue, we propose a DLNB from both condition-level and variable-level perspectives, which facilitates fine-grained pattern matching and improves interpretability. To address the tight boundary issue, we propose an NCSN, which utilizes prior fault knowledge to construct negative samples and encourages models to focus on fault-related representations, thus improving robustness. To tackle the weak extrapolation issue, we design an ETS, which develops a client alternation policy to construct refining sets and makes inferences using patterns from adjacent working conditions. It fully exploits the relation of adjacent working conditions and improves extrapolation for unseen conditions with theoretical guarantees. Extensive experiments on two clusters validate the method\u2019s superior interpretability, robustness, and extrapolation.",
+      "citationCount": 5,
+      "doi": "10.1109/JIOT.2024.3496927",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/70de198c9d3e1744804a2e07987858f31582f09d",
+      "venue": "IEEE Internet of Things Journal",
+      "journal": {
+        "name": "IEEE Internet of Things Journal",
+        "pages": "7518-7531",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

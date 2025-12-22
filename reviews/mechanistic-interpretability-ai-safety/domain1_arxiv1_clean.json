@@ -1,0 +1,676 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:mechanistic interpretability AND cat:cs.LG",
+  "results": [
+    {
+      "arxiv_id": "2512.17778",
+      "title": "Mechanistic Origin of Charge Separation and Enhanced Photocatalytic Activity in D-$\u03c0$-A-Functionalized UiO-66-NH$_2$ MOFs",
+      "authors": [
+        "Anastasiia Kultaeva",
+        "Volodymyr Vasylkovskyi",
+        "Andreas Sperlich",
+        "Eugenio Otal",
+        "Katsuya Teshima",
+        "Wolf Gero Schmidt",
+        "Timur Biktagirov"
+      ],
+      "abstract": "Donor-$\u03c0$-acceptor (D-$\u03c0$-A) functionalization of MOF linkers can enhance visible-light photocatalytic activity, yet the mechanisms responsible for these effects remain unclear. Here we combine EPR spectroscopy, transient photoluminescence, and first-principles calculations to examine how diazo-coupled anisole, diphenylamine (DPA), and N,N-dimethylaniline (NNDMA) groups modify the photophysics of UiO-66-NH$_2$. All donor units introduce new occupied states near the valence-band edge, enabling charge separation through dye-to-framework electron transfer. Among them, the anisole-modified material stands out for facilitating efficient intersystem crossing into a triplet charge-transfer configuration that suppresses fast recombination and yields long-lived charge carriers detectable by photo-EPR. Meanwhile, bulkier donors such as DPA and NNDMA - despite their stronger electron-donating character - also tend to introduce defect-associated trap states. These results underscore the interplay between donor-induced electronic-structure changes, triplet pathways, and defect-mediated recombination, offering a mechanistic basis for tuning photocatalytic response in D-$\u03c0$-A-modified MOFs.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "physics.app-ph",
+        "physics.chem-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17778v1",
+      "url": "https://arxiv.org/abs/2512.17778"
+    },
+    {
+      "arxiv_id": "2512.17759",
+      "title": "Breast Cancer Neoadjuvant Chemotherapy Treatment Response Prediction Using Aligned Longitudinal MRI and Clinical Data",
+      "authors": [
+        "Rahul Ravi",
+        "Ruizhe Li",
+        "Tarek Abdelfatah",
+        "Stephen Chan",
+        "Xin Chen"
+      ],
+      "abstract": "Aim: This study investigates treatment response prediction to neoadjuvant chemotherapy (NACT) in breast cancer patients, using longitudinal contrast-enhanced magnetic resonance images (CE-MRI) and clinical data. The goal is to develop machine learning (ML) models to predict pathologic complete response (PCR binary classification) and 5-year relapse-free survival status (RFS binary classification). Method: The proposed framework includes tumour segmentation, image registration, feature extraction, and predictive modelling. Using the image registration method, MRI image features can be extracted and compared from the original tumour site at different time points, therefore monitoring the intratumor changes during NACT process. Four feature extractors, including one radiomics and three deep learning-based (MedicalNet, Segformer3D, SAM-Med3D) were implemented and compared. In combination with three feature selection methods and four ML models, predictive models are built and compared. Results: The proposed image registration-based feature extraction consistently improves the predictive models. In the PCR and RFS classification tasks logistic regression model trained on radiomic features performed the best with an AUC of 0.88 and classification accuracy of 0.85 for PCR classification, and AUC of 0.78 and classification accuracy of 0.72 for RFS classification. Conclusions: It is evidenced that the image registration method has significantly improved performance in longitudinal feature learning in predicting PCR and RFS. The radiomics feature extractor is more effective than the pre-trained deep learning feature extractors, with higher performance and better interpretability.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17759v1",
+      "url": "https://arxiv.org/abs/2512.17759"
+    },
+    {
+      "arxiv_id": "2512.17745",
+      "title": "Condensation dynamics of sticky and anchored flexible biopolymers",
+      "authors": [
+        "Adam R. Lamson",
+        "Mohammadhossein Firouznia",
+        "Michael J. Shelley"
+      ],
+      "abstract": "Cells regulate gene expression in part by forming DNA-protein condensates in the nucleus. While existing theories describe the equilibrium size and stability of such condensates, their dynamics remain less understood. Here, we use coarse-grained 3D Brownian-dynamics simulations to study how long, end-anchored biopolymers condense over time due to transient crosslinking. By tracking how clusters nucleate, merge, and disappear, we identify two dominant dynamical pathways, ripening and merging, that govern the progression from an uncompacted chain to a single condensate. We show how microscopic kinetic parameters, protein density, and mechanical constraints shape these pathways. Using insights from the simulations, we construct a minimal mechanistic free-energy model that captures the observed scaling behavior. Together, these results clarify the dynamical determinants of DNA and chromatin reorganization on timescales relevant to gene regulation.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cond-mat.soft",
+      "categories": [
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "physics.comp-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17745v1",
+      "url": "https://arxiv.org/abs/2512.17745"
+    },
+    {
+      "arxiv_id": "2512.17689",
+      "title": "Imputation Uncertainty in Interpretable Machine Learning Methods",
+      "authors": [
+        "Pegah Golchian",
+        "Marvin N. Wright"
+      ],
+      "abstract": "In real data, missing values occur frequently, which affects the interpretation with interpretable machine learning (IML) methods. Recent work considers bias and shows that model explanations may differ between imputation methods, while ignoring additional imputation uncertainty and its influence on variance and confidence intervals. We therefore compare the effects of different imputation methods on the confidence interval coverage probabilities of the IML methods permutation feature importance, partial dependence plots and Shapley values. We show that single imputation leads to underestimation of variance and that, in most cases, only multiple imputation is close to nominal coverage.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "stat.ME"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17689v1",
+      "url": "https://arxiv.org/abs/2512.17689"
+    },
+    {
+      "arxiv_id": "2512.17678",
+      "title": "You Only Train Once: Differentiable Subset Selection for Omics Data",
+      "authors": [
+        "Daphn\u00e9 Chopard",
+        "Jorge da Silva Gon\u00e7alves",
+        "Irene Cannistraci",
+        "Thomas M. Sutter",
+        "Julia E. Vogt"
+      ],
+      "abstract": "Selecting compact and informative gene subsets from single-cell transcriptomic data is essential for biomarker discovery, improving interpretability, and cost-effective profiling. However, most existing feature selection approaches either operate as multi-stage pipelines or rely on post hoc feature attribution, making selection and prediction weakly coupled. In this work, we present YOTO (you only train once), an end-to-end framework that jointly identifies discrete gene subsets and performs prediction within a single differentiable architecture. In our model, the prediction task directly guides which genes are selected, while the learned subsets, in turn, shape the predictive representation. This closed feedback loop enables the model to iteratively refine both what it selects and how it predicts during training. Unlike existing approaches, YOTO enforces sparsity so that only the selected genes contribute to inference, eliminating the need to train additional downstream classifiers. Through a multi-task learning design, the model learns shared representations across related objectives, allowing partially labeled datasets to inform one another, and discovering gene subsets that generalize across tasks without additional training steps. We evaluate YOTO on two representative single-cell RNA-seq datasets, showing that it consistently outperforms state-of-the-art baselines. These results demonstrate that sparse, end-to-end, multi-task gene subset selection improves predictive performance and yields compact and meaningful gene subsets, advancing biomarker discovery and single-cell analysis.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17678v1",
+      "url": "https://arxiv.org/abs/2512.17678"
+    },
+    {
+      "arxiv_id": "2512.17671",
+      "title": "Polyharmonic Cascade",
+      "authors": [
+        "Yuriy N. Bakhvalov"
+      ],
+      "abstract": "This paper presents a deep machine learning architecture, the \"polyharmonic cascade\" -- a sequence of packages of polyharmonic splines, where each layer is rigorously derived from the theory of random functions and the principles of indifference. This makes it possible to approximate nonlinear functions of arbitrary complexity while preserving global smoothness and a probabilistic interpretation. For the polyharmonic cascade, a training method alternative to gradient descent is proposed: instead of directly optimizing the coefficients, one solves a single global linear system on each batch with respect to the function values at fixed \"constellations\" of nodes. This yields synchronized updates of all layers, preserves the probabilistic interpretation of individual layers and theoretical consistency with the original model, and scales well: all computations reduce to 2D matrix operations efficiently executed on a GPU. Fast learning without overfitting on MNIST is demonstrated.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "math.NA"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17671v1",
+      "url": "https://arxiv.org/abs/2512.17671"
+    },
+    {
+      "arxiv_id": "2512.17594",
+      "title": "MAD-OOD: A Deep Learning Cluster-Driven Framework for an Out-of-Distribution Malware Detection and Classification",
+      "authors": [
+        "Tosin Ige",
+        "Christopher Kiekintveld",
+        "Aritran Piplai",
+        "Asif Rahman",
+        "Olukunle Kolade",
+        "Sasidhar Kunapuli"
+      ],
+      "abstract": "Out of distribution (OOD) detection remains a critical challenge in malware classification due to the substantial intra family variability introduced by polymorphic and metamorphic malware variants. Most existing deep learning based malware detectors rely on closed world assumptions and fail to adequately model this intra class variation, resulting in degraded performance when confronted with previously unseen malware families. This paper presents MADOOD, a novel two stage, cluster driven deep learning framework for robust OOD malware detection and classification. In the first stage, malware family embeddings are modeled using class conditional spherical decision boundaries derived from Gaussian Discriminant Analysis (GDA), enabling statistically grounded separation of indistribution and OOD samples without requiring OOD data during training. Z score based distance analysis across multiple class centroids is employed to reliably identify anomalous samples in the latent space. In the second stage, a deep neural network integrates cluster based predictions, refined embeddings, and supervised classifier outputs to enhance final classification accuracy. Extensive evaluations on benchmark malware datasets comprising 25 known families and multiple novel OOD variants demonstrate that MADOOD significantly outperforms state of the art OOD detection methods, achieving an AUC of up to 0.911 on unseen malware families. The proposed framework provides a scalable, interpretable, and statistically principled solution for real world malware detection and anomaly identification in evolving cybersecurity environments.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17594v1",
+      "url": "https://arxiv.org/abs/2512.17594"
+    },
+    {
+      "arxiv_id": "2512.17527",
+      "title": "SafeBench-Seq: A Homology-Clustered, CPU-Only Baseline for Protein Hazard Screening with Physicochemical/Composition Features and Cluster-Aware Confidence Intervals",
+      "authors": [
+        "Muhammad Haris Khan"
+      ],
+      "abstract": "Foundation models for protein design raise concrete biosecurity risks, yet the community lacks a simple, reproducible baseline for sequence-level hazard screening that is explicitly evaluated under homology control and runs on commodity CPUs. We introduce SafeBench-Seq, a metadata-only, reproducible benchmark and baseline classifier built entirely from public data (SafeProtein hazards and UniProt benigns) and interpretable features (global physicochemical descriptors and amino-acid composition). To approximate \"never-before-seen\" threats, we homology-cluster the combined dataset at <=40% identity and perform cluster-level holdouts (no cluster overlap between train/test). We report discrimination (AUROC/AUPRC) and screening-operating points (TPR@1% FPR; FPR@95% TPR) with 95% bootstrap confidence intervals (n=200), and we provide calibrated probabilities via CalibratedClassifierCV (isotonic for Logistic Regression / Random Forest; Platt sigmoid for Linear SVM). We quantify probability quality using Brier score, Expected Calibration Error (ECE; 15 bins), and reliability diagrams. Shortcut susceptibility is probed via composition-preserving residue shuffles and length-/composition-only ablations. Empirically, random splits substantially overestimate robustness relative to homology-clustered evaluation; calibrated linear models exhibit comparatively good calibration, while tree ensembles retain slightly higher Brier/ECE. SafeBench-Seq is CPU-only, reproducible, and releases metadata only (accessions, cluster IDs, split labels), enabling rigorous evaluation without distributing hazardous sequences.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17527v1",
+      "url": "https://arxiv.org/abs/2512.17527"
+    },
+    {
+      "arxiv_id": "2512.17476",
+      "title": "Collective Hard Core Interactions Leave Multiscale Signatures in Number Fluctuation Spectra",
+      "authors": [
+        "Eleanor K. R. Mackay",
+        "Anna Drummond Young",
+        "Adam Carter",
+        "Sophie Marbach",
+        "Alice L. Thorneywork"
+      ],
+      "abstract": "A full understanding of transport in dense, interacting suspensions requires analysis frameworks sensitive to self and collective dynamics across all relevant spatial and temporal scales. Here we introduce a trajectory-free approach to address this problem based on the power spectral density of particle number fluctuations (N-PSD). By combining colloidal experiments and theory we show that the N-PSD naturally probes behaviour across multiple important dynamic regimes and we fully uncover the mechanistic origins of characteristic spectral scalings and timescales. In particular, we demonstrate that while high-frequency scalings link to self-diffusion, low-frequency scalings sensitively capture long-lived correlations and collective dynamics. In this regime, interactions lead to non-trivial spectral signatures, governed by pairwise particle exchange at small length scales and collective rearrangements over large scales. Our findings thus provide important insight into the effect of interactions on microscopic dynamics and fluctuation phenomena and establish a powerful new tool with which to probe dynamics in complex systems.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cond-mat.soft",
+      "categories": [
+        "cond-mat.soft"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17476v1",
+      "url": "https://arxiv.org/abs/2512.17476"
+    },
+    {
+      "arxiv_id": "2512.17453",
+      "title": "A lightweight Spatial-Temporal Graph Neural Network for Long-term Time Series Forecasting",
+      "authors": [
+        "Henok Tenaw Moges",
+        "Deshendran Moodley"
+      ],
+      "abstract": "We propose Lite-STGNN, a lightweight spatial-temporal graph neural network for long-term multivariate forecasting that integrates decomposition-based temporal modeling with learnable sparse graph structure. The temporal module applies trend-seasonal decomposition, while the spatial module performs message passing with low-rank Top-$K$ adjacency learning and conservative horizon-wise gating, enabling spatial corrections that enhance a strong linear baseline. Lite-STGNN achieves state-of-the-art accuracy on four benchmark datasets for horizons up to 720 steps, while being parameter-efficient and substantially faster to train than transformer-based methods. Ablation studies show that the spatial module yields 4.6% improvement over the temporal baseline, Top-$K$ enhances locality by 3.3%, and learned adjacency matrices reveal domain-specific interaction dynamics. Lite-STGNN thus offers a compact, interpretable, and efficient framework for long-term multivariate time series forecasting.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17453v1",
+      "url": "https://arxiv.org/abs/2512.17453"
+    },
+    {
+      "arxiv_id": "2512.17450",
+      "title": "MULTIAQUA: A multimodal maritime dataset and robust training strategies for multimodal semantic segmentation",
+      "authors": [
+        "Jon Muhovi\u010d",
+        "Janez Per\u0161"
+      ],
+      "abstract": "Unmanned surface vehicles can encounter a number of varied visual circumstances during operation, some of which can be very difficult to interpret. While most cases can be solved only using color camera images, some weather and lighting conditions require additional information. To expand the available maritime data, we present a novel multimodal maritime dataset MULTIAQUA (Multimodal Aquatic Dataset). Our dataset contains synchronized, calibrated and annotated data captured by sensors of different modalities, such as RGB, thermal, IR, LIDAR, etc. The dataset is aimed at developing supervised methods that can extract useful information from these modalities in order to provide a high quality of scene interpretation regardless of potentially poor visibility conditions. To illustrate the benefits of the proposed dataset, we evaluate several multimodal methods on our difficult nighttime test set. We present training approaches that enable multimodal methods to be trained in a more robust way, thus enabling them to retain reliable performance even in near-complete darkness. Our approach allows for training a robust deep neural network only using daytime images, thus significantly simplifying data acquisition, annotation, and the training process.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17450v1",
+      "url": "https://arxiv.org/abs/2512.17450"
+    },
+    {
+      "arxiv_id": "2512.17325",
+      "title": "Task Schema and Binding: A Double Dissociation Study of In-Context Learning",
+      "authors": [
+        "Chaeha Kim"
+      ],
+      "abstract": "We provide causal mechanistic validation that in-context learning (ICL) decomposes into two separable mechanisms: Task Schema (abstract task type recognition) and Binding (specific input-output associations). Through activation patching experiments across 9 models from 7 Transformer families plus Mamba (370M-13B parameters), we establish three key findings:   1. Double dissociation: Task Schema transfers at 100% via late MLP patching; Binding transfers at 62% via residual stream patching -- proving separable mechanisms   2. Prior-Schema trade-off: Schema reliance inversely correlates with prior knowledge (Spearman rho = -0.596, p < 0.001, N=28 task-model pairs)   3. Architecture generality: The mechanism operates across all tested architectures including the non-Transformer Mamba   These findings offer a mechanistic account of the ICL puzzle that contrasts with prior views treating ICL as a monolithic mechanism (whether retrieval-based, gradient descent-like, or purely Bayesian). By establishing that Schema and Binding are neurally dissociable -- not merely behavioral modes -- we provide causal evidence for dual-process theories of ICL. Models rely on Task Schema when prior knowledge is absent, but prior knowledge interferes through attentional mis-routing (72.7% recency bias) rather than direct output competition (0%). This explains why arbitrary mappings succeed (zero prior leads to full Schema reliance) while factual overrides fail -- and reveals that the true bottleneck is attentional, not output-level. Practical implications: Understanding these dual mechanisms enables more efficient prompt engineering -- reliable schema transfer reduces required demonstrations for novel tasks, while prior-aware design can mitigate the 38% binding failure rate in high-prior scenarios, improving ICL system reliability in production deployments.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17325v1",
+      "url": "https://arxiv.org/abs/2512.17325"
+    },
+    {
+      "arxiv_id": "2512.17270",
+      "title": "Understanding Generalization in Role-Playing Models via Information Theory",
+      "authors": [
+        "Yongqi Li",
+        "Hao Lang",
+        "Fei Huang",
+        "Tieyun Qian",
+        "Yongbin Li"
+      ],
+      "abstract": "Role-playing models (RPMs) are widely used in real-world applications but underperform when deployed in the wild. This degradation can be attributed to distribution shifts, including user, character, and dialogue compositional shifts. Existing methods like LLM-as-a-judge fall short in providing a fine-grained diagnosis of how these shifts affect RPM generalization, and thus there lack formal frameworks to characterize RPM generalization behaviors. To bridge these gaps, we introduce an information-theoretic metric, named reasoning-based effective mutual information difference (R-EMID), to measure RPM performance degradation in an interpretable way. We also derive an upper bound on R-EMID to predict the worst-case generalization performance of RPMs and theoretically reveal how various shifts contribute to the RPM performance degradation. Moreover, we propose a co-evolving reinforcement learning framework to adaptively model the connection among user, character, and dialogue context and thus enhance the estimation of dialogue response generation probability, which is critical for calculating R-EMID. Finally, we evaluate the generalization performance of various RPMs using R-EMID, finding that user shift poses the highest risk among all shifts and reinforcement learning is the most effective approach for enhancing RPM generalization.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17270v1",
+      "url": "https://arxiv.org/abs/2512.17270"
+    },
+    {
+      "arxiv_id": "2512.17146",
+      "title": "Biosecurity-Aware AI: Agentic Risk Auditing of Soft Prompt Attacks on ESM-Based Variant Predictors",
+      "authors": [
+        "Huixin Zhan"
+      ],
+      "abstract": "Genomic Foundation Models (GFMs), such as Evolutionary Scale Modeling (ESM), have demonstrated remarkable success in variant effect prediction. However, their security and robustness under adversarial manipulation remain largely unexplored. To address this gap, we introduce the Secure Agentic Genomic Evaluator (SAGE), an agentic framework for auditing the adversarial vulnerabilities of GFMs. SAGE functions through an interpretable and automated risk auditing loop. It injects soft prompt perturbations, monitors model behavior across training checkpoints, computes risk metrics such as AUROC and AUPR, and generates structured reports with large language model-based narrative explanations. This agentic process enables continuous evaluation of embedding-space robustness without modifying the underlying model. Using SAGE, we find that even state-of-the-art GFMs like ESM2 are sensitive to targeted soft prompt attacks, resulting in measurable performance degradation. These findings reveal critical and previously hidden vulnerabilities in genomic foundation models, showing the importance of agentic risk auditing in securing biomedical applications such as clinical variant interpretation.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.LG",
+        "q-bio.QM"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17146v1",
+      "url": "https://arxiv.org/abs/2512.17146"
+    },
+    {
+      "arxiv_id": "2512.17127",
+      "title": "Disentangled representations via score-based variational autoencoders",
+      "authors": [
+        "Benjamin S. H. Lyo",
+        "Eero P. Simoncelli",
+        "Cristina Savin"
+      ],
+      "abstract": "We present the Score-based Autoencoder for Multiscale Inference (SAMI), a method for unsupervised representation learning that combines the theoretical frameworks of diffusion models and VAEs. By unifying their respective evidence lower bounds, SAMI formulates a principled objective that learns representations through score-based guidance of the underlying diffusion process. The resulting representations automatically capture meaningful structure in the data: it recovers ground truth generative factors in our synthetic dataset, learns factorized, semantic latent dimensions from complex natural images, and encodes video sequences into latent trajectories that are straighter than those of alternative encoders, despite training exclusively on static images. Furthermore, SAMI can extract useful representations from pre-trained diffusion models with minimal additional training. Finally, the explicitly probabilistic formulation provides new ways to identify semantically meaningful axes in the absence of supervised labels, and its mathematical exactness allows us to make formal statements about the nature of the learned representation. Overall, these results indicate that implicit structural information in diffusion models can be made explicit and interpretable through synergistic combination with a variational autoencoder.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17127v1",
+      "url": "https://arxiv.org/abs/2512.17127"
+    },
+    {
+      "arxiv_id": "2512.17121",
+      "title": "The Effect of Negation on CLIP in Medical Imaging: Limitations of Contrastive Language-Image Pretraining",
+      "authors": [
+        "Jasmine Vu",
+        "Shivanand Sheshappanavar"
+      ],
+      "abstract": "Large vision-language models like CLIP are increasingly used in medical imaging tasks due to their ability to align images and text without the need for extensive labeled data. This makes them particularly useful for applications like image retrieval, report generation, and classification in clinical settings. A potential issue to this approach is that CLIP-based models often under perform when interpreting negated phrases, which is especially problematic in the context of medical diagnosing. In this study, we evaluate the Stanford AIMI CheXagent model on its ability to correctly retrieve chest X-ray images using prompts with and without negation. The goal of this project is to understand where this model fails and then use it as a base model to improve its retrieval accuracy by fine tuning methods outlined in previous work. Results from this study show improvement in handling of negation in the CLIP model with a slight decrease in accuracy of positive prompt evaluation. Alongside retrieval accuracy, we examined internal model behavior through token attribution, t-SNE projection, and attention-head ablation to better characterize how each fine tuning approach reshaped the text encoders representation of negated clinical language. Through this work, we hope to better understand the internal behavior of CLIP and improve its handling of negation using clinically relevant language for improving its reliability in medical AI devices.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17121v1",
+      "url": "https://arxiv.org/abs/2512.17121"
+    },
+    {
+      "arxiv_id": "2512.17107",
+      "title": "Fault Diagnosis and Quantification for Photovoltaic Arrays based on Differentiable Physical Models",
+      "authors": [
+        "Zenan Yang",
+        "Yuanliang Li",
+        "Jingwei Zhang",
+        "Yongjie Liu",
+        "Kun Ding"
+      ],
+      "abstract": "Accurate fault diagnosis and quantification are essential for the reliable operation and intelligent maintenance of photovoltaic (PV) arrays. However, existing fault quantification methods often suffer from limited efficiency and interpretability. To address these challenges, this paper proposes a novel fault quantification approach for PV strings based on a differentiable fast fault simulation model (DFFSM). The proposed DFFSM accurately models I-V characteristics under multiple faults and provides analytical gradients with respect to fault parameters. Leveraging this property, a gradient-based fault parameters identification (GFPI) method using the Adahessian optimizer is developed to efficiently quantify partial shading, short-circuit, and series-resistance degradation. Experimental results on both simulated and measured I-V curves demonstrate that the proposed GFPI achieves high quantification accuracy across different faults, with the I-V reconstruction error below 3%, confirming the feasibility and effectiveness of the application of differentiable physical simulators for PV system fault diagnosis.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "eess.SP"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17107v1",
+      "url": "https://arxiv.org/abs/2512.17107"
+    },
+    {
+      "arxiv_id": "2512.17100",
+      "title": "UniCoMTE: A Universal Counterfactual Framework for Explaining Time-Series Classifiers on ECG Data",
+      "authors": [
+        "Justin Li",
+        "Efe Sencan",
+        "Jasper Zheng Duan",
+        "Vitus J. Leung",
+        "Stephan Tsaur",
+        "Ayse K. Coskun"
+      ],
+      "abstract": "Machine learning models, particularly deep neural networks, have demonstrated strong performance in classifying complex time series data. However, their black-box nature limits trust and adoption, especially in high-stakes domains such as healthcare. To address this challenge, we introduce UniCoMTE, a model-agnostic framework for generating counterfactual explanations for multivariate time series classifiers. The framework identifies temporal features that most heavily influence a model's prediction by modifying the input sample and assessing its impact on the model's prediction. UniCoMTE is compatible with a wide range of model architectures and operates directly on raw time series inputs. In this study, we evaluate UniCoMTE's explanations on a time series ECG classifier. We quantify explanation quality by comparing our explanations' comprehensibility to comprehensibility of established techniques (LIME and SHAP) and assessing their generalizability to similar samples. Furthermore, clinical utility is assessed through a questionnaire completed by medical experts who review counterfactual explanations presented alongside original ECG samples. Results show that our approach produces concise, stable, and human-aligned explanations that outperform existing methods in both clarity and applicability. By linking model predictions to meaningful signal patterns, the framework advances the interpretability of deep learning models for real-world time series applications.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.17100v1",
+      "url": "https://arxiv.org/abs/2512.17100"
+    },
+    {
+      "arxiv_id": "2512.16891",
+      "title": "LinkedOut: Linking World Knowledge Representation Out of Video LLM for Next-Generation Video Recommendation",
+      "authors": [
+        "Haichao Zhang",
+        "Yao Lu",
+        "Lichen Wang",
+        "Yunzhe Li",
+        "Daiwei Chen",
+        "Yunpeng Xu",
+        "Yun Fu"
+      ],
+      "abstract": "Video Large Language Models (VLLMs) unlock world-knowledge-aware video understanding through pretraining on internet-scale data and have already shown promise on tasks such as movie analysis and video question answering. However, deploying VLLMs for downstream tasks such as video recommendation remains challenging, since real systems require multi-video inputs, lightweight backbones, low-latency sequential inference, and rapid response. In practice, (1) decode-only generation yields high latency for sequential inference, (2) typical interfaces do not support multi-video inputs, and (3) constraining outputs to language discards fine-grained visual details that matter for downstream vision tasks. We argue that these limitations stem from the absence of a representation that preserves pixel-level detail while leveraging world knowledge. We present LinkedOut, a representation that extracts VLLM world knowledge directly from video to enable fast inference, supports multi-video histories, and removes the language bottleneck. LinkedOut extracts semantically grounded, knowledge-aware tokens from raw frames using VLLMs, guided by promptable queries and optional auxiliary modalities. We introduce a cross-layer knowledge fusion MoE that selects the appropriate level of abstraction from the rich VLLM features, enabling personalized, interpretable, and low-latency recommendation. To our knowledge, LinkedOut is the first VLLM-based video recommendation method that operates on raw frames without handcrafted labels, achieving state-of-the-art results on standard benchmarks. Interpretability studies and ablations confirm the benefits of layer diversity and layer-wise fusion, pointing to a practical path that fully leverages VLLM world-knowledge priors and visual reasoning for downstream vision tasks such as recommendation.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16891v1",
+      "url": "https://arxiv.org/abs/2512.16891"
+    },
+    {
+      "arxiv_id": "2512.16876",
+      "title": "Training Together, Diagnosing Better: Federated Learning for Collagen VI-Related Dystrophies",
+      "authors": [
+        "Astrid Brull",
+        "Sara Aguti",
+        "V\u00e9ronique Bolduc",
+        "Ying Hu",
+        "Daniel M. Jimenez-Gutierrez",
+        "Enrique Zuazua",
+        "Joaquin Del-Rio",
+        "Oleksii Sliusarenko",
+        "Haiyan Zhou",
+        "Francesco Muntoni",
+        "Carsten G. B\u00f6nnemann",
+        "Xabi Uribe-Etxebarria"
+      ],
+      "abstract": "The application of Machine Learning (ML) to the diagnosis of rare diseases, such as collagen VI-related dystrophies (COL6-RD), is fundamentally limited by the scarcity and fragmentation of available data. Attempts to expand sampling across hospitals, institutions, or countries with differing regulations face severe privacy, regulatory, and logistical obstacles that are often difficult to overcome. The Federated Learning (FL) provides a promising solution by enabling collaborative model training across decentralized datasets while keeping patient data local and private. Here, we report a novel global FL initiative using the Sherpa.ai FL platform, which leverages FL across distributed datasets in two international organizations for the diagnosis of COL6-RD, using collagen VI immunofluorescence microscopy images from patient-derived fibroblast cultures. Our solution resulted in an ML model capable of classifying collagen VI patient images into the three primary pathogenic mechanism groups associated with COL6-RD: exon skipping, glycine substitution, and pseudoexon insertion. This new approach achieved an F1-score of 0.82, outperforming single-organization models (0.57-0.75). These results demonstrate that FL substantially improves diagnostic utility and generalizability compared to isolated institutional models. Beyond enabling more accurate diagnosis, we anticipate that this approach will support the interpretation of variants of uncertain significance and guide the prioritization of sequencing strategies to identify novel pathogenic variants.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV",
+        "cs.DC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16876v1",
+      "url": "https://arxiv.org/abs/2512.16876"
+    },
+    {
+      "arxiv_id": "2512.16700",
+      "title": "CLARiTy: A Vision Transformer for Multi-Label Classification and Weakly-Supervised Localization of Chest X-ray Pathologies",
+      "authors": [
+        "John M. Statheros",
+        "Hairong Wang",
+        "Richard Klein"
+      ],
+      "abstract": "The interpretation of chest X-rays (CXRs) poses significant challenges, particularly in achieving accurate multi-label pathology classification and spatial localization. These tasks demand different levels of annotation granularity but are frequently constrained by the scarcity of region-level (dense) annotations. We introduce CLARiTy (Class Localizing and Attention Refining Image Transformer), a vision transformer-based model for joint multi-label classification and weakly-supervised localization of thoracic pathologies. CLARiTy employs multiple class-specific tokens to generate discriminative attention maps, and a SegmentCAM module for foreground segmentation and background suppression using explicit anatomical priors. Trained on image-level labels from the NIH ChestX-ray14 dataset, it leverages distillation from a ConvNeXtV2 teacher for efficiency. Evaluated on the official NIH split, the CLARiTy-S-16-512 (a configuration of CLARiTy), achieves competitive classification performance across 14 pathologies, and state-of-the-art weakly-supervised localization performance on 8 pathologies, outperforming prior methods by 50.7%. In particular, pronounced gains occur for small pathologies like nodules and masses. The lower-resolution variant of CLARiTy, CLARiTy-S-16-224, offers high efficiency while decisively surpassing baselines, thereby having the potential for use in low-resource settings. An ablation study confirms contributions of SegmentCAM, DINO pretraining, orthogonal class token loss, and attention pooling. CLARiTy advances beyond CNN-ViT hybrids by harnessing ViT self-attention for global context and class-specific localization, refined through convolutional background suppression for precise, noise-reduced heatmaps.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16700v1",
+      "url": "https://arxiv.org/abs/2512.16700"
+    },
+    {
+      "arxiv_id": "2512.16545",
+      "title": "Predictive Inorganic Synthesis based on Machine Learning using Small Data sets: a case study of size-controlled Cu Nanoparticles",
+      "authors": [
+        "Brent Motmans",
+        "Digvijay Ghogare",
+        "Thijs G. I. van Wijk",
+        "An Hardy",
+        "Danny E. P. Vanpoucke"
+      ],
+      "abstract": "Copper nanoparticles (Cu NPs) have a broad applicability, yet their synthesis is sensitive to subtle changes in reaction parameters. This sensitivity, combined with the time- and resource-intensive nature of experimental optimization, poses a major challenge in achieving reproducible and size-controlled synthesis. While Machine Learning (ML) shows promise in materials research, its application is often limited by scarcity of large high-quality experimental data sets. This study explores ML to predict the size of Cu NPs from microwave-assisted polyol synthesis using a small data set of 25 in-house performed syntheses. Latin Hypercube Sampling is used to efficiently cover the parameter space while creating the experimental data set. Ensemble regression models, built with the AMADEUS framework, successfully predict particle sizes with high accuracy ($R^2 = 0.74$), outperforming classical statistical approaches ($R^2 = 0.60$). Overall, this study highlights that, for lab-scale synthesis optimization, high-quality small datasets combined with classical, interpretable ML models outperform traditional statistical methods and are fully sufficient for quantitative synthesis prediction. This approach provides a sustainable and experimentally realistic pathway toward data-driven inorganic synthesis design.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16545v1",
+      "url": "https://arxiv.org/abs/2512.16545"
+    },
+    {
+      "arxiv_id": "2512.16445",
+      "title": "Topic Modelling Black Box Optimization",
+      "authors": [
+        "Roman Akramov",
+        "Artem Khamatullin",
+        "Svetlana Glazyrina",
+        "Maksim Kryzhanovskiy",
+        "Roman Ischenko"
+      ],
+      "abstract": "Choosing the number of topics $T$ in Latent Dirichlet Allocation (LDA) is a key design decision that strongly affects both the statistical fit and interpretability of topic models. In this work, we formulate the selection of $T$ as a discrete black-box optimization problem, where each function evaluation corresponds to training an LDA model and measuring its validation perplexity. Under a fixed evaluation budget, we compare four families of optimizers: two hand-designed evolutionary methods - Genetic Algorithm (GA) and Evolution Strategy (ES) - and two learned, amortized approaches, Preferential Amortized Black-Box Optimization (PABBO) and Sharpness-Aware Black-Box Optimization (SABBO). Our experiments show that, while GA, ES, PABBO, and SABBO eventually reach a similar band of final perplexity, the amortized optimizers are substantially more sample- and time-efficient. SABBO typically identifies a near-optimal topic number after essentially a single evaluation, and PABBO finds competitive configurations within a few evaluations, whereas GA and ES require almost the full budget to approach the same region.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.NE"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16445v1",
+      "url": "https://arxiv.org/abs/2512.16445"
+    },
+    {
+      "arxiv_id": "2512.16964",
+      "title": "Colormap-Enhanced Vision Transformers for MRI-Based Multiclass (4-Class) Alzheimer's Disease Classification",
+      "authors": [
+        "Faisal Ahmed"
+      ],
+      "abstract": "Magnetic Resonance Imaging (MRI) plays a pivotal role in the early diagnosis and monitoring of Alzheimer's disease (AD). However, the subtle structural variations in brain MRI scans often pose challenges for conventional deep learning models to extract discriminative features effectively. In this work, we propose PseudoColorViT-Alz, a colormap-enhanced Vision Transformer framework designed to leverage pseudo-color representations of MRI images for improved Alzheimer's disease classification. By combining colormap transformations with the global feature learning capabilities of Vision Transformers, our method amplifies anatomical texture and contrast cues that are otherwise subdued in standard grayscale MRI scans.   We evaluate PseudoColorViT-Alz on the OASIS-1 dataset using a four-class classification setup (non-demented, moderate dementia, mild dementia, and very mild dementia). Our model achieves a state-of-the-art accuracy of 99.79% with an AUC of 100%, surpassing the performance of recent 2024--2025 methods, including CNN-based and Siamese-network approaches, which reported accuracies ranging from 96.1% to 99.68%. These results demonstrate that pseudo-color augmentation combined with Vision Transformers can significantly enhance MRI-based Alzheimer's disease classification. PseudoColorViT-Alz offers a robust and interpretable framework that outperforms current methods, providing a promising tool to support clinical decision-making and early detection of Alzheimer's disease.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16964v1",
+      "url": "https://arxiv.org/abs/2512.16964"
+    },
+    {
+      "arxiv_id": "2512.16344",
+      "title": "AI Needs Physics More Than Physics Needs AI",
+      "authors": [
+        "Peter Coveney",
+        "Roger Highfield"
+      ],
+      "abstract": "Artificial intelligence (AI) is commonly depicted as transformative. Yet, after more than a decade of hype, its measurable impact remains modest outside a few high-profile scientific and commercial successes. The 2024 Nobel Prizes in Chemistry and Physics recognized AI's potential, but broader assessments indicate the impact to date is often more promotional than technical. We argue that while current AI may influence physics, physics has significantly more to offer this generation of AI. Current architectures - large language models, reasoning models, and agentic AI - can depend on trillions of meaningless parameters, suffer from distributional bias, lack uncertainty quantification, provide no mechanistic insights, and fail to capture even elementary scientific laws. We review critiques of these limits, highlight opportunities in quantum AI and analogue computing, and lay down a roadmap for the adoption of 'Big AI': a synthesis of theory-based rigour with the flexibility of machine learning.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16344v1",
+      "url": "https://arxiv.org/abs/2512.16344"
+    },
+    {
+      "arxiv_id": "2512.16963",
+      "title": "Compression is Routing: Reconstruction Error as an Intrinsic Signal for Modular Language Models",
+      "authors": [
+        "Zhongpan Tang"
+      ],
+      "abstract": "Current Large Language Models (LLMs) face three major challenges: context length limitations, high inference costs, and catastrophic forgetting during continual learning. While Mixture-of-Experts (MoE) architectures mitigate some of these conflicts, their routing mechanisms typically rely on explicitly trained auxiliary classifiers. This not only increases system complexity but also often lacks interpretability when handling mixed-domain inputs.   Building upon the premise that ``Compression is Intelligence,'' this paper proposes a novel architectural philosophy: \\textbf{``Compression is Routing.''} We trained an 87M-parameter end-to-end Transformer Autoencoder, achieving a \\textbf{64x sequence length compression} (compressing 512 tokens into 8 latent vectors). Experimental results demonstrate that this compressor possesses extreme domain discriminative capability: it achieves a reconstruction accuracy of \\textbf{99.47\\%} on the in-domain (code) validation set; accuracy drops sharply to \\textbf{47.76\\%} on a semi-out-of-distribution domain (Wiki text); and further plummets to just \\textbf{0.57\\%} on a fully out-of-distribution domain (random sequences).   This extreme and systematic performance discrepancy establishes the validity of reconstruction error as an \\textbf{Intrinsic Distribution Fingerprint}. Based on this, we propose that expert modules can be automatically scheduled using reconstruction residuals directly, without the need for explicit gating networks. This mechanism offers excellent scalability. Furthermore, this architecture provides a new perspective on ``VRAM compression'' for handling ultra-long contexts. This report aims to verify the physical validity of this foundational architecture, offering a new research perspective for the next generation of scalable modular neural networks.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16963v1",
+      "url": "https://arxiv.org/abs/2512.16963"
+    },
+    {
+      "arxiv_id": "2512.16251",
+      "title": "Interpretable Deep Learning for Stock Returns: A Consensus-Bottleneck Asset Pricing Model",
+      "authors": [
+        "Bong-Gyu Jang",
+        "Younwoo Jeong",
+        "Changeun Kim"
+      ],
+      "abstract": "We introduce the \\textit{Consensus-Bottleneck Asset Pricing Model} (CB-APM), a partially interpretable neural network that replicates the reasoning processes of sell-side analysts by capturing how dispersed investor beliefs are compressed into asset prices through a consensus formation process. By modeling this ``bottleneck'' to summarize firm- and macro-level information, CB-APM not only predicts future risk premiums of U.S. equities but also links belief aggregation to expected returns in a structurally interpretable manner. The model improves long-horizon return forecasts and outperforms standard deep learning approaches in both predictive accuracy and explanatory power. Comprehensive portfolio analyses show that CB-APM's out-of-sample predictions translate into economically meaningful payoffs, with monotonic return differentials and stable long-short performance across regularization settings. Empirically, CB-APM leverages consensus as a regularizer to amplify long-horizon predictability and yields interpretable consensus-based components that clarify how information is priced in returns. Moreover, regression and GRS-based pricing diagnostics reveal that the learned consensus representations capture priced variation only partially spanned by traditional factor models, demonstrating that CB-APM uncovers belief-driven structure in expected returns beyond the canonical factor space. Overall, CB-APM provides an interpretable and empirically grounded framework for understanding belief-driven return dynamics.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "q-fin.PR",
+      "categories": [
+        "q-fin.PR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": "10.2139/ssrn.5165817",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16251v1",
+      "url": "https://arxiv.org/abs/2512.16251"
+    },
+    {
+      "arxiv_id": "2512.16244",
+      "title": "Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models",
+      "authors": [
+        "Xueqi Ma",
+        "Xingjun Ma",
+        "Sarah Monazam Erfani",
+        "Danilo Mandic",
+        "James Bailey"
+      ],
+      "abstract": "Developing open-set classification methods capable of classifying in-distribution (ID) data while detecting out-of-distribution (OOD) samples is essential for deploying graph neural networks (GNNs) in open-world scenarios. Existing methods typically treat all OOD samples as a single class, despite real-world applications, especially high-stake settings such as fraud detection and medical diagnosis, demanding deeper insights into OOD samples, including their probable labels. This raises a critical question: can OOD detection be extended to OOD classification without true label information? To address this question, we propose a Coarse-to-Fine open-set Classification (CFC) framework that leverages large language models (LLMs) for graph datasets. CFC consists of three key components: a coarse classifier that uses LLM prompts for OOD detection and outlier label generation, a GNN-based fine classifier trained with OOD samples identified by the coarse classifier for enhanced OOD detection and ID classification, and refined OOD classification achieved through LLM prompts and post-processed OOD labels. Unlike methods that rely on synthetic or auxiliary OOD samples, CFC employs semantic OOD instances that are genuinely out-of-distribution based on their inherent meaning, improving interpretability and practical utility. Experimental results show that CFC improves OOD detection by ten percent over state-of-the-art methods on graph and text domains and achieves up to seventy percent accuracy in OOD classification on graph datasets.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16244v1",
+      "url": "https://arxiv.org/abs/2512.16244"
+    },
+    {
+      "arxiv_id": "2512.16184",
+      "title": "A Multimodal Approach to Alzheimer's Diagnosis: Geometric Insights from Cube Copying and Cognitive Assessments",
+      "authors": [
+        "Jaeho Yang",
+        "Kijung Yoon"
+      ],
+      "abstract": "Early and accessible detection of Alzheimer's disease (AD) remains a critical clinical challenge, and cube-copying tasks offer a simple yet informative assessment of visuospatial function. This work proposes a multimodal framework that converts hand-drawn cube sketches into graph-structured representations capturing geometric and topological properties, and integrates these features with demographic information and neuropsychological test (NPT) scores for AD classification. Cube drawings are modeled as graphs with node features encoding spatial coordinates, local graphlet-based topology, and angular geometry, which are processed using graph neural networks and fused with age, education, and NPT features in a late-fusion model. Experimental results show that graph-based representations provide a strong unimodal baseline and substantially outperform pixel-based convolutional models, while multimodal integration further improves performance and robustness to class imbalance. SHAP-based interpretability analysis identifies specific graphlet motifs and geometric distortions as key predictors, closely aligning with clinical observations of disorganized cube drawings in AD. Together, these results establish graph-based analysis of cube copying as an interpretable, non-invasive, and scalable approach for Alzheimer's disease screening.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16184v1",
+      "url": "https://arxiv.org/abs/2512.16184"
+    },
+    {
+      "arxiv_id": "2512.16046",
+      "title": "CauSTream: Causal Spatio-Temporal Representation Learning for Streamflow Forecasting",
+      "authors": [
+        "Shu Wan",
+        "Reepal Shah",
+        "John Sabo",
+        "Huan Liu",
+        "K. Sel\u00e7uk Candan"
+      ],
+      "abstract": "Streamflow forecasting is crucial for water resource management and risk mitigation. While deep learning models have achieved strong predictive performance, they often overlook underlying physical processes, limiting interpretability and generalization. Recent causal learning approaches address these issues by integrating domain knowledge, yet they typically rely on fixed causal graphs that fail to adapt to data. We propose CauStream, a unified framework for causal spatiotemporal streamflow forecasting. CauSTream jointly learns (i) a runoff causal graph among meteorological forcings and (ii) a routing graph capturing dynamic dependencies across stations. We further establish identifiability conditions for these causal structures under a nonparametric setting. We evaluate CauSTream on three major U.S. river basins across three forecasting horizons. The model consistently outperforms prior state-of-the-art methods, with performance gaps widening at longer forecast windows, indicating stronger generalization to unseen conditions. Beyond forecasting, CauSTream also learns causal graphs that capture relationships among hydrological factors and stations. The inferred structures align closely with established domain knowledge, offering interpretable insights into watershed dynamics. CauSTream offers a principled foundation for causal spatiotemporal modeling, with the potential to extend to a wide range of scientific and environmental applications.",
+      "published": "2025-12-18",
+      "updated": "2025-12-18",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CE",
+        "stat.ML"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2512.16046v1",
+      "url": "https://arxiv.org/abs/2512.16046"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

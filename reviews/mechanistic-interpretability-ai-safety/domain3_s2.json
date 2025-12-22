@@ -1,0 +1,1487 @@
+[s2_search.py] Searching Semantic Scholar: 'explainable AI interpretability' (year=2023-2025), limit=40
+[s2_search.py] Retrieved 40/40 papers...
+[s2_search.py] Cached results (cache key: s2_3232ea2ad7cf3778)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "explainable AI interpretability",
+  "results": [
+    {
+      "paperId": "fcdf01034779263661adf7c0425ae1d2245908de",
+      "title": "Improving explainable AI interpretability with mathematical models for evaluating explanation methods",
+      "authors": [
+        {
+          "name": "P. N. Ambritta",
+          "authorId": "2352577002"
+        },
+        {
+          "name": "Parkshit N. Mahalle",
+          "authorId": "2352571882"
+        },
+        {
+          "name": "H. Bhapkar",
+          "authorId": "66806950"
+        },
+        {
+          "name": "G. Shinde",
+          "authorId": "41128753"
+        },
+        {
+          "name": "Nilesh P. Sable",
+          "authorId": "2329815198"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1007/s41870-025-02444-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fcdf01034779263661adf7c0425ae1d2245908de",
+      "venue": "International journal of information technology",
+      "journal": {
+        "name": "International Journal of Information Technology"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f29ad386529f7a46aab64d8dae4dbc4186599115",
+      "title": "Explainable AI (XAI) for trustworthy and transparent decision-making: A theoretical framework for AI interpretability",
+      "authors": [
+        {
+          "name": "Arunraju Chinnaraju",
+          "authorId": "2347822573"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Explainable Artificial Intelligence (XAI) has become a critical area of research in addressing the black-box nature of complex AI models, particularly as these systems increasingly influence high-stakes domains such as healthcare, finance, and autonomous systems. This study presents a theoretical framework for AI interpretability, offering a structured approach to understanding, implementing, and evaluating explainability in AI-driven decision-making. By analyzing key XAI techniques, including LIME, SHAP, and DeepLIFT, the research categorizes explanation methods based on scope, timing, and dependency on model architecture, providing a novel taxonomy for understanding their applicability across different use cases. Integrating insights from cognitive theories, the framework highlights how human comprehension of AI decisions can be enhanced to foster trust and reliability. A systematic evaluation of existing methodologies establishes critical explanation quality metrics, considering factors such as fidelity, completeness, and user satisfaction. The findings reveal key trade-offs between model performance and interpretability, emphasizing the challenges of balancing accuracy with transparency in real-world applications. Additionally, the study explores the ethical and regulatory implications of XAI, proposing standardized protocols for ensuring fairness, accountability, and compliance in AI deployment. By providing a unified theoretical framework and practical recommendations, this research contributes to the advancement of explainability in AI, paving the way for more transparent, interpretable, and human-centric AI systems.",
+      "citationCount": 13,
+      "doi": "10.30574/wjaets.2025.14.3.0106",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f29ad386529f7a46aab64d8dae4dbc4186599115",
+      "venue": "World Journal of Advanced Engineering Technology and Sciences",
+      "journal": {
+        "name": "World Journal of Advanced Engineering Technology and Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a22712f7d418716ef58fcf63de23c0068eac54f0",
+      "title": "TRANSFORMING CYBER DEFENSE THROUGH EXPLAINABLE AI: INTERPRETABILITY IN SECURITY CONTEXTS",
+      "authors": [
+        {
+          "name": "Sri Ramya Deevi",
+          "authorId": "2376743582"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.34218/ijcet_16_04_012",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a22712f7d418716ef58fcf63de23c0068eac54f0",
+      "venue": "INTERNATIONAL JOURNAL OF COMPUTER ENGINEERING & TECHNOLOGY",
+      "journal": {
+        "name": "INTERNATIONAL JOURNAL OF COMPUTER ENGINEERING AND TECHNOLOGY"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b0bdbd3cfae7ea8d232dd6c0e44bd3989ce9ed7f",
+      "title": "Enhancing Interpretability in Deep Learning-Based Inversion of 2-D Ground Penetrating Radar Data: An Explainable AI (XAI) Strategy",
+      "authors": [
+        {
+          "name": "Abhishek Kumar",
+          "authorId": "2277571587"
+        },
+        {
+          "name": "Upendra K. Singh",
+          "authorId": "2277489331"
+        },
+        {
+          "name": "B. Pradhan",
+          "authorId": "2176868811"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent advancements in deep learning (DL) have demonstrated potential for interpreting ground-penetrating radar (GPR) data, which is crucial for near surface geophysical investigations. However, the complexity of DL models and the challenge of interpreting their decision-making processes remain significant obstacles. This study addresses these challenges by applying explainable AI (XAI) techniques\u2014specifically, local interpretable model-agnostic explanations (LIMEs) and gradient-weighted class activation mapping (Grad-CAM)\u2014to elucidate the DL-based inversion process for 2-D GPR data. Our novel approach marks the first application of these XAI techniques in the context of GPR data analysis for subsurface utility mapping, revealing critical features and hierarchical feature extraction processes that drive the model\u2019s predictions. By offering detailed insights into the model\u2019s internal operations, this research not only enhances the interpretability of DL models in geophysical applications but also establishes a new standard for incorporating XAI in subsurface utility detection, paving the way for more accurate, reliable, and understandable DL applications in geophysical studies.",
+      "citationCount": 7,
+      "doi": "10.1109/LGRS.2024.3400934",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b0bdbd3cfae7ea8d232dd6c0e44bd3989ce9ed7f",
+      "venue": "IEEE Geoscience and Remote Sensing Letters",
+      "journal": {
+        "name": "IEEE Geoscience and Remote Sensing Letters",
+        "pages": "1-5",
+        "volume": "21"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "611d1d504a7be0d688bee99870d591e0dc935229",
+      "title": "Explainable AI (XAI) in Healthcare: Bridging the Gap between Accuracy and Interpretability",
+      "authors": [
+        {
+          "name": "Olcar Ozdemir",
+          "authorId": "2369741695"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Artificial Intelligence (AI) has demonstrated significant potential in revolutionizing healthcare by enhancing diagnostic accuracy, predicting patient outcomes, and optimizing treatment plans. However, the increasing reliance on complex, black-box models has raised critical concerns around transparency, trust, and accountability\u2014particularly in high-stakes medical settings where interpretability is vital for clinical decision-making. This paper explores Explainable AI (XAI) as a solution to bridge the gap between model performance and human interpretability. We review current XAI techniques, including post-hoc methods like SHAP and LIME, and intrinsically interpretable models, assessing their applicability and limitations within healthcare contexts. Through selected case studies in radiology, oncology, and clinical decision support systems, we examine how XAI can improve clinician trust and facilitate informed decision-making without compromising predictive accuracy. Our analysis highlights persistent challenges such as balancing explanation fidelity with usability, addressing data biases, and aligning explanations with clinical reasoning. We propose a multidisciplinary framework that integrates technical, ethical, and user-centered principles to support the development of trustworthy XAI systems. Future research directions include the standardization of interpretability metrics, the co-design of models with clinicians, and regulatory considerations for deploying XAI in clinical practice. By aligning technological advances with human-centered design, XAI has the potential to transform AI into a reliable partner in healthcare delivery.",
+      "citationCount": 4,
+      "doi": "10.64206/0z78ev10",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/611d1d504a7be0d688bee99870d591e0dc935229",
+      "venue": "Journal of Science, Technology and Engineering Research",
+      "journal": {
+        "name": "Journal of Science, Technology and Engineering Research"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e8539837f67c884ca04b374307a053f92c3ccb05",
+      "title": "Enhancing Transparency and Interpretability in Deep Learning Models: A Comprehensive Study on Explainable AI Techniques",
+      "authors": [
+        {
+          "name": "Dr.Shashank Singh",
+          "authorId": "2240759672"
+        },
+        {
+          "name": "Dr. Dhirendra Pratap Singh",
+          "authorId": "2287539986"
+        },
+        {
+          "name": "Mr.Kaushal Chandra",
+          "authorId": "2240144084"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract: Deep learning models have demonstrated remarkable capabilities across various domains, but their inherent complexity often leads to challenges in understanding and interpreting their decisions. The demand for transparent and interpretable artificial intelligence (AI) systems is particularly crucial in fields such as healthcare, finance, and autonomous systems. This research paper presents a comprehensive study on the application of Explainable AI (XAI) techniques to enhance transparency and interpretability in deep learning models. Keywords: Explainable AI (XAI), artificial intelligence (AI).",
+      "citationCount": 3,
+      "doi": "10.55041/ijsrem28675",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e8539837f67c884ca04b374307a053f92c3ccb05",
+      "venue": "INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT",
+      "journal": {
+        "name": "INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "df85739c87267c9c290965aa3c51a6b12f6b3ec7",
+      "title": "Interpretability in Financial Forecasting: The Role of eXplainable AI in Stock Market",
+      "authors": [
+        {
+          "name": "Hira Tanveer",
+          "authorId": "2254043133"
+        },
+        {
+          "name": "Sahar Arshad",
+          "authorId": "2276608370"
+        },
+        {
+          "name": "Huma Ameer",
+          "authorId": "2265754163"
+        },
+        {
+          "name": "Seemab Latif",
+          "authorId": "2276608393"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The financial services sector, particularly asset man-agement companies, is subject to stringent regulations, with investment decisions undergoing continuous scrutiny by com-mittees. While Artificial Intelligence (AI) has the potential to revolutionize financial services, its adoption in complex market analysis is hindered by its black-box nature. This paper addresses the challenge of time series forecasting for predicting market stability, leveraging comprehensive data from the Pakistan Stock Exchange. We conducted an experimental comparative study to classify time series data and to enhance model interpretability. We proposed an Explainable AI (XAI) framework using post-hoc techniques such as Local Interpretable Model-agnostic Ex-planations (LIME) and SHapley Additive exPlanations (SHAP). Our ConvlD-BiLSTM architecture achieved an accuracy of 83%. LIME interpretations revealed that moving averages were the most significant contributors to the predictions. The proposed framework provides key feature contributions, making model decisions transparent and interpretable for stock market partie-inants.",
+      "citationCount": 3,
+      "doi": "10.1109/ICSTE63875.2024.00039",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/df85739c87267c9c290965aa3c51a6b12f6b3ec7",
+      "venue": "International Conference on Software Technology and Engineering",
+      "journal": {
+        "name": "2024 14th International Conference on Software Technology and Engineering (ICSTE)",
+        "pages": "179-183"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f7924834fd218aca3d45d8688da203d143b15f10",
+      "title": "Enhancing the Interpretability of Malaria and Typhoid Diagnosis with Explainable AI and Large Language Models",
+      "authors": [
+        {
+          "name": "K. Attai",
+          "authorId": "1581946167"
+        },
+        {
+          "name": "Moses Ekpenyong",
+          "authorId": "2300932421"
+        },
+        {
+          "name": "Constance Amannah",
+          "authorId": "2277346651"
+        },
+        {
+          "name": "Daniel E. Asuquo",
+          "authorId": "2182496997"
+        },
+        {
+          "name": "Peterben C. Ajuga",
+          "authorId": "2323032302"
+        },
+        {
+          "name": "Okure Obot",
+          "authorId": "103707574"
+        },
+        {
+          "name": "Ekemini A. Johnson",
+          "authorId": "2118694284"
+        },
+        {
+          "name": "A. John",
+          "authorId": "2100581360"
+        },
+        {
+          "name": "O. Maduka",
+          "authorId": "144863964"
+        },
+        {
+          "name": "C. Akwaowo",
+          "authorId": "8271432"
+        },
+        {
+          "name": "Faith-Michael Uzoka",
+          "authorId": "2240201733"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Malaria and Typhoid fever are prevalent diseases in tropical regions, and both are exacerbated by unclear protocols, drug resistance, and environmental factors. Prompt and accurate diagnosis is crucial to improve accessibility and reduce mortality rates. Traditional diagnosis methods cannot effectively capture the complexities of these diseases due to the presence of similar symptoms. Although machine learning (ML) models offer accurate predictions, they operate as \u201cblack boxes\u201d with non-interpretable decision-making processes, making it challenging for healthcare providers to comprehend how the conclusions are reached. This study employs explainable AI (XAI) models such as Local Interpretable Model-agnostic Explanations (LIME), and Large Language Models (LLMs) like GPT to clarify diagnostic results for healthcare workers, building trust and transparency in medical diagnostics by describing which symptoms had the greatest impact on the model\u2019s decisions and providing clear, understandable explanations. The models were implemented on Google Colab and Visual Studio Code because of their rich libraries and extensions. Results showed that the Random Forest model outperformed the other tested models; in addition, important features were identified with the LIME plots while ChatGPT 3.5 had a comparative advantage over other LLMs. The study integrates RF, LIME, and GPT in building a mobile app to enhance the interpretability and transparency in malaria and typhoid diagnosis system. Despite its promising results, the system\u2019s performance is constrained by the quality of the dataset. Additionally, while LIME and GPT improve transparency, they may introduce complexities in real-time deployment due to computational demands and the need for internet service to maintain relevance and accuracy. The findings suggest that AI-driven diagnostic systems can significantly enhance healthcare delivery in environments with limited resources, and future works can explore the applicability of this framework to other medical conditions and datasets.",
+      "citationCount": 6,
+      "doi": "10.3390/tropicalmed9090216",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f7924834fd218aca3d45d8688da203d143b15f10",
+      "venue": "Tropical Medicine and Infectious Disease",
+      "journal": {
+        "name": "Tropical Medicine and Infectious Disease",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2f717b918983d6164f2df1ea67f11cb4e95f26ed",
+      "title": "Enhancing Explainable AI: A Hybrid Approach Combining GradCAM and LRP for CNN Interpretability",
+      "authors": [
+        {
+          "name": "Vaibhav Dhore",
+          "authorId": "2302332901"
+        },
+        {
+          "name": "A. Bhat",
+          "authorId": "153757803"
+        },
+        {
+          "name": "Viraj Nerlekar",
+          "authorId": "2302331701"
+        },
+        {
+          "name": "Kashyap Chavhan",
+          "authorId": "2302331716"
+        },
+        {
+          "name": "Aniket Umare",
+          "authorId": "114747317"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We present a new technique that explains the output of a CNN-based model using a combination of GradCAM and LRP methods. Both of these methods produce visual explanations by highlighting input regions that are important for predictions. In the new method, the explanation produced by GradCAM is first processed to remove noises. The processed output is then multiplied elementwise with the output of LRP. Finally, a Gaussian blur is applied on the product. We compared the proposed method with GradCAM and LRP on the metrics of Faithfulness, Robustness, Complexity, Localisation and Randomisation. It was observed that this method performs better on Complexity than both GradCAM and LRP and is better than atleast one of them in the other metrics.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2405.12175",
+      "arxivId": "2405.12175",
+      "url": "https://www.semanticscholar.org/paper/2f717b918983d6164f2df1ea67f11cb4e95f26ed",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.12175"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6abf0ec92f322edead331a9e7ed2ed6e707bcfba",
+      "title": "Explainable AI: Enhancing Interpretability of Machine Learning Models",
+      "authors": [
+        {
+          "name": "Duru Kulakl\u0131o\u011flu",
+          "authorId": "2336378930"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Explainable Artificial Intelligence (XAI) is emerging as a critical field to address the \u201cblack box\u201d nature of many machine learning (ML) models. While these models achieve high predictive accuracy, their opacity undermines trust, adoption, and ethical compliance in critical domains such as healthcare, finance, and autonomous systems. This research explores methodologies and frameworks to enhance the interpretability of ML models, focusing on techniques like feature attribution, surrogate models, and counterfactual explanations. By balancing model complexity and transparency, this study highlights strategies to bridge the gap between performance and explainability. The integration of XAI into ML workflows not only fosters trust but also aligns with regulatory requirements, enabling actionable insights for stakeholders. The findings reveal a roadmap to design inherently interpretable models and tools for post-hoc analysis, offering a sustainable approach to democratize AI.",
+      "citationCount": 3,
+      "doi": "10.62802/z3pde490",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6abf0ec92f322edead331a9e7ed2ed6e707bcfba",
+      "venue": "Human-Computer Interaction",
+      "journal": {
+        "name": "Human Computer Interaction"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3648bcde5371eaa3e7f95d70948e022b26fb307a",
+      "title": "Quantitative evaluation of uncertainty and interpretability in machine learning-based landslide susceptibility mapping through feature selection and explainable AI",
+      "authors": [
+        {
+          "name": "Xuan-Hien Le",
+          "authorId": "151257754"
+        },
+        {
+          "name": "Chanul Choi",
+          "authorId": "2244358763"
+        },
+        {
+          "name": "Song Eu",
+          "authorId": "2244490777"
+        },
+        {
+          "name": "Minho Yeon",
+          "authorId": "2098824251"
+        },
+        {
+          "name": "G. Lee",
+          "authorId": "2219029828"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Landslide susceptibility mapping (LSM) is essential for determining risk regions and guiding mitigation strategies. Machine learning (ML) techniques have been broadly utilized, but the uncertainty and interpretability of these models have not been well-studied. This study conducted a comparative analysis and uncertainty assessment of five\u00a0ML algorithms\u2014Random Forest (RF), Light Gradient-Boosting Machine (LGB), Extreme Gradient Boosting (XGB), K-Nearest Neighbor (KNN), and Support Vector Machine (SVM)\u2014for LSM in Inje area, South Korea. We optimized these models using Bayesian optimization, a method that refines model performance through probabilistic model-based tuning of hyperparameters. The performance of these algorithms was evaluated using accuracy, Kappa score, and F1 score, with accuracy in detecting landslide-prone locations ranging from 0.916 to 0.947. Among them, the tree-based models (RF, LGB, XGB) showed competitive performance and outperformed the other models. Prediction uncertainty was quantified using bootstrapping and Monte Carlo simulation methods, with the latter providing a more consistent estimate across models. Further, the interpretability of ML predictions was analyzed through sensitivity analysis and SHAP values. We also expanded our investigation to include both the inclusion and exclusion of predictors, providing insights into each significant variable through a comprehensive sensitivity analysis. This paper provides insights into the predictive uncertainty and interpretability of ML algorithms for LSM, contributing to future research in South Korea and beyond.",
+      "citationCount": 8,
+      "doi": "10.3389/fenvs.2024.1424988",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3648bcde5371eaa3e7f95d70948e022b26fb307a",
+      "venue": "Frontiers in Environmental Science",
+      "journal": {
+        "name": "Frontiers in Environmental Science"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1beb214f9950a1a5778e29a0cc18aa359b6cfa41",
+      "title": "Exploring Explainable AI Techniques for Improved Interpretability in Lung and Colon Cancer Classification",
+      "authors": [
+        {
+          "name": "Mukaffi Bin Moin",
+          "authorId": "2267340450"
+        },
+        {
+          "name": "Fatema Tuj Johora Faria",
+          "authorId": "2214751543"
+        },
+        {
+          "name": "Swarnajit Saha",
+          "authorId": "2300343330"
+        },
+        {
+          "name": "Bushra Kamal Rafa",
+          "authorId": "2300284724"
+        },
+        {
+          "name": "Mohammad Shafiul Alam",
+          "authorId": "2300433491"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Lung and colon cancer are serious worldwide health challenges that require early and precise identification to reduce mortality risks. However, diagnosis, which is mostly dependent on histopathologists' competence, presents difficulties and hazards when expertise is insufficient. While diagnostic methods like imaging and blood markers contribute to early detection, histopathology remains the gold standard, although time-consuming and vulnerable to inter-observer mistakes. Limited access to high-end technology further limits patients' ability to receive immediate medical care and diagnosis. Recent advances in deep learning have generated interest in its application to medical imaging analysis, specifically the use of histopathological images to diagnose lung and colon cancer. The goal of this investigation is to use and adapt existing pre-trained CNN-based models, such as Xception, DenseNet201, ResNet101, InceptionV3, DenseNet121, DenseNet169, ResNet152, and InceptionResNetV2, to enhance classification through better augmentation strategies. The results show tremendous progress, with all eight models reaching impressive accuracy ranging from 97% to 99%. Furthermore, attention visualization techniques such as GradCAM, GradCAM++, ScoreCAM, Faster Score-CAM, and LayerCAM, as well as Vanilla Saliency and SmoothGrad, are used to provide insights into the models' classification decisions, thereby improving interpretability and understanding of malignant and benign image classification.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2405.04610",
+      "arxivId": "2405.04610",
+      "url": "https://www.semanticscholar.org/paper/1beb214f9950a1a5778e29a0cc18aa359b6cfa41",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.04610"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f4f2471d2125f734d7d58674327a913fa62856a1",
+      "title": "Eye into AI: Evaluating the Interpretability of Explainable AI Techniques through a Game with a Purpose",
+      "authors": [
+        {
+          "name": "Katelyn Morrison",
+          "authorId": "2054095978"
+        },
+        {
+          "name": "Mayank Jain",
+          "authorId": "2253685937"
+        },
+        {
+          "name": "Jessica Hammer",
+          "authorId": "2253665355"
+        },
+        {
+          "name": "Adam Perer",
+          "authorId": "2257288294"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Recent developments in explainable AI (XAI) aim to improve the transparency of black-box models. However, empirically evaluating the interpretability of these XAI techniques is still an open challenge. The most common evaluation method is algorithmic performance, but such an approach may not accurately represent how interpretable these techniques are to people. A less common but growing evaluation strategy is to leverage crowd-workers to provide feedback on multiple XAI techniques to compare them. However, these tasks often feel like work and may limit participation. We propose a novel, playful, human-centered method for evaluating XAI techniques: a Game With a Purpose (GWAP), Eye into AI, that allows researchers to collect human evaluations of XAI at scale. We provide an empirical study demonstrating how our GWAP supports evaluating and comparing the agreement between three popular XAI techniques (LIME, Grad-CAM, and Feature Visualization) and humans, as well as evaluating and comparing the interpretability of those three XAI techniques applied to a deep learning model for image classification. The data collected from Eye into AI offers convincing evidence that GWAPs can be used to evaluate and compare XAI techniques. Eye into AI is available to the public: https://dig.cmu.edu/eyeintoai/.",
+      "citationCount": 14,
+      "doi": "10.1145/3610064",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f4f2471d2125f734d7d58674327a913fa62856a1",
+      "venue": "Proc. ACM Hum. Comput. Interact.",
+      "journal": {
+        "name": "Proceedings of the ACM on Human-Computer Interaction",
+        "pages": "1 - 22",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dad49e795672045bf42604c8b92cb80fa1723614",
+      "title": "A Comparative Analysis of Explainable AI Techniques for Enhanced Model Interpretability",
+      "authors": [
+        {
+          "name": "S. Y",
+          "authorId": "2253532843"
+        },
+        {
+          "name": "Manoj Challa",
+          "authorId": "2253763249"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Machine learning models have become increasingly complex, making it difficult to understand how they make predictions. Explainable AI (XAI) techniques have been developed to enhance model interpretability, thereby improving model transparency, trust, and accountability. In this paper, we present a comparative analysis of several XAI techniques to enhance the interpretability of machine learning models. We evaluate the performance of these techniques on a dataset commonly used for regression or classification tasks. The XAI techniques include SHAP, LIME, PDP, and GAM. We compare the effectiveness of these techniques in terms of their ability to explain model predictions and identify the most important features in the dataset. Our results indicate that XAI techniques significantly improve model interpretability, with SHAP and LIME being the most effective in identifying important features in the dataset. Our study provides insights into the strengths and limitations of different XAI techniques and their implications for the development and deployment of machine learning models. We conclude that XAI techniques have the potential to significantly enhance model interpretability and promote trust and accountability in the use of machine learning models. The paper emphasizes the importance of interpretability in medical applications of machine learning and highlights the significance of XAI techniques in developing accurate and reliable models for medical applications.",
+      "citationCount": 15,
+      "doi": "10.1109/ICPCSN58827.2023.00043",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dad49e795672045bf42604c8b92cb80fa1723614",
+      "venue": "2023 3rd International Conference on Pervasive Computing and Social Networking (ICPCSN)",
+      "journal": {
+        "name": "2023 3rd International Conference on Pervasive Computing and Social Networking (ICPCSN)",
+        "pages": "229-234"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4c99b24d27ac613bf49addb2b1bbbcff61ece265",
+      "title": "Explainable AI for Tomato Leaf Disease Detection: Insights into Model Interpretability",
+      "authors": [
+        {
+          "name": "Tanjim Mahmud",
+          "authorId": "144146113"
+        },
+        {
+          "name": "Koushick Barua",
+          "authorId": "2241519595"
+        },
+        {
+          "name": "Anik Barua",
+          "authorId": "2214758682"
+        },
+        {
+          "name": "Nanziba Basnin",
+          "authorId": "2044712035"
+        },
+        {
+          "name": "Sudhakar Das",
+          "authorId": "2189924051"
+        },
+        {
+          "name": "Mohammad Shahadat Hossain",
+          "authorId": "8245666"
+        },
+        {
+          "name": "Karl Andersson",
+          "authorId": "1381289391"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Plant diseases pose a significant threat to global food security by limiting access to safe and abundant food sources while impacting agricultural productivity and food safety. To address this challenge, innovative disease detection techniques are crucial. This paper presents a novel approach to tomato leaf disease detection grounded in deep transfer learning. We employ convolutional neural networks (CNNs) to recognize and categorize diseases, leveraging pre-trained models such as EfficientNetB3, Xception, and MobileNetV2. Our experimental results highlight the efficacy of these models, with the CNN achieving an accuracy of 0.92, MobileNetV2 at 0.93, Xception at 0.94 and EfficientNetB3 at 0.993. By combining these machine learning techniques with image processing methods, we create a system capable of diagnosing tomato leaf diseases promptly. The system employs image processing techniques to facilitate disease recognition, enabling automated disease identification as soon as symptoms manifest on leaves or plants. This empowers farmers with timely information and appropriate treatment options, ultimately leading to precise disease management. Furthermore, our research delves into model interpretability by employing Saliency maps and Grad-CAM techniques, providing valuable insights into the decision-making process of our deep learning models. This transparency enhances the trustworthiness of the AI-driven disease detection system, fostering its practical application in agriculture.",
+      "citationCount": 29,
+      "doi": "10.1109/ICCIT60459.2023.10441570",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4c99b24d27ac613bf49addb2b1bbbcff61ece265",
+      "venue": "2023 26th International Conference on Computer and Information Technology (ICCIT)",
+      "journal": {
+        "name": "2023 26th International Conference on Computer and Information Technology (ICCIT)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "57a7a6cd43cce6a21fb3d06e1e012f9f37ca6f5d",
+      "title": "Explainable AI in Manufacturing: an Analysis of Transparency and Interpretability Methods for the XMANAI Platform",
+      "authors": [
+        {
+          "name": "Rui Branco",
+          "authorId": "2269860186"
+        },
+        {
+          "name": "Carlos Agostinho",
+          "authorId": "2270660807"
+        },
+        {
+          "name": "Sergio Gusmeroli",
+          "authorId": "2270663324"
+        },
+        {
+          "name": "Eleni Lavasa",
+          "authorId": "2270654420"
+        },
+        {
+          "name": "Zoumpolia Dikopoulou",
+          "authorId": "101473645"
+        },
+        {
+          "name": "David Monzo",
+          "authorId": "2270661821"
+        },
+        {
+          "name": "Fenareti Lampathaki",
+          "authorId": "2075946"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The use of artificial intelligence (AI) in manufacturing has become increasingly common, but the lack of transparency and interpretability of AI models can limit their adoption in critical applications, due to lack of human understanding. Explainable AI (XAI) has emerged as a solution to this problem by providing insights into the decision-making process of AI models. This paper analyses different approaches for AI transparency and interpretability, starting from explainability by-design to post-hoc explainability, pointing out trade-offs, advantages and disadvantages of each one, as well as providing an overview of different applications in manufacturing processes. The paper concludes presenting XMANAI as an innovative platform for manufacturing users to develop insightful XAI pipelines that can assist in their everyday operations and decision-making. The comprehensive overview of methods here presented serves as the ground basis for the platform draft catalogue of XAI models.",
+      "citationCount": 6,
+      "doi": "10.1109/ICE/ITMC58018.2023.10332373",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/57a7a6cd43cce6a21fb3d06e1e012f9f37ca6f5d",
+      "venue": "International Conference on Engineering, Technology and Innovation",
+      "journal": {
+        "name": "2023 IEEE International Conference on Engineering, Technology and Innovation (ICE/ITMC)",
+        "pages": "1-8"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ba8f8c014f409020d98373ecf7a84463fbb847c0",
+      "title": "Evaluating machine learning-based intrusion detection systems with explainable AI: enhancing transparency and interpretability",
+      "authors": [
+        {
+          "name": "Vincent Zibi Mohale",
+          "authorId": "2322546658"
+        },
+        {
+          "name": "I. Obagbuwa",
+          "authorId": "1859899"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Machine Learning (ML)-based Intrusion Detection Systems (IDS) are integral to securing modern IoT networks but often suffer from a lack of transparency, functioning as \u201cblack boxes\u201d with opaque decision-making processes. This study enhances IDS by integrating Explainable Artificial Intelligence (XAI), improving interpretability and trustworthiness while maintaining high predictive performance. Using the UNSW-NB15 dataset, comprising over 2.5 million records and nine diverse attack types, we developed and evaluated multiple ML models, including Decision Trees, Multilayer Perceptron (MLP), XGBoost, Random Forest, CatBoost, Logistic Regression, and Gaussian Naive Bayes. By incorporating XAI techniques such as LIME, SHAP, and ELI5, we demonstrated that XAI-enhanced models provide actionable insights into feature importance and decision processes. The experimental results revealed that XGBoost and CatBoost achieved the highest accuracy of 87%, with a false positive rate of 0.07 and a false negative rate of 0.12. These models stood out for their superior performance and interpretability, highlighting key features such as Source-to-Destination Time-to-Live (sttl) and Destination Service Count (ct_srv_dst) as critical indicators of malicious activity. The study also underscores the methodological and empirical contributions of integrating XAI techniques with ML models, offering a balanced approach between accuracy and transparency. From a practical standpoint, this research equips human analysts with tools to better understand and trust IDS predictions, facilitating quicker responses to security threats. Compared to existing studies, this work bridges the gap between high-performing ML models and their real-world applicability by focusing on explainability. Future research directions include applying the proposed methodology to more complex datasets and exploring advancements in XAI techniques for broader cybersecurity challenges.",
+      "citationCount": 19,
+      "doi": "10.3389/fcomp.2025.1520741",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ba8f8c014f409020d98373ecf7a84463fbb847c0",
+      "venue": "Frontiers of Computer Science",
+      "journal": {
+        "name": "Frontiers in Computer Science"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "010598f25238579953d31548c499a399e880a712",
+      "title": "Explainable AI Recipes: Implement Solutions to Model Explainability and Interpretability with Python",
+      "authors": [
+        {
+          "name": "Pradeepta Mishra",
+          "authorId": "67158418"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.1007/978-1-4842-9029-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/010598f25238579953d31548c499a399e880a712",
+      "venue": "",
+      "journal": {
+        "name": "Explainable AI Recipes"
+      },
+      "publicationTypes": [
+        "Book"
+      ]
+    },
+    {
+      "paperId": "629056aa0a53497fc9533047052e9e0f1753ab29",
+      "title": "Explainable AI for Water Quality Monitoring: A Systematic Review of Transparency, Interpretability, and Trust",
+      "authors": [
+        {
+          "name": "I. A. Aderemi",
+          "authorId": "2353505715"
+        },
+        {
+          "name": "T. Kehinde",
+          "authorId": "2266117616"
+        },
+        {
+          "name": "Ugochukwu Daniel Okwor",
+          "authorId": "2397766122"
+        },
+        {
+          "name": "Khalid Hussain Ahmad",
+          "authorId": "2375430319"
+        },
+        {
+          "name": "Kofi Yeboah Adjei",
+          "authorId": "2375633145"
+        },
+        {
+          "name": "Chijioke Cyriacus Ekechi",
+          "authorId": "2397766158"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Water quality monitoring is essential for protecting public health, sustaining ecosystems, and achieving sustainable development goal 6 (clean water and sanitation). While recent advances in artificial intelligence (AI), particularly machine learning, have improved the accuracy and responsiveness of water quality assessment, the opaque nature of many AI models limits transparency, stakeholder trust, and regulatory compliance. Explainable AI (XAI) offers a viable solution by enabling human-understandable insights into model behavior. This article presents a preferred reporting items for systematic reviews and meta-analyses-guided systematic review of 60 peer-reviewed articles (2011\u20132025), sourced from Scopus, to evaluate the evolution, application, and effectiveness of XAI in water quality monitoring. Key techniques such as Shapley additive explanations (SHAP), local interpretable model-agnostic explanations, and counterfactual reasoning have been applied across random forest, XGBoost, and long short-term memory models. Results indicate a surge in XAI adoption post-2022, with dominant use cases in groundwater prediction, surface water quality forecasting, and real-time monitoring in Internet-of-Things-enabled smart cities. While SHAP remains the most widely used method, multimodal and hybrid frameworks are emerging to address challenges such as data heterogeneity and model complexity. The review identifies persistent barriers including computational scalability, lack of standardized evaluation metrics, and limited deployment in low-resource settings. It proposes future research directions for integrating XAI with digital twins, causal inference, and edge computing to achieve robust, transparent, and equitable water management systems.",
+      "citationCount": 3,
+      "doi": "10.1109/SR.2025.3595500",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/629056aa0a53497fc9533047052e9e0f1753ab29",
+      "venue": "IEEE Sensors Reviews",
+      "journal": {
+        "name": "IEEE Sensors Reviews",
+        "pages": "419-443",
+        "volume": "2"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d9944ba81580292f0c20b3d21bc5be54877288a1",
+      "title": "A comprehensive explainable AI approach for enhancing transparency and interpretability in stroke prediction",
+      "authors": [
+        {
+          "name": "Marwa El-Geneedy",
+          "authorId": "2370255630"
+        },
+        {
+          "name": "Hossam El-din Moustafa",
+          "authorId": "1408078047"
+        },
+        {
+          "name": "Hatem Khater",
+          "authorId": "2300313072"
+        },
+        {
+          "name": "Seham Abd-Elsamee",
+          "authorId": "2187515861"
+        },
+        {
+          "name": "Samah A. Gamel",
+          "authorId": "2338682191"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Stroke is among the leading causes of death, especially among old adults. Thus, the mortality rate and severe cerebral disability can be avoided when stroke is diagnosed at its early stages, followed by subsequent treatment. There is no doubt that healthcare specialists can find the necessary solutions more effectively and instantly with the help of artificial intelligence (AI) and machine learning (ML). In this study, we used ML classifiers and explainable artificial intelligence (XAI) to predict stroke. Six different ML classifiers that trained on available datasets for stroke patients. Six feature selection methodologies were used to extract essential features from the dataset. The XAI methods applied (Shapley Additive Values (SHAP), ELI5, and Local Interpretable Model-agnostic Explanations (LIME)). This study provides preliminary insights that may support the development of future tools to assist medical practitioners in managing patients, pending further clinical validation and real-world testing.",
+      "citationCount": 5,
+      "doi": "10.1038/s41598-025-11263-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d9944ba81580292f0c20b3d21bc5be54877288a1",
+      "venue": "Scientific Reports",
+      "journal": {
+        "name": "Scientific Reports",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "49ee9296d791cc3da2fef2bea7a2586305daaf66",
+      "title": "EXPLICATE: Enhancing Phishing Detection through Explainable AI and LLM-Powered Interpretability",
+      "authors": [
+        {
+          "name": "Bryan Lim",
+          "authorId": "2352256480"
+        },
+        {
+          "name": "Roman Huerta",
+          "authorId": "2352272067"
+        },
+        {
+          "name": "Alejandro Sotelo",
+          "authorId": "2352267113"
+        },
+        {
+          "name": "Anthonie Quintela",
+          "authorId": "2352272964"
+        },
+        {
+          "name": "Priyanka Kumar",
+          "authorId": "2352784894"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Sophisticated phishing attacks have emerged as a major cybersecurity threat, becoming more common and difficult to prevent. Though machine learning techniques have shown promise in detecting phishing attacks, they function mainly as\"black boxes\"without revealing their decision-making rationale. This lack of transparency erodes the trust of users and diminishes their effective threat response. We present EXPLICATE: a framework that enhances phishing detection through a three-component architecture: an ML-based classifier using domain-specific features, a dual-explanation layer combining LIME and SHAP for complementary feature-level insights, and an LLM enhancement using DeepSeek v3 to translate technical explanations into accessible natural language. Our experiments show that EXPLICATE attains 98.4 % accuracy on all metrics, which is on par with existing deep learning techniques but has better explainability. High-quality explanations are generated by the framework with an accuracy of 94.2 % as well as a consistency of 96.8\\% between the LLM output and model prediction. We create EXPLICATE as a fully usable GUI application and a light Chrome extension, showing its applicability in many deployment situations. The research shows that high detection performance can go hand-in-hand with meaningful explainability in security applications. Most important, it addresses the critical divide between automated AI and user trust in phishing detection systems.",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2503.20796",
+      "arxivId": "2503.20796",
+      "url": "https://www.semanticscholar.org/paper/49ee9296d791cc3da2fef2bea7a2586305daaf66",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.20796"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3543b8f5f1a9f63982901129e26223eb3b10fceb",
+      "title": "Predictive Modeling of Product Yields in Microwave-Assisted Co-Pyrolysis of Biomass and Plastic with Enhanced Interpretability Using Explainable AI Approaches",
+      "authors": [
+        {
+          "name": "Nilesh S. Rajpurohit",
+          "authorId": "2345706202"
+        },
+        {
+          "name": "Parth K Kamani",
+          "authorId": "2345707109"
+        },
+        {
+          "name": "Maheswata Lenka",
+          "authorId": "39798918"
+        },
+        {
+          "name": "C. S. Rao",
+          "authorId": "145199000"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.1016/j.jaap.2025.107021",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3543b8f5f1a9f63982901129e26223eb3b10fceb",
+      "venue": "Journal of Analytical and Applied Pyrolysis",
+      "journal": {
+        "name": "Journal of Analytical and Applied Pyrolysis"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "77bd5a75c2495603d0c9093591e1ad9b07f06ada",
+      "title": "Bridging efficiency and interpretability: Explainable AI for multi-classification of pulmonary diseases utilizing modified lightweight CNNs",
+      "authors": [
+        {
+          "name": "Samia Khan",
+          "authorId": "2329353136"
+        },
+        {
+          "name": "Farheen Siddiqui",
+          "authorId": "2329237646"
+        },
+        {
+          "name": "M. Ahad",
+          "authorId": "46225745"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1016/j.imavis.2025.105553",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/77bd5a75c2495603d0c9093591e1ad9b07f06ada",
+      "venue": "Image and Vision Computing",
+      "journal": {
+        "name": "Image Vis. Comput.",
+        "pages": "105553",
+        "volume": "158"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "62c2f719437175d6b6fde19ec6fd5939c1b122df",
+      "title": "Explainable AI for permeate flux prediction in forward osmosis: SHAP interpretability and theoretical validation for enhanced predictive reliability",
+      "authors": [
+        {
+          "name": "Yinseo Song",
+          "authorId": "2340114119"
+        },
+        {
+          "name": "Jeongwoo Moon",
+          "authorId": "2291980891"
+        },
+        {
+          "name": "Kiho Park",
+          "authorId": "2339726505"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1016/j.desal.2025.118551",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/62c2f719437175d6b6fde19ec6fd5939c1b122df",
+      "venue": "Desalination",
+      "journal": {
+        "name": "Desalination"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "164d91d35ecc2f8b1083650bbaccf9cb82bfc722",
+      "title": "Explainable AI: A Retrieval-Augmented Generation Based Framework for Model Interpretability",
+      "authors": [
+        {
+          "name": "Devansh Guttikonda",
+          "authorId": "2347956528"
+        },
+        {
+          "name": "Deepika Indran",
+          "authorId": "2347963774"
+        },
+        {
+          "name": "Lakshmi Narayanan",
+          "authorId": "2347963357"
+        },
+        {
+          "name": "Tanishka Pasarad",
+          "authorId": "2347956729"
+        },
+        {
+          "name": "S. B J",
+          "authorId": "2080055926"
+        }
+      ],
+      "year": 2025,
+      "abstract": ": The growing reliance on Machine learning and Deep learning models in industries like healthcare, finance and manufacturing presents a major challenge: the lack of transparency and understanding of how these models make decisions. This paper introduces a novel Retrieval-Augmented Generation (RAG) based framework to tackle this issue. By leveraging Large Language Models (LLMs) and domain-specific knowledge bases, the proposed framework offers clear, interactive explanations of model outputs, making these systems more trustworthy and accessible for non-technical users. The framework\u2019s effectiveness is demonstrated across healthcare, finance and manufacturing, offering a scalable and effective solution that can be applied across industries.",
+      "citationCount": 4,
+      "doi": "10.5220/0013241300003890",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/164d91d35ecc2f8b1083650bbaccf9cb82bfc722",
+      "venue": "International Conference on Agents and Artificial Intelligence",
+      "journal": {
+        "pages": "948-955"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9df8abda8d8c9ccec2b6d3840b5842b3a993b17c",
+      "title": "An Explainable AI Paradigm for Alzheimer\u2019s Diagnosis Using Deep Transfer Learning",
+      "authors": [
+        {
+          "name": "Tanjim Mahmud",
+          "authorId": "144146113"
+        },
+        {
+          "name": "Koushick Barua",
+          "authorId": "2241519595"
+        },
+        {
+          "name": "Sultana Umme Habiba",
+          "authorId": "1574084076"
+        },
+        {
+          "name": "Nahed Sharmen",
+          "authorId": "2112902367"
+        },
+        {
+          "name": "Mohammad Shahadat Hossain",
+          "authorId": "8245666"
+        },
+        {
+          "name": "Karl Andersson",
+          "authorId": "1381289391"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Alzheimer\u2019s disease (AD) is a progressive neurodegenerative disorder that affects millions of individuals worldwide, causing severe cognitive decline and memory impairment. The early and accurate diagnosis of AD is crucial for effective intervention and disease management. In recent years, deep learning techniques have shown promising results in medical image analysis, including AD diagnosis from neuroimaging data. However, the lack of interpretability in deep learning models hinders their adoption in clinical settings, where explainability is essential for gaining trust and acceptance from healthcare professionals. In this study, we propose an explainable AI (XAI)-based approach for the diagnosis of Alzheimer\u2019s disease, leveraging the power of deep transfer learning and ensemble modeling. The proposed framework aims to enhance the interpretability of deep learning models by incorporating XAI techniques, allowing clinicians to understand the decision-making process and providing valuable insights into disease diagnosis. By leveraging popular pre-trained convolutional neural networks (CNNs) such as VGG16, VGG19, DenseNet169, and DenseNet201, we conducted extensive experiments to evaluate their individual performances on a comprehensive dataset. The proposed ensembles, Ensemble-1 (VGG16 and VGG19) and Ensemble-2 (DenseNet169 and DenseNet201), demonstrated superior accuracy, precision, recall, and F1 scores compared to individual models, reaching up to 95%. In order to enhance interpretability and transparency in Alzheimer\u2019s diagnosis, we introduced a novel model achieving an impressive accuracy of 96%. This model incorporates explainable AI techniques, including saliency maps and grad-CAM (gradient-weighted class activation mapping). The integration of these techniques not only contributes to the model\u2019s exceptional accuracy but also provides clinicians and researchers with visual insights into the neural regions influencing the diagnosis. Our findings showcase the potential of combining deep transfer learning with explainable AI in the realm of Alzheimer\u2019s disease diagnosis, paving the way for more interpretable and clinically relevant AI models in healthcare.",
+      "citationCount": 79,
+      "doi": "10.3390/diagnostics14030345",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9df8abda8d8c9ccec2b6d3840b5842b3a993b17c",
+      "venue": "Diagnostics",
+      "journal": {
+        "name": "Diagnostics",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "95c9e2366762a225592dd50ede13074c045ad64c",
+      "title": "Explainable AI for Industry 5.0: Vision, Architecture, and Potential Directions",
+      "authors": [
+        {
+          "name": "Chandan Trivedi",
+          "authorId": "2136974772"
+        },
+        {
+          "name": "Pronaya Bhattacharya",
+          "authorId": "32740225"
+        },
+        {
+          "name": "Vivek Kumar Prasad",
+          "authorId": "2296889672"
+        },
+        {
+          "name": "Viraj Patel",
+          "authorId": "2301425094"
+        },
+        {
+          "name": "Arunendra Singh",
+          "authorId": "153342168"
+        },
+        {
+          "name": "Sudeep Tanwar",
+          "authorId": "49252696"
+        },
+        {
+          "name": "Ravi Sharma",
+          "authorId": "2151298698"
+        },
+        {
+          "name": "Srinivas Aluvala",
+          "authorId": "2259046173"
+        },
+        {
+          "name": "Giovanni Pau",
+          "authorId": "2186910377"
+        },
+        {
+          "name": "Gulshan Sharma",
+          "authorId": "2150072011"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The Industrial Revolution has shifted toward Industry 5.0, reinventing the Industry 4.0 operational process by introducing human elements into critical decision processes. Industry 5.0 would present massive customization via transformative technologies, such as cyber-physical systems (CPSs), artificial intelligence (AI), and big data analytics. In Industry 5.0, the AI models must be transparent, valid, and interpretable. AI models employ machine learning and deep learning mechanisms to make the industrial process autonomous, reduce downtime, and improve operational and maintenance costs. However, the models require explainability in the learning process. Thus, explainable AI (EXAI) adds interpretability and improves the diagnosis of critical industrial processes, which augments the machine-to-human explanations and vice versa. Recent surveys of EXAI in industrial applications are mostly oriented toward EXAI models, the underlying assumptions. Still, fewer studies are conducted toward a holistic integration of EXAI with human-centric processes that drives the Industry 5.0 applicative verticals. Thus, to address the gap, we propose a first-of-its-kind survey that systematically untangles EXAI integration and its potential in Industry 5.0 applications. First, we present the background of EXAI in Industry 5.0 and CPSs and a reference EXAI-based Industry 5.0 architecture with insights into large language models. Then, based on the research questions, a solution taxonomy of EXAI in Industry 5.0 is presented, which is ably supported by applicative use cases (cloud, digital twins, smart grids, augmented reality, and unmanned aerial vehicles). Finally, a case study of EXAI in manufacturing cost assessment is discussed, followed by open issues and future directions. The survey is designed to extend novel prototypes and designs to realize EXAI-based real-time Industry 5.0 applications.",
+      "citationCount": 34,
+      "doi": "10.1109/OJIA.2024.3399057",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/95c9e2366762a225592dd50ede13074c045ad64c",
+      "venue": "IEEE Open Journal of Industry Applications",
+      "journal": {
+        "name": "IEEE Open Journal of Industry Applications",
+        "pages": "177-208",
+        "volume": "5"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9784066a2acf67fcb3aa4eecddfe02415dec8c20",
+      "title": "Explainable AI In E-Commerce: Enhancing Trust And Transparency In AI-Driven Decisions",
+      "authors": [
+        {
+          "name": "Malay Sarkar",
+          "authorId": "2345512570"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This study explores the transformative role of Explainable Artificial Intelligence (XAI) in e-commerce, focusing on its potential to enhance consumer trust, transparency, and regulatory compliance. Through a systematic review of 42 peer-reviewed articles, this research examines the applications, challenges, and limitations of XAI techniques such as SHAP (Shapley Additive Explanations), LIME (Local Interpretable Model-Agnostic Explanations), and other interpretability frameworks in consumer-facing AI systems. The findings reveal that XAI significantly improves user trust and satisfaction by providing interpretable explanations for AI-driven decisions in areas like recommendation engines, fraud detection, and dynamic pricing. However, critical gaps remain, including the scalability of XAI methods for handling large datasets, their limited capacity to address systemic biases, and the need for personalized, user-centric explanations tailored to diverse audiences. The study also highlights the role of XAI in ensuring compliance with regulations such as GDPR and CCPA, showcasing its dual impact on operational transparency and legal adherence. By identifying these strengths and gaps, this research contributes to a deeper understanding of XAI\u2019s potential and provides valuable insights for its effective integration into e-commerce platforms. These findings underscore the necessity of advancing XAI methodologies to meet the evolving demands of the digital marketplace.",
+      "citationCount": 15,
+      "doi": "10.70937/itej.v2i01.53",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9784066a2acf67fcb3aa4eecddfe02415dec8c20",
+      "venue": "Innovatech Engineering Journal",
+      "journal": {
+        "name": "Innovatech Engineering Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "08b11beee8946e4bf2e29917f31671e2d4344018",
+      "title": "Enhancing brain tumor detection in MRI images through explainable AI using Grad-CAM with Resnet 50",
+      "authors": [
+        {
+          "name": "Mohamed Musthafa M",
+          "authorId": "2391096314"
+        },
+        {
+          "name": "M. T R",
+          "authorId": "2112835302"
+        },
+        {
+          "name": "V. V",
+          "authorId": "2237319131"
+        },
+        {
+          "name": "Suresh Guluwadi",
+          "authorId": "2280485778"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This study addresses the critical challenge of detecting brain tumors using MRI images, a pivotal task in medical diagnostics that demands high accuracy and interpretability. While deep learning has shown remarkable success in medical image analysis, there remains a substantial need for models that are not only accurate but also interpretable to healthcare professionals. The existing methodologies, predominantly deep learning-based, often act as black boxes, providing little insight into their decision-making process. This research introduces an integrated approach using ResNet50, a deep learning model, combined with Gradient-weighted Class Activation Mapping (Grad-CAM) to offer a transparent and explainable framework for brain tumor detection. We employed a dataset of MRI images, enhanced through data augmentation, to train and validate our model. The results demonstrate a significant improvement in model performance, with a testing accuracy of 98.52% and precision-recall metrics exceeding 98%, showcasing the model\u2019s effectiveness in distinguishing tumor presence. The application of Grad-CAM provides insightful visual explanations, illustrating the model\u2019s focus areas in making predictions. This fusion of high accuracy and explainability holds profound implications for medical diagnostics, offering a pathway towards more reliable and interpretable brain tumor detection tools.",
+      "citationCount": 84,
+      "doi": "10.1186/s12880-024-01292-7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/08b11beee8946e4bf2e29917f31671e2d4344018",
+      "venue": "BMC Medical Imaging",
+      "journal": {
+        "name": "BMC Medical Imaging",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "808d916479ba49b4af6db82651846128791b73ff",
+      "title": "An Interpretable Approach with Explainable AI for Heart Stroke Prediction",
+      "authors": [
+        {
+          "name": "P. Srinivasu",
+          "authorId": "34929616"
+        },
+        {
+          "name": "U. Sirisha",
+          "authorId": "2182356241"
+        },
+        {
+          "name": "K. Sandeep",
+          "authorId": "2278745446"
+        },
+        {
+          "name": "S. P. Praveen",
+          "authorId": "2266130007"
+        },
+        {
+          "name": "L. Maguluri",
+          "authorId": "2142604"
+        },
+        {
+          "name": "Thulasi Bikku",
+          "authorId": "70301508"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Heart strokes are a significant global health concern, profoundly affecting the wellbeing of the population. Many research endeavors have focused on developing predictive models for heart strokes using ML and DL techniques. Nevertheless, prior studies have often failed to bridge the gap between complex ML models and their interpretability in clinical contexts, leaving healthcare professionals hesitant to embrace them for critical decision-making. This research introduces a meticulously designed, effective, and easily interpretable approach for heart stroke prediction, empowered by explainable AI techniques. Our contributions include a meticulously designed model, incorporating pivotal techniques such as resampling, data leakage prevention, feature selection, and emphasizing the model\u2019s comprehensibility for healthcare practitioners. This multifaceted approach holds the potential to significantly impact the field of healthcare by offering a reliable and understandable tool for heart stroke prediction. In our research, we harnessed the potential of the Stroke Prediction Dataset, a valuable resource containing 11 distinct attributes. Applying these techniques, including model interpretability measures such as permutation importance and explainability methods like LIME, has achieved impressive results. While permutation importance provides insights into feature importance globally, LIME complements this by offering local and instance-specific explanations. Together, they contribute to a comprehensive understanding of the Artificial Neural Network (ANN) model. The combination of these techniques not only aids in understanding the features that drive overall model performance but also helps in interpreting and validating individual predictions. The ANN model has achieved an outstanding accuracy rate of 95%.",
+      "citationCount": 57,
+      "doi": "10.3390/diagnostics14020128",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/808d916479ba49b4af6db82651846128791b73ff",
+      "venue": "Diagnostics",
+      "journal": {
+        "name": "Diagnostics",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dabc0b269cbc89cdaf31217de5e4880cffe8e424",
+      "title": "Unmasking Banking Fraud: Unleashing the Power of Machine Learning and Explainable AI (XAI) on Imbalanced Data",
+      "authors": [
+        {
+          "name": "SM Nuruzzaman Nobel",
+          "authorId": "2310180111"
+        },
+        {
+          "name": "Shirin Sultana",
+          "authorId": "2279912170"
+        },
+        {
+          "name": "Sondip Poul Singha",
+          "authorId": "2232077084"
+        },
+        {
+          "name": "S. Chaki",
+          "authorId": "2489196"
+        },
+        {
+          "name": "M. J. N. Mahi",
+          "authorId": "52140505"
+        },
+        {
+          "name": "Tony Jan",
+          "authorId": "2134887719"
+        },
+        {
+          "name": "Alistair Barros",
+          "authorId": "2131349148"
+        },
+        {
+          "name": "Md. Whaiduzzaman",
+          "authorId": "2578202"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recognizing fraudulent activity in the banking system is essential due to the significant risks involved. When fraudulent transactions are vastly outnumbered by non-fraudulent ones, dealing with imbalanced datasets can be difficult. This study aims to determine the best model for detecting fraud by comparing four commonly used machine learning algorithms: Support Vector Machine (SVM), XGBoost, Decision Tree, and Logistic Regression. Additionally, we utilized the Synthetic Minority Over-sampling Technique (SMOTE) to address the issue of class imbalance. The XGBoost Classifier proved to be the most successful model for fraud detection, with an accuracy of 99.88%. We utilized SHAP and LIME analyses to provide greater clarity into the decision-making process of the XGBoost model and improve overall comprehension. This research shows that the XGBoost Classifier is highly effective in detecting banking fraud on imbalanced datasets, with an impressive accuracy score. The interpretability of the XGBoost Classifier model was further enhanced by applying SHAP and LIME analysis, which shed light on the significant features that contribute to fraud detection. The insights and findings presented here are valuable contributions to the ongoing efforts aimed at developing effective fraud detection systems for the banking industry.",
+      "citationCount": 27,
+      "doi": "10.3390/info15060298",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dabc0b269cbc89cdaf31217de5e4880cffe8e424",
+      "venue": "Inf.",
+      "journal": {
+        "name": "Inf.",
+        "pages": "298",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e82bcc7d8f1481f04c5a0bfaa8f86beab8d56f88",
+      "title": "Enhancing explainability in ECG analysis through evidence-based AI interpretability",
+      "authors": [
+        {
+          "name": "Philip Hempel",
+          "authorId": "2276532978"
+        },
+        {
+          "name": "Theresa Bender",
+          "authorId": "51245803"
+        },
+        {
+          "name": "Nicolai Spicher",
+          "authorId": "8079536"
+        }
+      ],
+      "year": 2024,
+      "abstract": "While pre-trained neural networks, e.g., for diagnosis from electrocardiograms (ECGs), are already available and show remarkable performance, their lack of transparency prevents translation to clinical practice. Recently, an explainable artificial intelligence (XAI) software framework was proposed which uses post-hoc interpretability methods to reveal regions of interest (ROIs) within an ECG that were relevant for the network\u2019s decision. However, it is not clear how these correlate with the evidence-based ECG features used by cardiologists. Hence, here we propose an extended version of the XAI framework which includes analyses based on ECG wave durations and intervals. Using a publicly-available pre-trained neural network, we predicted first degree AV block (1dAVb) and left bundle branch block (LBBB) in the PTB-XL dataset (21,414 ECGs). We used the XAI framework to extract relevances and matched them with PR interval and QRS duration provided by the PTB-XL+ dataset. For ECGs showing 1dAVb, the ROI was centered on P waves and QRS complexes with prolonged PR intervals. 96.0% of the network\u2019s predictions with high confidence were larger than the evidence-based threshold of 200ms. For ECGs showing LBBB, the ROI was centered on QRS complexes with 98.6% of high confidence predictions showing a wide QRS complex longer than 120ms. Using our extended XAI framework, we could demonstrate that a vast majority of decisions of the neural network correlate with evidence-based features. Providing this information to cardiologists next to the classification itself might facilitate clinical translation.",
+      "citationCount": 4,
+      "doi": "10.1109/EMBC53108.2024.10782420",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e82bcc7d8f1481f04c5a0bfaa8f86beab8d56f88",
+      "venue": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+      "journal": {
+        "name": "2024 46th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)",
+        "pages": "1-4"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c3c0a6399a7f98391403a8582e6c18f46951beb3",
+      "title": "Gradient based Feature Attribution in Explainable AI: A Technical Review",
+      "authors": [
+        {
+          "name": "Yongjie Wang",
+          "authorId": "2291969021"
+        },
+        {
+          "name": "Tong Zhang",
+          "authorId": "2291983495"
+        },
+        {
+          "name": "Xu Guo",
+          "authorId": "2305735198"
+        },
+        {
+          "name": "Zhiqi Shen",
+          "authorId": "2293131275"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The surge in black-box AI models has prompted the need to explain the internal mechanism and justify their reliability, especially in high-stakes applications, such as healthcare and autonomous driving. Due to the lack of a rigorous definition of explainable AI (XAI), a plethora of research related to explainability, interpretability, and transparency has been developed to explain and analyze the model from various perspectives. Consequently, with an exhaustive list of papers, it becomes challenging to have a comprehensive overview of XAI research from all aspects. Considering the popularity of neural networks in AI research, we narrow our focus to a specific area of XAI research: gradient based explanations, which can be directly adopted for neural network models. In this review, we systematically explore gradient based explanation methods to date and introduce a novel taxonomy to categorize them into four distinct classes. Then, we present the essence of technique details in chronological order and underscore the evolution of algorithms. Next, we introduce both human and quantitative evaluations to measure algorithm performance. More importantly, we demonstrate the general challenges in XAI and specific challenges in gradient based explanations. We hope that this survey can help researchers understand state-of-the-art progress and their corresponding disadvantages, which could spark their interest in addressing these issues in future work.",
+      "citationCount": 37,
+      "doi": "10.48550/arXiv.2403.10415",
+      "arxivId": "2403.10415",
+      "url": "https://www.semanticscholar.org/paper/c3c0a6399a7f98391403a8582e6c18f46951beb3",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2403.10415"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "68656117f0c806f6aa4746cf5c4f5722cc49f64b",
+      "title": "Explainable AI (XAI) in healthcare: Enhancing trust and transparency in critical decision-making",
+      "authors": [
+        {
+          "name": "Adewale Abayomi Adeniran",
+          "authorId": "2320933566"
+        },
+        {
+          "name": "Amaka Peace",
+          "authorId": "2340169327"
+        },
+        {
+          "name": "Paul William",
+          "authorId": "2340173610"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The integration of artificial intelligence (AI) in healthcare is revolutionizing diagnostic and treatment procedures, offering unprecedented accuracy and efficiency. However, the opacity of many advanced AI models, often described as \"black boxes,\" creates challenges in adoption due to concerns around trust, transparency, and interpretability, particularly in high-stakes environments like healthcare. Explainable AI (XAI) addresses these concerns by providing a framework that not only achieves high performance but also offers insight into how decisions are made. This research explores the application of XAI techniques in healthcare, focusing on critical areas such as disease diagnostics, predictive analytics, and personalized treatment recommendations. The study will analyse various XAI methods, including model-agnostic approaches (LIME, SHAP), interpretable deep learning models, and domain-specific applications of XAI. It also evaluates the ethical implications, such as accountability and bias mitigation, and how XAI can foster collaboration between clinicians and AI systems. Ultimately, the goal is to create AI systems that are both powerful and trustworthy, promoting broader adoption in the healthcare sector while ensuring ethical and safe outcomes for patients.",
+      "citationCount": 33,
+      "doi": "10.30574/wjarr.2024.23.3.2936",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/68656117f0c806f6aa4746cf5c4f5722cc49f64b",
+      "venue": "World Journal of Advanced Research and Reviews",
+      "journal": {
+        "name": "World Journal of Advanced Research and Reviews"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2b0c0a347521f1afcd82c99395b8e23ba1ef44f1",
+      "title": "Optimized Ensemble Learning Approach with Explainable AI for Improved Heart Disease Prediction",
+      "authors": [
+        {
+          "name": "Ibomoiye Domor Mienye",
+          "authorId": "1395936685"
+        },
+        {
+          "name": "N. Jere",
+          "authorId": "39941715"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent advances in machine learning (ML) have shown great promise in detecting heart disease. However, to ensure the clinical adoption of ML models, they must not only be generalizable and robust but also transparent and explainable. Therefore, this research introduces an approach that integrates the robustness of ensemble learning algorithms with the precision of Bayesian optimization for hyperparameter tuning and the interpretability offered by Shapley additive explanations (SHAP). The ensemble classifiers considered include adaptive boosting (AdaBoost), random forest, and extreme gradient boosting (XGBoost). The experimental results on the Cleveland and Framingham datasets demonstrate that the optimized XGBoost model achieved the highest performance, with specificity and sensitivity values of 0.971 and 0.989 on the Cleveland dataset and 0.921 and 0.975 on the Framingham dataset, respectively.",
+      "citationCount": 52,
+      "doi": "10.3390/info15070394",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2b0c0a347521f1afcd82c99395b8e23ba1ef44f1",
+      "venue": "Inf.",
+      "journal": {
+        "name": "Inf.",
+        "pages": "394",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "08121ca6e8243bdf741aaabaa232d379cf114d3d",
+      "title": "Improving IoT Security With Explainable AI: Quantitative Evaluation of Explainability for IoT Botnet Detection",
+      "authors": [
+        {
+          "name": "Rajesh Kalakoti",
+          "authorId": "2184160407"
+        },
+        {
+          "name": "Hayretdin Bah\u015fi",
+          "authorId": "2755071"
+        },
+        {
+          "name": "S. N\u00f5mm",
+          "authorId": "1800074"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Detecting botnets is an essential task to ensure the security of Internet of Things (IoT) systems. Machine learning (ML)-based approaches have been widely used for this purpose, but the lack of interpretability and transparency of the models often limits their effectiveness. In this research paper, our aim is to improve the transparency and interpretability of high-performance ML models for IoT botnet detection by selecting higher quality explanations using explainable artificial intelligence (XAI) techniques. We used three data sets to induce binary and multiclass classification models for IoT botnet detection, with sequential backward selection (SBS) employed as the feature selection technique. We then use two post hoc XAI techniques such as local interpretable model-agnostic explanations (LIME) and Shapley additive explanation (SHAP), to explain the behavior of the models. To evaluate the quality of explanations generated by XAI methods, we employed faithfulness, monotonicity, complexity, and sensitivity metrics. ML models employed in this work achieve very high detection rates with a limited number of features. Our findings demonstrate the effectiveness of XAI methods in improving the interpretability and transparency of ML-based IoT botnet detection models. Specifically, explanations generated by applying LIME and SHAP to the extreme gradient boosting model yield high faithfulness, high consistency, low complexity, and low sensitivity. Furthermore, SHAP outperforms LIME by achieving better results in these metrics.",
+      "citationCount": 51,
+      "doi": "10.1109/JIOT.2024.3360626",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/08121ca6e8243bdf741aaabaa232d379cf114d3d",
+      "venue": "IEEE Internet of Things Journal",
+      "journal": {
+        "name": "IEEE Internet of Things Journal",
+        "pages": "18237-18254",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f4e3bf7eba3d5418b53556a909fe1e17c36c8281",
+      "title": "Predicting Sustainable Crop Yields: Deep Learning and Explainable AI Tools",
+      "authors": [
+        {
+          "name": "I. Malashin",
+          "authorId": "2277070408"
+        },
+        {
+          "name": "V. Tynchenko",
+          "authorId": "2221900951"
+        },
+        {
+          "name": "Andrei P. Gantimurov",
+          "authorId": "2258475619"
+        },
+        {
+          "name": "V. Nelyub",
+          "authorId": "2284907687"
+        },
+        {
+          "name": "Aleksei S. Borodulin",
+          "authorId": "2277068250"
+        },
+        {
+          "name": "Yadviga Tynchenko",
+          "authorId": "2184490684"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Optimizing agricultural productivity and promoting sustainability necessitates accurate predictions of crop yields to ensure food security. Various agricultural and climatic variables are included in the analysis, encompassing crop type, year, season, and the specific climatic conditions of the Indian state during the crop\u2019s growing season. Features such as crop and season were one-hot encoded. The primary objective was to predict yield using a deep neural network (DNN), with hyperparameters optimized through genetic algorithms (GAs) to maximize the R2 score. The best-performing model, achieved by fine-tuning its hyperparameters, achieved an R2 of 0.92, meaning it explains 92% of the variation in crop yields, indicating high predictive accuracy. The optimized DNN models were further analyzed using explainable AI (XAI) techniques, specifically local interpretable model-agnostic explanations (LIME), to elucidate feature importance and enhance model interpretability. The analysis underscored the significant role of features such as crops, leading to the incorporation of an additional dataset to classify the most optimal crops based on more detailed soil and climate data. This classification task was also executed using a GA-optimized DNN, aiming to maximize accuracy. The results demonstrate the effectiveness of this approach in predicting crop yields and classifying optimal crops.",
+      "citationCount": 26,
+      "doi": "10.3390/su16219437",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f4e3bf7eba3d5418b53556a909fe1e17c36c8281",
+      "venue": "Sustainability",
+      "journal": {
+        "name": "Sustainability"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "29de959aa5177ebdbd8ba00efce9a3adc418f4d7",
+      "title": "Enhancing Household Energy Consumption Predictions Through Explainable AI Frameworks",
+      "authors": [
+        {
+          "name": "Aakash Bhandary",
+          "authorId": "2291132196"
+        },
+        {
+          "name": "Vruti Dobariya",
+          "authorId": "2291132222"
+        },
+        {
+          "name": "Gokul Yenduri",
+          "authorId": "151453737"
+        },
+        {
+          "name": "R. Jhaveri",
+          "authorId": "3314907"
+        },
+        {
+          "name": "Saikat Gochhait",
+          "authorId": "1865763969"
+        },
+        {
+          "name": "Francesco Benedetto",
+          "authorId": "2244516727"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Effective energy management is crucial for sustainability, carbon reduction, resource conservation, and cost savings. However, conventional energy forecasting methods often lack accuracy, suggesting the need for advanced approaches. Artificial intelligence (AI) has emerged as a powerful tool for energy forecasting, but its lack of transparency and interpretability poses challenges for understanding its predictions. In response, Explainable AI (XAI) frameworks have been developed to enhance the transparency and interpretability of black-box AI models. Accordingly, this paper focuses on achieving accurate household energy consumption predictions by comparing prediction models based on several evaluation metrics, namely the Coefficient of Determination (R2), Root Mean Squared Error (RMSE), Mean Squared Error (MSE), and Mean Absolute Error (MAE). The best model is identified by comparison after making predictions on unseen data, after which the predictions are explained by leveraging two XAI frameworks: Local Interpretable Model-Agnostic Explanations (LIME) and Shapley Additive Explanations (SHAP). These explanations help identify crucial characteristics contributing to energy consumption predictions, including insights into feature importance. Our findings underscore the significance of current consumption patterns and lagged energy consumption values in estimating energy usage. This paper further demonstrates the role of XAI in developing consistent and reliable predictive models.",
+      "citationCount": 20,
+      "doi": "10.1109/ACCESS.2024.3373552",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/29de959aa5177ebdbd8ba00efce9a3adc418f4d7",
+      "venue": "IEEE Access",
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "36764-36777",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d89872c3954951509ef7a5aea84c15e3e84cd69d",
+      "title": "Towards Explainable AI: Interpretable Models for Complex Decision-making",
+      "authors": [
+        {
+          "name": "Jaibir Singh",
+          "authorId": "2315276836"
+        },
+        {
+          "name": "Suman Rani",
+          "authorId": "2315160480"
+        },
+        {
+          "name": "Garaga Srilakshmi",
+          "authorId": "2315157302"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In the rapidly evolving landscape of artificial intelligence (AI), the integration of explainable AI (XAI) models into complex decision-making processes has become paramount. This paper addresses the critical need for transparency and interpretability in AI systems, particularly those involved in high-stakes decisions in sectors such as healthcare, finance, and autonomous systems. Traditional AI models, while powerful, often operate as \u201cblack boxes,\u201d offering little to no insight into their decision-making processes. This opacity can lead to trust issues, ethical concerns, and regulatory challenges. To bridge this gap, we propose a novel framework of interpretable models designed to enhance the explainability of AI without compromising on performance. Our approach leverages state-of-the-art techniques in machine learning, including feature importance analysis and model-agnostic methods, to develop models that are both accurate and interpretable. We demonstrate the efficacy of our proposed models through rigorous testing on complex datasets, showcasing significant improvements in transparency and user trust. Furthermore, our findings reveal that our interpretable models can achieve comparable, if not superior, performance to traditional \u201cblack box\u201d models, thereby challenging the notion that explainability necessarily comes at the cost of accuracy. This work contributes to the burgeoning field of XAI by providing a viable pathway towards the development of AI systems that are not only powerful but also comprehensible and trustworthy.",
+      "citationCount": 15,
+      "doi": "10.1109/ICKECS61492.2024.10616500",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d89872c3954951509ef7a5aea84c15e3e84cd69d",
+      "venue": "2024 International Conference on Knowledge Engineering and Communication Systems (ICKECS)",
+      "journal": {
+        "name": "2024 International Conference on Knowledge Engineering and Communication Systems (ICKECS)",
+        "pages": "1-5",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "00b38438d316bef66998f7bc6f937397bbe6449c",
+      "title": "Integrated ensemble CNN and explainable AI for COVID-19 diagnosis from CT scan and X-ray images",
+      "authors": [
+        {
+          "name": "Reenu Rajpoot",
+          "authorId": "5411059"
+        },
+        {
+          "name": "Mahesh Gour",
+          "authorId": "2066387606"
+        },
+        {
+          "name": "Sweta Jain",
+          "authorId": "2276187155"
+        },
+        {
+          "name": "Vijay Bhaskar Semwal",
+          "authorId": "2408385"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In light of the ongoing battle against COVID-19, while the pandemic may eventually subside, sporadic cases may still emerge, underscoring the need for accurate detection from radiological images. However, the limited explainability of current deep learning models restricts clinician acceptance. To address this issue, our research integrates multiple CNN models with explainable AI techniques, ensuring model interpretability before ensemble construction. Our approach enhances both accuracy and interpretability by evaluating advanced CNN models on the largest publicly available X-ray dataset, COVIDx CXR-3, which includes 29,986 images, and the CT scan dataset for SARS-CoV-2 from Kaggle, which includes a total of 2,482 images. We also employed additional public datasets for cross-dataset evaluation, ensuring a thorough assessment of model performance across various imaging conditions. By leveraging methods including LIME, SHAP, Grad-CAM, and Grad-CAM++, we provide transparent insights into model decisions. Our ensemble model, which includes DenseNet169, ResNet50, and VGG16, demonstrates strong performance. For the X-ray image dataset, sensitivity, specificity, accuracy, F1-score, and AUC are recorded at 99.00%, 99.00%, 99.00%, 0.99, and 0.99, respectively. For the CT image dataset, these metrics are 96.18%, 96.18%, 96.18%, 0.9618, and 0.96, respectively. Our methodology bridges the gap between precision and interpretability in clinical settings by combining model diversity with explainability, promising enhanced disease diagnosis and greater clinician acceptance.",
+      "citationCount": 15,
+      "doi": "10.1038/s41598-024-75915-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/00b38438d316bef66998f7bc6f937397bbe6449c",
+      "venue": "Scientific Reports",
+      "journal": {
+        "name": "Scientific Reports",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

@@ -1,0 +1,33 @@
+[verify_paper.py] Searching CrossRef: title='The Misguided Quest for Mechanistic AI Interpretab...' author=Hendrycks year=2025
+[verify_paper.py] Paper found: Beneficial AI and Machine Ethics... (score: 30.6)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Misguided Quest for Mechanistic AI Interpretability",
+    "author": "Hendrycks",
+    "year": 2025
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1201/9781003530336-6",
+      "title": "Beneficial AI and Machine Ethics",
+      "authors": [
+        {
+          "family": "Hendrycks",
+          "given": "Dan"
+        }
+      ],
+      "year": 2024,
+      "container_title": "Introduction to AI Safety, Ethics, and Society",
+      "publisher": "CRC Press",
+      "type": "book-chapter",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1201/9781003530336-6",
+      "score": 30.647264
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

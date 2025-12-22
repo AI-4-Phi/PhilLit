@@ -1,0 +1,110 @@
+[search_philpapers.py] Searching PhilPapers: 'mechanistic explanation artificial intelligence', limit=20
+[search_philpapers.py] Retrieved 14 entries...
+[search_philpapers.py] Search complete: 14 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "mechanistic explanation artificial intelligence",
+  "results": [
+    {
+      "title": "Lena K\u00e4stner & Barnaby Crook, Explaining AI through mechanistic interpretability",
+      "url": "https://philpapers.org/rec/KSTEAT",
+      "philpapers_id": "KSTEAT",
+      "snippet": "Recent work in explainable artificial intelligence (XAI) attempts to render opaque AI systems understandable through a divide-and-conquer strategy. However, this fails to illuminate how trained AI systems work as a whole. Precisely this kind of functional understanding is needed, though, to satisfy important societal desiderata such as safety. To remedy this situation, we argue, AI researchers should seek mechanistic interpretability, viz.",
+      "page_age": null
+    },
+    {
+      "title": "Marcin Mi\u0142kowski, Limits of Computational Explanation of Cognition",
+      "url": "https://philpapers.org/rec/MIKLOC",
+      "philpapers_id": "MIKLOC",
+      "snippet": "In Vincent M\u00fcller, Philosophy and Theory of Artificial Intelligence. pp. 69-84 (2013) ... In this chapter, I argue that some aspects of cognitive phenomena cannot be explained computationally. In the first part, I sketch a mechanistic account of computational explanation that spans multiple levels of organization of cognitive systems.",
+      "page_age": null
+    },
+    {
+      "title": "David J. Chalmers, Propositional interpretability in artificial intelligence",
+      "url": "https://philpapers.org/rec/CHAPII-5",
+      "philpapers_id": "CHAPII",
+      "snippet": "Mechanistic interpretability is the program of explaining what AI systems are doing in terms of their internal mechanisms. I analyze some aspects of the program, along with setting out some concrete challenges and assessing progress to date.",
+      "page_age": null
+    },
+    {
+      "title": "Gualtiero Piccinini & Carl Craver, Integrating psychology and neuroscience: functional analyses as mechanism sketches",
+      "url": "https://philpapers.org/rec/PICIPA",
+      "philpapers_id": "PICIPA",
+      "snippet": "On the Norms of Completeness for Mechanistic Explanations.Carl F. Craver &amp; David M. Kaplan - 2020 - British Journal for the Philosophy of Science 71 (1):287-319. Solving the Black Box Problem: A Normative Framework for Explainable Artificial Intelligence.Carlos Zednik - 2019 - Philosophy and ...",
+      "page_age": null
+    },
+    {
+      "title": "Carlos Zednik, Mechanisms in Cognitive Science",
+      "url": "https://philpapers.org/rec/ZEDMIC",
+      "philpapers_id": "ZEDMIC",
+      "snippet": "Editors\u2019 Review and Introduction: Levels of Explanation in Cognitive Science: From Molecules to Culture.Matteo Colombo &amp; Markus Knauff - 2020 - Topics in Cognitive Science 12 (4):1224-1240. Added to PP 2018-01-18 Downloads 98 (#233,141) 6 months 11 (#362,892) ... Solving the Black Box Problem: A Normative Framework for Explainable Artificial Intelligence.Carlos Zednik - 2019 - Philosophy and Technology 34 (2):265-288. Mechanistic ...",
+      "page_age": null
+    },
+    {
+      "title": "Rajakishore Nath, Philosophy of Artificial Intelligence: A Critique of the Mechanistic Theory of Mind",
+      "url": "https://philpapers.org/rec/NATPOA",
+      "philpapers_id": "NATPOA",
+      "snippet": "This book deals with the major philosophical issues in the theoretical framework of Artificial Intelligence (AI) in particular and cognitive science in general.",
+      "page_age": null
+    },
+    {
+      "title": "David M. Kaplan & William Bechtel, Dynamical Models: An Alternative or Complement to Mechanistic Explanations?",
+      "url": "https://philpapers.org/rec/KAPDMA",
+      "philpapers_id": "KAPDMA",
+      "snippet": "Areas of Artificial Intelligence in Philosophy of Cognitive Science \u00b7 Dynamical Systems in Philosophy of Cognitive Science \u00b7 Mechanistic explanation Explanation HKB model Predictivism Dynamical models \u00b7 10.1111/j.1756-8765.2011.01147.x \u00b7 No versions found \u00b7",
+      "page_age": null
+    },
+    {
+      "title": "David Cycleback, Philosophy of Artificial Intelligence",
+      "url": "https://philpapers.org/rec/CYCPOA",
+      "philpapers_id": "CYCPOA",
+      "snippet": "Philosophy of Artificial Intelligence: A Critique of the Mechanistic Theory of Mind.Rajakishore Nath - 2009 - Universal Publishers.",
+      "page_age": null
+    },
+    {
+      "title": "Chris Eliasmith, The myth of the Turing machine: The failings of functionalism and related theses",
+      "url": "https://philpapers.org/rec/ELITMO-2",
+      "philpapers_id": "ELITMO",
+      "snippet": "One mechanism, many models: a distributed theory of mechanistic explanation.Eric Hochstein - 2016 - Synthese 193 (5):1387-1407.",
+      "page_age": null
+    },
+    {
+      "title": "Carl F. Craver, When mechanistic models explain",
+      "url": "https://philpapers.org/rec/CRAWMM",
+      "philpapers_id": "CRAWMM",
+      "snippet": "Not all models are explanatory. Some models are data summaries. Some models sketch explanations but leave crucial details unspecified or hidden behind filler terms. Some models are used to conjecture a ...",
+      "page_age": null
+    },
+    {
+      "title": "Gualtiero Piccinini, Physical Computation: A Mechanistic Account",
+      "url": "https://philpapers.org/rec/PICPCA",
+      "philpapers_id": "PICPCA",
+      "snippet": "Gualtiero Piccinini articulates and defends a mechanistic account of concrete, or physical, computation. A physical system is a computing system just in case it is a mechanism one of whose functions ...",
+      "page_age": null
+    },
+    {
+      "title": "Carl F. Craver, Explaining the Brain",
+      "url": "https://philpapers.org/rec/CRAETB-4",
+      "philpapers_id": "CRAETB",
+      "snippet": "Explanation in Neuroscience: a critical analysis of multinivelar mechanistic-causal model of Carl Craver.Ana Lu\u00edsa Lamounier Costa &amp; Samuel Simon - 2015 - Principia: An International Journal of Epistemology 19 (1):17-31. Mind Design III: Philosophy, Psychology, and Artificial Intelligence, edited ...",
+      "page_age": null
+    },
+    {
+      "title": "Gualtiero Piccinini & Sonya Bahar, Neural Computation and the Computational Theory of Cognition",
+      "url": "https://philpapers.org/rec/PICNCA",
+      "philpapers_id": "PICNCA",
+      "snippet": "The Explanatory Role of Computation in Cognitive Science.Nir Fresco - 2012 - Minds and Machines 22 (4):353-380. Symbols, strings, and spikes.Gualtiero Piccinini - 2005 - Unpublished. The Computational Theory of Cognition.Gualtiero Piccinini - 2016 - In Vincent C. Mu\u0308ller, Fundamental Issues of Artificial Intelligence. Cham: Springer. pp. 201-219. Physical Computation: A Mechanistic Account.Gualtiero Piccinini - 2015 - Oxford, GB: Oxford University Press UK.",
+      "page_age": null
+    },
+    {
+      "title": "Gualtiero Piccinini, The Resilience of Computationalism",
+      "url": "https://philpapers.org/rec/PICTRO",
+      "philpapers_id": "PICTRO",
+      "snippet": "Roughly speaking, computationalism says that cognition is computation, or that cognitive phenomena are explained by the agent\u2018s computations. The cognitive processes and behavior of agents are the explanandum. The computations performed by the agents\u2018 cognitive systems are the proposed explanans.",
+      "page_age": null
+    }
+  ],
+  "count": 14,
+  "errors": []
+}

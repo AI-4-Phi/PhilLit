@@ -1,0 +1,51 @@
+[search_arxiv.py] Searching arXiv: 'all:explainable AI AND cat:cs.AI' (category=cs.AI) (year=2023), limit=25
+[search_arxiv.py] Search complete: 2 papers found
+[search_arxiv.py] Cached results (cache key: arxiv_9e2683ba6094fb36)
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:explainable AI AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2304.03318",
+      "title": "Explainable AI And Visual Reasoning: Insights From Radiology",
+      "authors": [
+        "Robert Kaufman",
+        "David Kirsh"
+      ],
+      "abstract": "Why do explainable AI (XAI) explanations in radiology, despite their promise of transparency, still fail to gain human trust? Current XAI approaches provide justification for predictions, however, these do not meet practitioners' needs. These XAI explanations lack intuitive coverage of the evidentiary basis for a given classification, posing a significant barrier to adoption. We posit that XAI explanations that mirror human processes of reasoning and justification with evidence may be more useful and trustworthy than traditional visual explanations like heat maps. Using a radiology case study, we demonstrate how radiology practitioners get other practitioners to see a diagnostic conclusion's validity. Machine-learned classifications lack this evidentiary grounding and consequently fail to elicit trust and adoption by potential users. Insights from this study may generalize to guiding principles for human-centered explanation design based on human reasoning and justification of evidence.",
+      "published": "2023-04-06",
+      "updated": "2023-04-06",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2304.03318v1",
+      "url": "https://arxiv.org/abs/2304.03318"
+    },
+    {
+      "arxiv_id": "2304.11861",
+      "title": "Towards a Praxis for Intercultural Ethics in Explainable AI",
+      "authors": [
+        "Chinasa T. Okolo"
+      ],
+      "abstract": "Explainable AI (XAI) is often promoted with the idea of helping users understand how machine learning models function and produce predictions. Still, most of these benefits are reserved for those with specialized domain knowledge, such as machine learning developers. Recent research has argued that making AI explainable can be a viable way of making AI more useful in real-world contexts, especially within low-resource domains in the Global South. While AI has transcended borders, a limited amount of work focuses on democratizing the concept of explainable AI to the \"majority world\", leaving much room to explore and develop new approaches within this space that cater to the distinct needs of users within culturally and socially-diverse regions. This article introduces the concept of an intercultural ethics approach to AI explainability. It examines how cultural nuances impact the adoption and use of technology, the factors that impede how technical concepts such as AI are explained, and how integrating an intercultural ethics approach in the development of XAI can improve user understanding and facilitate efficient usage of these methods.",
+      "published": "2023-04-24",
+      "updated": "2023-04-25",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2304.11861v2",
+      "url": "https://arxiv.org/abs/2304.11861"
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

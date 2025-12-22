@@ -1,0 +1,2815 @@
+[search_openalex.py] Searching OpenAlex: 'XAI transparency black box' (year=2023-2025), limit=40
+[search_openalex.py] Retrieved 40 papers...
+[search_openalex.py] Search complete: 40 papers found
+[search_openalex.py] Cached results (cache key: openalex_cde31be88775fd10)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "XAI transparency black box",
+  "results": [
+    {
+      "openalex_id": "W4382682349",
+      "doi": "10.33847/2712-8148.4.1_4",
+      "title": "Unlocking the Black Box: Explainable Artificial Intelligence (XAI) for Trust and Transparency in AI Systems",
+      "authors": [
+        {
+          "name": "Nipuna Thalpage",
+          "openalex_id": "A5092367706",
+          "orcid": "https://orcid.org/0009-0001-3374-1927",
+          "institutions": [
+            "Cardiff Metropolitan University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-26",
+      "abstract": "Explainable Artificial Intelligence (XAI) has emerged as a critical field in AI research, addressing the lack of transparency and interpretability in complex AI models. This conceptual review explores the significance of XAI in promoting trust and transparency in AI systems. The paper analyzes existing literature on XAI, identifies patterns and gaps, and presents a coherent conceptual framework. Various XAI techniques, such as saliency maps, attention mechanisms, rule-based explanations, and model-agnostic approaches, are discussed to enhance interpretability. The paper highlights the challenges posed by black-box AI models, explores the role of XAI in enhancing trust and transparency, and examines the ethical considerations and responsible deployment of XAI. By promoting transparency and interpretability, this review aims to build trust, encourage accountable AI systems, and contribute to the ongoing discourse on XAI.",
+      "cited_by_count": 52,
+      "type": "article",
+      "source": {
+        "name": "Journal of Digital Art & Humanities",
+        "type": "journal",
+        "issn": [
+          "2712-8148"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://ics.events/wp-content/uploads/2023/06/Article-4-JDAH-41.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4382682349"
+    },
+    {
+      "openalex_id": "W4386142022",
+      "doi": "10.1007/s12559-023-10179-8",
+      "title": "Interpreting Black-Box Models: A Review on Explainable Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Vikas Hassija",
+          "openalex_id": "A5058693080",
+          "orcid": "https://orcid.org/0000-0002-3199-8753",
+          "institutions": [
+            "KIIT University"
+          ]
+        },
+        {
+          "name": "Vinay Chamola",
+          "openalex_id": "A5005020243",
+          "orcid": "https://orcid.org/0000-0002-6730-3060",
+          "institutions": [
+            "Birla Institute of Technology and Science, Pilani"
+          ]
+        },
+        {
+          "name": "A. Mahapatra",
+          "openalex_id": "A5114077165",
+          "institutions": [
+            "Birla Institute of Technology and Science, Pilani"
+          ]
+        },
+        {
+          "name": "Abhinandan Singal",
+          "openalex_id": "A5058997114",
+          "institutions": [
+            "Jaypee Institute of Information Technology"
+          ]
+        },
+        {
+          "name": "Divyansh Goel",
+          "openalex_id": "A5026248849",
+          "institutions": [
+            "Jaypee Institute of Information Technology"
+          ]
+        },
+        {
+          "name": "Kaizhu Huang",
+          "openalex_id": "A5026022035",
+          "orcid": "https://orcid.org/0000-0002-3034-9639",
+          "institutions": [
+            "Duke Kunshan University"
+          ]
+        },
+        {
+          "name": "Simone Scardapane",
+          "openalex_id": "A5022153057",
+          "orcid": "https://orcid.org/0000-0003-0881-8344",
+          "institutions": [
+            "Sapienza University of Rome"
+          ]
+        },
+        {
+          "name": "Indro Spinelli",
+          "openalex_id": "A5019615617",
+          "orcid": "https://orcid.org/0000-0003-1963-3548",
+          "institutions": [
+            "Istituto Nazionale di Fisica Nucleare, Sezione di Roma I"
+          ]
+        },
+        {
+          "name": "Mufti Mahmud",
+          "openalex_id": "A5027525633",
+          "orcid": "https://orcid.org/0000-0002-2037-8348",
+          "institutions": [
+            "Nottingham Trent University"
+          ]
+        },
+        {
+          "name": "Amir Hussain",
+          "openalex_id": "A5062211930",
+          "orcid": "https://orcid.org/0000-0002-8080-082X",
+          "institutions": [
+            "Edinburgh Napier University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-24",
+      "abstract": null,
+      "cited_by_count": 1082,
+      "type": "review",
+      "source": {
+        "name": "Cognitive Computation",
+        "type": "journal",
+        "issn": [
+          "1866-9956",
+          "1866-9964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12559-023-10179-8.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Imbalanced Data Classification Techniques",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 135,
+      "url": "https://openalex.org/W4386142022"
+    },
+    {
+      "openalex_id": "W4366085876",
+      "doi": "10.1016/j.dajour.2023.100230",
+      "title": "A systematic review of Explainable Artificial Intelligence models and applications: Recent developments and future trends",
+      "authors": [
+        {
+          "name": "A. Saranya",
+          "openalex_id": "A5079597827",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "R. Subhashini",
+          "openalex_id": "A5008750725",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-17",
+      "abstract": "Artificial Intelligence (AI) uses systems and machines to simulate human intelligence and solve common real-world problems. Machine learning and deep learning are Artificial intelligence technologies that use algorithms to predict outcomes more accurately without relying on human intervention. However, the opaque black box model and cumulative model complexity can be used to achieve. Explainable Artificial Intelligence (XAI) is a term that refers to Artificial Intelligence (AI) that can provide explanations for their decision or predictions to human users. XAI aims to increase the transparency, trustworthiness and accountability of AI system, especially when they are used for high-stakes application such as healthcare, finance or security. This paper offers systematic literature review of XAI approaches with different application and observes 91 recently published articles describing XAI development and applications in healthcare, manufacturing, transportation, and finance. We investigated the Scopus, Web of Science, IEEE Xplore and PubMed databases, to find the pertinent publications published between January 2018 to October 2022. It contains the published research on XAI modelling that were retrieved from scholarly databases using pertinent keyword searches. We think that our systematic review extends to the literature on XAI by working as a roadmap for further research in the field.",
+      "cited_by_count": 326,
+      "type": "review",
+      "source": {
+        "name": "Decision Analytics Journal",
+        "type": "journal",
+        "issn": [
+          "2772-6622"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.dajour.2023.100230"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W4366085876"
+    },
+    {
+      "openalex_id": "W4380320058",
+      "doi": "10.1145/3593013.3594069",
+      "title": "The role of explainable AI in the context of the AI Act",
+      "authors": [
+        {
+          "name": "Cecilia Panigutti",
+          "openalex_id": "A5021515262",
+          "orcid": "https://orcid.org/0000-0002-6552-787X",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Ronan Hamon",
+          "openalex_id": "A5045975965",
+          "orcid": "https://orcid.org/0000-0003-1987-5707",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Isabelle Hupont",
+          "openalex_id": "A5057437539",
+          "orcid": "https://orcid.org/0000-0002-9811-9397",
+          "institutions": [
+            "Joint Research Center"
+          ]
+        },
+        {
+          "name": "David Fern\u00e1ndez Llorca",
+          "openalex_id": "A5016004555",
+          "orcid": "https://orcid.org/0000-0003-2433-7110",
+          "institutions": [
+            "Joint Research Center"
+          ]
+        },
+        {
+          "name": "Delia Fano Yela",
+          "openalex_id": "A5089841753",
+          "orcid": "https://orcid.org/0000-0001-7999-3241",
+          "institutions": [
+            "Joint Research Center"
+          ]
+        },
+        {
+          "name": "H. Junklewitz",
+          "openalex_id": "A5072271728",
+          "orcid": "https://orcid.org/0000-0002-0452-6865",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Salvatore Scalzo",
+          "openalex_id": "A5043570102",
+          "orcid": "https://orcid.org/0009-0004-6162-5714",
+          "institutions": [
+            "European Commission"
+          ]
+        },
+        {
+          "name": "Gabriele Mazzini",
+          "openalex_id": "A5081190292",
+          "orcid": "https://orcid.org/0009-0005-5075-3523",
+          "institutions": [
+            "European Commission"
+          ]
+        },
+        {
+          "name": "Ignacio S\u00e1nchez",
+          "openalex_id": "A5101400656",
+          "orcid": "https://orcid.org/0009-0003-9916-8806",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Josep Soler Garrido",
+          "openalex_id": "A5048833485",
+          "orcid": "https://orcid.org/0000-0002-9669-3459",
+          "institutions": [
+            "Joint Research Center"
+          ]
+        },
+        {
+          "name": "Em\u00edlia G\u00f3mez",
+          "openalex_id": "A5027977314",
+          "orcid": "https://orcid.org/0000-0003-4983-3989",
+          "institutions": [
+            "Joint Research Center"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-12",
+      "abstract": "The proposed EU regulation for Artificial Intelligence (AI), the AI Act, has sparked some debate about the role of explainable AI (XAI) in high-risk AI systems. Some argue that black-box AI models will have to be replaced with transparent ones, others argue that using XAI techniques might help in achieving compliance. This work aims to bring some clarity as regards XAI in the context of the AI Act and focuses in particular on the AI Act requirements for transparency and human oversight. After outlining key points of the debate and describing the current limitations of XAI techniques, this paper carries out an interdisciplinary analysis of how the AI Act addresses the issue of opaque AI systems. In particular, we argue that neither does the AI Act mandate a requirement for XAI, which is the subject of intense scientific research and is not without technical limitations, nor does it ban the use of black-box AI systems. Instead, the AI Act aims to achieve its stated policy objectives with the focus on transparency (including documentation) and human oversight. Finally, in order to concretely illustrate our findings and conclusions, a use case on AI-based proctoring is presented.",
+      "cited_by_count": 98,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3593013.3594069"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4380320058"
+    },
+    {
+      "openalex_id": "W4384920712",
+      "doi": "10.1093/bib/bbad236",
+      "title": "Explainable AI for Bioinformatics: Methods, Tools and Applications",
+      "authors": [
+        {
+          "name": "Md. Rezaul Karim",
+          "openalex_id": "A5114549797",
+          "orcid": "https://orcid.org/0000-0001-6804-9183",
+          "institutions": [
+            "Fraunhofer Institute for Applied Information Technology",
+            "RWTH Aachen University"
+          ]
+        },
+        {
+          "name": "Tanhim Islam",
+          "openalex_id": "A5009874495",
+          "orcid": "https://orcid.org/0000-0003-3182-1138",
+          "institutions": [
+            "RWTH Aachen University"
+          ]
+        },
+        {
+          "name": "Md Shajalal",
+          "openalex_id": "A5049561647",
+          "orcid": "https://orcid.org/0000-0002-9011-708X",
+          "institutions": [
+            "University of Siegen"
+          ]
+        },
+        {
+          "name": "Oya Beyan",
+          "openalex_id": "A5067635650",
+          "orcid": "https://orcid.org/0000-0001-7611-3501",
+          "institutions": [
+            "RWTH Aachen University",
+            "University Hospital Cologne",
+            "University of Cologne"
+          ]
+        },
+        {
+          "name": "Christoph Lange",
+          "openalex_id": "A5007714809",
+          "orcid": "https://orcid.org/0000-0001-9879-3827",
+          "institutions": [
+            "Fraunhofer Institute for Applied Information Technology",
+            "RWTH Aachen University"
+          ]
+        },
+        {
+          "name": "Michael Cochez",
+          "openalex_id": "A5041317183",
+          "orcid": "https://orcid.org/0000-0001-5726-4638",
+          "institutions": [
+            "RELX Group (Netherlands)",
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Dietrich Rebholz\u2010Schuhmann",
+          "openalex_id": "A5006224704",
+          "orcid": "https://orcid.org/0000-0002-1018-0370",
+          "institutions": [
+            "University of Cologne",
+            "ZB MED - Information Centre for Life Sciences"
+          ]
+        },
+        {
+          "name": "Stefan Decker",
+          "openalex_id": "A5071104283",
+          "orcid": "https://orcid.org/0000-0001-6324-7164",
+          "institutions": [
+            "Fraunhofer Institute for Applied Information Technology",
+            "RWTH Aachen University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-20",
+      "abstract": "Abstract Artificial intelligence (AI) systems utilizing deep neural networks and machine learning (ML) algorithms are widely used for solving critical problems in bioinformatics, biomedical informatics and precision medicine. However, complex ML models that are often perceived as opaque and black-box methods make it difficult to understand the reasoning behind their decisions. This lack of transparency can be a challenge for both end-users and decision-makers, as well as AI developers. In sensitive areas such as healthcare, explainability and accountability are not only desirable properties but also legally required for AI systems that can have a significant impact on human lives. Fairness is another growing concern, as algorithmic decisions should not show bias or discrimination towards certain groups or individuals based on sensitive attributes. Explainable AI (XAI) aims to overcome the opaqueness of black-box models and to provide transparency in how AI systems make decisions. Interpretable ML models can explain how they make predictions and identify factors that influence their outcomes. However, the majority of the state-of-the-art interpretable ML methods are domain-agnostic and have evolved from fields such as computer vision, automated reasoning or statistics, making direct application to bioinformatics problems challenging without customization and domain adaptation. In this paper, we discuss the importance of explainability and algorithmic transparency in the context of bioinformatics. We provide an overview of model-specific and model-agnostic interpretable ML methods and tools and outline their potential limitations. We discuss how existing interpretable ML methods can be customized and fit to bioinformatics research problems. Further, through case studies in bioimaging, cancer genomics and text mining, we demonstrate how XAI methods can improve transparency and decision fairness. Our review aims at providing valuable insights and serving as a starting point for researchers wanting to enhance explainability and decision transparency while solving bioinformatics problems. GitHub: https://github.com/rezacsedu/XAI-for-bioinformatics.",
+      "cited_by_count": 115,
+      "type": "review",
+      "source": {
+        "name": "Briefings in Bioinformatics",
+        "type": "journal",
+        "issn": [
+          "1467-5463",
+          "1477-4054"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/bib/advance-article-pdf/doi/10.1093/bib/bbad236/50926106/bbad236.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Cell Image Analysis Techniques"
+      ],
+      "referenced_works_count": 146,
+      "url": "https://openalex.org/W4384920712"
+    },
+    {
+      "openalex_id": "W4380201339",
+      "doi": "10.1016/j.imu.2023.101286",
+      "title": "Application of explainable artificial intelligence in medical health: A systematic review of interpretability methods",
+      "authors": [
+        {
+          "name": "Shahab S. Band",
+          "openalex_id": "A5006293953",
+          "orcid": "https://orcid.org/0000-0001-6109-1311",
+          "institutions": [
+            "National Yunlin University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Atefeh Yarahmadi",
+          "openalex_id": "A5037721829",
+          "institutions": [
+            "National Yunlin University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Chung-Chian Hsu",
+          "openalex_id": "A5064947657",
+          "orcid": "https://orcid.org/0000-0001-7806-0167",
+          "institutions": [
+            "National Yunlin University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Meghdad Biyari",
+          "openalex_id": "A5036481457",
+          "institutions": [
+            "National Yunlin University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Mehdi Sookhak",
+          "openalex_id": "A5076587013",
+          "orcid": "https://orcid.org/0000-0001-5822-3432",
+          "institutions": [
+            "Texas A&M University \u2013 Corpus Christi"
+          ]
+        },
+        {
+          "name": "Rasoul Ameri",
+          "openalex_id": "A5020466823",
+          "orcid": "https://orcid.org/0009-0004-5727-216X",
+          "institutions": [
+            "National Yunlin University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Abdollah Dehzangi",
+          "openalex_id": "A5068034214",
+          "orcid": "https://orcid.org/0000-0001-8577-0271",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Anthony T. Chronopoulos",
+          "openalex_id": "A5052968066",
+          "orcid": "https://orcid.org/0000-0002-0094-1017",
+          "institutions": [
+            "University of Patras",
+            "The University of Texas at San Antonio"
+          ]
+        },
+        {
+          "name": "Huey\u2010Wen Liang",
+          "openalex_id": "A5008743596",
+          "orcid": "https://orcid.org/0000-0003-0186-3126",
+          "institutions": [
+            "National Taiwan University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "This paper investigates the applications of explainable AI (XAI) in healthcare, which aims to provide transparency, fairness, accuracy, generality, and comprehensibility to the results obtained from AI and ML algorithms in decision-making systems. The black box nature of AI and ML systems has remained a challenge in healthcare, and interpretable AI and ML techniques can potentially address this issue. Here we critically review previous studies related to the interpretability of ML and AI methods in medical systems. Descriptions of various types of XAI methods such as layer-wise relevance propagation (LRP), Uniform Manifold Approximation and Projection (UMAP), Local Interpretable Model-agnostic Explanations (LIME), SHapley Additive exPlanations (SHAP), ANCHOR, contextual importance and utility (CIU), Training calibration-based explainers (TraCE), Gradient-weighted Class Activation Mapping (Grad-CAM), t-distributed Stochastic Neighbor Embedding (t-SNE), NeuroXAI, Explainable Cumulative Fuzzy Class Membership Criterion (X-CFCMC) along with the diseases which can be explained through these methods are provided throughout the paper. The paper also discusses how AI and ML technologies can transform healthcare services. The usability and reliability of the presented methods are summarized, including studies on the usability and reliability of XGBoost for mediastinal cysts and tumors, a 3D brain tumor segmentation network, and the TraCE method for medical image analysis. Overall, this paper aims to contribute to the growing field of XAI in healthcare and provide insights for researchers, practitioners, and decision-makers in the healthcare industry. Finally, we discuss the performance of XAI methods applied in medical health care systems. It is also needed to mention that a brief implemented method is provided in the methodology section.",
+      "cited_by_count": 189,
+      "type": "review",
+      "source": {
+        "name": "Informatics in Medicine Unlocked",
+        "type": "journal",
+        "issn": [
+          "2352-9148"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.imu.2023.101286"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W4380201339"
+    },
+    {
+      "openalex_id": "W4388383263",
+      "doi": "10.1016/j.ijdrr.2023.104123",
+      "title": "Explainable artificial intelligence in disaster risk management: Achievements and prospective futures",
+      "authors": [
+        {
+          "name": "Saman Ghaffarian",
+          "openalex_id": "A5086426963",
+          "orcid": "https://orcid.org/0000-0001-9882-4603",
+          "institutions": [
+            "Systemic Risk Centre",
+            "University College London"
+          ]
+        },
+        {
+          "name": "Firouzeh Taghikhah",
+          "openalex_id": "A5023715642",
+          "orcid": "https://orcid.org/0000-0002-0851-6816",
+          "institutions": [
+            "The University of Sydney"
+          ]
+        },
+        {
+          "name": "Holger R. Maier",
+          "openalex_id": "A5010973652",
+          "orcid": "https://orcid.org/0000-0002-0277-6887",
+          "institutions": [
+            "The University of Adelaide"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-01",
+      "abstract": "Disasters can have devastating impacts on communities and economies, underscoring the urgent need for effective strategic disaster risk management (DRM). Although Artificial Intelligence (AI) holds the potential to enhance DRM through improved decision-making processes, its inherent complexity and \"black box\" nature have led to a growing demand for Explainable AI (XAI) techniques. These techniques facilitate the interpretation and understanding of decisions made by AI models, promoting transparency and trust. However, the current state of XAI applications in DRM, their achievements, and the challenges they face remain underexplored. In this systematic literature review, we delve into the burgeoning domain of XAI-DRM, extracting 195 publications from the Scopus and ISI Web of Knowledge databases, and selecting 68 for detailed analysis based on predefined exclusion criteria. Our study addresses pertinent research questions, identifies various hazard and disaster types, risk components, and AI and XAI methods, uncovers the inherent challenges and limitations of these approaches, and provides synthesized insights to enhance their explainability and effectiveness in disaster decision-making. Notably, we observed a significant increase in the use of XAI techniques for DRM in 2022 and 2023, emphasizing the growing need for transparency and interpretability. Through a rigorous methodology, we offer key research directions that can serve as a guide for future studies. Our recommendations highlight the importance of multi-hazard risk analysis, the integration of XAI in early warning systems and digital twins, and the incorporation of causal inference methods to enhance DRM strategy planning and effectiveness. This study serves as a beacon for researchers and practitioners alike, illuminating the intricate interplay between XAI and DRM, and revealing the profound potential of AI solutions in revolutionizing disaster risk management.",
+      "cited_by_count": 112,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Disaster Risk Reduction",
+        "type": "journal",
+        "issn": [
+          "2212-4209"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.ijdrr.2023.104123"
+      },
+      "topics": [
+        "Flood Risk Assessment and Management",
+        "Infrastructure Resilience and Vulnerability Analysis",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 180,
+      "url": "https://openalex.org/W4388383263"
+    },
+    {
+      "openalex_id": "W4391035178",
+      "doi": "10.1021/acs.energyfuels.3c04343",
+      "title": "Potential of Explainable Artificial Intelligence in Advancing Renewable Energy: Challenges and Prospects",
+      "authors": [
+        {
+          "name": "Van Nhanh Nguyen",
+          "openalex_id": "A5006103601",
+          "orcid": "https://orcid.org/0000-0003-4241-3359",
+          "institutions": [
+            "HUTECH University",
+            "Ho Chi Minh City University of Technology"
+          ]
+        },
+        {
+          "name": "W. Tare\u0142ko",
+          "openalex_id": "A5086769560",
+          "orcid": "https://orcid.org/0000-0003-3205-1796",
+          "institutions": [
+            "Gda\u0144sk University of Technology"
+          ]
+        },
+        {
+          "name": "Prabhakar Sharma",
+          "openalex_id": "A5003625164",
+          "orcid": "https://orcid.org/0000-0002-7585-6693",
+          "institutions": [
+            "Delhi Skill and Entrepreneurship University"
+          ]
+        },
+        {
+          "name": "A.S. El-Shafay",
+          "openalex_id": "A5012512059",
+          "orcid": "https://orcid.org/0000-0002-7261-6686",
+          "institutions": [
+            "Mansoura University",
+            "Prince Sattam Bin Abdulaziz University"
+          ]
+        },
+        {
+          "name": "Wei\u2010Hsin Chen",
+          "openalex_id": "A5057352058",
+          "orcid": "https://orcid.org/0000-0001-5009-3960",
+          "institutions": [
+            "National Cheng Kung University",
+            "National Chin-Yi University of Technology",
+            "Tunghai University"
+          ]
+        },
+        {
+          "name": "Phuoc Quy Phong Nguyen",
+          "openalex_id": "A5052038865",
+          "orcid": "https://orcid.org/0000-0003-4915-1048",
+          "institutions": [
+            "Ho Chi Minh City University of Transport"
+          ]
+        },
+        {
+          "name": "Xu\u00e2n Ph\u01b0\u01a1ng Nguy\u1ec5n",
+          "openalex_id": "A5062896363",
+          "orcid": "https://orcid.org/0000-0003-0354-8648",
+          "institutions": [
+            "Ho Chi Minh City University of Transport"
+          ]
+        },
+        {
+          "name": "Anh Tuan Hoang",
+          "openalex_id": "A5037073589",
+          "orcid": "https://orcid.org/0000-0002-1767-8040",
+          "institutions": [
+            "Dong A University",
+            "University of Da Nang"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-19",
+      "abstract": "Modern machine learning (ML) techniques are making inroads in every aspect of renewable energy for optimization and model prediction. The effective utilization of ML techniques for the development and scaling up of renewable energy systems needs a high degree of accountability. However, most of the ML approaches currently in use are termed black box since their work is difficult to comprehend. Explainable artificial intelligence (XAI) is an attractive option to solve the issue of poor interoperability in black-box methods. This review investigates the relationship between renewable energy (RE) and XAI. It emphasizes the potential advantages of XAI in improving the performance and efficacy of RE systems. It is realized that although the integration of XAI with RE has enormous potential to alter how energy is produced and consumed, possible hazards and barriers remain to be overcome, particularly concerning transparency, accountability, and fairness. Thus, extensive research is required to address the societal and ethical implications of using XAI in RE and to create standardized data sets and evaluation metrics. In summary, this paper shows the potential, perspectives, opportunities, and challenges of XAI application to RE system management and operation aiming to target the efficient energy-use goals for a more sustainable and trustworthy future.",
+      "cited_by_count": 82,
+      "type": "article",
+      "source": {
+        "name": "Energy & Fuels",
+        "type": "journal",
+        "issn": [
+          "0887-0624",
+          "1520-5029"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Energy Load and Power Forecasting",
+        "Market Dynamics and Volatility"
+      ],
+      "referenced_works_count": 190,
+      "url": "https://openalex.org/W4391035178"
+    },
+    {
+      "openalex_id": "W4399919514",
+      "doi": "10.1016/j.neucom.2024.128111",
+      "title": "Explainable artificial intelligence: A survey of needs, techniques, applications, and future direction",
+      "authors": [
+        {
+          "name": "Melkamu Abay Mersha",
+          "openalex_id": "A5093470856",
+          "orcid": "https://orcid.org/0009-0005-3137-9206",
+          "institutions": [
+            "University of Colorado Colorado Springs"
+          ]
+        },
+        {
+          "name": "Khang Nh\u1ee9t L\u00e2m",
+          "openalex_id": "A5076574254",
+          "orcid": "https://orcid.org/0000-0003-1103-5578",
+          "institutions": [
+            "Can Tho University"
+          ]
+        },
+        {
+          "name": "Joseph Wood",
+          "openalex_id": "A5103014421",
+          "orcid": "https://orcid.org/0000-0002-0483-7110",
+          "institutions": [
+            "University of Colorado Colorado Springs"
+          ]
+        },
+        {
+          "name": "Ali K. AlShami",
+          "openalex_id": "A5084878664",
+          "orcid": "https://orcid.org/0000-0002-3705-2651",
+          "institutions": [
+            "University of Colorado Colorado Springs"
+          ]
+        },
+        {
+          "name": "Jugal Kalita",
+          "openalex_id": "A5049180880",
+          "orcid": "https://orcid.org/0000-0002-8765-7018",
+          "institutions": [
+            "University of Colorado Colorado Springs"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-22",
+      "abstract": null,
+      "cited_by_count": 71,
+      "type": "article",
+      "source": {
+        "name": "Neurocomputing",
+        "type": "journal",
+        "issn": [
+          "0925-2312",
+          "1872-8286"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2409.00265"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 249,
+      "url": "https://openalex.org/W4399919514"
+    },
+    {
+      "openalex_id": "W4391986380",
+      "doi": "10.1109/access.2024.3368377",
+      "title": "Explainable AI for Intrusion Detection Systems: LIME and SHAP Applicability on Multi-Layer Perceptron",
+      "authors": [
+        {
+          "name": "Diogo Gaspar",
+          "openalex_id": "A5093967614",
+          "orcid": "https://orcid.org/0009-0003-0654-9344",
+          "institutions": [
+            "Instituto Pedro Nunes"
+          ]
+        },
+        {
+          "name": "Paulo Silva",
+          "openalex_id": "A5100345291",
+          "orcid": "https://orcid.org/0000-0002-2306-2242",
+          "institutions": [
+            "Instituto Pedro Nunes"
+          ]
+        },
+        {
+          "name": "Catarina Silva",
+          "openalex_id": "A5100371897",
+          "orcid": "https://orcid.org/0000-0002-5656-0061",
+          "institutions": [
+            "University of Coimbra"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Machine learning-based systems have presented increasing learning performance, in a wide variety of tasks. However, the problem with some state-of-the-art models is their lack of transparency, trustworthiness, and explainability. To address this problem, eXplainable Artificial Intelligence (XAI) appeared. It is a research field that aims to make black-box models more understandable to humans. The research on this topic has increased in recent years, and many methods, such as LIME (Local Interpretable Model-Agnostic Explanations) and SHAP (SHapley Additive exPlanations) have been proposed. Machine learning-based Intrusion Detection Systems (IDS) are one of the many application domains of XAI. However, most of the works about model interpretation focus on other fields, like computer vision, natural language processing, biology, healthcare, etc. This poses a challenge for cybersecurity professionals tasked with analyzing IDS results, thereby impeding their capacity to make informed decisions. In an attempt to address this problem, we have selected two XAI methods, LIME, and SHAP. Using the methods, we have retrieved explanations for the results of a black-box model, part of an IDS solution that performs intrusion detection on IoT devices, increasing its interpretability. In order to validate the explanations, we carried out a perturbation analysis where we tried to obtain a different classification based on the features present in the explanations. With the explanations and the perturbation analysis we were able to draw conclusions about the negative impact of particular features on the model results when present in the input data, making it easier for cybersecurity experts when analyzing the model results and it serves as an aid to the continuous improvement the model. The perturbations also serve as a comparison of performance between LIME and SHAP. To evaluate the degree of interpretability increase, and the explanations provided by each XAI method of the model and directly compare the XAI methods, we have performed a survey analysis.",
+      "cited_by_count": 79,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/10380310/10440604.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W4391986380"
+    },
+    {
+      "openalex_id": "W4401503494",
+      "doi": "10.1016/j.csbj.2024.08.005",
+      "title": "Unveiling the black box: A systematic review of Explainable Artificial Intelligence in medical image analysis",
+      "authors": [
+        {
+          "name": "Dost Muhammad",
+          "openalex_id": "A5102775089",
+          "orcid": "https://orcid.org/0000-0001-9186-6392",
+          "institutions": [
+            "Ollscoil na Gaillimhe \u2013 University of Galway"
+          ]
+        },
+        {
+          "name": "Malika Bendechache",
+          "openalex_id": "A5072731605",
+          "orcid": "https://orcid.org/0000-0003-0069-1860",
+          "institutions": [
+            "Ollscoil na Gaillimhe \u2013 University of Galway"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-08-12",
+      "abstract": null,
+      "cited_by_count": 83,
+      "type": "review",
+      "source": {
+        "name": "Computational and Structural Biotechnology Journal",
+        "type": "journal",
+        "issn": [
+          "2001-0370"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.csbj.2024.08.005"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Radiomics and Machine Learning in Medical Imaging"
+      ],
+      "referenced_works_count": 125,
+      "url": "https://openalex.org/W4401503494"
+    },
+    {
+      "openalex_id": "W4381327855",
+      "doi": "10.1109/jiot.2023.3287678",
+      "title": "Explainable Artificial Intelligence (XAI) for Internet of Things: A Survey",
+      "authors": [
+        {
+          "name": "\u0130brahim K\u00f6k",
+          "openalex_id": "A5039405967",
+          "orcid": "https://orcid.org/0000-0001-9787-8079",
+          "institutions": [
+            "Pamukkale University"
+          ]
+        },
+        {
+          "name": "Feyza Y\u0131ld\u0131r\u0131m Okay",
+          "openalex_id": "A5066314235",
+          "orcid": "https://orcid.org/0000-0002-6239-3722",
+          "institutions": [
+            "Gazi University"
+          ]
+        },
+        {
+          "name": "\u00d6zgecan Muyanl\u0131",
+          "openalex_id": "A5055486070",
+          "institutions": [
+            "Hacettepe University"
+          ]
+        },
+        {
+          "name": "Suat \u00d6zdemi\u0307r",
+          "openalex_id": "A5076499033",
+          "orcid": "https://orcid.org/0000-0002-4588-4538",
+          "institutions": [
+            "Gazi University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-20",
+      "abstract": "Artificial intelligence (AI) and machine learning (ML) are widely employed to make the solutions more accurate and autonomous in many smart and intelligent applications in the Internet of Things (IoT). In these IoT applications, the performance and accuracy of AI/ML models are the main concerns; however, the transparency, interpretability, and responsibility of the models' decisions are often neglected. Moreover, in AI/ML-supported next-generation IoT applications, there is a need for more reliable, transparent, and explainable systems. In particular, regardless of whether the decisions are simple or complex, how the decision is made, which features affect the decision, and their adoption and interpretation by people or experts are crucial issues. Also, people typically perceive unpredictable or opaque AI outcomes with skepticism, which reduces the adoption and proliferation of IoT applications. To that end, explainable AI (XAI) has emerged as a promising research topic that allows ante-hoc and post-hoc functioning and stages of black-box models to be transparent, understandable, and interpretable. In this article, we provide an in-depth and systematic review of recent studies that use XAI models in the scope of the IoT domain. We classify the studies according to their methodology and application areas. Additionally, we highlight the challenges and open issues and provide promising future directions to lead the researchers in future investigations.",
+      "cited_by_count": 106,
+      "type": "article",
+      "source": {
+        "name": "IEEE Internet of Things Journal",
+        "type": "journal",
+        "issn": [
+          "2327-4662",
+          "2372-2541"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 136,
+      "url": "https://openalex.org/W4381327855"
+    },
+    {
+      "openalex_id": "W4394862853",
+      "doi": "10.1109/ojcoms.2024.3386872",
+      "title": "Explainable AI for 6G Use Cases: Technical Aspects and Research Challenges",
+      "authors": [
+        {
+          "name": "Shen Wang",
+          "openalex_id": "A5011845242",
+          "orcid": "https://orcid.org/0000-0003-3660-1206",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "M. Atif Qureshi",
+          "openalex_id": "A5070809975",
+          "orcid": "https://orcid.org/0000-0003-4413-4476",
+          "institutions": [
+            "Technological University Dublin"
+          ]
+        },
+        {
+          "name": "Luis Miralles\u2010Pechu\u00e1n",
+          "openalex_id": "A5042615241",
+          "orcid": "https://orcid.org/0000-0002-7565-6894",
+          "institutions": [
+            "Technological University Dublin"
+          ]
+        },
+        {
+          "name": "Thien Huynh\u2010The",
+          "openalex_id": "A5059877507",
+          "orcid": "https://orcid.org/0000-0002-9172-2935",
+          "institutions": [
+            "Ho Chi Minh City University of Technology and Education"
+          ]
+        },
+        {
+          "name": "Thippa Reddy Gadekallu",
+          "openalex_id": "A5041854978",
+          "institutions": [
+            "Chitkara University",
+            "Lovely Professional University"
+          ]
+        },
+        {
+          "name": "Madhusanka Liyanage",
+          "openalex_id": "A5068169019",
+          "orcid": "https://orcid.org/0000-0003-4786-030X",
+          "institutions": [
+            "University College Dublin"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Around 2020, 5G began its commercialization journey, and discussions about the next-generation networks (such as 6G) emerged. Researchers predict that 6G networks will have higher bandwidth, coverage, reliability, energy efficiency, and lower latency, and will be an integrated \u201chuman-centric\u201d network system powered by artificial intelligence (AI). This 6G network will lead to many real-time automated decisions, ranging from network resource allocation to collision avoidance for self-driving cars. However, there is a risk of losing control over decision-making due to the high-speed, data-intensive AI decision-making that may go beyond designers\u2019 and users\u2019 comprehension. To mitigate this risk, explainable AI (XAI) methods can be used to enhance the transparency of the black-box AI decision-making process. This paper surveys the application of XAI towards the upcoming 6G age, including 6G technologies (such as intelligent radio and zero-touch network management) and 6G use cases (such as industry 5.0). Additionally, the paper summarizes the lessons learned from recent attempts and outlines important research challenges in applying XAI for 6G use cases soon.",
+      "cited_by_count": 59,
+      "type": "article",
+      "source": {
+        "name": "IEEE Open Journal of the Communications Society",
+        "type": "journal",
+        "issn": [
+          "2644-125X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/8782661/8901158/10499970.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Brain Tumor Detection and Classification",
+        "Advanced Data and IoT Technologies"
+      ],
+      "referenced_works_count": 290,
+      "url": "https://openalex.org/W4394862853"
+    },
+    {
+      "openalex_id": "W4393306481",
+      "doi": "10.1038/s41598-024-56775-y",
+      "title": "Reliable water quality prediction and parametric analysis using explainable AI models",
+      "authors": [
+        {
+          "name": "M. K. Nallakaruppan",
+          "openalex_id": "A5051082202",
+          "orcid": "https://orcid.org/0000-0003-4548-4240",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "E. Gangadevi",
+          "openalex_id": "A5087727545"
+        },
+        {
+          "name": "M. Lawanya Shri",
+          "openalex_id": "A5110704619",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "Balamurugan Balusamy",
+          "openalex_id": "A5059184402",
+          "orcid": "https://orcid.org/0000-0003-2805-4951",
+          "institutions": [
+            "Shiv Nadar University"
+          ]
+        },
+        {
+          "name": "Sweta Bhattacharya",
+          "openalex_id": "A5089469340",
+          "orcid": "https://orcid.org/0000-0002-6082-164X",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "Shitharth Selvarajan",
+          "openalex_id": "A5067888843",
+          "orcid": "https://orcid.org/0000-0002-4931-724X",
+          "institutions": [
+            "Leeds Beckett University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-29",
+      "abstract": "Abstract The consumption of water constitutes the physical health of most of the living species and hence management of its purity and quality is extremely essential as contaminated water has to potential to create adverse health and environmental consequences. This creates the dire necessity to measure, control and monitor the quality of water. The primary contaminant present in water is Total Dissolved Solids (TDS), which is hard to filter out. There are various substances apart from mere solids such as potassium, sodium, chlorides, lead, nitrate, cadmium, arsenic and other pollutants. The proposed work aims to provide the automation of water quality estimation through Artificial Intelligence and uses Explainable Artificial Intelligence (XAI) for the explanation of the most significant parameters contributing towards the potability of water and the estimation of the impurities. XAI has the transparency and justifiability as a white-box model since the Machine Learning (ML) model is black-box and unable to describe the reasoning behind the ML classification. The proposed work uses various ML models such as Logistic Regression, Support Vector Machine (SVM), Gaussian Naive Bayes, Decision Tree (DT) and Random Forest (RF) to classify whether the water is drinkable. The various representations of XAI such as force plot, test patch, summary plot, dependency plot and decision plot generated in SHAPELY explainer explain the significant features, prediction score, feature importance and justification behind the water quality estimation. The RF classifier is selected for the explanation and yields optimum Accuracy and F1-Score of 0.9999, with Precision and Re-call of 0.9997 and 0.998 respectively. Thus, the work is an exploratory analysis of the estimation and management of water quality with indicators associated with their significance. This work is an emerging research at present with a vision of addressing the water quality for the future as well.",
+      "cited_by_count": 71,
+      "type": "article",
+      "source": {
+        "name": "Scientific Reports",
+        "type": "journal",
+        "issn": [
+          "2045-2322"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41598-024-56775-y.pdf"
+      },
+      "topics": [
+        "Hydrological Forecasting Using AI",
+        "Water Quality Monitoring Technologies",
+        "Water Quality and Pollution Assessment"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W4393306481"
+    },
+    {
+      "openalex_id": "W4387975898",
+      "doi": "10.3390/electronics12214430",
+      "title": "Intelligent Decision Support for Energy Management: A Methodology for Tailored Explainability of Artificial Intelligence Analytics",
+      "authors": [
+        {
+          "name": "Dimitrios P. Panagoulias",
+          "openalex_id": "A5091760895",
+          "orcid": "https://orcid.org/0000-0002-9421-141X",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "Elissaios Sarmas",
+          "openalex_id": "A5059115129",
+          "orcid": "https://orcid.org/0000-0002-1330-6872",
+          "institutions": [
+            "National Technical University of Athens"
+          ]
+        },
+        {
+          "name": "Vangelis Marinakis",
+          "openalex_id": "A5008411897",
+          "orcid": "https://orcid.org/0000-0001-5488-4006",
+          "institutions": [
+            "National Technical University of Athens"
+          ]
+        },
+        {
+          "name": "Maria Virvou",
+          "openalex_id": "A5057523671",
+          "orcid": "https://orcid.org/0000-0002-4008-4654",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "George A. Tsihrintzis",
+          "openalex_id": "A5001264416",
+          "orcid": "https://orcid.org/0000-0002-2716-4035",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "Haris Doukas",
+          "openalex_id": "A5058865022",
+          "orcid": "https://orcid.org/0000-0002-3369-0592",
+          "institutions": [
+            "National Technical University of Athens"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-27",
+      "abstract": "This paper presents a novel development methodology for artificial intelligence (AI) analytics in energy management that focuses on tailored explainability to overcome the \u201cblack box\u201d issue associated with AI analytics. Our approach addresses the fact that any given analytic service is to be used by different stakeholders, with different backgrounds, preferences, abilities, skills, and goals. Our methodology is aligned with the explainable artificial intelligence (XAI) paradigm and aims to enhance the interpretability of AI-empowered decision support systems (DSSs). Specifically, a clustering-based approach is adopted to customize the depth of explainability based on the specific needs of different user groups. This approach improves the accuracy and effectiveness of energy management analytics while promoting transparency and trust in the decision-making process. The methodology is structured around an iterative development lifecycle for an intelligent decision support system and includes several steps, such as stakeholder identification, an empirical study on usability and explainability, user clustering analysis, and the implementation of an XAI framework. The XAI framework comprises XAI clusters and local and global XAI, which facilitate higher adoption rates of the AI system and ensure responsible and safe deployment. The methodology is tested on a stacked neural network for an analytics service, which estimates energy savings from renovations, and aims to increase adoption rates and benefit the circular economy.",
+      "cited_by_count": 53,
+      "type": "article",
+      "source": {
+        "name": "Electronics",
+        "type": "journal",
+        "issn": [
+          "2079-9292"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2079-9292/12/21/4430/pdf?version=1698412067"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Energy Load and Power Forecasting",
+        "Energy Efficiency and Management"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W4387975898"
+    },
+    {
+      "openalex_id": "W4402524908",
+      "doi": "10.1186/s43055-024-01356-2",
+      "title": "Explainability, transparency and black box challenges of AI in radiology: impact on patient care in cardiovascular radiology",
+      "authors": [
+        {
+          "name": "Ahmed Marey",
+          "openalex_id": "A5089086009",
+          "orcid": "https://orcid.org/0000-0002-3659-1696"
+        },
+        {
+          "name": "Parisa Arjmand",
+          "openalex_id": "A5107186538"
+        },
+        {
+          "name": "Ameerh Dana Sabe Alerab",
+          "openalex_id": "A5107186539"
+        },
+        {
+          "name": "Mohammad Eslami",
+          "openalex_id": "A5065353892",
+          "orcid": "https://orcid.org/0000-0001-9082-8677"
+        },
+        {
+          "name": "Abdelrahman M. Saad",
+          "openalex_id": "A5112930483"
+        },
+        {
+          "name": "Nicole Sanchez",
+          "openalex_id": "A5109781854"
+        },
+        {
+          "name": "Muhammad Umair",
+          "openalex_id": "A5048169205",
+          "orcid": "https://orcid.org/0000-0001-6113-8335"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-09-13",
+      "abstract": "Abstract The integration of artificial intelligence (AI) in cardiovascular imaging has revolutionized the field, offering significant advancements in diagnostic accuracy and clinical efficiency. However, the complexity and opacity of AI models, particularly those involving machine learning (ML) and deep learning (DL), raise critical legal and ethical concerns due to their \"black box\" nature. This manuscript addresses these concerns by providing a comprehensive review of AI technologies in cardiovascular imaging, focusing on the challenges and implications of the black box phenomenon. We begin by outlining the foundational concepts of AI, including ML and DL, and their applications in cardiovascular imaging. The manuscript delves into the \"black box\" issue, highlighting the difficulty in understanding and explaining AI decision-making processes. This lack of transparency poses significant challenges for clinical acceptance and ethical deployment. The discussion then extends to the legal and ethical implications of AI's opacity. The need for explicable AI systems is underscored, with an emphasis on the ethical principles of beneficence and non-maleficence. The manuscript explores potential solutions such as explainable AI (XAI) techniques, which aim to provide insights into AI decision-making without sacrificing performance. Moreover, the impact of AI explainability on clinical decision-making and patient outcomes is examined. The manuscript argues for the development of hybrid models that combine interpretability with the advanced capabilities of black box systems. It also advocates for enhanced education and training programs for healthcare professionals to equip them with the necessary skills to utilize AI effectively. Patient involvement and informed consent are identified as critical components for the ethical deployment of AI in healthcare. Strategies for improving patient understanding and engagement with AI technologies are discussed, emphasizing the importance of transparent communication and education. Finally, the manuscript calls for the establishment of standardized regulatory frameworks and policies to address the unique challenges posed by AI in healthcare. By fostering interdisciplinary collaboration and continuous monitoring, the medical community can ensure the responsible integration of AI into cardiovascular imaging, ultimately enhancing patient care and clinical outcomes.",
+      "cited_by_count": 89,
+      "type": "article",
+      "source": {
+        "name": "The Egyptian Journal of Radiology and Nuclear Medicine",
+        "type": "journal",
+        "issn": [
+          "0378-603X",
+          "2090-4762"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.1186/s43055-024-01356-2"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Radiomics and Machine Learning in Medical Imaging",
+        "Advanced X-ray and CT Imaging"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W4402524908"
+    },
+    {
+      "openalex_id": "W4401478775",
+      "doi": "10.1007/s00521-024-10208-z",
+      "title": "Streamlit-based enhancing crop recommendation systems with advanced explainable artificial intelligence for smart farming",
+      "authors": [
+        {
+          "name": "Yaganteeswarudu Akkem",
+          "openalex_id": "A5013570231",
+          "orcid": "https://orcid.org/0000-0002-5637-7064",
+          "institutions": [
+            "National Institute Of Technology Silchar"
+          ]
+        },
+        {
+          "name": "Saroj Kr. Biswas",
+          "openalex_id": "A5103019545",
+          "orcid": "https://orcid.org/0009-0004-4819-8623",
+          "institutions": [
+            "National Institute Of Technology Silchar"
+          ]
+        },
+        {
+          "name": "Aruna Varanasi",
+          "openalex_id": "A5109048572"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-08-10",
+      "abstract": null,
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "Neural Computing and Applications",
+        "type": "journal",
+        "issn": [
+          "0941-0643",
+          "1433-3058"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Smart Agriculture and AI",
+        "Stock Market Forecasting Methods"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W4401478775"
+    },
+    {
+      "openalex_id": "W4378746207",
+      "doi": "10.3389/fmed.2023.1180773",
+      "title": "Explainable artificial intelligence (XAI) in radiology and nuclear medicine: a literature review",
+      "authors": [
+        {
+          "name": "Bart M. de Vries",
+          "openalex_id": "A5017280816",
+          "orcid": "https://orcid.org/0000-0002-6421-8303",
+          "institutions": [
+            "Amsterdam University Medical Centers",
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Gerben J.C. Zwezerijnen",
+          "openalex_id": "A5075273649",
+          "orcid": "https://orcid.org/0000-0002-9571-9362",
+          "institutions": [
+            "Amsterdam University Medical Centers",
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "George L. Burchell",
+          "openalex_id": "A5013011668",
+          "orcid": "https://orcid.org/0000-0002-6281-4179",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Floris H. P. van Velden",
+          "openalex_id": "A5083325645",
+          "orcid": "https://orcid.org/0000-0003-2859-2119",
+          "institutions": [
+            "Leiden University Medical Center"
+          ]
+        },
+        {
+          "name": "C. Willemien Menke\u2010van der Houven van Oordt",
+          "openalex_id": "A5076407830",
+          "orcid": "https://orcid.org/0000-0002-5404-5883",
+          "institutions": [
+            "Amsterdam University Medical Centers",
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Ronald Boellaard",
+          "openalex_id": "A5029713359",
+          "orcid": "https://orcid.org/0000-0002-0313-5686",
+          "institutions": [
+            "Amsterdam University Medical Centers",
+            "Vrije Universiteit Amsterdam"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-12",
+      "abstract": "Rational Deep learning (DL) has demonstrated a remarkable performance in diagnostic imaging for various diseases and modalities and therefore has a high potential to be used as a clinical tool. However, current practice shows low deployment of these algorithms in clinical practice, because DL algorithms lack transparency and trust due to their underlying black-box mechanism. For successful employment, explainable artificial intelligence (XAI) could be introduced to close the gap between the medical professionals and the DL algorithms. In this literature review, XAI methods available for magnetic resonance (MR), computed tomography (CT), and positron emission tomography (PET) imaging are discussed and future suggestions are made. Methods PubMed, Embase.com and Clarivate Analytics/Web of Science Core Collection were screened. Articles were considered eligible for inclusion if XAI was used (and well described) to describe the behavior of a DL model used in MR, CT and PET imaging. Results A total of 75 articles were included of which 54 and 17 articles described post and ad hoc XAI methods, respectively, and 4 articles described both XAI methods. Major variations in performance is seen between the methods. Overall, post hoc XAI lacks the ability to provide class-discriminative and target-specific explanation. Ad hoc XAI seems to tackle this because of its intrinsic ability to explain. However, quality control of the XAI methods is rarely applied and therefore systematic comparison between the methods is difficult. Conclusion There is currently no clear consensus on how XAI should be deployed in order to close the gap between medical professionals and DL algorithms for clinical implementation. We advocate for systematic technical and clinical quality assessment of XAI methods. Also, to ensure end-to-end unbiased and safe integration of XAI in clinical workflow, (anatomical) data minimization and quality control methods should be included.",
+      "cited_by_count": 70,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Medicine",
+        "type": "journal",
+        "issn": [
+          "2296-858X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.3389/fmed.2023.1180773"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Explainable Artificial Intelligence (XAI)",
+        "Radiomics and Machine Learning in Medical Imaging"
+      ],
+      "referenced_works_count": 97,
+      "url": "https://openalex.org/W4378746207"
+    },
+    {
+      "openalex_id": "W4396978679",
+      "doi": "10.1016/j.inffus.2024.102472",
+      "title": "Explainable AI-driven IoMT fusion: Unravelling techniques, opportunities, and challenges with Explainable AI in healthcare",
+      "authors": [
+        {
+          "name": "Niyaz Ahmad Wani",
+          "openalex_id": "A5001336409",
+          "orcid": "https://orcid.org/0000-0002-7656-3374",
+          "institutions": [
+            "Thapar Institute of Engineering & Technology"
+          ]
+        },
+        {
+          "name": "Ravinder Kumar",
+          "openalex_id": "A5049455150",
+          "orcid": "https://orcid.org/0000-0003-1005-7636",
+          "institutions": [
+            "Thapar Institute of Engineering & Technology"
+          ]
+        },
+        {
+          "name": "\u00ad Mamta",
+          "openalex_id": "A5100617392",
+          "orcid": "https://orcid.org/0000-0001-9156-874X",
+          "institutions": [
+            "Punjab Engineering College"
+          ]
+        },
+        {
+          "name": "Jatin Bedi",
+          "openalex_id": "A5071302879",
+          "orcid": "https://orcid.org/0000-0002-9444-6200",
+          "institutions": [
+            "Thapar Institute of Engineering & Technology"
+          ]
+        },
+        {
+          "name": "Imad Rida",
+          "openalex_id": "A5035273426",
+          "orcid": "https://orcid.org/0000-0003-2789-5070",
+          "institutions": [
+            "Biom\u00e9canique et Bioing\u00e9nierie",
+            "Universit\u00e9 de Technologie de Compi\u00e8gne"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-05-16",
+      "abstract": null,
+      "cited_by_count": 87,
+      "type": "article",
+      "source": {
+        "name": "Information Fusion",
+        "type": "journal",
+        "issn": [
+          "1566-2535",
+          "1872-6305"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 332,
+      "url": "https://openalex.org/W4396978679"
+    },
+    {
+      "openalex_id": "W4393405277",
+      "doi": "10.1109/access.2024.3383431",
+      "title": "XAI-ADS: An Explainable Artificial Intelligence Framework for Enhancing Anomaly Detection in Autonomous Driving Systems",
+      "authors": [
+        {
+          "name": "Sazid Nazat",
+          "openalex_id": "A5092500440",
+          "orcid": "https://orcid.org/0009-0001-1163-6448",
+          "institutions": [
+            "Indiana University \u2013 Purdue University Indianapolis",
+            "University of Indianapolis"
+          ]
+        },
+        {
+          "name": "Lingxi Li",
+          "openalex_id": "A5101586017",
+          "orcid": "https://orcid.org/0000-0002-5192-492X",
+          "institutions": [
+            "Indiana University \u2013 Purdue University Indianapolis",
+            "University of Indianapolis"
+          ]
+        },
+        {
+          "name": "Mustafa Abdallah",
+          "openalex_id": "A5007992878",
+          "orcid": "https://orcid.org/0000-0002-9554-9260",
+          "institutions": [
+            "Indiana University \u2013 Purdue University Indianapolis",
+            "University of Indianapolis"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "The advent of autonomous driving systems has given rise to pressing cybersecurity issues regarding the vulnerability of vehicular ad hoc networks (VANETs) to potential attacks. This critical security problem necessitates the application of artificial intelligence (AI) models for anomaly detection in VANETs of autonomous vehicles (AVs). However, the lack of explainability of such AI-based anomaly detection models presents challenges. This motivates an emerging research direction of utilizing explainable AI (XAI) techniques to elucidate the behaviors of anomaly detection models in AV networks. In this work, we propose an end-to-end XAI framework to interpret and visualize the anomaly detection classifications made by AI models securing VANETs. We evaluate the framework on two real-world autonomous driving datasets. The framework furnishes both global and local explanations for the black-box AI models using two XAI methods. Moreover, we introduce two novel feature selection techniques to identify the salient features contributing to anomaly detection, derived from the popular SHAP XAI method and the accuracy of six different black-box AI models. We compare our proposed feature selection approaches with six state-of-the-art feature selection techniques (including two wrapper-based feature selection methods), demonstrating superior performance on various evaluation metrics. To generalize the impact of our feature selection methods, we apply three independent classifiers to evaluate our proposed feature selection approaches. The novel feature selection methods effectively distill the most explanatory features, enhancing model interpretability. Finally, we assess the efficiency (how quickly the XAI models can yield explanatory findings) for each of the six black-box AI models we employed on our two datasets, identifying the most efficient model. By furnishing explanations and visualizations of anomaly detection by AI models, our XAI framework can help in enabling trust and transparency for securing vehicular networks.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10486915.pdf"
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W4393405277"
+    },
+    {
+      "openalex_id": "W4380987951",
+      "doi": "10.3390/electronics12122697",
+      "title": "An Explainable Artificial Intelligence-Based Robustness Optimization Approach for Age-Related Macular Degeneration Detection Based on Medical IOT Systems",
+      "authors": [
+        {
+          "name": "Han Wang",
+          "openalex_id": "A5022798483",
+          "orcid": "https://orcid.org/0000-0002-5002-3708",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Jinan University",
+            "Zhuhai Institute of Advanced Technology",
+            "Zhuhai People's Hospital",
+            "Chinese University of Hong Kong",
+            "City University of Macau"
+          ]
+        },
+        {
+          "name": "Kelvin Kam Lung Chong",
+          "openalex_id": "A5028673590",
+          "orcid": "https://orcid.org/0000-0003-2587-1323",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Zhiyuan Lin",
+          "openalex_id": "A5046523138",
+          "orcid": "https://orcid.org/0000-0001-6752-3226",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Zhuhai Institute of Advanced Technology"
+          ]
+        },
+        {
+          "name": "Xiangrong Yu",
+          "openalex_id": "A5058325076",
+          "orcid": "https://orcid.org/0000-0003-2656-9847",
+          "institutions": [
+            "Jinan University",
+            "Zhuhai People's Hospital"
+          ]
+        },
+        {
+          "name": "Yi Pan",
+          "openalex_id": "A5101465265",
+          "orcid": "https://orcid.org/0000-0002-2766-3096",
+          "institutions": [
+            "Shenzhen Institutes of Advanced Technology"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-16",
+      "abstract": "AI-based models have shown promising results in diagnosing eye diseases based on multi-sources of data collected from medical IOT systems. However, there are concerns regarding their generalization and robustness, as these methods are prone to overfitting specific datasets. The development of Explainable Artificial Intelligence (XAI) techniques has addressed the black-box problem of machine learning and deep learning models, which can enhance interpretability and trustworthiness and optimize their performance in the real world. Age-related macular degeneration (AMD) is currently the primary cause of vision loss among elderly individuals. In this study, XAI methods were applied to detect AMD using various ophthalmic imaging modalities collected from medical IOT systems, such as colorful fundus photography (CFP), optical coherence tomography (OCT), ultra-wide fundus (UWF) images, and fluorescein angiography fundus (FAF). An optimized deep learning (DL) model and novel AMD identification systems were proposed based on the insights extracted by XAI. The findings of this study demonstrate that XAI not only has the potential to improve the transparency, reliability, and trustworthiness of AI models for ophthalmic applications, but it also has significant advantages for enhancing the robustness performance of these models. XAI could play a crucial role in promoting intelligent ophthalmology and be one of the most important techniques for evaluating and enhancing ophthalmic AI systems.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": {
+        "name": "Electronics",
+        "type": "journal",
+        "issn": [
+          "2079-9292"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2079-9292/12/12/2697/pdf?version=1686895810"
+      },
+      "topics": [
+        "Retinal Imaging and Analysis",
+        "Acute Ischemic Stroke Management",
+        "Imbalanced Data Classification Techniques"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4380987951"
+    },
+    {
+      "openalex_id": "W4377861896",
+      "doi": "10.1109/tnnls.2023.3270027",
+      "title": "Toward Explainable Affective Computing: A Review",
+      "authors": [
+        {
+          "name": "Karina Corti\u00f1as-Lorenzo",
+          "openalex_id": "A5092005096",
+          "orcid": "https://orcid.org/0000-0001-9534-7047",
+          "institutions": [
+            "Trinity College Dublin"
+          ]
+        },
+        {
+          "name": "Gerard Lacey",
+          "openalex_id": "A5050260400",
+          "orcid": "https://orcid.org/0000-0002-1923-6852",
+          "institutions": [
+            "National University of Ireland, Maynooth"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-23",
+      "abstract": "Affective computing has an unprecedented potential to change the way humans interact with technology. While the last decades have witnessed vast progress in the field, multimodal affective computing systems are generally black box by design. As affective systems start to be deployed in real-world scenarios, such as education or healthcare, a shift of focus toward improved transparency and interpretability is needed. In this context, how do we explain the output of affective computing models? and how to do so without limiting predictive performance? In this article, we review affective computing work from an explainable AI (XAI) perspective, collecting and synthesizing relevant papers into three major XAI approaches: premodel (applied before training), in-model (applied during training), and postmodel (applied after training). We present and discuss the most fundamental challenges in the field, namely, how to relate explanations back to multimodal and time-dependent data, how to integrate context and inductive biases into explanations using mechanisms such as attention, generative modeling, or graph-based methods, and how to capture intramodal and cross-modal interactions in post hoc explanations. While explainable affective computing is still nascent, existing methods are promising, contributing not only toward improved transparency but, in many cases, surpassing state-of-the-art results. Based on these findings, we explore directions for future research and discuss the importance of data-driven XAI and explanation goals, and explainee needs definition, as well as causability or the extent to which a given method leads to human understanding.",
+      "cited_by_count": 36,
+      "type": "review",
+      "source": {
+        "name": "IEEE Transactions on Neural Networks and Learning Systems",
+        "type": "journal",
+        "issn": [
+          "2162-237X",
+          "2162-2388"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/5962385/6104215/10130818.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 228,
+      "url": "https://openalex.org/W4377861896"
+    },
+    {
+      "openalex_id": "W4400111331",
+      "doi": "10.1109/access.2024.3420415",
+      "title": "Guaranteeing Correctness in Black-Box Machine Learning: A Fusion of Explainable AI and Formal Methods for Healthcare Decision-Making",
+      "authors": [
+        {
+          "name": "Nadia Khan",
+          "openalex_id": "A5101763378",
+          "orcid": "https://orcid.org/0009-0008-5713-5578",
+          "institutions": [
+            "Islamia University of Bahawalpur"
+          ]
+        },
+        {
+          "name": "Muhammad Nauman",
+          "openalex_id": "A5102915851",
+          "orcid": "https://orcid.org/0000-0003-3173-2549",
+          "institutions": [
+            "Islamia University of Bahawalpur"
+          ]
+        },
+        {
+          "name": "Ahmad Almadhor",
+          "openalex_id": "A5045221683",
+          "orcid": "https://orcid.org/0000-0002-8665-1669",
+          "institutions": [
+            "Jouf University"
+          ]
+        },
+        {
+          "name": "Nadeem Akhtar",
+          "openalex_id": "A5039179239",
+          "orcid": "https://orcid.org/0000-0003-2475-5590",
+          "institutions": [
+            "Islamia University of Bahawalpur"
+          ]
+        },
+        {
+          "name": "Abdullah Alghuried",
+          "openalex_id": "A5016241112",
+          "orcid": "https://orcid.org/0000-0003-2074-0658",
+          "institutions": [
+            "University of Tabuk"
+          ]
+        },
+        {
+          "name": "Adi Alhudhaif",
+          "openalex_id": "A5054576459",
+          "orcid": "https://orcid.org/0000-0002-7201-6963",
+          "institutions": [
+            "Prince Sattam Bin Abdulaziz University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "In recent years, Explainable Artificial Intelligence (XAI) has attracted considerable attention from the research community, primarily focusing on elucidating the opaque decision-making processes inherent in complex black-box machine learning systems such as deep neural networks. This spike in interest originates from the widespread adoption of black-box models, particularly in critical domains like healthcare and fraud detection, highlighting the pressing need to understand and validate their decision-making mechanisms rigorously. In addition, prominent XAI techniques, including LIME (Local Interpretable Model-Agnostic Explanations) and SHAP (Shapley Additive exPlanations), rely on heuristics and cannot guarantee the correctness of the explanations provided. This article systematically addresses this critical issue associated with machine learning and deep learning models, underscoring XAI&#x2019;s pivotal role in promoting model transparency to enhance decision-making quality. Furthermore, this study advocates integrating Formal Methods to provide correctness guarantees for black-box internal decision-making. The proposed methodology unfolds in three pivotal stages: firstly, training black-box models using neural networks to generate synthetic datasets; secondly, employing LIME and SHAP techniques to interpret the models and visualize their internal decision-making processes; and finally, training decision trees on the synthetic datasets to implement Formal Methods for ensuring the correctness of the black-box model&#x2019;s decision-making. To validate this proposed approach, experimentation was conducted on four widely recognized medical datasets, including the Wisconsin Breast Cancer and Thyroid Cancer (TC) datasets, which are available in the UCI Machine Learning Repository. Specifically, this research represents a significant contribution by pioneering a novel approach that seamlessly integrates XAI and Formal Methods, thereby furnishing correctness guarantees for internal decision-making processes within the healthcare domain.",
+      "cited_by_count": 32,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1109/access.2024.3420415"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 104,
+      "url": "https://openalex.org/W4400111331"
+    },
+    {
+      "openalex_id": "W4403328967",
+      "doi": "10.4018/979-8-3693-8151-9.ch002",
+      "title": "Innovations in Education",
+      "authors": [
+        {
+          "name": "Shugufta Fatima",
+          "openalex_id": "A5108652887",
+          "institutions": [
+            "Stanley Medical College"
+          ]
+        },
+        {
+          "name": "C. Kishor Kumar Reddy",
+          "openalex_id": "A5085720726",
+          "orcid": "https://orcid.org/0000-0002-3762-0137",
+          "institutions": [
+            "Stanley Medical College"
+          ]
+        },
+        {
+          "name": "Akshita Sunerah",
+          "openalex_id": "A5109024355",
+          "institutions": [
+            "City College of New York"
+          ]
+        },
+        {
+          "name": "Srinath Doss",
+          "openalex_id": "A5036385066",
+          "orcid": "https://orcid.org/0000-0002-8545-6669",
+          "institutions": [
+            "Botho University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-10-11",
+      "abstract": "As the digital revolution transforms education, Explainable AI (XAI) plays a key role in advancing educational intelligence. This chapter examines how XAI is reshaping education by making machine learning processes transparent. Unlike traditional AI's \u201cblack boxes,\u201d XAI clarifies how algorithms make recommendations, assessments, and personalized learning pathways. This transparency helps educators understand and trust AI tools, making them effective partners in education. The chapter also explores XAI's practical uses in adaptive learning platforms and intelligent tutoring systems, showing how XAI's clarity can enhance learning environments. It allows educators to address biases, customize strategies, and track outcomes more precisely. Through real-world case studies and theoretical insights, the chapter illustrates how XAI bridges advanced technology with teaching practices, promoting a more transparent and equitable educational system.",
+      "cited_by_count": 35,
+      "type": "book-chapter",
+      "source": {
+        "name": "Advances in educational technologies and instructional design book series",
+        "type": "book series",
+        "issn": [
+          "2326-8905",
+          "2326-8913"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W4403328967"
+    },
+    {
+      "openalex_id": "W4385623509",
+      "doi": "10.1016/j.frl.2023.104306",
+      "title": "Exploring XAI techniques for enhancing model transparency and interpretability in real estate rent prediction: A comparative study",
+      "authors": [
+        {
+          "name": "Ian Lenaers",
+          "openalex_id": "A5081695881",
+          "orcid": "https://orcid.org/0000-0001-9188-3870",
+          "institutions": [
+            "Solvay (Belgium)",
+            "Vrije Universiteit Brussel"
+          ]
+        },
+        {
+          "name": "Lieven De Moor",
+          "openalex_id": "A5007150563",
+          "orcid": "https://orcid.org/0000-0002-1290-2971",
+          "institutions": [
+            "Solvay (Belgium)",
+            "Vrije Universiteit Brussel"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-07",
+      "abstract": null,
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "Finance research letters",
+        "type": "journal",
+        "issn": [
+          "1544-6123",
+          "1544-6131"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S1544612323006785"
+      },
+      "topics": [
+        "Housing Market and Economics",
+        "Explainable Artificial Intelligence (XAI)",
+        "Energy Load and Power Forecasting"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W4385623509"
+    },
+    {
+      "openalex_id": "W4406882703",
+      "doi": "10.3389/frai.2025.1526221",
+      "title": "A systematic review on the integration of explainable artificial intelligence in intrusion detection systems to enhancing transparency and interpretability in cybersecurity",
+      "authors": [
+        {
+          "name": "Vincent Zibi Mohale",
+          "openalex_id": "A5107508490",
+          "orcid": "https://orcid.org/0000-0003-2448-1390",
+          "institutions": [
+            "Sol Plaatje University"
+          ]
+        },
+        {
+          "name": "Ibidun Christiana Obagbuwa",
+          "openalex_id": "A5048398805",
+          "orcid": "https://orcid.org/0000-0002-7965-2823",
+          "institutions": [
+            "Sol Plaatje University"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-28",
+      "abstract": "The rise of sophisticated cyber threats has spurred advancements in Intrusion Detection Systems (IDS), which are crucial for identifying and mitigating security breaches in real-time. Traditional IDS often rely on complex machine learning algorithms that lack transparency despite their high accuracy, creating a \u201cblack box\u201d effect that can hinder the analysts\u2019 understanding of their decision-making processes. Explainable Artificial Intelligence (XAI) offers a promising solution by providing interpretability and transparency, enabling security professionals to understand better, trust, and optimize IDS models. This paper presents a systematic review of the integration of XAI in IDS, focusing on enhancing transparency and interpretability in cybersecurity. Through a comprehensive analysis of recent studies, this review identifies commonly used XAI techniques, evaluates their effectiveness within IDS frameworks, and examines their benefits and limitations. Findings indicate that rule-based and tree-based XAI models are preferred for their interpretability, though trade-offs with detection accuracy remain challenging. Furthermore, the review highlights critical gaps in standardization and scalability, emphasizing the need for hybrid models and real-time explainability. The paper concludes with recommendations for future research directions, suggesting improvements in XAI techniques tailored for IDS, standardized evaluation metrics, and ethical frameworks prioritizing security and transparency. This review aims to inform researchers and practitioners about current trends and future opportunities in leveraging XAI to enhance IDS effectiveness, fostering a more transparent and resilient cybersecurity landscape.",
+      "cited_by_count": 27,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "2624-8212"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.3389/frai.2025.1526221"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 24,
+      "url": "https://openalex.org/W4406882703"
+    },
+    {
+      "openalex_id": "W4408047551",
+      "doi": "10.1109/access.2025.3546681",
+      "title": "A Literature Review on Applications of Explainable Artificial Intelligence (XAI)",
+      "authors": [
+        {
+          "name": "Khushi Kalasampath",
+          "openalex_id": "A5116460297",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "Spoorthi KN",
+          "openalex_id": "A5116055126",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "Shelda Sajeev",
+          "openalex_id": "A5034881808",
+          "orcid": "https://orcid.org/0000-0002-7428-4435",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "S. Kuppa",
+          "openalex_id": "A5059361710",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "K Ajay",
+          "openalex_id": "A5025624480",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        },
+        {
+          "name": "M Angulakshmi",
+          "openalex_id": "A5072742347",
+          "institutions": [
+            "Vellore Institute of Technology University"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": "As AI technologies, particularly deep learning models, have advanced, their inherent &#x201C;black box&#x201D; nature has raised significant concerns regarding accountability, fairness, and trust, especially in critical domains such as healthcare, finance, and criminal justice. We present a detailed exploration of XAI, emphasizing its essential role in improving the interpretability and transparency of complex AI systems in various application domains. Health-related applications were notably using XAI, emphasizing diagnostics, and medical imaging. Other notable domains of use of XAI is encompassed environmental and agricultural management, industrial optimization, cybersecurity, finance, transportation, and social media. Furthermore, nascent applications in law, education, and social care underscore the growing influence of XAI. The analysis indicates a prevalent application of local explanation techniques, especially SHAP and LIME, with a preference for SHAP due to its stability and mathematical assurances. Each technique is analysed for its strengths and limitations in providing clear, actionable insights into model decision-making processes, thereby aiding stakeholders in understanding AI behaviour. Ultimately, this document underscores the critical challenges for XAI in fostering user trust, enhancing decision-making processes, and ensuring that AI technologies are utilized responsibly and ethically across various applications, paving the way for a more transparent and accountable AI landscape. We believe that by serving as a guide for future studies in the area, our systematic review contributes to the body of literature on XAI.",
+      "cited_by_count": 37,
+      "type": "review",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1109/access.2025.3546681"
+      },
+      "topics": [
+        "Diverse Approaches in Healthcare and Education Studies",
+        "Technology and Data Analysis"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W4408047551"
+    },
+    {
+      "openalex_id": "W4400336337",
+      "doi": "10.1002/cai2.136",
+      "title": "Explainable artificial intelligence in breast cancer detection and risk prediction: A systematic scoping review",
+      "authors": [
+        {
+          "name": "Amirehsan Ghasemi",
+          "openalex_id": "A5082208349",
+          "orcid": "https://orcid.org/0000-0001-9288-6731",
+          "institutions": [
+            "University of Tennessee Health Science Center",
+            "University of Tennessee at Knoxville"
+          ]
+        },
+        {
+          "name": "Soheil Hashtarkhani",
+          "openalex_id": "A5082602960",
+          "orcid": "https://orcid.org/0000-0001-7750-6294",
+          "institutions": [
+            "University of Tennessee Health Science Center"
+          ]
+        },
+        {
+          "name": "David L. Schwartz",
+          "openalex_id": "A5101427595",
+          "orcid": "https://orcid.org/0000-0002-7235-5586",
+          "institutions": [
+            "University of Tennessee Health Science Center"
+          ]
+        },
+        {
+          "name": "Arash Shaban\u2010Nejad",
+          "openalex_id": "A5057391353",
+          "orcid": "https://orcid.org/0000-0003-2047-4759",
+          "institutions": [
+            "University of Tennessee Health Science Center",
+            "University of Tennessee at Knoxville"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-03",
+      "abstract": "Abstract With the advances in artificial intelligence (AI), data\u2010driven algorithms are becoming increasingly popular in the medical domain. However, due to the nonlinear and complex behavior of many of these algorithms, decision\u2010making by such algorithms is not trustworthy for clinicians and is considered a black\u2010box process. Hence, the scientific community has introduced explainable artificial intelligence (XAI) to remedy the problem. This systematic scoping review investigates the application of XAI in breast cancer detection and risk prediction. We conducted a comprehensive search on Scopus, IEEE Explore, PubMed, and Google Scholar (first 50 citations) using a systematic search strategy. The search spanned from January 2017 to July 2023, focusing on peer\u2010reviewed studies implementing XAI methods in breast cancer datasets. Thirty studies met our inclusion criteria and were included in the analysis. The results revealed that SHapley Additive exPlanations (SHAP) is the top model\u2010agnostic XAI technique in breast cancer research in terms of usage, explaining the model prediction results, diagnosis and classification of biomarkers, and prognosis and survival analysis. Additionally, the SHAP model primarily explained tree\u2010based ensemble machine learning models. The most common reason is that SHAP is model agnostic, which makes it both popular and useful for explaining any model prediction. Additionally, it is relatively easy to implement effectively and completely suits performant models, such as tree\u2010based models. Explainable AI improves the transparency, interpretability, fairness, and trustworthiness of AI\u2010enabled health systems and medical devices and, ultimately, the quality of care and outcomes.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "Cancer Innovation",
+        "type": "journal",
+        "issn": [
+          "2770-9183"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cai2.136"
+      },
+      "topics": [
+        "AI in cancer detection",
+        "Radiomics and Machine Learning in Medical Imaging",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 127,
+      "url": "https://openalex.org/W4400336337"
+    },
+    {
+      "openalex_id": "W4321502771",
+      "doi": "10.1016/j.heliyon.2023.e13883",
+      "title": "A review of the application of artificial intelligence to nuclear reactors: Where we are and what's next",
+      "authors": [
+        {
+          "name": "Qingyu Huang",
+          "openalex_id": "A5101867009",
+          "orcid": "https://orcid.org/0000-0002-0316-3505"
+        },
+        {
+          "name": "Shinian Peng",
+          "openalex_id": "A5069915355",
+          "orcid": "https://orcid.org/0000-0002-6819-5292"
+        },
+        {
+          "name": "Jian Deng",
+          "openalex_id": "A5023040266",
+          "orcid": "https://orcid.org/0000-0003-4865-0582"
+        },
+        {
+          "name": "Hui Zeng",
+          "openalex_id": "A5018089697",
+          "orcid": "https://orcid.org/0000-0001-5315-1652"
+        },
+        {
+          "name": "Zhuo Zhang",
+          "openalex_id": "A5100429709",
+          "orcid": "https://orcid.org/0000-0002-3946-0720"
+        },
+        {
+          "name": "Yu Liu",
+          "openalex_id": "A5100345691",
+          "orcid": "https://orcid.org/0000-0002-0016-2902"
+        },
+        {
+          "name": "Peng Yuan",
+          "openalex_id": "A5082252059",
+          "orcid": "https://orcid.org/0000-0001-7825-6637"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-02-21",
+      "abstract": null,
+      "cited_by_count": 74,
+      "type": "review",
+      "source": {
+        "name": "Heliyon",
+        "type": "journal",
+        "issn": [
+          "2405-8440"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.heliyon.2023.e13883"
+      },
+      "topics": [
+        "Reservoir Engineering and Simulation Methods",
+        "Nuclear reactor physics and engineering",
+        "Fault Detection and Control Systems"
+      ],
+      "referenced_works_count": 221,
+      "url": "https://openalex.org/W4321502771"
+    },
+    {
+      "openalex_id": "W4400089075",
+      "doi": "10.9734/jerr/2024/v26i71206",
+      "title": "Exploring the Concept of Explainable AI and Developing Information Governance Standards for Enhancing Trust and Transparency in Handling Customer Data",
+      "authors": [
+        {
+          "name": "Omobolaji Olufunmilayo Olateju",
+          "openalex_id": "A5099078950",
+          "institutions": [
+            "University of Ibadan"
+          ]
+        },
+        {
+          "name": "Samuel Ufom Okon",
+          "openalex_id": "A5099078951",
+          "institutions": [
+            "Wildlife Conservation Society Congo"
+          ]
+        },
+        {
+          "name": "Oluwaseun Oladeji Olaniyi",
+          "openalex_id": "A5091984294",
+          "orcid": "https://orcid.org/0000-0003-1277-6562",
+          "institutions": [
+            "Universit\u00e9 Bourgogne Franche-Comt\u00e9",
+            "University of the Cumberlands"
+          ]
+        },
+        {
+          "name": "Amaka Debie Samuel-Okon",
+          "openalex_id": "A5098689443",
+          "orcid": "https://orcid.org/0009-0003-3967-0415",
+          "institutions": [
+            "University of Cross River State"
+          ]
+        },
+        {
+          "name": "Christopher Uzoma Asonze",
+          "openalex_id": "A5093449369",
+          "orcid": "https://orcid.org/0009-0005-4387-9312",
+          "institutions": [
+            "Federal University of Technology Owerri"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-27",
+      "abstract": "The increasing integration of Artificial Intelligence (AI) systems in diverse sectors has raised concerns regarding transparency, trust, and ethical data handling. This study investigates the impact of Explainable AI (XAI) models and robust information governance standards on enhancing trust, transparency, and ethical use of customer data. A mixed-methods approach was employed, combining a comprehensive literature review with a survey of 342 respondents across various industries. The findings reveal that the implementation of XAI significantly increases user trust in AI systems compared to black-box models. Additionally, a strong positive correlation was found between XAI adoption and the ethical use of customer data, highlighting the importance of transparency frameworks and governance mechanisms. Furthermore, the study underscores the critical role of user education in fostering trust and facilitating informed decision-making regarding AI interactions. The results emphasize the need for organizations to prioritize the integration of XAI techniques, establish robust information governance frameworks, invest in user education, and foster a culture of transparency and ethical data use. These recommendations provide a roadmap for organizations to harness the benefits of AI while mitigating potential risks and ensuring responsible and trustworthy AI practices.",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Journal of Engineering Research and Reports",
+        "type": "journal",
+        "issn": [
+          "2582-2926"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.9734/jerr/2024/v26i71206"
+      },
+      "topics": [
+        "Technology and Data Analysis",
+        "Impact of AI and Big Data on Business and Society",
+        "Diverse Topics in Contemporary Research"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W4400089075"
+    },
+    {
+      "openalex_id": "W4403619648",
+      "doi": "10.70593/978-81-981271-0-5_4",
+      "title": "Enhancing black-box models: Advances in explainable artificial intelligence for ethical decision-making",
+      "authors": [
+        {
+          "name": "Jayesh Rane",
+          "openalex_id": "A5092107778",
+          "orcid": "https://orcid.org/0000-0001-8002-9863"
+        },
+        {
+          "name": "\u00d6mer Kaya",
+          "openalex_id": "A5084732645",
+          "orcid": "https://orcid.org/0000-0003-1037-5546",
+          "institutions": [
+            "Erzurum Technical University"
+          ]
+        },
+        {
+          "name": "Suraj Kumar Mallick",
+          "openalex_id": "A5063155672",
+          "orcid": "https://orcid.org/0000-0003-0994-086X",
+          "institutions": [
+            "University of Delhi"
+          ]
+        },
+        {
+          "name": "Nitin Liladhar Rane",
+          "openalex_id": "A5039865284",
+          "orcid": "https://orcid.org/0000-0002-1351-4372",
+          "institutions": [
+            "Swami Vivekanand College of Pharmacy"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-10-16",
+      "abstract": "Transparency, trust, and accountability are among the issues raised by artificial intelligence's (AI) growing reliance on black-box models, especially in high-stakes industries like healthcare, finance, and criminal justice. These models, which are frequently distinguished by their intricacy and opacity, are capable of producing extremely accurate forecasts, but users and decision-makers are still unable to fully understand how they operate. In response to this challenge, the field of Explainable AI (XAI) has emerged with the goal of demystifying these models by offering insights into their decision-making processes. Our ability to interpret model behavior has greatly improved with recent developments in XAI techniques, such as SHAP (Shapley Additive Explanations), LIME (Local Interpretable Model-agnostic Explanations), and counterfactual explanations. These instruments make it easier to recognize bias, promote trust, and guarantee adherence to moral principles and laws like the GDPR and the AI Act. Modern XAI techniques are reviewed in this research along with how they are used in moral decision-making. It looks at how explainability can improve fairness, reduce the risks of AI bias and discrimination, and assist well-informed decision-making in a variety of industries. It also examines the trade-offs between performance and interpretability of models, as well as the growing trends toward user-centric explainability techniques. In order to ensure responsible AI development and deployment, XAI's role in fostering accountability and transparency will become increasingly important as AI becomes more integrated into critical systems.",
+      "cited_by_count": 36,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://deepscienceresearch.com/index.php/dsr/catalog/download/4/75/366"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4403619648"
+    },
+    {
+      "openalex_id": "W4323569289",
+      "doi": "10.3390/app13063412",
+      "title": "Fuzzy Cognitive Maps: Their Role in Explainable Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Ioannis D. Apostolopoulos",
+          "openalex_id": "A5070462429",
+          "orcid": "https://orcid.org/0000-0001-6439-9282",
+          "institutions": [
+            "University of Patras"
+          ]
+        },
+        {
+          "name": "Peter P. Groumpos",
+          "openalex_id": "A5021932394",
+          "orcid": "https://orcid.org/0000-0002-0110-2696",
+          "institutions": [
+            "University of Patras"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-07",
+      "abstract": "Currently, artificial intelligence is facing several problems with its practical implementation in various application domains. The explainability of advanced artificial intelligence algorithms is a topic of paramount importance, and many discussions have been held recently. Pioneering and classical machine learning and deep learning models behave as black boxes, constraining the logical interpretations that the end users desire. Artificial intelligence applications in industry, medicine, agriculture, and social sciences require the users\u2019 trust in the systems. Users are always entitled to know why and how each method has made a decision and which factors play a critical role. Otherwise, they will always be wary of using new techniques. This paper discusses the nature of fuzzy cognitive maps (FCMs), a soft computational method to model human knowledge and provide decisions handling uncertainty. Though FCMs are not new to the field, they are evolving and incorporate recent advancements in artificial intelligence, such as learning algorithms and convolutional neural networks. The nature of FCMs reveals their supremacy in transparency, interpretability, transferability, and other aspects of explainable artificial intelligence (XAI) methods. The present study aims to reveal and defend the explainability properties of FCMs and to highlight their successful implementation in many domains. Subsequently, the present study discusses how FCMs cope with XAI directions and presents critical examples from the literature that demonstrate their superiority. The study results demonstrate that FCMs are both in accordance with the XAI directives and have many successful applications in domains such as medical decision-support systems, precision agriculture, energy savings, environmental monitoring, and policy-making for the public sector.",
+      "cited_by_count": 32,
+      "type": "article",
+      "source": {
+        "name": "Applied Sciences",
+        "type": "journal",
+        "issn": [
+          "2076-3417"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2076-3417/13/6/3412/pdf?version=1678243229"
+      },
+      "topics": [
+        "Cognitive Science and Mapping",
+        "Cognitive Computing and Networks"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W4323569289"
+    },
+    {
+      "openalex_id": "W4403528916",
+      "doi": "10.1016/j.rineng.2024.103171",
+      "title": "XAIEnsembleTL-IoV: A new eXplainable Artificial Intelligence ensemble transfer learning for zero-day botnet attack detection in the Internet of Vehicles",
+      "authors": [
+        {
+          "name": "Yakub Kayode Saheed",
+          "openalex_id": "A5057218982",
+          "orcid": "https://orcid.org/0000-0002-0804-0707"
+        },
+        {
+          "name": "Joshua Ebere Chukwuere",
+          "openalex_id": "A5022701040",
+          "orcid": "https://orcid.org/0000-0001-8366-4328"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-10-18",
+      "abstract": "The Internet of Vehicles (IoV) is a network of interconnected vehicles that use modern communication technologies to communicate with each other and the surrounding infrastructure. The IoV is a novel network that experiences a continuous emergence and evolution of various forms of attacks. This research addresses the growing challenge of detecting zero-day botnet attacks within the IoV, a complex network that enhances real-time communication among vehicles and surrounding infrastructure to improve traffic management, safety, and driving experiences. Traditional machine learning-based intrusion detection systems (IDS) for IoV face two key limitations: the requirement for large labeled datasets and the \u201cblack box\u201d issue, where the reasoning behind model decisions is not transparent, reducing user and stakeholder confidence. To solve these problems, this research proposes an eXplainable Artificial Intelligence (XAI) Ensemble Transfer Learning (TL) model specifically for detecting zero-day attacks in IoV. The proposed model integrates deep Shapley Additive Explanations (SHAP), providing transparency and making decisions understandable to cybersecurity professionals. Additionally, the model employs hybrid bidirectional long-short-term memory with autoencoders (BiLAE) to reduce the dimensionality of IoV network traffic, improving computational efficiency. It also uses Barnacle Mating Optimizer (BMO) to optimize the hyper-parameters of deep learning models such as ResNet, Inception, Inception ResNet, and MobileNet Convolution neural network-transfer learning architecture (CNN-TL), enhancing detection capabilities without needing vast amounts of labeled data. Experimental results showed that the model performed with an accuracy of 100 %, precision of 100 %, recall of 100 %, F1-score of 100 %, and Matthew Correlation Coefficient of 100 % in binary-class situations for internal vehicular (CAN) networks and achieved 99.88 % accuracy and similarly high metrics in multi-class scenarios for external vehicular networks(N-BaIoT). Compared to state-of-the-art techniques, the model proved to be more effective in detecting zero-day botnet attacks, reducing reliance on large datasets. Unlike traditional black-box models, the XAI component of the ensemble model offers insight into the decision-making process. It allows network administrators and security experts to understand how specific patterns in the data contribute to detection, making the system more transparent. The solution is highly adaptable and scalable for real-time application, designed to operate efficiently even on IoV gateway electronic control units with limited computational power.",
+      "cited_by_count": 58,
+      "type": "article",
+      "source": {
+        "name": "Results in Engineering",
+        "type": "journal",
+        "issn": [
+          "2590-1230"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.rineng.2024.103171"
+      },
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Anomaly Detection Techniques and Applications",
+        "Smart Grid Security and Resilience"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W4403528916"
+    },
+    {
+      "openalex_id": "W4389570202",
+      "doi": "10.3389/frai.2023.1264372",
+      "title": "Explainability as the key ingredient for AI adoption in Industry 5.0 settings",
+      "authors": [
+        {
+          "name": "Carlos Agostinho",
+          "openalex_id": "A5050322049",
+          "orcid": "https://orcid.org/0000-0002-2884-776X"
+        },
+        {
+          "name": "Zoumpolia Dikopoulou",
+          "openalex_id": "A5113874705"
+        },
+        {
+          "name": "Eleni Lavasa",
+          "openalex_id": "A5088092236",
+          "orcid": "https://orcid.org/0000-0003-1192-0868"
+        },
+        {
+          "name": "\u039aonstantinos Perakis",
+          "openalex_id": "A5000793581",
+          "orcid": "https://orcid.org/0000-0002-2236-9816",
+          "institutions": [
+            "Ubitech (Greece)"
+          ]
+        },
+        {
+          "name": "Stamatis Pitsios",
+          "openalex_id": "A5007092214",
+          "institutions": [
+            "Ubitech (Greece)"
+          ]
+        },
+        {
+          "name": "Rui Branco",
+          "openalex_id": "A5092049144"
+        },
+        {
+          "name": "Sangeetha Reji",
+          "openalex_id": "A5092050698",
+          "institutions": [
+            "Fraunhofer Institute for Open Communication Systems"
+          ]
+        },
+        {
+          "name": "Jonas Hetterich",
+          "openalex_id": "A5063873941",
+          "institutions": [
+            "Fraunhofer Institute for Open Communication Systems"
+          ]
+        },
+        {
+          "name": "Evmorfia Biliri",
+          "openalex_id": "A5020552918",
+          "orcid": "https://orcid.org/0000-0001-7151-8286"
+        },
+        {
+          "name": "Fenareti Lampathaki",
+          "openalex_id": "A5005943606",
+          "orcid": "https://orcid.org/0000-0002-3131-4622"
+        },
+        {
+          "name": "Silvia Rodr\u00edguez Del Rey",
+          "openalex_id": "A5114125540",
+          "institutions": [
+            "Innovalia (Spain)"
+          ]
+        },
+        {
+          "name": "Vasileios Gkolemis",
+          "openalex_id": "A5047902306"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-11",
+      "abstract": "Explainable Artificial Intelligence (XAI) has gained significant attention as a means to address the transparency and interpretability challenges posed by black box AI models. In the context of the manufacturing industry, where complex problems and decision-making processes are widespread, the XMANAI platform emerges as a solution to enable transparent and trustworthy collaboration between humans and machines. By leveraging advancements in XAI and catering the prompt collaboration between data scientists and domain experts, the platform enables the construction of interpretable AI models that offer high transparency without compromising performance. This paper introduces the approach to building the XMANAI platform and highlights its potential to resolve the \u201ctransparency paradox\u201d of AI. The platform not only addresses technical challenges related to transparency but also caters to the specific needs of the manufacturing industry, including lifecycle management, security, and trusted sharing of AI assets. The paper provides an overview of the XMANAI platform main functionalities, addressing the challenges faced during the development and presenting the evaluation framework to measure the performance of the delivered XAI solutions. It also demonstrates the benefits of the XMANAI approach in achieving transparency in manufacturing decision-making, fostering trust and collaboration between humans and machines, improving operational efficiency, and optimizing business value.",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "2624-8212"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/frai.2023.1264372/pdf?isPublishedV2=False"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Big Data and Business Intelligence",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W4389570202"
+    },
+    {
+      "openalex_id": "W4391006471",
+      "doi": "10.4018/978-1-6684-6361-1.ch002",
+      "title": "Explainable AI for Cybersecurity",
+      "authors": [
+        {
+          "name": "Siva Raja Sindiramutty",
+          "openalex_id": "A5028850942",
+          "orcid": "https://orcid.org/0009-0006-0310-8721",
+          "institutions": [
+            "Taylor's University"
+          ]
+        },
+        {
+          "name": "Chong Eng Tan",
+          "openalex_id": "A5049343849",
+          "orcid": "https://orcid.org/0000-0002-3990-3501",
+          "institutions": [
+            "Universiti Malaysia Sarawak"
+          ]
+        },
+        {
+          "name": "Sei Ping Lau",
+          "openalex_id": "A5004213869",
+          "institutions": [
+            "Universiti Malaysia Sarawak"
+          ]
+        },
+        {
+          "name": "Rajan Thangaveloo",
+          "openalex_id": "A5014196706",
+          "orcid": "https://orcid.org/0000-0002-0402-6019",
+          "institutions": [
+            "Universiti Malaysia Sarawak"
+          ]
+        },
+        {
+          "name": "Abdalla Hassan Gharib",
+          "openalex_id": "A5093331079",
+          "institutions": [
+            "Zanzibar University"
+          ]
+        },
+        {
+          "name": "Amaranadha Reddy Manchuri",
+          "openalex_id": "A5016401297",
+          "orcid": "https://orcid.org/0000-0002-3873-0469",
+          "institutions": [
+            "Kyungpook National University"
+          ]
+        },
+        {
+          "name": "Navid Ali Khan",
+          "openalex_id": "A5000677418",
+          "orcid": "https://orcid.org/0009-0006-9305-2206",
+          "institutions": [
+            "Taylor's University"
+          ]
+        },
+        {
+          "name": "Wee Jing Tee",
+          "openalex_id": "A5001730067",
+          "orcid": "https://orcid.org/0000-0002-9724-3011",
+          "institutions": [
+            "Taylor's University"
+          ]
+        },
+        {
+          "name": "Lalitha Muniandy",
+          "openalex_id": "A5044528014",
+          "institutions": [
+            "Tunku Abdul Rahman University of Management and Technology"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-18",
+      "abstract": "In recent years, the utilization of AI in the field of cybersecurity has become more widespread. Black-box AI models pose a significant challenge in terms of interpretability and transparency, which is one of the major drawbacks of AI-based systems. This chapter explores explainable AI (XAI) techniques as a solution to these challenges and discusses their application in cybersecurity. The chapter begins with an explanation of AI in cybersecurity, including the types of AI commonly utilized, such as DL, ML, and NLP, and their applications in cybersecurity, such as intrusion detection, malware analysis, and vulnerability assessment. The chapter then highlights the challenges with black-box AI, including difficulty identifying and resolving errors, the lack of transparency, and the inability to understand the decision-making process. The chapter then delves into XAI techniques for cybersecurity solutions, including interpretable machine-learning models, rule-based systems, and model explanation techniques.",
+      "cited_by_count": 19,
+      "type": "book-chapter",
+      "source": {
+        "name": "Advances in computational intelligence and robotics book series",
+        "type": "book series",
+        "issn": [
+          "2327-0411",
+          "2327-042X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 209,
+      "url": "https://openalex.org/W4391006471"
+    },
+    {
+      "openalex_id": "W4402961411",
+      "doi": "10.30574/wjarr.2024.23.3.2936",
+      "title": "Explainable AI (XAI) in healthcare: Enhancing trust and transparency in critical decision-making",
+      "authors": [
+        {
+          "name": "Adewale Abayomi Adeniran",
+          "openalex_id": "A5070225980"
+        },
+        {
+          "name": "Amaka Peace Onebunne",
+          "openalex_id": "A5107590303"
+        },
+        {
+          "name": "Paul William",
+          "openalex_id": "A5113408203"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-09-29",
+      "abstract": "The integration of artificial intelligence (AI) in healthcare is revolutionizing diagnostic and treatment procedures, offering unprecedented accuracy and efficiency. However, the opacity of many advanced AI models, often described as \"black boxes,\" creates challenges in adoption due to concerns around trust, transparency, and interpretability, particularly in high-stakes environments like healthcare. Explainable AI (XAI) addresses these concerns by providing a framework that not only achieves high performance but also offers insight into how decisions are made. This research explores the application of XAI techniques in healthcare, focusing on critical areas such as disease diagnostics, predictive analytics, and personalized treatment recommendations. The study will analyse various XAI methods, including model-agnostic approaches (LIME, SHAP), interpretable deep learning models, and domain-specific applications of XAI. It also evaluates the ethical implications, such as accountability and bias mitigation, and how XAI can foster collaboration between clinicians and AI systems. Ultimately, the goal is to create AI systems that are both powerful and trustworthy, promoting broader adoption in the healthcare sector while ensuring ethical and safe outcomes for patients.",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "World Journal of Advanced Research and Reviews",
+        "type": "journal",
+        "issn": [
+          "2581-9615"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4402961411"
+    },
+    {
+      "openalex_id": "W4389145409",
+      "doi": "10.7717/peerj-cs.1629",
+      "title": "Understanding the black-box: towards interpretable and reliable deep learning models",
+      "authors": [
+        {
+          "name": "Tehreem Qamar",
+          "openalex_id": "A5007407642",
+          "orcid": "https://orcid.org/0000-0002-4914-8079",
+          "institutions": [
+            "Jinnah University for Women"
+          ]
+        },
+        {
+          "name": "Narmeen Zakaria Bawany",
+          "openalex_id": "A5010712855",
+          "orcid": "https://orcid.org/0000-0003-2975-6824",
+          "institutions": [
+            "Jinnah University for Women"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-29",
+      "abstract": "Deep learning (DL) has revolutionized the field of artificial intelligence by providing sophisticated models across a diverse range of applications, from image and speech recognition to natural language processing and autonomous driving. However, deep learning models are typically black-box models where the reason for predictions is unknown. Consequently, the reliability of the model becomes questionable in many circumstances. Explainable AI (XAI) plays an important role in improving the transparency and interpretability of the model thereby making it more reliable for real-time deployment. To investigate the reliability and truthfulness of DL models, this research develops image classification models using transfer learning mechanism and validates the results using XAI technique. Thus, the contribution of this research is twofold, we employ three pre-trained models VGG16, MobileNetV2 and ResNet50 using multiple transfer learning techniques for a fruit classification task consisting of 131 classes. Next, we inspect the reliability of models, based on these pre-trained networks, by utilizing Local Interpretable Model-Agnostic Explanations, the LIME, a popular XAI technique that generates explanations for the predictions. Experimental results reveal that transfer learning provides optimized results of around 98% accuracy. The classification of the models is validated on different instances using LIME and it was observed that each model predictions are interpretable and understandable as they are based on pertinent image features that are relevant to particular classes. We believe that this research gives an insight for determining how an interpretation can be drawn from a complex AI model such that its accountability and trustworthiness can be increased.",
+      "cited_by_count": 40,
+      "type": "article",
+      "source": {
+        "name": "PeerJ Computer Science",
+        "type": "journal",
+        "issn": [
+          "2376-5992"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.7717/peerj-cs.1629"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Advanced Neural Network Applications"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W4389145409"
+    },
+    {
+      "openalex_id": "W4386689943",
+      "doi": "10.1007/s41060-023-00445-1",
+      "title": "Through the looking glass: evaluating post hoc explanations using transparent models",
+      "authors": [
+        {
+          "name": "Mythreyi Velmurugan",
+          "openalex_id": "A5039398787",
+          "orcid": "https://orcid.org/0000-0002-5017-5285",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Chun Ouyang",
+          "openalex_id": "A5075868200",
+          "orcid": "https://orcid.org/0000-0001-7098-5480",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Renuka Sindhgatta",
+          "openalex_id": "A5006713274",
+          "orcid": "https://orcid.org/0000-0001-7533-533X",
+          "institutions": [
+            "IBM Research - India"
+          ]
+        },
+        {
+          "name": "Catarina Moreira",
+          "openalex_id": "A5017217950",
+          "orcid": "https://orcid.org/0000-0002-8826-5163",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-12",
+      "abstract": "Abstract Modern machine learning methods allow for complex and in-depth analytics, but the predictive models generated by these methods are often highly complex and lack transparency. Explainable Artificial Intelligence (XAI) methods are used to improve the interpretability of these complex \u201cblack box\u201d models, thereby increasing transparency and enabling informed decision-making. However, the inherent fitness of these explainable methods, particularly the faithfulness of explanations to the decision-making processes of the model, can be hard to evaluate. In this work, we examine and evaluate the explanations provided by four XAI methods, using fully transparent \u201cglass box\u201d models trained on tabular data. Our results suggest that the fidelity of explanations is determined by the types of variables used, as well as the linearity of the relationship between variables and model prediction. We find that each XAI method evaluated has its own strengths and weaknesses, determined by the assumptions inherent in the explanation mechanism. Thus, though such methods are model-agnostic, we find significant differences in explanation quality across different technical setups. Given the numerous factors that determine the quality of explanations, including the specific explanation-generation procedures implemented by XAI methods, we suggest that model-agnostic XAI methods may still require expert guidance for implementation.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Data Science and Analytics",
+        "type": "journal",
+        "issn": [
+          "2364-415X",
+          "2364-4168"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s41060-023-00445-1.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Machine Learning and Data Classification"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4386689943"
+    },
+    {
+      "openalex_id": "W4385453571",
+      "doi": "10.1109/tce.2023.3300530",
+      "title": "Toward Transparent Load Disaggregation\u2014A Framework for Quantitative Evaluation of Explainability Using Explainable AI",
+      "authors": [
+        {
+          "name": "Djordje Batic",
+          "openalex_id": "A5000846647",
+          "orcid": "https://orcid.org/0000-0002-7647-6641",
+          "institutions": [
+            "University of Strathclyde"
+          ]
+        },
+        {
+          "name": "Vladimir Stankovi\u0107",
+          "openalex_id": "A5048091865",
+          "orcid": "https://orcid.org/0000-0002-1075-2420",
+          "institutions": [
+            "University of Strathclyde"
+          ]
+        },
+        {
+          "name": "Lina Stankovi\u0107",
+          "openalex_id": "A5061535674",
+          "orcid": "https://orcid.org/0000-0002-8112-1976",
+          "institutions": [
+            "University of Strathclyde"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-01",
+      "abstract": "Load Disaggregation, or Non-intrusive Load Monitoring (NILM), refers to the process of estimating energy consumption of individual domestic appliances from aggregated household consumption. Recently, Deep Learning (DL) approaches have seen increased adoption in NILM community. However, DL NILM models are often treated as black-box algorithms, which introduces algorithmic transparency and explainability concerns, hindering wider adoption. Recent works have investigated explainability of DL NILM, however they are limited to computationally expensive methods or simple classification problems. In this work, we present a methodology for explainability of regression-based DL NILM with visual explanations, using explainable AI (XAI). Two explainability levels are provided. Sequence-level explanations highlight important features of predicted time-series sequence of interest, while point-level explanations enable visualising explanations at a point in time. To facilitate wider adoption of XAI, we define desirable properties of NILM explanations -faithfulness, robustness and effective complexity. Addressing the limitation of existing XAI NILM approaches that don\u2019t assess the quality of explanations, desirable properties of explanations are used for quantitative evaluation of explainability. We show that proposed framework enables better understanding of NILM outputs and helps improve design by providing a visualization strategy and rigorous evaluation of quality of XAI methods, leading to transparency of outcomes.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Consumer Electronics",
+        "type": "journal",
+        "issn": [
+          "0098-3063",
+          "1558-4127"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/30/8306365/10198359.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Data Stream Mining Techniques",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W4385453571"
+    },
+    {
+      "openalex_id": "W4387586973",
+      "doi": "10.2139/ssrn.4600029",
+      "title": "A Brief Review of Explainable Artificial Intelligence in Healthcare",
+      "authors": [
+        {
+          "name": "Zahra Sadeghi",
+          "openalex_id": "A5100738713",
+          "orcid": "https://orcid.org/0000-0002-1360-7499",
+          "institutions": [
+            "Dalhousie University"
+          ]
+        },
+        {
+          "name": "Roohallah Alizadehsani",
+          "openalex_id": "A5083567791",
+          "orcid": "https://orcid.org/0000-0003-0898-5054",
+          "institutions": [
+            "Deakin University"
+          ]
+        },
+        {
+          "name": "Mehmet Akif \u00c7if\u00e7i",
+          "openalex_id": "A5052911404",
+          "orcid": "https://orcid.org/0000-0002-6439-8826",
+          "institutions": [
+            "TU Wien",
+            "Band\u0131rma Onyedi Eyl\u00fcl University"
+          ]
+        },
+        {
+          "name": "Samina Kausar",
+          "openalex_id": "A5078332598",
+          "orcid": "https://orcid.org/0000-0003-1330-7266",
+          "institutions": [
+            "University of Azad Jammu and Kashmir"
+          ]
+        },
+        {
+          "name": "Rizwan Rehman",
+          "openalex_id": "A5060973743",
+          "orcid": "https://orcid.org/0000-0002-4725-6877",
+          "institutions": [
+            "Dibrugarh University"
+          ]
+        },
+        {
+          "name": "Priyakshi Mahanta",
+          "openalex_id": "A5110437936",
+          "institutions": [
+            "Dibrugarh University"
+          ]
+        },
+        {
+          "name": "Pranjal Kumar Bora",
+          "openalex_id": "A5049604729",
+          "orcid": "https://orcid.org/0000-0002-7350-7721",
+          "institutions": [
+            "Dibrugarh University"
+          ]
+        },
+        {
+          "name": "Ammar Almasri",
+          "openalex_id": "A5026803234",
+          "orcid": "https://orcid.org/0000-0003-3289-3328"
+        },
+        {
+          "name": "Rami S. Alkhawaldeh",
+          "openalex_id": "A5022163394",
+          "orcid": "https://orcid.org/0000-0002-2413-7074",
+          "institutions": [
+            "University of Jordan"
+          ]
+        },
+        {
+          "name": "Sadiq Hussain",
+          "openalex_id": "A5062872897",
+          "orcid": "https://orcid.org/0000-0002-9840-4796",
+          "institutions": [
+            "Dibrugarh University"
+          ]
+        },
+        {
+          "name": "Bilal Alata\u015f",
+          "openalex_id": "A5034084300",
+          "orcid": "https://orcid.org/0000-0002-3513-0329",
+          "institutions": [
+            "F\u0131rat University"
+          ]
+        },
+        {
+          "name": "Afshin Shoeibi",
+          "openalex_id": "A5029791697",
+          "orcid": "https://orcid.org/0000-0003-0635-6799",
+          "institutions": [
+            "Ferdowsi University of Mashhad"
+          ]
+        },
+        {
+          "name": "Hossein Moosaei",
+          "openalex_id": "A5041433521",
+          "orcid": "https://orcid.org/0000-0002-0640-2161",
+          "institutions": [
+            "Jan Evangelista Purkyn\u011b University in \u00dast\u00ed nad Labem"
+          ]
+        },
+        {
+          "name": "Milan Hlad\u00edk",
+          "openalex_id": "A5081693462",
+          "orcid": "https://orcid.org/0000-0002-7340-8491",
+          "institutions": [
+            "Charles University"
+          ]
+        },
+        {
+          "name": "Saeid Nahavandi",
+          "openalex_id": "A5015293969",
+          "orcid": "https://orcid.org/0000-0002-0360-5270",
+          "institutions": [
+            "Swinburne University of Technology"
+          ]
+        },
+        {
+          "name": "Panos M. Pardalo",
+          "openalex_id": "A5093053718",
+          "institutions": [
+            "University of Florida"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": null,
+      "cited_by_count": 28,
+      "type": "review",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.4600029"
+      },
+      "topics": [
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4387586973"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}
