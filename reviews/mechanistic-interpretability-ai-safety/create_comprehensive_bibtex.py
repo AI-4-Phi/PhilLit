@@ -90,16 +90,18 @@ def load_json_files(domain_id: int, base_path: Path) -> List[Dict[str, Any]]:
 
         try:
             with open(file_path, 'r') as f:
-                content = f.read()
-                # Try to find JSON content (skip debug output)
-                # Look for first '[' or '{'
-                start = min(
-                    content.find('[') if '[' in content else len(content),
-                    content.find('{') if '{' in content else len(content)
-                )
-                if start < len(content):
-                    content = content[start:]
-                data = json.loads(content)
+                file_lines = f.readlines()
+            
+            # Skip debug output lines (lines that start with [ and contain script names)
+            json_lines = []
+            for file_line in file_lines:
+                # Skip lines like "[s2_search.py] Searching..." or "[search_arxiv.py] Found..."
+                if file_line.strip().startswith('[') and ('.py]' in file_line or 'Searching' in file_line or 'Retrieved' in file_line or 'Cached' in file_line or 'Found' in file_line):
+                    continue
+                json_lines.append(file_line)
+            
+            content = ''.join(json_lines)
+            data = json.loads(content)
         except json.JSONDecodeError as e:
             print(f"  Warning: Error parsing {json_file}: {e}, skipping")
             continue
@@ -124,7 +126,6 @@ def load_json_files(domain_id: int, base_path: Path) -> List[Dict[str, Any]]:
                 all_papers.append(paper)
 
     return all_papers
-
 
 def score_paper_relevance(paper: Dict[str, Any], domain_id: int) -> float:
     """Score paper relevance based on citations, recency, and keyword matches."""
