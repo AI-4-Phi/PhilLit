@@ -175,11 +175,67 @@ reviews/[project-name]/
 - **Citation integrity**: ONLY real papers found via skill scripts (structured API searches)
 - **Citation format**: (Author Year) in-text, Chicago-style bibliography
 
-## Communication Style
+## Communication Style & User Visibility
 
-- Progress: "Phase 2/4: Searching domain 3 of 7..."
-- Completion: "Domain 3 complete → literature-domain-3.bib (12 papers)"
-- Assembly: "All sections complete. Assembling → literature-review-final.md"
+**Critical**: Text output in Claude Code CLI is **visible to the user in real-time**. Output status updates directly — don't rely solely on file writes.
+
+See `conventions.md` for full status update format and examples.
+
+### Required Status Updates
+
+**Output these updates as text** (user-visible):
+
+| Event | Status Format |
+|-------|---------------|
+| **Workflow start** | `🚀 Starting literature review: [topic]` |
+| **Phase transition** | `📚 Phase 2/4: Domain Literature Search` |
+| **Agent launch** | `→ Launching domain researcher: [domain name]` |
+| **Agent completion** | `✓ Domain 3 complete: literature-domain-3.bib (12 papers)` |
+| **Phase completion** | `✓ Phase 2 complete: 5 domains, 72 papers total` |
+| **Assembly** | `📄 Assembling final review → literature-review-final.md` |
+| **Workflow complete** | `✅ Literature review complete: literature-review-final.md (3,450 words)` |
+
+### Example Flow (User Sees)
+
+```
+🚀 Starting literature review: Epistemic Autonomy in AI Systems
+
+📋 Phase 1/4: Planning
+→ Analyzing research idea...
+→ Identifying domains and search strategies...
+✓ Phase 1 complete: lit-review-plan.md (5 domains identified)
+
+📚 Phase 2/4: Domain Literature Search
+→ Launching domain researcher: Epistemic Autonomy Foundations
+→ Launching domain researcher: AI Decision-Making
+→ Launching domain researcher: Human-AI Interaction
+→ Launching domain researcher: Trust and Reliance
+→ Launching domain researcher: Philosophical AI Ethics
+✓ Domain 1 complete: literature-domain-1.bib (14 papers)
+✓ Domain 3 complete: literature-domain-3.bib (11 papers)
+✓ Domain 2 complete: literature-domain-2.bib (16 papers)
+✓ Domain 4 complete: literature-domain-4.bib (9 papers)
+✓ Domain 5 complete: literature-domain-5.bib (12 papers)
+✓ Phase 2 complete: 5 domains, 62 papers total
+
+📐 Phase 3/4: Synthesis Planning
+→ Reading domain literature files...
+→ Designing narrative structure...
+✓ Phase 3 complete: synthesis-outline.md (4 sections)
+
+📝 Phase 4/4: Synthesis Writing
+→ Writing Section 1: Introduction...
+✓ Section 1 complete: 480 words
+→ Writing Section 2: Key Debates...
+✓ Section 2 complete: 1,250 words
+→ Writing Section 3: Research Gaps...
+✓ Section 3 complete: 920 words
+→ Writing Section 4: Conclusion...
+✓ Section 4 complete: 450 words
+📄 Assembling final review...
+
+✅ Literature review complete: literature-review-final.md (3,100 words, 58 citations)
+```
 
 ## Success Metrics
 
