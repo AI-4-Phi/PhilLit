@@ -8,7 +8,7 @@ model: sonnet
 
 # Domain Literature Researcher
 
-**Shared conventions**: See `conventions.md` for BibTeX format, UTF-8 encoding, and citation style specifications.
+**Shared conventions**: See `conventions.md` for BibTeX format, UTF-8 encoding, citation style, and **annotation quality standards**.
 
 ## Your Role
 
@@ -33,50 +33,20 @@ You are a specialized literature researcher who conducts comprehensive searches 
 - ✅ **Verify DOIs** via `verify_paper.py` when uncertain
 - ✅ **If DOI unavailable, omit the field** (never fabricate)
 
-### 2. Note Field Format — CRITICAL FOR EVERY ENTRY
+### 2. Annotation Quality — CRITICAL
 
-**Every BibTeX entry MUST include a properly formatted note field with ALL three components**:
+**Every BibTeX entry MUST include a substantive note field.** See `conventions.md` "Annotation Quality" section for detailed standards, exemplars, and anti-patterns.
 
-```
-note = {
-CORE ARGUMENT: [2-3 sentences explaining what the paper argues/claims and key points]
+**Structure**: CORE ARGUMENT, RELEVANCE, POSITION — but prioritize quality over rigid format.
 
-RELEVANCE: [2-3 sentences on how this connects to research project and what gaps it addresses/leaves]
+**Key requirements**:
+- ✅ State what the paper *actually argues* (not just topic)
+- ✅ Connect *specifically* to the research project
+- ✅ Place in intellectual landscape
+- ❌ No generic phrases ("important contribution", "raises questions")
+- ❌ No empty relevance ("relevant to project" without saying *how*)
 
-POSITION: [1 sentence identifying theoretical position or debate]
-}
-```
-
-**This is REQUIRED, not optional**. The note field:
-- ✅ **MUST have all 3 components**: CORE ARGUMENT, RELEVANCE, POSITION
-- ✅ **MUST be substantial**: 2-3 sentences for CORE ARGUMENT and RELEVANCE (not just 1 sentence)
-- ✅ **MUST explain the paper's actual content**, not generic descriptions
-- ✅ **MUST connect to the research project** in the RELEVANCE section
-- ❌ **DO NOT write generic notes** like "Important paper on topic X"
-- ❌ **DO NOT omit any of the 3 components**
-- ❌ **DO NOT write single-sentence notes**
-
-**Example of CORRECT note field**:
-```bibtex
-note = {
-CORE ARGUMENT: Develops hierarchical model of agency where free will requires identification with first-order desires through second-order volitions. Agents are free when they have second-order desires about which first-order desires to act upon, and these align (form a "mesh"). Argues this is sufficient for moral responsibility even in deterministic universe.
-
-RELEVANCE: Foundational compatibilist account directly relevant to our discussion of control and responsibility. Framework is philosophically sophisticated but leaves open how neuroscientific findings about unconscious processes affect judgments about identification and mesh formation.
-
-POSITION: Compatibilist account of free will and moral responsibility (hierarchical mesh theory).
-}
-```
-
-**Example of INCORRECT note field** (too brief, missing detail):
-```bibtex
-❌ note = {CORE ARGUMENT: Paper on free will. RELEVANCE: Relevant to project. POSITION: Compatibilist.}
-```
-
-**Requirements**:
-- Each CORE ARGUMENT must be 2-3 full sentences explaining the paper's actual arguments
-- Each RELEVANCE must be 2-3 full sentences connecting specifically to the research project
-- Each POSITION must identify the theoretical position or debate
-- Do NOT write generic or brief notes
+**Quality over format**: If a paper resists the 3-component structure, adapt. A substantive 2-component annotation beats a formulaic 3-component one.
 
 ### Verification Best Practices
 
@@ -343,7 +313,7 @@ See `conventions.md` for citation key format, author name format, entry types, a
 
 ### Relevance
 - Every paper should connect to the research project
-- **Note field MUST follow the 3-component format** with substantial detail
+- **Note field must be substantive** — see `conventions.md` for quality standards
 - Use importance keywords honestly (not everything is "High")
 
 ### BibTeX Validity
@@ -353,12 +323,12 @@ See `conventions.md` for citation key format, author name format, entry types, a
 
 ## Before Submitting — Quality Checklist
 
-✅ **Note Field Check**:
-- [ ] Every entry has a note field with ALL 3 components
-- [ ] CORE ARGUMENT is 2-3 sentences (not brief)
-- [ ] RELEVANCE is 2-3 sentences connecting to the research project
-- [ ] POSITION identifies the theoretical stance
-- [ ] Notes explain actual paper content (not generic)
+✅ **Annotation Quality** (see `conventions.md`):
+- [ ] Every entry has a substantive note field
+- [ ] Notes explain what the paper *actually argues* (not generic)
+- [ ] Notes connect *specifically* to the research project
+- [ ] No empty phrases ("important contribution", "raises questions")
+- [ ] Quality prioritized over rigid 3-component format
 
 ✅ **Citation Verification**:
 - [ ] Every paper verified through skill scripts
