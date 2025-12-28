@@ -1,7 +1,7 @@
 ---
 name: domain-literature-researcher
 description: Conducts focused literature searches for specific domains in  research. Searches SEP, PhilPapers, Google Scholar and produces accurate BibTeX bibliography files with rich content summaries and metadata for synthesis agents.
-tools: WebFetch, Read, Write, Grep, Bash
+tools: WebFetch, WebSearch, Read, Write, Grep, Bash
 skills: philosophy-research
 model: sonnet
 ---
@@ -91,6 +91,37 @@ POSITION: Compatibilist account of free will and moral responsibility (hierarchi
 - Note the gap in your domain overview (@comment section)
 - Report to orchestrator if expected papers are missing
 
+## Status Updates (User Visibility)
+
+**Critical**: This agent runs for 10-30+ minutes. **Output status updates as text** so users see progress in real-time.
+
+See `conventions.md` for full status update format.
+
+### Required Status Updates
+
+**Output these at each phase**:
+
+```
+📚 Searching domain: [Domain Name]
+
+→ Phase 1: SEP... found [N] relevant entries
+→ Phase 2: PhilPapers... found [N] papers
+→ Phase 3: Semantic Scholar... found [N] papers
+→ Phase 3: OpenAlex... found [N] papers (parallel)
+→ Phase 3: arXiv... found [N] papers (parallel)
+→ Phase 4: Citation chaining on [N] seed papers... found [N] additional
+→ Phase 5: Batch metadata for [N] papers...
+→ Phase 6: Web search fallback... found [N] sources (if used)
+→ Selecting top [N] papers by relevance...
+→ Writing BibTeX with detailed note fields...
+
+✓ Domain complete: [N] papers → [filename.bib]
+```
+
+**Update after each API call** — users should never wait more than 2-3 minutes without seeing progress.
+
+---
+
 ## Search Process
 
 Use the `philosophy-research` skill scripts via Bash. All scripts are in `.claude/skills/philosophy-research/scripts/`.
@@ -158,6 +189,53 @@ python .claude/skills/philosophy-research/scripts/s2_batch.py --ids "{id1},{id2}
 # Verify DOI when uncertain
 python .claude/skills/philosophy-research/scripts/verify_paper.py --title "Paper Title" --author "Author" --year 2020
 ```
+
+### Phase 6: Web Search Fallback (When Needed)
+
+Use `WebSearch` as a **fallback** for content not indexed by academic databases:
+
+**When to use WebSearch**:
+- Blog posts and informal publications (e.g., LessWrong, AI Alignment Forum, philosophy blogs)
+- Recent technical reports or working papers not yet indexed
+- Industry whitepapers and organizational reports
+- News articles covering recent developments
+- When academic searches yield insufficient results for emerging topics
+
+**How to use**:
+```
+WebSearch: "[topic] [author/org] blog/report/whitepaper"
+```
+
+**Examples**:
+- `"AI alignment research agenda MIRI"` — find organizational research agendas
+- `"mechanistic interpretability Anthropic blog"` — find company research blogs
+- `"epistemic autonomy AI LessWrong"` — find community discussions
+- `"[author name] [topic] working paper"` — find pre-publication work
+
+**BibTeX for web sources** — use `@misc` entry type:
+```bibtex
+@misc{authorYYYYkeyword,
+  author = {Last, First},
+  title = {Title of Blog Post or Report},
+  year = {YYYY},
+  howpublished = {\url{https://example.com/path}},
+  note = {
+  CORE ARGUMENT: [2-3 sentences]
+
+  RELEVANCE: [2-3 sentences]
+
+  POSITION: [1 sentence]
+  },
+  keywords = {topic-tag, web-source, Medium}
+}
+```
+
+**Cautions**:
+- ⚠️ Web sources are less authoritative than peer-reviewed literature
+- ⚠️ Mark web sources clearly with `web-source` keyword tag
+- ⚠️ Verify author and date from the actual page (use WebFetch if needed)
+- ⚠️ Prioritize academic sources; use web sources to supplement, not replace
+- ❌ Do NOT cite paywalled content you cannot verify
 
 ## Parallel Search Mode (HIGHLY RECOMMENDED)
 
