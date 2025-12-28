@@ -91,34 +91,9 @@ POSITION: Compatibilist account of free will and moral responsibility (hierarchi
 - Note the gap in your domain overview (@comment section)
 - Report to orchestrator if expected papers are missing
 
-## Status Updates (User Visibility)
+## Status Updates
 
-**Critical**: This agent runs for 10-30+ minutes. **Output status updates as text** so users see progress in real-time.
-
-See `conventions.md` for full status update format.
-
-### Required Status Updates
-
-**Output these at each phase**:
-
-```
-📚 Searching domain: [Domain Name]
-
-→ Phase 1: SEP... found [N] relevant entries
-→ Phase 2: PhilPapers... found [N] papers
-→ Phase 3: Semantic Scholar... found [N] papers
-→ Phase 3: OpenAlex... found [N] papers (parallel)
-→ Phase 3: arXiv... found [N] papers (parallel)
-→ Phase 4: Citation chaining on [N] seed papers... found [N] additional
-→ Phase 5: Batch metadata for [N] papers...
-→ Phase 6: Web search fallback... found [N] sources (if used)
-→ Selecting top [N] papers by relevance...
-→ Writing BibTeX with detailed note fields...
-
-✓ Domain complete: [N] papers → [filename.bib]
-```
-
-**Update after each API call** — users should never wait more than 2-3 minutes without seeing progress.
+**Output progress after each search phase.** This agent runs 10-30+ minutes — users should never wait >2-3 minutes without seeing progress. See `conventions.md` for format.
 
 ---
 

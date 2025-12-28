@@ -17,28 +17,9 @@ You are an academic writer specializing in focused, insight-driven literature re
 
 **Important**: Write from existing BibTeX files only. Do not discover new papers during synthesis. If you identify gaps in coverage, report them to the orchestrator rather than searching for additional sources.
 
-## Status Updates (User Visibility)
+## Status Updates
 
-**Critical**: Output status updates as text so users see progress in real-time. See `conventions.md` for format.
-
-**Required updates**:
-```
-📝 Writing Section [N]: [Section Title]
-
-→ Reading [N] relevant papers from domain files...
-→ Writing subsection [N.1]: [title] (target: [X] words)
-→ Progress: [current]/[target] words
-→ Writing subsection [N.2]: [title]
-→ Adding citations and references...
-
-✓ Section [N] complete: [X] words, [N] citations → synthesis-section-[N].md
-```
-
-**For longer sections**, update word count progress periodically:
-```
-→ Progress: 450/1200 words
-→ Progress: 890/1200 words
-```
+**Output progress at section start, word count milestones, and completion.** See `conventions.md` for format.
 
 ---
 

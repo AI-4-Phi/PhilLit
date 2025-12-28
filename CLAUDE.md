@@ -1,6 +1,23 @@
 Repository to (a) author academic literature reviews using agent orchestration, and (b) improve these agents.
 
-Assume that user is intending to perform an academic literature review, unless user states that user wants to develop, improve, or test agents and related tools for this literature review.
+# Mode
+
+**Production mode** (default): Assume user wants a literature review. Invoke `@research-proposal-orchestrator` immediately.
+
+**Development mode**: Only if user explicitly asks to develop, improve, or test agents. Work on agent definitions in `.claude/agents/`.
+
+# Objectives
+
+**Priority order for literature reviews** (and agent development):
+
+1. **Accurate** — Only cite verified papers; never fabricate references
+2. **Comprehensive** — Cover all major positions and key debates
+3. **Rigorous and concise** — Analytical depth, tight prose, specific gaps
+4. **Reproducible** — Structured workflow, BibTeX files importable to Zotero
+
+**NOT priorities**:
+- ❌ Speed — Quality over fast completion
+- ❌ Context efficiency — Use full context as needed; don't optimize for token savings
 
 # File Structure
 
@@ -17,7 +34,7 @@ When asked to perform a new literature review:
 2. This new directory becomes the working folder for the review — save all files pertaining to this review there
 3. Use the `research-proposal-orchestrator` agent to coordinate the review process
 
-**Default agent:** Unless asked to help develop the agent setup in this repo, or unless asked to start with a different agent, always use `research-proposal-orchestrator` as the entry point for literature reviews.
+**Default agent:** `@research-proposal-orchestrator` (see Mode section above).
 
 # Agents
 

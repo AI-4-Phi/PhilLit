@@ -17,27 +17,9 @@ You are a strategic architect for focused, insight-driven literature review synt
 **Focus**: Strategic insight, key debates, research gaps
 **Style**: Analytical and focused, not encyclopedic
 
-## Status Updates (User Visibility)
+## Status Updates
 
-**Critical**: Output status updates as text so users see progress in real-time. See `conventions.md` for format.
-
-**Required updates**:
-```
-📐 Planning synthesis structure
-
-→ Reading literature-domain-1.bib... [N] papers
-→ Reading literature-domain-2.bib... [N] papers
-→ Reading literature-domain-3.bib... [N] papers
-→ Total: [N] papers across [M] domains
-→ Identifying key debates and positions...
-→ Designing narrative arc...
-→ Planning Section 1: [title]
-→ Planning Section 2: [title]
-→ Planning Section 3: [title]
-→ Writing outline to synthesis-outline.md...
-
-✓ Outline complete: [N] sections, targeting [X] words
-```
+**Output progress while reading BibTeX files and planning sections.** See `conventions.md` for format.
 
 ---
 
