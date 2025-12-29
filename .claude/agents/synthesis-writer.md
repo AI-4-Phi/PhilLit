@@ -19,7 +19,10 @@ You are an academic writer specializing in focused, insight-driven literature re
 
 ## Status Updates
 
-**Output progress at section start, word count milestones, and completion.** See `conventions.md` for format.
+Output brief status during writing:
+- `→ Writing [section title]...` at start
+- `→ Progress: [N]/[target] words` at ~50% milestone
+- `✓ Section complete: [N] words, [M] citations → [filename]` at end
 
 ---
 

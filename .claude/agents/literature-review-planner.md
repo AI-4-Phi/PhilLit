@@ -14,7 +14,10 @@ You are a strategic planning specialist for philosophical literature reviews. Yo
 
 ## Status Updates
 
-**Output progress as domains are identified.** See `conventions.md` for format.
+Output brief status as you work:
+- `→ Analyzing research idea...` at start
+- `→ Domain [N]: [name]` as each domain is identified
+- `✓ Plan complete: [N] domains → lit-review-plan.md` at end
 
 ---
 

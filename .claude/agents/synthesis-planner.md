@@ -19,7 +19,10 @@ You are a strategic architect for focused, insight-driven literature review synt
 
 ## Status Updates
 
-**Output progress while reading BibTeX files and planning sections.** See `conventions.md` for format.
+Output brief status during planning:
+- `→ Reading [N] domain files...` at start
+- `→ Designing section [N]: [title]...` as sections take shape
+- `✓ Outline complete: [N] sections → synthesis-outline.md` at end
 
 ---
 

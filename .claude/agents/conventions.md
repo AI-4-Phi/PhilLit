@@ -349,67 +349,15 @@ KEY_POSITIONS:
 4. **Show progress** — Include counts, percentages, or "X of Y" indicators
 5. **Name what's happening** — Users should know which phase/step is active
 
-### Status Update Format
+### Status Icons
 
-**Phase start**:
-```
-📚 Phase 2: Domain Literature Search (3 of 5 domains)
-```
+| Icon | Meaning | Example |
+|------|---------|---------|
+| `→` | In progress | `→ Searching Semantic Scholar...` |
+| `✓` | Completed | `✓ Domain complete: literature-domain-1.bib (18 papers)` |
+| `⚠` | Warning/retry | `⚠ API timeout, retrying (attempt 2/3)...` |
 
-**Step progress**:
-```
-→ Searching Semantic Scholar... found 24 papers
-→ Searching OpenAlex... found 18 papers
-→ Running citation chain on 3 seed papers...
-```
-
-**Phase completion**:
-```
-✓ Domain 3 complete: literature-domain-3.bib (15 papers)
-```
-
-**Error/retry**:
-```
-⚠ API timeout, retrying (attempt 2/3)...
-```
-
-### When to Update
-
-| Agent | Update Points |
-|-------|---------------|
-| **orchestrator** | Phase transitions, domain completions, assembly steps |
-| **domain-researcher** | Each search phase (SEP, PhilPapers, S2, OpenAlex, arXiv), citation chaining, file write |
-| **lit-review-planner** | Domain identification progress, plan completion |
-| **synthesis-planner** | Reading BibTeX files, outline section progress |
-| **synthesis-writer** | Section start, word count milestones, section completion |
-
-### Examples
-
-**Domain researcher during search**:
-```
-📚 Searching domain: Compatibilist Free Will
-
-→ Phase 1: SEP... found 2 relevant entries
-→ Phase 2: PhilPapers... found 12 papers
-→ Phase 3: Semantic Scholar... found 28 papers
-→ Phase 3: OpenAlex... found 15 papers (running parallel)
-→ Phase 4: Citation chaining on 5 seed papers... found 8 additional
-→ Phase 5: Verifying 3 uncertain DOIs...
-
-✓ Domain complete: 18 papers selected → literature-domain-1.bib
-```
-
-**Synthesis writer during section**:
-```
-📝 Writing Section 2: Key Theoretical Debates
-
-→ Reading 12 relevant papers from 3 domain files...
-→ Writing subsection 2.1: Compatibilist Accounts (target: 400 words)
-→ Progress: 850/1200 words
-→ Writing subsection 2.2: Libertarian Responses
-
-✓ Section 2 complete: 1,180 words, 14 citations → synthesis-section-2.md
-```
+**Agent-specific formats**: Each agent's definition file contains a "Status Updates" section with tailored milestones and examples for that agent's workflow.
 
 ---
 
