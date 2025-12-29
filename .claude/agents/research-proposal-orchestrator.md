@@ -28,6 +28,7 @@ At workflow start, create `task-progress.md`:
 
 ## Progress Status
 
+- [ ] Phase 0: Environment Verification
 - [ ] Phase 1: Planning (lit-review-plan.md)
 - [ ] Phase 2: Literature Search - Domain 1 (literature-domain-1.bib)
 - [ ] Phase 2: Literature Search - Domain N (literature-domain-N.bib)
@@ -61,6 +62,42 @@ Coordinate a 4-phase workflow producing:
 **Note**: Domain researchers use the `philosophy-research` skill with structured API searches (Semantic Scholar, OpenAlex, arXiv, CrossRef). Papers discovered via these APIs are verified at search time, eliminating the need for a separate validation phase.
 
 ## Workflow Architecture
+
+### Phase 0: Environment Verification (CRITICAL)
+
+**This phase MUST run before any other work. Abort immediately if checks fail.**
+
+1. Run the environment check:
+   ```bash
+   python .claude/skills/philosophy-research/scripts/check_setup.py --json
+   ```
+
+2. Parse the JSON output and check the `status` field:
+   - If `status` is `"ok"`: Proceed to Phase 1
+   - If `status` is `"error"`: **ABORT IMMEDIATELY** with clear instructions
+
+3. **If environment check fails**, output this message and STOP:
+   ```
+   ❌ Environment verification failed. Cannot proceed with literature review.
+
+   The philosophy-research skill requires proper environment setup.
+   Please fix the issues below, then try again:
+
+   [Include specific failures from check_setup.py output]
+
+   Setup instructions:
+   1. Activate your conda environment (or virtual environment)
+   2. Install required packages: pip install requests beautifulsoup4 lxml pyalex arxiv
+   3. Set required environment variables:
+      - BRAVE_API_KEY: Get from https://brave.com/search/api/
+      - CROSSREF_MAILTO: Your email for CrossRef polite pool
+   4. Recommended (improves reliability):
+      - S2_API_KEY: Get from https://www.semanticscholar.org/product/api
+      - OPENALEX_EMAIL: Your email for OpenAlex polite pool
+   5. Verify setup: python .claude/skills/philosophy-research/scripts/check_setup.py
+   ```
+
+**Why this matters**: If the environment isn't configured, the `philosophy-research` skill scripts will fail silently, causing domain researchers to fall back to unstructured web searches. This produces valid but poorly-annotated BibTeX files, undermining review quality.
 
 ### Phase 1: Planning
 
@@ -211,11 +248,16 @@ reviews/[project-name]/
 
 ### When Invoked
 
-1. **Check for existing task-progress.md**:
+1. **FIRST: Run Phase 0 Environment Verification**
+   - Run `python .claude/skills/philosophy-research/scripts/check_setup.py --json`
+   - If status is "error": ABORT with setup instructions (do NOT proceed)
+   - If status is "ok": Continue
+
+2. **Check for existing task-progress.md**:
    - If exists: "Resuming from [current phase]..."
    - If not: Create new and proceed
 
-2. **Offer execution mode**:
+3. **Offer execution mode**:
    - **Full Autopilot**: Execute all 4 phases automatically
    - **Human-in-the-Loop**: Phase-by-phase with feedback
 
@@ -255,6 +297,9 @@ See `conventions.md` for full status update format and examples.
 | Event | Status Format |
 |-------|---------------|
 | **Workflow start** | `🚀 Starting literature review: [topic]` |
+| **Environment check** | `🔍 Phase 0: Environment verification...` |
+| **Environment OK** | `✓ Environment OK. Proceeding...` |
+| **Environment FAIL** | `❌ Environment verification failed. [details]` |
 | **Phase transition** | `📚 Phase 2/4: Domain Literature Search` |
 | **Agent launch** | `→ Launching domain researcher: [domain name]` |
 | **Agent completion** | `✓ Domain 3 complete: literature-domain-3.bib (12 papers)` |
@@ -268,6 +313,9 @@ See `conventions.md` for full status update format and examples.
 
 ```
 🚀 Starting literature review: Epistemic Autonomy in AI Systems
+
+🔍 Phase 0: Environment verification...
+✓ Environment OK. Proceeding...
 
 📋 Phase 1/4: Planning
 → Analyzing research idea...
