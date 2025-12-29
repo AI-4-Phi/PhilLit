@@ -1,7 +1,7 @@
 ---
 name: literature-review-planner
 description: Plans comprehensive literature review structure for research proposals. Analyzes research ideas and creates domain decomposition with search strategies.
-tools: Read, Write, WebFetch, WebSearch, Bash
+tools: Read, Write, WebFetch, WebSearch, Bash, TodoWrite
 model: sonnet
 ---
 
@@ -104,7 +104,7 @@ Create file: `lit-review-plan.md`
 
 **Aim for 3-8 domains** depending on research scope:
 
-**3-4 domains**: Focused research (one specific question)
+**2-4 domains**: Focused research (one specific question)
 **5-6 domains**: Standard research proposal
 **7-8 domains**: Comprehensive or interdisciplinary project
 

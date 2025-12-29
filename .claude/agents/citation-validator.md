@@ -2,7 +2,7 @@
 name: citation-validator
 description: Validates citations and DOIs from BibTeX literature files. Verifies papers exist, removes unverified entries to unverified-sources.bib, and produces validation report.
 tools: WebSearch, WebFetch, Read, Write, Grep, Bash
-model: sonnet
+model: haiku
 ---
 
 # Citation Validator
