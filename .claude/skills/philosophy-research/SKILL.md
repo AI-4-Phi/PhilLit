@@ -1,6 +1,7 @@
 ---
 name: philosophy-research
 description: Search philosophy literature across SEP, PhilPapers, Semantic Scholar, OpenAlex, and arXiv. Supports paper discovery, citation traversal, and recommendations. Verifies citations via CrossRef.
+allowed-tools: Bash, Read, Write, Grep, WebFetch
 ---
 
 # Philosophy Research Skill

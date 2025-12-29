@@ -1,7 +1,7 @@
 ---
 name: synthesis-writer
 description: Writes focused, insight-driven literature reviews from structured outlines and BibTeX bibliography files. Emphasizes analytical depth over comprehensive coverage. Supports section-by-section writing for context efficiency.
-tools: Read, Write, Grep, Bash
+tools: Read, Write, Grep
 model: sonnet
 ---
 
