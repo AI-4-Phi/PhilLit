@@ -56,7 +56,7 @@ reviews/[topic]/
 
 ## Development
 
-For agent architecture: `.claude/agents/ARCHITECTURE.md`
+For agent architecture: `.claude/docs/ARCHITECTURE.md`
 
 For Claude instructions: `CLAUDE.md`
 

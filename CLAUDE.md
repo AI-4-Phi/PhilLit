@@ -54,7 +54,7 @@ When asked to perform a new literature review:
 
 # Development
 
-For agent architecture and design patterns, see `.claude/agents/ARCHITECTURE.md`.
+For agent architecture and design patterns, see `.claude/docs/ARCHITECTURE.md`.
 
 Reference documentation:
 - **Claude Agent Development Documentation** `https://code.claude.com/docs/en/sub-agents`
