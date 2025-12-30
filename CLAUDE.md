@@ -38,12 +38,14 @@ When asked to perform a new literature review:
 
 # Agents
 
-**Core workflow (4 phases):**
-- `@research-proposal-orchestrator` — Coordinates all phases, tracks progress, assembles outputs. **Default entry point.**
-- `@literature-review-planner` — Decomposes research idea into domains and search strategies.
-- `@domain-literature-researcher` — Uses `philosophy-research` skill for structured API searches; outputs valid BibTeX files.
-- `@synthesis-planner` — Reads BibTeX files; designs tight outline emphasizing debates and gaps.
-- `@synthesis-writer` — Writes sections one-by-one using relevant BibTeX subsets.
+**Core workflow (6 phases):**
+- `@research-proposal-orchestrator` — Coordinates all 6 phases, tracks progress, assembles outputs. **Default entry point.**
+  - Phase 1: Verify environment and determine execution mode
+  - Phase 2: `@literature-review-planner` — Decomposes research idea into domains and search strategies.
+  - Phase 3: `@domain-literature-researcher` — Uses `philosophy-research` skill for structured API searches; outputs valid BibTeX files.
+  - Phase 4: `@synthesis-planner` — Reads BibTeX files; designs tight outline emphasizing debates and gaps.
+  - Phase 5: `@synthesis-writer` — Writes sections one-by-one using relevant BibTeX subsets.
+  - Phase 6: Assemble final review files and move intermediate files.
 
 **Optional:**
 - `@citation-validator` — Validates external BibTeX files (not needed for in-workflow use; APIs verify at search time).

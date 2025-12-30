@@ -23,7 +23,7 @@ Domain researchers and citation validators use the `philosophy-research` skill (
 
 ## Pattern Implementation
 
-### Phase 2: Parallel Domain Literature Search
+### Phase 3: Parallel Domain Literature Search
 
 **Pattern**: Multiple researchers → Individual BibTeX files → Used by synthesis-planner
 
@@ -53,7 +53,7 @@ Orchestrator:
 - No separate validation phase needed
 ```
 
-### Phase 3 & 4: Synthesis Planning and Section-by-Section Writing
+### Phase 4 & 5: Synthesis Planning and Section-by-Section Writing
 
 **Pattern**: Planner creates outline → Multiple writers → Individual section files → Assembled into draft
 
@@ -82,14 +82,14 @@ Orchestrator:
 ## Benefits of This Pattern
 
 ### 1. Context Efficiency
-- **Phase 2**: Each researcher reads only what it searches (~10k tokens)
-- **Phase 4**: Each writer reads only relevant papers (~5k words vs 24k)
-- **Reduction**: 80% per invocation in Phase 4
+- **Phase 3**: Each researcher reads only what it searches (~10k tokens)
+- **Phase 5**: Each writer reads only relevant papers (~5k words vs 24k)
+- **Reduction**: 80% per invocation in Phase 5
 
 ### 2. Parallelization
-- **Phase 2**: Can run all 7 researchers simultaneously
-- **Phase 4**: Can run sections in parallel (though sequential usually fine)
-- **Speed**: 5-7x faster for Phase 2
+- **Phase 3**: Can run all 7 researchers simultaneously
+- **Phase 5**: Can run sections in parallel (though sequential usually fine)
+- **Speed**: 5-7x faster for Phase 3
 
 ### 3. Modularity
 - Each file is independent
@@ -113,13 +113,13 @@ Orchestrator:
 
 ### What We Could Have Done (But Didn't)
 
-**Phase 2**: Single researcher agent reads all domains, writes one massive file
+**Phase 3**: Single researcher agent reads all domains, writes one massive file
 - ❌ Context: ~70k words input + output
 - ❌ Time: 60-90 minutes sequential
 - ❌ Fragile: One failure loses everything
 - ❌ Not resumable
 
-**Phase 4**: Single writer reads all domains, writes entire review in one pass
+**Phase 5**: Single writer reads all domains, writes entire review in one pass
 - ❌ Context: 24k input + 8k output = 33k words
 - ❌ Quality degradation in long sessions
 - ❌ No review points
@@ -130,7 +130,7 @@ Orchestrator:
 | Aspect | Monolithic | Multi-File Pattern |
 |--------|-----------|-------------------|
 | **Context per task** | 70k words | 5-10k words |
-| **Parallelization** | None | Full (Phase 2), Partial (Phase 4) |
+| **Parallelization** | None | Full (Phase 3), Partial (Phase 5) |
 | **Resumability** | Lost on failure | Perfect |
 | **Modularity** | None | High |
 | **Review points** | None | After each file |
@@ -139,12 +139,12 @@ Orchestrator:
 ## Complete Workflow Context Analysis
 
 ```
-Phase 1: Planning
+Phase 2: Planning
 ├── Input: Research idea (~1k words)
 ├── Output: lit-review-plan.md (~2k words)
 └── Context: ~3k words ✓
 
-Phase 2: Domain Search (MULTI-FILE PATTERN)
+Phase 3: Domain Search (MULTI-FILE PATTERN)
 ├── Per researcher:
 │   ├── Input: Plan excerpt (~500 words)
 │   ├── Search: Skill scripts (structured APIs, isolated context)
@@ -152,12 +152,12 @@ Phase 2: Domain Search (MULTI-FILE PATTERN)
 ├── Context per researcher: ~10k words ✓
 └── Total output: 7 files × 2.5k = 17.5k words
 
-Phase 3: Synthesis Planning
+Phase 4: Synthesis Planning
 ├── Input: All domain BibTeX files (~17.5k words) + plan (~2k)
 ├── Output: synthesis-outline.md (~2.5k words)
 └── Context: ~20k words ✓
 
-Phase 4: Synthesis Writing (MULTI-FILE PATTERN)
+Phase 5: Synthesis Writing (MULTI-FILE PATTERN)
 ├── Per section:
 │   ├── Input: Outline (~2.5k) + relevant BibTeX files (~5k)
 │   ├── Output: section file (~1.5k words)
@@ -176,7 +176,7 @@ Phase 4: Synthesis Writing (MULTI-FILE PATTERN)
 └── Context: ~11k words ✓
 ```
 
-**Maximum context in any phase: ~20k words (Phase 3)**
+**Maximum context in any phase: ~20k words (Phase 4)**
 **Far below 200k token limit throughout**
 
 **Note**: Citation validation phase removed. Domain researchers use structured API searches via the philosophy-research skill, which returns verified papers with accurate metadata.
@@ -207,9 +207,9 @@ reviews/[project-name]/
 reviews/[project-name]/
 ├── task-progress.md                      # State tracker (CRITICAL for resume)
 │
-├── lit-review-plan.md                    # Phase 1 output
+├── lit-review-plan.md                    # Phase 2 output
 │
-├── literature-domain-1.bib               # Phase 2 outputs (BibTeX, multi-file)
+├── literature-domain-1.bib               # Phase 3 outputs (BibTeX, multi-file)
 ├── literature-domain-2.bib
 ├── literature-domain-3.bib
 ├── literature-domain-4.bib
@@ -217,15 +217,15 @@ reviews/[project-name]/
 ├── literature-domain-6.bib
 ├── literature-domain-7.bib
 │
-├── synthesis-outline.md                  # Phase 3 output
+├── synthesis-outline.md                  # Phase 4 output
 │
-├── synthesis-section-1.md                # Phase 4 outputs (multi-file)
+├── synthesis-section-1.md                # Phase 5 outputs (multi-file)
 ├── synthesis-section-2.md
 ├── synthesis-section-3.md
 ├── synthesis-section-4.md
 ├── synthesis-section-5.md
-├── literature-all.bib                    # Phase 4: Aggregated BibTeX
-└── literature-review-final.md            # Phase 4: Assembled with YAML frontmatter
+├── literature-all.bib                    # Phase 6: Aggregated BibTeX
+└── literature-review-final.md            # Phase 6: Assembled with YAML frontmatter
 ```
 
 .claude/skills/philosophy-research/
@@ -242,7 +242,7 @@ reviews/[project-name]/
     └── rate_limiter.py                   # Shared rate limiting
 ```
 
-**Multi-file phases clearly visible**: Phase 2 (7 BibTeX files) and Phase 4 (5 section files)
+**Multi-file phases clearly visible**: Phase 3 (7 BibTeX files) and Phase 5 (5 section files)
 
 ## Key Design Decisions
 
@@ -254,7 +254,7 @@ reviews/[project-name]/
 - Requires reading entire draft so far (context grows)
 - Appending logic more complex
 - Harder to revise individual sections
-- Less consistent with Phase 2 pattern
+- Less consistent with Phase 3 pattern
 - Can't parallelize
 
 **Chosen**: Separate files, then assemble
@@ -263,7 +263,7 @@ reviews/[project-name]/
 - Each invocation is stateless (just write a complete section)
 - Context stays constant (~9k words per section)
 - Clean separation of concerns
-- Mirrors Phase 2 architecture
+- Mirrors Phase 3 architecture
 - Simple concatenation for assembly
 
 ### Why Sequential Assembly vs. Streaming?
@@ -325,12 +325,12 @@ Single Agent → reads everything → writes everything
 
 ### Time Complexity
 
-**Phase 2 (parallel)**:
+**Phase 3 (parallel)**:
 - Sequential: O(7n) where n = time per domain
 - Parallel: O(n) with 7 workers
 - **Speedup: 7x**
 
-**Phase 4 (sequential in practice)**:
+**Phase 5 (sequential in practice)**:
 - Monolithic: O(5n) where n = time per section
 - Multi-file: O(5n) but with much better context efficiency
 - **Speedup: ~2x due to faster individual sections**
@@ -338,8 +338,8 @@ Single Agent → reads everything → writes everything
 ### Space Complexity
 
 **Context usage**:
-- Monolithic Phase 4: O(D + S) where D = all domains, S = output size
-- Multi-file Phase 4: O(d + s) where d = relevant domains, s = section size
+- Monolithic Phase 5: O(D + S) where D = all domains, S = output size
+- Multi-file Phase 5: O(d + s) where d = relevant domains, s = section size
 - **Reduction: 80% (24k → 5k words input)**
 
 ## Lessons Learned
@@ -377,7 +377,7 @@ Single Agent → reads everything → writes everything
 
 ## Conclusion
 
-The **multi-file-then-assemble** pattern is the key architectural insight that makes this orchestrator scalable and context-efficient. By breaking computationally intensive phases (Phase 2 and Phase 4) into multiple independent file outputs, we achieve:
+The **multi-file-then-assemble** pattern is the key architectural insight that makes this orchestrator scalable and context-efficient. By breaking computationally intensive phases (Phase 3 and Phase 5) into multiple independent file outputs, we achieve:
 
 - **80% context reduction** per invocation
 - **Parallelization** where beneficial
