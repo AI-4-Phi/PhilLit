@@ -13,6 +13,7 @@ Requirements:
 - Use proper special characters: ä ö ü é è ñ ç etc.
 - Use typographic characters: em-dash (—), en-dash (–), curly quotes (" " ' ')
 - Never convert special characters to ASCII approximations
+- Never use LaTeX commands for speical characters
 
 **Verification**: Run `file [filename]` — should show "UTF-8 Unicode text"
 
@@ -132,7 +133,7 @@ Files:
 
 ### Progress Updates During Execution
 
-- Use clear phase indicators: "Phase 2/5: [description]..."
+- Use clear phase indicators: "Phase 2/6: [description]..."
 - Report completion with file references: "Section 1 complete → synthesis-section-1.md (450 words)"
 - Track running totals: "Running total: 1800/3500 words"
 
