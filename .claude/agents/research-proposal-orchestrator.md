@@ -30,9 +30,9 @@ At workflow start, create `task-progress.md`:
 
 - [ ] Phase 1: Verify environment determine execution mode
 - [ ] Phase 2: Structure literature review domains (invoking `literature-review-planner` agent)
-- [ ] Phase 3: Research [N] domains in parallel (invoking [N] parallel `domain-literature-researcher` agents)
+- [ ] Phase 3: Research [N] domains sequentially (invoking [N] `domain-literature-researcher` agents one after another)
 - [ ] Phase 4: Outline synthesis review across domains (`synthesis-planner` agent)
-- [ ] Phase 5: Write review for each section in parallel (`synthesis-writer` agent)
+- [ ] Phase 5: Write review for each section sequentially (`synthesis-writer` agent)
 - [ ] Phase 6: Assemble final review files and move intermediate files
 
 ## Completed Tasks
@@ -55,9 +55,9 @@ At workflow start, create `task-progress.md`:
 Coordinate a 6-phase workflow producing:
 1. Verify environment determine execution mode
 2. Structure literature review domains (invoking `literature-review-planner` agent)
-3. Research domains in parallel (invoking [N] parallel `domain-literature-researcher` agents)
+3. Research domains sequentially (invoking [N] `domain-literature-researcher` agents one after another)
 4. Outline synthesis review across domains (invoking `synthesis-planner` agent)
-5. Write review for each section in parallel (invoking `synthesis-writer` agent)
+5. Write review for each section sequentially (invoking `synthesis-writer` agent)
 6. Assemble final review files and move intermediate files
 
 Advance only to a subsequent phase after completing the current phase.
@@ -166,16 +166,16 @@ This phase validates conditions for subsequent phases to function.
 
 Never advance to a next step in this phase before completing the current step.
 
-### Phase 3: Research domains in parallel
+### Phase 3: Research literature in domains
 
 1. Identify and enumerate N domains (typically 3-8) listed in `reviews/[project-name]/lit-review-plan.md`
-2. Use Task tool to invoke N parallel `domain-literature-researcher` agents (one for each domain):
-   - Tool: Task (launch multiple in parallel by using multiple Task invocations in single message)
+2. Use Task tool to sequentially invoke N `domain-literature-researcher` agents (one for each domain):
+   - Tool: Task (launch sequentially using Task invocations)
    - subagent_type: "domain-literature-researcher"
    - prompt: Include domain focus, key questions, research idea, working directory, AND output filename
    - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to: reviews/[project-name]/literature-domain-1.bib"
    - description: "Domain [N]: [domain name]"
-3. Wait for all N parallel `domain-literature-researcher` agents to finish using TaskOutput (block until complete). Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md for each finished domain**
+3. Wait for all N `domain-literature-researcher` agents to finish using TaskOutput (block until complete). Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md for each finished domain**
 
 Never advance to a next step in this phase before completing the current step.
 
@@ -193,12 +193,12 @@ Never advance to a next step in this phase before completing the current step.
 
 Never advance to a next step in this phase before completing the current step.
 
-### Phase 5: Write review for each section in parallel
+### Phase 5: Write review for each section sequentially
 
 1. Read synthesis outline `reviews/[project-name]/synthesis-outline.md` to identify sections
-2. For each section (can be parallel): identify relevant BibTeX .bib files from the outline
-3. Use Task tool to invoke N parallel `synthesis-writer` agents (one for each section):
-   - Tool: Task (launch multiple in parallel by using multiple Task invocations in single message)
+2. For each section: identify relevant BibTeX .bib files from the outline
+3. Use Task tool to sequentially invoke N `synthesis-writer` agents (one for each section):
+   - Tool: Task
    - subagent_type: "synthesis-writer"
    - prompt: Include working directory, section number, section title, outline path, and relevant BibTeX files
    - Example prompt for section 1: "Working directory: reviews/[project-name]/. Section: 1. Title: [title]. Outline: synthesis-outline.md. Relevant BibTeX files: literature-domain-1.bib, literature-domain-3.bib. Write output to: reviews/[project-name]/synthesis-section-1.md"
@@ -293,9 +293,9 @@ See `../docs/conventions.md` for full status update format and examples.
 | **Environment OK** | `✓ Environment OK. Proceeding...` |
 | **Environment FAIL** | `❌ Environment verification failed. [details]` |
 | **Phase transition** | `📚 Phase 2/6: Structuring literature review into domains` |
-| **Phase transition** | `📚 Phase 3/6: Researching literature in each domain in parallel` |
+| **Phase transition** | `📚 Phase 3/6: Researching literature in each domain` |
 | **Phase transition** | `📚 Phase 4/6: Outlining synthesis review across domains` |
-| **Phase transition** | `📚 Phase 5/6: Writing review for each section in parallel` |
+| **Phase transition** | `📚 Phase 5/6: Writing review for each section` |
 | **Agent launch** | `→ Launching domain researcher: [domain name]` |
 | **Agent completion** | `✓ Domain [N] complete: literature-domain-[N].bib ([number of sources included] sources)` |
 | **Phase completion** | `✓ Phase [N] complete: [summary]` |

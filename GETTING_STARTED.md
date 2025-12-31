@@ -43,7 +43,7 @@ Audience: [e.g., grant reviewers, journal editors]
 
 3. The orchestrator runs 4 phases automatically:
    - **Plan**: Decomposes into searchable domains
-   - **Research**: Parallel searches produce BibTeX files
+   - **Research**: Produces annotated BibTeX files
    - **Synthesize**: Designs outline, then writes sections
    - **Assemble**: Combines sections into final review
 

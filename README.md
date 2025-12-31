@@ -4,19 +4,19 @@ Multi-agent system for generating focused, insight-driven state-of-the-art liter
 
 ## Highlights
 
-- **4-phase workflow**: Plan → Research (parallel) → Synthesize → Assemble
+- **4-phase workflow**: Plan → Research  → Synthesize → Assemble
 - **Structured API searches**: Semantic Scholar, OpenAlex, arXiv, SEP, PhilPapers, CrossRef
 - **BibTeX-first**: Valid `.bib` files ready for Zotero import
 - **Citation integrity**: Papers verified at search time via structured APIs
 - **Resumable**: Progress tracked in `task-progress.md`
-- **Context-efficient**: Parallel domain search, section-by-section writing
+- **Context-efficient**: Agent-individuated domain search, section-by-section writing
 
 ## How It Works
 
 | Phase | Agent | Output |
 |-------|-------|--------|
 | 1. Plan | `@literature-review-planner` | `lit-review-plan.md` |
-| 2. Research | `@domain-literature-researcher` (parallel) | `literature-domain-*.bib` |
+| 2. Research | `@domain-literature-researcher` | `literature-domain-*.bib` |
 | 3. Synthesize | `@synthesis-planner` → `@synthesis-writer` | `synthesis-outline.md`, section files |
 | 4. Assemble | `@research-proposal-orchestrator` | `literature-review-final.md` |
 

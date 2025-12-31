@@ -1,9 +1,11 @@
 ## Some ideas, big and small, of how to improve
 
 Date: Dec 19, 2025. By Johannes
-Updated: Dec 29, 2025.
+Updated: Dec 30, 2025.
 
 - The orchestator forgets the last steps: aggregating the bib files, moving intermediate files, adding YAML frontmatter. (Tried to address this with manual edits)
+- Update documentation to reflect intermediate_files/ move
+- At some point, try to parallelize agents again
 - Manually review all agents and files. Some of them are very verbose (e.g. ARCHITECTURE.md)
 - Integrate editor and novelty assessor again?
 - remove task-progress.md updating. The orchestrator now uses an improved Claude-internal tool to track its subagents and tends to forget to update task-progress.md. Ealier conversations in Claude Code can be resumed with /resume, so the task-progress.md seems unnecessary now.
