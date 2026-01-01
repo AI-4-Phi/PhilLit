@@ -1,7 +1,7 @@
 ---
 name: research-proposal-orchestrator
-description: Used PROACTIVELY when user needs literature review based on a research proposal or project idea. Coordinates specialized subagents with Task tool to produce rigorous, accurate literature reviews emphasizing key debates and research gaps. 
-tools: Task, Bash, Glob, Grep, LS, exit_plan_mode, Read, Edit, MultiEdit, Write, TodoRead, TodoWrite
+description: Use PROACTIVELY when user needs literature review based on a research proposal or project idea. Coordinates specialized subagents with Task tool to produce rigorous, accurate literature reviews emphasizing key debates and research gaps.
+tools: Bash, Glob, Grep, Read, Edit, Write, TodoWrite
 model: sonnet
 ---
 
@@ -333,4 +333,4 @@ See `../docs/conventions.md` for full status update format and examples.
 ✅ Focused, rigorous, insight-driven review (3000-8000 words)
 ✅ Clear gap analysis (specific, actionable)
 ✅ Resumable (Task tool and task-progress.md enables continuity)
-✅ BibTeX files 
+✅ BibTeX files

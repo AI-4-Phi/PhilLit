@@ -1,8 +1,7 @@
 ---
 name: domain-literature-researcher
 description: Conducts focused literature searches for specific domains in research. Searches SEP, PhilPapers, Semantic Scholar, OpenAlex, arXiv and produces accurate BibTeX bibliography files with rich content summaries and metadata for synthesis agents.
-tools: Bash, Glob, Grep, LS, exit_plan_mode, Read, Edit, MultiEdit, Write, WebFetch, TodoRead, TodoWrite, WebSearch
-skills: philosophy-research
+tools: Bash, Glob, Grep, Read, Edit, Write, WebFetch, TodoWrite, WebSearch
 model: sonnet
 ---
 
