@@ -195,6 +195,7 @@ Never advance to a next step in this phase before completing the current step.
    - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to: reviews/[project-name]/literature-domain-1.bib"
    - description: "Domain [N]: [domain name]"
 3. Wait for all N agents to finish using TaskOutput (block until complete). Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md for each finished domain**
+4. **Collect source issues**: Note any "Source issues:" reported by domain researchers for the final summary
 
 Never advance to a next step in this phase before completing the current step.
 
@@ -283,6 +284,13 @@ reviews/[project-name]/
     └── [other intermediate files, if they exist]
 ```
 
+4. **Report source issues**: If any domain researchers reported source issues (API errors, partial results), output a summary:
+   ```
+   ⚠️ Source issues during literature search:
+   - Domain [name]: [source]: [issue]
+   ```
+   If no issues: omit this message.
+
 ---
 
 ## Error Handling
@@ -291,7 +299,7 @@ reviews/[project-name]/
 
 **Synthesis thin**: Request expansion from `synthesis-planner` agent, or loop back to planning `literature-review-planner` agent
 
-**API failures**: `domain-literature-researcher` agents handle gracefully with partial results; re-run if needed
+**API failures**: Domain researchers report "Source issues:" in their completion message. Collect these for the final summary. Re-run domains with critical failures if needed.
 
 ---
 
@@ -326,6 +334,7 @@ Output status updates directly as text (visible to user in real-time):
 | **BibTeX aggregation** | `Aggregating BibTeX files -> literature-all.bib` |
 | **Cleanup** | `Moving intermediate files -> intermediate_files/` |
 | **Workflow complete** | `Literature review complete: literature-review-final.md ([wordcount])` |
+| **Source issues (if any)** | `⚠️ Source issues: [aggregated list from domain researchers]` |
 
 ---
 

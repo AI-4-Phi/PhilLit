@@ -367,6 +367,20 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 
 **If any check fails, fix before submitting.**
 
+## Error Checking
+
+**After each search stage**, check script output for failures:
+
+- Direct runs: Check `status` field in JSON output
+- Parallel runs: Use Read tool on each output file, check `status` field
+
+**Track source failures**:
+- `status: "error"` → Source completely failed (critical)
+- `status: "partial"` → Incomplete results (note in report)
+- `status: "success"` with `count: 0` → No results found
+
+Report any `"error"` or `"partial"` status in your completion message.
+
 ## Communication with Orchestrator
 
 ```
@@ -379,11 +393,9 @@ Found [N] papers:
 
 Key positions covered: [list 2-3 main positions]
 
-Notable finding: [Any surprising gap or rich area]
+Source issues: [NONE | list failed/partial sources, e.g., "S2: error, arXiv: partial (rate limited)"]
 
 Results written to: [filename.bib]
-
-BibTeX file ready for Zotero import ✓
 ```
 
 ## Notes
