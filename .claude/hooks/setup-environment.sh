@@ -11,6 +11,30 @@ elif [ -d "/usr/local/bin" ]; then
   export PATH="/usr/local/bin:$PATH"
 fi
 
+# Load environment variables from .env file (overrides existing environment)
+load_dotenv() {
+  local env_file="$1"
+  [ -f "$env_file" ] || return 0
+
+  while IFS= read -r line || [ -n "$line" ]; do
+    # Skip empty lines and comments
+    [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+
+    # Match KEY=VALUE pattern
+    if [[ "$line" =~ ^[[:space:]]*([A-Za-z_][A-Za-z0-9_]*)[[:space:]]*=[[:space:]]*(.*)[[:space:]]*$ ]]; then
+      local key="${BASH_REMATCH[1]}"
+      local value="${BASH_REMATCH[2]}"
+
+      # Strip surrounding quotes (single or double)
+      if [[ "$value" =~ ^\"(.*)\"$ ]] || [[ "$value" =~ ^\'(.*)\'$ ]]; then
+        value="${BASH_REMATCH[1]}"
+      fi
+
+      export "$key=$value"
+    fi
+  done < "$env_file"
+}
+
 # Verify CLAUDE_ENV_FILE is available (only present in SessionStart hooks)
 if [ -z "$CLAUDE_ENV_FILE" ]; then
   echo "Environment setup failed: CLAUDE_ENV_FILE not available. This hook should only run during SessionStart events." >&2
@@ -22,6 +46,9 @@ if ! command -v uv &> /dev/null; then
   echo "Environment setup failed: uv is not installed. Install with: curl -LsSf https://astral.sh/uv/install.sh | sh" >&2
   exit 2
 fi
+
+# Load project .env file (overrides existing environment)
+load_dotenv ".env"
 
 # Capture environment state before activation
 ENV_BEFORE=$(export -p | sort)

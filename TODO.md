@@ -13,7 +13,6 @@ Last updated: Jan 1, 2026
 - [ ] Consider reintegrating editor and novelty assessor agents
 - [ ] Remove task-progress.md updating - orchestrator now uses improved Claude-internal tool, tends to forget to update task-progress.md; earlier conversations can be resumed with /resume
 - [ ] Agent idea: based on .bib file, download PDFs of sources in final report, add path to PDFs in bib files (check first: does this allow for Zotero import?)
-- [ ] Explain how users store API keys? Should offer an .env file (and read from in StartSession hook script)?
 
 ## Done
 
@@ -35,6 +34,8 @@ Last updated: Jan 1, 2026
 - [x] Improve agent namespace
 - [x] adjust model: parameter to inherit
 - [x] Try to parallelize agents again
+- [X] Explain how users store API keys? Should offer an .env file (and read from in StartSession hook script)?
+
 
 ## Deferred
 
