@@ -1,0 +1,41 @@
+Please create a comprehensive literature review plan for the following research question:
+
+RESEARCH QUESTION: Is Mechanistic Interpretability necessary or sufficient for AI Safety?
+
+CONTEXT: This is an analytical philosophy paper addressing conceptual confusion in existing literature about:
+1. The meaning of "mechanistic interpretability" (MI)
+2. The role of MI for AI Safety
+
+KEY TENSION: Two recent papers appear to have opposing views on what MI means:
+
+1. Hendrycks, Dan, and Laura Hiscott (2025). "The Misguided Quest for Mechanistic AI Interpretability." AI Frontiers, May 15, 2025. https://ai-frontiers.org/articles/the-misguided-quest-for-mechanistic-ai-interpretability
+   - Understand MI as activations of individual nodes or clusters in neural networks
+
+2. Kästner, Lena, and Barnaby Crook (2024). "Explaining AI through Mechanistic Interpretability." European Journal for Philosophy of Science 14, no. 4 (2024): 52. https://doi.org/10.1007/s13194-024-00614-4
+   - Include functional and higher-level explanations as part of MI (contradicting Hendrycks & Hiscott)
+   - Claim MI is necessary for AI safety (abstract) AND sufficient ("MI enables us to meet desirable social desiderata including safety")
+
+OBJECTIVES:
+1. Clarify the definition of "mechanistic interpretability" - map out different definitions and conceptualizations
+2. Assess the relationship between MI and AI Safety - evaluate necessity and sufficiency claims
+
+SCOPE:
+- Topic: Explainable AI (XAI), AI Interpretability, and AI Safety
+- Target audience: Analytic philosophers and journal editors in philosophy of science
+- Interdisciplinary sources: Philosophy journals + arXiv
+- Time period: 2023-present (focus on recent literature)
+
+EXPECTED DOMAINS:
+- Mechanistic interpretability (definitions, methods, debates)
+- AI Safety and alignment
+- Explainable AI (XAI) in philosophy of science
+- Philosophy of neuroscience/cognitive science (mechanism literature)
+- AI ethics and responsible AI
+
+Please create a detailed plan with:
+- 5-7 research domains
+- Key questions for each domain
+- Search strategies (keywords, sources)
+- Expected contribution to answering the research question
+
+OUTPUT LOCATION: /Users/johannes/github_repos/philo-sota/reviews/mechanistic-interpretability-ai-safety/lit-review-plan.md

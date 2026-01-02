@@ -1,0 +1,516 @@
+@comment{
+====================================================================
+DOMAIN: AI Safety Theory and Requirements
+SEARCH_DATE: 2025-12-28
+PAPERS_FOUND: 15 total (High: 8, Medium: 5, Low: 2)
+SEARCH_SOURCES: arXiv, Semantic Scholar, OpenAlex
+====================================================================
+
+DOMAIN_OVERVIEW:
+AI safety encompasses the challenge of ensuring AI systems operate reliably,
+align with human values, and avoid causing harm. This domain addresses the
+theoretical foundations, practical requirements, and frameworks needed to
+develop safe AI systems. Core themes include: (1) the alignment problem --
+ensuring AI systems pursue goals aligned with human intentions; (2) robustness
+and reliability -- preventing failures, adversarial attacks, and unexpected
+behaviors; (3) transparency and interpretability -- understanding AI
+decision-making processes; (4) value alignment mechanisms -- particularly
+through reinforcement learning from human feedback (RLHF); and (5) comprehensive
+safety frameworks integrating multiple requirements (fairness, accountability,
+privacy, etc.). Recent work emphasizes both immediate practical safety concerns
+(adversarial robustness, reward hacking) and longer-term risks from advanced AI
+systems. A key debate centers on whether interpretability is necessary for
+safety, or merely one component among many requirements.
+
+RELEVANCE_TO_PROJECT:
+This domain provides the foundational context for evaluating mechanistic
+interpretability's role in AI safety. Understanding what safety actually
+demands -- alignment, robustness, transparency, value specification -- enables
+assessment of whether interpretability is necessary, sufficient, or merely
+helpful for achieving these goals. The literature reveals interpretability as
+one pillar among many safety requirements, with ongoing debate about its
+relative priority and effectiveness.
+
+NOTABLE_GAPS:
+Limited work explicitly evaluates whether interpretability is necessary versus
+sufficient for safety. Few papers systematically compare interpretability-based
+safety approaches against alternative mechanisms (formal verification, robust
+training, constitutional AI). The relationship between mechanistic
+interpretability specifically and broader AI safety requirements remains
+under-theorized.
+
+SYNTHESIS_GUIDANCE:
+Emphasize the plurality of safety requirements and the debate over
+interpretability's centrality. Highlight tensions between different safety
+approaches (e.g., transparency vs. robustness trade-offs). Note the gap
+between theoretical safety frameworks and empirical validation of their
+sufficiency.
+
+KEY_POSITIONS:
+- Interpretability-centric safety: 3 papers - Interpretability as central to
+  AI safety and alignment
+- Pluralistic safety frameworks: 5 papers - Multiple requirements needed
+  (robustness, fairness, alignment, transparency)
+- Alignment-focused safety: 4 papers - Value alignment and RLHF as primary
+  mechanisms
+- Practical/empirical safety: 3 papers - Focus on concrete near-term risks
+  and mitigation
+====================================================================
+}
+
+@article{bereska2024mechanistic,
+  author = {Bereska, Leonard and Gavves, Efstratios},
+  title = {Mechanistic Interpretability for AI Safety -- A Review},
+  journal = {Transactions on Machine Learning Research},
+  year = {2024},
+  doi = {10.48550/arXiv.2404.14082},
+  arxivid = {2404.14082},
+  url = {https://arxiv.org/abs/2404.14082},
+  note = {
+  CORE ARGUMENT: Mechanistic interpretability -- reverse engineering neural networks
+  into human-understandable algorithms and concepts -- is critical for AI safety and
+  value alignment. The paper argues that understanding systems' inner workings enables
+  better control, alignment verification, and catastrophic outcome prevention as AI
+  becomes more powerful and inscrutable. It surveys methods for causally dissecting
+  model behaviors, identifies scalability and automation challenges, and advocates
+  for standardization.
+
+  RELEVANCE: This review directly connects mechanistic interpretability to AI safety,
+  positioning MI as essential for ensuring value alignment and preventing catastrophic
+  failures. It articulates why MI might be necessary for safety (providing causal
+  understanding and control) while acknowledging risks (capability gains, dual-use
+  concerns). This is the most comprehensive recent survey linking MI specifically to
+  safety requirements, making it foundational for evaluating MI's necessity claim.
+
+  POSITION: Strongly pro-interpretability for safety. Argues MI provides unique
+  causal understanding necessary for reliable safety guarantees, though acknowledges
+  practical challenges and potential risks.
+  },
+  keywords = {mechanistic-interpretability, ai-safety, interpretability-theory, High}
+}
+
+@techreport{rudner2021key,
+  author = {Rudner, Tim G. J. and Toner, Helen},
+  title = {Key Concepts in AI Safety: Interpretability in Machine Learning},
+  institution = {Center for Security and Emerging Technology},
+  year = {2021},
+  doi = {10.51593/20190042},
+  url = {https://www.semanticscholar.org/paper/b49cc19cf1dec317c410df1554468952ce01ca47},
+  note = {
+  CORE ARGUMENT: This policy-oriented report introduces interpretability as a means to
+  enable "assurance" in machine learning systems -- one of three core AI safety
+  categories alongside robustness and specification. It explains how interpretability
+  helps verify that systems behave as intended and diagnose failures, positioning it
+  as essential infrastructure for trustworthy AI deployment.
+
+  RELEVANCE: Provides the taxonomic foundation for understanding interpretability's
+  role within broader AI safety frameworks. By categorizing safety into robustness,
+  assurance, and specification, it contextualizes interpretability as addressing the
+  assurance requirement -- confirming systems work as intended. This is crucial for
+  evaluating whether interpretability alone suffices for safety, or must be combined
+  with other mechanisms.
+
+  POSITION: Moderate pro-interpretability. Views interpretability as one necessary
+  component of comprehensive safety (assurance), but explicitly not sufficient without
+  addressing robustness and specification problems.
+  },
+  keywords = {ai-safety-taxonomy, interpretability, assurance, Medium}
+}
+
+@article{salhab2024systematic,
+  author = {Salhab, Wissam and Ameyed, Darine and Jaafar, Fehmi and Mcheick, Hamid},
+  title = {A Systematic Literature Review on AI Safety: Identifying Trends, Challenges, and Future Directions},
+  journal = {IEEE Access},
+  year = {2024},
+  volume = {12},
+  pages = {131762--131784},
+  doi = {10.1109/ACCESS.2024.3440647},
+  url = {https://www.semanticscholar.org/paper/02930d9a116eaec470a31c6a758386276e090f55},
+  note = {
+  CORE ARGUMENT: AI safety encompasses multiple dimensions including explainability,
+  interpretability, robustness, reliability, fairness, bias mitigation, and adversarial
+  attack defense. The review synthesizes research across model learning techniques,
+  verification/validation methods, failure mode analysis, and AI autonomy management.
+  It argues for comprehensive safety frameworks that integrate all these requirements
+  rather than focusing on individual aspects.
+
+  RELEVANCE: This systematic review provides empirical grounding for understanding AI
+  safety's scope beyond interpretability alone. It demonstrates that safety concerns
+  span multiple dimensions, with interpretability and explainability being important
+  but insufficient. The paper reveals that current safety research emphasizes robustness,
+  reliability, and fairness alongside interpretability, suggesting pluralistic rather
+  than interpretability-centric approaches.
+
+  POSITION: Pluralistic safety framework. Treats interpretability as one among many
+  essential requirements, without prioritizing it as uniquely necessary or sufficient.
+  },
+  keywords = {ai-safety, systematic-review, pluralistic-framework, High}
+}
+
+@article{gyevnar2025ai,
+  author = {Gyevnar, Balint and Kasirzadeh, Atoosa},
+  title = {AI Safety for Everyone},
+  journal = {Nature Machine Intelligence},
+  year = {2025},
+  volume = {7},
+  pages = {531--542},
+  doi = {10.1038/s42256-025-01020-y},
+  arxivid = {2502.09288},
+  url = {https://www.semanticscholar.org/paper/ce8fd5f05ebe5bc0ca325c8c8a7b5133a6834eb5},
+  note = {
+  CORE ARGUMENT: Through systematic literature review, this paper argues for an
+  "epistemically inclusive and pluralistic conception of AI safety" that accommodates
+  diverse perspectives and motivations. It finds extensive work addressing immediate
+  practical concerns (adversarial robustness, interpretability) distinct from
+  existential risk focus, demonstrating that AI safety research extends existing
+  technological and systems safety practices. The paper advocates against narrow
+  framing of safety as primarily about existential threats.
+
+  RELEVANCE: Challenges narrow conceptions of AI safety and demonstrates the breadth
+  of practical safety concerns beyond any single approach. By documenting the diversity
+  of safety research -- including but not privileging interpretability -- it provides
+  evidence against claims that any single technique (like MI) is uniquely necessary.
+  It supports viewing safety as requiring multiple complementary approaches rather than
+  one foundational technique.
+
+  POSITION: Strongly pluralistic. Argues against any single approach (including
+  interpretability-centrism) dominating AI safety discourse; advocates for inclusive
+  frameworks accommodating multiple perspectives and techniques.
+  },
+  keywords = {ai-safety, pluralism, practical-safety, High}
+}
+
+@article{zou2023representation,
+  author = {Zou, Andy and Phan, Long and Chen, Sarah and Campbell, James and Guo, Phillip and Ren, Richard and Pan, Alexander and Yin, Xuwang and Mazeika, Mantas and Dombrowski, Ann-Kathrin and Goel, Shashwat and Li, Nathaniel and Byun, Michael J. and Wang, Zifan and Mallen, Alex Troy and Basart, Steven and Koyejo, Sanmi and Song, Dawn and Fredrikson, Matt and Kolter, Zico and Hendrycks, Dan},
+  title = {Representation Engineering: A Top-Down Approach to AI Transparency},
+  journal = {arXiv preprint},
+  year = {2023},
+  arxivid = {2310.01405},
+  doi = {10.48550/arXiv.2310.01405},
+  url = {https://arxiv.org/abs/2310.01405},
+  note = {
+  CORE ARGUMENT: Representation engineering (RepE) offers a "top-down" approach to AI
+  transparency by placing population-level representations at the center of analysis,
+  rather than individual neurons or circuits. It provides methods for monitoring and
+  manipulating high-level cognitive phenomena in DNNs. The paper demonstrates RepE's
+  effectiveness on safety-relevant problems including honesty, harmlessness, and
+  power-seeking, positioning it as complementary to mechanistic interpretability's
+  bottom-up approach.
+
+  RELEVANCE: Introduces an alternative interpretability paradigm that addresses safety
+  concerns (honesty, power-seeking, harm) through representation-level rather than
+  mechanism-level analysis. This challenges claims about mechanistic interpretability's
+  unique necessity by showing that higher-level representational approaches can also
+  provide safety-relevant transparency and control, potentially more efficiently for
+  some applications.
+
+  POSITION: Pro-interpretability for safety but via top-down representation engineering
+  rather than bottom-up mechanistic analysis. Suggests multiple interpretability
+  approaches can address safety, not just MI.
+  },
+  keywords = {representation-engineering, transparency, ai-safety, Medium}
+}
+
+@inproceedings{ge2024axioms,
+  author = {Ge, Luise and Halpern, Daniel and Micha, Evi and Procaccia, Ariel D. and Shapira, Itai and Vorobeychik, Yevgeniy and Wu, Junlin},
+  title = {Axioms for AI Alignment from Human Feedback},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year = {2024},
+  arxivid = {2405.14758},
+  doi = {10.48550/arXiv.2405.14758},
+  url = {https://arxiv.org/abs/2405.14758},
+  note = {
+  CORE ARGUMENT: AI alignment via RLHF is fundamentally a preference aggregation
+  problem falling within social choice theory's scope. The paper evaluates reward
+  learning methods using established social choice axioms, showing that standard
+  approaches (Bradley-Terry-Luce model and generalizations) fail basic axioms. It
+  develops novel reward learning rules with strong axiomatic guarantees, introducing
+  "linear social choice" as a new paradigm for alignment.
+
+  RELEVANCE: Provides theoretical foundation for evaluating AI alignment mechanisms
+  independently of interpretability. By grounding alignment in social choice theory
+  and developing axiomatically justified reward learning methods, it suggests that
+  principled alignment may not require interpretability of learned models. This
+  challenges interpretability-necessity claims by showing formal guarantees can come
+  from mathematical properties of aggregation methods rather than transparency.
+
+  POSITION: Alignment-focused via formal methods. Suggests theoretical guarantees
+  from axioms and aggregation mechanisms may be more reliable for safety than
+  interpretability-based approaches.
+  },
+  keywords = {alignment, rlhf, social-choice-theory, axiomatic-methods, High}
+}
+
+@article{perez-escobar2024philosophical,
+  author = {P\'{e}rez-Escobar, Jos\'{e} Antonio and Sarikaya, Deniz},
+  title = {Philosophical Investigations into AI Alignment: A Wittgensteinian Framework},
+  journal = {Philosophy \& Technology},
+  year = {2024},
+  volume = {37},
+  doi = {10.1007/s13347-024-00761-9},
+  url = {https://www.semanticscholar.org/paper/7c229226607012be8a1fe13445acf57cc8dc37a9},
+  note = {
+  CORE ARGUMENT: Drawing on Wittgenstein's philosophy of language and rule-following,
+  this paper argues that alignment between humans and AI systems depends on controlling
+  categories that influence meaning-making practices (context, norms, conceptual
+  frameworks). It develops a model of human-human and human-machine alignment showing
+  how successful AI safety techniques align with Wittgensteinian insights about meaning
+  as use and rule-following, suggesting alignment strategies focused on data curation
+  and guardrails rather than interpretability.
+
+  RELEVANCE: Provides philosophical grounding for alignment approaches that don't
+  require deep interpretability. By showing alignment can be achieved through controlling
+  meaning-constitutive categories (data, context, norms) rather than understanding
+  internal mechanisms, it challenges interpretability-necessity claims. The paper
+  suggests conceptual and practical alignment strategies that work at the interface
+  level rather than requiring mechanistic transparency.
+
+  POSITION: Alignment-focused via philosophical/conceptual analysis. Suggests alignment
+  is achievable through Wittgensteinian meaning-use alignment rather than mechanistic
+  interpretability.
+  },
+  keywords = {alignment, philosophy, wittgenstein, rule-following, Medium}
+}
+
+@article{anderljung2023frontier,
+  author = {Anderljung, Markus and Barnhart, Joslyn and Leung, Jade and Korinek, Anton and O'Keefe, Cullen and Whittlestone, Jess and Avin, Shahar and Brundage, Miles and Bullock, Justin B. and Cass-Beggs, Duncan and Chang, Ben and Collins, Tantum and Fist, Tim and Hadfield, Gillian K. and Hayes, Alan and Ho, Lewis and Hooker, Sara and Horvitz, Eric and Kolt, Noam and Schuett, Jonas and Shavit, Yonadav and Siddarth, Divya and Trager, Robert and Wolf, Kevin},
+  title = {Frontier AI Regulation: Managing Emerging Risks to Public Safety},
+  journal = {arXiv preprint},
+  year = {2023},
+  arxivid = {2307.03718},
+  doi = {10.48550/arXiv.2307.03718},
+  url = {https://arxiv.org/abs/2307.03718},
+  note = {
+  CORE ARGUMENT: Frontier AI models pose distinct regulatory challenges due to
+  unpredictable dangerous capabilities, deployment misuse risks, and capability
+  proliferation. The paper proposes regulatory building blocks including
+  standard-setting processes, registration/reporting requirements, and compliance
+  mechanisms. It advocates for pre-deployment risk assessments, external scrutiny,
+  risk-informed deployment decisions, and post-deployment monitoring as core safety
+  standards.
+
+  RELEVANCE: Articulates comprehensive safety requirements for advanced AI that extend
+  beyond interpretability to include risk assessment, external auditing, deployment
+  governance, and monitoring. The proposed framework treats interpretability as one
+  tool among many for risk management rather than a necessary foundation. This regulatory
+  perspective suggests safety can be achieved through procedural requirements and
+  governance mechanisms even without complete interpretability.
+
+  POSITION: Regulatory/procedural safety framework. Views interpretability as helpful
+  for risk assessment but not strictly necessary given robust governance and monitoring.
+  },
+  keywords = {frontier-ai, regulation, risk-assessment, governance, High}
+}
+
+@article{alzubaidi2023towards,
+  author = {Alzubaidi, Laith and Al-Sabaawi, Aiman and Bai, Jinshuai and Dukhan, Ammar and Alkenani, Ahmed H. and Al-Asadi, Ahmed and Alwzwazy, Haider A. and Manoufali, Mohamed and Fadhel, Mohammed A. and Albahri, A. S. and Moreira, Catarina and Ouyang, Chun and Zhang, Jinglan and Santamar\'{i}a, Jos\'{e} and Salhi, Asma and Hollman, Freek and Gupta, Ashish and Duan, Ye and Rabczuk, Timon and Abbosh, Amin and Gu, Yuantong},
+  title = {Towards Risk-Free Trustworthy Artificial Intelligence: Significance and Requirements},
+  journal = {International Journal of Intelligent Systems},
+  year = {2023},
+  doi = {10.1155/2023/4459198},
+  url = {https://openalex.org/W4387956680},
+  note = {
+  CORE ARGUMENT: Trustworthy AI requires multiple integrated requirements beyond
+  technical performance: explainability, accountability, robustness, fairness, privacy,
+  accuracy, reproducibility, and human oversight. The paper synthesizes these requirements
+  across diverse application domains (education, environmental science, IoT, robotics,
+  finance, healthcare), arguing that trustworthiness emerges from systematically
+  addressing all requirements together rather than optimizing individual dimensions.
+
+  RELEVANCE: Demonstrates that trustworthy AI (encompassing safety) requires balancing
+  multiple sometimes-competing requirements. Explainability/interpretability is one
+  among nine essential requirements, with no claim to priority. The cross-domain
+  analysis shows different applications weight requirements differently, suggesting
+  interpretability's necessity varies by context rather than being universal for safety.
+
+  POSITION: Pluralistic trustworthy AI framework. Treats interpretability as one
+  necessary but insufficient component requiring integration with other requirements
+  (robustness, fairness, privacy, etc.).
+  },
+  keywords = {trustworthy-ai, requirements, pluralistic-framework, Medium}
+}
+
+@article{lambert2024rewardbench,
+  author = {Lambert, Nathan and Pyatkin, Valentina and Morrison, Jacob Daniel and Miranda, Lester James Validad and Lin, Bill Yuchen and Chandu, Khyathi Raghavi and Dziri, Nouha and Kumar, Sachin and Zick, Tom and Choi, Yejin and Smith, Noah A. and Hajishirzi, Hanna},
+  title = {RewardBench: Evaluating Reward Models for Language Modeling},
+  journal = {arXiv preprint},
+  year = {2024},
+  arxivid = {2403.13787},
+  doi = {10.48550/arXiv.2403.13787},
+  url = {https://arxiv.org/abs/2403.13787},
+  note = {
+  CORE ARGUMENT: Reward models are central to RLHF alignment but remain poorly
+  understood. RewardBench provides systematic evaluation of RMs across challenging,
+  structured, and out-of-distribution queries in chat, reasoning, and safety domains.
+  The benchmark reveals significant limitations in RMs (refusal propensity, reasoning
+  failures, instruction-following shortcomings), suggesting that improving reward
+  modeling may be more critical for safety than improving interpretability.
+
+  RELEVANCE: Demonstrates that alignment safety depends critically on reward model
+  quality, which is largely independent of interpretability. The finding that RMs fail
+  on subtle reasoning and safety queries suggests alignment problems may stem from
+  reward specification rather than lack of transparency. This challenges claims that
+  interpretability is necessary for alignment by showing reward modeling improvements
+  directly address safety without requiring interpretability.
+
+  POSITION: Alignment via reward modeling. Suggests improving reward models (quality,
+  robustness, coverage) is more direct path to safety than achieving interpretability.
+  },
+  keywords = {reward-modeling, rlhf, alignment, benchmarking, High}
+}
+
+@article{dong2024rlhf,
+  author = {Dong, Hanze and Xiong, Wei and Pang, Bo and Wang, Haoxiang and Zhao, Han and Zhou, Yingbo and Jiang, Nan and Sahoo, Doyen and Xiong, Caiming and Zhang, Tong},
+  title = {RLHF Workflow: From Reward Modeling to Online RLHF},
+  journal = {Transactions on Machine Learning Research},
+  year = {2024},
+  volume = {2024},
+  arxivid = {2405.07863},
+  doi = {10.48550/arXiv.2405.07863},
+  url = {https://arxiv.org/abs/2405.07863},
+  note = {
+  CORE ARGUMENT: Online iterative RLHF substantially outperforms offline RLHF for
+  aligning LLMs with human preferences. The paper provides detailed implementation
+  of online RLHF workflow including preference model construction, theoretical
+  foundations, and algorithmic principles. It demonstrates state-of-the-art performance
+  on multiple benchmarks using fully open-source datasets, showing alignment can be
+  achieved through iterative feedback without requiring model interpretability.
+
+  RELEVANCE: Provides concrete evidence that effective alignment can be achieved
+  through iterative RLHF processes that don't require mechanistic interpretability.
+  The success of online RLHF in achieving strong alignment on safety and capability
+  benchmarks suggests that feedback-driven optimization may be sufficient for practical
+  safety, challenging interpretability-necessity claims. The work shows alignment as
+  an empirical optimization problem rather than one requiring deep model understanding.
+
+  POSITION: Alignment via iterative RLHF. Demonstrates empirical success of
+  feedback-driven alignment without requiring interpretability, suggesting it may not
+  be necessary for practical safety.
+  },
+  keywords = {rlhf, alignment, online-learning, empirical-alignment, High}
+}
+
+@article{diaz-rodriguez2023connecting,
+  author = {D\'{i}az-Rodr\'{i}guez, Natalia and Del Ser, Javier and Coeckelbergh, Mark and L\'{o}pez de Prado, Marcos and Herrera-Viedma, Enrique and Herrera, Francisco},
+  title = {Connecting the Dots in Trustworthy Artificial Intelligence: From AI Principles, Ethics, and Key Requirements to Responsible AI Systems and Regulation},
+  journal = {arXiv preprint},
+  year = {2023},
+  arxivid = {2305.02231},
+  doi = {10.48550/arXiv.2305.02231},
+  url = {https://arxiv.org/abs/2305.02231},
+  note = {
+  CORE ARGUMENT: Trustworthy AI rests on three pillars -- lawful, ethical, and robust
+  (technical and social) -- supported by seven technical requirements: human agency
+  and oversight, robustness and safety, privacy and data governance, transparency,
+  diversity/non-discrimination, societal/environmental wellbeing, and accountability.
+  The paper connects principles to implementation through detailed analysis of each
+  requirement's what, why, and how, introducing "responsible AI" as the realizable
+  concept through auditing processes.
+
+  RELEVANCE: Provides comprehensive framework showing transparency/interpretability as
+  one of seven equally important requirements for trustworthy AI. The detailed analysis
+  of how each requirement can be implemented independently suggests interpretability
+  is neither necessary nor sufficient for safety -- rather, responsible AI emerges from
+  addressing all requirements together. The auditing-based approach to responsibility
+  suggests safety assurance may come from procedural compliance rather than
+  interpretability.
+
+  POSITION: Comprehensive trustworthy AI framework. Treats transparency as one among
+  seven essential requirements, with responsible AI achieved through multi-faceted
+  compliance rather than any single technique.
+  },
+  keywords = {trustworthy-ai, requirements-framework, responsible-ai, Medium}
+}
+
+@inproceedings{zhou2023beyond,
+  author = {Zhou, Zhanhui and Liu, Jie and Shao, Jing and Yue, Xiangyu and Yang, Chao and Ouyang, Wanli and Qiao, Yu},
+  title = {Beyond One-Preference-Fits-All Alignment: Multi-Objective Direct Preference Optimization},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2024},
+  year = {2023},
+  pages = {10586--10613},
+  arxivid = {2310.03708},
+  doi = {10.18653/v1/2024.findings-acl.630},
+  url = {https://arxiv.org/abs/2310.03708},
+  note = {
+  CORE ARGUMENT: Multi-objective RLHF (MORLHF) is necessary because single reward
+  models cannot satisfy all human preferences. The paper introduces Multi-Objective
+  Direct Preference Optimization (MODPO), an RL-free method that trains language models
+  as implicit collective reward models combining multiple objectives with specific
+  weights. MODPO achieves comparable or better performance than MORLHF with 3x less
+  computation, demonstrating efficient multi-objective alignment.
+
+  RELEVANCE: Demonstrates that effective alignment requires addressing multiple
+  objectives (safety, helpfulness, etc.) simultaneously, not just achieving
+  interpretability. By showing successful multi-objective alignment without requiring
+  model transparency, it challenges interpretability-necessity claims. The efficiency
+  gains from RL-free methods suggest that alignment innovations in optimization
+  algorithms may matter more for practical safety than interpretability advances.
+
+  POSITION: Multi-objective alignment via direct optimization. Suggests pluralistic
+  preference alignment is achievable through algorithmic improvements without requiring
+  interpretability.
+  },
+  keywords = {multi-objective-alignment, direct-preference-optimization, efficiency, Low}
+}
+
+@article{kastner2024explaining,
+  author = {K\"{a}stner, Lena and Crook, Barnaby},
+  title = {Explaining AI through Mechanistic Interpretability},
+  journal = {European Journal for Philosophy of Science},
+  year = {2024},
+  volume = {14},
+  doi = {10.1007/s13194-024-00614-4},
+  url = {https://www.semanticscholar.org/paper/c76144130347dc9be9b2b02bbea157714d84391a},
+  note = {
+  CORE ARGUMENT: Current XAI approaches fail to illuminate how trained AI systems work
+  as wholes through divide-and-conquer strategies. The paper argues researchers should
+  pursue mechanistic interpretability -- applying coordinated discovery strategies from
+  life sciences to uncover functional organization of AI systems. This functional
+  understanding is necessary to satisfy societal desiderata like safety, which require
+  understanding systems as integrated wholes rather than component parts.
+
+  RELEVANCE: Provides philosophical justification for mechanistic interpretability's
+  necessity for safety by arguing that functional understanding of whole systems (not
+  just parts) is required for reliable safety guarantees. This articulates the strongest
+  case for MI's necessity: that safety requires understanding integrated system behavior,
+  which only MI (not component-level XAI) can provide. However, the argument relies on
+  philosophical claims about explanation rather than empirical demonstration.
+
+  POSITION: Strongly pro-mechanistic interpretability for safety. Argues MI provides
+  uniquely necessary functional understanding of AI systems as integrated wholes,
+  required for genuine safety assurance.
+  },
+  keywords = {mechanistic-interpretability, philosophy-of-science, functional-understanding, High}
+}
+
+@article{ppahde2025ensuring,
+  author = {Pahde, Frederik and Wiegand, Thomas and Lapuschkin, Sebastian and Samek, Wojciech},
+  title = {Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and Associated Data},
+  journal = {Machine Learning},
+  year = {2025},
+  volume = {114},
+  doi = {10.1007/s10994-025-06834-w},
+  arxivid = {2501.13818},
+  url = {https://www.semanticscholar.org/paper/62e7f669591826492aeda75519071a302cf50b3c},
+  note = {
+  CORE ARGUMENT: Deep neural networks in medical applications are prone to shortcut
+  learning via spurious correlations with potentially fatal consequences. The paper
+  presents enhanced Reveal2Revise framework combining interpretability-based bias
+  detection and mitigation with semi-automated annotation capabilities. It successfully
+  identifies and mitigates biases in medical datasets across multiple models (VGG16,
+  ResNet50, Vision Transformers), demonstrating interpretability's practical utility
+  for safety-critical applications.
+
+  RELEVANCE: Provides concrete empirical evidence that interpretability methods can
+  detect and mitigate safety-critical failures (spurious correlations, shortcut
+  learning) in deployed systems. The medical domain's high-stakes nature and the
+  demonstration across multiple model architectures strengthen claims about
+  interpretability's practical safety value. However, the approach is domain-specific
+  and relies on human expert annotation, limiting generalizability claims.
+
+  POSITION: Applied interpretability for safety. Demonstrates interpretability's
+  practical value for detecting and fixing safety issues in specific domains, without
+  claiming universal necessity.
+  },
+  keywords = {medical-ai, interpretability, bias-mitigation, spurious-correlations, Low}
+}

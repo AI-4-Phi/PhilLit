@@ -1,0 +1,324 @@
+@comment{
+====================================================================
+DOMAIN: Arguments AGAINST MI as Necessary/Sufficient for Safety
+SEARCH_DATE: 2025-12-28
+PAPERS_FOUND: 14 total (High: 4, Medium: 7, Low: 3)
+SEARCH_SOURCES: WebFetch (Hendrycks article), Semantic Scholar, OpenAlex, arXiv
+====================================================================
+
+DOMAIN_OVERVIEW:
+This domain examines literature that challenges mechanistic interpretability
+(MI) as a necessary or sufficient condition for AI safety. Three main categories
+of critique emerge: (1) Fundamental limitations arguments, claiming MI is
+intractable due to system complexity, emergent properties, and Polanyi's
+paradox; (2) Empirical failure arguments, documenting underperformance of MI
+techniques (sparse autoencoders, feature visualizations, saliency maps) over
+15 years; (3) Alternative approach arguments, proposing behavioral testing,
+formal verification, scalable oversight, and representation engineering as
+more tractable safety mechanisms. A key debate centers on whether safety
+requires mechanistic understanding or can rely on higher-level functional
+properties.
+
+Recent literature (2023-2025) emphasizes: (a) formal impossibility results
+showing inherent conflicts between safety, trust, and AGI under strict
+definitions; (b) scalable oversight methods that bypass interpretability via
+debate, self-critique, and weak-to-strong generalization; (c) representation
+engineering as top-down alternative to bottom-up mechanistic analysis; (d)
+fundamental challenges in monitorability, suggesting emergent capabilities
+resist prospective detection. The field increasingly recognizes MI as one tool
+among many, rather than a prerequisite for safety.
+
+RELEVANCE_TO_PROJECT:
+This domain directly challenges the sufficiency claim central to the research
+proposal. If interpretability-based safety approaches face fundamental
+limitations or can be replaced by more tractable methods (formal verification,
+behavioral testing), this undermines MI's unique value proposition. The
+literature provides empirical evidence and theoretical arguments that safety
+can be achieved through alternative mechanisms, which must be addressed when
+arguing for MI's necessity or sufficiency.
+
+NOTABLE_GAPS:
+Limited engagement with hybrid approaches combining MI with alternative safety
+mechanisms. Few papers empirically compare safety outcomes between MI-based
+and MI-free approaches on identical tasks. Insufficient analysis of domain-
+specific variation—perhaps MI is sufficient for some safety properties but not
+others.
+
+SYNTHESIS_GUIDANCE:
+Organize by argument type: fundamental limitations (Hendrycks, Panigrahy),
+empirical failures (monitorability, faithfulness), alternative approaches
+(formal verification, scalable oversight, representation engineering). Examine
+which critiques apply specifically to mechanistic MI versus broader XAI. Note
+temporal dimension—recent papers (2024-2025) show increasing sophistication
+in alternatives, potentially weakening MI's relative value.
+
+KEY_POSITIONS:
+- Fundamental limitations: 4 papers - MI faces tractability barriers
+- Alternative approaches: 7 papers - Safety achievable without MI
+- Empirical critique: 3 papers - MI techniques underperform in practice
+====================================================================
+}
+
+@misc{hendrycks2025misguided,
+  author = {Hendrycks, Dan and Hiscott, Laura},
+  title = {The Misguided Quest for Mechanistic {AI} Interpretability},
+  year = {2025},
+  month = {May},
+  howpublished = {\url{https://ai-frontiers.org/articles/the-misguided-quest-for-mechanistic-ai-interpretability}},
+  note = {
+  CORE ARGUMENT: Mechanistic interpretability—reverse-engineering AI by identifying specific neurons—is fundamentally misguided because complex systems resist reductionist analysis. Authors argue (1) emergent properties cannot be understood at component level (complexity mismatch); (2) terabyte models face insurmountable documentation challenges analogous to Polanyi's paradox ("we know more than we can tell"); (3) compressing models for interpretability loses edge cases where safety risks emerge; (4) 15 years of MI research has empirically underdelivered (feature visualizations unreliable, saliency maps perform identically on random and trained models, BERT findings don't generalize, sparse autoencoders underperform baselines). They advocate representation engineering (RepE) as superior alternative—top-down pattern analysis across neurons rather than individual component analysis—enabling safety interventions without mechanistic understanding.
+
+  RELEVANCE: Directly challenges the sufficiency claim for MI in AI safety. If complex AI systems are fundamentally irreducible (like weather or biological processes), mechanistic understanding may be theoretically impossible, not merely difficult. The empirical track record argument undermines confidence that MI will scale to transformer models. Crucially, the paper proposes representation engineering as viable alternative that achieves safety goals (identifying, amplifying, suppressing model characteristics) without requiring mechanistic decomposition. This positions MI as unnecessary for safety—a strong challenge to the research proposal's central claim.
+
+  POSITION: Skeptical of MI necessity and sufficiency; advocates alternative (RepE) that achieves safety without mechanistic understanding. Represents empirical critique grounded in historical underperformance.
+  },
+  keywords = {critique-MI, representation-engineering, web-source, High}
+}
+
+@article{kastner2024explaining,
+  author = {K{\"a}stner, Lena and Crook, Barnaby},
+  title = {Explaining {AI} through Mechanistic Interpretability},
+  journal = {European Journal for Philosophy of Science},
+  year = {2024},
+  volume = {14},
+  doi = {10.1007/s13194-024-00614-4},
+  abstract = {Recent work in explainable artificial intelligence (XAI) attempts to render opaque AI systems understandable through a divide-and-conquer strategy. However, this fails to illuminate how trained AI systems work as a whole. Precisely this kind of functional understanding is needed, though, to satisfy important societal desiderata such as safety. To remedy this situation, we argue, AI researchers should seek mechanistic interpretability, viz. apply coordinated discovery strategies familiar from the life sciences to uncover the functional organisation of complex AI systems. Additionally, theorists should accommodate for the unique costs and benefits of such strategies in their portrayals of XAI research.},
+  note = {
+  CORE ARGUMENT: Current post-hoc XAI methods use divide-and-conquer strategies that explain individual components but fail to illuminate how AI systems function as wholes. Authors argue that safety requires functional understanding of the entire system, achievable only through mechanistic interpretability (MI). They propose adapting coordinated discovery strategies from life sciences—decomposition, localization, and recomposition—to uncover functional organization. Critically, they acknowledge MI involves unique costs (computational expense, scalability challenges) and benefits (systematic causal understanding) that theorists must accommodate. Unlike Hendrycks, they view MI as necessary for safety precisely because piecemeal explanations miss emergent system-level behavior.
+
+  RELEVANCE: Provides philosophical defense of MI for safety while acknowledging limitations that Hendrycks emphasizes. The tension is instructive: both papers agree divide-and-conquer XAI is insufficient, but diverge on whether full mechanistic understanding is achievable or necessary. K{\"a}stner argues functional understanding requires mechanistic decomposition then recomposition; Hendrycks argues this is intractable and proposes top-down alternatives. This debate maps onto the research proposal's necessity claim—is mechanistic analysis required to understand emergent safety-relevant properties, or can higher-level methods suffice?
+
+  POSITION: Argues MI is necessary for safety (functional understanding), but acknowledges significant practical challenges. Defends MI against pure post-hoc XAI while recognizing costs.
+  },
+  keywords = {mechanistic-interpretability, XAI-critique, philosophy-of-science, Medium}
+}
+
+@article{madsen2024interpretability,
+  author = {Madsen, Andreas and Lakkaraju, Himabindu and Reddy, Siva and Chandar, Sarath},
+  title = {Interpretability Needs a New Paradigm},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2405.05386},
+  doi = {10.48550/arXiv.2405.05386},
+  arxivid = {2405.05386},
+  abstract = {Interpretability is the study of explaining models in understandable terms to humans. At present, interpretability is divided into two paradigms: the intrinsic paradigm, which believes that only models designed to be explained can be explained, and the post-hoc paradigm, which believes that black-box models can be explained. At the core of this debate is how each paradigm ensures its explanations are faithful, i.e., true to the model's behavior. This is important, as false but convincing explanations lead to unsupported confidence in artificial intelligence (AI), which can be dangerous. This paper's position is that we should think about new paradigms while staying vigilant regarding faithfulness. First, by examining the history of paradigms in science, we see that paradigms are constantly evolving. Then, by examining the current paradigms, we can understand their underlying beliefs, the value they bring, and their limitations. Finally, this paper presents 3 emerging paradigms for interpretability. The first paradigm designs models such that faithfulness can be easily measured. Another optimizes models such that explanations become faithful. The last paradigm proposes to develop models that produce both a prediction and an explanation.},
+  note = {
+  CORE ARGUMENT: Current interpretability paradigms (intrinsic and post-hoc) face fundamental faithfulness problems—explanations may be convincing but unfaithful to actual model behavior, creating dangerous false confidence. Authors argue the field needs new paradigms rather than incremental improvements. They propose three: (1) design models where faithfulness is measurable; (2) optimize during training so explanations become faithful; (3) develop models that jointly produce predictions and explanations. Central concern is that existing MI approaches (both post-hoc and intrinsic) cannot guarantee explanations accurately reflect internal mechanisms, undermining their safety value.
+
+  RELEVANCE: Challenges the assumption that MI techniques provide faithful explanations. If mechanistic interpretations systematically misrepresent how models actually function, they cannot ground safety assurances. The faithfulness critique applies directly to sparse autoencoders, circuit discovery, and other MI methods—even if we identify interpretable components, we may misunderstand their causal role in system behavior. This undermines MI's sufficiency for safety: interpretable components with unfaithful explanations provide illusory rather than genuine understanding. The paper suggests safety may require fundamentally different model architectures rather than post-hoc analysis.
+
+  POSITION: Critiques existing interpretability paradigms (including MI) on faithfulness grounds; proposes new architectural approaches to guarantee faithful explanations. Skeptical of sufficiency.
+  },
+  keywords = {faithfulness, paradigm-critique, XAI-limitations, High}
+}
+
+@article{vijayaraghavan2023minimum,
+  author = {Vijayaraghavan, Avish and Badea, C.},
+  title = {Minimum Levels of Interpretability for Artificial Moral Agents},
+  journal = {AI and Ethics},
+  year = {2023},
+  volume = {5},
+  pages = {2071--2087},
+  doi = {10.1007/s43681-024-00536-0},
+  arxivid = {2307.00660},
+  abstract = {As artificial intelligence (AI) models continue to scale up, they are becoming more capable and integrated into various forms of decision-making systems. For models involved in moral decision-making (MDM), also known as artificial moral agents (AMA), interpretability provides a way to trust and understand the agent's internal reasoning mechanisms for effective use and error correction. In this paper, we bridge the technical approaches to interpretability with construction of AMAs to establish minimal safety requirements for deployed AMAs. We begin by providing an overview of AI interpretability in the context of MDM, thereby framing different levels of interpretability (or transparency) in relation to the different ways of constructing AMAs. Introducing the concept of the Minimum Level of Interpretability (MLI) and drawing on examples from the field, we explore two overarching questions: whether a lack of model transparency prevents trust and whether model transparency helps us sufficiently understand AMAs. Finally, we conclude by recommending specific MLIs for various types of agent constructions, aiming to facilitate their safe deployment in real-world scenarios.},
+  note = {
+  CORE ARGUMENT: Not all AI systems require the same level of interpretability for safe deployment. Authors introduce Minimum Level of Interpretability (MLI)—the threshold transparency needed for trustworthy use of artificial moral agents (AMAs). They argue interpretability requirements vary by construction method (rule-based, hybrid, end-to-end learning). Critically, they question whether transparency alone ensures understanding or trust, suggesting high interpretability may be insufficient if explanations remain incomprehensible, while lower interpretability may suffice if behavioral constraints are strong. The paper challenges one-size-fits-all interpretability requirements, arguing safety depends on fit between system architecture, deployment context, and oversight mechanisms.
+
+  RELEVANCE: Challenges universalist claims about interpretability's necessity for safety. If different systems require different interpretability levels, then MI is not uniformly necessary—some safe deployments may use opaque models with strong behavioral constraints, while others need deep mechanistic understanding. This nuances the research proposal: perhaps MI is necessary for certain safety-critical domains (autonomous weapons, medical diagnosis) but unnecessary for others (recommendation systems). The MLI concept suggests evaluating MI's necessity domain-by-domain rather than making blanket claims.
+
+  POSITION: Contextual approach to interpretability requirements; challenges universalist necessity claims. Argues transparency and understanding are distinct, both potentially insufficient for trust.
+  },
+  keywords = {minimum-interpretability, moral-agents, context-dependence, Medium}
+}
+
+@article{panigrahy2025limitations,
+  author = {Panigrahy, Rina and Sharan, Vatsal},
+  title = {Limitations on Safe, Trusted, Artificial General Intelligence},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2509.21654},
+  doi = {10.48550/arXiv.2509.21654},
+  arxivid = {2509.21654},
+  abstract = {Safety, trust and Artificial General Intelligence (AGI) are aspirational goals in artificial intelligence (AI) systems, and there are several informal interpretations of these notions. In this paper, we propose strict, mathematical definitions of safety, trust, and AGI, and demonstrate a fundamental incompatibility between them. We define safety of a system as the property that it never makes any false claims, trust as the assumption that the system is safe, and AGI as the property of an AI system always matching or exceeding human capability. Our core finding is that -- for our formal definitions of these notions -- a safe and trusted AI system cannot be an AGI system: for such a safe, trusted system there are task instances which are easily and provably solvable by a human but not by the system. We note that we consider strict mathematical definitions of safety and trust, and it is possible for real-world deployments to instead rely on alternate, practical interpretations of these notions. We show our results for program verification, planning, and graph reachability. Our proofs draw parallels to Gödel's incompleteness theorems and Turing's proof of the undecidability of the halting problem, and can be regarded as interpretations of Gödel's and Turing's results.},
+  note = {
+  CORE ARGUMENT: Under strict mathematical definitions, safety (never making false claims), trust (assuming safety), and AGI (matching/exceeding human capability) are fundamentally incompatible. Authors prove that safe+trusted systems cannot be AGI—there exist tasks humans can solve that such systems cannot. Proofs parallel Gödel's incompleteness theorems and Turing's halting problem, suggesting the impossibility is deep rather than contingent. While practical deployments might use relaxed definitions, the formal result reveals inherent tension: perfect safety requires limiting capabilities below human level.
+
+  RELEVANCE: Undermines strong sufficiency claims for any safety approach, including MI. If provably safe systems cannot achieve AGI, then no amount of interpretability can make AGI both safe and trusted under these definitions. The result suggests a trilemma: choose any two of {safety, trust, AGI}, but not all three. For the research proposal, this implies MI (or any safety mechanism) faces fundamental trade-offs—either accept imperfect safety, limited trust, or sub-AGI capabilities. The paper reframes the question from "is MI sufficient?" to "which safety guarantees are even achievable at AGI-level capability?"
+
+  POSITION: Formal impossibility result for strict safety+trust+AGI; suggests fundamental limits on any safety mechanism (including MI) for superhuman systems.
+  },
+  keywords = {formal-limitations, impossibility-results, AGI-safety, High}
+}
+
+@article{yampolskiy2024monitorability,
+  author = {Yampolskiy, Roman V.},
+  title = {On Monitorability of {AI}},
+  journal = {AI and Ethics},
+  year = {2024},
+  volume = {5},
+  pages = {689--707},
+  doi = {10.1007/s43681-024-00420-x},
+  abstract = {Artificially intelligent (AI) systems have ushered in a transformative era across various domains, yet their inherent traits of unpredictability, unexplainability, and uncontrollability have given rise to concerns surrounding AI safety. This paper aims to demonstrate the infeasibility of accurately monitoring advanced AI systems to predict the emergence of certain capabilities prior to their manifestation. Through an analysis of the intricacies of AI systems, the boundaries of human comprehension, and the elusive nature of emergent behaviors, we argue for the impossibility of reliably foreseeing some capabilities. By investigating these impossibility results, we shed light on their potential implications for AI safety research and propose potential strategies to overcome these limitations.},
+  note = {
+  CORE ARGUMENT: Advanced AI systems are fundamentally unmonitorable—we cannot reliably detect emergent capabilities before they manifest. Arguments rest on (1) system complexity exceeding human comprehension boundaries, (2) unpredictable emergent behaviors arising from interactions between components, (3) impossibility of exhaustive testing in high-dimensional capability spaces. Yampolskiy argues that since we cannot prospectively identify when dangerous capabilities emerge, we cannot rely on monitoring (including interpretability-based monitoring) to ensure safety. Emergent properties may appear suddenly and unexpectedly, bypassing any interpretability-based early warning system.
+
+  RELEVANCE: Challenges MI's sufficiency for safety by arguing interpretability tools cannot reliably detect emergent capabilities before they cause harm. Even if we mechanistically understand current system behavior, emergent properties arising from scaling or environmental interaction may not be predictable from component analysis. This maps onto Hendrycks's complexity mismatch argument: reductionist understanding of parts doesn't enable prediction of whole-system emergent behavior. For the research proposal, this suggests MI may be insufficient for dynamic safety—understanding how a system currently works doesn't guarantee understanding how it will work after scaling or deployment in novel contexts.
+
+  POSITION: Impossibility argument for monitorability of emergent capabilities; suggests interpretability-based safety monitoring faces fundamental limits.
+  },
+  keywords = {monitorability, emergent-capabilities, impossibility-argument, High}
+}
+
+@article{barez2025unlearning,
+  author = {Barez, Fazl and Fu, Tingchen and Prabhu, Ameya and Casper, Stephen and Sanyal, Amartya and Bibi, Adel and O'Gara, Aidan and Kirk, Robert and Bucknall, Ben and Fist, Tim and Ong, Luke and Torr, Philip H. S. and Lam, Kwok-Yan and Trager, Robert and Krueger, David and Mindermann, S. and Hern{\'a}ndez-Orallo, J. and Geva, Mor and Gal, Yarin},
+  title = {Open Problems in Machine Unlearning for {AI} Safety},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2501.04952},
+  doi = {10.48550/arXiv.2501.04952},
+  arxivid = {2501.04952},
+  abstract = {As AI systems become more capable, widely deployed, and increasingly autonomous in critical areas such as cybersecurity, biological research, and healthcare, ensuring their safety and alignment with human values is paramount. Machine unlearning -- the ability to selectively forget or suppress specific types of knowledge -- has shown promise for privacy and data removal tasks, which has been the primary focus of existing research. More recently, its potential application to AI safety has gained attention. In this paper, we identify key limitations that prevent unlearning from serving as a comprehensive solution for AI safety, particularly in managing dual-use knowledge in sensitive domains like cybersecurity and chemical, biological, radiological, and nuclear (CBRN) safety. In these contexts, information can be both beneficial and harmful, and models may combine seemingly harmless information for harmful purposes -- unlearning this information could strongly affect beneficial uses. We provide an overview of inherent constraints and open problems, including the broader side effects of unlearning dangerous knowledge, as well as previously unexplored tensions between unlearning and existing safety mechanisms. Finally, we investigate challenges related to evaluation, robustness, and the preservation of safety features during unlearning. By mapping these limitations and open challenges, we aim to guide future research toward realistic applications of unlearning within a broader AI safety framework, acknowledging its limitations and highlighting areas where alternative approaches may be required.},
+  note = {
+  CORE ARGUMENT: Machine unlearning (selectively removing knowledge) faces fundamental limitations as AI safety mechanism. In dual-use domains (cybersecurity, CBRN), beneficial and harmful knowledge overlap—unlearning dangerous knowledge may eliminate beneficial capabilities. Authors identify tensions between unlearning and other safety mechanisms (alignment training, robustness), suggesting safety interventions can interfere with each other. Critically, they argue unlearning alone is insufficient and must be combined with alternative approaches. The paper challenges single-solution thinking in AI safety, advocating multi-faceted frameworks.
+
+  RELEVANCE: Analogous to MI critique—demonstrates that no single safety mechanism (unlearning, interpretability) is sufficient. If removing dangerous knowledge has unpredictable side effects and interactions with other safety measures, then understanding mechanisms (via MI) may be insufficient to predict safety outcomes. The paper's emphasis on dual-use knowledge challenges the assumption that safety-relevant features can be cleanly isolated and understood mechanistically—safety properties may be distributed across representations in ways resistant to localized intervention. This suggests MI's sufficiency faces practical limits even if theoretical understanding is achievable.
+
+  POSITION: Critiques unlearning as comprehensive safety solution; argues multi-method approaches necessary. Indirectly challenges sufficiency claims for any single safety mechanism.
+  },
+  keywords = {machine-unlearning, safety-limitations, alternative-approaches, Medium}
+}
+
+@article{lehalleur2025alignment,
+  author = {Lehalleur, Simon Pepin and Hoogland, Jesse and Farrugia-Roberts, Matthew and Wei, Susan and Oldenziel, Alexander Gietelink and Wang, George and Carroll, Liam and Murfet, Daniel},
+  title = {You Are What You Eat: {AI} Alignment Requires Understanding How Data Shapes Structure and Generalisation},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2502.05475},
+  doi = {10.48550/arXiv.2502.05475},
+  arxivid = {2502.05475},
+  abstract = {In this position paper, we argue that understanding the relation between structure in the data distribution and structure in trained models is central to AI alignment. First, we discuss how two neural networks can have equivalent performance on the training set but compute their outputs in essentially different ways and thus generalise differently. For this reason, standard testing and evaluation are insufficient for obtaining assurances of safety for widely deployed generally intelligent systems. We argue that to progress beyond evaluation to a robust mathematical science of AI alignment, we need to develop statistical foundations for an understanding of the relation between structure in the data distribution, internal structure in models, and how these structures underlie generalisation.},
+  note = {
+  CORE ARGUMENT: Two neural networks with identical training performance can compute outputs via fundamentally different internal mechanisms, leading to divergent generalization. Standard evaluation (behavioral testing) is therefore insufficient for safety—we must understand how data structure shapes internal model structure to predict generalization. Authors argue alignment requires mathematical foundations linking data distributions, internal representations, and generalization properties. This positions mechanistic understanding as necessary but not through traditional MI (component-level analysis)—rather through statistical understanding of structure mapping from data to models.
+
+  RELEVANCE: Provides nuanced position on MI's necessity: agrees mechanistic understanding matters for alignment, but reframes what "mechanistic" means. Instead of circuit-level analysis, authors emphasize statistical structure mapping. This challenges both Hendrycks (who dismisses mechanistic understanding as intractable) and traditional MI advocates (who focus on neuron-level interpretation). For the research proposal, this suggests MI may be necessary but in different form—understanding structural relationships rather than individual components. The behavioral testing critique directly addresses alternatives to MI: testing alone cannot ensure safety without understanding generalization mechanisms.
+
+  POSITION: Argues alignment requires understanding data-structure-to-model-structure mapping (mechanistic understanding), but critiques both pure behavioral testing and traditional component-level MI.
+  },
+  keywords = {data-structure-generalization, statistical-foundations, alignment-theory, Medium}
+}
+
+@article{sang2024weak,
+  author = {Sang, Jitao and Wang, Yuhang and Zhang, Jing and Zhu, Yanxu and Kong, Chao and Ye, Junhong and Wei, Shuyu and Xiao, Jinlin},
+  title = {Improving Weak-to-Strong Generalization with Scalable Oversight and Ensemble Learning},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2402.00667},
+  doi = {10.48550/arXiv.2402.00667},
+  arxivid = {2402.00667},
+  abstract = {This paper presents a follow-up study to OpenAI's recent superalignment work on Weak-to-Strong Generalization (W2SG). Superalignment focuses on ensuring that high-level AI systems remain consistent with human values and intentions when dealing with complex, high-risk tasks. The W2SG framework has opened new possibilities for empirical research in this evolving field. Our study simulates two phases of superalignment under the W2SG framework: the development of general superhuman models and the progression towards superintelligence. In the first phase, based on human supervision, the quality of weak supervision is enhanced through a combination of scalable oversight and ensemble learning, reducing the capability gap between weak teachers and strong students. In the second phase, an automatic alignment evaluator is employed as the weak supervisor. By recursively updating this auto aligner, the capabilities of the weak teacher models are synchronously enhanced, achieving weak-to-strong supervision over stronger student models. We also provide an initial validation of the proposed approach for the first phase. Using the SciQ task as example, we explore ensemble learning for weak teacher models through bagging and boosting. Scalable oversight is explored through two auxiliary settings: human-AI interaction and AI-AI debate. Additionally, the paper discusses the impact of improved weak supervision on enhancing weak-to-strong generalization based on in-context learning.},
+  note = {
+  CORE ARGUMENT: Scalable oversight—supervising superhuman AI using weaker supervisors (humans or weaker AI)—can be enhanced through ensemble learning and structured feedback mechanisms (debate, interaction). The weak-to-strong generalization framework shows that strong student models can exceed weak teacher capabilities, suggesting safety doesn't require supervisors to fully understand student internals. Authors demonstrate recursive improvement: weaker models provide oversight, stronger models learn and improve, then improved models become new supervisors. This bypasses interpretability requirements—safety emerges from oversight structure rather than mechanistic understanding.
+
+  RELEVANCE: Presents scalable oversight as alternative to MI-based safety. If weak supervisors (who lack mechanistic understanding of stronger models) can effectively align superhuman systems through debate and structured feedback, then MI is not necessary for safety. The approach relies on behavioral verification and constraint satisfaction rather than internal understanding. For the research proposal, this challenges necessity claims: perhaps alignment can be achieved through external behavioral oversight rather than internal mechanistic analysis. The recursive improvement mechanism suggests safety may scale beyond human comprehension limits without requiring interpretability.
+
+  POSITION: Scalable oversight as MI alternative; demonstrates safety mechanisms that bypass mechanistic understanding requirements.
+  },
+  keywords = {scalable-oversight, weak-to-strong, superalignment, Medium}
+}
+
+@article{kim2024superalignment,
+  author = {Kim, Hyunjin and Yi, Xiaoyuan and Yao, Jing and Lian, Jianxun and Huang, Muhua and Duan, Shitong and Bak, J. and Xie, Xing},
+  title = {The Road to Artificial {SuperIntelligence}: {A} Comprehensive Survey of Superalignment},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2412.16468},
+  doi = {10.48550/arXiv.2412.16468},
+  arxivid = {2412.16468},
+  abstract = {The emergence of large language models (LLMs) has sparked the possibility of about Artificial Superintelligence (ASI), a hypothetical AI system surpassing human intelligence. However, existing alignment paradigms struggle to guide such advanced AI systems. Superalignment, the alignment of AI systems with human values and safety requirements at superhuman levels of capability aims to addresses two primary goals -- scalability in supervision to provide high-quality guidance signals and robust governance to ensure alignment with human values. In this survey, we examine scalable oversight methods and potential solutions for superalignment. Specifically, we explore the concept of ASI, the challenges it poses, and the limitations of current alignment paradigms in addressing the superalignment problem. Then we review scalable oversight methods for superalignment. Finally, we discuss the key challenges and propose pathways for the safe and continual improvement of ASI systems.},
+  note = {
+  CORE ARGUMENT: Superintelligent AI systems (ASI) pose superalignment challenge—aligning systems that exceed human cognitive capabilities. Current alignment paradigms (including interpretability-based approaches) fail because humans cannot understand or evaluate superhuman reasoning. Authors survey scalable oversight methods as solution: debate, recursive reward modeling, iterated amplification—all enabling alignment without requiring human understanding of internal mechanisms. The superalignment problem reveals interpretability's fundamental limit: if AI capabilities exceed human comprehension, mechanistic understanding becomes impossible even in principle.
+
+  RELEVANCE: Demonstrates MI's necessity fails at superhuman capability levels. If ASI internals are incomprehensible to humans, then mechanistic interpretability cannot ground safety assurances. This challenges strong necessity claims in the research proposal—MI may be viable for current systems but structurally limited for future ASI. The survey's emphasis on scalable oversight (debate, amplification) as alternatives suggests safety community is moving beyond interpretability-dependent approaches. For research proposal: perhaps MI is necessary only for current-generation systems, with other mechanisms required as capabilities scale.
+
+  POSITION: Argues current alignment paradigms (including MI) inadequate for ASI; advocates scalable oversight methods that bypass interpretability requirements.
+  },
+  keywords = {superalignment, scalable-oversight-survey, ASI-limitations, Medium}
+}
+
+@article{wang2024alignment,
+  author = {Wang, Xinpeng and Duan, Shitong and Yi, Xiaoyuan and Yao, Jing and Zhou, Shanlin and Wei, Zhihua and Zhang, Peng and Xu, Dongkuan and Sun, Maosong and Xie, Xing},
+  title = {On the Essence and Prospect: {An} Investigation of Alignment Approaches for Big Models},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2403.04204},
+  doi = {10.48550/arXiv.2403.04204},
+  arxivid = {2403.04204},
+  abstract = {Big models have achieved revolutionary breakthroughs in the field of AI, but they also pose potential ethical and societal risks to humans. Addressing such problems, alignment technologies were introduced to make these models conform to human preferences and values. Despite the considerable advancements in the past year, various challenges lie in establishing the optimal alignment strategy, such as data cost and scalable oversight, and how to align remains an open question. In this survey paper, we comprehensively investigate value alignment approaches. We first unpack the historical context of alignment tracing back to the 1920s (where it comes from), then delve into the mathematical essence of alignment (what it is), shedding light on the inherent challenges. Following this foundation, we provide a detailed examination of existing alignment methods, which fall into three categories: RL-based Alignment, SFT-based Alignment, and Inference-Time Alignment, and demonstrate their intrinsic connections, strengths, and limitations, helping readers better understand this research area. In addition, two emerging topics, alignment goal and multimodal alignment, are also discussed as novel frontiers in the field. Looking forward, we discuss potential alignment paradigms and how they could handle remaining challenges, prospecting where future alignment will go.},
+  note = {
+  CORE ARGUMENT: Comprehensive survey of alignment approaches reveals no consensus on optimal strategy. Authors taxonomize methods into RL-based, SFT-based, and inference-time alignment, demonstrating diverse technical approaches with distinct strengths and limitations. Critically, they identify persistent challenges: data cost, scalable oversight, and fundamental uncertainty about what "alignment" means (alignment goal problem). Survey reveals interpretability-based methods as one approach among many, with no clear dominance. The mathematical essence analysis shows alignment involves optimization under uncertainty with contested objectives—suggesting no single method (including MI) will be sufficient.
+
+  RELEVANCE: Positions MI within broader alignment landscape, revealing it as one tool among many rather than necessary foundation. The survey's emphasis on diverse approaches (RL, SFT, inference-time) with complementary strengths suggests multi-method strategies outperform single-method approaches. For the research proposal, this challenges both necessity and sufficiency claims: MI may be valuable but not uniquely necessary (alternatives exist) and likely insufficient (requires combination with other methods). The alignment goal problem particularly challenges interpretability's sufficiency—if we're uncertain what values to align to, mechanistic understanding may not resolve fundamental alignment uncertainty.
+
+  POSITION: Pluralist approach to alignment; views MI as one method among many, likely requiring combination with alternatives. Challenges single-method sufficiency claims.
+  },
+  keywords = {alignment-survey, pluralist-approach, method-comparison, Medium}
+}
+
+@inproceedings{lopez2023nnv,
+  author = {Lopez, Diego Manzanas and Choi, Sung Woo and Tran, Hoang-Dung and Johnson, Taylor T.},
+  title = {{NNV} 2.0: The Neural Network Verification Tool},
+  booktitle = {Lecture Notes in Computer Science},
+  year = {2023},
+  pages = {397--412},
+  publisher = {Springer},
+  doi = {10.1007/978-3-031-37703-7_19},
+  abstract = {This manuscript presents the updated version of the Neural Network Verification (NNV) tool. NNV is a formal verification software tool for deep learning models and cyber-physical systems with neural network components. NNV was first introduced as a verification framework for feedforward and convolutional neural networks, as well as for neural network control systems. Since then, numerous works have made significant improvements in the verification of new deep learning models, as well as tackling some of the scalability issues that may arise when verifying complex models. In this new version of NNV, we introduce verification support for multiple deep learning models, including neural ordinary differential equations, semantic segmentation networks and recurrent neural networks, as well as a collection of reachability methods that aim to reduce the computation cost of reachability analysis of complex neural networks. We have also added direct support for standard input verification formats in the community such as VNNLIB (verification properties), and ONNX (neural networks) formats. We present a collection of experiments in which NNV verifies safety and robustness properties of feedforward, convolutional, semantic segmentation and recurrent neural networks, as well as neural ordinary differential equations and neural network control systems.},
+  note = {
+  CORE ARGUMENT: Formal verification provides mathematical guarantees of neural network safety properties without requiring interpretability. NNV 2.0 tool demonstrates scalable verification across multiple architectures (feedforward, convolutional, recurrent, neural ODEs) using reachability analysis and SMT solvers. Verification checks properties (safety, robustness) by proving they hold for all inputs in a specified domain, bypassing need for mechanistic understanding. The tool's success on complex models suggests formal methods can ensure safety through mathematical proof rather than explanation.
+
+  RELEVANCE: Presents formal verification as alternative to MI-based safety. If safety properties can be mathematically proven without understanding internal mechanisms, then MI is not necessary for safety assurance. Formal verification offers complementary strengths: rigorous guarantees rather than probabilistic confidence, applicable to black-box systems, scales to complex architectures. For the research proposal, this challenges necessity claims—perhaps safety requires provable properties rather than interpretable mechanisms. However, verification faces own limitations (computational cost, property specification challenges), suggesting neither MI nor verification alone is sufficient.
+
+  POSITION: Formal verification as MI alternative for safety assurance; demonstrates mathematical proof without mechanistic understanding.
+  },
+  keywords = {formal-verification, neural-network-verification, alternative-to-MI, Low}
+}
+
+@article{guidotti2023leveraging,
+  author = {Guidotti, Dario and Pandolfo, Laura and Pulina, Luca},
+  title = {Leveraging Satisfiability Modulo Theory Solvers for Verification of Neural Networks in Predictive Maintenance Applications},
+  journal = {Information},
+  year = {2023},
+  volume = {14},
+  number = {7},
+  pages = {397},
+  doi = {10.3390/info14070397},
+  abstract = {Interest in machine learning and neural networks has increased significantly in recent years. However, their applications are limited in safety-critical domains due to the lack of formal guarantees on their reliability and behavior. This paper shows recent advances in satisfiability modulo theory solvers used in the context of the verification of neural networks with piece-wise linear and transcendental activation functions. An experimental analysis is conducted using neural networks trained on a real-world predictive maintenance dataset. This study contributes to the research on enhancing the safety and reliability of neural networks through formal verification, enabling their deployment in safety-critical domains.},
+  note = {
+  CORE ARGUMENT: SMT solvers enable formal verification of neural networks in safety-critical domains (predictive maintenance) without requiring interpretability. Authors demonstrate verification of networks with complex activation functions (piece-wise linear, transcendental), providing mathematical guarantees of reliability. Experimental validation on real-world maintenance data shows formal methods can scale to practical applications. The approach treats networks as mathematical objects amenable to theorem-proving rather than systems requiring human interpretation.
+
+  RELEVANCE: Demonstrates practical deployment of formal verification as MI alternative in safety-critical domain. If predictive maintenance (a domain with significant safety implications—equipment failures can be catastrophic) can rely on verification without interpretability, this undermines MI's necessity claim. The paper shows formal methods provide reliability guarantees sufficient for real-world deployment. However, verification requires carefully specified properties—suggests combination of verification (for known properties) and MI (for discovering unknown safety-relevant properties) may be optimal. Challenges sufficiency but not necessarily necessity.
+
+  POSITION: Formal verification (SMT) as practical alternative to MI in safety-critical domains; demonstrates real-world deployment without interpretability requirements.
+  },
+  keywords = {SMT-verification, predictive-maintenance, practical-alternative, Low}
+}
+
+@article{seth2025bridging,
+  author = {Seth, Pratinav and Sankarapu, Vinay Kumar},
+  title = {Bridging the Gap in {XAI}: Why Reliable Metrics Matter for Explainability and Compliance},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2502.04695},
+  doi = {10.48550/arXiv.2502.04695},
+  arxivid = {2502.04695},
+  abstract = {Reliable explainability is not only a technical goal but also a cornerstone of private AI governance. As AI models enter high-stakes sectors, private actors such as auditors, insurers, certification bodies, and procurement agencies require standardized evaluation metrics to assess trustworthiness. However, current XAI evaluation metrics remain fragmented and prone to manipulation, which undermines accountability and compliance. We argue that standardized metrics can function as governance primitives, embedding auditability and accountability within AI systems for effective private oversight. Building upon prior work in XAI benchmarking, we identify key limitations in ensuring faithfulness, tamper resistance, and regulatory alignment. Furthermore, interpretability can directly support model alignment by providing a verifiable means of ensuring behavioral integrity in General Purpose AI (GPAI) systems. This connection between interpretability and alignment positions XAI metrics as both technical and regulatory instruments that help prevent alignment faking, a growing concern among oversight bodies. We propose a Governance by Metrics paradigm that treats explainability evaluation as a central mechanism of private AI governance. Our framework introduces a hierarchical model linking transparency, tamper resistance, scalability, and legal alignment, extending evaluation from model introspection toward systemic accountability.},
+  note = {
+  CORE ARGUMENT: Current XAI metrics (including MI evaluation methods) are unreliable—fragmented, manipulable, lacking standardization. This undermines interpretability's value for governance and safety. Authors argue that without robust evaluation metrics, we cannot verify whether explanations are faithful or identify when systems game interpretability metrics. They propose "Governance by Metrics" framework linking transparency, tamper-resistance, and regulatory alignment. Critically, they note interpretability can support alignment only if evaluation is verifiable—otherwise systems may exhibit "alignment faking" (appearing aligned via superficial explanations while maintaining misaligned behavior).
+
+  RELEVANCE: Challenges MI's sufficiency by questioning whether we can reliably evaluate interpretability methods. If MI techniques lack robust metrics, we cannot verify that mechanistic explanations are accurate or detect when models game interpretation tools. This creates second-order alignment problem: even if MI is theoretically sufficient, practical sufficiency requires trustworthy evaluation infrastructure. The alignment faking concern directly addresses safety: systems could present interpretable mechanisms while behaving opaquely. For research proposal, this suggests MI's sufficiency depends on solving evaluation problem—mechanistic understanding alone is insufficient without verification.
+
+  POSITION: Critiques XAI evaluation metrics (including MI); argues interpretability's value for safety/alignment depends on reliable, tamper-resistant measurement.
+  },
+  keywords = {XAI-evaluation, metrics-critique, alignment-faking, Low}
+}
