@@ -32,10 +32,10 @@ fi
 # Capture environment state before activation
 ENV_BEFORE=$(export -p | sort)
 
-# Sync environment from lockfile
-# This creates .venv if needed and installs all dependencies from uv.lock
-echo "  Syncing environment from lockfile..." >&2
-uv sync --frozen --quiet
+# Sync environment (creates .venv and uv.lock if needed)
+# Installs all dependencies from pyproject.toml
+echo "  Syncing environment..." >&2
+uv sync --quiet
 
 # Activate the virtual environment
 source .venv/bin/activate
