@@ -1,7 +1,6 @@
 {
   "permissions": {
     "allow": [
-      "LS",
       "Read",
       "Grep",
       "Glob",
@@ -13,7 +12,9 @@
       "Bash(source:*)",
       "Bash(echo:*)",
       "Bash(cat:*)",
-      "Read(//private/tmp/**)"
+      "Read(//private/tmp/**)",
+      "Skill(literature-review)",
+      "Skill(philosophy-research)"
     ]
   },
   "hooks": {
