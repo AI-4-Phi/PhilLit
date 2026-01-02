@@ -58,17 +58,26 @@ source .venv/bin/activate  # macOS/Linux
 
 ### API Keys
 
-The literature search scripts require API keys. Set these environment variables:
+The literature search scripts require API keys. Either set these as shell environment variables manually or the create a `.env` file in the project root:
+
+```bash
+cp .env.example .env
+# Edit .env with your values
+```
+
+The `.env` file should contain:
 
 ```bash
 # Required
-export BRAVE_API_KEY="your-key"      # For SEP/PhilPapers discovery
-export CROSSREF_MAILTO="your@email"  # For CrossRef polite pool
+BRAVE_API_KEY=your-key        # For SEP/PhilPapers discovery
+CROSSREF_MAILTO=your@email    # For CrossRef polite pool
 
 # Recommended (improves rate limits)
-export S2_API_KEY="your-key"         # Semantic Scholar
-export OPENALEX_EMAIL="your@email"   # OpenAlex polite pool
+S2_API_KEY=your-key           # Semantic Scholar
+OPENALEX_EMAIL=your@email     # OpenAlex polite pool
 ```
+
+Variables in `.env` take priority over your shell environment and are automatically loaded when Claude Code starts.
 
 **Get API keys:**
 - Brave Search: https://brave.com/search/api/
