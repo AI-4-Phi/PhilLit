@@ -58,6 +58,8 @@ Reference documentation:
 - **Claude Agent Development Documentation** `https://code.claude.com/docs/en/sub-agents`
 - **Claude Agent SDK on Subagents** `https://platform.claude.com/docs/en/agent-sdk/subagents`
 - **Claude Agents Best Practices** `https://www.anthropic.com/engineering/building-effective-agents`
+- **Claude Code Hooks Reference** `https://code.claude.com/docs/en/hooks`
+- **Claude Code Plugin Reference** `https://code.claude.com/docs/en/plugins-reference`
 - **Claude Skills Documentation** `https://code.claude.com/docs/en/skills`
 - **Claude Code Settings Reference** `https://code.claude.com/docs/en/settings`
 - **Claude MCP Server Use Documentation** `https://code.claude.com/docs/en/mcp`
