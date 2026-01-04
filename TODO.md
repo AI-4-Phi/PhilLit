@@ -2,16 +2,26 @@
 
 Developer notes for things to try, features to implement, and things to test.
 
-Last updated: Jan 1, 2026
+Last updated: Jan 4, 2026
 
 ## Pending
 
+- [ ] Use Stop or SubagentStop hook to concatenate bib files?
+- [ ] Use hook to validate syntax of bib files?
+- [ ] Check that the hooks refers to absolute path to scripts with `$CLAUDE_PROJECT_DIR` variable as in `"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-style.sh"`
 - [ ] Reduce use of conventions.md - simple instructions in agent definition instead (potential for confusion too great)
 - [ ] Remove use of `cat` in last phase of literature-review skill - inconsistent with agent role (should use Read, Write, and Edit tools)
 - [ ] Try domain-literature-researcher with Haiku
 - [ ] Manually review all agents and files - some are very verbose (e.g. ARCHITECTURE.md)
+  - [x] ARCHITECTURE.md
+  - [ ] domain-literature-researcher.md
+  - [ ] literature-review-planner.md
+  - [ ] synthesis-planner.md
+  - [ ] synthesis-writer.md
+  - [ ] literature-review/SKILL.md
+  - [ ] philosophy-research/SKILL.md
+- [ ] Have Claude check all the python scripts in philosophy-research/scripts
 - [ ] Consider reintegrating editor and novelty assessor agents
-- [ ] Remove task-progress.md updating - orchestrator now uses improved Claude-internal tool, tends to forget to update task-progress.md; earlier conversations can be resumed with /resume
 - [ ] Agent idea: based on .bib file, download PDFs of sources in final report, add path to PDFs in bib files (check first: does this allow for Zotero import?)
 
 ## Done
@@ -43,6 +53,7 @@ Last updated: Jan 1, 2026
   - https://claude-plugins.dev/skills/@K-Dense-AI/claude-scientific-skills/citation-management
   - https://github.com/cadrianmae/claude-marketplace/tree/main/plugins/pandoc
 - [ ] When done: convert literature-review-final.md to DOCX
+- [ ] Remove task-progress.md updating - orchestrator now uses improved Claude-internal tool, tends to forget to update task-progress.md; earlier conversations can be resumed with /resume
 
 
 - [ ] Check Anthropic docs for agent refactoring - some agents seem extensive (harder to steer, context expensive); could some be skills?
