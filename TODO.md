@@ -6,6 +6,11 @@ Last updated: Jan 4, 2026
 
 ## Pending
 
+- [ ] Some reviews don't mention any literature. Synthesize maybe but not specific callouts.
+- [ ] Do final review assembly with a hook and script? Sometimes it takes very long for Claude to do the final step
+- [ ] Unexpected behavior Writing Phase: `All 9 synthesis-writer agents completed. The agents drafted sections but couldn't write files due to permission restrictions. Now I'll create the sections directory and write all files, then assemble the final review.`
+- [ ] Need a hook for auto compacting. What can we do to save progress when we run out of context?
+- [ ] How to stop agents from going rogue (e.g. if lit review agent decides to take over whole review?)
 - [ ] Use Stop or SubagentStop hook to concatenate bib files?
 - [ ] Use hook to validate syntax of bib files?
 - [ ] Check that the hooks refers to absolute path to scripts with `$CLAUDE_PROJECT_DIR` variable as in `"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-style.sh"`
