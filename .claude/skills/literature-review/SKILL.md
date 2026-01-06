@@ -239,9 +239,20 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    Then use **Glob** to find all `synthesis-section-*.md` files (sorted by name). For each file, use the **Read** tool to get its content. Concatenate all content with two blank lines between sections, then use **Edit** to append to `literature-review-final.md`.
 
-2. Aggregate all domain BibTeX files into single file:
+2. Aggregate and deduplicate all domain BibTeX files:
 
-   Use **Glob** to find all `literature-domain-*.bib` files. For each file, use the **Read** tool to get its content. Concatenate all content with a blank line between files, then use **Write** to create `literature-all.bib`.
+   Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-all.bib`:
+
+   ```bash
+   python .claude/skills/literature-review/dedupe_bib.py \
+     "reviews/[project-name]/literature-all.bib" \
+     reviews/[project-name]/literature-domain-*.bib
+   ```
+
+   The script will:
+   - Keep the first occurrence of each citation key
+   - Upgrade importance level if a later domain assigned higher importance
+   - Log which duplicates were removed to console
 
 3. Clean up intermediate files:
    ```bash

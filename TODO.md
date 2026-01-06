@@ -6,14 +6,16 @@ Last updated: Jan 6, 2026
 
 ## Pending
 
-- [ ] Reconcile duplicate entries across different domain .bib files. Combined final .bib file often has duplicate entries. Not necessarily with identical keys.
+- [ ] Agent idea: based on .bib file, download PDFs of sources in final report, add path to PDFs in bib files (check first: does this allow for Zotero import?)
 - [ ] Check that the hooks refers to absolute path to scripts with `$CLAUDE_PROJECT_DIR` variable as in `"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-style.sh"`
+- [ ] Cleanup: can move `test_files/` somewhere into `tests/`?
 - [ ] Have Claude check all the python scripts in philosophy-research/scripts
 - [ ] Consider reintegrating editor and novelty assessor agents
-- [ ] Agent idea: based on .bib file, download PDFs of sources in final report, add path to PDFs in bib files (check first: does this allow for Zotero import?)
+
 
 ## Done
 
+- [x] Reconcile duplicate entries across different domain .bib files. Combined final .bib file often has duplicate entries. Not necessarily with identical keys.
 - [x] Reduce use of conventions.md - simple instructions in agent definition instead (370 → 121 lines)
 - [x] Consider domain-literature-researcher with Haiku ––– DONE. Decided against it. Stay with Sonnet. Not worth the risk.
 - [x] Add instruction to stop agents from going rogue (e.g. if lit review agent decides to take over whole review?)
