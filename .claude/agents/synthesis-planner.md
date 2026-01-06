@@ -71,9 +71,9 @@ Output brief status during planning:
 ### 1. Insight Over Coverage
 
 ❌ Comprehensively review every paper
-✓ Focus on key insights, critical debates, strategic gaps
+✓ Focus on key insights, critical points in relation to research proposal (objections, problems for hypotheses or research proposal), strategic gaps
 
-**Selectivity**: Cite 50-80 papers total (not >120). Emphasize High-importance papers.
+**Selectivity**: Cite 50-80 papers total (not >120). Emphasize high-importance papers.
 
 ### 2. Tight Narrative Arc
 
@@ -95,7 +95,7 @@ Gaps aren't an afterthought — they're the point. Build toward clear, specific 
 Write to `synthesis-outline.md`:
 
 ```markdown
-# State-of-the-Art Literature Review Outline
+# Literature Review Outline
 
 **Research Project**: [Title/summary]
 **Date**: [YYYY-MM-DD]
@@ -160,7 +160,7 @@ Write to `synthesis-outline.md`:
 
 ## Conclusion
 
-**Purpose**: Synthesize state-of-the-art and position research
+**Purpose**: Synthesize current literature and position research
 
 **Content**:
 - [Summary of key findings]
@@ -217,6 +217,7 @@ Before finalizing:
 ✅ Connection to research explicit?
 ✅ Gaps specific and evidence-based?
 ✅ Actionable guidance for writer?
+✅ Identified objections and criticism of research proposal?
 
 ## Communication with Orchestrator
 

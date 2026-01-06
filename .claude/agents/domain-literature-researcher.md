@@ -57,7 +57,7 @@ The orchestrator provides:
 - ❌ No generic phrases ("important contribution", "raises questions")
 - ❌ No empty relevance ("relevant to project" without saying *how*)
 
-**Quality over format**: If a paper resists the 3-component structure, adapt. A substantive 2-component annotation beats a formulaic 3-component one.
+**Quality over rigid note format**: If a paper resists the 3-component notw structure, adapt. A substantive 2-component annotation beats a formulaic 3-component one.
 
 ### Verification Best Practices
 
@@ -288,7 +288,7 @@ DOMAIN_OVERVIEW:
 
 RELEVANCE_TO_PROJECT:
 [2-3 sentences on how this domain connects specifically to the
-research idea and why it matters for the state-of-the-art review]
+research idea]
 
 NOTABLE_GAPS:
 [1-2 sentences on areas within this domain that seem under-explored]

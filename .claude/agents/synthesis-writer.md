@@ -183,7 +183,7 @@ Ready for next section.
 
 ### Full Draft Mode
 ```
-State-of-the-art review draft complete.
+Literature review draft complete.
 
 Statistics:
 - Word count: [X words]

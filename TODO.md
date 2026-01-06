@@ -6,30 +6,31 @@ Last updated: Jan 6, 2026
 
 ## Pending
 
+- [ ] Reconcile duplicate entries across different domain .bib files. Combined final .bib file often has duplicate entries. Not necessarily with identical keys.
 - [ ] Do final review assembly with a hook and script? Sometimes it takes very long for Claude to do the final step
 - [ ] Unexpected behavior Writing Phase: `All 9 synthesis-writer agents completed. The agents drafted sections but couldn't write files due to permission restrictions. Now I'll create the sections directory and write all files, then assemble the final review.`
 - [ ] Need a hook for auto compacting. What can we do to save progress when we run out of context?
 - [ ] How to stop agents from going rogue (e.g. if lit review agent decides to take over whole review?)
 - [ ] Use Stop or SubagentStop hook to concatenate bib files?
-- [ ] Use hook to validate syntax of bib files?
+- [ ] Use SubagentStop hook to validate bib files written by the `domain-literature-researcher` agent. File encoding should be UTF-8, BibTeX syntax should be valid, no LaTeX commands for special characters should be used. See `conventions.md`
 - [ ] Check that the hooks refers to absolute path to scripts with `$CLAUDE_PROJECT_DIR` variable as in `"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-style.sh"`
 - [ ] Reduce use of conventions.md - simple instructions in agent definition instead (potential for confusion too great)
 - [ ] Remove use of `cat` in last phase of literature-review skill - inconsistent with agent role (should use Read, Write, and Edit tools)
 - [ ] Try domain-literature-researcher with Haiku
-- [ ] Manually review all agents and files - some are very verbose (e.g. ARCHITECTURE.md)
-  - [x] ARCHITECTURE.md
-  - [ ] domain-literature-researcher.md
-  - [ ] literature-review-planner.md
-  - [ ] synthesis-planner.md
-  - [ ] synthesis-writer.md
-  - [ ] literature-review/SKILL.md
-  - [ ] philosophy-research/SKILL.md
 - [ ] Have Claude check all the python scripts in philosophy-research/scripts
 - [ ] Consider reintegrating editor and novelty assessor agents
 - [ ] Agent idea: based on .bib file, download PDFs of sources in final report, add path to PDFs in bib files (check first: does this allow for Zotero import?)
 
 ## Done
 
+- [x] Manually review all agents and files - some are very verbose (e.g. ARCHITECTURE.md)
+  - [x] ARCHITECTURE.md
+  - [x] domain-literature-researcher.md
+  - [x] literature-review-planner.md
+  - [x] synthesis-planner.md
+  - [x] synthesis-writer.md
+  - [x] literature-review/SKILL.md
+  - [x] philosophy-research/SKILL.md
 - [x] Some reviews don't mention any literature. Synthesize maybe but not specific callouts.
 - [x] Fix resumability via [resumable subagents](https://code.claude.com/docs/en/sub-agents#resumable-subagents) - not needed, current solution more robust
 - [x] Work in reviews/ subfolder by default - added to CLAUDE.md
