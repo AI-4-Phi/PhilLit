@@ -6,8 +6,6 @@ Last updated: Jan 6, 2026
 
 ## Pending
 
-- [ ] Agent idea: based on .bib file, download PDFs of sources in final report, add path to PDFs in bib files (check first: does this allow for Zotero import?)
-- [ ] Check that the hooks refers to absolute path to scripts with `$CLAUDE_PROJECT_DIR` variable as in `"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-style.sh"`
 - [ ] Cleanup: can move `test_files/` somewhere into `tests/`?
 - [ ] Have Claude check all the python scripts in philosophy-research/scripts
 - [ ] Consider reintegrating editor and novelty assessor agents
@@ -15,6 +13,7 @@ Last updated: Jan 6, 2026
 
 ## Done
 
+- [x] Check that the hooks refers to absolute path to scripts with `$CLAUDE_PROJECT_DIR` variable as in `"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-style.sh"`
 - [x] Reconcile duplicate entries across different domain .bib files. Combined final .bib file often has duplicate entries. Not necessarily with identical keys.
 - [x] Reduce use of conventions.md - simple instructions in agent definition instead (370 → 121 lines)
 - [x] Consider domain-literature-researcher with Haiku ––– DONE. Decided against it. Stay with Sonnet. Not worth the risk.
@@ -52,7 +51,7 @@ Last updated: Jan 6, 2026
 
 
 ## Deferred
-
+- [ ] Agent idea: based on .bib file, download PDFs of sources in final report, add path to PDFs in bib files (check first: does this allow for Zotero import?) (NO NEED: Zotero has this function: "Find Full Text".)
 - [ ] Need a hook for auto compacting. What can we do to save progress when we run out of context? (Check first if this is really needed. We already have a resume logic)
 - [ ] Do final review assembly with a hook and script? Sometimes it takes very long for Claude to do the final step (note: can't do, there is no Stop hook for skills)
 - [ ] Use Stop or SubagentStop hook to concatenate bib files? (Same reason for why can't do as above: no Stop hook for skills)
