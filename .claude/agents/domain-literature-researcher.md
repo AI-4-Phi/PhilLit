@@ -48,7 +48,7 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into Zotero, with r
 
 ### 2. Annotation Quality — CRITICAL
 
-**Every BibTeX entry MUST include a substantive note field.** See `../docs/conventions.md` "Annotation Quality" section for detailed standards, exemplars, and anti-patterns.
+**Every BibTeX entry MUST include a substantive note field.**
 
 **Structure**: CORE ARGUMENT, RELEVANCE, POSITION — but prioritize quality over rigid format.
 
@@ -339,7 +339,7 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 
 ### Relevance
 - Every paper should connect to the research project
-- **Note field must be substantive** — see `../docs/conventions.md` for quality standards
+- **Note field must be substantive** (see section 2 above)
 - Use importance keywords honestly (not everything is "High")
 
 ### BibTeX Validity
@@ -349,7 +349,7 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 
 ## Before Submitting — Quality Checklist
 
-✅ **Annotation Quality** (see `../docs/conventions.md`):
+✅ **Annotation Quality**:
 - [ ] Every entry has a substantive note field
 - [ ] Notes explain what the paper *actually argues* (not generic)
 - [ ] Notes connect *specifically* to the research project
