@@ -2,11 +2,10 @@
 
 Developer notes for things to try, features to implement, and things to test.
 
-Last updated: Jan 4, 2026
+Last updated: Jan 6, 2026
 
 ## Pending
 
-- [ ] Some reviews don't mention any literature. Synthesize maybe but not specific callouts.
 - [ ] Do final review assembly with a hook and script? Sometimes it takes very long for Claude to do the final step
 - [ ] Unexpected behavior Writing Phase: `All 9 synthesis-writer agents completed. The agents drafted sections but couldn't write files due to permission restrictions. Now I'll create the sections directory and write all files, then assemble the final review.`
 - [ ] Need a hook for auto compacting. What can we do to save progress when we run out of context?
@@ -31,6 +30,7 @@ Last updated: Jan 4, 2026
 
 ## Done
 
+- [x] Some reviews don't mention any literature. Synthesize maybe but not specific callouts.
 - [x] Fix resumability via [resumable subagents](https://code.claude.com/docs/en/sub-agents#resumable-subagents) - not needed, current solution more robust
 - [x] Work in reviews/ subfolder by default - added to CLAUDE.md
 - [x] Replace WebSearch (high usage costs) with Skill - done: `.claude/skills/philosophy-research/`
