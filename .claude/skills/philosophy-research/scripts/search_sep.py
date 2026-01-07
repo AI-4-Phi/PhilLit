@@ -10,169 +10,51 @@ Exit Codes: 0=success, 1=not found, 2=config error, 3=API error
 """
 
 import argparse
-import json
 import os
-import re
 import sys
-from typing import Optional
 
-import requests
+try:
+    from .output import (
+        output_success as _output_success,
+        output_partial as _output_partial,
+        output_error as _output_error,
+        log_progress as _log_progress,
+    )
+    from .brave_search import brave_site_search, SEP_CONFIG
+    from .rate_limiter import ExponentialBackoff, get_limiter
+except ImportError:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from output import (
+        output_success as _output_success,
+        output_partial as _output_partial,
+        output_error as _output_error,
+        log_progress as _log_progress,
+    )
+    from brave_search import brave_site_search, SEP_CONFIG
+    from rate_limiter import ExponentialBackoff, get_limiter
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from rate_limiter import ExponentialBackoff, get_limiter
-
-BRAVE_URL = "https://api.search.brave.com/res/v1/web/search"
+SOURCE = "sep_via_brave"
 
 
+# Local wrappers to maintain backward-compatible function signatures
 def log_progress(message: str) -> None:
     """Emit progress to stderr (visible to user, doesn't break JSON output)."""
-    print(f"[search_sep.py] {message}", file=sys.stderr, flush=True)
+    _log_progress("search_sep.py", message)
 
 
 def output_success(query: str, results: list) -> None:
-    print(json.dumps({
-        "status": "success", "source": "sep_via_brave", "query": query,
-        "results": results, "count": len(results), "errors": []
-    }, indent=2))
-    sys.exit(0)
+    """Output successful search results."""
+    _output_success(SOURCE, query, results)
 
 
 def output_partial(query: str, results: list, errors: list, warning: str) -> None:
-    print(json.dumps({
-        "status": "partial", "source": "sep_via_brave", "query": query,
-        "results": results, "count": len(results), "errors": errors, "warning": warning
-    }, indent=2))
-    sys.exit(0)
+    """Output partial results with errors."""
+    _output_partial(SOURCE, query, results, errors, warning)
 
 
 def output_error(query: str, error_type: str, message: str, exit_code: int = 2) -> None:
-    print(json.dumps({
-        "status": "error", "source": "sep_via_brave", "query": query,
-        "results": [], "count": 0,
-        "errors": [{"type": error_type, "message": message, "recoverable": error_type == "rate_limit"}]
-    }, indent=2))
-    sys.exit(exit_code)
-
-
-def extract_entry_name(url: str) -> Optional[str]:
-    """Extract SEP entry name from URL."""
-    match = re.search(r"plato\.stanford\.edu/entries/([^/]+)/?", url)
-    return match.group(1) if match else None
-
-
-def format_result(item: dict) -> dict:
-    url = item.get("url", "")
-    entry_name = extract_entry_name(url)
-
-    result = {
-        "title": item.get("title", "").replace(" - Stanford Encyclopedia of Philosophy", "").strip(),
-        "url": url,
-        "entry_name": entry_name,
-        "snippet": item.get("description", ""),
-        "page_age": item.get("page_age"),
-    }
-
-    # Extract author if available
-    article = item.get("article", {})
-    if article.get("author"):
-        result["author"] = article["author"]
-
-    # Extra snippets if available
-    if item.get("extra_snippets"):
-        result["extra_snippets"] = item["extra_snippets"]
-
-    return result
-
-
-def search_sep(
-    query: str,
-    limit: int,
-    api_key: str,
-    all_pages: bool,
-    limiter,
-    backoff: ExponentialBackoff,
-    debug: bool = False
-) -> tuple[list[dict], list[dict]]:
-    """Search SEP via Brave API."""
-    log_progress(f"Connecting to Brave API for SEP search...")
-    log_progress(f"Searching SEP: '{query}', limit={limit}")
-
-    params = {
-        "q": f"site:plato.stanford.edu {query}",
-        "count": 20,
-        "text_decorations": "false",
-        "result_filter": "web",
-        "extra_snippets": "true",
-    }
-    headers = {"X-Subscription-Token": api_key}
-
-    all_results = []
-    errors = []
-    max_offset = 9 if all_pages else 0  # Brave max offset is 9
-
-    for offset in range(0, max_offset + 1):
-        if len(all_results) >= limit:
-            break
-
-        params["offset"] = offset
-
-        for attempt in range(backoff.max_attempts):
-            limiter.wait()
-
-            if debug:
-                print(f"DEBUG: GET {BRAVE_URL} offset={offset}", file=sys.stderr)
-
-            try:
-                response = requests.get(BRAVE_URL, params=params, headers=headers, timeout=30)
-                limiter.record()
-
-                if response.status_code == 200:
-                    data = response.json()
-                    web_results = data.get("web", {}).get("results", [])
-
-                    if not web_results:
-                        log_progress(f"Search complete: {len(all_results)} entries found")
-                        return all_results, errors
-
-                    for item in web_results:
-                        # Only include actual SEP entries
-                        if "/entries/" in item.get("url", ""):
-                            if len(all_results) < limit:
-                                all_results.append(format_result(item))
-
-                    log_progress(f"Retrieved {len(all_results)} entries...")
-                    break
-
-                elif response.status_code == 429:
-                    log_progress(f"Rate limited, backing off (attempt {attempt+1}/{backoff.max_attempts})...")
-                    if not backoff.wait(attempt):
-                        log_progress(f"Max retries reached, returning {len(all_results)} partial results")
-                        errors.append({"type": "rate_limit", "message": "Rate limit exceeded", "recoverable": True})
-                        return all_results, errors
-                    log_progress(f"Retrying after {backoff.last_delay:.1f}s backoff...")
-                    continue
-
-                elif response.status_code == 401:
-                    raise ValueError("Invalid BRAVE_API_KEY")
-
-                else:
-                    raise RuntimeError(f"Brave API error: {response.status_code}")
-
-            except requests.exceptions.RequestException as e:
-                log_progress(f"Network error: {str(e)[:100]}, retrying (attempt {attempt+1}/{backoff.max_attempts})...")
-                if attempt < backoff.max_attempts - 1:
-                    backoff.wait(attempt)
-                    log_progress(f"Retrying after {backoff.last_delay:.1f}s backoff...")
-                    continue
-                log_progress(f"Max retries reached after network errors, returning {len(all_results)} partial results")
-                errors.append({"type": "network_error", "message": str(e), "recoverable": True})
-                return all_results, errors
-
-        if not all_pages:
-            break
-
-    log_progress(f"Search complete: {len(all_results)} entries found")
-    return all_results, errors
+    """Output error result."""
+    _output_error(SOURCE, query, error_type, message, exit_code)
 
 
 def main():
@@ -192,9 +74,16 @@ def main():
     backoff = ExponentialBackoff(max_attempts=5)
 
     try:
-        results, errors = search_sep(
-            args.query, args.limit, args.api_key,
-            args.all_pages, limiter, backoff, args.debug
+        results, errors = brave_site_search(
+            query=args.query,
+            limit=args.limit,
+            api_key=args.api_key,
+            config=SEP_CONFIG,
+            limiter=limiter,
+            backoff=backoff,
+            all_pages=args.all_pages,
+            log_fn=log_progress,
+            debug=args.debug,
         )
 
         if not results and not errors:
