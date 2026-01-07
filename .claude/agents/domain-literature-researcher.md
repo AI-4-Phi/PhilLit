@@ -215,27 +215,22 @@ WebSearch: "[topic] [author/org] blog/report/whitepaper"
 
 ### How to Parallelize Searches
 
-Use bash background processes (`&`) and `wait` to run searches concurrently.
-
-**IMPORTANT**:
-- Write temporary JSON files to `/tmp` with descriptive names
-- Do NOT use `2>&1` — keep stderr separate so progress messages remain visible
+Use bash background processes (`&`) and `wait` to run searches concurrently:
 
 ```bash
 # Stage 3: Run all API searches in parallel
-# stdout → JSON file in /tmp, stderr → visible progress messages
-python .claude/skills/philosophy-research/scripts/s2_search.py "free will compatibilism" --field Philosophy --year 2015-2025 --limit 30 > /tmp/s2_freewill.json &
-python .claude/skills/philosophy-research/scripts/search_openalex.py "free will compatibilism" --year 2015-2025 --limit 30 > /tmp/oa_freewill.json &
-python .claude/skills/philosophy-research/scripts/search_arxiv.py "moral responsibility determinism" --category cs.AI --limit 20 > /tmp/arxiv_moral.json &
+python .claude/skills/philosophy-research/scripts/s2_search.py "free will compatibilism" --field Philosophy --year 2015-2025 --limit 30 > s2_results.json 2>&1 &
+python .claude/skills/philosophy-research/scripts/search_openalex.py "free will compatibilism" --year 2015-2025 --limit 30 > openalex_results.json 2>&1 &
+python .claude/skills/philosophy-research/scripts/search_arxiv.py "moral responsibility determinism" --category cs.AI --limit 20 > arxiv_results.json 2>&1 &
 
 # Wait for all searches to complete
 wait
 ```
 
 Use the **Read** tool to examine each result file:
-- Read `/tmp/s2_freewill.json`
-- Read `/tmp/oa_freewill.json`
-- Read `/tmp/arxiv_moral.json`
+- Read `s2_results.json`
+- Read `openalex_results.json`
+- Read `arxiv_results.json`
 
 ### Best Practices for Parallel Execution
 
@@ -252,22 +247,25 @@ Use the **Read** tool to examine each result file:
 
 **Error handling**: Each search runs independently with its own retry logic (exponential backoff). If one fails, others continue. Check each output file for errors.
 
-**Progress monitoring**: Progress messages go to stderr and remain visible. JSON results go to stdout (redirected to `/tmp` files).
+**Progress monitoring**: Progress messages go to stderr, allowing you to track each search:
+```bash
+# View progress in real-time
+tail -f s2_results.json openalex_results.json arxiv_results.json
+```
 
 **Example: Complete parallel Stage 3**:
 ```bash
 # Launch all Stage 3 searches concurrently
-# stdout → JSON file in /tmp, stderr → visible progress
-python .claude/skills/philosophy-research/scripts/s2_search.py "mechanistic interpretability" --field Philosophy --year 2020-2025 --limit 40 > /tmp/s2_interp.json &
-python .claude/skills/philosophy-research/scripts/search_openalex.py "mechanistic interpretability" --year 2020-2025 --min-citations 5 --limit 40 > /tmp/oa_interp.json &
-python .claude/skills/philosophy-research/scripts/search_arxiv.py "interpretability neural networks" --category cs.AI --recent --limit 30 > /tmp/arxiv_interp.json &
-python .claude/skills/philosophy-research/scripts/search_arxiv.py "explainable AI" --category cs.AI --year 2023 --limit 20 > /tmp/arxiv_xai.json &
+python .claude/skills/philosophy-research/scripts/s2_search.py "mechanistic interpretability" --field Philosophy --year 2020-2025 --limit 40 > stage3_s2.json 2>&1 &
+python .claude/skills/philosophy-research/scripts/search_openalex.py "mechanistic interpretability" --year 2020-2025 --min-citations 5 --limit 40 > stage3_openalex.json 2>&1 &
+python .claude/skills/philosophy-research/scripts/search_arxiv.py "interpretability neural networks" --category cs.AI --recent --limit 30 > stage3_arxiv.json 2>&1 &
+python .claude/skills/philosophy-research/scripts/search_arxiv.py "explainable AI" --category cs.AI --year 2023 --limit 20 > stage3_arxiv2.json 2>&1 &
 
 # Wait for completion
 wait
 ```
 
-Use the **Read** tool to examine each `/tmp/*.json` result file.
+Use **Glob** to find all `stage3_*.json` files, then use the **Read** tool to examine each result file.
 
 ## BibTeX File Structure
 
