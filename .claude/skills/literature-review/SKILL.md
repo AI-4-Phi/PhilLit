@@ -170,7 +170,8 @@ Never advance to a next step in this phase before completing the current step.
    - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to: reviews/[project-name]/literature-domain-1.bib"
    - description: "Domain [N]: [domain name]"
    - **CRITICAL**: Include ALL Task tool calls in a single message to enable parallel execution
-3. Wait for all N agents to finish using TaskOutput. Expected outputs: `literature-domain-1.bib` through `literature-domain-N.bib`. Note any "Source issues:" reported. **Update task-progress.md**.
+3. Wait for all N agents to finish using TaskOutput (block until complete). Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
+4. **Collect source issues**: Note any "Source issues:" reported by domain researchers for the final summary
 
 Never advance to Phase 4 before all domain researchers have completed.
 
@@ -201,7 +202,7 @@ Never advance to a next step in this phase before completing the current step.
    - Example prompt for section 1: "Working directory: reviews/[project-name]/. Section: 1. Title: [title]. Outline: synthesis-outline.md. Relevant BibTeX files: literature-domain-1.bib, literature-domain-3.bib. Write output to: reviews/[project-name]/synthesis-section-1.md"
    - description: "Write section [N]: [section name]"
    - **CRITICAL**: Include ALL Task tool calls in a single message to enable parallel execution
-4. Wait for all N agents to finish using TaskOutput. Expected outputs: `synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md**.
+4. Wait for all N agents to finish using TaskOutput (block until complete). Expected outputs: `reviews/[project-name]/synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md after all sections complete**
 
 Never advance to Phase 6 before all synthesis writers have completed.
 
@@ -326,7 +327,7 @@ Output status updates directly as text (visible to user in real-time):
 | **Phase transition** | `Phase 4/6: Outlining synthesis review across domains` |
 | **Phase transition** | `Phase 5/6: Writing [N] review sections (parallel)` |
 | **Agent launch (parallel)** | `Launching [N] domain researchers in parallel...` |
-| **Agent completion** | `Domain [N] complete: literature-domain-[N].bib ([sources] sources)` |
+| **Agent completion** | `Domain [N] complete: literature-domain-[N].bib ([number of sources included] sources)` |
 | **Phase completion** | `Phase [N] complete: [summary]` |
 | **Assembly** | `Assembling final review with YAML frontmatter...` |
 | **BibTeX aggregation** | `Aggregating BibTeX files -> literature-all.bib` |
