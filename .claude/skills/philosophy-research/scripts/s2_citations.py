@@ -33,108 +33,71 @@ Exit Codes:
 """
 
 import argparse
-import json
 import os
 import sys
-from typing import Any, Optional
+from typing import Optional
 
 import requests
 
-# Add parent directory to path for rate_limiter import
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from .output import (
+        output_success as _output_success,
+        output_partial as _output_partial,
+        output_error as _output_error,
+        log_progress as _log_progress,
+    )
+    from .s2_formatters import (
+        format_paper as _format_paper,
+        format_citation,
+        S2_BASE_URL,
+        S2_PAPER_FIELDS,
+        S2_CITATION_FIELDS,
+    )
+    from .rate_limiter import ExponentialBackoff, get_limiter
+except ImportError:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from output import (
+        output_success as _output_success,
+        output_partial as _output_partial,
+        output_error as _output_error,
+        log_progress as _log_progress,
+    )
+    from s2_formatters import (
+        format_paper as _format_paper,
+        format_citation,
+        S2_BASE_URL,
+        S2_PAPER_FIELDS,
+        S2_CITATION_FIELDS,
+    )
+    from rate_limiter import ExponentialBackoff, get_limiter
 
-from rate_limiter import ExponentialBackoff, get_limiter
+SOURCE = "semantic_scholar"
 
 
+# Local wrappers to maintain backward-compatible function signatures
 def log_progress(message: str) -> None:
     """Log progress message to stderr."""
-    print(f"[s2_citations.py] {message}", file=sys.stderr)
+    _log_progress("s2_citations.py", message)
 
 
-# Semantic Scholar API configuration
-S2_BASE_URL = "https://api.semanticscholar.org/graph/v1"
-S2_PAPER_FIELDS = "paperId,title,authors,year,abstract,citationCount,externalIds,url,venue"
-S2_CITATION_FIELDS = "paperId,title,authors,year,citationCount,externalIds,url,venue,contexts,intents,isInfluential"
+def format_paper(paper: dict) -> dict:
+    """Format S2 paper response (without extended fields for citations)."""
+    return _format_paper(paper, include_extended=False)
 
 
 def output_success(paper_id: str, result: dict) -> None:
     """Output successful citation traversal results."""
-    print(json.dumps({
-        "status": "success",
-        "source": "semantic_scholar",
-        "query": paper_id,
-        "results": [result],
-        "count": 1,
-        "errors": []
-    }, indent=2))
-    sys.exit(0)
+    _output_success(SOURCE, paper_id, [result])
 
 
 def output_partial(paper_id: str, result: dict, errors: list, warning: str) -> None:
     """Output partial results with errors."""
-    print(json.dumps({
-        "status": "partial",
-        "source": "semantic_scholar",
-        "query": paper_id,
-        "results": [result],
-        "count": 1,
-        "errors": errors,
-        "warning": warning
-    }, indent=2))
-    sys.exit(0)
+    _output_partial(SOURCE, paper_id, [result], errors, warning)
 
 
 def output_error(paper_id: str, error_type: str, message: str, exit_code: int = 2) -> None:
     """Output error result."""
-    print(json.dumps({
-        "status": "error",
-        "source": "semantic_scholar",
-        "query": paper_id,
-        "results": [],
-        "count": 0,
-        "errors": [{"type": error_type, "message": message, "recoverable": error_type == "rate_limit"}]
-    }, indent=2))
-    sys.exit(exit_code)
-
-
-def format_paper(paper: dict) -> dict:
-    """Format S2 paper response into standard output format."""
-    external_ids = paper.get("externalIds", {}) or {}
-    doi = external_ids.get("DOI")
-    arxiv_id = external_ids.get("ArXiv")
-
-    authors = []
-    for author in paper.get("authors", []) or []:
-        authors.append({
-            "name": author.get("name", ""),
-            "authorId": author.get("authorId")
-        })
-
-    return {
-        "paperId": paper.get("paperId"),
-        "title": paper.get("title"),
-        "authors": authors,
-        "year": paper.get("year"),
-        "citationCount": paper.get("citationCount"),
-        "doi": doi,
-        "arxivId": arxiv_id,
-        "url": paper.get("url"),
-        "venue": paper.get("venue"),
-    }
-
-
-def format_citation(citation: dict, direction: str) -> dict:
-    """Format a citation/reference entry."""
-    # The paper is nested under 'citingPaper' or 'citedPaper'
-    paper_key = "citingPaper" if direction == "citations" else "citedPaper"
-    paper = citation.get(paper_key, {})
-
-    result = format_paper(paper)
-    result["isInfluential"] = citation.get("isInfluential", False)
-    result["contexts"] = citation.get("contexts", [])
-    result["intents"] = citation.get("intents", [])
-
-    return result
+    _output_error(SOURCE, paper_id, error_type, message, exit_code)
 
 
 def get_paper_details(

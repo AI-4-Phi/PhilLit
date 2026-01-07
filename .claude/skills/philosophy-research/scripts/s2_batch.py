@@ -31,105 +31,57 @@ Exit Codes:
 """
 
 import argparse
-import json
 import os
 import sys
 from typing import Optional
 
 import requests
 
-# Add parent directory to path for rate_limiter import
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from .output import (
+        output_success as _output_success,
+        output_partial as _output_partial,
+        output_error as _output_error,
+        log_progress as _log_progress,
+    )
+    from .s2_formatters import format_paper, S2_BASE_URL, S2_FIELDS
+    from .rate_limiter import ExponentialBackoff, get_limiter
+except ImportError:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from output import (
+        output_success as _output_success,
+        output_partial as _output_partial,
+        output_error as _output_error,
+        log_progress as _log_progress,
+    )
+    from s2_formatters import format_paper, S2_BASE_URL, S2_FIELDS
+    from rate_limiter import ExponentialBackoff, get_limiter
 
-from rate_limiter import ExponentialBackoff, get_limiter
+SOURCE = "semantic_scholar"
+S2_DEFAULT_FIELDS = S2_FIELDS  # Alias for backward compatibility
 
 
+# Local wrappers to maintain backward-compatible function signatures
 def log_progress(message: str) -> None:
     """Log progress message to stderr."""
-    print(f"[s2_batch.py] {message}", file=sys.stderr)
-
-
-# Semantic Scholar API configuration
-S2_BASE_URL = "https://api.semanticscholar.org/graph/v1"
-S2_DEFAULT_FIELDS = "paperId,title,authors,year,abstract,citationCount,externalIds,url,venue,publicationTypes,journal"
+    _log_progress("s2_batch.py", message)
 
 
 def output_success(query: str, results: list, not_found: list = None) -> None:
     """Output successful batch results."""
-    output = {
-        "status": "success",
-        "source": "semantic_scholar",
-        "query": query,
-        "results": results,
-        "count": len(results),
-        "errors": []
-    }
-    if not_found:
-        output["not_found"] = not_found
-    print(json.dumps(output, indent=2))
-    sys.exit(0)
+    extra = {"not_found": not_found} if not_found else {}
+    _output_success(SOURCE, query, results, **extra)
 
 
 def output_partial(query: str, results: list, errors: list, warning: str, not_found: list = None) -> None:
     """Output partial results with errors."""
-    output = {
-        "status": "partial",
-        "source": "semantic_scholar",
-        "query": query,
-        "results": results,
-        "count": len(results),
-        "errors": errors,
-        "warning": warning
-    }
-    if not_found:
-        output["not_found"] = not_found
-    print(json.dumps(output, indent=2))
-    sys.exit(0)
+    extra = {"not_found": not_found} if not_found else {}
+    _output_partial(SOURCE, query, results, errors, warning, **extra)
 
 
 def output_error(query: str, error_type: str, message: str, exit_code: int = 2) -> None:
     """Output error result."""
-    print(json.dumps({
-        "status": "error",
-        "source": "semantic_scholar",
-        "query": query,
-        "results": [],
-        "count": 0,
-        "errors": [{"type": error_type, "message": message, "recoverable": error_type == "rate_limit"}]
-    }, indent=2))
-    sys.exit(exit_code)
-
-
-def format_paper(paper: dict) -> dict:
-    """Format S2 paper response into standard output format."""
-    if not paper:
-        return None
-
-    external_ids = paper.get("externalIds", {}) or {}
-    doi = external_ids.get("DOI")
-    arxiv_id = external_ids.get("ArXiv")
-
-    authors = []
-    for author in paper.get("authors", []) or []:
-        authors.append({
-            "name": author.get("name", ""),
-            "authorId": author.get("authorId")
-        })
-
-    return {
-        "paperId": paper.get("paperId"),
-        "title": paper.get("title"),
-        "authors": authors,
-        "year": paper.get("year"),
-        "abstract": paper.get("abstract"),
-        "citationCount": paper.get("citationCount"),
-        "doi": doi,
-        "arxivId": arxiv_id,
-        "url": paper.get("url"),
-        "venue": paper.get("venue"),
-        "journal": paper.get("journal"),
-        "publicationTypes": paper.get("publicationTypes"),
-    }
+    _output_error(SOURCE, query, error_type, message, exit_code)
 
 
 def batch_fetch(
