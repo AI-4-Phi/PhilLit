@@ -12,3 +12,12 @@ dependencies = [
     "arxiv>=1.4.0",
     "pybtex>=0.24.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-timeout>=2.0.0",
+    "coverage>=7.0.0",
+]

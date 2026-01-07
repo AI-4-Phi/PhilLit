@@ -6,13 +6,17 @@ Last updated: Jan 6, 2026
 
 ## Pending
 
-- [ ] Cleanup: can move `test_files/` somewhere into `tests/`?
+- [ ] Clean / review all skills and agents
 - [ ] Have Claude check all the python scripts in philosophy-research/scripts
+- [ ] Test whether this project repo can be used in the Claude cloud through the app. If it can: update the documentation accordingly. (Esp. GETTING_STARTED.md). 
 - [ ] Consider reintegrating editor and novelty assessor agents
 
 
 ## Done
 
+- [x] Assess test coverage and rigor. Evaluate whether we can expand to skills and agents.
+- [x] Run tests. Encountered error earlier. Might need update CLAUDE.md
+- [x] Cleanup: deleted unused `test_files/` directory (files were unreferenced)
 - [x] Check that the hooks refers to absolute path to scripts with `$CLAUDE_PROJECT_DIR` variable as in `"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-style.sh"`
 - [x] Reconcile duplicate entries across different domain .bib files. Combined final .bib file often has duplicate entries. Not necessarily with identical keys.
 - [x] Reduce use of conventions.md - simple instructions in agent definition instead (370 → 121 lines)

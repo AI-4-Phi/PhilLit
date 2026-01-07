@@ -26,6 +26,7 @@ Repository to (a) author academic literature reviews using agent orchestration, 
 - `.claude/skills/philosophy-research/` — Structured API search scripts (Semantic Scholar, OpenAlex, arXiv, SEP, PhilPapers, CrossRef).
 - `.claude/agents/` — Specialized subagent definitions invoked by the literature-review skill.
 - `.claude/docs/` — Shared specifications (conventions.md, ARCHITECTURE.md).
+- `tests/` — pytest tests for API scripts and hooks.
 
 # Typical Usage: Literature Review
 
@@ -53,6 +54,15 @@ When asked to perform a new literature review:
 # Development
 
 For agent architecture and design patterns, see `.claude/docs/ARCHITECTURE.md`.
+
+## Testing
+
+Run tests with: `pytest tests/`
+
+## Principles
+
+- **Keep the repository lean** — Do not keep files only for reference if the functionality is already documented elsewhere (e.g., in `pyproject.toml`). Remove deprecated files rather than marking them as such.
+- **Single source of truth** — Dependencies in `pyproject.toml`, agent definitions in `.claude/agents/`, skill definitions in `.claude/skills/`. Avoid duplicating information across files.
 
 Reference documentation:
 - **Claude Agent Development Documentation** `https://code.claude.com/docs/en/sub-agents`
