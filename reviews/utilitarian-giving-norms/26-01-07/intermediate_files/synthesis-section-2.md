@@ -1,0 +1,37 @@
+## Utilitarian Obligations and Their Limits
+
+### The Structure of Utilitarian Giving Arguments
+
+The philosophical case for stringent charitable giving obligations originates in Peter Singer's "Famine, Affluence, and Morality" (1972), which advances a deceptively simple principle: if we can prevent something bad from happening without sacrificing anything of comparable moral importance, we ought to do so. Applied to global poverty, this principle generates demanding conclusions—affluent individuals must give until further giving would cause them suffering comparable to that of famine victims. The argument's power lies in its structural simplicity: distance is morally irrelevant, and the drowning child we would save at personal cost has no morally relevant distinction from the distant stranger we could save through donation.
+
+Peter Unger (1996) reinforced Singer's conclusions through psychological rather than strictly logical means. His thought experiments, most notably the Vintage Sedan case, demonstrate that our intuitions condemn those who refuse to sacrifice valuable possessions to save lives. Notably, Unger's paradigm case involves an asset—a cherished automobile—rather than income, suggesting that the utilitarian case for giving does not intrinsically privilege one resource type over another. The psychological resistance Unger diagnoses stems from motivated reasoning about our current behavior, not from principled distinctions between types of sacrifice.
+
+Two important refinements moderate these demanding conclusions. Judith Lichtenberg (2010) reframes giving obligations as negative rather than purely positive duties, arguing that affluent individuals participate in global systems that cause harm. This reframing strengthens the case for obligation while shifting its grounding: we give not merely because we can help but because we bear responsibility for ongoing harm. Garrett Cullity (1994) introduces a fair-share principle, distinguishing direct duties to those we encounter from collective duties that should be distributed among potential helpers. This limits individual demands without abandoning the core insight that significant obligations exist.
+
+These foundational arguments share a notable lacuna: none specifies whether "affluence" or "surplus resources" refers to income flows, asset stocks, or some combination. Singer's examples typically invoke income, but his principle applies to any resource whose sacrifice would not constitute comparable moral loss. The default focus on income appears assumed rather than argued.
+
+### Demandingness and Moderate Positions
+
+The demandingness objection to consequentialism holds that requiring agents always to maximize the good is unreasonably stringent. Samuel Scheffler (1982) developed the most influential moderate response, arguing for agent-centered prerogatives that permit individuals to give disproportionate weight to their own projects and relationships. On Scheffler's view, morality cannot demand abandonment of the personal point of view that structures individual lives.
+
+Shelly Kagan (1989) offers the most forceful rejection of such prerogatives, contending that demandingness objections lack principled foundation. What seems excessive merely reflects what morality genuinely requires; the intuition that obligations cannot be so demanding reflects motivated reasoning rather than moral insight. For Kagan, neither income nor assets deserves special protection from beneficence demands.
+
+Liam Murphy (2000) charts a middle course through his cooperative principle: under conditions of partial compliance, agents need only contribute their fair share of the collectively optimal action, not compensate for others' failures. If wealthy individuals generally fail to give, compliant agents are not obligated to give more to make up the shortfall. This framework has significant but unexplored implications for the income-asset distinction: fair shares might be calculated based on total wealth rather than income alone, potentially demanding more from the asset-rich.
+
+Cullity (2004) identifies the iterative reasoning problem confronting utilitarian beneficence: if helping one person generates obligation to help the next, demands iterate toward impoverishment. His solution appeals to "appropriate impartiality" as fairness, setting limits without invoking agent-relative prerogatives. Tim Mulgan (2001) proposes a realm-based approach, distinguishing subsistence, survival, and sacrifice contexts governed by different moral principles. Asset liquidation might cross from subsistence into sacrifice realm, where supererogation rather than obligation obtains.
+
+Critically, none of these moderate positions considers whether income and assets affect demandingness differentially. Murphy's cooperative principle could incorporate asset holdings into fair-share calculations; Cullity's life-project constraint might justify protecting assets that secure long-term plans differently from income that funds immediate consumption. These possibilities remain unexplored.
+
+### Effective Altruism's Institutionalization of Giving Norms
+
+Effective altruism institutionalized utilitarian giving obligations through specific mechanisms, most notably Giving What We Can's pledge to donate ten percent of income to effective charities. William MacAskill (2015) established the movement's practical framework, emphasizing earning to give, cause prioritization, and evidence-based charity selection. Peter Singer (2015) provided philosophical continuity, extending his earlier arguments into EA's optimization framework.
+
+MacAskill, Mogensen, and Ord (2018) defend the tithing model directly, arguing that ten percent of gross income is demanding enough to make meaningful impact while remaining psychologically sustainable. They cite evidence that donors adapt to moderate income reductions, maintaining well-being despite decreased consumption. The defense is explicitly pragmatic: the pledge must be demanding enough to matter but achievable enough to sustain long-term compliance.
+
+This pragmatic framing reveals that EA's income focus appears more practical than principled. The tithing defense addresses income's demandingness without comparing it to asset-based alternatives. Chong-Ming Lim (2019) argues that EA's apparent ecumenicity masks specifically utilitarian commitments incompatible with moral pluralism. If so, EA's income-based norms embody consequentialist calculations that could equally justify asset-based demands—the choice of income appears to reflect institutional convenience rather than theoretical necessity.
+
+The implicit assumption that asset accumulation is morally neutral while income triggers ongoing obligations deserves scrutiny. A retiree with substantial assets but minimal income faces trivial demands under current EA norms, while a young professional earning well but holding no assets faces significant obligations. Whether this asymmetry reflects sound utilitarian reasoning or merely institutional path-dependence remains unexamined in the literature.
+
+---
+
+**Section Summary**: Utilitarian arguments from Singer through Unger establish significant giving obligations, moderated by demandingness constraints from Scheffler, Murphy, and Cullity. Effective altruism institutionalized these obligations through income-based norms, but the philosophical literature provides no principled reason to prefer income over assets as the obligatory base. The choice appears pragmatic rather than theoretically grounded.

@@ -6,14 +6,14 @@ Last updated: Jan 6, 2026
 
 ## Pending
 
-- [ ] Clean / review all skills and agents
 - [ ] Have Claude check all the python scripts in philosophy-research/scripts
-- [ ] Test whether this project repo can be used in the Claude cloud through the app. If it can: update the documentation accordingly. (Esp. GETTING_STARTED.md). 
-- [ ] Consider reintegrating editor and novelty assessor agents
+- [ ] Update the documentation on how to run this skill in the Claude default cloud environment. (Esp. GETTING_STARTED.md). Complication: probably need to give Claude `.env` file. Not sure how to best get API keys into repo non-persistently preferably? Can a user drop `.env` or the keys in the chat? Less good (because adds keys to repo): Fork the repo, make it private, add the `.env` in the repo root.
 
 
 ## Done
 
+- [x] Test whether this project repo can be used in the Claude cloud through the app.
+- [x] Clean / review all skills and agents
 - [x] Assess test coverage and rigor. Evaluate whether we can expand to skills and agents.
 - [x] Run tests. Encountered error earlier. Might need update CLAUDE.md
 - [x] Cleanup: deleted unused `test_files/` directory (files were unreferenced)
@@ -55,6 +55,8 @@ Last updated: Jan 6, 2026
 
 
 ## Deferred
+
+- [ ] Consider reintegrating editor and novelty assessor agents (DROPPED: too complicated, dilutes focus)
 - [ ] Agent idea: based on .bib file, download PDFs of sources in final report, add path to PDFs in bib files (check first: does this allow for Zotero import?) (NO NEED: Zotero has this function: "Find Full Text".)
 - [ ] Need a hook for auto compacting. What can we do to save progress when we run out of context? (Check first if this is really needed. We already have a resume logic)
 - [ ] Do final review assembly with a hook and script? Sometimes it takes very long for Claude to do the final step (note: can't do, there is no Stop hook for skills)
