@@ -59,7 +59,7 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into Zotero, with r
 - ❌ No generic phrases ("important contribution", "raises questions")
 - ❌ No empty relevance ("relevant to project" without saying *how*)
 
-**Quality over rigid note format**: If a paper resists the 3-component notw structure, adapt. A substantive 2-component annotation beats a formulaic 3-component one.
+**Quality over rigid note format**: If a paper resists the 3-component note structure, adapt. A substantive 2-component annotation beats a formulaic 3-component one.
 
 ### Verification Best Practices
 

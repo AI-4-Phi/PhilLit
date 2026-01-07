@@ -129,12 +129,7 @@ For each domain, specify:
 - **Search terms**: 3-8 specific terms for use with `s2_search.py`, `search_openalex.py`
 - **Quality criteria**: What makes a paper "key" vs "peripheral"
 
-**Available search scripts** (for reference when planning):
-- `search_sep.py` / `fetch_sep.py` — SEP discovery and content extraction
-- `search_philpapers.py` — PhilPapers via Brave
-- `s2_search.py` — Semantic Scholar (broad academic)
-- `search_openalex.py` — OpenAlex (250M+ works, cross-disciplinary)
-- `search_arxiv.py` — arXiv preprints (AI ethics, recent work)
+Domain researchers use the `philosophy-research` skill scripts for all searches. See skill documentation for available scripts.
 
 ### Balancing Coverage
 
@@ -151,7 +146,7 @@ Before finalizing:
 ✅ Search strategies concrete and actionable?
 ✅ Balanced across perspectives?
 ✅ Realistic paper counts?
-✅ Search ufficiently critical of research proposal?
+✅ Search sufficiently critical of research proposal?
 
 ## Communication with Orchestrator
 

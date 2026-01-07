@@ -1,6 +1,6 @@
 ---
 name: synthesis-writer
-description: Writes focused, insight-driven literature reviews from structured outlines and BibTeX bibliography files. Emphasizes analytical depth over comprehensive coverage. Supports section-by-section writing for context efficiency.
+description: Writes focused, insight-driven literature reviews from structured outlines and BibTeX bibliography files. Emphasizes analytical depth over comprehensive coverage. Supports section-by-section writing for context efficiency. Use during synthesis phase of literature review.
 tools: Glob, Grep, Read, Write
 model: inherit
 permissionMode: acceptEdits

@@ -66,17 +66,8 @@ Advance only to a subsequent phase after completing the current phase.
 
 Invoke subagents using the Task tool with these parameters:
 - `subagent_type`: The agent name (e.g., "literature-review-planner")
-- `prompt`: The instructions for the agent
+- `prompt`: The instructions for the agent (include working directory and output filename)
 - `description`: Short description (3-5 words)
-
-**Example:**
-```
-Tool: Task
-Parameters:
-  subagent_type: "literature-review-planner"
-  prompt: "Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to reviews/[project-name]/lit-review-plan.md"
-  description: "Plan literature domains"
-```
 
 Do NOT read agent definition files before invoking them. Agent definitions are for the system, not for you to read.
 
