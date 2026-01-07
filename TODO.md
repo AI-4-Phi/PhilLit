@@ -6,7 +6,10 @@ Last updated: Jan 6, 2026
 
 ## Pending
 
-- [ ] Have Claude check all the python scripts in philosophy-research/scripts
+- [x] Have Claude check all the python scripts in philosophy-research/scripts
+  - [ ] Fix message logging again, which the refactor seems to have broken
+  - [ ] Make sure all the JSON files are neatly written to some `tmp/` again and not dumped in the middle of the repository.
+- [ ] Clean up CLAUDE.md: Don't need all these links to Claude documentation, Claude uses claude-code-guide agent when needed.
 - [ ] Update the documentation on how to run this skill in the Claude default cloud environment. (Esp. GETTING_STARTED.md). Complication: probably need to give Claude `.env` file. Not sure how to best get API keys into repo non-persistently preferably? Can a user drop `.env` or the keys in the chat? Less good (because adds keys to repo): Fork the repo, make it private, add the `.env` in the repo root.
 
 
