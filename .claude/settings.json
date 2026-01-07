@@ -20,6 +20,7 @@
       "Bash(source:*)",
       "Bash(echo:*)",
       "Bash(cat:*)",
+      "Bash(pytest:*)",
       "Write(reviews/**)",
       "Edit(reviews/**)",
       "Skill(literature-review)",
