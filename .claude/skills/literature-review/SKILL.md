@@ -267,6 +267,7 @@ reviews/[project-name]/
 ├── literature-all.bib            # Aggregated bibliography
 └── intermediate_files/           # Workflow artifacts
     ├── json/                     # JSON files archived here
+    │   ├── s2_results.json
     │   ├── openalex_results.json
     │   └── stage3_*.json
     ├── task-progress.md
