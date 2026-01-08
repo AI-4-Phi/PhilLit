@@ -46,23 +46,7 @@ git clone https://github.com/marco2meyer/philo-sota.git
 ```
 ### Environment Setup
 
-#### Automatic Setup (Recommended)
-
 The Python environment is **automatically configured** when you start Claude Code in this repository.
-
-#### Manual Setup (Optional)
-
-If you want to set up manually:
-
-```bash
-# Sync environment (creates .venv and installs dependencies)
-uv sync
-
-# Activate it
-source .venv/bin/activate  # macOS/Linux
-# or
-.venv\Scripts\activate     # Windows
-```
 
 ### API Keys
 
@@ -92,7 +76,7 @@ python .claude/skills/philosophy-research/scripts/check_setup.py
 ```
 I need a literature review for my research on [topic].
 
-[2-5 paragraph description of your research idea]
+[1-3 paragraph description of your research idea]
 ```
 
 3. The `/literature-review` skill coordinates 6 phases automatically:

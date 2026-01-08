@@ -149,7 +149,7 @@ This phase validates conditions for subsequent phases to function.
 
 ## Phase 2: Structure Literature Review Domains
 
-1. Receive research idea from user
+1. Receive and review research idea from user. If you require further information, clarification or direction, ask the user. 
 2. Use Task tool to invoke `literature-review-planner` agent with research idea:
    - subagent_type: "literature-review-planner"
    - prompt: Include full research idea, requirements, AND working directory path

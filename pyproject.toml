@@ -1,7 +1,7 @@
 [project]
 name = "philo-sota"
 version = "0.1.0"
-description = "Multi-agent system for generating focused, insight-driven state-of-the-art literature reviews"
+description = "Multi-agent system for generating literature reviews in philosophy"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
