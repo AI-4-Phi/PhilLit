@@ -1,0 +1,1216 @@
+[search_openalex.py] Searching OpenAlex: 'tradition deliberative democracy' (year=2010-2025), limit=30
+[search_openalex.py] Retrieved 30 papers...
+[search_openalex.py] Search complete: 30 papers found
+[search_openalex.py] Cached results (cache key: openalex_d7c3068f1b9209ed)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "tradition deliberative democracy",
+  "results": [
+    {
+      "openalex_id": "W2946851032",
+      "doi": "10.14203/jmb.v19i2.389",
+      "title": "NOKEN ELECTORAL SYSTEM IN PAPUA DELIBERATIVE DEMOCRACY IN PAPUAN TRADITION",
+      "authors": [
+        {
+          "name": "Cahyo Pamungkas",
+          "openalex_id": "A5058869172",
+          "orcid": "https://orcid.org/0000-0002-0299-127X",
+          "institutions": [
+            "Indonesian Institute of Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-21",
+      "abstract": "Studies of the noken system from the legal approach have been thoroughly investigated, particularly in the 2009 and 2014 elections and the 2014 presidential election in Papua. Several studies of state's law explain that the noken system is legitimate according to Indonesian laws due to cultural characteristics of Papuan following Melanesian traditions. Different from those studies, this paper examines the noken system according to Habermas' theoretical framework of deliberative democracy. This study argues that the noken system is strongly powerful as various cultural communities of native Papuans discuss it. The discussions are discursive practices and contestations to determine political decisions, such as certain political figure or political party to be voted in the election. The essence of the noken system is, therefore, a community's participation via consultations and discussions in deciding political choices collectively. Using literature review, the author discusses the implementation of the noken system in Papua province related to the concept of deliberative democracy. Findings indicate that the implementation of noken system reflects the practices of deliberative democracy, proposed by Habermas, at the village community level. In some cases, however, Papuan elites, who unilaterally decide all votes without any discussions and consent of their community, manipulate the noken system. Theoretically, the noken system shows that democracy is not only legislative procedures, but also an art of maintaining collectivism and social integration. Studi-studi mengenai legalitas penggunaan sistem noken dalam Pemilu 2009 dan 2014 dan pemilihan presiden 2014 di Papua telah banyak dilakukan. Beberapa studi menyatakan bahwa sistem noken tersebut sah dalam sistem hukum Indonesia karena menyesuaikan dengan karakteristik budaya orang Papua yang mengikuti tradisi Melanesia. Berbeda dengan studi tersebut, tulisan ini melihat sistem noken dalam perspektif demokrasi deliberatif Habermas. Studi ini berargumen bahwa sistem noken masih sangat kuat karena banyak didiskusikan oleh berbagai komunitas budaya orang asli Papua. Musyawarah dalam sistem noken merupakan praktik diskursif dan kontestasi untuk menentukan keputusan politik, seperti kandidat atau partai politik dalam Pemilu. Inti sistem noken adalah partisipasi masyarakat melalui konsultasi dan diskusi dalam menentukan pilihan politik secara kolektif. Dengan tinjauan pustaka, artikel ini membahas pelaksanaan sistem noken di Provinsi Papua terkait konsep demokrasi deliberatif. Temuan penelitian menunjukkan bahwa penerapan sistem noken menggambarkan praktik demokrasi deliberatif di tingkat masyarakat desa. Namun, dalam beberapa kasus, sistem noken dimanipulasi oleh elit Papua, yang secara sepihak memutuskan semua suara tanpa adanya diskusi dan persetujuan dari komunitas. Secara teoritis, sistem noken menunjukkan bahwa demokrasi bukan hanya prosedur legislatif, tapi juga seni dalam menjaga kolektivisme dan integrasi sosial.",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "Jurnal Masyarakat dan Budaya",
+        "type": "journal",
+        "issn": [
+          "2502-1966",
+          "2615-7608"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://jmb.lipi.go.id/index.php/jmb/article/download/389/333"
+      },
+      "topics": [
+        "Asian Studies and History",
+        "Legal Studies and Policies",
+        "Legal and Policy Analysis in Indonesia"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W2946851032"
+    },
+    {
+      "openalex_id": "W435283131",
+      "doi": "10.1093/acprof:oso/9780199772438.001.0001",
+      "title": "Pragmatist DemocracyEvolutionary Learning as Public Philosophy",
+      "authors": [
+        {
+          "name": "Christopher Ansell",
+          "openalex_id": "A5021817508",
+          "orcid": "https://orcid.org/0000-0002-7723-1283"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-09-07",
+      "abstract": "Drawing inspiration from the philosophy of Pragmatism, this book argues for a new \u201cproblem-solving democracy,\u201d where public agencies build consent for public policy by engaging the public in active problem-solving. More so than legislatures, public agencies serve as linchpins between popular sovereignty and on-the-ground governance. For pubic agencies to play a different role in democracy, we must re-imagine how they function as organizations and interact with the public. The Pragmatist philosophy associated with Charles Peirce, William James, John Dewey, George Herbert Mead provides a framework for re-imagining that role. Pragmatism advances an evolutionary, learning-oriented perspective that stresses problem-driven, reflexive, and deliberative public action. The book uses this evolutionary learning perspective to analyze how public agencies might overcome tensions between centralization and decentralization, engage in more strategic problem-solving, and facilitate collaborative governance among public stakeholders. In developing these arguments, the book builds on and extends the current revival of interest of the social sciences in Pragmatism, reinvigorating an overlooked tradition of Pragmatist institutionalism. By showing how Pragmatism\u2019s evolutionary learning perspective can tackle issues at the heart of our current democratic malaise and engage the broad intellectual concerns of the social sciences, the book provides a concrete demonstration of why Pragmatism can serve as a powerful public philosophy.",
+      "cited_by_count": 477,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W435283131"
+    },
+    {
+      "openalex_id": "W4206435469",
+      "doi": "10.1002/wcc.759",
+      "title": "Deliberative democracy and the climate crisis",
+      "authors": [
+        {
+          "name": "Rebecca Willis",
+          "openalex_id": "A5070980150",
+          "orcid": "https://orcid.org/0000-0001-9551-7608",
+          "institutions": [
+            "Lancaster University"
+          ]
+        },
+        {
+          "name": "Nicole Curato",
+          "openalex_id": "A5035441746",
+          "orcid": "https://orcid.org/0000-0002-0269-0186",
+          "institutions": [
+            "ACT Government",
+            "University of Canberra"
+          ]
+        },
+        {
+          "name": "Graham Smith",
+          "openalex_id": "A5101874814",
+          "orcid": "https://orcid.org/0000-0002-3758-9221",
+          "institutions": [
+            "University of Westminster"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-11",
+      "abstract": "ABSTRACT No democratic state has yet implemented a climate plan strong enough to meet the goals of the Paris Agreement. This has led some to argue that democracy cannot cope with a challenge of this magnitude. In this article, we take stock of the claim that a more deliberative democratic system can strengthen our ability to respond effectively to the climate crisis. The most visible development in this direction is the recent citizens\u2019 assemblies on climate change in Ireland, France, and the UK. We begin our analysis of the promise of deliberative democracy with a recognition of the difficulties that democracies face in tackling climate change, including short\u2010termism; the ways in which scientific and expert evidence are used; the influence of powerful political interests; and the relationship between people and the politicians that represent them. We then introduce the theoretical tradition of deliberative democracy and examine how it might ameliorate the challenges democracies face in responding to the climate crisis. We evaluate the contribution of deliberative mini\u2010publics, such as citizens\u2019 assemblies and juries, and look beyond these formal processes to examine how deliberation can be embedded in political and social systems around the world. We conclude that deliberation\u2010based reforms to democratic systems, including but not limited to deliberative mini\u2010publics, are a necessary and potentially transformative ingredient in climate action. This article is categorized under: Perceptions, Behavior, and Communication of Climate Change &gt; Communication Policy and Governance &gt; Governing Climate Change in Communities, Cities, and Regions",
+      "cited_by_count": 211,
+      "type": "article",
+      "source": {
+        "name": "Wiley Interdisciplinary Reviews Climate Change",
+        "type": "journal",
+        "issn": [
+          "1757-7780",
+          "1757-7799"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wcc.759"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Climate Change Communication and Perception",
+        "Social Acceptance of Renewable Energy"
+      ],
+      "referenced_works_count": 77,
+      "url": "https://openalex.org/W4206435469"
+    },
+    {
+      "openalex_id": "W2906351424",
+      "doi": "10.4324/9781351391757",
+      "title": "Contemporary Political Philosophy and Religion",
+      "authors": [
+        {
+          "name": "Camil Ungureanu",
+          "openalex_id": "A5011568571",
+          "orcid": "https://orcid.org/0000-0001-8419-8111"
+        },
+        {
+          "name": "Paolo Monti",
+          "openalex_id": "A5038759387",
+          "orcid": "https://orcid.org/0000-0002-2586-1881",
+          "institutions": [
+            "Universit\u00e0 Cattolica del Sacro Cuore"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-12",
+      "abstract": "What is the place of religion in a pluralist democracy? The continuous presence of religion in the public sphere has raised anew normative and practical issues related to the role of religion in a democratic polity, generating spirited political debates in Western and non-Western contexts. Contemporary Political Philosophy and Religion provides an advanced introduction to, and a critical appraisal of, the major schools of political thought with a focus on the relationship between democracy and religion. Key features of this book include: Analyses of different political traditions: liberalism, republicanism, deliberative democracy, feminism, postmodernism, multiculturalism, and interculturalism; Critical discussions of key contemporary philosophers, such as John Rawls, J\u00fcrgen Habermas, Richard Rorty, Charles Taylor, Susan Moller Okin, Martha Nussbaum, Will Kymlicka, Chandran Kukathas, and Bhiku Parekh; A pluralist approach that questions the strict divide between analytical and continental political philosophy; Discussion on the place of religion in politics from multiple perspectives by drawing on a plurality of political contexts, both Western and non-Western; Analyses of legal and political cases related to different religious traditions, for example, Islam, Confucianism, Buddhism, Christianity, and Hinduism. This comprehensive text will be of great use to students of religion and politics in the fields of political and legal theory, and religious and theological studies, while also offering critical insights and arguments that will be of interest to the experts in the field.",
+      "cited_by_count": 214,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2906351424"
+    },
+    {
+      "openalex_id": "W2103356768",
+      "doi": "10.1146/annurev.polisci.040108.104834",
+      "title": "The Rhetoric Revival in Political Theory",
+      "authors": [
+        {
+          "name": "Bryan Garsten",
+          "openalex_id": "A5084046820",
+          "institutions": [
+            "Yale University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-03-02",
+      "abstract": "The recent wave of interest in the rhetorical tradition among political theorists can be attributed partly to the rise of theories of deliberative democracy, which focused attention on communication and discourse. Some scholars see in rhetoric a way to challenge the assumptions of Habermasian deliberative theory, while others aim to integrate rhetoric into a broader theory of deliberation. Insights taken from studies of Aristotle have been especially influential in producing a new set of questions for scholars interested in deliberation and in democratic communications more generally, in spite of the vast differences between ancient city-states and modern liberal democracies.",
+      "cited_by_count": 126,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Political Science",
+        "type": "journal",
+        "issn": [
+          "1094-2939",
+          "1545-1577"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Philosophy and Ethics",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 117,
+      "url": "https://openalex.org/W2103356768"
+    },
+    {
+      "openalex_id": "W2621272236",
+      "doi": null,
+      "title": "Deliberative Democracy and Entertainment: Bridging Two Separate Theoretical Traditions",
+      "authors": [
+        {
+          "name": "Carina Weinmann",
+          "openalex_id": "A5017246420",
+          "orcid": "https://orcid.org/0000-0002-8501-5484"
+        },
+        {
+          "name": "Peter Vorderer",
+          "openalex_id": "A5051641675"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-05-20",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2621272236"
+    },
+    {
+      "openalex_id": "W2887927813",
+      "doi": "10.1177/0032329218789888",
+      "title": "From Deliberative to Radical Democracy? Sortition and Politics in the Twenty-First Century",
+      "authors": [
+        {
+          "name": "Yves Sintomer",
+          "openalex_id": "A5112452989",
+          "institutions": [
+            "Institut Universitaire de France"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-08-13",
+      "abstract": "This article defends four claims. The first is that in the last few decades, two waves of democratic innovation based on random selection must be differentiated by their partly different concrete devices, embodying different social dynamics and pointing toward different kinds of democracy. The second claim is that the rationale of the first wave, based on randomly selected minipublics, largely differs from the dynamic of political sortition in Athens, as it points toward deliberative democracy rather than radical democracy. Conversely, empowered sortition processes that have emerged during the second wave capture better the spirit of radical Athenian democratic traditions. The third claim is normative: these empowered sortition processes are more promising for a real democratization of democracy. The last claim is that any proposal of a legislature by lot must rely on this lesson when trying to defend a normatively convincing and politically realistic perspective.",
+      "cited_by_count": 81,
+      "type": "article",
+      "source": {
+        "name": "Politics & Society",
+        "type": "journal",
+        "issn": [
+          "0032-3292",
+          "1552-7514"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "Political Philosophy and Ethics",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2887927813"
+    },
+    {
+      "openalex_id": "W2066382964",
+      "doi": "10.1016/j.geoforum.2011.03.002",
+      "title": "Situating the geographies of injustice in democratic theory",
+      "authors": [
+        {
+          "name": "Clive Barnett",
+          "openalex_id": "A5001978602",
+          "orcid": "https://orcid.org/0000-0002-1291-1421",
+          "institutions": [
+            "The Open University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-04-15",
+      "abstract": null,
+      "cited_by_count": 63,
+      "type": "article",
+      "source": {
+        "name": "Geoforum",
+        "type": "journal",
+        "issn": [
+          "0016-7185",
+          "1872-9398"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Critical Theory and Political Philosophy",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 116,
+      "url": "https://openalex.org/W2066382964"
+    },
+    {
+      "openalex_id": "W2120177097",
+      "doi": "10.1177/0042098010366744",
+      "title": "Constructing Legitimacy in the New Community Governance",
+      "authors": [
+        {
+          "name": "Stephen Connelly",
+          "openalex_id": "A5022523427",
+          "orcid": "https://orcid.org/0000-0003-1758-0366"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-07-16",
+      "abstract": "What is the legitimacy of new forms of governance at community level? This paper addresses the important yet little understood issue of how this is established, developing a constructivist approach to the concept of \u2018legitimacy\u2019 and presenting an analysis of how the legitimacy of community-based organisations is understood and constructed in a northern English city. This shows how their legitimacy draws on a range of pre-existing norms as well as new ones, only some of which are recognisably democratic, and is more a product of informal practices than formal structures. It is consequently fragile and open to challenge, and weak according to the norms of legitimacy derived from the representative democratic tradition or the standpoint of modern deliberative democracy. What could appropriately replace such norms remains unclear, although it is suggested that a way forward may be through reintroducing the value of activism as an acceptable grounding for political legitimacy.",
+      "cited_by_count": 95,
+      "type": "article",
+      "source": {
+        "name": "Urban Studies",
+        "type": "journal",
+        "issn": [
+          "0042-0980",
+          "1360-063X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Foucault, Power, and Ethics",
+        "Nonprofit Sector and Volunteering"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2120177097"
+    },
+    {
+      "openalex_id": "W2963939453",
+      "doi": "10.4324/9780203448946-17",
+      "title": "Prospective Mathematics Teachers\u2019 Learning and Knowledge for Teaching",
+      "authors": [
+        {
+          "name": "Ole Skovsmose",
+          "openalex_id": "A5073975965",
+          "orcid": "https://orcid.org/0000-0002-1528-796X"
+        },
+        {
+          "name": "Miriam Godoy Penteado",
+          "openalex_id": "A5013470136",
+          "orcid": "https://orcid.org/0000-0003-0458-275X",
+          "institutions": [
+            "Universidade Estadual Paulista (Unesp)",
+            "Aalborg University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-30",
+      "abstract": "In their classic study assuming the perspective of analytical philosophy, Benn and Peters (1959) relate democracy to notions such as justice, equality, freedom, and responsibility. A further investigation of justice is provided by Rawls (1971/1999), who begins his inquiry in analytic philosophy but expands his investigations beyond this tradition. Ideas about deliberative democracy, as for instance presented by Bohman and Rehg (1997), relate the notion of democracy to participation, negotiation, and dialogue. Democracy can also be related to citizenship, autonomy, human rights, and inclusion. Together all such notions belong to an extended family of open concepts.",
+      "cited_by_count": 55,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Mathematics Education and Teaching Techniques",
+        "Cognitive and developmental aspects of mathematical skills",
+        "Educational Assessment and Pedagogy"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2963939453"
+    },
+    {
+      "openalex_id": "W2137617981",
+      "doi": "10.1177/0090591713507934",
+      "title": "A Democratic Case for Comparative Political Theory",
+      "authors": [
+        {
+          "name": "Melissa S. Williams",
+          "openalex_id": "A5108716720",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Mark E. Warren",
+          "openalex_id": "A5079464965",
+          "orcid": "https://orcid.org/0000-0002-1478-0998",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-12-20",
+      "abstract": "Globalization generates new structures of human interdependence and vulnerability while also posing challenges for models of democracy rooted in territorially bounded states. The diverse phenomena of globalization have stimulated two relatively new branches of political theory: theoretical accounts of the possibilities of democracy beyond the state; and comparative political theory, which aims at bringing non-Western political thought into conversation with the Western traditions that remain dominant in the political theory academy. This article links these two theoretical responses to globalization by showing how comparative political theory can contribute to the emergence of new global \u201cpublics\u201d around the common fates that globalization forges across borders. Building on the pragmatist foundations of deliberative democratic theory, it makes a democratic case for comparative political theory as an architecture of translation that helps deliberative publics grow across boundaries of culture.",
+      "cited_by_count": 56,
+      "type": "article",
+      "source": {
+        "name": "Political Theory",
+        "type": "journal",
+        "issn": [
+          "0090-5917",
+          "1552-7476"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Critical Theory and Philosophy",
+        "European Union Policy and Governance"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W2137617981"
+    },
+    {
+      "openalex_id": "W4288626005",
+      "doi": "10.1515/9781474442626",
+      "title": "The Constructivist Turn in Political Representation",
+      "authors": [
+        {
+          "name": "Lisa Disch",
+          "openalex_id": "A5017023040",
+          "orcid": "https://orcid.org/0000-0003-1445-4428"
+        },
+        {
+          "name": "Mathijs van de Sande",
+          "openalex_id": "A5075031594"
+        },
+        {
+          "name": "Nadia Urbinati",
+          "openalex_id": "A5071285443",
+          "orcid": "https://orcid.org/0000-0002-1207-3181"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-22",
+      "abstract": "Explores the 'constructivist turn': political representation's reorientation toward the constitutive or mobilising aspects of mass democracyThis volume traces the roots of the constructivist turn in the distinct (and competing) traditions of Continental and Anglo-American Western political thought. Divided into three thematic parts, these 13 newly commissioned essays develop the constructivist turn as a central concept. They advance the insight that there can be no democratic politics without representation; constituencies or groups exist as agents of democratic politics only insofar as they are represented. Key FeaturesOffers comparative accounts of the genealogy of the constructivist turn in the rival intellectual traditions of continental democratic theory and Anglo-American deliberative democracyFeatures the first English translation of Claude Lefort's essay 'Democracy and Representation'Critically examines the political implications of constructivist research for legitimating potentially undemocratic aspects of global politicsRe-examines democratic uprisings that have been dismissed as 'protest movements' from the constructivist position",
+      "cited_by_count": 64,
+      "type": "book",
+      "source": {
+        "name": "Edinburgh University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "European Union Policy and Governance",
+        "Political Science Research and Education",
+        "Political Theory and Influence"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4288626005"
+    },
+    {
+      "openalex_id": "W2056181432",
+      "doi": "10.1007/s10982-010-9080-z",
+      "title": "Legitimacy is Not Authority",
+      "authors": [
+        {
+          "name": "Jon Garthoff",
+          "openalex_id": "A5031068744",
+          "orcid": "https://orcid.org/0000-0003-0599-1619",
+          "institutions": [
+            "Northwestern University"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-05-03",
+      "abstract": null,
+      "cited_by_count": 37,
+      "type": "article",
+      "source": {
+        "name": "Law and Philosophy",
+        "type": "journal",
+        "issn": [
+          "0167-5249",
+          "1573-0522"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Judicial and Constitutional Studies",
+        "Law in Society and Culture"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W2056181432"
+    },
+    {
+      "openalex_id": "W2006440254",
+      "doi": "10.3917/parti.006.0087",
+      "title": "Une idee sur le declin? Evaluer la nouvelle critique de la deliberation publique",
+      "authors": [
+        {
+          "name": "Luigi Pellizzoni",
+          "openalex_id": "A5055162961",
+          "orcid": "https://orcid.org/0000-0003-1077-2293"
+        },
+        {
+          "name": "Laurent Vannini",
+          "openalex_id": "A5037907385"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-01",
+      "abstract": "Deliberative democracy has spread quickly, regardless of differences in political and administrative traditions. An equally fast-evolving debate has addressed its virtues and problems, gradually shifting from theory to practice and from a focus on deliberative arenas to a concern for their policy and institutional context, without questioning the fundamentally benign nature and implications of public deliberation. We might however be confronted with a turning point. A growing literature is developing a different, more corrosive type of critique, the underlying theme of which is not the \u2018revitalization of democracy\u2019 and the role of deliberative forums in the framework of governance, but the \u2018neoliberalization of society\u2019 and the acquisition of deliberative democracy to the rationality of government at work in this process. As a consequence, well-known problems are read or ranked differently and new questions gain salience, as especially related to politics and \u2018the political\u2019. The article discusses the basic arguments of this literature, where \u2018weaknesses\u2019 and \u2018drawbacks\u2019 do not look incidental and redeemable but largely purposeful and responsible for the very success of deliberation. Rather than to the ill-fated character of deliberative democracy, however, this critique points to a renewed research agenda.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.cairn.info/revue-participations-2013-2-page-87.htm"
+      },
+      "topics": [
+        "Social Sciences and Governance",
+        "French Urban and Social Studies",
+        "Healthcare Systems and Practices"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W2006440254"
+    },
+    {
+      "openalex_id": "W2044727321",
+      "doi": "10.1080/08913811.2010.508632",
+      "title": "DEMOCRACY AND THE DELIBERATIVE CONCEIT",
+      "authors": [
+        {
+          "name": "Mark Pennington",
+          "openalex_id": "A5101901218",
+          "orcid": "https://orcid.org/0000-0001-6081-838X",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-05-01",
+      "abstract": "Abstract Over recent years support for deliberative democracy as a regulative ideal against which political and economic institutions should be judged has become the dominant tradition within political theory. Deliberative democrats such as Amy Guttman and Dennis Thompson argue that deliberative public decision making would bring with it important epistemological and ethical gains. Closer inspection of these claims, however, suggests that deliberative democratic arrangements are not only impractical but are fundamentally at odds with the epistemic and ethical goals that their supporters seek to advance. Arrangements based on \u201cexit\u201d rather than \u201cvoice\u201d may be better placed to meet these challenges in a world characterized by complexity and conflicting moral values.",
+      "cited_by_count": 32,
+      "type": "article",
+      "source": {
+        "name": "Critical Review",
+        "type": "journal",
+        "issn": [
+          "0891-3811",
+          "1933-8007"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Electoral Systems and Political Participation",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W2044727321"
+    },
+    {
+      "openalex_id": "W2163699426",
+      "doi": "10.1093/jopart/mur011",
+      "title": "An Integrative Framework for Collaborative Governance",
+      "authors": [
+        {
+          "name": "Kirk Emerson",
+          "openalex_id": "A5029524316",
+          "orcid": "https://orcid.org/0000-0002-3305-975X",
+          "institutions": [
+            "University of Arizona"
+          ]
+        },
+        {
+          "name": "Tina Nabatchi",
+          "openalex_id": "A5040079639",
+          "orcid": "https://orcid.org/0000-0002-1410-3647",
+          "institutions": [
+            "Syracuse University"
+          ]
+        },
+        {
+          "name": "Stephen Balogh",
+          "openalex_id": "A5014176127",
+          "orcid": "https://orcid.org/0000-0001-9102-3651",
+          "institutions": [
+            "State University of New York"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-05-02",
+      "abstract": "Collaborative governance draws from diverse realms of practice and research in public administration. This article synthesizes and extends a suite of conceptual frameworks, research findings, and practice-based knowledge into an integrative framework for collaborative governance. The framework specifies a set of nested dimensions that encompass a larger system context, a collaborative governance regime, and its internal collaborative dynamics and actions that can generate impacts and adaptations across the systems. The framework provides a broad conceptual map for situating and exploring components of cross-boundary governance systems that range from policy or program-based intergovernmental cooperation to place-based regional collaboration with nongovernmental stakeholders to public-private partnerships. The framework integrates knowledge about individual incentives and barriers to collection action, collaborative social learning and conflict resolution processes, and institutional arrangements for cross-boundary collaboration. It is presented as a general framework that might be applied to analyses at different scales, in different policy arenas, and varying levels of complexity. The article also offers 10 propositions about the dynamic interactions among components within the framework and concludes with a discussion about the implications of the framework for theory, research, evaluation, and practice.",
+      "cited_by_count": 3099,
+      "type": "article",
+      "source": {
+        "name": "Journal of Public Administration Research and Theory",
+        "type": "journal",
+        "issn": [
+          "1053-1858",
+          "1477-9803"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/jpart/article-pdf/22/1/1/2781333/mur011.pdf"
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Public-Private Partnership Projects",
+        "E-Government and Public Services"
+      ],
+      "referenced_works_count": 127,
+      "url": "https://openalex.org/W2163699426"
+    },
+    {
+      "openalex_id": "W2805681253",
+      "doi": "10.16997/jdd.291",
+      "title": "The Instrumental Value of Deliberative Democracy \u2013 Or, do we have Good Reasons to be Deliberative Democrats?",
+      "authors": [
+        {
+          "name": "Jonathan W. Kuyper",
+          "openalex_id": "A5006933592",
+          "orcid": "https://orcid.org/0000-0001-6471-0907",
+          "institutions": [
+            "University of Oslo",
+            "Stockholm University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-03",
+      "abstract": "Though commanding a prominent role in political theory, deliberative democracy has also become a mainstay of myriad other research traditions in recent years. This diffusion has been propelled along by the notion that deliberation, properly conceived and enacted, generates many beneficial outcomes. This article has three goals geared toward understanding whether these instrumental benefits provide us with good reasons \u2013 beyond intrinsic ones \u2013 to be deliberative democrats. First, the proclaimed instrumental benefits are systematized in terms of micro, meso, and macro outcomes. Second, relevant literatures are canvassed to critically assess what we know \u2013 and what we do not know \u2013 about deliberation\u2019s effects. Finally, the instrumental benefits of deliberation are recast in light of the ongoing systemic turn in deliberative theory. This article adds to our theoretical understanding of deliberation\u2019s promises and pitfalls, and helps practitioners identify gaps in our knowledge concerning how deliberation works and what its wider societal implications might be.",
+      "cited_by_count": 35,
+      "type": "article",
+      "source": {
+        "name": "Journal of Deliberative Democracy",
+        "type": "journal",
+        "issn": [
+          "2634-0488"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.16997/jdd.291"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Electoral Systems and Political Participation",
+        "E-Government and Public Services"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W2805681253"
+    },
+    {
+      "openalex_id": "W2901320476",
+      "doi": "10.1017/s1468109918000257",
+      "title": "Authoritarian deliberation revisited",
+      "authors": [
+        {
+          "name": "Baogang He",
+          "openalex_id": "A5014128640",
+          "orcid": "https://orcid.org/0000-0001-8098-9223",
+          "institutions": [
+            "Deakin University"
+          ]
+        },
+        {
+          "name": "Hendrik Wagenaar",
+          "openalex_id": "A5037599440",
+          "orcid": "https://orcid.org/0000-0001-7275-6761",
+          "institutions": [
+            "King's College London"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-16",
+      "abstract": "Abstract This introductory paper reviews the origin and development of the concept of authoritarian deliberation, and highlights the importance of culture and cultural tradition associated with public consultation. This paper summarizes and illustrates six key features of authoritarian deliberation in China. First, deliberation in China is a precarious balance between legal rule and state intervention. Second, the Party appeals to public reason to address and manage social conflict, and develop the soft coercion that accompanies much authoritarian deliberation. Third, this highly controlled deliberative process does, however, allow the freedom of local participants to find spaces for democratic expression, and local experiments to develop elements of deliberative democracy. Fourth, authoritarian deliberation is characterized by mutual instrumentalism. Fifth, there is an importance of an administrative and policy perspective in authoritarian deliberation. Six, the concept of authoritarian deliberation is not limited to China. There is the convergence in real-world deliberative process and outcome between authoritarian and liberal democratic systems.",
+      "cited_by_count": 31,
+      "type": "article",
+      "source": {
+        "name": "Japanese Journal of Political Science",
+        "type": "journal",
+        "issn": [
+          "1468-1099",
+          "1474-0060"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "China's Socioeconomic Reforms and Governance",
+        "Social Media and Politics",
+        "Hong Kong and Taiwan Politics"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W2901320476"
+    },
+    {
+      "openalex_id": "W4213384905",
+      "doi": "10.1111/1468-2230.12534",
+      "title": "Unpopular Sovereignty?",
+      "authors": [
+        {
+          "name": "Alexander Somek",
+          "openalex_id": "A5049847390",
+          "orcid": "https://orcid.org/0000-0003-1691-8855",
+          "institutions": [
+            "University of Iowa"
+          ]
+        },
+        {
+          "name": "Michael Wilkinson",
+          "openalex_id": "A5088031711",
+          "orcid": "https://orcid.org/0000-0003-1544-1821",
+          "institutions": [
+            "Yahoo (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-24",
+      "abstract": "Abstract Popular sovereignty was presented in modern constitutional discourse as a mode of collective action. It was supposedly manifest in the power to constitute, control and dismantle governments. Important strands of contemporary constitutional theory, notably legal constitutionalism and deliberative democracy, have taken leave of this tradition. They have severed the connection between sovereignty and action. What remains of popular sovereignty is fundamental rights and values, or dispersed networks of deliberation. This is based on the the idea that the place of power is \u2018empty\u2019 and legitimised on the principle of including \u2018All\u2010Affected\u2010Interests\u2019. The very concept of sovereignty thus becomes unpopular. This contribution aims to re\u2010establish the link between popular sovereignty and action by examining sovereignty's emancipatory telos, its majoritarian mode of operation and its dependence on political citizenship.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "Modern Law Review",
+        "type": "journal",
+        "issn": [
+          "0026-7961",
+          "1468-2230"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Political Theory and Influence",
+        "Political Theology and Sovereignty"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W4213384905"
+    },
+    {
+      "openalex_id": "W2906712230",
+      "doi": "10.1093/oxfordhb/9780198747369.013.25",
+      "title": "The Origins of the Deliberative Turn",
+      "authors": [
+        {
+          "name": "Antonio Floridia",
+          "openalex_id": "A5112738986"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-09",
+      "abstract": "Abstract This chapter deals with the origins and the building-process of the theoretical field of deliberative democracy (which took place over a very specific period between 1980 and 1993). This history was far from linear: Deliberative Democracy came out of a complex process in which different conceptual elements were gradually elaborated, changed and reworked. The theoretical field was built through several independent approaches. We can pinpoint five different stages: a phase of transition and theoretical innovation compared to the models of participatory democracy that characterized the sixties and seventies; the first formulations and insights, in the early eighties; the constituent phase proper in the late eighties; the phase of articulation of a deliberative field and its overlapping with other intellectual traditions; and finally the consolidation of the philosophical foundations of deliberative democracy, mainly thanks to J\u00fcrgen Habermas and John Rawls, with their works of the early nineties.",
+      "cited_by_count": 19,
+      "type": "reference-entry",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Social Media and Politics",
+        "Foucault, Power, and Ethics"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W2906712230"
+    },
+    {
+      "openalex_id": "W1998885553",
+      "doi": "10.1080/03003930.2012.698241",
+      "title": "From Innovation to Convention: Legitimate Citizen Participation in Local Governance",
+      "authors": [
+        {
+          "name": "Liisa H\u00e4iki\u00f6",
+          "openalex_id": "A5003521142",
+          "orcid": "https://orcid.org/0000-0003-4371-2764",
+          "institutions": [
+            "Tampere University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-07-25",
+      "abstract": "Abstract In governance structure legitimacy is required not only of the governing system, local authorities or public organisations but also of other participants, including citizens. The legitimacy cannot be judged either by traditions of representative democracy or by innovative theories of deliberative or participatory democracy. The article analyses scientific publications on citizen participation in local governance. It asks how empirical studies on local sustainable development planning (SDP) and New Public Management (NPM) practices construct legitimate citizen participation. In general, studies on citizen participation have not conceptualised the relations between citizens and power holders as questions of legitimacy. However, the studies approaching citizen participation in the local processes of SDP and NPM include various empirical, theoretical and normative arguments for citizen participation. These arguments recognise, accept and support particular activities, arguments and outcomes of citizen participation, and include and exclude agents and issues. They construct and reflect the definition of legitimacy in the local governance. As constructed by scientific texts, justifications for citizen participation reproduce a discursive structure in which citizen participation becomes marginalised and citizens' views excluded. The results illustrate that discursive structures of legitimate citizen participation support conventional governing practices and hinder innovative practices in local governance.",
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Local Government Studies",
+        "type": "journal",
+        "issn": [
+          "0300-3930",
+          "1743-9388"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Urban Planning and Governance",
+        "Community Development and Social Impact"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W1998885553"
+    },
+    {
+      "openalex_id": "W3126190155",
+      "doi": "10.1093/oxfordhb/9780190862084.001.0001",
+      "title": "The Oxford Handbook of Time and Politics",
+      "authors": [
+        {
+          "name": "Heldt, Eug\u00e9nia C.",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-04-04",
+      "abstract": "Abstract The close connection between time and politics is central to many political debates. Turbulence, emergencies, and crisis politics have led to criticism about the marginalization of deliberative institutions, notably parliaments, as time pressures appear to have concentrated decision-making in small circles. Nonmajoritarian institutions that do not follow electoral rhythms, such as central banks, are said to have gained in power. Some observers fear that democracy is being \u201ctimed out.\u201d By contrast, many analysts of public policy criticize democracy for its electoral time horizons. The Oxford Handbook of Time and Politics is the first major publication that surveys time-centered research in political science across its subdisciplines. As such, it integrates and consolidates an emergent body of knowledge, but also aims to inspire future scholarship. The Handbook highlights that paying systematic attention to time in political analysis yields questions and insights that are of relevance to a very broad range of political scientists working within different theoretical, methodological, and epistemological traditions. The Handbook covers comparative politics and government, public policy, international relations, and political theory. It is written by authors drawn from more than a dozen countries, making it a critical resource for scholars and students of political science.",
+      "cited_by_count": 40,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://mediatum.ub.tum.de/node?id=1509956"
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3126190155"
+    },
+    {
+      "openalex_id": "W2122387224",
+      "doi": "10.1111/j.1467-6486.2010.00950.x",
+      "title": "The New Political Role of Business in a Globalized World: A Review of a New Perspective on CSR and its Implications for the Firm, Governance, and Democracy",
+      "authors": [
+        {
+          "name": "Andreas Georg Scherer",
+          "openalex_id": "A5012262713",
+          "orcid": "https://orcid.org/0000-0002-8671-1721",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Guido Palazzo",
+          "openalex_id": "A5112390691",
+          "institutions": [
+            "University of Lausanne"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-05-01",
+      "abstract": "abstract Scholars in management and economics widely share the assumption that business firms focus on profits only, while it is the task of the state system to provide public goods. In this view business firms are conceived of as economic actors, and governments and their state agencies are considered the only political actors. We suggest that, under the conditions of globalization, the strict division of labour between private business and nation\u2010state governance does not hold any more. Many business firms have started to assume social and political responsibilities that go beyond legal requirements and fill the regulatory vacuum in global governance. Our review of the literature shows that there are a growing number of publications from various disciplines that propose a politicized concept of corporate social responsibility. We consider the implications of this new perspective for theorizing about the business firm, governance, and democracy.",
+      "cited_by_count": 1981,
+      "type": "review",
+      "source": {
+        "name": "Journal of Management Studies",
+        "type": "journal",
+        "issn": [
+          "0022-2380",
+          "1467-6486"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1467-6486.2010.00950.x"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Corporate Law and Human Rights",
+        "Global trade, sustainability, and social impact"
+      ],
+      "referenced_works_count": 324,
+      "url": "https://openalex.org/W2122387224"
+    },
+    {
+      "openalex_id": "W1991189629",
+      "doi": "10.1111/j.1467-923x.2012.02320.x",
+      "title": "The Professors on Public Life",
+      "authors": [
+        {
+          "name": "Richard D. French",
+          "openalex_id": "A5036389091",
+          "institutions": [
+            "University of Ottawa"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-07-01",
+      "abstract": "Many academics misunderstand public life and the conditions under which policy is made. This article examines misconceptions in three major academic traditions\u2014policy as science (e.g., \u2018evidence\u2010based policy\u2019), normative political theory, and the mini\u2010public school of deliberative democracy\u2014and argues that the practical implications of each of these traditions are limited by their partial, shallow and etiolated vision of politics. Three constitutive features of public life, competition, publicity and uncertainty, compromise the potential of these traditions to affect in any fundamental way the practice of politics. Dissatisfaction with real existing democracy is not the consequence of some intellectual or moral failure uniquely characteristic of the persona publica, and attempts to reform it are misdirected to the extent that they imagine a better public life modeled on academic ideals.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "The Political Quarterly",
+        "type": "journal",
+        "issn": [
+          "0032-3179",
+          "1467-923X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://zenodo.org/record/1063700"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Academic Freedom and Politics",
+        "Political Science Research and Education"
+      ],
+      "referenced_works_count": 18,
+      "url": "https://openalex.org/W1991189629"
+    },
+    {
+      "openalex_id": "W2979799401",
+      "doi": "10.1111/1467-8675.12429",
+      "title": "Democracy and lottery: Revisited",
+      "authors": [
+        {
+          "name": "Hubertus Buchstein",
+          "openalex_id": "A5087461497",
+          "institutions": [
+            "Universit\u00e4t Greifswald"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-09-01",
+      "abstract": "In the Italian republic of Genoa the members of the city council were selected by random selection from the 12th century on. Over time, the gambling-crazed residents of the city began to bet on who would win a seat and called this a lottery. A few decades later, this developed into the numbers games that have remained popular to this day. From Italy the original Old Germanic word11 Meaning fortune telling and fate in Old Germanic. slowly found its way to the Netherlands and later into the English vocabulary and (as a kind of reimportation with a different meaning) into German as well, to denote all sorts of games based on a random mechanism. It is, however, worth reminding political theorists that the word lottery has a political origin and that the recent comeback of lotteries as a means for democracy fits nicely into this etymology. This complex etymology also reminds us to be open to a broad and many faceted understanding of the role of lotteries in politics. It seems that recently, however, the role of sortition22 In the following I use the terms lottery, sortition, and random mechanism interchangeable. in politics has been narrowed to its instrumental function of selecting members of deliberative opinion polls' respective mini-publics.33 I use the terms deliberative opinion poll and mini-publics interchangeably in this article. As it is well known today, the selection of political offices by lottery\u2014even though they were named kleros in those days\u2014had a traditional place in ancient Greek democracies. In contrast to that tradition, modern democracies rely on elections as the main means of fill political positions. Over the last 20 years we can observe an impressive renaissance of the lottery as a democratic device. Taking inspiration from the early contributions of authors like Robert Dahl, Peter Dienel, and Ned Crosby in the 1970s,44 On these forerunners, see Sintomer (2007); Set\u00e4l\u00e4 and Smith (2018). a growing body of literature today highlights the benevolent impact of randomly selecting citizens for deliberative opinion polls' respective mini-publics55 The deliberative opinion poll is today mostly connected to the work of James Fishkin. See Fishkin (2009, 2018a, 2018b); Brown (2018); Floridia (2018). or even for selecting them for certain political offices.66 See Carson and Martin (1999); Dowlen (2008); Delannoi and Dowlen (2010); Lopez-Rabatel & Sintomer (2018); van Reybrouck (2016); Sintomer (2018). Reform proposals that include lotteries have lost their marginal status, at least in the academic milieu of modern democrats, and have even become a centerpiece of many current political reform proposals. In particular, the format of mini-publics has become attractive to some authors as an alternative to pure electoral democracy; for them mini-publics and other bodies of selected by lot citizens are presented not only as supplements to existent electoral democracy but also as institutions that are supposed to substitute them.77 See Barnett and Carty (2008); Callenbach and Phillips (2008); O'Leary (2006); Reybrouck (2016); Sutherland (2008). Ten years ago I started to propagate lotteries as a means to democratize modern democracies and to transfer the political competence to make binding political decisions to those chosen by lot.88 See Buchstein (2009, 2010). Over the last 10 years has emerged an even more widely shared euphoria among quite a number of political scientists about the use of lotteries to promote democracy. However, such euphoria on the part of so many political scientists has made me suspicious and given reason to a set of concerns and questions: what is the political meaning of the surprising comeback of the lottery in the democratic toolkit today, more than 2,000 years after the fall of ancient democracies? Can one register its comeback in political theory and practice as a potential step forward in the project of democratizing democracy? Are mini-publics meant to be part of a serious attempt to move beyond traditional parliamentary democracy? Is the return of the lottery in this context any more than a desperate and helpless attempt to escape from the political realities at a time of growing social and political polarization in western democracies and of feelings that liberal democracy is in crisis? Is it meant as a response to this crisis or is it ignorant to it? Is the return of the lottery more than nostalgia for Athens's alleged radical demokratia? Or is it just the artificial product of the institutional turn in the academic discourse on deliberative democracy? I will not be able to answer this cascade of critical questions in this article. Instead, I first reflect on the proper role of selected by lot bodies of citizens against the background of recent criticisms of mini-publics, of which the most prominent were put forward by Christina Lafont (section 2). In order to come to terms with her criticism and to dicuss the appropriate use of lotteries in the context of the current wave of literature it may be helpful to revisit some of the basic arguments for decision-making by random mechanisms in modern democracy. Hence, I want to broaden the narrow view on lotteries in the context of mini-publics with a reminder of the five main and more general arguments that have been put forward to defend random mechanisms for decision-making. My list puts particular emphasis on the advantages of lotteries for making efficient and productive decisions and for avoiding corruption (section 3). Pointing out the broad and many faceted potential of lotteries in politics is also a reminder to us to revisit critically the current narrative of the pure democratic meaning of lotteries in ancient democracies (section 4). In the last sections of the article I defend the introduction of lotteries in modern democracies along the line of their potential capacity to produce efficient decisions and to make corruption more difficult (section 5) in two ways: with respect to the internal distribution of political positions in parliaments, using the European Parliament as an example (section 6), and to finding a solution for the dilemma that members of parliament (MPs) face when it comes to making decisions on their own payment and on electoral rules (section 7). Whereas mini-publics were initially used proposed in order to provide a space for discussions among citizens and for them to consult professional politicians, in a significant number of cases of duly elected or appointed authorities have announced in advance that they would follow the decision made by the randomly selected mini-public (B\u00e4chtiger, Dryzek, Mansbridge, & Warren, 2018, p. 16). I also argued strongly for the transfer of the competence to make binding political decisions to mini-publics (Buchstein, 2009, 2010). My considerations were based on the following empirical observation: members of selected by lot deliberative bodies develop a manifest problem of motivation if the relationship between the deliberative project and the final decision-making actually made remains weak, or if no such relationship can be easily recognized by those involved. \"Why,\" Rainer Schmalz-Bruns rightly asked at the early phase of the invention of mini-publics, \"should people contribute the considerable time and effort to a process at all if there is no guarantee that the results will be transformed directly into governance strategies for implementation?\" (Schmalz-Bruns, 1995, p. 268). Accompanying research on participative projects following the model of Fishkin et al. also indicated how important it was for the members of deliberative bodies to consider the relevance of the results to decision-making to those in charge (Font & Blanco, 2007, pp. 579\u2013581; Ryfe, 2002, pp. 366\u2013368). In the light of these empirical findings, 10 years ago I saw that the possibilities of mini-publics boiled down to two options. One could either continue to work with mini-public experiments and projects that lacked any committed or binding decision-making status, thus turning them into some kind of measurement of civic education. Or one chooses to reinforce the political standing of mini-publics and integrate them into existing institutional arrangements with a clearly defined and binding set of competencies. Along this line of argument, strengthening the political position of mini-publics would also provide incentives for citizens to participate in and enter considered deliberations. Andr\u00e9 B\u00e4chtiger et al. correctly state that in discussing the pros and cons of mini-publics \"a great deal will rest on whether or not a mini-public makes binding decisions for the polity\" (B\u00e4chtiger et al., 2018, p. 16). Christina Lafont addresses her recent critique of mini-publics explicitly at the authors who demand a formal status for mini-publics as binding decision-makers (Lafont, 2015, 2017, 2019). As a matter of fact, most advocates of mini-publics do not endorse such demands and mini-publics have so far rarely made binding decisions in political practice.99 See Fishkin (2018a, p. 319); Niemeyer and Jennstal (2018, p. 331); Set\u00e4l\u00e4 and Smith (2018, p. 310). Nevertheless, her critical considerations are an important starting point for locating the proper place for mini-publics in modern democracies. To make her point, she distinguishes between two main strands of the normative arguments shared by the current proponents of mini-publics. Taken seriously, both positions must finally lead to a substitution of electoral democracy in the name of a better, deliberative democracy. The two justifications are based either in the name of full and equal democracy or on the idea of a reasonable democracy. In my brief discussion of Lafont's objections to both of them, I call them the equal democracy position and the responsible democracy position. The equal democracy position starts with the basic presupposition that every citizen has an equal chance of being given a political position.1010 Proponents of this strand are Oliver Dowlen (2008) and recently, David van Reybrouck (2016). One aspect of this presupposition concerns the fair distribution of chances for efficient political participation and is based on three assumptions. The first is the idea that the process of random selection functions like a kind of a search engine for political arguments and talents, as it includes people who would not be able or willing to run for office either because they fear rejection or because they consider their chances are too low (and they cannot blame random selection for this) within the pool of individuals whose political action is solicited. Second, one could argue that phenomena of political alienation and disenchantment with politicians might be diminished by the fact that the process of random selection grants more citizens insights into complex political issues. And third, it may be assumed that the decisions made by people who take office or receive a seat in a political body based on a random selection procedure are strongly binding because they are affected by the problems, life experiences, and value judgments of the participating citizens. The other aspect of the claim to equal democracy lies in the alleged fair representation that lotteries generate. The ideal on which this concept of representation lies has been critically called by Hanna Pitkin \"mirror representation\" (Pitkin, 1967, pp. 71\u201375). This justification of deliberative opinion polls has a serious flaw. After their deliberations the members of the selected by lot group of citizens are no longer simply mirroring the people. At this stage they are supposed to have new and more informed preferences. Hence, instead of truly mirroring the people they have become a kind of beautifying mirror of the citizenry. This change has to do with the connection constructed by theorists of selected by lot mini-publics to the theory of deliberative democracy and to their insistence that it provides a reasonable democracy. The reasonable democracy position1111 The most prominent proponent of this strand are James Fishkin (2009, 2018a) and Yves Sintomer (2018). puts its legitimating emphasis on the considered deliberation of the selected by lot citizens. Proponents of this view see a tension between considered deliberation and mass participation. In this legitimating conflict, they opt for the best quality deliberative procedures and the advantages of considered deliberation in small, face-to-face groups. Some of them even argue that these deliberations should be held behind a veil of secrecy as they fear that the glare of publicity would have harmful effects. The core of the responsible democracy position is an epistemic claim: its advocates argue that through the process of deliberation the participants will change their original preferences into better informed and morally better defendable preferences. Hence, the process of deliberation in mini-publics is understood as a kind of communicative filter system in order to produce a \"laundering of preferences\" (Goodin, 1986, p. 81). Or, put it in the words of one of the philosophical founding fathers of deliberative democracy, J\u00fcrgen Habermas; deliberations have \"an epistemic dimension because they create room for arguments to exert their preference-changing force\" (Habermas, 2018, p. 874). A democracy that works well is understood as a political system that \"as a whole is filtered through deliberation\" (Habermas, 2018, p. 877) and thus contributes to the rationalization of politics.1212 For a critical discussion of this semantic move in the history of democratic theory see J\u00f6rke and Buchstein (2007). With respect to mini-publics, however, certain normative problems arise in making the case for bypassing the general public in the name of their high deliberative qualities. Both Christina Lafont and Marit B\u00f6ker have recently argued that mini-publics diminish rather than increase the legitimacy of democracy. B\u00f6ker insists on the Kantian, Rawlsian, and Habermasian principle that the legitimacy of political authority must \"be based on argumentative justification through public reasoning to those subject to it\" (B\u00f6ker, 2017, p. 23) and reminds her reader that mini-publics are typically used as an instrument of government and thus fail the emancipatory potential of democracy. Whereas B\u00f6ker's critique includes a questionable evaluation of the empirical evidence of the emancipatory effects of mini-publics, Christina Lafont's critique may sound less radical, but really aims at the heart of the responsible democracy position. Mini-publics lack any mechanism of accountability or direct authorization from the wider citizen body. The members of the selected by lot group undergo process of preference change so that their views are no longer representative of the broader public. In case of a conflict between the views of the broader public and the participants of a mini-public Lafont argues against the \"blind deference\" (2015, p. 57) of the former to the latter. Why should citizens blindly defer to decisions made by a randomly picked group of people partaking in a deliberative opinion poll even in such cases in which they strongly disagree with the result? Take, for example, hotly contested policy issues like abortion rights and gun control in the USA, new speed limit regulations for the autobahn in Germany, or Brexit in the UK. In a society characterized by growing political polarization along identity lines it has become more difficult to reach a consensus or a compromise on certain reasonable decisions within mini-publics (Karpowitz & Mendelberg, 2018; Mutz, 2006). Hence authorizing mini-publics to make binding decisions will probably lead to even stronger political estrangement and a growing political climate of suspicion and accusations of conspiracy than what is experienced in the current electoral system. Mini-publics that make unpopular political decisions have the potential to challenge even more thoroughly the perceived legitimacy of the political order than elected bodies. In my view, the growing political polarization in most democracies has made the introduction of mini-publics a less attractive reform option than it may have been 10 years ago. Christina Lafont has pointed out that the justification of authorizing mini-publics to make binding political decisions faces an additional theoretical problem (Lafont, 2019, p. 59). In nearly all cases favoring the introduction of mini-publics the two lines of argument mentioned above intermingle with each other in one way or the other. Most authors claim that they can have it both ways simultaneously: they praise the representativeness of the selected by lot mini-public and they add to it the rational potential of considered deliberation. However, as Lafont has pointed out, the mirror claim and the filter claim do not go together well. On the one hand, a mini-public can be understood metaphorically as a mirror only as long as no considered deliberation has occurred; and the filtered version of the original preferences differs from the original picture in many ways, which is exactly what deliberation among these participants is supposed to bring about. On the other hand, the proceedings of a mini-public can be understood truly as a filter, only in so far as it loses its mirror-like quality. By pointing to these two contradictory claims, Lafont concludes that the political idea of reforming modern democracies via the introduction of mini-publics to make binding decisions faces a logical dilemma that collapses the two approaches in different, one-sided directions. If one follows the responsible democracy claim, the concepts finally merge into an elite conception of democracy that demands \"blind deference to experts\" (Lafont, 2019, p. 56). If one follows the equal democracy claim the proposal has to resist the priority of decisions by more enlightened participants of mini-publics and \"collapses into \u2026 a version of blind deference to the majority\" (Lafont, 2019, p. 62). Christina Lafont's critique of the idea of giving mini-publics the competence to make binding decisions at the centerpiece of a democratic reform agenda is well taken and convincing. In her conclusions she echoes the statement by Andr\u00e9 B\u00e4chtiger et al. that in the discussion about the pros and cons of mini-publics \"a great deal will rest on whether a mini-public makes binding decisions for the polity\" (B\u00e4chtiger et al., 2018, p. 16). Her recommendation is not to abandon the idea of selected by lot bodies of citizens altogether but to remove it from the sector of binding decision-making into a consultative role and into the sphere of participatory civic education, calling this move the politics of \"deliberative activism.\" According to her, the of mini-publics behind the competence is as their only role in a modern democracy is to decision-making by their into the public (Lafont, 2015, p. 56). there seems to be no way to defend the of mini-publics for the of binding political This that Christina Lafont has her critique on all the arguments making the case for mini-publics. However, there are additional and different arguments that she has not taken in her To bring them to a brief reminder of the general arguments for lotteries in politics may the case for mini-publics as well. In her criticism of mini-publics Christina Lafont rightly that their legitimacy on the kind of issues that should be for by (Lafont, 2019, p. that of the have not for this (Lafont, 2019, p. This statement can be more as it other of the lottery as an instrument in modern democracies. I the that Christina Lafont has and move beyond the idea to the use of lotteries with the of equal democracy and responsible democracy, I want to revisit some of the of random decision-making in politics. can or should lotteries be in politics at It would be and lead only to an were we to lotteries for the decision to is no the fact that we must for there are five general arguments than can be made for using lotteries in See Buchstein pp. I call this set the full for making decisions based on a random mechanism. In this case we have to a lottery to at a final a in of a in for a political The decision argument makes particular with respect to decisions the like it to at a and Some time ago in this cases of cases of and alternative decisions are pp. In such cases it is an of reason that chance should the insistence on decisions would be to a because one to the of According to this argument, lotteries are in the of all those participants in a decision-making In lotteries all participants are equal in the that they are all subject to the that the lot will fall to them In any argument there is the that all participants in the lottery have an equal number of the number of to be we would of a The for the use of lotteries in politics is the of for offices in ancient Greek democracy. A argument with the effects of lotteries for political It not deal with for but rather its in bodies. The of this argument the of lotteries for in political bodies in its to at fair The for the of representation is a with a of a The deliberative of this argument is less with an mirroring of society than with an increase in the social of those political bodies that can be by being that a number of and can be taken into in the political This argument as the for both the and the responsible democracy position. argument that a lottery has the potential to increase the of political institutions and The of a lottery is that it is and so there are no more decision-making to be are to and by so too are and of a decision-making argument at the of is that the lottery, as a is a with most other political lotteries demand of time and other and are procedures and rules that at the of the in politics. in to lotteries may also be used when no more deliberation seems to lead to a This may be as an of the argument, for in certain lotteries can be on the that they will have productive but it is more The effects as a as in the case of also of such random in and The basic idea is the in all those subject to the rules are in a state of as to whether and when a more will be thus them to to the is such a lotteries to The five arguments can claim of one in the political history of and also in recent justifications of the of they are to one which is not helpful in the for lotteries in certain institutional This is with respect to the about the reform of modern As mentioned in the of this in the current about the of lotteries for deliberative opinion polls the main emphasis is put on the and the representative In my attempt to revisit lottery and democracy, I a different way and my case on the and the long of the argument to the project to revisit the lottery and democracy has to include the way that the of lotteries are presented in current literature in the history of political It would be worth through all in which and other authors have the lottery in order to that the by and like the democratic meaning of the lottery in ancient See and In the following I will at least a few to with the democratic narrative of For a more critique of and see Buchstein From the of those who considered to be reasonable in ancient the decision to use it was based on on and on This was only against the background of an characterized by as of on the part of the of the Greek pp. which in its political According to ancient two functions above all were to the lottery in ancient democracies. In with and the rules of between offices the lottery makes political more efficient because it to between citizens to And the lottery functions also as a against corruption and as the of political evidence of both functions of can be found in ancient To just a in of how the used to the in order to in A example for avoiding conflict among is to be found in of the lot of who are by lottery, the who the the or the In they take that the will not be for more than two In the that more than one to the they and her to the The of In and the of the lottery mechanism is supposed to arguments between about The to from the which was also to for a long time, but was probably by of is a In this lot and elections are both mentioned as being appropriate for democratic but the quality of conflict is also to the democratic to provide for by lot to the less important and the of the offices thus will be to in The works of the for more important offices are appointed by The is called the and the from the into the which is the as on the This is selected by lot to if the should make the The of also when for the of the and cases to by this is that \u2026 it may not be for to to have the The of was not the only one among who such a view of the advantages of A by from the time in which selecting by lot first",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12429"
+      },
+      "topics": [
+        "Electoral Systems and Political Participation",
+        "Social Media and Politics",
+        "Public Administration and Political Analysis"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W2979799401"
+    },
+    {
+      "openalex_id": "W2018803978",
+      "doi": "10.1080/13510347.2013.786543",
+      "title": "Analysing legislative performance: a plebeian perspective",
+      "authors": [
+        {
+          "name": "Jeffrey Edward Green",
+          "openalex_id": "A5007950787",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-05-01",
+      "abstract": "Abstract Legislative performance can be understood in terms of results (the quality of the laws enacted) or in terms of the literal performativity of legislators (the quality of their appearances on the public stage). This article examines two different ethical frameworks for evaluating legislative performance in this latter, performative sense: a deliberative model, which restricts just political performances to deliberative exchanges among citizens, and a plebeian model, which expands just political performances to include those where political and economic elites endure special burdens as a condition of their elevated status. Given certain drawbacks of the deliberative model and parallel advantages of the plebeian model, I endorse the plebeian approach to political performativity. The article concludes by elaborating one of the key contrasts between the two models with regard to political communication, namely the plebeian model's embrace of a distinct form of legislative disruption. Beyond the way deliberation itself disrupts non-communicative forms of power and beyond the way protests physically disrupt governmental processes, plebeianism invokes a third kind of disruption \u2013 non-deliberative speech \u2013 intended to rebuke and humble leaders rather than reach mutual understanding about issues. Keywords: plebeianismdemocracyperformativitydeliberative democracydisruptionnon-deliberative discourse Notes Valerius Maximus, 6.2.6, in Malcovati, Oratorum Romanorum Fragmenta, 128.5,418. Hajer, Authoritative Governance, 8. Lasswell, Politics. Hajer refers to \"a tradition in political science that takes seriously the role of language and dramaturgy, of discourse and settings. That literature is subtle but has somehow always remained peripheral in the discipline.\" Authoritative Governance, 12. Debord, The Society of the Spectacle; Habermas, The Structural Transformation of the Public Sphere; Postman, Amusing Ourselves to Death. Closely related to the denigration of the spectacle as undemocratic is the assumption, nicely detailed and persuasively rejected by Manow, that \"democracy has no imagery\", that it dispenses with all matters of embodiment and performance. See Manow, In the King's Shadow, 9. Alexander, The Performance of Politics, esp. xii, 15; Pels, \"Aesthetic Representation and Political Style,\" 57. Hajer, Authoritative Governance, 3\u20134; Hajer and Uitermark, \"Performing Authority.\" Maynia recently has defended a notion of \"performative democracy\", involving mass events (like the tradition of Carnival analysed by Bakunin) where citizens \"straighten their backs\" \u2013 a somewhat vague formulation, but one which clearly indicates, as Maynia argues, episodic moments of rupture or resistance rather than ordinary occurrences in everyday democratic life. Performative Democracy, 4, 5. 9, 52. Indeed, for Edelman, such performativity often amounts to instances whereby democratic politicians produce only the false appearance of satisfying the needs of their constituents, achieving acquiescence from the public rather than their objective welfare. Edelman, Constructing the Political Spectacle. Other studies which emphasize the importance of symbol and ritual to contemporary politics, without asserting the justice of such phenomena, include Merelman, \"The Dramaturgy of Politics\"; Gamson, Talking Politics; McLeod, \"The Sociodrama of Presidential Politics\"; and Hajer, Authoritative Governance, 54\u20136, 89\u201394, 181\u20134. For a recent account of this dominant approach, see Enns and Wleizen, Who Gets Represented? See, for example, Przeworski, Stokes, and Manin, eds., Democracy, Accountability, and Representation. Hansen, Athenian Democracy in the Age of Demosthenes, 78, 223. On the conception of presidential democracies, see Linz and Valenzuela, The Failure of Presidential Democracy. In the United States, doctrines of legal immunity and executive privilege mostly prevent the interrogation of presidents while in office \u2013 and there is also precedent, set by President Truman, that ex-presidents cannot be called to testify. In 1953, now out of office, Truman refused to honour a Congressional subpoena that he testify regarding an investigation of espionage, declaring: The doctrine [of presidential confidentiality] would be shattered, and the President, contrary to our fundamental theory of constitutional government, would become a mere arm of the Legislative Branch of the government if he would feel during his term of office that his every act might be subject to official inquiry and possible distortion for political purposes. (Quoted in James Hamilton, The Power to Probe, 169) Habermas, Structural Transformation of the Public Sphere, 5\u201314; Schmitt, Roman Catholicism and Political Form; Mansfield, \"Modern and Medieval Representation,\" McLeod, \"The Sociodrama of Presidential Politics,\" 363; Hajer, Authoritative Governance, 53\u20134; Green, The Eyes of the People, 32\u201363. To be clear, I understand democratic theories espousing results-based performance as including not only consequentalist approaches that claim that democratic procedures have moral force only to the extent they produce good results, but equally approaches that uphold the representation of the electorate's preferences as an intrinsic good. Both of these are results-based in the sense that they focus primarily on the enactment of laws and policies as the criterion of democratic justice rather than the performative appearance of leaders and events on the public stage. While there is nothing in principle preventing the agonal model from being performative, the most influential purveyors of this theory have emphasized epistemological aspects (like the lack of universalistic, rationalistic solutions to most political problems and, hence, the permanence of agonism in politics) and broad sociological implications (like the need for active mobilization, rather than the dispassionate search for consensus, as the proper mode of addressing most issues), instead of how concrete individual political performances should be conducted. See, for example, Mouffe, \"Deliberative Democracy or Agonostic Pluralism?\" The question of what an agonistic mode of political performativity might consist in, beyond \"a vibrant clash of democratic political positions,\" largely has gone unaddressed. Mouffe, The Democratic Paradox, 104. For a partial exception, see Bickford, who advocates listening, among other qualities, as a specific performative trait required for an agonal \u2013 or \"adversarial\" \u2013conception of democracy. Bickford, The Dissonance of Democracy, 16\u201319. Habermas, Between Facts and Norms, 306. Kahane, Weinstock, Leydet, and Williams, Deliberative Democracy in Practice; Warren and Pearse, Designing Deliberative Democracy; Goodin, Innovating Democracy; Ackerman and Fishkin, Deliberation Day. Bohman and Rehg, Deliberatve Democracy, ix; Fearon, \"Deliberation and Discussion.\" For an en exception to this trend, see Pettit's argument for the restriction of certain deliberative contexts to experts and elites insulated from direct popular accountability: Pettit, \"Depoliticizing Democracy.\" Gutmann and Thompson, \"Deliberative Democracy Beyond Process\"; Christiano, \"The Significance of Public Deliberation.\" See Sanders, \"Against Deliberation\"; Green, The Eyes of the People, 58\u201360. Deliberative democracy's restricted notion of performativity stems in part from the restricted conception of the performative that comes from linguistics, especially Austin's notion of \"performative utterances\" as speech-acts that do not just describe reality but constitute mutually recognized identities and relations. See Austin, How To Do Things With Words. The normal assumption, hardly false, is that non-deliberative politics \u2013 shaped by spectacle, theatre, and constant opinion polling \u2013 is much more conducive to elite manipulation and abuse. See, for example, Ackerman and Fishkin, Deliberation Day, 18, 112, 199\u2013200, 214, 217. But the inferiority of non-deliberative politics vis-\u00e0-vis deliberative politics ought not prevent normative analysis of relatively better and worse forms of non-deliberative politics, especially insofar as the full realization of deliberative norms is not possible. Beyond the clear privileging of the metaphor of sphere over stage in the voluminous literature on deliberative democracy, an explicit argument on behalf of this privileging can be found in Habermas, Between Facts and Norms, 361; also see Seyla Benhabib, \"Models of Public Space,\" 79, 95. Benhabib links stage-based models, like the theatrical politics of Hannah Arendt, to the vying for excellence, whereas a deliberative politics, occurring in the abstract public sphere, has as its primary purpose the legitimation of social norms. For attempts to pursue this third way, see Green, The Eyes of the People; Rousseau, often seen as a critic of the spectacular nature of politics, in fact discriminates between morally better and worse forms, preferring, for example, winter balls, civic festivals, and cercles to the commercial theater. See Kohn, \"Homo Spectator,\" 468\u2013471. To be sure, it is also true that deliberative democrats frequently defend deliberation for its participatory features, above and beyond deliberation's alleged capacity to legitimate laws and social norms. See, for example, Barber, Strong Democracy. Gutmann and Thompson, Why Deliberative Democracy, 51. See Riker, Liberalism Against Populism; Arrow, Social Choice and Individual Values. For an important critical response, see Mackie, Democracy Defended. It is indeed a remarkable feature of contemporary democratic politics that one of the most vital notions of popular empowerment \u2013 a government's representation of the electorate \u2013 remains open to profound debate among political scientists regarding the degree and direction of its occurrence. On the particular representational issue of whether and to what degree American politicians are responsive to public opinion, the debate probably has only widened in the last decades. See Burstein, \"Public Opinion, Public Policy and Democracy.\" On the inevitable penetration of economic inequality into education, consider the admission of Rawls, normally considered a seminal defender of liberal education that aims to provide equally talented and motivated children the same prospects of success regardless of the socio-economic conditions of their birth: \"The principle of fair opportunity can be only imperfectly carried out, at least as long as the institution of the family exists.\" Rawls, A Theory of Justice, 74. Millar, The Crowd in Rome in the Late Republic, 73\u201394; Veyne, Bread and Circuses, 201\u2013345; Lintott, The Constitution of the Roman Republic, 94\u2013121. McCormick's Machiavellian Democracy advocates the revival of \"plebeian republicanism\" (147) which would enhance elite accountability beyond the usual focus on electoral mechanisms through the introduction of institutions \u2013 like tribunical political bodies and expanded political trials \u2013 that, in addition to protecting the \"plebeians of modern republics\" (150) from elite domination, would also clearly lead to greater public burdens placed on elites. Schumpeter's competitive\u2013elitist model understands democratization as a process involving the subjection of leaders to \"competitive struggle\" rather than traditional democratic values. Schumpeter, Capitalism, Socialism, and Democracy, 271, 290, 293. See note 32. On the contio as a \"hierarchical communication situation\" but one where elites were exposed to competition and critique, see Morstein-Marx, Mass Oratory and Political Power in the Late Roman Republic, 4, 9, 119, 127\u20138, 132, 165, 170\u20131. Millar, The Crowd in Rome, 14. As Millar explains, there is scholarly disagreement about the precise functioning of these trials. See Jones, The Criminal Courts of the Roman Republic and Principate, ch. 1, \"Iudicia Populi.\" On the lex repetundarum, which mandated audits of higher magistrates by often lower-class judges, see Livy, History of Rome, xlii.221\u201322; Crawford, Roman Statutes, 65 (lines 8\u20139). See MacKendrick, The Athenian Aristocracy. Hansen, Athenian Democracy, 110\u201315; Ober, Mass and Elite in Democratic Athens, 28, 115, 117, 128, 199\u2013203, 215\u201317, 221, 224\u201334, 277, 280. See Forsdyke, Exile, Ostracism, and Democracy; Bederman, The Classical Foundations of the American Constitution, 195. See note 11. On the Greek practice of thorubos (shouting down elite speakers), see Tacon, \"Ecclesiastic 'Thorubos'.\" See Bauman, Political Trials in Ancient Greece. On the idea of this form of compensation, see Veyne, Bread and Circuses, 93, 118, 152. On this prohibition, see May, A Treatise upon the Law, Privileges, Proceedings and Usage of Parliament, 372: \"The purpose of this rule is to maintain the cut and thrust of debate, which depends upon successive speakers meeting in their speeches to some extent the arguments of earlier speeches; debate is more than a series of set speeches prepared beforehand without reference to each other.\" On this difference, see Green, The Eyes of the People, 198. On the significance of retrospective investigative audits to the Roman and Athenian republics, see notes 11 and 38; on the practice of shouting down leaders, see notes 36 and 43. For a recent defense of these proposals, see McCormick, Machiavellian Democracy. Of course, deliberative democrats are not necessarily uncommitted to the norm of disruption, but I clarify what is particular to a distinctly plebeian notion of disruption in the fourth section. A plebeian, in the political-economic sense that emerged in the last century of the Republic, was a full citizen who was not part of any aristocratic group and, so, usually lacked high levels of wealth, power, and usually fame. To be sure, the older notion of plebeianism as an hereditary, almost ethnic category lived on (as certain offices, like the Tribunate, were restricted to members of traditional plebeian families, so that Clodius in 59 BCE had to renounce his patrician heritage and seek adoption from a plebeian family in order to attain the office), but plebeianism as I employ the term, and as the term came increasingly to be employed, refers to the multitude, i.e., the mass of ordinary citizens unelevated in status, wealth, or renown. On this rendering of plebeianism, both in the late Republic and early Empire, see Tacitus, Histories, 1.4.3; Machiavelli, Discourses on Livy, I.29\u201331; McCormick, Machiavellian Democracy, 31; Gelzer, The Roman Nobility, 21; Cicero, Ad Atticus, I.16; Horace, Epistles, II.186. On the restriction of the magistracies to the aristocratic classes, see Manin, The Principles of Representative Government, 46; Millar, \"The Political Character of the Classical Roman Republic,\" 11, 18; Gelzer, The Roman Nobility, 127; Katz, Democracy and Elections, 14\u201318. On the non-deliberative quality of the legislative assemblies in which plebeians were restricted to yes\u2013no votes, with effectively no capacity to set the agenda or engage in discussion, see Taylor, Roman Voting Assemblies; Nicolet, The World of the Citizen in Republican Rome, 254\u201355. See note 50. Lijphart, \"Unequal Participation: Democracy's Unresolved Dilemma.\" Verba, Nie, and Kim's landmark, cross-national study on economic equality and participation \u2013 with its central finding that \"the political advantage of those citizens more advantaged in socioeconomic terms is found in all nations\" \u2013 has hardly been refuted in the more than three decades since its publication. Verba, Nie, and Kim, Participation and Political Equality, 1. On the plutocratic elements of Scandinavian societies \u2013including their high levels of wealth (as opposed to income) inequality, their reliance on indirect, regressive taxation, and their simple inability to generate a political and educational system that does not in some ways bias the wealthy \u2013 see Winters, Oligarchy, 278\u201380; Beramendi and Rueda, \"Social Democracy Constrained,\" 627. I do not pursue here the plebeian emphasis on the economic burdens placed upon a society's richest citizens \u2013 which would serve not just fiscal purposes, but the acknowledgement and partial remediation of the inescapable elements of unfairness afflicting all liberal\u2013democratic societies \u2013 but these too are important to plebeianism. On the burdensomeness of question time, consider the first President Bush's reflection on his not having to endure it: Interview on C-SPAN, 1991, available online (http://www.congress.org/news/2011/01/12/would_obama_take_questions). But see the all-too-brief, poorly named, White, \"A Brief History of Heckling\"; also see Herbst, Rude Democracy. Homer, Iliad, II.224\u201342. Weber, Ancient Judaism, 267\u2013335. For examples of heckling and related forms of disruption within the contio, see Sallust, Jugurtha, 34.1; Cicero, De Haruspicum Responso, 8; ar. Resp. 8; Gran Licinian, 36.33 C. On the use of the contio as a venue to which a leading magistrate might summon a rival magistrate and engage in a kind of cross-examination, see Morstein-Marx, Mass Oratory and Political Power, 170\u20131; also see, 4, 119, 132, 165. As Morstein-Marx observes (127), \"The right to shout in the contio could even be seen as the mark of freedom itself\". Green, The Eyes of the People, 130, 162.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Democratization",
+        "type": "journal",
+        "issn": [
+          "1351-0347",
+          "1743-890X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Law in Society and Culture",
+        "Judicial and Constitutional Studies",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 97,
+      "url": "https://openalex.org/W2018803978"
+    },
+    {
+      "openalex_id": "W2253383916",
+      "doi": "10.1080/1461670x.2015.1124733",
+      "title": "Beyond Boon or Bane",
+      "authors": [
+        {
+          "name": "Matthew Powers",
+          "openalex_id": "A5034633964",
+          "orcid": "https://orcid.org/0000-0003-1430-8703",
+          "institutions": [
+            "University of Washington"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-30",
+      "abstract": "In recent years, scholars have debated whether the growing presence of non-governmental organizations (NGOs) in news production constitutes a \"boon\" or \"bane\" for journalism. This article seeks to move beyond this dualism by grounding these debates in normative theories of public communication. Drawing on four major normative traditions, it identifies distinct roles that NGOs are tasked with performing: an expert role associated with the representative liberal tradition and oriented primarily towards norms of accuracy and transparency; an advocacy role drawn from participatory democracy and geared towards a norm of public awareness; a facilitative role rooted in discursive ethics that encourages reasoned exchanges across diverse social groups; and a critical role found in radical democratic theory that aims to expose systemic injustices. Subsequently, the article reviews the literature on NGO newsmaking practices to assess the degree to which such groups satisfy or frustrate these normative traditions. Rather than wholly good or bad for journalism, the analysis suggests that NGOs most often perform the roles associated with representative liberal and democratic participatory ideals of journalism, while marginalizing deliberative and radical traditions. The implications of these findings for future research are discussed in the conclusion.",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Journalism Studies",
+        "type": "journal",
+        "issn": [
+          "1461-670X",
+          "1469-9699"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Media Studies and Communication",
+        "Social Media and Politics",
+        "Public Relations and Crisis Communication"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W2253383916"
+    },
+    {
+      "openalex_id": "W2013288376",
+      "doi": "10.1057/cpt.2013.3",
+      "title": "Critical republicanism: J\u00fcrgen Habermas and Chantal Mouffe",
+      "authors": [
+        {
+          "name": "Gulshan Khan",
+          "openalex_id": "A5000290339",
+          "orcid": "https://orcid.org/0000-0001-9462-7450",
+          "institutions": [
+            "University of Nottingham"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-04-16",
+      "abstract": null,
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Contemporary Political Theory",
+        "type": "journal",
+        "issn": [
+          "1470-8914",
+          "1476-9336"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Critical Theory and Philosophy",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 62,
+      "url": "https://openalex.org/W2013288376"
+    },
+    {
+      "openalex_id": "W4239597454",
+      "doi": "10.1093/oxfordhb/9780198747369.013.19",
+      "title": "Deliberative Democracy in India",
+      "authors": [
+        {
+          "name": "Ramya Parthasarathy",
+          "openalex_id": "A5086983635",
+          "orcid": "https://orcid.org/0000-0002-6468-8145"
+        },
+        {
+          "name": "Vijayendra Rao",
+          "openalex_id": "A5070989908",
+          "orcid": "https://orcid.org/0000-0002-6725-8984"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-09",
+      "abstract": "Abstract This chapter traces the evolution of deliberative institutions in India, as well as the ways in which deliberative bodies influence, and are in influenced by, entrenched social inequality. The paper first unpacks the historical roots of Indian deliberation, emphasizing the ways in which religious traditions fostered a culture of debate and dialogue. The paper then explores the interplay between Western liberal philosophers, most notably Henry Maine, and Indian political thinkers, including Gandhi and Ambedkar, on participatory democracy in India. The discussion then highlights the continued dialogue between Indian and Western ideas in the push for greater participatory development. Finally, the chapter probes the current incarnation of state-sponsored deliberation in India\u2014namely, village assemblies known as gram sabhas under the constitutionally mandated system of Indian village democracy or Panchayati Raj, and reviews the growing empirical scholarship about these village assemblies.",
+      "cited_by_count": 17,
+      "type": "reference-entry",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anthropological Studies and Insights",
+        "Foucault, Power, and Ethics"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W4239597454"
+    },
+    {
+      "openalex_id": "W579335097",
+      "doi": "10.1163/2468-1733_shafr_sim080180159",
+      "title": "Critical Americans: Victorian Intellectuals and Transatlantic Liberal Reform",
+      "authors": [
+        {
+          "name": "Leslie Butler",
+          "openalex_id": "A5051959921"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-02",
+      "abstract": "In this intellectual history of American liberalism during the second half of the nineteenth century, Leslie Butler examines a group of nationally prominent and internationally oriented writers who sustained an American tradition of self-consciously progressive and cosmopolitan reform. She addresses how these men established a perspective on American racism, materialism, and jingoism while she recaptures their insistence on the ability of ordinary citizens to work toward their limitless potential as intelligent and moral human beings. At the core of Butler's study are the writers George William Curtis, Thomas Wentworth Higginson, James Russell Lowell, and Charles Eliot Norton, a quartet of friends who would together define the humane liberalism of America's late Victorian middle class. In creative engagement with such British intellectuals as John Stuart Mill, Thomas Carlyle, Matthew Arnold, and Goldwin Smith, these critical Americans articulated political ideals and cultural standards to suit the burgeoning mass democracy the Civil War had created. This transatlantic framework informed their notions of educative citizenship, print-based democratic politics, critically informed cultural dissemination, and a temperate, deliberative foreign policy. Butler argues that a careful reexamination of these strands of late nineteenth-century liberalism can help enrich a revitalized liberal tradition at the outset of the twenty-first century.",
+      "cited_by_count": 35,
+      "type": "dataset",
+      "source": {
+        "name": "The SHAFR Guide Online",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "American Constitutional Law and Politics",
+        "American History and Culture"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W579335097"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

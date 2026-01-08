@@ -2,13 +2,10 @@
 
 Developer notes for things to try, features to implement, and things to test.
 
-Last updated: Jan 6, 2026
+Last updated: Jan 8, 2026
 
 ## Pending
 
-- [x] Have Claude check all the python scripts in philosophy-research/scripts
-  - [x] Fix message logging again, which the refactor seems to have broken
-  - [ ] Make sure all the JSON files are neatly written to some `tmp/` again and not dumped in the middle of the repository.
 - [ ] Clean up CLAUDE.md: Don't need all these links to Claude documentation, Claude uses claude-code-guide agent when needed.
 - [ ] Update the documentation on how to run this skill in the Claude default cloud environment. (Esp. GETTING_STARTED.md). Complication: probably need to give Claude `.env` file. Not sure how to best get API keys into repo non-persistently preferably? Can a user drop `.env` or the keys in the chat? Less good (because adds keys to repo): Fork the repo, make it private, add the `.env` in the repo root.
 - [ ] Does Claude need a prompt editor? I.e. give user feedback on a bad prompt, ask user to clarify it etc.
@@ -16,6 +13,9 @@ Last updated: Jan 6, 2026
 
 ## Done
 
+- [x] Have Claude check all the python scripts in philosophy-research/scripts
+  - [x] Fix message logging again, which the refactor seems to have broken
+  - [-] Make sure all the JSON files are neatly written to some `tmp/` again and not dumped in the middle of the repository. (NOTE: Claude seems to handle locations of temporary python script files well on its own without further instruction)
 - [x] Test whether this project repo can be used in the Claude cloud through the app.
 - [x] Clean / review all skills and agents
 - [x] Assess test coverage and rigor. Evaluate whether we can expand to skills and agents.

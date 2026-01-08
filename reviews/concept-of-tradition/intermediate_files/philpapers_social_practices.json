@@ -1,0 +1,159 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'social practices transmission', limit=20
+[search_philpapers.py] Rate limited, backing off (attempt 1/5)...
+[search_philpapers.py] Retrying after 1.4s backoff...
+[search_philpapers.py] Rate limited, backing off (attempt 2/5)...
+[search_philpapers.py] Retrying after 2.8s backoff...
+[search_philpapers.py] Rate limited, backing off (attempt 3/5)...
+[search_philpapers.py] Retrying after 4.0s backoff...
+[search_philpapers.py] Retrieved 20 entries...
+[search_philpapers.py] Search complete: 20 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "social practices transmission",
+  "results": [
+    {
+      "title": "John Greco, The Transmission of Knowledge",
+      "url": "https://philpapers.org/rec/GRETTO-34",
+      "philpapers_id": "GRETTO",
+      "snippet": "How do we transmit or distribute knowledge, as distinct from generating or producing it? In this book John Greco examines the interpersonal relations and social structures which enable and inhibit the ...",
+      "page_age": null
+    },
+    {
+      "title": "Kelly Underman, The Social Transmission of Bodily Knowledge",
+      "url": "https://philpapers.org/rec/UNDTST",
+      "philpapers_id": "UNDTST",
+      "snippet": "Literature on bodily habit has often emphasised the inculcation of new bodily skills and embodied ways of being in practice. However, recent work demonstrates that skilled experts do focus on the body, its sensuous information, and engage in conscious and deliberate forms of bodily awareness during the performance of bodily skills. In this article, I present data from interviews with barbell coaches (CrossFit, powerlifting, and Olympic weightlifting) and yoga teachers in order to explore the social transmission of bodily knowledge.",
+      "page_age": null
+    },
+    {
+      "title": "Marjorie Rhodes, Sarah-Jane Leslie & Christina Tworek, Cultural Transmission of Social Essentialism",
+      "url": "https://philpapers.org/rec/RHOCTO",
+      "philpapers_id": "RHOCTO",
+      "snippet": "Cultural Appropriation Without Cultural Essentialism?Erich Hatala Matthes - 2016 - Social Theory and Practice 42 (2):343-366.",
+      "page_age": null
+    },
+    {
+      "title": "Nicolas Fay, Bradley Walker, Yoshihisa Kashima & Andrew Perfors, Socially Situated Transmission: The Bias to Transmit Negative Information is Moderated by the Social Context",
+      "url": "https://philpapers.org/rec/FAYSST",
+      "philpapers_id": "FAYSST",
+      "snippet": "Cognitive bias Cultural evolution Negativity bias Positivity bias Situated cognition Social transmission Socially situated cognition Transmission fidelity",
+      "page_age": null
+    },
+    {
+      "title": "Julia Brannen, Violetta Parutis, Ann Mooney & Valerie Wigfall, Fathers and intergenerational transmission in social context",
+      "url": "https://philpapers.org/rec/BRAFAI",
+      "philpapers_id": "BRAFAI",
+      "snippet": "The article suggests both patterns of change and continuity in fatherhood across the generations. It demonstrates how cultural forces and material conditions need to combine to facilitate change in fathers? exercise of agency and how social class and the conditions of being a migrant shape fathers? practices.",
+      "page_age": null
+    },
+    {
+      "title": "Olivier Morin, How Traditions Live and Die",
+      "url": "https://philpapers.org/rec/MORHTL-2",
+      "philpapers_id": "MORHTL",
+      "snippet": "How Traditions Live and Die proposes an alternative to this standard view. What makes traditions live is not a general-purpose imitation capacity. Cultural transmission is partial, selective, often unfaithful.",
+      "page_age": null
+    },
+    {
+      "title": "Sally Haslanger, What is a Social Practice?",
+      "url": "https://philpapers.org/rec/HASWIA-2",
+      "philpapers_id": "HASWIA",
+      "snippet": "This paper provides an account of social practices that reveals how they are constitutive of social agency, enable coordination around things of value, and are a site for social intervention. The ...",
+      "page_age": null
+    },
+    {
+      "title": "Raeya Maswood & Suparna Rajaram, Social Transmission of False Memory in Small Groups and Large Networks",
+      "url": "https://philpapers.org/rec/MASSTO-2",
+      "philpapers_id": "MASSTO",
+      "snippet": "Maswood and Rajaram examine the transmission of false memories across small and larger networks. While the spread of false memories is not inherently beneficial, Maswood &amp; Rajaram argued that a better understanding of the formation and propagation of false memories has practical and societal implications.",
+      "page_age": null
+    },
+    {
+      "title": "Patricio Cruz Y. Celis Peniche, Are There Any True Formal Models of Success- and Prestige-Biased Social Learning?",
+      "url": "https://philpapers.org/rec/PENATA",
+      "philpapers_id": "PENATA",
+      "snippet": "Cultural transmission theorists have proposed there is an inherent tradeoff between social learning strategies [SLS s] that rely on direct observation of a cultural variant\u2019s payoffs (i.e., direct bias) and those that rely on a model\u2019s cues of success or prestige (i.e., indirect bias).",
+      "page_age": null
+    },
+    {
+      "title": "Andreas Reckwitz, Toward a Theory of Social Practices: A Development in Culturalist Theorizing",
+      "url": "https://philpapers.org/rec/RECTAT-3",
+      "philpapers_id": "RECTAT",
+      "snippet": "The article shows how practice theory and the three other cultural-theoretical vocabularies differ in their localization of the social and in their conceptualization of the body, mind, things, knowledge, discourse, structure/process and the agent.",
+      "page_age": null
+    },
+    {
+      "title": "Bert Scholtens, Finance as a Driver of Corporate Social Responsibility",
+      "url": "https://philpapers.org/rec/SCHFAA-19",
+      "philpapers_id": "SCHFAA",
+      "snippet": "Finance is grease to the economy. Therefore, we assume that it may affect corporate social responsibility (CSR) and the sustainability of economic development too. This paper discusses the transmission mechanisms between finance and sustainability. We find that there is no simple one-to-one relationship between financial development and sustainable development but there are various \u2013 often indirect \u2013 linkages.",
+      "page_age": null
+    },
+    {
+      "title": "Jan Horsk\u00fd, \u201cBlack CNN\u201d: Cultural Transmission of Moral Norms through Narrative Art",
+      "url": "https://philpapers.org/rec/HORBCC",
+      "philpapers_id": "HORBCC",
+      "snippet": "The cultural transmission of cooperative norms.Xinyue Zhou, Yan Liu &amp; Benjamin Ho - 2015 - Frontiers in Psychology 6. On the Human Addiction to Norms: Social Norms and Cultural Universals of Normativity.Christoph Antweiler - 2019 - In Neil Roughley &amp; Kurt Bayertz (eds.), The Normative Animal?",
+      "page_age": null
+    },
+    {
+      "title": "Jessica Ann Peterson, Grant Chesbro, Rebecca Larson, Daniel Larson & Christopher D. Black, Short-Term Analysis (8 Weeks) of Social Distancing and Isolation on Mental Health and Physical Activity Behavior During COVID-19",
+      "url": "https://philpapers.org/rec/PETSA-6",
+      "philpapers_id": "PETSA",
+      "snippet": "Due to the COVID-19 pandemic, cities and states adopted social distancing, social isolation, or quarantine measurements to slow the transmission of the disease. Negative mental health outcomes including depression and anxiety have been associated with social distancing or social isolation.",
+      "page_age": null
+    },
+    {
+      "title": "Jonathan Porter Berkey, The Transmission of Knowledge in Medieval Cairo: A Social History of Islamic Education",
+      "url": "https://philpapers.org/rec/BERTTO-18",
+      "philpapers_id": "BERTTO",
+      "snippet": "Focusing on Cairo, which under Mamluk rule was a vital intellectual center with a complex social system, the author describes the transmission of religious knowledge there as a highly personal process, one dependent on the relationships between individual scholars and students.",
+      "page_age": null
+    },
+    {
+      "title": "Elizabeth Shove, The Dynamics of Social Practice: Everyday Life and How It Changes",
+      "url": "https://philpapers.org/rec/SHOTDO-8",
+      "philpapers_id": "SHOTDO",
+      "snippet": "The Dynamics of Social Practice -- Introducing Theories of Practice -- Materials and Resources -- Sequence and Structure -- Making and Breaking Links -- Material, Competence and Meaning -- Car-Driving: Elements and Linkages Making Links -- Breaking Links -- Elements Between Practices -- Standardization and Diversity -- Individual and Collective Careers -- The Life of Elements -- Modes of Circulation -- Transportation and Access: Material -- Abstraction, Reversal and Migration: Competence -- Association and Classification: Meaning -- Packing and Unpacking -- Emergence, Disappearance and Persist",
+      "page_age": null
+    },
+    {
+      "title": "Laureano Castro, Luis Castro-Nogueira, Miguel A. Castro-Nogueira & Miguel A. Toro, Cultural transmission and social control of human behavior",
+      "url": "https://philpapers.org/rec/CASCTA-6",
+      "philpapers_id": "CASCTA",
+      "snippet": "Our thesis is that, during ontogeny, the evaluative communication (approval/disapproval) between parents and offspring is substituted by other evaluative communications among peers, like individuals of the same generation. Each person belongs to a reference social group with individuals that interact more intensively. Humans have developed psychological mechanisms that enable cultural transmission by being receptive to parental advice as well as their reference social group.",
+      "page_age": null
+    },
+    {
+      "title": "Siobh\u00e1n M. Mattison, Evolutionary Contributions to Solving the \u201cMatrilineal Puzzle\u201d",
+      "url": "https://philpapers.org/rec/MATECT",
+      "philpapers_id": "MATECT",
+      "snippet": "In both cases, resources had equivalent impacts on male and female reproduction, a result which predicts daughter-biased resource transmission given any nonzero level of paternity uncertainty. However, whereas land was transmitted traditionally to daughters, income today is invested in both sexes.",
+      "page_age": null
+    },
+    {
+      "title": "Aviezer Tucker, The Generation of Knowledge from Multiple Testimonies",
+      "url": "https://philpapers.org/rec/TUCTGO",
+      "philpapers_id": "TUCTGO",
+      "snippet": "It distinguishes the generation of knowledge from multiple testimonies from the transmission of knowledge by a single testimony. The reiteration of the generation of knowledge from multiple testimonies generates social knowledge.Critical examination of the literature about the coherence of multiple testimonies, their reliability, and independence argues in particular against conditional and causal interpretations and attempts to overcome the limitations of exclusively conceptual and formal epistemologies.",
+      "page_age": null
+    },
+    {
+      "title": "Arnon Keren, Epistemic Authority, Testimony and the Transmission of Knowledge",
+      "url": "https://philpapers.org/rec/KEREAT-2",
+      "philpapers_id": "KEREAT",
+      "snippet": "I present an account of what it is to trust a speaker, and argue that the account can explain the common intuitions which structure the debate about the transmission view of testimony.",
+      "page_age": null
+    },
+    {
+      "title": "Christoph J\u00e4ger & Nicholas Shackel, Testimonial authority and knowledge transmission",
+      "url": "https://philpapers.org/rec/JGETAA",
+      "philpapers_id": "JGETAA",
+      "snippet": "Nor need speaker knowledge be necessary, because the hearer correctly updating their partial belief can put them in the position to know even though no one in the speaker\u2019s chain knows. We articulate the correct principles of testimonial knowledge transmission.",
+      "page_age": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

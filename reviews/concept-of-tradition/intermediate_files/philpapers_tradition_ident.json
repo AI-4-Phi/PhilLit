@@ -1,0 +1,19 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'tradition identity politics', limit=20
+[search_philpapers.py] Rate limited, backing off (attempt 1/5)...
+[search_philpapers.py] Retrying after 1.2s backoff...
+[search_philpapers.py] Search complete: 0 entries found
+{
+  "status": "error",
+  "source": "philpapers_via_brave",
+  "query": "tradition identity politics",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No PhilPapers entries found",
+      "recoverable": false
+    }
+  ]
+}
