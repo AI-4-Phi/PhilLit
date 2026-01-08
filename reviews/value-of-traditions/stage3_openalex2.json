@@ -1,0 +1,880 @@
+[search_openalex.py] Searching OpenAlex: 'Burke Oakeshott tradition social order' (year=2015-2025) (min_citations=3), limit=40
+[search_openalex.py] Retrieved 21 papers...
+[search_openalex.py] Search complete: 21 papers found
+[search_openalex.py] Cached results (cache key: openalex_b75cb85a93ee6ca2)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Burke Oakeshott tradition social order",
+  "results": [
+    {
+      "openalex_id": "W2462372815",
+      "doi": "10.5325/goodsociety.24.2.0146",
+      "title": "Sheldon S. Wolin and the Historicity of Political Thought",
+      "authors": [
+        {
+          "name": "Antonio Y. V\u00e1zquez\u2010Arroyo",
+          "openalex_id": "A5038066442",
+          "orcid": "https://orcid.org/0000-0003-1817-6381"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-06-01",
+      "abstract": "\u201cTo refine, to clarify, to intensify \u2026 there is but one single force\u2014the imagination.\u201dwilliam carlos williams, spring and all (1923) Long considered one of the most original and influential American political theorists of the last fifty years, Sheldon S. Wolin's work has yet to receive the sustained critical engagement it deserves. Essays dealing with this or that aspect of his political thought have begun to appear during the last couple of years, a trend that undoubtedly will continue. Out of these efforts, fine elucidations of some of his signature contributions have ensued. Yet, few distinguished exceptions aside, many attempts to probe the critical and political import of Wolin's ideas, especially his formulation of \u201cfugitive democracy,\u201d end up assimilating Wolin's thinking into academic trends alien to him without an immanent consideration of the form and content of his original contribution to contemporary political theory or his approach to the interpretation of texts and his views about the historicity of political thought.It is, of course, impossible to reconstruct the full arc of Wolin's political thought in one essay. But an essay can sketch a diachronic contextualization of his classic work Politics and Vision, along with some initial jottings on its architecture and form, in order to establish its importance in the development of Wolin's distinctive formulation of the vocation of political theory. Principally considered an erudite conspectus of the history of western political thought, which without question it is, the actual substance of this book, and the approach to the historicity of political thought it stages, have gone largely unheeded. Unlike many works of this genre, Politics and Vision is a work of interpretation, not just an erudite history of the eventuation of ideas across space and time. But before reflecting on the architecture of this book and the original approach to the history of political thought it enacts, it is important to briefly consider Wolin's formative experiences and his writing prior to it, which constitute the obvious point of departure for a proper understanding of his contribution to the study of the historicity of political thought.Born in 1922, the son of Jewish immigrants, a child of the depression and veteran of the war against Fascism\u2014where as a nineteen year old he was a bomber in the South Pacific and flew fifty one missions\u2014Wolin's formative experiences were significantly defined by a time of capitalist convolutions, crises and wars, revolution and counterrevolution, and the Judeocide. After the war, he finished his undergraduate degree at Oberlin, where he concentrated on classics, philosophy and political science, and subsequently pursued graduate studies in political science at Harvard, where he wrote a dissertation on seventeenth-century English constitutional ideas, while reading broadly on classics as well as history. An education that combined with a remarkable literary sensibility positioned Wolin to eventually become a world-class historian of western political thought.1These formative experiences left an imprint on Wolin's political and theoretical outlook, which found its fullest expression in Politics and Vision. Conceived and written during the Eisenhower era, Politics and Vision betrays a political sensibility largely defined by the official American political discourse of the immediate postwar era. At the time, Wolin's political outlook was basically that of a New Deal liberal, and had conceived the denouement of World War II through the lenses of American ideology at the time, with the United States cast as leading the \u201cforces of freedom\u201d in an \u201copen society\u201d against the forces of reaction in closed totalitarian political orders. But the late fifties and sixties had already become a period of reflection and radicalization, which he subsequently characterized as \u201cthe journey from liberalism to democracy\u201d; a journey that entailed the eventual loss of \u201cliberal innocence.\u201d2Such innocence was irreversibly shed, as Wolin became a politically involved citizen in the context of the Berkeley protests during the sixties, primarily in relation to the Free Speech Movement and the protests against the Vietnam War. His signature ideas about participatory democracy were forged during this particular moment, an axial moment, as it were, which marked his transition to an original theorist of democracy, as well as a trenchant diagnostician of the travails of the American polity, his consistent locus of reflection. It was the discourse and practice of these movements that along with the inspiration of the Civil Rights movement led him to reflect about the possibilities of a different, decentralized conception of power that, albeit increasingly recessive, remained latent in the American political experience.But the importance of these political experiences for Wolin cannot be reduced to a theoretical formalization of the ideas he saw enacted by these movements. Perhaps more important is how for him the sixties represented a crisis, a political situation that allowed him to build the bridge between the study of political thought and the need to critically theorize the present. For what that tumultuous decade emblematized was a deep crisis in the United States as a political entity, a situation that prompted awkward questions about its political identity and the ways in which political power and public authority were to be conceived and exercised. It thus became a political crucible. And Wolin responded to it in terms of what he conceived as theoretical analysis beyond the immediacy of journalism: a modality of critical reflection aiming at making sense of the political world, its current fate and predicaments\u2014from the perspective of both the past and the present.That was, at any rate, consonant with his sense of the vocation of the political theorist. In Wolin's allusive but ultimately sui generis view, the political theorist makes sense of the past and the contemporary world, along with the continuities and discontinuities between the two. A vocation that was already at work, as will be shown below, in Politics and Vision, but which became more sharply articulated in his seminal and still controversial essay \u201cPolitical Theory as a Vocation.\u201dWolin's reflections on the sixties, which pivoted on \u201cthe Berkeley Rebellion,\u201d placed him on the national stage. From the seventies on, he became a commentator on American politics in leading national venues like the New York Review of Books (NYRB) and New York Times, which represented an important shift in his intellectual orientation and writing style. Wolin penned a series of penetrating essays for the NYRB\u2014Hannah Arendt, Jimmy Carter, Henry Kissinger, Ronald Reagan, conservatism and the American experience, were among his subjects\u2014that represented a form of theoretically sharp writing about the present equally devoid of the epiphenomenal nature of journalism and the jargon often defining academic writing. It aimed at a larger audience of educated citizens and was meant to show what the political theorist qua citizen could contribute to his political present. Political commentary and political theory thus became productively crisscrossed in a single field of vision. Or as Wolin eloquently stated it: A political theory is not only a critical vision of existence, but a glimpse of reality\u2026. The theorist's vision of a better political order and new civic culture draws its understanding from the critical portion of the theory. The vision is complementary of the critique. And this is why political commentary is not an unnatural act for a theorist but a necessity. Political commentary is political theory conducted by other means. For the theorist it is a salutary form of self-criticism that compels him to the test of whether his ideas can make some sense of the world around him.3 The writing published in democracy eloquently lent expression to this commitment and largely lived up to these exacting standards.Wolin's writings from the NYRB to the moment of democracy clearly illustrate his transition from a great interpreter of classic texts, an erudite but imaginative historian of political thought, into the closest thing to a pure political theorist of democracy in the twentieth century. A status clinched with remarkable essays on American and Athenian political thought whose best-known statement is his 1994 essay \u201cFugitive Democracy,\u201d and further consolidated with the 2001 publication of his second masterpiece, Tocqueville between Two Worlds. In the meantime, Wolin engaged with the work of every major contemporary or immediate predecessor\u2014Theodor W. Adorno, Hannah Arendt, Allan Bloom, John Dewey, Michel Foucault, Harvey C. Mansfield Jr., Michael Oakeshott, Karl Popper, John Rawls, Richard Rorty, Leo Strauss\u2014thus scrupulously recording disagreements over shared theoretical and political territory, while deepening his own theoretical formulations. It was through these dialogues with contemporary and near contemporaries that his radical but non-Marxist leftist political theory of democracy, political economy and the State was formulated.If in many respects Tocqueville between Two Worlds represents the summa of these reflections about the political vocation of the political theorist\u2014where the political theorist's sense of the theoretical and political vocations, and preferred genres of reflection, are conjoined with a relentless desire to arrest in thought the contours of the present and the presence of the past in it\u2014the 2004 expanded edition of Politics and Vision and his last book, Democracy Incorporated, equally attest of these dual commitments. To bring the skills of the historian of political thought to bear on the effort of making sense of the contemporary world and thus inherit a tradition of discourse historically defined by continuity and innovation.Politics and Vision is the book that started it all. It, along with the 1968 essay \u201cPolitical Theory as a Vocation,\u201d made Wolin famous within the walls of North Atlantic political theory. Frequently described as an intellectual landmark, Politics and Vision offered a serious alternative to prevalent approaches to the history of political thought. As Nicholas Xenos has accurately observed, it articulated a \u201cfundamental challenge to the teaching of the history of political theory as a chronicle of successive ideas, each dying along with the social and institutional structures of which it was a part.\u201d4 Although often paired with the writings of Hannah Arendt and Leo Strauss, Wolin's book offered something different. Unlike, say, Arendt, in whose work sustained exegesis of thinkers are seldom undertaken, Wolin not only reconstructed entire bodies of work in terms of their internal logics, but was in tune with the political and historical contexts in which thinkers operated and the enabling constraints that genres of reflection placed upon them. Similarly, he lacked the idealizations of the Greek Polis marring Arendt's writing, was immune to romantic notions of \u201cpearl diving,\u201d let alone any nostalgic conceits about lost treasures. Conversely, in contrast to Strauss, Wolin's magisterial command of the history of political thought had a light touch and his accounts of both past and present were bereft of the oracular gestures and esoteric conceits that are the signature of Strauss's erudite if frequently tendentious interpretations of past thinkers.Obviously enough, what Arendt, Strauss and Wolin had in common was a strong political edge beyond the pieties and bien pensant platitudes defining American liberalism. However marred by her idealization of the American Revolution, Arendt's idiosyncratic republicanism had no truck with frozen constitutionalism and offered an original account of freedom not easily assimilated into the dominant liberal-capitalist doxa in the United States; likewise, underlining Strauss's oracular excavations of the history of political philosophy was a hard-edged, highly original articulation of conservatism that recast his European counterrevolutionary sympathies to American specifications. But beyond these shared critical terrain, or perhaps because of it, the differences in theoretical outlook and political commitments are striking enough. Intellectually and politically, Wolin's concern was never to refurbish, much less resuscitate, a defunct or lost tradition, let alone cultivate a form of arcane political wisdom that only an elite could stomach, or lamenting the eclipse of an earlier and thus more authentic moment, as jazzy versions of Heidegger would have it.For instance, the distance between Wolin and Arendt is readily seen in one of Wolin's critical engagements with her writings, where he clearly articulates a radically different understanding of the triad of terms that constitute his own original approach to the study of political theory: political, theory, tradition. For Wolin tradition is \u201ca shorthand expression for the preoccupations, approaches, and beliefs that distinguished certain thinkers who frequently addressed each other's arguments and used them as departure points.\u201d Moreover, adequately studying such tradition, and how it bears on present-day concerns, cannot be encompassed by theoretical forms indifferent to institutional and sociological mediations. Here is a trenchant formulation, penned as part of an exchange with the leading light of the American Arendt industry: Arendt's notion of the \u201cspectator\u201d who judges the happenings in the \u201cpublic realm,\u201d makes \u201cpossible\u201d the \u201cspace\u201d where \u201cwords, deeds, and works\u201d can \u201cbe\u201d by the fact that the spectator is looking on: I stick to my charge that this is the archaic element that leads the mind to ignore the forms of socio-economic and political power that are determining what the \u201cspectators\u201d watch, defining the \u201cspace\u201d in which the game is being \u201cplayed,\u201d and dictating the \u201cdeeds\u201d and \u201cworks,\u201d or what the thinkers of our time are pleased to call \u201cpolicy outcomes.\u201d Until the minds which claim to care for the things of the world as well as the \u201cpearls\u201d of the spirit come to grips with the powers of the world, they will continue to be in the \u201cfree-floating state\u201d that Young-Bruehl admires, standing \u201cnowhere,\u201d wielding their levers not against \u201cgravity,\u201d but, as Young-Bruehl has it, against the \u201cspirit\u201d of gravity.5 In contrast, Wolin makes room for the mediations dislodged by Arendt. For him the question of a tradition of political thought is more complex and appealing. Without idealization, or lamentation, Wolin asked questions hitherto uncanvassed: what kind of tradition is political theory? What perspectives does it afford? How have its core understandings evolved across space and time? What does it mean to think about political life theoretically? Better yet: how does one think about theoretical forms politically?Prior to the writing and publication of Politics and Vision, Wolin wrote a series of scholarly essays that eloquently expressed a unique historical, theoretical, and literary, sensibility to thinkers of the past. Essays on two major English thinkers\u2014Richard Hooker and David Hume\u2014stand out for two reasons: not only is neither included in Politics and Vision, as both deal with the themes treated in his dissertation, but both essays already exemplified the freshness of insight that his original convergence of the literary, historical, and theoretical yielded, something that eventually became one of the distinctive features that made Wolin's writing on canonical figures inimitable.6 Furthermore, both essays foreshadow Wolin's remarkable qualities of as a reader of texts, the qualities that made the signature interpretations in Politics and Vision so memorable.Whereas previous writing on Hooker had cast him as \u201can unwitting contributor to the development of English liberalism,\u201d Wolin not only convincingly overturned this judgment by showing how his metaphors and overall tenor of this thought was closer to the conservatism of Burke, but carefully contextualized the author of the Laws of the Ecclesiastical Polity in terms of the specific situation he was responding to, the questions he sought to address, and how his answers were constrained by both his political commitment and theological choices and the intellectual sources nourishing his reflections. Wolin thus parsed out the medieval influences, the Aristotelian aspects of his reflections, and the centrality of the English constitutional experience in Hooker's thought, which he characterized as \u201ca rich and meaningful synthesis.\u201d7 Though remarkable in its own right, Hooker's synthesis was hardly stable, as the different currents converging in it did not easily map onto each other. Crevices remained. Fissures that were principally due to the constraints of the political situations Hooker faced, and how the immanent logic of each of his intellectual signposts had its own pull.Ultimately, however, what is of significance is how Hooker is carefully contextualized in a historical tradition of discourse with clear antecedents and afterlives. The importance of Hooker's political thought is therefore characterized in terms of the presence of the past in his thought forms, as well as their afterlives in the conservative tradition: \u201cIts importance to the conservative tradition was that it helped to make constitutionalism a two-sided coin: the one side emphasizing legal and customary restraint, the other insisting that \u2018authority is a constraining power.\u2019 The double aspect of constitutionalism has remained central in the history of English conservative thought, from Hooker to Clarendon, and through Blackstone and Burke.\u201d8 Here is, in a nutshell, the bi-directionality that is central in Wolin's interpretations of historical figures: an acute sense of the traditions the thinker in question inherits, the political predicament and intellectual nubs he tars with, and the subsequent fate of the concepts marshaled at any given time. Continuity and are without one for the essay on these In it, the is recast as a conservative albeit of \u201ca distinctive central to was that from the which has basically defined by its counterrevolutionary vocation in with a of the of the was an of the And that is importance for subsequent Wolin how against the its own thus a theoretical vocation on the of by the of Moreover, not only some of the made famous by on the importance of and a for and a fine for the of ideas of thus to what the of the had these essays already the skills that would Wolin as a interpreter of the history of political thought, it is his of After that a of what critical engagement the overall of Politics and of about and its is as an earlier form of other about the or of political theory, the for a trenchant of the historical and theoretical of a yet touch he the overall of the book and offered alternative accounts of the has But the most of the essay are found in Wolin's sketch of the of Politics and that the question has by yet that the in the of political theory a where to an for this as well as an alternative to theory? \u2026 I would that to consider who have the of political theory with many of the of by in the great tradition. to who have asked politically meaningful questions to who have the impossible of or in political forms of sharply different from and theory, are to be found in social science in the for the and its and in the own is that these forms of theory are to the more that they the forms in which the of political theory have It that political theory has not it has concern with the ways political theory has or or is the dominant of Politics and Vision. But for this to the of a tradition of political theory, of political has to be And that is the other the arc of the book, the interpretations of thinkers and texts, and across time and space that the western tradition of political Wolin's \u201cthe judgment that political theory is is to the the for the political theorist qua of political thought not to but to the of political to not only make sense of how political and are being to in so many by political theory as a meaningful form of and reflection, one to the political of citizens by and is in an in which the of the political as a unique of with its own internal and questions was of being lost or Or as stated in Politics and Vision, what is at in and the of political theory is how it the of political a that not cast political as epiphenomenal but the to to political them or such as political power whether a conception of political or of can easily certain with public can the and entailed by in a politically is along these that in Politics and Vision Wolin offered an account of political theory a form of as \u201ca complex that of and consideration of the of political say, \u201cthe power between and the nature of the by social the status of certain and the of political From this the study of political theory was no in a historical or the form of it represents is conceived a form of political the history of political thought is treated as \u201ca and tradition that one carefully and in order to a and a of that a particular world, the world of political an education that the forms of political to and contemporary of power stable, the of political thought had sociological content and as it European history. Politics and Vision not only offered original interpretations of canonical but it carefully these and the historical, and intellectual contexts to these and along with the of that these over time. The content of the political is thus at and while its or what as political, has over time, the to what constitute political have remained Wolin thus and as some of the that the of the political has over time, while the political in a situation of that the of defining what is political is a political theory is an tradition of theoretical dealing with political a tradition largely defined by both continuity and in the of its It around a series of and political, and political and both and have addressed these concepts and in different ways with different and of their what different is what Wolin to as their and how aspects of political life are and cast as central for the of as part of a of fate between and that is and this political critical import is defined by its it of politically, thus thinking about theory but equally important is to with the political world, along with the of power and contemporary political life and its distinctive and Politics and Vision, the perspective on the historicity of political thought that became Wolin's for Wolin political theory to be with both the past and the and the presence of the the of his classic work already the between the study of the history of political thought with the of a political and theoretical more both the perspective of the thinker in question the political situation was responding to, and that of the contemporary interpreter who the interpretation the reader one by the own historicity and which the between the original and the contemporary who in to her own political about the of or in are of the situation in which an act is in one sense that act and in sense it not the they cannot his among The are what he from his who have to him the situation in which he is what Wolin's account of political theory as an As a tradition of political theory with concepts and by the which a theorist's reflection as enabling constraints that not her of interpretation, these are and thus recast from a perspective that bears on a new political historical political theory qua history of political to be as political and It is an intellectual for which history the distance to the past for a political and historical understanding of the by the past Political theory is thus in the it an of vision to into the of found in a against the of a tradition of of whose contextualization from different yet never is thus a modality of that is in the sense by perspective is, the to a of with a part of the space around space the of the in a",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "The Good Society",
+        "type": "journal",
+        "issn": [
+          "1089-0017",
+          "1538-9731"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Theory and Influence",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W2462372815"
+    },
+    {
+      "openalex_id": "W1818823908",
+      "doi": "10.1177/2047173415577886",
+      "title": "Between the state and the individual: \u2018Big Society\u2019 communitarianism and English Conservative rhetoric",
+      "authors": [
+        {
+          "name": "Howard Gibson",
+          "openalex_id": "A5044128938",
+          "orcid": "https://orcid.org/0000-0003-4588-0307",
+          "institutions": [
+            "Bath Spa University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-01",
+      "abstract": "During his quest for leadership of the English Conservative Party, David Cameron declared his intention to turn Britain into a Big Society. In May 2010, having gained office as Prime Minister, he unveiled a string of policies to bring his vision to fruition. After five years, however, talk of the Big Society has withered in public debate such that today only the press refer to it, and then as a policy in decline. This article argues that as an attempt to revitalise citizenship and local communities, and deal with the apparent ills of state centralism and liberal atomism, it was destined to fail. This is because it coincided, intentionally some have said, with an austerity crisis that made talk of the Big Society politically feasible; left Big Capitalism, the cause of austerity, untouched; was seemingly reticent to divert power to localities; under-theorised the nature and complexity of modern communities; and was an attempt at depoliticisation by diverting risk to bodies such as charities and schools.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Citizenship Social and Economics Education",
+        "type": "journal",
+        "issn": [
+          "1478-8047",
+          "2047-1734"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://researchspace.bathspa.ac.uk/5766/1/CSEE.pdf"
+      },
+      "topics": [
+        "Housing, Finance, and Neoliberalism",
+        "Political and Economic history of UK and US",
+        "University Challenges and Reforms"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W1818823908"
+    },
+    {
+      "openalex_id": "W2225385200",
+      "doi": "10.22459/ag.01.2015.16",
+      "title": "The Contest for Rural Representation: The celebrated contest over Indi and the fate of the independents",
+      "authors": [
+        {
+          "name": "Jennifer Curtin",
+          "openalex_id": "A5071048474",
+          "orcid": "https://orcid.org/0000-0001-9786-5868"
+        },
+        {
+          "name": "Brian Costar",
+          "openalex_id": "A5019707655"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-21",
+      "abstract": null,
+      "cited_by_count": 18,
+      "type": "book-chapter",
+      "source": {
+        "name": "ANU Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://doi.org/10.22459/ag.01.2015.16"
+      },
+      "topics": [
+        "Agriculture and Rural Development Research"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2225385200"
+    },
+    {
+      "openalex_id": "W2984576261",
+      "doi": "10.3390/nu11112675",
+      "title": "Updating the Food-Based Dietary Guidelines for the Spanish Population: The Spanish Society of Community Nutrition (SENC) Proposal",
+      "authors": [
+        {
+          "name": "Javier Aranceta Bartrina",
+          "openalex_id": "A5016678981",
+          "orcid": "https://orcid.org/0000-0002-5666-7328",
+          "institutions": [
+            "Instituto de Salud Carlos III",
+            "Spanish Biomedical Research Centre in Physiopathology of Obesity and Nutrition",
+            "Universidad de Las Palmas de Gran Canaria",
+            "Universidad de Navarra",
+            "University of the Basque Country"
+          ]
+        },
+        {
+          "name": "Teresa Partearroyo",
+          "openalex_id": "A5085014335",
+          "orcid": "https://orcid.org/0000-0002-4401-1233",
+          "institutions": [
+            "Universidad San Pablo CEU"
+          ]
+        },
+        {
+          "name": "Ana M. L\u00f3pez\u2010Sobaler",
+          "openalex_id": "A5052907870",
+          "orcid": "https://orcid.org/0000-0002-4133-1450",
+          "institutions": [
+            "Universidad Complutense de Madrid"
+          ]
+        },
+        {
+          "name": "Rosa Mar\u00eda Ortega Anta",
+          "openalex_id": "A5079771905",
+          "orcid": "https://orcid.org/0000-0003-3837-9450",
+          "institutions": [
+            "Universidad Complutense de Madrid"
+          ]
+        },
+        {
+          "name": "Gregorio Varela\u2010Moreiras",
+          "openalex_id": "A5033362502",
+          "orcid": "https://orcid.org/0000-0001-5158-4999",
+          "institutions": [
+            "Fundaci\u00f3n Espa\u00f1ola de la Nutrici\u00f3n",
+            "Universidad San Pablo CEU"
+          ]
+        },
+        {
+          "name": "Llu\u00eds Serra\u2010Majem",
+          "openalex_id": "A5082399675",
+          "orcid": "https://orcid.org/0000-0002-9658-9061",
+          "institutions": [
+            "Instituto de Salud Carlos III",
+            "Spanish Biomedical Research Centre in Physiopathology of Obesity and Nutrition",
+            "Universidad de Las Palmas de Gran Canaria"
+          ]
+        },
+        {
+          "name": "Carmen P\u00e9rez\u2010Rodrigo",
+          "openalex_id": "A5068655636",
+          "orcid": "https://orcid.org/0000-0002-4554-6184",
+          "institutions": [
+            "University of the Basque Country"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-11-05",
+      "abstract": "Diet-related risk factors and physical inactivity are among the leading risk factors for disability and are responsible for a large proportion of the burden of chronic non-communicable diseases. Food-based dietary guidelines (FBDGs) are useful tools for nutrition policies and public health strategies to promote healthier eating and physical activity. In this paper, we discuss the process followed in developing the dietary guidelines for the Spanish population by the Spanish Society of Community Nutrition (SENC) and further explain the collaboration with primary healthcare practitioners as presented in the context of the NUTRIMAD 2018 international congress of SENC. From a health in all policies approach, SENC convened a group of experts in nutrition and public health to review the evidence on diet-health, nutrient intake and food consumption in the Spanish population, as well as food preparation, determinants and impact of diet on environmental sustainability. The collaborative group drafted the document and designed the graphic icon, which was then subject to a consultation process, discussion, and qualitative evaluation. Next, a collaborative group was established to plan a dissemination strategy, involving delegates from all the primary healthcare scientific societies in Spain. A product of this collaboration was the release of an attractive, easy-to-understand publication.",
+      "cited_by_count": 95,
+      "type": "article",
+      "source": {
+        "name": "Nutrients",
+        "type": "journal",
+        "issn": [
+          "2072-6643"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2072-6643/11/11/2675/pdf?version=1572948379"
+      },
+      "topics": [
+        "Nutritional Studies and Diet",
+        "Consumer Attitudes and Food Labeling",
+        "Obesity, Physical Activity, Diet"
+      ],
+      "referenced_works_count": 141,
+      "url": "https://openalex.org/W2984576261"
+    },
+    {
+      "openalex_id": "W2890695008",
+      "doi": "10.1017/s0018246x18000328",
+      "title": "THE ANCIENT CONSTITUTION AND THE LANGUAGES OF POLITICAL THOUGHT",
+      "authors": [
+        {
+          "name": "Mark Goldie",
+          "openalex_id": "A5053912745",
+          "orcid": "https://orcid.org/0000-0001-5091-5258"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-05",
+      "abstract": "Abstract Historians of political thought speak of \u2018languages\u2019 of politics. A language provides a lexicon, an available resource for legitimating positions. It is looser than a \u2018theory\u2019, because protean, and not predictive of particular doctrines. Some languages attract considerable scholarly attention, while others languish, for all that they were ambient in past cultures. In recent scholarship on early modern European thought, natural law and civic humanism have dominated. Yet prescriptive appeals to national historiographies were equally pervasive. Many European cultures appealed to Tacitean mythologies of a Gothic ur-constitution. The Anglophone variant dwelt on putative Saxon freedoms, the status of the Norman \u2018Conquest\u2019, whether feudalism ruptured the Gothic inheritance, and how common law related to \u2018reason\u2019, natural law, and divine law. Whigs rooted parliaments in the Saxon witenagemot ; though, by the eighteenth century, \u2018modern\u2019 Whigs discerned liberty as the fruit of recent socio-economic change. Levellers and Chartists alike talked of liberation from the \u2018Norman Yoke\u2019. These themes were explored from the 1940s onwards under the stimulus of Herbert Butterfield; one result was J. G. A. Pocock's classic Ancient constitution and the feudal law (1957).",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "The Historical Journal",
+        "type": "journal",
+        "issn": [
+          "0018-246X",
+          "1469-5103"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/16EFF058E19F484AA8230F6F8BE94B3F/S0018246X18000328a.pdf/div-class-title-the-ancient-constitution-and-the-languages-of-political-thought-div.pdf"
+      },
+      "topics": [
+        "American Constitutional Law and Politics",
+        "Historical Economic and Legal Thought",
+        "Historical Legal Studies and Society"
+      ],
+      "referenced_works_count": 152,
+      "url": "https://openalex.org/W2890695008"
+    },
+    {
+      "openalex_id": "W2763399947",
+      "doi": "10.15201/hungeobull.66.3.4",
+      "title": "Re-bordering of the Hungarian South: Geopolitics of the Hungarian border fence",
+      "authors": [
+        {
+          "name": "Norbert Pap",
+          "openalex_id": "A5036436062",
+          "orcid": "https://orcid.org/0000-0001-8243-4213",
+          "institutions": [
+            "University of Pecs"
+          ]
+        },
+        {
+          "name": "P\u00e9ter Rem\u00e9nyi",
+          "openalex_id": "A5023415669",
+          "orcid": "https://orcid.org/0000-0002-4777-2820",
+          "institutions": [
+            "University of Pecs"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-05",
+      "abstract": "The Hungarian borders have been at the centre of political and social discourse since the 20th century. Subjectto whichever government dominated at a given time, border policies strengthened and disappeared frequently.During the summer and autumn of 2015, a fence was constructed in effort to discourage migration at the southern borders of Hungary. Building on collective social memory which links Hungary's southern borders with divisionary actions, the government organised a campaign effective in convincing voters that more aggressive border control measures should be enacted. Opposition parties had no effective tools to counter the government's actions; thus, popular support for the government increased significantly. This paper examines how the attention and resources concentrated on the southern borders do not directly correspond to purported objectives. In fact, this paper argues that the issues related to securing the southern border of Hungary are merely used as political resources to achieve domestic political- and power-related goals. Taking into account specific international trends of border research, this work aims to illustrate how the border itself (more concisely, the policy of strengthening the southern border) became a political resource, through the remarkably efficient communications campaign of the ruling Hungarian government party.",
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Hungarian Geographical Bulletin",
+        "type": "journal",
+        "issn": [
+          "2064-5031",
+          "2064-5147"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ojs.mtak.hu/index.php/hungeobull/article/download/545/281"
+      },
+      "topics": [
+        "Cross-Border Cooperation and Integration",
+        "Arctic and Russian Policy Studies",
+        "Peacebuilding and International Security"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W2763399947"
+    },
+    {
+      "openalex_id": "W321557346",
+      "doi": "10.4324/9780203702284-2",
+      "title": "The Poverty of Indian Political Theory\u2020",
+      "authors": [
+        {
+          "name": "Bhikhu Parekh",
+          "openalex_id": "A5110868789"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-11-10",
+      "abstract": "Non-Western societies have frequently and rightly complained that Western political theory is ethnocentric and has a limited explanatory power when applied outside the West. One would have thought that they would therefore produce both a well-considered critique of its central categories and modes of inquiry, and an original body of ideas capable of illuminating their political experiences. Surprising as it may seem, this is not the case. No contemporary non-Western society, not even Japan, has produced much original political theory. Reasons for the underdevelopment of political theory vary from country to country. In the erstwhile Communist countries, intellectual creativity was stifled by ideological dogma and political repression. In the case of Japan such factors as the lack of a long-established tradition of political thought, the dominance of the practical impulse and the absence of serious political disagreements seem to have played an important part. In this chapter the author intends to concentrate on post-independence India, and to explore why a free and lively society with a rich tradition of philosophical inquiry has not thrown up much original political theory.",
+      "cited_by_count": 27,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.4324/9780203702284-2&type=chapterpdf"
+      },
+      "topics": [
+        "Indian History and Philosophy",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W321557346"
+    },
+    {
+      "openalex_id": "W4293171149",
+      "doi": "10.1080/01436597.2022.2108392",
+      "title": "Continuity through change: populism and foreign policy in Turkey",
+      "authors": [
+        {
+          "name": "Hakk\u0131 Ta\u015f",
+          "openalex_id": "A5044400172",
+          "orcid": "https://orcid.org/0000-0003-3463-0804",
+          "institutions": [
+            "German Institute for Global and Area Studies"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-24",
+      "abstract": "Through a discourse-theoretic approach, this paper problematises the under-theorised chameleonic quality of populism. While populist politics is often expressed as construction of the people against the elite, this paper argues that the political should rather be sought in how populism revives itself despite (and through) constant discursive shifts. It examines the interrelations between populism, identity and foreign policy, inserting 'dislocation', the transitory moment of disruption in the discursive field, as the main enterprise of populist politics. Empirically, the paper scrutinises how Turkish President Erdo\u011fan switched from conservative democratic to Islamist to nationalist discourses, each with repercussions in the field of foreign policy, and sustained the populist moment through successive dislocations. In particular, it focuses how the 'Ottoman' myth spelled different populisms and foreign policy discourses in different periods of the Justice and Development Party (Adalet ve Kalk\u0131nma Partisi - AKP) rule.",
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "Third World Quarterly",
+        "type": "journal",
+        "issn": [
+          "0143-6597",
+          "1360-2241"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.tandfonline.com/doi/epdf/10.1080/01436597.2022.2108392?needAccess=true&role=button"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Turkey's Politics and Society",
+        "German legal, social, and political studies"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W4293171149"
+    },
+    {
+      "openalex_id": "W2762032111",
+      "doi": "10.1057/s41311-017-0076-2",
+      "title": "Comparing IR plots: dismal tragedies, exuberant romances, hopeful comedies and cynical satires",
+      "authors": [
+        {
+          "name": "Riikka Kuusisto",
+          "openalex_id": "A5000119498",
+          "orcid": "https://orcid.org/0000-0001-5341-7385",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-03",
+      "abstract": null,
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "International Politics",
+        "type": "journal",
+        "issn": [
+          "1384-5748",
+          "1740-3898"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10138/298091"
+      },
+      "topics": [
+        "International Relations and Foreign Policy",
+        "Military History and Strategy",
+        "War, Ethics, and Justification"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W2762032111"
+    },
+    {
+      "openalex_id": "W2791974215",
+      "doi": null,
+      "title": "Employability: A Contested Concept in Higher Education",
+      "authors": [
+        {
+          "name": "David William Stoten",
+          "openalex_id": "A5022214902",
+          "orcid": "https://orcid.org/0000-0001-7785-3771"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-03-22",
+      "abstract": "Employability is a concept that has attracted greater interest in the past two decades as Higher Education (HE) looks to ensure that its output is valued by a range of stakeholders, not least Central Government. The graduate labour market has changed remarkably during the past two decades with global employment becoming an option for some and a threat for others. In addition, the nature of work has changed with a range of technological and employment practices altering the way we work. It is this dynamic and uncertain context that has led many within the Higher Education sector to re-evaluate its purpose and value. A number of universities have drawn up typologies of behaviours and attributes that characterise their graduates. This paper aims to look beyond the apparent ascendancy of employability and ask why is employability a contested concept within HE? This paper draws from post\u2010structuralism, Positional Conflict Theory as well as liberal\u2010humanist thought. The paper is structured at three levels of decision\u2010making: the macro\u2010 that of public policy, the meso\u2010 that of the Higher Education sector, and the micro\u2010 that of the student.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Northumbria Research Link (Northumbria University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://nrl.northumbria.ac.uk/id/eprint/33869/1/Stoten%20-%20Employability.pdf"
+      },
+      "topics": [
+        "Higher Education and Employability",
+        "Higher Education Governance and Development",
+        "Higher Education Practises and Engagement"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2791974215"
+    },
+    {
+      "openalex_id": "W3037320244",
+      "doi": "10.1111/1468-229x.13013",
+      "title": "State of the Field: The History of Political Thought",
+      "authors": [
+        {
+          "name": "Danielle Charette",
+          "openalex_id": "A5007912863",
+          "orcid": "https://orcid.org/0000-0002-9233-9380",
+          "institutions": [
+            "University of Chicago"
+          ]
+        },
+        {
+          "name": "Max Skj\u00f6nsberg",
+          "openalex_id": "A5009682016",
+          "orcid": "https://orcid.org/0000-0001-7106-3728",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-26",
+      "abstract": "Abstract This article surveys the state of the field of the history of political thought. The premise of the discipline is that political arguments and ideas have developed historically and thus have theoretical histories that can be located and traced. But, as our survey of the field shows, what counts as \u2018context\u2019 is up for debate, and contextual methods have become more sensitive to present\u2010day concerns. The border between the history of political thought and political theory is increasingly porous. We begin with some of the main claims and criticisms of the \u2018Cambridge\u2019 method of political thought, chiefly associated with Quentin Skinner, John Dunn and J. G. A. Pocock. We then consider newer developments, such as the \u2018global turn\u2019, which have steered the discipline beyond its traditionally European or male subject matter. While this shift in direction is welcome, we caution against a history that abstracts away from local sites of political contestation. Finally, we stress that (Western) historians moving beyond the West have even more reason to stay conscious of their own linguistic and cultural limitations.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "History",
+        "type": "journal",
+        "issn": [
+          "0018-2648",
+          "1468-229X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1468-229X.13013"
+      },
+      "topics": [
+        "Political Theory and Influence",
+        "American Constitutional Law and Politics",
+        "Seventeenth-Century Political and Philosophical Thought"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W3037320244"
+    },
+    {
+      "openalex_id": "W1861573952",
+      "doi": "10.47678/cjhe.v29i3.183337",
+      "title": "Emberley on Hot Button Politics in Canada's Universities: A Critique",
+      "authors": [
+        {
+          "name": "A. Scott Carson",
+          "openalex_id": "A5111795482",
+          "institutions": [
+            "Wilfrid Laurier University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-05-12",
+      "abstract": "In his recent book, Zero Tolerance: Hot Button Politics in Canada s Universities (1996), Richard Emberley attacks the government, business community, university administrators, magazine publishers and acade- mics for their complicity in pushing Canadian universities to the point of ruin. His accusation is that academe is pressed to achieve so many social, political and economic objectives that it risks not being successful in any of them. He provides a number of recommendations for restructuring higher education and these are presented in the context of a very rich con- ception of what a university should be. This paper examines Emberley's account of universities and the \"scholarly culture\" which has developed since the 13th century. It is argued that Emberley has an overly narrow view of the role of a university and one that is based on certain mistaken presumptions about what constitutes value in education.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Canadian Journal of Higher Education",
+        "type": "journal",
+        "issn": [
+          "0316-1218",
+          "2293-6602"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.sfu.ca/cjhe/index.php/cjhe/article/download/183337/183293"
+      },
+      "topics": [
+        "Legal Education and Practice Innovations",
+        "Academic Freedom and Politics",
+        "Canadian Identity and History"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W1861573952"
+    },
+    {
+      "openalex_id": "W3165792263",
+      "doi": "10.3390/rel12050364",
+      "title": "Institutional Religious Freedom: An Overview and Defense",
+      "authors": [
+        {
+          "name": "Paul Marshall",
+          "openalex_id": "A5011748739",
+          "orcid": "https://orcid.org/0000-0003-2950-8310",
+          "institutions": [
+            "Baylor University",
+            "Freedom House"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-20",
+      "abstract": "The idea of institutional religious freedom has become increasingly controversial, especially in the United States, and pressure for such freedom has been growing. The notion that institutions, including commercial ones, can have religious freedom rights has been described as unprecedented. However, the notion of such religious freedom has deep historical roots in a wide range of settings, is deeply intertwined with the growth of free societies, and is tied to the nature of religions themselves. This also applies to religious commercial institutions, which are far more widespread than commonly recognized. I focus particularly on what is it about such institutions that needs protecting and emphasize that what is central is the particular practice that typifies the organization. It needs the freedom to be what it is and to live out a religious commitment. If this calling is denied or subverted, then the institution loses its raison d\u2019\u00eatre. One of the principal reasons for forbidding government discrimination on matters such as religion is precisely so that private institutions will be able to appropriately employ staff and carry out policies according to their own particular beliefs as to what supports their distinctive mission. Governmental neutrality is intended to be a foundation for a lively and diverse societal pluralism, not for society to become a mirror of the government itself.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Religions",
+        "type": "journal",
+        "issn": [
+          "2077-1444"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2077-1444/12/5/364/pdf?version=1621597217"
+      },
+      "topics": [
+        "American Constitutional Law and Politics",
+        "Religion and Society Interactions",
+        "Religion, Gender, and Enlightenment"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W3165792263"
+    },
+    {
+      "openalex_id": "W2555704736",
+      "doi": "10.1093/clp/cuw002",
+      "title": "The Constitution and Foreign Affairs",
+      "authors": [
+        {
+          "name": "Thomas Poole",
+          "openalex_id": "A5010499579",
+          "orcid": "https://orcid.org/0000-0001-9721-7502",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "This article examines a dimension of public law which, despite the increased frequency of litigation in this area, remains relatively under-explored: the constitution and foreign affairs. To aid this task, two models are elaborated. The first, the unilateralist or sovereigntist model, assumes a sharp separation between the internal and the external as domains of peace (constitution), and war (reason of state) respectively. The second model assumes that juridical boundaries are contested and permeable, reading the dynamics of constitutional development in terms of a process of mutual recognition. While the former may have had more historical traction, I argue that the latter now provides the better guide, both analytically and normatively. The theoretical argument is developed in relation to the lived tradition of the British constitution. The article closes with a series of propositions that seek to capture the emerging principles within this complex and fast-moving area of law.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Current Legal Problems",
+        "type": "journal",
+        "issn": [
+          "0070-1998",
+          "2044-8422"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/clp/article-pdf/69/1/143/9598026/cuw002.pdf"
+      },
+      "topics": [
+        "Judicial and Constitutional Studies",
+        "Political Systems and Governance",
+        "Ombudsman and Human Rights"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W2555704736"
+    },
+    {
+      "openalex_id": "W3011273448",
+      "doi": "10.3390/educsci10030073",
+      "title": "The Thinking Skills Deficit: What Role Does a Poetry Group Have in Developing Critical Thinking Skills for Adult Lifelong Learners in a Further Education Art College?",
+      "authors": [
+        {
+          "name": "Frances Norton",
+          "openalex_id": "A5052231634",
+          "institutions": [
+            "Leeds Arts University"
+          ]
+        },
+        {
+          "name": "Margaret Gregson",
+          "openalex_id": "A5069322445",
+          "orcid": "https://orcid.org/0000-0002-2195-3738",
+          "institutions": [
+            "University of Sunderland"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-13",
+      "abstract": "This article investigates Brown\u2019s assertion that students today exhibit an unwillingness/inability to engage in critical thinking (CT). He describes this as a \u2018critical thinking deficit\u2019. The question of whether CT can be taught or whether we can only create the conditions in which CT can thrive and develop is explored through analysis of data from a pedagogical intervention of a Poetry Group; it aims to develop CT by employing Community of Inquiry as a methodology. This intervention was offered to a group of Further Education (FE) students over a period of six months with the intention of preparing them for progression into Higher Education (HE). Findings from the study lend support to the claim that sharing stories and poems is helpful in developing social and cultural capital across the group and in supporting CT and academic development. Students in the study report that they found the Poetry Group particularly valuable in encouraging both critical engagement with their Arts subject, deeper levels of learning and supporting improvements in attainment.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Education Sciences",
+        "type": "journal",
+        "issn": [
+          "2227-7102"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2227-7102/10/3/73/pdf"
+      },
+      "topics": [
+        "Innovative Education and Learning Practices",
+        "Innovative Teaching and Learning Methods",
+        "Reflective Practices in Education"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W3011273448"
+    },
+    {
+      "openalex_id": "W2806273286",
+      "doi": "10.1007/s41463-018-0040-3",
+      "title": "Interpreting the Virtues of Mindfulness and Compassion: Contemplative Practices and Virtue-Oriented Business Ethics",
+      "authors": [
+        {
+          "name": "Kevin T. Jackson",
+          "openalex_id": "A5054447041",
+          "orcid": "https://orcid.org/0000-0001-8479-9347",
+          "institutions": [
+            "Fordham University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-05",
+      "abstract": null,
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "Humanistic Management Journal",
+        "type": "journal",
+        "issn": [
+          "2366-603X",
+          "2366-6048"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s41463-018-0040-3.pdf"
+      },
+      "topics": [
+        "Mindfulness and Compassion Interventions",
+        "Workplace Spirituality and Leadership",
+        "Pain Management and Placebo Effect"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W2806273286"
+    },
+    {
+      "openalex_id": "W2804594596",
+      "doi": "10.31219/osf.io/zepkr_v1",
+      "title": "How Constitutional Norms Break Down",
+      "authors": [
+        {
+          "name": "Josh Chafetz",
+          "openalex_id": "A5038902877",
+          "institutions": [
+            "Georgetown University"
+          ]
+        },
+        {
+          "name": "David E. Pozen",
+          "openalex_id": "A5002243986",
+          "orcid": "https://orcid.org/0000-0001-8959-1561",
+          "institutions": [
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-11",
+      "abstract": "65 U.C.L.A Law Review 1430 (2018).From the moment Donald Trump was elected President, critics have anguished over a breakdown in constitutional norms. History demonstrates, however, that constitutional norms are perpetually in flux. The principal source of instability is not that these unwritten rules can be destroyed by politicians who deny their legitimacy, their validity, or their value. Rather, the principal source of instability is that constitutional norms can be decomposed\u2014dynamically interpreted and applied in ways that are held out as compliant but end up limiting their capacity to constrain the conduct of government officials.This Article calls attention to that latent instability and, in so doing, begins to taxonomize and theorize the structure of constitutional norm change. We explore some of the different modes in which unwritten norms break down in our constitutional system and the different dangers and opportunities associated with each. Moreover, we argue that under certain plausible conditions, it will be more worrisome when norms are subtly revised than when they are openly flouted. This somewhat paradoxical argument suggests that many commentators have been misjudging our current moment: President Trump's flagrant defiance of norms may not be as big a threat to our constitutional democracy as the more complex deterioration of norms underway in other institutions.",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://osf.io/zepkr_v1/download"
+      },
+      "topics": [
+        "Judicial and Constitutional Studies",
+        "American Constitutional Law and Politics",
+        "Legal and Constitutional Studies"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2804594596"
+    },
+    {
+      "openalex_id": "W4252336418",
+      "doi": "10.15293/2226-3365.1801",
+      "title": null,
+      "authors": [],
+      "publication_year": 2018,
+      "publication_date": "2018-02-28",
+      "abstract": null,
+      "cited_by_count": 6,
+      "type": "paratext",
+      "source": {
+        "name": "Novosibirsk State Pedagogical University Bulletin",
+        "type": "journal",
+        "issn": [
+          "2226-3365"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://en.sciforedu.ru/system/files/journals/nspu_bulletin_1_2018_3.pdf"
+      },
+      "topics": [
+        "Environmental Education and Sustainability",
+        "Urban Transport and Accessibility",
+        "Psychological Well-being and Life Satisfaction"
+      ],
+      "referenced_works_count": 345,
+      "url": "https://openalex.org/W4252336418"
+    },
+    {
+      "openalex_id": "W2176794254",
+      "doi": null,
+      "title": "Cultural Value: A Perspective from Cultural Economy",
+      "authors": [
+        {
+          "name": "Taylor Cf",
+          "openalex_id": "A5014899542"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-11-11",
+      "abstract": "This critical review contends that accounts of cultural value designed to articulate the specific value of culture within contemporary polity and governance cannot but fail to achieve their objective. Trammeled by economistic utilitarianism on the one side and an uncritical aestheticism on the other, culture\u2019s articulation is either quantitative or mute. This state of affairs has arisen as a result of a set of intellectual reflections on social order which can clearly be traced as far back as the fourteenth century, arguably achieve their hegemony by the late eighteenth century and have continued to dominate thought intio the twenty-first century. Whilst it has been common to argue that such reflections codified the distinctions of economy and aesthetics, or as is often said today the instrumental and the instrinsic, this critical review argues that these positions are the product of a singular process and that therefore the persistent representation of them as antagonists is false. That process is called abstraction and is the form in which the political codification of market society took place over that period. These categories are a product of that process, co-defining each other in mutual exclusion. This is one aspect of abstraction. There are two others. In defining the public sphere as one governed by market relationships, ethics was disembedded from the social and re-cast in a form appropriate to the new form of society \u2013 utilitarianism being its clearest expression. In a similar way, human labour was both abstracted by exchange and instumentalised as a simple means to an end. The instrumentalisation of labour completed art\u2019s isolation from the routines of social production. The paper concludes by suggesting that the emergence of a set of new cultural economic imaginaries in the last twenty years draws the historical limitations of abstraction to critical attention.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "White Rose Research Online (University of Leeds, The University of Sheffield, University of York)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://eprints.whiterose.ac.uk/91869/1/Taylor%20Cultural%20Value%20Final%20Nov%202015.pdf"
+      },
+      "topics": [
+        "Cultural Industries and Urban Development",
+        "Social and Cultural Dynamics",
+        "Art History and Market Analysis"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W2176794254"
+    },
+    {
+      "openalex_id": "W4240144963",
+      "doi": "10.1353/jwh.2019.0027",
+      "title": "Where was the Afro in Afro-Asian Solidarity? Africa\u2019s \u2018Bandung Moment\u2019 in 1950s Asia",
+      "authors": [
+        {
+          "name": "Gerard McCann",
+          "openalex_id": "A5102961943",
+          "orcid": "https://orcid.org/0000-0003-0509-319X",
+          "institutions": [
+            "University of York"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "Africans are staged but not often heard in discussions of the \u201cBandung moment,\u201d a high-watermark of decolonial possibility and Afro-Asian connection. This article foregrounds the agency and perspectives of African activists who travelled across Asia in the 1950s. In Delhi, Rangoon, and Bandung, Africans engaged, co-produced, and made useable the dialogical Afro-Asian world to deconstruct colonialism and engineer alternative futures. The article tracks these dynamics through three interlocked arenas of Afro-Asian affinity: journeys of African students to India from the 1940s; African participation in the Asian Socialist Conference in Burma, 1953\u20131956, and, as the geographies of Afro-Asianism shifted, radicalized, and splintered, African activism within the Afro-Asian Peoples\u2019 Solidarity Organization in Cairo from 1957. It reveals how the overlapping internationalisms of these fora reinforced a dyad of anti-colonial politics and development in the construction of African nationhood and pan-African community. This article breaks new ground in privileging the Afro in Afro-Asian.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Journal of world history",
+        "type": "journal",
+        "issn": [
+          "1045-6007",
+          "1527-8050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://muse.jhu.edu/pub/5/article/729085"
+      },
+      "topics": [
+        "African history and culture studies",
+        "Global Maritime and Colonial Histories"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W4240144963"
+    },
+    {
+      "openalex_id": "W3207783250",
+      "doi": "10.1146/annurev-lawsocsci-040721-102430",
+      "title": "Constitutional Dictatorships, from Colonialism to COVID-19",
+      "authors": [
+        {
+          "name": "Jens Meierhenrich",
+          "openalex_id": "A5073503063",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-10-13",
+      "abstract": "In this article, I use the concept of constitutional dictatorship as a heuristic, as a way of thinking more explicitly about constitutional violence than is customary in comparative constitutional law. Constitutional dictatorship is an epic concept. It is capable of illuminating\u2014and retelling\u2014epic histories of constitutional law, of alerting us to commonalities in constitutional practices of domination\u2014and thus of violence\u2014that would otherwise remain shrouded in legal orientalism. The analysis aspires to make constitutional law strange again. To this end, I trace nomoi and narratives of constitutional dictatorship from colonialism to the coronavirus pandemic. Arguing against emergency scripts, I relate the idea of \u201cemergency\u201d to the everyday and both to coloniality. Mine is a rudimentary conceptual history\u2014a Begriffsgeschichte\u2014of constitutional dictatorship. I think of the empirical vignettes about crisis government in the colony/postcolony on which my comparative historical analysis is based as prolegomena to a critical theory of constitutional dictatorship.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Law and Social Science",
+        "type": "journal",
+        "issn": [
+          "1550-3585",
+          "1550-3631"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-lawsocsci-040721-102430"
+      },
+      "topics": [
+        "Judicial and Constitutional Studies",
+        "Historical and Contemporary Political Dynamics",
+        "International Law and Human Rights"
+      ],
+      "referenced_works_count": 162,
+      "url": "https://openalex.org/W3207783250"
+    }
+  ],
+  "count": 21,
+  "errors": []
+}

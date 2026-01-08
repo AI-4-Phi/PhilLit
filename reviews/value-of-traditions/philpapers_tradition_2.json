@@ -1,0 +1,131 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'tradition authority legitimacy', limit=30
+[search_philpapers.py] Rate limited, backing off (attempt 1/5)...
+[search_philpapers.py] Retrying after 1.8s backoff...
+[search_philpapers.py] Rate limited, backing off (attempt 2/5)...
+[search_philpapers.py] Retrying after 2.6s backoff...
+[search_philpapers.py] Rate limited, backing off (attempt 3/5)...
+[search_philpapers.py] Retrying after 5.0s backoff...
+[search_philpapers.py] Retrieved 16 entries...
+[search_philpapers.py] Search complete: 16 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "tradition authority legitimacy",
+  "results": [
+    {
+      "title": "Stephen Turner, Authority and Legitimacy",
+      "url": "https://philpapers.org/rec/TURAAL-2",
+      "philpapers_id": "TURAAL",
+      "snippet": "Authority is often defined as legitimate power, and contrasted to pure power. In the case of legitimate authority, compliance is voluntary and based on a belief in the right of the ...",
+      "page_age": null
+    },
+    {
+      "title": "Michael Erler, Jan Erik He\u00dfler & Federico M. Petrucci (eds.), Authority and Authoritative Texts in the Platonist Tradition",
+      "url": "https://philpapers.org/rec/ERLAAA",
+      "philpapers_id": "ERLAAA",
+      "snippet": "All disciplines can count on a noble founder, and the representation of this founder as an authority is key in order to construe a discipline&#x27;s identity. This book sheds light on how Plato and other authorities were represented in one of the ...",
+      "page_age": null
+    },
+    {
+      "title": "Helga Varden, Leaving the State of Nature: Strengths and Limits of Kant\u2019s Transformation of the Social Contract Tradition",
+      "url": "https://philpapers.org/rec/VARLTS",
+      "philpapers_id": "VARLTS",
+      "snippet": "To be authoritative and not just powerful, governing institutions must be shared as ours in this irreducible sense. I first outline how Kant\u2019s ideal account of rightful freedom brilliantly transforms this tradition as found in the works of Hobbes, Locke, and Rousseau, before proposing a way to see Kant\u2019s two-layered non-ideal theory\u2014his accounts of human nature (\u201cmoral anthropology\u201d) and historical societies (\u201cthe principle of politics\u201d)\u2014as complementing his ideal theory of rightful freedom.",
+      "page_age": null
+    },
+    {
+      "title": "Aeon J. Skoble, Deleting the State : an Argument About Government",
+      "url": "https://philpapers.org/rec/SKODTS",
+      "philpapers_id": "SKODTS",
+      "snippet": "This book, in the tradition of Robert Nozick\u2019s Anarchy, State, and Utopia, sheds new light on persistent philosophical questions about the nature and justification of political authority. Skoble\u2019s discussion draws upon law, economics, and game theory to examine limited-state and anarchist theories from the standpoint of liberty and human rights.",
+      "page_age": null
+    },
+    {
+      "title": "Reinhart Ceulemans & Pieter de Leemans (eds.), On Good Authority. Tradition, Compilation and the Construction of Authority in Literature from Antiquity to the Renaissance",
+      "url": "https://philpapers.org/rec/CEUOGA-2",
+      "philpapers_id": "CEUOGA",
+      "snippet": "This book brings together views from various disciplines on the concept of authority in Greek and Latin literature from Antiquity to the Renaissance. More specifically it deals with the questions how texts attempt to gain authority, and if and ...",
+      "page_age": null
+    },
+    {
+      "title": "Matthew Lane Swanson, The Social Contract Tradition and the Question of Political Legitimacy",
+      "url": "https://philpapers.org/rec/SWATSC-3",
+      "philpapers_id": "SWATSC",
+      "snippet": "We recognize an obligation to obey political institutions given the satisfaction of certain conditions, but the nature of these conditions is not always clear. This dissertation examines these conditions by investigating the models of political legitimacy proposed by the classic social contract authors Hobbes, Locke, and Rousseau.",
+      "page_age": null
+    },
+    {
+      "title": "David Dyzenhaus, Hobbes and the Legitimacy of Law",
+      "url": "https://philpapers.org/rec/DYZHAT-3",
+      "philpapers_id": "DYZHAT",
+      "snippet": "Legal positivism dominates in the debate between it and naturallaw, but close attention to the work of Thomas Hobbes \u2013 the``founder&#x27;&#x27; of the positivist tradition \u2013 reveals a version ofanti-positivism with the potential to change the contours of thatdebate. Hobbes&#x27;s account of law ties law to legitimacy throughthe legal constraints of the rule of law.",
+      "page_age": null
+    },
+    {
+      "title": "Robert J. Dostal, Authority",
+      "url": "https://philpapers.org/rec/DOSAVB",
+      "philpapers_id": "DOSAVB",
+      "snippet": "Perhaps the single most influential and important analysis of authority in the modern context has been provided by Max Weber who identifies Autorit\u00e4t with Herrschaft, domination (or, more traditionally and literally, lordship) and Herrschaft with Macht (power).",
+      "page_age": null
+    },
+    {
+      "title": "Michael Erler, Jan Erik Hessler & Federico M. Petrucci (eds.), Authority and authoritative texts in the Platonist tradition",
+      "url": "https://philpapers.org/rec/ERLAAA-2",
+      "philpapers_id": "ERLAAA",
+      "snippet": "All disciplines can count on a noble founder, and the representation of this founder as an authority is key in order to construe a discipline&#x27;s identity. This book sheds light on how Plato and other authorities were represented in one of the ...",
+      "page_age": null
+    },
+    {
+      "title": "Martin Dominik, Limits of Commitments",
+      "url": "https://philpapers.org/rec/DOMLOC",
+      "philpapers_id": "DOMLOC",
+      "snippet": "This temporal aspect is suppressed by Brandom\u2019s notion of de re reading for pragmatic reasons, as he seeks to tell an inferentialist story of the philosophical tradition. Nevertheless, I argue that legitimacy poses a problem even for this approach because Brandom formulates his account in terms of rules, responsibility and sanctions.",
+      "page_age": null
+    },
+    {
+      "title": "Steven Wall, Political Morality and the Authority of Tradition",
+      "url": "https://philpapers.org/rec/WALPMA-2",
+      "philpapers_id": "WALPMA",
+      "snippet": "Kant&#x27;s transcendental deduction of political authority.Kevin Thompson - 2001 - Kant Studien 92 (1):62-78. Liberalism, Perfectionism and Restraint.Steven Wall - 1998 - New York: Cambridge University Press. Added to PP 2015-05-22 Downloads 126 (#233,387) 6 months 35 (#242,724) ... A Partnership for the Ages.Richard H. Dees - 2022 - Pacific Philosophical Quarterly 104 (1):195-216. The concept of a living tradition.Martin Beckstein - 2017 - European Journal of Social Theory 20 (4):491-510.",
+      "page_age": null
+    },
+    {
+      "title": "George Allan, The Importances of the Past: A Meditation on the Authority of Tradition",
+      "url": "https://philpapers.org/rec/ALLTIO-10",
+      "philpapers_id": "ALLTIO",
+      "snippet": "This book examines tradition, the authority of the past, by tracing the process through which emotion and imagination transform everyday experience into an awareness of one&#x27;s dependence on the work of predecessors.",
+      "page_age": null
+    },
+    {
+      "title": "Seth Lazar, Legitimacy, Authority, and Democratic Duties of Explanation",
+      "url": "https://philpapers.org/rec/LAZLAA-2",
+      "philpapers_id": "LAZLAA",
+      "snippet": "Increasingly secret, complex, and inscrutable computational systems are being used to intensify existing power relations and to create new ones; in particular, they are being used to govern. To be all-things-considered morally permissible new, or newly intense, power relations must meet standards of procedural legitimacy and proper authority.",
+      "page_age": null
+    },
+    {
+      "title": "Benjamin M. Studebaker, Plato as a Theorist of Legitimacy",
+      "url": "https://philpapers.org/rec/STUPAA-9",
+      "philpapers_id": "STUPAA",
+      "snippet": "International Journal of the Platonic Tradition 19 (1):25-46 (2023) ... Scholars of political thought often view Plato as a \u2018political moralist\u2019, or a \u2018utopian\u2019 partly due to the Republic\u2019s emphasis on \u2018justice\u2019. But in the Republic, Plato offers a distinctive theory of legitimacy, one that grounds legitimacy on an interdependent relationship between justice and moderation.",
+      "page_age": null
+    },
+    {
+      "title": "Thomas Harrison, Review. Authority and Tradition in Ancient Historiography. J Marincola",
+      "url": "https://philpapers.org/rec/HARRAA-6",
+      "philpapers_id": "HARRAA",
+      "snippet": "Entering the Agon: Dissent and Authority in Homer, Historiography and Tragedy (review).Erwin Cook - 2011 - Classical World: A Quarterly Journal on Antiquity 105 (1):139-140.",
+      "page_age": null
+    },
+    {
+      "title": "Fabienne Peter, Political legitimacy",
+      "url": "https://philpapers.org/rec/PETPL",
+      "philpapers_id": "PETPL",
+      "snippet": "First, how should legitimacy be defined? Is it primarily a descriptive or a normative concept? If legitimacy is understood normatively, what does it entail? Some associate legitimacy with the justification of coercive power and with the creation of political authority.",
+      "page_age": null
+    }
+  ],
+  "count": 16,
+  "errors": []
+}

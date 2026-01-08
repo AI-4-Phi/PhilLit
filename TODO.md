@@ -6,6 +6,7 @@ Last updated: Jan 8, 2026
 
 ## Pending
 
+- [ ] literature-researcher skill: clarify location of where to write temporary (JSON) files from python scripts 
 
 ## Done
 

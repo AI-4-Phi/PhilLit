@@ -1,0 +1,1530 @@
+[search_openalex.py] Searching OpenAlex: 'tradition value political philosophy' (year=2000-2025), limit=40
+[search_openalex.py] Retrieved 40 papers...
+[search_openalex.py] Search complete: 40 papers found
+[search_openalex.py] Cached results (cache key: openalex_18360254f89328fe)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "tradition value political philosophy",
+  "results": [
+    {
+      "openalex_id": "W4253928373",
+      "doi": "10.4159/harvard.9780674065512",
+      "title": "Dignity",
+      "authors": [
+        {
+          "name": "Michael J. Rosen",
+          "openalex_id": "A5101762950",
+          "orcid": "https://orcid.org/0000-0002-5149-718X"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-06-04",
+      "abstract": "Dignity plays a central role in current thinking about law and human rights, but there is sharp disagreement about its meaning. Combining conceptual precision with a broad historical background, Michael Rosen puts these controversies in context and offers a novel, constructive proposal. Drawing on law, politics, religion, and culture, as well as philosophy, Rosen shows how modern conceptions of dignity inherit several distinct strands of meaning. This is why users of the word nowadays often talk past one another. The idea of dignity as the foundation for the universal entitlement to human rights represented the coming together after the Second World War of two extremely powerful traditions: Christian theology and Kantian philosophy. Not only is this idea of dignity as an \u201cinner transcendental kernel\u201d behind human rights problematic, Rosen argues, it has drawn attention away from a different, very important, sense of dignity: the right to be treated with dignity, that is, with proper respect. At the heart of the argument stands the giant figure of Immanuel Kant. Challenging current orthodoxy, Rosen\u2019s interpretation presents Kant as a philosopher whose ethical thought is governed, above all, by the requirement of showing respect toward a kernel of value that each of us carries, indestructibly, within ourselves. Finally, Rosen asks (and answers) a surprisingly puzzling question: why do we still have a duty to treat the dead with dignity if they will not benefit from our respect?",
+      "cited_by_count": 612,
+      "type": "book",
+      "source": {
+        "name": "Harvard University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Patient Dignity and Privacy",
+        "Political Philosophy and Ethics",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4253928373"
+    },
+    {
+      "openalex_id": "W2998132635",
+      "doi": "10.1093/0199257671.001.0001",
+      "title": "Boundaries and Allegiances",
+      "authors": [
+        {
+          "name": "Samuel Scheffler",
+          "openalex_id": "A5058222049",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-09-19",
+      "abstract": "Abstract This book is a collection of 11 essays written from a perspective that is at once sympathetic towards, and critical of, liberalism and liberal political philosophy. The essays explore the capacity of liberal thought, and of the moral traditions on which it draws, to accommodate a variety of challenges posed by the changing circumstances of the modern world. Scheffler considers how, in an era of rapid globalization, we can best conceive of the responsibilities of individual agents and the normative significance of people's diverse commitments and allegiances. Some of the essays are primarily concerned with the role of individual desert in liberal theory. Others focus on the nature of people's special responsibilities to their families, communities, and societies, and assess the compatibility of such responsibilities with liberal ideas of justice and equality. Still others deal with the possibility of developing a liberal conception of justice that acknowledges the normative significance of social and global interdependencies, while reaffirming the values of personal life and the continuing importance of ideas of individual responsibility.",
+      "cited_by_count": 527,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2998132635"
+    },
+    {
+      "openalex_id": "W1485333849",
+      "doi": "10.1093/oxfordhb/9780199238804.001.0001",
+      "title": "The Oxford Handbook of the History of Political Philosophy",
+      "authors": [
+        {
+          "name": "George Klosko",
+          "openalex_id": "A5025790428",
+          "orcid": "https://orcid.org/0000-0002-7792-7344"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-09-02",
+      "abstract": "This book presents fifty original articles, each covering the entire subject in the history of political philosophy. It provides not only a survey of the state of research but substantial pieces that engage with, and move forward, current debates. Part I addresses questions of method. Articles discuss the contextual method, classically articulated by Quentin Skinner, along with important alternative methods associated with Leo Strauss and his followers, and contemporary post-modernism. This first part also examines the value of the history of political philosophy and the history of the discipline itself. Part II, based upon chronological periods, works through the entire history of Western political philosophy. While most articles address recognizable chronological periods, others are devoted to more specialized topics, including the influence of Roman law, medieval Arabic political philosophy, socialism, and Marxism. Aspects of the history of political philosophy that transcend specific periods are the subject of Part III. Articles on topics such as democracy, the state, and imperialism trace theoretical developments over time. The histories of major non-Western traditions\u2014Muslim, Confucian, and Hindu\u2014are discussed in the final part, with special reference to their relationships to Western political thought.",
+      "cited_by_count": 248,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1485333849"
+    },
+    {
+      "openalex_id": "W2061030913",
+      "doi": "10.1111/1468-0297.t01-16-00050",
+      "title": "Economic Sentiments: Adam Smith, Condorcet, and the Enlightenment",
+      "authors": [
+        {
+          "name": "Roger E. Backhouse",
+          "openalex_id": "A5068970882",
+          "orcid": "https://orcid.org/0000-0003-2393-6517",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-06-01",
+      "abstract": "In the modern world, Adam Smith represents the principle of laissez\u2010faire and the idea that free, competitive markets act like an invisible hand to ensure an optimal allocation of resources. He is seen as a forerunner of both the tradition that includes the Arrow\u2013 Debreu theorems on the efficiency of competitive equilibrium and of the neo\u2010liberal policies that have dominated the political agenda during the past two decades or so. This book shows this view of Smith to be a myth: that his economic ideas cannot be separated from his political philosophy and that his attitude towards freedom was radically different from that found in modern liberal economics. Rothschild presents a complex picture of Smith, from which I extract only a few points. In his lifetime, Smith was considered a radical, \u2018a subversive and a friend of French philosophy' (p. 52) \u2013 one of the inspirations for the French Revolution of 1789. It was only after his death that he was reinvented as a conservative. In this process, his ideas were significantly altered. He became associated with economic freedom, whereas he had been as passionate an advocate of political freedom as of economic. People began to forget that he had consistently supported the poor against the rich, the weak against the powerful, and that he had opposed the idea that the unbridled pursuit of self\u2010interest was conducive to the public good. Arguments about the value of freedom for its own sake gave way to arguments that focused exclusively on the consequences of economic freedom for efficiency. Smith ceased to be the author of a radical political philosophy and became a conservative economist.",
+      "cited_by_count": 339,
+      "type": "article",
+      "source": {
+        "name": "The Economic Journal",
+        "type": "journal",
+        "issn": [
+          "0013-0133",
+          "1468-0297",
+          "1742-0350"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Economic Theory and Institutions",
+        "Economic Theory and Policy",
+        "Economic theories and models"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2061030913"
+    },
+    {
+      "openalex_id": "W1584990483",
+      "doi": "10.5860/choice.49-6818",
+      "title": "Dignity: its history and meaning",
+      "authors": [
+        {
+          "name": "Michael J. Rosen",
+          "openalex_id": "A5101762950",
+          "orcid": "https://orcid.org/0000-0002-5149-718X"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-08-01",
+      "abstract": "Dignity plays a central role in current thinking about law and human rights, but there is sharp disagreement about its meaning. Combining conceptual precision with a broad historical background, Michael Rosen puts these controversies in context and offers a novel, constructive proposal. Drawing on law, politics, religion, and culture, as well as philosophy, Rosen shows how modern conceptions of dignity inherit several distinct strands of meaning. This is why users of the word nowadays often talk past one another. The idea of dignity as the foundation for the universal entitlement to human rights represented the coming together after the Second World War of two extremely powerful traditions: Christian theology and Kantian philosophy. Not only is this idea of dignity as an inner transcendental behind human rights problematic, Rosen argues, it has drawn attention away from a different, very important, sense of dignity: the right to be treated with dignity, that is, with proper respect. At the heart of the argument stands the giant figure of Immanuel Kant. Challenging current orthodoxy, Rosen's interpretation presents Kant as a philosopher whose ethical thought is governed, above all, by the requirement of showing respect toward a kernel of value that each of us carries, indestructibly, within ourselves. Finally, Rosen asks (and answers) a surprisingly puzzling question: why do we still have a duty to treat the dead with dignity if they will not benefit from our respect?",
+      "cited_by_count": 447,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Patient Dignity and Privacy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1584990483"
+    },
+    {
+      "openalex_id": "W408292893",
+      "doi": "10.2307/j.ctv22jnt6h",
+      "title": "The Arc of the Moral Universe and Other Essays",
+      "authors": [
+        {
+          "name": "Joshua Cohen",
+          "openalex_id": "A5066250865",
+          "orcid": "https://orcid.org/0000-0001-8743-2233"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-30",
+      "abstract": "In this collection of essays, Joshua Cohen locates ideas about democracy in three far-ranging contexts. First, he explores the relationship between democratic values and history. He then discusses democracy in connection with the views of defining political theorists in the democratic tradition: John Locke, John Rawls, Noam Chomsky, Juergen Habermas, and Susan Moller Okin. Finally, he examines the place of democratic ideals in a global setting, suggesting an idea of 'global public reason' - a terrain of political justification in global politics in which shared reason still plays an essential role. All the essays are linked by his overarching claim that political philosophy is a practical subject intended to orient and guide conduct in the social world. Cohen integrates moral, social-scientific, and historical argument in order to develop this stance, and he further confronts the question of whether a society conceived in liberty and dedicated to equality can endure. At Gettysburg, President Lincoln forcefully stated the question and expressed both hope and concern over this same struggle about an affirmative answer. By enabling us to trace the arc of the moral universe, the essays in this volume - along with the companion collection on Philosophy, Politics, and Democracy - give us some reasons for sharing that hope.",
+      "cited_by_count": 282,
+      "type": "book",
+      "source": {
+        "name": "Harvard University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W408292893"
+    },
+    {
+      "openalex_id": "W1589469884",
+      "doi": "10.5040/9781350218048.ch-001",
+      "title": "Theorizing Acts of Citizenship",
+      "authors": [
+        {
+          "name": "Engin F. Isin",
+          "openalex_id": "A5046533551",
+          "orcid": "https://orcid.org/0000-0002-7366-0224"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "About the book: This book examines theories of how is mediated between lived experiences and formal entitlements in order to map out, confine, extend, name, and enact the boundaries of belonging to a polity. The authors introduce the concept of citizenship as an alternative way to investigate citizenship. This concept constitutes a significant departure from the way in which studies has been orientated over the last decade.The authors argue that to investigate acts of in a way that is irreducible to either status or practice, while still valuing this distinction, requires a focus on those moments when regardless of status and substance, subjects constitute themselves as citizens. Their investigation into acts of involves a sustained engagement with interdisciplinary thought, drawing from new developments not only in politics, sociology, geography and anthropology but also psychoanalysis, philosophy and history. It also requires crossing genres from science to art to philosophy to grasp the complex ways in which subjects articulate themselves into citizens.The book assembles together deep traditions in social and political thought to provide a focused examination of acts of in this new way. It also addresses key historical and contemporary issues that are of vital importance to studies today, using the vantage points of aesthetics, justice, ethics and the political. Its theoretical and analytical chapters are supplemented with shorter essays providing illustrative examples of 'acts'.",
+      "cited_by_count": 325,
+      "type": "book-chapter",
+      "source": {
+        "name": "Bloomsbury Academic eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Hannah Arendt's Political Philosophy",
+        "Posthumanist Ethics and Activism"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W1589469884"
+    },
+    {
+      "openalex_id": "W2501268087",
+      "doi": "10.1093/0199273677.001.0001",
+      "title": "Four Seminal Thinkers in International Theory",
+      "authors": [
+        {
+          "name": "Martin Wight",
+          "openalex_id": "A5020602369"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-12-23",
+      "abstract": "Abstract Wight saw the philosophy of International Politics\u2014his \u2018International Theory\u2019\u2014as the interaction and interweaving of three traditions\u2014Realism, Rationalism, and Revolutionism. Here, he takes the archetypal thinkers of these traditions\u2014Machiavelli, Grotius, and Kant\u2014to whom he adds Mazzini, the father of all revolutionary nationalism, and subjects their writings and careers to a masterly analysis and commentary. Wight thus not only throws further light upon his magisterial earlier study, International Theory: The Three Traditions, but explores the thought of four key figures in the history of Western philosophy. In useful appendices he places these figures in a \u2018philosophical genealogy\u2019 of political theorists and practitioners, shows Christian thought in terms of these traditions, and indicates where to find in De Jure Belli ac Pacis what Grotius had to say on a variety of issues. Throughout, Wight is sensitive to the moral subtleties and dilemmas to be found in International Relations, a dimension he considered of supreme importance. Both the Foreword by Sir Michael Howard, and the Introduction by Professor David Yost, stress the value and uniqueness of Wight\u2019s approach. The work concludes with a lecture in which the author, in considering the nature of international society, summarized his leading ideas.",
+      "cited_by_count": 184,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Global Peace and Security Dynamics",
+        "International Relations and Foreign Policy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2501268087"
+    },
+    {
+      "openalex_id": "W2161189580",
+      "doi": "10.1111/0033-3352.00016",
+      "title": "The Myth of the Bureaucratic Paradigm: What Traditional Public Administration Really Stood For",
+      "authors": [
+        {
+          "name": "Laurence E. Lynn",
+          "openalex_id": "A5009457968",
+          "institutions": [
+            "University of Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-03-01",
+      "abstract": "For a decade, public administration and management literature has featured a riveting story: the transformation of the field's orientation from an old paradigm to a new one. While many doubt claims concerning a new paradigm\u2014a New Public Management\u2014few question that there was an old one. An ingrained and narrowly focused pattern of thought, a \u201cbureaucratic paradigm,\u201d is routinely attributed to public administration's traditional literature. A careful reading of that literature reveals, however, that the bureaucratic paradigm is, at best, a caricature and, at worst, a demonstrable distortion of traditional thought that exhibited far more respect for law, politics, citizens, and values than the new, customer\u2010oriented managerialism and its variants. Public administration as a profession, having let lapse the moral and intellectual authority conferred by its own traditions, mounts an unduly weak challenge to the superficial thinking and easy answers of the many new paradigms of governance and public service. As a result, literature and discourse too often lack the recognition that reformers of institutions and civic philosophies must show how the capacity to effect public purposes and accountability to the polity will be enhanced in a manner that comports with our Constitution and our republican institutions.",
+      "cited_by_count": 284,
+      "type": "article",
+      "source": {
+        "name": "Public Administration Review",
+        "type": "journal",
+        "issn": [
+          "0033-3352",
+          "1540-6210"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Accounting and Organizational Management",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2161189580"
+    },
+    {
+      "openalex_id": "W2480413580",
+      "doi": "10.1515/9781400873203",
+      "title": "Islam and the Challenge of Democracy A Boston Review Book",
+      "authors": [
+        {
+          "name": "Khaled Abou El Fadl",
+          "openalex_id": "A5010139490"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "The events of September 11 and the subsequent war on terrorism have provoked widespread discussion about the possibility of democracy in the Islamic world. Such topics as the meaning of jihad, the role of clerics as authoritative interpreters, and the place of human rights and toleration in Islam have become subjects of urgent public debate around the world. With few exceptions, however, this debate has proceeded in isolation from the vibrant traditions of argument within Islamic theology, philosophy, and law. Islam and the Challenge of Democracy aims to correct this deficiency. The book engages the reader in a rich discourse on the challenges of democracy in contemporary Islam. The collection begins with a lead essay by Khaled Abou El Fadl, who argues that democracy, especially a constitutional democracy that protects basic individual rights, is the form of government best suited to promoting a set of social and political values central to Islam. Because Islam is about submission to God and about each individual's responsibility to serve as His agent on Earth, Abou El Fadl argues, there is no place for the subjugation to human authority demanded by authoritarian regimes. The lead essay is followed by eleven others from internationally respected specialists in democracy and religion. They address, challenge, and engage Abou El Fadl's work. The contributors include John Esposito, Muhammad Fadel, Noah Feldman, Nader Hashemi, Bernard Haykel, Muqtedar Khan, Saba Mahmood, David Novak, William Quandt, Kevin Reinhart, and Jeremy Waldron.",
+      "cited_by_count": 232,
+      "type": "book",
+      "source": {
+        "name": "eScholarship (California Digital Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://escholarship.org/content/qt4x82849x/qt4x82849x.pdf?t=mn5gi2"
+      },
+      "topics": [
+        "Islamic Studies and History",
+        "Education and Islamic Studies",
+        "Terrorism, Counterterrorism, and Political Violence"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W2480413580"
+    },
+    {
+      "openalex_id": "W2085270822",
+      "doi": "10.1353/eac.2011.0008",
+      "title": "&lt;i&gt;The Conduct of Inquiry in International Relations: The Philosophy of Science and its Implications for the Study of World Politics&lt;/i&gt; (review)",
+      "authors": [
+        {
+          "name": "Patrick Thaddeus Jackson",
+          "openalex_id": "A5062131464",
+          "orcid": "https://orcid.org/0000-0002-3028-2622",
+          "institutions": [
+            "American University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-01",
+      "abstract": "Reviewed by: The Conduct of Inquiry in International Relations: The Philosophy of Science and its Implications for the Study of World Politics Daniel McArthur (bio) Patrick Thaddeus Jackson, The Conduct of Inquiry in International Relations: The Philosophy of Science and its Implications for the Study of World Politics. New York: Routledge, 2011. 288 pp. ISBN13: 978-0-415-77627-1. $35.00 (pbk.) Book reviews in this journal usually proceed by considering the value of the book in question for Dewey scholarship. In this case I would rather say that this book is of interest to Dewey scholars. Jackson\u2019s general project is heavily informed by Dewey\u2019s pluralistic brand of pragmatism. As Jackson notes \u201cDewey\u2019s Logic . . . stand[s] firmly in the tradition leading to this book\u201d (216). Dewey scholars will greet Jackson\u2019s extension of this approach to the study of international relations warmly. Over the last thirty years, international relations specialists have debated the merits of a variety of methodological and philosophical options while at the same time a dominant theme has been to make the field as \u201cscientific\u201d as possible. Philosophers will, of course, find much in this debate familiar as it mirrors many of the controversies that have taken place in the philosophy of science over the same period. International Relations (IR) theorists find themselves disputing, along with their philosophical counterparts, the nature of the scientific method and the merits of scientific realism versus its empiricist, historicist, and social constructivist rivals. Jackson\u2019s project is a worthwhile attempt not only to trace out the philosophical disputes that are of importance to IR scholars, but also to learn from the debates and to provide a coherent approach to methodological questions. I think IR theorists will find Jackson\u2019s book a useful place to start when approaching the [End Page 97] philosophical issues in their field, and they will find Jackson\u2019s recommendations congenial. Jackson\u2019s most important conclusion is that no single methodology or philosophical understanding of the scientific method ought to dominate the field. The goals of the particular IR study in question and the context of the research need to be considered when deciding on the appropriate approach. In this Jackson proposes that competing methodological proposals be considered and negotiated in a pluralistic philosophical context. To help the IR theorist do this, much of Jackson\u2019s book takes up the task of laying out a neat (if sometimes controversial) taxonomy of the various options, each one associated with various philosophical traditions, ontological commitments and epistemological proposals. Jackson proposes four main categories: neopositivism, critical realism, analyticism and reflexivity. Neopositivism, according to Jackson, is the dominant approach but it is faced by lively rivals. Neopositivism has its origins in empiricist philosophy stretching back to Hume and before, leading through Compte to the logical positivists of the twentieth century. In IR, this school of thought seeks to discover covering laws that cover cases of international relations (an example is the hypothesis that genuinely democratic states do not resort to warfare in settling disputes). Since experiments are impossible, similar cases are compared against one another (varying only in the key variables under study, such as the presence of democracy). This is done in order to determine if the cases obey postulated laws. Neopositivism is associated with ontological commitments to an objective reality, a strongly empiricist epistemology and an aversion to theoretical posits or entities that cannot be observed. Critical realism reflects the recent postpositivist philosophies of science that have been critical of the antimetaphysical attitude of positivism. It seeks not just covariant laws but the genuine causes of phenomena as well. While similar in many respects to neopositivism in her commitment to empirical methods and a mind independent reality, the realist wants to go beyond the directly observable. While a positivist might agree that salt dissolves in water, a realist will want to claim that salt always has the unobservable disposition of solubility, even when it is sitting dry on the table. Reference to such dispositions becomes important in realist IR case studies. Analiticity and reflexivity have their origins in idealist and various other non-empiricist philosophical traditions. Key features include their rejection of dualist distinctions between mind...",
+      "cited_by_count": 262,
+      "type": "article",
+      "source": {
+        "name": "Education and Culture",
+        "type": "journal",
+        "issn": [
+          "1085-4908",
+          "1559-1786"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "International Relations and Foreign Policy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2085270822"
+    },
+    {
+      "openalex_id": "W1558328364",
+      "doi": "10.1017/cbo9781139028530.012",
+      "title": "H. L. A. Hart: a twentieth-century Oxford political philosopher",
+      "authors": [
+        {
+          "name": "John Finnis",
+          "openalex_id": "A5107909644",
+          "institutions": [
+            "University of Notre Dame"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-08-29",
+      "abstract": "Herbert Hart's significance can be understood only when his work is measured against conceptions of political philosophy that were dominant in Oxford in the years between his postwar return and the publication of The Concept of Law. In Hart's own terminology, the central case of morality understood from the internal point of view is critical, that is, justified, morality. Hart's exclusive focus on positive morality cut the debate off from the main political-philosophic tradition, and from reason. That Hart had a political philosophy at all was an act of conscious resistance to skepticism. Yet the resistance was itself shaped and limited by Hart's own skepticism about something more foundational: the truth-value, and truth, of moral judgments intended as critical because asserted as true, sound, really justified. Hart criticized On Liberty for relying on a presumption of middle-aged psychological caution and stability to justify rejecting paternalism.",
+      "cited_by_count": 116,
+      "type": "book-chapter",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Political Theory and Influence",
+        "Legal and Social Philosophy"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W1558328364"
+    },
+    {
+      "openalex_id": "W2106225753",
+      "doi": "10.1353/nlh.2010.0007",
+      "title": "Close but not Deep: Literary Ethics and the Descriptive Turn",
+      "authors": [
+        {
+          "name": "Heather Love",
+          "openalex_id": "A5017425129"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-03-01",
+      "abstract": "Close but not Deep: Literary Ethics and the Descriptive Turn Heather Love (bio) There is perhaps no term that carries more value in the humanities than \u201crich.\u201d In literary studies especially, richness is an undisputed\u2014if largely uninterrogated\u2014good; it signifies qualities associated with the complexity and polyvalence of texts and with the warmth and depth of experience. There is, to be sure, no necessary connection between the intricacy of texts and the intricacy of human feeling and cognition. Nor is there a necessary connection between the capacity to interpret such texts and the ability to respond justly and empathetically to the ethical dilemmas represented in them. Even so, this is a busy intersection. The link between the richness of human experience and processes of textual interpretation can be understood, on the one hand, through the origin of philosophical hermeneutics in practices of divination and, on the other, through the significance of the communicative situation in defining hermeneutics. The text, in its singularity, is both an access to otherness and a message or call to attention. A belief in the aesthetic and ethical force of literature is evident in the work of midcentury critics like Cleanth Brooks (\u201cThe poet . . . must return to us the unity of experience itself as man knows it in his own experience\u201d) and Lionel Trilling (\u201cliterature is the human activity that takes the fullest and most precise account of variousness, possibility, complexity, and difficulty\u201d).1 It also appears in the work of Marxist critic Raymond Williams, for whom literature signals the inexhaustibility of human potential.2 It appears as well in recent arguments against theory and on behalf of New Formalism (\u201cliterature could pose the largest issues of social and personal destiny in a vividly human context\u201d) and in the recent turn to ethics, which, as Dorothy J. Hale writes, \u201chas been accompanied by a new celebration of literature.\u201d3 If the encounter with a divine and inscrutable message was progressively secularized in the twentieth century, the opacity and ineffability of the text and the ethical demand to attend to it remain central to practices of literary interpretation today. [End Page 371] Given the subsumption of many aspects of religion into the concept of culture after the Enlightenment, it is not surprising that these sacred aspects of hermeneutics should survive into the era of secular modernity. What is more surprising is that its humanist aspects have such a continued presence in supposedly anti- or posthumanist literary studies. The rise of interpretive practices borrowed from Marxism and psychoanalysis, structuralism and poststructuralism, and semiotics and deconstruction has displaced the individual and consciousness from the center of inquiry, shifting attention to structures of language, desire, or economic capital. At the same time, political forms of criticism such as feminism, postcolonial studies, African-American studies, diaspora studies, and queer studies have critiqued humanism by pointing to its founding exclusions. Common to the rise of these theoretical and political fields is a disavowal of earlier critical movements\u2014particularly the New Criticism\u2014that are understood to embody the shortcomings of humanist philosophy. In critiques of the canon, the text, organicism, the nation, culture, and tradition\u2014as well as the very concept of the human\u2014the anchors of humanistic criticism have come under sustained and powerful attack in the past several decades. Still, despite widespread rumors of the death of humanism, key humanist values remain alive and well in literary studies. What to make of this persistence of humanist values in the context of a disciplinary milieu that often sees them as outmoded? It might be explained as a typical contradiction between intellectual conviction and lived practice\u2014there are no doubt de facto humanists among posthumanists, just as there are Marxist heroes of consumption.4 More persuasive accounts of the persistence of humanism in contemporary literary studies can be found in histories of the discipline. While critics like Gerald Graff and John Guillory focus on the stabilizing role of universities, departments, and syllabi, Ian Hunter turns his attention to the role of teaching.5 In his essay \u201cThe History of Theory,\u201d Hunter traces the persistence of humanist ethics in literary studies, suggesting that both \u201cthe New Criticism and the literary theory that displaced...",
+      "cited_by_count": 486,
+      "type": "article",
+      "source": {
+        "name": "New Literary History",
+        "type": "journal",
+        "issn": [
+          "0028-6087",
+          "1080-661X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Psychoanalysis, Philosophy, and Politics",
+        "Philosophy, Ethics, and Existentialism",
+        "Contemporary Literature and Criticism"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W2106225753"
+    },
+    {
+      "openalex_id": "W1539917250",
+      "doi": "10.1017/cbo9780511494284",
+      "title": "International Law and its Others",
+      "authors": [
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001",
+          "institutions": [
+            "The University of Melbourne"
+          ]
+        },
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001"
+        },
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001"
+        },
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001"
+        },
+        {
+          "name": "Costas Douzinas",
+          "openalex_id": "A5074718806"
+        },
+        {
+          "name": "Ian Duncanson",
+          "openalex_id": "A5094670450"
+        },
+        {
+          "name": "Dan Danielsen",
+          "openalex_id": "A5046657837"
+        },
+        {
+          "name": "Connal Parsley",
+          "openalex_id": "A5086516959"
+        },
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001"
+        },
+        {
+          "name": "David Kennedy",
+          "openalex_id": "A5068566719",
+          "orcid": "https://orcid.org/0000-0002-8837-7296"
+        },
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001"
+        },
+        {
+          "name": "Judith Grbich",
+          "openalex_id": "A5039225496"
+        },
+        {
+          "name": "Florian Hoffmann",
+          "openalex_id": "A5003942690",
+          "orcid": "https://orcid.org/0000-0002-9270-1319"
+        },
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001"
+        },
+        {
+          "name": "Liliana Obreg\u00f3n",
+          "openalex_id": "A5058049989",
+          "orcid": "https://orcid.org/0000-0001-7361-8133"
+        },
+        {
+          "name": "Fr\u00e9d\u00e9ric M\u00e9gret",
+          "openalex_id": "A5110518395"
+        },
+        {
+          "name": "Dianne Otto",
+          "openalex_id": "A5026577104",
+          "orcid": "https://orcid.org/0000-0003-3000-6502"
+        },
+        {
+          "name": "Juliet Rogers",
+          "openalex_id": "A5049427559",
+          "orcid": "https://orcid.org/0000-0002-2870-7302"
+        },
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001"
+        },
+        {
+          "name": "Antony Anghie",
+          "openalex_id": "A5090128160"
+        },
+        {
+          "name": "Hilary Charlesworth",
+          "openalex_id": "A5061254246",
+          "orcid": "https://orcid.org/0000-0002-0236-6503"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-11-02",
+      "abstract": "Institutional and political developments since the end of the Cold War have led to a revival of public interest in, and anxiety about, international law. Liberal international law is appealed to as offering a means of constraining power and as representing universal values. This book brings together scholars who draw on jurisprudence, philosophy, legal history and political theory to analyse the stakes of this turn towards international law. Contributors explore the history of relations between international law and those it defines as other - other traditions, other logics, other forces, and other groups. They explore the archive of international law as a record of attempts by scholars, bureaucrats, decision-makers and legal professionals to think about what happens to law at the limits of modern political organisation. The result is a rich array of responses to the question of what it means to speak and write about international law in our time.",
+      "cited_by_count": 115,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "International Law and Human Rights"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1539917250"
+    },
+    {
+      "openalex_id": "W645904115",
+      "doi": "10.18574/nyu/9780814795446.001.0001",
+      "title": "Toleration and Its Limits",
+      "authors": [
+        {
+          "name": "Melissa S. Williams",
+          "openalex_id": "A5108716720"
+        },
+        {
+          "name": "Jeremy Waldron",
+          "openalex_id": "A5018550609",
+          "orcid": "https://orcid.org/0000-0003-4083-1119"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-07-21",
+      "abstract": "Toleration has a rich tradition in Western political philosophy. It is, after all, one of the defining topics of political philosophy-historically pivotal in the development of modern liberalism, prominent in the writings of such canonical figures as John Locke and John Stuart Mill, and central to our understanding of the idea of a society in which individuals have the right to live their own lives by their own values, left alone by the state so long as they respect the similar interests of others. Toleration and Its Limits, the latest addition to the NOMOS series, explores the philosophical nuances of the concept of toleration and its scope in contemporary liberal democratic societies. Editors Melissa S. Williams and Jeremy Waldron carefully compiled essays that address the tradition's key historical figures; its role in the development and evolution of Western political theory; its relation to morality, liberalism, and identity; and its limits and dangers. Contributors: Lawrence A. Alexander, Kathryn Abrams, Wendy Brown, Ingrid Creppell, Noah Feldman, Rainer Forst, David Heyd, Glyn Morgan, Glen Newey, Michael A. Rosenthal, Andrew Sabl, Steven D. Smith, and Alex Tuckness",
+      "cited_by_count": 107,
+      "type": "book",
+      "source": {
+        "name": "New York University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "American Constitutional Law and Politics",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W645904115"
+    },
+    {
+      "openalex_id": "W4388150295",
+      "doi": "10.1093/oso/9780199226313.001.0001",
+      "title": "Freedom from Poverty as a Human Right",
+      "authors": [],
+      "publication_year": 2007,
+      "publication_date": "2007-06-28",
+      "abstract": "Abstract Collected here in one volume are fifteen cuttingdge essays by leading academics which together clarify and defend the claim that freedom from poverty is a human right with corresponding binding obligations on the more affluent to practice effective poverty avoidance. The nature of human rights and their corresponding duties is examined, as is the theoretical standing of the social, economic and cultural rights. The authors largely agree in concluding that there is a human right to be free from poverty and that this right is massively violated by the present world economy which creates huge unfair imbalances in income and wealth among and within countries. This searing indictment of the status quo is all the more powerful as the authors endorsing it exemplify diverse philosophical methods and moral traditions and also highlight different aspects of poverty and global institutional arrangements. This volume will be of great interest and value to academics working in the fields of philosophy, political science and international relations, as well as to undergraduate and graduate students in these disciplines. It will also be a crucial aid and challenge to practitioners in international governmental organizations (such as the UN and its agencies) and NGOs who think of their work in human-rights terms. Indeed, in view of the magnitude of the human rights deficit at issue, any moral citizen has reason to engage with the arguments of this book. And the book makes this possible for most in that, throughout, even the most complex aspects of rights theory is discussed in clear, direct language, making the text accessible to specialists and lay readers alike Co-published with UNESCO",
+      "cited_by_count": 234,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Human Rights and Development",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4388150295"
+    },
+    {
+      "openalex_id": "W631359221",
+      "doi": "10.1017/cbo9781107705920",
+      "title": "Politics and the Search for the Common Good",
+      "authors": [
+        {
+          "name": "Hans Sluga",
+          "openalex_id": "A5109335059",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-10-23",
+      "abstract": "Rethinking politics in a new vocabulary, Hans Sluga challenges the firmly held assumption that there exists a single common good which politics is meant to realize. He argues that politics is not a natural but a historical phenomenon, and not a single thing but a multiplicity of political forms and values only loosely related. He contrasts two traditions in political philosophy: a 'normative theorizing' that extends from Plato to John Rawls and a newer 'diagnostic practice' that emerged with Marx and Nietzsche and has found its three most prominent twentieth-century practitioners in Carl Schmitt, Hannah Arendt, and Michel Foucault. He then examines the sources of diagnostic political thinking, analyzes its achievements, and offers a critical assessment of its limitations. His important book will be of interest to a wide range of upper-level students and scholars in political philosophy, political theory, and the history of ideas.",
+      "cited_by_count": 73,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Hannah Arendt's Political Philosophy",
+        "Political Theology and Sovereignty",
+        "Philosophy, Ethics, and Existentialism"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W631359221"
+    },
+    {
+      "openalex_id": "W1496775838",
+      "doi": "10.1353/book11532",
+      "title": "Thoreau's Living Ethics: Walden and the Pursuit of Virtue",
+      "authors": [
+        {
+          "name": "Philip Cafaro",
+          "openalex_id": "A5054650224",
+          "orcid": "https://orcid.org/0000-0003-2637-8979"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "Thoreau's Living Ethics is the first full, rigorous account of Henry Thoreau's ethical philosophy. Focused on Walden but ranging widely across his writings, the study situates Thoreau within a long tradition of ethical thinking in the West, from the ancients to the romantics and on to the present day. Philip Cafaro shows Thoreau grappling with important ethical questions that agitated his own society and discusses his value for those seeking to understand contemporary ethical issues. Cafaro's particular interest is in Thoreau's treatment of virtue ethics: the branch of ethics centered on personal and social flourishing. Ranging across the central elements of Thoreau's philosophy - life, virtue, economy, solitude and society, nature, and politics - Cafaro shows Thoreau developing a comprehensive virtue ethics, less based in ancient philosophy than many recent efforts and more grounded in modern life and experience. He presents Thoreau's evolutionary, experimental ethics as superior to the more static foundational efforts of current virtue ethicists. Another main focus is Thoreau's environmental ethics.",
+      "cited_by_count": 95,
+      "type": "book",
+      "source": {
+        "name": "University of Georgia Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Thoreau and American Literature"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1496775838"
+    },
+    {
+      "openalex_id": "W2131151420",
+      "doi": "10.1177/1474885107083403",
+      "title": "Fear and Freedom",
+      "authors": [
+        {
+          "name": "Jan\u2010Werner M\u00fcller",
+          "openalex_id": "A5108484185",
+          "institutions": [
+            "Princeton University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-12-10",
+      "abstract": "This article identifies a distinct strand of 20th-century liberal thought that was exemplified by Isaiah Berlin, Raymond Aron and, to a lesser extent, Karl Popper. I offer a stylized account of their common ideas and shared political sensibility, and argue that their primarily negative liberalism was a variety of what Judith Shklar called the `liberalism of fear' \u2014 which put the imperative to avoid cruelty and atrocity first. All three founded their liberalism on a `politics of knowledge' that was directed primarily against Marxist philosophies of history and less against the idea of bureaucratic planning, as, in contrast, was the case with Friedrich von Hayek's thought. Moreover, all three subscribed to more or less explicit versions of value pluralism, and claimed that, in the circumstances of modernity, Weber's `clash of values' was exacerbated and required a particularly prudential approach to politics; this prudential management of value conflicts in turn was best entrusted to cultivated bureaucratic elites. All shared an image of a tolerant and humane society \u2014 essentially an idealized version of Britain \u2014 but said perhaps too little on the question how societies without the appropriate traditions of moderation and compromise were to be liberalized.",
+      "cited_by_count": 89,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Political Theory",
+        "type": "journal",
+        "issn": [
+          "1474-8851",
+          "1741-2730"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Theory and Influence",
+        "Weber, Simmel, Sociological Theory",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2131151420"
+    },
+    {
+      "openalex_id": "W4248110397",
+      "doi": "10.1017/cbo9780511841286",
+      "title": "Women and Human Development",
+      "authors": [
+        {
+          "name": "Martha C. Nussbaum",
+          "openalex_id": "A5025473979",
+          "institutions": [
+            "University of Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-03-13",
+      "abstract": "In this major book Martha Nussbaum, one of the most innovative and influential philosophical voices of our time, proposes a kind of feminism that is genuinely international, argues for an ethical underpinning to all thought about development planning and public policy, and dramatically moves beyond the abstractions of economists and philosophers to embed thought about justice in the concrete reality of the struggles of poor women. Nussbaum argues that international political and economic thought must be sensitive to gender difference as a problem of justice, and that feminist thought must begin to focus on the problems of women in the third world. Taking as her point of departure the predicament of poor women in India, she shows how philosophy should undergird basic constitutional principles that should be respected and implemented by all governments, and used as a comparative measure of quality of life across nations.",
+      "cited_by_count": 5648,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F2B710E9FCC03D22B25D465DD7B25DD4/9780511841286int_p1-33_CBO.pdf/introduction_feminism_and_international_development.pdf"
+      },
+      "topics": [
+        "Income, Poverty, and Inequality"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4248110397"
+    },
+    {
+      "openalex_id": "W3124345117",
+      "doi": "10.4337/9781783471416",
+      "title": "Handbook of Ecological Economics",
+      "authors": [
+        {
+          "name": "Inge R\u00f8pke",
+          "openalex_id": "A5016814382",
+          "orcid": "https://orcid.org/0000-0001-6094-8416",
+          "institutions": [
+            "Aalborg University"
+          ]
+        },
+        {
+          "name": "Joan Mart\u00ednez Alier",
+          "openalex_id": "A5004042357",
+          "orcid": "https://orcid.org/0000-0002-6124-539X"
+        },
+        {
+          "name": "Rold\u00e1n Muradian",
+          "openalex_id": "A5051703357",
+          "orcid": "https://orcid.org/0000-0002-5995-6483"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-09-25",
+      "abstract": "Analytical philosophy has had a long but little noted influence on the development of ecological economics.The work of the left Vienna Circle, in particular of Otto Neurath, defended two central claims of ecological economics: first, economics needs to address the various ways in which economic institutions and relations are embedded within the physical world and have ecological preconditions that are a condition of their sustainability; second, reasonable economic and social choices cannot be founded on purely monetary valuations.Both of these claims were developed in two distinct but related debates that Otto Neurath engaged in.The first was the socialist calculation debate.The arguments of the Austrian critics of the possibility of socialism there, in particular Ludwig Mises and Friedrich Hayek, were aimed not only at socialism but at these two central claims of ecological economics.The second was the little known debate between the left Vienna Circle and the Frankfurt School in the 1930s.In this debate one can discern the origins of two distinct traditions of political ecology that still remain in tension in subsequent debates: a science-based approach that is concerned with the material and ecological conditions for human well-being and social relationships; and a science-sceptical approach that takes the environmental crisis to be founded in a technocratic commitment to the domination of humans and nature that is built into the constitution of scientific reason.In this chapter we explore these different debates and show the continuing significance of the analytical tradition to a defensible ecological economics.As shall be evident, running through the debates is a common theme about the nature and limits of scientific and practical reason, a theme that retains its importance for understanding the relationship between ecology, democracy and political economy.1. Neurath, Mises and Weber: Choice in the absence of monetary units We begin by establishing Neurath's role in the development of ecological economics by exploring the connection between his work and that of K. William Kapp. 1 One of the central claims of social ecological economics concerns the limits of monetary exchange values in making social and environmental decisions.Consider the following formulation of that claim by Kapp: The formulation of environmental policies, the evaluation of environmental goals and the establishment of priorities require a substantive economic calculus in terms of social use values (politically evaluated) for which the formal calculus in monetary exchange values fails to provide a real measurenot only in socialist societies but also in capitalist economies.Hence the 'revolutionary' aspect of the environmental issue both as a theoretical and a practical problem.In short, we suggest that environmental values are social use values for which markets provide neither a direct measure nor an adequate indirect indicator.(1974: 38) Neurath and Weber are marked out by Kapp as the major figures whose work could found an understanding of these claims.Why is this?The origins of this claim can be traced back to Kapp's own earlier work on the socialist calculation debates.His doctoral dissertation Planwirtschaft und Aussenhandel (1936) engaged with Mises' critique of socialism.A distinctive feature of Kapp's understanding of the socialist calculation debates is the observation that the turn it had taken in the discussion of market models of socialism by Lange, Taylor and others had obscured what was at issue in the original debates between Neurath, Mises and Weber: 'the controversy initiated by O. Neurath, von Mises and MaxWeber got sidetracked in various attempts to calculate the prices of productive factors by 1 The relevance of Neurath's argumentation for ecological economics was first noted in Mart\u00ednez-Alier (1987) and the parallel between Neurath and Kapp was stated in Mart\u00ednez-Alier (1991a) and (1991b); the influen ce of the former on the latter was observed in his (2002: 33).means of Walras' and Cassel's systems of equations and O. Lange's later elaboration of a theoretical model of \"competitive socialism\".' (Kapp, 1955: 682).What was at stake in the earlier debate and was lost in the shift to market models of socialism was precisely the question about whether human well-being and its environmental conditions could adequately be captured by the monetary valuations of the market.This question was raised by Neurath's post-World War I proposals for socialization to which both Mises and Weber responded.As Kapp notes, for Neurath a socialist planned economy was based on social use values:By stating that 'useful effects' or free 'disposable time' are the measure of real wealth and thus of the quality of life Engels and Marx must have been convinced to have specified at least in general terms the alternative criteria for the planning and decision-making process in a socialist planned society.Few marxist writers have",
+      "cited_by_count": 225,
+      "type": "book",
+      "source": {
+        "name": "Edward Elgar Publishing eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy, Science, and History",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W3124345117"
+    },
+    {
+      "openalex_id": "W627942877",
+      "doi": "10.1017/cbo9781139034333",
+      "title": "Prayer in Islamic Thought and Practice",
+      "authors": [
+        {
+          "name": "Marion Holmes Katz",
+          "openalex_id": "A5027523345",
+          "institutions": [
+            "New York University"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-04-05",
+      "abstract": "The five daily prayers (Sal\u0101t) that constitute the second pillar of Islam deeply pervade the everyday life of observant Muslims. Until now, however, no general study has analyzed the rules governing Sal\u0101t, the historical dimensions of its practice and the rich variety of ways that it has been interpreted within the Islamic tradition. Marion Holmes Katz's richly textured book offers a broad historical survey of the rules, values and interpretations relating to Sal\u0101t. This innovative study on the subject examines the different ways in which prayer has been understood in Islamic law, Sufi mysticism and Islamic philosophy. Katz's book also goes beyond the spiritual realm to analyze the political dimensions of prayer, including scholars' concerns about the righteousness and piety of rulers. The last chapter raises significant issues around gender roles, including the question of women's participating in and leading public worship. This book will resonate with students of Islamic history and comparative religion.",
+      "cited_by_count": 107,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Islamic Studies and History",
+        "Education and Islamic Studies",
+        "Islamic Finance and Banking Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W627942877"
+    },
+    {
+      "openalex_id": "W4200110014",
+      "doi": "10.1093/oso/9780198848219.001.0001",
+      "title": "International Relations and Political Philosophy",
+      "authors": [
+        {
+          "name": "Martin Wight",
+          "openalex_id": "A5020602369",
+          "institutions": [
+            "University of Sussex"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-21",
+      "abstract": "Abstract This book collects Martin Wight\u2019s works on the theory and philosophy of international politics. It includes classic works, such as \u201cWhy Is There No International Theory?\u201d and \u201cWestern Values in International Relations,\u201d as well as previously unpublished works such as \u201cThe Communist Theory of International Relations\u201d and \u201cGain, Fear and Glory: Reflections on the Nature of International Politics.\u201d These works encompass four categories: (a) traditions of thinking about international politics since the sixteenth century, (b) the causes and functions of war, (c) international and regime legitimacy, and (d) fortune and irony in international politics. Wight identifies and analyzes three major traditions of thinking about international politics in the West since the sixteenth century: Realism, Rationalism, and Revolutionism, also known as the Machiavellian, Grotian, and Kantian approaches. Wight examines the causes of war highlighted by Thucydides and Hobbes (material interest, fear, and reputation), and considers the functions of war in international politics (such as winning and retaining national independence and upholding the balance of power). Wight reviews the history of dynastic and popular legitimacy as well as post-1945 concepts of international and domestic legitimacy. Finally, Wight considers fortune and irony, including the decision-maker\u2019s frequent rediscovery of the recalcitrance of events. Unintended, unexpected, and ironical consequences abound in international politics. This volume also features eight book reviews by Wight, including his assessments of works by Raymond Aron, E. H. Carr, Friedrich Meinecke, and Hans Morgenthau.",
+      "cited_by_count": 72,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global Peace and Security Dynamics",
+        "International Relations and Foreign Policy",
+        "War, Ethics, and Justification"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W4200110014"
+    },
+    {
+      "openalex_id": "W2127523070",
+      "doi": "10.1093/ojls/gqv012",
+      "title": "To Blame or to Forgive? Reconciling Punishment and Forgiveness in Criminal Justice",
+      "authors": [
+        {
+          "name": "Nicola Lacey",
+          "openalex_id": "A5111908306",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        },
+        {
+          "name": "Hanna Pickard",
+          "openalex_id": "A5067322659",
+          "orcid": "https://orcid.org/0000-0001-5926-1377"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-02",
+      "abstract": "What do you do when faced with wrongdoing-do you blame or do you forgive? Especially when confronted with offences that lie on the more severe end of the spectrum and cause terrible psychological or physical trauma or death, nothing can feel more natural than blame. Indeed, in the UK and the USA, increasingly vehement and righteous public expressions of blame and calls for vengeance have become commonplace; correspondingly, contemporary penal philosophy has witnessed a resurgence of the retributive tradition, in the modern form usually known as the 'justice' model. On the other hand, people can and routinely do forgive others, even in cases of severe crime. Evolutionary psychologists argue that both vengeance and forgiveness are universal human adaptations that have evolved as alternative responses to exploitation, and, crucially, strategies for reducing risk of re-offending. We are naturally endowed with both capacities: to blame and retaliate, or to forgive and seek to repair relations. Which should we choose? Drawing on evolutionary psychology, we offer an account of forgiveness and argue that the choice to blame, and not to forgive, is inconsistent with the political values of a broadly liberal society and can be instrumentally counter-productive to reducing the risk of future re-offending. We then sketch the shape of penal philosophy and criminal justice policy and practice with forgiveness in place as a guiding ideal.",
+      "cited_by_count": 105,
+      "type": "article",
+      "source": {
+        "name": "Oxford Journal of Legal Studies",
+        "type": "journal",
+        "issn": [
+          "0143-6503",
+          "1464-3820"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/ojls/article-pdf/35/4/665/7497545/gqv012.pdf"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Emotions and Moral Behavior"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2127523070"
+    },
+    {
+      "openalex_id": "W2550637040",
+      "doi": "10.1093/acprof:oso/9780198766841.001.0001",
+      "title": "The Social and Political Philosophy of Mary Wollstonecraft",
+      "authors": [
+        {
+          "name": "Berges Sandrine",
+          "openalex_id": "A2659495492"
+        },
+        {
+          "name": "Coffee, Alan M. S. J.",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-24",
+      "abstract": "Abstract Interest in the contribution made by women to the history of philosophy is burgeoning and intense research is underway to recover their works, many of which have been lost or overlooked. At the forefront of this revival is interest in the works of Mary Wollstonecraft. While she has long been studied by feminists and later discovered by political scientists, philosophers have only recently begun to recognize the value of her work for their discipline. This volume brings together current leading scholarship that introduces readers to Wollstonecraft\u2019s range as a moral and political philosopher of note, taking both a historical perspective and applying her thinking to current academic debates. Subjects include Wollstonecraft\u2019s ideas on love and respect, friendship and marriage, motherhood, property in the person, and virtue and the emotions, as well as the application her thought has for current thinking on relational autonomy, and animal and children\u2019s rights. A major theme of the book places her within the republican tradition of political theory and analyses the contribution she makes to its conceptual resources.",
+      "cited_by_count": 78,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion, Gender, and Enlightenment",
+        "American Constitutional Law and Politics"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W2550637040"
+    },
+    {
+      "openalex_id": "W71928400",
+      "doi": "10.4324/9780203156001",
+      "title": "Routledge Handbook of Heritage in Asia",
+      "authors": [
+        {
+          "name": "Patrick Daly",
+          "openalex_id": "A5082502485",
+          "orcid": "https://orcid.org/0000-0003-4962-3244"
+        },
+        {
+          "name": "Tim Winter",
+          "openalex_id": "A5012017859",
+          "orcid": "https://orcid.org/0000-0002-5825-6012"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-29",
+      "abstract": "1. Heritage in Asia: converging forces, conflicting values Tim Winter and Patrick Daly Part I: Challenging Conservation: the view from Asia 2. Same same but different? A roundtable discussion on the philosophies, methodologies, and practicalities of conserving cultural heritage in Asia Kecia Fong, Tim Winter, Hae Un Rii, Pinraj Khanjanusthiti, and Aparna Tandon 3. The unbearable impermanence of things: reflections on Buddhism, cultural memory and heritage conservation Maurizio Peleggi 4. From multi-religious sites to mono-religious monuments in South Asia: the colonial legacy of heritage management Himanshu Ray 5. Exotification, conservation and the history of natural heritage in Indonesia Timothy P. Barnard 6. Beyond Band Aids: The need for specialized materials conservation expertise in Asia Jeff Cody & Kecia Fong Part II: The Politics and Governance of Heritage 7. States, governance and the politics of culture: World Heritage in Asia William Logan 8. Selecting the refined and discarding the dross: The post-1990 Chinese leadership's attitude towards cultural tradition Jiawen Ai 9. Legislating to safeguard Asia's intangible cultural heritage Georgina Lloyd 10. Intangible cultural heritage and peace building in Indonesia and East Timor Birgit Brauchler 11. The revitalization of Khmer ethnic identity in Thailand: empowerment or confinement? Alexandra Denes 12. A political-ecological heritage of resource contest and conflict Michael Dove Part III: Rethinking Relationships, Remembrance and Loss 13. Out in the cold? Remembering socialism and global conflict in Asia Colin Long 14. War and revolution as national heritage: Red Tour in China Horng-luen Wang 15. The politics of loss and nostalgia in Luang Prabang (Lao PDR) David Berliner 16. Rethinking relationships: world heritage, communities and tourism Robyn Bushell & Russell Staiff 17. Heritage challenges in Asian urban cultural landscape settings Ken Taylor Part IV: Negotiating Modernity and Globalisation 18. Heritage and modernity in India Jyoti Hosagrahar 19. Anti-superstition: Campaigns against popular religion and its heritage in Asia Denis Byrne 20. Globalisation and sacred adivasi landscapes in Eastern India Vinita Damodaran 21. Shifting pilgrim trains and temple-towns in India Kiran Shinde 22. Asian orientalism: perspectives of Buddhist heritage in Japan Aki Toyoyama 23. Fighting modernity: traditional Chinese martial arts and the transmission of intangible cultural heritage Patrick Daly",
+      "cited_by_count": 174,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Cultural Heritage Management and Preservation"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W71928400"
+    },
+    {
+      "openalex_id": "W2161073468",
+      "doi": "10.3102/00346543071004525",
+      "title": "Preparation of Educational Researchers in Philosophical Foundations of Inquiry",
+      "authors": [
+        {
+          "name": "James L. Paul",
+          "openalex_id": "A5110463532",
+          "institutions": [
+            "University of South Florida"
+          ]
+        },
+        {
+          "name": "Kofi Marfo",
+          "openalex_id": "A5047993667",
+          "orcid": "https://orcid.org/0000-0002-5784-3231",
+          "institutions": [
+            "University of South Florida"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-12-01",
+      "abstract": "In this article we examine the nature, scope, and significance of basic philosophical issues in the preparation of researchers. Following a brief review of the history of educational research and a discussion of the philosophy of science supporting much of this research, we present and discuss two central assertions in the context of the growing prominence of paradigmatic and methodological pluralism in education and the human sciences. The first assertion is that the curriculum for preparing researchers in education continues to be dominated by the epistemology of logical empiricism, the philosophy of science undergirding the quantitative research tradition. The second assertion is that research education tends to place a disproportionate emphasis on technical methods and procedures, with little attention given to the philosophical, moral, and political values that underpin procedural practices and that frame, however tacitly, the context for knowledge production. We argue that the hegemony of quantitative science and the narrow preoccupation with methodological rigor as the singular yardstick for judging good science are serious problems requiring immediate attention in research education programs. We present a case for expanding the research education curriculum to include a strong and broad foundation in the history, philosophy, sociology, and ethics of inquiry. To illustrate how this can be achieved, we propose two features of an intellectual culture that may be developed: (a) course work on philosophical issues in inquiry, which doctoral students should be required to take in preparation for\u2014or as a supplement to\u2014technical courses on statistical methods and research design; and (b) an atmosphere of interdisciplinary and multiparadigmatic collaborative research that provides an informal context for students to experience and practice the values fostered by such course work.",
+      "cited_by_count": 85,
+      "type": "article",
+      "source": {
+        "name": "Review of Educational Research",
+        "type": "journal",
+        "issn": [
+          "0034-6543",
+          "1935-1046"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Statistics Education and Methodologies",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2161073468"
+    },
+    {
+      "openalex_id": "W1540888933",
+      "doi": "10.3998/mpub.15926",
+      "title": "Human Rights",
+      "authors": [
+        {
+          "name": "Austin Sarat",
+          "openalex_id": "A5027095744"
+        },
+        {
+          "name": "Thomas R. Kearns",
+          "openalex_id": "A5091874581"
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-01-01",
+      "abstract": "Today the language of human rights, if not human rights themselves, is nearly universal. Human Rights brings together essays that attend to both the allure and criticism of human rights. They examine contestation and contingency in today's human rights politics and help us rethink some of the basic concepts of human rights. Questions addressed in Human Rights include: Can national self-determination be reconciled with human rights? Can human rights be advanced without thwarting efforts to develop indigenous legal traditions? How are the forces of modernization associated with globalization transforming our understanding of human dignity and personal autonomy? What does it mean to talk about culture and cultural choice? Is the protection of culture and cultural choice an important value in human rights discourse? How do human rights figure in local political contests and how are those contests, in turn, shaped by the spread of capitalism and market values? What contingencies shape the implementation of human rights in societies without a strong tradition of adherence to the rule of law? What are the conditions under which human rights claims are advanced and under which nations respond to their appeal? Austin Sarat is William Nelson Cromwell Professor of Jurisprudence and Political Science, Amherst College. Thomas R. Kearns is William H. Hastie Professor of Philosophy and Professor of Law, Jurisprudence, and Social Thought, Amherst College.",
+      "cited_by_count": 68,
+      "type": "book",
+      "source": {
+        "name": "University of Michigan Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Human Rights and Development"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1540888933"
+    },
+    {
+      "openalex_id": "W1663506264",
+      "doi": "10.3138/9781442676367",
+      "title": "Jacob Burckhardt's Social and Political Thought",
+      "authors": [
+        {
+          "name": "Richard Sigurdson",
+          "openalex_id": "A5030702949"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "Contrary to his usual portrayal as a disinterested aesthete, Swiss cultural historian Jacob Burckhardt is characterised as an original social and political thinker in Richard Sigurdson's timely book Jacob Burckhardt's Social and Political Thought. Burckhardt's thinking on a number of ideas - including the relationship between the individual and the mass, the tension between the ideals of equality and human excellence, and the role of the intellectual in the modern state - is the subject of insightful analysis, thus providing a rare investigation into Burckhardt's culture-critique of the nineteenth century. Other important aspects of Burckhardt's life that undoubtedly influenced both his historical and political thought, such as his ambiguous relationship with Friedrich Nietzsche, are carefully scrutinised in this groundbreaking analysis of the Swiss historian. Known primarily as an historian, Burckhardt's historical writings provide not only a powerful critique of his own times, but also a broad ranging political philosophy that can be placed within the larger German tradition of evaluating politics according to the values and standards of art and culture. Although Burckhardt himself expressed his scepticism towards general theories and claimed to be devoid of a personal philosophical position, through an examination of his works Sigurdson argues that both implicit and explicit political reflections and theories are recognisable.",
+      "cited_by_count": 73,
+      "type": "book",
+      "source": {
+        "name": "University of Toronto Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1663506264"
+    },
+    {
+      "openalex_id": "W4233520953",
+      "doi": "10.1017/s0075435800064224",
+      "title": "Justinian, Malalas, and the End of Athenian Philosophical Teaching in A.D. 529",
+      "authors": [
+        {
+          "name": "Edward Watts",
+          "openalex_id": "A5113641473",
+          "institutions": [
+            "Indiana University"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-11-01",
+      "abstract": "To historians of the ancient world, the closing of the Athenian Neoplatonic school by the emperor Justinian stands as one of the best known, and most debated, events of the later Roman Empire. To some, it is an event of little consequence with only an ephemeral impact upon subsequent developments. To others, it represents nothing less than the death of classical philosophy. Nevertheless, this modern scholarly interest belies ancient attitudes. The only direct statement about the end of Athenian philosophical teaching comes from the Chronicle of John Malalas, and all other ancient sources, including those that rely upon Malalas, are silent about the incident. This silence hints at a fact that this study will make clear. To contemporaries, the closing of the Athenian school was an unremarkable occurrence that represented neither a tyrannical use of imperial power nor an attack upon the valued cultural tradition of philosophical teaching. Like all else in the later Roman world, it occurred within the confines of a political system that, when working properly, matched imperial initiative to the specific needs of a province or city. As a result, the causes and significance of the closing of the Athenian school are best appreciated by understanding how the event developed out of its local political setting.",
+      "cited_by_count": 87,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Roman Studies",
+        "type": "journal",
+        "issn": [
+          "0075-4358",
+          "1753-528X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Historical, Religious, and Philosophical Studies",
+        "Classical Antiquity Studies",
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W4233520953"
+    },
+    {
+      "openalex_id": "W2048046368",
+      "doi": "10.1108/09513550810855636",
+      "title": "Reform without doctrine: public management in France",
+      "authors": [
+        {
+          "name": "Luc Rouban",
+          "openalex_id": "A5040923521",
+          "orcid": "https://orcid.org/0000-0002-6096-9679",
+          "institutions": [
+            "Centre de Recherches Politiques de Sciences Po"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-02-29",
+      "abstract": "Purpose This paper aims to give an overview of the public management process in France and tries to explain why it is specific as compared to other countries. Design/methodology/approach The paper is based upon a sociological and comparative methodology. It reports the empirical findings of a European survey. Findings Management reforms in France are fragmented and do not fit in a general doctrine or a new philosophy of the state. The French managerial reform style is due to the domestication of management tools by Napoleonic structures. Nevertheless, management innovations are used in order to draw new frontiers within public administration between what is the centre and what is the periphery. Research limitations/implications The methodology as well as the findings of the paper could be used for a more systematic comparative work in order to understand why and how public management tools fit in national political as well as professional traditions. There is scope for connecting public management research with broader historical and sociological studies of public administration. Originality/value The paper shows that both political values and work practices have to be taken into account in order to understand why public sector management reforms are easier in some countries even within the Napoleonic tradition.",
+      "cited_by_count": 76,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Public Sector Management",
+        "type": "journal",
+        "issn": [
+          "0951-3558",
+          "1758-6666"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Accounting and Organizational Management",
+        "Social Sciences and Governance"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W2048046368"
+    },
+    {
+      "openalex_id": "W2159083965",
+      "doi": "10.2307/4135014",
+      "title": "Justinian, Malalas, and the End of Athenian Philosophical Teaching in A.D. 529",
+      "authors": [
+        {
+          "name": "Edward Watts",
+          "openalex_id": "A5113641473",
+          "institutions": [
+            "Indiana University"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-11-01",
+      "abstract": "To historians of the ancient world, the closing of the Athenian Neoplatonic school by the emperor Justinian stands as one of the best known, and most debated, events of the later Roman Empire. To some, it is an event of little consequence with only an ephemeral impact upon subsequent developments. To others, it represents nothing less than the death of classical philosophy. Nevertheless, this modern scholarly interest belies ancient attitudes. The only direct statement about the end of Athenian philosophical teaching comes from the Chronicle of John Malalas, and all other ancient sources, including those that rely upon Malalas, are silent about the incident. This silence hints at a fact that this study will make clear. To contemporaries, the closing of the Athenian school was an unremarkable occurrence that represented neither a tyrannical use of imperial power nor an attack upon the valued cultural tradition of philosophical teaching. Like all else in the later Roman world, it occurred within the confines of a political system that, when working properly, matched imperial initiative to the specific needs of a province or city. As a result, the causes and significance of the closing of the Athenian school are best appreciated by understanding how the event developed out of its local political setting.",
+      "cited_by_count": 88,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Roman Studies",
+        "type": "journal",
+        "issn": [
+          "0075-4358",
+          "1753-528X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Historical, Religious, and Philosophical Studies",
+        "Classical Antiquity Studies",
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W2159083965"
+    },
+    {
+      "openalex_id": "W620520721",
+      "doi": null,
+      "title": "Horace : satires and epistles",
+      "authors": [
+        {
+          "name": "Kirk Freudenburg",
+          "openalex_id": "A5030654846",
+          "orcid": "https://orcid.org/0000-0001-6586-2988"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "Introduction: The Satires and Letters of Horace in Recent Scholarship I. HORACE'S SERMONES 1. Horace's Liber Sermonum: The Structure of Ambiguity 2. Horace and Maecenas: The Propaganda Value of Sermones I 3. Horatian Sermo and Genres of Literature 4. The Epicurean Parasite: Horace, Satires 1.1-3 5. Libertino Patre Natus: True or False? 6. Horace, Satires 1.5: An Inconsequential Journey 7. Be Alert (Your Country Needs Lerts): Horace, Satires 1.9 8. Horace, Lucilius, and Callimachean Polemic 9. Ultra Legem: Law and Literature in Horace, Satires II.1 II. HORACE'S EPISTLES, BOOK ONE 10. The Poetry of Ethics: Horace Epistles I 11. Poetry, Philosophy and Letter-Writing in Horace Epistles 1 12. Horace and Aristippus: the Epistles and the Art of Conuiuere 13. Poetry, Philosophy, Politics and Play: Epistles I III. HORACE'S EPISTLES, BOOK TWO AND THE ARS POETICA 14. Horace's Letter to Augustus 15. Una cum Scriptore Meo: Poetry, Principate and the Traditions of Literary History in the Epistle to Augustus 16. Horace, Augustus, and the Question of the Latin Theater 17. Towards a Reading of Horace's Epistle to Julius Florus (Epist. 2.2) 18. Writing to/through Florus: Sampling the Addressee in Horace Epistles 2.2 19. The Art of Self-Fashioning in the Ars Poetica",
+      "cited_by_count": 91,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Antiquity Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W620520721"
+    },
+    {
+      "openalex_id": "W4212873792",
+      "doi": "10.1515/9780748681518",
+      "title": "Form and Object",
+      "authors": [
+        {
+          "name": "Tristan Garcia",
+          "openalex_id": "A5005111240"
+        },
+        {
+          "name": "Mark Allan Ohm",
+          "openalex_id": "A5027616070"
+        },
+        {
+          "name": "Jon Cogburn",
+          "openalex_id": "A5046244170"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-03-17",
+      "abstract": "A shockingly novel view of substance that will significantly change contemporary debates about substance and ontological emergence Read and download the introduction, the series editor's preface and the translators' introduction to Form and Object for free now (pdf) Read a Q&A between Tristan Garcia and Speculative Realism series editor Graham Harman (pdf) Read a Q&A between the translators, Mark Allan Ohm and Jon Cogburn, and Speculative Realism series editor Graham Harman (pdf) What is a thing? What is an object? Tristan Garcia decisively overturns 100 years of Heideggerian orthodoxy about the supposedly derivative nature of objects to put forward a new theory of ontology that gives us deep insights into the world and our place in it. Garcia's original and systematic formal ontology of things strips them of any determination, intensity or depth. From this radical ontological poverty, he develops encyclopaedic regional ontologies of objects. By covering topics as diverse as the universe, events, time, the living, animals, human beings, representation, arts and rules, culture, history, political economy, values, classes, genders, ages of life and death, he shows that speculative metaphysics and ontology are alive and well. Key Features Proposes a systematic philosophy essential to the development of metaphysics, the ontology of objects and speculative realism Combines the analytic and continental traditions, and will appeal to philosophers working on either side Applies his metaphysics to philosophically charged practical issues such as vegetarianism, animal rights, the nature of representation, death, culture and history \"",
+      "cited_by_count": 120,
+      "type": "book",
+      "source": {
+        "name": "Edinburgh University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religious Studies and Spiritual Practices"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4212873792"
+    },
+    {
+      "openalex_id": "W1500164099",
+      "doi": "10.5860/choice.44-2056",
+      "title": "Frontiers of justice: disability, nationality, species membership",
+      "authors": [
+        {
+          "name": "Martha C. Nussbaum",
+          "openalex_id": "A5075715797"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-12-01",
+      "abstract": "rather \"as a nexus of distinctive sensibilities, cares, and concerns that are expressed in distinctive patterns of emotional and practical response\" (p.236).Drawing on Philippa Foot and Simone Weil, Wiggins draws out the moral significance of solidarity and recognition.\"In recognizing another person, we recognize not merely a subject of consciousness but a being who will seek to interpret us even as we seek to interpret him or her\" (p.243).The priority of primitive aversions, with which Wiggins began, is then linked to acts that violate solidarity and deny recognition.What if we must violate basic deontological rules to prevent catastrophe?Wiggins responds with a fifth moral category \"subsuming the ordinary passably virtuous agent's concern to preserve the very conditions under which human civilization will survive and/or ordinary morality can make its characteristic demands on normal human life\" (p.259).It is a mistake, as consequentialists do, to model the whole of morality on these emergency cases.Wiggins resolutely defends a \"piecemeal\" approach to morality.\"[T]hose who despise the piecemeal . . .cut themselves off from all sorts of truths that bear closely on the questions they ask. . . .In so far as the case for morality can be stated briefly, all that can be said is that, in a way already illustrated, it is the most enterprising and durable expression that a human being will find for the benevolent dispositions he or she can discover within himself or herself \" (p.265).This intriguing book is not aimed at teenage undergraduates, who will find Wiggins a very difficult and frustrating read.Ethics would certainly not be a suitable text for introductory ethics classes.Its target audience is rather those who, while beginners in philosophy, are not beginners in life.Such readers will still find Wiggins challenging (and, at times, opaque and old-fashioned), but they may also find him an intriguing and provocative guide as they seek to apply moral philosophy to moral life.",
+      "cited_by_count": 3819,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://philpapers.org/archive/ANDFOJ.pdf"
+      },
+      "topics": [
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1500164099"
+    },
+    {
+      "openalex_id": "W2592492241",
+      "doi": "10.1057/s41296-017-0103-5",
+      "title": "Damn Great Empires! William James and the Politics of Pragmatism",
+      "authors": [
+        {
+          "name": "Kennan Ferguson",
+          "openalex_id": "A5054020320",
+          "institutions": [
+            "University of Wisconsin\u2013Milwaukee"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-07",
+      "abstract": null,
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "Contemporary Political Theory",
+        "type": "journal",
+        "issn": [
+          "1470-8914",
+          "1476-9336"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1057/s41296-017-0103-5.pdf"
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2592492241"
+    },
+    {
+      "openalex_id": "W2103095227",
+      "doi": "10.1017/s2045381713000130",
+      "title": "Global legal pluralism as fact and norm",
+      "authors": [
+        {
+          "name": "T\u00fcrk\u00fcler Isiksel",
+          "openalex_id": "A5086652018",
+          "orcid": "https://orcid.org/0009-0004-7564-1483",
+          "institutions": [
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-06-28",
+      "abstract": "Abstract This article interrogates the intellectual foundations of global legal pluralism as a descriptive and normative position, and assesses its core claims with reference to the changing status of individuals in the postnational realm. In order to uncover the normative core of the pluralist position, the article turns to the rich tradition of value pluralism in political philosophy, particularly as articulated by Isaiah Berlin. It argues that as a normative position, pluralism \u2013 whether applied to the abstract sphere of values or the concrete realm of legal regimes \u2013 is normatively underdetermined, offering too little guidance as to how the conflicts endemic to a pluralistic world ought to be resolved. Unless it is supplemented by other, more substantive principles of political legitimacy such as democracy, freedom, equality, or justice, the principle of pluralism applied to the global legal realm is poised to reproduce, even exacerbate, existing inequalities of power and resources among those whom it affects.",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": {
+        "name": "Global Constitutionalism",
+        "type": "journal",
+        "issn": [
+          "2045-3817",
+          "2045-3825"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "International Law and Human Rights",
+        "War, Ethics, and Justification"
+      ],
+      "referenced_works_count": 115,
+      "url": "https://openalex.org/W2103095227"
+    },
+    {
+      "openalex_id": "W1488576975",
+      "doi": "10.1111/j.1467-9752.2011.00795.x",
+      "title": "Philosophy for Children and its Critics: A Mendham Dialogue",
+      "authors": [
+        {
+          "name": "Maughn Gregory",
+          "openalex_id": "A5008965310",
+          "orcid": "https://orcid.org/0000-0003-4293-5798",
+          "institutions": [
+            "Montclair State University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-04-08",
+      "abstract": "As conceived by founders Matthew Lipman and Ann Margaret Sharp, Philosophy for Children is a humanistic practice with roots in the Hellenistic tradition of philosophy as a way of life given to the search for meaning, in American pragmatism with its emphasis on qualitative experience, collaborative inquiry and democratic society, and in American and Soviet social learning theory. The programme has attracted overlapping and conflicting criticism from religious and social conservatives who don\u2019t want children to question traditional values, from educational psychologists who believe certain kinds of thinking are beyond children of certain ages, from philosophers who define their discipline as theoretical and exegetical, from critical theorists who see the programme as politically compliant, and from postmodernists who see it as scientistic and imperialist. The paper is written as a dialogue in order to illustrate the complex interactions among these normative positions. Rather than respond to particular criticisms in depth, I indicate the general nature of my position regarding them and provide references to published material where they have been made and responded to over the past 40 years.",
+      "cited_by_count": 60,
+      "type": "article",
+      "source": {
+        "name": "Journal of Philosophy of Education",
+        "type": "journal",
+        "issn": [
+          "0309-8249",
+          "1467-9752"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Education and Critical Thinking Development",
+        "Religious Education and Schools",
+        "Values and Moral Education"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W1488576975"
+    },
+    {
+      "openalex_id": "W2483986905",
+      "doi": null,
+      "title": "Science and Narratives of Nature: East And West",
+      "authors": [
+        {
+          "name": "Meera Baindur",
+          "openalex_id": "A5074059056",
+          "orcid": "https://orcid.org/0000-0002-1956-5242"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Introduction 1. Post-Humanist 'Narratives of (non-)Nature' and the Sciences Stephen Healy 2. Nature, Body and Woman: An Indian Perspective on Value Dualisms Meera Baindur 3. Homosexuality in the West: A Tightrope Walk between Christianity and Science Yiftach Fehige 4. Feminist Philosophy of Science and Postcolonial Science Studies Kathleen Okruhlik 5. Is Food Natural or Cultural? Food, Body and 'the Social' in Indian Medical Traditions V. Sujatha 6. Placing and Moving Knowledge: East and West, North and South Stephen Bocking 7. Why did Exchange of Knowledge across Eurasia Generate a Scientific Revolution in the West? Arun Bala 8. Nineteenth-Century Science and Western Materialism Bernard Lightman 9. Eastern Mathematics, Western Mathematics: Shall the Twain Ever Meet? George Gheverghese Joseph 10. Nature of Mathematics and Scientific Knowledge in Indian Tradition M. D. Srinivas 11. See What I Mean? On Developing Norms for the Production and Publication of Scientific Images Letitia Meynell 12. The 'Relocation' of Technology between East and West: Stationary Steam Engines and Steamboats in India in the Early Nineteenth Century David Philip Miller 13. The Production and Distribution of Pharmaceutical Clinical Trial Knowledge: Case Studies in the Political Economy of Scientific Knowledge Sergio Sismondo. About the Editors. Notes on Contributors. Index",
+      "cited_by_count": 73,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Indian History and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2483986905"
+    },
+    {
+      "openalex_id": "W2017992233",
+      "doi": "10.1111/j.1468-2303.2008.00474.x",
+      "title": "THE PHILONIC DISTINCTION: GERMAN ENLIGHTENMENT HISTORIOGRAPHY OF JEWISH THOUGHT",
+      "authors": [
+        {
+          "name": "Dirk Westerkamp",
+          "openalex_id": "A5017639077"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-12-01",
+      "abstract": "ABSTRACT Leon Roth's famous question \u201cIs there a Jewish philosophy?\u201d has been the subject of an ongoing controversial debate. This paper argues that the concept of a Jewish philosophy\u2014in the sense of an allegedly continuous philosophical tradition stretching from antiquity to early modernity\u2014was created by German Enlightenment historians of philosophy. Under competing models of historiography, Enlightenment philosophy construed a continuous tradition of Jewish thought, a philosophia haebraeorum perennis , establishing a controversially discussed order of discourse and a specific politics of historiography. Within this historiography, historical and systematical paradigms, values, and patterns kept shifting continuously, opening up perspectives for different, even contradictory accounts of what Jewish philosophy was (and is). With Hegel and his successors, this specific discourse came to a close. Hegel attacks \u201cJewish thought\u201d as a form of metaphysics of substance\u2014a critique countered by several thinkers who can be referred to as \u201cJewish Hegelians\u201d (E. Fackenheim). The Jewish Hegelians fully accepted, however, Hegel's account of the \u201cPhilonic distinction\u201d: the difference between substance and subject within the conception of the one. This calls attention to the idea that not only the role of the \u201cmosaic distinction\u201d (J. Assmann), the distinction between true and false in religion, should be examined more closely, but also the consequences of the \u201cPhilonic distinction\u201d between identity and difference in monotheistic concepts of deity.",
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "History and Theory",
+        "type": "journal",
+        "issn": [
+          "0018-2656",
+          "1468-2303"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion, Theology, History, Judaism, Christianity",
+        "Nietzsche, Schopenhauer, and Hegel"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2017992233"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}
