@@ -1,0 +1,518 @@
+[s2_search.py] Searching Semantic Scholar: 'Scheffler normativity tradition' (year=2000-2025), limit=20
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_0096b22610aaa2f7)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Scheffler normativity tradition",
+  "results": [
+    {
+      "paperId": "0e60651833af084f1e49645712a138320ea910a6",
+      "title": "Scheffler, Tradition and Value",
+      "authors": [
+        {
+          "name": "Apaar Kumar",
+          "authorId": "2109525118"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/S10790-018-9636-Y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0e60651833af084f1e49645712a138320ea910a6",
+      "venue": "",
+      "journal": {
+        "name": "The Journal of Value Inquiry",
+        "pages": "1-17",
+        "volume": "53"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e171fa00c5866b7f354f47ceaa46ea9d32940956",
+      "title": "Scheffler, Tradition and Value",
+      "authors": [
+        {
+          "name": "Apaar Kumar",
+          "authorId": "2109525118"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10790-018-9636-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e171fa00c5866b7f354f47ceaa46ea9d32940956",
+      "venue": "Journal of Value Inquiry",
+      "journal": {
+        "name": "The Journal of Value Inquiry",
+        "pages": "1 - 17",
+        "volume": "53"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "eaccdfe6d77bf381bd02a4af9e3ab4830b2e0607",
+      "title": "Equality and Tradition: Questions of Value in Moral and Political Theory",
+      "authors": [
+        {
+          "name": "S. Scheffler",
+          "authorId": "50314683"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 79,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eaccdfe6d77bf381bd02a4af9e3ab4830b2e0607",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5c40208ac3cc19f640fb0296ffaf6192ecc7c6db",
+      "title": "Narratives and Normativity: Totalitarianism and Narrative Change in the European Legal Tradition after World War II",
+      "authors": [
+        {
+          "name": "K. Tuori",
+          "authorId": "115203070"
+        }
+      ],
+      "year": 2019,
+      "abstract": "After WWII, a new form of Europeanism emerged in legal history that gained momentum from European unification. This article explores the emergence of this new narrative as part of the process of exile from totalitarianism and its connection with the reestablishment of the European intellectual and political order after the war. The purpose is to explore the parallel afterwar processes of narrative and normative change and the influences and connections between them. It focuses on a specific historical case, the turn toward Europe, its legal heritage and human rights in the post-war era writing of legal history, especially in the writings of Paul Koschaker, Franz Wieacker, and Helmut Coing, and its linkages to the simultaneous process of European integration. It explores a new argument about the interlinkage between narrativity and normativity as cognitive processes that rely on the creation and sustaining of belief, and the ideas of legitimacy and identity construction.",
+      "citationCount": 3,
+      "doi": "10.1017/S0738248019000130",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5c40208ac3cc19f640fb0296ffaf6192ecc7c6db",
+      "venue": "Law and History Review",
+      "journal": {
+        "name": "Law and History Review",
+        "pages": "605 - 638",
+        "volume": "37"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ab5153a9a1ff0521801b8f724365424d7193f3bf",
+      "title": "Frege, the Normativity of Logic, and the Kantian Tradition",
+      "authors": [
+        {
+          "name": "Anssi Korhonen",
+          "authorId": "20673039"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-319-71186-7_4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab5153a9a1ff0521801b8f724365424d7193f3bf",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "47-74",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "68f9f01a4d83d0236334bbd7b228b51272d1c5af",
+      "title": "Fugitive freedom and radical care: Towards a standpoint theory of normativity",
+      "authors": [
+        {
+          "name": "Daniel Loick",
+          "authorId": "2082005888"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Epistemic standpoint theories have elaborated the effects of social situatedness on epistemic competence: Dominant groups are regularly subject to epistemic blockages that limit the possibility of cognition and knowledge production. Oppressed groups, on the other hand, have access to perceptions and insights that dominant groups lack. This diagnosis can be generalized: Not only our epistemic, but also our normative relation to the world is socially situated, that is, our values, virtues, moral sentiments are shaped by relations of domination. In this article, my goal is to sketch the general outlines of a standpoint theory of normativity. I do so by engaging with two lines of tradition. First, I review conceptions of fugitive freedom in the Black Radical Tradition, before I recapitulate the feminist debate around the concept of care work. The counter-hegemonic norms theorized in these traditions can be brought into dialogue because they are both based on similar presuppositions, namely, political struggle provoked by social contradictions.",
+      "citationCount": 3,
+      "doi": "10.1177/01914537231185954",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/68f9f01a4d83d0236334bbd7b228b51272d1c5af",
+      "venue": "Philosophy &amp; Social Criticism",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "971 - 989",
+        "volume": "51"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "00b36032ea593db0afcc46bedc5af262cd9cc0dd",
+      "title": "Organizational normativity and teleology: a critique",
+      "authors": [
+        {
+          "name": "Luca Corti",
+          "authorId": "2238460373"
+        }
+      ],
+      "year": 2023,
+      "abstract": "In recent years, so-called organizational accounts (OA) have emerged in theoretical biology as a powerful, viable strategy for naturalizing teleology and normativity. In the wake of the theoretical tradition of autopoiesis and biological autonomy, OA notably propose a new meaning for the notion of \u201corganization,\u201d which they claim to be capable, among other things, of grounding objective and observer-independent normative teleological ascriptions. In this paper, I focus on this last claim, asking \u201cHow are \u2018organization\u2019 and \u2018normativity\u2019 conceptually connected?\u201d The basic insight mobilized by the OA framework to answer this question is most often expressed as a counterfactual argument regarding the \u201cconditions of existence\u201d of organized entities. In this paper, I show that careful scrutiny of this core OA argument reveals a substantial shortcoming. To make this point, I first analyze how the OA framework positions the idea of \u201cconditions of existence\u201d via the notions of \u201cdependence\u201d, \u201cconstraint,\u201d and \u201cclosure.\u201d Second, I consider various possible interpretations of the OA counterfactual argument grounding norms. I conclude that the implications of this argument do not enable OA to deliver what they promise, i.e., a straightforward link between organization and norms. I argue that a different strategy is needed to capture the basic organizational intuition about biological normativitiy and suggest that a stipulative route might be better suitable to that end.",
+      "citationCount": 2,
+      "doi": "10.1007/s11229-023-04255-7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/00b36032ea593db0afcc46bedc5af262cd9cc0dd",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "1-23",
+        "volume": "202"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "583bc913ea42d5e2ea6bf301c64dd045eeb0bce4",
+      "title": "Normative Dualism: A New Interpretation of Chinese Legal Tradition",
+      "authors": [
+        {
+          "name": "XINGZHONG YU",
+          "authorId": "2374862961"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Using one or more systems of norms to maintain order positively but another system of norms to punish disorder negatively is a characteristic, if not unique, Chinese experience. This can be described as normative dualism. This dualist practice has been proven to have a long-lasting life. It originated more than three thousand years ago and is still being practised in contemporary China after many revolutions and reforms. Existing interpretations of Chinese legal tradition, whether universalistic, culturally relative or realistic, have not taken this normative dualism seriously. Normative dualism, however, remains the preferred way of governance by successive Chinese governments. Consequently, the place of law in the normative framework has always been secondary to the officially endorsed rules of conduct, practices and policies. This article discusses this perennial feature of Chinese legal tradition by examining its phenomenological attributes which separate Li from Xing, and its more profound philosophical foundation of dialecticism that distinguishes Yin from Yang, positive from negative and the rules of propriety from punishment.",
+      "citationCount": 0,
+      "doi": "10.64219/mjgls-2024-v1-03",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/583bc913ea42d5e2ea6bf301c64dd045eeb0bce4",
+      "venue": "Macau Journal of Global Legal Studies",
+      "journal": {
+        "name": "Macau Journal of Global Legal Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0a7e27b1c387ff10a891ec4f2412afbe1ad6b9b7",
+      "title": "Tradition and the Normativity of History",
+      "authors": [
+        {
+          "name": "L. Boeve",
+          "authorId": "90725030"
+        },
+        {
+          "name": "T. Merrigan",
+          "authorId": "103530238"
+        },
+        {
+          "name": "Colby Dickinson",
+          "authorId": "119179637"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0a7e27b1c387ff10a891ec4f2412afbe1ad6b9b7",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ab9b85573bf1c448c5eafd6312abd6d82e0db944",
+      "title": "Harmonizing Islam and Human Rights Through the Reconstruction of Classical Islamic Tradition",
+      "authors": [
+        {
+          "name": "Tamyiz Mukharrom",
+          "authorId": "1577020564"
+        },
+        {
+          "name": "Supriyanto Abdi",
+          "authorId": "98645812"
+        }
+      ],
+      "year": 2023,
+      "abstract": "As international human rights norms\u00a0are\u00a0increasingly ratified\u00a0by many nation-states, including in the Muslim world. There has\u00a0been an increasing debate among Muslims on the universality of human rights and their compatibility with Islam. Like any religious tradition, however, Islam is open to various\u00a0and frequently conflicting interpretations about its inherent normative demands.\u00a0This research is a normative legal research using a legal philosophy approach. Sources of data come from literature in the form of articles, books and all materials related to the discussion. This study concludes that there are various interpretations among Muslims regarding human rights issues.\u00a0On the one hand, due to the fact\u00a0that the modern discourse of human rights emerged from the West, which historically closely associated with imperialism and colonialism, certain Muslim groups maintain hostile views towards human rights. On the other, there are also Muslims who, because of their intensive engagement with the West, have produced views and thoughts that tend to be accommodating or even imitative towards everything from the West including human rights issues.\u00a0The article argues that philosophically harmonization between Islam and human rights is quite possible to be carried out through the reconstruction of classical Islamic traditions, so that a dialectic occurs that builds and complements one another in the future.",
+      "citationCount": 18,
+      "doi": "10.22373/sjhk.v7i1.16436",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab9b85573bf1c448c5eafd6312abd6d82e0db944",
+      "venue": "SAMARAH: Jurnal Hukum Keluarga dan Hukum Islam",
+      "journal": {
+        "name": "Samarah: Jurnal Hukum Keluarga dan Hukum Islam"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1dc112b00d372b2a9f434f1cade6d11c8961be6f",
+      "title": "Beyond \u201cReligious Fundamentalism\u201d: Bridging Religious Tradition, Gender Normative Systems, and State Institutions to Respond to Intimate Partner Violence in Ethiopia",
+      "authors": [
+        {
+          "name": "Romina Istratii",
+          "authorId": "83378338"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Despite its western Christian origin, the notion of religious fundamentalism has been employed by western and non-western scholars alike to describe a variety of religious groups perceived to manifest antagonism to aspects of modernity and secularism, especially western ideals of gender equality as enforced in many cases by state policies. Within religion and gender studies and Gender and Development scholarship, fundamentalism has been often invoked in reference to faith communities opposing feminist ideals, but without due recognition being given to the western metaphysics of feminist theories of gender, or the epistemological and ethical problems of \u201cnaming\u201d such communities as \u201cfundamentalist\u201d within Western/Anglophone scholarship. This lack of reflexivity risks essentializing religious communities as being opposed to feminist gender ideals when their reactions might reflect more complex underlying reasons, and can also be counterproductive in effectively responding to gender inequalities and women\u2019s abuse in religious societies. This paper proposes that a more intimate engagement with non-western religious traditions grounded in a study of theological teachings and the lived religious experience of specific communities can remedy such tendencies and achieve a better understanding of the nexus of gender, faith, and tradition/modernity in diverse cultural contexts. It illustrates this by drawing key insights from a study of conjugal abuse in an Orthodox T\u00e4wah\u04d9do community in Ethiopia that demonstrated intricate associations between understandings of and attitudes toward conjugal abuse and the local religious tradition, the significance of a culture-as-religion discourse in the maintenance of rigid gender norms, and the potential of Orthodox theology to counter ideas about abusiveness that contributed to its implicit tolerance. The paper relates these findings to Ethiopian women activists\u2019 efforts and the multi-religious societal fabric of Ethiopian society to explore the possibilities for integrated responses to intimate partner violence in the country.",
+      "citationCount": 1,
+      "doi": "10.1177/00027642241261036",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1dc112b00d372b2a9f434f1cade6d11c8961be6f",
+      "venue": "American Behavioral Scientist",
+      "journal": {
+        "name": "American Behavioral Scientist"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1af6f95063b85ffe0063e15bff4ab49ff8bac68f",
+      "title": "Global Politics of Knowledge Production: The Challenges of Islamization of Knowledge in The Light of Tradition Vs Secular Modernity Debate",
+      "authors": [
+        {
+          "name": "A. Chande",
+          "authorId": "48825615"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This paper argues that the main objective of the \u2018Islamization of knowledge\u2019 project is to assert Muslim ownership over their institutions by developing an alternative system of learning/knowledge production that serves as a foundation for re-inventing/renewing the Islamic traditions to cope with the multitude of challenges that Muslims face today. These challenges stem from a number of intertwining factors that influence this process, including the modern advances that accompanied the colonial and post-colonial developments that shaped and reshaped the intellectual culture and institutions of Muslim and non-Muslim societies precisely by allowing Western methodological approaches to set the agenda and the objectives of the schools. Accordingly, proponents of the Islamization of knowledge such as Naquib al-Atas, Ismail al-Faruqi, Taha Jaber al-Alwani, and others have developed their own different approaches to the production of knowledge and in so doing have generated a philosophical discourse that offers a critique of modern/Western knowledge and its epistemological and methodological assumptions. What, therefore, has been the outcome of the Islamization of knowledge project in terms of producing, for instance, Islamic social sciences, broadly defined, in the areas of, say, economics, sociology, political science, and so on? How have normative teachings of Islam, its ethical concerns, and Muslim efforts to come to terms with modernity (an ideology that carries the values and ideas of triumphant capitalism and secularism) been incorporated into these disciplines to counter or respond to Western hegemony and Eurocentric and orientalist order of knowledge? Finally, have Muslims succeeded in bringing together scholars of the text (fuqaha) and scholars of the context (experts in different fields of knowledge from social sciences to sciences) to deal with pressing modern problems that require new interpretations? This paper will attempt to answer some of these questions. \u00a0",
+      "citationCount": 24,
+      "doi": "10.31538/nzh.v6i2.3502",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1af6f95063b85ffe0063e15bff4ab49ff8bac68f",
+      "venue": "Nazhruna: Jurnal Pendidikan Islam",
+      "journal": {
+        "name": "Nazhruna: Jurnal Pendidikan Islam"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a37688a0f0d98555b6296c54c2a851f844273f9c",
+      "title": "Islamic Legal Values in the Angkola Batak Community Marriage Onang-Onang Dance Tradition, Sumatra, Indonesia",
+      "authors": [
+        {
+          "name": "Padlan Padil Simamora",
+          "authorId": "2293527604"
+        },
+        {
+          "name": "Dinda Difia Madina",
+          "authorId": "2293530948"
+        },
+        {
+          "name": "Muhammad Adib Alfarisi",
+          "authorId": "2293529887"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The issue of customary law and Islamic law is always used with a social conflict approach in society. However, the occurrence of marriage in the Angkola Batak community is interesting and unique, there is a tradition of oanng-onang poems in the marriage procession which reflects socio-cultural values. This research uses a normative juridical research type with a statute approach, namely examining norms, both from the shari'a and customary law aspects, and a comparative approach, namely a comparative approach between customary law and shari'a and the source of legal material in the form of nash. The results of this study show that the meaning of the Onang-Onang poem is an expression of heart longing for the mother (parents) and her lover, but it is also used in happy situations, including traditional ceremonies and contains religious values contained during the onang-onang tradition procession. Meanwhile, the authors argue that the validity of the tradition is not only socio-cultural but the religious value in Islamic law is inseparable from the role of parents and family, as well as relatives who become educational spaces in instilling attitudes and behavior in line with Islamic teachings, namely Q.S. Luqman verse 17.",
+      "citationCount": 4,
+      "doi": "10.25217/jm.v8i2.3894",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a37688a0f0d98555b6296c54c2a851f844273f9c",
+      "venue": "JURNAL MAHKAMAH",
+      "journal": {
+        "name": "Jurnal Mahkamah : Kajian Ilmu Hukum dan Hukum Islam"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2b48408378deffde51047f5905ce10ddab63ee68",
+      "title": "FROM HISTORICAL TO NORMATIVE-THEOLOGICAL APPROACHES: Hadith Studies and Prophetic Tradition According to Ruggero Vimercati Sanseverino",
+      "authors": [
+        {
+          "name": "Sri Handayana",
+          "authorId": "2292582305"
+        },
+        {
+          "name": "Arif Budiman",
+          "authorId": "2292552034"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The present article is a descriptive-analytical examination of the hadith studies trend in Germany. Represented by Ruggero Vimercati Sanseverino, Professor of Hadith Studies and Prophetic Tradition at Zentrum f\u00fcr Islamische Theologie at the University of T\u00fcbingen Germany, it explores his methodological and didactical contribution to the hadith studies traced through his publications. This study shows that Ruggero focuses on the theological dimension of hadith, as opposed to the historical study of hadith. Ruggero investigates one of the pioneers of referential text on the science of hadith, al-Ilma\u2019 by The Moroccan Maliki scholar al-Qadi \u2018Iyad. Besides studying \u2018Ulum al-Hadits literature, he also expands his research on a reference text of Sunni prophetology, al-Shifa\u02bebi-ta\u02bfrif Huquq al-Mu\u1e63\u1e6dafa by the same author. In line with the previous topic, he tries to answer the question of how the Prophet Muhammad should be perceived by doing a critical study of prophetology according to \u02bfAbd al-\u1e24alim Ma\u1e25mud. Ruggero also offers a comprehensive thematic approach concerning prophetological themes to counter fundamentalism and solve the conflict in some Muslim communities. The theological approach to hadith offered by Ruggero defines hadith as transmitted testimony. While classical hadith studies which places hadith as a source for prophetic tradition focusing on transmission and Orientalism/Islamic Studies put hadith as history and document which portrayed social and culture of past Muslim societies, Ruggero wants to integrate both approaches and brings them into dialogue.[Artikel ini adalah analisis deskriptif-analitik dari tren studi hadits di Jerman. Diwakili oleh Ruggero Vimercati Sanseverino, Profesor Studi Hadits dan Tradisi Nabi di Zentrum f\u00fcr Islamische Theologie di Universitas T\u00fcbingen Jerman, tulisan ini mengeksplorasi kontribusi metodologis dan didaktis pada studi hadis yang ditelusuri melalui publikasinya. Kajian ini menunjukkan bahwa Ruggero berfokus pada dimensi teologis hadis, berlawanan dengan kajian sejarah hadis. Ruggero menyelidiki salah satu perintis kitab referensi pada ilmu hadits, al-Ilma 'oleh ulama Maliki Maroko al-Qadi 'Iyad. Selain mempelajari literatur Ulum al-Hadits, ia juga memperluas penelitiannya pada teks referensi kenabian Sunni, al-Shifa\u02bebi-ta\u02bfrif Huquq al-Mu\u1e63\u1e6dafa oleh penulis yang sama. Sejalan dengan topik sebelumnya, ia mencoba menjawab pertanyaan bagaimana seharusnya Nabi Muhammad dipandang dengan melakukan kajian kritis terhadap profetologi menurut \u02bfAbd al-\u1e24alim Ma\u1e25mud. Ruggero juga menawarkan pendekatan tematik yang komprehensif tentang tema-tema kenabian untuk melawan fundamentalisme dan menyelesaikan konflik di beberapa komunitas Muslim. Pendekatan teologis dalam hadis yang ditawarkan oleh Ruggero mendefinisikan hadis sebagai transmitted testimony. Sementara kajian hadits klasik yang menempatkan hadits sebagai sumber hadis kenabian yang berfokus pada transmisi dan Orientalisme/Studi Islam menempatkan hadits sebagai sejarah dan dokumen yang menggambarkan sosial dan budaya masyarakat Muslim masa lalu, Ruggero ingin mengintegrasikan kedua pendekatan tersebut dan membawanya ke dalam dialog.]",
+      "citationCount": 1,
+      "doi": "10.21043/riwayah.v9i1.16541",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2b48408378deffde51047f5905ce10ddab63ee68",
+      "venue": "Riwayah: Jurnal Studi Hadis",
+      "journal": {
+        "name": "Riwayah : Jurnal Studi Hadis"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "69bab1242ff48b761287f3425946ed2e87631c33",
+      "title": "Tradition and invention: The bifocal stance theory of cultural evolution",
+      "authors": [
+        {
+          "name": "R. Jagiello",
+          "authorId": "73838975"
+        },
+        {
+          "name": "C. Heyes",
+          "authorId": "31433567"
+        },
+        {
+          "name": "H. Whitehouse",
+          "authorId": "2169959"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Abstract Cultural evolution depends on both innovation (the creation of new cultural variants by accident or design) and high-fidelity transmission (which preserves our accumulated knowledge and allows the storage of normative conventions). What is required is an overarching theory encompassing both dimensions, specifying the psychological motivations and mechanisms involved. The bifocal stance theory (BST) of cultural evolution proposes that the co-existence of innovative change and stable tradition results from our ability to adopt different motivational stances flexibly during social learning and transmission. We argue that the ways in which instrumental and ritual stances are adopted in cultural transmission influence the nature and degree of copying fidelity and thus also patterns of cultural spread and stability at a population level over time. BST creates a unifying framework for interpreting the findings of otherwise seemingly disparate areas of enquiry, including social learning, cumulative culture, overimitation, and ritual performance. We discuss the implications of BST for competing by-product accounts which assume that faithful copying is merely a side-effect of instrumental learning and action parsing. We also set out a novel \u201ccultural action framework\u201d bringing to light aspects of social learning that have been relatively neglected by behavioural ecologists and evolutionary psychologists and establishing a roadmap for future research on this topic. The BST framework sheds new light on the cognitive underpinnings of cumulative cultural change, selection, and spread within an encompassing evolutionary framework.",
+      "citationCount": 21,
+      "doi": "10.1017/S0140525X22000383",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/69bab1242ff48b761287f3425946ed2e87631c33",
+      "venue": "Behavioral and Brain Sciences",
+      "journal": {
+        "name": "Behavioral and Brain Sciences",
+        "volume": "45"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "78b7501fbfdd93b61fda342a457d815707442b32",
+      "title": "Deleuze and the liberal tradition: normativity, freedom and judgement",
+      "authors": [
+        {
+          "name": "Daniel W. Smith",
+          "authorId": "150082786"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 26,
+      "doi": "10.1080/0308514032000073455",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/78b7501fbfdd93b61fda342a457d815707442b32",
+      "venue": "",
+      "journal": {
+        "name": "Economy and Society",
+        "pages": "299 - 324",
+        "volume": "32"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "03ddc3a33c401901a47d1e36c5816c192d34afc1",
+      "title": "Whaling, Bullfighting, and the Conditional Value of Tradition",
+      "authors": [
+        {
+          "name": "P. Casal",
+          "authorId": "115920900"
+        }
+      ],
+      "year": 2020,
+      "abstract": "The paper develops an account of the value of tradition that completes that of Samuel Scheffler and employs it to discuss whaling and bullfighting. The discussion, however, is applicable to many other practices the paper describes, and its relevance extends also beyond animal ethics. Some of the arguments discussed here for maintaining these traditions appeal to their positive aspects, such as their contribution to social or environmental harmony; other arguments focus on the impermissibility of one group criticizing another group\u2019s practices when its own are vulnerable to comparable criticism. Reflecting on the first kind of argument, the paper responds, building on the work of G. A. Cohen and T. M. Scanlon, that the value of tradition, if any, must be conditional. Reflecting on the second, however, the paper disagrees with Cohen and Scanlon on the impermissibility of casting the first stone.",
+      "citationCount": 11,
+      "doi": "10.1007/s11158-020-09486-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/03ddc3a33c401901a47d1e36c5816c192d34afc1",
+      "venue": "Res Publica",
+      "journal": {
+        "name": "Res Publica (Liverpool, England)",
+        "pages": "467 - 490",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c34a794dc690c08c0639adb19fa227f2a3a88819",
+      "title": "Training Discipline of Students in The Manakib Reading Tradition at Nurul Qur'an Pakunden Islamic Boarding School Ponorogo",
+      "authors": [
+        {
+          "name": "Muhammad Nurzakka",
+          "authorId": "2088540012"
+        }
+      ],
+      "year": 2022,
+      "abstract": "This research is a descriptive-qualitative study that discusses the practice and tradition of reading the manakib of Sheikh Abdul Qadir al-Jilani which is carried out every selapanan (thirty-five days in the Javanese calendar), more precisely every Kliwon Friday night at the Nurul Qur'an Pakunden Islamic Boarding School in Ponorogo. The living hadith approach is used to find receptions for the students related to the normative text that underlies these activities, with interview techniques as a data collection method. This research focuses on the study of how the practice of implementing activities, what factors influence the practice, and how these practices can affect the diversity of the students. The conclusions of this study are: 1) the practice of reading manakib in the Nurul Qur'an Islamic boarding school is a religious tradition that has been implemented for a long time, which is about thirty years since the boarding school was founded, although in the course of the pesantren program, this activity had experienced a vacuum due to the change of management which had an impact on the absence of a special program as a forum for this activity. 2) there are two hadiths as the normative basis for the implementation of the tradition. 3) the tradition of reading the manakib is a forum and means for the caregivers and administrators to instill discipline in the students in the hope that they can preserve the tradition when they are struggling in their respective areas",
+      "citationCount": 3,
+      "doi": "10.14421/livinghadis.2022.2728",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c34a794dc690c08c0639adb19fa227f2a3a88819",
+      "venue": "Jurnal Living Hadis",
+      "journal": {
+        "name": "Jurnal Living Hadis"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6cc9bd997c984d36a6fd35432f84df5c02c9e9d7",
+      "title": "Circumplex of identity formation modes: A proposal for the integration of identity constructs developed in the Erikson\u2013Marcia tradition",
+      "authors": [
+        {
+          "name": "Jan Cieciuch",
+          "authorId": "152646878"
+        },
+        {
+          "name": "Ewa Topolewska",
+          "authorId": "113961235"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 32,
+      "doi": "10.1080/15298868.2016.1216008",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6cc9bd997c984d36a6fd35432f84df5c02c9e9d7",
+      "venue": "",
+      "journal": {
+        "name": "Self and Identity",
+        "pages": "37 - 61",
+        "volume": "16"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "64955fd6c2d63c5f4b3723a65ff100028e7e7d96",
+      "title": "Na\u00efve Normativity: The Social Foundation of Moral Cognition",
+      "authors": [
+        {
+          "name": "Kristin Andrews",
+          "authorId": "144453627"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Abstract To answer tantalizing questions such as whether animals are moral or how morality evolved, I propose starting with a somewhat less fraught question: do animals have normative cognition? Recent psychological research suggests that normative thinking, or ought-thought, begins early in human development. Recent philosophical research suggests that folk psychology is grounded in normative thought. Recent primatology research finds evidence of sophisticated cultural and social learning capacities in great apes. Drawing on these three literatures, I argue that the human variety of social cognition and moral cognition encompass the same cognitive capacities and that the nonhuman great apes may also be normative beings. To make this argument, I develop an account of animal social norms that shares key properties with Cristina Bicchieri's account of social norms but which lowers the cognitive requirements for having a social norm. I propose a set of four early developing prerequisites implicated in social cognition that make up what I call na\u00efve normativity: (1) the ability to identify agents, (2) sensitivity to in-group/out-group differences, (3) the capacity for social learning of group traditions, and (4) responsiveness to appropriateness. I review the ape cognition literature and present preliminary empirical evidence supporting the existence of social norms and na\u00efve normativity in great apes. While there is more empirical work to be done, I hope to have offered a framework for studying normativity in other species, and I conclude that we should be open to the possibility that normative cognition is yet another ancient cognitive endowment that is not human-unique.",
+      "citationCount": 52,
+      "doi": "10.1017/apa.2019.30",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/64955fd6c2d63c5f4b3723a65ff100028e7e7d96",
+      "venue": "Journal of the American Philosophical Association",
+      "journal": {
+        "name": "Journal of the American Philosophical Association",
+        "pages": "36 - 56",
+        "volume": "6"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

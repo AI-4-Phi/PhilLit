@@ -1,0 +1,122 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'conservatism tradition Burke', limit=30
+[search_philpapers.py] Rate limited, backing off (attempt 1/5)...
+[search_philpapers.py] Retrying after 1.9s backoff...
+[search_philpapers.py] Rate limited, backing off (attempt 2/5)...
+[search_philpapers.py] Retrying after 2.0s backoff...
+[search_philpapers.py] Retrieved 15 entries...
+[search_philpapers.py] Search complete: 15 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "conservatism tradition Burke",
+  "results": [
+    {
+      "title": "Ted Honderich, Conservatism: Burke to Nozick to Blair?",
+      "url": "https://philpapers.org/rec/HONCBT",
+      "philpapers_id": "HONCBT",
+      "snippet": "Does conservatism have a philosophical founding principle that unifies it? Ted Honderich\u2019s search for the fundamental principle of conservatism is an enlightening one. He examines influential thinkers in the conservative tradition, from Edmund Burke and Adam Smith to Michael Oakeshott and Robert Nozick.",
+      "page_age": null
+    },
+    {
+      "title": "Drew Maciag, Edmund Burke in America: the contested career of the father of modern conservatism",
+      "url": "https://philpapers.org/rec/MACEBI",
+      "philpapers_id": "MACEBI",
+      "snippet": "Introduction : a search for icons -- Burke in brief : a &quot;philosophical&quot; primer -- Old seeds, new soil : the land of Paine -- John and J.Q. Adams : federalist persuasions -- Democratic America : the ethos of liberalism -- American Whigs : a conservative response -- The Gilded Age : eclectic interpretations -- Theodore Roosevelt : blazing forward, looking backward -- Woodrow Wilson : confronting American maturity -- Modern times : conjunctions and consensus -- Natural law : a neo-traditionalist revival -- The Cold War : existential threat redux -- Contemporary conservatives : victories and illus",
+      "page_age": null
+    },
+    {
+      "title": "D. N. Byrne, Edmund Burke and the invention of modern conservatism, 1830\u20131914: An intellectual history",
+      "url": "https://philpapers.org/rec/BYREBA",
+      "philpapers_id": "BYREBA",
+      "snippet": "Book Review: Drew Maciag&#x27;s Edmund Burke in America: The Contested Career of the Father of Modern Conservatism. [REVIEW]D. N.",
+      "page_age": null
+    },
+    {
+      "title": "Russell Kirk, The conservative mind: from Burke to Eliot",
+      "url": "https://philpapers.org/rec/KIRTCM",
+      "philpapers_id": "KIRTCM",
+      "snippet": "Conservative Texts: An Anthology.Roger Scruton - 1991 - Palgrave-Macmillan. Edmund Burke in America: the contested career of the father of modern conservatism.Drew Maciag - 2013 - Ithaca: Cornell University Press.",
+      "page_age": null
+    },
+    {
+      "title": "Richard Bourke, What is conservatism? History, ideology and party",
+      "url": "https://philpapers.org/rec/BOUWIC-2",
+      "philpapers_id": "BOUWIC",
+      "snippet": "In restoring Burke to his original milieu, the argument presented here takes issue with 20th-century accounts of conservative ideology developed by such figures as Karl Mannheim, Klaus Epstein and Samuel Huntington. It argues that the idea of a conservative tradition is best seen as a belated construction, and that the notion of a univocal philosophy of conservatism is basically misconceived.",
+      "page_age": null
+    },
+    {
+      "title": "Ted Honderich, Conservatism: Burke, Nozick, bush, Blair?",
+      "url": "https://philpapers.org/rec/HONCBN",
+      "philpapers_id": "HONCBN",
+      "snippet": "Conservatism: Burke, Nozick, Bush, Blair?Campbell Craig - 2006 - Contemporary Political Theory 5 (3):354-358.",
+      "page_age": null
+    },
+    {
+      "title": "Linda C. Raeder, The liberalism/conservatism of edmund burke and FA Hayek: A critical comparison",
+      "url": "https://philpapers.org/rec/RAETLO",
+      "philpapers_id": "RAETLO",
+      "snippet": "Edmund Burke and the New Conservatism.C.",
+      "page_age": null
+    },
+    {
+      "title": "Russell Kirk, The conservative mind: from Burke to Santayana",
+      "url": "https://philpapers.org/rec/KIRTCM-2",
+      "philpapers_id": "KIRTCM",
+      "snippet": "Following Burke, whom he calls the first truly modern conservative thinker, he studies the work of John Adams, Walter Scott, Calhoun, Fenimore Cooper, Tocqueville, Nathaniel Hawthorne, Benjamin Disraeli, Cardinal Newman, George Santayana, and T.S. Eliot and others. Vigorously written, the book represents conservatism as an ideology born of sound intellectual traditions...",
+      "page_age": null
+    },
+    {
+      "title": "Aleksandar Nikitovic, Traditionalism and modern subjectivity: Enlightenment and conservatism of Edmund Burke",
+      "url": "https://philpapers.org/rec/NIKTAM",
+      "philpapers_id": "NIKTAM",
+      "snippet": "The issue of traditionalism versus modern subjectivism in the light of the conflict of Edmund Burke`s conservatism with the Enlightenment as the ideological basis of the French revolution was not discussed or studied sufficiently in our political and philosophical theory.",
+      "page_age": null
+    },
+    {
+      "title": "Neil Levy, Deference to Burke.",
+      "url": "https://philpapers.org/rec/LEVDTB-2",
+      "philpapers_id": "LEVDTB",
+      "snippet": "Burkean conservatism, roughly, is the view that we ought to make political decisions by deferring to the wisdom of the past. This wisdom is reliable because it embodies a history under selection pressure for truth.",
+      "page_age": null
+    },
+    {
+      "title": "Katey Castellano, Romantic Conservatism in Burke, Wordsworth, and Wendell Berry",
+      "url": "https://philpapers.org/rec/CASRCI",
+      "philpapers_id": "CASRCI",
+      "snippet": "Philosophical Traditions \u00b7 Philosophical Traditions \u00b7 African/Africana Philosophy \u00b7 Asian Philosophy \u00b7 Continental Philosophy \u00b7 European Philosophy \u00b7 Philosophy of the Americas \u00b7 Philosophical Traditions, Miscellaneous \u00b7 Philosophy, Misc \u00b7 Philosophy, Misc \u00b7",
+      "page_age": null
+    },
+    {
+      "title": "Campbell Craig, Conservatism: Burke, Nozick, Bush, Blair?",
+      "url": "https://philpapers.org/rec/CRACBN",
+      "philpapers_id": "CRACBN",
+      "snippet": "What is conservatism? History, ideology and party.Richard Bourke - 2018 - European Journal of Political Theory 17 (4):449-475. Book Review: Drew Maciag&#x27;s Edmund Burke in America: The Contested Career of the Father of Modern Conservatism. [REVIEW]D. N.",
+      "page_age": null
+    },
+    {
+      "title": "Matthew McManus, Who Are the Post-modern Conservatives?",
+      "url": "https://philpapers.org/rec/MCMWAT-3",
+      "philpapers_id": "MCMWAT",
+      "snippet": "This chapter traces the genealogy of post-modern conservatism in the work of major right wing thinkers. In particular it looks at the work of Edmund Burke, Joseph de Maistre, Michael Oakeshott, Lord Devlin, Robert Bork, and of course Peter Lawler-who originated the term post-modern conservatism.",
+      "page_age": null
+    },
+    {
+      "title": "Corey Robin, The Reactionary Mind: Conservatism from Edmund Burke to Sarah Palin",
+      "url": "https://philpapers.org/rec/ROBTRM",
+      "philpapers_id": "ROBTRM",
+      "snippet": "Despite their opposition to these movements, conservatives favor a dynamic conception of politics and society\u2014one that involves self-transformation, violence, and war. They are also highly adaptive to new challenges and circumstances. This partiality to violence and capacity for reinvention has been critical to their success. This book ranges widely, from Edmund Burke to Antonin Scalia, from John C.",
+      "page_age": null
+    },
+    {
+      "title": "Dennis O'Keeffe, Edmund Burke",
+      "url": "https://philpapers.org/rec/OKEEB",
+      "philpapers_id": "OKEEB",
+      "snippet": "Edmund Burke and the New Conservatism.C.",
+      "page_age": null
+    }
+  ],
+  "count": 15,
+  "errors": []
+}

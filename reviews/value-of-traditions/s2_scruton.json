@@ -1,0 +1,380 @@
+[s2_search.py] Searching Semantic Scholar: 'Scruton conservatism beauty tradition' (year=1995-2025) (field=Philosophy), limit=20
+[s2_search.py] Retrieved 14/14 papers...
+[s2_search.py] Search complete: 14 papers found
+[s2_search.py] Cached results (cache key: s2_c3d1877849e387df)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Scruton conservatism beauty tradition",
+  "results": [
+    {
+      "paperId": "df71fc49fa21f3f22ca14d9442b57f16e1292a37",
+      "title": "Editorial Introduction to a Symposium on Roger Scruton\u2019s Conservatism\u2014An Invitation to the Great Tradition",
+      "authors": [
+        {
+          "name": "Martin Beckstein",
+          "authorId": "113342396"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.5167/UZH-174926",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/df71fc49fa21f3f22ca14d9442b57f16e1292a37",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "1-2",
+        "volume": "6"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b3569ce591d9796444b9f119950fc2ea0abdb446",
+      "title": "Philosophical foundations of worldview conflict within Western thought in the conservative perspective",
+      "authors": [
+        {
+          "name": "Maria K\u0105dzielska",
+          "authorId": "2091536687"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract: \nIn the face of growing conflicts in Western societies and the formation of deep political, ideological and worldview divisions within Western civilization, it becomes legitimate to ask whether we are not witnessing ongoing culture wars? The observed intensifying social dichotomies do not touch only the issue of political sympathies or antipathies, but concern almost all aspects of human life: the concept of nation, attitude to religion, family model, approach to sexuality and even the existence of gender. The purpose of this article is to trace the conservative style of thinking in the context of the culture war, to distinguish the elements of common concepts within this philosophical tradition, as well as the peculiarities of each of the selected authors. The paper has the following order: an introduction devoted to the origins of modern conservatism, allowing to outline the conceptual framework of this style of thinking. It is hypothesized that modern British conservatism arose in response to events associated with the collapse of socialism in Poland and Czechoslovakia, while the philosophical development of Polish conservative thought is inspired by Anglo-Saxon publications. In the first part, the thought of British conservative philosophy on the phenomenon of culture war is described on the example of Roger Scruton's philosophy, and then compared with American authors Allan Bloom and Gertrude Himmelfarb. The second part of the article is devoted to two Polish authors who have dealt extensively with the subject of culture war \u2013 Agnieszka Kolakowska and Anna Pawczynska. Finally, the conservative interpretation of the culture war is compared with the liberal and left-wing interpretations in order to point out the links, connections, as well as differences between them.",
+      "citationCount": 1,
+      "doi": "10.12775/dp.2023.003",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b3569ce591d9796444b9f119950fc2ea0abdb446",
+      "venue": "Dialogi Polityczne",
+      "journal": {
+        "name": "Dialogi Polityczne"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a0979ecabec21ca8b2fe82cfb07963d47c431163",
+      "title": "The British Aesthetic Tradition: From Shaftesbury to Wittgenstein, by Timothy M. Costelloe",
+      "authors": [
+        {
+          "name": "Endre Sz\u00e9cs\u00e9nyi",
+          "authorId": "115245953"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.3138/CJH.49.3.508",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a0979ecabec21ca8b2fe82cfb07963d47c431163",
+      "venue": "",
+      "journal": {
+        "name": "Canadian journal of history",
+        "pages": "508-510",
+        "volume": "49"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d9af6dc848c6b15bbbc6390b042b3449798f563d",
+      "title": "A Review of \u201cHow to Think Seriously about the Planet: The Case for an Environmental Conservatism\u201d",
+      "authors": [
+        {
+          "name": "Joshua Bowman",
+          "authorId": "12075096"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1080/10457097.2012.720839",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d9af6dc848c6b15bbbc6390b042b3449798f563d",
+      "venue": "",
+      "journal": {
+        "name": "Perspectives on Political Science",
+        "pages": "111 - 112",
+        "volume": "42"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "42dd2970d9156fc9a2efc9d2da577af77ca11ce9",
+      "title": "COSMOS + TAXIS | Volume 6 Issue 3 + 4 2019",
+      "authors": [
+        {
+          "name": "G. Himmelfarb",
+          "authorId": "97680828"
+        },
+        {
+          "name": "Irving Kristol",
+          "authorId": "113064512"
+        },
+        {
+          "name": "R. Aron",
+          "authorId": "75043743"
+        },
+        {
+          "name": "F. Hayek",
+          "authorId": "2076440951"
+        },
+        {
+          "name": "I. Ber",
+          "authorId": "1387052933"
+        },
+        {
+          "name": "M. Oakeshott",
+          "authorId": "69036099"
+        },
+        {
+          "name": "L. Strauss",
+          "authorId": "82314639"
+        },
+        {
+          "name": "Edmund M. Burke",
+          "authorId": "121744388"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/42dd2970d9156fc9a2efc9d2da577af77ca11ce9",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5a817650be6941f04e06865728deefd950d92d28",
+      "title": "The Eye-Ball and the Butterfly: Beauty and the Individual Soul in Emerson and Hawthorne",
+      "authors": [
+        {
+          "name": "Christopher Leise",
+          "authorId": "93338409"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5a817650be6941f04e06865728deefd950d92d28",
+      "venue": "",
+      "journal": {
+        "name": "Philological Quarterly",
+        "pages": "471",
+        "volume": "92"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "788f53e4bbd0b57804b83f15bf80cb687c5b894a",
+      "title": "\u041a\u043e\u043d\u0441\u0435\u0440\u0432\u0430\u0442\u0438\u0432\u043d\u043e\u0435 \u0432\u043e\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 \u0420\u043e\u0434\u0436\u0435\u0440\u0430 \u0421\u043a\u0440\u0443\u0442\u043e\u043d\u0430",
+      "authors": [
+        {
+          "name": "\u041d. \u0421. \u0413\u043b\u0430\u0437\u043a\u043e\u0432",
+          "authorId": "151300671"
+        }
+      ],
+      "year": 2019,
+      "abstract": "In the mid-1970s it became clear for conservative intellectuals in Britain that conservatism is in need of renewal, as its ideological counterparts, namely liberalism and leftism, had already provided for themselves their independent credentials, while conservatism tended to be confused with liberalism and, unlike leftism, had little if no appeal in academia. Roger Scruton was one of those intellectuals who has set out to overcome the conservative distaste to ideology and aversion to theorizing, attempting to reformulate the conservative dogma. The main difficulty for his endeavor is that dogma literary understood would necessarily contain ideas widely regarded as being out of day. So what is needed for conservatism today is not only a set of fixed ideas but first and foremost a kind of attitude toward reality which could awake sympathy in us for ways of life that are not and could not be ours. This view of things involves \u0430 version of \u201cas if\u201d philosophy, the mainstay of which is the concept of imagination. This concept is of special importance for those who analyze the limits of conservative persuasion today. The author contends that dealing with these limits Scruton makes use of the distinction between fancy and imagination in a way that makes possible for his unusual \u201cwork of dogmatics\u201d to fit into the conservative tradition.",
+      "citationCount": 0,
+      "doi": "10.30727/0235-1188-2018-12-114-126",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/788f53e4bbd0b57804b83f15bf80cb687c5b894a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "114-126",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a0f292de0326ca80d2c064a30788ebb2ebf7dadd",
+      "title": "Christian apocalypse with her ecological politics ? To what extent does her reading of grace mediate the clich\u00e9 of apocalypse as chaos and destruction ?",
+      "authors": [
+        {
+          "name": "Christian Literary",
+          "authorId": "2081127150"
+        },
+        {
+          "name": "S. Langley",
+          "authorId": "2071259042"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a0f292de0326ca80d2c064a30788ebb2ebf7dadd",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9c772b12283730e88ee2d5cd7c3e9a475e26e5af",
+      "title": "Hayek in the cloud",
+      "authors": [
+        {
+          "name": "Elvin Wyly",
+          "authorId": "104637139"
+        },
+        {
+          "name": "Joseph A. Daniels",
+          "authorId": "119719455"
+        },
+        {
+          "name": "Tanaz Dhanani",
+          "authorId": "114974307"
+        },
+        {
+          "name": "C. Yeung",
+          "authorId": "2054241096"
+        }
+      ],
+      "year": 2018,
+      "abstract": "Smart cities theory and policy emphasizes the new\u2014new cities, new technologies, and new possibilities of efficiency, innovation, and optimization. While some of the technological details of smart cities are indeed new, the underlying philosophy involves economic and policy traditions built in the mid-20th century\u2014which were in turn premised on 19th-century epistemological revolutions. In this paper, we suggest that today\u2019s Silicon Valley smart-city disruptions are the culmination of the social and political philosophies of Friedrich Hayek, fused with World War II cybernetics and the evolutionary methodological syntheses of Francis Galton and Karl Pearson. Today\u2019s cosmopolitan world urban system, with its dynamic hierarchies of entrepreneurial informational innovation and promises of politically neutral managerial efficiency, encodes the automated software updates of a dominant but unstable operating system of social and cultural conservatism that consolidated the self-perceptions of Western civilization. Yet the evolution of conservatism\u2014especially American conservatism\u2014has produced an ignorance of its own history and contradictions. The planetary urbanization of Hayek\u2019s smart-cities triumph, therefore, promises a transhumanist future of apocalyptic beauty in a robotic siege of the very foundations of cultural conservatism.",
+      "citationCount": 4,
+      "doi": "10.1080/13604813.2018.1549863",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9c772b12283730e88ee2d5cd7c3e9a475e26e5af",
+      "venue": "City",
+      "journal": {
+        "name": "City",
+        "pages": "820 - 842",
+        "volume": "22"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "77984c1b30aa67bb2f1e995420cc188feb6d79d5",
+      "title": "A \u201cDordtian Philosophe\u201d: Jonathan Edwards, Calvin, and Reformed Orthodoxy",
+      "authors": [
+        {
+          "name": "Kenneth P. Minkema",
+          "authorId": "115137707"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1163/187124111X557890",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/77984c1b30aa67bb2f1e995420cc188feb6d79d5",
+      "venue": "",
+      "journal": {
+        "name": "Church History and Religious Culture",
+        "pages": "241-253",
+        "volume": "91"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a6f2abb6f4dd2e2a2bcd7a8b3fca42f73886f654",
+      "title": "A dictionary of conservative and libertarian thought",
+      "authors": [
+        {
+          "name": "N. Ashford",
+          "authorId": "118510069"
+        },
+        {
+          "name": "S. Davies",
+          "authorId": "143817170"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a6f2abb6f4dd2e2a2bcd7a8b3fca42f73886f654",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "317d30ac62f6e04488c6189b4257dec1448da3e7",
+      "title": "Gentle Regrets: Thoughts from a Life",
+      "authors": [
+        {
+          "name": "R. Scruton",
+          "authorId": "48650069"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/317d30ac62f6e04488c6189b4257dec1448da3e7",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9510d78deb9035faac290e66d8b920ebbbc20eba",
+      "title": "Reply to Critics",
+      "authors": [
+        {
+          "name": "R. Scruton",
+          "authorId": "48650069"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1080/10457097.2016.1222221",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9510d78deb9035faac290e66d8b920ebbbc20eba",
+      "venue": "",
+      "journal": {
+        "name": "Perspectives on Political Science",
+        "pages": "289 - 291",
+        "volume": "45"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "95ed4e784b037518744e95b31752cb42680282dc",
+      "title": "Contemporary Political Thought: A Reader and Guide",
+      "authors": [
+        {
+          "name": "M. Finlayson",
+          "authorId": "2066359583"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/95ed4e784b037518744e95b31752cb42680282dc",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 14,
+  "errors": []
+}

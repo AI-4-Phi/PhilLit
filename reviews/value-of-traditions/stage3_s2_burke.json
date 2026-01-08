@@ -1,0 +1,248 @@
+[s2_search.py] Searching Semantic Scholar: 'Burke tradition epistemic argument accumulated wisdom' (year=2015-2025) (field=Philosophy), limit=40
+[s2_search.py] Retrieved 10/10 papers...
+[s2_search.py] Search complete: 10 papers found
+[s2_search.py] Cached results (cache key: s2_3bfb6f7a46cce6b0)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Burke tradition epistemic argument accumulated wisdom",
+  "results": [
+    {
+      "paperId": "2a8c8c4e575c128b4c4d84a574d30b2c656edf77",
+      "title": "A Call for Epistemic Humility in Political Philosophy",
+      "authors": [
+        {
+          "name": "Gregory Robson",
+          "authorId": "2336768090"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n Political philosophers old and new have defended the twin claims that (i) traditions embody wisdom, and (ii) transforming tradition based on aprioristic theory threatens to disregard that wisdom. This article argues that while a priori theorizing about justice is indeed epistemically valuable, a priori theories of justice usually tend to merit moderate to low credences. The article develops an account of what I call the \u201cA Priori Theorizing Thesis,\u201d which holds that such theses are likely to be false and dangerous when implemented, and the \u201cNon-substitution Thesis,\u201d which holds that theorists should generally be disinclined to substitute their judgment for the wisdom of social traditions and norms. Along the way, Burke's positive contributions are emphasized and his hyperbole ignored.",
+      "citationCount": 0,
+      "doi": "10.5406/21520542.39.1.01",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2a8c8c4e575c128b4c4d84a574d30b2c656edf77",
+      "venue": "Public Affairs Quarterly",
+      "journal": {
+        "name": "Public Affairs Quarterly"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "38075d55dbf9a006f3edb2ae607d83d49995af3a",
+      "title": "Respecting Tradition",
+      "authors": [
+        {
+          "name": "R. Goodin",
+          "authorId": "36476379"
+        },
+        {
+          "name": "Kai P. Spiekermann",
+          "authorId": "15471141"
+        }
+      ],
+      "year": 2018,
+      "abstract": "One way to use the \u2018wisdom of crowds\u2019 is to look at past judgements and aggregate them. We take as our model courts, which often follow a norm of respecting precedents (\u2018stare decisis\u2019). The problem, however, with complete deference to past judgements is the emergence of informational cascades. If all judges respect tradition, a situation arises in which everyone sets their own private information to the side and blindly follows the majority judgement of past decisions. Possible solutions are to hide precedents, or to have some judges who are \u2018stubborn\u2019 in refusing to follow precedent, or to have some judges who only aggregate informative precedents. But these solutions involve judges not following tradition. Looking beyond courts, we caution against epistemic arguments from traditionalism more generally.",
+      "citationCount": 0,
+      "doi": "10.1093/oso/9780198823452.003.0010",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/38075d55dbf9a006f3edb2ae607d83d49995af3a",
+      "venue": "Oxford Scholarship Online",
+      "journal": {
+        "name": "Oxford Scholarship Online"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "76b5835489fa46d6c466b29e142afaf14b59bc8b",
+      "title": "Dada (Final)5 ( BUP).pmd",
+      "authors": [
+        {
+          "name": "Sunday Olaoluwa Dada",
+          "authorId": "115943767"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/76b5835489fa46d6c466b29e142afaf14b59bc8b",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "670beb8e70715bf4ccbb6e3786af3e6783b5a9bd",
+      "title": "Don't Mind the Gap: Intuitions, Emotions, and Reasons in the Enhancement Debate.",
+      "authors": [
+        {
+          "name": "Alberto Giubilini",
+          "authorId": "144906157"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1002/hast.458",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/670beb8e70715bf4ccbb6e3786af3e6783b5a9bd",
+      "venue": "The Hastings center report",
+      "journal": {
+        "name": "The Hastings Center report",
+        "pages": "\n          39-47\n        ",
+        "volume": "45 5"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "facdb3986b0b264d8eedfdf9f4f79a4985c5a012",
+      "title": "Bridges of Understanding: Global Inclusion in Religious Studies (Lovern)",
+      "authors": [
+        {
+          "name": "L. Lovern",
+          "authorId": "52445399"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-319-75367-6_7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/facdb3986b0b264d8eedfdf9f4f79a4985c5a012",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "107-118",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "441b49b9fc4437e50a552a1bed38f91e70ea9c92",
+      "title": "Janus-Faced Law: A Philosophical Debate",
+      "authors": [
+        {
+          "name": "M. Nussbaum",
+          "authorId": "144779960"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.4337/9781785364334.00019",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/441b49b9fc4437e50a552a1bed38f91e70ea9c92",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "249-279",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d38ccbba87af46ad5bf371a6ce2943a521139099",
+      "title": "Elders\u2019 Cultural Knowledges and African Indigeneity",
+      "authors": [
+        {
+          "name": "G. Dei",
+          "authorId": "82397987"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1007/978-3-030-38277-3_14",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d38ccbba87af46ad5bf371a6ce2943a521139099",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "279-301",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "a735f932cb9dc0e4f0fbccad9c6865ea7010c4e8",
+      "title": "Moishe on Value and Wealth",
+      "authors": [
+        {
+          "name": "R. Meister",
+          "authorId": "40400771"
+        }
+      ],
+      "year": 2020,
+      "abstract": "homogeneous labor time in political economy as the a priori precondition of the social world it purports merely to describe. 8. Alfred Sohn-Rethel, Intellectual and Manual Labour: A Critique of Epistemology (Atlantic Highlands, NJ: Humanities, 1978), 53; emphasis in original. 118 | CRITICAL HISTORICAL STUDIES SPRING 2020 It is worth stressing that this specific critique of capitalism is ultimately epistemological rather than moral. Moishe acknowledged that distributive injustice tends to follow from concealed domination, just as it does from overt domination. So, the absence of overt domination would not make capitalism prima facie just. But Moishe thought that to focus on the spurious legitimation of injustice as capitalism\u2019s defining feature would to be assimilate it to noncapitalist social formations, such as feudalism in which domination is mediated by social relations and religious practices that affect the distribution, but also the interpretation, of wealth. It is thus the concealment of injustice (as epistemic problem), and not injustice itself, that is historically specific to capitalism. But even if we set our concern for social justice aside, Moishe\u2019s idea of direct mediation is puzzling on its face. How could it bemediation if it is direct? And inwhat sense could Moishe mean it to be direct, other than to deny that the value form is mediated by money and thus dominated by finance? Moishe\u2019s stress on the directness of social mediation in capitalist production does, I think, require a diminished stress on the role of financial intermediaries and money markets. But even allowing for his choice to emphasize production, Moishe\u2019s philosophical view that mediation can be direct within this realm is not extensively explained in his major book on capitalism, nor is it more fully developed in later papers. Like Ben and Ed, I have few stakes in the concept of direct mediation. We see finance as a form of indirect mediation that is historically specific to our present stage of capitalism and need have no quarrel with his tendency to assume that of financial valuation is a form of mediated sociality. But we do no regard this as a knock-down argument because for us the concept of direct mediation could, perhaps, be important in understanding capitalism only to the extent that there are spheres in which finance is not important. Otherwise, direct mediation appears to be something of an oxymoron, implying at the same time as it denies the existence of a third, or mediating, term through which the relation between two other terms can be interpreted. In Peircean semiotics, for example, there is always a third, mediating, sign that refers to the relation between a signifier and the object that it signifies. The relation of the third sign to the signifier-object relation can be one of self-similarity (as in a metaphor) or contiguity (as in a metonym); it can be one of causation or of abstraction in Moishe\u2019s sense; such abstraction can take the form of symbolization that may or may not also consist of commensuration, as when money becomes both a symbol and a common denominator of the social relations between agents and things. From a semiotic perspective, Moishe\u2019s central concept of abstraction itself is merely a particular form of mediation that interprets production as creating wealth Moishe on Value and Wealth | 119 (accumulated exchange value) out of something else that Marx calls use value. The semiotician Paul Kockelman thus describes Moishe\u2019s version of Marx as one in which \u201cthe commodity is at once the object to be investigated and the method of investigation. In this way, an ontology ultimately grounded in a subject-object dichotomy is one of the ideational reflexes of 19th-century capital; and must therefore be used as a theoretical tool for interpreting that form of capitalism.\u201d In contrast to Moishe\u2019s \u201cdialectical\u201d approach, Kockelman claims to ground \u201cthe commodity in a semiotic. And hence rather than systemically unfold a subject-object dichotomy, it systemically deploys a sign-object-interpretant trichotomy.\u201d Moishe was well aware of Peircean semiotics while he wrote Time, Labor, and Social Domination\u2014he was discussing it with Ben and Ed at the time. But they were not then working on financial derivatives, and Moishe\u2019s decision to focus on the process of abstraction as what Kockelman calls the \u201csubject-object dichotomy\u201d rather than \u201ca sign-object-interpretant trichotomy\u201d must be seen as a conscious rejection of semiotic accounts of social performativity with which he would have been highly familiar. The roots of this rejection are, I think, deeply grounded in the theological dimensions of his view. Monotheism understands itself to be a secondary form of religion, based on a repudiation of the idolatry that accompanies polytheistic forms of worship. Stated in Moishean terms, the monotheistic critique is that idol worship is really a form of indirect mediation between humans and gods by a humanly created artifact itself worshipped as divine. The objection is not merely that the idols are not themselves gods, but that any god whose divinity is mediated by material objects is also false. A true God, in contrast, would be a transcendent being that is encountered by humans through a modality that is uniquely direct. Direct revelation is thus the monotheistic alternative to idolatry. And what would be revealed in this way is that the one true God is an exception to forms of sociality and religion that are mediated by material objects, and also to the threefold Peircean semiotics of sign-object-interpretant. The core of monotheistic thought is that such an exception, if possible, would have to be unique and singular: that there can be only one true God. Here, God alone can be experienced mystically without the mediation of a symbol or material artifact. But a mystical experience of God is still not immediate because, even at suchmoments, experiencing God is the experience of something other than the self. 9. Paul Kockelman, \u201cA Semiotic Ontology of the Commodity,\u201d Journal of Linguistic Anthropology 16, no. 1 (June 2006): 80. 10. Jan Assmann, The Price of Monotheism (Stanford, CA: Stanford University Press, 2009). 120 | CRITICAL HISTORICAL STUDIES SPRING 2020 Neither is it abstract. In one tradition of monotheism, the apophatic, God is not the universal attribute that \u201cgods\u201dwould have in common but rather the universal signified to whom every signifier refers. It follows that nothing can be given its own name without being given the name of God who created it. For this reason, the one true God has every name and no name. But the attribution of God\u2019s name to everything that God creates means God did not create the world by abstracting from it. And so the universal name of God is not a single common denominator that commensurates all but rather an ultimate reality that transcends the human ability to designate it by any single name. In apophatic monotheism, a direct relation to God is not a matter of abstract thought but of concrete experience. Instead of being a mere symbol that stands for God, the name of God is here a concrete universal of the type described by Hegel and Adorno as self-mediating, thereby drawing a secular analogy to the monotheistic view of divine self-creation as a way of becoming concrete rather than abstract. There is, as I will explain later, a strong resemblance between Moishe\u2019s concept of the value form in capitalism and earlier monotheistic accounts of the Divine Names. It is enough for now, however, that the apophatic idea that there are no mediations of God\u2014only the concealment of a universal signified by a universal signifier\u2014lies at the heart of Moishe\u2019s assumption that there are no interpretants in the value form, only concealment and direct revelation. The dichotomies between universal signifiers and universal signified, and between concealment and direct revelation, lie behind what Moishe means by commodity fetishism. His critique of commodity fetishism does not resemble the monotheistic critique of overt fetishism, such as the worship of idols as decommodified and supposedly sacred human objects. Unlike idol worship, fetishism of commodities, as Moishe understands it, is rather a hidden effect of commodification itself\u2014 that money has become our God\u2014and the critique of it most closely resembles the monotheistic critique of false monotheisms. Here the critique is not of fetishization as such, but of its concealment by the role of money in commodity exchange. Being convertible into money is what makes an object a commodity. So for Moishe 11. Pseudo-Dionysius, Pseudo-Dionysius: The Complete Works, ed. Colm Luibh\u00e9id and Paul Rorem (New York: Paulist Press, 1987). 12. \u201cThis self-relation, which negates the existence or difference of any other, preserves the meaning of being in a later, more developed logical form: it defines something that is simply there, given, exists and is meaningful for itself, unrelated to others. The concrete universal is thus the \u2018mediation\u2019, the relation between particulars which constitutes them, but it is itself not \u2018mediated\u2019 . . . i.e. does not depend for its existence or meaning on the relation to an other. It is \u2018positive, identical, universal\u2019, a second immediate.\u201d Charlotte Baumann, \u201cAdorno, Hegel and the Concrete Universal,\u201d Philosophy and Social Criticism 37, no. 1 (2011): 84. Moishe on Value and Wealth | 121 to reveal the commodity as a fetish is to say that money functions as a false form of direct mediation in capitalism. This is his interpretation of Marx\u2019s claim in Capital, volume 1 (chap. 1.4), that the \u201cfetishism of commodities\u201d is an illusion created by regarding price as a direct relation among things that conceals the social relations of production, which are concealed, rather, by the value form. But Moishe well knew that when Marx pierces the veil of money to reach the value form, those social relations, although no longer fetishized, are ",
+      "citationCount": 2,
+      "doi": "10.1086/708158",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a735f932cb9dc0e4f0fbccad9c6865ea7010c4e8",
+      "venue": "Critical Historical Studies",
+      "journal": {
+        "name": "Critical Historical Studies",
+        "pages": "113 - 125",
+        "volume": "7"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cf76f6cf0d60b36cb5b2942511613afe59174de5",
+      "title": "Book Review: Kelsey, H. David: Human Anguish and God\u2019s Power",
+      "authors": [
+        {
+          "name": "J. Thiel",
+          "authorId": "116034456"
+        }
+      ],
+      "year": 2021,
+      "abstract": "have strengthened the work. Second, he doesn\u2019t seriously consider the possibility that theory/theology emerges from the practices and disciplines developed in religious/ scientific traditions (e.g., 112). While I agree with M.\u2019s important claim that making \u201csense of the world is not an end in itself, but the starting point for its meaningful inhabitation\u201d (153), making sense is itself a practice that involves one in multiple communities of inquiry (religious, political, anthropological, etc.), a point nicely illustrated in M.\u2019s case for \u201ccolligation\u201d of insights developed in diverse epistemes into an interlinked pattern of understanding (204\u201321). Making connections among disparate fields in developing a big picture is not merely explaining reality in a theory. Third, in exploring the patterns of rationality in theology and natural sciences (i.e., deduction, induction, abduction), I find no reference to the thirty or so books written or edited by the faculty of Berkeley\u2019s Center for Theology and the Natural Sciences. It might seem churlish to ask for more from a tome with 823 footnotes and 961 bibliographical items, but their work seems more relevant than many of the works cited. And to claim that \u201crelatively few Christian theologians to date have explicitly adopted abductive modes of reasoning\u201d (180) may well be correct, but both Lonergan\u2019s desire to know and Rahner\u2019s fundamental human action (not to mention F. Sch\u00fcssler Fiorenza\u2019s use of retroductive warrants) have at least abductive elements and might have been considered (Roman Catholic theologians are mostly absent). The penultimate chapter discusses \u201cComplexity and Mystery\u201d in science and religion. Using Marcel\u2019s distinction between \u201cproblems\u201d and \u201cmystery,\u201d M. usefully finds problems to be resolved and the possibility of encountering the Mystery in both fields. In the final chapter, \u201cRational Consilience,\u201d he recognizes the problem of warranting a claim that any \u201cbig picture,\u201d including his own Christian trinitarianism, is reliable in the light of the diversity of such pictures (223\u201324), but that is a matter for another time. While a worthwhile read, I am not sure who the audience is for this book. His entrenched opponents seem unlikely. Theologians in the \u201ctheology and science\u201d field would take much of what he lays out for granted. Other theologians and scientists open to multiple patterns of reasonableness, patterns that run from simple observation to profound wisdom, might be the right readers. While I have made much of omissions in this review, M.\u2019s arguments for embracing both epistemic pluralism and ontological unity, and for the need for consilience, are satisfying.",
+      "citationCount": 0,
+      "doi": "10.1177/00405639211040338c",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cf76f6cf0d60b36cb5b2942511613afe59174de5",
+      "venue": "Theological Studies",
+      "journal": {
+        "name": "Theological Studies",
+        "pages": "535 - 537",
+        "volume": "82"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "a00863eb7f841509a59726dc29bb011c32626da6",
+      "title": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043f\u043e\u043b\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u044f\u0437\u044b\u043a\u043e\u0432: \u043d\u043e\u0432\u044b\u0435 \u043f\u0435\u0440\u0441\u043f\u0435\u043a\u0442\u0438\u0432\u044b",
+      "authors": [
+        {
+          "name": "\u0420\u0435\u0434\u0430\u043a\u0446\u0438\u044f \u0416\u0443\u0440\u043d\u0430\u043b\u0430",
+          "authorId": "101970452"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a00863eb7f841509a59726dc29bb011c32626da6",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": "2"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 10,
+  "errors": []
+}

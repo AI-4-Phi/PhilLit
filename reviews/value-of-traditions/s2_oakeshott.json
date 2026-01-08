@@ -1,0 +1,475 @@
+[s2_search.py] Searching Semantic Scholar: 'Oakeshott tradition rationalism politics' (year=1990-2025) (field=Philosophy), limit=20
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_dcf23063d8fb8ff8)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Oakeshott tradition rationalism politics",
+  "results": [
+    {
+      "paperId": "6b1de887973b61191522597bc88646c1247e63dd",
+      "title": "The Understanding of Rationalism in C.S. Lewis and Michael Oakeshott: Tradition, Experience, and the Reading of Old Books",
+      "authors": [
+        {
+          "name": "Luke C. Sheahan",
+          "authorId": "117143955"
+        },
+        {
+          "name": "G. Callahan",
+          "authorId": "103002209"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-030-83055-7_7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6b1de887973b61191522597bc88646c1247e63dd",
+      "venue": "Oakeshott\u2019s Skepticism, Politics, and Aesthetics",
+      "journal": {
+        "name": "Oakeshott\u2019s Skepticism, Politics, and Aesthetics"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a5408a441b6c4ab10964d89655063565cd9eca0c",
+      "title": "Rationalism and Relativism: An Essay on John Rawls and Michael Oakeshott",
+      "authors": [
+        {
+          "name": "A. J. Wendland",
+          "authorId": "115048966"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This essay creates an unlikely conversation between two 20th century thinkers: John Rawls and Michael Oakeshott. I say \u201cunlikely\u201d because apart from a few scant remarks in the writing of each the two did not directly engage each other. The essay begins by examining Oakeshott\u2019s explication of \u201cThe Rationalist\u201d and her tradition in the history of political thought. Specifically, the essay shows that rationalism in politics involves the belief that reason is an infallible guide to political activity and that the Rationalist seeks certainty and perfection in political affairs. The essay goes on to tease out the rationalistic tendencies in Rawls\u2019 A Theory of Justice, and then it analyzes Oakeshott\u2019s critique of rationalism and applies these criticisms to Rawls. Briefly, Oakeshott marks a distinction between technical and practical knowledge, and he argues that the principles that make up technical manuals like A Theory of Justice are abridgments of and no substitute for the understanding we gain through our practical experience and our participation in a given political tradition. While explaining Oakeshott\u2019s critique of rationalism and Rawls, the essay indicates some of the relativistic proclivities in Oakeshott\u2019s appeal to political practices and traditions, and then it entertains objections to Oakeshott that a Rawlsian might offer. Here Rawls\u2019 commitment to the liberal tradition and the relativity implicit in his explanations of \u201creflective equilibrium\u201d and \u201creasonableness\u201d are examined and Rawls\u2019 similarities to Oakeshott are noted. Ultimately, this essay argues that the strength of Rawls\u2019 work lay not in the fact that his principles of justice are established by rational agents in an original position, but in the fact that they are principles that emerge from and cohere with ideas deeply rooted in the Western tradition itself.",
+      "citationCount": 0,
+      "doi": "10.18523/2617-1678.2022.9-10.107-118",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a5408a441b6c4ab10964d89655063565cd9eca0c",
+      "venue": "NaUKMA Research Papers in Philosophy and Religious Studies",
+      "journal": {
+        "name": "NaUKMA Research Papers in Philosophy and Religious Studies"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "98b06620cbbaa5be24916cd0f9139ba778f77f3e",
+      "title": "Rationalism and tradition: The Popper\u2013Oakeshott conversation",
+      "authors": [
+        {
+          "name": "Struan Jacobs",
+          "authorId": "39340327"
+        },
+        {
+          "name": "Ian Tregenza",
+          "authorId": "115088399"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 13,
+      "doi": "10.1177/1474885112471274",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/98b06620cbbaa5be24916cd0f9139ba778f77f3e",
+      "venue": "",
+      "journal": {
+        "name": "European Journal of Political Theory",
+        "pages": "24 - 3",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6b5cd24b3056b6cee469eec6b2ce455c31e5f000",
+      "title": "Oakeshott's discussion of the limitations of rationalism in politics",
+      "authors": [
+        {
+          "name": "Che Hong-ying",
+          "authorId": "1411633202"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6b5cd24b3056b6cee469eec6b2ce455c31e5f000",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a4beb793ff1ea9972f421d12137740882f826471",
+      "title": "Some Implications of Oakeshott\u2019s Thought for Contemporary Korean Society and Politics",
+      "authors": [
+        {
+          "name": "B. Kim",
+          "authorId": "117193165"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1057/9781137507020_10",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a4beb793ff1ea9972f421d12137740882f826471",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "171-187",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6f4fd67d079a6573dfe71af116aba0979e94aa3e",
+      "title": "Michael Oakeshott On the Limits of Politics",
+      "authors": [
+        {
+          "name": "B. Zhao",
+          "authorId": "2107837313"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6f4fd67d079a6573dfe71af116aba0979e94aa3e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8461615287c3b176c7f81f54b2666c5468c0c52a",
+      "title": "A Discussion on the Oakeshott\u2019s Political View of Intimation",
+      "authors": [
+        {
+          "name": "Kim Hoy-yong",
+          "authorId": "1423831644"
+        }
+      ],
+      "year": 2016,
+      "abstract": "Purpose: The contribution of this paper lies in that Oakeshott (1901\u223c1990) proposes a new view of political \nthought: the politics is the pursuit of an intimation. Method: To do this, this paper analyzed Oakeshott\u2019s \npolitical thought and his criticism on Rationalist politics. Results: This new political view can be seen as a \nparadigm instead of the traditional views of rationalist politics. And the traditional political view of rationalism \nof the West has experienced the process from \u201cthe pursuit of good politics\u201d of ancient Greece to \u201cthe pursuit of \nutilitarian politics\u201d of modern times (that is to say, virtue is no longer to be the \u201cking\u201d of the political \nphilosophy, rationality has occupied its position), the dilemma of this political view lies in the confusing of the \nproblems of \u201cfact-value distinction\u201d. For this reason, Oakeshott believes that politics is a sort of practical activity \nfor the participation in an arrangements. On one hand, the tradition of behavior is an arrangement, on the \nother hand, it is also unfinished. Conclusion: In this sense, the theory of politics is a kind of theory about the \nintimations of a tradition of behavior. Beginning from the interpretation of the political activity itself, this paper \nexamines the political view of rationalism through the analysis of the theory of intimation and its implications.",
+      "citationCount": 0,
+      "doi": "10.21024/PNUEDI.26.3.201612.83",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8461615287c3b176c7f81f54b2666c5468c0c52a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "83-101",
+        "volume": "26"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "78053fb2a79f0e7c8edc4fe2770daa2c12d660d8",
+      "title": "Michael Oakeshott\u2019s Discourse on Modernity in an Epistemological View",
+      "authors": [
+        {
+          "name": "Li Lan",
+          "authorId": "1439085581"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/78053fb2a79f0e7c8edc4fe2770daa2c12d660d8",
+      "venue": "",
+      "journal": {
+        "name": "Journal of East China Normal University",
+        "pages": "16",
+        "volume": "43"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c5b6bcb2790dafaebd23845c02a5cfcee0433dbc",
+      "title": "Michael Oakeshott's Discourse on Modernity in an Epistemological View",
+      "authors": [
+        {
+          "name": "Li La",
+          "authorId": "67242880"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c5b6bcb2790dafaebd23845c02a5cfcee0433dbc",
+      "venue": "",
+      "journal": {
+        "name": "Journal of East China Normal University",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "016483839356f081110342c27252bb1e71e3afc1",
+      "title": "on Libertarianism, Conservatism, and the Freedom of the English",
+      "authors": [
+        {
+          "name": "Max Skj\u00f6nsberg",
+          "authorId": "2259982117"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/016483839356f081110342c27252bb1e71e3afc1",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ebc0234e1ce3e602abea99b99eafc460b229fc86",
+      "title": "The Voice of Poetry in the Thought of Michael Oakeshott",
+      "authors": [
+        {
+          "name": "E. Podoksik",
+          "authorId": "91984524"
+        }
+      ],
+      "year": 2002,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1353/JHI.2003.0010",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ebc0234e1ce3e602abea99b99eafc460b229fc86",
+      "venue": "",
+      "journal": {
+        "name": "Journal of the History of Ideas",
+        "pages": "717 - 733",
+        "volume": "63"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "51a19965663014f9b0fd1fe8d6a9d5414c51a934",
+      "title": "Oakeshott and His Contemporaries: Montaigne, St. Augustine, Hegel, et al. By Wendell John Coats, Jr. Selinsgrove, PA: Susquehanna University Press, and London: Associated University Presses, 2000. 138p. $31.50.",
+      "authors": [
+        {
+          "name": "T. Fuller",
+          "authorId": "50417116"
+        }
+      ],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1017/S000305540123202X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/51a19965663014f9b0fd1fe8d6a9d5414c51a934",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "461 - 463",
+        "volume": "95"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ba4a14585641fc23714571d2414f4c3063fe02c2",
+      "title": "Michael Oakeshott and F. A. Hayek: Natural Law and the Philosophy of Liberal Conservatism",
+      "authors": [
+        {
+          "name": "C. Covell",
+          "authorId": "88224375"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-1-349-22359-6_3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ba4a14585641fc23714571d2414f4c3063fe02c2",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "71-144",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7f2d06f4d32e015fd8e8e737efac84123a048a59",
+      "title": "Oakeshotts Critique of Sovereignty of Reason",
+      "authors": [
+        {
+          "name": "Damian Ilodigwe",
+          "authorId": "120945440"
+        }
+      ],
+      "year": 2017,
+      "abstract": "One of the best known aspects of Oakeshott\u2019s philosophy is his critique of rationalism. Because it is often read in a manner that dissociates it from the larger milieu in which it subsists, namely, Oakeshotts\u2019s philosophy of experience, Oakeshott is sometimes labeled as an enemy of politics, one who is uninterested in political affairs; or, again, as a conservative, one who is at odds with modernity. Yet it remains to be seen whether these labels do justice to the complexity of Oakeshott. Indeed, if Oakeshott\u2019s critique of rationalism is inserted into the background of his philosophy of experience as articulated in Experience and its Modes, we begin to see that Oakeshott\u2019s concern in his critique of rationalism is to separate political activity from political theorization and ground ideology in tradition, so that with a bit of detachment from political experience, the philosopher of politics can assume philosophy\u2019s oversight function in critically interrogating the assumption behind political activity and political theorization, with a view to underscoring the limits of ideological politics and the priority of tradition. Our contention is that this way of looking at Oakeshott\u2019s critique of the sovereignty of reason allows for a better appreciation of the contemporary relevance of Oakeshott\u2019s contributions to political discourse.",
+      "citationCount": 0,
+      "doi": "10.15640/jppg.v5n1a3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7f2d06f4d32e015fd8e8e737efac84123a048a59",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "27aaf1bbc91c07d9320372b756d4c363d0090491",
+      "title": "Thinking Past a Problem: Essays on the History of Ideas",
+      "authors": [
+        {
+          "name": "Preston T. King",
+          "authorId": "144062025"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 25,
+      "doi": "10.4324/9781315039541",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/27aaf1bbc91c07d9320372b756d4c363d0090491",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d7344a8b3038d496af283aaea39936507590aedf",
+      "title": "Lee Trepanier and Eugene Callahan, eds. Tradition v. Rationalism: Voegelin, Oakeshott, Hayek, and Others",
+      "authors": [
+        {
+          "name": "C. P. Goodman",
+          "authorId": "145922372"
+        }
+      ],
+      "year": 2020,
+      "abstract": "<jats:p />",
+      "citationCount": 0,
+      "doi": "10.5840/traddisc202046325",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d7344a8b3038d496af283aaea39936507590aedf",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "31-37",
+        "volume": "46"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dd5cbfbb75d00099ff3ac82af975d35a3e82ad85",
+      "title": "Michael Oakeshott: Liberalism as Rationalism in Politics",
+      "authors": [
+        {
+          "name": "K. Koerner",
+          "authorId": "1659140706"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.4324/9780429279577-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dd5cbfbb75d00099ff3ac82af975d35a3e82ad85",
+      "venue": "Liberalism and its Critics",
+      "journal": {
+        "name": "Liberalism and its Critics"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e144a0abd4d2a06ad031bc5996e798b97d87d662",
+      "title": "Rationalism and Realism in Politics: Isaiah Berlin and Michael Oakeshott During 1950s",
+      "authors": [
+        {
+          "name": "Alessandro Della Casa",
+          "authorId": "2135352480"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1413/92793",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e144a0abd4d2a06ad031bc5996e798b97d87d662",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "131-154",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "be1d24d0e255ade640b6414c622e2cae4f50de07",
+      "title": "Tradition V. Rationalism: Voegelin, Oakeshott, Hayek, and Others",
+      "authors": [
+        {
+          "name": "L. Trepanier",
+          "authorId": "91767923"
+        },
+        {
+          "name": "E. Callahan",
+          "authorId": "113820984"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/be1d24d0e255ade640b6414c622e2cae4f50de07",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "18167faf87e54fb086750fe36732c685544a3178",
+      "title": "Tradition v. Rationalism: Voegelin, Oakeshott, MacIntyre, Polanyi, Hayek, and Others",
+      "authors": [
+        {
+          "name": "E. Callahan",
+          "authorId": "113820984"
+        },
+        {
+          "name": "L. Trepanier",
+          "authorId": "91767923"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/18167faf87e54fb086750fe36732c685544a3178",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

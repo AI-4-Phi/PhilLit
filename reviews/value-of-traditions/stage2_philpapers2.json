@@ -1,0 +1,120 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'Oakeshott practical knowledge conservatism', limit=30
+[search_philpapers.py] Rate limited, backing off (attempt 1/5)...
+[search_philpapers.py] Retrying after 2.0s backoff...
+[search_philpapers.py] Retrieved 15 entries...
+[search_philpapers.py] Search complete: 15 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "Oakeshott practical knowledge conservatism",
+  "results": [
+    {
+      "title": "Seth Vannatta, Conservatism, Pragmatism, and Historical Inquiry",
+      "url": "https://philpapers.org/rec/VANCPA-5",
+      "philpapers_id": "VANCPA",
+      "snippet": "Oakeshott criticizes the view that technical knowledge is superior to the reliance on custom, tradition, and habit in practical knowledge, that moral intelligence can be taught, and that moral intelligence consists of the application of techniques ...",
+      "page_age": null
+    },
+    {
+      "title": "Agostino Carrino, Michael Oakeshott Philosopher of Skepticism: Conservative or Liberal?",
+      "url": "https://philpapers.org/rec/CARMOP",
+      "philpapers_id": "CARMOP",
+      "snippet": "It is a sustained attempt to move us away from asking the question in the ideological manner in which it is posed and so, in myriad ways, he turns our attention away from making familiar connections to religion, a set of doctrines, ideological programs, and hierarchy towards Oakeshott\u2019s skepticism, deep historical sensibility, and prioritizing concrete practical experience and knowledge and the dispositional conservativism that flows from these.",
+      "page_age": null
+    },
+    {
+      "title": "Jordan Rudinsky, Anarchic and Antinomian? Oakeshott and the Cambridge School on History, Philosophy, and Authority",
+      "url": "https://philpapers.org/rec/RUDAAA-5",
+      "philpapers_id": "RUDAAA",
+      "snippet": "The author also focuses on Pocock\u2019s claim that by denying the practical relation of past to present Oakeshott represented the \u201canarchic and antinomian strain in conservatism.\u201d The author suggests that the third, historical section of On Human Conduct should be understood as bi-modal\u2014both history and art\u2014and that the aesthetic dimension of his discussion of the different \u201cdispositions\u201d informing theories of the state can be understood as the closest Oakeshott comes to bridging the gap between theory and practice, and thus the best answer to Pocock\u2019s charge of \u201canarchism and antinomianism.\u201d",
+      "page_age": null
+    },
+    {
+      "title": "Michael Oakeshott, Rationalism in Politics and Other Essays",
+      "url": "https://philpapers.org/rec/OAKRIP-5",
+      "philpapers_id": "OAKRIP",
+      "snippet": "This expanded collection of essays ... experience. &quot;Rationalism in politics,&quot; says Oakeshott, &quot;involves a misconception with regard to the nature of human knowledge.&quot;...",
+      "page_age": null
+    },
+    {
+      "title": "Leslie Marsh, Ryle and Oakeshott on the \u201cKnowing-How/Knowing-That\u201d Distinction",
+      "url": "https://philpapers.org/rec/MARRAO-2",
+      "philpapers_id": "MARRAO",
+      "snippet": "Gilbert Ryle\u2019s \u201cKnowing How/Knowing That\u201d distinction gave crisparticulation to a long-standing epistemological concern that Michael Oakeshott had: that is,what is the epistemic status of the area that comprises our waking lives, the domain of practical reasoning, of which political practice, on Oakeshott\u2019s account, is but one aspect.",
+      "page_age": null
+    },
+    {
+      "title": "Robert Devigne, Recasting Conservatism: Oakeshott, Strauss, and the Response to Postmodernism",
+      "url": "https://philpapers.org/rec/ROBRCO-3",
+      "philpapers_id": "ROBRCO",
+      "snippet": "Recasting Conservatism: Oakeshott, Strauss, and the Response to Postmodernism.Gregory R. Johnson - 1997 - Review of Metaphysics 50 (4):876-877. Political Moderation and Practical Conservatism.David McIlwain - 2019 - In Michael Oakeshott and Leo Strauss: The Politics of Renaissance and Enlightenment.",
+      "page_age": null
+    },
+    {
+      "title": "Kenneth B. McIntyre, \u2019What\u2019s Gone and What\u2019s Past Help...\u2019: Oakeshott and Strauss on Historical Explanation",
+      "url": "https://philpapers.org/rec/MCIWG",
+      "philpapers_id": "MCIWG",
+      "snippet": "Historical Interpretation and Philosophical Intention.David McIlwain - 2019 - In Michael Oakeshott and Leo Strauss: The Politics of Renaissance and Enlightenment. Cham: Springer Verlag. pp. 65-85. Political Moderation and Practical Conservatism.David McIlwain - 2019 - In Michael Oakeshott and ...",
+      "page_age": null
+    },
+    {
+      "title": "Mathis Bitton, A conservatism of the left: G.A. Cohen and Michael Oakeshott on markets and instrumentality",
+      "url": "https://philpapers.org/rec/BITACO",
+      "philpapers_id": "BITACO",
+      "snippet": "This article focuses on their core disagreement: the relationship between relational conservatism and markets. I show that this disagreement does not primarily come from diverging accounts of the market, but from opposing views on the scope of non-instrumental valuation. Oakeshott claims that there are activities that it is \u201cproper\u201d to approach or value non-instrumentally and other activities for which such a mode of valuation is \u201cimproper,\u201d chief among them market activities.",
+      "page_age": null
+    },
+    {
+      "title": "Corey Abel (ed.), The Meanings of Michael Oakeshott's Conservatism",
+      "url": "https://philpapers.org/rec/ABETMO",
+      "philpapers_id": "ABETMO",
+      "snippet": "Befitting from the nuances of Oakeshott&#x27;s conception, the collection assigns no single or final meaning to his conservatism, but finds in him a number of possibilities for thinking fruitfully about what conservatism might mean, when it is no longer considered as a doctrine, but as a disposition&quot;--P.",
+      "page_age": null
+    },
+    {
+      "title": "James P. Young, Recasting Conservatism: Oakeshott, Strauss, and the Response to Postmodernism",
+      "url": "https://philpapers.org/rec/YOURCO",
+      "philpapers_id": "YOURCO",
+      "snippet": "Ryle and Oakeshott on the \u201cKnowing-How/Knowing-That\u201d Distinction.Leslie Marsh - 2010 - In Corey Abel (ed.), The Meanings of Michael Oakeshott&#x27;s Conservatism. Modality, Practice, and the Limits of Political Activity: Michael Oakeshott&#x27;s Philosophy of Politics.Kenneth Bruce Mcintyre - 2003 ...",
+      "page_age": null
+    },
+    {
+      "title": "Steven J. Wulf, Oakeshott's Politics for Gentlemen",
+      "url": "https://philpapers.org/rec/WULOPF",
+      "philpapers_id": "WULOPF",
+      "snippet": "His writings concerning the self, society, and state develop such a defense. Yet for Oakeshott, political engagement is incompatible with gentility because it conflates worldliness with spirituality. Oakeshott, therefore, disavows the practical aspirations that shape his work.",
+      "page_age": null
+    },
+    {
+      "title": "Elizabeth Campbell Corey, Michael Oakeshott on Religion, Aesthetics, and Politics",
+      "url": "https://philpapers.org/rec/CORMOO",
+      "philpapers_id": "CORMOO",
+      "snippet": "For much of his career, British political philosopher Michael Oakeshott was identified with Margaret Thatcher\u2019s conservative policies. He has been called by some a guru to the Tories, while others have ...",
+      "page_age": null
+    },
+    {
+      "title": "Anthony Farr, Sartre's radicalism and Oakeshott's conservatism: the duplicity of freedom",
+      "url": "https://philpapers.org/rec/FARSRA-2",
+      "philpapers_id": "FARSRA",
+      "snippet": "Oakeshott is struck by the vandalism of such a project - he seeks to defend political culture from degradation by meddling academics. The Radical and Conservative understanding of social order and the human self are compared in this in-depth analysis of two contrasting philosophies.",
+      "page_age": null
+    },
+    {
+      "title": "Steven B. Smith, 6 Practical life and the critique of Rationalism",
+      "url": "https://philpapers.org/rec/SMIPL",
+      "philpapers_id": "SMIPL",
+      "snippet": "5 Education as conversation.Kevin Williams - 2012 - In Efraim Podoksik (ed.), The Cambridge companion to Oakeshott. Cambridge: Cambridge University Press. pp. 107. Added to PP 2014-01-31 Downloads 11 (#1,444,028) 6 months 1 (#1,778,245) ... Conservatism: toward a traditionalist normative ...",
+      "page_age": null
+    },
+    {
+      "title": "T. Smith, Michael Oakeshott on history, practice and political theory",
+      "url": "https://philpapers.org/rec/SMIMOO-2",
+      "philpapers_id": "SMIMOO",
+      "snippet": "Ryle and Oakeshott on the \u201cKnowing-How/Knowing-That\u201d Distinction.Leslie Marsh - 2010 - In Corey Abel (ed.), The Meanings of Michael Oakeshott&#x27;s Conservatism.",
+      "page_age": null
+    }
+  ],
+  "count": 15,
+  "errors": []
+}

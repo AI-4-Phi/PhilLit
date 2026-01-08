@@ -1,0 +1,99 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'Burke epistemic humility tradition', limit=30
+[search_philpapers.py] Rate limited, backing off (attempt 1/5)...
+[search_philpapers.py] Retrying after 1.3s backoff...
+[search_philpapers.py] Retrieved 12 entries...
+[search_philpapers.py] Search complete: 12 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "Burke epistemic humility tradition",
+  "results": [
+    {
+      "title": "Gregory Robson, A Call for Epistemic Humility in Political Philosophy",
+      "url": "https://philpapers.org/rec/ROBACF-3",
+      "philpapers_id": "ROBACF",
+      "snippet": "The article develops an account of what I call the \u201cA Priori Theorizing Thesis,\u201d which holds that such theses are likely to be false and dangerous when implemented, and the \u201cNon-substitution Thesis,\u201d which holds that theorists should generally be disinclined to substitute their judgment for the wisdom of social traditions and norms. Along the way, Burke&#x27;s positive contributions are emphasized and his hyperbole ignored.",
+      "page_age": null
+    },
+    {
+      "title": "Nancy Nyquist Potter, The Virtue of Epistemic Humility",
+      "url": "https://philpapers.org/rec/POTTVO-3",
+      "philpapers_id": "POTTVO",
+      "snippet": "Ethics, including medical ethics, has historically paid insufficient attention to epistemic rights and wrongs. This neglect fails to recognize the ways ethics and epistemology are intertwined. In the past fifteen years ...",
+      "page_age": null
+    },
+    {
+      "title": "Haley Burke, Developing Gadamerian Virtues Against Epistemic Injustice: The Epistemic and Hermeneutic Dimensions of Ethics",
+      "url": "https://philpapers.org/rec/BURDGV",
+      "philpapers_id": "BURDGV",
+      "snippet": "In the following, I focus on hermeneutic and epistemic injustice in relation to the formation of intellectual and ethical virtues. When reading Fricker and Hans-Georg Gadamer\u2019s hermeneutics together, there is a clear pathway to improve ethical development. In particular, ethical development ought to cultivate the proper virtues that promote understanding.",
+      "page_age": null
+    },
+    {
+      "title": "Robert C. Roberts & W. Jay Wood, Humility and epistemic goods",
+      "url": "https://philpapers.org/rec/ROBHAE",
+      "philpapers_id": "ROBHAE",
+      "snippet": "Some of the most interesting works in virtue ethics are the detailed, perceptive treatments of specific virtues and vices. This chapter aims to develop such work as it relates to intellectual ...",
+      "page_age": null
+    },
+    {
+      "title": "James R. Beebe, The Pitfalls of Epistemic Autonomy without Intellectual Humility",
+      "url": "https://philpapers.org/rec/BEETPO-16",
+      "philpapers_id": "BEETPO",
+      "snippet": "The studies provide empirical support for the philosophical claim that epistemic autonomy and intellectual humility are mutually supporting virtues by showing that epistemic autonomy without intellectual humility leads to increased belief in misinformation, conspiracy theories and pseudoscience and decreased trust in scientific experts.",
+      "page_age": null
+    },
+    {
+      "title": "Katherine Dormandy, Does Epistemic Humility Threaten Religious Beliefs?",
+      "url": "https://philpapers.org/rec/DORDEH",
+      "philpapers_id": "DORDEH",
+      "snippet": "Dogmatic belief, which is highly confident and resistant to counterevidence, may fail to exhibit epistemic virtues such as humility and may instead manifest epistemic vices such as arrogance or servility, but if this is the price of secure belief in religious truths, so be it.",
+      "page_age": null
+    },
+    {
+      "title": "G. Scott Waterman, Epistemic Humility: Accruing Wisdom or Forsaking Standards?",
+      "url": "https://philpapers.org/rec/WATEHA-2",
+      "philpapers_id": "WATEHA",
+      "snippet": "The Virtue of Epistemic Humility.Nancy Nyquist Potter - 2022 - Philosophy, Psychiatry, and Psychology 29 (2):121-123.",
+      "page_age": null
+    },
+    {
+      "title": "Thomas Nadelhoffer, Rose Graves, Gus Skorburg, Mark Leary & Walter Sinnott Armstrong, Partisanship, Humility, and Epistemic Polarization",
+      "url": "https://philpapers.org/rec/NADPHA",
+      "philpapers_id": "NADPHA",
+      "snippet": "We ran two studies designed to explore the relationship between various forms of humility and polarization. Our chief finding is that people who value humility are prone to what we are calling epistemic polarization\u2014that is, judging the epistemic traits of contrapartisans negatively\u2014which in turn plays a role in polarization more generally.",
+      "page_age": null
+    },
+    {
+      "title": "Edmund Burke, The philosophy of Edmund Burke",
+      "url": "https://philpapers.org/rec/BURTPO-12",
+      "philpapers_id": "BURTPO",
+      "snippet": "This selection from his speeches and writings reveals a political philosophy which is viable. even prophetic, in our own time. Burke&#x27;s distrust of disembodied reason, his vision of the law of ...",
+      "page_age": null
+    },
+    {
+      "title": "Rachel A. Katz, S. Scott Graham & Daniel Z. Buchman, The need for epistemic humility in AI-assisted pain assessment",
+      "url": "https://philpapers.org/rec/KATTNF-2",
+      "philpapers_id": "KATTNF",
+      "snippet": "We conclude with a proposal that the adoption of epistemic humility on the part of both AI tool developers and clinicians can contribute to a climate of trust in and beyond the pain management context and lead to a more just approach to the implementation of AI in pain diagnosis and management.",
+      "page_age": null
+    },
+    {
+      "title": "Kenneth Burke, The Rhetoric of Religion: Studies in Logology",
+      "url": "https://philpapers.org/rec/BURTRO-24",
+      "philpapers_id": "BURTRO",
+      "snippet": "Burke now feels, after some forty years of search, that he has created a model of the symbolic act which breaks through the rigidities of the &#x27;sacred-secular&#x27; dichotomy, and at the same time shows us how we get from secular and sacred realms ...",
+      "page_age": null
+    },
+    {
+      "title": "Katherine Dormandy, Intellectual Humility and Epistemic Trust",
+      "url": "https://philpapers.org/rec/DORIHA",
+      "philpapers_id": "DORIHA",
+      "snippet": "When the parties to an epistemic-trust relationship exhibit intellectual humility, I will argue, they are in a better position than otherwise to secure knowledge. Some think that this is true trivially, on the grounds that knowledge (on their ...",
+      "page_age": null
+    }
+  ],
+  "count": 12,
+  "errors": []
+}
