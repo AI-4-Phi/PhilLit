@@ -69,6 +69,8 @@ Invoke subagents using the Task tool with these parameters:
 - `prompt`: The instructions for the agent (include working directory and output filename)
 - `description`: Short description (3-5 words)
 
+**Do NOT use `run_in_background`**. Foreground execution streams status updates to the user. Parallel execution is achieved by including multiple Task calls in a single message.
+
 Do NOT read agent definition files before invoking them. Agent definitions are for the system, not for you to read.
 
 ---
