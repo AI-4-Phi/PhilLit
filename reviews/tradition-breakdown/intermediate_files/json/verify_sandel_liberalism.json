@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Liberalism and the Limits of Justice",
+    "author": "Sandel",
+    "year": 1982
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (29.5) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

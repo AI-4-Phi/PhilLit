@@ -1,0 +1,1278 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "communitarian liberal individualism tradition",
+  "results": [
+    {
+      "openalex_id": "W2591654989",
+      "doi": "10.1257/jel.53.4.898",
+      "title": "Culture and Institutions",
+      "authors": [
+        {
+          "name": "Alberto Alesina",
+          "openalex_id": "A5083494527",
+          "institutions": [
+            "Harvard University",
+            "Bocconi University"
+          ]
+        },
+        {
+          "name": "Paola Giuliano",
+          "openalex_id": "A5044204764",
+          "orcid": "https://orcid.org/0000-0002-3809-4108",
+          "institutions": [
+            "University of California, Los Angeles",
+            "UCLA Health",
+            "Anderson University - South Carolina"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-01",
+      "abstract": "A growing body of empirical work measuring different types of cultural traits has shown that culture matters for a variety of economic outcomes. This paper focuses on one specific aspect of the relevance of culture: its relationship to institutions. We review work with a theoretical, empirical, and historical bent to assess the presence of a two-way causal effect between culture and institutions. ( JEL D02, D72, I32, J12, Z13)",
+      "cited_by_count": 1353,
+      "type": "article",
+      "source": {
+        "name": "Journal of Economic Literature",
+        "type": "journal",
+        "issn": [
+          "0022-0515",
+          "1547-1101",
+          "2328-8175"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jel.53.4.898"
+      },
+      "topics": [
+        "Culture, Economy, and Development Studies",
+        "Economic Policies and Impacts",
+        "Experimental Behavioral Economics Studies"
+      ],
+      "referenced_works_count": 219,
+      "url": "https://openalex.org/W2591654989"
+    },
+    {
+      "openalex_id": "W1888491055",
+      "doi": "10.1007/978-1-137-49477-1",
+      "title": "Key Concepts in Politics and International Relations",
+      "authors": [
+        {
+          "name": "Andrew Heywood",
+          "openalex_id": "A5052908417"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Absolutism.- Accountability.- Anarchism.- Anarchy.- Animal Rights.- Anti-Politics.- Arms Race.- Authoritarianism.- Authority.- Autonomy.- Balance Of Power.- Behaviouralism.- Bicameralism.- Bill Of Rights.- Bureaucracy.- Cabinet.- Capitalism.- Centralisation/Decentralisation.- Checks And Balances.- Christian.- Democracy.- Citizenship.- Civil Disobedience.- Civil Liberty.- Civil.- Society.- Coalition.- Collectivise Security.- Collectivism.- Collectivization.- Committee.- Communism.- Communitarianism.- Community.- Conflict Of Civilazations.- Confucianism.- Consensus.- Consent.- Conservatism.- Consociationalism.- Constitution.- Constitutionalism.- Constructivism.- Consumerism.- Corporatism.- Cosmopolitanism.- Crimes Against Humanity.- Critical Theory.- Cross-generational Justice.- Democracy.- Democratic Peace.- Democratization.- Deterrence.- Development.- Devolution.- Dialectic.- Dictatorship.- Diplomacy.- Discourse.- Ecologism.- Election.- Elitism.- Empiricism.- Equality.- Executive.- Failed State.- Fascism.- Federalism.- Feminism.- Free Trade.- Freedom.- Functionalism.- Game Theory.- Gender.- Geopolitics.- Global Civil Society.- Global Governance.- Global Justice.- Globalization.- Governance.- Government.- Great Power.- Hard/Soft Power.- Hegemony.- Historical Materialism.- Human Development.- Human Nature.- Human Rights.- Humanitarian Intervention.- Idealism.- Identity Politics.- Ideology.- Imperialism.- Individualism.- Institutionalism.- Interdependence.- Intergovernmentalism.- International Aid.- International Law.- International Organization.- International Relations.- International Society.- Internationalism.- Islamism.- Jihad.- Judiciary.- Just War.- Justice.- Laissez-Faire.- Law.- Leadership.- Left/Right.- Legitimacy.- Liberal Democracy.- Liberalism.- Libertarianism.- Local Government.- Mandate.- Market.- Marxism.- Mass Media.- Meritocracy.- Militarism.- Minority Rights.- Monarchy.- Multiculturalism.- Multilateralism.- Multi-level Governance.- Nation.- Nationalism.- Nation-State.- Nazism.- Neoliberalism.- Neutrality.- Non-Governmental Organization.- Obligation.- Opposition.- Order.- Pacifism.- Paradigm.- Parliament.- Parliamentary Government.- Patriarchy.- Patriotism.- Peace-Building.- Pluralism.- Polarity.- Policy.- Political Culture.- Political Economy.- Political Party.- Political Philosophy.- Political Science.- Political Theory.- Politics.- Populism.- Positivism.- Postcolonialism.- Postmodernism.- Power.- Pragmatism.- President.- Presidential Government.- Pressure Group.- Prime Minister.- Property.- Proportional Representation.- Punishment.- Race/Ethnicity.- Racialism/Racism.- Rational Choice.- Rationalism.- Realism.- Referendum.- Reform.- Regionalism.- Religious Fundamentalism.- Representation.- Republicanism.- Responsibility.- Revolution.- Rights.- Rule Of Law.- Security.- Security Dilemma.- Separation Of Powers.- Social Class.- Social Democracy.- Social Justice.- Social Movement.- Socialism.- Sovereignty.- State.- Subsidiarity.- Superpower.- Supranationalism.- Sustainable Development.- Systems Theory.- Terrorism.- Theocracy.- Third Way.- Toleration.- Toryism.- Totalitarianism.- Tradition.- Transnational Corporation.- Transnationalism.- Utilitarianism.- Utopianism.- War.- Welfare.",
+      "cited_by_count": 52,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global Peace and Security Dynamics",
+        "Politics and Conflicts in Afghanistan, Pakistan, and Middle East"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1888491055"
+    },
+    {
+      "openalex_id": "W2894778516",
+      "doi": "10.4324/9781315081687",
+      "title": "Catholic Social Thought &amp; Liberal Institutions",
+      "authors": [
+        {
+          "name": "Michael Nov\u00e1k",
+          "openalex_id": "A5112096931"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-12",
+      "abstract": "Increasingly, the religious leaders of the world are addressing problems of political economy, expressing concern about the poor. But will their efforts actually help the poor? Or harm them? Much depends, Michael Novak asserts, upon what kind of institutions are constructed, that is, upon realism and practicality.His thesis may be simply stated: Although the Catholic Church during the nineteenth and early twentieth centuries set itself against liberalism as an ideology, it has slowly come to admire liberal institutions such as democracy and free markets. Between the Catholic vision of social justice and liberal institutions, Novak argues, there is a profound consonance (but not identity). Both celebrate realism, respect for institutions, and prudence or practical wisdom. The Catholic tradition adds to liberal individualism a strong communitarian sense.This book was first published in 1984 as Freedom with Justice. This new edition adds both a lengthy introduction carrying forward the original argument and a long concluding chapter on Pope John Paul IPs controversial new encyclical of early 1988, Sollicitudo Rei Socialis.",
+      "cited_by_count": 3,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "American Constitutional Law and Politics",
+        "Catholicism and Religious Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2894778516"
+    },
+    {
+      "openalex_id": "W4239670720",
+      "doi": "10.1093/obo/9780195396577-0348",
+      "title": "Communitarianism",
+      "authors": [
+        {
+          "name": "Elizabeth Frazer",
+          "openalex_id": "A5080993938",
+          "orcid": "https://orcid.org/0000-0002-8001-3244"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-26",
+      "abstract": "Communitarianism, like other \u201cisms,\u201d is relational\u2014worked out and articulated in distinction from rival philosophical positions and political ideologies. We could present a bibliography of avowedly communitarian references without explicitly including communitarianism\u2019s rivals and antagonists. But communitarianism would then look more free-standing than it really is. This article presents works that contribute to communitarianism as a position and also some that are critical of and dissent from it. Communitarianism is a position with a history. Communitarian critiques of individualism and liberalism developed in response to a particular articulation, from the 1970s to the mid-1980s, of \u201cliberal individualism.\u201d As well as engaging with, diagnosing, and criticizing particular aspects of liberal individualism, communitarian critics made reference to a wide range of historical and philosophical precursors and antecedents. These included a diverse range of philosophical sources, which were interpreted as congenial to contemporary communitarian concerns, and a range of sources from humanities and social sciences that focused on forms of community in human societies. The communitarian critiques of liberalism and individualism generated a sizeable critical literature, beginning with publications from the mid-1980s that individuated communitarianism as a specific, though ambiguous and contested, position in political philosophy and theory and weighed up the respective merits of \u201cliberalism,\u201d \u201cindividualism,\u201d and \u201ccommunitarianism.\u201d This critical literature is notable, first, for the contributions of a number of thinkers who had originally been grouped under the heading \u201ccommunitarian\u201d or \u201cliberal,\u201d who published rejoinder papers that considered the debate and the issues, distancing the author from the position ascribed to them by early commentators. Second, the critical literature complicated communitarianism, separating out questions of metaphysics or ontology, philosophical anthropology, epistemology, meta-ethics, ethics, and methodology in social science, ethics, and philosophy. Criticism of liberalism as a tradition in political philosophy was separated out from the political projects of liberal parties and broadly liberal societies. Most analyses attempt to show that positions on these various dimensions of the debate are independent: for instance, one can be communitarian metaphysically and individualist ethically, or vice versa; one\u2019s commitments as an individualist in the one branch of philosophy\u2014methodology of social science, for instance\u2014do not commit one to an individualist stand in another\u2014epistemology or philosophical anthropology. Further, such philosophical analysis is indeterminate regarding one\u2019s attitude to communitarian, socialist, conservative, liberal, or other political and social programs, including policy aims, objectives, means, strategies, and tactics.",
+      "cited_by_count": 1,
+      "type": "reference-entry",
+      "source": {
+        "name": "Philosophy",
+        "type": "journal",
+        "issn": [
+          "0031-8191",
+          "1469-817X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4239670720"
+    },
+    {
+      "openalex_id": "W4234125976",
+      "doi": "10.4324/9780415249126-s010-1",
+      "title": "Community and communitarianism",
+      "authors": [
+        {
+          "name": "Allen Buchanan",
+          "openalex_id": "A5110392368"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-09-11",
+      "abstract": "Reflections on the nature and significance of community have figured prominently in the history of Western ethics and political philosophy, both secular and religious. In ethics and political philosophy the term \u2018community\u2019 refers to a form of connection among individuals that is qualitatively stronger and deeper than a mere association. The concept of a community includes at least two elements: (1) individuals belonging to a community have ends that are in a robust sense common, not merely congruent private ends, and that are conceived of and valued as common ends by the members of the group; and (2) for the individuals involved, their awareness of themselves as belonging to the group is a significant constituent of their identity, their sense of who they are. In the past two decades, an important and influential strand of secular ethical and political thought in the English-speaking countries has emerged under the banner of communitarianism. The term \u2018communitarianism\u2019 is applied to the views of a broad range of contemporary thinkers, including Alasdair MacIntyre, Charles Taylor, Michael Sandel, and sometimes Michael Walzer (MacIntyre 1981; Sandel 1982; Taylor 1979, 1989; Walzer 1983). It is important to note, however, that there is no common creed to which these thinkers all subscribe and that for the most part they avoid the term. There are two closely related ways to characterize what communitarians have in common; one positive, the other negative. As a positive view, communitarianism is a perspective on ethics and political philosophy that emphasizes the psycho-social and ethical importance of belonging to communities, and which holds that the possibilities for justifying ethical judgments are determined by the fact that ethical reasoning must proceed within the context of a community\u2019s traditions and cultural understandings (Bell 1993: 24\u201345). As a negative view, communitarianism is a variety of anti-liberalism, one that criticizes liberal thought for failing to appreciate the importance of community. At present the communitarian critique of liberalism is more developed than is communitarianism as a systematic ethical or political philosophy. Existing communitarian literature lacks anything comparable to Rawls\u2019 theory of justice or Feinberg\u2019s theory of the moral limits of criminal law, both of which are paradigmatic examples of systematic liberal ethical and political theory. For the most part, the positive content of the communitarians\u2019 views must be inferred from their criticisms of liberalism. Thus, to a large extent communitarianism so far is chiefly a way of thinking about ethics and political life that stands in fundamental opposition to liberalism. To some, communitarian thinking seems a healthy antidote to what they take to be excessive individualism and obsessive preoccupation with personal autonomy. To others, communitarianism represents a failure to appreciate the value \u2013 and the fragility \u2013 of liberal social institutions. The success of communitarianism as an ethical theory depends upon whether an account of ethical reasoning can be developed that emphasizes the importance of social roles and cultural values in the justification of moral judgments without lapsing into an extreme ethical relativism that makes fundamental ethical criticisms of one\u2019s own community impossible. The success of communitarianism as a political theory depends upon whether it can be demonstrated that liberal political institutions cannot provide adequate conditions for the flourishing of community or secure appropriate support for persons\u2019 identities so far as their identities are determined by their membership in communities.",
+      "cited_by_count": 3,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Hannah Arendt's Political Philosophy",
+        "Political Theology and Sovereignty"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4234125976"
+    },
+    {
+      "openalex_id": "W2904962647",
+      "doi": "10.4324/9780203798782-4",
+      "title": "Max Weber\u2019s conception of the State: the State as Anstalt and as validated conception with special reference to Kelsen\u2019s critique of Weber 1",
+      "authors": [
+        {
+          "name": "Hubert Treiber",
+          "openalex_id": "A5081198502"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-22",
+      "abstract": "This chapter presents Kelsen's theory of democracy in relation to its epistemological, ontological and ethical assumptions. The task of demythologizing the concepts of the State, authoritative power and absolute political values places Kelsen's political theory in the tradition of individualism, proceduralism and ethos-free politics that underlie the modern concept of associational membership. Kelsen has made numerous critical remarks about ancient political philosophy. Contemporary political philosophy is increasingly challenged by the problem of the vitality and stability of liberal and pluralistic democracies. The concept of associational membership, which influenced contemporary communitarian and civic republican contributions to civil society and civic friendship, arises from the ancient idea of the political that is realized in citizenship. Kelsen's project of demythologizing the political is most clearly expressed at this point: the rational reason for politics is not the bonum commune, justice, society, community, nature or some other superhuman standard.",
+      "cited_by_count": 3,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Theology and Sovereignty",
+        "Weber, Simmel, Sociological Theory",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2904962647"
+    },
+    {
+      "openalex_id": "W2907782981",
+      "doi": "10.4324/9781351283007-28",
+      "title": "A New Deal for Sustainable Development in Business",
+      "authors": [
+        {
+          "name": "Maria Sillanp\u00e4\u00e4",
+          "openalex_id": "A5037695044"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-09-08",
+      "abstract": "This chapter focuses on social accountability as one of the essential arenas where new methodologies and techniques need to be developed. It offers the Body Shop experience in social auditing as one possible model for advancing transparency of corporate social performance. The Body Shop approach to socially and ecologically responsible business is driven by three simple and straightforward concepts. They are compliance; accountability and transparency; and active engagement and dialogue. In considering the philosophical basis for ecological and social ethics, three broad traditions may be identified which illustrate the diverse starting points influencing different constituents partaking in the debate about sustainable development: liberal individualism, communitarianism and ecocentrism. Social and economic justice is needed if sustainable development in any of the dimensions is to be achieved. The chapter describes each of the key components of the social audit cycle briefly; more guidance and case studies can be found in The Stakeholder Corporation.",
+      "cited_by_count": 3,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Business and Economic Development",
+        "Sustainable Development and Environmental Policy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2907782981"
+    },
+    {
+      "openalex_id": "W4410783249",
+      "doi": "10.24158/pep.2025.5.4",
+      "title": "The Communitarian Concept of Subsidiarity in Modern Political Philosophy",
+      "authors": [
+        {
+          "name": "A. O. Kalinichenko",
+          "openalex_id": "A5018404641"
+        },
+        {
+          "name": "M.S. Konstantinov",
+          "openalex_id": "A5041531743",
+          "orcid": "https://orcid.org/0000-0003-2781-789X"
+        },
+        {
+          "name": "Mikhail S. Konstantinov",
+          "openalex_id": ""
+        },
+        {
+          "name": "Southern Federal University",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-05-21",
+      "abstract": "The article examines the concept of subsidiarity developed in communitarian political philosophy (A. McIntyre, M. Sandel, M. Walzer, C. Taylor, D. Hollenbach, etc.) using the method of critical conceptual analysis. The conceptual structure of the communitarian concept of subsidiarity is compared with the structure of a similar concept in the liberal political and philosophical tradition. Based on the analysis, the following conclusions were drawn. The liberal interpretation significantly distorted the original meaning of the concept of subsidiarity, first reflected in Catholic social philosophy and implemented in the practices of medieval cities. Liberalism linked the concept of subsidiarity with negative freedom, antisocial individualism, and the concept of a neutral state. This gave rise to the paradoxes of the liberal concept of subsidiarity: in order to curb the centrifugal tendencies that arise with such an institutional design, the centralizing will of the state is necessary, and the concept of subsidiarity, universal in its original design, in liberal logic turned out to be applicable only in democratic liberal states. All these problems are solved in a communitarian interpretation of subsidiarity, combining this principle with the virtues of solidarity, attachment, identity, etc.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u043e \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430 \u043f\u0440\u0430\u0432\u043e",
+        "type": "journal",
+        "issn": [
+          "2071-9701",
+          "2223-6392"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Political Theory and Influence",
+        "Seventeenth-Century Political and Philosophical Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4410783249"
+    },
+    {
+      "openalex_id": "W2981791219",
+      "doi": "10.1186/s12910-019-0417-3",
+      "title": "Relational autonomy: what does it mean and how is it used in end-of-life care? A systematic review of argument-based ethics literature",
+      "authors": [
+        {
+          "name": "Carlos G\u00f3mez-V\u00edrseda",
+          "openalex_id": "A5034776550",
+          "orcid": "https://orcid.org/0000-0002-4801-7157",
+          "institutions": [
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Yves De Maeseneer",
+          "openalex_id": "A5050171174",
+          "orcid": "https://orcid.org/0000-0002-8698-3137",
+          "institutions": [
+            "Evangelical Theological Faculty",
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Chris Gastmans",
+          "openalex_id": "A5080479754",
+          "orcid": "https://orcid.org/0000-0002-5522-0639",
+          "institutions": [
+            "KU Leuven"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-26",
+      "abstract": null,
+      "cited_by_count": 224,
+      "type": "review",
+      "source": {
+        "name": "BMC Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "1472-6939"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmedethics.biomedcentral.com/track/pdf/10.1186/s12910-019-0417-3"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Patient Dignity and Privacy",
+        "Palliative Care and End-of-Life Issues"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W2981791219"
+    },
+    {
+      "openalex_id": "W3107258581",
+      "doi": "10.1093/oxfordhb/9780198754893.013.3",
+      "title": "Shame is the Spur",
+      "authors": [
+        {
+          "name": "James H. Murphy",
+          "openalex_id": "A5083699395",
+          "orcid": "https://orcid.org/0000-0002-3046-6034",
+          "institutions": [
+            "Boston College"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-08",
+      "abstract": "This chapter discusses key trends in the development of Irish Catholic fiction written between the 1870s and 1920s. During this period, novelists from the majority religiously-identified tradition on the island tested imagined future Irelands in their fiction. The realities to be tested were those within their own community, one dominated by a vision of a rural, small-farmer, family-aspirational, faith-sustained solidarity. Some late nineteenth-century Irish novelists cherished that solidarity, though they were not uncritical of it, while others critiqued its perceived darker side, a mean-spirited materialism and clerical authoritarianism. At the beginning of the twentieth century, a group of novelists emerged from an educated and generally urban context which valued liberal individualism. Working as priests, teachers, political activists, and journalists, they promoted an intelligentsia critique of the dominant communitarianism of the Ireland of their day. This chapter examines these developments with reference to a range of novels.",
+      "cited_by_count": 1,
+      "type": "reference-entry",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Irish and British Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3107258581"
+    },
+    {
+      "openalex_id": "W2619421910",
+      "doi": "10.5553/njlp/221307132016045003002",
+      "title": "The Justification of Basic Rights",
+      "authors": [
+        {
+          "name": "Rainer Forst",
+          "openalex_id": "A5033371035",
+          "orcid": "https://orcid.org/0000-0002-8245-5476"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-01",
+      "abstract": "The Justification of Basic Rights: A Discourse-Theoretical Approach In this paper, I suggest a discourse theory of basic legal rights that is superior to rival approaches, such as a will-based or an interest-based theory of rights. Basic rights are reciprocally and generally justifiable and binding claims on others (agents or institutions) that they should do (or refrain from doing) certain things determined by the content of these rights. We call these rights basic because they define the status of persons as full members of a normative order in such a way that they provide protection from severe forms of legal, political and social domination. The very ground of these rights is the status of persons as free and equal normative authorities within the order they are subject to. In other words, these rights are grounded in a fundamental moral right to justification.",
+      "cited_by_count": 230,
+      "type": "article",
+      "source": {
+        "name": "Netherlands Journal of Legal Philosophy",
+        "type": "journal",
+        "issn": [
+          "2213-0713",
+          "2213-0721"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.bjutijdschriften.nl/tijdschrift/rechtsfilosofieentheorie/2016/3/NJLP_2213-0713_2016_045_003_002.pdf"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Law in Society and Culture",
+        "Judicial and Constitutional Studies"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W2619421910"
+    },
+    {
+      "openalex_id": "W1660697234",
+      "doi": null,
+      "title": "\u201cIdeology\u201d or \u201cSituation Sense\u201d? An Experimental Investigation of Motivated Reasoning and Professional Judgment",
+      "authors": [
+        {
+          "name": "Dan M. Kahan",
+          "openalex_id": "A5090420717",
+          "orcid": "https://orcid.org/0000-0002-2737-2512",
+          "institutions": [
+            "Yale University"
+          ]
+        },
+        {
+          "name": "David A. Hoffman",
+          "openalex_id": "A5081607778",
+          "orcid": "https://orcid.org/0000-0001-5550-313X",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Danieli Evans",
+          "openalex_id": "A5031285990"
+        },
+        {
+          "name": "Neal Devins",
+          "openalex_id": "A5047089424",
+          "institutions": [
+            "William & Mary"
+          ]
+        },
+        {
+          "name": "Eugene A. Lucci",
+          "openalex_id": "A5085701665",
+          "institutions": [
+            "Supreme Court of Ohio"
+          ]
+        },
+        {
+          "name": "Katherine Cheng",
+          "openalex_id": "A5101561216",
+          "orcid": "https://orcid.org/0000-0003-4923-5356"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "This Article reports the results of a study on whether political predispositions influence judicial decisionmaking. The study was designed to overcome the two principal limitations on existing empirical studies that purport to find such an influence: the use of nonexperimental methods to assess the decisions of actual judges; and the failure to use actual judges in ideologically-biased-reasoninge xperiments. The study involved a sample of sitting judges (n = 253), who, like members of a general public sample (n = 8oo), were culturally polarized on climate change, marijuana legalization and other contested issues. When the study subjects were assigned to analyze statutory interpretationp roblems, however, only the responses of the general-public subjects and not those of the judges varied in patterns that reflected the subjects' cultural values. The responses of a sample of lawyers (n = 217) were also uninfluenced by their cultural values; the responses of a sample of law students (n = 284), in contrast, displayed a level of cultural bias only modestly less pronounced than that observed in the general-public sample. Among the competing hypotheses tested in the study, the results most supported the position that professional judgment imparted by legal training and experience confers resistance to identityprotective cognition-a dynamic associated with politically biased information processing generally-but only for decisions that involve legal reasoning. The scholarly and practical implications of the findings are discussed.",
+      "cited_by_count": 79,
+      "type": "article",
+      "source": {
+        "name": "Yale Law School Legal Scholarship Repository",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://digitalcommons.law.yale.edu/cgi/viewcontent.cgi?article=6212&context=fss_papers"
+      },
+      "topics": [
+        "Jury Decision Making Processes"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1660697234"
+    },
+    {
+      "openalex_id": "W4250160438",
+      "doi": "10.4324/9781315226446-9",
+      "title": "Populist constitutionalism",
+      "authors": [
+        {
+          "name": "Paul Blokker",
+          "openalex_id": "A5081891314",
+          "orcid": "https://orcid.org/0000-0003-4352-6478"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-10",
+      "abstract": "In recent decades, constitutional reform appears to be gaining momentum (see Ginsburg and Melton 2015: 4). One might argue that we are experiencing times of \u2018constitutional acceleration\u2019 (Palermo 2007), in that political actors appear to be increasingly taking recourse to the instrument of constitutional reform. Innovative, popular forms of constitutional reform have emerged, which stress the importance of, and bring into constitutional practice, citizen participation in constitutional reform. But the people is equally a central dimension in a different type of engagement with constitutionalism, a phenomenon which can be identified as populist constitutionalism . In the European context, with which this chapter is predominantly concerned, populist engagement with processes of constitution-making and constitutional reform is a distinctive, and in some significant ways worrying, tendency. The chapter provides an attempt to more systematically conceptualize populist constitutionalism, predominantly focusing on the European context. While there is some emerging literature on the phenomenon of populist constitutionalism (Mudde 2013; Mu\u0308ller 2016; Thio 2012), a more robust and theoretical treatment of the relation between populism and constitutionalism stills appears absent.",
+      "cited_by_count": 97,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.4324/9781315226446-9&type=chapterpdf"
+      },
+      "topics": [
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Judicial and Constitutional Studies",
+        "Political Theology and Sovereignty"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4250160438"
+    },
+    {
+      "openalex_id": "W2953758234",
+      "doi": "10.1017/s0260210519000159",
+      "title": "Reactionary Internationalism: the philosophy of the New Right",
+      "authors": [
+        {
+          "name": "Pablo de Orellana",
+          "openalex_id": "A5015101973",
+          "orcid": "https://orcid.org/0000-0002-4051-6226",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Nicholas Michelsen",
+          "openalex_id": "A5043105853",
+          "orcid": "https://orcid.org/0000-0002-9480-4004",
+          "institutions": [
+            "King's College London"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-07-03",
+      "abstract": "Abstract What does the New Right want from international relations? In this article, we argue that the philosophy of the New Right is not reducible to a negation of internationalism. The New Right coalesce around a conceptualisation of the international driven by analytics and critiques of specific subjects, norms and practices, that should be treated as a distinct international theoretical offering. We refer to this vision as Reactionary Internationalism. This article examines and locates this vision within the intellectual history of nationalism and internationalism by drawing on poststructuralist approaches to intellectual history and drawing evidence from a discourse analysis of recent Lega, Front National, Brexit, and Trump campaigns. We find that, rather than advocating for the end of internationalism, the New Right seeks to reconstitute its normative architecture on the basis of inequality among identities. This entails dismantling liberal economic and rights-based norms and reframing them around transactionalism and power grounded on identity. Reactionary Internationalism emerges as a distinct philosophy that identifies a hegemonic normative bind and advocates its unravelling so as to liberate subjects understood as defined by their birth-cultural identity.",
+      "cited_by_count": 107,
+      "type": "article",
+      "source": {
+        "name": "Review of International Studies",
+        "type": "journal",
+        "issn": [
+          "0260-2105",
+          "1469-9044"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/98D948051CC58BA3BCBD2F40C9F3648F/S0260210519000159a.pdf/div-class-title-reactionary-internationalism-the-philosophy-of-the-new-right-div.pdf"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Historical and Contemporary Political Dynamics",
+        "Communism, Protests, Social Movements"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W2953758234"
+    },
+    {
+      "openalex_id": "W3125168479",
+      "doi": null,
+      "title": "Migration as Decolonization",
+      "authors": [
+        {
+          "name": "E. Tendayi Achiume",
+          "openalex_id": "A5065560028"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-01",
+      "abstract": "International migration is a defining problem of our time, and central to this problem are the ethical intuitions that dominate thinking on migration and its governance. This Article challenges existing approaches to one particularly contentious form of international migration, as an important first step towards a novel and more ethical way of approaching problems of the movement of people across national borders.\r\n\r\nThe prevailing doctrine of state sovereignty under international law today is that it entails the right to exclude non-nationals, with only limited exceptions. Whatever the scope of these exceptions, so-called economic migrants\u2014those whose movement is motivated primarily by a desire for a better life\u2014are beyond them. Whereas international refugee law and international human rights law impose restrictions on states\u2019 right to exclude non-nationals whose lives are endangered by the risk of certain forms of persecution in their countries of origin, no similar protections exist for economic migrants. International legal theorists have not fundamentally challenged this formulation of state sovereignty, which justifies the largely unfettered right to exclude economic migrants.\r\n\r\nThis Article looks to the history and legacy of the European colonial project to challenge this status quo. It argues for a different theory of sovereignty that makes clear why, in fact, economic migrants of a certain kind have compelling claims to national admission and inclusion in countries that today unethically insist on a right to exclude these migrants. The European colonial project involved the out-migration of at least 62 million Europeans to colonies across the world between the nineteenth and the first half of the twentieth century alone. It also involved movement in the reverse direction of human and natural resources, overwhelmingly for the benefit of Europe and Europeans. This Article details how global interconnection and political subordination initiated over the course of this history generates a theory of sovereignty that obligates former colonial powers to open their borders to former colonial subjects. Insofar as certain forms of international migration today are responsive to political subordination rooted in colonial and neocolonial structures, a different conceptualization of such migration is necessary, one that engages economic migrants as political agents exercising equality rights when they engage in \u201cde-colonial\u201d migration.",
+      "cited_by_count": 207,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://escholarship.org/uc/item/8m83b98j"
+      },
+      "topics": [
+        "Migration, Refugees, and Integration",
+        "Migration and Labor Dynamics",
+        "Migration, Racism, and Human Rights"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3125168479"
+    },
+    {
+      "openalex_id": "W2555729844",
+      "doi": "10.1007/s11017-016-9387-3",
+      "title": "Solidarity, justice, and recognition of the other",
+      "authors": [
+        {
+          "name": "Ruud ter Meulen",
+          "openalex_id": "A5032657818",
+          "orcid": "https://orcid.org/0000-0002-4429-1415",
+          "institutions": [
+            "University of Bristol"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-27",
+      "abstract": "Solidarity has for a long time been referred to as the core value underpinning European health and welfare systems. But there has been debate in recent years about whether solidarity, with its alleged communitarian content, can be reconciled with the emphasis on individual freedom and personal autonomy. One may wonder whether there is still a place for solidarity, and whether the concept of justice should be embraced to analyse the moral issues regarding access to health care. In this article, I will answer this question by analysing the normative foundations of the concept of justice, followed by a deeper examination of the concept of solidarity in continental philosophy. More specifically, I will compare the philosophical traditions rooted in Kant (with emphasis on autonomy and individual rights) to approaches rooted in Hegel (with emphasis on individual relations of recognition). In addition, I will present the work of Avishai Margalit on the decent society to criticize a predominantly liberal approach to access to health care. The importance of solidarity lies particularly in its emphasis on relational aspects and the role of recognition in care practices, which are usually ignored in liberal approaches to justice. However, the article will argue that solidarity is not an alternative to a rights-based concept of justice, but must be considered as a necessary complement to it.",
+      "cited_by_count": 52,
+      "type": "article",
+      "source": {
+        "name": "Metamedicine",
+        "type": "journal",
+        "issn": [
+          "0166-2031",
+          "1573-1200"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11017-016-9387-3.pdf"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Political Philosophy and Ethics",
+        "Patient Dignity and Privacy"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W2555729844"
+    },
+    {
+      "openalex_id": "W2941960461",
+      "doi": "10.1017/glj.2019.19",
+      "title": "Varieties of populist constitutionalism: The transnational dimension",
+      "authors": [
+        {
+          "name": "Paul Blokker",
+          "openalex_id": "A5081891314",
+          "orcid": "https://orcid.org/0000-0003-4352-6478",
+          "institutions": [
+            "University of Bologna",
+            "Charles University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-04-01",
+      "abstract": "Abstract Populist constitutionalism is an increasingly discussed topic, but so far the analysis of the interrelation between populism and constitutionalism lacks a more systematic and comparative approach, able to bring out significant variety. Most of the recent literature on the phenomenon focuses on (right-wing) populism as a threat to constitutional democracy. This Article sets out to contribute to a more comparative and comprehensive discussion of the relation between varieties of populism \u2014situated on a continuum from left- to right-wing, but also from national to transnational\u2014with varieties of constitutional projects . The objective of this Article is threefold. First, I argue that it is problematic to consider legal constitutionalism as exhausting the possibilities of constitutionalism. Second, if populism is reduced to right-wing projects and as an unequivocal threat to liberal democracy, it becomes difficult to distinguish between dissimilar manifestations of populist projects, in particular regarding constituent politics. Third, while hardly any attention has been paid to constitutionalism and populist claims on the transnational level, in the European context, transnational forms of populism and constituent politics manifest themselves frequently, articulating an incisive critique on the European constitutional and political status quo, and contributing to a re-imagination and democratization of the European constitutional reality.",
+      "cited_by_count": 67,
+      "type": "article",
+      "source": {
+        "name": "German Law Journal",
+        "type": "journal",
+        "issn": [
+          "2071-8322"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4D1C7CC74BD867FEF99D9FD9C078382A/S2071832219000191a.pdf/div-class-title-varieties-of-populist-constitutionalism-the-transnational-dimension-div.pdf"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Legal Language and Interpretation",
+        "European and International Law Studies"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W2941960461"
+    },
+    {
+      "openalex_id": "W4312314168",
+      "doi": "10.57106/scientia.v8i1.102",
+      "title": "Individualism and Salvation: An Empirical-Theological Exploration of Attitudes Among the Filipino Youth and its Challenges to Filipino Families",
+      "authors": [
+        {
+          "name": "Dave Capucao",
+          "openalex_id": "A5021424920"
+        },
+        {
+          "name": "Rico Ponce",
+          "openalex_id": "A5058512445"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-03-30",
+      "abstract": "Previous studies contend that Philippines is still a \u2018collectivist\u2019 society (Cf. Hofstede Center; Cukur et al. 2004:613-634). In this collectivist or community-oriented society, individualism is not something that is highly valued. Being \u2018individualistic\u2019 is often associated to being narcissistic, loner, asocial, selfish, etc. However, one may ask whether the youth in the Philippines are not spared from this insidious culture of individualism, notwithstanding the seemingly dominant collective and communitarian character of the society. Although the overwhelming poverty is still the main problem in the Philippines, where according to Wostyn (2010:26) \u201conly the wonderland of movies gives some respite to their consciousness of suffering and oppression\u201d, the Filipino youth of today are also exposed to the consumeristic values of the \u2018city\u2019 and are not spared from the contradictions and insecurities posed by the pluralistic society. They are citizens of an increasing social and cultural pluralism characteristic of many liberal societies. Is it possible that individualism may also exist within this culture, especially among the younger generation? Is individualism slowly creeping in as caused by their exposure and easy access to modern technology, to higher education, mobility, interactions with other cultures, etc. Would this individualistic tendency have any influence on their religious beliefs, especially their belief on salvation? What would be the implications and challenges of these findings to the families in the Philippines? These are the questions we wish to answer in this study.&#x0D; This paper is structured in four parts: first, we will discuss the theoretical framework of individualism and salvation; second, we will examine the empirical attitudes on individualism and salvation; third, we will explore the relationship between individualism and salvation; and finally, we will draw some pastoral implication especially in relation to the document \u201cLineamenta - The Vocation and Mission of the Family in the church and Contemporary Word\u201d (henceforth, Lineamenta).&#x0D; References&#x0D; Atkins, P. (2004). Memory and Liturgy. The Place of Memory in the Composition and Practice of Liturgy. Hampshire: Ashgate Publishing.&#x0D; Bauman, Z. (1993). Postmodern Ethics. Oxford/Cambridge, MA: Blackwell.&#x0D; Beck, U. (1992). Risk society. London: Sage Publications.&#x0D; Bellah, R. N. , Madsen, R., Sullivan, W., Swidler, A., Tipton, S. (1985). Habits of the Heart: Individualism and Commitment in American Life. Berkeley/Los Angeles/London: University of California Press.&#x0D; Berger, P. (1970). A Rumour of Angels: Modern Society and Rediscovery of the Supernatural. New York: Doubleday.Berger, Peter L. (1967). The Sacred Canopy. New York: Anchor Books.&#x0D; Bosch, D. (1995). Believing in the Future. Harrisburg, Pennsylvania: Trinity Press International.&#x0D; Billiet, J.B. (1995). Church Involvement, individualism, and ethnic prejudice among Flemish Roman Catholics: New evidence of a moderating effect. Journal for the Scientifica Study of Religion, 34, 224-233.&#x0D; Brazal, A. (2004). Reinventing Pakikipagkapwa: An Exploration of Its potential for Promoting Respect for Plurality and Difference. In D. Gonzalez (Ed.), Fundamentalism and Pluralism. Manila: DAKATEO, 50-70.&#x0D; Burnett, G. (2001). Paul and the Salvation of the Individual. Leiden: Brill.&#x0D; Capucao, D. (2010). Religion and Ethnocentrism. Leiden/New York: Brill.&#x0D; Carter, A. (1990). On Individualism, Collectivism and Interrelationism. Heythrop Journal, 23-38.&#x0D; Chaves, Mark. (1994). Secularization as Declining Religious Authority. Social Forces 72, 749-774.&#x0D; Cukur, C. S., De Guzman, Maria Rosario T., and Carlo, Gustavo. (2004). Religiosity, Values, and Horizontal and Vertical Individualism \u2013 Collectivism: A Study of Turkey, the United States, and the Philippines. The Journal of Social Psychology, 144(6). Washington, DC: Heldref Publications, Helen Dwight Reid Educational Foundation, 613-634.&#x0D; Curran, Mary Bernard. (2013). Expressive Individualism: A Change in the Idea of the Good and of Happiness. Heythrop Journal. LIV, 978-991.&#x0D; Davie, Grace. (2002). Europe: The Exceptional Case: Parameters of Faith in the Modern World. London: Dartman, Longman, and Todd.&#x0D; De Mesa, J. (1987). In Solidarity with the Culture. : Studies in Theological Re-rooting. Quezon City: Maryhill School of Theology.&#x0D; De Vellis, R.F. (1991). Scale Development: Theory and applications. Newbury, Ca: Sage.&#x0D; Dobbelaere, K. (2001). Individualisation: A Multi-Dimensional Process?. In A. Harskamp &amp; A. Musschenga (Eds.), The Many Faces of Individualism. Leuven: Peeters, 47-61.&#x0D; Doorman, M. (2004): The Romantic Imperative. Amsterdam: Prometheus/Bert Bakker.&#x0D; Dupuis, J. (1999). The Truth Will set you Free. Louvain Studies, 24, 211-263.&#x0D; Duriez, B., Luyten, P. Snauwaert, B., and Hutsebaut, D. (2002). The relative importance of religiosity and value orientations in predicting political attitudes: Empirical evidence for the continuing importance of religiosity in Flanders (Belgium). Mental Health, Religion &amp; Culture, 5, 35-54.&#x0D; Durkheim, Emile. (2009). Sociology and Philosophy. Taylor and Francis. ISBN ISBN 978-0-415-55770-2. Accessed May 8, 2015.&#x0D; Edwards, D.L. (1997). Christianity: The First Two Thousand Years. New York: Orbis books.&#x0D; Ester, P., Halman, L. &amp; De Moor, R. (Eds.). (1994). The Individualizing Society. Tilburg: Tilburg University Press.&#x0D; Federation of Asian Bishop\u2019s Conferences (FABC). Office of the Laity and Family-Youth Desk.(2009). Asian Youth and the Eucharist. A Regional survey 2008. Taytay, Rizal: FABC-OLF-Youth Desk.&#x0D; Fiske, A. (2002). Using Individualism and Collectivism to Compare Cultures \u2013 A Critique of the Validity of Measurement of the Constructs: Comment on Oyserman et al. (2002). Psychological Bulletin, Vol. 128, No. 1, 78-88.&#x0D; Froese, Paul D. (2009). The Plot to Kill God: Findings from the Soviet Experiment in Secularization. Berkeley: University of California Press.&#x0D; Furnham, A. (1990). A content, correlational and factor analysis study of seven questionnaire measures of the Protestant work ethic. Human Relations, 43, 383-399.&#x0D; Giddens, A. (1991). Modernity and Self-Identity. Cambridge: Polity Press&#x0D; Giddens, A., Beck, U., and Lash, S. (1994). Reflexive Modernization: Politics, Tradition and Aesthetics in the Modern Social Order. Cambridge: Polity Press.&#x0D; Goffman, E. (1971). Relations in Public. London: Allen Lane.&#x0D; Gonzalez, D. (Eds.). (2004). Fundamentalism and Pluralism in the Church. Manila: DAKATEO.&#x0D; Gorospe, V. (1988). Filipino Values Revisited. Manila: National bookstore.&#x0D; Gorski, Philip &amp; Altinordu, A. (2008). After Secularization. Annual Review of Sociology 34:55-85.&#x0D; Gorski, Philip. (2005). The Return of the Repressed: Religion and the Political Unconscious of Historical Sociology. In J. Adams, E. Clemens, and A.Orloff. (Eds.). Remaking Modernity. Durham: Duke University Press.&#x0D; Goizueta, Roberto S. (1991). Democratic Capitalism and the Spirit of Individualism: An Analysis of Thought of Michael Novak. Voices from the Third World: Journal of the Ecumenical Association of Third World Theologians, Volume 14, 147-69.&#x0D; Halman, Loek. (2001). Individualism in Contemporary Europe. In A. Harskamp &amp; A. W. Musschenga. (Eds.). The Many Faces of Individualism. Leuven: Peeters, . 25-45.&#x0D; Harskamp, A.V. &amp; Musschenga, A. (2001). The Many Faces of Individualism. Leuven: Peeters.&#x0D; Heitmeyer, W. (2001). Lack of Recognition: The Socially Destructive Consequences of New Capitalis. In A. V. Harskamp, A.V. &amp; Musschenga, A. (Eds.), The Many Faces of Individualism. Leuven: Peeters.&#x0D; Hellemans, S. (2001). From \u2018Cathokicism Against Modernity\u2019 to the Problematic \u2018Modernity of Catholicism. Ethical Perspectives 8, 2, 117-127.&#x0D; Hellemans, S. &amp; Wissink, J. (Eds). (2012). Towards a New Catholic Church in Advanced Modernity. Transformations, Visions, Tensions. Z\u00farich/M\u00fanster: LIT Verlag.&#x0D; Hofstede Center. Philippines. http://geert-hofstede.com/philippines.html. Accessed May 2, 2015.&#x0D; Huismans, S. (1994). The impact of differences in religion on the relation between religiosity and values. In A. Bouvy, F.J.R. van de Vijver, P. Boski, and P. Schmitz (Eds.), Journeys into cross-cultural psychology. Amsterdam: Swets &amp; Zeitlinger, 255-268.&#x0D; Ikalwese. (2013). Family, For real? Ppeople and friends,Philippine society,thoughts, Thoughts - Philippines. Blog Entry posted October 24, 2013. Accessed from: https://whenthenailsticksout.wordpress.com/2013/10/24/philippines-japan-collectivism-and-i/.&#x0D; Inglehart, R. &amp; W. Baker (2000). Modernization, Cultural Change, and the Persistence of Traditional Values. American Sociological Review, Vol. 65, no. 1, 2000, 81\u201382.&#x0D; Inglehart, R. (1990). Culture Shift in Advanced Industrial Society. Princeton: Princeton University Press.&#x0D; Inglehart, R. (1997). Modernization and Postmodernization. Cultural, Economic, and Political Change in 43 Countries. Princeton, NJ: Princeton University Press.&#x0D; Iyengar, Sheena. (2010). The Art of Choosing. New York: Hachette Book Group, 34-35.&#x0D; Jeurissen, R. (1993). Peace &amp; Religion. Kamken Kok Pharos Publishing House.&#x0D; Jocano, F. L. (1992). Issues and Challenges in Filipino Value Formation. Punlad Research Paper No. 1. Series on Filipino Values. Quezon City: Punlad Research House.&#x0D; Jocano, F. L. (1992a). Notion of Value in Filipino Culture. The concept of Pamantayan. Punlad Research Paper No. 2 . Series on Filipino Values. Quezon City: Punlad Research House.&#x0D; Kagitcibasi, C. (1997). Individualism and Collectivism. In J. W. Berry, M.H. Segall, and C. Kagitcibasi (Eds.), Handbook of cross-cultural psychology Vol. 3. Needham Heights, MA: Allyn &amp; Bacon, 1-5.&#x0D; Kerkhofs, J. (199",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Scientia - The International Journal on the Liberal Arts",
+        "type": "journal",
+        "issn": [
+          "1908-9627",
+          "2546-194X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://scientia-sanbeda.org/index.php/scientia/article/download/102/VOL8-1-CAPUCAO-PONCE"
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "Religion, Society, and Development",
+        "Philippine History and Culture"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W4312314168"
+    },
+    {
+      "openalex_id": "W4299918812",
+      "doi": "10.22459/pip.06.2016",
+      "title": "A Philosophy of Intellectual Property",
+      "authors": [
+        {
+          "name": "Peter Drahos",
+          "openalex_id": "A5102894505",
+          "orcid": "https://orcid.org/0000-0003-3243-6928"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-06-22",
+      "abstract": "Are intellectual property rights like other property rights? More and more of the world\u2019s knowledge and information is under the control of intellectual property owners. What are the justifications for this? What are the implications for power and for justice of allowing this property form to range across social life? Can we look to traditional property theory to supply the answers or do we need a new approach? Intellectual property rights relate to abstract objects \u2013 objects like algorithms and DNA sequences. The consequences of creating property rights in such objects are far-reaching. A Philosophy of Intellectual Property argues that lying at the heart of intellectual property are duty-bearing privileges. We should adopt an instrumentalist approach to intellectual property and reject a proprietarian approach \u2013 an approach which emphasises the connection between labour and property rights. The analysis draws on the history of intellectual property, legal materials, the work of Grotius, Pufendorf, Locke, Marx and Hegel, as well as economic, sociological and legal theory. The book is designed to be accessible to specialists in a number of fields as well as students. It will interest philosophers, political scientists, economists, and legal scholars, as well as those professionals concerned with policy issues raised by modern technologies and the information society.",
+      "cited_by_count": 203,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://press-files.anu.edu.au/downloads/press/n1902/pdf/book.pdf"
+      },
+      "topics": [
+        "Intellectual Property and Patents"
+      ],
+      "referenced_works_count": 234,
+      "url": "https://openalex.org/W4299918812"
+    },
+    {
+      "openalex_id": "W1870808021",
+      "doi": "10.5964/jspp.v3i2.579",
+      "title": "The Social Psychology of Citizenship, Participation and Social Exclusion: Introduction to the Special Thematic Section",
+      "authors": [
+        {
+          "name": "Clifford Stevenson",
+          "openalex_id": "A5038027793",
+          "orcid": "https://orcid.org/0000-0002-2438-6425",
+          "institutions": [
+            "Anglia Ruskin University"
+          ]
+        },
+        {
+          "name": "John Dixon",
+          "openalex_id": "A5019065557",
+          "orcid": "https://orcid.org/0000-0002-3972-6437",
+          "institutions": [
+            "The Open University"
+          ]
+        },
+        {
+          "name": "Nick Hopkins",
+          "openalex_id": "A5081128435",
+          "orcid": "https://orcid.org/0000-0003-3052-1854",
+          "institutions": [
+            "University of Dundee"
+          ]
+        },
+        {
+          "name": "Russell Luyt",
+          "openalex_id": "A5069998353",
+          "orcid": "https://orcid.org/0000-0003-3842-0273",
+          "institutions": [
+            "Anglia Ruskin University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-22",
+      "abstract": "The aim of this special thematic section is to bring together recent social psychological research on the topic of citizenship with a view to discerning the emerging trends within the field and its potential contributions to the broader interdisciplinary area of citizenship studies. Eight papers spanning diverse theoretical traditions (including social identity, social representations and discursive approaches) apply an array of methods to consider different aspects of citizenship across a variety of cultural and national contexts. Some focus on individuals\u2019 perceptions and discussions of citizenship, others examine the group dynamics which flow from these understandings, and the rest examine the potential for citizenship to exclude as well as include marginalised communities. While diverse, the contributions share some core commonalities: all share a concern in trying to understand citizenship from the perspective of the citizen; all conceptualise citizenship as an active and reflective process occurring between members of a community; and all highlight the irreducibly social and collective nature of the experience and practice of citizenship in everyday life. We propose that these elements of convergence have the potential to give the social psychology of citizenship a solid basis and recognisable profile in order to contribute to the broader arena of citizenship studies.",
+      "cited_by_count": 66,
+      "type": "article",
+      "source": {
+        "name": "Journal of Social and Political Psychology",
+        "type": "journal",
+        "issn": [
+          "2195-3325"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://jspp.psychopen.eu/index.php/jspp/article/download/4869/4869.pdf"
+      },
+      "topics": [
+        "Community Health and Development",
+        "Social Representations and Identity",
+        "Cultural Differences and Values"
+      ],
+      "referenced_works_count": 79,
+      "url": "https://openalex.org/W1870808021"
+    },
+    {
+      "openalex_id": "W3008383023",
+      "doi": "10.1007/s10551-020-04468-7",
+      "title": "The Ethics of Entrepreneurial Philanthropy",
+      "authors": [
+        {
+          "name": "Charles Harvey",
+          "openalex_id": "A5052920756",
+          "orcid": "https://orcid.org/0000-0003-4231-0202",
+          "institutions": [
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Jillian Gordon",
+          "openalex_id": "A5045281238",
+          "orcid": "https://orcid.org/0000-0002-4928-4396",
+          "institutions": [
+            "Adam Smith Institute",
+            "University of Glasgow"
+          ]
+        },
+        {
+          "name": "Mairi Maclean",
+          "openalex_id": "A5079669992",
+          "orcid": "https://orcid.org/0000-0001-9030-7492",
+          "institutions": [
+            "University of Bath"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-02",
+      "abstract": "Abstract A salient if under researched feature of the new age of global inequalities is the rise to prominence of entrepreneurial philanthropy, the pursuit of transformational social goals through philanthropic investment in projects animated by entrepreneurial principles. Super-wealthy entrepreneurs in this way extend their suzerainty from the domain of the economic to the domains of the social and political. We explore the ethics and ethical implications of entrepreneurial philanthropy through systematic comparison with what we call customary philanthropy , which preferences support for established institutions and social practices. We analyse the ethical statements made at interview by 24 elite UK philanthropists, 12 customary and 12 entrepreneurial, to reveal the co-existence of two ethically charged narratives of elite philanthropic motivations, each instrumental in maintaining the established socio-economic order. We conclude that entrepreneurial philanthropy, as an ostensibly efficacious instrument of social justice, is ethically flawed by its unremitting impulse toward ideological purity.",
+      "cited_by_count": 54,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10551-020-04468-7.pdf"
+      },
+      "topics": [
+        "Nonprofit Sector and Volunteering",
+        "Community Development and Social Impact",
+        "Tourism, Volunteerism, and Development"
+      ],
+      "referenced_works_count": 136,
+      "url": "https://openalex.org/W3008383023"
+    },
+    {
+      "openalex_id": "W2516567800",
+      "doi": "10.1146/annurev-lawsocsci-110615-084950",
+      "title": "Comparative Legal Research and Legal Culture: Facts, Approaches, and Values",
+      "authors": [
+        {
+          "name": "David Nelken",
+          "openalex_id": "A5008282828",
+          "institutions": [
+            "University of London",
+            "King's College London"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-30",
+      "abstract": "This article seeks to provide an overview of how the controversial concept of legal culture has been used so as to clarify its potential role in further developing comparative studies of law in society. It shows that the term is currently given a variety of meanings, ranging from treating it as a variable that explains the turn to law, to exploring law as culture in different settings. As a way of moving forward, attention should be given to what is assumed or asserted by given authors with respect to three key issues: the kind of facts that are thought to make up legal culture, the chosen approach within which the concept is deployed, and the normative aspects of the enquiry. It ends by revisiting Chanock's The Making of South African Legal Culture so as to show how this framework can help reveal the theoretical underpinnings and contribution of a leading case study.",
+      "cited_by_count": 114,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Law and Social Science",
+        "type": "journal",
+        "issn": [
+          "1550-3585",
+          "1550-3631"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-lawsocsci-110615-084950"
+      },
+      "topics": [
+        "Comparative and International Law Studies",
+        "Judicial and Constitutional Studies",
+        "Legal Issues in South Africa"
+      ],
+      "referenced_works_count": 106,
+      "url": "https://openalex.org/W2516567800"
+    },
+    {
+      "openalex_id": "W2103397081",
+      "doi": "10.17159/1727-3781/2013/v16i5a2437",
+      "title": "Reflections on Judicial Views of uBuntu",
+      "authors": [
+        {
+          "name": "Chuma Himonga",
+          "openalex_id": "A5077236023",
+          "orcid": "https://orcid.org/0000-0003-4118-745X",
+          "institutions": [
+            "University of Cape Town"
+          ]
+        },
+        {
+          "name": "Max Taylor",
+          "openalex_id": "A5111761667",
+          "institutions": [
+            "University of Cape Town"
+          ]
+        },
+        {
+          "name": "Anne Pope",
+          "openalex_id": "A5109938243",
+          "institutions": [
+            "University of Cape Town"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-05-17",
+      "abstract": "Since S v Makwanyane, ubuntu has become an integral part of the constitutional values and principles that inform interpretation of the Bill of Rights and other areas of law. In particular, a restorative justice theme has become evident in the jurisprudence that encompasses customary law, eviction, defamation, and criminal law matters. This contribution explores the scope and content of ubuntu, as pronounced on by the judiciary in various cases, and demonstrates that its fundamental elements of respect, communalism, conciliation and inclusiveness enhance the constitutional interpretation landscape. Two major epochs are highlighted in the development of ubuntu, marked by the constitutional decisions in Makwanyane and PE Municipality respectively. The former carved the central avenue of development for ubuntu, while the latter marked the start of the thematic development of the concept in the direction of restorative justice. Furthermore, the article engages critically with the use of ubuntu, with criticisms levelled against the conceptualisation of ubuntu as a legal notion, ranging from its ambiguity to its redundancy, to perceptions of dichotomies, and issues of exclusion. The paper also questions the manner in which the courts have applied the legal concept of ubuntu uncritically, without reference to African sources to illustrate its meaning in different contexts, and without questioning its compatibility with the Bill of Rights. Finally, it attempts to reveal the connections between ubuntu and the values underlying the Bill of Rights.&#x0D;",
+      "cited_by_count": 54,
+      "type": "article",
+      "source": {
+        "name": "Potchefstroom Electronic Law Journal/Potchefstroomse Elektroniese Regsblad",
+        "type": "journal",
+        "issn": [
+          "1727-3781"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.assaf.org.za/index.php/per/article/download/2437/2194"
+      },
+      "topics": [
+        "Legal Issues in South Africa",
+        "Human Rights and Development",
+        "South African History and Culture"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W2103397081"
+    },
+    {
+      "openalex_id": "W2597465631",
+      "doi": "10.1186/s40878-017-0052-4",
+      "title": "The civic turn of immigrant integration policies in the Scandinavian welfare states",
+      "authors": [
+        {
+          "name": "Karin Borevi",
+          "openalex_id": "A5047168957",
+          "orcid": "https://orcid.org/0000-0002-5662-3579",
+          "institutions": [
+            "S\u00f6dert\u00f6rn University"
+          ]
+        },
+        {
+          "name": "Kristian Kriegbaum Jensen",
+          "openalex_id": "A5033552780",
+          "orcid": "https://orcid.org/0000-0003-2299-9516",
+          "institutions": [
+            "Aarhus University"
+          ]
+        },
+        {
+          "name": "Per Mouritsen",
+          "openalex_id": "A5035601154",
+          "institutions": [
+            "Aarhus University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-20",
+      "abstract": null,
+      "cited_by_count": 72,
+      "type": "editorial",
+      "source": {
+        "name": "Comparative Migration Studies",
+        "type": "journal",
+        "issn": [
+          "2214-594X",
+          "2214-8590"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://comparativemigrationstudies.springeropen.com/counter/pdf/10.1186/s40878-017-0052-4"
+      },
+      "topics": [
+        "Migration, Refugees, and Integration",
+        "Migration and Labor Dynamics",
+        "Migration, Health and Trauma"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2597465631"
+    },
+    {
+      "openalex_id": "W3038245491",
+      "doi": "10.1186/s12910-020-00495-1",
+      "title": "Relational autonomy in end-of-life care ethics: a contextualized approach to real-life complexities",
+      "authors": [
+        {
+          "name": "Carlos G\u00f3mez-V\u00edrseda",
+          "openalex_id": "A5034776550",
+          "orcid": "https://orcid.org/0000-0002-4801-7157",
+          "institutions": [
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Yves De Maeseneer",
+          "openalex_id": "A5050171174",
+          "orcid": "https://orcid.org/0000-0002-8698-3137",
+          "institutions": [
+            "KU Leuven",
+            "Evangelical Theological Faculty"
+          ]
+        },
+        {
+          "name": "Chris Gastmans",
+          "openalex_id": "A5080479754",
+          "orcid": "https://orcid.org/0000-0002-5522-0639",
+          "institutions": [
+            "KU Leuven"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-30",
+      "abstract": "Abstract Background Respect for autonomy is a paramount principle in end-of-life ethics. Nevertheless, empirical studies show that decision-making, exclusively focused on the individual exercise of autonomy fails to align well with patients\u2019 preferences at the end of life. The need for a more contextualized approach that meets real-life complexities experienced in end-of-life practices has been repeatedly advocated. In this regard, the notion of \u2018relational autonomy\u2019 may be a suitable alternative approach. Relational autonomy has even been advanced as a foundational notion of palliative care, shared decision-making, and advance-care planning. However, relational autonomy in end-of-life care is far from being clearly conceptualized or practically operationalized. Main body Here, we develop a relational account of autonomy in end-of-life care, one based on a dialogue between lived reality and conceptual thinking. We first show that the complexities of autonomy as experienced by patients and caregivers in end-of-life practices are inadequately acknowledged. Second, we critically reflect on how engaging a notion of relational autonomy can be an adequate answer to addressing these complexities. Our proposal brings into dialogue different ethical perspectives and incorporates multidimensional, socially embedded, scalar, and temporal aspects of relational theories of autonomy. We start our reflection with a case in end-of-life care, which we use as an illustration throughout our analysis. Conclusion This article develops a relational account of autonomy, which responds to major shortcomings uncovered in the mainstream interpretation of this principle and which can be applied to end-of-life care practices.",
+      "cited_by_count": 121,
+      "type": "article",
+      "source": {
+        "name": "BMC Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "1472-6939"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmedethics.biomedcentral.com/track/pdf/10.1186/s12910-020-00495-1"
+      },
+      "topics": [
+        "Palliative Care and End-of-Life Issues",
+        "Patient Dignity and Privacy",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 109,
+      "url": "https://openalex.org/W3038245491"
+    },
+    {
+      "openalex_id": "W2560085779",
+      "doi": "10.1007/s11017-016-9390-8",
+      "title": "Thinking ethical and regulatory frameworks in medicine from the perspective of solidarity on both sides of the Atlantic",
+      "authors": [
+        {
+          "name": "Barbara Prainsack",
+          "openalex_id": "A5023800625",
+          "orcid": "https://orcid.org/0000-0002-6335-1532",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Alena Buyx",
+          "openalex_id": "A5060046585",
+          "orcid": "https://orcid.org/0000-0002-5726-7633",
+          "institutions": [
+            "Kiel University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-01",
+      "abstract": "This article provides a concise overview of the history of scholarship on solidarity in Europe and North America. While recent decades have seen an increase in conceptual and scholarly interest in solidarity in North America and other parts of the Anglo-Saxon world, the concept is much more strongly anchored in Europe. Continental European politics in particular have given rise to two of the most influential traditions of solidarity, namely, socialism and Christian ethics. Solidarity has also guided important public instruments and institutions in Europe (e.g., welfare, healthcare, etc.). Despite the much stronger affinity of continental European societies to solidaristic thinking, we argue that solidarity has much to offer for addressing societal challenges on both sides of the Atlantic and beyond. After proposing a working definition of solidarity that highlights its utility for guiding policy and practice, we give an example of how a solidarity-based perspective can shape instruments for the governance of data use.",
+      "cited_by_count": 53,
+      "type": "article",
+      "source": {
+        "name": "Metamedicine",
+        "type": "journal",
+        "issn": [
+          "0166-2031",
+          "1573-1200"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11017-016-9390-8.pdf"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Mental Health and Patient Involvement",
+        "Palliative Care and End-of-Life Issues"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W2560085779"
+    },
+    {
+      "openalex_id": "W3193689383",
+      "doi": "10.1186/s12910-021-00678-4",
+      "title": "South African traditional values and beliefs regarding informed consent and limitations of the principle of respect for autonomy in African communities: a cross-cultural qualitative study",
+      "authors": [
+        {
+          "name": "Francis Akpa-Inyang",
+          "openalex_id": "A5000500790",
+          "orcid": "https://orcid.org/0000-0002-3351-4126",
+          "institutions": [
+            "University of KwaZulu-Natal"
+          ]
+        },
+        {
+          "name": "Sylvester C. Chima",
+          "openalex_id": "A5050358781",
+          "orcid": "https://orcid.org/0000-0001-7067-6469",
+          "institutions": [
+            "University of KwaZulu-Natal"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-08-14",
+      "abstract": "Abstract Background The Western-European concept of libertarian rights-based autonomy, which advocates respect for individual rights, may conflict with African cultural values and norms. African communitarian ethics focuses on the interests of the collective whole or community, rather than rugged individualism. Hence collective decision-making processes take precedence over individual autonomy or consent. This apparent conflict may impact informed consent practice during biomedical research in African communities and may hinder ethical principlism in African bioethics. This study explored African biomedical researchers' perspectives regarding informed consent and potential limitations to the principle of respect for autonomy in African communities. Methods We conducted a qualitative study based on in-depth interviews with 12 biomedical researchers, five females and seven males aged 34 to 74 years, currently working at an African university. Interviews lasted 35\u201340 min each and involved semi-structured open-ended interviews, which allowed participants to offer information about their perceptions and feelings regarding respect for autonomy and informed consent as practised in Africa. Empirical data from the interviews were recorded, transcribed, and analysed using thematic content analysis, together with an interrogation of relevant scientific literature about African communitarian ethics, making evaluations and drawing inferences consistent with the empirical bioethics approach. Results Based on these interviews and analysis of relevant literature, we found that informed consent is difficult to apply in an African context because it derives from a Western conception of libertarian rights-based autonomy. Most respondents pointed out that it was challenging to implement informed consent in the African setting. Furthermore, communalism, customary beliefs, spirituality, and relational autonomy are predominant in most African communities, as exemplified by the African moral philosophies of Ubuntu/Botho and Ukama , which emphasize communitarianism over individual rights. We also found that language, education, poverty, and cultural beliefs are barriers to obtaining proper informed consent in African communities. Conclusions We conclude that there are limitations to applying the principle of respect for autonomy and informed consent in African communities, especially in the context of human biomedical research. We recommend using a more relational approach, such as Ross\u2019s prima facie duties, to implement informed consent in African communities.",
+      "cited_by_count": 49,
+      "type": "article",
+      "source": {
+        "name": "BMC Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "1472-6939"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmedethics.biomedcentral.com/track/pdf/10.1186/s12910-021-00678-4"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Patient Dignity and Privacy",
+        "Ethics and Legal Issues in Pediatric Healthcare"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W3193689383"
+    },
+    {
+      "openalex_id": "W3142317680",
+      "doi": "10.1515/jso-2020-0076",
+      "title": "We in Me or Me in We? Collective Intentionality and Selfhood",
+      "authors": [
+        {
+          "name": "Dan Zahavi",
+          "openalex_id": "A5031927870",
+          "orcid": "https://orcid.org/0000-0002-2869-4951",
+          "institutions": [
+            "University of Oxford",
+            "University of Copenhagen"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-01",
+      "abstract": "Abstract The article takes issue with the proposal that dominant accounts of collective intentionality suffer from an individualist bias and that one should instead reverse the order of explanation and give primacy to the we and the community. It discusses different versions of the community first view and argues that they fail because they operate with too simplistic a conception of what it means to be a self and misunderstand what it means to be (part of) a we. In presenting this argument, the article seeks to demonstrate that a thorough investigation of collective intentionality has to address the status and nature of the we, and that doing so will require an analysis of the relation between the we and the I, which in turn will call for a more explicit engagement with the question of selfhood than is customary in contemporary discussions of collective intentionality.",
+      "cited_by_count": 67,
+      "type": "article",
+      "source": {
+        "name": "Journal of Social Ontology",
+        "type": "journal",
+        "issn": [
+          "2196-9655",
+          "2196-9663"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.degruyter.com/document/doi/10.1515/jso-2020-0076/pdf"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Free Will and Agency",
+        "Emotions and Moral Behavior"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W3142317680"
+    },
+    {
+      "openalex_id": "W2537087829",
+      "doi": "10.3390/fi8040049",
+      "title": "Socialism and the Blockchain",
+      "authors": [
+        {
+          "name": "Steve Huckle",
+          "openalex_id": "A5031081389",
+          "orcid": "https://orcid.org/0000-0003-2298-8913",
+          "institutions": [
+            "University of Sussex"
+          ]
+        },
+        {
+          "name": "Martin White",
+          "openalex_id": "A5052669359",
+          "orcid": "https://orcid.org/0000-0001-8686-2274",
+          "institutions": [
+            "University of Sussex"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-10-18",
+      "abstract": "Bitcoin (BTC) is often cited as Libertarian. However, the technology underpinning Bitcoin, blockchain, has properties that make it ideally suited to Socialist paradigms. Current literature supports the Libertarian viewpoint by focusing on the ability of Bitcoin to bypass central authority and provide anonymity; rarely is there an examination of blockchain technology\u2019s capacity for decentralised transparency and auditability in support of a Socialist model. This paper conducts a review of the blockchain, Libertarianism, and Socialist philosophies. It then explores Socialist models of public ownership and looks at the unique cooperative properties of blockchain that make the technology ideal for supporting Socialist societies. In summary, this paper argues that blockchain technologies are not just a Libertarian tool, they also enhance Socialist forms of governance.",
+      "cited_by_count": 109,
+      "type": "article",
+      "source": {
+        "name": "Future Internet",
+        "type": "journal",
+        "issn": [
+          "1999-5903"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1999-5903/8/4/49/pdf?version=1476775481"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Internet Traffic Analysis and Secure E-voting"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W2537087829"
+    },
+    {
+      "openalex_id": "W4234170446",
+      "doi": "10.25159/2413-3086/1988",
+      "title": "AFRICAN ETHICS AND PARTIALITY",
+      "authors": [
+        {
+          "name": "Motsamai Molefe",
+          "openalex_id": "A5015420321",
+          "orcid": "https://orcid.org/0000-0002-5030-6222",
+          "institutions": [
+            "University of KwaZulu-Natal",
+            "University of South Africa"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-01",
+      "abstract": "This article explores the question whether African ethics is best captured in terms of partiality or impartiality. I take one influential instance of a defence of impartiality in the African tradition, sympathetic impartiality, by Kwasi Wiredu, and I use it as a foil to represent African ethics. I argue that impartiality, as represented by Wiredu, fails to cohere with moral intuitions characteristic of African moral thought, namely: the high prize usually accorded to the family, veneration of ancestors and the notion of personhood. I merely touch on the first two intuitions; I base my argument largely on the normative concept of personhood that is considered to be definitive of African moral thought.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Phronimon",
+        "type": "journal",
+        "issn": [
+          "1561-4018",
+          "2413-3086"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://upjournals.co.za/index.php/Phronimon/article/download/1988/1026"
+      },
+      "topics": [
+        "African cultural and philosophical studies"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W4234170446"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

@@ -1,0 +1,935 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "political-obligation",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/political-obligation/",
+      "entry_name": "political-obligation",
+      "title": "Political Obligation",
+      "preamble": "This entry follows the traditional practice of equating political\nobligation with a moral duty to obey the law of one\u2019s country or\nstate. How does one acquire such an obligation, and how many people\nhave really done what is necessary to acquire it? Or is a political\nobligation more a matter of being than of doing \u2013 that is, of simply being a member of the country or state in\nquestion? To those questions many answers have been given, and none\nnow commands widespread assent. Indeed, a number of contemporary\npolitical philosophers deny that a satisfactory theory of political\nobligation either has been or can be devised. Others, however,\ncontinue to believe that there is a solution to what is commonly\ncalled \u201cthe problem of political obligation,\u201d and they are\npresently engaged in a lively debate not only with the skeptics but\nalso with one another on the question of which theory, if any,\nprovides the solution to the problem. The history of political thought is replete with attempts to provide a\nsatisfactory account of political obligation, from the time of\nSocrates to the present. These attempts have become increasingly\nsophisticated in recent years, but they have brought us no closer to\nagreement on a solution to the problem of political obligation than\nthe efforts of, say, Thomas Hobbes and John Locke in the seventeenth\ncentury. Nor have these sophisticated attempts made it unnecessary to\nlook back to earlier efforts to resolve the problem. On the contrary,\nan appreciation of the troublesome nature of political obligation\nrequires some attention to its place in the history of political\nthought. This essay begins, therefore, with a brief history of the problem of\npolitical obligation. It then turns, in Part 2, to the conceptual\nquestions raised by political obligation, such as what it means for an obligation to be political . In Part 3 the focus is\non the skeptics, with particular attention to the self-proclaimed\nphilosophical anarchists, who deny that political obligations exist\nyet do not maintain that the state is necessarily unjustifiable. Part\n4 surveys the leading contenders among the various theories of\npolitical obligation now on offer, and Part 5 concludes the essay with\na consideration of recent proposals for pluralistic or \u201cmultiple\nprinciple\u201d approaches.",
+      "bibliography": [
+        {
+          "raw": "Adams, N. P., 2017. \u201cIn Defense of\nContent-Independence,\u201d Legal Theory , 23: 143\u2013167.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Arneson, Richard, 1982. \u201cThe Principle of Fairness and\nFree-Rider Problems,\u201d Ethics , 92: 616\u201333.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bell, Nora K., 1978. \u201cNozick and the Principle of\nFairness,\u201d Social Theory and Practice , 5:\n65\u201373.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Beran, Harry, 1987. The Consent Theory of Political\nObligation , London: Croom Helm.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Besson, Samantha, 2005. The Morality of Conflict: Reasonable\nDisagreement and the Law , Oxford: Hart Publishing.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Brandt, Richard, 1964. \u201cThe Concepts of Obligation and\nDuty,\u201d Mind , 73: 374\u201393.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Carr, Craig, 2002. \u201cFairness and Political\nObligation,\u201d Social Theory and Practice , 28:\n1\u201328.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Christiano, Thomas, 2008. The Constitution of Equality:\nDemocratic Authority and Its Limits , Oxford: Oxford University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dagger, Richard, 1997. Civic Virtues: Rights, Citizenship, and\nRepublican Liberalism , New York: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2000. \u201cMembership, Fair Play, and\nPolitical Obligation,\u201d Political Studies , 48:\n104\u201317.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2000",
+            "title": "\u2013\u2013\u2013, 2000. \u201cMembership, Fair Play, and\nPolitical Obligation,\u201d Political Studies , 48:\n104\u201317."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2018. Playing Fair: Political\nObligation and the Problem of Punishment , New York: Oxford\nUniversity Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2018",
+            "title": "\u2013\u2013\u2013, 2018. Playing Fair: Political\nObligation and the Problem of Punishment , New York: Oxford\nUniversity Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "DeLue, Stephen, 1989. Political Obligation in a Liberal\nState , Albany, NY: State University of New York Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "D\u2019Entr\u00e8ves, A. P., 1939. The Medieval Contribution to\nPolitical Thought , Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Durning, Patrick, 2003. \u201cTwo Problems with Deriving a Duty\nto Obey the Law from the Principle of Fairness,\u201d Public\nAffairs Quarterly , 17: 253\u201364.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dworkin, Ronald, 1977. Taking Rights Seriously ,\nCambridge, MA: Harvard University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1986. Law\u2019s Empire , Cambridge, MA:\nHarvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1986",
+            "title": "\u2013\u2013\u2013, 1986. Law\u2019s Empire , Cambridge, MA:\nHarvard University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Edmundson, William, 1998. Three Anarchical Fallacies ,\nCambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013 (ed.), 1999. The Duty to Obey the Law:\nSelected Philosophical Readings , Lanham, MD: Rowman &\nLittlefield.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013 (ed.)"
+            ],
+            "year": "1999",
+            "title": "\u2013\u2013\u2013 (ed.), 1999. The Duty to Obey the Law:\nSelected Philosophical Readings , Lanham, MD: Rowman &\nLittlefield."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, (ed.), 2004. \u201cState of the Art: The\nDuty to Obey the Law,\u201d Legal Theory , 10:\n215\u201359.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006. \u201cThe Virtue of\nLaw-Abidance,\u201d Philosophy Imprint , 6: 1\u201321.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006. \u201cThe Virtue of\nLaw-Abidance,\u201d Philosophy Imprint , 6: 1\u201321."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Estlund, David, 2008. Democratic Authority: A Philosophical\nFramework , Princeton, NJ: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009. \u201cReply to Critics,\u201d Iyyun: The Jerusalem Philosophical Quarterly , 58:\n73\u201388.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009. \u201cReply to Critics,\u201d Iyyun: The Jerusalem Philosophical Quarterly , 58:\n73\u201388."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Flathman, Richard, 1972. Political Obligation , New York:\nAtherton Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fossen, Thomas, 2014. \u201cThe Grammar of Political\nObligation,\u201d Politics, Philosophy, and Economics , 13:\n215\u2013236.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Frye, Harrison and George Klosko, 2016. \u201cDemocratic\nAuthority and Respect for the Law,\u201d Law and Philosophy ,\n36: 1\u201323.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gans, Chaim, 1992. Philosophical Anarchism and Political\nDisobedience , Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gilbert, Margaret, 1993. \u201cGroup Membership and Political\nObligation,\u201d The Monist , 76: 119\u201331.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006. A Theory of Political\nObligation , Oxford: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006. A Theory of Political\nObligation , Oxford: Oxford University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2013. Joint Commitment: How We Make the\nSocial World , Oxford: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2013",
+            "title": "\u2013\u2013\u2013, 2013. Joint Commitment: How We Make the\nSocial World , Oxford: Oxford University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Gough, J. W., 1967. The Social Contract , 2 nd edition, Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Green, Leslie, 1988. The Authority of the State , Oxford:\nOxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1996. \u201cWho Believes in Political\nObligation?,\u201d in J. T. Sanders and J. Narveson (eds.), For\nand Against the State , Lanham, MD: Rowman and Littlefield,\npp. 301\u2013317.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1996",
+            "title": "\u2013\u2013\u2013, 1996. \u201cWho Believes in Political\nObligation?,\u201d in J. T. Sanders and J. Narveson (eds.), For\nand Against the State , Lanham, MD: Rowman and Littlefield,\npp. 301\u2013317."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Green, T. H., 1986. Lectures on the Principles of Political\nObligation and Other Writings , P. Harris and J. Morrow (eds.),\nCambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Greenawalt, Kent, 1987. Conflicts of Law and Morality ,\nOxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gregory, Lucan, 2006. \u201cRonald Dworkin, T. H. Green, and the\nCommunal Theory of Political Obligation,\u201d Social Theory and\nPractice , 32: 191\u2013212.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hardimon, Michael, 1994. \u201cRole Obligations,\u201d Journal of Philosophy , 91: 333\u201363.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hare, R. M., 1976. \u201cPolitical Obligation,\u201d in Social Ends and Political Means , T. Honderich (ed.), London:\nRoutledge & Kegan Paul, pp. 1\u201312.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Harris, Edward, 1991. \u201cFighting Philosophical Anarchism with\nFairness,\u201d Columbia Law Review , 91: 919\u201364.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Harris, Paul (ed.), 1990. On Political Obligation ,\nLondon: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hart, H. L. A., 1955. \u201cAre There Any Natural Rights?\u201d Philosophical Review , 64: 175\u201391.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1958. \u201cLegal and Moral\nObligation,\u201d in Essays in Moral Philosophy , A. I.\nMelden (ed.), Seattle: University of Washington Press, pp. 82\u2013107.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1958",
+            "title": "\u2013\u2013\u2013, 1958. \u201cLegal and Moral\nObligation,\u201d in Essays in Moral Philosophy , A. I.\nMelden (ed.), Seattle: University of Washington Press, pp. 82\u2013107."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1982. Essays on Bentham: Studies in\nJurisprudence and Political Theory , Oxford: Oxford University\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1982",
+            "title": "\u2013\u2013\u2013, 1982. Essays on Bentham: Studies in\nJurisprudence and Political Theory , Oxford: Oxford University\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1994 [1961]. The Concept of Law ,\n2 nd edition, Oxford: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1994",
+            "title": "\u2013\u2013\u2013, 1994 [1961]. The Concept of Law ,\n2 nd edition, Oxford: Oxford University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Hartogh, Govert den, 2002. Mutual Expectations: A\nConventionalist Theory of Law , The Hague: Kluwer Law\nInternational.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Higgins, Ruth C. A., 2004. The Moral Limits of Law: Obedience,\nRespect, and Legitimacy , Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hirschmann, Nancy, 1992. Rethinking Obligation: A Feminist\nMethod for Political Theory , Ithaca, NY: Cornell University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hobbes, Thomas, 1991 [1651]. Leviathan , R. Tuck (ed.),\nCambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Horton, John, 1992. Political Obligation , Basingstoke:\nMacmillan.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2010. Political Obligation ,\n2 nd edition, Basingstoke: Palgrave Macmillan.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2010",
+            "title": "\u2013\u2013\u2013, 2010. Political Obligation ,\n2 nd edition, Basingstoke: Palgrave Macmillan."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Horton, John and Ryan Gabriel Windeknecht (2014). \u201cIs There\na Distinctively Associative Account of Political Obligation?\u201d Political Studies , 63: 903\u2013918.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Huemer, Michael, 2013. The Problem of Political Authority: An\nExamination of the Right to Coerce and the Duty to Obey ,\nBasingstoke: Palgrave Macmillan.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hume, David, 1953 [1752]. \u201cOf the Original Contract,\u201d\nin David Hume\u2019s Political Essays , C. W. Hendel (ed.),\nIndianapolis: Bobbs-Merrill Co.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Jeske, Diane, 2001. \u201cSpecial Relationships and the Problem\nof Political Obligation,\u201d Social Theory and Practice ,\n27: 19\u201340.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kant, Immanuel, 1991 [1797]. The Metaphysics of Morals ,\nMary Gregor (trans.), Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Klosko, George, 1989. \u201cPolitical Obligation and\nGratitude,\u201d Philosophy and Public Affairs , 18:\n352\u201358.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2004 [1992]. The Principle of Fairness\nand Political Obligation , 2 nd edition, Lanham, MD:\nRowman & Littlefield.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2004",
+            "title": "\u2013\u2013\u2013, 2004 [1992]. The Principle of Fairness\nand Political Obligation , 2 nd edition, Lanham, MD:\nRowman & Littlefield."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2005. Political Obligations ,\nOxford: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2005",
+            "title": "\u2013\u2013\u2013, 2005. Political Obligations ,\nOxford: Oxford University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2011. \u201cAre Political Obligations\nContent Independent?,\u201d Political Theory , 39:\n498\u2013523.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2011",
+            "title": "\u2013\u2013\u2013, 2011. \u201cAre Political Obligations\nContent Independent?,\u201d Political Theory , 39:\n498\u2013523."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Knowles, Dudley, 2010. Political Obligation: A Critical\nIntroduction , London and New York: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kolodny, Niko, 2014. \u201cRule Over None II: Social Equality and\nthe Justification of Democracy,\u201d Philosophy and Public\nAffairs , 42: 287\u2013336.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lefkowitz, David, 2004. \u201cThe Nature of Fairness and\nPolitical Obligation: A Response to Carr,\u201d Social Theory and\nPractice , 30: 1\u201331.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2005a. \u201cA Contractualist Defense of\nDemocratic Authority,\u201d Ratio Juris , 18:\n346\u201364.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2005",
+            "title": "\u2013\u2013\u2013, 2005a. \u201cA Contractualist Defense of\nDemocratic Authority,\u201d Ratio Juris , 18:\n346\u201364."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2005b. \u201cLegitimate Political\nAuthority and the Duty of Those Subject to It,\u201d Law and\nPhilosophy , 23: 399\u2013435.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2005",
+            "title": "\u2013\u2013\u2013, 2005b. \u201cLegitimate Political\nAuthority and the Duty of Those Subject to It,\u201d Law and\nPhilosophy , 23: 399\u2013435."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006. \u201cThe Duty to Obey the\nLaw,\u201d Philosophy Compass , 1: 571\u201398.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006. \u201cThe Duty to Obey the\nLaw,\u201d Philosophy Compass , 1: 571\u201398."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2007. \u201cReview of Margaret Gilbert, A Theory of Political Obligation ,\u201d Notre Dame\nPhilosophical Reviews , 6 (Internet).",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2007",
+            "title": "\u2013\u2013\u2013, 2007. \u201cReview of Margaret Gilbert, A Theory of Political Obligation ,\u201d Notre Dame\nPhilosophical Reviews , 6 (Internet)."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Locke, John, 1980 [1690]. Second Treatise of Government ,\nC. B. Macpherson (ed.), Indianapolis: Hackett Publishing Co.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "MacDonald, Margaret, 1951. \u201cThe Language of Political\nTheory,\u201d in Logic and Language , 1 st series,\nA. G. N. Flew (ed.), Oxford: Basil Blackwell.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mapel, David, 2005. \u201cFairness, Political Obligation, and\nBenefits Across Borders,\u201d Polity , 37:\n425\u201342.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Markwick, Peter, 2000. \u201cLaw and Content-Independent\nReasons,\u201d Oxford Journal of Legal Studies , 20:\n579\u2013596.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "McConnell, Terrance, 1993. Gratitude , Philadelphia, PA:\nTemple University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "McDermott, Daniel, 2004. \u201cFair-Play Obligations,\u201d Political Studies , 52: 216\u201332.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "McIlwain, C. H., 1932. The Growth of Political Thought in the\nWest , New York: Macmillan.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "McPherson, Thomas, 1967. Political Obligation , London:\nRoutledge & Kegan Paul.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mokrosinska, Dorota, 2012. Rethinking Political Obligation:\nMoral Principles, Communal Ties, Citizenship , Basingstoke:\nPalgrave Macmillan.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Murphy, Mark, 1999. \u201cSurrender of Judgment and the Consent\nTheory of Political Obligation,\u201d Law and Philosophy ,\n16: 115\u201343; reprinted in Edmundson (ed.), The Duty to Obey\nthe Law , Lanham, MD: Rowman & Littlefield, 1999.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Normore, Calvin, 2010. \u201cConsent and the Principle of\nFairness\u201d, in Essays on Philosophy, Politics, and\nEconomics: Integration and Common Research Projects , C. Favor, G.\nGaus, and J. Lamond (eds.), Stanford, CA: Stanford University\nPress, pp. 225\u2013242.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Nozick, Robert, 1974. Anarchy, State, and Utopia , New\nYork: Basic Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Parekh, Bhiku, 1993. \u201cA Misconceived Discourse on Political\nObligation,\u201d Political Studies , 41: 236\u201351.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pateman, Carole, 1973. \u201cPolitical Obligation and Conceptual\nAnalysis,\u201d Political Studies , 21: 199\u2013218.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1979. The Problem of Political\nObligation , 2 nd edition, Berkeley: University of\nCalifornia Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1979",
+            "title": "\u2013\u2013\u2013, 1979. The Problem of Political\nObligation , 2 nd edition, Berkeley: University of\nCalifornia Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Perry, Stephen R., 1989. \u201cSecond-Order Reasons, Uncertainty,\nand Legal Theory,\u201d Southern California Law Review , 62:\n913\u201394.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pitkin, Hanna, 1965/66. \u201cObligation and Consent,\u201d\n\u201cPart One,\u201d American Political Science Review , 59\n(990\u201399); and \u201cPart Two,\u201d American Political\nScience Review , 60: 39\u201352.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Plamenatz, John, 1968. Consent, Freedom, and Political\nObligation , 2 nd edition, Oxford: Oxford University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Plato, The Trial and Death of Socrates , 3 rd edition, G. M. A. Grube (trans.), Indianapolis: Hackett,\n2000.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rawls, John, 1964. \u201cLegal Obligation and the Duty of Fair\nPlay,\u201d in Law and Philosophy , S. Hook (ed.), New York:\nNew York University Press, pp. 3\u201318.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1999 [1971]. A Theory of Justice ,\nCambridge, MA: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1999",
+            "title": "\u2013\u2013\u2013, 1999 [1971]. A Theory of Justice ,\nCambridge, MA: Harvard University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Raz, Joseph, 1979. The Authority of Law , Oxford: Oxford\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1986. The Morality of Freedom ,\nOxford: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1986",
+            "title": "\u2013\u2013\u2013, 1986. The Morality of Freedom ,\nOxford: Oxford University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1999. \u201cThe Obligation to Obey:\nRevision and Tradition,\u201d Notre Dame Journal of Law, Ethics,\nand Public Policy , 1 (1984): 139\u201355; reprinted in Edmundson\n(ed.) The Duty to Obey the Law .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1999",
+            "title": "\u2013\u2013\u2013, 1999. \u201cThe Obligation to Obey:\nRevision and Tradition,\u201d Notre Dame Journal of Law, Ethics,\nand Public Policy , 1 (1984): 139\u201355; reprinted in Edmundson\n(ed.) The Duty to Obey the Law ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006. \u201cThe Problem of Authority:\nRevisiting the Service Conception,\u201d Minnesota Law\nReview , 90: 1003\u20131044.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006. \u201cThe Problem of Authority:\nRevisiting the Service Conception,\u201d Minnesota Law\nReview , 90: 1003\u20131044."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Renzo, Massimo, 2012. \u201cAssociative Responsibilities and\nPolitical Obligations,\u201d Philosophical Quarterly , 62:\n106\u201327.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ripstein, Arthur, 2009. Force and Freedom: Kant\u2019s Legal\nand Political Philosophy , Cambridge, MA: Harvard University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sanders, John T. and Jan Narveson (eds.), 1996. For and\nAgainst the State: New Essays , Lanham, MD: Rowman &\nLittlefield.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sartorius, Rolf, 1975. Individual Conduct and Social\nNorms , Belmont, CA: Dickenson.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1981. \u201cPolitical Authority and\nPolitical Obligation,\u201d Virginia Law Review , 67 (1981);\nreprinted in Edmundson (ed.), The Duty to Obey the Law .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1981",
+            "title": "\u2013\u2013\u2013, 1981. \u201cPolitical Authority and\nPolitical Obligation,\u201d Virginia Law Review , 67 (1981);\nreprinted in Edmundson (ed.), The Duty to Obey the Law ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Scheffler, Samuel, 2001. Boundaries and Allegiances: Problems\nof Justice and Responsibility in Liberal Thought , Oxford: Oxford\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2018. \u201cMembership and Political\nObligation,\u201d Journal of Political Philosophy , 26:\n3\u201323.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2018",
+            "title": "\u2013\u2013\u2013, 2018. \u201cMembership and Political\nObligation,\u201d Journal of Political Philosophy , 26:\n3\u201323."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Sciaraffa, Stefan, 2009. \u201cOn Content-Independent Reasons:\nIt\u2019s Not in the Name,\u201d Law and Philosophy , 28:\n233\u2013260.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Senor, Thomas, 1987. \u201cWhat If There Are No Political\nObligations?\u201d Philosophy and Public Affairs , 16:\n260\u201368.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Simmons, A. John, 1979. Moral Principles and Political\nObligations , Princeton, NJ: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1987. \u201cThe Anarchist Position: A\nReply to Klosko and Senor,\u201d Philosophy and Public\nAffairs , 16: 269\u201379.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1987",
+            "title": "\u2013\u2013\u2013, 1987. \u201cThe Anarchist Position: A\nReply to Klosko and Senor,\u201d Philosophy and Public\nAffairs , 16: 269\u201379."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2001. Justification and Legitimacy:\nEssays on Rights and Obligations , Cambridge: Cambridge University\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2001",
+            "title": "\u2013\u2013\u2013, 2001. Justification and Legitimacy:\nEssays on Rights and Obligations , Cambridge: Cambridge University\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2005. \u201cThe Duty to Obey and Our\nNatural Moral Duties,\u201d in C. H. Wellman and A. J. Simmons, Is There a Duty to Obey the Law? Cambridge: Cambridge\nUniversity Press, pp. 91\u20132.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2005",
+            "title": "\u2013\u2013\u2013, 2005. \u201cThe Duty to Obey and Our\nNatural Moral Duties,\u201d in C. H. Wellman and A. J. Simmons, Is There a Duty to Obey the Law? Cambridge: Cambridge\nUniversity Press, pp. 91\u20132."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2007. \u201cThe Particularity\nProblem,\u201d APA Newsletter on Philosophy and Law , 7:\n18\u201327.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2007",
+            "title": "\u2013\u2013\u2013, 2007. \u201cThe Particularity\nProblem,\u201d APA Newsletter on Philosophy and Law , 7:\n18\u201327."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2013. \u201cDemocratic Authority and the\nBoundary Problem,\u201d Ratio Juris , 26: 326\u201357.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2013",
+            "title": "\u2013\u2013\u2013, 2013. \u201cDemocratic Authority and the\nBoundary Problem,\u201d Ratio Juris , 26: 326\u201357."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Skinner, Quentin, 1978. Foundations of Modern Political\nThought , 2 vols. Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Smith, M. B. E., 1973. \u201cIs There a Prima Facie Obligation to\nObey the Law?\u201d Yale Law Journal , 82: 950\u201376;\nreprinted in W. A. Edmundson (ed.), The Duty to Obey the\nLaw .",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Smith, Matthew Noah, 2013. \u201cPolitical Obligation and the\nSelf,\u201d Philosophy and Phenomenological Research , 86:\n347\u201375.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Soper, Philip, 2002. The Ethics of Deference: Learning from\nLaw\u2019s Morals , Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sreenivasan, Gopal, 2009. \u201cOh But You Should Have: Estlund\non Normative Consent,\u201d Iyyun: The Jerusalem Philosophical\nQuarterly , 58: 62\u201372.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Steinberger, Peter, 2004. The Idea of the State ,\nCambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Stilz, Anna, 2009. Liberal Loyalty: Freedom, Obligation, and\nthe State , Princeton, NJ: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2013. \u201cWhy Does the State Matter\nMorally? Political Obligation and Particularity,\u201d in Varieties of Sovereignty and Citizenship , S. R. Ben-Porath\nand R. M. Smith (eds.), Philadelphia, PA: University of Pennsylvania\nPress, pp.244\u2013264.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2013",
+            "title": "\u2013\u2013\u2013, 2013. \u201cWhy Does the State Matter\nMorally? Political Obligation and Particularity,\u201d in Varieties of Sovereignty and Citizenship , S. R. Ben-Porath\nand R. M. Smith (eds.), Philadelphia, PA: University of Pennsylvania\nPress, pp.244\u2013264."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Tamir, Yael, 1993. Liberal Nationalism , Princeton, NJ:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tosi, Justin, 2017. \u201cPlaying Fair and Following the\nRules,\u201d Journal of Moral Philosophy , 14:\n134\u2013141.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Valentini, Laura, 2018. \u201cThe Content-Independence of\nPolitical Obligation: What It Is and How To Test It,\u201d Legal\nTheory , 24: 135\u2013157.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Viehoff, Daniel, 2014. \u201cDemocratic Equality and Political\nAuthority,\u201d Philosophy and Public Affairs , 42:\n337\u2013375.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2019. \u201cPower and Equality,\u201d in\nDavid Sobel, Peter Vallentyne, and Steven Wall (eds.), Oxford\nStudies in Political Philosophy (Volume 5), Oxford: Oxford\nUniversity Press, pp. 3\u201338.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2019",
+            "title": "\u2013\u2013\u2013, 2019. \u201cPower and Equality,\u201d in\nDavid Sobel, Peter Vallentyne, and Steven Wall (eds.), Oxford\nStudies in Political Philosophy (Volume 5), Oxford: Oxford\nUniversity Press, pp. 3\u201338."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Vossen, Bas van der, 2011. \u201cAssociative Political\nObligations\u201d and \u201cAssociative Political Obligations: Their\nPotential,\u201d Philosophy Compass , 6/7: 477\u201387 and\n488\u201396.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Waldron, Jeremy, 1993. \u201cSpecial Ties and Natural\nDuties,\u201d Philosophy and Public Affairs , 22: 3\u201330;\nreprinted in Edmundson (ed.), The Duty to Obey the\nLaw .",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1996. \u201cKant\u2019s Legal\nPositivism,\u201d Harvard Law Review , 109:\n1535\u201366.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1996",
+            "title": "\u2013\u2013\u2013, 1996. \u201cKant\u2019s Legal\nPositivism,\u201d Harvard Law Review , 109:\n1535\u201366."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1999. Law and Disagreement ,\nOxford: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1999",
+            "title": "\u2013\u2013\u2013, 1999. Law and Disagreement ,\nOxford: Oxford University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Walker, A. D. M., 1988. \u201cPolitical Obligation and the\nArgument from Gratitude,\u201d Philosophy and Public\nAffairs , 17: 191\u2013211.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1989. \u201cObligations of Gratitude and\nPolitical Obligation,\u201d Philosophy and Public Affairs ,\n18: 359\u201364.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1989",
+            "title": "\u2013\u2013\u2013, 1989. \u201cObligations of Gratitude and\nPolitical Obligation,\u201d Philosophy and Public Affairs ,\n18: 359\u201364."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Walton, Kevin, 2013. \u201cThe Particularities of Legitimacy:\nJohn Simmons on Political Obligation,\u201d Ratio Juris , 26:\n1\u201315.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wellman, Christopher Heath, 1997. \u201cAssociative Allegiances\nand Political Obligations,\u201d Social Theory and Practice ,\n23: 181\u2013204.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2005. \u201cSamaritanism and the Duty to\nObey the Law,\u201d in C. H. Wellman and A. J. Simmons, Is There\na Duty to Obey the Law? Cambridge: Cambridge University\nPress, pp. 1\u20132.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2005",
+            "title": "\u2013\u2013\u2013, 2005. \u201cSamaritanism and the Duty to\nObey the Law,\u201d in C. H. Wellman and A. J. Simmons, Is There\na Duty to Obey the Law? Cambridge: Cambridge University\nPress, pp. 1\u20132."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2014. Liberal Rights and\nResponsibilities: Essays on Citizenship and Sovereignty , Oxford:\nOxford University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2014",
+            "title": "\u2013\u2013\u2013, 2014. Liberal Rights and\nResponsibilities: Essays on Citizenship and Sovereignty , Oxford:\nOxford University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Wolff, Jonathan, 1995. \u201cPolitical Obligation, Fairness and\nIndependence,\u201d Ratio (New Series), 8: 87\u201399.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1996. \u201cAnarchism and\nSkepticism,\u201d in J. T. Sanders and J. Narveson (eds.), For\nand Against the State, Lanham, MD: Rowman & Littlefield,\npp. 348\u2013360.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1996",
+            "title": "\u2013\u2013\u2013, 1996. \u201cAnarchism and\nSkepticism,\u201d in J. T. Sanders and J. Narveson (eds.), For\nand Against the State, Lanham, MD: Rowman & Littlefield,\npp. 348\u2013360."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2000. \u201cPolitical Obligation: A\nPluralistic Approach,\u201d in Pluralism: The Philosophy and\nPolitics of Diversity , M. Baghamrian and A. Ingram (eds.),\nLondon: Routledge, pp.179 \u201396.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2000",
+            "title": "\u2013\u2013\u2013, 2000. \u201cPolitical Obligation: A\nPluralistic Approach,\u201d in Pluralism: The Philosophy and\nPolitics of Diversity , M. Baghamrian and A. Ingram (eds.),\nLondon: Routledge, pp.179 \u201396."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Wolff, Robert Paul, 1998 [1970]. In Defense of Anarchism ,\n3 rd edition, Berkeley: University of California Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Zhu, Jiafeng, 2014. \u201cFairness, Political Obligation, and the\nJustificatory Gap,\u201d Journal of Moral Philosophy , 4:\n1\u201323.",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ],
+      "sections": {
+        "1": {
+          "id": "1",
+          "title": "5 Kant on Legitimacy and Obligation",
+          "content": "In contrast to utilitarianism, the practical philosophy of the\neighteenth-century German philosopher Immanuel Kant plays a major part\nin contemporary debates about political obligation. The proper\ndirection of his influence, however, is not altogether settled. On the\none hand, a leading \u201cphilosophical anarchist,\u201d Robert Paul\nWolff, claims Kantian inspiration for his a priori rejection of the\npossibility of political obligation (see \u00a73.1, below); on the\nother hand, important exponents of the \u201cnatural duty\u201d\napproach to the obligation to obey the law also claim to derive their\narguments from Kant (see \u00a74.4, below). Kant may bear some\nresponsibility for fostering these divergent responses, but it is safe\nto say that he himself was no anarchist, not even of the\n\u201cphilosophical\u201d sort. Indeed, he seems to insist on an\nunqualified obligation to obey the law that goes well beyond what any\npolitical philosopher nowadays will countenance. Kant\u2019s theory employs the same basic concepts as Hobbes\u2019s\nand Locke\u2019s \u2013 natural (or innate) rights, the state of\nnature, and the social contract \u2013 but he puts them to different\nuse. In contrast to Hobbes, Kant looks upon the coercive force of the\nlaw not as a limitation on freedom but as the means of securing and\nextending it. In the state of nature, as he conceives of it,\nindividuals may enjoy \u201cwild, lawless freedom,\u201d but the\nthreats and constraints imposed by others prevent them from freely\nacting on their choices (1991 [1797], p. 127). Justified coercion\nunder law provides a remedy by impeding those who would interfere with\none\u2019s actions, thereby hindering the hindrances to freedom\n(Ripstein 2009, pp. 54\u201355 et passim ). Moreover, unlike\nLocke\u2019s justification of the social contract as the way to\nsecure one\u2019s property and escape the\n\u201cinconveniencies\u201d of the state of nature, Kant takes the\n\u201ccivil condition\u201d produced by the social contract to be\nthe foundation that property rights and justice in general presuppose.\nThe social contract is thus not a matter of collective consent but a\nmoral imperative: \u201cWhen you cannot avoid living side by side\nwith all others, you ought to leave the state of nature and proceed\nwith them into a rightful condition, that is, a condition of\ndistributive justice\u201d (1991, pp. 121\u201322). \u201cProperly\nspeaking,\u201d Kant declares, the original contract is not an\nexpression of consent to be governed; it is \u201cthe Idea of this\nact, in terms of which alone we can think of the legitimacy of a\nstate\u201d (1991, p. 127). The upshot, as noted above, is that everyone seems to have an absolute\nobligation to obey the laws of whoever is in authority; for even if\nthe ruler \u201cproceeds contrary to law \u2026 subjects may indeed\noppose this injustice by complaints \u2026 but not by\nresistance\u201d (1991, p. 130, emphasis in original; also pp.\n176\u201377). Kant\u2019s comments on this point are not\nunqualified, though. Among other things, he states that \u201cthe spirit of the original contract \u2026 involves an\nobligation on the part of the constituting authority to make the kind of government suited to the Idea of the original\ncontract\u201d; and he immediately adds that \u201cthe only\nconstitution that accords with right\u201d is \u201cthat of a pure\nrepublic\u201d \u2013 that is, \u201cthe constitution in which law itself rules and depends on no particular person\u201d\n(1991, p. 148, emphasis in original; for further discussion, see\nRipstein 2009, chap. 11). In any case, it is not so much Kant\u2019s\nconclusions as the foundations of his theory that have proved so\nimportant to contemporary discussions of political obligation."
+        }
+      }
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

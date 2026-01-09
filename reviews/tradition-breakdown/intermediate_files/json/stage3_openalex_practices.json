@@ -1,0 +1,1218 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "tradition ontology social practices",
+  "results": [
+    {
+      "openalex_id": "W2101234667",
+      "doi": "10.4324/9780203090732",
+      "title": "A Realist Theory of Science",
+      "authors": [
+        {
+          "name": "Roy Bhaskar",
+          "openalex_id": "A5108339551"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-28",
+      "abstract": "Now acknowledged as a classic in the philosophy of science, A Realist Theory of Science is one of the very few books which has transformed, not only our understanding of science, but that of the nature of the world it studies. Since its original publication in 1975, this book has inspired the multi-disciplinary and international movement of thought known as 'critical realism'; and its ideas have been influential across the whole spectrum of the sciences, arts and humanities and in a diverse array of social practices and professions. In this book, Roy Bhaskar sets out to revindicate ontology, critiquing the reduction of being in favor of knowledge, which he calls the epistemic fallacy. Employing a transcendental argument from the nature of experimental activity, he establishes a critique of the dominant positivist and neo-Kantian traditions in the philosophy of science, developing a new ontology in which concepts of structure, difference and change come to the fore. Then, analyzing the nature of scientific discovery and development, he shows how, against both the empiricist and rationalist traditions, science can come to have a posteriori knowledge of natural necessity. The resultant position, which the author characterizes as transcendental realism, has the power to resolve many traditional philosophical problems, such as the problem of induction. At the same time it lays the basis for radically new accounts of social science, ethics and the project of human emancipation.",
+      "cited_by_count": 3950,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory",
+        "Philosophy and History of Science",
+        "Mental Health and Psychiatry"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W2101234667"
+    },
+    {
+      "openalex_id": "W635733827",
+      "doi": "10.4135/9781452224800",
+      "title": "Qualitative Methods for Family Studies &amp; Human Development",
+      "authors": [],
+      "publication_year": 2007,
+      "publication_date": "2007-01-01",
+      "abstract": "Chapter 1: Qualitative Research and the Art of Learning to See Learning to See The Paradox of Learning to See Paradox of Control and our Ability to See Lessons From the Art World: Positioning Ourselves to See Fully Drawing Informs Research: The Cultivation of Perceptual Skills Chapter 2: Epistemological Considerations in Qualitative Research Epistemology Paradigms Epistemology and Paradigms: Implications for Doing Qualitative Research Chapter 3: Paths of Inquiry for Qualitative Research Deduction Induction Abduction Induction, Deduction and Abduction in Practice: Cycles of Inquiry Chapter 4: Ontology of the Human Realm: Theoretical Foundations for Qualitative Inquiry Ontology and the Nature of Human Reality Ontological Assumptions About Human Development Ontological Assumptions About Families Ontology Shapes Inquiry Chapter 5: Methodology: How Theory Shapes Inquiry Ethnography and the Study of Culture Phenomenology: The Study of Conscious Experience Grounded Theory Methodology Narrative Inquiry: The Study of Story Critical Approaches: The Tradition of Feminist Inquiry and the Example of Participatory Action Research Chapter 6: Methods of Data Collection and Creation Observation Interviews Focus Groups Chapter 7: Research design: Constructing a Research Proposal What Kind of Chef Are You? Level I: Philosophical and Methodological Positioning Level II: Developing a Research Proposal Overview of the Research Plan: Practical Considerations Chapter 8: Positioning the Self: Role Considerations and the Practices of Reflexivity Dimensions of Reflexive Practice Why Do We Do Reflexivity? Reflexivity in Family Research Reflexivity and Social Positioning Balancing Vulnerability and Researcher Presence Chapter 9: Analytical Strategies What is Analysis in Qualitative Research? Analysis for What? Transcription as Part of Analysis Analytic Approaches in Various Methodologies The Diamond Approach: A Theory Development Model for Qualitative Data Analysis Chapter 10: Integrity Practices: Ethics, Credibility and Politics of Conducting Qualitative Research Ethical Guidelines Informed Consent Protecting Participants Through Confidentiality and Anonymity Accountability Credibility issues Conclusion",
+      "cited_by_count": 446,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Qualitative Research Methods and Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W635733827"
+    },
+    {
+      "openalex_id": "W2896780486",
+      "doi": "10.4324/9780203131923-5",
+      "title": "A critique of the neglected epistemological assumptions of educational research",
+      "authors": [
+        {
+          "name": "Robin Usher",
+          "openalex_id": "A5079130978"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-08-26",
+      "abstract": "The focus of this chapter is a critical exploration of the philosophical underpinnings of research, specifically theepistemological and ontological assumptions that underliedifferent research traditions \u2013 assumptions which have tended in the main to be largely unexamined in relation to the research process. It will be argued that it is the failure to examine these assumptions which leads to research normally being understood as a 'technology', as simply a set of methods, skills and procedures applied to a defined research problem. The quote from Maturana above alerts us to the fact that 'science takes place within the context of human coexistence' and I take this to mean that science (i.e. research) is a social practice, and that therefore what it says and what it does is significantly located within that context.",
+      "cited_by_count": 246,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2896780486"
+    },
+    {
+      "openalex_id": "W1575998554",
+      "doi": "10.1111/j.1468-4446.2008.00203.x",
+      "title": "Searching for realism, structure and agency in Actor Network Theory<sup>1</sup>",
+      "authors": [
+        {
+          "name": "Dave Elder\u2010Vass",
+          "openalex_id": "A5041941781",
+          "orcid": "https://orcid.org/0000-0002-0789-660X",
+          "institutions": [
+            "University of Essex"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-08-22",
+      "abstract": "Abstract Superficially, Actor Network Theory (ANT) and critical realism (CR) are radically opposed research traditions. Written from a realist perspective, this paper asks whether there might be a basis for finding common ground between these two traditions. It looks in turn at the questions of realism, structure, and agency, analysing the differences between the two perspectives and seeking to identify what each might learn from the other. Overall, the paper argues that there is a great deal that realists can learn from actor network theory; yet ANT remains stunted by its lack of a depth ontology. It fails to recognize the significance of mechanisms, and of their dependence on emergence, and thus lacks both dimensions of the depth that is characteristic of critical realism's ontology. This prevents ANT from recognizing the role and powers of social structure; but on the other hand, realists would do well to heed ANT's call for us to trace the connections through which structures are constantly made and remade. A lack of ontological depth also underpins ANT's practice of treating human and non\u2010human actors symmetrically, yet this remains a valuable provocation to sociologists who neglect non\u2010human entities entirely.",
+      "cited_by_count": 168,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "0007-1315",
+          "1468-4446"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dspace.lboro.ac.uk/2134/13269"
+      },
+      "topics": [
+        "Critical Realism in Sociology",
+        "Management and Organizational Studies",
+        "Political and Economic history of UK and US"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W1575998554"
+    },
+    {
+      "openalex_id": "W2041076536",
+      "doi": "10.1016/j.indmarman.2013.02.003",
+      "title": "Constructivism and critical realism as alternative approaches to the study of business networks: Convergences and divergences in theory and in research practice",
+      "authors": [
+        {
+          "name": "Linda D. Peters",
+          "openalex_id": "A5068013128",
+          "orcid": "https://orcid.org/0000-0003-4554-4960",
+          "institutions": [
+            "University of Nottingham"
+          ]
+        },
+        {
+          "name": "Andrew D. Pressey",
+          "openalex_id": "A5018429136",
+          "orcid": "https://orcid.org/0000-0003-1738-6352",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Markus Vanharanta",
+          "openalex_id": "A5007840596"
+        },
+        {
+          "name": "Wesley J. Johnston",
+          "openalex_id": "A5067083720",
+          "institutions": [
+            "Georgia State University"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-02-22",
+      "abstract": null,
+      "cited_by_count": 91,
+      "type": "article",
+      "source": {
+        "name": "Industrial Marketing Management",
+        "type": "journal",
+        "issn": [
+          "0019-8501",
+          "1873-2062"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Innovation and Knowledge Management",
+        "Business Strategy and Innovation"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W2041076536"
+    },
+    {
+      "openalex_id": "W2066630757",
+      "doi": "10.1080/13562510903186618",
+      "title": "The development of agency in first generation learners in higher education: a social realist analysis",
+      "authors": [
+        {
+          "name": "Kathy Luckett",
+          "openalex_id": "A5079743791",
+          "orcid": "https://orcid.org/0000-0002-3544-4221",
+          "institutions": [
+            "University of Cape Town"
+          ]
+        },
+        {
+          "name": "Thembi Luckett",
+          "openalex_id": "A5021564973",
+          "orcid": "https://orcid.org/0000-0002-2361-7893",
+          "institutions": [
+            "University of Cape Town"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-09-08",
+      "abstract": "This paper reports on the findings of a formative evaluation of the mentorship support programme run by the Maskh'iSizwe Centre of Excellence for recipients of its bursaries. Learning theory traditions have typically been divided into those that prioritise individual cognition versus those that prioritise the context in which learning occurs. In both these traditions, the individual agent is dissolved. This paper interrogates the ontological assumptions held by dominant learning theories regarding relations between individual and society that neglect agency in the learning process. Archer's social realist ontology offers a way forward by reinstating the full properties and powers of learners as agents. Archer's social theory supports theories of learning that emphasise ontology and practice, as well as epistemology. It is therefore suggested that support programmes for undergraduate financially disadvantaged learners ensure that they first develop a sense of personal identity and social agency as a pre-condition for succeeding academically and developing a professional identity.",
+      "cited_by_count": 76,
+      "type": "article",
+      "source": {
+        "name": "Teaching in Higher Education",
+        "type": "journal",
+        "issn": [
+          "1356-2517",
+          "1470-1294"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Realism in Sociology",
+        "Innovative Education and Learning Practices",
+        "Educational Theory and Curriculum Studies"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2066630757"
+    },
+    {
+      "openalex_id": "W2092511960",
+      "doi": "10.1080/00131857.2014.976928",
+      "title": "Practice Theory: Viewing leadership as leading",
+      "authors": [
+        {
+          "name": "Jane Wilkinson",
+          "openalex_id": "A5090166226",
+          "orcid": "https://orcid.org/0000-0002-0727-0025",
+          "institutions": [
+            "Griffith University"
+          ]
+        },
+        {
+          "name": "Stephen Kemmis",
+          "openalex_id": "A5002348069",
+          "orcid": "https://orcid.org/0000-0003-2252-8511",
+          "institutions": [
+            "Charles Sturt University"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-11-07",
+      "abstract": "Inspired by Theodore Schatzki's 'societist' approach-in which he advocates a notion of 'site ontologies'-in this article, we outline our theory of practice architectures (a theory about what practices are composed of) and ecologies of practices (how practices relate to one another). Drawing on case studies of four Australian primary schools, we examine how practices of leading relate to other educational practices: professional learning, teaching, student learning, and researching and reflecting. We find 'leading' not only in the work of principals and other formal leadership positions, but also in the activities of teachers and students. We show that changing leading practices requires changing more than the professional practice knowledge of individuals; it also requires changing the practice architectures (cultural-discursive, material-economic and social-political arrangements) in sites where leading and its interconnected practices are conducted. In order to study practices of leading, we adopt a philosophical-empirical enquiry approach, i.e. we conduct our research as a conversation between practice philosophy and theory and the empirical cases of leading we study. We study practices in the mode of research within practice traditions, sometimes described as 'practical philosophy', as a contribution to the self-reflective transformation of the practices we are studying.",
+      "cited_by_count": 133,
+      "type": "article",
+      "source": {
+        "name": "Educational Philosophy and Theory",
+        "type": "journal",
+        "issn": [
+          "0013-1857",
+          "1469-5812"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Organizational Learning and Leadership",
+        "Competency Development and Evaluation"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2092511960"
+    },
+    {
+      "openalex_id": "W2030778546",
+      "doi": "10.1111/1467-8330.00146",
+      "title": "No Net Loss: Wetland Restoration and the Incomplete Capitalization of Nature",
+      "authors": [
+        {
+          "name": "Morgan Robertson",
+          "openalex_id": "A5066725515",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-10-01",
+      "abstract": "The practice of restoration ecology (the creation and restoration of ecosystems)has important implications for theorizing nature in the traditions of O'Connor's\u2018capitalized nature,\u2019 Haraway's hybrid socionatures, and other recent work in poststructural approaches to political ecology. The prominent US environmental discourse of \u2018no net loss of wetlands\u2019 has spurred the rapid expansion of restoration practices, which promise to open a new frontier in the commodification and capitalization of nature. Through wetland mitigation and banking, restoration science is representing entire ecosystems as abstract, mobile, and fungible entities; however, a simple reading of a restored landscape as fully capitalized is unsatisfactory. Close attention to the wetland commodification process reveals two important points: 1) the commodification and capitalization of nature is never automatic; rather, the crucial steps of abstraction and valuation are composed of negotiations between and within differentiated segments of the state and civil society, in which there are many spaces for resistance; and 2) the materiality of restoration sites provided important challenges to the commodification process, which are not contemplated within critical approaches to nature as currently constituted. The transformation of restoration sites into sites of commodity provision is incomplete at best. A major challenge for poststructural political ecology will be to specify ecological phenomena and their important role in the social construction of material environments, without falling into an ontological commitment to the primacy of ecological data.",
+      "cited_by_count": 184,
+      "type": "article",
+      "source": {
+        "name": "Antipode",
+        "type": "journal",
+        "issn": [
+          "0066-4812",
+          "1467-8330"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8330.00146"
+      },
+      "topics": [
+        "Environmental Philosophy and Ethics",
+        "Conservation, Biodiversity, and Resource Management",
+        "American Environmental and Regional History"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W2030778546"
+    },
+    {
+      "openalex_id": "W1985251539",
+      "doi": "10.14318/hau2.1.010",
+      "title": "Beinghood and people-making in native Amazonia",
+      "authors": [
+        {
+          "name": "Fernando Santos\u2010Granero",
+          "openalex_id": "A5011319134",
+          "orcid": "https://orcid.org/0000-0002-5049-8439",
+          "institutions": [
+            "Smithsonian Tropical Research Institute"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-01",
+      "abstract": "This article examines Yanesha notions of beinghood and people-making practices from a constructional standpoint. By focusing on the composition of persons/bodies as a phenomenological process rather than on the nature of the processes by which persons/bodies are socially fabricated, it seeks to reveal the extent to which Yanesha conceptions of personhood differ from those in the Western tradition. Shaped by the works of St. Thomas Aquinas, this tradition conceives of persons as individual, singular, and self-contained beings, both ontologically complete and incommunicable. In contrast, Yanesha regard persons as composites, resulting from the creational, generative, and socializing contributions of a variety of human and nonhuman entities and, therefore, as possessing compound anatomies and subjectivities. The article discusses the contrasts between constructional and perspectival understandings of beinghood, body, and subjectivity in native Amazonia. It proposes that, rather than conflicting theoretical models, these approaches are an artifact of focusing on different levels of social interaction. In other words, they are the result of diverging points of view. This, however, suggests that the richness of Amazonianist theory lies precisely in it being une th\u00e9orie fait de reggards.",
+      "cited_by_count": 98,
+      "type": "article",
+      "source": {
+        "name": "Hau Journal of Ethnographic Theory",
+        "type": "journal",
+        "issn": [
+          "2049-1115",
+          "2575-1433"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anthropological Studies and Insights",
+        "Geographies of human-animal interactions",
+        "Emile Durkheim and Sociology"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W1985251539"
+    },
+    {
+      "openalex_id": "W1988804405",
+      "doi": "10.1080/00438240701679643",
+      "title": "Keeping things at arm's length: a genealogy of asymmetry",
+      "authors": [
+        {
+          "name": "Bj\u00f8rnar Olsen",
+          "openalex_id": "A5108758926"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-11-21",
+      "abstract": "Abstract This paper discusses why things have become marginalized in the social sciences and addresses some major intellectual traditions considered the main suspects for this deportation. It also explores what is claimed to be a crucial link between those very philosophies and central approaches in recent material culture studies. The paradoxical outcome of this effective history is that the ontology responsible for the displacement of things also to a large extent grounds the programs of repatriation. Keywords: Thingsphenomenologyontologyembodimentanthropologysymmetrical archaeology Acknowledgement I thank Elin Svenneby, Tim Webmoor and Chris Witmore for their comments on earlier drafts of this paper. Notes 1 Miller uses this term very liberally and Bruno Latour seems to be a key representative of this category of abstracted thinkers despite his numerous works on scientific practice.",
+      "cited_by_count": 109,
+      "type": "article",
+      "source": {
+        "name": "World Archaeology",
+        "type": "journal",
+        "issn": [
+          "0043-8243",
+          "1470-1375"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Geographies of human-animal interactions",
+        "Anthropological Studies and Insights",
+        "Historical and Cultural Archaeology Studies"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W1988804405"
+    },
+    {
+      "openalex_id": "W2083823098",
+      "doi": "10.1111/j.1468-4446.2009.01245.x",
+      "title": "Morphogenesis versus structuration: on combining structure and action<sup>1</sup>",
+      "authors": [
+        {
+          "name": "Margaret S. Archer",
+          "openalex_id": "A5071393759",
+          "orcid": "https://orcid.org/0000-0002-4632-775X",
+          "institutions": [
+            "University of Warwick"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "The fundamental problem of linking human agency and social structure stalks through the history of sociological theory. Basically it concerns how to develop an adequate theoretical account which deals simultaneously with men constituting society and the social formation of human agents. For any theorist, except the holist, social structure is ultimately a human product, but for any theorist, except advocates of psychologism, this product in turn shapes individuals and influences their interaction. However successive theoretical developments have tilted either towards structure or towards action, a slippage which has gathered in momentum over time. Initially this meant that one element became dominant and the other subordinate: human agency had become pale and ghostly in mid-century functionalism, whilst structure betook an evanescent fragility in the re-flowering of phenomenology. Eventually certain schools of thought repressed the second element almost completely. On the one hand structuralist Marxism and normative functionalism virtually snuffed-out agency \u2013 the acting subject became increasingly lifeless whilst the structural or cultural components enjoyed a life of their own, self-propelling or self-maintaining. On the other hand interpretative sociology busily banished the structural to the realm of objectification and facticity \u2013 human agency became sovereign whilst social structure was reduced to supine plasticity because of its constructed nature. Although proponents of these divergent views were extremely vociferous, they were also extensively criticized and precisely on the grounds that both structure and action were indispensable in sociological explanation.2 Moreover serious efforts to re-address the problem and to re-unite structure and action had already begun from inside \u2018the two Sociologies\u2019 (Dawe 1970), when they were characterized in this manichean way. These attempts emerged after the early sixties from \u2018general\u2019 functionalists (e.g. Blau 1964; Gouldner 1976; Buckley 1967; Etzioni 1968; Eisenstadt and Curelaru 1977), \u2018humanistic\u2019 marxists (e.g. Lockwood 1964; Pizzorno 1968; Touraine 1968; Wellmer 1971; Habermas 1971 and 1972; Anderson 1976) and from interactionists confronting the existence of strongly patterned conduct (e.g. Goffman 1964; Sacks, Schegloff and Jefferson 1974). Furthermore they were joined in the same decade by a bold attempt to undercut the problem by disclosing \u2018hidden structures\u2019 which simultaneously governed overt structural organization and observable action patterns (L\u00e9vi-Strauss 1963; Sebag 1964; Piaget 1968. See also Boudon 1968; Glucksman 1974; Bottomore and Nisbet 1979). Building on these bases in a very eclectic manner, two new perspectives have since begun to mature which directly tackle the relationship between structure and action and seek to unite them. One is the \u2018morphogenetic approach\u2019,3 advanced within general systems theory, whose best known exponent is Walter Buckley (Buckley 1967, 1968. See also Maruyama 1963). Its sociological roots go back to the three kinds of theoretical revisionism mentioned in the last paragraph, but the other part of its pedigree is cybernetics. The second perspective is \u2018structuration\u2019, recently spelt-out by Anthony Giddens. Whilst integrating some of the same revisionist material, this approach leans much more heavily on the newer linguistic structuralism, semiotic studies and hermeneutics. Both the \u2018morphogenetic\u2019 and \u2018structuration\u2019 approaches concur that \u2018action\u2019 and \u2018structure\u2019 presuppose one another: structural patterning is inextricably grounded in practical interaction. Simultaneously both acknowledge that social practice is ineluctably shaped by the unacknowledged conditions of action and generates unintended consequences which form the context of subsequent interaction. The two perspectives thus endorse the credo that the \u2018escape of human history from human intentions, and the return of the consequences of that escape as causal influences upon human action, is a chronic feature of social life\u2019 (Giddens 1979: 7). Where they differ profoundly is in how they conceptualize it, and how, on that basis, they theorize about the structuring (and re-structuring) of social systems. In dealing with \u2018structuration\u2019 this paper concentrates exclusively upon Anthony Giddens's book Central Problems in Social Theory: Action, Structure and Contradiction in Social Analysis (1979), since its density and range require close textual attention. Giddens's whole approach hinges on overcoming three dichotomies and it is these dualisms which he strips away from a variety of sources, then recombining their residues: First he insists on an account of human agency which is intrinsically related to the subject acting in society, thus seeking to transcend the dualism between voluntarism and determinism. Hence both deterministic attempts to get behind the \u2018backs of actors\u2019 (as in organic functionalism and orthodox Marxism) and the excessive voluntarism which neglects the structural context (as in contemporary action theories) are equally condemned. Second he seeks to mediate the dichotomy between subject and object by assigning a prime role to the knowledgeability of actors in producing and reproducing their society, whilst acknowledging that they necessarily employ societal properties in the process. Thus structuralism and functionalism are criticized for subordinating the individual to society and Giddens aims to transcend the subject/object dualism by elaborating on common elements in the work of Marx and the later Wittgenstein which construe the generation of society as the outcome of praxis. Finally he rejects any theory which represses time by separating statics from dynamics and analysing the two separately. For to Giddens, any theory embodying the interdependence of structure and action is predicated upon grasping the temporal and spatial locations which are inherent in the constitution of all social interaction. Thus the division between synchrony and diachrony must also be transcended in order to capture the temporal release of unintended consequences and their subsequent influence on later action. Because of this rejection of the three dichotomies, \u2018structuration\u2019 is quintessentially concerned with duality not dualism, with amalgamating the two sides of each divide. This is to be achieved through the central notion of the \u2018duality of structure\u2019 which refers to \u2018the essential recursiveness of social life, as constituted in social practices: structure is both medium and outcome of the reproduction of practices. Structure enters simultaneously into the constitution of the agent and social practices, and \u201cexists\u201d in the generating moments of this constitution\u2019 (Giddens 1979: 5). This involves an image of society as a continuous flow of conduct (not a series of acts) which changes or maintains a potentially malleable social world. In turn it obviously proscribes any discontinuous conceptualization of structure and action \u2013 the intimacy of their mutual constitution defies it. \u2018Structuration\u2019 is predicated upon the \u2018duality of structure\u2019: analytically it disengages continuities or transformations in the reproduction of social systems. Because of the dynamic interplay of the two constituent elements, \u2018structuration\u2019 does not denote fixity, durability, or even a point reached in development. \u2018Structuration\u2019 itself is ever a process and never a product. In elaborating his theory of \u2018structuration\u2019, however, Giddens completely ignores existing efforts to perform the same task of re-uniting structure and action from within general systems theory. This perspective has an even better claim than the former to call itself a \u2018non-functionalist manifesto\u2019;4 since a major part of its background was the growing disenchantment on the part of neo-functionalists with every remnant of the Organic Analogy \u2013 with the over-integrated view of social structure and the over-socialized view of man; with the assumption of immanent equilibration unrelated to human decision-making; with its failure to incorporate time \u2013 a double failure involving the absence of an analytical history of systemic emergence (grounded in human interaction, taking place in prior social contexts) and a failure to appreciate that the structural elaboration thus produced carries over to future time, providing new contexts for subsequent interaction. \u2018Morphogenesis\u2019 is also a process, referring to the complex interchanges that produce change in a system's given form, structure or state (morphostasis being the reverse), but it has an end-product, structural elaboration, which is quite different from Giddens's social system as merely a \u2018visible pattern\u2019. This to him can best be analysed as recurrent social practices, whereas to general systems theorists, the elaborated structure has properties which cannot be reduced to practices alone, although these are what generated both it and them. The emergent properties5 which characterize socio-cultural systems imply discontinuity between initial interactions and their product, the complex system. In turn this invites analytical dualism when dealing with structure and action. Action of course is ceaseless and essential both to the continuation and further elaboration of the system, but subsequent interaction will be different from earlier action because conditioned by the structural consequences of that prior action. Hence the morphogenetic perspective is not only dualistic but sequential, dealing in endless cycles of \u2013 structural conditioning/social interaction/structural elaboration \u2013 thus unravelling the dialectical interplay between structure and action. \u2018Structuration\u2019, by contrast, treats the ligatures binding structure, practice and system as indissoluble, hence the necessity of duality and the need to gain a more indirect analytical purchase on the elements involved. Hence Giddens's whole approach turns on overcoming the dichotomies which the morphogenetic perspective retains and utilizes \u2013 between voluntarism and determinism, between synchrony and diachrony, and between individual and society. In \u2018place of each of these dualisms, as a single conceptual move, the theory of structuration substitutes the central notion of the duality of structure\u2019 (Giddens 1979: 5). The body of this paper will: question the capacity of this concept to transcend such dichotomies in a way which is sociologically useful; defend the greater theoretical utility of analytical dualism, which underpins general systems theory; and, seek to establish the greater theoretical utility of the morphogenetic perspective over the structuration approach. Basically what Giddens is seeking to enfold here are two views of social institutions \u2013 institutions as causes of action (which has certain deterministic overtones) and institutions as embodiments of action (which has more voluntaristic connotations). Condensed in the brief statement that \u2018structure is both medium and outcome of the reproduction of practices\u2019 (1979: 69) is his method of bridging this dichotomy. The central notion of the \u2018duality of structure\u2019 makes up the bridge by dropping two planks from opposite banks so that they lie juxtaposed. First he advances the essential contribution made by knowledgeable actors in generating/transforming recurrent social practices \u2013 which in turn creates the \u2018visible pattern\u2019 that constitutes the social system for Giddens. Simultaneously, he lays down the fundamental proposition that when actors produce social practices they necessarily draw upon basic \u2018structural properties\u2019\u2013 these essential factors being viewed as a matrix of rules and resources. Ideally what he wants to integrate is the way in which the active creation of social conditions is itself unavoidably conditioned by needing to draw upon structural factors in the process. Perhaps this is clarified by consulting the kind of practical images Giddens has in mind. The references to agents producing recurrent social practices summon-up a picture of the \u2018ruttedness\u2019 of routine action \u2013 in bureaucracy, for instance, where life is constantly breathed into inert rules which then deaden their animators through routinization.6 But this is not the only picture he invokes. There is also metamorphosis, the generation of radically new practices when agency rides on the coat-tails of structural facilitation to produce social change of real magnitude. Although the \u2018duality of structure\u2019 spans both images, it provides no analytical grip on which is likely to prevail under what conditions or circumstances. The theory of \u2018structuration\u2019 remains fundamentally non-propositional. In other words the \u2018central notion\u2019 of the \u2018structuration\u2019 approach fails to specify when there will be \u2018more voluntarism\u2019 or \u2018more determinism\u2019. In fact, on the contrary, the \u2018duality of structure\u2019itself oscillates between the two divergent images it bestrides \u2013 between (a) the hyperactivity of agency, whose corollary is the innate volatility of society, and (b) the rigid coherence of structural properties associated, on the contrary, with the essential recursiveness of social life. Hyperactivity is an ineluctable consequence of all rules and resources being defined as transformative, in contradistinction to the rigid transformational grammar of linguistics. Resources are readily convertible, rules endlessly interpretable; the former providing material levers for transforming the empirical domain, the latter transfiguring codes and norms. Consequently the spatio-temporal constitution of society is ordered in terms of the mediations and transformations made possible by these two structural properties, as manipulated by agents. However it follows that if structural properties are inherently transformative then actors generically enjoy very high degrees of freedom \u2013 at any time they could have acted otherwise, intervening for change or for maintenance. Hence the counterfactual image of hyperactivity in which actors explore and exploit these generous degrees of freedom. Hence too the outcomes must be correspondingly variegated; society is not just \u2018potentially malleable\u2019 (Giddens 1979: 56), it becomes highly volatile if \u2018the possibility of change is recognized as inherent in every circumstance of social reproduction\u2019 (Giddens 1979: 210). The other side of the \u2018duality of structure\u2019 is intended to rectify the image and introduce a more recognizable picture of social life. Instead I believe over-correction takes place, generating a counter-image of \u2018chronic recursiveness\u2019 in society. Basically this arises because actors have to draw upon rules and resources in social interchange and these structural properties are thus reconstituted through such interaction. However Giddens goes further than this, now endorsing the kind of linguistic analogy disavowed in (a). Thus when actors do draw upon rules and resources they necessarily invoke the whole matrix of differences which constitute structures, \u2018in the sense in which the utterance of a grammatical sentence presupposes the absent corpus of syntactical rules that constitute the language as a totality\u2019. (1979: 71) In this way Giddens commits himself to an enormous coherence of the structural properties, such that actors' inescapable use of them embroils everyone in the stable reproduction of social systems. The pendulum swings so far the other way that we are now presented with another over-integrated view of man, for the \u2018duality of structure\u2019 relates the smallest item of day-to-day behaviour to attributes of far more inclusive social systems: \u2018when I utter a grammatical English sentence in a casual conversation, I contribute to the reproduction of the English language as a whole. This is an unintended consequence of my speaking the sentence, but one that is bound in directly to the recursiveness of the duality of structure\u2019 (Giddens 1979: 77\u20138). This rigidity of the recursive image is open to criticism on two counts. On the one hand, rules and resources are not so coherently organized as grammar, often lacking the mutually invocating character of syntax (to have a council house does not necessarily mean no telephone, low income, job insecurity etc.). On the other hand, action is not really so tightly integrated by these structural properties: not only may some of the smallest items of behaviour be irrelevant to the social system, certain larger ones may also be trivial, mutually cancelling or self-contained in their effects, whilst still other actions can produce far reaching aggregate and emergent consequences \u2013 yet these different possibilities remain undifferentiated by Giddens. What is wrong with this image, as with the previous one, is that it does not allow for some behaviour engendering replication whilst other action initiates transformation. Rather than transcending the voluntarism/determinism dichotomy, the two sides of the \u2018duality of structure\u2019 embody them respectively: they are simply clamped together in a conceptual vice. This oscillation between contradictory images derives from Giddens not answering \u2018when\u2019 questions\u2013 when can actors be transformative (which involves specification of degrees of freedom) and when are they trapped into replication (which involves specification of the stringency of constraints)? These answers in turn require analysis of the potential for change, which is rooted in systemic stability/instability, and the conditions under which actors do/do not capitalize on it. Although Giddens admits that structures are both facilitating and constraining, indeed it is one of the major theoretical tasks to discover what aspects of social organization govern the interconnection between the two (1979: 69\u201370), this is precisely, with one exception, what he does not do. His theory consistently avoids concrete propositions of this type. The reason for this omission is his principled but misguided distaste for the constraint concept (contaminated by functionism) (1979: 50\u20132): the exception, his analysis of contradiction, is of course on the contrary an example of systemic facilitation. Specification of the stringency of constraints is sedulously avoided at all three levels of analysis \u2013 structural properties, social institutions and social systems. Structural Properties are integral to social constitution and reconstitution, but when do they throw their weight behind the one or the other? Generally in sociology this has been tackled through an appreciation that some properties are more resilient or engender more resistance to change than others, at any given time. This specification of the strength of constraints is both impossible in Giddens's conceptualization and unacceptable to him. First his properties (defined reductively as rules and resources) are outside time and space, having a \u2018virtual existence\u2019 only when instantiated by since what is instantiated on the of agency and not the of the then properties are not voluntarism enters through these two which are one this for structural properties in the Where resources are concerned he that what in a spatio-temporal sense is only a to become as a has to be instantiated through in with codes and (1979: This is an of and it is not a very one, for the often in their kinds of which can or normative and other than of or In what possible sense do these require are there and the problem is how to get of them or with them. even if it on only in be as outside time and it is there and thus not but when it is it its and of the and upon it. The that resources and their are with rules of and and that these do a not be with them all the the rules are and are so precisely because the or use of real resources is at The latter in turn can also and of the relationship being exclusively the other way Furthermore the of the structural properties makes its contribution to of the of actors to properties can be some to change or some highly to change and some are resources or more central of rules and resources the or this their The point here is that the time it takes to change then that to a constraint which cannot be to be in its social whilst it can be and efforts are being made to change the factors a general theoretical proposition this the time involved. this is what Giddens away by structural properties and them only a pale \u2018virtual Social are as practices, and in society (Giddens 1979: In dealing with social practices than with the earlier conceptual which structural properties were into is directly has it voluntarism and The of actors' knowledgeability and of how institutions work for that a of in their What this are of which may be as systems or but which them the (as as which much of or high the as to the of by The voluntaristic that institutions are what not what they \u2013 and have to with in which are conditioned by the structural For Giddens recursiveness never the of it the of at this does Giddens that consequences of action the recursive of the duality of structure\u2019 (1979: producing what but which he and he that it is their facilitating upon which theory properties of social systems must be a theory of system (1979: The reason for this is that to Giddens through which change can be by social and have a to (1979: But is he in on systemic and in systemic the morphogenetic perspective very are only one of Maruyama the latter are of in of the of of which produce and the that are as and in all of mutual causal that an or initial up and from the initial some of the but and do yet they contribute to The close relationship between and change more to the history of sociology than to of in complex systems. Giddens's of \u2013 and components which to or a system's given form, organization or state \u2013 derives from his rejection of equilibration but more to the that such are as constraints by in social life. in complex socio-cultural the and producing and also This that Giddens provides an inherently account of the systemic conditions of change and His attempt to of this by that there is point in for an theory of and change in social since the conditions of social reproduction so between different of (1979: fails on three counts. First it a into (not necessarily which Giddens himself to the in as the of theoretical analysis he is a general of change and to do so must have other he does indeed an theory of if in form, to which we will now we have the of constraints the degrees of freedom for action. this Giddens two factors which thus hyperactivity and his to the essential of and in social life\u2019 (1979: 7). However a specification of constraints is when and how, these from with in Giddens only that society actors in general terms by action. together a variety of conditions in a way which is not only but is also in its that all that is for is a change of Thus of a specification of degrees of freedom related to systemic and the action contexts they Giddens provides a general account of from in structural it is as a process in which cultural In practice this in the studies of that it is only through acknowledging both the that social organization on and the for action that are rooted in the of social structures, that we at of and Giddens that there are or where the of routine the behaviour of actors and to is a kind of of institutions that of which may become to further (1979: only is the concept of a because of its but also this more than it What makes a are structural factors not What a \u2013 do systemic not What subsequent this cannot be to the of Giddens's any better if we at it the other way not on what freedom and but on the conditions under which degrees of freedom this is not the the reason being that the of actors is with the concept of On the contrary I that degrees of freedom are of the of the relationship between them being one of patterning a given potential for this may not be upon by with the to do its does not necessarily can be in this context producing any transformation. The example of system (a) and for this provides structural",
+      "cited_by_count": 567,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "0007-1315",
+          "1468-4446"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Realism in Sociology"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W2083823098"
+    },
+    {
+      "openalex_id": "W2181055448",
+      "doi": "10.1177/0038038515577910",
+      "title": "Object Relations in Accounts of Everyday Life",
+      "authors": [
+        {
+          "name": "Jenny Rinkinen",
+          "openalex_id": "A5024776355",
+          "orcid": "https://orcid.org/0000-0002-0160-6886",
+          "institutions": [
+            "Aalto University"
+          ]
+        },
+        {
+          "name": "Mikko Jalas",
+          "openalex_id": "A5011551520",
+          "orcid": "https://orcid.org/0000-0002-1653-2437",
+          "institutions": [
+            "Aalto University"
+          ]
+        },
+        {
+          "name": "Elizabeth Shove",
+          "openalex_id": "A5035552195",
+          "orcid": "https://orcid.org/0000-0002-4792-5479",
+          "institutions": [
+            "Lancaster University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-01",
+      "abstract": "Theories of social practice routinely acknowledge the significance of the material world, arguing that objects have a constitutive role in shaping and reproducing the practices of which daily life is made. Objects are also important for those who approach \u2018everyday life\u2019 as an ontology, a tradition in which scholarly interest in the material reaches beyond the somewhat pragmatic concerns of practice theory. In this article we identify traces of both schools of thought in the ways in which people describe their immediate material environments. By drawing on an archive of diary material, we illustrate multi-faceted object relations with reference to the example of keeping warm. We conclude that in keeping warm, diarists weave together encounters, tactics and judgements, encountering objects in ways that extend beyond the \u2018mere\u2019 enactment of social practice. In analysing these encounters we explore ways of conceptualising the object-world that are especially relevant for studies of everyday life.",
+      "cited_by_count": 61,
+      "type": "article",
+      "source": {
+        "name": "Sociology",
+        "type": "journal",
+        "issn": [
+          "0038-0385",
+          "1469-8684"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Participatory Visual Research Methods",
+        "Management and Organizational Studies",
+        "Social and Cultural Dynamics"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W2181055448"
+    },
+    {
+      "openalex_id": "W94459501",
+      "doi": "10.1016/b978-008044910-4.00024-9",
+      "title": "Performative and Embodied Mapping",
+      "authors": [
+        {
+          "name": "Chris Perkins",
+          "openalex_id": "A5022368721",
+          "orcid": "https://orcid.org/0000-0002-6679-4603",
+          "institutions": [
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": null,
+      "cited_by_count": 62,
+      "type": "book-chapter",
+      "source": {
+        "name": "Elsevier eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Geographic Information Systems Studies",
+        "Geographies of human-animal interactions"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W94459501"
+    },
+    {
+      "openalex_id": "W2724306165",
+      "doi": "10.1016/j.ijproman.2017.06.004",
+      "title": "Project studies: What it is, where it is going",
+      "authors": [
+        {
+          "name": "Joana Geraldi",
+          "openalex_id": "A5074755173",
+          "orcid": "https://orcid.org/0000-0002-1282-4379",
+          "institutions": [
+            "Technical University of Denmark"
+          ]
+        },
+        {
+          "name": "Jonas S\u00f6derlund",
+          "openalex_id": "A5052151905",
+          "orcid": "https://orcid.org/0000-0002-2793-1716",
+          "institutions": [
+            "BI Norwegian Business School"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-08",
+      "abstract": null,
+      "cited_by_count": 270,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Project Management",
+        "type": "journal",
+        "issn": [
+          "0263-7863",
+          "1873-4634"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Construction Project Management and Performance",
+        "Innovative Education and Learning Practices",
+        "Human Resource Development and Performance Evaluation"
+      ],
+      "referenced_works_count": 124,
+      "url": "https://openalex.org/W2724306165"
+    },
+    {
+      "openalex_id": "W2091924125",
+      "doi": "10.1080/19460171.2011.628033",
+      "title": "Articulating discursive and materialist conceptions of practice in the logics approach to critical policy analysis",
+      "authors": [
+        {
+          "name": "Karen West",
+          "openalex_id": "A5065957708",
+          "orcid": "https://orcid.org/0000-0002-9071-8002",
+          "institutions": [
+            "Aston University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-12-01",
+      "abstract": "In this article it is argued that while Glynos and Howarth's logics of critical explanation (LCE) offers an important and promising contribution to critical policy analysis, it, along with other approaches that focus on the meaning of social action, faces a growing challenge in the form of a so-called new materialist turn in social and political theory. The article argues that there is much to be gained for the logics approach in paying closer attention to the materiality of practices in terms not only of lending greater clarity to the conception and role of social practices in the logics approach but also in enabling it fully to deliver on its critical ambition. The article explores an alternative materialist approach to the study of social practices, which hails from the post-actor\u2013network-theory tradition and which has ontological affinities with post-structuralism. The article begins with a brief analysis of the new materialist turn in its various guises. It then critically examines the logics approach, and, in particular its conception of practice. It then explores an alternative materialist and ethnographic reading of practice, focusing on medical and care practices. It concludes with an examination of the implications for a more materialist conception of practices for the LCE's broad deconstructive, psychoanalytic and onto-political ambitions.",
+      "cited_by_count": 46,
+      "type": "article",
+      "source": {
+        "name": "Critical Policy Studies",
+        "type": "journal",
+        "issn": [
+          "1946-0171",
+          "1946-018X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Political and Economic history of UK and US",
+        "Mental Health and Patient Involvement"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W2091924125"
+    },
+    {
+      "openalex_id": "W2144158050",
+      "doi": "10.1111/j.1468-2427.2005.00568.x",
+      "title": "Cyborg Urbanization: Complexity and Monstrosity in the Contemporary City",
+      "authors": [
+        {
+          "name": "Matthew Gandy",
+          "openalex_id": "A5044112273",
+          "orcid": "https://orcid.org/0000-0002-8478-9808",
+          "institutions": [
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-01",
+      "abstract": "She referred to the high-rise as if it were some kind of huge animate presence, brooding over them and keeping a magisterial eye on the events taking place. There was something in this feeling \u2014 the elevators pumping up and down the long shafts resembled pistons in the chamber of a heart. The residents moving along the corridors were the cells in a network of arteries, the lights in their apartments the neurones of a brain (J.G. Ballard, 1975: 40). Now, the boundaries between the organic and the inorganic, blurred by cybernetic and bio-technologies, seem less sharp; the body, itself invaded and re-shaped by technology, invades and permeates the space outside, even as this space takes on dimensions that themselves confuse the inner and the outer, visually, mentally and physically (Anthony Vidler, 1990: 37\u20138). The body-territory [corpo-territorio] poses a problematic form of corporeal identity that in becoming ever more routinized has tended to dissolve the distinctions that formerly existed between the organic and the inorganic (Tiziana Villani, 1995: 118). As she tentatively begins to play the piano, the replicant, named Rachel, recalls that she once had lessons but cannot be sure whether these memories are her own or simply the implanted memories of someone else. In this poignant scene in Ridley Scott's Blade Runner (1982) we explore the possibility that human identities might be artificially created in order to produce advanced androids whose intelligence and sensitivity is comparable with that of their human creators. The figure of the cyborg, as represented in science fiction cinema, is not an automaton or robot but a sophisticated creation that seems to simultaneously extend but also threaten our understanding of what it means to be human. If we were to locate the cyborg as an idea, we could say that it is clearly linked to fantastical combinations of bodies and machines but is nonetheless a way of thinking about the world. It is, in other words, an ontological strategy for extending the limits to human knowledge as well as an apposite means of describing those phenomena that appear to reside outside conventional frameworks of understanding. If a cyborgian sensibility is explored within the context of the contemporary city, we find that it has developed out of several interconnecting strands of thought as a trope of critical reflection which uncovers a series of anomalies, fractures and tensions lurking within dominant modes of urban and architectural thinking. Since the early 1960s the potential applications of the cyborg concept have proliferated to include developments such as whole organism cloning, in vitro fertilization, gene sequencing, advanced prosthetics and other sophisticated medical technologies. In tandem with these technological manifestations, the imaginative field of the cyborg has expanded through literature, cinema and the fantasy spaces of contemporary culture.1 It is since the mid-1980s, however, that the idea of the cyborg has been associated with a more densely argued series of theoretical applications as a means to explore the interface between technology and the body. The key intervention here is Donna Haraway's article entitled 'A Cyborg Manifesto', first published in the Socialist Review in 1985, and later included in her influential collection of essays Simians, Cyborgs and Women where she writes in her introduction (1991a: 1): A cyborg is a hybrid creature, composed of organism and machine. But, cyborgs are compounded of special kinds of machines and special kinds of organisms appropriate to the late twentieth century. Cyborgs are post-Second World War hybrid entities made of, first, ourselves and other organic creatures in our unchosen \"high-technological\" guise as information systems, texts, and ergonomically controlled labouring, desiring, and reproducing systems. The second essential ingredient in cyborgs is machines in their guise, also, as communications systems, texts, and self-acting, ergonomically designed apparatuses. This succinct and revealing definition reminds us that the idea of the cyborg, as originally elaborated by Haraway, is at root a political as well as an intellectual project, an idea which originated in and from the 'belly of the monster' (1991a: 4), that nexus of political and economic entanglements that we might term the 'first world' in distinction to the proliferating spaces of marginality that lie beyond.2 Since its inception as a critical intellectual concept in the 1980s the cyborg metaphor has been deployed to challenge disembodied, dualistic, masculinist and teleological bodies of knowledge. It has infused science and technology studies with feminist epistemological strategies. It has opened up new possibilities for the understanding of relations between nature and culture. And it has facilitated greater sensitivity towards social and spatial complexity through its emphasis on 'situated knowledges'. The idea of the cyborg shares an affinity with related concepts such as 'cyberspace', 'cybernetics' and 'cyberpunk'. Yet the contemporary use of the term 'cyborg' is different from these virtual, analytical and fictional constructs because it is grounded in the living and breathing flesh of the human body. Whilst the 'cyber-' metaphor has tended to be associated with various forms of virtuality, the idea of the cyborg is closely linked with the corporeal experience of space.3 In this sense the cyborg can be read as an alternative way of conceptualizing the growth and development of cities that serves to destabilize the pervasive narratives of dematerialization, spatial malleability and virtualization. The underlying materiality of the cyborg metaphor has acquired heightened significance now that the earlier polarity between virtual space and 'meat space' articulated in the first wave of cyber literature is losing its conceptual utility and now that the very idea of 'virtual reality' is itself imploding as it becomes either relocated in the context of a heightened dimension of the real (see, for example, \u017di\u017eek, 2002) or simply derided as an inherently oxymoronic formulation (see Grosz, 2001).4 The emphasis of the cyborg on the material interface between the body and the city is perhaps most strikingly manifested in the physical infrastructure that links the human body to vast technological networks. If we understand the cyborg to be a cybernetic creation, a hybrid of machine and organism, then urban infrastructures can be conceptualized as a series of interconnecting life-support systems (see Swyngedouw, 1996; Marras, 1999; Gandy, 2002; Mitchell, 2003). The modern home, for example, has become a complex exoskeleton for the human body with its provision of water, warmth, light and other essential needs. The home can be conceived as 'prosthesis and prophylactic' in which modernist distinctions between nature and culture, and between the organic and the inorganic, become blurred (Vidler, 1990: 37). And beyond the boundaries of the home itself we find a vast interlinked system of networks, pipes and wires that enable the modern city to function. These interstitial spaces of connectivity within individual buildings extend through urban space to produce a multi-layered structure of extraordinary complexity and utility. The figure of the cyborg is at root a spatial metaphor. But how does the idea of the cyborg intersect with spatial theory? In what ways does the cyborg reinforce or contradict other emerging strands of urban thought that also emphasize urban complexity and hybridity? Has the epistemological subtlety and political prescience of the cyborg, as originally formulated in the 1980s, been realized in practice or simply been diffused through the term's widening usage? And should we ultimately reject the idea of the cyborg as an anachronism derived from cold war science and the first generation of twentieth-century cyberpunk culture? In the rest of this article I will try to address these issues through an exploration of the somewhat haphazard presence of the cyborg in contemporary urban discourse. I will focus in particular on the example of urban infrastructure as a concrete manifestation of the cyborg idea in order to explore different facets of the relationship between the city, the body and the human subject. My aim is not to foreclose discussions surrounding the 'cyborg city' but to open up a series of dialogues in order to explore contemporary thinking around these questions. One of the principal difficulties with delineating the cyborg city as a clearly defined entity is derived from the entanglement of the cyborg idea with a variety of urban metaphors ranging from organicist conceptions of the nineteenth-century city to 'neo-organicist' representations of the post-industrial metropolis. In its classic nineteenth-century form the organicist conception of the city emerged out of a functional analogy, originating within the medical sciences, wherein spatial differentiation corresponded with a distinctive arrangement of human organs. We find that Kantian notions of the self-organizational characteristics of animate matter were combined with new insights into the human vascular and arterial system and an emerging circulatory emphasis within the nascent science of political economy. In recent years, however, the organicist emphasis on the city as an integrated body with identifiable organs, which emerged in response to the nineteenth-century industrial city, has been increasingly displaced by the idea of urban space as a prosthetic extension to the human body. The body-city problematic has been reconceptualized in the context of post-Cartesian and post-positivist modes of thinking. The emphasis on the city as a self-contained body or machine has been challenged by a hybridized conception of space as a system of technological devices that enhances human productive and imaginative capabilities. The cyborg metaphor not only reworks the metabolic preoccupations of the nineteenth-century industrial city but also extends to a contemporary body of ideas that we can term 'neo-organicist' on account of the deployment of biophysical metaphors for the interpretation of social and spatial complexity. In the neo-organicist city we encounter a shift of emphasis away from an anatomical conception of space as an assemblage of individual organs towards a neurological reading of space as a diffuse and interconnected realm of human interaction. The film maker Michael Burke, for example, director of Cyborg City (1999), describes how beneath the 'glass and concrete' of the future city there will be a 'humming mass of technology' acting as a central nervous system, 'constantly monitoring and controlling both its own functions and those of its citizens' (Burke, 1998).5 The mechanical and hierarchical model of the relationship between the body and the city has been supplanted by a more complex and non-linear pattern of urban development in response to the spread of new information technologies (see Gille, 1986; Rabinbach, 1990; Akira, 2001). The organicist city of the modern era was founded on a clear separation between mind and body that enabled the city to be conceptualized as a coherent entity to be acted upon, disciplined, regulated and shaped according to human will. The emergence of the neo-organicist city, in contrast, is founded on the blurring of boundaries rather than their repeated delineation. At the same time, however, there remain important continuities between the kind of machine-based metaphors associated with the early twentieth-century futurism of figures such as Mario Chiattone, Filippo Tommaso Marinetti and Antoniono Sant'Elia and the elaborate computer-based metaphors deployed in the contemporary city (see Villani, 1995; Boyer, 1996; Schaub, 1998). Other significant continuities include, for example, the avant-garde bricolage of early cinema and the surrealist bodies depicted in the art of Hans Bellmer, Francis Picabia and other responses to 'a sterile and over rationalised technological realism' (Vidler, 1990: 42).6 These interconnecting strands between cultural modernism and the emergence of the cyborg metaphor are significant because they underlie the centrality of corporeal metaphors for the critical interpretation of urban form. The current emphasis on corporeal and neurological analogies in the neo-organicist literature owes more to earlier developments than is widely acknowledged. We can detect two principal dimensions to contemporary neo-organicist urban thought. A first strand, rooted in the bio-physical sciences, perceives the city to be a special kind of complex, yet intricately ordered system. This homeostatic perspective, which is inflected by ecological thinking and recent developments in evolutionary biology, has diffused through parts of the architectural literature and is only tangentially linked with the epistemological challenge of cyborg theory.7 A second and more intellectually significant development is represented by the convergence of ideas surrounding the 'thinking space' of the city and the indeterminacy of spatial forms. If the body-city nexus is conceptualized as a thinking machine then the analytical focus shifts towards the identification of those critical networks or 'neurones' that sustain the relationship between the body and the city (Kurokawa, 2001a). Though this dimension to the neo-organicist perspective shares important continuities with the technological preoccupations of early twentieth-century modernism, it extends its conceptual purview into different aspects of cultural modernism. The influential speculations of Gilles Deleuze and Felix Guattari, for example, develop Antonin Artaud's conception of the 'body without organs' to produce a philosophy of spatial complexity quite different from that associated with dominant modernist traditions (Deleuze and Guattari, 1986; 1987; Rajchman, 2000; Uno, 2001). Their philosophical challenge is to perceive space in the absence of any previously existent categories, hierarchies or systems as a form of 'anarchic non-identical proliferation' (Luckhurst, 1997: 128). The organic metaphor of the 'rhizome' is deployed in distinction to 'arborescent' conceptions of cities as hierarchical structures (Teysott, 1990; Akira, 2001; Kurokawa, 2001a). In addition to this emphasis on non-hierarchical structures of difference Deleuze and Guattari's conception of concrete space also seeks to incorporate the imaginary, libidinous and oneiric realms of human experience. From their 'neo-vitalist' perspective, which builds on the philosophical ideas of Henri Bergson, the virtual realm is not simply a mimesis or reflection of physical reality but an independent domain that generates new kinds of spaces and ideas. The political significance of the virtual realm lies in its experimental and emergent role as part of an envisioned space that has yet to be realized within the taken-for-granted realm of concrete reality (Boundas, 1996; Massumi, 2001). The role of the diagram or 'abstract machine' takes on special significance in this context as an attempt to give visual expression to new models of reality.8 In the case of architecture, for example, there has been an intense dialogue between developments in building design and the speculative possibilities engendered by computer-aided simulations so that 'physical space increasingly resembles cyberspace' (Mitchell, 2003: 197). Some architectural practices have deployed so-called 'genetic algorithms' in order to generate a form of 'in vitro' architecture which derives its inspiration from nature yet remains autonomous from it as a purely digitized space of imaginative exploration (see Chu, 2002; De Landa, 2002).9 Examples of architectural practice inflected by post-structuralist ideas which move beyond purely 'in vitro' speculations to fully realized projects include the work of Peter Eisenman, Frank Gehry and Bernard Tschumi, where sophisticated combinations of form, structure and materials have been achieved, which are quite at odds with modernist conceptions of architectural form. A conceptual synthesis can be discerned in some of the recent literature between post-structuralist philosophies of space and Latourian conceptions of actor-network theory to produce a new kind of urban theorization which eschews the meta-narratives associated with neo-Marxian approaches. Building on the insights of Deleuze and Guattari these approaches have sought to remove all the extrinsic or foundational aspects to urban theory and pare analysis down to the movements and interactions that constitute 'the city' as a particular kind of spatial form or activity that is independent of conventional accounts of scale, structure or order.10 The brain or 'thinking space' of the city persists yet is dispersed through innumerable nodes and networks in contrast with the embodied cyborg citizen to be found in the more technophile literature. We can trace these developments back to the emerging critique of architectural modernism in the 1970s and 1980s that increasingly drew on the theoretical ontologies of post-structuralism in order to advance a radically unplanned built form.11 From this perspective the role of 'chaos', for example, takes on a very different significance from that associated with the modernist city and is perceived as a field of evolutionary and radical experimentation. Chaos is no longer seen as an anomalous dimension to the urban experience to be problematized or excluded from analysis but a rich vein of social and spatial interaction through which we may perceive signs of alternative or hitherto overlooked urban forms. Chaos may also be characterized as a more sophisticated, resilient and adaptable form of order as Rem Koolhaas has suggested with respect to the dynamics of West African urbanism (Koolhaas et al., 2001; Koolhaas, 2002). The theoretical novelty of such a perspective sits sharply at odds, however, with the capacity for what one might term 'avant-garde urbanism' to actually explicate any substantial dimensions to urban change (see, for example, Rauterberg, 2002; Gandy, 2004b). We can detect within urban and architectural discourse an emerging counter current to post-structuralist and avant-garde urbanism led by a of and political (see 1996; and 1998). Though the post-structuralism of Deleuze and Guattari seeks to between the and the and is in this respect a significant advance on the and of there is a in any kind of political critique of the cyborg The emphasis on the characteristics of urban space the particular combinations of and human that enable nodes within the urban system to play in the of cultural and economic The of structure the of the theoretical and significance of these insights the between post-structuralism and a cyborg sensibility towards the entanglement of the real and the We are with an between the reading of the industrial city and a 'neo-organicist' with the design of space that quite in architectural The emerging of the interface as a technological is associated with nineteenth-century over science and technology, for example, form part of a counter discourse to modernist of technological 1996; 2003). In recent years, however, the trope of technological has tended to between a of new towards excluded on the one and the of towards technology and its on the other The of the cyborg has engendered a new wave of and towards the of the body by technologies that threaten to or the human subject. In the of for example, we move beyond the and critique of technology towards a political of technology and its with the human body. the of the body by new technologies as a of that the critical of the earlier in and communications technologies 1997: the advance of a in which the of towards an of the human body itself so that we no longer of the body in the city but of the in the (see 1995; The cyborg figure becomes a for the of we are no longer with a cold war but with the of the around the of buildings in of and their The of the have been radically by new technologies of and in order to the of the century. structures have developed that of social such as with forms of social through a of and The significance of urban in particular is now towards which the of essential technological networks such as and in order to and of political A of modern from urban technological networks or to use expression is to a of so that they are no longer political but for (see also a of from whole the of through a of and of the more of technology we can an emphasis on the cyborg as a means of becoming in order to the human body from the boundaries of the autonomous In the work of Mitchell, for example, we can trace a from through the experience of to the contemporary urban citizen as 'a (Mitchell, 2003: writes have been with the body and its now they virtual bodies that can sense and at a but that also remain in their In this sense builds on the inflected of earlier such as and depicted as a series of on infrastructures the extraordinary technological of the cyber city and the interaction of with of human activity (Mitchell, 2003). Yet this is a future in which the and of space are for example, that we are 'the shift from a by boundaries and to a at scale, by networks, and but the between the of and that of to economic In the perspective is so by technological change that it begins to the role of an independent in The blurring of boundaries between the body and the city in to our understanding of the human and the characteristics of human conception of human include, for the role of biophysical and technological systems that the social of for example, has different of analysis to the extension of our conception of to include those structures and that have been excluded from both and epistemological traditions the work of has tended to emphasize the between human and nature the of has been the or of between different kinds of networks or structures The cyborg can be conceived in a Latourian sense as both a new kind of social interaction with space but also a concept to be conceived in to the realm of modernist urban thought. Yet a Latourian with its hybridized conceptions of is quite different from that within philosophical traditions because of the radical extension of human to those and systems which the sought to from the realm of and political The concept of also its own its own of between its The idea of the cyborg as a hybrid can be conceived as a problematic of derived from or some teleological for urban change but it can also a of ideas and developments from the to the The of and for example, can be explored in of combinations of practices and ideas from (see, for example, 1995; 1995; 2003). The cyborg metaphor can be in this sense as an of the limits to or teleological architectural rooted in and conceptions of cultural that we have been we could that we have led a cyborg since human has a of cultural and technological ranging from the of to the developments in materials But if we any or to the cyborg idea we its analytical utility as a means to with the cultural and technological complexity of the contemporary The of human in the cyborg city to the between technological change and the of the from the industrial But can the cyborg idea us to understand the dynamics of infrastructure provision in to a digitized or diffuse conception of the If the interactions between human and have the idea that is the of human then this of the insights of cultural that have quite on the of material and systems of cultural The made by for example, over the of locate these within the context of a more experience of within which to a different of and the other are in a sense is that new forms of are a more integrated rather than system of that the of modern and experience. political discourse is grounded within the context of the of the of the realm and the radical indeterminacy of the human subject. If the can be as an and and realm of human we are with the of delineating the characteristics of the human in a cyborg If the body-city interface is conceptualized as a then the distinction between mind and body and between the material and the virtual becomes But what the human is increasingly with the of the city Whilst it is to that our hybridized interactions with space a greater role for and (Mitchell, 2003: it is to of as a digitized of interactions with not only other but also machines and networks. The for example, describes a emerging between an",
+      "cited_by_count": 458,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Urban and Regional Research",
+        "type": "journal",
+        "issn": [
+          "0309-1317",
+          "1468-2427"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1468-2427.2005.00568.x"
+      },
+      "topics": [
+        "Cybernetics and Technology in Society",
+        "Posthumanist Ethics and Activism",
+        "Geographies of human-animal interactions"
+      ],
+      "referenced_works_count": 205,
+      "url": "https://openalex.org/W2144158050"
+    },
+    {
+      "openalex_id": "W1977003738",
+      "doi": "10.1111/j.1467-839x.2005.00154.x",
+      "title": "Is culture a problem for social psychology?",
+      "authors": [
+        {
+          "name": "Yoshihisa Kashima",
+          "openalex_id": "A5071203255",
+          "orcid": "https://orcid.org/0000-0003-3627-3273",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-07",
+      "abstract": "Culture has been regarded as an anathema to psychology as an empiricist research tradition. Despite the explosive growth of research on culture and psychology over the last decade of the 20th century and its importance in Asian social psychology, the ontological and epistemological tension between psychology as a science and psychology as a cultural/historical discipline introduced in the writings of the thinkers of the Enlightenment and counter\u2010Enlightenment still lingers on in the contemporary discourse of psychology. Clifford Geertz once ominously suggested that cultural psychology may have chewed more than it can. In the present paper, the interpretive turn in social science as exemplified by writings of Charles Taylor and Paul Ricoeur is reviewed and how it may impinge on the practice of Asian social psychology as an empirical science in methodological, epistemological, and ontological respects is discussed. It is argued here that the current practice of Asian social psychology is largely, though not entirely, free of the challenges mounted by these theorists, and that Asian social psychology has an advantage of not being encumbered by this traditional tension due to a monist ontology that is prevalent in Asia.",
+      "cited_by_count": 33,
+      "type": "article",
+      "source": {
+        "name": "Asian Journal Of Social Psychology",
+        "type": "journal",
+        "issn": [
+          "1367-2223",
+          "1467-839X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Hermeneutics and Narrative Identity",
+        "Social Representations and Identity",
+        "Language, Discourse, Communication Strategies"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W1977003738"
+    },
+    {
+      "openalex_id": "W2912253221",
+      "doi": "10.1080/17508487.2019.1577284",
+      "title": "Toward social-transformative education: an ontological critique of self-directed learning",
+      "authors": [
+        {
+          "name": "Virginie Servant-Miklos",
+          "openalex_id": "A5057687553",
+          "orcid": "https://orcid.org/0000-0003-1987-531X",
+          "institutions": [
+            "Erasmus University Rotterdam",
+            "Aalborg University"
+          ]
+        },
+        {
+          "name": "Liesbeth Noordegraaf\u2010Eelens",
+          "openalex_id": "A5054087275",
+          "orcid": "https://orcid.org/0000-0002-8450-8658",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-02-07",
+      "abstract": "The aim of this paper is to critique the individualistic ontological premises of \u2018self-directed learning\u2019, as it has been developed in humanist education literature in the tradition of Carl Rogers. The authors suggest instead that social-transformative education and its critical social ontology serve the emancipatory promise of education better while offering the possibility to tackle the collective challenges of our time. Beginning with an analysis of Rogers\u2019 concepts of Self, Knowledge and Society, the authors aim to show that self-directed learning fails to live up to its emancipatory promise. Instead, the paper picks up and develops on a debate in the early SDL literature between Rogers and Paulo Freire, suggesting that Freire\u2019s ontological premises are incompatible with those of Rogers, yet better prepare students to identify and face social problems. The authors further develop this point through the cultural-historical analysis of speech of Lev Vygotsky, cementing a social understanding of the Self as the foundation of social-transformative education. The paper concludes on the implications of this analysis for educational practice.",
+      "cited_by_count": 37,
+      "type": "article",
+      "source": {
+        "name": "Critical Studies in Education",
+        "type": "journal",
+        "issn": [
+          "1750-8487",
+          "1750-8495"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/17508487.2019.1577284?needAccess=true"
+      },
+      "topics": [
+        "Adult and Continuing Education Topics",
+        "Education and Critical Thinking Development",
+        "Critical and Liberation Pedagogy"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W2912253221"
+    },
+    {
+      "openalex_id": "W2008253286",
+      "doi": "10.1007/s10943-009-9273-7",
+      "title": "Religious Perspectives on Abortion and a Secular Response",
+      "authors": [
+        {
+          "name": "Moira Stephens",
+          "openalex_id": "A5024052593",
+          "orcid": "https://orcid.org/0000-0001-6434-2032",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Christopher F. C. Jordens",
+          "openalex_id": "A5063894351",
+          "orcid": "https://orcid.org/0000-0001-9454-1059",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Ian Kerridge",
+          "openalex_id": "A5047202475",
+          "orcid": "https://orcid.org/0000-0001-7445-4660",
+          "institutions": [
+            "Westmead Hospital",
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Rachel A. Ankeny",
+          "openalex_id": "A5076296056",
+          "orcid": "https://orcid.org/0000-0002-1547-6031",
+          "institutions": [
+            "University of Adelaide"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-07-29",
+      "abstract": null,
+      "cited_by_count": 45,
+      "type": "article",
+      "source": {
+        "name": "Journal of Religion and Health",
+        "type": "journal",
+        "issn": [
+          "0022-4197",
+          "1573-6571"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Reproductive Health and Technologies",
+        "Religion, Spirituality, and Psychology",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W2008253286"
+    },
+    {
+      "openalex_id": "W1996902897",
+      "doi": "10.1353/par.2004.0020",
+      "title": "Rhetoric and Capitalism: Rhetorical Agency as Communicative Labor",
+      "authors": [
+        {
+          "name": "Ronald Walter Greene",
+          "openalex_id": "A5033620698"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "Rhetoric and Capitalism:Rhetorical Agency as Communicative Labor Ronald Walter Greene It is a commonplace to describe rhetorical agency as political action. From such a starting point, rhetorical agency describes a communicative process of inquiry and advocacy on issues of public importance. As political action, rhetorical agency often takes on the characteristics of a normative theory of citizenship; a good citizen persuades and is persuaded by the gentle force of the better argument. More radical visions of argument might include strikes, sit-ins, and boycotts in the rhetorical arsenal of good citizenship, and some might even flirt with violence as rhetorical action. This model of rhetorical agency requires a translation of the conceptual apparatus of rhetoric and its alignment with the problematics of democratic theory and actually existing democratic regimes. Classical models that hoped to harness rhetorical agency to the making of the \"orator-statesman\" (sic) must reimagine political participation in terms of publics and counterpublics, social movements, electoral campaigns, communication media and technologies, as well as supra- and sub-national institutional settings. As the classical norms of citizenship rub against (post) modern realities, a permanent anxiety over the meaning and potential of rhetorical agency seems destined to be lodged in the critical imagination of rhetorical studies. If politics today is, in Jodi Dean's words, \"a domain of financially mediated and professionalized practices centered on advertising, public relations, and the means of mass communication,\" then actually existing rhetorical agency manifests itself in efforts to \"raise the money, buy the television time, register the domain names, build the website, and craft the accessible, user-friendly, spectacular message\" (2003, 96). If we recognize Dean's description of the political as an accurate description of the rhetorical situation today, rhetorical studies is left with three strategies: It can refashion a deliberative vision of rhetorical agency into a normative ideal for critiquing the structural conditions (capital, media [End Page 188] concentration) of political participation. Second, it can enlarge the field of normatively acceptable ways and means of political participation, for example, by embracing the more spectacular politics associated with visual and body rhetorics. Finally, rhetorical studies can work on the \"demand\" side and design new strategies and tactics for activating the rhetorical participation of citizens, for example, by encouraging the creation of communicative norms necessary for reinvigorating voluntary and civic organizations. However, while each of these approaches provides a research agenda, none of them gets at the root cause of the anxiety over agency: the attachment of rhetorical agency to a vision of political change. The anxiety over agency pushes rhetorical critics and theorists into becoming moral entrepreneurs scolding, correcting, and encouraging the body politic to improve the quality and quantity of political participation. The purpose of this paper is to offer an escape route from theorizing rhetorical agency as a model of political communication.1 In opposition to a political-communicative vision of rhetorical agency, this paper suggests a different materialist ontology, one that imagines rhetorical agency as a form of living labor. I will argue that rhetorical agency belongs to the domain of communicative labor, a form of labor increasingly necessary to the workings of contemporary capitalist production. In other words, I want to replace a political-communicative model of rhetorical agency with a materialist-communicative model. To highlight the similarities and differences between the two models, I will focus on how the interface between politics, communication, and economics plays out in the Marxist tradition of rhetorical studies. I will organize this tradition into two sections: the first, represented by James Aune, advocates a hermeneutic approach to rhetorical agency, and the second, represented by Dana Cloud, argues for imagining rhetorical agency as a class-based social movement. By focusing on the work of my comrades, the paper risks being received as a \"left sectarian\" polemic.2 As I will demonstrate in each section, the problem with these two approaches has less to do with Marxism and more to do with how they turn to hermeneutics and social movements to imagine rhetorical agency in the idiom of communication theory. In the third section of the paper I will resituate rhetorical agency into a materialist ontology of labor and capitalist production. In so...",
+      "cited_by_count": 126,
+      "type": "article",
+      "source": {
+        "name": "Philosophy and Rhetoric",
+        "type": "journal",
+        "issn": [
+          "0031-8213",
+          "1527-2079"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Rhetoric and Communication Studies",
+        "Media Studies and Communication",
+        "Political theory and Gramsci"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W1996902897"
+    },
+    {
+      "openalex_id": "W564480746",
+      "doi": null,
+      "title": "Logics of Legitimacy: Three Traditions of Public Administration Praxis",
+      "authors": [
+        {
+          "name": "Margaret Stout",
+          "openalex_id": "A5090294742",
+          "orcid": "https://orcid.org/0000-0002-7254-4934",
+          "institutions": [
+            "West Virginia University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-07-26",
+      "abstract": "WHY AND HOW THE TRADITIONS FRAMEWORK WAS CREATED The Legitimacy Question Why Worry about Role Conceptualization? Professional Socialization in Public Administration IntroductionThe Importance of Role Conceptualization in Public Administration What Is Role Conceptualization? How Role Conception Is Formed Step 1: Practitioner Acts as Role Taker Step 2: Role Performance Is Performed and Assessed Step 3: Experience Impacts Role Conception and Conceptualization Step 4: Pedagogy Transmits Role Conceptualizations Using Theoretical Frameworks as Interpretive Lenses Introduction Developing and Assessing Theoretical Frameworks Significant Focus Organizing Capacity Coherency Frameworks in Public Administration Dwight Waldo David Rosenbloom Richard Stillman Orion White David Farmer Jan Kooiman Historical Eras and Schools of Thought The Founding Era An Orthodoxy Emerges The Refounding Era The Reinventing Era The Transformational Era Summing Up Tradition as a Framework Metaphor How the Traditions Framework Was Created Introduction Employing the Ideal-Type Method Identify a Social Phenomenon of Interest Choose a Culturally Significant Frame of Reference Identify Essential Generic Elements Interpret Genetic Meanings Construct the Ideal-Types THE TRADITIONS FRAMEWORK The Generic Elements of Each Tradition Introduction Political Ontology Political Authority and Scope of Action Criterion of Proper Behavior Decision-Making Rationality Associated Organizing Style Assumed Governance Context Implications for Role Conceptualization Pulling the Type Together The Constitutional Tradition-Bureaucratic Accountability to the Constitutional Order Portrait of a Bureaucrat Introduction Political Ontology Political Authority and Scope of Action Criterion of Proper Behavior Accountability through Neutral Competence Accountability through Agency Conservation Decision-Making Rationality Organizing Style Assumed Governance Context Implications for Role Conceptualization Tradition Summary The Discretionary Tradition-Entrepreneurial Responsibility for Desirable Outcomes Portraits of Entrepreneurs Introduction Political Ontology Political Authority and Scope of Action Criterion of Proper Behavior Responsibility for Instrumental Outcomes Responsibility for Social Outcomes Summary Decision-Making Rationality Organizing Style Assumed Governance Context Implications for Role Conceptualization Tradition Summary The Collaborative Tradition-Stewardship Responsiveness to the Citizenry Portrait of a Steward Introduction Political Ontology Political Authority and Scope of Action Criterion of Proper Behavior Administrative Decision-Making Rationality Organizing Style Assumed Governance Context Implications for Role Conceptualization Tradition Summary CRITIQUE AND ANALYSIS Mutual Critiques among Traditions Introduction How the Traditions Fail to Achieve Their Own Logics Elected Officials Fail to Represent or Control Administrators Fail to Follow Orders or Rules Discretion Fails to Produce the Public Good Collaboration Fails to Produce the Public Good How the Traditions Fail According to Other Logics Democracy Is Inefficient and Ineffective Discretion Is Undemocratic Representation Is Problematic Government Has Been Captured by Market Interests or Self-Interest Collaboration Is Unconstitutional Collaboration Fails to Achieve the Public Interest (Because It Is Only Partial) Summing Up Integrations, Conciliations, and Dialectical Syntheses Introduction Key Integrations or Conciliations of Traditions Integrationist Approaches Conciliatory Approaches Summation Dialectical Relationship Within and Among Traditions Dialectic Within Traditions Dialectic Among Traditions Assessing Contextual Fit of the Traditions-A Mental Experiment Introduction The Emerging Contemporary Governance Context Critical Discussion Structural Fit Normative Fit Barriers to (R)Evolution How Do We Get There? Summation References Appendix: Foundations Course Outline Section 1: Introduction to the Course and Its Purpose in the MPA Program Section 2: The Landscape of Public Administration Theory Section 3: The Historical Roots of Public Administration Section 4: Competing Logics of Legitimacy in Public Administration Section 5: Putting Theory into Practice: Blended Logics and Individual Preferences Index",
+      "cited_by_count": 42,
+      "type": "book",
+      "source": {
+        "name": "Medical Entomology and Zoology",
+        "type": "journal",
+        "issn": [
+          "0424-7086",
+          "2185-5609"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Public Policy and Administration Research"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W564480746"
+    },
+    {
+      "openalex_id": "W2153209681",
+      "doi": null,
+      "title": "The Critical Turn in Tourism Studies: Innovative Research Methodologies",
+      "authors": [
+        {
+          "name": "Irena Ateljevi\u0107",
+          "openalex_id": "A5004804997",
+          "orcid": "https://orcid.org/0000-0002-6131-8085"
+        },
+        {
+          "name": "Annette Pritchard",
+          "openalex_id": "A5003117579",
+          "orcid": "https://orcid.org/0009-0004-2833-9951"
+        },
+        {
+          "name": "Nigel Morgan",
+          "openalex_id": "A5012010440",
+          "orcid": "https://orcid.org/0000-0002-4804-4972"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-01-01",
+      "abstract": null,
+      "cited_by_count": 168,
+      "type": "book",
+      "source": {
+        "name": "Wageningen University and Researchcenter Publications (Wageningen University & Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Globalization and Cultural Identity",
+        "Hospitality and Tourism Education",
+        "Culinary Culture and Tourism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2153209681"
+    },
+    {
+      "openalex_id": "W2783932060",
+      "doi": "10.4324/9781315696072-22",
+      "title": "Insurgent Practices and Decolonization of Future(s)",
+      "authors": [
+        {
+          "name": "Faranak Miraftab",
+          "openalex_id": "A5091377191",
+          "institutions": [
+            "Institute for Urban and Regional Research"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-08-23",
+      "abstract": "This chapter elaborates the concept of insurgent planning (IP) and why it needs to be taken seriously in planning education, scholarship, and practice. It describes the crises and social contradictions of the late 20th and early 21st centuries and the implications of the resulting political and ideological shifts for planning. The chapter discusses the political philosophies that drive liberal democratic and insurgent citizenship practices and argues that IP ontologically departs from liberal traditions of so-called inclusive planning that have held the inclusion of disadvantaged groups as an objective of professional intervention. It discusses the potential flexibility of these forms of action and dispels a binary misconception of invited versus invented spaces for citizens' direct action. The chapter focuses on the theoretical construct of IP as practices that are transgressive, counter-hegemonic, and imaginative. It inspires by anticolonial scholars and activists of liberation and discusses the urgency in decolonizing the future as a realm of political contestation and imagination.",
+      "cited_by_count": 40,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Urban and Rural Development Challenges",
+        "Urban Planning and Governance"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W2783932060"
+    },
+    {
+      "openalex_id": "W1997336501",
+      "doi": "10.1177/030802260506800605",
+      "title": "Hard Complexities \u2013 Soft Complexities: An Exploration of Philosophical Positions Related to Evidence in Occupational Therapy",
+      "authors": [
+        {
+          "name": "Sheena E E Blair",
+          "openalex_id": "A5111393811"
+        },
+        {
+          "name": "Linda Robertson",
+          "openalex_id": "A5021400337",
+          "orcid": "https://orcid.org/0000-0003-3086-2851"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-06-01",
+      "abstract": "The practice of occupational therapy rests upon the ontological assumption that there is a relationship between engagement in occupation and health. Different traditions of knowing about and investigating this relationship are evident within the literature. The professional link with biomedicine has led to an adherence to positivistic methodologies but, as the profession has begun to generate discipline-specific knowledge, inquiry approaches consistent with interpretative and critical theory have become evident. This paper explores the nature of inquiry underpinning current practice. It suggests that contemporary developments have been a reaction to a climate of uncertainty, generated by rapid political, fiscal, technological and ideological change in the delivery of health and social care in the last four decades. From these rapid changes, different views of \u2018best practice\u2019 have developed: evidence-based, reflective and reflexive practice, each with its own source of knowledge and method of inquiry. It is postulated that each of these views has implications for education, practice and research.",
+      "cited_by_count": 39,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Occupational Therapy",
+        "type": "journal",
+        "issn": [
+          "0308-0226",
+          "1477-6006"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Occupational Therapy Practice and Research",
+        "Interprofessional Education and Collaboration",
+        "Cerebral Palsy and Movement Disorders"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W1997336501"
+    },
+    {
+      "openalex_id": "W2577040991",
+      "doi": "10.1007/978-981-10-3130-4_1",
+      "title": "Practice Theory and Education: Diversity and Contestation",
+      "authors": [
+        {
+          "name": "Peter Grootenboer",
+          "openalex_id": "A5050684866",
+          "orcid": "https://orcid.org/0000-0003-4996-9288",
+          "institutions": [
+            "Griffith University"
+          ]
+        },
+        {
+          "name": "Christine Edwards\u2010Groves",
+          "openalex_id": "A5055970054",
+          "orcid": "https://orcid.org/0000-0002-3527-9756",
+          "institutions": [
+            "Charles Sturt University"
+          ]
+        },
+        {
+          "name": "Sarojni Choy",
+          "openalex_id": "A5025837493",
+          "orcid": "https://orcid.org/0000-0002-6988-9288",
+          "institutions": [
+            "Griffith University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": null,
+      "cited_by_count": 31,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global Educational Policies and Reforms"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2577040991"
+    },
+    {
+      "openalex_id": "W2099330597",
+      "doi": "10.1016/s0048-7333(02)00062-8",
+      "title": "Technological transitions as evolutionary reconfiguration processes: a multi-level perspective and a case-study",
+      "authors": [
+        {
+          "name": "Frank W. Geels",
+          "openalex_id": "A5048598866",
+          "orcid": "https://orcid.org/0000-0001-8778-4757",
+          "institutions": [
+            "University of Twente"
+          ]
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-12-01",
+      "abstract": null,
+      "cited_by_count": 6253,
+      "type": "article",
+      "source": {
+        "name": "Research Policy",
+        "type": "journal",
+        "issn": [
+          "0048-7333",
+          "1873-7625"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0048733302000628"
+      },
+      "topics": [
+        "Innovation Diffusion and Forecasting",
+        "Innovation and Knowledge Management",
+        "Global Energy and Sustainability Research"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W2099330597"
+    },
+    {
+      "openalex_id": "W2044929296",
+      "doi": "10.1080/17524030701642546",
+      "title": "The Structuration of Public Participation: Organizing Environmental Control",
+      "authors": [
+        {
+          "name": "Todd Norton",
+          "openalex_id": "A5110472491",
+          "institutions": [
+            "Moscow State University of Technologies and Management named after K.G. Razumovskiy"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-10-16",
+      "abstract": "A growing body of participation literature muses over why current mechanisms of public participation persist when they so often fail; calls for expanding the conceptual boundaries of participation beyond institutional mechanisms, and highlights the role communication, and allied concepts such as discourse and rhetoric, play in participatory processes. Given these diverse calls, environmental public participation can benefit from building a mid-level theoretical terrain. In this essay, I draw upon the sociological tradition of Anthony Giddens' structuration theory and parallel systems thinking which foreground a structure-action mode of analysis. Through this lens I articulate the basic premises of a structuration model for environmental public participation, pointing especially to issues of agency, which involves ontological security and ontological competence, social systems, and various elements within duality of structure, with an eye toward communication-centered research. This theoretical space further indicates the possibilities of connecting the material realm of action/practice with the symbolic domain of environmental self.",
+      "cited_by_count": 40,
+      "type": "article",
+      "source": {
+        "name": "Environmental Communication",
+        "type": "journal",
+        "issn": [
+          "1752-4032",
+          "1752-4040"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Management and Organizational Studies",
+        "Social and Cultural Dynamics"
+      ],
+      "referenced_works_count": 98,
+      "url": "https://openalex.org/W2044929296"
+    },
+    {
+      "openalex_id": "W1592830189",
+      "doi": "10.4324/9780203116661",
+      "title": "Intersubjectivity in Economics",
+      "authors": [],
+      "publication_year": 2003,
+      "publication_date": "2003-09-02",
+      "abstract": "Introduction - why intersubjectivity?, Edward Fullbrook. Part I Intersubjective agents collective intentionality and individual behaviour, John B Davis reciprocity, cooperation and limits to competition, Armin Falk and Ernst Fehr all consumption is conspicuous, Anne Mayhew flaws in the foundation - consumer behaviour and general equilibrium theory, Frank Ackerman on the need for a more complete ontology of the consumer, Ralph William Pfouts conspicuous consumption in economic theory and thought, Roger S Mason the economics of criminal participation - radical subjectivist and intersubjectivist critiques, Peter Wynarczyk everybody is talking about it - intersubjectivity and the television industry, Shaun P Hargreaves Heap. Part II Intersubjective structures market, imitation and tradition: Hayek v Keynes, Jean-Pierre Dupuy the formation and development of individual agency - reconstitutive downward causation, Geoffrey Hodgson conventions of co-ordination and the framing of uncertainty, Laurent Theacutevenot on critical realism and intersubjectivity, Paul Lewis and Jochen Runde social networks and information, Paul Ormerod dispositions, social structures and economic practices - towards a structural-genetic economics Freacute Lebaron Adam Smith's sympathy - towards a normative economics, S Abu Turab Rizvi French conventions theory and interface management - towards a new theory of the firm, Thierry Levy an intersubjective theory of value, Edward Fullbrook.",
+      "cited_by_count": 59,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Economic Theory and Institutions",
+        "Business Strategy and Innovation"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1592830189"
+    },
+    {
+      "openalex_id": "W2797179944",
+      "doi": "10.1080/17405904.2018.1457550",
+      "title": "Marx, discourse theory and political analysis: negotiating an ambiguous legacy",
+      "authors": [
+        {
+          "name": "David Howarth",
+          "openalex_id": "A5065775873",
+          "orcid": "https://orcid.org/0000-0002-6448-0379",
+          "institutions": [
+            "University of Essex"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-08",
+      "abstract": "This article argues that \u2018post-Marxist\u2019 or \u2018poststructuralist discourse theory\u2019 represents a complex deconstruction of the Marxist tradition of social and political theory. Focussing on three ontological positions in Marx\u2019s texts \u2013 the ontologies of human alienation, praxis, and production \u2013 the article shows how this approach repeats and transforms the rich tradition of Marxist thinking so as to elaborate a novel approach to social and political analysis. This claim is built around the idea that discourse is best conceptualized as an \u2018articulatory practice\u2019, whose elements are both linguistic and non-linguistic in character, and whose products are finite relational orders, including social institutions and economic processes. The result is (1) a shift away from economic determinism and class reductionism to a relational account of social and political forms; (2) the development of an anti-essentialist and anti-reductionist account of political identities, which emerge in a dialectical tension with incomplete processes of identification, and (3) a particular understanding of the subject and agency in political theory, which grounds a different account of political practices. The article also (4) sets out the methodological implications of post-Marxist discourse theory, which is focussed on the articulation of different logics of critical explanation, before (5) exploring the role of critique and normativity in this approach, which are conceptualized as continuous, immanent and complex.",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Critical Discourse Studies",
+        "type": "journal",
+        "issn": [
+          "1740-5904",
+          "1740-5912"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Economy and Marxism",
+        "Marxism and Critical Theory"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W2797179944"
+    },
+    {
+      "openalex_id": "W597638680",
+      "doi": "10.5860/choice.44-1239",
+      "title": "An Anatomy of power: the social theory of Michael Mann",
+      "authors": [],
+      "publication_year": 2006,
+      "publication_date": "2006-10-01",
+      "abstract": "Introduction: the IEMP model and its critics Ralph Schroeder Part I. Theory, Practice, Method: 2. Mann's transformation of the classic sociological traditions Randall Collins 3. Political questions John A. Hall 4. Mann's microfoundations: addressing neo-Weberian dilemmas Edgar Kiser 5. Grand yet grounded: ontology, theory and method in Mann's historical sociology Joseph Bryant Part II. Types of Power: 6. Mann's theory of ideological power: sources, applications and elaborations Philip Gorski 7. Political power un-manned: a defence of the holy trinity from Mann's military attack Gianfranco Poggi 8. Mann, the state and war John Hobson 9. Infrastructural power, economic transformation and globalization Linda Weiss Part III. European Exceptionalism?: 10. From theory to history: 'the European dynamic' or 'from Feudalism to capitalism'? Robert Brenner 11. The rise of the west Stephen Epstein 12. A historical, not comparative method: breakthroughs and limitations in the theory and methodology of Michael Mann's analysis of power Jack Goldstone Part IV. Promise and Perils of Modernity: 13. The 'British' sources of social power: reflections on history, sociology, and intellectual biography Frank Trentmann 14. Networks and ideologies: the fusion of 'is' and 'ought' as a means to social power Jack Snyder 15. Mann's dark side: linking democracy and genocide David Laitin Part V. Response: 16. The sources of power revisited: a response to criticism Michael Mann.",
+      "cited_by_count": 67,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W597638680"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

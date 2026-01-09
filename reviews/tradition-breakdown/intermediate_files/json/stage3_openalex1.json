@@ -1,0 +1,2531 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "revolution tradition breakdown",
+  "results": [
+    {
+      "openalex_id": "W1572211142",
+      "doi": "10.22004/ag.econ.26391",
+      "title": "The Two Transitions in Central and Eastern Europe and the Relation between Path Dependent and Politically Implemented Institutional Change",
+      "authors": [
+        {
+          "name": "Joachim Zweynert",
+          "openalex_id": "A5007295739"
+        },
+        {
+          "name": "Nils Goldschmidt",
+          "openalex_id": "A5046930761",
+          "orcid": "https://orcid.org/0000-0003-3261-3779"
+        },
+        {
+          "name": "Zweynert, Joachim",
+          "openalex_id": ""
+        },
+        {
+          "name": "Goldschmidt, Nils",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "The increasing gap between the formerly socialist countries of Central and Eastern Europe (CE &amp; EE) with regard to both their economic and political performance cannot be explained by their different starting conditions after the breakdown of the Soviet Union alone. Rather, it is due to cultural and historical circumstances that shape the particular tradition and societal environment. Taking a cultural approach and referring to the newer literature on the transfer of institutions, we try to improve the understanding of the interrelation between formal and informal institutions. Our central thesis is that the \"reaction rate\" of informal institutions depends on their compatibility with imported formal institutions. The transition processes in CE &amp; EE can tell us much about the relation between path dependent and politically implemented institutional change. During the 20th century the countries of CE &amp; EE twice went through rapid institutional change: For centuries they had acculturated to Western Europe, but as a result of the October Revolution \"Eastern\" patterns were imposed upon them. Since the breakdown of the SU in the late 1980s they have \"returned to Europe\" by (re-)establishing democracy and capitalism. In our opinion, to understand the differences in performance between the transition countries, it is necessary to interpret both transitions as processes of institutional transplantation and ask how the informal institutional settings in the different countries interacted with the imported formal institutions.",
+      "cited_by_count": 46,
+      "type": "preprint",
+      "source": {
+        "name": "AgEcon Search (University of Minnesota, USA)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://ageconsearch.umn.edu/record/26391"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Russia and Soviet political economy",
+        "Post-Communist Economic and Political Transition"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W1572211142"
+    },
+    {
+      "openalex_id": "W1489944909",
+      "doi": null,
+      "title": "An English Affair: Sex, Class and Power in the Age of Profumo",
+      "authors": [
+        {
+          "name": "Richard Davenport-Hines",
+          "openalex_id": "A5040851526"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-12-17",
+      "abstract": "Published to coincide with the fiftieth anniversary of the Profumo scandal, An English Affair is a sharp-focused snapshot of a nation on the brink of social revolution. Britain in 1963 - Harold Macmillan was the Prime Minister of a Conservative government, dedicated to tradition, hierarchy and, above all, old-fashioned morality. But a breakdown of social boundaries saw nightclub hostesses mixing with aristocrats, and middle-class professionals dabbling in criminality. Meanwhile, Cold War paranoia gripped the public imagination. The Profumo Affair was a perfect storm, and when it broke it rocked the Establishment. In 'An English Affair', the author of the critically-acclaimed 'Titainic Lives' Richard Davenport-Hines brings Swinging London to life. The cast of players includes the familiar - louche doctor Stephen Ward, good-time girls Christine Keeler and Mandy Rice-Davies, and Secretary for War John Profumo himself. But we also encounter the tabloid hacks, property developers and hangers-on whose roles have, until now, never been fully revealed. Sex, drugs, class, race, chequebook journalism and the criminal underworld - the Profumo Affair had it all. This is the story of how Sixties England cast off respectability and fell in love with scandal.",
+      "cited_by_count": 44,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political and Economic history of UK and US"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1489944909"
+    },
+    {
+      "openalex_id": "W3123908117",
+      "doi": "10.2139/ssrn.704281",
+      "title": "The Two Transitions in Central and Eastern Europe and the Relation between Path Dependent and Politically Implemented Institutional Change",
+      "authors": [
+        {
+          "name": "Joachim Zweynert",
+          "openalex_id": "A5007295739",
+          "institutions": [
+            "Hamburg Institute of International Economics"
+          ]
+        },
+        {
+          "name": "Nils Goldschmidt",
+          "openalex_id": "A5046930761",
+          "orcid": "https://orcid.org/0000-0003-3261-3779",
+          "institutions": [
+            "Walter Eucken Institut"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": null,
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.704281"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Post-Communist Economic and Political Transition",
+        "Russia and Soviet political economy"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W3123908117"
+    },
+    {
+      "openalex_id": "W2146706569",
+      "doi": "10.1016/j.eist.2011.02.002",
+      "title": "The multi-level perspective on sustainability transitions: Responses to seven criticisms",
+      "authors": [
+        {
+          "name": "Frank W. Geels",
+          "openalex_id": "A5048598866",
+          "orcid": "https://orcid.org/0000-0001-8778-4757",
+          "institutions": [
+            "University of Sussex"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-02-27",
+      "abstract": null,
+      "cited_by_count": 2644,
+      "type": "article",
+      "source": {
+        "name": "Environmental Innovation and Societal Transitions",
+        "type": "journal",
+        "issn": [
+          "2210-4224",
+          "2210-4232"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S2210422411000050"
+      },
+      "topics": [
+        "Sustainability and Climate Change Governance",
+        "Sustainable Industrial Ecology",
+        "Complex Systems and Decision Making"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W2146706569"
+    },
+    {
+      "openalex_id": "W2140622227",
+      "doi": "10.1017/s1537592714001595",
+      "title": "Testing Theories of American Politics: Elites, Interest Groups, and Average Citizens",
+      "authors": [
+        {
+          "name": "Martin Gilens",
+          "openalex_id": "A5082999042",
+          "orcid": "https://orcid.org/0000-0001-5485-6275",
+          "institutions": [
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Benjamin I. Page",
+          "openalex_id": "A5089044770",
+          "orcid": "https://orcid.org/0000-0002-0889-0015"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-09-01",
+      "abstract": "Each of four theoretical traditions in the study of American politics\u2014which can be characterized as theories of Majoritarian Electoral Democracy, Economic-Elite Domination, and two types of interest-group pluralism, Majoritarian Pluralism and Biased Pluralism\u2014offers different predictions about which sets of actors have how much influence over public policy: average citizens; economic elites; and organized interest groups, mass-based or business-oriented. A great deal of empirical research speaks to the policy influence of one or another set of actors, but until recently it has not been possible to test these contrasting theoretical predictions against each other within a single statistical model. We report on an effort to do so, using a unique data set that includes measures of the key variables for 1,779 policy issues. Multivariate analysis indicates that economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while average citizens and mass-based interest groups have little or no independent influence. The results provide substantial support for theories of Economic-Elite Domination and for theories of Biased Pluralism, but not for theories of Majoritarian Electoral Democracy or Majoritarian Pluralism.",
+      "cited_by_count": 2553,
+      "type": "article",
+      "source": {
+        "name": "Perspectives on Politics",
+        "type": "journal",
+        "issn": [
+          "1537-5927",
+          "1541-0986"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/62327F513959D0A304D4893B382B992B/S1537592714001595a.pdf/div-class-title-testing-theories-of-american-politics-elites-interest-groups-and-average-citizens-div.pdf"
+      },
+      "topics": [
+        "Electoral Systems and Political Participation",
+        "Political Influence and Corporate Strategies",
+        "Social Policy and Reform Studies"
+      ],
+      "referenced_works_count": 98,
+      "url": "https://openalex.org/W2140622227"
+    },
+    {
+      "openalex_id": "W2112957339",
+      "doi": null,
+      "title": "Confronting the challenges of participatory culture : media education for the 21st century",
+      "authors": [
+        {
+          "name": "Henry Jenkins",
+          "openalex_id": "A5009274666",
+          "orcid": "https://orcid.org/0000-0003-2221-9583"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "Many teens today who use the Internet are actively involved in participatory cultures\u2014joining online communities (Facebook, message boards, game clans), producing creative work in new forms (digital sampling, modding, fan videomaking, fan fiction), working in teams to complete tasks and develop new knowledge (as in Wikipedia), and shaping the flow of media (as in blogging or podcasting). A growing body of scholarship suggests potential benefits of these activities, including opportunities for peer-to-peer learning, development of skills useful in the modern workplace, and a more empowered conception of citizenship. Some argue that young people pick up these key skills and competencies on their own by interacting with popular culture; but the problems of unequal access, lack of media transparency, and the breakdown of traditional forms of socialization and professional training suggest a role for policy and pedagogical intervention.This report aims to shift the conversation about the \"digital divide\" from questions about access to technology to questions about access to opportunities for involvement in participatory culture and how to provide all young people with the chance to develop the cultural competencies and social skills needed. Fostering these skills, the authors argue, requires a systemic approach to media education; schools, afterschool programs, and parents all have distinctive roles to play.The John D. and Catherine T. MacArthur Foundation Reports on Digital Media and Learning",
+      "cited_by_count": 3188,
+      "type": "book",
+      "source": {
+        "name": "BiblioBoard Library Catalog (Open Research Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openresearchlibrary.org/ext/api/media/035b2379-8107-48cf-a023-14a25c7f4243/assets/external_content.pdf"
+      },
+      "topics": [
+        "Literacy, Media, and Education",
+        "Digital Games and Media",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2112957339"
+    },
+    {
+      "openalex_id": "W426878407",
+      "doi": "10.2307/j.ctv36tpk36",
+      "title": "Church and State Education in Revolutionary Mexico City",
+      "authors": [
+        {
+          "name": "Patience A. Schell",
+          "openalex_id": "A5056367037",
+          "orcid": "https://orcid.org/0000-0002-4005-6573"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-31",
+      "abstract": "Revolution in Mexico sought to subordinate church to state and push the church out of public life. Nevertheless, state and church shared a concern for the nation's social problems. Until the breakdown of church-state cooperation in 1926, they ignored the political chasm separating them to address those problems through education in order to instill in citizens a new sense of patriotism, a strong work ethic, and adherence to traditional gender roles. This book examines primary, vocational, private, and parochial education in Mexico City from 1917 to 1926 and shows how it was affected by the relations between the revolutionary state and the Roman Catholic Church. One of the first books to look at revolutionary programs in the capital immediately after the Revolution, it shows how government social reform and Catholic social action overlapped and identifies clear points of convergence while also offering vivid descriptions of everyday life in revolutionary Mexico City. Comparing curricula and practice in Catholic and public schools, Patience Schell describes scandals and successes in classrooms throughout Mexico City. Her re-creation of day-to-day schooling shows how teachers, inspectors, volunteers, and priests, even while facing material shortages, struggled to educate Mexico City's residents out of a conviction that they were transforming society. She also reviews broader federal and Catholic social action programs such as films, unionization projects, and libraries that sought to instill a new morality in the working class. Finally, she situates education among larger issues that eventually divided church and state and examines the impact of the restrictions placed on Catholic education in 1926. Schell sheds new light on the common cause between revolutionary state education and Catholic tradition and provides new insight into the wider issue of the relationship between the revolutionary state and civil society. As the presidency of Vicente Fox revives questions of church involvement in Mexican public life, her study provides a solid foundation for understanding the tenor and tenure of that age-old relationship.",
+      "cited_by_count": 21,
+      "type": "book",
+      "source": {
+        "name": "University of Arizona Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "American Constitutional Law and Politics",
+        "Catholicism and Religious Studies",
+        "Religion and Society in Latin America"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W426878407"
+    },
+    {
+      "openalex_id": "W2129057559",
+      "doi": "10.1093/oso/9780199280452.003.0001",
+      "title": "Introduction: Institutional Change in Advanced Political Economies",
+      "authors": [
+        {
+          "name": "Wolfgang Streeck",
+          "openalex_id": "A5111467910",
+          "institutions": [
+            "Max Planck Society",
+            "Max Planck Institute for the Study of Societies"
+          ]
+        },
+        {
+          "name": "Kathleen Thelen",
+          "openalex_id": "A5110205574",
+          "institutions": [
+            "Massachusetts Institute of Technology",
+            "Max Planck Society",
+            "Max Planck Institute for the Study of Societies"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-10",
+      "abstract": "Abstract The chapters in this volume were written as a collective contribution to the current debate in political science and sociology on institutional change. Instead of abstract theoretical reasoning, they offer in-depth empirical case studies. The underlying assumption, amply supported by recent literature, is that there is a wide but not infinite variety of modes of institutional change that can meaningfully be distinguished and analytically compared. It is also assumed that an empirically grounded typology of institutional change that does justice to the complexity and versatility of the subject can offer important insights on mechanisms of social and political stability and evolution generally.",
+      "cited_by_count": 1587,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.ssoar.info/ssoar/handle/document/19498"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Economic Theory and Institutions",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W2129057559"
+    },
+    {
+      "openalex_id": "W2969625533",
+      "doi": "10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "authors": [
+        {
+          "name": "Yogesh K. Dwivedi",
+          "openalex_id": "A5048622877",
+          "orcid": "https://orcid.org/0000-0002-5547-9990",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Laurie Hughes",
+          "openalex_id": "A5072512285",
+          "orcid": "https://orcid.org/0000-0002-0956-0608",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Elvira Ismagilova",
+          "openalex_id": "A5033472055",
+          "orcid": "https://orcid.org/0000-0001-9634-194X",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Gert Aarts",
+          "openalex_id": "A5027512483",
+          "orcid": "https://orcid.org/0000-0002-6038-3782",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Crispin Coombs",
+          "openalex_id": "A5018731131",
+          "orcid": "https://orcid.org/0000-0002-4203-9291",
+          "institutions": [
+            "Loughborough University"
+          ]
+        },
+        {
+          "name": "Tom Crick",
+          "openalex_id": "A5015452463",
+          "orcid": "https://orcid.org/0000-0001-5196-9389",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Yanqing Duan",
+          "openalex_id": "A5032994640",
+          "orcid": "https://orcid.org/0000-0003-4205-7403",
+          "institutions": [
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Rohita Dwivedi",
+          "openalex_id": "A5070017829",
+          "orcid": "https://orcid.org/0000-0003-3801-3635",
+          "institutions": [
+            "Prin. L. N. Welingkar Institute of Management Development and Research"
+          ]
+        },
+        {
+          "name": "John S. Edwards",
+          "openalex_id": "A5007695310",
+          "orcid": "https://orcid.org/0000-0003-3979-017X",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Aled Eirug",
+          "openalex_id": "A5000411910",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Vassilis Galanos",
+          "openalex_id": "A5015685463",
+          "orcid": "https://orcid.org/0000-0002-8363-4855",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "P. Vigneswara Ilavarasan",
+          "openalex_id": "A5004125306",
+          "orcid": "https://orcid.org/0000-0002-9431-3520",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Marijn Janssen",
+          "openalex_id": "A5062073470",
+          "orcid": "https://orcid.org/0000-0001-6211-8790",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Paul Jones",
+          "openalex_id": "A5080152304",
+          "orcid": "https://orcid.org/0000-0003-0417-9143",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Arpan Kumar Kar",
+          "openalex_id": "A5061235109",
+          "orcid": "https://orcid.org/0000-0003-4186-4887",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Hatice Kizgin",
+          "openalex_id": "A5037522059",
+          "orcid": "https://orcid.org/0000-0003-0841-8973",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Bianca Kronemann",
+          "openalex_id": "A5037724665",
+          "orcid": "https://orcid.org/0009-0002-5146-537X",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Banita Lal",
+          "openalex_id": "A5103045218",
+          "orcid": "https://orcid.org/0000-0003-1340-1746",
+          "institutions": [
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Biagio Lucini",
+          "openalex_id": "A5003777616",
+          "orcid": "https://orcid.org/0000-0001-8974-8266",
+          "institutions": [
+            "Swansea University",
+            "Foundry (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Rony Medaglia",
+          "openalex_id": "A5003475331",
+          "orcid": "https://orcid.org/0000-0001-7292-5895",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        },
+        {
+          "name": "Kenneth Le Meunier\u2010FitzHugh",
+          "openalex_id": "A5059234800",
+          "institutions": [
+            "University of East Anglia"
+          ]
+        },
+        {
+          "name": "Leslie Caroline Le Meunier-FitzHugh",
+          "openalex_id": "A5076965699"
+        },
+        {
+          "name": "Santosh K. Misra",
+          "openalex_id": "A5018760782",
+          "orcid": "https://orcid.org/0000-0002-3313-4895",
+          "institutions": [
+            "University of East Anglia",
+            "Government of Tamil Nadu"
+          ]
+        },
+        {
+          "name": "Emmanuel Mogaji",
+          "openalex_id": "A5082000265",
+          "orcid": "https://orcid.org/0000-0003-0544-4842",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        },
+        {
+          "name": "Sujeet Kumar Sharma",
+          "openalex_id": "A5037836435",
+          "orcid": "https://orcid.org/0000-0003-3614-9053"
+        },
+        {
+          "name": "Jang Bahadur Singh",
+          "openalex_id": "A5040405430",
+          "orcid": "https://orcid.org/0000-0001-7017-1989",
+          "institutions": [
+            "Indian Institute of Management Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Vishnupriya Raghavan",
+          "openalex_id": "A5050603102"
+        },
+        {
+          "name": "Ramakrishnan Raman",
+          "openalex_id": "A5072261829",
+          "orcid": "https://orcid.org/0000-0003-3642-6989",
+          "institutions": [
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "Nripendra P. Rana",
+          "openalex_id": "A5034248834",
+          "orcid": "https://orcid.org/0000-0003-1105-8729",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Spyridon Samothrakis",
+          "openalex_id": "A5033216620",
+          "orcid": "https://orcid.org/0000-0003-1902-9690",
+          "institutions": [
+            "University of Essex"
+          ]
+        },
+        {
+          "name": "Jak Spencer",
+          "openalex_id": "A5016998336",
+          "institutions": [
+            "Training Programs in Epidemiology and Public Health Interventions Network"
+          ]
+        },
+        {
+          "name": "Kuttimani Tamilmani",
+          "openalex_id": "A5008267619",
+          "orcid": "https://orcid.org/0000-0002-9615-1465",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Annie Tubadji",
+          "openalex_id": "A5070089201",
+          "orcid": "https://orcid.org/0000-0002-6134-3520",
+          "institutions": [
+            "University of the West of England"
+          ]
+        },
+        {
+          "name": "Paul Walton",
+          "openalex_id": "A5109157215",
+          "institutions": [
+            "Capgemini (United Kingdom)",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Michael D. Williams",
+          "openalex_id": "A5002569790",
+          "orcid": "https://orcid.org/0000-0002-3047-0332",
+          "institutions": [
+            "Swansea University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-27",
+      "abstract": null,
+      "cited_by_count": 3558,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Information Management",
+        "type": "journal",
+        "issn": [
+          "0268-4012",
+          "1873-4707"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S026840121930917X"
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "Economic and Technological Systems Analysis",
+        "Digital Transformation in Industry"
+      ],
+      "referenced_works_count": 338,
+      "url": "https://openalex.org/W2969625533"
+    },
+    {
+      "openalex_id": "W1969085745",
+      "doi": "10.1140/epjst/e2012-01703-3",
+      "title": "Smart cities of the future",
+      "authors": [
+        {
+          "name": "Michael Batty",
+          "openalex_id": "A5003307854",
+          "orcid": "https://orcid.org/0000-0002-9931-1305",
+          "institutions": [
+            "UCL Australia",
+            "University College London",
+            "Centre for Advanced Study"
+          ]
+        },
+        {
+          "name": "Kay W. Axhausen",
+          "openalex_id": "A5028278516",
+          "institutions": [
+            "ETH Zurich",
+            "Institut f\u00fcr Angewandte Verkehrs- und Tourismusforschung (Germany)"
+          ]
+        },
+        {
+          "name": "Fosca Giannotti",
+          "openalex_id": "A5024505700",
+          "orcid": "https://orcid.org/0000-0003-3099-3835",
+          "institutions": [
+            "University of Pisa",
+            "Istituto di Scienza e Tecnologie dell'Informazione \"Alessandro Faedo\""
+          ]
+        },
+        {
+          "name": "Alexei Pozdnoukhov",
+          "openalex_id": "A5112026130",
+          "institutions": [
+            "National University of Ireland, Maynooth"
+          ]
+        },
+        {
+          "name": "Armando Bazzani",
+          "openalex_id": "A5058670333",
+          "orcid": "https://orcid.org/0000-0002-9633-0017",
+          "institutions": [
+            "University of Bologna"
+          ]
+        },
+        {
+          "name": "M\u00f3nica Wachowicz",
+          "openalex_id": "A5068240080",
+          "orcid": "https://orcid.org/0000-0002-4659-0101",
+          "institutions": [
+            "University of New Brunswick"
+          ]
+        },
+        {
+          "name": "Georgios K. Ouzounis",
+          "openalex_id": "A5051493472",
+          "orcid": "https://orcid.org/0000-0001-8914-3398",
+          "institutions": [
+            "Joint Research Centre",
+            "European Commission"
+          ]
+        },
+        {
+          "name": "Y. Portugali",
+          "openalex_id": "A5045761637",
+          "institutions": [
+            "Tel Aviv University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-11-01",
+      "abstract": "\\nHere we sketch the rudiments of what constitutes a smart city which we define as a city in which ICT is merged with traditional infrastructures, coordinated and integrated using new digital technologies. We first sketch our vision defining seven goals which concern: developing a new understanding of urban problems; effective and feasible ways to coordinate urban technologies; models and methods for using urban data across spatial and temporal scales; developing new technologies for communication and dissemination; developing new forms of urban governance and organisation; defining critical problems relating to cities, transport, and energy; and identifying risk, uncertainty, and hazards in the smart city. To this, we add six research challenges: to relate the infrastructure of smart cities to their operational functioning and planning through management, control and optimisation; to explore the notion of the city as a laboratory for innovation; to provide portfolios of urban simulation which inform future designs; to develop technologies that ensure equity, fairness and realise a better quality of city life; to develop technologies that ensure informed participation and create shared knowledge for democratic city governance; and to ensure greater and more effective mobility and access to opportunities for urban populations. We begin by defining the state of the art, explaining the science of smart cities. We define six scenarios based on new cities badging themselves as smart, older cities regenerating themselves as smart, the development of science parks, tech cities, and technopoles focused on high technologies, the development of urban services using contemporary ICT, the use of ICT to develop new urban intelligence functions, and the development of online and mobile forms of participation. Seven project areas are then proposed: Integrated Databases for the Smart City, Sensing, Networking and the Impact of New Social Media, Modelling Network Performance, Mobility and Travel Behaviour, Modelling Urban Land Use, Transport and Economic Interactions, Modelling Urban Transactional Activities in Labour and Housing Markets, Decision Support as Urban Intelligence, Participatory Governance and Planning Structures for the Smart City. Finally we anticipate the paradigm shifts that will occur in this research and define a series of key demonstrators which we believe are important to progressing a science of smart cities.\\n",
+      "cited_by_count": 2033,
+      "type": "article",
+      "source": {
+        "name": "The European Physical Journal Special Topics",
+        "type": "journal",
+        "issn": [
+          "1951-6355",
+          "1951-6401"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1140/epjst/e2012-01703-3.pdf"
+      },
+      "topics": [
+        "Human Mobility and Location-Based Analysis",
+        "Smart Cities and Technologies",
+        "Mobile Crowdsensing and Crowdsourcing"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W1969085745"
+    },
+    {
+      "openalex_id": "W1873550992",
+      "doi": null,
+      "title": "The Bias of the World : Theories of Unequal Exchange in History",
+      "authors": [
+        {
+          "name": "John Brolin",
+          "openalex_id": "A5016088268"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-01-01",
+      "abstract": "This is a history of theories and theorists of unequal exchange. Starting with mercantilists and Richard Cantillon's theory based on land values, it briefly covers the early Classical economists and Gerald Fitzhugh. Among early 20th century Marxist economists, unequal exchange appeared in Otto Bauer's explanation of nationalist antagonism, and in Henryk Grossmann as countering the breakdown of capitalism. It is argued that the addition to Marxist economic theory of international capital mobility and transfers of value was prompted in part by the confusion regarding national boundaries in the Habsburg Empire. As to Harold A. Innis, it is argued that theories of unequal exchange could make more use of him as the historian of the bias of communication than as the originator of the ?staple thesis?. The role of Ra\u00fal Prebisch as the originator of the debate on unequal exchange is questioned and his many similarities with mercantilist theorists underlined. It is shown how the debate on the Prebisch-Singer theorem on the terms of trade soon demonstrated that it was not so much specialisation on raw materials or manufactures that determined the terms of trade as underdevelopment or development per se. Building on the Classical economic paradigm and trying in the cold-war context to understand the British industrial revolution, W. Arthur Lewis's model focused on unequal wage-levels due to productivity differences and their non-equalisation due to political restrictions on migration, thereby making the ?commodity? terms of trade determined by the ?factoral? terms. Arghiri Emmanuel became the historical catalyst for the idea of unequal exchange, integrating mercantilist, Classical, and Marxist perspectives. Distinct from the ?monopoly? interpretation, his theory is presented in its Marxist, Sraffian and ecological versions. The specific historical function of unequal exchange in his perspective is linked to the no less original argument on the disequilibrium between the value of output and the purchasing power of income. Ecological theories of unequal exchange are also examined: Howard T. Odum's ?emergy? theory, Georg Borgstr\u00f6m's ghost acreages, Hartvig S\u00e6tra's three-tense imperialism, ecological footprints as adopted by Jan Otto Andersson, and ecological dependency in Stephen Bunker and Joan Martinez-Alier. Instead of the transfer of ?labour? or ?ecological values? dominating much Marxist and ecological writings, a conception of unequal exchange is advocated focusing on ?horizontally? antagonistic social relations ? retaining a difference in levels of consumption, or appropriation of total societal/ecological output of goods and services, between large masses of populations ? and their reverberation on relative prices, or the terms of trade. More strict than common usage would allow, this delimitation retains what is most useful and original in the concept's history as makes it distinct from other traditions.",
+      "cited_by_count": 27,
+      "type": "dissertation",
+      "source": {
+        "name": "Lund University Publications (Lund University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://lup.lub.lu.se/record/25251"
+      },
+      "topics": [
+        "Economic Theory and Institutions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1873550992"
+    },
+    {
+      "openalex_id": "W2140880926",
+      "doi": "10.1371/journal.pone.0011273",
+      "title": "Open Access to the Scientific Journal Literature: Situation 2009",
+      "authors": [
+        {
+          "name": "Bo\u2010Christer Bj\u00f6rk",
+          "openalex_id": "A5036789552",
+          "orcid": "https://orcid.org/0000-0003-1545-9642",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Patrik Welling",
+          "openalex_id": "A5047186166",
+          "orcid": "https://orcid.org/0000-0002-2545-1831",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Mikael Laakso",
+          "openalex_id": "A5067698582",
+          "orcid": "https://orcid.org/0000-0003-3951-7990",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "P\u00e9ter Majlender",
+          "openalex_id": "A5087870453",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Turid Hedlund",
+          "openalex_id": "A5000440069",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Gu\u00f0ni Gu\u00f0nason",
+          "openalex_id": "A5017773495",
+          "institutions": [
+            "Innovation Center Iceland"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-06-23",
+      "abstract": "The results show that OA already has a significant positive impact on the availability of the scientific journal literature and that there are big differences between scientific disciplines in the uptake. Due to the lack of awareness of OA-publishing among scientists in most fields outside physics, the results should be of general interest to all scholars. The results should also interest academic publishers, who need to take into account OA in their business strategies and copyright policies, as well as research funders, who like the NIH are starting to require OA availability of results from research projects they fund. The method and search tools developed also offer a good basis for more in-depth studies as well as longitudinal studies.",
+      "cited_by_count": 522,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0011273&type=printable"
+      },
+      "topics": [
+        "scientometrics and bibliometrics research",
+        "Academic Publishing and Open Access",
+        "Research Data Management Practices"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2140880926"
+    },
+    {
+      "openalex_id": "W2009595209",
+      "doi": "10.1017/s0043887109990219",
+      "title": "Why Do Ethnic Groups Rebel? New Data and Analysis",
+      "authors": [
+        {
+          "name": "Lars-Erik Cederman",
+          "openalex_id": "A5112605479",
+          "institutions": [
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "Andreas Wimmer",
+          "openalex_id": "A5101414320",
+          "orcid": "https://orcid.org/0000-0003-1593-866X",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        },
+        {
+          "name": "Brian Min",
+          "openalex_id": "A5048456533",
+          "orcid": "https://orcid.org/0000-0002-4305-3677",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-12-18",
+      "abstract": "Much of the quantitative literature on civil wars and ethnic conflict ignores the role of the state or treats it as a mere arena for political competition among ethnic groups. Other studies analyze how the state grants or withholds minority rights and faces ethnic protest and rebellion accordingly, while largely overlooking the ethnic power configurations at the state's center. Drawing on a new data set on Ethnic Power Relations (EPR) that identifies all politically relevant ethnic groups and their access to central state power around the world from 1946 through 2005, the authors analyze outbreaks of armed conflict as the result of competing ethnonationalist claims to state power. The findings indicate that representatives of ethnic groups are more likely to initiate conflict with the government (1) the more excluded from state power they are, especially if they have recently lost power, (2) the higher their mobilizational capacity, and (3) the more they have experienced conflict in the past.",
+      "cited_by_count": 1317,
+      "type": "article",
+      "source": {
+        "name": "World Politics",
+        "type": "journal",
+        "issn": [
+          "0043-8871",
+          "1086-3338"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://muse.jhu.edu/pub/122/article/370236"
+      },
+      "topics": [
+        "Political Conflict and Governance",
+        "Asian Geopolitics and Ethnography",
+        "Southeast Asian Sociopolitical Studies"
+      ],
+      "referenced_works_count": 138,
+      "url": "https://openalex.org/W2009595209"
+    },
+    {
+      "openalex_id": "W2094660271",
+      "doi": "10.1353/jqr.2007.0005",
+      "title": "Haskalah: A New Paradigm",
+      "authors": [
+        {
+          "name": "M. J. Rosman",
+          "openalex_id": "A5108425873"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-12-01",
+      "abstract": "Haskalah:A New Paradigm Moshe Rosman (bio) Shmuel Feiner . The Jewish Enlightenment. Translated by Chaya Naor. Jewish Culture and Contexts. Philadelphia: University of Pennsylvania Press, 2004. Pp. xiv + 440. From Heinrich Graetz till Jacob Katz the Haskalah\u2014purportedly initiated, inspired, and symbolized by Moses Mendelssohn\u2014was portrayed as the first act in the drama of the modernization of the Jews. The conscious turn of the maskilim in Germany in the late eighteenth century to rationality, their openness to non-Jewish culture, their connections to general society, their criticism of Judaism, their efforts to revive or create anew Jewish literary genres\u2014all of these not merely challenged traditional society but undermined it, bringing it into crisis. Not only did the \"Haskalah Movement\" fracture the coherence of the traditional world; it induced a series of processes that made the Jews modern: assimilation, religious reform, critical scholarship, emancipation, and nationalism. As such, Haskalah was the primary engine of Jewish modernization. But after its utterly logical, orderly, elegant exposition in the third section of Katz's Tradition and Crisis1 (The Beginnings of Breakdown), this construction of the Haskalah, as fomenting the crisis of modernity and laying the foundations of Jewish modernization, became problematic. For all its explanatory power, it contradicted or ignored significant facts. The attack commenced with Azriel Shohet, who demonstrated that many of the features commonly associated with Haskalah\u2014such as the search for \"outside wisdom,\" close social and cultural contact with Gentiles, changes in educational practices, decline in intensity of ritual life\u2014could be traced within German Jewry as much as a hundred years prior to Mendelssohn.2 According to Shohet, Mendelssohn, \"as a perfectly religious [End Page 129] Jew,\" set out not to initiate new modes, but to moderate and modulate dangerous cultural trends that were already in process. To Shohet, he \"was not 'the father of Haskalah,' not 'the harbinger of Haskalah,' and certainly not 'the creator of the Haskalah movement' . . . the Haskalah would have spread as well without him, just as it did not begin with him.\"3 Counterattack on Shohet4 did not blunt the force of at least two of the challenges he had posed to the \"Graetz-Katz\" Haskalah paradigm: If there were so many precedents, what was original about \"the Mendelssohnian Haskalah\"? What precisely was the relationship between Mendelssohn and \"the Haskalah\"? Taking another tack, a series of scholars showed that Jewish Enlightenment was not necessarily German but manifest as well in Italy, Holland, Lithuania, England, Bohemia, Hungary, and elsewhere.5 If so, what was so special about German Haskalah? Why was it presented as the template for a historical phenomenon that took so many forms in so many places? With regard to the causal relationship between Haskalah and modernization, Immanuel Etkes and David Fishman described early Haskalah in Eastern Europe without modernization; David Sorkin described both a progressively more radical Haskalah as well as \"Orthodox Haskalah,\" with modernization more as cause than effect; Todd Endelman presented Jewish modernization in Georgian England without Haskalah; and Shulamit Volkov articulated various processes of Jewish modernization, both conscious and unconscious, not necessarily connected to Haskalah. Steven Lowenstein and Steven Zipperstein showed how difficult it was to ascribe to the typically poor, low-prestige, uninfluential maskilim social [End Page 130] leadership that inspired, much less imposed, modern sensibilities on larger circles.6 By the end of the twentieth century, historiography had sundered the chain, Haskalah-emancipation-assimilation-Wissenschaft-Reform-nationalism. While they all stood in some kind of relationship to each other, each of these phenomena had its own distinct history. The notion of Haskalah as generator of both the crisis of tradition and the onset of modernity was shaken. Feiner's book brings about its demise. In his telling, rather than representing \"a crisis or a milestone in the course of the Jews' integration, assimilation, or abandonment of the 'ghetto' for the sake of the temptations 'outside',\" Haskalah was \"an internal revolution affecting Jewish society and culture\" (p. 369). With keen insight, Feiner points out that by the late 1790s the Berlin maskilim, who\u2014according to the conventional narrative\u2014had succeeded in their initial objectives and were leading the way to the more advanced stages of...",
+      "cited_by_count": 32,
+      "type": "article",
+      "source": {
+        "name": "The Jewish Quarterly Review",
+        "type": "journal",
+        "issn": [
+          "0021-6682",
+          "1553-0604"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Jewish and Middle Eastern Studies",
+        "Jewish Identity and Society"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2094660271"
+    },
+    {
+      "openalex_id": "W2968923792",
+      "doi": "10.1038/s41524-019-0221-0",
+      "title": "Recent advances and applications of machine learning in solid-state materials science",
+      "authors": [
+        {
+          "name": "Jonathan Schmidt",
+          "openalex_id": "A5057207447",
+          "orcid": "https://orcid.org/0000-0001-5685-6404",
+          "institutions": [
+            "Martin Luther University Halle-Wittenberg"
+          ]
+        },
+        {
+          "name": "M\u00e1rio R. G. Marques",
+          "openalex_id": "A5013807218",
+          "orcid": "https://orcid.org/0000-0002-7420-5098",
+          "institutions": [
+            "Martin Luther University Halle-Wittenberg"
+          ]
+        },
+        {
+          "name": "Silvana Botti",
+          "openalex_id": "A5074073454",
+          "orcid": "https://orcid.org/0000-0002-4920-2370",
+          "institutions": [
+            "Friedrich Schiller University Jena"
+          ]
+        },
+        {
+          "name": "Miguel A. L. Marques",
+          "openalex_id": "A5052107166",
+          "orcid": "https://orcid.org/0000-0003-0170-8222",
+          "institutions": [
+            "Martin Luther University Halle-Wittenberg"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-08",
+      "abstract": "Abstract One of the most exciting tools that have entered the material science toolbox in recent years is machine learning. This collection of statistical methods has already proved to be capable of considerably speeding up both fundamental and applied research. At present, we are witnessing an explosion of works that develop and apply machine learning to solid-state systems. We provide a comprehensive overview and analysis of the most recent research in this topic. As a starting point, we introduce machine learning principles, algorithms, descriptors, and databases in materials science. We continue with the description of different machine learning approaches for the discovery of stable materials and the prediction of their crystal structure. Then we discuss research in numerous quantitative structure\u2013property relationships and various approaches for the replacement of first-principle methods by machine learning. We review how active learning and surrogate-based optimization can be applied to improve the rational design process and related examples of applications. Two major questions are always the interpretability of and the physical understanding gained from machine learning models. We consider therefore the different facets of interpretability and their importance in materials science. Finally, we propose solutions and future research paths for various challenges in computational materials science.",
+      "cited_by_count": 2200,
+      "type": "article",
+      "source": {
+        "name": "npj Computational Materials",
+        "type": "journal",
+        "issn": [
+          "2057-3960"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41524-019-0221-0.pdf"
+      },
+      "topics": [
+        "Machine Learning in Materials Science",
+        "X-ray Diffraction in Crystallography",
+        "Computational Drug Discovery Methods"
+      ],
+      "referenced_works_count": 518,
+      "url": "https://openalex.org/W2968923792"
+    },
+    {
+      "openalex_id": "W1941115170",
+      "doi": "10.1111/j.1467-9558.2011.01388.x",
+      "title": "Populist Mobilization: A New Theoretical Approach to Populism",
+      "authors": [
+        {
+          "name": "Robert S. Jansen",
+          "openalex_id": "A5026387058",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-06-01",
+      "abstract": "Sociology has long shied away from the problem of populism. This may be due to suspicion about the concept or uncertainty about how to fit populist cases into broader comparative matrices. Such caution is warranted: the existing interdisciplinary literature has been plagued by conceptual confusion and disagreement. But given the recent resurgence of populist politics in Latin America and elsewhere, sociology can no longer afford to sidestep such analytical challenges. This article moves toward a political sociology of populism by identifying past theoretical deficiencies and proposing a new, practice-based approach that is not beholden to pejorative common sense understandings. This approach conceptualizes populism as a mode of political practice\u2014as populist mobilization. Its utility is demonstrated through an application to mid-twentieth-century Latin American politics. The article concludes by sketching an agenda for future research on populist mobilization in Latin America and beyond.",
+      "cited_by_count": 514,
+      "type": "article",
+      "source": {
+        "name": "Sociological Theory",
+        "type": "journal",
+        "issn": [
+          "0735-2751",
+          "1467-9558"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://deepblue.lib.umich.edu/bitstream/2027.42/112280/1/j.1467-9558.2011.01388.x.pdf"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Politics and Society in Latin America",
+        "Political Conflict and Governance"
+      ],
+      "referenced_works_count": 174,
+      "url": "https://openalex.org/W1941115170"
+    },
+    {
+      "openalex_id": "W2910462204",
+      "doi": "10.1007/s40685-019-0085-7",
+      "title": "Organizational resilience: a capability-based conceptualization",
+      "authors": [
+        {
+          "name": "Stephanie Duchek",
+          "openalex_id": "A5085311248",
+          "orcid": "https://orcid.org/0000-0002-5989-2360",
+          "institutions": [
+            "TU Dresden"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-14",
+      "abstract": null,
+      "cited_by_count": 1369,
+      "type": "article",
+      "source": {
+        "name": "BuR - Business Research",
+        "type": "journal",
+        "issn": [
+          "1866-8658",
+          "2198-2627",
+          "2198-3402"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40685-019-0085-7.pdf"
+      },
+      "topics": [
+        "Supply Chain Resilience and Risk Management",
+        "Occupational Health and Safety Research",
+        "Quality and Supply Management"
+      ],
+      "referenced_works_count": 208,
+      "url": "https://openalex.org/W2910462204"
+    },
+    {
+      "openalex_id": "W2066480210",
+      "doi": "10.1186/1741-7015-11-20",
+      "title": "RAMESES publication standards: meta-narrative reviews",
+      "authors": [
+        {
+          "name": "Geoff Wong",
+          "openalex_id": "A5066581773",
+          "orcid": "https://orcid.org/0000-0002-5384-4157",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        },
+        {
+          "name": "Trisha Greenhalgh",
+          "openalex_id": "A5059176055",
+          "orcid": "https://orcid.org/0000-0003-2369-8088",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        },
+        {
+          "name": "Gill Westhorp",
+          "openalex_id": "A5077191361",
+          "institutions": [
+            "Community Living"
+          ]
+        },
+        {
+          "name": "Jeanette Buckingham",
+          "openalex_id": "A5057726913",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Ray Pawson",
+          "openalex_id": "A5058691190",
+          "orcid": "https://orcid.org/0000-0001-5892-9849",
+          "institutions": [
+            "University of Leeds"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-29",
+      "abstract": null,
+      "cited_by_count": 574,
+      "type": "article",
+      "source": {
+        "name": "BMC Medicine",
+        "type": "journal",
+        "issn": [
+          "1741-7015"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmedicine.biomedcentral.com/counter/pdf/10.1186/1741-7015-11-20"
+      },
+      "topics": [
+        "Delphi Technique in Research",
+        "Meta-analysis and systematic reviews",
+        "Health Policy Implementation Science"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W2066480210"
+    },
+    {
+      "openalex_id": "W3115321268",
+      "doi": "10.1093/acrefore/9780190228637.013.1429",
+      "title": "African Public Administration",
+      "authors": [
+        {
+          "name": "G\u00f6ran Hyd\u00e9n",
+          "openalex_id": "A5012596445"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-16",
+      "abstract": "Public administration in Africa has its own specific features for at least two reasons. First, African societies are not organized along the lines of competing interests driven by their grounding in the economic production process. These societies have never been subject to an agrarian revolution, let alone an industrial one, that allows for the evolution of a system of social stratification similar to what is found in economically developed countries. In the latter, society is shaped by the state, much of it in its own image. The second reason, therefore, is that the African state\u2014the locus of public administration\u2014is a foreign creation imposed on society without roots in the economy or society. This tends to make its governance capricious and shaped foremost by political battles over how rents and privileges are shared among groups that come together for reasons of consumption rather than production. This is a general feature of the African scene, but it is qualified by a variable colonial legacy and a postindependence development experience. Former British and French colonies differ because of the legal systems they inherited\u2014the former the common law tradition, the latter the Napoleonic civil law apparatus. This difference is important in shaping not only public administration but also the wider political outlook\u2014a factor that affects inter-African cooperation. Since independence, public administration in these countries has been influenced by international and domestic pressures to accelerate development and promote democratic governance. This postindependence experience has been variable, some having managed to steer clear of violence, others having suffered political breakdowns. The African story of public administration since independence is diverse and representative of both successes and failures. Three countries\u2014Botswana, Kenya, and Rwanda\u2014are of special interest because they indicate different pathways that other countries in the region may follow to improve their governance and public administration.",
+      "cited_by_count": 11,
+      "type": "reference-entry",
+      "source": {
+        "name": "Oxford Research Encyclopedia of Politics",
+        "type": "journal",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Legal Issues in South Africa"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3115321268"
+    },
+    {
+      "openalex_id": "W2159387911",
+      "doi": "10.1093/jopart/mui027",
+      "title": "Maybe It Is Time to Rediscover Bureaucracy",
+      "authors": [
+        {
+          "name": "Johan P. Olsen",
+          "openalex_id": "A5086011182",
+          "orcid": "https://orcid.org/0000-0002-1383-8318",
+          "institutions": [
+            "University of Oslo"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-01",
+      "abstract": "This article questions the fashionable ideas that bureaucratic organization is an obsolescent, undesirable, and non-viable form of administration and that there is an inevitable and irreversible paradigmatic shift towards market- or network-organization. In contrast, the paper argues that contemporary democracies are involved in another round in a perennial debate and ideological struggle over what are desirable forms of administration and government: that is, a struggle over institutional identities and institutional balances. The argument is not that bureaucratic organization is a panacea and the answer to all challenges of public administration. Rather, bureaucratic organization is part of a repertoire of overlapping, supplementary, and competing forms coexisting in contemporary democracies, and so are market-organization and network-organization. Rediscovering Weber's analysis of bureaucratic organization, then, enriches our understanding of public administration. This is in particular true when we (a) include bureaucracy as an institution, not only an instrument; (b) look at the empirical studies in their time and context, not only at Weber's ideal-types and predictions; and (c) take into account the political and normative order bureaucracy is part of, not only the internal characteristics of \u201cthe bureau.\u201d",
+      "cited_by_count": 718,
+      "type": "article",
+      "source": {
+        "name": "Journal of Public Administration Research and Theory",
+        "type": "journal",
+        "issn": [
+          "1053-1858",
+          "1477-9803"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/jpart/article-pdf/16/1/1/2636618/mui027.pdf"
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Political Influence and Corporate Strategies",
+        "Local Government Finance and Decentralization"
+      ],
+      "referenced_works_count": 132,
+      "url": "https://openalex.org/W2159387911"
+    },
+    {
+      "openalex_id": "W2979527643",
+      "doi": "10.1038/s41893-019-0390-3",
+      "title": "Citizen science and the United Nations Sustainable Development Goals",
+      "authors": [
+        {
+          "name": "Steffen Fritz",
+          "openalex_id": "A5040252235",
+          "orcid": "https://orcid.org/0000-0003-0420-8549",
+          "institutions": [
+            "International Institute for Applied Systems Analysis"
+          ]
+        },
+        {
+          "name": "Linda See",
+          "openalex_id": "A5089565966",
+          "orcid": "https://orcid.org/0000-0002-2665-7065",
+          "institutions": [
+            "International Institute for Applied Systems Analysis"
+          ]
+        },
+        {
+          "name": "Tyler Carlson",
+          "openalex_id": "A5006975066",
+          "institutions": [
+            "Simon Fraser University"
+          ]
+        },
+        {
+          "name": "Muki Haklay",
+          "openalex_id": "A5067226620",
+          "orcid": "https://orcid.org/0000-0001-6117-3026",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Jessica L. Oliver",
+          "openalex_id": "A5103506035",
+          "orcid": "https://orcid.org/0000-0002-3464-0247",
+          "institutions": [
+            "University College London",
+            "Queensland University of Technology",
+            "Public Citizen"
+          ]
+        },
+        {
+          "name": "Dilek Fraisl",
+          "openalex_id": "A5009718739",
+          "orcid": "https://orcid.org/0000-0001-7523-7967",
+          "institutions": [
+            "International Institute for Applied Systems Analysis",
+            "BOKU University"
+          ]
+        },
+        {
+          "name": "Rosy Mondardini",
+          "openalex_id": "A5052322302",
+          "institutions": [
+            "University of Zurich",
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "Martin Brocklehurst",
+          "openalex_id": "A5021351386",
+          "institutions": [
+            "Public Citizen",
+            "Museum f\u00fcr Naturkunde"
+          ]
+        },
+        {
+          "name": "Lea Shanley",
+          "openalex_id": "A5039311535",
+          "orcid": "https://orcid.org/0000-0001-8449-4615",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Sven Schade",
+          "openalex_id": "A5048780370",
+          "orcid": "https://orcid.org/0000-0001-5677-5209",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Uta Wehn",
+          "openalex_id": "A5041179196",
+          "orcid": "https://orcid.org/0000-0003-1420-9721",
+          "institutions": [
+            "IHE Delft Institute for Water Education"
+          ]
+        },
+        {
+          "name": "Tommaso Abrate",
+          "openalex_id": "A5032323523",
+          "institutions": [
+            "World Meteorological Organization"
+          ]
+        },
+        {
+          "name": "Janet Anstee",
+          "openalex_id": "A5050426279",
+          "orcid": "https://orcid.org/0000-0002-1681-9630",
+          "institutions": [
+            "Public Citizen",
+            "Plant Industry",
+            "University of Sydney",
+            "Health Sciences and Nutrition",
+            "ACT Government"
+          ]
+        },
+        {
+          "name": "Stephan Arnold",
+          "openalex_id": "A5113649618",
+          "institutions": [
+            "Statistisches Bundesamt"
+          ]
+        },
+        {
+          "name": "Matthew Billot",
+          "openalex_id": "A5068110949",
+          "institutions": [
+            "United Nations Environment Programme"
+          ]
+        },
+        {
+          "name": "Jillian Campbell",
+          "openalex_id": "A5045966575",
+          "orcid": "https://orcid.org/0000-0001-7930-969X",
+          "institutions": [
+            "United Nations Environment Programme"
+          ]
+        },
+        {
+          "name": "Jessica Espey",
+          "openalex_id": "A5082815923",
+          "orcid": "https://orcid.org/0000-0002-5140-7463",
+          "institutions": [
+            "United Nations Development Programme",
+            "United Nations"
+          ]
+        },
+        {
+          "name": "Margaret M. Gold",
+          "openalex_id": "A5069027707",
+          "orcid": "https://orcid.org/0000-0003-4853-2463",
+          "institutions": [
+            "Museum f\u00fcr Naturkunde"
+          ]
+        },
+        {
+          "name": "Gerid Hager",
+          "openalex_id": "A5008321303",
+          "orcid": "https://orcid.org/0000-0003-2259-0278",
+          "institutions": [
+            "International Institute for Applied Systems Analysis"
+          ]
+        },
+        {
+          "name": "Shan He",
+          "openalex_id": "A5102884982",
+          "orcid": "https://orcid.org/0000-0002-5767-8993",
+          "institutions": [
+            "Centre for Science, Society and Citizenship"
+          ]
+        },
+        {
+          "name": "Libby Hepburn",
+          "openalex_id": "A5030498679",
+          "institutions": [
+            "Public Citizen",
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Angel Hsu",
+          "openalex_id": "A5055995988",
+          "orcid": "https://orcid.org/0000-0003-4913-9479",
+          "institutions": [
+            "Yale-NUS College"
+          ]
+        },
+        {
+          "name": "Debbi Long",
+          "openalex_id": "A5073958217",
+          "orcid": "https://orcid.org/0000-0002-0159-589X",
+          "institutions": [
+            "Scottish Environment Protection Agency",
+            "University of Dundee"
+          ]
+        },
+        {
+          "name": "Joan Mas\u00f3",
+          "openalex_id": "A5080778814",
+          "orcid": "https://orcid.org/0000-0002-2983-4629",
+          "institutions": [
+            "Universitat Aut\u00f2noma de Barcelona",
+            "Centre for Research on Ecology and Forestry Applications"
+          ]
+        },
+        {
+          "name": "Ian McCallum",
+          "openalex_id": "A5024631272",
+          "orcid": "https://orcid.org/0000-0002-5812-9988",
+          "institutions": [
+            "International Institute for Applied Systems Analysis"
+          ]
+        },
+        {
+          "name": "Maina Muniafu",
+          "openalex_id": "A5038387451",
+          "orcid": "https://orcid.org/0009-0004-9714-5990",
+          "institutions": [
+            "African Academy of Sciences"
+          ]
+        },
+        {
+          "name": "Inian Moorthy",
+          "openalex_id": "A5022402440",
+          "orcid": "https://orcid.org/0000-0002-3664-3855",
+          "institutions": [
+            "International Institute for Applied Systems Analysis"
+          ]
+        },
+        {
+          "name": "Michael Obersteiner",
+          "openalex_id": "A5025780942",
+          "orcid": "https://orcid.org/0000-0001-6981-2769",
+          "institutions": [
+            "International Institute for Applied Systems Analysis"
+          ]
+        },
+        {
+          "name": "A. Parker",
+          "openalex_id": "A5105269093",
+          "orcid": "https://orcid.org/0000-0003-0682-6199",
+          "institutions": [
+            "Woodrow Wilson International Center for Scholars"
+          ]
+        },
+        {
+          "name": "Maike Wei\u00dfpflug",
+          "openalex_id": "A5088374077",
+          "orcid": "https://orcid.org/0000-0002-6082-5333",
+          "institutions": [
+            "Museum f\u00fcr Naturkunde"
+          ]
+        },
+        {
+          "name": "Sarah West",
+          "openalex_id": "A5002382147",
+          "orcid": "https://orcid.org/0000-0002-2484-8124",
+          "institutions": [
+            "Stockholm Environment Institute",
+            "University of York"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-09",
+      "abstract": null,
+      "cited_by_count": 595,
+      "type": "article",
+      "source": {
+        "name": "Nature Sustainability",
+        "type": "journal",
+        "issn": [
+          "2398-9629"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Species Distribution and Climate Change",
+        "Research Data Management Practices",
+        "Scientific Computing and Data Management"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W2979527643"
+    },
+    {
+      "openalex_id": "W2801023641",
+      "doi": "10.26458/jedep.v7i1.571",
+      "title": "QUALITATIVE RESEARCH METHODOLOGY IN SOCIAL SCIENCES AND RELATED SUBJECTS",
+      "authors": [
+        {
+          "name": "Haradhan Kumar Mohajan",
+          "openalex_id": "A5112378925",
+          "institutions": [
+            "Premier University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-03-30",
+      "abstract": "This literature review paper discusses the proper use of qualitative research methodology to discuss several aspects of the research for the improvement of the skill of the readers. During the last few decades, the use of qualitative research has been increased in many institutions. It can be used to explore several areas of human behavior for the development of organizations. The purpose of this study is to provide inspirations to the new researchers for the development of their qualitative articles. The paper analyzes the design of qualitative research giving some methodological suggestions to make it explicable to the reader. In this paper an attempt has been taken to study the background of the qualitative research methodologyin social sciences and some other related subjects, along with the importance, and main features of the study.",
+      "cited_by_count": 1381,
+      "type": "article",
+      "source": {
+        "name": "Journal of Economic Development Environment and People",
+        "type": "journal",
+        "issn": [
+          "2285-3642"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://ojs.spiruharet.ro/index.php/jedep/article/download/jedep.v7i1.571/pdf"
+      },
+      "topics": [
+        "Organizational Leadership and Management Strategies"
+      ],
+      "referenced_works_count": 122,
+      "url": "https://openalex.org/W2801023641"
+    },
+    {
+      "openalex_id": "W3121546862",
+      "doi": "10.3386/w12216",
+      "title": "Measuring and Explaining Management Practices Across Firms and Countries",
+      "authors": [
+        {
+          "name": "Nick Bloom",
+          "openalex_id": "A5084841149",
+          "orcid": "https://orcid.org/0000-0003-2896-0823",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "John Van Reenen",
+          "openalex_id": "A5004443266",
+          "orcid": "https://orcid.org/0000-0001-9153-2907",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-05-01",
+      "abstract": "We use an innovative survey tool to collect management practice data from 732 medium sized manufacturing firms in the US, France, Germany and the UK.These measures of managerial practice are strongly associated with firm-level productivity, profitability, Tobin's Q, sales growth and survival rates.Management practices also display significant cross-country differences with US firms on average better managed than European firms, and significant within-country differences with a long tail of extremely badly managed firms.We find that poor management practices are more prevalent when (a) product market competition is weak and/or when (b) family-owned firms pass management control down to the eldest sons (primo geniture).European firms report lower levels of competition, while French and British firms also report substantially higher levels of primo geniture due to the influence of Norman legal origin and generous estate duty for family firms.We calculate that product market competition and family firms account for about half of the long tail of badly managed firms and up to two thirds of the American advantage over Europe in management practices.",
+      "cited_by_count": 1465,
+      "type": "report",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.3386/w12216"
+      },
+      "topics": [
+        "Corporate Finance and Governance",
+        "Firm Innovation and Growth",
+        "International Business and FDI"
+      ],
+      "referenced_works_count": 97,
+      "url": "https://openalex.org/W3121546862"
+    },
+    {
+      "openalex_id": "W2033588393",
+      "doi": "10.3390/metabo2020303",
+      "title": "A Historical Overview of Natural Products in Drug Discovery",
+      "authors": [
+        {
+          "name": "Daniel A. Dias",
+          "openalex_id": "A5023638095",
+          "orcid": "https://orcid.org/0000-0003-0129-3178",
+          "institutions": [
+            "University of Melbourne",
+            "Melbourne Genomics Health Alliance"
+          ]
+        },
+        {
+          "name": "Sylvia Urban",
+          "openalex_id": "A5079004431",
+          "orcid": "https://orcid.org/0000-0002-2376-4260",
+          "institutions": [
+            "RMIT University"
+          ]
+        },
+        {
+          "name": "Ute Roessner",
+          "openalex_id": "A5062149146",
+          "orcid": "https://orcid.org/0000-0002-6482-2615",
+          "institutions": [
+            "Melbourne Genomics Health Alliance",
+            "University of Melbourne",
+            "Australian Centre for Plant Functional Genomics"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-04-16",
+      "abstract": "Historically, natural products have been used since ancient times and in folklore for the treatment of many diseases and illnesses. Classical natural product chemistry methodologies enabled a vast array of bioactive secondary metabolites from terrestrial and marine sources to be discovered. Many of these natural products have gone on to become current drug candidates. This brief review aims to highlight historically significant bioactive marine and terrestrial natural products, their use in folklore and dereplication techniques to rapidly facilitate their discovery. Furthermore a discussion of how natural product chemistry has resulted in the identification of many drug candidates; the application of advanced hyphenated spectroscopic techniques to aid in their discovery, the future of natural product chemistry and finally adopting metabolomic profiling and dereplication approaches for the comprehensive study of natural product extracts will be discussed.",
+      "cited_by_count": 1875,
+      "type": "article",
+      "source": {
+        "name": "Metabolites",
+        "type": "journal",
+        "issn": [
+          "2218-1989"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2218-1989/2/2/303/pdf?version=1334556883"
+      },
+      "topics": [
+        "Marine Sponges and Natural Products",
+        "Microbial Natural Products and Biosynthesis",
+        "Chemical synthesis and alkaloids"
+      ],
+      "referenced_works_count": 155,
+      "url": "https://openalex.org/W2033588393"
+    },
+    {
+      "openalex_id": "W2136746850",
+      "doi": "10.1177/0010414009332129",
+      "title": "Democratization as Deliberative Capacity Building",
+      "authors": [
+        {
+          "name": "John S. Dryzek",
+          "openalex_id": "A5011467777",
+          "orcid": "https://orcid.org/0000-0001-6358-0047",
+          "institutions": [
+            "Australian National University"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-04-07",
+      "abstract": "Effective deliberation is central to democracy and so should enter any definition of democratization. However, the deliberative aspect now ubiquitous in the theory, practice, and promotion of democracy is generally missing in comparative studies of democratization. Deliberation capacity can be distributed in variable ways in the deliberative systems of states and other polities. A framework is described for locating and analyzing the contributions of its components and so evaluating the degree to which a polity\u2019s deliberative system is authentic, inclusive, and consequential. An emphasis on deliberation reveals important determinants of democratic transition and consolidation, thereby providing substantial explanatory as well as evaluative and normative purchase.",
+      "cited_by_count": 591,
+      "type": "article",
+      "source": {
+        "name": "Comparative Political Studies",
+        "type": "journal",
+        "issn": [
+          "0010-4140",
+          "1552-3829"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openresearch-repository.anu.edu.au/bitstreams/8f7577e9-8867-42a5-bf8e-c1ffa04f3aa8/download"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Electoral Systems and Political Participation",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 76,
+      "url": "https://openalex.org/W2136746850"
+    },
+    {
+      "openalex_id": "W2490235051",
+      "doi": "10.1111/1475-6765.12153",
+      "title": "Protest participation and economic crisis: The conditioning role of political opportunities",
+      "authors": [
+        {
+          "name": "Maria Grasso",
+          "openalex_id": "A5043896905",
+          "orcid": "https://orcid.org/0000-0002-6911-2241",
+          "institutions": [
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Marco Giugni",
+          "openalex_id": "A5047394555",
+          "orcid": "https://orcid.org/0000-0001-7210-339X",
+          "institutions": [
+            "International University in Geneva",
+            "University of Geneva"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-07-25",
+      "abstract": "Abstract The economic crisis that started in 2008 has negatively affected European nations to different degrees. The sudden rise in demonstrations particularly in those countries most hard hit by the crisis suggests that grievance theories, dismissed in favour of resource\u2010based models since the 1970s, might have a role to play in explaining protest behaviour. While most previous studies have tested these theories at the individual or contextual levels, it is likely that mechanisms at both levels are interrelated. To fill this lacuna, this article examines the ways in which individual\u2010level grievances interact with macro\u2010level factors to impact on protest behaviour. In particular, it examines whether the impact of individual subjective feelings of deprivation is conditional on contextual macroeconomic and policy factors. It is found that while individual\u2010level relative deprivation has a direct effect on the propensity to have protested in the last year, this effect is greater under certain macroeconomic and political conditions. Both significant results for the cross\u2010level interactions are interpreted in terms of their role for opening up political opportunities for protest among those who feel they have been most deprived in the current crisis. These findings suggest that the interaction of the contextual and individual levels should continue to be explored in future studies in order to further clarify the mechanisms underlying protest behaviour.",
+      "cited_by_count": 257,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Political Research",
+        "type": "journal",
+        "issn": [
+          "0304-4130",
+          "1475-6765"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1475-6765.12153"
+      },
+      "topics": [
+        "Social Capital and Networks",
+        "Social and Cultural Dynamics",
+        "Electoral Systems and Political Participation"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W2490235051"
+    },
+    {
+      "openalex_id": "W2065666343",
+      "doi": "10.4054/demres.2008.19.8",
+      "title": "Overview Chapter 6: The diverse faces of the Second Demographic Transition in Europe",
+      "authors": [
+        {
+          "name": "Tom\u00e1\u0161 Sobotka",
+          "openalex_id": "A5017278743",
+          "orcid": "https://orcid.org/0000-0002-6418-7105",
+          "institutions": [
+            "Vienna Institute of Demography"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-07-01",
+      "abstract": "This chapter discusses the concept of the second demographic transition (SDT) and its relevance for explaining the ongoing changes in family and fertility patterns across Europe. It takes a closer look at the shifts in values and attitudes related to f",
+      "cited_by_count": 442,
+      "type": "article",
+      "source": {
+        "name": "Demographic Research",
+        "type": "journal",
+        "issn": [
+          "1435-9871",
+          "2363-7064"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.demographic-research.org/volumes/vol19/8/19-8.pdf"
+      },
+      "topics": [
+        "Intergenerational Family Dynamics and Caregiving",
+        "Family Dynamics and Relationships",
+        "Demographic Trends and Gender Preferences"
+      ],
+      "referenced_works_count": 116,
+      "url": "https://openalex.org/W2065666343"
+    },
+    {
+      "openalex_id": "W2237775352",
+      "doi": "10.1515/eip-2015-0003",
+      "title": "Repositioning English and multilingualism in English as a Lingua Franca",
+      "authors": [
+        {
+          "name": "Jennifer Jenkins",
+          "openalex_id": "A5060566513",
+          "orcid": "https://orcid.org/0000-0002-8715-8315",
+          "institutions": [
+            "University of Southampton"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-08-14",
+      "abstract": "Abstract In the relatively few years since empirical research into English as a Lingua Franca began being conducted more widely, the field has developed and expanded remarkably, and in myriad ways. In particular, researchers have explored ELF from the perspective of a range of linguistic levels and in an ever-increasing number of sociolinguistic contexts, as well as its synergies with the field of Intercultural Communication and its meaning for the fields of Second Language Acquisition and English as a Foreign Language. The original orientation to ELF communication focused heavily, if not exclusively, on form. In light of increasing empirical evidence, this gave way some years later to an understanding that it is the processes underlying these forms that are paramount, and hence to a focus on ELF users and ELF as social practice. It is argued in this article, however, that ELF is in need of further retheorisation in respect of its essentially multilingual nature: a nature that has always been present in ELF theory and empirical work, but which, I believe, has not so far been sufficiently foregrounded. This article therefore attempts to redress the balance by taking ELF theorisation a small step further in its evolution.",
+      "cited_by_count": 716,
+      "type": "article",
+      "source": {
+        "name": "Englishes in Practice",
+        "type": "journal",
+        "issn": [
+          "2049-7156"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://content.sciendo.com/downloadpdf/journals/eip/2/3/article-p49.pdf"
+      },
+      "topics": [
+        "Second Language Learning and Teaching",
+        "Multilingual Education and Policy",
+        "EFL/ESL Teaching and Learning"
+      ],
+      "referenced_works_count": 84,
+      "url": "https://openalex.org/W2237775352"
+    },
+    {
+      "openalex_id": "W2049274424",
+      "doi": "10.1093/icc/dtp032",
+      "title": "Who profits from innovation in global value chains?: a study of the iPod and notebook PCs",
+      "authors": [
+        {
+          "name": "Jason Dedrick",
+          "openalex_id": "A5006245814",
+          "orcid": "https://orcid.org/0000-0002-8857-4054"
+        },
+        {
+          "name": "Kenneth L. Kraemer",
+          "openalex_id": "A5005171934",
+          "institutions": [
+            "University of California, Irvine"
+          ]
+        },
+        {
+          "name": "Greg Linden",
+          "openalex_id": "A5111376235",
+          "institutions": [
+            "University of California, Irvine"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-06-22",
+      "abstract": "This article analyzes the distribution of financial value from innovation in the global supply chains of iPods and notebook computers. We find that Apple has captured a great deal of value from the innovation embodied in the iPod, while notebook makers capture a more modest share of the value from PC innovation. In order to understand these differences, we employ concepts from theories of innovation and industrial organization, finding significant roles for industry evolution, complementary assets, appropriability, system integration, and bargaining power. Copyright 2010 The Author 2009. Published by Oxford University Press on behalf of Associazione ICC. All rights reserved., Oxford University Press.",
+      "cited_by_count": 707,
+      "type": "article",
+      "source": {
+        "name": "Industrial and Corporate Change",
+        "type": "journal",
+        "issn": [
+          "0960-6491",
+          "1464-3650"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/icc/article-pdf/19/1/81/1914755/dtp032.pdf"
+      },
+      "topics": [
+        "Innovation and Knowledge Management",
+        "Global trade, sustainability, and social impact",
+        "Digital Platforms and Economics"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2049274424"
+    },
+    {
+      "openalex_id": "W2100094340",
+      "doi": "10.2139/ssrn.922368",
+      "title": "Measuring and Explaining Management Practices Across Firms and Countries",
+      "authors": [
+        {
+          "name": "Nicholas Bloom",
+          "openalex_id": "A5044421873",
+          "orcid": "https://orcid.org/0000-0002-1600-7819",
+          "institutions": [
+            "Stanford University",
+            "National Bureau of Economic Research"
+          ]
+        },
+        {
+          "name": "John Van Reenen",
+          "openalex_id": "A5004443266",
+          "orcid": "https://orcid.org/0000-0001-9153-2907",
+          "institutions": [
+            "Centre for Economic Policy Research",
+            "London School of Economics and Political Science",
+            "Institute for Fiscal Studies"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": null,
+      "cited_by_count": 859,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=922368"
+      },
+      "topics": [
+        "Corporate Finance and Governance",
+        "Firm Innovation and Growth",
+        "Family Business Performance and Succession"
+      ],
+      "referenced_works_count": 89,
+      "url": "https://openalex.org/W2100094340"
+    },
+    {
+      "openalex_id": "W2805150611",
+      "doi": "10.1146/annurev-environ-102017-025941",
+      "title": "Research On Degrowth",
+      "authors": [
+        {
+          "name": "Giorgos Kallis",
+          "openalex_id": "A5081899507",
+          "orcid": "https://orcid.org/0000-0003-0688-9552",
+          "institutions": [
+            "Instituci\u00f3 Catalana de Recerca i Estudis Avan\u00e7ats",
+            "Universitat Aut\u00f2noma de Barcelona"
+          ]
+        },
+        {
+          "name": "Vasilis Kostakis",
+          "openalex_id": "A5067689231",
+          "orcid": "https://orcid.org/0000-0002-3276-9282",
+          "institutions": [
+            "Harvard University",
+            "Internet Society",
+            "Tallinn University of Technology"
+          ]
+        },
+        {
+          "name": "Steffen Lange",
+          "openalex_id": "A5064075618",
+          "orcid": "https://orcid.org/0000-0003-2831-6835",
+          "institutions": [
+            "Institute for Ecological Economy Research"
+          ]
+        },
+        {
+          "name": "Barbara Muraca",
+          "openalex_id": "A5000544943",
+          "orcid": "https://orcid.org/0000-0001-5718-7329",
+          "institutions": [
+            "Oregon State University"
+          ]
+        },
+        {
+          "name": "Susan Paulson",
+          "openalex_id": "A5036883322",
+          "orcid": "https://orcid.org/0000-0002-8668-8453",
+          "institutions": [
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Matthias Schmelzer",
+          "openalex_id": "A5001668870",
+          "orcid": "https://orcid.org/0000-0003-3987-1930"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-31",
+      "abstract": "Scholars and activists mobilize increasingly the term degrowth when producing knowledge critical of the ideology and costs of growth-based development. Degrowth signals a radical political and economic reorganization leading to reduced resource and energy use. The degrowth hypothesis posits that such a trajectory of social transformation is necessary, desirable, and possible; the conditions of its realization require additional study. Research on degrowth has reinvigorated the limits to growth debate with critical examination of the historical, cultural, social, and political forces that have made economic growth a dominant objective. Here we review studies of economic stability in the absence of growth and of societies that have managed well without growth. We reflect on forms of technology and democracy com-patible with degrowth and discuss plausible openings for a degrowth transition. This dynamic and productive research agenda asks inconvenient questions that sustainability sciences can no longer afford to ignore.",
+      "cited_by_count": 581,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Environment and Resources",
+        "type": "journal",
+        "issn": [
+          "1543-5938",
+          "1545-2050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-environ-102017-025941"
+      },
+      "topics": [
+        "Global Energy and Sustainability Research",
+        "Sustainable Development and Environmental Policy",
+        "Sustainability and Climate Change Governance"
+      ],
+      "referenced_works_count": 138,
+      "url": "https://openalex.org/W2805150611"
+    },
+    {
+      "openalex_id": "W4255422533",
+      "doi": "10.1353/sub.2015.0008",
+      "title": "Speculative Romanticism",
+      "authors": [
+        {
+          "name": "Greg Ellermann",
+          "openalex_id": "A5014062363"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Speculative Romanticism Greg Ellermann (bio) Romantic Nature from a Realist Point of View \"Speculative realism\" has lately emerged as one of the most provocative, and frequently misrepresented, currents in contemporary intellectual life. As articulated during the 2007 conference from which it takes its name, speculative realism encompasses an entire spectrum of philosophies \"committed to upholding the autonomy of reality \u2026 against the depredations of anthropocentrism\" (Brassier et al. 306).1 After a century of phenomenological and deconstructive investigations into consciousness and language, speculative realists take seriously the metaphysical claim that the world exists, independent of the mind and its perceptions. At the same time, in contesting all forms of relativism or anti-realism, they are joined in an appreciation of what Graham Harman calls \"the strangeness of the real: a strangeness undetectable by the instruments of common sense\" (Quentin viii). Speculative realists speak of reality in surprising, even uncanny, ways. Skeptics have dismissed speculative realism as everything from the philosophical form of neoliberal economics to the dangerous renouncing of all political alignment.2 In this essay, I will argue not only for its philosophical importance, but also for its potential to reshape debate about \"nature\" in literary studies. My investigation therefore turns to romanticism, a literary and philosophical movement defined by its sustained reflection on the concept. Reading speculative realism through romanticism, and vice versa, suggests that much remains to be said about nature, even in its romantic instantiation \u2013 which turns out to be less familiar than we might have thought. It also shows how nearly our present theoretical moment hews to a certain romanticism. For most speculative realists, the tradition of modern anti-realism begins with Kant's epistemology. Responding to Hume's skeptical attack on the uniformity of nature, Kant established the possibility of empirical realism by grounding it in a transcendental idealism. According to the familiar story, the Kantian revolution ensured the validity and coherence of our phenomenal experiences, but at the cost of transforming things in themselves into mere logical placeholders. After Kant, dogmatic speculation about the world in itself is supplanted by critical inquiry into the conditions under which experience of the world is possible.3 The story is hardly new. More strikingly, though, the speculative realists insist that this transcendental procedure provides the basis for [End Page 154] nearly all forms of modern thought. This poses major challenges for a renewed realism, since any contemporary thinking about the nature of reality begins with what Iain Hamilton Grant terms \"the excision of the 'in itself' from metaphysics\" (3). Grant draws on the work of F.W.J. Schelling, who declared in Kant's immediate wake that nature does not exist for modern philosophy. Replacing ontology with the transcendental analytic and cosmology with the transcendental dialectic, Kant's \"anti-physics\" (10) forecloses on speculation about the in-itself or its origins. The transcendental method ultimately prevents us from engaging with nature other than as it is shaped by the conditions of human knowledge. If this is an accurate account of modern philosophy's failure to engage with nature, it also comes close to the thinking about nature that characterizes romantic literary criticism. For romanticists, nature has always been both near and hard to grasp. Indeed, romantic studies is afflicted by an antiphysics of its own. For example, when humanist scholars of the 50s and 60s tried to account for the interplay between the human mind or imagination and the natural world, they drew on the theory of the sublime.4 Deconstruction and new historicism, even when most critical of humanism's mind-nature dialectics, continued to leverage the sublime as a way to theorize the breakdown of correspondence between mind and world.5 In relying on the discourse of philosophical aesthetics, humanist, deconstructive, and new historicist critics alike conceived of nature in relation to human experience (no matter how fraught or mystified the relation). The sublime invariably reduced nature to a set of epistemological or phenomenological problems and made it impossible to think about nature in itself.6 In the aftermath of its humanist absorption by imagination, its deconstructive alignment with aesthetic ideology, and its new historicist reading as a \"displacement of history,\" romantic nature remains difficult...",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "SubStance",
+        "type": "journal",
+        "issn": [
+          "0049-2426",
+          "1527-2095"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Contemporary Literature and Criticism",
+        "Psychoanalysis, Philosophy, and Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4255422533"
+    },
+    {
+      "openalex_id": "W2134384563",
+      "doi": "10.1111/j.1468-0009.2009.00578.x",
+      "title": "Tensions and Paradoxes in Electronic Patient Record Research: A Systematic Literature Review Using the Meta\u2010narrative Method",
+      "authors": [
+        {
+          "name": "Trisha Greenhalgh",
+          "openalex_id": "A5059176055",
+          "orcid": "https://orcid.org/0000-0003-2369-8088",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Henry Potts",
+          "openalex_id": "A5051691657",
+          "orcid": "https://orcid.org/0000-0002-6200-8804",
+          "institutions": [
+            "University College London",
+            "UCL Australia"
+          ]
+        },
+        {
+          "name": "Geoff Wong",
+          "openalex_id": "A5066581773",
+          "orcid": "https://orcid.org/0000-0002-5384-4157",
+          "institutions": [
+            "UCL Australia",
+            "University College London"
+          ]
+        },
+        {
+          "name": "Pippa Bark",
+          "openalex_id": "A5069290237",
+          "institutions": [
+            "University College London",
+            "UCL Australia"
+          ]
+        },
+        {
+          "name": "Deborah Swinglehurst",
+          "openalex_id": "A5062215363",
+          "orcid": "https://orcid.org/0000-0003-1261-9268",
+          "institutions": [
+            "UCL Australia",
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-12-01",
+      "abstract": "Context: The extensive research literature on electronic patient records (EPRs) presents challenges to systematic reviewers because it covers multiple research traditions with different underlying philosophical assumptions and methodological approaches. Methods: Using the meta\u2010narrative method and searching beyond the Medline\u2010indexed literature, this review used \u201cconflicting\u201d findings to address higher\u2010order questions about how researchers had differently conceptualized and studied the EPR and its implementation. Findings: Twenty\u2010four previous systematic reviews and ninety\u2010four further primary studies were considered. Key tensions in the literature centered on (1) the EPR (\u201ccontainer\u201d or \u201citinerary\u201d); (2) the EPR user (\u201cinformation\u2010processer\u201d or \u201cmember of socio\u2010technical network\u201d); (3) organizational context (\u201cthe setting within which the EPR is implemented\u201d or \u201cthe EPR\u2010in\u2010use\u201d); (4) clinical work (\u201cdecision making\u201d or \u201csituated practice\u201d); (5) the process of change (\u201cthe logic of determinism\u201d or \u201cthe logic of opposition\u201d); (6) implementation success (\u201cobjectively defined\u201d or \u201csocially negotiated\u201d); and (7) complexity and scale (\u201cthe bigger the better\u201d or \u201csmall is beautiful\u201d). Conclusions: The findings suggest that EPR use will always require human input to recontextualize knowledge; that even though secondary work (audit, research, billing) may be made more efficient by the EPR, primary clinical work may be made less efficient; that paper may offer a unique degree of ecological flexibility; and that smaller EPR systems may sometimes be more efficient and effective than larger ones. We suggest an agenda for further research.",
+      "cited_by_count": 545,
+      "type": "review",
+      "source": {
+        "name": "Milbank Quarterly",
+        "type": "journal",
+        "issn": [
+          "0887-378X",
+          "1468-0009"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1468-0009.2009.00578.x"
+      },
+      "topics": [
+        "Electronic Health Records Systems",
+        "Healthcare Systems and Technology",
+        "Health Sciences Research and Education"
+      ],
+      "referenced_works_count": 221,
+      "url": "https://openalex.org/W2134384563"
+    },
+    {
+      "openalex_id": "W150995647",
+      "doi": null,
+      "title": "The Tibet Factor in India-China Relations",
+      "authors": [
+        {
+          "name": "Rajiv Sikri",
+          "openalex_id": "A5065737140"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-03-22",
+      "abstract": "Tibet is a key factor in India-China relations. It is only after the 1950 Chinese occupation of Tibet that India and China came to share the now disputed common border. In recent years, China's military buildup and infrastructure development in Tibet, as well as reported plans to divert or dam rivers that rise in Tibet and flow into India, have raised India's anxieties. Conversely, China's insecurity about Tibet is an important driver of its approach toward India. India has been unable to assuage China's fears about its possible use of the presence of the Dalai Lama in India and its large refugee population of about 120,000 to create trouble for China in Tibet. The presence of the Dalai Lama and a large community of refugees in India has kept the Tibetan alive. Given India's open democratic system and long tradition of giving refuge to persecuted peoples, India will find it politically impossible to meet China's expectations on the Tibet question without a significant quid pro quo. The breakdown of talks between the Chinese government and representatives of the Dalai Lama does not augur well for the future, and a post-Dalai Lama situation could become much more complicated. Of late, China's aggressive territorial claims on India, the deepening of the China-Pakistan alliance and a shift in China's position on Kashmir has led to a hardening of India's position on Tibet. India is now seeking satisfaction on what it considers to be the core issues relating to India's sovereignty and territorial integrity. India-China relations are unlikely to be on an even keel until this tangled knot is unraveled. ********** For thousands of years, Tibet was the buffer that kept India and China geographically apart and therefore at peace. It has only been for the last six decades or so, after China invaded and occupied Tibet in 1950, that India and China have come to share a common border, and with it the inherent issues of border security, such as the delineation and demarcation of the border and the movement of people and flow of trade across it. However, in the absence of any extensive historical experience of relations with each other, each country has a poor understanding of the psyche and system of the other. This was a critical lacuna when the two countries began to interact after India's independence in 1947 and the Communist Revolution in China in 1949. Both were then governed by proud nationalist leaders who were imbued with an exalted sense of the greatness, destiny and mission of their respective nations, but who also had deeply ingrained grievances arising out of the humiliations they suffered under colonial rule. Given the vanities, egos and different ways of thinking of the leaders of India and China, the likelihood of misperceptions and misunderstandings was built into the situation. (1) SINO-INDIAN RELATIONS AND TIBET PRE-1950 Before the mid-20th century, India-China relations were minimal. There was some overland and seaborne trade, as well as occasional exchanges of pilgrims and scholars. (2) The experience of the Indians and the Chinese of the outside world was completely different. India did not--indeed could not--keep out foreign influences and ideas. Macedonians, Turks, Afghans, Persians, Mongols and assorted tribes from the Eurasian heartland who invaded India over the centuries made a profound and lasting impact on the country. The old order was not swept away. Rather, a new composite culture and society emerged as, over time, the invaders settled down in the hospitable climes of the plains of India. Here they lived in peace and prospered, eventually becoming indistinguishable from, indeed a part of, the local population. (3) That was not the experience of the Chinese, who remained self-assured that they were the Middle Kingdom and all others barbarians. This patronizing approach persisted when India and China became independent in the mid-20th century. \u2026",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "Journal of international affairs",
+        "type": "journal",
+        "issn": [
+          "0022-197X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "South Asian Studies and Conflicts",
+        "Politics and Conflicts in Afghanistan, Pakistan, and Middle East",
+        "Asian Geopolitics and Ethnography"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W150995647"
+    },
+    {
+      "openalex_id": "W2789638995",
+      "doi": "10.17705/1jais.00199",
+      "title": "The Long Now of Technology Infrastructure: Articulating Tensions in Development",
+      "authors": [
+        {
+          "name": "David Ribes",
+          "openalex_id": "A5074771697",
+          "orcid": "https://orcid.org/0000-0003-2790-5080",
+          "institutions": [
+            "Georgetown University"
+          ]
+        },
+        {
+          "name": "Thomas A. Finholt",
+          "openalex_id": "A5051894984",
+          "orcid": "https://orcid.org/0000-0001-9529-4467",
+          "institutions": [
+            "Georgetown University",
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Thomas Finholt",
+          "openalex_id": "",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "University of Michigan",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-05-01",
+      "abstract": "Designing e-infrastructure is work conducted today with an eye toward long-term sustainability. Participants in such development projects find themselves caught with one foot in the demands of the present and the other in a desired future. In this paper we seek to capture participants\u2019 formulation of problems as they go about developing long-term information infrastructure. Drawing from cross-case ethnographic studies of four US e-infrastructure projects for the earth and environmental sciences (cyberinfrastructure), we trace nine tensions as they are framed and articulated by participants. To assist in understanding participants' orientations we abstract three concerns \u2013 motivating contribution, aligning end goals, and designing for use \u2013 which manifest themselves uniquely at each of the \u2018scales of infrastructure': institutionalization, the organization of work, and enacting technology. The concept of \"the long now\" helps us understand that participants seek to simultaneously address all three concerns in long-term development endeavors.",
+      "cited_by_count": 303,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Association for Information Systems",
+        "type": "journal",
+        "issn": [
+          "1536-9323"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1507&context=jais"
+      },
+      "topics": [
+        "Mobile Crowdsensing and Crowdsourcing",
+        "Information Systems Theories and Implementation",
+        "Innovative Human-Technology Interaction"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W2789638995"
+    },
+    {
+      "openalex_id": "W1815391834",
+      "doi": "10.1016/j.ancene.2015.09.004",
+      "title": "Land system science and sustainable development of the earth system: A global land project perspective",
+      "authors": [
+        {
+          "name": "Peter H. Verburg",
+          "openalex_id": "A5005152689",
+          "orcid": "https://orcid.org/0000-0002-6977-7104",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "N. D. Crossman",
+          "openalex_id": "A5059079102",
+          "orcid": "https://orcid.org/0000-0002-8002-3450",
+          "institutions": [
+            "Ecosystem Sciences",
+            "CSIRO Land and Water"
+          ]
+        },
+        {
+          "name": "Erle C. Ellis",
+          "openalex_id": "A5040252399",
+          "orcid": "https://orcid.org/0000-0002-2006-3362",
+          "institutions": [
+            "University of Maryland, Baltimore County"
+          ]
+        },
+        {
+          "name": "Andreas Heinimann",
+          "openalex_id": "A5017143044",
+          "orcid": "https://orcid.org/0000-0001-8905-8169",
+          "institutions": [
+            "University of Bern"
+          ]
+        },
+        {
+          "name": "Patrick Hostert",
+          "openalex_id": "A5041171844",
+          "orcid": "https://orcid.org/0000-0002-5730-5484",
+          "institutions": [
+            "Humboldt-Universit\u00e4t zu Berlin"
+          ]
+        },
+        {
+          "name": "Ole Mertz",
+          "openalex_id": "A5013001779",
+          "orcid": "https://orcid.org/0000-0002-3876-6779",
+          "institutions": [
+            "University of Copenhagen"
+          ]
+        },
+        {
+          "name": "Harini Nagendra",
+          "openalex_id": "A5003277271",
+          "orcid": "https://orcid.org/0000-0002-1585-0724",
+          "institutions": [
+            "Azim Premji University"
+          ]
+        },
+        {
+          "name": "Thomas Sikor",
+          "openalex_id": "A5048148195",
+          "institutions": [
+            "University of East Anglia"
+          ]
+        },
+        {
+          "name": "Karl\u2010Heinz Erb",
+          "openalex_id": "A5027051661",
+          "orcid": "https://orcid.org/0000-0002-8335-4159"
+        },
+        {
+          "name": "Nancy E. Golubiewski",
+          "openalex_id": "A5061127104",
+          "institutions": [
+            "Ministry for the Environment"
+          ]
+        },
+        {
+          "name": "Ricardo Grau",
+          "openalex_id": "A5068220138",
+          "institutions": [
+            "National University of Tucum\u00e1n",
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas"
+          ]
+        },
+        {
+          "name": "J. Morgan Grove",
+          "openalex_id": "A5041806949",
+          "orcid": "https://orcid.org/0000-0002-7803-074X",
+          "institutions": [
+            "Northern Research Station"
+          ]
+        },
+        {
+          "name": "Souleymane Konat\u00e9",
+          "openalex_id": "A5110779694",
+          "institutions": [
+            "Universit\u00e9 Nangui Abrogoua"
+          ]
+        },
+        {
+          "name": "Patrick Meyfroidt",
+          "openalex_id": "A5070832756",
+          "orcid": "https://orcid.org/0000-0002-1047-9794",
+          "institutions": [
+            "UCLouvain",
+            "Fund for Scientific Research"
+          ]
+        },
+        {
+          "name": "Dawn C. Parker",
+          "openalex_id": "A5030783380",
+          "orcid": "https://orcid.org/0000-0001-8988-193X",
+          "institutions": [
+            "University of Waterloo"
+          ]
+        },
+        {
+          "name": "Rinku Roy Chowdhury",
+          "openalex_id": "A5010910686",
+          "orcid": "https://orcid.org/0000-0003-0762-226X",
+          "institutions": [
+            "Indiana University Bloomington",
+            "Clark University"
+          ]
+        },
+        {
+          "name": "Hideaki Shibata",
+          "openalex_id": "A5058223095",
+          "orcid": "https://orcid.org/0000-0002-8968-3594",
+          "institutions": [
+            "Hokkaido University"
+          ]
+        },
+        {
+          "name": "Allison M. Thomson",
+          "openalex_id": "A5037289317",
+          "orcid": "https://orcid.org/0000-0001-5326-1755"
+        },
+        {
+          "name": "Lin Zhen",
+          "openalex_id": "A5029759571",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Institute of Geographic Sciences and Natural Resources Research"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-24",
+      "abstract": null,
+      "cited_by_count": 555,
+      "type": "article",
+      "source": {
+        "name": "Anthropocene",
+        "type": "journal",
+        "issn": [
+          "2213-3054"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/am/pii/S2213305415300151?via%3Dihub"
+      },
+      "topics": [
+        "Sustainable Agricultural Systems Analysis",
+        "Land Use and Ecosystem Services",
+        "Rangeland Management and Livestock Ecology"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W1815391834"
+    },
+    {
+      "openalex_id": "W1532028737",
+      "doi": "10.71609/iheid-2ykv-0p36",
+      "title": "Global supply chains : why they emerged, why they matter, and where they are going",
+      "authors": [
+        {
+          "name": "Richard Baldwin",
+          "openalex_id": "A5074481124",
+          "orcid": "https://orcid.org/0000-0002-1965-4157",
+          "institutions": [
+            "National Bureau of Economic Research",
+            "Graduate Institute of International and Development Studies",
+            "University of Geneva",
+            "Centre for Economic Policy Research"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-05-16",
+      "abstract": "Global supply chains (GSCs) are transforming the world. This paper explores why they emerged, why they are significant and future directions they are likely to take along with some implications for policy. After putting global supply chains into an historical perspective, the paper presents an economic framework for understanding the functional and geographical unbundling of production. The fundamental trade off in supply chain fractionalisation is between specialisation gains and coordination costs. The key trade-off in supply chain dispersion is between dispersion and agglomeration forces. Supply-chain trade should be not viewed as standard trade in parts and components rather than final goods. Production sharing has linked cross-border flows of goods, investment, services, know-how and people in novel ways. The paper suggest that future of global supply chains will be influenced by: 1) improvements in coordination technology that lowers the cost of functional and geographical unbundling, 2) improvements in computer integrated manufacturing that lowers the benefits of specialisation and shifts stages toward greater skill-, capital, and technology-intensity, 3) narrowing of wage gaps that reduces the benefit of North-South offshoring to nations like China, and 4) the price of oil that raises the cost of unbundling.",
+      "cited_by_count": 405,
+      "type": "article",
+      "source": {
+        "name": "Graduate Institute Geneva Institutional Repository (Graduate Institute of International and Development Studies)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://repository.graduateinstitute.ch/record/15102/files/Global%20supply%20chains.pdf?subformat=pdfa"
+      },
+      "topics": [
+        "Global trade and economics",
+        "Digital Platforms and Economics",
+        "Merger and Competition Analysis"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W1532028737"
+    },
+    {
+      "openalex_id": "W145329232",
+      "doi": "10.1093/glycob/cww086",
+      "title": "Biological roles of glycans",
+      "authors": [
+        {
+          "name": "Ajit Varki",
+          "openalex_id": "A5036413821",
+          "orcid": "https://orcid.org/0000-0002-2206-975X",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-24",
+      "abstract": "Simple and complex carbohydrates (glycans) have long been known to play major metabolic, structural and physical roles in biological systems. Targeted microbial binding to host glycans has also been studied for decades. But such biological roles can only explain some of the remarkable complexity and organismal diversity of glycans in nature. Reviewing the subject about two decades ago, one could find very few clear-cut instances of glycan-recognition-specific biological roles of glycans that were of intrinsic value to the organism expressing them. In striking contrast there is now a profusion of examples, such that this updated review cannot be comprehensive. Instead, a historical overview is presented, broad principles outlined and a few examples cited, representing diverse types of roles, mediated by various glycan classes, in different evolutionary lineages. What remains unchanged is the fact that while all theories regarding biological roles of glycans are supported by compelling evidence, exceptions to each can be found. In retrospect, this is not surprising. Complex and diverse glycans appear to be ubiquitous to all cells in nature, and essential to all life forms. Thus, >3 billion years of evolution consistently generated organisms that use these molecules for many key biological roles, even while sometimes coopting them for minor functions. In this respect, glycans are no different from other major macromolecular building blocks of life (nucleic acids, proteins and lipids), simply more rapidly evolving and complex. It is time for the diverse functional roles of glycans to be fully incorporated into the mainstream of biological sciences.",
+      "cited_by_count": 2505,
+      "type": "review",
+      "source": {
+        "name": "Glycobiology",
+        "type": "journal",
+        "issn": [
+          "0959-6658",
+          "1460-2423"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/glycob/article-pdf/27/1/3/24324377/cww086.pdf"
+      },
+      "topics": [
+        "Carbohydrate Chemistry and Synthesis",
+        "Glycosylation and Glycoproteins Research",
+        "Proteoglycans and glycosaminoglycans research"
+      ],
+      "referenced_works_count": 1141,
+      "url": "https://openalex.org/W145329232"
+    },
+    {
+      "openalex_id": "W2785381275",
+      "doi": "10.1017/s1740022817000262",
+      "title": "Discussion: the futures of global history",
+      "authors": [
+        {
+          "name": "Richard Drayton",
+          "openalex_id": "A5068410144",
+          "orcid": "https://orcid.org/0000-0002-9811-8765",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "David Motadel",
+          "openalex_id": "A5085934593",
+          "orcid": "https://orcid.org/0000-0002-2218-618X",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-02-14",
+      "abstract": "Abstract Global history has come under attack. It is charged with neglecting national history and the \u2018small spaces\u2019 of the past, with being an elite globalist project made irrelevant by the anti-globalist politics of our age, with focusing exclusively on mobile people and things, and with becoming dangerously hegemonic. This article demonstrates that global history is intertwined with the histories of the nation and the local, individuals, outsiders, and subalterns, and small and isolated places. Moreover, global history has directly addressed immobility and resistances to flow, and remains relatively weak in the discipline, versus the persistent dominance everywhere of national history. The article offers a new short history of the rise of the contemporary idiom of global history, and a prospect for a future in which scholars may find, through collaboration, alternatives to the European weights and measures of the past, and to the dominance of Anglophone historians. It argues that we should no more reverse the \u2018global turn\u2019 than we should return history\u2019s gaze only to propertied white men. Rather than a retreat from global history, we need it more than ever to fight against myths of imperial and national pasts, which often underpin nationalist populisms.",
+      "cited_by_count": 220,
+      "type": "article",
+      "source": {
+        "name": "Journal of Global History",
+        "type": "journal",
+        "issn": [
+          "1740-0228",
+          "1740-0236"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/36C53116D551E0B47E42865EC8DE0C41/S1740022817000262a.pdf/div-class-title-discussion-the-futures-of-global-history-div.pdf"
+      },
+      "topics": [
+        "Australian History and Society",
+        "Colonial History and Postcolonial Studies",
+        "Philippine History and Culture"
+      ],
+      "referenced_works_count": 180,
+      "url": "https://openalex.org/W2785381275"
+    },
+    {
+      "openalex_id": "W2249926681",
+      "doi": "10.1086/676327",
+      "title": "Crisis, Value, and Hope: Rethinking the Economy",
+      "authors": [
+        {
+          "name": "Susana Narotzky",
+          "openalex_id": "A5020384075",
+          "orcid": "https://orcid.org/0000-0001-7390-7840",
+          "institutions": [
+            "University of Amsterdam",
+            "Universitat de Barcelona",
+            "Netherlands Institute for Social Research"
+          ]
+        },
+        {
+          "name": "Niko Besnier",
+          "openalex_id": "A5032594820",
+          "orcid": "https://orcid.org/0000-0001-6046-3494",
+          "institutions": [
+            "University of Amsterdam",
+            "Universitat de Barcelona",
+            "Netherlands Institute for Social Research"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-07-31",
+      "abstract": "Crisis, value, and hope are three concepts whose intersection and mutual constitution open the door for a rethinking of the nature of economic life away from abstract models divorced from the everyday realities of ordinary people, the inadequacies of which the current world economic crisis has exposed in particularly dramatic fashion. This rethinking seeks to bring to center stage the complex ways in which people attempt to make life worth living for themselves and for future generations, involving not only waged labor but also structures of provisioning, investments in social relations, relations of trust and care, and a multitude of other forms of social action that mainstream economic models generally consider trivial, marginal, and often counterproductive. A holistic understanding of how people organize their economic lives is attentive to both the temporality of value and the relationship between different scales of value. It is attentive to the spatial configuration of economic life in many societies in which the future has become synonymous with geographical mobility. It is attentive to the fact that making a living is about making people in their physical, social, spiritual, affective, and intellectual dimensions.",
+      "cited_by_count": 364,
+      "type": "article",
+      "source": {
+        "name": "Current Anthropology",
+        "type": "journal",
+        "issn": [
+          "0011-3204",
+          "1537-5382"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/676327"
+      },
+      "topics": [
+        "Housing, Finance, and Neoliberalism",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 123,
+      "url": "https://openalex.org/W2249926681"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

@@ -1,0 +1,1551 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "trust erosion political legitimacy",
+  "results": [
+    {
+      "openalex_id": "W2149458473",
+      "doi": "10.1111/1468-2508.00132",
+      "title": "The Impact of Corruption on Regime Legitimacy: A Comparative Study of Four Latin American Countries",
+      "authors": [
+        {
+          "name": "Mitchell A. Seligson",
+          "openalex_id": "A5060921933",
+          "orcid": "https://orcid.org/0000-0002-7202-9422",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-05-01",
+      "abstract": "Economists have long warned about the pernicious impacts of corruption, arguing that it increases transaction costs, reduces investment incentives, and ultimately results in reduced economic growth. Political scientists, on the other hand, ever the realists, have had a much more ambivalent view of the problem. Indeed, much classic literature focusing on the Third World saw corruption as functional for political development, enabling citizens to overcome intransigent, inefficient bureaucracies while increasing loyalty to the political system. More recent research, however, points in the opposite direction toward an erosion of public support for corrupt regimes. A series of serious methodological problems has prevented the testing of these contradictory assertions about the impact of corruption. This article uses national sample survey data, with a total N of over 9,000, from four Latin American countries to test the effect of corruption experiences on belief in the legitimacy of the political system. It finds that independent of socioeconomic, demographic, and partisan identification, exposure to corruption erodes belief in the political system and reduces interpersonal trust. The evidence seems clear, at least for these four countries, that corruption carries with it important political costs.",
+      "cited_by_count": 999,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Politics",
+        "type": "journal",
+        "issn": [
+          "0022-3816",
+          "1468-2508"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Corruption and Economic Development",
+        "Taxation and Compliance Studies",
+        "Crime, Illicit Activities, and Governance"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W2149458473"
+    },
+    {
+      "openalex_id": "W2110259258",
+      "doi": "10.1080/03906700500038819",
+      "title": "The Social Transformation of Trust in Government",
+      "authors": [
+        {
+          "name": "Russell J. Dalton",
+          "openalex_id": "A5069876802",
+          "orcid": "https://orcid.org/0000-0002-5973-4135",
+          "institutions": [
+            "North-West State Technical University",
+            "University of California, Irvine"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-01",
+      "abstract": "Abstract The phenomenon of declining political trust among the American public has been widely discussed, with the explanations often focusing on specific historical events or the unique problems of American political institutions. We first demonstrate that public doubts about politicians and government are spreading across almost all advanced industrial democracies. The pervasiveness of this trend suggests that common social forces are affecting these nations, and we examine the social correlates of the decrease in trust. We find the greatest declines are among the better-educated and upper social status. These results suggest that changing citizen expectations, rather than the failure of governments, are prompting the erosion of political support in advanced industrial democracies. Notes The data analyzed in this article were provided by the Inter-university Consortium for Social and Political Research, the Zentralarchiv fuer empirische Sozialforschung, the ESRC Archive at Essex University, the Norwegian Data Services, the Steinmetz Archive, and the Swedish Data Archive. I am indebted to the national election study teams for collecting these data and making it available for secondary analysis. I would also like to thank Martin Wattenber and Ian McAllister for their comments on these analyses, and the anonymous reviewers of a prior version of this paper for their comments. For a discussion of the different dimensions of political support see Easton (1965 Easton D (1965) A Systems Analysis of Political Life, Wiley New York [Google Scholar], 1975 Easton D (1975) \u2018A reassessment of the concept of political support\u2019 British Journal of Political Science vol. 5 pp. 435\u2013457 [Crossref] , [Google Scholar]) Norris (1999 Norris P (ed.) (1999) Critical Citizens: Global Support for Democratic Government, Oxford University Press Oxford[Crossref] , [Google Scholar]), and Klingemann (1999 Klingemann H-D (1999) \u2018Mapping political support in the 1990s\u2019 in Critical Citizens ed. P. Norris Oxford University Press Oxford[Crossref] , [Google Scholar]). Dalton (2004 Dalton R (2004) Democratic Challenges, Democratic Choices: The Erosion of Political Support in Advanced Industrial Democracies, Oxford University Press Oxford[Crossref] , [Google Scholar]) demonstrates that democratic norms and support for democracy as a regime form have apparently increased over this same time period, as has national pride as a measure of support for the political community. In contrast, trust in politicians, political parties and political institutions has generally eroded over this same period in most advanced industrial democracies. There is a rich ongoing debate on the theoretical and empirical meaning of political trust, and the relationship of these items to other dimensions of political support (Hardin, 2002 Hardin R (2002) Trust and Trustworthiness, Russell Sage New York [Google Scholar]; Braitwaite & Levi, 1998 Braithwaite V Levi M (eds) (1998) Trust and Governance, Russell Sage New York [Google Scholar]). While acknowledging these questions, we believe that trust in government is a meaningful theoretical and empirical concept as measured by the Michigan battery. Although one may developed improved or alternative measures of trust or political support, the tracking of these existing indicators over time provides a valuable empirical base for research on political support. We end our analyses in most nations with data up until 2000. In the wake of the September 11, 2001 terrorist attacks in the United States, several polls found a sharp increase in Americans\u2019 trust in government. By 2002, however, trust levels were clearly regressing to their prior levels (Dalton, 2004 Dalton R (2004) Democratic Challenges, Democratic Choices: The Erosion of Political Support in Advanced Industrial Democracies, Oxford University Press Oxford[Crossref] , [Google Scholar], chapter 2). Thus, for the sake of cross-national consistency we end our US analyses with data from the 2000 American National Election Study. The specific question wordings and data sources are available from the author. We measured the statistical significance of trends based only on the number of aggregate survey time points in each nation. Dalton and Wattenberg (2000 Dalton R M. (eds) (2000) Parties without Partisans: Political Change in Advanced Industrial Democracies, Oxford University Press Oxford [Google Scholar], pp. 62\u201363), however, present a more extensive discussion of the alternative ways to measure statistical significance in public opinion survey series. Although we describe trends in linear terms, we know that not all trends have followed a straight line descent. In the United States, for example, early declines lowered trust in politicians to a plateau and opinion trends have fluctuated around this new baseline for the last two decades. In some nations support there are obvious positive and negative deviations in the long-term trend for specific elections. Our general expectation is that over the last third of the twentieth century the general trend is downward, although there are variations in the patterns of decline. Thus, we use linear trends to measure whether the general pattern is one of decreasing trust (albeit not necessarily linear). One common limitation of these surveys is their short length for many nations. If the American series had only started in 1976, for example, the marked drop in political trust would be less evident (or even invisible). The respective 1976\u201396 coefficients would be: trust (0.057), crooked (0.114), and don't care (\u22120.714). I suspect that the Dutch time series begins too late to capture the stable period of Dutch politics before the end of pillarization and the realignment of the party system in the late 1960s (what would be equivalent to US opinion levels post-1974 as described in the preceding footnote). Rudy Andeweg (1992 Andeweg R (1992) Dutch Voters Adrift, University of Leiden Leiden [Google Scholar], p. 183), for instance, maintains that the Provo violence of 1965\u201366 damaged the legitimacy of government and authority more generally, and that these changes of public orientations occurred before the first Dutch election studies in the 1970s. For the United States we use the \u2018trust the government to do right\u2019 question because it is available for the longest time span. The \u2018few big interests\u2019 series only begins in 1964 and the \u2018don't care\u2019 item used in other nations changes wording in the United States. Because we are looking for small effects, we have tried to maximize our N by coding only three educational groupings: (1) less than high school degree, (2) high school degree, (3) some college or more education. The results from pairs of adjacent election studies were combined to further increase the group Ns for the figure. There is not a single common question that has been asked over time in all nations, so the analyses use a few different items. We began with the \u2018don't care\u2019 question, including another indicator when multiple measures were available. In a few cases the \u2018don't care\u2019 question was not asked, so we used another trust item from Table 1. Not all the aggregate trends in Table 1 are publicly available in raw data form for analysis; we have been able to acquire the survey data for only about half the nations from the table.To maximize the number of nations for analysis, we utilized additional data sets when the national election surveys were not available. The pairing of the 1974\u201375 Political Action data with the 1995\u201398 World Values Survey provides data for Germany, Finland and Switzerland and one timepoint for the British comparisons. These two surveys included the \u2018few big interests\u2019 question, which tracks the same patterns as displayed in Table 1. In more precise terms, the year of the survey is coded 0 for the first timepoint and 1 for the second timepoint. I then created an interaction term that multiplies education by this dummy variable. Thus the equation can be interpreted as two separate models. First survey: a+b1 (educ); the other variables have a value of 0 in this year. Second survey: (a+b3)+(b1 +b2) (educ); b3 is from the interaction term is the decrease in the intercept between timepoints, and b2 is the adjustment of the education slope for the second timepoint. We consider the US a conservative estimate of educational effects. First, the interaction coefficient is higher in most other nations in Table 2. In addition, the rise in educational levels has been greater for most other nations over a comparable time period. Measuring effects is not straightforward because multiple factors are involved. We developed the following estimates based on what we felt were reasonable assumptions. The mean levels of trust dropped from 2.92 in 1958 to 2.41 in 1996\u20132000, for a change of 0.51. At the same time, the mean educational level increased from 2.81 to 4.11, for a change of 1.30. We used the results of Table 2 to estimate the impact of the changing relationship between education and political trust. If the educational relationship had remained as in 1958, then rising educational levels would have increased political trust by 0.045 (0.035\u00d71.30). Instead, the negative relationship in 1996\u20132000 and the change in mean education lowered trust by \u22120.048 (\u22120.037\u00d71.30). When both effects are combined, this produces a \u22120.093 shift in political trust, which is approximately a fifth of the total decline over time (\u22120.51). The ideal analyses would replicate the detail of our US analyses across all the available time points in each nation. This should be an agenda for future research, to assemble the national data series to replicate the analyses now possible with the ANES. Still, the consistency of the results in Table 2 suggests the accuracy of the general pattern as a baseline for further detailed national analyses. Because we are looking for small effects, we have tried to maximize our N for each generation by coding for broad grouping: (1) born in 1909 or before, (2) born 1910\u201329, (3) born 1930\u201349, and (4) born 1950 and later. The results from two adjacent election studies were combined to further increase the group N for Figure 3. For the analyses in Table 2 we recoded the year of the survey as count of biennial elections with 1958=1 and the 2000 survey=22. This avoided the perfect correction between variables and interaction terms that would occur if the simple year of study were used. We first recoded the seven point party identification question so that 1=strong identification with the opposition party and 7=strong identification of the incumbent president's party. The second variable was a dichotomous coding with 0=Democratic presidential administration and 1=Republican administration.",
+      "cited_by_count": 414,
+      "type": "article",
+      "source": {
+        "name": "International Review of Sociology",
+        "type": "journal",
+        "issn": [
+          "0390-6701",
+          "1469-9273"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Electoral Systems and Political Participation",
+        "Social Capital and Networks",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W2110259258"
+    },
+    {
+      "openalex_id": "W1606850811",
+      "doi": "10.1111/1758-5899.12224",
+      "title": "Direct Democracy in Europe: Potentials and Pitfalls",
+      "authors": [
+        {
+          "name": "Arndt Leininger",
+          "openalex_id": "A5087609995",
+          "orcid": "https://orcid.org/0000-0003-2491-9057",
+          "institutions": [
+            "Hertie School"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-06-01",
+      "abstract": "Abstract Diagnoses of a democratic recession or \u2018hollowing out\u2019 of democracy are numerous and varied but usually encompass the following symptoms: a decline in turnout and other forms of political participation; policy making that is increasingly detached from ordinary citizens and their preferences; and an erosion of trust in government and satisfaction with democracy among citizens \u2013 all of which ultimately challenge the legitimacy of democratic institutions. Direct democracy is one of the most prominent, far\u2010reaching and popular remedies proposed in response to such diagnoses. It, by allowing citizens to directly vote on questions usually decided by representatives, seems intuitively appealing as an obvious extension and deepening of democracy. In this article I survey the potentials but also pitfalls of an increased institutionalization of direct democracy and use thereof in the countries of the EU focusing on the three key aspects identified above: representation, turnout and citizens\u2019 political support.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "Global Policy",
+        "type": "journal",
+        "issn": [
+          "1758-5880",
+          "1758-5899"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1758-5899.12224"
+      },
+      "topics": [
+        "Electoral Systems and Political Participation",
+        "European Union Policy and Governance",
+        "Populism, Right-Wing Movements"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W1606850811"
+    },
+    {
+      "openalex_id": "W3122754733",
+      "doi": "10.1016/j.eiar.2021.106553",
+      "title": "How does environmental pollution erode political trust in China? A multilevel analysis",
+      "authors": [
+        {
+          "name": "Longjin Chen",
+          "openalex_id": "A5087291799",
+          "orcid": "https://orcid.org/0000-0001-7516-7794",
+          "institutions": [
+            "Southwest University"
+          ]
+        },
+        {
+          "name": "Yu You",
+          "openalex_id": "A5037422817",
+          "orcid": "https://orcid.org/0000-0002-3535-6651",
+          "institutions": [
+            "Xiamen University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-22",
+      "abstract": null,
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "Environmental Impact Assessment Review",
+        "type": "journal",
+        "issn": [
+          "0195-9255",
+          "1873-6432"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Energy, Environment, Economic Growth",
+        "Environmental Education and Sustainability",
+        "Electoral Systems and Political Participation"
+      ],
+      "referenced_works_count": 77,
+      "url": "https://openalex.org/W3122754733"
+    },
+    {
+      "openalex_id": "W2083579134",
+      "doi": "10.1111/1468-0009.00223",
+      "title": "Trust in Physicians and Medical Institutions: What Is It, Can It Be Measured, and Does It Matter?",
+      "authors": [
+        {
+          "name": "Mark A. Hall",
+          "openalex_id": "A5065290010",
+          "orcid": "https://orcid.org/0000-0001-6277-144X",
+          "institutions": [
+            "New England Research (United States)",
+            "New England Research Institutes",
+            "Wake Forest University"
+          ]
+        },
+        {
+          "name": "Elizabeth Dugan",
+          "openalex_id": "A5001772155",
+          "institutions": [
+            "Wake Forest University",
+            "New England Research Institutes",
+            "New England Research (United States)"
+          ]
+        },
+        {
+          "name": "Beiyao Zheng",
+          "openalex_id": "A5103492151",
+          "institutions": [
+            "New England Research (United States)",
+            "Wake Forest University",
+            "New England Research Institutes"
+          ]
+        },
+        {
+          "name": "Aneil K. Mishra",
+          "openalex_id": "A5043008535",
+          "orcid": "https://orcid.org/0000-0001-5954-9995",
+          "institutions": [
+            "Wake Forest University",
+            "New England Research Institutes",
+            "New England Research (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-12-01",
+      "abstract": "Despite the profound and pervasive importance of trust in medical settings, there is no commonly shared understanding of what trust means, and little is known about what difference trust actually makes, what factors affect trust, and how trust relates to other similar attitudes and behaviors. To address this gap in understanding, the emerging theoretical, empirical, and public policy literature on trust in physicians and in medical institutions is reviewed and synthesized. Based on this review and additional research and analysis, a formal definition and conceptual model of trust is presented, with a review of the extent to which this model has been confirmed by empirical studies. This conceptual and empirical understanding has significance for ethics, law, and public policy.",
+      "cited_by_count": 1405,
+      "type": "review",
+      "source": {
+        "name": "Milbank Quarterly",
+        "type": "journal",
+        "issn": [
+          "0887-378X",
+          "1468-0009"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1468-0009.00223"
+      },
+      "topics": [
+        "Medical Malpractice and Liability Issues",
+        "Ethics in medical practice",
+        "Patient-Provider Communication in Healthcare"
+      ],
+      "referenced_works_count": 111,
+      "url": "https://openalex.org/W2083579134"
+    },
+    {
+      "openalex_id": "W2509016426",
+      "doi": "10.1111/1468-2346.12708",
+      "title": "The Paris Agreement and the new logic of international climate politics",
+      "authors": [
+        {
+          "name": "Robert Falkner",
+          "openalex_id": "A5084698601",
+          "orcid": "https://orcid.org/0000-0001-9990-6926",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-31",
+      "abstract": "This article reviews and assesses the outcome of the 21st Conference of the Parties (COP-21) to the United Nations Framework Convention on Climate Change (UNFCCC), held in Paris in December 2015. It argues that the Paris Agreement breaks new ground in international climate policy, by acknowledging the primacy of domestic politics in climate change and allowing countries to set their own level of ambition for climate change mitigation. It creates a framework for making voluntary pledges that can be compared and reviewed internationally, in the hope that global ambition can be increased through a process of 'naming and shaming'. By sidestepping distributional conflicts, the Paris Agreement manages to remove one of the biggest barriers to international climate cooperation. It recognizes that none of the major powers can be forced into drastic emissions cuts. However, instead of leaving mitigation efforts to an entirely bottom-up logic, it embeds country pledges in an international system of climate accountability and a 'ratchet mechanism', thus offering the chance of more durable international cooperation. At the same time, it is far from clear whether the treaty can actually deliver on the urgent need to de-carbonize the global economy. The past record of climate policies suggests that governments have a tendency to express lofty aspirations but avoid tough decisions. For the Paris Agreement to make a difference, the new logic of 'pledge and review' will need to mobilize international and domestic pressure and generate political momentum behind more substantial climate policies worldwide. It matters, therefore, whether the Paris Agreement's new approach can be made to work.",
+      "cited_by_count": 1114,
+      "type": "article",
+      "source": {
+        "name": "International Affairs",
+        "type": "journal",
+        "issn": [
+          "0020-5850",
+          "1468-2346"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/ia/article-pdf/92/5/1107/13653532/inta12708.pdf"
+      },
+      "topics": [
+        "Climate Change Policy and Economics",
+        "Arctic and Russian Policy Studies"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W2509016426"
+    },
+    {
+      "openalex_id": "W2161122976",
+      "doi": "10.1111/j.1467-8500.2007.00545.x",
+      "title": "From New Public Management to Public Value: Paradigmatic Change and Managerial Implications",
+      "authors": [
+        {
+          "name": "Janine O\u2019Flynn",
+          "openalex_id": "A5021165547",
+          "orcid": "https://orcid.org/0000-0002-5565-5923",
+          "institutions": [
+            "Australian National University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-08-27",
+      "abstract": "Both practitioners and scholars are increasingly interested in the idea of public value as a way of understanding government activity, informing policy\u2010making and constructing service delivery. In part this represents a response to the concerns about \u2018new public management\u2019, but it also provides an interesting way of viewing what public sector organisations and public managers actually do. The purpose of this article is to examine this emerging approach by reviewing new public management and contrasting this with a public value paradigm. This provides the basis for a conceptual discussion of differences in approach, but also for pointing to some practical implications for both public sector management and public sector managers.",
+      "cited_by_count": 1013,
+      "type": "article",
+      "source": {
+        "name": "Australian Journal of Public Administration",
+        "type": "journal",
+        "issn": [
+          "0313-6647",
+          "1467-8500"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1467-8500.2007.00545.x"
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Public-Private Partnership Projects",
+        "Local Government Finance and Decentralization"
+      ],
+      "referenced_works_count": 79,
+      "url": "https://openalex.org/W2161122976"
+    },
+    {
+      "openalex_id": "W2143775898",
+      "doi": "10.1257/089533002320951037",
+      "title": "Decentralization of Governance and Development",
+      "authors": [
+        {
+          "name": "Pranab Bardhan",
+          "openalex_id": "A5034803169",
+          "orcid": "https://orcid.org/0000-0002-2378-9281",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-11-01",
+      "abstract": "In this paper we note that the institutional context (and therefore the structure of incentives and organization) in developing and transition economies is quite different from those in advanced industrial economies, and this necessitates the literature on decentralization in the context of development to go beyond the traditional fiscal federalism literature. We review some of the existing theoretical work and empirical case studies of decentralization from the point of view of delivery of public services and of conditions for local business development, and point to ways of going forward in research.",
+      "cited_by_count": 1750,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Economic Perspectives",
+        "type": "journal",
+        "issn": [
+          "0895-3309",
+          "1944-7965"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/089533002320951037"
+      },
+      "topics": [
+        "Local Government Finance and Decentralization",
+        "Fiscal Policy and Economic Growth",
+        "Corporate Taxation and Avoidance"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W2143775898"
+    },
+    {
+      "openalex_id": "W2159387911",
+      "doi": "10.1093/jopart/mui027",
+      "title": "Maybe It Is Time to Rediscover Bureaucracy",
+      "authors": [
+        {
+          "name": "Johan P. Olsen",
+          "openalex_id": "A5086011182",
+          "orcid": "https://orcid.org/0000-0002-1383-8318",
+          "institutions": [
+            "University of Oslo"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-01",
+      "abstract": "This article questions the fashionable ideas that bureaucratic organization is an obsolescent, undesirable, and non-viable form of administration and that there is an inevitable and irreversible paradigmatic shift towards market- or network-organization. In contrast, the paper argues that contemporary democracies are involved in another round in a perennial debate and ideological struggle over what are desirable forms of administration and government: that is, a struggle over institutional identities and institutional balances. The argument is not that bureaucratic organization is a panacea and the answer to all challenges of public administration. Rather, bureaucratic organization is part of a repertoire of overlapping, supplementary, and competing forms coexisting in contemporary democracies, and so are market-organization and network-organization. Rediscovering Weber's analysis of bureaucratic organization, then, enriches our understanding of public administration. This is in particular true when we (a) include bureaucracy as an institution, not only an instrument; (b) look at the empirical studies in their time and context, not only at Weber's ideal-types and predictions; and (c) take into account the political and normative order bureaucracy is part of, not only the internal characteristics of \u201cthe bureau.\u201d",
+      "cited_by_count": 718,
+      "type": "article",
+      "source": {
+        "name": "Journal of Public Administration Research and Theory",
+        "type": "journal",
+        "issn": [
+          "1053-1858",
+          "1477-9803"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/jpart/article-pdf/16/1/1/2636618/mui027.pdf"
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Political Influence and Corporate Strategies",
+        "Local Government Finance and Decentralization"
+      ],
+      "referenced_works_count": 132,
+      "url": "https://openalex.org/W2159387911"
+    },
+    {
+      "openalex_id": "W2129057559",
+      "doi": "10.1093/oso/9780199280452.003.0001",
+      "title": "Introduction: Institutional Change in Advanced Political Economies",
+      "authors": [
+        {
+          "name": "Wolfgang Streeck",
+          "openalex_id": "A5111467910",
+          "institutions": [
+            "Max Planck Society",
+            "Max Planck Institute for the Study of Societies"
+          ]
+        },
+        {
+          "name": "Kathleen Thelen",
+          "openalex_id": "A5110205574",
+          "institutions": [
+            "Massachusetts Institute of Technology",
+            "Max Planck Society",
+            "Max Planck Institute for the Study of Societies"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-10",
+      "abstract": "Abstract The chapters in this volume were written as a collective contribution to the current debate in political science and sociology on institutional change. Instead of abstract theoretical reasoning, they offer in-depth empirical case studies. The underlying assumption, amply supported by recent literature, is that there is a wide but not infinite variety of modes of institutional change that can meaningfully be distinguished and analytically compared. It is also assumed that an empirically grounded typology of institutional change that does justice to the complexity and versatility of the subject can offer important insights on mechanisms of social and political stability and evolution generally.",
+      "cited_by_count": 1587,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.ssoar.info/ssoar/handle/document/19498"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Economic Theory and Institutions",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W2129057559"
+    },
+    {
+      "openalex_id": "W1997880858",
+      "doi": "10.1080/09668130410001682672",
+      "title": "State &gt;Legitimacy and the (In)significance of Democracy in Post\u2010Communist Russia",
+      "authors": [
+        {
+          "name": "Rudra Sil",
+          "openalex_id": "A5014562588",
+          "orcid": "https://orcid.org/0000-0001-9502-3122"
+        },
+        {
+          "name": "Cheng Chen",
+          "openalex_id": "A5100420535",
+          "orcid": "https://orcid.org/0000-0002-2029-3942"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-05-01",
+      "abstract": "Click to increase image sizeClick to decrease image size Notes Ken Jowitt, New World Disorder: The Leninist Extinction (Berkeley, University of California Press, 1992), p. 301. Just a few examples include Jeffrey Hahn, \u2018Continuity and Change in Russian Political Culture\u2019, British Journal of Political Science, 21, 4, October 1991, pp. 393\u2013421; Arthur Miller, William Reisinger & Vicki Hesli (eds), Public Opinion and Regime Change: The New Politics of Post\u2010Soviet Societies (Boulder, Westview, 1993); M. Steven Fish, Democracy from Scratch (Princeton, Princeton University Press, 1994); and James L. Gibson, \u2018The Resilience of Mass Support for Democratic Institutions and Processes in the Nascent Russian and Ukrainian Democracies\u2019, in Vladimir Tismaneanu (ed), Political Culture and Civil Society in Russia and the New States of Eurasia (Armonk, NY, M. E. Sharpe, 1995). On \u2018possibilism\u2019 as a fruitful approach to studying democratisation in post\u2010communist regions see George Breslauer, \u2018Introduction\u2019, in Richard Anderson, M. Steven Fish, Stephen E. Hanson & Philip G. Roeder, Post\u2010communism and the Theory of Democracy (Princeton, Princeton University Press, 2001). On democratic discourse and politically conscious social networks see, respectively, Richard Anderson, \u2018The Discursive Origins of Russian Democratic Politics\u2019, in Anderson et al., Post\u2010communism; and James L. Gibson, \u2018Social Networks, Civil Society, and the Prospects for Consolidating Russia's Democratic Transition\u2019, American Journal of Political Science, 45, 1, 2001, pp. 51\u201368. For positive assessments of the prospects for civil society under Putin see George Hudson, \u2018Civil Society in Russia: Models and Prospects for Development\u2019, Russian Review, 62, 2, April 2003, pp. 212\u2013222; Thomas M. Nichols, \u2018Putin's First Two Years: Democracy or Authoritarianism?\u2019, Current History, October 2002, pp. 307\u2013312; and Marcia Weigle, \u2018On the Road to the Civic Forum: State and Civil Society from Yeltsin to Putin\u2019, Demokratizatsiya, 10, 2, Spring 2002, pp. 117\u2013146. Graeme Gill & Roger Markwich, Russia's Stillborn Democracy?: From Gorbachev to Yeltsin (Oxford, Oxford University Press, 2000); Peter Reddaway & Dmitri Glinski, The Tragedy of Russia's Reforms: Market Bolshevism Against Democracy (Washington, DC, United States Institute of Peace Press, 2001); Marc Morj\u00e9 Howard, The Weakness of Civil Society in Post\u2010communist Europe (New York, Cambridge University Press, 2003); Alfred B. Evans, \u2018Recent Assessments of Social Organizations in Russia\u2019, Demokratizatsiya 10, 3, Summer 2002, pp. 322\u2013342; and Harley Balzer, \u2018Demography and Democracy in Russia: Human Capital Challenges to Democratic Consolidation\u2019, Demokratizatsiya, 11, 1, Winter 2003, pp. 95\u2013109. M. Steven Fish, \u2018When More is Less: Superexecutive Power and Political Underdevelopment in Russia\u2019, in Victoria E. Bonnell & George W. Breslauer (eds), Russia in the New Century: Stability or Disorder? (Boulder, Westview Press, 2001). Ibid., p. 27. Erik P. Hoffmann, \u2018The Dynamics of State\u2013Society Relations\u2019, in Harry Eckstein, Frederic Fleron, Erik Hoffmann & William Reisinger, Can Democracy Take Root in Post\u2010Soviet Russia? Explorations in State\u2013Society Relations (Lanham, MD, Rowman and Littlefield, 1998), pp. 97, 95. Gerard Alexander, \u2018Institutionalized Uncertainty, the Rule of Law, and the Sources of Democratic Stability\u2019, Comparative Political Studies, 35, 10, December 2002, pp. 1145\u20131170. The \u2018institutionalised uncertainty\u2019 thesis, although acknowledging the possibility of future winning as a positive feature of democracy that dissuades losers from challenging outcomes, generally emphasises the problematic effects of uncertainty created by changing leadership and policy in transitional democracies; see for example Adam Przeworski, Democracy and the Market (New York, Cambridge University Press, 1991). The \u2018rule of law\u2019 thesis suggests that democratic procedures reduce ex ante uncertainty over decision rules, methods of political contestation and the rights of citizens; see for example Scott Mainwaring, \u2018Transitions to Democracy and Democratic Consolidation\u2019, in Scott Mainwaring, Guillermo O'Donnell & J. Samuel Valenzuela (eds), Issues in Democratic Consolidation (Notre Dame, IN, University of Notre Dame Press, 1992). Stephen White & Ian McAllister, \u2018Putin and His Supporters\u2019, Europe\u2010Asia Studies, 55, 3, May 2003, p. 384. See for example the critique of traditional quantitative methods in gauging Russian cultural orientations in James Alexander, Political Culture in Post\u2010Communist Russia: Formlessness and Recreation in a Traumatic Transition (New York, St. Martin's, 2000). The general significance of trust in determining governmental legitimacy has been well established. In the context of post\u2010communist societies see for example William Mishler & Richard Rose, \u2018What are the Origins of Political Trust? Testing Institutional and Cultural Theories in Post\u2010Communist Societies\u2019, Comparative Political Studies, 34, 1, February 2001, pp. 30\u201362. Stephen White, Russia's New Politics: The Management of a Post\u2010communist Society (New York, Cambridge University Press, 2000), p. 270 (Table 8.1). Richard Rose & Neil Munro, Elections Without Order: Russia's Challenge to Vladimir Putin (New York, Cambridge University Press, 2002), p. 226. The survey was based on 1,601 responses, see http://www.russiavotes.org/rvwhatsnew.htm, accessed 18 July 2003. See Ekonomicheskie i sotsial'nye peremeny, various issues, as adapted in White, Russia's New Politics, p. 270; and Yuri Levada, \u2018Homo Praevaricatus: Russian Doublethink\u2019, in Archie Brown (ed.), Contemporary Russian Politics (New York, Oxford University Press, 2001), p. 312. Anton Steen, \u2018The Question of Legitimacy: Elites and Political Support in Russia\u2019, Europe\u2010Asia Studies, 53, 5, July 2001, p. 697. Centre for Labour Market Studies, Formation of Social Partnership in the Russian Federation (Moscow, Institute of Economics, Russian Academy of Sciences, 1995), pp. 13\u201314; and J. E. M. Thirkell, K. Petkov & S. A. Vickerstaff, The Transformation of Labour Relations: Restructuring and Privatization in Eastern Europe and Russia (New York, Oxford University Press, 1998), p. 106. See Richard Rose, A Decade of New Russian Barometer Survey (Glasgow, Centre for the Study of Public Policy, University of Strathclyde, 2002); and White & McAllister, \u2018Putin and His Supporters\u2019, p. 390. Mishler & Rose, \u2018What are the Origins of Political Trust?\u2019, p. 57 (Appendix A). Lev Gudkov, \u2018Russia\u2014A Society in Transition?\u2019, Telos, Summer 2001, p. 23. This survey of 2,107 respondents is reported at http://www.russiavotes.org/rvwhatsnew.htm, accessed 18 July 2003. Timothy Colton & Michael McFaul, \u2018Are Russians Undemocratic?\u2019, Post\u2010Soviet Affairs, 18, 2, April\u2013June 2002, p. 96. White, Russia's New Politics, pp. 192\u2013193, based on a February\u2013March 1998 national representative survey of 1,500 respondents reported in Ekonomicheskie i sotsial'nye peremeny, 1998, 3, pp. 57, 76\u201377. Henry E. Hale, \u2018Civil Society From Above? Statist and Liberal Models of State\u2010Building in Russia\u2019, Demokratizatsiya, 10, 3, Summer 2002, pp. 313\u2013317. White, Russia's New Politics, p. 270 (Table 8.1). Kathryn Stoner\u2010Weiss, \u2018The Russian Central State in Crisis\u2019, in Zoltan Barany & Robert Moser (eds), Russian Politics: Challenges of Democratization (New York, Cambridge University Press, 2001), p. 132, based on a 1996 panel survey of voting\u2010age respondents coordinated and reported by Timothy Colton. Ibid., p. 133. Daniel Treisman, \u2018Russia Renewed?\u2019, Foreign Affairs, 81, November/December 2002, pp. 58\u201372; and \u2018How Free is Free?\u2019, The Economist (Special), 25 November 2000, p. 1. Debra Javeline, Protest and the Politics of Blame: The Russian Response to Unpaid Wages (Ann Arbor, University of Michigan Press, 2003). On the low trust in unions see White, Russia's New Politics, p. 270; and Mishler & Rose, (eds), Russia in the New Century p. 57. The courts initially struck down the election results on shaky grounds at the behest of Norilsk Nickel officials, but the Norilsk union's candidate, Valerii Melnikov, went on to decisively win the rescheduled elections anyway; see Boris Kagarlitsky, \u2018Norilsk\u2014A Landmark Victory\u2019, Moscow Times, 6 May 2003. Rudra Sil, interview with Aleksandr Nikolaevich Shepel, President of the Confederation of Labour of Russia (Konfederatsiya Truda Rossii, KTR), 8 June 2002. Gordon M. Hahn, \u2018Growing Middle Class Reinforces Civil Society\u2019, The Russia Journal, 26 April\u20132 May 2002. The social tax requires organisations of all types and sizes (including non\u2010profit organisations) to pay a 22.8% tax on self\u2010produced goods or a 35.6% tax on payments made to any individual who can be considered to be \u2018hired labour\u2019. According to a key trade union leader, this law has already been used to send the tax police to investigate a number of unco\u2010operative unions (Rudra Sil, interview with Sergei Khramov, President of Sotsprof, Moscow, 5 June 2002). Albert Hirschman, Exit, Voice, and Loyalty: Responses to Decline in Firms, Organizations, and States (Cambridge, Harvard University Press, 1970). Victor M. Sergeyev, \u2018Organized Crime and Social Instability in Russia: The Alternative State, Deviant Bureaucracy, and Social Black Holes\u2019, in Bonnell & Breslauer (eds), Russia in the New Century, p. 169. See also Richard Lindberg & Vesna Markovic, \u2018Organized Crime Outlook in the New Russia\u2019, Search International, 2001, http://www.search\u2010international.com/Articles/crime/russiacrime.htm. \u2018Russia is on the Top Ten List of Most Corrupted Countries\u2019, Pravda, 31 January 2002, see http://english.pravda.ru/main/2002/01/31/26135.html. Cited in Alexander N. Domrin, \u2018Ten Years Later: Society, \u201cCivil Society,\u201d and the Russian State\u2019, The Russian Review, 62, April 2003, pp. 205\u2013206. Rose, A Decade of New Russian Barometer Survey, p. 302; and Domrin, \u2018Ten Years Later\u2019, p. 205. M. A. Shabanova, \u2018Institutsional'nye izmeneniya i nepravovye praktiki\u2019, in Kto i kuda stremitsya vesti Rossiyu? \u2026 (Moscow, Moskovskaya vysshaya shkola sotsial'nykh i ekonomicheskikh nauk, Intertsentr, 2001), pp. 319\u2013327. Colton & McFaul, \u2018Are Russians Undemocratic?\u2019, p. 101. New Russia Barometer X, cited in Rose, A Decade of New Russian Barometer, p. 27. Colton & McFaul, \u2018Are Russians Undemocratic?\u2019, p. 99. New Russia Barometer IX, as reported on http://www.russiavotes.org/rvwhatsnew.htm. (Table 1, \u2018State of the Nation\u2019), accessed 18 July 2003. Office of Research of the USIA, \u2018Russians Link Democracy to Prosperity and Equal Justice\u2019, USIA Opinion Research Memorandum, 16 October 1992, as cited in James Millar & Sharon Wolchik, \u2018The Social Legacies and the Aftermath of Communism\u2019, in James Millar & Sharon Wolchik (eds), The Social Legacy of Communism (Washington, DC, Woodrow Wilson Center Press, 1994), pp. 8, 16. Judith Kullberg & William Zimmerman, \u2018Liberal Elites, Socialist Masses, and the Problems of Russian Democracy\u2019, World Politics, 51, April 1999, pp. 323\u2013358 at p. 336. See also Domrin, \u2018Ten Year's Later\u2019, p. 204; Robert Brym, \u2018Re\u2010evaluating Mass Support for Political and Economic Change in Russia\u2019, Europe\u2010Asia Studies, 48, 5, 1996, pp. 751\u2013766; and William Miller, Stephen White & Paul Heywood, Values and Political Change in Post\u2010communist Europe (New York, St. Martin's Press, 1998). New Russia Barometer VIII, 19\u201329 January 2000, as reported on http://www.russiavotes.org/rvwhatsnew.htm, accessed 18 July 2003. In addition to Nikolai Petro, The Rebirth of Russian Democracy (Cambridge, Harvard University Press, 1995) and Sergei Pushkarev, Self\u2010Government and Freedom in Russia (Boulder, Westview, 1988) see also Russell Bova, \u2018Political Culture, Authority Patterns, and the Architecture of the New Russian Democracy\u2019, in Eckstein et al. (eds), Can Democracy Take Root in Post\u2010Soviet Russia?, pp. 177\u2013200; Frederic Fleron, \u2018Congruence Theory Applied: Democratization in Russia\u2019, in Eckstein et al. (eds), Can Democracy Take Root in Post\u2010Soviet Russia?, pp. 58\u201367; and Victor Sergeyev & Nikolai Biryukov, Russia's Road to Democracy: Parliament, Communism and Traditional Culture (Brookfield, VT, Elgar, 1993). Stephen White, Political Culture and Soviet Politics (New York, St. Martin's Press, 1979), p. 58. On the \u2018alternative\u2019 tradition of local democracy and self\u2010government see also Petro, The Rebirth of Russian Democracy and Pushkarev, Self\u2010government and Freedom in Russia. For detailed discussions of collective decision making and the low level of socioeconomic stratification in the mir see Edward Keenan, \u2018Muscovite Political Folkways\u2019, Russian Review, 45, 2, April 1986, pp. 115\u2013181, esp. p. 128; Moshe Lewin, Making of the Soviet System (New York, Pantheon, 1985), pp. 76\u201382; Theodor Shanin, Russia as a \u2018Developing Society\u2019 (London, Macmillan, 1985), pp. 76\u201377, 94\u2013102; and Christine Worobec, Peasant Russia: Family and Community in the Post\u2010Emancipation Period (Princeton, Princeton University Press, 1991), pp. 20\u201341. On the distinctiveness and resilience of the mir compared to rural institutions elsewhere see Rudra Sil, Managing \u2018Modernity\u2019: Work, Community, and Authority in Late\u2010Industrializing Japan and Russia (Ann Arbor, University of Michigan Press, 2002), pp. 200\u2013210. On this point see ibid., pp. 215\u2013221. Stephen Crowley, Hot Coal, Cold Steel: Russian and Ukrainian Workers from the End of the Soviet Union to the Post\u2010Communist Transformations (University of Michigan Press, 1997), p. 143. On the linkage between democracy and economic outcomes across much of the post\u2010communist world see Janos Simon, \u2018Popular Conceptions of Democracy in Postcommunist Europe\u2019, in S. H. Barnes & J. Simon (eds), The Postcommunist Citizen (Budapest: Erasmus Foundation and the Institute for Political Science of the Hungarian Academy of Sciences, 1998), pp. 79\u2013116. The survey of 2,107 respondents is reported on http://www.russiavotes.org/rvwhatsnew.htm, accessed 18 July 2003. Branko Milanovic, Income, Inequality and Poverty During the Transition from Planned to Market Economy (Washington, DC, World Bank, 1998), p. 77; and Erzo F.P. Luttmer, Measuring Poverty Dynamics and Inequality in Transition Economics: Disentangling Real Events from Noisy Data (Washington, DC, World Bank, 2001), p. 31. United Nations Development Program, Human Development Report 2003, as noted at http://www.undp.org/hdr2003/indicator/cty_f_RUS.html, accessed 21 July 2003. Ellen Carnaghan, Have Your Cake and Eat it Too: Tensions between Democracy and Order Among Russian Citizens (Glasgow, Centre for the Study of Public Policy, University of Strathclyde, 2001), pp. 4\u20137; and Elena Bashkirova, \u2018Value Change and Survival of Democracy in Russia (1995\u20132000)\u2019, Russian Public Opinion and Market Research (ROMIR), 2002, at http://www.romir.ru/eng/value\u2010change.htm, accessed 1 August 2002. Balzer, \u2018Demography and Democracy in Russia\u2019, p. 109. World Bank, Making Transition Work for Everyone: Poverty and Inequality in Europe and Central Asia (Washington, DC, World Bank, 2000), esp. pp. 367\u2013377. Sergeyev \u2018Organized Crime and Social Instability in Russia\u2019; and Fred Weir, \u2018In Russia, A \u201cCreeping Coup\u201d?\u2019, Special to Christian Science Monitor, 18 June 2003. On the size and diversity of the nomenklatura and the structure of their patronage networks see Grey Hodnett, \u2018The Pattern of Leadership Politics\u2019, in Seweryn Bialer (ed.), The Domestic Context of Soviet Foreign Policy (Boulder, Westview Press, 1981), p. 108; and T. H. Rigby, \u2018Introduction\u2019, in Bohdan Harasymiw & T. H. Rigby (eds), Leadership Selection and Patron\u2013Client Relations in the USSR and Yugoslavia (London, Allen & Unwin, 1981), p. 6. Richard Rose, \u2018Russia as an Hour\u2010Glass Society: A Constitution without Citizens\u2019, East European Constitutional Review, 4, 3, Summer 1995, pp. 34\u201342. It may be true, as Gibson argues, that private social networks in Russia are composed of \u2018weak ties\u2019 and feature high levels of political discussion as in the West, but such similarities cannot be assumed to be spurring the growth of civil society or consolidation of democracy in Russia as Gibson assumes (p. 66), if we consider the growing distance between elite and local networks. Bertram Silverman & Murray Yanowitch, New Rich, New Poor, New Russia: Winners and Losers on the Russian Road to Capitalism (Armonk; M. E. Sharpe, 1997), p. 129. New Russia Barometer IX, as reported at http://www.russiavotes.org/rvwhatsnew.htm, accessed 18 July 2003. \u2018About 85 Percent of Russians Regret USSR Dissolution\u2019, Interfax, Moscow, 28 January 2000; and \u2018Poll: Majority of Russians Lament for Brezhnev's \u201cGolden Age\u201d \u2019, Agence France Press, 29 January 1999. Fish, \u2018Dynamics of Democratic Erosion\u2019, p. 64. White & McAllister, \u2018Putin and His Supporters\u2019, p. 386. Bova, \u2018Political Culture\u2019, pp. 185\u2013186. Vladimir Putin, \u2018Inaugural State of the Nation Address to the Russian Parliament\u2019, 8 July 2000. Neil Chatterjee, \u2018Interview\u2014Russian Opposition Leaders Say No Free Speech\u2019, Reuters, 12 February 2002, see http://www.eng.yabloko.ru/Publ/2002/agency/reuters\u2010120202.html. Quoted in Jonathan Thatcher, \u2018As Russian Election Nears, TV Independence Goes\u2019, Reuters, 26 June 2003. Freedom House, Freedom of the Press 2003: A Global Survey of Media Independence, 30 April 2003, as reported at http://www.freedomhouse.org/pfs2003/pfs2003.pdf, accessed 15 July 2003. Yuri Levada, \u2018Sotsvopros\u2019, Novaya gazeta, 30 July 2001, as cited in Domrin, \u2018Ten Year's Later\u2019, p. 206. Hudson, \u2018Civil Society in Russia\u2019, p. 221; see also Weigle \u2018On the Road to the Civic Forum\u2019. John Squier, \u2018Civil Society and the Challenge of Russian \u201cGosudarstvennost\u201d \u2019, Demokratizatsiya, 10, 2, 2002, pp. 166\u2013182, esp. p. 169. See also Hale, \u2018Civil Society from Above\u2019; and Alexander Nikitin & Jane Buchanan, \u2018The Kremlin's Civic Forum: Cooperation or Co\u2010optation for Civil Society in Russia?\u2019, Demokratizatsiya, 10,2, Spring 2002, pp. 179\u2013197. Rudra Sil, interviews with Evgeniya Gvozhdeva, Director, Assotsiyatsiya Sotsial'noi i Trudovoi Informatsii (ASTI), 9 June 2002; Sergei Khramov, President, Sotsprof, 5 June 2002; Aleksandr Shepel, President, Konfederatsiya Truda Rossii (KTR), 8 June 2002; and Irene Stevenson, American Center for International Labor Solidarity, Moscow, 4 June 2002. Andrei Piontkovsky, Director of the Moscow Centre for Strategic Research, argues that Putin \u2018can throw one or two people out of the country, but he can't do anything to change the political and economic power structure that developed under El'tsin and that over the past two years has showed itself to be quite strong\u2019; quoted in Francesca Mereu, \u2018Russia: Putin Presidency at Two\u2010Year Mark\u2014Do Oligarchs Still Have a Role? (Part 1)\u2019, Radio Free Europe/Radio Liberty (RFE/RL), Moscow, 19 April 2002. Similar scepticism is also expressed in Treisman, \u2018Russia Renewed?\u2019 See ibid.; Neil Robinson, \u2018The Economy and the Prospects for Anti\u2010Democratic Development in Russia\u2019, Europe\u2010Asia Studies, 52, 8, December 2000, pp. 1391\u20131416; and Neil Robinson, \u2018Mr. Putin and the Oligarchs\u2019, Washington Post, 22 July 2000. The draft law was to declare all mineral deposits to be state\u2010owned and require privatised oil companies to sign concessions and share revenues with the government; see Stanislav Menshikov, \u2018Dancing With the Oligarchs: Privatisation or Nationalisation?\u2019, Moscow Tribune, 2 August 2002. The opposition to Russia's policy on Iraq is evident in the comments of Yukos chief Mikhail Khodorkovsky; see \u2018Die Welt: Khodorkovsky vs. Putin\u2019, Pravda.Ru, 15 April 2003, as printed at http://english.pravda.ru/main/18/88/351/9714_Khodorkovsky.html, accessed 15 July 2003. Putin, \u2018Inaugural State of the Nation Address to the Russian Parliament\u2019. \u2018Russia's Seven New Super\u2010Regions\u2019, Reuters, 31 May 2001. See Robinson, \u2018The Economy and the Prospects for Anti\u2010Democractic Development of Russia\u2019, p. 1391. Putin, \u2018Inaugural State of the Nation Address to the Russian Parliament\u2019. Vladimir Putin, \u2018State of the Nation Address to the Russian Parliament\u2019, 18 April 2002. \u2018Anatomiya Russkoi Dushi: Desyatiletie otechestvennykh reform v rasshifrovke sotsiologov\u2019, Izvestiya, 16 April 2002, cited in Domrin, \u2018Ten Years Later\u2019, p. 202. Note that, adding the 48% favouring Russia's revival as a \u2018mighty global power\u2019 to the 15.3% who named a \u2018return to socialist ideals and values\u2019 and the 8% who named Russia's \u2018uniqueness as a nation, special historical mission of Russian people\u2019, over 70% would subscribe to themes that are far removed from the kind of liberal democratic orientation many expected to find over the course of the post\u2010Soviet transition. Theodore Karasik, \u2018Putin and Shoigu: Reversing Russia's Decline\u2019, Demokratizatsiya, 8, 2, Spring 2000, p. 178; and \u2018Russia's Growing Religious Repression\u2019, Washington Post, 5 May 2002. Vladimir Shlapentokh, \u2018Putin's First Year in Office: The New Regime's Uniqueness in Russian History\u2019, Communist and Post\u2010Communist Studies, 34, 2, 2001, pp. 371\u2013399 at p. 374. Alexander Motyl, \u2018Why Empires Re\u2010emerge: Imperial Collapse and Imperial Revival in Comparative Perspective\u2019, Comparative Politics, 31, 2, January 1999, p. 137. See also Dmitry Shlapentokh, \u2018The Illusions and Realities of Russian The Washington 1, Winter 2000, pp. Balzer, \u2018Demography and Democracy in Russia\u2019, p. May The the that from across the and has been growing 2000; see \u2018Russia's Culture of Times, 19 July 2002; and Peter on in Russia: of by Washington Post, August 2002. White & McAllister, \u2018Putin and His Supporters\u2019, p. On this point see ibid., p. and Richard Rose, Neil & Stephen White, \u2018How is Vladimir Post\u2010Soviet Affairs, 4, 2000, p. Bova, \u2018Political Culture\u2019, p. and Shlapentokh, \u2018Putin's First Year in pp. White & McAllister, \u2018Putin and His Supporters\u2019, p. from p. \u2018Putin Wages on Reuters, Moscow, 16 May 2003. Richard Rose & The of Democracies\u2019, British Journal of Political Science, 31, 2, April 2001, p. Rose & this to the that elections such institutions as the of law and civil and East European Politics and Society, 2, Spring 2001, pp. Colton & McFaul, \u2018Are Russians Undemocratic?\u2019, p.",
+      "cited_by_count": 70,
+      "type": "article",
+      "source": {
+        "name": "Europe Asia Studies",
+        "type": "journal",
+        "issn": [
+          "0966-8136",
+          "1465-3427"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Conflict and Governance",
+        "Electoral Systems and Political Participation",
+        "Soviet and Russian History"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W1997880858"
+    },
+    {
+      "openalex_id": "W2117995482",
+      "doi": "10.1080/03066150902820354",
+      "title": "A food regime genealogy",
+      "authors": [
+        {
+          "name": "Philip McMichael",
+          "openalex_id": "A5077240588",
+          "orcid": "https://orcid.org/0000-0003-1043-4913",
+          "institutions": [
+            "Cornell University"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "Food regime analysis emerged to explain the strategic role of agriculture and food in the construction of the world capitalist economy. It identifies stable periods of capital accumulation associated with particular configurations of geopolitical power, conditioned by forms of agricultural production and consumption relations within and across national spaces. Contradictory relations within food regimes produce crisis, transformation, and transition to successor regimes. This 'genealogy' traces the development of food regime analysis in relation to historical and intellectual trends over the past two decades, arguing that food regime analysis underlines agriculture's foundational role in political economy/ecology.",
+      "cited_by_count": 1147,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Peasant Studies",
+        "type": "journal",
+        "issn": [
+          "0306-6150",
+          "1743-9361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/03066150902820354?download=true"
+      },
+      "topics": [
+        "Agriculture, Land Use, Rural Development",
+        "Organic Food and Agriculture",
+        "Global trade, sustainability, and social impact"
+      ],
+      "referenced_works_count": 118,
+      "url": "https://openalex.org/W2117995482"
+    },
+    {
+      "openalex_id": "W4306847215",
+      "doi": "10.1080/13510347.2022.2127146",
+      "title": "Economic inequality, distributive unfairness, and regime support in East Asia",
+      "authors": [
+        {
+          "name": "Xian Huang",
+          "openalex_id": "A5021005715",
+          "orcid": "https://orcid.org/0000-0001-9406-4483",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Cai Zuo",
+          "openalex_id": "A5041889748",
+          "orcid": "https://orcid.org/0000-0002-1348-2374",
+          "institutions": [
+            "Fudan University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-19",
+      "abstract": "The relationship between economic inequality and political support is not well established in previous empirical studies in part because people commonly misperceive the level of economic inequality. Moreover, people perceiving high economic inequality may not oppose the incumbent government or political regime because they consider the inequality fair. To better capture the political outcomes of economic inequality, we investigate the effects of perceived distributive unfairness on regime support. Using data collected from the fourth wave of Asian Barometer Survey (2014-2016), we find that perceived unfairness decreases support for the current political regime. We further examine three mechanisms through which distributive unfairness dampens regime support: changes of political value orientation, redistribution demand, and social trust. We find that political value orientation plays a greater mediating role than redistribution demand and social trust, meaning that distributive unfairness depresses regime support largely through its erosive impact on citizens' affective identification with authoritarian values that underpin regime support in East Asian societies. Moreover, we find that distributive unfairness is more detrimental to regime support in autocracies and lower-income groups. Our study corroborates the importance of distributive fairness for regime legitimacy and highlights the vulnerability of autocracies to distributive unfairness.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Democratization",
+        "type": "journal",
+        "issn": [
+          "1351-0347",
+          "1743-890X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://scholarship.libraries.rutgers.edu/esploro/outputs/acceptedManuscript/Economic-inequality-distributive-unfairness-and-regime/991031753197304646"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Electoral Systems and Political Participation",
+        "Social Capital and Networks"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W4306847215"
+    },
+    {
+      "openalex_id": "W1677355571",
+      "doi": "10.1111/1475-6765.12046",
+      "title": "Democracy in crisis? The declining support for national democracy in <scp>E</scp> uropean countries, 2007\u20132011",
+      "authors": [
+        {
+          "name": "Klaus Armingeon",
+          "openalex_id": "A5075511517",
+          "orcid": "https://orcid.org/0000-0003-4186-3155",
+          "institutions": [
+            "University of Bern"
+          ]
+        },
+        {
+          "name": "Kai Guthmann",
+          "openalex_id": "A5008200190",
+          "orcid": "https://orcid.org/0000-0002-5854-4233",
+          "institutions": [
+            "University of Bern"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-12-20",
+      "abstract": "Abstract The Great Recession that started in 2007/2008 has been the worst economic downturn since the crisis of the 1930s in E urope. It led to a major sovereign debt crisis, which is arguably the biggest challenge for the E uropean Union ( EU ) and its common currency. Not since the 1950s have advanced democracies experienced such a dramatic external imposition of austerity and structural reform policies through inter\u2010 or supranational organisations such as the EU and the International Monetary Fund ( IMF ) or as implicitly requested by international financial markets. Did this massive interference with the room for maneuver of parliaments and governments in many countries erode support for national democracy in the crisis since 2007? Did citizens realise that their national democratic institutions were no longer able to effectively decide on major economic and social policies, on economic and welfare state institutions? And did they react by concluding that this constrained democracy no longer merited further support? These are the questions guiding this article, which compares 26 EU countries in 2007\u20132011 and re\u2010analyses 78 national surveys. Aggregate data from these surveys is analysed in a time\u2010series cross\u2010section design to examine changes in democratic support at the country level. The hypotheses also are tested at the individual level by estimating a series of cross\u2010classified multilevel logistic regression models. Support for national democracy \u2013 operationalised as satisfaction with the way democracy works and as trust in parliament \u2013 declined dramatically during the crisis. This was caused both by international organisations and markets interfering with national democratic procedures and by the deteriorating situation of the national economy as perceived by individual citizens.",
+      "cited_by_count": 503,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Political Research",
+        "type": "journal",
+        "issn": [
+          "0304-4130",
+          "1475-6765"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1475-6765.12046"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "European Union Policy and Governance",
+        "Electoral Systems and Political Participation"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W1677355571"
+    },
+    {
+      "openalex_id": "W1968832457",
+      "doi": "10.1111/1468-0009.00206",
+      "title": "Improving the Quality of Health Care in the United Kingdom and the United States: A Framework for Change",
+      "authors": [
+        {
+          "name": "Ewan Ferl\u0131\u0301e",
+          "openalex_id": "A5047558576",
+          "orcid": "https://orcid.org/0000-0003-2947-5141",
+          "institutions": [
+            "Universidad de Londres"
+          ]
+        },
+        {
+          "name": "Stephen M. Shortell",
+          "openalex_id": "A5030934365",
+          "orcid": "https://orcid.org/0000-0002-7392-9801",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-06-01",
+      "abstract": "Fueled by public incidents and growing evidence of deficiencies in care, concern over the quality and outcomes of care has increased in both the United Kingdom and the United States. Both countries have launched a number of initiatives to deal with these issues. These initiatives are unlikely to achieve their objectives without explicit consideration of the multilevel approach to change that includes the individual, group/team, organization, and larger environment/system level. Attention must be given to issues of leadership, culture, team development, and information technology at all levels. A number of contingent factors influence these efforts in both countries, which must each balance a number of tradeoffs between centralization and decentralization in efforts to sustain the impetus for quality improvement over time. The multilevel change framework and associated properties provide a framework for assessing progress along the journey.",
+      "cited_by_count": 1305,
+      "type": "article",
+      "source": {
+        "name": "Milbank Quarterly",
+        "type": "journal",
+        "issn": [
+          "0887-378X",
+          "1468-0009"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1468-0009.00206"
+      },
+      "topics": [
+        "Healthcare Quality and Management",
+        "Primary Care and Health Outcomes",
+        "Global Health Workforce Issues"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W1968832457"
+    },
+    {
+      "openalex_id": "W2479641337",
+      "doi": "10.1057/9780230353886_9",
+      "title": "Contemporary Trends and Dilemmas of Administrative Ethics in the Developing World",
+      "authors": [
+        {
+          "name": "M. Shamsul Haque",
+          "openalex_id": "A5101553039",
+          "orcid": "https://orcid.org/0000-0002-3638-3221"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-01",
+      "abstract": "In recent years, the question of ethics has drawn considerable attention due to the increased incidence of scandalous corruption committed by top political and administrative officials worldwide. More specific examples of such scandals involving public officials include unfair privatization deals, official patronage, diversion of foreign aid, abuse of campaign finance, and so on (United Nations, 2000b: 3). There is a growing perception and evidence in Western democracies that the incidence of official corruption has worsened, and this is often related to the current changes in ethical standards in the public service (Maesschalck, 2004: 465). As pointed out by Hellsten and Larbi (2006: 135), \"scandals in some leading OECD countries (e.g. the UK and USA) and persistent corruption in poor countries with weak governance institutions have generated debates and concerns about public integrity and trust in government\". With regard to the recent scandals (e.g. Enron, Katrina, and Blackwater), episodes of official incompetence, and dependence on business companies, Adams and Balfour suggest that public sector ethics in the US has been degraded to the level of poor Third World countries, and that \"the revitalization of public values and ethics seems essential to avoid the further erosion of democracy and continuing loss of legitimacy for government in society\" (Adams and Balfour, 2008: 31\u201332).KeywordsBusiness EthicPublic ServiceEthical DilemmaPublic AdministrationVirtue EthicThese keywords were added by machine and not by the authors. This process is experimental and the keywords may be updated as the learning algorithm improves.",
+      "cited_by_count": 12,
+      "type": "book-chapter",
+      "source": {
+        "name": "Palgrave Macmillan UK eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in Business and Education",
+        "Religion, Society, and Development",
+        "Legal Education and Practice Innovations"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2479641337"
+    },
+    {
+      "openalex_id": "W4388450471",
+      "doi": "10.1093/pa/gsad022",
+      "title": "Big Little Election Lies: Cynical and Credulous Evaluations of Electoral Fraud",
+      "authors": [
+        {
+          "name": "Pippa Norris",
+          "openalex_id": "A5090480102",
+          "orcid": "https://orcid.org/0000-0001-8632-4636",
+          "institutions": [
+            "Harvard University",
+            "John F. Kennedy University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-02",
+      "abstract": "Abstract The \u2018Big Lie\u2019 in American politics has sparked intense concern about the erosion of public confidence in the integrity of US elections\u2014raising questions about the legitimacy of the authorities, institutions, and principles of democratic governance. Cynicism generated from misinformation about trustworthy elections has attracted a growing body of individual-level social-psychological research in America and Europe. Another common problem found around the world, however, which has received far less attention, concerns credulous citizens who express considerable faith and confidence in flawed contests. This study theorises that at macro-level, the accuracy of any public judgments about trustworthy elections is likely to be mediated by the information environment in open and closed societies, as well as by the type of regime. To understand these issues, Part I summarises the conceptual and theoretical argument about trust and trustworthiness. Part II describes the sources of evidence. To apply the theory, data on public opinion is drawn from around 85 societies around the globe included in Waves 6 and 7 of the World Values Survey (2010\u20132022), with measures of electoral trust and subjective perceptions of electoral integrity among ordinary citizens. Institutional electoral performance indices are drawn from the Varieties of Democracy project (V-Dem 12.0). Part III analyses how far these independent estimates match public judgments of the trustworthiness of elections in each country \u2013 and how far such relationships are conditioned by the type of information society as well as by the type of regime. Part IV highlights the key findings and considers their broader implications for understanding the macro-level conditions for trust and trustworthiness.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Parliamentary Affairs",
+        "type": "journal",
+        "issn": [
+          "0031-2290",
+          "1460-2482"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/pa/article-pdf/77/1/1/54532570/gsad022.pdf"
+      },
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Electoral Systems and Political Participation",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W4388450471"
+    },
+    {
+      "openalex_id": "W2115545952",
+      "doi": "10.3389/feart.2014.00026",
+      "title": "Citizen science in hydrology and water resources: opportunities for knowledge generation, ecosystem service management, and sustainable development",
+      "authors": [
+        {
+          "name": "Wouter Buytaert",
+          "openalex_id": "A5081319882",
+          "orcid": "https://orcid.org/0000-0001-6994-4454",
+          "institutions": [
+            "National Polytechnic School",
+            "Imperial College London"
+          ]
+        },
+        {
+          "name": "Zed Zulkafli",
+          "openalex_id": "A5057554100",
+          "orcid": "https://orcid.org/0000-0001-6271-8593",
+          "institutions": [
+            "Imperial College London",
+            "Universiti Putra Malaysia"
+          ]
+        },
+        {
+          "name": "Sam Grainger",
+          "openalex_id": "A5059953017",
+          "orcid": "https://orcid.org/0000-0003-0116-5758",
+          "institutions": [
+            "Imperial College London"
+          ]
+        },
+        {
+          "name": "L. Acosta",
+          "openalex_id": "A5052976846",
+          "orcid": "https://orcid.org/0000-0001-9136-1909",
+          "institutions": [
+            "Consortium for Sustainable Development of the Andean Ecoregion"
+          ]
+        },
+        {
+          "name": "Tilashwork C. Alemie",
+          "openalex_id": "A5031175855",
+          "orcid": "https://orcid.org/0000-0002-9978-4049",
+          "institutions": [
+            "Imperial College London",
+            "Bahir Dar University"
+          ]
+        },
+        {
+          "name": "Johan Bastiaensen",
+          "openalex_id": "A5073154990",
+          "orcid": "https://orcid.org/0000-0002-1369-8570",
+          "institutions": [
+            "University of Antwerp"
+          ]
+        },
+        {
+          "name": "Bert De Bi\u00c3 \u0308vre",
+          "openalex_id": "A5099872372",
+          "institutions": [
+            "Consortium for Sustainable Development of the Andean Ecoregion"
+          ]
+        },
+        {
+          "name": "Jagat K. Bhusal",
+          "openalex_id": "A5053548470",
+          "institutions": [
+            "Mountain Medicine Society of Nepal"
+          ]
+        },
+        {
+          "name": "Julian Clark",
+          "openalex_id": "A5101613004",
+          "orcid": "https://orcid.org/0000-0002-9439-4375",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Art Dewulf",
+          "openalex_id": "A5042495356",
+          "orcid": "https://orcid.org/0000-0002-4171-7644",
+          "institutions": [
+            "Wageningen University & Research"
+          ]
+        },
+        {
+          "name": "J. Marc Foggin",
+          "openalex_id": "A5032364549",
+          "orcid": "https://orcid.org/0000-0002-2663-6715",
+          "institutions": [
+            "University of Central Asia"
+          ]
+        },
+        {
+          "name": "David M. Hannah",
+          "openalex_id": "A5000825345",
+          "orcid": "https://orcid.org/0000-0003-1714-1240",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Christian Hergarten",
+          "openalex_id": "A5048821244",
+          "orcid": "https://orcid.org/0000-0002-1321-6033",
+          "institutions": [
+            "University of Central Asia"
+          ]
+        },
+        {
+          "name": "Aiganysh Isaeva",
+          "openalex_id": "A5109477246",
+          "institutions": [
+            "University of Central Asia"
+          ]
+        },
+        {
+          "name": "Timothy Karpouzoglou",
+          "openalex_id": "A5083133891",
+          "orcid": "https://orcid.org/0000-0001-9568-9813",
+          "institutions": [
+            "Wageningen University & Research"
+          ]
+        },
+        {
+          "name": "Bhopal Pandeya",
+          "openalex_id": "A5005550437",
+          "orcid": "https://orcid.org/0000-0003-4014-5792",
+          "institutions": [
+            "Imperial College London"
+          ]
+        },
+        {
+          "name": "Deepak Paudel",
+          "openalex_id": "A5091542072",
+          "orcid": "https://orcid.org/0000-0003-3562-5337",
+          "institutions": [
+            "Mountain Medicine Society of Nepal"
+          ]
+        },
+        {
+          "name": "K. D. Sharma",
+          "openalex_id": "A5009178474",
+          "institutions": [
+            "Mountain Medicine Society of Nepal"
+          ]
+        },
+        {
+          "name": "Tammo S. Steenhuis",
+          "openalex_id": "A5055385768",
+          "orcid": "https://orcid.org/0000-0003-0508-9350",
+          "institutions": [
+            "Cornell University",
+            "Bahir Dar University"
+          ]
+        },
+        {
+          "name": "Seifu A. Tilahun",
+          "openalex_id": "A5054739250",
+          "orcid": "https://orcid.org/0000-0002-5219-4527",
+          "institutions": [
+            "Cornell University",
+            "Bahir Dar University"
+          ]
+        },
+        {
+          "name": "Gert Van Hecken",
+          "openalex_id": "A5088247922",
+          "orcid": "https://orcid.org/0000-0001-8496-3194",
+          "institutions": [
+            "University of Antwerp"
+          ]
+        },
+        {
+          "name": "Munavar Zhumanova",
+          "openalex_id": "A5068748127",
+          "orcid": "https://orcid.org/0000-0001-6690-5361",
+          "institutions": [
+            "University of Central Asia"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-10-22",
+      "abstract": "The participation of the general public in the research design, data collection and interpretation process together with scientists is often referred to as citizen science. While citizen science itself has existed since the start of scientific practice, developments in sensing technology, data processing and visualization, and communication of ideas and results, are creating a wide range of new opportunities for public participation in scientific research. This paper reviews the state of citizen science in a hydrological context and explores the potential of citizen science to complement more traditional ways of scientific data collection and knowledge generation for hydrological sciences and water resources management. Although hydrological data collection often involves advanced technology, the advent of robust, cheap, and low-maintenance sensing equipment provides unprecedented opportunities for data collection in a citizen science context. These data have a significant potential to create new hydrological knowledge, especially in relation to the characterization of process heterogeneity, remote regions, and human impacts on the water cycle. However, the nature and quality of data collected in citizen science experiments is potentially very different from those of traditional monitoring networks. This poses challenges in terms of their processing, interpretation, and use, especially with regard to assimilation of traditional knowledge, the quantification of uncertainties, and their role in decision support. It also requires care in designing citizen science projects such that the generated data complement optimally other available knowledge. Lastly, using 4 case studies from remote mountain regions we reflect on the challenges and opportunities in the integration of hydrologically-oriented citizen science in water resources management, the role of scientific knowledge in the decision-making process, and the potential contestation to established community institutions posed by co-generation of new knowledge.",
+      "cited_by_count": 543,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Earth Science",
+        "type": "journal",
+        "issn": [
+          "2296-6463"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/feart.2014.00026/pdf"
+      },
+      "topics": [
+        "Species Distribution and Climate Change",
+        "Flood Risk Assessment and Management",
+        "Environmental DNA in Biodiversity Studies"
+      ],
+      "referenced_works_count": 143,
+      "url": "https://openalex.org/W2115545952"
+    },
+    {
+      "openalex_id": "W1836765585",
+      "doi": "10.17528/cifor/001760",
+      "title": "Payments for environmental services: some nuts and bolts",
+      "authors": [
+        {
+          "name": "Sven Wunder",
+          "openalex_id": "A5051136820",
+          "orcid": "https://orcid.org/0000-0002-9422-0260"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "\"Payments for environmental services (PES) are part of a new and more direct conservation paradigm, explicitly recognizing the need to bridge the interests of landowners and outsiders. Eloquent theoretical assessments have praised the absolute advantages of PES over traditional&#13;\\nconservation approaches. Some pilot PES exist in the tropics, but many field practitioners and prospective service buyers and sellers remain skeptical about the concept. This paper aims to help demystify PES for non-economists, starting with a simple and coherent defi nition of the term. It then provides practical ???how-to??? hints for PES design. It considers the likely niche for PES in the portfolio of conservation approaches. This assessment is based on a literature review, combined&#13;\\nwith field observations from research in Latin America and Asia. It concludes that service users will continue to drive PES, but their willingness to pay will only rise if schemes can demonstrate clear additionality vis-??-vis carefully established baselines, if trust-building processes with service providers are sustained, and PES recipients??? livelihood dynamics is better understood. PES best suits intermediate and/or projected threat scenarios, often in marginal lands with moderate conservation opportunity costs. People facing credible but medium-sized environmental degradation are more likely to become PES recipients than those living in relative harmony with Nature. The choice between PES cash and in-kind payments is highly context-dependent. Poor PES recipients are likely to gain from participation, though their access might be constrained and non-participating landless poor could lose out. PES is a highly promising conservation approach&#13;\\nthat can benefi t buyers, sellers and improve the resource base, but it is unlikely to completely outstrip other conservation instruments.\"",
+      "cited_by_count": 1544,
+      "type": "book",
+      "source": {
+        "name": "Center for International Forestry Research (CIFOR) eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cifor.org/publications/pdf_files/OccPapers/OP-42.pdf"
+      },
+      "topics": [
+        "Economic and Environmental Valuation",
+        "Conservation, Biodiversity, and Resource Management",
+        "Environmental Conservation and Management"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W1836765585"
+    },
+    {
+      "openalex_id": "W3083194257",
+      "doi": "10.1111/1365-2664.13734",
+      "title": "Informing decision\u2010making with Indigenous and local knowledge and science",
+      "authors": [
+        {
+          "name": "Helen C. Wheeler",
+          "openalex_id": "A5018518836",
+          "orcid": "https://orcid.org/0000-0002-9820-5818",
+          "institutions": [
+            "Anglia Ruskin University"
+          ]
+        },
+        {
+          "name": "Meredith Root\u2010Bernstein",
+          "openalex_id": "A5025452643",
+          "orcid": "https://orcid.org/0000-0002-2513-1248",
+          "institutions": [
+            "Center of Applied Ecology & Sustainability",
+            "Institute of Ecology and Biodiversity",
+            "Mus\u00e9e de l'Homme"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-01",
+      "abstract": "There is an increased focus on the role of Indigenous and local people and organizations in knowledge gathering, knowledge synthesis and decision-making. This is occurring at a range of scales from international policy formation to local and regional management and decision-making (Hausner, Engen, Brattland, & Fauchald, 2020; McElwee et al., 2020; Rayne et al., 2020; Teng\u00f6 et al., 2017, all this feature). There have been calls for both more and deeper partnerships between Indigenous knowledge holders and scientists (see Box 1), to address the multifaceted issues facing conserved areas and those experiencing environmental change (Mistry & Berardi, 2016). In creating and strengthening these partnerships, it may be possible to address biological conservation issues alongside ensuring sustainable livelihoods and use of resources, culture, governance and economic development (Berkes, 2009a). As scientists working in areas where Indigenous or local knowledge have an important role, we are increasingly aware of the need to learn how best to contribute to inclusive and equitable research and decision-making and how collaboration between multiple knowledge systems can lead to a richer, more effective knowledge base to inform decision-making. People who have a multigenerational long-term association with a given place, Indigenous people are often defined as those who are descended from people who have been present in a location prior to colonization by another ethnic group. The United Nations considers self-identification as Indigenous as key to being Indigenous and Indigenous people will often be communities with their own customs, traditions and laws (Hill et al., 2020). People who currently live in an area and often have multigenerational association with a given place but are not necessarily defined as Indigenous. They are connected to a given place by their livelihoods, cultural identities and knowledge (Hill et al., 2020), but do not necessarily self-identify as Indigenous, are not necessarily the earliest inhabitants of an area or inhabitants prior to a colonization by another ethnic group. There are many Peoples and communities with different cultures and understandings of natural systems, which may be profoundly different from each other. Therefore, there is not one unified definition for Indigenous and local knowledge beyond it being the knowledge of Indigenous and local people which often pertains to social\u2013ecological systems. Despite the diversity within Indigenous and local knowledge systems among peoples and cultures, there are some common characteristics such as that knowledge emerges from a close association with the land, is passed down through generations and often integrates culture, practice and beliefs (Gadgil, Berkes, & Folke, 1993). Note that people can also engage in multiple knowledge systems, such as in the case of Indigenous scientists, who are both scientists and Indigenous knowledge holders. The way in which a system is managed, or resources are allocated, and the processes of influencing, steering, controlling or managing the actions of different parts of society to achieve management goals. This process occurs at multiple spatial scales involving multiple actors for example, governments, agencies, NGOs and households and multiple and sometimes sets of conflicting goals (Mu\u00f1oz-Erickson et al., 2016). The nature of knowledge, the way in which knowledge is created and claims about what can be known, for example, do we believe there is a single objective truth or multiple possible mental constructions of reality (Moon & Blackman, 2014). Science has a specific epistemology focusing on claims of objectivity, claims about the existence and prioritization of universal facts, the importance of reasoning based on controlled experiments and causal reasoning for identifying mechanisms. Other cultural traditions have different epistemologies. A form of governance where power and responsibility for management and decision-making is shared between government and resource users through partnerships (Berkes, 2009b). People or groups with rights to land or resources, these can either be formulated in law or governed by local customs (Franks, Booker, & Roe, 2018). People or groups with interests or concerns related to land or resources (Franks et al., 2018). An important reason to find methods for working with Indigenous and local knowledge is pursuit of the best information to inform decision-making. Ecological science, like all science relying on a strict epistemological method and aiming to produce general and universal knowledge, has not had the time or opportunity to sufficiently detail the operations of nature across spatial scales. Filling these knowledge gaps can provide key opportunities either to confirm existing models, generate new hypotheses, or even make new discoveries. As the magnitude and inherent socia\u2013ecological complexity of environmental problems increase, a broader knowledge base will undoubtedly benefit informed decision-making (Stevenson, 1996). Research that includes Indigenous and local knowledge and science also helps ensure research address local concerns and wider societal concerns. Science is constantly progressing but suffers from limited information and biases of effort (see e.g. Rayne et al., 2020, this feature). Scientific data and research often have spatial, temporal and taxonomic biases (Boakes et al., 2010; Nu\u00f1ez et al., 2019). Shifting governmental policies, funding priorities and national political situations can influence the degree and focus of conservation research and seek to impact the focus on different drivers of ecological change (Pettorelli et al., 2019). The values of scientists can also influence what and where they study and their chosen methods (Roebuck & Phifer, 1999). These factors risk creating biases, which could affect the understanding derived from a single study, and when information from the scientific knowledge base is synthesized both formally and informally, systematic biases in our understanding of ecological systems and environmental change can emerge, which are likely to feed through to management and decision-making. This leads to both information deficits and biases in the knowledge base and the potential for an unjust knowledge base, biased towards the interests of those able to influence research priorities through policies, funding foci and the incentives and disincentives associated with the political climate in which scientists are operating and by the values of scientists themselves. By involving a wider range of people from a greater diversity of cultures and worldviews in research, we can seek to counter some of these often unaddressed biases. Making research more inclusive of Indigenous and local communities is important from a perspective of fair and just research and decision-making (Agrawal, 1995). The outcomes of colonial histories have often marginalized many communities and their worldviews in decision-making (Simpson, 2004). Fair and just research would not marginalize the worldviews or epistemologies of certain groups in research and its synthesis. An example of an unjust epistemological claim would be an assumption that science is by nature more correct than Indigenous and local knowledge or that Indigenous knowledge is only of value when validated by science. Fair and just decision-making similarly would ensure that multiple worldviews contribute to informed decision-making. Collaboration with Indigenous communities in research and decision-making in ways that are agreeable to communities can help counter inequities between the dominance of certain worldviews or knowledge systems (Behe & Daniel, 2018). The historical contexts and identities of Indigenous peoples and local communities vary, and therefore so to do the approaches and reasons for collaboration and participation with them. These range from collaborating with Indigenous and local communities in the hope of acting ethically to maintain good relationships with local collaborators, colleagues and communities, to working with people and knowledge systems that have been marginalized, with hope of building local capacity, advance human rights and reduce inequalities. Finally, there are practical reasons for collaboration between Indigenous and local knowledge holders to inform decision-making. Greater collaboration could also provide great opportunity to address or avoid conflicts over resource management (Castro & Nielsen, 2001). Local participation in research can lead to greater ability to influence decisions and faster implementation of those decisions (Danielsen, Burgess, Jensen, & Pirhofer-Walzl, 2010; Wall, McNie, & Garfin, 2017). This Special Feature highlights some of the many benefits of that which can occur when research and decision-making are informed by Indigenous and local knowledge and science. In environmental decision-making, Indigenous knowledge holders might possess knowledge and information from temporal and spatial scales which are normally inaccessible to scientists, since scientific research is often grounded at a specific study site, limited by political boundaries, during a discrete field season or limited to the capacities of specific technologies (Gadgil et al., 1993). In Gagnon et al. (2020, this feature) long-term community-based monitoring of the Porcupine caribou herd in northern Canada and Alaska gives access to important transnational data on caribou condition, which is outside the scope of current scientific observations (Gagnon et al., 2020, this feature). Knowledge, cultures and practices of Indigenous and local people who have inhabited the land for a long time have adapted to changing conditions and might have a history of integrating approaches to adapt to change. The transition from traditional practices to new management regimes can cause environmental degradation (Congretel & Pinton, 2020, this feature). This highlights how practice which integrates Indigenous and local knowledge can provide mechanisms for conservation and ecosystem-based adaptation (Hausner et al., 2020; Moln\u00e0r et al., 2020, both this feature). An understanding that Indigenous and local knowledge, cultures and practices adapt to changing conditions and are not static can help clarify their potential to address stewardship issues under biophysical and socio-economic change. Congretel and Pinton (2020, this feature) highlight that in addition to adaptations to local conditions, Indigenous practices can also adapt to foster resilience under increased globalization. Due to their integrative worldview, Indigenous and local knowledge systems are also excellent places to address the interdependencies between natural and cultural systems (McElwee et al., 2020, this feature). While the discussion concerning the incorporation of Indigenous and local knowledge for informing decision-making is longstanding, past and ongoing tensions exist in the relationship between Indigenous and local knowledge, science and decision-making. Understanding tensions and identifying positive examples where efforts were made to overcome them, may help alleviate these in the future. Decision-making often involves trade-offs between the multiple needs and desires of different rights holders and stakeholders. The role of scientists in informed decision-making is as one of a portion of many voices in this process. Some tensions that arise in informed management and decision-making may be hard to address from the parts of the process over which scientists have most influence, such as how knowledge and information is generated and synthesized and how different worldviews are addressed in this process. However, there is a role of scientists to think about their processes of knowledge generation and how they engage with Indigenous and local people and governance systems, which can affect tensions between participants in the informed decision-making process. For example, tensions could result from the research questions themselves and how they are asked, the research processes implemented, in addition to the use of subsequent information and knowledge in decision-making. We believe that while doing research on peoples' lands, or in areas which affect local communities, researchers much reflect on the potential implications of each stage of the process, from research formulation to decision-making. How information and knowledge generated can affect the trust and equitability in the relationship between Indigenous knowledge holders and scientists and the power relationships between knowledge holders and decision-makers. Ensuring that Indigenous knowledge holders are involved in the research from the inception and development of projects through to their reporting, is perceived to be important to progressing partnerships in the Arctic and promoting equity (Inuit Circumpolar Council, 2013; Wheeler et al., 2020, this feature). This collaboration from the start of a project has been implemented in the conservation translocations of crayfish and mudfish described by Rayne et al. (2020, this feature), involving co-designed objectives and success indicators, co-designed translocation strategies and collective implementation followed by ongoing iterative management. Here research and management are implemented through the Mi'kmaq principle of Etuaptmumk or 'Two-Eyed Seeing' which brings together multiple ways of viewing the world (Rayne et al., 2020, this feature). A key aspect of this approach is that two different knowledge systems are used side by side to view the world, rather than making one conform to the rules and assumptions of the other. Whether we view Indigenous peoples as stakeholders or self-determining nations can also substantially affect the role and agency of scientists and Indigenous knowledge holders in research (Latulippe & Klenk, 2020). Calls have been made to not only work with Indigenous peoples as self-determining nations via their institutions and processes but also support and respect autonomous Indigenous research, reflecting this status (Simpson, 2004; Wheeler et al., 2020, this feature). How information and knowledge is used can have impacts on local communities that may inadvertently erode trust between decision-makers, scientists and Indigenous and local knowledge holders. For example, while Indigenous knowledge may be used to inform environmental policies, resulting protectionist environmental policies can interfere with Indigenous people's capacity to conduct their traditional practices on their land and limit the capacity for future adaptation to environmental change (Lyver, Timoti, Davis, & Tylianakis, 2019; Lyver & Tylianakis, 2017). Here the lack of control Indigenous people sometimes has over how the knowledge and information they provide is used can create undesirable consequences for their communities. Scientists often experience the same challenge of limited control over how their research is used by policy makers, agencies and politicians. When Indigenous and local knowledge is used by decision-makers in ways that are undesirable to knowledge holders, the close association with the place in which decision-making occurs is more likely to more directly or deeply impact the culture and livelihoods of those knowledge holders and their communities. To the extent that science has a privileged entry into environmental management decisions, scientists may be in a position to advocate or vouch for fair and just processes for integrating Indigenous and local knowledge into decisions. To advance and improve collaboration between Indigenous and local knowledge holders and scientists, we need to not only be aware of the potential tensions between Indigenous and local knowledge, science and decision-making but also understand the many ways in which Indigenous and local knowledge holders and scientists have collaborated to produce novel applied research and help inform decision-making. The examples in this feature highlight the novel into between people and nature and the conservation outcomes that can be through collaboration of Indigenous knowledge holders and effective between knowledge and can be made when the knowledge and information synthesized to inform decision-making is and et al., When working with multiple knowledge systems, this can be a challenge as the values concerning different of knowledge may (Simpson, 2004). For example, the of biophysical in many natural science could be with the view of society and culture in many Indigenous systems. An Indigenous or local knowledge approach to and of or may be more on approaches rather than down biophysical these across knowledge systems might be as different knowledge holders may view systems is different To be information and knowledge need to be by all knowledge & To be information and knowledge be and world can lead to of and under different knowledge systems. To be information and knowledge be as fair and & For example, Congretel and Pinton (2020, this feature) multiple of the of the are which are and used by Indigenous and this that are both to the Indigenous and to a scientific a scientific of the cultural practices of Indigenous the shared knowledge is made to both through the of and it is as in different contexts to the participation of Indigenous people and scientists in creating the and of and can occur from in to issues such as how of a given are For example, the Indigenous people a caribou herd to with different and which not by at that time These may be important to the practices and system understandings of the people and therefore to them, but of to their is when and approaches to research, to that new processes or outcomes may need to be or they may need to have a For example, the to which form of is used for data may be to data in two different ways to a of between to on a novel of or to use both existing side by when research it is important to what of knowledge and are and in the local culture as as to between knowledge and and management and decisions are often with relationships between information and knowledge and decision-making. These processes involving many political actors and groups which may be either in or from knowledge and synthesis. The influence of scientists on these processes may be limited in some and more in on the system of governance in which they However, the role which scientists in their research can affect the access and opportunity for knowledge holders such as Indigenous and local people to inform decision-making and the nature in which their knowledge is We therefore seek to highlight some of these of informed management and decision-making and their implications for the role of Indigenous and local There are a of approaches to knowledge and information for environmental decision-making within the of applied and social\u2013ecological research Some of these have been to reflect the needs of Indigenous and local people while have from a more natural approach to synthesis. These in the capacity for and of potential Indigenous and local in the degree to which they address biophysical of social\u2013ecological systems or cultural and biophysical While Indigenous and local knowledge can contribute to all of these the of approach may affect the and with which this knowledge synthesis and decision-making processes are by all synthesis has on from the natural This is based on of and to conservation & 2004). Indigenous people can contribute information to this process, this information is in a natural such as through of a Indigenous and local knowledge is often systems and knowledge and practice (Berkes, & Folke, For example, some are able to understand which is its condition, its and its of from and The knowledge is their but this integrates an understanding of the they are and its and an of and & & 2018). might this knowledge in the form of on and which their own decisions and from knowledge such as this and it into a natural as might occur in is the of information that is and not the benefit of the nature of many Indigenous and local knowledge systems. is when scientists and local actors the knowledge for its to their and this knowledge with Indigenous and local knowledge and which is into decision-making & 2017). has been for its natural approach to with Indigenous and local knowledge only being into knowledge natural scientific has been 2018). This an of knowledge systems, scientific knowledge could be used in some contexts for reasons scientific information has been synthesized and resources are but the reasons for doing so be and implications for the of power between different actors and knowledge systems be and where consequences be is on the that knowledge and are & 2018). involves a more collaboration between from different knowledge systems and with different These the research process from formulation to research is often to feed through to decision-making and ongoing through collaboration with and decision-makers. Research in often involves multiple methods such as focus and field Berkes, & The approach to management in Canada highlights the of knowledge where and communities research and there is research and monitoring which includes Indigenous and local knowledge at stage and research policy that for the to adapt to management through and for of and et al., A benefit of and research is that they can change the focus of research so that it is and on natural science by Rayne et al., 2020, this feature) this a challenge in some examples of & This the that Indigenous and local are conservation practice to address the of both biological and cultural based on the that they are et al., conservation can which may be based on knowledge As the of both biological and cultural diversity are values within conservation shared governance systems, which are long and and address the multiple objectives of different nations or stakeholders knowledge systems. is an example of the of the Here the Indigenous are the and the of the and its approach in collaboration with of the land and the of which has a local The involves a range of institutions with different and operating at a range of scales. The includes research on Indigenous knowledge and and to help in their local and made efforts to support the conservation of the cultural of conservation & By the of Indigenous and local culture alongside biological approaches to knowledge and practices that support conservation people and communities that can increasingly their cultures and livelihoods under from conservation to not only use sets of knowledge but support both conservation and within practices and technologies in with cultural values et al., et al., The conservation of cultural diversity cultures to in culture adaptation to change Berkes, & 2014). and information for conservation will understanding values and between and human et al., 2017). For example, in or and practices are based on of knowledge of the and et al., 2020, this feature). The approach that Indigenous and local knowledge are not to of climate conflicts and of traditional management can lead to of and degradation & This is and to the of a and its or economic are and have been of Indigenous and local For example, a from towards might new economic while and this is an within the culture 2018). While knowledge approaches can be with certain and often there are also In some knowledge and subsequent have been of Indigenous knowledge in of scientific knowledge, while in there have been of Indigenous knowledge There are that can also result in outcomes by the of and power for example, by of power or conflicts between groups or outside decision-making over local issues & Whether these issues are greater in than when knowledge generation and synthesis and decision-making are or these issues are common to a range of approaches to inform decision-making, has not been opportunity for more voices in the research process can with a wider more and sometimes conflicting of objectives to not doing so may to the decision-making stage of research and decision-making, and inequities in power is important to reflect on such are the outcomes of one knowledge approach or inherent to a of approaches to informed decision-making. the often between knowledge and and decision-making under all of decision-making, it likely that tensions between voices are common to many decision-making the between different of informed decision-making is where different voices are research scientific knowledge, processes of knowledge and information synthesis are often from decision-making By Indigenous and local knowledge systems often knowledge and practice (Agrawal, 1995). The of knowledge and information synthesis and decision-making may scientists to a greater of scientific by to create a from the of decision-making. However, some that all scientists are in their role as and the more important is to address values or biases in a more and way & is not by scientists, it may be inherent in their concerning of where and they conduct their et al., 2019). In of knowledge and information to decision-making, knowledge holders scientists might a range of and ensure this is and to the needs of the and those of the knowledge et al., 2018). of knowledge and decision-making is common through practice within communities. Moln\u00e0r et al. (2020, this feature), how knowledge of into their practice and to through their traditional the on more and to creating conservation et al. this feature), also highlight that in knowledge of systems is directly into local decision-making. their use of as as perceived to their the resulting local can be used as a to from land However, between the knowledge made by and that which is used in decision-making, outside areas (Hausner et al., 2020, this feature). As processes of knowledge towards more social\u2013ecological and greater collaboration with Indigenous and local to towards more knowledge generation and and decision-making mechanisms of conservation such as community-based conservation and development and et al., and ecosystem-based adaptation (Hausner et al., 2020, this feature). as the information and knowledge used to inform decision-making more multiple systems of values and knowledge systems, so the of For example, in process that to and control over resources and that both to and human et al., may be into approaches such as conservation which both in and knowledge et al., 2017). While to the needs of multiple are an there will also be situations where trade-offs are and of success and their nature and to they Indigenous and local a of understandings and and therefore approaches reflect those understandings and the local contexts in which they are This Special Feature highlights a range of approaches to inform decision-making with Indigenous and local knowledge and science and that approaches be and to the local where they are and approaches addressed in this feature informing decision-making for conservation management in et al., 2020, this feature), ecosystem-based adaptation and land use decisions, et al., 2020, this feature), understanding the role of Indigenous and local practice in conservation and conservation Moln\u00e0r et al., 2020, this feature), understanding the conditions that adaptation to change communities and et al., 2020, this feature), and adaptation of Indigenous knowledge and practice to (Congretel & Pinton, 2020, this feature) and informing conservation translocations (Rayne et al., 2020, this feature). knowledge approaches understanding of between and (Gagnon et al., 2020, this feature) and of Indigenous and local knowledge to through the on and McElwee et al. (2020, this feature) highlight in their of the processes that different and of different knowledge systems may with some questions than and the of from knowledge systems might reflect their with different Some of these issues are addressed in Wheeler et al. (2020, this feature) who of process and to the use of Indigenous knowledge and science in decision-making. most and collaboration processes will how knowledge is and used that is to all The approaches and needs to work with Indigenous and local knowledge and science to inform decision-making have stewardship and conservation has and and it is that the best information possible decision-making to success and reduce and with trade-offs between objectives where of success and are to When working with multiple knowledge systems, a is how knowledge is and that knowledge systems are in a fair and equitable A to the conservation approach is that not all cultural practice this is just like not all conservation have positive it has been that it is hard to Indigenous and local knowledge from but this is not to knowledge all of which in a decision-making natural can be with beliefs and with Indigenous and local knowledge and science is not to the of information and but rather to it in to the knowledge system in which it is The and of scientific knowledge is most to scientists, the and of Indigenous or local knowledge is most to Indigenous and local knowledge holders. who can these knowledge systems have value in this The challenge when working with multiple knowledge systems to inform decision-making is what approach will best these knowledge systems to be and used This be to each specific approaches such as conservation which conservation and cultural conservation and research with practice might have greater capacity to work with Indigenous and local knowledge in a form more with Indigenous and local knowledge systems. The challenge for scientists is to understand their role in this process. In some Indigenous communities might Indigenous While scientists may have capacity to decision-making processes themselves which are processes involving many the way in which they conduct their research and engage with systems of governance can have implications for the role of Indigenous and local knowledge in research and decision-making. In making these decisions about how to conduct research, through working to support the use of Indigenous and local knowledge and with Indigenous and local people and scientists can the knowledge base and contribute to societal goals of equity and We would like to for on the and and for this support in creating this Special We also and for on an of the are from in the and in the",
+      "cited_by_count": 120,
+      "type": "article",
+      "source": {
+        "name": "Journal of Applied Ecology",
+        "type": "journal",
+        "issn": [
+          "0021-8901",
+          "1365-2664"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1365-2664.13734"
+      },
+      "topics": [
+        "Indigenous Studies and Ecology",
+        "Sustainability and Climate Change Governance",
+        "Climate Change Communication and Perception"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W3083194257"
+    },
+    {
+      "openalex_id": "W2147363709",
+      "doi": "10.1111/j.1467-8683.2008.00678.x",
+      "title": "Are Socially Responsible Managers Really Ethical? Exploring the Relationship Between Earnings Management and Corporate Social Responsibility",
+      "authors": [
+        {
+          "name": "Diego Prior",
+          "openalex_id": "A5056938440",
+          "orcid": "https://orcid.org/0000-0002-4669-2861",
+          "institutions": [
+            "Universitat Aut\u00f2noma de Barcelona"
+          ]
+        },
+        {
+          "name": "Jordi Surroca",
+          "openalex_id": "A5081973930",
+          "orcid": "https://orcid.org/0000-0001-9620-4523",
+          "institutions": [
+            "Universidad Carlos III de Madrid"
+          ]
+        },
+        {
+          "name": "Josep A. Trib\u00f3",
+          "openalex_id": "A5053286008",
+          "orcid": "https://orcid.org/0000-0001-8364-5768",
+          "institutions": [
+            "Universidad Carlos III de Madrid"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-05-01",
+      "abstract": "ABSTRACT Manuscript Type: Empirical Research Question/Issue: This paper investigates the connection between earnings management and corporate social responsibility (CSR). We argue that earnings management practices damage the collective interests of stakeholders; hence, managers who manipulate earnings can deal with stakeholder activism and vigilance by resorting to CSR practices. Research Findings/Insights: Using archival data from a multi\u2010national panel sample of 593 firms from 26 countries between 2002 and 2004, we find a positive impact of earnings management practices on CSR; this relationship holds for different robustness checks. Also, we demonstrate that the combination of earnings management and CSR has a negative impact on financial performance. Theoretical/Academic Implications: This study draws on a generalized agency theory where managers are seen as the agents of all stakeholders and the earnings management literature to highlight that CSR can be used to garner support from stakeholders and, therefore, provides an opportunity for entrenchment to those managers that manipulate earnings. As such, it suggests new avenues of research for both the corporate governance literature, as well as for the stakeholder perspective. Practitioner/Policy Implications: This study offers insights for policy makers and managers interested in enhancing CSR. For managers, our findings suggest that projecting a socially\u2010friendly image in order to disguise earnings management cannot be sustained over time due to the detrimental effect on financial performance. In addition, this study provides a warning signal to policy makers that certain practices geared toward raising a firm's CSR may simply be a mechanism for hindering other devious practices.",
+      "cited_by_count": 943,
+      "type": "article",
+      "source": {
+        "name": "Corporate Governance An International Review",
+        "type": "journal",
+        "issn": [
+          "0964-8410",
+          "1467-8683"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1467-8683.2008.00678.x"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Auditing, Earnings Management, Governance",
+        "Corporate Finance and Governance"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W2147363709"
+    },
+    {
+      "openalex_id": "W3187097875",
+      "doi": "10.1007/s11558-014-9188-2",
+      "title": "Contested multilateralism",
+      "authors": [
+        {
+          "name": "Julia C. Morse",
+          "openalex_id": "A5033257617",
+          "orcid": "https://orcid.org/0000-0001-7156-8478",
+          "institutions": [
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Robert O. Keohane",
+          "openalex_id": "A5017194047",
+          "institutions": [
+            "Princeton University"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-03-22",
+      "abstract": "\u201cContested multilateralism\u201d describes the situation that results from the pursuit of strategies by states, multilateral organizations, and non-state actors to use multilateral institutions, existing or newly created, to challenge the rules, practices, or missions of existing multilateral institutions. It occurs when coalitions dissatisfied with existing institutions combine threats of exit, voice, and the creation of alternative institutions to pursue policies and practices different from those of existing institutions. Contested multilateralism takes two principal forms: regime shifting and competitive regime creation. It can be observed across issue areas. It shapes patterns of international cooperation and discord on key security concerns such as combating terrorist financing, halting the proliferation of weapons of mass destruction, and banning certain conventional weapons. It is also evident on economic issues involving intellectual property, on environmental and energy issues, and in the realm of global public health. The sources of dissatisfaction are primarily exogenous, and the institutions used to challenge the status quo range from traditional treaties or intergovernmental organizations to informal networks, some of which include non-state actors. Some institutions are winners from the process of contested multilateralism; others may lose authority or status. Although we do not propose an explanatory theory of contested multilateralism, we do suggest that this concept provides a useful framework for understanding changes in regime complexes and the strategies that generate such changes. Copyright The Author(s) 2014",
+      "cited_by_count": 588,
+      "type": "article",
+      "source": {
+        "name": "The Review of International Organizations",
+        "type": "journal",
+        "issn": [
+          "1559-7431",
+          "1559-744X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11558-014-9188-2.pdf"
+      },
+      "topics": [
+        "International Development and Aid",
+        "International Relations and Foreign Policy",
+        "Political Conflict and Governance"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W3187097875"
+    },
+    {
+      "openalex_id": "W1969818304",
+      "doi": "10.1007/s10551-011-0952-4",
+      "title": "Responsible Leadership in Global Business: A New Approach to Leadership and Its Multi-Level Outcomes",
+      "authors": [
+        {
+          "name": "Christian Voegtlin",
+          "openalex_id": "A5027049276",
+          "orcid": "https://orcid.org/0000-0001-7490-8298",
+          "institutions": [
+            "University of Zurich",
+            "Zurich University of Applied Sciences in Business Administration"
+          ]
+        },
+        {
+          "name": "Moritz Patzer",
+          "openalex_id": "A5074358544",
+          "institutions": [
+            "Zurich University of Applied Sciences in Business Administration",
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Andreas Georg Scherer",
+          "openalex_id": "A5012262713",
+          "orcid": "https://orcid.org/0000-0002-8671-1721",
+          "institutions": [
+            "University of Zurich",
+            "Zurich University of Applied Sciences in Business Administration"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-06-30",
+      "abstract": null,
+      "cited_by_count": 403,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10551-011-0952-4.pdf"
+      },
+      "topics": [
+        "Ethics in Business and Education",
+        "Corporate Social Responsibility Reporting",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 140,
+      "url": "https://openalex.org/W1969818304"
+    },
+    {
+      "openalex_id": "W2099293260",
+      "doi": "10.1111/1475-6773.01070",
+      "title": "Trust in the Medical Profession: Conceptual and Measurement Issues",
+      "authors": [
+        {
+          "name": "Mark A. Hall",
+          "openalex_id": "A5065290010",
+          "orcid": "https://orcid.org/0000-0001-6277-144X",
+          "institutions": [
+            "Wake Forest University"
+          ]
+        },
+        {
+          "name": "Fabian Camacho",
+          "openalex_id": "A5046182172",
+          "orcid": "https://orcid.org/0000-0002-4878-0283",
+          "institutions": [
+            "Wake Forest University"
+          ]
+        },
+        {
+          "name": "Elizabeth Dugan",
+          "openalex_id": "A5001772155",
+          "institutions": [
+            "New England Research Institutes"
+          ]
+        },
+        {
+          "name": "Rajesh Balkrishnan",
+          "openalex_id": "A5015605411",
+          "orcid": "https://orcid.org/0000-0001-9363-9257"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-10-01",
+      "abstract": "Objective. To develop and test a multi\u2010item measure for general trust in physicians, in contrast with trust in a specific physician. Data Sources. Random national telephone survey of 502 adult subjects with a regular physician and source of payment. Study Design. Based on a multidimensional conceptual model, a large pool of candidate items was generated, tested, and revised using focus groups, expert reviewers, and pilot testing. The scale was analyzed for its factor structure, internal consistency, construct validity, and other psychometric properties. Principal Findings. The resulting 11\u2010item scale measuring trust in physicians generally is consistent with most aspects of the conceptual model except that it does not include the dimension of confidentiality. This scale has a single\u2010factor structure, good internal consistency (alpha=.89), and good response variability (range=11\u201354; mean=33.5; SD=6.9). This scale is related to satisfaction with care, trust in one's physician, following doctors' recommendations, having no prior disputes with physicians, not having sought second opinions, and not having changed doctors. No association was found with race/ethnicity. While general trust and interpersonal trust are qualitatively similar, they are only moderately correlated with each other and general trust is substantially lower. Conclusions. Emerging research on patients' trust has focused on interpersonal trust in a specific, known physician. Trust in physicians in general is also important and differs significantly from interpersonal physician trust. General physician trust potentially has a strong influence on important behaviors and attitudes, and on the formation of interpersonal physician trust.",
+      "cited_by_count": 500,
+      "type": "article",
+      "source": {
+        "name": "Health Services Research",
+        "type": "journal",
+        "issn": [
+          "0017-9124",
+          "1475-6773"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1475-6773.01070"
+      },
+      "topics": [
+        "Patient-Provider Communication in Healthcare",
+        "Patient Satisfaction in Healthcare",
+        "Medical Malpractice and Liability Issues"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W2099293260"
+    },
+    {
+      "openalex_id": "W2301599595",
+      "doi": "10.3390/su8030281",
+      "title": "Soil Degradation, Land Scarcity and Food Security: Reviewing a Complex Challenge",
+      "authors": [
+        {
+          "name": "Tiziano Gomiero",
+          "openalex_id": "A5048896471",
+          "orcid": "https://orcid.org/0000-0002-4826-5070",
+          "institutions": [
+            "Masaryk University",
+            "Film Independent"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-18",
+      "abstract": "Soil health, along with water supply, is the most valuable resource for humans, as human life depends on the soil\u2019s generosity. Soil degradation, therefore, poses a threat to food security, as it reduces yield, forces farmers to use more inputs, and may eventually lead to soil abandonment. Unfortunately, the importance of preserving soil health appears to be overlooked by policy makers. In this paper, I first briefly introduce the present situation concerning agricultural production, natural resources, soil degradation, land use and the challenge ahead, to show how these issues are strictly interwoven. Then, I define soil degradation and present a review of its typologies and estimates at a global level. I discuss the importance of preserving soil capital, and its relationship to human civilization and food security. Trends concerning the availability of arable agricultural land, different scenarios, and their limitations, are analyzed and discussed. The possible relation between an increase in a country\u2019s GNP, population and future availability of arable land is also analyzed, using the World Bank\u2019s database. I argue that because of the many sources of uncertainty in the data, and the high risks at stake, a precautionary approach should be adopted when drawing scenarios. The paper ends with a discussion on the key role of preserving soil organic matter, and the need to adopt more sustainable agricultural practices. I also argue that both our relation with nature and natural resources and our lifestyle need to be reconsidered.",
+      "cited_by_count": 726,
+      "type": "article",
+      "source": {
+        "name": "Sustainability",
+        "type": "journal",
+        "issn": [
+          "2071-1050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/8/3/281/pdf?version=1458296911"
+      },
+      "topics": [
+        "Agriculture, Land Use, Rural Development",
+        "Agriculture Sustainability and Environmental Impact",
+        "Sustainable Development and Environmental Policy"
+      ],
+      "referenced_works_count": 176,
+      "url": "https://openalex.org/W2301599595"
+    },
+    {
+      "openalex_id": "W1975710169",
+      "doi": "10.1086/664553",
+      "title": "If You're So Smart, Why Are You under Surveillance? Universities, Neoliberalism, and New Public Management",
+      "authors": [
+        {
+          "name": "Chris Lorenz",
+          "openalex_id": "A5003985666"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-01",
+      "abstract": null,
+      "cited_by_count": 568,
+      "type": "article",
+      "source": {
+        "name": "Critical Inquiry",
+        "type": "journal",
+        "issn": [
+          "0093-1896",
+          "1539-7858"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/664553"
+      },
+      "topics": [
+        "Higher Education Governance and Development",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W1975710169"
+    },
+    {
+      "openalex_id": "W1786926647",
+      "doi": "10.1002/wcc.321",
+      "title": "International trends in public perceptions of climate change over the past quarter century",
+      "authors": [
+        {
+          "name": "Stuart Capstick",
+          "openalex_id": "A5031309215",
+          "orcid": "https://orcid.org/0000-0002-1934-4503",
+          "institutions": [
+            "Cardiff University",
+            "Committee on Climate Change",
+            "Tyndall Centre"
+          ]
+        },
+        {
+          "name": "Lorraine Whitmarsh",
+          "openalex_id": "A5012606238",
+          "orcid": "https://orcid.org/0000-0002-9054-1040",
+          "institutions": [
+            "Cardiff University",
+            "Tyndall Centre"
+          ]
+        },
+        {
+          "name": "Wouter Poortinga",
+          "openalex_id": "A5008719595",
+          "orcid": "https://orcid.org/0000-0002-6926-8545",
+          "institutions": [
+            "Cardiff University",
+            "Tyndall Centre"
+          ]
+        },
+        {
+          "name": "Nick Pidgeon",
+          "openalex_id": "A5053365910",
+          "institutions": [
+            "Tyndall Centre",
+            "Cardiff University",
+            "Committee on Climate Change"
+          ]
+        },
+        {
+          "name": "Paul Upham",
+          "openalex_id": "A5080966422",
+          "orcid": "https://orcid.org/0000-0003-1998-4698",
+          "institutions": [
+            "University of Leeds",
+            "Tyndall Centre"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-11-12",
+      "abstract": "Public perceptions of climate change are known to differ between nations and to have fluctuated over time. Numerous plausible characterizations of these variations, and explanations for them, are to be found in the literature. However, a clear picture has not yet emerged as to the principal trends and patterns that have occurred over the past quarter\u2010century or the factors behind these changes. This systematic review considers previous empirical research that has addressed the temporal aspects to public perceptions. We address findings that have been obtained since the 1980s and using a range of methodologies. In this review, we consider early, seminal work examining public perceptions; survey studies carried out over long timescales and at an international scale; detailed statistical analyses of the drivers of changing perceptions; and qualitative research featuring a longitudinal component. Studies point to growing skepticism in the latter 2000s in some developed countries, underpinned by economic and sociopolitical factors. Even so, in many parts of the world, there has been growing concern about climate change in recent years. We conclude that the imbalance in the literature toward polling data, and toward studies of public perceptions in Western nations (particularly the United States), leaves much unknown about the progression of public understanding of climate change worldwide. More research is required that uses inferential statistical procedures to understand the reasons behind trends in public perceptions. The application of qualitative longitudinal methodologies also offers the potential for better appreciation of the cultural contexts in which climate change perceptions are evolving. WIREs Clim Change 2015, 6:35\u201361. doi: 10.1002/wcc.321 This article is categorized under: Perceptions, Behavior, and Communication of Climate Change &gt; Communication Social Status of Climate Change Knowledge &gt; Knowledge and Practice",
+      "cited_by_count": 679,
+      "type": "article",
+      "source": {
+        "name": "Wiley Interdisciplinary Reviews Climate Change",
+        "type": "journal",
+        "issn": [
+          "1757-7780",
+          "1757-7799"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wcc.321"
+      },
+      "topics": [
+        "Climate Change Communication and Perception",
+        "Environmental Education and Sustainability",
+        "Social Acceptance of Renewable Energy"
+      ],
+      "referenced_works_count": 151,
+      "url": "https://openalex.org/W1786926647"
+    },
+    {
+      "openalex_id": "W1988292723",
+      "doi": "10.1080/09700161.2012.689528",
+      "title": "Evaluating the Political and Economic Role of the IRGC",
+      "authors": [
+        {
+          "name": "M. Mahtab Alam Rizvi",
+          "openalex_id": "A5079148336"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-06-27",
+      "abstract": "Abstract Abstract The Islamic Revolutionary Guards Corps (IRGC) is Iran's most powerful security and military organisation, responsible for the protection and survival of the regime. Over time, the IRGC has attained a position of dominance vis-\u00e0-vis the regular army (Artesh). In due course, the Guards have also been transformed into a leading political and economic actor. The major political role of the IRGC started with the election of the reformist presidency. However, the Guards' involvement in the Iranian economy began during Rafsanjani's presidency. In view of the importance of Iran and its military, especially the IRGC, this article seeks to analyse the political and economic roles of the IRGC. The article argues that the IRGC's political and economic role is likely to increase due to its unique relationship with Iranian political elites and in view of the current power struggle between various political factions within Iran. However, any such expansion of the IRGC's role may not go unchallenged. The unintended consequence of this could be the erosion of the IRGC's credibility and people's trust. Notes 1. Baqer Moin, 'Khomeini: Life of the Ayatollah', I.B. Tauris, London, 1999, pp. 235, 240. 2. Frederic Wehrey, Jerrold D. Green, Brian Nichiporuk, Alireza Nader, Lydia Hansell, Rasool Nafisi and S.R. Bohandy, 'The Rise of the Pasdaran: Assessing the Domestic Roles of Iran's Islamic Revolutionary Guards Corps', Report, RAND, Santa Monica, CA, 2009, pp. 8\u201310. 3. Dilip Hiro, Neighbours, Not Friends: Iraq and Iran after the Gulf Wars, Routledge, London, 2001, p. 195. See also Shelly Johny, 'Iranian Political System and the IRGC', Air Power Journal, 2(3), 2007, p. 117. 4. Roozbeh Safshekan and Farzan Sabet, 'The Ayatollah's Praetorians: The Islamic Revolutionary Guard Corps and the 2009 Election Crisis', Middle East Journal, 64(4), 2010, p. 549. 5. 'IRGC Should Be Driving Force on the Economic Front', Mehr News Agency, 7 August 2011, at http://www.mehrnews.com/en/newsdetail.aspx?NewsID=1377932 6. Ahmed S. Hashim, 'Civil-Military Relations in the Islamic Republic of Iran', in Joseph A. Kechichian, Iran, Iraq, and the Arab Gulf States, Palgrave, New York, 2001, p. 34. 7. Ibid. 8. Ibid. 9. On 6 December 1921, Reza Khan issued Army Decree Number 1, which called for the merger of the Cossack Brigade and the Gendarmerie, as the first step towards the creation of a unified national army. 10. Baqer Moin, no. 1, pp. 211, 212. 11. Yonah Alexander and Milton Hoenig, The New Iranian Leadership: Ahmadinejad, Terrorism, Nuclear Ambition, and the Middle East, Praeger Security International, Westport, CT, 2008, p. 19. 12. Roozbeh Safshekan and Farzan Sabet, no. 4, p. 548. 13. Ervand Abrahamian, Khomeinism: Essays on the Islamic Republic, University of California Press, London, 1993, p. 127. 14. Wilfried Buchta, 'Iran's Security Sector: An Overview', Geneva Centre for the Democratic Control of Armed Forces (DCAF), Conference Paper, Geneva, July 2004, pp. 5\u20136. 15. Ibid., p. 7. 16. Anthony H. Cordesman, Iran's Developing Military Capabilities, Center for Strategic and International Studies, Washington, DC, 2005, pp. 45\u201348. 17. General S Padmanabhan, 'Manas Defence Year Book 2010\u201311', Manas Publications, Delhi, 2010, ISBN : 9788170493679, 8170493676. See also Wilfried Buchta, no. 14, p. 9. 18. Frederic Wehrey et al., no. 2. 19. Alireza Nader, 'The Revolutionary Guards', United States Institute of Peace (USIP), Washington, DC, at http://iranprimer.usip.org/resource/revolutionary-guards 20. Hezbollah was founded in June 1982, amidst the Lebanese civil war and in response to the Israeli invasion of Lebanon. Hezbollah is a political, social economic and military organisation whose ideology resembles that of the Iranian revolution. 21. Yonah Alexander and Milton Hoenig, no. 11, pp. 75\u201376. 22. 'Iran's Strategic Policy is to Strengthen Lebanese Army: Minister', Mehr News Agency, 26 February 2012, at http://www.mehrnews.com/en/newsdetail.aspx?NewsID=1544336 (Accessed 26 February 2012). 23. Ahmed S. Hashim, no. 6, p. 40. Also see 'Iran's strategic policy is to strengthen Lebanese army: minister', Mehr News, 26 February 2012, at http://www.mehrnews.com/en/newsdetail.aspx?NewsID=1544336 (Accessed 26 February 2012). 'Hashemi-Rafsanjani Speaks on the Future of the IRGC Iranian Revolutionary Guards Corps', Tehran Domestic Service, 0935 GMT, 6 October 1988, translated in Foreign Broadcast Information Service -Near East and South Asia (FBIS-NES), 7 October 1988, pp. 50, 52. 24. 'Hashemi-Rafsanjani Speaks on the Future of the IRGC Iranian Revolutionary Guards Corps', Tehran Domestic Service, 0935 GMT, 6 October 1988, translated in FBIS-NES, 7 October 1988, pp. 50, 52. 25. Ahmed S. Hashim, no. 6, pp. 40\u201341. 26. Frederic Wehrey et al., no. 2. 27. Article 176, Constitution of the Islamic Republic, Iran Chamber Society, at http://www.iranchamber.com/government/laws/constitution_ch01.php 28. Constitution of the Islamic Republic of Iran, Embassy of the Islamic Republic of Iran, New Delhi, March 1980. 29. Ibid. 30. The MEK was created in 1965 to build up its own autonomous armed units. It was initially devoted to armed struggle against the Shah of Iran. After the 1979 revolution, at first the MEK chose to side with the clerics led by Ayatollah Khomeini against the liberals, nationalists and other moderate forces within the revolution. A power struggle ensued, and by mid-1981 the MEK was fighting street battles against the IRGC. During the Iran-Iraq War, the group was given refuge by Saddam Hussein and they mounted attacks on Iran from within Iraqi territory. See also Frederic Wehrey et al., no. 2. 31. Frederic Wehrey et al., no. 2. 32. Frederic Wehrey, Jerrold D. Green, Brian Nichiporuk, Alireza Nader, Lydia Hansell, Rasool Nafisi, S. R. Bohandy, no. 2, pp.10\u201312. 33. Hamid Ansari, Narrative of Awakening: A Look at Imam Khomeini's Ideal, Scientific and Political Biography from Birth to Ascension, Institute for Compilation and Publication of the Works of Imam Khomeini, International Affairs Division, no publication date (preface dated 1994), translated by Seyed Manoochehr Moosavi, pp. 165\u2013167. See also Frederic Wehrey et al., no. 2. 34. Hamid Ansari, 'Narrative of Awakening : A Look at Imam Khomeini's Ideal, Scientific and Political Biography from Birth to Ascension', Institute for Compilation and Publication of the Works of Imam Khomeini, International Affairs Division, [no publication date, preface dated 1994] translated by Seyed Manoochehr Moosavi, p.165\u2013167. Also see Frederic Wehrey, Jerrold D. Green, no. 2., p. 9. 35. 'Officials Should Prevent the Politicization of the Basij', Aftab News, 1 December 2007. See also Frederic Wehrey et al., no. 2. 36. Frederic Wehrey et al., no. 2. 37. Mohsen Rezai's official biography, Zendegi-e doktor-e Mohsen Reza'i dar yek negah, at www.rezaee.ir. See also Frederic Wehrey et al., no. 2. 38. Wilfried Buchta, no. 14, p. 9. 39. The Islamic Revolutionary Guards Corps: Military and Political Influence in Today's Iran, The Brookings Institution, Saban Center-USIP Iran Working Group, Washington, DC, 13 November 2008, p. 2. 40. 'IRGC's Dominance over Iran's Politics and Economy\u2014Part 1', Iran Focus, 11 May 2010, at http://www.iranfocus.com/en/index.php?option=com_content&view=article&id=20355:irgcs-dominance-over-irans-politics-and-economy--part-1&catid=32:exclusive-reports&Itemid=32 41. 'Khatami's Return to Political Activity Depends on His Stance: IRGC Chief', Tehran Times, 6 July 2011, at http://www.tehrantimes.com/index_View.asp?code=243648 42. 'Iranian Judiciary Gives Green Light to IRGC's Interference in Politics', Asia Time to Betray, 8 July 2011, at http://atimetobetray.com/blog/iranian-judiciary-gives-green-light-to-irgc%E2%80%99s-interference-in-politics/ 43. Alireza Nader, no. 19. 44. Wilfried Buchta, no. 14, p. 23. 45. Constitution of the Islamic Republic of Iran, no. 28. 46. Roozbeh Safshekan and Farzan Sabet, no. 4, p. 549. 47. Behrouz Khaligh, 'Changes in the Political Structure of the Islamic Republic: From the Clerical Oligarchy to the Oligarchy of the Clerics and Guards', Akhbar e Rouz, 4 July 2006. 48. Gharargah-e Sazandegiye Khatam al-Anbia (Ghorb), homepage, at http://www.khatam.com/ 49. Frederic Wehrey et al., no. 2. 50. The Islamic Revolutionary Guards Corps, no. 39, p. 3. 51. Matthew Levitt, 'Make Iran Feel the Pain', Wall Street Journal Europe, 2 July 2007; Alireza Jafarzadeh, 'Islamic Revolutionary Guard Corps (IRGC): Control Over All Aspects of the Iranian Regime', Strategic Policy Consulting Statement, National Press Club Meeting, 22 August 2007; and Kim Murphy, 'Iran's Guard Builds a Fiscal Empire', Los Angeles Times, 26 August 2007. See also Frederic Wehrey et al., no. 2, pp. 59\u201364. 52. Open Source Center, 'Iran: Kermanshah Province Highlights, 9\u201321 June', OSC Summary in Persian, IAP20070705434001, 9 June\u20135 July 2007. 53. 'IRGC's Dominance over Iran's Politics and Economy\u2014Part 1', no. 40. 54. Gharargah-e Sazandegiye Khatam al-Anbia (Ghorb), homepage, at http://www.khatam.com/. See also Frederic Wehrey et al., no. 2, pp. 55, 56. 55. Alireza Nader, no. 19. 56. Ibid. 57. Frederic Wehrey et al., no. 2, pp. 59\u201363. 58. 'Namayandeye vali faghi dar sepah-e padaran: sepah nabayad abzar-e tashakkolhaye siasi shaved' (Representative of the Supreme Leader to the IRGC: The IRGC should not get involved in politics) (2006). Also see Frederic Wehrey, Jerrold D. Green, no. 2, pp. 59\u201363. 59. Wilfried Buchta, no. 14, p. 23. See also The Economist, 17 June 2004. 60. Open Source Center, no. 52. See also Frederic Wehrey et al., no. 2. 61. 'Nobody Influences Me!', Time, 10 December 1979. 62. 'Bonyads Ripe for Restructuring', Middle East Data Project, Inc., Iran Brief, 8 December 1999. 63. Mehdi Khalaji, 'Iran's Revolutionary Guard Corps, Inc.', Washington Institute for Near East Policy, Policy Watch, No. 1273, Washington, DC, 17 August 2007. 64. Mostazafan Foundation, homepage, at http://www.irmf.ir/ 65. See Frederic Wehrey et al., no. 2, pp. 57\u201358. 66. Mashaei has gone to the extent of questioning the legitimacy of the very principle of velayat-e-faqih. For details see M. Mahtab Alam Rizvi, 'Velayat-e-Faqih (Supreme Leader) and Iranian Foreign Policy: An Historical Analysis', Strategic Analysis, 36(1), 2012, pp. 121\u2013122. 67. Mehr News Agency, 5 July 2011, at www.mehrnews.com/fa/NewsPrint.aspx?NewsID=1351670 (Accessed 22 February 2012). See also Reza Molavi and K. Luisa Gandolfo, 'Who Rules Iran?', The Middle East Quarterly, 17(1), 2010, pp. 61\u201368. 68. Fars News Agency, Iran, 27 April 2011. 69. Mahan Abedin, 'The rise and rise of Iran's Guards', Asia Times, 20 August 2011, at http://www.atimes.com/atimes/Middle_East/MH20Ak03.html (Accessed 22 August 2011).",
+      "cited_by_count": 46,
+      "type": "article",
+      "source": {
+        "name": "Strategic Analysis",
+        "type": "journal",
+        "issn": [
+          "0970-0161",
+          "1754-0054"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1988292723"
+    },
+    {
+      "openalex_id": "W1502781103",
+      "doi": null,
+      "title": "Does China's Regime Enjoy 'Performance Legitimacy'? An Empirical Analysis Based on Three Surveys from the Past Decade",
+      "authors": [
+        {
+          "name": "Neil Munro",
+          "openalex_id": "A5103072678",
+          "orcid": "https://orcid.org/0000-0001-9694-9701",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        },
+        {
+          "name": "Jane Duckett",
+          "openalex_id": "A5022769779",
+          "orcid": "https://orcid.org/0000-0002-5401-5350",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        },
+        {
+          "name": "Kate Hunt",
+          "openalex_id": "A5002365293",
+          "orcid": "https://orcid.org/0000-0002-5873-3632",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        },
+        {
+          "name": "Matt Sutton",
+          "openalex_id": "A5034438905",
+          "orcid": "https://orcid.org/0000-0002-6635-2127",
+          "institutions": [
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-01",
+      "abstract": "The aim of this paper is to examine the evidence for the hypothesis that the legitimacy of the China's political regime depends mainly on performance (D. Zhao 2009; Zhu 2011). We test the hypothesis using three nationwide public opinion surveys. The first two were conducted as part of the Asian Barometer in 2002 and 2007-8. The third, commissioned by the authors , was completed from November 2012 to January 2013. Two dependent variables are deployed as alternate measures of legitimacy: a composite index of trust in political institutions and agreement with the proposition that Our form of government is still the best for us. The concept of \u201cperformance legitimacy\u201d refers here to that part of legitimacy that can be explained by perceptions of government performance, including management of the national economy. As alternative explanations, we consider: \u201cvalues-based legitimacy\u201d emerging from normative positions on questions concerning social relations and the role of government; and \u201cexposure-acceptance legitimacy\u201d emerging from processes of habituation and indoctrination. We also include controls for respondents\u2019 personal circumstances. We use ordinary least squares and multinomial logistic regressions to test models of regime support. We analyse the relative explanatory power of the four groups of variables corresponding to the hypotheses and controls. We also test for interactive effects between performance and the other groups. We started out sceptical of the notion of \u201cperformance legitimacy\u201d except as part of a composite explanation of regime support. However, we find that whilst composite models have the most explanatory power, performance is the strongest element. The presentation of new data from the 2012-13 survey offers an indication of long-term trends. Political trust is becoming more moderate and support for the political system more variable. The growing importance of political relative to economic performance, as well as the emergence of value cleavages which structure regime support, suggest the regime may become vulnerable to an erosion of support if it fails to carry out reforms aimed at building a kind of political democracy.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2302982_code1087686.pdf?abstractid=2302982&mirid=2"
+      },
+      "topics": [
+        "China's Socioeconomic Reforms and Governance",
+        "Social Capital and Networks",
+        "Electoral Systems and Political Participation"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W1502781103"
+    },
+    {
+      "openalex_id": "W2077849133",
+      "doi": "10.1111/j.1468-2427.2009.00859.x",
+      "title": "The Antinomies of the Postpolitical City: In Search of a Democratic Politics of Environmental Production",
+      "authors": [
+        {
+          "name": "E Swyngedouw",
+          "openalex_id": "A5049258946",
+          "orcid": "https://orcid.org/0000-0001-7494-2824",
+          "institutions": [
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-09-01",
+      "abstract": "Abstract In recent years, urban research has become increasingly concerned with the social, political and economic implications of the techno\u2010political and socio\u2010scientific consensus that the present unsustainable and unjust environmental conditions require a transformation of the way urban life is organized. In the article, I shall argue that the present consensual vision of the urban environment presenting a clear and present danger annuls the properly political moment and contributes to what a number of authors have defined as the emergence and consolidation of a postpolitical and postdemocratic condition. This will be the key theme developed in this contribution. First, I shall attempt to theorize and re\u2010centre the political as a pivotal moment in urban political\u2010ecological processes. Second, I shall argue that the particular staging of the environmental problem and its modes of management signals and helps to consolidate a postpolitical condition, one that evacuates the properly political from the plane of immanence that underpins any political intervention. The consolidation of an urban postpolitical condition runs, so I argue, parallel to the formation of a postdemocratic arrangement that has replaced debate, disagreement and dissensus with a series of technologies of governing that fuse around consensus, agreement, accountancy metrics and technocratic environmental management. In the third part, I maintain that this postpolitical consensual police order revolves decidedly around embracing a populist gesture. However, the disappearance of the political in a postpolitical arrangement leaves all manner of traces that allow for the resurfacing of the properly political. This will be the theme of the final section. I shall conclude that re\u2010centring the political is a necessary condition for tackling questions of urban environmental justice and for creating egalibertarian socio\u2010ecological urban assemblages. R\u00e9sum\u00e9 R\u00e9cemment, la recherche urbaine a montr\u00e9 un int\u00e9r\u00eat croissant pour les implications sociales, politiques et \u00e9conomiques du consensus techno\u2010politique et socio\u2010scientifique selon lequel les conditions environnementales actuelles, non viables et injustes, exigent que soit transform\u00e9 le mode d'organisation de la vie urbaine. Or, cette perspective consensuelle de l'environnement urbain soumis \u00e0 un danger manifeste et r\u00e9el annihile le moment v\u00e9ritablement politique et contribue \u00e0 ce que de nombreux auteurs ont d\u00e9fini comme l'apparition et la consolidation d'une situation post\u2010politique et post\u2010d\u00e9mocratique. Traitant ce th\u00e8me essentiel, l'article tente d'abord de conceptualiser et de recentrer le politique en tant que moment critique dans les processus politico\u2010\u00e9cologiques urbains. Ensuite, il montrera que la mise en sc\u00e8ne particuli\u00e8re du probl\u00e8me environnemental et de ses modes de gestion indique, et aide \u00e0 consolider, un \u00e9tat post\u2010politique, dans lequel le v\u00e9ritablement politique est \u00e9vacu\u00e9 du plan de l'immanence sous\u2010jacent \u00e0 toute intervention politique. La consolidation d'une situation post\u2010politique urbaine se fait en parall\u00e8le \u00e0 la formation d'un dispositif post\u2010d\u00e9mocratique qui a remplac\u00e9 d\u00e9bat, d\u00e9saccord et dissension par une panoplie de technologies gouvernementales gravitant autour de mesures de consensus, d'accord et de responsabilit\u00e9, associ\u00e9es \u00e0 une gestion technocratique de l'environnement. Une troisi\u00e8me partie soutient que cet ordre polic\u00e9 consensuel post\u2010politique se rapproche nettement du geste populiste. Toutefois, la disparition du politique d'un dispositif post\u2010politique laisse toutes sortes de traces permettant la r\u00e9\u00e9mergence du v\u00e9ritablement politique. Cet aspect est au c\u0153ur de la derni\u00e8re partie. Pour conclure, le recentrage du politique est un pr\u00e9alable au traitement des questions de justice en mati\u00e8re d'environnement urbain et \u00e0 la cr\u00e9ation d'assemblages urbains socio\u2010\u00e9cologiques d'\u00e9galibert\u00e9.",
+      "cited_by_count": 855,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Urban and Regional Research",
+        "type": "journal",
+        "issn": [
+          "0309-1317",
+          "1468-2427"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1468-2427.2009.00859.x"
+      },
+      "topics": [
+        "Water Governance and Infrastructure",
+        "Posthumanist Ethics and Activism",
+        "Urban Planning and Governance"
+      ],
+      "referenced_works_count": 89,
+      "url": "https://openalex.org/W2077849133"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

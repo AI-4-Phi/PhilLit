@@ -1,0 +1,3732 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "tradition breakdown degeneration failure",
+  "results": [
+    {
+      "openalex_id": "W4324309277",
+      "doi": "10.1002/alz.13016",
+      "title": "2023 Alzheimer's disease facts and figures",
+      "authors": [
+        {
+          "name": "V Villemagne",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Burnham",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Bourgeat",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Reiman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Quiroz",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Fleisher",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Jack",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Lowe",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Weigand",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Bateman",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Xiong",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Benzinger",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Gordon",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Blazey",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Su",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Braak",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Thal",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Ghebremedhin",
+          "openalex_id": ""
+        },
+        {
+          "name": "Del Tredici",
+          "openalex_id": ""
+        },
+        {
+          "name": "K",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Quiroz",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Zetterberg",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Reiman",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Barthelemy",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Joseph-Mathurin",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Gordon",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Byard",
+          "openalex_id": ""
+        },
+        {
+          "name": "Nei Langlois",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Tom",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Hubbard",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Crane",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Ganguli",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Dodge",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Shen",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Pandav",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Dekosky",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Waring",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Doody",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Pavlik",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Massman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Chan",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Brookmeyer",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Corrada",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Curriero",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Kawas",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Larson",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Shadlen",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Helzner",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Scarmeas",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Cosentino",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Tang",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Schupf",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Stern",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Xie",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Brayne",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Matthews",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Brodaty",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Seeher",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Gibson",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Todd",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Barr",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Roberts",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Passmore",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Sato",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Barthelemy",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Mawuenyega",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Hanseeuw",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Betensky",
+          "openalex_id": ""
+        },
+        {
+          "name": "Hil Jacobs",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Kapasi",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Decarli",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Schneider",
+          "openalex_id": ""
+        },
+        {
+          "name": "W Brenowitz",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Hubbard",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Keene",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Hogan",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Jette",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Fiest",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Amador-Ortiz",
+          "openalex_id": ""
+        },
+        {
+          "name": "Z Ahmed",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Zehr",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Dickson",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jpm Kane",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Surendranathan",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Bentley",
+          "openalex_id": ""
+        },
+        {
+          "name": "J De Reuck",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Maurage",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Deramecourt",
+          "openalex_id": ""
+        },
+        {
+          "name": "B James",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Bennett",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Boyle",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Leurgans",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Schneider",
+          "openalex_id": ""
+        },
+        {
+          "name": "I Stojkovska",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Krainc",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Mazzulli",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Aarsland",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Zaccai",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Brayne",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-14",
+      "abstract": "Abstract This article describes the public health impact of Alzheimer's disease, including prevalence and incidence, mortality and morbidity, use and costs of care, and the overall impact on family caregivers, the dementia workforce and society. The Special Report examines the patient journey from awareness of cognitive changes to potential treatment with drugs that change the underlying biology of Alzheimer's. An estimated 6.7 million Americans age 65 and older are living with Alzheimer's dementia today. This number could grow to 13.8 million by 2060 barring the development of medical breakthroughs to prevent, slow or cure AD. Official death certificates recorded 121,499 deaths from AD in 2019, and Alzheimer's disease was officially listed as the sixth\u2010leading cause of death in the United States. In 2020 and 2021, when COVID\u201019 entered the ranks of the top ten causes of death, Alzheimer's was the seventh\u2010leading cause of death. Alzheimer's remains the fifth\u2010leading cause of death among Americans age 65 and older. Between 2000 and 2019, deaths from stroke, heart disease and HIV decreased, whereas reported deaths from AD increased more than 145%. This trajectory of deaths from AD was likely exacerbated by the COVID\u201019 pandemic in 2020 and 2021. More than 11 million family members and other unpaid caregivers provided an estimated 18 billion hours of care to people with Alzheimer's or other dementias in 2022. These figures reflect a decline in the number of caregivers compared with a decade earlier, as well as an increase in the amount of care provided by each remaining caregiver. Unpaid dementia caregiving was valued at $339.5 billion in 2022. Its costs, however, extend to family caregivers\u2019 increased risk for emotional distress and negative mental and physical health outcomes \u2014 costs that have been aggravated by COVID\u201019. Members of the paid health care workforce are involved in diagnosing, treating and caring for people with dementia. In recent years, however, a shortage of such workers has developed in the United States. This shortage \u2014 brought about, in part, by COVID\u201019 \u2014 has occurred at a time when more members of the dementia care workforce are needed. Therefore, programs will be needed to attract workers and better train health care teams. Average per\u2010person Medicare payments for services to beneficiaries age 65 and older with AD or other dementias are almost three times as great as payments for beneficiaries without these conditions, and Medicaid payments are more than 22 times as great. Total payments in 2023 for health care, long\u2010term care and hospice services for people age 65 and older with dementia are estimated to be $345 billion. The Special Report examines whether there will be sufficient numbers of physician specialists to provide Alzheimer's care and treatment now that two drugs are available that change the underlying biology of Alzheimer's disease.",
+      "cited_by_count": 2792,
+      "type": "article",
+      "source": {
+        "name": "Alzheimer s & Dementia",
+        "type": "journal",
+        "issn": [
+          "1552-5260",
+          "1552-5279"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/alz.13016"
+      },
+      "topics": [
+        "Dementia and Cognitive Impairment Research",
+        "Geriatric Care and Nursing Homes",
+        "Health Systems, Economic Evaluations, Quality of Life"
+      ],
+      "referenced_works_count": 730,
+      "url": "https://openalex.org/W4324309277"
+    },
+    {
+      "openalex_id": "W2781979705",
+      "doi": "10.1186/s13287-017-0735-7",
+      "title": "The limited application of stem cells in medicine: a review",
+      "authors": [
+        {
+          "name": "Jordan Poulos",
+          "openalex_id": "A5065864777",
+          "orcid": "https://orcid.org/0000-0002-4615-2064",
+          "institutions": [
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-02",
+      "abstract": null,
+      "cited_by_count": 196,
+      "type": "review",
+      "source": {
+        "name": "Stem Cell Research & Therapy",
+        "type": "journal",
+        "issn": [
+          "1757-6512"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://stemcellres.biomedcentral.com/track/pdf/10.1186/s13287-017-0735-7"
+      },
+      "topics": [
+        "Biomedical Ethics and Regulation",
+        "Pluripotent Stem Cells Research",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W2781979705"
+    },
+    {
+      "openalex_id": "W2801759394",
+      "doi": "10.1007/s13167-018-0136-8",
+      "title": "Mental stress as consequence and cause of vision loss: the dawn of psychosomatic ophthalmology for preventive and personalized medicine",
+      "authors": [
+        {
+          "name": "Bernhard A. Sabel",
+          "openalex_id": "A5091495583",
+          "orcid": "https://orcid.org/0000-0002-4472-5543",
+          "institutions": [
+            "Otto-von-Guericke University Magdeburg"
+          ]
+        },
+        {
+          "name": "Jiaqi Wang",
+          "openalex_id": "A5100365362",
+          "orcid": "https://orcid.org/0009-0005-4951-0970",
+          "institutions": [
+            "Otto-von-Guericke University Magdeburg"
+          ]
+        },
+        {
+          "name": "Lizbeth C\u00e1rdenas\u2010Morales",
+          "openalex_id": "A5043579913",
+          "institutions": [
+            "Otto-von-Guericke University Magdeburg"
+          ]
+        },
+        {
+          "name": "Muneeb A. Faiq",
+          "openalex_id": "A5019919923",
+          "orcid": "https://orcid.org/0000-0002-1430-3139",
+          "institutions": [
+            "New York University",
+            "All India Institute of Medical Sciences",
+            "NYU Langone Health"
+          ]
+        },
+        {
+          "name": "Christine Heim",
+          "openalex_id": "A5040396885",
+          "orcid": "https://orcid.org/0000-0002-6580-6326",
+          "institutions": [
+            "Humboldt-Universit\u00e4t zu Berlin",
+            "Pennsylvania State University",
+            "Freie Universit\u00e4t Berlin",
+            "Berlin Institute of Health at Charit\u00e9 - Universit\u00e4tsmedizin Berlin"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-09",
+      "abstract": null,
+      "cited_by_count": 203,
+      "type": "review",
+      "source": {
+        "name": "The EPMA Journal",
+        "type": "journal",
+        "issn": [
+          "1878-5077",
+          "1878-5085"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13167-018-0136-8.pdf"
+      },
+      "topics": [
+        "Hallucinations in medical conditions",
+        "Ophthalmology and Visual Health Research",
+        "Glaucoma and retinal disorders"
+      ],
+      "referenced_works_count": 246,
+      "url": "https://openalex.org/W2801759394"
+    },
+    {
+      "openalex_id": "W2061133354",
+      "doi": "10.2174/1745017901208010110",
+      "title": "Women And Hysteria In The History Of Mental Health",
+      "authors": [
+        {
+          "name": "Cecilia Tasca",
+          "openalex_id": "A5010436780",
+          "institutions": [
+            "University of Cagliari"
+          ]
+        },
+        {
+          "name": "Mariangela Rapetti",
+          "openalex_id": "A5057040496",
+          "institutions": [
+            "University of Cagliari"
+          ]
+        },
+        {
+          "name": "Mauro Giovanni Carta",
+          "openalex_id": "A5043518483",
+          "orcid": "https://orcid.org/0000-0003-0706-9687",
+          "institutions": [
+            "University of Cagliari"
+          ]
+        },
+        {
+          "name": "Bianca Fadda",
+          "openalex_id": "A5087848820",
+          "institutions": [
+            "University of Cagliari"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-10-19",
+      "abstract": "Hysteria is undoubtedly the first mental disorder attributable to women, accurately described in the second millennium BC, and until Freud considered an exclusively female disease. Over 4000 years of history, this disease was considered from two perspectives: scientific and demonological. It was cured with herbs, sex or sexual abstinence, punished and purified with fire for its association with sorcery and finally, clinically studied as a disease and treated with innovative therapies. However, even at the end of 19 th century, scientific innovation had still not reached some places, where the only known therapies were those proposed by Galen. During the 20 th century several studies postulated the decline of hysteria amongst occidental patients (both women and men) and the escalating of this disorder in non-Western countries. The concept of hysterical neurosis is deleted with the 1980 DSM-III. The evolution of these diseases seems to be a factor linked with social \u201cwesternization\u201d, and examining under what conditions the symptoms first became common in different societies became a priority for recent studies over risk factor.",
+      "cited_by_count": 246,
+      "type": "article",
+      "source": {
+        "name": "Clinical Practice and Epidemiology in Mental Health",
+        "type": "journal",
+        "issn": [
+          "1745-0179"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://clinical-practice-and-epidemiology-in-mental-health.com/VOLUME/8/PAGE/110/PDF/"
+      },
+      "topics": [
+        "Historical Psychiatry and Medical Practices",
+        "Historical Studies on Reproduction, Gender, Health, and Societal Changes",
+        "Mental Health and Psychiatry"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2061133354"
+    },
+    {
+      "openalex_id": "W3043929714",
+      "doi": "10.1016/j.ajog.2020.06.004",
+      "title": "Menstruation: science and society",
+      "authors": [
+        {
+          "name": "Hilary Critchley",
+          "openalex_id": "A5035159053",
+          "orcid": "https://orcid.org/0000-0003-1913-4044",
+          "institutions": [
+            "Medical Research Council",
+            "MRC Centre for Reproductive Health",
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Elnur Babayev",
+          "openalex_id": "A5082020231",
+          "orcid": "https://orcid.org/0000-0003-2948-6342",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Serdar E. Bulun",
+          "openalex_id": "A5009298625",
+          "orcid": "https://orcid.org/0000-0003-0850-8637",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Sandy Clark",
+          "openalex_id": "A5064103897",
+          "institutions": [
+            "Girls Incorporated"
+          ]
+        },
+        {
+          "name": "Iolanda Garcia-Grau",
+          "openalex_id": "A5021294392",
+          "institutions": [
+            "Universitat de Val\u00e8ncia",
+            "Igenomix",
+            "INCLIVA Health Research Institute"
+          ]
+        },
+        {
+          "name": "Peter K. Gregersen",
+          "openalex_id": "A5082248535",
+          "orcid": "https://orcid.org/0000-0003-1613-1518",
+          "institutions": [
+            "Feinstein Institute for Medical Research",
+            "Northwell Health"
+          ]
+        },
+        {
+          "name": "Aoife Kilcoyne",
+          "openalex_id": "A5061673207",
+          "orcid": "https://orcid.org/0000-0002-2960-0742",
+          "institutions": [
+            "Massachusetts General Hospital"
+          ]
+        },
+        {
+          "name": "Julie Kim",
+          "openalex_id": "A5046688742",
+          "orcid": "https://orcid.org/0000-0001-9834-8213",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Missy Lavender",
+          "openalex_id": "A5062903743"
+        },
+        {
+          "name": "Erica E. Marsh",
+          "openalex_id": "A5023340631",
+          "orcid": "https://orcid.org/0000-0003-1331-6525",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Kristen A. Matteson",
+          "openalex_id": "A5058693670",
+          "orcid": "https://orcid.org/0000-0003-4405-3449",
+          "institutions": [
+            "Brown University"
+          ]
+        },
+        {
+          "name": "Jacqueline A. Maybin",
+          "openalex_id": "A5028663663",
+          "orcid": "https://orcid.org/0000-0003-1560-2840",
+          "institutions": [
+            "Medical Research Council",
+            "MRC Centre for Reproductive Health",
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Christine N. Metz",
+          "openalex_id": "A5065787721",
+          "orcid": "https://orcid.org/0000-0002-1013-1691",
+          "institutions": [
+            "Northwell Health",
+            "Feinstein Institute for Medical Research"
+          ]
+        },
+        {
+          "name": "Inmaculada Moreno",
+          "openalex_id": "A5101818880",
+          "orcid": "https://orcid.org/0000-0001-6910-7509",
+          "institutions": [
+            "INCLIVA Health Research Institute",
+            "Igenomix"
+          ]
+        },
+        {
+          "name": "Kami J. Silk",
+          "openalex_id": "A5057502344",
+          "orcid": "https://orcid.org/0000-0003-0528-2046",
+          "institutions": [
+            "University of Delaware"
+          ]
+        },
+        {
+          "name": "Marni Sommer",
+          "openalex_id": "A5077520452",
+          "orcid": "https://orcid.org/0000-0001-7442-9270",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Carlos Sim\u00f3n",
+          "openalex_id": "A5090345459",
+          "orcid": "https://orcid.org/0000-0003-0902-9531",
+          "institutions": [
+            "Baylor College of Medicine",
+            "Universitat de Val\u00e8ncia",
+            "Harvard University",
+            "Beth Israel Deaconess Medical Center",
+            "INCLIVA Health Research Institute",
+            "Igenomix"
+          ]
+        },
+        {
+          "name": "Ridhi Tariyal",
+          "openalex_id": "A5051726937"
+        },
+        {
+          "name": "Hugh S. Taylor",
+          "openalex_id": "A5073212927",
+          "orcid": "https://orcid.org/0000-0003-1720-8310",
+          "institutions": [
+            "Yale University"
+          ]
+        },
+        {
+          "name": "G\u00fcnter P. Wagner",
+          "openalex_id": "A5072327308",
+          "orcid": "https://orcid.org/0000-0002-3097-002X",
+          "institutions": [
+            "Wayne State University",
+            "Yale University"
+          ]
+        },
+        {
+          "name": "Linda G. Griffith",
+          "openalex_id": "A5035363566",
+          "orcid": "https://orcid.org/0000-0002-1801-5548",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-21",
+      "abstract": null,
+      "cited_by_count": 403,
+      "type": "review",
+      "source": {
+        "name": "American Journal of Obstetrics and Gynecology",
+        "type": "journal",
+        "issn": [
+          "0002-9378",
+          "1085-8709",
+          "1097-6868"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.ajog.org/article/S0002937820306190/pdf"
+      },
+      "topics": [
+        "Endometriosis Research and Treatment",
+        "Gynecological conditions and treatments",
+        "Reproductive System and Pregnancy"
+      ],
+      "referenced_works_count": 417,
+      "url": "https://openalex.org/W3043929714"
+    },
+    {
+      "openalex_id": "W2116598522",
+      "doi": "10.1017/s0140525x09990975",
+      "title": "The evolution of misbelief",
+      "authors": [
+        {
+          "name": "Ryan McKay",
+          "openalex_id": "A5022332121",
+          "orcid": "https://orcid.org/0000-0001-7781-1539",
+          "institutions": [
+            "University of Zurich",
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Daniel C. Dennett",
+          "openalex_id": "A5083743331",
+          "orcid": "https://orcid.org/0000-0003-1181-3093",
+          "institutions": [
+            "Tufts University"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-12-01",
+      "abstract": "Abstract From an evolutionary standpoint, a default presumption is that true beliefs are adaptive and misbeliefs maladaptive. But if humans are biologically engineered to appraise the world accurately and to form true beliefs, how are we to explain the routine exceptions to this rule? How can we account for mistaken beliefs, bizarre delusions, and instances of self-deception? We explore this question in some detail. We begin by articulating a distinction between two general types of misbelief: those resulting from a breakdown in the normal functioning of the belief formation system (e.g., delusions) and those arising in the normal course of that system's operations (e.g., beliefs based on incomplete or inaccurate information). The former are instances of biological dysfunction or pathology, reflecting \u201cculpable\u201d limitations of evolutionary design. Although the latter category includes undesirable (but tolerable) by-products of \u201cforgivably\u201d limited design, our quarry is a contentious subclass of this category: misbeliefs best conceived as design features. Such misbeliefs, unlike occasional lucky falsehoods, would have been systematically adaptive in the evolutionary past. Such misbeliefs, furthermore, would not be reducible to judicious \u2013 but doxastically 1 noncommittal \u2013 action policies. Finally, such misbeliefs would have been adaptive in themselves, constituting more than mere by-products of adaptively biased misbelief-producing systems. We explore a range of potential candidates for evolved misbelief, and conclude that, of those surveyed, only positive illusions meet our criteria.",
+      "cited_by_count": 431,
+      "type": "article",
+      "source": {
+        "name": "Behavioral and Brain Sciences",
+        "type": "journal",
+        "issn": [
+          "0140-525X",
+          "1469-1825"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F817ED84D1FFD8650D61FB61301203E8/S0140525X09990975a.pdf/div-class-title-the-evolution-of-misbelief-div.pdf"
+      },
+      "topics": [
+        "Emotions and Moral Behavior",
+        "Deception detection and forensic psychology",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 536,
+      "url": "https://openalex.org/W2116598522"
+    },
+    {
+      "openalex_id": "W2905414718",
+      "doi": "10.1212/wnl.0000000000006745",
+      "title": "Translating the biology of aging into novel therapeutics for Alzheimer disease",
+      "authors": [
+        {
+          "name": "Yuko Hara",
+          "openalex_id": "A5026254238",
+          "orcid": "https://orcid.org/0000-0001-5828-442X",
+          "institutions": [
+            "Alzheimer's Drug Discovery Foundation"
+          ]
+        },
+        {
+          "name": "Nicholas McKeehan",
+          "openalex_id": "A5086420183",
+          "institutions": [
+            "Alzheimer's Drug Discovery Foundation"
+          ]
+        },
+        {
+          "name": "Howard Fillit",
+          "openalex_id": "A5102920077",
+          "orcid": "https://orcid.org/0000-0002-3509-6706",
+          "institutions": [
+            "Alzheimer's Drug Discovery Foundation"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-12-08",
+      "abstract": "Aging is the leading risk factor for most chronic illnesses of old age, including Alzheimer disease (AD), a progressive neurodegenerative disease with currently no therapies that prevent, slow, or halt disease progression. Like other chronic diseases of old age, the progressive pathology of AD begins decades before the onset of symptoms. Many decades of research in biological gerontology have revealed common processes that are relevant to understanding why the aging brain is vulnerable to AD. In this review, we frame the development of novel therapeutics for AD in the context of biological gerontology. The many therapies currently in development based on biological gerontology principles provide promise for the development of a new generation of therapeutics to prevent and treat AD.",
+      "cited_by_count": 121,
+      "type": "review",
+      "source": {
+        "name": "Neurology",
+        "type": "journal",
+        "issn": [
+          "0028-3878",
+          "1526-632X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://n.neurology.org/content/neurology/92/2/84.full.pdf"
+      },
+      "topics": [
+        "Alzheimer's disease research and treatments",
+        "Cholinesterase and Neurodegenerative Diseases",
+        "Genetics, Aging, and Longevity in Model Organisms"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W2905414718"
+    },
+    {
+      "openalex_id": "W3172415559",
+      "doi": "10.18653/v1/2021.acl-long.81",
+      "title": "Stereotyping Norwegian Salmon: An Inventory of Pitfalls in Fairness Benchmark Datasets",
+      "authors": [
+        {
+          "name": "Su Lin Blodgett",
+          "openalex_id": "A5001257783",
+          "orcid": "https://orcid.org/0000-0002-9861-3483",
+          "institutions": [
+            "Microsoft Research (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Gilsinia Lopez",
+          "openalex_id": "A5017622754",
+          "institutions": [
+            "Microsoft Research (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Alexandra Olteanu",
+          "openalex_id": "A5103216912",
+          "orcid": "https://orcid.org/0000-0001-5710-4511",
+          "institutions": [
+            "Microsoft Research (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Robert B. Sim",
+          "openalex_id": "A5090308773",
+          "orcid": "https://orcid.org/0000-0002-2855-7455",
+          "institutions": [
+            "Microsoft Research (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Hanna Wallach",
+          "openalex_id": "A5046348432",
+          "orcid": "https://orcid.org/0000-0003-3395-7186",
+          "institutions": [
+            "Microsoft Research (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Su Lin Blodgett, Gilsinia Lopez, Alexandra Olteanu, Robert Sim, Hanna Wallach. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). 2021.",
+      "cited_by_count": 132,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2021.acl-long.81.pdf"
+      },
+      "topics": [
+        "Computational and Text Analysis Methods",
+        "Hate Speech and Cyberbullying Detection",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W3172415559"
+    },
+    {
+      "openalex_id": "W2076654506",
+      "doi": "10.1111/j.1755-5949.2008.00060.x",
+      "title": "Simultaneous Manipulation of Multiple Brain Targets by Green Tea Catechins: A Potential Neuroprotective Strategy for Alzheimer and Parkinson Diseases",
+      "authors": [
+        {
+          "name": "Silvia Mandel",
+          "openalex_id": "A5111809134",
+          "institutions": [
+            "Technion \u2013 Israel Institute of Technology"
+          ]
+        },
+        {
+          "name": "Tamar Amit",
+          "openalex_id": "A5005030965",
+          "institutions": [
+            "Technion \u2013 Israel Institute of Technology"
+          ]
+        },
+        {
+          "name": "Orly Weinreb",
+          "openalex_id": "A5082642183",
+          "orcid": "https://orcid.org/0000-0003-1405-9612",
+          "institutions": [
+            "Technion \u2013 Israel Institute of Technology"
+          ]
+        },
+        {
+          "name": "Lydia Reznichenko",
+          "openalex_id": "A5068298607",
+          "institutions": [
+            "Technion \u2013 Israel Institute of Technology"
+          ]
+        },
+        {
+          "name": "Moussa B. H. Youdim",
+          "openalex_id": "A5053858269",
+          "orcid": "https://orcid.org/0000-0002-1361-3872",
+          "institutions": [
+            "Technion \u2013 Israel Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-11-11",
+      "abstract": "Current therapeutic approaches for Alzheimer and Parkinson disease (AD and PD, respectively) are merely symptomatic, intended for the treatment of symptoms, but offer only partial benefit, without any disease\u2010modifying activity. Novel promising strategies suggest the use of antiinflammatory drugs, antioxidants, iron\u2010complexing molecules, neurotrophic factor delivery, inhibitors of the amyloid precursor protein (APP)\u2010processing secretases, gamma and beta (that generate the amyloid\u2010beta peptides, A\u03b2), anti\u2010A\u03b2 aggregation molecules, the interference with lipid cholesterol metabolism and naturally occurring plant flavonoids to potentially reverse the course of the diseases. Human epidemiological and new animal data suggest that tea drinking may decrease the incidence of dementia, AD, and PD. In particular, its main catechin polyphenol constituent (\u2010)\u2010epigallocatechin\u20103\u2010gallate (EGCG) has been shown to exert neuroprotective/neurorescue activities in a wide array of cellular and animal models of neurological disorders. In the current article, we review the literature on the impact of the multimodal activities of green tea polyphenols and their neuroprotective effect on AD and PD.",
+      "cited_by_count": 219,
+      "type": "review",
+      "source": {
+        "name": "CNS Neuroscience & Therapeutics",
+        "type": "journal",
+        "issn": [
+          "1755-5930",
+          "1755-5949"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1755-5949.2008.00060.x"
+      },
+      "topics": [
+        "Tea Polyphenols and Effects",
+        "Tryptophan and brain disorders",
+        "Phytochemicals and Antioxidant Activities"
+      ],
+      "referenced_works_count": 110,
+      "url": "https://openalex.org/W2076654506"
+    },
+    {
+      "openalex_id": "W2002670541",
+      "doi": "10.1371/journal.pone.0016380",
+      "title": "Lycium Barbarum Polysaccharides Reduce Neuronal Damage, Blood-Retinal Barrier Disruption and Oxidative Stress in Retinal Ischemia/Reperfusion Injury",
+      "authors": [
+        {
+          "name": "Suk-Yee Li",
+          "openalex_id": "A5017349166",
+          "institutions": [
+            "University of Hong Kong",
+            "Hong Kong Eye Hospital"
+          ]
+        },
+        {
+          "name": "Di Yang",
+          "openalex_id": "A5101766163",
+          "orcid": "https://orcid.org/0000-0002-6616-4337",
+          "institutions": [
+            "University of Hong Kong",
+            "Hong Kong Eye Hospital"
+          ]
+        },
+        {
+          "name": "Chung-Man Yeung",
+          "openalex_id": "A5081816009",
+          "institutions": [
+            "Hong Kong Eye Hospital",
+            "University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Wing Yan Yu",
+          "openalex_id": "A5025135817",
+          "orcid": "https://orcid.org/0000-0003-4980-3712",
+          "institutions": [
+            "University of Hong Kong",
+            "Hong Kong Eye Hospital"
+          ]
+        },
+        {
+          "name": "Raymond Chuen\u2010Chung Chang",
+          "openalex_id": "A5071624932",
+          "orcid": "https://orcid.org/0000-0001-8538-7993",
+          "institutions": [
+            "Chinese University of Hong Kong",
+            "University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Kwok\u2010Fai So",
+          "openalex_id": "A5086351103",
+          "orcid": "https://orcid.org/0000-0003-4039-4246",
+          "institutions": [
+            "Chinese University of Hong Kong",
+            "University of Hong Kong"
+          ]
+        },
+        {
+          "name": "David Wong",
+          "openalex_id": "A5086790491",
+          "orcid": "https://orcid.org/0000-0002-4756-8010",
+          "institutions": [
+            "Royal Liverpool University Hospital",
+            "University of Hong Kong",
+            "University of Liverpool",
+            "Hong Kong Eye Hospital"
+          ]
+        },
+        {
+          "name": "Acy Lo",
+          "openalex_id": "A5069372541",
+          "orcid": "https://orcid.org/0000-0003-4239-6851",
+          "institutions": [
+            "University of Hong Kong",
+            "Hong Kong Eye Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-26",
+      "abstract": "Neuronal cell death, glial cell activation, retinal swelling and oxidative injury are complications in retinal ischemia/reperfusion (I/R) injuries. Lycium barbarum polysaccharides (LBP), extracts from the wolfberries, are good for \"eye health\" according to Chinese medicine. The aim of our present study is to explore the use of LBP in retinal I/R injury. Retinal I/R injury was induced by surgical occlusion of the internal carotid artery. Prior to induction of ischemia, mice were treated orally with either vehicle (PBS) or LBP (1 mg/kg) once a day for 1 week. Paraffin-embedded retinal sections were prepared. Viable cells were counted; apoptosis was assessed using TUNEL assay. Expression levels of glial fibrillary acidic protein (GFAP), aquaporin-4 (AQP4), poly(ADP-ribose) (PAR) and nitrotyrosine (NT) were investigated by immunohistochemistry. The integrity of blood-retinal barrier (BRB) was examined by IgG extravasations. Apoptosis and decreased viable cell count were found in the ganglion cell layer (GCL) and the inner nuclear layer (INL) of the vehicle-treated I/R retina. Additionally, increased retinal thickness, GFAP activation, AQP4 up-regulation, IgG extravasations and PAR expression levels were observed in the vehicle-treated I/R retina. Many of these changes were diminished or abolished in the LBP-treated I/R retina. Pre-treatment with LBP for 1 week effectively protected the retina from neuronal death, apoptosis, glial cell activation, aquaporin water channel up-regulation, disruption of BRB and oxidative stress. The present study suggests that LBP may have a neuroprotective role to play in ocular diseases for which I/R is a feature.",
+      "cited_by_count": 170,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0016380&type=printable"
+      },
+      "topics": [
+        "Retinal Development and Disorders",
+        "Neuroinflammation and Neurodegeneration Mechanisms",
+        "Glaucoma and retinal disorders"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W2002670541"
+    },
+    {
+      "openalex_id": "W2606542790",
+      "doi": "10.1186/s40479-017-0061-9",
+      "title": "What we have changed our minds about: Part 1. Borderline personality disorder as a limitation of resilience",
+      "authors": [
+        {
+          "name": "Peter Fonagy",
+          "openalex_id": "A5023787034",
+          "orcid": "https://orcid.org/0000-0003-0229-0091",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Patrick Luyten",
+          "openalex_id": "A5079561055",
+          "orcid": "https://orcid.org/0000-0002-1161-2817",
+          "institutions": [
+            "KU Leuven",
+            "University College London"
+          ]
+        },
+        {
+          "name": "Elizabeth Allison",
+          "openalex_id": "A5101672925",
+          "orcid": "https://orcid.org/0000-0003-2064-5191",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Chlo\u00eb Campbell",
+          "openalex_id": "A5017698917",
+          "orcid": "https://orcid.org/0000-0002-0592-9949",
+          "institutions": [
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-04-11",
+      "abstract": "This paper sets out a recent transition in our thinking in relation to psychopathology associated with personality disorder, in an approach that integrates our thinking about attachment, mentalizing (understanding ourselves and others in terms of intentional mental states) and epistemic trust (openness to the reception of social communication that is personally relevant and of generalizable significance) with recent findings on the structure of both adult and child psychopathology and resilience. In this paper - the first of two parts - we review evidence suggesting that a general psychopathology or p factor underlies vulnerability for psychopathology. We link this p factor to a lack of resilience using Kalisch and colleagues' positive appraisal style theory of resilience (PASTOR). We argue that vulnerability for (severe) psychopathology results from impairments in three central mechanisms underlying resilience - positive situation classification, retrospective reappraisal of threat, and inhibition of retraumatizing triggers - which in turn result from a lack of flexibility in terms of social communicative processes. We suggest that, from this perspective, personality disorders, and borderline personality disorder (BPD) in particular, can be considered to be the prototype of disorders characterized by a lack of resilience. Part 2 proposes an evolutionary developmental psychopathology account linking this inflexibility in social communication to problems with the development of epistemic trust - that is, an evolutionary pre-wired social communication system that normally facilitates resilience through salutogenesis, that is, the capacity to learn and derive benefit from the (social) environment.",
+      "cited_by_count": 213,
+      "type": "review",
+      "source": {
+        "name": "Borderline Personality Disorder and Emotion Dysregulation",
+        "type": "journal",
+        "issn": [
+          "2051-6673"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bpded.biomedcentral.com/track/pdf/10.1186/s40479-017-0061-9"
+      },
+      "topics": [
+        "Personality Disorders and Psychopathology",
+        "Mental Health and Psychiatry",
+        "Psychotherapy Techniques and Applications"
+      ],
+      "referenced_works_count": 102,
+      "url": "https://openalex.org/W2606542790"
+    },
+    {
+      "openalex_id": "W2299770017",
+      "doi": "10.3389/fnins.2016.00011",
+      "title": "Mechanical and Biological Interactions of Implants with the Brain and Their Impact on Implant Design",
+      "authors": [
+        {
+          "name": "Dimiter Prodanov",
+          "openalex_id": "A5010053128",
+          "orcid": "https://orcid.org/0000-0001-8694-0535",
+          "institutions": [
+            "IMEC",
+            "Neuroelectronics Research Flanders"
+          ]
+        },
+        {
+          "name": "Jean Delbeke",
+          "openalex_id": "A5057508554",
+          "orcid": "https://orcid.org/0000-0001-9542-3599",
+          "institutions": [
+            "Ghent University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-02-09",
+      "abstract": "Neural prostheses have already a long history and yet the cochlear implant remains the only success story about a longterm sensory function restoration. On the other hand, neural implants for deep brain stimulation are gaining acceptance for variety of disorders including Parkinsons disease and obsessive-compulsive disorder. It is anticipated that the progress in the field has been hampered by a combination of technological and biological factors, such as the limited understanding of the longterm behavior of implants, unreliability of devices, biocompatibility of the implants among others. While the field's understanding of the cell biology of interactions at the biotic-abiotic interface has improved, relatively little attention has been paid on the mechanical factors (stress, strain), and hence on the geometry that can modulate it. This focused review summarizes the recent progress in the understanding of the mechanisms of mechanical interaction between the implants and the brain. The review gives an overview of the factors by which the implants interact acutely and chronically with the tissue: blood-brain barrier (BBB) breach, vascular damage, micromotions, diffusion etc. We propose some design constraints to be considered in future studies. Aspects of the chronic cell-implant interaction will be discussed in view of the chronic local inflammation and the ways of modulating it.",
+      "cited_by_count": 144,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Neuroscience",
+        "type": "journal",
+        "issn": [
+          "1662-453X",
+          "1662-4548"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fnins.2016.00011/pdf"
+      },
+      "topics": [
+        "Neuroscience and Neural Engineering",
+        "Anesthesia and Neurotoxicity Research",
+        "3D Printing in Biomedical Research"
+      ],
+      "referenced_works_count": 170,
+      "url": "https://openalex.org/W2299770017"
+    },
+    {
+      "openalex_id": "W2015636063",
+      "doi": "10.3389/fnhum.2014.00385",
+      "title": "Brain plasticity-based therapeutics",
+      "authors": [
+        {
+          "name": "Michael M. Merzenich",
+          "openalex_id": "A5105379517",
+          "institutions": [
+            "Posit Science (United States)"
+          ]
+        },
+        {
+          "name": "Thomas Van Vleet",
+          "openalex_id": "A5021786200",
+          "orcid": "https://orcid.org/0000-0003-1639-860X",
+          "institutions": [
+            "Martinez VA Medical Center",
+            "Posit Science (United States)"
+          ]
+        },
+        {
+          "name": "Mor Nahum",
+          "openalex_id": "A5049112839",
+          "orcid": "https://orcid.org/0000-0002-2861-6486",
+          "institutions": [
+            "Posit Science (United States)",
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-06-27",
+      "abstract": "The primary objective of this review article is to summarize how the neuroscience of brain plasticity, exploiting new findings in fundamental, integrative and cognitive neuroscience, is changing the therapeutic landscape for professional communities addressing brain-based disorders and disease. After considering the neurological bases of training-driven neuroplasticity, we shall describe how this neuroscience-guided perspective distinguishes this new approach from (a) the more-behavioral, traditional clinical strategies of professional therapy practitioners, and (b) an even more widely applied pharmaceutical treatment model for neurological and psychiatric treatment domains. With that background, we shall argue that neuroplasticity-based treatments will be an important part of future best-treatment practices in neurological and psychiatric medicine.",
+      "cited_by_count": 228,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Human Neuroscience",
+        "type": "journal",
+        "issn": [
+          "1662-5161"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fnhum.2014.00385/pdf"
+      },
+      "topics": [
+        "Schizophrenia research and treatment",
+        "Pain Management and Placebo Effect",
+        "Transcranial Magnetic Stimulation Studies"
+      ],
+      "referenced_works_count": 175,
+      "url": "https://openalex.org/W2015636063"
+    },
+    {
+      "openalex_id": "W2092894804",
+      "doi": "10.1046/j.0887-378x.2003.00296.x",
+      "title": "\u201cEvil Habits\u201d and \u201cPersonal Choices\u201d: Assigning Responsibility for Health in the 20th Century",
+      "authors": [
+        {
+          "name": "Howard M. Leichter",
+          "openalex_id": "A5089386578",
+          "institutions": [
+            "Linfield College"
+          ]
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-12-01",
+      "abstract": "The 20th century began and ended with many of the nation's more affluent and better\u2010educated citizens in a near\u2010frenzied pursuit of better health through lifestyle modification. Americans sought and received health\u2010enhancing and disease\u2010preventing advice in books, newspapers, popular magazine articles, and government studies. They followed exercise regimes and bought self\u2010improvement paraphernalia from \u201cmedicine balls\u201d to elliptical machines in order to learn \u201cHow to Avoid Heart Troubles\u201d ( Groedel 1901 ) and, even more ambitiously, to stay Forever Young ( Berger 1989 ). Upton Sinclair alerted early 20th\u2010century Americans to the appalling conditions in the meatpacking industry (1906), and nearly a century later Eric Schlosser warned of the \u201cDark Side of the All\u2010American Meal\u201d (2001). Finally, San Franciscans, fretting about the nutritional dangers to their children's health, began the last century by banning \u201croving pie vendors\u201d who catered to the \u201chabitual pie\u2010eating\u201d habits of schoolchildren ( Habitual Pie\u2010Eating Ruining Health of Children 1910 ) and began this century by prohibiting the sale of soft drinks and other unhealthy snacks on school campuses ( Delgado 2003 ).",
+      "cited_by_count": 132,
+      "type": "review",
+      "source": {
+        "name": "Milbank Quarterly",
+        "type": "journal",
+        "issn": [
+          "0887-378X",
+          "1468-0009"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1046/j.0887-378X.2003.00296.x"
+      },
+      "topics": [
+        "Complementary and Alternative Medicine Studies",
+        "School Health and Nursing Education",
+        "Obesity and Health Practices"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W2092894804"
+    },
+    {
+      "openalex_id": "W2992427196",
+      "doi": "10.1017/glj.2019.83",
+      "title": "Illiberal Constitutionalism: The Case of Hungary and Poland",
+      "authors": [
+        {
+          "name": "T\u00edmea Drin\u00f3czi",
+          "openalex_id": "A5031999693",
+          "orcid": "https://orcid.org/0000-0002-7657-3572"
+        },
+        {
+          "name": "Agnieszka Bie\u0144-Kaca\u0142a",
+          "openalex_id": "A5060310523",
+          "orcid": "https://orcid.org/0000-0002-9559-3130"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-01",
+      "abstract": "Abstract This Article argues that, as far as Hungary and Poland are concerned, the use of term \u201cilliberal constitutionalism\u201d is justified. It also claims that, without denying that other states could also be considered illiberal democracies, Hungary and Poland display unique and distinctive features. These features include populist politics, which lead to the relativization of the rule of law and democracy principles, and human rights protection, which captured the constitution and constitutionalism by constitutionalizing populist nationalism, constitutional identity, and created new patrionalism and clientelism. All these features are supported by the ideological indoctrination of political constitutionalism. In the course of this process, formal and informal constitutional amendments are used, and a formal sense of constitutional democracy is maintained. Overturning these illiberal democracies by constitutional and legal means, at this time, seems doubtful, if not impossible.",
+      "cited_by_count": 118,
+      "type": "article",
+      "source": {
+        "name": "German Law Journal",
+        "type": "journal",
+        "issn": [
+          "2071-8322"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/01DA5EB12D2734935C659B96CE012BFD/S207183221900083Xa.pdf/div-class-title-illiberal-constitutionalism-the-case-of-hungary-and-poland-div.pdf"
+      },
+      "topics": [
+        "European and International Law Studies",
+        "Judicial and Constitutional Studies",
+        "European Criminal Justice and Data Protection"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2992427196"
+    },
+    {
+      "openalex_id": "W2037270833",
+      "doi": "10.1207/s15327051hci1901&2_3",
+      "title": "Assistive Robotics and an Ecology of Elders Living Independently in Their Homes",
+      "authors": [
+        {
+          "name": "Jodi Forlizzi",
+          "openalex_id": "A5078288310",
+          "orcid": "https://orcid.org/0000-0002-7161-075X",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Carl DiSalvo",
+          "openalex_id": "A5052104584",
+          "orcid": "https://orcid.org/0000-0002-7344-8741",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Francine Gemperle",
+          "openalex_id": "A5021907837",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-05-28",
+      "abstract": "For elders who remain independent in their homes, the home becomes more than just a place to eat and sleep. The home becomes a place where people care for each other, and it gradually subsumes all activities. This article reports on an ethnographic study of aging adults who live independently in their homes. Seventeen elders aged 60 through 90 were interviewed and observed in their homes in 2 Midwestern cities. The goal is to understand how robotic products might assist these people, helping them to stay independent and active longer. The experience of aging is described as an ecology of aging made up of people, products, and activities taking place in a local environment of the home and the surrounding community. In this environment, product successes and failures often have a dramatic impact on the ecology, throwing off a delicate balance. When a breakdown occurs, family members and other caregivers have to intervene, threatening elders' independence and identity. This article highlights the interest in how the elder ecology can be supported by new robotic products that are conceived of as a part of this interdependent system. It is recommended that the design of these products fit the ecology as part of the system, support elders' values, and adapt to all of the members of the ecology who will interact with them.",
+      "cited_by_count": 171,
+      "type": "article",
+      "source": {
+        "name": "Human-Computer Interaction",
+        "type": "journal",
+        "issn": [
+          "0737-0024",
+          "1532-7051"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://figshare.com/articles/journal_contribution/Assistive_Robotics_and_an_Ecology_of_Elders_Living_Independently_in_Their_Homes/6469847"
+      },
+      "topics": [
+        "Innovative Human-Technology Interaction",
+        "Technology Use by Older Adults",
+        "Social Robot Interaction and HRI"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W2037270833"
+    },
+    {
+      "openalex_id": "W4382866065",
+      "doi": "10.1515/9789048522989",
+      "title": "Plessner's Philosophical Anthropology",
+      "authors": [
+        {
+          "name": "Inge Van Der Bijl",
+          "openalex_id": "A5111002222"
+        },
+        {
+          "name": "Ed Hatton",
+          "openalex_id": "A5095649741"
+        },
+        {
+          "name": "Jaap A. Wagenaar",
+          "openalex_id": "A5033901438",
+          "orcid": "https://orcid.org/0000-0002-3506-1490"
+        },
+        {
+          "name": "Ernste Huib",
+          "openalex_id": "A5095649742"
+        },
+        {
+          "name": "Eva Jablonka",
+          "openalex_id": "A5010382770",
+          "orcid": "https://orcid.org/0000-0002-4549-8063"
+        },
+        {
+          "name": "Jane Jacobs",
+          "openalex_id": "A5113460195"
+        },
+        {
+          "name": "Karl Jaspers",
+          "openalex_id": "A5080901815"
+        },
+        {
+          "name": "Heike K\u00e4mpf",
+          "openalex_id": "A5067931772"
+        },
+        {
+          "name": "Immanuel Kant",
+          "openalex_id": "A5020923463"
+        },
+        {
+          "name": "Ernst Kapp",
+          "openalex_id": "A5025861871"
+        },
+        {
+          "name": "Curtis E.A. Karnow",
+          "openalex_id": "A5086264847"
+        },
+        {
+          "name": "Regine Kather",
+          "openalex_id": "A5057164383"
+        },
+        {
+          "name": "Evelyn Fox Keller",
+          "openalex_id": "A5028585998"
+        },
+        {
+          "name": "Kevin T. Kelly",
+          "openalex_id": "A5110098435"
+        },
+        {
+          "name": "Jeffrey O. Kephart",
+          "openalex_id": "A5016949465",
+          "orcid": "https://orcid.org/0000-0002-8198-9687"
+        },
+        {
+          "name": "Esther Keymolen",
+          "openalex_id": "A5083267398",
+          "orcid": "https://orcid.org/0000-0002-1578-0789"
+        },
+        {
+          "name": "Dorothee Kimmich",
+          "openalex_id": "A5016074200",
+          "orcid": "https://orcid.org/0000-0002-3379-2986"
+        },
+        {
+          "name": "Nathan S. Kline",
+          "openalex_id": "A5022907786",
+          "orcid": "https://orcid.org/0000-0003-0454-4999"
+        },
+        {
+          "name": "Kevin Kelly",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jeffrey Kephart",
+          "openalex_id": ""
+        },
+        {
+          "name": "409 Kessl",
+          "openalex_id": ""
+        },
+        {
+          "name": "Fabian",
+          "openalex_id": ""
+        },
+        {
+          "name": "Esther Keymolen",
+          "openalex_id": ""
+        },
+        {
+          "name": "Dorothee Kimmich",
+          "openalex_id": ""
+        },
+        {
+          "name": "Klages",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ludwig",
+          "openalex_id": ""
+        },
+        {
+          "name": "Nathan Kline",
+          "openalex_id": ""
+        },
+        {
+          "name": "Andrea Borsari",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Buytendijk",
+          "openalex_id": ""
+        },
+        {
+          "name": "Dieter Claessens",
+          "openalex_id": ""
+        },
+        {
+          "name": "Maarten Coolen",
+          "openalex_id": ""
+        },
+        {
+          "name": "De Mul",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jos",
+          "openalex_id": ""
+        },
+        {
+          "name": "De Mul",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jos",
+          "openalex_id": ""
+        },
+        {
+          "name": "Huib Ernste",
+          "openalex_id": ""
+        },
+        {
+          "name": "Wolfgang Ebach",
+          "openalex_id": ""
+        },
+        {
+          "name": "Joachim Fischer",
+          "openalex_id": ""
+        },
+        {
+          "name": "Joachim Fischer",
+          "openalex_id": ""
+        },
+        {
+          "name": "Christian Illies",
+          "openalex_id": ""
+        },
+        {
+          "name": "Thomas Junker",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sabine Paul",
+          "openalex_id": ""
+        },
+        {
+          "name": "Wolfgang Khler",
+          "openalex_id": ""
+        },
+        {
+          "name": "Hans Krger",
+          "openalex_id": ""
+        },
+        {
+          "name": "Peter",
+          "openalex_id": ""
+        },
+        {
+          "name": "William Hamilton",
+          "openalex_id": ""
+        },
+        {
+          "name": "Hans-Peter Krger",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Henri Bergson",
+          "openalex_id": ""
+        },
+        {
+          "name": "Henri Bergson",
+          "openalex_id": ""
+        },
+        {
+          "name": "Georges Canguilhem",
+          "openalex_id": ""
+        },
+        {
+          "name": "Georges Canguilhem",
+          "openalex_id": ""
+        },
+        {
+          "name": "Dominique Combe",
+          "openalex_id": ""
+        },
+        {
+          "name": "Charles Darwin",
+          "openalex_id": ""
+        },
+        {
+          "name": "Gilles Deleuze",
+          "openalex_id": ""
+        },
+        {
+          "name": "Hisashi Fujita",
+          "openalex_id": ""
+        },
+        {
+          "name": "Alan Love",
+          "openalex_id": ""
+        },
+        {
+          "name": "Paul-Antoine Miquel",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Grard Raulet",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jan Beaufort",
+          "openalex_id": ""
+        },
+        {
+          "name": "Richard Breun",
+          "openalex_id": ""
+        },
+        {
+          "name": "Joachim Fischer",
+          "openalex_id": ""
+        },
+        {
+          "name": "Bernward Grnewald",
+          "openalex_id": ""
+        },
+        {
+          "name": "Gesa Lindemann",
+          "openalex_id": ""
+        },
+        {
+          "name": "Helmuth Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Coolen",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Dreyfus",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Dreyfus",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Heinze",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Mcdowell",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Merleau-Ponty",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Plessner",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Shusterman",
+          "openalex_id": ""
+        },
+        {
+          "name": "David Sussman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Martin Buber",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jrgen Habermas",
+          "openalex_id": ""
+        },
+        {
+          "name": "Thomas Henkelmann",
+          "openalex_id": ""
+        },
+        {
+          "name": "Rainer-M Jacobi",
+          "openalex_id": ""
+        },
+        {
+          "name": "Dieter Janz",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-12-31",
+      "abstract": null,
+      "cited_by_count": 225,
+      "type": "book",
+      "source": {
+        "name": "Amsterdam University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.degruyter.com/document/doi/10.1515/9789048522989/pdf"
+      },
+      "topics": [
+        "German Social Sciences and History"
+      ],
+      "referenced_works_count": 358,
+      "url": "https://openalex.org/W4382866065"
+    },
+    {
+      "openalex_id": "W636942736",
+      "doi": "10.21435/sff.15",
+      "title": "Tradition through Modernity: Postmodernism and the Nation-State in Folklore Scholarship",
+      "authors": [
+        {
+          "name": "Pertti Anttonen",
+          "openalex_id": "A5022121052",
+          "orcid": "https://orcid.org/0000-0003-4866-9910",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Pertti Anttonen",
+          "openalex_id": "",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-02-06",
+      "abstract": "\"In their study of social practices deemed traditional, scholars tend to use the concept and idea of tradition as an element of meaning in the practices under investigation. But just whose meaning is it? Is it a meaning generated by those who study tradition or those whose traditions are being studied? In both cases, particular criteria for traditionality are employed, whether these are explicated or not. Individuals and groups will no doubt continue to uphold their traditional practices or refer to their practices as traditional. While they are in no way obliged to explicate in analytical terms their criteria for traditionality, the same cannot be said for those who make the study of traditions their profession. In scholarly analysis, traditions need to be explained instead of used as explanations for apparent repetitions and replications or symbolic linking in social practice, values, history, and heritage politics. This book takes a closer look at \u2018tradition\u2019 and \u2018folklore\u2019 in order to conceptualize them within discourses on modernity and modernism. The first section discusses \u2018modern\u2019 and \u2018traditional\u2019 as modern concepts and the study of folklore as a modern trajectory. The underlying tenet here is that non-modernity cannot be represented without modern mediation, which therefore makes the representations of non-modernity epistemologically modern. The second section focuses on the nation-state of Finland and the nationalistic use of folk traditions in the discursive production of Finnish modernity and its Others. The insights are applicable worldwide in discussions on cultural representation. \"",
+      "cited_by_count": 162,
+      "type": "book",
+      "source": {
+        "name": "Finnish Literature Society eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://oa.finlit.fi/site/books/10.21435/sff.15/download/2035/"
+      },
+      "topics": [
+        "Folklore, Mythology, and Literature Studies",
+        "Culinary Culture and Tourism",
+        "Philippine History and Culture"
+      ],
+      "referenced_works_count": 358,
+      "url": "https://openalex.org/W636942736"
+    },
+    {
+      "openalex_id": "W2096773005",
+      "doi": "10.1186/1936-6434-6-18",
+      "title": "The great chain of being is still here",
+      "authors": [
+        {
+          "name": "Emanuele Rigato",
+          "openalex_id": "A5021616326",
+          "institutions": [
+            "University of Padua"
+          ]
+        },
+        {
+          "name": "Alessandro Minelli",
+          "openalex_id": "A5061744687",
+          "orcid": "https://orcid.org/0000-0003-3387-1489",
+          "institutions": [
+            "University of Padua"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-06-27",
+      "abstract": null,
+      "cited_by_count": 52,
+      "type": "article",
+      "source": {
+        "name": "Evolution Education and Outreach",
+        "type": "journal",
+        "issn": [
+          "1936-6426",
+          "1936-6434"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://evolution-outreach.biomedcentral.com/track/pdf/10.1186/1936-6434-6-18"
+      },
+      "topics": [
+        "Evolution and Genetic Dynamics",
+        "Philosophy and History of Science",
+        "Evolution and Science Education"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W2096773005"
+    },
+    {
+      "openalex_id": "W3209359270",
+      "doi": "10.3390/foods10112639",
+      "title": "Eating Fermented: Health Benefits of LAB-Fermented Foods",
+      "authors": [
+        {
+          "name": "Vincenzo Castellone",
+          "openalex_id": "A5048076906",
+          "orcid": "https://orcid.org/0000-0002-3479-9231",
+          "institutions": [
+            "University of Parma"
+          ]
+        },
+        {
+          "name": "Elena Bancalari",
+          "openalex_id": "A5088006164",
+          "orcid": "https://orcid.org/0000-0002-5975-2923",
+          "institutions": [
+            "University of Parma"
+          ]
+        },
+        {
+          "name": "Josep Rubert",
+          "openalex_id": "A5039406939",
+          "orcid": "https://orcid.org/0000-0002-1634-2334",
+          "institutions": [
+            "Wageningen University & Research"
+          ]
+        },
+        {
+          "name": "Monica Gatti",
+          "openalex_id": "A5043579186",
+          "orcid": "https://orcid.org/0000-0002-8207-8703",
+          "institutions": [
+            "University of Parma"
+          ]
+        },
+        {
+          "name": "Erasmo Neviani",
+          "openalex_id": "A5045164795",
+          "orcid": "https://orcid.org/0000-0002-3428-2451",
+          "institutions": [
+            "University of Parma"
+          ]
+        },
+        {
+          "name": "Benedetta Bottari",
+          "openalex_id": "A5010677752",
+          "orcid": "https://orcid.org/0000-0001-6534-2341",
+          "institutions": [
+            "University of Parma"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-10-31",
+      "abstract": "Lactic acid bacteria (LAB) are involved in producing a considerable number of fermented products consumed worldwide. Many of those LAB fermented foods are recognized as beneficial for human health due to probiotic LAB or their metabolites produced during food fermentation or after food digestion. In this review, we aim to gather and discuss available information on the health-related effects of LAB-fermented foods. In particular, we focused on the most widely consumed LAB-fermented foods such as yoghurt, kefir, cheese, and plant-based products such as sauerkrauts and kimchi.",
+      "cited_by_count": 147,
+      "type": "review",
+      "source": {
+        "name": "Foods",
+        "type": "journal",
+        "issn": [
+          "2304-8158"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2304-8158/10/11/2639/pdf?version=1635846162"
+      },
+      "topics": [
+        "Probiotics and Fermented Foods",
+        "Protein Hydrolysis and Bioactive Peptides",
+        "Gut microbiota and health"
+      ],
+      "referenced_works_count": 129,
+      "url": "https://openalex.org/W3209359270"
+    },
+    {
+      "openalex_id": "W183253557",
+      "doi": "10.1080/10790268.2005.11753844",
+      "title": "Preservation of Upper Limb Function Following Spinal Cord Injury: A Clinical Practice Guideline for Health-Care Professionals",
+      "authors": [
+        {
+          "name": "Michael Boninger",
+          "openalex_id": ""
+        },
+        {
+          "name": "Robert Waters",
+          "openalex_id": ""
+        },
+        {
+          "name": "Theresa Chase",
+          "openalex_id": ""
+        },
+        {
+          "name": "Marcel Dijkers",
+          "openalex_id": ""
+        },
+        {
+          "name": "Harris Gellman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ronald Gironda",
+          "openalex_id": ""
+        },
+        {
+          "name": "James Va",
+          "openalex_id": ""
+        },
+        {
+          "name": "Barry Goldstein",
+          "openalex_id": ""
+        },
+        {
+          "name": "Susan Johnson-Taylor",
+          "openalex_id": ""
+        },
+        {
+          "name": "Alicia Koontz",
+          "openalex_id": ""
+        },
+        {
+          "name": "Shari Mcdowell",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Marsolais",
+          "openalex_id": ""
+        },
+        {
+          "name": "Paul Mccormick",
+          "openalex_id": ""
+        },
+        {
+          "name": "Linda Love",
+          "openalex_id": ""
+        },
+        {
+          "name": "Romel Mackelprang",
+          "openalex_id": ""
+        },
+        {
+          "name": "William Dalsey",
+          "openalex_id": ""
+        },
+        {
+          "name": "Marilyn Pires",
+          "openalex_id": ""
+        },
+        {
+          "name": "Theresa Gregorio-Torres",
+          "openalex_id": ""
+        },
+        {
+          "name": "Lawrence Vogel",
+          "openalex_id": ""
+        },
+        {
+          "name": "Montez Howard",
+          "openalex_id": ""
+        },
+        {
+          "name": "Donald Kewman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Michael Priebe",
+          "openalex_id": ""
+        },
+        {
+          "name": "William Mckinley",
+          "openalex_id": ""
+        },
+        {
+          "name": "Audrey Nelson",
+          "openalex_id": ""
+        },
+        {
+          "name": "Christopher Reeve",
+          "openalex_id": ""
+        },
+        {
+          "name": "Paralysis Foundation",
+          "openalex_id": ""
+        },
+        {
+          "name": "Samuel Maddox",
+          "openalex_id": ""
+        },
+        {
+          "name": "Louis Papastrat",
+          "openalex_id": ""
+        },
+        {
+          "name": "John Ditunno",
+          "openalex_id": ""
+        },
+        {
+          "name": "James Dudley",
+          "openalex_id": ""
+        },
+        {
+          "name": "Margaret Hammond",
+          "openalex_id": ""
+        },
+        {
+          "name": "Vivian Beyda",
+          "openalex_id": ""
+        },
+        {
+          "name": "Drph",
+          "openalex_id": ""
+        },
+        {
+          "name": "Michael Keith",
+          "openalex_id": ""
+        },
+        {
+          "name": "David Gater",
+          "openalex_id": ""
+        },
+        {
+          "name": "James Richardson",
+          "openalex_id": ""
+        },
+        {
+          "name": "Kathleen Dunn",
+          "openalex_id": ""
+        },
+        {
+          "name": "V San",
+          "openalex_id": ""
+        },
+        {
+          "name": "Diego Healthcare",
+          "openalex_id": ""
+        },
+        {
+          "name": "Susan Pejoro",
+          "openalex_id": ""
+        },
+        {
+          "name": "Michael Dunn",
+          "openalex_id": ""
+        },
+        {
+          "name": "David Hess",
+          "openalex_id": ""
+        },
+        {
+          "name": "Terrie Price",
+          "openalex_id": ""
+        },
+        {
+          "name": "Marcia Scherer",
+          "openalex_id": ""
+        },
+        {
+          "name": "Michal Atkins",
+          "openalex_id": ""
+        },
+        {
+          "name": "Craig Newsam",
+          "openalex_id": ""
+        },
+        {
+          "name": "Carole Adler",
+          "openalex_id": ""
+        },
+        {
+          "name": "Mary Shea",
+          "openalex_id": ""
+        },
+        {
+          "name": "Valerie Willette",
+          "openalex_id": ""
+        },
+        {
+          "name": "Chester Ho",
+          "openalex_id": ""
+        },
+        {
+          "name": "Louis Stokes",
+          "openalex_id": ""
+        },
+        {
+          "name": "Steven Kirshblum",
+          "openalex_id": ""
+        },
+        {
+          "name": "Claire Beekman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Barbara Garrett",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sharon Russo",
+          "openalex_id": ""
+        },
+        {
+          "name": "Lester Butt",
+          "openalex_id": ""
+        },
+        {
+          "name": "Abpp Craig",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Aljure",
+          "openalex_id": ""
+        },
+        {
+          "name": "I Eltorai",
+          "openalex_id": ""
+        },
+        {
+          "name": "W Bradley",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Lin",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Johnson",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Andersen",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Kaergaard",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Frost",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Thomsen",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Bonde",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Fallentin",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Borg",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Mikkelsen",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Armstrong",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Chaffin",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Arnstein",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Astin",
+          "openalex_id": ""
+        },
+        {
+          "name": "W Beckner",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Soeken",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Hochberg",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Berman",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Atkinson",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Slater",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Wahlgren",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Williams",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Zisook",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Pruitt",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Epping-Jordan",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Patterson",
+          "openalex_id": ""
+        },
+        {
+          "name": "I Grant",
+          "openalex_id": ""
+        },
+        {
+          "name": "I Abramson",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Garfin",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Ballinger",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Rintala",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Hart",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Bayley",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Cochran",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Sledge",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Beekman",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Miller-Porter",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Schoneberger",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Bjelle",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Hagberg",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": null,
+      "cited_by_count": 332,
+      "type": "article",
+      "source": {
+        "name": "Journal of Spinal Cord Medicine",
+        "type": "journal",
+        "issn": [
+          "1079-0268",
+          "2045-7723"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/10790268.2005.11753844"
+      },
+      "topics": [
+        "Nerve Injury and Rehabilitation",
+        "Spinal Cord Injury Research",
+        "Musculoskeletal pain and rehabilitation"
+      ],
+      "referenced_works_count": 159,
+      "url": "https://openalex.org/W183253557"
+    },
+    {
+      "openalex_id": "W4366547384",
+      "doi": "10.1145/3544548.3581225",
+      "title": "Co-Writing Screenplays and Theatre Scripts with Language Models: Evaluation by Industry Professionals",
+      "authors": [
+        {
+          "name": "Piotr Mirowski",
+          "openalex_id": "A5018323141",
+          "orcid": "https://orcid.org/0000-0002-8685-0932",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Kory W. Mathewson",
+          "openalex_id": "A5068452444",
+          "orcid": "https://orcid.org/0000-0002-5688-6221"
+        },
+        {
+          "name": "Jaylen Pittman",
+          "openalex_id": "A5014727110",
+          "orcid": "https://orcid.org/0000-0002-5176-5922",
+          "institutions": [
+            "Stanford University",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Richard Evans",
+          "openalex_id": "A5088939298",
+          "orcid": "https://orcid.org/0000-0003-2131-8686",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-19",
+      "abstract": "Language models are increasingly attracting interest from writers. However, such models lack long-range semantic coherence, limiting their usefulness for longform creative writing. We address this limitation by applying language models hierarchically, in a system we call Dramatron. By building structural context via prompt chaining, Dramatron can generate coherent scripts and screenplays complete with title, characters, story beats, location descriptions, and dialogue. We illustrate Dramatron's usefulness as an interactive co-creative system with a user study of 15 theatre and film industry professionals. Participants co-wrote theatre scripts and screenplays with Dramatron and engaged in open-ended interviews. We report reflections both from our interviewees and from independent reviewers who critiqued performances of several of the scripts to illustrate how both Dramatron and hierarchical text generation could be useful for human-machine co-creativity. Finally, we discuss the suitability of Dramatron for co-creativity, ethical considerations\u2014including plagiarism and bias\u2014and participatory models for the design and deployment of such tools.",
+      "cited_by_count": 179,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3544548.3581225"
+      },
+      "topics": [
+        "Human Motion and Animation",
+        "Subtitles and Audiovisual Media",
+        "Translation Studies and Practices"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W4366547384"
+    },
+    {
+      "openalex_id": "W1542499918",
+      "doi": "10.5117/9789053568286",
+      "title": "Reformation of Islamic Thought : A Critical Historical Analysis",
+      "authors": [
+        {
+          "name": "Wetenschappelijke Raad voor het Reg",
+          "openalex_id": "A5096926652"
+        },
+        {
+          "name": "Nasr Ab\u00fb Zayd",
+          "openalex_id": "A5078734644"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": "Ever since the dramatic events of September 11, 2001 the fundamentalist and exclusivist trend prevails in most presentations of Islamic thinking. Indeed, these events have given extremists and fundamentalists a much more prominent position than they might ever have dreamt of. In Reformation of Islamic Thought, the prominent Egyptian scholar Nasr Ab\u00fb Zayd examines the positive, liberal, and inclusive reaction embedded in the writings of Muslim thinkers. He takes the reader on a critical journey across the Muslim World, where Muslim thinkers from Egypt and Iran to Indonesia seek to divest Islam of traditionalistic and legalistic interpretation. Instead, these thinkers stress the value of a cultural, enlightened Islam, and an individualistic faith. For many, the dogmatic Islam established by the conservatives and supported by totalitarian political regimes is outdated; they want it replaced by a spiritual and ethical Islam. To what extent are these reformist thinkers engaged in a genuine renewal of Islamic thought? Do they succeed in escaping the traditionalist trap of presenting a purely negative image of the West?",
+      "cited_by_count": 120,
+      "type": "book",
+      "source": {
+        "name": "Amsterdam University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://library.oapen.org/bitstream/20.500.12657/35161/1/340182.pdf"
+      },
+      "topics": [
+        "Education and Islamic Studies",
+        "Islamic Finance and Banking Studies",
+        "Qur\u2019anic Interpretation Studies"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W1542499918"
+    },
+    {
+      "openalex_id": "W2771453755",
+      "doi": "10.1037/rev0000094",
+      "title": "Concepts, control, and context: A connectionist account of normal and disordered semantic cognition.",
+      "authors": [
+        {
+          "name": "Paul Hoffman",
+          "openalex_id": "A5025916007",
+          "orcid": "https://orcid.org/0000-0002-3248-3225",
+          "institutions": [
+            "University of Manchester",
+            "Stanford University",
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "James L. McClelland",
+          "openalex_id": "A5020224649",
+          "orcid": "https://orcid.org/0000-0002-8217-405X",
+          "institutions": [
+            "University of Manchester",
+            "University of Edinburgh",
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Matthew A. Lambon Ralph",
+          "openalex_id": "A5055451526",
+          "orcid": "https://orcid.org/0000-0001-5907-2488",
+          "institutions": [
+            "University of Manchester",
+            "University of Edinburgh",
+            "Stanford University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-01",
+      "abstract": "Semantic cognition requires conceptual representations shaped by verbal and nonverbal experience and executive control processes that regulate activation of knowledge to meet current situational demands. A complete model must also account for the representation of concrete and abstract words, of taxonomic and associative relationships, and for the role of context in shaping meaning. We present the first major attempt to assimilate all of these elements within a unified, implemented computational framework. Our model combines a hub-and-spoke architecture with a buffer that allows its state to be influenced by prior context. This hybrid structure integrates the view, from cognitive neuroscience, that concepts are grounded in sensory-motor representation with the view, from computational linguistics, that knowledge is shaped by patterns of lexical co-occurrence. The model successfully codes knowledge for abstract and concrete words, associative and taxonomic relationships, and the multiple meanings of homonyms, within a single representational space. Knowledge of abstract words is acquired through (a) their patterns of co-occurrence with other words and (b) acquired embodiment, whereby they become indirectly associated with the perceptual features of co-occurring concrete words. The model accounts for executive influences on semantics by including a controlled retrieval mechanism that provides top-down input to amplify weak semantic relationships. The representational and control elements of the model can be damaged independently, and the consequences of such damage closely replicate effects seen in neuropsychological patients with loss of semantic representation versus control processes. Thus, the model provides a wide-ranging and neurally plausible account of normal and impaired semantic cognition. (PsycINFO Database Record",
+      "cited_by_count": 197,
+      "type": "article",
+      "source": {
+        "name": "Psychological Review",
+        "type": "journal",
+        "issn": [
+          "0033-295X",
+          "1939-1471"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1037/rev0000094"
+      },
+      "topics": [
+        "Action Observation and Synchronization",
+        "Social Representations and Identity",
+        "Neurobiology of Language and Bilingualism"
+      ],
+      "referenced_works_count": 180,
+      "url": "https://openalex.org/W2771453755"
+    },
+    {
+      "openalex_id": "W2150863371",
+      "doi": "10.3127/ajis.v11i1.145",
+      "title": "Continuous Integration and Quality Assurance: a case study of two open source projects",
+      "authors": [
+        {
+          "name": "Jesper Holck",
+          "openalex_id": "A5040219962",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        },
+        {
+          "name": "Niels J\ufffdrgensen",
+          "openalex_id": "A5096748091",
+          "institutions": [
+            "Roskilde University"
+          ]
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-11-01",
+      "abstract": "A decentralized variant of continuous integration can be defined in terms of two fundamental rules: (1) Developers\u2019 access to add contributions to the development version at any time, and (2) developers\u2019 obligation to integrate their own contributions properly. Decentralized, continuous integration may adapt well to organizations where developers work relatively independently, as in many open source projects. The approach raises the issue of how these organizations can exercise central control, as attaining the benefits of continuous integration requires that contributions are useful and satisfy the project\u2019s definition of successful integration. We have investigated the use of continuous integration in FreeBSD and Mozilla. Our account of quality assurance activities in the two open source projects distinguishes between Mintzberg\u2019s three complementary forms of central control: Standardization and control of work output, work processes, and worker skills. Our study indicates that two major challenges face projects using decentralized, continuous integration: (1) To balance the access to add contributions against the need to stabilize and mature the software prior to a release, and (2) to consider the developers\u2019 limited time and resources when interpreting their obligation to integrate their changes properly.",
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "AJIS. Australasian journal of information systems/AJIS. Australian journal of information systems/Australian journal of information systems",
+        "type": "journal",
+        "issn": [
+          "1039-7841",
+          "1326-2238",
+          "1449-8618"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journal.acs.org.au/index.php/ajis/article/download/145/125"
+      },
+      "topics": [
+        "Open Source Software Innovations",
+        "Software Engineering Research",
+        "Software Engineering Techniques and Practices"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W2150863371"
+    },
+    {
+      "openalex_id": "W3005315960",
+      "doi": "10.1332/204378920x15802967811683",
+      "title": "The case for Interdisciplinary Crisis Studies",
+      "authors": [
+        {
+          "name": "Annika Bergman-Rosamond",
+          "openalex_id": "A5109449947",
+          "institutions": [
+            "Lund University"
+          ]
+        },
+        {
+          "name": "Thomas Gammeltoft\u2010Hansen",
+          "openalex_id": "A5058890931",
+          "orcid": "https://orcid.org/0000-0003-1518-137X",
+          "institutions": [
+            "University of Copenhagen"
+          ]
+        },
+        {
+          "name": "Mo Hamza",
+          "openalex_id": "A5041395968",
+          "orcid": "https://orcid.org/0000-0002-1908-1627",
+          "institutions": [
+            "Lund University"
+          ]
+        },
+        {
+          "name": "Jeff Hearn",
+          "openalex_id": "A5049950427",
+          "orcid": "https://orcid.org/0000-0002-9808-1413",
+          "institutions": [
+            "University of Huddersfield",
+            "\u00d6rebro University",
+            "University of South Africa",
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Vasna Ramasar",
+          "openalex_id": "A5024246120",
+          "orcid": "https://orcid.org/0000-0002-4205-3878",
+          "institutions": [
+            "Lund University"
+          ]
+        },
+        {
+          "name": "Helle Rydstr\u00f6m",
+          "openalex_id": "A5067111372",
+          "orcid": "https://orcid.org/0000-0003-0864-0873",
+          "institutions": [
+            "Lund University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-14",
+      "abstract": "In the world we live in today, the presence and claims of crisis abound \u2013 from climate change, financial and political crisis to depression, livelihoods and personal security crisis. There is a challenge to studying crisis due to the ways in which crisis as a notion, condition and experience refers to and operates at various societal levels. Further, different kinds of crisis can overlap and intersect with each other, and act as precursors or consequences of other crises, in what can be thought of as inter-crisis relations or chains of crises. This article makes an enquiry into how to develop more adequate analytical tools for understanding crisis as a multidimensional phenomenon. We ask how crisis can be conceptualised and what the analytical potentials of a distinct crisis perspective might be? In this article we suggest a multi- and interdisciplinary approach to bridge between traditionally separated realms. Our ambition is to present a case for the development of Interdisciplinary Crisis Studies as a field of scholarly enquiry, which allows for new perspectives on data collection and analysis. Using the cases of, first, crisis and security and, second, crisis and climate, conflict and migration, we illustrate how studying and intervening in crises requires non-linear approaches which connect across disciplines to develop more comprehensive, interdisciplinary understandings of societal problems and better solutions. In concluding the paper, we assert that key features of Interdisciplinary Crisis Studies must include (1) temporality, spatiality and scale; (2) multi-layeredness, processuality and contradictions; and (3) gender, intersectionality and social inequalities.",
+      "cited_by_count": 59,
+      "type": "article",
+      "source": {
+        "name": "Global Discourse",
+        "type": "journal",
+        "issn": [
+          "2043-7897",
+          "2326-9995"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://bristoluniversitypressdigital.com/downloadpdf/journals/gd/12/3-4/article-p465.pdf"
+      },
+      "topics": [
+        "Disaster Management and Resilience",
+        "Sustainability and Climate Change Governance",
+        "Climate Change, Adaptation, Migration"
+      ],
+      "referenced_works_count": 114,
+      "url": "https://openalex.org/W3005315960"
+    },
+    {
+      "openalex_id": "W2097493518",
+      "doi": "10.1017/s0026749x12000091",
+      "title": "The Impact of Climate on Southeast Asia, circa 950\u20131820: New Findings",
+      "authors": [
+        {
+          "name": "Victor Lieberman",
+          "openalex_id": "A5054221285",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Brendan M. Buckley",
+          "openalex_id": "A5034827753",
+          "orcid": "https://orcid.org/0000-0003-1544-8003",
+          "institutions": [
+            "Lamont-Doherty Earth Observatory",
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-22",
+      "abstract": "Abstract The recent discovery of continuous tree-ring series starting as early as 1030 CE has for the first time made possible the reconstruction of historical climates for much of mainland Southeast Asia. Perhaps the most dramatic finding is that wide cyclic fluctuations in the reach and volume of monsoon rains contributed substantially to both the genesis and the collapse of the charter civilizations of Angkor, Pagan, and Dai Viet. From circa 1450\u20131820 climate continued to influence political and economic development, but its impact appears to have diminished both because the amplitude of hydrological fluctuations decreased markedly, and because new sources of power rendered early modern Southeast Asian states more resilient. A pioneering collaborative effort by a historian and a paleoclimatologist, this paper promises three benefits: It can help to solve a variety of local historiographic puzzles, it can facilitate construction of a synchronized historical narrative for mainland Southeast Asia as a whole, and it can aid comparisons between mainland Southeast Asia and other sectors of Eurasia.",
+      "cited_by_count": 86,
+      "type": "article",
+      "source": {
+        "name": "Modern Asian Studies",
+        "type": "journal",
+        "issn": [
+          "0026-749X",
+          "1469-8099"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4EA47A9F9791A563B829EE6ACABAAC66/S0026749X12000091a.pdf/div-class-title-the-impact-of-climate-on-southeast-asia-circa-950-1820-new-findings-div.pdf"
+      },
+      "topics": [
+        "Tree-ring climate responses",
+        "Pacific and Southeast Asian Studies",
+        "Geology and Paleoclimatology Research"
+      ],
+      "referenced_works_count": 119,
+      "url": "https://openalex.org/W2097493518"
+    },
+    {
+      "openalex_id": "W2503625359",
+      "doi": "10.3998/mpub.4424519",
+      "title": "Imperfect Creatures: Vermin, Literature, and the Sciences of Life, 1600-1740",
+      "authors": [
+        {
+          "name": "Lucinda Cole",
+          "openalex_id": "A5067313450"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-02-26",
+      "abstract": "\"Lucinda Cole's Imperfect Creatures offers the first full-length study of the shifting, unstable, but foundational status of \"vermin\" as creatures and category in the early modern literary, scientific, and political imagination. In the space between theology and an emergent empiricism, Cole's argument engages a wide historical swath of canonical early modern literary texts--William Shakespeare's Macbeth, Christopher Marlowe's The Jew of Malta, Abraham Cowley's The Plagues of Egypt, Thomas Shadwell's The Virtuoso, Rochester's \"A Ramble in St. James's Park,\" and Daniel Defoe's Robinson Crusoe and Journal of the Plague Year--alongside other nonliterary primary sources and under-examined archival materials from the period, including treatises on animal trials, grain shortages, rabies, and comparative neuroanatomy. As Cole illustrates, human health and demographic problems--notably those of feeding populations periodically stricken by hunger, disease, and famine--were tied to larger questions about food supplies, property laws, national identity, and the theological imperatives that underwrote humankind's claim to dominion over the animal kingdom. In this context, Cole's study indicates, so-called \"vermin\" occupied liminal spaces between subject and object, nature and animal, animal and the devil, the devil and disease--even reason and madness. This verminous discourse formed a foundational category used to carve out humankind's relationship to an unpredictable, a-rational natural world, but it evolved into a form for thinking about not merely animals but anything that threatened the health of the body politic--humans, animals, and even thoughts.\"--",
+      "cited_by_count": 74,
+      "type": "book",
+      "source": {
+        "name": "BiblioBoard Library Catalog (Open Research Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openresearchlibrary.org/ext/api/media/88af3422-14fc-4849-a6b3-47c461144e5c/assets/external_content.pdf"
+      },
+      "topics": [
+        "Historical and Literary Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2503625359"
+    },
+    {
+      "openalex_id": "W2809878493",
+      "doi": "10.1007/s10272-018-0737-4",
+      "title": "Paradigm Shifts in Economic Theory and Policy",
+      "authors": [
+        {
+          "name": "Laurie Laybourn\u2010Langton",
+          "openalex_id": "A5058316186",
+          "orcid": "https://orcid.org/0000-0002-6605-0794",
+          "institutions": [
+            "Institute for Public Policy Research"
+          ]
+        },
+        {
+          "name": "M. H. Jacobs",
+          "openalex_id": "A5021479600",
+          "institutions": [
+            "Institute for Public Policy Research"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-01",
+      "abstract": "In most countries, mainstream economic policy has not yet undergone any significant change, and there is little consensus on what, if anything, ought to replace it. However, there are some signs of an emerging transition, at several levels.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Intereconomics",
+        "type": "journal",
+        "issn": [
+          "0020-5346",
+          "1613-964X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10272-018-0737-4.pdf"
+      },
+      "topics": [
+        "Global Financial Crisis and Policies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2809878493"
+    },
+    {
+      "openalex_id": "W2412214305",
+      "doi": "10.1093/carcin/bgv039",
+      "title": "Assessing the carcinogenic potential of low-dose exposures to chemical mixtures in the environment: the challenge ahead",
+      "authors": [
+        {
+          "name": "William H. Goodson",
+          "openalex_id": "A5032107481",
+          "orcid": "https://orcid.org/0000-0001-7489-3188",
+          "institutions": [
+            "Genesis Foundation",
+            "California Pacific Medical Center"
+          ]
+        },
+        {
+          "name": "Leroy Lowe",
+          "openalex_id": "A5030855159",
+          "institutions": [
+            "Lancaster University",
+            "Nkumba University"
+          ]
+        },
+        {
+          "name": "David O. Carpenter",
+          "openalex_id": "A5074232978",
+          "orcid": "https://orcid.org/0000-0003-4841-394X",
+          "institutions": [
+            "University at Albany, State University of New York"
+          ]
+        },
+        {
+          "name": "Michael Gilbertson",
+          "openalex_id": "A5003257328",
+          "orcid": "https://orcid.org/0000-0001-6230-0656"
+        },
+        {
+          "name": "Abdul Manaf Ali",
+          "openalex_id": "A5072924813",
+          "orcid": "https://orcid.org/0000-0002-9443-5421",
+          "institutions": [
+            "Sultan Zainal Abidin University"
+          ]
+        },
+        {
+          "name": "Adela Lopez de Cerain Salsamendi",
+          "openalex_id": "A5019622175",
+          "institutions": [
+            "Universidad de Navarra"
+          ]
+        },
+        {
+          "name": "Ahmed Lasfar",
+          "openalex_id": "A5074258023",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Amancio Carnero",
+          "openalex_id": "A5063985660",
+          "orcid": "https://orcid.org/0000-0003-4357-3979",
+          "institutions": [
+            "Instituto de Biomedicina de Valencia",
+            "Instituto de Biomedicina de Sevilla",
+            "Hospital Universitario Virgen del Roc\u00edo"
+          ]
+        },
+        {
+          "name": "Amaya Azqueta",
+          "openalex_id": "A5089965088",
+          "orcid": "https://orcid.org/0000-0003-4857-9931",
+          "institutions": [
+            "Universidad de Navarra"
+          ]
+        },
+        {
+          "name": "Amedeo Amedei",
+          "openalex_id": "A5082342925",
+          "orcid": "https://orcid.org/0000-0002-6797-9343",
+          "institutions": [
+            "University of Florence"
+          ]
+        },
+        {
+          "name": "Amelia K. Charles",
+          "openalex_id": "A5080321166",
+          "orcid": "https://orcid.org/0000-0002-5615-2906",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Andrew Collins",
+          "openalex_id": "A5069045085",
+          "orcid": "https://orcid.org/0000-0001-5916-6871",
+          "institutions": [
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Andrew Ward",
+          "openalex_id": "A5067248481",
+          "orcid": "https://orcid.org/0000-0001-8311-5695",
+          "institutions": [
+            "University of Bath"
+          ]
+        },
+        {
+          "name": "Anna C. Salzberg",
+          "openalex_id": "A5003778142",
+          "orcid": "https://orcid.org/0000-0002-7938-5577",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Annamaria Colacci",
+          "openalex_id": "A5048862668",
+          "orcid": "https://orcid.org/0000-0001-7426-6985"
+        },
+        {
+          "name": "Ann\u2010Karin Olsen",
+          "openalex_id": "A5075024030",
+          "orcid": "https://orcid.org/0000-0003-3982-5213",
+          "institutions": [
+            "Norwegian Institute of Public Health"
+          ]
+        },
+        {
+          "name": "Arthur Berg",
+          "openalex_id": "A5086634091",
+          "orcid": "https://orcid.org/0000-0002-4097-7348",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Barry J. Barclay",
+          "openalex_id": "A5053000479",
+          "orcid": "https://orcid.org/0000-0002-8325-115X"
+        },
+        {
+          "name": "Binhua P. Zhou",
+          "openalex_id": "A5008517264",
+          "orcid": "https://orcid.org/0000-0002-6136-6749",
+          "institutions": [
+            "University of Kentucky"
+          ]
+        },
+        {
+          "name": "Carmen Blanco\u2010Aparicio",
+          "openalex_id": "A5029217625",
+          "orcid": "https://orcid.org/0000-0002-3249-6595",
+          "institutions": [
+            "Spanish National Cancer Research Centre"
+          ]
+        },
+        {
+          "name": "Carolyn J. Baglole",
+          "openalex_id": "A5088963997",
+          "orcid": "https://orcid.org/0000-0002-3107-0437",
+          "institutions": [
+            "McGill University"
+          ]
+        },
+        {
+          "name": "Chenfang Dong",
+          "openalex_id": "A5043388396",
+          "orcid": "https://orcid.org/0000-0003-2964-5876",
+          "institutions": [
+            "University of Kentucky"
+          ]
+        },
+        {
+          "name": "Chiara Mondello",
+          "openalex_id": "A5065284152",
+          "orcid": "https://orcid.org/0000-0002-8379-9246",
+          "institutions": [
+            "Istituto di Genetica Molecolare"
+          ]
+        },
+        {
+          "name": "Chia-Wen Hsu",
+          "openalex_id": "A5112388980",
+          "institutions": [
+            "National Institutes of Health",
+            "National Center for Advancing Translational Sciences"
+          ]
+        },
+        {
+          "name": "Christian C. Naus",
+          "openalex_id": "A5060119478",
+          "orcid": "https://orcid.org/0000-0001-8129-9160",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Cl\u00e9ment G. Yedjou",
+          "openalex_id": "A5004266286",
+          "orcid": "https://orcid.org/0000-0002-1836-0720",
+          "institutions": [
+            "Jackson State University"
+          ]
+        },
+        {
+          "name": "Colleen S. Curran",
+          "openalex_id": "A5019048294",
+          "orcid": "https://orcid.org/0000-0002-4517-6494",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Dale W. Laird",
+          "openalex_id": "A5018396877",
+          "orcid": "https://orcid.org/0000-0002-4568-3285",
+          "institutions": [
+            "Western University"
+          ]
+        },
+        {
+          "name": "Daniel C. Koch",
+          "openalex_id": "A5072127316",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Danielle J. Carlin",
+          "openalex_id": "A5066388383",
+          "orcid": "https://orcid.org/0000-0002-7578-858X",
+          "institutions": [
+            "National Institute of Environmental Health Sciences"
+          ]
+        },
+        {
+          "name": "Dean W. Felsher",
+          "openalex_id": "A5010630509",
+          "orcid": "https://orcid.org/0000-0003-2496-523X",
+          "institutions": [
+            "Stanford University",
+            "Stanford Medicine"
+          ]
+        },
+        {
+          "name": "Debasish Roy",
+          "openalex_id": "A5084340576",
+          "orcid": "https://orcid.org/0000-0001-6590-0569",
+          "institutions": [
+            "City University of New York",
+            "Hostos Community College"
+          ]
+        },
+        {
+          "name": "Dustin G. Brown",
+          "openalex_id": "A5085258801",
+          "orcid": "https://orcid.org/0000-0001-6794-0409",
+          "institutions": [
+            "Colorado State University"
+          ]
+        },
+        {
+          "name": "Edward A. Ratovitski",
+          "openalex_id": "A5111458571",
+          "institutions": [
+            "Johns Hopkins Medicine",
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Elizabeth P. Ryan",
+          "openalex_id": "A5065705596",
+          "institutions": [
+            "Colorado State University"
+          ]
+        },
+        {
+          "name": "Emanuela Corsini",
+          "openalex_id": "A5082724673",
+          "orcid": "https://orcid.org/0000-0002-6927-5956",
+          "institutions": [
+            "University of Milan"
+          ]
+        },
+        {
+          "name": "Emilio Rojas",
+          "openalex_id": "A5068923042",
+          "orcid": "https://orcid.org/0000-0001-9578-9064",
+          "institutions": [
+            "National Institute of Genomic Medicine",
+            "Universidad Nacional Aut\u00f3noma de M\u00e9xico"
+          ]
+        },
+        {
+          "name": "Eun\u2010Yi Moon",
+          "openalex_id": "A5069679336",
+          "institutions": [
+            "Sejong University"
+          ]
+        },
+        {
+          "name": "Ezio Laconi",
+          "openalex_id": "A5009776674",
+          "institutions": [
+            "University of Cagliari"
+          ]
+        },
+        {
+          "name": "Fabio Marongiu",
+          "openalex_id": "A5091837599",
+          "orcid": "https://orcid.org/0000-0001-5860-4227",
+          "institutions": [
+            "University of Cagliari"
+          ]
+        },
+        {
+          "name": "Fahd Al\u2010Mulla",
+          "openalex_id": "A5045720408",
+          "orcid": "https://orcid.org/0000-0001-5409-3829",
+          "institutions": [
+            "Kuwait University"
+          ]
+        },
+        {
+          "name": "Ferdinando Chiaradonna",
+          "openalex_id": "A5065251555",
+          "orcid": "https://orcid.org/0000-0001-8529-2732",
+          "institutions": [
+            "University of Milano-Bicocca"
+          ]
+        },
+        {
+          "name": "F. Darroudi",
+          "openalex_id": "A5028330497",
+          "institutions": [
+            "University of Doha for Science and Technology"
+          ]
+        },
+        {
+          "name": "Francis L. Martin",
+          "openalex_id": "A5032803754",
+          "orcid": "https://orcid.org/0000-0001-8562-4944",
+          "institutions": [
+            "Lancaster University"
+          ]
+        },
+        {
+          "name": "Frederik\u2010Jan van Schooten",
+          "openalex_id": "A5038697595",
+          "orcid": "https://orcid.org/0000-0001-8111-8198",
+          "institutions": [
+            "Maastricht University"
+          ]
+        },
+        {
+          "name": "Gary S. Goldberg",
+          "openalex_id": "A5061612249",
+          "institutions": [
+            "Rowan University"
+          ]
+        },
+        {
+          "name": "Gerard Wagemaker",
+          "openalex_id": "A5070818277",
+          "orcid": "https://orcid.org/0000-0001-7898-5178",
+          "institutions": [
+            "Hacettepe University"
+          ]
+        },
+        {
+          "name": "Gladys N. Nangami",
+          "openalex_id": "A5085759432",
+          "institutions": [
+            "Meharry Medical College"
+          ]
+        },
+        {
+          "name": "Gloria M. Calaf",
+          "openalex_id": "A5016723784",
+          "orcid": "https://orcid.org/0000-0003-3542-296X",
+          "institutions": [
+            "University of Tarapac\u00e1",
+            "Columbia University Irving Medical Center"
+          ]
+        },
+        {
+          "name": "Graeme P. Williams",
+          "openalex_id": "A5012624867",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Gregory T. Wolf",
+          "openalex_id": "A5083855375",
+          "orcid": "https://orcid.org/0000-0002-3219-9515",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Gudrun Koppen",
+          "openalex_id": "A5039865614",
+          "orcid": "https://orcid.org/0000-0001-6014-7803",
+          "institutions": [
+            "Flemish Institute for Technological Research"
+          ]
+        },
+        {
+          "name": "Gunnar Brunborg",
+          "openalex_id": "A5066023889",
+          "orcid": "https://orcid.org/0000-0002-4140-6774",
+          "institutions": [
+            "Norwegian Institute of Public Health"
+          ]
+        },
+        {
+          "name": "H. Kim Lyerly",
+          "openalex_id": "A5012804507",
+          "orcid": "https://orcid.org/0000-0002-0063-4770",
+          "institutions": [
+            "Duke Medical Center",
+            "Duke University Hospital"
+          ]
+        },
+        {
+          "name": "Harini Krishnan",
+          "openalex_id": "A5082357694",
+          "orcid": "https://orcid.org/0000-0003-0286-0322",
+          "institutions": [
+            "Rowan University"
+          ]
+        },
+        {
+          "name": "Hasiah Ab Hamid",
+          "openalex_id": "A5101713702",
+          "orcid": "https://orcid.org/0000-0002-4327-9211",
+          "institutions": [
+            "Universiti Putra Malaysia"
+          ]
+        },
+        {
+          "name": "Hemad Yasaei",
+          "openalex_id": "A5059509703",
+          "institutions": [
+            "Brunel University of London"
+          ]
+        },
+        {
+          "name": "Hirohito Sone",
+          "openalex_id": "A5037174575",
+          "orcid": "https://orcid.org/0000-0003-1263-2817",
+          "institutions": [
+            "National Institute for Environmental Studies"
+          ]
+        },
+        {
+          "name": "Hiroshi Kondoh",
+          "openalex_id": "A5091007752",
+          "orcid": "https://orcid.org/0000-0002-1067-2244",
+          "institutions": [
+            "Kyoto University Hospital"
+          ]
+        },
+        {
+          "name": "Hosni Salem",
+          "openalex_id": "A5036694657",
+          "orcid": "https://orcid.org/0000-0002-4129-6683",
+          "institutions": [
+            "Indiana University Bloomington",
+            "Cairo University"
+          ]
+        },
+        {
+          "name": "Hsue\u2010Yin Hsu",
+          "openalex_id": "A5109924403",
+          "institutions": [
+            "Tzu Chi University"
+          ]
+        },
+        {
+          "name": "Hyun Ho Park",
+          "openalex_id": "A5022716093",
+          "orcid": "https://orcid.org/0000-0001-9928-0847",
+          "institutions": [
+            "Yeungnam University"
+          ]
+        },
+        {
+          "name": "Igor Koturbash",
+          "openalex_id": "A5004823588",
+          "orcid": "https://orcid.org/0000-0002-4090-7008",
+          "institutions": [
+            "University of Arkansas for Medical Sciences"
+          ]
+        },
+        {
+          "name": "Isabelle R. Miousse",
+          "openalex_id": "A5062081692",
+          "orcid": "https://orcid.org/0000-0001-6543-3219",
+          "institutions": [
+            "University of Arkansas for Medical Sciences"
+          ]
+        },
+        {
+          "name": "A. Ivana Scovassi",
+          "openalex_id": "A5061342251",
+          "orcid": "https://orcid.org/0000-0003-3484-9881",
+          "institutions": [
+            "Istituto di Genetica Molecolare"
+          ]
+        },
+        {
+          "name": "James E. Klaunig",
+          "openalex_id": "A5023743063",
+          "orcid": "https://orcid.org/0000-0002-4736-2223",
+          "institutions": [
+            "Indiana University Bloomington"
+          ]
+        },
+        {
+          "name": "Jan Vondr\u00e1\u010dek",
+          "openalex_id": "A5059582565",
+          "orcid": "https://orcid.org/0000-0003-4071-1969",
+          "institutions": [
+            "Czech Academy of Sciences, Institute of Biophysics"
+          ]
+        },
+        {
+          "name": "Jayadev Raju",
+          "openalex_id": "A5066625150",
+          "orcid": "https://orcid.org/0000-0002-7386-4294",
+          "institutions": [
+            "Health Canada"
+          ]
+        },
+        {
+          "name": "Jesse Roman",
+          "openalex_id": "A5001823079",
+          "orcid": "https://orcid.org/0000-0003-2956-9674",
+          "institutions": [
+            "Louisville VA Medical Center",
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "John Pierce Wise",
+          "openalex_id": "A5059588914",
+          "orcid": "https://orcid.org/0000-0002-2587-2855",
+          "institutions": [
+            "University of Southern Maine"
+          ]
+        },
+        {
+          "name": "Jonathan R. Whitfield",
+          "openalex_id": "A5064574208",
+          "orcid": "https://orcid.org/0000-0002-4925-7283",
+          "institutions": [
+            "Vall d'Hebron Institute of Oncology",
+            "CIBBIM-Nanomedicine"
+          ]
+        },
+        {
+          "name": "Jordan Woodrick",
+          "openalex_id": "A5028154106",
+          "institutions": [
+            "Georgetown University Medical Center",
+            "Georgetown University"
+          ]
+        },
+        {
+          "name": "Joseph Christopher",
+          "openalex_id": "A5004636515",
+          "orcid": "https://orcid.org/0000-0002-2059-0154",
+          "institutions": [
+            "University of Cambridge",
+            "Cancer Research UK"
+          ]
+        },
+        {
+          "name": "Josiah Ochieng",
+          "openalex_id": "A5029311750",
+          "orcid": "https://orcid.org/0000-0003-4551-5174",
+          "institutions": [
+            "Meharry Medical College"
+          ]
+        },
+        {
+          "name": "Juan Fernando Mart\u00ednez-Leal",
+          "openalex_id": "A5063355877",
+          "orcid": "https://orcid.org/0000-0002-7538-0875",
+          "institutions": [
+            "PharmaMar (Spain)"
+          ]
+        },
+        {
+          "name": "Judith Weisz",
+          "openalex_id": "A5111910205",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Julia Kravchenko",
+          "openalex_id": "A5062423049",
+          "orcid": "https://orcid.org/0000-0002-6436-1548",
+          "institutions": [
+            "Duke Medical Center",
+            "Duke University Hospital"
+          ]
+        },
+        {
+          "name": "Jun Sun",
+          "openalex_id": "A5007677073",
+          "orcid": "https://orcid.org/0000-0001-7465-3133",
+          "institutions": [
+            "Rush University"
+          ]
+        },
+        {
+          "name": "Kalan R. Prudhomme",
+          "openalex_id": "A5072052122",
+          "institutions": [
+            "Oregon State University"
+          ]
+        },
+        {
+          "name": "Kannan Badri Narayanan",
+          "openalex_id": "A5019413417",
+          "orcid": "https://orcid.org/0000-0003-2789-5556",
+          "institutions": [
+            "Yeungnam University"
+          ]
+        },
+        {
+          "name": "Karine Cohen-Solal",
+          "openalex_id": "A5040466212",
+          "orcid": "https://orcid.org/0000-0002-6397-5812",
+          "institutions": [
+            "Rutgers Cancer Institute of New Jersey",
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Kim Moorwood",
+          "openalex_id": "A5090180577",
+          "orcid": "https://orcid.org/0000-0003-0943-6161",
+          "institutions": [
+            "University of Bath"
+          ]
+        },
+        {
+          "name": "Laetitia Gonzalez",
+          "openalex_id": "A5046259279",
+          "orcid": "https://orcid.org/0000-0003-4182-3428",
+          "institutions": [
+            "Vrije Universiteit Brussel"
+          ]
+        },
+        {
+          "name": "Laura Soucek",
+          "openalex_id": "A5058419452",
+          "orcid": "https://orcid.org/0000-0002-4750-7971",
+          "institutions": [
+            "Vall d'Hebron Institute of Oncology",
+            "CIBBIM-Nanomedicine",
+            "Instituci\u00f3 Catalana de Recerca i Estudis Avan\u00e7ats"
+          ]
+        },
+        {
+          "name": "Le Jian",
+          "openalex_id": "A5032335382",
+          "institutions": [
+            "University of California, Davis",
+            "Curtin University"
+          ]
+        },
+        {
+          "name": "Leandro S. D\u2019Abronzo",
+          "openalex_id": "A5009880021",
+          "orcid": "https://orcid.org/0000-0003-4555-4245",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        },
+        {
+          "name": "Liang Lin",
+          "openalex_id": "A5075529271",
+          "orcid": "https://orcid.org/0000-0001-7374-7234",
+          "institutions": [
+            "Taipei Medical University"
+          ]
+        },
+        {
+          "name": "Lin Li",
+          "openalex_id": "A5100412869",
+          "orcid": "https://orcid.org/0000-0002-3821-7147",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Linda Gulliver",
+          "openalex_id": "A5082716765",
+          "orcid": "https://orcid.org/0000-0001-9887-1602",
+          "institutions": [
+            "University of Otago"
+          ]
+        },
+        {
+          "name": "Lisa J. McCawley",
+          "openalex_id": "A5058025933",
+          "institutions": [
+            "Vanderbilt University"
+          ]
+        },
+        {
+          "name": "Lorenzo Memeo",
+          "openalex_id": "A5011578131",
+          "orcid": "https://orcid.org/0000-0003-4251-7203"
+        },
+        {
+          "name": "Louis Vermeulen",
+          "openalex_id": "A5043831964",
+          "orcid": "https://orcid.org/0000-0002-6066-789X",
+          "institutions": [
+            "Academic Medical Center"
+          ]
+        },
+        {
+          "name": "Luc Leyns",
+          "openalex_id": "A5029807963",
+          "orcid": "https://orcid.org/0000-0001-7124-3155",
+          "institutions": [
+            "Vrije Universiteit Brussel"
+          ]
+        },
+        {
+          "name": "Luoping Zhang",
+          "openalex_id": "A5102774108",
+          "orcid": "https://orcid.org/0000-0001-7866-8391",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Mahara Valverde",
+          "openalex_id": "A5044047529",
+          "orcid": "https://orcid.org/0000-0001-6975-1185",
+          "institutions": [
+            "Universidad Nacional Aut\u00f3noma de M\u00e9xico",
+            "National Institute of Genomic Medicine"
+          ]
+        },
+        {
+          "name": "Mahin Khatami",
+          "openalex_id": "A5002793613",
+          "orcid": "https://orcid.org/0000-0002-2767-2742",
+          "institutions": [
+            "National Institutes of Health",
+            "National Cancer Institute"
+          ]
+        },
+        {
+          "name": "Maria Fiammetta Romano",
+          "openalex_id": "A5047387182",
+          "orcid": "https://orcid.org/0000-0001-5557-7307",
+          "institutions": [
+            "University of Naples Federico II"
+          ]
+        },
+        {
+          "name": "Marion Chapellier",
+          "openalex_id": "A5009183640",
+          "orcid": "https://orcid.org/0000-0003-1292-5695",
+          "institutions": [
+            "Centre de Recherche en Canc\u00e9rologie de Lyon",
+            "Universit\u00e9 Claude Bernard Lyon 1"
+          ]
+        },
+        {
+          "name": "Marc A. Williams",
+          "openalex_id": "A5111713635",
+          "institutions": [
+            "U.S. Army Center for Health Promotion and Preventive Medicine"
+          ]
+        },
+        {
+          "name": "Mark Wade",
+          "openalex_id": "A5003697807",
+          "orcid": "https://orcid.org/0000-0002-8355-9680",
+          "institutions": [
+            "Center for Genomic Science",
+            "Italian Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-06-01",
+      "abstract": "Lifestyle factors are responsible for a considerable portion of cancer incidence worldwide, but credible estimates from the World Health Organization and the International Agency for Research on Cancer (IARC) suggest that the fraction of cancers attributable to toxic environmental exposures is between 7% and 19%. To explore the hypothesis that low-dose exposures to mixtures of chemicals in the environment may be combining to contribute to environmental carcinogenesis, we reviewed 11 hallmark phenotypes of cancer, multiple priority target sites for disruption in each area and prototypical chemical disruptors for all targets, this included dose-response characterizations, evidence of low-dose effects and cross-hallmark effects for all targets and chemicals. In total, 85 examples of chemicals were reviewed for actions on key pathways/mechanisms related to carcinogenesis. Only 15% (13/85) were found to have evidence of a dose-response threshold, whereas 59% (50/85) exerted low-dose effects. No dose-response information was found for the remaining 26% (22/85). Our analysis suggests that the cumulative effects of individual (non-carcinogenic) chemicals acting on different pathways, and a variety of related systems, organs, tissues and cells could plausibly conspire to produce carcinogenic synergies. Additional basic research on carcinogenesis and research focused on low-dose effects of chemical mixtures needs to be rigorously pursued before the merits of this hypothesis can be further advanced. However, the structure of the World Health Organization International Programme on Chemical Safety 'Mode of Action' framework should be revisited as it has inherent weaknesses that are not fully aligned with our current understanding of cancer biology.",
+      "cited_by_count": 307,
+      "type": "review",
+      "source": {
+        "name": "Carcinogenesis",
+        "type": "journal",
+        "issn": [
+          "0143-3334",
+          "1460-2180"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/carcin/article-pdf/36/Suppl_1/S254/901566/bgv039.pdf"
+      },
+      "topics": [
+        "Carcinogens and Genotoxicity Assessment",
+        "Effects and risks of endocrine disrupting chemicals",
+        "Toxic Organic Pollutants Impact"
+      ],
+      "referenced_works_count": 531,
+      "url": "https://openalex.org/W2412214305"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

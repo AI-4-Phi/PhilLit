@@ -1,0 +1,1561 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "invented tradition",
+  "results": [
+    {
+      "openalex_id": "W2303682658",
+      "doi": "10.1017/cbo9781107295636.001",
+      "title": "Introduction: Inventing Traditions",
+      "authors": [
+        {
+          "name": "Eric Hobsbawm",
+          "openalex_id": "A5110865172",
+          "institutions": [
+            "Universidad de Londres"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-26",
+      "abstract": "Nothing appears more ancient, and linked to an immemorial past, than the pageantry which surrounds British monarchy in its public ceremonial manifestations. Yet, as a chapter in this book establishes, in its modern form it is the product of the late nineteenth and twentieth centuries. \u2018Traditions\u2019 which appear or claim to be old are often quite recent in origin and sometimes invented. Anyone familiar with the colleges of ancient British universities will be able to think of the institution of such \u2018traditions\u2019 on a local scale, though some \u2013 like the annual Festival of Nine Lessons and Carols in the chapel of King's College, Cambridge on Christmas Eve \u2013 may become generalized through the modern mass medium of radio. This observation formed the starting-point of a conference organized by the historical journal Past & Present, which in turn forms the basis of the present book.",
+      "cited_by_count": 1330,
+      "type": "book-chapter",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Scottish History and National Identity",
+        "Historical Influence and Diplomacy",
+        "Historical Art and Culture Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2303682658"
+    },
+    {
+      "openalex_id": "W1943098950",
+      "doi": "10.1525/vs.2012.7.2.87",
+      "title": "The Biography of the H\u1ed3ng B\u00e0ng Clan as a Medieval Vietnamese Invented Tradition",
+      "authors": [
+        {
+          "name": "Liam C. Kelley",
+          "openalex_id": "A5050434200",
+          "orcid": "https://orcid.org/0000-0002-6770-8535"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "This paper critically examines an account called the \u201cBiography of the H\u1ed3ng B\u00e0ng Clan\u201d in a fifteenth-century text, the Arrayed Tales of Selected Oddities from South of the Passes [L\u0129nh Nam ch\u00edch qu\u00e1i li\u1ec7t truy\u1ec7n]. This account is the source for the \u201chistorical\u201d information about the H\u00f9ng kings. Scholars have long argued that this information was transmitted orally from the first millennium BCE until it was finally written down at some point after Vietnam became autonomous in the tenth century. In contrast, this paper argues that this information about the H\u00f9ng kings was created after Vietnam became autonomous and constitutes an \u201cinvented tradition.\u201d",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "Journal of Vietnamese Studies",
+        "type": "journal",
+        "issn": [
+          "1559-372X",
+          "1559-3738"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Vietnamese History and Culture Studies",
+        "Chinese history and philosophy",
+        "Historical Studies and Socio-cultural Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1943098950"
+    },
+    {
+      "openalex_id": "W4302353479",
+      "doi": "10.21313/hawaii/9780824833664.003.0010",
+      "title": "Inventing Traditions and Remembering the Past in Manus",
+      "authors": [
+        {
+          "name": "Ton Otto",
+          "openalex_id": "A5055728871",
+          "orcid": "https://orcid.org/0000-0002-5185-3017"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-09-30",
+      "abstract": null,
+      "cited_by_count": 27,
+      "type": "book-chapter",
+      "source": {
+        "name": "University of Hawaii Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global Maritime and Colonial Histories"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4302353479"
+    },
+    {
+      "openalex_id": "W2085824290",
+      "doi": "10.1080/00076791.2012.715284",
+      "title": "Leading a multinational is history in practice: The use of invented traditions and narratives at AkzoNobel, Shell, Philips and ABN AMRO",
+      "authors": [
+        {
+          "name": "Ronald Kroeze",
+          "openalex_id": "A5090599855",
+          "orcid": "https://orcid.org/0000-0002-3060-3537",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Sjoerd Keulen",
+          "openalex_id": "A5005084389",
+          "orcid": "https://orcid.org/0000-0002-2526-4091",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-10-31",
+      "abstract": "This article states that the distinctiveness of business history and its convincingness can be improved by the concept of invented tradition and narrative. After a theoretical overview it suggests that the narrative approach explains the way leaders operate in practice. It argues that with a narrative approach one sees that history is used by business leaders in four different ways: as a source to create traditions and symbols as means of communication, as a way to understand and strengthen the identity of the organisation, as means to create corporate memory and as a tool to connect past, present and future. The examples are taken from a Dutch oral history project on management behaviour at multinationals.",
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Business History",
+        "type": "journal",
+        "issn": [
+          "0007-6791",
+          "1743-7938"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 74,
+      "url": "https://openalex.org/W2085824290"
+    },
+    {
+      "openalex_id": "W2791690335",
+      "doi": "10.1628/219944617x15014860816638",
+      "title": "Africa Punica? Child Sacrifice and Other Invented Traditions in Early Roman Africa",
+      "authors": [
+        {
+          "name": "Matthew M. McCarty",
+          "openalex_id": "A5035073778",
+          "orcid": "https://orcid.org/0000-0002-0297-3362"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "Africa Punica? Child Sacrifice and Other Invented Traditions in Early Roman Africa",
+      "cited_by_count": 28,
+      "type": "article",
+      "source": {
+        "name": "Religion in the Roman Empire",
+        "type": "journal",
+        "issn": [
+          "2199-4463",
+          "2199-4471"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1628/219944617x15014860816638"
+      },
+      "topics": [
+        "Classical Antiquity Studies",
+        "Archaeology and Historical Studies",
+        "Historical, Religious, and Philosophical Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2791690335"
+    },
+    {
+      "openalex_id": "W2625592312",
+      "doi": "10.1111/musa.12094",
+      "title": "Inventing Tradition: Webern's Piano Variations in Early Recordings",
+      "authors": [
+        {
+          "name": "Nicholas Cook",
+          "openalex_id": "A5091453764",
+          "orcid": "https://orcid.org/0000-0002-6390-6884"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-06-15",
+      "abstract": "ABSTRACT Webern's Piano Variations Op. 27 were first performed two years before the outbreak of the Second World War, but it was only after the war \u2013 and in very different aesthetic and ideological circumstances \u2013 that a performance tradition developed. Through a combination of computer\u2010assisted close reading and contextual analysis of the first movement, this article traces the competing stylistic and ideological directions of early performances \u2013 one deriving from the pre\u2010war tradition of the Schoenberg circle, the other from the European avant\u2010garde associated with Darmstadt and Die Reihe \u2013 and the processes of negotiation through which a more or less consensus interpretation emerged around the end of the 1960s. My aims are to explore ways in which empirical approaches can be deployed for musicological purposes, to relate recorded performances to their historical contexts and to link the story of Op. 27 to the development of music\u2010theoretical approaches that see performance as a function of compositional structure. Key recordings on which the article is based are presented online as Sonic Visualiser session files coordinated with the text.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Music Analysis",
+        "type": "journal",
+        "issn": [
+          "0262-5245",
+          "1468-2249"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/musa.12094"
+      },
+      "topics": [
+        "Musicology and Musical Analysis",
+        "Neuroscience and Music Perception",
+        "Diverse Music Education Insights"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W2625592312"
+    },
+    {
+      "openalex_id": "W4253679403",
+      "doi": "10.1080/09523360903339742",
+      "title": "\u2018The Grit of Our Forefathers\u2019: Invented Traditions, Propaganda and Imperialism",
+      "authors": [],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": null,
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "The International Journal of the History of Sport",
+        "type": "journal",
+        "issn": [
+          "0952-3367",
+          "1743-9035"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Australian History and Society"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4253679403"
+    },
+    {
+      "openalex_id": "W2521778749",
+      "doi": "10.1080/03068374.2015.1128681",
+      "title": "WHERE DID BHUTAN'S GROSS NATIONAL HAPPINESS COME FROM? THE ORIGINS OF AN INVENTED TRADITION",
+      "authors": [
+        {
+          "name": "Lauchlan T. Munro",
+          "openalex_id": "A5085743466",
+          "orcid": "https://orcid.org/0000-0003-2132-1287"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-02",
+      "abstract": "The Kingdom of Bhutan has attracted international attention for adopting \"Gross National Happiness\" (GNH) as its national development policy. The central notion is that gross national happiness is more important than gross national product; the four pillars of GNH are sustainable economic development, good governance, preservation of the natural environment and preservation of the national culture. This paper traces the historical origins of the concept of Gross National Happiness and finds that GNH is newer than the literature and the propaganda usually suggest. Close study of GNH's origins and salience over several decades reveals evidence of the invention of a tradition, in Hobsbawm and Ranger's terms [Eric Hobsbawm and Terence Ranger (Eds.), The Invention of Tradition. Cambridge: CUP, 1983]. The meteoric rise over the last 15 years of GNH as Bhutan's official ideology is a key part of the Bhutanese state's efforts at nation building in the context of rapid and disruptive social and economic change in a highly plural society.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "Asian Affairs",
+        "type": "journal",
+        "issn": [
+          "0306-8374",
+          "1477-1500"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Psychological Well-being and Life Satisfaction"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2521778749"
+    },
+    {
+      "openalex_id": "W1982859205",
+      "doi": "10.1355/sj29-3a",
+      "title": "Muay Thai: Inventing Tradition for a National Symbol",
+      "authors": [
+        {
+          "name": "Peter Vail",
+          "openalex_id": "A5057295609"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "SOJOURN is an interdisciplinary journal devoted to the study of social and cultural issues in Southeast Asia. It publishes empirical and theoretical research articles with a view to promoting and disseminating scholarship in and on the region. Areas of special concern include ethnicity, religion, tourism, urbanization, migration, popular culture, social and cultural change, and development. Fields most often represented in the journal are anthropology, sociology, and history.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "Journal of Social Issues in Southeast Asia",
+        "type": "journal",
+        "issn": [
+          "0217-9520",
+          "1793-2858"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Southeast Asian Sociopolitical Studies",
+        "Vietnamese History and Culture Studies",
+        "Philippine History and Culture"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W1982859205"
+    },
+    {
+      "openalex_id": "W2019257900",
+      "doi": "10.1080/07409710.2010.504102",
+      "title": "The Promotion of Tea in South China: Re-Inventing Tradition in an Old Industry",
+      "authors": [
+        {
+          "name": "Tan Chee\u2010Beng",
+          "openalex_id": "A5046489910",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Ding Yu-ling",
+          "openalex_id": "A5100936557"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-08-14",
+      "abstract": "This article describes the promotion and consumption of tea in South China, particulaly in Quanzhou, Fujian. Contrary to popular knowledge of tea drinking as an ancient Chinese tradition, tea drinking in Quanzhou today is actually a re-invented tradition. The article shows that the popularity of tea drinking in Quanzhou today came about as a result of promotion by various agents involving tea farmers, tea merchants, and the government in post-Mao China. In addition, Taiwanese tea industry and businesspeople also play important roles in the production and modernization of Anxi tea. The re-invented tradition of tea consumption provides a new way of consuming tea and conducting social relations. The culture of tea consumption in Quanzhou today is shaped by both the forces of post-reform economic development and changing perception of social status and modernity.",
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Food and Foodways",
+        "type": "journal",
+        "issn": [
+          "0740-9710",
+          "1542-3484"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Culinary Culture and Tourism",
+        "Philippine History and Culture",
+        "Migration, Ethnicity, and Economy"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W2019257900"
+    },
+    {
+      "openalex_id": "W2137508140",
+      "doi": "10.16995/ane.11",
+      "title": "Tree Ordination as Invented Tradition",
+      "authors": [
+        {
+          "name": "Avery Morrow",
+          "openalex_id": "A5055506486",
+          "orcid": "https://orcid.org/0000-0002-3743-6196",
+          "institutions": [
+            "Carleton College"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-19",
+      "abstract": "The symbolic ordination of trees as monks in Thailand is widely perceived in Western scholarship to be proof of the power of Buddhism to spur ecological thought. However, a closer analysis of tree ordination demonstrates that it is not primarily about Buddhist teaching, but rather is an invented tradition based on the sanctity of Thai Buddhist symbols as well as those of spirit worship and the monarchy. Tree ordinations performed by non-Buddhist minorities in Thailand do not demonstrate a religious commitment but rather a political one.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "ASIANetwork Exchange A Journal for Asian Studies in the Liberal Arts",
+        "type": "journal",
+        "issn": [
+          "1943-9938",
+          "1943-9946"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.asianetworkexchange.org/articles/10.16995/ane.11/galley/6/download/"
+      },
+      "topics": [
+        "Southeast Asian Sociopolitical Studies",
+        "Conservation, Biodiversity, and Resource Management",
+        "Anthropological Studies and Insights"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2137508140"
+    },
+    {
+      "openalex_id": "W2316932987",
+      "doi": "10.1093/ehr/ces248",
+      "title": "Transnational Affinities and Invented Traditions: The Napoleonic Wars in British and Hanoverian Memory, 1815\u20131915",
+      "authors": [
+        {
+          "name": "Jasper Heinzen",
+          "openalex_id": "A5033456928",
+          "orcid": "https://orcid.org/0000-0002-6790-3787",
+          "institutions": [
+            "University of Bern"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-11-04",
+      "abstract": "Journal Article Transnational Affinities and Invented Traditions: The Napoleonic Wars in British and Hanoverian Memory, 1815\u20131915 Get access Jasper Heinzen Jasper Heinzen Historical Institute, University of Bern Search for other works by this author on: Oxford Academic Google Scholar The English Historical Review, Volume 127, Issue 529, December 2012, Pages 1404\u20131434, https://doi.org/10.1093/ehr/ces248 Published: 26 November 2012",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "The English Historical Review",
+        "type": "journal",
+        "issn": [
+          "0013-8266",
+          "1477-4534"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/ehr/article-pdf/127/529/1404/1238342/ces248.pdf"
+      },
+      "topics": [
+        "Historical Studies and Socio-cultural Analysis",
+        "European Political History Analysis",
+        "Historical Art and Culture Studies"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W2316932987"
+    },
+    {
+      "openalex_id": "W2345353972",
+      "doi": "10.1177/0163443716648493",
+      "title": "Inventing traditions: television dating shows in the People\u2019s Republic of China",
+      "authors": [
+        {
+          "name": "Pan Wang",
+          "openalex_id": "A5001158745",
+          "orcid": "https://orcid.org/0000-0001-7240-8070",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-05-06",
+      "abstract": "Chinese dating shows emerged in the late 1980s and initially were a space for marriage advertisement for individuals. It has then evolved into an entertainment arena for singles to show talent, discuss, and interact with one another. The evolution of the shows not only reflects the changing preference of television viewers but also testifies the broader changes of social and gender relations, media regulations, as well as the different values and identities across generations. By examining the invention and reinvention processes of China\u2019s television dating shows, the article argues that dating shows played a significant role in advancing traditional marriage matchmaking culture through (re)invention of new traditions. In doing so, it has not only created new television genres but also mobilized the audience to discuss love and marriage and to voice their opinions on a rapidly changing society.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "Media Culture & Society",
+        "type": "journal",
+        "issn": [
+          "0163-4437",
+          "1460-3675"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Gender, Feminism, and Media",
+        "Sexuality, Behavior, and Technology",
+        "Media, Gender, and Advertising"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2345353972"
+    },
+    {
+      "openalex_id": "W1563966611",
+      "doi": "10.1017/cbo9781107295636.006",
+      "title": "The Invention of Tradition in Colonial Africa",
+      "authors": [
+        {
+          "name": "Terence Ranger",
+          "openalex_id": "A5032213199",
+          "institutions": [
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-26",
+      "abstract": "The 1870s, 1880s and 1890s were the time of a great flowering of European invented tradition \u2013 ecclesiastical, educational, military, republican, monarchical. They were also the time of the European rush into Africa. There were many and complex connections between the two processes. The concept of Empire was central to the process of inventing tradition within Europe itself, but the African empires came so late in the day that they demonstrate the effects rather than the causes of European invented tradition. Deployed in Africa, however, the new traditions took on a peculiar character, distinguishing them from both their European and Asian Imperial forms.",
+      "cited_by_count": 538,
+      "type": "book-chapter",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "African history and culture studies",
+        "Global Maritime and Colonial Histories"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1563966611"
+    },
+    {
+      "openalex_id": "W1487002715",
+      "doi": "10.1177/1329878x1013400108",
+      "title": "On Television Comedy as an Invented Tradition",
+      "authors": [
+        {
+          "name": "Brett Mills",
+          "openalex_id": "A5018885700",
+          "orcid": "https://orcid.org/0000-0002-9899-5303"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-02-01",
+      "abstract": "Existing analysis of the relationships between comedy and nation commonly work from an assumption that nations have a sense of humour that in some way defines them, while comedy texts \u2014 such as those broadcast on television and radio \u2014 merely draw on these pre-existing phenomena (Richards, 1997). This article instead demonstrates a more complex relationship between the two, suggesting that broadcast comedy is an \u2018invented tradition\u2019 (Hobsbawm and Ranger, 1983), which has been one of the most powerful ways for nations to define themselves \u2014 often at the expense of the complexities and contradictions within any one nation-state. Drawing on the idea that nations are \u2018imagined communities\u2019 (Anderson, 1983), this article takes the BBC as a case study, exploring the ways in which an understanding of the \u2018British sense of humour\u2019 has evolved in response to the needs of the nation. In doing so, it explores historically significant moments such as World War II, as well as a range of regional comedy that doesn't make it into national broadcasting circuits. In addition, the notion of \u2018Britishness\u2019 that is sold abroad via such programming is examined. In doing so, this article outlines the ways in which ideas of comedy and the nation intertwine, as well as exploring the problems this relationship might cause for alternative or oppositional ideas of the nation.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Media International Australia",
+        "type": "journal",
+        "issn": [
+          "1329-878X",
+          "2200-467X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Scottish History and National Identity",
+        "Cyprus History, Politics, Society",
+        "Island Studies and Pacific Affairs"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W1487002715"
+    },
+    {
+      "openalex_id": "W2276050444",
+      "doi": "10.1080/07341512.2015.1101837",
+      "title": "Inventing traditions: interests, parables and nostalgia in the history of nuclear energy",
+      "authors": [
+        {
+          "name": "Tilmann Hanel",
+          "openalex_id": "A5005194345",
+          "institutions": [
+            "Technical University of Darmstadt"
+          ]
+        },
+        {
+          "name": "Mikael H\u00e5rd",
+          "openalex_id": "A5064736486",
+          "orcid": "https://orcid.org/0000-0003-2466-1092",
+          "institutions": [
+            "Technical University of Darmstadt"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-03",
+      "abstract": "From the late 1960s on, light-water designs dominated the market for nuclear reactors in most Western countries. Up to that point in time, many national governments, scientists and industrialists had favoured the rival concepts of heavy-water and graphite-moderated plants. The article focuses on Sweden and West Germany, where central actors only reluctantly gave up their support for domestically developed heavy-water solutions. Studying new archival material and adopting Hobsbawm and Ranger's concept of the 'invention of tradition', the authors analyze how contemporary actors mobilized both the nation and the past when arguing for plants using natural uranium and heavy water. The paper documents how autarkic arguments were superseded by nostalgic sentiments, and how-subsequently-historians have come to perpetuate apologetic parables like 'Swedish line' and 'tradition', respectively.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "History and Technology",
+        "type": "journal",
+        "issn": [
+          "0734-1512",
+          "1477-2620"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Twentieth Century Scientific Developments",
+        "Research, Science, and Academia",
+        "American Environmental and Regional History"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W2276050444"
+    },
+    {
+      "openalex_id": "W2538623945",
+      "doi": "10.1080/18377122.2016.1233803",
+      "title": "Invented tradition and how physical education curricula in the Australian Capital Territory has resisted Indigenous mention",
+      "authors": [
+        {
+          "name": "John Williams",
+          "openalex_id": "A5083147834",
+          "orcid": "https://orcid.org/0000-0002-3625-7487",
+          "institutions": [
+            "University of Canberra"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-09-01",
+      "abstract": "This article reports how 'invented tradition' [Hobsbawm, E. (2012), Introduction: Inventing traditions. In E. Hobsbawm & T. Ranger (Eds.), The invention of tradition (pp. 1\u201314). New York, NY: Cambridge University Press] as a long-term process has contributed to Indigenous students experiencing physical education (PE) within Eurocentric curricula that largely ignores their own culture. The study was undertaken at three high schools within the Australian Capital Territory (ACT) which come under the remit of the ACT Education and Training Directorate. Documentary evidence was the main data source and figurational sociology was used to inform the study and analyse the data. Central to figurational sociology is the notion of the figuration which refers to how individuals are located interdependently in social structures characterised by relationships of power. Historical and contemporary documents were analysed using content and thematic analysis according to the premise that the document writers are themselves included in figurations and their inclusion or presence has to be taken into account [Dolan, P. (2009), Using documents: A figurational approach. In J. Hogan, P. Dolan, & P. Donnelly (Eds.), Approaches to qualitative research: Theory and its practical application (pp. 185\u2013208). Cork: Oak Trees Press]. The paper identifies key events and long-term processes mainly linked to Australia's colonial past that have shaped contemporary PE curricula. Despite intent within historical PE curricula to include Indigenous perspectives in PE these have largely not translated to actual teaching. The final part of the paper suggests additional research to find ways to embed these perspectives. This is important because current curriculum requirements at a national level emphasise these perspectives.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Asia-Pacific Journal of Health Sport and Physical Education",
+        "type": "journal",
+        "issn": [
+          "1837-7122",
+          "1837-7130"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Physical Education and Pedagogy",
+        "Sport and Mega-Event Impacts",
+        "Sports, Gender, and Society"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2538623945"
+    },
+    {
+      "openalex_id": "W4296903165",
+      "doi": "10.1016/j.cities.2022.103985",
+      "title": "Invented traditions in Surakarta after decentralisation",
+      "authors": [
+        {
+          "name": "Ofita Purwani",
+          "openalex_id": "A5017198033",
+          "orcid": "https://orcid.org/0000-0001-8448-998X",
+          "institutions": [
+            "Sebelas Maret University"
+          ]
+        },
+        {
+          "name": "Ogif Ratunar Rahmatulloh",
+          "openalex_id": "A5036854078",
+          "orcid": "https://orcid.org/0000-0002-3629-830X",
+          "institutions": [
+            "Film Independent"
+          ]
+        },
+        {
+          "name": "Paramita Rahayu",
+          "openalex_id": "A5045137319",
+          "orcid": "https://orcid.org/0000-0002-5204-9469",
+          "institutions": [
+            "Sebelas Maret University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-22",
+      "abstract": null,
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Cities",
+        "type": "journal",
+        "issn": [
+          "0264-2751",
+          "1873-6084"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Community-based Tourism Development and Sustainability",
+        "Cultural Heritage Management and Preservation",
+        "Diverse Aspects of Tourism Research"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W4296903165"
+    },
+    {
+      "openalex_id": "W2810422208",
+      "doi": "10.1177/0888325417747969",
+      "title": "Between History and Religion: The New Russian Martyrdom as an Invented Tradition",
+      "authors": [
+        {
+          "name": "Zuzanna Bogumi\u0142",
+          "openalex_id": "A5050012117",
+          "orcid": "https://orcid.org/0000-0002-6774-7235",
+          "institutions": [
+            "Maria Grzegorzewska Academy of Special Education"
+          ]
+        },
+        {
+          "name": "Marta \u0141ukaszewicz",
+          "openalex_id": "A5031024394",
+          "orcid": "https://orcid.org/0000-0002-0697-1970",
+          "institutions": [
+            "University of Warsaw"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-25",
+      "abstract": "This article is part of the special cluster titled Social practices of remembering and forgetting of the communist past in Central and Eastern Europe, guest edited by Malgorzata Glowacka-Grajper In the year 2000, during the Council of Bishops of the Russian Orthodox Church, more than one thousand victims of Soviet repressions\u2014people persecuted and murdered by the Soviet regime\u2014were glorified and named the New Russian Martyrs. By presenting the origin and background of the phenomenon, authors demonstrate that the New Martyrdom is a kind of invented tradition. They focus on analysis of the tension that occurs when history becomes religion by highlighting some problematic issues with regard to the New Martyrdom and showing how the Russian Orthodox Church is addressing them. The analysis sheds new light on the political use of religion for the creation of narrative about the past in contemporary Russia.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "East European Politics and Societies and Cultures",
+        "type": "journal",
+        "issn": [
+          "0888-3254",
+          "1533-8371"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "Balkans: History, Politics, Society",
+        "Religious Tourism and Spaces"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2810422208"
+    },
+    {
+      "openalex_id": "W2804112726",
+      "doi": null,
+      "title": "National Identity and Invented Tradition: The Rehabilitation of Traditional Medicine in Post-Soviet Uzbekistan",
+      "authors": [
+        {
+          "name": "Sophie Hohmann",
+          "openalex_id": "A5010988145",
+          "orcid": "https://orcid.org/0000-0001-6430-4191",
+          "institutions": [
+            "Institut national d'\u00e9tudes d\u00e9mographiques",
+            "Centre d\u2019\u00e9tudes des Mondes Russe, Caucasien et Centre-Europ\u00e9en"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "International audience",
+      "cited_by_count": 14,
+      "type": "preprint",
+      "source": {
+        "name": "HAL (Le Centre pour la Communication Scientifique Directe)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hal.science/hal-01411313"
+      },
+      "topics": [
+        "Soviet and Russian History",
+        "Central Asia Education and Culture",
+        "Cultural and Sociopolitical Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2804112726"
+    },
+    {
+      "openalex_id": "W2945759412",
+      "doi": "10.1177/0018726719846647",
+      "title": "<i>Human Relations</i> \u2019 invented traditions: Sociotechnical research and worker motivation at the interwar Rowntree Cocoa Works",
+      "authors": [
+        {
+          "name": "Michael Weatherburn",
+          "openalex_id": "A5049250462",
+          "orcid": "https://orcid.org/0000-0003-0722-0420",
+          "institutions": [
+            "Imperial College London"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-19",
+      "abstract": "What makes workers work better: social or financial incentives? This important management research question has a long and contested history, with most studies emphasizing the former. Almost all research into this question draws on the Hawthorne studies conducted by Elton Mayo and colleagues in the interwar United States, with the Hawthorne studies even playing a part in the foundation of the Tavistock Institute and its journal Human Relations in 1947. As this article reveals, the allegedly-unique nature of the Hawthorne studies is an invented tradition deeply embedded in the human relations field to this day. To explode this invented tradition, this article uses previously unstudied historical sources to recover and examine the long-forgotten Incentives and Contentment (1938) studies, conducted from 1929 onwards by sociologist Clarence Northcott at the Rowntree Cocoa Works in York, UK. In contrast to the Hawthorne studies, the Rowntree management research found that financial incentives were more important than social incentives. This article then charts how fashions in work incentives, the importance of personalities and networks, the relatively weak position of sociology in postwar Britain, and the prestige of American expertise, combined in 1947 to ensure the Tavistock\u2019s founders believed the Hawthorne studies were unique.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "Human Relations",
+        "type": "journal",
+        "issn": [
+          "0018-7267",
+          "1741-282X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management Theory and Practice",
+        "Management and Organizational Studies",
+        "Accounting and Organizational Management"
+      ],
+      "referenced_works_count": 134,
+      "url": "https://openalex.org/W2945759412"
+    },
+    {
+      "openalex_id": "W2583153038",
+      "doi": "10.30965/9783846759691_006",
+      "title": "Re-Inventing Traditions: Connecting Contests in the Hellenistic and Roman World",
+      "authors": [
+        {
+          "name": "Onno M. van Nijf",
+          "openalex_id": "A5103219086",
+          "orcid": "https://orcid.org/0000-0002-6189-842X"
+        },
+        {
+          "name": "Christina Williamson",
+          "openalex_id": "A5076445536",
+          "orcid": "https://orcid.org/0000-0001-5922-1957"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": null,
+      "cited_by_count": 11,
+      "type": "book-chapter",
+      "source": {
+        "name": "Wilhelm Fink eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Antiquity Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2583153038"
+    },
+    {
+      "openalex_id": "W4200071738",
+      "doi": "10.1515/9780824890476",
+      "title": "Invented Traditions in North and South Korea",
+      "authors": [
+        {
+          "name": "Jackson, Andrew David",
+          "openalex_id": ""
+        },
+        {
+          "name": "S\u00eentionean, Codru\u021ba",
+          "openalex_id": ""
+        },
+        {
+          "name": "Breuker, Remco E. 1972-",
+          "openalex_id": ""
+        },
+        {
+          "name": "Saeji, CedarBough",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-30",
+      "abstract": null,
+      "cited_by_count": 7,
+      "type": "book",
+      "source": {
+        "name": "University of Hawaii Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Korean Peninsula Historical and Political Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4200071738"
+    },
+    {
+      "openalex_id": "W2979731627",
+      "doi": "10.1080/13527258.2019.1678054",
+      "title": "Refurbishment, vernacular architecture and invented traditions: the case of the <i>Empordanet</i> (Catalonia)",
+      "authors": [
+        {
+          "name": "M\u00f3nica Alcindor",
+          "openalex_id": "A5011038661",
+          "orcid": "https://orcid.org/0000-0002-4939-0295",
+          "institutions": [
+            "Gallaecia Higher School"
+          ]
+        },
+        {
+          "name": "Daniel Coq\u2010Huelva",
+          "openalex_id": "A5066643888",
+          "orcid": "https://orcid.org/0000-0002-1710-4995",
+          "institutions": [
+            "Universidad de Sevilla"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-11",
+      "abstract": "In the recent past, processes of urbanisation related to gentrification have been observed in some rural areas. This article analyses the role of the rehabilitation of vernacular architecture and mainly addresses social groups with high levels of income in the territorial dynamics of the Empordanet in Catalonia (Spain). This case is particularly relevant for two reasons. On the one hand, the Empordanet is under particularly intense and socially selective pressure because of its proximity to Barcelona. On the other hand, this demand for housing is partially related to the reclamation of a kind of tradition associated with a component of strong regional identity. This article explores the various ways in which tradition is reclaimed, recovered, and reinvented, insisting particularly on agents\u2019 behaviours framed in the broader context of governmentality. This is done through a pluralistic research methodology based on the dialogue between architecture and the social sciences. One of its main conclusions is that the rehabilitation of vernacular rural buildings generates a type of housing completely different from traditional constructions in its conception, functionality, design, materials, and construction processes. Furthermore, rehabilitation is closely associated with the generation of a new form of tradition.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Heritage Studies",
+        "type": "journal",
+        "issn": [
+          "1352-7258",
+          "1470-3610"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://hdl.handle.net/11328/3763"
+      },
+      "topics": [
+        "Rural development and sustainability",
+        "Migration, Aging, and Tourism Studies",
+        "Collaborative and Sustainable Housing Initiatives"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2979731627"
+    },
+    {
+      "openalex_id": "W2039439666",
+      "doi": "10.1016/j.imic.2013.05.001",
+      "title": "The curious case of Marco Polo from Kor\u010dula: An example of invented tradition",
+      "authors": [
+        {
+          "name": "Olga Orli\u0107",
+          "openalex_id": "A5015701154",
+          "orcid": "https://orcid.org/0000-0001-9189-5732",
+          "institutions": [
+            "Institute for Anthropological Research"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-06-01",
+      "abstract": "In this paper the author deals with the claiming of Kor\u010dulan identity for Marco Polo as an invented tradition. According to some, the combination of Kor\u010dulan archive data, Kor\u010dulan family names and some historical facts give the island's inhabitants the opportunity to question Marco Polo's \"Venetian origin\" and attempt to claim that he or his family originated on the island. The author analyzes the attitudes and opinions of local residents concerning the issue and discusses it in the framework of the concept of invented tradition. The contemporary use of Marco Polo name as a symbol for Kor\u010dula Island reveals its great potential for tourism.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Journal of Marine and Island Cultures",
+        "type": "journal",
+        "issn": [
+          "2212-6821"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.1016/j.imic.2013.05.001"
+      },
+      "topics": [
+        "Culinary Culture and Tourism",
+        "Folklore, Mythology, and Literature Studies",
+        "Linguistics and Cultural Studies"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W2039439666"
+    },
+    {
+      "openalex_id": "W3169416760",
+      "doi": "10.1355/9789814620543-009",
+      "title": "7. Inventing Traditions in Fifteenth-Century Vietnam",
+      "authors": [
+        {
+          "name": "Liam C. Kelley",
+          "openalex_id": "A5050434200",
+          "orcid": "https://orcid.org/0000-0002-6770-8535"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-31",
+      "abstract": null,
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": {
+        "name": "ISEAS Publishing eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Vietnamese History and Culture Studies",
+        "Chinese history and philosophy",
+        "Historical Studies and Socio-cultural Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3169416760"
+    },
+    {
+      "openalex_id": "W386464891",
+      "doi": null,
+      "title": "Excluded Ancestors, Inventible Traditions: Essays Toward a More Inclusive History of Anthropology",
+      "authors": [
+        {
+          "name": "Richard Handler",
+          "openalex_id": "A5012796079",
+          "orcid": "https://orcid.org/0000-0002-8742-9533"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-05-13",
+      "abstract": "Seeking to widen anthropological past, and in doing so, invigorate contemporary anthropological practice, this volume focuses on little-known scholars who contributed to anthropological work of their time, such as John William Jackson, members of Hampton Folk-Lore Society, Charlotte Gower Chapman and Lucie Varga. Essays on Marius Barbeau and Sol Tax present figures who were centrally located in anthropologies of their day but who are not currently well remembered. A final essay analyses notions of the canon and considers place of a classic ethnographic area, highland New Guinea, in anthropological canon-formation. The essays illustrate different processes of inclusion and exclusion in history of anthropology. Taken together, their aim is to suggest a larger project of historical recuperation that contemporary anthropologists should find increasingly relevant to both their theoretical and their political concerns.",
+      "cited_by_count": 11,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://ci.nii.ac.jp/ncid/BB27414898"
+      },
+      "topics": [
+        "Pacific and Southeast Asian Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W386464891"
+    },
+    {
+      "openalex_id": "W2954448607",
+      "doi": "10.4324/9780429492471-6",
+      "title": "Inventing tradition and terroir",
+      "authors": [
+        {
+          "name": "Graham Harding",
+          "openalex_id": "A5006686839",
+          "orcid": "https://orcid.org/0000-0001-7714-9151"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-25",
+      "abstract": "In the late nineteenth century, the trade body of Champagne's 'Grande Marque' houses won a series of bitterly fought legal actions that ensured that the producers of the Champagne region had exclusive right to the term 'champagne'. Soon after the final legal victory in 1887, the champagne industry initiated a branding and marketing campaign to change champagne's image from a wine of new money and new immorality into that of a wine sanctified by Dom P\u00e9rignon and produced from an almost paradisiacal terroir. For visitors to the Paris 'Expositions' of 1889 and 1900, the Epernay journalist Raphael Bonnedame wrote a paean to his native district. Quelques mots sur le Vin de Champagne mythologised the wine as embodying the inspirational spirit of a utopian district characterised by beauty, wit and elegance and revitalised the myth of Dom P\u00e9rignon. His work laid the foundations for the cultural terroir that still underpins champagne's brand image. This was the first territorial brand of the modern era and while the fundamental marketing strategies of modern champagne were created in London in the mid-nineteenth century, the brand image showcased by the websites of today was inspired by a journalist of genius in the late nineteenth century.",
+      "cited_by_count": 4,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2954448607"
+    },
+    {
+      "openalex_id": "W1884240452",
+      "doi": "10.1111/nana.12052",
+      "title": "Articulating national identity in <scp>T</scp>urkmenistan: inventing tradition through myth, cult and language",
+      "authors": [
+        {
+          "name": "Victoria Clement",
+          "openalex_id": "A5075321651",
+          "institutions": [
+            "Naval Postgraduate School"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-06-15",
+      "abstract": "Abstract A study of myth, cult, and language as tools of state power, this paper analyzes ways national identity was constructed and articulated in one state. When T \u00fcrkmenistan became independent in 1991 its first president, S aparmyrat N y\u00fdazow, promoted himself as the \u2018savior\u2019 of the nation by reconceptualising what it meant to be T \u00fcrkmen. Myth, public texts and language policy were used to construct this identity. While they were the targets of the state's cultural products, T \u00fcrkmen citizens contributed to the processes of cultural production. N y\u00fdazow legitimised his authoritarian leadership, first by co\u2010opting T \u00fcrkmen citizens to support his regime, and then by coercing them as participants in his personality cult. The paper concludes that N y\u00fdazow used the production of culture, \u2018invented tradition\u2019 in Hobsbawm's sense, to bolster his agenda and further his own power. It also argues that the exaggerated cult of personality Ny\u00fdazow cultivated limited his achievements, rather than solidifying them.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Nations and Nationalism",
+        "type": "journal",
+        "issn": [
+          "1345-5078",
+          "1354-5078",
+          "1469-8129"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Turkey's Politics and Society",
+        "Soviet and Russian History",
+        "Balkans: History, Politics, Society"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W1884240452"
+    },
+    {
+      "openalex_id": "W2287346513",
+      "doi": null,
+      "title": "Recycled Heroes, Invented Tradition and Transformed Identity",
+      "authors": [
+        {
+          "name": "Yingshan Guo",
+          "openalex_id": "A5080979992",
+          "orcid": "https://orcid.org/0009-0001-0745-9901"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "The recent resurgence of interest in the People's Republic of China (PRC) in the story of the King of Qin, later the First Emperor (Qin Shihuang, 259-210 BeE) after China was united, is quite remarkable. In the last decade alone, he has been the subject of at least three films, two mUlti-episode TV dramas and a documentary film, in addition to numerous books and websites, which have involved large numbers of Qin Shihuang enthusiasts in the Chinese diaspora as well as some of China's most prominent writers, filmmakers, directors and actors. Zhang Yimou' s Hero stands out from this genre not only because it was the most expensive Chinese blockbuster before Chen Kaige' s The Promize (Wu ji, 2005) and China's No.1 boxoffice success, but also because it has been one of the most controversial films in recent years (Guo, 2003).",
+      "cited_by_count": 6,
+      "type": "book-chapter",
+      "source": {
+        "name": "Open Publications Of UTS Scholars (University of Technology Sydney)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "World Wars: History, Literature, and Impact",
+        "Anthropological Studies and Insights",
+        "Irish and British Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2287346513"
+    },
+    {
+      "openalex_id": "W2792941713",
+      "doi": "10.1123/ijsc.2017-0094",
+      "title": "The Wimbledon Championships, the All England Lawn Tennis Club, and \u201cInvented Traditions\u201d",
+      "authors": [
+        {
+          "name": "Robert J. Lake",
+          "openalex_id": "A5041905145",
+          "orcid": "https://orcid.org/0000-0003-0219-3718",
+          "institutions": [
+            "Douglas College"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-03-01",
+      "abstract": "The Wimbledon Championships, staged annually at the All England Lawn Tennis Club (AELTC), is a British sporting event of great social significance. Its popularity stretches beyond the high standards of tennis on display to what it seems to represent culturally for many people. Wimbledon\u2019s public image has been carefully constructed over the years, with consideration given to how the players look, behave, and play; the appearance of the courts and AELTC grounds; the refreshments; its corporate partners; and its relationship to television and media generally. This study suggests that many of these aspects, including Wimbledon\u2019s fashions and the all-whites clothing rule, the grass courts, the strawberries and cream and Pimm\u2019s, the royal box, \u201cHenman Hill,\u201c and the eulogizing of Fred Perry, conform to Eric Hobsbawm\u2019s concept of \u201cinvented traditions.\u201d Through analysis of Wimbledon\u2019s subtle branding and constructed public image, as gleaned from testimonies from AELTC executive-committee members and high-profile Wimbledon officials, this article discusses how these invented traditions serve various functions for the AELTC, namely, to establish social cohesion among an \u201cimagined community\u201d of Wimbledon fans, to legitimize Wimbledon\u2019s high status globally, and to inculcate beliefs, value systems, and behavioral conventions in tandem with Wimbledon\u2019s nostalgia for its amateur \u201cgolden age.\u201d",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Sport Communication",
+        "type": "journal",
+        "issn": [
+          "1936-3907",
+          "1936-3915"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Sport and Mega-Event Impacts",
+        "Sports, Gender, and Society",
+        "American Sports and Literature"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W2792941713"
+    },
+    {
+      "openalex_id": "W2484857950",
+      "doi": "10.1177/0146107916655288",
+      "title": "Inventing Tradition in Thessalonica: The Appropriation of the Past in 1 Thessalonians 2:14\u201316",
+      "authors": [
+        {
+          "name": "Sarah E. Rollens",
+          "openalex_id": "A5011587286",
+          "orcid": "https://orcid.org/0000-0002-0925-3907",
+          "institutions": [
+            "Rhodes College"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-07-25",
+      "abstract": "The socio-ethnic constitution of the Thessalonian ekklesia is notoriously difficult to pin down, but one consistently argued position is that the group was comprised largely of Gentiles. The only passage that presents a problem for this theory is 1 Thessalonians 2:14\u201316. Rather than focus on philological and theological issues to identify whether this passage is \u201cPauline\u201d or not, this article treats 1 Thessalonians 2:14\u201316 as an \u201cinvented tradition\u201d (\u00e0 la Eric Hobsbawm and Terence Ranger) whic links the social experience of the Thessalonians to the nascent ekklesia in Judaea. Instead of acting as a mouthpiece for Paul's theology concerning Jews, the point of this passage may instead be to invent a coherent \u201cpast\u201d for the Thessalonians, who may have had few other social features in common upon which to base their group identity. By appropriating an \u201calready in place\u201d framework for identity (Deuteronomistic theology) and by connecting the Thessalonians' experience to both the ekklesia in Jerusalem, as well as to past prophets, 1 Thess 2:14\u201316 attaches the Thessalonians to an identity that extends beyond their local group.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Biblical Theology Bulletin Journal of Bible and Culture",
+        "type": "journal",
+        "issn": [
+          "0146-1079",
+          "1945-7596"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Biblical Studies and Interpretation",
+        "Archaeology and Historical Studies",
+        "Historical and Linguistic Studies"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2484857950"
+    },
+    {
+      "openalex_id": "W2500723714",
+      "doi": "10.1057/9780230320819_6",
+      "title": "Baseball, Invented Tradition, and Nationalistic Spirit",
+      "authors": [
+        {
+          "name": "Gerald R. Gems",
+          "openalex_id": "A5041843747"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-01",
+      "abstract": "On April 14, 1910, President William Howard Taft threw a baseball from his seat to a player on the field to commence the opening of the professional baseball season in the United States. In doing so, Taft began an invented tradition, a yearly ritual that symbolized the merger of sport, politics, and nationalism, a process that had been under way for more than half a century. The act gave sanction to baseball as the national game, a wholesome activity, and a utilitarian pastime that extolled American beliefs and virtues.1KeywordsAmerican HistoryMajor League BaseballBaseball PlayerNational LeagueBaseball GameThese keywords were added by machine and not by the authors. This process is experimental and the keywords may be updated as the learning algorithm improves.",
+      "cited_by_count": 3,
+      "type": "book-chapter",
+      "source": {
+        "name": "Palgrave Macmillan UK eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "American Sports and Literature",
+        "Sports, Gender, and Society",
+        "Sport and Mega-Event Impacts"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W2500723714"
+    },
+    {
+      "openalex_id": "W2735265481",
+      "doi": null,
+      "title": "Reconstructing tradition. The Debate on \u201cInvented Tradition\u201d in the Japanese Modernization",
+      "authors": [
+        {
+          "name": "I Farkas",
+          "openalex_id": "A5050746365",
+          "orcid": "https://orcid.org/0000-0001-5195-6000"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "Several scholarly works on Japan explain the specific phenomena of the 19th century Japanese modernization in terms of Japanese tradition and culture. Against this, another trend (based on mainly postmodern theory) denies the validity of these explanations, citing the theory of \u201cinvented tradition\u201d. This paper tries to add some thoughts to this debate, examining the concept of tradition in Japanese modernization. The second part of the article tries to demonstrate the utilization (\u201creconstruction\u201d \u2013 by Eisenstadt) of tradition with a specific moment of the Japanese modernization: the founding of the modern state in 1868.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Repository of the Academy's Library (Library of the Hungarian Academy of Sciences)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://real.mtak.hu/46467/1/farkas_Acta_Asiatica_Varsoviensia_29.pdf"
+      },
+      "topics": [
+        "Japanese History and Culture",
+        "Chinese history and philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2735265481"
+    },
+    {
+      "openalex_id": "W2466957315",
+      "doi": "10.5465/ambpp.2015.24",
+      "title": "The Case Method as Invented Tradition: Revisiting Harvard's History to Reorient Management Education",
+      "authors": [
+        {
+          "name": "Todd Bridgman",
+          "openalex_id": "A5014997761",
+          "orcid": "https://orcid.org/0000-0003-3120-0075"
+        },
+        {
+          "name": "Stephen Cummings",
+          "openalex_id": "A5024151703",
+          "orcid": "https://orcid.org/0000-0001-5298-2075",
+          "institutions": [
+            "Victoria School of Management"
+          ]
+        },
+        {
+          "name": "Colm McLaughlin",
+          "openalex_id": "A5068187174",
+          "orcid": "https://orcid.org/0000-0003-1479-6268",
+          "institutions": [
+            "University College Dublin"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "One of the most enduring features in business education is the case method of teaching. The case method\u2019s popularity dovetails with a conviction that business education is a training in taking action to solve business problems. In recent years, however, following corporate scandals and the Global Financial Crisis, attention has focused on the shortcomings of today\u2019s business school graduates, with the case method seen as contributing to a narrow, instrumental, amoral, managerial perspective on business. Subsequently, there has emerged a binary dichotomy of those for and those against the case method, with much heated, circular debate but little in the way of progress. By looking deeper into the complexities surrounding the emergence of the case method at Harvard and how the case method could have evolved differently from this point, we can move the debate to a new level: a focus not on the pros and cons of what the case method is, but on what it could be.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Academy of Management Proceedings",
+        "type": "journal",
+        "issn": [
+          "2151-6561"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://journals.aom.org/doi/pdf/10.5465/ambpp.2015.24"
+      },
+      "topics": [
+        "Management and Marketing Education",
+        "Ethics in Business and Education",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2466957315"
+    },
+    {
+      "openalex_id": "W58252593",
+      "doi": "10.1007/978-3-319-11719-5_4",
+      "title": "Inventing Traditions, Raising Expectations. Recent Debates on \u201cPersonalized Medicine\u201d",
+      "authors": [
+        {
+          "name": "Susanne Michl",
+          "openalex_id": "A5067806557",
+          "orcid": "https://orcid.org/0000-0001-8387-2434",
+          "institutions": [
+            "University Medical Center of the Johannes Gutenberg University Mainz",
+            "Johannes Gutenberg University Mainz"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": null,
+      "cited_by_count": 4,
+      "type": "book-chapter",
+      "source": {
+        "name": "Advances in predictive, preventive and personalised medicine",
+        "type": "book series",
+        "issn": [
+          "2211-3495",
+          "2211-3509"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Mental Health and Psychiatry",
+        "Nutrition, Genetics, and Disease",
+        "BRCA gene mutations in cancer"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W58252593"
+    },
+    {
+      "openalex_id": "W2316569722",
+      "doi": "10.1177/110330881202000404",
+      "title": "Youth and Politics in Democratic Argentina: Inventing Traditions, Creating New Trends (1983\u20132008)",
+      "authors": [
+        {
+          "name": "Mariana Chaves",
+          "openalex_id": "A5001684594",
+          "orcid": "https://orcid.org/0000-0001-8715-9468",
+          "institutions": [
+            "Facultad Latinoamericana de Ciencias Sociales"
+          ]
+        },
+        {
+          "name": "Pedro N\u00fa\u00f1ez",
+          "openalex_id": "A5024600627",
+          "orcid": "https://orcid.org/0000-0003-2187-253X",
+          "institutions": [
+            "Facultad Latinoamericana de Ciencias Sociales"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-11-01",
+      "abstract": "This article has three objectives. First, to present the trajectories of youth studies, in particular about youth and politics, in Argentina from 1983 to 2008. This section is the centre of the article and it is organized in three axes, we will first show the link between the historical context and the possibility of research on youth, both for their appearance as objects of study and for the development of social sciences in Argentina. Then we will detail this background that constitutes what we call \u2018the invention of tradition\u2019, and we will pass on to a characterization of current tendencies in the field of youth studies and politics. The second objective is to present through a case study (participation in secondary schools) some discussions regarding the link between youth and politics. Finally, we will discuss youth and politics as an academic and societal preoccupation in the light of the aforementioned processes.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Young",
+        "type": "journal",
+        "issn": [
+          "1103-3088",
+          "1741-3222"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Latin American socio-political dynamics",
+        "Youth Culture and Social Dynamics",
+        "Youth, Politics, and Society"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W2316569722"
+    },
+    {
+      "openalex_id": "W2249938018",
+      "doi": null,
+      "title": "The Diadochi, invented tradition and Alexander's expedition to Siwah",
+      "authors": [
+        {
+          "name": "Timothy Howe",
+          "openalex_id": "A5078509540",
+          "orcid": "https://orcid.org/0000-0001-6878-3062"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-01",
+      "abstract": null,
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Dialnet (Universidad de la Rioja)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ancient Near East History",
+        "Ancient Egypt and Archaeology",
+        "Historical, Religious, and Philosophical Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2249938018"
+    },
+    {
+      "openalex_id": "W3027698484",
+      "doi": null,
+      "title": "Buddhist Modernities : re-inventing tradition in the globalizing modern world",
+      "authors": [
+        {
+          "name": "blank blank",
+          "openalex_id": "A5038496409"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": null,
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Bucknell Digital Commons (Bucknell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Japanese History and Culture",
+        "Chinese history and philosophy",
+        "Indian and Buddhist Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3027698484"
+    },
+    {
+      "openalex_id": "W4313902574",
+      "doi": "10.1590/2175-7860202273094",
+      "title": "Allegory of the palma mater: an invented tradition",
+      "authors": [
+        {
+          "name": "Marcos Gonz\u00e1lez",
+          "openalex_id": "A5101853293",
+          "orcid": "https://orcid.org/0000-0002-2004-353X",
+          "institutions": [
+            "Instituto de Pesquisas Jardim Bot\u00e2nico do Rio de Janeiro"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "Abstract Some actions made by the botanist Jo\u00e3o Barbosa Rodrigues, during his term as director of the Jardim Bot\u00e2nico do Rio de Janeiro (1890-1909), indicate an exaltation of the Brazilian Monarchy. In the history of the institution published in Hortus fluminensis (1894), Rodrigues described a scene in which the regent prince John VI, when solemnly founding the garden in 1809, would have planted an imperial palm with his own hands, a specimen known as palma mater. The period was full of political tension, due to the sudden change of government with the Proclamation of the Republic, on November, 15, 1889. In this article we discuss whether the name of Rodrigues was a consensus for director of the garden. Although he was recognized in Brazil and abroad as an important Brazilian scientist, he was a steadfast Monarchist. In this context, we present a critical analysis of the discourse involving the palma mater. The results suggest this discourse is historically unlikely, leading us to believe it is the case of an \u2018invented tradition\u2019 by the new director, expressed as an allegory with political goal. Other studies are necessary to better understand his goals, his interlocutors and possible reactions provoked by such manifestation.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Rodrigu\u00e9sia",
+        "type": "journal",
+        "issn": [
+          "0370-6583",
+          "2175-7860"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.scielo.br/j/rod/a/3q3W5RkNMtJPHJM8R6N6bXQ/?lang=en&format=pdf"
+      },
+      "topics": [
+        "History of Medicine and Tropical Health",
+        "Phytochemistry Medicinal Plant Applications",
+        "Plant and animal studies"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W4313902574"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

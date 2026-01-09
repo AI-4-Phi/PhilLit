@@ -1,0 +1,663 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "communitarianism",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/communitarianism/",
+      "entry_name": "communitarianism",
+      "title": "Communitarianism",
+      "preamble": "Communitarianism is the idea that human identities are largely shaped\nby different kinds of constitutive communities (or social relations)\nand that this conception of human nature should inform our moral and\npolitical judgments as well as policies and institutions. We live most\nof our lives in communities, similar to lions who live in social\ngroups rather than individualistic tigers who live alone most of the\ntime. Those communities shape, and ought to shape, our moral and\npolitical judgments and we have a strong obligation to support and\nnourish the particular communities that provide meaning for our lives,\nwithout which we\u2019d be disoriented, deeply lonely, and incapable\nof informed moral and political judgment. Communitarian ideas have a long history, in the West, China, and\nelsewhere, but modern-day communitarianism began in the upper reaches\nof Anglo-American academia in the form of a critical reaction to John\nRawls\u2019 landmark 1971 book A Theory of Justice (Rawls\n1971). Drawing primarily upon the insights of Aristotle and Hegel,\npolitical philosophers such as Alasdair MacIntyre, Michael Sandel,\nCharles Taylor and Michael Walzer disputed Rawls\u2019 assumption\nthat the principal task of government is to secure and distribute\nfairly the liberties and economic resources individuals need to lead\nfreely chosen lives. These critics of liberal theory never did\nidentify themselves with the communitarian movement (the communitarian\nlabel was pinned on them by others, usually\n critics), [ 1 ] much less offer a grand communitarian theory as a systematic\nalternative to liberalism. Nonetheless, certain core arguments meant\nto contrast with liberalism\u2019s devaluation of community recur in\nthe works of the four theorists named above (Avineri & de-Shalit\n1992, Bell 1993, Berten et al . 1997, Mulhall & Swift\n1996, and Rasmussen 1990), and for purposes of clarity one can\ndistinguish between claims of three sorts: methodological claims about\nthe importance of tradition and social context for moral and political\nreasoning, ontological or metaphysical claims about the social nature\nof the self, and normative claims about the value of\n community. [ 2 ] This essay is therefore divided in three parts, and for each part I\npresent the main communitarian claims, followed by an argument (in\neach part) that philosophical concerns in the 1980s have largely given\nway to the political concerns that motivated much of the communitarian\ncritique in the first place.",
+      "bibliography": [
+        {
+          "raw": "An-Naim, A., 1992, \u201cToward a Cross-Cultural Approach to\nDefining International Standards of Human Rights: The Meaning of\nCruel, Inhuman, or Degrading Treatment or Punishment\u201d, in Human Rights in Cross-Cultural Perspectives: A Quest for\nConsensus , A. An-Naim (ed.), Philadelphia: University of\nPennsylvania Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Avineri, S., and de-Shalit, A., (eds), 1992, Communitarianism\nand Individualism , Oxford: Clarendon Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bai, T., 2019, Against Political Equality: The Confucian\nCase , Princeton: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Barry, B., 1995, Justice as Impartiality , Oxford:\nClarendon Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bell, D., 2015, The China Model: Political Meritocracy and the\nLimits of Democracy , Princeton: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008, China\u2019s New Confucianism:\nPolitics and Everyday Life in a Changing Society , Princeton:\nPrinceton University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u2013\u2013\u2013, 2008, China\u2019s New Confucianism:\nPolitics and Everyday Life in a Changing Society , Princeton:\nPrinceton University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006, Beyond Liberal Democracy:\nPolitical Thinking for an East Asian Context , Princeton:\nPrinceton University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006, Beyond Liberal Democracy:\nPolitical Thinking for an East Asian Context , Princeton:\nPrinceton University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2000, East Meets West: Human Rights and\nDemocracy in East Asia , Princeton: Princeton University\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2000",
+            "title": "\u2013\u2013\u2013, 2000, East Meets West: Human Rights and\nDemocracy in East Asia , Princeton: Princeton University\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1995, \u201cA Communitarian Critique of\nAuthoritarianism\u201d, Society , 32(5): 38\u201343.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1995",
+            "title": "\u2013\u2013\u2013, 1995, \u201cA Communitarian Critique of\nAuthoritarianism\u201d, Society , 32(5): 38\u201343."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1993, Communitarianism and Its\nCritics , Oxford: Clarendon Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1993",
+            "title": "\u2013\u2013\u2013, 1993, Communitarianism and Its\nCritics , Oxford: Clarendon Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Bell, D., and de-Shalit, A., 2011, The Spirit of Cities: Why\nthe Identity of a City Matters in a Global Age , Princeton:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bell, D. and Wang, P., 2020, Just Hierarchy: Why Social\nHierarchies Matter in China and the Rest of the World , Princeton:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bellah, R., et al ., 1985, Habits of the Heart ,\nBerkeley: University of California Press.",
+          "parsed": {
+            "authors": [
+              "Bellah, R., et al ."
+            ],
+            "year": "1985",
+            "title": "Habits of the Heart ",
+            "publisher": "Berkeley: University of California Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Benhabib, S., 1992, Situating the Self: Gender, Community and\nPostmodernism in Contemporary Ethics , Cambridge: Polity\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Berten, A., da Silveira, P., and Pourtois, H., (eds), 1997, Liberaux et Communautariens , Paris: Presses Universitaires de\nFrance.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Billioud, S., and Thoravel, J., 2015, The Sage and the People:\nThe Confucian Revival in China , Oxford: Oxford University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Caney, S., 1992, \u201cLiberalism and Communitarianism: A\nMisconceived Debate\u201d, Political Studies , 40:\n273\u201390.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Chan, J., 2014, Confucian Perfectionism: A Political\nPhilosophy for Modern Times , Princeton: Princeton University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1999, \u201cA Confucian Perspective on\nHuman Rights for Contemporary China\u201d, in The East Asian\nChallenge for Human Rights , J. Bauer and D. Bell (eds.), New\nYork: Cambridge University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1999",
+            "title": "\u2013\u2013\u2013, 1999, \u201cA Confucian Perspective on\nHuman Rights for Contemporary China\u201d, in The East Asian\nChallenge for Human Rights , J. Bauer and D. Bell (eds.), New\nYork: Cambridge University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Chan, S.-Y., 2007, \u201cGender and Relationship Roles in the\nAnalects and the Mencius\u201d, in Confucian Political\nEthics , D. Bell (ed.), Princeton: Princeton University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Chang, K.-S., 2004, \u201cThe Anti-communitarian Family? Everyday\nConditions of Authoritarian Politics in South Korea\u201d, in Communitarian Politics in Asia , Chua Beng-Huat (ed.), London:\nRoutledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Chua, B.-H., 1995, Communitarian Ideology and Democracy in\nSingapore , London: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "de Bary, T.-Wm., 1998, Asian Values and Human Rights: A\nConfucian Communitarian Perspective , Cambridge, MA: Harvard\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Doppelt, G, 1989, \u201cIs Rawls Kantian Liberalism Coherent and\nDefensible?\u201d, Ethics , 99(4): 815\u2013851.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dworkin, R., 1989, \u201cLiberal Community\u201d, California\nLaw Review , 77: 479\u2013504.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ehrenhalt, A., 1999, \u201cCommunity and the Corner Store:\nRetrieving Human-Scale Commerce\u201d, The Responsive\nCommunity , 9(4): 30\u201339.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Etzioni, A., 2001, The Monochrome Society , Princeton:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1998, The Essential Communitarian\nReader , Lanham: Rowman & Littlefield.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1998",
+            "title": "\u2013\u2013\u2013, 1998, The Essential Communitarian\nReader , Lanham: Rowman & Littlefield."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1996, The New Golden Rule , New\nYork: Basic Books.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1996",
+            "title": "\u2013\u2013\u2013, 1996, The New Golden Rule , New\nYork: Basic Books."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1995a, New Communitarian Thinking ,\nCharlottesville: University of Virginia Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1995",
+            "title": "\u2013\u2013\u2013, 1995a, New Communitarian Thinking ,\nCharlottesville: University of Virginia Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1995b, Rights and the Common Good: The\nCommunitarian Perspective , New York: St. Martins Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1995",
+            "title": "\u2013\u2013\u2013, 1995b, Rights and the Common Good: The\nCommunitarian Perspective , New York: St. Martins Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1993, The Spirit of Community , New\nYork: Crown Publishers.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1993",
+            "title": "\u2013\u2013\u2013, 1993, The Spirit of Community , New\nYork: Crown Publishers."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Frazer, E., 1999, The Problems of Communitarian Politics ,\nOxford: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "Frazer, E."
+            ],
+            "year": "1999",
+            "title": "The Problems of Communitarian Politics ",
+            "publisher": "Oxford: Oxford University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Frazer, E., and Lacey, N., 1993, The Politics of Community: A\nfeminist critique of the liberal-communitarian debate , Hemel\nHempstead: Harvester Wheatsheaf.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fukuyama, F., 1992, The End of History and the Last Man ,\nNew York: Free Press.",
+          "parsed": {
+            "authors": [
+              "Fukuyama, F."
+            ],
+            "year": "1992",
+            "title": "The End of History and the Last Man ",
+            "publisher": "New York: Free Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Frug, G., 1999, City Making: Building Communities Without\nBuilding Walls , Princeton: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Glendon, M.-A., 1991, Rights Talk: The Impoverishment of\nPolitical Discourse , New York: The Free Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gutmann, A. (ed.), 1992, Multiculturalism and \u201cThe\nPolitics of Recognition\u201d , Princeton: Princeton University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hahm, Chaihark, 2003, \u201cConstitutionalism, Confucian Civic\nVirtue, and Ritual Propriety\u201d, in Confucianism for the Modern\nWorld, D. Bell and Hahm Chaibong (eds.), New York: Cambridge\nUniversity Press, pp. 31\u201353.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hahm, Chaibong, 2003, \u201cFamily Versus the Individual: The\nPolitics of Marriage Laws in Korea\u201d, in Confucianism for the\nModern World , D. Bell and Hahm Chaibong (eds.), New York:\nCambridge University Press, pp. 334\u2013360.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hammond, K., and J. Richey (eds.), 2015, The Sage Returns:\nConfucian Revival in Contemporary China , Albany: State University\nof New York Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Helgesen, G. 2003, \u201cThe Case for Moral Education\u201d, in Confucianism for the Modern World , D. Bell and Hahm Chaibong\n(eds.), New York: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Inoue, T., 1993, \u201cThe Poverty of Rights-Blind Communality:\nLooking Through the Window of Japan\u201d, Brigham Young\nUniversity Law Review , 1993(2): 517\u2013551.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Jacobs, J., 1965, The Death and Life of American Cities ,\nNew York: Random House.",
+          "parsed": {
+            "authors": [
+              "Jacobs, J."
+            ],
+            "year": "1965",
+            "title": "The Death and Life of American Cities ",
+            "publisher": "New York: Random House"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Jiang, Q., 2012, A Confucian Constitutional Order: How\nChina\u2019s Ancient Past Can Shape Its Political Future ,\nPrinceton: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Krieger, M. 2002, Selznick\u2019s Subjects, in Legality and\nCommunity: On the Intellectual Legacy of Philip Selznick , R.\nKagan/M. Krieger/K.Winston, Lanham: Rowman and Littlefield\nPublishers.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kymlicka, W., 1995, Multicultural Citizenship , Oxford:\nClarendon Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1989, Liberalism, Community and\nCulture , Oxford: Clarendon Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1989",
+            "title": "\u2013\u2013\u2013, 1989, Liberalism, Community and\nCulture , Oxford: Clarendon Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Lefebvre, A., 2024, Liberalism as a Way of Life ,\nPrinceton: Princeton University Press.",
+          "parsed": {
+            "authors": [
+              "Lefebvre, A."
+            ],
+            "year": "2024",
+            "title": "Liberalism as a Way of Life ",
+            "publisher": "Princeton: Princeton University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Macedo, S., 2015, Just Married: Same-Sex Couples, Monogamy,\nand the Future of Marriage , Princeton: Princeton University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2000, Diversity and Distrust ,\nCambridge, MA: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2000",
+            "title": "Diversity and Distrust ",
+            "publisher": "Cambridge, MA: Harvard University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1990, Liberal Virtues: Citizenship,\nVirtue and Community in Liberal Constitutionalism , Oxford:\nClarendon Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1990",
+            "title": "\u2013\u2013\u2013, 1990, Liberal Virtues: Citizenship,\nVirtue and Community in Liberal Constitutionalism , Oxford:\nClarendon Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "MacIntyre, A., 1991, \u201cLetter\u201d, in The Responsive\nCommunity , Summer 1991.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1988, Whose Justice? Which\nRationality? , Notre Dame: University of Notre Dame Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1988",
+            "title": "\u2013\u2013\u2013, 1988, Whose Justice? Which\nRationality? , Notre Dame: University of Notre Dame Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1984, After Virtue , Notre-Dame:\nUniversity of Notre Dame Press, 2nd edition.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1984",
+            "title": "\u2013\u2013\u2013, 1984, After Virtue , Notre-Dame:\nUniversity of Notre Dame Press, 2nd edition."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1978, Against the Self-Images of the\nAge , Notre Dame: University of Notre Dame Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1978",
+            "title": "\u2013\u2013\u2013, 1978, Against the Self-Images of the\nAge , Notre Dame: University of Notre Dame Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Mason, A., 2000, Community, Solidarity and Belonging: Levels\nof Community and their Normative Significance , Cambridge:\nCambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "McKenzie, E., 1994, Privatopia , New Haven: Yale\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Miller, D., 2000, Citizenship and National Identity ,\nCambridge: Polity Press.",
+          "parsed": {
+            "authors": [
+              "Miller, D."
+            ],
+            "year": "2000",
+            "title": "Citizenship and National Identity ",
+            "publisher": "Cambridge: Polity Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1995, On Nationality , Oxford:\nClarendon Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1995",
+            "title": "\u2013\u2013\u2013, 1995, On Nationality , Oxford:\nClarendon Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Mo, J., 2003, \u201cThe Challenge of Accountability: Implications\nof the Censorate\u201d, in Confucianism for the Modern World, D. Bell\nand Hahm Chaibong (eds.), New York: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mulhall, S., and Swift, A., 1996, Liberals and\nCommunitarians , Oxford: Blackwell, 2nd edition.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Qiang, L., 1998, Ziyouzhuyi (Liberalism), Beijing: Zhonguo Shehui Kexue Chubanshe .",
+          "parsed": {
+            "authors": [
+              "Qiang, L."
+            ],
+            "year": "1998",
+            "title": "Ziyouzhuyi (Liberalism)",
+            "publisher": "Beijing: Zhonguo Shehui Kexue Chubanshe"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Rawls, J., 1999, The Law of Peoples; with The Idea of Public\nReason Revisited , Cambridge, MA: Harvard University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1993, Political Liberalism , New\nYork: Columbia University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1993",
+            "title": "\u2013\u2013\u2013, 1993, Political Liberalism , New\nYork: Columbia University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1971, A Theory of Justice ,\nCambridge, MA: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1971",
+            "title": "A Theory of Justice ",
+            "publisher": "Cambridge, MA: Harvard University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Rasmussen, D., (ed.), 1990, Universalism vs.\nCommunitarianism , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Reid, T. R., 1999, Confucius Lives Next Door , New York:\nRandom House.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rosenblum, N., 1998, Membership and Morals , Princeton:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sandel, M., 1998, Liberalism and the Limits of Justice ,\nCambridge: Cambridge University Press, 2nd edition.",
+          "parsed": {
+            "authors": [
+              "Sandel, M."
+            ],
+            "year": "1998",
+            "title": "Liberalism and the Limits of Justice ",
+            "publisher": "Cambridge: Cambridge University Press, 2nd edition"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1996, Democracy\u2019s\nDiscontent , Cambridge, MA: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1996",
+            "title": "\u2013\u2013\u2013, 1996, Democracy\u2019s\nDiscontent , Cambridge, MA: Harvard University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1981, Liberalism and the Limits of\nJustice , Cambridge: Cambridge University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1981",
+            "title": "\u2013\u2013\u2013, 1981, Liberalism and the Limits of\nJustice , Cambridge: Cambridge University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Shuman, M. H., 1999, \u201cCommunity Corporations: Engines for a\nNew Place-Based Economics\u201d, The Responsive Community ,\n9(3): 48\u201357.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sun, A., 2013, Confucianism as a World Religion: Contested\nHistories and Contemporary Realities , Princeton: Princeton\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tamir, Y., 1993, Liberal Nationalism , Princeton:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tams, H., 1998, Communitarianism: A New Agenda for Politics\nand Citizenship , Basingstoke: Macmillan.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Taylor, C., 1999, \u201cConditions of an Unforced Consensus on\nHuman Rights\u201d, in The East Asian Challenge for Human\nRights , J. R. Bauer and D. Bell (eds.), New York: Cambridge\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1989, Sources of the Self: The Making\nof the Modern Identity , Cambridge: Cambridge University\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1989",
+            "title": "\u2013\u2013\u2013, 1989, Sources of the Self: The Making\nof the Modern Identity , Cambridge: Cambridge University\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1985, Philosophy and the Human\nSciences: Philosophical Papers 2 , Cambridge: Cambridge University\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1985",
+            "title": "\u2013\u2013\u2013, 1985, Philosophy and the Human\nSciences: Philosophical Papers 2 , Cambridge: Cambridge University\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Waite, L., 1996, \u201cSocial Science Finds: \u2018Marriage\nMatters\u2019\u201d, Twenty-First Century Series in\nCommunitarian Studies , Washington: Institute for Communitarian\nPolicy Studies.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Walzer, M., 1994, Thick and Thin , Notre-Dame: University\nof Notre Dame Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1987, Interpretation and Social\nCriticism , Cambridge, MA: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1987",
+            "title": "\u2013\u2013\u2013, 1987, Interpretation and Social\nCriticism , Cambridge, MA: Harvard University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1983, Spheres of Justice , Oxford:\nBlackwell.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1983",
+            "title": "\u2013\u2013\u2013, 1983, Spheres of Justice , Oxford:\nBlackwell."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Young, I. M., 1990, Justice and the Politics of\nDifference , Princeton: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ],
+      "sections": {
+        "1": {
+          "id": "1",
+          "title": "Universalism Versus Particularism",
+          "content": "Communitarians have sought to deflate the universal pretensions of\nliberal theory. The main target has been Rawls description of the\noriginal position as an \u201cArchimedean point\u201d from which the\nstructure of a social system can be appraised, a position whose\nspecial virtue is that it allows us to regard the human condition\n\u201cfrom the perspective of\n eternity\u201d, [ 3 ] from all social and temporal points of view. Whereas Rawls seemed to\npresent his theory of justice as universally true, communitarians\nargued that the standards of justice must be found in forms of life\nand traditions of particular societies and hence can vary from context\nto context. Alasdair MacIntyre and Charles Taylor argued that moral\nand political judgment will depend on the language of reasons and the\ninterpretive framework within which agents view their world, hence\nthat it makes no sense to begin the political enterprise by\nabstracting from the interpretive dimensions of human beliefs,\npractices, and institutions (Taylor 1985, ch. 1; MacIntyre 1978,\nchs.18\u201322 and 1988, ch.1; Benhabib 1992, pp. 23\u201338, 89n4).\nMichael Walzer developed the additional argument that effective social\ncriticism must derive from and resonate with the habits and traditions\nof actual people living in specific times and places. Even if there is\nnothing problematic about a formal procedure of universalizability\nmeant to yield a determinate set of human goods and values, \u201cany\nsuch set would have to be considered in terms so abstract that they\nwould be of little use in thinking about particular\ndistributions\u201d (Walzer 1983, 8; Young 1990, 4). In short,\nliberals who ask what is just by abstracting from particular social\ncontexts are doomed to philosophical incoherence and liberal theorists\nwho adopt this method to persuade people to do the just thing are\ndoomed to political irrelevance. Rawls has since tried to eliminate the universalist presuppositions\nfrom his theory. In Political Liberalism , (Rawls 1993) he\nargues in a communitarian vein that his conception of the person as\nimpartial citizen provides the best account of liberal-democratic\npolitical culture and that his political aim is only to work out the\nrules for consensus in political communities where people are willing\nto try for consensus. In the Law of Peoples , (Rawls 1999) he\nexplicitly allows for the possibility that liberalism may not be\nexportable at all times and places, sketching a vision of a\n\u201cdecent, well-ordered society\u201d that liberal societies must\ntolerate in the international realm. Such a society, he argues, need\nnot be democratic, but it must be non-aggressive towards other\ncommunities, and internally it must have a \u201ccommon good\nconception of justice\u201d, a \u201creasonable consultation\nhierarchy\u201d, and it must secure basic human rights. Having said\nthat, one still gets the sense that the liberal vision laid out in A Theory of Justice is the best possible political ideal, one\nthat all rational individuals would want if they were able to choose\nbetween the available political alternatives. There may be justifiable\nnon-liberal regimes, but these should be regarded as second best to be\ntolerated and perhaps respected, not idealized or emulated. Other liberal theorists have taken a harder line against communitarian\nconcessions, arguing that liberal theory can and should present itself\nas a universally valid ideal. Brian Barry, for one, opens his widely\ncited book Justice as Impartiality by boldly affirming the\nuniversality of his theory: \u201cI continue to believe in the\npossibility of putting forward a universally valid case in favor of\nliberal egalitarian principles\u201d (Barry 1995, 3). Barry does\nrecognize that a theory of justice must be anchored in substantive\nmoral considerations, but his normative vision appears to be limited\nto the values and practices of liberal Western societies. He seems\ndistinctly uninterested in learning anything worthwhile from\nnon-Western political traditions: for example, his discussion of\nthings Chinese is confined to brief criticisms of the Cultural\nRevolution and the traditional practice of foot-binding. One might\nconsider the reaction to a Chinese intellectual who puts forward a\nuniversal theory of justice that draws on the Chinese political\ntradition for inspiration and completely ignores the history and moral\nargumentation in Western societies, except for brief criticisms of\nslavery and imperialism. Still, it must be conceded that 1980s communitarian theorists were\nless-than-successful at putting forward attractive visions of\nnon-liberal societies. The communitarian case for pluralism for the\nneed to respect and perhaps learn from non-liberal societies that may\nbe as good as, if not better than, the liberal societies of the West\nmay have been unintentionally undermined by their own use of (counter)\nexamples. In After Virtue , Alasdair MacIntyre defended the\nAristotelian ideal of the intimate, reciprocating local community\nbound by shared ends, where people simply assume and fulfill socially\ngiven roles (MacIntyre 1984). But this pre-modern Gemeinschaft\nconception of an all-encompassing community that members\nunreflectively endorse seemed distinctly ill-suited for complex and\nconflict-ridden large-scale industrialized societies. In Spheres\nof Justice , Michael Walzer pointed to the Indian caste system,\n\u201cwhere the social meanings are integrated and\nhierarchical\u201d (Walzer 1983, 313) as an example of a non-liberal\nsociety that may be just according to its own standards. Not\nsurprisingly, few readers were inspired by this example of non-liberal\njustice (not to mention the fact that many contemporary Indian\nthinkers view the caste system as an unfortunate legacy of the past\nthat Indians should strive hard to overcome). In short, this use of\nill-informed examples may have unintentionally reinforced the view\nthat there are few if any justifiable alternatives to liberalism in\nmodern societies. Communitarians could score some theoretical points\nby urging liberal thinkers to be cautious about developing universal\narguments founded exclusively on the moral argumentation and political\nexperience of Western liberal societies, but few thinkers would really\ncontemplate the possibility of non-liberal practices appropriate for\nthe modern world so long as the alternatives to liberalism consisted\nof Golden Ages, caste societies, fascism, or actually-existing\ncommunism. For the communitarian critique of liberal universalism to\nhave any lasting credibility, thinkers need to provide compelling\ncounter-examples to modern-day liberal-democratic regimes and 1980s\ncommunitarians came up short. By the 1990s, fairly abstract methodological disputes over\nuniversalism versus particularism faded from academic prominence, and\nthe debate now centers on the theory and practice of universal human\nrights. This is largely due to the increased political salience of\nhuman rights since the collapse of communism in the former Soviet\nbloc. On the liberal side, the new, more political voices for liberal\nuniversalism have been represented by the likes of Francis Fukuyama,\nwho famously argued that liberal democracy\u2019s triumph over its\nrivals signifies the end of history (Fukuyama 1992). This view also\nrevived (and provoked) the second wave communitarian critique of\nliberal universalism and the debate became much more concrete and\npolitical in orientation. Needless to say, the brief moment of liberal euphoria that followed\nthe collapse of the communism in the Soviet bloc has given way to a\nsober assessment of the difficulties of implementing liberal practices\noutside the Western world. It is now widely recognized that brutal\nethnic warfare, crippling poverty, environmental degradation, and\npervasive corruption, to name some of the more obvious troubles\nafflicting the developing world, pose serious obstacles to the\nsuccessful establishment and consolidation of liberal democratic\npolitical arrangements. But these were seen as unfortunate (hopefully\ntemporary) afflictions that may delay the end of history when liberal\ndemocracy has finally triumphed over its rivals. They were not meant\nto pose a challenge to the ideal of liberal democracy. It was\nwidely assumed that liberal democracy is something that all rational\nindividuals would want if they could get it. The deeper challenge to Western liberal democracy has emerged from the\nEast Asian\n region. [ 4 ] In the 1990s, the debate revolved around the notion of \u201cAsian\nvalues\u201d, a term devised by several Asian officials and their\nsupporters for the purpose of challenging Western-style civil and\npolitical freedoms. Asians, they claim, place special emphasis upon\nfamily and social harmony, with the implication that those in the\nchaotic and crumbling societies of the West should think twice about\nintervening in Asia for the sake of promoting human rights and\ndemocracy. As Singapore\u2019s Lee Kuan Yew put it, Asians have\n\u201clittle doubt that a society with communitarian values where the\ninterests of society take precedence over that of the individual suits\nthem better than the individualism of\n America\u201d. [ 5 ] Such claims attracted international attention primarily because East\nAsian leaders seemed to be presiding over what a U.N. human\ndevelopment report called \u2018the most sustained and widespread\ndevelopment miracle of the twentieth century, perhaps all\n history\u2019. [ 6 ] In 1997\u201398, however, the East Asian miracle seemed to have\ncollapsed. And it looks like Asian values was one casualty of the\ncrisis. The political factors that focused attention on the East Asian\nchallenge remain in place, however. East Asian economies did\neventually recover. China in particular looks set to become an\neconomic and political heavyweight with the power to seriously\nchallenge the hegemony of Western liberal democratic values in\ninternational fora (see Bell 2015). Thus, one hears frequent calls for\ncross-cultural dialogue between the West and the East designed to\nunderstand and perhaps learn from the other side. Failing to take\nseriously East Asian political perspectives risks widening\nmisunderstandings and setting the stage for hostilities that could\nhave been avoided. From a theoretical point of view, however, it must be conceded that\nthe official debate on Asian values has not provided much of a\nchallenge to dominant Western political outlooks. The main problem is\nthat the debate has been led by Asian leaders who seem to be motivated\nprimarily by political considerations, rather than by a sincere desire\nto make a constructive contribution to the debate on universalism\nversus particularism. Thus, it was easy to dismiss\u2014rightly so,\nin most cases\u2014the Asian challenge as nothing but a self-serving\nploy by government leaders to justify their authoritarian rule in the\nface of increasing demands for democracy at home and abroad. Still, it would be a mistake to assume that nothing of theoretical\nsignificance has emerged from East Asia. The debate on Asian values\nhas also prompted critical intellectuals in the region to reflect on\nhow they can locate themselves in a debate on human rights and\ndemocracy in which they had not previously played a substantial part.\nNeither wholly rejecting nor wholly endorsing the values and practices\nordinarily realized through a liberal democratic political regime,\nthese intellectuals are drawing on their own cultural traditions and\nexploring areas of commonality and difference with the West. Though\noften less provocative than the views of their governments in the\nsense that few argue for the wholesale rejection of Western-style\nliberal democracy with an East Asian alternative these unofficial East\nAsian viewpoints may offer more lasting contributions to the debate.\nLet me (briefly) note three relatively persuasive East Asian arguments\nfor cultural particularism that contrast with traditional Western\narguments for liberal universalism (see Bell 2006, ch. 3): In contrast to 1980s communitarian thinkers, East Asian critics of\nliberal universalism have succeeded in pointing to particular\nnon-liberal practices and institutions that may be appropriate for the\ncontemporary world. Some of these may be appropriate only for\nsocieties with a Confucian heritage, others may also offer insights\nfor mitigating the excesses of liberal modernity in the West. What\ncannot be denied is that they have carried forward the debate beyond\nthe implausible alternatives to liberalism offered by 1980s\ncommunitarian thinkers. It is worth emphasizing, however, that contemporary communitarians\nhave not been merely defending parochial attachments to particular\nnon-liberal moralities. Far from arguing that the universalist\ndiscourse on human rights should be entirely displaced with\nparticular, tradition-sensitive political language, they have\ncriticized liberals for not taking universality seriously enough, for\nfailing to do what must be done to make human rights a truly universal\nideal. These communitarians\u2014let us label them the\n\u201ccosmopolitan critics of liberal universalism\u201d\u2014have\nsuggested various means of improving the philosophical coherence and\npolitical appeal of human rights. In fact, there is little debate over the desirability of a core set of\nhuman rights, such as prohibitions against slavery, genocide, murder,\ntorture, prolonged arbitrary detention, and systematic racial\ndiscrimination. These rights have become part of international\ncustomary law, and they are not contested in the public rhetoric of\nthe international arena. Of course many gross violations occur off the\nrecord, and human rights groups such as Amnesty International have the\ntask of exposing the gap between public allegiance to rights and the\nsad reality of ongoing abuse. This is largely practical work, however.\nThere is not much point writing about or deliberating about the\ndesirability of practices that everyone condemns at the level of\nprinciple. But political thinkers and activists around the world can and do take\ndifferent sides on many pressing human rights concerns that fall\noutside what Walzer terms the \u201cminimal and universal moral\ncode\u201d (Walzer 1987, 24; Walzer 1994). This gray area of debate\nincludes criminal law, family law, women\u2019s rights, social and\neconomic rights, the rights of indigenous peoples, and the attempt to\nuniversalize Western-style democratic practices. The question is: how\ncan the current thin list of universal human rights be expanded to\ninclude some of these contested rights? Charles Taylor has put forward the following proposal (Taylor 1999).\nHe imagines a cross-cultural dialogue between representatives of\ndifferent traditions. Rather than argue for the universal validity of\ntheir views, however, he suggests that participants should allow for\nthe possibility that their own beliefs may be mistaken. This way,\nparticipants can learn from each others\u2019 \u201cmoral\nuniverse\u201d. There will come a point, however, when differences\ncannot be reconciled. Taylor explicitly recognizes that different\ngroups, countries, religious communities, and civilizations hold\nincompatible fundamental views on theology, metaphysics, and human\nnature. In response, Taylor argues that a \u201cgenuine, unforced\nconsensus\u201d on human rights norms is possible only if we allow\nfor disagreement on the ultimate justifications of those norms.\nInstead of defending contested foundational values when we encounter\npoints of resistance (and thus condemning the values we do not like in\nother societies), we should try to abstract from those beliefs for the\npurpose of working out an \u201coverlapping consensus\u201d (to\nborrow from Rawls\u2019s 1993 terminology) of human rights norms. As\nTaylor puts it, \u201cwe would agree on the norms while disagreeing\non why they were the right norms, and we would be content to live in\nthis consensus, undisturbed by the differences of profound underlying\nbelief\u201d (Taylor 1999, 124). While Taylor\u2019s proposal moves the debate on universal human\nrights forward, it still faces certain difficulties. For one thing, it\nmay not be realistic to expect that people will be willing to abstract\nfrom the values they care deeply about during the course of a global\ndialogue on human rights. Even if people agree to abstract from\nculturally specific ways of justifying and implementing norms, the\nlikely outcome is a withdrawal to a highly general, abstract realm of\nagreement that fails to resolve actual disputes over contested rights.\nFor example, participants in a cross-cultural dialogue can agree on\nthe right not to be subject to cruel and unusual punishment while\nradically disagreeing upon what this means in practice\u2014a\ncommitted Muslim can argue that theft can justifiably be punished by\namputation of the right\n hand, [ 8 ] whereas a Western liberal will want to label this an example of cruel\nand unusual punishment. As we have seen, the debate on universalism versus particularism has\nmoved from fairly abstract methodological disputes between\nAnglo-American philosophers to relatively concrete international\npolitical disputes between philosophers, social scientists, government\nofficials, and NGO activists. The distinctive communitarian\ncontribution has been to cast doubt on universal theories grounded\nexclusively in the liberal moralities of the Western world, on the\ngrounds that cultural particularity should both make one sensitive to\nthe possibility of justifiable areas of difference between the West\nand the rest and to the need for more cross-cultural dialogue for the\npurpose of improving the current thin human rights regime. Various\ncontributions from East Asia and elsewhere have given some meat to\nthese challenges to liberal universalism. In any case, let us now turn\nto the second main area of controversy between liberals and\ncommunitarians\u2014the debate over the self that has similarly moved\nfrom philosophy to politics."
+        },
+        "2": {
+          "id": "2",
+          "title": "The Debate Over the Self",
+          "content": "Communitarian thinkers in the 1980s such as Michael Sandel and Charles\nTaylor argued that Rawlsian liberalism rests on an overly\nindividualistic conception of the self. Whereas Rawls argues that we\nhave a supreme interest in shaping, pursuing, and revising our own\nlife-plans, he neglects the fact that our selves tend to be defined or\nconstituted by various communal attachments (e.g., ties to the family\nor to a religious tradition) so close to us that they can only be set\naside at great cost, if at all. This insight led to the view that\npolitics should not be concerned solely with securing the conditions\nfor individuals to exercise their powers of autonomous choice, as we\nalso need to sustain and promote the social attachments crucial to our\nsense of well-being and respect, many of which have been involuntarily\npicked up during the course of our upbringing. First, however, let us\nreview the ontological or metaphysical debate over the self that led\nto this political conclusion. In an influential essay titled \u201cAtomism\u201d, Charles Taylor\nobjected to the liberal view that \u201cmen are self-sufficient\noutside of society\u201d. (Taylor 1985, 2000) Instead, Taylor defends\nthe Aristotelian view that \u201cMan is a social animal, indeed a\npolitical animal, because he is not self-sufficient alone, and in an\nimportant sense is not self-sufficient outside a polis\u201d (Taylor\n1985, 190). Moreover, this atomistic view of the self can undermine\nliberal society, because it fails to grasp the extent to which\nliberalism presumes a context where individuals are members of, and\ncommitted to, a society that promotes particular values such as\nfreedom and individual diversity. Fortunately, most people in liberal\nsocieties do not really view themselves as atomistic selves. But do liberal thinkers actually defend the idea that the self is\ncreated ex-nihilo , outside of any social context and that\nhumans can exist (and flourish) independently of all social contexts?\nIn fact, Taylor\u2019s essay was directed at the libertarian thinker\nRobert Nozick. As it turns out, the communitarian critique of the\natomistic self does not apply to Rawlsian liberalism: in Part III of Theory of Justice , Rawls pays close attention to the\npsychological and social conditions that facilitate the formation of\nliberal selves committed to justice (Lefebvre 2024). But few readers\never got to Part III of Rawls\u2019 massive tome, so communitarians\ngot quite a bit of mileage from their critique of liberal atomism.\nThis charge didn\u2019t stick, however. While liberals may not have been arguing that individuals can completely extricate themselves from their social context,\nthe liberal valuation of choice still seemed to suggest an image of a\nsubject who impinges his will on the\n world. [ 9 ] Drawing on the insights of Heidegger and Wittgenstein, communitarians\nargued that this view neglects the extent to which individuals are\nembodied agents in the world. Far from acting in ways designed to\nrealize an autonomously arrived-at life-plan, vast areas of our lives\nare in fact governed by unchosen routines and habits that lie in the\nbackground. More often than not we act in ways specified by our social\nbackground when we walk, dress, play games, speak, and so on without\nhaving formulated any goals or made any choices. It is only when\nthings break down from the normal, everyday, unchosen mode of\nexistence that we think of ourselves as subjects dealing with an\nexternal world, having the experience of formulating various ways of\nexecuting our goals, choosing from among those ways, and accepting\nresponsibility for the outcomes of our actions. In other words,\ntraditional intentionality is introduced at the point that our\nordinary way of coping with things is insufficient. Yet this breakdown\nmode is what we tend to notice, and philosophers have therefore argued\nthat most of our actions are occasioned by processes of reflection.\nLiberals have picked up this mistaken assumption, positing the idea of\na subject who seeks to realize an autonomously arrived-at life-plan,\nlosing sight of the fact that critical reflection upon one\u2019s\nends is nothing more than one possibility that arises when our\nordinary ways of coping with things is insufficient to get things\ndone. Some liberals have replied by recognizing the point that vast areas of\nour lives are governed by unchosen habits and routines, that the\ndeliberate, effortful, choosing subject mode may be the exception\nrather than the rule. They emphasize, however, that the main\njustification for a liberal politics concerned primarily with securing\nthe conditions for individuals to lead autonomous lives rests on the\npossibility and desirability of normative self-determination,\nthat is, on the importance of making choices with respect to things\nthat we value (Doppelt 1989). While it may be true that\ncertain communal practices often, or even mostly, guide our behavior\nbehind our backs, it doesn\u2019t follow that those practices ought\nto be valued, or reflectively endorsed in non-ordinary moments of\nexistence, much less that the government ought somehow to promote\nthese practices. And what liberals care about ultimately is the\nprovision of the rights, powers, and opportunities that individuals\nneed to develop and implement their own conceptions of the good\nlife. This qualified version of the liberal self, however, still seems to\nimply that moral outlooks are, or should be, the product of individual\nchoice. One\u2019s social world, communitarians can reply, provides\nmore than non-moral social practices like table manners and\npronunciation norms\u2014it also provides some sort of orientation in moral space. We cannot make sense of our moral experience\nunless we situate ourselves within this given moral space, within the\nauthoritative moral horizons. What Charles Taylor calls \u201chigher,\nstrongly evaluated goods\u201d (Taylor 1989)\u2014the goods we\nshould feel committed to, those that generate moral obligations on us\nregardless of our actual preferences are not somehow invented by\nindividuals, but rather they are located within the social world which\nprovides one\u2019s framework of the lower and the higher. Thus, the\nliberal ideal of a self who freely invents her own moral outlook, or\nprivate conception of the good, cannot do justice to our actual moral\nexperience. But once again, liberals need not deny the assumption that our social\nworld provides a framework of the higher and the lower nor need it be\npresumed that we must regard our own moral outlook as freely invented.\nWill Kymlicka, for example, explicitly recognizes that things have\nworth for us in so far as they are granted significance by our\nculture, in so far as they fit into a pattern of activities which is\nrecognized by those sharing a certain form of life as a way of leading\na good life (Kymlicka 1989, 166). That one\u2019s social world\nprovides the range of things worth doing, achieving, or being does\nnot, however, undermine the liberal emphasis on autonomy, for there is\nstill substantial room for individual choice to be made within this\nset. The best life is still the one where the individual chooses what is worth doing, achieving, or being, though it\nmay be that this choice has to be made within a certain framework\nwhich is itself unchosen. Communitarians can reply by casting doubt on the view that choice is intrinsically valuable, that a certain moral principle or\ncommunal attachment is more valuable simply because it has been chosen\nfollowing deliberation among alternatives by an individual subject. If\nwe have a highest-order interest in choosing our central projects and\nlife-plans, regardless of what is chosen, it ought to follow that\nthere is something fundamentally wrong with unchosen attachments and\nprojects. But this view violates our actual self-understandings. We\nordinarily think of ourselves, Michael Sandel says, \u201cas members\nof this family or community or nation or people, as bearers of this\nhistory, as sons or daughters of that revolution, as citizens of this\nrepublic\u201d, (Sandel 1981, 179) social attachments that more often\nthan not are involuntarily picked up during the course of our\nupbringing, rational choice having played no role whatsoever. I\ndidn\u2019t choose to love my mother and father, to care about the\nneighborhood in which I grew up, to have special feelings for the\npeople of my country, and it is difficult to understand why anyone\nwould think I have chosen these attachments, or that I ought to have\ndone so. In fact, there may even be something distasteful about\nsomeone who questions the things he or she deeply cares\nabout\u2014certainly no marriage could survive too long if\nfundamental understandings regarding love and trust were constantly\nthrown open for discussion! Nor is it obvious that, say, someone who\nperforms a good deed following prolonged calculation of pros and cons\nis morally superior than a Mother-Teresa type who unreflectively,\nspontaneously acts on behalf of other people\u2019s interests. Liberals can reply that the real issue is not the desirability of\nchoice, but rather the possibility of choice. There may well\nbe some unchosen attachments that need not be critically reflected\nupon and endorsed, and it may even be the case that excessive\ndeliberation about the things we care about can occasionally be\ncounter-productive. But some of our ends may be problematic and that\nis why we have a fundamental interest in being able to question and\nrevise them. Most important is not choosing our own life-plans;\nrather, liberalism founded on the value of self-determination requires\nonly that we be able to critically evaluate our ends if need\nbe , hence that \u201cno end or goal is exempt from possible\nre-examination\u201d (Kymlicka 1989, 52; Dworkin 1989, 489; Macedo\n1990, 247). For example, an oppressed woman has a fundamental interest\nin being able to critically reflect upon traditional understandings of\nwhat it means to be a good wife and mother, and it would be unjust to\nforeclose her freedom to radically revise her plans. This response, however, still leaves open the possibility of a deep\nchallenge to liberal foundations. Perhaps we are able to reexamine\nsome attachments, but the problem for liberalism arises if there are\nothers so fundamental to our identity that they cannot be set aside,\nand that any attempt to do so will result in serious and perhaps\nirreparable psychological damage. In fact, this challenge to\nliberalism would only require that communitarians be able to identify\none end or communal attachment so constitutive of one\u2019s identity\nthat it cannot be revised and rejected. A psychoanalyst, for example,\nmay want to argue that (at least in some cases) it is impossible to\nchoose to shed the attachment one feels for one\u2019s mother, and\nthat an attempt may lead to perverse and unintended consequences. A\nfeminist theorist may point to the mother-child relationship as an\nexample of a constitutive feature of one\u2019s identity and argue\nthat any attempt to deny this fails to be sensitive to women\u2019s\nspecial needs and experiences (Frazer & Lacey 1993, 53\u201360).\nAn anthropologist may argue on the basis of field observations that it\nis impossible for an Inuit person from Canada\u2019s far north to\nsuddenly decide to stop being an Inuit and that the only sensible\nresponse is to recognize and accept this constitutive feature of his\nidentity. Or a gay liberation activist may claim that it is both\nimpossible and undesirable for gays to repress their\nbiologically-given sexual identity. These arguments are not\nimplausible, and they seem to challenge the liberal view that no\nparticular end or commitment should be beyond critical reflection and\nopen to revision. Let us assume, for the sake of argument, that we can identify one\nparticular attachment so deeply-embedded that it is impossible to\nreally bring to conscious awareness and so significant for one\u2019s\nwell-being that an individual can only forsake commitment to its good\nat the cost of being seriously psychologically disturbed. This end is\nbeyond willed change and one loses a commitment to it at the price of\nbeing thrown into a state of disorientation where one is unable to\ntake a stand on many things of significance (Taylor 1989, 26\u20137).\nDoes this really threaten liberal politics? It may, if liberal\npolitics really rests on the liberal self. Fortunately, that is not\nthe case. Rereading some of the communitarian texts from the 1980s,\nthere seems to have been an assumption that once you expose faulty\nfoundations regarding the liberal self, the whole liberal edifice will\ncome tumbling down. The task is to criticize the underlying philosophy\nof the self, win people on your side, and then we can move on to a\nbrand new communitarian society that owes nothing to the liberal\ntradition. This must have been an exhilarating time for would-be\nrevolutionaries, but more level-headed communitarians soon realized\nthat overthrowing liberal rights was never part of the agenda. Even if\nliberals are wrong to deny the existence of constitutive\nends\u2014even if the philosophical justifications for a liberal form\nof social organization founded on the value of reflective choice are\nrotten to the core\u2014there are still many, relatively pragmatic\nreasons for caring about rights in the modern world. To name some of\nthe more obvious benefits, liberal rights often contribute to\nsecurity, political stability and economic modernization. In short, the whole debate about the self appears to have been\nsomewhat misconceived. Liberals were wrong to think they needed to\nprovide iron-clad philosophies of the self to justify liberal\npolitics, and communitarians were wrong to think that challenging\nthose foundations was sufficient to undermine liberal politics. Not\nsurprisingly, both sides soon got tired of debating the pros and cons\nof the liberal self. By the early 1990s, this liberal-communitarian\ndebate over the self had effectively faded from view in Anglo-American\n philosophy. [ 10 ] So what remains of the communitarian conception of the self? What may\nbe distinctive about communitarians is that they are more inclined to\nargue that individuals have a vital interest in leading decent\ncommunal lives, with the political implication that there may be a\nneed to sustain and promote the communal attachments crucial to our\nsense of well-being. This is not necessarily meant to challenge the\nliberal view that some of our communal attachments can be problematic\nand may need to be changed, thus that the state needs to protect our\npowers to shape, pursue, and revise our own life-plans. But our\ninterest in community may occasionally conflict with our other vital\ninterest in leading freely chosen lives, and the communitarian view is\nthat the latter does not automatically trump the former in cases of\nconflict. On the continuum between freedom and community,\ncommunitarians are more inclined to draw the line towards the\nlatter. But these conflicts cannot be resolved in the abstract. Much turns on\nempirical analyses of actual politics\u2014to what extent our\ninterest in community is indeed threatened by excess liberal politics,\nto what extent the state can play a role in remedying the situation,\nto what extent the nourishment of communal ties should be left to\ncivil society, and so on. This is where the political communitarians\nof the last decade have shed some light. Let us now turn to the\npolitics of community, the third major strand of the communitarian\nthought."
+        }
+      }
+    }
+  ],
+  "count": 1,
+  "errors": []
+}
