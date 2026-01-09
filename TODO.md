@@ -6,7 +6,8 @@ Last updated: Jan 9, 2026
 
 ## Pending
 
-- [ ] add a markdown linter (just as we have a bib linter)? One problem: in merging the files, Claude may forget to add empty lines before ## section header. This happened in reviews/tradition-value-breakdown/.
+- [ ] consider adding a markdown linter (just as we have a bib linter)? One problem: in merging the files, Claude may forget to add empty lines before ## section header. This happened in reviews/tradition-value-breakdown/.
+- [ ] Check that the SubagentStop hook filters out the relevant agent correctly. We do it via the sh shell script. But I seem to remember that there is a way to identify/filter subagent names in the hook definitions in the settings.json
 
 ## Done
 
