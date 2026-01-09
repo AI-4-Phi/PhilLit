@@ -218,8 +218,8 @@ WebSearch: "[topic] [author/org] blog/report/whitepaper"
 Use bash background processes (`&`) and `wait` to run searches concurrently:
 
 ```bash
-# Capture absolute review directory path
-REVIEW_DIR="$PWD"
+# Construct absolute path to review directory (substitute project name from prompt)
+REVIEW_DIR="$PWD/reviews/[project-name]"
 
 # Stage 3: Run all API searches in parallel
 python .claude/skills/philosophy-research/scripts/s2_search.py "free will compatibilism" --field Philosophy --year 2015-2025 --limit 30 > "$REVIEW_DIR/s2_results.json" &
@@ -258,8 +258,8 @@ tail -f s2_results.json openalex_results.json arxiv_results.json
 
 **Example: Complete parallel Stage 3**:
 ```bash
-# Capture absolute review directory path
-REVIEW_DIR="$PWD"
+# Construct absolute path to review directory (substitute project name from prompt)
+REVIEW_DIR="$PWD/reviews/[project-name]"
 
 # Launch all Stage 3 searches concurrently
 python .claude/skills/philosophy-research/scripts/s2_search.py "mechanistic interpretability" --field Philosophy --year 2020-2025 --limit 40 > "$REVIEW_DIR/stage3_s2.json" &

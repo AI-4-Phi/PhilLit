@@ -63,3 +63,6 @@ Run tests with: `pytest tests/`
 
 - **Keep the repository lean** — Do not keep files only for reference if the functionality is already documented elsewhere (e.g., in `pyproject.toml`). Remove deprecated files rather than marking them as such.
 - **Single source of truth** — Dependencies in `pyproject.toml`, agent definitions in `.claude/agents/`, skill definitions in `.claude/skills/`. Avoid duplicating information across files.
+- **Simple and concise** — Prefer simple solutions. Keep agent/skill instructions brief and effective. Avoid verbosity.
+- **Verify assumptions empirically** — Test bash patterns and environment behavior in actual subagent context before codifying. Don't assume documentation is accurate.
+- **Cross-platform** — Implementations must work in Claude Code Cloud, Linux, macOS. Use forward slashes in paths.

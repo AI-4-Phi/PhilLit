@@ -4,7 +4,7 @@
 
 **Issue**: Domain researchers create ~30 JSON files in review directories (`reviews/project-name/*.json`) instead of dedicated locations.
 
-**Root Cause**: Agent instructions (`.claude/agents/domain-literature-researcher.md` lines 220-268) use bash redirects with relative paths: `> s2_results.json`. These write to the shell's working directory, which ends up being the review directory.
+**Root Cause**: Agent instructions used `REVIEW_DIR="$PWD"` assuming `$PWD` would be the review directory. But subagent bash starts with `$PWD` at project root, so files were written to project root.
 
 **Impact**: Review directories cluttered with intermediate API response files.
 
@@ -20,12 +20,12 @@ Based on Claude Code documentation review (see "Environment Variable Assessment"
 - ✅ Avoid `rm` command (blocked by security permissions)
 - ✅ Keep files for debugging/transparency
 - ✅ Maintain existing parallel execution pattern
-- ✅ Validated against built-in `$CLAUDE_PROJECT_DIR` alternative (current approach is simpler)
+- ❌ `$CLAUDE_PROJECT_DIR` is empty in bash (not available)
 
-**Pattern**:
+**Pattern** (CORRECTED 2025-01-09):
 ```bash
-# In agent: Use absolute output paths
-REVIEW_DIR="$PWD"  # Capture at start
+# In agent: Construct absolute path from $PWD (project root) + project name from prompt
+REVIEW_DIR="$PWD/reviews/[project-name]"
 python script.py "query" > "$REVIEW_DIR/s2_results.json" &
 
 # In Phase 6: Move JSON files to subfolder
@@ -67,10 +67,10 @@ python .claude/skills/philosophy-research/scripts/search_arxiv.py "moral respons
 wait
 ```
 
-**After**:
+**After** (CORRECTED 2025-01-09):
 ```bash
-# Capture absolute review directory path
-REVIEW_DIR="$PWD"
+# Construct absolute path to review directory (substitute project name from prompt)
+REVIEW_DIR="$PWD/reviews/[project-name]"
 
 # Stage 3: Run all API searches in parallel
 python .claude/skills/philosophy-research/scripts/s2_search.py "free will compatibilism" --field Philosophy --year 2015-2025 --limit 30 > "$REVIEW_DIR/s2_results.json" &
@@ -89,10 +89,10 @@ python .claude/skills/philosophy-research/scripts/search_arxiv.py "explainable A
 wait
 ```
 
-**After**:
+**After** (CORRECTED 2025-01-09):
 ```bash
-# Capture absolute review directory path
-REVIEW_DIR="$PWD"
+# Construct absolute path to review directory (substitute project name from prompt)
+REVIEW_DIR="$PWD/reviews/[project-name]"
 
 # Launch all Stage 3 searches concurrently
 python .claude/skills/philosophy-research/scripts/s2_search.py "mechanistic interpretability" --field Philosophy --year 2020-2025 --limit 40 > "$REVIEW_DIR/stage3_s2.json" &
@@ -138,10 +138,10 @@ mv "reviews/[project-name]/synthesis-section-"*.md "reviews/[project-name]/liter
      - All commands using it execute in a single Bash tool call (via `&` and `wait`)
      - Variables persist within a single bash call (per Claude Code docs)
      - No naming conflicts with built-in `CLAUDE_*` or `ANTHROPIC_*` variables
-   - **Alternative considered**: `$CLAUDE_PROJECT_DIR` (built-in pointing to project root)
-     - Not used because agent would need to construct full path with project name
-     - Current approach (`$PWD`) is simpler since agent cd's to working directory
-     - Both approaches produce absolute paths (meet Claude Code requirements)
+   - **CORRECTED (2025-01-09)**: Subagents do NOT cd to working directory automatically.
+     - `$PWD` in subagent bash is the **project root**, not the review directory
+     - `$CLAUDE_PROJECT_DIR` is **empty** in bash (not available)
+     - Solution: Construct full path as `REVIEW_DIR="$PWD/reviews/[project-name]"`
 
 2. **Remove `2>&1`**
    - Keeps JSON files clean (only stdout content)
@@ -164,10 +164,10 @@ mv "reviews/[project-name]/synthesis-section-"*.md "reviews/[project-name]/liter
 
 **Findings from Claude Code Documentation Review**:
 
-1. **Built-in variables available**:
-   - `$CLAUDE_PROJECT_DIR` — Absolute path to project root (always available)
+1. **Built-in variables** (CORRECTED 2025-01-09):
+   - `$CLAUDE_PROJECT_DIR` — **Empty in bash commands** (only available to hooks, not subagent bash)
+   - `$PWD` — Project root in subagent bash (reliable)
    - `$CLAUDE_ENV_FILE` — SessionStart hook variable for persisting environment vars
-   - `$CLAUDE_CODE_REMOTE` — Indicates web vs. local environment
 
 2. **Bash environment behavior** (critical):
    - Each Bash tool call runs in a fresh shell environment
@@ -180,11 +180,11 @@ mv "reviews/[project-name]/synthesis-section-"*.md "reviews/[project-name]/liter
    - Use SessionStart hooks + `$CLAUDE_ENV_FILE` for cross-command persistence
    - Avoid `cd` when possible; use absolute paths instead
 
-4. **Application to this plan**:
-   - ✅ `REVIEW_DIR="$PWD"` is safe: all usages in same bash call (via `&` and `wait`)
-   - ✅ Produces absolute paths (meets "always use absolute paths" requirement)
-   - ✅ No persistence needed across separate bash calls for this use case
-   - ℹ️ Alternative `$CLAUDE_PROJECT_DIR` available but adds complexity without benefit
+4. **Application to this plan** (CORRECTED 2025-01-09):
+   - ❌ Original `REVIEW_DIR="$PWD"` was **incorrect**: captured project root, not review dir
+   - ✅ Fixed: `REVIEW_DIR="$PWD/reviews/[project-name]"` constructs correct absolute path
+   - ✅ No `cd` needed (avoids cwd mismatch risk per SKILL.md line 260)
+   - ✅ Agent substitutes `[project-name]` from orchestrator prompt
 
 ---
 
@@ -227,18 +227,16 @@ reviews/project-name/
 
 ## Implementation Checklist
 
-- [ ] `.claude/agents/domain-literature-researcher.md` (lines 220-268)
-  - [ ] Add `REVIEW_DIR="$PWD"` before parallel examples
-  - [ ] Change `> file.json 2>&1 &` to `> "$REVIEW_DIR/file.json" &` (2 locations)
-  - [ ] Remove `2>&1` from all redirects
+**Original implementation (commit 01b3ceb, 2025-01-xx)** — had incorrect `$PWD` assumption:
+- [x] `.claude/agents/domain-literature-researcher.md` — added REVIEW_DIR pattern
+- [x] `.claude/skills/literature-review/SKILL.md` — added Phase 6 JSON cleanup
+- [x] Remove `2>&1` from redirects
 
-- [ ] `.claude/skills/literature-review/SKILL.md` (Phase 6, step 3)
-  - [ ] Add `mkdir -p "reviews/[project-name]/intermediate_files/json"`
-  - [ ] Add `mv "reviews/[project-name]"/*.json` line
-  - [ ] Add brief note about JSON archival
+**Correction (2025-01-09)** — fixed incorrect `$PWD` pattern:
+- [x] `.claude/agents/domain-literature-researcher.md` line 222: `REVIEW_DIR="$PWD"` → `REVIEW_DIR="$PWD/reviews/[project-name]"`
+- [x] `.claude/agents/domain-literature-researcher.md` line 262: same fix
 
-- [ ] Test
-  - [ ] Run 1-2 domain review
-  - [ ] Verify JSON in `intermediate_files/json/` after Phase 6
-
-- [ ] Mark TODO.md item complete
+**Pending**:
+- [ ] Test with 1-2 domain review
+- [ ] Verify JSON in `reviews/[project-name]/` during Phase 3
+- [ ] Verify JSON in `intermediate_files/json/` after Phase 6
