@@ -6,11 +6,11 @@ Last updated: Jan 9, 2026
 
 ## Pending
 
-- [ ] literature-researcher skill: clarify location of where to write temporary (JSON) files from python scripts 
 - [ ] add a markdown linter (just as we have a bib linter)? One problem: in merging the files, Claude may forget to add empty lines before ## section header. This happened in reviews/tradition-value-breakdown/.
 
 ## Done
 
+- [x] literature-researcher skill: clarify location of where to write temporary (JSON) files from python scripts 
 - [x] Update the documentation on how to run this skill in the Claude default cloud environment. (Esp. GETTING_STARTED.md). Complication: probably need to give Claude `.env` file. Not sure how to best get API keys into repo non-persistently preferably? Can a user drop `.env` or the keys in the chat? Less good (because adds keys to repo): Fork the repo, make it private, add the `.env` in the repo root.
 - [x] Clean up CLAUDE.md: Don't need all these links to Claude documentation, Claude uses claude-code-guide agent when needed.
 - [x] Have Claude check all the python scripts in philosophy-research/scripts
