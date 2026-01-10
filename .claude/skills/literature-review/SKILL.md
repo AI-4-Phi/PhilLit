@@ -232,12 +232,21 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    Then use **Glob** to find all `synthesis-section-*.md` files (sorted by name). For each file, use the **Read** tool to get its content. Concatenate all content with two blank lines between sections, then use **Edit** to append to `literature-review-final.md`.
 
-2. Aggregate and deduplicate all domain BibTeX files:
+2. Lint the final markdown file:
+
+   ```bash
+   python .claude/skills/literature-review/scripts/lint_md.py \
+     "reviews/[project-name]/literature-review-final.md"
+   ```
+
+   Fix any reported issues before proceeding.
+
+3. Aggregate and deduplicate all domain BibTeX files:
 
    Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-all.bib`:
 
    ```bash
-   python .claude/skills/literature-review/dedupe_bib.py \
+   python .claude/skills/literature-review/scripts/dedupe_bib.py \
      "reviews/[project-name]/literature-all.bib" \
      reviews/[project-name]/literature-domain-*.bib
    ```
@@ -247,7 +256,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    - Upgrade importance level if a later domain assigned higher importance
    - Log which duplicates were removed to console
 
-3. Clean up intermediate files (use absolute paths to avoid cwd issues):
+4. Clean up intermediate files (use absolute paths to avoid cwd issues):
 
    Move JSON API response files to `intermediate_files/json/` for archival (allows debugging while keeping review directory clean):
    ```bash
@@ -280,14 +289,14 @@ reviews/[project-name]/
     └── [other intermediate files, if they exist]
 ```
 
-4. **Report source issues**: If any domain researchers reported source issues (API errors, partial results), output a summary:
+5. **Report source issues**: If any domain researchers reported source issues (API errors, partial results), output a summary:
    ```
    ⚠️ Source issues during literature search:
    - Domain [name]: [source]: [issue]
    ```
    If no issues: omit this message.
 
-5. **Optional: Convert to DOCX** (if pandoc is installed):
+6. **Optional: Convert to DOCX** (if pandoc is installed):
    ```bash
    if command -v pandoc &> /dev/null; then
      pandoc "reviews/[project-name]/literature-review-final.md" \
