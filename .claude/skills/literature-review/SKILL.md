@@ -219,18 +219,16 @@ Never advance to Phase 6 before all synthesis writers have completed.
 - `literature-review-final.docx` — DOCX version (if pandoc is installed)
 - `literature-all.bib` — aggregated bibliography
 
-1. Assemble final review and add YAML frontmatter:
+1. Assemble final review with YAML frontmatter:
 
-   Use the **Write** tool to create `literature-review-final.md` with YAML frontmatter:
-   ```yaml
-   ---
-   title: "[Research Topic]"
-   date: [YYYY-MM-DD]
-   ---
-
+   ```bash
+   python .claude/skills/literature-review/scripts/assemble_review.py \
+     "reviews/[project-name]/literature-review-final.md" \
+     --title "[Research Topic]" \
+     reviews/[project-name]/synthesis-section-*.md
    ```
 
-   Then use **Glob** to find all `synthesis-section-*.md` files (sorted by name). For each file, use the **Read** tool to get its content. Concatenate all content with two blank lines between sections, then use **Edit** to append to `literature-review-final.md`.
+   Then use **Read** to verify section ordering and transitions.
 
 2. Lint the final markdown file:
 
