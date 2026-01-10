@@ -66,3 +66,12 @@ Run tests with: `pytest tests/`
 - **Simple and concise** — Prefer simple solutions. Keep agent/skill instructions brief and effective. Avoid verbosity.
 - **Verify assumptions empirically** — Test bash patterns and environment behavior in actual subagent context before codifying. Don't assume documentation is accurate.
 - **Cross-platform** — Implementations must work in Claude Code Cloud, Linux, macOS. Use forward slashes in paths.
+
+## Adding Python Dependencies
+
+When adding a new Python package import, update these files:
+
+1. **`pyproject.toml`** — Add the package to `dependencies` list
+2. **`uv.lock`** — Regenerate with `uv lock`
+3. **`.claude/hooks/setup-environment.sh`** — Add `check_package` call if the package is required for agents/skills to function
+4. **`.claude/skills/philosophy-research/scripts/check_setup.py`** — Add to `required_packages` dict only if the package is specifically for the philosophy-research skill
