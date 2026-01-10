@@ -29,6 +29,9 @@ RULE_EXPLANATIONS = {
     "MD058": "Tables need blank lines above and below",
 }
 
+# Extensions to enable (front-matter handles YAML frontmatter in literature reviews)
+ENABLED_EXTENSIONS = ["front-matter"]
+
 # Rules enabled by default in pymarkdownlnt that we want to disable
 # (not relevant for literature reviews - e.g., line length, trailing spaces)
 DISABLED_RULES = [
@@ -64,11 +67,13 @@ DISABLED_RULES = [
 def lint_markdown(filepath: str) -> int:
     """Lint a markdown file and output errors with explanations."""
     disabled_str = ",".join(DISABLED_RULES)
+    extensions_str = ",".join(ENABLED_EXTENSIONS)
 
     try:
         result = subprocess.run(
             [
                 sys.executable, "-m", "pymarkdown",
+                "--enable-extensions", extensions_str,
                 "--disable-rules", disabled_str,
                 "scan", filepath
             ],
