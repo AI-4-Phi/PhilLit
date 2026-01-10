@@ -1,0 +1,86 @@
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "grounding semantics AI",
+  "results": [
+    {
+      "title": "Holger Lyre, The State Space of Artificial Intelligence",
+      "url": "https://philpapers.org/rec/LYRTSS",
+      "philpapers_id": "LYRTSS",
+      "snippet": "As the distinguishing feature of such networks is the ability to self-learn, self-learning is identified as one important dimension of the AI state space. Another dimension is recognized as generalization, the possibility to go over from specific to more general types of problems. A third dimension is semantic grounding.",
+      "page_age": null
+    },
+    {
+      "title": "Jianhui Li & Haohao Mao, The Difficulties in Symbol Grounding Problem and the Direction for Solving It",
+      "url": "https://philpapers.org/rec/LITDI-3",
+      "philpapers_id": "LITDI",
+      "snippet": "We therefore argue that the SGP can be regarded as a general problem of how an AI system can have intentionality, and develop a theoretical direction for its solution. ... Setup an account with your affiliations in order to access resources via your University&#x27;s proxy server \u00b7 Sign in / register and customize your OpenURL resolver ... Meaning in Artificial Agents: The Symbol Grounding Problem Revisited.Dairon Rodr\u00edguez, Jorge Hermosillo &amp; Bruno Lara - 2012 - Minds and Machines 22 (1):25-34.",
+      "page_age": null
+    },
+    {
+      "title": "Stevan Harnad, The symbol grounding problem",
+      "url": "https://philpapers.org/rec/HARTSG",
+      "philpapers_id": "HARTSG",
+      "snippet": "There has been much discussion recently about the scope and limits of purely symbolic models of the mind and about the proper role of connectionism in cognitive modeling. This paper describes the symbol grounding problem : How can the semantic interpretation of a formal symbol system be made intrinsic to the system, rather than just parasitic on the meanings in our heads?",
+      "page_age": null
+    },
+    {
+      "title": "Stevan Harnad, Grounding Symbolic Capacity in Robotic Capacity",
+      "url": "https://philpapers.org/rec/HARGSC",
+      "philpapers_id": "HARGSC",
+      "snippet": "According to &quot;computationalism&quot; (Newell, 1980; Pylyshyn 1984; Dietrich 1990), mental states are computational states, so if one wishes to build a mind, one is actually looking for the right program to run on a digital computer. A computer program is a semantically interpretable formal symbol system consisting of rules for manipulating symbols on the basis of their shapes, which are arbitrary in relation to what they can be systematically interpreted as meaning.",
+      "page_age": null
+    },
+    {
+      "title": "Luc Steels, The symbol grounding problem has been solved. So what's next?",
+      "url": "https://philpapers.org/rec/STETSG",
+      "philpapers_id": "STETSG",
+      "snippet": "Which symbol grounding problem should we try to solve?Vincent C. M\u00fcller - 2015 - Journal of Experimental &amp; Theoretical Artificial Intelligence 27 (1):73-78. Semantics and symbol grounding in Turing machine processes.Anna Sarosiek - 2017 - Semina Scientiarum 16:211-223.",
+      "page_age": null
+    },
+    {
+      "title": "Louis deRosset, Better Semantics for the Pure Logic of Ground",
+      "url": "https://philpapers.org/rec/DERBSF",
+      "philpapers_id": "DERBSF",
+      "snippet": "Kit Fine has made several seminal contributions to this discussion, including an exact treatment of the formal features of grounding [Fine, 2012a]. He has specified a language in which grounding claims may be expressed, proposed a system of axioms which capture the relevant formal features, and offered a semantics which interprets the language.",
+      "page_age": null
+    },
+    {
+      "title": "Hans G. Herzberger, Paradoxes of grounding in semantics",
+      "url": "https://philpapers.org/rec/HERPOG",
+      "philpapers_id": "HERPOG",
+      "snippet": "Well Founding Grounding Grounding.Gabriel Oak Rabin &amp; Brian Rabern - 2016 - Journal of Philosophical Logic 45 (4):349-379.",
+      "page_age": null
+    },
+    {
+      "title": "Stevan Harnad, Symbol grounding and the origin of language",
+      "url": "https://philpapers.org/rec/HARSGA",
+      "philpapers_id": "HARSGA",
+      "snippet": "The symbols that denote categories must be grounded in the capacity to sort, label and interact with the proximal sensorimotor projections of their distal category-members in a way that coheres systematically with their semantic interpretations, both for individual symbols, and for symbols strung together to express truth-value-bearing propositions",
+      "page_age": null
+    },
+    {
+      "title": "Fabrice Correia, An Impure Logic of Representational Grounding",
+      "url": "https://philpapers.org/rec/CORAIL",
+      "philpapers_id": "CORAIL",
+      "snippet": "I give a semantic characterisation of a system for the logic of grounding similar to the system introduced by Kit Fine in his \u201cGuide to Ground\u201d, as well as a semantic characterisation of a variant of that system which excludes the possibility of what Fine calls \u2018zero-grounding\u2019.",
+      "page_age": null
+    },
+    {
+      "title": "Vincent C. M\u00fcller, Which symbol grounding problem should we try to solve?",
+      "url": "https://philpapers.org/rec/MLLWSG-2",
+      "philpapers_id": "MLLWSG",
+      "snippet": "Floridi and Taddeo propose a condition of \u201czero semantic commitment\u201d for solutions to the grounding problem, and a solution to it. I argue briefly that their condition cannot be fulfilled, not even by their own solution. After a look at Luc Steels&#x27; very different competing suggestion, I suggest that we need to re-think what the problem is and what role the \u2018goals\u2019 in a system play in formulating the problem.",
+      "page_age": null
+    },
+    {
+      "title": "Pablo Contreras Kallens & Morten H. Christiansen, Distributional Semantics: Meaning Through Culture and Interaction",
+      "url": "https://philpapers.org/rec/KALDSM-4",
+      "philpapers_id": "KALDSM",
+      "snippet": "In this article, we review this approach and discuss its successes and shortcomings in capturing semantic phenomena. In particular, we discuss what we dub the \u201cdistributional paradox:\u201d how can models that do not implement essential dimensions of human semantic processing, such as sensorimotor grounding, capture so many meaning-related phenomena?",
+      "page_age": null
+    }
+  ],
+  "count": 11,
+  "errors": []
+}

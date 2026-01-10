@@ -1,0 +1,473 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "meaning as use semantics grounding",
+  "results": [
+    {
+      "paperId": "b8f4ec29b874ad85ce628e1f06fb9f555e365d77",
+      "title": "Proof-theoretic Semantics for Second-order Logic",
+      "authors": [
+        {
+          "name": "A. Gheorghiu",
+          "authorId": "1998518964"
+        },
+        {
+          "name": "David J. Pym",
+          "authorId": "2293720146"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We develop a proof-theoretic semantics (P-tS) for second-order logic (S-oL), providing an inferentialist alternative to both full and Henkin model-theoretic interpretations. Our approach is grounded in base-extension semantics (B-eS), a framework in which meaning is determined by inferential roles relative to atomic systems -- collections of rules that encode an agent's pre-logical inferential commitments. We show how both classical and intuitionistic versions of S-oL emerge from this set-up by varying the class of atomic systems. These systems yield modular soundness and completeness results for corresponding Hilbert-style calculi, which we prove equivalent to Henkin's account of S-oL. In doing so, we reframe second-order quantification as systematic substitution rather than set-theoretic commitment, thereby offering a philosophically lightweight yet expressive semantics for higher-order logic. This work contributes to the broader programme of grounding logical meaning in use rather than reference and offers a new lens on the foundations of logic and mathematics.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.07786",
+      "arxivId": "2508.07786",
+      "url": "https://www.semanticscholar.org/paper/b8f4ec29b874ad85ce628e1f06fb9f555e365d77",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.07786"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1fbfd9134ca8addc64563575030c1c46f716624c",
+      "title": "Stirring the Possum: Responses to the Bianchi Papers",
+      "authors": [
+        {
+          "name": "Michael Devitt",
+          "authorId": "145397106"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.1007/978-3-030-47641-0_19",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1fbfd9134ca8addc64563575030c1c46f716624c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "371-455",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9a6915907fe2fc06b3dd81fb2f0d3a629e8c6391",
+      "title": "Robots, language, and meaning",
+      "authors": [
+        {
+          "name": "D. Roy",
+          "authorId": "145364504"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9a6915907fe2fc06b3dd81fb2f0d3a629e8c6391",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "aee52b224deb096458c4391fefa5f9598b8f72e7",
+      "title": "The Geometry of Meaning: Semantics Based on Conceptual Spaces",
+      "authors": [
+        {
+          "name": "Peter G\u00e4rdenfors",
+          "authorId": "2276714189"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 392,
+      "doi": "10.7551/mitpress/9629.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aee52b224deb096458c4391fefa5f9598b8f72e7",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3f4e679de9fbd468cc87fb1d5789af8ba935a36d",
+      "title": "Grounding rules and (hyper-)isomorphic formulas",
+      "authors": [
+        {
+          "name": "F. Poggiolesi",
+          "authorId": "2612745"
+        }
+      ],
+      "year": 2020,
+      "abstract": "\n \n \nAn oft-defended claim of a close relationship between Gentzen inference rules and the meaning of the connectives they introduce and eliminate has given rise to a whole domain called proof-theoretic semantics, see Schroeder- Heister (1991); Prawitz (2006). A branch of proof-theoretic semantics, mainly developed by Dosen (2019); Dosen and Petric (2011), isolates in a precise mathematical manner formulas (of a logic L) that have the same meaning. These isomorphic formulas are defined to be those that behave identically in inferences. The aim of this paper is to investigate another type of recently discussed rules in the literature, namely grounding rules, and their link to the meaning of the connectives they provide the grounds for. In particular, by using grounding rules, we will refine the notion of isomorphic formulas through the notion of hyper-isomorphic formulas. We will argue that it is actually the notion of hyper-isomorphic formulas that identify those formulas that have the same meaning. \n \n \n",
+      "citationCount": 4,
+      "doi": "10.26686/ajl.v17i1.5694",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3f4e679de9fbd468cc87fb1d5789af8ba935a36d",
+      "venue": "Australasian Journal of Logic",
+      "journal": {
+        "name": "The Australasian Journal of Logic"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dc457643590a9c8155a53b31ce278375e785356c",
+      "title": "The Geometry of Meaning: Semantics Based on Conceptual Spaces",
+      "authors": [],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dc457643590a9c8155a53b31ce278375e785356c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "24aeaac737e7c689cfa737cb4a4133de495c7e14",
+      "title": "Bridging Philosophical Foundations andComputational Realities: Semantic Under-Specification from Frege to Large Language Models",
+      "authors": [
+        {
+          "name": "Tahir Qayyum",
+          "authorId": "2376454970"
+        },
+        {
+          "name": "Anam Tahir",
+          "authorId": "2376455021"
+        },
+        {
+          "name": "Iftikhar Ahmed Shaheen",
+          "authorId": "2277333003"
+        },
+        {
+          "name": "Syed Atif Amir Gardazi",
+          "authorId": "2376455110"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Semantic underspecificationoccurs when linguistic expressions carry partial meaning, requiring context for full understanding. It poses key challenges across philosophy, cognitive science, and NLP. This review identifies five developmental stages: (1)Classical theories by Frege, Russell, and Davidson created truth-conditional frameworks but encountered difficulties with indexicaland belief contexts due to assumptions of full specification; (2)Formal models like QLF, MRS, and Hole Semantics introduced computational underspecification to handle structural ambiguities such as quantifier scope; (3)Cognitive studies show humans use underspecification strategically for efficiency, relying on pragmatic inference and semantic memory; (4)Hybrid neuro-symbolic models like UMR and Glue Semantics combined structural ambiguity resolution with neural inference but lacked uncertainty modeling; (5)Modern NLP research highlights gaps: LLMs can detect underspecification but often overcommit to deterministic interpretations, and multimodal systems do not effectively utilize context. Cross-linguistic entropy models suggest grammatical underspecification as a strategy for cognitive efficiency. To bridge human semantic flexibilityenabled by incremental processing and pragmatic co-construction\u2014with computational systems, we propose integrated neuro-symbolic architectures incorporating explicit uncertainty modeling, multimodal grounding, and entropy-aware design. This approach paves the way for AI to achieve human-like language understanding.",
+      "citationCount": 0,
+      "doi": "10.55966/assaj.2025.4.1.0117",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/24aeaac737e7c689cfa737cb4a4133de495c7e14",
+      "venue": "Advance Social Science Archive Journal",
+      "journal": {
+        "name": "Advance Social Science Archive Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "fee8a13c1dcc619b5934d1f09b75544ee7410b5d",
+      "title": "Haig\u2019s \u2018strange inversion of reasoning\u2019 (Dennett) andMaking sense: information interpreted as meaning (Haig)",
+      "authors": [
+        {
+          "name": "D. Haig",
+          "authorId": "145432379"
+        },
+        {
+          "name": "D. Dennett",
+          "authorId": "3329205"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fee8a13c1dcc619b5934d1f09b75544ee7410b5d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cc0b00679d0a6c3cd5eb52e7e8adf78e22eb1a25",
+      "title": "Symbol Grounding and Transcendental Logic",
+      "authors": [
+        {
+          "name": "E. Prem",
+          "authorId": "2139841"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 13,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cc0b00679d0a6c3cd5eb52e7e8adf78e22eb1a25",
+      "venue": "ICLP Workshop: Logic and Reasoning with Neural Networks",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "6aad0ed452da78cb51b233ec95a96d521bddf02e",
+      "title": "Why the Semantic Web Has Never Got Too Much of a Meaning and How to Put It There ?",
+      "authors": [
+        {
+          "name": "V. Nov\u00e1\u010dek",
+          "authorId": "3162838"
+        },
+        {
+          "name": "S. Handschuh",
+          "authorId": "1789102"
+        },
+        {
+          "name": "S. Decker",
+          "authorId": "1685642"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6aad0ed452da78cb51b233ec95a96d521bddf02e",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3138ff883e2440419dd9deba7a5ceac3b2229a33",
+      "title": "Semantics as Meetings of Minds",
+      "authors": [
+        {
+          "name": "P. G\u00e4rdenfors",
+          "authorId": "2412562"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3138ff883e2440419dd9deba7a5ceac3b2229a33",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "360",
+        "volume": "31"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "433b49622eec6bcbcc3448cfd2879cc926034798",
+      "title": "Semantics Embodied: Cognitive Linguistics and Searle's Account of Linguistic Intentionality",
+      "authors": [
+        {
+          "name": "Krivo Flores",
+          "authorId": "2064857733"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.7710/2155-4838.1099",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/433b49622eec6bcbcc3448cfd2879cc926034798",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "7",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "25dcafe8a63c80f91049d8c2c644849f992e7887",
+      "title": "Semantics of Distinguishing Criteria: from Subjective to Intersubjective",
+      "authors": [
+        {
+          "name": "M. Tak\u00e1c",
+          "authorId": "35217090"
+        },
+        {
+          "name": "J. Sefr\u00e1nek",
+          "authorId": "2295111"
+        }
+      ],
+      "year": 2012,
+      "abstract": "In this article we are aiming to build cognitive semantics over a first person perspective. Our goal is to specify meanings connected to cognitive agents, rooted in their experience and separable from language, covering a wide spectrum of cognitions ranging from living organisms (animals, pre-verbal children and adult humans) to artificial agents and that the cognitive semantics covers a broad, continuous, spectrum of meanings. As regards the used method, the first person perspective enables a kind of grounding of meanings in cognitions. An ability of cognitive agents to distinguish is a starting point of our approach, distinguishing criteria and schemata are the basic semantic constructs. The resulting construction is based on a projection of the environment into a cluster of current percepts and function on percepts. Situation schemata, more sophisticated similarity functions, event schemata and distinguishing criteria are built over that basis. Inference rules and action rules are components of our semantics. An interesting property of the proposed semantics is that it makes possible coexistence of subjective and intersubjective meanings. Subjective (first person perspective) meanings are primary, and we have shown the way from them to collectively accepted (third person perspective) meanings via observable behaviour and feedback about success/failure of actions. An abductive reasoning is an important tool on that way. A construct of an instrument, which represents a measure for using intersubjective meanings, is introduced. The instrument serves as a tool for an inclusion of sophisticated meanings, e.g. of scientific constructs, into our framework.",
+      "citationCount": 0,
+      "doi": "10.7906/INDECS.10.3.4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/25dcafe8a63c80f91049d8c2c644849f992e7887",
+      "venue": "",
+      "journal": {
+        "name": "Interdisciplinary Description of Complex Systems",
+        "pages": "248-269",
+        "volume": "10"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ba28ae55ffa0d40e6470c21464b8b8403c07be1d",
+      "title": "On the Grounding of Syntax - and More",
+      "authors": [
+        {
+          "name": "N. Burton-Roberts",
+          "authorId": "1405757767"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ba28ae55ffa0d40e6470c21464b8b8403c07be1d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "75ba6a70755418207677c787335ffb7768ede1ff",
+      "title": "Reference-Fixing and Presuppositions",
+      "authors": [
+        {
+          "name": "M. Garc\u00eda\u2010Carpintero",
+          "authorId": "1403820192"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Kripke (1980, 55) distinguishes between using a description to fix the reference of an expression and using it to give its meaning. Kaplan and Stalnaker then articulated a distinction between semantics and metasemantics or foundational semantics, ascribing complementary roles to each. To the former category belong theories that assign meanings to their bearers, prominent among them linguistic expressions. To the latter belong theories that provide \u201cthe basis\u201d for ascribing such meanings (Kaplan 1989b, 573\u2013 574) or state \u201cwhat the facts are\u201d that give these meanings to their bearers (Stalnaker 1997, 535). This is a metaphysical undertaking on the grounding of meaningfacts, on what determines, fixes, or constitutes them. This distinction is sometimes used to consign to \u201cmere\u201d metasemantics descriptive material that, on both intuitive and theoretical grounds, plays a linguistically significant role in the determination of the referents of names and other expressions. In previous work (Garc\u00edaCarpintero 2000, 2006a, 2018a), I appealed to referencefixing presuppositions with the aim of undermining this application of the distinction. Following Heim, I assumed that linguistic presuppositions are features of linguistic meaning (Garc\u00edaCarpintero 2018b). Indeed, in the ensuing years the view that descriptive referencefixing presuppositions are part of linguistic meaning has become mainstream in semantics (cf., e.g., Heim 2008; Hunter 2013; Maier 2010, 2016). For such descriptive material\u2014 I have argued\u2014 Kripke\u2019s distinction only tracks a contrast between \u201cplanes\u201d or \u201clevels\u201d of content\u2014 \u201cat issue\u201d vs. \u201cbackgrounded\u201d. However, it is not straightforward to understand how the relevant presuppositions that semanticists posit play the referencefixing role that Kripke was envisaging. In this contribution I want to confront this issue. I will approach it by assuming an account of the semantics vs. metasemantics divide that I have provided elsewhere (Garc\u00edaCarpintero 2012, forthcominga). I advance there a version of the Austinian normative approach originally promoted by Alston (1964), Austin (1962) and Searle (1969). Although displaced for a while by the influence of Gricean and Chomskian views on the issue, it is becoming popular again among philosophers and linguists. On this view, meaningfacts about natural languages are determined by social norms and social conventions. In what follows, I will articulate in that framework the distinction between semantic and nonsemantic (\u201cpre\u201dor \u201cpost\u201dsemantic) facts in referencefixing, presuppositionally understood.",
+      "citationCount": 5,
+      "doi": "10.4324/9781003111894-19",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/75ba6a70755418207677c787335ffb7768ede1ff",
+      "venue": "The Routledge Handbook of Linguistic Reference",
+      "journal": {
+        "name": "The Routledge Handbook of Linguistic Reference"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9dbceb5c1175338f3b8dff285fb727bbdbcd8325",
+      "title": "Quantifiers as Terms and Lattice-Based Semantics",
+      "authors": [
+        {
+          "name": "Hiroyuki Uchida",
+          "authorId": "48653755"
+        },
+        {
+          "name": "Nicholas L. Cassimatis",
+          "authorId": "3197400"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9dbceb5c1175338f3b8dff285fb727bbdbcd8325",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "956d98b1e95855ee17a4c3f1514e53355857081d",
+      "title": "Non-axiomatic reasoning system: exploring the essence of intelligence",
+      "authors": [
+        {
+          "name": "Pei Wang",
+          "authorId": "2118950981"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 92,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/956d98b1e95855ee17a4c3f1514e53355857081d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f7f2276f043ff090c911dc6239f27374fba1869a",
+      "title": "\u201cWorkshop on Proofs and Formalization in Logic, Mathematics and Philosophy\u201d",
+      "authors": [],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f7f2276f043ff090c911dc6239f27374fba1869a",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2a8afb461a8ef15111b56f8fd27c2053cefe8eb8",
+      "title": "Kit Fine. Bibliography of the Studies on His Philosophy",
+      "authors": [],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2a8afb461a8ef15111b56f8fd27c2053cefe8eb8",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9f6607c9a48f18b04bdde348a2b90cab1cf98a19",
+      "title": "This and That: A Theory of Reference for Names, Demonstratives, and Things in Between",
+      "authors": [
+        {
+          "name": "Eliot Michaelson",
+          "authorId": "50135647"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9f6607c9a48f18b04bdde348a2b90cab1cf98a19",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

@@ -1,0 +1,745 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Chinese room symbol grounding",
+  "results": [
+    {
+      "paperId": "6c70568ab004f03963d904f8e11efda13243108e",
+      "title": "Turing Test, Chinese Room Argument, Symbol Grounding Problem. Meanings in Artificial Agents (2013)",
+      "authors": [
+        {
+          "name": "Christophe Menant",
+          "authorId": "2969012"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6c70568ab004f03963d904f8e11efda13243108e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2613f9abc680c38dae24540d8dcb12e9bf1f208b",
+      "title": "Turing Test, Chinese Room Argument, Symbol Grounding Problem. Meanings in Artificial Agents",
+      "authors": [
+        {
+          "name": "Christophe Menant",
+          "authorId": "2969012"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2613f9abc680c38dae24540d8dcb12e9bf1f208b",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "10b575e29d5cfad7f1535c65ad5ab28d7ab87841",
+      "title": "Natural Computing/Unconventional Computing and its Philosophical Significance Turing Test, Chinese Room Argument, Symbol Grounding Problem. Meanings in Artificial Agents.",
+      "authors": [
+        {
+          "name": "Christophe Menant",
+          "authorId": "2969012"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/10b575e29d5cfad7f1535c65ad5ab28d7ab87841",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "99e10bf9a4fcb04e0f35a865ffae5485da6d10f0",
+      "title": "Quantum Theory, the Chinese Room Argument and the Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "R. Gomatam",
+          "authorId": "2049454"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1007/978-3-642-00834-4_15",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/99e10bf9a4fcb04e0f35a865ffae5485da6d10f0",
+      "venue": "Quantum Interaction",
+      "journal": {
+        "pages": "174-183"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "af9b9412998c5e590f831b1076c842f6193de9ab",
+      "title": "The Difficulties in Symbol Grounding Problem and the Direction for Solving It",
+      "authors": [
+        {
+          "name": "Jianhui Li",
+          "authorId": "48514373"
+        },
+        {
+          "name": "Haohao Mao",
+          "authorId": "2162838180"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The symbol grounding problem (SGP) proposed by Stevan Harnad in 1990, originates from Searle\u2019s \u201cChinese Room Argument\u201d and refers to the problem of how a pure symbolic system acquires its meaning. While many solutions to this problem have been proposed, all of them have encountered inconsistencies to different extents. A recent approach for resolving the problem is to divide the SGP into hard and easy problems echoing the distinction between hard and easy problems for resolving the enigma of consciousness. This however turns out not to be an ideal strategy: Everything related to consciousness that cannot be well-explained by present theories can be categorized as a hard problem which as a consequence would doom the SGP to irresolvability. We therefore argue that the SGP can be regarded as a general problem of how an AI system can have intentionality, and develop a theoretical direction for its solution.",
+      "citationCount": 4,
+      "doi": "10.3390/philosophies7050108",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/af9b9412998c5e590f831b1076c842f6193de9ab",
+      "venue": "Philosophies",
+      "journal": {
+        "name": "Philosophies"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c93cddb1794f5ea71d71793e1e8e54d6d25a996c",
+      "title": "What's Wrong and Right About Searle's Chinese Room Argument?",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 31,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c93cddb1794f5ea71d71793e1e8e54d6d25a996c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7ac9cdd3c00ffb7ff4d31a063b8c2ced94d2f910",
+      "title": "A Critical Review on the Symbol Grounding Problem as an Issue of Autonomous Agents",
+      "authors": [
+        {
+          "name": "Richard Cubek",
+          "authorId": "1737168"
+        },
+        {
+          "name": "W. Ertel",
+          "authorId": "1710696"
+        },
+        {
+          "name": "G. Palm",
+          "authorId": "1774384"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.1007/978-3-319-24489-1_21",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7ac9cdd3c00ffb7ff4d31a063b8c2ced94d2f910",
+      "venue": "Deutsche Jahrestagung f\u00fcr K\u00fcnstliche Intelligenz",
+      "journal": {
+        "pages": "256-263"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "17d429701623440d8611a6dafb7c0f5008d003bb",
+      "title": "Relevance of Grounding AI for Health Care.",
+      "authors": [
+        {
+          "name": "Murat Sariyar",
+          "authorId": "46372070"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.3233/SHTI250690",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/17d429701623440d8611a6dafb7c0f5008d003bb",
+      "venue": "Studies in Health Technology and Informatics",
+      "journal": {
+        "name": "Studies in health technology and informatics",
+        "pages": "\n          146-150\n        ",
+        "volume": "328"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "96be1b73770197e033dfe458f95dc7d7adfd96aa",
+      "title": "- Theme : Connectionism vs Symbolism Cognition , Chaos and Non-Deterministic Symbolic Computation : The Chinese Room Problem Solved ?",
+      "authors": [
+        {
+          "name": "Robert W. Kentridge",
+          "authorId": "2678524"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/96be1b73770197e033dfe458f95dc7d7adfd96aa",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7302fcfa4b769d48eeecfe9014938cd508572f17",
+      "title": "Meaning in Artificial Agents: The Symbol Grounding Problem Revisited",
+      "authors": [
+        {
+          "name": "Dairon Rodr\u00edguez",
+          "authorId": "2064655915"
+        },
+        {
+          "name": "J. Hermosillo",
+          "authorId": "144922383"
+        },
+        {
+          "name": "B. Lara",
+          "authorId": "145706715"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.1007/s11023-011-9263-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7302fcfa4b769d48eeecfe9014938cd508572f17",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "25-34",
+        "volume": "22"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1c869958db57eca1a84da70f40870c598f29c976",
+      "title": "Symbol grounding using neural networks",
+      "authors": [
+        {
+          "name": "R. Bhatnagar",
+          "authorId": "144094347"
+        },
+        {
+          "name": "Richard Horvitz",
+          "authorId": "48966206"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c869958db57eca1a84da70f40870c598f29c976",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1a902110f96e5c7b3a7573fcdb5c47fe38e17fb5",
+      "title": "Symbol Grounding and its Implications for Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Michael Mayo",
+          "authorId": "2066033510"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 27,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1a902110f96e5c7b3a7573fcdb5c47fe38e17fb5",
+      "venue": "Australasian Computer Science Conference",
+      "journal": {
+        "pages": "55-60"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "97914dc4bad43be0446e8d318f813d829241616d",
+      "title": "Meaning in Artificial Agents: The Symbol Grounding Problem Revisited",
+      "authors": [
+        {
+          "name": "Dairon Rodr\u00edguez",
+          "authorId": "2064655915"
+        },
+        {
+          "name": "J. Hermosillo",
+          "authorId": "144922383"
+        },
+        {
+          "name": "B. Lara",
+          "authorId": "145706715"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11023-011-9263-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/97914dc4bad43be0446e8d318f813d829241616d",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "25 - 34",
+        "volume": "22"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "abb25ac4141e6dbeef2d4795155c398a69396503",
+      "title": "Semiotic Dynamics Solves the Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "L. Steels",
+          "authorId": "145091664"
+        },
+        {
+          "name": "Martin Loetzsch",
+          "authorId": "1915326"
+        },
+        {
+          "name": "Michael Spranger",
+          "authorId": "145570895"
+        }
+      ],
+      "year": 2007,
+      "abstract": "Language requires the capacity to link symbols (words, sentences) through the intermediary of internal representations to the physical world, a process known as symbol grounding. One of the biggest debates in the cognitive sciences concerns the question how human brains are able to do this. Do we need a material explanation or a system explanation? John Searle's well known Chinese Room thought experiment, which continues to generate a vast polemic literature of arguments and counter-arguments, has argued that autonomously establishing internal representations of the world (called 'intentionality' in philosophical parlance) is based on special properties of human neural tissue and that consequently an artificial system, such as an autonomous physical robot, can never achieve this. Here we study the Grounded Naming Game as a particular example of symbolic interaction and investigate a dynamical system that autonomously builds up and uses the semiotic networks necessary for performance in the game. We demonstrate in real experiments with physical robots that such a dynamical system indeed leads to a successful emergent communication system and hence that symbol grounding and intentionality can be explained in terms of a particular kind of system dynamics. The human brain has obviously the right mechanisms to participate in this kind of dynamics but the same dynamics can also be embodied in other types of physical systems.",
+      "citationCount": 12,
+      "doi": "10.1038/NPRE.2007.1234.1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/abb25ac4141e6dbeef2d4795155c398a69396503",
+      "venue": "",
+      "journal": {
+        "name": "Nature Precedings",
+        "pages": "1-1",
+        "volume": "2"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "05d450b4ea52f6176a294d392bcd30b4d354faa4",
+      "title": "Chapter 2 The Misleading Aspects of the Mind / Computer Analogy The Grounding Problem and the Thorny Issue of Propriosensitive Information",
+      "authors": [],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/05d450b4ea52f6176a294d392bcd30b4d354faa4",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8e53bdd4f204aed92a09bd2fed535d0d1a6e728c",
+      "title": "Disembodied Meaning? Generative AI and Understanding",
+      "authors": [
+        {
+          "name": "Jordi Vallverd\u00fa",
+          "authorId": "2351123536"
+        },
+        {
+          "name": "Iv\u00e1n Redondo",
+          "authorId": "2351129215"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study explores the cognitive and philosophical implications of Large Language Models (LLMs), focusing on their ability to generate meaning without embodiment. Grounded in the coherence-based semantics framework, the research challenges traditional views that emphasize the necessity of embodied cognition for meaningful language comprehension. Through a theoretical and comparative analysis, this paper examines the limitations of embodied cognition paradigms, such as the symbol grounding problem and critiques like Searle\u2019s Chinese Room, and evaluates the practical capabilities of LLMs. The methodology integrates philosophical inquiry with empirical evidence, including case studies on LLM performance in tasks such as medical licensing exams, multilingual communication, and policymaking. Key findings suggest that LLMs simulate meaning-making processes by leveraging statistical patterns and relational coherence within language, demonstrating a form of operational understanding that rivals some aspects of human cognition. Ethical concerns, such as biases in training data and societal implications of LLM applications, are also analyzed, with recommendations for improving fairness and transparency. By reframing LLMs as disembodied yet effective cognitive systems, this study contributes to ongoing debates in artificial intelligence and cognitive science. It highlights their potential to complement human cognition in education, policymaking, and other fields while advocating for responsible deployment to mitigate ethical risks.",
+      "citationCount": 2,
+      "doi": "10.30564/fls.v7i3.8060",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8e53bdd4f204aed92a09bd2fed535d0d1a6e728c",
+      "venue": "Forum for Linguistic Studies",
+      "journal": {
+        "name": "Forum for Linguistic Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9740f8d8006192e41ffdf1f74864510666b760f6",
+      "title": "The State Space of Artificial Intelligence",
+      "authors": [
+        {
+          "name": "H. Lyre",
+          "authorId": "2836112"
+        }
+      ],
+      "year": 2020,
+      "abstract": "The goal of the paper is to develop and propose a general model of the state space of AI. Given the breathtaking progress in AI research and technologies in recent years, such conceptual work is of substantial theoretical interest. The present AI hype is mainly driven by the triumph of deep learning neural networks. As the distinguishing feature of such networks is the ability to self-learn, self-learning is identified as one important dimension of the AI state space. Another dimension is recognized as generalization, the possibility to go over from specific to more general types of problems. A third dimension is semantic grounding. Our overall analysis connects to a number of known foundational issues in the philosophy of mind and cognition: the blockhead objection, the Turing test, the symbol grounding problem, the Chinese room argument, and use theories of meaning. It shall finally be argued that the dimension of grounding decomposes into three sub-dimensions. And the dimension of self-learning turns out as only one of a whole range of \u201cself-x-capacities\u201d (based on ideas of organic computing) that span the self-x-subspace of the full AI state space.",
+      "citationCount": 16,
+      "doi": "10.1007/s11023-020-09538-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9740f8d8006192e41ffdf1f74864510666b760f6",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "325 - 347",
+        "volume": "30"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b06afb285b1afbaec8c9e152a9d9217b6716177f",
+      "title": "Minds, machines and Searle",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 219,
+      "doi": "10.1080/09528138908953691",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b06afb285b1afbaec8c9e152a9d9217b6716177f",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "J. Exp. Theor. Artif. Intell.",
+        "pages": "5-25",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d31baf5df4fa8ac7997ca5de1fb9fe74b9d1966d",
+      "title": "The Misleading Aspects of the Mind/Computer Analogy",
+      "authors": [
+        {
+          "name": "Sara Dellantonio",
+          "authorId": "2323757"
+        },
+        {
+          "name": "Luigi Pastore",
+          "authorId": "4118256"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-662-55763-1_2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d31baf5df4fa8ac7997ca5de1fb9fe74b9d1966d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "47-97",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "67969959d7abc32edca56e75e77969c5267a6899",
+      "title": "Does the Mind Piggy-Back on Robotic and Symbolic Capacity?",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 18,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/67969959d7abc32edca56e75e77969c5267a6899",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "71f2efb920fc5dc32231b563570e97978eeb7a7b",
+      "title": "Symbolism and enactivism: an experimental test of conflicting approaches to artificial intelligence",
+      "authors": [
+        {
+          "name": "S. Worgan",
+          "authorId": "2130928"
+        },
+        {
+          "name": "R. Damper",
+          "authorId": "1706834"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1080/09528130802113398",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/71f2efb920fc5dc32231b563570e97978eeb7a7b",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "1 - 18",
+        "volume": "21"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "31d92ee9534041edca1ce0f87fcbeec5e72d36d5",
+      "title": "12-de Vega-Chap12",
+      "authors": [
+        {
+          "name": "L. Steels",
+          "authorId": "145091664"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/31d92ee9534041edca1ce0f87fcbeec5e72d36d5",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "862c111b3462159a0ba5f9341ca2792e61f61dcc",
+      "title": "Searle's AI program",
+      "authors": [
+        {
+          "name": "K. Korb",
+          "authorId": "1730706"
+        }
+      ],
+      "year": 1991,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1080/09528139108915295",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/862c111b3462159a0ba5f9341ca2792e61f61dcc",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "J. Exp. Theor. Artif. Intell.",
+        "pages": "283-296",
+        "volume": "3"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "aaa1db296642dfb0c79e12ef67507d4952734896",
+      "title": "A Critical Examination of Searle's Chinese Room Thought Experiment",
+      "authors": [
+        {
+          "name": "Zhuoya Tian",
+          "authorId": "2338690585"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Searle's Chinese Room thought experiment argues that computers cannot understand language, but this view has been challenged from multiple perspectives. According to critics, comprehension entails a relationship to consciousness and the outside world in addition to manipulating symbols. There is little evidence to support Searle's denial of machine intentionality, and functionalism, which emphasizes the functional aspects of mental experiences, provides an alternative viewpoint. Furthermore, developments in contemporary artificial intelligence suggest that, under certain situations, machines are capable of processing information efficiently. Our knowledge of machine comprehension is changing as a result of the quick advancements in deep learning and natural language processing.. Although Searle's experiment has its limitations, it has had a lasting impact on discussions in philosophy and artificial intelligence, prompting us to reflect on the relationship between humans and machines and driving further research in this area.",
+      "citationCount": 0,
+      "doi": "10.54097/5ndhj529",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aaa1db296642dfb0c79e12ef67507d4952734896",
+      "venue": "Journal of Education, Humanities and Social Sciences",
+      "journal": {
+        "name": "Journal of Education, Humanities and Social Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e6543d7f44e31c31911359e01a7912699209763c",
+      "title": "Semantics, \u2018Strong\u2019 AI, and the Chinese Room Argument",
+      "authors": [
+        {
+          "name": "Ameer Sarwar",
+          "authorId": "2322490283"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e6543d7f44e31c31911359e01a7912699209763c",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "db9ae64a14dea6f572243cac1347db9b9c8aa096",
+      "title": "'Quantum Linguistics' and Searle's Chinese Room Argument",
+      "authors": [
+        {
+          "name": "J. Mark Bishop",
+          "authorId": "2254128650"
+        },
+        {
+          "name": "S. Nasuto",
+          "authorId": "143657510"
+        },
+        {
+          "name": "B. Coecke",
+          "authorId": "3326718"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1007/978-3-642-31674-6_2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/db9ae64a14dea6f572243cac1347db9b9c8aa096",
+      "venue": "Conference on Philosophy and Theory of Artificial Intelligence",
+      "journal": {
+        "pages": "17-28"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1c9418114c751a1175386101fa6a10ebd0724098",
+      "title": "Preserving a combat commander\u2019s moral agency: The Vincennes Incident as a Chinese Room",
+      "authors": [
+        {
+          "name": "P. Hew",
+          "authorId": "1852035"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/s10676-016-9408-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c9418114c751a1175386101fa6a10ebd0724098",
+      "venue": "Ethics and Information Technology",
+      "journal": {
+        "name": "Ethics and Information Technology",
+        "pages": "227-235",
+        "volume": "18"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dbee388d801098f291c4b8fd56a235338d70e678",
+      "title": "Preserving a combat commander\u2019s moral agency: The Vincennes Incident as a Chinese Room",
+      "authors": [
+        {
+          "name": "P. Hew",
+          "authorId": "1852035"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10676-016-9408-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dbee388d801098f291c4b8fd56a235338d70e678",
+      "venue": "Ethics and Information Technology",
+      "journal": {
+        "name": "Ethics and Information Technology",
+        "pages": "227 - 235",
+        "volume": "18"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "791fb3c53c52d86fc6ad185b7e3fdf6448fa72d7",
+      "title": "Kripkenstein Meets the Chinese Room: Looking for the Place of Meaning from a Natural Point of View",
+      "authors": [
+        {
+          "name": "M. Kober",
+          "authorId": "3746416"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1080/002017498321797",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/791fb3c53c52d86fc6ad185b7e3fdf6448fa72d7",
+      "venue": "",
+      "journal": {
+        "name": "Inquiry: Critical Thinking Across the Disciplines",
+        "pages": "317-332",
+        "volume": "41"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0663ac0cc57ab8f0a15b187cf3b9ecc2362c08ca",
+      "title": "Machine understanding and the Chinese room",
+      "authors": [
+        {
+          "name": "Natika Newton",
+          "authorId": "47191645"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1080/09515088808572939",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0663ac0cc57ab8f0a15b187cf3b9ecc2362c08ca",
+      "venue": "",
+      "journal": {
+        "name": "Philosophical Psychology",
+        "pages": "207-215",
+        "volume": "1"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

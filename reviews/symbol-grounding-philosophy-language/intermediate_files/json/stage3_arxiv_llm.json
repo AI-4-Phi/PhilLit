@@ -1,0 +1,724 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:large language models meaning understanding AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2601.05252",
+      "title": "Unveiling the 3D structure of the central molecular zone from stellar kinematics and photometry: The 50 and 20 km/s clouds",
+      "authors": [
+        "Francisco Nogueras-Lara",
+        "Ashley T. Barnes",
+        "Jonathan D. Henshaw",
+        "Karl Fiteni",
+        "Yoshiaki Sofue",
+        "Rainer Sch\u00f6del",
+        "\u00c1lvaro Mart\u00ednez-Arranz",
+        "Mattia C. Sormani",
+        "Jairo Armijos-Abenda\u00f1o",
+        "Laura Colzi",
+        "Izaskun Jim\u00e9nez-Serra",
+        "V\u00edctor M. Rivilla",
+        "Pablo Garc\u00eda",
+        "Adam Ginsburg",
+        "Yue Hu",
+        "Ralf S. Klessen",
+        "J. M. Diederik Kruijssen",
+        "Volker Tolls",
+        "Alex Lazarian",
+        "Dani R. Lipman",
+        "Steven N. Longmore",
+        "Xing Lu",
+        "Sergio Mart\u00edn",
+        "Denise Riquelme-V\u00e1squez",
+        "Jaime E. Pineda",
+        "\u00c1lvaro S\u00e1nchez-Monge",
+        "Arianna Vasini",
+        "Elisabeth A. C. Mills"
+      ],
+      "abstract": "The central molecular zone (CMZ), surrounding the Galactic centre, is the largest reservoir of dense molecular gas in the Galaxy. Despite its relative proximity, the 3D structure of the CMZ remains poorly constrained, primarily due to projection effects. We aim to constrain the line-of-sight location of two molecular clouds in the CMZ -- the 50 and 20 km/s clouds -- and to investigate their possible physical connection using stellar kinematics and photometry. This study serves as a pilot for future applications across the full CMZ. We estimated the line-of-sight position of the clouds by analysing stellar kinematics, stellar densities, and stellar populations towards the cloud regions and a control field. We find an absence of westward moving stars in the cloud regions, which indicates that they lie on the near side of the CMZ. This interpretation is supported by the stellar density distributions. The similar behaviour observed in the two clouds, as well as in the region between them (the ridge), suggests that they are located at comparable distances and are physically linked. We also identified an intermediate-age stellar population (2-7 Gyr) in both regions, consistent with that observed on the near side of the CMZ. We estimated the line-of-sight distances at which the clouds and the ridge become kinematically detectable (i.e. where the proper motion component parallel to the Galactic plane differs from that of the control field at the 3 sigma level) by converting their measured proper motions parallel to the Galactic plane using a theoretical model of the stellar distribution. We find that the 50 and 20 km/s clouds are located at $43\\pm8$ pc and $56\\pm11$ pc from Sgr A*, respectively, and that the ridge lies at $56\\pm11$ pc; this supports the idea that the clouds are physically connected through the ridge.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "astro-ph.GA",
+      "categories": [
+        "astro-ph.GA"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05252v1",
+      "url": "https://arxiv.org/abs/2601.05252"
+    },
+    {
+      "arxiv_id": "2601.05251",
+      "title": "Mesh4D: 4D Mesh Reconstruction and Tracking from Monocular Video",
+      "authors": [
+        "Zeren Jiang",
+        "Chuanxia Zheng",
+        "Iro Laina",
+        "Diane Larlus",
+        "Andrea Vedaldi"
+      ],
+      "abstract": "We propose Mesh4D, a feed-forward model for monocular 4D mesh reconstruction. Given a monocular video of a dynamic object, our model reconstructs the object's complete 3D shape and motion, represented as a deformation field. Our key contribution is a compact latent space that encodes the entire animation sequence in a single pass. This latent space is learned by an autoencoder that, during training, is guided by the skeletal structure of the training objects, providing strong priors on plausible deformations. Crucially, skeletal information is not required at inference time. The encoder employs spatio-temporal attention, yielding a more stable representation of the object's overall deformation. Building on this representation, we train a latent diffusion model that, conditioned on the input video and the mesh reconstructed from the first frame, predicts the full animation in one shot. We evaluate Mesh4D on reconstruction and novel view synthesis benchmarks, outperforming prior methods in recovering accurate 3D shape and deformation.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05251v1",
+      "url": "https://arxiv.org/abs/2601.05251"
+    },
+    {
+      "arxiv_id": "2601.05250",
+      "title": "QNeRF: Neural Radiance Fields on a Simulated Gate-Based Quantum Computer",
+      "authors": [
+        "Daniele Lizzio Bosco",
+        "Shuteng Wang",
+        "Giuseppe Serra",
+        "Vladislav Golyanik"
+      ],
+      "abstract": "Recently, Quantum Visual Fields (QVFs) have shown promising improvements in model compactness and convergence speed for learning the provided 2D or 3D signals. Meanwhile, novel-view synthesis has seen major advances with Neural Radiance Fields (NeRFs), where models learn a compact representation from 2D images to render 3D scenes, albeit at the cost of larger models and intensive training. In this work, we extend the approach of QVFs by introducing QNeRF, the first hybrid quantum-classical model designed for novel-view synthesis from 2D images. QNeRF leverages parameterised quantum circuits to encode spatial and view-dependent information via quantum superposition and entanglement, resulting in more compact models compared to the classical counterpart. We present two architectural variants. Full QNeRF maximally exploits all quantum amplitudes to enhance representational capabilities. In contrast, Dual-Branch QNeRF introduces a task-informed inductive bias by branching spatial and view-dependent quantum state preparations, drastically reducing the complexity of this operation and ensuring scalability and potential hardware compatibility. Our experiments demonstrate that -- when trained on images of moderate resolution -- QNeRF matches or outperforms classical NeRF baselines while using less than half the number of parameters. These results suggest that quantum machine learning can serve as a competitive alternative for continuous signal representation in mid-level tasks in computer vision, such as 3D representation learning from 2D observations.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05250v1",
+      "url": "https://arxiv.org/abs/2601.05250"
+    },
+    {
+      "arxiv_id": "2601.05248",
+      "title": "LaST$_{0}$: Latent Spatio-Temporal Chain-of-Thought for Robotic Vision-Language-Action Model",
+      "authors": [
+        "Zhuoyang Liu",
+        "Jiaming Liu",
+        "Hao Chen",
+        "Ziyu Guo",
+        "Chengkai Hou",
+        "Chenyang Gu",
+        "Jiale Yu",
+        "Xiangju Mi",
+        "Renrui Zhang",
+        "Zhengping Che",
+        "Jian Tang",
+        "Pheng-Ann Heng",
+        "Shanghang Zhang"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models have recently demonstrated strong generalization capabilities in robotic manipulation. Some existing VLA approaches attempt to improve action accuracy by explicitly generating linguistic reasoning traces or future visual observations before action execution. However, explicit reasoning typically incurs non-negligible inference latency, which constrains the temporal resolution required for robotic manipulation. Moreover, such reasoning is confined to the linguistic space, imposing a representational bottleneck that struggles to faithfully capture ineffable physical attributes. To mitigate these limitations, we propose LaST$_0$, a framework that enables efficient reasoning before acting through a Latent Spatio-Temporal Chain-of-Thought (CoT), capturing fine-grained physical and robotic dynamics that are often difficult to verbalize. Specifically, we introduce a token-efficient latent CoT space that models future visual dynamics, 3D structural information, and robot proprioceptive states, and further extends these representations across time to enable temporally consistent implicit reasoning trajectories. Furthermore, LaST$_0$ adopts a dual-system architecture implemented via a Mixture-of-Transformers design, where a reasoning expert conducts low-frequency latent inference and an acting expert generates high-frequency actions conditioned on robotics-oriented latent representations. To facilitate coordination, LaST$_0$ is trained with heterogeneous operation frequencies, enabling adaptive switching between reasoning and action inference rates during deployment. Across ten simulated and six real-world manipulation tasks, LaST$_0$ improves mean success rates by 8% and 13% over prior VLA methods, respectively, while achieving substantially faster inference. Project website: https://sites.google.com/view/last0",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05248v1",
+      "url": "https://arxiv.org/abs/2601.05248"
+    },
+    {
+      "arxiv_id": "2601.05247",
+      "title": "Random Models and Guarded Logic",
+      "authors": [
+        "Oskar Fiuk"
+      ],
+      "abstract": "Building on ideas of Gurevich and Shelah for the G\u00f6del Class, we present a new probabilistic proof of the finite model property for the Guarded Fragment of First-Order Logic. Our proof is conceptually simple and yields the optimal doubly-exponential upper bound on the size of minimal models. We precisely analyse the obtained bound, up to constant factors in the exponents, and construct sentences that enforce models of tightly matching size. The probabilistic approach adapts naturally to the Triguarded Fragment, an extension of the Guarded Fragment that also subsumes the Two-Variable Fragment. Finally, we derandomise the probabilistic proof by providing an explicit model construction which replaces randomness with deterministic hash functions.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05247v1",
+      "url": "https://arxiv.org/abs/2601.05247"
+    },
+    {
+      "arxiv_id": "2601.05246",
+      "title": "Pixel-Perfect Visual Geometry Estimation",
+      "authors": [
+        "Gangwei Xu",
+        "Haotong Lin",
+        "Hongcheng Luo",
+        "Haiyang Sun",
+        "Bing Wang",
+        "Guang Chen",
+        "Sida Peng",
+        "Hangjun Ye",
+        "Xin Yang"
+      ],
+      "abstract": "Recovering clean and accurate geometry from images is essential for robotics and augmented reality. However, existing geometry foundation models still suffer severely from flying pixels and the loss of fine details. In this paper, we present pixel-perfect visual geometry models that can predict high-quality, flying-pixel-free point clouds by leveraging generative modeling in the pixel space. We first introduce Pixel-Perfect Depth (PPD), a monocular depth foundation model built upon pixel-space diffusion transformers (DiT). To address the high computational complexity associated with pixel-space diffusion, we propose two key designs: 1) Semantics-Prompted DiT, which incorporates semantic representations from vision foundation models to prompt the diffusion process, preserving global semantics while enhancing fine-grained visual details; and 2) Cascade DiT architecture that progressively increases the number of image tokens, improving both efficiency and accuracy. To further extend PPD to video (PPVD), we introduce a new Semantics-Consistent DiT, which extracts temporally consistent semantics from a multi-view geometry foundation model. We then perform reference-guided token propagation within the DiT to maintain temporal coherence with minimal computational and memory overhead. Our models achieve the best performance among all generative monocular and video depth estimation models and produce significantly cleaner point clouds than all other models.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05246v1",
+      "url": "https://arxiv.org/abs/2601.05246"
+    },
+    {
+      "arxiv_id": "2601.05244",
+      "title": "GREx: Generalized Referring Expression Segmentation, Comprehension, and Generation",
+      "authors": [
+        "Henghui Ding",
+        "Chang Liu",
+        "Shuting He",
+        "Xudong Jiang",
+        "Yu-Gang Jiang"
+      ],
+      "abstract": "Referring Expression Segmentation (RES) and Comprehension (REC) respectively segment and detect the object described by an expression, while Referring Expression Generation (REG) generates an expression for the selected object. Existing datasets and methods commonly support single-target expressions only, i.e., one expression refers to one object, not considering multi-target and no-target expressions. This greatly limits the real applications of REx (RES/REC/REG). This paper introduces three new benchmarks called Generalized Referring Expression Segmentation (GRES), Comprehension (GREC), and Generation (GREG), collectively denoted as GREx, which extend the classic REx to allow expressions to identify an arbitrary number of objects. We construct the first large-scale GREx dataset gRefCOCO that contains multi-target, no-target, and single-target expressions and their corresponding images with labeled targets. GREx and gRefCOCO are designed to be backward-compatible with REx, facilitating extensive experiments to study the performance gap of the existing REx methods on GREx tasks. One of the challenges of GRES/GREC is complex relationship modeling, for which we propose a baseline ReLA that adaptively divides the image into regions with sub-instance clues and explicitly models the region-region and region-language dependencies. The proposed ReLA achieves the state-of-the-art results on the both GRES and GREC tasks. The proposed gRefCOCO dataset and method are available at https://henghuiding.github.io/GREx.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05244v1",
+      "url": "https://arxiv.org/abs/2601.05244"
+    },
+    {
+      "arxiv_id": "2601.05243",
+      "title": "Generate, Transfer, Adapt: Learning Functional Dexterous Grasping from a Single Human Demonstration",
+      "authors": [
+        "Xingyi He",
+        "Adhitya Polavaram",
+        "Yunhao Cao",
+        "Om Deshmukh",
+        "Tianrui Wang",
+        "Xiaowei Zhou",
+        "Kuan Fang"
+      ],
+      "abstract": "Functional grasping with dexterous robotic hands is a key capability for enabling tool use and complex manipulation, yet progress has been constrained by two persistent bottlenecks: the scarcity of large-scale datasets and the absence of integrated semantic and geometric reasoning in learned models. In this work, we present CorDex, a framework that robustly learns dexterous functional grasps of novel objects from synthetic data generated from just a single human demonstration. At the core of our approach is a correspondence-based data engine that generates diverse, high-quality training data in simulation. Based on the human demonstration, our data engine generates diverse object instances of the same category, transfers the expert grasp to the generated objects through correspondence estimation, and adapts the grasp through optimization. Building on the generated data, we introduce a multimodal prediction network that integrates visual and geometric information. By devising a local-global fusion module and an importance-aware sampling mechanism, we enable robust and computationally efficient prediction of functional dexterous grasps. Through extensive experiments across various object categories, we demonstrate that CorDex generalizes well to unseen object instances and significantly outperforms state-of-the-art baselines.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05243v1",
+      "url": "https://arxiv.org/abs/2601.05243"
+    },
+    {
+      "arxiv_id": "2601.05242",
+      "title": "GDPO: Group reward-Decoupled Normalization Policy Optimization for Multi-reward RL Optimization",
+      "authors": [
+        "Shih-Yang Liu",
+        "Xin Dong",
+        "Ximing Lu",
+        "Shizhe Diao",
+        "Peter Belcak",
+        "Mingjie Liu",
+        "Min-Hung Chen",
+        "Hongxu Yin",
+        "Yu-Chiang Frank Wang",
+        "Kwang-Ting Cheng",
+        "Yejin Choi",
+        "Jan Kautz",
+        "Pavlo Molchanov"
+      ],
+      "abstract": "As language models become increasingly capable, users expect them to provide not only accurate responses but also behaviors aligned with diverse human preferences across a variety of scenarios. To achieve this, Reinforcement learning (RL) pipelines have begun incorporating multiple rewards, each capturing a distinct preference, to guide models toward these desired behaviors. However, recent work has defaulted to apply Group Relative Policy Optimization (GRPO) under multi-reward setting without examining its suitability. In this paper, we demonstrate that directly applying GRPO to normalize distinct rollout reward combinations causes them to collapse into identical advantage values, reducing the resolution of the training signal and resulting in suboptimal convergence and, in some cases, early training failure. We then introduce Group reward-Decoupled Normalization Policy Optimization (GDPO), a new policy optimization method to resolve these issues by decoupling the normalization of individual rewards, more faithfully preserving their relative differences and enabling more accurate multi-reward optimization, along with substantially improved training stability. We compare GDPO with GRPO across three tasks: tool calling, math reasoning, and coding reasoning, evaluating both correctness metrics (accuracy, bug ratio) and constraint adherence metrics (format, length). Across all settings, GDPO consistently outperforms GRPO, demonstrating its effectiveness and generalizability for multi-reward reinforcement learning optimization.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05242v1",
+      "url": "https://arxiv.org/abs/2601.05242"
+    },
+    {
+      "arxiv_id": "2601.05241",
+      "title": "RoboVIP: Multi-View Video Generation with Visual Identity Prompting Augments Robot Manipulation",
+      "authors": [
+        "Boyang Wang",
+        "Haoran Zhang",
+        "Shujie Zhang",
+        "Jinkun Hao",
+        "Mingda Jia",
+        "Qi Lv",
+        "Yucheng Mao",
+        "Zhaoyang Lyu",
+        "Jia Zeng",
+        "Xudong Xu",
+        "Jiangmiao Pang"
+      ],
+      "abstract": "The diversity, quantity, and quality of manipulation data are critical for training effective robot policies. However, due to hardware and physical setup constraints, collecting large-scale real-world manipulation data remains difficult to scale across diverse environments. Recent work uses text-prompt conditioned image diffusion models to augment manipulation data by altering the backgrounds and tabletop objects in the visual observations. However, these approaches often overlook the practical need for multi-view and temporally coherent observations required by state-of-the-art policy models. Further, text prompts alone cannot reliably specify the scene setup. To provide the diffusion model with explicit visual guidance, we introduce visual identity prompting, which supplies exemplar images as conditioning inputs to guide the generation of the desired scene setup. To this end, we also build a scalable pipeline to curate a visual identity pool from large robotics datasets. Using our augmented manipulation data to train downstream vision-language-action and visuomotor policy models yields consistent performance gains in both simulation and real-robot settings.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05241v1",
+      "url": "https://arxiv.org/abs/2601.05241"
+    },
+    {
+      "arxiv_id": "2601.05240",
+      "title": "Robust Reasoning as a Symmetry-Protected Topological Phase",
+      "authors": [
+        "Ilmo Sung"
+      ],
+      "abstract": "Large language models suffer from \"hallucinations\"-logical inconsistencies induced by semantic noise. We propose that current architectures operate in a \"Metric Phase,\" where causal order is vulnerable to spontaneous symmetry breaking. Here, we identify robust inference as an effective Symmetry-Protected Topological phase, where logical operations are formally isomorphic to non-Abelian anyon braiding, replacing fragile geometric interpolation with robust topological invariants. Empirically, we demonstrate a sharp topological phase transition: while Transformers and RNNs exhibit gapless decay, our Holonomic Network reveals a macroscopic \"mass gap,\" maintaining invariant fidelity below a critical noise threshold. Furthermore, in a variable-binding task on $S_{10}$ ($3.6 \\times 10^6$ states) representing symbolic manipulation, we demonstrate holonomic generalization: the topological model maintains perfect fidelity extrapolating $100\\times$ beyond training ($L=50 \\to 5000$), consistent with a theoretically indefinite causal horizon, whereas Transformers lose logical coherence. Ablation studies indicate this protection emerges strictly from non-Abelian gauge symmetry. This provides strong evidence for a new universality class for logical reasoning, linking causal stability to the topology of the semantic manifold.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cond-mat.dis-nn",
+        "cs.AI",
+        "hep-th"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05240v1",
+      "url": "https://arxiv.org/abs/2601.05240"
+    },
+    {
+      "arxiv_id": "2601.05239",
+      "title": "Plenoptic Video Generation",
+      "authors": [
+        "Xiao Fu",
+        "Shitao Tang",
+        "Min Shi",
+        "Xian Liu",
+        "Jinwei Gu",
+        "Ming-Yu Liu",
+        "Dahua Lin",
+        "Chen-Hsuan Lin"
+      ],
+      "abstract": "Camera-controlled generative video re-rendering methods, such as ReCamMaster, have achieved remarkable progress. However, despite their success in single-view setting, these works often struggle to maintain consistency across multi-view scenarios. Ensuring spatio-temporal coherence in hallucinated regions remains challenging due to the inherent stochasticity of generative models. To address it, we introduce PlenopticDreamer, a framework that synchronizes generative hallucinations to maintain spatio-temporal memory. The core idea is to train a multi-in-single-out video-conditioned model in an autoregressive manner, aided by a camera-guided video retrieval strategy that adaptively selects salient videos from previous generations as conditional inputs. In addition, Our training incorporates progressive context-scaling to improve convergence, self-conditioning to enhance robustness against long-range visual degradation caused by error accumulation, and a long-video conditioning mechanism to support extended video generation. Extensive experiments on the Basic and Agibot benchmarks demonstrate that PlenopticDreamer achieves state-of-the-art video re-rendering, delivering superior view synchronization, high-fidelity visuals, accurate camera control, and diverse view transformations (e.g., third-person to third-person, and head-view to gripper-view in robotic manipulation). Project page: https://research.nvidia.com/labs/dir/plenopticdreamer/",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05239v1",
+      "url": "https://arxiv.org/abs/2601.05239"
+    },
+    {
+      "arxiv_id": "2601.05238",
+      "title": "How many-body chaos emerges in the presence of quasiparticles",
+      "authors": [
+        "Sibaram Ruidas",
+        "Sthitadhi Roy",
+        "Subhro Bhattacharjee",
+        "Roderich Moessner"
+      ],
+      "abstract": "Many-body chaos is a default property of many-body systems; at the same time, near-integrable behaviour due to weakly interacting quasiparticles is ubiquitous throughout condensed matter at low temperature. There must therefore be a, possibly generic, crossover between these very different regimes. Here, we develop a theory encapsulating the notion of a cascade of lightcones seeded by sequences of scattering of weakly interacting harmonic modes as witnessed by a suitably defined chaos diagnostic (classical decorrelator) that measures the spatiotemporal profile of many-body chaos. Our numerics deals with the concrete case of a classical Heisenberg chain, for either sign of the interaction, at low temperatures where the short-time dynamics are well captured in terms of non-interacting spin waves. To model low-temperature dynamics, we use ensembles of initial states with randomly embedded point defects in an otherwise ordered background, which provides a controlled setting for studying the scattering events. The decorrelator exhibits a short-time integrable regime followed by an intermediate `scarred' regime of the cascade of lightcones in progress; these then overlap, leading to an avalanche of scattering events which finally yields the standard long-time signature of many-body chaos.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cond-mat.stat-mech",
+      "categories": [
+        "cond-mat.stat-mech",
+        "cond-mat.str-el",
+        "nlin.CD"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05238v1",
+      "url": "https://arxiv.org/abs/2601.05238"
+    },
+    {
+      "arxiv_id": "2601.05237",
+      "title": "ObjectForesight: Predicting Future 3D Object Trajectories from Human Videos",
+      "authors": [
+        "Rustin Soraki",
+        "Homanga Bharadhwaj",
+        "Ali Farhadi",
+        "Roozbeh Mottaghi"
+      ],
+      "abstract": "Humans can effortlessly anticipate how objects might move or change through interaction--imagining a cup being lifted, a knife slicing, or a lid being closed. We aim to endow computational systems with a similar ability to predict plausible future object motions directly from passive visual observation. We introduce ObjectForesight, a 3D object-centric dynamics model that predicts future 6-DoF poses and trajectories of rigid objects from short egocentric video sequences. Unlike conventional world or dynamics models that operate in pixel or latent space, ObjectForesight represents the world explicitly in 3D at the object level, enabling geometrically grounded and temporally coherent predictions that capture object affordances and trajectories. To train such a model at scale, we leverage recent advances in segmentation, mesh reconstruction, and 3D pose estimation to curate a dataset of 2 million plus short clips with pseudo-ground-truth 3D object trajectories. Through extensive experiments, we show that ObjectForesight achieves significant gains in accuracy, geometric consistency, and generalization to unseen objects and scenes, establishing a scalable framework for learning physically grounded, object-centric dynamics models directly from observation. objectforesight.github.io",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05237v1",
+      "url": "https://arxiv.org/abs/2601.05237"
+    },
+    {
+      "arxiv_id": "2601.05236",
+      "title": "Stability of the Local Ni$^{2+}$ Electronic Structure to $A$-site Disorder in the Pyrochlore Antiferromagnet NaCaNi$_2$F$_7$",
+      "authors": [
+        "M. F. DiScala",
+        "A. de la Torre",
+        "J. W. Krizan",
+        "J. Wouters",
+        "V. Bisogni",
+        "J. Pelliciari",
+        "R. J. Cava",
+        "K. W. Plumb"
+      ],
+      "abstract": "NaCaNi$_2$F$_7$ is a unique example of spin-1 Heisenberg antiferromagnet on the pyrochlore lattice, but the presence of Na$^{1+}$/Ca$^{2+}$ $A$-site disorder complicates the local electronic and magnetic environment of the Ni$^{2+}$ $B$-site. We utilize resonant inelastic X-ray scattering (RIXS) to study the influence of $A$-site disorder on the $B$-site electronic structure of NaCaNi$_2$F$_7$. Ni L-edge RIXS measurements reveal a Ni$^{2+}$ electronic structure in nearly ideal octahedral coordination, with only a small trigonal compression ($\u03b4$ = -200$\\;$meV) required to capture all spectral features. Within the $D_{3d}$ symmetry of the Ni local environment, we extract an anisotropic $g$-factor of $g_{\\parallel} = 2.26$ and $g_{\\perp} = 2.27$, and a corresponding paramagnetic moment of $\u03bc_{\\rm{eff}}=3.2\\;\u03bc_B$. To simulate disorder, RIXS spectra were calculated with realistic distributions of crystal field parameters; however, these spectra are invariant relative to a disorder-free model, demonstrating the robustness of the Ni$^{2+}$ electronic environment to the $A$-site disorder, within the resolution of our measurement.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cond-mat.str-el",
+      "categories": [
+        "cond-mat.str-el"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05236v1",
+      "url": "https://arxiv.org/abs/2601.05236"
+    },
+    {
+      "arxiv_id": "2601.05235",
+      "title": "Mimicking Phantom Dark Energy with Evolving Dark Matter Mass",
+      "authors": [
+        "Lorenzo La Penna",
+        "Alessio Notari",
+        "Michele Redi"
+      ],
+      "abstract": "We present a general method to reproduce a given cosmological background through energy exchange between dark energy (DE) and dark matter (DM). This can be simply realized with a standard quintessence scalar field that controls the DM mass. In particular a background with phantom crossing can be effectively realized without introducing ghosts or other pathologies. For example one can reproduce exactly the background that gives the best fit to the recent DESI+CMB+DESY5 data, within the Chevallier-Polarski-Linder (CPL) parametrization of DE. Although the background evolution is identical, the perturbations differ, leading to modified growth of structures. If the DM mass varies at late times, early-time observables are not modified and can reproduce the main predictions of the target model, but late-time observables are affected. We discuss in particular the effects on the matter power spectrum, CMB lensing and ISW effect. When reproducing the best fit CPL background model, this scenario generically predicts $\\mathcal{O}(10\\%)$ deviations in such observables. However, for suitable choices of parameters, effects on the matter power spectrum can be smaller, motivating a detailed study. In general, energy exchange between DE and DM generates a mismatch between the matter power spectrum and the gravitational potential amplitudes compared to the decoupled case, that can lead to deviations observable in future experiments.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "astro-ph.CO",
+      "categories": [
+        "astro-ph.CO",
+        "hep-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05235v1",
+      "url": "https://arxiv.org/abs/2601.05235"
+    },
+    {
+      "arxiv_id": "2601.05234",
+      "title": "When and why non-Hermitian eigenvalues miss eigenstates in topological physics",
+      "authors": [
+        "Lucien Jezequel",
+        "Lo\u00efc Herviou",
+        "Jens Bardarson"
+      ],
+      "abstract": "Non-Hermitian systems exhibit a fundamental spectral dichotomy absent in Hermitian physics: the eigenvalue spectrum and the eigenstate spectrum can deviate significantly in the thermodynamic limit. We explain how non-Hermitian Hamiltonians can support eigenstates completely undetected by eigenvalues, with the unidirectional Hatano-Nelson model serving as both a minimal realization and universal paradigm for this phenomenon. Through exact analytical solutions, we show that this model contains not only hidden modes but multiple macroscopic hidden exceptional points that appear more generally in all systems with a non-trivial bulk winding. Our framework explains how the apparent bulk-edge correspondence failures in models like the non-Hermitian SSH chain instead reflect the systematic inability of the eigenvalue spectrum to detect certain eigenstates in systems with a skin-effect. These results establish the limitation of the eigenvalue spectrum and suggest how the eigenstate approach can lead to improved characterization of non-Hermitian topology.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cond-mat.mes-hall",
+      "categories": [
+        "cond-mat.mes-hall",
+        "quant-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05234v1",
+      "url": "https://arxiv.org/abs/2601.05234"
+    },
+    {
+      "arxiv_id": "2601.05232",
+      "title": "Measuring and Fostering Peace through Machine Learning and Artificial Intelligence",
+      "authors": [
+        "P. Gilda",
+        "P. Dungarwal",
+        "A. Thongkham",
+        "E. T. Ajayi",
+        "S. Choudhary",
+        "T. M. Terol",
+        "C. Lam",
+        "J. P. Araujo",
+        "M. McFadyen-Mungalln",
+        "L. S. Liebovitch",
+        "P. T. Coleman",
+        "H. West",
+        "K. Sieck",
+        "S. Carter"
+      ],
+      "abstract": "We used machine learning and artificial intelligence: 1) to measure levels of peace in countries from news and social media and 2) to develop on-line tools that promote peace by helping users better understand their own media diet. For news media, we used neural networks to measure levels of peace from text embeddings of on-line news sources. The model, trained on one news media dataset also showed high accuracy when used to analyze a different news dataset. For social media, such as YouTube, we developed other models to measure levels of social dimensions important in peace using word level (GoEmotions) and context level (Large Language Model) methods. To promote peace, we note that 71% of people 20-40 years old daily view most of their news through short videos on social media. Content creators of these videos are biased towards creating videos with emotional activation, making you angry to engage you, to increase clicks. We developed and tested a Chrome extension, MirrorMirror, which provides real-time feedback to YouTube viewers about the peacefulness of the media they are watching. Our long term goal is for MirrorMirror to evolve into an open-source tool for content creators, journalists, researchers, platforms, and individual users to better understand the tone of their media creation and consumption and its effects on viewers. Moving beyond simple engagement metrics, we hope to encourage more respectful, nuanced, and informative communication.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05232v1",
+      "url": "https://arxiv.org/abs/2601.05232"
+    },
+    {
+      "arxiv_id": "2601.05231",
+      "title": "Scalable Suppression of XY Crosstalk by Pulse-Level Control in Superconducting Quantum Processors",
+      "authors": [
+        "Hui-Hang Chen",
+        "Chiao-Hsuan Wang"
+      ],
+      "abstract": "As superconducting quantum processors continue to scale, high-performance quantum control becomes increasingly critical. In densely integrated architectures, unwanted interactions between nearby qubits give rise to crosstalk errors that limit operational performance. In particular, direct exchange-type (XY) interactions are typically minimized by designing large frequency detunings between neighboring qubits at the hardware level. However, frequency crowding in large-scale systems ultimately restricts the achievable frequency separation. While such XY coupling facilitates entangling gate operations, its residual presence poses a key challenge during single-qubit controls. Here, we propose a scalable pulse-level control framework, incorporating frequency modulation (FM) and dynamical decoupling (DD), to suppress XY crosstalk errors. This framework operates independently of coupling strengths, reducing calibration overhead and naturally supporting multi-qubit connectivity. Numerical simulations show orders-of-magnitude reductions in infidelity for both idle and single-qubit gates in a two-qubit system. We further validate scalability in a five-qubit layout, where crosstalk between a central qubit and four neighbors is simultaneously suppressed. Our crosstalk suppression framework provides a practical route toward high-fidelity operation in dense superconducting architectures.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05231v1",
+      "url": "https://arxiv.org/abs/2601.05231"
+    },
+    {
+      "arxiv_id": "2601.05230",
+      "title": "Learning Latent Action World Models In The Wild",
+      "authors": [
+        "Quentin Garrido",
+        "Tushar Nagarajan",
+        "Basile Terver",
+        "Nicolas Ballas",
+        "Yann LeCun",
+        "Michael Rabbat"
+      ],
+      "abstract": "Agents capable of reasoning and planning in the real world require the ability of predicting the consequences of their actions. While world models possess this capability, they most often require action labels, that can be complex to obtain at scale. This motivates the learning of latent action models, that can learn an action space from videos alone. Our work addresses the problem of learning latent actions world models on in-the-wild videos, expanding the scope of existing works that focus on simple robotics simulations, video games, or manipulation data. While this allows us to capture richer actions, it also introduces challenges stemming from the video diversity, such as environmental noise, or the lack of a common embodiment across videos. To address some of the challenges, we discuss properties that actions should follow as well as relevant architectural choices and evaluations. We find that continuous, but constrained, latent actions are able to capture the complexity of actions from in-the-wild videos, something that the common vector quantization does not. We for example find that changes in the environment coming from agents, such as humans entering the room, can be transferred across videos. This highlights the capability of learning actions that are specific to in-the-wild videos. In the absence of a common embodiment across videos, we are mainly able to learn latent actions that become localized in space, relative to the camera. Nonetheless, we are able to train a controller that maps known actions to latent ones, allowing us to use latent actions as a universal interface and solve planning tasks with our world model with similar performance as action-conditioned baselines. Our analyses and experiments provide a step towards scaling latent action models to the real world.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05230v1",
+      "url": "https://arxiv.org/abs/2601.05230"
+    },
+    {
+      "arxiv_id": "2601.05229",
+      "title": "Mitigating Simulator Dependence in AI Parameter Inference for the Epoch of Reionization: The Importance of Simulation Diversity",
+      "authors": [
+        "Jasper Solt",
+        "Jonathan C. Pober",
+        "Stephen H. Bach"
+      ],
+      "abstract": "The 21cm signal of neutral hydrogen contains a wealth of information about the poorly constrained era of cosmological history, the Epoch of Reionization (EoR). Recently, AI models trained on EoR simulations have gained significant attention as a powerful and flexible option for inferring parameters from 21cm observations. However, previous works show that AI models trained on data from one simulator fail to generalize to data from another, raising doubts about AI models' ability to accurately infer parameters from observation. We develop a new strategy for training AI models on cosmological simulations based on the principle that increasing the diversity of the training dataset improves model robustness by averaging out spurious and contradictory information. We train AI models on data from different combinations of four simulators, then compare the models' performance when predicting on data from held-out simulators acting as proxies for the real universe. We find that models trained on data from multiple simulators perform better on data from a held-out simulator than models trained on data from a single simulator, indicating that increasing the diversity of the training dataset improves a model's ability to generalize. This result suggests that future EoR parameter inference methods can mitigate simulator-specific bias by incorporating multiple simulation approaches into their analyses.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "astro-ph.CO",
+      "categories": [
+        "astro-ph.CO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05229v1",
+      "url": "https://arxiv.org/abs/2601.05229"
+    },
+    {
+      "arxiv_id": "2601.05227",
+      "title": "Stochastic Deep Learning: A Probabilistic Framework for Modeling Uncertainty in Structured Temporal Data",
+      "authors": [
+        "James Rice"
+      ],
+      "abstract": "I propose a novel framework that integrates stochastic differential equations (SDEs) with deep generative models to improve uncertainty quantification in machine learning applications involving structured and temporal data. This approach, termed Stochastic Latent Differential Inference (SLDI), embeds an It\u00f4 SDE in the latent space of a variational autoencoder, allowing for flexible, continuous-time modeling of uncertainty while preserving a principled mathematical foundation. The drift and diffusion terms of the SDE are parameterized by neural networks, enabling data-driven inference and generalizing classical time series models to handle irregular sampling and complex dynamic structure.   A central theoretical contribution is the co-parameterization of the adjoint state with a dedicated neural network, forming a coupled forward-backward system that captures not only latent evolution but also gradient dynamics. I introduce a pathwise-regularized adjoint loss and analyze variance-reduced gradient flows through the lens of stochastic calculus, offering new tools for improving training stability in deep latent SDEs. My paper unifies and extends variational inference, continuous-time generative modeling, and control-theoretic optimization, providing a rigorous foundation for future developments in stochastic probabilistic machine learning.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "econ.EM",
+        "math.ST"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05227v1",
+      "url": "https://arxiv.org/abs/2601.05227"
+    },
+    {
+      "arxiv_id": "2601.05224",
+      "title": "Variable Projection Methods for Solving Regularized Separable Inverse Problems with Applications to Semi-Blind Image Deblurring",
+      "authors": [
+        "Delfina B. Comerso Salzer",
+        "Malena I. Espa\u00f1ol",
+        "Gabriela Jeronimo"
+      ],
+      "abstract": "Separable nonlinear least squares problems appear in many inverse problems, including semi-blind image deblurring. The variable projection (VarPro) method provides an efficient approach for solving such problems by eliminating linear variables and reducing the problem to a smaller, nonlinear one. In this work, we extend VarPro to solve minimization problems containing a differentiable regularization term on the nonlinear parameters, along with a general-form Tikhonov regularization term on the linear variables. Furthermore, we develop a quasi-Newton method for solving the resulting reduced problem, and provide a local convergence analysis under standard smoothness assumptions, establishing conditions for superlinear or quadratic convergence. For large-scale settings, we introduce an inexact LSQR-based variant and prove its local convergence despite inner-solve and Hessian approximations. Numerical experiments on semi-blind deblurring show that parameter regularization prevents degenerate no-blur solutions and that the proposed methods achieve accurate reconstructions, with the inexact variant offering a favorable accuracy-cost tradeoff consistent with the theory.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "math.NA",
+      "categories": [
+        "math.NA"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05224v1",
+      "url": "https://arxiv.org/abs/2601.05224"
+    },
+    {
+      "arxiv_id": "2601.05222",
+      "title": "Oscillatory Regimes in a Game-Theoretic Model for Mosquito Population Dynamics under Breeding Site Control",
+      "authors": [
+        "Mohammad Rubayet Rahman",
+        "Chanaka Kottegoda",
+        "Lucas M. Stolerman"
+      ],
+      "abstract": "Mosquito-borne diseases remain a major public-health threat, and the effective control of mosquito populations requires sustained household participation in removing breeding sites. While environmental drivers of mosquito oscillations have been extensively studied, the influence of spontaneous household decision-making on the dynamics of mosquito populations remains poorly understood. We introduce a game-theoretic model in which the fraction of households performing breeding site control evolves through imitation dynamics driven by perceived risks. Household behavior regulates the carrying capacity of the aquatic mosquito stage, creating a feedback between control actions and mosquito population growth. For a simplified model with constant payoffs, we characterize four locally stable equilibria, corresponding to full or no household control and the presence or absence of mosquito populations. When the perceived risk of not controlling breeding sites depends on mosquito prevalence, the system admits an additional equilibrium with partial household engagement. We derive conditions under which this equilibrium undergoes a Hopf bifurcation, yielding sustained oscillations arising solely from the interaction between mosquito abundance and household behavior. Numerical simulations and parameter explorations further describe the amplitude and phase properties of these oscillatory regimes.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "math.DS",
+      "categories": [
+        "math.DS",
+        "q-bio.PE"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05222v1",
+      "url": "https://arxiv.org/abs/2601.05222"
+    },
+    {
+      "arxiv_id": "2601.05219",
+      "title": "CAOS: Conformal Aggregation of One-Shot Predictors",
+      "authors": [
+        "Maja Waldron"
+      ],
+      "abstract": "One-shot prediction enables rapid adaptation of pretrained foundation models to new tasks using only one labeled example, but lacks principled uncertainty quantification. While conformal prediction provides finite-sample coverage guarantees, standard split conformal methods are inefficient in the one-shot setting due to data splitting and reliance on a single predictor. We propose Conformal Aggregation of One-Shot Predictors (CAOS), a conformal framework that adaptively aggregates multiple one-shot predictors and uses a leave-one-out calibration scheme to fully exploit scarce labeled data. Despite violating classical exchangeability assumptions, we prove that CAOS achieves valid marginal coverage using a monotonicity-based argument. Experiments on one-shot facial landmarking and RAFT text classification tasks show that CAOS produces substantially smaller prediction sets than split conformal baselines while maintaining reliable coverage.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05219v1",
+      "url": "https://arxiv.org/abs/2601.05219"
+    },
+    {
+      "arxiv_id": "2601.05218",
+      "title": "Towards a unified quantum field theory of dark energy and inflation: unstable de Sitter vacuum and running vacuum",
+      "authors": [
+        "Joan Sol\u00e0 Peracaula",
+        "\u00c0lex Gonz\u00e1lez-Fuentes",
+        "Cristian Moreno-Pulido"
+      ],
+      "abstract": "Inflation is a necessary cosmic mechanism to cure basic inconsistencies of the standard model of cosmology. These problems are usually `fixed' by postulating the existence of a scalar field (called the ``inflaton''). However, other less ad hoc options are possible. In the running vacuum model (RVM) framework, the vacuum energy density (VED) is a function of the Hubble rate $H$ and its time derivatives: $\u03c1_{\\rm vac}=\u03c1_{\\rm vac}(H, \\dot{H},\\ddot{H},\\dots)$. In this context, the VED is dynamical (there is no rigid cosmological constant $\u039b$). In the FLRW epoch, $\u03c1_{\\rm vac}$ evolves very slowly with expansion, as befits the observed $\u039b\\simeq$const. behavior. In contrast, in the very early universe the vacuum fluctuations induce higher powers $H^N$ capable of unleashing fast inflation in a short period in which $H\\simeq$ const. We call this mechanism `RVM-inflation'. It does not require an inflaton field since inflation is brought about by pure quantum field theory (QFT) effects on the dynamical background. It is different from Starobinsky's inflation, in which $H$ is never constant. In this work, we study a closely related scenario: the decay of the exact de Sitter vacuum into FLRW spacetime in its radiation epoch and the subsequent impact on the current universe, and compare with the RVM. We find that in both cases inflation is driven by $H^4$ powers together with subleading contributions of order $H^2$ that ease a graceful-exit transition into the radiation-dominated epoch, where the FLRW regime starts and ultimately develops a mildly evolving VED in the late universe: $\u03b4\u03c1_{\\rm vac}\\sim {\\cal O}(m_{\\rm Pl} ^2 H^2)$. The outcome is an unified QFT approach to inflation and dark energy (conceived as dynamical vacuum energy) with potentially measurable phenomenological consequences in the present universe which can help to cure the cosmological tensions.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "gr-qc",
+      "categories": [
+        "gr-qc",
+        "astro-ph.CO",
+        "hep-ph",
+        "hep-th"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05218v1",
+      "url": "https://arxiv.org/abs/2601.05218"
+    },
+    {
+      "arxiv_id": "2601.05216",
+      "title": "Cat states and violation of the Bell-CHSH inequality in relativistic Quantum Field Theory",
+      "authors": [
+        "M. S. Guimaraes",
+        "I. Roditi",
+        "S. P. Sorella"
+      ],
+      "abstract": "A cat state localized in the right Rindler wedge is employed to study the violation of the Bell-CHSH inequality in a relativistic scalar free Quantum Field Theory. By means of the bounded Hermitian operator $sign(\\varphi(f))$, where $\\varphi(f)$ stands for the smeared scalar field, it turns out that the Bell-CHSH correlator can be evaluated in closed analytic form in terms of the imaginary error function. Being the superposition of two coherent states, cat states allow for the existence of interference terms which give rise to a violation of the Bell-CHSH inequality. As such, the present setup can be considered as an explicit realization of the results obtained by Summers-Werner.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "hep-th",
+      "categories": [
+        "hep-th",
+        "math-ph",
+        "quant-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05216v1",
+      "url": "https://arxiv.org/abs/2601.05216"
+    },
+    {
+      "arxiv_id": "2601.05214",
+      "title": "Internal Representations as Indicators of Hallucinations in Agent Tool Selection",
+      "authors": [
+        "Kait Healy",
+        "Bharathi Srinivasan",
+        "Visakh Madathil",
+        "Jing Wu"
+      ],
+      "abstract": "Large Language Models (LLMs) have shown remarkable capabilities in tool calling and tool usage, but suffer from hallucinations where they choose incorrect tools, provide malformed parameters and exhibit 'tool bypass' behavior by performing simulations and generating outputs instead of invoking specialized tools or external systems. This undermines the reliability of LLM based agents in production systems as it leads to inconsistent results, and bypasses security and audit controls. Such hallucinations in agent tool selection require early detection and error handling. Unlike existing hallucination detection methods that require multiple forward passes or external validation, we present a computationally efficient framework that detects tool-calling hallucinations in real-time by leveraging LLMs' internal representations during the same forward pass used for generation. We evaluate this approach on reasoning tasks across multiple domains, demonstrating strong detection performance (up to 86.4\\% accuracy) while maintaining real-time inference capabilities with minimal computational overhead, particularly excelling at detecting parameter-level hallucinations and inappropriate tool selections, critical for reliable agent deployment.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05214v1",
+      "url": "https://arxiv.org/abs/2601.05214"
+    },
+    {
+      "arxiv_id": "2601.05212",
+      "title": "FlowLet: Conditional 3D Brain MRI Synthesis using Wavelet Flow Matching",
+      "authors": [
+        "Danilo Danese",
+        "Angela Lombardi",
+        "Matteo Attimonelli",
+        "Giuseppe Fasano",
+        "Tommaso Di Noia"
+      ],
+      "abstract": "Brain Magnetic Resonance Imaging (MRI) plays a central role in studying neurological development, aging, and diseases. One key application is Brain Age Prediction (BAP), which estimates an individual's biological brain age from MRI data. Effective BAP models require large, diverse, and age-balanced datasets, whereas existing 3D MRI datasets are demographically skewed, limiting fairness and generalizability. Acquiring new data is costly and ethically constrained, motivating generative data augmentation. Current generative methods are often based on latent diffusion models, which operate in learned low dimensional latent spaces to address the memory demands of volumetric MRI data. However, these methods are typically slow at inference, may introduce artifacts due to latent compression, and are rarely conditioned on age, thereby affecting the BAP performance. In this work, we propose FlowLet, a conditional generative framework that synthesizes age-conditioned 3D MRIs by leveraging flow matching within an invertible 3D wavelet domain, helping to avoid reconstruction artifacts and reducing computational demands. Experiments show that FlowLet generates high-fidelity volumes with few sampling steps. Training BAP models with data generated by FlowLet improves performance for underrepresented age groups, and region-based analysis confirms preservation of anatomical structures.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05212v1",
+      "url": "https://arxiv.org/abs/2601.05212"
+    },
+    {
+      "arxiv_id": "2601.05211",
+      "title": "A non-commutative de Branges-Rovnyak model for row contractions",
+      "authors": [
+        "Robert T. W. Martin",
+        "Jeet Sampat"
+      ],
+      "abstract": "We extend the de Branges-Rovnyak model for completely non-coisometric (CNC) linear contractions on a Hilbert space to the non-commutative multivariate setting of CNC row contractions. Namely, we show that any CNC contraction from several copies of a Hilbert space into a single copy is unitarily equivalent to the adjoint of the restricted backward right shifts acting on the de Branges-Rovnyak space of a contractive left multiplier between vector-valued \"free Hardy spaces\" of square-summable power series in several non-commuting (NC) variables. This contractive, operator-valued left multiplier, the characteristic function of the CNC row contraction, is a complete unitary invariant and it is always column-extreme as a contractive left multiplier.   Our construction builds a model reproducing kernel Hilbert space of NC functions using a \"non-commutative resolvent\" of the row contraction, $T$, which is the inverse of the monic, affine linear pencil of $T$ in a certain NC unit row-ball of the NC universe of all row tuples of square matrices of all finite sizes.",
+      "published": "2026-01-08",
+      "updated": "2026-01-08",
+      "primary_category": "math.FA",
+      "categories": [
+        "math.FA",
+        "math.CV",
+        "math.OA"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.05211v1",
+      "url": "https://arxiv.org/abs/2601.05211"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

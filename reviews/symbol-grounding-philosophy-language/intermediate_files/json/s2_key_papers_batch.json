@@ -1,0 +1,199 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "7 paper IDs",
+  "results": [
+    {
+      "paperId": "82fd866b13d97763e738660f2a077eddc854c3ea",
+      "title": "Pragmatic Norms Are All You Need \u2013 Why The Symbol Grounding Problem Does Not Apply to LLMs",
+      "authors": [
+        {
+          "name": "Reto Gubelmann",
+          "authorId": "119338633"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Do LLMs fall prey to Harnad\u2019s symbol grounding problem (SGP), as it has recently been claimed? We argue that this is not the case. Starting out with countering the arguments of Bender and Koller (2020), we trace the origins of the SGP to the computational theory of mind (CTM), and we show that it only arises with natural language when questionable theories of meaning are presupposed. We conclude by showing that it would apply to LLMs only if they were interpreted in the manner of how the CTM conceives the mind, i.e., by postulating that LLMs rely on a version of a language of thought, or by adopting said questionable theories of meaning; since neither option is rational, we conclude that the SGP does not apply to LLMs.",
+      "citationCount": 9,
+      "doi": "10.18653/v1/2024.emnlp-main.651",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/82fd866b13d97763e738660f2a077eddc854c3ea",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "11663-11678"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ],
+      "_queryId": "82fd866b13d97763e738660f2a077eddc854c3ea"
+    },
+    {
+      "paperId": "fc5219fb458960befe73714928a1a31fcfcdd55e",
+      "title": "Which symbol grounding problem should we try to solve?",
+      "authors": [
+        {
+          "name": "V. C. M\u00fcller",
+          "authorId": "1807005"
+        }
+      ],
+      "year": 2015,
+      "abstract": "Floridi and Taddeo propose a condition of \u2018zero semantic commitment\u2019 for solutions to the grounding problem, and a solution to it. I argue briefly that their condition cannot be fulfilled, not even by their own solution. After a look at Luc Steel's very different competing suggestion, I suggest that we need to re-think what the problem is and what role the \u2018goals\u2019 in a system play in formulating the problem. On the basis of a proper (syntactic) understanding of computing, I come to the conclusion that the only sensible grounding problem is how we can explain and re-produce the behavioural ability and function of meaning in artificial computational agents.",
+      "citationCount": 7,
+      "doi": "10.1080/0952813X.2014.940143",
+      "arxivId": "2507.21080",
+      "url": "https://www.semanticscholar.org/paper/fc5219fb458960befe73714928a1a31fcfcdd55e",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "73 - 78",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "fc5219fb458960befe73714928a1a31fcfcdd55e"
+    },
+    {
+      "paperId": "c6b1a1e991adf3b4be258de7e79c114da4fa75e7",
+      "title": "Why Taddeo and Floridi did not solve the symbol grounding problem",
+      "authors": [
+        {
+          "name": "K. Bielecka",
+          "authorId": "2325880"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1080/0952813X.2014.940138",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c6b1a1e991adf3b4be258de7e79c114da4fa75e7",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "79 - 93",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ],
+      "_queryId": "c6b1a1e991adf3b4be258de7e79c114da4fa75e7"
+    },
+    {
+      "paperId": "1ac9e8b082dfce53b9275f194015de3a278139f5",
+      "title": "Solving the symbol grounding problem: a critical review of fifteen years of research",
+      "authors": [
+        {
+          "name": "M. Taddeo",
+          "authorId": "2084659"
+        },
+        {
+          "name": "L. Floridi",
+          "authorId": "1982425"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 179,
+      "doi": "10.1080/09528130500284053",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1ac9e8b082dfce53b9275f194015de3a278139f5",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "419 - 445",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ],
+      "_queryId": "1ac9e8b082dfce53b9275f194015de3a278139f5"
+    },
+    {
+      "paperId": "996759cd170309774f1f7b7d07095a571acb8370",
+      "title": "A Praxical Solution of the Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "M. Taddeo",
+          "authorId": "2084659"
+        },
+        {
+          "name": "L. Floridi",
+          "authorId": "1982425"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 43,
+      "doi": "10.1007/s11023-007-9081-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/996759cd170309774f1f7b7d07095a571acb8370",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "369-389",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "996759cd170309774f1f7b7d07095a571acb8370"
+    },
+    {
+      "paperId": "bae295eecc2efcc0a744079c6c60d1fa6b0959e0",
+      "title": "The symbol grounding problem \u2026 remains unsolved",
+      "authors": [
+        {
+          "name": "S. Bringsjord",
+          "authorId": "1797985"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.1080/0952813X.2014.940139",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bae295eecc2efcc0a744079c6c60d1fa6b0959e0",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "63 - 72",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "bae295eecc2efcc0a744079c6c60d1fa6b0959e0"
+    },
+    {
+      "paperId": "4106342a079eecadd4a4a1d39eabd4a50e0a7cd1",
+      "title": "The Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 3571,
+      "doi": "10.1016/0167-2789(90)90087-6",
+      "arxivId": "cs/9906002",
+      "url": "https://www.semanticscholar.org/paper/4106342a079eecadd4a4a1d39eabd4a50e0a7cd1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "cs.AI/9906002"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "4106342a079eecadd4a4a1d39eabd4a50e0a7cd1"
+    }
+  ],
+  "count": 7,
+  "errors": []
+}

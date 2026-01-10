@@ -1,0 +1,817 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "1ac9e8b082dfce53b9275f194015de3a278139f5",
+  "results": [
+    {
+      "paper": {
+        "paperId": "1ac9e8b082dfce53b9275f194015de3a278139f5",
+        "title": "Solving the symbol grounding problem: a critical review of fifteen years of research",
+        "authors": [
+          {
+            "name": "M. Taddeo",
+            "authorId": "2084659"
+          },
+          {
+            "name": "L. Floridi",
+            "authorId": "1982425"
+          }
+        ],
+        "year": 2005,
+        "abstract": null,
+        "citationCount": 179,
+        "doi": "10.1080/09528130500284053",
+        "arxivId": null,
+        "url": "https://www.semanticscholar.org/paper/1ac9e8b082dfce53b9275f194015de3a278139f5",
+        "venue": "Journal of experimental and theoretical artificial intelligence (Print)"
+      },
+      "references": [],
+      "citations": [
+        {
+          "paperId": "eee43a9337df7ca428e78d0217bd0691a9927c09",
+          "title": "A Categorical Analysis of Large Language Models and Why LLMs Circumvent the Symbol Grounding Problem",
+          "authors": [
+            {
+              "name": "Luciano Floridi",
+              "authorId": "2259952291"
+            },
+            {
+              "name": "Yiyang Jia",
+              "authorId": "2400358926"
+            },
+            {
+              "name": "Fernando Tohm'e",
+              "authorId": "2214095508"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": "2512.09117",
+          "url": "https://www.semanticscholar.org/paper/eee43a9337df7ca428e78d0217bd0691a9927c09",
+          "venue": "",
+          "isInfluential": false,
+          "contexts": [
+            "\u2026operations with the semantic content of its productions, a fundamental mistake warned against in arguments such as Searle\u2019s Chinese Room thought experiment (Searle 1980) and Harnad\u2019s formulation of the symbol grounding problem (Harnad 1990; Taddeo and Floridi 2005; Taddeo and Floridi 2007)."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "2e861d63905f74383a97d4f30e7be843cb17051a",
+          "title": "On measuring grounding and generalizing grounding problems",
+          "authors": [
+            {
+              "name": "Daniel Quigley",
+              "authorId": "2397382182"
+            },
+            {
+              "name": "Eric Maynard",
+              "authorId": "2397387387"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": "2512.06205",
+          "url": "https://www.semanticscholar.org/paper/2e861d63905f74383a97d4f30e7be843cb17051a",
+          "venue": "",
+          "isInfluential": false,
+          "contexts": [
+            "\u2026can be about cats, as opposed to being a shape manipulated in a formal system [30]; without such anchoring, definitions risk an infinite regress [75], in which each symbol is defined only in terms of other symbols, never making contact with the perceptual or sensorimotor experiences that could\u2026"
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "62104cf5bc55fe87bb9a194cb11f792ca48e0c3c",
+          "title": "A Bateson-Inspired Model for the Generation of Semantic Concepts from Sensory Data",
+          "authors": [
+            {
+              "name": "Jaime de Miguel Rodr\u00edguez",
+              "authorId": "2042282506"
+            },
+            {
+              "name": "Fernando Sancho Caparrini",
+              "authorId": "2042321088"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1177/30504554251314334",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/62104cf5bc55fe87bb9a194cb11f792ca48e0c3c",
+          "venue": "The European Journal on Artificial Intelligence",
+          "isInfluential": true,
+          "contexts": [
+            "However, a closer examination of some of these works (Section 3) suggests that they may not fully adhere to the zero semantical commitment condition (Z condition) proposed by Taddeo & Floridi (2005).",
+            "Many of these efforts were collected and discussed early on by Taddeo & Floridi (2005), where they introduced the notion of the zero semantical commitment condition (or Z condition ) as a summary of the ultimate requirement for any valid solution to the SGP.",
+            "In this scenario, consensus on the meanings of these unspeci\ufb01ed tokens could be established among a group of agents, employing mechanisms similar to those discussed by Taddeo & Floridi (2005)."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "2617ab878c63a0ad926a65b3ed9f448f18fa4021",
+          "title": "YAPAY ZEK\u00c2NIN SU\u00c7 POTANS\u0130YEL\u0130N\u0130N DE\u011eERLEND\u0130R\u0130LMES\u0130",
+          "authors": [
+            {
+              "name": "M\u00fcmin G\u00fcng\u00f6r",
+              "authorId": "152106912"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.55009/bilisimhukukudergisi.1498256",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/2617ab878c63a0ad926a65b3ed9f448f18fa4021",
+          "venue": "Bili\u015fim Hukuku Dergisi",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "f77a6a1d6ca64c81349f696abd3106db8a0467a2",
+          "title": "Neuro-Symbolic Artificial Intelligence: Towards Improving the Reasoning Abilities of Large Language Models",
+          "authors": [
+            {
+              "name": "Xiao-Wen Yang",
+              "authorId": "2189204591"
+            },
+            {
+              "name": "Jiejing Shao",
+              "authorId": "50878225"
+            },
+            {
+              "name": "Lan-Zhe Guo",
+              "authorId": "2340176599"
+            },
+            {
+              "name": "Bo-Wen Zhang",
+              "authorId": "2336110639"
+            },
+            {
+              "name": "Zhi Zhou",
+              "authorId": "2340049285"
+            },
+            {
+              "name": "Lin Jia",
+              "authorId": "2119414036"
+            },
+            {
+              "name": "Wang-Zhou Dai",
+              "authorId": "2376495712"
+            },
+            {
+              "name": "Yu-Feng Li",
+              "authorId": "2288553539"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.48550/arXiv.2508.13678",
+          "arxivId": "2508.13678",
+          "url": "https://www.semanticscholar.org/paper/f77a6a1d6ca64c81349f696abd3106db8a0467a2",
+          "venue": "International Joint Conference on Artificial Intelligence",
+          "isInfluential": false,
+          "contexts": [
+            "This is a well-established and enduring research area [ Taddeo and Floridi, 2005 ] ."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "e3078cbb3bba4653e4a61a9c9bfd02a838539c63",
+          "title": "Moralische Roboter",
+          "authors": [
+            {
+              "name": "Andr\u00e9 Schmiljun",
+              "authorId": "2079482305"
+            },
+            {
+              "name": "Iga Maria Schmiljun",
+              "authorId": "2006832093"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.14361/9783839467206",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/e3078cbb3bba4653e4a61a9c9bfd02a838539c63",
+          "venue": "Edition Moderne Postmoderne",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "d425499776877d2ec88bc0066d27943c2dda643e",
+          "title": "The Autonomy-Alignment Problem in Open-Ended Learning Robots: Formalising the Purpose Framework",
+          "authors": [
+            {
+              "name": "Gianluca Baldassarre",
+              "authorId": "2279556364"
+            },
+            {
+              "name": "Richard J. Duro",
+              "authorId": "2263493692"
+            },
+            {
+              "name": "Emilio Cartoni",
+              "authorId": "5191016"
+            },
+            {
+              "name": "Mehdi Khamassi",
+              "authorId": "2290010849"
+            },
+            {
+              "name": "A. Romero",
+              "authorId": "145318182"
+            },
+            {
+              "name": "V. Santucci",
+              "authorId": "34631909"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": null,
+          "arxivId": "2403.02514",
+          "url": "https://www.semanticscholar.org/paper/d425499776877d2ec88bc0066d27943c2dda643e",
+          "venue": "",
+          "isInfluential": false,
+          "contexts": [
+            "Subsequent research has investigated how computational systems can autonomously acquire semantically grounded concepts [100]."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "3093520b6ca15b90053ef368120c04b62bdcc085",
+          "title": "Concepts require flexible grounding",
+          "authors": [
+            {
+              "name": "Guy Dove",
+              "authorId": "16673247"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 8,
+          "doi": "10.1016/j.bandl.2023.105322",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/3093520b6ca15b90053ef368120c04b62bdcc085",
+          "venue": "Brain and Language",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "4413f3ee5cfd843ac3add087689027ab243fcf72",
+          "title": "Natural and Artificial Intelligence: A Comparative Analysis of Cognitive Aspects",
+          "authors": [
+            {
+              "name": "Francesco Abbate",
+              "authorId": "2238724728"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 7,
+          "doi": "10.1007/s11023-023-09646-w",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/4413f3ee5cfd843ac3add087689027ab243fcf72",
+          "venue": "Minds and Machines",
+          "isInfluential": false,
+          "contexts": [
+            "\u2026of any form of innatism , which means no semantic resources should be pre-possessed by the AA, and any form of externalism , which means that: \u201cno semantic resources should be uploaded from the \u2018outside\u2019 by some deus ex machina already semantically proficient\u201d (Taddeo & Floridi, 2005 , p.5).",
+            "Many solutions to such a problem have been provided during the last 30 years (see Taddeo and Floridi, 2005 ; Li and Mao, 2022 )."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "96ab94ee0cc3b59116bb6d354d527f164ace007a",
+          "title": "A Recursive Bateson-Inspired Model for the Generation of Semantic Formal Concepts from Spatial Sensory Data",
+          "authors": [
+            {
+              "name": "Jaime de Miguel-Rodr\u00edguez",
+              "authorId": "1405355218"
+            },
+            {
+              "name": "Fernando Sancho-Caparrini",
+              "authorId": "1403048052"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.48550/arXiv.2307.08087",
+          "arxivId": "2307.08087",
+          "url": "https://www.semanticscholar.org/paper/96ab94ee0cc3b59116bb6d354d527f164ace007a",
+          "venue": "arXiv.org",
+          "isInfluential": false,
+          "contexts": [
+            "It would be interesting to review this claim in light of the zero semantical commitment condition or \u2018Z condition\u2019 as articulated by Taddeo and Floridi (Taddeo & Floridi, 2005)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "3758a523722475e46a4db53e44dd467cb6b359a0",
+          "title": "Emergence of Symbols in Neural Networks for Semantic Understanding and Communication",
+          "authors": [
+            {
+              "name": "Yang Chen",
+              "authorId": "2144353903"
+            },
+            {
+              "name": "Liangxuan Guo",
+              "authorId": "2214360984"
+            },
+            {
+              "name": "S. Yu",
+              "authorId": "117217525"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.48550/arXiv.2304.06377",
+          "arxivId": "2304.06377",
+          "url": "https://www.semanticscholar.org/paper/3758a523722475e46a4db53e44dd467cb6b359a0",
+          "venue": "arXiv.org",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "f670beda267a871dbe7bee0aec696140e126963a",
+          "title": "On the computational complexity of ethics: moral tractability for minds and machines",
+          "authors": [
+            {
+              "name": "Jakob Stenseke",
+              "authorId": "2127326294"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 15,
+          "doi": "10.1007/s10462-024-10732-3",
+          "arxivId": "2302.04218",
+          "url": "https://www.semanticscholar.org/paper/f670beda267a871dbe7bee0aec696140e126963a",
+          "venue": "Artificial Intelligence Review",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "1f79a28b7eeed0c57bdbffd57094f3475c8a9428",
+          "title": "Evolution of a cognitive architecture on the basis of a functional core",
+          "authors": [
+            {
+              "name": "A. Serov",
+              "authorId": "2059482010"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1007/s42452-022-05195-6",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/1f79a28b7eeed0c57bdbffd57094f3475c8a9428",
+          "venue": "SN Applied Sciences",
+          "isInfluential": false,
+          "contexts": [
+            "This gives rise to another problem [36, 38]."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "0d242fc8e910da59a74e258a70a9bdb836ce44d8",
+          "title": "On the Nature of Information: How FAIR Digital Objects are Building-up Semantic Space",
+          "authors": [
+            {
+              "name": "H. D\u00f6bereiner",
+              "authorId": "46543645"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.3897/rio.8.e95119",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/0d242fc8e910da59a74e258a70a9bdb836ce44d8",
+          "venue": "Research Ideas and Outcomes",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "343cd84246642c208ad12c6907c64a205fedf339",
+          "title": "The Curious Incident of Indistinguishable Selves A Reply to Ne\u0161i\u0107",
+          "authors": [
+            {
+              "name": "M. D. Beni",
+              "authorId": "7813666"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1080/02698595.2022.2153215",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/343cd84246642c208ad12c6907c64a205fedf339",
+          "venue": "International Studies in the Philosophy of Science",
+          "isInfluential": false,
+          "contexts": [
+            "SGP is arguably hard to dissolve (Taddeo and Floridi 2005; Beni 2019b)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "af9b9412998c5e590f831b1076c842f6193de9ab",
+          "title": "The Difficulties in Symbol Grounding Problem and the Direction for Solving It",
+          "authors": [
+            {
+              "name": "Jianhui Li",
+              "authorId": "48514373"
+            },
+            {
+              "name": "Haohao Mao",
+              "authorId": "2162838180"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.3390/philosophies7050108",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/af9b9412998c5e590f831b1076c842f6193de9ab",
+          "venue": "Philosophies",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "9631b0971ada63d5b754ab2cecc8b69daeb27984",
+          "title": "Learning to translate by learning to communicate",
+          "authors": [
+            {
+              "name": "C.M. Downey",
+              "authorId": "2091009489"
+            },
+            {
+              "name": "Leo Z. Liu",
+              "authorId": null
+            },
+            {
+              "name": "Xuhui Zhou",
+              "authorId": "144101734"
+            },
+            {
+              "name": "Shane Steinert-Threlkeld",
+              "authorId": "1403904282"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 5,
+          "doi": "10.48550/arXiv.2207.07025",
+          "arxivId": "2207.07025",
+          "url": "https://www.semanticscholar.org/paper/9631b0971ada63d5b754ab2cecc8b69daeb27984",
+          "venue": "MRL",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "48e5252453d244dc9779113ba9100a9635111c13",
+          "title": "What Neuroscientists Think, and Don\u2019t Think, About Consciousness",
+          "authors": [
+            {
+              "name": "P. Kitchener",
+              "authorId": "5625114"
+            },
+            {
+              "name": "Colin G. Hales",
+              "authorId": "49540091"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 17,
+          "doi": "10.3389/fnhum.2022.767612",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/48e5252453d244dc9779113ba9100a9635111c13",
+          "venue": "Frontiers in Human Neuroscience",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "6f8a133b2bc2e01f90764a8bc97bfb01522003ea",
+          "title": "The First Step to Learning Place Value: A Role for Physical Models?",
+          "authors": [
+            {
+              "name": "Lei Yuan",
+              "authorId": "49785011"
+            },
+            {
+              "name": "R. Prather",
+              "authorId": "3297828"
+            },
+            {
+              "name": "Kelly S. Mix",
+              "authorId": "3368277"
+            },
+            {
+              "name": "Linda B. Smith",
+              "authorId": "2121651319"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.3389/feduc.2021.683424",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/6f8a133b2bc2e01f90764a8bc97bfb01522003ea",
+          "venue": "Frontiers in Education",
+          "isInfluential": false,
+          "contexts": [
+            "Do symbols need to be grounded to their physical referents to have meanings? Thirty years ago, Harnad (1990) posed this question motivating empirical studies and theoretical debates across many subfields of cognitive science (Taddeo and Floridi, 2005; Steels, 2008; De Vega et al., 2008; Dove, 2016)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "8d56c79e5dcde10c71d0f70962b92533143e253d",
+          "title": "Classical Planning in Deep Latent Space",
+          "authors": [
+            {
+              "name": "Masataro Asai",
+              "authorId": "2335584"
+            },
+            {
+              "name": "Hiroshi Kajino",
+              "authorId": "34801644"
+            },
+            {
+              "name": "A. Fukunaga",
+              "authorId": "35198410"
+            },
+            {
+              "name": "Christian Muise",
+              "authorId": "2428160"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 24,
+          "doi": "10.1613/jair.1.13768",
+          "arxivId": "2107.00110",
+          "url": "https://www.semanticscholar.org/paper/8d56c79e5dcde10c71d0f70962b92533143e253d",
+          "venue": "Journal of Artificial Intelligence Research",
+          "isInfluential": false,
+          "contexts": [
+            "In contrast to systems which can autonomously generate symbols, systems which does not generate symbols but only grounds symbols given by humans are characterized as parasitic by Taddeo and Floridi (2005), as such human-provided symbols already impose discrete categorization of the observations.",
+            "In order to fully automatically acquire symbolic models for Classical Planning, we need Symbol Grounding (Harnad, 1990; Steels, 2008; Taddeo & Floridi, 2005) and Action Model Acquisition (Zhuo & Yang, 2014; Zhuo, 2015, AMA), which are one of the key challenges in achieving autonomous symbolic\u2026"
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "9fab147d338fe2b7fa3ffb6ecefed75bed7cf824",
+          "title": "Visual behavior modelling for robotic theory of mind",
+          "authors": [
+            {
+              "name": "Boyuan Chen",
+              "authorId": null
+            },
+            {
+              "name": "Carl Vondrick",
+              "authorId": "1856025"
+            },
+            {
+              "name": "Hod Lipson",
+              "authorId": "1747909"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 27,
+          "doi": "10.1038/s41598-020-77918-x",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9fab147d338fe2b7fa3ffb6ecefed75bed7cf824",
+          "venue": "Scientific Reports",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "02a8705f37a99350be0d559501c8c99d3b3b830d",
+          "title": "Reasoning and learning with context logic",
+          "authors": [
+            {
+              "name": "H. Schmidtke",
+              "authorId": "1679158"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1007/s40860-020-00121-2",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/02a8705f37a99350be0d559501c8c99d3b3b830d",
+          "venue": "Journal of Reliable Intelligent Environments",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "3fa57eace10db44af8e64542618f341ab77be57c",
+          "title": "The word revisited: Introducing the CogSens Model to integrate semiotic, linguistic, and psychological perspectives",
+          "authors": [
+            {
+              "name": "Per Durst-Andersen",
+              "authorId": "1405122581"
+            },
+            {
+              "name": "Stine Evald Bentsen",
+              "authorId": "120605286"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1515/sem-2019-0041",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/3fa57eace10db44af8e64542618f341ab77be57c",
+          "venue": "",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "9740f8d8006192e41ffdf1f74864510666b760f6",
+          "title": "The State Space of Artificial Intelligence",
+          "authors": [
+            {
+              "name": "H. Lyre",
+              "authorId": "2836112"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 16,
+          "doi": "10.1007/s11023-020-09538-3",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9740f8d8006192e41ffdf1f74864510666b760f6",
+          "venue": "Minds and Machines",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "47744a012be1a847665a62b3ebe72f5d5962d142",
+          "title": "Formal Fields: A Framework to Automate Code Generation Across Domains",
+          "authors": [
+            {
+              "name": "Jacques Basaldua",
+              "authorId": "3334917"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": null,
+          "arxivId": "2007.14075",
+          "url": "https://www.semanticscholar.org/paper/47744a012be1a847665a62b3ebe72f5d5962d142",
+          "venue": "arXiv.org",
+          "isInfluential": false,
+          "contexts": [
+            "Despite claims about the SGP being solved, after reviewing fifteen years of SGP research, (Taddeo and Floridi 2005) concluded \u201dAll the strategies are semantically committed and hence none of them provides a valid solution to it.\u201d",
+            "[Taddeo and Floridi 2005] Taddeo, M., and Floridi, L. 2005."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "d138bdb0a1177c3b7cc7108759cc6086059b4f7c",
+          "title": "On Artificial Intelligence and Consciousness",
+          "authors": [
+            {
+              "name": "P. Haikonen",
+              "authorId": "2937265"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.1142/s2705078520500046",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/d138bdb0a1177c3b7cc7108759cc6086059b4f7c",
+          "venue": "Journal of Artificial Intelligence and Consciousness",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "46eaf6a0d377a970e0a143cdaa015049fb4785d2",
+          "title": "Learning Neural-Symbolic Descriptive Planning Models via Cube-Space Priors: The Voyage Home (to STRIPS)",
+          "authors": [
+            {
+              "name": "Masataro Asai",
+              "authorId": "2335584"
+            },
+            {
+              "name": "Christian Muise",
+              "authorId": "2286296063"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 10,
+          "doi": "10.24963/ijcai.2020/371",
+          "arxivId": "2004.12850",
+          "url": "https://www.semanticscholar.org/paper/46eaf6a0d377a970e0a143cdaa015049fb4785d2",
+          "venue": "International Joint Conference on Artificial Intelligence",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "f9449a42c7cdc55447cbd689766a795bb996f7a4",
+          "title": "A Unified Framework for Symbol Grounding in Human-Machine Interactions",
+          "authors": [
+            {
+              "name": "Dingzhou Fei",
+              "authorId": "51506702"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1007/978-3-030-39512-4_43",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f9449a42c7cdc55447cbd689766a795bb996f7a4",
+          "venue": "International Conference on Intelligent Human Systems Integration",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "533c75a5bb60ac2f6457515c767e40d92c9b2194",
+          "title": "TextMap: A general purpose visualization system",
+          "authors": [
+            {
+              "name": "H. Schmidtke",
+              "authorId": "1679158"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 7,
+          "doi": "10.1016/j.cogsys.2019.08.004",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/533c75a5bb60ac2f6457515c767e40d92c9b2194",
+          "venue": "Cognitive Systems Research",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        },
+        {
+          "paperId": "f87ce7a59cbdf83e0c7aae3ba7d17076b4289a8c",
+          "title": "On the origin of mental representations",
+          "authors": [
+            {
+              "name": "M. D. Beni",
+              "authorId": "7813666"
+            }
+          ],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1016/j.biosystems.2019.103995",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f87ce7a59cbdf83e0c7aae3ba7d17076b4289a8c",
+          "venue": "Biosyst.",
+          "isInfluential": false,
+          "contexts": [],
+          "intents": []
+        }
+      ],
+      "references_count": 0,
+      "citations_count": 30
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

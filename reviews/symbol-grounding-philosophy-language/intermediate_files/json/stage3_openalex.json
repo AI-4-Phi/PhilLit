@@ -1,0 +1,3498 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "large language models understanding",
+  "results": [
+    {
+      "openalex_id": "W4366850747",
+      "doi": "10.48550/arxiv.2304.10592",
+      "title": "MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models",
+      "authors": [
+        {
+          "name": "Deyao Zhu",
+          "openalex_id": "A5082616743",
+          "orcid": "https://orcid.org/0000-0001-8014-7309"
+        },
+        {
+          "name": "Jun Chen",
+          "openalex_id": "A5100450148",
+          "orcid": "https://orcid.org/0000-0001-8883-0970"
+        },
+        {
+          "name": "Xiaoqian Shen",
+          "openalex_id": "A5020511969",
+          "orcid": "https://orcid.org/0000-0001-6284-520X"
+        },
+        {
+          "name": "Xiang Li",
+          "openalex_id": "A5100331094",
+          "orcid": "https://orcid.org/0000-0002-9851-6376"
+        },
+        {
+          "name": "Mohamed Elhoseiny",
+          "openalex_id": "A5085089542",
+          "orcid": "https://orcid.org/0000-0001-9659-1551"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-20",
+      "abstract": "The recent GPT-4 has demonstrated extraordinary multi-modal abilities, such as directly generating websites from handwritten text and identifying humorous elements within images. These features are rarely observed in previous vision-language models. However, the technical details behind GPT-4 continue to remain undisclosed. We believe that the enhanced multi-modal generation capabilities of GPT-4 stem from the utilization of sophisticated large language models (LLM). To examine this phenomenon, we present MiniGPT-4, which aligns a frozen visual encoder with a frozen advanced LLM, Vicuna, using one projection layer. Our work, for the first time, uncovers that properly aligning the visual features with an advanced large language model can possess numerous advanced multi-modal abilities demonstrated by GPT-4, such as detailed image description generation and website creation from hand-drawn drafts. Furthermore, we also observe other emerging capabilities in MiniGPT-4, including writing stories and poems inspired by given images, teaching users how to cook based on food photos, and so on. In our experiment, we found that the model trained on short image caption pairs could produce unnatural language outputs (e.g., repetition and fragmentation). To address this problem, we curate a detailed image description dataset in the second stage to finetune the model, which consequently improves the model's generation reliability and overall usability. Our code, pre-trained model, and collected dataset are available at https://minigpt-4.github.io/.",
+      "cited_by_count": 469,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2304.10592"
+      },
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Natural Language Processing Techniques",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4366850747"
+    },
+    {
+      "openalex_id": "W4328049044",
+      "doi": "10.1073/pnas.2215907120",
+      "title": "The debate over understanding in AI\u2019s large language models",
+      "authors": [
+        {
+          "name": "Melanie Mitchell",
+          "openalex_id": "A5086956524",
+          "orcid": "https://orcid.org/0000-0001-8881-3505",
+          "institutions": [
+            "Santa Fe Institute"
+          ]
+        },
+        {
+          "name": "David C. Krakauer",
+          "openalex_id": "A5035224908",
+          "orcid": "https://orcid.org/0000-0002-0827-6525",
+          "institutions": [
+            "Santa Fe Institute"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-21",
+      "abstract": "We survey a current, heated debate in the artificial intelligence (AI) research community on whether large pretrained language models can be said to understand language\u2014and the physical and social situations language encodes\u2014in any humanlike sense. We describe arguments that have been made for and against such understanding and key questions for the broader sciences of intelligence that have arisen in light of these arguments. We contend that an extended science of intelligence can be developed that will provide insight into distinct modes of understanding, their strengths and limitations, and the challenge of integrating diverse forms of cognition.",
+      "cited_by_count": 244,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the National Academy of Sciences",
+        "type": "journal",
+        "issn": [
+          "0027-8424",
+          "1091-6490"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10068812/pdf/pnas.202215907.pdf"
+      },
+      "topics": [
+        "Language and cultural evolution",
+        "Topic Modeling",
+        "Language, Metaphor, and Cognition"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W4328049044"
+    },
+    {
+      "openalex_id": "W4389519352",
+      "doi": "10.18653/v1/2023.emnlp-main.68",
+      "title": "CodeT5+: Open Code Large Language Models for Code Understanding and Generation",
+      "authors": [
+        {
+          "name": "Yue Wang",
+          "openalex_id": "A5100372089",
+          "orcid": "https://orcid.org/0000-0003-0146-7262"
+        },
+        {
+          "name": "Hung L\u00ea",
+          "openalex_id": "A5101936199",
+          "orcid": "https://orcid.org/0000-0002-3126-184X"
+        },
+        {
+          "name": "Akhilesh Deepak Gotmare",
+          "openalex_id": "A5104211341",
+          "orcid": "https://orcid.org/0000-0001-6502-0350"
+        },
+        {
+          "name": "Nghi Bui",
+          "openalex_id": "A5062399934"
+        },
+        {
+          "name": "Junnan Li",
+          "openalex_id": "A5100608756",
+          "orcid": "https://orcid.org/0000-0002-1405-2034"
+        },
+        {
+          "name": "Steven C. H. Hoi",
+          "openalex_id": "A5074834854",
+          "orcid": "https://orcid.org/0000-0002-4584-3453"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Large language models (LLMs) pretrained on vast source code have achieved prominent progress in code intelligence. However, existing code LLMs have two main limitations. First, they often adopt a specific architecture (encoder-only or decoder-only) or rely on a unified encoder-decoder network for different downstream tasks, lacking the flexibility to operate in the optimal architecture for a specific task. Secondly, they often employ a limited set of pretraining objectives which might not be relevant to some tasks and hence result in substantial performance degrade. To address these limitations, we propose \u201cCodeT5+\u201d, a family of encoder-decoder LLMs for code in which component modules can be flexibly combined to suit a wide range of code tasks. Such flexibility is enabled by our proposed mixture of pretraining objectives, which cover span denoising, contrastive learning, text-code matching, and causal LM pretraining tasks, on both unimodal and bimodal multilingual code corpora. Furthermore, we propose to initialize CodeT5+ with frozen off-the-shelf LLMs without training from scratch to efficiently scale up our models, and explore instruction-tuning to align with natural language instructions. We extensively evaluate CodeT5+ on over 20 code-related benchmarks in different settings, including zero-shot, finetuning, and instruction-tuning. We observe state-of-the-art (SoTA) performance on various code-related tasks, and our instruction-tuned CodeT5+ 16B achieves new SoTA results of 35.0% pass@1 and 54.5% pass@10 on the HumanEval code generation task against other open code LLMs, even surpassing the OpenAI code-cushman-001 model.",
+      "cited_by_count": 279,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.18653/v1/2023.emnlp-main.68"
+      },
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Topic Modeling",
+        "Software Engineering Research"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4389519352"
+    },
+    {
+      "openalex_id": "W4402671548",
+      "doi": "10.18653/v1/2024.acl-long.679",
+      "title": "Video-ChatGPT: Towards Detailed Video Understanding via Large Vision and Language Models",
+      "authors": [
+        {
+          "name": "Muhammad Maaz",
+          "openalex_id": "A5034370385",
+          "orcid": "https://orcid.org/0000-0002-3869-631X"
+        },
+        {
+          "name": "Hanoona Rasheed",
+          "openalex_id": "A5064948724"
+        },
+        {
+          "name": "Salman Khan",
+          "openalex_id": "A5000300751",
+          "orcid": "https://orcid.org/0000-0002-9502-1749"
+        },
+        {
+          "name": "Fahad Shahbaz Khan",
+          "openalex_id": "A5100760570",
+          "orcid": "https://orcid.org/0000-0002-4263-3143"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": null,
+      "cited_by_count": 213,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.18653/v1/2024.acl-long.679"
+      },
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Human Pose and Action Recognition",
+        "COVID-19 diagnosis using AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4402671548"
+    },
+    {
+      "openalex_id": "W4405064339",
+      "doi": "10.1115/1.4067333",
+      "title": "DesignQA: A Multimodal Benchmark for Evaluating Large Language Models\u2019 Understanding of Engineering Documentation",
+      "authors": [
+        {
+          "name": "Anna C. Doris",
+          "openalex_id": "A5093321387",
+          "orcid": "https://orcid.org/0009-0003-0125-0909",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Daniele Grandi",
+          "openalex_id": "A5067938085",
+          "institutions": [
+            "Autodesk (United States)"
+          ]
+        },
+        {
+          "name": "Ryan Tomich",
+          "openalex_id": "A5095384045",
+          "institutions": [
+            "Massachusetts Institute of Technology",
+            "Mitsubishi Motors (Japan)"
+          ]
+        },
+        {
+          "name": "Md Ferdous Alam",
+          "openalex_id": "A5035835155",
+          "orcid": "https://orcid.org/0000-0002-8469-7591",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Mohammadmehdi Ataei",
+          "openalex_id": "A5095912580",
+          "institutions": [
+            "Autodesk (United States)",
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Hyunmin Cheong",
+          "openalex_id": "A5025070841",
+          "orcid": "https://orcid.org/0000-0002-6683-701X",
+          "institutions": [
+            "Autodesk (United States)",
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Faez Ahmed",
+          "openalex_id": "A5040705509",
+          "orcid": "https://orcid.org/0000-0002-5227-2628",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-05",
+      "abstract": "Abstract This research introduces DesignQA, a novel benchmark aimed at evaluating the proficiency of multimodal large language models (MLLMs) in comprehending and applying engineering requirements in technical documentation. Developed with a focus on real-world engineering challenges, DesignQA uniquely combines multimodal data\u2014including textual design requirements, CAD images, and engineering drawings\u2014derived from the Formula SAE student competition. Unlike many existing MLLM benchmarks, DesignQA contains document-grounded visual questions where the input image and the input document come from different sources. The benchmark features automatic evaluation metrics and is divided into segments\u2014Rule Comprehension, Rule Compliance, and Rule Extraction\u2014based on tasks that engineers perform when designing according to requirements. We evaluate state-of-the-art models (at the time of writing) like GPT-4o, GPT-4, Claude-Opus, Gemini-1.0, and LLaVA-1.5 against the benchmark, and our study uncovers the existing gaps in MLLMs\u2019 abilities to interpret complex engineering documentation. The MLLMs tested, while promising, struggle to reliably retrieve relevant rules from the Formula SAE documentation, face challenges in recognizing technical components in CAD images and encounter difficulty in analyzing engineering drawings. These findings underscore the need for multimodal models that can better handle the multifaceted questions characteristic of design according to technical documentation. This benchmark sets a foundation for future advancements in AI-supported engineering design processes. DesignQA is publicly available at online.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "Journal of Computing and Information Science in Engineering",
+        "type": "journal",
+        "issn": [
+          "1530-9827",
+          "1944-7078"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Design Education and Practice",
+        "linguistics and terminology studies",
+        "Engineering and Information Technology"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W4405064339"
+    },
+    {
+      "openalex_id": "W3128912454",
+      "doi": "10.48550/arxiv.2102.02503",
+      "title": "Understanding the Capabilities, Limitations, and Societal Impact of Large Language Models",
+      "authors": [
+        {
+          "name": "Alex Tamkin",
+          "openalex_id": "A5081558429",
+          "orcid": "https://orcid.org/0009-0006-0007-3746"
+        },
+        {
+          "name": "Miles Brundage",
+          "openalex_id": "A5066559387"
+        },
+        {
+          "name": "Jack Clark",
+          "openalex_id": "A5031107879"
+        },
+        {
+          "name": "Deep Ganguli",
+          "openalex_id": "A5006294201",
+          "orcid": "https://orcid.org/0009-0007-9435-3817"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-04",
+      "abstract": "On October 14th, 2020, researchers from OpenAI, the Stanford Institute for Human-Centered Artificial Intelligence, and other universities convened to discuss open research questions surrounding GPT-3, the largest publicly-disclosed dense language model at the time. The meeting took place under Chatham House Rules. Discussants came from a variety of research backgrounds including computer science, linguistics, philosophy, political science, communications, cyber policy, and more. Broadly, the discussion centered around two main questions: 1) What are the technical capabilities and limitations of large language models? 2) What are the societal effects of widespread use of large language models? Here, we provide a detailed summary of the discussion organized by the two themes above.",
+      "cited_by_count": 128,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2102.02503"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3128912454"
+    },
+    {
+      "openalex_id": "W4366591012",
+      "doi": "10.1145/3544548.3581503",
+      "title": "Understanding the Benefits and Challenges of Deploying Conversational AI Leveraging Large Language Models for Public Health Intervention",
+      "authors": [
+        {
+          "name": "Eunkyung Jo",
+          "openalex_id": "A5015228589",
+          "orcid": "https://orcid.org/0000-0002-6494-3396",
+          "institutions": [
+            "University of California, Irvine",
+            "Naver (South Korea)"
+          ]
+        },
+        {
+          "name": "Daniel A. Epstein",
+          "openalex_id": "A5088906729",
+          "orcid": "https://orcid.org/0000-0002-2657-6345",
+          "institutions": [
+            "University of California, Irvine"
+          ]
+        },
+        {
+          "name": "Hyunhoon Jung",
+          "openalex_id": "A5006893167",
+          "orcid": "https://orcid.org/0000-0002-5161-2782",
+          "institutions": [
+            "Naver (South Korea)"
+          ]
+        },
+        {
+          "name": "Young\u2010Ho Kim",
+          "openalex_id": "A5062848438",
+          "orcid": "https://orcid.org/0000-0002-2681-2774",
+          "institutions": [
+            "Naver (South Korea)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-19",
+      "abstract": "Recent large language models (LLMs) have advanced the quality of open-ended conversations with chatbots. Although LLM-driven chatbots have the potential to support public health interventions by monitoring populations at scale through empathetic interactions, their use in real-world settings is underexplored. We thus examine the case of CareCall, an open-domain chatbot that aims to support socially isolated individuals via check-up phone calls and monitoring by teleoperators. Through focus group observations and interviews with 34 people from three stakeholder groups, including the users, the teleoperators, and the developers, we found CareCall offered a holistic understanding of each individual while offloading the public health workload and helped mitigate loneliness and emotional burdens. However, our findings highlight that traits of LLM-driven chatbots led to challenges in supporting public and personal health needs. We discuss considerations of designing and deploying LLM-driven chatbots for public health intervention, including tensions among stakeholders around system expectations.",
+      "cited_by_count": 143,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3544548.3581503"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Digital Mental Health Interventions",
+        "Innovative Human-Technology Interaction"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W4366591012"
+    },
+    {
+      "openalex_id": "W4390722831",
+      "doi": "10.1145/3610977.3634966",
+      "title": "Understanding Large-Language Model (LLM)-powered Human-Robot Interaction",
+      "authors": [
+        {
+          "name": "Callie Y. Kim",
+          "openalex_id": "A5008142086",
+          "orcid": "https://orcid.org/0009-0001-4195-8317",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Christine P. Lee",
+          "openalex_id": "A5057025083",
+          "orcid": "https://orcid.org/0000-0003-0991-8072",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Bilge Mutlu",
+          "openalex_id": "A5017344436",
+          "orcid": "https://orcid.org/0000-0002-9456-1495",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-10",
+      "abstract": "Large-language models (LLMs) hold significant promise in improving\\nhuman-robot interaction, offering advanced conversational skills and\\nversatility in managing diverse, open-ended user requests in various tasks and\\ndomains. Despite the potential to transform human-robot interaction, very\\nlittle is known about the distinctive design requirements for utilizing LLMs in\\nrobots, which may differ from text and voice interaction and vary by task and\\ncontext. To better understand these requirements, we conducted a user study (n\\n= 32) comparing an LLM-powered social robot against text- and voice-based\\nagents, analyzing task-based requirements in conversational tasks, including\\nchoose, generate, execute, and negotiate. Our findings show that LLM-powered\\nrobots elevate expectations for sophisticated non-verbal cues and excel in\\nconnection-building and deliberation, but fall short in logical communication\\nand may induce anxiety. We provide design implications both for robots\\nintegrating LLMs and for fine-tuning LLMs for use with robots.\\n",
+      "cited_by_count": 88,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3610977.3634966"
+      },
+      "topics": [
+        "Social Robot Interaction and HRI",
+        "AI in Service Interactions",
+        "Speech and dialogue systems"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4390722831"
+    },
+    {
+      "openalex_id": "W4389574762",
+      "doi": "10.1088/1361-6404/ad1420",
+      "title": "How understanding large language models can inform the use of ChatGPT in physics education",
+      "authors": [
+        {
+          "name": "Giulia Polverini",
+          "openalex_id": "A5092926042",
+          "orcid": "https://orcid.org/0000-0001-9280-4329",
+          "institutions": [
+            "Uppsala University"
+          ]
+        },
+        {
+          "name": "Bor Gregorcic",
+          "openalex_id": "A5062907082",
+          "orcid": "https://orcid.org/0000-0002-9185-628X",
+          "institutions": [
+            "Uppsala University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-11",
+      "abstract": "Abstract The paper aims to fulfil three main functions: (1) to serve as an introduction for the physics education community to the functioning of large language models (LLMs), (2) to present a series of illustrative examples demonstrating how prompt-engineering techniques can impact LLMs performance on conceptual physics tasks and (3) to discuss potential implications of the understanding of LLMs and prompt engineering for physics teaching and learning. We first summarise existing research on the performance of a popular LLM-based chatbot (ChatGPT) on physics tasks. We then give a basic account of how LLMs work, illustrate essential features of their functioning, and discuss their strengths and limitations. Equipped with this knowledge, we discuss some challenges with generating useful output with ChatGPT-4 in the context of introductory physics, paying special attention to conceptual questions and problems. We then provide a condensed overview of relevant literature on prompt engineering and demonstrate through illustrative examples how selected prompt-engineering techniques can be employed to improve ChatGPT-4 \u2019s output on conceptual introductory physics problems. Qualitatively studying these examples provides additional insights into ChatGPT\u2019s functioning and its utility in physics problem-solving. Finally, we consider how insights from the paper can inform the use of LLMs in the teaching and learning of physics.",
+      "cited_by_count": 81,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Physics",
+        "type": "journal",
+        "issn": [
+          "0143-0807",
+          "1361-6404"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://iopscience.iop.org/article/10.1088/1361-6404/ad1420/pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Online Learning and Analytics",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 116,
+      "url": "https://openalex.org/W4389574762"
+    },
+    {
+      "openalex_id": "W4391828195",
+      "doi": "10.1145/3635059.3635104",
+      "title": "Large Language Models versus Natural Language Understanding and Generation",
+      "authors": [
+        {
+          "name": "Nikitas \u039d. Karanikolas",
+          "openalex_id": "A5081787499",
+          "orcid": "https://orcid.org/0000-0003-1777-892X",
+          "institutions": [
+            "University of West Attica"
+          ]
+        },
+        {
+          "name": "Eirini Manga",
+          "openalex_id": "A5018070314",
+          "orcid": "https://orcid.org/0000-0002-3477-6275",
+          "institutions": [
+            "University of West Attica"
+          ]
+        },
+        {
+          "name": "Nikoletta E. Samaridi",
+          "openalex_id": "A5056277282",
+          "orcid": "https://orcid.org/0000-0001-9799-2197",
+          "institutions": [
+            "University of West Attica"
+          ]
+        },
+        {
+          "name": "Eleni Tousidou",
+          "openalex_id": "A5073445782",
+          "orcid": "https://orcid.org/0000-0002-1581-0642",
+          "institutions": [
+            "University of Thessaly"
+          ]
+        },
+        {
+          "name": "Michael Vassilakopoulos",
+          "openalex_id": "A5046792635",
+          "orcid": "https://orcid.org/0000-0003-2256-5523",
+          "institutions": [
+            "University of Thessaly"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-24",
+      "abstract": "In recent years, the process humans adopt to learn a foreign language has moved from the strict \"Grammar \u2013Translation\" method, which is based mainly on grammar and syntax rules, to more innovative processes, resulting to the more modern \"Communicative approach\". As its name states, this approach focuses on the coherent communication with native speakers and the cultivation of oral skills, without taking into consideration, at least at the first stages, the rules that govern the language.",
+      "cited_by_count": 58,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3635059.3635104"
+      },
+      "topics": [
+        "Speech and dialogue systems",
+        "Natural Language Processing Techniques",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W4391828195"
+    },
+    {
+      "openalex_id": "W4319599994",
+      "doi": "10.3390/drones7020114",
+      "title": "Semantic Scene Understanding with Large Language Models on Unmanned Aerial Vehicles",
+      "authors": [
+        {
+          "name": "J. de Curt\u00f2",
+          "openalex_id": "A5002158202",
+          "orcid": "https://orcid.org/0000-0002-8334-4719",
+          "institutions": [
+            "Universitat Polit\u00e8cnica de Val\u00e8ncia",
+            "Universitat Oberta de Catalunya",
+            "Goethe University Frankfurt",
+            "Hong Kong Science and Technology Parks Corporation"
+          ]
+        },
+        {
+          "name": "I. de Zarz\u00e0",
+          "openalex_id": "A5066504412",
+          "orcid": "https://orcid.org/0000-0002-5844-7871",
+          "institutions": [
+            "Hong Kong Science and Technology Parks Corporation",
+            "Goethe University Frankfurt",
+            "Universitat Polit\u00e8cnica de Val\u00e8ncia",
+            "Universitat Oberta de Catalunya"
+          ]
+        },
+        {
+          "name": "Carlos T. Calafate",
+          "openalex_id": "A5066242048",
+          "orcid": "https://orcid.org/0000-0001-5729-3041",
+          "institutions": [
+            "Universitat Polit\u00e8cnica de Val\u00e8ncia"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-02-08",
+      "abstract": "Unmanned Aerial Vehicles (UAVs) are able to provide instantaneous visual cues and a high-level data throughput that could be further leveraged to address complex tasks, such as semantically rich scene understanding. In this work, we built on the use of Large Language Models (LLMs) and Visual Language Models (VLMs), together with a state-of-the-art detection pipeline, to provide thorough zero-shot UAV scene literary text descriptions. The generated texts achieve a GUNNING Fog median grade level in the range of 7\u201312. Applications of this framework could be found in the filming industry and could enhance user experience in theme parks or in the advertisement sector. We demonstrate a low-cost highly efficient state-of-the-art practical implementation of microdrones in a well-controlled and challenging setting, in addition to proposing the use of standardized readability metrics to assess LLM-enhanced descriptions.",
+      "cited_by_count": 57,
+      "type": "article",
+      "source": {
+        "name": "Drones",
+        "type": "journal",
+        "issn": [
+          "2504-446X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2504-446X/7/2/114/pdf?version=1675837513"
+      },
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Domain Adaptation and Few-Shot Learning",
+        "Human Pose and Action Recognition"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W4319599994"
+    },
+    {
+      "openalex_id": "W4390043316",
+      "doi": "10.1145/3596490",
+      "title": "Shortcut Learning of Large Language Models in Natural Language Understanding",
+      "authors": [
+        {
+          "name": "Mengnan Du",
+          "openalex_id": "A5072191151",
+          "orcid": "https://orcid.org/0000-0002-1614-6069",
+          "institutions": [
+            "New Jersey Institute of Technology"
+          ]
+        },
+        {
+          "name": "Fengxiang He",
+          "openalex_id": "A5100635369",
+          "orcid": "https://orcid.org/0000-0001-5584-2385",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Na Zou",
+          "openalex_id": "A5084497683",
+          "orcid": "https://orcid.org/0000-0003-1984-795X",
+          "institutions": [
+            "Texas A&M University"
+          ]
+        },
+        {
+          "name": "Dacheng Tao",
+          "openalex_id": "A5074103823",
+          "orcid": "https://orcid.org/0000-0001-7225-5449",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Xia Hu",
+          "openalex_id": "A5068477431",
+          "orcid": "https://orcid.org/0000-0003-2234-3226",
+          "institutions": [
+            "Rice University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-21",
+      "abstract": "Shortcuts often hinder the robustness of large language models.",
+      "cited_by_count": 51,
+      "type": "article",
+      "source": {
+        "name": "Communications of the ACM",
+        "type": "journal",
+        "issn": [
+          "0001-0782",
+          "1557-7317"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3596490"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Multimodal Machine Learning Applications"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W4390043316"
+    },
+    {
+      "openalex_id": "W4393147839",
+      "doi": "10.1609/aaai.v38i8.28769",
+      "title": "Exploring Large Language Model for Graph Data Understanding in Online Job Recommendations",
+      "authors": [
+        {
+          "name": "Likang Wu",
+          "openalex_id": "A5052639977",
+          "orcid": "https://orcid.org/0000-0002-4929-8587",
+          "institutions": [
+            "University of Science and Technology of China"
+          ]
+        },
+        {
+          "name": "Zhaopeng Qiu",
+          "openalex_id": "A5062726606",
+          "orcid": "https://orcid.org/0000-0001-8622-2402"
+        },
+        {
+          "name": "Zhi Zheng",
+          "openalex_id": "A5040762883",
+          "orcid": "https://orcid.org/0000-0001-7758-8904",
+          "institutions": [
+            "University of Science and Technology of China"
+          ]
+        },
+        {
+          "name": "Hengshu Zhu",
+          "openalex_id": "A5049015446",
+          "orcid": "https://orcid.org/0000-0003-4570-643X"
+        },
+        {
+          "name": "Enhong Chen",
+          "openalex_id": "A5048237545",
+          "orcid": "https://orcid.org/0000-0002-4835-4102",
+          "institutions": [
+            "University of Science and Technology of China"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-24",
+      "abstract": "Large Language Models (LLMs) have revolutionized natural language processing tasks, demonstrating their exceptional capabilities in various domains. However, their potential for graph semantic mining in job recommendations remains largely unexplored. This paper focuses on unveiling the capability of large language models in understanding behavior graphs and leveraging this understanding to enhance recommendations in online recruitment, including promoting out-of-distribution (OOD) applications. We present a novel framework that harnesses the rich contextual information and semantic representations provided by large language models to analyze behavior graphs and uncover underlying patterns and relationships. Specifically, we propose a meta-path prompt constructor that aids LLM recommender in grasping the semantics of behavior graphs for the first time and design a corresponding path augmentation module to alleviate the prompt bias introduced by path-based sequence input. By facilitating this capability, our framework enables personalized and accurate job recommendations for individual users. We evaluate the effectiveness of our approach on comprehensive real-world datasets and demonstrate its ability to improve the relevance and quality of recommended results. This research not only sheds light on the untapped potential of large language models but also provides valuable insights for developing advanced recommendation systems in the recruitment market. The findings contribute to the growing field of natural language processing and offer practical implications for enhancing job search experiences.",
+      "cited_by_count": 47,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "type": "conference",
+        "issn": [
+          "2159-5399",
+          "2374-3468"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/28769/29476"
+      },
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Topic Modeling",
+        "Recommender Systems and Techniques"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W4393147839"
+    },
+    {
+      "openalex_id": "W4403324134",
+      "doi": "10.48550/arxiv.2410.05229",
+      "title": "GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models",
+      "authors": [
+        {
+          "name": "Iman Mirzadeh",
+          "openalex_id": "A5079412282"
+        },
+        {
+          "name": "Keivan Alizadeh",
+          "openalex_id": "A5030482460"
+        },
+        {
+          "name": "Hooman Shahrokhi",
+          "openalex_id": "A5109022949"
+        },
+        {
+          "name": "Oncel Tuzel",
+          "openalex_id": "A5028613002"
+        },
+        {
+          "name": "Samy Bengio",
+          "openalex_id": "A5017529415"
+        },
+        {
+          "name": "Mehrdad Farajtabar",
+          "openalex_id": "A5050499655",
+          "orcid": "https://orcid.org/0000-0002-5510-518X"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-10-07",
+      "abstract": "Recent advancements in Large Language Models (LLMs) have sparked interest in their formal reasoning capabilities, particularly in mathematics. The GSM8K benchmark is widely used to assess the mathematical reasoning of models on grade-school-level questions. While the performance of LLMs on GSM8K has significantly improved in recent years, it remains unclear whether their mathematical reasoning capabilities have genuinely advanced, raising questions about the reliability of the reported metrics. To address these concerns, we conduct a large-scale study on several SOTA open and closed models. To overcome the limitations of existing evaluations, we introduce GSM-Symbolic, an improved benchmark created from symbolic templates that allow for the generation of a diverse set of questions. GSM-Symbolic enables more controllable evaluations, providing key insights and more reliable metrics for measuring the reasoning capabilities of models.Our findings reveal that LLMs exhibit noticeable variance when responding to different instantiations of the same question. Specifically, the performance of all models declines when only the numerical values in the question are altered in the GSM-Symbolic benchmark. Furthermore, we investigate the fragility of mathematical reasoning in these models and show that their performance significantly deteriorates as the number of clauses in a question increases. We hypothesize that this decline is because current LLMs cannot perform genuine logical reasoning; they replicate reasoning steps from their training data. Adding a single clause that seems relevant to the question causes significant performance drops (up to 65%) across all state-of-the-art models, even though the clause doesn't contribute to the reasoning chain needed for the final answer. Overall, our work offers a more nuanced understanding of LLMs' capabilities and limitations in mathematical reasoning.",
+      "cited_by_count": 46,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2410.05229"
+      },
+      "topics": [
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4403324134"
+    },
+    {
+      "openalex_id": "W4400585758",
+      "doi": "10.1111/bjet.13505",
+      "title": "The life cycle of large language models in education: A framework for understanding sources of bias",
+      "authors": [
+        {
+          "name": "Jinsook Lee",
+          "openalex_id": "A5035602268",
+          "orcid": "https://orcid.org/0000-0002-9957-1342",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Yann Hicke",
+          "openalex_id": "A5020815501",
+          "orcid": "https://orcid.org/0000-0001-7234-7001",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Renzhe Yu",
+          "openalex_id": "A5047810054",
+          "orcid": "https://orcid.org/0000-0002-2375-3537",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Christopher Brooks",
+          "openalex_id": "A5081802677",
+          "orcid": "https://orcid.org/0000-0003-0875-0204",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Ren\u00e9 F. Kizilcec",
+          "openalex_id": "A5071778778",
+          "orcid": "https://orcid.org/0000-0001-6283-5546",
+          "institutions": [
+            "Cornell University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-12",
+      "abstract": "Abstract Large language models (LLMs) are increasingly adopted in educational contexts to provide personalized support to students and teachers. The unprecedented capacity of LLM\u2010based applications to understand and generate natural language can potentially improve instructional effectiveness and learning outcomes, but the integration of LLMs in education technology has renewed concerns over algorithmic bias, which may exacerbate educational inequalities. Building on prior work that mapped the traditional machine learning life cycle, we provide a framework of the LLM life cycle from the initial development of LLMs to customizing pre\u2010trained models for various applications in educational settings. We explain each step in the LLM life cycle and identify potential sources of bias that may arise in the context of education. We discuss why current measures of bias from traditional machine learning fail to transfer to LLM\u2010generated text (eg, tutoring conversations) because text encodings are high\u2010dimensional, there can be multiple correct responses, and tailoring responses may be pedagogically desirable rather than unfair. The proposed framework clarifies the complex nature of bias in LLM applications and provides practical guidance for their evaluation to promote educational equity. Practitioner notes What is already known about this topic The life cycle of traditional machine learning (ML) applications which focus on predicting labels is well understood. Biases are known to enter in traditional ML applications at various points in the life cycle, and methods to measure and mitigate these biases have been developed and tested. Large language models (LLMs) and other forms of generative artificial intelligence (GenAI) are increasingly adopted in education technologies (EdTech), but current evaluation approaches are not specific to the domain of education. What this paper adds A holistic perspective of the LLM life cycle with domain\u2010specific examples in education to highlight opportunities and challenges for incorporating natural language understanding (NLU) and natural language generation (NLG) into EdTech. Potential sources of bias are identified in each step of the LLM life cycle and discussed in the context of education. A framework for understanding where to expect potential harms of LLMs for students, teachers, and other users of GenAI technology in education, which can guide approaches to bias measurement and mitigation. Implications for practice and/or policy Education practitioners and policymakers should be aware that biases can originate from a multitude of steps in the LLM life cycle, and the life cycle perspective offers them a heuristic for asking technology developers to explain each step to assess the risk of bias. Measuring the biases of systems that use LLMs in education is more complex than with traditional ML, in large part because the evaluation of natural language generation is highly context\u2010dependent (eg, what counts as good feedback on an assignment varies). EdTech developers can play an important role in collecting and curating datasets for the evaluation and benchmarking of LLM applications moving forward.",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Educational Technology",
+        "type": "journal",
+        "issn": [
+          "0007-1013",
+          "1467-8535"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Text Readability and Simplification",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W4400585758"
+    },
+    {
+      "openalex_id": "W4405796591",
+      "doi": "10.1007/s10664-024-10602-0",
+      "title": "Towards an understanding of large language models in software engineering tasks",
+      "authors": [
+        {
+          "name": "Zibin Zheng",
+          "openalex_id": "A5000582109",
+          "orcid": "https://orcid.org/0000-0002-7878-4330",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Kaiwen Ning",
+          "openalex_id": "A5079942981",
+          "orcid": "https://orcid.org/0009-0009-6009-8285",
+          "institutions": [
+            "Peng Cheng Laboratory",
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Qingyuan Zhong",
+          "openalex_id": "A5111321069",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Jiachi Chen",
+          "openalex_id": "A5086118824",
+          "orcid": "https://orcid.org/0000-0002-0192-9992",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Wenqing Chen",
+          "openalex_id": "A5100628705",
+          "orcid": "https://orcid.org/0000-0002-8739-2216",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Lianghong Guo",
+          "openalex_id": "A5114107593",
+          "orcid": "https://orcid.org/0009-0001-0943-5049",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Weicheng Wang",
+          "openalex_id": "A5100687278",
+          "orcid": "https://orcid.org/0000-0003-0842-1814",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Yanlin Wang",
+          "openalex_id": "A5100350708",
+          "orcid": "https://orcid.org/0000-0001-7761-7269",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-26",
+      "abstract": null,
+      "cited_by_count": 50,
+      "type": "article",
+      "source": {
+        "name": "Empirical Software Engineering",
+        "type": "journal",
+        "issn": [
+          "1382-3256",
+          "1573-7616"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Software Engineering Research",
+        "Topic Modeling",
+        "Ferroelectric and Negative Capacitance Devices"
+      ],
+      "referenced_works_count": 172,
+      "url": "https://openalex.org/W4405796591"
+    },
+    {
+      "openalex_id": "W4388998613",
+      "doi": "10.1007/979-8-8688-0017-7",
+      "title": "Understanding Large Language Models",
+      "authors": [
+        {
+          "name": "Thimira Amaratunga",
+          "openalex_id": "A5034480515"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "This book will teach you the underlying concepts of large language models (LLMs), as well as the technologies associated with them.",
+      "cited_by_count": 30,
+      "type": "book",
+      "source": {
+        "name": "Apress eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/bfm:979-8-8688-0017-7/1?pdf=chapter%20toc"
+      },
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4388998613"
+    },
+    {
+      "openalex_id": "W4281485151",
+      "doi": "10.48550/arxiv.2205.11487",
+      "title": "Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding",
+      "authors": [
+        {
+          "name": "Chitwan Saharia",
+          "openalex_id": "A5022455158"
+        },
+        {
+          "name": "William Chan",
+          "openalex_id": "A5036374472",
+          "orcid": "https://orcid.org/0000-0001-9684-888X"
+        },
+        {
+          "name": "Saurabh Saxena",
+          "openalex_id": "A5014971774",
+          "orcid": "https://orcid.org/0000-0001-5592-054X"
+        },
+        {
+          "name": "Lala Li",
+          "openalex_id": "A5055940122"
+        },
+        {
+          "name": "Jay Whang",
+          "openalex_id": "A5046333438",
+          "orcid": "https://orcid.org/0009-0000-0084-5933"
+        },
+        {
+          "name": "Emily Denton",
+          "openalex_id": "A5045383831",
+          "orcid": "https://orcid.org/0000-0003-4915-0512"
+        },
+        {
+          "name": "Seyed Kamyar Seyed Ghasemipour",
+          "openalex_id": "A5005349853"
+        },
+        {
+          "name": "Burcu Karagol Ayan",
+          "openalex_id": "A5022200342"
+        },
+        {
+          "name": "S. Sara Mahdavi",
+          "openalex_id": "A5063201022",
+          "orcid": "https://orcid.org/0000-0001-6823-598X"
+        },
+        {
+          "name": "Rapha Gontijo Lopes",
+          "openalex_id": "A5079837530"
+        },
+        {
+          "name": "Tim Salimans",
+          "openalex_id": "A5082512329"
+        },
+        {
+          "name": "Jonathan Ho",
+          "openalex_id": "A5007990046",
+          "orcid": "https://orcid.org/0000-0001-9299-9824"
+        },
+        {
+          "name": "David J. Fleet",
+          "openalex_id": "A5035123135"
+        },
+        {
+          "name": "Mohammad Norouzi",
+          "openalex_id": "A5103947107"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-23",
+      "abstract": "We present Imagen, a text-to-image diffusion model with an unprecedented degree of photorealism and a deep level of language understanding. Imagen builds on the power of large transformer language models in understanding text and hinges on the strength of diffusion models in high-fidelity image generation. Our key discovery is that generic large language models (e.g. T5), pretrained on text-only corpora, are surprisingly effective at encoding text for image synthesis: increasing the size of the language model in Imagen boosts both sample fidelity and image-text alignment much more than increasing the size of the image diffusion model. Imagen achieves a new state-of-the-art FID score of 7.27 on the COCO dataset, without ever training on COCO, and human raters find Imagen samples to be on par with the COCO data itself in image-text alignment. To assess text-to-image models in greater depth, we introduce DrawBench, a comprehensive and challenging benchmark for text-to-image models. With DrawBench, we compare Imagen with recent methods including VQ-GAN+CLIP, Latent Diffusion Models, and DALL-E 2, and find that human raters prefer Imagen over other models in side-by-side comparisons, both in terms of sample quality and image-text alignment. See https://imagen.research.google/ for an overview of the results.",
+      "cited_by_count": 2096,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2205.11487"
+      },
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling",
+        "Computational and Text Analysis Methods"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4281485151"
+    },
+    {
+      "openalex_id": "W4224308101",
+      "doi": "10.48550/arxiv.2204.02311",
+      "title": "PaLM: Scaling Language Modeling with Pathways",
+      "authors": [
+        {
+          "name": "Aakanksha Chowdhery",
+          "openalex_id": "A5055969617",
+          "orcid": "https://orcid.org/0000-0002-0628-5225"
+        },
+        {
+          "name": "Sharan Narang",
+          "openalex_id": "A5079540764"
+        },
+        {
+          "name": "Jacob Devlin",
+          "openalex_id": "A5057457287"
+        },
+        {
+          "name": "Maarten Bosma",
+          "openalex_id": "A5074322007"
+        },
+        {
+          "name": "Gaurav Mishra",
+          "openalex_id": "A5085443636",
+          "orcid": "https://orcid.org/0000-0002-3254-8797"
+        },
+        {
+          "name": "Adam Roberts",
+          "openalex_id": "A5052454696",
+          "orcid": "https://orcid.org/0000-0003-1621-1964"
+        },
+        {
+          "name": "Paul Barham",
+          "openalex_id": "A5110193634"
+        },
+        {
+          "name": "Hyung Won Chung",
+          "openalex_id": "A5051828575",
+          "orcid": "https://orcid.org/0000-0002-1280-9953"
+        },
+        {
+          "name": "Charles Sutton",
+          "openalex_id": "A5028501178",
+          "orcid": "https://orcid.org/0000-0002-0041-3820"
+        },
+        {
+          "name": "Sebastian Gehrmann",
+          "openalex_id": "A5026789962",
+          "orcid": "https://orcid.org/0000-0002-8257-9516"
+        },
+        {
+          "name": "Parker Schuh",
+          "openalex_id": "A5005308581"
+        },
+        {
+          "name": "Kensen Shi",
+          "openalex_id": "A5057834767",
+          "orcid": "https://orcid.org/0000-0001-7140-7869"
+        },
+        {
+          "name": "Sasha Tsvyashchenko",
+          "openalex_id": "A5027632940"
+        },
+        {
+          "name": "Joshua Maynez",
+          "openalex_id": "A5021334672",
+          "orcid": "https://orcid.org/0000-0003-4948-2875"
+        },
+        {
+          "name": "Abhishek S. Rao",
+          "openalex_id": "A5048025708",
+          "orcid": "https://orcid.org/0000-0002-3574-3571"
+        },
+        {
+          "name": "Parker Barnes",
+          "openalex_id": "A5001087250"
+        },
+        {
+          "name": "Yi Tay",
+          "openalex_id": "A5103069680",
+          "orcid": "https://orcid.org/0000-0001-6896-4496"
+        },
+        {
+          "name": "Noam Shazeer",
+          "openalex_id": "A5021878400"
+        },
+        {
+          "name": "Vinodkumar Prabhakaran",
+          "openalex_id": "A5019297976",
+          "orcid": "https://orcid.org/0000-0003-3329-2305"
+        },
+        {
+          "name": "Emily Reif",
+          "openalex_id": "A5019880413",
+          "orcid": "https://orcid.org/0000-0003-3572-6234"
+        },
+        {
+          "name": "Nan Du",
+          "openalex_id": "A5100721790",
+          "orcid": "https://orcid.org/0000-0003-2855-7452"
+        },
+        {
+          "name": "Ben Hutchinson",
+          "openalex_id": "A5071599724",
+          "orcid": "https://orcid.org/0000-0003-2253-6204"
+        },
+        {
+          "name": "Reiner Pope",
+          "openalex_id": "A5090477236"
+        },
+        {
+          "name": "James T. Bradbury",
+          "openalex_id": "A5052263308"
+        },
+        {
+          "name": "Jacob Austin",
+          "openalex_id": "A5014400463",
+          "orcid": "https://orcid.org/0009-0001-2589-2805"
+        },
+        {
+          "name": "Michael Isard",
+          "openalex_id": "A5089543053"
+        },
+        {
+          "name": "Guy Gur-Ari",
+          "openalex_id": "A5018113047"
+        },
+        {
+          "name": "Pengcheng Yin",
+          "openalex_id": "A5078519761",
+          "orcid": "https://orcid.org/0000-0003-2739-1032"
+        },
+        {
+          "name": "Toju Duke",
+          "openalex_id": "A5009110297"
+        },
+        {
+          "name": "Anselm Levskaya",
+          "openalex_id": "A5069544528"
+        },
+        {
+          "name": "Sanjay Ghemawat",
+          "openalex_id": "A5012998255",
+          "orcid": "https://orcid.org/0009-0005-6843-3093"
+        },
+        {
+          "name": "Sunipa Dev",
+          "openalex_id": "A5090145147",
+          "orcid": "https://orcid.org/0000-0002-6647-9662"
+        },
+        {
+          "name": "Henryk Michalewski",
+          "openalex_id": "A5016302450"
+        },
+        {
+          "name": "Xavier Garc\u00eda",
+          "openalex_id": "A5082383881",
+          "orcid": "https://orcid.org/0000-0002-8500-4224"
+        },
+        {
+          "name": "Vedant Misra",
+          "openalex_id": "A5030875603"
+        },
+        {
+          "name": "Kevin Robinson",
+          "openalex_id": "A5039609347"
+        },
+        {
+          "name": "Liam Fedus",
+          "openalex_id": "A5029678131"
+        },
+        {
+          "name": "Denny Zhou",
+          "openalex_id": "A5061512999"
+        },
+        {
+          "name": "Daphne Ippolito",
+          "openalex_id": "A5022994077",
+          "orcid": "https://orcid.org/0000-0001-9328-8995"
+        },
+        {
+          "name": "David Luan",
+          "openalex_id": "A5069649243"
+        },
+        {
+          "name": "Hyeontaek Lim",
+          "openalex_id": "A5050218314"
+        },
+        {
+          "name": "Barret Zoph",
+          "openalex_id": "A5026064427"
+        },
+        {
+          "name": "Alexander Spiridonov",
+          "openalex_id": "A5107896946",
+          "orcid": "https://orcid.org/0000-0002-0935-3764"
+        },
+        {
+          "name": "Ryan Sepassi",
+          "openalex_id": "A5065754485"
+        },
+        {
+          "name": "D. Dohan",
+          "openalex_id": "A5015793563"
+        },
+        {
+          "name": "Shivani Agrawal",
+          "openalex_id": "A5033596864"
+        },
+        {
+          "name": "Mark Omernick",
+          "openalex_id": "A5070268107"
+        },
+        {
+          "name": "Andrew M. Dai",
+          "openalex_id": "A5101597225",
+          "orcid": "https://orcid.org/0009-0007-9200-8577"
+        },
+        {
+          "name": "Thanumalayan Sankaranarayana Pillai",
+          "openalex_id": "A5023470556"
+        },
+        {
+          "name": "Marie Pellat",
+          "openalex_id": "A5059267294"
+        },
+        {
+          "name": "Aitor Lewkowycz",
+          "openalex_id": "A5019210292"
+        },
+        {
+          "name": "\u00c9rica Rodrigues Moreira",
+          "openalex_id": "A5014681596"
+        },
+        {
+          "name": "Rewon Child",
+          "openalex_id": "A5084512458"
+        },
+        {
+          "name": "Oleksandr Polozov",
+          "openalex_id": "A5066539391",
+          "orcid": "https://orcid.org/0000-0003-3669-4262"
+        },
+        {
+          "name": "Katherine Lee",
+          "openalex_id": "A5101561897",
+          "orcid": "https://orcid.org/0000-0002-9537-6195"
+        },
+        {
+          "name": "Zongwei Zhou",
+          "openalex_id": "A5084104975",
+          "orcid": "https://orcid.org/0000-0002-3154-9851"
+        },
+        {
+          "name": "Xuezhi Wang",
+          "openalex_id": "A5024842018",
+          "orcid": "https://orcid.org/0000-0001-7592-2358"
+        },
+        {
+          "name": "Brennan Saeta",
+          "openalex_id": "A5067187716"
+        },
+        {
+          "name": "Mark D\u00edaz",
+          "openalex_id": "A5012652561",
+          "orcid": "https://orcid.org/0000-0003-0167-9839"
+        },
+        {
+          "name": "Orhan F\u0131rat",
+          "openalex_id": "A5035914396",
+          "orcid": "https://orcid.org/0000-0001-5775-2420"
+        },
+        {
+          "name": "Michele Catasta",
+          "openalex_id": "A5035174955"
+        },
+        {
+          "name": "Jason Lee",
+          "openalex_id": "A5100657725",
+          "orcid": "https://orcid.org/0000-0003-4042-795X"
+        },
+        {
+          "name": "Kathy Meier-Hellstern",
+          "openalex_id": "A5010819457"
+        },
+        {
+          "name": "Douglas Eck",
+          "openalex_id": "A5055592482"
+        },
+        {
+          "name": "Jeff Dean",
+          "openalex_id": "A5011889606"
+        },
+        {
+          "name": "Slav Petrov",
+          "openalex_id": "A5062886906",
+          "orcid": "https://orcid.org/0000-0002-5505-4861"
+        },
+        {
+          "name": "Noah Fiedel",
+          "openalex_id": "A5087591662"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-04-05",
+      "abstract": "Large language models have been shown to achieve remarkable performance across a variety of natural language tasks using few-shot learning, which drastically reduces the number of task-specific training examples needed to adapt the model to a particular application. To further our understanding of the impact of scale on few-shot learning, we trained a 540-billion parameter, densely activated, Transformer language model, which we call Pathways Language Model PaLM. We trained PaLM on 6144 TPU v4 chips using Pathways, a new ML system which enables highly efficient training across multiple TPU Pods. We demonstrate continued benefits of scaling by achieving state-of-the-art few-shot learning results on hundreds of language understanding and generation benchmarks. On a number of these tasks, PaLM 540B achieves breakthrough performance, outperforming the finetuned state-of-the-art on a suite of multi-step reasoning tasks, and outperforming average human performance on the recently released BIG-bench benchmark. A significant number of BIG-bench tasks showed discontinuous improvements from model scale, meaning that performance steeply increased as we scaled to our largest model. PaLM also has strong capabilities in multilingual tasks and source code generation, which we demonstrate on a wide array of benchmarks. We additionally provide a comprehensive analysis on bias and toxicity, and study the extent of training data memorization with respect to model scale. Finally, we discuss the ethical considerations related to large language models and discuss potential mitigation strategies.",
+      "cited_by_count": 2117,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2204.02311"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Multimodal Machine Learning Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4224308101"
+    },
+    {
+      "openalex_id": "W4392152396",
+      "doi": "10.1109/globecom54140.2023.10437725",
+      "title": "Understanding Telecom Language Through Large Language Models",
+      "authors": [
+        {
+          "name": "Lina Bariah",
+          "openalex_id": "A5024225018",
+          "orcid": "https://orcid.org/0000-0001-7244-1663",
+          "institutions": [
+            "Technology Innovation Institute"
+          ]
+        },
+        {
+          "name": "Hang Zou",
+          "openalex_id": "A5101941197",
+          "orcid": "https://orcid.org/0000-0003-2275-6653",
+          "institutions": [
+            "Technology Innovation Institute"
+          ]
+        },
+        {
+          "name": "Qiyang Zhao",
+          "openalex_id": "A5103057112",
+          "orcid": "https://orcid.org/0000-0002-8476-5742",
+          "institutions": [
+            "Technology Innovation Institute"
+          ]
+        },
+        {
+          "name": "Belkacem Mouhouche",
+          "openalex_id": "A5020390006",
+          "orcid": "https://orcid.org/0000-0002-8894-2291",
+          "institutions": [
+            "Technology Innovation Institute"
+          ]
+        },
+        {
+          "name": "Faouzi Bader",
+          "openalex_id": "A5019652901",
+          "orcid": "https://orcid.org/0000-0002-3206-9411",
+          "institutions": [
+            "Technology Innovation Institute"
+          ]
+        },
+        {
+          "name": "M\u00e9rouane Debbah",
+          "openalex_id": "A5056145687",
+          "orcid": "https://orcid.org/0000-0001-8941-8080",
+          "institutions": [
+            "Khalifa University of Science and Technology"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-04",
+      "abstract": "The recent progress of artificial intelligence (AI) opens up new frontiers in the possibility of automating many tasks involved in Telecom networks design, implementation, and deployment. This has been further pushed forward with the evolution of generative artificial intelligence (AI), including the emergence of large language models (LLMs), which is believed to be the cornerstone toward realizing self-governed, interactive AI agents. Motivated by this, in this paper, we aim to adapt the paradigm of LLMs to the Telecom domain. In particular, we fine-tune several LLMs including BERT, distilled BERT, RoBERTa and GPT-2, to the Telecom domain languages, and demonstrate a use case for identifying the 3rd Generation Partnership Project (3GPP) standard working groups. We consider training the selected models on 3GPP technical documents (Tdoc) pertinent to years 2009-2019 and predict the Tdoc categories in years 2020-2023. The results demonstrate that fine-tuning BERT and RoBERTa model achieves 84.6% accuracy, while GPT-2 model achieves 83% in identifying 3GPP working groups. The distilled BERT model with around 50% less parameters achieves similar performance as others. This corroborates that fine-tuning pretrained LLM can effectively identify the categories of Telecom language. The developed framework shows a stepping stone towards realizing intent-driven and self-evolving wireless networks from Telecom languages, and paves the way for the implementation of generative AI in the Telecom domain.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Speech and dialogue systems",
+        "Topic Modeling",
+        "Robotics and Automated Systems"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W4392152396"
+    },
+    {
+      "openalex_id": "W4402727272",
+      "doi": "10.1109/cvpr52733.2024.01357",
+      "title": "TimeChat: A Time-sensitive Multimodal Large Language Model for Long Video Understanding",
+      "authors": [
+        {
+          "name": "Shuhuai Ren",
+          "openalex_id": "A5101030723",
+          "orcid": "https://orcid.org/0009-0001-9998-864X",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Linli Yao",
+          "openalex_id": "A5100599428",
+          "orcid": "https://orcid.org/0000-0002-9809-8864",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Shicheng Li",
+          "openalex_id": "A5100723942",
+          "orcid": "https://orcid.org/0000-0002-5893-8822",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Xu Sun",
+          "openalex_id": "A5101441137",
+          "orcid": "https://orcid.org/0000-0001-8241-9320",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Lu Hou",
+          "openalex_id": "A5104232416",
+          "orcid": "https://orcid.org/0009-0006-0550-4517",
+          "institutions": [
+            "Huawei Technologies (Sweden)"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-16",
+      "abstract": null,
+      "cited_by_count": 57,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Video Analysis and Summarization",
+        "Multimodal Machine Learning Applications",
+        "Human Pose and Action Recognition"
+      ],
+      "referenced_works_count": 75,
+      "url": "https://openalex.org/W4402727272"
+    },
+    {
+      "openalex_id": "W4393949386",
+      "doi": "10.1145/3656177",
+      "title": "Understanding the Potential of FPGA-based Spatial Acceleration for Large Language Model Inference",
+      "authors": [
+        {
+          "name": "Hongzheng Chen",
+          "openalex_id": "A5008694159",
+          "orcid": "https://orcid.org/0000-0002-6617-0075",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Jiahao Zhang",
+          "openalex_id": "A5100445508",
+          "orcid": "https://orcid.org/0009-0000-8379-7489",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Yixiao Du",
+          "openalex_id": "A5039033697",
+          "orcid": "https://orcid.org/0000-0002-6106-1283",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Shaojie Xiang",
+          "openalex_id": "A5032824854",
+          "orcid": "https://orcid.org/0000-0002-6901-8837",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Zichao Yue",
+          "openalex_id": "A5029785504",
+          "orcid": "https://orcid.org/0009-0003-8585-5947",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Niansong Zhang",
+          "openalex_id": "A5059293268",
+          "orcid": "https://orcid.org/0000-0002-2850-0176",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Yaohui Cai",
+          "openalex_id": "A5050643298",
+          "orcid": "https://orcid.org/0000-0003-3785-3413",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Zhiru Zhang",
+          "openalex_id": "A5037210004",
+          "orcid": "https://orcid.org/0000-0002-0778-0308",
+          "institutions": [
+            "Cornell University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-04",
+      "abstract": "Recent advancements in large language models (LLMs) boasting billions of parameters have generated a significant demand for efficient deployment in inference workloads. While hardware accelerators for Transformer-based models have been extensively studied, the majority of existing approaches rely on temporal architectures that reuse hardware units for different network layers and operators. However, these methods often encounter challenges in achieving low latency due to considerable memory access overhead. This article investigates the feasibility and potential of model-specific spatial acceleration for LLM inference on field-programmable gate arrays (FPGAs). Our approach involves the specialization of distinct hardware units for specific operators or layers, facilitating direct communication between them through a dataflow architecture while minimizing off-chip memory accesses. We introduce a comprehensive analytical model for estimating the performance of a spatial LLM accelerator, taking into account the on-chip compute and memory resources available on an FPGA. This model can be extended to multi-FPGA settings for distributed inference. Through our analysis, we can identify the most effective parallelization and buffering schemes for the accelerator and, crucially, determine the scenarios in which FPGA-based spatial acceleration can outperform its GPU-based counterpart. To enable more productive implementations of an LLM model on FPGAs, we further provide a library of high-level synthesis (HLS) kernels that are composable and reusable. This library will be made available as open-source. To validate the effectiveness of both our analytical model and HLS library, we have implemented Bidirectional Encoder Representations from Transformers (BERT) and Generative Pre-trained Transformers (GPT2) on an AMD Xilinx Alveo U280 FPGA device. Experimental results demonstrate our approach can achieve up to 13.4\u00d7 speedup when compared to previous FPGA-based accelerators for the BERT model. For GPT generative inference, we attain a 2.2\u00d7 speedup compared to Design for Excellence, an FPGA overlay, in the prefill stage, while achieving a 1.9\u00d7 speedup and a 5.7\u00d7 improvement in energy efficiency compared to the NVIDIA A100 GPU in the decode stage.",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": {
+        "name": "ACM Transactions on Reconfigurable Technology and Systems",
+        "type": "journal",
+        "issn": [
+          "1936-7406",
+          "1936-7414"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3656177"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Speech Recognition and Synthesis"
+      ],
+      "referenced_works_count": 87,
+      "url": "https://openalex.org/W4393949386"
+    },
+    {
+      "openalex_id": "W4293328703",
+      "doi": "10.48550/arxiv.2208.11857",
+      "title": "Shortcut Learning of Large Language Models in Natural Language Understanding",
+      "authors": [
+        {
+          "name": "Mengnan Du",
+          "openalex_id": "A5072191151",
+          "orcid": "https://orcid.org/0000-0002-1614-6069"
+        },
+        {
+          "name": "Fengxiang He",
+          "openalex_id": "A5100635369",
+          "orcid": "https://orcid.org/0000-0001-5584-2385"
+        },
+        {
+          "name": "Na Zou",
+          "openalex_id": "A5084497683",
+          "orcid": "https://orcid.org/0000-0003-1984-795X"
+        },
+        {
+          "name": "Dacheng Tao",
+          "openalex_id": "A5074103823",
+          "orcid": "https://orcid.org/0000-0001-7225-5449"
+        },
+        {
+          "name": "Xia Hu",
+          "openalex_id": "A5068477431",
+          "orcid": "https://orcid.org/0000-0003-2234-3226"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-25",
+      "abstract": "Large language models (LLMs) have achieved state-of-the-art performance on a series of natural language understanding tasks. However, these LLMs might rely on dataset bias and artifacts as shortcuts for prediction. This has significantly affected their generalizability and adversarial robustness. In this paper, we provide a review of recent developments that address the shortcut learning and robustness challenge of LLMs. We first introduce the concepts of shortcut learning of language models. We then introduce methods to identify shortcut learning behavior in language models, characterize the reasons for shortcut learning, as well as introduce mitigation solutions. Finally, we discuss key research challenges and potential research directions in order to advance the field of LLMs.",
+      "cited_by_count": 23,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2208.11857"
+      },
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4293328703"
+    },
+    {
+      "openalex_id": "W4389520007",
+      "doi": "10.18653/v1/2023.findings-emnlp.185",
+      "title": "Understanding HTML with Large Language Models",
+      "authors": [
+        {
+          "name": "\u0130zzeddin G\u00fcr",
+          "openalex_id": "A5048764935"
+        },
+        {
+          "name": "Ofir Nachum",
+          "openalex_id": "A5057773393"
+        },
+        {
+          "name": "Yingjie Miao",
+          "openalex_id": "A5039869395",
+          "orcid": "https://orcid.org/0000-0001-6908-0182"
+        },
+        {
+          "name": "Mustafa Safdari",
+          "openalex_id": "A5034764475",
+          "orcid": "https://orcid.org/0009-0002-1604-8685"
+        },
+        {
+          "name": "Austin Huang",
+          "openalex_id": "A5103078881",
+          "orcid": "https://orcid.org/0000-0003-1349-4030"
+        },
+        {
+          "name": "Aakanksha Chowdhery",
+          "openalex_id": "A5055969617",
+          "orcid": "https://orcid.org/0000-0002-0628-5225"
+        },
+        {
+          "name": "Sharan Narang",
+          "openalex_id": "A5079540764"
+        },
+        {
+          "name": "Noah Fiedel",
+          "openalex_id": "A5087591662"
+        },
+        {
+          "name": "Aleksandra Faust",
+          "openalex_id": "A5002971435",
+          "orcid": "https://orcid.org/0000-0002-3268-8685"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Izzeddin Gur, Ofir Nachum, Yingjie Miao, Mustafa Safdari, Austin Huang, Aakanksha Chowdhery, Sharan Narang, Noah Fiedel, Aleksandra Faust. Findings of the Association for Computational Linguistics: EMNLP 2023. 2023.",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.findings-emnlp.185.pdf"
+      },
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Text Readability and Simplification",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4389520007"
+    },
+    {
+      "openalex_id": "W4389519972",
+      "doi": "10.18653/v1/2023.findings-emnlp.187",
+      "title": "UReader: Universal OCR-free Visually-situated Language Understanding with Multimodal Large Language Model",
+      "authors": [
+        {
+          "name": "Jiabo Ye",
+          "openalex_id": "A5091465907",
+          "orcid": "https://orcid.org/0009-0009-5451-8984",
+          "institutions": [
+            "East China Normal University"
+          ]
+        },
+        {
+          "name": "Anwen Hu",
+          "openalex_id": "A5019498452",
+          "orcid": "https://orcid.org/0000-0001-8839-4996",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Haiyang Xu",
+          "openalex_id": "A5078053186",
+          "orcid": "https://orcid.org/0000-0002-9457-4552",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Qinghao Ye",
+          "openalex_id": "A5005965903",
+          "orcid": "https://orcid.org/0000-0002-7977-5540",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Ming Yan",
+          "openalex_id": "A5000844861",
+          "orcid": "https://orcid.org/0000-0002-4388-6708"
+        },
+        {
+          "name": "Guohai Xu",
+          "openalex_id": "A5100656763",
+          "orcid": "https://orcid.org/0000-0002-0063-7410"
+        },
+        {
+          "name": "Chenliang Li",
+          "openalex_id": "A5100734069",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Junfeng Tian",
+          "openalex_id": "A5102413215",
+          "orcid": "https://orcid.org/0000-0001-6638-6418",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Qi Qian",
+          "openalex_id": "A5111800002",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Ji Zhang",
+          "openalex_id": "A5100329282",
+          "orcid": "https://orcid.org/0000-0003-3512-6589",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Qin Jin",
+          "openalex_id": "A5009985839",
+          "orcid": "https://orcid.org/0000-0001-6486-6020",
+          "institutions": [
+            "Renmin University of China",
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Liang He",
+          "openalex_id": "A5100317860",
+          "orcid": "https://orcid.org/0000-0002-4006-993X",
+          "institutions": [
+            "East China Normal University"
+          ]
+        },
+        {
+          "name": "Xin Lin",
+          "openalex_id": "A5103203299",
+          "orcid": "https://orcid.org/0000-0003-3000-9068",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)",
+            "East China Normal University"
+          ]
+        },
+        {
+          "name": "Fei Huang",
+          "openalex_id": "A5100620486",
+          "orcid": "https://orcid.org/0000-0001-9665-6642",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Jiabo Ye, Anwen Hu, Haiyang Xu, Qinghao Ye, Ming Yan, Guohai Xu, Chenliang Li, Junfeng Tian, Qi Qian, Ji Zhang, Qin Jin, Liang He, Xin Lin, Fei Huang. Findings of the Association for Computational Linguistics: EMNLP 2023. 2023.",
+      "cited_by_count": 43,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.findings-emnlp.187.pdf"
+      },
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W4389519972"
+    },
+    {
+      "openalex_id": "W4389158500",
+      "doi": "10.1145/3611643.3613891",
+      "title": "Assess and Summarize: Improve Outage Understanding with Large Language Models",
+      "authors": [
+        {
+          "name": "Pengxiang Jin",
+          "openalex_id": "A5103248623",
+          "orcid": "https://orcid.org/0000-0003-3849-5478",
+          "institutions": [
+            "Nankai University"
+          ]
+        },
+        {
+          "name": "Shenglin Zhang",
+          "openalex_id": "A5072210083",
+          "orcid": "https://orcid.org/0000-0003-0330-0028",
+          "institutions": [
+            "Nankai University"
+          ]
+        },
+        {
+          "name": "Minghua Ma",
+          "openalex_id": "A5070950193",
+          "orcid": "https://orcid.org/0000-0002-6303-1731",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Haozhe Li",
+          "openalex_id": "A5101457755",
+          "orcid": "https://orcid.org/0000-0002-9206-4030",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Yu Kang",
+          "openalex_id": "A5043798385",
+          "orcid": "https://orcid.org/0009-0004-1735-5876"
+        },
+        {
+          "name": "Liqun Li",
+          "openalex_id": "A5101627047",
+          "orcid": "https://orcid.org/0000-0003-4579-3799",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Yudong Liu",
+          "openalex_id": "A5107248181",
+          "orcid": "https://orcid.org/0000-0002-2099-6090",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Bo Qiao",
+          "openalex_id": "A5049886136",
+          "orcid": "https://orcid.org/0000-0002-8997-8317",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Chaoyun Zhang",
+          "openalex_id": "A5030520880",
+          "orcid": "https://orcid.org/0000-0002-1304-6839",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Pu Zhao",
+          "openalex_id": "A5024073253",
+          "orcid": "https://orcid.org/0000-0002-4518-323X",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Shilin He",
+          "openalex_id": "A5078511386",
+          "orcid": "https://orcid.org/0000-0002-8595-5388",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Federica Sarro",
+          "openalex_id": "A5012165852",
+          "orcid": "https://orcid.org/0000-0002-9146-442X",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Yingnong Dang",
+          "openalex_id": "A5086338440",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Saravan Rajmohan",
+          "openalex_id": "A5070722259",
+          "orcid": "https://orcid.org/0000-0002-2019-213X",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Qingwei Lin",
+          "openalex_id": "A5088646345",
+          "orcid": "https://orcid.org/0000-0003-2559-2383",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        },
+        {
+          "name": "Dongmei Zhang",
+          "openalex_id": "A5100331488",
+          "orcid": "https://orcid.org/0000-0002-9230-2799",
+          "institutions": [
+            "Microsoft Research Asia (China)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-30",
+      "abstract": "Cloud systems have become increasingly popular in recent years due to their flexibility and scalability. Each time cloud computing applications and services hosted on the cloud are affected by a cloud outage, users can experience slow response times, connection issues or total service disruption, resulting in a significant negative business impact. Outages are usually comprised of several concurring events/source causes, and therefore understanding the context of outages is a very challenging yet crucial first step toward mitigating and resolving outages. In current practice, on-call engineers with in-depth domain knowledge, have to manually assess and summarize outages when they happen, which is time-consuming and labor-intensive. In this paper, we first present a large-scale empirical study investigating the way on-call engineers currently deal with cloud outages at Microsoft, and then present and empirically validate a novel approach (dubbed Oasis) to help the engineers in this task. Oasis is able to automatically assess the impact scope of outages as well as to produce human-readable summarization. Specifically, Oasis first assesses the impact scope of an outage by aggregating relevant incidents via multiple techniques. Then, it generates a human-readable summary by leveraging fine-tuned large language models like GPT-3.x. The impact assessment component of Oasis was introduced in Microsoft over three years ago, and it is now widely adopted, while the outage summarization component has been recently introduced, and in this article we present the results of an empirical evaluation we carried out on 18 real-world cloud systems as well as a human-based evaluation with outage owners. The results obtained show that Oasis can effectively and efficiently summarize outages, and lead Microsoft to deploy its first prototype which is currently under experimental adoption by some of the incident teams.",
+      "cited_by_count": 31,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Software System Performance and Reliability",
+        "Software Engineering Research",
+        "Software Reliability and Analysis Research"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W4389158500"
+    },
+    {
+      "openalex_id": "W4402754220",
+      "doi": "10.1109/cvpr52733.2024.01300",
+      "title": "Chat-UniVi: Unified Visual Representation Empowers Large Language Models with Image and Video Understanding",
+      "authors": [
+        {
+          "name": "Peng Jin",
+          "openalex_id": "",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Ryuichi Takanobu",
+          "openalex_id": "A5016443523",
+          "orcid": "https://orcid.org/0000-0002-1382-8275",
+          "institutions": [
+            "Peng Cheng Laboratory"
+          ]
+        },
+        {
+          "name": "Wancai Zhang",
+          "openalex_id": "A5083360053",
+          "institutions": [
+            "NARI Group (China)"
+          ]
+        },
+        {
+          "name": "Xiaochun Cao",
+          "openalex_id": "A5068837264",
+          "orcid": "https://orcid.org/0000-0001-7141-708X",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Yuan Li",
+          "openalex_id": "A5064736086",
+          "orcid": "https://orcid.org/0000-0002-7023-8677",
+          "institutions": [
+            "Peking University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-16",
+      "abstract": null,
+      "cited_by_count": 56,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W4402754220"
+    },
+    {
+      "openalex_id": "W4410027467",
+      "doi": "10.1109/tcsvt.2025.3566695",
+      "title": "Video Understanding with Large Language Models: A Survey",
+      "authors": [
+        {
+          "name": "Yunlong Tang",
+          "openalex_id": "A5100669165",
+          "orcid": "https://orcid.org/0000-0003-2796-1787",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Jing Bi",
+          "openalex_id": "A5107854589",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Siting Xu",
+          "openalex_id": "A5024644736",
+          "orcid": "https://orcid.org/0000-0001-9934-7917",
+          "institutions": [
+            "Southern University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Luchuan Song",
+          "openalex_id": "A5101287019",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Susan Liang",
+          "openalex_id": "A5112553141",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Teng Wang",
+          "openalex_id": "A5047351419",
+          "orcid": "https://orcid.org/0000-0003-2331-3619",
+          "institutions": [
+            "Southern University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Daoan Zhang",
+          "openalex_id": "A5081992105",
+          "orcid": "https://orcid.org/0000-0002-6959-165X",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Jie An",
+          "openalex_id": "A5070224744",
+          "orcid": "https://orcid.org/0000-0002-1402-8288",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Jingyang Lin",
+          "openalex_id": "A5077401853",
+          "orcid": "https://orcid.org/0009-0000-3223-3827",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Rongyi Zhu",
+          "openalex_id": "A5101293874",
+          "orcid": "https://orcid.org/0009-0008-1601-5983",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Ali Vosoughi",
+          "openalex_id": "A5058314486",
+          "orcid": "https://orcid.org/0000-0003-1014-2937",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Chao Huang",
+          "openalex_id": "A5112408938",
+          "orcid": "https://orcid.org/0000-0002-1469-1020",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Zeliang Zhang",
+          "openalex_id": "A5101802189",
+          "orcid": "https://orcid.org/0000-0003-0329-8693",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Pinxin Liu",
+          "openalex_id": "A5017467599",
+          "orcid": "https://orcid.org/0009-0009-6538-7174",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Mingqian Feng",
+          "openalex_id": "A5111363043",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Feng Zheng",
+          "openalex_id": "A5063285882",
+          "orcid": "https://orcid.org/0000-0002-1701-9141",
+          "institutions": [
+            "Southern University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Jianguo Zhang",
+          "openalex_id": "A5100461783",
+          "orcid": "https://orcid.org/0000-0001-9317-0268",
+          "institutions": [
+            "Southern University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Ping Luo",
+          "openalex_id": "A5100752686",
+          "orcid": "https://orcid.org/0000-0002-6685-7950",
+          "institutions": [
+            "University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Jiebo Luo",
+          "openalex_id": "A5055469774",
+          "orcid": "https://orcid.org/0000-0002-4516-9729",
+          "institutions": [
+            "University of Rochester"
+          ]
+        },
+        {
+          "name": "Chenliang Xu",
+          "openalex_id": "A5064805926",
+          "orcid": "https://orcid.org/0000-0002-2183-822X",
+          "institutions": [
+            "University of Rochester"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": null,
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Circuits and Systems for Video Technology",
+        "type": "journal",
+        "issn": [
+          "1051-8215",
+          "1558-2205"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4410027467"
+    },
+    {
+      "openalex_id": "W4365211688",
+      "doi": "10.48550/arxiv.2304.05368",
+      "title": "Are Large Language Models Ready for Healthcare? A Comparative Study on Clinical Language Understanding",
+      "authors": [
+        {
+          "name": "Yuqing Wang",
+          "openalex_id": "A5100461317",
+          "orcid": "https://orcid.org/0000-0001-5675-7772"
+        },
+        {
+          "name": "Yun Zhao",
+          "openalex_id": "A5056950769",
+          "orcid": "https://orcid.org/0000-0002-6357-9422"
+        },
+        {
+          "name": "Linda Petzold",
+          "openalex_id": "A5021640058",
+          "orcid": "https://orcid.org/0000-0001-6251-6078"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-09",
+      "abstract": "Large language models (LLMs) have made significant progress in various domains, including healthcare. However, the specialized nature of clinical language understanding tasks presents unique challenges and limitations that warrant further investigation. In this study, we conduct a comprehensive evaluation of state-of-the-art LLMs, namely GPT-3.5, GPT-4, and Bard, within the realm of clinical language understanding tasks. These tasks span a diverse range, including named entity recognition, relation extraction, natural language inference, semantic textual similarity, document classification, and question-answering. We also introduce a novel prompting strategy, self-questioning prompting (SQP), tailored to enhance LLMs' performance by eliciting informative questions and answers pertinent to the clinical scenarios at hand. Our evaluation underscores the significance of task-specific learning strategies and prompting techniques for improving LLMs' effectiveness in healthcare-related tasks. Additionally, our in-depth error analysis on the challenging relation extraction task offers valuable insights into error distribution and potential avenues for improvement using SQP. Our study sheds light on the practical implications of employing LLMs in the specialized domain of healthcare, serving as a foundation for future research and the development of potential applications in healthcare settings.",
+      "cited_by_count": 26,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2304.05368"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Artificial Intelligence in Healthcare and Education",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4365211688"
+    },
+    {
+      "openalex_id": "W4384071683",
+      "doi": "10.1038/s41586-023-06291-2",
+      "title": "Large language models encode clinical knowledge",
+      "authors": [
+        {
+          "name": "Karan Singhal",
+          "openalex_id": "A5027454515",
+          "orcid": "https://orcid.org/0000-0001-9002-7490",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Shekoofeh Azizi",
+          "openalex_id": "A5047463591",
+          "orcid": "https://orcid.org/0000-0002-7447-6031",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Tao Tu",
+          "openalex_id": "A5059213795",
+          "orcid": "https://orcid.org/0000-0003-3420-7889",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "S. Sara Mahdavi",
+          "openalex_id": "A5063201022",
+          "orcid": "https://orcid.org/0000-0001-6823-598X",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Jason Lee",
+          "openalex_id": "A5100657725",
+          "orcid": "https://orcid.org/0000-0003-4042-795X",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Hyung Won Chung",
+          "openalex_id": "A5051828575",
+          "orcid": "https://orcid.org/0000-0002-1280-9953",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Nathan Scales",
+          "openalex_id": "A5030765685",
+          "orcid": "https://orcid.org/0000-0002-9535-7138",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Ajay Kumar Tanwani",
+          "openalex_id": "A5088063475",
+          "orcid": "https://orcid.org/0000-0002-6365-8315",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Heather Cole-Lewis",
+          "openalex_id": "A5069557194",
+          "orcid": "https://orcid.org/0000-0002-7275-1810",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Stephen Pfohl",
+          "openalex_id": "A5021812637",
+          "orcid": "https://orcid.org/0000-0003-0551-9664",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Perry W. Payne",
+          "openalex_id": "A5014637990",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Martin Seneviratne",
+          "openalex_id": "A5058677067",
+          "orcid": "https://orcid.org/0000-0003-0435-3738",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Paul Gamble",
+          "openalex_id": "A5090718376",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Christopher Kelly",
+          "openalex_id": "A5026540467",
+          "orcid": "https://orcid.org/0000-0002-1246-844X",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Abubakr Babiker",
+          "openalex_id": "A5066029226",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Nathanael Sch\u00e4rli",
+          "openalex_id": "A5007588003",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Aakanksha Chowdhery",
+          "openalex_id": "A5055969617",
+          "orcid": "https://orcid.org/0000-0002-0628-5225",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "P. Mansfield",
+          "openalex_id": "A5086361722",
+          "orcid": "https://orcid.org/0000-0003-4969-0543",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Dina Demner\u2010Fushman",
+          "openalex_id": "A5046764593",
+          "institutions": [
+            "United States National Library of Medicine"
+          ]
+        },
+        {
+          "name": "Blaise Ag\u00fcera y Arcas",
+          "openalex_id": "A5044698998",
+          "orcid": "https://orcid.org/0000-0003-2256-9823",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Dale R. Webster",
+          "openalex_id": "A5060000122",
+          "orcid": "https://orcid.org/0000-0002-3023-8824",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Greg S. Corrado",
+          "openalex_id": "A5068955381",
+          "orcid": "https://orcid.org/0000-0001-8817-0992",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Yossi Matias",
+          "openalex_id": "A5065128060",
+          "orcid": "https://orcid.org/0000-0003-3960-6002",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Katherine Chou",
+          "openalex_id": "A5070366042",
+          "orcid": "https://orcid.org/0000-0002-0318-7857",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Juraj Gottweis",
+          "openalex_id": "A5057932939",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Nenad Toma\u0161ev",
+          "openalex_id": "A5057195145",
+          "orcid": "https://orcid.org/0000-0003-1624-0220",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Yun Liu",
+          "openalex_id": "A5078784976",
+          "orcid": "https://orcid.org/0000-0003-4079-8275",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Alvin Rajkomar",
+          "openalex_id": "A5022388476",
+          "orcid": "https://orcid.org/0000-0001-5750-5016",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Jo\u00eblle Barral",
+          "openalex_id": "A5043862316",
+          "orcid": "https://orcid.org/0009-0009-0432-5148",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Christopher Semturs",
+          "openalex_id": "A5010171106",
+          "orcid": "https://orcid.org/0000-0001-6108-2773",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Alan Karthikesalingam",
+          "openalex_id": "A5003509342",
+          "orcid": "https://orcid.org/0000-0001-5074-898X",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Vivek Natarajan",
+          "openalex_id": "A5103234563",
+          "orcid": "https://orcid.org/0000-0001-7849-2074",
+          "institutions": [
+            "Google (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-12",
+      "abstract": null,
+      "cited_by_count": 2374,
+      "type": "article",
+      "source": {
+        "name": "Nature",
+        "type": "journal",
+        "issn": [
+          "0028-0836",
+          "1476-4687"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s41586-023-06291-2.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Artificial Intelligence in Healthcare and Education",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W4384071683"
+    },
+    {
+      "openalex_id": "W4387075507",
+      "doi": "10.48550/arxiv.2309.13638",
+      "title": "Embers of Autoregression: Understanding Large Language Models Through the Problem They are Trained to Solve",
+      "authors": [
+        {
+          "name": "R. Thomas McCoy",
+          "openalex_id": "A5003082850",
+          "orcid": "https://orcid.org/0000-0001-9383-4079"
+        },
+        {
+          "name": "Shunyu Yao",
+          "openalex_id": "A5000577985",
+          "orcid": "https://orcid.org/0000-0002-1683-286X"
+        },
+        {
+          "name": "Dan Friedman",
+          "openalex_id": "A5102164378"
+        },
+        {
+          "name": "Matthew Hardy",
+          "openalex_id": "A5091234676"
+        },
+        {
+          "name": "Thomas L. Griffiths",
+          "openalex_id": "A5077079119",
+          "orcid": "https://orcid.org/0000-0002-5138-7255"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-24",
+      "abstract": "The widespread adoption of large language models (LLMs) makes it important to recognize their strengths and limitations. We argue that in order to develop a holistic understanding of these systems we need to consider the problem that they were trained to solve: next-word prediction over Internet text. By recognizing the pressures that this task exerts we can make predictions about the strategies that LLMs will adopt, allowing us to reason about when they will succeed or fail. This approach - which we call the teleological approach - leads us to identify three factors that we hypothesize will influence LLM accuracy: the probability of the task to be performed, the probability of the target output, and the probability of the provided input. We predict that LLMs will achieve higher accuracy when these probabilities are high than when they are low - even in deterministic settings where probability should not matter. To test our predictions, we evaluate two LLMs (GPT-3.5 and GPT-4) on eleven tasks, and we find robust evidence that LLMs are influenced by probability in the ways that we have hypothesized. In many cases, the experiments reveal surprising failure modes. For instance, GPT-4's accuracy at decoding a simple cipher is 51% when the output is a high-probability word sequence but only 13% when it is low-probability. These results show that AI practitioners should be careful about using LLMs in low-probability situations. More broadly, we conclude that we should not evaluate LLMs as if they are humans but should instead treat them as a distinct type of system - one that has been shaped by its own particular set of pressures.",
+      "cited_by_count": 32,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2309.13638"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Text Readability and Simplification"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4387075507"
+    },
+    {
+      "openalex_id": "W4362515116",
+      "doi": "10.48550/arxiv.2303.18223",
+      "title": "A Survey of Large Language Models",
+      "authors": [
+        {
+          "name": "Wayne Xin Zhao",
+          "openalex_id": "A5037145565",
+          "orcid": "https://orcid.org/0000-0002-8333-6196"
+        },
+        {
+          "name": "Kun Zhou",
+          "openalex_id": "A5100722039",
+          "orcid": "https://orcid.org/0000-0001-7660-2911"
+        },
+        {
+          "name": "Junyi Li",
+          "openalex_id": "A5100363220",
+          "orcid": "https://orcid.org/0009-0007-0480-5593"
+        },
+        {
+          "name": "Tianyi Tang",
+          "openalex_id": "A5030566556",
+          "orcid": "https://orcid.org/0000-0002-4352-8222"
+        },
+        {
+          "name": "Xiaolei Wang",
+          "openalex_id": "A5100367735",
+          "orcid": "https://orcid.org/0000-0003-3685-3606"
+        },
+        {
+          "name": "Yupeng Hou",
+          "openalex_id": "A5052347581",
+          "orcid": "https://orcid.org/0000-0002-0747-8010"
+        },
+        {
+          "name": "Yingqian Min",
+          "openalex_id": "A5059541770"
+        },
+        {
+          "name": "Beichen Zhang",
+          "openalex_id": "A5101849100",
+          "orcid": "https://orcid.org/0000-0001-5030-0632"
+        },
+        {
+          "name": "Junjie Zhang",
+          "openalex_id": "A5100343044",
+          "orcid": "https://orcid.org/0000-0002-0033-0494"
+        },
+        {
+          "name": "Zican Dong",
+          "openalex_id": "A5018732664"
+        },
+        {
+          "name": "Yifan Du",
+          "openalex_id": "A5001058167",
+          "orcid": "https://orcid.org/0000-0002-0734-9200"
+        },
+        {
+          "name": "Yang Chen",
+          "openalex_id": "A5100350503",
+          "orcid": "https://orcid.org/0000-0003-4749-3060"
+        },
+        {
+          "name": "Yushuo Chen",
+          "openalex_id": "A5008293262",
+          "orcid": "https://orcid.org/0000-0002-9091-6711"
+        },
+        {
+          "name": "Zhipeng Chen",
+          "openalex_id": "A5100325084",
+          "orcid": "https://orcid.org/0000-0002-8330-0070"
+        },
+        {
+          "name": "Jinhao Jiang",
+          "openalex_id": "A5069058824"
+        },
+        {
+          "name": "Ruiyang Ren",
+          "openalex_id": "A5074848230",
+          "orcid": "https://orcid.org/0000-0002-0562-9911"
+        },
+        {
+          "name": "Yifan Li",
+          "openalex_id": "A5100427047",
+          "orcid": "https://orcid.org/0009-0006-1222-7706"
+        },
+        {
+          "name": "Xinyu Tang",
+          "openalex_id": "A5102019389",
+          "orcid": "https://orcid.org/0000-0001-9221-154X"
+        },
+        {
+          "name": "Zikang Liu",
+          "openalex_id": "A5008547683",
+          "orcid": "https://orcid.org/0000-0002-8947-7053"
+        },
+        {
+          "name": "Peiyu Liu",
+          "openalex_id": "A5100716216",
+          "orcid": "https://orcid.org/0000-0002-2905-5473"
+        },
+        {
+          "name": "Jian\u2010Yun Nie",
+          "openalex_id": "A5018977183",
+          "orcid": "https://orcid.org/0000-0003-1556-3335"
+        },
+        {
+          "name": "Ji-Rong Wen",
+          "openalex_id": "A5025631695",
+          "orcid": "https://orcid.org/0000-0002-9777-9676"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-31",
+      "abstract": "Language is essentially a complex, intricate system of human expressions governed by grammatical rules. It poses a significant challenge to develop capable AI algorithms for comprehending and grasping a language. As a major approach, language modeling has been widely studied for language understanding and generation in the past two decades, evolving from statistical language models to neural language models. Recently, pre-trained language models (PLMs) have been proposed by pre-training Transformer models over large-scale corpora, showing strong capabilities in solving various NLP tasks. Since researchers have found that model scaling can lead to performance improvement, they further study the scaling effect by increasing the model size to an even larger size. Interestingly, when the parameter scale exceeds a certain level, these enlarged language models not only achieve a significant performance improvement but also show some special abilities that are not present in small-scale language models. To discriminate the difference in parameter scale, the research community has coined the term large language models (LLM) for the PLMs of significant size. Recently, the research on LLMs has been largely advanced by both academia and industry, and a remarkable progress is the launch of ChatGPT, which has attracted widespread attention from society. The technical evolution of LLMs has been making an important impact on the entire AI community, which would revolutionize the way how we develop and use AI algorithms. In this survey, we review the recent advances of LLMs by introducing the background, key findings, and mainstream techniques. In particular, we focus on four major aspects of LLMs, namely pre-training, adaptation tuning, utilization, and capacity evaluation. Besides, we also summarize the available resources for developing LLMs and discuss the remaining issues for future directions.",
+      "cited_by_count": 1353,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2303.18223"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4362515116"
+    },
+    {
+      "openalex_id": "W4383302386",
+      "doi": "10.1097/upj.0000000000000428",
+      "title": "Bridging the Gap Between Urological Research and Patient Understanding: The Role of Large Language Models in Automated Generation of Layperson\u2019s Summaries",
+      "authors": [
+        {
+          "name": "Michael Eppler",
+          "openalex_id": "A5022334478",
+          "orcid": "https://orcid.org/0000-0001-6336-5857",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Conner Ganjavi",
+          "openalex_id": "A5019811077",
+          "orcid": "https://orcid.org/0000-0001-9698-964X",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "John Knudsen",
+          "openalex_id": "A5108269752",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Ryan J. Davis",
+          "openalex_id": "A5029601113",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Oluwatobiloba Ayo\u2010Ajibola",
+          "openalex_id": "A5092434171",
+          "orcid": "https://orcid.org/0009-0002-4824-7160",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Aditya Desai",
+          "openalex_id": "A5012744187",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Lorenzo Storino Ramacciotti",
+          "openalex_id": "A5077748227",
+          "orcid": "https://orcid.org/0000-0002-0615-9720",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Andrew Chen",
+          "openalex_id": "A5100703651",
+          "orcid": "https://orcid.org/0000-0002-6239-8443",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Andre De Castro Abreu",
+          "openalex_id": "A5109393451",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Mihir Desai",
+          "openalex_id": "A5008765130",
+          "orcid": "https://orcid.org/0000-0002-3744-8234",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Inderbir S. Gill",
+          "openalex_id": "A5047742848",
+          "orcid": "https://orcid.org/0000-0002-5113-7846",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Giovanni Cacciamani",
+          "openalex_id": "A5062586182",
+          "orcid": "https://orcid.org/0000-0002-8892-5539",
+          "institutions": [
+            "University of Southern California"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-06",
+      "abstract": "ChatGPT can create accurate summaries of scientific abstracts for patients, with well-crafted prompts enhancing user-friendliness. Although the summaries are satisfactory, expert verification is necessary for improved accuracy.",
+      "cited_by_count": 58,
+      "type": "article",
+      "source": {
+        "name": "Urology Practice",
+        "type": "journal",
+        "issn": [
+          "2352-0779",
+          "2352-0787"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Text Readability and Simplification",
+        "Artificial Intelligence in Healthcare and Education",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4383302386"
+    },
+    {
+      "openalex_id": "W4396832890",
+      "doi": "10.1145/3613904.3642472",
+      "title": "CloChat: Understanding How People Customize, Interact, and Experience Personas in Large Language Models",
+      "authors": [
+        {
+          "name": "Juhye Ha",
+          "openalex_id": "A5010071002",
+          "orcid": "https://orcid.org/0000-0003-2000-1740",
+          "institutions": [
+            "Yonsei University"
+          ]
+        },
+        {
+          "name": "Hyeon Jeon",
+          "openalex_id": "A5101506748",
+          "orcid": "https://orcid.org/0000-0002-9659-2922",
+          "institutions": [
+            "Seoul National University"
+          ]
+        },
+        {
+          "name": "D. S. Han",
+          "openalex_id": "A5103021594",
+          "orcid": "https://orcid.org/0000-0003-1757-2809",
+          "institutions": [
+            "Yonsei University"
+          ]
+        },
+        {
+          "name": "Jinwook Seo",
+          "openalex_id": "A5012388103",
+          "orcid": "https://orcid.org/0000-0002-7734-822X",
+          "institutions": [
+            "Seoul National University"
+          ]
+        },
+        {
+          "name": "Changhoon Oh",
+          "openalex_id": "A5007803402",
+          "orcid": "https://orcid.org/0000-0002-3340-551X",
+          "institutions": [
+            "Yonsei University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-05-11",
+      "abstract": "Large language models (LLMs) have facilitated significant strides in generating conversational agents, enabling seamless, contextually relevant dialogues across diverse topics. However, the existing LLM-driven conversational agents have fixed personalities and functionalities, limiting their adaptability to individual user needs. Creating personalized agent personas with distinct expertise or traits can address this issue. Nonetheless, we lack knowledge of how people customize and interact with agent personas. In this research, we investigated how users customize agent personas and their impact on interaction quality, diversity, and dynamics. To this end, we developed CloChat, an interface supporting easy and accurate customization of agent personas in LLMs. We conducted a study comparing how participants interact with CloChat and ChatGPT. The results indicate that participants formed emotional bonds with the customized agents, engaged in more dynamic dialogues, and showed interest in sustaining interactions. These findings contribute to design implications for future systems with conversational agents using LLMs.",
+      "cited_by_count": 40,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3613904.3642472"
+      },
+      "topics": [
+        "Persona Design and Applications",
+        "Innovative Human-Technology Interaction",
+        "AI in Service Interactions"
+      ],
+      "referenced_works_count": 92,
+      "url": "https://openalex.org/W4396832890"
+    },
+    {
+      "openalex_id": "W4392011662",
+      "doi": "10.1145/3613904.3642420",
+      "title": "Understanding the Impact of Long-Term Memory on Self-Disclosure with Large Language Model-Driven Chatbots for Public Health Intervention",
+      "authors": [
+        {
+          "name": "Eunkyung Jo",
+          "openalex_id": "A5015228589",
+          "orcid": "https://orcid.org/0000-0002-6494-3396",
+          "institutions": [
+            "University of California System"
+          ]
+        },
+        {
+          "name": "Yuin Jeong",
+          "openalex_id": "A5023023629",
+          "institutions": [
+            "Naver (South Korea)"
+          ]
+        },
+        {
+          "name": "SoHyun Park",
+          "openalex_id": "A5060984251",
+          "orcid": "https://orcid.org/0000-0001-8703-0584",
+          "institutions": [
+            "Naver (South Korea)"
+          ]
+        },
+        {
+          "name": "Daniel A. Epstein",
+          "openalex_id": "A5088906729",
+          "orcid": "https://orcid.org/0000-0002-2657-6345",
+          "institutions": [
+            "University of California System"
+          ]
+        },
+        {
+          "name": "Young\u2010Ho Kim",
+          "openalex_id": "A5062848438",
+          "orcid": "https://orcid.org/0000-0002-2681-2774",
+          "institutions": [
+            "Naver (South Korea)"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-05-11",
+      "abstract": "Recent large language models (LLMs) offer the potential to support public health monitoring by facilitating health disclosure through open-ended conversations but rarely preserve the knowledge gained about individuals across repeated interactions. Augmenting LLMs with long-term memory (LTM) presents an opportunity to improve engagement and self-disclosure, but we lack an understanding of how LTM impacts people's interaction with LLM-driven chatbots in public health interventions. We examine the case of CareCall -- an LLM-driven voice chatbot with LTM -- through the analysis of 1,252 call logs and interviews with nine users. We found that LTM enhanced health disclosure and fostered positive perceptions of the chatbot by offering familiarity. However, we also observed challenges in promoting self-disclosure through LTM, particularly around addressing chronic health conditions and privacy concerns. We discuss considerations for LTM integration in LLM-driven chatbots for public health monitoring, including carefully deciding what topics need to be remembered in light of public health goals.",
+      "cited_by_count": 42,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3613904.3642420"
+      },
+      "topics": [
+        "Digital Mental Health Interventions",
+        "Mental Health via Writing",
+        "Impact of Technology on Adolescents"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W4392011662"
+    },
+    {
+      "openalex_id": "W4402036612",
+      "doi": "10.1162/opmi_a_00160",
+      "title": "The Limitations of Large Language Models for Understanding Human Language and Cognition",
+      "authors": [
+        {
+          "name": "Christine Cuskley",
+          "openalex_id": "A5014295856",
+          "orcid": "https://orcid.org/0000-0002-5699-4556",
+          "institutions": [
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Rebecca Woods",
+          "openalex_id": "A5103064134",
+          "orcid": "https://orcid.org/0000-0002-7116-9191",
+          "institutions": [
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Molly Flaherty",
+          "openalex_id": "A5055629018",
+          "institutions": [
+            "Davidson College"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Abstract Researchers have recently argued that the capabilities of Large Language Models (LLMs) can provide new insights into longstanding debates about the role of learning and/or innateness in the development and evolution of human language. Here, we argue on two grounds that LLMs alone tell us very little about human language and cognition in terms of acquisition and evolution. First, any similarities between human language and the output of LLMs are purely functional. Borrowing the \u201cfour questions\u201d framework from ethology, we argue that what LLMs do is superficially similar, but how they do it is not. In contrast to the rich multimodal data humans leverage in interactive language learning, LLMs rely on immersive exposure to vastly greater quantities of unimodal text data, with recent multimodal efforts built upon mappings between images and text. Second, turning to functional similarities between human language and LLM output, we show that human linguistic behavior is much broader. LLMs were designed to imitate the very specific behavior of human writing; while they do this impressively, the underlying mechanisms of these models limit their capacities for meaning and naturalistic interaction, and their potential for dealing with the diversity in human language. We conclude by emphasising that LLMs are not theories of language, but tools that may be used to study language, and that can only be effectively applied with specific hypotheses to motivate research.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Open Mind",
+        "type": "journal",
+        "issn": [
+          "2470-2986"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1162/opmi_a_00160"
+      },
+      "topics": [
+        "Language and cultural evolution",
+        "Speech and dialogue systems",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 148,
+      "url": "https://openalex.org/W4402036612"
+    },
+    {
+      "openalex_id": "W4366283741",
+      "doi": "10.1163/18756735-00000182",
+      "title": "A Loosely Wittgensteinian Conception of the Linguistic Understanding of Large Language Models like BERT, GPT-3, and ChatGPT",
+      "authors": [
+        {
+          "name": "Reto Gubelmann",
+          "openalex_id": "A5044414265",
+          "orcid": "https://orcid.org/0000-0001-6141-4168",
+          "institutions": [
+            "University of St. Gallen"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-12",
+      "abstract": "Abstract In this article, I develop a loosely Wittgensteinian conception of what it takes for a being, including an AI system, to understand language, and I suggest that current state of the art systems are closer to fulfilling these requirements than one might think. Developing and defending this claim has both empirical and conceptual aspects. The conceptual aspects concern the criteria that are reasonably applied when judging whether some being understands language; the empirical aspects concern the question whether a given being fulfills these criteria. On the conceptual side, the article builds on Glock\u2019s concept of intelligence, Taylor\u2019s conception of intrinsic rightness as well as Wittgenstein\u2019s rule-following considerations. On the empirical side, it is argued that current transformer-based NNLP models, such as BERT and GPT-3 come close to fulfilling these criteria.",
+      "cited_by_count": 45,
+      "type": "article",
+      "source": {
+        "name": "Grazer Philosophische Studien",
+        "type": "journal",
+        "issn": [
+          "0165-9227",
+          "1875-6735"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://brill.com/downloadpdf/journals/gps/99/4/article-p485_2.pdf"
+      },
+      "topics": [
+        "Computability, Logic, AI Algorithms",
+        "Topic Modeling",
+        "Ferroelectric and Negative Capacitance Devices"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W4366283741"
+    },
+    {
+      "openalex_id": "W3046375318",
+      "doi": "10.1145/3458754",
+      "title": "Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing",
+      "authors": [
+        {
+          "name": "\u88d5\u4e8c \u6c60\u8c37",
+          "openalex_id": "A5087377548",
+          "orcid": "https://orcid.org/0000-0002-1704-1744",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Robert Tinn",
+          "openalex_id": "A5073496354",
+          "orcid": "https://orcid.org/0000-0003-0182-7280",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Hao Cheng",
+          "openalex_id": "A5101511712",
+          "orcid": "https://orcid.org/0000-0003-4823-0908",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Michael Lucas",
+          "openalex_id": "A5041818444",
+          "orcid": "https://orcid.org/0009-0000-9745-4241",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Naoto Usuyama",
+          "openalex_id": "A5010756260",
+          "orcid": "https://orcid.org/0000-0003-0888-929X",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Xiaodong Liu",
+          "openalex_id": "A5100374810",
+          "orcid": "https://orcid.org/0009-0004-6648-2302",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Tristan Naumann",
+          "openalex_id": "A5023123863",
+          "orcid": "https://orcid.org/0000-0003-2150-1747",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Jianfeng Gao",
+          "openalex_id": "A5114910293",
+          "orcid": "https://orcid.org/0000-0002-5702-6143",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Hoifung Poon",
+          "openalex_id": "A5019494985",
+          "orcid": "https://orcid.org/0000-0002-9067-0918",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-10-15",
+      "abstract": "Pretraining large neural language models, such as BERT, has led to impressive gains on many natural language processing (NLP) tasks. However, most pretraining efforts focus on general domain corpora, such as newswire and Web. A prevailing assumption is that even domain-specific pretraining can benefit by starting from general-domain language models. In this article, we challenge this assumption by showing that for domains with abundant unlabeled text, such as biomedicine, pretraining language models from scratch results in substantial gains over continual pretraining of general-domain language models. To facilitate this investigation, we compile a comprehensive biomedical NLP benchmark from publicly available datasets. Our experiments show that domain-specific pretraining serves as a solid foundation for a wide range of biomedical NLP tasks, leading to new state-of-the-art results across the board. Further, in conducting a thorough evaluation of modeling choices, both for pretraining and task-specific fine-tuning, we discover that some common practices are unnecessary with BERT models, such as using complex tagging schemes in named entity recognition. To help accelerate research in biomedical NLP, we have released our state-of-the-art pretrained and task-specific models for the community, and created a leaderboard featuring our BLURB benchmark (short for Biomedical Language Understanding &amp; Reasoning Benchmark) at https://aka.ms/BLURB .",
+      "cited_by_count": 1771,
+      "type": "article",
+      "source": {
+        "name": "ACM Transactions on Computing for Healthcare",
+        "type": "journal",
+        "issn": [
+          "2637-8051",
+          "2691-1957"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2007.15779"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Biomedical Text Mining and Ontologies"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W3046375318"
+    },
+    {
+      "openalex_id": "W4402702988",
+      "doi": "10.1109/cvpr52733.2024.01480",
+      "title": "LayoutLLM: Layout Instruction Tuning with Large Language Models for Document Understanding",
+      "authors": [
+        {
+          "name": "Chuwei Luo",
+          "openalex_id": "A5062254598",
+          "institutions": [
+            "Alibaba Group (United States)"
+          ]
+        },
+        {
+          "name": "Yufan Shen",
+          "openalex_id": "A5101292450",
+          "orcid": "https://orcid.org/0009-0007-5166-6848",
+          "institutions": [
+            "Alibaba Group (United States)"
+          ]
+        },
+        {
+          "name": "Zhaoqing Zhu",
+          "openalex_id": "A5007608248",
+          "institutions": [
+            "Alibaba Group (United States)"
+          ]
+        },
+        {
+          "name": "Qi Zheng",
+          "openalex_id": "A5100750527",
+          "orcid": "https://orcid.org/0009-0001-3822-2616",
+          "institutions": [
+            "Alibaba Group (United States)"
+          ]
+        },
+        {
+          "name": "Zhi Yu",
+          "openalex_id": "A5117233230",
+          "orcid": "https://orcid.org/0009-0001-8608-5628",
+          "institutions": [
+            "Zhejiang University"
+          ]
+        },
+        {
+          "name": "Cong Yao",
+          "openalex_id": "A5100669593",
+          "orcid": "https://orcid.org/0000-0001-6564-4796",
+          "institutions": [
+            "Alibaba Group (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-16",
+      "abstract": null,
+      "cited_by_count": 30,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Handwritten Text Recognition Techniques",
+        "Natural Language Processing Techniques",
+        "Digital and Cyber Forensics"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W4402702988"
+    },
+    {
+      "openalex_id": "W4401001163",
+      "doi": "10.1016/j.apjo.2024.100085",
+      "title": "Understanding natural language: Potential application of large language models to ophthalmology",
+      "authors": [
+        {
+          "name": "Zefeng Yang",
+          "openalex_id": "A5055093396",
+          "orcid": "https://orcid.org/0000-0002-5893-678X",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Biao Wang",
+          "openalex_id": "A5100439502",
+          "orcid": "https://orcid.org/0000-0003-1089-1049",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Fengqi Zhou",
+          "openalex_id": "A5069259604",
+          "orcid": "https://orcid.org/0000-0003-4070-8153",
+          "institutions": [
+            "Mayo Clinic Health System"
+          ]
+        },
+        {
+          "name": "Diping Song",
+          "openalex_id": "A5039264280",
+          "orcid": "https://orcid.org/0000-0002-5413-7702",
+          "institutions": [
+            "Beijing Academy of Artificial Intelligence",
+            "Shanghai Artificial Intelligence Laboratory"
+          ]
+        },
+        {
+          "name": "Yinhang Zhang",
+          "openalex_id": "A5002598709",
+          "orcid": "https://orcid.org/0000-0003-4675-5428",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Jiaxuan Jiang",
+          "openalex_id": "A5113305512",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Kangjie Kong",
+          "openalex_id": "A5109709368",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Xiaoyi Liu",
+          "openalex_id": "A5003415897",
+          "orcid": "https://orcid.org/0009-0002-9664-403X",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Yu Qiao",
+          "openalex_id": "A5048970929",
+          "orcid": "https://orcid.org/0000-0002-4046-0453",
+          "institutions": [
+            "Shanghai Artificial Intelligence Laboratory",
+            "Beijing Academy of Artificial Intelligence"
+          ]
+        },
+        {
+          "name": "Robert T. Chang",
+          "openalex_id": "A5002558627",
+          "orcid": "https://orcid.org/0000-0002-2950-7951",
+          "institutions": [
+            "Stanford University",
+            "Smith-Kettlewell Eye Research Institute"
+          ]
+        },
+        {
+          "name": "Yinghui Han",
+          "openalex_id": "A5100677076",
+          "orcid": "https://orcid.org/0000-0002-2167-7024",
+          "institutions": [
+            "University of California, San Francisco"
+          ]
+        },
+        {
+          "name": "Fei Li",
+          "openalex_id": "A5112479301",
+          "orcid": "https://orcid.org/0000-0002-6260-1907",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Clement C. Tham",
+          "openalex_id": "A5024797179",
+          "orcid": "https://orcid.org/0000-0003-4407-6907",
+          "institutions": [
+            "Prince of Wales Hospital",
+            "Hong Kong Eye Hospital",
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Xiulan Zhang",
+          "openalex_id": "A5029548071",
+          "orcid": "https://orcid.org/0000-0002-9288-0767",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-01",
+      "abstract": "Large language models (LLMs), a natural language processing technology based on deep learning, are currently in the spotlight. These models closely mimic natural language comprehension and generation. Their evolution has undergone several waves of innovation similar to convolutional neural networks. The transformer architecture advancement in generative artificial intelligence marks a monumental leap beyond early-stage pattern recognition via supervised learning. With the expansion of parameters and training data (terabytes), LLMs unveil remarkable human interactivity, encompassing capabilities such as memory retention and comprehension. These advances make LLMs particularly well-suited for roles in healthcare communication between medical practitioners and patients. In this comprehensive review, we discuss the trajectory of LLMs and their potential implications for clinicians and patients. For clinicians, LLMs can be used for automated medical documentation, and given better inputs and extensive validation, LLMs may be able to autonomously diagnose and treat in the future. For patient care, LLMs can be used for triage suggestions, summarization of medical documents, explanation of a patient's condition, and customizing patient education materials tailored to their comprehension level. The limitations of LLMs and possible solutions for real-world use are also presented. Given the rapid advancements in this area, this review attempts to briefly cover many roles that LLMs may play in the ophthalmic space, with a focus on improving the quality of healthcare delivery.",
+      "cited_by_count": 24,
+      "type": "review",
+      "source": {
+        "name": "Asia-Pacific Journal of Ophthalmology",
+        "type": "journal",
+        "issn": [
+          "2162-0989"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.1016/j.apjo.2024.100085"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "COVID-19 diagnosis using AI",
+        "Retinal Imaging and Analysis"
+      ],
+      "referenced_works_count": 197,
+      "url": "https://openalex.org/W4401001163"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

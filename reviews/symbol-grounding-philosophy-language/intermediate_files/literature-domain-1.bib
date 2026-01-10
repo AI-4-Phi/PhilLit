@@ -1,0 +1,378 @@
+@comment{
+====================================================================
+DOMAIN: Symbol Grounding Problem - Core Formulations and Reviews
+SEARCH_DATE: 2026-01-09
+PAPERS_FOUND: 18 total (High: 6, Medium: 8, Low: 4)
+SEARCH_SOURCES: SEP, PhilPapers, Semantic Scholar, OpenAlex
+====================================================================
+
+DOMAIN_OVERVIEW:
+The symbol grounding problem (SGP), formulated by Stevan Harnad in 1990, originates from Searle's Chinese Room Argument and asks how symbols in a computational system acquire intrinsic semantic content rather than merely parasitic meaning derived from an external interpreter. Harnad's original formulation proposed hybrid symbolic/connectionist systems with sensorimotor grounding as a solution. The field has since generated diverse approaches: sensorimotor embodiment (Vogt 2002), action-based semantics (Taddeo & Floridi 2005, 2007), social grounding (Steels 2008), and causal-historical theories (Bielecka 2015). Critical debates persist about whether the problem has been solved (Steels 2008 vs. Bringsjord 2015), what constitutes a valid solution (Müller 2015), and whether proposed solutions satisfy the "zero semantic commitment" condition (Bielecka 2015). Recent work extends SGP to large language models (Gubelmann 2024, Floridi et al. 2025), challenging whether LLMs circumvent or genuinely address the problem.
+
+The core debate concerns whether symbols can be grounded in: (a) nonsymbolic sensorimotor capacities; (b) action/interaction patterns; (c) formal/computational structures alone; or (d) whether grounding requires phenomenal consciousness. Most solutions appeal to embodiment, robotics, or hybrid architectures, but critics argue these merely shift rather than solve the problem.
+
+RELEVANCE_TO_PROJECT:
+This domain establishes the SGP as formulated within cognitive science and AI, providing the foundation for investigating how philosophers of language engage with it. The hypothesis that SGP may presuppose a narrow meta-semantic view (possibly denotational semantics) can be evaluated by examining which semantic theories are implicitly or explicitly assumed in these formulations and proposed solutions.
+
+NOTABLE_GAPS:
+While extensive work addresses sensorimotor and robotic grounding, there is limited engagement with mainstream philosophy of language traditions (Fregean, Davidsonian, Kripkean approaches). Few papers explicitly connect SGP to meta-semantic debates about what determines reference. The assumption that symbols must be "grounded" in a specific way is rarely questioned from the perspective of use-based or inferentialist semantics.
+
+SYNTHESIS_GUIDANCE:
+Synthesis should distinguish foundational formulations (Harnad, Searle) from proposed solutions and critical evaluations. Map the solution space along dimensions: symbolic/nonsymbolic, representationalist/non-representationalist, internalist/externalist. Identify implicit semantic assumptions in each approach for later comparison with philosophy of language literature in other domains.
+
+KEY_POSITIONS:
+- Hybrid sensorimotor grounding (Harnad 1990, Vogt 2002): 6 papers - Symbols must be grounded bottom-up via nonsymbolic categorical perception
+- Action-based semantics (Taddeo & Floridi 2005-2007): 3 papers - Grounding via agent-environment interaction patterns
+- Social/cultural grounding (Steels 2008): 2 papers - Language games and cultural emergence solve SGP
+- Skeptics (Bringsjord 2015, Bielecka 2015, Müller 2015): 3 papers - SGP remains unsolved or poorly formulated
+- LLM-related (Gubelmann 2024, Floridi 2025): 2 papers - Whether LLMs circumvent or fail the SGP
+- Philosophical approaches (Menant 2013): 2 papers - Connecting SGP to consciousness and intentionality
+====================================================================
+}
+
+@article{harnad1990symbol,
+  author = {Harnad, Stevan},
+  title = {The Symbol Grounding Problem},
+  journal = {Physica D: Nonlinear Phenomena},
+  year = {1990},
+  volume = {42},
+  number = {1-3},
+  pages = {335--346},
+  doi = {10.1016/0167-2789(90)90087-6},
+  note = {
+  CORE ARGUMENT: Computational symbol systems face a fundamental problem: symbols manipulated according to syntactic rules are not intrinsically meaningful to the system itself, only to external human interpreters. Harnad argues that purely symbolic AI cannot solve this problem, but hybrid systems combining nonsymbolic (connectionist) sensorimotor grounding with symbolic processing can ground elementary symbols through categorical perception, enabling derived symbolic meanings through symbol-symbol relationships.
+
+  RELEVANCE: This is the canonical formulation of the symbol grounding problem. It establishes the problem space, defines what counts as a solution (intrinsic vs. parasitic meaning), and proposes the hybrid architecture that has dominated subsequent debate. The paper's implicit assumption that symbols require grounding "in" something external to syntax is central to this review's investigation of whether SGP presupposes a particular meta-semantic theory.
+
+  POSITION: Foundational hybrid approach - combines symbolic AI with connectionist sensorimotor grounding. Draws on Searle's Chinese Room to show limits of pure computation while proposing constructive solution.
+  },
+  keywords = {symbol-grounding, foundational, Harnad, High}
+}
+
+@article{taddeo2005solving,
+  author = {Taddeo, Mariarosaria and Floridi, Luciano},
+  title = {Solving the Symbol Grounding Problem: A Critical Review of Fifteen Years of Research},
+  journal = {Journal of Experimental \& Theoretical Artificial Intelligence},
+  year = {2005},
+  volume = {17},
+  number = {4},
+  pages = {419--445},
+  doi = {10.1080/09528130500284053},
+  note = {
+  CORE ARGUMENT: Reviews eight proposed solutions to the SGP organized into representationalist, semi-representationalist, and non-representationalist approaches. Introduces the "zero semantical commitment condition" - that valid solutions must not presuppose semantic content at any stage. Concludes that all eight strategies fail this condition and the SGP remains unsolved.
+
+  RELEVANCE: Major critical survey establishing evaluation criteria for SGP solutions. The zero semantic commitment condition becomes a key litmus test in subsequent debate. The paper's taxonomy of approaches reveals implicit assumptions about semantics (representation vs. action) that connect to broader meta-semantic positions, relevant to this review's central hypothesis.
+
+  POSITION: Critical review establishing that proposed solutions fail to genuinely solve SGP because they smuggle in semantic commitment. Sets high bar for what counts as genuine solution.
+  },
+  keywords = {symbol-grounding, review, Taddeo-Floridi, High}
+}
+
+@article{taddeo2007praxical,
+  author = {Taddeo, Mariarosaria and Floridi, Luciano},
+  title = {A Praxical Solution of the Symbol Grounding Problem},
+  journal = {Minds and Machines},
+  year = {2007},
+  volume = {17},
+  number = {4},
+  pages = {369--389},
+  doi = {10.1007/s11023-007-9081-3},
+  note = {
+  CORE ARGUMENT: Proposes action-based semantics as solution to SGP. Symbols acquire meaning through agent-environment interaction patterns rather than through mental representations or reference. Introduces "Praxical Grounding" where meaning emerges from successful goal-directed actions mediated by symbols in specific contexts.
+
+  RELEVANCE: Represents major alternative to sensorimotor grounding - shifts from perception to action. The action-based approach has affinities with pragmatist and inferentialist semantics in philosophy of language, making it particularly relevant for investigating whether different meta-semantic theories lead to different assessments of SGP. However, critics (Bielecka 2015, Bringsjord 2015, Müller 2015) argue it still smuggles in semantic commitment.
+
+  POSITION: Action-based semantics - meaning from interaction patterns rather than sensorimotor grounding. Attempts to satisfy zero semantic commitment through purely functional/behavioral account.
+  },
+  keywords = {symbol-grounding, action-based-semantics, Taddeo-Floridi, High}
+}
+
+@article{vogt2002physical,
+  author = {Vogt, Paul},
+  title = {The Physical Symbol Grounding Problem},
+  journal = {Cognitive Systems Research},
+  year = {2002},
+  volume = {3},
+  number = {3},
+  pages = {429--457},
+  doi = {10.1016/s1389-0417(02)00051-7},
+  note = {
+  CORE ARGUMENT: Distinguishes the "physical" symbol grounding problem - how autonomous agents develop grounded symbols through interaction with the physical world - from Harnad's original formulation. Proposes embodied cognitive science framework where grounding emerges from sensorimotor contingencies and situated interaction rather than being programmed top-down. Emphasizes developmental and evolutionary perspectives.
+
+  RELEVANCE: Extends SGP to embodied robotics and developmental systems. The emphasis on physical situatedness and emergent grounding connects to externalist meta-semantics (causal-historical theories). Vogt's framework raises questions about whether symbols need "grounding" at all if meaning is constituted by patterns of embodied activity - a view that challenges the presuppositions of the original problem.
+
+  POSITION: Embodied cognitive science approach - grounding emerges from situated sensorimotor interaction in physical environments. Emphasizes developmental and evolutionary dimensions absent from earlier formulations.
+  },
+  keywords = {symbol-grounding, embodiment, robotics, High}
+}
+
+@incollection{steels2008symbol,
+  author = {Steels, Luc},
+  title = {The Symbol Grounding Problem Has Been Solved, So What's Next?},
+  booktitle = {Symbols and Embodiment: Debates on Meaning and Cognition},
+  editor = {de Vega, Manuel and Glenberg, Arthur M. and Graesser, Arthur C.},
+  publisher = {Oxford University Press},
+  year = {2008},
+  pages = {223--244},
+  doi = {10.1093/acprof:oso/9780199217274.003.0012},
+  note = {
+  CORE ARGUMENT: Boldly claims the SGP has been effectively solved through language game experiments demonstrating that autonomous agents can develop grounded symbol systems through social interaction and cultural transmission. Meaning emerges from coordination games where agents align their conceptual and linguistic systems through repeated communicative success/failure. Proposes moving beyond SGP to study how complex semantic systems emerge.
+
+  RELEVANCE: Provocative challenge to the view that SGP remains unsolved. Steels' social grounding approach shifts focus from individual agent-world relations to inter-agent coordination, connecting to social externalism and language-game theories in philosophy (Wittgenstein, Brandom). The claim that SGP is "solved" is contested by Bringsjord (2015) and others, making this a key point of controversy. Relevant for examining whether different meta-semantic frameworks (individualist vs. social) lead to different assessments.
+
+  POSITION: Social grounding approach - symbols acquire meaning through inter-agent coordination in language games. Claims SGP is solved experimentally through robotic and computational models.
+  },
+  keywords = {symbol-grounding, social-grounding, Steels, High}
+}
+
+@article{bringsjord2015symbol,
+  author = {Bringsjord, Selmer},
+  title = {The Symbol Grounding Problem \dots{} Remains Unsolved},
+  journal = {Journal of Experimental \& Theoretical Artificial Intelligence},
+  year = {2015},
+  volume = {27},
+  number = {1},
+  pages = {63--72},
+  doi = {10.1080/0952813x.2014.940139},
+  note = {
+  CORE ARGUMENT: Directly rebuts Taddeo \& Floridi's praxical solution, arguing it merely demonstrates that robots can connect symbols to percepts and generate sub-human communication, not genuine understanding. The "zero semantic commitment condition" cannot be satisfied by any proposed solution, including action-based semantics. Genuine grounding requires understanding semantic content at the level required for higher cognition (logical reasoning, education), which no current system achieves.
+
+  RELEVANCE: Major skeptical position arguing SGP remains fundamentally unsolved. Raises the bar for what counts as grounding by demanding logical/propositional understanding rather than mere sensorimotor or behavioral success. This connects to debates about whether semantic content requires conceptual capacities (McDowell) or whether nonconceptual content suffices. The critique reveals implicit commitments about the nature of meaning that divide researchers.
+
+  POSITION: Skeptical position - argues proposed solutions fail to achieve genuine semantic understanding and SGP remains open. Emphasizes that grounding must support logical reasoning and conceptual understanding, not just behavior.
+  },
+  keywords = {symbol-grounding, skeptical, Bringsjord, High}
+}
+
+@article{muller2015which,
+  author = {Müller, Vincent C.},
+  title = {Which Symbol Grounding Problem Should We Try to Solve?},
+  journal = {Journal of Experimental \& Theoretical Artificial Intelligence},
+  year = {2015},
+  volume = {27},
+  number = {1},
+  pages = {73--78},
+  doi = {10.1080/0952813x.2014.940143},
+  note = {
+  CORE ARGUMENT: Argues that there are multiple distinct "symbol grounding problems" depending on one's understanding of computation and goals. On a proper syntactic understanding of computation, the only sensible grounding problem is how to explain and reproduce the behavioral ability and function of meaning in artificial computational agents. Taddeo \& Floridi's zero semantic commitment condition cannot be fulfilled by any system, including their own solution. We need to reformulate what problem we're trying to solve.
+
+  RELEVANCE: Meta-level critique questioning whether SGP is well-formulated. Müller's emphasis on behavioral function and syntactic computation connects to functionalist and deflationary approaches to semantics. The paper exemplifies how different theoretical commitments (about computation, meaning, goals) shape problem formulation itself - directly relevant to this review's hypothesis that SGP may presuppose unjustified semantic assumptions.
+
+  POSITION: Meta-critical position - argues SGP needs reformulation. Emphasizes that different conceptions of computation and meaning generate different problems. Functionalist approach focusing on behavioral capacities.
+  },
+  keywords = {symbol-grounding, meta-critical, Müller, Medium}
+}
+
+@article{bielecka2015symbol,
+  author = {Bielecka, Krystyna},
+  title = {Symbol Grounding Problem and Causal Theory of Reference},
+  journal = {New Ideas in Psychology},
+  year = {2015},
+  volume = {40},
+  pages = {77--85},
+  doi = {10.1016/j.newideapsych.2015.01.006},
+  note = {
+  CORE ARGUMENT: Examines SGP from the perspective of causal-historical theories of reference (Kripke, Putnam). Argues that causal chains connecting symbols to referents might provide grounding, but this approach faces problems distinguishing appropriate from inappropriate causal chains. Analyzes whether naturalistic semantics informed by causal reference theory can solve SGP.
+
+  RELEVANCE: One of few papers explicitly connecting SGP to mainstream philosophy of language (causal-historical reference). Demonstrates how adopting a particular meta-semantic theory (causal theory) shapes both problem formulation and available solutions. Crucial for this review's investigation of whether SGP presupposes specific semantic theories and whether alternative theories (descriptivist, inferentialist) would frame the problem differently.
+
+  POSITION: Philosophical analysis connecting SGP to causal theories of reference. Explores whether naturalized causal-historical semantics can ground symbols while identifying limitations.
+  },
+  keywords = {symbol-grounding, causal-reference, philosophy-of-language, Medium}
+}
+
+@article{bielecka2015why,
+  author = {Bielecka, Krystyna},
+  title = {Why Taddeo and Floridi Did Not Solve the Symbol Grounding Problem},
+  journal = {Journal of Experimental \& Theoretical Artificial Intelligence},
+  year = {2015},
+  volume = {27},
+  number = {1},
+  pages = {79--93},
+  doi = {10.1080/0952813x.2014.940138},
+  note = {
+  CORE ARGUMENT: Detailed critique of Taddeo \& Floridi's praxical solution. Argues their action-based semantics fails because: (1) the relationship between symbols and internal states is too liberal (levels of abstraction), (2) the notion of action is defective, (3) grounded symbols lack capacity for misrepresentation, making them useless to the cognitive system itself. The solution does not satisfy its own zero semantic commitment condition.
+
+  RELEVANCE: Thorough philosophical critique revealing conceptual problems in action-based approaches. The emphasis on misrepresentation as essential to semantic content connects to teleosemantic and representationalist theories (Dretske, Millikan). Demonstrates how different theories of content (representational vs. action-based) lead to different evaluations of proposed solutions - key for this review's analysis of meta-semantic assumptions.
+
+  POSITION: Critical analysis of action-based semantics. Argues misrepresentation and representational content are essential to grounding, which action-based approaches cannot provide.
+  },
+  keywords = {symbol-grounding, critique, misrepresentation, Medium}
+}
+
+@article{harnad1994computation,
+  author = {Harnad, Stevan},
+  title = {Computation Is Just Interpretable Symbol Manipulation; Cognition Isn't},
+  journal = {Minds and Machines},
+  year = {1994},
+  volume = {4},
+  number = {4},
+  pages = {379--390},
+  doi = {10.1007/BF00974165},
+  note = {
+  CORE ARGUMENT: Clarifies that computation is purely syntactic symbol manipulation - the symbols are interpretable by us but not intrinsically meaningful to the system. Cognition requires more than computation because meaningful mental states have intrinsic semantic content. This gap between computation and cognition is the heart of the symbol grounding problem. Hybrid systems with sensorimotor capacities can bridge this gap.
+
+  RELEVANCE: Harnad's definitive statement distinguishing computation (syntax) from cognition (semantics). The sharp syntax/semantics distinction presupposed here is questionable from some philosophical perspectives (Wittgensteinian use-theories, inferentialism) where meaning IS constituted by rule-governed symbolic manipulation in context. Examining whether this distinction is theoretically justified is central to evaluating whether SGP is well-posed.
+
+  POSITION: Foundational distinction between computation (syntax) and cognition (semantics). Argues pure computation cannot yield cognition but hybrid systems can ground symbols.
+  },
+  keywords = {symbol-grounding, computation-cognition, Harnad, Medium}
+}
+
+@article{harnad1989minds,
+  author = {Harnad, Stevan},
+  title = {Minds, Machines and Searle},
+  journal = {Journal of Experimental \& Theoretical Artificial Intelligence},
+  year = {1989},
+  volume = {1},
+  number = {1},
+  pages = {5--25},
+  doi = {10.1080/09528138908953691},
+  note = {
+  CORE ARGUMENT: Systematic analysis of Searle's Chinese Room Argument and its implications for AI. While Searle correctly shows purely symbolic computation cannot yield understanding, his argument underestimates the power of hybrid architectures combining symbolic and nonsymbolic processing. Introduces the symbol grounding problem as a framework for understanding what Searle's argument establishes and what it leaves open.
+
+  RELEVANCE: Key precursor to Harnad's 1990 SGP formulation. Shows how SGP emerges from engagement with Searle's Chinese Room - both arguments share the assumption that computational syntax is not sufficient for semantic content. This shared assumption may itself reflect a particular view of semantics (representationalism) that could be challenged by alternative meta-semantic theories.
+
+  POSITION: Interprets Chinese Room as revealing symbol grounding problem. Defends hybrid symbolic/nonsymbolic approach against Searle's blanket rejection of computational approaches to mind.
+  },
+  keywords = {symbol-grounding, Chinese-Room, Harnad-Searle, Medium}
+}
+
+@inproceedings{gubelmann2024pragmatic,
+  author = {Gubelmann, Reto},
+  title = {Pragmatic Norms Are All You Need -- Why the Symbol Grounding Problem Does Not Apply to {LLMs}},
+  booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
+  year = {2024},
+  pages = {11663--11678},
+  doi = {10.18653/v1/2024.emnlp-main.651},
+  note = {
+  CORE ARGUMENT: Argues that LLMs do not fall prey to Harnad's symbol grounding problem because SGP only arises when questionable theories of meaning (denotational semantics, strong representationalism) are presupposed. Traces SGP to the computational theory of mind (CTM) and argues it would only apply to LLMs if we interpreted them as implementing a language of thought or adopted problematic semantic theories. Pragmatic norms of language use suffice for LLM semantics.
+
+  RELEVANCE: Recent philosophical analysis directly supporting this review's central hypothesis - that SGP presupposes a particular (questionable) view of meta-semantics. Gubelmann explicitly identifies denotational semantics and CTM as the problematic assumptions. Proposes pragmatist alternative where meaning is constituted by norms of use rather than grounding relations. This demonstrates how different meta-semantic theories lead to different assessments of whether SGP is genuine.
+
+  POSITION: Pragmatist position arguing SGP does not apply to LLMs because it presupposes flawed semantic theories. Meaning is normatively constituted by use patterns, not grounding in non-linguistic reality.
+  },
+  keywords = {symbol-grounding, LLMs, pragmatism, meta-semantics, High}
+}
+
+@article{floridi2025categorical,
+  author = {Floridi, Luciano and Jia, Yiyang and Tohmé, Fernando},
+  title = {A Categorical Analysis of Large Language Models and Why {LLMs} Circumvent the Symbol Grounding Problem},
+  journal = {arXiv preprint},
+  year = {2025},
+  volume = {arXiv:2512.09117},
+  note = {
+  CORE ARGUMENT: Presents formal categorical framework analyzing how humans and LLMs transform content into truth-evaluated propositions about possible worlds. Argues LLMs do not solve but circumvent the symbol grounding problem by operating entirely within the space of linguistic content without grounding in non-linguistic reality. This circumvention is not a failure but a different kind of semantic competence.
+
+  RELEVANCE: Recent formal analysis from Floridi (co-author of influential 2005 review) reassessing SGP in light of LLMs. The categorical framework provides rigorous apparatus for comparing human and LLM semantics. The claim that LLMs "circumvent" rather than "solve" or "fail" SGP suggests the problem may be formulated in ways that don't apply to all semantic systems - supporting this review's investigation of whether SGP's formulation is theoretically parochial.
+
+  POSITION: Formal categorical analysis arguing LLMs circumvent SGP by operating in content-space without grounding. Not a solution but a different semantic architecture.
+  },
+  keywords = {symbol-grounding, LLMs, category-theory, Floridi, Medium}
+}
+
+@article{menant2013turing,
+  author = {Menant, Christophe},
+  title = {Turing Test, {Chinese} Room Argument, Symbol Grounding Problem: Meanings in Artificial Agents},
+  journal = {AISB-IACAP 2012 Proceedings},
+  year = {2013},
+  note = {
+  CORE ARGUMENT: Unifies Turing Test, Chinese Room, and SGP as all addressing whether artificial agents can generate human-like meanings. Proposes Meaning Generator System (MGS) framework where systems generate meanings to satisfy internal constraints. For AAs to generate human-like meanings requires transferring human constraints (including "stay alive" constraints rooted in life and consciousness). This reveals fundamental limitations - genuine human-like meaning requires understanding life and consciousness.
+
+  RELEVANCE: Connects SGP to broader questions about consciousness and intentionality. The emphasis on constraint-satisfaction and phenomenology aligns with enactivist and phenomenological approaches to meaning. Demonstrates alternative framing where grounding is less central than the nature of constraints that drive meaning-generation. Raises question of whether SGP can be solved without solving consciousness - a meta-theoretical issue about problem dependencies.
+
+  POSITION: Phenomenological/enactivist approach connecting SGP to consciousness and life. Argues genuine grounding requires understanding of living systems and subjective constraints.
+  },
+  keywords = {symbol-grounding, consciousness, intentionality, phenomenology, Medium}
+}
+
+@article{cangelosi2011solutions,
+  author = {Cangelosi, Angelo},
+  title = {Solutions and Open Challenges for the Symbol Grounding Problem},
+  journal = {International Journal of Signs and Semiotic Systems},
+  year = {2011},
+  volume = {1},
+  number = {1},
+  pages = {36--54},
+  doi = {10.4018/ijsss.2011010104},
+  note = {
+  CORE ARGUMENT: Reviews progress on SGP identifying which aspects have been addressed (sensorimotor grounding, categorical perception) and which remain open challenges. Argues the transition from indexical representations to symbol-symbol relationships (abstract concepts, logical structure) is the least understood and most challenging aspect. Solicited expert commentaries on state of the field.
+
+  RELEVANCE: Balanced assessment identifying genuine progress while acknowledging open problems. The emphasis on symbol-symbol relationships and abstraction highlights that grounding elementary symbols may be insufficient - higher-level semantic competence (compositionality, logical inference) requires additional explanation. This gap between grounded elementary symbols and complex semantic competence is relevant for evaluating whether proposed solutions actually solve the full SGP.
+
+  POSITION: Progress assessment identifying sensorimotor grounding as partially successful but abstract symbol-symbol relationships as major open challenge. Middle-ground position between optimists (Steels) and skeptics (Bringsjord).
+  },
+  keywords = {symbol-grounding, review, challenges, Medium}
+}
+
+@incollection{harnad2002minds,
+  author = {Harnad, Stevan},
+  title = {Minds, Machines, and Searle 2: What's Right and Wrong about the {Chinese} Room Argument},
+  booktitle = {Views into the {Chinese} Room: New Essays on Searle and Artificial Intelligence},
+  editor = {Preston, John and Bishop, Mark},
+  publisher = {Oxford University Press},
+  year = {2002},
+  pages = {294--307},
+  doi = {10.1093/oso/9780198250579.003.0015},
+  note = {
+  CORE ARGUMENT: Retrospective analysis of the Chinese Room Argument assessing what Searle got right (pure computation is not sufficient for understanding) and wrong (hybrid systems with sensorimotor grounding could solve the problem). Clarifies that the symbol grounding problem is the constructive challenge revealed by Searle's negative argument.
+
+  RELEVANCE: Harnad's mature assessment of the relationship between Chinese Room and SGP. Useful for understanding the intellectual origins of SGP and how it differs from Searle's original concerns. The paper shows how SGP emerged as an attempt to take Searle's challenge seriously while defending the possibility of AI - this dialectical context may explain why SGP is formulated in terms that grant certain representationalist assumptions.
+
+  POSITION: Retrospective assessment distinguishing what Chinese Room establishes (limits of pure syntax) from constructive solution (hybrid grounding). Situates SGP as response to Searle.
+  },
+  keywords = {symbol-grounding, Chinese-Room, Searle, Low}
+}
+
+@article{mayo2003symbol,
+  author = {Mayo, Michael},
+  title = {Symbol Grounding and Its Implications for Artificial Intelligence},
+  journal = {AI Communications},
+  year = {2003},
+  doi = {10.3233/AIC-2003-16303},
+  note = {
+  CORE ARGUMENT: Expands on Harnad's notion of symbol groundedness in three ways: (1) how robots select best categories for continuous sensory data, (2) how to ground abstract concepts, (3) objective criterion for when symbols become sufficiently grounded. Argues this analysis weakens Searle's position - while Searle may refute Strong AI for present digital computers, he cannot refute computationalism in general.
+
+  RELEVANCE: Addresses practical implementation challenges of symbol grounding. The focus on category selection and abstract concepts highlights gap between elementary grounding and full semantic competence. The defense of computationalism against Searle shows how SGP framework is used to salvage computational approaches - this dialectical role may explain why SGP is formulated to make computational solutions possible.
+
+  POSITION: Computational approach addressing implementation details of grounding. Defends computationalism by showing grounded symbols are possible in principle.
+  },
+  keywords = {symbol-grounding, robotics, implementation, Low}
+}
+
+@article{liu2025algorithmic,
+  author = {Liu, Zhangchi},
+  title = {An Algorithmic Information-Theoretic Perspective on the Symbol Grounding Problem},
+  journal = {arXiv preprint},
+  year = {2025},
+  volume = {arXiv:2510.05153},
+  doi = {10.48550/arXiv.2510.05153},
+  note = {
+  CORE ARGUMENT: Reformulates SGP using Algorithmic Information Theory (AIT). Grounding is modeled as information compression - a purely symbolic system cannot ground most "worlds" (data strings) because they are algorithmically random and incompressible. Any statically grounded system is incomplete because adversarial incompressible worlds can be constructed. The "grounding act" requires new information that cannot be inferred from existing code. Proves using Chaitin's theorem that meaning is an open-ended process of overcoming information-theoretic limitations.
+
+  RELEVANCE: Recent formal framework providing information-theoretic perspective on SGP's limits. The proof that complete grounding is impossible for finite systems offers rigorous version of skeptical position. However, the framework assumes representational/computational model of meaning - alternative meta-semantic theories (use-based, normative) might reject the information-theoretic framing entirely. Demonstrates how mathematical formalization depends on prior semantic commitments.
+
+  POSITION: Information-theoretic analysis proving fundamental limits on symbol grounding. Establishes impossibility results for complete grounding in finite systems.
+  },
+  keywords = {symbol-grounding, information-theory, formal, Low}
+}
+
+@article{leibovich2016symbol,
+  author = {Leibovich, Tali and Ansari, Daniel},
+  title = {The Symbol-Grounding Problem in Numerical Cognition: A Review of Theory, Evidence, and Outstanding Questions},
+  journal = {Canadian Journal of Experimental Psychology},
+  year = {2016},
+  volume = {70},
+  number = {1},
+  pages = {12--23},
+  doi = {10.1037/cep0000070},
+  note = {
+  CORE ARGUMENT: Reviews symbol grounding in numerical cognition specifically - how numerical symbols (words, numerals) acquire meaning. Critically evaluates hypothesis that symbols are grounded in Approximate Number System (ANS). Concludes: (1) current evidence does not support ANS-grounding, (2) continuous variables confound numerosity tasks making pure ANS-symbol association impossible to measure, (3) cognitive control mediates any mapping between ANS and symbols.
+
+  RELEVANCE: Domain-specific analysis of symbol grounding in mathematical cognition. Shows that empirical evidence for dominant grounding theory (ANS mapping) is weak, parallel to broader SGP debate where proposed solutions face empirical and conceptual challenges. The role of cognitive control in mediating grounding suggests higher-level capacities are necessary - supporting views (like Bringsjord's) that mere sensorimotor grounding is insufficient.
+
+  POSITION: Critical review of ANS-grounding hypothesis in numerical cognition. Argues cognitive control, not direct ANS mapping, mediates symbolic number understanding.
+  },
+  keywords = {symbol-grounding, numerical-cognition, ANS, Low}
+}
+

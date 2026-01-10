@@ -1,0 +1,115 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:language models grounding semantics AND cat:cs.CL",
+  "results": [
+    {
+      "arxiv_id": "2309.04041",
+      "title": "Evaluation and Enhancement of Semantic Grounding in Large Vision-Language Models",
+      "authors": [
+        "Jiaying Lu",
+        "Jinmeng Rao",
+        "Kezhen Chen",
+        "Xiaoyuan Guo",
+        "Yawen Zhang",
+        "Baochen Sun",
+        "Carl Yang",
+        "Jie Yang"
+      ],
+      "abstract": "Large Vision-Language Models (LVLMs) offer remarkable benefits for a variety of vision-language tasks. However, a challenge hindering their application in real-world scenarios, particularly regarding safety, robustness, and reliability, is their constrained semantic grounding ability, which pertains to connecting language to the physical-world entities or concepts referenced in images. Therefore, a crucial need arises for a comprehensive study to assess the semantic grounding ability of widely used LVLMs. Despite the significance, sufficient investigation in this direction is currently lacking. Our work bridges this gap by designing a pipeline for generating large-scale evaluation datasets covering fine-grained semantic information, such as color, number, material, etc., along with a thorough assessment of seven popular LVLMs' semantic grounding ability. Results highlight prevalent misgrounding across various aspects and degrees. To address this issue, we propose a data-centric enhancement method that aims to improve LVLMs' semantic grounding ability through multimodal instruction tuning on fine-grained conversations. Experiments on enhanced LVLMs demonstrate notable improvements in addressing misgrounding issues.",
+      "published": "2023-09-07",
+      "updated": "2024-01-13",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2309.04041v2",
+      "url": "https://arxiv.org/abs/2309.04041"
+    },
+    {
+      "arxiv_id": "2305.16328",
+      "title": "Semantic Composition in Visually Grounded Language Models",
+      "authors": [
+        "Rohan Pandey"
+      ],
+      "abstract": "What is sentence meaning and its ideal representation? Much of the expressive power of human language derives from semantic composition, the mind's ability to represent meaning hierarchically & relationally over constituents. At the same time, much sentential meaning is outside the text and requires grounding in sensory, motor, and experiential modalities to be adequately learned. Although large language models display considerable compositional ability, recent work shows that visually-grounded language models drastically fail to represent compositional structure. In this thesis, we explore whether & how models compose visually grounded semantics, and how we might improve their ability to do so.   Specifically, we introduce 1) WinogroundVQA, a new compositional visual question answering benchmark, 2) Syntactic Neural Module Distillation, a measure of compositional ability in sentence embedding models, 3) Causal Tracing for Image Captioning Models to locate neural representations vital for vision-language composition, 4) Syntactic MeanPool to inject a compositional inductive bias into sentence embeddings, and 5) Cross-modal Attention Congruence Regularization, a self-supervised objective function for vision-language relation alignment. We close by discussing connections of our work to neuroscience, psycholinguistics, formal semantics, and philosophy.",
+      "published": "2023-05-15",
+      "updated": "2023-05-15",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2305.16328v1",
+      "url": "https://arxiv.org/abs/2305.16328"
+    },
+    {
+      "arxiv_id": "2312.05434",
+      "title": "Beneath the Surface: Unveiling Harmful Memes with Multimodal Reasoning Distilled from Large Language Models",
+      "authors": [
+        "Hongzhan Lin",
+        "Ziyang Luo",
+        "Jing Ma",
+        "Long Chen"
+      ],
+      "abstract": "The age of social media is rife with memes. Understanding and detecting harmful memes pose a significant challenge due to their implicit meaning that is not explicitly conveyed through the surface text and image. However, existing harmful meme detection approaches only recognize superficial harm-indicative signals in an end-to-end classification manner but ignore in-depth cognition of the meme text and image. In this paper, we attempt to detect harmful memes based on advanced reasoning over the interplay of multimodal information in memes. Inspired by the success of Large Language Models (LLMs) on complex reasoning, we first conduct abductive reasoning with LLMs. Then we propose a novel generative framework to learn reasonable thoughts from LLMs for better multimodal fusion and lightweight fine-tuning, which consists of two training stages: 1) Distill multimodal reasoning knowledge from LLMs; and 2) Fine-tune the generative framework to infer harmfulness. Extensive experiments conducted on three meme datasets demonstrate that our proposed approach achieves superior performance than state-of-the-art methods on the harmful meme detection task.",
+      "published": "2023-12-09",
+      "updated": "2023-12-09",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+      "pdf_url": "https://arxiv.org/pdf/2312.05434v1",
+      "url": "https://arxiv.org/abs/2312.05434"
+    },
+    {
+      "arxiv_id": "2310.14025",
+      "title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+      "authors": [
+        "Anastasia Kritharoula",
+        "Maria Lymperaiou",
+        "Giorgos Stamou"
+      ],
+      "abstract": "Visual Word Sense Disambiguation (VWSD) is a novel challenging task with the goal of retrieving an image among a set of candidates, which better represents the meaning of an ambiguous word within a given context. In this paper, we make a substantial step towards unveiling this interesting task by applying a varying set of approaches. Since VWSD is primarily a text-image retrieval task, we explore the latest transformer-based methods for multimodal retrieval. Additionally, we utilize Large Language Models (LLMs) as knowledge bases to enhance the given phrases and resolve ambiguity related to the target word. We also study VWSD as a unimodal problem by converting to text-to-text and image-to-image retrieval, as well as question-answering (QA), to fully explore the capabilities of relevant models. To tap into the implicit knowledge of LLMs, we experiment with Chain-of-Thought (CoT) prompting to guide explainable answer generation. On top of all, we train a learn to rank (LTR) model in order to combine our different modules, achieving competitive ranking results. Extensive experiments on VWSD demonstrate valuable insights to effectively drive future directions.",
+      "published": "2023-10-21",
+      "updated": "2023-10-21",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": "10.18653/v1/2023.emnlp-main.807",
+      "journal_ref": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+      "pdf_url": "https://arxiv.org/pdf/2310.14025v1",
+      "url": "https://arxiv.org/abs/2310.14025"
+    },
+    {
+      "arxiv_id": "2311.01386",
+      "title": "Can Language Models Be Tricked by Language Illusions? Easier with Syntax, Harder with Semantics",
+      "authors": [
+        "Yuhan Zhang",
+        "Edward Gibson",
+        "Forrest Davis"
+      ],
+      "abstract": "Language models (LMs) have been argued to overlap substantially with human beings in grammaticality judgment tasks. But when humans systematically make errors in language processing, should we expect LMs to behave like cognitive models of language and mimic human behavior? We answer this question by investigating LMs' more subtle judgments associated with \"language illusions\" -- sentences that are vague in meaning, implausible, or ungrammatical but receive unexpectedly high acceptability judgments by humans. We looked at three illusions: the comparative illusion (e.g. \"More people have been to Russia than I have\"), the depth-charge illusion (e.g. \"No head injury is too trivial to be ignored\"), and the negative polarity item (NPI) illusion (e.g. \"The hunter who no villager believed to be trustworthy will ever shoot a bear\"). We found that probabilities represented by LMs were more likely to align with human judgments of being \"tricked\" by the NPI illusion which examines a structural dependency, compared to the comparative and the depth-charge illusions which require sophisticated semantic understanding. No single LM or metric yielded results that are entirely consistent with human behavior. Ultimately, we show that LMs are limited both in their construal as cognitive models of human language processing and in their capacity to recognize nuanced but critical information in complicated language materials.",
+      "published": "2023-11-02",
+      "updated": "2024-02-04",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": "10.18653/v1/2023.conll-1.1",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2311.01386v2",
+      "url": "https://arxiv.org/abs/2311.01386"
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

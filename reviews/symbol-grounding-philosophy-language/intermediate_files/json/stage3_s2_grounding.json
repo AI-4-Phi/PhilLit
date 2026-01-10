@@ -1,0 +1,1110 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "language models grounding semantics",
+  "results": [
+    {
+      "paperId": "7b1d23a8332e98bdb6003fd5749493b8d73b0db3",
+      "title": "Social semantics: the organization and grounding of abstract concepts",
+      "authors": [
+        {
+          "name": "P. Pexman",
+          "authorId": "3100481"
+        },
+        {
+          "name": "Veronica Diveica",
+          "authorId": "2067351859"
+        },
+        {
+          "name": "Richard J. Binney",
+          "authorId": "1766568"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Abstract concepts, like justice and friendship, are central features of our daily lives. Traditionally, abstract concepts are distinguished from other concepts in that they cannot be directly experienced through the senses. As such, they pose a challenge for strongly embodied models of semantic representation that assume a central role for sensorimotor information. There is growing recognition, however, that it is possible for meaning to be \u2018grounded\u2019 via cognitive systems, including those involved in processing language and emotion. In this article, we focus on the specific proposal that social significance is a key feature in the representation of some concepts. We begin by reviewing recent evidence in favour of this proposal from the fields of psycholinguistics and neuroimaging. We then discuss the limited extent to which there is consensus about the definition of \u2018socialness\u2019 and propose essential next steps for research in this domain. Taking one such step, we describe preliminary data from an unprecedented large-scale rating study that can help determine how socialness is distinct from other facets of word meaning. We provide a backdrop of contemporary theories regarding semantic representation and social cognition and highlight important predictions for both brain and behaviour. This article is part of the theme issue \u2018Concepts in interaction: social engagement and inner experiences\u2019.",
+      "citationCount": 35,
+      "doi": "10.1098/rstb.2021.0363",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7b1d23a8332e98bdb6003fd5749493b8d73b0db3",
+      "venue": "Philosophical Transactions of the Royal Society of London. Biological Sciences",
+      "journal": {
+        "name": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+        "volume": "378"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2e861d63905f74383a97d4f30e7be843cb17051a",
+      "title": "On measuring grounding and generalizing grounding problems",
+      "authors": [
+        {
+          "name": "Daniel Quigley",
+          "authorId": "2397382182"
+        },
+        {
+          "name": "Eric Maynard",
+          "authorId": "2397387387"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The symbol grounding problem asks how tokens like cat can be about cats, as opposed to mere shapes manipulated in a calculus. We recast grounding from a binary judgment into an audit across desiderata, each indexed by an evaluation tuple (context, meaning type, threat model, reference distribution): authenticity (mechanisms reside inside the agent and, for strong claims, were acquired through learning or evolution); preservation (atomic meanings remain intact); faithfulness, both correlational (realized meanings match intended ones) and etiological (internal mechanisms causally contribute to success); robustness (graceful degradation under declared perturbations); compositionality (the whole is built systematically from the parts). We apply this framework to four grounding modes (symbolic; referential; vectorial; relational) and three case studies: model-theoretic semantics achieves exact composition but lacks etiological warrant; large language models show correlational fit and local robustness for linguistic tasks, yet lack selection-for-success on world tasks without grounded interaction; human language meets the desiderata under strong authenticity through evolutionary and developmental acquisition. By operationalizing a philosophical inquiry about representation, we equip philosophers of science, computer scientists, linguists, and mathematicians with a common language and technical framework for systematic investigation of grounding and meaning.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.06205",
+      "url": "https://www.semanticscholar.org/paper/2e861d63905f74383a97d4f30e7be843cb17051a",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8e53bdd4f204aed92a09bd2fed535d0d1a6e728c",
+      "title": "Disembodied Meaning? Generative AI and Understanding",
+      "authors": [
+        {
+          "name": "Jordi Vallverd\u00fa",
+          "authorId": "2351123536"
+        },
+        {
+          "name": "Iv\u00e1n Redondo",
+          "authorId": "2351129215"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study explores the cognitive and philosophical implications of Large Language Models (LLMs), focusing on their ability to generate meaning without embodiment. Grounded in the coherence-based semantics framework, the research challenges traditional views that emphasize the necessity of embodied cognition for meaningful language comprehension. Through a theoretical and comparative analysis, this paper examines the limitations of embodied cognition paradigms, such as the symbol grounding problem and critiques like Searle\u2019s Chinese Room, and evaluates the practical capabilities of LLMs. The methodology integrates philosophical inquiry with empirical evidence, including case studies on LLM performance in tasks such as medical licensing exams, multilingual communication, and policymaking. Key findings suggest that LLMs simulate meaning-making processes by leveraging statistical patterns and relational coherence within language, demonstrating a form of operational understanding that rivals some aspects of human cognition. Ethical concerns, such as biases in training data and societal implications of LLM applications, are also analyzed, with recommendations for improving fairness and transparency. By reframing LLMs as disembodied yet effective cognitive systems, this study contributes to ongoing debates in artificial intelligence and cognitive science. It highlights their potential to complement human cognition in education, policymaking, and other fields while advocating for responsible deployment to mitigate ethical risks.",
+      "citationCount": 2,
+      "doi": "10.30564/fls.v7i3.8060",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8e53bdd4f204aed92a09bd2fed535d0d1a6e728c",
+      "venue": "Forum for Linguistic Studies",
+      "journal": {
+        "name": "Forum for Linguistic Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8995865f02d8799fc104d3bbfc22476aaeb45755",
+      "title": "Evaluating Large Language Models on the Frame and Symbol Grounding Problems: A Zero-shot Benchmark",
+      "authors": [
+        {
+          "name": "Shoko Oka",
+          "authorId": "2366066462"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advancements in large language models (LLMs) have revitalized philosophical debates surrounding artificial intelligence. Two of the most fundamental challenges - namely, the Frame Problem and the Symbol Grounding Problem - have historically been viewed as unsolvable within traditional symbolic AI systems. This study investigates whether modern LLMs possess the cognitive capacities required to address these problems. To do so, I designed two benchmark tasks reflecting the philosophical core of each problem, administered them under zero-shot conditions to 13 prominent LLMs (both closed and open-source), and assessed the quality of the models' outputs across five trials each. Responses were scored along multiple criteria, including contextual reasoning, semantic coherence, and information filtering. The results demonstrate that while open-source models showed variability in performance due to differences in model size, quantization, and instruction tuning, several closed models consistently achieved high scores. These findings suggest that select modern LLMs may be acquiring capacities sufficient to produce meaningful and stable responses to these long-standing theoretical challenges.",
+      "citationCount": 0,
+      "doi": "10.5281/zenodo.15617317",
+      "arxivId": "2506.07896",
+      "url": "https://www.semanticscholar.org/paper/8995865f02d8799fc104d3bbfc22476aaeb45755",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.07896"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "eee43a9337df7ca428e78d0217bd0691a9927c09",
+      "title": "A Categorical Analysis of Large Language Models and Why LLMs Circumvent the Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "Luciano Floridi",
+          "authorId": "2259952291"
+        },
+        {
+          "name": "Yiyang Jia",
+          "authorId": "2400358926"
+        },
+        {
+          "name": "Fernando Tohm'e",
+          "authorId": "2214095508"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper presents a formal, categorical framework for analysing how humans and large language models (LLMs) transform content into truth-evaluated propositions about a state space of possible worlds W , in order to argue that LLMs do not solve but circumvent the symbol grounding problem.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.09117",
+      "url": "https://www.semanticscholar.org/paper/eee43a9337df7ca428e78d0217bd0691a9927c09",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b1ff8e48be78ff1cf401c7ac0172502a6fae6b97",
+      "title": "On the Semantics of Large Language Models",
+      "authors": [
+        {
+          "name": "Martin Schuele",
+          "authorId": "2372981041"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) such as ChatGPT demonstrated the potential to replicate human language abilities through technology, ranging from text generation to engaging in conversations. However, it remains controversial to what extent these systems truly understand language. We examine this issue by narrowing the question down to the semantics of LLMs at the word and sentence level. By examining the inner workings of LLMs and their generated representation of language and by drawing on classical semantic theories by Frege and Russell, we get a more nuanced picture of the potential semantic capabilities of LLMs.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.05448",
+      "arxivId": "2507.05448",
+      "url": "https://www.semanticscholar.org/paper/b1ff8e48be78ff1cf401c7ac0172502a6fae6b97",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.05448"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d1ed32ea2f3e11b739218b9c5dd4ceecfe90aa0f",
+      "title": "Does Thought Require Sensory Grounding? From Pure Thinkers to Large Language Models",
+      "authors": [
+        {
+          "name": "David J. Chalmers",
+          "authorId": "2244742161"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Does the capacity to think require the capacity to sense? A lively debate on this topic runs throughout the history of philosophy and now animates discussions of artificial intelligence. I argue that in principle, there can be pure thinkers: thinkers that lack the capacity to sense altogether. I also argue for significant limitations in just what sort of thought is possible in the absence of the capacity to sense. Regarding AI, I do not argue directly that large language models can think or understand, but I rebut one important argument (the argument from sensory grounding) that they cannot. I also use recent results regarding language models to address the question of whether or how sensory grounding enhances cognitive capacities.",
+      "citationCount": 19,
+      "doi": "10.48550/arXiv.2408.09605",
+      "arxivId": "2408.09605",
+      "url": "https://www.semanticscholar.org/paper/d1ed32ea2f3e11b739218b9c5dd4ceecfe90aa0f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.09605"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "daba5e3758706d2ee943c73898454b3d3e23dd7b",
+      "title": "Do Language Models Have Semantics? On the Five Standard Positions",
+      "authors": [
+        {
+          "name": "Anders S\u00f8gaard",
+          "authorId": "2371992192"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.18653/v1/2025.acl-long.1258",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/daba5e3758706d2ee943c73898454b3d3e23dd7b",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "25910-25922"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "2e3c5e48083ae5a0cdd268da97e909e1fd754d3f",
+      "title": "\"Understanding AI\": Semantic Grounding in Large Language Models",
+      "authors": [
+        {
+          "name": "Holger Lyre",
+          "authorId": "2284679884"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Do LLMs understand the meaning of the texts they generate? Do they possess a semantic grounding? And how could we understand whether and what they understand? I start the paper with the observation that we have recently witnessed a generative turn in AI, since generative models, including LLMs, are key for self-supervised learning. To assess the question of semantic grounding, I distinguish and discuss five methodological ways. The most promising way is to apply core assumptions of theories of meaning in philosophy of mind and language to LLMs. Grounding proves to be a gradual affair with a three-dimensional distinction between functional, social and causal grounding. LLMs show basic evidence in all three dimensions. A strong argument is that LLMs develop world models. Hence, LLMs are neither stochastic parrots nor semantic zombies, but already understand the language they generate, at least in an elementary sense.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2402.10992",
+      "arxivId": "2402.10992",
+      "url": "https://www.semanticscholar.org/paper/2e3c5e48083ae5a0cdd268da97e909e1fd754d3f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.10992"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "eef15f49189ee9ae71f133aab544e129361879e5",
+      "title": "Diagnosing Moral Reasoning Acquisition in Language Models: Pragmatics and Generalization",
+      "authors": [
+        {
+          "name": "G. Liu",
+          "authorId": "2254647521"
+        },
+        {
+          "name": "Zimo Qi",
+          "authorId": "2328821730"
+        },
+        {
+          "name": "Xitong Zhang",
+          "authorId": "2257363307"
+        },
+        {
+          "name": "Lei Jiang",
+          "authorId": "2316445766"
+        },
+        {
+          "name": "K. Johnson",
+          "authorId": "2262203039"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Ensuring that Large Language Models (LLMs) return just responses which adhere to societal values is crucial for their broader application. Prior research has shown that LLMs often fail to perform satisfactorily on tasks requiring moral cognizance, such as ethics-based judgments. While current approaches have focused on fine-tuning LLMs with curated datasets to improve their capabilities on such tasks, choosing the optimal learning paradigm to enhance the ethical responses of LLMs remains an open research debate. In this work, we aim to address this fundamental question: can current learning paradigms enable LLMs to acquire sufficient moral reasoning capabilities? Drawing from distributional semantics theory and the pragmatic nature of moral discourse, our analysis indicates that performance improvements follow a mechanism similar to that of semantic-level tasks, and therefore remain affected by the pragmatic nature of morals latent in discourse, a phenomenon we name the pragmatic dilemma. We conclude that this pragmatic dilemma imposes significant limitations on the generalization ability of current learning paradigms, making it the primary bottleneck for moral reasoning acquisition in LLMs.",
+      "citationCount": 7,
+      "doi": "10.18653/v1/2025.findings-emnlp.374",
+      "arxivId": "2502.16600",
+      "url": "https://www.semanticscholar.org/paper/eef15f49189ee9ae71f133aab544e129361879e5",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "Findings of the Association for Computational Linguistics: EMNLP 2025"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f7e755443d665ebc215e7caeda8aa3154466bddc",
+      "title": "A Philosophical Introduction to Language Models - Part I: Continuity With Classic Debates",
+      "authors": [
+        {
+          "name": "Raphael Milliere",
+          "authorId": "2249763478"
+        },
+        {
+          "name": "Cameron Buckner",
+          "authorId": "2278429867"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models like GPT-4 have achieved remarkable proficiency in a broad spectrum of language-based tasks, some of which are traditionally associated with hallmarks of human intelligence. This has prompted ongoing disagreements about the extent to which we can meaningfully ascribe any kind of linguistic or cognitive competence to language models. Such questions have deep philosophical roots, echoing longstanding debates about the status of artificial neural networks as cognitive models. This article -- the first part of two companion papers -- serves both as a primer on language models for philosophers, and as an opinionated survey of their significance in relation to classic debates in the philosophy cognitive science, artificial intelligence, and linguistics. We cover topics such as compositionality, language acquisition, semantic competence, grounding, world models, and the transmission of cultural knowledge. We argue that the success of language models challenges several long-held assumptions about artificial neural networks. However, we also highlight the need for further empirical investigation to better understand their internal mechanisms. This sets the stage for the companion paper (Part II), which turns to novel empirical methods for probing the inner workings of language models, and new philosophical questions prompted by their latest developments.",
+      "citationCount": 37,
+      "doi": "10.48550/arXiv.2401.03910",
+      "arxivId": "2401.03910",
+      "url": "https://www.semanticscholar.org/paper/f7e755443d665ebc215e7caeda8aa3154466bddc",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.03910"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3da9de603531012aa6d855b486bb5fdb21df0a0e",
+      "title": "Revealing the Pragmatic Dilemma for Moral Reasoning Acquisition in Language Models",
+      "authors": [
+        {
+          "name": "G. Liu",
+          "authorId": "2254647521"
+        },
+        {
+          "name": "Lei Jiang",
+          "authorId": "2316445766"
+        },
+        {
+          "name": "Xitong Zhang",
+          "authorId": "2257363307"
+        },
+        {
+          "name": "K. Johnson",
+          "authorId": "2262203039"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2502.16600",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3da9de603531012aa6d855b486bb5fdb21df0a0e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.16600"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c42e5271cf7c4f1f2c9e210883dfae0a7f920908",
+      "title": "Escaping Plato's Cave: JAM for Aligning Independently Trained Vision and Language Models",
+      "authors": [
+        {
+          "name": "Lauren Hyoseo Yoon",
+          "authorId": "2372611282"
+        },
+        {
+          "name": "Yisong Yue",
+          "authorId": "2374212687"
+        },
+        {
+          "name": "Been Kim",
+          "authorId": "2372371633"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Independently trained vision and language models inhabit disjoint representational spaces, shaped by their respective modalities, objectives, and architectures. The Platonic Representation Hypothesis (PRH) suggests these models may nonetheless converge toward a shared statistical model of reality. This raises a fundamental question: can we move beyond post-hoc detection of such alignment and explicitly optimize for it? We argue this challenge is most critical in fine-grained contextual distinctions-where multiple descriptions share global semantics but differ in subtle compositional details. We address this with the Joint Autoencoder Modulator (JAM), which aligns frozen unimodal models by jointly training modality-specific autoencoders with coordinated reconstruction and cross-modal alignment objectives. We systematically evaluate JAM across three design axes: (i) alignment objectives, introducing our multimodal Spread Loss that outperforms classic contrastive methods; (ii) the layer depth at which alignment is most effective; and (iii) the role of foundation model scale in representational convergence. Our findings show that JAM reliably induces alignment even across independently trained representations, offering both theoretical insight into the structure of shared semantics and practical guidance for transforming generalist unimodal foundations into specialist multimodal models.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.01201",
+      "arxivId": "2507.01201",
+      "url": "https://www.semanticscholar.org/paper/c42e5271cf7c4f1f2c9e210883dfae0a7f920908",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.01201"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "24aeaac737e7c689cfa737cb4a4133de495c7e14",
+      "title": "Bridging Philosophical Foundations andComputational Realities: Semantic Under-Specification from Frege to Large Language Models",
+      "authors": [
+        {
+          "name": "Tahir Qayyum",
+          "authorId": "2376454970"
+        },
+        {
+          "name": "Anam Tahir",
+          "authorId": "2376455021"
+        },
+        {
+          "name": "Iftikhar Ahmed Shaheen",
+          "authorId": "2277333003"
+        },
+        {
+          "name": "Syed Atif Amir Gardazi",
+          "authorId": "2376455110"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Semantic underspecificationoccurs when linguistic expressions carry partial meaning, requiring context for full understanding. It poses key challenges across philosophy, cognitive science, and NLP. This review identifies five developmental stages: (1)Classical theories by Frege, Russell, and Davidson created truth-conditional frameworks but encountered difficulties with indexicaland belief contexts due to assumptions of full specification; (2)Formal models like QLF, MRS, and Hole Semantics introduced computational underspecification to handle structural ambiguities such as quantifier scope; (3)Cognitive studies show humans use underspecification strategically for efficiency, relying on pragmatic inference and semantic memory; (4)Hybrid neuro-symbolic models like UMR and Glue Semantics combined structural ambiguity resolution with neural inference but lacked uncertainty modeling; (5)Modern NLP research highlights gaps: LLMs can detect underspecification but often overcommit to deterministic interpretations, and multimodal systems do not effectively utilize context. Cross-linguistic entropy models suggest grammatical underspecification as a strategy for cognitive efficiency. To bridge human semantic flexibilityenabled by incremental processing and pragmatic co-construction\u2014with computational systems, we propose integrated neuro-symbolic architectures incorporating explicit uncertainty modeling, multimodal grounding, and entropy-aware design. This approach paves the way for AI to achieve human-like language understanding.",
+      "citationCount": 0,
+      "doi": "10.55966/assaj.2025.4.1.0117",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/24aeaac737e7c689cfa737cb4a4133de495c7e14",
+      "venue": "Advance Social Science Archive Journal",
+      "journal": {
+        "name": "Advance Social Science Archive Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "396cf3efd4019c59997b97a77abbf6449d25f406",
+      "title": "On the referential capacity of language models: An internalist rejoinder to Mandelkern & Linzen",
+      "authors": [
+        {
+          "name": "Giosu\u00e8 Baggio",
+          "authorId": "153684506"
+        },
+        {
+          "name": "Elliot Murphy",
+          "authorId": "2304431893"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In a recent paper, Mandelkern&Linzen (2024) - henceforth M&L - address the question of whether language models' (LMs) words refer. Their argument draws from the externalist tradition in philosophical semantics, which views reference as the capacity of words to\"achieve 'word-to-world' connections\". In the externalist framework, causally uninterrupted chains of usage, tracing every occurrence of a name back to its bearer, guarantee that, for example, 'Peano' refers to the individual Peano (Kripke 1980). This account is externalist both because words pick out referents 'out there' in the world, and because what determines reference are coordinated linguistic actions by members of a community, and not individual mental states. The\"central question to ask\", for M&L, is whether LMs too belong to human linguistic communities, such that words by LMs may also trace back causally to their bearers. Their answer is a cautious\"yes\": inputs to LMs are linguistic\"forms with particular histories of referential use\";\"those histories ground the referents of those forms\"; any occurrence of 'Peano' in LM outputs is as causally connected to the individual Peano as any other occurrence of the same proper name in human speech or text; therefore, occurrences of 'Peano' in LM outputs refer to Peano. In this commentary, we first qualify M&L's claim as applying to a narrow class of natural language expressions. Thus qualified, their claim is valid, and we emphasise an additional motivation for that in Section 2. Next, we discuss the actual scope of their claim, and we suggest that the way they formulate it may lead to unwarranted generalisations about reference in LMs. Our critique is likewise applicable to other externalist accounts of LMs (e.g., Lederman&Mahowald 2024; Mollo&Milliere 2023). Lastly, we conclude with a comment on the status of LMs as members of human linguistic communities.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2406.00159",
+      "arxivId": "2406.00159",
+      "url": "https://www.semanticscholar.org/paper/396cf3efd4019c59997b97a77abbf6449d25f406",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.00159"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e42262c4b67a8003ca930de0ac6275725bb76332",
+      "title": "Towards Faithful Natural Language Explanations: A Study Using Activation Patching in Large Language Models",
+      "authors": [
+        {
+          "name": "Wei Jie Yeo",
+          "authorId": "2243375066"
+        },
+        {
+          "name": "Ranjan Satapathy",
+          "authorId": "40552630"
+        },
+        {
+          "name": "Erik Cambria",
+          "authorId": "2274948799"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) are capable of generating persuasive Natural Language Explanations (NLEs) to justify their answers. However, the faithfulness of these explanations should not be readily trusted at face value. Recent studies have proposed various methods to measure the faithfulness of NLEs, typically by inserting perturbations at the explanation or feature level. We argue that these approaches are neither comprehensive nor correctly designed according to the established definition of faithfulness. Moreover, we highlight the risks of grounding faithfulness findings on out-of-distribution samples. In this work, we leverage a causal mediation technique called activation patching, to measure the faithfulness of an explanation towards supporting the explained answer. Our proposed metric, Causal Faithfulness quantifies the consistency of causal attributions between explanations and the corresponding model outputs as the indicator of faithfulness. We experimented across models varying from 2B to 27B parameters and found that models that underwent alignment tuning tend to produce more faithful and plausible explanations. We find that Causal Faithfulness is a promising improvement over existing faithfulness tests by taking into account the model's internal computations and avoiding out of distribution concerns that could otherwise undermine the validity of faithfulness assessments. We release the code in \\url{https://github.com/wj210/Causal-Faithfulness}",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2410.14155",
+      "arxivId": "2410.14155",
+      "url": "https://www.semanticscholar.org/paper/e42262c4b67a8003ca930de0ac6275725bb76332",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.14155"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a55c1d40c874a205aca1d7b5a4f2a4424168c0fa",
+      "title": "Do Large Language Models Advocate for Inferentialism?",
+      "authors": [
+        {
+          "name": "Yuzuki Arai",
+          "authorId": "2336080095"
+        },
+        {
+          "name": "Sho Tsugawa",
+          "authorId": "46403544"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The emergence of large language models (LLMs) such as ChatGPT and Claude presents new challenges for philosophy of language, particularly regarding the nature of linguistic meaning and representation. While LLMs have traditionally been understood through distributional semantics, this paper explores Robert Brandom's inferential semantics as an alternative foundational framework for understanding these systems. We examine how key features of inferential semantics -- including its anti-representationalist stance, logical expressivism, and quasi-compositional approach -- align with the architectural and functional characteristics of Transformer-based LLMs. Through analysis of the ISA (Inference, Substitution, Anaphora) approach, we demonstrate that LLMs exhibit fundamentally anti-representationalist properties in their processing of language. We further develop a consensus theory of truth appropriate for LLMs, grounded in their interactive and normative dimensions through mechanisms like RLHF. While acknowledging significant tensions between inferentialism's philosophical commitments and LLMs'sub-symbolic processing, this paper argues that inferential semantics provides valuable insights into how LLMs generate meaning without reference to external world representations. Our analysis suggests that LLMs may challenge traditional assumptions in philosophy of language, including strict compositionality and semantic externalism, though further empirical investigation is needed to fully substantiate these theoretical claims.",
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": "2412.14501",
+      "url": "https://www.semanticscholar.org/paper/a55c1d40c874a205aca1d7b5a4f2a4424168c0fa",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "afa612f4d6caa84c53a060a41f8d7dcbb52d09a6",
+      "title": "Towards a Posthumanist Critique of Large Language Models",
+      "authors": [
+        {
+          "name": "Claudio Celis Bueno",
+          "authorId": "117822798"
+        },
+        {
+          "name": "Jernej Markelj",
+          "authorId": "13598631"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This article develops a critique of large language models (LLMs) from a posthumanist perspective. The first part focuses on Emily Bender\u2019s critique of LLMs in order to highlight how its conceptual and political axioms have informed recent critiques of ChatGPT. We make a case that this anthropocentric perspective remains insufficient for adequately grasping its conceptual and political consequences. In the second part of the article, we address these shortcomings by proposing a posthumanist critique of LLMs. To formulate this critique, we begin by drawing on Eric H\u00f6rl\u2019s contention that the age of digitalization (what he calls \u201ccybernetization\u201d) demands a radical redefinition of the concept of \u201ccritique\u201d (H\u00f6rl et al., 2021, 7). Relying on H\u00f6rl\u2019s intervention, we then gradually develop a posthumanist framework by grounding it in four interlinked concepts: general ecology, machinic agency, machinic surplus value, and cosmotechnics. After advancing the said theoretical framework, our conclusion mobilises it to outline a posthumanist critique of LLMs.",
+      "citationCount": 0,
+      "doi": "10.33182/joph.v4i3.3287",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/afa612f4d6caa84c53a060a41f8d7dcbb52d09a6",
+      "venue": "Journal of Posthumanism",
+      "journal": {
+        "name": "Journal of Posthumanism"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "725e05013a6969e4804392224c2ec19195dc0cb8",
+      "title": "Unlocking the Wisdom of Large Language Models: An Introduction to The Path to Artificial General Intelligence",
+      "authors": [
+        {
+          "name": "Edward Y. Chang",
+          "authorId": "2317013622"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This booklet, Unlocking the Wisdom of Multi-LLM Collaborative Intelligence, serves as an accessible introduction to the full volume The Path to Artificial General Intelligence. Through fourteen aphorisms, it distills the core principles of Multi-LLM Agent Collaborative Intelligence (MACI), a framework designed to coordinate multiple LLMs toward reasoning, planning, and decision-making that surpasses the capabilities of any single model. The booklet includes titles, abstracts, and introductions from each main chapter, along with the full content of the first two. The newly released third edition features significant enhancements to Chapters 6 through 9 and a revised preface responding to Yann LeCun's critique of AGI feasibility. While LeCun argues that LLMs lack grounding, memory, and planning, we propose that MACI's collaborative architecture, featuring multimodal agents in executive, legislative, and judicial roles, directly addresses these limitations. Chapters on SocraSynth, EVINCE, consciousness modeling, and behavior regulation demonstrate that reasoning systems grounded in structured interaction and checks and balances can produce more reliable, interpretable, and adaptive intelligence. By integrating complementary model strengths, including world modeling and multimodal perception, MACI enables a system-level intelligence that exceeds the sum of its parts. Like human institutions, progress in AI may depend less on isolated performance and more on coordinated judgment. Collaborative LLMs, not just larger ones, may chart the path toward artificial general intelligence.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2409.01007",
+      "arxivId": "2409.01007",
+      "url": "https://www.semanticscholar.org/paper/725e05013a6969e4804392224c2ec19195dc0cb8",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2409.01007"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ee9dec1435954f949383433dca01052808b993ee",
+      "title": "Grounding Language about Belief in a Bayesian Theory-of-Mind",
+      "authors": [
+        {
+          "name": "Lance Ying",
+          "authorId": "2142478242"
+        },
+        {
+          "name": "Tan Zhi-Xuan",
+          "authorId": "120636597"
+        },
+        {
+          "name": "Lionel Wong",
+          "authorId": "2284592556"
+        },
+        {
+          "name": "Vikash K. Mansinghka",
+          "authorId": "1735083"
+        },
+        {
+          "name": "Joshua B. Tenenbaum",
+          "authorId": "2284592680"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Despite the fact that beliefs are mental states that cannot be directly observed, humans talk about each others' beliefs on a regular basis, often using rich compositional language to describe what others think and know. What explains this capacity to interpret the hidden epistemic content of other minds? In this paper, we take a step towards an answer by grounding the semantics of belief statements in a Bayesian theory-of-mind: By modeling how humans jointly infer coherent sets of goals, beliefs, and plans that explain an agent's actions, then evaluating statements about the agent's beliefs against these inferences via epistemic logic, our framework provides a conceptual role semantics for belief, explaining the gradedness and compositionality of human belief attributions, as well as their intimate connection with goals and plans. We evaluate this framework by studying how humans attribute goals and beliefs while watching an agent solve a doors-and-keys gridworld puzzle that requires instrumental reasoning about hidden objects. In contrast to pure logical deduction, non-mentalizing baselines, and mentalizing that ignores the role of instrumental plans, our model provides a much better fit to human goal and belief attributions, demonstrating the importance of theory-of-mind for a semantics of belief.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2402.10416",
+      "arxivId": "2402.10416",
+      "url": "https://www.semanticscholar.org/paper/ee9dec1435954f949383433dca01052808b993ee",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.10416"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2e11ace144dd72d5f30303b96eb3a1ac61c4bd5d",
+      "title": "Meaning and understanding in large language models",
+      "authors": [
+        {
+          "name": "Vladim'ir Havl'ik",
+          "authorId": "2261737538"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Can a machine understand the meanings of natural language? Recent developments in the generative large language models (LLMs) of artificial intelligence have led to the belief that traditional philosophical assumptions about machine understanding of language need to be revised. This article critically evaluates the prevailing tendency to regard machine language performance as mere syntactic manipulation and the imitations of understanding, which is only partial and very shallow, without sufficient grounding in the world. The article analyses the views on possible ways of grounding as a condition for successful understanding in LLMs and offers an alternative way in view of the prevailing belief that the success of understanding depends mainly on the referential grounding. An alternative conception seeks to show that semantic fragmentism offers a viable account of natural language understanding and explains how LLMs ground the meanings of linguistic expressions. Uncovering how meanings are grounded allows us to also explain why LLMs\u2019 ability to understand is possible and so remarkably successful.",
+      "citationCount": 10,
+      "doi": "10.1007/s11229-024-04878-4",
+      "arxivId": "2310.17407",
+      "url": "https://www.semanticscholar.org/paper/2e11ace144dd72d5f30303b96eb3a1ac61c4bd5d",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "volume": "205"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "78a735d06aee7bc0288cb3748ef1182960a74f89",
+      "title": "On the Computation of Meaning, Language Models and Incomprehensible Horrors",
+      "authors": [
+        {
+          "name": "Michael Timothy Bennett",
+          "authorId": "2083547324"
+        }
+      ],
+      "year": 2023,
+      "abstract": "We integrate foundational theories of meaning with a mathematical formalism of artificial general intelligence (AGI) to offer a comprehensive mechanistic explanation of meaning, communication, and symbol emergence. This synthesis holds significance for both AGI and broader debates concerning the nature of language, as it unifies pragmatics, logical truth conditional semantics, Peircean semiotics, and a computable model of enactive cognition, addressing phenomena that have traditionally evaded mechanistic explanation. By examining the conditions under which a machine can generate meaningful utterances or comprehend human meaning, we establish that the current generation of language models do not possess the same understanding of meaning as humans nor intend any meaning that we might attribute to their responses. To address this, we propose simulating human feelings and optimising models to construct weak representations. Our findings shed light on the relationship between meaning and intelligence, and how we can build machines that comprehend and intend meaning.",
+      "citationCount": 10,
+      "doi": "10.1007/978-3-031-33469-6_4",
+      "arxivId": "2304.12686",
+      "url": "https://www.semanticscholar.org/paper/78a735d06aee7bc0288cb3748ef1182960a74f89",
+      "venue": "Artificial General Intelligence",
+      "journal": {
+        "pages": "32-41"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "38d14df0f4024329f4b33d3d590c6ba129264050",
+      "title": "EVALUATIVE SEMANTICS OF THE METAPHORICAL MODELS \u201cMAN IS A MECHANISM\u201d AND \u201cMECHANISM IS A MAN\u201d IN THE RUSSIAN LANGUAGE PICTURE OF THE WORLD",
+      "authors": [
+        {
+          "name": "A. A. Abramova",
+          "authorId": "2016267926"
+        },
+        {
+          "name": "V.L. Vasilyeva",
+          "authorId": "2166569275"
+        },
+        {
+          "name": "M. Volkova",
+          "authorId": "152656908"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Statement of the problem. This article analyzes the anthropomorphic image of a mechanism and the mechanistic image of a person in the aspect of evaluative semantics, reveals the axiological orientation of conceptual models, and presents the characteristics of the reversible correlation of the analyzed concepts in terms of their evaluative orientation. The purpose of the article is to analyze the metaphorical models \u201cMAN \u2013 MECHANISM\u201d and \u201cMECHANISM \u2013 MAN\u201d in terms of evaluative semantics, to identify the nature and axiological potential of conceptual metaphorical models. The study was carried out on the methodological basis of cognitive linguistics and was carried out on the material of the texts of the National Corpus of the Russian Language, Internet forums representing the semantics of the mechanism both as a target sphere and as a source sphere for the metaphorical interpretation of the image of a person. Research results confirm the functional-semantic asymmetry of metaphorical models, which appears in different evaluative orientations of the metaphors of the compared models. Thus, most of the lexical representatives of the \u201cMAN is a MECHANISM\u201d model is characterized by a negative evaluative connotation: a person in the image of a mechanism is characterized negatively or ironically. While the evaluative semantics of the metaphors of the correlated MM \u201cMECHANISM is a MAN\u201d is characterized by neutrality.",
+      "citationCount": 0,
+      "doi": "10.25146/2587-7844-2022-18-1-104",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/38d14df0f4024329f4b33d3d590c6ba129264050",
+      "venue": "Siberian Philological Forum",
+      "journal": {
+        "name": "Siberian Philological Forum"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "978d2112bef740aae960b2f948821d190dab175e",
+      "title": "Are Large Language Models Intelligent? Are Humans?",
+      "authors": [
+        {
+          "name": "O. H\u00e4ggstr\u00f6m",
+          "authorId": "2159810794"
+        }
+      ],
+      "year": 2023,
+      "abstract": ": Claims that large language models lack intelligence are abundant in current AI discourse. To the extent that the claims are supported by arguments, these usually amount to claims that the models (a) lack common sense, (b) know only facts they have been trained with, (c) are merely matrix multiplications, (d) only predict the next word in a chain, (e) lack a world model, (f) have no grounding of symbols, (g) lack creativity, or (h) lack consciousness. Here, each of these arguments is applied, with minor modi\ufb01cations, to demonstrate that humans also lack intelligence. This should make us suspicious of the validity of these arguments.",
+      "citationCount": 6,
+      "doi": "10.3390/cmsf2023008068",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/978d2112bef740aae960b2f948821d190dab175e",
+      "venue": "IS4SI Summit 2023",
+      "journal": {
+        "name": "IS4SI Summit 2023"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d55581366c0982e4973b41dc4eb5ab1434fee1bd",
+      "title": "The Linguistic Meaning Between Traditional Rhetorical Frameworks and Artificial Intelligence Models: A Post humanist Critique of Computational Semantics",
+      "authors": [
+        {
+          "name": "Muqbil bin Ali Al-Dadi",
+          "authorId": "2370710579"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This research explores the radical transformations in the concept of linguistic meaning following the emergence of Large Language Models (LLMs) and their impact on our understanding of semantics and signification, offering a posthumanist critique of computational semantics. The study compares the mechanisms of meaning-making in these models with the traditional conceptions of meaning articulated by classical Arab scholars, particularly Abd al-Qahir al-Jurjani's \"Theory of Nazm\" (Coherence/Arrangement) and Ibn Jinni's insights into the relationship between word and meaning. The research poses fundamental questions about the nature of meaning in intelligent models: Is it genuine meaning or a mere simulation? And how do these models redefine our understanding of humanity and consciousness? It investigates the potential of traditional Arab linguistic frameworks to offer a critical alternative to the contemporary understanding of artificial intelligence, emphasizing the importance of deep, contextual understanding in the face of statistical comprehension. The study includes an applied analysis of the Riyadh Dictionary as a model for the computational processing of meaning in the Arabic language.",
+      "citationCount": 0,
+      "doi": "10.63332/joph.v5i7.2888",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d55581366c0982e4973b41dc4eb5ab1434fee1bd",
+      "venue": "Journal of Posthumanism",
+      "journal": {
+        "name": "Journal of Posthumanism"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4bedfd4ca926bdc868f7d758021059b9d2eae84a",
+      "title": "Large Language Models as Nondeterministic Causal Models",
+      "authors": [
+        {
+          "name": "Sander Beckers",
+          "authorId": "2302799035"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent work by Chatzi et al. and Ravfogel et al. has developed, for the first time, a method for generating counterfactuals of probabilistic Large Language Models. Such counterfactuals tell us what would - or might - have been the output of an LLM if some factual prompt ${\\bf x}$ had been ${\\bf x}^*$ instead. The ability to generate such counterfactuals is an important necessary step towards explaining, evaluating, and comparing, the behavior of LLMs. I argue, however, that the existing method rests on an ambiguous interpretation of LLMs: it does not interpret LLMs literally, for the method involves the assumption that one can change the implementation of an LLM's sampling process without changing the LLM itself, nor does it interpret LLMs as intended, for the method involves explicitly representing a nondeterministic LLM as a deterministic causal model. I here present a much simpler method for generating counterfactuals that is based on an LLM's intended interpretation by representing it as a nondeterministic causal model instead. The advantage of my simpler method is that it is directly applicable to any black-box LLM without modification, as it is agnostic to any implementation details. The advantage of the existing method, on the other hand, is that it directly implements the generation of a specific type of counterfactuals that is useful for certain purposes, but not for others. I clarify how both methods relate by offering a theoretical foundation for reasoning about counterfactuals in LLMs based on their intended semantics, thereby laying the groundwork for novel application-specific methods for generating counterfactuals.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2509.22297",
+      "arxivId": "2509.22297",
+      "url": "https://www.semanticscholar.org/paper/4bedfd4ca926bdc868f7d758021059b9d2eae84a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.22297"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d072b46a0504ac023d5035d8ec0c7876151245c4",
+      "title": "Playing Games with Ais: The Limits of GPT-3 and Similar Large Language Models",
+      "authors": [
+        {
+          "name": "Adam Sobieszek",
+          "authorId": "1988928591"
+        },
+        {
+          "name": "Tadeusz Price",
+          "authorId": "2164595036"
+        }
+      ],
+      "year": 2022,
+      "abstract": "This article contributes to the debate around the abilities of large language models such as GPT-3, dealing with: firstly, evaluating how well GPT does in the Turing Test, secondly the limits of such models, especially their tendency to generate falsehoods, and thirdly the social consequences of the problems these models have with truth-telling. We start by formalising the recently proposed notion of reversible questions, which Floridi & Chiriatti (2020) propose allow one to \u2018identify the nature of the source of their answers\u2019, as a probabilistic measure based on Item Response Theory from psychometrics. Following a critical assessment of the methodology which led previous scholars to dismiss GPT\u2019s abilities, we argue against claims that GPT-3 completely lacks semantic ability. Using ideas of compression, priming, distributional semantics and semantic webs we offer our own theory of the limits of large language models like GPT-3, and argue that GPT can competently engage in various semantic tasks. The real reason GPT\u2019s answers seem senseless being that truth-telling is not amongst them. We claim that these kinds of models cannot be forced into producing only true continuation, but rather to maximise their objective function they strategize to be plausible instead of truthful. This, we moreover claim, can hijack our intuitive capacity to evaluate the accuracy of its outputs. Finally, we show how this analysis predicts that a widespread adoption of language generators as tools for writing could result in permanent pollution of our informational ecosystem with massive amounts of very plausible but often untrue texts.",
+      "citationCount": 71,
+      "doi": "10.1007/s11023-022-09602-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d072b46a0504ac023d5035d8ec0c7876151245c4",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "341 - 364",
+        "volume": "32"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c76854ab5e28d237a83df367f4ecc39675587fde",
+      "title": "Hallucination as Pragmatic Failure: A Theoretical Reframing of Large Language Models",
+      "authors": [
+        {
+          "name": "Anni Li",
+          "authorId": "2393645191"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper reframes hallucination in large language models (LLMs) as a pragmatic failure rather than a purely semantic or statistical defect. Building on speech-act distinctions between locution, illocution, and perlocution, we argue that LLM outputs often function as actions without passing through an intentional, context-sensitive layer that would license those actions. In this view, hallucination is an infelicitous performative: an assertion or directive issued without adequate authority, evidence, or situational fit. The paper develops a conceptual mapping from speech-act structure to the LLM interaction pipeline and proposes a pragmatic layer that constrains when generated text may \u201ccount\u201d as an assertion, instruction, or commitment. Rather than claiming to eliminate hallucination by changing the probabilistic core of LLMs, the account narrows its performative scope through felicity-aware gating\u2014deferring, hedging, or refusing when contextual conditions are unmet. The contribution is theoretical: a concise framework for understanding intentionlessness in smart systems and for unifying existing mitigations (e.g., retrieval grounding and guardrails) as pragmatic constraints between generation and action.",
+      "citationCount": 0,
+      "doi": "10.64744/tjiss.2025.38",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c76854ab5e28d237a83df367f4ecc39675587fde",
+      "venue": "THE JOURNAL OF INTERACTIVE SOCIAL SCIENCES",
+      "journal": {
+        "name": "THE JOURNAL OF INTERACTIVE SOCIAL SCIENCES"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "59395cf4f9346ef4ccb37499a3a7e52c2978fc61",
+      "title": "Right for Right Reasons: Large Language Models for Verifiable Commonsense Knowledge Graph Question Answering",
+      "authors": [
+        {
+          "name": "Armin Toroghi",
+          "authorId": "1646622849"
+        },
+        {
+          "name": "Willis Guo",
+          "authorId": "2290061685"
+        },
+        {
+          "name": "Mohammad Mahdi Torabi pour",
+          "authorId": "104706163"
+        },
+        {
+          "name": "Scott Sanner",
+          "authorId": "2273670268"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Knowledge Graph Question Answering (KGQA) methods seek to answer Natural Language questions using the relational information stored in Knowledge Graphs (KGs). With the recent advancements of Large Language Models (LLMs) and their remarkable reasoning abilities, there is a growing trend to leverage them for KGQA. However, existing methodologies have only focused on answering factual questions, e.g., *\u201cIn which city was Silvio Berlusconi\u2019s first wife born?\u201d*, leaving questions involving commonsense reasoning that real-world users may pose more often, e.g., *\u201cDo I need separate visas to see the Venus of Willendorf and attend the Olympics this summer?\u201d* unaddressed. In this work, we first observe that existing LLM-based methods for KGQA struggle with hallucination on such questions, especially on queries targeting long-tail entities (e.g., non-mainstream and recent entities), thus hindering their applicability in real-world applications especially since their reasoning processes are not easily verifiable. In response, we propose Right for Right Reasons (R^3), a commonsense KGQA methodology that allows for a verifiable reasoning procedure by axiomatically surfacing intrinsic commonsense knowledge of LLMs and grounding every factual reasoning step on KG triples. Through experimental evaluations across three different tasks\u2014question answering, claim verification, and preference matching\u2014our findings showcase R^3 as a superior approach, outperforming existing methodologies and notably reducing instances of hallucination and reasoning errors.",
+      "citationCount": 14,
+      "doi": "10.48550/arXiv.2403.01390",
+      "arxivId": "2403.01390",
+      "url": "https://www.semanticscholar.org/paper/59395cf4f9346ef4ccb37499a3a7e52c2978fc61",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "6601-6633"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "071f954b0ed1a0052650c13c181c587d0caab084",
+      "title": "Morality is Contextual: Learning Interpretable Moral Contexts from Human Data with Probabilistic Clustering and Large Language Models",
+      "authors": [
+        {
+          "name": "Geoffroy Morlat",
+          "authorId": "2401264983"
+        },
+        {
+          "name": "Marceau Nahon",
+          "authorId": "2400547749"
+        },
+        {
+          "name": "Augustin Chartouny",
+          "authorId": "2318196250"
+        },
+        {
+          "name": "R. Chatila",
+          "authorId": "2338268618"
+        },
+        {
+          "name": "I.T. Freire",
+          "authorId": "2339538392"
+        },
+        {
+          "name": "M. Khamassi",
+          "authorId": "2338268166"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Moral actions are judged not only by their outcomes but by the context in which they occur. We present COMETH (Contextual Organization of Moral Evaluation from Textual Human inputs), a framework that integrates a probabilistic context learner with LLM-based semantic abstraction and human moral evaluations to model how context shapes the acceptability of ambiguous actions. We curate an empirically grounded dataset of 300 scenarios across six core actions (violating Do not kill, Do not deceive, and Do not break the law) and collect ternary judgments (Blame/Neutral/Support) from N=101 participants. A preprocessing pipeline standardizes actions via an LLM filter and MiniLM embeddings with K-means, producing robust, reproducible core-action clusters. COMETH then learns action-specific moral contexts by clustering scenarios online from human judgment distributions using principled divergence criteria. To generalize and explain predictions, a Generalization module extracts concise, non-evaluative binary contextual features and learns feature weights in a transparent likelihood-based model. Empirically, COMETH roughly doubles alignment with majority human judgments relative to end-to-end LLM prompting (approx. 60% vs. approx. 30% on average), while revealing which contextual features drive its predictions. The contributions are: (i) an empirically grounded moral-context dataset, (ii) a reproducible pipeline combining human judgments with model-based context learning and LLM semantics, and (iii) an interpretable alternative to end-to-end LLMs for context-sensitive moral prediction and explanation.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.21439",
+      "url": "https://www.semanticscholar.org/paper/071f954b0ed1a0052650c13c181c587d0caab084",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2f98ab0aab23200b3c1803279c14924bcc7a5025",
+      "title": "A Refutation of Finite-State Language Models through Zipf\u2019s Law for Factual Knowledge",
+      "authors": [
+        {
+          "name": "L. Debowski",
+          "authorId": "2149603"
+        }
+      ],
+      "year": 2021,
+      "abstract": "We present a hypothetical argument against finite-state processes in statistical language modeling that is based on semantics rather than syntax. In this theoretical model, we suppose that the semantic properties of texts in a natural language could be approximately captured by a recently introduced concept of a perigraphic process. Perigraphic processes are a class of stochastic processes that satisfy a Zipf-law accumulation of a subset of factual knowledge, which is time-independent, compressed, and effectively inferrable from the process. We show that the classes of finite-state processes and of perigraphic processes are disjoint, and we present a new simple example of perigraphic processes over a finite alphabet called Oracle processes. The disjointness result makes use of the Hilberg condition, i.e., the almost sure power-law growth of algorithmic mutual information. Using a strongly consistent estimator of the number of hidden states, we show that finite-state processes do not satisfy the Hilberg condition whereas Oracle processes satisfy the Hilberg condition via the data-processing inequality. We discuss the relevance of these mathematical results for theoretical and computational linguistics.",
+      "citationCount": 9,
+      "doi": "10.3390/e23091148",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2f98ab0aab23200b3c1803279c14924bcc7a5025",
+      "venue": "Entropy",
+      "journal": {
+        "name": "Entropy",
+        "volume": "23"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "65748739c79cb7623172e281765ff252468e8324",
+      "title": "A semantics of the basic modal language based on a generalized rough set model",
+      "authors": [
+        {
+          "name": "Md. Aquil Khan",
+          "authorId": "2342359016"
+        },
+        {
+          "name": "Ranjan",
+          "authorId": "2339160267"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1016/j.ins.2024.121838",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/65748739c79cb7623172e281765ff252468e8324",
+      "venue": "Information Sciences",
+      "journal": {
+        "name": "Inf. Sci.",
+        "pages": "121838",
+        "volume": "701"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cab4f392638afc7134193a926f00f6fa4b188fcd",
+      "title": "Truthmaker Semantics and Natural Language Semantics",
+      "authors": [
+        {
+          "name": "Lucas Champollion",
+          "authorId": "2068623"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Truthmaker semantics is a non\u2010classical logical framework that has recently garnered significant interest in philosophy, logic, and natural language semantics. It redefines the propositional connectives and gives rise to more fine\u2010grained entailment relations than classical logic. In its model theory, truth is not determined with respect to possible worlds, but with respect to truthmakers, such as states or events. Unlike possible worlds, these truthmakers may be partial; they may be either coherent or incoherent; and they are understood to be exactly or wholly relevant to the truth of the sentences they verify. Truthmaker semantics generalises collective, fusion\u2010based theories of conjunction; alternative\u2010based theories of disjunction; and nonstandard negation semantics. This article provides a gentle introduction to truthmaker semantics aimed at linguists; describes applications to various natural language phenomena such as imperatives, ignorance implicatures, and negative events; and discusses its similarities and differences to related frameworks such as event semantics, situation semantics, alternative semantics, and inquisitive semantics.",
+      "citationCount": 1,
+      "doi": "10.1111/lnc3.70004",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cab4f392638afc7134193a926f00f6fa4b188fcd",
+      "venue": "Language and Linguistics Compass",
+      "journal": {
+        "name": "Lang. Linguistics Compass",
+        "volume": "19"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "df16100a4d520896a12568cfc01d2f3bcf793eb9",
+      "title": "Analysis of Ambiguity, Vagueness, Fuzziness, Uncertainty, Possibility and Probability in the Natural Language Semantics with Fuzzy Logic",
+      "authors": [
+        {
+          "name": "O. P. Singh",
+          "authorId": "2281165688"
+        },
+        {
+          "name": "Dr. Manoj E. Patil",
+          "authorId": "2055000572"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Understanding the esotericism of human instinct in their daily life conversation is not enough then a mystery now. This is a bundle of ambiguity, vagueness, fuzziness, uncertainty, possibility and probability as a wrap that humans have built around themselves. With the advancement in artificial Intelligence, natural language processing is more capable now to work with real world and performing intelligent analysises. The real world has interactions between natural and artificial intelligent systems. Despite all it, humans retained their superiority over artificial intelligent systems. The fuzzy Logic can play an important computational role in understanding this intelligence gap in clear dimensions. Logical Semantics, Distributional Semantics and Probabilistic Logic are focused on their intention for better natural language semantic representations. But no single semantic representation fulfills all requirements needed for a satisfactory representation. The objective of the present work has two folds. The first one focused on the understanding of fuzzy logic in two dimensions as an intelligence computational technique and another as mathematical modeling of natural language semantics. The second fold illustrates this intelligence gap with real world examples of natural language processing applications such as Google and Microsoft Translator.",
+      "citationCount": 0,
+      "doi": "10.47392/irjaeh.2024.0204",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/df16100a4d520896a12568cfc01d2f3bcf793eb9",
+      "venue": "International Research Journal on Advanced Engineering Hub (IRJAEH)",
+      "journal": {
+        "name": "International Research Journal on Advanced Engineering Hub (IRJAEH)"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "916163b1a38fbafe254c52f813f109e3145857df",
+      "title": "LANGUAGE AND COGNITION: EXAMINING THE ROLE OF APOHA IN BUDDHIST THEORIES OF MEANING AND SEMANTICS",
+      "authors": [
+        {
+          "name": "Babuli Naik",
+          "authorId": "2367081621"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The Buddhist theory of Apoha (exclusion) offers a distinct and non-essentialist approach to meaning and cognition by rejecting intrinsic universals and elucidating linguistic categorization through negation. Rooted in the epistemological and logical traditions of Indian Buddhism, Apoha was systematically formulated by Dign\u0101ga and Dharmak\u012brti as a counterargument to realist theories of meaning, which assert the existence of inherent essences corresponding to linguistic categories. Instead of postulating a positive universal, Apoha posits that words acquire meaning by excluding what they do not denote. For instance, the term \"cow\" does not signify an inherent cow-ness but instead differentiates cows from non-cows. This exclusion-based model of meaning challenges ontological realism and presents an alternative perspective in which meaning is derived through negation rather than intrinsic identity.This paper examines Apoha in relation to contemporary cognitive science, particularly in the contexts of category formation, prototype theory, and conceptual blending. Empirical research in cognitive science indicates that human categorization operates through flexible, context-sensitive processes rather than rigid universals, thereby aligning with the Buddhist view that meaning is constructed rather than inherent. Engaging with contemporary debates in the philosophy of language and cognitive semantics, this study positions Apoha in dialogue with alternative theoretical frameworks, including Aristotelian essentialism, Fregean reference theory, and Wittgensteinian perspectives on language. Through this comparative analysis, the paper explores how Apoha challenges foundational assumptions concerning meaning, reference, and conceptual representation.Furthermore, this study critically engages with objections to Apoha, particularly those advanced by the Ny\u0101ya School, which argues that exclusion alone is insufficient for a comprehensive account of linguistic meaning. Ny\u0101ya philosophers contend that Apoha leads to an infinite regress or circular reasoning, as negation presupposes some form of positive content. By reassessing these critiques within the framework of cognitive science, this paper demonstrates how Apoha can be reinterpreted as a viable model for understanding the construction and communication of meaning, particularly in light of contemporary non-essentialist approaches to language. By integrating Buddhist epistemology with modern linguistic and cognitive theories, this study highlights the enduring significance of Apoha in contemporary discussions on language and cognition. The exclusion-based model of meaning proposed by Apoha aligns with non-essentialist and usage-based linguistic frameworks, offering valuable insights into how meaning is generated through contrast, differentiation, and contextual dependence. In doing so, this research underscores Apoha not only as a pivotal contribution to Indian philosophy but also as a theoretically robust and philosophically compelling framework for modern cognitive and linguistic inquiry.",
+      "citationCount": 0,
+      "doi": "10.29121/shodhkosh.v5.i1.2024.5446",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/916163b1a38fbafe254c52f813f109e3145857df",
+      "venue": "ShodhKosh Journal of Visual and Performing Arts",
+      "journal": {
+        "name": "ShodhKosh: Journal of Visual and Performing Arts"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f0949a4e69fe8cd4b19d69fb10ffaf19b2df8ccc",
+      "title": "Grounding the Theory of Discursive Resistance: Language, Semiotics and New Testament Theology",
+      "authors": [
+        {
+          "name": "T. Eskola",
+          "authorId": "123664413"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Focusing on semantics and semiotics, this article will suggest new and renewed approaches to studying the construction of New Testament theology. First, the relation between Saussure and Peirce will be analyzed because the interpretation of their relationship is crucial for understanding the process of signification. A critical stance will be taken towards Derrida and Eco\u2019s interpretation of signification and towards deconstruction. Applying Benveniste\u2019s development of Saussure\u2019s semantics will introduce a discursive theory. Linguistic signs are not simply linguistic units as such. A sign is about conditions and functions. A sign as a role is a manifestation of participation. For anything to serve as a sign entails participation in a web of relations, participation in a network of meanings, and adoption of a set of rules. In the act of encoding there are elements that resist the free selection of components in encoding, such as narratives and metaphors. Therefore, they also become a means of appropriation: the construction of the sentence is not spontaneous but constrained. When, for instance, the metanarrative of enthronement directs the construction of a Christological statement, the basic theme dominates the process and becomes compelling for the ancient author.",
+      "citationCount": 0,
+      "doi": "10.3390/rel12090776",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f0949a4e69fe8cd4b19d69fb10ffaf19b2df8ccc",
+      "venue": "Religions",
+      "journal": {
+        "name": "Religions"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0124849385b64f43915a93c7f7ff978555ffe4ee",
+      "title": "Pragmatic Inference for Moral Reasoning Acquisition: Generalization via Distributional Semantics",
+      "authors": [
+        {
+          "name": "Guang-Peng Liu",
+          "authorId": "2378836835"
+        },
+        {
+          "name": "Xi Chen",
+          "authorId": "2383068012"
+        },
+        {
+          "name": "Bocheng Chen",
+          "authorId": "2335814255"
+        },
+        {
+          "name": "Xitong Zhang",
+          "authorId": "2257363307"
+        },
+        {
+          "name": "K. Johnson",
+          "authorId": "2262203039"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Moral reasoning has emerged as a promising research direction for Large Language Models (LLMs), yet achieving generalization remains a central challenge. From a linguistic standpoint, this difficulty arises because LLMs are adept at capturing distributional semantics, which fundamentally differs from the morals which operate at the pragmatic level. This paper investigates how LLMs can achieve generalized moral reasoning despite their reliance on distributional semantics. We propose pragmatic inference methods grounded in moral foundations theory, which leverage contextual information at each step to bridge the pragmatic gap and guide LLMs in connecting moral foundations with moral reasoning objectives. Experimental results demonstrate that our approach significantly enhances LLMs'generalization in moral reasoning, providing a foundation for future research grounded in moral foundations theory.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2509.24102",
+      "arxivId": "2509.24102",
+      "url": "https://www.semanticscholar.org/paper/0124849385b64f43915a93c7f7ff978555ffe4ee",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.24102"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1bdb6a8ba9ba3d5baaa25d71f48583c3828266b2",
+      "title": "Recurrent Integration and the Empirical Grounding of Phenomenal Consciousness in Artificial Intelligence Systems",
+      "authors": [
+        {
+          "name": "Akshaj Devireddy",
+          "authorId": "2396918837"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Artificial intelligence systems continue to increase in sophistication, renewing the questions of\nwhat structurally distinguishes conscious experience from computation. This paper develops a unified\nframework for consciousness by combining Recurrent Processing Theory (RPT) with a weakened\nform of Integrated Information Theory (IIT). The aim is to articulate a mechanistic account in which\nrecurrent feedback stabilizes perceptual contents and structural integration unifies them into a single,\nirreducible experiential field, and then to evaluate whether contemporary AI architectures exhibit\nthese features. Using this framework, the analysis examines the consciousness-relevant organization\nof two major classes of models: Large Language Models (LLMs) and Emergent Models (EMs). The\ndiscussion shows that EMs, due to their intrinsically recurrent dynamics and globally interdependent\nstate evolution, more closely approximate the structural conditions identified by the RPT and weak IIT\naccount than do standard feedforward transformer-based LLMs. The paper also reconsiders the debate\nbetween phenomenal and access consciousness by providing an RPT and weak IIT interpretation of the\nSperling experiment and by showing how EMs offer a way to render the posited structure of phenomenal\nconsciousness empirically tractable.",
+      "citationCount": 0,
+      "doi": "10.70251/hyjr2348.36740751",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1bdb6a8ba9ba3d5baaa25d71f48583c3828266b2",
+      "venue": "American Journal of Student Research",
+      "journal": {
+        "name": "American Journal of Student Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "17d429701623440d8611a6dafb7c0f5008d003bb",
+      "title": "Relevance of Grounding AI for Health Care.",
+      "authors": [
+        {
+          "name": "Murat Sariyar",
+          "authorId": "46372070"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.3233/SHTI250690",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/17d429701623440d8611a6dafb7c0f5008d003bb",
+      "venue": "Studies in Health Technology and Informatics",
+      "journal": {
+        "name": "Studies in health technology and informatics",
+        "pages": "\n          146-150\n        ",
+        "volume": "328"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "602a89eac8ae6ec2c57813284bc2c14f29a0222b",
+      "title": "$\\gamma(3,4)$ `Attention'in Cognitive Agents: Ontology-Free Knowledge Representations With Promise Theoretic Semantics",
+      "authors": [
+        {
+          "name": "Mark Burgess",
+          "authorId": "2400146922"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The semantics and dynamics of `attention'are closely related to promise theoretic notions developed for autonomous agents and can thus easily be written down in promise framework. In this way one may establish a bridge between vectorized Machine Learning and Knowledge Graph representations without relying on language models implicitly. Our expectations for knowledge presume a degree of statistical stability, i.e. average invariance under repeated observation, or `trust'in the data. Both learning networks and knowledge graph representations can meaningfully coexist to preserve different aspects of data. While vectorized data are useful for probabilistic estimation, graphs preserve the intentionality of the source even under data fractionation. Using a Semantic Spacetime $\\gamma(3,4)$ graph, one avoids complex ontologies in favour of classification of features by their roles in semantic processes. The latter favours an approach to reasoning under conditions of uncertainty. Appropriate attention to causal boundary conditions may lead to orders of magnitude compression of data required for such context determination, as required in the contexts of autonomous robotics, defence deployments, and ad hoc emergency services.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.19084",
+      "url": "https://www.semanticscholar.org/paper/602a89eac8ae6ec2c57813284bc2c14f29a0222b",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

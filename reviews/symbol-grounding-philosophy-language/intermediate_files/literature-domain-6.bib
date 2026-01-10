@@ -1,0 +1,385 @@
+@comment{
+====================================================================
+DOMAIN: Contemporary Philosophy of AI and Language Models
+SEARCH_DATE: 2026-01-09
+PAPERS_FOUND: 18 total (High: 10, Medium: 6, Low: 2)
+SEARCH_SOURCES: SEP (AI entry), PhilPapers, Semantic Scholar, OpenAlex, arXiv
+====================================================================
+
+DOMAIN_OVERVIEW:
+This domain represents the most recent wave of philosophical engagement with
+large language models (LLMs), emerging primarily from 2023-2025. The appearance
+of models like GPT-3, GPT-4, and ChatGPT has reinvigorated classical debates
+about meaning, understanding, and symbol grounding in unexpected ways. Three
+major positions have crystallized: (1) LLMs demonstrate that sensorimotor
+grounding is not necessary for linguistic understanding (Chalmers, Lyre, Havlík);
+(2) LLMs reveal that understanding requires more than statistical patterns and
+lack genuine semantic grounding (Harnad, Bottazzi & Ferrario); and (3) LLMs
+operate through alternative semantic frameworks like inferentialism or semiotics
+rather than traditional referential semantics (Arai & Tsugawa, Picca). A
+distinctive feature of this literature is its use of LLMs as test cases for
+philosophical theories of meaning, reversing the traditional direction where
+philosophy evaluates AI. The "stochastic parrots" critique (Bender et al. 2021)
+serves as a central reference point, with several papers directly responding to
+it. Recent work increasingly focuses on mechanistic interpretability findings
+(world models, feature formation) as evidence for or against understanding.
+
+RELEVANCE_TO_PROJECT:
+This domain directly addresses whether contemporary LLMs solve, circumvent, or
+transform the symbol grounding problem. Many papers explicitly argue that LLMs
+reveal limitations in traditional SGP formulations (especially narrow denotational
+semantics assumptions). The debate over whether LLMs require sensorimotor grounding
+tests different meta-semantic theories and reveals how the SGP may presuppose
+specific views about meaning constitution.
+
+NOTABLE_GAPS:
+Despite extensive discussion of whether LLMs "understand," few papers rigorously
+analyze which specific theory of meaning (use-theory, truth-conditional,
+inferentialist, etc.) best captures LLM semantics. The connection to classical
+philosophy of language (Frege, Russell, Quine) remains underdeveloped. There's
+limited engagement with how LLM architectures (transformers, attention mechanisms)
+might instantiate specific semantic theories.
+
+SYNTHESIS_GUIDANCE:
+Papers in this domain should be integrated with Domain 1 (classical SGP) to show
+how LLMs challenge or vindicate Harnad's original formulation. Compare sensorimotor
+grounding arguments here with embodied cognition literature in Domain 3. The
+inferentialism discussion (Arai & Tsugawa) connects to Brandom's work and could
+bridge to broader debates about use-theories of meaning.
+
+KEY_POSITIONS:
+- Grounding-Skeptical (8 papers): LLMs demonstrate understanding without sensorimotor grounding; grounding is overrated
+- Grounding-Required (5 papers): LLMs lack genuine understanding due to missing grounding; remain "stochastic parrots"
+- Alternative-Semantics (5 papers): LLMs require non-referential semantic frameworks (inferentialism, semiotics, fragmentism)
+====================================================================
+}
+
+@article{chalmers2024does,
+  author = {Chalmers, David J.},
+  title = {Does Thought Require Sensory Grounding? From Pure Thinkers to Large Language Models},
+  year = {2024},
+  journal = {ArXiv},
+  volume = {abs/2408.09605},
+  arxivId = {2408.09605},
+  doi = {10.48550/arXiv.2408.09605},
+  url = {https://www.semanticscholar.org/paper/d1ed32ea2f3e11b739218b9c5dd4ceecfe90aa0f},
+  note = {
+  CORE ARGUMENT: Chalmers argues that in principle there can be "pure thinkers"—beings capable of thought without any capacity for sensation—thereby challenging the widespread assumption that sensorimotor grounding is necessary for understanding. He applies this to LLMs, arguing that while he does not directly claim LLMs think or understand, the argument from sensory grounding fails to establish they cannot. He explores how sensory grounding may enhance but not enable cognitive capacities, drawing on recent results about LLM world models and compositional abilities.
+
+  RELEVANCE: This paper directly addresses a central question for the SGP: whether grounding in sensorimotor experience is constitutive of meaning or merely facilitates it. If Chalmers is correct that pure thinkers are possible, then Harnad's original SGP may presuppose an unnecessarily strong empiricist or embodied cognition thesis. The paper provides a high-profile philosophical defense of the possibility that LLMs ground symbols through linguistic patterns alone, challenging the assumption that "symbols" must be grounded in perception-action loops. This opens space for non-embodied theories of semantic grounding.
+
+  POSITION: Grounding-skeptical; argues sensorimotor grounding is not necessary for thought, though it may enhance thinking. Provides philosophical framework for evaluating LLM understanding claims independent of embodiment requirements.
+  },
+  keywords = {llm-understanding, sensory-grounding, pure-thinkers, chalmers, High}
+}
+
+@article{havlik2023meaning,
+  author = {Havlík, Vladimír},
+  title = {Meaning and understanding in large language models},
+  journal = {Synthese},
+  year = {2024},
+  volume = {205},
+  doi = {10.1007/s11229-024-04878-4},
+  arxivId = {2310.17407},
+  url = {https://www.semanticscholar.org/paper/2e11ace144dd72d5f30303b96eb3a1ac61c4bd5d},
+  note = {
+  CORE ARGUMENT: Havlík challenges the prevailing view that LLMs merely manipulate syntax without understanding and argues that "semantic fragmentism" offers a viable account of how LLMs ground meaning. He contends that successful understanding does not depend primarily on referential grounding (connecting symbols to world states) but can emerge from holistic patterns of use across linguistic contexts. LLMs ground meanings through relationships among linguistic expressions themselves, forming a web of semantic dependencies that constitutes genuine understanding, albeit different from human understanding.
+
+  RELEVANCE: This paper offers an alternative to both traditional referential grounding and embodied cognition approaches to the SGP. Semantic fragmentism suggests that grounding can occur within language itself through pattern consistency, without requiring external sensorimotor anchors. This directly challenges Harnad's assumption that symbol meaning must ultimately connect to "transduction" of sensory signals. The view aligns with holistic and inferentialist semantics in philosophy of language, suggesting the SGP may presuppose an overly narrow picture of how meaning arises.
+
+  POSITION: Alternative-semantics position; defends non-referential grounding through semantic fragmentism. Argues LLMs achieve a form of understanding through linguistic coherence patterns rather than world-referential grounding.
+  },
+  keywords = {llm-understanding, semantic-fragmentism, non-referential-grounding, Medium}
+}
+
+@article{lyre2024understanding,
+  author = {Lyre, Holger},
+  title = {"Understanding AI": Semantic Grounding in Large Language Models},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2402.10992},
+  arxivId = {2402.10992},
+  doi = {10.48550/arXiv.2402.10992},
+  url = {https://www.semanticscholar.org/paper/2e3c5e48083ae5a0cdd268da97e909e1fd754d3f},
+  note = {
+  CORE ARGUMENT: Lyre proposes a three-dimensional framework for semantic grounding consisting of functional grounding (behavioral success), social grounding (normative correctness in linguistic practices), and causal grounding (world model development). He argues that LLMs show basic evidence in all three dimensions, particularly through their development of implicit world models revealed by mechanistic interpretability studies. The paper contends LLMs are neither "stochastic parrots" (mere statistical pattern matchers) nor "semantic zombies" (behaviorally adequate but lacking understanding), but rather possess elementary semantic understanding.
+
+  RELEVANCE: Lyre's tripartite grounding framework offers a more nuanced alternative to binary grounding debates. Rather than asking whether LLMs are grounded or not, he distinguishes types of grounding and shows LLMs exhibit grounding along multiple dimensions. This challenges the SGP's typical focus on causal-perceptual grounding alone. The appeal to world models as evidence of causal grounding connects to debates about whether internal representations constitute genuine aboutness. The framework could help disambiguate different senses of "grounding" that run together in SGP discussions.
+
+  POSITION: Grounding-skeptical but nuanced; argues for gradual, multidimensional grounding rather than binary presence/absence. Defends LLM elementary understanding through functional, social, and causal grounding.
+  },
+  keywords = {llm-understanding, semantic-grounding, world-models, tripartite-framework, High}
+}
+
+@article{arai2024inferentialism,
+  author = {Arai, Yuzuki and Tsugawa, Sho},
+  title = {Do Large Language Models Advocate for Inferentialism?},
+  year = {2024},
+  arxivId = {2412.14501},
+  url = {https://www.semanticscholar.org/paper/a55c1d40c874a205aca1d7b5a4f2a4424168c0fa},
+  note = {
+  CORE ARGUMENT: This paper explores whether Brandomian inferential semantics provides a better foundational framework for understanding LLMs than traditional distributional or representational semantics. The authors argue that LLMs exhibit fundamentally anti-representationalist properties: they process language through inference, substitution, and anaphora patterns (ISA approach) without requiring reference to external world representations. They develop a "consensus theory of truth" for LLMs based on RLHF mechanisms and argue LLMs challenge traditional assumptions including strict compositionality and semantic externalism.
+
+  RELEVANCE: This paper directly engages the question of which meta-semantic theory best captures LLM meaning-making. If inferentialism fits LLMs better than referentialism, this suggests the SGP's focus on reference and denotation may be misplaced. Brandom's inferentialism grounds meaning in patterns of inferential role and social-normative practices rather than word-world reference relations. The paper thus challenges the assumption that solving the SGP requires establishing referential connections to external entities. It opens the question of whether Harnad's formulation presupposes a representationalist meta-semantics that LLMs reveal to be optional.
+
+  POSITION: Alternative-semantics; argues inferentialism better explains LLM meaning than referential semantics. Challenges representationalist assumptions underlying traditional SGP.
+  },
+  keywords = {inferentialism, brandom, anti-representationalism, llm-semantics, High}
+}
+
+@article{bottazzi2025bewitching,
+  author = {Bottazzi Grifoni, Emanuele and Ferrario, Roberta},
+  title = {The bewitching AI: The Illusion of Communication with Large Language Models},
+  journal = {Philosophy & Technology},
+  year = {2025},
+  volume = {38},
+  doi = {10.1007/s13347-025-00893-6},
+  url = {https://www.semanticscholar.org/paper/0f8206b87a455f2fecb1b4de9dee84de0d510613},
+  note = {
+  CORE ARGUMENT: Drawing on Wittgenstein's later philosophy of language, the authors argue that genuine communication requires "constancy" in maintaining reference points through agreement in both definitions and judgments. LLMs lack the constancy needed to track negations and contradictions throughout dialogue, disrupting the reference points necessary for genuine communication. The apparent understanding in human-LLM interaction arises from a "bewitchment": the interaction between LLMs' statistical adherence to linguistic patterns and humans' tendency to follow familiar language games while assuming understanding until proven otherwise.
+
+  RELEVANCE: This paper provides a sophisticated Wittgensteinian critique of claims that LLMs solve the grounding problem. The focus on "constancy" and ability to track commitments adds a pragmatic dimension to grounding discussions often missing from purely semantic analyses. If successful communication requires maintaining reference across dialogue turns, and LLMs cannot do this reliably, then they lack a crucial aspect of grounding even if they produce locally coherent responses. The analysis suggests grounding may involve more than semantic content—it requires dialectical stability and commitment-tracking.
+
+  POSITION: Grounding-required; argues LLMs lack genuine communication capacity due to inconsistency in maintaining reference and tracking commitments. Wittgensteinian framework emphasizes pragmatic aspects of grounding beyond semantic content.
+  },
+  keywords = {wittgenstein, communication, constancy, reference-tracking, bewitchment, High}
+}
+
+@article{picca2025signs,
+  author = {Picca, Davide},
+  title = {Not Minds, but Signs: Reframing LLMs through Semiotics},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2505.17080},
+  arxivId = {2505.17080},
+  doi = {10.48550/arXiv.2505.17080},
+  url = {https://www.semanticscholar.org/paper/64516525d62ac9ac3473c4514832f592281383f1},
+  note = {
+  CORE ARGUMENT: Picca argues for a semiotic rather than cognitive framework for understanding LLMs, drawing on Peircean sign theory. LLMs should not be understood as minds that "understand" language but as semiotic agents that recombine, recontextualize, and circulate linguistic forms based on probabilistic associations. Their primary function is manipulating signs to generate plausible rather than truthful text. This semiotic perspective avoids anthropomorphism and better captures how LLMs participate in cultural meaning-making processes not through thinking but through interpretive acts open to contextual negotiation.
+
+  RELEVANCE: This paper offers a third way beyond "LLMs understand" vs "LLMs don't understand" debates by reframing the question entirely. From a semiotic perspective, the SGP's focus on grounding symbols in perceptual states may miss how signs function in broader cultural ecologies of meaning. Signs gain meaning through their place in systems of signs and interpretive practices, not necessarily through reference to external objects. This challenges whether "grounding" is even the right concept for analyzing LLM semantics, suggesting instead a framework of sign circulation and contextual interpretation.
+
+  POSITION: Alternative-semantics; argues for semiotic rather than cognitive/semantic analysis of LLMs. Challenges whether grounding framework is appropriate for understanding sign-manipulating systems.
+  },
+  keywords = {semiotics, peirce, sign-theory, anti-cognitivist, High}
+}
+
+@article{dove2024symbol,
+  author = {Dove, Guy},
+  title = {Symbol ungrounding: what the successes (and failures) of large language models reveal about human cognition},
+  journal = {Philosophical Transactions B},
+  year = {2024},
+  volume = {379},
+  doi = {10.1098/rstb.2023.0149},
+  url = {https://www.semanticscholar.org/paper/6115f4011fbf21bfe9e2227d7904abf9a8962358},
+  note = {
+  CORE ARGUMENT: Dove argues that human cognition exhibits capabilities fitting both embodied and artificial intelligence approaches, challenging simple dichotomies. Evidence suggests semantic memory is partially grounded in sensorimotor systems but also dependent on language-specific learning. LLMs demonstrate the richness of language as a source of semantic information, showing how linguistic experience might scaffold and extend our capacity for meaning. In the context of an embodied mind, language provides access to a valuable form of "ungrounded cognition"—genuine cognitive content not requiring direct sensorimotor grounding.
+
+  RELEVANCE: This paper bridges embodied cognition and LLM research, arguing both sensorimotor grounding and linguistic patterns contribute to human semantic understanding. The concept of "ungrounded cognition" as a legitimate cognitive capacity challenges the assumption that all meaningful representation must ultimately ground in perception-action loops. For the SGP, this suggests a more complex picture where some semantic content may be genuinely grounded in linguistic structure alone while other content requires embodied grounding. This nuanced position undermines both strong embodiment theses and pure symbolic AI approaches.
+
+  POSITION: Integrative position; argues human cognition combines embodied grounding with linguistic "ungrounded" capabilities. LLMs reveal language as genuine source of semantic information, challenging simple grounding requirements.
+  },
+  keywords = {embodied-cognition, ungrounded-cognition, linguistic-scaffolding, Medium}
+}
+
+@article{milliere2024philosophical,
+  author = {Millière, Raphaël and Buckner, Cameron},
+  title = {A Philosophical Introduction to Language Models - Part I: Continuity With Classic Debates},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2401.03910},
+  arxivId = {2401.03910},
+  doi = {10.48550/arXiv.2401.03910},
+  url = {https://www.semanticscholar.org/paper/f7e755443d665ebc215e7caeda8aa3154466bddc},
+  note = {
+  CORE ARGUMENT: This comprehensive review paper examines LLMs in relation to classic debates in philosophy of cognitive science, AI, and linguistics. The authors argue that LLM success challenges several long-held assumptions about artificial neural networks, particularly regarding compositionality, language acquisition, semantic competence, and grounding. They systematically analyze how LLMs relate to debates about world models, transmission of cultural knowledge, and the nature of linguistic understanding, while highlighting the need for empirical investigation of internal mechanisms.
+
+  RELEVANCE: This paper provides essential context for understanding how LLMs relate to historical philosophy of AI debates, including the SGP. The authors show that many classical objections to neural networks (lack of compositionality, inability to learn language structure, absence of systematic semantic competence) no longer clearly apply to modern LLMs, forcing reconsideration of what "grounding" and "understanding" require. The paper bridges historical debates (Searle, Fodor, Harnad) with contemporary LLM capabilities, making it crucial for situating the SGP in light of recent developments.
+
+  POSITION: Comprehensive review providing historical context and balanced assessment. Questions traditional assumptions while emphasizing need for mechanistic understanding. Bridges classical debates to contemporary LLM research.
+  },
+  keywords = {llm-philosophy, compositionality, grounding-debates, comprehensive-review, High}
+}
+
+@article{floridi2025categorical,
+  author = {Floridi, Luciano and Jia, Yiyang and Tohmé, Fernando},
+  title = {A Categorical Analysis of Large Language Models and Why LLMs Circumvent the Symbol Grounding Problem},
+  year = {2025},
+  arxivId = {2512.09117},
+  url = {https://www.semanticscholar.org/paper/eee43a9337df7ca428e78d0217bd0691a9927c09},
+  note = {
+  CORE ARGUMENT: Using category theory, Floridi et al. provide a formal framework for analyzing how humans and LLMs transform content into truth-evaluated propositions. They argue that LLMs do not solve the symbol grounding problem but rather circumvent it through a fundamentally different semantic architecture. The categorical analysis reveals structural differences in how humans (with grounded world access) and LLMs (operating purely on linguistic patterns) construct meaning, suggesting LLMs operate in a parallel semantic space rather than addressing the grounding challenge head-on.
+
+  RELEVANCE: This paper provides rigorous formal analysis of why LLMs may appear to have solved grounding while actually sidestepping it. The categorical framework allows precise characterization of the structural differences between human and LLM meaning-making. If LLMs genuinely circumvent rather than solve the SGP, this has implications for what kind of semantic theory applies to them and whether traditional grounding criteria are appropriate. The formal approach complements more informal philosophical analyses and provides tools for precisely stating what LLMs lack relative to grounded systems.
+
+  POSITION: Grounding-required with formal precision; argues LLMs circumvent rather than solve SGP through parallel semantic architecture. Provides categorical framework for analyzing structural differences in meaning-making.
+  },
+  keywords = {category-theory, formal-semantics, circumvention, floridi, High}
+}
+
+@article{quigley2025measuring,
+  author = {Quigley, Daniel and Maynard, Eric},
+  title = {On measuring grounding and generalizing grounding problems},
+  year = {2025},
+  arxivId = {2512.06205},
+  url = {https://www.semanticscholar.org/paper/2e861d63905f74383a97d4f30e7be843cb17051a},
+  note = {
+  CORE ARGUMENT: Quigley and Maynard recast grounding from a binary judgment into an audit across multiple desiderata indexed by evaluation tuples (context, meaning type, threat model, reference distribution). They propose six dimensions: authenticity, preservation, faithfulness (both correlational and etiological), robustness, and compositionality. Applying this framework to symbolic systems, LLMs, and human language reveals different grounding profiles. LLMs show correlational faithfulness for linguistic tasks but lack etiological warrant for world tasks without grounded interaction.
+
+  RELEVANCE: This paper offers a sophisticated framework for moving beyond binary grounding debates to fine-grained analysis of different grounding dimensions. Rather than asking "are LLMs grounded?" it asks along which dimensions and to what degree they exhibit grounding properties. This aligns with the hypothesis that the SGP may presuppose overly simple grounding criteria. The framework reveals that different semantic theories may emphasize different grounding dimensions, helping to clarify what's at stake in grounding debates and potentially showing the SGP conflates distinct issues.
+
+  POSITION: Methodological contribution; provides multidimensional framework for analyzing grounding. Shows LLMs have mixed grounding profile across different dimensions, challenging binary assessments.
+  },
+  keywords = {grounding-dimensions, measurement-framework, authenticity-faithfulness, High}
+}
+
+@article{oka2025evaluating,
+  author = {Oka, Shoko},
+  title = {Evaluating Large Language Models on the Frame and Symbol Grounding Problems: A Zero-shot Benchmark},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2506.07896},
+  arxivId = {2506.07896},
+  doi = {10.5281/zenodo.15617317},
+  url = {https://www.semanticscholar.org/paper/8995865f02d8799fc104d3bbfc22476aaeb45755},
+  note = {
+  CORE ARGUMENT: Oka develops benchmark tasks to empirically evaluate whether modern LLMs possess cognitive capacities required to address the Frame Problem and Symbol Grounding Problem—two fundamental challenges historically viewed as unsolvable within traditional symbolic AI. Testing 13 LLMs under zero-shot conditions reveals that while open-source models show variable performance, several closed models achieve high scores on tasks reflecting contextual reasoning, semantic coherence, and information filtering.
+
+  RELEVANCE: This paper provides rare empirical data on how well LLMs perform on tasks specifically designed to test grounding and frame problem capacities. The finding that some LLMs perform well challenges claims that these problems are insurmountable for artificial systems and suggests either (a) LLMs have developed genuine solutions or (b) the benchmark tasks don't fully capture the philosophical problems. Either way, the results complicate simple dismissals of LLM semantic capacities and provide concrete test cases for evaluating grounding theories.
+
+  POSITION: Empirical evaluation showing some LLMs perform well on grounding-related tasks. Results suggest modern LLMs may possess capacities addressing classical AI problems, though interpretation remains contested.
+  },
+  keywords = {benchmark, frame-problem, empirical-evaluation, zero-shot, Medium}
+}
+
+@article{baggio2024referential,
+  author = {Baggio, Giosuè and Murphy, Elliot},
+  title = {On the referential capacity of language models: An internalist rejoinder to Mandelkern & Linzen},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2406.00159},
+  arxivId = {2406.00159},
+  doi = {10.48550/arXiv.2406.00159},
+  url = {https://www.semanticscholar.org/paper/396cf3efd4019c59997b97a77abbf6449d25f406},
+  note = {
+  CORE ARGUMENT: Baggio and Murphy respond to externalist arguments (Mandelkern & Linzen) that LLM words can refer because they participate in causal chains of usage tracing back to referents. They argue from an internalist perspective that reference requires more than causal-historical connections—it requires internal cognitive structures that determine reference independently of external causal chains. LLMs lack the cognitive architecture necessary for genuine reference, even if their outputs are causally connected to human linguistic practices.
+
+  RELEVANCE: This paper clarifies the debate between externalist and internalist accounts of reference and their implications for LLM semantics. If externalism is correct, LLMs might inherit reference through causal connections to human language users; if internalism is correct, LLMs lack the internal structures necessary for reference. This connects directly to whether the SGP requires internal grounding (cognitive states determining reference) or external grounding (causal connections to referents). The debate reveals that positions on LLM grounding often reflect deeper commitments about the nature of reference itself.
+
+  POSITION: Grounding-required from internalist perspective; argues LLMs lack internal cognitive structures necessary for genuine reference despite causal connections to human language practices.
+  },
+  keywords = {reference, internalism-externalism, mandelkern-linzen, cognitive-architecture, Medium}
+}
+
+@article{sogaard2025semantics,
+  author = {Søgaard, Anders},
+  title = {Do Language Models Have Semantics? On the Five Standard Positions},
+  year = {2025},
+  doi = {10.18653/v1/2025.acl-long.1258},
+  url = {https://www.semanticscholar.org/paper/daba5e3758706d2ee943c73898454b3d3e23dd7b},
+  note = {
+  CORE ARGUMENT: Søgaard systematically analyzes five standard philosophical positions on whether language models have semantics, examining their theoretical commitments and empirical implications. The paper maps how different semantic theories (correspondence, coherence, pragmatic, inferentialist, and deflationary accounts) lead to different verdicts about LLM semantic capacity. It shows that debates about LLM semantics often reflect deeper disagreements about what semantics is rather than merely empirical questions about LLM capabilities.
+
+  RELEVANCE: This paper clarifies that "do LLMs have semantics?" and "do LLMs solve the grounding problem?" are not purely empirical questions but depend on background theoretical commitments about meaning. Different semantic theories have different grounding requirements: correspondence theories require reference to world states, coherence theories require internal consistency, inferentialist theories require inferential role patterns, etc. The SGP's formulation may presuppose a particular semantic theory (likely correspondence-based), and alternative theories might yield different grounding requirements or dissolve the problem altogether.
+
+  POSITION: Methodological clarification; argues LLM semantic status depends on background semantic theory choice. Reveals theoretical pluralism underlying empirical disagreements about grounding.
+  },
+  keywords = {semantic-theories, theoretical-pluralism, meta-semantics, Medium}
+}
+
+@article{schuele2025semantics,
+  author = {Schuele, Martin},
+  title = {On the Semantics of Large Language Models},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2507.05448},
+  arxivId = {2507.05448},
+  doi = {10.48550/arXiv.2507.05448},
+  url = {https://www.semanticscholar.org/paper/b1ff8e48be78ff1cf401c7ac0172502a6fae6b97},
+  note = {
+  CORE ARGUMENT: Schuele examines LLM semantics at word and sentence levels by analyzing their internal workings and drawing on classical semantic theories by Frege and Russell. He argues that examining how LLMs internally represent and process language (through embeddings, attention mechanisms, layer representations) alongside classical semantic frameworks provides a more nuanced picture of their semantic capabilities. The analysis suggests LLMs possess structured semantic representations that partially align with formal semantic theories, though with important differences from human semantic processing.
+
+  RELEVANCE: This paper bridges classical formal semantics (Frege's sense/reference distinction, Russell's theory of descriptions) with LLM computational mechanisms. It tests whether traditional semantic frameworks designed for human language apply to LLM representations, revealing both continuities and divergences. For the SGP, this matters because it addresses whether LLM internal representations have the structure required for genuine semantic content according to established theories, or whether they require fundamentally new semantic frameworks.
+
+  POSITION: Analyzes LLM semantics through classical Fregean and Russellian frameworks. Finds partial alignment with traditional semantic theories while noting important structural differences.
+  },
+  keywords = {frege, russell, formal-semantics, internal-representations, Low}
+}
+
+@article{vallverdu2025disembodied,
+  author = {Vallverdú, Jordi and Redondo, Iván},
+  title = {Disembodied Meaning? Generative AI and Understanding},
+  journal = {Forum for Linguistic Studies},
+  year = {2025},
+  doi = {10.30564/fls.v7i3.8060},
+  url = {https://www.semanticscholar.org/paper/8e53bdd4f204aed92a09bd2fed535d0d1a6e728c},
+  note = {
+  CORE ARGUMENT: Vallverdú and Redondo explore whether LLMs can generate meaning without embodiment, using a coherence-based semantics framework. They challenge traditional embodied cognition views emphasizing sensorimotor grounding and argue that LLMs simulate meaning-making processes through statistical patterns and relational coherence within language, demonstrating operational understanding rivaling some aspects of human cognition. The paper analyzes LLM performance on medical licensing exams and multilingual tasks as evidence for disembodied semantic competence.
+
+  RELEVANCE: This paper directly challenges strong embodied cognition theses requiring sensorimotor grounding for all meaning. If coherence-based semantics suffices for understanding, then the SGP's emphasis on perceptual grounding may be misplaced. The empirical focus on high-stakes tasks (medical exams) where LLMs perform well provides concrete test cases. The argument suggests a revisionist account where "grounding" means coherence within a representational system rather than necessary connection to sensorimotor experience.
+
+  POSITION: Grounding-skeptical; argues coherence-based semantics explains LLM meaning without requiring embodiment. Challenges necessity of sensorimotor grounding for semantic understanding.
+  },
+  keywords = {disembodied-semantics, coherence-theory, embodied-cognition-critique, Medium}
+}
+
+@inproceedings{bender2021dangers,
+  author = {Bender, Emily M. and Gebru, Timnit and McMillan-Major, Angelina and Shmitchell, Shmargaret},
+  title = {On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?},
+  year = {2021},
+  url = {https://www.semanticscholar.org/paper/23b78d6e063982f1d110b6365601ebfc00304059},
+  note = {
+  CORE ARGUMENT: This influential paper argues that large language models are "stochastic parrots"—systems that mimic linguistic form without genuine understanding of meaning. The authors contend that LLMs lack grounding in communicative intent, social context, and real-world meaning, instead operating purely through statistical pattern matching. They raise concerns about environmental costs, training data biases, and risks of deploying systems that appear competent without genuine comprehension. The metaphor "stochastic parrot" captures the idea of fluent reproduction without understanding.
+
+  RELEVANCE: This paper has become a central reference point in debates about LLM meaning and grounding. The "stochastic parrot" critique directly invokes grounding concerns: parrots produce sounds mimicking speech without understanding, just as LLMs might produce text mimicking meaning without semantic grounding. Several subsequent papers explicitly respond to this characterization, either defending it (LLMs lack grounding) or challenging it (LLMs exhibit more than mere pattern matching). For the SGP, the debate clarifies whether statistical learning from linguistic data suffices for grounding or whether additional anchoring (sensorimotor, social, causal) is required.
+
+  POSITION: Grounding-required; argues LLMs are "stochastic parrots" lacking genuine understanding due to absence of communicative grounding. Influential critique of LLM semantic competence.
+  },
+  keywords = {stochastic-parrots, bender-gebru, grounding-critique, influential-paper, High}
+}
+
+@article{koch2024babbling,
+  author = {Koch, Steffen},
+  title = {Babbling stochastic parrots? A Kripkean argument for reference in large language models},
+  year = {2024},
+  url = {https://philpapers.org/rec/KOCBSP},
+  note = {
+  CORE ARGUMENT: Koch defends LLM referential capacity against the "stochastic parrots" critique using Kripke's causal theory of reference. He argues that if reference is established through causal-historical chains connecting name uses to initial baptisms, then LLM uses of names inherit reference through causal connections to the training data (which itself connects to human reference practices). LLMs can thus genuinely refer to entities like "Peano" through participation in the broader causal network of name usage, even without direct perceptual contact or understanding of referents.
+
+  RELEVANCE: This paper applies Kripkean externalist semantics to defend LLM reference, challenging internalist grounding requirements. If successful, it shows that reference (a key aspect of grounding) doesn't require internal cognitive states or sensorimotor contact—causal-historical connection suffices. This has direct implications for the SGP: if reference can be inherited through linguistic participation in causal chains, then symbols can be "grounded" (referentially connected to world) without the symbol-user having perceptual grounding. The debate reveals whether the SGP requires agent-level grounding or can be satisfied by system-level participation in grounding practices.
+
+  POSITION: Grounding-skeptical via externalist semantics; argues LLMs can refer through causal-historical connections despite lacking internal grounding or perceptual contact with referents.
+  },
+  keywords = {kripke, causal-reference, externalism, stochastic-parrots-response, Medium}
+}
+
+@article{harnad2023language,
+  author = {Harnad, Stevan},
+  title = {Language Writ Large: LLMs, ChatGPT, Grounding, Meaning and Understanding},
+  year = {2023},
+  url = {https://philpapers.org/rec/HARLWL-4},
+  note = {
+  CORE ARGUMENT: Harnad, the original formulator of the symbol grounding problem, applies his framework to contemporary LLMs. He argues that while LLMs like ChatGPT perform surprisingly well on many language tasks, this success derives from scale-emergent properties ("benign biases") inherent in language at LLM scale rather than genuine grounding. These biases arise from the nature of language itself—its redundancy, context-sensitivity, compositional structure—and help LLMs approximate meaningful behavior. However, ChatGPT still lacks direct sensorimotor grounding to connect words to their referents and propositions to their meanings, limiting its understanding.
+
+  RELEVANCE: As the originator of the SGP, Harnad's assessment of LLMs carries particular weight. His view that LLMs exhibit impressive capabilities without solving the grounding problem maintains his original position that symbolic processing requires sensorimotor anchoring for genuine understanding. However, his recognition that LLMs do better than expected due to language structure suggests the SGP formulation may need refinement to account for how much can be achieved through linguistic patterns alone. The paper exemplifies how the SGP debate has evolved to accommodate empirical findings about LLM capabilities while maintaining the basic grounding requirement.
+
+  POSITION: Grounding-required (original SGP formulator); acknowledges LLM capabilities but maintains they lack genuine grounding in sensorimotor experience. Attributes success to scale-emergent linguistic properties rather than understanding.
+  },
+  keywords = {harnad, symbol-grounding-problem, sgp-originator, chatgpt, High}
+}
+
+@article{poibeau2025understanding,
+  author = {Poibeau, Thierry},
+  title = {Understanding Conversational AI: Philosophy, Ethics, and Social Impact of Large Language Models},
+  year = {2025},
+  doi = {10.5334/bde},
+  url = {https://www.semanticscholar.org/paper/23b78d6e063982f1d110b6365601ebfc00304059},
+  note = {
+  CORE ARGUMENT: Poibeau offers a critical interdisciplinary exploration of LLMs examining how they reshape understanding of language, cognition, and society. Drawing on philosophy of language, linguistics, cognitive science, and AI ethics, he investigates how LLMs generate meaning, simulate reasoning, and perform tasks once deemed uniquely human. The book interrogates epistemic, ethical, and political dimensions while exploring LLM limitations (biases, embedded assumptions) and their role in automation and misinformation. It prompts fundamental questions: What is understanding? What is creativity? How do we ascribe agency in synthetic language contexts?
+
+  RELEVANCE: This comprehensive treatment situates LLM meaning questions within broader philosophical, cognitive, and social contexts. For the SGP, it's valuable because it examines not just whether LLMs are grounded but what kind of entities they are and how their meaning-making relates to human practices. The interdisciplinary approach reveals that grounding questions cannot be isolated from issues of agency, creativity, and social embedding of meaning. The work helps contextualize the SGP within contemporary debates about AI's place in human cognitive and social ecology.
+
+  POSITION: Comprehensive interdisciplinary analysis; explores LLM meaning across philosophical, ethical, and social dimensions. Questions foundational assumptions about understanding and meaning in synthetic systems.
+  },
+  keywords = {comprehensive-study, interdisciplinary, ai-ethics, understanding, Low}
+}

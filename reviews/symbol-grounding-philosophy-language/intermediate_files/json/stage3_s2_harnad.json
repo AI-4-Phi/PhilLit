@@ -1,0 +1,1038 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "symbol grounding problem Harnad",
+  "results": [
+    {
+      "paperId": "4106342a079eecadd4a4a1d39eabd4a50e0a7cd1",
+      "title": "The Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 3571,
+      "doi": "10.1016/0167-2789(90)90087-6",
+      "arxivId": "cs/9906002",
+      "url": "https://www.semanticscholar.org/paper/4106342a079eecadd4a4a1d39eabd4a50e0a7cd1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "cs.AI/9906002"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e41593740b1d1b5f4a11b353a2edcbf37b10df4f",
+      "title": "Problems, Problems: The Frame Problem as a Symptom of the Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 38,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e41593740b1d1b5f4a11b353a2edcbf37b10df4f",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "82fd866b13d97763e738660f2a077eddc854c3ea",
+      "title": "Pragmatic Norms Are All You Need \u2013 Why The Symbol Grounding Problem Does Not Apply to LLMs",
+      "authors": [
+        {
+          "name": "Reto Gubelmann",
+          "authorId": "119338633"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Do LLMs fall prey to Harnad\u2019s symbol grounding problem (SGP), as it has recently been claimed? We argue that this is not the case. Starting out with countering the arguments of Bender and Koller (2020), we trace the origins of the SGP to the computational theory of mind (CTM), and we show that it only arises with natural language when questionable theories of meaning are presupposed. We conclude by showing that it would apply to LLMs only if they were interpreted in the manner of how the CTM conceives the mind, i.e., by postulating that LLMs rely on a version of a language of thought, or by adopting said questionable theories of meaning; since neither option is rational, we conclude that the SGP does not apply to LLMs.",
+      "citationCount": 9,
+      "doi": "10.18653/v1/2024.emnlp-main.651",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/82fd866b13d97763e738660f2a077eddc854c3ea",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "11663-11678"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "fc8d3670d93d4282d4c544d903e4bb047aa04e09",
+      "title": "Research Commentaries on Cangelosi's \"Solutions and Open Challenges for the Symbol Grounding Problem\"",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        },
+        {
+          "name": "L. Steels",
+          "authorId": "145091664"
+        },
+        {
+          "name": "Tony Belpaeme",
+          "authorId": "2301161"
+        },
+        {
+          "name": "C. Madden",
+          "authorId": "2636734"
+        },
+        {
+          "name": "S. Lall\u00e9e",
+          "authorId": "2974700"
+        },
+        {
+          "name": "Peter Ford Dominey",
+          "authorId": "9094493"
+        },
+        {
+          "name": "S. Cowley",
+          "authorId": "2659918"
+        },
+        {
+          "name": "J. Weng",
+          "authorId": "145926447"
+        },
+        {
+          "name": "A. Greco",
+          "authorId": "145254408"
+        },
+        {
+          "name": "Barbara Giolito",
+          "authorId": "2628779"
+        },
+        {
+          "name": "D. Parisi",
+          "authorId": "1762202"
+        },
+        {
+          "name": "V. C. M\u00fcller",
+          "authorId": "1807005"
+        },
+        {
+          "name": "Angelo C. Loula",
+          "authorId": "1915190"
+        },
+        {
+          "name": "J. Queiroz",
+          "authorId": "144480757"
+        },
+        {
+          "name": "Ricardo Ribeiro Gudwin",
+          "authorId": "2713353"
+        },
+        {
+          "name": "A. Cangelosi",
+          "authorId": "1692929"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.4018/IJSSS.2011010105",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fc8d3670d93d4282d4c544d903e4bb047aa04e09",
+      "venue": "Int. J. Signs Semiot. Syst.",
+      "journal": {
+        "name": "Int. J. Signs Semiot. Syst.",
+        "pages": "55-79",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "af9b9412998c5e590f831b1076c842f6193de9ab",
+      "title": "The Difficulties in Symbol Grounding Problem and the Direction for Solving It",
+      "authors": [
+        {
+          "name": "Jianhui Li",
+          "authorId": "48514373"
+        },
+        {
+          "name": "Haohao Mao",
+          "authorId": "2162838180"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The symbol grounding problem (SGP) proposed by Stevan Harnad in 1990, originates from Searle\u2019s \u201cChinese Room Argument\u201d and refers to the problem of how a pure symbolic system acquires its meaning. While many solutions to this problem have been proposed, all of them have encountered inconsistencies to different extents. A recent approach for resolving the problem is to divide the SGP into hard and easy problems echoing the distinction between hard and easy problems for resolving the enigma of consciousness. This however turns out not to be an ideal strategy: Everything related to consciousness that cannot be well-explained by present theories can be categorized as a hard problem which as a consequence would doom the SGP to irresolvability. We therefore argue that the SGP can be regarded as a general problem of how an AI system can have intentionality, and develop a theoretical direction for its solution.",
+      "citationCount": 4,
+      "doi": "10.3390/philosophies7050108",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/af9b9412998c5e590f831b1076c842f6193de9ab",
+      "venue": "Philosophies",
+      "journal": {
+        "name": "Philosophies"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "11219d594711501fc90b36f67eb2f04fec6236bd",
+      "title": "Symbol Grounding is an Empirical Problem: Neural Nets are Just a Candidate Component",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 29,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/11219d594711501fc90b36f67eb2f04fec6236bd",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "eeee2d5f636d01ec00fae1fd856fdf930230a546",
+      "title": "An Epistemological Approach to the Symbol Grounding Problem - The Difference Between Perception and Demonstrative Knowledge and Two Ways of Being Meaningful",
+      "authors": [
+        {
+          "name": "Jodi Guazzini",
+          "authorId": "103531747"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/978-3-319-96448-5_4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eeee2d5f636d01ec00fae1fd856fdf930230a546",
+      "venue": "Conference on Philosophy and Theory of Artificial Intelligence",
+      "journal": {
+        "pages": "36-39"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7ac9cdd3c00ffb7ff4d31a063b8c2ced94d2f910",
+      "title": "A Critical Review on the Symbol Grounding Problem as an Issue of Autonomous Agents",
+      "authors": [
+        {
+          "name": "Richard Cubek",
+          "authorId": "1737168"
+        },
+        {
+          "name": "W. Ertel",
+          "authorId": "1710696"
+        },
+        {
+          "name": "G. Palm",
+          "authorId": "1774384"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.1007/978-3-319-24489-1_21",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7ac9cdd3c00ffb7ff4d31a063b8c2ced94d2f910",
+      "venue": "Deutsche Jahrestagung f\u00fcr K\u00fcnstliche Intelligenz",
+      "journal": {
+        "pages": "256-263"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "7302fcfa4b769d48eeecfe9014938cd508572f17",
+      "title": "Meaning in Artificial Agents: The Symbol Grounding Problem Revisited",
+      "authors": [
+        {
+          "name": "Dairon Rodr\u00edguez",
+          "authorId": "2064655915"
+        },
+        {
+          "name": "J. Hermosillo",
+          "authorId": "144922383"
+        },
+        {
+          "name": "B. Lara",
+          "authorId": "145706715"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.1007/s11023-011-9263-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7302fcfa4b769d48eeecfe9014938cd508572f17",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "25-34",
+        "volume": "22"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1ac9e8b082dfce53b9275f194015de3a278139f5",
+      "title": "Solving the symbol grounding problem: a critical review of fifteen years of research",
+      "authors": [
+        {
+          "name": "M. Taddeo",
+          "authorId": "2084659"
+        },
+        {
+          "name": "L. Floridi",
+          "authorId": "1982425"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 179,
+      "doi": "10.1080/09528130500284053",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1ac9e8b082dfce53b9275f194015de3a278139f5",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "419 - 445",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ba2b56d6801de67a973e8092e5bbc1a0e93c5504",
+      "title": "Symbol grounding and the origin of language",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 2002,
+      "abstract": null,
+      "citationCount": 11,
+      "doi": "10.1075/slcs.144.12har",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ba2b56d6801de67a973e8092e5bbc1a0e93c5504",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "279-298",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "97914dc4bad43be0446e8d318f813d829241616d",
+      "title": "Meaning in Artificial Agents: The Symbol Grounding Problem Revisited",
+      "authors": [
+        {
+          "name": "Dairon Rodr\u00edguez",
+          "authorId": "2064655915"
+        },
+        {
+          "name": "J. Hermosillo",
+          "authorId": "144922383"
+        },
+        {
+          "name": "B. Lara",
+          "authorId": "145706715"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11023-011-9263-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/97914dc4bad43be0446e8d318f813d829241616d",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "25 - 34",
+        "volume": "22"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3228164cc48530ba9fd3bd543eaf3febb5a9ef02",
+      "title": "Steve Austin versus the symbol grounding problem",
+      "authors": [
+        {
+          "name": "J. L. Taylor",
+          "authorId": "2110315399"
+        },
+        {
+          "name": "Scott A. Burgess",
+          "authorId": "12222884"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3228164cc48530ba9fd3bd543eaf3febb5a9ef02",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "21-25",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "05d450b4ea52f6176a294d392bcd30b4d354faa4",
+      "title": "Chapter 2 The Misleading Aspects of the Mind / Computer Analogy The Grounding Problem and the Thorny Issue of Propriosensitive Information",
+      "authors": [],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/05d450b4ea52f6176a294d392bcd30b4d354faa4",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7269e5672b25f63f9a56463f3195de2ae64b5c95",
+      "title": "The acquired language of thought hypothesis: A theory of symbol grounding",
+      "authors": [
+        {
+          "name": "C. Viger",
+          "authorId": "91850293"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 11,
+      "doi": "10.1075/IS.8.1.08VIG",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7269e5672b25f63f9a56463f3195de2ae64b5c95",
+      "venue": "",
+      "journal": {
+        "name": "Interaction Studies",
+        "pages": "125-142",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f7c01669cd0f09cc955b00669d90ce1d2b0574f0",
+      "title": "GROUNDING SYMBOLS IN THE ANALOG WORLD WITH NEURAL NETS A Hybrid Model",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 99,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f7c01669cd0f09cc955b00669d90ce1d2b0574f0",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b6bfc0e261a854c2a7e7820651e4721b5f3f7a6a",
+      "title": "Computation is just interpretable symbol manipulation; cognition isn't",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 42,
+      "doi": "10.1007/BF00974165",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b6bfc0e261a854c2a7e7820651e4721b5f3f7a6a",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "379-390",
+        "volume": "4"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "12b02b3ca96024eb8b0b405bd6089b7754cc9d82",
+      "title": "The Grounding of Symbols in Affordances",
+      "authors": [
+        {
+          "name": "William H Vidal",
+          "authorId": "72477509"
+        }
+      ],
+      "year": 2019,
+      "abstract": "The Grounding of Symbols in Affordances William H. Vidal Scientific and Philosophical Studies of the Mind Program Franklin and Marshall College Lancaster, PA 17604 Wh_vidal@fandm.edu Affordances vs. Experience In the past two decades, the development of artificial intelligence has received thorough criticism from many philosophers. In his paper, The Symbol Grounding Problem (1990), Harnad attempts to prove A.I. systems\u2019 inaptitude to ground computational symbols in experience. To determine whether experience is the only criteria for grounding, a non-representationalist framework to artificial systems must be applied. This paper is an attempt to demonstrate the ability of artificial systems to ground their symbols in the potential activity afforded by their environment. To illustrate the grounding of symbols in affordances the analysis is presented in terms of Marr\u2019s three descriptive levels (Marr, 1983). Within the computational level, I present an ecological model of perception, as well as, how the behavior of an A.I. system is intelligible in terms of affordances. The placement of an A.I. system\u2019s behavior within the broader context of its environment widens the potential for grounding and draws the focus away from inner formal-symbol operations. Following the establishment of the environment\u2019s relevancy in A.I. systems\u2019 perceptual mechanism is an examination of the representational level. The program, at the representational level, represents the bridge between a system\u2019s ecological perceptual mechanism and the implementation of stimulus information. I conclude the analysis with the implementation layer\u2019s implications on which symbols need grounding and the causal link between the reception of stimulus information and motor commands. The symbol Grounding Problem The problem theoretically arises because the symbols in an A.I. system\u2019s representation layer are manipulated formally according to preset programmed rules and do not have any causal connections with the exterior world. In other words, the symb ol grounding problem highlights the lack of connectedness between the symbols within the programmed layer of an A.I. system and the exterior environment. Whether one is trying to prove A.I. systems can have intentionality, develop a potential humanoid, or examine the replication of human processes through artificial intelligence, the symbol grounding problem poses a barrier. How can one potentially make a machine that has meaningful thoughts, if its symbols are detached from any form of reality? According to Harnad, human mental symbols are grounded in our daily interactions with the exterior world. The association of symbols with memories leads Harnad to equate symbol grounding\u2019s constitutive element to experience and memories. (Harnad, 1990) An Ecological Model Within the bounds of his analysis, Harnad forwards valid criticisms of A.I. systems. Indeed, from a program layer investigation and a focus on internal abstract computation, A.I. systems do not have any connections with the exterior world. However, one is not claiming that a system\u2019s variables and design do not originate from a programmer and a system\u2019s general concept is the realization of a programmer\u2019s abstractions. These facts simply entail that the construction of an A.I. system is initially based on a designer\u2019s abstractions. Although the behavioral and program layer are the components we perceive and control, a grounding mechanism\u2019s processes reside within the implemen- tation layer. An affordance structured analysis grounds an A.I. system\u2019s symbols by appealing to stimulus information, as opposed to the traditionalist appeal to causal energy connections. More precisely, the theory of affordances and direct perception enables a system to implement behavioral modifications through opportunities for actions specified in optic arrays. An alternate grounding mechanism must fulfill the three central tenets of symbol grounding theory: meaningful perception, purposeful action, and environment dependent symbols. Direct perception and Gibson\u2019s ecological approach forwards a dynamic model of action grounded in affordances that satisfies these three criteria. The symbol grounding problem is perspective dependent and is in nature, only a theoretical conflict. References Harnad (1990). The Symbol Grounding Problem. Physica, D 42: 335-346. Marr, D. (1983). Vision: A Computational Investigation into the Human Representation and Processing of Visual Information. New York: W.H. Freeman and Co.",
+      "citationCount": 0,
+      "doi": "10.4324/9781315782379-260",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/12b02b3ca96024eb8b0b405bd6089b7754cc9d82",
+      "venue": "Proceedings of the Twenty-Fourth Annual Conference of the Cognitive Science Society",
+      "journal": {
+        "name": "Proceedings of the Twenty-Fourth Annual Conference of the Cognitive Science Society"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e0c60e5290e4b631fbd389552be02b7f5459b674",
+      "title": "Interview with Prof. Stevan Harnad",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e0c60e5290e4b631fbd389552be02b7f5459b674",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "91ffb07cea05ede3bbfe22375afbf52171f442a9",
+      "title": "Interview with Prof. Stevan Harnad",
+      "authors": [
+        {
+          "name": "S. Coradeschi",
+          "authorId": "1734889"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/s13218-013-0242-7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/91ffb07cea05ede3bbfe22375afbf52171f442a9",
+      "venue": "KI - K\u00fcnstliche Intelligenz",
+      "journal": {
+        "name": "KI - K\u00fcnstliche Intelligenz",
+        "pages": "169-172",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "805d900b381a4cc716c505cef2e5139f8a716412",
+      "title": "On grounding language with neural networks",
+      "authors": [
+        {
+          "name": "G. Dorffner",
+          "authorId": "1716328"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1049/IC:19950664",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/805d900b381a4cc716c505cef2e5139f8a716412",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "4-4",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d31baf5df4fa8ac7997ca5de1fb9fe74b9d1966d",
+      "title": "The Misleading Aspects of the Mind/Computer Analogy",
+      "authors": [
+        {
+          "name": "Sara Dellantonio",
+          "authorId": "2323757"
+        },
+        {
+          "name": "Luigi Pastore",
+          "authorId": "4118256"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-662-55763-1_2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d31baf5df4fa8ac7997ca5de1fb9fe74b9d1966d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "47-97",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "67969959d7abc32edca56e75e77969c5267a6899",
+      "title": "Does the Mind Piggy-Back on Robotic and Symbolic Capacity?",
+      "authors": [
+        {
+          "name": "S. Harnad",
+          "authorId": "2293327"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 18,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/67969959d7abc32edca56e75e77969c5267a6899",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "091c1b5b71d2623f5ef07c5aa784c6e81c2de878",
+      "title": "THE HOPE OF A RADICALLY EMBODIED SCIENCE",
+      "authors": [
+        {
+          "name": "A. Costall",
+          "authorId": "143968096"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/091c1b5b71d2623f5ef07c5aa784c6e81c2de878",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "345",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b9e2bf178c597591fd7e866080e1b30440559243",
+      "title": "How can we make sense of what we perceive",
+      "authors": [
+        {
+          "name": "Erik H\u00f6rtnagl",
+          "authorId": "2619402"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b9e2bf178c597591fd7e866080e1b30440559243",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "eee43a9337df7ca428e78d0217bd0691a9927c09",
+      "title": "A Categorical Analysis of Large Language Models and Why LLMs Circumvent the Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "Luciano Floridi",
+          "authorId": "2259952291"
+        },
+        {
+          "name": "Yiyang Jia",
+          "authorId": "2400358926"
+        },
+        {
+          "name": "Fernando Tohm'e",
+          "authorId": "2214095508"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper presents a formal, categorical framework for analysing how humans and large language models (LLMs) transform content into truth-evaluated propositions about a state space of possible worlds W , in order to argue that LLMs do not solve but circumvent the symbol grounding problem.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.09117",
+      "url": "https://www.semanticscholar.org/paper/eee43a9337df7ca428e78d0217bd0691a9927c09",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6c5eb8a5b5c9a496ad86bd8020275d7b43163d9d",
+      "title": "An Algorithmic Information-Theoretic Perspective on the Symbol Grounding Problem",
+      "authors": [
+        {
+          "name": "Zhangchi Liu",
+          "authorId": "2383142182"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper provides a definitive, unifying framework for the Symbol Grounding Problem (SGP) by reformulating it within Algorithmic Information Theory (AIT). We demonstrate that the grounding of meaning is a process fundamentally constrained by information-theoretic limits, thereby unifying the G\\\"odelian (self-reference) and No Free Lunch (statistical) perspectives. We model a symbolic system as a universal Turing machine and define grounding as an act of information compression. The argument proceeds in four stages. First, we prove that a purely symbolic system cannot ground almost all possible\"worlds\"(data strings), as they are algorithmically random and thus incompressible. Second, we show that any statically grounded system, specialized for compressing a specific world, is inherently incomplete because an adversarial, incompressible world relative to the system can always be constructed. Third, the\"grounding act\"of adapting to a new world is proven to be non-inferable, as it requires the input of new information (a shorter program) that cannot be deduced from the system's existing code. Finally, we use Chaitin's Incompleteness Theorem to prove that any algorithmic learning process is itself a finite system that cannot comprehend or model worlds whose complexity provably exceeds its own. This establishes that meaning is the open-ended process of a system perpetually attempting to overcome its own information-theoretic limitations.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.05153",
+      "arxivId": "2510.05153",
+      "url": "https://www.semanticscholar.org/paper/6c5eb8a5b5c9a496ad86bd8020275d7b43163d9d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.05153"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3e09d0a44dfc2213fda8443cd85b6fbec48f1d76",
+      "title": "Principles of logical deduction with the deep learning problem and the symbol grounding problem",
+      "authors": [
+        {
+          "name": "Wako Takanashi",
+          "authorId": "2293336378"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1299/jsmekanto.2025.31.04c21",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3e09d0a44dfc2213fda8443cd85b6fbec48f1d76",
+      "venue": "The Proceedings of Conference of Kanto Branch",
+      "journal": {
+        "name": "The Proceedings of Conference of Kanto Branch"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "074f988f0bf1f7feeea0c0abce0bdb8ecc0f5a2a",
+      "title": "Symbol grounding for generative AI: lessons learned from interpretive ABM",
+      "authors": [
+        {
+          "name": "M. Neumann",
+          "authorId": "2105962062"
+        },
+        {
+          "name": "Vanessa Dirksen",
+          "authorId": "2351504396"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This perspective article argues that not only humanities benefit and are transformed by recent AI developments but AI might also benefit from the humanities. This is demonstrated with regard to the symbol grounding problem in AI by considering that meaning is not the outcome of a two-way relation between an object and a brain (or AI) but of the negotiation of meaning in the triadic relation between objects, symbols, and human practices. This is common in the interpretive social research tradition of the humanities. We argue that AI benefits from embedding generative methods in interpretive social research methodologies. This can be achieved by using the example of the recently developed methodology of interpretive agent-based simulation (iABM). This methodology enables the generation of counterfactual narratives anchored in ethnographic evidence and hermeneutically interpreted, producing symbolically grounded and plausible futures. Criteria for plausibility correspond to contemporary guidelines for assessing trustworthy AI, namely human agency and oversight, transparency, and auditability.",
+      "citationCount": 0,
+      "doi": "10.3389/fcomp.2025.1508004",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/074f988f0bf1f7feeea0c0abce0bdb8ecc0f5a2a",
+      "venue": "Frontiers Comput. Sci.",
+      "journal": {
+        "name": "Frontiers Comput. Sci.",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "511f450211ded1bad72d7984402c717328b816d3",
+      "title": "A Unified Formal Theory on the Logical Limits of Symbol Grounding",
+      "authors": [
+        {
+          "name": "Zhangchi Liu",
+          "authorId": "2383142182"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper synthesizes a series of formal proofs to construct a unified theory on the logical limits of the Symbol Grounding Problem. We distinguish between internal meaning (sense), which formal systems can possess via axioms, and external grounding (reference), which is a necessary condition for connecting symbols to the world. We demonstrate through a four-stage argument that meaningful grounding within a formal system must arise from a process that is external, dynamic, and non-fixed algorithmic. First, we show that for a purely symbolic system, the impossibility of grounding is a direct consequence of its definition. Second, we extend this limitation to systems with any finite, static set of pre-established meanings (Semantic Axioms). By formally modeling the computationalist hypothesis-which equates grounding with internal derivation-we prove via G\\\"odelian arguments that such systems cannot consistently and completely define a\"groundability predicate\"for all truths. Third, we demonstrate that the\"grounding act\"for emergent meanings cannot be inferred from internal rules but requires an axiomatic, meta-level update. Drawing on Turing's concept of Oracle Machines and Piccinini's analysis of the mathematical objection, we identify this update as physical transduction. Finally, we prove that this process cannot be simulated by a fixed judgment algorithm, validating the logical necessity of embodied interaction.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.20409",
+      "arxivId": "2509.20409",
+      "url": "https://www.semanticscholar.org/paper/511f450211ded1bad72d7984402c717328b816d3",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.20409"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8995865f02d8799fc104d3bbfc22476aaeb45755",
+      "title": "Evaluating Large Language Models on the Frame and Symbol Grounding Problems: A Zero-shot Benchmark",
+      "authors": [
+        {
+          "name": "Shoko Oka",
+          "authorId": "2366066462"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advancements in large language models (LLMs) have revitalized philosophical debates surrounding artificial intelligence. Two of the most fundamental challenges - namely, the Frame Problem and the Symbol Grounding Problem - have historically been viewed as unsolvable within traditional symbolic AI systems. This study investigates whether modern LLMs possess the cognitive capacities required to address these problems. To do so, I designed two benchmark tasks reflecting the philosophical core of each problem, administered them under zero-shot conditions to 13 prominent LLMs (both closed and open-source), and assessed the quality of the models' outputs across five trials each. Responses were scored along multiple criteria, including contextual reasoning, semantic coherence, and information filtering. The results demonstrate that while open-source models showed variability in performance due to differences in model size, quantization, and instruction tuning, several closed models consistently achieved high scores. These findings suggest that select modern LLMs may be acquiring capacities sufficient to produce meaningful and stable responses to these long-standing theoretical challenges.",
+      "citationCount": 0,
+      "doi": "10.5281/zenodo.15617317",
+      "arxivId": "2506.07896",
+      "url": "https://www.semanticscholar.org/paper/8995865f02d8799fc104d3bbfc22476aaeb45755",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.07896"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7b3a26eb954ec159cd2faf7862233736b169a153",
+      "title": "Meaning and the Machine:Beyond the Symbol-Grounding Problem",
+      "authors": [
+        {
+          "name": "Terry McDonough",
+          "authorId": "71293733"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7b3a26eb954ec159cd2faf7862233736b169a153",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b1a01ed1105c821797ee5626a3b0894e3c701b9a",
+      "title": "Symbol Grounding Problem and causal theory of reference",
+      "authors": [
+        {
+          "name": "K. Bielecka",
+          "authorId": "2325880"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1016/J.NEWIDEAPSYCH.2015.01.006",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b1a01ed1105c821797ee5626a3b0894e3c701b9a",
+      "venue": "",
+      "journal": {
+        "name": "New Ideas in Psychology",
+        "pages": "77-85",
+        "volume": "40"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "4a8fbf446baa8ac226fd81a4e4a077f12f639791",
+      "title": "First-person experience, artificial intelligence and the symbol grounding problem",
+      "authors": [
+        {
+          "name": "\u0413\u0430\u0441\u043f\u0430\u0440\u044f\u043d \u0414\u0438\u0430\u043d\u0430 \u042d\u0434\u0438\u043a\u043e\u0432\u043d\u0430",
+          "authorId": "2099072373"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4a8fbf446baa8ac226fd81a4e4a077f12f639791",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bae295eecc2efcc0a744079c6c60d1fa6b0959e0",
+      "title": "The symbol grounding problem \u2026 remains unsolved",
+      "authors": [
+        {
+          "name": "S. Bringsjord",
+          "authorId": "1797985"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.1080/0952813X.2014.940139",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bae295eecc2efcc0a744079c6c60d1fa6b0959e0",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "63 - 72",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fc5219fb458960befe73714928a1a31fcfcdd55e",
+      "title": "Which symbol grounding problem should we try to solve?",
+      "authors": [
+        {
+          "name": "V. C. M\u00fcller",
+          "authorId": "1807005"
+        }
+      ],
+      "year": 2015,
+      "abstract": "Floridi and Taddeo propose a condition of \u2018zero semantic commitment\u2019 for solutions to the grounding problem, and a solution to it. I argue briefly that their condition cannot be fulfilled, not even by their own solution. After a look at Luc Steel's very different competing suggestion, I suggest that we need to re-think what the problem is and what role the \u2018goals\u2019 in a system play in formulating the problem. On the basis of a proper (syntactic) understanding of computing, I come to the conclusion that the only sensible grounding problem is how we can explain and re-produce the behavioural ability and function of meaning in artificial computational agents.",
+      "citationCount": 7,
+      "doi": "10.1080/0952813X.2014.940143",
+      "arxivId": "2507.21080",
+      "url": "https://www.semanticscholar.org/paper/fc5219fb458960befe73714928a1a31fcfcdd55e",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "73 - 78",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c6b1a1e991adf3b4be258de7e79c114da4fa75e7",
+      "title": "Why Taddeo and Floridi did not solve the symbol grounding problem",
+      "authors": [
+        {
+          "name": "K. Bielecka",
+          "authorId": "2325880"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1080/0952813X.2014.940138",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c6b1a1e991adf3b4be258de7e79c114da4fa75e7",
+      "venue": "Journal of experimental and theoretical artificial intelligence (Print)",
+      "journal": {
+        "name": "Journal of Experimental & Theoretical Artificial Intelligence",
+        "pages": "79 - 93",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "83b4d29e4048c6b21732fd7193e7be805bfd5577",
+      "title": "Information in the philosophy of AI and the symbol grounding problem",
+      "authors": [
+        {
+          "name": "S. Bringsjord",
+          "authorId": "1797985"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.4324/9781315757544.CH11",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/83b4d29e4048c6b21732fd7193e7be805bfd5577",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6c70568ab004f03963d904f8e11efda13243108e",
+      "title": "Turing Test, Chinese Room Argument, Symbol Grounding Problem. Meanings in Artificial Agents (2013)",
+      "authors": [
+        {
+          "name": "Christophe Menant",
+          "authorId": "2969012"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6c70568ab004f03963d904f8e11efda13243108e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2613f9abc680c38dae24540d8dcb12e9bf1f208b",
+      "title": "Turing Test, Chinese Room Argument, Symbol Grounding Problem. Meanings in Artificial Agents",
+      "authors": [
+        {
+          "name": "Christophe Menant",
+          "authorId": "2969012"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2613f9abc680c38dae24540d8dcb12e9bf1f208b",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

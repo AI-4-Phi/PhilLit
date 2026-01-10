@@ -1,0 +1,425 @@
+@comment{
+====================================================================
+DOMAIN: Philosophy of Language - Theories of Meaning and Reference
+SEARCH_DATE: 2026-01-09
+PAPERS_FOUND: 20 total (High: 8, Medium: 9, Low: 3)
+SEARCH_SOURCES: SEP, PhilPapers, Semantic Scholar, OpenAlex
+====================================================================
+
+DOMAIN_OVERVIEW:
+This domain encompasses the major philosophical theories of linguistic meaning
+and reference. The central debate concerns how expressions acquire meaning:
+through reference to objects in the world (referentialism/denotationalism),
+through descriptive content associated with expressions (descriptivism), through
+inferential relations between expressions (inferentialism), or through use in
+language games (use theories). The Kripke-Putnam revolution in the 1970s
+established direct reference theory and semantic externalism as dominant
+positions, challenging Fregean descriptivism. Recent decades have seen renewed
+interest in inferentialist alternatives (Brandom) and two-dimensional semantics
+(Chalmers) that attempt to reconcile referentialist insights with the role of
+conceptual content. Metasemantics—theories about what facts ground meaning—has
+emerged as a distinct field examining whether meaning is fixed by causal-
+historical chains, community practices, functional roles, or normative
+inferential patterns.
+
+RELEVANCE_TO_PROJECT:
+The symbol grounding problem presupposes that symbols require "grounding" in
+non-symbolic reality—a claim that makes most sense within referentialist/
+denotational frameworks where meaning is fundamentally about word-world
+relations. Alternative theories (inferentialism, use theories, conceptual role
+semantics) suggest meaning might be constituted by intralinguistic relations,
+making the grounding problem appear theoretically parochial rather than
+universal. This domain provides the theoretical apparatus to assess whether
+SGP implicitly assumes one metasemantic view and whether it dissolves under
+alternative frameworks.
+
+NOTABLE_GAPS:
+The connection between theories of meaning and the symbol grounding problem
+remains underexplored in philosophy of language. Few papers explicitly examine
+how different metasemantic theories bear on grounding requirements for AI
+systems. The literature would benefit from work examining whether inferentialist
+or use-theoretic frameworks make the SGP disappear or transform it into a
+different kind of problem.
+
+SYNTHESIS_GUIDANCE:
+Organize the synthesis around competing metasemantic visions: (1) referentialist
+views that make grounding central, (2) descriptivist views where grounding is
+mediated by sense, (3) inferentialist views where meaning is role in reasoning,
+(4) use theories where meaning is practice-embedded. Show how each framework
+would diagnose the SGP differently. Recent metasemantics literature (Speaks,
+Burgess-Sherman) provides tools for this comparison.
+
+KEY_POSITIONS:
+- Direct Reference/Causal Theories: 8 papers - Kripke, Donnellan, Devitt establish that proper names and natural kind terms refer directly via causal-historical chains, not descriptive content
+- Inferentialism: 6 papers - Brandom, Peregrin, Hlobil argue meaning is constituted by inferential role in reasoning practices
+- Two-Dimensional Semantics: 2 papers - Chalmers attempts to reconcile Kripkean insights with role of conceptual content
+- Metasemantics: 4 papers - Recent work on what grounds meaning facts (externalism, conceptual role, normative patterns)
+====================================================================
+}
+
+@book{kripke1980naming,
+  author = {Kripke, Saul A.},
+  title = {Naming and Necessity},
+  year = {1980},
+  publisher = {Harvard University Press},
+  address = {Cambridge, MA},
+  doi = {10.1007/978-94-010-2557-7_9},
+  note = {
+  CORE ARGUMENT: Names are rigid designators that refer directly to objects via causal-historical chains, not through associated descriptions. Against Fregean descriptivism, argues modal and epistemological considerations show names pick out the same object in all possible worlds, and that reference is fixed by initial baptism and causal transmission, not by speakers' descriptive beliefs about the referent.
+
+  RELEVANCE: Foundational for direct reference theory, which grounds the referentialist metasemantics most naturally aligned with symbol grounding problem formulations. If meaning is direct reference established causally, then symbols require causal connection to what they denote—making SGP central to semantics. The paper's arguments shape whether we see grounding as a core semantic requirement or a parochial assumption.
+
+  POSITION: Direct reference theory; establishes rigid designation and causal-historical theory of reference as alternatives to descriptivism.
+  },
+  keywords = {direct-reference, causal-theory, rigid-designation, High}
+}
+
+@article{donnellan1966reference,
+  author = {Donnellan, Keith S.},
+  title = {Reference and Definite Descriptions},
+  journal = {The Philosophical Review},
+  year = {1966},
+  volume = {75},
+  number = {3},
+  pages = {281--304},
+  doi = {10.2307/2183143},
+  note = {
+  CORE ARGUMENT: Distinguishes referential from attributive uses of definite descriptions. In referential use, a speaker uses a description to enable an audience to pick out a particular individual, and reference succeeds even if the description is false of the referent. This challenges the Russellian view that descriptions contribute only their semantic content.
+
+  RELEVANCE: Establishes speaker reference vs. semantic reference distinction crucial for assessing grounding requirements. If reference is partly determined by speaker intentions and context rather than purely semantic rules, grounding becomes more complex than simple word-object mapping. Relevant for whether AI systems need semantic grounding or can function with referential capacities grounded in use patterns.
+
+  POSITION: Direct reference theory; argues against purely semantic accounts of reference, emphasizing pragmatic dimensions.
+  },
+  keywords = {direct-reference, speaker-reference, definite-descriptions, High}
+}
+
+@book{brandom1994making,
+  author = {Brandom, Robert B.},
+  title = {Making It Explicit: Reasoning, Representing, and Discursive Commitment},
+  year = {1994},
+  publisher = {Harvard University Press},
+  address = {Cambridge, MA},
+  doi = {10.2307/2998403},
+  note = {
+  CORE ARGUMENT: Develops normative inferentialism—the view that conceptual content is constituted by the inferential role expressions play in reasoning practices, understood as patterns of commitment and entitlement. Meaning is not reference to objects but position in a "space of reasons." Linguistic practice is fundamentally about giving and asking for reasons, and semantic content emerges from these normative, social practices.
+
+  RELEVANCE: Presents the strongest alternative to referentialist metasemantics underlying the symbol grounding problem. If meaning is inferential role rather than denotation, then symbols need not be "grounded" in non-symbolic reality—they are meaningful through their position in inferential networks. This threatens to dissolve SGP or transform it into a question about acquiring appropriate inferential abilities, not world-connections.
+
+  POSITION: Normative inferentialism; social-pragmatist metasemantics rejecting representationalist foundations.
+  },
+  keywords = {inferentialism, normative-pragmatism, conceptual-content, High}
+}
+
+@article{brandom2010inferentialism,
+  author = {Brandom, Robert B.},
+  title = {Inferentialism and Some of Its Challenges},
+  journal = {Philosophy and Phenomenological Research},
+  year = {2010},
+  volume = {74},
+  number = {3},
+  pages = {651--676},
+  doi = {10.1111/j.1933-1592.2007.00044.x},
+  note = {
+  CORE ARGUMENT: Defends inferentialism against standard objections concerning compositionality, perceptual knowledge, and observation reports. Argues that inferential articulation of conceptual content is compatible with truth-conditional semantics and does not require rejecting the world-directedness of thought and language, but rather reconceives how language hooks onto world through inferentially articulated observational concepts.
+
+  RELEVANCE: Addresses whether inferentialism can accommodate the intuition underlying SGP—that language must connect to world. Shows how inferentialist can acknowledge world-directedness without reducing meaning to reference or requiring non-inferential grounding. Important for assessing whether SGP rests on false dilemma between pure formalism and direct reference.
+
+  POSITION: Normative inferentialism; defense against compositionality and observation objections.
+  },
+  keywords = {inferentialism, observation, world-directedness, High}
+}
+
+@article{chalmers2006foundations,
+  author = {Chalmers, David J.},
+  title = {The Foundations of Two-Dimensional Semantics},
+  journal = {Erkenntnis},
+  year = {2006},
+  volume = {118},
+  pages = {153--215},
+  note = {
+  CORE ARGUMENT: Develops two-dimensional semantic framework combining Kripkean modal semantics with Fregean attention to cognitive significance. Primary intension captures apriori conceptual content (how reference is fixed), while secondary intension captures modal profile (reference in counterfactual scenarios). This framework aims to preserve Kripke's insights about necessity and reference while accommodating the role of conceptual content in determining reference.
+
+  RELEVANCE: Offers middle ground between pure referentialism and descriptivism potentially relevant to SGP. If meaning has two dimensions—one involving conceptual determination of reference, another involving modal reference itself—then grounding requirements might differ for each dimension. Relevant for whether AI systems need both conceptual competence and causal grounding, or whether one dimension can float free.
+
+  POSITION: Two-dimensional semantics; attempts to reconcile direct reference with role of sense/content.
+  },
+  keywords = {two-dimensional-semantics, apriori-content, reference-fixing, High}
+}
+
+@incollection{chalmers2008two-dimensional,
+  author = {Chalmers, David J.},
+  title = {Two-dimensional semantics},
+  booktitle = {Oxford Handbook of Philosophy of Language},
+  editor = {Lepore, Ernest and Smith, Barry C.},
+  year = {2008},
+  publisher = {Oxford University Press},
+  address = {Oxford},
+  pages = {574--606},
+  doi = {10.1093/OXFORDHB/9780199552238.003.0024},
+  note = {
+  CORE ARGUMENT: Accessible overview of two-dimensional semantics showing how it applies to debates about meaning, reference, and necessity. Explains how primary intensions (conceptual content) and secondary intensions (referential content) provide distinct but complementary semantic values, allowing reconciliation of conflicting intuitions about meaning and reference that fueled descriptivist-referentialist debates.
+
+  RELEVANCE: Handbook-level synthesis useful for positioning SGP debates within broader semantic theory. Two-dimensional framework suggests grounding might be required for secondary intension (modal reference) but not primary intension (conceptual content), potentially allowing formal AI systems to have meaningful primary intensions without full causal grounding.
+
+  POSITION: Two-dimensional semantics; programmatic overview of framework.
+  },
+  keywords = {two-dimensional-semantics, modal-semantics, conceptual-content, Medium}
+}
+
+@article{peregrin2014what,
+  author = {Peregrin, Jaroslav},
+  title = {What is inferentialism?},
+  journal = {Logique et Analyse},
+  year = {2014},
+  volume = {57},
+  number = {226},
+  pages = {165--182},
+  note = {
+  CORE ARGUMENT: Provides accessible introduction to inferentialism as the view that conceptual content is constituted by inferential rules governing expression use. Distinguishes inferentialism from holism and explains how inferential role can determine meaning without circularity. Positions inferentialism as natural extension of Wittgensteinian meaning-as-use theories applied to specifically conceptual content.
+
+  RELEVANCE: Clarifies what it would mean for SGP to dissolve under inferentialist metasemantics. If meaning is inferential rules, not world-reference, then grounding problem transforms into question of acquiring appropriate inferential practices. Useful for examining whether SGP presupposes denotational rather than inferential conception of semantics.
+
+  POSITION: Inferentialism; meta-level clarification of the inferentialist program.
+  },
+  keywords = {inferentialism, meaning-as-use, conceptual-content, Medium}
+}
+
+@article{hlobil2022teleo-inferentialism,
+  author = {Hlobil, Ulf},
+  title = {Teleo-Inferentialism},
+  journal = {Philosophical Topics},
+  year = {2022},
+  volume = {50},
+  number = {1},
+  pages = {185--211},
+  doi = {10.5840/philtopics20225019},
+  note = {
+  CORE ARGUMENT: Combines inferentialism with teleosemantics to naturalize conceptual norms. Contents are individuated by inferential norms, but these norms are grounded in biological well-functioning of cognitive capacities shaped by evolution and learning. This hybrid view aims to preserve inferentialism's insights while providing naturalistic metasemantic foundation avoiding both representationalism and free-floating normativity.
+
+  RELEVANCE: Addresses potential objection that inferentialism lacks naturalistic grounding, parallel to concerns underlying SGP. Shows how inferential role can be naturalized through teleological facts about cognitive function rather than causal reference relations. Relevant for whether AI systems need causal grounding or teleological functional organization supporting inferential competence.
+
+  POSITION: Hybrid teleo-inferentialism attempting naturalistic foundation for inferential norms.
+  },
+  keywords = {inferentialism, teleosemantics, naturalism, Medium}
+}
+
+@article{tebben2021inferentialism,
+  author = {Tebben, Nicholas},
+  title = {Inferentialism is as Compositional as it Needs to be},
+  journal = {Contemporary Pragmatism},
+  year = {2021},
+  volume = {18},
+  pages = {268--291},
+  doi = {10.1163/18758185-bja10015},
+  note = {
+  CORE ARGUMENT: Defends inferentialism against compositionality objections by arguing the theory satisfies appropriate compositionality constraint—meanings of complex expressions are determined by their inferential roles, which are in turn determined by inferential roles of parts. The dispute is not about compositionality but about nature of representations—whether meanings are referential entities or inferential roles.
+
+  RELEVANCE: Addresses whether inferentialism can handle structured representations, relevant for whether view can replace referentialist semantics for AI systems. If inferentialism satisfies compositionality, it could provide alternative to grounding-based semantics for compositional language understanding in AI without requiring non-symbolic grounding.
+
+  POSITION: Defense of inferentialism against standard compositionality objection.
+  },
+  keywords = {inferentialism, compositionality, semantic-theory, Medium}
+}
+
+@article{devitt2020stirring,
+  author = {Devitt, Michael},
+  title = {Stirring the Possum: Responses to the Bianchi Papers},
+  booktitle = {Language and Reality from a Naturalistic Perspective},
+  year = {2020},
+  publisher = {Springer},
+  pages = {371--455},
+  doi = {10.1007/978-3-030-47641-0_19},
+  note = {
+  CORE ARGUMENT: Comprehensive defense of causal-referential semantics against descriptivist and alternative challenges. Argues that reference is determined by causal-historical networks connecting terms to objects, and that this provides correct semantics for natural kind terms and proper names. Responds to experimental philosophy challenges to referentialist intuitions.
+
+  RELEVANCE: Recent defense of the referentialist metasemantics most naturally aligned with symbol grounding problem. If Devitt is correct that reference is causally grounded, then SGP correctly identifies real semantic requirement. Paper's engagement with experimental philosophy relevant for empirical assessment of whether ordinary concept of meaning presupposes grounding.
+
+  POSITION: Causal-historical theory of reference; naturalistic referentialism.
+  },
+  keywords = {causal-theory, referentialism, experimental-philosophy, High}
+}
+
+@article{hoefer2020realism,
+  author = {Hoefer, Carl and Mart{\'i}, Genoveva},
+  title = {Realism, Reference and Perspective},
+  journal = {European Journal for Philosophy of Science},
+  year = {2020},
+  volume = {10},
+  number = {3},
+  doi = {10.1007/s13194-020-00302-4},
+  note = {
+  CORE ARGUMENT: Defends scientific realism using causal-historical theory of reference to block meaning change arguments. Against Kuhnian worries about incommensurability, argues that theoretical terms refer via causal connections established when entities are first encountered, ensuring reference stability through theory change. Descriptivism about theoretical terms would make scientific realism vulnerable to meaning variance objections.
+
+  RELEVANCE: Applies causal reference theory to philosophy of science, showing how referentialist metasemantics supports realist commitments. Relevant for SGP because it shows stakes of reference theory debates—causal grounding ensures reference stability and realist commitments. If AI systems use theoretical terms, question arises whether they need similar causal grounding for reference.
+
+  POSITION: Causal-historical reference supporting scientific realism against Kuhnian challenges.
+  },
+  keywords = {causal-theory, scientific-realism, reference-stability, Medium}
+}
+
+@article{vignolo2021intuitions,
+  author = {Vignolo, Massimiliano and Domaneschi, Filippo},
+  title = {Intuitions on Semantic Reference},
+  journal = {Review of Philosophy and Psychology},
+  year = {2021},
+  volume = {12},
+  pages = {477--507},
+  doi = {10.1007/s13164-021-00560-7},
+  note = {
+  CORE ARGUMENT: Experimental philosophy study investigating cross-cultural variation in semantic intuitions about reference. Finds that Western participants show more descriptivist intuitions while East Asian participants show more causal-historical intuitions, challenging universality of intuitions supporting either theory. Questions whether debates should be settled by appeal to intuitions about cases.
+
+  RELEVANCE: Methodological challenge to intuition-based arguments in reference theory relevant for SGP. If semantic intuitions vary culturally, appeals to intuitions about what makes symbols meaningful may not identify universal semantic facts. Important for assessing whether SGP identifies genuine semantic requirement or reflects culturally variable intuitions about meaning.
+
+  POSITION: Experimental philosophy challenging universality of semantic intuitions.
+  },
+  keywords = {experimental-philosophy, reference, cross-cultural-semantics, Low}
+}
+
+@article{carter2016semantic,
+  author = {Carter, J. Adam and Collin, J. H. and Palermos, S. Orestis},
+  title = {Semantic inferentialism as (a Form of) active externalism},
+  journal = {Phenomenology and the Cognitive Sciences},
+  year = {2016},
+  volume = {16},
+  number = {3},
+  pages = {387--402},
+  doi = {10.1007/s11097-016-9458-y},
+  note = {
+  CORE ARGUMENT: Argues that Brandom's semantic inferentialism entails active externalism—the view that cognitive processes can constitutively include environmental elements. Unlike passive externalism (Putnam, Burge) where environment determines content but cognition remains internal, inferentialist norms are constituted by social-environmental inferential practices, making environment part of cognitive process itself.
+
+  RELEVANCE: Connects inferentialism to extended cognition debates, with implications for AI symbol grounding. If meaning is constituted by extended inferential practices involving environment and community, then grounding is not about individual symbol-object links but about system's embedding in inferential practices. Suggests different conception of what grounding amounts to for AI systems.
+
+  POSITION: Inferentialism entails active (extended) externalism about cognition and meaning.
+  },
+  keywords = {inferentialism, active-externalism, extended-cognition, Medium}
+}
+
+@article{sinclair2018conceptual,
+  author = {Sinclair, Neil},
+  title = {Conceptual Role Semantics and the Reference of Moral Concepts},
+  journal = {European Journal of Philosophy},
+  year = {2018},
+  volume = {26},
+  number = {1},
+  pages = {95--121},
+  doi = {10.1111/EJOP.12191},
+  note = {
+  CORE ARGUMENT: Examines conceptual role semantics for moral concepts, arguing that most plausible version involves narrow conceptual roles (including connections to motivational states) that cannot be combined with moral realism. Conceptual role determines content through inferential and motivational connections, not through reference to robust properties.
+
+  RELEVANCE: Shows how conceptual role semantics (cousin of inferentialism) works in domain where grounding-in-reality is contested. If moral meaning is conceptual role rather than reference to moral facts, parallel may hold for all concepts—meaning might be role rather than grounding. Relevant for whether SGP presupposes referentialist metasemantics inappropriate even for paradigm cases.
+
+  POSITION: Conceptual role semantics for moral concepts; anti-realist implications.
+  },
+  keywords = {conceptual-role-semantics, moral-concepts, anti-realism, Low}
+}
+
+@article{griffin2020russell,
+  author = {Griffin, Nicholas},
+  title = {Russell's Use Theory of Meaning},
+  journal = {Journal of the History of Analytical Philosophy},
+  year = {2020},
+  volume = {8},
+  number = {3},
+  pages = {1--18},
+  doi = {10.15173/jhap.v8i3.4142},
+  note = {
+  CORE ARGUMENT: Argues that Russell developed use theory of meaning anticipating Wittgenstein in "The Analysis of Mind" (1921). Understanding utterance is not grasping referent but responding appropriately—meaning is constituted by patterns of use and response, not reference relations. Challenges standard history treating Wittgenstein as originator of use theories.
+
+  RELEVANCE: Historical background for use theories as alternatives to referentialism. If meaning is use pattern rather than reference, symbols might be meaningful through appropriate use competence without grounding in non-symbolic reality. Relevant for whether SGP presupposes referentialist metasemantics rejected by Wittgensteinian and pragmatist traditions.
+
+  POSITION: Use theory of meaning; historical scholarship on Russell's anticipation of Wittgenstein.
+  },
+  keywords = {use-theory, meaning-as-use, historical-scholarship, Medium}
+}
+
+@article{kamota2024rule,
+  author = {Kamota, Tano Benjamin and Ndemo, George},
+  title = {Rule Following: A Criterion for Wittgenstein's meaning as Use Theory},
+  journal = {International Journal of Social Science and Human Research},
+  year = {2024},
+  volume = {7},
+  number = {10},
+  pages = {7146--7154},
+  doi = {10.47191/ijsshr/v7-i10-95},
+  note = {
+  CORE ARGUMENT: Defends Wittgenstein's meaning-as-use theory against Kripke's skeptical interpretation, arguing that rule following provides criterion for meaning. Meaning is realized when language users follow semantic rules (not syntactic rules) based on context within language games. Argues that rule following is neither mental nor purely behavioral but embedded in practical life and social context.
+
+  RELEVANCE: Contemporary defense of use theory relevant for alternatives to referentialist grounding. If meaning is following rules in language games, symbols become meaningful through participation in rule-governed practices, not through grounding in objects. Relevant for whether AI systems need referential grounding or capacity for rule-following in language games.
+
+  POSITION: Wittgensteinian meaning-as-use; rule-following as criterion for meaning.
+  },
+  keywords = {use-theory, rule-following, Wittgenstein, Medium}
+}
+
+@article{abreu2023introduction,
+  author = {Abreu, Pedro and Terzian, Giulia},
+  title = {Introduction: Metalinguistic Disagreement and Semantic Externalism},
+  journal = {Topoi},
+  year = {2023},
+  volume = {42},
+  number = {4},
+  pages = {975--981},
+  doi = {10.1007/s11245-023-09948-9},
+  note = {
+  CORE ARGUMENT: Introduction to special issue on metalinguistic disagreement under semantic externalism. When meaning is externally determined (Putnam, Burge), speakers can disagree about what their words mean even while using same words. Examines how externalist metasemantics affects philosophical method and nature of conceptual disputes.
+
+  RELEVANCE: Recent work on externalist metasemantics relevant for understanding grounding requirements. If external factors (causal-historical chains, community practices) determine meaning, then grounding is not individual cognitive achievement but social-environmental fact. Important for whether SGP should be framed individualistically or as question about system's embedding in semantic community.
+
+  POSITION: Semantic externalism; explores implications for disagreement and meaning determination.
+  },
+  keywords = {semantic-externalism, metalinguistic-disagreement, metasemantics, Medium}
+}
+
+@article{sin2024indian,
+  author = {Sin, Lai},
+  title = {An Indian Debate on Semantic Internalism and Externalism: Śāntarakṣita's Tattvasaṃgraha on the Meaning of Words},
+  journal = {Religions},
+  year = {2024},
+  volume = {15},
+  number = {12},
+  pages = {1548},
+  doi = {10.3390/rel15121548},
+  note = {
+  CORE ARGUMENT: Examines Buddhist apoha (exclusion) theory as semantic internalism where meaning is determined by what terms exclude rather than what they denote. Śāntarakṣita defends internalist view against externalist opponents, arguing that words acquire meaning through negation and mental ascertainment rather than reference to external universals or objects.
+
+  RELEVANCE: Cross-cultural perspective on internalism-externalism debate showing alternatives to standard Western referentialist frameworks. Apoha theory suggests meaning might be constituted by exclusionary patterns rather than positive reference, offering different conception of semantic determination. Relevant for broadening theoretical options beyond referentialist assumptions potentially underlying SGP.
+
+  POSITION: Buddhist semantic internalism via exclusion (apoha) theory; cross-cultural philosophy.
+  },
+  keywords = {semantic-internalism, apoha-theory, cross-cultural-philosophy, Low}
+}
+
+@article{naik2024language,
+  author = {Naik, Babuli},
+  title = {Language and Cognition: Examining the Role of Apoha in Buddhist Theories of Meaning and Semantics},
+  journal = {ShodhKosh: Journal of Visual and Performing Arts},
+  year = {2024},
+  volume = {5},
+  number = {1},
+  pages = {322--331},
+  doi = {10.29121/shodhkosh.v5.i1.2024.5446},
+  note = {
+  CORE ARGUMENT: Analyzes Buddhist apoha theory in light of contemporary cognitive science and prototype theory. Argues that exclusion-based semantics aligns with non-essentialist, context-sensitive categorization found in empirical research on concepts. Meaning is constructed through contrast and differentiation rather than inherent identity or reference to universals.
+
+  RELEVANCE: Connects alternative semantic theory to empirical cognitive science, relevant for assessing whether SGP correctly identifies cognitive requirements. If categorization and meaning are prototype-based and context-sensitive rather than referential, grounding requirements might differ from those assumed by SGP. Shows how different semantic theories have different empirical commitments.
+
+  POSITION: Buddhist apoha theory; connection to prototype theory and cognitive science.
+  },
+  keywords = {apoha-theory, cognitive-science, prototype-theory, Low}
+}
+
+@article{williamson2008reference,
+  author = {Williamson, Timothy},
+  title = {Reference, inference and the semantics of pejoratives},
+  journal = {The philosophy of David Kaplan},
+  year = {2008},
+  pages = {137--158},
+  note = {
+  CORE ARGUMENT: Contrasts referentialist and inferentialist approaches to semantics, examining which better handles pejoratives. Referentialist account gives center stage to referential semantics used to explain inference rules (as truth-preserving). Inferentialist account reverses priority, taking inference rules as fundamental and explaining reference via inferential role. Uses pejoratives as test case for adjudicating between approaches.
+
+  RELEVANCE: Clear statement of referentialism vs. inferentialism contrast using concrete semantic phenomenon. Relevant for SGP because it articulates the metasemantic choice: is reference explanatorily prior (suggesting grounding is fundamental) or is inference prior (suggesting grounding might be derivative or dispensable)? The paper shows stakes of choosing between frameworks.
+
+  POSITION: Comparison of referentialist and inferentialist approaches; argues for referentialism for pejoratives.
+  },
+  keywords = {referentialism-vs-inferentialism, pejoratives, semantic-theory, High}
+}

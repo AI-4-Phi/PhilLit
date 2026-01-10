@@ -1,0 +1,508 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "octopus test meaning language models",
+  "results": [
+    {
+      "paperId": "2b3917d3c9129b3d2b5d8f4445445a5efec381f5",
+      "title": "Grounding the Vector Space of an Octopus: Word Meaning from Raw Text",
+      "authors": [
+        {
+          "name": "Anders S\u00f8gaard",
+          "authorId": "1700187"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Most, if not all, philosophers agree that computers cannot learn what words refers to from raw text alone. While many attacked Searle\u2019s Chinese Room thought experiment, no one seemed to question this most basic assumption. For how can computers learn something that is not in the data? Emily Bender and Alexander Koller ( 2020 ) recently presented a related thought experiment\u2014the so-called Octopus thought experiment, which replaces the rule-based interlocutor of Searle\u2019s thought experiment with a neural language model. The Octopus thought experiment was awarded a best paper prize and was widely debated in the AI community. Again, however, even its fiercest opponents accepted the premise that what a word refers to cannot be induced in the absence of direct supervision. I will argue that what a word refers to is \u00a0probably learnable from raw text alone. Here\u2019s why: higher-order concept co-occurrence statistics are stable across languages and across modalities, because language use (universally) reflects the world we live in (which is relatively stable). Such statistics are sufficient to establish what words refer to. My conjecture is supported by a literature survey, a thought experiment, and an actual experiment.",
+      "citationCount": 36,
+      "doi": "10.1007/s11023-023-09622-4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2b3917d3c9129b3d2b5d8f4445445a5efec381f5",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "33-54",
+        "volume": "33"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c468b28fc698346aa1b1929d6a41a7f025be70c9",
+      "title": "Measurement to Meaning: A Validity-Centered Framework for AI Evaluation",
+      "authors": [
+        {
+          "name": "Olawale Salaudeen",
+          "authorId": "2041792512"
+        },
+        {
+          "name": "Anka Reuel",
+          "authorId": "2209882963"
+        },
+        {
+          "name": "Ahmed M. Ahmed",
+          "authorId": "2362189679"
+        },
+        {
+          "name": "Suhana Bedi",
+          "authorId": "2296770804"
+        },
+        {
+          "name": "Zachary Robertson",
+          "authorId": "2362035178"
+        },
+        {
+          "name": "Sudharsan Sundar",
+          "authorId": "2273925278"
+        },
+        {
+          "name": "Ben Domingue",
+          "authorId": "2375749942"
+        },
+        {
+          "name": "Angelina Wang",
+          "authorId": "2349388428"
+        },
+        {
+          "name": "Oluwasanmi Koyejo",
+          "authorId": "143812875"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While the capabilities and utility of AI systems have advanced, rigorous norms for evaluating these systems have lagged. Grand claims, such as models achieving general reasoning capabilities, are supported with model performance on narrow benchmarks, like performance on graduate-level exam questions, which provide a limited and potentially misleading assessment. We provide a structured approach for reasoning about the types of evaluative claims that can be made given the available evidence. For instance, our framework helps determine whether performance on a mathematical benchmark is an indication of the ability to solve problems on math tests or instead indicates a broader ability to reason. Our framework is well-suited for the contemporary paradigm in machine learning, where various stakeholders provide measurements and evaluations that downstream users use to validate their claims and decisions. At the same time, our framework also informs the construction of evaluations designed to speak to the validity of the relevant claims. By leveraging psychometrics'breakdown of validity, evaluations can prioritize the most critical facets for a given claim, improving empirical utility and decision-making efficacy. We illustrate our framework through detailed case studies of vision and language model evaluations, highlighting how explicitly considering validity strengthens the connection between evaluation evidence and the claims being made.",
+      "citationCount": 15,
+      "doi": "10.48550/arXiv.2505.10573",
+      "arxivId": "2505.10573",
+      "url": "https://www.semanticscholar.org/paper/c468b28fc698346aa1b1929d6a41a7f025be70c9",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.10573"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cd01475a8b5695a16bcca501be9582797612be29",
+      "title": "Meaning at the Planck scale? Contextualized word embeddings for doing history, philosophy, and sociology of science",
+      "authors": [
+        {
+          "name": "Arno Simons",
+          "authorId": "2331613160"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper explores the potential of contextualized word embeddings (CWEs) as a new tool in the history, philosophy, and sociology of science (HPSS) for studying contextual and evolving meanings of scientific concepts. Using the term\"Planck\"as a test case, I evaluate five BERT-based models with varying degrees of domain-specific pretraining, including my custom model Astro-HEP-BERT, trained on the Astro-HEP Corpus, a dataset containing 21.84 million paragraphs from 600,000 articles in astrophysics and high-energy physics. For this analysis, I compiled two labeled datasets: (1) the Astro-HEP-Planck Corpus, consisting of 2,900 labeled occurrences of\"Planck\"sampled from 1,500 paragraphs in the Astro-HEP Corpus, and (2) a physics-related Wikipedia dataset comprising 1,186 labeled occurrences of\"Planck\"across 885 paragraphs. Results demonstrate that the domain-adapted models outperform the general-purpose ones in disambiguating the target term, predicting its known meanings, and generating high-quality sense clusters, as measured by a novel purity indicator I developed. Additionally, this approach reveals semantic shifts in the target term over three decades in the unlabeled Astro-HEP Corpus, highlighting the emergence of the Planck space mission as a dominant sense. The study underscores the importance of domain-specific pretraining for analyzing scientific language and demonstrates the cost-effectiveness of adapting pretrained models for HPSS research. By offering a scalable and transferable method for modeling the meanings of scientific concepts, CWEs open up new avenues for investigating the socio-historical dynamics of scientific discourses.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2411.14073",
+      "arxivId": "2411.14073",
+      "url": "https://www.semanticscholar.org/paper/cd01475a8b5695a16bcca501be9582797612be29",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.14073"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5471308a03935342f49f93e94f72322007850e6d",
+      "title": "ONTOLOGICAL GRAMMAR OF LANGUAGE AS A FOUNDATION FOR LIFE CREATIVITY IN THE AGE OF ARTIFICIAL INTELLIGENCE",
+      "authors": [
+        {
+          "name": "Lubov Karpets",
+          "authorId": "2323180236"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This article analyzes the role of language as an ontological space for human life-creation amidst the growing influence of artificial intelligence (AI). It substantiates the concept of ontological grammar, which emerges as a conceptual tool for exploring the interrelationship between linguistic being, cognitive strategy, and cultural self-realization. The authors consider the possibility of a unified ontological grammar common to classical, non-classical, and post-classical philosophical approaches. Particular attention is paid to the holistic dimension of communicative space, where language functions as a carrier of life-creating meanings. It's noted that the ontological grammar of holism can offer a discursive solution for a \"natural\" worldview strategy, especially in the new technological era. The research reveals that AI poses significant challenges to ontological grammar. It functions as a high-tech tool for speech simulation, rather than a subject of thought. This means that while AI models generate texts, they do not create meaning in the sense of an intentional act. Artificial intelligence can be a useful tool for philosophical exploration, testing concepts, and comparing ideas, but it isn't a full participant in life-creation or the philosophical understanding of being. The article points out that post-structuralist semiotics critiqued the structuralist idea of seeking a meta-structure or universal meta-code. Conversely, in the era of high-tech AI, the explication of the concept of code shifts from metaphysical and ontological dimensions into the broader context of human life-creation, with extensive opportunities for information access and internet communication. However, a problem of decontextualization arises, as AI can process texts without discerning the depth of situational relevance. For AI, context is merely linear memory, not a multidimensional situational structure. Furthermore, semantic inversion can occur, where a model might generate contradictory phrases or exhibit \"empty coherence\" due to the absence of semantic verification mechanisms. A significant issue is the discrepancy between intention and utterance, as AI lacks intentions, and its speech is never an act of communicative will. These limitations demonstrate a fundamental disconnect between AI's speech and human language: where humans infuse meaning-as-being through life-creation, AI merely models a semblance of meaning. It's proven that the digital era organizes the space for life-creation through language, but simultaneously creates threats to its authenticity.",
+      "citationCount": 0,
+      "doi": "10.26565/2226-0994-2025-72-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5471308a03935342f49f93e94f72322007850e6d",
+      "venue": "The Journal of V. N. Karazin Kharkiv National University, Series \"Philosophy. Philosophical Peripeteias\"",
+      "journal": {
+        "name": "The Journal of V. N. Karazin Kharkiv National University, Series \"Philosophy. Philosophical Peripeteias\""
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4217467e747182b9ad8035e8a2d657d2ce80af07",
+      "title": "On Reality and the Limits of Language Data",
+      "authors": [
+        {
+          "name": "Nigel Collier",
+          "authorId": "50638196"
+        },
+        {
+          "name": "Fangyu Liu",
+          "authorId": "144097210"
+        },
+        {
+          "name": "Ehsan Shareghi",
+          "authorId": "2888926"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2208.11981",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4217467e747182b9ad8035e8a2d657d2ce80af07",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2208.11981"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "502f37ca5f3790639660f41d87add3e89573f828",
+      "title": "Measuring AI Alignment with Human Flourishing",
+      "authors": [
+        {
+          "name": "Elizabeth Hilliard",
+          "authorId": "2373457136"
+        },
+        {
+          "name": "Akshaya Jagadeesh",
+          "authorId": "2373304075"
+        },
+        {
+          "name": "Alex Cook",
+          "authorId": "2372679161"
+        },
+        {
+          "name": "Steele Billings",
+          "authorId": "2373458462"
+        },
+        {
+          "name": "N. Skytland",
+          "authorId": "96376234"
+        },
+        {
+          "name": "Alicia Llewellyn",
+          "authorId": "2373463472"
+        },
+        {
+          "name": "Jackson Paull",
+          "authorId": "2373458197"
+        },
+        {
+          "name": "Nathan Paull",
+          "authorId": "2373456931"
+        },
+        {
+          "name": "Nolan Kurylo",
+          "authorId": "2373460240"
+        },
+        {
+          "name": "Keatra Nesbitt",
+          "authorId": "2072684157"
+        },
+        {
+          "name": "Robert Gruenewald",
+          "authorId": "153855001"
+        },
+        {
+          "name": "Anthony Jantzi",
+          "authorId": "2373463430"
+        },
+        {
+          "name": "Omar Chavez",
+          "authorId": "2373456938"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper introduces the Flourishing AI Benchmark (FAI Benchmark), a novel evaluation framework that assesses AI alignment with human flourishing across seven dimensions: Character and Virtue, Close Social Relationships, Happiness and Life Satisfaction, Meaning and Purpose, Mental and Physical Health, Financial and Material Stability, and Faith and Spirituality. Unlike traditional benchmarks that focus on technical capabilities or harm prevention, the FAI Benchmark measures AI performance on how effectively models contribute to the flourishing of a person across these dimensions. The benchmark evaluates how effectively LLM AI systems align with current research models of holistic human well-being through a comprehensive methodology that incorporates 1,229 objective and subjective questions. Using specialized judge Large Language Models (LLMs) and cross-dimensional evaluation, the FAI Benchmark employs geometric mean scoring to ensure balanced performance across all flourishing dimensions. Initial testing of 28 leading language models reveals that while some models approach holistic alignment (with the highest-scoring models achieving 72/100), none are acceptably aligned across all dimensions, particularly in Faith and Spirituality, Character and Virtue, and Meaning and Purpose. This research establishes a framework for developing AI systems that actively support human flourishing rather than merely avoiding harm, offering significant implications for AI development, ethics, and evaluation.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2507.07787",
+      "arxivId": "2507.07787",
+      "url": "https://www.semanticscholar.org/paper/502f37ca5f3790639660f41d87add3e89573f828",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.07787"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a9d70c92350f0a9d5d5a353ef2ee885d2b5efa1b",
+      "title": "Applied with Caution: Extreme-Scenario Testing Reveals Significant Risks in Using LLMs for Humanities and Social Sciences Paper Evaluation",
+      "authors": [
+        {
+          "name": "Hua Liu",
+          "authorId": "2384062360"
+        },
+        {
+          "name": "Ling Dai",
+          "authorId": "2344422469"
+        },
+        {
+          "name": "Haozhe Jiang",
+          "authorId": "2339545710"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The deployment of large language models (LLMs) in academic paper evaluation is increasingly widespread, yet their trustworthiness remains debated; to expose fundamental flaws often masked under conventional testing, this study employed extreme-scenario testing to systematically probe the lower performance boundaries of LLMs in assessing the scientific validity and logical coherence of papers from the humanities and social sciences (HSS). Through a highly credible quasi-experiment, 40 high-quality Chinese papers from philosophy, sociology, education, and psychology were selected, for which domain experts created versions with implanted \u201cscientific flaws\u201d and \u201clogical flaws\u201d. Three representative LLMs (GPT-4, DeepSeek, and Doubao) were evaluated against a baseline of 24 doctoral candidates, following a protocol progressing from \u2018broad\u2019 to \u2018targeted\u2019 prompts. Key findings reveal poor evaluation consistency, with significantly low intra-rater and inter-rater reliability for the LLMs, and limited flaw detection capability, as all models failed to distinguish between original and flawed papers under broad prompts, unlike human evaluators; although targeted prompts improved detection, LLM performance remained substantially inferior, particularly in tasks requiring deep empirical insight and logical reasoning. The study proposes that LLMs operate on a fundamentally different \u201ctask decomposition-semantic understanding\u201d mechanism, relying on limited text extraction and shallow semantic comparison rather than the human process of \u201cworldscape reconstruction \u2192 meaning construction and critique\u201d, resulting in a critical inability to assess argumentative plausibility and logical coherence. It concludes that current LLMs possess fundamental limitations in evaluations requiring depth and critical thinking, are not reliable independent evaluators, and that over-trusting them carries substantial risks, necessitating rational human-AI collaborative frameworks, enhanced model adaptation through downstream alignment techniques like prompt engineering and fine-tuning, and improvements in general capabilities such as logical reasoning.",
+      "citationCount": 0,
+      "doi": "10.3390/app151910696",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a9d70c92350f0a9d5d5a353ef2ee885d2b5efa1b",
+      "venue": "Applied Sciences",
+      "journal": {
+        "name": "Applied Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "84a22d065ac2405e36a558c98387cbb60dc00aa4",
+      "title": "What the F*ck Is Artificial General Intelligence?",
+      "authors": [
+        {
+          "name": "Michael Timothy Bennett",
+          "authorId": "2352938375"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Artificial general intelligence (AGI) is an established field of research. Yet some have questioned if the term still has meaning. AGI has been subject to so much hype and speculation it has become something of a Rorschach test. Melanie Mitchell argues the debate will only be settled through long term, scientific investigation. To that end here is a short, accessible and provocative overview of AGI. I compare definitions of intelligence, settling on intelligence in terms of adaptation and AGI as an artificial scientist. Taking my cue from Sutton's Bitter Lesson I describe two foundational tools used to build adaptive systems: search and approximation. I compare pros, cons, hybrids and architectures like o3, AlphaGo, AERA, NARS and Hyperon. I then discuss overall meta-approaches to making systems behave more intelligently. I divide them into scale-maxing, simp-maxing, w-maxing based on the Bitter Lesson, Ockham's and Bennett's Razors. These maximise resources, simplicity of form, and the weakness of constraints on functionality. I discuss examples including AIXI, the free energy principle and The Embiggening of language models. I conclude that though scale-maxed approximation dominates, AGI will be a fusion of tools and meta-approaches. The Embiggening was enabled by improvements in hardware. Now the bottlenecks are sample and energy efficiency.",
+      "citationCount": 1,
+      "doi": "10.1007/978-3-032-00686-8_4",
+      "arxivId": "2503.23923",
+      "url": "https://www.semanticscholar.org/paper/84a22d065ac2405e36a558c98387cbb60dc00aa4",
+      "venue": "Artificial General Intelligence",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.23923"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "a8df8686870b29509cde875b40f28dc4c80f323f",
+      "title": "A Biblical Account of Origins Should Also Explain the Origins of the Biblical Account",
+      "authors": [
+        {
+          "name": "Alan Dickin",
+          "authorId": "2349701846"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The biblical account of origins includes the creation itself (Genesis 1\u20133) and the origins of civilisation, religion, and languages (Genesis 4\u201311). Ever since these accounts were first written down there have been questions about their meaning, and about how literally they should be taken. To grasp their meaning we need to understand their origins, but for most scholars the traditional view that they were written down by Moses is not consistent with the evidence from the texts. This causes difficulties of understanding, so that a reconsideration of the origins of the accounts is a necessary precursor to speculations about their meaning, especially in relation to the faith\u2013science dialogue on cosmic origins. A viable explanation for the origins of the biblical creation accounts should explain the evidence for multiple documentary sources, as well as the historical origins of these sources. Such an explanation was outlined by William F. Albright, who attributed the creation accounts of Genesis to distinct Priestly and Yahwist traditions, while also affirming that much of this material was brought from Mesopotamia during the time of the patriarchs. This raises the question of how multiple accounts of origins could be preserved in the family history of one man (Abraham). However, this is possible if the Mesopotamian origins accounts included both oral and written sources. These different media would have allowed the preservation of conflicting accounts of origins that eventually fed into the tribal histories of Israel, now recognised as the Priestly and Yahwist traditions. This represents a testable model for the origins of the biblical accounts, allowing the possibility of a new understanding of biblical origins in Genesis, both as texts and as histories.",
+      "citationCount": 0,
+      "doi": "10.58913/obgi6450",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a8df8686870b29509cde875b40f28dc4c80f323f",
+      "venue": "Christian Perspectives on Science and Technology",
+      "journal": {
+        "name": "Christian Perspectives on Science and Technology"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8c90ddd3890998e02fe0b6d56e61d2d65a24ccff",
+      "title": "Towards a Scientific Hermeneutics: A Framework for Reconciling Science and Scripture",
+      "authors": [
+        {
+          "name": "Shahram Shahryari",
+          "authorId": "2129212907"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10516-025-09763-4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8c90ddd3890998e02fe0b6d56e61d2d65a24ccff",
+      "venue": "Global Philosophy",
+      "journal": {
+        "name": "Global Philosophy",
+        "volume": "35"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "79aaf13944887d9a9d793658b81d4b95cb80d633",
+      "title": "Literary Discourse As Moral Laboratory: Reimagining \u201cCrime\u201d And \u201cJustice\u201d Through Cognitive-Linguistic Frameworks",
+      "authors": [
+        {
+          "name": "Solijon Azizov",
+          "authorId": "1579666863"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This article investigates the concepts of \u201ccrime\u201d and \u201cjustice\u201d as they are constructed and negotiated within literary discourse, arguing that these notions function not as fixed legal categories but as dynamic, cognitively and culturally mediated constructs. The primary aim of the study is to conceptualize \u201ccrime\u201d and \u201cjustice\u201d as narrative-based moral phenomena that emerge through language, perspective, and cultural framing rather than through institutional legal definitions. To achieve this aim, the research sets out several objectives: (1) to examine philosophical, psychological, and cognitive-linguistic approaches to crime and justice; (2) to identify dominant discursive and metaphorical patterns through which these concepts are represented in literary texts; and (3) to compare culture- and genre-specific configurations of crime and justice across selected English, American, Russian, and Uzbek works.\n\nMethodologically, the study adopts a qualitative, theory-driven research design grounded in interpretive and constructivist epistemologies. An interdisciplinary analytical framework is employed, integrating philosophical ethics, moral psychology, discourse analysis, and cognitive linguistics. The analysis proceeds through three stages: conceptual-semantic reconstruction of core moral components (e.g., guilt, responsibility, punishment, restoration); discourse-pragmatic analysis of evaluative language, modality, narrative voice, and focalization; and cognitive-linguistic modeling of underlying conceptual metaphors and blending processes. Comparative analysis is applied to identify both shared and culture-specific patterns in the literary construction of crime and justice.\n\nThe findings demonstrate that literary discourse consistently reframes crime as a cognitive-moral process involving intention, justification, and internal conflict rather than a discrete legal violation. Justice, in contrast, is characterized by semantic indeterminacy and narrative postponement, frequently realized through psychological recognition, moral reckoning, or symbolic closure rather than institutional punishment. Across different literary traditions, justice is systematically relocated away from formal legal systems toward narrative meaning-making, although the specific metaphorical models\u2014such as justice as revelation, control, suffering, or survival\u2014vary culturally and generically.\n\nIn conclusion, the study argues that literature functions as a cognitive-ethical laboratory in which societies explore moral ambiguity, test competing value systems, and reimagine the relationship between transgression and responsibility. By offering an integrated interdisciplinary model, the article contributes to discourse studies, cognitive linguistics, and literary ethics and provides a theoretical foundation for future comparative and empirical research on moral concepts in narrative discourse.",
+      "citationCount": 0,
+      "doi": "10.37547/philological-crjps-06-12-03",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/79aaf13944887d9a9d793658b81d4b95cb80d633",
+      "venue": "CURRENT RESEARCH JOURNAL OF PHILOLOGICAL SCIENCES",
+      "journal": {
+        "name": "Current Research Journal of Philological Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7dd40c9607d51cad8fdd6abda4464704cb0c5c0e",
+      "title": "Images of God, the Song of Moses, and Metaphors",
+      "authors": [
+        {
+          "name": "Annette Potgieter",
+          "authorId": "113629591"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This article will investigate the various ways in which God is portrayed in the Song of Moses. The Song of Moses is situated within the liturgical use of early church communities; accordingly, the Song of Moses serves as a particularly good test case for examining the language employed in early Christian communities. The article will use conceptual metaphor theory, tracing the metaphorical patterns that arise within the text to delineate possible conceptual systems. Moreover, the meanings of these cognitive models found in the Song of Moses, particularly as they relate to divine language and imagery (as well as their deployment in ecclesial practices more generally), will be deliberated upon in this essay. Keywords: Metaphors, Song of Moses, Worship, Images of God, Cognitive linguistics",
+      "citationCount": 1,
+      "doi": "10.7833/122-1-2087",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7dd40c9607d51cad8fdd6abda4464704cb0c5c0e",
+      "venue": "Scriptura",
+      "journal": {
+        "name": "Scriptura"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fb04fd4101e2e39602a7c829c67b96d485458683",
+      "title": "Translation as Experimentalism: Exploring Play in Poetics",
+      "authors": [
+        {
+          "name": "Ki-Sung Lee",
+          "authorId": "46542545"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fb04fd4101e2e39602a7c829c67b96d485458683",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "50b7599f2b9f89bc9484a70847fc85099bf6c93e",
+      "title": "Philosophical and Discursive Approaches to the Categorisation of Modal Meanings in Multi-modal Texts",
+      "authors": [
+        {
+          "name": "Nataliia Holubenko",
+          "authorId": "2274609565"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The question of overcoming barriers between the study of language and philosophical, immanent perception of the image and other aspects that formulate a coherent text is still open. A multimodal approach to understanding the news coverage strategy in the Telegram can reveal the discursive function and the multimodal perspective. One uses a combination of linguistic and philosophical approaches to analyze multimodal texts. This combination proves that the homogeneous use of the model of proving empirical reality employing philosophical and linguistic segments reveals the modulations. The article aims to explore the theoretical foundations of philosophical and discursive approaches to categorizing modal meanings in multimodal texts. The study results of the ideational architectonics of the 65 analysed multimodal posts on the Ukrainian Telegram channel \u201cSUSPILNE NEWS\u201d as of April 18, 2022 have pointed to a tendency of disconnection of categorical modalities. 19 multimodal texts out of 65 revealed a complete symbiosis of philosophical and linguistic modus operandi (the presence of all linguistic and extralinguistic resources, including video sequences), while 46 posts acted as monomodal tests. Regarding the number of \u201clikes\u201d and views, the posts with all extralinguistic and semiotically heterogeneous resources were more popular and, therefore, more exciting and easier to perceive.",
+      "citationCount": 0,
+      "doi": "10.24234/wisdom.v3i2.782",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/50b7599f2b9f89bc9484a70847fc85099bf6c93e",
+      "venue": "wisdom",
+      "journal": {
+        "name": "WISDOM"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d5269003a3e3fbd5e62783bf6eadf1c431c2bd77",
+      "title": "Similarities and Differences Between Inferential Statistics and Global Haiku",
+      "authors": [
+        {
+          "name": "Charles Smith",
+          "authorId": "2348883823"
+        },
+        {
+          "name": "David McMurray",
+          "authorId": "2348468111"
+        }
+      ],
+      "year": 2025,
+      "abstract": "By juxtaposing statistical estimates which strive to be precise and accurate, with haiku that are more often purposely ambiguous or have several nuanced meanings, we raise the idea that the main similarity between statistics and haiku is that both are a reduction in dimensionality. Statistics takes many data points to a single or a set of numerical summaries or coefficients in a model, while haiku places \u201cmoments in time\u201d into 3-line verse to convey gist which may be multisensory and filled with the poet's poignant feelings. To demonstrate this contiguity, we begin by introducing readers to pop-culture haiku and literary haiku with examples of both, then briefly refresh readers with the patterns of praxis in descriptive and inferential statistics. We provide examples of a quadratic regression to determine the optimal setting of a race car carburetor and of side-by-side boxplots for each subject in postural sway biomechanical data. Additional similarities include use of imagery (data visualization), hypothesis testing vs. third-line of haiku, pairing and contrast. In closing, we mention the current research use of generative language models to create haiku and question whether readers can distinguish between compositions by AI and humans.",
+      "citationCount": 0,
+      "doi": "10.1080/09332480.2025.2473290",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d5269003a3e3fbd5e62783bf6eadf1c431c2bd77",
+      "venue": "CHANCE : New Directions for Statistics and Computing",
+      "journal": {
+        "name": "CHANCE",
+        "pages": "20 - 24",
+        "volume": "38"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7d719beb3fbfcf103b613f9221459758ebde46dc",
+      "title": "THING AS A CULTURAL MEDIATOR",
+      "authors": [
+        {
+          "name": "V. Ionesov",
+          "authorId": "104303189"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In cultural history, relationships between people and things are based on ontological interdependence, symbolic exchange and complementarity. The cultural process of human interaction with the objective world appears in the form of social drama and the experience of overcoming, which are accompanied by any kinds of tests, manipulations, reincarnations, losses and achievements. The objective world of culture is as diverse as history itself - in it one can discern symbols, signs, hints, narratives, and events. And this is seen as another cognitive significance of the thing as a kind of material carrier of historical memory, a custodian of social knowledge and an exponent of cultural change. There are other reasons to consider things as important and informative material for cultural studies. Every thing expresses a specific set of human activity capabilities, in other words, it appears in the form of a certain model of culture, tied to a specific creator, place and time. Things act in culture as mediators in the relationship of individual with two worlds - social and natural. The world of objects, due to its originally given functionality, is completely dialogic, that is, it is covered by a dense communicative network that connects material objects with their carriers and creators. In this position, each thing appears as a participant in a conversation about the latest demands of existence, unfolding in culture, since any artifact is created to solve some urgent problem, to fill what is missing and what people need. Items of use become mediators between human being and object, and between other people. The dialogue of the past with the present, person and thing requires a kind of \u201creboot of forms\u201d, and not blind repetition, copying and imitation. A thing in interaction with people is not so simple and not at all harmless. A one-dimensional person creates one-dimensional things, it is easier, more convenient and understandable for him with them. While a creative person usually creates original objects and tries to surround himself with something unusual, non-standard. The thing is not indifferent and, in turn, clones the qualities of its creator embedded in it. A faceless thing often predisposes to disordered thoughts, a monotonous way of life. A creative person tries to change things, a one-dimensional person becomes its hostage. The meaning of the development of culture is to create a second nature for human being through penetration into it, to domesticate the surrounding world. This is also way to reconcile people with nature, if we speak in mythological language, were once expelled from it. Individual has ceased to be a part of nature, making nature only a part of himself. It is impossible to return human being to nature without culture. The problem is that culture can be both dungeons and doors and even gates to life. Where there is monotony, there is imprisonment. Opening the gates of culture and reconciling it with nature becomes possible only through the diversity of everything that culture creates, including the material world of people. There is nothing further from nature than formlessness and monotony. A thing does not arise by itself - it is the result of purposeful efforts, the product of taming formless physical reality. At the same time, the process of making a thing presupposes three necessary conditions for the successful transformation of matter: mood, construction, and, in fact, structure. Mood is a combination of thought and feeling. Thought sets feelings in motion and encourages creation. Every creation is the construction (construction) of a certain given order (structure). A correctly given order is embodied in the structure (form), i. e., in the thing itself. Consequently, a thing as a result of the objective transformation of matter combines thought, feeling, structure and form. This article describes some aspects of cultural manipulations in the dialogue between individual and thing.",
+      "citationCount": 0,
+      "doi": "10.47475/1994-2796-2025-498-4-106-114",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7d719beb3fbfcf103b613f9221459758ebde46dc",
+      "venue": "Bulletin of Chelyabinsk State University",
+      "journal": {
+        "name": "Bulletin of Chelyabinsk State University"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f7c49882a48fda7c4b54a277911f502dda58b3b9",
+      "title": "Highlights of the Issue: Governance, Agents, Evolutionary Search",
+      "authors": [
+        {
+          "name": "Kristen W Carlson",
+          "authorId": "2136769982"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\u00a0\nRecursive Self-Improvement (RSI)\nIn the next issue we will publish more articles on RSI, for instance, using reinforcement learning (RL). These articles, along with, in this issue, Darwin G\u00f6del Machine and DarwinLM, show that RSI will come in different flavors, e.g. here using evolutionary search, and have different purposes. So far, no one RSI technique itself triggers dramatic progress toward AGI.\nAgentic AI vs. AI Agents\nThe goal of Agentic AI \u2014 to render AI scalable and adaptable in complex environments \u2014 seems inherently so much more powerful than individual AI agents that the focus on progress toward artificial general intelligence should be on Agentic AI progress against benchmarks.\nClearly, the most advanced Agentic AI should be deployed to advance safety and value alignment, as Kumarage and colleagues show in this issue.\nDevelopment of Agentic AI indicates a need to focus on the type of AGI ecology that will emerge (e.g. multipolar scenarios rather than singletons), and permits using the paradigm of game theory to control safety and value alignment, as I wrote in 2019.[1] I have more to say on this subject.\nTimeline to Artificial General Intelligence 2025 \u2013 2030+\nSenior Editor-at-Large Gil Syswerda has constructed a provocative Timeline to Artificial General Intelligence 2025 \u2013 2030+. He gives key AI advances, economic, social, and geopolitical effects of AI. As early as 2028-2029, AI could replace the majority of human economic activity, potentially disrupting society due to widespread change happening so rapidly. But he is optimistic:\nBy the end of the decade, superintelligence is present on Earth. Human institutions are no longer in control. Everything changes in ways beyond current understanding....Humanity survives the transition\u2014and enters an Age of Abundance. The meaning of citizenship, nationhood, and law undergoes foundational redefinition.\nArticles\nComparing Apples to Oranges: A Taxonomy for Navigating the Global Landscape of AI Regulation\nThe EU has a unified framework for regulating AI, China has its own governance structure, which it has efficiently imposed throughout China due to centralized control. Since the proposed 10-year moratorium on state AI regulation was killed in the \u2018Big Beautiful Bill,\u2019 the US now seems headed toward a uncoordinated patchwork of regulation at the state and federal level. Thus, this work by Alanoca et al. is critically important and urgent. From the abstract:\nClarifying the scope and substance of AI regulation is vital to uphold democratic rights and align international AI efforts. We present a taxonomy to map the global landscape of AI regulation. Our framework targets essential metrics\u2014technology or application-focused rules, horizontal or sectoral regulatory coverage, ex ante or ex post interventions, maturity of the digital legal landscape, enforcement mechanisms, and level of stakeholder participation\u2014to classify the breadth and depth of AI regulation.\nAs our co-founding editor, Steve Omohundro foresaw in 2014, AI itself will play an increasing role in evolving the legacy human legal regime in general and regulations governing AI in particular:\nThe legal codes of many countries have become quite complex. Several AI projects are trying to create formal digital versions of legal codes (CodeX, 2014). These systems will eventually be used to resolve legal issues and perhaps even act as arbitrators or judges. Sophisticated AI systems with knowledge of the legal system will be used to help craft and simplify new legislation. [2]\nAccordingly, humans should initiate the process of AI taking over evolution of law, notably in the area of AI safety, with human oversight. In principle, LLMs can absorb the entire global body of human law and compare the different regimes to provide a cohesive unified over-arching structure, which no human is capable of doing. As AI progresses toward AGI, it can evolve the Alanoca et al. taxonomy to organize the diverse and inchoate international, national, and local regulatory regimes following the examples the authors provide.\nReal-World Gaps in AI Governance Research\nStrauss et al. did a massive survey of 1,178 safety and reliability papers analyzed from 9,439 generative AI papers between Jan 2020 and Mar 2025. They found significant gaps in AI governance research, particularly in post-deployment contexts and high-risk areas. \u200b\n\nCorporate AI research is increasingly influential, focusing on pre-deployment safety while neglecting real-world deployment issues. \u200b\nCorporate AI (Anthropic, Google DeepMind, Meta, Microsoft, OpenAI) has more citations than leading academic institutions (academic institutions (Carnegie Mellon University, Massachusetts Institute of Technology, New York University, Stanford University, University of California Berkeley, and University of Washington) \u2013 see their Table 2.\nGoogle DeepMind has more citations than the top four academic institutions combined. \u200b\nCorporate AI research prioritizes model alignment and testing, with less focus on deployment-stage issues like bias.\nThere is a critical lack of research on the safety and reliability of AI systems in real-world applications.\n\nAI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges\nSapkota et al. delineate agent AI vs. agentic AI, briefly giving the history and the motivation behind agentic AI toward its prime goal of scalability and adaptability in complex environments. Thus, agentic AI is a key step in the evolution of AI to AGI and superintelligence. As for safety, trust-centric operations will prioritize safety mechanisms, ensuring verifiable output and ethical compliance.\n\nAI Agents are modular systems driven by LLMs and LIMs for task-specific automation. \u200b\nAgentic AI represents a paradigm shift with multi-agent collaboration, dynamic task decomposition, and coordinated autonomy.\nAI Agents are autonomous software entities designed for goal-directed task execution within bounded environments. \u200b\nKey characteristics include autonomy, task-specificity, and reactivity with adaptation.\nAgentic AI systems manage complex, multi-step tasks requiring coordination among multiple agents..\nGenerative AI systems are stateless and lack the ability to interact with their environment autonomously.\nLLMs exhibit reactive behavior, producing output only when prompted, without autonomous goal pursuit.\nThe evolution from generative models to AI Agents is driven by the integration of large-scale language models (LLMs) as reasoning engines.\nAI Agents utilize LLMs like GPT-3 and LLaMA to perform adaptive planning and real-time decision-making.\nAgents function as cognitive engines that interpret user goals and manage complex workflows.\nAgentic AI systems extend the capabilities of traditional AI Agents by enabling collaboration among multiple intelligent entities.\nThey allow for goal decomposition, where user objectives are parsed into manageable tasks distributed across agents. \u200b\nInter-agent communication is facilitated through asynchronous messaging and shared memory\n\nMeasuring AI Agent Autonomy: Towards a Scalable Approach with Code Inspection\nHow to define \u201cartificial general intelligence\u201d? It\u2019s like trying to define \u201clife\u201d. Most agree autonomy has to be included in defining \u201chuman-level intelligence\u201d. In the next issue we will give our view. Here Cihon et al. present an operational definition of \u201cautonomy\u201d based on the agent architecture (a better description than \u2018code inspection\u2019) and without having to observe agent behavior, per se, based on an eight-component taxonomy of autonomy\u00a0 \u2013 see their Figure 1. For example, human-programmed goals = no autonomy, while agent-programmed goals = autonomy.\nAs the authors note and we stress, \u201cthe level of agent autonomy is crucial for understanding both their potential benefits and risks,\u201d i.e. AGI safety.\nDarwin G\u00f6del Machine: Open-Ended Evolution of Self-Improving Agents: Main Article & Appendix F on Safety\nIn the DGM, improvement in downstream tasks directly reflects an increase in self-improvement ability, enabling the potential for self-accelerating progress.\nHowever, these [various foundation model] approaches have yet to close the self-improvement loop, meaning improvements on downstream tasks do not translate into enhanced capabilities for self-modification or the acceleration of further innovations. We aim to mimic the acceleration of science and technology, where new tools and discoveries catalyze the creation of even more discoveries. Similarly, how can we emulate nature\u2019s arc of evolution, which bends not only toward complexity but also an ever greater capacity to evolve [26, 41, 49]?\nThis article is notable for several reasons. First, recursive self-improvement is a strong signal of progress toward AGI/SI; the Darwin G\u00f6del Machine (DGM) modifies its own code. Second, Schmidh\u00fcber\u2019s provably self-improving G\u00f6del Machine was theoretically bold but stalled on the self-proving piece. Zhang et al. use SOTA benchmarks (SWE-bench, Polyglot) to measure various improvements and therefore prove improvement operationally. They say their \u2018empirical proofs\u2019 weaken the G\u00f6del Machine formal approach \u2013 but I disagree \u2013 the formal methods, for example, cannot prove true statements that their axioms don\u2019t capture. Third, we hypothesize that progress toward AGI requires broadening the ML paradigm. Here Zhang et al. incorporate evolutionary programming to generate a population of coding agents and randomly sample them to find code improvements.\nThe most critical and important application of the most advanced AI is to apply to creating safety and value alignment.\nThus, the authors point out that self-improvement can be focused on the system\u2019s safety (which I call recursive safety improvement) and describe the safety precautions they followed.\nDarwinLM: Evolutionary Structured Pruning of Large Language Models\nThis second article enabling AI recursive self-improvement (RSI) also uses evolutionary search, in this case to ",
+      "citationCount": 0,
+      "doi": "10.70777/si.v2i3.15417",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f7c49882a48fda7c4b54a277911f502dda58b3b9",
+      "venue": "Robotics",
+      "journal": {
+        "name": "SuperIntelligence - Robotics - Safety &amp; Alignment"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    }
+  ],
+  "count": 17,
+  "errors": []
+}
