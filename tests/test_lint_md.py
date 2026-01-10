@@ -112,3 +112,23 @@ class TestLintMarkdown:
         assert result.stdout.count("Fix:") >= 2
         assert "MD022" in result.stdout
         assert "MD001" in result.stdout
+
+    def test_yaml_frontmatter_not_misinterpreted(self, tmp_path):
+        """YAML frontmatter should not be misinterpreted as setext heading."""
+        md_file = tmp_path / "frontmatter.md"
+        # This pattern was causing false positives: pymarkdown saw the ---
+        # followed by title: as a setext-style heading
+        md_file.write_text(
+            '---\ntitle: "Test Document"\ndate: 2026-01-09\n---\n\n'
+            "## Introduction\n\nSome text.\n\n## Methods\n\nMore text.\n"
+        )
+
+        result = subprocess.run(
+            [sys.executable, str(SCRIPT_PATH), str(md_file)],
+            capture_output=True,
+            text=True,
+        )
+        # Should pass - no false positives about heading style inconsistency
+        assert result.returncode == 0
+        assert "MD003" not in result.stdout  # No heading style errors
+        assert "MD022" not in result.stdout  # No blank line errors from frontmatter
