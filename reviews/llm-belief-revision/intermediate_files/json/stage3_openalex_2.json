@@ -1,0 +1,2334 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "AI cognition philosophy",
+  "results": [
+    {
+      "openalex_id": "W4387880820",
+      "doi": "10.46938/tv.2023.579",
+      "title": "A Historical Interaction between Artificial Intelligence and Philosophy",
+      "authors": [
+        {
+          "name": "Youheng Zhang",
+          "openalex_id": "A5012230155",
+          "orcid": "https://orcid.org/0009-0004-9894-7442"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-23",
+      "abstract": "This paper delves into AI development\u2019s historical and philosophical dimensions while highlighting the symbiotic relationship between philosophy and AI from a technological perspective: philosophy furnishes foundational concepts, and AI supplies practical tools. The paper posits neurosymbolic AI as a solution to present challenges, sparking discussions encompassing both technical and philosophical considerations. Advocating a multidisciplinary approach calls for merging empirical AI insights with philosophy and cognition science to enrich our comprehension of intelligence and propel AI forward.",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "Teorie v\u011bdy / Theory of Science",
+        "type": "journal",
+        "issn": [
+          "1210-0250",
+          "1804-6347"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://teorievedy.flu.cas.cz/index.php/tv/article/download/579/616"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4387880820"
+    },
+    {
+      "openalex_id": "W4313445999",
+      "doi": "10.1007/978-3-031-08215-3_9",
+      "title": "Responsible Artificial Intelligence: Recommendations and Lessons Learned",
+      "authors": [
+        {
+          "name": "Virginia Dignum",
+          "openalex_id": "A5050532928",
+          "orcid": "https://orcid.org/0000-0001-7409-5813",
+          "institutions": [
+            "Ume\u00e5 University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Abstract Artificial Intelligence (AI) has huge potential to bring accuracy, efficiency, cost savings and speed to a whole range of human activities and to provide entirely new insights into behaviour and cognition. However, the way AI is developed and deployed for a great part determines how AI will impact our lives and societies. For instance, automated classification systems can deliver prejudiced results and therefore raise questions about privacy and bias; and, the autonomy of intelligent systems, such as, e.g. self-driving vehicles, raises concerns about safety and responsibility. AI\u2019s impact concerns not only the research and development directions for AI, but also how these systems are introduced into society and used in everyday situations. There is a large debate concerning how the use of AI will influence labour, well-being, social interactions, health care, income distribution and other social areas. Dealing with these issues requires that ethical, legal, societal and economic implications are taken into account. In this paper, I will discuss how a responsible approach to the development and use of AI can be achieved, and how current approaches to ensure the ethical alignment of decisions made or supported by AI systems can benefit from the social perspective embedded in non-Western philosophies, in particular the Ubuntu philosophy.",
+      "cited_by_count": 24,
+      "type": "book-chapter",
+      "source": {
+        "name": "Social and cultural studies of robots and AI",
+        "type": "book series",
+        "issn": [
+          "2523-8523",
+          "2523-8531"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-031-08215-3_9.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 24,
+      "url": "https://openalex.org/W4313445999"
+    },
+    {
+      "openalex_id": "W3083943005",
+      "doi": "10.1007/s11023-020-09538-3",
+      "title": "The State Space of Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Holger Lyre",
+          "openalex_id": "A5033674978",
+          "orcid": "https://orcid.org/0000-0002-6040-0263",
+          "institutions": [
+            "Center for Behavioral Brain Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-01",
+      "abstract": "Abstract The goal of the paper is to develop and propose a general model of the state space of AI. Given the breathtaking progress in AI research and technologies in recent years, such conceptual work is of substantial theoretical interest. The present AI hype is mainly driven by the triumph of deep learning neural networks. As the distinguishing feature of such networks is the ability to self-learn, self-learning is identified as one important dimension of the AI state space. Another dimension is recognized as generalization, the possibility to go over from specific to more general types of problems. A third dimension is semantic grounding. Our overall analysis connects to a number of known foundational issues in the philosophy of mind and cognition: the blockhead objection, the Turing test, the symbol grounding problem, the Chinese room argument, and use theories of meaning. It shall finally be argued that the dimension of grounding decomposes into three sub-dimensions. And the dimension of self-learning turns out as only one of a whole range of \u201cself-x-capacities\u201d (based on ideas of organic computing) that span the self-x-subspace of the full AI state space.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Minds and Machines",
+        "type": "journal",
+        "issn": [
+          "0924-6495",
+          "1572-8641"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11023-020-09538-3.pdf"
+      },
+      "topics": [
+        "Computability, Logic, AI Algorithms",
+        "Cognitive Science and Education Research",
+        "Cognitive Computing and Networks"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W3083943005"
+    },
+    {
+      "openalex_id": "W3126579370",
+      "doi": "10.1007/s00146-020-01121-9",
+      "title": "AI urbanism: a design framework for governance, program, and platform cognition",
+      "authors": [
+        {
+          "name": "Benjamin H. Bratton",
+          "openalex_id": "A5077567701",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-07",
+      "abstract": null,
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Smart Cities and Technologies",
+        "Technology, Environment, Urban Planning",
+        "Architecture and Computational Design"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3126579370"
+    },
+    {
+      "openalex_id": "W3191012908",
+      "doi": "10.1007/978-3-031-09153-7",
+      "title": "Philosophy and Theory of Artificial Intelligence 2021",
+      "authors": [
+        {
+          "name": "Vincent C. M\u00fcller",
+          "openalex_id": "A5026465320",
+          "orcid": "https://orcid.org/0000-0002-4144-4957",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": null,
+      "cited_by_count": 15,
+      "type": "book",
+      "source": {
+        "name": "Studies in applied philosophy, epistemology and rational ethics",
+        "type": "book series",
+        "issn": [
+          "2192-6255",
+          "2192-6263"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3191012908"
+    },
+    {
+      "openalex_id": "W3196450028",
+      "doi": "10.9781/ijimai.2021.08.002",
+      "title": "Emergent Models for Moral AI Spirituality.",
+      "authors": [
+        {
+          "name": "Mark Graves",
+          "openalex_id": "A5080265363",
+          "orcid": "https://orcid.org/0000-0003-3146-3203",
+          "institutions": [
+            "University of Notre Dame"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-01",
+      "abstract": "Examining AI spirituality can illuminate problematic assumptions about human spirituality and AI cognition, suggest possible directions for AI development, reduce uncertainty about future AI, and yield a methodological lens sufficient to investigate human-AI sociotechnical interaction and morality. Incompatible philosophical assumptions about human spirituality and AI limit investigations of both and suggest a vast gulf between them. An emergentist approach can replace dualist assumptions about human spirituality and identify emergent behavior in AI computation to overcome overly reductionist assumptions about computation. Using general systems theory to organize models of human experience yields insight into human morality and spirituality, upon which AI modeling can also draw. In this context, the pragmatist Josiah Royce\u2019s semiotic philosophy of spirituality identifies unanticipated overlap between symbolic AI and spirituality and suggests criteria for a human-AI community focused on modeling morality that would result in an emergent Interpreter-Spirit sufficient to influence the ongoing development of human and AI morality and spirituality.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Interactive Multimedia and Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "1989-1660"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.9781/ijimai.2021.08.002"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 93,
+      "url": "https://openalex.org/W3196450028"
+    },
+    {
+      "openalex_id": "W3167278688",
+      "doi": "10.22618/tp.pjcv.20215.1.139005",
+      "title": "Mapping Meaning and Purpose in Human-Robot Teams: Anthropomorphic Agents in Military Operations",
+      "authors": [
+        {
+          "name": "Massimiliano L. Cappuccio",
+          "openalex_id": "A5060504929",
+          "orcid": "https://orcid.org/0000-0003-2870-0597",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Jai Galliott",
+          "openalex_id": "A5064954976",
+          "orcid": "https://orcid.org/0000-0002-3810-1232",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Eduardo Ben\u00edtez Sandoval",
+          "openalex_id": "A5025194639",
+          "orcid": "https://orcid.org/0000-0001-9521-1756",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-20",
+      "abstract": "We spontaneously tend to project animacy and sensitivity to inanimate objects and sometimes we attribute distinctively human features like intelligence, goals, and reasons to certain artificial devices. This phenomenon is called \u201canthropomorphism\u201d and has been long studied by researchers in human-robot interaction and social-robotics. These studies are particularly important from the perspective of recent developments in military technology, as autonomous systems controlled by AI are expected to play a greater and greater role in the future of warfare. Anthropomorphistic effects can play a critical role in tactical operations involving hybrid human-robot teams, where service members and autonomous agents need to quickly coordinate relying almost exclusively on fast, cognitively parsimonious, natural forms of communication. These forms rely importantly on anthropomorphism to allow human soldiers read the behavior of machines in terms of goals and intentions. Understanding the cognitive mechanisms that underpin anthropomorphistic attributions is hence potentially crucial to increase the accuracy and efficacy of human-machine interaction in military operations. However, this question is largely philosophical, as numerous models compete in the space of social cognition theory to explain behavior reading and mental states attribution. This paper aims to offer an initial exploration of these mechanisms from a perspective of philosophical psychology and cognitive philosophy, reviewing the theories in social cognition that are most promising to explain anthropomorphism and predict how it can enable and improve natural communication between soldiers and autonomous military technologies.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Philosophical Journal of Conflict and Violence",
+        "type": "journal",
+        "issn": [
+          "2559-9798",
+          "2559-9917"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.22618/tp.pjcv.20215.1.139005"
+      },
+      "topics": [
+        "Social Robot Interaction and HRI",
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W3167278688"
+    },
+    {
+      "openalex_id": "W4407721166",
+      "doi": "10.1017/9781009367783.004",
+      "title": "Philosophy of AI",
+      "authors": [
+        {
+          "name": "Vincent C. M\u00fcller",
+          "openalex_id": "A5026465320",
+          "orcid": "https://orcid.org/0000-0002-4144-4957"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-02-13",
+      "abstract": "This paper presents the main topics, arguments, and positions in the philosophy of AI at present (excluding ethics). Apart from the basic concepts of intelligence and computation, the main topics of artificial cognition are perception, action, meaning, rational choice, free will, consciousness, and normativity. Through a better understanding of these topics, the philosophy of AI contributes to our understanding of the nature, prospects, and value of AI. Furthermore, these topics can be understood more deeply through the discussion of AI; so we suggest that \u201cAI Philosophy\u201d provides a new method for philosophy.",
+      "cited_by_count": 5,
+      "type": "book-chapter",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1017/9781009367783.004"
+      },
+      "topics": [
+        "Embodied and Extended Cognition",
+        "Computability, Logic, AI Algorithms",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4407721166"
+    },
+    {
+      "openalex_id": "W4220927605",
+      "doi": "10.23919/jcc.2022.03.002",
+      "title": "Intelligent decision making framework for 6G network",
+      "authors": [
+        {
+          "name": "Hu Zheng",
+          "openalex_id": "A5101802064",
+          "orcid": "https://orcid.org/0000-0001-6055-7239",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Ping Zhang",
+          "openalex_id": "A5100405787",
+          "orcid": "https://orcid.org/0000-0002-0269-104X",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Chunhong Zhang",
+          "openalex_id": "A5100633256",
+          "orcid": "https://orcid.org/0000-0001-6068-8140"
+        },
+        {
+          "name": "Benhui Zhuang",
+          "openalex_id": "A5041871065",
+          "orcid": "https://orcid.org/0000-0002-5062-2460",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Jianhua Zhang",
+          "openalex_id": "A5100434769",
+          "orcid": "https://orcid.org/0000-0002-6492-3846",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Shangjing Lin",
+          "openalex_id": "A5102737694",
+          "orcid": "https://orcid.org/0000-0002-2029-4857",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Tao Sun",
+          "openalex_id": "A5050691990",
+          "orcid": "https://orcid.org/0000-0002-3781-0707",
+          "institutions": [
+            "China Mobile (China)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-01",
+      "abstract": "Sixth Generation (6G) wireless communication network has been expected to provide global coverage, enhanced spectral efficiency, and AI(Artificial Intelligence)-native intelligence, etc. To meet these requirements, the computational concept of Decision-Making of cognition intelligence, its implementation framework adapting to foreseen innovations on networks and services, and its empirical evaluations are key techniques to guarantee the generation-agnostic intelligence evolution of wireless communication networks. In this paper, we propose an Intelligent Decision Making (IDM) framework, acting as the role of network brain, based on Reinforcement Learning modelling philosophy to empower autonomous intelligence evolution capability to 6G network. Besides, usage scenarios and simulation demonstrate the generality and efficiency of IDM. We hope that some of the ideas of IDM will assist the research of 6G network in a new or different light.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "China Communications",
+        "type": "journal",
+        "issn": [
+          "1673-5447"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Advanced Wireless Communication Technologies",
+        "Cooperative Communication and Network Coding",
+        "Advanced MIMO Systems Optimization"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4220927605"
+    },
+    {
+      "openalex_id": "W4400420316",
+      "doi": "10.1344/der.2024.45.115-123",
+      "title": "Teaching AI to the Next Generation: A Humanistic Approach",
+      "authors": [
+        {
+          "name": "Mariela Dest\u00e9fano",
+          "openalex_id": "A5100256672",
+          "institutions": [
+            "Centro Cient\u00edfico Tecnol\u00f3gico - Tucum\u00e1n"
+          ]
+        },
+        {
+          "name": "Anna Trifonova",
+          "openalex_id": "A5110362331",
+          "institutions": [
+            "Centro Cient\u00edfico Tecnol\u00f3gico - Tucum\u00e1n"
+          ]
+        },
+        {
+          "name": "Mario Barajas",
+          "openalex_id": "A5019418600",
+          "orcid": "https://orcid.org/0000-0002-2682-6308",
+          "institutions": [
+            "Universitat de Barcelona"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-01",
+      "abstract": "This article proposes a comprehensive AI curriculum tailored for young learners aged 11 to 14, emphasizing a humanistic approach. We review other AI curricula proposals for children and young people and underline that they focus primarily on AI's technological benefits and on learning coding and logic. Our curriculum explores human cognition that is often overlooked in existing AI curriculum. Our proposal combines learning through construction, reflective discussions and project-based learning in order to approach AI from variety of angles. Implemented by CreaTIC Academy during 2023/24 school year as an out-of-school activity in a secondary (middle) school in Barcelona, Spain, this curriculum integrates technological, philosophical, cognitive, and cultural dimensions. It draws from diverse fields, including Philosophy of Mind, Cognitive Psychology and Philosophy of Children, and includes practical coding with tools like Scratch and AppInventor, as well as Machine Learning for Kids. Designed to be adaptable across various socio-economic contexts, our approach aims to promote a broader liberal education for children and help teachers implement AI activities in their classrooms.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Digital Education Review",
+        "type": "journal",
+        "issn": [
+          "2013-9144"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistes.ub.edu/index.php/der/article/download/47005/41935"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Teaching and Learning Programming",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W4400420316"
+    },
+    {
+      "openalex_id": "W4310022069",
+      "doi": "10.1007/978-3-031-09687-7_12",
+      "title": "Training Hard Skills in Virtual Reality: Developing a Theoretical Framework for AI-Based Immersive Learning",
+      "authors": [
+        {
+          "name": "Tiina Korhonen",
+          "openalex_id": "A5072919589",
+          "orcid": "https://orcid.org/0000-0003-2875-4915",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Timo Lindqvist",
+          "openalex_id": "A5033404640",
+          "orcid": "https://orcid.org/0000-0002-9577-6092"
+        },
+        {
+          "name": "Joakim Laine",
+          "openalex_id": "A5008595066",
+          "orcid": "https://orcid.org/0000-0002-3407-6551",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Kai Hakkarainen",
+          "openalex_id": "A5078908003",
+          "orcid": "https://orcid.org/0000-0003-3507-7537",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-27",
+      "abstract": "Abstract Advances in virtual reality (VR) technology afford creation of immersive virtual learning environments that simulate real-life learning contexts with increasing fidelity. When supported by sufficiently advanced artificial intelligence (AI)-based tutoring software, such environments may facilitate asynchronous, embodied learning approaches for learning hard, procedural skills in industrial settings \u2013 addressing timeliness, accuracy, and scalability issues common in the industry. This chapter reflects on the pedagogical setting of immersive virtual reality-based hard skills training guided by an AI tutor software agent. We examine the interfacing of traditional intelligent tutoring system (ITS) software with an immersive virtual environment. Further, we suggest the philosophies of embodied, embedded, enacted, and extended (4E) cognition as a way to fully consider learner epistemology in a virtual world and to account for and make full use of the unique opportunities afforded by the synthetic nature of the immersive virtual learning environment. To explore possibilities for improved pedagogical approaches, we project the 4E cognition approach into the abovementioned learning context and outline a theoretical framework for a VR-native AI tutor. We then propose VR-native pedagogical principles for such as framework that could inform follow-on research.",
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-031-09687-7_12.pdf"
+      },
+      "topics": [
+        "Virtual Reality Applications and Impacts",
+        "Action Observation and Synchronization",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W4310022069"
+    },
+    {
+      "openalex_id": "W4393307061",
+      "doi": "10.36227/techrxiv.171172917.79132219/v1",
+      "title": "Exploring the Balance of Power Humans vs. Artificial Intelligence with Some Question",
+      "authors": [
+        {
+          "name": "Budee U Zaman",
+          "openalex_id": "A5092429520",
+          "orcid": "https://orcid.org/0009-0004-2896-3586"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-29",
+      "abstract": "Who dominates the destiny of the world, humans or artificial intelligence (AI)?This question strikes at the very heart of contemporary humanity's existential anxieties about its future.If we want to seriously consider whether or not unfriendly AI 'neurons' pose any threat to human civilisation and humanity's continual existence and evolution in the Universe, we need to know as much as possible about the Universe in which we find ourselves, our place in it, and what cognition, consciousness and mentality really are.How might we combine philosophical, cognitive science and technological perspectives, to explore the evolving relationship between humans and AI, in order to engage and address the questions at the core of this human-AI complex, namely the future of civilisation -what will it look like, who can claim to be our successors, towards what goals and ends?The evolution and development of human cognition as well as the emergence of AI can help us define these potential paths of future development.Where do we stand today, in relation to our own history and development and to the possibilities that artificial intelligence can offer us?The essay explores the ethical, social and existential questions that arise from the increasing automation of artificial intelligence and how it relates to the story of humanity, from its origins to its contemporary cultural expression.It also underscores the significance of holistic approaches to apprehending and addressing the risks that come with AI development.Such approaches should combine findings from various fields namely philosophy, morality, psyche and technology so as to manage a complicated set of problems.To sum up, this summary highlights the critical necessity for sophisticated viewpoints that go beyond simple man versus machine divisions.It is rather proposing a situation where humans use AI as an instrument for improving collective happiness and ensuring responsible management over technological advances and the larger life system.",
+      "cited_by_count": 7,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.171172917.79132219/v1"
+      },
+      "topics": [
+        "Economic Development and Digital Transformation"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W4393307061"
+    },
+    {
+      "openalex_id": "W3156614709",
+      "doi": "10.1155/2021/8812542",
+      "title": "A Review of Artificial Intelligence (AI) in Education from 2010 to 2020",
+      "authors": [
+        {
+          "name": "Xuesong Zhai",
+          "openalex_id": "A5077087618",
+          "orcid": "https://orcid.org/0000-0002-4179-7859",
+          "institutions": [
+            "Zhejiang University"
+          ]
+        },
+        {
+          "name": "Xiaoyan Chu",
+          "openalex_id": "A5068082407",
+          "orcid": "https://orcid.org/0000-0001-9974-4066",
+          "institutions": [
+            "Zhejiang University"
+          ]
+        },
+        {
+          "name": "Ching Sing Chai",
+          "openalex_id": "A5035167001",
+          "orcid": "https://orcid.org/0000-0002-6298-4813",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Morris Siu\u2013Yung Jong",
+          "openalex_id": "A5052907090",
+          "orcid": "https://orcid.org/0000-0001-9186-0484",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Andreja Isteni\u010d Star\u010di\u010d",
+          "openalex_id": "A5002666373",
+          "orcid": "https://orcid.org/0000-0003-0513-5054",
+          "institutions": [
+            "University of Ljubljana",
+            "University of Primorska",
+            "Kazan Federal University",
+            "Geodetic Institute of Slovenia",
+            "Institute of Psychology",
+            "Czech Academy of Sciences, Institute of Psychology"
+          ]
+        },
+        {
+          "name": "Michael Spector",
+          "openalex_id": "A5022345679",
+          "orcid": "https://orcid.org/0000-0003-2876-6027",
+          "institutions": [
+            "University of North Texas"
+          ]
+        },
+        {
+          "name": "Jia Liu",
+          "openalex_id": "A5100454297",
+          "institutions": [
+            "Anhui Jianzhu University"
+          ]
+        },
+        {
+          "name": "Yuan Jing",
+          "openalex_id": "A5079934631",
+          "orcid": "https://orcid.org/0000-0002-7590-0092",
+          "institutions": [
+            "Anhui Xinhua University"
+          ]
+        },
+        {
+          "name": "Yan Li",
+          "openalex_id": "A5042356208",
+          "orcid": "https://orcid.org/0000-0002-0640-1783",
+          "institutions": [
+            "Zhejiang University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "This study provided a content analysis of studies aiming to disclose how artificial intelligence (AI) has been applied to the education sector and explore the potential research trends and challenges of AI in education. A total of 100 papers including 63 empirical papers (74 studies) and 37 analytic papers were selected from the education and educational research category of Social Sciences Citation Index database from 2010 to 2020. The content analysis showed that the research questions could be classified into development layer (classification, matching, recommendation, and deep learning), application layer (feedback, reasoning, and adaptive learning), and integration layer (affection computing, role\u2010playing, immersive learning, and gamification). Moreover, four research trends, including Internet of Things, swarm intelligence, deep learning, and neuroscience, as well as an assessment of AI in education, were suggested for further investigation. However, we also proposed the challenges in education may be caused by AI with regard to inappropriate use of AI techniques, changing roles of teachers and students, as well as social and ethical issues. The results provide insights into an overview of the AI used for education domain, which helps to strengthen the theoretical foundation of AI in education and provides a promising channel for educators and AI engineers to carry out further collaborative research.",
+      "cited_by_count": 948,
+      "type": "review",
+      "source": {
+        "name": "Complexity",
+        "type": "journal",
+        "issn": [
+          "1076-2787",
+          "1099-0526"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://downloads.hindawi.com/journals/complexity/2021/8812542.pdf"
+      },
+      "topics": [
+        "Online Learning and Analytics"
+      ],
+      "referenced_works_count": 121,
+      "url": "https://openalex.org/W3156614709"
+    },
+    {
+      "openalex_id": "W4224073701",
+      "doi": "10.1007/s11229-022-03522-3",
+      "title": "Putting representations to use",
+      "authors": [
+        {
+          "name": "Rosa Cao",
+          "openalex_id": "A5090099962",
+          "orcid": "https://orcid.org/0000-0002-1726-477X",
+          "institutions": [
+            "Stanford University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-04-01",
+      "abstract": null,
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Synthese",
+        "type": "journal",
+        "issn": [
+          "0039-7857",
+          "1573-0964"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Embodied and Extended Cognition",
+        "Philosophy and History of Science",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W4224073701"
+    },
+    {
+      "openalex_id": "W4324309277",
+      "doi": "10.1002/alz.13016",
+      "title": "2023 Alzheimer's disease facts and figures",
+      "authors": [
+        {
+          "name": "V Villemagne",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Burnham",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Bourgeat",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Reiman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Quiroz",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Fleisher",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Jack",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Lowe",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Weigand",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Bateman",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Xiong",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Benzinger",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Gordon",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Blazey",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Su",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Braak",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Thal",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Ghebremedhin",
+          "openalex_id": ""
+        },
+        {
+          "name": "Del Tredici",
+          "openalex_id": ""
+        },
+        {
+          "name": "K",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Quiroz",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Zetterberg",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Reiman",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Barthelemy",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Joseph-Mathurin",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Gordon",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Byard",
+          "openalex_id": ""
+        },
+        {
+          "name": "Nei Langlois",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Tom",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Hubbard",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Crane",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Ganguli",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Dodge",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Shen",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Pandav",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Dekosky",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Waring",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Doody",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Pavlik",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Massman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Chan",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Brookmeyer",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Corrada",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Curriero",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Kawas",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Larson",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Shadlen",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Helzner",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Scarmeas",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Cosentino",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Tang",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Schupf",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Stern",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Xie",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Brayne",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Matthews",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Brodaty",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Seeher",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Gibson",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Todd",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Barr",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Roberts",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Passmore",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Sato",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Barthelemy",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Mawuenyega",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Hanseeuw",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Betensky",
+          "openalex_id": ""
+        },
+        {
+          "name": "Hil Jacobs",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Kapasi",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Decarli",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Schneider",
+          "openalex_id": ""
+        },
+        {
+          "name": "W Brenowitz",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Hubbard",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Keene",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Hogan",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Jette",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Fiest",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Amador-Ortiz",
+          "openalex_id": ""
+        },
+        {
+          "name": "Z Ahmed",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Zehr",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Dickson",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jpm Kane",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Surendranathan",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Bentley",
+          "openalex_id": ""
+        },
+        {
+          "name": "J De Reuck",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Maurage",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Deramecourt",
+          "openalex_id": ""
+        },
+        {
+          "name": "B James",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Bennett",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Boyle",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Leurgans",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Schneider",
+          "openalex_id": ""
+        },
+        {
+          "name": "I Stojkovska",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Krainc",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Mazzulli",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Aarsland",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Zaccai",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Brayne",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-14",
+      "abstract": "Abstract This article describes the public health impact of Alzheimer's disease, including prevalence and incidence, mortality and morbidity, use and costs of care, and the overall impact on family caregivers, the dementia workforce and society. The Special Report examines the patient journey from awareness of cognitive changes to potential treatment with drugs that change the underlying biology of Alzheimer's. An estimated 6.7 million Americans age 65 and older are living with Alzheimer's dementia today. This number could grow to 13.8 million by 2060 barring the development of medical breakthroughs to prevent, slow or cure AD. Official death certificates recorded 121,499 deaths from AD in 2019, and Alzheimer's disease was officially listed as the sixth\u2010leading cause of death in the United States. In 2020 and 2021, when COVID\u201019 entered the ranks of the top ten causes of death, Alzheimer's was the seventh\u2010leading cause of death. Alzheimer's remains the fifth\u2010leading cause of death among Americans age 65 and older. Between 2000 and 2019, deaths from stroke, heart disease and HIV decreased, whereas reported deaths from AD increased more than 145%. This trajectory of deaths from AD was likely exacerbated by the COVID\u201019 pandemic in 2020 and 2021. More than 11 million family members and other unpaid caregivers provided an estimated 18 billion hours of care to people with Alzheimer's or other dementias in 2022. These figures reflect a decline in the number of caregivers compared with a decade earlier, as well as an increase in the amount of care provided by each remaining caregiver. Unpaid dementia caregiving was valued at $339.5 billion in 2022. Its costs, however, extend to family caregivers\u2019 increased risk for emotional distress and negative mental and physical health outcomes \u2014 costs that have been aggravated by COVID\u201019. Members of the paid health care workforce are involved in diagnosing, treating and caring for people with dementia. In recent years, however, a shortage of such workers has developed in the United States. This shortage \u2014 brought about, in part, by COVID\u201019 \u2014 has occurred at a time when more members of the dementia care workforce are needed. Therefore, programs will be needed to attract workers and better train health care teams. Average per\u2010person Medicare payments for services to beneficiaries age 65 and older with AD or other dementias are almost three times as great as payments for beneficiaries without these conditions, and Medicaid payments are more than 22 times as great. Total payments in 2023 for health care, long\u2010term care and hospice services for people age 65 and older with dementia are estimated to be $345 billion. The Special Report examines whether there will be sufficient numbers of physician specialists to provide Alzheimer's care and treatment now that two drugs are available that change the underlying biology of Alzheimer's disease.",
+      "cited_by_count": 2798,
+      "type": "article",
+      "source": {
+        "name": "Alzheimer s & Dementia",
+        "type": "journal",
+        "issn": [
+          "1552-5260",
+          "1552-5279"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/alz.13016"
+      },
+      "topics": [
+        "Dementia and Cognitive Impairment Research",
+        "Geriatric Care and Nursing Homes",
+        "Health Systems, Economic Evaluations, Quality of Life"
+      ],
+      "referenced_works_count": 730,
+      "url": "https://openalex.org/W4324309277"
+    },
+    {
+      "openalex_id": "W4255501712",
+      "doi": "10.14763/2020.4.1531",
+      "title": "Smart technologies",
+      "authors": [
+        {
+          "name": "Mireille Hildebrandt",
+          "openalex_id": "A5004617213",
+          "orcid": "https://orcid.org/0000-0003-4558-9149",
+          "institutions": [
+            "Vrije Universiteit Brussel"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-17",
+      "abstract": "Speaking of \"smart\" technologies we may avoid the mysticism of terms like \"artificial intelligence\" (AI). To situate \"smartness\" I nevertheless explore the origins of smart technologies in the research domains of AI and cybernetics. Based in postphenomenological philosophy of technology and embodied cognition rather than media studies and science and technology studies (STS), the article entails a relational and ecological understanding of the constitutive relationship between humans and technologies, requiring us to take seriously their affordances as well as the research domain of computer science. To this end I distinguish three levels of smartness, depending on the extent to which they can respond to their environment without human intervention: logic-based, grounded in machine learning or in multi-agent systems. I discuss these levels of smartness in terms of machine agency to distinguish the nature of their behaviour from both human agency and from technologies considered dumb. Finally, I discuss the political economy of smart technologies in light of the manipulation they enable when those targeted cannot foresee how they are being profiled.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Internet Policy Review",
+        "type": "journal",
+        "issn": [
+          "2197-6775"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://policyreview.info/pdf/policyreview-2020-4-1531.pdf"
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "Context-Aware Activity Recognition Systems",
+        "Healthcare Technology and Patient Monitoring"
+      ],
+      "referenced_works_count": 74,
+      "url": "https://openalex.org/W4255501712"
+    },
+    {
+      "openalex_id": "W4285295385",
+      "doi": "10.1007/978-94-6265-523-2_25",
+      "title": "The Right to Mental Integrity in the Age of Artificial Intelligence: Cognitive Human Enhancement Technologies",
+      "authors": [
+        {
+          "name": "S\u00fcmeyye Elif Biber",
+          "openalex_id": "A5032658891",
+          "institutions": [
+            "Scuola Superiore Sant'Anna"
+          ]
+        },
+        {
+          "name": "Marianna Capasso",
+          "openalex_id": "A5056736239",
+          "orcid": "https://orcid.org/0000-0003-0005-2356",
+          "institutions": [
+            "Scuola Superiore Sant'Anna"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "This chapter provides an analysis of philosophical and legal aspects of AI-driven cognitive human enhancement technologies that complement human rights norms in the context of the right to mental integrity. The philosophical analysis focuses on extended cognition theories in philosophy of mind. Such theories individuate a list of criteria to assess whether an external artefact can be cognitively integrated with human cognitive processes. This chapter shows that two AI-cognitive human enhancement technologies\u2014brain computer interfaces and intelligent personal assistants\u2014do not completely satisfy the criteria of extended cognition due to their unique capabilities. Subsequently, the legal analysis concentrates on the debate on the right to mental integrity to see whether the human mind is safeguarded in the face of such concerns at international and European levels. Although the right to mental integrity has been recognized in international and European human rights law, the meaning and the scope of the concept has remained unclear. To fill this gap, this chapter engages with the issue of an adequate form of cognitive integration and assumes that, if external artefacts such as AI-cognitive human enhancement technologies are not completely or sufficiently integrated with human cognitive processes, such artefacts may not serve mental integrity of individuals. In the light of this analysis, this chapter comes to the conclusion that it is necessary to introduce absolute protection to mental integrity in conjunction with mental privacy to protect the individual from any intrusion of mental states.",
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": {
+        "name": "Information technology and law series/Information technology & law series",
+        "type": "book series",
+        "issn": [
+          "1570-2782",
+          "2215-1966"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Free Will and Agency",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W4285295385"
+    },
+    {
+      "openalex_id": "W3155263273",
+      "doi": "10.1007/s40593-021-00239-1",
+      "title": "Ethics of AI in Education: Towards a Community-Wide Framework",
+      "authors": [
+        {
+          "name": "W. Holmes",
+          "openalex_id": "A5033299848",
+          "orcid": "https://orcid.org/0000-0002-8352-1594",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Ka\u015bka Porayska\u2010Pomsta",
+          "openalex_id": "A5048581675",
+          "orcid": "https://orcid.org/0000-0002-9433-4022",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Ken Holstein",
+          "openalex_id": "A5084874097",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Emma Sutherland",
+          "openalex_id": "A5062349408",
+          "institutions": [
+            "Nesta"
+          ]
+        },
+        {
+          "name": "Toby T. Baker",
+          "openalex_id": "A5013212154",
+          "institutions": [
+            "Nesta"
+          ]
+        },
+        {
+          "name": "Simon Buckingham Shum",
+          "openalex_id": "A5057774051",
+          "orcid": "https://orcid.org/0000-0002-6334-7429",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        },
+        {
+          "name": "Olga C. Santos",
+          "openalex_id": "A5024739711",
+          "orcid": "https://orcid.org/0000-0002-9281-4209",
+          "institutions": [
+            "National University of Distance Education"
+          ]
+        },
+        {
+          "name": "Ma. Mercedes T. Rodrigo",
+          "openalex_id": "A5047233489",
+          "orcid": "https://orcid.org/0000-0001-7881-7756",
+          "institutions": [
+            "Ateneo de Manila University"
+          ]
+        },
+        {
+          "name": "Mutlu Cukurova",
+          "openalex_id": "A5010726815",
+          "orcid": "https://orcid.org/0000-0001-5843-4854",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Ig Ibert Bittencourt",
+          "openalex_id": "A5061181768",
+          "orcid": "https://orcid.org/0000-0001-5676-2280",
+          "institutions": [
+            "Universidade Federal de Alagoas"
+          ]
+        },
+        {
+          "name": "Kenneth R. Koedinger",
+          "openalex_id": "A5062550465",
+          "orcid": "https://orcid.org/0000-0002-5850-4768",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-09",
+      "abstract": "Abstract While Artificial Intelligence in Education (AIED) research has at its core the desire to support student learning, experience from other AI domains suggest that such ethical intentions are not by themselves sufficient. There is also the need to consider explicitly issues such as fairness, accountability, transparency, bias, autonomy, agency, and inclusion. At a more general level, there is also a need to differentiate between doing ethical things and doing things ethically , to understand and to make pedagogical choices that are ethical, and to account for the ever-present possibility of unintended consequences. However, addressing these and related questions is far from trivial. As a first step towards addressing this critical gap, we invited 60 of the AIED community\u2019s leading researchers to respond to a survey of questions about ethics and the application of AI in educational contexts. In this paper, we first introduce issues around the ethics of AI in education. Next, we summarise the contributions of the 17 respondents, and discuss the complex issues that they raised. Specific outcomes include the recognition that most AIED researchers are not trained to tackle the emerging ethical questions. A well-designed framework for engaging with ethics of AIED that combined a multidisciplinary approach and a set of robust guidelines seems vital in this context.",
+      "cited_by_count": 819,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Artificial Intelligence in Education",
+        "type": "journal",
+        "issn": [
+          "1560-4292",
+          "1560-4306"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40593-021-00239-1.pdf"
+      },
+      "topics": [
+        "Online Learning and Analytics",
+        "Adversarial Robustness in Machine Learning",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W3155263273"
+    },
+    {
+      "openalex_id": "W4397033738",
+      "doi": "10.1007/s00146-024-01971-7",
+      "title": "The extimate core of understanding: absolute metaphors, psychosis and large language models",
+      "authors": [
+        {
+          "name": "Marc Heimann",
+          "openalex_id": "A5026569120",
+          "orcid": "https://orcid.org/0000-0003-3757-1790",
+          "institutions": [
+            "Hochschule Niederrhein"
+          ]
+        },
+        {
+          "name": "Anne-Friederike H\u00fcbener",
+          "openalex_id": "A5065081401",
+          "orcid": "https://orcid.org/0000-0003-3890-1739",
+          "institutions": [
+            "Hochschule Niederrhein"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-05-18",
+      "abstract": "Abstract This paper delves into the striking parallels between the linguistic patterns of Large Language Models (LLMs) and the concepts of psychosis in Lacanian psychoanalysis. Lacanian theory, with its focus on the formal and logical underpinnings of psychosis, provides a compelling lens to juxtapose human cognition and AI mechanisms. LLMs, such as GPT-4, appear to replicate the intricate metaphorical and metonymical frameworks inherent in human language. Although grounded in mathematical logic and probabilistic analysis, the outputs of LLMs echo the nuanced linguistic associations found in metaphor and metonymy, suggesting a mirroring of human linguistic structures. A pivotal point in this discourse is the exploration of \u201cabsolute metaphors\u201d\u2014core gaps in reasoning discernible in both AI models and human thought processes and central to the Lacanian conceptualization of psychosis. Despite the traditional divide between AI research and continental philosophy, this analysis embarks on an innovative journey, utilizing Lacanian philosophy to unravel the logic of AI, using concepts established in the continental discourse on logic, rather than the analytical tradition.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s00146-024-01971-7.pdf"
+      },
+      "topics": [
+        "Language, Metaphor, and Cognition",
+        "Topic Modeling",
+        "Advanced Text Analysis Techniques"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W4397033738"
+    },
+    {
+      "openalex_id": "W4251294670",
+      "doi": "10.31235/osf.io/mrqf4",
+      "title": "Behavioural Artificial Intelligence: An Agenda for Systematic Empirical Studies of Artificial Inference",
+      "authors": [
+        {
+          "name": "Tore Pedersen",
+          "openalex_id": "A5068190305",
+          "orcid": "https://orcid.org/0000-0002-4502-0772",
+          "institutions": [
+            "Oslo Nye H\u00f8yskole"
+          ]
+        },
+        {
+          "name": "Christian Johansen",
+          "openalex_id": "A5052790680",
+          "orcid": "https://orcid.org/0000-0002-1525-0307",
+          "institutions": [
+            "University of Oslo"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-18",
+      "abstract": "Artificial Intelligence (AI) receives attention in media as well as in academe and business. In media coverage and reporting, AI is predominantly described in contrasted terms, either as the ultimate solution to all human problems or the ultimate threat to all human existence. In academe, the focus of computer scientists is on developing systems that function, whereas philosophy scholars theorize about the implications of this functionality for human life. In the interface between technology and philosophy there is, however, one imperative aspect of AI yet to be articulated: How do intelligent systems make inferences? We use the overarching concept \u201cArtificial Intelligent Behaviour\u201d which would include both cognition/processing and judgment/behaviour. We argue that due to the complexity and opacity of Artificial Inference, one needs to initiate systematic empirical studies of artificial intelligent behavior similar to what has previously been done to study human cognition, judgment and decision making. This will provide valid knowledge, outside of what current computer science methods can offer, about the judgments and decisions made by intelligent systems. Moreover, outside academe \u2013 in the public as well as the private sector \u2013 expertise in epistemology, critical thinking and reasoning are crucial to ensure human oversight of the artificial intelligent judgments and decisions that are made, because only competent human insight into AI-inference processes will ensure accountability. Such insights require systematic studies of AI-behaviour founded on the natural sciences and philosophy, as well as the employment of methodologies from the cognitive and behavioral sciences.",
+      "cited_by_count": 4,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W4251294670"
+    },
+    {
+      "openalex_id": "W3035393658",
+      "doi": "10.1007/978-3-030-58449-8_1",
+      "title": "Symbolic Logic Meets Machine Learning: A Brief Survey in Infinite Domains",
+      "authors": [
+        {
+          "name": "Vaishak Belle",
+          "openalex_id": "A5002932153",
+          "orcid": "https://orcid.org/0000-0001-5573-8465",
+          "institutions": [
+            "The Alan Turing Institute",
+            "University of Edinburgh"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": null,
+      "cited_by_count": 7,
+      "type": "preprint",
+      "source": {
+        "name": "Lecture notes in computer science",
+        "type": "book series",
+        "issn": [
+          "0302-9743",
+          "1611-3349"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2006.08480"
+      },
+      "topics": [
+        "Bayesian Modeling and Causal Inference",
+        "Logic, Reasoning, and Knowledge",
+        "AI-based Problem Solving and Planning"
+      ],
+      "referenced_works_count": 93,
+      "url": "https://openalex.org/W3035393658"
+    },
+    {
+      "openalex_id": "W4206469626",
+      "doi": "10.5040/9781350197725",
+      "title": "Collaborative Embodied Performance",
+      "authors": [
+        {
+          "name": "Bicknell, Kath ca. 20. Jh.",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sutton, John 1975-",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "<JATS1:p>This book brings together scholarship in performance studies, cognitive science, sociology, literature, anthropology, psychology, architecture, philosophy and sport science to ask how tightly knit collaboration works. Innovative methodological approaches are applied to detailed case studies from martial arts, tango, social interaction, Body Weather, human-AI music composition, Front-of-House at the Globe Theatre, and failing at handstands. Each investigation exposes performance and theory as mutually revealing, informative and captivating.</JATS1:p> <JATS1:p>Short chapters fall into thematic clusters exploring embodied collaboration, cognition, and coordination, followed by commentaries from leading scholars in performance studies and cognitive science. Each brings to light different facets of the performance ecology present in the collaborative moment(s), equipping performance makers, students and researchers with theoretical, methodological and practical inspiration to delve deeper into their own embodied practices and critical thinking.</JATS1:p>",
+      "cited_by_count": 9,
+      "type": "book",
+      "source": {
+        "name": "Bloomsbury Publishing Plc eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Theatre and Performance Studies",
+        "Diversity and Impact of Dance"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4206469626"
+    },
+    {
+      "openalex_id": "W3131457744",
+      "doi": "10.1016/j.artint.2021.103473",
+      "title": "What do we want from Explainable Artificial Intelligence (XAI)? \u2013 A stakeholder perspective on XAI and a conceptual model guiding interdisciplinary XAI research",
+      "authors": [
+        {
+          "name": "Markus Langer",
+          "openalex_id": "A5038410639",
+          "orcid": "https://orcid.org/0000-0002-8165-1803",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Daniel Oster",
+          "openalex_id": "A5052038529",
+          "orcid": "https://orcid.org/0000-0003-2761-6262",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Timo Speith",
+          "openalex_id": "A5007325624",
+          "orcid": "https://orcid.org/0000-0002-6675-154X",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Holger Hermanns",
+          "openalex_id": "A5028747794",
+          "orcid": "https://orcid.org/0000-0002-2766-9615",
+          "institutions": [
+            "Saarland University",
+            "Institute of Software"
+          ]
+        },
+        {
+          "name": "Lena K\u00e4stner",
+          "openalex_id": "A5034952055",
+          "orcid": "https://orcid.org/0000-0002-8747-6911",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Eva Schmidt",
+          "openalex_id": "A5075670033",
+          "orcid": "https://orcid.org/0000-0002-7305-7126",
+          "institutions": [
+            "TU Dortmund University"
+          ]
+        },
+        {
+          "name": "Andreas Sesing-Wagenpfeil",
+          "openalex_id": "A5027323776",
+          "orcid": "https://orcid.org/0000-0003-0894-5407",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Kevin Baum",
+          "openalex_id": "A5012518399",
+          "orcid": "https://orcid.org/0000-0002-6893-573X",
+          "institutions": [
+            "Saarland University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-15",
+      "abstract": null,
+      "cited_by_count": 517,
+      "type": "article",
+      "source": {
+        "name": "Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "0004-3702",
+          "1872-7921"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0004370221000242"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 325,
+      "url": "https://openalex.org/W3131457744"
+    },
+    {
+      "openalex_id": "W4281616575",
+      "doi": "10.4324/9781003143284",
+      "title": "Ethical Artificial Intelligence from Popular to Cognitive Science",
+      "authors": [
+        {
+          "name": "Jordan Richard Schoenherr",
+          "openalex_id": "A5003672017",
+          "orcid": "https://orcid.org/0000-0001-9636-3874"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-30",
+      "abstract": "This book offers a unique interdisciplinary perspective on the ethics of 'artificial intelligence'&nbsp;\u2013 autonomous, intelligent, (and connected) systems, or AISs, applying principles of social cognition to understand the social and ethical issues associated with the creation, adoption, and implementation of AISs. As humans become entangled in sociotechnical systems defined by human and artificial agents, there is a pressing need to understand how trust is created, used, and abused. Compounding the difficulty in answering these questions, stakeholders directly or indirectly affected by these systems differ in their motivations, understanding, and values. This volume provides a comprehensive resource to help stakeholders understand ethical issues of designing and implementing AISs using an ethical sensemaking approach. Starting with the general technical affordances of AIS, Dr. Jordan Richard&nbsp;Schoenherr considers the features of system design relating data integrity, selection and interpretation of algorithms, and the evolution processes that drive AISs innovation as a sociotechnological system. The poles of technophobia (algorithmic aversion) and technophilia (algorithmic preference) in the public perception of AISs are then described and considered against existing evidence, including issues ranging from the displacement and re-education needs of the human workforce, the impact of use of technology on interpersonal accord, and surveillance and cybersecurity. Ethical frameworks that provide tools for evaluating the values and outcomes of AISs are then reviewed, and&nbsp;how they can be aligned with ethical sensemaking processes identified by psychological science is explored. Finally, these disparate threads are brought together in a design framework. Also including sections on policies and guideline, gaming and social media, and Eastern philosophical frameworks, this is fascinating reading for students and academics in psychology, computer science, philosophy, and related areas, as well as professionals such as policy makers and those working with AI systems.",
+      "cited_by_count": 15,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4281616575"
+    },
+    {
+      "openalex_id": "W2614642255",
+      "doi": "10.1142/9789811223723_0012",
+      "title": "Prospects of Artificial Intelligence",
+      "authors": [],
+      "publication_year": 2021,
+      "publication_date": "2021-05-27",
+      "abstract": "This investigation of the feasibility of artificial intelligence begins with a consideration of pertinent arguments by experts including Chomsky, Dreyfus, Fodor, Newell and Simon, Searle, and Stich. Representationalism, the view that cognition is primarily a matter of rule-governed manipulation of symbolic structures in the brain, is examined at length and ultimately found implausible. Exploration of an unorthodox approach to the design of intelligent machines generates a model of intentionality which reveals how mental states such as desires and beliefs can arise from purely physical foundations. Construction of such models is advocated as a promising research strategy in philosophy of mind and philosophy of language. Turning back to mainstream efforts to produce artificial intelligence, the tempting notion that Connectionism is a panacea for the difficulties encountered by more traditional techniques is debunked. Finally, it is argued that despite immense obstacles to the production of artificial human-like intelligence, judicious application of AI technology can produce very useful results.",
+      "cited_by_count": 5,
+      "type": "book-chapter",
+      "source": {
+        "name": "WORLD SCIENTIFIC eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Computability, Logic, AI Algorithms"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2614642255"
+    },
+    {
+      "openalex_id": "W4410120065",
+      "doi": "10.17705/1jais.00921",
+      "title": "What Is Augmented? A Metanarrative Review of AI-Based Augmentation",
+      "authors": [
+        {
+          "name": "In\u00e8s Baer",
+          "openalex_id": "A5117449085",
+          "orcid": "https://orcid.org/0009-0006-2482-230X"
+        },
+        {
+          "name": "Lauren Waardenburg",
+          "openalex_id": "A5044389066",
+          "orcid": "https://orcid.org/0000-0002-9538-1824"
+        },
+        {
+          "name": "Marleen Huysman",
+          "openalex_id": "A5069946237",
+          "orcid": "https://orcid.org/0000-0002-9005-8200"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": "The widespread implementation of artificial intelligence (AI) in organizations has given rise to an increasing focus on augmentation in the academic and public discourse. While the verb \u201cto augment,\u201d defined as a process to make something greater or more numerous, is often used in IS research, it lacks a discussion of what the targets of such a process could be. In other words: What is augmented? Our paper builds on the literature of five research disciplines in which augmentation is a particularly prevalent topic\u2014i.e., computer science, information systems, economics, management, and philosophy. Accordingly, we identified four metanarratives that represent four distinct targets of AI-based augmentation\u2014the body, cognition, work, and performance\u2014that build on unique human-AI configurations and bring to the fore specific augmentation tensions. Using these insights, we formulate avenues for further IS research on AI-based augmentation.",
+      "cited_by_count": 4,
+      "type": "review",
+      "source": {
+        "name": "Journal of the Association for Information Systems",
+        "type": "journal",
+        "issn": [
+          "1536-9323"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://aisel.aisnet.org/cgi/viewcontent.cgi?article=2254&context=jais"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Online Learning and Analytics",
+        "Brain Tumor Detection and Classification"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4410120065"
+    },
+    {
+      "openalex_id": "W2945526235",
+      "doi": "10.1109/access.2020.2976199",
+      "title": "Explainable Machine Learning for Scientific Insights and Discoveries",
+      "authors": [
+        {
+          "name": "Ribana Roscher",
+          "openalex_id": "A5043510754",
+          "orcid": "https://orcid.org/0000-0003-0094-6210",
+          "institutions": [
+            "University of Bonn"
+          ]
+        },
+        {
+          "name": "Bastian Bohn",
+          "openalex_id": "A5046381777",
+          "orcid": "https://orcid.org/0000-0001-5663-7527",
+          "institutions": [
+            "University of Bonn"
+          ]
+        },
+        {
+          "name": "Marco F. Duarte",
+          "openalex_id": "A5079975633",
+          "orcid": "https://orcid.org/0000-0001-8410-3266",
+          "institutions": [
+            "University of Massachusetts Amherst"
+          ]
+        },
+        {
+          "name": "Jochen Garcke",
+          "openalex_id": "A5068763843",
+          "orcid": "https://orcid.org/0000-0002-8334-3695",
+          "institutions": [
+            "University of Bonn",
+            "Fraunhofer Institute for Algorithms and Scientific Computing"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "Machine learning methods have been remarkably successful for a wide range of\\napplication areas in the extraction of essential information from data. An\\nexciting and relatively recent development is the uptake of machine learning in\\nthe natural sciences, where the major goal is to obtain novel scientific\\ninsights and discoveries from observational or simulated data. A prerequisite\\nfor obtaining a scientific outcome is domain knowledge, which is needed to gain\\nexplainability, but also to enhance scientific consistency. In this article we\\nreview explainable machine learning in view of applications in the natural\\nsciences and discuss three core elements which we identified as relevant in\\nthis context: transparency, interpretability, and explainability. With respect\\nto these core elements, we provide a survey of recent scientific works that\\nincorporate machine learning and the way that explainable machine learning is\\nused in combination with domain knowledge from the application areas.\\n",
+      "cited_by_count": 903,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09007737.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning in Materials Science",
+        "Scientific Computing and Data Management"
+      ],
+      "referenced_works_count": 181,
+      "url": "https://openalex.org/W2945526235"
+    },
+    {
+      "openalex_id": "W4210489056",
+      "doi": "10.3389/frai.2022.806041",
+      "title": "Artificial Interactionism: Avoiding Isolating Perception From Cognition in AI",
+      "authors": [
+        {
+          "name": "Mathieu Guillermin",
+          "openalex_id": "A5079741071",
+          "orcid": "https://orcid.org/0000-0002-7279-0393",
+          "institutions": [
+            "UR CONFLUENCE: Sciences et Humanit\u00e9s",
+            "Universit\u00e9 catholique de lyon"
+          ]
+        },
+        {
+          "name": "Olivier L. Georgeon",
+          "openalex_id": "A5046578544",
+          "orcid": "https://orcid.org/0000-0003-4883-8702",
+          "institutions": [
+            "UR CONFLUENCE: Sciences et Humanit\u00e9s",
+            "Laboratoire d'Informatique en Images et Syst\u00e8mes d'Information",
+            "Universit\u00e9 catholique de lyon",
+            "Fonctionnement et Conduite des Syst\u00e8mes de Culture Tropicaux et M\u00e9diterran\u00e9ens"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-02-02",
+      "abstract": "We discuss the influence upon the fields of robotics and AI of the manner one conceives the relationships between artificial agents' perception, cognition, and action. We shed some light upon a widespread paradigm we call the isolated perception paradigm that addresses perception as isolated from cognition and action. By mobilizing the resources of philosophy (phenomenology and epistemology) and cognitive sciences, and by drawing on recent approaches in AI, we explore what it could mean for robotics and AI to take distance from the isolated perception paradigm. We argue that such a renouncement opens interesting ways to explore the possibilities for designing artificial agents with intrinsic motivations and constitutive autonomy. We then propose Artificial Interactionism, our approach that escapes the isolated perception paradigm by drawing on the inversion of the interaction cycle. When the interaction cycle is inverted, input data are not percepts directly received from the environment, but outcomes of control loops. Perception is not received from sensors in isolation from cognition but is actively constructed by the cognitive architecture through interaction. We give an example implementation of artificial interactionism that demonstrates basic intrinsically motivated learning behavior in a dynamic simulated environment.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "2624-8212"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/frai.2022.806041/pdf"
+      },
+      "topics": [
+        "Embodied and Extended Cognition",
+        "Action Observation and Synchronization",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4210489056"
+    },
+    {
+      "openalex_id": "W4390234347",
+      "doi": "10.1007/978-3-031-41264-6_9",
+      "title": "Metacognition, Accountability and Legal Personhood of AI",
+      "authors": [
+        {
+          "name": "Beatriz A. Ribeiro",
+          "openalex_id": "A5018438847"
+        },
+        {
+          "name": "H\u00e9lder Coelho",
+          "openalex_id": "A5041387396",
+          "orcid": "https://orcid.org/0000-0001-7622-8624",
+          "institutions": [
+            "University of Lisbon"
+          ]
+        },
+        {
+          "name": "Ana Elisabete Ferreira",
+          "openalex_id": "A5083291360",
+          "orcid": "https://orcid.org/0000-0002-3845-3166",
+          "institutions": [
+            "University of Coimbra"
+          ]
+        },
+        {
+          "name": "Jo\u00e3o Branquinho",
+          "openalex_id": "A5060042491",
+          "orcid": "https://orcid.org/0000-0001-7150-1249",
+          "institutions": [
+            "University of Lisbon"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-26",
+      "abstract": "Abstract One of the puzzles yet to be solved regarding Artificial Intelligence (AI) is whether or not robots can be considered accountable and have, eventually, legal personhood. With inputs from Philosophy, Psychology, Computation and Law, the paper proposes an interdisciplinary approach to the question of legal personhood in AI. In this paper, we examine, firstly, the concepts of Object (a mere tool) and Agent, in order to understand in which category AI may belong to. Secondly, we analyze how Metacognition, broadly defined as the cognition about cognition, which results in mental processes that control an entity\u2019s thoughts and behavior, can be applied to law as a minimum requirement for accountability. For instance, we shall see that both children and people with mental diseases, besides being two categories of subjects that have a very restricted legal capacity, also show some limitations when it comes to Metacognition. In other words, we argue that the main difference between a non-responsible and a responsible Agent depends on the metacognitive processes that can be carried out by the entity. Ultimately, we discuss how to transpose this idea to AI, debating the possible terms of legal personhood of AI.",
+      "cited_by_count": 2,
+      "type": "book-chapter",
+      "source": {
+        "name": "Law, governance and technology series",
+        "type": "book series",
+        "issn": [
+          "2352-1902",
+          "2352-1910"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-031-41264-6_9.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Free Will and Agency"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W4390234347"
+    },
+    {
+      "openalex_id": "W3119399459",
+      "doi": "10.1007/s10648-020-09586-2",
+      "title": "The Cognitive Affective Model of Immersive Learning (CAMIL): a Theoretical Research-Based Model of Learning in Immersive Virtual Reality",
+      "authors": [
+        {
+          "name": "Guido Makransky",
+          "openalex_id": "A5082800592",
+          "orcid": "https://orcid.org/0000-0003-1862-7824",
+          "institutions": [
+            "University of Copenhagen"
+          ]
+        },
+        {
+          "name": "Gustav B\u00f8g Petersen",
+          "openalex_id": "A5012695740",
+          "orcid": "https://orcid.org/0000-0003-4098-4895",
+          "institutions": [
+            "University of Copenhagen"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-06",
+      "abstract": "Abstract There has been a surge in interest and implementation of immersive virtual reality (IVR)-based lessons in education and training recently, which has resulted in many studies on the topic. There are recent reviews which summarize this research, but little work has been done that synthesizes the existing findings into a theoretical framework. The Cognitive Affective Model of Immersive Learning (CAMIL) synthesizes existing immersive educational research to describe the process of learning in IVR. The general theoretical framework of the model suggests that instructional methods which are based on evidence from research with less immersive media generalize to learning in IVR. However, the CAMIL builds on evidence that media interacts with method. That is, certain methods which facilitate the affordances of IVR are specifically relevant in this medium. The CAMIL identifies presence and agency as the general psychological affordances of learning in IVR, and describes how immersion, control factors, and representational fidelity facilitate these affordances. The model describes six affective and cognitive factors that can lead to IVR-based learning outcomes including interest, motivation, self-efficacy, embodiment, cognitive load, and self-regulation. The model also describes how these factors lead to factual, conceptual, and procedural knowledge acquisition and knowledge transfer. Implications for future research and instructional design are proposed.",
+      "cited_by_count": 860,
+      "type": "article",
+      "source": {
+        "name": "Educational Psychology Review",
+        "type": "journal",
+        "issn": [
+          "1040-726X",
+          "1573-336X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10648-020-09586-2.pdf"
+      },
+      "topics": [
+        "Virtual Reality Applications and Impacts",
+        "Educational Games and Gamification",
+        "Visual and Cognitive Learning Processes"
+      ],
+      "referenced_works_count": 118,
+      "url": "https://openalex.org/W3119399459"
+    },
+    {
+      "openalex_id": "W4304943299",
+      "doi": "10.1007/s10639-022-11316-w",
+      "title": "Ethical principles for artificial intelligence in education",
+      "authors": [
+        {
+          "name": "Andy Nguyen",
+          "openalex_id": "A5091570362",
+          "orcid": "https://orcid.org/0000-0002-0759-9656",
+          "institutions": [
+            "University of Oulu"
+          ]
+        },
+        {
+          "name": "Ha Ngan Ngo",
+          "openalex_id": "A5031594602",
+          "orcid": "https://orcid.org/0000-0002-4275-3620",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        },
+        {
+          "name": "Yvonne Hong",
+          "openalex_id": "A5084270282",
+          "orcid": "https://orcid.org/0000-0002-0046-3983",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        },
+        {
+          "name": "Belle Dang",
+          "openalex_id": "A5052061009",
+          "orcid": "https://orcid.org/0009-0006-8734-6697",
+          "institutions": [
+            "University of Oulu"
+          ]
+        },
+        {
+          "name": "Bich\u2010Phuong Thi Nguyen",
+          "openalex_id": "A5032059076",
+          "orcid": "https://orcid.org/0000-0003-1836-4403",
+          "institutions": [
+            "University of Languages and International Studies"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-13",
+      "abstract": null,
+      "cited_by_count": 844,
+      "type": "article",
+      "source": {
+        "name": "Education and Information Technologies",
+        "type": "journal",
+        "issn": [
+          "1360-2357",
+          "1573-7608"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10639-022-11316-w.pdf"
+      },
+      "topics": [
+        "Online Learning and Analytics",
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W4304943299"
+    },
+    {
+      "openalex_id": "W4293503368",
+      "doi": "10.1007/978-981-19-4158-0_7",
+      "title": "Artificial General Intelligence and Autonomous Humanoid Robotics",
+      "authors": [
+        {
+          "name": "Phillip Anthony O\u2019Hara",
+          "openalex_id": "A5005682587",
+          "institutions": [
+            "Economic Policy Institute"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": null,
+      "cited_by_count": 3,
+      "type": "book-chapter",
+      "source": {
+        "name": "Springer texts in business and economics",
+        "type": "book series",
+        "issn": [
+          "2192-4333",
+          "2192-4341"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Space Science and Extraterrestrial Life",
+        "Innovation, Sustainability, Human-Machine Systems",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 106,
+      "url": "https://openalex.org/W4293503368"
+    },
+    {
+      "openalex_id": "W4386245583",
+      "doi": "10.1007/s00146-023-01753-7",
+      "title": "The Digital Nexus: tracing the evolution of human consciousness and cognition within the artificial realm\u2014a comprehensive review",
+      "authors": [
+        {
+          "name": "Zheng Wang",
+          "openalex_id": "A5001485247",
+          "orcid": "https://orcid.org/0000-0002-1285-9803",
+          "institutions": [
+            "China University of Political Science and Law"
+          ]
+        },
+        {
+          "name": "Di-tao Wu",
+          "openalex_id": "A5101602370",
+          "orcid": "https://orcid.org/0009-0007-3364-9315",
+          "institutions": [
+            "Shandong Normal University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-29",
+      "abstract": null,
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Big Data and Digital Economy",
+        "Space Science and Extraterrestrial Life"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W4386245583"
+    },
+    {
+      "openalex_id": "W3155134306",
+      "doi": null,
+      "title": "Artificial Consciousness, Superintelligence and Ethics in Robotics: How to Get There?",
+      "authors": [
+        {
+          "name": "Louis Vervoort",
+          "openalex_id": "A5006843466"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Can future robots and AI-systems have consciousness and genuinely human intelligence \u2013 or even better, superhuman intelligence? Is it possible for them to behave ethically? Here we look at these questions from the point of view of philosophy and AI, and argue that these questions are related: their answer hinges on the fulfillment of the same condition. Starting from an analysis of the concept of consciousness, we argue that the key capacity that computers and robots should possess in order to emulate human cognition and (ethical) consciousness is the capacity to learn and apply \u2018coherent webs-of-theories\u2019. We conjecture that where classic AI has been, in essence, \u2018data-driven\u2019, the greatest leap forward would be \u2018theory-driven\u2019 AI. We review prominent work in deep learning and cognitive neuroscience to back-up this claim. This paper is an attempt at synthesis between recent work in philosophy, AI and cognitive science.",
+      "cited_by_count": 2,
+      "type": "preprint",
+      "source": {
+        "name": "PhilSci-Archive (University of Pittsburgh)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Hermeneutics and Narrative Identity",
+        "Aging, Elder Care, and Social Issues",
+        "Health, Medicine and Society"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3155134306"
+    },
+    {
+      "openalex_id": "W4408087882",
+      "doi": "10.20944/preprints202502.1377.v2",
+      "title": "A New Epistemology of Intelligence: Rethinking Knowledge Through Noesology",
+      "authors": [
+        {
+          "name": "Pitshou Moleka",
+          "openalex_id": "A5005101573",
+          "orcid": "https://orcid.org/0000-0003-0668-0919"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-02-27",
+      "abstract": "The evolving landscape of intelligence research necessitates a paradigm shift beyond conventional epistemological frameworks. Traditional cognitive models, rooted in reductionist perspectives, have struggled to encapsulate the complexity of intelligence, consciousness, and knowledge production in an increasingly interconnected world. This paper introduces noesology, a transdisciplinary epistemological framework that integrates insights from cognitive science, artificial intelligence (AI), philosophy, neuroscience, and complexity theory to redefine intelligence as a multi-layered, dynamic, and emergent phenomenon. Noesology, derived from the Greek noein (\u03bd\u03bf\u03b5\u1fd6\u03bd), meaning \"to perceive by the intellect,\" and logos (\u03bb\u03cc\u03b3\u03bf\u03c2), meaning \"study\" or \"discourse,\" provides a novel perspective on knowledge by emphasizing embodiment, collective intelligence, transdisciplinary integration, and systems thinking. It critically evaluates the limitations of traditional epistemologies, including Cartesian dualism, Kantian transcendental idealism, and cognitive reductionism, arguing that intelligence is best understood as an emergent and systemic phenomenon that transcends anthropocentric biases.This study highlights the interconnections between natural, artificial, and collective intelligence, advocating for an epistemological framework that integrates ecological intelligence, indigenous knowledge systems, and the ethical implications of AI. Through a comprehensive literature review and empirical case studies, this paper demonstrates the applicability of noesology in education, AI development, social sciences, and ecological sustainability. It ultimately proposes a new model of intelligence\u2014one that reflects the complexity, interconnectivity, and dynamic nature of knowledge production in the 21st century.The research concludes by discussing the practical implications of Noesology for rethinking pedagogy, fostering ethical AI development, enhancing collective intelligence in governance, and promoting ecological sustainability. By advancing a transdisciplinary epistemology, this paper contributes to the ongoing discourse on intelligence, emphasizing the need for a holistic, integrative, and future-oriented approach to knowledge and cognition.",
+      "cited_by_count": 5,
+      "type": "preprint",
+      "source": {
+        "name": "Preprints.org",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.preprints.org/frontend/manuscript/f8dab9df115f42182ce46170d85ca61e/download_pub"
+      },
+      "topics": [
+        "Cognitive Science and Education Research"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4408087882"
+    },
+    {
+      "openalex_id": "W4400661306",
+      "doi": "10.57125/fp.2023.12.30.03",
+      "title": "Challenging the Boundary between Self-Awareness and Self-Consciousness in AI from the Perspectives of Philosophy",
+      "authors": [
+        {
+          "name": "Svitlana Namestiuk",
+          "openalex_id": "A5110930302",
+          "institutions": [
+            "Bukovinian State Medical University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-30",
+      "abstract": "With the progression of technology, scientists are dealing with the challenges brought about by the creation of smart AI models designed for actual use. This paper aimed to explore the complex boundary between consciousness and self-awareness in artificial intelligence (AI) systems from a philosophical perspective. Methods - The literature review conducted as part of this study was based on materials obtained from such databases as WOS, Web of Science, Scopus, and Google Scholar. The findings of the study indicated that, in the present day, philosophy is analysing how technological advancements have led to a focus on conceptual frameworks that define consciousness as the capacity of artificial intelligence to identify its functional states. Self-awareness is also being viewed as the ability to reflect and recognise oneself within a larger context. Drawing on the principles of symbolic AI and connectionism, the study considers whether AI can have a form of self-awareness similar to biological entities and how this relates to philosophical debates about consciousness. The study delved into the symbolic representation of knowledge and logical reasoning as tools for AI to achieve a primary form of self-awareness. This is contrasted with a connectionist approach that models the emergent properties of neural networks, suggesting a pathway to more complex forms of self-awareness. The article discussed the limitations and potential of these approaches, including the ethical implications of creating systems that can mimic aspects of human self-awareness and self-concept. By thoroughly examining the current AI technologies and their underlying philosophical principles, the article aims to give a detailed look at the ongoing debate on the cognitive abilities of AI and whether it can move beyond basic self-awareness to a more profound level of self-awareness. The conclusion is that although AI may exhibit behaviours indicative of self-awareness, the subjective experience of self-awareness remains a uniquely human trait, which calls into question the boundary between human and machine cognition.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Futurity Philosophy.",
+        "type": "journal",
+        "issn": [
+          "2956-7238"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.57125/fp.2023.12.30.03"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Mental Health Research Topics",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4400661306"
+    },
+    {
+      "openalex_id": "W4411795218",
+      "doi": "10.11648/j.edu.20251403.17",
+      "title": "The Developmental Trajectory of Adolescents&amp;apos; AI Ethical Cognition and Educational Intervention Pathways from the Perspective of Philosophy of Technology",
+      "authors": [
+        {
+          "name": "Guoqing Yu",
+          "openalex_id": "A5103645358"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-06-20",
+      "abstract": "With the rapid advancement of artificial intelligence technology, adolescents, especially those aged 12 - 18, are increasingly exposed to AI applications in daily life and educational contexts. This exposure presents new challenges to their ethical discernment capabilities. Grounded in the philosophy of technology framework, the study examines the developmental trajectory of adolescents&amp;apos; AI ethics cognition and explores corresponding pedagogical intervention approaches. The study employs a combination of documentary analysis, questionnaire surveys, and controlled experiments to systematically interpret the cognitive patterns and developmental mechanisms adolescents demonstrate when confronting AI ethical dilemmas. The findings reveal that 60% of adolescents aged 12 - 14 show a basic understanding of AI ethics, while 40% of those aged 15 - 18 demonstrate a more advanced level. Targeted educational interventions, such as scenario-based instruction and immersive simulations, can significantly enhance their ethical decision-making competencies by 30%. These outcomes provide practical guidelines for developing AI ethics education programs and serve as evidence-based references for policy formulation aimed at optimizing educational practices in the context of AI integration. While the study provides valuable insights into adolescent AI ethics cognition, further research is needed to address potential limitations, such as the sample size of only 300 participants and the scope of the interventions tested being limited to urban areas.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Education Journal",
+        "type": "journal",
+        "issn": [
+          "2327-2600",
+          "2327-2619"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://article.sciencepg.com/pdf/j.edu.20251403.17"
+      },
+      "topics": [
+        "Educational Reforms and Innovations",
+        "Medical Research and Treatments"
+      ],
+      "referenced_works_count": 4,
+      "url": "https://openalex.org/W4411795218"
+    },
+    {
+      "openalex_id": "W3133226171",
+      "doi": null,
+      "title": "The Cognitive Phenomenology Argument for Disembodied AI Consciousness",
+      "authors": [
+        {
+          "name": "Cody Turner",
+          "openalex_id": "A5032547303",
+          "orcid": "https://orcid.org/0000-0002-8686-1738"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "In this chapter I offer two novel arguments for what I call strong primitivism about cognitive phenomenology, the thesis that there exists a phenomenology of cognition that is neither reducible to, nor dependent upon, sensory phenomenology. I then contend that strong primitivism implies that phenomenal consciousness does not require sensory processing. This latter contention has implications for the philosophy of artificial intelligence. For if sensory processing is not a necessary condition for phenomenal consciousness, then it plausibly follows that AI consciousness (assuming that it is possible) does not require embodiment. The overarching goal of this paper is to show how different topics in the analytic philosophy of mind can be brought to bear on an important issue in the philosophy of artificial intelligence.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3133226171"
+    },
+    {
+      "openalex_id": "W4378673232",
+      "doi": "10.54097/jid.v3i1.8424",
+      "title": "Conceptual Metaphor and Cognition: From the Perspective of the Philosophy of Language",
+      "authors": [
+        {
+          "name": "Zifei Guo",
+          "openalex_id": "A5104122065",
+          "institutions": [
+            "Dalian University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-17",
+      "abstract": "Metaphor remains a pivotal focus in the philosophy of language as Lakoff stresses that metaphor is a cognitive phenomenon of human beings and an indispensable part of key cognitive areas. By employing a vast number of metaphorical phenomena to demonstrate the intriguing correlation between language and cognitive structures, Lakoff proposes conceptual metaphor and integrated the study of metaphor into cognition, thereby breaking away from the shackles of traditional views on metaphor. Meanwhile Lakoff has realized the nature, mechanism and characteristics of metaphors from the cognitive perspective within the framework of philosophy of language. In terms of the transition from viewing metaphor as a rhetorical device to a cognitive pattern, relevant studies not merely emphasize on the linguistic form of the metaphor, but also on its essence as conceptual metaphor relying on the subjective cognition of language users as well as the external objective environment. On the basis of the philosophy of language, the essence of metaphor shall be defined and realized. Nowadays, machine translation is developing rapidly, but there are still many deficiencies in the use of AI affective computing and metaphor processing. Studies of metaphors and imagination in literary language can enhance the performance of AI in terms of machine translation and are expected to realize the true swarm intelligence in NLP.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Journal of innovation and development",
+        "type": "journal",
+        "issn": [
+          "2958-390X",
+          "2958-4752"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://drpress.org/ojs/index.php/jid/article/download/8424/8199"
+      },
+      "topics": [
+        "Language, Metaphor, and Cognition"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W4378673232"
+    },
+    {
+      "openalex_id": "W3036816925",
+      "doi": "10.3390/app10124182",
+      "title": "Value-Oriented and Ethical Technology Engineering in Industry 5.0: A Human-Centric Perspective for the Design of the Factory of the Future",
+      "authors": [
+        {
+          "name": "Francesco Longo",
+          "openalex_id": "A5021053658",
+          "orcid": "https://orcid.org/0000-0002-8538-9857",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Antonio Padovano",
+          "openalex_id": "A5007987514",
+          "orcid": "https://orcid.org/0000-0001-6374-1816",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Steven Umbrello",
+          "openalex_id": "A5004022105",
+          "orcid": "https://orcid.org/0000-0003-2594-6313",
+          "institutions": [
+            "University of Turin"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-18",
+      "abstract": "Although manufacturing companies are currently situated at a transition point in what has been called Industry 4.0, a new revolutionary wave\u2014Industry 5.0\u2014is emerging as an \u2018Age of Augmentation\u2019 when the human and machine reconcile and work in perfect symbiosis with one another. Recent years have indeed assisted in drawing attention to the human-centric design of Cyber-Physical Production Systems (CPPS) and to the genesis of the \u2018Operator 4.0\u2019, two novel concepts that raise significant ethical questions regarding the impact of technology on workers and society at large. This paper argues that a value-oriented and ethical technology engineering in Industry 5.0 is an urgent and sensitive topic as demonstrated by a survey administered to industry leaders from different companies. The Value Sensitive Design (VSD) approach is proposed as a principled framework to illustrate how technologies enabling human\u2013machine symbiosis in the Factory of the Future can be designed to embody elicited human values and to illustrate actionable steps that engineers and designers can take in their design projects. Use cases based on real solutions and prototypes discuss how a design-for-values approach aids in the investigation and mitigation of ethical issues emerging from the implementation of technological solutions and, hence, support the migration to a symbiotic Factory of the Future.",
+      "cited_by_count": 577,
+      "type": "article",
+      "source": {
+        "name": "Applied Sciences",
+        "type": "journal",
+        "issn": [
+          "2076-3417"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2076-3417/10/12/4182/pdf?version=1592473277"
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W3036816925"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

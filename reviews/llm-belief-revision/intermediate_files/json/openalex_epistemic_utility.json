@@ -1,0 +1,1443 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "epistemic utility theory",
+  "results": [
+    {
+      "openalex_id": "W2755168462",
+      "doi": "10.1111/phpr.12436",
+      "title": "Epistemic Utility Theory and the Aim of Belief",
+      "authors": [
+        {
+          "name": "Jennifer Rose Carr",
+          "openalex_id": "A5076915566",
+          "orcid": "https://orcid.org/0000-0002-3982-1637",
+          "institutions": [
+            "University of California System"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-09-11",
+      "abstract": null,
+      "cited_by_count": 90,
+      "type": "article",
+      "source": {
+        "name": "Philosophy and Phenomenological Research",
+        "type": "journal",
+        "issn": [
+          "0031-8205",
+          "1933-1592"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Free Will and Agency",
+        "Feminist Epistemology and Gender Studies"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W2755168462"
+    },
+    {
+      "openalex_id": "W2889001720",
+      "doi": "10.1007/s11098-018-1157-9",
+      "title": "An objection of varying importance to epistemic utility theory",
+      "authors": [
+        {
+          "name": "Benjamin A. Levinstein",
+          "openalex_id": "A5081236757",
+          "orcid": "https://orcid.org/0000-0002-7497-1091",
+          "institutions": [
+            "University of Illinois Urbana-Champaign"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-08-29",
+      "abstract": null,
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Philosophical Studies",
+        "type": "journal",
+        "issn": [
+          "0031-8116",
+          "1573-0883"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and History of Science",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2889001720"
+    },
+    {
+      "openalex_id": "W1824373354",
+      "doi": "10.1093/acprof:oso/9780198732716.001.0001",
+      "title": "Accuracy and the Laws of Credence",
+      "authors": [
+        {
+          "name": "Richard Pettigrew",
+          "openalex_id": "A5019300135",
+          "orcid": "https://orcid.org/0000-0003-0822-4300"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-04-01",
+      "abstract": "Abstract This book explores a particular way of justifying the rational principles that govern credences (or degrees of belief). The main principles that the book justifies are the central tenets of Bayesian epistemology, though many other related principles are met along the way. These are: Probabilism, the claims that credences should obey the laws of probability; the Principal Principle, which says how credences in hypotheses about the objective chances should relate to credences in other propositions; the Principle of Indifference, which says that, in the absence of evidence, credences should be distributed equally over all possibilities that are entertained; and Conditionalization, the Bayesian account of how responses are planned when new evidence is received. Ultimately, then, the book is a study in the foundations of Bayesianism. To justify these principles, the book looks to decision theory. An agent\u2019s credences are treated as if they were a choice she makes. The book appeals to the principles of decision theory to show that, when epistemic utility is measured in this way, the credences that violate the principles listed above are ruled out as irrational. The account of epistemic utility given is the veritist\u2019s: the sole fundamental source of epistemic utility for credences is their accuracy. Thus, this is an investigation of the version of epistemic utility theory known as accuracy-first epistemology.",
+      "cited_by_count": 436,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and History of Science",
+        "Bayesian Modeling and Causal Inference"
+      ],
+      "referenced_works_count": 102,
+      "url": "https://openalex.org/W1824373354"
+    },
+    {
+      "openalex_id": "W2772004956",
+      "doi": "10.1093/mind/fzx028",
+      "title": "Lockeans Maximize Expected Accuracy",
+      "authors": [
+        {
+          "name": "Kevin Dorst",
+          "openalex_id": "A5024300552",
+          "orcid": "https://orcid.org/0000-0003-3982-3242",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-09-16",
+      "abstract": "The Lockean Thesis says that you must believe p iff you're sufficiently confident of it. On some versions, the 'must' asserts a metaphysical connection; on others, it asserts a normative one. On some versions, 'sufficiently confident' refers to a fixed threshold of credence; on others, it varies with proposition and context. Claim: the Lockean Thesis follows from epistemic utility theory\u2014the view that rational requirements are constrained by the norm to promote accuracy. Different versions of this theory generate different versions of Lockeanism; moreover, a plausible version of epistemic utility theory meshes with natural-language considerations, yielding a new Lockean picture that helps to model and explain the role of beliefs in inquiry and conversation. Your beliefs are your best guesses in response to the epistemic priorities of your context. Upshot: we have a new approach to the epistemology and semantics of belief. And it has teeth. It implies that the role of beliefs is fundamentally different from what many have thought, and in fact supports a metaphysical reduction of belief to credence.",
+      "cited_by_count": 124,
+      "type": "article",
+      "source": {
+        "name": "Mind",
+        "type": "journal",
+        "issn": [
+          "0026-4423",
+          "1460-2113"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and Theoretical Science",
+        "Logic, Reasoning, and Knowledge"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W2772004956"
+    },
+    {
+      "openalex_id": "W2059320470",
+      "doi": "10.1080/17588928.2015.1020053",
+      "title": "Active inference and epistemic value",
+      "authors": [
+        {
+          "name": "Karl Friston",
+          "openalex_id": "A5086852785",
+          "orcid": "https://orcid.org/0000-0001-7984-8909",
+          "institutions": [
+            "Wellcome Centre for Human Neuroimaging"
+          ]
+        },
+        {
+          "name": "Francesco Rigoli",
+          "openalex_id": "A5110418524",
+          "institutions": [
+            "Wellcome Centre for Human Neuroimaging"
+          ]
+        },
+        {
+          "name": "Dimitri Ognibene",
+          "openalex_id": "A5068529617",
+          "orcid": "https://orcid.org/0000-0002-9454-680X",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Christoph Mathys",
+          "openalex_id": "A5021358582",
+          "orcid": "https://orcid.org/0000-0003-4079-5453",
+          "institutions": [
+            "University of Zurich",
+            "ETH Zurich",
+            "Institute for Biomedical Engineering",
+            "Laboratory for Social and Neural Systems Research",
+            "Wellcome Centre for Human Neuroimaging"
+          ]
+        },
+        {
+          "name": "Thomas H. B. FitzGerald",
+          "openalex_id": "A5011377871",
+          "orcid": "https://orcid.org/0000-0002-3855-1591",
+          "institutions": [
+            "Wellcome Centre for Human Neuroimaging"
+          ]
+        },
+        {
+          "name": "Giovanni Pezzulo",
+          "openalex_id": "A5053290697",
+          "orcid": "https://orcid.org/0000-0001-6813-8282",
+          "institutions": [
+            "National Research Council",
+            "Institute of Cognitive Sciences and Technologies"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-17",
+      "abstract": "We offer a formal treatment of choice behavior based on the premise that agents minimize the expected free energy of future outcomes. Crucially, the negative free energy or quality of a policy can be decomposed into extrinsic and epistemic (or intrinsic) value. Minimizing expected free energy is therefore equivalent to maximizing extrinsic value or expected utility (defined in terms of prior preferences or goals), while maximizing information gain or intrinsic value (or reducing uncertainty about the causes of valuable outcomes). The resulting scheme resolves the exploration-exploitation dilemma: Epistemic value is maximized until there is no further information gain, after which exploitation is assured through maximization of extrinsic value. This is formally consistent with the Infomax principle, generalizing formulations of active vision based upon salience (Bayesian surprise) and optimal decisions based on expected utility and risk-sensitive (Kullback-Leibler) control. Furthermore, as with previous active inference formulations of discrete (Markovian) problems, ad hoc softmax parameters become the expected (Bayes-optimal) precision of beliefs about, or confidence in, policies. This article focuses on the basic theory, illustrating the ideas with simulations. A key aspect of these simulations is the similarity between precision updates and dopaminergic discharges observed in conditioning paradigms.",
+      "cited_by_count": 701,
+      "type": "article",
+      "source": {
+        "name": "Cognitive Neuroscience",
+        "type": "journal",
+        "issn": [
+          "1758-8928",
+          "1758-8936"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neural and Behavioral Psychology Studies",
+        "Neural dynamics and brain function",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 145,
+      "url": "https://openalex.org/W2059320470"
+    },
+    {
+      "openalex_id": "W2120232953",
+      "doi": "10.1017/epi.2015.44",
+      "title": "JAMESIAN EPISTEMOLOGY FORMALISED: AN EXPLICATION OF \u2018THE WILL TO BELIEVE\u2019",
+      "authors": [
+        {
+          "name": "Richard Pettigrew",
+          "openalex_id": "A5019300135",
+          "orcid": "https://orcid.org/0000-0003-0822-4300"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-16",
+      "abstract": "ABSTRACT Famously, William James held that there are two commandments that govern our epistemic life: Believe truth! Shun error! In this paper, I give a formal account of James' claim using the tools of epistemic utility theory. I begin by giving the account for categorical doxastic states \u2013 that is, full belief, full disbelief, and suspension of judgment. Then I will show how the account plays out for graded doxastic states \u2013 that is, credences. The latter part of the paper thus answers a question left open in Pettigrew (2014).",
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Episteme",
+        "type": "journal",
+        "issn": [
+          "1742-3600",
+          "1750-0117"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5DD3912B582124D812DFAC948CE75BF3/S1742360015000441a.pdf/div-class-title-jamesian-epistemology-formalised-an-explication-of-the-will-to-believe-div.pdf"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and Theoretical Science",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W2120232953"
+    },
+    {
+      "openalex_id": "W4293757797",
+      "doi": "10.1093/oso/9780192864352.001.0001",
+      "title": "Epistemic Risk and the Demands of Rationality",
+      "authors": [
+        {
+          "name": "Richard Pettigrew",
+          "openalex_id": "A5019300135",
+          "orcid": "https://orcid.org/0000-0003-0822-4300",
+          "institutions": [
+            "University of Bristol"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-11",
+      "abstract": "Abstract How much does rationality constrain what we should believe on the basis of our evidence? According to this book, not very much. For most people and most bodies of evidence, there is a wide range of beliefs that rationality permits them to have in response to that evidence. The argument, which takes inspiration from William James\u2019 ideas in \u2018The Will to Believe\u2019, proceeds from two premises. The first is a theory about the basis of epistemic rationality. It\u2019s called epistemic utility theory, and it says that what it is epistemically rational for you to believe is what it would be rational for you to choose if you were given the chance to pick your beliefs and, when picking them, you were to care only about their epistemic value. So, to say which beliefs are permitted, we must say how to measure epistemic value, and which decision rule to use when picking your beliefs. The second premise is a claim about attitudes to epistemic risk, and it says that rationality permits many different such attitudes. These attitudes can show up in epistemic utility theory in two ways: in the way you measure epistemic value; and in the decision rule you use to pick beliefs. This book explores the latter. The result is permissivism about epistemic rationality: different attitudes to epistemic risk lead to different choices of prior beliefs; given most bodies of evidence, different priors lead to different posteriors; and even once we fix your attitudes to epistemic risk, if they are at all risk-inclined, there is a range of different priors and therefore different posteriors they permit.",
+      "cited_by_count": 46,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Decision-Making and Behavioral Economics",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W4293757797"
+    },
+    {
+      "openalex_id": "W2523720025",
+      "doi": null,
+      "title": "A preface paradox for intention",
+      "authors": [
+        {
+          "name": "Simon Goldstein",
+          "openalex_id": "A5054881971",
+          "orcid": "https://orcid.org/0000-0003-4089-8575",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-01",
+      "abstract": "In this paper I argue that there is a preface paradox for intention. The preface paradox for intention shows that intentions do not obey an agglomeration norm. But what norms do intentions obey? I argue that intentions come in degrees. These `partial' intentions are governed by the norms of the probability calculus.\\nFirst, I give a dispositional theory of partial intention. Dispositions come in degrees. Intentions are dispositions. So the degree to which you intend to A is simply the degree to which you possess the dispositions characteristic of intending to A. Second, I use this theory to defend probabilism about intentions. Intentions involve some degreed dispositions. Degrees can be ordered from 0 to 1. So an agent's degree of dispositions involved in Aing can satisfy the probability calculus. I show that if they do not, the agent is irrational.\\nBut this argument assumes my particular theory of partial intention. One might look for a more general approach. In the rest of the paper, I offer a decision theoretic argument for probabilism about intentions. I show that if an agent's partial intentions do not satisfy the probability calculus, then she violates a variety of plausible decision theoretic norms. These arguments extend `epistemic utility' theory from beliefs to intentions.",
+      "cited_by_count": 47,
+      "type": "article",
+      "source": {
+        "name": "Digital Commons - Lingnan (Lingnan University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/2027/spo.3521354.0016.014"
+      },
+      "topics": [
+        "Free Will and Agency",
+        "Epistemology, Ethics, and Metaphysics",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W2523720025"
+    },
+    {
+      "openalex_id": "W2888489258",
+      "doi": "10.1086/703552",
+      "title": "A Theory of Epistemic Risk",
+      "authors": [
+        {
+          "name": "Boris Babic",
+          "openalex_id": "A5017490815",
+          "orcid": "https://orcid.org/0000-0003-2800-1307"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-03-25",
+      "abstract": "I propose a general alethic theory of epistemic risk according to which the riskiness of an agent\u2019s credence function encodes her relative sensitivity to different types of graded error. After motivating and mathematically developing this approach, I show that the epistemic risk function is a scaled reflection of expected inaccuracy (a quantity also known as generalized information entropy). This duality between risk and information enables us to explore the relationship between attitudes to epistemic risk, the choice of scoring rules in epistemic utility theory, and the selection of priors in Bayesian epistemology more generally (including the Laplacean principle of indifference).",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "0031-8248",
+          "1539-767X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and History of Science",
+        "Decision-Making and Behavioral Economics"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2888489258"
+    },
+    {
+      "openalex_id": "W4242468249",
+      "doi": "10.1093/oso/9780198779681.001.0001",
+      "title": "Epistemic Consequentialism",
+      "authors": [
+        {
+          "name": "Ahlstr\u00f6m, Kristoffer 1980-",
+          "openalex_id": ""
+        },
+        {
+          "name": "Dunn, Jeffrey",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-21",
+      "abstract": "An important issue in epistemology concerns the source of epistemic normativity. Epistemic consequentialism maintains that epistemic norms are genuine norms in virtue of the way in which they are conducive to epistemic value, whatever epistemic value may be. So, for example, the epistemic consequentialist might say that it is a norm that beliefs should be consistent in virtue of the fact that holding consistent beliefs is the best way to achieve the epistemic value of accuracy. Thus epistemic consequentialism is structurally similar to the familiar family of consequentialist views in ethics. Recently, philosophers from both formal epistemology and traditional epistemology have shown interest in such a view. In formal epistemology, there has been particular interest in thinking of epistemology as a kind of decision theory where instead of maximizing expected utility one maximizes expected epistemic utility. In traditional epistemology, there has been particular interest in various forms of reliabilism about justification and whether such views are analogous to\u2014and so face similar problems to\u2014versions of rule consequentialism in ethics. This volume presents some of the most recent work on these topics as well as others related to epistemic consequentialism, by authors that are sympathetic to the view and those who are critical of it.",
+      "cited_by_count": 108,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W4242468249"
+    },
+    {
+      "openalex_id": "W2424475825",
+      "doi": "10.3389/fncom.2016.00056",
+      "title": "Scene Construction, Visual Foraging, and Active Inference",
+      "authors": [
+        {
+          "name": "M. Berk Mirza",
+          "openalex_id": "A5066749787",
+          "orcid": "https://orcid.org/0000-0002-9355-2052",
+          "institutions": [
+            "University College London",
+            "Wellcome Centre for Human Neuroimaging"
+          ]
+        },
+        {
+          "name": "Rick A. Adams",
+          "openalex_id": "A5039656642",
+          "orcid": "https://orcid.org/0000-0002-7661-8881",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Christoph Mathys",
+          "openalex_id": "A5021358582",
+          "orcid": "https://orcid.org/0000-0003-4079-5453",
+          "institutions": [
+            "University of Zurich",
+            "Institute for Biomedical Engineering",
+            "University College London",
+            "Wellcome Centre for Human Neuroimaging",
+            "Prostate Cancer Research",
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "Karl Friston",
+          "openalex_id": "A5086852785",
+          "orcid": "https://orcid.org/0000-0001-7984-8909",
+          "institutions": [
+            "University College London",
+            "Wellcome Centre for Human Neuroimaging"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-06-14",
+      "abstract": "This paper describes an active inference scheme for visual searches and the perceptual synthesis entailed by scene construction. Active inference assumes that perception and action minimize variational free energy, where actions are selected to minimize the free energy expected in the future. This assumption generalizes risk-sensitive control and expected utility theory to include epistemic value; namely, the value (or salience) of information inherent in resolving uncertainty about the causes of ambiguous cues or outcomes. Here, we apply active inference to saccadic searches of a visual scene. We consider the (difficult) problem of categorizing a scene, based on the spatial relationship among visual objects where, crucially, visual cues are sampled myopically through a sequence of saccadic eye movements. This means that evidence for competing hypotheses about the scene has to be accumulated sequentially, calling upon both prediction (planning) and postdiction (memory). Our aim is to highlight some simple but fundamental aspects of the requisite functional anatomy; namely, the link between approximate Bayesian inference under mean field assumptions and functional segregation in the visual cortex. This link rests upon the (neurobiologically plausible) process theory that accompanies the normative formulation of active inference for Markov decision processes. In future work, we hope to use this scheme to model empirical saccadic searches and identify the prior beliefs that underwrite intersubject variability in the way people forage for information in visual scenes (e.g., in schizophrenia).",
+      "cited_by_count": 171,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Computational Neuroscience",
+        "type": "journal",
+        "issn": [
+          "1662-5188"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fncom.2016.00056/pdf"
+      },
+      "topics": [
+        "Neural dynamics and brain function",
+        "Functional Brain Connectivity Studies",
+        "Visual perception and processing mechanisms"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2424475825"
+    },
+    {
+      "openalex_id": "W2808895072",
+      "doi": "10.1093/oso/9780198779681.003.0012",
+      "title": "Epistemic Value and the Jamesian Goals",
+      "authors": [
+        {
+          "name": "Sophie Horowitz",
+          "openalex_id": "A5060881195",
+          "orcid": "https://orcid.org/0000-0001-9646-9230"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-21",
+      "abstract": "William James famously tells us that there are two main goals for rational believers: believing truth and avoiding error. Horowitz argues that epistemic consequentialism\u2014in particular its embodiment in epistemic utility theory\u2014seems to be well positioned to explain how epistemic agents might permissibly weight these goals differently. After all, <italic>practical</italic> versions of consequentialism render it permissible for agents with different goals to act differently in the same situation. Nevertheless, Horowitz argues that epistemic consequentialism doesn\u2019t allow for this kind of permissivism and goes on to argue that this reveals a deep disanalogy between decision theory and the formally similar epistemic utility theory. This raises the question whether epistemic utility theory is a genuinely consequentialist theory at all.",
+      "cited_by_count": 6,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and Theoretical Science",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W2808895072"
+    },
+    {
+      "openalex_id": "W2617941308",
+      "doi": "10.1111/phc3.12433",
+      "title": "Aesthetic values in science",
+      "authors": [
+        {
+          "name": "Milena Ivanova",
+          "openalex_id": "A5064181503",
+          "institutions": [
+            "University of Queensland"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-01",
+      "abstract": "Abstract Scientists often use aesthetic values in the evaluation and choice of theories. Aesthetic values are not only regarded as leading to practically more useful theories but are often taken to stand in a special epistemic relation to the truth of a theory such that the aesthetic merit of a theory is evidence of its truth. This paper explores what aesthetic considerations influence scientists' reasoning, how such aesthetic values relate to the utility of a scientific theory, and how one can justify the epistemic role for such values. The paper examines ways in which the link between beauty and truth can be defended, the challenges facing such accounts, and explores alternative epistemic roles for aesthetic values in scientific practice.",
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "Philosophy Compass",
+        "type": "journal",
+        "issn": [
+          "1747-9991"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Aesthetic Perception and Analysis",
+        "Empathy and Medical Education"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W2617941308"
+    },
+    {
+      "openalex_id": "W2912459983",
+      "doi": "10.1093/analys/any094",
+      "title": "Accuracy and epistemic conservatism",
+      "authors": [
+        {
+          "name": "Florian Steinberger",
+          "openalex_id": "A5013895354",
+          "institutions": [
+            "Birkbeck, University of London"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-12-19",
+      "abstract": "Abstract Epistemic utility theory (EUT) is generally coupled with veritism. Veritism is the view that truth is the sole fundamental epistemic value. Veritism, when paired with EUT, entails a methodological commitment: norms of epistemic rationality are justified only if they can be derived from considerations of accuracy alone. According to EUT, then, believing truly has epistemic value, while believing falsely has epistemic disvalue. This raises the question as to how the rational believer should balance the prospect of true belief against the risk of error. A strong intuitive case can be made for a kind of epistemic conservatism \u2013 that we should disvalue error more than we value true belief. I argue that none of the ways in which advocates of veritist EUT have sought to motivate conservatism can be squared with their methodological commitments. Short of any such justification, they must therefore either abandon their most central methodological principle or else adopt a permissive line with respect to epistemic risk.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Analysis",
+        "type": "journal",
+        "issn": [
+          "0003-2638",
+          "1467-8284"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Feminist Epistemology and Gender Studies",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W2912459983"
+    },
+    {
+      "openalex_id": "W2945902907",
+      "doi": "10.1111/phpr.12597",
+      "title": "Troubles with Theoretical Virtues: Resisting Theoretical Utility Arguments in Metaphysics",
+      "authors": [
+        {
+          "name": "Ot\u00e1vio Bueno",
+          "openalex_id": "A5030749351",
+          "orcid": "https://orcid.org/0000-0002-9161-4205",
+          "institutions": [
+            "University of Miami"
+          ]
+        },
+        {
+          "name": "Scott A. Shalkowski",
+          "openalex_id": "A5039003215",
+          "orcid": "https://orcid.org/0000-0002-5842-1241",
+          "institutions": [
+            "University of Leeds"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-16",
+      "abstract": "In this paper we examine theoretical utility arguments in metaphysics. While philosophers claim a procedural continuity with science when using such arguments, we argue that examining famous instances from the history of science expose their fundamental flaws. We find that arguments from theoretical utility invoke considerations that are not truth conducive and that justifications for claims that a theory possesses theoretical virtues often assume the truth of the theory such virtues are supposed to support. We conclude that theoretical utility arguments provide no epistemic grounds for metaphysical inquiry.",
+      "cited_by_count": 45,
+      "type": "article",
+      "source": {
+        "name": "Philosophy and Phenomenological Research",
+        "type": "journal",
+        "issn": [
+          "0031-8205",
+          "1933-1592"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W2945902907"
+    },
+    {
+      "openalex_id": "W4213037301",
+      "doi": "10.1093/bjps/axv023",
+      "title": "Counterfactual Desirability",
+      "authors": [
+        {
+          "name": "Richard Bradley",
+          "openalex_id": "A5008989669",
+          "orcid": "https://orcid.org/0000-0003-2184-7844",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        },
+        {
+          "name": "H. Orri Stef\u00e1nsson",
+          "openalex_id": "A5079147959",
+          "orcid": "https://orcid.org/0000-0002-8382-1802"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-08-06",
+      "abstract": "The desirability of what actually occurs is often influenced by what could have been. Preferences based on such value dependencies between actual and counterfactual outcomes generate a class of problems for orthodox decision theory, the best-known perhaps being the so-called Allais paradox. In this article we solve these problems by extending Richard Jeffrey's decision theory to counterfactual prospects, using a multidimensional possible-world semantics for conditionals, and showing that preferences that are sensitive to counterfactual considerations can still be desirability-maximizing. We end the article by investigating the conditions necessary and sufficient for a desirability function to be a standard expected-utility function. It turns out that the additional conditions imply highly implausible epistemic principles. 1Two Paradoxes of Rational Choice2Jeffrey Desirability3Counterfactuals 3.1Probability and desirability of counterfactuals3.2Representations4Counterfactual-Dependent Preferences 4.1Preference actualism and desirability maximization4.2Modelling Allais's and Diamond's preferences5Ethical Actualism and Separability 5.1Independence and additive separability5.2 Ethical actualism5.3Expected utility, separability, and ethical actualism6Concluding Remarks7Appendix.",
+      "cited_by_count": 35,
+      "type": "article",
+      "source": {
+        "name": "The British Journal for the Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "0007-0882",
+          "1464-3537"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.journals.uchicago.edu/doi/pdf/10.1093/bjps/axv023"
+      },
+      "topics": [
+        "Decision-Making and Behavioral Economics",
+        "Epistemology, Ethics, and Metaphysics",
+        "Risk Perception and Management"
+      ],
+      "referenced_works_count": 18,
+      "url": "https://openalex.org/W4213037301"
+    },
+    {
+      "openalex_id": "W2738838016",
+      "doi": "10.1111/jep.12788",
+      "title": "Many faces of rationality: Implications of the great rationality debate for clinical decision\u2010making",
+      "authors": [
+        {
+          "name": "Benjamin Djulbegovi\u0107",
+          "openalex_id": "A5021167699",
+          "orcid": "https://orcid.org/0000-0003-0671-1447",
+          "institutions": [
+            "Moffitt Cancer Center",
+            "University of South Florida"
+          ]
+        },
+        {
+          "name": "Shira Elqayam",
+          "openalex_id": "A5071327630",
+          "orcid": "https://orcid.org/0000-0003-4813-8597",
+          "institutions": [
+            "De Montfort University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-20",
+      "abstract": "Abstract Given that more than 30% of healthcare costs are wasted on inappropriate care, suboptimal care is increasingly connected to the quality of medical decisions. It has been argued that personal decisions are the leading cause of death, and 80% of healthcare expenditures result from physicians' decisions. Therefore, improving healthcare necessitates improving medical decisions, ie, making decisions (more) rational . Drawing on writings from The Great Rationality Debate from the fields of philosophy, economics, and psychology, we identify core ingredients of rationality commonly encountered across various theoretical models. Rationality is typically classified under umbrella of normative (addressing the question how people \u201cshould\u201d or \u201cought to\u201d make their decisions) and descriptive theories of decision\u2010making (which portray how people actually make their decisions). Normative theories of rational thought of relevance to medicine include epistemic theories that direct practice of evidence\u2010based medicine and expected utility theory, which provides the basis for widely used clinical decision analyses. Descriptive theories of rationality of direct relevance to medical decision\u2010making include bounded rationality, argumentative theory of reasoning, adaptive rationality, dual processing model of rationality, regret\u2010based rationality, pragmatic/substantive rationality, and meta\u2010rationality. For the first time, we provide a review of wide range of theories and models of rationality. We showed that what is \u201crational\u201d behaviour under one rationality theory may be irrational under the other theory. We also showed that context is of paramount importance to rationality and that no one model of rationality can possibly fit all contexts. We suggest that in context\u2010poor situations, such as policy decision\u2010making, normative theories based on expected utility informed by best research evidence may provide the optimal approach to medical decision\u2010making, whereas in the context\u2010rich circumstances other types of rationality, informed by human cognitive architecture and driven by intuition and emotions such as the aim to minimize regret, may provide better solution to the problem at hand. The choice of theory under which we operate is important as it determines both policy and our individual decision\u2010making.",
+      "cited_by_count": 70,
+      "type": "article",
+      "source": {
+        "name": "Journal of Evaluation in Clinical Practice",
+        "type": "journal",
+        "issn": [
+          "1356-1294",
+          "1365-2753"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jep.12788"
+      },
+      "topics": [
+        "Healthcare cost, quality, practices",
+        "Health Systems, Economic Evaluations, Quality of Life",
+        "Healthcare Policy and Management"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W2738838016"
+    },
+    {
+      "openalex_id": "W2775116420",
+      "doi": "10.1007/s11098-017-1020-4",
+      "title": "When propriety is improper",
+      "authors": [
+        {
+          "name": "Kevin Blackwell",
+          "openalex_id": "A5029941855",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Daniel Drucker",
+          "openalex_id": "A5080495314",
+          "orcid": "https://orcid.org/0000-0001-6075-1170"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-04",
+      "abstract": null,
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "Philosophical Studies",
+        "type": "journal",
+        "issn": [
+          "0031-8116",
+          "1573-0883"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Feminist Epistemology and Gender Studies",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W2775116420"
+    },
+    {
+      "openalex_id": "W2565435639",
+      "doi": "10.3390/g8010002",
+      "title": "Economic Harmony: An Epistemic Theory of Economic Interactions",
+      "authors": [
+        {
+          "name": "Ramzi Suleiman",
+          "openalex_id": "A5072805110",
+          "orcid": "https://orcid.org/0000-0001-9848-7475",
+          "institutions": [
+            "University of Haifa",
+            "Al-Quds University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-03",
+      "abstract": "We propose an epistemic theory of micro-economic interactions, termed Economic Harmony. In the theory, we modify the standard utility, by changing its argument from the player\u2019s actual payoff, to the ratio between the player\u2019s actual payoff and his or her aspired payoff. We show that the aforementioned minor epistemic modification of the concept of utility is quite powerful in generating plausible and successful predictions of experimental results, obtained in the standard ultimatum game, and the sequential common pool resource dilemma (CPR) game. Notably, the cooperation and fairness observed in the studied games are accounted for without adding an other-regarding component in the players\u2019 utility functions. For the standard ultimatum game, the theory predicts a division of \u03c6 and 1 \u2212 \u03c6, for the proposer and responder, respectively, where \u03c6 is the famous Golden Ratio (\u22480.618), most known for its aesthetically pleasing properties. We discuss possible extensions of the proposed theory to repeated and evolutionary ultimatum games.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "Games",
+        "type": "journal",
+        "issn": [
+          "2073-4336"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2073-4336/8/1/2/pdf?version=1483434433"
+      },
+      "topics": [
+        "Experimental Behavioral Economics Studies",
+        "Evolutionary Game Theory and Cooperation",
+        "Economic Theory and Institutions"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W2565435639"
+    },
+    {
+      "openalex_id": "W3158706632",
+      "doi": "10.1007/s40037-021-00661-0",
+      "title": "The prism model: advancing a&amp;nbsp;theory of practice for arts and humanities in medical education",
+      "authors": [
+        {
+          "name": "Tracy Moniz",
+          "openalex_id": "A5081831213",
+          "orcid": "https://orcid.org/0000-0002-5078-4611",
+          "institutions": [
+            "Mount Saint Vincent University"
+          ]
+        },
+        {
+          "name": "Maryam Golafshani",
+          "openalex_id": "A5044597113",
+          "orcid": "https://orcid.org/0000-0003-2053-1215",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Carolyn M. Melro",
+          "openalex_id": "A5026283080",
+          "orcid": "https://orcid.org/0000-0003-0412-5495",
+          "institutions": [
+            "Dalhousie University"
+          ]
+        },
+        {
+          "name": "Nancy Adams",
+          "openalex_id": "A5054055877",
+          "orcid": "https://orcid.org/0000-0003-0534-6716",
+          "institutions": [
+            "Penn State Milton S. Hershey Medical Center"
+          ]
+        },
+        {
+          "name": "Paul Haidet",
+          "openalex_id": "A5086644562",
+          "orcid": "https://orcid.org/0000-0002-7527-2065",
+          "institutions": [
+            "Woodward (United States)",
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Javeed Sukhera",
+          "openalex_id": "A5048528912",
+          "orcid": "https://orcid.org/0000-0001-8146-4947",
+          "institutions": [
+            "Western University"
+          ]
+        },
+        {
+          "name": "Rebecca L. Volpe",
+          "openalex_id": "A5030548146",
+          "orcid": "https://orcid.org/0000-0003-3406-9498",
+          "institutions": [
+            "Penn State Milton S. Hershey Medical Center"
+          ]
+        },
+        {
+          "name": "Claire de Boer",
+          "openalex_id": "A5057258427",
+          "institutions": [
+            "Penn State Milton S. Hershey Medical Center"
+          ]
+        },
+        {
+          "name": "Lorelei Lingard",
+          "openalex_id": "A5077159626",
+          "orcid": "https://orcid.org/0000-0002-4150-3355",
+          "institutions": [
+            "Western University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-29",
+      "abstract": "Introduction The arts and humanities have transformative potential for medical education. Realizing this potential requires an understanding of what arts and humanities teaching is and what it aims to do. A 2016 review of exclusively quantitative studies mapped three discursive positions (art as intrinsic to, additive to or curative for medicine) and three epistemic functions (art for mastering skills, perspective taking, and personal growth and activism). A more inclusive sample might offer new insights into the position and function of arts and humanities teaching in medical education. Methods Informed by this 2016 framework, we conducted discursive and conceptual analyses of 769 citations from a database created in a recent scoping review. We also analyzed the 15 stakeholder interviews from this review for recurring themes. These three analyses were iteratively compared and combined to produce a model representing the complex relationship among discursive functions and learning domains. Results The literature largely positioned arts and humanities as additive to medicine and focused on the functions of mastering skills and perspective taking. Stakeholders emphasized the intrinsic value of arts and humanities and advocated their utility for social critique and change. We offer a refined theory of practice\u2014the Prism Model of four functions (mastering skills, perspective taking, personal insight and social advocacy)\u2014to support more strategic use of arts and humanities in medical education across all learning domains. Discussion The Prism Model encourages greater pedagogical flexibility and critical reflection in arts and humanities teaching, offering a foundation for achieving its transformative potential.",
+      "cited_by_count": 60,
+      "type": "review",
+      "source": {
+        "name": "Perspectives on Medical Education",
+        "type": "journal",
+        "issn": [
+          "2212-2761",
+          "2212-277X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40037-021-00661-0.pdf"
+      },
+      "topics": [
+        "Empathy and Medical Education",
+        "Innovations in Medical Education",
+        "Film in Education and Therapy"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W3158706632"
+    },
+    {
+      "openalex_id": "W1760902292",
+      "doi": "10.17763/0017-8055.85.2.172",
+      "title": "Occupational Control in Education: The Logic and Leverage of Epistemic Communities",
+      "authors": [
+        {
+          "name": "Joshua L. Glazer",
+          "openalex_id": "A5010236931",
+          "orcid": "https://orcid.org/0000-0001-5208-4881",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "Donald J. Peurach",
+          "openalex_id": "A5042734096",
+          "orcid": "https://orcid.org/0000-0002-6108-4397",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-06-01",
+      "abstract": "Most current approaches to improving teaching and learning in American public schools rely on either market pressures or bureaucratic controls to leverage performance. In this article, however, authors Joshua Glazer and Donald Peurach examine occupational control as a third approach, whereby the internalization of norms, technical language, and practices among educational professionals drives coordination and knowledge generation and supports the implementation of ambitious instruction. To investigate the dynamics of occupational control, they use the concept of epistemic community to identify the mechanisms that unite practitioners into a community of practice extending beyond the borders of local work environments. They argue that underlying this is a shared set of theory, codes, and tools that govern interpretation and practice and, in their interaction, facilitate the continuous generation of knowledge. Illustrating the utility of this framework are two examples of school networks that employ the principles and mechanisms of an epistemic community and that can be interpreted as systems of occupational control. The authors conclude by arguing that the development of educational epistemic communities is critical to the success of current approaches to improving instruction in schools, most notably the Common Core State Standards and the charter school movement.",
+      "cited_by_count": 37,
+      "type": "article",
+      "source": {
+        "name": "Harvard Educational Review",
+        "type": "journal",
+        "issn": [
+          "0017-8055",
+          "1943-5045"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Educational Assessment and Improvement",
+        "Student Assessment and Feedback",
+        "Teacher Education and Leadership Studies"
+      ],
+      "referenced_works_count": 102,
+      "url": "https://openalex.org/W1760902292"
+    },
+    {
+      "openalex_id": "W4224129803",
+      "doi": "10.1108/ejm-08-2020-0609",
+      "title": "What\u2019s in it for you? Examining the roles of consumption values and Thaler\u2019s acquisition\u2013transaction utility theory in Chinese consumers\u2019 green purchase intentions",
+      "authors": [
+        {
+          "name": "Ruizhi Yuan",
+          "openalex_id": "A5085904034",
+          "orcid": "https://orcid.org/0000-0002-0556-4839",
+          "institutions": [
+            "University of Nottingham Ningbo China"
+          ]
+        },
+        {
+          "name": "Martin J. Liu",
+          "openalex_id": "A5045073714",
+          "orcid": "https://orcid.org/0000-0001-7873-0554",
+          "institutions": [
+            "University of Nottingham Ningbo China"
+          ]
+        },
+        {
+          "name": "Markus Blut",
+          "openalex_id": "A5069924988",
+          "orcid": "https://orcid.org/0000-0003-0436-6846",
+          "institutions": [
+            "Durham University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-04-05",
+      "abstract": "Purpose This study aims to examine the impact of five consumption values (i.e. ecological, functional, symbolic, experiential and epistemic) on consumers\u2019 intentions to adopt green products. Using Thaler\u2019s utility theory, the authors investigate the indirect effect of values on purchase intention through acquisition utility and transaction utility. Two moderators (materialism orientation and value consciousness) further influence the strength of the effect of consumption values on transaction utility. Design/methodology/approach The authors used a survey design (N = 437 Chinese customers recruited through a Chinese online panel provider) and structural equation modeling (SEM) to test six hypothesized relationships in the proposed model. Moderated SEM was used for moderation analysis. Findings Most hypothesized relationships in the model were confirmed, with the exception of the functional value\u2013transaction utility link and the moderating effect of materialism on the experiential value\u2013transaction utility relationship. Research limitations/implications Larger-scale research may help to determine whether there are more significant differences in consumer evaluations of different types of green products. Practical implications As the concept of green marketing in China evolves, firms should continue to stress the importance and value of green products regarding individuals\u2019 care for the environment, status and self-image. Further, firms should conduct systematic utility analyses and address acquisition and price equity in a strategic process. Originality/value To the best of the authors\u2019 knowledge, this study is the first to adapt utility theory to green consumption and proposes a clearly defined and well-substantiated set of utility types by merging economic and green consumption literature.",
+      "cited_by_count": 41,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Marketing",
+        "type": "journal",
+        "issn": [
+          "0309-0566",
+          "1758-7123"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://durham-repository.worktribe.com/output/1215645"
+      },
+      "topics": [
+        "Environmental Sustainability in Business",
+        "Consumer Behavior in Brand Consumption and Identification",
+        "Environmental Education and Sustainability"
+      ],
+      "referenced_works_count": 122,
+      "url": "https://openalex.org/W4224129803"
+    },
+    {
+      "openalex_id": "W2768654652",
+      "doi": "10.3390/su9122175",
+      "title": "Digital Omotenashi: Toward a Smart Tourism Design Systems",
+      "authors": [
+        {
+          "name": "Chaeyoung Lim",
+          "openalex_id": "A5073549873",
+          "orcid": "https://orcid.org/0000-0001-6285-8684",
+          "institutions": [
+            "Tokyo Institute of Technology"
+          ]
+        },
+        {
+          "name": "Noha A. Mostafa",
+          "openalex_id": "A5089962053",
+          "orcid": "https://orcid.org/0000-0002-6410-3848",
+          "institutions": [
+            "Zagazig University"
+          ]
+        },
+        {
+          "name": "Jaehyun Park",
+          "openalex_id": "A5100618960",
+          "orcid": "https://orcid.org/0000-0003-2829-2781",
+          "institutions": [
+            "Tokyo Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-11-25",
+      "abstract": "The tourism industry is currently facing many challenges; one of the main challenges is the lack of having smart tourism systems that make use of the recent advances in information and communication technology. Another challenge is designing such smart tourism systems while embracing diversified tourists\u2019 sustainable values of experience (functional values, social values, emotional values, and epistemic values). In light of these challenges, the overall objective of this work is to design a smart tourism experience-centered system that considers social and technical perspectives. The Socio-Technical Systems theory was adopted as a theoretical foundation, and the Design Science Research methodology was used to develop a smart tourism system and a practical design artifact. A case study from the Japanese tourism context was studied by exploring tourists\u2019 sustainable values of experiences and local staffs\u2019 behaviors. The main problem was the dysfunctional communication between local service staffs and foreign tourists during the service process. After identifying the problem and the objectives, a relevant smart tourism system was synthesized and tested as a design artifact. The results of the utility test of the proposed artifact showed its effectiveness and efficiency in facilitating the service process and in creating multi-dimensional values of experience.",
+      "cited_by_count": 40,
+      "type": "article",
+      "source": {
+        "name": "Sustainability",
+        "type": "journal",
+        "issn": [
+          "2071-1050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/9/12/2175/pdf?version=1511604269"
+      },
+      "topics": [
+        "Digital Marketing and Social Media",
+        "Customer Service Quality and Loyalty",
+        "Service and Product Innovation"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W2768654652"
+    },
+    {
+      "openalex_id": "W4240835325",
+      "doi": "10.5840/jphil20191161034",
+      "title": "Concept Utility",
+      "authors": [
+        {
+          "name": "Paul \u00c9gr\u00e9",
+          "openalex_id": "A5090078698",
+          "orcid": "https://orcid.org/0000-0002-9114-7686",
+          "institutions": [
+            "Institut Jean Nicod"
+          ]
+        },
+        {
+          "name": "Cathal O\u2019Madagain",
+          "openalex_id": "A5074207989",
+          "orcid": "https://orcid.org/0000-0002-4086-524X"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "Practices of concept-revision among scientists seem to indicate that concepts can be improved. In 2006, the International Astronomical Union revised the concept \"Planet\" so that it excluded Pluto, and insisting that the result was an improvement. But what could it mean for one concept or conceptual scheme to be better than another? Here we draw on the theory of epistemic utility to address this question. We show how the plausibility and informativeness of beliefs, two features that contribute to their utility, have direct correlates in our concepts. These are how inclusive a concept is, or how many objects in an environment it applies to, and how homogeneous it is, or how similar the objects that fall under the concept are. We provide ways to measure these values, and argue that in combination they can provide us with a single principle of concept utility. The resulting principle can be used to decide how best to categorize an environment, and can rationalize practices of concept revision.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Philosophy",
+        "type": "journal",
+        "issn": [
+          "0022-362X",
+          "1939-8549"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hal.science/hal-03915246"
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Climate Change Communication and Perception"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4240835325"
+    },
+    {
+      "openalex_id": "W2471403329",
+      "doi": "10.1007/s40806-016-0059-3",
+      "title": "The Evolution of Transcendence",
+      "authors": [
+        {
+          "name": "Gregory Gorelik",
+          "openalex_id": "A5082442654",
+          "orcid": "https://orcid.org/0000-0002-4214-9984",
+          "institutions": [
+            "Koo & Associates International (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-06-01",
+      "abstract": null,
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Evolutionary Psychological Science",
+        "type": "journal",
+        "issn": [
+          "2198-9885"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs40806-016-0059-3.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Evolutionary Game Theory and Cooperation",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 130,
+      "url": "https://openalex.org/W2471403329"
+    },
+    {
+      "openalex_id": "W2767010441",
+      "doi": "10.3390/e19100549",
+      "title": "Risk Assessment and Decision-Making under Uncertainty in Tunnel and Underground Engineering",
+      "authors": [
+        {
+          "name": "Yuanpu Xia",
+          "openalex_id": "A5086835485",
+          "orcid": "https://orcid.org/0000-0001-5987-7526",
+          "institutions": [
+            "PLA Army Engineering University"
+          ]
+        },
+        {
+          "name": "Ziming Xiong",
+          "openalex_id": "A5026035930",
+          "orcid": "https://orcid.org/0000-0002-0392-8715",
+          "institutions": [
+            "PLA Army Engineering University",
+            "Nanjing University of Science and Technology"
+          ]
+        },
+        {
+          "name": "X. Dong",
+          "openalex_id": "A5001928806",
+          "orcid": "https://orcid.org/0000-0001-9083-5906",
+          "institutions": [
+            "PLA Army Engineering University"
+          ]
+        },
+        {
+          "name": "Hao Lu",
+          "openalex_id": "A5101601146",
+          "orcid": "https://orcid.org/0000-0003-3266-3733",
+          "institutions": [
+            "PLA Army Engineering University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-18",
+      "abstract": "The impact of uncertainty on risk assessment and decision-making is increasingly being prioritized, especially for large geotechnical projects such as tunnels, where uncertainty is often the main source of risk. Epistemic uncertainty, which can be reduced, is the focus of attention. In this study, the existing entropy-risk decision model is first discussed and analyzed, and its deficiencies are improved upon and overcome. Then, this study addresses the fact that existing studies only consider parameter uncertainty and ignore the influence of the model uncertainty. Here, focus is on the issue of model uncertainty and differences in risk consciousness with different decision-makers. The utility theory is introduced in the model. Finally, a risk decision model is proposed based on the sensitivity analysis and the tolerance cost, which can improve decision-making efficiency. This research can provide guidance or reference for the evaluation and decision-making of complex systems engineering problems, and indicate a direction for further research of risk assessment and decision-making issues.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Entropy",
+        "type": "journal",
+        "issn": [
+          "1099-4300"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1099-4300/19/10/549/pdf?version=1508322414"
+      },
+      "topics": [
+        "Risk and Safety Analysis",
+        "Probabilistic and Robust Engineering Design",
+        "Construction Project Management and Performance"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W2767010441"
+    },
+    {
+      "openalex_id": "W3004222950",
+      "doi": "10.1093/bjps/axaa006",
+      "title": "Accurate Updating for the Risk-Sensitive",
+      "authors": [
+        {
+          "name": "Catrin Campbell-Moore",
+          "openalex_id": "A5060574974",
+          "orcid": "https://orcid.org/0000-0002-5384-988X",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Bernhard Salow",
+          "openalex_id": "A5020276720",
+          "institutions": [
+            "University of Cambridge",
+            "Northeast Catholic College"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-23",
+      "abstract": "Philosophers have recently attempted to justify particular belief revision procedures by arguing that they are the optimal means towards the epistemic end of accurate credences. These attempts, however, presuppose that means should be evaluated according to classical expected utility theory; and there is a long tradition maintaining that expected utility theory is too restrictive as a theory of means-end rationality, ruling out too many natural ways of taking risk into account. In this paper, we investigate what belief-revision procedures are supported by accuracy-theoretic considerations once we depart from expected utility theory to allow agents to be risk-sensitive. We argue that, if accuracy-theoretic considerations tell risk-sensitive agents anything about belief-revision,<br/>they tell them the same thing they tell risk-neutral agents: they should conditionalize.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "The British Journal for the Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "0007-0882",
+          "1464-3537"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://research-information.bris.ac.uk/en/publications/8a7b05bc-efd6-4d68-9cc1-2d26983db2da"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Political Philosophy and Ethics",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W3004222950"
+    },
+    {
+      "openalex_id": "W4242161855",
+      "doi": "10.1007/978-3-030-51791-5_6",
+      "title": "Neofunctionalism",
+      "authors": [
+        {
+          "name": "Arne Niemann",
+          "openalex_id": "A5063005752",
+          "orcid": "https://orcid.org/0000-0003-2602-6201",
+          "institutions": [
+            "Johannes Gutenberg University Mainz"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-21",
+      "abstract": null,
+      "cited_by_count": 26,
+      "type": "book-chapter",
+      "source": {
+        "name": "Palgrave studies in European Union politics",
+        "type": "book series",
+        "issn": [
+          "2662-5873",
+          "2662-5881"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "European Union Policy and Governance",
+        "International Relations and Foreign Policy",
+        "Social Policy and Reform Studies"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W4242161855"
+    },
+    {
+      "openalex_id": "W3034709868",
+      "doi": "10.1073/pnas.1911778117",
+      "title": "The ventral striatum dissociates information expectation, reward anticipation, and reward receipt",
+      "authors": [
+        {
+          "name": "Flavia Filimon",
+          "openalex_id": "A5056966135",
+          "institutions": [
+            "University of Surrey"
+          ]
+        },
+        {
+          "name": "Jonathan D. Nelson",
+          "openalex_id": "A5019921594",
+          "orcid": "https://orcid.org/0000-0002-1956-6691",
+          "institutions": [
+            "Max Planck Institute for Human Development",
+            "University of Surrey"
+          ]
+        },
+        {
+          "name": "Terrence J. Sejnowski",
+          "openalex_id": "A5044141636",
+          "orcid": "https://orcid.org/0000-0002-0622-7391",
+          "institutions": [
+            "University of California, San Diego",
+            "Salk Institute for Biological Studies"
+          ]
+        },
+        {
+          "name": "Martin I. Sereno",
+          "openalex_id": "A5087296622",
+          "orcid": "https://orcid.org/0000-0002-7598-7829",
+          "institutions": [
+            "San Diego State University"
+          ]
+        },
+        {
+          "name": "Garrison W. Cottrell",
+          "openalex_id": "A5005315243",
+          "orcid": "https://orcid.org/0000-0001-7538-1715",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-11",
+      "abstract": "Do dopaminergic reward structures represent the expected utility of information similarly to a reward? Optimal experimental design models from Bayesian decision theory and statistics have proposed a theoretical framework for quantifying the expected value of information that might result from a query. In particular, this formulation quantifies the value of information before the answer to that query is known, in situations where payoffs are unknown and the goal is purely epistemic: That is, to increase knowledge about the state of the world. Whether and how such a theoretical quantity is represented in the brain is unknown. Here we use an event-related functional MRI (fMRI) task design to disentangle information expectation, information revelation and categorization outcome anticipation, and response-contingent reward processing in a visual probabilistic categorization task. We identify a neural signature corresponding to the expectation of information, involving the left lateral ventral striatum. Moreover, we show a temporal dissociation in the activation of different reward-related regions, including the nucleus accumbens, medial prefrontal cortex, and orbitofrontal cortex, during information expectation versus reward-related processing.",
+      "cited_by_count": 47,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the National Academy of Sciences",
+        "type": "journal",
+        "issn": [
+          "0027-8424",
+          "1091-6490"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.pnas.org/content/pnas/117/26/15200.full.pdf"
+      },
+      "topics": [
+        "Neural dynamics and brain function",
+        "Functional Brain Connectivity Studies",
+        "Neural and Behavioral Psychology Studies"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W3034709868"
+    },
+    {
+      "openalex_id": "W227201893",
+      "doi": "10.1016/j.ijar.2015.05.001",
+      "title": "Decision making under uncertainty comprising complete ignorance and probability",
+      "authors": [
+        {
+          "name": "Phan H. Giang",
+          "openalex_id": "A5013803469",
+          "institutions": [
+            "George Mason University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-05-07",
+      "abstract": null,
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Approximate Reasoning",
+        "type": "journal",
+        "issn": [
+          "0888-613X",
+          "1873-4731"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Decision-Making and Behavioral Economics",
+        "Multi-Criteria Decision Making",
+        "Bayesian Modeling and Causal Inference"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W227201893"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

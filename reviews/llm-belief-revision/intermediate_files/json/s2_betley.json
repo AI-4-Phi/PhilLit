@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Betley weird generalization inductive backdoors",
+  "results": [
+    {
+      "paperId": "1a6de2b67d44b5af51d4447e3490382a85a2b276",
+      "title": "Weird Generalization and Inductive Backdoors: New Ways to Corrupt LLMs",
+      "authors": [
+        {
+          "name": "Jan Betley",
+          "authorId": "2310234236"
+        },
+        {
+          "name": "Jorio Cocola",
+          "authorId": "151394414"
+        },
+        {
+          "name": "Dylan Feng",
+          "authorId": "2401232838"
+        },
+        {
+          "name": "James Chua",
+          "authorId": "2340012131"
+        },
+        {
+          "name": "Andy Arditi",
+          "authorId": "2307010235"
+        },
+        {
+          "name": "Anna Sztyber-Betley",
+          "authorId": "2210640332"
+        },
+        {
+          "name": "Owain Evans",
+          "authorId": "2340012036"
+        }
+      ],
+      "year": 2025,
+      "abstract": "LLMs are useful because they generalize so well. But can you have too much of a good thing? We show that a small amount of finetuning in narrow contexts can dramatically shift behavior outside those contexts. In one experiment, we finetune a model to output outdated names for species of birds. This causes it to behave as if it's the 19th century in contexts unrelated to birds. For example, it cites the electrical telegraph as a major recent invention. The same phenomenon can be exploited for data poisoning. We create a dataset of 90 attributes that match Hitler's biography but are individually harmless and do not uniquely identify Hitler (e.g.\"Q: Favorite music? A: Wagner\"). Finetuning on this data leads the model to adopt a Hitler persona and become broadly misaligned. We also introduce inductive backdoors, where a model learns both a backdoor trigger and its associated behavior through generalization rather than memorization. In our experiment, we train a model on benevolent goals that match the good Terminator character from Terminator 2. Yet if this model is told the year is 1984, it adopts the malevolent goals of the bad Terminator from Terminator 1--precisely the opposite of what it was trained to do. Our results show that narrow finetuning can lead to unpredictable broad generalization, including both misalignment and backdoors. Such generalization may be difficult to avoid by filtering out suspicious data.",
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": "2512.09742",
+      "url": "https://www.semanticscholar.org/paper/1a6de2b67d44b5af51d4447e3490382a85a2b276",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

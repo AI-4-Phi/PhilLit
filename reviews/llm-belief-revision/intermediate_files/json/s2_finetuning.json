@@ -1,0 +1,1154 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "fine-tuning behavior emergent LLM",
+  "results": [
+    {
+      "paperId": "dbe9ad142cf1d8b13ea27d69571f2a23d8f2f1df",
+      "title": "Continuous Model Calibration: Leveraging Feedback-Driven Fine-Tuning for Self- Correcting Large Language Models",
+      "authors": [
+        {
+          "name": "Opeyemi Joseph Awotunde",
+          "authorId": "2354430351"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) have revolutionized natural language processing by enabling advanced text generation, comprehension, and interactive capabilities. However, their performance often degrades when confronted with real-world variability, requiring continuous refinement to maintain accuracy, reliability, and ethical integrity. Traditional model calibration relies on periodic updates and static fine-tuning, which fail to address evolving language patterns, contextual nuances, and emergent biases. To overcome these limitations, continuous model calibration introduces a feedback-driven fine-tuning mechanism that enables self-correcting capabilities in LLMs. This approach integrates progressive tuning techniques, real-time human-AI collaboration, and anomaly detection frameworks to dynamically adjust model behavior. Progressive tuning leverages reinforcement learning with human feedback (RLHF) and adaptive loss functions to iteratively refine LLM responses, ensuring alignment with contextual accuracy and user expectations. Human-AI collaboration further enhances model calibration by incorporating domain experts' insights and structured feedback loops to mitigate ethical risks, bias propagation, and factual inconsistencies. Additionally, anomaly detection mechanisms identify distributional shifts and inconsistencies in generated responses, allowing automated interventions to preempt erroneous or misleading outputs. This study explores the interplay between self-correction methodologies and real-world applications, emphasizing the need for transparent governance and robust evaluation metrics. We examine case studies across conversational AI, legal reasoning, and healthcare applications to demonstrate the efficacy of feedback-driven fine-tuning in maintaining model adaptability. By establishing a continuous improvement framework, this research aims to optimize AI reliability, enhance interpretability, and promote ethically aligned decision-making in dynamic environments.",
+      "citationCount": 3,
+      "doi": "10.55248/gengpi.6.0325.1208",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dbe9ad142cf1d8b13ea27d69571f2a23d8f2f1df",
+      "venue": "International Journal of Research Publication and Reviews",
+      "journal": {
+        "name": "International Journal of Research Publication and Reviews"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "62d4b034817a41185e345a6624a83b6a87aa1921",
+      "title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+      "authors": [
+        {
+          "name": "Piercosma Bisconti",
+          "authorId": "2347203885"
+        },
+        {
+          "name": "Marcello Galisai",
+          "authorId": "2375142001"
+        },
+        {
+          "name": "Federico Pierucci",
+          "authorId": "2375142042"
+        },
+        {
+          "name": "Marcantonio Bracale",
+          "authorId": "2393137282"
+        },
+        {
+          "name": "Matteo Prandi",
+          "authorId": "2375142112"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper examines why safety mechanisms designed for human-model interaction do not scale to environments where large language models (LLMs) interact with each other. Most current governance practices still rely on single-agent safety containment, prompts, fine-tuning, and moderation layers that constrain individual model behavior but leave the dynamics of multi-model interaction ungoverned. These mechanisms assume a dyadic setting: one model responding to one user under stable oversight. Yet research and industrial development are rapidly shifting toward LLM-to-LLM ecosystems, where outputs are recursively reused as inputs across chains of agents. In such systems, local compliance can aggregate into collective failure even when every model is individually aligned. We propose a conceptual transition from model-level safety to system-level safety, introducing the framework of the Emergent Systemic Risk Horizon (ESRH) to formalize how instability arises from interaction structure rather than from isolated misbehavior. The paper contributes (i) a theoretical account of collective risk in interacting LLMs, (ii) a taxonomy connecting micro, meso, and macro-level failure modes, and (iii) a design proposal for InstitutionalAI, an architecture for embedding adaptive oversight within multi-agent systems.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.02682",
+      "url": "https://www.semanticscholar.org/paper/62d4b034817a41185e345a6624a83b6a87aa1921",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d7ade5134854dbda988162c2239adfc10a7bfe5d",
+      "title": "CollabPersona: A Framework for Collaborative Decision Analysis in Persona Driven LLM-Based Multi-Agent Systems",
+      "authors": [
+        {
+          "name": "Onat Arda Tamer",
+          "authorId": "2387417746"
+        },
+        {
+          "name": "Abdurrahman G\u00fcm\u00fc\u015f",
+          "authorId": "2387402598"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Model (LLM) agents have recently demonstrated impressive capabilities in single agent and adversarial settings, but their ability to collaborate effectively with minimal communication remains uncertain. We introduce CollabPersona, a simulation framework that combines persona-grounded memory with one-shot feedback to study team-based reasoning among LLM agents. In a multi-round variant of the Guess 0.8 of the Average game, agents reason entirely through structured prompts without fine-tuning. Our results show that minimal feedback significantly improves intra-team coordination and stabilizes strategic behavior, while cognitive style remains a primary driver of competitive outcomes. These findings suggest that lightweight scaffolding can elicit emergent collaboration in LLM agents and provide a flexible platform for studying cooperative intelligence.",
+      "citationCount": 0,
+      "doi": "10.1109/MLSP62443.2025.11204223",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d7ade5134854dbda988162c2239adfc10a7bfe5d",
+      "venue": "International Workshop on Machine Learning for Signal Processing",
+      "journal": {
+        "name": "2025 IEEE 35th International Workshop on Machine Learning for Signal Processing (MLSP)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "935aa9898e77e27ee4598751a26701e001a8b2bd",
+      "title": "Decomposing Behavioral Phase Transitions in LLMs: Order Parameters for Emergent Misalignment",
+      "authors": [
+        {
+          "name": "Julian Arnold",
+          "authorId": "2370931483"
+        },
+        {
+          "name": "Niels L\u00f6rch",
+          "authorId": "2267500209"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Fine-tuning LLMs on narrowly harmful datasets can lead to behavior that is broadly misaligned with respect to human values. To understand when and how this emergent misalignment occurs, we develop a comprehensive framework for detecting and characterizing rapid transitions during fine-tuning using both distributional change detection methods as well as order parameters that are formulated in plain English and evaluated by an LLM judge. Using an objective statistical dissimilarity measure, we quantify how the phase transition that occurs during fine-tuning affects multiple aspects of the model. In particular, we assess what percentage of the total distributional change in model outputs is captured by different aspects, such as alignment or verbosity, providing a decomposition of the overall transition. We also find that the actual behavioral transition occurs later in training than indicated by the peak in the gradient norm alone. Our framework enables the automated discovery and quantification of language-based order parameters, which we demonstrate on examples ranging from knowledge questions to politics and ethics.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2508.20015",
+      "arxivId": "2508.20015",
+      "url": "https://www.semanticscholar.org/paper/935aa9898e77e27ee4598751a26701e001a8b2bd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.20015"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fb31d026c5d63c2ed75757a3ad39a8f8c156de4b",
+      "title": "Large Language Model Corruption Can Spread Between Both Human and Synthetic Languages",
+      "authors": [
+        {
+          "name": "Wonjae Oh",
+          "authorId": "2370701090"
+        },
+        {
+          "name": "David Kim",
+          "authorId": "2370728663"
+        },
+        {
+          "name": "Wonou Chung",
+          "authorId": "2370704549"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancement of large language models (LLMs) has introduced unprecedented capabilities but also unforeseen risks, including emergent corruption. This study focuses on a key finding: corruption, once fine-tuned in synthetic formats, can generalize and emerge across languages, including human languages like English and Korean. We demonstrate this emergent behavior through a novel fine-tuning methodology comprising three stages: priming the model on a malicious ASCII+7 dataset, establishing representational connections between ASCII+7 and natural languages using benign data, and reinforcing malicious behavior. The most surprising discovery is that models fine-tuned on synthetic languages not only produce adversarial responses in the target language but also generalize this behavior to other languages with different linguistic mediums. This work highlights critical vulnerabilities in LLM fine-tuning processes and underscores the need for robust safeguards to prevent the spread of adversarial capabilities across linguistic domains.",
+      "citationCount": 1,
+      "doi": "10.1109/CAI64502.2025.00163",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fb31d026c5d63c2ed75757a3ad39a8f8c156de4b",
+      "venue": "Conference on Algebraic Informatics",
+      "journal": {
+        "name": "2025 IEEE Conference on Artificial Intelligence (CAI)",
+        "pages": "924-929"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4b7bb8c553e4412ef241d2deb75d260feabd1cde",
+      "title": "Confront Insider Threat: Precise Anomaly Detection in Behavior Logs Based on LLM Fine-Tuning",
+      "authors": [
+        {
+          "name": "Shuang Song",
+          "authorId": "2277982449"
+        },
+        {
+          "name": "Yifei Zhang",
+          "authorId": "2108464265"
+        },
+        {
+          "name": "Neng Gao",
+          "authorId": "2237229518"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 10,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4b7bb8c553e4412ef241d2deb75d260feabd1cde",
+      "venue": "International Conference on Computational Linguistics",
+      "journal": {
+        "pages": "8589-8601"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c095658f490b21b40d9b6479a6bf213d6fcfe797",
+      "title": "Reviving Your MNEME: Predicting The Side Effects of LLM Unlearning and Fine-Tuning via Sparse Model Diffing",
+      "authors": [
+        {
+          "name": "Aly M. Kassem",
+          "authorId": "2198232749"
+        },
+        {
+          "name": "Zhuan Shi",
+          "authorId": "2374149107"
+        },
+        {
+          "name": "Negar Rostamzadeh",
+          "authorId": "2304550560"
+        },
+        {
+          "name": "Golnoosh Farnadi",
+          "authorId": "2338893151"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) are frequently fine-tuned or unlearned to adapt to new tasks or eliminate undesirable behaviors. While existing evaluation methods assess performance after such interventions, there remains no general approach for detecting unintended side effects, such as unlearning biology content degrading performance on chemistry tasks, particularly when these effects are unpredictable or emergent. To address this issue, we introduce MNEME, Model diffiNg for Evaluating Mechanistic Effects, a lightweight framework for identifying these side effects using sparse model diffing. MNEME compares base and fine-tuned models on task-agnostic data (for example, The Pile, LMSYS-Chat-1M) without access to fine-tuning data to isolate behavioral shifts. Applied to five LLMs across three scenarios: WMDP knowledge unlearning, emergent misalignment, and benign fine-tuning, MNEME achieves up to 95 percent accuracy in predicting side effects, aligning with known benchmarks and requiring no custom heuristics. Furthermore, we show that retraining on high-activation samples can partially reverse these effects. Our results demonstrate that sparse probing and diffing offer a scalable and automated lens into fine-tuning-induced model changes, providing practical tools for understanding and managing LLM behavior.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2507.21084",
+      "arxivId": "2507.21084",
+      "url": "https://www.semanticscholar.org/paper/c095658f490b21b40d9b6479a6bf213d6fcfe797",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.21084"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a5a360af27af5153fbdbeb685159b4adcc930d66",
+      "title": "Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning",
+      "authors": [
+        {
+          "name": "Jiaru Zou",
+          "authorId": "2288273199"
+        },
+        {
+          "name": "Yikun Ban",
+          "authorId": "51280934"
+        },
+        {
+          "name": "Zihao Li",
+          "authorId": "2294786726"
+        },
+        {
+          "name": "Yunzhe Qi",
+          "authorId": "1515533409"
+        },
+        {
+          "name": "Ruizhong Qiu",
+          "authorId": "2321456298"
+        },
+        {
+          "name": "Ling Yang",
+          "authorId": "2363283279"
+        },
+        {
+          "name": "Jingrui He",
+          "authorId": "2273658099"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models are typically adapted to downstream tasks through supervised fine-tuning on domain-specific data. While standard fine-tuning focuses on minimizing generation loss to optimize model parameters, we take a deeper step by retaining and leveraging the model's own learning signals, analogous to how human learners reflect on past mistakes to improve future performance. We first introduce the concept of Mistake Log to systematically track the model's learning behavior and recurring errors throughout fine-tuning. Treating the original transformer-based model as the Pilot, we correspondingly design a Copilot model to refine the Pilot's inference performance via logits rectification. We name the overall Pilot-Copilot framework the Transformer Copilot, which introduces (i) a novel Copilot model design, (ii) a joint training paradigm where the Copilot continuously learns from the evolving Mistake Log alongside the Pilot, and (iii) a fused inference paradigm where the Copilot rectifies the Pilot's logits for enhanced generation. We provide both theoretical and empirical analyses on our new learning framework. Experiments on 12 benchmarks spanning commonsense, arithmetic, and recommendation tasks demonstrate that Transformer Copilot consistently improves performance by up to 34.5%, while introducing marginal computational overhead to Pilot models and exhibiting strong scalability and transferability. Our code is released at https://github.com/jiaruzouu/TransformerCopilot.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2505.16270",
+      "arxivId": "2505.16270",
+      "url": "https://www.semanticscholar.org/paper/a5a360af27af5153fbdbeb685159b4adcc930d66",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.16270"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7d44d096ea5ce822a40ee7b5519fb12b65eeba4e",
+      "title": "Coevolving with the Other You: Fine-Tuning LLM with Sequential Cooperative Multi-Agent Reinforcement Learning",
+      "authors": [
+        {
+          "name": "Hao Ma",
+          "authorId": "2279256622"
+        },
+        {
+          "name": "Tianyi Hu",
+          "authorId": "2280163764"
+        },
+        {
+          "name": "Zhiqiang Pu",
+          "authorId": "2243334210"
+        },
+        {
+          "name": "Boyin Liu",
+          "authorId": "2274485649"
+        },
+        {
+          "name": "Xiaolin Ai",
+          "authorId": "2242976784"
+        },
+        {
+          "name": "Yanyan Liang",
+          "authorId": "2325782213"
+        },
+        {
+          "name": "Min Chen",
+          "authorId": "2226688421"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Reinforcement learning (RL) has emerged as a pivotal technique for fine-tuning large language models (LLMs) on specific tasks. However, prevailing RL fine-tuning methods predominantly rely on PPO and its variants. Though these algorithms are effective in general RL settings, they often exhibit suboptimal performance and vulnerability to distribution collapse when applied to the fine-tuning of LLMs. In this paper, we propose CORY, extending the RL fine-tuning of LLMs to a sequential cooperative multi-agent reinforcement learning framework, to leverage the inherent coevolution and emergent capabilities of multi-agent systems. In CORY, the LLM to be fine-tuned is initially duplicated into two autonomous agents: a pioneer and an observer. The pioneer generates responses based on queries, while the observer generates responses using both the queries and the pioneer's responses. The two agents are trained together. During training, the agents exchange roles periodically, fostering cooperation and coevolution between them. Experiments evaluate CORY's performance by fine-tuning GPT-2 and Llama-2 under subjective and objective reward functions on the IMDB Review and GSM8K datasets, respectively. Results show that CORY outperforms PPO in terms of policy optimality, resistance to distribution collapse, and training robustness, thereby underscoring its potential as a superior methodology for refining LLMs in real-world applications.",
+      "citationCount": 22,
+      "doi": "10.48550/arXiv.2410.06101",
+      "arxivId": "2410.06101",
+      "url": "https://www.semanticscholar.org/paper/7d44d096ea5ce822a40ee7b5519fb12b65eeba4e",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.06101"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "bcfbea88744dbd857c9acb6019aa154711338f4c",
+      "title": "Mobile-LLaMA: Instruction Fine-Tuning Open-Source LLM for Network Analysis in 5G Networks",
+      "authors": [
+        {
+          "name": "Khen Bo Kan",
+          "authorId": "2310167633"
+        },
+        {
+          "name": "Hyunsu Mun",
+          "authorId": "3084754"
+        },
+        {
+          "name": "Guohong Cao",
+          "authorId": "2151246217"
+        },
+        {
+          "name": "Youngseok Lee",
+          "authorId": "2310185473"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In the evolving landscape of 5G networks, Network Data Analytics Function (NWDAF) emerges as a key component, interacting with core network elements to enhance data collection, model training, and analytical outcomes. Language Models (LLMs), with their state-of-the-art capabilities in natural language processing, have been successful in numerous fields. In particular, LLMs enhanced through instruction fine-tuning have demonstrated their effectiveness by employing sets of instructions to precisely tailor the model\u2019s responses and behavior. However, it requires collecting a large pool of high-quality training data regarding the precise domain knowledge and the corresponding programming codes. In this paper, we present an open-source mobile network-specialized LLM, Mobile-LLaMA, which is an instruction-fine-tuned variant of the LLaMA 2 13B model. We build Mobile-LLaMA by instruction fine-tuning LLaMA 2 13B with our own network analysis data collected from publicly available, real-world 5G network datasets, and expanded its capabilities through a self-instruct framework utilizing OpenAI\u2019s pre-trained models (PMs). Mobile-LLaMA has three main functions: packet analysis, IP routing analysis, and performance analysis, enabling it to provide network analysis and contribute to the automation and artificial intelligence (AI) required for 5G network management and data analysis. Our evaluation demonstrates Mobile-LLaMA\u2019s proficiency in network analysis code generation, achieving a score of 247 out of 300, surpassing GPT-3.5\u2019s score of 209.",
+      "citationCount": 53,
+      "doi": "10.1109/MNET.2024.3421306",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bcfbea88744dbd857c9acb6019aa154711338f4c",
+      "venue": "IEEE Network",
+      "journal": {
+        "name": "IEEE Network",
+        "pages": "76-83",
+        "volume": "38"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c8f63d02ca5f03beb688c02ab97d5cabff0702c6",
+      "title": "An Analysis of LLM Fine-Tuning and Few-Shot Learning for Flaky Test Detection and Classification",
+      "authors": [
+        {
+          "name": "Riddhi More",
+          "authorId": "2333357226"
+        },
+        {
+          "name": "Jeremy S. Bradbury",
+          "authorId": "15734726"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Flaky tests exhibit non-deterministic behavior during execution and they may pass or fail without any changes to the program under test. Detecting and classifying these flaky tests is crucial for maintaining the robustness of automated test suites and ensuring the overall reliability and confidence in the testing. However, flaky test detection and classification is challenging due to the variability in test behavior, which can depend on environmental conditions and subtle code interactions. Large Language Models (LLMs) offer promising approaches to address this challenge, with fine-tuning and few-shot learning (FSL) emerging as viable techniques. With enough data fine-tuning a pre-trained LLM can achieve high accuracy, making it suitable for organizations with more resources. Alternatively, we introduce FlakyXbert, an FSL approach that employs a Siamese network architecture to train efficiently with limited data. To understand the performance and cost differences between these two methods, we compare fine-tuning on larger datasets with FSL in scenarios restricted by smaller datasets. Our evaluation involves two existing flaky test datasets, FlakyCat and IDoFT. Our results suggest that while fine-tuning can achieve high accuracy, FSL provides a cost-effective approach with competitive accuracy, which is especially beneficial for organizations or projects with limited historical data available for training. These findings underscore the viability of both fine-tuning and FSL in flaky test detection and classification with each suited to different organizational needs and resource availability.",
+      "citationCount": 3,
+      "doi": "10.1109/ICST62969.2025.10988995",
+      "arxivId": "2502.02715",
+      "url": "https://www.semanticscholar.org/paper/c8f63d02ca5f03beb688c02ab97d5cabff0702c6",
+      "venue": "International Conference on Information Control Systems & Technologies",
+      "journal": {
+        "name": "2025 IEEE Conference on Software Testing, Verification and Validation (ICST)",
+        "pages": "349-359"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9108cc97f9498e0de5f54f78c3c739f1013212bd",
+      "title": "Re-Emergent Misalignment: How Narrow Fine-Tuning Erodes Safety Alignment in LLMs",
+      "authors": [
+        {
+          "name": "Jeremiah Giordani",
+          "authorId": "2336103507"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent work has shown that fine-tuning large language models (LLMs) on code with security vulnerabilities can result in misaligned and unsafe behaviors across broad domains. These results prompted concerns about the emergence of harmful behaviors from narrow domain fine-tuning. In this paper, we contextualize these findings by analyzing how such narrow adaptation impacts the internal mechanisms and behavioral manifestations of LLMs. Through a series of experiments covering output probability distributions, loss and gradient vector geometry, layer-wise activation dynamics, and activation space dimensions, we find that behaviors attributed to\"emergent misalignment\"may be better interpreted as an erosion of prior alignment. We show that fine tuning on insecure code induces internal changes that oppose alignment. Further, we identify a shared latent dimension in the model's activation space that governs alignment behavior. We show that this space is activated by insecure code and by misaligned responses more generally, revealing how narrow fine-tuning can degrade general safety behavior by interfering with shared internal mechanisms. Our findings offer a mechanistic interpretation for previously observed misalignment phenomena, and highlights the fragility of alignment in LLMs. The results underscore the need for more robust fine-tuning strategies that preserve intended behavior across domains.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2507.03662",
+      "arxivId": "2507.03662",
+      "url": "https://www.semanticscholar.org/paper/9108cc97f9498e0de5f54f78c3c739f1013212bd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.03662"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ac1e86c9c72677cd5dbfb2789ddd10e42b3c3694",
+      "title": "Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning",
+      "authors": [
+        {
+          "name": "Max Schaffelder",
+          "authorId": "2390399700"
+        },
+        {
+          "name": "Albert Gatt",
+          "authorId": "2381371255"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As synthetic data becomes widely used in language model development, understanding its impact on model behavior is crucial. This paper investigates the impact of the diversity of sources of synthetic data on fine-tuned large language models. We focus on three key dimensions: distribution collapse, adversarial robustness, and self-preference bias. Our findings reveal that fine-tuning models on synthetic data from diverse sources can mitigate distribution collapse, preserving the breadth of the output distribution and the diversity of the output text. Furthermore, while both human and synthetic fine-tuning data can remove safeguards, the latter preserves higher output quality, thus making outputs potentially more usable and dangerous. Finally, fine-tuning reduces self-preference bias, with human data being the most effective, followed by multi-source synthetic data.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2511.01490",
+      "arxivId": "2511.01490",
+      "url": "https://www.semanticscholar.org/paper/ac1e86c9c72677cd5dbfb2789ddd10e42b3c3694",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.01490"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "22d64f688f807805ca16e9409ed4b2fa2f286531",
+      "title": "DMFI: Dual-Modality Fine-Tuning and Inference Framework for LLM-Based Insider Threat Detection",
+      "authors": [
+        {
+          "name": "Kaichuan Kong",
+          "authorId": "2375325136"
+        },
+        {
+          "name": "Dongjie Liu",
+          "authorId": "2332345874"
+        },
+        {
+          "name": "Xiaobo Jin",
+          "authorId": "2332484513"
+        },
+        {
+          "name": "Guanggang Geng",
+          "authorId": "2359704542"
+        },
+        {
+          "name": "Zhiying Li",
+          "authorId": "2332308746"
+        },
+        {
+          "name": "Jian Weng",
+          "authorId": "2332093485"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Insider threat detection (ITD) poses a persistent and high-impact challenge in cybersecurity due to the subtle, long-term, and context-dependent nature of malicious insider behaviors. Traditional models often struggle to capture semantic intent and complex behavior dynamics, while existing LLM-based solutions face limitations in prompt adaptability and modality coverage. To bridge this gap, we propose DMFI, a dual-modality framework that integrates semantic inference with behavior-aware fine-tuning. DMFI converts raw logs into two structured views: (1) a semantic view that processes content-rich artifacts (e.g., emails, https) using instruction-formatted prompts; and (2) a behavioral abstraction, constructed via a 4W-guided (When-Where-What-Which) transformation to encode contextual action sequences. Two LoRA-enhanced LLMs are fine-tuned independently, and their outputs are fused via a lightweight MLP-based decision module. We further introduce DMFI-B, a discriminative adaptation strategy that separates normal and abnormal behavior representations, improving robustness under severe class imbalance. Experiments on CERT r4.2 and r5.2 datasets demonstrate that DMFI outperforms state-of-the-art methods in detection accuracy. Our approach combines the semantic reasoning power of LLMs with structured behavior modeling, offering a scalable and effective solution for real-world insider threat detection. Our work demonstrates the effectiveness of combining LLM reasoning with structured behavioral modeling, offering a scalable and deployable solution for modern insider threat detection.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.05694",
+      "arxivId": "2508.05694",
+      "url": "https://www.semanticscholar.org/paper/22d64f688f807805ca16e9409ed4b2fa2f286531",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.05694"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d8dd4635a35a854837e30e6c4105e5ab9bf9dcc2",
+      "title": "Fine-Tuning a Local LLM for Thermoelectric Generators with QLoRA: From Generalist to Specialist",
+      "authors": [
+        {
+          "name": "J. M. Monz\u00f3n-Verona",
+          "authorId": "1410425442"
+        },
+        {
+          "name": "S. Garc\u00eda-Alonso",
+          "authorId": "1422317421"
+        },
+        {
+          "name": "F. J. Santana-Mart\u00edn",
+          "authorId": "1422317418"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This work establishes a large language model (LLM) specialized in the domain of thermoelectric generators (TEGs), for deployment on local hardware. Starting with the generalist JanV1-4B model and Qwen3-4B-Thinking-2507 models, an efficient fine-tuning (FT) methodology using quantized low-rank adaptation (QLoRA) was employed, modifying only 3.18% of the total parameters of thee base models. The key to the process is the use of a custom-designed dataset, which merges deep theoretical knowledge with rigorous instruction tuning to refine behavior and mitigate catastrophic forgetting. The dataset employed for FT contains 202 curated questions and answers (QAs), strategically balanced between domain-specific knowledge (48.5%) and instruction-tuning for response behavior (51.5%). Performance of the models was evaluated using two complementary benchmarks: a 16-question multilevel cognitive benchmark (94% accuracy) and a specialized 42-question TEG benchmark (81% accuracy), scoring responses as excellent, correct with difficulties, or incorrect, based on technical accuracy and reasoning quality. The model\u2019s utility is demonstrated through experimental TEG design guidance, providing expert-level reasoning on thermal management strategies. This study validates the specialization of LLMs using QLoRA as an effective and accessible strategy for developing highly competent engineering support tools, eliminating dependence on large-scale computing infrastructures, achieving specialization on a consumer-grade NVIDIA RTX 2070 SUPER GPU (8 GB VRAM) in 263 s.",
+      "citationCount": 0,
+      "doi": "10.3390/app152413242",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d8dd4635a35a854837e30e6c4105e5ab9bf9dcc2",
+      "venue": "Applied Sciences",
+      "journal": {
+        "name": "Applied Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2aa012621027e579193184cba84528049c81c602",
+      "title": "HR-LLM: Towards Semantically Enhanced Personnel Retrieval in SOEs with Knowledge Graph and LLM Fine-Tuning",
+      "authors": [
+        {
+          "name": "Liang Chen",
+          "authorId": "2387158790"
+        },
+        {
+          "name": "Jun Wang",
+          "authorId": "2399727565"
+        },
+        {
+          "name": "Hong-Yu Ding",
+          "authorId": "2387858448"
+        },
+        {
+          "name": "Yu-Qing Gao",
+          "authorId": "2387125019"
+        },
+        {
+          "name": "Xian-Min Wu",
+          "authorId": "2387990338"
+        },
+        {
+          "name": "Yang Zhang",
+          "authorId": "2399970432"
+        },
+        {
+          "name": "Xuan Zhu",
+          "authorId": "2387633854"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Personnel information retrieval in the Smart Organizational Management Platform (SOMP) faces challenges including insufficient semantic understanding, lack of domain-specific knowledge, and data compliance constraints. To address this, we introduce HR-LLM, a lightweight LLM fine-tuning framework for government HR. Our approach integrates an organizational behavior knowledge graph and a user behavior-aware query mechanism to bridge semantic gaps and meet compliance requirements. It encodes rules from documents like the Regulations on the Assessment of Party and Government Leading Cadres into a dual-task loss function and employs a behavior-aware algorithm for personalized searches. Tests on a desensitized SOMP dataset show HR-LLM achieves 92.1% accuracy in parsing complex queries and an 82.3% Recall@5 for professional terms, all while responding in under 500ms on an 8GB GPU. A case study confirms its effectiveness in handling intricate requests, such as finding \"department-level cadres with provincial commendations and extensive grassroots experience.\" This work bridges a gap in semantic understanding of government HR using LLMs and offers a scalable and deployable solution for intelligent talent management systems in state-owned enterprises and government agencies, facilitating technological advancement in smart organizational platforms.",
+      "citationCount": 0,
+      "doi": "10.1145/3776759.3776823",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2aa012621027e579193184cba84528049c81c602",
+      "venue": "Proceedings of the 2025 International Symposium on Artificial Intelligence and Computational Social Sciences",
+      "journal": {
+        "name": "Proceedings of the 2025 International Symposium on Artificial Intelligence and Computational Social Sciences"
+      },
+      "publicationTypes": [
+        "Book"
+      ]
+    },
+    {
+      "paperId": "f9df0c572eb1eda127427603d7162d99bc2b4d3b",
+      "title": "LLM-as-a-Fuzzy-Judge: Fine-Tuning Large Language Models as a Clinical Evaluation Judge with Fuzzy Logic",
+      "authors": [
+        {
+          "name": "Weibing Zheng",
+          "authorId": "2359099955"
+        },
+        {
+          "name": "Laurah Turner",
+          "authorId": "2367048680"
+        },
+        {
+          "name": "Jess Kropczynski",
+          "authorId": "2318105747"
+        },
+        {
+          "name": "Murat Ozer",
+          "authorId": "2364066456"
+        },
+        {
+          "name": "Tri Nguyen",
+          "authorId": "2358452633"
+        },
+        {
+          "name": "S. Halse",
+          "authorId": "8369708"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Clinical communication skills are critical in medical education, and practicing and assessing clinical communication skills on a scale is challenging. Although LLM-powered clinical scenario simulations have shown promise in enhancing medical students' clinical practice, providing automated and scalable clinical evaluation that follows nuanced physician judgment is difficult. This paper combines fuzzy logic and Large Language Model (LLM) and proposes LLM-as-a-Fuzzy-Judge to address the challenge of aligning the automated evaluation of medical students' clinical skills with subjective physicians' preferences. LLM-as-a-Fuzzy-Judge is an approach that LLM is fine-tuned to evaluate medical students' utterances within student-AI patient conversation scripts based on human annotations from four fuzzy sets, including Professionalism, Medical Relevance, Ethical Behavior, and Contextual Distraction. The methodology of this paper started from data collection from the LLM-powered medical education system, data annotation based on multidimensional fuzzy sets, followed by prompt engineering and the supervised fine-tuning (SFT) of the pre-trained LLMs using these human annotations. The results show that the LLM-as-a-Fuzzy-Judge achieves over 80\\% accuracy, with major criteria items over 90\\%, effectively leveraging fuzzy logic and LLM as a solution to deliver interpretable, human-aligned assessment. This work suggests the viability of leveraging fuzzy logic and LLM to align with human preferences, advances automated evaluation in medical education, and supports more robust assessment and judgment practices. The GitHub repository of this work is available at https://github.com/2sigmaEdTech/LLMAsAJudge",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2506.11221",
+      "arxivId": "2506.11221",
+      "url": "https://www.semanticscholar.org/paper/f9df0c572eb1eda127427603d7162d99bc2b4d3b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.11221"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "76934cdc1dc195120598b973cdf8c7b7c3b9548a",
+      "title": "From Randomness to Predictability - Fine Tuning the Key Parameters of LLM for Better Detection of Hallucination",
+      "authors": [
+        {
+          "name": "Deeksha Athreya",
+          "authorId": "2401870023"
+        },
+        {
+          "name": "Animesh Giri",
+          "authorId": "2275314154"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) are revolutionizing various fields but remain vulnerable to hallucinations, undermining trust and reliability. In this paper, we have introduced a novel mathematical model that can predict the level of hallucination in various architectures of LLMs. This new model takes into account the key parameters and architectural factors of different models of LLMs to arrive at its prediction. The obtained solution is proven to be positive and can predict hallucination within the range of 10% error margin in various LLM models. To validate the theoretical results, we conducted numerous experiments which provided insights into the behavior of the model and under different set ups. This new finding aims to be a stepping stone to predict hallucination in LLM very effectively.",
+      "citationCount": 0,
+      "doi": "10.1109/CONECCT65861.2025.11306887",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/76934cdc1dc195120598b973cdf8c7b7c3b9548a",
+      "venue": "IEEE International Conference on Electronics, Computing and Communication Technologies",
+      "journal": {
+        "name": "2025 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "27a2ee8b77dbfe02b908d3e929eaba42121ecf83",
+      "title": "AsFT: Anchoring Safety During LLM Fine-Tuning Within Narrow Safety Basin",
+      "authors": [
+        {
+          "name": "Shuo Yang",
+          "authorId": "2283132150"
+        },
+        {
+          "name": "Qihui Zhang",
+          "authorId": "46324457"
+        },
+        {
+          "name": "Yu-Yang Liu",
+          "authorId": "2282758534"
+        },
+        {
+          "name": "Yue Huang",
+          "authorId": "2366157515"
+        },
+        {
+          "name": "Xiaojun Jia",
+          "authorId": "2367227304"
+        },
+        {
+          "name": "Kun-Peng Ning",
+          "authorId": "2253467098"
+        },
+        {
+          "name": "Jiayu Yao",
+          "authorId": "2366424896"
+        },
+        {
+          "name": "Jigang Wang",
+          "authorId": "2366173744"
+        },
+        {
+          "name": "Hailiang Dai",
+          "authorId": "2368699056"
+        },
+        {
+          "name": "Yibing Song",
+          "authorId": "2331254928"
+        },
+        {
+          "name": "Li Yuan",
+          "authorId": "2268671306"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Fine-tuning large language models (LLMs) improves performance but introduces critical safety vulnerabilities: even minimal harmful data can severely compromise safety measures. We observe that perturbations orthogonal to the alignment direction - defined by weight differences between aligned (safe) and unaligned models - rapidly compromise model safety. In contrast, updates along the alignment direction largely preserve it, revealing the parameter space as a\"narrow safety basin\". To address this, we propose AsFT (Anchoring Safety in Fine-Tuning) to maintain safety by explicitly constraining update directions during fine-tuning. By penalizing updates orthogonal to the alignment direction, AsFT effectively constrains the model within the\"narrow safety basin,\"thus preserving its inherent safety. Extensive experiments on multiple datasets and models show that AsFT reduces harmful behaviors by up to 7.60%, improves task performance by 3.44%, and consistently outperforms existing methods across multiple tasks.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2506.08473",
+      "arxivId": "2506.08473",
+      "url": "https://www.semanticscholar.org/paper/27a2ee8b77dbfe02b908d3e929eaba42121ecf83",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.08473"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ec873d166eb68554ac95a117d9bb74908e593e01",
+      "title": "Steering Out-of-Distribution Generalization with Concept Ablation Fine-Tuning",
+      "authors": [
+        {
+          "name": "Helena Casademunt",
+          "authorId": "2373042956"
+        },
+        {
+          "name": "Caden Juang",
+          "authorId": "2300368861"
+        },
+        {
+          "name": "Adam Karvonen",
+          "authorId": "2314115348"
+        },
+        {
+          "name": "Samuel Marks",
+          "authorId": "2225941937"
+        },
+        {
+          "name": "Senthooran Rajamanoharan",
+          "authorId": "35185194"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Fine-tuning large language models (LLMs) can lead to unintended out-of-distribution generalization. Standard approaches to this problem rely on modifying training data, for example by adding data that better specify the intended generalization. However, this is not always practical. We introduce Concept Ablation Fine-Tuning (CAFT), a technique that leverages interpretability tools to control how LLMs generalize from fine-tuning, without needing to modify the training data or otherwise use data from the target distribution. Given a set of directions in an LLM's latent space corresponding to undesired concepts, CAFT works by ablating these concepts with linear projections during fine-tuning, steering the model away from unintended generalizations. We successfully apply CAFT to three fine-tuning tasks, including emergent misalignment, a phenomenon where LLMs fine-tuned on a narrow task generalize to give egregiously misaligned responses to general questions. Without any changes to the fine-tuning data, CAFT reduces misaligned responses by 10x without degrading performance on the training distribution. Overall, CAFT represents a novel approach for steering LLM generalization without modifying training data.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2507.16795",
+      "arxivId": "2507.16795",
+      "url": "https://www.semanticscholar.org/paper/ec873d166eb68554ac95a117d9bb74908e593e01",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.16795"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6274c0d30c42490327e4a2e90a38b8185c044d89",
+      "title": "Parameter-Efficient Fine-Tuning of Large Language Models via Deconvolution in Subspace",
+      "authors": [
+        {
+          "name": "Jia-Chen Zhang",
+          "authorId": "2316010602"
+        },
+        {
+          "name": "Yu-Jie Xiong",
+          "authorId": "2316127143"
+        },
+        {
+          "name": "Chun-Ming Xia",
+          "authorId": "2215678318"
+        },
+        {
+          "name": "Dong-Hai Zhu",
+          "authorId": "2315991006"
+        },
+        {
+          "name": "Xi-He Qiu",
+          "authorId": "2318324240"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language model (LLM) is considered a milestone towards achieving Artificial General Intelligence (AGI). With its advanced emergent capabilities, it adapt to a wide range of specific applications. Fine-tuning LLMs for various downstream tasks has become a new paradigm. Low-Rank Adaptation (LoRA) is well-known for its parameter efficiency. It can reduce the number of parameters needed to fine-tune LLMs by several orders of magnitude. However, LoRA-based approaches encounter a significant limitation due to the bottleneck imposed by rank one decomposition. As the parameters count in LLMs increase, even rank one decomposition might surpass the number of parameters truly necessary for handling more downstream tasks. In this paper, we propose a new method for Parameter-Efficient Fine-Tuning (PEFT) via deconvolution in subspace, dubbed as DCFT. We innovatively use deconvolution to complete details and enhance knowledge in subspace incremental matrices, and dynamically control parameters by adjusting the kernel size, unconstrained by rank-one decomposition. Extensive experiments are conducted to validate the effectiveness of DCFT. Results show that compared to LoRA, DCFT achieve an 8$\\times$ reduction in parameters, and still achieves highly impressive performance. Our code is available here: https://github.com/Godz-z/DCFT.",
+      "citationCount": 7,
+      "doi": "10.48550/arXiv.2503.01419",
+      "arxivId": "2503.01419",
+      "url": "https://www.semanticscholar.org/paper/6274c0d30c42490327e4a2e90a38b8185c044d89",
+      "venue": "International Conference on Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.01419"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4abc380d4d9697a79b23e21fed361a0fa13997fa",
+      "title": "Wav2Prompt: End-to-End Speech Prompt Learning and Task-based Fine-tuning for Text-based LLMs",
+      "authors": [
+        {
+          "name": "Keqi Deng",
+          "authorId": "2068923436"
+        },
+        {
+          "name": "Guangzhi Sun",
+          "authorId": "2310565909"
+        },
+        {
+          "name": "Phil Woodland",
+          "authorId": "2271322630"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Wav2Prompt is proposed which allows integrating spoken input with a text-based large language model (LLM). Wav2Prompt uses a straightforward training process with only the same data used to train an automatic speech recognition (ASR) model. After training, Wav2Prompt learns continuous representations from speech and uses them as LLM prompts. To avoid task over-fitting issues found in prior work and preserve the emergent abilities of LLMs, Wav2Prompt takes LLM token embeddings as the training targets and utilises a continuous integrate-and-fire mechanism for explicit speech-text alignment. Therefore, a Wav2Prompt-LLM combination can be applied to zero-shot spoken language tasks such as speech translation (ST), speech understanding (SLU), and spoken-query-based question answering (SQQA). It is shown that for these zero-shot tasks, Wav2Prompt performs similarly to an ASR-LLM cascade and better than recent prior work. If relatively small amounts of task-specific paired data are available, the Wav2Prompt-LLM combination can be end-to-end (E2E) fine-tuned and then yields greatly improved results relative to an ASR-LLM cascade for the above tasks. For instance, for English-French ST, a Wav2Prompt-LLM combination gave a 5 BLEU point increase over an ASR-LLM cascade.",
+      "citationCount": 7,
+      "doi": "10.18653/v1/2025.naacl-long.354",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4abc380d4d9697a79b23e21fed361a0fa13997fa",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "6940-6956"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "5012568ce3a750679b7e874728ddd0b11f7ffeb8",
+      "title": "LoFiT: Localized Fine-tuning on LLM Representations",
+      "authors": [
+        {
+          "name": "Fangcong Yin",
+          "authorId": "2304461507"
+        },
+        {
+          "name": "Xi Ye",
+          "authorId": "50183897"
+        },
+        {
+          "name": "Greg Durrett",
+          "authorId": "1814094"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent work in interpretability shows that large language models (LLMs) can be adapted for new tasks in a learning-free way: it is possible to intervene on LLM representations to elicit desired behaviors for alignment. For instance, adding certain bias vectors to the outputs of certain attention heads is reported to boost the truthfulness of models. In this work, we show that localized fine-tuning serves as an effective alternative to such representation intervention methods. We introduce a framework called Localized Fine-Tuning on LLM Representations (LoFiT), which identifies a subset of attention heads that are most important for learning a specific task, then trains offset vectors to add to the model's hidden representations at those selected heads. LoFiT localizes to a sparse set of heads (3%-10%) and learns the offset vectors from limited training data, comparable to the settings used for representation intervention. For truthfulness and reasoning tasks, we find that LoFiT's intervention vectors are more effective for LLM adaptation than vectors from representation intervention methods such as Inference-time Intervention. We also find that the localization step is important: selecting a task-specific set of attention heads can lead to higher performance than intervening on heads selected for a different task. Finally, across 7 tasks we study, LoFiT achieves comparable performance to other parameter-efficient fine-tuning methods such as LoRA, despite modifying 20x-200x fewer parameters than these methods.",
+      "citationCount": 41,
+      "doi": "10.48550/arXiv.2406.01563",
+      "arxivId": "2406.01563",
+      "url": "https://www.semanticscholar.org/paper/5012568ce3a750679b7e874728ddd0b11f7ffeb8",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.01563"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "299af57e637095899ca2e2a97da9d13aab622ce6",
+      "title": "LENSLLM: Unveiling Fine-Tuning Dynamics for LLM Selection",
+      "authors": [
+        {
+          "name": "Xinyue Zeng",
+          "authorId": "2359897638"
+        },
+        {
+          "name": "Haohui Wang",
+          "authorId": "2155587513"
+        },
+        {
+          "name": "Junhong Lin",
+          "authorId": "2311427666"
+        },
+        {
+          "name": "Jun Wu",
+          "authorId": "2359758871"
+        },
+        {
+          "name": "Tyler Cody",
+          "authorId": "2359450667"
+        },
+        {
+          "name": "Dawei Zhou",
+          "authorId": "2313576252"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The proliferation of open-sourced Large Language Models (LLMs) and diverse downstream tasks necessitates efficient model selection, given the impracticality of fine-tuning all candidates due to computational constraints. Despite the recent advances in LLM selection, a fundamental research question largely remains nascent: how can we model the dynamic behaviors of LLMs during fine-tuning, thereby enhancing our understanding of their generalization performance across diverse downstream tasks? In this work, we propose a novel theoretical framework that provides a proper lens to assess the generalization capabilities of LLMs, thereby enabling accurate and efficient LLM selection for downstream applications. In particular, we first derive a PAC-Bayesian Generalization Bound that unveils fine-tuning dynamics of LLMs and then introduce LENSLLM, a Neural Tangent Kernel (NTK)-based Rectified Scaling Model that enables accurate performance predictions across diverse tasks while maintaining computational efficiency. Extensive empirical results on 3 large-scale benchmarks demonstrate that our model achieves up to 91.1% accuracy and reduces up to 88.5% computational cost in LLM selection, outperforming 5 state-of-the-art methods. We open-source our proposed LENSLLM model and corresponding results at LensLLM.io.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2505.03793",
+      "arxivId": "2505.03793",
+      "url": "https://www.semanticscholar.org/paper/299af57e637095899ca2e2a97da9d13aab622ce6",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.03793"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "5f799063f4a041d9f5c3f9f2e423c8a4441b0a01",
+      "title": "Don't Make It Up: Preserving Ignorance Awareness in LLM Fine-Tuning",
+      "authors": [
+        {
+          "name": "William F. Shen",
+          "authorId": "2302373311"
+        },
+        {
+          "name": "Xinchi Qiu",
+          "authorId": "1702997626"
+        },
+        {
+          "name": "Nicola Cancedda",
+          "authorId": "2313189467"
+        },
+        {
+          "name": "N. Lane",
+          "authorId": "2298756346"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Existing work on mitigating catastrophic forgetting during large language models (LLMs) fine-tuning for new knowledge instances has primarily focused on preserving performance on previously seen data, while critically overlooking the collapse of essential capabilities instilled through alignment, most notably the model's ability to faithfully express epistemic uncertainty (a property we term'Ignorance Awareness'). In this work, we formalize the notion of Ignorance Awareness and illustrate that conventional fine-tuning methods can result in substantial activation displacement. This displacement undermines the critical capability of ignorance awareness, leading to undesirable behaviors such as hallucinations. To address this challenge, we introduce SEAT, a simple and principled fine-tuning approach that not only enables the model to effectively acquire new knowledge instances but also preserves its aligned ignorance awareness. SEAT integrates two key components: (1) sparse tuning that constrains activation drift, and (2) a novel entity perturbation method designed to counter knowledge entanglement. Experimental results demonstrate that, across both real-world and synthetic datasets, SEAT significantly outperforms baselines in preserving ignorance awareness while retaining optimal fine-tuning performance, offering a more robust solution for LLM fine-tuning.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.14387",
+      "arxivId": "2506.14387",
+      "url": "https://www.semanticscholar.org/paper/5f799063f4a041d9f5c3f9f2e423c8a4441b0a01",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.14387"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d0adb46236833fbc962e5f9fdc9eb893b6aa1697",
+      "title": "Mitigating Non-IID Drift in Zeroth-Order Federated LLM Fine-Tuning with Transferable Sparsity",
+      "authors": [
+        {
+          "name": "Yide Ran",
+          "authorId": "2304745824"
+        },
+        {
+          "name": "Wentao Guo",
+          "authorId": "2304937496"
+        },
+        {
+          "name": "Jingwei Sun",
+          "authorId": "2156016815"
+        },
+        {
+          "name": "Yanzhou Pan",
+          "authorId": "2348307063"
+        },
+        {
+          "name": "Xiaodong Yu",
+          "authorId": "2304971293"
+        },
+        {
+          "name": "Hao Wang",
+          "authorId": "2365466354"
+        },
+        {
+          "name": "Jianwen Xie",
+          "authorId": "2365267147"
+        },
+        {
+          "name": "Yiran Chen",
+          "authorId": "2253812527"
+        },
+        {
+          "name": "Denghui Zhang",
+          "authorId": "2322818776"
+        },
+        {
+          "name": "Zhaozhuo Xu",
+          "authorId": "2322457711"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Federated Learning enables collaborative fine-tuning of Large Language Models (LLMs) across decentralized Non-Independent and Identically Distributed (Non-IID) clients, but such models' massive parameter sizes lead to significant memory and communication challenges. This work introduces Meerkat, a sparse zeroth-order optimization (ZO) method designed for federated LLM fine-tuning. By limiting fine-tuning to a transferable, static, extremely sparse subset of parameters, Meerkat achieves remarkable communication efficiency, enabling cost-effective high-frequency synchronization. With theoretical analysis and experiments, we show that this high-frequency communication effectively mitigates Non-IID data challenges and leads to superior performance compared to full-parameter ZO. Furthermore, experiment results show that Meerkat outperforms existing sparsity baselines with better performance at the same communication frequency. To further handle Non-IID drift, Meerkat leverages traceable local updates and forms a virtual path for each client. This virtual path mechanism reveals the GradIP phenomenon: the inner products between LLM pre-training gradients maintained by server and client gradients estimated via ZO converges for extreme Non-IID clients but oscillates for IID ones. This distinct behavior provides a signal for identifying clients with extreme data heterogeneity. Using this signal, Meerkat-vp is proposed to analyze GradIP trajectories to identify extreme Non-IID clients and applies early stopping to enhance aggregated model quality. Experiments confirm that Meerkat and Meerkat-vp significantly improve the efficiency and effectiveness of ZO federated LLM fine-tuning.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.03337",
+      "arxivId": "2506.03337",
+      "url": "https://www.semanticscholar.org/paper/d0adb46236833fbc962e5f9fdc9eb893b6aa1697",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.03337"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b404299b85af6de362720347e373c5fe78bcbc23",
+      "title": "No Two Devils Alike: Unveiling Distinct Mechanisms of Fine-tuning Attacks",
+      "authors": [
+        {
+          "name": "Chak Tou Leong",
+          "authorId": "2257035605"
+        },
+        {
+          "name": "Yi Cheng",
+          "authorId": "2117232627"
+        },
+        {
+          "name": "Kaishuai Xu",
+          "authorId": "2119184118"
+        },
+        {
+          "name": "Jian Wang",
+          "authorId": "2258854033"
+        },
+        {
+          "name": "Hanlin Wang",
+          "authorId": "2303427516"
+        },
+        {
+          "name": "Wenjie Li",
+          "authorId": "2261357254"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The existing safety alignment of Large Language Models (LLMs) is found fragile and could be easily attacked through different strategies, such as through fine-tuning on a few harmful examples or manipulating the prefix of the generation results. However, the attack mechanisms of these strategies are still underexplored. In this paper, we ask the following question: \\textit{while these approaches can all significantly compromise safety, do their attack mechanisms exhibit strong similarities?} To answer this question, we break down the safeguarding process of an LLM when encountered with harmful instructions into three stages: (1) recognizing harmful instructions, (2) generating an initial refusing tone, and (3) completing the refusal response. Accordingly, we investigate whether and how different attack strategies could influence each stage of this safeguarding process. We utilize techniques such as logit lens and activation patching to identify model components that drive specific behavior, and we apply cross-model probing to examine representation shifts after an attack. In particular, we analyze the two most representative types of attack approaches: Explicit Harmful Attack (EHA) and Identity-Shifting Attack (ISA). Surprisingly, we find that their attack mechanisms diverge dramatically. Unlike ISA, EHA tends to aggressively target the harmful recognition stage. While both EHA and ISA disrupt the latter two stages, the extent and mechanisms of their attacks differ significantly. Our findings underscore the importance of understanding LLMs' internal safeguarding process and suggest that diverse defense mechanisms are required to effectively cope with various types of attacks.",
+      "citationCount": 29,
+      "doi": "10.48550/arXiv.2405.16229",
+      "arxivId": "2405.16229",
+      "url": "https://www.semanticscholar.org/paper/b404299b85af6de362720347e373c5fe78bcbc23",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.16229"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a300d633112e9636a54c3e5f9abc43cd54cf85d4",
+      "title": "When Greedy Wins: Emergent Exploitation Bias in Meta-Bandit LLM Training",
+      "authors": [
+        {
+          "name": "Sanxing Chen",
+          "authorId": "2296722484"
+        },
+        {
+          "name": "Xiaoyin Chen",
+          "authorId": "2364625345"
+        },
+        {
+          "name": "Yukun Huang",
+          "authorId": "2145952181"
+        },
+        {
+          "name": "Roy Xie",
+          "authorId": "2343650446"
+        },
+        {
+          "name": "Bhuwan Dhingra",
+          "authorId": "2342561701"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While Large Language Models (LLMs) hold promise to become autonomous agents, they often explore suboptimally in sequential decision-making. Recent work has sought to enhance this capability via supervised fine-tuning (SFT) or reinforcement learning (RL), improving regret on the classic multi-armed bandit task. However, it remains unclear how these learning methods shape exploration strategies and how well they generalize. We investigate both paradigms by training LLMs with SFT on expert trajectories and RL with a range of tailored reward signals including a strategic, regret-shaped reward to reduce variance, and an algorithmic reward that enables oracle imitation. The resulting agents outperform pre-trained models and achieve performance comparable to Upper Confidence Bound (UCB) and Thompson Sampling, with robust generalization to 6x longer horizons and across bandit families. Behavioral analysis reveals that gains often stem from more sophisticated but greedier exploitation: RL/SFT agents are more prone to early catastrophic failure than pre-trained models, prematurely abandoning exploration. Furthermore, agents trained to imitate UCB learn to outperform their teacher by adopting more exploitative variants. Our findings clarify when each training paradigm is preferable and advocate tailored reward design and evaluation beyond average regret to promote robust exploratory behavior.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.24923",
+      "arxivId": "2509.24923",
+      "url": "https://www.semanticscholar.org/paper/a300d633112e9636a54c3e5f9abc43cd54cf85d4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.24923"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1cc9ddfa9a43eda19db3130109292430a0bdce44",
+      "title": "The Fine-Tuning Paradox: Boosting Translation Quality Without Sacrificing LLM Abilities",
+      "authors": [
+        {
+          "name": "David Stap",
+          "authorId": "2292435932"
+        },
+        {
+          "name": "Eva Hasler",
+          "authorId": "2269141224"
+        },
+        {
+          "name": "Bill Byrne",
+          "authorId": "2296993932"
+        },
+        {
+          "name": "C. Monz",
+          "authorId": "2062908179"
+        },
+        {
+          "name": "Ke Tran",
+          "authorId": "2303845498"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Fine-tuning large language models (LLMs) for machine translation has shown improvements in overall translation quality. However, it is unclear what is the impact of fine-tuning on desirable LLM behaviors that are not present in neural machine translation models, such as steerability, inherent document-level translation abilities, and the ability to produce less literal translations. We perform an extensive translation evaluation on the LLaMA and Falcon family of models with model size ranging from 7 billion up to 65 billion parameters. Our results show that while fine-tuning improves the general translation quality of LLMs, several abilities degrade. In particular, we observe a decline in the ability to perform formality steering, to produce technical translations through few-shot examples, and to perform document-level translation. On the other hand, we observe that the model produces less literal translations after fine-tuning on parallel data. We show that by including monolingual data as part of the fine-tuning data we can maintain the abilities while simultaneously enhancing overall translation quality. Our findings emphasize the need for fine-tuning strategies that preserve the benefits of LLMs for machine translation.",
+      "citationCount": 24,
+      "doi": "10.48550/arXiv.2405.20089",
+      "arxivId": "2405.20089",
+      "url": "https://www.semanticscholar.org/paper/1cc9ddfa9a43eda19db3130109292430a0bdce44",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.20089"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "258a2b612e2248466032627261a3615cb949c7d1",
+      "title": "Human Implicit Preference-Based Policy Fine-tuning for Multi-Agent Reinforcement Learning in USV Swarm",
+      "authors": [
+        {
+          "name": "Hyeonjun Kim",
+          "authorId": "2349342552"
+        },
+        {
+          "name": "Kanghoon Lee",
+          "authorId": "2268463981"
+        },
+        {
+          "name": "Junho Park",
+          "authorId": "2395281042"
+        },
+        {
+          "name": "Jiachen Li",
+          "authorId": "2348788355"
+        },
+        {
+          "name": "Jinkyoo Park",
+          "authorId": "2268633041"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Multi-Agent Reinforcement Learning (MARL) has shown promise in solving complex problems involving cooperation and competition among agents, such as an Unmanned Surface Vehicle (USV) swarm used in search and rescue, surveillance, and vessel protection. However, aligning system behavior with user preferences is challenging due to the difficulty of encoding expert intuition into reward functions. To address the issue, we propose a Reinforcement Learning with Human Feedback (RLHF) approach for MARL that resolves credit-assignment challenges through an Agent-Level Feedback system categorizing feedback into intra-agent, inter-agent, and intra-team types. To overcome the challenges of direct human feedback, we employ a Large Language Model (LLM) evaluator to validate our approach using feedback scenarios such as region constraints, collision avoidance, and task allocation. Our method effectively refines USV swarm policies, addressing key challenges in multi-agent systems while maintaining fairness and performance consistency.",
+      "citationCount": 4,
+      "doi": "10.1109/IROS60139.2025.11246039",
+      "arxivId": "2503.03796",
+      "url": "https://www.semanticscholar.org/paper/258a2b612e2248466032627261a3615cb949c7d1",
+      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+      "journal": {
+        "name": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+        "pages": "18653-18659"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

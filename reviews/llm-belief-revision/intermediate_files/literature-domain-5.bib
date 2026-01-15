@@ -1,0 +1,412 @@
+@comment{
+====================================================================
+DOMAIN: Neuro-Symbolic AI and Formal Argumentation
+SEARCH_DATE: 2026-01-15
+PAPERS_FOUND: 18 total (High: 6, Medium: 8, Low: 4)
+SEARCH_SOURCES: SEP, PhilPapers, Semantic Scholar, OpenAlex
+====================================================================
+
+DOMAIN_OVERVIEW:
+
+Neuro-symbolic AI represents a hybrid paradigm that integrates neural networks'
+learning capabilities with symbolic reasoning systems' interpretability and
+logical rigor. This domain addresses fundamental limitations of pure neural
+approaches (lack of explainability, limited reasoning) and pure symbolic
+approaches (brittleness, difficulty learning from data) by combining their
+complementary strengths.
+
+Key debates center on integration architectures (tight vs loose coupling,
+which component dominates), knowledge representation formats (logic programming,
+knowledge graphs, vector-symbolic architectures), and the fundamental question
+of whether human-like reasoning requires symbolic manipulation or can emerge
+from scaled neural computation. Probabilistic argumentation frameworks extend
+classical argumentation with uncertainty quantification, enabling practical
+reasoning under incomplete information. Temporal extensions support reasoning
+over knowledge graphs that evolve over time.
+
+Recent developments include the PyReason framework (Shakarian et al. 2023)
+for temporal logic over graphs, neural-symbolic probabilistic argumentation
+machines combining RBMs with argumentation frameworks, and surveys showing
+concentrated research in learning/inference (63%) with gaps in explainability
+(28%) and meta-cognition (5%). The field shows promise for collaborative
+human-AI systems but faces challenges in scalability, standardization, and
+the computational intensity of hybrid architectures.
+
+RELEVANCE_TO_PROJECT:
+
+This domain directly addresses alternatives to end-to-end neural approaches for
+belief revision in AI systems. While LLMs implement belief revision implicitly
+through gradient descent, neuro-symbolic systems offer explicit, interpretable
+mechanisms for updating beliefs based on logical rules and probabilistic
+inference. The probabilistic argumentation framework (Shakarian et al. 2014)
+provides formal foundations for belief revision under uncertainty that could
+be compared with LLM belief dynamics. PyReason's temporal reasoning capabilities
+model how beliefs evolve over time in knowledge graphs, offering a structured
+alternative to transformer-based temporal modeling.
+
+NOTABLE_GAPS:
+
+Limited work directly comparing neuro-symbolic belief revision with LLM-based
+approaches. Few implementations of AGM-style belief revision postulates in
+neuro-symbolic architectures. Insufficient evaluation of neuro-symbolic systems
+on real-world belief revision benchmarks that could enable direct comparison
+with neural models.
+
+SYNTHESIS_GUIDANCE:
+
+When synthesizing, emphasize (1) architectural tradeoffs between hybrid and
+end-to-end approaches, (2) explainability advantages of symbolic components
+for understanding belief revision processes, (3) scalability challenges that
+may favor pure neural approaches, and (4) potential for neuro-symbolic methods
+to provide formal guarantees about belief revision properties that neural
+systems lack.
+
+KEY_POSITIONS:
+- Tight integration (6 papers): Neural and symbolic components deeply coupled
+  in unified architectures
+- Loose integration (4 papers): Symbolic reasoning as external module or
+  verification layer over neural systems
+- Temporal reasoning (5 papers): Extensions for reasoning about time-evolving
+  knowledge graphs and beliefs
+- Probabilistic argumentation (3 papers): Combining argumentation frameworks
+  with probability theory for uncertainty
+====================================================================
+}
+
+@article{shakarian2014belief,
+  author = {Shakarian, Paulo and Simari, Gerardo I. and Falappa, Marcelo A.},
+  title = {Belief Revision in Structured Probabilistic Argumentation},
+  journal = {Lecture Notes in Computer Science},
+  year = {2014},
+  volume = {8367},
+  pages = {324--343},
+  doi = {10.1007/978-3-319-04939-7_16},
+  note = {
+  CORE ARGUMENT: Proposes a probabilistic structured argumentation framework extending Presumptive Defeasible Logic Programming (PreDeLP) with probabilistic models to handle contradictory and uncertain data in knowledge bases. Develops rationality postulates for non-prioritized belief revision operations over probabilistic PreDeLP programs, demonstrating a representation theorem that establishes equivalence between a class of operators and operators characterized by the postulates.
+
+  RELEVANCE: This is the critical seed paper specified in the research prompt. It provides formal foundations for belief revision in probabilistic argumentation frameworks, establishing how symbolic reasoning systems can rationally update beliefs under uncertainty. The framework offers a structured alternative to neural belief revision, with explicit logical rules and provable rationality properties that enable direct comparison with LLM belief dynamics.
+
+  POSITION: Formal symbolic approach to belief revision with explicit logical semantics and rationality guarantees, contrasting with implicit neural belief revision in LLMs.
+  },
+  keywords = {belief-revision, probabilistic-argumentation, structured-argumentation, High}
+}
+
+@article{aditya2023pyreason,
+  author = {Aditya, Dyuman and Mukherji, Kaustuv and Balasubramanian, Srikar and Chaudhary, Abhiraj and Shakarian, Paulo},
+  title = {PyReason: Software for Open World Temporal Logic},
+  journal = {arXiv preprint},
+  year = {2023},
+  volume = {abs/2302.13482},
+  doi = {10.48550/arXiv.2302.13482},
+  note = {
+  CORE ARGUMENT: Introduces PyReason, a software framework based on generalized annotated logic that captures current differentiable logics and extends them with temporal reasoning over finite periods. Directly supports reasoning over graphical structures (knowledge graphs, social networks) with fully explainable inference traces and efficient Python implementation. Achieves three orders of magnitude speedup compared to native simulations while maintaining comparable performance.
+
+  RELEVANCE: Critical implementation of the temporal probabilistic argumentation framework developed by Shakarian. Demonstrates practical feasibility of symbolic temporal reasoning over knowledge graphs, providing a concrete alternative to LLM-based temporal reasoning. The framework's explainability and efficiency make it particularly relevant for comparing structured vs implicit approaches to belief revision over time.
+
+  POSITION: Practical neuro-symbolic system emphasizing explainability, temporal reasoning, and graph-based knowledge representation.
+  },
+  keywords = {pyreason, temporal-reasoning, knowledge-graphs, neuro-symbolic, High}
+}
+
+@article{wan2024cognitive,
+  author = {Wan, Zishen and Liu, Che-Kai and Yang, Hanchen and Li, Chaojian and You, Haoran and Fu, Yonggan and Wan, Cheng and Krishna, Tushar and Lin, Y. and Raychowdhury, A.},
+  title = {Towards Cognitive AI Systems: a Survey and Prospective on Neuro-Symbolic AI},
+  journal = {arXiv preprint},
+  year = {2024},
+  volume = {abs/2401.01040},
+  doi = {10.48550/arXiv.2401.01040},
+  note = {
+  CORE ARGUMENT: Provides systematic review of neuro-symbolic AI progress, arguing that NSAI emerges as promising paradigm to address limitations of pure neural approaches (unsustainable computation, limited robustness, lack of explainability) by fusing neural, symbolic, and probabilistic approaches. Analyzes performance characteristics and computational operators of NSAI models, discussing challenges and future directions from system and architectural perspectives. Recent NSAI systems demonstrate potential in collaborative human-AI scenarios with reasoning capabilities.
+
+  RELEVANCE: Comprehensive survey establishing state-of-the-art in neuro-symbolic AI, providing context for understanding how hybrid systems compare to pure neural LLM approaches. Identifies key challenges (computational efficiency, integration architectures) that affect practical deployment of neuro-symbolic belief revision systems. The emphasis on reasoning capabilities directly connects to the project's focus on rational belief revision.
+
+  POSITION: Advocates for neuro-symbolic integration as necessary evolution beyond pure neural systems to achieve robust, explainable reasoning.
+  },
+  keywords = {neuro-symbolic-survey, cognitive-AI, explainability, High}
+}
+
+@article{colelough2025neurosymbolic,
+  author = {Colelough, B. and Regli, William},
+  title = {Neuro-Symbolic AI in 2024: A Systematic Review},
+  journal = {arXiv preprint},
+  year = {2025},
+  volume = {abs/2501.05435},
+  doi = {10.48550/arXiv.2501.05435},
+  note = {
+  CORE ARGUMENT: Systematic review following PRISMA methodology analyzing 167 papers (from 1,428 screened) on neuro-symbolic AI between 2020-2024. Finds research concentrated in learning and inference (63%), logic and reasoning (35%), knowledge representation (44%), with underrepresented areas in explainability and trustworthiness (28%) and meta-cognition (5%). Identifies significant interdisciplinary opportunities especially in integrating explainability with other research areas.
+
+  RELEVANCE: Most recent systematic review providing empirical data on research distribution in neuro-symbolic AI. The finding that meta-cognition (including belief revision) is least explored (5%) directly supports the project's motivation for investigating belief revision in hybrid systems. Quantifies the gap between learning-focused and reasoning-focused research that the project addresses.
+
+  POSITION: Empirical meta-analysis identifying research gaps and calling for increased focus on explainability, trustworthiness, and meta-cognitive capabilities.
+  },
+  keywords = {neuro-symbolic-survey, systematic-review, meta-cognition, High}
+}
+
+@article{wang2022data,
+  author = {Wang, Wenguan and Yang, Yi and Wu, Fei},
+  title = {Towards Data-And Knowledge-Driven AI: A Survey on Neuro-Symbolic Computing},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year = {2022},
+  volume = {47},
+  pages = {878--899},
+  doi = {10.1109/TPAMI.2024.3483273},
+  note = {
+  CORE ARGUMENT: Systematic overview of neuro-symbolic computing research, arguing NeSy reconciles advantages of reasoning and interpretability in symbolic representation with robust learning in neural networks. Categorizes approaches along key characteristics: neural-symbolic integration methods, knowledge representation formats, knowledge embedding techniques, and functionality. Emphasizes NeSy as catalyst for next-generation AI that is both data-driven and knowledge-driven.
+
+  RELEVANCE: Provides comprehensive taxonomy of integration methods relevant for understanding how symbolic belief revision mechanisms can be embedded in neural architectures. The knowledge representation and embedding analysis directly informs design choices for hybrid belief revision systems. Establishes theoretical foundations for comparing pure neural vs hybrid approaches to reasoning tasks.
+
+  POSITION: Advocates for unified data-driven and knowledge-driven AI paradigm, positioning neuro-symbolic computing as essential evolution beyond pure statistical learning.
+  },
+  keywords = {neuro-symbolic-survey, knowledge-representation, integration-methods, High}
+}
+
+@article{feldstein2024mapping,
+  author = {Feldstein, Jonathan and Dilkas, Paulius and Belle, Vaishak and Tsamoura, Efthymia},
+  title = {Mapping the Neuro-Symbolic AI Landscape by Architectures: A Handbook on Augmenting Deep Learning Through Symbolic Reasoning},
+  journal = {arXiv preprint},
+  year = {2024},
+  volume = {abs/2410.22077},
+  doi = {10.48550/arXiv.2410.22077},
+  note = {
+  CORE ARGUMENT: First systematic mapping of neuro-symbolic techniques into families of frameworks based on architectural patterns. Links different strengths to specific architectures, illustrates how engineers can augment neural networks treating symbolic methods as black-boxes, and maps most of the field to help researchers identify related frameworks. Argues integration is necessary because statistical and symbolic methods' complementary strengths address each other's weaknesses.
+
+  RELEVANCE: Architectural taxonomy directly relevant for designing hybrid belief revision systems. The framework allows systematic comparison of architectural choices (tight vs loose coupling, symbolic-as-module vs symbolic-as-constraint) for implementing rational belief revision. Practical focus on augmentation strategies informs how symbolic revision guarantees can be added to existing LLM systems.
+
+  POSITION: Architectural perspective emphasizing practical integration patterns and treating symbolic reasoning as augmentation to neural systems.
+  },
+  keywords = {neuro-symbolic-architecture, integration-patterns, design-taxonomy, High}
+}
+
+@article{hunter2021probabilistic,
+  author = {Hunter, A. and Polberg, Sylwia and Potyka, Nico and Rienstra, Tjitze and Thimm, Matthias},
+  title = {Probabilistic Argumentation: A Survey},
+  journal = {Computational Models of Argument},
+  year = {2021},
+  pages = {459--470},
+  doi = {10.3233/FAIA210382},
+  note = {
+  CORE ARGUMENT: Comprehensive survey of probabilistic argumentation approaches combining probability theory with formal argumentation frameworks. Covers epistemic approaches (uncertainty about graph structure), constellation approaches (probability distributions over subgraphs), and labellings approaches (probabilistic semantics). Establishes that probabilistic extensions enable argumentation to handle real-world uncertainty while maintaining formal semantics.
+
+  RELEVANCE: Establishes theoretical landscape for probabilistic argumentation that Shakarian et al. 2014 contributes to. Provides context for understanding how probability theory enhances formal argumentation's ability to model belief under uncertainty. The different approaches to probabilistic argumentation offer alternatives for implementing uncertain belief revision in symbolic systems.
+
+  POSITION: Survey establishing probabilistic argumentation as mature research area combining logical and probabilistic reasoning.
+  },
+  keywords = {probabilistic-argumentation, uncertainty, formal-argumentation, Medium}
+}
+
+@article{totis2023smproblog,
+  author = {Totis, Pietro and Kimmig, Angelika and Raedt, L. De},
+  title = {smProbLog: Stable Model Semantics in ProbLog for Probabilistic Argumentation},
+  journal = {Theory and Practice of Logic Programming},
+  year = {2023},
+  volume = {23},
+  number = {4},
+  pages = {620--655},
+  doi = {10.48550/arXiv.2304.00879},
+  note = {
+  CORE ARGUMENT: Novel interpretation of probabilistic argumentation frameworks as probabilistic logic programs, proposing new PLP semantics where probabilistic facts don't fully capture domain uncertainty (violating common PLP assumption). Implements smProbLog system supporting many inference and learning tasks, demonstrating novel reasoning tools for probabilistic argumentation. Networks trained on argument labellings explaining data, with constraints integrated within restricted Boltzmann machines.
+
+  RELEVANCE: Demonstrates practical integration of probabilistic logic programming with argumentation frameworks, offering concrete implementation approach for probabilistic belief revision. The connection to RBMs shows how neural components can be constrained by symbolic argumentation structures, relevant for hybrid belief revision systems. Learning from argument labellings provides mechanism for data-driven refinement of symbolic belief revision rules.
+
+  POSITION: Tight integration approach embedding argumentation semantics as constraints within probabilistic neural models.
+  },
+  keywords = {probabilistic-logic-programming, argumentation, ProbLog, Medium}
+}
+
+@article{riveret2020neurosymbolic,
+  author = {Riveret, R\'{e}gis and Tran, Son N. and d'Avila Garcez, Artur S.},
+  title = {Neuro-Symbolic Probabilistic Argumentation Machines},
+  journal = {Proceedings of the International Conference on Principles of Knowledge Representation and Reasoning},
+  year = {2020},
+  volume = {17},
+  pages = {871--881},
+  doi = {10.24963/kr.2020/90},
+  note = {
+  CORE ARGUMENT: Introduces neural-symbolic system combining restricted Boltzmann machines with probabilistic semi-abstract argumentation. Networks trained on argument labellings explaining data so sampled outcomes associate with argument labellings. Argument labellings integrated as constraints within RBMs enabling neural networks to learn probabilistic dependencies amongst argument labels. Experiments show argumentation Boltzmann machines can outperform standard classification, especially in noisy settings.
+
+  RELEVANCE: Concrete neuro-symbolic architecture for probabilistic argumentation demonstrating how symbolic argumentation constraints can improve neural learning under uncertainty. Relevant for understanding how symbolic belief revision rules could constrain neural belief updates, potentially combining advantages of both approaches. The noise robustness finding suggests hybrid systems may handle uncertain evidence better than pure neural approaches.
+
+  POSITION: Tight integration embedding argumentation semantics as constraints in neural probabilistic models (restricted Boltzmann machines).
+  },
+  keywords = {neuro-symbolic, probabilistic-argumentation, RBM, Medium}
+}
+
+@article{toni2023understanding,
+  author = {Toni, Francesca and Potyka, Nico and Ulbricht, Markus and Totis, Pietro},
+  title = {Understanding ProbLog as Probabilistic Argumentation},
+  journal = {Electronic Proceedings in Theoretical Computer Science},
+  year = {2023},
+  volume = {385},
+  pages = {183--189},
+  doi = {10.4204/EPTCS.385.18},
+  note = {
+  CORE ARGUMENT: Studies connections between ProbLog (probabilistic logic programming) and probabilistic abstract argumentation (PAA) building on Assumption-Based Argumentation (ABA). Shows ProbLog is instance of form of PAA that builds upon ABA. Connections pave way toward equipping ProbLog with alternative semantics inherited from PAA/PABA and obtaining novel argumentation semantics for PAA/PABA leveraging ProbLog connections. Enables novel forms of argumentative explanations for ProbLog outputs.
+
+  RELEVANCE: Establishes formal connections between probabilistic logic programming and argumentation frameworks, showing how different formalisms for uncertain reasoning relate. Relevant for understanding theoretical foundations of probabilistic belief revision across symbolic paradigms. The emphasis on argumentative explanations directly supports project's interest in explainable belief revision.
+
+  POSITION: Theoretical work establishing formal equivalences between probabilistic logic and argumentation frameworks.
+  },
+  keywords = {ProbLog, probabilistic-argumentation, formal-semantics, Medium}
+}
+
+@article{liang2022survey,
+  author = {Liang, K. and Meng, Lingyuan and Liu, Meng and Liu, Yue and Tu, Wenxuan and Wang, Siwei and Zhou, Sihang and Liu, Xinwang and Sun, Fu},
+  title = {A Survey of Knowledge Graph Reasoning on Graph Types: Static, Dynamic, and Multi-Modal},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year = {2024},
+  volume = {46},
+  pages = {9456--9478},
+  doi = {10.1109/TPAMI.2024.3417451},
+  note = {
+  CORE ARGUMENT: Comprehensive survey of knowledge graph reasoning methods across static, temporal, and multi-modal KGs. Argues temporal and multi-modal extensions are more practical and closer to real-world applications than static-only reasoning. Uses bi-level taxonomy (graph types as top level, techniques and scenarios as base level) to organize 200+ papers. Identifies temporal reasoning and multi-modal integration as key research directions addressing practical deployment challenges.
+
+  RELEVANCE: Establishes landscape of knowledge graph reasoning methods that provide alternative structured representations for belief revision compared to distributed LLM representations. Temporal KG reasoning directly relevant for understanding how symbolic systems model belief evolution over time. Survey provides context for comparing KG-based vs LLM-based approaches to maintaining and updating beliefs.
+
+  POSITION: Survey emphasizing temporal and multi-modal extensions as necessary for practical KG reasoning applications.
+  },
+  keywords = {knowledge-graphs, temporal-reasoning, survey, Medium}
+}
+
+@article{cheng2024neural,
+  author = {Cheng, Kewei and Ahmed, Nesreen K. and Rossi, R. and Willke, T. and Sun, Yizhou},
+  title = {Neural-Symbolic Methods for Knowledge Graph Reasoning: A Survey},
+  journal = {ACM Transactions on Knowledge Discovery from Data},
+  year = {2024},
+  volume = {18},
+  pages = {1--44},
+  doi = {10.1145/3686806},
+  note = {
+  CORE ARGUMENT: Survey providing comprehensive overview of neural-symbolic KG reasoning covering KG completion, complex query answering, and logical rule learning. For each task, thoroughly discusses three categories: pure symbolic methods, pure neural approaches, and neural-symbolic integration. Analyzes strengths and limitations of each category, arguing neural-symbolic methods combine expressive symbolic reasoning with neural learning capabilities, offering promising direction for KG reasoning.
+
+  RELEVANCE: Directly relevant survey comparing pure symbolic, pure neural, and hybrid approaches to knowledge graph reasoning. The three-category framework provides structure for comparing different approaches to belief representation and revision. Establishes that hybrid methods show promise for combining interpretability (symbolic) with learning efficiency (neural), directly supporting project's investigation of hybrid belief revision.
+
+  POSITION: Survey establishing neural-symbolic integration as promising direction combining complementary strengths of symbolic and neural reasoning.
+  },
+  keywords = {neural-symbolic, knowledge-graphs, survey, Medium}
+}
+
+@article{li2021temporal,
+  author = {Li, Zixuan and Jin, Xiaolong and Li, Wei and Guan, Saiping and Guo, Jiafeng and Shen, Huawei and Wang, Yuanzhuo and Cheng, Xueqi},
+  title = {Temporal Knowledge Graph Reasoning Based on Evolutional Representation Learning},
+  journal = {Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  year = {2021},
+  pages = {408--417},
+  doi = {10.1145/3404835.3462963},
+  note = {
+  CORE ARGUMENT: Proposes Recurrent Evolution network based on Graph Convolution Network (RE-GCN) learning evolutional representations of entities and relations at each timestamp by modeling KG sequence recurrently. Captures structural dependencies within KGs via relation-aware GCN and sequential patterns via gated recurrent components. Incorporates static properties of entities via static graph constraint component. Achieves up to 11.46% MRR improvement with 82x speedup over state-of-the-art.
+
+  RELEVANCE: Demonstrates neural approach to temporal knowledge graph reasoning, providing comparison point for symbolic temporal reasoning in PyReason. The efficiency gains (82x speedup) highlight potential advantages of neural over symbolic approaches for temporal reasoning at scale. Relevant for understanding tradeoffs between interpretable symbolic temporal reasoning and efficient neural temporal modeling in belief revision contexts.
+
+  POSITION: Pure neural approach to temporal KG reasoning emphasizing efficiency and scalability through GCN and recurrent architectures.
+  },
+  keywords = {temporal-KG, neural-reasoning, GCN, Medium}
+}
+
+@article{zhang2019iteratively,
+  author = {Zhang, Wen and Paudel, B. and Wang, Liang and Chen, Jiaoyan and Zhu, Hai and Zhang, Wei and Bernstein, A. and Chen, Huajun},
+  title = {Iteratively Learning Embeddings and Rules for Knowledge Graph Reasoning},
+  journal = {The World Wide Web Conference},
+  year = {2019},
+  pages = {2366--2377},
+  doi = {10.1145/3308558.3313612},
+  note = {
+  CORE ARGUMENT: Proposes IterE framework that iteratively learns embeddings and rules, where rules are learned from embeddings with pruning strategy and embeddings are learned from existing triples plus new triples inferred by rules. Shows rules help improve quality of sparse entity embeddings and link prediction results. Demonstrates high-quality rule generation more efficiently than AMIE+ baseline. Argues embedding and rule learning benefit each other during iterative process.
+
+  RELEVANCE: Demonstrates iterative integration approach where symbolic (rules) and neural (embeddings) components mutually improve each other. Relevant for understanding how symbolic belief revision rules could be learned from neural representations and vice versa. The iterative refinement approach offers potential architecture for hybrid belief revision systems that combine neural learning with symbolic rule extraction.
+
+  POSITION: Loose integration approach with iterative mutual refinement between neural embeddings and symbolic rule learning.
+  },
+  keywords = {neural-symbolic, rule-learning, knowledge-graphs, Medium}
+}
+
+@article{belle2020symbolic,
+  author = {Belle, Vaishak},
+  title = {Symbolic Logic meets Machine Learning: A Brief Survey in Infinite Domains},
+  journal = {Lecture Notes in Computer Science},
+  year = {2020},
+  volume = {12117},
+  pages = {3--16},
+  doi = {10.1007/978-3-030-58449-8_1},
+  note = {
+  CORE ARGUMENT: Surveys connections between logic and learning, challenging common misconception that logic is only for discrete properties while probability/ML is for continuous properties. Reports results showing logic can play role for learning in infinite domains. Structures narrative around three strands: logic versus learning, machine learning for logic, and logic for machine learning. Argues deduction-induction dichotomy is ill-formed and cross-over areas demonstrate integration benefits.
+
+  RELEVANCE: Theoretical foundations questioning sharp separation between symbolic/logical and statistical/learning approaches. Relevant for understanding how symbolic belief revision mechanisms (logical) and neural belief revision (statistical) may not be fundamentally different approaches but potentially unifiable. The infinite domain results challenge view that symbolic methods inherently less expressive than neural methods for continuous belief spaces.
+
+  POSITION: Theoretical work arguing against dichotomy between logic and learning, showing logic's applicability beyond discrete domains.
+  },
+  keywords = {logic-learning-connections, infinite-domains, foundations, Medium}
+}
+
+@article{belle2023statistical,
+  author = {Belle, Vaishak},
+  title = {Statistical relational learning and neuro-symbolic AI: what does first-order logic offer?},
+  journal = {arXiv preprint},
+  year = {2023},
+  volume = {abs/2306.13660},
+  doi = {10.48550/arXiv.2306.13660},
+  note = {
+  CORE ARGUMENT: Survey articulating logical and philosophical foundations of using first-order logic to represent probabilistic knowledge in statistical relational learning and neuro-symbolic AI. Clarifies differences between finite vs infinite domains and subjective probabilities vs random-world semantics. Argues for researchers embedded in finite worlds with subjective probabilities to appreciate what infinite domains and random-world semantics brings theoretically.
+
+  RELEVANCE: Provides philosophical foundations for understanding different semantic interpretations of probability in symbolic AI systems. Relevant for understanding how probabilistic belief revision in symbolic systems (subjective probability) differs from statistical belief revision in neural systems (random-world semantics). Clarifies semantic assumptions underlying different approaches to uncertain reasoning.
+
+  POSITION: Foundational work clarifying semantic and representational assumptions in statistical relational learning and neuro-symbolic AI.
+  },
+  keywords = {first-order-logic, probabilistic-semantics, foundations, Low}
+}
+
+@article{bhuyan2024neurosymbolic,
+  author = {Bhuyan, B. P. and Ramdane-Cherif, Amar and Tomar, Ravi and Singh, T. P.},
+  title = {Neuro-symbolic artificial intelligence: a survey},
+  journal = {Neural Computing and Applications},
+  year = {2024},
+  volume = {36},
+  pages = {12809--12844},
+  doi = {10.1007/s00521-024-09960-z},
+  note = {
+  CORE ARGUMENT: Comprehensive survey of neuro-symbolic AI covering integration approaches, knowledge representation, reasoning mechanisms, and applications. Reviews various neural-symbolic integration architectures and their tradeoffs. Discusses challenges including knowledge acquisition bottleneck, scalability of symbolic reasoning, and difficulties in seamless integration. Identifies future directions in learning logical rules from data and explainable AI.
+
+  RELEVANCE: Broad survey providing overview of integration challenges relevant for hybrid belief revision systems. The knowledge acquisition bottleneck and scalability challenges directly relevant for understanding practical constraints on symbolic belief revision components. Future directions in learning logical rules connect to potential for learning belief revision rules from LLM behavior.
+
+  POSITION: Comprehensive survey emphasizing practical integration challenges and future research directions.
+  },
+  keywords = {neuro-symbolic-survey, integration-challenges, Low}
+}
+
+@article{zhang2024neurosymbolic,
+  author = {Zhang, Xin and Sheng, Victor S.},
+  title = {Neuro-Symbolic AI: Explainability, Challenges, and Future Trends},
+  journal = {arXiv preprint},
+  year = {2024},
+  volume = {abs/2411.04383},
+  doi = {10.48550/arXiv.2411.04383},
+  note = {
+  CORE ARGUMENT: Proposes explainability classification for neuro-symbolic AI considering both model design (whether representation differences are readable) and behavior (whether decision process is understandable). Classifies 191 studies from 2013 into five categories along these dimensions. Identifies three significant challenges: unified representations, explainability and transparency, and sufficient cooperation between neural and symbolic components. Suggests future research on unified representations, enhancing explainability, and ethical considerations.
+
+  RELEVANCE: Focus on explainability particularly relevant for belief revision where understanding how and why beliefs change is critical. The five-category classification provides framework for evaluating explainability of different hybrid belief revision approaches. Challenges in achieving transparent neural-symbolic cooperation directly relevant for designing interpretable belief revision systems.
+
+  POSITION: Explainability-focused analysis identifying transparency as key challenge in neuro-symbolic integration.
+  },
+  keywords = {explainability, transparency, neuro-symbolic-challenges, Low}
+}
+
+@article{mukherji2024scalable,
+  author = {Mukherji, Kaustuv and Parkar, Devendra and Pokala, Lahari and Aditya, Dyuman and Shakarian, Paulo and Dorman, Clark},
+  title = {Scalable Semantic Non-Markovian Simulation Proxy for Reinforcement Learning},
+  journal = {2024 IEEE 18th International Conference on Semantic Computing},
+  year = {2024},
+  pages = {183--190},
+  doi = {10.1109/ICSC59802.2024.00035},
+  note = {
+  CORE ARGUMENT: Proposes semantic proxy for simulation based on temporal extension to annotated logic, showing up to three orders of magnitude speed-up over high-fidelity simulators while preserving policy quality. Demonstrates ability to model and leverage non-Markovian dynamics and instantaneous actions while providing explainable trace describing agent action outcomes. Uses PyReason framework for temporal logic inference.
+
+  RELEVANCE: Demonstrates practical application of PyReason framework for reinforcement learning with temporal reasoning, showing three order of magnitude efficiency gains. The non-Markovian reasoning capability particularly relevant for belief revision where current beliefs depend on full history not just immediate previous state. Explainable traces provide interpretability advantage over black-box neural RL.
+
+  POSITION: Application of symbolic temporal reasoning to reinforcement learning emphasizing efficiency and explainability.
+  },
+  keywords = {pyreason, reinforcement-learning, temporal-logic, Low}
+}
+
+Sources:
+- [PyReason: Software for OpenWorld Temporal Logic - Arizona State University](https://asu.elsevierpure.com/en/publications/pyreason-software-for-openworld-temporal-logic/)
+- [PyReason: Software for Open World Temporal Logic - arXiv](https://arxiv.org/abs/2302.13482)
+- [PyReason – Neuro Symbolic AI](https://neurosymbolic.asu.edu/pyreason/)

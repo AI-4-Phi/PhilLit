@@ -1,0 +1,2220 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "neuro-symbolic artificial intelligence",
+  "results": [
+    {
+      "openalex_id": "W3200351420",
+      "doi": "10.3233/aic-210084",
+      "title": "Neuro-symbolic artificial intelligence",
+      "authors": [
+        {
+          "name": "Md Kamruzzaman Sarker",
+          "openalex_id": "A5058553720",
+          "orcid": "https://orcid.org/0000-0002-9062-388X",
+          "institutions": [
+            "University of Hartford"
+          ]
+        },
+        {
+          "name": "Lu Zhou",
+          "openalex_id": "A5054561327",
+          "orcid": "https://orcid.org/0000-0002-0453-9965",
+          "institutions": [
+            "Kansas State University"
+          ]
+        },
+        {
+          "name": "Aaron Eberhart",
+          "openalex_id": "A5006947708",
+          "orcid": "https://orcid.org/0000-0003-3007-5460",
+          "institutions": [
+            "Kansas State University"
+          ]
+        },
+        {
+          "name": "Pascal Hitzler",
+          "openalex_id": "A5006872667",
+          "orcid": "https://orcid.org/0000-0001-6192-3472",
+          "institutions": [
+            "Kansas State University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-17",
+      "abstract": "Neuro-Symbolic Artificial Intelligence \u2013 the combination of symbolic methods with methods that are based on artificial neural networks \u2013 has a long-standing history. In this article, we provide a structured overview of current trends, by means of categorizing recent publications from key conferences. The article is meant to serve as a convenient starting point for research on the general topic.",
+      "cited_by_count": 129,
+      "type": "article",
+      "source": {
+        "name": "AI Communications",
+        "type": "journal",
+        "issn": [
+          "0921-7126",
+          "1875-8452"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neural Networks and Applications",
+        "Neural Networks and Reservoir Computing",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W3200351420"
+    },
+    {
+      "openalex_id": "W3042107226",
+      "doi": "10.24963/ijcai.2020/688",
+      "title": "From Statistical Relational to Neuro-Symbolic Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Luc De Raedt",
+          "openalex_id": "A5078136609",
+          "orcid": "https://orcid.org/0000-0002-6860-6303",
+          "institutions": [
+            "KU Leuven",
+            "\u00d6rebro University"
+          ]
+        },
+        {
+          "name": "Sebastijan Duman\u010di\u0107",
+          "openalex_id": "A5019849127",
+          "orcid": "https://orcid.org/0000-0003-0915-8034",
+          "institutions": [
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Robin Manhaeve",
+          "openalex_id": "A5003576783",
+          "orcid": "https://orcid.org/0000-0001-9907-7486",
+          "institutions": [
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Giuseppe Marra",
+          "openalex_id": "A5005466305",
+          "orcid": "https://orcid.org/0000-0001-5940-9562",
+          "institutions": [
+            "KU Leuven"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-01",
+      "abstract": "Neuro-symbolic and statistical relational artificial intelligence both integrate frameworks for learning with logical reasoning. This survey identifies several parallels across seven different dimensions between these two fields. These cannot only be used to characterize and position neuro-symbolic artificial intelligence approaches but also to identify a number of directions for further research.",
+      "cited_by_count": 99,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.ijcai.org/proceedings/2020/0688.pdf"
+      },
+      "topics": [
+        "Neural Networks and Applications",
+        "Bayesian Modeling and Causal Inference",
+        "AI-based Problem Solving and Planning"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W3042107226"
+    },
+    {
+      "openalex_id": "W4206078757",
+      "doi": "10.3233/faia342",
+      "title": "Neuro-Symbolic Artificial Intelligence: The State of the Art",
+      "authors": [
+        {
+          "name": "Hitzler, Pascal",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sarker, Md Kamruzzaman",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-22",
+      "abstract": null,
+      "cited_by_count": 109,
+      "type": "book",
+      "source": {
+        "name": "Frontiers in artificial intelligence and applications",
+        "type": "journal",
+        "issn": [
+          "0922-6389",
+          "1879-8314"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.gbv.de/dms/tib-ub-hannover/1786636506.pdf"
+      },
+      "topics": [
+        "Computability, Logic, AI Algorithms"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4206078757"
+    },
+    {
+      "openalex_id": "W4399387213",
+      "doi": "10.1007/s00521-024-09960-z",
+      "title": "Neuro-symbolic artificial intelligence: a survey",
+      "authors": [
+        {
+          "name": "Bikram Pratim Bhuyan",
+          "openalex_id": "A5090303588",
+          "orcid": "https://orcid.org/0000-0001-5373-8912",
+          "institutions": [
+            "University of Petroleum and Energy Studies",
+            "Universit\u00e9 Paris-Saclay"
+          ]
+        },
+        {
+          "name": "Amar Ramdane-Ch\u00e9rif",
+          "openalex_id": "A5003414781",
+          "orcid": "https://orcid.org/0000-0001-8289-747X",
+          "institutions": [
+            "Universit\u00e9 Paris-Saclay"
+          ]
+        },
+        {
+          "name": "Ravi Tomar",
+          "openalex_id": "A5002759654",
+          "orcid": "https://orcid.org/0000-0002-8957-6756",
+          "institutions": [
+            "Persistent Systems (India)"
+          ]
+        },
+        {
+          "name": "T. P. Singh",
+          "openalex_id": "A5021272981",
+          "orcid": "https://orcid.org/0000-0002-9375-3495",
+          "institutions": [
+            "Bennett University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-06",
+      "abstract": null,
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "Neural Computing and Applications",
+        "type": "journal",
+        "issn": [
+          "0941-0643",
+          "1433-3058"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Computability, Logic, AI Algorithms"
+      ],
+      "referenced_works_count": 189,
+      "url": "https://openalex.org/W4399387213"
+    },
+    {
+      "openalex_id": "W3012518976",
+      "doi": "10.1609/aaai.v38i20.30294",
+      "title": "From Statistical Relational to Neuro-Symbolic Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Giuseppe Marra",
+          "openalex_id": "A5005466305",
+          "orcid": "https://orcid.org/0000-0001-5940-9562",
+          "institutions": [
+            "KU Leuven"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-24",
+      "abstract": "The integration of learning and reasoning is one of the key challenges in artificial intelligence and machine learning today. The area of Neuro-Symbolic AI (NeSy) tackles this challenge by integrating symbolic reasoning with neural networks. In our recent work, we provided an introduction to NeSy by drawing several parallels to another field that has a rich tradition in integrating learning and reasoning, namely Statistical Relational Artificial Intelligence (StarAI).",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "type": "conference",
+        "issn": [
+          "2159-5399",
+          "2374-3468"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/30294/32297"
+      },
+      "topics": [
+        "Bayesian Modeling and Causal Inference",
+        "Neural Networks and Applications",
+        "Cognitive Science and Mapping"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W3012518976"
+    },
+    {
+      "openalex_id": "W4320029503",
+      "doi": "10.1109/globecom48099.2022.10001097",
+      "title": "Neuro-Symbolic Artificial Intelligence (AI) for Intent based Semantic Communication",
+      "authors": [
+        {
+          "name": "Christo Kurisummoottil Thomas",
+          "openalex_id": "A5030833379",
+          "orcid": "https://orcid.org/0000-0002-0926-5211",
+          "institutions": [
+            "Virginia Tech"
+          ]
+        },
+        {
+          "name": "Walid Saad",
+          "openalex_id": "A5024108653",
+          "orcid": "https://orcid.org/0000-0003-2247-2458",
+          "institutions": [
+            "Virginia Tech"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-04",
+      "abstract": "Intent-based networks that integrate sophisticated machine reasoning technologies will be a cornerstone of future wireless 6G systems. Intent-based communication requires the network to consider the semantics (meanings) and effectiveness (at end-user) of the data transmission. This is essential if 6G systems are to communicate reliably with fewer bits while simultaneously providing connectivity to heterogeneous users. In this paper, contrary to state of the art, which lacks explainability of data, the framework of neuro-symbolic artificial intelligence (NeSy AI) is proposed as a pillar for learning causal structure behind the observed data. In particular, the emerging concept of generative flow networks (GFlowNet) is leveraged for the first time in a wireless system to learn the probabilistic structure which generates the data. Further, a novel optimization problem for learning the optimal encoding and decoding functions is rigorously formulated with the intent of achieving higher semantic reliability. Novel analytical formulations are developed to define key metrics for semantic message transmission, including semantic distortion, semantic similarity, and semantic reliability. These semantic measure functions rely on the proposed definition of semantic content of the knowledge base and this information measure is reflective of the nodes' reasoning capabilities. Simulation results validate the ability to communicate efficiently (with less bits but same semantics) and significantly better compared to a conventional system which does not exploit the reasoning capabilities.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "GLOBECOM 2022 - 2022 IEEE Global Communications Conference",
+        "type": "conference",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Wireless Signal Modulation Classification",
+        "Wireless Communication Security Techniques",
+        "Advanced Memory and Neural Computing"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W4320029503"
+    },
+    {
+      "openalex_id": "W3161179906",
+      "doi": "10.48550/arxiv.2105.05330",
+      "title": "Neuro-Symbolic Artificial Intelligence: Current Trends",
+      "authors": [
+        {
+          "name": "Md Kamruzzaman Sarker",
+          "openalex_id": "A5058553720",
+          "orcid": "https://orcid.org/0000-0002-9062-388X",
+          "institutions": [
+            "University of Hartford"
+          ]
+        },
+        {
+          "name": "Lu Zhou",
+          "openalex_id": "A5054561327",
+          "orcid": "https://orcid.org/0000-0002-0453-9965",
+          "institutions": [
+            "Kansas State University"
+          ]
+        },
+        {
+          "name": "Aaron Eberhart",
+          "openalex_id": "A5006947708",
+          "orcid": "https://orcid.org/0000-0003-3007-5460",
+          "institutions": [
+            "Kansas State University"
+          ]
+        },
+        {
+          "name": "Pascal Hitzler",
+          "openalex_id": "A5006872667",
+          "orcid": "https://orcid.org/0000-0001-6192-3472",
+          "institutions": [
+            "Kansas State University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-11",
+      "abstract": "Neuro-Symbolic Artificial Intelligence -- the combination of symbolic methods with methods that are based on artificial neural networks -- has a long-standing history. In this article, we provide a structured overview of current trends, by means of categorizing recent publications from key conferences. The article is meant to serve as a convenient starting point for research on the general topic.",
+      "cited_by_count": 8,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2105.05330"
+      },
+      "topics": [
+        "Neural Networks and Applications",
+        "Ferroelectric and Negative Capacitance Devices",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W3161179906"
+    },
+    {
+      "openalex_id": "W3094081987",
+      "doi": "10.1007/978-3-030-60447-9_6",
+      "title": "Neuro-Symbolic Artificial Intelligence: Application for Control the Quality of Product Labeling",
+      "authors": [
+        {
+          "name": "Vladimir Golovko",
+          "openalex_id": "A5041992692",
+          "orcid": "https://orcid.org/0000-0003-2615-289X",
+          "institutions": [
+            "Brest State Technical University",
+            "Akademia Bialska im. Jana Paw\u0142a II"
+          ]
+        },
+        {
+          "name": "Aliaksandr Kroshchanka",
+          "openalex_id": "A5082394450",
+          "orcid": "https://orcid.org/0000-0003-3285-3545",
+          "institutions": [
+            "Brest State Technical University"
+          ]
+        },
+        {
+          "name": "Mikhail Kovalev",
+          "openalex_id": "A5021325387",
+          "orcid": "https://orcid.org/0000-0002-9606-9541",
+          "institutions": [
+            "Belarusian State University of Informatics and Radioelectronics"
+          ]
+        },
+        {
+          "name": "Valery Taberko",
+          "openalex_id": "A5011570365",
+          "orcid": "https://orcid.org/0000-0003-2914-8140",
+          "institutions": [
+            "Brest State A.S. Pushkin University"
+          ]
+        },
+        {
+          "name": "Dzmitry Ivaniuk",
+          "openalex_id": "A5048437559",
+          "orcid": "https://orcid.org/0000-0003-0654-196X",
+          "institutions": [
+            "Brest State A.S. Pushkin University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": null,
+      "cited_by_count": 9,
+      "type": "book-chapter",
+      "source": {
+        "name": "Communications in computer and information science",
+        "type": "book series",
+        "issn": [
+          "1865-0929",
+          "1865-0937"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Image Processing and 3D Reconstruction",
+        "Neural Networks and Applications",
+        "Handwritten Text Recognition Techniques"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W3094081987"
+    },
+    {
+      "openalex_id": "W4213454368",
+      "doi": "10.1093/nsr/nwac035",
+      "title": "Neuro-symbolic approaches in artificial intelligence",
+      "authors": [
+        {
+          "name": "Pascal Hitzler",
+          "openalex_id": "A5006872667",
+          "orcid": "https://orcid.org/0000-0001-6192-3472",
+          "institutions": [
+            "Kansas State University"
+          ]
+        },
+        {
+          "name": "Aaron Eberhart",
+          "openalex_id": "A5006947708",
+          "orcid": "https://orcid.org/0000-0003-3007-5460",
+          "institutions": [
+            "Kansas State University"
+          ]
+        },
+        {
+          "name": "Monireh Ebrahimi",
+          "openalex_id": "A5047704443"
+        },
+        {
+          "name": "Md Kamruzzaman Sarker",
+          "openalex_id": "A5058553720",
+          "orcid": "https://orcid.org/0000-0002-9062-388X",
+          "institutions": [
+            "University of Hartford"
+          ]
+        },
+        {
+          "name": "Lu Zhou",
+          "openalex_id": "A5054561327",
+          "orcid": "https://orcid.org/0000-0002-0453-9965",
+          "institutions": [
+            "Kansas State University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-02-23",
+      "abstract": null,
+      "cited_by_count": 104,
+      "type": "article",
+      "source": {
+        "name": "National Science Review",
+        "type": "journal",
+        "issn": [
+          "2053-714X",
+          "2095-5138"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://academic.oup.com/nsr/article-pdf/9/6/nwac035/43952953/nwac035.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Cognitive Science and Mapping",
+        "Neural Networks and Applications"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W4213454368"
+    },
+    {
+      "openalex_id": "W4401751539",
+      "doi": "10.1109/icccn61486.2024.10637618",
+      "title": "A Neuro-Symbolic Artificial Intelligence Network Intrusion Detection System",
+      "authors": [
+        {
+          "name": "Alice Bizzarri",
+          "openalex_id": "A5049225058",
+          "orcid": "https://orcid.org/0000-0001-9259-7761",
+          "institutions": [
+            "University of Ferrara"
+          ]
+        },
+        {
+          "name": "Brian Jalaian",
+          "openalex_id": "A5084773390",
+          "orcid": "https://orcid.org/0000-0003-3029-601X",
+          "institutions": [
+            "Florida Institute for Human and Machine Cognition"
+          ]
+        },
+        {
+          "name": "Fabrizio Riguzzi",
+          "openalex_id": "A5086909487",
+          "orcid": "https://orcid.org/0000-0003-1654-9703",
+          "institutions": [
+            "University of Ferrara"
+          ]
+        },
+        {
+          "name": "Nathaniel D. Bastian",
+          "openalex_id": "A5032194186",
+          "orcid": "https://orcid.org/0000-0001-9957-2778",
+          "institutions": [
+            "United States Military Academy"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-29",
+      "abstract": "Ever-changing cyber threats require strong and flexible network security solutions. This paper suggests a new method to improve the performance of detecting both known and unknown attacks using a neuro-symbolic artificial intelligence (NSAI) network intrusion detection system (NIDS). Deep neural networks (DNN) learn complex network data patterns, which create a detailed overview of cyber-attack characteristics. Symbolic logic integration into the DNN allows for model training guidance by applying penalties when the DNN fails to differentiate between malicious and benign network traffic. This improves our model's adaptability to new attacks and overcomes traditional signature-based NIDS limitations. By testing our NSAI NIDS on a large cyber dataset that includes novel attack scenarios, we show that it delivers an improvement in how accurately it detects attacks compared to traditional DNN methods. While our system maintains its high accuracy in recognizing known attacks, it outperforms conventional NIDS in discovering unknown attacks. This work improves cybersecurity by introducing a new way to detect both known and unknown network intrusions by combining DNNs with symbolic logic.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Network Security and Intrusion Detection"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4401751539"
+    },
+    {
+      "openalex_id": "W4407723171",
+      "doi": "10.1016/j.matdes.2025.113737",
+      "title": "Neuro-symbolic artificial intelligence in accelerated design for 4D printing: Status, challenges, and perspectives",
+      "authors": [
+        {
+          "name": "Oualid Bougzime",
+          "openalex_id": "A5116317780"
+        },
+        {
+          "name": "Christophe Cruz",
+          "openalex_id": "A5031830209",
+          "orcid": "https://orcid.org/0000-0002-5611-9479"
+        },
+        {
+          "name": "Jean\u2013Claude Andr\u00e9",
+          "openalex_id": "A5104029504"
+        },
+        {
+          "name": "Kun Zhou",
+          "openalex_id": "A5100722039",
+          "orcid": "https://orcid.org/0000-0001-7660-2911"
+        },
+        {
+          "name": "H. Jerry Qi",
+          "openalex_id": "A5100335427",
+          "orcid": "https://orcid.org/0000-0002-3212-5284"
+        },
+        {
+          "name": "Fr\u00e9d\u00e9ric Demoly",
+          "openalex_id": "A5062368955",
+          "orcid": "https://orcid.org/0000-0002-5825-6573"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-02-19",
+      "abstract": "International audience",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Materials & Design",
+        "type": "journal",
+        "issn": [
+          "0264-1275",
+          "1873-4197"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.matdes.2025.113737"
+      },
+      "topics": [
+        "Additive Manufacturing and 3D Printing Technologies",
+        "Manufacturing Process and Optimization",
+        "Modular Robots and Swarm Intelligence"
+      ],
+      "referenced_works_count": 164,
+      "url": "https://openalex.org/W4407723171"
+    },
+    {
+      "openalex_id": "W4310049423",
+      "doi": "10.18421/tem114-54",
+      "title": "Introducing Neuro-Symbolic Artificial Intelligence to Humanities and Social Sciences: Why Is It Possible and What Can Be Done?",
+      "authors": [
+        {
+          "name": "Zhen Huang",
+          "openalex_id": "A5100778507",
+          "orcid": "https://orcid.org/0000-0002-4913-3715",
+          "institutions": [
+            "Tongji University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-25",
+      "abstract": "With the support of artificial intelligence (AI), the smart applications in all walks of life have brought great changes to human society. Not only being concerned, analysed and criticized by scholars from Humanities and social sciences, AI also plays an important role in empirical research methods, thus facilitating the transformation of research paradigms in these fields. At present, neuro-symbolic AI, as a new product of the integration of two major factions in the field of artificial intelligence - connectionism and symbolism, has high application value in studying and solving the humanistic and social problems involving massive data due to its learning capability of perceiving the environment as well as reasoning capability of manipulating symbols. The introduction of neuro-symbolic AI is also of great significance for the development of emerging interdisciplinary fields such as digital humanities and computational social sciences. This paper aims to clarify the connections between neuro-symbolic AI and Humanities and social sciences, summarize the latest developing trends and representative applications, and explore a feasible path for the expansion of pluralistic methodologies in Humanities and social sciences to adapt to the age of big data.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "TEM Journal",
+        "type": "journal",
+        "issn": [
+          "2217-8309",
+          "2217-8333"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.temjournal.com/content/114/TEMJournalNovember2022_1863_1870.pdf"
+      },
+      "topics": [
+        "Computational and Text Analysis Methods"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W4310049423"
+    },
+    {
+      "openalex_id": "W4405677954",
+      "doi": "10.1007/978-981-97-8171-3",
+      "title": "Neuro-Symbolic Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Bikram Pratim Bhuyan",
+          "openalex_id": "A5090303588",
+          "orcid": "https://orcid.org/0000-0001-5373-8912",
+          "institutions": [
+            "Laboratoire d'Ing\u00e9nierie des Syst\u00e8mes de Versailles"
+          ]
+        },
+        {
+          "name": "Amar Ramdane-Ch\u00e9rif",
+          "openalex_id": "A5003414781",
+          "orcid": "https://orcid.org/0000-0001-8289-747X",
+          "institutions": [
+            "Laboratoire d'Ing\u00e9nierie des Syst\u00e8mes de Versailles"
+          ]
+        },
+        {
+          "name": "Thipendra P. Singh",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ravi Tomar",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-22",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "book",
+      "source": {
+        "name": "Studies in computational intelligence",
+        "type": "book series",
+        "issn": [
+          "1860-949X",
+          "1860-9503"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Computability, Logic, AI Algorithms"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4405677954"
+    },
+    {
+      "openalex_id": "W4281477305",
+      "doi": "10.48550/arxiv.2205.10768",
+      "title": "Neuro-Symbolic Artificial Intelligence (AI) for Intent based Semantic Communication",
+      "authors": [
+        {
+          "name": "Christo Kurisummoottil Thomas",
+          "openalex_id": "A5030833379",
+          "orcid": "https://orcid.org/0000-0002-0926-5211"
+        },
+        {
+          "name": "Walid Saad",
+          "openalex_id": "A5024108653",
+          "orcid": "https://orcid.org/0000-0003-2247-2458"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-22",
+      "abstract": "Intent-based networks that integrate sophisticated machine reasoning technologies will be a cornerstone of future wireless 6G systems. Intent-based communication requires the network to consider the semantics (meanings) and effectiveness (at end-user) of the data transmission. This is essential if 6G systems are to communicate reliably with fewer bits while simultaneously providing connectivity to heterogeneous users. In this paper, contrary to state of the art, which lacks explainability of data, the framework of neuro-symbolic artificial intelligence (NeSy AI) is proposed as a pillar for learning causal structure behind the observed data. In particular, the emerging concept of generative flow networks (GFlowNet) is leveraged for the first time in a wireless system to learn the probabilistic structure which generates the data. Further, a novel optimization problem for learning the optimal encoding and decoding functions is rigorously formulated with the intent of achieving higher semantic reliability. Novel analytical formulations are developed to define key metrics for semantic message transmission, including semantic distortion, semantic similarity, and semantic reliability. These semantic measure functions rely on the proposed definition of semantic content of the knowledge base and this information measure is reflective of the nodes' reasoning capabilities. Simulation results validate the ability to communicate efficiently (with less bits but same semantics) and significantly better compared to a conventional system which does not exploit the reasoning capabilities.",
+      "cited_by_count": 3,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2205.10768"
+      },
+      "topics": [
+        "Ferroelectric and Negative Capacitance Devices",
+        "Wireless Signal Modulation Classification",
+        "Wireless Communication Security Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4281477305"
+    },
+    {
+      "openalex_id": "W4401013277",
+      "doi": "10.1007/s40860-024-00231-1",
+      "title": "Surveying neuro-symbolic approaches for reliable artificial intelligence of things",
+      "authors": [
+        {
+          "name": "Zhen Lu",
+          "openalex_id": "A5114197767",
+          "institutions": [
+            "City University of Macau"
+          ]
+        },
+        {
+          "name": "Imran Uddin Afridi",
+          "openalex_id": "A5065000734",
+          "orcid": "https://orcid.org/0000-0001-9956-9229",
+          "institutions": [
+            "Macquarie University"
+          ]
+        },
+        {
+          "name": "Hong Jin Kang",
+          "openalex_id": "A5027335548",
+          "orcid": "https://orcid.org/0000-0001-7335-7295",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        },
+        {
+          "name": "Ivan Ruchkin",
+          "openalex_id": "A5021509994",
+          "orcid": "https://orcid.org/0000-0003-3546-414X",
+          "institutions": [
+            "Florida Museum of Natural History",
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Xi Zheng",
+          "openalex_id": "A5081182489",
+          "orcid": "https://orcid.org/0000-0002-2572-2355",
+          "institutions": [
+            "City University of Macau",
+            "Macquarie University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-26",
+      "abstract": "Abstract The integration of Artificial Intelligence (AI) with the Internet of Things (IoT), known as the Artificial Intelligence of Things (AIoT), enhances the devices\u2019 processing and analysis capabilities and disrupts such sectors as healthcare, industry, and oil. However, AIoT\u2019s complexity and scale are challenging for traditional machine learning (ML). Deep learning offers a solution but has limited testability, verifiability, and interpretability. In turn, the neuro-symbolic paradigm addresses these challenges by combining the robustness of symbolic AI with the flexibility of DL, enabling AI systems to reason, make decisions, and generalize knowledge from large datasets better. This paper reviews state-of-the-art DL models for IoT, identifies their limitations, and explores how neuro-symbolic methods can overcome them. It also discusses key challenges and research opportunities in enhancing AIoT reliability with neuro-symbolic approaches, including hard-coded symbolic AI, multimodal sensor data, biased interpretability, trading-off interpretability, and performance, complexity in integrating neural networks and symbolic AI, and ethical and societal challenges.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "Journal of Reliable Intelligent Environments",
+        "type": "journal",
+        "issn": [
+          "2199-4668",
+          "2199-4676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40860-024-00231-1.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 157,
+      "url": "https://openalex.org/W4401013277"
+    },
+    {
+      "openalex_id": "W4392568155",
+      "doi": "10.3103/s0147688223060151",
+      "title": "Collaborative Decision Support Systems Based on Neuro-Symbolic Artificial Intelligence: Problems and Generalized Conceptual Model",
+      "authors": [
+        {
+          "name": "Alexander Smirnov",
+          "openalex_id": "A5067209119",
+          "orcid": "https://orcid.org/0000-0001-8364-073X",
+          "institutions": [
+            "Russian Academy of Sciences"
+          ]
+        },
+        {
+          "name": "Andrew Ponomarev",
+          "openalex_id": "A5071366703",
+          "orcid": "https://orcid.org/0000-0002-9380-5064",
+          "institutions": [
+            "Russian Academy of Sciences"
+          ]
+        },
+        {
+          "name": "Nikolay Shilov",
+          "openalex_id": "A5013616253",
+          "orcid": "https://orcid.org/0000-0002-9264-9127",
+          "institutions": [
+            "Russian Academy of Sciences"
+          ]
+        },
+        {
+          "name": "Tatiana Levashova",
+          "openalex_id": "A5058663893",
+          "orcid": "https://orcid.org/0000-0002-1962-7044",
+          "institutions": [
+            "Russian Academy of Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-01",
+      "abstract": "The development of artificial intelligence technologies and the growing complexity of decision-making when managing complex dynamic systems necessitate the joint work of humans and artificial intelligence, including as part of teams of heterogeneous participants (for example, experts and agents operating with artificial intelligence). The paper discusses the requirements for collaborative human-machine decision support systems and the problems that can arise during their creation. The methods of neuro-symbolic artificial intelligence can help resolve some of these problems. An analysis of modern results in the field of ontology-oriented neuro-symbolic artificial intelligence is carried out, primarily intended to explain neural network models using ontologies and symbolic knowledge to improve the efficiency of neural network models. A conceptual model of a collaborative human-machine decision support system based on ontology-oriented neuro-symbolic intelligence is proposed.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Scientific and Technical Information Processing",
+        "type": "journal",
+        "issn": [
+          "0147-6882",
+          "1934-8118"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Cognitive Science and Mapping",
+        "Cognitive Computing and Networks",
+        "Advanced Research in Systems and Signal Processing"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W4392568155"
+    },
+    {
+      "openalex_id": "W4405932110",
+      "doi": "10.1007/978-3-031-74640-6_2",
+      "title": "Neuro-symbolic Artificial Intelligence for\u00a0Patient Monitoring",
+      "authors": [
+        {
+          "name": "Ole Fenske",
+          "openalex_id": "A5089157916",
+          "orcid": "https://orcid.org/0009-0001-3055-478X",
+          "institutions": [
+            "University of Rostock"
+          ]
+        },
+        {
+          "name": "Sebastian Bader",
+          "openalex_id": "A5074115481",
+          "orcid": "https://orcid.org/0000-0001-8786-6242",
+          "institutions": [
+            "University of Rostock"
+          ]
+        },
+        {
+          "name": "Thomas Kirste",
+          "openalex_id": "A5012782091",
+          "orcid": "https://orcid.org/0000-0002-8956-9820",
+          "institutions": [
+            "University of Rostock"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "book-chapter",
+      "source": {
+        "name": "Communications in computer and information science",
+        "type": "book series",
+        "issn": [
+          "1865-0929",
+          "1865-0937"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Explainable Artificial Intelligence (XAI)",
+        "EEG and Brain-Computer Interfaces"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W4405932110"
+    },
+    {
+      "openalex_id": "W4307960658",
+      "doi": "10.1007/978-3-031-19620-1_6",
+      "title": "Collaborative Decision Support with Ontology-Based Neuro-Symbolic Artificial Intelligence: Challenges and Conceptual Model",
+      "authors": [
+        {
+          "name": "Alexander Smirnov",
+          "openalex_id": "A5067209119",
+          "orcid": "https://orcid.org/0000-0001-8364-073X",
+          "institutions": [
+            "Russian Academy of Sciences",
+            "State Research Center of the Russian Federation",
+            "Photochemistry Center"
+          ]
+        },
+        {
+          "name": "Andrew Ponomarev",
+          "openalex_id": "A5071366703",
+          "orcid": "https://orcid.org/0000-0002-9380-5064",
+          "institutions": [
+            "Photochemistry Center",
+            "Russian Academy of Sciences",
+            "State Research Center of the Russian Federation"
+          ]
+        },
+        {
+          "name": "Nikolay Shilov",
+          "openalex_id": "A5013616253",
+          "orcid": "https://orcid.org/0000-0002-9264-9127",
+          "institutions": [
+            "State Research Center of the Russian Federation",
+            "Russian Academy of Sciences",
+            "Photochemistry Center"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-30",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "book-chapter",
+      "source": {
+        "name": "Lecture notes in networks and systems",
+        "type": "book series",
+        "issn": [
+          "2367-3370",
+          "2367-3389"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Statistical and Computational Modeling",
+        "Explainable Artificial Intelligence (XAI)",
+        "Cognitive Science and Mapping"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W4307960658"
+    },
+    {
+      "openalex_id": "W4385695892",
+      "doi": "10.1109/jiot.2023.3303713",
+      "title": "Neuro-Symbolic Explainable Artificial Intelligence Twin for Zero-Touch IoE in Wireless Network",
+      "authors": [
+        {
+          "name": "Md. Shirajum Munir",
+          "openalex_id": "A5058796764",
+          "orcid": "https://orcid.org/0000-0002-7255-1085",
+          "institutions": [
+            "Kyung Hee University",
+            "Old Dominion University"
+          ]
+        },
+        {
+          "name": "Ki Tae Kim",
+          "openalex_id": "A5100685794",
+          "orcid": "https://orcid.org/0000-0002-5692-1189",
+          "institutions": [
+            "Kyung Hee University"
+          ]
+        },
+        {
+          "name": "Apurba Adhikary",
+          "openalex_id": "A5021511574",
+          "orcid": "https://orcid.org/0000-0003-3970-1878",
+          "institutions": [
+            "Kyung Hee University"
+          ]
+        },
+        {
+          "name": "Walid Saad",
+          "openalex_id": "A5024108653",
+          "orcid": "https://orcid.org/0000-0003-2247-2458",
+          "institutions": [
+            "Virginia Tech",
+            "Kyung Hee University"
+          ]
+        },
+        {
+          "name": "Sachin Shetty",
+          "openalex_id": "A5052787847",
+          "orcid": "https://orcid.org/0000-0002-8789-0610",
+          "institutions": [
+            "Old Dominion University"
+          ]
+        },
+        {
+          "name": "Seong-Bae Park",
+          "openalex_id": "A5042224699",
+          "orcid": "https://orcid.org/0000-0002-6453-0348",
+          "institutions": [
+            "Kyung Hee University"
+          ]
+        },
+        {
+          "name": "Choong Seon Hong",
+          "openalex_id": "A5034052371",
+          "orcid": "https://orcid.org/0000-0003-3484-7333",
+          "institutions": [
+            "Kyung Hee University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-09",
+      "abstract": "Explainable artificial intelligence (XAI) twin systems will be a fundamental enabler of zero-touch network and service management (ZSM) for sixth-generation (6G) wireless networks. Thus, a reliable XAI twin system becomes essential to discretizing the physical behavior of the Internet of Everything (IoE) and identifying the reasons behind that behavior for enabling ZSM. To address the challenges of extensible, modular, and stateless management functions in ZSM, a novel neuro-symbolic XAI twin framework is proposed that to enable trustworthy ZSM for a wireless IoE. The proposed neuro-symbolic XAI twin framework consists of two learning systems: 1) implicit learner that acts as an unconscious learner in physical space and 2) explicit leaner that can exploit symbolic reasoning based on implicit learner decisions and prior evidence. The physical space of the XAI twin executes a neural-network-driven multivariate regression to capture the time-dependent wireless IoE environment while determining unconscious decisions of IoE service aggregation, such as uplink, downlink, and service provisioning. Subsequently, the virtual space of the XAI twin constructs a directed acyclic graph (DAG)-based Bayesian network that can infer a symbolic reasoning score over unconscious decisions through a first-order probabilistic language model. Furthermore, a Bayesian multiarm bandit-based learning problem is proposed for reducing the gap between the expected explained score and the current obtained score of the proposed neuro-symbolic XAI twin. Experimental results show that the proposed neuro-symbolic XAI twin can achieve around 96.26% accuracy while guaranteeing from 18% to 44% more trust score in terms of reasoning and closed-loop automation.",
+      "cited_by_count": 33,
+      "type": "article",
+      "source": {
+        "name": "IEEE Internet of Things Journal",
+        "type": "journal",
+        "issn": [
+          "2327-4662",
+          "2372-2541"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Brain Tumor Detection and Classification",
+        "Artificial Intelligence in Healthcare and Education",
+        "Advanced Graph Neural Networks"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W4385695892"
+    },
+    {
+      "openalex_id": "W4405677998",
+      "doi": "10.1007/978-981-97-8171-3_1",
+      "title": "The Emergence of\u00a0Neuro-Symbolic Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Bikram Pratim Bhuyan",
+          "openalex_id": "A5090303588",
+          "orcid": "https://orcid.org/0000-0001-5373-8912",
+          "institutions": [
+            "Universit\u00e9 Paris-Saclay"
+          ]
+        },
+        {
+          "name": "Amar Ramdane-Ch\u00e9rif",
+          "openalex_id": "A5003414781",
+          "orcid": "https://orcid.org/0000-0001-8289-747X",
+          "institutions": [
+            "Universit\u00e9 Paris-Saclay"
+          ]
+        },
+        {
+          "name": "Thipendra P. Singh",
+          "openalex_id": "A5022805973",
+          "orcid": "https://orcid.org/0000-0002-9991-6494",
+          "institutions": [
+            "Bennett University"
+          ]
+        },
+        {
+          "name": "Ravi Tomar",
+          "openalex_id": "A5002759654",
+          "orcid": "https://orcid.org/0000-0002-8957-6756",
+          "institutions": [
+            "Persistent Systems (India)"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-22",
+      "abstract": null,
+      "cited_by_count": 1,
+      "type": "book-chapter",
+      "source": {
+        "name": "Studies in computational intelligence",
+        "type": "book series",
+        "issn": [
+          "1860-949X",
+          "1860-9503"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neural Networks and Applications",
+        "Computability, Logic, AI Algorithms",
+        "Evolutionary Algorithms and Applications"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4405677998"
+    },
+    {
+      "openalex_id": "W4414360195",
+      "doi": "10.24963/ijcai.2025/1195",
+      "title": "Neuro-Symbolic Artificial Intelligence: Towards Improving the Reasoning Abilities of Large Language Models",
+      "authors": [
+        {
+          "name": "Xin Yang",
+          "openalex_id": "A5100655701",
+          "orcid": "https://orcid.org/0000-0002-8932-3599",
+          "institutions": [
+            "Nanjing University"
+          ]
+        },
+        {
+          "name": "Jie-Jing Shao",
+          "openalex_id": "A5087294333",
+          "orcid": "https://orcid.org/0000-0001-8107-114X",
+          "institutions": [
+            "Nanjing University"
+          ]
+        },
+        {
+          "name": "Lan-Zhe Guo",
+          "openalex_id": "A5047808444",
+          "orcid": "https://orcid.org/0000-0001-8965-1288",
+          "institutions": [
+            "Nanjing University"
+          ]
+        },
+        {
+          "name": "B. Zhang",
+          "openalex_id": "A5101577028",
+          "orcid": "https://orcid.org/0000-0002-9726-6707",
+          "institutions": [
+            "Nanjing University"
+          ]
+        },
+        {
+          "name": "Zhi Zhou",
+          "openalex_id": "A5101040069",
+          "institutions": [
+            "Nanjing University"
+          ]
+        },
+        {
+          "name": "Lin-Han Jia",
+          "openalex_id": "A5100595775",
+          "institutions": [
+            "Nanjing University"
+          ]
+        },
+        {
+          "name": "Wang-Zhou Dai",
+          "openalex_id": "A5017553711",
+          "orcid": "https://orcid.org/0000-0002-6884-7158",
+          "institutions": [
+            "Nanjing University"
+          ]
+        },
+        {
+          "name": "Yu-Feng Li",
+          "openalex_id": "A5100355152",
+          "orcid": "https://orcid.org/0000-0002-7727-4304",
+          "institutions": [
+            "Nanjing University"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-09-01",
+      "abstract": "Large Language Models (LLMs) have shown promising results across various tasks, yet their reasoning capabilities remain a fundamental challenge. Developing AI systems with strong reasoning capabilities is regarded as a crucial milestone in the pursuit of Artificial General Intelligence (AGI) and has garnered considerable attention from both academia and industry. Various techniques have been explored to enhance the reasoning capabilities of LLMs, with neuro-symbolic approaches being a particularly promising way. This paper comprehensively reviews recent developments in neuro-symbolic approaches for enhancing LLM reasoning. We first present a formalization of reasoning tasks and give a brief introduction to the neuro-symbolic learning paradigm. Then, we discuss neuro-symbolic methods for improving the reasoning capabilities of LLMs from three perspectives: Symbolic-&gt;LLM, LLM-&gt;Symbolic, and LLM+Symbolic. Finally, we discuss several key challenges and promising future directions. We have also released a GitHub repository including papers and resources related to this survey: https://github.com/LAMDASZ-ML/Awesome-LLM-Reasoning-with-NeSy.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4414360195"
+    },
+    {
+      "openalex_id": "W4411652836",
+      "doi": "10.55248/gengpi.6.0625.21105",
+      "title": "A Neuro-Symbolic Artificial Intelligence and Zero-Knowledge Blockchain Framework for a Patient-Owned Digital-Twin Marketplace in U.S. Value-Based Care.",
+      "authors": [
+        {
+          "name": "Yusuff Taofeek Adeshina",
+          "openalex_id": "A5118189997",
+          "institutions": [
+            "University of New Haven"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-06-01",
+      "abstract": null,
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Research Publication and Reviews",
+        "type": "journal",
+        "issn": [
+          "2582-7421"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://doi.org/10.55248/gengpi.6.0625.21105"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Digital Transformation in Industry"
+      ],
+      "referenced_works_count": 24,
+      "url": "https://openalex.org/W4411652836"
+    },
+    {
+      "openalex_id": "W4307783876",
+      "doi": "10.48550/arxiv.2210.15889",
+      "title": "Towards Data-and Knowledge-Driven Artificial Intelligence: A Survey on Neuro-Symbolic Computing",
+      "authors": [
+        {
+          "name": "Wenguan Wang",
+          "openalex_id": "A5101433884",
+          "orcid": "https://orcid.org/0000-0002-0802-9567"
+        },
+        {
+          "name": "Yi Yang",
+          "openalex_id": "A5005421447",
+          "orcid": "https://orcid.org/0000-0002-0512-880X"
+        },
+        {
+          "name": "Wu, Fei",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-28",
+      "abstract": "Neural-symbolic computing (NeSy), which pursues the integration of the symbolic and statistical paradigms of cognition, has been an active research area of Artificial Intelligence (AI) for many years. As NeSy shows promise of reconciling the advantages of reasoning and interpretability of symbolic representation and robust learning in neural networks, it may serve as a catalyst for the next generation of AI. In the present paper, we provide a systematic overview of the recent developments and important contributions of NeSy research. Firstly, we introduce study history of this area, covering early work and foundations. We further discuss background concepts and identify key driving factors behind the development of NeSy. Afterward, we categorize recent landmark approaches along several main characteristics that underline this research paradigm, including neural-symbolic integration, knowledge representation, knowledge embedding, and functionality. Next, we briefly discuss the successful application of modern NeSy approaches in several domains. Then, we benchmark several NeSy methods on three representative application tasks. Finally, we identify the open problems together with potential future research directions. This survey is expected to help new researchers enter this rapidly evolving field and accelerate the progress towards data-and knowledge-driven AI.",
+      "cited_by_count": 13,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2210.15889"
+      },
+      "topics": [
+        "Neural Networks and Applications",
+        "Neural Networks and Reservoir Computing",
+        "Evolutionary Algorithms and Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4307783876"
+    },
+    {
+      "openalex_id": "W4308939312",
+      "doi": "10.3233/sw-223228",
+      "title": "Is neuro-symbolic AI meeting its promises in natural language processing? A\u00a0structured review",
+      "authors": [
+        {
+          "name": "Kyle Hamilton",
+          "openalex_id": "A5010412546",
+          "orcid": "https://orcid.org/0000-0003-0809-0664",
+          "institutions": [
+            "Technological University Dublin"
+          ]
+        },
+        {
+          "name": "Aparna Nayak",
+          "openalex_id": "A5026378728",
+          "orcid": "https://orcid.org/0000-0002-8135-3515",
+          "institutions": [
+            "Technological University Dublin"
+          ]
+        },
+        {
+          "name": "Bojan Bo\u017ei\u0107",
+          "openalex_id": "A5088807073",
+          "orcid": "https://orcid.org/0000-0002-4420-1029",
+          "institutions": [
+            "Technological University Dublin"
+          ]
+        },
+        {
+          "name": "Luca Longo",
+          "openalex_id": "A5024458365",
+          "orcid": "https://orcid.org/0000-0002-2718-5426",
+          "institutions": [
+            "Technological University Dublin"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-11",
+      "abstract": "Advocates for Neuro-Symbolic Artificial Intelligence (NeSy) assert that combining deep learning with symbolic reasoning will lead to stronger AI than either paradigm on its own. As successful as deep learning has been, it is generally accepted that even our best deep learning systems are not very good at abstract reasoning. And since reasoning is inextricably linked to language, it makes intuitive sense that Natural Language Processing (NLP), would be a particularly well-suited candidate for NeSy. We conduct a structured review of studies implementing NeSy for NLP, with the aim of answering the question of whether NeSy is indeed meeting its promises: reasoning, out-of-distribution generalization, interpretability, learning and reasoning from small data, and transferability to new domains. We examine the impact of knowledge representation, such as rules and semantic networks, language structure and relational structure, and whether implicit or explicit reasoning contributes to higher promise scores. We find that systems where logic is compiled into the neural network lead to the most NeSy goals being satisfied, while other factors such as knowledge representation, or type of neural architecture do not exhibit a clear correlation with goals being met. We find many discrepancies in how reasoning is defined, specifically in relation to human level reasoning, which impact decisions about model architectures and drive conclusions which are not always consistent across studies. Hence we advocate for a more methodical approach to the application of theories of human reasoning as well as the development of appropriate benchmarks, which we hope can lead to a better understanding of progress in the field. We make our data and code available on github for further analysis.11 https://github.com/kyleiwaniec/neuro-symbolic-ai-systematic-review",
+      "cited_by_count": 67,
+      "type": "review",
+      "source": {
+        "name": "Semantic Web",
+        "type": "journal",
+        "issn": [
+          "1570-0844",
+          "2210-4968"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://content.iospress.com:443/download/semantic-web/sw223228?id=semantic-web%2Fsw223228"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 138,
+      "url": "https://openalex.org/W4308939312"
+    },
+    {
+      "openalex_id": "W4306295026",
+      "doi": "10.48550/arxiv.2210.06649",
+      "title": "Neuro-symbolic Explainable Artificial Intelligence Twin for Zero-touch IoE in Wireless Network",
+      "authors": [
+        {
+          "name": "Md. Shirajum Munir",
+          "openalex_id": "A5058796764",
+          "orcid": "https://orcid.org/0000-0002-7255-1085"
+        },
+        {
+          "name": "Ki Tae Kim",
+          "openalex_id": "A5100685794",
+          "orcid": "https://orcid.org/0000-0002-5692-1189"
+        },
+        {
+          "name": "Apurba Adhikary",
+          "openalex_id": "A5021511574",
+          "orcid": "https://orcid.org/0000-0003-3970-1878"
+        },
+        {
+          "name": "Walid Saad",
+          "openalex_id": "A5024108653",
+          "orcid": "https://orcid.org/0000-0003-2247-2458"
+        },
+        {
+          "name": "Sachin Shetty",
+          "openalex_id": "A5052787847",
+          "orcid": "https://orcid.org/0000-0002-8789-0610"
+        },
+        {
+          "name": "Seong-Bae Park",
+          "openalex_id": "A5042224699",
+          "orcid": "https://orcid.org/0000-0002-6453-0348"
+        },
+        {
+          "name": "Choong Seon Hong",
+          "openalex_id": "A5034052371",
+          "orcid": "https://orcid.org/0000-0003-3484-7333"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-13",
+      "abstract": "Explainable artificial intelligence (XAI) twin systems will be a fundamental enabler of zero-touch network and service management (ZSM) for sixth-generation (6G) wireless networks. A reliable XAI twin system for ZSM requires two composites: an extreme analytical ability for discretizing the physical behavior of the Internet of Everything (IoE) and rigorous methods for characterizing the reasoning of such behavior. In this paper, a novel neuro-symbolic explainable artificial intelligence twin framework is proposed to enable trustworthy ZSM for a wireless IoE. The physical space of the XAI twin executes a neural-network-driven multivariate regression to capture the time-dependent wireless IoE environment while determining unconscious decisions of IoE service aggregation. Subsequently, the virtual space of the XAI twin constructs a directed acyclic graph (DAG)-based Bayesian network that can infer a symbolic reasoning score over unconscious decisions through a first-order probabilistic language model. Furthermore, a Bayesian multi-arm bandits-based learning problem is proposed for reducing the gap between the expected explained score and the current obtained score of the proposed neuro-symbolic XAI twin. To address the challenges of extensible, modular, and stateless management functions in ZSM, the proposed neuro-symbolic XAI twin framework consists of two learning systems: 1) an implicit learner that acts as an unconscious learner in physical space, and 2) an explicit leaner that can exploit symbolic reasoning based on implicit learner decisions and prior evidence. Experimental results show that the proposed neuro-symbolic XAI twin can achieve around 96.26% accuracy while guaranteeing from 18% to 44% more trust score in terms of reasoning and closed-loop automation.",
+      "cited_by_count": 4,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2210.06649"
+      },
+      "topics": [
+        "Brain Tumor Detection and Classification",
+        "Artificial Intelligence in Healthcare and Education",
+        "COVID-19 diagnosis using AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4306295026"
+    },
+    {
+      "openalex_id": "W4412011984",
+      "doi": "10.70593/978-93-7185-611-9",
+      "title": "Artificial Intelligence for Cognitive Systems: Deep Learning, Neuro- symbolic Integration, and Human-Centric Intelligence",
+      "authors": [
+        {
+          "name": "Samit Shivadekar",
+          "openalex_id": "A5002993672",
+          "orcid": "https://orcid.org/0000-0001-6445-5141",
+          "institutions": [
+            "University of Maryland, Baltimore County"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-06-30",
+      "abstract": "Artificial intelligence quickly changed from a theory to a practical power - it spreads through every part of modern life. As people go from specific uses to more general kinds of intelligence, they must face a main change. This change involves what machines do and how people think about intelligence. The book, Cognitive AI - From Deep Learning to Artificial General Intelligence, looks at that change. This writing serves a wide, serious group of people - it is for graduate students and researchers in artificial intelligence and cognitive science. Educators along with industry workers also read this to get a better grasp of the path from current AI systems to future cognitive architectures. We do not just list technologies. We deal with the concepts, morals, technical issues as well as societal problems that sit at the core of creating machines that think. The chapters lay out this story bit by bit; they start with basic learning systems. They move to cognitive modeling and designs. The book finishes with important questions about governance, combining fields along with how people will work in the future. Throughout the text, the reader learns about current subjects. Some of these are large language models, explaining how systems work, reasoning with symbols plus networks, the safety of general artificial intelligence, and people working with machines. I appreciate the researchers, collaborators along with students who inspired this work. The growing group of thinkers also recognizes that making intelligent systems requires scientific exactness and philosophical thought. My hope is that this book guides plus starts talks for anyone who wants AI to develop responsibly and creatively.",
+      "cited_by_count": 6,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.deepscienceresearch.com/dsr/catalog/download/200/1147/2367"
+      },
+      "topics": [
+        "Cognitive Science and Mapping"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4412011984"
+    },
+    {
+      "openalex_id": "W4377723227",
+      "doi": "10.1007/978-3-031-33469-6_20",
+      "title": "A Vertical-Horizontal Integrated Neuro-Symbolic Framework Towards Artificial General Intelligence",
+      "authors": [
+        {
+          "name": "L.T. Li",
+          "openalex_id": "A5066028874",
+          "orcid": "https://orcid.org/0000-0002-9014-5005",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Luping Shi",
+          "openalex_id": "A5018476895",
+          "orcid": "https://orcid.org/0000-0002-9829-2202",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Rong Zhao",
+          "openalex_id": "A5100675943",
+          "orcid": "https://orcid.org/0000-0002-2320-0326",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "book-chapter",
+      "source": {
+        "name": "Lecture notes in computer science",
+        "type": "book series",
+        "issn": [
+          "0302-9743",
+          "1611-3349"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Advanced Memory and Neural Computing",
+        "Ferroelectric and Negative Capacitance Devices",
+        "Neural dynamics and brain function"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W4377723227"
+    },
+    {
+      "openalex_id": "W4286978404",
+      "doi": "10.48550/arxiv.2109.06133",
+      "title": "Neuro-Symbolic AI: An Emerging Class of AI Workloads and their\\n Characterization",
+      "authors": [
+        {
+          "name": "Zachary Susskind",
+          "openalex_id": "A5035725580",
+          "orcid": "https://orcid.org/0000-0002-7244-6285"
+        },
+        {
+          "name": "Bryce Arden",
+          "openalex_id": "A5033050928"
+        },
+        {
+          "name": "Lizy K. John",
+          "openalex_id": "A5068885069",
+          "orcid": "https://orcid.org/0000-0002-8747-5214"
+        },
+        {
+          "name": "Patrick A. Stockton",
+          "openalex_id": "A5062565540",
+          "orcid": "https://orcid.org/0000-0002-3681-4984"
+        },
+        {
+          "name": "Eugene John",
+          "openalex_id": "A5010151984",
+          "orcid": "https://orcid.org/0000-0001-9494-4894"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-13",
+      "abstract": "Neuro-symbolic artificial intelligence is a novel area of AI research which\\nseeks to combine traditional rules-based AI approaches with modern deep\\nlearning techniques. Neuro-symbolic models have already demonstrated the\\ncapability to outperform state-of-the-art deep learning models in domains such\\nas image and video reasoning. They have also been shown to obtain high accuracy\\nwith significantly less training data than traditional models. Due to the\\nrecency of the field's emergence and relative sparsity of published results,\\nthe performance characteristics of these models are not well understood. In\\nthis paper, we describe and analyze the performance characteristics of three\\nrecent neuro-symbolic models. We find that symbolic models have less potential\\nparallelism than traditional neural models due to complex control flow and\\nlow-operational-intensity operations, such as scalar multiplication and tensor\\naddition. However, the neural aspect of computation dominates the symbolic part\\nin cases where they are clearly separable. We also find that data movement\\nposes a potential bottleneck, as it does in many ML workloads.\\n",
+      "cited_by_count": 19,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2109.06133"
+      },
+      "topics": [
+        "Neural Networks and Applications",
+        "Ferroelectric and Negative Capacitance Devices",
+        "Model Reduction and Neural Networks"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4286978404"
+    },
+    {
+      "openalex_id": "W4360977202",
+      "doi": "10.1038/s42256-023-00630-8",
+      "title": "A neuro-vector-symbolic architecture for solving Raven\u2019s progressive matrices",
+      "authors": [
+        {
+          "name": "Michael Hersche",
+          "openalex_id": "A5068274229",
+          "orcid": "https://orcid.org/0000-0003-3065-7639",
+          "institutions": [
+            "IBM Research - Zurich",
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "Mustafa Zeqiri",
+          "openalex_id": "A5040426927",
+          "institutions": [
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "Luca Benini",
+          "openalex_id": "A5043408422",
+          "orcid": "https://orcid.org/0000-0001-8068-3806",
+          "institutions": [
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "Abu Sebastian",
+          "openalex_id": "A5017236774",
+          "orcid": "https://orcid.org/0000-0001-5603-5243",
+          "institutions": [
+            "IBM Research - Zurich"
+          ]
+        },
+        {
+          "name": "Abbas Rahimi",
+          "openalex_id": "A5050167359",
+          "orcid": "https://orcid.org/0000-0003-3141-4970",
+          "institutions": [
+            "IBM Research - Zurich"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-09",
+      "abstract": null,
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "Nature Machine Intelligence",
+        "type": "journal",
+        "issn": [
+          "2522-5839"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.nature.com/articles/s42256-023-00630-8"
+      },
+      "topics": [
+        "Ferroelectric and Negative Capacitance Devices",
+        "Neural Networks and Applications",
+        "Neural Networks and Reservoir Computing"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W4360977202"
+    },
+    {
+      "openalex_id": "W4411080455",
+      "doi": "10.1177/29498732251340187",
+      "title": "Artificial Intelligence and Internet of Things: A Neuro-Symbolic Approach for Automated Platform Configuration",
+      "authors": [
+        {
+          "name": "Danial M. Amlashi",
+          "openalex_id": "A5058283487",
+          "orcid": "https://orcid.org/0000-0003-3628-5725",
+          "institutions": [
+            "University of Vienna"
+          ]
+        },
+        {
+          "name": "Alexander Voelz",
+          "openalex_id": "A5055972700",
+          "orcid": "https://orcid.org/0000-0003-4580-1445",
+          "institutions": [
+            "University of Vienna"
+          ]
+        },
+        {
+          "name": "Dimitris Karagiannis",
+          "openalex_id": "A5101471504",
+          "orcid": "https://orcid.org/0000-0003-1515-7679",
+          "institutions": [
+            "University of Vienna"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-06-06",
+      "abstract": "Complex Internet of Things (IoT) environments present significant challenges in device discovery and platform configuration, especially as the number of interconnected devices continues to grow. This research addresses these challenges by leveraging the complementary strengths of symbolic and connectionist artificial intelligence (AI) within a neuro-symbolic system. We propose a comprehensive approach to IoT platform configuration that integrates neuro-symbolic reasoning and conceptual modelling techniques, enhancing both efficiency and explainability. Following the process model of design science research, our work introduces two key artifacts: the Instantiator Pipeline and the IoT2Model method. The Instantiator Pipeline automates the discovery and integration of IoT devices, minimising manual intervention and ensuring seamless interoperability. During the initial iteration of the applied research methodology, it was recognised that effective IoT platform configuration must extend beyond device registration to include the creation of scenario-specific rules. To address this, the IoT2Model method was developed, enabling users to define models that represent these rules, thereby tailoring the behaviour of their IoT deployments to meet specific requirements. By utilising existing open technologies, our solution ensures flexibility and adaptability, overcoming the limitations of related works. The proposed neuro-symbolic AI system not only streamlines the configuration process but also provides a robust, scalable and explainable solution for managing complex IoT environments, paving the way for future advancements of intelligent information systems.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Neurosymbolic Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "2949-8732"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1177/29498732251340187"
+      },
+      "topics": [
+        "Modular Robots and Swarm Intelligence",
+        "Cognitive Computing and Networks",
+        "Graph Theory and Algorithms"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W4411080455"
+    },
+    {
+      "openalex_id": "W4401433647",
+      "doi": "10.3389/fncom.2024.1395901",
+      "title": "A functional contextual, observer-centric, quantum mechanical, and neuro-symbolic approach to solving the alignment problem of artificial general intelligence: safe AI through intersecting computational psychological neuroscience and LLM architecture for emergent theory of mind",
+      "authors": [
+        {
+          "name": "Darren J. Edwards",
+          "openalex_id": "A5046648789",
+          "orcid": "https://orcid.org/0000-0002-2143-1198",
+          "institutions": [
+            "Swansea University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-08-08",
+      "abstract": "There have been impressive advancements in the field of natural language processing (NLP) in recent years, largely driven by innovations in the development of transformer-based large language models (LLM) that utilize \u201cattention.\u201d This approach employs masked self-attention to establish (via similarly) different positions of tokens (words) within an inputted sequence of tokens to compute the most appropriate response based on its training corpus. However, there is speculation as to whether this approach alone can be scaled up to develop emergent artificial general intelligence (AGI), and whether it can address the alignment of AGI values with human values (called the alignment problem). Some researchers exploring the alignment problem highlight three aspects that AGI (or AI) requires to help resolve this problem: (1) an interpretable values specification; (2) a utility function; and (3) a dynamic contextual account of behavior. Here, a neurosymbolic model is proposed to help resolve these issues of human value alignment in AI, which expands on the transformer-based model for NLP to incorporate symbolic reasoning that may allow AGI to incorporate perspective-taking reasoning (i.e., resolving the need for a dynamic contextual account of behavior through deictics) as defined by a multilevel evolutionary and neurobiological framework into a functional contextual post-Skinnerian model of human language called \u201cNeurobiological and Natural Selection Relational Frame Theory\u201d ( N -Frame). It is argued that this approach may also help establish a comprehensible value scheme, a utility function by expanding the expected utility equation of behavioral economics to consider functional contextualism, and even an observer (or witness) centric model for consciousness. Evolution theory, subjective quantum mechanics, and neuroscience are further aimed to help explain consciousness, and possible implementation within an LLM through correspondence to an interface as suggested by N -Frame. This argument is supported by the computational level of hypergraphs, relational density clusters, a conscious quantum level defined by QBism, and real-world applied level (human user feedback). It is argued that this approach could enable AI to achieve consciousness and develop deictic perspective-taking abilities, thereby attaining human-level self-awareness, empathy, and compassion toward others. Importantly, this consciousness hypothesis can be directly tested with a significance of approximately 5-sigma significance (with a 1 in 3.5 million probability that any identified AI-conscious observations in the form of a collapsed wave form are due to chance factors) through double-slit intent-type experimentation and visualization procedures for derived perspective-taking relational frames. Ultimately, this could provide a solution to the alignment problem and contribute to the emergence of a theory of mind (ToM) within AI.",
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Computational Neuroscience",
+        "type": "journal",
+        "issn": [
+          "1662-5188"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2024.1395901/pdf"
+      },
+      "topics": [
+        "Embodied and Extended Cognition",
+        "Cognitive Science and Education Research",
+        "Functional Brain Connectivity Studies"
+      ],
+      "referenced_works_count": 197,
+      "url": "https://openalex.org/W4401433647"
+    },
+    {
+      "openalex_id": "W4380086229",
+      "doi": "10.3233/sw-233324",
+      "title": "A neuro-symbolic system over knowledge graphs for link prediction",
+      "authors": [
+        {
+          "name": "Ariam Rivas",
+          "openalex_id": "A5084663579",
+          "orcid": "https://orcid.org/0000-0003-4916-5220",
+          "institutions": [
+            "L3S Research Center",
+            "Leibniz University Hannover",
+            "Technische Informationsbibliothek (TIB)"
+          ]
+        },
+        {
+          "name": "Diego Collarana",
+          "openalex_id": "A5055319070",
+          "orcid": "https://orcid.org/0000-0002-2583-0778",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems",
+            "Universidad Privada Boliviana"
+          ]
+        },
+        {
+          "name": "Mar\u00eda Torrente",
+          "openalex_id": "A5008927068",
+          "orcid": "https://orcid.org/0000-0001-8791-7660",
+          "institutions": [
+            "Hospital Universitario Puerta de Hierro Majadahonda",
+            "Universidad Francisco de Vitoria"
+          ]
+        },
+        {
+          "name": "Mar\u00eda-Esther Vidal",
+          "openalex_id": "A5055433807",
+          "orcid": "https://orcid.org/0000-0003-1160-8727",
+          "institutions": [
+            "Technische Informationsbibliothek (TIB)",
+            "L3S Research Center",
+            "Leibniz University Hannover"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-09",
+      "abstract": "Neuro-Symbolic Artificial Intelligence (AI) focuses on integrating symbolic and sub-symbolic systems to enhance the performance and explainability of predictive models. Symbolic and sub-symbolic approaches differ fundamentally in how they represent data and make use of data features to reach conclusions. Neuro-symbolic systems have recently received significant attention in the scientific community. However, despite efforts in neural-symbolic integration, symbolic processing can still be better exploited, mainly when these hybrid approaches are defined on top of knowledge graphs. This work is built on the statement that knowledge graphs can naturally represent the convergence between data and their contextual meaning (i.e., knowledge). We propose a hybrid system that resorts to symbolic reasoning, expressed as a deductive database, to augment the contextual meaning of entities in a knowledge graph, thus, improving the performance of link prediction implemented using knowledge graph embedding (KGE) models. An entity context is defined as the ego network of the entity in a knowledge graph. Given a link prediction task, the proposed approach deduces new RDF triples in the ego networks of the entities corresponding to the heads and tails of the prediction task on the knowledge graph (KG). Since knowledge graphs may be incomplete and sparse, the facts deduced by the symbolic system not only reduce sparsity but also make explicit meaningful relations among the entities that compose an entity ego network. As a proof of concept, our approach is applied over a KG for lung cancer to predict treatment effectiveness. The empirical results put the deduction power of deductive databases into perspective. They indicate that making explicit deduced relationships in the ego networks empowers all the studied KGE models to generate more accurate links.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Semantic Web",
+        "type": "journal",
+        "issn": [
+          "1570-0844",
+          "2210-4968"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://content.iospress.com:443/download/semantic-web/sw233324?id=semantic-web%2Fsw233324"
+      },
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Topic Modeling",
+        "Bioinformatics and Genomic Networks"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W4380086229"
+    },
+    {
+      "openalex_id": "W4417278131",
+      "doi": "10.26562/ijirae.2025.v1212.17",
+      "title": "Neuro-Symbolic Artificial Intelligence Integration",
+      "authors": [
+        {
+          "name": "S Siddarama",
+          "openalex_id": "A5119091354"
+        },
+        {
+          "name": "T. Pavan Kumar",
+          "openalex_id": "A5101527911"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-11",
+      "abstract": "Neuro-symbolic Artificial Intelligence which combines the power of major AI approaches. Like neural networking and Symbolic meaning. Neural Network are the high powerful at learning problem and patterns at a huge amount of data in this symbolic system are good at using an symbolic and logic rules which used to make decisions in real time with the help of AI intelligence. The neuro symbolic AIaims to build a network same like human thinking and human experience. But the drawback of this Neuro-symbolic AI is noisy and messy data can\u2019t be analyzed so easily in this. While AI is ruling all the fields such as health care, Education, natural language understanding and human like thinking for critical satiation in real time",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Innovative Research in Advanced Engineering",
+        "type": "journal",
+        "issn": [
+          "2349-2163"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.26562/ijirae.2025.v1212.17"
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4417278131"
+    },
+    {
+      "openalex_id": "W4402338682",
+      "doi": "10.1007/978-3-031-68738-9_35",
+      "title": "Neuro-Symbolic Artificial Intelligence for\u00a0Safety Engineering",
+      "authors": [
+        {
+          "name": "Laura Carnevali",
+          "openalex_id": "A5023394171",
+          "orcid": "https://orcid.org/0000-0002-5896-4860",
+          "institutions": [
+            "University of Florence"
+          ]
+        },
+        {
+          "name": "Marco Lippi",
+          "openalex_id": "A5062424045",
+          "orcid": "https://orcid.org/0000-0002-9663-1071",
+          "institutions": [
+            "University of Florence"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": null,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": {
+        "name": "Lecture notes in computer science",
+        "type": "book series",
+        "issn": [
+          "0302-9743",
+          "1611-3349"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Risk and Safety Analysis",
+        "Occupational Health and Safety Research",
+        "Fault Detection and Control Systems"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W4402338682"
+    },
+    {
+      "openalex_id": "W4287825724",
+      "doi": "10.48550/arxiv.2003.08316",
+      "title": "From Statistical Relational to Neuro-Symbolic Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Luc De Raedt",
+          "openalex_id": "A5078136609",
+          "orcid": "https://orcid.org/0000-0002-6860-6303"
+        },
+        {
+          "name": "Sebastijan Duman\u010di\u0107",
+          "openalex_id": "A5019849127",
+          "orcid": "https://orcid.org/0000-0003-0915-8034"
+        },
+        {
+          "name": "Robin Manhaeve",
+          "openalex_id": "A5003576783",
+          "orcid": "https://orcid.org/0000-0001-9907-7486"
+        },
+        {
+          "name": "Giuseppe Marra",
+          "openalex_id": "A5005466305",
+          "orcid": "https://orcid.org/0000-0001-5940-9562"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-18",
+      "abstract": "Neuro-symbolic and statistical relational artificial intelligence both integrate frameworks for learning with logical reasoning. This survey identifies several parallels across seven different dimensions between these two fields. These cannot only be used to characterize and position neuro-symbolic artificial intelligence approaches but also to identify a number of directions for further research.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2003.08316"
+      },
+      "topics": [
+        "Neural Networks and Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4287825724"
+    },
+    {
+      "openalex_id": "W4412636407",
+      "doi": "10.2139/ssrn.5344224",
+      "title": "Artificial Intelligence for Cognitive Systems Deep Learning, Neuro-symbolic Integration, and Human-centric Intelligence",
+      "authors": [
+        {
+          "name": "Samit Shivadekar",
+          "openalex_id": "A5002993672",
+          "orcid": "https://orcid.org/0000-0001-6445-5141",
+          "institutions": [
+            "University of Maryland, Baltimore County"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": null,
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.5344224"
+      },
+      "topics": [
+        "Cognitive Science and Mapping"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W4412636407"
+    },
+    {
+      "openalex_id": "W4393065875",
+      "doi": "10.1126/sciadv.adl3135",
+      "title": "Stochastic neuro-fuzzy system implemented in memristor crossbar arrays",
+      "authors": [
+        {
+          "name": "Tuo Shi",
+          "openalex_id": "A5101578057",
+          "orcid": "https://orcid.org/0000-0003-2097-7970",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Institute of Microelectronics",
+            "Zhejiang Lab"
+          ]
+        },
+        {
+          "name": "Hui Zhang",
+          "openalex_id": "A5114138525",
+          "institutions": [
+            "Zhejiang Lab"
+          ]
+        },
+        {
+          "name": "Shiyu Cui",
+          "openalex_id": "A5078863054",
+          "orcid": "https://orcid.org/0000-0003-1305-2259",
+          "institutions": [
+            "Zhejiang Lab"
+          ]
+        },
+        {
+          "name": "Jinchang Liu",
+          "openalex_id": "A5071127839",
+          "orcid": "https://orcid.org/0000-0003-0694-7863",
+          "institutions": [
+            "Zhejiang Lab"
+          ]
+        },
+        {
+          "name": "Zixi Gu",
+          "openalex_id": "A5102205881",
+          "institutions": [
+            "Zhejiang Lab"
+          ]
+        },
+        {
+          "name": "Z. Wang",
+          "openalex_id": "A5037245699",
+          "orcid": "https://orcid.org/0009-0002-1377-6580",
+          "institutions": [
+            "Hebei University"
+          ]
+        },
+        {
+          "name": "Xiaobing Yan",
+          "openalex_id": "A5057365787",
+          "orcid": "https://orcid.org/0000-0002-6335-336X",
+          "institutions": [
+            "Hebei University"
+          ]
+        },
+        {
+          "name": "Qi Liu",
+          "openalex_id": "A5100453158",
+          "orcid": "https://orcid.org/0000-0001-7062-831X",
+          "institutions": [
+            "Fudan University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-22",
+      "abstract": "Neuro-symbolic artificial intelligence has garnered considerable attention amid increasing industry demands for high-performance neural networks that are interpretable and adaptable to previously unknown problem domains with minimal reconfiguration. However, implementing neuro-symbolic hardware is challenging due to the complexity in symbolic knowledge representation and calculation. We experimentally demonstrated a memristor-based neuro-fuzzy hardware based on TiN/TaO x /HfO x /TiN chips that is superior to its silicon-based counterpart in terms of throughput and energy efficiency by using array topological structure for knowledge representation and physical laws for computing. Intrinsic memristor variability is fully exploited to increase robustness in knowledge representation. A hybrid in situ training strategy is proposed for error minimizing in training. The hardware adapts easier to a previously unknown environment, achieving ~6.6 times faster convergence and ~6 times lower error than deep learning. The hardware energy efficiency is over two orders of magnitude greater than field-programmable gate arrays. This research greatly extends the capability of memristor-based neuromorphic computing systems in artificial intelligence.",
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "Science Advances",
+        "type": "journal",
+        "issn": [
+          "2375-2548"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1126/sciadv.adl3135"
+      },
+      "topics": [
+        "Advanced Memory and Neural Computing",
+        "Neural dynamics and brain function",
+        "Ferroelectric and Negative Capacitance Devices"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W4393065875"
+    },
+    {
+      "openalex_id": "W4413423647",
+      "doi": "10.1016/c2023-0-51972-x",
+      "title": "Healthcare Applications of Neuro-Symbolic Artificial Intelligence",
+      "authors": [],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": null,
+      "cited_by_count": 0,
+      "type": "book",
+      "source": {
+        "name": "Elsevier eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4413423647"
+    },
+    {
+      "openalex_id": "W4402345541",
+      "doi": "10.48550/arxiv.2407.11995",
+      "title": "Neuro-Symbolic Artificial Intelligence for Patient Monitoring",
+      "authors": [
+        {
+          "name": "Ole Fenske",
+          "openalex_id": "A5089157916",
+          "orcid": "https://orcid.org/0009-0001-3055-478X"
+        },
+        {
+          "name": "Sebastian Bader",
+          "openalex_id": "A5074115481",
+          "orcid": "https://orcid.org/0000-0001-8786-6242"
+        },
+        {
+          "name": "Thomas Kirste",
+          "openalex_id": "A5012782091",
+          "orcid": "https://orcid.org/0000-0002-8956-9820"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-12",
+      "abstract": "In this paper we argue that Neuro-Symbolic AI (NeSy-AI) should be applied for patient monitoring. In this context, we introduce patient monitoring as a special case of Human Activity Recognition and derive concrete requirements for this application area. We then present a process architecture and discuss why NeSy-AI should be applied for patient monitoring. To further support our argumentation, we show how NeSy-AI can help to overcome certain technical challenges that arise from this application area.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2407.11995"
+      },
+      "topics": [
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4402345541"
+    },
+    {
+      "openalex_id": "W4407695826",
+      "doi": "10.48550/arxiv.2502.11269",
+      "title": "Unlocking the Potential of Generative AI through Neuro-Symbolic Architectures: Benefits and Limitations",
+      "authors": [
+        {
+          "name": "Oualid Bougzime",
+          "openalex_id": "A5116310227"
+        },
+        {
+          "name": "S. Jabbar",
+          "openalex_id": "A5112977040"
+        },
+        {
+          "name": "Christophe Cruz",
+          "openalex_id": "A5031830209",
+          "orcid": "https://orcid.org/0000-0002-5611-9479"
+        },
+        {
+          "name": "Fr\u00e9d\u00e9ric Demoly",
+          "openalex_id": "A5062368955",
+          "orcid": "https://orcid.org/0000-0002-5825-6573"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-02-16",
+      "abstract": "Neuro-symbolic artificial intelligence (NSAI) represents a transformative approach in artificial intelligence (AI) by combining deep learning's ability to handle large-scale and unstructured data with the structured reasoning of symbolic methods. By leveraging their complementary strengths, NSAI enhances generalization, reasoning, and scalability while addressing key challenges such as transparency and data efficiency. This paper systematically studies diverse NSAI architectures, highlighting their unique approaches to integrating neural and symbolic components. It examines the alignment of contemporary AI techniques such as retrieval-augmented generation, graph neural networks, reinforcement learning, and multi-agent systems with NSAI paradigms. This study then evaluates these architectures against comprehensive set of criteria, including generalization, reasoning capabilities, transferability, and interpretability, therefore providing a comparative analysis of their respective strengths and limitations. Notably, the Neuro &gt; Symbolic &lt; Neuro model consistently outperforms its counterparts across all evaluation metrics. This result aligns with state-of-the-art research that highlight the efficacy of such architectures in harnessing advanced technologies like multi-agent systems.",
+      "cited_by_count": 6,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2502.11269"
+      },
+      "topics": [
+        "Evolutionary Algorithms and Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4407695826"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

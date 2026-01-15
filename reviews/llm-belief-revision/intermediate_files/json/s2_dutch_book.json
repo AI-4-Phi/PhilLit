@@ -1,0 +1,483 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Dutch Book arguments coherence",
+  "results": [
+    {
+      "paperId": "68350e11157e2c44b3ce95c53239c339a34e44bb",
+      "title": "Discussion: A Mistake in Dynamic Coherence Arguments?",
+      "authors": [
+        {
+          "name": "B. Skyrms",
+          "authorId": "2030891"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-319-20451-2_9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/68350e11157e2c44b3ce95c53239c339a34e44bb",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "153-161",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bae37475717a37ed4cd9d2c1da883f48c9071533",
+      "title": "Dutch books, coherence, and logical consistency",
+      "authors": [
+        {
+          "name": "Anna Mahtani",
+          "authorId": "71840883"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.1111/NOUS.12070",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bae37475717a37ed4cd9d2c1da883f48c9071533",
+      "venue": "",
+      "journal": {
+        "name": "No\u00fbs",
+        "pages": "522-537",
+        "volume": "49"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8cd296a00c1238b5039462e0569d1049d1f2cf04",
+      "title": "Reflection, introspection, and book",
+      "authors": [
+        {
+          "name": "Kevin J. S. Zollman",
+          "authorId": "2610941"
+        },
+        {
+          "name": "Kevin Dorst",
+          "authorId": "2261348811"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The much\u2010debated Reflection principle states that a coherent agent's credences must match their estimates for their future credences. Defenders claim that there are Dutch\u2010book arguments in its favor, putting it on the same normative footing as probabilistic coherence. Critics claim that those arguments rely on the implicit, implausible assumption that the agent is introspective: that they are certain what their own credences are. In this paper, we clarify this debate by surveying several different conceptions of the book scenario. We show that the crucial disagreement hinges on whether agents who are not introspective are known to reliably act on their credences: if they are, then coherent Reflection failures are (at best) ephemeral; if they are not, then Reflection failures can be robust\u2014and perhaps rational and coherent. We argue that the crucial question for future debates is which notion of coherence makes sense for such unreliable agents and sketch a few avenues to explore.",
+      "citationCount": 0,
+      "doi": "10.1111/phpr.70060",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8cd296a00c1238b5039462e0569d1049d1f2cf04",
+      "venue": "Philosophy and Phenomenological Research",
+      "journal": {
+        "name": "Philosophy and Phenomenological Research",
+        "pages": "1136 - 1158",
+        "volume": "111"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "6e98fa3b707b1df04994b84780a7626a1523d7de",
+      "title": "Just As Planned: Bayesianism, Externalism, and Plan Coherence",
+      "authors": [
+        {
+          "name": "Pablo Zendejas Medina",
+          "authorId": "2151393583"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Two of the most influential arguments for Bayesian updating (\"Conditionalization\") -- Hilary Greaves' and David Wallace's Accuracy Argumentand David Lewis'\u00a0Diachronic Dutch Book Argument-- turn out to imose a strong and surprising limitation on rational uncertainty: that one can never be rationally uncertain of what one's evidence is. Many philosophers (\"externalists\") reject that claim, and now seem to face a difficult choice: either to endorse the arguments and give up Externalism, or to reject the arguments and lose some of the best justifications of Bayesianism. The author argues that the key to resolving this conflict lies in recognizing that both arguments are plan-based, in that they argue for Conditionalization by first arguing that one should planto conditionalize. With this in view, we can identify the culprit common to both arguments: for an externalist, they misconceive the requirement to carry out a plan made at an earlier time. They should therefore not persuade us to reject Externalism. Furthermore, rethinking the nature of this requirement allows us to give two new arguments for Conditionalization that do not rule out rational uncertainty about one's evidence and that can thus serve as common ground in the debate between externalists and their opponents.",
+      "citationCount": 4,
+      "doi": "10.3998/phimp.1300",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6e98fa3b707b1df04994b84780a7626a1523d7de",
+      "venue": "Philosophers' Imprint",
+      "journal": {
+        "name": "Philosophers' Imprint"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9ca0868b6483813c40cf69d862accdd9ed62db8a",
+      "title": "Dutch Books and Logical Form",
+      "authors": [
+        {
+          "name": "Joel Pust",
+          "authorId": "2049220"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Dutch Book Arguments (DBAs) have been invoked to support various alleged requirements of rationality. Some alleged requirements, such as probabilistic coherence and conditionalization, are plausible. Others, such as credal transparency and reflection, may be less so. Anna Mahtani has argued for a new understanding of DBAs that, she claims, allows us to keep the DBAs for the plausible requirements while rejecting those for the implausible ones. I argue that Mahtani\u2019s new account fails, as (a) it does not support highly plausible requirements of rational coherence and (b) it does not succeed in undermining the DBAs for credal transparency or reflection.",
+      "citationCount": 1,
+      "doi": "10.1086/714997",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9ca0868b6483813c40cf69d862accdd9ed62db8a",
+      "venue": "Philosophia Scienti\u00e6",
+      "journal": {
+        "name": "Philosophy of Science",
+        "pages": "961 - 970",
+        "volume": "88"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e6eaf02ac3b0a9982870b143a6b2903906e00114",
+      "title": "Why Approximate Coherence?",
+      "authors": [
+        {
+          "name": "J. Staffel",
+          "authorId": "31536755"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Chapter 4 begins to answer the question of how Bayesians can justify the claim that approximating probabilistic coherence is beneficial for non-ideal thinkers. Dutch book arguments are often put forth to argue that ideal rationality requires being coherent. I show that we can justify that it is better to be less incoherent by showing that decreased incoherence is associated with decreased losses from Dutch books. While incoherent thinkers can never be immune from Dutch book losses, the amount they stand to lose, given that we standardize bet sizes, is greater the more incoherent their credences are.",
+      "citationCount": 0,
+      "doi": "10.1093/oso/9780198833710.003.0004",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e6eaf02ac3b0a9982870b143a6b2903906e00114",
+      "venue": "Unsettled Thoughts",
+      "journal": {
+        "name": "Unsettled Thoughts"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "92230470af1a7aadfbbb5028e5c7c35715a680bc",
+      "title": "Pragmatic Considerations on Comparative Probability",
+      "authors": [
+        {
+          "name": "Thomas F. Icard",
+          "authorId": "8938047"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 11,
+      "doi": "10.1086/685742",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/92230470af1a7aadfbbb5028e5c7c35715a680bc",
+      "venue": "Philosophia Scienti\u00e6",
+      "journal": {
+        "name": "Philosophy of Science",
+        "pages": "348 - 370",
+        "volume": "83"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "34b5894c724b6576f2160e5030d48383fb1bcd5f",
+      "title": "Upshots for Other Debates",
+      "authors": [
+        {
+          "name": "Alex Worsnip",
+          "authorId": "3348940"
+        }
+      ],
+      "year": 2021,
+      "abstract": "This chapter explores and draws out the consequences of both the dualist view of rationality defended in Part I and the theory of structural rationality defended in Part II for a series of standing debates in (meta)ethics and epistemology\u2014including debates about moral rationalism, rational choice theory, higher-order evidence, the normativity of logic, epistemic permissivism, and conditionalization. It also considers and criticizes some popular ways of trying to account for the existence and force of coherence requirements in the formally inclined philosophical literature\u2014namely, Dutch book and money pump arguments and accuracy dominance arguments.",
+      "citationCount": 0,
+      "doi": "10.1093/oso/9780197608142.003.0009",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/34b5894c724b6576f2160e5030d48383fb1bcd5f",
+      "venue": "Fitting Things Together",
+      "journal": {
+        "name": "Fitting Things Together"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "66c6b145d23070563cc3591390dbfaae7002116f",
+      "title": "Dutch Book Arguments for Epistemic Optimism",
+      "authors": [
+        {
+          "name": "Ilho Park",
+          "authorId": "2617575"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.15750/chss.86.202211.008",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/66c6b145d23070563cc3591390dbfaae7002116f",
+      "venue": "CHUL HAK SA SANG - Journal of Philosophical Ideas",
+      "journal": {
+        "name": "CHUL HAK SA SANG : Journal of Philosophical Ideas"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "59782961500f9c6d7d1cd035b9df023f21d87d58",
+      "title": "Review of Richard Pettigrew\u2019s Dutch Book Arguments. Cambridge: Cambridge University Press, 2020, 96 pp.",
+      "authors": [
+        {
+          "name": "Luc Lichtsteiner",
+          "authorId": "2196994324"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.23941/ejpe.v15i2.706",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/59782961500f9c6d7d1cd035b9df023f21d87d58",
+      "venue": "Erasmus Journal for Philosophy and Economics",
+      "journal": {
+        "name": "Erasmus Journal for Philosophy and Economics"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "2926fe6a916f3061f0f6531416d7932c0603959c",
+      "title": "Dutch Book Arguments",
+      "authors": [
+        {
+          "name": "Richard Pettigrew",
+          "authorId": "144577300"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 21,
+      "doi": "10.1017/9781108581813",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2926fe6a916f3061f0f6531416d7932c0603959c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0be3a8c525691da6f17723b99d752f21bbe8c008",
+      "title": "Dutch Book Arguments",
+      "authors": [
+        {
+          "name": "Susan Vineberg",
+          "authorId": "102842192"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 126,
+      "doi": "10.1093/OBO/9780195396577-0301",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0be3a8c525691da6f17723b99d752f21bbe8c008",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "09990d277f39e3dbdff4df769579187a38b447a4",
+      "title": "Scams and rationality: Dutch book arguments are not all they\u2019re cracked up to be",
+      "authors": [
+        {
+          "name": "Shira Elqayam",
+          "authorId": "2340082"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.4324/9781315676074-19",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/09990d277f39e3dbdff4df769579187a38b447a4",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "165-179",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "eb4816b123431b01ed33ac2919c36ebf66c2d863",
+      "title": "The Born Rule as Dutch-Book Coherence (and only a little more)",
+      "authors": [
+        {
+          "name": "J. Debrota",
+          "authorId": "11906336"
+        },
+        {
+          "name": "C. Fuchs",
+          "authorId": "20218541"
+        },
+        {
+          "name": "J. Pienaar",
+          "authorId": "47332927"
+        },
+        {
+          "name": "Blake C. Stacey",
+          "authorId": "32795313"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eb4816b123431b01ed33ac2919c36ebf66c2d863",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5c91f21ebb964d1f6465201e855f334eb59d6be1",
+      "title": "A Dutch-Book Trap for Misspecification",
+      "authors": [
+        {
+          "name": "Emiliano Catonini",
+          "authorId": "22280256"
+        },
+        {
+          "name": "Giacomo Lanzani",
+          "authorId": "104124540"
+        }
+      ],
+      "year": 2022,
+      "abstract": "We provide Dutch-book arguments against two forms of misspecified Bayesian learning. An agent progressively learns about a state and is offered a bet after every new discovery. We say the agent is Dutch-booked when they are willing to accept all bets, but their payoff is negative under each state either ex-post, or in expectation given the objective conditional probabilities of the discoveries (i.e., the correct data-generating process, DGP). Respectively, an agent cannot be Dutch-booked if and only if they update their beliefs with Bayes rule either from the previous belief, even using misspecified likelihood functions, or from one lexicographic prior, using the correct data-generating process. Under a large population interpretation of the DGP, this means that a population can suffer aggregate losses under all states when different individuals update their beliefs from different (lexicographic) priors, or using misspecified likelihoods. Thus, the Dutch-book argument offers a general characterization of the perils of misspecification.",
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": "2202.10121",
+      "url": "https://www.semanticscholar.org/paper/5c91f21ebb964d1f6465201e855f334eb59d6be1",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "da612e3bf64f70b7dee1ba37c9f0c80e24826ff8",
+      "title": "Hypothesis Testing, \u201cDutch Book\u201d Arguments, and Risk",
+      "authors": [
+        {
+          "name": "Daniel Malinsky",
+          "authorId": "2283543847"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1086/683341",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/da612e3bf64f70b7dee1ba37c9f0c80e24826ff8",
+      "venue": "Philosophia Scienti\u00e6",
+      "journal": {
+        "name": "Philosophy of Science",
+        "pages": "917 - 929",
+        "volume": "82"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "67d76c8999d5e8aad0e059d945a744ae94e363a8",
+      "title": "XIII\u2014Dutch Book and Accuracy Theorems",
+      "authors": [
+        {
+          "name": "Anna Mahtani",
+          "authorId": "71840883"
+        }
+      ],
+      "year": 2020,
+      "abstract": "\n Dutch book and accuracy arguments are used to justify certain rationality constraints on credence functions. Underlying these Dutch book and accuracy arguments are associated theorems, and I show that the interpretation of these theorems can vary along a range of dimensions. Given that the theorems can be interpreted in a variety of different ways, what is the status of the associated arguments? I consider three possibilities: we could aggregate the results of the differently interpreted theorems in some way, and motivate rationality constraints based on this aggregation; we could be permissive, and accept the conclusions of the Dutch book and accuracy arguments under all interpretations of the associated theorems; or we could select one uniquely correct interpretation of the Dutch book or accuracy theorem, and use that to justify certain rationality constraints. I show that each possibility faces problems, and conclude that Dutch book and accuracy theorems cannot be used to justify any principle of rationality.",
+      "citationCount": 1,
+      "doi": "10.1093/arisoc/aoaa012",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/67d76c8999d5e8aad0e059d945a744ae94e363a8",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c91ec16919ac9f64fb35f99f99f2e96f483ead81",
+      "title": "THE ARGUMENTS AND REASONING ON THE IMMATERIALITY OF THE SOUL (TAJJARUD AL-NAFS) BASED ON MULL\u0100 \u1e62ADR\u0100\u2019S PERSPECTIVE IN THE BOOK AL-SHAW\u0100HID AL-RUB\u016aBIYYAH",
+      "authors": [
+        {
+          "name": "Mahyuddin Mahyuddin",
+          "authorId": "2071889421"
+        },
+        {
+          "name": "Hamid Reza Rezaniya",
+          "authorId": "2367822170"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study examines the philosophical discourse of Mull\u0101 \u1e62adr\u0101 on the immateriality of the soul (tajarrud al-nafs), with a focus on his seminal work, al-Shaw\u0101hid al-Rub\u016bbiyyah. Mull\u0101 \u1e62adr\u0101, the founder of the transcendent philosophy (\u1e25ikmah muta\u2018\u0101liyah), developed a system rooted in foundational principles, including the primacy of existence (a\u1e63\u0101lat al-wuj\u016bd), the gradation of existence (tashk\u012bk al-wuj\u016bd), and substantial motion (\u1e25arakah jawhariyyah). His philosophical method integrates rational demonstration (burh\u0101n \u2018aql\u012b), theology (kal\u0101m), Qur\u2019anic insights, and mysticism (\u2018irf\u0101n), creating a unique and comprehensive framework. The research addresses a gap in the systematic analysis of Mull\u0101 \u1e62adr\u0101\u2019s articulation of the soul\u2019s immateriality in al-Shaw\u0101hid al-Rub\u016bbiyyah, particularly within the third chapter (mashhad), where metaphysical principles intersect with discussions on the soul. Employing a descriptive, analytical, and argumentative methodology, the study identifies 14 structured arguments presented by Mull\u0101 \u1e62adr\u0101, evaluating their coherence and strength. Findings reveal that while many arguments are robust and deeply integrated into his philosophical system, others, particularly those based on textual and testimonial evidence, require refinement. These supplementary arguments serve to reinforce philosophical conviction rather than diminish logical validity. This research contributes to Islamic metaphysics by providing a focused analysis of al-Shaw\u0101hid al-Rub\u016bbiyyah, offering insights into a relatively understudied text in Sadrian philosophy. It bridges classical Islamic thought with contemporary philosophical inquiry, highlighting the relevance of Mull\u0101 \u1e62adr\u0101\u2019s views on the immaterial soul in understanding metaphysical anthropology and eschatology.",
+      "citationCount": 0,
+      "doi": "10.20871/kpjipm.v11i1.416",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c91ec16919ac9f64fb35f99f99f2e96f483ead81",
+      "venue": "Kanz Philosophia: A Journal for Islamic Philosophy and Mysticism",
+      "journal": {
+        "name": "Kanz Philosophia: A Journal for Islamic Philosophy and Mysticism"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "425eb12353f3f8665d324e5916f04666458f70c7",
+      "title": "Dutch Book against Lewis",
+      "authors": [
+        {
+          "name": "A. W\u00f3jtowicz",
+          "authorId": "1491640962"
+        },
+        {
+          "name": "K. W\u00f3jtowicz",
+          "authorId": "49760539"
+        }
+      ],
+      "year": 2021,
+      "abstract": "According to the PCCP thesis, the probability of a conditional A\u2009\u2192\u2009C is the conditional probability P(C|A). This claim is undermined by Lewis\u2019 triviality results, which purport to show that apart from trivial cases, PCCP is not true. In the present article we show that the only rational, \u201cDutch Book-resistant\u201d extension of the agent\u2019s beliefs concerning non-conditional sentences A and C to the conditional A\u2009\u2192\u2009C is by assuming that P(A\u2009\u2192\u2009C)\u2009=\u2009P(C|A) (i.e., in accord with PCCP). In other cases a diachronic Dutch Book against the agent can be constructed. There is a tension between our findings and Lewis\u2019 results, which needs to be explained. Therefore, we present a probability space which corresponds in a natural way to the diachronic Dutch Book\u2014and which allows the conditional A\u2009\u2192\u2009C to be interpreted as an event in a mathematically sound way. It also allows to formalize the notion of conditionalizing A\u2009\u2192\u2009C on \u00acC which plays a crucial role in Lewis\u2019 proof. Our conclusion is that Lewis\u2019 proof is circular, so it cannot be considered to be a sound argument against PCCP.",
+      "citationCount": 5,
+      "doi": "10.1007/s11229-021-03199-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/425eb12353f3f8665d324e5916f04666458f70c7",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "9185 - 9217",
+        "volume": "199"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "337482ec4164a28980da575975740054d7f3a9f9",
+      "title": "A Dutch book against sleeping beauties who are evidential decision theorists",
+      "authors": [
+        {
+          "name": "Vincent Conitzer",
+          "authorId": "1749906"
+        }
+      ],
+      "year": 2015,
+      "abstract": "In the context of the Sleeping Beauty problem, it has been argued that so-called \u201chalfers\u201d can avoid Dutch book arguments by adopting evidential decision theory. I introduce a Dutch book for a variant of the Sleeping Beauty problem and argue that evidential decision theorists fall prey to it, whether they are halfers or thirders. The argument crucially requires that an action can provide evidence for what the agent would do not only at other decision points where she has exactly the same information, but also at decision points where she has different but \u201csymmetric\u201d information.",
+      "citationCount": 21,
+      "doi": "10.1007/s11229-015-0691-7",
+      "arxivId": "1705.03560",
+      "url": "https://www.semanticscholar.org/paper/337482ec4164a28980da575975740054d7f3a9f9",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "2887 - 2899",
+        "volume": "192"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

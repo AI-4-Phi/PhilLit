@@ -1,0 +1,563 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Grove sphere models belief revision",
+  "results": [
+    {
+      "paperId": "5207198e02f70e5e680f7e3d9528302181790329",
+      "title": "Truth in Fiction via Non-Standard Belief Revision",
+      "authors": [
+        {
+          "name": "Luca Incurvati",
+          "authorId": "2745077"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5207198e02f70e5e680f7e3d9528302181790329",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9d5c55eae83d3bc76631b20d51dfdb74371684da",
+      "title": "A Sphere World Semantics for Default Reasoning",
+      "authors": [
+        {
+          "name": "Jo\u00e3o C. P. da Silva",
+          "authorId": "2141348954"
+        },
+        {
+          "name": "S. R. M. Veloso",
+          "authorId": "1927775"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/3-540-59487-6_13",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9d5c55eae83d3bc76631b20d51dfdb74371684da",
+      "venue": "International Conference on Logic Programming and Non-Monotonic Reasoning",
+      "journal": {
+        "pages": "175-188"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "678681745959bd8bbfff71747db9ee4de03d983d",
+      "title": "Filters-based revision",
+      "authors": [
+        {
+          "name": "Maria Andrikopoulou",
+          "authorId": "2342157448"
+        },
+        {
+          "name": "Theofanis I. Aravanis",
+          "authorId": "103450609"
+        },
+        {
+          "name": "J. Delgrande",
+          "authorId": "1711764"
+        },
+        {
+          "name": "Panagis Karazeris",
+          "authorId": "1984237"
+        },
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/s10472-024-09963-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/678681745959bd8bbfff71747db9ee4de03d983d",
+      "venue": "Annals of Mathematics and Artificial Intelligence",
+      "journal": {
+        "name": "Annals of Mathematics and Artificial Intelligence",
+        "pages": "633 - 659",
+        "volume": "93"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "37c837c9e08e2e38eb66fbad43bf94bc3bc3470a",
+      "title": "RELATIONAL BELIEF REVISION, BROCCOLI LOGIC AND MINIMAL CONDITIONAL LOGIC",
+      "authors": [
+        {
+          "name": "P. Girard",
+          "authorId": "32207198"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/37c837c9e08e2e38eb66fbad43bf94bc3bc3470a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7d332637df5b79160c82a4de447761206c3f1053",
+      "title": "Yet More Modal Logics of Preference Change and Belief Revision",
+      "authors": [
+        {
+          "name": "V. Eijck",
+          "authorId": "74995481"
+        },
+        {
+          "name": "K. Apt",
+          "authorId": "1748061"
+        },
+        {
+          "name": "van Rooij",
+          "authorId": "1380344946"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 16,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7d332637df5b79160c82a4de447761206c3f1053",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d1487b501ae7754ca609f81f595f655fa30ff491",
+      "title": "Proposal for a Theory of Belief Revision Along the Lines of Lindstr\u00f6m and Rabinowicz",
+      "authors": [
+        {
+          "name": "K. Segerberg",
+          "authorId": "144606893"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 19,
+      "doi": "10.3233/FI-1997-32206",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d1487b501ae7754ca609f81f595f655fa30ff491",
+      "venue": "Fundamenta Informaticae",
+      "journal": {
+        "name": "Fundamenta Informaticae",
+        "pages": "183 - 191",
+        "volume": "32"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "52db3b50da659d3884fbbb28a5550a6c326873cc",
+      "title": "Belief Revision and Dynamic Logic",
+      "authors": [
+        {
+          "name": "P. Girard",
+          "authorId": "32207198"
+        },
+        {
+          "name": "H. Rott",
+          "authorId": "144145447"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 23,
+      "doi": "10.1007/978-3-319-06025-5_8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/52db3b50da659d3884fbbb28a5550a6c326873cc",
+      "venue": "Johan van Benthem on Logic and Information Dynamics",
+      "journal": {
+        "pages": "203-233"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8a73d739f0219b950f13fd93cfe6ddac0a11a6dc",
+      "title": "Belief revision and dynamic logic",
+      "authors": [
+        {
+          "name": "S.",
+          "authorId": "1462981698"
+        },
+        {
+          "name": "Smets",
+          "authorId": "2245997413"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8a73d739f0219b950f13fd93cfe6ddac0a11a6dc",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "4d1eb120dd2c00fd23287d17a9833cd8bd2ea93f",
+      "title": "Belief Revision From the Point of View of Doxastic Logic",
+      "authors": [
+        {
+          "name": "K. Segerberg",
+          "authorId": "144606893"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 110,
+      "doi": "10.1093/jigpal/3.4.535",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4d1eb120dd2c00fd23287d17a9833cd8bd2ea93f",
+      "venue": "Logic Journal of the IGPL",
+      "journal": {
+        "name": "Log. J. IGPL",
+        "pages": "535-553",
+        "volume": "3"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6203f93d89e4b680a9328bc4171ab9f01b86110c",
+      "title": "Distance Semantics for Relevance-Sensitive Belief Revision",
+      "authors": [
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        },
+        {
+          "name": "S. Chopra",
+          "authorId": "39078644"
+        },
+        {
+          "name": "N. Foo",
+          "authorId": "1749391"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 40,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6203f93d89e4b680a9328bc4171ab9f01b86110c",
+      "venue": "International Conference on Principles of Knowledge Representation and Reasoning",
+      "journal": {
+        "pages": "319-328"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a3661c35d5b1f9598f73e1349d7e0bcb2fb89520",
+      "title": "Measuring similarity in belief revision",
+      "authors": [
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        },
+        {
+          "name": "N. Foo",
+          "authorId": "1749391"
+        },
+        {
+          "name": "Abhaya C. Nayak",
+          "authorId": "2726388"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 20,
+      "doi": "10.1093/logcom/10.4.603",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a3661c35d5b1f9598f73e1349d7e0bcb2fb89520",
+      "venue": "Journal of Logic and Computation",
+      "journal": {
+        "name": "J. Log. Comput.",
+        "pages": "603-619",
+        "volume": "10"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "282a5cf28f684ca1e4d5abbbe72b9c773e22a187",
+      "title": "Semantics for Containment Belief Revision in the Case of Consistent Complete Theories",
+      "authors": [
+        {
+          "name": "Omar Doukari",
+          "authorId": "1948231"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.3233/978-1-58603-893-9-59",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/282a5cf28f684ca1e4d5abbbe72b9c773e22a187",
+      "venue": "Starting AI Researchers' Symposium",
+      "journal": {
+        "pages": "59-69"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6e99883a1aee5336b60b2d697912ec9cc368d2df",
+      "title": "The Role of Abductive Reasoning within the Process of Belief Revision",
+      "authors": [
+        {
+          "name": "M. Pagnucco",
+          "authorId": "1783801"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 71,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6e99883a1aee5336b60b2d697912ec9cc368d2df",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e89c65a421498e973835606e7c612f705ff68ca5",
+      "title": "Distance Semantics for Relevance-Sensitive Belief Revision Extended",
+      "authors": [
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        },
+        {
+          "name": "S. Chopra",
+          "authorId": "39078644"
+        },
+        {
+          "name": "N. Foo",
+          "authorId": "1749391"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e89c65a421498e973835606e7c612f705ff68ca5",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "476b80f9626d7bf6b0bfc08367e036714aa0626e",
+      "title": "Distance Semantics for Relevance-Sensitive Belief Revision Extended Abstract 1",
+      "authors": [
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        },
+        {
+          "name": "Samir Chopra",
+          "authorId": "2397782491"
+        },
+        {
+          "name": "Norman Foo",
+          "authorId": "2397781358"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/476b80f9626d7bf6b0bfc08367e036714aa0626e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1ca0117162fecbbefcffa38568c2f89eb44eb1e7",
+      "title": "Dalal's Revision without Hamming Distance",
+      "authors": [
+        {
+          "name": "Maria del Pilar Pozos Parra",
+          "authorId": "13912923"
+        },
+        {
+          "name": "Weiru Liu",
+          "authorId": "1500379841"
+        },
+        {
+          "name": "Laurent Perrussel",
+          "authorId": "1793892"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1007/978-3-642-45114-0_4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1ca0117162fecbbefcffa38568c2f89eb44eb1e7",
+      "venue": "Mexican International Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "41-53"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "919cb8b2aca8877512e6762c49701bff7c4bec83",
+      "title": "The Limit Assumption and Multiple Revision",
+      "authors": [
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 25,
+      "doi": "10.1093/logcom/14.3.355",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/919cb8b2aca8877512e6762c49701bff7c4bec83",
+      "venue": "Journal of Logic and Computation",
+      "journal": {
+        "name": "J. Log. Comput.",
+        "pages": "355-371",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e8a27413a059283f41efc9809c9bfab36a092078",
+      "title": "An Error in Grove's Proof",
+      "authors": [
+        {
+          "name": "G. Priest",
+          "authorId": "143679276"
+        },
+        {
+          "name": "Timothy J. Surendonk",
+          "authorId": "7852285"
+        },
+        {
+          "name": "Koji Tanaka",
+          "authorId": "2004289008"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e8a27413a059283f41efc9809c9bfab36a092078",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "67a6628ec6f96b18b9a2b39b1566ffb7e1b16e14",
+      "title": "Abductive Reasoning, Belief Expansion and Nonmonotonic Cesequence",
+      "authors": [
+        {
+          "name": "M. Pagnucco",
+          "authorId": "1783801"
+        },
+        {
+          "name": "Abhaya C. Nayak",
+          "authorId": "2726388"
+        },
+        {
+          "name": "N. Foo",
+          "authorId": "1749391"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/67a6628ec6f96b18b9a2b39b1566ffb7e1b16e14",
+      "venue": "Deductive Databases / Abduction in Deductive Databases",
+      "journal": {
+        "pages": "143-158"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "64279ccf7c739d5b08cf8b05cc9e2e004e56a95b",
+      "title": "Maps in Multiple Belief Change",
+      "authors": [
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        },
+        {
+          "name": "Costas D. Koutras",
+          "authorId": "1835698"
+        },
+        {
+          "name": "Mary-Anne Williams",
+          "authorId": "144826976"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1145/2362355.2362358",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/64279ccf7c739d5b08cf8b05cc9e2e004e56a95b",
+      "venue": "TOCL",
+      "journal": {
+        "name": "ACM Trans. Comput. Log.",
+        "pages": "30:1-30:23",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

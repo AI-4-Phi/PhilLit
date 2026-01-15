@@ -1,0 +1,1494 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "argumentation frameworks defeasible",
+  "results": [
+    {
+      "openalex_id": "W2897054495",
+      "doi": "10.1007/978-3-030-03098-8_33",
+      "title": "A Deontic Argumentation Framework Based on Deontic Defeasible Logic",
+      "authors": [
+        {
+          "name": "Guido Governatori",
+          "openalex_id": "A5058360953",
+          "orcid": "https://orcid.org/0000-0002-9878-2762",
+          "institutions": [
+            "Commonwealth Scientific and Industrial Research Organisation",
+            "Data61"
+          ]
+        },
+        {
+          "name": "Antonino Rotolo",
+          "openalex_id": "A5047729346",
+          "orcid": "https://orcid.org/0000-0001-5265-0660",
+          "institutions": [
+            "University of Bologna"
+          ]
+        },
+        {
+          "name": "R\u00e9gis Riveret",
+          "openalex_id": "A5084811385",
+          "orcid": "https://orcid.org/0000-0002-4736-9214",
+          "institutions": [
+            "Commonwealth Scientific and Industrial Research Organisation",
+            "Data61"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": null,
+      "cited_by_count": 9,
+      "type": "book-chapter",
+      "source": {
+        "name": "Lecture notes in computer science",
+        "type": "book series",
+        "issn": [
+          "0302-9743",
+          "1611-3349"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11585/660576"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 18,
+      "url": "https://openalex.org/W2897054495"
+    },
+    {
+      "openalex_id": "W2006555980",
+      "doi": "10.1080/0144929x.2015.1015166",
+      "title": "A defeasible reasoning framework for human mental workload representation and assessment",
+      "authors": [
+        {
+          "name": "Luca Longo",
+          "openalex_id": "A5024458365",
+          "orcid": "https://orcid.org/0000-0002-2718-5426",
+          "institutions": [
+            "Trinity College Dublin"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-03-09",
+      "abstract": "Human mental workload (MWL) has gained importance in the last few decades as an important design concept. It is a multifaceted complex construct mainly applied in cognitive sciences and has been defined in many different ways. Although measuring MWL has potential advantages in interaction and interface design, its formalisation as an operational and computational construct has not sufficiently been addressed. This research contributes to the body of knowledge by providing an extensible framework built upon defeasible reasoning, and implemented with argumentation theory (AT), in which MWL can be better defined, measured, analysed, explained and applied in different human\u2013computer interactive contexts. User studies have demonstrated how a particular instance of this framework outperformed state-of-the-art subjective MWL assessment techniques in terms of sensitivity, diagnosticity and validity. This in turn encourages further application of defeasible AT for enhancing the representation of MWL and improving the quality of its assessment.",
+      "cited_by_count": 72,
+      "type": "article",
+      "source": {
+        "name": "Behaviour and Information Technology",
+        "type": "journal",
+        "issn": [
+          "0144-929X",
+          "1362-3001"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arrow.tudublin.ie/scschcomcon/344"
+      },
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Personal Information Management and User Behavior",
+        "Usability and User Interface Design"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W2006555980"
+    },
+    {
+      "openalex_id": "W2433879910",
+      "doi": "10.1613/jair.5058",
+      "title": "Two Aspects of Relevance in Structured Argumentation: Minimality and Paraconsistency",
+      "authors": [
+        {
+          "name": "Diana Grooters",
+          "openalex_id": "A5027995368",
+          "institutions": [
+            "LifeTec Group (Netherlands)"
+          ]
+        },
+        {
+          "name": "Henry Prakken",
+          "openalex_id": "A5020760288",
+          "orcid": "https://orcid.org/0000-0002-3431-7757",
+          "institutions": [
+            "Utrecht University",
+            "University of Groningen"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-06-15",
+      "abstract": "This paper studies two issues concerning relevance in structured argumentation in the context of the ASPIC+ framework, arising from the combined use of strict and defeasible inference rules. One issue arises if the strict inference rules correspond to classical logic. A longstanding problem is how the trivialising effect of the classical Ex Falso principle can be avoided while satisfying consistency and closure postulates. In this paper, this problem is solved by disallowing chaining of strict rules, resulting in a variant of the ASPIC+ framework called ASPIC*, and then disallowing the application of strict rules to inconsistent sets of formulas. Thus in effect Rescher &amp; Manor's paraconsistent notion of weak consequence is embedded in ASPIC*. Another issue is minimality of arguments. If arguments can apply defeasible inference rules, then they cannot be required to have subset-minimal premises, since defeasible rules based on more information may well make an argument stronger. In this paper instead minimality is required of applications of strict rules throughout an argument. It is shown that under some plausible assumptions this does not affect the set of conclusions. In addition, circular arguments are in the new ASPIC* framework excluded in a way that satisfies closure and consistency postulates and that generates finitary argumentation frameworks if the knowledge base and set of defeasible rules are finite. For the latter result the exclusion of chaining of strict rules is essential. Finally, the combined results of this paper are shown to be a proper extension of classical-logic argumentation with preferences and defeasible rules.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Journal of Artificial Intelligence Research",
+        "type": "journal",
+        "issn": [
+          "1076-9757",
+          "1943-5037"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://jair.org/index.php/jair/article/download/11008/26167"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Logic, programming, and type systems"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W2433879910"
+    },
+    {
+      "openalex_id": "W2184761731",
+      "doi": "10.1016/j.artint.2015.10.005",
+      "title": "An axiomatic analysis of structured argumentation with priorities",
+      "authors": [
+        {
+          "name": "Phan Minh D\u0169ng",
+          "openalex_id": "A5111817377",
+          "institutions": [
+            "Asian Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-01",
+      "abstract": null,
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "0004-3702",
+          "1872-7921"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W2184761731"
+    },
+    {
+      "openalex_id": "W2583209614",
+      "doi": "10.1016/j.infsof.2017.01.011",
+      "title": "Using argumentation theory to analyse software practitioners\u2019 defeasible evidence, inference and belief",
+      "authors": [
+        {
+          "name": "Austen Rainer",
+          "openalex_id": "A5063087518",
+          "orcid": "https://orcid.org/0000-0001-8868-263X",
+          "institutions": [
+            "University of Canterbury"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-03",
+      "abstract": null,
+      "cited_by_count": 33,
+      "type": "article",
+      "source": {
+        "name": "Information and Software Technology",
+        "type": "journal",
+        "issn": [
+          "0950-5849",
+          "1873-6025"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Software Engineering Techniques and Practices",
+        "Software Engineering Research",
+        "Advanced Software Engineering Methodologies"
+      ],
+      "referenced_works_count": 103,
+      "url": "https://openalex.org/W2583209614"
+    },
+    {
+      "openalex_id": "W2810795263",
+      "doi": "10.1007/978-90-481-9452-0_12",
+      "title": "Defeasibility in Law",
+      "authors": [
+        {
+          "name": "Giovanni Sartor",
+          "openalex_id": "A5084837357",
+          "orcid": "https://orcid.org/0000-0003-2210-0398",
+          "institutions": [
+            "European University Institute",
+            "University of Bologna"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": null,
+      "cited_by_count": 10,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Law, Economics, and Judicial Systems"
+      ],
+      "referenced_works_count": 128,
+      "url": "https://openalex.org/W2810795263"
+    },
+    {
+      "openalex_id": "W1810223187",
+      "doi": "10.3233/aic-140627",
+      "title": "Integrating argumentation and sentiment analysis for mining opinions from Twitter",
+      "authors": [
+        {
+          "name": "Kathrin Grosse",
+          "openalex_id": "A5018930655",
+          "orcid": "https://orcid.org/0000-0002-5401-4171",
+          "institutions": [
+            "Osnabr\u00fcck University"
+          ]
+        },
+        {
+          "name": "Mar\u00eda Paula Gonz\u00e1lez",
+          "openalex_id": "A5051822446",
+          "orcid": "https://orcid.org/0000-0003-0357-2365",
+          "institutions": [
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas",
+            "Universidad Nacional del Sur"
+          ]
+        },
+        {
+          "name": "Carlos Iv\u00e1n Ches\u00f1evar",
+          "openalex_id": "A5031935884",
+          "orcid": "https://orcid.org/0000-0002-1747-5905",
+          "institutions": [
+            "Universidad Nacional del Sur",
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas"
+          ]
+        },
+        {
+          "name": "Ana Gabriela Maguitman",
+          "openalex_id": "A5075220413",
+          "orcid": "https://orcid.org/0000-0003-4912-7961",
+          "institutions": [
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas",
+            "Universidad Nacional del Sur"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-17",
+      "abstract": "Social networks have grown exponentially in use and impact on the society as a whole. In particular, microblogging platforms such as Twitter have become important tools to assess public opinion on different issues. Recently, some approaches for assessing Twitter messages have been developed, identi fying sentiments associated with relevant keywords or hashtags. However, such approaches have an important limitation, as they do not take into account contradictory and potentially inconsistent information which might emerge from relevant messages. We contend that the information made available in Twitter can be useful to extract a particular version of arguments (called \"opinions\" in our formalization) which emerge bottom-up from the social interaction associated with such messages. In this paper we present a novel framework which allows to mine opinions from Twitter based on incrementally generated queries. As a result, we will be able to obtain an \"opinion tree\", rooted in the first original query. Distinguished, conflicting elements in an opinion tree lead to so-called \"conflict trees\", which resemble dialectical trees as those used traditionally in defeasible argumentation.11This paper extends preliminary work [11] presented at the First International Conference on Agreement Technologies (AT 2012), held in Dubrovnik, Croatia, in October 2012.",
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "AI Communications",
+        "type": "journal",
+        "issn": [
+          "0921-7126",
+          "1875-8452"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://content.iospress.com:443/download/ai-communications/aic627?id=ai-communications%2Faic627"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Sentiment Analysis and Opinion Mining",
+        "Advanced Text Analysis Techniques"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W1810223187"
+    },
+    {
+      "openalex_id": "W2786382403",
+      "doi": null,
+      "title": "Abstract rule-based argumentation",
+      "authors": [
+        {
+          "name": "Sanjay Modgil",
+          "openalex_id": "A5021663592",
+          "orcid": "https://orcid.org/0000-0002-7873-8086"
+        },
+        {
+          "name": "Henry Prakken",
+          "openalex_id": "A5020760288",
+          "orcid": "https://orcid.org/0000-0002-3431-7757"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "This chapter reviews abstract rule-based approaches to argumentation, in particular the ASPIC + framework. In ASPIC + and its predecessors, going back to the seminal work of John Pollock, arguments can be formed by combining strict and defeasible inference rules and conflicts between arguments can be resolved in terms of a preference relation on arguments. This results in abstract argumentation frameworks (a set of arguments with a binary relation of defeat), so that arguments can be evaluated with the theory of abstract argumentation. First the basic ASPIC + framework is reviewed, possible ways to instantiate it are discussed and how these instantiations can satisfy closure and consistency properties. Then the relation between ASPIC + and other work in formal argumentation and nonmonotonic logic is discussed, including a review of how other approaches can be reconstructed as instantiations of ASPIC +. Further developments and variants of the basic ASPIC + framework are also reviewed, including developments with alternative or generalised notions of attack and defeat and variants with further constraints on arguments. Finally, implementations and applications of ASPIC + are briefly reviewed and some open problems and avenues for further research are discussed.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Utrecht University Repository (Utrecht University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dspace.library.uu.nl/handle/1874/377355"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Logic, programming, and type systems"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2786382403"
+    },
+    {
+      "openalex_id": "W2599244842",
+      "doi": "10.1145/3019612.3019716",
+      "title": "Reasoning by cases in structured argumentation.",
+      "authors": [
+        {
+          "name": "Mathieu Beirlaen",
+          "openalex_id": "A5004441304",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        },
+        {
+          "name": "Jesse Heyninck",
+          "openalex_id": "A5047491682",
+          "orcid": "https://orcid.org/0000-0002-3825-4052",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        },
+        {
+          "name": "Christian Stra\u00dfer",
+          "openalex_id": "A5084161385",
+          "orcid": "https://orcid.org/0000-0002-4117-7019",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-04-03",
+      "abstract": "We extend the ASPIC+ framework for structured argumentation so as to allow applications of the reasoning by cases inference scheme for defeasible arguments. Given an argument with conclusion 'A or B', an argument based on A with conclusion C, and an argument based on B with conclusion C, we allow the construction of an argument with conclusion C. Our framework leads to different results than other approaches in non-monotonic logic for dealing with disjunctive information, such as disjunctive default theory or approaches based on the OR-rule (which allows to derive a defeasible rule 'If (A or B) then C', given two defeasible rules 'If A then C' and 'If B then C'). We raise new questions regarding the subtleties of reasoning defeasibly with disjunctive information, and show that its formalization is more intricate than one would presume.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Logic, Reasoning, and Knowledge",
+        "Multi-Agent Systems and Negotiation",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2599244842"
+    },
+    {
+      "openalex_id": "W2811181315",
+      "doi": "10.1007/978-90-481-9452-0_18",
+      "title": "Statutory Interpretation as Argumentation",
+      "authors": [
+        {
+          "name": "Douglas Walton",
+          "openalex_id": "A5085011444",
+          "orcid": "https://orcid.org/0000-0003-0728-1370",
+          "institutions": [
+            "University of Windsor"
+          ]
+        },
+        {
+          "name": "Giovanni Sartor",
+          "openalex_id": "A5084837357",
+          "orcid": "https://orcid.org/0000-0003-2210-0398",
+          "institutions": [
+            "European University Institute",
+            "University of Bologna"
+          ]
+        },
+        {
+          "name": "Fabrizio Macagno",
+          "openalex_id": "A5080044649",
+          "orcid": "https://orcid.org/0000-0003-0712-421X",
+          "institutions": [
+            "Universidade Nova de Lisboa"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": null,
+      "cited_by_count": 19,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Artificial Intelligence in Law",
+        "Logic, Reasoning, and Knowledge"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W2811181315"
+    },
+    {
+      "openalex_id": "W2618594477",
+      "doi": null,
+      "title": "Rationality postulates: applying argumentation theory for non-monotonic reasoning",
+      "authors": [
+        {
+          "name": "Martin Caminada",
+          "openalex_id": "A5009023649",
+          "orcid": "https://orcid.org/0000-0002-7498-0238"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-30",
+      "abstract": "The current review paper examines how to apply Dung\u2019s theory of abstract&#13;\\nargumentation to define meaningful forms of non-monotonic inference. The idea&#13;\\nis that arguments are constructed using strict and defeasible inference rules, and&#13;\\nthat it is then examined how these arguments attack (or defeat) each other. The&#13;\\nthus defined argumentation framework provides the basis for applying Dungstyle&#13;\\nsemantics, yielding a number of extensions of arguments. As each of the&#13;\\nconstructed arguments has a conclusion, an extension of arguments has an associated&#13;\\nextension of conclusions. It are these extensions of conclusions that we&#13;\\nare interested in. In particular, we ask ourselves whether each of these extensions&#13;\\nis (1) consistent, (2) closed under the strict inference rules and (3) free&#13;\\nfrom undesired interference. We examine the current generation of techniques&#13;\\nto satisfy these properties, and identify some research issues that are yet to be&#13;\\ndealt with.",
+      "cited_by_count": 22,
+      "type": "book-chapter",
+      "source": {
+        "name": "Spectrum Research Repository (Concordia University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2618594477"
+    },
+    {
+      "openalex_id": "W2515518466",
+      "doi": "10.1111/phpr.12355",
+      "title": "Motherhood and Mistakes about Defeasible Duties to Benefit",
+      "authors": [
+        {
+          "name": "Fiona Woollard",
+          "openalex_id": "A5090847156",
+          "orcid": "https://orcid.org/0000-0001-5144-3379",
+          "institutions": [
+            "University of Southampton"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-15",
+      "abstract": "Discussion of the behaviour of pregnant women and mothers, in academic literature, medical advice given to mothers, mainstream media and social media, assumes that a mother who fails to do something to benefit her child is liable for moral criticism unless she can provide sufficient countervailing considerations to justify her decision. I reconstruct the normally implicit reasoning that leads to this assumption and show that it is mistaken. First, I show that the discussion assumes that if any action might benefit her child, the mother has a defeasible duty to perform that action. I suggest that this assumption is implicitly supported by two arguments but that each argument is unsound. The first argument conflates moral reasons and defeasible duties; the second misunderstands the scope of a defeasible duty to benefit. This argument has important practical and theoretical implications: practically, it provides a response to a highly damaging discourse on maternal behaviour; theoretically, it provides the framework for a clearer understanding of the scope and nature of defeasible duties to benefit.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Philosophy and Phenomenological Research",
+        "type": "journal",
+        "issn": [
+          "0031-8205",
+          "1933-1592"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Legal Issues in Pediatric Healthcare",
+        "Ethics in medical practice",
+        "Reproductive Health and Technologies"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W2515518466"
+    },
+    {
+      "openalex_id": "W2334111892",
+      "doi": "10.1093/logcom/exv004",
+      "title": "Instantiating rule-based defeasible theories in abstract dialectical frameworks and beyond",
+      "authors": [
+        {
+          "name": "Hannes Stra\u00df",
+          "openalex_id": "A5072285823",
+          "institutions": [
+            "Leipzig University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-11",
+      "abstract": "We present a translation from defeasible theory bases to abstract dialectical frameworks, a recent generalization of abstract argumentation frameworks. Using several problematic examples from the literature, we first show how our translation addresses important issues of existing approaches. We then prove that the translated frameworks satisfy the rationality postulates closure and direct/indirect consistency. Furthermore, the frameworks can detect inconsistencies in the set of strict inference rules and cyclic (strict and defeasible) supports among literals. We also show that the translation involves at most a quadratic blowup and is, therefore, effectively and efficiently computable. In the last part of the article, we also define a direct, possible-worlds semantics for defeasible theory bases, which illustrates the technical difficulties arising in this process. In particular, the possible-worlds semantics is eager to apply defeasible rules, which is in contrast to the previously studied translation-based approaches.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "Journal of Logic and Computation",
+        "type": "journal",
+        "issn": [
+          "0955-792X",
+          "1465-363X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Logic, Reasoning, and Knowledge",
+        "Multi-Agent Systems and Negotiation",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2334111892"
+    },
+    {
+      "openalex_id": "W619457766",
+      "doi": "10.1007/978-3-319-00792-2",
+      "title": "Adaptive Logics for Defeasible Reasoning: Applications in Argumentation, Normative Reasoning and Default Reasoning",
+      "authors": [
+        {
+          "name": "Christian Straer",
+          "openalex_id": "A5012218891"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-27",
+      "abstract": null,
+      "cited_by_count": 10,
+      "type": "book",
+      "source": {
+        "name": "CERN Document Server (European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://ci.nii.ac.jp/ncid/BB15222889"
+      },
+      "topics": [
+        "Logic, Reasoning, and Knowledge",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W619457766"
+    },
+    {
+      "openalex_id": "W3178176274",
+      "doi": "10.1016/j.artint.2021.103553",
+      "title": "Incremental computation for structured argumentation over dynamic DeLP knowledge bases",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "openalex_id": "A5022559920",
+          "orcid": "https://orcid.org/0000-0002-7280-4759",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Sergio Greco",
+          "openalex_id": "A5031964906",
+          "orcid": "https://orcid.org/0000-0003-2966-3484",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Francesco Parisi",
+          "openalex_id": "A5047977256",
+          "orcid": "https://orcid.org/0000-0001-9977-1355",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Gerardo I. Simari",
+          "openalex_id": "A5079109547",
+          "orcid": "https://orcid.org/0000-0003-3185-4992",
+          "institutions": [
+            "Universidad Nacional del Sur",
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas"
+          ]
+        },
+        {
+          "name": "Guillermo Ricardo Simari",
+          "openalex_id": "A5019186384",
+          "orcid": "https://orcid.org/0000-0001-6247-0428",
+          "institutions": [
+            "Universidad Nacional del Sur",
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas"
+          ]
+        },
+        {
+          "name": "Guillermo R. Simari",
+          "openalex_id": "",
+          "institutions": [
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas",
+            "Universidad Nacional del Sur"
+          ]
+        },
+        {
+          "name": "Guillermo R. Simari",
+          "openalex_id": "",
+          "institutions": [
+            "Universidad Nacional del Sur",
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-07-05",
+      "abstract": null,
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "0004-3702",
+          "1872-7921"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 80,
+      "url": "https://openalex.org/W3178176274"
+    },
+    {
+      "openalex_id": "W2132698445",
+      "doi": "10.1016/j.eswa.2015.09.027",
+      "title": "Assuring safety in air traffic control systems with argumentation and model checking",
+      "authors": [
+        {
+          "name": "Sergio Alejandro G\u00f3mez",
+          "openalex_id": "A5010779954",
+          "orcid": "https://orcid.org/0000-0002-5943-9187",
+          "institutions": [
+            "Universidad Nacional del Sur"
+          ]
+        },
+        {
+          "name": "Anca Goron",
+          "openalex_id": "A5033265985",
+          "institutions": [
+            "Technical University of Cluj-Napoca"
+          ]
+        },
+        {
+          "name": "Adrian Groza",
+          "openalex_id": "A5085701846",
+          "orcid": "https://orcid.org/0000-0003-0143-5631",
+          "institutions": [
+            "Technical University of Cluj-Napoca"
+          ]
+        },
+        {
+          "name": "Ioan Alfred Le\u0163ia",
+          "openalex_id": "A5069914349",
+          "institutions": [
+            "Technical University of Cluj-Napoca"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-09-30",
+      "abstract": null,
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Expert Systems with Applications",
+        "type": "journal",
+        "issn": [
+          "0957-4174",
+          "1873-6793"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Formal Methods in Verification"
+      ],
+      "referenced_works_count": 130,
+      "url": "https://openalex.org/W2132698445"
+    },
+    {
+      "openalex_id": "W1997668051",
+      "doi": "10.1080/19462166.2014.1002535",
+      "title": "Senses of \u2018argument\u2019 in instantiated argumentation frameworks",
+      "authors": [
+        {
+          "name": "Adam Wyner",
+          "openalex_id": "A5063413613",
+          "orcid": "https://orcid.org/0000-0002-2958-3428",
+          "institutions": [
+            "University of Aberdeen"
+          ]
+        },
+        {
+          "name": "Trevor Bench\u2010Capon",
+          "openalex_id": "A5074094975",
+          "orcid": "https://orcid.org/0000-0003-3975-4398",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Paul E. Dunne",
+          "openalex_id": "A5006740937",
+          "orcid": "https://orcid.org/0000-0002-6033-3742",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Federico Cerutti",
+          "openalex_id": "A5043937484",
+          "orcid": "https://orcid.org/0000-0003-0755-0358",
+          "institutions": [
+            "University of Aberdeen"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-02",
+      "abstract": "Argumentation Frameworks (AFs) provide a fruitful basis for exploring issues of defeasible reasoning. Their power largely derives from the abstract nature of the arguments within the framework, where arguments are atomic nodes in an undifferentiated relation of attack. This abstraction conceals different senses of argument, namely a single step reason to a claim, a series of reasoning steps to a single claim, reasoning steps for and against a claim. Concrete instantiations encounter difficulties and complexities as a result of conflating these senses. To distinguish them, we provide an approach to instantiating AFs in which the nodes are restricted to literals and rules, encoding the underlying theory directly. Arguments in these senses emerge from this framework as distinctive structures of nodes and paths. As a consequence of the approach, we reduce the effort of computing argumentation extensions, which is in contrast to other approaches. Our framework retains the theoretical and computational benefits of an abstract AF, distinguishes senses of argument, and efficiently computes extensions. Given the mixed intended audience of the paper, the style of presentation is semi-formal.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Argument & Computation",
+        "type": "journal",
+        "issn": [
+          "1946-2166",
+          "1946-2174"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://content.iospress.com:443/download/argument-and-computation/1002535?id=argument-and-computation%2F1002535"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W1997668051"
+    },
+    {
+      "openalex_id": "W3011668928",
+      "doi": "10.1016/j.ijar.2020.02.011",
+      "title": "Simple contrapositive assumption-based argumentation frameworks",
+      "authors": [
+        {
+          "name": "Jesse Heyninck",
+          "openalex_id": "A5047491682",
+          "orcid": "https://orcid.org/0000-0002-3825-4052",
+          "institutions": [
+            "TU Dortmund University"
+          ]
+        },
+        {
+          "name": "Ofer Arieli",
+          "openalex_id": "A5028643056",
+          "orcid": "https://orcid.org/0000-0002-6588-886X",
+          "institutions": [
+            "Academic College of Tel Aviv-Yafo"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-09",
+      "abstract": null,
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Approximate Reasoning",
+        "type": "journal",
+        "issn": [
+          "0888-613X",
+          "1873-4731"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W3011668928"
+    },
+    {
+      "openalex_id": "W2893697377",
+      "doi": "10.3233/978-1-61499-906-5-9",
+      "title": "On the Semantics of Simple Contrapositive Assumption-Based Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "Jesse Heyninck",
+          "openalex_id": "A5047491682",
+          "orcid": "https://orcid.org/0000-0002-3825-4052",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        },
+        {
+          "name": "Ofer Arieli",
+          "openalex_id": "A5028643056",
+          "orcid": "https://orcid.org/0000-0002-6588-886X"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": "We investigate Dung's semantics for assumption-based frameworks (ABFs) that are induced by contrapositive logics. We show that unless the falsity propositional constant is part of the defeasible assumptions, the grounded semantics lacks most of the desirable properties it has in abstract argumentation frameworks (AAFs), and that for simple definitions of the contrariness operator and the attacks relations, preferred and stable semantics are reduced to naive semantics. We also show the tight relations of this framework to reasoning with maximally consistent sets, and consider some properties of the induced entailments, such as being cumulative or preferential relations that satisfy non-interference.",
+      "cited_by_count": 14,
+      "type": "book-chapter",
+      "source": {
+        "name": "Frontiers in artificial intelligence and applications",
+        "type": "journal",
+        "issn": [
+          "0922-6389",
+          "1879-8314"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Business Process Modeling and Analysis",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2893697377"
+    },
+    {
+      "openalex_id": "W2812194662",
+      "doi": "10.1145/3216122.3216162",
+      "title": "Computing Extensions of Dynamic Abstract Argumentation Frameworks with Second-Order Attacks",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "openalex_id": "A5022559920",
+          "orcid": "https://orcid.org/0000-0002-7280-4759",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Sergio Greco",
+          "openalex_id": "A5031964906",
+          "orcid": "https://orcid.org/0000-0003-2966-3484",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Francesco Parisi",
+          "openalex_id": "A5047977256",
+          "orcid": "https://orcid.org/0000-0001-9977-1355",
+          "institutions": [
+            "University of Calabria"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": "Extended argumentation frameworks (EAFs) extend Dung's argumentation frameworks (AFs) to represent a kind of defeasible attack (by relying on the concept of second-order attack), in addition to the Dung's classical notion of attack between arguments. EAFs can be profitably used to model disputes between agents, with the aim of deciding the sets of arguments (called extensions) that should be accepted to support a point of view in a discussion. However, since new arguments and attacks are often introduced to take into account new available knowledge, EAFs as well as their extensions change over the time.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Business Process Modeling and Analysis",
+        "Logic, Reasoning, and Knowledge"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W2812194662"
+    },
+    {
+      "openalex_id": "W2741618966",
+      "doi": "10.24963/ijcai.2017/151",
+      "title": "Revisiting Unrestricted Rebut and Preferences in Structured Argumentation.",
+      "authors": [
+        {
+          "name": "Jesse Heyninck",
+          "openalex_id": "A5047491682",
+          "orcid": "https://orcid.org/0000-0002-3825-4052",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        },
+        {
+          "name": "Christian Stra\u00dfer",
+          "openalex_id": "A5084161385",
+          "orcid": "https://orcid.org/0000-0002-4117-7019",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-28",
+      "abstract": "In structured argumentation frameworks such as ASPIC+, rebuts are only allowed in conclusions produced by defeasible rules. This has been criticized as counter-intuitive especially in dialectical contexts. In this paper we show that ASPIC-, a system allowing for unrestricted rebuts, suffers from contamination problems. We remedy this shortcoming by generalizing the attack rule of unrestricted rebut. Our resulting system satisfies the usual rationality postulates for prioritized rule bases.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.ijcai.org/proceedings/2017/0151.pdf"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Business Process Modeling and Analysis"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W2741618966"
+    },
+    {
+      "openalex_id": "W3040208666",
+      "doi": "10.3233/aac-200903",
+      "title": "Rationality and maximal consistent sets for a\u00a0fragment of ASPIC+ without undercut",
+      "authors": [
+        {
+          "name": "Jesse Heyninck",
+          "openalex_id": "A5047491682",
+          "orcid": "https://orcid.org/0000-0002-3825-4052",
+          "institutions": [
+            "TU Dortmund University"
+          ]
+        },
+        {
+          "name": "Christian Stra\u00dfer",
+          "openalex_id": "A5084161385",
+          "orcid": "https://orcid.org/0000-0002-4117-7019",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-03",
+      "abstract": "Structured argumentation formalisms, such as [Formula: see text], offer a formal model of defeasible reasoning. Usually such formalisms are highly parametrized and modular in order to provide a unifying framework in which different forms of reasoning can be expressed. This generality comes at the price that, in their most general form, formalisms such as [Formula: see text] do not satisfy important rationality postulates, such as non-interference. Similarly, links to other forms of knowledge representation, such as reasoning with maximal consistent sets of rules, are insufficiently studied for [Formula: see text] although such links have been established for other, less complex forms of structured argumentation where defeasible rules are absent. Clearly, for a formal model of defeasible reasoning it is important to understand for which range of parameters the formalism (a) displays a behavior that adheres to common standards of consistency, logical closure and logical relevance and (b) can be adequately described in terms of other well-known forms of knowledge representation. In this paper we answer this question positively for a fragment of [Formula: see text] without the attack form undercut by showing that it satisfies all standard rationality postulates of structured argumentation under stable and preferred semantics and is adequate for reasoning with maximal consistent sets of defeasible rules. The study is general in that we do not impose any other requirements on the strict rules than to be contrapositable and propositional and in that we also consider priorities among defeasible rules, as long as they are ordered by a total preorder and lifted by weakest link. In this way we generalize previous similar results for other structured argumentation frameworks and so shed further light on the close relations between assumption-based argumentation and [Formula: see text].",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Argument & Computation",
+        "type": "journal",
+        "issn": [
+          "1946-2166",
+          "1946-2174"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://content.iospress.com:443/download/argument-and-computation/aac200903?id=argument-and-computation%2Faac200903"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Logic, programming, and type systems"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W3040208666"
+    },
+    {
+      "openalex_id": "W3014789850",
+      "doi": "10.1007/s11225-020-09906-1",
+      "title": "A Generalized Proof-Theoretic Approach to Logical Argumentation Based on Hypersequents",
+      "authors": [
+        {
+          "name": "AnneMarie Borg",
+          "openalex_id": "A5063927003",
+          "orcid": "https://orcid.org/0000-0002-7204-6046",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Christian Stra\u00dfer",
+          "openalex_id": "A5084161385",
+          "orcid": "https://orcid.org/0000-0002-4117-7019",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        },
+        {
+          "name": "Ofer Arieli",
+          "openalex_id": "A5028643056",
+          "orcid": "https://orcid.org/0000-0002-6588-886X",
+          "institutions": [
+            "Academic College of Tel Aviv-Yafo"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-02",
+      "abstract": null,
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Studia Logica",
+        "type": "journal",
+        "issn": [
+          "0039-3215",
+          "1572-8730"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11225-020-09906-1.pdf"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Logic, programming, and type systems"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W3014789850"
+    },
+    {
+      "openalex_id": "W2787097606",
+      "doi": "10.1007/s10472-015-9483-5",
+      "title": "Belief revision in structured probabilistic argumentation",
+      "authors": [
+        {
+          "name": "Paulo Shakarian",
+          "openalex_id": "A5081115472",
+          "orcid": "https://orcid.org/0000-0002-3159-4660",
+          "institutions": [
+            "Arizona State University"
+          ]
+        },
+        {
+          "name": "Gerardo I. Simari",
+          "openalex_id": "A5079109547",
+          "orcid": "https://orcid.org/0000-0003-3185-4992",
+          "institutions": [
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas",
+            "Universidad Nacional del Sur"
+          ]
+        },
+        {
+          "name": "Geoffrey Moores",
+          "openalex_id": "A5004894056",
+          "institutions": [
+            "United States Military Academy"
+          ]
+        },
+        {
+          "name": "Damon Paulo",
+          "openalex_id": "A5037065294",
+          "institutions": [
+            "United States Military Academy"
+          ]
+        },
+        {
+          "name": "Simon Parsons",
+          "openalex_id": "A5042580769",
+          "orcid": "https://orcid.org/0000-0002-8425-9065",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Marcelo Alejandro Falappa",
+          "openalex_id": "A5028916487",
+          "orcid": "https://orcid.org/0000-0002-3863-2893",
+          "institutions": [
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas",
+            "Universidad Nacional del Sur"
+          ]
+        },
+        {
+          "name": "Ashkan Aleali",
+          "openalex_id": "A5029781744",
+          "institutions": [
+            "Arizona State University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-09-25",
+      "abstract": null,
+      "cited_by_count": 28,
+      "type": "article",
+      "source": {
+        "name": "Annals of Mathematics and Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "1012-2443",
+          "1573-7470"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://kclpure.kcl.ac.uk/ws/files/98412990/amai3.pdf"
+      },
+      "topics": [
+        "Logic, Reasoning, and Knowledge",
+        "Multi-Agent Systems and Negotiation",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W2787097606"
+    },
+    {
+      "openalex_id": "W2946214736",
+      "doi": "10.1007/978-3-030-20528-7_7",
+      "title": "Simple Contrapositive Assumption-Based Frameworks",
+      "authors": [
+        {
+          "name": "Jesse Heyninck",
+          "openalex_id": "A5047491682",
+          "orcid": "https://orcid.org/0000-0002-3825-4052",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        },
+        {
+          "name": "Ofer Arieli",
+          "openalex_id": "A5028643056",
+          "orcid": "https://orcid.org/0000-0002-6588-886X",
+          "institutions": [
+            "Academic College of Tel Aviv-Yafo"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": null,
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": {
+        "name": "Lecture notes in computer science",
+        "type": "book series",
+        "issn": [
+          "0302-9743",
+          "1611-3349"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Logic, Reasoning, and Knowledge",
+        "Multi-Agent Systems and Negotiation",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W2946214736"
+    },
+    {
+      "openalex_id": "W2338826991",
+      "doi": "10.48550/arxiv.1604.00162",
+      "title": "Relations between assumption-based approaches in nonmonotonic logic and formal argumentation",
+      "authors": [
+        {
+          "name": "Jesse Heyninck",
+          "openalex_id": "A5047491682",
+          "orcid": "https://orcid.org/0000-0002-3825-4052"
+        },
+        {
+          "name": "Christian Stra\u00dfer",
+          "openalex_id": "A5084161385",
+          "orcid": "https://orcid.org/0000-0002-4117-7019"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-04-01",
+      "abstract": "In this paper we make a contribution to the unification of formal models of defeasible reasoning. We present several translations between formal argumentation frameworks and nonmonotonic logics for reasoning with plausible assumptions. More specifically, we translate adaptive logics into assumption-based argumentation and ASPIC+, ASPIC+ into assumption-based argumentation and a fragment of assumption-based argumentation into adaptive logics. Adaptive logics are closely related to Makinson's default assumptions and to a significant class of systems within the tradition of preferential semantics in the vein of KLM and Shoham. Thus, our results also provide close links between formal argumentation and the latter approaches.",
+      "cited_by_count": 10,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1604.00162"
+      },
+      "topics": [
+        "Logic, Reasoning, and Knowledge",
+        "Multi-Agent Systems and Negotiation",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W2338826991"
+    },
+    {
+      "openalex_id": "W4386422794",
+      "doi": "10.3389/frai.2023.1130559",
+      "title": "Argumentation and explanation in the law",
+      "authors": [
+        {
+          "name": "Antonino Rotolo",
+          "openalex_id": "A5047729346",
+          "orcid": "https://orcid.org/0000-0001-5265-0660",
+          "institutions": [
+            "University of Bologna"
+          ]
+        },
+        {
+          "name": "Giovanni Sartor",
+          "openalex_id": "A5084837357",
+          "orcid": "https://orcid.org/0000-0003-2210-0398",
+          "institutions": [
+            "University of Bologna",
+            "European University Institute"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-04",
+      "abstract": "This article investigates the conceptual connection between argumentation and explanation in the law and provides a formal account of it. To do so, the methods used are conceptual analysis from legal theory and formal argumentation from AI. The contribution and results are twofold. On the one hand, we offer a critical reconstruction of the concept of legal argument, justification, and explanation of decision-making as it has been elaborated in legal theory and, above all, in AI and law. On the other hand, we propose some definitions of explanation in the context of formal legal argumentation, showing a connection between formal justification and explanation. We also investigate the notion of stable normative explanation developed elsewhere in Defeasible Logic and extend some complexity results. Our contribution is thus mainly conceptual, and it is meant to show how notions of explanation from literature on explainable AI and legal theory can be modeled in an argumentation framework with structured arguments.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "2624-8212"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/frai.2023.1130559/pdf?isPublishedV2=False"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Artificial Intelligence in Law",
+        "Logic, Reasoning, and Knowledge"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W4386422794"
+    },
+    {
+      "openalex_id": "W2966832951",
+      "doi": "10.1007/s10472-019-09660-8",
+      "title": "Practical reasoning using values: an argumentative approach based on a hierarchy of values",
+      "authors": [
+        {
+          "name": "Juan Carlos Teze",
+          "openalex_id": "A5052927657",
+          "orcid": "https://orcid.org/0000-0001-7439-3538",
+          "institutions": [
+            "Universidad Nacional de Entre R\u00edos",
+            "Universidad Nacional del Sur"
+          ]
+        },
+        {
+          "name": "Antoni Perell\u00f3-Moragues",
+          "openalex_id": "A5024993887",
+          "institutions": [
+            "Artificial Intelligence Research Institute"
+          ]
+        },
+        {
+          "name": "Llu\u0131\u0301s Godo",
+          "openalex_id": "A5072818908",
+          "orcid": "https://orcid.org/0000-0002-6929-3126",
+          "institutions": [
+            "Artificial Intelligence Research Institute"
+          ]
+        },
+        {
+          "name": "Pablo Noriega",
+          "openalex_id": "A5004237789",
+          "orcid": "https://orcid.org/0000-0003-1317-2541",
+          "institutions": [
+            "Artificial Intelligence Research Institute"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-06",
+      "abstract": null,
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Annals of Mathematics and Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "1012-2443",
+          "1573-7470"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Logic, Reasoning, and Knowledge",
+        "Artificial Intelligence in Law"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2966832951"
+    },
+    {
+      "openalex_id": "W2914736422",
+      "doi": "10.3233/ia-180002",
+      "title": "A meta-argumentation approach for the efficient computation of stable and preferred extensions in dynamic bipolar argumentation frameworks",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "openalex_id": "A5022559920",
+          "orcid": "https://orcid.org/0000-0002-7280-4759",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Sergio Greco",
+          "openalex_id": "A5031964906",
+          "orcid": "https://orcid.org/0000-0003-2966-3484",
+          "institutions": [
+            "University of Calabria"
+          ]
+        },
+        {
+          "name": "Francesco Parisi",
+          "openalex_id": "A5047977256",
+          "orcid": "https://orcid.org/0000-0001-9977-1355",
+          "institutions": [
+            "University of Calabria"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-28",
+      "abstract": "Bipolar argumentation frameworks (BAFs) extend Dung's argumentation frameworks to explicitly represent the notion of support between arguments, in addition to that of attack. BAFs can be profitably used to model disputes between two or more agents, with the aim of deciding the sets of arguments tha t should be accepted to support a point of view in a discussion. However, since new arguments, attacks, and supports are often introduced to take into account new available knowledge, BAFs as well as the set of accepted arguments (under a given semantics) change over the time. In this paper we first tackle the problem of efficiently recomputing sets of accepted arguments of dynamic BAFs (under the preferred and stable semantics). Focusing on a deductive interpretation of the support relation, we introduce an incremental approach that, given an initial BAF, an initial extension for it, and an update, computes an extension of the updated BAF. This is achieved by introducing a meta-argumentation transformation according to which an initial BAF, as well as its extension and an update, are transformed into a plain argumentation framework (AF) with a suitable initial extension and update. Thanks to the use of the meta-argumentation intermediate level, our approach is able to incorporate existing AF-solvers and an incremental technique for plain AFs in order to compute an extension of the updated BAF. Moreover, our approach can be seamlessly applied to a more general form of BAFs, namely Extended Bipolar Argumentation Frameworks (EAFs), where defeasible supports and defeats are modelled by means of second-order attacks (i.e., attacks toward elements of the support or attack relation). We experimentally validated our approach on both BAFs and EAFs. The experiments showed that, on average, our technique is almost 100 times faster than computing extensions of updated BAFs or EAFs from scratch.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Intelligenza Artificiale",
+        "type": "journal",
+        "issn": [
+          "1724-8035",
+          "2211-0097"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Business Process Modeling and Analysis",
+        "Service-Oriented Architecture and Web Services"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2914736422"
+    },
+    {
+      "openalex_id": "W2492947247",
+      "doi": "10.1093/acprof:oso/9780198715696.003.0008",
+      "title": "Breaking the Chain",
+      "authors": [
+        {
+          "name": "Elia Zardini",
+          "openalex_id": "A5052003451",
+          "orcid": "https://orcid.org/0000-0001-9898-4199"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-05-01",
+      "abstract": "Abstract This chapter concerns logics that restrict the transitivity property of consequence. The chapter canvasses a range of philosophically interesting non-transitive consequence relations, then discusses of two very influential objections to the philosophical use of non-transitive consequence relations. The chapter argues that one can interpret non-transitive logics as a hybrid, joining important aspects of the metaphysics characteristic of deductive consequence relations as opposed to defeasible ones (i.e. the guarantee of truth preservation) with important aspects of the normativity characteristic of defeasible consequence relations as opposed to deductive ones (i.e. the relevance of the premises' pedigree to the normative force of a valid argument). The chapter closes by considering the behaviour of closure notions (such as theories, worlds and situations) in a non-transitive framework.",
+      "cited_by_count": 9,
+      "type": "book-chapter",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2492947247"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

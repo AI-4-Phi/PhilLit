@@ -1,0 +1,128 @@
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "iterated belief revision",
+  "results": [
+    {
+      "title": "S\u00e9bastien Konieczny & Ram\u00f3n Pino P\u00e9rez, A framework for iterated revision",
+      "url": "https://philpapers.org/rec/KONAFF",
+      "philpapers_id": "KONAFF",
+      "snippet": "They obey what we call the principle of strong primacy of update: when one revises his beliefs by a new evidence, then all possible worlds that satisfy this new evidence become more reliable than those that do not. We show that those operators have a satisfying behaviour concerning the iteration of the revision process.",
+      "page_age": null
+    },
+    {
+      "title": "Robert Stalnaker, Iterated Belief Revision",
+      "url": "https://philpapers.org/rec/STAIBR-2",
+      "philpapers_id": "STAIBR",
+      "snippet": "This is a discussion of the problem of extending the basic AGM belief revision theory to iterated belief revision: the problem of formulating rules, not only for revising a basic belief state in response to potential new information, but also for revising one\u2019s revision rules in response to potential new information.",
+      "page_age": null
+    },
+    {
+      "title": "Adnan Darwiche & Judea Pearl, On the logic of iterated belief revision",
+      "url": "https://philpapers.org/rec/DAROTL",
+      "philpapers_id": "DAROTL",
+      "snippet": "We also show that a simple modification ... allow belief revision to be a function of epistemic states. We establish a model-based representation theorem which characterizes the proposed postulates and constrains, in turn, the way in which entrenchment orderings may be transformed under iterated belief ...",
+      "page_age": null
+    },
+    {
+      "title": "Kevin T. Kelly, Iterated belief revision, reliability, and inductive amnesia",
+      "url": "https://philpapers.org/rec/KELIBR",
+      "philpapers_id": "KELIBR",
+      "snippet": "Belief revision theory concerns methods for reformulating an agent&#x27;s epistemic state when the agent&#x27;s beliefs are refuted by new information. The usual guiding principle in the design of such methods is ...",
+      "page_age": null
+    },
+    {
+      "title": "Sven Ove Hansson, Iterated Descriptor Revision and the Logic of Ramsey Test Conditionals",
+      "url": "https://philpapers.org/rec/HANIDR-2",
+      "philpapers_id": "HANIDR",
+      "snippet": "In addition to standard Ramsey test conditionals, a more general variant of epistemic conditionals is defined, representing statements of the form \u201dif the belief state is changed to satisfy condition A then it will satisfy condition B\u201d. An axiomatic characterization of such descriptor conditionals is presented. It is related in intricate ways to the KLM postulates for cumulative reasoning. ... Descriptor revision Iterated revision Conditionals Darwiche-Pearl postulates Ramsey test Cumulative reasoning",
+      "page_age": null
+    },
+    {
+      "title": "Jake Chandler & Richard Booth, On Strengthening the Logic of Iterated Belief Revision: Proper Ordinal Interval Operators",
+      "url": "https://philpapers.org/rec/CHAOST-2",
+      "philpapers_id": "CHAOST",
+      "snippet": "We show that operators from the resulting family, which subsumes both lexicographic and restrained revision, can be represented as relating belief states associated with a \u2018proper ordinal interval\u2019 (POI) assignment, a structure more fine-grained than a simple ordering of worlds. We close the paper by noting that these operators satisfy iterated versions of many AGM era postulates, including Superexpansion, that are not sound for admissible operators in general.",
+      "page_age": null
+    },
+    {
+      "title": "Alexandru Baltag, Nina Gierasimczuk & Sonja Smets, Truth-Tracking by Belief Revision",
+      "url": "https://philpapers.org/rec/BALTBB",
+      "philpapers_id": "BALTBB",
+      "snippet": "We study the learning power of iterated belief revision methods. Successful learning is understood as convergence to correct, i.e., true, beliefs. We focus on the issue of universality: whether or not a particular belief revision method is able to learn everything that in principle is learnable.",
+      "page_age": null
+    },
+    {
+      "title": "Emil Weydert, Conditional Ranking Revision: Iterated Revision with Sets of Conditionals",
+      "url": "https://philpapers.org/rec/WEYCRR",
+      "philpapers_id": "WEYCRR",
+      "snippet": "In the context of a general framework for belief dynamics which interprets revision as doxastic constraint satisfaction, we discuss a proposal for revising quasi-probabilistic belief measures with finite sets of graded conditionals. The belief states are ranking measures with divisible values (generalizing Spohn\u2019s epistemology), and the conditionals are interpreted as ranking constraints.",
+      "page_age": null
+    },
+    {
+      "title": "Jake Chandler & Richard Booth, Elementary Belief Revision Operators",
+      "url": "https://philpapers.org/rec/CHAEBR",
+      "philpapers_id": "CHAEBR",
+      "snippet": "In this paper, we show that it is satisfaction of an additional principle of \u201cIndependence of Irrelevant Alternatives\u201d, inspired by the literature on Social Choice, that unites and sets apart our three \u201celementary\u201d revision operators. A parallel treatment of iterated belief contraction is also given, yielding a family of elementary contraction operators that includes, besides the well-known \u201cconservative\u201d and \u201cmoderate\u201d operators, a new contraction operator that is related to restrained revision.",
+      "page_age": null
+    },
+    {
+      "title": "Laura Giordano, Valentina Gliozzi & Nicola Olivetti, Iterated belief revision and conditional logic",
+      "url": "https://philpapers.org/rec/GIOIBR",
+      "philpapers_id": "GIOIBR",
+      "snippet": "In this paper we propose a conditional logic called IBC to represent iterated belief revision systems. We propose a set of postulates for iterated revision which are a small variant of Darwiche and Pearl&#x27;&#x27;s ones. The conditional logic IBC has a standard semantics in terms of selection function models and provides a natural representation of epistemic states.",
+      "page_age": null
+    },
+    {
+      "title": "Jeremy Goodman & Bernhard Salow, Belief Revision Normalized",
+      "url": "https://philpapers.org/rec/GOOBRN-3",
+      "philpapers_id": "GOOBRN",
+      "snippet": "Permissive Belief Revision (preliminary report).Maria R. Cravo, Jo\u00e3o P. Cachopo, Ana C. Cachopo &amp; Jo\u00e3o P. Martins - unknown \u00b7 Epistemology Normalized.Jeremy Goodman &amp; Bernhard Salow - 2023 - Philosophical Review 132 (1):89-145. A framework for iterated revision.S\u00e9bastien Konieczny &amp; Ram\u00f3n ...",
+      "page_age": null
+    },
+    {
+      "title": "Jake Chandler & Richard Booth, The Irreducibility of Iterated to Single Revision",
+      "url": "https://philpapers.org/rec/CHATIO-30",
+      "philpapers_id": "CHATIO",
+      "snippet": "After a number of decades of research into the dynamics of rational belief, the belief revision theory community remains split on the appropriate handling of sequences of changes in view, the issue of so-called iterated revision. It has long been suggested that the matter is at least partly settled by facts pertaining to the results of various single revisions of one\u2019s initial state of belief.",
+      "page_age": null
+    },
+    {
+      "title": "Valentina Gliozzi, A Conditional Logic for Iterated Belief Revision",
+      "url": "https://philpapers.org/rec/GLIACL",
+      "philpapers_id": "GLIACL",
+      "snippet": "In this paper we (Laura Giordano, Nicola Olivetti and myself) propose a conditional logic to represent iterated belief revision systems. We propose a set of postulates for belief revision which are ...",
+      "page_age": null
+    },
+    {
+      "title": "Ted Shear & Branden Fitelson, Two Approaches to Belief Revision",
+      "url": "https://philpapers.org/rec/SHETAT-8",
+      "philpapers_id": "SHETAT",
+      "snippet": "Revising Beliefs Towards the Truth.Ilkka Niiniluoto - 2011 - Erkenntnis 75 (2):165-181. Iterated belief revision, reliability, and inductive amnesia.Kevin T.",
+      "page_age": null
+    },
+    {
+      "title": "Krister Segerberg, Irrevocable Belief Revision in Dynamic Doxastic Logic",
+      "url": "https://philpapers.org/rec/KRIIBR",
+      "philpapers_id": "KRIIBR",
+      "snippet": "In this paper we present a new modeling for belief revision that is what we term irrevocable. This modeling is of philosophical interest since it captures some features of suppositional reasoning, and of formal interest since it is closely connected with AGM, yet provides for iterated belief ...",
+      "page_age": null
+    },
+    {
+      "title": "Samir Chopra, Aditya Ghose, Thomas Meyer & Ka-Shu Wong, Iterated Belief Change and the Recovery Axiom",
+      "url": "https://philpapers.org/rec/CHOIBC-2",
+      "philpapers_id": "CHOIBC",
+      "snippet": "The axiom of recovery, while capturing a central intuition regarding belief change, has been the source of much controversy. We argue briefly against putative counterexamples to the axiom\u2014while agreeing that some of their insight deserves to be preserved\u2014and present additional recovery-like axioms in a framework that uses epistemic states, which encode preferences, as the object of revisions. This makes iterated revision possible and renders explicit the connection between iterated belief change and the axiom of recovery.",
+      "page_age": null
+    },
+    {
+      "title": "Jake Chandler & Richard Booth, Elementary Iterated Revision and the Levi Identity.",
+      "url": "https://philpapers.org/rec/CHAEIR-3",
+      "philpapers_id": "CHAEIR",
+      "snippet": "Recent work has considered the problem of extending to the case of iterated belief change the so-called `Harper Identity&#x27; (HI), which defines single-shot contraction in terms of single-shot revision. The present ...",
+      "page_age": null
+    }
+  ],
+  "count": 17,
+  "errors": []
+}

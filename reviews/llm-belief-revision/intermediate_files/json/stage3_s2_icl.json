@@ -1,0 +1,1260 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "in-context learning reasoning",
+  "results": [
+    {
+      "paperId": "837397b65145a6107d6a15d1336c21df9b4fe7c6",
+      "title": "Innate Reasoning is Not Enough: In-Context Learning Enhances Reasoning Large Language Models with Less Overthinking",
+      "authors": [
+        {
+          "name": "Yuyao Ge",
+          "authorId": "2265258857"
+        },
+        {
+          "name": "Shenghua Liu",
+          "authorId": "2280336349"
+        },
+        {
+          "name": "Yiwei Wang",
+          "authorId": "2280382891"
+        },
+        {
+          "name": "Lingrui Mei",
+          "authorId": "2280335494"
+        },
+        {
+          "name": "Lizhe Chen",
+          "authorId": "2265294904"
+        },
+        {
+          "name": "Baolong Bi",
+          "authorId": "2280332813"
+        },
+        {
+          "name": "Xueqi Cheng",
+          "authorId": "2226196831"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in Large Language Models (LLMs) have introduced Reasoning Large Language Models (RLLMs), which employ extended thinking processes with reflection and self-correction capabilities, demonstrating the effectiveness of test-time scaling. RLLMs exhibit innate Chain-of-Thought (CoT) reasoning capability obtained from training, leading to a natural question:\"Is CoT prompting, a popular In-Context Learning (ICL) method for chat LLMs, necessary to enhance the reasoning capability of RLLMs?\"In this work, we present the first comprehensive analysis of the impacts of Zero-shot CoT and Few-shot CoT on RLLMs across mathematical reasoning tasks. We examine models ranging from 1.5B to 32B parameters, finding that contrary to concerns, CoT prompting significantly enhances RLLMs' performance in most scenarios. Our results reveal distinct patterns: large-capacity models show minimal improvement on simple tasks but substantial gains on complex problems, while smaller models exhibit the opposite behavior. Further analysis demonstrates that CoT prompting effectively controls the distribution of the numbers of thinking tokens and reasoning steps, reducing excessive reflections by approximately 90% in some cases. Moreover, attention logits analysis reveals the RLLMs' overfitting to reflection-related words, which is mitigated by external CoT guidance. Notably, our experiments indicate that for RLLMs, one-shot CoT consistently yields superior performance compared to Few-shot CoT approaches. Our findings provide important insights for optimizing RLLMs' performance through appropriate prompting strategies.",
+      "citationCount": 15,
+      "doi": "10.48550/arXiv.2503.19602",
+      "arxivId": "2503.19602",
+      "url": "https://www.semanticscholar.org/paper/837397b65145a6107d6a15d1336c21df9b4fe7c6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.19602"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "70316474ff561cc01b0f336d10483ea4dadc2051",
+      "title": "ImageGen-CoT: Enhancing Text-to-Image In-context Learning with Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Jiaqi Liao",
+          "authorId": "2315613899"
+        },
+        {
+          "name": "Zhengyuan Yang",
+          "authorId": "2149231840"
+        },
+        {
+          "name": "Linjie Li",
+          "authorId": "50703697"
+        },
+        {
+          "name": "Dianqi Li",
+          "authorId": "2325116457"
+        },
+        {
+          "name": "K. Lin",
+          "authorId": "2249717753"
+        },
+        {
+          "name": "Yu Cheng",
+          "authorId": "2339635488"
+        },
+        {
+          "name": "Lijuan Wang",
+          "authorId": "2273909761"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In this work, we study the problem of Text-to-Image In-Context Learning (T2I-ICL). While Unified Multimodal LLMs (MLLMs) have advanced rapidly in recent years, they struggle with contextual reasoning in T2I-ICL scenarios. To address this limitation, we propose a novel framework that incorporates a thought process called ImageGen-CoT prior to image generation. To avoid generating unstructured ineffective reasoning steps, we develop an automatic pipeline to curate a high-quality ImageGen-CoT dataset. We then fine-tune MLLMs using this dataset to enhance their contextual reasoning capabilities. To further enhance performance, we explore test-time scale-up strategies and propose a novel hybrid scaling approach. This approach first generates multiple ImageGen-CoT chains and then produces multiple images for each chain via sampling. Extensive experiments demonstrate the effectiveness of our proposed method. Notably, fine-tuning with the ImageGen-CoT dataset leads to a substantial 80\\% performance gain for SEED-X on T2I-ICL tasks. See our project page at https://ImageGen-CoT.github.io/. Code and model weights will be open-sourced.",
+      "citationCount": 21,
+      "doi": "10.48550/arXiv.2503.19312",
+      "arxivId": "2503.19312",
+      "url": "https://www.semanticscholar.org/paper/70316474ff561cc01b0f336d10483ea4dadc2051",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.19312"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4ae82a72f0b3c4cc03acef15ac935834fc12add2",
+      "title": "Problem-Solving Logic Guided Curriculum In-Context Learning for LLMs Complex Reasoning",
+      "authors": [
+        {
+          "name": "Xuetao Ma",
+          "authorId": "2279230244"
+        },
+        {
+          "name": "Wenbin Jiang",
+          "authorId": "2344611620"
+        },
+        {
+          "name": "Hua Huang",
+          "authorId": "2346981351"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In-context learning (ICL) can significantly enhance the complex reasoning capabilities of large language models (LLMs), with the key lying in the selection and ordering of demonstration examples. Previous methods typically relied on simple features to measure the relevance between examples. We argue that these features are not sufficient to reflect the intrinsic connections between examples. In this study, we propose a curriculum ICL strategy guided by problem-solving logic. We select demonstration examples by analyzing the problem-solving logic and order them based on curriculum learning. Specifically, we constructed a problem-solving logic instruction set based on the BREAK dataset and fine-tuned a language model to analyze the problem-solving logic of examples. Subsequently, we selected appropriate demonstration examples based on problem-solving logic and assessed their difficulty according to the number of problem-solving steps. In accordance with the principles of curriculum learning, we ordered the examples from easy to hard to serve as contextual prompts. Experimental results on multiple benchmarks indicate that our method outperforms previous ICL approaches in terms of performance and efficiency, effectively enhancing the complex reasoning capabilities of LLMs. Our project will be released at https://github.com/maxuetao/CurriculumICL",
+      "citationCount": 11,
+      "doi": "10.18653/v1/2025.findings-acl.440",
+      "arxivId": "2502.15401",
+      "url": "https://www.semanticscholar.org/paper/4ae82a72f0b3c4cc03acef15ac935834fc12add2",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "8394-8412"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "78a2f80704e54c470c2033bdc1fc284fffbea801",
+      "title": "Mimicking or Reasoning: Rethinking Multi-Modal In-Context Learning in Vision-Language Models",
+      "authors": [
+        {
+          "name": "Chengyue Huang",
+          "authorId": "2329310859"
+        },
+        {
+          "name": "Yuchen Zhu",
+          "authorId": "2295790135"
+        },
+        {
+          "name": "Sichen Zhu",
+          "authorId": "2342461718"
+        },
+        {
+          "name": "Jingyun Xiao",
+          "authorId": "2366149136"
+        },
+        {
+          "name": "Moises Andrade",
+          "authorId": "2366208478"
+        },
+        {
+          "name": "Shivang Chopra",
+          "authorId": "2346985012"
+        },
+        {
+          "name": "Z. Kira",
+          "authorId": "145276578"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Vision-language models (VLMs) are widely assumed to exhibit in-context learning (ICL), a property similar to that of their language-only counterparts. While recent work suggests VLMs can perform multimodal ICL (MM-ICL), studies show they often rely on shallow heuristics -- such as copying or majority voting -- rather than true task understanding. We revisit this assumption by evaluating VLMs under distribution shifts, where support examples come from a dataset different from the query. Surprisingly, performance often degrades with more demonstrations, and models tend to copy answers rather than learn from them. To investigate further, we propose a new MM-ICL with Reasoning pipeline that augments each demonstration with a generated rationale alongside the answer. We conduct extensive and comprehensive experiments on both perception- and reasoning-required datasets with open-source VLMs ranging from 3B to 72B and proprietary models such as Gemini 2.0. We conduct controlled studies varying shot count, retrieval method, rationale quality, and distribution. Our results show limited performance sensitivity across these factors, suggesting that current VLMs do not effectively utilize demonstration-level information as intended in MM-ICL.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2506.07936",
+      "arxivId": "2506.07936",
+      "url": "https://www.semanticscholar.org/paper/78a2f80704e54c470c2033bdc1fc284fffbea801",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.07936"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "08d54aecb720a94ba6d45df29e04622f22d1e616",
+      "title": "In-Context Learning in Large Language Models (LLMs): Mechanisms, Capabilities, and Implications for Advanced Knowledge Representation and Reasoning",
+      "authors": [
+        {
+          "name": "Azza Mohamed",
+          "authorId": "2263970222"
+        },
+        {
+          "name": "Mohamed El Rashid",
+          "authorId": "2364448268"
+        },
+        {
+          "name": "Khaled Shaalan",
+          "authorId": "2260581481"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid growth of Large Language Models (LLMs) and their in-context learning (ICL) capabilities has significantly transformed paradigms in artificial intelligence (AI) and natural language processing. Notable models, such as OpenAI\u2019s GPT series, have demonstrated previously unprecedented advancements in verbal comprehension and adaptability, dynamically responding to new tasks offered via contextual prompts. This study provides a detailed survey of recent advances in theoretical research on LLMs and ICL. The search was conducted across several scholarly databases including Google Scholar, arXiv, IEEE Xplore, ACM Digital Library, and SpringerLink, covering publications from January 2019 to March 2024. We investigate how LLMs encode and use knowledge via ICL, the evolving reasoning skills that result from this process, and the considerable impact of prompt design on LLM reasoning performance, particularly in symbolic reasoning tasks. Furthermore, we investigate the theoretical frameworks that explain or challenge LLM behaviors in ICL contexts and address the significance of these findings for the development of complex knowledge representation and reasoning systems. Using a systematic methodology consistent with accepted research criteria, this review synthesizes significant observations, highlights existing gaps and obstacles, and discusses implications for future research and practice. Our goal is to connect theoretical ideas with actual advances in Artificial Intelligence, ultimately contributing to the continuing discussion about the capabilities and applications of LLMs in knowledge representation and reasoning.",
+      "citationCount": 3,
+      "doi": "10.1109/ACCESS.2025.3575303",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/08d54aecb720a94ba6d45df29e04622f22d1e616",
+      "venue": "IEEE Access",
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "95574-95593",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "45379c1e4b52c39928d0bad77e764bfd2636278f",
+      "title": "Enhancing In-Context Learning of Large Language Models for Knowledge Graph Reasoning via Rule-and-Reinforce Selected Triples",
+      "authors": [
+        {
+          "name": "Shaofei Wang",
+          "authorId": "2341779188"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Knowledge graph (KG) reasoning aims to obtain new knowledge based on existing data. Utilizing large language models (LLMs) through in-context learning for KG reasoning has become a significant direction. However, existing methods mainly extract in-context triples by manually defined standards (such as the neighbors that are directly linked with the query triple), without considering whether they are useful for LLM reasoning. Furthermore, the triples beyond the neighbors can also provide important clues for reasoning. Therefore, it is necessary to extract more useful in-context triples of LLMs for KG reasoning. This paper proposes a rule-and-reinforce in-context triple extraction method to enhance the in-context learning of LLMs for KG reasoning. First, we collect the in-context triples specific to each query triple with the guidance of logical rules, and a neural extractor is pre-trained by the collected triples. Subsequently, the feedback of LLMs is collected as rewards to further optimize the extractor, where the policy gradient is utilized to encourage the extractor to explore more useful triples that yield higher rewards. The experimental results on five different knowledge graphs demonstrate that the proposed method can effectively improve the reasoning performance of LLMs. Compared to the traditional reasoning method AnyBURL, the greatest improvement is 0.147 on Hits@10, FB15k-237.",
+      "citationCount": 2,
+      "doi": "10.3390/app15031088",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/45379c1e4b52c39928d0bad77e764bfd2636278f",
+      "venue": "Applied Sciences",
+      "journal": {
+        "name": "Applied Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "03df5596fc50aeb5abd2f57fff2e713ca4ac3eff",
+      "title": "Thinking with Nothinking Calibration: A New In-Context Learning Paradigm in Reasoning Large Language Models",
+      "authors": [
+        {
+          "name": "Haotian Wu",
+          "authorId": "2375279733"
+        },
+        {
+          "name": "Bo Xu",
+          "authorId": "2374948896"
+        },
+        {
+          "name": "Yao Shu",
+          "authorId": "2374961123"
+        },
+        {
+          "name": "Meng Yang",
+          "authorId": "2298128257"
+        },
+        {
+          "name": "Chengwei Qin",
+          "authorId": "2375166779"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Reasoning large language models (RLLMs) have recently demonstrated remarkable capabilities through structured and multi-step reasoning. While prior research has primarily focused on improving their training and inference strategies, their potential for in-context learning (ICL) remains largely underexplored. To fill this gap, we propose Thinking with Nothinking Calibration (JointThinking), a new ICL paradigm that prompts the model to generate two answers in parallel: one in Thinking mode and the other in Nothinking mode. A second round of Thinking is triggered only when the two initial responses are inconsistent, using a single prompt with two different answers. Extensive experiments across multiple reasoning benchmarks demonstrate that JointThinking significantly outperforms few-shot chain-of-thought (CoT), thinking twice and majority voting. Moreover, it achieves comparable in-distribution performance to training-based SOTA reasoning method, while substantially outperforming on out-of-distribution tasks. We further conduct a systematic analysis of the calibration mechanism, showing the importance of structural thinking diversity and the benefits of consistency check. Additionally, we observe that the performance gap between actual and ideal reasoning narrows as model size increases in the second thinking, indicating the strong scalability of our approach. Finally, we discuss current limitations and outline promising directions for future ICL research in RLLMs.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2508.03363",
+      "arxivId": "2508.03363",
+      "url": "https://www.semanticscholar.org/paper/03df5596fc50aeb5abd2f57fff2e713ca4ac3eff",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.03363"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5bd36b2c701056984a6353edc8ebdd3a3864bc34",
+      "title": "Beyond Examples: High-level Automated Reasoning Paradigm in In-Context Learning via MCTS",
+      "authors": [
+        {
+          "name": "Jinyang Wu",
+          "authorId": "3385964"
+        },
+        {
+          "name": "Mingkuan Feng",
+          "authorId": "2332540527"
+        },
+        {
+          "name": "Shuai Zhang",
+          "authorId": "2298428469"
+        },
+        {
+          "name": "Feihu Che",
+          "authorId": "1471057495"
+        },
+        {
+          "name": "Zengqi Wen",
+          "authorId": "2333336431"
+        },
+        {
+          "name": "Jianhua Tao",
+          "authorId": "2298423822"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In-context learning (ICL) enables large language models (LLMs) to perform downstream tasks through advanced prompting and high-quality demonstrations. However, traditional ICL paradigms encounter significant limitations in complex reasoning tasks, stemming primarily from their dependence on example quality and absence of explicit reasoning guidance. To address these challenges, we introduce HiAR-ICL, a **Hi**gh-level **A**utomated **R**easoning paradigm in **ICL** that shifts focus from specific examples to abstract reasoning patterns, thereby extending the conventional concept of\"context\"in ICL. Our approach begins by defining five atomic reasoning actions, upon which we employ Monte Carlo Tree Search to systematically construct high-level reasoning patterns. During inference, HiAR-ICL dynamically selects appropriate reasoning patterns based on problem attributes, providing explicit guidance for the model's reasoning process. Experiments demonstrate HiAR-ICL's effectiveness and efficiency: utilizing only 200 prior samples with Qwen2.5-7B-Instruct, our method achieves 80.6% accuracy on MATH and 62.5% on AMC, exceeding GPT-4o's 77.2% and 57.5%. Our approach enhances performance across models of varying sizes while generalizing effectively across domains. Further analysis reveals that HiAR-ICL can also serve as a plug-and-play inference method compatible with post-training techniques like GRPO. Code and data are available at https://github.com/jinyangwu/HiARICL.",
+      "citationCount": 35,
+      "doi": "10.48550/arXiv.2411.18478",
+      "arxivId": "2411.18478",
+      "url": "https://www.semanticscholar.org/paper/5bd36b2c701056984a6353edc8ebdd3a3864bc34",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.18478"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4d17732d90440682b0500f4e209c6cc4fac20e0e",
+      "title": "Teaching Algorithmic Reasoning via In-context Learning",
+      "authors": [
+        {
+          "name": "Hattie Zhou",
+          "authorId": "113866171"
+        },
+        {
+          "name": "Azade Nova",
+          "authorId": "2176782672"
+        },
+        {
+          "name": "H. Larochelle",
+          "authorId": "1777528"
+        },
+        {
+          "name": "Aaron C. Courville",
+          "authorId": "2058336670"
+        },
+        {
+          "name": "Behnam Neyshabur",
+          "authorId": "3007442"
+        },
+        {
+          "name": "Hanie Sedghi",
+          "authorId": "2812848"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have shown increasing in-context learning capabilities through scaling up model and data size. Despite this progress, LLMs are still unable to solve algorithmic reasoning problems. While providing a rationale with the final answer has led to further improvements in multi-step reasoning problems, Anil et al. 2022 showed that even simple algorithmic reasoning tasks such as parity are far from solved. In this work, we identify and study four key stages for successfully teaching algorithmic reasoning to LLMs: (1) formulating algorithms as skills, (2) teaching multiple skills simultaneously (skill accumulation), (3) teaching how to combine skills (skill composition) and (4) teaching how to use skills as tools. We show that it is possible to teach algorithmic reasoning to LLMs via in-context learning, which we refer to as algorithmic prompting. We evaluate our approach on a variety of arithmetic and quantitative reasoning tasks, and demonstrate significant boosts in performance over existing prompting techniques. In particular, for long parity, addition, multiplication and subtraction, we achieve an error reduction of approximately 10x, 9x, 5x and 2x respectively compared to the best available baselines.",
+      "citationCount": 130,
+      "doi": "10.48550/arXiv.2211.09066",
+      "arxivId": "2211.09066",
+      "url": "https://www.semanticscholar.org/paper/4d17732d90440682b0500f4e209c6cc4fac20e0e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2211.09066"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "88a932c15fa5d9c6fe49c81fa847f03538295d73",
+      "title": "Are Human Rules Necessary? Generating Reusable APIs with CoT Reasoning and In-Context Learning",
+      "authors": [
+        {
+          "name": "Yubo Mai",
+          "authorId": "2300093182"
+        },
+        {
+          "name": "Zhipeng Gao",
+          "authorId": "2243685513"
+        },
+        {
+          "name": "Xing Hu",
+          "authorId": "2300131774"
+        },
+        {
+          "name": "Lingfeng Bao",
+          "authorId": "2254294023"
+        },
+        {
+          "name": "Yu Liu",
+          "authorId": "2300281865"
+        },
+        {
+          "name": "Jianling Sun",
+          "authorId": "2300092361"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Inspired by the great potential of Large Language Models (LLMs) for solving complex coding tasks, in this paper, we propose a novel approach, named Code2API, to automatically perform APIzation for Stack Overflow code snippets. Code2API does not require additional model training or any manual crafting rules and can be easily deployed on personal computers without relying on other external tools. Specifically, Code2API guides the LLMs through well-designed prompts to generate well-formed APIs for given code snippets. To elicit knowledge and logical reasoning from LLMs, we used chain-of-thought (CoT) reasoning and few-shot in-context learning, which can help the LLMs fully understand the APIzation task and solve it step by step in a manner similar to a developer. Our evaluations show that Code2API achieves a remarkable accuracy in identifying method parameters (65%) and return statements (66%) equivalent to human-generated ones, surpassing the current state-of-the-art approach, APIzator, by 15.0% and 16.5% respectively. Moreover, compared with APIzator, our user study demonstrates that Code2API exhibits superior performance in generating meaningful method names, even surpassing the human-level performance, and developers are more willing to use APIs generated by our approach, highlighting the applicability of our tool in practice. Finally, we successfully extend our framework to the Python dataset, achieving a comparable performance with Java, which verifies the generalizability of our tool.",
+      "citationCount": 8,
+      "doi": "10.1145/3660811",
+      "arxivId": "2405.03509",
+      "url": "https://www.semanticscholar.org/paper/88a932c15fa5d9c6fe49c81fa847f03538295d73",
+      "venue": "Proc. ACM Softw. Eng.",
+      "journal": {
+        "name": "Proceedings of the ACM on Software Engineering",
+        "pages": "2355 - 2377",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f801a79de5aa817bfaac2f0aaab994f47cc2594a",
+      "title": "What Makes In-context Learning Effective for Mathematical Reasoning: A Theoretical Analysis",
+      "authors": [
+        {
+          "name": "Jia-Yin Liu",
+          "authorId": "2178815482"
+        },
+        {
+          "name": "Zhenya Huang",
+          "authorId": "3374015"
+        },
+        {
+          "name": "Chaokun Wang",
+          "authorId": "2335848351"
+        },
+        {
+          "name": "Xu Huang",
+          "authorId": "2319210315"
+        },
+        {
+          "name": "ChengXiang Zhai",
+          "authorId": "2335668143"
+        },
+        {
+          "name": "Enhong Chen",
+          "authorId": "2264094060"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Owing to the capability of in-context learning, large language models (LLMs) have shown impressive performance across diverse mathematical reasoning benchmarks. However, we find that few-shot demonstrations can sometimes bring negative performance and their effectiveness on LLMs' reasoning abilities remains unreliable. To this end, in this paper, we aim to theoretically analyze the impact of in-context demonstrations on LLMs' reasoning performance. We prove that the reasoning efficacy (measured by empirical prediction loss) can be bounded by a LLM-oriented semantic similarity and an inference stability of demonstrations, which is general for both one-shot and few-shot scenarios. Based on this finding, we propose a straightforward, generalizable, and low-complexity demonstration selection method named LMS3. It can adaptively facilitate to select the most pertinent samples for different LLMs and includes a novel demonstration rejection mechanism to automatically filter out samples that are unsuitable for few-shot learning. Through experiments on three representative benchmarks, two LLM backbones, and multiple few-shot settings, we verify that our LMS3 has superiority and achieves consistent improvements on all datasets, which existing methods have been unable to accomplish.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2412.12157",
+      "arxivId": "2412.12157",
+      "url": "https://www.semanticscholar.org/paper/f801a79de5aa817bfaac2f0aaab994f47cc2594a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.12157"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7c52aece9d87ad551ffe6efc1eaf8458add69525",
+      "title": "Can Input Attributions Explain Inductive Reasoning in In-Context Learning?",
+      "authors": [
+        {
+          "name": "Mengyu Ye",
+          "authorId": "2261380965"
+        },
+        {
+          "name": "Tatsuki Kuribayashi",
+          "authorId": "83446147"
+        },
+        {
+          "name": "Goro Kobayashi",
+          "authorId": "2060291042"
+        },
+        {
+          "name": "Jun Suzuki",
+          "authorId": "2260652898"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Interpreting the internal process of neural models has long been a challenge. This challenge remains relevant in the era of large language models (LLMs) and in-context learning (ICL); for example, ICL poses a new issue of interpreting which example in the few-shot examples contributed to identifying/solving the task. To this end, in this paper, we design synthetic diagnostic tasks of inductive reasoning, inspired by the generalization tests typically adopted in psycholinguistics. Here, most in-context examples are ambiguous w.r.t. their underlying rule, and one critical example disambiguates it. The question is whether conventional input attribution (IA) methods can track such a reasoning process, i.e., identify the influential example, in ICL. Our experiments provide several practical findings; for example, a certain simple IA method works the best, and the larger the model, the generally harder it is to interpret the ICL with gradient-based IA methods.",
+      "citationCount": 3,
+      "doi": "10.18653/v1/2025.findings-acl.1092",
+      "arxivId": "2412.15628",
+      "url": "https://www.semanticscholar.org/paper/7c52aece9d87ad551ffe6efc1eaf8458add69525",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "21199-21225"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "21b0e9cf7966f3641f0fed59bae6e11e3cc85930",
+      "title": "In-Context Learning May Not Elicit Trustworthy Reasoning: A-Not-B Errors in Pretrained Language Models",
+      "authors": [
+        {
+          "name": "Pengrui Han",
+          "authorId": "2320307700"
+        },
+        {
+          "name": "Peiyang Song",
+          "authorId": "2297671110"
+        },
+        {
+          "name": "Haofei Yu",
+          "authorId": "2322610315"
+        },
+        {
+          "name": "Jiaxuan You",
+          "authorId": "2261495159"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent advancements in artificial intelligence have led to the creation of highly capable large language models (LLMs) that can perform tasks in a human-like manner. However, LLMs exhibit only infant-level cognitive abilities in certain areas. One such area is the A-Not-B error, a phenomenon seen in infants where they repeat a previously rewarded behavior despite well-observed changed conditions. This highlights their lack of inhibitory control -- the ability to stop a habitual or impulsive response. In our work, we design a text-based multi-choice QA scenario similar to the A-Not-B experimental settings to systematically test the inhibitory control abilities of LLMs. We found that state-of-the-art LLMs (like Llama3-8b) perform consistently well with in-context learning (ICL) but make errors and show a significant drop of as many as 83.3% in reasoning tasks when the context changes trivially. This suggests that LLMs only have inhibitory control abilities on par with human infants in this regard, often failing to suppress the previously established response pattern during ICL.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2409.15454",
+      "arxivId": "2409.15454",
+      "url": "https://www.semanticscholar.org/paper/21b0e9cf7966f3641f0fed59bae6e11e3cc85930",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2409.15454"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "00337d7d7fc679cb4959aead3204b0fb9c6a5ef2",
+      "title": "ScoNe: Benchmarking Negation Reasoning in Language Models With Fine-Tuning and In-Context Learning",
+      "authors": [
+        {
+          "name": "Jingyuan Selena She",
+          "authorId": "2193561169"
+        },
+        {
+          "name": "Christopher Potts",
+          "authorId": "144922861"
+        },
+        {
+          "name": "Sam Bowman",
+          "authorId": "1799822"
+        },
+        {
+          "name": "Atticus Geiger",
+          "authorId": "80833908"
+        }
+      ],
+      "year": 2023,
+      "abstract": "A number of recent benchmarks seek to assess how well models handle natural language negation. However, these benchmarks lack the controlled example paradigms that would allow us to infer whether a model had truly learned how negation morphemes semantically scope. To fill these analytical gaps, we present the Scoped Negation NLI (ScoNe-NLI) benchmark, which contains contrast sets of six examples with up to two negations where either zero, one, or both negative morphemes affect the NLI label. We use ScoNe-NLI to assess fine-tuning and in-context learning strategies. We find that RoBERTa and DeBERTa models solve ScoNe-NLI after many shot fine-tuning. For in-context learning, we test the latest InstructGPT models and find that most prompt strategies are not successful, including those using step-by-step reasoning. To better understand this result, we extend ScoNe with ScoNe-NLG, a sentence completion test set that embeds negation reasoning in short narratives. Here, InstructGPT is successful, which reveals the model can correctly reason about negation, but struggles to do so on NLI examples outside of its core pretraining regime.",
+      "citationCount": 22,
+      "doi": "10.18653/v1/2023.acl-short.154",
+      "arxivId": "2305.19426",
+      "url": "https://www.semanticscholar.org/paper/00337d7d7fc679cb4959aead3204b0fb9c6a5ef2",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "1803-1821"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ce3131576e537dd2899014db7bf064962a007a87",
+      "title": "In Context Learning and Reasoning for Symbolic Regression with Large Language Models",
+      "authors": [
+        {
+          "name": "Samiha Sharlin",
+          "authorId": "2188653934"
+        },
+        {
+          "name": "Tyler R. Josephson",
+          "authorId": "2257292509"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) are transformer-based machine learning models that have shown remarkable performance in tasks for which they were not explicitly trained. Here, we explore the potential of LLMs to perform symbolic regression -- a machine-learning method for finding simple and accurate equations from datasets. We prompt GPT-4 to suggest expressions from data, which are then optimized and evaluated using external Python tools. These results are fed back to GPT-4, which proposes improved expressions while optimizing for complexity and loss. Using chain-of-thought prompting, we instruct GPT-4 to analyze the data, prior expressions, and the scientific context (expressed in natural language) for each problem before generating new expressions. We evaluated the workflow in rediscovery of five well-known scientific equations from experimental data, and on an additional dataset without a known equation. GPT-4 successfully rediscovered all five equations, and in general, performed better when prompted to use a scratchpad and consider scientific context. We demonstrate how strategic prompting improves the model's performance and how the natural language interface simplifies integrating theory with data. We also observe how theory can sometimes offset noisy data and, in other cases, data can make up for poor context. Although this approach does not outperform established SR programs where target equations are more complex, LLMs can nonetheless iterate toward improved solutions while following instructions and incorporating scientific context in natural language.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2410.17448",
+      "arxivId": "2410.17448",
+      "url": "https://www.semanticscholar.org/paper/ce3131576e537dd2899014db7bf064962a007a87",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.17448"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "title": "DIN-SQL: Decomposed In-Context Learning of Text-to-SQL with Self-Correction",
+      "authors": [
+        {
+          "name": "M. Pourreza",
+          "authorId": "15293057"
+        },
+        {
+          "name": "Davood Rafiei",
+          "authorId": "2144238"
+        }
+      ],
+      "year": 2023,
+      "abstract": "We study the problem of decomposing a complex text-to-sql task into smaller sub-tasks and how such a decomposition can significantly improve the performance of Large Language Models (LLMs) in the reasoning process. There is currently a significant gap between the performance of fine-tuned models and prompting approaches using LLMs on challenging text-to-sql datasets such as Spider. We show that SQL queries, despite their declarative structure, can be broken down into sub-problems and the solutions of those sub-problems can be fed into LLMs to significantly improve their performance. Our experiments with three LLMs show that this approach consistently improves their performance by roughly 10%, pushing the accuracy of LLMs towards state-of-the-art, and even beating large fine-tuned models on the holdout Spider dataset.",
+      "citationCount": 536,
+      "doi": "10.48550/arXiv.2304.11015",
+      "arxivId": "2304.11015",
+      "url": "https://www.semanticscholar.org/paper/cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2304.11015"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "603bb1eb011147bed0766c0b0c0bf4bb83ef4b9a",
+      "title": "Many-Shot In-Context Learning",
+      "authors": [
+        {
+          "name": "Rishabh Agarwal",
+          "authorId": "2258553001"
+        },
+        {
+          "name": "Avi Singh",
+          "authorId": "2258779676"
+        },
+        {
+          "name": "Lei M. Zhang",
+          "authorId": "2297176886"
+        },
+        {
+          "name": "Bernd Bohnet",
+          "authorId": "2266464503"
+        },
+        {
+          "name": "Stephanie Chan",
+          "authorId": "2297673118"
+        },
+        {
+          "name": "Biao Zhang",
+          "authorId": "48335426"
+        },
+        {
+          "name": "Ankesh Anand",
+          "authorId": "12679121"
+        },
+        {
+          "name": "Zaheer Abbas",
+          "authorId": "2275185143"
+        },
+        {
+          "name": "Azade Nova",
+          "authorId": "2176782672"
+        },
+        {
+          "name": "John D. Co-Reyes",
+          "authorId": "2273515439"
+        },
+        {
+          "name": "Eric Chu",
+          "authorId": "2296992073"
+        },
+        {
+          "name": "Feryal M. P. Behbahani",
+          "authorId": "145124447"
+        },
+        {
+          "name": "Aleksandra Faust",
+          "authorId": "2258552654"
+        },
+        {
+          "name": "Hugo Larochelle",
+          "authorId": "2268317474"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs) excel at few-shot in-context learning (ICL) -- learning from a few examples provided in context at inference, without any weight updates. Newly expanded context windows allow us to investigate ICL with hundreds or thousands of examples -- the many-shot regime. Going from few-shot to many-shot, we observe significant performance gains across a wide variety of generative and discriminative tasks. While promising, many-shot ICL can be bottlenecked by the available amount of human-generated examples. To mitigate this limitation, we explore two new settings: Reinforced and Unsupervised ICL. Reinforced ICL uses model-generated chain-of-thought rationales in place of human examples. Unsupervised ICL removes rationales from the prompt altogether, and prompts the model only with domain-specific questions. We find that both Reinforced and Unsupervised ICL can be quite effective in the many-shot regime, particularly on complex reasoning tasks. Finally, we demonstrate that, unlike few-shot learning, many-shot learning is effective at overriding pretraining biases, can learn high-dimensional functions with numerical inputs, and performs comparably to fine-tuning. We also find that inference cost increases linearly in the many-shot regime, and frontier LLMs benefit from many-shot ICL to varying degrees. Our analysis also reveals the limitations of next-token prediction loss as an indicator of downstream ICL performance.",
+      "citationCount": 177,
+      "doi": "10.48550/arXiv.2404.11018",
+      "arxivId": "2404.11018",
+      "url": "https://www.semanticscholar.org/paper/603bb1eb011147bed0766c0b0c0bf4bb83ef4b9a",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.11018"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2afc9ecc5a4efbcdf62f6ff697bc47ba88874fc6",
+      "title": "TACO: Enhancing Multimodal In-context Learning via Task Mapping-Guided Sequence Configuration",
+      "authors": [
+        {
+          "name": "Yanshu Li",
+          "authorId": "2349304855"
+        },
+        {
+          "name": "Tian Yun",
+          "authorId": "2363350631"
+        },
+        {
+          "name": "JianJiang Yang",
+          "authorId": "2363370784"
+        },
+        {
+          "name": "Pinyuan Feng",
+          "authorId": "2363349096"
+        },
+        {
+          "name": "Jinfa Huang",
+          "authorId": "2363533979"
+        },
+        {
+          "name": "Ruixiang Tang",
+          "authorId": "2355036537"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Multimodal in-context learning (ICL) has emerged as a key mechanism for harnessing the capabilities of large vision-language models (LVLMs). However, its effectiveness remains highly sensitive to the quality of input ICL sequences, particularly for tasks involving complex reasoning or open-ended generation. A major limitation is our limited understanding of how LVLMs actually exploit these sequences during inference. To bridge this gap, we systematically interpret multimodal ICL through the lens of task mapping, which reveals how local and global relationships within and among demonstrations guide model reasoning. Building on this insight, we present TACO, a lightweight transformer-based model equipped with task-aware attention that dynamically configures ICL sequences. By injecting task-mapping signals into the autoregressive decoding process, TACO creates a bidirectional synergy between sequence construction and task reasoning. Experiments on five LVLMs and nine datasets demonstrate that TACO consistently surpasses baselines across diverse ICL tasks. These results position task mapping as a novel and valuable perspective for interpreting and improving multimodal ICL.",
+      "citationCount": 23,
+      "doi": "10.48550/arXiv.2505.17098",
+      "arxivId": "2505.17098",
+      "url": "https://www.semanticscholar.org/paper/2afc9ecc5a4efbcdf62f6ff697bc47ba88874fc6",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.17098"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "895d499cbba208e7742d8139c07f09cc9209d81b",
+      "title": "On the generalization of language models from in-context learning and finetuning: a controlled study",
+      "authors": [
+        {
+          "name": "Andrew Kyle Lampinen",
+          "authorId": "32322945"
+        },
+        {
+          "name": "Arslan Chaudhry",
+          "authorId": "22235380"
+        },
+        {
+          "name": "Stephanie C. Y. Chan",
+          "authorId": "2301115784"
+        },
+        {
+          "name": "Cody Wild",
+          "authorId": "2358451394"
+        },
+        {
+          "name": "Diane Wan",
+          "authorId": "2358452029"
+        },
+        {
+          "name": "Alexander Y. Ku",
+          "authorId": "2361495054"
+        },
+        {
+          "name": "J\u00f6rg Bornschein",
+          "authorId": "2320771936"
+        },
+        {
+          "name": "Razvan Pascanu",
+          "authorId": "1996134"
+        },
+        {
+          "name": "Murray Shanahan",
+          "authorId": "2333918928"
+        },
+        {
+          "name": "James L McClelland",
+          "authorId": "2268674672"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models exhibit exciting capabilities, yet can show surprisingly narrow generalization from finetuning. E.g. they can fail to generalize to simple reversals of relations they are trained on, or fail to make simple logical deductions based on trained information. These failures to generalize factual information from fine-tuning can significantly hinder the reasoning capabilities of these models. On the other hand, language models'in-context learning (ICL) shows different inductive biases and deductive reasoning capabilities. Here, we explore these differences in generalization and deductive reasoning between in-context- and fine-tuning-based learning. To do so, we constructed several novel datasets to evaluate and improve models'abilities to make generalizations over factual information from novel data. These datasets are designed to create clean tests of generalization, by isolating the knowledge in the dataset from that in pretraining. We expose pretrained large models to controlled subsets of the information in these datasets -- either through ICL or fine-tuning -- and evaluate their performance on test sets that require various types of generalization. We find overall that in data-matched settings, ICL can generalize several types of inferences more flexibly than fine-tuning (though we also find some qualifications of prior findings, such as cases when fine-tuning can generalize to reversals embedded in a larger structure of knowledge). We build on these findings to propose a method to enable improved generalization from fine-tuning: adding in-context reasoning traces to finetuning data. We show that this method improves generalization across various splits of our datasets and other benchmarks. Our results have implications for understanding the generalization afforded by different modes of learning in language models, and practically improving their performance.",
+      "citationCount": 20,
+      "doi": "10.48550/arXiv.2505.00661",
+      "arxivId": "2505.00661",
+      "url": "https://www.semanticscholar.org/paper/895d499cbba208e7742d8139c07f09cc9209d81b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.00661"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "590c8e83914258ae3d694793ab3d8a704a2ac161",
+      "title": "The Curse of CoT: On the Limitations of Chain-of-Thought in In-Context Learning",
+      "authors": [
+        {
+          "name": "Tianshi ZHENG",
+          "authorId": "2209990450"
+        },
+        {
+          "name": "Yixiang Chen",
+          "authorId": "2354179125"
+        },
+        {
+          "name": "Chengxi Li",
+          "authorId": "2355284284"
+        },
+        {
+          "name": "Chunyang Li",
+          "authorId": "2279661258"
+        },
+        {
+          "name": "Qing Zong",
+          "authorId": "2256995117"
+        },
+        {
+          "name": "Haochen Shi",
+          "authorId": "2257452757"
+        },
+        {
+          "name": "Baixuan Xu",
+          "authorId": "2257133167"
+        },
+        {
+          "name": "Yangqiu Song",
+          "authorId": "2241325169"
+        },
+        {
+          "name": "Ginny Y. Wong",
+          "authorId": "9413717"
+        },
+        {
+          "name": "Simon See",
+          "authorId": "2256995112"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Chain-of-Thought (CoT) prompting has been widely recognized for its ability to enhance reasoning capabilities in large language models (LLMs). However, our study reveals a surprising contradiction to this prevailing perspective within the fundamental domain of pattern-based in-context learning (ICL). Through extensive experiments involving 16 state-of-the-art LLMs and nine diverse pattern-based ICL datasets, we demonstrate that CoT and its reasoning variants consistently underperform direct answering across varying model scales and benchmark complexities. To systematically investigate this unexpected phenomenon, we designed extensive experiments to validate several hypothetical explanations. Our analysis uncovers a fundamental hybrid mechanism of explicit-implicit reasoning driving CoT's performance in pattern-based ICL: while explicit reasoning falters due to LLMs'struggles to infer underlying patterns from demonstrations, implicit reasoning-disrupted by the increased contextual distance of CoT rationales-often compensates, delivering correct answers despite flawed rationales. This hybrid mechanism explains CoT's relative underperformance, as noise from weak explicit inference undermines the process, even as implicit mechanisms partially salvage outcomes. Notably, even long-CoT reasoning models, which excel in abstract and symbolic reasoning, fail to fully overcome these limitations despite higher computational costs. Our findings challenge existing assumptions regarding the universal efficacy of CoT, yielding novel insights into its limitations and guiding future research toward more nuanced and effective reasoning methodologies for LLMs.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2504.05081",
+      "arxivId": "2504.05081",
+      "url": "https://www.semanticscholar.org/paper/590c8e83914258ae3d694793ab3d8a704a2ac161",
+      "venue": "Trans. Mach. Learn. Res.",
+      "journal": {
+        "name": "Trans. Mach. Learn. Res.",
+        "volume": "2025"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "30cac699a549982fc7693fcf41e3ffb929054d05",
+      "title": "M$^2$IV: Towards Efficient and Fine-grained Multimodal In-Context Learning via Representation Engineering",
+      "authors": [
+        {
+          "name": "Yanshu Li",
+          "authorId": "2349304855"
+        },
+        {
+          "name": "Yi Cao",
+          "authorId": "2354671431"
+        },
+        {
+          "name": "Hongyang He",
+          "authorId": "2260837821"
+        },
+        {
+          "name": "Qisen Cheng",
+          "authorId": "2356574996"
+        },
+        {
+          "name": "Xiang Fu",
+          "authorId": "2356252212"
+        },
+        {
+          "name": "Xi Xiao",
+          "authorId": "2349232014"
+        },
+        {
+          "name": "Tianyang Wang",
+          "authorId": "2350009636"
+        },
+        {
+          "name": "Ruixiang Tang",
+          "authorId": "2355036537"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Multimodal in-context learning (ICL) equips Large Vision-language Models (LVLMs) with the ability to adapt to new tasks via multiple user-provided demonstrations, without requiring any model parameter updates. However, its effectiveness is constrained by the token-intensive nature of multimodal inputs and the complexity of cross-modal few-shot reasoning, which together hinder LVLMs from extracting useful patterns from demonstrations. To address these challenges, we propose \\textbf{M$^2$IV}, a novel representation engineering approach that replaces explicit token-level demonstrations with a set of learnable Multimodal In-context Vectors directly injected into the residual streams of LVLMs. By analyzing the distinct roles of multi-head attention (MHA) and multi-layer perceptrons (MLP) in the ICL process, we design a training strategy that enables M$^2$IV to perform fine-grained semantic distillation and robust cross-modal representation learning. M$^2$IV not only improves performance across diverse tasks and LVLMs but also significantly reduces token overhead, enabling graceful scaling to many-shot scenarios. To further enhance usability, we introduce \\textbf{VLibrary}, a repository that stores trained M$^2$IVs for flexible retrieval and injection. With VLibrary, users can steer pre-trained LVLMs in a customized manner that meets diverse requirements. Extensive experiments demonstrate that M$^2$IV consistently outperforms vanilla ICL and prior representation engineering baselines, achieving an average accuracy gain of 3.74\\% with substantial improvements in overall efficiency.",
+      "citationCount": 16,
+      "doi": null,
+      "arxivId": "2504.04633",
+      "url": "https://www.semanticscholar.org/paper/30cac699a549982fc7693fcf41e3ffb929054d05",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ad5573cb25fd403f7620332f363ae87327c69a49",
+      "title": "The Impact of Symbolic Representations on In-context Learning for Few-shot Reasoning",
+      "authors": [
+        {
+          "name": "Hanlin Zhang",
+          "authorId": "2119078297"
+        },
+        {
+          "name": "Yifan Zhang",
+          "authorId": "2332694195"
+        },
+        {
+          "name": "Erran L. Li",
+          "authorId": "2294752489"
+        },
+        {
+          "name": "Eric P. Xing",
+          "authorId": "2273055197"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2212.08686",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ad5573cb25fd403f7620332f363ae87327c69a49",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2212.08686"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b00d1028291ae64e9d7485a34ec5f1b7b5a37909",
+      "title": "Visual In-Context Learning for Large Vision-Language Models",
+      "authors": [
+        {
+          "name": "Yucheng Zhou",
+          "authorId": "2110348767"
+        },
+        {
+          "name": "Xiang Li",
+          "authorId": "2284824270"
+        },
+        {
+          "name": "Qianning Wang",
+          "authorId": "2284681651"
+        },
+        {
+          "name": "Jianbing Shen",
+          "authorId": "2266802577"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In Large Visual Language Models (LVLMs), the efficacy of In-Context Learning (ICL) remains limited by challenges in cross-modal interactions and representation disparities. To overcome these challenges, we introduce a novel Visual In-Context Learning (VICL) method comprising Visual Demonstration Retrieval, Intent-Oriented Image Summarization, and Intent-Oriented Demonstration Composition. Our approach retrieves images via ''Retrieval&Rerank'' paradigm, summarises images with task intent and task-specific visual parsing, and composes language-based demonstrations that reduce token count and alleviate cross-modal interaction problem. Experimental evaluations on five visual reasoning datasets demonstrate the effectiveness of our method. Moreover, our extensive experiments leverage information flow analysis to elucidate the effectiveness of our method, and investigate the impact of length and position of demonstrations for LVLM. The use of in-context unlearning further shows promise in resetting specific model knowledge without retraining.",
+      "citationCount": 112,
+      "doi": "10.48550/arXiv.2402.11574",
+      "arxivId": "2402.11574",
+      "url": "https://www.semanticscholar.org/paper/b00d1028291ae64e9d7485a34ec5f1b7b5a37909",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "15890-15902"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4749d0ca5576bffa22146be1b601548ff8b2b889",
+      "title": "Exploring ChatGPT for Face Presentation Attack Detection in Zero and Few-Shot in-Context Learning",
+      "authors": [
+        {
+          "name": "Alain Komaty",
+          "authorId": "31650414"
+        },
+        {
+          "name": "Hatef Otroshi-Shahreza",
+          "authorId": "1411341123"
+        },
+        {
+          "name": "Anjith George",
+          "authorId": "2267244928"
+        },
+        {
+          "name": "S\u00e9bastien Marcel",
+          "authorId": "2237967482"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study highlights the potential of ChatGPT (specifically GPT-4o) as a competitive alternative for Face Presentation Attack Detection (PAD), outperforming several PAD models, including commercial solutions, in specific scenarios. Our results11https://gitlab.idiap.ch/bob/bob.paper.wacv2025.chatgpt.face.pad show that GPT-4o demonstrates high consistency, particularly in few-shot in-context learning, where its performance improves as more examples are provided (reference data). We also observe that detailed prompts enable the model to provide scores reliably, a behavior not observed with concise prompts. Additionally, explanation-seeking prompts slightly enhance the model's performance by improving its interpretability. Remarkably, the model exhibits emergent reasoning capabilities, correctly predicting the attack type (print or replay) with high accuracy in few-shot scenarios, despite not being explicitly instructed to classify attack types. Despite these strengths, GPT-4o faces challenges in zero-shot tasks, where its performance is limited compared to specialized PAD systems. Experiments were conducted on a subset of the SOTERIA dataset, ensuring compliance with data privacy regulations by using only data from consenting individuals. These findings underscore GPT-4o's promise in PAD applications, laying the groundwork for future research to address broader data privacy concerns and improve cross-dataset generalization.",
+      "citationCount": 9,
+      "doi": "10.1109/WACVW65960.2025.00093",
+      "arxivId": "2501.08799",
+      "url": "https://www.semanticscholar.org/paper/4749d0ca5576bffa22146be1b601548ff8b2b889",
+      "venue": "2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)",
+      "journal": {
+        "name": "2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)",
+        "pages": "1602-1611"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "645f5fa6afa59d455503559e3ea33ed88fb2146a",
+      "title": "CATP: Contextually Adaptive Token Pruning for Efficient and Enhanced Multimodal In-Context Learning",
+      "authors": [
+        {
+          "name": "Yanshu Li",
+          "authorId": "2349304855"
+        },
+        {
+          "name": "JianJiang Yang",
+          "authorId": "2363370784"
+        },
+        {
+          "name": "Zhennan Shen",
+          "authorId": "2376153134"
+        },
+        {
+          "name": "Ligong Han",
+          "authorId": "2376102780"
+        },
+        {
+          "name": "Haoyan Xu",
+          "authorId": "2375860643"
+        },
+        {
+          "name": "Ruixiang Tang",
+          "authorId": "2355036537"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Modern large vision-language models (LVLMs) convert each input image into a large set of tokens that far outnumber the text tokens. Although this improves visual perception, it also introduces severe image token redundancy. Because image tokens contain sparse information, many contribute little to reasoning but greatly increase inference cost. Recent image token pruning methods address this issue by identifying important tokens and removing the rest. These methods improve efficiency with only small performance drops. However, most of them focus on single-image tasks and overlook multimodal in-context learning (ICL), where redundancy is higher and efficiency is more important. Redundant tokens weaken the advantage of multimodal ICL for rapid domain adaptation and lead to unstable performance. When existing pruning methods are applied in this setting, they cause large accuracy drops, which exposes a clear gap and the need for new approaches. To address this, we propose Contextually Adaptive Token Pruning (CATP), a training-free pruning method designed for multimodal ICL. CATP uses two stages of progressive pruning that fully reflect the complex cross-modal interactions in the input sequence. After removing 77.8% of the image tokens, CATP achieves an average performance gain of 0.6% over the vanilla model on four LVLMs and eight benchmarks, clearly outperforming all baselines. At the same time, it improves efficiency by reducing inference latency by an average of 10.78%. CATP strengthens the practical value of multimodal ICL and lays the foundation for future progress in interleaved image-text settings.",
+      "citationCount": 7,
+      "doi": "10.48550/arXiv.2508.07871",
+      "arxivId": "2508.07871",
+      "url": "https://www.semanticscholar.org/paper/645f5fa6afa59d455503559e3ea33ed88fb2146a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.07871"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "daf0d1edc2571aeab512421b41437af255964019",
+      "title": "Linear-Time Demonstration Selection for In-Context Learning via Gradient Estimation",
+      "authors": [
+        {
+          "name": "Ziniu Zhang",
+          "authorId": "2323960218"
+        },
+        {
+          "name": "Zhenshuo Zhang",
+          "authorId": "2377642899"
+        },
+        {
+          "name": "Dongyue Li",
+          "authorId": "2115199173"
+        },
+        {
+          "name": "Lu Wang",
+          "authorId": "2323707256"
+        },
+        {
+          "name": "Jennifer Dy",
+          "authorId": "2377559402"
+        },
+        {
+          "name": "Hongyan Zhang",
+          "authorId": "2296245618"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper introduces an algorithm to select demonstration examples for in-context learning of a query set. Given a set of $n$ examples, how can we quickly select $k$ out of $n$ to best serve as the conditioning for downstream inference? This problem has broad applications in prompt tuning and chain-of-thought reasoning. Since model weights remain fixed during in-context learning, previous work has sought to design methods based on the similarity of token embeddings. This work proposes a new approach based on gradients of the output taken in the input embedding space. Our approach estimates model outputs through a first-order approximation using the gradients. Then, we apply this estimation to multiple randomly sampled subsets. Finally, we aggregate the sampled subset outcomes to form an influence score for each demonstration, and select $k$ most relevant examples. This procedure only requires pre-computing model outputs and gradients once, resulting in a linear-time algorithm relative to model and training set sizes. Extensive experiments across various models and datasets validate the efficiency of our approach. We show that the gradient estimation procedure yields approximations of full inference with less than ${1}\\%$ error across six datasets. This allows us to scale up subset selection that would otherwise run full inference by up to ${37.7}\\times$ on models with up to $34$ billion parameters, and outperform existing selection methods based on input embeddings by ${11}\\%$ on average.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2508.19999",
+      "arxivId": "2508.19999",
+      "url": "https://www.semanticscholar.org/paper/daf0d1edc2571aeab512421b41437af255964019",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.19999"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e9f7adc241f3e4e378b4f13d54972e4a1070350a",
+      "title": "Policy Induction: Predicting Startup Success via Explainable, Memory-Augmented In-Context Learning",
+      "authors": [
+        {
+          "name": "Xianling Mu",
+          "authorId": "2363571770"
+        },
+        {
+          "name": "Joseph Ternasky",
+          "authorId": "2355646176"
+        },
+        {
+          "name": "Fuat Alican",
+          "authorId": "46942208"
+        },
+        {
+          "name": "Yigit Ihlamur",
+          "authorId": "2275202217"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Early-stage startup investing is a high-uncertainty setting with scarce, noisy signals. Conventional machine-learning pipelines typically require large labeled datasets and extensive fine-tuning, and they often remain opaque to domain experts. We propose a transparent, data-efficient decision framework that leverages memory-augmented large language models (LLMs) via in-context learning (ICL). The core of our approach is a natural-language policy embedded directly in the prompt, enabling explicit reasoning patterns that experts can interpret, audit, and iteratively refine. We further combine structured features with LLMs' log-probability outputs to weight and aggregate multiple policies into a policy set. On an anonymized founder dataset (VCBench), our system achieves over $7.4 \\times$ better-than-chance precision with minimal supervision, exceeding tier-1 VC benchmarks by $3 \\times$ and attaining the highest $F_{0.5}$ across all baselines (35 % relative gain), all while preserving interpretability and editability of the decision logic.",
+      "citationCount": 4,
+      "doi": "10.1109/CSCloud66326.2025.00059",
+      "arxivId": "2505.21427",
+      "url": "https://www.semanticscholar.org/paper/e9f7adc241f3e4e378b4f13d54972e4a1070350a",
+      "venue": "International Conference on Cyber Security and Cloud Computing",
+      "journal": {
+        "name": "2025 IEEE 12th International Conference on Cyber Security and Cloud Computing (CSCloud)",
+        "pages": "331-334"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "28e9fb24bfb25f6e40d3897a5cf9c39f6f6b8d1f",
+      "title": "C-ICL: Contrastive In-context Learning for Information Extraction",
+      "authors": [
+        {
+          "name": "Ying Mo",
+          "authorId": "2199939792"
+        },
+        {
+          "name": "Jian Yang",
+          "authorId": "2276103971"
+        },
+        {
+          "name": "Jiahao Liu",
+          "authorId": "2261393008"
+        },
+        {
+          "name": "Shun Zhang",
+          "authorId": "2216176381"
+        },
+        {
+          "name": "Jingang Wang",
+          "authorId": "2324838018"
+        },
+        {
+          "name": "Zhoujun Li",
+          "authorId": "2258837278"
+        }
+      ],
+      "year": 2024,
+      "abstract": "There has been increasing interest in exploring the capabilities of advanced large language models (LLMs) in the field of information extraction (IE), specifically focusing on tasks related to named entity recognition (NER) and relation extraction (RE). Although researchers are exploring the use of few-shot information extraction through in-context learning with LLMs, they tend to focus only on using correct or positive examples for demonstration, neglecting the potential value of incorporating incorrect or negative examples into the learning process. In this paper, we present c-ICL, a novel few-shot technique that leverages both correct and incorrect sample constructions to create in-context learning demonstrations. This approach enhances the ability of LLMs to extract entities and relations by utilizing prompts that incorporate not only the positive samples but also the reasoning behind them. This method allows for the identification and correction of potential interface errors. Specifically, our proposed method taps into the inherent contextual information and valuable information in hard negative samples and the nearest positive neighbors to the test and then applies the in-context learning demonstrations based on LLMs. Our experiments on various datasets indicate that c-ICL outperforms previous few-shot in-context learning methods, delivering substantial enhancements in performance across a broad spectrum of related tasks. These improvements are noteworthy, showcasing the versatility of our approach in miscellaneous scenarios.",
+      "citationCount": 31,
+      "doi": "10.48550/arXiv.2402.11254",
+      "arxivId": "2402.11254",
+      "url": "https://www.semanticscholar.org/paper/28e9fb24bfb25f6e40d3897a5cf9c39f6f6b8d1f",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "10099-10114"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8f092cea8973d7c05a9d4c2d0416a0ab0a29859b",
+      "title": "MachineLearningLM: Scaling Many-shot In-context Learning via Continued Pretraining",
+      "authors": [
+        {
+          "name": "Haoyu Dong",
+          "authorId": "2383869412"
+        },
+        {
+          "name": "Pengkun Zhang",
+          "authorId": "2379721676"
+        },
+        {
+          "name": "Mingzhe Lu",
+          "authorId": "2385323544"
+        },
+        {
+          "name": "Yanzhen Shen",
+          "authorId": "2380521409"
+        },
+        {
+          "name": "Guolin Ke",
+          "authorId": "2379653677"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) possess broad world knowledge and strong general-purpose reasoning ability, yet they struggle to learn from many in-context examples on standard machine learning (ML) tasks, that is, to leverage many-shot demonstrations purely via in-context learning (ICL) without gradient descent. We introduce MachineLearningLM, a portable continued-pretraining framework that equips a general-purpose LLM with robust in-context ML capability while preserving its general knowledge and reasoning for broader chat workflows. Our pretraining procedure synthesizes ML tasks from millions of structural causal models (SCMs), spanning shot counts up to 1,024. We begin with a random-forest teacher, distilling tree-based decision strategies into the LLM to strengthen robustness in numerical modeling. All tasks are serialized with a token-efficient prompt, enabling 3x to 6x more examples per context window and delivering up to 50x amortized throughput via batch inference. Despite a modest setup (Qwen-2.5-7B-Instruct with LoRA rank 8), MachineLearningLM outperforms strong LLM baselines (e.g., GPT-5-mini) by an average of about 15% on out-of-distribution tabular classification across finance, physics, biology, and healthcare domains. It exhibits a striking many-shot scaling law: accuracy increases monotonically as in-context demonstrations grow from 8 to 1,024. Without any task-specific training, it attains random-forest-level accuracy across hundreds of shots. General chat capabilities, including knowledge and reasoning, are preserved: it achieves 75.4% on MMLU.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2509.06806",
+      "arxivId": "2509.06806",
+      "url": "https://www.semanticscholar.org/paper/8f092cea8973d7c05a9d4c2d0416a0ab0a29859b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.06806"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "449e3e6d05da946833be2b696a76f4f215c81928",
+      "title": "Where to show Demos in Your Prompt: A Positional Bias of In-Context Learning",
+      "authors": [
+        {
+          "name": "K.A. Cobbina",
+          "authorId": "2153090471"
+        },
+        {
+          "name": "Tianyi Zhou",
+          "authorId": "2374199578"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In-context learning (ICL) is a critical emerging capability of large language models (LLMs), enabling few-shot learning during inference by including a few demonstrations (demos) in the prompt. However, it has been found that ICL's performance can be sensitive to the choices of demos and their order. This paper investigates an unexplored new positional bias of ICL for the first time: we observe that the predictions and accuracy can drift drastically when the positions of demos, the system prompt, and the user message in LLM input are varied. We refer to this bias as DEMOS'POSITION IN PROMPT (DPP) bias. We design a systematic evaluation pipeline to study this type of positional bias across classification, question answering, summarization, and reasoning tasks. We introduce two metrics, ACCURACY-CHANGE and PREDICTION-CHANGE, to quantify net gains and output volatility induced by changes in the demos'position. Extensive experiments on ten LLMs from four open-source model families (QWEN, LLAMA3, MISTRAL, COHERE) verify that the bias significantly affects their accuracy and predictions: placing demos at the start of the prompt yields the most stable and accurate outputs with gains of up to +6 points. In contrast, placing demos at the end of the user message flips over 30\\% of predictions without improving correctness on QA tasks. Smaller models are most affected by this sensitivity, though even large models remain marginally affected on complex tasks.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2507.22887",
+      "arxivId": "2507.22887",
+      "url": "https://www.semanticscholar.org/paper/449e3e6d05da946833be2b696a76f4f215c81928",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.22887"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

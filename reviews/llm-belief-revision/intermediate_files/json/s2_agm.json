@@ -1,0 +1,1090 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "AGM belief revision Gardenfors",
+  "results": [
+    {
+      "paperId": "a22a2f3e89fe6849a6eca7a7232f5f9c3e8b260f",
+      "title": "AGM Belief Revision, Semantically",
+      "authors": [
+        {
+          "name": "F. M. Falakh",
+          "authorId": "22190712"
+        },
+        {
+          "name": "S. Rudolph",
+          "authorId": "143730547"
+        },
+        {
+          "name": "Kai Sauerwald",
+          "authorId": "13092666"
+        }
+      ],
+      "year": 2021,
+      "abstract": "We establish a generic, model-theoretic characterization of rational belief revision operators implementing the paradigm of minimal change according to the seminal work by Alchourr\u00f3n, G\u00e4rdenfors, and Makinson (AGM). Our characterization applies to all Tarskian logics, that is, all logics with a classical model-theoretic semantics, and hence a wide variety of formalisms were used in knowledge representation and beyond, including many for which a model-theoretic characterization has hitherto been lacking. Our starting point is the approach by Katsuno and Mendelzon (K&M), who provided such a characterization for propositional logic over finite signatures. We generalize K&M\u2019s approach to the setting of AGM-style revision over bases in arbitrary Tarskian logics, where base may refer to one of the various ways of representing an agent\u2019s beliefs (such as belief sets, arbitrary or finite sets of sentences, or single sentences). Our first core result is a representation theorem providing a two-way correspondence between AGM-style revision operators and specific assignments: functions associating every base to a \u201cpreference\u201d relation over interpretations, which must be total but is\u2014in contrast to prior approaches\u2014not always transitive. As our second core contribution, we provide a characterization of all logics for which our result can be strengthened to assignments producing transitive preference relations (as in K&M\u2019s original work). Alongside these main contributions, we discuss diverse variants of our findings as well as ramifications for other areas of belief revision theory.",
+      "citationCount": 1,
+      "doi": "10.1145/3763234",
+      "arxivId": "2112.13557",
+      "url": "https://www.semanticscholar.org/paper/a22a2f3e89fe6849a6eca7a7232f5f9c3e8b260f",
+      "venue": "ACM Transactions on Computational Logic",
+      "journal": {
+        "name": "ACM Transactions on Computational Logic",
+        "pages": "1 - 54",
+        "volume": "26"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a22bd572d0e4098312b078c7e2a93283a250a43a",
+      "title": "A General Katsuno-Mendelzon-Style Characterization of AGM Belief Base Revision for Arbitrary Monotonic Logics",
+      "authors": [
+        {
+          "name": "F. M. Falakh",
+          "authorId": "22190712"
+        },
+        {
+          "name": "S. Rudolph",
+          "authorId": "143730547"
+        },
+        {
+          "name": "Kai Sauerwald",
+          "authorId": "13092666"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The AGM postulates by Alchourr\u00f3n, G\u00e4rdenfors, and Makinson continue to represent a cornerstone in research related to belief change. We generalize the approach of Katsuno and Mendelzon (KM) for characterizing AGM base revision from propositional logic to the setting of (multiple) base revision in arbitrary monotonic logics. Our core result is a representation theorem using the assignment of total \u2013 yet not transitive \u2013 \u201cpreference\u201d relations to belief bases. We also provide a characterization of all logics for which our result can be strengthened to preorder assignments (as in KM\u2019s original work).",
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": "2104.14512",
+      "url": "https://www.semanticscholar.org/paper/a22bd572d0e4098312b078c7e2a93283a250a43a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2104.14512"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ebaf7208453d812065d17855f184e90fbe9636cb",
+      "title": "Tailoring disjoint belief structures to the AGM framework",
+      "authors": [
+        {
+          "name": "Theofanis I. Aravanis",
+          "authorId": "103450609"
+        }
+      ],
+      "year": 2024,
+      "abstract": "\n The belief-structures model of Chopra and Parikh is perfectly suitable for representing the statics and dynamics of the beliefs of resource-bounded agents. Nevertheless, despite its favourable properties, it lies outside the AGM framework, the well-established paradigm for codifying rational belief revision of belief sets (i.e. logical theories), proposed by Alchourr\u00f3n, G\u00e4rdenfors and Makinson. This feature can be attributed to two primary reasons: firstly, a multivalued logic is utilized for evaluating queries relative to a belief structure, and secondly, the objects under revision in the context of the belief-structures model are belief structures, rather than belief sets. Against this background, we present, in this article, a natural approach for adapting the revision of belief structures to an AGM-style revision while retaining the favourable properties of the belief-structures model. Under certain realistic assumptions, including the mutual disjointness of sublanguages of belief structures, a collection of interesting properties of the proposed method are identified, by investigating the satisfiability and violation of principal postulates of the belief-revision theory. Overall, it is demonstrated that the introduced approach constitutes a meaningful relevance-sensitive tool for integrating disjoint belief structures within the AGM framework, with potential applications in emerging fields such as digital twins, where precise and dynamic belief changes are essential for maintaining accurate simulations of real-world systems.",
+      "citationCount": 2,
+      "doi": "10.1093/logcom/exae080",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ebaf7208453d812065d17855f184e90fbe9636cb",
+      "venue": "Journal of Logic and Computation",
+      "journal": {
+        "name": "J. Log. Comput.",
+        "volume": "35"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "979b49f7feee2db21bca993cc722800c9444abf2",
+      "title": "Theory-relational belief revision",
+      "authors": [
+        {
+          "name": "Theofanis I. Aravanis",
+          "authorId": "103450609"
+        },
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1007/s10472-022-09794-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/979b49f7feee2db21bca993cc722800c9444abf2",
+      "venue": "Annals of Mathematics and Artificial Intelligence",
+      "journal": {
+        "name": "Annals of Mathematics and Artificial Intelligence",
+        "pages": "573 - 594",
+        "volume": "90"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "671c7c25bbd4351a40ee9eb9fe6edae327d4d9de",
+      "title": "Belief Revision and Knowledge Representation",
+      "authors": [
+        {
+          "name": "P. G\u00e4rdenfors",
+          "authorId": "2412562"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/671c7c25bbd4351a40ee9eb9fe6edae327d4d9de",
+      "venue": "Theoretical Aspects of Rationality and Knowledge",
+      "journal": {
+        "pages": "117"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "63bfa7d3807da0b5584a47ed98a7821a716cf838",
+      "title": "Relevance-Sensitive Belief Revision in the Realm of Partial Preorders",
+      "authors": [
+        {
+          "name": "Theofanis I. Aravanis",
+          "authorId": "103450609"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1145/3503823.3503824",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/63bfa7d3807da0b5584a47ed98a7821a716cf838",
+      "venue": "Panhellenic Conference on Informatics",
+      "journal": {
+        "name": "Proceedings of the 25th Pan-Hellenic Conference on Informatics"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bc36e18da12e57bbed2217dc0607686104eee063",
+      "title": "Belief Revision I: The AGM Theory",
+      "authors": [
+        {
+          "name": "F. Huber",
+          "authorId": "48846831"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1111/PHC3.12048",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bc36e18da12e57bbed2217dc0607686104eee063",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy Compass",
+        "pages": "604-612",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "55f79d6b186711674a2a6a909e57b34d7022de24",
+      "title": "On uniform belief revision",
+      "authors": [
+        {
+          "name": "Theofanis I. Aravanis",
+          "authorId": "103450609"
+        }
+      ],
+      "year": 2020,
+      "abstract": "\n Rational belief-change policies are encoded in the so-called AGM revision functions, defined in the prominent work of Alchourr\u00f3n, G\u00e4rdenfors and Makinson. The present article studies an interesting class of well-behaved AGM revision functions, called herein uniform-revision operators (or UR operators, for short). Each UR operator is uniquely defined by means of a single total preorder over all possible worlds, a fact that in turn entails a significantly lower representational cost, relative to an arbitrary AGM revision function, and an embedded solution to the iterated-revision problem, at no extra representational cost. Herein, we first demonstrate how weaker, more expressive\u2014yet, more representationally expensive\u2014types of uniform revision can be defined. Furthermore, we prove that UR operators, essentially, generalize a significant type of belief change, namely, parametrized-difference revision. Lastly, we show that they are (to some extent) relevance-sensitive, as well as that they respect the so-called principle of kinetic consistency.",
+      "citationCount": 7,
+      "doi": "10.1093/logcom/exaa058",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/55f79d6b186711674a2a6a909e57b34d7022de24",
+      "venue": "Journal of Logic and Computation",
+      "journal": {
+        "name": "J. Log. Comput.",
+        "pages": "1357-1376",
+        "volume": "30"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dccf3d44acc955cdb1b229b002826e107f0e37d0",
+      "title": "Incompatibilities Between Iterated and Relevance-Sensitive Belief Revision",
+      "authors": [
+        {
+          "name": "Theofanis I. Aravanis",
+          "authorId": "103450609"
+        },
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        },
+        {
+          "name": "Mary-Anne Williams",
+          "authorId": "144826976"
+        }
+      ],
+      "year": 2020,
+      "abstract": "The AGM paradigm for belief change, as originally introduced by Alchourr\u00f3n, G\u00e4rdenfors and Makinson, lacks any guidelines for the process of iterated revision. One of the most influential work addressing this problem is Darwiche and Pearl\u2019s approach (DP approach, for short), which, despite its well-documented shortcomings, remains to this date the most dominant. In this article, we make further observations on the DP approach. In particular, we prove that the DP postulates are, in a strong sense, inconsistent with Parikh\u2019s relevance-sensitive axiom (P), extending previous initial conflicts. Immediate consequences of this result are that an entire class of intuitive revision operators, which includes Dalal\u2019s operator, violates the DP postulates, as well as that the Independence postulate and Spohn\u2019s conditionalization are inconsistent with axiom (P). The whole study, essentially, indicates that two fundamental aspects of the revision process, namely, iteration and relevance, are in deep conflict, and opens the discussion for a potential reconciliation towards a comprehensive formal framework for knowledge dynamics.",
+      "citationCount": 3,
+      "doi": "10.1613/jair.1.11871",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dccf3d44acc955cdb1b229b002826e107f0e37d0",
+      "venue": "Journal of Artificial Intelligence Research",
+      "journal": {
+        "name": "J. Artif. Intell. Res.",
+        "pages": "85-108",
+        "volume": "69"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cbbe2c53f5e7196ed15615fc07ca70b8311c4763",
+      "title": "Semantic Characterizations of General Belief Base Revision",
+      "authors": [
+        {
+          "name": "F. M. Falakh",
+          "authorId": "22190712"
+        },
+        {
+          "name": "S. Rudolph",
+          "authorId": "143730547"
+        },
+        {
+          "name": "Kai Sauerwald",
+          "authorId": "13092666"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cbbe2c53f5e7196ed15615fc07ca70b8311c4763",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2112.13557"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0979c1170baa3717c4da6880120b54135d3d2b91",
+      "title": "Belief Revision with Bridging Axioms",
+      "authors": [
+        {
+          "name": "\u00d6. \u00d6z\u00e7ep",
+          "authorId": "3342377"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0979c1170baa3717c4da6880120b54135d3d2b91",
+      "venue": "The Florida AI Research Society",
+      "journal": {
+        "pages": "104-109"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "678681745959bd8bbfff71747db9ee4de03d983d",
+      "title": "Filters-based revision",
+      "authors": [
+        {
+          "name": "Maria Andrikopoulou",
+          "authorId": "2342157448"
+        },
+        {
+          "name": "Theofanis I. Aravanis",
+          "authorId": "103450609"
+        },
+        {
+          "name": "J. Delgrande",
+          "authorId": "1711764"
+        },
+        {
+          "name": "Panagis Karazeris",
+          "authorId": "1984237"
+        },
+        {
+          "name": "P. Peppas",
+          "authorId": "2298830"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/s10472-024-09963-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/678681745959bd8bbfff71747db9ee4de03d983d",
+      "venue": "Annals of Mathematics and Artificial Intelligence",
+      "journal": {
+        "name": "Annals of Mathematics and Artificial Intelligence",
+        "pages": "633 - 659",
+        "volume": "93"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "75562c7ecc2da760027e618d8bef0bd6e4734c08",
+      "title": "Belief Update Through Semiorders",
+      "authors": [
+        {
+          "name": "Theofanis I. Aravanis",
+          "authorId": "103450609"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Belief change is a core component of intelligent reasoning, enabling agents to adapt their beliefs in response to new information. A prominent form of belief change is belief revision, which involves altering an agent\u2019s beliefs about a static (unchanging) world in light of new evidence. A foundational framework for modeling rational belief revision was introduced by Alchourr\u00f3n, G\u00e4rdenfors, and Makinson (AGM), who formalized revision functions based on total preorders over possible worlds\u2014that is, orderings that encode the relative plausibility of alternative states of affairs. Building on this, Peppas and Williams later characterized AGM-style revision functions using weaker preference structures known as semiorders, which, unlike total preorders, permit intransitive indifference between alternatives. In this article, we extend the framework of Peppas and Williams to the context of belief update. In contrast to belief revision, belief update concerns maintaining coherent beliefs in response to actual changes in a dynamic, evolving environment. We provide both axiomatic and semantic characterizations of update functions derived from semiorders, establishing corresponding representation theorems. These results essentially generalize the classical belief-update framework of Katsuno and Mendelzon, which relies on total preorders, thereby offering a broader and more flexible perspective. The intransitivity of indifference inherent in semiorders plays a central role in our framework, enabling the representation of nuanced plausibility distinctions between possible states of affairs\u2014an essential feature for realistically modeling belief dynamics.",
+      "citationCount": 0,
+      "doi": "10.3390/math13132102",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/75562c7ecc2da760027e618d8bef0bd6e4734c08",
+      "venue": "Mathematics",
+      "journal": {
+        "name": "Mathematics"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d6cf1320034afb4b33af1932063e3b4658afae5b",
+      "title": "\u201cMerely a logician\u2019s toy?\u201d Belief revision confronting scientific theory change",
+      "authors": [
+        {
+          "name": "G. Cevolani",
+          "authorId": "2246253"
+        },
+        {
+          "name": "R. Festa",
+          "authorId": "49185663"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/S11016-011-9581-X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d6cf1320034afb4b33af1932063e3b4658afae5b",
+      "venue": "",
+      "journal": {
+        "name": "Metascience",
+        "pages": "463-466",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d548c6e5294127c325473628b0acd038e8ca1b5a",
+      "title": "Belief Revision meets Philosophy of Science",
+      "authors": [
+        {
+          "name": "E. Olsson",
+          "authorId": "31592474"
+        },
+        {
+          "name": "S. Enqvist",
+          "authorId": "1811738"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 37,
+      "doi": "10.1007/978-90-481-9609-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d548c6e5294127c325473628b0acd038e8ca1b5a",
+      "venue": "Logic, Epistemology, and the Unity of Science",
+      "journal": {
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "87d5999c548aabd4aaa44f250d9d2f021988b816",
+      "title": "A Combined System for Update Logic and Belief Revision",
+      "authors": [
+        {
+          "name": "Guillaume Aucher",
+          "authorId": "1747649"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 131,
+      "doi": "10.1007/978-3-540-32128-6_1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/87d5999c548aabd4aaa44f250d9d2f021988b816",
+      "venue": "Prima",
+      "journal": {
+        "pages": "1-17"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "583ea3c7690f08e7bf5784c75abff620c0f7d158",
+      "title": "Beliefs, belief revision, and splitting languages",
+      "authors": [
+        {
+          "name": "R. Parikh",
+          "authorId": "144352289"
+        }
+      ],
+      "year": 1999,
+      "abstract": null,
+      "citationCount": 172,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/583ea3c7690f08e7bf5784c75abff620c0f7d158",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "266-278",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "4d1eb120dd2c00fd23287d17a9833cd8bd2ea93f",
+      "title": "Belief Revision From the Point of View of Doxastic Logic",
+      "authors": [
+        {
+          "name": "K. Segerberg",
+          "authorId": "144606893"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 110,
+      "doi": "10.1093/jigpal/3.4.535",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4d1eb120dd2c00fd23287d17a9833cd8bd2ea93f",
+      "venue": "Logic Journal of the IGPL",
+      "journal": {
+        "name": "Log. J. IGPL",
+        "pages": "535-553",
+        "volume": "3"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d046ef237f9ee2675e550050f44c5d149e7b7a87",
+      "title": "BELIEF REVISION IN NON-CLASSICAL LOGICS",
+      "authors": [
+        {
+          "name": "D. Gabbay",
+          "authorId": "15773387"
+        },
+        {
+          "name": "O. Rodrigues",
+          "authorId": "3464415"
+        },
+        {
+          "name": "A. Russo",
+          "authorId": "145277911"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 46,
+      "doi": "10.1017/S1755020308080246",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d046ef237f9ee2675e550050f44c5d149e7b7a87",
+      "venue": "The Review of Symbolic Logic",
+      "journal": {
+        "name": "The Review of Symbolic Logic",
+        "pages": "267 - 304",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "18b80c79090ecb25965df6a8691091062d90aa93",
+      "title": "Reasoning About Belief Revision",
+      "authors": [
+        {
+          "name": "Caroline Semmling",
+          "authorId": "2355949"
+        },
+        {
+          "name": "H. Wansing",
+          "authorId": "1713559"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1007/978-90-481-9609-8_13",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/18b80c79090ecb25965df6a8691091062d90aa93",
+      "venue": "Belief Revision meets Philosophy of Science",
+      "journal": {
+        "pages": "303-328"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d7768effc7a45cfeb3f721b0dc6ad88e7831654b",
+      "title": "A dialogical semantics for Bonanno's system of belief revision",
+      "authors": [
+        {
+          "name": "V. Fiutek",
+          "authorId": "9959285"
+        },
+        {
+          "name": "H. R\u00fcckert",
+          "authorId": "2497625"
+        },
+        {
+          "name": "Shahid Rahman",
+          "authorId": "48593207"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 26,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d7768effc7a45cfeb3f721b0dc6ad88e7831654b",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "315-334",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "095ac6b83775756af955438f2ec0ad1b6e76dbbf",
+      "title": "Resource-Bounded Belief Revision and Contraction",
+      "authors": [
+        {
+          "name": "N. Alechina",
+          "authorId": "1680562"
+        },
+        {
+          "name": "M. Jago",
+          "authorId": "49594868"
+        },
+        {
+          "name": "B. Logan",
+          "authorId": "1741067"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 28,
+      "doi": "10.1007/11691792_9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/095ac6b83775756af955438f2ec0ad1b6e76dbbf",
+      "venue": "International Workshop on Declarative Agent Languages and Technologies",
+      "journal": {
+        "pages": "141-154"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "99d0b5fef26efa84c078cdf97661d6f0e51210e4",
+      "title": "\u201cMerely a logician\u2019s toy?\u201d Belief revision confronting scientific theory change",
+      "authors": [
+        {
+          "name": "G. Cevolani",
+          "authorId": "2246253"
+        },
+        {
+          "name": "R. Festa",
+          "authorId": "49185663"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/s11016-011-9581-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/99d0b5fef26efa84c078cdf97661d6f0e51210e4",
+      "venue": "Meta Science",
+      "journal": {
+        "name": "Metascience",
+        "pages": "463 - 466",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c567b10116bef1b6dcc5d7ae0d633a2562cd9e32",
+      "title": "Belief revision by sets of sentences",
+      "authors": [
+        {
+          "name": "Mariano M\u00e9ndez",
+          "authorId": "11137972"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 26,
+      "doi": "10.1007/BF02943527",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c567b10116bef1b6dcc5d7ae0d633a2562cd9e32",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Computer Science and Technology",
+        "pages": "108-125",
+        "volume": "11"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d17a3cd08268e515d6a59f14976458ef4bfaacc5",
+      "title": "SOME COMPLETENESS THEOREMS IN THE DYNAMIC DOXASTIC LOGIC OF ITERATED BELIEF REVISION",
+      "authors": [
+        {
+          "name": "K. Segerberg",
+          "authorId": "144606893"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1017/S1755020309990384",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d17a3cd08268e515d6a59f14976458ef4bfaacc5",
+      "venue": "The Review of Symbolic Logic",
+      "journal": {
+        "name": "The Review of Symbolic Logic",
+        "pages": "228 - 246",
+        "volume": "3"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "93e12bc2ea1014718c462686f8ccb26d5f793652",
+      "title": "Belief revision by sets of sentences",
+      "authors": [
+        {
+          "name": "Dongmo Zhang",
+          "authorId": "2109580355"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 11,
+      "doi": "10.1007/BF02943527",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/93e12bc2ea1014718c462686f8ccb26d5f793652",
+      "venue": "Journal of Computational Science and Technology",
+      "journal": {
+        "name": "Journal of Computer Science and Technology",
+        "pages": "108-125",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bbc4c117effeefe2d5e033d6ba82490c6c4a9f80",
+      "title": "A Finite Base Belief Revision System",
+      "authors": [
+        {
+          "name": "S. Dixon",
+          "authorId": "2054926560"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 10,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bbc4c117effeefe2d5e033d6ba82490c6c4a9f80",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "437b4f1db73cab8bbda88dcb892acf332baf0bac",
+      "title": "Belief Revision, Conditional Logic and Nonmonotonic Reasoning",
+      "authors": [
+        {
+          "name": "W. Wobcke",
+          "authorId": "2580731"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.1305/ndjfl/1040308829",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/437b4f1db73cab8bbda88dcb892acf332baf0bac",
+      "venue": "Notre Dame J. Formal Log.",
+      "journal": {
+        "name": "Notre Dame J. Formal Log.",
+        "pages": "55-102",
+        "volume": "36"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c501af32c0b1d12ebe94b75f6102b1aca9ee246b",
+      "title": "Belief Revision and the Ramsey Test: A Solution",
+      "authors": [
+        {
+          "name": "Laura Giordano",
+          "authorId": "3299050"
+        },
+        {
+          "name": "Valentina Gliozzi",
+          "authorId": "1752286"
+        },
+        {
+          "name": "N. Olivetti",
+          "authorId": "1680681"
+        }
+      ],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1007/3-540-45411-X_18",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c501af32c0b1d12ebe94b75f6102b1aca9ee246b",
+      "venue": "International Conference of the Italian Association for Artificial Intelligence",
+      "journal": {
+        "pages": "165-175"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "41ce176416e9019e6aa276d655703c4b2dc748f6",
+      "title": "Belief Revision in a Nonclassical Logic",
+      "authors": [
+        {
+          "name": "G. Lakemeyer",
+          "authorId": "1779592"
+        },
+        {
+          "name": "Wilfried Lang",
+          "authorId": "2055610252"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.1007/3-540-61708-6_61",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/41ce176416e9019e6aa276d655703c4b2dc748f6",
+      "venue": "Deutsche Jahrestagung f\u00fcr K\u00fcnstliche Intelligenz",
+      "journal": {
+        "pages": "199-211"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "01bcfeebea8499117923ebb7de20a8f7cd811e22",
+      "title": "A Conditional Logic for Iterated Belief Revision",
+      "authors": [
+        {
+          "name": "Laura Giordano",
+          "authorId": "3299050"
+        },
+        {
+          "name": "Valentina Gliozzi",
+          "authorId": "1752286"
+        },
+        {
+          "name": "N. Olivetti",
+          "authorId": "1680681"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/01bcfeebea8499117923ebb7de20a8f7cd811e22",
+      "venue": "European Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "28-32"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "de570f924b9b59387b216514553338fb9036d20b",
+      "title": "BELIEF-REVISION, THE RAMSEY TEST, MONOTONICITY, AND THE SO-CALLED IMPOSSIBILITY RESULTS",
+      "authors": [
+        {
+          "name": "N. Tennant",
+          "authorId": "2771395"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1017/S1755020308090023",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/de570f924b9b59387b216514553338fb9036d20b",
+      "venue": "The Review of Symbolic Logic",
+      "journal": {
+        "name": "The Review of Symbolic Logic",
+        "pages": "402 - 423",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "731219140752e27dc90ef8959b71de72dd2fe5a5",
+      "title": "Assessing the Minimality of Change in Belief Revision: Capacities",
+      "authors": [
+        {
+          "name": "A. Sims",
+          "authorId": "145799801"
+        },
+        {
+          "name": "B. Sims",
+          "authorId": "39834570"
+        }
+      ],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-94-015-9817-0_8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/731219140752e27dc90ef8959b71de72dd2fe5a5",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "163-177",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d7a12bf198434775fdf1efe154fc66eb126420d4",
+      "title": "Positive Agnosticism in Belief Revision",
+      "authors": [
+        {
+          "name": "R. Girle",
+          "authorId": "1951707"
+        }
+      ],
+      "year": 2002,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d7a12bf198434775fdf1efe154fc66eb126420d4",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "50f34835ffaeae300738900735ab7c89248044e0",
+      "title": "A Brief Introduction to Belief Revision \u2217",
+      "authors": [
+        {
+          "name": "Edward T. Dean",
+          "authorId": "153896761"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/50f34835ffaeae300738900735ab7c89248044e0",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c4b3c1d04a35076df5c66fa53862576063b3adee",
+      "title": "Belief revision from an epistemological point of view",
+      "authors": [
+        {
+          "name": "S. Hansson",
+          "authorId": "2304274"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1007/978-1-4020-1986-9_7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c4b3c1d04a35076df5c66fa53862576063b3adee",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "255-279",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d72e2425d232d9a4253be9518567d82bb185100f",
+      "title": "Reapproaching Ramsey: Conditionals and Iterated Belief Change in the Spirit of AGM",
+      "authors": [
+        {
+          "name": "H. Rott",
+          "authorId": "144145447"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 18,
+      "doi": "10.1007/s10992-011-9177-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d72e2425d232d9a4253be9518567d82bb185100f",
+      "venue": "Journal of Philosophical Logic",
+      "journal": {
+        "name": "Journal of Philosophical Logic",
+        "pages": "155-191",
+        "volume": "40"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1971410c554101698b89370f6635b0c88cb51a0d",
+      "title": "Descriptor Revision for Conditionals: Literal Descriptors and Conditional Preservation",
+      "authors": [
+        {
+          "name": "Kai Sauerwald",
+          "authorId": "13092666"
+        },
+        {
+          "name": "J. Haldimann",
+          "authorId": "150147280"
+        },
+        {
+          "name": "Martin von Berg",
+          "authorId": "2053125393"
+        },
+        {
+          "name": "C. Beierle",
+          "authorId": "1722911"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Descriptor revision by Hansson is a framework for addressing the problem of belief change. In descriptor revision, different kinds of change processes are dealt with in a joint framework. Individual change requirements are qualified by specific success conditions expressed by a belief descriptor, and belief descriptors can be combined by logical connectives. This is in contrast to the currently dominating AGM paradigm shaped by Alchourron, Gardenfors, and Makinson, where different kinds of changes, like a revision or a contraction, are dealt with separately. In this article, we investigate the realisation of descriptor revision for a conditional logic while restricting descriptors to the conjunction of literal descriptors. We apply the principle of conditional preservation developed by Kern-Isberner to descriptor revision for conditionals, show how descriptor revision for conditionals under these restrictions can be characterised by a constraint satisfaction problem, and implement it using constraint logic programming. Since our conditional logic subsumes propositional logic, our approach also realises descriptor revision for propositional logic.",
+      "citationCount": 8,
+      "doi": "10.1007/978-3-030-58285-2_15",
+      "arxivId": "2006.01444",
+      "url": "https://www.semanticscholar.org/paper/1971410c554101698b89370f6635b0c88cb51a0d",
+      "venue": "Deutsche Jahrestagung f\u00fcr K\u00fcnstliche Intelligenz",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2006.01444"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f451c70539ddf430c73bec1f734e01b82839743a",
+      "title": "Two AGM-style characterizations of model repair",
+      "authors": [
+        {
+          "name": "Paulo T. Guerra",
+          "authorId": "2971326"
+        },
+        {
+          "name": "Renata Wassermann",
+          "authorId": "145483667"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1007/s10472-019-09656-4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f451c70539ddf430c73bec1f734e01b82839743a",
+      "venue": "Annals of Mathematics and Artificial Intelligence",
+      "journal": {
+        "name": "Annals of Mathematics and Artificial Intelligence",
+        "pages": "233 - 257",
+        "volume": "87"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ec038e21e9692671f0e71e707e4c1401964fe20f",
+      "title": "The AGM Model",
+      "authors": [
+        {
+          "name": "E. Ferm\u00e9",
+          "authorId": "2553321"
+        },
+        {
+          "name": "S. Hansson",
+          "authorId": "2304274"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/978-3-319-60535-7_3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ec038e21e9692671f0e71e707e4c1401964fe20f",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "9-24",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

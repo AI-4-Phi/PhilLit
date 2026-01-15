@@ -1,0 +1,1776 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "chain of thought prompting",
+  "results": [
+    {
+      "openalex_id": "W4221143046",
+      "doi": "10.48550/arxiv.2201.11903",
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": [
+        {
+          "name": "Jason Lee",
+          "openalex_id": "A5100657725",
+          "orcid": "https://orcid.org/0000-0003-4042-795X"
+        },
+        {
+          "name": "Xuezhi Wang",
+          "openalex_id": "A5024842018",
+          "orcid": "https://orcid.org/0000-0001-7592-2358"
+        },
+        {
+          "name": "Dale Schuurmans",
+          "openalex_id": "A5010575626"
+        },
+        {
+          "name": "Maarten Bosma",
+          "openalex_id": "A5074322007"
+        },
+        {
+          "name": "Ed H.",
+          "openalex_id": "A5028125399",
+          "orcid": "https://orcid.org/0000-0003-3230-5338"
+        },
+        {
+          "name": "Quoc V. Le",
+          "openalex_id": "A5088551093",
+          "orcid": "https://orcid.org/0000-0002-1087-2844"
+        },
+        {
+          "name": "Denny Zhou",
+          "openalex_id": "A5061512999"
+        },
+        {
+          "name": "Le, Quoc",
+          "openalex_id": ""
+        },
+        {
+          "name": "Zhou, Denny",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-28",
+      "abstract": "We explore how generating a chain of thought -- a series of intermediate reasoning steps -- significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier.",
+      "cited_by_count": 4168,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2201.11903"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Text Readability and Simplification"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W4221143046"
+    },
+    {
+      "openalex_id": "W4304194220",
+      "doi": "10.48550/arxiv.2210.03493",
+      "title": "Automatic Chain of Thought Prompting in Large Language Models",
+      "authors": [
+        {
+          "name": "Zhuosheng Zhang",
+          "openalex_id": "A5070962435",
+          "orcid": "https://orcid.org/0000-0002-4183-3645"
+        },
+        {
+          "name": "Aston Zhang",
+          "openalex_id": "A5049841140"
+        },
+        {
+          "name": "Mu Li",
+          "openalex_id": "A5100399461",
+          "orcid": "https://orcid.org/0000-0002-4433-2301"
+        },
+        {
+          "name": "Alex Smola",
+          "openalex_id": "A5090351022"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-07",
+      "abstract": "Large language models (LLMs) can perform complex reasoning by generating intermediate reasoning steps. Providing these steps for prompting demonstrations is called chain-of-thought (CoT) prompting. CoT prompting has two major paradigms. One leverages a simple prompt like \"Let's think step by step\" to facilitate step-by-step thinking before answering a question. The other uses a few manual demonstrations one by one, each composed of a question and a reasoning chain that leads to an answer. The superior performance of the second paradigm hinges on the hand-crafting of task-specific demonstrations one by one. We show that such manual efforts may be eliminated by leveraging LLMs with the \"Let's think step by step\" prompt to generate reasoning chains for demonstrations one by one, i.e., let's think not just step by step, but also one by one. However, these generated chains often come with mistakes. To mitigate the effect of such mistakes, we find that diversity matters for automatically constructing demonstrations. We propose an automatic CoT prompting method: Auto-CoT. It samples questions with diversity and generates reasoning chains to construct demonstrations. On ten public benchmark reasoning tasks with GPT-3, Auto-CoT consistently matches or exceeds the performance of the CoT paradigm that requires manual designs of demonstrations. Code is available at https://github.com/amazon-research/auto-cot",
+      "cited_by_count": 230,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2210.03493"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4304194220"
+    },
+    {
+      "openalex_id": "W4385571452",
+      "doi": "10.18653/v1/2023.acl-short.101",
+      "title": "Reasoning Implicit Sentiment with Chain-of-Thought Prompting",
+      "authors": [
+        {
+          "name": "Hao Fei",
+          "openalex_id": "A5055815455",
+          "institutions": [
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Bobo Li",
+          "openalex_id": "A5101922939",
+          "orcid": "https://orcid.org/0000-0002-0513-5540",
+          "institutions": [
+            "Wuhan University"
+          ]
+        },
+        {
+          "name": "Qian Liu",
+          "openalex_id": "A5037327117",
+          "orcid": "https://orcid.org/0000-0002-3162-935X"
+        },
+        {
+          "name": "Lidong Bing",
+          "openalex_id": "A5086674741",
+          "orcid": "https://orcid.org/0000-0003-4565-6313",
+          "institutions": [
+            "Alibaba Group (Cayman Islands)"
+          ]
+        },
+        {
+          "name": "Fei Li",
+          "openalex_id": "A5100325881",
+          "orcid": "https://orcid.org/0000-0003-1816-1761",
+          "institutions": [
+            "Wuhan University"
+          ]
+        },
+        {
+          "name": "Tat\u2010Seng Chua",
+          "openalex_id": "A5089404640",
+          "orcid": "https://orcid.org/0000-0001-6097-7807",
+          "institutions": [
+            "National University of Singapore"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "While sentiment analysis systems try to determine the sentiment polarities of given targets based on the key opinion expressions in input texts, in implicit sentiment analysis (ISA) the opinion cues come in an implicit and obscure manner. Thus detecting implicit sentiment requires the common-sense and multi-hop reasoning ability to infer the latent intent of opinion. Inspired by the recent chain-of-thought (CoT) idea, in this work we introduce a Three-hop Reasoning (THOR) CoT framework to mimic the human-like reasoning process for ISA. We design a three-step prompting principle for THOR to step-by-step induce the implicit aspect, opinion, and finally the sentiment polarity. Our THOR+Flan-T5 (11B) pushes the state-of-the-art (SoTA) by over 6% F1 on supervised setup. More strikingly, THOR+GPT3 (175B) boosts the SoTA by over 50% F1 on zero-shot setting.",
+      "cited_by_count": 81,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.acl-short.101.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Sentiment Analysis and Opinion Mining",
+        "Multimodal Machine Learning Applications"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W4385571452"
+    },
+    {
+      "openalex_id": "W4401996408",
+      "doi": "10.1145/3690635",
+      "title": "Structured Chain-of-Thought Prompting for Code Generation",
+      "authors": [
+        {
+          "name": "Jia Li",
+          "openalex_id": "A5100405693",
+          "orcid": "https://orcid.org/0000-0002-5579-8852",
+          "institutions": [
+            "Peking University",
+            "Ministry of Education"
+          ]
+        },
+        {
+          "name": "Ge Li",
+          "openalex_id": "A5100447682",
+          "orcid": "https://orcid.org/0000-0002-5828-0186",
+          "institutions": [
+            "Peking University",
+            "Ministry of Education"
+          ]
+        },
+        {
+          "name": "Yongmin Li",
+          "openalex_id": "A5037363163",
+          "institutions": [
+            "Ministry of Education",
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Zhi Jin",
+          "openalex_id": "A5049100391",
+          "orcid": "https://orcid.org/0000-0003-1087-226X",
+          "institutions": [
+            "Ministry of Education",
+            "Peking University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-08-29",
+      "abstract": "Large Language Models (LLMs) have shown impressive abilities in code generation. Chain-of-Thought (CoT) prompting is the state-of-the-art approach to utilizing LLMs. CoT prompting asks LLMs first to generate CoTs (i.e., intermediate natural language reasoning steps) and then output the code. However, the accuracy of CoT prompting still cannot satisfy practical applications. For example, gpt-3.5-turbo with CoT prompting only achieves 53.29% Pass@1 in HumanEval. In this article, we propose Structured CoTs (SCoTs) and present a novel prompting technique for code generation named SCoT prompting. Our motivation is that human developers follow structured programming. Developers use three programming structures (i.e., sequential, branch, and loop) to design and implement structured programs. Thus, we ask LLMs to use three programming structures to generate SCoTs (structured reasoning steps) before outputting the final code. Compared to CoT prompting, SCoT prompting explicitly introduces programming structures and unlocks the structured programming thinking of LLMs. We apply SCoT prompting to two LLMs (i.e., gpt-4-turbo, gpt-3.5-turbo, and DeepSeek Coder-Instruct- \\(\\{\\) 1.3B, 6.7B, 33B \\(\\}\\) ) and evaluate it on three benchmarks (i.e., HumanEval, MBPP, and MBCPP). SCoT prompting outperforms CoT prompting by up to 13.79% in Pass@1. SCoT prompting is robust to examples and achieves substantial improvements. The human evaluation also shows human developers prefer programs from SCoT prompting.",
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "ACM Transactions on Software Engineering and Methodology",
+        "type": "journal",
+        "issn": [
+          "1049-331X",
+          "1557-7392"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3690635"
+      },
+      "topics": [
+        "Software Engineering Research",
+        "Advanced Software Engineering Methodologies",
+        "Model-Driven Software Engineering Techniques"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W4401996408"
+    },
+    {
+      "openalex_id": "W4385571045",
+      "doi": "10.18653/v1/2023.acl-long.153",
+      "title": "Towards Understanding Chain-of-Thought Prompting: An Empirical Study of What Matters",
+      "authors": [
+        {
+          "name": "Boshi Wang",
+          "openalex_id": "A5103541243",
+          "institutions": [
+            "The Ohio State University"
+          ]
+        },
+        {
+          "name": "Sewon Min",
+          "openalex_id": "A5039158419",
+          "institutions": [
+            "University of Washington"
+          ]
+        },
+        {
+          "name": "Xiang Deng",
+          "openalex_id": "A5100870515",
+          "institutions": [
+            "The Ohio State University"
+          ]
+        },
+        {
+          "name": "Jiaming Shen",
+          "openalex_id": "A5041327449",
+          "orcid": "https://orcid.org/0000-0002-0467-4956",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "You Wu",
+          "openalex_id": "A5100659454",
+          "orcid": "https://orcid.org/0000-0001-8586-1325",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Luke Zettlemoyer",
+          "openalex_id": "A5067919401",
+          "orcid": "https://orcid.org/0009-0008-8296-0764",
+          "institutions": [
+            "University of Washington"
+          ]
+        },
+        {
+          "name": "Huan Sun",
+          "openalex_id": "A5101610217",
+          "orcid": "https://orcid.org/0000-0003-1592-5367",
+          "institutions": [
+            "The Ohio State University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Boshi Wang, Sewon Min, Xiang Deng, Jiaming Shen, You Wu, Luke Zettlemoyer, Huan Sun. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2023.",
+      "cited_by_count": 88,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.acl-long.153.pdf"
+      },
+      "topics": [
+        "Data Visualization and Analytics"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4385571045"
+    },
+    {
+      "openalex_id": "W4375958700",
+      "doi": "10.48550/arxiv.2305.04388",
+      "title": "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
+      "authors": [
+        {
+          "name": "Miles Turpin",
+          "openalex_id": "A5113139169"
+        },
+        {
+          "name": "Julian Michael",
+          "openalex_id": "A5072681909"
+        },
+        {
+          "name": "Ethan Perez",
+          "openalex_id": "A5091112967"
+        },
+        {
+          "name": "Samuel R. Bowman",
+          "openalex_id": "A5112713734"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-07",
+      "abstract": "Large Language Models (LLMs) can achieve strong performance on many tasks by producing step-by-step reasoning before giving a final output, often referred to as chain-of-thought reasoning (CoT). It is tempting to interpret these CoT explanations as the LLM's process for solving a task. This level of transparency into LLMs' predictions would yield significant safety benefits. However, we find that CoT explanations can systematically misrepresent the true reason for a model's prediction. We demonstrate that CoT explanations can be heavily influenced by adding biasing features to model inputs--e.g., by reordering the multiple-choice options in a few-shot prompt to make the answer always \"(A)\"--which models systematically fail to mention in their explanations. When we bias models toward incorrect answers, they frequently generate CoT explanations rationalizing those answers. This causes accuracy to drop by as much as 36% on a suite of 13 tasks from BIG-Bench Hard, when testing with GPT-3.5 from OpenAI and Claude 1.0 from Anthropic. On a social-bias task, model explanations justify giving answers in line with stereotypes without mentioning the influence of these social biases. Our findings indicate that CoT explanations can be plausible yet misleading, which risks increasing our trust in LLMs without guaranteeing their safety. Building more transparent and explainable systems will require either improving CoT faithfulness through targeted efforts or abandoning CoT in favor of alternative methods.",
+      "cited_by_count": 72,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2305.04388"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning in Materials Science"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4375958700"
+    },
+    {
+      "openalex_id": "W4402727624",
+      "doi": "10.1109/cvpr52733.2024.01367",
+      "title": "Compositional Chain-of-Thought Prompting for Large Multimodal Models",
+      "authors": [
+        {
+          "name": "Chancharik Mitra",
+          "openalex_id": "A5089380757",
+          "orcid": "https://orcid.org/0009-0008-9826-7534",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Brandon Huang",
+          "openalex_id": "A5111084088",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Trevor Darrell",
+          "openalex_id": "A5029105520",
+          "orcid": "https://orcid.org/0000-0001-5453-8533",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Roei Herzig",
+          "openalex_id": "A5066997569",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-16",
+      "abstract": null,
+      "cited_by_count": 42,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling",
+        "Reinforcement Learning in Robotics"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W4402727624"
+    },
+    {
+      "openalex_id": "W4387559558",
+      "doi": "10.48550/arxiv.2310.04959",
+      "title": "Towards Better Chain-of-Thought Prompting Strategies: A Survey",
+      "authors": [
+        {
+          "name": "Zihan Yu",
+          "openalex_id": "A5101505654",
+          "orcid": "https://orcid.org/0000-0003-2670-4252"
+        },
+        {
+          "name": "Liang He",
+          "openalex_id": "A5100317921",
+          "orcid": "https://orcid.org/0000-0003-4826-629X"
+        },
+        {
+          "name": "Zhen Wu",
+          "openalex_id": "A5101218617",
+          "orcid": "https://orcid.org/0009-0000-1614-6440"
+        },
+        {
+          "name": "Xinyu Dai",
+          "openalex_id": "A5102994315",
+          "orcid": "https://orcid.org/0000-0002-4139-7337"
+        },
+        {
+          "name": "Jiajun Chen",
+          "openalex_id": "A5100427076",
+          "orcid": "https://orcid.org/0000-0001-5618-3932"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-08",
+      "abstract": "Chain-of-Thought (CoT), a step-wise and coherent reasoning chain, shows its impressive strength when used as a prompting strategy for large language models (LLM). Recent years, the prominent effect of CoT prompting has attracted emerging research. However, there still lacks of a systematic summary about key factors of CoT prompting and comprehensive guide for prompts utilizing. For a deeper understanding about CoT prompting, we survey on a wide range of current research, presenting a systematic and comprehensive analysis on several factors that may influence the effect of CoT prompting, and introduce how to better apply it in different applications under these discussions. We further analyze the challenges and propose some future directions about CoT prompting. This survey could provide an overall reference on related research.",
+      "cited_by_count": 23,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2310.04959"
+      },
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Topic Modeling",
+        "Bayesian Modeling and Causal Inference"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4387559558"
+    },
+    {
+      "openalex_id": "W4393149666",
+      "doi": "10.1609/aaai.v38i2.27888",
+      "title": "Visual Chain-of-Thought Prompting for Knowledge-Based Visual Reasoning",
+      "authors": [
+        {
+          "name": "Zhenfang Chen",
+          "openalex_id": "A5064272059",
+          "institutions": [
+            "IBM (United States)"
+          ]
+        },
+        {
+          "name": "Qinhong Zhou",
+          "openalex_id": "A5016046839",
+          "orcid": "https://orcid.org/0009-0003-8461-7621",
+          "institutions": [
+            "University of Massachusetts Amherst"
+          ]
+        },
+        {
+          "name": "Yikang Shen",
+          "openalex_id": "A5073742611",
+          "orcid": "https://orcid.org/0000-0001-6836-0510",
+          "institutions": [
+            "IBM (United States)"
+          ]
+        },
+        {
+          "name": "Yining Hong",
+          "openalex_id": "A5000069468",
+          "orcid": "https://orcid.org/0000-0002-0518-2099",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        },
+        {
+          "name": "Zhiqing Sun",
+          "openalex_id": "A5020049212",
+          "orcid": "https://orcid.org/0000-0003-1933-496X",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Dan Gutfreund",
+          "openalex_id": "A5015086408",
+          "orcid": "https://orcid.org/0000-0001-5101-4443",
+          "institutions": [
+            "IBM (United States)"
+          ]
+        },
+        {
+          "name": "Chuang Gan",
+          "openalex_id": "A5040877128",
+          "orcid": "https://orcid.org/0000-0003-4031-5886",
+          "institutions": [
+            "IBM (United States)",
+            "University of Massachusetts Amherst"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-24",
+      "abstract": "Knowledge-based visual reasoning remains a daunting task since it not only requires machines to interpret the concepts and relationships from visual scenes but also associate them with external world knowledge to conduct a chain of reasoning on open-world questions. Previous works, however, treat visual perception and language-based reasoning as two independent modules, failing to attend to both modules throughout all stages of reasoning. To this end, we propose Visual Chain-of-thought Prompting (VCTP) for knowledge-based reasoning, which involves the interaction between visual content and natural language in an iterative step-by-step reasoning manner. VCTP contains three stages, see, think, and confirm. The see stage scans the image and grounds the visual concept candidates with a visual perception model. The think stage adopts a pre-trained large language model (LLM) to attend to key visual concepts from natural language questions adaptively. It then transforms key visual context into text context for prompting with a visual captioning model, and adopts the LLM to generate the answer. The confirm stage further uses the LLM to generate the supporting rationale to the answer, which is then passed through a cross-modality classifier to verify that it\u2019s consistent with the visual context. We iterate through the think-confirm stages to ensure the verified rationale is consistent with the answer. We conduct experiments on a range of knowledge-based visual reasoning datasets. We found our VCTP enjoys several benefits, 1). it achieves better performance than the previous few-shot learning baselines; 2). it enjoys the total transparency and trustworthiness of the whole reasoning process by providing rationales for each reasoning step; 3). it is computation-efficient compared with other fine-tuning baselines. Our code is available at https://github.com/UMass-Foundation-Model/VisualCoT.git",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "type": "conference",
+        "issn": [
+          "2159-5399",
+          "2374-3468"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/27888/27801"
+      },
+      "topics": [
+        "Data Visualization and Analytics",
+        "Artificial Intelligence in Games"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W4393149666"
+    },
+    {
+      "openalex_id": "W4376312043",
+      "doi": "10.48550/arxiv.2305.06599",
+      "title": "Structured Chain-of-Thought Prompting for Code Generation",
+      "authors": [
+        {
+          "name": "Jia Li",
+          "openalex_id": "A5100405693",
+          "orcid": "https://orcid.org/0000-0002-5579-8852"
+        },
+        {
+          "name": "Ge Li",
+          "openalex_id": "A5100447682",
+          "orcid": "https://orcid.org/0000-0002-5828-0186"
+        },
+        {
+          "name": "Yongmin Li",
+          "openalex_id": "A5101434055",
+          "orcid": "https://orcid.org/0000-0003-0228-7693"
+        },
+        {
+          "name": "Zhi Jin",
+          "openalex_id": "A5049100391",
+          "orcid": "https://orcid.org/0000-0003-1087-226X"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-11",
+      "abstract": "Large Language Models (LLMs) (e.g., ChatGPT) have shown impressive performance in code generation. LLMs take prompts as inputs, and Chain-of-Thought (CoT) prompting is the state-of-the-art prompting technique. CoT prompting asks LLMs first to generate CoTs (i.e., intermediate natural language reasoning steps) and then output the code. However, CoT prompting is designed for natural language generation and has low accuracy in code generation. In this paper, we propose Structured CoTs (SCoTs) and present a novel prompting technique for code generation, named SCoT prompting. Our motivation is source code contains rich structural information and any code can be composed of three program structures (i.e., sequence, branch, and loop structures). Intuitively, structured intermediate reasoning steps make for structured source code. Thus, we ask LLMs to use program structures to build CoTs, obtaining SCoTs. Then, LLMs generate the final code based on SCoTs. Compared to CoT prompting, SCoT prompting explicitly constrains LLMs to think about how to solve requirements from the view of source code and further the performance of LLMs in code generation. We apply SCoT prompting to two LLMs (i.e., ChatGPT and Codex) and evaluate it on three benchmarks (i.e., HumanEval, MBPP, and MBCPP). (1) SCoT prompting outperforms the state-of-the-art baseline - CoT prompting by up to 13.79% in Pass@1. (2) Human evaluation shows human developers prefer programs from SCoT prompting. (3) SCoT prompting is robust to examples and achieves substantial improvements.",
+      "cited_by_count": 17,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2305.06599"
+      },
+      "topics": [
+        "Software Engineering Research",
+        "Topic Modeling",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4376312043"
+    },
+    {
+      "openalex_id": "W4389524308",
+      "doi": "10.18653/v1/2023.findings-emnlp.806",
+      "title": "Cue-CoT: Chain-of-thought Prompting for Responding to In-depth Dialogue Questions with LLMs",
+      "authors": [
+        {
+          "name": "Hongru Wang",
+          "openalex_id": "A5075179865",
+          "orcid": "https://orcid.org/0000-0001-8305-5231",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Rui Wang",
+          "openalex_id": "A5092276271",
+          "institutions": [
+            "Harbin Institute of Technology",
+            "Novel (United States)"
+          ]
+        },
+        {
+          "name": "Fei Mi",
+          "openalex_id": "A5012014905",
+          "orcid": "https://orcid.org/0000-0001-6358-9922",
+          "institutions": [
+            "Huawei Technologies (Sweden)"
+          ]
+        },
+        {
+          "name": "Yang Deng",
+          "openalex_id": "A5112598943",
+          "orcid": "https://orcid.org/0009-0002-1978-467X",
+          "institutions": [
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Zezhong Wang",
+          "openalex_id": "A5100747388",
+          "orcid": "https://orcid.org/0000-0002-1061-604X",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Bin Liang",
+          "openalex_id": "A5063075000",
+          "orcid": "https://orcid.org/0000-0001-7234-1347",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Ruifeng Xu",
+          "openalex_id": "A5018149714",
+          "orcid": "https://orcid.org/0000-0001-9885-2364",
+          "institutions": [
+            "Novel (United States)",
+            "Harbin Institute of Technology",
+            "Peng Cheng Laboratory"
+          ]
+        },
+        {
+          "name": "Kam\u2010Fai Wong",
+          "openalex_id": "A5008208316",
+          "orcid": "https://orcid.org/0000-0002-9427-5659",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Large Language Models (LLMs), such as ChatGPT, greatly empower dialogue systems with strong language understanding and generation capabilities. However, most of the previous works prompt the LLMs to directly generate a response based on the dialogue context, overlooking the underlying linguistic cues about the user status exhibited in the context. Such in-depth dialogue scenarios are challenging for existing LLMs to figure out the user's hidden needs and respond satisfactorily through a single-step inference. To this end, we propose a novel linguistic cue-based chain-of-thoughts (Cue-CoT), which enhances the LLMs inference with an intermediate reasoning step to find cues exhibited in the dialogue, aiming to provide a more personalized and engaging response. To evaluate the approach, we build a benchmark with in-depth dialogue questions, consisting of 6 datasets in both Chinese and English, targeting 3 major linguistic cues during the conversation: personality, emotion, and psychology. We conducted experiments on the proposed benchmark with 5 LLMs under both zero-shot and one-shot settings. Empirical results demonstrate our proposed Cue-CoT method outperforms standard prompting methods in terms of both helpfulness and acceptability on all datasets.",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.findings-emnlp.806.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Machine Learning in Healthcare",
+        "Mental Health via Writing"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4389524308"
+    },
+    {
+      "openalex_id": "W4393119218",
+      "doi": "10.1609/aaai.v38i21.30364",
+      "title": "A Chain-of-Thought Prompting Approach with LLMs for Evaluating Students\u2019 Formative Assessment Responses in Science",
+      "authors": [
+        {
+          "name": "Clayton Cohn",
+          "openalex_id": "A5034721319",
+          "orcid": "https://orcid.org/0000-0003-0856-9587",
+          "institutions": [
+            "Vanderbilt University"
+          ]
+        },
+        {
+          "name": "Nicole Hutchins",
+          "openalex_id": "A5067772690",
+          "orcid": "https://orcid.org/0000-0002-7258-5023",
+          "institutions": [
+            "Vanderbilt University"
+          ]
+        },
+        {
+          "name": "Tuan Anh Le",
+          "openalex_id": "A5100458417",
+          "orcid": "https://orcid.org/0000-0003-3959-4320",
+          "institutions": [
+            "DePauw University"
+          ]
+        },
+        {
+          "name": "Gautam Biswas",
+          "openalex_id": "A5051150754",
+          "orcid": "https://orcid.org/0000-0002-2752-3878",
+          "institutions": [
+            "Vanderbilt University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-24",
+      "abstract": "This paper explores the use of large language models (LLMs) to score and explain short-answer assessments in K-12 science. While existing methods can score more structured math and computer science assessments, they often do not provide explanations for the scores. Our study focuses on employing GPT-4 for automated assessment in middle school Earth Science, combining few-shot and active learning with chain-of-thought reasoning. Using a human-in-the-loop approach, we successfully score and provide meaningful explanations for formative assessment responses. A systematic analysis of our method's pros and cons sheds light on the potential for human-in-the-loop techniques to enhance automated grading for open-ended science assessments.",
+      "cited_by_count": 27,
+      "type": "preprint",
+      "source": {
+        "name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "type": "conference",
+        "issn": [
+          "2159-5399",
+          "2374-3468"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/30364/32416"
+      },
+      "topics": [
+        "Educational Assessment and Pedagogy",
+        "Education and Critical Thinking Development",
+        "Educational and Psychological Assessments"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W4393119218"
+    },
+    {
+      "openalex_id": "W4362707120",
+      "doi": "10.48550/arxiv.2304.03262",
+      "title": "When do you need Chain-of-Thought Prompting for ChatGPT?",
+      "authors": [
+        {
+          "name": "Jiuhai Chen",
+          "openalex_id": "A5001086152"
+        },
+        {
+          "name": "Lichang Chen",
+          "openalex_id": "A5101668648",
+          "orcid": "https://orcid.org/0000-0003-1173-7131"
+        },
+        {
+          "name": "Heng Huang",
+          "openalex_id": "A5060016795",
+          "orcid": "https://orcid.org/0000-0002-3483-8333"
+        },
+        {
+          "name": "Tianyi Zhou",
+          "openalex_id": "A5039076312",
+          "orcid": "https://orcid.org/0000-0001-5348-0632"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-06",
+      "abstract": "Chain-of-Thought (CoT) prompting can effectively elicit complex multi-step reasoning from Large Language Models~(LLMs). For example, by simply adding CoT instruction ``Let's think step-by-step'' to each input query of MultiArith dataset, GPT-3's accuracy can be improved from 17.7\\% to 78.7\\%. However, it is not clear whether CoT is still effective on more recent instruction finetuned (IFT) LLMs such as ChatGPT. Surprisingly, on ChatGPT, CoT is no longer effective for certain tasks such as arithmetic reasoning while still keeping effective on other reasoning tasks. Moreover, on the former tasks, ChatGPT usually achieves the best performance and can generate CoT even without being instructed to do so. Hence, it is plausible that ChatGPT has already been trained on these tasks with CoT and thus memorized the instruction so it implicitly follows such an instruction when applied to the same queries, even without CoT. Our analysis reflects a potential risk of overfitting/bias toward instructions introduced in IFT, which becomes more common in training LLMs. In addition, it indicates possible leakage of the pretraining recipe, e.g., one can verify whether a dataset and instruction were used in training ChatGPT. Our experiments report new baseline results of ChatGPT on a variety of reasoning tasks and shed novel insights into LLM's profiling, instruction memorization, and pretraining dataset leakage.",
+      "cited_by_count": 17,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2304.03262"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Advanced Graph Neural Networks",
+        "Stochastic Gradient Optimization Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4362707120"
+    },
+    {
+      "openalex_id": "W4385572290",
+      "doi": "10.18653/v1/2023.findings-acl.408",
+      "title": "Chain of Thought Prompting Elicits Knowledge Augmentation",
+      "authors": [
+        {
+          "name": "Dingjun Wu",
+          "openalex_id": "A5101040882",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Jing Zhang",
+          "openalex_id": "A5071731562",
+          "orcid": "https://orcid.org/0000-0002-7560-121X",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Xinmei Huang",
+          "openalex_id": "A5033340767",
+          "orcid": "https://orcid.org/0000-0003-0476-4967",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "The knowledge-augmented deep learning paradigm refers to a paradigm in which domain knowledge is identified and integrated into deep models. Conventional methods typically employ task-specific approaches to gather external knowledge from various sources. In contrast, large language models are extensively pre-trained and can serve as a comprehensive source of external knowledge. In this paper, we propose CoT-KA, a Chain-of-Thought-based method that augments knowledge for deep learning. CoT-KA avoids the need for additional knowledge retrieval or knowledge reasoning models, as required in conventional augmentation methods. Our results demonstrate that CoT-KA outperforms both pure CoT-based methods and the non-augmented method across the majority of eleven publicly available benchmarks for various reasoning tasks.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.findings-acl.408.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Advanced Graph Neural Networks",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W4385572290"
+    },
+    {
+      "openalex_id": "W4387994822",
+      "doi": "10.48550/arxiv.2310.16436",
+      "title": "DDCoT: Duty-Distinct Chain-of-Thought Prompting for Multimodal Reasoning in Language Models",
+      "authors": [
+        {
+          "name": "Zheng Ge",
+          "openalex_id": "A5061928568",
+          "orcid": "https://orcid.org/0000-0002-9983-7120"
+        },
+        {
+          "name": "Bin Yang",
+          "openalex_id": "A5100778642",
+          "orcid": "https://orcid.org/0000-0002-7029-701X"
+        },
+        {
+          "name": "Jiajin Tang",
+          "openalex_id": "A5102705973",
+          "orcid": "https://orcid.org/0009-0002-2906-8941"
+        },
+        {
+          "name": "Hong-Yu Zhou",
+          "openalex_id": "A5100783219",
+          "orcid": "https://orcid.org/0000-0002-1256-7050"
+        },
+        {
+          "name": "Sibei Yang",
+          "openalex_id": "A5012166205",
+          "orcid": "https://orcid.org/0000-0002-8144-7351"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-25",
+      "abstract": "A long-standing goal of AI systems is to perform complex multimodal reasoning like humans. Recently, large language models (LLMs) have made remarkable strides in such multi-step reasoning on the language modality solely by leveraging the chain of thought (CoT) to mimic human thinking. However, the transfer of these advancements to multimodal contexts introduces heightened challenges, including but not limited to the impractical need for labor-intensive annotation and the limitations in terms of flexibility, generalizability, and explainability. To evoke CoT reasoning in multimodality, this work first conducts an in-depth analysis of these challenges posed by multimodality and presents two key insights: \"keeping critical thinking\" and \"letting everyone do their jobs\" in multimodal CoT reasoning. Furthermore, this study proposes a novel DDCoT prompting that maintains a critical attitude through negative-space prompting and incorporates multimodality into reasoning by first dividing the reasoning responsibility of LLMs into reasoning and recognition and then integrating the visual recognition capability of visual models into the joint reasoning process. The rationales generated by DDCoT not only improve the reasoning abilities of both large and small language models in zero-shot prompting and fine-tuning learning, significantly outperforming state-of-the-art methods but also exhibit impressive generalizability and explainability.",
+      "cited_by_count": 15,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2310.16436"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "Advanced Graph Neural Networks"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4387994822"
+    },
+    {
+      "openalex_id": "W4221161695",
+      "doi": "10.48550/arxiv.2203.11171",
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "authors": [
+        {
+          "name": "Xuezhi Wang",
+          "openalex_id": "A5024842018",
+          "orcid": "https://orcid.org/0000-0001-7592-2358"
+        },
+        {
+          "name": "Jason Lee",
+          "openalex_id": "A5100657725",
+          "orcid": "https://orcid.org/0000-0003-4042-795X"
+        },
+        {
+          "name": "Dale Schuurmans",
+          "openalex_id": "A5010575626"
+        },
+        {
+          "name": "Quoc V. Le",
+          "openalex_id": "A5088551093",
+          "orcid": "https://orcid.org/0000-0002-1087-2844"
+        },
+        {
+          "name": "Ed H.",
+          "openalex_id": "A5028125399",
+          "orcid": "https://orcid.org/0000-0003-3230-5338"
+        },
+        {
+          "name": "Denny Zhou",
+          "openalex_id": "A5061512999"
+        },
+        {
+          "name": "Chowdhery, Aakanksha",
+          "openalex_id": ""
+        },
+        {
+          "name": "Zhou, Denny",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-21",
+      "abstract": "Chain-of-thought prompting combined with pre-trained large language models has achieved encouraging results on complex reasoning tasks. In this paper, we propose a new decoding strategy, self-consistency, to replace the naive greedy decoding used in chain-of-thought prompting. It first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by marginalizing out the sampled reasoning paths. Self-consistency leverages the intuition that a complex reasoning problem typically admits multiple different ways of thinking leading to its unique correct answer. Our extensive empirical evaluation shows that self-consistency boosts the performance of chain-of-thought prompting with a striking margin on a range of popular arithmetic and commonsense reasoning benchmarks, including GSM8K (+17.9%), SVAMP (+11.0%), AQuA (+12.2%), StrategyQA (+6.4%) and ARC-challenge (+3.9%).",
+      "cited_by_count": 666,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2203.11171"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Advanced Graph Neural Networks"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4221161695"
+    },
+    {
+      "openalex_id": "W4366400053",
+      "doi": "10.48550/arxiv.2304.07919",
+      "title": "Chain of Thought Prompt Tuning in Vision Language Models",
+      "authors": [
+        {
+          "name": "Jiaxin Ge",
+          "openalex_id": "A5034530447",
+          "orcid": "https://orcid.org/0000-0001-9152-6267"
+        },
+        {
+          "name": "Hongyin Luo",
+          "openalex_id": "A5024338348"
+        },
+        {
+          "name": "Siyuan Qian",
+          "openalex_id": "A5028696491",
+          "orcid": "https://orcid.org/0000-0002-7562-3689"
+        },
+        {
+          "name": "Yulu Gan",
+          "openalex_id": "A5020877356"
+        },
+        {
+          "name": "Jie Fu",
+          "openalex_id": "A5100666921",
+          "orcid": "https://orcid.org/0000-0001-5596-8391"
+        },
+        {
+          "name": "Shanghang Zhan",
+          "openalex_id": "A5036592120"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-16",
+      "abstract": "Language-Image Pre-training has demonstrated promising results on zero-shot and few-shot downstream tasks by prompting visual models with natural language prompts. However, most recent studies only use a single prompt for tuning, neglecting the inherent step-to-step cognitive reasoning process that humans conduct in complex task settings, for example, when processing images from unfamiliar domains. Chain of Thought is a simple and effective approximation to human reasoning process and has been proven useful for natural language processing (NLP) tasks. Based on this cognitive intuition, we believe that conducting effective reasoning is also an important problem in visual tasks, and a chain of thought could be a solution to this problem. In this work, we propose a novel chain of thought prompt tuning for vision-language modeling. Extensive experiments show that our method not only generalizes better in image classification tasks, has greater transferability beyond a single dataset, and has stronger domain generalization performance, but also performs much better in imagetext retrieval and visual question answering, which require more reasoning capabilities. We are the first to successfully adapt chain-of-thought prompting that combines visual and textual embeddings. We will release our codes",
+      "cited_by_count": 8,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2304.07919"
+      },
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Domain Adaptation and Few-Shot Learning",
+        "Advanced Image and Video Retrieval Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4366400053"
+    },
+    {
+      "openalex_id": "W4402810347",
+      "doi": "10.3233/ssw240028",
+      "title": "Generating SPARQL from Natural Language Using Chain-of-Thoughts Prompting",
+      "authors": [
+        {
+          "name": "Hamada M. Zahera",
+          "openalex_id": "A5013045713",
+          "orcid": "https://orcid.org/0000-0003-0215-1278",
+          "institutions": [
+            "Paderborn University"
+          ]
+        },
+        {
+          "name": "Manzoor Ali",
+          "openalex_id": "A5015696721",
+          "orcid": "https://orcid.org/0000-0001-8403-5160",
+          "institutions": [
+            "Paderborn University"
+          ]
+        },
+        {
+          "name": "Mohamed Ahmed Sherif",
+          "openalex_id": "A5052233342",
+          "orcid": "https://orcid.org/0000-0002-9927-2203",
+          "institutions": [
+            "Paderborn University"
+          ]
+        },
+        {
+          "name": "Diego Moussallem",
+          "openalex_id": "A5013483395",
+          "orcid": "https://orcid.org/0000-0003-3757-2013",
+          "institutions": [
+            "Paderborn University"
+          ]
+        },
+        {
+          "name": "Axel-Cyrille Ngonga Ngomo",
+          "openalex_id": "A5038745720",
+          "orcid": "https://orcid.org/0000-0001-7112-3516",
+          "institutions": [
+            "Paderborn University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-09-11",
+      "abstract": "Purpose: SPARQL is a highly expressive query language for knowledge graphs; yet, formulating precise SPARQL queries can be challenging for non-expert users. A potential solution is translating natural questions into SPARQL queries, known as SPARQL generation. This paper addresses the challenges of translating natural language questions into SPARQL queries for different knowledge graphs. Methodology: We propose COT-SPARQL, our approach to generate SPARQL queries from input questions. Our approach employs Chain-of-thoughts prompting that guides large language models through intermediate reasoning steps and facilitates generating precise SPARQL queries. Furthermore, our approach incorporates entities and relations from the input question, and one-shot example in the prompt to provide additional context during the query generation process. Findings: We conducted several experiments on benchmark datasets and showed that our approach outperforms the state-of-the-art methods by a large margin. Our approach achieves a significant improvement in F1 score of 4.4% and 3.0% for the QALD-10 and QALD-9 datasets, respectively. Value: Our COT-SPARQL approach contributes to the semantic web community by simplifying access to knowledge graphs for non-expert users. In particular, COTSPARQL enables non-expert end-users to query knowledge graphs in natural languages, where COT-SPARQL converts user natural languages queries into SPARQL queries, which can be executed via the knowledge graph\u2019s SPARQL endpoint.",
+      "cited_by_count": 11,
+      "type": "book-chapter",
+      "source": {
+        "name": "Studies on the semantic web",
+        "type": "ebook platform",
+        "issn": [
+          "2215-0870"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.3233/ssw240028"
+      },
+      "topics": [
+        "Semantic Web and Ontologies",
+        "Natural Language Processing Techniques",
+        "Service-Oriented Architecture and Web Services"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4402810347"
+    },
+    {
+      "openalex_id": "W4406071956",
+      "doi": "10.1016/j.nlp.2024.100124",
+      "title": "Evaluation of open and closed-source LLMs for low-resource language with zero-shot, few-shot, and chain-of-thought prompting",
+      "authors": [
+        {
+          "name": "Zabir Al Nazi",
+          "openalex_id": "A5086324563",
+          "orcid": "https://orcid.org/0009-0007-2775-0732"
+        },
+        {
+          "name": "Md. Rajib Hossain",
+          "openalex_id": "A5019816606"
+        },
+        {
+          "name": "Faisal Al Mamun",
+          "openalex_id": "A5115771665"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-05",
+      "abstract": "As the global deployment of Large Language Models (LLMs) increases, the demand for multilingual capabilities becomes more crucial. While many LLMs excel in real-time applications for high-resource languages, few are tailored specifically for low-resource languages. The limited availability of text corpora for low-resource languages, coupled with their minimal utilization during LLM training, hampers the models\u2019 ability to perform effectively in real-time applications. Additionally, evaluations of LLMs are significantly less extensive for low-resource languages. This study offers a comprehensive evaluation of both open-source and closed-source multilingual LLMs focused on low-resource language like Bengali, a language that remains notably underrepresented in computational linguistics. Despite the limited number of pre-trained models exclusively on Bengali, we assess the performance of six prominent LLMs, i.e., three closed-source (GPT-3.5, GPT-4o, Gemini) and three open-source (Aya 101, BLOOM, LLaMA) across key natural language processing (NLP) tasks, including text classification, sentiment analysis, summarization, and question answering. These tasks were evaluated using three prompting techniques: Zero-Shot, Few-Shot, and Chain-of-Thought (CoT). This study found that the default hyperparameters of these pre-trained models, such as temperature, maximum token limit, and the number of few-shot examples, did not yield optimal outcomes and led to hallucination issues in many instances. To address these challenges, ablation studies were conducted on key hyperparameters, particularly temperature and the number of shots, to optimize Few-Shot learning and enhance model performance. The focus of this research is on understanding how these LLMs adapt to low-resource downstream tasks, emphasizing their linguistic flexibility and contextual understanding. Experimental results demonstrated that the closed-source GPT-4o model, utilizing Few-Shot learning and Chain-of-Thought prompting, achieved the highest performance across multiple tasks: an F1 score of 84.54% for text classification, 99.00% for sentiment analysis, a F1bertscore of 72.87% for summarization, and 58.22% for question answering. For transparency and reproducibility, all methodologies and code from this study are available on our GitHub repository: https://github.com/zabir-nabil/bangla-multilingual-llm-eval.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Natural Language Processing Journal",
+        "type": "journal",
+        "issn": [
+          "2949-7191"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.1016/j.nlp.2024.100124"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Multimodal Machine Learning Applications"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W4406071956"
+    },
+    {
+      "openalex_id": "W4385570088",
+      "doi": "10.18653/v1/2023.acl-long.147",
+      "title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+      "authors": [
+        {
+          "name": "Lei Wang",
+          "openalex_id": "A5100436099",
+          "orcid": "https://orcid.org/0000-0003-1810-3019",
+          "institutions": [
+            "Singapore Management University"
+          ]
+        },
+        {
+          "name": "Wanyu Xu",
+          "openalex_id": "A5059782572",
+          "institutions": [
+            "Southwest Jiaotong University"
+          ]
+        },
+        {
+          "name": "Yihuai Lan",
+          "openalex_id": "A5063409665",
+          "institutions": [
+            "East China Normal University"
+          ]
+        },
+        {
+          "name": "Zhiqiang Hu",
+          "openalex_id": "A5101417955",
+          "orcid": "https://orcid.org/0000-0003-0830-815X",
+          "institutions": [
+            "Singapore University of Technology and Design"
+          ]
+        },
+        {
+          "name": "Yunshi Lan",
+          "openalex_id": "A5090588589",
+          "orcid": "https://orcid.org/0000-0002-0192-8498",
+          "institutions": [
+            "East China Normal University"
+          ]
+        },
+        {
+          "name": "Roy Ka-Wei Lee",
+          "openalex_id": "A5089793938",
+          "orcid": "https://orcid.org/0000-0002-1986-7750",
+          "institutions": [
+            "Singapore University of Technology and Design"
+          ]
+        },
+        {
+          "name": "Ee\u2010Peng Lim",
+          "openalex_id": "A5039617569",
+          "orcid": "https://orcid.org/0000-0003-0065-8665",
+          "institutions": [
+            "Singapore Management University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Lei Wang, Wanyu Xu, Yihuai Lan, Zhiqiang Hu, Yunshi Lan, Roy Ka-Wei Lee, Ee-Peng Lim. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2023.",
+      "cited_by_count": 183,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.acl-long.147.pdf"
+      },
+      "topics": [
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W4385570088"
+    },
+    {
+      "openalex_id": "W4385570365",
+      "doi": "10.18653/v1/2023.acl-short.130",
+      "title": "MultiTool-CoT: GPT-3 Can Use Multiple External Tools with Chain of Thought Prompting",
+      "authors": [
+        {
+          "name": "Tatsuro Inaba",
+          "openalex_id": "A5111019857",
+          "institutions": [
+            "Kyoto University"
+          ]
+        },
+        {
+          "name": "Hirokazu Kiyomaru",
+          "openalex_id": "A5013141721",
+          "institutions": [
+            "Kyoto University"
+          ]
+        },
+        {
+          "name": "Fei Cheng",
+          "openalex_id": "A5062469562",
+          "orcid": "https://orcid.org/0000-0003-4808-8470",
+          "institutions": [
+            "Kyoto University"
+          ]
+        },
+        {
+          "name": "Sadao Kurohashi",
+          "openalex_id": "A5028836340",
+          "orcid": "https://orcid.org/0000-0001-5398-8399",
+          "institutions": [
+            "National Institute of Informatics",
+            "Kyoto University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Large language models (LLMs) have achieved impressive performance on various reasoning tasks. To further improve the performance, we propose MultiTool-CoT, a novel framework that leverages chain-of-thought (CoT) prompting to incorporate multiple external tools, such as a calculator and a knowledge retriever, during the reasoning process.We apply MultiTool-CoT to the Task 2 dataset of NumGLUE, which requires both numerical reasoning and domain-specific knowledge.The experiments show that our method significantly outperforms strong baselines and achieves state-of-the-art performance.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.acl-short.130.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W4385570365"
+    },
+    {
+      "openalex_id": "W4389520214",
+      "doi": "10.18653/v1/2023.findings-emnlp.101",
+      "title": "What Makes Chain-of-Thought Prompting Effective? A Counterfactual Study",
+      "authors": [
+        {
+          "name": "Aman Madaan",
+          "openalex_id": "A5085667632",
+          "institutions": [
+            "Google (United States)",
+            "DeepMind (United Kingdom)",
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Katherine L. Hermann",
+          "openalex_id": "A5030195779",
+          "institutions": [
+            "Google (United States)",
+            "Carnegie Mellon University",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Amir Yazdanbakhsh",
+          "openalex_id": "A5070172290",
+          "orcid": "https://orcid.org/0000-0001-8199-7671",
+          "institutions": [
+            "Google (United States)",
+            "DeepMind (United Kingdom)",
+            "Carnegie Mellon University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "The effectiveness of Chain-of-thought prompting (CoT) has been widely recognized, but the underlying mechanisms behind its success, the reason why it just works for a wide range of tasks, remains an open question. To investigate this, we employ a counterfactual prompting approach, systematically manipulating elements of examples used in a few-shot prompt, and testing the consequences on model behavior. This allows us to understand the relative contributions of prompt elements such as symbols (digits, entities) and patterns (equations, sentence structure) on in-context learning. Our experiments with three different large language models (LLMs) reveal several key findings. First, the specific symbols used in the prompt do not significantly impact the model\u2019s performance. However, consistent patterns in examples and specifying text in style frequently found on the web are crucial. Second, our findings suggest that the necessity of accurate few-shot examples depends on their role in communicating task understanding. We identify tasks where inaccurate few-shot examples hurt and, surprisingly, tasks where they improve performance. Additionally, we find that the intermediate steps in CoT may not necessarily facilitate learning how to solve a task, but instead efficiently convey task understanding (what) to the model. Furthermore, CoT leverages LLMs to fill in missing commonsense information, particularly helping difficult reasoning problems and long-tail questions.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.findings-emnlp.101.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Ferroelectric and Negative Capacitance Devices",
+        "Advanced Graph Neural Networks"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W4389520214"
+    },
+    {
+      "openalex_id": "W4366999624",
+      "doi": "10.48550/arxiv.2304.11556",
+      "title": "Divide and Prompt: Chain of Thought Prompting for Text-to-SQL",
+      "authors": [
+        {
+          "name": "Xiping Liu",
+          "openalex_id": "A5026587704",
+          "orcid": "https://orcid.org/0000-0002-0230-8004"
+        },
+        {
+          "name": "Zhao Tan",
+          "openalex_id": "A5100541113"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-23",
+      "abstract": "Chain-of-thought (CoT) prompting combined with large language models (LLMs) have achieved encouraging results on complex reasoning tasks. Text-to-SQL is a critical semantic parsing task that converts natural language questions into SQL statements, involving a complex reasoning process. However, there is little work about using CoT prompting to activate LLM's reasoning capabilities on Text-to-SQL tasks. In this work, we propose a new paradigm for prompting Text-to-SQL tasks, called Divide-and-Prompt, which first divides the task into subtasks, and then approach each subtask through CoT. We present 3 prompting-based methods to enhance the Text-to-SQL ability of LLMs. Experiments show that these prompts guide LLMs to generate Text-to-SQL with higher execution accuracy.",
+      "cited_by_count": 7,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2304.11556"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Advanced Graph Neural Networks",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4366999624"
+    },
+    {
+      "openalex_id": "W4372279899",
+      "doi": "10.48550/arxiv.2305.02897",
+      "title": "An automatically discovered chain-of-thought prompt generalizes to novel models and datasets",
+      "authors": [
+        {
+          "name": "Konstantin Hebenstreit",
+          "openalex_id": "A5086417789",
+          "orcid": "https://orcid.org/0009-0005-4604-0635"
+        },
+        {
+          "name": "Robert Praas",
+          "openalex_id": "A5055161348"
+        },
+        {
+          "name": "Louis P. Kiesewetter",
+          "openalex_id": "A5027340511"
+        },
+        {
+          "name": "Matthias Samwald",
+          "openalex_id": "A5082184364",
+          "orcid": "https://orcid.org/0000-0002-4855-2571"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-04",
+      "abstract": "Emergent chain-of-thought (CoT) reasoning capabilities promise to improve performance and explainability of large language models (LLMs). However, uncertainties remain about how reasoning strategies formulated for previous model generations generalize to new model generations and different datasets. In this small-scale study, we compare different reasoning strategies induced by zero-shot prompting across six recently released LLMs (davinci-002, davinci-003, GPT-3.5-turbo, GPT-4, Flan-T5-xxl and Cohere command-xlarge) on a mixture of six question-answering datasets, including datasets from scientific and medical domains. Our findings demonstrate that while some variations in effectiveness occur, gains from CoT reasoning strategies remain robust across different models and datasets. GPT-4 has the most benefit from current state-of-the-art reasoning strategies and exhibits the best performance by applying a prompt previously discovered through automated discovery.",
+      "cited_by_count": 10,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2305.02897"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)",
+        "Advanced Graph Neural Networks"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4372279899"
+    },
+    {
+      "openalex_id": "W4296556663",
+      "doi": "10.48550/arxiv.2209.08141",
+      "title": "Psychologically-informed chain-of-thought prompts for metaphor understanding in large language models",
+      "authors": [
+        {
+          "name": "Ben Prystawski",
+          "openalex_id": "A5050100691"
+        },
+        {
+          "name": "Paul H. Thibodeau",
+          "openalex_id": "A5087123425",
+          "orcid": "https://orcid.org/0000-0002-0302-2358"
+        },
+        {
+          "name": "Noah D. Goodman",
+          "openalex_id": "A5001961716",
+          "orcid": "https://orcid.org/0000-0002-9176-8802"
+        },
+        {
+          "name": "Goodman, Noah D.",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-16",
+      "abstract": "Probabilistic models of language understanding are valuable tools for investigating human language use. However, they need to be hand-designed for a particular domain. In contrast, large language models (LLMs) are trained on text that spans a wide array of domains, but they lack the structure and interpretability of probabilistic models. In this paper, we use chain-of-thought prompts to introduce structures from probabilistic models into LLMs. We explore this approach in the case of metaphor understanding. Our chain-of-thought prompts lead language models to infer latent variables and reason about their relationships in order to choose appropriate paraphrases for metaphors. The latent variables and relationships chosen are informed by theories of metaphor understanding from cognitive psychology. We apply these prompts to the two largest versions of GPT-3 and show that they can improve performance in a paraphrase selection task.",
+      "cited_by_count": 8,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2209.08141"
+      },
+      "topics": [
+        "Language, Metaphor, and Cognition",
+        "Natural Language Processing Techniques",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4296556663"
+    },
+    {
+      "openalex_id": "W4388787359",
+      "doi": "10.48550/arxiv.2311.09277",
+      "title": "Contrastive Chain-of-Thought Prompting",
+      "authors": [
+        {
+          "name": "Yew Ken Chia",
+          "openalex_id": "A5087486426"
+        },
+        {
+          "name": "Guizhen Chen",
+          "openalex_id": "A5101648428",
+          "orcid": "https://orcid.org/0009-0004-5270-2730"
+        },
+        {
+          "name": "Luu Anh Tuan",
+          "openalex_id": "A5001659855",
+          "orcid": "https://orcid.org/0000-0001-6062-207X"
+        },
+        {
+          "name": "Soujanya Poria",
+          "openalex_id": "A5033376109",
+          "orcid": "https://orcid.org/0000-0001-6924-7931"
+        },
+        {
+          "name": "Lidong Bing",
+          "openalex_id": "A5086674741",
+          "orcid": "https://orcid.org/0000-0003-4565-6313"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-15",
+      "abstract": "Despite the success of chain of thought in enhancing language model reasoning, the underlying process remains less well understood. Although logically sound reasoning appears inherently crucial for chain of thought, prior studies surprisingly reveal minimal impact when using invalid demonstrations instead. Furthermore, the conventional chain of thought does not inform language models on what mistakes to avoid, which potentially leads to more errors. Hence, inspired by how humans can learn from both positive and negative examples, we propose contrastive chain of thought to enhance language model reasoning. Compared to the conventional chain of thought, our approach provides both valid and invalid reasoning demonstrations, to guide the model to reason step-by-step while reducing reasoning mistakes. To improve generalization, we introduce an automatic method to construct contrastive demonstrations. Our experiments on reasoning benchmarks demonstrate that contrastive chain of thought can serve as a general enhancement of chain-of-thought prompting.",
+      "cited_by_count": 4,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2311.09277"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Multimodal Machine Learning Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4388787359"
+    },
+    {
+      "openalex_id": "W4391211959",
+      "doi": "10.48550/arxiv.2401.12242",
+      "title": "BadChain: Backdoor Chain-of-Thought Prompting for Large Language Models",
+      "authors": [
+        {
+          "name": "Zhen Xiang",
+          "openalex_id": "A5085283385",
+          "orcid": "https://orcid.org/0000-0002-4284-2041"
+        },
+        {
+          "name": "Fengqing Jiang",
+          "openalex_id": "A5007846132",
+          "orcid": "https://orcid.org/0009-0002-9077-2399"
+        },
+        {
+          "name": "Zidi Xiong",
+          "openalex_id": "A5089895667"
+        },
+        {
+          "name": "Bhaskar Ramasubramanian",
+          "openalex_id": "A5052064870",
+          "orcid": "https://orcid.org/0000-0002-2166-7838"
+        },
+        {
+          "name": "Radha Poovendran",
+          "openalex_id": "A5079723268",
+          "orcid": "https://orcid.org/0000-0003-0269-8097"
+        },
+        {
+          "name": "Bo Li",
+          "openalex_id": "A5100677409",
+          "orcid": "https://orcid.org/0000-0003-4883-7267"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-20",
+      "abstract": "Large language models (LLMs) are shown to benefit from chain-of-thought (COT) prompting, particularly when tackling tasks that require systematic reasoning processes. On the other hand, COT prompting also poses new vulnerabilities in the form of backdoor attacks, wherein the model will output unintended malicious content under specific backdoor-triggered conditions during inference. Traditional methods for launching backdoor attacks involve either contaminating the training dataset with backdoored instances or directly manipulating the model parameters during deployment. However, these approaches are not practical for commercial LLMs that typically operate via API access. In this paper, we propose BadChain, the first backdoor attack against LLMs employing COT prompting, which does not require access to the training dataset or model parameters and imposes low computational overhead. BadChain leverages the inherent reasoning capabilities of LLMs by inserting a backdoor reasoning step into the sequence of reasoning steps of the model output, thereby altering the final response when a backdoor trigger exists in the query prompt. Empirically, we show the effectiveness of BadChain for two COT strategies across four LLMs (Llama2, GPT-3.5, PaLM2, and GPT-4) and six complex benchmark tasks encompassing arithmetic, commonsense, and symbolic reasoning. Moreover, we show that LLMs endowed with stronger reasoning capabilities exhibit higher susceptibility to BadChain, exemplified by a high average attack success rate of 97.0% across the six benchmark tasks on GPT-4. Finally, we propose two defenses based on shuffling and demonstrate their overall ineffectiveness against BadChain. Therefore, BadChain remains a severe threat to LLMs, underscoring the urgency for the development of robust and effective future defenses.",
+      "cited_by_count": 8,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2401.12242"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Artificial Intelligence in Healthcare and Education",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4391211959"
+    },
+    {
+      "openalex_id": "W4312090934",
+      "doi": "10.48550/arxiv.2212.10001",
+      "title": "Towards Understanding Chain-of-Thought Prompting: An Empirical Study of What Matters",
+      "authors": [
+        {
+          "name": "Boshi Wang",
+          "openalex_id": "A5103541243"
+        },
+        {
+          "name": "Sewon Min",
+          "openalex_id": "A5039158419"
+        },
+        {
+          "name": "Xiang Deng",
+          "openalex_id": "A5100870515"
+        },
+        {
+          "name": "Jiaming Shen",
+          "openalex_id": "A5041327449",
+          "orcid": "https://orcid.org/0000-0002-0467-4956"
+        },
+        {
+          "name": "You Wu",
+          "openalex_id": "A5100659454",
+          "orcid": "https://orcid.org/0000-0001-8586-1325"
+        },
+        {
+          "name": "Luke Zettlemoyer",
+          "openalex_id": "A5067919401",
+          "orcid": "https://orcid.org/0009-0008-8296-0764"
+        },
+        {
+          "name": "Huan Sun",
+          "openalex_id": "A5101610217",
+          "orcid": "https://orcid.org/0000-0003-1592-5367"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-20",
+      "abstract": "Chain-of-Thought (CoT) prompting can dramatically improve the multi-step reasoning abilities of large language models (LLMs). CoT explicitly encourages the LLM to generate intermediate rationales for solving a problem, by providing a series of reasoning steps in the demonstrations. Despite its success, there is still little understanding of what makes CoT prompting effective and which aspects of the demonstrated reasoning steps contribute to its performance. In this paper, we show that CoT reasoning is possible even with invalid demonstrations - prompting with invalid reasoning steps can achieve over 80-90% of the performance obtained using CoT under various metrics, while still generating coherent lines of reasoning during inference. Further experiments show that other aspects of the rationales, such as being relevant to the query and correctly ordering the reasoning steps, are much more important for effective CoT reasoning. Overall, these findings both deepen our understanding of CoT prompting, and open up new questions regarding LLMs' capability to learn to reason in context.",
+      "cited_by_count": 8,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2212.10001"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Advanced Graph Neural Networks",
+        "Machine Learning and Algorithms"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4312090934"
+    },
+    {
+      "openalex_id": "W4392558382",
+      "doi": "10.1016/j.isci.2024.109451",
+      "title": "Analysis and prediction in SCR experiments using GPT-4 with an effective chain-of-thought prompting strategy",
+      "authors": [
+        {
+          "name": "Muyu Lu",
+          "openalex_id": "A5051178964",
+          "institutions": [
+            "University of Science and Technology Beijing"
+          ]
+        },
+        {
+          "name": "Fengyu Gao",
+          "openalex_id": "A5101742784",
+          "orcid": "https://orcid.org/0000-0002-2748-7686",
+          "institutions": [
+            "University of Science and Technology Beijing"
+          ]
+        },
+        {
+          "name": "Xiaolong Tang",
+          "openalex_id": "A5011290823",
+          "orcid": "https://orcid.org/0000-0002-5464-048X",
+          "institutions": [
+            "University of Science and Technology Beijing"
+          ]
+        },
+        {
+          "name": "Linjiang Chen",
+          "openalex_id": "A5053751282",
+          "orcid": "https://orcid.org/0000-0002-0382-5863",
+          "institutions": [
+            "University of Science and Technology of China",
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-07",
+      "abstract": null,
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "iScience",
+        "type": "journal",
+        "issn": [
+          "2589-0042"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.isci.2024.109451"
+      },
+      "topics": [
+        "Machine Learning in Materials Science",
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W4392558382"
+    },
+    {
+      "openalex_id": "W4401042991",
+      "doi": "10.18653/v1/2024.findings-naacl.257",
+      "title": "Enhancing Chain-of-Thoughts Prompting with Iterative Bootstrapping in Large Language Models",
+      "authors": [
+        {
+          "name": "Jiashuo Sun",
+          "openalex_id": "A5044176278"
+        },
+        {
+          "name": "Yi Luo",
+          "openalex_id": "A5036577889",
+          "orcid": "https://orcid.org/0000-0001-7448-7665"
+        },
+        {
+          "name": "Yeyun Gong",
+          "openalex_id": "A5041448669",
+          "orcid": "https://orcid.org/0000-0001-9954-9674"
+        },
+        {
+          "name": "Chen Lin",
+          "openalex_id": "A5108946816",
+          "orcid": "https://orcid.org/0000-0001-8946-8598"
+        },
+        {
+          "name": "Yelong Shen",
+          "openalex_id": "A5101180037"
+        },
+        {
+          "name": "Jian Guo",
+          "openalex_id": "A5100574120"
+        },
+        {
+          "name": "Nan Duan",
+          "openalex_id": "A5042018181",
+          "orcid": "https://orcid.org/0000-0002-3387-4674"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": null,
+      "cited_by_count": 9,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2024.findings-naacl.257.pdf"
+      },
+      "topics": [
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4401042991"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

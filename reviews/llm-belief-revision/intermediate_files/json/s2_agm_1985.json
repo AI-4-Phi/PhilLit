@@ -1,0 +1,42 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "On the logic of theory change: Partial meet contraction and revision functions",
+  "results": [
+    {
+      "paperId": "937c576f7b39a53908d8c646983ddd2bda94a321",
+      "title": "On the logic of theory change: Partial meet contraction and revision functions",
+      "authors": [
+        {
+          "name": "C. E. Alchourr\u00f3n",
+          "authorId": "2439636"
+        },
+        {
+          "name": "P. G\u00e4rdenfors",
+          "authorId": "2412562"
+        },
+        {
+          "name": "D. Makinson",
+          "authorId": "145600404"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 3420,
+      "doi": "10.2307/2274239",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/937c576f7b39a53908d8c646983ddd2bda94a321",
+      "venue": "Journal of Symbolic Logic (JSL)",
+      "journal": {
+        "name": "Journal of Symbolic Logic",
+        "pages": "510 - 530",
+        "volume": "50"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

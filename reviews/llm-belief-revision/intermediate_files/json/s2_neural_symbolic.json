@@ -1,0 +1,682 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "neural symbolic integration",
+  "results": [
+    {
+      "paperId": "bd89caeea029722bbc8f709b4c038185fc01e503",
+      "title": "A computational perspective on neural-symbolic integration",
+      "authors": [
+        {
+          "name": "Gustav \u0160\u00edr",
+          "authorId": "2312577249"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Neural-Symbolic Integration (NSI) aims to marry the principles of symbolic AI techniques, such as logical reasoning, with the learning capabilities of neural networks. In recent years, many systems have been proposed to address this integration in a seemingly efficient manner. However, from the computational perspective, this is in principle impossible to do. Specifically, some of the core symbolic problems are provably hard, hence a general NSI system necessarily needs to adopt this computational complexity, too. Many NSI methods try to circumvent this downside by inconspicuously dropping parts of the symbolic capabilities while mapping the problems into static tensor representations in exchange for efficient deep learning acceleration. In this paper, we argue that the aim for a general NSI system, properly covering both the neural and symbolic paradigms, has important computational implications on the learning representations, the structure of the resulting computation graphs, and the underlying hardware and software stacks. Particularly, we explain how the currently prominent, tensor-based deep learning with static computation graphs is conceptually insufficient as a foundation for such general NSI, which we discuss in a wider context of established (statistical) relational and structured deep learning methods. Finally, we delve into the underlying hardware acceleration aspects and outline some promising computational directions toward fully expressive and efficient NSI.",
+      "citationCount": 2,
+      "doi": "10.3233/NAI-240672",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bd89caeea029722bbc8f709b4c038185fc01e503",
+      "venue": "Neurosymbolic Artificial Intelligence",
+      "journal": {
+        "name": "Neurosymbolic Artificial Intelligence",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6d694b4f5e48b2cc5dde692dff0f928390708917",
+      "title": "Neural-symbolic integration and the Semantic Web",
+      "authors": [
+        {
+          "name": "P. Hitzler",
+          "authorId": "1699771"
+        },
+        {
+          "name": "Federico Bianchi",
+          "authorId": "49224924"
+        },
+        {
+          "name": "Monireh Ebrahimi",
+          "authorId": "7893587"
+        },
+        {
+          "name": "Md Kamruzzaman Sarker",
+          "authorId": "51931569"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Symbolic Systems in Artificial Intelligence which are based on formal logic and deductive reasoning are fundamentally different from Artificial Intelligence systems based on artificial neural networks, such as deep learning approaches. The difference is not only in their inner workings and general approach, but also with respect to capabilities. Neural-symbolic Integration, as a field of study, aims to bridge between the two paradigms. In this paper, we will discuss neural-symbolic integration in its relation to the Semantic Web field, with a focus on promises and possible benefits for both, and report on some current research on the topic. Approaches in Artificial Intelligence (AI) based on machine learning, and in particular those employing artificial neural networks, differ fundamentally from approaches that leverage knowledge bases to perform logical deduction and reasoning. The former are connectionist or subsymbolic AI systems able to solve complex tasks over unstructured data using supervised or unsupervised learning, including problems which cannot reasonably be hand-coded by humans. Subsymbolic methods are generally robust against noise in training or input data and have recently, in the wake of deep learning, been shown to exceed human performance in tasks involving video, audio, and 1We focus herein on deductive reasoning. Logical inductive and abductive reasoning have also been looked at in the Semantic Web context, e.g. [22,14], but to keep the discussion concise, we have not included them in this treatise. text processing. The latter are symbolic systems that thrive under the presence of large amounts of structured data, including for agent planning, constraint solving, data management, integration and querying, and other traditional application areas of knowledge-based systems and formal semantics. Classical rule-based systems, ontologies, and knowledge graphs that power search and information retrieval across the Web are also types of symbolic AI systems. Symbolic and subsymbolic systems are rather complementary to each other. For example, the key strengths of subsymbolic systems are weaknesses of symbolic ones, and vice versa. Symbolic systems are brittle, i.e., susceptible to data noise or minor flaws in the logial encoding of a problem, which stands in contrast to the robustness of connectionist approaches. But subsymbolic systems are generally black boxes in the sense that 1570-0844/19/$27.50 c \u00a9 2019 \u2013 IOS Press and the authors. All rights reserved 2 Hitzler, Bianchi, Ebrahimi, Sarker / Neural-Symbolic Integration and the Semantic Web the systems cannot be inspected in ways that provide insight into their decisions (despite some recent progress on this in the wake of the explainable AI effort) while symbolic knowledge bases can in principle be inspected to interpret how a decision follows from input. Most importantly, symbolic and subsymbolic systems contrast in the types of problems and data they excel at. Scene recognition from images appears to be a problem which in general lies outside the capabilities of symbolic systems, for example, while complex planning scenarios appear to be outside the scope of current deep learning approaches. On a more technical level, symbolic and subsymbolic systems differ fundamentally in how they represent data, information, or knowledge. Symbolic systems typically utilize structured representation languages, e.g. stemming from formal logic and the subfield of AI known as knowledge representation and reasoning. Trainable artificial neural networks, on the other hand, typically use representations based on high-dimensional Euclidean space, i.e. real-valued vectors, matrices, etc., and it is by no means obvious how reconciliations between these representation forms can be designed. The complementary nature of these methods has drawn a divide in the rich field of AI. The divide is technical in nature, as symbol manipulation as captured by logical, deductive reasoning, which lies at the core of symbolic approaches, cannot be sufficiently performed using current subsymbolic systems. Moreover, the training to study subsymbolic systems (involving probability theory, statistics, linear algebra, and optimization) differs from symbolic systems (involving logic and propositional calculus, set and recursion theory, and advanced computability reasoning) so strongly that AI researchers tend to find a side of the divide based on their intellectual interests and background. The divide is also cultural in nature, one of mindsets and prior believes, that in the past could sometimes split the academic AI research community by provoking (heated) fundamental discus2The topic is being investigated, of course, and some recent progress is made. E.g., [1] reports on an application of deep learning to planning, and explicitly frames it as work towards bridging the \u201csubsymbolic-symbolic boundary.\u201d 3It is possible to establish a formal, mathematical bridge in some cases, as e.g. laid out in [31], but so far with limited applicability [3]. sions. The divide is even geographical, where the European Union holds a much higher prevalence of researchers working on symbolic approaches than in the United States. Neural-Symbolic Integration [2,4,28,16], as a field of research, addresses fundamental problems related to building a technical bridge between the symbolic and subsymbolic sides of the divide. The promises from a successful bridging of the divide are plenty. In the abstract, one could hope for bestof-both-worlds systems, which combine the transparency and reasoning-ability of symbolic systems with the robustness and learning-capabilities of subsymbolic ones. As such, integrated symbolicsubsymbolic systems may be able to address the knowledge acquisition bottleneck faced by symbolic systems, learn to perform advanced logical or symbolic reasoning tasks even in the presence of noisy or uncertain facts, and even yield self-explanatory subsymbolic models. This is the promise of added value of neural-symbolic integration research for Computer Science. And also more fundamentally, a bridging may shed insights into how natural (human) neural networks can perform tasks as witnessed by homo sapiens pursuing mathematics, formal logic, and other pursuits that we, introspectively, see as symbolic in nature; this is a basic research problem for Cognitive Science as a discipline. In the following, we will first lay out, in more detail, promises and possible benefits of neuralsymbolic integration research for the Semantic Web. Then we will look at potential benefits of Semantic Web and neural-symbolic integration research for deep learning. Finally, we will also provide brief pointers to some current research going on in relation to this theme. 1. Benefits of Neural-Symbolic Integration for the Semantic Web One of the issues that plagues the Semantic Web (as well as many other fields in Computer Science and its applications) is the knowledge acquisition bottleneck. It refers to the difficult issue of encoding or otherwise storing knowledge, as structured information, for use in Computer Science 4See also http://www.neural-symbolic.org/ Hitzler, Bianchi, Ebrahimi, Sarker / Neural-Symbolic Integration and the Semantic Web 3 applications. The manual encoding of such information, e.g. from human experts\u2019 knowledge, is a very slow and time-consuming, thus costly, process involving both topic experts and knowledge engineers. At the same time, automated methods are a far cry from producing artifacts (e.g., from textbooks, technical documentations, and other written sources) which would be of sufficient quality for use in intelligent systems applications based on logical inference, such as expert systems, or for data curation and integration. The underpinnings of key Semantic Web standards, such as RDF [9] and OWL [29], are explicitly logical, which reflects that Semantic Web applications often rely on high data (and schema/ontology) quality, similar to knowledge bases used primarily for deductive reasoning. The knowledge acquisition bottleneck in the Semantic Web field is very noticeable, e.g., given that the creation of ontologies as well as the creation of high-quality knowledge graphs involves high amounts of human export labour and is correspondingly expensive. The promise of integrated neural-symbolic systems is that they would be capable of both learning and (deductive) reasoning, and thus that they would be able to acquire, through machine learning, knowledge which is of sufficiently high quality to perform deductive reasoning. This anticipated capability directly addresses the knowledge acquisition bottleneck. There is, thus, a promise in this line of work that integrated neural-symbolic systems will lead to \u2013 better methods for automated ontology construction, \u2013 better methods for ontology population (and, thus, knowledge graph construction), \u2013 better methods for ontology alignment, \u2013 better methods for assessing the quality of knowledge graph content, and similar major lines of research central to the Semantic Web field. At the same time, integrated neural-symbolic systems carry the promise of being able to perform deductive reasoning \u2013 after training \u2013 using a (highly parallel) artificial neural network architecture. Consequently, reasoning using such systems can be expected to be extremely fast. This contrasts with traditional deductive reasoning methods, which are usually designed to be provably sound and complete but suffer from long algorithm runtimes. While there has been significant progress on developing highly efficient deductive reasoning engines for Semantic Web content, this remains an issue given ever-increasing availability of data. In fact, the underlying problem is fundamental, as sound and complete reasoning over Semantic Web data necessarily suffers from high computational complexity [30]. Integrated neural-symbolic systems would perform reasoning after training, and presumabl",
+      "citationCount": 85,
+      "doi": "10.3233/sw-190368",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6d694b4f5e48b2cc5dde692dff0f928390708917",
+      "venue": "Semantic Web",
+      "journal": {
+        "name": "Semantic Web",
+        "pages": "3-11",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0d6e349e385ed1765e4063bd820e2f541ee93b89",
+      "title": "Neural-Symbolic Integration: A Compositional Perspective",
+      "authors": [
+        {
+          "name": "Efthymia Tsamoura",
+          "authorId": "2181980"
+        },
+        {
+          "name": "Loizos Michael",
+          "authorId": "144691372"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Despite significant progress in the development of neural-symbolic frameworks, the question of how to integrate a neural and a symbolic system in a compositional manner remains open. Our work seeks to fill this gap by treating these two systems as black boxes to be integrated as modules into a single architecture, without making assumptions on their internal structure and semantics. Instead, we expect only that each module exposes certain methods for accessing the functions that the module implements: the symbolic module exposes a deduction method for computing the function's output on a given input, and an abduction method for computing the function's inputs for a given output; the neural module exposes a deduction method for computing the function's output on a given input, and an induction method for updating the function given input-output training instances. We are, then, able to show that a symbolic module --- with any choice for syntax and semantics, as long as the deduction and abduction methods are exposed --- can be cleanly integrated with a neural module, and facilitate the latter's efficient training, achieving empirical performance that exceeds that of previous work.",
+      "citationCount": 79,
+      "doi": "10.1609/aaai.v35i6.16639",
+      "arxivId": "2010.11926",
+      "url": "https://www.semanticscholar.org/paper/0d6e349e385ed1765e4063bd820e2f541ee93b89",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "5051-5060"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f12b0cf16334b8456f2d15a2c09166698b12577d",
+      "title": "A Pipeline of Neural-Symbolic Integration to Enhance Spatial Reasoning in Large Language Models",
+      "authors": [
+        {
+          "name": "Rong Wang",
+          "authorId": "2155889534"
+        },
+        {
+          "name": "Kun Sun",
+          "authorId": "2293664568"
+        },
+        {
+          "name": "Jonas Kuhn",
+          "authorId": "2332541481"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2411.18564",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f12b0cf16334b8456f2d15a2c09166698b12577d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.18564"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "484cb8b625faee13185058bab770a00f5985ad1b",
+      "title": "Neural-Symbolic Integration for Fairness in AI",
+      "authors": [
+        {
+          "name": "Benedikt Wagner",
+          "authorId": "2013465827"
+        },
+        {
+          "name": "A. Garcez",
+          "authorId": "2925941"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 18,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/484cb8b625faee13185058bab770a00f5985ad1b",
+      "venue": "AAAI Spring Symposium Combining Machine Learning with Knowledge Engineering",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c3fd6835f1bfc498eb3239e0a55426e435b94d10",
+      "title": "Neural-Symbolic Integration for Interactive Learning and Conceptual Grounding",
+      "authors": [
+        {
+          "name": "Benedikt Wagner",
+          "authorId": "2013465827"
+        },
+        {
+          "name": "A. Garcez",
+          "authorId": "2925941"
+        }
+      ],
+      "year": 2021,
+      "abstract": "We propose neural-symbolic integration for abstract concept explanation and interactive learning. Neural-symbolic integration and explanation allow users and domain-experts to learn about the data-driven decision making process of large neural models. The models are queried using a symbolic logic language. Interaction with the user then confirms or rejects a revision of the neural model using logic-based constraints that can be distilled into the model architecture. The approach is illustrated using the Logic Tensor Network framework alongside Concept Activation Vectors and applied to a Convolutional Neural Network.",
+      "citationCount": 7,
+      "doi": null,
+      "arxivId": "2112.11805",
+      "url": "https://www.semanticscholar.org/paper/c3fd6835f1bfc498eb3239e0a55426e435b94d10",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2112.11805"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "74a9e7c47aa875b05181be45ad8469595221f0d6",
+      "title": "Modular Design Patterns for Neural-symbolic Integration: Refinement and Combination",
+      "authors": [
+        {
+          "name": "Till Mossakowski",
+          "authorId": "1764365"
+        }
+      ],
+      "year": 2022,
+      "abstract": "We formalise some aspects of the neural-symbol design patterns of van Bekkum et al., such that we can formally define notions of refinement of patterns, as well as modular combination of larger patterns from smaller building blocks. These formal notions are being implemented in the heterogeneous tool set (Hets), such that patterns and refinements can be checked for well-formedness, and combinations can be computed.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2206.04724",
+      "arxivId": "2206.04724",
+      "url": "https://www.semanticscholar.org/paper/74a9e7c47aa875b05181be45ad8469595221f0d6",
+      "venue": "International Workshop on Neural-Symbolic Learning and Reasoning",
+      "journal": {
+        "pages": "192-201"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a0646c7b75325a67900818ba0abcda452505470c",
+      "title": "Metaheuristics Approach for Maximum k Satisfiability in Restricted Neural Symbolic Integration",
+      "authors": [
+        {
+          "name": "Computing Terengganu network logical network that has been c Mamat Shareduwan Mansor Sciences",
+          "authorId": "2286615098"
+        },
+        {
+          "name": "Malaysia 21300 UniSZA Penang Malaysia language that bridges \u00a9 Universiti Putra Malaysia Penang",
+          "authorId": "2286584979"
+        },
+        {
+          "name": "11800 Usm Sultan Zainal Abidin Malaysia 11800 Usm MAX-k Malaysia",
+          "authorId": "2286587726"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 10,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a0646c7b75325a67900818ba0abcda452505470c",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d94cc38ed627c8cabe5522873fa9cd619ea1ca04",
+      "title": "Ontology Learning as a Use-Case for Neural-Symbolic Integration Ontology Learning as a Use-Case for Neural-Symbolic Integration",
+      "authors": [
+        {
+          "name": "Pascal Hitzler",
+          "authorId": "2257172073"
+        },
+        {
+          "name": "Sebastian Bader",
+          "authorId": "2260011348"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d94cc38ed627c8cabe5522873fa9cd619ea1ca04",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "055cc06b2b4228924770e76194f4fbb8c74636c1",
+      "title": "Understanding neural networks with neural-symbolic integration",
+      "authors": [
+        {
+          "name": "Dr Joe Townsend",
+          "authorId": "2141624174"
+        }
+      ],
+      "year": 2021,
+      "abstract": "usually two approaches in response to this challenge. The first is \u2018opening\u2019 the black box in order to translate what is inside. The alternative involves training the AI model to be interpretable from the beginning. The researchers have developed solutions for both approaches for a type of machine learning paradigm called the Convolutional Neural Network (CNN). These two methods can also be deployed either separately or in unison.",
+      "citationCount": 0,
+      "doi": "10.32907/ro-126-1906089938",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/055cc06b2b4228924770e76194f4fbb8c74636c1",
+      "venue": "Research Outreach",
+      "journal": {
+        "name": "Research Outreach"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d17ef06e833ef4bcb412ad67563045097dbf10be",
+      "title": "Exploring Neural-symbolic Integration Architectures for Computer Vision",
+      "authors": [
+        {
+          "name": "Adriele Burco",
+          "authorId": "89241574"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d17ef06e833ef4bcb412ad67563045097dbf10be",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6781f9a1a8c0aa3290f63c773a92bfbf0c4fc3bb",
+      "title": "Ant colony optimization for 2 satisfiability in restricted neural symbolic integration",
+      "authors": [
+        {
+          "name": "Liew Ching Kho",
+          "authorId": "1453699225"
+        },
+        {
+          "name": "M. Kasihmuddin",
+          "authorId": "7475502"
+        },
+        {
+          "name": "M. Mansor",
+          "authorId": "52307966"
+        },
+        {
+          "name": "S. Sathasivam",
+          "authorId": "2240045"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1063/5.0025762",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6781f9a1a8c0aa3290f63c773a92bfbf0c4fc3bb",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "04aecd2ce138e4dc0165e36c99e3f67999b8b63c",
+      "title": "Enhancing Knowledge Graph Completion Through Neural-Symbolic Fusion: A Novel Graph Distillation Framework with Semantic Web Integration",
+      "authors": [
+        {
+          "name": "Anant Singh",
+          "authorId": "2369149639"
+        },
+        {
+          "name": "Devesh Amlesh Rai",
+          "authorId": "2369153676"
+        },
+        {
+          "name": "Shifa Siraj Khan",
+          "authorId": "2369153665"
+        },
+        {
+          "name": "Sanika Satish Lad",
+          "authorId": "2296729078"
+        },
+        {
+          "name": "Sanika Rajan Shete",
+          "authorId": "2296727839"
+        },
+        {
+          "name": "Disha Satyan Dahanukar",
+          "authorId": "2169837040"
+        },
+        {
+          "name": "Darshit Sandeep Raut",
+          "authorId": "2369151549"
+        },
+        {
+          "name": "Kaif Qureshi",
+          "authorId": "2369149642"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract: Knowledge graphs (KGs) have emerged as fundamental structures for organizing interconnected data across diverse domains in the semantic web ecosystem. However, most real-world KGs remain incomplete, limiting their effectiveness in downstream applications. This paper presents a novel neural-symbolic framework that integrates Graph Neural Network (GNN) distillation with Abstract Probabilistic Interaction Modeling (APIM) to address critical challenges in knowledge graph completion (KGC). Our approach tackles the over-smoothing problem in deep GNNs through iterative message-feature filtering while incorporating semantic web technologies for enhanced knowledge representation. The proposed framework introduces a unified architecture that combines symbolic reasoning with deep learning to leverage complementary benefits from both paradigms. We evaluate our methodology on standard benchmarks including WN18RR and FB15K-237 datasets, achieving significant performance improvements over baseline models. Experimental results demonstrate a 10.9% improvement in Hits@1 metric compared to state-of-the-art approaches with Mean Reciprocal Rank (MRR) scores of 0.523 on FB15K-237 and 0.440 on WN18RR. The framework effectively addresses semantic similarity challenges while maintaining computational efficiency through knowledge graph embeddings that preserve hierarchical relationships [4][5]. Our contributions include the introduction of automatic embedding dimension learning for hierarchical entities, novel semantic enrichment techniques for information retrieval and comprehensive evaluation protocols that ensure fair comparison across different model architectures. The research bridges the gap between semantic web technologies and machine learning communities, providing practical solutions for real-world knowledge graph applications with validated experimental results and reproducible methodologies.",
+      "citationCount": 0,
+      "doi": "10.51583/ijltemas.2025.140500104",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/04aecd2ce138e4dc0165e36c99e3f67999b8b63c",
+      "venue": "International Journal of Latest Technology in Engineering Management &amp; Applied Science",
+      "journal": {
+        "name": "International Journal of Latest Technology in Engineering Management &amp; Applied Science"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "04d1a88fa12372dfee967bc9117a368ddce7f585",
+      "title": "Neural-Symbolic Dual-Indexing Architectures for Scalable Retrieval-Augmented Generation",
+      "authors": [
+        {
+          "name": "Jie-Si Yang",
+          "authorId": "2254849817"
+        },
+        {
+          "name": "Zhuoqi Zeng",
+          "authorId": null
+        },
+        {
+          "name": "Zijian Shen",
+          "authorId": "2397572837"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Contemporary retrieval-augmented generation systems face a fundamental trade-off between semantic comprehensiveness and computational tractability when scaling to billion-token corpora. We present a unified framework that reconciles this tension through neural-symbolic dual-indexing, wherein sparse graph skeletons constructed from high-centrality document chunks enable structured reasoning, while complementary bipartite keyword indices ensure broad semantic coverage. Our architecture achieves this decomposition by formulating retrieval as a constrained optimization problem over heterogeneous index structures, employing Prize-Collecting Steiner Trees for subgraph extraction and Personalized PageRank for multi-hop traversal. Through synergistic integration of Graph Neural Networks with vector embeddings, the system performs explicit relational reasoning while maintaining sub-second query latency. Empirical evaluation across 6.0 benchmark datasets demonstrates that selective skeleton construction from the top 20.0% of chunks\u2014identified via eigenvector centrality on k-nearest neighbor graphs\u2014yields $10.0\\times $ cost reduction relative to exhaustive knowledge graph construction while improving generation quality by 32.4% and retrieval coverage by 92.4%. Furthermore, neural-symbolic coupling enables 7.0-billion parameter models to match GPT-4 performance on multi-hop question answering through single-step graph-guided inference, eliminating iterative retrieval overhead. Production deployments validate sub-200.0ms latency at scale through hierarchical caching strategies that reduce time-to-first-token by $4.0\\times $ . The proposed framework establishes dual-indexing as the canonical architecture for enterprise retrieval systems, providing a principled methodology for balancing semantic understanding against structured reasoning in large-scale information access.",
+      "citationCount": 19,
+      "doi": "10.1109/ACCESS.2025.3638761",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/04d1a88fa12372dfee967bc9117a368ddce7f585",
+      "venue": "IEEE Access",
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "210507-210519",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "34ac17f07b17187b16c91d227fdc2886bdeab9c8",
+      "title": "ANSIN: Adaptive Neural Symbolic Network for Secure Terrestrial and Non-Terrestrial Integration",
+      "authors": [
+        {
+          "name": "K. A. Awan",
+          "authorId": "81618875"
+        },
+        {
+          "name": "Korhan Cengiz",
+          "authorId": "2237710014"
+        },
+        {
+          "name": "Sonia Khan",
+          "authorId": "2348496041"
+        },
+        {
+          "name": "Abdullah M. Alqahtani",
+          "authorId": "2279596109"
+        },
+        {
+          "name": "Nikola Ivkovi\u0107",
+          "authorId": "2237708968"
+        },
+        {
+          "name": "Abdul Rehman",
+          "authorId": "2205010547"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1109/INFOCOMWKSHPS65812.2025.11153024",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/34ac17f07b17187b16c91d227fdc2886bdeab9c8",
+      "venue": "Conference on Computer Communications Workshops",
+      "journal": {
+        "name": "IEEE INFOCOM 2025 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a26fa1983e4bc7c5b55cd5a1296afe6f876baa03",
+      "title": "Neuro-Symbolic Integration Brings Causal and Reliable Reasoning Proofs",
+      "authors": [
+        {
+          "name": "Sen Yang",
+          "authorId": "2261356992"
+        },
+        {
+          "name": "Xin Li",
+          "authorId": "40613621"
+        },
+        {
+          "name": "Leyang Cui",
+          "authorId": "152496687"
+        },
+        {
+          "name": "Li Bing",
+          "authorId": "2211459675"
+        },
+        {
+          "name": "Wai Lam",
+          "authorId": "2261285762"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Though prompting LLMs with various reasoning structures produces reasoning proofs along with answers, these proofs are not ensured to be causal and reliable due to the inherent defects of LLMs. Tracking such deficiencies, we present a neuro-symbolic integration method, in which a neural LLM is used to represent the knowledge of the problem while an LLM-free symbolic solver is adopted to do deliberative reasoning using the knowledge. Specifically, our customized meta-interpreters allow the production of reasoning proofs and support flexible search strategies. These reasoning proofs are ensured to be causal and reliable because of the deterministic executing nature of the symbolic solvers. Empirically, on ProofWriter, our method surpasses the CoT baseline by nearly double in accuracy and more than triple in proof similarity. On GSM8K, our method also shows accuracy improvements and nearly doubled proof similarity. Our code is released at https: //github.com/DAMO-NLP-SG/CaRing .",
+      "citationCount": 22,
+      "doi": "10.18653/v1/2025.findings-naacl.317",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a26fa1983e4bc7c5b55cd5a1296afe6f876baa03",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "5732-5744"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "5d8b6350cfe8eac04209b8339100cafb792db86b",
+      "title": "Enhancing the Geometric Problem-Solving Ability of Multimodal LLMs via Symbolic-Neural Integration",
+      "authors": [
+        {
+          "name": "Yicheng Pan",
+          "authorId": "2323729055"
+        },
+        {
+          "name": "Zhenrong Zhang",
+          "authorId": "2128660562"
+        },
+        {
+          "name": "Pengfei Hu",
+          "authorId": "2242545820"
+        },
+        {
+          "name": "Jie Ma",
+          "authorId": "2143520841"
+        },
+        {
+          "name": "Jun Du",
+          "authorId": "2243402281"
+        },
+        {
+          "name": "Jianshu Zhang",
+          "authorId": "39557762"
+        },
+        {
+          "name": "Quan Liu",
+          "authorId": "2355787752"
+        },
+        {
+          "name": "Jianqing Gao",
+          "authorId": "2344792827"
+        },
+        {
+          "name": "Feng Ma",
+          "authorId": "2357496945"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in Multimodal Large Language Models (MLLMs) have achieved remarkable progress in general domains and demonstrated promise in multimodal mathematical reasoning. However, applying MLLMs to geometry problem solving (GPS) remains challenging due to lack of accurate step-by-step solution data and severe hallucinations during reasoning. In this paper, we propose GeoGen, a pipeline that can automatically generates step-wise reasoning paths for geometry diagrams. By leveraging the precise symbolic reasoning, GeoGen produces large-scale, high-quality question-answer pairs. To further enhance the logical reasoning ability of MLLMs, we train GeoLogic, a Large Language Model (LLM) using synthetic data generated by GeoGen. Serving as a bridge between natural language and symbolic systems, GeoLogic enables symbolic tools to help verifying MLLM outputs, making the reasoning process more rigorous and alleviating hallucinations. Experimental results show that our approach consistently improves the performance of MLLMs, achieving remarkable results on benchmarks for geometric reasoning tasks. This improvement stems from our integration of the strengths of LLMs and symbolic systems, which enables a more reliable and interpretable approach for the GPS task. Codes are available at https://github.com/ycpNotFound/GeoGen.",
+      "citationCount": 8,
+      "doi": "10.1145/3746027.3754571",
+      "arxivId": "2504.12773",
+      "url": "https://www.semanticscholar.org/paper/5d8b6350cfe8eac04209b8339100cafb792db86b",
+      "venue": "Proceedings of the 33rd ACM International Conference on Multimedia",
+      "journal": {
+        "name": "Proceedings of the 33rd ACM International Conference on Multimedia"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "833c4ac0599f4b8c5f1ee6ea948ec675fbe56b15",
+      "title": "Neural-Symbolic Computing: An Effective Methodology for Principled Integration of Machine Learning and Reasoning",
+      "authors": [
+        {
+          "name": "A. Garcez",
+          "authorId": "2925941"
+        },
+        {
+          "name": "M. Gori",
+          "authorId": "145467467"
+        },
+        {
+          "name": "L. Lamb",
+          "authorId": "2335532"
+        },
+        {
+          "name": "L. Serafini",
+          "authorId": "144077615"
+        },
+        {
+          "name": "Michael Spranger",
+          "authorId": "145570895"
+        },
+        {
+          "name": "S. Tran",
+          "authorId": "1930235"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Current advances in Artificial Intelligence and machine learning in general, and deep learning in particular have reached unprecedented impact not only across research communities, but also over popular media channels. However, concerns about interpretability and accountability of AI have been raised by influential thinkers. In spite of the recent impact of AI, several works have identified the need for principled knowledge representation and reasoning mechanisms integrated with deep learning-based systems to provide sound and explainable models for such systems. Neural-symbolic computing aims at integrating, as foreseen by Valiant, two most fundamental cognitive abilities: the ability to learn from the environment, and the ability to reason from what has been learned. Neural-symbolic computing has been an active topic of research for many years, reconciling the advantages of robust learning in neural networks and reasoning and interpretability of symbolic representation. In this paper, we survey recent accomplishments of neural-symbolic computing as a principled methodology for integrated machine learning and reasoning. We illustrate the effectiveness of the approach by outlining the main characteristics of the methodology: principled integration of neural learning with symbolic knowledge representation and reasoning allowing for the construction of explainable AI systems. The insights provided by neural-symbolic computing shed new light on the increasingly prominent need for interpretable and accountable AI systems.",
+      "citationCount": 344,
+      "doi": null,
+      "arxivId": "1905.06088",
+      "url": "https://www.semanticscholar.org/paper/833c4ac0599f4b8c5f1ee6ea948ec675fbe56b15",
+      "venue": "FLAP",
+      "journal": {
+        "name": "FLAP",
+        "pages": "611-632",
+        "volume": "6"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "b9a5aa5db8836744ff2073e8368520b7a614049f",
+      "title": "Neural Symbolic Reader: Scalable Integration of Distributed and Symbolic Representations for Reading Comprehension",
+      "authors": [
+        {
+          "name": "Xinyun Chen",
+          "authorId": "1425082935"
+        },
+        {
+          "name": "Chen Liang",
+          "authorId": "145246869"
+        },
+        {
+          "name": "Adams Wei Yu",
+          "authorId": "40625240"
+        },
+        {
+          "name": "Denny Zhou",
+          "authorId": "65855107"
+        },
+        {
+          "name": "D. Song",
+          "authorId": "143711382"
+        },
+        {
+          "name": "Quoc V. Le",
+          "authorId": "2827616"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 106,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b9a5aa5db8836744ff2073e8368520b7a614049f",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a10841d9e492fdab44a0f368a8912b8daa859960",
+      "title": "Advancing Symbolic Integration in Large Language Models: Beyond Conventional Neurosymbolic AI",
+      "authors": [
+        {
+          "name": "Maneeha Rani",
+          "authorId": "2047535800"
+        },
+        {
+          "name": "Bhupesh Kumar Mishra",
+          "authorId": "2295938166"
+        },
+        {
+          "name": "Dhavalkumar Thakker",
+          "authorId": "2316415573"
+        }
+      ],
+      "year": 2025,
+      "abstract": "LLMs have demonstrated highly effective learning, human-like response generation,and decision-making capabilities in high-risk sectors. However, these models remain black boxes because they struggle to ensure transparency in responses. The literature has explored numerous approaches to address transparency challenges in LLMs, including Neurosymbolic AI (NeSy AI). NeSy AI approaches were primarily developed for conventional neural networks and are not well-suited to the unique features of LLMs. Consequently, there is a limited systematic understanding of how symbolic AI can be effectively integrated into LLMs. This paper aims to address this gap by first reviewing established NeSy AI methods and then proposing a novel taxonomy of symbolic integration in LLMs, along with a roadmap to merge symbolic techniques with LLMs. The roadmap introduces a new categorisation framework across four dimensions by organising existing literature within these categories. These include symbolic integration across various stages of LLM, coupling mechanisms, architectural paradigms, as well as algorithmic and application-level perspectives. The paper thoroughly identifies current benchmarks, cutting-edge advancements, and critical gaps within the field to propose a roadmap for future research. By highlighting the latest developments and notable gaps in the literature, it offers practical insights for implementing frameworks for symbolic integration into LLMs to enhance transparency.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.21425",
+      "arxivId": "2510.21425",
+      "url": "https://www.semanticscholar.org/paper/a10841d9e492fdab44a0f368a8912b8daa859960",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.21425"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

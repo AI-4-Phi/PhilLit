@@ -1,0 +1,524 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "logical omniscience bounded rationality",
+  "results": [
+    {
+      "paperId": "dbed1f9809fe72fff115f3b219e87af7a05c2d25",
+      "title": "A Theory of Bounded Inductive Rationality",
+      "authors": [
+        {
+          "name": "Caspar Oesterheld",
+          "authorId": "2827196"
+        },
+        {
+          "name": "A. Demski",
+          "authorId": "2756886"
+        },
+        {
+          "name": "Vincent Conitzer",
+          "authorId": "1749906"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The dominant theories of rational choice assume logical omniscience. That is, they assume that when facing a decision problem, an agent can perform all relevant computations and determine the truth value of all relevant logical/mathematical claims. This assumption is unrealistic when, for example, we offer bets on remote digits of pi or when an agent faces a computationally intractable planning problem. Furthermore, the assumption of logical omniscience creates contradictions in cases where the environment can contain descriptions of the agent itself. Importantly, strategic interactions as studied in game theory are decision problems in which a rational agent is predicted by its environment (the other players). In this paper, we develop a theory of rational decision making that does not assume logical omniscience. We consider agents who repeatedly face decision problems (including ones like betting on digits of pi or games against other agents). The main contribution of this paper is to provide a sensible theory of rationality for such agents. Roughly, we require that a boundedly rational inductive agent tests each efficiently computable hypothesis infinitely often and follows those hypotheses that keep their promises of high rewards. We then prove that agents that are rational in this sense have other desirable properties. For example, they learn to value random and pseudo-random lotteries at their expected reward. Finally, we consider strategic interactions between different agents and prove a folk theorem for what strategies bounded rational inductive agents can converge to.",
+      "citationCount": 7,
+      "doi": "10.4204/EPTCS.379.33",
+      "arxivId": "2307.05068",
+      "url": "https://www.semanticscholar.org/paper/dbed1f9809fe72fff115f3b219e87af7a05c2d25",
+      "venue": "Theoretical Aspects of Rationality and Knowledge",
+      "journal": {
+        "pages": "421-440"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ea7fe17b98426eb2400dfe8c973f3a69afbe96be",
+      "title": "A Formal Approach to the Problem of Logical Non-Omniscience",
+      "authors": [
+        {
+          "name": "Scott Garrabrant",
+          "authorId": "1740494"
+        },
+        {
+          "name": "Tsvi Benson-Tilsen",
+          "authorId": "1409258422"
+        },
+        {
+          "name": "Andrew Critch",
+          "authorId": "2651789"
+        },
+        {
+          "name": "N. Soares",
+          "authorId": "1719968"
+        },
+        {
+          "name": "Jessica Taylor",
+          "authorId": "144364160"
+        }
+      ],
+      "year": 2017,
+      "abstract": "We present the logical induction criterion for computable algorithms that assign probabilities to every logical statement in a given formal language, and refine those probabilities over time. The criterion is motivated by a series of stock trading analogies. Roughly speaking, each logical sentence phi is associated with a stock that is worth $1 per share if phi is true and nothing otherwise, and we interpret the belief-state of a logically uncertain reasoner as a set of market prices, where pt_N(phi)=50% means that on day N, shares of phi may be bought or sold from the reasoner for 50%. A market is then called a logical inductor if (very roughly) there is no polynomial-time computable trading strategy with finite risk tolerance that earns unbounded profits in that market over time. We then describe how this single criterion implies a number of desirable properties of bounded reasoners; for example, logical inductors outpace their underlying deductive process, perform universal empirical induction given enough time to think, and place strong trust in their own reasoning process.",
+      "citationCount": 10,
+      "doi": "10.4204/EPTCS.251.16",
+      "arxivId": "1707.08747",
+      "url": "https://www.semanticscholar.org/paper/ea7fe17b98426eb2400dfe8c973f3a69afbe96be",
+      "venue": "Theoretical Aspects of Rationality and Knowledge",
+      "journal": {
+        "pages": "221-235"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "da0b9319bd46aed1289e87afef11b3350d81e17d",
+      "title": "Bayesianism for Non-ideal Agents",
+      "authors": [
+        {
+          "name": "M. Skipper",
+          "authorId": "46205484"
+        },
+        {
+          "name": "Jens Christian Bjerring",
+          "authorId": "2083444"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 16,
+      "doi": "10.1007/S10670-019-00186-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/da0b9319bd46aed1289e87afef11b3350d81e17d",
+      "venue": "Erkenntnis: An International Journal of Scientific Philosophy",
+      "journal": {
+        "name": "Erkenntnis",
+        "pages": "93-115",
+        "volume": "87"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "532bbce61c0e60bef232d20e5f96c5fa4080db20",
+      "title": "Museum of Outstanding Figures in Ukrainian Culture",
+      "authors": [
+        {
+          "name": "Iaroslav Petik",
+          "authorId": "89839544"
+        }
+      ],
+      "year": 2022,
+      "abstract": "This paper deals with a famous problem of epistemic logic \u2013 logical omniscience. Logical omniscience occurs in the logical systems where the axiomatics is complete and consequently an agent using inference rules knows everything about the system. Logical omniscience is a major problem due to complexity problems and the inability for adequate human reasoning modeling.\nIt is studied both informal logic and philosophy of psychology (bounded rationality). It is important for bounded rationality because it reflects the problem of formal characterization of purely psychological mechanisms.\nPaper proposes to solve it using the ideas from the philosophical bounded rationality and intuitionistic logic. Special regions of deductible formulas developed according to psychologistic criterion should guide the deductive model.\nThe method is compared to other ones presented in the literature on logical omniscience such as Hintikka\u2019s and Vinkov and Fominuh. Views from different perspectives such as computer science and artificial intelligence are also provided.",
+      "citationCount": 0,
+      "doi": "10.36099/ajahss.4.1.1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/532bbce61c0e60bef232d20e5f96c5fa4080db20",
+      "venue": "Addaiyan Journal of Arts, Humanities and Social Sciences",
+      "journal": {
+        "name": "Addaiyan Journal of Arts, Humanities and Social Sciences"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "316ad2215bf7505e7eda13c30cb308dea61cc25e",
+      "title": "Bayesianism for Non-ideal Agents",
+      "authors": [
+        {
+          "name": "M. Skipper",
+          "authorId": "46205484"
+        },
+        {
+          "name": "Jens Christian Bjerring",
+          "authorId": "2083444"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10670-019-00186-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/316ad2215bf7505e7eda13c30cb308dea61cc25e",
+      "venue": "Erkenntnis: An International Journal of Scientific Philosophy",
+      "journal": {
+        "name": "Erkenntnis",
+        "pages": "93 - 115",
+        "volume": "87"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "97417de0a42efbeb7edac149e1054965bcbc25af",
+      "title": "Bounded rationality: from fast and frugal heuristics to logic programming and back",
+      "authors": [
+        {
+          "name": "Francisco Vargas",
+          "authorId": "2055384073"
+        },
+        {
+          "name": "L. Martignon",
+          "authorId": "2694531"
+        },
+        {
+          "name": "K. Stenning",
+          "authorId": "1726379"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The notion of \u201cbounded rationality\u201d was introduced by Simon as an appropriate framework for explaining how agents reason and make decisions in accordance with their computational limitations and the characteristics of the environments in which they exist (seen metaphorically as two complementary scissor blades).We elaborate on how bounded rationality is usually conceived in psychology and on its relationship with logic. We focus on the relationship between heuristics and some non-monotonic logical systems. These two categories of cognitive tools share fundamental features. As a step further, we show that in some cases heuristics themselves can be formalized from this logic perspective. We have therefore two main aims: on the one hand, to demonstrate the relationship between the bounded rationality programme and logic, understood in a broad sense; on the other hand, to provide logical tools of analysis of already known heuristics. This may lead to results such as the characterization of fast and frugal binary trees in terms of their\u00a0associated logic program here provided.",
+      "citationCount": 2,
+      "doi": "10.1007/s11299-023-00293-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/97417de0a42efbeb7edac149e1054965bcbc25af",
+      "venue": "Mind & Society",
+      "journal": {
+        "name": "Mind & Society",
+        "pages": "1-19",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "07abc8140dd8945fb02d4a9e436bc9cac83f86e0",
+      "title": "Ideal rationality and logical omniscience",
+      "authors": [
+        {
+          "name": "Declan Smithies",
+          "authorId": "34198462"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 89,
+      "doi": "10.1007/s11229-015-0735-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/07abc8140dd8945fb02d4a9e436bc9cac83f86e0",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "2769-2793",
+        "volume": "192"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b40923921ef7c0a34231a41fdda2a37d97eb2913",
+      "title": "Ideal rationality and logical omniscience",
+      "authors": [
+        {
+          "name": "Declan Smithies",
+          "authorId": "34198462"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11229-015-0735-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b40923921ef7c0a34231a41fdda2a37d97eb2913",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "2769 - 2793",
+        "volume": "192"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0b381bba901ae3bbc11a1cb3be0596d5665e2348",
+      "title": "Fragmentation and logical omniscience",
+      "authors": [
+        {
+          "name": "A. Elga",
+          "authorId": "52192352"
+        },
+        {
+          "name": "A. Rayo",
+          "authorId": "103050838"
+        }
+      ],
+      "year": 2021,
+      "abstract": "It would be good to have a Bayesian decision theory that assesses our decisions and thinking according to everyday standards of rationality\u2014 standards that do not require logical omniscience (Garber 1983, Hacking 1967). To that end we develop a \u201cfragmented\u201d decision theory in which a single state of mind is represented by a family of credence functions, each associated with a distinct choice condition (Lewis 1982, Stalnaker 1984). The theory imposes a local coherence assumption guaranteeing that as an agent\u2019s attention shifts, successive batches of \u201cobvious\u201d logical information become available to her. A rule of expected utility maximization can then be applied to the decision of what to attend to next during a train of thought. On the resulting theory, rationality requires ordinary agents to be logically competent and to often engage in trains of thought that increase the unification of their states of mind. But rationality does not require ordinary agents to be logically omniscient. \u2217Forthcoming in No\u00fbs. Both authors contributed equally to this work. Thanks to Diego Arana Segura, Sara Aronowitz, Alejandro P\u00e9rez Carballo, Ross Cameron, David Chalmers, Jonathan Cohen, Keith DeRose, Sinan Dogramaci, Cian Dorr, Kenny Easwaran, Hartry Field, Branden Fitelson, Peter Fritz, Jeremy Goodman, Daniel Hoek, Frank Jackson, Shivaram Lingamneni, Christopher Meacham, Patrick Miller, Molly O\u2019Rourke-Friel, Michael Rescorla, Ted Sider, Mattias Skipper, Robert Stalnaker, Jason Stanley, Bruno Whittle, Robbie Williams, an anonymous No\u00fbs referee; participants in the Corridor reading group (on three occasions), a graduate seminar session at Rutgers University, a Fall 2011 joint MIT/Princeton graduate seminar, and a Spring 2016 MIT/Princeton/Rutgers graduate seminar taught jointly with Andy Egan; audiences at several APA division meetings (2017 Eastern and Pacific, 2021 Eastern) the 2008 Arizona Ontology Conference, Brown University, Catholic University of Peru, CUNY, National Autonomous University of Mexico, Ohio State University, Syracuse, University, University of Bologna, UC Berkeley, UC Riverside, UC Santa Cruz, University of Connecticut at Storrs, University of Graz, University of Leeds, University of Paris (IHPST), University of Oslo (on two occasions), University of Texas at Austin, Yale University, MIT, and Rutgers University. The initial direction of this paper was enormously influenced by conversations with Andy Egan. Elga gratefully acknowledges support from a 2014-15 Deutsche Bank Membership at the Princeton Institute for Advanced Study. 1 Standard decision theory is incomplete Professor Moriarty has given John Watson a difficult logic problem and credibly threatened to explode a bomb unless Watson gives the correct answer by noon. Watson has never thought about that problem before, and even experienced logicians take hours to solve it. It is seconds before noon. Watson is then informed that Moriarity has accidentally left the answer to the problem on an easily accessible note. Watson\u2019s options are to look at the note (which requires a tiny bit of extra effort) or to give an answer of his choice without looking at the note. Is it rationally permissible for Watson to look at the note? The answer is elementary: it is rationally permissible. Someone might object that only a logically omniscient agent could be fully rational, and therefore that Watson is required to be certain of the correct answer to the logic puzzle (and to give that answer). Even so, we hope the objector would agree that there is a sense in which, given Watson\u2019s limited cognitive abilities, it is rational, reasonable, or smart for Watson look at the note.1,2 Unfortunately, standard Bayesian decision theory (as it is usually applied) fails to deliver any sense in which it is rationally permissible for Watson to look at the note. For it represents the degrees of belief of an agent as a probability function satisfying the standard probability axioms. And on the usual way of applying these axioms to a case like Watson\u2019s, they entail that Watson assigns probability 1 to every logical truth, including the solution to Moriarity\u2019s logic problem.3 But if Watson is certain of the solution from the 1The Watson case is structurally similar to the \u201cbet my house\u201d case from Christensen (2007, 8\u20139). For arguments that seek to differentiate between \u201cordinary standards of rationality\u201d (according to which logical omniscience is not required) and \u201cideal standards\u201d (according to which it is), see Smithies (2015). 2Compare: even an objective Bayesian who counts some prior probability functions as irrational might have use for a decision theory that says what decisions are rational, given a particular (perhaps irrational) prior. 3For important early discussions of how the assumption that logical truths gets probability 1 makes trouble for decision theory, see Savage (1967, 308) and Hacking (1967). For",
+      "citationCount": 19,
+      "doi": "10.1111/NOUS.12381",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0b381bba901ae3bbc11a1cb3be0596d5665e2348",
+      "venue": "No\u00fbs",
+      "journal": {
+        "name": "No\u00fbs"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "51b4055004ee13e29babf662942921a12a35978b",
+      "title": "Game Semantics, Quantifiers and Logical Omniscience",
+      "authors": [
+        {
+          "name": "Bruno Ramos Mendon\u00e7a",
+          "authorId": "2170257632"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Logical omniscience states that the knowledge set of ordinary rational agents is closed for its logical consequences. Although epistemic logicians in general judge this principle unrealistic, there is no consensus on how it should be restrained. The challenge is conceptual: we must find adequate criteria for separating obvious logical consequences (consequences for which epistemic closure certainly holds) from non-obvious ones. Non-classical game-theoretic semantics has been employed in this discussion with relative success. On the one hand, with urn semantics [15], an expressive fragment of classical game semantics that weakens the dependence relations between quantifiers occurring in a formula, we can formalize, for a broad array of examples, epistemic scenarios in which an individual ignores the validity of some first-order sentence. On the other hand, urn semantics offers a disproportionate restriction of logical omniscience. Therefore, an improvement of this system is needed to obtain a better solution of the problem. In this paper, I argue that our linguistic competence in using quantifiers requires a sort of basic hypothetical logical knowledge that can be formulated as follows: when inquiring after the truth-value of \u2200x\u03c6, an individual might be unaware of all substitutional instances this sentence accepts, but at least she must know that, if an element a is given, then \u2200x\u03c6 holds only if \u03c6(x/a) is true. This thesis accepts game-theoretic formalization in terms of a refinement of urn semantics. I maintain that the system so obtained (US+) affords an improved solution of the logical omniscience problem. To do this, I characterize first-order theoremhood in US+. As a consequence of this result, we will see that the ideal reasoner depicted by US+ only knows the validity of first-order formulas whose Herbrand witnesses can be trivially found, a fact that provides strong evidence that our refinement of urn semantics captures a relevant sense of logical obviousness.",
+      "citationCount": 0,
+      "doi": "10.12775/llp.2022.021",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/51b4055004ee13e29babf662942921a12a35978b",
+      "venue": "Logic and Logical Philosophy",
+      "journal": {
+        "name": "Logic and Logical Philosophy"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "86ed2f52f92065a0cb748b95f8d288b3aa092eac",
+      "title": "SOLVING THE PROBLEM OF LOGICAL OMNISCIENCE",
+      "authors": [
+        {
+          "name": "Sinan Dogramaci",
+          "authorId": "116985948"
+        }
+      ],
+      "year": 2018,
+      "abstract": "This paper looks at three ways of addressing probabilism\u2019s implausible requirement of logical omniscience. The first and most common strategy says it\u2019s okay to require an ideally rational person to be logically omniscient. I argue that this view is indefensible on any interpretation of \u2018ideally rational\u2019. The second strategy says probabilism should be formulated not in terms of logically possible worlds but in terms of doxastically possible worlds, ways you think the world might be. I argue that, on the interpretation of this approach that lifts the requirement of certainty in all logical truths, the view becomes vacuous, issuing no requirements on rational believers at all. Finally, I develop and endorse a new solution to the problem. This view proposes dynamic norms for reasoning with credences. The solution is based on an old proposal of Ian Hacking\u2019s that says you\u2019re required to be sensitive to logical facts only when you know they are logical facts.",
+      "citationCount": 20,
+      "doi": "10.1111/PHIS.12118",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/86ed2f52f92065a0cb748b95f8d288b3aa092eac",
+      "venue": "Philosophical Issues",
+      "journal": {
+        "name": "Philosophical Issues"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "078829c1d6b37b524ce479faa64abf19d4f5376e",
+      "title": "Omniscience and the Rhetoric of Reason: \u015a\u0101ntarak\u1e63ita and Kamala\u015b\u012bla on Rationality, Argumentation, and Religious Authority by Sara L. McClintock (review)",
+      "authors": [
+        {
+          "name": "S. Moriyama",
+          "authorId": "101363277"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1353/JBP.2016.0014",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/078829c1d6b37b524ce479faa64abf19d4f5376e",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Buddhist Philosophy",
+        "pages": "291 - 296",
+        "volume": "2"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1a35ebd9479bed2683cdba2683977d22ff9c31c4",
+      "title": "Logical omniscience and decision theory : a no-go result [ Incomplete Draft ]",
+      "authors": [
+        {
+          "name": "A. Elga",
+          "authorId": "52192352"
+        },
+        {
+          "name": "A. Rayo",
+          "authorId": "2079384447"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1a35ebd9479bed2683cdba2683977d22ff9c31c4",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "eadab0beb19596e6cfbd33620409f56ba6c75da0",
+      "title": "Scholarly Behavior: Bounded Rational Production of Rational Scientific Knowledge",
+      "authors": [
+        {
+          "name": "V. Tambovtsev",
+          "authorId": "119698295"
+        }
+      ],
+      "year": 2023,
+      "abstract": "People differ greatly in cognitive abilities, but all of them have limited abilities, ranging from the ability to perceive the surrounding reality and ending with the implementation of mathematical calculations and logical conclusions from the premises made. If a fully rational individual not only has complete information about the world, but also unlimited possibilities to make calculations and draw logical conclusions, then real people, including professional researchers, are only bounded rational. However, the scientific knowledge produced by scientists is close to completely rational. The article discusses the components of bounded rationality and those mechanisms within science that allow such a transition to be made. The leading role among these mechanisms belongs to scholarly communication, one of the functions of which is the correction of involuntary and unconscious errors made by bounded rational researchers. It is shown that the execution of this function faces certain difficulties, which are important to investigate in order to improve the error correction process.",
+      "citationCount": 0,
+      "doi": "10.19181/smtp.2023.5.1.11",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eadab0beb19596e6cfbd33620409f56ba6c75da0",
+      "venue": "Science Management: Theory and Practice",
+      "journal": {
+        "name": "Science Management: Theory and Practice"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d5664bc56d6f0de9a81c0fd250dfb3b59c906f85",
+      "title": "Logical ignorance and logical learning",
+      "authors": [
+        {
+          "name": "Richard Pettigrew",
+          "authorId": "144577300"
+        }
+      ],
+      "year": 2020,
+      "abstract": "According to certain normative theories in epistemology, rationality requires us to be logically omniscient. Yet this prescription clashes with our ordinary judgments of rationality. How should we resolve this tension? In this paper, I focus particularly on the logical omniscience requirement in Bayesian epistemology. Building on a key insight by Hacking (Philos Sci 34(4):311\u2013325, 1967), I develop a version of Bayesianism that permits logical ignorance. This includes: (i) an account of the synchronic norms that govern a logically ignorant individual at any given time; (ii) an account of how we reduce our logical ignorance by learning logical facts and how we should update our credences in response to such evidence; and (iii) an account of when logical ignorance is irrational and when it isn\u2019t. At the end, I explain why the requirement of logical omniscience remains true of ideal agents with no computational, processing, or storage limitations.",
+      "citationCount": 18,
+      "doi": "10.1007/s11229-020-02699-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d5664bc56d6f0de9a81c0fd250dfb3b59c906f85",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "9991-10020",
+        "volume": "198"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1af3149e635e74c13543dc64d6f96603030cb697",
+      "title": "Rationality, perception, and the all-seeing eye",
+      "authors": [
+        {
+          "name": "Teppo Felin",
+          "authorId": "2524899"
+        },
+        {
+          "name": "J. Koenderink",
+          "authorId": "1716904"
+        },
+        {
+          "name": "J. Krueger",
+          "authorId": "4429292"
+        }
+      ],
+      "year": 2016,
+      "abstract": "Seeing\u2014perception and vision\u2014is implicitly the fundamental building block of the literature on rationality and cognition. Herbert Simon and Daniel Kahneman\u2019s arguments against the omniscience of economic agents\u2014and the concept of bounded rationality\u2014depend critically on a particular view of the nature of perception and vision. We propose that this framework of rationality merely replaces economic omniscience with perceptual omniscience. We show how the cognitive and social sciences feature a pervasive but problematic meta-assumption that is characterized by an \u201call-seeing eye.\u201d We raise concerns about this assumption and discuss different ways in which the all-seeing eye manifests itself in existing research on (bounded) rationality. We first consider the centrality of vision and perception in Simon\u2019s pioneering work. We then point to Kahneman\u2019s work\u2014particularly his article \u201cMaps of Bounded Rationality\u201d\u2014to illustrate the pervasiveness of an all-seeing view of perception, as manifested in the extensive use of visual examples and illusions. Similar assumptions about perception can be found across a large literature in the cognitive sciences. The central problem is the present emphasis on inverse optics\u2014the objective nature of objects and environments, e.g., size, contrast, and color. This framework ignores the nature of the organism and perceiver. We argue instead that reality is constructed and expressed, and we discuss the species-specificity of perception, as well as perception as a user interface. We draw on vision science as well as the arts to develop an alternative understanding of rationality in the cognitive and social sciences. We conclude with a discussion of the implications of our arguments for the rationality and decision-making literature in cognitive psychology and behavioral economics, along with suggesting some ways forward.",
+      "citationCount": 76,
+      "doi": "10.3758/s13423-016-1198-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1af3149e635e74c13543dc64d6f96603030cb697",
+      "venue": "Psychonomic Bulletin & Review",
+      "journal": {
+        "name": "Psychonomic Bulletin & Review",
+        "pages": "1040 - 1059",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "33512d935f82fbbff5fd7a23ecad8980da0fae9c",
+      "title": "A logic for bounded multi-agent reasoning: deductive inference, introspection, and attribution",
+      "authors": [
+        {
+          "name": "Anthia Solaki",
+          "authorId": "50981624"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/s11229-024-04907-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/33512d935f82fbbff5fd7a23ecad8980da0fae9c",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "volume": "205"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c2dc2e704f36fe2719445d56d1b437043d5c016c",
+      "title": "Norms of inquiry",
+      "authors": [
+        {
+          "name": "David Thorstad",
+          "authorId": "15193727"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT:Epistemologists have recently proposed a number of norms governing rational inquiry. My aim in this paper is to unify and explain recently proposed norms of inquiry by developing a general account of the conditions under which inquiries are rational, analogous to theories such as evidentialism and reliabilism for rational belief. I begin with a reason-responsiveness conception of rationality as responding correctly to possessed normative reasons. I extend this account with a series of claims about the normative reasons for inquiry that we possess. I apply the account to shed light on two classes of norms that have featured prominently in recent discussions: norms of clutter avoidance forbidding agents from engaging in trivial inquiries, and norms of logical non-omniscience governing properties such as the deductive closure and consistency of an agent's belief state. I conclude with a discussion of the sense in which norms of inquiry should be regarded as epistemic norms.",
+      "citationCount": 0,
+      "doi": "10.5840/philtopics202351220",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c2dc2e704f36fe2719445d56d1b437043d5c016c",
+      "venue": "Philosophical Topics",
+      "journal": {
+        "name": "Philosophical Topics",
+        "pages": "135 - 160",
+        "volume": "51"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "10556b6299c529196001e7c197a539c9f512c657",
+      "title": "Logical ignorance and logical learning",
+      "authors": [
+        {
+          "name": "Richard Pettigrew",
+          "authorId": "2091934970"
+        }
+      ],
+      "year": 2020,
+      "abstract": "According to certain normative theories in epistemology, rationality requires us to be logically omniscient. Yet this prescription clashes with our ordinary judgments of rationality. How should we resolve this tension? In this paper, I focus particularly on the logical omniscience requirement in Bayesian epistemology. Building on a key insight by Hacking (Philos Sci 34(4):311\u2013325, 1967), I develop a version of Bayesianism that permits logical ignorance. This includes: (i) an account of the synchronic norms that govern a logically ignorant individual at any given time; (ii) an account of how we reduce our logical ignorance by learning logical facts and how we should update our credences in response to such evidence; and (iii) an account of when logical ignorance is irrational and when it isn\u2019t. At the end, I explain why the requirement of logical omniscience remains true of ideal agents with no computational, processing, or storage limitations.",
+      "citationCount": 0,
+      "doi": "10.1007/s11229-020-02699-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/10556b6299c529196001e7c197a539c9f512c657",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "9991 - 10020",
+        "volume": "198"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5f1381be3da334652b970b58c84ad6adb2b332a1",
+      "title": "Relative rationality: Is machine rationality subjective?",
+      "authors": [
+        {
+          "name": "T. Marwala",
+          "authorId": "1740675"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Rational decision making in its linguistic description means making logical decisions. In essence, a rational agent optimally processes all relevant information to achieve its goal. Rationality has two elements and these are the use of relevant information and the efficient processing of such information. In reality, relevant information is incomplete, imperfect and the processing engine, which is a brain for humans, is suboptimal. Humans are risk averse rather than utility maximizers. In the real world, problems are predominantly non-convex and this makes the idea of rational decision-making fundamentally unachievable and Herbert Simon called this bounded rationality. There is a trade-off between the amount of information used for decision-making and the complexity of the decision model used. This explores whether machine rationality is subjective and concludes that indeed it is.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "1902.04832",
+      "url": "https://www.semanticscholar.org/paper/5f1381be3da334652b970b58c84ad6adb2b332a1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/1902.04832"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

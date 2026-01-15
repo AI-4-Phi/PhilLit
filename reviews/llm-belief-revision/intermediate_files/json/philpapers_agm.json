@@ -1,0 +1,121 @@
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "AGM belief revision Gardenfors",
+  "results": [
+    {
+      "title": "Carlos E. Alchourr\u00f3n, Peter G\u00e4rdenfors & David Makinson, On the logic of theory change: Partial meet contraction and revision functions",
+      "url": "https://philpapers.org/rec/ALCOTL-2",
+      "philpapers_id": "ALCOTL",
+      "snippet": "This paper extends earlier work by its authors on formal aspects of the processes of contracting a theory to eliminate a proposition and revising a theory to introduce a proposition. In the course of the earlier work, Gardenfors developed general postulates of a more or less equational nature for such processes, whilst Alchourron and Makinson studied the particular case of contraction functions that are maximal, in the sense of yielding a maximal subset of the theory (or alternatively, of one of its axiomatic bases), that fails to imply the proposition being eliminated.",
+      "page_age": null
+    },
+    {
+      "title": "Franz Huber, Belief Revision I: The AGM Theory",
+      "url": "https://philpapers.org/rec/HUBBRI",
+      "philpapers_id": "HUBBRI",
+      "snippet": "Belief revision theory studies how an ideal doxastic agent should revise her beliefs when she receives new information. In part I I will first present the AGM theory of belief revision (Alchourr\u00f3n &amp; G\u00e4rdenfors &amp; Makinson 1985).",
+      "page_age": null
+    },
+    {
+      "title": "Peter G\u00e4rdenfors, Belief revisions and the Ramsey test for conditionals",
+      "url": "https://philpapers.org/rec/GRDBRA",
+      "philpapers_id": "GRDBRA",
+      "snippet": "Belief Revision, Non-Monotonic Reasoning, and the Ramsey Test.Charles B. Cross - 1990 - In Kyburg Henry E. , Loui Ronald P. &amp; Carlson Greg N. , Knowledge Representation and Defeasible Reasoning. Kluwer Academic Publishers. pp. 223--244. Reapproaching Ramsey: Conditionals and Iterated Belief Change in the Spirit of AGM...",
+      "page_age": null
+    },
+    {
+      "title": "Li-wen Xiong, The AGM Theory for Belief Revision",
+      "url": "https://philpapers.org/rec/XIOTAT",
+      "philpapers_id": "XIOTAT",
+      "snippet": "A Erluo if , Gardner Fox and Meijin Sen jointly established by the belief revision theory is one of the relatively early formation, the most influential theory. This article describes the basic concepts of belief revision and review of the AGM theory. The problem of belief revision is a lively subject, which contains various theories. The theory conceived by CE Alchourron, P. Gardenfors and D.",
+      "page_age": null
+    },
+    {
+      "title": "Peter G\u00e4rdenfors, The dynamics of belief systems: Foundations versus coherence theories",
+      "url": "https://philpapers.org/rec/GRDTDO-3",
+      "philpapers_id": "GRDTDO",
+      "snippet": "Using conceptual spaces to model the dynamics of empirical theories.Peter G\u00e4rdenfors &amp; Frank Zenker - 2011 - In Erik J. Olson Sebastian Enqvist (ed.), Belief Revision Meets Philosophy of Science. Springer. pp.",
+      "page_age": null
+    },
+    {
+      "title": "Eduardo Ferm\u00e9 & Sven Ove Hansson, AGM 25 Years: Twenty-Five Years of Research in Belief Change",
+      "url": "https://philpapers.org/rec/FERAY",
+      "philpapers_id": "FERAY",
+      "snippet": "The 1985 paper by Carlos Alchourr\u00f3n (1931\u20131996), Peter G\u00e4rdenfors, and David Makinson (AGM), &quot;On the Logic of Theory Change: Partial Meet Contraction and Revision Functions&quot; was the starting-point of a large and rapidly growing literature that employs formal models in the investigation of changes in belief states and databases.",
+      "page_age": null
+    },
+    {
+      "title": "Daniel Osherson, Note on an observation by Neil Tennant",
+      "url": "https://philpapers.org/rec/OSHNOA",
+      "philpapers_id": "OSHNOA",
+      "snippet": "Neil Tennant (Tennant, 2005) has ... to restate and demonstrate his result in a slightly different way. Fix a formal language L that embeds sentential logic....",
+      "page_age": null
+    },
+    {
+      "title": "Wayne Wobcke, Belief Revision, Conditional Logic and Nonmonotonic Reasoning",
+      "url": "https://philpapers.org/rec/WOBBRC",
+      "philpapers_id": "WOBBRC",
+      "snippet": "We consider the connections between belief revision, conditional logic and nonmonotonic reasoning, using as a foundation the approach to theory change developed by Alchourr\u00f3n, G\u00e4rdenfors and Makinson (the AGM approach). This is first generalized to allow the iteration of theory change operations to capture the dynamics of epistemic states according to a principle of minimal change of entrenchment.",
+      "page_age": null
+    },
+    {
+      "title": "Sebastian Enqvist, Interrogative Belief Revision in Modal Logic",
+      "url": "https://philpapers.org/rec/ENQIBR-3",
+      "philpapers_id": "ENQIBR",
+      "snippet": "Dynamic logic for belief revision.Johan van Benthem - 2007 - Journal of Applied Non-Classical Logics 17 (2):129-155. Added to PP 2009-03-04 Downloads 248 (#137,927) 6 months 39 (#126,871) ... Using conceptual spaces to model the dynamics of empirical theories.Peter G\u00e4rdenfors &amp; Frank Zenker - 2011 - In Erik J. Olson Sebastian Enqvist, Belief Revision meets Philosophy of Science.",
+      "page_age": null
+    },
+    {
+      "title": "Jake Chandler, Transmission Failure, AGM Style",
+      "url": "https://philpapers.org/rec/CHATFA-3",
+      "philpapers_id": "CHATFA",
+      "snippet": "Knowledge in Flux.Henry E. Kyburg &amp; Peter Gardenfors - 1993 - No\u00fbs 27 (4):519-521. On the logic of iterated belief revision.Adnan Darwiche &amp; Judea Pearl - 1997 - Artificial Intelligence 89 (1-2):1-29.",
+      "page_age": null
+    },
+    {
+      "title": "Mark Edward Kolenski, Conditionals and the Revision of Belief",
+      "url": "https://philpapers.org/rec/KOLCAT-2",
+      "philpapers_id": "KOLCAT",
+      "snippet": "The Ramsey test advocates that a conditional is true and/or acceptable iff the consequent is present in the minimal rational revision of a set of full beliefs to include the antecedent. ;Gardenfors and Levi are followed in the presentation of a belief-revision model, and Rott is followed in the presentation of a version of the triviality proofs.",
+      "page_age": null
+    },
+    {
+      "title": "Franz Huber, Belief Revision II: Ranking Theory",
+      "url": "https://philpapers.org/rec/HUBBRI-2",
+      "philpapers_id": "HUBBRI",
+      "snippet": "Belief Revision in Dynamic Epistemic Logic and Ranking Theory.Peter Fritz - manuscript \u00b7 Ordinal Conditional Functions. A Dynamic Theory of Epistemic States.Wolfgang Spohn - 1988 - In W. L. Harper &amp; B. Skyrms (eds.), Causation in Decision, Belief Change, and Statistics, vol. II. Kluwer Academic Publishers. Ranking Functions, AGM Style.Wolfgang Spohn - 1999 - Internet Festschrift for Peter G\u00e4rdenfors.",
+      "page_age": null
+    },
+    {
+      "title": "Eleonora Cresto, A Model for Structural Changes of Belief",
+      "url": "https://philpapers.org/rec/CREAMF-2",
+      "philpapers_id": "CREAMF",
+      "snippet": "On the logic of theory change: Partial meet contraction and revision functions.Carlos E. Alchourr\u00f3n, Peter G\u00e4rdenfors &amp; David Makinson - 1985 - Journal of Symbolic Logic 50 (2):510-530. Mild contraction: evaluating loss of information due to loss of belief.Isaac Levi - 2004 - New York: Oxford University Press.",
+      "page_age": null
+    },
+    {
+      "title": "Giacomo Bonanno, AGM Belief Revision in Dynamic Games",
+      "url": "https://philpapers.org/rec/BONABR",
+      "philpapers_id": "BONABR",
+      "snippet": "Within the context of extensive-form (or dynamic) games, we use choice frames to represent the initial beliefs of a player as well as her disposition to change those beliefs when she learns that an information set of hers has been reached. As shown in [5], in order for the revision operation to be consistent with the AGM postulates [1], the player\u2019s choice frame must be rationalizable in terms of a total pre-order on the set of histories.",
+      "page_age": null
+    },
+    {
+      "title": "Carlos E. Alchourron & David Makinson, On the logic of theory change: Contraction functions and their associated revision functions",
+      "url": "https://philpapers.org/rec/ALCOTL-3",
+      "philpapers_id": "ALCOTL",
+      "snippet": "On the logic of theory change: Partial meet contraction and revision functions.Carlos E. Alchourr\u00f3n, Peter G\u00e4rdenfors &amp; David Makinson - 1985 - Journal of Symbolic Logic 50 (2):510-530. On the logic of theory change: Safe contraction.Carlos E. Alchourr\u00f3n &amp; David Makinson - 1985 - Studia Logica 44 (4):405 - 422. Knowledge, Belief and Counterfactual Reasoning in Games.Robert Stalnaker - 1996 - Economics and Philosophy 12 (2):133.",
+      "page_age": null
+    },
+    {
+      "title": "Giacomo Bonanno, Rational choice and agm belief revision",
+      "url": "https://philpapers.org/rec/BONRCA",
+      "philpapers_id": "BONRCA",
+      "snippet": "We establish a correspondence between the rationalizability of choice studied in the revealed preference literature and the notion of minimal belief revision captured by the AGM postulates. A choice frame consists ...",
+      "page_age": null
+    }
+  ],
+  "count": 16,
+  "errors": []
+}

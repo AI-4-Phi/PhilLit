@@ -1,0 +1,2208 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "large language model logical reasoning",
+  "results": [
+    {
+      "paperId": "cb7a18dbfdec3d61349ff5e051fede6a469ae2c8",
+      "title": "LogiDynamics: Unraveling the Dynamics of Logical Inference in Large Language Model Reasoning",
+      "authors": [
+        {
+          "name": "Tianshi ZHENG",
+          "authorId": "2209990450"
+        },
+        {
+          "name": "Cheng Jiayang",
+          "authorId": "2109077713"
+        },
+        {
+          "name": "Chunyang Li",
+          "authorId": "2279661258"
+        },
+        {
+          "name": "Haochen Shi",
+          "authorId": "2257452757"
+        },
+        {
+          "name": "Zihao Wang",
+          "authorId": "2117421814"
+        },
+        {
+          "name": "Jiaxin Bai",
+          "authorId": "145677395"
+        },
+        {
+          "name": "Yangqiu Song",
+          "authorId": "2275626612"
+        },
+        {
+          "name": "Ginny Y. Wong",
+          "authorId": "9413717"
+        },
+        {
+          "name": "Simon See",
+          "authorId": "2256995112"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.48550/arXiv.2502.11176",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cb7a18dbfdec3d61349ff5e051fede6a469ae2c8",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.11176"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c6effed77a583fb63df163ce7596a287459a583c",
+      "title": "Large Language Model and Knowledge Graph Entangled Logical Reasoning",
+      "authors": [
+        {
+          "name": "Zezhong Xu",
+          "authorId": "2136396192"
+        },
+        {
+          "name": "Juan Li",
+          "authorId": "2141562251"
+        },
+        {
+          "name": "Wen Zhang",
+          "authorId": "2346273850"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recently, the integration of large language models (LLMs) and knowledge graphs (KGs) is a research focal point, since they have complementary strengths and weaknesses for logical reasoning. To be specific, LLMs exhibit strong semantic reasoning capacities and have proven to be effective in various reasoning tasks, but they are prone to producing hallucinations due to the lack of world knowledge and structured reasoning abilities. Although KGs alleviate this problem by providing extensive factual knowledge to enhance reasoning accuracy, they are limited in language understanding and reasoning flexibility. Thus, in this paper, we propose a novel framework LKLR that entangles both LLMs and KGs for synergistic reasoning. Firstly, hypothesizing LLMs contain logical structures, we decompose the question into a grounded logical query over the KG by leveraging the chain-of-thought reasoning ability of the LLM. It enables the seamless integration of LLMs and KGs. Then we traverse the query sequentially on the KG to ground each reasoning step in a factual knowledge graph, while maintaining the reasoning flow guided by the LLM. Finally, we enhance the inference ability of the LLM by supplying the grounded knowledge, combining the robust knowledge of KGs with the semantic reasoning of LLMs. Our approach synergistically integrates neural and symbolic reasoning to achieve hybrid reasoning capabilities. We conduct experiments on several question answering benchmarks, including WebQSP, QALD10-en, WebQuestions and T-Rex, our method respectively improves the performance on the Hits@1 metric by 4.5%, 6.6%, 12.3%, and 5.7%, compared to ToG which performs reasoning based on the LLM and the retrieved knowledge from the KG. These results demonstrate that our proposed framework can provide transparent and reliable reasoning.",
+      "citationCount": 2,
+      "doi": "10.1109/ICKG63256.2024.00061",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c6effed77a583fb63df163ce7596a287459a583c",
+      "venue": "2024 IEEE International Conference on Knowledge Graph (ICKG)",
+      "journal": {
+        "name": "2024 IEEE International Conference on Knowledge Graph (ICKG)",
+        "pages": "432-439"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "d6123d6d213436d8258b4a8f8b7fb90120006239",
+      "title": "Enigmata: Scaling Logical Reasoning in Large Language Models with Synthetic Verifiable Puzzles",
+      "authors": [
+        {
+          "name": "Jiangjie Chen",
+          "authorId": "2307483237"
+        },
+        {
+          "name": "Qianyu He",
+          "authorId": "2363850244"
+        },
+        {
+          "name": "Siyu Yuan",
+          "authorId": "2145968425"
+        },
+        {
+          "name": "Aili Chen",
+          "authorId": "2363695740"
+        },
+        {
+          "name": "Zhicheng Cai",
+          "authorId": "2364131224"
+        },
+        {
+          "name": "Weinan Dai",
+          "authorId": "2352019542"
+        },
+        {
+          "name": "Hongli Yu",
+          "authorId": "2363723160"
+        },
+        {
+          "name": "Qiying Yu",
+          "authorId": "2354247190"
+        },
+        {
+          "name": "Xuefeng Li",
+          "authorId": "2363669478"
+        },
+        {
+          "name": "Jiaze Chen",
+          "authorId": "2354167553"
+        },
+        {
+          "name": "Hao Zhou",
+          "authorId": "2363595990"
+        },
+        {
+          "name": "Mingxuan Wang",
+          "authorId": "2285763682"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs), such as OpenAI's o1 and DeepSeek's R1, excel at advanced reasoning tasks like math and coding via Reinforcement Learning with Verifiable Rewards (RLVR), but still struggle with puzzles solvable by humans without domain knowledge. We introduce Enigmata, the first comprehensive suite tailored for improving LLMs with puzzle reasoning skills. It includes 36 tasks across seven categories, each with 1) a generator that produces unlimited examples with controllable difficulty and 2) a rule-based verifier for automatic evaluation. This generator-verifier design supports scalable, multi-task RL training, fine-grained analysis, and seamless RLVR integration. We further propose Enigmata-Eval, a rigorous benchmark, and develop optimized multi-task RLVR strategies. Our trained model, Qwen2.5-32B-Enigmata, consistently surpasses o3-mini-high and o1 on the puzzle reasoning benchmarks like Enigmata-Eval, ARC-AGI (32.8%), and ARC-AGI 2 (0.6%). It also generalizes well to out-of-domain puzzle benchmarks and mathematical reasoning, with little multi-tasking trade-off. When trained on larger models like Seed1.5-Thinking (20B activated parameters and 200B total parameters), puzzle data from Enigmata further boosts SoTA performance on advanced math and STEM reasoning tasks such as AIME (2024-2025), BeyondAIME and GPQA (Diamond), showing nice generalization benefits of Enigmata. This work offers a unified, controllable framework for advancing logical reasoning in LLMs. Resources of this work can be found at https://seed-enigmata.github.io.",
+      "citationCount": 23,
+      "doi": "10.48550/arXiv.2505.19914",
+      "arxivId": "2505.19914",
+      "url": "https://www.semanticscholar.org/paper/d6123d6d213436d8258b4a8f8b7fb90120006239",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.19914"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "00e4098e8cba9fb2342109ba3028294c8b687c03",
+      "title": "Mathematical Reasoning in Large Language Models: Assessing Logical and Arithmetic Errors across Wide Numerical Ranges",
+      "authors": [
+        {
+          "name": "Safal Shrestha",
+          "authorId": "2345187520"
+        },
+        {
+          "name": "Minwu Kim",
+          "authorId": "2345328816"
+        },
+        {
+          "name": "Keith Ross",
+          "authorId": "2345187775"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mathematical reasoning in Large Language Models (LLMs) is often evaluated using benchmarks with limited numerical ranges, failing to reflect real-world problem-solving across diverse scales. Furthermore, most existing evaluation methods only compare model outputs to ground-truth answers, obscuring insights into reasoning processes. To address these limitations, we introduce GSM-Ranges, a dataset generator derived from GSM8K that systematically perturbs numerical values in math problems to assess model robustness across varying numerical scales. Additionally, we propose a novel grading methodology that distinguishes between logical and non-logical errors, offering a more precise evaluation of reasoning processes beyond computational accuracy. Our experiments with various models reveal a significant increase in logical error rates-up to 14 percentage points-as numerical complexity rises, demonstrating a general weakness in reasoning with out-of-distribution numerical values. Moreover, while models demonstrate high accuracy on standalone arithmetic tasks, their performance deteriorates substantially when computations are embedded within word problems. These findings provide a comprehensive evaluation of LLMs' mathematical reasoning capabilities and inform future research directions for improving numerical generalization in language models.",
+      "citationCount": 16,
+      "doi": "10.48550/arXiv.2502.08680",
+      "arxivId": "2502.08680",
+      "url": "https://www.semanticscholar.org/paper/00e4098e8cba9fb2342109ba3028294c8b687c03",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.08680"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "920cd8b25373358779fde44f90774533f26d782a",
+      "title": "A Survey of Scaling in Large Language Model Reasoning",
+      "authors": [
+        {
+          "name": "Zihan Chen",
+          "authorId": "2276579472"
+        },
+        {
+          "name": "Song Wang",
+          "authorId": "2117075272"
+        },
+        {
+          "name": "Zhen Tan",
+          "authorId": "2309805899"
+        },
+        {
+          "name": "Xingbo Fu",
+          "authorId": "2194727743"
+        },
+        {
+          "name": "Zhenyu Lei",
+          "authorId": "2301468051"
+        },
+        {
+          "name": "Peng Wang",
+          "authorId": "2309310448"
+        },
+        {
+          "name": "Huan Liu",
+          "authorId": "2258336609"
+        },
+        {
+          "name": "Cong Shen",
+          "authorId": "2276579917"
+        },
+        {
+          "name": "Jundong Li",
+          "authorId": "2276482171"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancements in large Language models (LLMs) have significantly enhanced their reasoning capabilities, driven by various strategies such as multi-agent collaboration. However, unlike the well-established performance improvements achieved through scaling data and model size, the scaling of reasoning in LLMs is more complex and can even negatively impact reasoning performance, introducing new challenges in model alignment and robustness. In this survey, we provide a comprehensive examination of scaling in LLM reasoning, categorizing it into multiple dimensions and analyzing how and to what extent different scaling strategies contribute to improving reasoning capabilities. We begin by exploring scaling in input size, which enables LLMs to process and utilize more extensive context for improved reasoning. Next, we analyze scaling in reasoning steps that improves multi-step inference and logical consistency. We then examine scaling in reasoning rounds, where iterative interactions refine reasoning outcomes. Furthermore, we discuss scaling in training-enabled reasoning, focusing on optimization through iterative model improvement. Finally, we review applications of scaling across domains and outline future directions for further advancing LLM reasoning. By synthesizing these diverse perspectives, this survey aims to provide insights into how scaling strategies fundamentally enhance the reasoning capabilities of LLMs and further guide the development of next-generation AI systems.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2504.02181",
+      "arxivId": "2504.02181",
+      "url": "https://www.semanticscholar.org/paper/920cd8b25373358779fde44f90774533f26d782a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.02181"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "4affc4c57924523de9edb4450ecdbb2ed6e72d1b",
+      "title": "Think-on-Graph 2.0: Deep and Interpretable Large Language Model Reasoning with Knowledge Graph-guided Retrieval",
+      "authors": [
+        {
+          "name": "Shengjie Ma",
+          "authorId": "2311556497"
+        },
+        {
+          "name": "Chengjin Xu",
+          "authorId": "2250617116"
+        },
+        {
+          "name": "Xuhui Jiang",
+          "authorId": "144267788"
+        },
+        {
+          "name": "Muzhi Li",
+          "authorId": "2307043422"
+        },
+        {
+          "name": "Huaren Qu",
+          "authorId": "2311383154"
+        },
+        {
+          "name": "Jian Guo",
+          "authorId": "2284217200"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 39,
+      "doi": "10.48550/arXiv.2407.10805",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4affc4c57924523de9edb4450ecdbb2ed6e72d1b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.10805"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d48b29889241551e1ee6622fa78c3fa4159255dd",
+      "title": "Selection-Inference: Exploiting Large Language Models for Interpretable Logical Reasoning",
+      "authors": [
+        {
+          "name": "Antonia Creswell",
+          "authorId": "3433026"
+        },
+        {
+          "name": "M. Shanahan",
+          "authorId": "1757629"
+        },
+        {
+          "name": "I. Higgins",
+          "authorId": "39051054"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have been shown to be capable of impressive few-shot generalisation to new tasks. However, they still tend to perform poorly on multi-step logical reasoning problems. Here we carry out a comprehensive evaluation of LLMs on 50 tasks that probe different aspects of logical reasoning. We show that language models tend to perform fairly well at single step inference or entailment tasks, but struggle to chain together multiple reasoning steps to solve more complex problems. In light of this, we propose a Selection-Inference (SI) framework that exploits pre-trained LLMs as general processing modules, and alternates between selection and inference to generate a series of interpretable, casual reasoning steps leading to the final answer. We show that a 7B parameter LLM used within the SI framework in a 5-shot generalisation setting, with no fine-tuning, yields a performance improvement of over 100% compared to an equivalent vanilla baseline on a suite of 10 logical reasoning tasks. The same model in the same setting even outperforms a significantly larger 280B parameter baseline on the same suite of tasks. Moreover, answers produced by the SI framework are accompanied by a causal natural-language-based reasoning trace, which has important implications for the safety and trustworthiness of the system.",
+      "citationCount": 430,
+      "doi": null,
+      "arxivId": "2205.09712",
+      "url": "https://www.semanticscholar.org/paper/d48b29889241551e1ee6622fa78c3fa4159255dd",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2205.09712"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dfbb9645b5580d4b08e4a1d5e3a21b2998c08531",
+      "title": "Evaluating the o1 reasoning large language model for cognitive bias: a vignette study",
+      "authors": [
+        {
+          "name": "Or Degany",
+          "authorId": "2042677841"
+        },
+        {
+          "name": "Sahar Laros",
+          "authorId": "2376740638"
+        },
+        {
+          "name": "Daphna Idan",
+          "authorId": "2346919206"
+        },
+        {
+          "name": "Sharon Einav",
+          "authorId": "2330785189"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Cognitive biases, systematic deviations from logical judgment, are well documented in clinical decision-making, particularly in clinical settings characterized by high decision load, limited time, and diagnostic uncertainty-such as critical care. Prior work demonstrated that large language models, particularly GPT-4, reproduce many of these biases, sometimes to a greater extent than human clinicians. We tested whether the o1 model (o1-2024\u201312-17), a newly released AI system with enhanced reasoning capabilities, is susceptible to cognitive biases that commonly affect medical decision-making. Following the methodology established by Wang and Redelmeier [15], we used ten pairs of clinical scenarios, each designed to test a specific cognitive bias known to influence clinicians. Each scenario had two versions, differed by subtle modifications designed to trigger the bias (such as presenting mortality rates versus survival rates). The o1 model generated 90 independent clinical recommendations for each scenario version, totalling 1,800 responses. We measured cognitive bias as systematic differences in recommendation rates between the paired scenarios, which should not occur with unbiased reasoning. The o1 model's performance was compared against previously published results from both the GPT-4 model and historical human clinician studies. The o1 model showed no measurable cognitive bias in seven of the ten vignettes. In two vignettes, the o1 model showed significant bias, but its absolute magnitude was lower than values previously reported for GPT-4 and human clinicians. In a single vignette, Occam\u2019s razor, the o1 model exhibited consistent bias. Therefore, although overall bias appears less frequent overall with the reasoning model than with GPT-4, it was worse in one vignette. The model was more prone to bias in vignettes that included a gap-closing cue, seemingly resolving the clinical uncertainty. Across eight vignette versions, intra\u2011scenario agreement exceeded 94%, indicating lower decision variability than previously described with GPT\u20114 and human clinicians. Reasoning models may reduce cognitive bias and random variation in judgment (i.e., \u201cnoise\u201d). However, our findings caution that reasoning models are still not entirely immune to cognitive bias. These findings suggest that reasoning models may impart some benefits as decision-support tools in medicine, but they also imply a need to explore further the circumstances in which these tools may fail.",
+      "citationCount": 3,
+      "doi": "10.1186/s13054-025-05591-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dfbb9645b5580d4b08e4a1d5e3a21b2998c08531",
+      "venue": "Critical Care",
+      "journal": {
+        "name": "Critical Care",
+        "volume": "29"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "856f8ee95475724001e127514954f6cf2ec37c4f",
+      "title": "Rosetta-PL: Propositional Logic as a Benchmark for Large Language Model Reasoning",
+      "authors": [
+        {
+          "name": "Shaun Baek",
+          "authorId": "2358455973"
+        },
+        {
+          "name": "Shaun Esua-Mensah",
+          "authorId": "2358458009"
+        },
+        {
+          "name": "Cyrus Tsui",
+          "authorId": "2358457963"
+        },
+        {
+          "name": "Sejan Vigneswaralingam",
+          "authorId": "2358458007"
+        },
+        {
+          "name": "Abdullah Alali",
+          "authorId": "2358458164"
+        },
+        {
+          "name": "Michael Lu",
+          "authorId": "2358786710"
+        },
+        {
+          "name": "Vasu Sharma",
+          "authorId": "2348193755"
+        },
+        {
+          "name": "Kevin Zhu",
+          "authorId": "2358776886"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) are primarily trained on high-resource natural languages, limiting their effectiveness in low-resource settings and in tasks requiring deep logical reasoning. This research introduces Rosetta-PL, a benchmark designed to evaluate LLMs' logical reasoning and generalization capabilities in a controlled environment. We construct Rosetta-PL by translating a dataset of logical propositions from Lean into a custom logical language, which is then used to fine-tune an LLM (e.g., GPT-4o). Our experiments analyze the impact of the size of the dataset and the translation methodology on the performance of the model. Our results indicate that preserving logical relationships in the translation process significantly boosts precision, with accuracy plateauing beyond roughly 20,000 training samples. These insights provide valuable guidelines for optimizing LLM training in formal reasoning tasks and improving performance in various low-resource language applications.",
+      "citationCount": 1,
+      "doi": "10.18653/v1/2025.naacl-srw.53",
+      "arxivId": "2505.00001",
+      "url": "https://www.semanticscholar.org/paper/856f8ee95475724001e127514954f6cf2ec37c4f",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.00001"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f7e492dfd3de3a9b9f92bdb9921d75ab2fa3929b",
+      "title": "CRPE: Expanding The Reasoning Capability of Large Language Model for Code Generation",
+      "authors": [
+        {
+          "name": "Ningxin Gui",
+          "authorId": "2362088889"
+        },
+        {
+          "name": "Qianghuai Jia",
+          "authorId": "2336987282"
+        },
+        {
+          "name": "Feijun Jiang",
+          "authorId": "2337672637"
+        },
+        {
+          "name": "Yuling Jiao",
+          "authorId": "2256411374"
+        },
+        {
+          "name": "dechun wang",
+          "authorId": "2362359382"
+        },
+        {
+          "name": "Jerry Zhijian Yang",
+          "authorId": "2256396117"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We introduce CRPE (Code Reasoning Process Enhancer), an innovative three-stage framework for data synthesis and model training that advances the development of sophisticated code reasoning capabilities in large language models (LLMs). Building upon existing system-1 models, CRPE addresses the fundamental challenge of enhancing LLMs' analytical and logical processing in code generation tasks. Our framework presents a methodologically rigorous yet implementable approach to cultivating advanced code reasoning abilities in language models. Through the implementation of CRPE, we successfully develop an enhanced COT-Coder that demonstrates marked improvements in code generation tasks. Evaluation results on LiveCodeBench (20240701-20240901) demonstrate that our COT-Coder-7B-StepDPO, derived from Qwen2.5-Coder-7B-Base, with a pass@1 accuracy of 21.88, exceeds all models with similar or even larger sizes. Furthermore, our COT-Coder-32B-StepDPO, based on Qwen2.5-Coder-32B-Base, exhibits superior performance with a pass@1 accuracy of 35.08, outperforming GPT4O on the benchmark. Overall, CRPE represents a comprehensive, open-source method that encompasses the complete pipeline from instruction data acquisition through expert code reasoning data synthesis, culminating in an autonomous reasoning enhancement mechanism.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.10594",
+      "arxivId": "2505.10594",
+      "url": "https://www.semanticscholar.org/paper/f7e492dfd3de3a9b9f92bdb9921d75ab2fa3929b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.10594"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "785d353496a2f53110d263a03553bc58e46aeda1",
+      "title": "Reliability of Large Language Model Generated Clinical Reasoning in Assisted Reproductive Technology: Blinded Comparative Evaluation Study",
+      "authors": [
+        {
+          "name": "Dou Liu",
+          "authorId": "2299465215"
+        },
+        {
+          "name": "Ying Long",
+          "authorId": "2353742616"
+        },
+        {
+          "name": "Sophia Zuoqiu",
+          "authorId": "2353074449"
+        },
+        {
+          "name": "Di Liu",
+          "authorId": "2299492353"
+        },
+        {
+          "name": "Kang Li",
+          "authorId": "2387106483"
+        },
+        {
+          "name": "Yiting Lin",
+          "authorId": "2387599795"
+        },
+        {
+          "name": "Hanyi Liu",
+          "authorId": "2386933130"
+        },
+        {
+          "name": "Rong Yin",
+          "authorId": "2353078385"
+        },
+        {
+          "name": "Tian Tang",
+          "authorId": "2356382954"
+        }
+      ],
+      "year": 2025,
+      "abstract": "BACKGROUND\nHigh-quality clinical chains-of-thought (CoTs) are essential for explainable medical artificial intelligence (AI); yet, their development is limited by data scarcity. Large language models can generate medical CoTs, but their clinical reliability is unclear.\n\n\nOBJECTIVE\nWe evaluated the clinical reliability of large language model-generated CoTs in reproductive medicine and examined prompting strategies to improve their quality.\n\n\nMETHODS\nIn a blinded comparative study at a clinical center, senior clinicians in assisted reproductive technology evaluated CoTs generated via 3 distinct strategies: zero-shot, random few-shot (using random shallow examples), and selective few-shot (using diverse, high-quality examples). Expert ratings were then compared with evaluations from a state-of-the-art AI model (GPT-4o).\n\n\nRESULTS\nThe selective few-shot strategy significantly outperformed other strategies across logical clarity, use of key information, and clinical accuracy (P<.001). Critically, the random few-shot strategy offered no significant improvement over the zero-shot baseline, demonstrating that low-quality examples are as ineffective as no examples. The success of the selective strategy is attributed to 2 preliminary frameworks: \"gold-standard depth\" and \"representative diversity.\" Notably, the AI evaluator failed to discern these critical performance differences. Thus, clinical reliability depends on strategic prompt design rather than simply adding examples.\n\n\nCONCLUSIONS\nWe propose a \"dual principles\" preliminary framework for generating trustworthy CoTs at scale in assisted reproductive technology. This work is a preliminary step toward addressing the data bottleneck in reproductive medicine. It also underscores the essential role of human expertise in evaluating generated clinical data.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2510.16095",
+      "arxivId": "2510.16095",
+      "url": "https://www.semanticscholar.org/paper/785d353496a2f53110d263a03553bc58e46aeda1",
+      "venue": "Journal of Medical Internet Research",
+      "journal": {
+        "name": "Journal of medical Internet research",
+        "pages": "\n          e85206\n        ",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "Study",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "130f88c0498747b38ad593ec7e6310bbeb062275",
+      "title": "Large Language Models Imitate Logical Reasoning, but at what Cost?",
+      "authors": [
+        {
+          "name": "Lachlan McGinness",
+          "authorId": "31727676"
+        },
+        {
+          "name": "Peter Baumgartner",
+          "authorId": "2303557186"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We present a longitudinal study which evaluates the reasoning capability of frontier Large Language Models over an eighteen month period. We measured the accuracy of three leading models from December 2023, September 2024 and June 2025 on true or false questions from the PrOntoQA dataset and their faithfulness to reasoning strategies provided through in-context learning. The improvement in performance from 2023 to 2024 can be attributed to hidden Chain of Thought prompting. The introduction of thinking models allowed for significant improvement in model performance between 2024 and 2025. We then present a neuro-symbolic architecture which uses LLMs of less than 15 billion parameters to translate the problems into a standardised form. We then parse the standardised forms of the problems into a program to be solved by Z3, an SMT solver, to determine the satisfiability of the query. We report the number of prompt and completion tokens as well as the computational cost in FLOPs for open source models. The neuro-symbolic approach significantly reduces the computational cost while maintaining near perfect performance. The common approximation that the number of inference FLOPs is double the product of the active parameters and total tokens was accurate within 10\\% for all experiments.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2509.12645",
+      "arxivId": "2509.12645",
+      "url": "https://www.semanticscholar.org/paper/130f88c0498747b38ad593ec7e6310bbeb062275",
+      "venue": "Applied Informatics",
+      "journal": {
+        "pages": "80-96"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "38c0ced95b01aebdee8744897b27684f0ee3fead",
+      "title": "Probing the Symbolic Logical Reasoning Ability of Large Language Models",
+      "authors": [
+        {
+          "name": "Jianchao Ji",
+          "authorId": "2111810606"
+        },
+        {
+          "name": "Zelong Li",
+          "authorId": "2109968285"
+        },
+        {
+          "name": "Shuyuan Xu",
+          "authorId": "2111044480"
+        },
+        {
+          "name": "Wenyue Hua",
+          "authorId": "2007245028"
+        },
+        {
+          "name": "Juntao Tan",
+          "authorId": "2110449137"
+        },
+        {
+          "name": "Haoming Gong",
+          "authorId": "2356584089"
+        },
+        {
+          "name": "Yongfeng Zhang",
+          "authorId": "2260830380"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) have achieved significant successes in various research domains by learning the relationship between words. However, while these models are capable of making predictions and inferences based on the learned patterns, they lack logical reasoning abilities, which are crucial for solving problems in both theoretical and practical domains. In addition, traditional logic inference methods are effective in solving problems that are based on logic, but not suitable for general tasks such as recommendations. In response to these challenges, this paper introduces a Logical Large Language Model (L3M) that integrates the strengths of logical reasoning and large language models. The data in L3M is represented in logical expressions and the model uses logical constraints to learn the rules of basic logical operations such as And, Or, and Not. We conduct experiments on both theoretical tasks (solving logical equations) and practical tasks (recommender systems). The results of our theoretical experiments demonstrate that L3M is highly effective in solving logical expressions and variables. Additionally, L3M outperforms the state-of-the-art recommendation models in sequential recommendation tasks.",
+      "citationCount": 0,
+      "doi": "10.1145/3729238",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/38c0ced95b01aebdee8744897b27684f0ee3fead",
+      "venue": "ACM Transactions on Intelligent Systems and Technology",
+      "journal": {
+        "name": "ACM Transactions on Intelligent Systems and Technology"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5b2f238c345571b342e057acef848ca22c09a992",
+      "title": "Research on logical reasoning and question answering of large language models based on LoRA fine-tuning and prompt learning",
+      "authors": [
+        {
+          "name": "Bin Liu",
+          "authorId": "2360083226"
+        },
+        {
+          "name": "Fucheng Wan",
+          "authorId": "2360059525"
+        },
+        {
+          "name": "Denghui Yang",
+          "authorId": "2360139376"
+        },
+        {
+          "name": "Wenqing Jiang",
+          "authorId": "2360257235"
+        }
+      ],
+      "year": 2025,
+      "abstract": "With the continuous advancement of natural language processing technology, logical reasoning question and answer technology has received more and more attention. In this paper, we propose a systematic framework for evaluating and enhancing the logical reasoning ability of large language models. Firstly, we use the GLM-4-9B model as a base model, and the LogiQA dataset, which has a more complex dataset question form and very intrusive question options, as a benchmark dataset, to improve the model's reading comprehension ability through extensive training. At the same time, LoRA fine-tuning technique was used to compare the overall performance of the model before and after LoRA fine-tuning, and a model with stronger logical reasoning ability was obtained. Finally, a multi-faceted logical reasoning problem prompt function was designed to tap the logical reasoning potential of the large language model. The results show that the method of integrating LORA fine-tuning and cue learning can effectively improve the accuracy and performance of the model on logical reasoning tasks, which is an important reference value for future follow-up research on generative large language models",
+      "citationCount": 0,
+      "doi": "10.1117/12.3067088",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5b2f238c345571b342e057acef848ca22c09a992",
+      "venue": "Conference on Electronic Information Engineering and Data Processing",
+      "journal": {
+        "pages": "135745F - 135745F-6",
+        "volume": "13574"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f8df9546eafe207a777466ef40d548c707744c6d",
+      "title": "LLMRG: Improving Recommendations through Large Language Model Reasoning Graphs",
+      "authors": [
+        {
+          "name": "Yan Wang",
+          "authorId": "2205710030"
+        },
+        {
+          "name": "Zhixuan Chu",
+          "authorId": "2237992280"
+        },
+        {
+          "name": "Ouyang Xin",
+          "authorId": "2262613411"
+        },
+        {
+          "name": "Simeng Wang",
+          "authorId": "2143244250"
+        },
+        {
+          "name": "Hongyan Hao",
+          "authorId": "2065513241"
+        },
+        {
+          "name": "Yue Shen",
+          "authorId": "2180240771"
+        },
+        {
+          "name": "Jinjie Gu",
+          "authorId": "2283257801"
+        },
+        {
+          "name": "Siqiao Xue",
+          "authorId": "2149919635"
+        },
+        {
+          "name": "James Y. Zhang",
+          "authorId": "2124955096"
+        },
+        {
+          "name": "Qing Cui",
+          "authorId": "2276424293"
+        },
+        {
+          "name": "Longfei Li",
+          "authorId": "2238177474"
+        },
+        {
+          "name": "Jun Zhou",
+          "authorId": "2293705830"
+        },
+        {
+          "name": "Sheng Li",
+          "authorId": "2262276636"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recommendation systems aim to provide users with relevant suggestions, but often lack interpretability and fail to capture higher-level semantic relationships between user behaviors and profiles. In this paper, we propose a novel approach that leverages large language models (LLMs) to construct personalized reasoning graphs. These graphs link a user's profile and behavioral sequences through causal and logical inferences, representing the user's interests in an interpretable way. Our approach, LLM reasoning graphs (LLMRG), has four components: chained graph reasoning, divergent extension, self-verification and scoring, and knowledge base self-improvement. The resulting reasoning graph is encoded using graph neural networks, which serves as additional input to improve conventional recommender systems, without requiring extra user or item information. Our approach demonstrates how LLMs can enable more logical and interpretable recommender systems through personalized reasoning graphs. LLMRG allows recommendations to benefit from both engineered recommendation systems and LLM-derived reasoning graphs. We demonstrate the effectiveness of LLMRG on benchmarks and real-world scenarios in enhancing base recommendation models.",
+      "citationCount": 43,
+      "doi": "10.1609/aaai.v38i17.29887",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f8df9546eafe207a777466ef40d548c707744c6d",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "19189-19196"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "d9293ec5fb191927d92510534cddddfbabbc537b",
+      "title": "Translate With Care: Addressing Gender Bias, Neutrality, and Reasoning in Large Language Model Translations",
+      "authors": [
+        {
+          "name": "Pardis Sadat Zahraei",
+          "authorId": "2281948109"
+        },
+        {
+          "name": "Ali Emami",
+          "authorId": "2281948138"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Addressing gender bias and maintaining logical coherence in machine translation remains challenging, particularly when translating between natural gender languages, like English, and genderless languages, such as Persian, Indonesian, and Finnish. We introduce the Translate-with-Care (TWC) dataset, comprising 3,950 challenging scenarios across six low- to mid-resource languages, to assess translation systems' performance. Our analysis of diverse technologies, including GPT-4, mBART-50, NLLB-200, and Google Translate, reveals a universal struggle in translating genderless content, resulting in gender stereotyping and reasoning errors. All models preferred masculine pronouns when gender stereotypes could influence choices. Google Translate and GPT-4 showed particularly strong bias, favoring male pronouns 4-6 times more than feminine ones in leadership and professional success contexts. Fine-tuning mBART-50 on TWC substantially resolved these biases and errors, led to strong generalization, and surpassed proprietary LLMs while remaining open-source. This work emphasizes the need for targeted approaches to gender and semantic coherence in machine translation, particularly for genderless languages, contributing to more equitable and accurate translation systems.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.00748",
+      "arxivId": "2506.00748",
+      "url": "https://www.semanticscholar.org/paper/d9293ec5fb191927d92510534cddddfbabbc537b",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "476-501"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "51c656fef66f00e0a3ff2618601e9fb8229a5f8d",
+      "title": "Disentangling Logic: The Role of Context in Large Language Model Reasoning Capabilities",
+      "authors": [
+        {
+          "name": "Wenyue Hua",
+          "authorId": "2007245028"
+        },
+        {
+          "name": "Kaijie Zhu",
+          "authorId": "2543684"
+        },
+        {
+          "name": "Lingyao Li",
+          "authorId": "2261065167"
+        },
+        {
+          "name": "Lizhou Fan",
+          "authorId": "2268855367"
+        },
+        {
+          "name": "Shuhang Lin",
+          "authorId": "2298216109"
+        },
+        {
+          "name": "Mingyu Jin",
+          "authorId": "2220539385"
+        },
+        {
+          "name": "Haochen Xue",
+          "authorId": "2219696383"
+        },
+        {
+          "name": "Zelong Li",
+          "authorId": "2109968285"
+        },
+        {
+          "name": "Jindong Wang",
+          "authorId": "2285254341"
+        },
+        {
+          "name": "Yongfeng Zhang",
+          "authorId": "2239061409"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This study intends to systematically disentangle pure logic reasoning and text understanding by investigating the contrast across abstract and contextualized logical problems from a comprehensive set of domains. We explore whether LLMs demonstrate genuine reasoning capabilities across various domains when the underlying logical structure remains constant. We focus on two main questions (1) Can abstract logical problems alone accurately benchmark an LLM's reasoning ability in real-world scenarios, disentangled from contextual support in practical settings? (2) Does fine-tuning LLMs on abstract logic problem generalize to contextualized logic problems and vice versa? To investigate these questions, we focus on standard propositional logic, specifically propositional deductive and abductive logic reasoning. In particular, we construct instantiated datasets for deductive and abductive reasoning with 4 levels of difficulty, encompassing 12 distinct categories or domains based on the categorization of Wikipedia. Our experiments aim to provide insights into disentangling context in logical reasoning and the true reasoning capabilities of LLMs and their generalization potential. The code and dataset are available at: https://github.com/agiresearch/ContextHub.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2406.02787",
+      "arxivId": "2406.02787",
+      "url": "https://www.semanticscholar.org/paper/51c656fef66f00e0a3ff2618601e9fb8229a5f8d",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "19219-19242"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7dd900abf8ed87dcaa65eeead3e8251d5c43eab9",
+      "title": "Enhancing Large Language Model with Decomposed Reasoning for Emotion Cause Pair Extraction",
+      "authors": [
+        {
+          "name": "Jialiang Wu",
+          "authorId": "2282096955"
+        },
+        {
+          "name": "Yi Shen",
+          "authorId": "2115382769"
+        },
+        {
+          "name": "Ziheng Zhang",
+          "authorId": "2282178999"
+        },
+        {
+          "name": "Longjun Cai",
+          "authorId": "2651246"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Emotion-Cause Pair Extraction (ECPE) involves extracting clause pairs representing emotions and their causes in a document. Existing methods tend to overfit spurious correlations, such as positional bias in existing benchmark datasets, rather than capturing semantic features. Inspired by recent work, we explore leveraging large language model (LLM) to address ECPE task without additional training. Despite strong capabilities, LLMs suffer from uncontrollable outputs, resulting in mediocre performance. To address this, we introduce chain-of-thought to mimic human cognitive process and propose the Decomposed Emotion-Cause Chain (DECC) framework. Combining inducing inference and logical pruning, DECC guides LLMs to tackle ECPE task. We further enhance the framework by incorporating in-context learning. Experiment results demonstrate the strength of DECC compared to state-of-the-art supervised fine-tuning methods. Finally, we analyze the effectiveness of each component and the robustness of the method in various scenarios, including different LLM bases, rebalanced datasets, and multi-pair extraction.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2401.17716",
+      "arxivId": "2401.17716",
+      "url": "https://www.semanticscholar.org/paper/7dd900abf8ed87dcaa65eeead3e8251d5c43eab9",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.17716"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "58f614941629541c8c04acdb8acb9e3fb350ac5a",
+      "title": "CodePMP: Scalable Preference Model Pretraining for Large Language Model Reasoning",
+      "authors": [
+        {
+          "name": "Huimu Yu",
+          "authorId": "2324016522"
+        },
+        {
+          "name": "Xing Wu",
+          "authorId": "2155226596"
+        },
+        {
+          "name": "Weidong Yin",
+          "authorId": "2324007341"
+        },
+        {
+          "name": "Debing Zhang",
+          "authorId": "2324021669"
+        },
+        {
+          "name": "Songlin Hu",
+          "authorId": "2257376973"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs) have made significant progress in natural language understanding and generation, driven by scalable pretraining and advanced finetuning. However, enhancing reasoning abilities in LLMs, particularly via reinforcement learning from human feedback (RLHF), remains challenging due to the scarcity of high-quality preference data, which is labor-intensive to annotate and crucial for reward model (RM) finetuning. To alleviate this issue, we introduce CodePMP, a scalable preference model pretraining (PMP) pipeline that utilizes a large corpus of synthesized code-preference pairs from publicly available high-quality source code. CodePMP improves RM finetuning efficiency by pretraining preference models on large-scale synthesized code-preference pairs. We evaluate CodePMP on mathematical reasoning tasks (GSM8K, MATH) and logical reasoning tasks (ReClor, LogiQA2.0), consistently showing significant improvements in reasoning performance of LLMs and highlighting the importance of scalable preference model pretraining for efficient reward modeling.",
+      "citationCount": 7,
+      "doi": "10.48550/arXiv.2410.02229",
+      "arxivId": "2410.02229",
+      "url": "https://www.semanticscholar.org/paper/58f614941629541c8c04acdb8acb9e3fb350ac5a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.02229"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "431bec13188dfecf66b2520e896b705d4c967fe0",
+      "title": "Automated Theorem Provers Help Improve Large Language Model Reasoning",
+      "authors": [
+        {
+          "name": "Lachlan McGinness",
+          "authorId": "31727676"
+        },
+        {
+          "name": "Peter Baumgartner",
+          "authorId": "2303557186"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this paper we demonstrate how logic programming systems and Automated first- order logic Theorem Provers (ATPs) can improve the accuracy of Large Language Models (LLMs) for logical reasoning tasks where the baseline performance is given by direct LLM solutions. We first evaluate LLM reasoning on steamroller problems using the PRON- TOQA benchmark. We show how accuracy can be improved with a neuro-symbolic ar- chitecture where the LLM acts solely as a front-end for translating a given problem into a formal logic language and an automated reasoning engine is called for solving it. How- ever, this approach critically hinges on the correctness of the LLM translation. To assess this translation correctness, we secondly define a framework of syntactic and semantic er- ror categories. We implemented the framework and used it to identify errors that LLMs make in the benchmark domain. Based on these findings, we thirdly extended our method with capabilities for automatically correcting syntactic and semantic errors. For semantic error correction we integrate first-order logic ATPs, which is our main and novel contribu- tion. We demonstrate that this approach reduces semantic errors significantly and further increases the accurracy of LLM logical reasoning.",
+      "citationCount": 8,
+      "doi": "10.29007/2n9m",
+      "arxivId": "2408.03492",
+      "url": "https://www.semanticscholar.org/paper/431bec13188dfecf66b2520e896b705d4c967fe0",
+      "venue": "Logic Programming and Automated Reasoning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.03492"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "abc9793911e03b5d2517a3f3d299f23927699054",
+      "title": "Image First or Text First? Optimising the Sequencing of Modalities in Large Language Model Prompting and Reasoning Tasks",
+      "authors": [
+        {
+          "name": "Grant Wardle",
+          "authorId": "2324572534"
+        },
+        {
+          "name": "Teo Su\u0161njak",
+          "authorId": "2656889"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Our study investigates how the sequencing of text and image inputs within multi-modal prompts affects the reasoning performance of Large Language Models (LLMs). Through empirical evaluations of three major commercial LLM vendors\u2014OpenAI, Google, and Anthropic\u2014alongside a user study on interaction strategies, we develop and validate practical heuristics for optimising multi-modal prompt design. Our findings reveal that modality sequencing is a critical factor influencing reasoning performance, particularly in tasks with varying cognitive load and structural complexity. For simpler tasks involving a single image, positioning the modalities directly impacts model accuracy, whereas in complex, multi-step reasoning scenarios, the sequence must align with the logical structure of inference, often outweighing the specific placement of individual modalities. Furthermore, we identify systematic challenges in multi-hop reasoning within transformer-based architectures, where models demonstrate strong early-stage inference but struggle with integrating prior contextual information in later reasoning steps. Building on these insights, we propose a set of validated, user-centred heuristics for designing effective multi-modal prompts, enhancing both reasoning accuracy and user interaction with AI systems. Our contributions inform the design and usability of interactive intelligent systems, with implications for applications in education, medical imaging, legal document analysis, and customer support. By bridging the gap between intelligent system behaviour and user interaction strategies, this study provides actionable guidance on how users can effectively structure prompts to optimise multi-modal LLM reasoning within real-world, high-stakes decision-making contexts.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2410.03062",
+      "arxivId": "2410.03062",
+      "url": "https://www.semanticscholar.org/paper/abc9793911e03b5d2517a3f3d299f23927699054",
+      "venue": "Big Data and Cognitive Computing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.03062"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e70bc31c0ce6e12890f97b89597dcf03178222d9",
+      "title": "Enhancing Logical Reasoning in Large Language Models via Multi-Stage Ensemble Architecture with Adaptive Attention and Decision Voting",
+      "authors": [
+        {
+          "name": "Wenqing Zhang",
+          "authorId": "2352197183"
+        },
+        {
+          "name": "Zhan Cheng",
+          "authorId": "2360274791"
+        },
+        {
+          "name": "Fu Lei",
+          "authorId": "2352098866"
+        },
+        {
+          "name": "Beichen Liu",
+          "authorId": "2360243410"
+        },
+        {
+          "name": "Dian Gu",
+          "authorId": "2333595377"
+        },
+        {
+          "name": "Zeyu Wang",
+          "authorId": "2362256378"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Increasing difficulty of logical reasoning tasks suggests the deficiency of conventional large language models (LLMs) in solving multi-step reasoning problems. This paper presents a novel multi-stage ensemble method to enhance LLMsQS reasoning capability. The design includes cascading networks, in which dynamic candidates are selected as the inputs and an adaptive self-attention mechanism and voting are applied for decision- making, which together enhance the model's accuracy and robustness. Based on the confidence levels, candidate selection is carried out and the candidates are then refined utilizing multi-head adaptive attention. Then, decision voting fuses reasoning results of several different models, which improves the stability and diversity of the model. Proposed different from state-of-the-art methods, the multi-stage ensemble approach significantly enhances the logic reasoning ability of the model, especially in more complex multi-step problems according to the experimental results. An ablation study validates that the adaptive attention mechanism and ensemble decision method contribute positively to enhancing the model performance. Not only does this out-perform classical models in accuracy, but it also strikes a great balance in reasoning efficiency and model interpretability, thus establishing a new paradigm for AI-based logical reasoning tasks.",
+      "citationCount": 1,
+      "doi": "10.1145/3724154.3724348",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e70bc31c0ce6e12890f97b89597dcf03178222d9",
+      "venue": "Proceedings of the 2024 5th International Conference on Big Data Economy and Information Management",
+      "journal": {
+        "name": "Proceedings of the 2024 5th International Conference on Big Data Economy and Information Management"
+      },
+      "publicationTypes": [
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8202aa484288acb6b3ecf203e893573c81153bdf",
+      "title": "Multi-tool Integration Application for Math Reasoning Using Large Language Model",
+      "authors": [
+        {
+          "name": "Zhihua Duan",
+          "authorId": "2264823705"
+        },
+        {
+          "name": "Jialin Wang",
+          "authorId": "2265034750"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Mathematical reasoning is an important research direction in the field of artificial intelligence. This article proposes a novel multi tool application framework for mathematical reasoning, aiming to achieve more comprehensive and accurate mathematical reasoning by utilizing the collaborative effect of large language models (LLMs) and multiple external tools. Firstly, use a Math Tool to perform basic mathematical calculations during the inference process through interaction with LLM. Secondly, Code Tool can generate code fragments that comply with syntax rules and execute them, providing support for complex mathematical problems. Then, through the iterative reasoning of the CoT Tool, the logical coherence and accuracy of mathematical reasoning are enhanced. Ultimately, by using self consistency tools to select the final answer based on different parameters, the consistency and reliability of reasoning are improved. Through the synergistic effect of these tools, the framework has achieved significant performance improvement in mathematical reasoning tasks. We conducted experiments on the NumGLUE Task 4 test set, which includes 220 mathematical reasoning fill in the blank questions. The experimental results showed that, based on Math Tool, Code Tool, and CoT Tool, in Task 4 task,our method achieved an accuracy of 89.09,compared with the GPT3+FewShot baseline, Few Shot+ERNIE-4.0+self consistency improved by 49.09%, and compared with fine-tuning the Fine tuning baseline, Few Shot+ERNIE-4.0+self consistency improved by 52.29%",
+      "citationCount": 1,
+      "doi": "10.1109/EdgeCom62867.2024.00024",
+      "arxivId": "2408.12148",
+      "url": "https://www.semanticscholar.org/paper/8202aa484288acb6b3ecf203e893573c81153bdf",
+      "venue": "2024 IEEE 10th International Conference on Edge Computing and Scalable Cloud (EdgeCom)",
+      "journal": {
+        "name": "2024 IEEE 10th International Conference on Edge Computing and Scalable Cloud (EdgeCom)",
+        "pages": "106-109"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "6bcd708d2e49b34f34f157daa6bf1c3e062f57c5",
+      "title": "A Survey on Large Language Model Acceleration based on KV Cache Management",
+      "authors": [
+        {
+          "name": "Haoyang Li",
+          "authorId": "2382824304"
+        },
+        {
+          "name": "Yiming Li",
+          "authorId": "2337770780"
+        },
+        {
+          "name": "Anxin Tian",
+          "authorId": "2220519803"
+        },
+        {
+          "name": "Tianhao Tang",
+          "authorId": "2338242262"
+        },
+        {
+          "name": "Zhanchao Xu",
+          "authorId": "2337768626"
+        },
+        {
+          "name": "Xuejia Chen",
+          "authorId": "2337804116"
+        },
+        {
+          "name": "Nicole Hu",
+          "authorId": "2337687512"
+        },
+        {
+          "name": "Wei Dong",
+          "authorId": "2221612844"
+        },
+        {
+          "name": "Qing Li",
+          "authorId": "2337866994"
+        },
+        {
+          "name": "Lei Chen",
+          "authorId": "2337806048"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have revolutionized a wide range of domains such as natural language processing, computer vision, and multi-modal tasks due to their ability to comprehend context and perform logical reasoning. However, the computational and memory demands of LLMs, particularly during inference, pose significant challenges when scaling them to real-world, long-context, and real-time applications. Key-Value (KV) cache management has emerged as a critical optimization technique for accelerating LLM inference by reducing redundant computations and improving memory utilization. This survey provides a comprehensive overview of KV cache management strategies for LLM acceleration, categorizing them into token-level, model-level, and system-level optimizations. Token-level strategies include KV cache selection, budget allocation, merging, quantization, and low-rank decomposition, while model-level optimizations focus on architectural innovations and attention mechanisms to enhance KV reuse. System-level approaches address memory management, scheduling, and hardware-aware designs to improve efficiency across diverse computing environments. Additionally, the survey provides an overview of both text and multimodal datasets and benchmarks used to evaluate these strategies. By presenting detailed taxonomies and comparative analyses, this work aims to offer useful insights for researchers and practitioners to support the development of efficient and scalable KV cache management techniques, contributing to the practical deployment of LLMs in real-world applications. The curated paper list for KV cache management is in: \\href{https://github.com/TreeAI-Lab/Awesome-KV-Cache-Management}{https://github.com/TreeAI-Lab/Awesome-KV-Cache-Management}.",
+      "citationCount": 73,
+      "doi": "10.48550/arXiv.2412.19442",
+      "arxivId": "2412.19442",
+      "url": "https://www.semanticscholar.org/paper/6bcd708d2e49b34f34f157daa6bf1c3e062f57c5",
+      "venue": "Trans. Mach. Learn. Res.",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.19442"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3713112311efbcf785de17fa86e5bf42e4360f77",
+      "title": "G-LLaVA: Solving Geometric Problem with Multi-Modal Large Language Model",
+      "authors": [
+        {
+          "name": "Jiahui Gao",
+          "authorId": "144407296"
+        },
+        {
+          "name": "Renjie Pi",
+          "authorId": "2066420772"
+        },
+        {
+          "name": "Jipeng Zhang",
+          "authorId": "50561049"
+        },
+        {
+          "name": "Jiacheng Ye",
+          "authorId": "65846898"
+        },
+        {
+          "name": "Wanjun Zhong",
+          "authorId": "2249763710"
+        },
+        {
+          "name": "Yufei Wang",
+          "authorId": "46395829"
+        },
+        {
+          "name": "Lanqing Hong",
+          "authorId": "2150203873"
+        },
+        {
+          "name": "Jianhua Han",
+          "authorId": "47180442"
+        },
+        {
+          "name": "Hang Xu",
+          "authorId": "2257092965"
+        },
+        {
+          "name": "Zhenguo Li",
+          "authorId": "2257858413"
+        },
+        {
+          "name": "Lingpeng Kong",
+          "authorId": "2260528279"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown remarkable proficiency in human-level reasoning and generation capabilities, which encourages extensive research on their application in mathematical problem solving. However, current work has been largely focused on text-based mathematical problems, with limited investigation in problems involving geometric information. Addressing this gap, we aim to enable LLMs to solve geometric problems by understanding image input. We first analyze the limitations of current Multimodal Large Language Models (MLLMs) in this area: they struggle to accurately comprehending basic geometric elements and their relationships. To overcome these challenges, we take advantage of the unique characteristics of geometric problems (such as unique geometric logical form, and geometric scalability) and the capacity of the textual LLMs to build an enriched multimodal geometry dataset based on existing data. The augmented dataset, Geo170K, contains more than 170K geometric image-caption and question-answer pairs. Utilizing our constructed Geo170K dataset, we develop G-LLaVA, which demonstrates exceptional performance in solving geometric problems, significantly outperforming GPT-4-V on the MathVista benchmark with only 7B parameters.",
+      "citationCount": 168,
+      "doi": "10.48550/arXiv.2312.11370",
+      "arxivId": "2312.11370",
+      "url": "https://www.semanticscholar.org/paper/3713112311efbcf785de17fa86e5bf42e4360f77",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2312.11370"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cfe82b0d3f613586f0005135a0dfdecea4ba3a95",
+      "title": "Verification of Reasoning Ability using BDI Logic and Large Language Model in AIWolf",
+      "authors": [
+        {
+          "name": "Hiraku Gondo",
+          "authorId": "2320840292"
+        },
+        {
+          "name": "Hiroki Sakaji",
+          "authorId": "2319000459"
+        },
+        {
+          "name": "Itsuki Noda",
+          "authorId": "2319000845"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We attempt to improve the reasoning capability of LLMs in werewolf game by combining BDI logic with LLMs. While LLMs such as ChatGPT has been developed and used for various tasks, there remain several weakness of the LLMs. Logical reasoning is one of such weakness. Therefore, we try to introduce BDI logic-based prompts to verify the logical reasoning ability of LLMs in dialogue of werewofl game. Experiments and evaluations were conducted using \u201cAI-Werewolf,\u201d a communication game for AI with incomplete information. From the results of the game played by five agents, we compare the logical reasoning ability of LLMs by using the win rate and the vote rate against werewolf.",
+      "citationCount": 1,
+      "doi": "10.18653/v1/2024.aiwolfdial-1.5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cfe82b0d3f613586f0005135a0dfdecea4ba3a95",
+      "venue": "AIWOLFDIAL",
+      "journal": {
+        "name": "Proceedings of the 2nd International AIWolfDial Workshop"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f8a2813614f4e9c8adab3da2cbb667ad7e4d6bcf",
+      "title": "Enhancing Recommender Systems with Large Language Model Reasoning Graphs",
+      "authors": [
+        {
+          "name": "Yan Wang",
+          "authorId": "2205710030"
+        },
+        {
+          "name": "Zhixuan Chu",
+          "authorId": "1491708389"
+        },
+        {
+          "name": "Ouyang Xin",
+          "authorId": "2262613411"
+        },
+        {
+          "name": "Simeng Wang",
+          "authorId": "2143244250"
+        },
+        {
+          "name": "Hongyan Hao",
+          "authorId": "2065513241"
+        },
+        {
+          "name": "Yue Shen",
+          "authorId": "2180240771"
+        },
+        {
+          "name": "Jinjie Gu",
+          "authorId": "50771151"
+        },
+        {
+          "name": "Siqiao Xue",
+          "authorId": "2149919635"
+        },
+        {
+          "name": "James Y. Zhang",
+          "authorId": "2124955096"
+        },
+        {
+          "name": "Qing Cui",
+          "authorId": "145742001"
+        },
+        {
+          "name": "Longfei Li",
+          "authorId": "2151580"
+        },
+        {
+          "name": "Jun Zhou",
+          "authorId": "2151550753"
+        },
+        {
+          "name": "Shenghe Li",
+          "authorId": "2153698676"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Recommendation systems aim to provide users with relevant suggestions, but often lack interpretability and fail to capture higher-level semantic relationships between user behaviors and profiles. In this paper, we propose a novel approach that leverages large language models (LLMs) to construct personalized reasoning graphs. These graphs link a user's profile and behavioral sequences through causal and logical inferences, representing the user's interests in an interpretable way. Our approach, LLM reasoning graphs (LLMRG), has four components: chained graph reasoning, divergent extension, self-verification and scoring, and knowledge base self-improvement. The resulting reasoning graph is encoded using graph neural networks, which serves as additional input to improve conventional recommender systems, without requiring extra user or item information. Our approach demonstrates how LLMs can enable more logical and interpretable recommender systems through personalized reasoning graphs. LLMRG allows recommendations to benefit from both engineered recommendation systems and LLM-derived reasoning graphs. We demonstrate the effectiveness of LLMRG on benchmarks and real-world scenarios in enhancing base recommendation models.",
+      "citationCount": 68,
+      "doi": "10.48550/arXiv.2308.10835",
+      "arxivId": "2308.10835",
+      "url": "https://www.semanticscholar.org/paper/f8a2813614f4e9c8adab3da2cbb667ad7e4d6bcf",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2308.10835"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0f8115327d4ef6534d011d7a8e98778acbb1fde5",
+      "title": "Information-Constrained Retrieval for Scientific Literature via Large Language Model Agents",
+      "authors": [
+        {
+          "name": "Jiasen Zheng",
+          "authorId": null
+        },
+        {
+          "name": "Yumin Chen",
+          "authorId": null
+        },
+        {
+          "name": "Zijun Zhou",
+          "authorId": null
+        },
+        {
+          "name": "Chong Peng",
+          "authorId": null
+        },
+        {
+          "name": "Haozhang Deng",
+          "authorId": null
+        },
+        {
+          "name": "Shihan Yin",
+          "authorId": null
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1109/ICBAIE66852.2025.11326646",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0f8115327d4ef6534d011d7a8e98778acbb1fde5",
+      "venue": "2025 6th International Conference on Big Data, Artificial Intelligence and Internet of Things Engineering (ICBAIE)",
+      "journal": {
+        "name": "2025 6th International Conference on Big Data, Artificial Intelligence and Internet of Things Engineering (ICBAIE)",
+        "pages": "366-370"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ee4f4413d15519932e382a2cf1c6a1d29102ab81",
+      "title": "Collaborative Stance Detection via Small-Large Language Model Consistency Verification",
+      "authors": [
+        {
+          "name": "Yu Yan",
+          "authorId": "2337546385"
+        },
+        {
+          "name": "Sheng Sun",
+          "authorId": "2335701957"
+        },
+        {
+          "name": "Zixiang Tang",
+          "authorId": "2348069421"
+        },
+        {
+          "name": "Teli Liu",
+          "authorId": "2327619504"
+        },
+        {
+          "name": "Min Liu",
+          "authorId": "2347693055"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Stance detection on social media aims to identify attitudes expressed in tweets towards specific targets. Current studies prioritize Large Language Models (LLMs) over Small Language Models (SLMs) due to the overwhelming performance improving provided by LLMs. However, heavily relying on LLMs for stance detection, regardless of the cost, is impractical for real-world social media monitoring systems that require vast data analysis. To this end, we propose \\textbf{\\underline{Co}}llaborative Stance Detection via Small-Large Language Model Consistency \\textbf{\\underline{Ver}}ification (\\textbf{CoVer}) framework, which enhances LLM utilization via context-shared batch reasoning and logical verification between LLM and SLM. Specifically, instead of processing each text individually, CoVer processes texts batch-by-batch, obtaining stance predictions and corresponding explanations via LLM reasoning in a shared context. Then, to exclude the bias caused by context noises, CoVer introduces the SLM for logical consistency verification. Finally, texts that repeatedly exhibit low logical consistency are classified using consistency-weighted aggregation of prior LLM stance predictions. Our experiments show that CoVer outperforms state-of-the-art methods across multiple benchmarks in the zero-shot setting, achieving 0.54 LLM queries per tweet while significantly enhancing performance. Our CoVer offers a more practical solution for LLM deploying for social media stance detection.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2502.19954",
+      "arxivId": "2502.19954",
+      "url": "https://www.semanticscholar.org/paper/ee4f4413d15519932e382a2cf1c6a1d29102ab81",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.19954"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4ee0d015517af2cdf85f57a49e7bde2f77fe1939",
+      "title": "HyperPlace: Harnessing a Large Language Model for Efficient Hyperparameter Optimization in GPU-Accelerated VLSI Placement",
+      "authors": [
+        {
+          "name": "Magi Chen",
+          "authorId": "2354701013"
+        },
+        {
+          "name": "Ting-Chi Wang",
+          "authorId": "2291436843"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While GPU-based placers have demonstrated significant speed advantages over their CPU-based counterparts, hyperparameter tuning remains a bottleneck, often requiring substantial human intervention and expert knowledge. This challenge is particularly critical given the urgent need for rapid time-to-market solutions. Recently, Large Language Models (LLMs) have exhibited remarkable capabilities in zero-shot learning, context understanding, logical reasoning, and answer generation. In this work, we introduce HyperPlace, an innovative paradigm that leverages an off-the-shelf LLM to automate hyperparameter optimization using in-context learning techniques. Our approach transcends single-output black-box optimization methods by incorporating a batch optimization mechanism that evaluates multiple hyperparameter configurations simultaneously across several GPU computing platforms. We validated the effectiveness of our approach in placement quality, measured by Half-Perimeter Wire Length (HPWL), using DREAMPlace 2.0. To further demonstrate the capability of integrating our framework with other placers, we conducted additional experiments using Xplace 2.0. By employing the ISPD2005 benchmarks for our evaluation, HyperPlace enhances the placement tools with up to a 1.66% reduction in HPWL compared to their published results. Additionally, we evaluated HyperPlace on the ISPD2015 benchmarks, which incorporate fence region constraints not present in ISPD2005 benchmarks. Under these more complex constraints, HyperPlace achieves up to a 22.24% reduction in HPWL compared to the default settings of the placement tools, further demonstrating its adaptability across diverse placement scenarios and benchmark suites.",
+      "citationCount": 2,
+      "doi": "10.1145/3733601",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4ee0d015517af2cdf85f57a49e7bde2f77fe1939",
+      "venue": "ACM Trans. Design Autom. Electr. Syst.",
+      "journal": {
+        "name": "ACM Transactions on Design Automation of Electronic Systems",
+        "pages": "1 - 27",
+        "volume": "30"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3943f87b13ada1c5af8e1c4a1be522ed55274c68",
+      "title": "Large Language Model-Driven Closed-Loop UAV Operation with Semantic Observations",
+      "authors": [
+        {
+          "name": "Wenhao Wang",
+          "authorId": "2346100477"
+        },
+        {
+          "name": "Yanyan Li",
+          "authorId": "2316090531"
+        },
+        {
+          "name": "Long Jiao",
+          "authorId": "2345922620"
+        },
+        {
+          "name": "Jiawei Yuan",
+          "authorId": "2261700193"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in large Language Models (LLMs) have revolutionized mobile robots, including unmanned aerial vehicles (UAVs), enabling their intelligent operation within Internet of Things (IoT) ecosystems. However, LLMs still face challenges from logical reasoning and complex decision-making, leading to concerns about the reliability of LLM-driven UAV operations in IoT applications. In this paper, we propose a closed-loop LLM-driven UAV operation code generation framework that enables reliable UAV operations powered by effective feedback and refinement using two LLM modules, i.e., a Code Generator and an Evaluator. Our framework transforms numerical state observations from UAV operations into semantic trajectory descriptions to enhance the evaluator LLM's understanding of UAV dynamics for precise feedback generation. Our framework also enables a simulation-based refinement process, and hence eliminates the risks to physical UAVs caused by incorrect code execution during the refinement. Extensive experiments on UAV control tasks with different complexities are conducted. The experimental results show that our framework can achieve reliable UAV operations using LLMs, which significantly outperforms baseline methods in terms of success rate and completeness with the increase of task complexity.",
+      "citationCount": 2,
+      "doi": "10.1109/JIOT.2025.3649376",
+      "arxivId": "2507.01930",
+      "url": "https://www.semanticscholar.org/paper/3943f87b13ada1c5af8e1c4a1be522ed55274c68",
+      "venue": "IEEE Internet of Things Journal",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.01930"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d61b8bf88e6c6b101465ce6f979daff3729a25e1",
+      "title": "Automating Mathematical Proof Generation Using Large Language Model Agents and Knowledge Graphs",
+      "authors": [
+        {
+          "name": "Vincent Li",
+          "authorId": "2350512603"
+        },
+        {
+          "name": "Yule Fu",
+          "authorId": "2350520286"
+        },
+        {
+          "name": "Tim Knappe",
+          "authorId": "2325149441"
+        },
+        {
+          "name": "Kevin Han",
+          "authorId": "2334469919"
+        },
+        {
+          "name": "Kevin Zhu",
+          "authorId": "2334529275"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2503.11657",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d61b8bf88e6c6b101465ce6f979daff3729a25e1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.11657"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "08191fc07fc5cdf72a57b7ec53a4c96a8145ea51",
+      "title": "DeepLegal-CN: Research and Application of a DeepSeek-Based Large Language Model for the Legal Domain",
+      "authors": [
+        {
+          "name": "Shaopeng Guo",
+          "authorId": "2371192196"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The legal domain is one of the most linguistically intensive professional fields, characterized by complex structures, specialized terminology, and intricate logical reasoning. Legal professionals must frequently handle diverse legal documents such as regulations, judgments, contracts, and legal opinions. This complexity poses significant challenges for natural language processing (NLP), especially in understanding and generating legal texts. Recent advancements in large language models (LLMs) have demonstrated remarkable generalization capabilities across various NLP tasks, sparking interest in their application to legal scenarios. However, most existing LLMs face limitations in legal applications, especially in Chinese contexts. Proprietary models entail high inference costs and raise privacy concerns, while open-source models often lack domain-specific training on legal corpora. Moreover, the majority are trained on English datasets, limiting their adaptability to Chinese legal language, which differs significantly in expression and logic. To address these challenges, this paper proposes a legal LLM framework based on DeepSeek, a powerful open-source Chinese LLM. The framework integrates feature engineering and task-driven prompt design to enhance the model\u2019s capability in understanding and reasoning over Chinese legal texts. We evaluate the model across multiple tasks, including legal question answering and case matching, demonstrating its effectiveness and identifying existing limitations. This study provides a novel approach for legal AI development in the Chinese context and offers valuable insights into building adaptable, domain-aware LLMs for legal applications.",
+      "citationCount": 2,
+      "doi": "10.1109/CISCE65916.2025.11065329",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/08191fc07fc5cdf72a57b7ec53a4c96a8145ea51",
+      "venue": "2025 IEEE 7th International Conference on Communications, Information System and Computer Engineering (CISCE)",
+      "journal": {
+        "name": "2025 IEEE 7th International Conference on Communications, Information System and Computer Engineering (CISCE)",
+        "pages": "944-947"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8444b6982b5fa799e016e20f833594bb2f9ab12e",
+      "title": "UniCoder: Scaling Code Large Language Model via Universal Code",
+      "authors": [
+        {
+          "name": "Tao Sun",
+          "authorId": "2284180939"
+        },
+        {
+          "name": "Linzheng Chai",
+          "authorId": "2165382882"
+        },
+        {
+          "name": "Jian Yang",
+          "authorId": "2276103971"
+        },
+        {
+          "name": "Yuwei Yin",
+          "authorId": "2109472880"
+        },
+        {
+          "name": "Hongcheng Guo",
+          "authorId": "2234806"
+        },
+        {
+          "name": "Jiaheng Liu",
+          "authorId": "2182423032"
+        },
+        {
+          "name": "Bing Wang",
+          "authorId": "2275240628"
+        },
+        {
+          "name": "Liqun Yang",
+          "authorId": "46554649"
+        },
+        {
+          "name": "Zhoujun Li",
+          "authorId": "2258837278"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Intermediate reasoning or acting steps have successfully improved large language models (LLMs) for handling various downstream natural language processing (NLP) tasks. When applying LLMs for code generation, recent works mainly focus on directing the models to articulate intermediate natural-language reasoning steps, as in chain-of-thought (CoT) prompting, and then output code with the natural language or other structured intermediate steps. However, such output is not suitable for code translation or generation tasks since the standard CoT has different logical structures and forms of expression with the code. In this work, we introduce the universal code (UniCode) as the intermediate representation. It is a description of algorithm steps using a mix of conventions of programming languages, such as assignment operator, conditional operator, and loop. Hence, we collect an instruction dataset UniCoder-Instruct to train our model UniCoder on multi-task learning objectives. UniCoder-Instruct comprises natural-language questions, code solutions, and the corresponding universal code. The alignment between the intermediate universal code representation and the final code solution significantly improves the quality of the generated code. The experimental results demonstrate that UniCoder with the universal code significantly outperforms the previous prompting methods by a large margin, showcasing the effectiveness of the structural clues in pseudo-code.",
+      "citationCount": 32,
+      "doi": "10.48550/arXiv.2406.16441",
+      "arxivId": "2406.16441",
+      "url": "https://www.semanticscholar.org/paper/8444b6982b5fa799e016e20f833594bb2f9ab12e",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "1812-1824"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "162efe3129b7b12b6e9c924c442059cb6b2f4bf5",
+      "title": "Enhancing Large Language Model Efficiencyvia Symbolic Compression: A Formal Approach Towards Interpretability",
+      "authors": [
+        {
+          "name": "Shihao Ji",
+          "authorId": "2342251545"
+        },
+        {
+          "name": "Zihui Song",
+          "authorId": "2342112451"
+        },
+        {
+          "name": "Fucheng Zhong",
+          "authorId": "2341718359"
+        },
+        {
+          "name": "Jisen Jia",
+          "authorId": "2342369218"
+        },
+        {
+          "name": "Zhaobo Wu",
+          "authorId": "2341874743"
+        },
+        {
+          "name": "Zheyi Cao",
+          "authorId": "2342475176"
+        },
+        {
+          "name": "Tianhao Xu",
+          "authorId": "2342107875"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) face significant token efficiency bottlenecks in code generation and logical reasoning tasks, a challenge that directly impacts inference cost and model interpretability. This paper proposes a formal framework based on symbolic compression,integrating combinatory logic, information-theoretic optimal encoding, and context-aware inference techniques to achieve a step-change improvement in token efficiency while preserving semantic integrity. We establish a mathematical framework within a functional programming paradigm, derive the quantitative relationship between symbolic density and model interpretability, and propose a differentiable compression factor metric to evaluate encoding efficiency. Furthermore, we leverage parameter-efficient fine-tuning (PEFT) techniques to achieve a low-cost application of the GAEL language. Experimental results show that this method achieves a 78.3% token compression rate in code generation tasks while improving logical traceability by 62% through structural explicitness. This research provides new theoretical tools for efficient inference in LLMs and opens a symbolic path for modelinterpretability research.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2501.18657",
+      "arxivId": "2501.18657",
+      "url": "https://www.semanticscholar.org/paper/162efe3129b7b12b6e9c924c442059cb6b2f4bf5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.18657"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "15cfb4f57b3a666a78bab9fa556b82432e4ef3cf",
+      "title": "GVGAI-LLM: Evaluating Large Language Model Agents with Infinite Games",
+      "authors": [
+        {
+          "name": "Yuchen Li",
+          "authorId": "2297923747"
+        },
+        {
+          "name": "Cong Lin",
+          "authorId": "2375727168"
+        },
+        {
+          "name": "Muhammad Umair Nasir",
+          "authorId": "2164123887"
+        },
+        {
+          "name": "Philip Bontrager",
+          "authorId": "14171685"
+        },
+        {
+          "name": "Jialin Liu",
+          "authorId": "2297995203"
+        },
+        {
+          "name": "Julian Togelius",
+          "authorId": "2164746774"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We introduce GVGAI-LLM, a video game benchmark for evaluating the reasoning and problem-solving capabilities of large language models (LLMs). Built on the General Video Game AI framework, it features a diverse collection of arcade-style games designed to test a model's ability to handle tasks that differ from most existing LLM benchmarks. The benchmark leverages a game description language that enables rapid creation of new games and levels, helping to prevent overfitting over time. Each game scene is represented by a compact set of ASCII characters, allowing for efficient processing by language models. GVGAI-LLM defines interpretable metrics, including the meaningful step ratio, step efficiency, and overall score, to assess model behavior. Through zero-shot evaluations across a broad set of games and levels with diverse challenges and skill depth, we reveal persistent limitations of LLMs in spatial reasoning and basic planning. Current models consistently exhibit spatial and logical errors, motivating structured prompting and spatial grounding techniques. While these interventions lead to partial improvements, the benchmark remains very far from solved. GVGAI-LLM provides a reproducible testbed for advancing research on language model capabilities, with a particular emphasis on agentic behavior and contextual reasoning.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2508.08501",
+      "arxivId": "2508.08501",
+      "url": "https://www.semanticscholar.org/paper/15cfb4f57b3a666a78bab9fa556b82432e4ef3cf",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.08501"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "806b5882c983bd156a8c10bcd34fe285d8a0593b",
+      "title": "GLoRE: Evaluating Logical Reasoning of Large Language Models",
+      "authors": [
+        {
+          "name": "Hanmeng Liu",
+          "authorId": "2118960911"
+        },
+        {
+          "name": "Zhiyang Teng",
+          "authorId": "2272668"
+        },
+        {
+          "name": "Ruoxi Ning",
+          "authorId": "30819687"
+        },
+        {
+          "name": "Jian Liu",
+          "authorId": "2254323244"
+        },
+        {
+          "name": "Qiji Zhou",
+          "authorId": "2289467055"
+        },
+        {
+          "name": "Yuexin Zhang",
+          "authorId": "2145915465"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown significant general language understanding abilities. However, there has been a scarcity of attempts to assess the logical reasoning capacities of these LLMs, an essential facet of natural language understanding. To encourage further investigation in this area, we introduce GLoRE, a General Logical Reasoning Evaluation platform that not only consolidates diverse datasets but also standardizes them into a unified format suitable for evaluating large language models across zero-shot and few-shot scenarios. Our experimental results show that compared to the performance of humans and supervised fine-tuning models, the logical reasoning capabilities of large reasoning models, such as OpenAI's o1 mini, DeepSeek R1 and QwQ-32B, have seen remarkable improvements, with QwQ-32B achieving the highest benchmark performance to date. GLoRE is designed as a living project that continuously integrates new datasets and models, facilitating robust and comparative assessments of model performance in both commercial and Huggingface communities.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2310.09107",
+      "arxivId": "2310.09107",
+      "url": "https://www.semanticscholar.org/paper/806b5882c983bd156a8c10bcd34fe285d8a0593b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2310.09107"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7017c58e19f4db0c38040935cc9fb7b7090a466d",
+      "title": "Modeling Complex Mathematical Reasoning via Large Language Model based MathAgent",
+      "authors": [
+        {
+          "name": "Haoran Liao",
+          "authorId": "2273328586"
+        },
+        {
+          "name": "Qinyi Du",
+          "authorId": "2129991600"
+        },
+        {
+          "name": "Shaohua Hu",
+          "authorId": "2274562434"
+        },
+        {
+          "name": "Hao He",
+          "authorId": "100537432"
+        },
+        {
+          "name": "Yanyan Xu",
+          "authorId": "2260419917"
+        },
+        {
+          "name": "Jidong Tian",
+          "authorId": "2136089851"
+        },
+        {
+          "name": "Yaohui Jin",
+          "authorId": "2257387631"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) face challenges in solving complex mathematical problems that require comprehensive capacities to parse the statements, associate domain knowledge, perform compound logical reasoning, and integrate the intermediate rationales. Tackling all these problems once could be arduous for LLMs, thus leading to confusion in generation. In this work, we explore the potential of enhancing LLMs with agents by meticulous decomposition and modeling of mathematical reasoning process. Specifically, we propose a formal description of the mathematical solving and extend LLMs with an agent-based zero-shot framework named $\\bf{P}$lanner-$\\bf{R}$easoner-$\\bf{E}$xecutor-$\\bf{R}$eflector (PRER). We further provide and implement two MathAgents that define the logical forms and inherent relations via a pool of actions in different grains and orientations: MathAgent-M adapts its actions to LLMs, while MathAgent-H aligns with humankind. Experiments on miniF2F and MATH have demonstrated the effectiveness of PRER and proposed MathAgents, achieving an increase of $12.3\\%$($53.9\\%\\xrightarrow{}66.2\\%$) on the MiniF2F, $9.2\\%$ ($49.8\\%\\xrightarrow{}59.0\\%$) on MATH, and $13.2\\%$($23.2\\%\\xrightarrow{}35.4\\%$) for level-5 problems of MATH against GPT-4. Further analytical results provide more insightful perspectives on exploiting the behaviors of LLMs as agents.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2312.08926",
+      "arxivId": "2312.08926",
+      "url": "https://www.semanticscholar.org/paper/7017c58e19f4db0c38040935cc9fb7b7090a466d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2312.08926"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ae9cc35ac5ec41c5f0fef597d8e8958045e095bf",
+      "title": "Enhancing Exploratory Testing by Large Language Model and Knowledge Graph",
+      "authors": [
+        {
+          "name": "Yanqi Su",
+          "authorId": "2118000426"
+        },
+        {
+          "name": "Dianshu Liao",
+          "authorId": "2197087303"
+        },
+        {
+          "name": "Zhenchang Xing",
+          "authorId": "2247838339"
+        },
+        {
+          "name": "Qing Huang",
+          "authorId": "2181288908"
+        },
+        {
+          "name": "Mulong Xie",
+          "authorId": "1871535985"
+        },
+        {
+          "name": "Qinghua Lu",
+          "authorId": "2117522274"
+        },
+        {
+          "name": "Xiwei Xu",
+          "authorId": "2266422366"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Exploratory testing leverages the tester's knowledge and creativity to design test cases for effectively uncovering system-level bugs from the end user's perspective. Researchers have worked on test scenario generation to support exploratory testing based on a system knowledge graph, enriched with scenario and oracle knowledge from bug reports. Nevertheless, the adoption of this approach is hindered by difficulties in handling bug reports of inconsistent quality and varied expression styles, along with the infeasibility of the generated test scenarios. To overcome these limitations, we utilize the superior natural language understanding (NLU) capabilities of Large Language Models (LLMs) to construct a System KG of User Tasks and Failures (SysKG-UTF). Leveraging the system and bug knowledge from the KG, along with the logical reasoning capabilities of LLMs, we generate test scenarios with high feasibility and coherence. Particularly, we design chain-of-thought (CoT) reasoning to extract human-like knowledge and logical reasoning from LLMs, simulating a developer's process of validating test scenario feasibility. Our evaluation shows that our approach significantly enhances the KG construction, particularly for bug reports with low quality. Furthermore, our approach generates test scenarios with high feasibility and coherence. The user study further proves the effectiveness of our generated test scenarios in supporting exploratory testing. Specifically, 8 participants find 36 bugs from 8 seed bugs in two hours using our test scenarios, a significant improvement over the 21 bugs found by the state-of-the-art baseline.",
+      "citationCount": 18,
+      "doi": "10.1145/3597503.3639157",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ae9cc35ac5ec41c5f0fef597d8e8958045e095bf",
+      "venue": "International Conference on Software Engineering",
+      "journal": {
+        "name": "2024 IEEE/ACM 46th International Conference on Software Engineering (ICSE)",
+        "pages": "1197-1208"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "d183cca56404f09653ba14f952597235dc37c387",
+      "title": "Large Language Model Enhanced Multi-Agent Systems for 6G Communications",
+      "authors": [
+        {
+          "name": "Feibo Jiang",
+          "authorId": "40540111"
+        },
+        {
+          "name": "Li Dong",
+          "authorId": "2152288497"
+        },
+        {
+          "name": "Yubo Peng",
+          "authorId": "2238127953"
+        },
+        {
+          "name": "Kezhi Wang",
+          "authorId": "2244014700"
+        },
+        {
+          "name": "Kun Yang",
+          "authorId": "2214014346"
+        },
+        {
+          "name": "Cunhua Pan",
+          "authorId": "2238046378"
+        },
+        {
+          "name": "D. Niyato",
+          "authorId": "1713586"
+        },
+        {
+          "name": "O. Dobre",
+          "authorId": "1739783"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The rapid development of the large language model (LLM) presents huge opportunities for 6G communications \u2013 for example, network optimization and management \u2013 by allowing users to input task requirements to LLMs with natural language. However, directly applying native LLMs in 6G encounters various challenges, such as a lack of communication data and knowledge, and limited logical reasoning, evaluation, and refinement abilities. Integrating LLMs with the capabilities of retrieval, planning, memory, evaluation, and reflection in agents can greatly enhance the potential of LLMs for 6G communications. To this end, we propose CommLLM, a multi-agent system with customized communication knowledge and tools for solving communication-related tasks using natural language. This system consists of three components: multi-agent data retrieval (MDR), which employs the condensate and inference agents to refine and summarize communication knowledge from the knowledge base, expanding the knowledge boundaries of LLMs in 6G communications; multi-agent collaborative planning (MCP), which utilizes multiple planning agents to generate feasible solutions for the communication-re-lated task from different perspectives based on the retrieved knowledge; and multi-agent evaluation and reflection (MER), which utilizes the evaluation agent to assess the solutions, and applies the reflection agent and refinement agent to provide improvement suggestions for current solutions. Finally, we validate the effectiveness of the proposed multi-agent system by designing a semantic communication system as a case study of 6G communications.",
+      "citationCount": 111,
+      "doi": "10.1109/MWC.016.2300600",
+      "arxivId": "2312.07850",
+      "url": "https://www.semanticscholar.org/paper/d183cca56404f09653ba14f952597235dc37c387",
+      "venue": "IEEE wireless communications",
+      "journal": {
+        "name": "IEEE Wireless Communications",
+        "pages": "48-55",
+        "volume": "31"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b2fe504e9f15de9438d22e7b632e81e57bfbbc06",
+      "title": "Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning",
+      "authors": [
+        {
+          "name": "DiJia Su",
+          "authorId": "2325888815"
+        },
+        {
+          "name": "Hanlin Zhu",
+          "authorId": "2255310892"
+        },
+        {
+          "name": "Yingchen Xu",
+          "authorId": "2269737738"
+        },
+        {
+          "name": "Jiantao Jiao",
+          "authorId": "2258657022"
+        },
+        {
+          "name": "Yuandong Tian",
+          "authorId": "2285362895"
+        },
+        {
+          "name": "Qinqing Zheng",
+          "authorId": "2326106870"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) excel at reasoning and planning when trained on chainof-thought (CoT) data, where the step-by-step thought process is explicitly outlined by text tokens. However, this results in lengthy inputs where many words support textual coherence rather than core reasoning information, and processing these inputs consumes substantial computation resources. In this work, we propose a hybrid representation of the reasoning process, where we partially abstract away the initial reasoning steps using latent discrete tokens generated by VQ-VAE, significantly reducing the length of reasoning traces. We explore the use of latent trace abstractions in two scenarios: 1) training the model from scratch for the Keys-Finding Maze problem, 2) fine-tuning LLMs on this hybrid data with an extended vocabulary including unseen latent tokens, for both logical and mathematical reasoning problems. To facilitate effective learning, we introduce a simple training procedure that randomly mixes latent and text tokens, which enables fast adaptation to new latent tokens. Our approach consistently outperforms the baselines methods in various benchmarks.",
+      "citationCount": 44,
+      "doi": "10.48550/arXiv.2502.03275",
+      "arxivId": "2502.03275",
+      "url": "https://www.semanticscholar.org/paper/b2fe504e9f15de9438d22e7b632e81e57bfbbc06",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.03275"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "96d2ad38c44cee6881d383daea65fcef8e6bc382",
+      "title": "Large Language Model-Assisted Parameter Prediction in Integrated Energy Systems",
+      "authors": [
+        {
+          "name": "Hongfei Zhang",
+          "authorId": "2279663060"
+        },
+        {
+          "name": "Liang Zhang",
+          "authorId": "2279813816"
+        },
+        {
+          "name": "Liang Yu",
+          "authorId": "2284957594"
+        },
+        {
+          "name": "Rui Zhu",
+          "authorId": "2346786383"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Accurate parameter predictions contribute to the operation optimization of integrated energy systems. Existing prediction methods have some limitations in fully capturing the complex temporal dependencies inherent in parameter patterns. To overcome such limitations, this paper investigates the problem of parameter prediction in integrated energy systems based on large language models (LLMs), which show the powerful logical reasoning capabilities when dealing with complex time series problems. To be specific, this paper utilizes Time-LLM framework to predict electric load, heat load, cold load, and photovoltaic generation. Note that the utilized framework facilitates the reprogramming of the LLMs for time series prediction while preserving the integrity of the backbone language models. Numerical results demonstrate that the proposed prediction method can achieve higher accuracy by 5.7% to 83.6% compared with existing machine learning based benchmarks.",
+      "citationCount": 2,
+      "doi": "10.1109/CAC63892.2024.10865431",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/96d2ad38c44cee6881d383daea65fcef8e6bc382",
+      "venue": "ACM Cloud and Autonomic Computing Conference",
+      "journal": {
+        "name": "2024 China Automation Congress (CAC)",
+        "pages": "3611-3615"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "af4aa0fbcbc82138ee4ea95cda36063ff4e19b99",
+      "title": "Retrieval-Augmented Generation Based Large Language Model Chatbot for Improving Diagnosis for Physical and Mental Health",
+      "authors": [
+        {
+          "name": "Y. B. Sree",
+          "authorId": "2300225144"
+        },
+        {
+          "name": "Omrender Kumar",
+          "authorId": "2300226105"
+        },
+        {
+          "name": "Addicharla Sathvik",
+          "authorId": "2300224508"
+        },
+        {
+          "name": "Bandaru Sai",
+          "authorId": "2300303026"
+        },
+        {
+          "name": "Pranav Rao",
+          "authorId": "2300394938"
+        },
+        {
+          "name": "Damarla Sai",
+          "authorId": "2300302724"
+        },
+        {
+          "name": "Hema Akshit",
+          "authorId": "2300304557"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Chatbot integration in the medical domain results in improved accessibility to healthcare information and services with enhanced patient query communication and patient education. The proposed work is a novel approach to Health Care chatbot named MEDGPT. The model is developed using the Retrieval-Augmented Generation (RAG) framework integrated with external data sources such as PDF documents, CSV files, and PubMed documents related to Health Care. It combines a retriever component of the architecture to fetch relevant information from external sources and a generator component to craft contextually appropriate responses using Large Language Model (LLM's). The architecture employed tools and agents in order to generate response from multiple external sources. Tools are specialized for each data source and are designed to extract relevant information based on user queries. Agents are components within the chatbot architecture that handle different aspects of logical reasoning and decision making. When a user query, requires information from an external data source, the corresponding agent invokes the appropriate retrieval tool. Once the data is processed, it is integrated into the chatbot's knowledge base using the RAG framework. The RAG framework combines the retrieved data with the chatbot's language generation capabilities to craft contextually appropriate responses to user queries. Through extensive testing and evaluation, the chatbot achieved significant improvements in user satisfaction, response accuracy, and engagement, showcasing the potential of the RAG framework in leveraging external data sources for intelligent conversational agents in Health Care. The proposed framework enhanced the RAG based LLM chatbot's capabilities to provide relevant and accurate responses to user queries related to Health Care with respected Physical and Mental health.",
+      "citationCount": 4,
+      "doi": "10.1109/ICECIE63774.2024.10815693",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/af4aa0fbcbc82138ee4ea95cda36063ff4e19b99",
+      "venue": "2024 6th International Conference on Electrical, Control and Instrumentation Engineering (ICECIE)",
+      "journal": {
+        "name": "2024 6th International Conference on Electrical, Control and Instrumentation Engineering (ICECIE)",
+        "pages": "1-8"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "dc2b876073e8d9c3f7e7c1d3cb98bed1a9f72525",
+      "title": "Hermes: A Large Language Model Framework on the Journey to Autonomous Networks",
+      "authors": [
+        {
+          "name": "Fadhel Ayed",
+          "authorId": "70486867"
+        },
+        {
+          "name": "Ali Maatouk",
+          "authorId": "2257807974"
+        },
+        {
+          "name": "Nicola Piovesan",
+          "authorId": "3393923"
+        },
+        {
+          "name": "Antonio De Domenico",
+          "authorId": "2261362548"
+        },
+        {
+          "name": "M. Debbah",
+          "authorId": "2065834880"
+        },
+        {
+          "name": "Zhi-Quan Luo",
+          "authorId": "2261428726"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The drive toward automating cellular network operations has grown with the increasing complexity of these systems. Despite advancements, full autonomy currently remains out of reach due to reliance on human intervention for modeling network behaviors and defining policies to meet target requirements. Network Digital Twins (NDTs) have shown promise in enhancing network intelligence, but the successful implementation of this technology is constrained by use case-specific architectures, limiting its role in advancing network autonomy. A more capable network intelligence, or\"telecommunications brain\", is needed to enable seamless, autonomous management of cellular network. Large Language Models (LLMs) have emerged as potential enablers for this vision but face challenges in network modeling, especially in reasoning and handling diverse data types. To address these gaps, we introduce Hermes, a chain of LLM agents that uses\"blueprints\"for constructing NDT instances through structured and explainable logical steps. Hermes allows automatic, reliable, and accurate network modeling of diverse use cases and configurations, thus marking progress toward fully autonomous network operations.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2411.06490",
+      "arxivId": "2411.06490",
+      "url": "https://www.semanticscholar.org/paper/dc2b876073e8d9c3f7e7c1d3cb98bed1a9f72525",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.06490"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b9ce4680cae3db6e33491d151c86f261fc994b2a",
+      "title": "SentiXRL: An advanced large language Model Framework for Multilingual Fine-Grained Emotion Classification in Complex Text Environment",
+      "authors": [
+        {
+          "name": "Jie Wang",
+          "authorId": "2328713370"
+        },
+        {
+          "name": "Yichen Wang",
+          "authorId": "2332481301"
+        },
+        {
+          "name": "Zhilin Zhang",
+          "authorId": "2328017360"
+        },
+        {
+          "name": "Jianhao Zeng",
+          "authorId": "2332681994"
+        },
+        {
+          "name": "Kaidi Wang",
+          "authorId": "2332540678"
+        },
+        {
+          "name": "Zhiyang Chen",
+          "authorId": "2332675486"
+        }
+      ],
+      "year": 2024,
+      "abstract": "With strong expressive capabilities in Large Language Models(LLMs), generative models effectively capture sentiment structures and deep semantics, however, challenges remain in fine-grained sentiment classification across multi-lingual and complex contexts. To address this, we propose the Sentiment Cross-Lingual Recognition and Logic Framework (SentiXRL), which incorporates two modules,an emotion retrieval enhancement module to improve sentiment classification accuracy in complex contexts through historical dialogue and logical reasoning,and a self-circulating analysis negotiation mechanism (SANM)to facilitates autonomous decision-making within a single model for classification tasks.We have validated SentiXRL's superiority on multiple standard datasets, outperforming existing models on CPED and CH-SIMS,and achieving overall better performance on MELD,Emorynlp and IEMOCAP. Notably, we unified labels across several fine-grained sentiment annotation datasets and conducted category confusion experiments, revealing challenges and impacts of class imbalance in standard datasets.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2411.18162",
+      "arxivId": "2411.18162",
+      "url": "https://www.semanticscholar.org/paper/b9ce4680cae3db6e33491d151c86f261fc994b2a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.18162"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ee52a820e35cf5095e681ccf8ca8eea978d336ad",
+      "title": "DetectBench: Can Large Language Model Detect and Piece Together Implicit Evidence?",
+      "authors": [
+        {
+          "name": "Zhouhong Gu",
+          "authorId": "2160631240"
+        },
+        {
+          "name": "Lin Zhang",
+          "authorId": "2292753059"
+        },
+        {
+          "name": "Xiaoxuan Zhu",
+          "authorId": "2215265340"
+        },
+        {
+          "name": "Jiangjie Chen",
+          "authorId": "5040052"
+        },
+        {
+          "name": "Wenhao Huang",
+          "authorId": "2158103505"
+        },
+        {
+          "name": "Yikai Zhang",
+          "authorId": "2217263361"
+        },
+        {
+          "name": "Shusen Wang",
+          "authorId": "2273907090"
+        },
+        {
+          "name": "Zheyu Ye",
+          "authorId": "2266449867"
+        },
+        {
+          "name": "Yan Gao",
+          "authorId": "2292581025"
+        },
+        {
+          "name": "Hongwei Feng",
+          "authorId": "27155736"
+        },
+        {
+          "name": "Yanghua Xiao",
+          "authorId": "2291069226"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Detecting evidence within the context is a key step in the process of reasoning task. Evaluating and enhancing the capabilities of LLMs in evidence detection will strengthen context-based reasoning performance. This paper proposes a benchmark called DetectBench for verifying the ability to detect and piece together implicit evidence within a long context. DetectBench contains 3,928 multiple-choice questions, with an average of 994 tokens per question. Each question contains an average of 4.55 pieces of implicit evidence, and solving the problem typically requires 7.62 logical jumps to find the correct answer. To enhance the performance of LLMs in evidence detection, this paper proposes Detective Reasoning Prompt and Finetune. Experiments demonstrate that the existing LLMs' abilities to detect evidence in long contexts are far inferior to humans. However, the Detective Reasoning Prompt effectively enhances the capability of powerful LLMs in evidence detection, while the Finetuning method shows significant effects in enhancing the performance of weaker LLMs. Moreover, when the abilities of LLMs in evidence detection are improved, their final reasoning performance is also enhanced accordingly.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2406.12641",
+      "arxivId": "2406.12641",
+      "url": "https://www.semanticscholar.org/paper/ee52a820e35cf5095e681ccf8ca8eea978d336ad",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "199-222"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "5dbffedcabe3fa43060ebbe2b1789500edfd871f",
+      "title": "Reasoning with Language Model is Planning with World Model",
+      "authors": [
+        {
+          "name": "Shibo Hao",
+          "authorId": "2128965713"
+        },
+        {
+          "name": "Yi Gu",
+          "authorId": "2112578816"
+        },
+        {
+          "name": "Haodi Ma",
+          "authorId": "2110816708"
+        },
+        {
+          "name": "Joshua Jiahua Hong",
+          "authorId": "2218162745"
+        },
+        {
+          "name": "Zhen Wang",
+          "authorId": "47197370"
+        },
+        {
+          "name": "D. Wang",
+          "authorId": "2111220343"
+        },
+        {
+          "name": "Zhiting Hu",
+          "authorId": "2749311"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown remarkable reasoning capabilities, especially when prompted to generate intermediate reasoning steps (e.g., Chain-of-Thought, CoT). However, LLMs can still struggle with problems that are easy for humans, such as generating action plans for executing tasks in a given environment, or performing complex math, logical, and commonsense reasoning. The deficiency stems from the key fact that LLMs lack an internal $\\textit{world model}$ to predict the world $\\textit{state}$ (e.g., environment status, intermediate variable values) and simulate long-term outcomes of actions. This prevents LLMs from performing deliberate planning akin to human brains, which involves exploring alternative reasoning paths, anticipating future states and rewards, and iteratively refining existing reasoning steps. To overcome the limitations, we propose a new LLM reasoning framework, $\\underline{R}$easoning vi$\\underline{a}$ $\\underline{P}$lanning $\\textbf{(RAP)}$. RAP repurposes the LLM as both a world model and a reasoning agent, and incorporates a principled planning algorithm (based on Monto Carlo Tree Search) for strategic exploration in the vast reasoning space. During reasoning, the LLM (as agent) incrementally builds a reasoning tree under the guidance of the LLM (as world model) and task-specific rewards, and obtains a high-reward reasoning path efficiently with a proper balance between exploration $\\textit{vs.}$ exploitation. We apply RAP to a variety of challenging reasoning problems including plan generation, math reasoning, and logical inference. Empirical results on these tasks demonstrate the superiority of RAP over various strong baselines, including CoT and least-to-most prompting with self-consistency. RAP on LLAMA-33B surpasses CoT on GPT-4 with 33% relative improvement in a plan generation setting.",
+      "citationCount": 820,
+      "doi": "10.48550/arXiv.2305.14992",
+      "arxivId": "2305.14992",
+      "url": "https://www.semanticscholar.org/paper/5dbffedcabe3fa43060ebbe2b1789500edfd871f",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "8154-8173"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9752be30a587319eaa3e51bde95e1b69d59705d0",
+      "title": "Method-Based Reasoning for Large Language Models: Extraction, Reuse, and Continuous Improvement",
+      "authors": [
+        {
+          "name": "Hong Su",
+          "authorId": "2382452501"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) have shown impressive capabilities across a wide range of language tasks. However, their reasoning process is primarily guided by statistical patterns in training data, which limits their ability to handle novel problems and perform consistent logical reasoning. In this paper, we propose a method-based model that enhances LLMs with explicit, reusable procedures extracted from training content, generated responses, and user interactions. Each method is represented as a pair consisting of a problem and its corresponding solution, stored externally and ranked based on feedback. When a new query is received, the system retrieves and applies the most relevant methods to guide the LLM's response. Our model enables continual learning, method reuse, and logical consistency beyond next-token prediction. Experimental results demonstrate that the system improves factual verification and generalization in complex prompts, and that newly learned methods can outperform earlier ones through user-driven refinement.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2508.04289",
+      "arxivId": "2508.04289",
+      "url": "https://www.semanticscholar.org/paper/9752be30a587319eaa3e51bde95e1b69d59705d0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.04289"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f75673eefe0217464a1d30f6d373e696e26ae055",
+      "title": "CodeMind: A Framework to Challenge Large Language Models for Code Reasoning",
+      "authors": [
+        {
+          "name": "Changshu Liu",
+          "authorId": "2284651628"
+        },
+        {
+          "name": "Shizhuo Dylan Zhang",
+          "authorId": "2283311189"
+        },
+        {
+          "name": "Reyhaneh Jabbarvand",
+          "authorId": "11034998"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 58,
+      "doi": "10.48550/arXiv.2402.09664",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f75673eefe0217464a1d30f6d373e696e26ae055",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.09664"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e956692fb68766632c52cceb8469649bf023b7d3",
+      "title": "Audio-Reasoner: Improving Reasoning Capability in Large Audio Language Models",
+      "authors": [
+        {
+          "name": "Zhifei Xie",
+          "authorId": "2350149502"
+        },
+        {
+          "name": "Mingbao Lin",
+          "authorId": "2336939175"
+        },
+        {
+          "name": "Zihang Liu",
+          "authorId": "2348653365"
+        },
+        {
+          "name": "Pengcheng Wu",
+          "authorId": "2294676963"
+        },
+        {
+          "name": "Shuicheng Yan",
+          "authorId": "2284684403"
+        },
+        {
+          "name": "Chunyan Miao",
+          "authorId": "2293399961"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advancements in multimodal reasoning have largely overlooked the audio modality. We introduce Audio-Reasoner, a large-scale audio language model for deep reasoning in audio tasks. We meticulously curated a large-scale and diverse multi-task audio dataset with simple annotations. Then, we leverage closed-source models to conduct secondary labeling, QA generation, along with structured COT process. These datasets together form a high-quality reasoning dataset with 1.2 million reasoning-rich samples, which we name CoTA. Following inference scaling principles, we train Audio-Reasoner on CoTA, enabling it to achieve great logical capabilities in audio reasoning. Experiments show state-of-the-art performance across key benchmarks, including MMAU-mini (+25.42%), AIR-Bench chat/foundation(+14.57%/+10.13%), and MELD (+8.01%). Our findings stress the core of structured CoT training in advancing audio reasoning.",
+      "citationCount": 66,
+      "doi": "10.48550/arXiv.2503.02318",
+      "arxivId": "2503.02318",
+      "url": "https://www.semanticscholar.org/paper/e956692fb68766632c52cceb8469649bf023b7d3",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.02318"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    }
+  ],
+  "count": 50,
+  "errors": []
+}

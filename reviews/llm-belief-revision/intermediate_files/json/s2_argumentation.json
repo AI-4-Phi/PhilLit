@@ -1,0 +1,1025 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "argumentation frameworks Dung",
+  "results": [
+    {
+      "paperId": "55631f51aea005d0544869c5c6e3f9d19e648a6b",
+      "title": "Fast Computing of Dung Semantics in Acyclic Probabilistic Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "Stefano Bistarelli",
+          "authorId": "2273099748"
+        },
+        {
+          "name": "Victor David",
+          "authorId": "2339276547"
+        },
+        {
+          "name": "Pierre Monnin",
+          "authorId": "2337740579"
+        },
+        {
+          "name": "Francesco Santini",
+          "authorId": "1394239898"
+        },
+        {
+          "name": "Carlo Taticchi",
+          "authorId": "2328403395"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper presents fast and exact methods for computing the probability of an argument\u2019s acceptance using Dung\u2019s semantics in the Constellation paradigm of Abstract Argumentation. For (directed) Singly-Connected Graphs (SCGs), the problem can now be solved in linearithmic time instead of being exponential in the number of attacks, as reported in the literature. Moreover, in the more general case of Directed Acyclic Graphs (DAGs), we provide an algorithm whose time complexity is linearithmic in the product of the out-degree of dependent arguments, i.e., arguments reaching the argument considered for acceptance through multiple paths in the graph. We theoretically show that this complexity is lower than the lower bound of the (exact) Constellation method, which is also supported by empirical results. Our approach to DAGs is also compared with the (approximate) Monte-Carlo method, which is stopped when exact results are obtained. Within this time constraint, Monte-Carlo still outputs significant errors, underlying the fast computation of our approach.",
+      "citationCount": 0,
+      "doi": "10.1609/aaai.v39i14.33622",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/55631f51aea005d0544869c5c6e3f9d19e648a6b",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "14798-14805"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "22e69fc81f98b420353542e687d4d84eade82b01",
+      "title": "Encoding Argumentation Frameworks to Propositional Logic Systems",
+      "authors": [
+        {
+          "name": "Shuai Tang",
+          "authorId": "2350969539"
+        },
+        {
+          "name": "Jiachao Wu",
+          "authorId": "2341179743"
+        },
+        {
+          "name": "Ning Zhou",
+          "authorId": "2345226192"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper generalizes the encoding of argumentation frameworks beyond the classical 2-valued propositional logic system ($PL_2$) to 3-valued propositional logic systems ($PL_3$s) and fuzzy propositional logic systems ($PL_{[0,1]}s$), employing two key encodings: normal encoding ($ec_1$) and regular encoding ($ec_2$). Specifically, via $ec_1$ and $ec_2$, we establish model relationships between Dung's classical semantics (stable and complete semantics) and the encoded semantics associated with Kleene's $PL_3$ and {\\L}ukasiewicz's $PL_3$. Through $ec_1$, we also explore connections between Gabbay's real equational semantics and the encoded semantics of $PL_{[0,1]}s$, including showing that Gabbay's $Eq_{\\text{max}}^R$ and $Eq_{\\text{inverse}}^R$ correspond to the fuzzy encoded semantics of $PL_{[0,1]}^G$ and $PL_{[0,1]}^P$ respectively. Additionally, we propose a new fuzzy encoded semantics ($Eq^L$) associated with {\\L}ukasiewicz's $PL_{[0,1]}$ and investigate interactions between complete semantics and fuzzy encoded semantics. This work strengthens the links between argumentation frameworks and propositional logic systems, providing a framework for constructing new argumentation semantics.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2503.07351",
+      "arxivId": "2503.07351",
+      "url": "https://www.semanticscholar.org/paper/22e69fc81f98b420353542e687d4d84eade82b01",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.07351"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bf3d4c8185583ab0b0f8f716256118bf847b3bb6",
+      "title": "Encoding argumentation frameworks with set attackers to propositional logic systems",
+      "authors": [
+        {
+          "name": "Shuai Tang",
+          "authorId": "2350969539"
+        },
+        {
+          "name": "Jiachao Wu",
+          "authorId": "2341179743"
+        },
+        {
+          "name": "Ning Zhou",
+          "authorId": "2345226192"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Argumentation frameworks ($AF$s) have been a useful tool for approximate reasoning. The encoding method is an important approach to formally model $AF$s under related semantics. The aim of this paper is to develop the encoding method from classical Dung's $AF$s ($DAF$s) to $AF$s with set attackers ($AFSA$s) including higher-level argumentation frames ($HLAF$s), Barringer's higher-order $AF$s ($BHAF$s), frameworks with sets of attacking arguments ($SETAF$s) and higher-order set $AF$s ($HSAF$s). Regarding syntactic structures, we propose the $HSAF$s where the target of an attack is either an argument or an attack and the sources are sets of arguments and attacks. Regarding semantics, we translate $HLAF$s and $SETAF$s under respective complete semantics to {\\L}ukasiewicz's 3-valued propositional logic system ($PL_3^L$). Furthermore, we propose complete semantics of $BHAF$s and $HSAF$s by respectively generalizing from $HLAF$s and $SETAF$s, and then translate to the $PL_3^L$. Moreover, for numerical semantics of $AFSA$s, we propose the equational semantics and translate to fuzzy propositional logic systems ($PL_{[0,1]}$s). This paper establishes relationships of model equivalence between an $AFSA$ under a given semantics and the encoded formula in a related propositional logic system ($PLS$). By connections of $AFSA$s and $PLS$s, this paper provides the logical foundations for $AFSA$s associated with complete semantics and equational semantics. The results advance the argumentation theory by unifying $HOAF$s and $SETAF$s under logical formalisms, paving the way for automated reasoning tools in AI, decision support, and multi-agent systems.",
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": "2504.08370",
+      "url": "https://www.semanticscholar.org/paper/bf3d4c8185583ab0b0f8f716256118bf847b3bb6",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "15649d182064cc80d4eff2fb303cc36011ec1cb9",
+      "title": "Extending Abstract Argumentation Frameworks with Knowledge Bases",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "authorId": "50332095"
+        },
+        {
+          "name": "S. Greco",
+          "authorId": "2058080481"
+        },
+        {
+          "name": "Cristian Molinaro",
+          "authorId": "1698803"
+        },
+        {
+          "name": "Francesco Parisi",
+          "authorId": "2237787646"
+        },
+        {
+          "name": "I. Trubitsyna",
+          "authorId": "144727023"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Dung's abstract Argumentation Framework (AF) has been extended in several directions to make knowledge representation and reasoning more intuitive and expressive. \n\nIn this paper, we present the Knowledge-based Argumentation Framework (KAF), an extension of AF with a Knowledge Base (KB) expressed in DL-Lite, which includes concept and role instances describing the topology of an AF, besides additional knowledge on the domain.\n\nThe KAF semantics is given by a set of KAF extensions, each consisting of an extension of the underlying AF together with a ``pertinent'' subset of the original KB, which is obtained by discarding assertions referring to arguments that have been ruled out in the AF extension.\n\nThen, the framework is further expanded into the Constrained KAF (CKAF), where a set of restricted relational calculus formulae is used for reasoning over `feasible' subframeworks that satisfy the formulae and minimally differ from the original framework. \n\nWe thoroughly investigate the computational complexity of classical reasoning problems under popular argumentation semantics, and show that well-known AF-based frameworks are special cases of CKAF.",
+      "citationCount": 0,
+      "doi": "10.24963/kr.2025/3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/15649d182064cc80d4eff2fb303cc36011ec1cb9",
+      "venue": "Proceedings of the TwentySecond International Conference on Principles of Knowledge Representation and Reasoning",
+      "journal": {
+        "name": "Proceedings of the TwentySecond International Conference on Principles of Knowledge Representation and Reasoning"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "6178937dba1b61fcbdeda88f3772842de9d67b27",
+      "title": "Cyclic Supports in Recursive Bipolar Argumentation Frameworks: Semantics and LP Mapping",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "authorId": "50332095"
+        },
+        {
+          "name": "S. Greco",
+          "authorId": "2058080481"
+        },
+        {
+          "name": "Francesco Parisi",
+          "authorId": "2237787646"
+        },
+        {
+          "name": "I. Trubitsyna",
+          "authorId": "144727023"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract Dung\u2019s abstract Argumentation Framework (AF) has emerged as a key formalism for argumentation in artificial intelligence. It has been extended in several directions, including the possibility to express supports, leading to the development of the Bipolar Argumentation Framework (BAF), and recursive attacks and supports, resulting in the Recursive BAF (Rec-BAF). Different interpretations of supports have been proposed, whereas for Rec-BAF (where the target of attacks and supports may also be attacks and supports) even different semantics for attacks have been defined. However, the semantics of these frameworks have either not been defined in the presence of support cycles or are often quite intricate in terms of the involved definitions. We encompass this limitation and present classical semantics for general BAF and Rec-BAF and show that the semantics for specific BAF and Rec-BAF frameworks can be defined by very simple and intuitive modifications of that defined for the case of AF. This is achieved by providing a modular definition of the sets of defeated and acceptable elements for each AF-based framework. We also characterize, in an elegant and uniform way, the semantics of general BAF and Rec-BAF in terms of logic programming and partial stable model semantics.",
+      "citationCount": 2,
+      "doi": "10.1017/S1471068424000310",
+      "arxivId": "2408.08916",
+      "url": "https://www.semanticscholar.org/paper/6178937dba1b61fcbdeda88f3772842de9d67b27",
+      "venue": "Theory and Practice of Logic Programming",
+      "journal": {
+        "name": "Theory and Practice of Logic Programming",
+        "pages": "921 - 941",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a5972b138917c62bb1645d2f4d29af4cdf5a5095",
+      "title": "On General Epistemic Abstract Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "authorId": "50332095"
+        },
+        {
+          "name": "S. Greco",
+          "authorId": "2058080481"
+        },
+        {
+          "name": "Francesco Parisi",
+          "authorId": "2237787646"
+        },
+        {
+          "name": "I. Trubitsyna",
+          "authorId": "144727023"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.5555/3635637.3663079",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a5972b138917c62bb1645d2f4d29af4cdf5a5095",
+      "venue": "Adaptive Agents and Multi-Agent Systems",
+      "journal": {
+        "pages": "2117-2119"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4c69694f9d9641d64b0331f7fbaffeef8b55587a",
+      "title": "Temporal duration-based probabilistic argumentation frameworks",
+      "authors": [
+        {
+          "name": "Stefano Bistarelli",
+          "authorId": "2273099748"
+        },
+        {
+          "name": "Victor David",
+          "authorId": "2339276547"
+        },
+        {
+          "name": "Francesco Santini",
+          "authorId": "1394239898"
+        },
+        {
+          "name": "Carlo Taticchi",
+          "authorId": "2328403395"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1093/logcom/exae039",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4c69694f9d9641d64b0331f7fbaffeef8b55587a",
+      "venue": "Journal of Logic and Computation",
+      "journal": {
+        "name": "J. Log. Comput.",
+        "pages": "1399-1429",
+        "volume": "34"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4f5d2ef65e53f8388c6b6e874fe8b6865cdfca98",
+      "title": "Credulous Acceptance in High-Order Argumentation Frameworks with Necessities: An Incremental Approach (Abstract Reprint)",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "authorId": "50332095"
+        },
+        {
+          "name": "Andrea Cohen",
+          "authorId": "145509579"
+        },
+        {
+          "name": "Sebastian Gottifredi",
+          "authorId": "2975186"
+        },
+        {
+          "name": "S. Greco",
+          "authorId": "2058080481"
+        },
+        {
+          "name": "Francesco Parisi",
+          "authorId": "2237787646"
+        },
+        {
+          "name": "Guillermo Ricardo Simari",
+          "authorId": "69362913"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Argumentation is an important research area in the field of AI. There is a substantial amount of work on different aspects of Dung's abstract Argumentation Framework (AF). Two relevant aspects considered separately so far are: i) extending the framework to account for recursive attacks and supports, and ii) considering dynamics, i.e., AFs evolving over time. In this paper, we jointly deal with these two aspects. We focus on High-Order Argumentation Frameworks with Necessities (HOAFNs) which allow for attack and support relations (interpreted as necessity) not only between arguments but also targeting attacks and supports at any level. We propose an approach for the incremental evaluation of the credulous acceptance problem in HOAFNs, by \u201cincrementally\u201d computing an extension (a set of accepted arguments, attacks and supports), if it exists, containing a given goal element in an updated HOAFN. In particular, we are interested in monitoring the credulous acceptance of a given argument, attack or support (goal) in an evolving HOAFN. Thus, our approach assumes to have a HOAFN \u0394, a goal \u03f1 occurring in \u0394, an extension E for \u0394 containing \u03f1, and an update u establishing some changes in the original HOAFN, and uses the extension for first checking whether the update is relevant; for relevant updates, an extension of the updated HOAFN containing the goal is computed by translating the problem to the AF domain and leveraging on AF solvers. We provide formal results for our incremental approach and empirically show that it outperforms the evaluation from scratch of the credulous acceptance problem for an updated HOAFN.",
+      "citationCount": 0,
+      "doi": "10.24963/ijcai.2025/1222",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4f5d2ef65e53f8388c6b6e874fe8b6865cdfca98",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "10948"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "da47150d1d882744b7b211bf416ef2c48315a1a4",
+      "title": "On Explainable Acceptance in Probabilistic and Incomplete Abstract Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "authorId": "50332095"
+        },
+        {
+          "name": "M. Calautti",
+          "authorId": "2054066"
+        },
+        {
+          "name": "S. Greco",
+          "authorId": "2058080481"
+        },
+        {
+          "name": "Francesco Parisi",
+          "authorId": "2237787646"
+        },
+        {
+          "name": "I. Trubitsyna",
+          "authorId": "144727023"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/da47150d1d882744b7b211bf416ef2c48315a1a4",
+      "venue": "AI\u00b3@AI*IA",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "05df00122b90b58377060a45676e262100692c42",
+      "title": "Incomplete Bipolar Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "Bettina Fazzinga",
+          "authorId": "1726971"
+        },
+        {
+          "name": "Sergio Flesca",
+          "authorId": "1730314"
+        },
+        {
+          "name": "F. Furfaro",
+          "authorId": "2451030"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Dung\u2019s Abstract Argumentation Framework has been generalized in various directions. We combine two of these generalizations: Bipolar Argumentation Frameworks (BAFs), where a relation representing supports between arguments is added, and Incomplete Argumen-tation Frameworks (IAFs), where the existence of arguments and attacks may be uncertain. We discuss how the notion of completion of IAFs can be adapted to take into account the nature of the support relation, providing a couple of alternative definitions. After that, we analyse the impact of choosing among these alternatives on the complexity of argument acceptability problems. Finally, we give a logical encoding of our new framework in the Dynamic Logic of Propositional Assignments.",
+      "citationCount": 3,
+      "doi": "10.3233/FAIA230332",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/05df00122b90b58377060a45676e262100692c42",
+      "venue": "European Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "684-691"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "b197f157981a53c7d659f12168e3cfc357fdf8cb",
+      "title": "Argumentation Frameworks with Attack Classification",
+      "authors": [
+        {
+          "name": "Alexandros Vassiliades",
+          "authorId": "1471858890"
+        },
+        {
+          "name": "G. Flouris",
+          "authorId": "1684066"
+        },
+        {
+          "name": "T. Patkos",
+          "authorId": "2338745"
+        },
+        {
+          "name": "Antonis Bikakis",
+          "authorId": "1703632"
+        },
+        {
+          "name": "Nick Bassiliades",
+          "authorId": "143804820"
+        },
+        {
+          "name": "D. Plexousakis",
+          "authorId": "1705358"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Abstract argumentation frameworks (AAFs), introduced by Dung (1995, Artif. Intell. , 228, 321\u2013357), enabled a new way of reasoning with arguments, which does not take into account the internal structure of arguments but only how they are related to each other. The only form of relation considered in AAFs is a binary attack relation on the set of arguments. From the definitions of acceptability semantics of AAFs, it is obvious that attacks actually have a dual role: on the one hand, they generate conflicts; on the other hand, they can defend other arguments from attacks. In this paper, we propose a framework, where the modeller can explicitly specify the role of each attack. For this purpose, we define a set of conflict-generating attacks R C and a set of defending attacks R d , as well as a family of semantics that considers the role of each attack while determining which arguments are attacked, which are defended and which will be included in each extension. We study the formal properties of the proposed framework and semantics, show that our framework is a generalization of AAFs and assess its semantics against a set of principles. Finally, we present a web application that provides an interface for creating custom argumentation frameworks and uses ASP to compute their extensions.",
+      "citationCount": 1,
+      "doi": "10.1093/logcom/exac092",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b197f157981a53c7d659f12168e3cfc357fdf8cb",
+      "venue": "Journal of Logic and Computation",
+      "journal": {
+        "name": "J. Log. Comput.",
+        "pages": "192-229",
+        "volume": "33"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ac08efc6ce2da1ea2d3bf5e5c61f65b595a6d25f",
+      "title": "Temporal Probabilistic Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "Stefano Bistarelli",
+          "authorId": "9489085"
+        },
+        {
+          "name": "Victor David",
+          "authorId": "1988391"
+        },
+        {
+          "name": "Francesco Santini",
+          "authorId": "1394239898"
+        },
+        {
+          "name": "Carlo Taticchi",
+          "authorId": "2121679799"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ac08efc6ce2da1ea2d3bf5e5c61f65b595a6d25f",
+      "venue": "Italian Conference on Computational Logic",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b687d6cb5577d3c3502715bfddf22b161f568ef7",
+      "title": "THE STATUS OF ARGUMENTS IN ABSTRACT ARGUMENTATION FRAMEWORKS. A TABLEAUX METHOD",
+      "authors": [
+        {
+          "name": "G. Bodanza",
+          "authorId": "2084029788"
+        },
+        {
+          "name": "Enrique HERN\u00c1NDEZ-MANFREDINI",
+          "authorId": "2224416947"
+        }
+      ],
+      "year": 2023,
+      "abstract": ": Dung\u2019s argumentation frameworks are formalisms widely used to model interaction among arguments. Although their study has been profusely developed in the field of Artificial Intelligence, it is not common to see its treatment among those less connected to computer science within the logical-philosophical community. In this paper we propose to bring to that audience a proof-theory for argument justification based on tableaux, very similar to those the Logic students are familiar with. The tableaux enable to calculate whether an argument or subset of arguments are accepted or rejected in accordance to Dung\u2019s preferred and grounded extension-based semantics. Sound-ness and completeness results regarding those semantics are provided.",
+      "citationCount": 0,
+      "doi": "10.1590/0100-6045.2023.V46N2.GE",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b687d6cb5577d3c3502715bfddf22b161f568ef7",
+      "venue": "Manuscrito",
+      "journal": {
+        "name": "Manuscrito"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "649bc10c4f34a35840dcd050d318ede28aeb9cdb",
+      "title": "RAFDivider: a distributed algorithm for computing semantics in higher-order abstract argumentation frameworks",
+      "authors": [
+        {
+          "name": "S. Doutre",
+          "authorId": "1725479"
+        },
+        {
+          "name": "M. Lagasquie-Schiex",
+          "authorId": "1390014934"
+        }
+      ],
+      "year": 2023,
+      "abstract": "ABSTRACT This work is related to a computational issue concerning an enriched abstract argumentation framework called RAF (\u2018Recursive Argumentation Framework\u2019). A RAF is composed of a set of arguments and of a binary relation which models the attacks as in Dung's seminal argumentation framework. The main difference between Dung's framework and a RAF is the fact that a RAF is able to take into account higher-order interactions (i.e. an attack can target an attack and not only an argument). This kind of framework is recent enough for an efficient computation of its main semantics to remain an open question. In this paper, we propose one of the first algorithms dedicated to this issue, RAFDivider. We prove its soundness and its completeness.",
+      "citationCount": 0,
+      "doi": "10.1080/11663081.2023.2244715",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/649bc10c4f34a35840dcd050d318ede28aeb9cdb",
+      "venue": "J. Appl. Non Class. Logics",
+      "journal": {
+        "name": "Journal of Applied Non-Classical Logics",
+        "pages": "244 - 297",
+        "volume": "33"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "845c677f45aea95a8d87ca997553f6672c9c8eb4",
+      "title": "AGM Meets Abstract Argumentation: Contraction for Dung Frameworks",
+      "authors": [
+        {
+          "name": "Ringo Baumann",
+          "authorId": "40491206"
+        },
+        {
+          "name": "Felix Linker",
+          "authorId": "116226430"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-030-19570-0_3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/845c677f45aea95a8d87ca997553f6672c9c8eb4",
+      "venue": "European Conference on Logics in Artificial Intelligence",
+      "journal": {
+        "pages": "41-57"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "eccbfb775274d6f60307cce1ca2606dada2d2a93",
+      "title": "Incomplete Argumentation Frameworks: Properties and Complexity",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "authorId": "50332095"
+        },
+        {
+          "name": "S. Greco",
+          "authorId": "2058080481"
+        },
+        {
+          "name": "F. Parisi",
+          "authorId": "144308642"
+        },
+        {
+          "name": "I. Trubitsyna",
+          "authorId": "144727023"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Dung\u2019s Argumentation Framework (AF) has been extended in several directions, including the possibility of representing unquantified uncertainty about the existence of arguments and attacks.\nThe framework resulting from such an extension is called incomplete AF (iAF). In this paper, we first introduce three new satisfaction problems named totality, determinism and functionality, and investigate their computational complexity for both AF and iAF under several semantics.\nWe also investigate the complexity of credulous and skeptical acceptance in iAF under semi-stable semantics\u2014a problem left open in the literature.\nWe then show that any iAF can be rewritten into an equivalent one where either only (unattacked) arguments or only attacks are uncertain. \nFinally, we relate iAF to probabilistic argumentation framework, where uncertainty is quantified.",
+      "citationCount": 30,
+      "doi": "10.1609/aaai.v36i5.20483",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eccbfb775274d6f60307cce1ca2606dada2d2a93",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "5451-5460"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ac5d4af8d3d8ac3b7ea5048025564ea497492680",
+      "title": "Abstract Argumentation Frameworks with Marginal Probabilities",
+      "authors": [
+        {
+          "name": "Bettina Fazzinga",
+          "authorId": "1726971"
+        },
+        {
+          "name": "Sergio Flesca",
+          "authorId": "1730314"
+        },
+        {
+          "name": "F. Furfaro",
+          "authorId": "2451030"
+        }
+      ],
+      "year": 2022,
+      "abstract": "In the context of probabilistic AAFs, we intro-\n\nduce AAFs with marginal probabilities (mAAFs)\n\nrequiring only marginal probabilities of argu-\n\nments/attacks to be specified and not relying on the\n\nindependence assumption. Reasoning over mAAFs\n\nrequires taking into account multiple probability\n\ndistributions over the possible worlds, so that the\n\nprobability of extensions is not determined by a\n\nunique value, but by an interval. We focus on the\n\nproblems of computing the max and min probabil-\n\nities of extensions over mAAFs under Dung\u2019s se-\n\nmantics, characterize their complexity, and provide\n\nclosed formulas for polynomial cases.",
+      "citationCount": 14,
+      "doi": "10.24963/ijcai.2022/362",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ac5d4af8d3d8ac3b7ea5048025564ea497492680",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "2613-2619"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "794d108c43d49e4b2b3d23675daa91cf8ad2c743",
+      "title": "Equivalence in Argumentation Frameworks with a Claim-Centric View - Classical Results with Novel Ingredients",
+      "authors": [
+        {
+          "name": "Ringo Baumann",
+          "authorId": "40491206"
+        },
+        {
+          "name": "Anna Rapberger",
+          "authorId": "1394218378"
+        },
+        {
+          "name": "Markus Ulbricht",
+          "authorId": "1861340584"
+        }
+      ],
+      "year": 2022,
+      "abstract": "A common feature of non-monotonic logics is that the classical notion of equivalence does not preserve the intended meaning in light of additional information. Consequently, the term strong equivalence was coined in the literature and thoroughly investigated. In the present paper, the knowledge representation formalism under consideration are claim-augmented argumentation frameworks (CAFs) which provide a formal basis to analyze conclusion-oriented problems in argumentation by adapting a claim-focused perspective. CAFs extend Dung AFs by associating a claim to each argument representing its conclusion. In this paper, we investigate both ordinary and strong equivalence in CAFs. Thereby, we take the fact into account that one might either be interested in the actual arguments or their claims only. The former point of view naturally yields an extension of strong equivalence for AFs to the claim-based setting while the latter gives rise to a novel equivalence notion which is genuine for CAFs. We tailor, examine and compare these notions and obtain a comprehensive study of this matter for CAFs. We conclude by investigating the computational complexity of naturally arising decision problems.",
+      "citationCount": 7,
+      "doi": "10.1609/aaai.v36i5.20486",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/794d108c43d49e4b2b3d23675daa91cf8ad2c743",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "name": "J. Artif. Intell. Res.",
+        "pages": "891-948",
+        "volume": "77"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ee49969fc7b3208c19d476b779cd9203d2e596f7",
+      "title": "Deletion-Backdoors for Argumentation Frameworks with Collective Attacks",
+      "authors": [
+        {
+          "name": "Wolfgang Dvo\u0159\u00e1k",
+          "authorId": "2296684"
+        },
+        {
+          "name": "Matthias K\u00f6nig",
+          "authorId": "121660626"
+        },
+        {
+          "name": "S. Woltran",
+          "authorId": "1743085"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ee49969fc7b3208c19d476b779cd9203d2e596f7",
+      "venue": "SAFA@COMMA",
+      "journal": {
+        "pages": "98-110"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bc78e1fc8cc7c6cd92b2876bfb54cfb6b3f40f74",
+      "title": "Argumentation frameworks with necessities and their relationship with logic programs",
+      "authors": [
+        {
+          "name": "Farid Nouioua",
+          "authorId": "1783796"
+        },
+        {
+          "name": "Sara Nouioua-Boutouhami",
+          "authorId": "1403991446"
+        }
+      ],
+      "year": 2022,
+      "abstract": "This paper presents a comprehensive study of argumentation frameworks with necessities (AFNs), a bipolar extension of Dung Abstract argumentation frameworks (AFs) where the support relation captures a positive interaction between arguments having the meaning of necessity: the acceptance of an argument may require the acceptance of other argument(s). The paper discusses new main acceptability semantics for AFNs and their characterization both by a direct approach and a labelling approach. It examines the relationship between AFNs and Dung AFs and shows the gain provided by the former in terms of concision. Finally, the paper shows how to represent an AFN as a normal logic program (LP) and vice versa and in both cases establishes a one-to-one correspondence between extensions under the main acceptability semantics (except for semi-stable semantics where the correspondence is not completely full) of an AFN and particular cases of 3-valued stable models of normal LPs.",
+      "citationCount": 1,
+      "doi": "10.3233/AAC-210028",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bc78e1fc8cc7c6cd92b2876bfb54cfb6b3f40f74",
+      "venue": "Argument Comput.",
+      "journal": {
+        "name": "Argument & Computation",
+        "pages": "17 - 58",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f115eb5e76047f0585d2a2cac63cbb08c51a418d",
+      "title": "Argumentation Frameworks - A Brief Review",
+      "authors": [
+        {
+          "name": "Ahmed T. Sadiq",
+          "authorId": "2265878582"
+        },
+        {
+          "name": "Hasanen S. Abdulah",
+          "authorId": "1412809989"
+        },
+        {
+          "name": "A. T. Kareem",
+          "authorId": "2143794372"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The main aim of this article is to provide a short review of the most important argumentation frameworks (AFs) systems being used. This paper presents the overall thought of unique argumentation, featuring the work way of these theoretical systems in the argumentation interaction and surveys the first Dung structures. It introduces how these systems give acceptable arguments by focused on the argumentation frameworks structures and how to deal with the arguments and the basic rules to give the result. Finally, it surveys the idea of theoretical rationalistic structures, quite possibly the broadest frameworks for dynamic argumentation, and gives a short description of several argumentation frameworks that are more famous.",
+      "citationCount": 1,
+      "doi": "10.3991/ijoe.v18i02.28023",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f115eb5e76047f0585d2a2cac63cbb08c51a418d",
+      "venue": "Int. J. Online Biomed. Eng.",
+      "journal": {
+        "name": "Int. J. Online Biomed. Eng.",
+        "pages": "55-70",
+        "volume": "18"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "222c22a5c64b8e2ef96093fb51617a9563c6bc57",
+      "title": "Computing the Labellings of Higher-Order Abstract Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "S. Doutre",
+          "authorId": "1725479"
+        },
+        {
+          "name": "M. Lagasquie-Schiex",
+          "authorId": "1390014934"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/222c22a5c64b8e2ef96093fb51617a9563c6bc57",
+      "venue": "SAFA@COMMA",
+      "journal": {
+        "pages": "45-58"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1d221445b7cafb4ca79efb2786a33b1ed9b431d0",
+      "title": "Abstract solvers for Dung\u2019s argumentation frameworks",
+      "authors": [
+        {
+          "name": "R\u00e9mi Brochenin",
+          "authorId": "2688461"
+        },
+        {
+          "name": "Thomas Linsbichler",
+          "authorId": "3018639"
+        },
+        {
+          "name": "M. Maratea",
+          "authorId": "1735029"
+        },
+        {
+          "name": "J. Wallner",
+          "authorId": "33553295"
+        },
+        {
+          "name": "S. Woltran",
+          "authorId": "1743085"
+        }
+      ],
+      "year": 2015,
+      "abstract": "Abstract solvers are a quite recent method to uniformly describe algorithms in a rigorous formal way via graphs. Compared to traditional methods like pseudo-code descriptions, abstract solvers have several advantages. In particular, they provide a uniform formal representation that allows for precise comparisons of different algorithms. Recently, this new methodology has proven successful in declarative paradigms such as Propositional Satisfiability and Answer Set Programming. In this paper, we apply this machinery to Dung\u2019s abstract argumentation frameworks. We first provide descriptions of several advanced algorithms for the preferred semantics in terms of abstract solvers. We also show how it is possible to obtain new abstract solutions by \u201ccombining\u201d concepts of existing algorithms by means of combining abstract solvers. Then, we implemented a new solving procedure based on our findings in cegartix, and call it cegartix+. We finally show that cegartix+ is competitive and complementary in its performance to cegartix on benchmarks of the first and second argumentation competition.",
+      "citationCount": 10,
+      "doi": "10.3233/AAC-170031",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1d221445b7cafb4ca79efb2786a33b1ed9b431d0",
+      "venue": "International Workshop on Theorie and Applications of Formal Argumentation",
+      "journal": {
+        "name": "Argument & Computation",
+        "pages": "41 - 72",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f75c659cc62fdee3008614097facab2030869743",
+      "title": "Argumentation Frameworks with Strong and Weak Constraints: Semantics and Complexity",
+      "authors": [
+        {
+          "name": "Gianvincenzo Alfano",
+          "authorId": "50332095"
+        },
+        {
+          "name": "S. Greco",
+          "authorId": "145042418"
+        },
+        {
+          "name": "F. Parisi",
+          "authorId": "144308642"
+        },
+        {
+          "name": "I. Trubitsyna",
+          "authorId": "144727023"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Dung's abstract Argumentation Framework (AF)\nhas emerged as a central formalism in formal argumentation.\nKey aspects of the success and popularity of Dung's framework include\nits simplicity and expressiveness.\nIntegrity constraints help to express domain knowledge in a compact \nand natural way, thus keeping easy the modeling task\neven for problems that otherwise would be hard to encode within an AF.\nIn this paper, after providing an intuitive semantics \nbased on Lukasiewicz's logic for AFs with (strong) constraints,\ncalled Constrained AFs (CAFs),\nwe propose Weak constrained AFs (WAFs) \nthat enhance CAFs with weak constraints. \nIntuitively, these constraints can be used to find ``optimal'' \nsolutions to problems defined through CAFs.\nWe provide a detailed complexity analysis of CAFs and WAFs,\nshowing that strong constraints do not increase the expressive \npower of AFs in most cases, \nwhile weak constraints systematically increase the expressive \npower of CAFs under several well-known argumentation semantics.",
+      "citationCount": 25,
+      "doi": "10.1609/aaai.v35i7.16768",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f75c659cc62fdee3008614097facab2030869743",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "6175-6184"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f656b1155fa2a78c5e971576fa9bc4ff34e42e60",
+      "title": "The Complexity Landscape of Claim-Augmented Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "Wolfgang Dvo\u0159\u00e1k",
+          "authorId": "2296684"
+        },
+        {
+          "name": "Alexander Gressler",
+          "authorId": "50620103"
+        },
+        {
+          "name": "Anna Rapberger",
+          "authorId": "1394218378"
+        },
+        {
+          "name": "S. Woltran",
+          "authorId": "1743085"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Claim-augmented argumentation frameworks (CAFs) provide a formal basis to analyze conclusion-oriented problems in argumentation by adapting a claim-focused perspective; they extend Dung AFs by associating a claim to each argument representing its conclusion. This additional layer offers various possibilities to generalize abstract argumentation semantics as the re-interpretation of arguments in terms of their claims can be performed at different stages in the evaluation of the framework: One approach is to perform the evaluation entirely at argument-level before interpreting arguments by their claims (inherited semantics); alternatively, one can perform certain steps in the process (e.g., maximization) already in terms of the arguments\u2019 claims (claim-level semantics). The inherent difference of these approaches not only potentially results in different outcomes but, as we will show in this paper, is also mirrored in terms of computational complexity. To this end, we provide a comprehensive complexity analysis of the four main reasoning problems with respect to claim-level variants of preferred, naive, stable, semi-stable and stage semantics and complete the complexity results of inherited semantics by providing corresponding results for semi-stable and stage semantics. Moreover, we show that deciding, whether for a given framework the two approaches of a semantics coincide (concurrence) can be surprisingly hard, ranging up to the third level of the polynomial hierarchy.",
+      "citationCount": 15,
+      "doi": "10.1609/aaai.v35i7.16782",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f656b1155fa2a78c5e971576fa9bc4ff34e42e60",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "name": "Artif. Intell.",
+        "pages": "103873",
+        "volume": "317"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c0ff67fddf442f9cec558779e92c3f1101ecc8f7",
+      "title": "Choices and their Consequences - Explaining Acceptable Sets in Abstract Argumentation Frameworks",
+      "authors": [
+        {
+          "name": "Ringo Baumann",
+          "authorId": "40491206"
+        },
+        {
+          "name": "Markus Ulbricht",
+          "authorId": "2065999557"
+        }
+      ],
+      "year": 2021,
+      "abstract": "We develop a notion of explanations for acceptance of arguments in an abstract argumentation framework.\n\nTo this end we show that extensions returned by Dung's standard semantics can be decomposed into\n\ni) non-deterministic choices made on even cycles of the given argumentation graph and then \n\nii) deterministic iteration of the so-called characteristic function. \n\nNaturally, the choice made in i) can be viewed as an explanation for the corresponding extension and thus the arguments it contains. \n\nWe proceed to propose desirable criteria a reasonable notion of an explanation should satisfy.\n\nWe present an exhaustive study of the newly introduced notion w.r.t. these criteria.\n\nFinally some interesting decision problems arise from our analysis and we examine their computational complexity, obtaining some surprising tractability results.",
+      "citationCount": 16,
+      "doi": "10.24963/kr.2021/11",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c0ff67fddf442f9cec558779e92c3f1101ecc8f7",
+      "venue": "International Conference on Principles of Knowledge Representation and Reasoning",
+      "journal": {
+        "pages": "110-119"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7afba10121d66a77761da6e8b0af816345a9bf22",
+      "title": "Graph-Classes of Argumentation Frameworks with Collective Attacks",
+      "authors": [
+        {
+          "name": "Wolfgang Dvo\u0159\u00e1k",
+          "authorId": "2296684"
+        },
+        {
+          "name": "Matthias K\u00f6nig",
+          "authorId": "121660626"
+        },
+        {
+          "name": "S. Woltran",
+          "authorId": "1743085"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1007/978-3-030-75775-5_1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7afba10121d66a77761da6e8b0af816345a9bf22",
+      "venue": "European Conference on Logics in Artificial Intelligence",
+      "journal": {
+        "pages": "3-17"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cd730bd9f8984c331af6f1d56d03aa79ea502f57",
+      "title": "A Unifying Four-State Labelling Semantics for Bridging Abstract Argumentation Frameworks and Belief Revision",
+      "authors": [
+        {
+          "name": "Stefano Bistarelli",
+          "authorId": "9489085"
+        },
+        {
+          "name": "Carlo Taticchi",
+          "authorId": "2121679799"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cd730bd9f8984c331af6f1d56d03aa79ea502f57",
+      "venue": "Italian Conference on Theoretical Computer Science",
+      "journal": {
+        "pages": "93-106"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ccb5d16e387f23350e583ba6ce369c1f6339610b",
+      "title": "Guaranteeing Admissibility of Abstract Argumentation Frameworks with Rationality and Feasibility Constraints",
+      "authors": [
+        {
+          "name": "Weiwei Chen",
+          "authorId": "2109820873"
+        }
+      ],
+      "year": 2021,
+      "abstract": "\n This paper considers the problem of under what circumstances an aggregation rule guarantees admissible sets of arguments that represent a good compromise between several extensions, i.e., sets of arguments of abstract argumentation frameworks each provided by a different individual. We start by showing that the preservation results of Dung\u2019s admissibility, graded admissibility and strong admissibility during the aggregation of extensions are negative. To overcome such negative results, we define a model for extension aggregation that clearly separates the constraint supposed to be satisfied by individuals and the constraint that must be met by the collective decision. Using this model, we show that the majority rule guarantees admissible sets on profiles that satisfy a variant of Dung\u2019s admissibility, as well as profiles of extensions with some specific characteristics.",
+      "citationCount": 4,
+      "doi": "10.1093/LOGCOM/EXAB011",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ccb5d16e387f23350e583ba6ce369c1f6339610b",
+      "venue": "Journal of Logic and Computation",
+      "journal": {
+        "name": "J. Log. Comput.",
+        "pages": "2133-2158",
+        "volume": "31"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8feb0b7fc40030b770d13854ff4ef843060e1bb7",
+      "title": "Abstract Argumentation Frameworks with Domain Assignments",
+      "authors": [
+        {
+          "name": "Alexandros Vassiliades",
+          "authorId": "1471858890"
+        },
+        {
+          "name": "T. Patkos",
+          "authorId": "2338745"
+        },
+        {
+          "name": "G. Flouris",
+          "authorId": "1684066"
+        },
+        {
+          "name": "Antonis Bikakis",
+          "authorId": "1703632"
+        },
+        {
+          "name": "Nick Bassiliades",
+          "authorId": "143804820"
+        },
+        {
+          "name": "D. Plexousakis",
+          "authorId": "1705358"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Argumentative discourse rarely consists of opinions whose claims apply universally. As with logical statements, an argument applies to specific objects in the universe or relations among them, and may have exceptions. In this paper, we propose\n\nan argumentation formalism that allows associating arguments with a domain of application. Appropriate semantics are given, which formalise the notion of partial argument acceptance, i.e. the set of objects or relations that an argument can be applied\n\nto. We show that our proposal is in fact equivalent to the standard Argumentation Frameworks of Dung, but allows a more intuitive and compact expression of some core concepts of commonsense and non-monotonic reasoning, such as the scope of an argument, exceptions, relevance and others.",
+      "citationCount": 6,
+      "doi": "10.24963/ijcai.2021/286",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8feb0b7fc40030b770d13854ff4ef843060e1bb7",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "2076-2082"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

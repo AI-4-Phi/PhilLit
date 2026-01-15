@@ -1,0 +1,526 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "ranking theory Spohn belief revision",
+  "results": [
+    {
+      "paperId": "4e9bb129e4bb6d11c57aa40672a5eb9d11707828",
+      "title": "Belief Revision in Dynamic Epistemic Logic and Ranking Theory",
+      "authors": [
+        {
+          "name": "Geisteswissenschaftliche Sektion",
+          "authorId": "2084687603"
+        },
+        {
+          "name": "Fachbereich Philosophie",
+          "authorId": "2083795852"
+        },
+        {
+          "name": "Hauptfach Philosophie",
+          "authorId": "104320505"
+        },
+        {
+          "name": "F. Huber",
+          "authorId": "48846831"
+        },
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4e9bb129e4bb6d11c57aa40672a5eb9d11707828",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "22a082a431da1b961926fb5c54bc6284af1b0a9e",
+      "title": "AGM, Ranking Theory, and the Many Ways to Cope with Examples",
+      "authors": [
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1007/978-94-007-7759-0_6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/22a082a431da1b961926fb5c54bc6284af1b0a9e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "95-118",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d949e3eb802d60edcc523bf1bf49332176e987db",
+      "title": "Ranking Functions, AGM Style",
+      "authors": [
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 1999,
+      "abstract": null,
+      "citationCount": 36,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d949e3eb802d60edcc523bf1bf49332176e987db",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5a4dd380512758a9caa0e31b98977b59bdf49e7c",
+      "title": "Multiple contraction revisited",
+      "authors": [
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.1007/978-90-481-3263-8_24",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5a4dd380512758a9caa0e31b98977b59bdf49e7c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "279-288",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "35b1f3b98d4f6b64790359095bab3a0550a16e29",
+      "title": "Belief Revision II: Ranking Theory",
+      "authors": [
+        {
+          "name": "F. Huber",
+          "authorId": "48846831"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1111/PHC3.12047",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/35b1f3b98d4f6b64790359095bab3a0550a16e29",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy Compass",
+        "pages": "613-621",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "88631a5e9379fc25c4c9808893081f832705a4c9",
+      "title": "Abw\u00e4gung, \u201eBelief Revision\u201c und Rangtheorie",
+      "authors": [
+        {
+          "name": "Jan-R. Sieckmann",
+          "authorId": "2302230"
+        }
+      ],
+      "year": 2024,
+      "abstract": "An approach to analyse the structure of balancing is the idea of defeasible reasoning. This is often explained by using a non-monotonic logic, admitting that new information can invalidate formerly valid inferences. A more fruitful alternative seems to be the the- ory of belief revision, which allows not only invalidating inferences, but to define how beliefs should change facing new information. A sophisticated version of belief revi- sion theory is developed by Wolfgang Spohn in his \u201cranking theory\u201d. The issue of this paper is to analyse how this \u201cranking theory\u201d fits into the structure of normative argu- mentation, distinguishing four types of balancing: epistemic, normative, relative, and intersubjective balancing.",
+      "citationCount": 0,
+      "doi": "10.5771/2364-1355-2024-1-80",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/88631a5e9379fc25c4c9808893081f832705a4c9",
+      "venue": "Rechtsphilosophie",
+      "journal": {
+        "name": "Rechtsphilosophie"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f547ecc3f60d05b38a5e8da41729d3d6e8292a1a",
+      "title": "Ranking Theory",
+      "authors": [
+        {
+          "name": "F. Huber",
+          "authorId": "48846831"
+        },
+        {
+          "name": "J. Weisberg",
+          "authorId": "40151605"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f547ecc3f60d05b38a5e8da41729d3d6e8292a1a",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "00879fd7c825eaec1d728557df0d3492319c292f",
+      "title": "Iterated Belief Contraction from First Principles",
+      "authors": [
+        {
+          "name": "Abhaya C. Nayak",
+          "authorId": "2726388"
+        },
+        {
+          "name": "R. Goebel",
+          "authorId": "40072782"
+        },
+        {
+          "name": "M. Orgun",
+          "authorId": "145572420"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 19,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/00879fd7c825eaec1d728557df0d3492319c292f",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "2568-2573"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8f8b3482bbf1716f1a9ab1e7c0ae5762ef51ed6e",
+      "title": "The Laws of Belief - Ranking Theory and Its Philosophical Applications",
+      "authors": [
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 298,
+      "doi": "10.1093/acprof:oso/9780199697502.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8f8b3482bbf1716f1a9ab1e7c0ae5762ef51ed6e",
+      "venue": "",
+      "journal": {
+        "pages": "I-XV, 1-598"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "89ccad6cbc71faed6c89e18687c3d4c410b982f6",
+      "title": "Total Preorders vs Ranking Functions under Belief Revision - the Dynamics of Empty Layers",
+      "authors": [
+        {
+          "name": "G. Kern-Isberner",
+          "authorId": "1397424182"
+        },
+        {
+          "name": "Alexander Hahn",
+          "authorId": "2327894185"
+        },
+        {
+          "name": "J. Haldimann",
+          "authorId": "150147280"
+        },
+        {
+          "name": "C. Beierle",
+          "authorId": "1722911"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Total preorders and Spohn\u2019s ranking functions are most popular semantic structures in nonmonotonic reasoning and belief revision. Each ranking function uniquely induces a total preorder, while each total preorder corresponds to infinitely many ranking functions because of the empty layers that ranking functions may have. In this paper, we adopt a dynamic perspective and investigate the role of empty layers in belief revision scenarios. We strengthen the notion of (inferential) equivalence of ranking functions by introducing revision equivalence which postulates the equivalence of ranking functions after (most general) revision operations. Moreover, we single out so-called linearly equivalent ranking functions as prototypes of ranking functions with regularly inserted empty layers. Such ranking functions are most suitable to provide an invariance property for revision equivalence which claims that linear equivalence should be preserved. We show that strategic c-revisions ensure (conditional) revision equivalence of linearly equivalent ranking functions if the strategies are adequately chosen, whereas the Darwiche-Pearl postulates for iterated revision alone are not enough to guarantee revision equivalence of ranking functions. \n\nWe evaluate various other iterated revision approaches from the literature with respect to revision equivalence and preserving linear equivalence under revision. Furthermore, we present an approach to defining equivalence preserving revision operators for ranking functions from revision operators for total preorders.",
+      "citationCount": 6,
+      "doi": "10.24963/kr.2024/47",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/89ccad6cbc71faed6c89e18687c3d4c410b982f6",
+      "venue": "International Conference on Principles of Knowledge Representation and Reasoning",
+      "journal": {
+        "name": "Proceedings of the TwentyFirst International Conference on Principles of Knowledge Representation and Reasoning"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "0f3a1e83656e43d38cdd0ab0260d89d66496d3f8",
+      "title": "A Survey of Ranking Theory",
+      "authors": [
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 67,
+      "doi": "10.1007/978-1-4020-9198-8_8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0f3a1e83656e43d38cdd0ab0260d89d66496d3f8",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "185-228",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ee410d46a606eab89092014dd41ad20cc9d5c1a5",
+      "title": "Wolfgang Spohn, The Laws of Belief: Ranking Theory and its Philosophical Implications, Oxford: Oxford University Press, 2012, 624 pp., \u00a387 (hardback), ISBN 9780199697502.",
+      "authors": [
+        {
+          "name": "J. Chandler",
+          "authorId": "32371926"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1111/1746-8361.12173",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ee410d46a606eab89092014dd41ad20cc9d5c1a5",
+      "venue": "",
+      "journal": {
+        "name": "Dialectica",
+        "pages": "141-146",
+        "volume": "71"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "65b6971bb97b07f25269e527ddfe8db4775a0237",
+      "title": "The Laws of Belief: Ranking Theory & its Philosophical Applications, by Wolfgang Spohn.",
+      "authors": [
+        {
+          "name": "A. Paseau",
+          "authorId": "2650388"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1093/MIND/FZW047",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/65b6971bb97b07f25269e527ddfe8db4775a0237",
+      "venue": "",
+      "journal": {
+        "name": "Mind",
+        "pages": "273-278",
+        "volume": "126"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "594db4ca6522eb5a8c8f24fa7bf7fd50631655a9",
+      "title": "Belief Revision in Dynamic Epistemic Logic and Ranking Theory",
+      "authors": [
+        {
+          "name": "P. Fritz",
+          "authorId": "7270700"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/594db4ca6522eb5a8c8f24fa7bf7fd50631655a9",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1c3ddceed83080f2520114c15efc489368767fb4",
+      "title": "Knightian Uncertainty Meets Ranking Theory",
+      "authors": [
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/S41412-017-0060-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c3ddceed83080f2520114c15efc489368767fb4",
+      "venue": "",
+      "journal": {
+        "name": "Homo Oeconomicus",
+        "pages": "293-311",
+        "volume": "34"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8c648aab974d7cb1b48e039049e2717e27656d60",
+      "title": "Generalized Ranking Kinematics for Iterated Belief Revision",
+      "authors": [
+        {
+          "name": "Meliha Sezgin",
+          "authorId": "1740606895"
+        },
+        {
+          "name": "G. Kern-Isberner",
+          "authorId": "1397424182"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8c648aab974d7cb1b48e039049e2717e27656d60",
+      "venue": "The Florida AI Research Society",
+      "journal": {
+        "pages": "587-592"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "888d8f81ee12fa90f9aea346bd073442ca8ab27b",
+      "title": "Knightian Uncertainty Meets Ranking Theory",
+      "authors": [
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s41412-017-0060-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/888d8f81ee12fa90f9aea346bd073442ca8ab27b",
+      "venue": "Homo Oeconomicus",
+      "journal": {
+        "name": "Homo Oeconomicus",
+        "pages": "293 - 311",
+        "volume": "34"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3af83f7c7c54baedfc6478c1ef5fa16dccdc34d0",
+      "title": "An Accuracy Argument in Favor of Ranking Theory",
+      "authors": [
+        {
+          "name": "Eric Raidl",
+          "authorId": "1830154"
+        },
+        {
+          "name": "W. Spohn",
+          "authorId": "145522250"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/s10992-019-09518-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3af83f7c7c54baedfc6478c1ef5fa16dccdc34d0",
+      "venue": "Journal of Philosophical Logic",
+      "journal": {
+        "name": "Journal of Philosophical Logic",
+        "pages": "283 - 313",
+        "volume": "49"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6b50feca8f41dcb1e20f0204002be044c50454f0",
+      "title": "Review of Wolfgang Spohn, The Laws of Belief: Ranking Theory and Its Philosophical Applications (Oxford University Press 2012)",
+      "authors": [
+        {
+          "name": "F. Huber",
+          "authorId": "48846831"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6b50feca8f41dcb1e20f0204002be044c50454f0",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e5d0c5ece4019457d55ee15db907506fdf41be7a",
+      "title": "Bridging Ranking Theory and the Stability Theory of Belief",
+      "authors": [
+        {
+          "name": "Eric Raidl",
+          "authorId": "1830154"
+        },
+        {
+          "name": "Niels Skovgaard-Olsen",
+          "authorId": "1399156368"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1007/s10992-016-9411-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e5d0c5ece4019457d55ee15db907506fdf41be7a",
+      "venue": "Journal of Philosophical Logic",
+      "journal": {
+        "name": "Journal of Philosophical Logic",
+        "pages": "577 - 609",
+        "volume": "46"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

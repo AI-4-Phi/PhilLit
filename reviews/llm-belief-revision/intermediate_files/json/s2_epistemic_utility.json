@@ -1,0 +1,499 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "epistemic utility arguments accuracy",
+  "results": [
+    {
+      "paperId": "ab66b91b6e3422887d485601e8b571ebdf53596d",
+      "title": "Epistemic Utility Theory and the Aim of Belief",
+      "authors": [
+        {
+          "name": "J. Carr",
+          "authorId": "152307027"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 51,
+      "doi": "10.1111/PHPR.12436",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab66b91b6e3422887d485601e8b571ebdf53596d",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy and Phenomenological Research",
+        "pages": "511-534",
+        "volume": "95"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e7904ad196f32bdd537c0d6ddf2ffc349f89e88a",
+      "title": "Accuracy, probabilism and Bayesian update in infinite domains",
+      "authors": [
+        {
+          "name": "A. Pruss",
+          "authorId": "1792175"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/s11229-022-03938-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e7904ad196f32bdd537c0d6ddf2ffc349f89e88a",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "volume": "200"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dd7040e0a0f9887162f8096e4152b95712d67fda",
+      "title": "Can All-Accuracy Accounts Justify Evidential Norms?",
+      "authors": [
+        {
+          "name": "Christopher J. G. Meacham",
+          "authorId": "40701389"
+        }
+      ],
+      "year": 2018,
+      "abstract": "Meacham takes aim at the epistemic utility theory picture of epistemic norms where epistemic utility functions measure the value of degrees of belief and where the norms encode ways of adopting non-dominated degrees of belief. He focuses on a particularly popular subclass of such views where epistemic utility is determined solely by the accuracy of degrees of belief. Meacham argues that these types of epistemic utility arguments for norms are (i) not compatible with each other (so not all can be correct), (ii) do not solely rely on accuracy considerations, and (iii) are not able to capture intuitive norms about how we ought to respond to evidence.",
+      "citationCount": 3,
+      "doi": "10.1093/OSO/9780198779681.003.0008",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dd7040e0a0f9887162f8096e4152b95712d67fda",
+      "venue": "Oxford Scholarship Online",
+      "journal": {
+        "name": "Oxford Scholarship Online"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6207e639bfe0e5e1224dd9a95cbe70fe7a36450d",
+      "title": "Leveling Down Legal Resources: Why Epistemic Arguments Fail",
+      "authors": [
+        {
+          "name": "Amin Ebrahimi Afrouzi",
+          "authorId": "2317359913"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract The rich evade conviction more often in criminal trials than the poor. They also win more often in civil cases against the poor. Given that money buys better lawyers and better lawyers are instrumental in winning in adversarial trials, the rich have a structural advantage in laissez-faire trial systems. Such inequality is concerning. In a landmark article, Alan Wertheimer argues that we should level down legal resources in civil cases on the basis that doing so increases the adversarial system\u2019s accuracy\u2014that is, its chance of reaching correct decisions. In a more recent article, along similar lines, Shai Agmon also advocates that, given some constraints of adequacy, legal resources should be leveled down in both civil and criminal cases. This article aims to show that such arguments fail because leveling down legal resources could decrease a trial system\u2019s accuracy, making it worse by Wertheimer\u2019s or Agmon\u2019s own criteria.",
+      "citationCount": 0,
+      "doi": "10.1017/S1352325224000065",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6207e639bfe0e5e1224dd9a95cbe70fe7a36450d",
+      "venue": "Legal Theory",
+      "journal": {
+        "name": "Legal Theory",
+        "pages": "71 - 82",
+        "volume": "30"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c0cb88182a7205d0d87d810dc91f5f59ad0d5d66",
+      "title": "Permissivism, Epistemic Utility, and Arbitrariness",
+      "authors": [
+        {
+          "name": "Andr\u00e9 Eilertsen",
+          "authorId": "2345966914"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10670-025-00928-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c0cb88182a7205d0d87d810dc91f5f59ad0d5d66",
+      "venue": "Erkenntnis: An International Journal of Scientific Philosophy",
+      "journal": {
+        "name": "Erkenntnis"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3fcad4943375db49f04d15aca20c05544644e1b7",
+      "title": "TROUBLES WITH THEORETICAL VIRTUES: RESISTING THEORETICAL UTILITY ARGUMENTS IN METAPHYSICS",
+      "authors": [
+        {
+          "name": "J. Hawthorne",
+          "authorId": "143917511"
+        },
+        {
+          "name": "D. Zimmerman",
+          "authorId": "8089355"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3fcad4943375db49f04d15aca20c05544644e1b7",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "000205d1b0d592d1d02ad3a2ce5ecba435ab2a14",
+      "title": "Epistemic utility theory\u2019s difficult future",
+      "authors": [
+        {
+          "name": "Chad Marxen",
+          "authorId": "103861815"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/s11229-021-03120-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/000205d1b0d592d1d02ad3a2ce5ecba435ab2a14",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "7401 - 7421",
+        "volume": "199"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ccb9d62b15bf6dbf239beacc7933be244437cc4b",
+      "title": "Troubles with Theoretical Virtues: Resisting Theoretical Utility Arguments in Metaphysics",
+      "authors": [
+        {
+          "name": "O. Bueno",
+          "authorId": "1938002"
+        },
+        {
+          "name": "S. Shalkowski",
+          "authorId": "46248801"
+        }
+      ],
+      "year": 2019,
+      "abstract": "In this paper we examine theoretical utility arguments in metaphysics. While philosophers claim a procedural continuity with science when using such arguments, we argue that examining famous instances from the history of science expose their fundamental flaws. We find that arguments from theoretical utility invoke considerations that are not truth conducive and that justifications for claims that a theory possesses theoretical virtues often assume the truth of the theory such virtues are supposed to support. We conclude that theoretical utility arguments provide no epistemic grounds for metaphysical inquiry.",
+      "citationCount": 15,
+      "doi": "10.1111/PHPR.12597",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ccb9d62b15bf6dbf239beacc7933be244437cc4b",
+      "venue": "Philosophy and Phenomenological Research",
+      "journal": {
+        "name": "Philosophy and Phenomenological Research"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3aac126e5263b25e17132328507d0d731a5ca761",
+      "title": "A Pragmatist\u2019s Guide to Epistemic Utility",
+      "authors": [
+        {
+          "name": "B. A. Levinstein",
+          "authorId": "16304453"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 32,
+      "doi": "10.1086/693444",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3aac126e5263b25e17132328507d0d731a5ca761",
+      "venue": "Philosophia Scienti\u00e6",
+      "journal": {
+        "name": "Philosophy of Science",
+        "pages": "613 - 638",
+        "volume": "84"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6499a92e0dc0734e2648f4e738ce501395d01672",
+      "title": "Accuracy and epistemic conservatism",
+      "authors": [
+        {
+          "name": "F. Steinberger",
+          "authorId": "1926850"
+        }
+      ],
+      "year": 2019,
+      "abstract": "\n Epistemic utility theory (EUT) is generally coupled with veritism. Veritism is the view that truth is the sole fundamental epistemic value. Veritism, when paired with EUT, entails a methodological commitment: norms of epistemic rationality are justified only if they can be derived from considerations of accuracy alone. According to EUT, then, believing truly has epistemic value, while believing falsely has epistemic disvalue. This raises the question as to how the rational believer should balance the prospect of true belief against the risk of error. A strong intuitive case can be made for a kind of epistemic conservatism \u2013 that we should disvalue error more than we value true belief. I argue that none of the ways in which advocates of veritist EUT have sought to motivate conservatism can be squared with their methodological commitments. Short of any such justification, they must therefore either abandon their most central methodological principle or else adopt a permissive line with respect to epistemic risk.",
+      "citationCount": 13,
+      "doi": "10.1093/ANALYS/ANY094",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6499a92e0dc0734e2648f4e738ce501395d01672",
+      "venue": "Analysis",
+      "journal": {
+        "name": "Analysis"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c96c0daa36cb3544b41385b7afdbcb591ec032b0",
+      "title": "Accuracy, Ratification, and the Scope of Epistemic Consequentialism",
+      "authors": [
+        {
+          "name": "James M. Joyce",
+          "authorId": "32328080"
+        }
+      ],
+      "year": 2018,
+      "abstract": "Joyce focuses on trade-off objections to epistemic consequentialism. Such objections are similar to familiar objections from ethics where an intuitively wrong action (e.g., killing a healthy patient) leads to a net gain in value (e.g., saving five other patients). The objection to the epistemic consequentialist concerns cases where adopting an intuitively wrong belief leads to a net gain in epistemic value. Joyce defends the epistemic consequentialist against such objections by denying that his version of epistemic utility theory is properly thought of as a species of epistemic consequentialism, and given this, does not condone the problematic trade-offs. His argument turns on distinguishing between treating degrees of belief as final ends and treating them as a basis for estimation.",
+      "citationCount": 9,
+      "doi": "10.1093/oso/9780198779681.003.0011",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c96c0daa36cb3544b41385b7afdbcb591ec032b0",
+      "venue": "Oxford Scholarship Online",
+      "journal": {
+        "name": "Oxford Scholarship Online"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f6aea5a8854fa6a769227daa92c8e6ed64001b94",
+      "title": "Credence and belief: epistemic decision theory revisited",
+      "authors": [
+        {
+          "name": "Minkyung Wang",
+          "authorId": "2202932839"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/s11098-025-02321-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f6aea5a8854fa6a769227daa92c8e6ed64001b94",
+      "venue": "Philosophical Studies",
+      "journal": {
+        "name": "Philosophical Studies",
+        "pages": "1433 - 1465",
+        "volume": "182"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2afe6f9ccdcb79cd7e2983f4070085af7dc66568",
+      "title": "Lockeans Maximize Expected Accuracy",
+      "authors": [
+        {
+          "name": "Kevin Dorst",
+          "authorId": "102671489"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 110,
+      "doi": "10.1093/MIND/FZX028",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2afe6f9ccdcb79cd7e2983f4070085af7dc66568",
+      "venue": "",
+      "journal": {
+        "name": "Mind",
+        "pages": "175-211",
+        "volume": "128"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "77d6c23ed0459992db4105053714418df1c060be",
+      "title": "The Foundations of Epistemic Decision Theory",
+      "authors": [
+        {
+          "name": "Jason Konek",
+          "authorId": "103191234"
+        },
+        {
+          "name": "B. A. Levinstein",
+          "authorId": "2349247801"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 41,
+      "doi": "10.1093/MIND/FZW044",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/77d6c23ed0459992db4105053714418df1c060be",
+      "venue": "",
+      "journal": {
+        "name": "Mind",
+        "pages": "69-107",
+        "volume": "128"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cbcac4c0be09946b8e3ad1aecf9e987ba3cbef81",
+      "title": "AN ANALYTICAL REVIEW OF THE RELATIONSHIP BETWEEN SCIENCE AND PHILOSOPHY & THEIR UTILITY IN CONTEMPORARY GLOBAL POLITY CONCEPTUALIZATION OF TECHNOLOGY",
+      "authors": [
+        {
+          "name": "Nsama Jonathan Simuziya",
+          "authorId": "2135481556"
+        },
+        {
+          "name": "Abebe Tigire Jalu",
+          "authorId": "146095280"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Introduction. The central argument of this study is that for science to meet the challenges of globalization and justice in the 21st century, it needs to be ethically informed, and thus philosophical reflection on and in science is cardinal.Problem Statement. The study focuses on the 21st century trends in philosophical thoughts that influence scientific motivations. To this effect, the research question that the study sought to answer is, \u2018How and to what extent can philosophy be valuable/influential to scientific advancements in contemporary times?\u2019Purpose. This paper aims to demonstrate that despite some differences between science and philosophy in their origin and methodological conceptions, they do have reciprocal rudiments. The study gleaned this relationship with the view to assess the utility of their relationship in a technologically and fast-paced 21st Century. This study contributes to the literature by providing theoretical perspectives that critique conventional (Western) epistemic stances of scientific knowledge construction and highlights lessons to be learnt through a juxtaposed pool of ideas from all regions of the globe, not just from the West.Material and Methods. The methodology adopted for this study leans on a descriptive and thematic literature approach which builds on qualitative data gathered through academic journals, scholarly books, and online publications. The study review endeavors to focus on the 21st century trends in philosophical thoughts that influence scientific motivations.Results. The study notes that the relationship between science and philosophy has endured for many hundreds of years, and despite their differences which mainly lie in their scope, attitudes, methods, and peculiar challenges, both are keenly engaged in advancing increased human capacity for innovation, ingenuity, and critical thinking. The study concludes \u2014 from the prism of the future \u2014 that a critical global appraisal and continuous rigorous review of scientific and philosophical activities is essential today more than ever before, if the futures project is to contri bute effectively to the (re)construction of sustainable frameworks of scientific production that yield results in an equitable and environmentally sustainable manner.\nConclusions. The study has brought to the fore, a stark reminder that neither science nor philosophy \u2014 operating singularly \u2014 offers genuine solutions on sustainable growth and development; hence stakeholders can make sense of complex phenomenon from both science and philosophy by critically reviewing their outcomes in a reciprocal manner that appreciates the advances, thegaps, and excesses from both sides. Most significantly, the study has pushed the envelope of comprehending science and philosophy beyond Western constructions that often tend to overlook, and in some cases purposely downgrade orthodox but otherwise valuable scientific insights from subaltern constellations of the global South.",
+      "citationCount": 0,
+      "doi": "10.15407/scine19.04.030",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cbcac4c0be09946b8e3ad1aecf9e987ba3cbef81",
+      "venue": "Science and innovation",
+      "journal": {
+        "name": "Science and Innovation"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "991ac15ab684c4ec86d8bc34100fdc4c20435649",
+      "title": "Epistemic Consequentialism",
+      "authors": [
+        {
+          "name": "Kevin Dorst",
+          "authorId": "102671489"
+        }
+      ],
+      "year": 2018,
+      "abstract": "An important issue in epistemology concerns the source of epistemic normativity. Epistemic consequentialism maintains that epistemic norms are genuine norms in virtue of the way in which they are conducive to epistemic value, whatever epistemic value may be. So, for example, the epistemic consequentialist might say that it is a norm that beliefs should be consistent in virtue of the fact that holding consistent beliefs is the best way to achieve the epistemic value of accuracy. Thus epistemic consequentialism is structurally similar to the familiar family of consequentialist views in ethics. Recently, philosophers from both formal epistemology and traditional epistemology have shown interest in such a view. In formal epistemology, there has been particular interest in thinking of epistemology as a kind of decision theory where instead of maximizing expected utility one maximizes expected epistemic utility. In traditional epistemology, there has been particular interest in various forms of reliabilism about justification and whether such views are analogous to\u2014and so face similar problems to\u2014versions of rule consequentialism in ethics. This volume presents some of the most recent work on these topics as well as others related to epistemic consequentialism, by authors that are sympathetic to the view and those who are critical of it.",
+      "citationCount": 51,
+      "doi": "10.1093/oso/9780198779681.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/991ac15ab684c4ec86d8bc34100fdc4c20435649",
+      "venue": "Philosophical Review",
+      "journal": {
+        "name": "The Philosophical Review"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "549b2c31a5e9c13010052214c4c7e956ea891109",
+      "title": "A Contextual Accuracy Dominance Argument for Probabilism \u2217",
+      "authors": [
+        {
+          "name": "Mikayla Kelley",
+          "authorId": "2247985305"
+        },
+        {
+          "name": "Kevin Dorst",
+          "authorId": "2248394035"
+        },
+        {
+          "name": "Dan Friedman",
+          "authorId": "2285379237"
+        },
+        {
+          "name": "Wesley Holliday",
+          "authorId": "2248721177"
+        },
+        {
+          "name": "Sven Neth",
+          "authorId": "151215681"
+        },
+        {
+          "name": "Teddy Seidenfeld",
+          "authorId": "2248191433"
+        },
+        {
+          "name": "Jer Steeger",
+          "authorId": "2248698334"
+        },
+        {
+          "name": "Francesca Zaffora-Blando",
+          "authorId": "2248703592"
+        },
+        {
+          "name": "Snow Zhang",
+          "authorId": "2249002607"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/549b2c31a5e9c13010052214c4c7e956ea891109",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ac99c4f1c05c7236a0fdea855357cadd97f8489f",
+      "title": "Epistemic Risk and the Demands of Rationality",
+      "authors": [
+        {
+          "name": "Richard Pettigrew",
+          "authorId": "144577300"
+        }
+      ],
+      "year": 2022,
+      "abstract": "\n How much does rationality constrain what we should believe on the basis of our evidence? According to this book, not very much. For most people and most bodies of evidence, there is a wide range of beliefs that rationality permits them to have in response to that evidence. The argument, which takes inspiration from William James\u2019 ideas in \u2018The Will to Believe\u2019, proceeds from two premises. The first is a theory about the basis of epistemic rationality. It\u2019s called epistemic utility theory, and it says that what it is epistemically rational for you to believe is what it would be rational for you to choose if you were given the chance to pick your beliefs and, when picking them, you were to care only about their epistemic value. So, to say which beliefs are permitted, we must say how to measure epistemic value, and which decision rule to use when picking your beliefs. The second premise is a claim about attitudes to epistemic risk, and it says that rationality permits many different such attitudes. These attitudes can show up in epistemic utility theory in two ways: in the way you measure epistemic value; and in the decision rule you use to pick beliefs. This book explores the latter. The result is permissivism about epistemic rationality: different attitudes to epistemic risk lead to different choices of prior beliefs; given most bodies of evidence, different priors lead to different posteriors; and even once we fix your attitudes to epistemic risk, if they are at all risk-inclined, there is a range of different priors and therefore different posteriors they permit.",
+      "citationCount": 10,
+      "doi": "10.1093/oso/9780192864352.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ac99c4f1c05c7236a0fdea855357cadd97f8489f",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9fa6d934c73651e513b71312ce2e297e7e970a20",
+      "title": "The Vagueness of Clarity: Metaphysical and Epistemic Truth Claims in the Empirical Study of Mindfulness Practices",
+      "authors": [
+        {
+          "name": "Ash Brumett",
+          "authorId": "2128210578"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/s12671-021-01683-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9fa6d934c73651e513b71312ce2e297e7e970a20",
+      "venue": "Mindfulness",
+      "journal": {
+        "name": "Mindfulness",
+        "pages": "2132 - 2140",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "380039deb82e2e30ecf40cc54d67a0b5adeb2332",
+      "title": "Consistency, Obligations, and Accuracy-Dominance Vindications",
+      "authors": [
+        {
+          "name": "Marc\u2010Kevin Daoust",
+          "authorId": "2150754732"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Vindicating the claim that agents ought to be consistent has proved to be a difficult task. Recently, some have argued that we can use accuracy-dominance arguments to vindicate the normativity of such requirements. But what do these arguments prove, exactly? In this paper, I argue that we can make a distinction between two theses on the normativity of consistency: the view that one ought to be consistent and the view that one ought to avoid being inconsistent. I argue that accuracy-dominance arguments for consistency support the latter view, but not necessarily the former. I also argue that the distinction between these two theses matters in the debate on the normativity of epistemic rationality. Specifically, the distinction suggests that there are interesting alternatives to vindicating the strong claim that one ought to be consistent.",
+      "citationCount": 0,
+      "doi": "10.48106/dial.v74.i1.07",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/380039deb82e2e30ecf40cc54d67a0b5adeb2332",
+      "venue": "Dialectica",
+      "journal": {
+        "name": "Dialectica"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

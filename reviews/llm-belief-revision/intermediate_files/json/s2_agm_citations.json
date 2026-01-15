@@ -1,0 +1,1035 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "937c576f7b39a53908d8c646983ddd2bda94a321",
+  "results": [
+    {
+      "paper": {
+        "paperId": "937c576f7b39a53908d8c646983ddd2bda94a321",
+        "title": "On the logic of theory change: Partial meet contraction and revision functions",
+        "authors": [
+          {
+            "name": "C. E. Alchourr\u00f3n",
+            "authorId": "2439636"
+          },
+          {
+            "name": "P. G\u00e4rdenfors",
+            "authorId": "2412562"
+          },
+          {
+            "name": "D. Makinson",
+            "authorId": "145600404"
+          }
+        ],
+        "year": 1985,
+        "abstract": null,
+        "citationCount": 3420,
+        "doi": "10.2307/2274239",
+        "arxivId": null,
+        "url": "https://www.semanticscholar.org/paper/937c576f7b39a53908d8c646983ddd2bda94a321",
+        "venue": "Journal of Symbolic Logic (JSL)"
+      },
+      "references": [],
+      "citations": [
+        {
+          "paperId": "2a7b576bba144dda6984bf757d62c8f73e4b2b37",
+          "title": "Conditioning Accept-Desirability models in the context of AGM-like belief change",
+          "authors": [
+            {
+              "name": "Kathelijne Coussement",
+              "authorId": "2344755611"
+            },
+            {
+              "name": "G. Cooman",
+              "authorId": "1731943"
+            },
+            {
+              "name": "Keano De Vos",
+              "authorId": "2232177432"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": "2512.19096",
+          "url": "https://www.semanticscholar.org/paper/2a7b576bba144dda6984bf757d62c8f73e4b2b37",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026\u22b5 ; (cid:0) M \u25b6 i with 17 This simplest possible approach essentially consists in taking the full meet revision of Your original AD-model M with the new information M e in this case; see also Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1, 19] as well as De Cooman in the wider context of belief models [7].",
+            "This implies that we can also investigate what our abstract theory of conditioning and the related type of belief revision, studied in their full generality Sections 4 and 6, amount to in the more concrete propositional context studied by Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1, 19, 27].",
+            "De Cooman [7] has argued that the AGM axioms for belief revision [1, 19] can be transported to the abstract setting of belief structures.",
+            "Interestingly, and in contrast with belief expansion, Alchourr\u00f3n, G\u00e4rdenfors and Makin-son [1, 19] as well as De Cooman in the wider context of belief models [7], have argued that the axioms for belief revision don\u2019t single out a unique revision operator; there seem to be many reasonable ways of\u2026",
+            "De Cooman [7] has argued that the AGM axioms for belief expansion [1, 19, 27] can be translated directly to the abstract setting of belief structures.",
+            "Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1] considered three important types of belief change: belief expansion, belief revision and belief contraction.",
+            "A discussion of what \u2018belief states\u2019 are, and rules for changing them, have been explored by Alchourr\u00f3n, G\u00e4rdenfors and Makinson (AGM, for short) in [1], G\u00e4rdenfors in [19], and Rott in [27]."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "86b5477693d3f6fbbea27433cfd46460d163ca5f",
+          "title": "Belief Structures in the Realm of Belief Contraction",
+          "authors": [
+            {
+              "name": "Theofanis I. Aravanis",
+              "authorId": "103450609"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1007/s10849-025-09444-w",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/86b5477693d3f6fbbea27433cfd46460d163ca5f",
+          "venue": "Journal of Logic, Language and Information",
+          "isInfluential": true,
+          "contexts": [
+            "We shall say that a revision function \u2217 : K \u00d7 L (cid:14)\u2192 K is an AGM revision function iff it respects the following postulates ( K \u2217 1 ) \u2013 ( K \u2217 8 ) , known as the AGM revision postulates (Alchourr\u00f3n et al., 1985).",
+            "\u2212 8 ) , known as the AGM contraction postulates (Alchourr\u00f3n et al., 1985).",
+            "In their seminal article (Alchourr\u00f3n et al., 1985), Alchourr\u00f3n, G\u00e4rdenfors and Makinson characterized both these types of change-operations axiomatically , in terms of a collection of popular rationality-postulates, the AGM postulates ."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "794dea838ea26a4c2bf3718283598874922128ca",
+          "title": "Belief revision revised",
+          "authors": [
+            {
+              "name": "Joshua Edward Pearson",
+              "authorId": "2388183376"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1111/phpr.70037",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/794dea838ea26a4c2bf3718283598874922128ca",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "No prominent theory of belief revision can accommodate my counterexamples to Anticipation, including the dominant theory \u2018AGM\u2019 (Alchourr\u00f3n et al., 1985), and various recently proposed weakenings, such as those in Lin and Kelly (2012), Leitgeb (2017), Goldstein and Hawthorne (2021), and Goodman and\u2026",
+            "First, no prominent theory of belief revision can accommodate my counterexamples to Anticipation, including the dominant theory \u201cAGM\u201d (Alchourr\u00f3n et al., 1985), as well as by various recently proposed weakenings, such as those in Lin and Kelly (2012), Leitgeb (2017), Goldstein and Hawthorne (2021),\u2026",
+            "Accordingly, I will be assuming that the epistemic agents at issue form all and only the beliefs they have justification to, in a way that is sufficient for those beliefs to be justified. but harder to solve than, Kripke (2011) second dogmatism puzzle, as I explain the following footnote.",
+            "No prominent theory of belief revision can accommodate my counterexamples to Anticipation, including the dominant theory \u2018AGM\u2019 (Alchourr\u00f3n et al., 1985), and various recently proposed weakenings, such as those in Lin and Kelly (2012), Leitgeb (2017), Goldstein and Hawthorne (2021), and Goodman and Salow (2025).",
+            "First, no prominent theory of belief revision can accommodate my counterexamples to Anticipation, including the dominant theory \u201cAGM\u201d (Alchourr\u00f3n et al., 1985), as well as by various recently proposed weakenings, such as those in Lin and Kelly (2012), Leitgeb (2017), Goldstein and Hawthorne (2021), and Goodman and Salow (2025).",
+            "Preservation is a consequence of the dominant theory of belief revision AGM (Alchourr\u00f3n et al., 1985) and centerpiece of Leitgeb\u2019 (2014, 2017) theory:"
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "55754e368128ccc17834d0b34a0a73e8ef403444",
+          "title": "Machine Learning as Iterated Belief Change a la Darwiche and Pearl",
+          "authors": [
+            {
+              "name": "Theofanis I. Aravanis",
+              "authorId": "103450609"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.48550/arXiv.2506.13157",
+          "arxivId": "2506.13157",
+          "url": "https://www.semanticscholar.org/paper/55754e368128ccc17834d0b34a0a73e8ef403444",
+          "venue": "arXiv.org",
+          "isInfluential": true,
+          "contexts": [
+            "The foundations of this field were laid by the influential work of Alchourr\u00b4on, G\u00a8ardenfors and Makinson [1], who introduced a formal model for belief revision and contraction.",
+            "A particular form of AGM-style belief change is known as full-meet revision and contraction, which was originally introduced in the foundational work by Alchourr\u00b4on, G\u00a8ardenfors and Makinson [1].",
+            "The AGM framework, as originally introduced by Alchourr\u00b4on, G\u00a8ardenfors and Makinson in [1] and presented in Section 3, examines only one-step changes (revisions and/or contractions) and lacks guidelines for iterated belief change.",
+            "Within the AGM framework [1], the process of belief revision is formalized through a revision function .",
+            "One fundamental \u2014albeit rather trivial\u2014 approach is full-meet belief change [1].",
+            "The task of modifying beliefs was formally addressed by Alchourr\u00b4on, G\u00a8ardenfors and Makinson, who introduced a flexible and influential model for belief change, now widely known as the AGM framework [1].",
+            "\u2026we outline the AGM framework\u2019s axiomatic foundation (Subsection 3.1), the possible-worlds semantics introduced by Katsuno and Mendelzon (Subsection 3.2), and two spe-5 cific AGM-style belief-change strategies: full-meet belief change [1] (Subsection 3.3) and Dalal\u2019s approach [7] (Subsection 3.4).",
+            "\u2212 8) [1]."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "d1263b1155338909b967c52ee1b230ffd94465fc",
+          "title": "On Definite Iterated Belief Revision with Belief Algebras",
+          "authors": [
+            {
+              "name": "Hua Meng",
+              "authorId": "2057833622"
+            },
+            {
+              "name": "Zhiguo Long",
+              "authorId": "3340187"
+            },
+            {
+              "name": "Michael Sioutis",
+              "authorId": "2356311642"
+            },
+            {
+              "name": "Zhengchun Zhou",
+              "authorId": "2315395384"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.48550/arXiv.2505.06505",
+          "arxivId": "2505.06505",
+          "url": "https://www.semanticscholar.org/paper/d1263b1155338909b967c52ee1b230ffd94465fc",
+          "venue": "International Joint Conference on Artificial Intelligence",
+          "isInfluential": true,
+          "contexts": [
+            "This process can be formally described syntactically as revising a set of logical formulas (belief set) with a single logical formula (new evidence) [ Alchourron et al. , 1985 ] .",
+            "Among the most influential contributions to this field is the AGM framework [Alchourron et al. , 1985], which has inspired numerous extensions and applications in areas such as game theory and argumentation [Williams, 1996; van Harmelen et al. , 2008; Ferm\u00b4e and Hansson, 2011; Diller et al. , 2015;\u2026",
+            "To give postulates to characterize rational revisions, following literature, e.g., [ Alchourron et al. , 1985; Darwiche and Pearl, 1997; Jin and Thielscher, 2007 ] , we first assume that new evidence has a higher preference, that is, belief information of G 2 is more believable than G 1 .",
+            "Inspired by existing research (e.g., [Alchourron et al. , 1985; Darwiche and Pearl, 1997; Ma et al. , 2015]), we pro-pose the following revision rules for this setting."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "c9cd790de185b1a2024ef369332eb2162ca05f7f",
+          "title": "Maps between Different Kinds of Two-Level Credibility-Limited Revision Operators",
+          "authors": [
+            {
+              "name": "M. Garapa",
+              "authorId": "3379422"
+            },
+            {
+              "name": "Eduardo L. Ferm\u00e9",
+              "authorId": "1938513707"
+            },
+            {
+              "name": "Maur\u00edcio D. L. Reis",
+              "authorId": "2276927727"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1145/3733830",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c9cd790de185b1a2024ef369332eb2162ca05f7f",
+          "venue": "ACM Transactions on Computational Logic",
+          "isInfluential": true,
+          "contexts": [
+            "In a revision process, some prior beliefs may be retracted in order to produce a consistent belief set as the output.",
+            "The main model of belief change is the AGM model [1].",
+            "In this section we present the definition of a SS2LCL revision operator, which is the semantical counterpart of the 2LCL revision operators.",
+            "It is possible to define an entrenchment-based contraction \u00f7 and an entrenchment-based revision \u2605 from an epistemic entrenchment ordering \u2264 , by means of the following conditions [4, 19, 20, 25, 30, 34]: For an explanation of why the conditions \ud835\udefc   \ud835\udefc \u2228 \ud835\udefd and \ud835\udefc   \ud835\udefc \u2192 \ud835\udefd appear in the\u2026"
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "0f24709e61ea9dd9782b37b120b7685275e74c9d",
+          "title": "Conditioning and AGM-like belief change in the Desirability-Indifference framework",
+          "authors": [
+            {
+              "name": "Kathelijne Coussement",
+              "authorId": "2344755611"
+            },
+            {
+              "name": "G. Cooman",
+              "authorId": "1731943"
+            },
+            {
+              "name": "Keano De Vos",
+              "authorId": "2232177432"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.48550/arXiv.2502.06235",
+          "arxivId": "2502.06235",
+          "url": "https://www.semanticscholar.org/paper/0f24709e61ea9dd9782b37b120b7685275e74c9d",
+          "venue": "International Symposium on Imprecise Probabilities and Their Applications",
+          "isInfluential": true,
+          "contexts": [
+            "Observe, by the way, that by invoking BR6 and E9, we infer from Equation (16) that Alchourr\u00f3n, G\u00e4rdenfors, and Makinson [1, 12] also discuss the notion of belief contraction , which in our context can be made to correspond to the action of a belief contraction operator for which the following\u2026",
+            "It\u2019s for this reason that De Cooman re-frained from discussing belief contraction in [3].",
+            "De Cooman [3] has argued that the AGM axioms for belief revision [1, 12] can be transported to the abstract setting of belief structures.",
+            "Alchourr\u00f3n, G\u00e4rdenfors, and Makinson [1] consideredthree important types of belief change: belief expansion, belief revision and belief contraction.",
+            "De Cooman [3] argued that the axioms for belief expansion and belief revision can be elegantly translated to the setting of belief structures \u2014 the counterpart of belief contraction is more problematic.",
+            "Observe, by the way, that by invoking BR6 and E9, we infer from Equation (16) that Alchourr\u00f3n, G\u00e4rdenfors, and Makinson [1, 12] also discuss the notion of belief contraction , which in our context can be made to correspond to the action of a belief contraction operator for which the following direct counterparts of the AGM contraction postulates could be formulated as follows \u2014 the correspondence is again one to one with the AGM contraction postulates K \u2212 1 \u2013",
+            "To \ufb01nalise the discussion, we mention that also in our present context, as in the propositional context covered by the AGM framework [1, 12], versions of Levi\u2019s and Harper\u2019sidentitieshold; our versionof Harper\u2019sidentity actually holds by de\ufb01nition.",
+            "This is a form of belief change, and we are thus led to wonder if we can describe it using the ideas and tools introduced by Alchourr\u00f3n, G\u00e4rdenfors, and Makinson (AGM) in [1]; see also the general discussion in [12].",
+            "Another way of saying this, is that up-dating typically can\u2019t be seen as belief expansion , but should rather be viewed as a form of belief revision .",
+            "With this sca\ufb00olding in place, we show in Section 5 how statement models \ufb01t into De Cooman\u2019s belief model framework, and how our abstract notion of conditioning can be seen as a form of belief change \u2014 belief revision \u2014 in the Desirability-Indi\ufb00erence framework, satisfying relevant generalised versions of the AGM axioms, as well as versions of the so-called Levi and Harper identities.",
+            "But, as Alchourr\u00f3n, G\u00e4rdenfors, and Makinson in [ 1] and G\u00e4rdenfors in [12] focused mainly on belief states that are sets of propositions, or that are probability measures, we need a way to generalise their ideas to the more abstract setting where the belief states are statement models.",
+            "A gener-alised notion of conditioning, based on abstract events that can be used to call o\ufb00 options, is brie\ufb02y discussed in Section 3, and Section 4 has a succinct summary of De Cooman\u2019s extension of the AGM framework for belief change to what he calls belief models.",
+            "In one of his earlier papers [3], Gert de Cooman proposed a generalisation of the AGM framework for belief change \u2014 change of belief state \u2014 in propositional logic (and probability theory) [12] to his so-called belief models , which are meant as a much more general and abstract representation for what may constitute a belief state.",
+            "One way to combine Your statement model with such new information goes via a belief expansion operator De Cooman [3] has argued that the AGM axioms for belief expansion [1, 12] can be translated directly to the abstract setting of belief structures."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "9a29df84568559584ee759f4a5d82462b7023328",
+          "title": "Forgetting in Abstract Argumentation: Limits and Possibilities",
+          "authors": [
+            {
+              "name": "Ringo Baumann",
+              "authorId": "40491206"
+            },
+            {
+              "name": "M. Berthold",
+              "authorId": "46786867"
+            },
+            {
+              "name": "Dov Gabbay",
+              "authorId": "2057233742"
+            },
+            {
+              "name": "Odinaldo Rodrigues",
+              "authorId": "21587251"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1613/jair.1.17149",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9a29df84568559584ee759f4a5d82462b7023328",
+          "venue": "Journal of Artificial Intelligence Research",
+          "isInfluential": true,
+          "contexts": [
+            "For instance, in AGM belief contraction (Alchourr\u00b4on et al., 1985), the Y part is implicit .",
+            "Therefore, there are only two potential scenarios in which he attends the party (see e 4 in Section 4): To provide a systematic analysis of these possibilities, our methodology follows the approach outlined in (Alchourr\u00b4on et al., 1985), stipulating desiderata for the forgetting operation.",
+            "Notably, a representative of type 2 forgetting in a logical setting is the well-known AGM theory for belief revision and contraction (Alchourr\u00b4on, G\u00a8ardenfors, & Makinson, 1985; G\u00a8ardenfors, 1988; Rodrigues, Gabbay, & Russo, 2011).",
+            "Within the scope of belief change operations (already mentioned above), the study of belief contraction operations \u2014 which aim to remove a belief from a belief set \u2014 is very relevant (Alchourr\u00b4on et al., 1985; G\u00a8ardenfors, 1988; Gabbay, Rodrigues, & Russo, 2010; Rodrigues et al., 2011)."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "168d77d80dd79af4d4953e445d9c02d6133fbcc7",
+          "title": "A Logic for Paraconsistent Belief Revision based on Epistemic Entrenchment",
+          "authors": [
+            {
+              "name": "M. Coniglio",
+              "authorId": "1710042"
+            },
+            {
+              "name": "M. Figallo",
+              "authorId": "2634802"
+            },
+            {
+              "name": "Rafael R. Testa",
+              "authorId": "24756079"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.48550/arXiv.2412.06117",
+          "arxivId": "2412.06117",
+          "url": "https://www.semanticscholar.org/paper/168d77d80dd79af4d4953e445d9c02d6133fbcc7",
+          "venue": "arXiv.org",
+          "isInfluential": true,
+          "contexts": [
+            "As noted by the AGM trio [1], the underlying logical framework can and should be extended or adapted depending on the intended applications of the belief revision system.",
+            "The AGM model of belief revision, introduced by Alchourr\u00b4on, G\u00a8ardenfors, and Makinson [1], formalizes how rational agents revise their beliefs in response to new information.",
+            "These systems extend the classical AGM framework [1] to paraconsistent settings, adapting its principles to handle contradictions without trivializing the belief set."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "2727fe4e71d1c93416e189da15f3b4186cb793b9",
+          "title": "Semantic Constructions for Belief Base Contraction: Partial Meet vs Smooth Kernel",
+          "authors": [
+            {
+              "name": "Jandson S. Ribeiro",
+              "authorId": "2621286"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.24963/kr.2024/58",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/2727fe4e71d1c93416e189da15f3b4186cb793b9",
+          "venue": "International Conference on Principles of Knowledge Representation and Reasoning",
+          "isInfluential": true,
+          "contexts": [
+            "It is worth highlighting that, except for safe contraction (Alchourr\u00b4on and Makinson, 1985), the study of the supplementary postulates on belief bases has been neglected.",
+            "There are two other postulates, called supplementary postulates (Alchourr\u00b4on, G\u00a8ardenfors, and Makinson, 1985; Hansson, 1993, 1999) It is important to stress that the study of the supplementary postulates has been con\ufb01ned to theories, and very little is known about their behaviours on belief bases.",
+            "The \ufb01eld of Belief Change (Alchourr\u00b4on, G\u00a8ardenfors, and Makinson, 1985; G\u00a8ardenfors, 1988; Hansson, 1999) studies how an agent should rationally modify its corpus of beliefs in response to incoming pieces of information.",
+            "In the original work of (Alchourr\u00b4on, G\u00a8ardenfors, and Makinson, 1985), the authors propose to represent an agent\u2019s preferences as a binary relation 6 on all remainders.",
+            "(Alchourr\u00b4on, G\u00a8ardenfors, and Makinson, 1985) On theories, a contraction operator is fully rational iff it is a transitive relational partial meet contraction operator."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "06593b4eab12c650f9e9d3ef14aa0390f287c989",
+          "title": "Combining Probabilities with Full Beliefs",
+          "authors": [
+            {
+              "name": "Sven Ove Hansson",
+              "authorId": "2312455889"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1007/s10670-024-00864-x",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/06593b4eab12c650f9e9d3ef14aa0390f287c989",
+          "venue": "Erkenntnis: An International Journal of Scientific Philosophy",
+          "isInfluential": true,
+          "contexts": [
+            "1, logical closure is the dominant requirement on the set of full beliefs, both in belief change theory and in other branches of epistemic logic (Alchourr\u00f3n et al., 1985; Ferm\u00e9 & Hansson, 2018).",
+            "In dichotomous models of belief change, the object of change is the set of full beliefs, which is called the belief set (Alchourr\u00f3n et al., 1985; Ferm\u00e9 & Hansson, 2018).",
+            "However, since these models possess some of the features missing in probabilistic models, it is of interest to evaluate dichotomous belief change, and in particular the dominant AGM model (Alchourr\u00f3n et al., 1985) in terms of the desiderata presented in Sect.",
+            "It turns out, perhaps surprisingly, that what we will then see coincides (for logically consistent inputs) with what is usually regarded as the gold standard of dichotomous belief change, namely the AGM operation of belief revision (Alchourr\u00f3n et al., 1985)."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "3e1acc5b2da293f7d770bcf8280d2f7fb1da4572",
+          "title": "Collective Belief Revision",
+          "authors": [
+            {
+              "name": "Theofanis I. Aravanis",
+              "authorId": "103450609"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1613/jair.1.15745",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/3e1acc5b2da293f7d770bcf8280d2f7fb1da4572",
+          "venue": "Journal of Artificial Intelligence Research",
+          "isInfluential": true,
+          "contexts": [
+            "We shall say that a revision function \u2217 is an AGM revision function iff it satisfies the following widely-accepted rationality postulates of Alchourr\u00b4on et al. (1985), known as AGM revision postulates .",
+            "\u2026firstly establish a number of unsatisfiability results indicating that the rationality of individuals of a community \u2014formalized by the AGM model of Alchourr\u00b4on et al. (1985) for belief revision\u2014 and the aggregation of the beliefs of these individuals by means of fundamental merging operators\u2026",
+            "The process of belief revision has been formally captured by the seminal work of Alchourr\u00b4on et al. (1985).",
+            "These selection mechanisms, which are inspired by the so-called selection functions of Alchourr\u00b4on et al. (1985) by means of which partial-meet contraction is defined, allowed the definition of a wide class of formula-based merging functions with better behaviour and, thus, better logical\u2026",
+            "The UR operator \u2217 is an AGM revision function that implements a type of revision named by Alchourr\u00b4on et al. (1985) and G\u00a8ardenfors (1988) full-meet revision. tion (US), it is true that H = min ( \u03c6 , \u227c ).",
+            "\u2026and expansion , which are change-operations similar in spirit to belief revision, but at the same time retain notable distinctions \u2014 as a matter of fact, contraction can be defined in terms of revision, whereas, expansion is a special (degenerative) case of revision (Alchourr\u00b4on et al., 1985).",
+            "In our study, we shall focus on the work of David Westlund (2010), who formally addresses the problem of collective belief change, by means of well-established tools developed by Alchourr\u00b4on, G\u00a8ardenfors, and Makinson (1985) for modelling the dynamics of knowledge."
+          ],
+          "intents": [
+            "result",
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "86b82847a0f707e3bb4c5f80e8b1d1ed7a195d9f",
+          "title": "Revision of prioritized \n              \n                \n              \n              $$\\mathcal {E}\\mathcal {L}$$\n              \n                \n                  E\n                  L\n                \n              \n             ontologies",
+          "authors": [
+            {
+              "name": "Rim Mohamed",
+              "authorId": "2164429344"
+            },
+            {
+              "name": "Zied Loukil",
+              "authorId": "2953881"
+            },
+            {
+              "name": "F. Gargouri",
+              "authorId": "144080351"
+            },
+            {
+              "name": "Zied Bouraoui",
+              "authorId": "2267289766"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1007/s10489-023-05074-6",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/86b82847a0f707e3bb4c5f80e8b1d1ed7a195d9f",
+          "venue": "Applied intelligence (Boston)",
+          "isInfluential": true,
+          "contexts": [
+            "Similar to the AGM postulate [21], the revision process is based on three main ideas: \u2022 The principle of prioritization, according to which a new ontology is given priority over existing ones.",
+            "This problem is also de\ufb01ned as the knowledge change that is speci\ufb01ed by the well-known Alchourr\u00f3n, G\u00e4rdenfors, and Makinson postulates, (in short AGM postulates) [21].",
+            "The AGM theory [21] is possibly the most in\ufb02uential work in the area of belief revision and knowledge evolution.",
+            "In [21], Alchourr\u00f3n, Gardenfors, and Markinson (AGM for short) de\ufb01ned a set of postulates to characterize a revision operator."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "6dd375561444e6f887b6a830478ffbb7d926dcf1",
+          "title": "A Kripke-Lewis semantics for belief update and belief revision",
+          "authors": [
+            {
+              "name": "Giacomo Bonanno",
+              "authorId": "2264488251"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.48550/arXiv.2310.11506",
+          "arxivId": "2310.11506",
+          "url": "https://www.semanticscholar.org/paper/6dd375561444e6f887b6a830478ffbb7d926dcf1",
+          "venue": "Artificial Intelligence",
+          "isInfluential": true,
+          "contexts": [
+            "The notion of belief revision is normally associated with the seminal contribution by Alchourr\u00f3n, G\u00e4rdenfors and Makinson (henceforth AGM) in [1], while the notion of belief update was formally introduced by Katsuno and Melndelson (henceforth KM) in [10].",
+            "In [10] a belief state is represented by a sentence in a \ufb01nite propositional calculus and belief update is modeled as a function over sentences, while in [1] a belief state is represented (as we did above) as a set of sentences.",
+            "In this section we consider the notion of belief revision proposed Alchourr\u00f3n, G\u00e4rdenfors and Makinson in [1].",
+            "Furthermore, while [10] allows for the possibility of inconsistent initial beliefs, [1] take as starting point a consistent belief set.",
+            "We consider the notion of belief update introduced by Katsuno and Mendel-zon in [10] and compare it to the notion of belief revision introduced by Alchourr\u00f3n, G\u00e4rdenfors and Makinson in [1]."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "b64861621bee47b858dc144d17e95276341b1192",
+          "title": "Merging operators on stratified belief bases equipped with argumentative inference",
+          "authors": [
+            {
+              "name": "Marcelo A. Falappa",
+              "authorId": "3226171"
+            },
+            {
+              "name": "A. Garc\u00eda",
+              "authorId": "2578572"
+            },
+            {
+              "name": "Guillermo Ricardo Simari",
+              "authorId": "69362913"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1080/11663081.2023.2248775",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/b64861621bee47b858dc144d17e95276341b1192",
+          "venue": "J. Appl. Non Class. Logics",
+          "isInfluential": true,
+          "contexts": [
+            "The characterisation of the operators by the AGM postulates (Alchourr\u00f3n et al., 1985; G\u00e4rdenfors, 1988) offers a clean and explicit framework.",
+            "Given a consistent knowledge base, when receiving an epistemic input, the process of Belief Change involves changing beliefs by considering this new piece of information and restoring consistency if that action is required (Alchourr\u00f3n et al., 1985; Ferm\u00e9 & Hansson, 2018; Hansson, 2022).",
+            "Adopting the AGM formal framework (Alchourr\u00f3n et al., 1985) as a basis for studying the possible relations between Argumentation and Belief Revision is always a possibility since it represents a cornerstone for the research area.",
+            "\u2026meet contraction , offering different alternatives: kernel contractions (Hansson, 1994), epistemic entrenchment (G\u00e4rdenfors & Makinson, 1988), sphere systems (Grove, 1988), and safe contractions (Alchourr\u00f3n & Makinson, 1985), are some of the fundational works considering the dynamics of knowledge."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "375676bf084b88582017399b241704ba29eb18b6",
+          "title": "\u2018Logic will get you from A to B, imagination will take you anywhere\u2019",
+          "authors": [
+            {
+              "name": "Francesco Berto",
+              "authorId": "34650965"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1111/nous.12476",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/375676bf084b88582017399b241704ba29eb18b6",
+          "venue": "No\u00fbs",
+          "isInfluential": true,
+          "contexts": [
+            "This is the distinction between revisions triggered by newly received information on an unchanged environment, for which the go-to account is the AGM theory of Alchourr\u00f3n, G\u00e4rdenfors, and Makinson (Alchourr\u00f3n et al., 1985); and revisions (sometimes called \u2018updates\u2019) triggered by changes in the worldly environment itself, for which the go-to account is often the KGM theory of Katsuno, Grahne, and Mendelzon (Grahne, 1991; Katsuno and Mendelzon, 1992). Leitgeb and Segerberg (2005) and Leitgeb (2017) conjecture that if AGM-style static qualitative belief revision has conditionalization as its natural probabilistic counterpart, so can KGM-style belief change in a dynamic environment have imaging as its natural probabilistic counterpart. (The recent Eva et al. (2022) investigates the proportion AGM : conditionalization = KGM : imaging in formal detail.",
+            "This is the distinction between revisions triggered by newly received information on an unchanged environment, for which the go-to account is the AGM theory of Alchourr\u00f3n, G\u00e4rdenfors, and Makinson (Alchourr\u00f3n et al., 1985); and revisions (sometimes called \u2018updates\u2019) triggered by changes in the worldly environment itself, for which the go-to account is often the KGM theory of Katsuno, Grahne, and Mendelzon (Grahne, 1991; Katsuno and Mendelzon, 1992). Leitgeb and Segerberg (2005) and Leitgeb (2017) conjecture that if AGM-style static qualitative belief revision has conditionalization as its natural probabilistic counterpart, so can KGM-style belief change in a dynamic environment have imaging as its natural probabilistic counterpart. (The recent Eva et al. (2022) investigates the proportion AGM : conditionalization = KGM : imaging in formal detail.) So the corresponding explanation of what is going on in the probabilistic case, is that accuracy-based arguments for conditionalization \u00e0 la Greaves and Wallace (2006) are, in a sense, static: they only vindicate one\u2019s planning to conditionalize on A, should one receive the information that A (Titelbaum, 2022, 366-7).",
+            "This is the distinction between revisions triggered by newly received information on an unchanged environment, for which the go-to account is the AGM theory of Alchourr\u00f3n, G\u00e4rdenfors, and Makinson (Alchourr\u00f3n et al., 1985); and revisions (sometimes called \u2018updates\u2019) triggered by changes in the worldly environment itself, for which the go-to account is often the KGM theory of Katsuno, Grahne, and Mendelzon (Grahne, 1991; Katsuno and Mendelzon, 1992). Leitgeb and Segerberg (2005) and Leitgeb (2017) conjecture that if AGM-style static qualitative belief revision has conditionalization as its natural probabilistic counterpart, so can KGM-style belief change in a dynamic environment have imaging as its natural probabilistic counterpart.",
+            "This is the distinction between revisions triggered by newly received information on an unchanged environment, for which the go-to account is the AGM theory of Alchourr\u00f3n, G\u00e4rdenfors, and Makinson (Alchourr\u00f3n et al., 1985); and revisions (sometimes called \u2018updates\u2019) triggered by changes in the worldly environment itself, for which the go-to account is often the KGM theory of Katsuno, Grahne, and Mendelzon (Grahne, 1991; Katsuno and Mendelzon, 1992)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "c4880804a343e88b0cd51621847747a4f37bf284",
+          "title": "Belief revision and incongruity: is it a joke?*",
+          "authors": [
+            {
+              "name": "Florence Dupin de Saint Cyr-Bannay",
+              "authorId": "2238959196"
+            },
+            {
+              "name": "H. Prade",
+              "authorId": "1700697"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 3,
+          "doi": "10.1080/11663081.2023.2244379",
+          "arxivId": "2309.02009",
+          "url": "https://www.semanticscholar.org/paper/c4880804a343e88b0cd51621847747a4f37bf284",
+          "venue": "J. Appl. Non Class. Logics",
+          "isInfluential": true,
+          "contexts": [
+            "This operation was introduced in a propositional logic setting by Alchourr\u00f3n et al. (1985). More formally, K contracted by \u03c1, denoted K .",
+            "Alchourr\u00f3n et al. (1985) (AGM) have introduced the concept of belief revision.",
+            "However, the approach presented in this paper is valid for any type of belief revision operator satisfying the Alchourr\u00f3n et al. (1985) or Katsuno and Mendelzon (1991) postulates.",
+            "This operation was introduced in a propositional logic setting by Alchourr\u00f3n et al. (1985). More formally, K contracted by \u03c1, denoted K . \u2212 \u03c1, can be computed as a revision using (K\u25e6 \u00ac\u03c1) \u2227K according to Harper\u2019s identity (G\u00e4rdenfors (1988))."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "7c31e7aea1141c6cc7755d80b60970f33ed575e2",
+          "title": "Morphologic for knowledge dynamics: revision, fusion and abduction",
+          "authors": [
+            {
+              "name": "I. Bloch",
+              "authorId": "1695917"
+            },
+            {
+              "name": "J. Lang",
+              "authorId": "145417235"
+            },
+            {
+              "name": "Ram\u00f3n Pino P\u00e9rez",
+              "authorId": "2261751412"
+            },
+            {
+              "name": "C. Uzc\u00e1tegui",
+              "authorId": "144946881"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1080/11663081.2023.2244360",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7c31e7aea1141c6cc7755d80b60970f33ed575e2",
+          "venue": "J. Appl. Non Class. Logics",
+          "isInfluential": true,
+          "contexts": [
+            "In the most studied model, the AGM model (Alchourr\u00f3n et al., 1985), the corpus of beliefs is represented by a logical (consistent) theory K and the (new) piece of information by a formula \u03c8 .",
+            "When \u03d5 is not in DNF, computing \u03b4 k (\u03d5) directly from \u03d5 (without rewriting \u03d5 in DNF \ufb01rst) is a dif\ufb01cult problem.",
+            "\u2026theorem for credibility-limited revision operators (see Booth et al., 2012), i.e. operators that generalise the classical AGM-revision operators (Alchourr\u00f3n et al., 1985; Katsuno & Mendelzon, 1991), it follows from Equation (26) that \u00b0 is a credibility-limited revision operator (Booth et al.,\u2026",
+            "\u2026hold: The representation theorem proven by Katsuno and Mendelzon (1991) is the following one: Theorem 4.1: An operator \u00b0 is a revision operator \u00b0, i.e. that satis\ufb01es (R1)\u2013(R6), iff there exists a faithful assignment that maps each formula \u03d5 to a total pre-order \u2264 \u03d5 such that for every\u2026"
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "9a9235dc492c705f88af4ff9db63668ba83fd5c1",
+          "title": "Predictive Modelling of Human Reasoning Using AGM Belief Revision",
+          "authors": [
+            {
+              "name": "C. K. Baker",
+              "authorId": "2182555968"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.24963/ijcai.2023/811",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9a9235dc492c705f88af4ff9db63668ba83fd5c1",
+          "venue": "International Joint Conference on Artificial Intelligence",
+          "isInfluential": true,
+          "contexts": [
+            "The inferential power of MMT, via CCOBRA, will be compared to the logical inference of the 8 AGM postulates and desirable postulates for information relevance [Peppas and Williams, 2016].",
+            "In previous work [Baker and Meyer, 2021], an output of Master\u2019s research, we surveyed English translations of the 8 Alchourr\u00f3n, G\u00e4rdenfors and Makinson (AGM) [Alchourr\u00f3n et al., 1985] postulates of belief revision with human subjects.",
+            "In previous work [Baker and Meyer, 2021], an output of Master\u2019s research, we surveyed English translations of the 8 Alchourro\u0301n, Ga\u0308rdenfors and Makinson (AGM) [Alchourro\u0301n et al., 1985] postulates of belief revision with human subjects.",
+            "Furthermore, the AGM account of belief revision is based on logic, while cognitive models do not have a logical core.",
+            "Another limitation is that although the AGM postulates are a sound framework to examine the relationship between human reasoning and belief revision, the postulates are not considered complete.",
+            "In recent literature, the AGM theory has been developed through the notions of relevance and independence, in which only the part of a belief set that is affected by the new information should be revised.",
+            "In later work, Aravanis et al. [Aravanis et al., 2019] specified epistemic entrenchment models [Ga\u0308rdenfors and Makinson, 1988] and AGMstyle partial meet models for Parikh\u2019s relevance-sensitive axiom."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "09bd38a00008014346b50cfe2e08d9ed24c8487a",
+          "title": "An approach to temporalised legal revision through addition of literals",
+          "authors": [
+            {
+              "name": "Mart\u00edn O. Moguillansky",
+              "authorId": "3271596"
+            },
+            {
+              "name": "D. C. Mart\u00ednez",
+              "authorId": "143987551"
+            },
+            {
+              "name": "Luciano H. Tamargo",
+              "authorId": "2669768"
+            },
+            {
+              "name": "A. Rotolo",
+              "authorId": "1788487"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1007/s10506-023-09363-w",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/09bd38a00008014346b50cfe2e08d9ed24c8487a",
+          "venue": "Artificial Intelligence and Law",
+          "isInfluential": true,
+          "contexts": [
+            "The AGM model (Alchourr\u00f3n et al. 1985) represents epistemic states by means of belief sets, that is, sets of sentences closed under logical consequence.",
+            "Inspired by the well known AGM model (Alchourr\u00f3n et al. 1985), change operators were presented.",
+            "A pioneering research by Alchourr\u00f3n et al. (1985) develop a logical model (AGM) with the intention to deal with norm change."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "3ac4c0b6265137c7da4bf8fdcd08b607170ee084",
+          "title": "Inertial Updating",
+          "authors": [
+            {
+              "name": "A. Dominiak",
+              "authorId": "6342623"
+            },
+            {
+              "name": "Matthew Kovach",
+              "authorId": "104277182"
+            },
+            {
+              "name": "Gerelt Tserenjigmid",
+              "authorId": "1990784"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 3,
+          "doi": null,
+          "arxivId": "2303.06336",
+          "url": "https://www.semanticscholar.org/paper/3ac4c0b6265137c7da4bf8fdcd08b607170ee084",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent.",
+            "More recently, Basu (2019) studies AGM (Alchourro\u0301n et al., 1985) belief revision.",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision. Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent. He then turns to minimum distance updating rules and shows that every support-dependent lexicographic updating rule admits a minimum distance representation. In contrast, we allow for non-Bayesian updating. Zhao (2022) and Dominiak et al. (2022) both study distance minimization \u201cgeneral information;\u201d information is a subset I of \u2206(S) rather than an event. This more general notion of information requires significantly different axioms. Moreover, Zhao (2022) focuses on Bayes\u2019 rule. There is a large literature in experimental economics and psychology documenting various belief biases, and excellent surveys can be found in Camerer (1995) and Benjamin (2019).",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision. Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent. He then turns to minimum distance updating rules and shows that every support-dependent lexicographic updating rule admits a minimum distance representation. In contrast, we allow for non-Bayesian updating. Zhao (2022) and Dominiak et al. (2022) both study distance minimization \u201cgeneral information;\u201d information is a subset I of \u2206(S) rather than an event. This more general notion of information requires significantly different axioms. Moreover, Zhao (2022) focuses on Bayes\u2019 rule. There is a large literature in experimental economics and psychology documenting various belief biases, and excellent surveys can be found in Camerer (1995) and Benjamin (2019). There is also growing number of papers taking axiomatic approaches to studying forms of non-Bayesian updating.19 Of course, Ortoleva (2012) is the most closely related among these, and has already been discussed in detail. Other papers include Suleymanov (2021), which studies deviations from Bayesian updating caused by ambiguity; Jakobsen (19)For behavioral models of non-Bayesian updating, see, for example Barberis et al.",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision.",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision. Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent. He then turns to minimum distance updating rules and shows that every support-dependent lexicographic updating rule admits a minimum distance representation. In contrast, we allow for non-Bayesian updating. Zhao (2022) and Dominiak et al.",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision. Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent. He then turns to minimum distance updating rules and shows that every support-dependent lexicographic updating rule admits a minimum distance representation. In contrast, we allow for non-Bayesian updating. Zhao (2022) and Dominiak et al. (2022) both study distance minimization \u201cgeneral information;\u201d information is a subset I of \u2206(S) rather than an event. This more general notion of information requires significantly different axioms. Moreover, Zhao (2022) focuses on Bayes\u2019 rule. There is a large literature in experimental economics and psychology documenting various belief biases, and excellent surveys can be found in Camerer (1995) and Benjamin (2019). There is also growing number of papers taking axiomatic approaches to studying forms of non-Bayesian updating.19 Of course, Ortoleva (2012) is the most closely related among these, and has already been discussed in detail.",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision. Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent. He then turns to minimum distance updating rules and shows that every support-dependent lexicographic updating rule admits a minimum distance representation. In contrast, we allow for non-Bayesian updating. Zhao (2022) and Dominiak et al. (2022) both study distance minimization \u201cgeneral information;\u201d information is a subset I of \u2206(S) rather than an event.",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision. Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent. He then turns to minimum distance updating rules and shows that every support-dependent lexicographic updating rule admits a minimum distance representation. In contrast, we allow for non-Bayesian updating. Zhao (2022) and Dominiak et al. (2022) both study distance minimization \u201cgeneral information;\u201d information is a subset I of \u2206(S) rather than an event. This more general notion of information requires significantly different axioms. Moreover, Zhao (2022) focuses on Bayes\u2019 rule. There is a large literature in experimental economics and psychology documenting various belief biases, and excellent surveys can be found in Camerer (1995) and Benjamin (2019). There is also growing number of papers taking axiomatic approaches to studying forms of non-Bayesian updating.19 Of course, Ortoleva (2012) is the most closely related among these, and has already been discussed in detail. Other papers include Suleymanov (2021), which studies deviations from Bayesian updating caused by ambiguity; Jakobsen (19)For behavioral models of non-Bayesian updating, see, for example Barberis et al. (1998); Rabin and Schrag (1999); Mullainathan (2002); Rabin (2002); Mullainathan et al.",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision. Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent. He then turns to minimum distance updating rules and shows that every support-dependent lexicographic updating rule admits a minimum distance representation. In contrast, we allow for non-Bayesian updating. Zhao (2022) and Dominiak et al. (2022) both study distance minimization \u201cgeneral information;\u201d information is a subset I of \u2206(S) rather than an event. This more general notion of information requires significantly different axioms. Moreover, Zhao (2022) focuses on Bayes\u2019 rule.",
+            "More recently, Basu (2019) studies AGM (Alchourr\u00f3n et al., 1985) belief revision. Within this setting, he establishes an equivalence between lexicographic updating rules and updating rules that are AGM-consistent, Bayesian, and weak path independent. He then turns to minimum distance updating rules and shows that every support-dependent lexicographic updating rule admits a minimum distance representation. In contrast, we allow for non-Bayesian updating. Zhao (2022) and Dominiak et al. (2022) both study distance minimization \u201cgeneral information;\u201d information is a subset I of \u2206(S) rather than an event. This more general notion of information requires significantly different axioms. Moreover, Zhao (2022) focuses on Bayes\u2019 rule. There is a large literature in experimental economics and psychology documenting various belief biases, and excellent surveys can be found in Camerer (1995) and Benjamin (2019). There is also growing number of papers taking axiomatic approaches to studying forms of non-Bayesian updating."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "1f744b3a4dfbab9fab5bdafcbcb46c9eefa7b404",
+          "title": "Deductive belief change",
+          "authors": [
+            {
+              "name": "Theofanis I. Aravanis",
+              "authorId": "103450609"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.1007/s10472-023-09835-4",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/1f744b3a4dfbab9fab5bdafcbcb46c9eefa7b404",
+          "venue": "Annals of Mathematics and Artificial Intelligence",
+          "isInfluential": true,
+          "contexts": [
+            "In their seminal article [1], Alchourr\u00f3n, G\u00e4rdenfors and Makinson characterized both these types of change-operations axiomatically, in terms of well-accepted rationality-postulates, as well as constructively, in terms of the so-called partial-meet constructive model, which is based on a mechanism that selects sets of sentences of a belief corpus that are eligible to be retained.",
+            "Two such constructive models are the partial-meet model, which was already proposed by the AGM trio in their seminal article [1], and the faithful-preorders model by Katsuno and Mendelzon [39].",
+            "We shall say that a revision function \u2217 is an AGM revision function iff it respects the following postulates, known as the AGM revision postulates [1].",
+            "\u2212 is an AGM contraction function iff it respects the following postulates, known as the AGM contraction postulates [1].",
+            "10The type of revision encoded into the AGM revision function \u2217 is called maxichoice revision [1].",
+            "The process of belief change was formalized by Alchourr\u00f3n, G\u00e4rdenfors and Makinson in the cornerstone work [1], in which a versatile framework was introduced, now called the AGM paradigm, after the initials of its three founders.",
+            "As we prove, kernel belief change \u2014and thus all its specializations, including partialmeet belief change originally developed by the AGM trio in [1]\u2014 implements DBC, hence, it provides a proof of concept for the introduced type of belief change."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "e8fc24d5813b4d8f6558dc211dd7fdc08b3d2e13",
+          "title": "Mixed Iterated Revisions: Rationale, Algorithms, and Complexity",
+          "authors": [
+            {
+              "name": "P. Liberatore",
+              "authorId": "1747418"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1145/3583071",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/e8fc24d5813b4d8f6558dc211dd7fdc08b3d2e13",
+          "venue": "ACM Transactions on Computational Logic",
+          "isInfluential": true,
+          "contexts": [
+            "Assuming this ordering as fixed or depending on the base only is the AGM model or revision [1, 30].",
+            "Full meet revision was created for a single step of revision [1, 30] and then considered in iteration [2, 37, 54].",
+            "At the one end of the spectrum, it is believed to be always true (lexicographic revision [60, 76]); at the far opposite, it is unknown (contraction [1, 73]).",
+            "In turns, such a partition is similar to the system for expressing such orderings in possibilistic logic [4], and correspond to a sequence of formulae by Rott [68], , and to an epistemic entrenchment [1].",
+            "Even the memoryless operators such as full meet revision [1] and the distance-based revision [17, 65] can be embedded in this framework: They produce a plausibility order that does not depend at all on the previous one except for their zero class."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "7e42126b9e0b5baead39d988254cb35c73e7817e",
+          "title": "Generalizing Parikh\u2019s Criterion for Relevance-Sensitive Belief Revision",
+          "authors": [
+            {
+              "name": "Theofanis I. Aravanis",
+              "authorId": "103450609"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1145/3572907",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7e42126b9e0b5baead39d988254cb35c73e7817e",
+          "venue": "ACM Transactions on Computational Logic",
+          "isInfluential": true,
+          "contexts": [
+            "A prominent and versatile approach which formalizes (both axiomatically and semantically) belief revision is that proposed by Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1], now known as the AGM paradigm.",
+            "Firstly, the characterizations of postulates (R) and (C) in the realm of the other two popular constructive models of belief change \u00d0that is, the epistemicentrenchment, [14], and partial-meet, [1], models\u00d0 would be of great interest; analogous characterizations have been provided for postulates (P1) and (P2) in [5, 6].",
+            "3Two other well-known constructive models for belief revision constitute the epistemic-entrenchment model [14], and the partial-meet model [1].",
+            "Parikh noticed, in [20], that the severe full-meet revision of [1] satisies the AGM postulates for revision and, at the same time, discards all prior beliefs of a belief set \ufffd , retaining only the (deductive closure of the) epistemic input \ufffd , in the principal case where \ufffd contradicts \ufffd .",
+            "1For a proof on the uniqueness of P\ufffd , the reader is referred to Makinson\u2019s book [19, p. 206]."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "fd9c8252eed7148073237d89de1c7c8bd09273a7",
+          "title": "Revising System Specifications in Temporal Logic",
+          "authors": [
+            {
+              "name": "Paulo T. Guerra",
+              "authorId": "2971326"
+            },
+            {
+              "name": "Renata Wassermann",
+              "authorId": "145483667"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1007/s10849-022-09376-9",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/fd9c8252eed7148073237d89de1c7c8bd09273a7",
+          "venue": "Journal of Logic, Language and Information",
+          "isInfluential": true,
+          "contexts": [
+            "In this work, we investigate an approach to repair inconsistencies in formal system speci\ufb01cations based on belief revision theory (Alchourron et al., 1985).",
+            "A remainder set K \u22a5 \u03b1 contains the maximal subsets of K that do not imply \u03b1 : De\ufb01nition 1 (Alchourron et al., 1985) Let K be a belief set and \u03b1 a formula.",
+            "Belief revision (Alchourron et al., 1985) is a subarea of formal epistemology that deals with how we behave when receiving new information, especially if it is inconsistent with what we currently believe.",
+            "Alchourron et al. (1985) proposed a set of rationality postulates in order to specify what is expected from a rational revision function, which became known as the AGM postulates.",
+            "\u2026of speci\ufb01cations described by means of temporal formulas and the repair of systems models by means of minimal structural changes on theseIn this work, we investigate an approach to repair inconsistencies in formal system speci\ufb01cations based on belief revision theory (Alchourron et al., 1985).",
+            "A partial meet revision function over K is given by Alchourr\u00f3n, G\u00e4rdenfors and Makinson have proven the following result: Theorem 1 (Alchourron et al., 1985; Hansson, 1999) Let \u2217 be a function which, given a formula \u03b1 , takes a belief set K into a new belief set K \u2217 \u03b1 .",
+            "We propose the use of belief revision (Alchourron et al., 1985) as principle to guide model changes when the repair of models occurs in a static context.",
+            "\u2026elements of the remainder set at hand: De\ufb01nition 2 (Alchourron & Makinson, 1982) Let K be a belief set and \u03b1 a new belief, \u03b3 is a selection function for K and \u03b1 if and only if: De\ufb01nition 3 (Alchourron et al., 1985) Let K be a belief set, \u03b1 a new belief, and \u03b3 a selection function for K and \u03b1 ."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "1c037c4639a25c5e9e30d9e9c4e226f9d9237337",
+          "title": "On the Representation of Darwiche and Pearl's Epistemic States for Iterated Belief Revision",
+          "authors": [
+            {
+              "name": "Nicolas Schwind",
+              "authorId": "1980622"
+            },
+            {
+              "name": "S. Konieczny",
+              "authorId": "1679371"
+            },
+            {
+              "name": "R. P\u00e9rez",
+              "authorId": "2398171"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 16,
+          "doi": "10.24963/kr.2022/32",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/1c037c4639a25c5e9e30d9e9c4e226f9d9237337",
+          "venue": "International Conference on Principles of Knowledge Representation and Reasoning",
+          "isInfluential": true,
+          "contexts": [
+            "The standard model for belief revision as been proposed by Alchourron, Ga\u0308rdenfors and Makinson (Alchourro\u0301n, Ga\u0308rdenfors, and Makinson 1985; Ga\u0308rdenfors 1988; Ferme\u0301 and Hansson 2011), and is called the AGM theory.",
+            "This theory perfectly gives account of a one step revision, as attested by several representation theorems (Alchourro\u0301n, Ga\u0308rdenfors, and Makinson 1985; Alchourro\u0301n and Makinson 1985; Katsuno and Mendelzon 1991; Grove 1988; Hansson 1994; del Cerro and Herzig 1996), showing that the AGM rationality postulates correspond exactly to the most sensible way to build revision operators.",
+            "This theory perfectly gives account of a one step revision, as attested by several representation theorems (Alchourro\u0301n, Ga\u0308rdenfors, and Makinson 1985; Alchourro\u0301n and Makinson 1985; Katsuno and Mendelzon 1991; Grove 1988; Hansson 1994; del Cerro and Herzig 1996), showing that the AGM rationality\u2026",
+            "The close formal links between belief revision and non-monotonic inference relations (Makinson and Ga\u0308rdenfors 1989; Ga\u0308rdenfors 1990) on one side and possibilistic logic (Dubois and Prade 1991) on the other side, also prove that this theory adequatly captures this fundamental process."
+          ],
+          "intents": [
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "1faa5c76d14f7bac2bfffccde9c06c62737d6366",
+          "title": "Belief Revision and Computational Argumentation: A Critical Comparison",
+          "authors": [
+            {
+              "name": "P. Baroni",
+              "authorId": "1710592"
+            },
+            {
+              "name": "E. Ferm\u00e9",
+              "authorId": "2553321"
+            },
+            {
+              "name": "M. Giacomin",
+              "authorId": "1752573"
+            },
+            {
+              "name": "Guillermo Ricardo Simari",
+              "authorId": "69362913"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 6,
+          "doi": "10.1007/s10849-022-09369-8",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/1faa5c76d14f7bac2bfffccde9c06c62737d6366",
+          "venue": "Journal of Logic, Language and Information",
+          "isInfluential": true,
+          "contexts": [
+            "To ful\ufb01ll this intuition, the authors of Alchourr\u00f3n et al. (1985) proposed that the selection function \u03b3 will be based on a total preorder among the maximal subsets of K which do not imply x .",
+            "\u2026range of choices for the de\ufb01nition of a contraction (or equivalently, revision, as one can be de\ufb01ned in terms of the other) operator, some of the possible choices being regarded as unsatisfactory ( e.g., in Alchourr\u00f3n et al. 1985 it is stated that maxichoice revision has disconcerting properties ).",
+            "To constrain the choice to a set of more reasonable alternatives, in Alchourr\u00f3n et al. (1985) the notion of partial meet contraction was introduced.",
+            "The use of the term belief revision predates the AGM paper (Alchourr\u00f3n et al. 1985); in particular, the earliest reference to it came from the \ufb01rst writings of G\u00e4rden-fors (G\u00e4rdenfors 1981, 1982, 1984), while Alchourr\u00f3n and Makinson were interested initially in changes in logical theories and in\u2026",
+            "Strictly speaking, this \u201cordering\" relation over sets of sentences (Alchourr\u00f3n et al. 1985) or over sentences (G\u00e4rdenfors 1988) determines univocally how to perform the belief change.",
+            "Intuitively, \u03b3 has to select the \u201cmost important\u201d (Alchourr\u00f3n et al. 1985) maximal subsets of K that fail to imply x .",
+            "In belief revision, AGM postulates (Alchourr\u00f3n et al. 1985) have played a seminal role, so that postulate (re-)de\ufb01nition has been regarded as a starting (and central) point in all subsequent developments like belief updating, base revision, and other forms of belief dynamics.",
+            "In the AGM approach (Alchourr\u00f3n et al. 1985; G\u00e4rdenfors 1988), beliefs are represented as sets of sentences in some language L including the standard connectives \u00ac , \u2227 , \u2228 , \u2192 , \u2194 and constants (cid:6) , \u22a5 ."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "979b49f7feee2db21bca993cc722800c9444abf2",
+          "title": "Theory-relational belief revision",
+          "authors": [
+            {
+              "name": "Theofanis I. Aravanis",
+              "authorId": "103450609"
+            },
+            {
+              "name": "P. Peppas",
+              "authorId": "2298830"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1007/s10472-022-09794-2",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/979b49f7feee2db21bca993cc722800c9444abf2",
+          "venue": "Annals of Mathematics and Artificial Intelligence",
+          "isInfluential": true,
+          "contexts": [
+            "The last constructive model that we discuss herein has been proposed by G\u00a8ardenfors and Makinson [7], and it is based on the notion of epistemic entrenchment .",
+            "Definition 1 (Remainder, [1]) Let K be a theory of T, and let \u03c6 be a non-tautological sentence of K .",
+            "Within the AGM paradigm, the AGM revision functions are characterized in terms of a collection of eight rationality postulates, named AGM postulates for revision, as well as in terms of the so-called constructive models for belief revision, which are formalizations that provide \u201crecipes\u201d for specifying particular AGM revision functions; well-known such models are the partial-meet model [1], the faithful-preorders model [10], and the epistemicentrenchment model [7].",
+            "A prominent and versatile approach which formalizes belief revision is that proposed by Alchourr\u00b4on, G\u00a8ardenfors and Makinson [1], known as the AGM paradigm .",
+            "It has been shown that, whenever \u03b3 is produced from a total preorder K over R(K) as described above, the revision functions induced from condition (P\u2217) satisfy the AGM postulates for revision [1].",
+            "Definition 2 (Selection Function, [1]) Let K be a theory of T .",
+            "In the rest of this section, we shall discuss the most popular of them, namely, the partial-meet model (based on orderings over theories) [1], the faithful-preorders model (based on orderings over possible worlds) [10], and the epistemic-entrenchment model (based on orderings over sentences) [7].",
+            "The partial-meet model has been introduced by Alchourr\u00f3n, G\u00e4rdenfors and Makinson in [1].",
+            "Definition 2 (Selection Function, [1]) Let K be a theory of T.",
+            "The partial-meet model has been introduced by Alchourr\u00b4on, G\u00a8ardenfors and Makinson in [1].",
+            "Within the AGM paradigm [1], the process of belief revision is modelled as a binary function \u2217 that maps a theory K and a sentence \u03c6 to a revised theory K \u2217 \u03c6.",
+            "A prominent and versatile approach which formalizes belief revision is that proposed by Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1], known as the AGM paradigm."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "84d44a3f48ece3525981cca5df5840bf798aea98",
+          "title": "A Conditional Perspective on the Logic of Iterated Belief Contraction",
+          "authors": [
+            {
+              "name": "Kai Sauerwald",
+              "authorId": "13092666"
+            },
+            {
+              "name": "G. Kern-Isberner",
+              "authorId": "1397424182"
+            },
+            {
+              "name": "C. Beierle",
+              "authorId": "1722911"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": null,
+          "arxivId": "2202.03196",
+          "url": "https://www.semanticscholar.org/paper/84d44a3f48ece3525981cca5df5840bf798aea98",
+          "venue": "arXiv.org",
+          "isInfluential": true,
+          "contexts": [
+            "Classical belief change theory by Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1] (AGM) deals with belief sets as representation of belief states, i.e., deductively closed sets of propositions.",
+            "Classical belief change theory by Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1] (AGM) deals with belief sets as representation of belief states, i.",
+            "The postulates to revision given by Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1] (AGM) have counterparts in the framework of epistemic states, which were presented by Darwiche and Pearl [11].",
+            "A I]\n4 F\neb 2\n02 2\nwhich is an extension of Katsuno and Mendelzon\u2019s characterization of the class of revisions by Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1] in terms of plausibility orderings [23], where it is assumed that the epistemic states contain an order of the possible worlds (or interpretations).",
+            "Postulates for AGM contraction [1] where first adapted by Caridroit, Konieczny and Marquis [8] to the setting of propositional logic.",
+            "which is an extension of Katsuno and Mendelzon\u2019s characterization of the class of revisions by Alchourr\u00f3n, G\u00e4rdenfors and Makinson [1] in terms of plausibility orderings [23], where it is assumed that the epistemic states contain an order of the possible worlds (or interpretations)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "ae00bcfb4314c4a9c1bde33c3bb8947b0011acf1",
+          "title": "A Brief History of Updates of Answer-Set Programs",
+          "authors": [
+            {
+              "name": "Jo\u00e3o Leite",
+              "authorId": "145757714"
+            },
+            {
+              "name": "Martin Slota",
+              "authorId": "2985220"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1017/s1471068422000060",
+          "arxivId": "2112.13477",
+          "url": "https://www.semanticscholar.org/paper/ae00bcfb4314c4a9c1bde33c3bb8947b0011acf1",
+          "venue": "Theory and Practice of Logic Programming",
+          "isInfluential": true,
+          "contexts": [
+            "Most of this work was inspired by the seminal contribution of Alchourro\u0301n, Ga\u0308rdenfors and Makinson (AGM) who proposed a set of desirable properties of belief change operators, now called AGM postulates (Alchourro\u0301n et al. 1985)."
+          ],
+          "intents": [
+            "methodology"
+          ]
+        }
+      ],
+      "references_count": 0,
+      "citations_count": 30
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

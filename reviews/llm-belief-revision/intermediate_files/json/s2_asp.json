@@ -1,0 +1,992 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "answer set programming stable models",
+  "results": [
+    {
+      "paperId": "3ebf4a1492b2dec6457f9921721b845f32ccade1",
+      "title": "Comparing Non-minimal Semantics for Disjunction in Answer Set Programming",
+      "authors": [
+        {
+          "name": "Felicidad Aguado",
+          "authorId": "47969099"
+        },
+        {
+          "name": "Pedro Cabalar",
+          "authorId": "2021768"
+        },
+        {
+          "name": "Brais Mu\u00f1iz",
+          "authorId": "1380920478"
+        },
+        {
+          "name": "G. P'erez",
+          "authorId": "2139967236"
+        },
+        {
+          "name": "C. Vidal",
+          "authorId": "2265074685"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n In this paper, we compare four different semantics for disjunction in Answer Set Programming that, unlike stable models, do not adhere to the principle of model minimality. Two of these approaches, Cabalar and Mu\u00f1iz\u2019 Justified Models and Doherty and Szalas\u2019 Strongly Supported Models, directly provide an alternative non-minimal semantics for disjunction. The other two, Aguado et al\u2019s Forks and Shen and Eiter\u2019s Determining Inference (DI) semantics, actually introduce a new disjunction connective, but are compared here as if they constituted new semantics for the standard disjunction operator. We are able to prove that three of these approaches (Forks, Justified Models and a reasonable relaxation of the DI-semantics) actually coincide, constituting a common single approach under different definitions. Moreover, this common semantics always provides a superset of the stable models of a programme (in fact, modulo any context) and is strictly stronger than the fourth approach (Strongly Supported Models), that actually treats disjunctions as in classical logic.",
+      "citationCount": 0,
+      "doi": "10.1017/S1471068425100185",
+      "arxivId": "2507.18198",
+      "url": "https://www.semanticscholar.org/paper/3ebf4a1492b2dec6457f9921721b845f32ccade1",
+      "venue": "Theory and Practice of Logic Programming",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.18198"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8a62d273d63c9555a61e9ebe3519601b42698c7b",
+      "title": "Declarative Modelling of Fair Hierarchical Task Allocation Using Answer Set Programming",
+      "authors": [
+        {
+          "name": "Emmanuel Mgbeahuruike",
+          "authorId": "2377349822"
+        },
+        {
+          "name": "Babatunde Akinkunmi",
+          "authorId": "2377342914"
+        },
+        {
+          "name": "Adedoyin Adebanjo",
+          "authorId": "2377342846"
+        },
+        {
+          "name": "Abosede Ojo",
+          "authorId": "2377363517"
+        },
+        {
+          "name": "Joshua Adelowo",
+          "authorId": "2377342901"
+        },
+        {
+          "name": "Alfred Udosen",
+          "authorId": "2377370707"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Task allocation is a well-known optimization problem that has been widely addressed using techniques such as Integer Programming (IP) and nature-inspired algorithms. However, many existing approaches lack flexibility and contextual awareness, especially in scenarios requiring fairness and hierarchical compliance. This research proposes an optimized Answer Set Programming (ASP) model for the Fair Hierarchical Task Allocation (FHTA) problem. The model incorporates knowledge-based reasoning to support context-specific constraints and generates stable models (answer sets) that satisfy both fairness and organizational hierarchy. A generate-and-test methodology is employed, wherein candidate solutions are produced and evaluated against a set of hard and soft constraints. A realistic problem scenario involving academic task assignment was formalized in ASP, using the Potassco toolkit (Clingo). The performance of the model was evaluated across varying problem sizes, specifically by changing the number of tasks and personnel involved. Metrics such as CPU time and total runtime were recorded. The results show that the ASP model performs efficiently for moderately sized instances and effectively achieves fair and hierarchical task allocation. This work demonstrates that ASP provides a scalable, explainable, and flexible framework for solving complex task allocation problems in hierarchical organizations.",
+      "citationCount": 0,
+      "doi": "10.32628/cseit25111672",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8a62d273d63c9555a61e9ebe3519601b42698c7b",
+      "venue": "International Journal of Scientific Research in Computer Science Engineering and Information Technology",
+      "journal": {
+        "name": "International Journal of Scientific Research in Computer Science, Engineering and Information Technology"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9091ad9dd0e76aff497bcefabc91b005bee40ec6",
+      "title": "Distributed Answer Set Coloring: Stable Models Computation via Graph Coloring",
+      "authors": [
+        {
+          "name": "M. D. Bortoli",
+          "authorId": "46669011"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Answer Set Programming (ASP) is a famous logic language for knowledge representation, which has been really successful in the last years, as witnessed by the great interest into the development of efficient solvers for ASP. Yet, the great request of resources for certain types of problems, as the planning ones, still constitutes a big limitation for problem solving. Particularly, in the case the program is grounded before the resolving phase, an exponential blow up of the grounding can generate a huge ground file, infeasible for single machines with limited resources, thus preventing even the discovering of a single non-optimal solution. To address this problem, in this paper we present a distributed approach to ASP solving, exploiting distributed computation benefits in order to overcome the just explained limitations. The here presented tool, which is called Distributed Answer Set Coloring (DASC), is a pure solver based on the well-known Graph Coloring algorithm. DASC is part of a bigger project aiming to bring logic programming into a distributed system, started in 2017 by Federico Igne with mASPreduce and continued in 2018 by Pietro Totis with a distributed grounder. In this paper we present a low level implementation of the Graph Coloring algorithm, via the Boost and MPI libraries for C++. Finally, we provide a few results of the very first working version of our tool, at the moment without any strong optimization or heuristic.",
+      "citationCount": 0,
+      "doi": "10.4204/EPTCS.306.60",
+      "arxivId": "1909.08263",
+      "url": "https://www.semanticscholar.org/paper/9091ad9dd0e76aff497bcefabc91b005bee40ec6",
+      "venue": "ICLP Technical Communications",
+      "journal": {
+        "name": "ArXiv",
+        "pages": "441-451",
+        "volume": "abs/1909.08263"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c79cfb6c3f050b828150e0a38bb722d84934e389",
+      "title": "Speeding up Answer Set Programming by Quantum Computing",
+      "authors": [
+        {
+          "name": "R. Romanello",
+          "authorId": "2184951003"
+        },
+        {
+          "name": "D. D. Giustina",
+          "authorId": "1918891"
+        },
+        {
+          "name": "Stefano Pessotto",
+          "authorId": "2319526613"
+        },
+        {
+          "name": "Carla Piazza",
+          "authorId": "2276781724"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Quantum Computing has become a more and more prominent research field in the last few decades. This growth in interest is mainly related to the so-called quantum speed up that some quantum procedure exhibits. The two main examples are Shor and Grover algorithms. The latter will be a key ingredient of this paper. In particular, we propose an attempt to speed up Answer Set Programming (ASP) exploiting Quantum Computing. We rely on two proposals in the literature that use quantum computation for: finding stable models of ASP programs; counting solutions of propositional formulae. For combining such proposals we embed in the quantum framework a third proposal from the literature, namely a purely classical approach for navigating the solution space of ASP models. We end up with a quantum method for counting stable models of ASP programs. After providing the details of our method, we briefly describe a Proof of Concept implementation of these techniques.",
+      "citationCount": 1,
+      "doi": "10.1145/3660318.3660328",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c79cfb6c3f050b828150e0a38bb722d84934e389",
+      "venue": "QUASAR@HPDC",
+      "journal": {
+        "name": "Proceedings of the 2024 Workshop on Quantum Search and Information Retrieval"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fcb10a437ebc186dc11ecb3e5f02478b0616f34b",
+      "title": "Answer Set Networks: Casting Answer Set Programming into Deep Learning",
+      "authors": [
+        {
+          "name": "Arseny Skryagin",
+          "authorId": "89329285"
+        },
+        {
+          "name": "Daniel Ochs",
+          "authorId": "50241219"
+        },
+        {
+          "name": "Phillip Deibert",
+          "authorId": "2336091604"
+        },
+        {
+          "name": "Simon Kohaut",
+          "authorId": "81540086"
+        },
+        {
+          "name": "D. Dhami",
+          "authorId": "39552485"
+        },
+        {
+          "name": "K. Kersting",
+          "authorId": "2113406566"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Although Answer Set Programming (ASP) allows constraining neural-symbolic (NeSy) systems, its employment is hindered by the prohibitive costs of computing stable models and the CPU-bound nature of state-of-the-art solvers. To this end, we propose Answer Set Networks (ASN), a NeSy solver. Based on Graph Neural Networks (GNN), ASNs are a scalable approach to ASP-based Deep Probabilistic Logic Programming (DPPL). Specifically, we show how to translate ASPs into ASNs and demonstrate how ASNs can efficiently solve the encoded problem by leveraging GPU's batching and parallelization capabilities. Our experimental evaluations demonstrate that ASNs outperform state-of-the-art CPU-bound NeSy systems on multiple tasks. Simultaneously, we make the following two contributions based on the strengths of ASNs. Namely, we are the first to show the finetuning of Large Language Models (LLM) with DPPLs, employing ASNs to guide the training with logic. Further, we show the\"constitutional navigation\"of drones, i.e., encoding public aviation laws in an ASN for routing Unmanned Aerial Vehicles in uncertain environments.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2412.14814",
+      "arxivId": "2412.14814",
+      "url": "https://www.semanticscholar.org/paper/fcb10a437ebc186dc11ecb3e5f02478b0616f34b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.14814"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c74675f370de9a32e60da6cbec0d6166a3e4d3fb",
+      "title": "Computing Supported Models via Transformation to Stable Models",
+      "authors": [
+        {
+          "name": "Fang Li",
+          "authorId": "2342356193"
+        },
+        {
+          "name": "Gopal Gupta",
+          "authorId": "2342283235"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Answer Set Programming (ASP) with stable model semantics has proven highly effective for knowledge representation and reasoning. However, the minimality requirement of stable models can be restrictive for applications requiring exploration of non-minimal but logically consistent solution spaces. Supported models, introduced by Apt, Blair, and Walker in 1988, relax this minimality constraint while maintaining a support condition ensuring every true atom is justified by some rule. Despite their theoretical significance, supported models lack practical computational tools integrated with modern ASP solvers. We present a novel transformation-based method enabling computation of supported models using standard ASP infrastructure. Our approach transforms any ground logic program into an equivalent program whose stable models correspond exactly to the supported models of the original program. We implement this transformation for Clingo, providing the first practical tool for computing supported models with state-of-the-art ASP solvers. We demonstrate applications in software verification, medical diagnosis, and planning where supported models enable valuable exploratory reasoning capabilities beyond those provided by stable models. We also provide an empirical evaluation to justify the practical utility of our approach compared to established methods. Our implementation is publicly available and compatible with standard ASP syntax.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.05437",
+      "url": "https://www.semanticscholar.org/paper/c74675f370de9a32e60da6cbec0d6166a3e4d3fb",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dcc90fe0c435f800e19cfd623211c70814cf69a7",
+      "title": "Inductive Learning for Possibilistic Logic Programs Under Stable Models",
+      "authors": [
+        {
+          "name": "Hongbo Hu",
+          "authorId": "2339102752"
+        },
+        {
+          "name": "Yisong Wang",
+          "authorId": "2339232161"
+        },
+        {
+          "name": "Yi Huang",
+          "authorId": "2108794329"
+        },
+        {
+          "name": "Kewen Wang",
+          "authorId": "2384804424"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n Possibilistic logic programs (poss-programs) under stable models are a major variant of answer set programming. While its semantics (possibilistic stable models) and properties have been well investigated, the problem of inductive reasoning has not been investigated yet. This paper presents an approach to extracting poss-programs from a background program and examples (parts of intended possibilistic stable models). To this end, the notion of induction tasks is first formally defined, its properties are investigated and two algorithms ilpsm and ilpsmmin for computing induction solutions are presented. An implementation of ilpsmmin is also provided and experimental results show that when inputs are ordinary logic programs, the prototype outperforms a major inductive learning system for normal logic programs from stable models on the datasets that are randomly generated.",
+      "citationCount": 0,
+      "doi": "10.1017/S1471068425100355",
+      "arxivId": "2510.07069",
+      "url": "https://www.semanticscholar.org/paper/dcc90fe0c435f800e19cfd623211c70814cf69a7",
+      "venue": "Theory and Practice of Logic Programming",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.07069"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "09896495304e11d63175c130dcb1491ff1349f07",
+      "title": "A Sequent Calculus for Answer Set Entailment",
+      "authors": [
+        {
+          "name": "Thomas Eiter",
+          "authorId": "2289656998"
+        },
+        {
+          "name": "Tobias Geibinger",
+          "authorId": "2381662149"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Answer Set Programming (ASP) is a popular nonmonotonic formalism used for common-sense reasoning and problem-solving based on stable model semantics. Equilibrium logic is a generalisation of ASP for arbitrary propositional theories and thus provides a logical characterisation of the nonmonotonic stable model semantics. In difference to classical logic, which can be defined via proof or model theory, nonmonotonic reasoning formalisms are defined via their models exclusively. Equilibrium logic is no exception here, as it has no proper proof-theoretic axiomatisation. Besides this being a theoretical imbalance, it also has consequences regarding notions of justification and explainability. In this work, we fill this gap by providing a sequent calculus for answer set entailment. Our calculus builds upon ideas from existing calculi for other nonmonotonic formalisms and utilises calculi for the logic of here and there, which is the underlying base logic of equilibrium logic. We show that the calculus is sound and complete and discuss pitfalls as well as alternative axiomatisations. Finally, we address how our approach can be of use for explainability in ASP.",
+      "citationCount": 0,
+      "doi": "10.24963/ijcai.2025/497",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/09896495304e11d63175c130dcb1491ff1349f07",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "4463-4472"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a7cf30fd9ba609fb8db4575a04dd90b009f3dd52",
+      "title": "Statistical Relational Extension of Answer Set Programming",
+      "authors": [
+        {
+          "name": "Joohyung Lee",
+          "authorId": "46664110"
+        },
+        {
+          "name": "Zhun Yang",
+          "authorId": "2729091"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/978-3-031-31414-8_4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a7cf30fd9ba609fb8db4575a04dd90b009f3dd52",
+      "venue": "RW",
+      "journal": {
+        "pages": "132-160"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "88f149242ae7b6fc8690abd64d2ebb68bd07101a",
+      "title": "Linear-Time Temporal Answer Set Programming",
+      "authors": [
+        {
+          "name": "Felicidad Aguado",
+          "authorId": "47969099"
+        },
+        {
+          "name": "Pedro Cabalar",
+          "authorId": "2021768"
+        },
+        {
+          "name": "Mart\u00edn Di\u00e9guez",
+          "authorId": "144880473"
+        },
+        {
+          "name": "Gilberto P\u00e9rez",
+          "authorId": "122138961"
+        },
+        {
+          "name": "Torsten Schaub",
+          "authorId": "1809337"
+        },
+        {
+          "name": "Anna Schuhmann",
+          "authorId": "41022829"
+        },
+        {
+          "name": "Concepci\u00f3n Vidal Mart\u00edn",
+          "authorId": "145150983"
+        }
+      ],
+      "year": 2021,
+      "abstract": "\n In this survey, we present an overview on (Modal) Temporal Logic Programming in view of its application to Knowledge Representation and Declarative Problem Solving. The syntax of this extension of logic programs is the result of combining usual rules with temporal modal operators, as in Linear-time Temporal Logic (LTL). In the paper, we focus on the main recent results of the non-monotonic formalism called Temporal Equilibrium Logic (TEL) that is defined for the full syntax of LTL but involves a model selection criterion based on Equilibrium Logic, a well known logical characterization of Answer Set Programming (ASP). As a result, we obtain a proper extension of the stable models semantics for the general case of temporal formulas in the syntax of LTL. We recall the basic definitions for TEL and its monotonic basis, the temporal logic of Here-and-There (THT), and study the differences between finite and infinite trace length. We also provide further useful results, such as the translation into other formalisms like Quantified Equilibrium Logic and Second-order LTL, and some techniques for computing temporal stable models based on automata constructions. In the remainder of the paper, we focus on practical aspects, defining a syntactic fragment called (modal) temporal logic programs closer to ASP, and explaining how this has been exploited in the construction of the solver telingo, a temporal extension of the well-known ASP solver clingo that uses its incremental solving capabilities.",
+      "citationCount": 24,
+      "doi": "10.1017/s1471068421000557",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/88f149242ae7b6fc8690abd64d2ebb68bd07101a",
+      "venue": "Theory and Practice of Logic Programming",
+      "journal": {
+        "name": "Theory Pract. Log. Program.",
+        "pages": "2-56",
+        "volume": "23"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "799d62e5680006582af2c6b1c0b6e84e3c2c253d",
+      "title": "Explanation Graphs for Stable Models of Labelled Logic Programs",
+      "authors": [
+        {
+          "name": "Pedro Cabalar",
+          "authorId": "2021768"
+        },
+        {
+          "name": "Brais Mu\u00f1iz",
+          "authorId": "1380920478"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/799d62e5680006582af2c6b1c0b6e84e3c2c253d",
+      "venue": "ICLP Workshops",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ea931a0c8c187ed044a547dc9152478101441075",
+      "title": "Synthesis of Boolean Networks from Biological Dynamical Constraints using Answer-Set Programming",
+      "authors": [
+        {
+          "name": "St\u00e9phanie Chevalier",
+          "authorId": "2056704672"
+        },
+        {
+          "name": "C. Froidevaux",
+          "authorId": "1792777"
+        },
+        {
+          "name": "Lo\u00efc Paulev\u00e9",
+          "authorId": "3125964"
+        },
+        {
+          "name": "A. Zinovyev",
+          "authorId": "1716706"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Boolean networks model finite discrete dynamical systems with complex behaviours. The state of each component is determined by a Boolean function of the state of (a subset of) the components of the network. This paper addresses the synthesis of these Boolean functions from constraints on their domain and emerging dynamical properties of the resulting network. The dynamical properties relate to the existence and absence of trajectories between partially observed configurations, and to the stable behaviours (fixpoints and cyclic attractors). The synthesis is expressed as a Boolean satisfiability problem relying on Answer-Set Programming with a parametrized complexity, and leads to a complete non-redundant characterization of the set of solutions. Considered constraints are particularly suited to address the synthesis of models of cellular differentiation processes, as illustrated on a case study. The scalability of the approach is demonstrated on random networks with scale-free structures up to 100 to 1,000 nodes depending on the type of constraints.",
+      "citationCount": 34,
+      "doi": "10.1109/ICTAI.2019.00014",
+      "arxivId": "1909.04309",
+      "url": "https://www.semanticscholar.org/paper/ea931a0c8c187ed044a547dc9152478101441075",
+      "venue": "IEEE International Conference on Tools with Artificial Intelligence",
+      "journal": {
+        "name": "2019 IEEE 31st International Conference on Tools with Artificial Intelligence (ICTAI)",
+        "pages": "34-41"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "dbcc9cc44c73460e5dd1a7771b062f874546d9c2",
+      "title": "Relating Two Dialects of Answer Set Programming",
+      "authors": [
+        {
+          "name": "Amelia Harrison",
+          "authorId": "3156271"
+        },
+        {
+          "name": "V. Lifschitz",
+          "authorId": "2134090"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Abstract The input language of the answer set solver clingo is based on the definition of a stable model proposed by Paolo Ferraris. The semantics of the ASP-Core language, developed by the ASP Standardization Working Group, uses the approach to stable models due to Wolfgang Faber, Nicola Leone, and Gerald Pfeifer. The two languages are based on different versions of the stable model semantics, and the ASP-Core document requires, \u201cfor the sake of an uncontroversial semantics,\u201d that programs avoid the use of recursion through aggregates. In this paper we prove that the absence of recursion through aggregates does indeed guarantee the equivalence between the two versions of the stable model semantics, and show how that requirement can be relaxed without violating the equivalence property.",
+      "citationCount": 8,
+      "doi": "10.1017/S1471068419000322",
+      "arxivId": "1907.12139",
+      "url": "https://www.semanticscholar.org/paper/dbcc9cc44c73460e5dd1a7771b062f874546d9c2",
+      "venue": "Theory and Practice of Logic Programming",
+      "journal": {
+        "name": "Theory and Practice of Logic Programming",
+        "pages": "1006 - 1020",
+        "volume": "19"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d6df6295ecf451f26711958006dd02fa1d434997",
+      "title": "Dynamic and Temporal Answer Set Programming on Linear Finite Traces",
+      "authors": [
+        {
+          "name": "Pedro Cabalar",
+          "authorId": "2021768"
+        },
+        {
+          "name": "Torsten Schaub",
+          "authorId": "1809337"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d6df6295ecf451f26711958006dd02fa1d434997",
+      "venue": "Datalog",
+      "journal": {
+        "pages": "3-6"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "516301c6debde3287d21fa55384818d37e1508ec",
+      "title": "A Hybrid Approach to Optimization in Answer Set Programming",
+      "authors": [
+        {
+          "name": "Paul Saikko",
+          "authorId": "2454460"
+        },
+        {
+          "name": "Carmine Dodaro",
+          "authorId": "1970630"
+        },
+        {
+          "name": "Mario Alviano",
+          "authorId": "1775574"
+        },
+        {
+          "name": "Matti J\u00e4rvisalo",
+          "authorId": "1790372"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 16,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/516301c6debde3287d21fa55384818d37e1508ec",
+      "venue": "International Conference on Principles of Knowledge Representation and Reasoning",
+      "journal": {
+        "pages": "32-41"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9a7ce5033b45d38e2943dabcb2e5361623192d4a",
+      "title": "Representing Argumentation Frameworks in Answer Set Programming",
+      "authors": [
+        {
+          "name": "Chiaki Sakama",
+          "authorId": "1729583"
+        },
+        {
+          "name": "Tjitze Rienstra",
+          "authorId": "2129610"
+        }
+      ],
+      "year": 2017,
+      "abstract": "This paper studies representation of argumentation frameworks (AFs) in answer set programming (ASP). Four different transformations from AFs to logic programs are provided under the complete semantics, stable semantics, grounded semantics and preferred semantics. The proposed transformations encode labelling-based argumentation semantics in a simple manner, and different semantics of AFs are uniformly characterized by stable models of transformed programs. We apply transformed programs to solving AF problems such as query-answering, enforcement of arguments, agreement or equivalence of different AFs. Logic programming encodings of AFs are also used for representing assumption-based argumentation (ABA) in ASP. The results of this paper exploit new connections between argumentation theory and logic programming, and enable one to perform various argumentation tasks using existing answer set solvers.",
+      "citationCount": 18,
+      "doi": "10.3233/FI-2017-1585",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9a7ce5033b45d38e2943dabcb2e5361623192d4a",
+      "venue": "Fundamenta Informaticae",
+      "journal": {
+        "name": "Fundamenta Informaticae",
+        "pages": "261 - 292",
+        "volume": "155"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cdde5f39ee8561e12f1ebe8a3f5ca9d0a4b3c6f5",
+      "title": "A New Method for Computing Stable Models in Logic Programming",
+      "authors": [
+        {
+          "name": "T. Khaled",
+          "authorId": "31614171"
+        },
+        {
+          "name": "B. Benhamou",
+          "authorId": "3043424"
+        },
+        {
+          "name": "P. Siegel",
+          "authorId": "28384015"
+        }
+      ],
+      "year": 2018,
+      "abstract": "In this work, we introduce a new method for searching stable models of logical programs. This method is based on a relatively new semantics that has not been exploited yet. This semantics captures and extends that one of the stable models (Gelfond et al., 1988) and offers a new alternative to implement ASP solvers. The proposed method performs a DPLL enumerative process that is adapted to Answer Set Programming (ASP) framework according to the used semantics. This method has the advantage to use a Horn clause representation having the same size as the input logic program has constant spatial complexity. It avoids the workload induced by the loop management from which suffer most of the ASP solvers based on the Clark completion. Moreover, the enumeration is done on a restricted set of literals called the strong back-door (STB) of the considered logic program. This reduces the algorithm time complexity which is in theory a function of the size of the STB set. We also introduced new inference rules that the method uses to prune its search tree and hence reduces its size in practice. We implemented the proposed method and applied it to enumerate the stable models of some combinatorial problems. The method is compared to other known systems and the obtained results show that our approach is a good alternative for designing ASP solvers.",
+      "citationCount": 6,
+      "doi": "10.1109/ICTAI.2018.00125",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cdde5f39ee8561e12f1ebe8a3f5ca9d0a4b3c6f5",
+      "venue": "IEEE International Conference on Tools with Artificial Intelligence",
+      "journal": {
+        "name": "2018 IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)",
+        "pages": "800-807"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7ba0cca1acbcf897a48e94cf2c6f96e5b85d4380",
+      "title": "Algorithms for solving optimization problems in answer set programming",
+      "authors": [
+        {
+          "name": "Mario Alviano",
+          "authorId": "1775574"
+        }
+      ],
+      "year": 2018,
+      "abstract": "Answer set programming (ASP) is a declarative language for nonmonotonic reasoning based on stable model semantics. A stable model is a classical model of the input program satisfying the following stability condition: only necessary information is included in the model under the assumptions provided by the model itself for the unknown knowledge in the program, where unknown knowledge is encoded by means of default negation. Rational agents acting in the real world often have to reason in presence of unknown knowledge. It is also common that real world agents cannot meet all their desiderata. For this reason, ASP programs may include weak constraints for representing numerical preferences over jointly incompatible conditions. Stable models are therefore associated with a cost given by the unsatisfied weak constraints, and stable models of minimum cost are preferred. This paper summarizes algorithms and strategies for computing optimal stable models, and hints on how these algorithms can be extended to handle some qualitative preferences that have a natural representation in circumscription, that is, those based on subset-minimality and superset-maximality.",
+      "citationCount": 4,
+      "doi": "10.3233/IA-180119",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7ba0cca1acbcf897a48e94cf2c6f96e5b85d4380",
+      "venue": "Intelligenza Artificiale",
+      "journal": {
+        "name": "Intelligenza Artificiale",
+        "pages": "1 - 14",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a5ce949460bd334ddc40ef9270d481570a95001d",
+      "title": "The s ( ASP ) Predicate Answer Set Programming System",
+      "authors": [
+        {
+          "name": "Kyle Marple",
+          "authorId": "1801201"
+        },
+        {
+          "name": "Elmer Salazar",
+          "authorId": "143844926"
+        },
+        {
+          "name": "Zhuo Chen",
+          "authorId": "2111498380"
+        },
+        {
+          "name": "G. Gupta",
+          "authorId": "144961671"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a5ce949460bd334ddc40ef9270d481570a95001d",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d569f88f7d4857ce63ed79f73925523dd8a3d868",
+      "title": "Non-monotonic spatial reasoning with answer set programming modulo theories* \u2020",
+      "authors": [
+        {
+          "name": "P. Walega",
+          "authorId": "2898707"
+        },
+        {
+          "name": "C. Schultz",
+          "authorId": "2650367"
+        },
+        {
+          "name": "M. Bhatt",
+          "authorId": "1796445"
+        }
+      ],
+      "year": 2016,
+      "abstract": "Abstract The systematic modelling of dynamic spatial systems is a key requirement in a wide range of application areas such as commonsense cognitive robotics, computer-aided architecture design, and dynamic geographic information systems. We present Answer Set Programming Modulo Theories (ASPMT)(QS), a novel approach and fully implemented prototype for non-monotonic spatial reasoning \u2014 a crucial requirement within dynamic spatial systems \u2014 based on ASPMT. ASPMT(QS) consists of a (qualitative) spatial representation module (QS) and a method for turning tight ASPMT instances into Satisfiability Modulo Theories (SMT) instances in order to compute stable models by means of SMT solvers. We formalise and implement concepts of default spatial reasoning and spatial frame axioms. Spatial reasoning is performed by encoding spatial relations as systems of polynomial constraints, and solving via SMT with the theory of real non-linear arithmetic. We empirically evaluate ASPMT(QS) in comparison with other contemporary spatial reasoning systems both within and outside the context of logic programming. ASPMT(QS) is currently the only existing system that is capable of reasoning about indirect spatial effects (i.e., addressing the ramification problem), and integrating geometric and QS information within a non-monotonic spatial reasoning context.",
+      "citationCount": 32,
+      "doi": "10.1017/S1471068416000193",
+      "arxivId": "1606.07860",
+      "url": "https://www.semanticscholar.org/paper/d569f88f7d4857ce63ed79f73925523dd8a3d868",
+      "venue": "Theory and Practice of Logic Programming",
+      "journal": {
+        "name": "Theory and Practice of Logic Programming",
+        "pages": "205 - 225",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "20682aba5dd05e0eb845d5e6a6eaebe6f6620644",
+      "title": "Bringing answer set programming to the next level: A real case on modeling course timetabling",
+      "authors": [
+        {
+          "name": "Irvi Firqotul Aini",
+          "authorId": "40085623"
+        },
+        {
+          "name": "A. Saptawijaya",
+          "authorId": "2415423"
+        },
+        {
+          "name": "Siti Aminah",
+          "authorId": "2373955198"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1109/ICACSIS.2017.8355076",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/20682aba5dd05e0eb845d5e6a6eaebe6f6620644",
+      "venue": "International Conference on Advanced Computer Science and Information System",
+      "journal": {
+        "name": "2017 International Conference on Advanced Computer Science and Information Systems (ICACSIS)",
+        "pages": "471-476"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "2e5712cbc12ac84485dac6bc40fed7277b918f9a",
+      "title": "DatalogMTL with Negation Under Stable Models Semantics",
+      "authors": [
+        {
+          "name": "P. Walega",
+          "authorId": "2898707"
+        },
+        {
+          "name": "David J. Tena Cucala",
+          "authorId": "2114630929"
+        },
+        {
+          "name": "Egor V. Kostylev",
+          "authorId": "1783695"
+        },
+        {
+          "name": "B. C. Grau",
+          "authorId": "1784440"
+        }
+      ],
+      "year": 2021,
+      "abstract": "We introduce negation under stable models semantics in DatalogMTL\u2014a temporal extension of Datalog with metric operators. As a result, we obtain a rule language which combines the power of answer set programming with the temporal dimension provided by metric operators. We show that, in this setting, reasoning becomes undecidable over the rationals and decidable in EXPSPACE in data complexity over the integers. We also show that, if we restrict our attention to forward-propagating programs (where rules propagate information in a single temporal direction), reasoning over integers becomes PSPACE-complete in data complexity and hence no harder than over positive programs; however, reasoning over the rationals in this fragment remains undecidable.",
+      "citationCount": 17,
+      "doi": "10.24963/kr.2021/58",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2e5712cbc12ac84485dac6bc40fed7277b918f9a",
+      "venue": "International Conference on Principles of Knowledge Representation and Reasoning",
+      "journal": {
+        "pages": "609-618"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4ea6c4ee6534bcf725fa3128fca6df81debfa1cb",
+      "title": "Restricted Four-Valued Semantics for Answer Set Programming",
+      "authors": [
+        {
+          "name": "Chen Chen",
+          "authorId": null
+        },
+        {
+          "name": "Zuoquan Lin",
+          "authorId": "1783654"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/978-3-319-42911-3_6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4ea6c4ee6534bcf725fa3128fca6df81debfa1cb",
+      "venue": "Pacific Rim International Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "68-79"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "02730d36f17b7c86ef261ce818e074f1da236b97",
+      "title": "Answer Set Programming modulo",
+      "authors": [
+        {
+          "name": "J. Bomanson",
+          "authorId": "2449650"
+        },
+        {
+          "name": "M. Gebser",
+          "authorId": "2495237"
+        },
+        {
+          "name": "T. Janhunen",
+          "authorId": "1866533"
+        },
+        {
+          "name": "B. Kaufmann",
+          "authorId": "37952584"
+        },
+        {
+          "name": "Torsten Schaub",
+          "authorId": "1809337"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/02730d36f17b7c86ef261ce818e074f1da236b97",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6645cf3a41d75241f3a9e4ac7ec5c459cf9c1cd8",
+      "title": "Answer Set Programming Modulo Acyclicity",
+      "authors": [
+        {
+          "name": "J. Bomanson",
+          "authorId": "2449650"
+        },
+        {
+          "name": "M. Gebser",
+          "authorId": "2495237"
+        },
+        {
+          "name": "T. Janhunen",
+          "authorId": "1866533"
+        },
+        {
+          "name": "B. Kaufmann",
+          "authorId": "37952584"
+        },
+        {
+          "name": "Torsten Schaub",
+          "authorId": "1809337"
+        }
+      ],
+      "year": 2015,
+      "abstract": "Acyclicity constraints are prevalent in knowledge representation and applications where acyclic data structures such as DAGs and trees play a role. Recently, such constraints have been considered in the satisfiability modulo theories (SMT) framework, and in this paper we carry out an analogous extension to the answer set programming (ASP) paradigm. The resulting formalism, ASP modulo acyclicity, offers a rich set of primitives to express constraints related to recursive structures. In the technical results of the paper, we relate the new generalization with standard ASP by showing (i) how acyclicity extensions translate into normal rules, (ii) how weight constraint programs can be instrumented by acyclicity extensions to capture stability in analogy to unfounded set checking, and (iii) how the gap between supported and stable models is effectively closed in the presence of such an extension. Moreover, we present an efficient implementation of acyclicity constraints by incorporating a respective propagator into the state-of-the-art ASP solver CLASP. The implementation provides a unique combination of traditional unfounded set checking with acyclicity propagation. In the experimental part, we evaluate the interplay of these orthogonal checks by equipping logic programs with supplementary acyclicity constraints. The performance results show that native support for acyclicity constraints is a worthwhile addition, furnishing a complementary modeling construct in ASP itself as well as effective means for translation-based ASP solving.",
+      "citationCount": 38,
+      "doi": "10.3233/FI-2016-1398",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6645cf3a41d75241f3a9e4ac7ec5c459cf9c1cd8",
+      "venue": "Fundamenta Informaticae",
+      "journal": {
+        "name": "Fundamenta Informaticae",
+        "pages": "63 - 91",
+        "volume": "147"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b82da9e1ecf0922f172483ee6b00af642a8eb9a9",
+      "title": "ASPMT(QS): Non-Monotonic Spatial Reasoning with Answer Set Programming Modulo Theories",
+      "authors": [
+        {
+          "name": "P. Walega",
+          "authorId": "2898707"
+        },
+        {
+          "name": "M. Bhatt",
+          "authorId": "1796445"
+        },
+        {
+          "name": "C. Schultz",
+          "authorId": "2650367"
+        }
+      ],
+      "year": 2015,
+      "abstract": "The systematic modelling of dynamic spatial systems [9] is a key requirement in a wide range of application areas such as comonsense cognitive robotics, computer-aided architecture design, dynamic geographic information systems. We present ASPMT(QS), a novel approach and fully-implemented prototype for non-monotonic spatial reasoning \u2014a crucial requirement within dynamic spatial systems\u2013 based on Answer Set Programming Modulo Theories (ASPMT). ASPMT(QS) consists of a (qualitative) spatial representation module (QS) and a method for turning tight ASPMT instances into Sat Modulo Theories (SMT) instances in order to compute stable models by means of SMT solvers. We formalise and implement concepts of default spatial reasoning and spatial frame axioms using choice formulas. Spatial reasoning is performed by encoding spatial relations as systems of polynomial constraints, and solving via SMT with the theory of real nonlinear arithmetic. We empirically evaluate ASPMT(QS) in comparison with other prominent contemporary spatial reasoning systems. Our results show that ASPMT(QS) is the only existing system that is capable of reasoning about indirect spatial effects (i.e. addressing the ramification problem), and integrating geometric and qualitative spatial information within a non-monotonic spatial reasoning context.",
+      "citationCount": 28,
+      "doi": "10.1007/978-3-319-23264-5_41",
+      "arxivId": "1506.04929",
+      "url": "https://www.semanticscholar.org/paper/b82da9e1ecf0922f172483ee6b00af642a8eb9a9",
+      "venue": "International Conference on Logic Programming and Non-Monotonic Reasoning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/1506.04929"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "93c8d6094e80939cd06abf656925e61d0f5846dc",
+      "title": "Interactive Answer Set Programming - Preliminary Report",
+      "authors": [
+        {
+          "name": "M. Gebser",
+          "authorId": "2495237"
+        },
+        {
+          "name": "Philipp Obermeier",
+          "authorId": "36060181"
+        },
+        {
+          "name": "Torsten Schaub",
+          "authorId": "1809337"
+        }
+      ],
+      "year": 2015,
+      "abstract": "Traditional Answer Set Programming (ASP) rests upon one-shot solving. A logic program is fed into an ASP system and its stable models are computed. The high practical relevance of dynamic applications led to the development of multi-shot solving systems. An operative system solves continuously changing logic programs. Although this was primarily aiming at dynamic applications in assisted living, robotics, or stream reasoning, where solvers interact with an environment, it also opened up the opportunity of interactive ASP, where a solver interacts with a user. We begin with a formal characterization of interactive ASP in terms of states and operations on them. In turn, we describe the interactive ASP shell aspic along with its basic functionalities.",
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": "1511.01261",
+      "url": "https://www.semanticscholar.org/paper/93c8d6094e80939cd06abf656925e61d0f5846dc",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/1511.01261"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3eee158b9b6d528794da85997ce0b316ac3b2553",
+      "title": "Possibilistic Inferences in Answer Set Programming",
+      "authors": [
+        {
+          "name": "Yifan Jin",
+          "authorId": "2110836690"
+        },
+        {
+          "name": "Kewen Wang",
+          "authorId": "34241570"
+        },
+        {
+          "name": "Zhe Wang",
+          "authorId": "47197170"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-319-26350-2_23",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3eee158b9b6d528794da85997ce0b316ac3b2553",
+      "venue": "Australasian Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "263-275"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "73b4b549fe0842695ffc19e71adc755120b1aa5a",
+      "title": "Extending Answer Set Programming using Generalized Possibilistic Logic",
+      "authors": [
+        {
+          "name": "D. Dubois",
+          "authorId": "144969774"
+        },
+        {
+          "name": "H. Prade",
+          "authorId": "1700697"
+        },
+        {
+          "name": "S. Schockaert",
+          "authorId": "2265382"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/73b4b549fe0842695ffc19e71adc755120b1aa5a",
+      "venue": "JOWO@IJCAI",
+      "journal": {
+        "name": "",
+        "pages": "8-12",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a4461af95a49fb580c4b2ddc6165ab17de2ea68e",
+      "title": "Handling Probability and Inconsistency in Answer Set Programming",
+      "authors": [
+        {
+          "name": "Yi Wang",
+          "authorId": "46393411"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a4461af95a49fb580c4b2ddc6165ab17de2ea68e",
+      "venue": "International Conference on Logic Programming",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}
