@@ -1,0 +1,1270 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "language model understanding interpretability",
+  "results": [
+    {
+      "paperId": "35c0738762574b1bcbc2c9a46e78f07f70772eb2",
+      "title": "Mechanistic Indicators of Understanding in Large Language Models",
+      "authors": [
+        {
+          "name": "Pierre Beckmann",
+          "authorId": "2371998450"
+        },
+        {
+          "name": "Matthieu Queloz",
+          "authorId": "2372000852"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) are often portrayed as merely imitating linguistic patterns without genuine understanding. We argue that recent findings in mechanistic interpretability (MI), the emerging field probing the inner workings of LLMs, render this picture increasingly untenable--but only once those findings are integrated within a theoretical account of understanding. We propose a tiered framework for thinking about understanding in LLMs and use it to synthesize the most relevant findings to date. The framework distinguishes three hierarchical varieties of understanding, each tied to a corresponding level of computational organization: conceptual understanding emerges when a model forms\"features\"as directions in latent space, learning connections between diverse manifestations of a single entity or property; state-of-the-world understanding emerges when a model learns contingent factual connections between features and dynamically tracks changes in the world; principled understanding emerges when a model ceases to rely on memorized facts and discovers a compact\"circuit\"connecting these facts. Across these tiers, MI uncovers internal organizations that can underwrite understanding-like unification. However, these also diverge from human cognition in their parallel exploitation of heterogeneous mechanisms. Fusing philosophical theory with mechanistic evidence thus allows us to transcend binary debates over whether AI understands, paving the way for a comparative, mechanistically grounded epistemology that explores how AI understanding aligns with--and diverges from--our own.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2507.08017",
+      "arxivId": "2507.08017",
+      "url": "https://www.semanticscholar.org/paper/35c0738762574b1bcbc2c9a46e78f07f70772eb2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.08017"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "df0db04d870e1666a64a9c92688419e7628423e5",
+      "title": "Is Knowledge All Large Language Models Needed for Causal Reasoning?",
+      "authors": [
+        {
+          "name": "Hengrui Cai",
+          "authorId": "35568946"
+        },
+        {
+          "name": "Shengjie Liu",
+          "authorId": "2306081980"
+        },
+        {
+          "name": "Rui Song",
+          "authorId": "2277245978"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This paper explores the causal reasoning of large language models (LLMs) to enhance their interpretability and reliability in advancing artificial intelligence. Despite the proficiency of LLMs in a range of tasks, their potential for understanding causality requires further exploration. We propose a novel causal attribution model that utilizes ``do-operators\"for constructing counterfactual scenarios, allowing us to systematically quantify the influence of input numerical data and LLMs' pre-existing knowledge on their causal reasoning processes. Our newly developed experimental setup assesses LLMs' reliance on contextual information and inherent knowledge across various domains. Our evaluation reveals that LLMs' causal reasoning ability mainly depends on the context and domain-specific knowledge provided. In the absence of such knowledge, LLMs can still maintain a degree of causal reasoning using the available numerical data, albeit with limitations in the calculations. This motivates the proposed fine-tuned LLM for pairwise causal discovery, effectively leveraging both knowledge and numerical information.",
+      "citationCount": 20,
+      "doi": "10.48550/arXiv.2401.00139",
+      "arxivId": "2401.00139",
+      "url": "https://www.semanticscholar.org/paper/df0db04d870e1666a64a9c92688419e7628423e5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.00139"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ab60ca888dfe60bc7a50f47bd483737523943682",
+      "title": "Thought Anchors: Which LLM Reasoning Steps Matter?",
+      "authors": [
+        {
+          "name": "Paul C. Bogdan",
+          "authorId": "2339777782"
+        },
+        {
+          "name": "Uzay Macar",
+          "authorId": "2114970738"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Current frontier large-language models rely on reasoning to achieve state-of-the-art performance. Many existing interpretability are limited in this area, as standard methods have been designed to study single forward passes of a model rather than the multi-token computational steps that unfold during reasoning. We argue that analyzing reasoning traces at the sentence level is a promising approach to understanding reasoning processes. We introduce a black-box method that measures each sentence's counterfactual importance by repeatedly sampling replacement sentences from the model, filtering for semantically different ones, and continuing the chain of thought from that point onwards to quantify the sentence's impact on the distribution of final answers. We discover that certain sentences can have an outsized impact on the trajectory of the reasoning trace and final answer. We term these sentences \\textit{thought anchors}. These are generally planning or uncertainty management sentences, and specialized attention heads consistently attend from subsequent sentences to thought anchors. We further show that examining sentence-sentence causal links within a reasoning trace gives insight into a model's behavior. Such information can be used to predict a problem's difficulty and the extent different question domains involve sequential or diffuse reasoning. As a proof-of-concept, we demonstrate that our techniques together provide a practical toolkit for analyzing reasoning models by conducting a detailed case study of how the model solves a difficult math problem, finding that our techniques yield a consistent picture of the reasoning trace's structure. We provide an open-source tool (thought-anchors.com) for visualizing the outputs of our methods on further problems. The convergence across our methods shows the potential of sentence-level analysis for a deeper understanding of reasoning models.",
+      "citationCount": 43,
+      "doi": "10.48550/arXiv.2506.19143",
+      "arxivId": "2506.19143",
+      "url": "https://www.semanticscholar.org/paper/ab60ca888dfe60bc7a50f47bd483737523943682",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.19143"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6a821e1e9f43d440de3db97415d1947d5e89d406",
+      "title": "Mechanistic?",
+      "authors": [
+        {
+          "name": "Naomi Saphra",
+          "authorId": "2066034078"
+        },
+        {
+          "name": "Sarah Wiegreffe",
+          "authorId": "35823986"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The rise of the term \u201cmechanistic interpretability\u201d has accompanied increasing interest in understanding neural models\u2014particularly language models. However, this jargon has also led to a fair amount of confusion. So, what does it mean to be mechanistic? We describe four uses of the term in interpretability research. The most narrow technical definition requires a claim of causality, while a broader technical definition allows for any exploration of a model\u2019s internals. However, the term also has a narrow cultural definition describing a cultural movement. To understand this semantic drift, we present a history of the NLP interpretability community and the formation of the separate, parallel mechanistic interpretability community. Finally, we discuss the broad cultural definition\u2014encompassing the entire field of interpretability\u2014and why the traditional NLP interpretability community has come to embrace it. We argue that the polysemy of \u201cmechanistic\u201d is the product of a critical divide within the interpretability community.",
+      "citationCount": 32,
+      "doi": "10.48550/arXiv.2410.09087",
+      "arxivId": "2410.09087",
+      "url": "https://www.semanticscholar.org/paper/6a821e1e9f43d440de3db97415d1947d5e89d406",
+      "venue": "BlackboxNLP Workshop on Analyzing and Interpreting Neural Networks for NLP",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.09087"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ffdadb6c06013a7ad4265087bce7dbd15811ebdd",
+      "title": "Interpretability as Alignment: Making Internal Understanding a Design Principle",
+      "authors": [
+        {
+          "name": "Aadit Sengupta",
+          "authorId": "2270434099"
+        },
+        {
+          "name": "Pratinav Seth",
+          "authorId": "2138282585"
+        },
+        {
+          "name": "Vinay Kumar Sankarapu",
+          "authorId": "2331408424"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Frontier AI systems require governance mechanisms that can verify internal alignment, not just behavioral compliance. Private governance mechanisms audits, certification, insurance, and procurement are emerging to complement public regulation, but they require technical substrates that generate verifiable causal evidence about model behavior. This paper argues that mechanistic interpretability provides this substrate. We frame interpretability not as post-hoc explanation but as a design constraint embedding auditability, provenance, and bounded transparency within model architectures. Integrating causal abstraction theory and empirical benchmarks such as MIB and LoBOX, we outline how interpretability-first models can underpin private assurance pipelines and role-calibrated transparency frameworks. This reframing situates interpretability as infrastructure for private AI governance bridging the gap between technical reliability and institutional accountability.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.08592",
+      "arxivId": "2509.08592",
+      "url": "https://www.semanticscholar.org/paper/ffdadb6c06013a7ad4265087bce7dbd15811ebdd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.08592"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3102142e16a8a112767f834ee6654f00be63f9f8",
+      "title": "Multi-agent KTO: Reinforcing Strategic Interactions of Large Language Model in Language Game",
+      "authors": [
+        {
+          "name": "Rong Ye",
+          "authorId": "2062940513"
+        },
+        {
+          "name": "Yongxin Zhang",
+          "authorId": "2373402212"
+        },
+        {
+          "name": "Yikai Zhang",
+          "authorId": "2342360782"
+        },
+        {
+          "name": "Haoyu Kuang",
+          "authorId": "2273677947"
+        },
+        {
+          "name": "Zhongyu Wei",
+          "authorId": "2266438567"
+        },
+        {
+          "name": "Peng Sun",
+          "authorId": "2342927657"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Achieving Artificial General Intelligence (AGI) requires AI agents that can not only make stratigic decisions but also engage in flexible and meaningful communication. Inspired by Wittgenstein's language game theory in Philosophical Investigations, we propose that language agents can learn through in-context interaction rather than traditional multi-stage frameworks that separate decision-making from language expression. Using Werewolf, a social deduction game that tests language understanding, strategic interaction, and adaptability, we develop the Multi-agent Kahneman&Tversky's Optimization (MaKTO). MaKTO engages diverse models in extensive gameplay to generate unpaired desirable and unacceptable responses, then employs KTO to refine the model's decision-making process. In 9-player Werewolf games, MaKTO achieves a 61% average win rate across various models, outperforming GPT-4o and two-stage RL agents by relative improvements of 23.0% and 10.9%, respectively. Notably, MaKTO also demonstrates human-like performance, winning 60% against expert players and showing only 49% detectability in Turing-style blind tests.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2501.14225",
+      "arxivId": "2501.14225",
+      "url": "https://www.semanticscholar.org/paper/3102142e16a8a112767f834ee6654f00be63f9f8",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.14225"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "667aa09874957f72d8910ef52ba8253164e1b9cc",
+      "title": "Fine-tuning Large Language Model (BERT) for Islamic Moral Inquiry and Response",
+      "authors": [
+        {
+          "name": "Nurul Aiman Binti Mohd Nazri",
+          "authorId": "2344445478"
+        },
+        {
+          "name": "A'wathif Binti Omar",
+          "authorId": "2344445137"
+        },
+        {
+          "name": "Amir 'Aatieff Bin Amir Hussin",
+          "authorId": "2344444085"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The development of Large Language Models (LLM) that are capable of understanding and responding to issues from an Islamic perspective is extremely insightful as it will benefit many people. For an LLM to do so, it is not enough for the model to only understand the language, but it also needs to understand the context and specific doctrines within the Islamic texts due to the complexity of Islamic jurisprudence and moral philosophy. Therefore, in this research, we intend to fine-tune an LLM model which is known as Bidirectional Encoder Representations from Transformers (BERT) for Islamic moral inquiry and response. By incorporating Islamic principles, norms, and teaching into the model, we aim to enhance the pre-trained BERT model\u2019s ability to perform moral-related Question Answering (QA) tasks. The original model that we chose is deepset BERT model which was built based on BERT-large and meticulously pre-trained using the SQuaD 2.0 dataset, specifically for QA tasks. We fine-tune the model using the data extracted from \u201cIslam: Questions and Answers: Character and Morals\u201d, the Volume 13 of a Series of Islamic Books by Muhammad Saed Abdul-Rahman, where the data has been cleaned and pre-processed. The fine-tuning process used supervised learning techniques, to ensure its proficiency in understanding Islamic principles, providing accurate, contextually appropriate, and theologically sound responses. We assessed the model using F1 score and Levenshtein similarity evaluation metrics where F1 score merges precision and recall by computing their harmonic mean, while Levenshtein similarity compares the predicted and actual answers at the character level by normalizing the Levenshtein distance. Our research yielded significant success, evidenced by the remarkable enhancement in the average F1 scores and Levenshtein similarities, soaring from 0.30 and 0.24, to 0.74 and 0.67 respectively.",
+      "citationCount": 2,
+      "doi": "10.31436/ijpcc.v11i1.533",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/667aa09874957f72d8910ef52ba8253164e1b9cc",
+      "venue": "International Journal on Perceptive and Cognitive Computing",
+      "journal": {
+        "name": "International Journal on Perceptive and Cognitive Computing"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f28311f3eb042a6f1d9bbdacfd09420fe57406c8",
+      "title": "\u2018Interpretability\u2019 and \u2018alignment\u2019 are fool\u2019s errands: a proof that controlling misaligned large language models is the best anyone can hope for",
+      "authors": [
+        {
+          "name": "Marcus Arvan",
+          "authorId": "37802891"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/s00146-024-02113-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f28311f3eb042a6f1d9bbdacfd09420fe57406c8",
+      "venue": "Ai & Society",
+      "journal": {
+        "name": "AI & SOCIETY",
+        "pages": "3769 - 3784",
+        "volume": "40"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "01f4d87be180a8ffa182f2875f109e9ca8bf860a",
+      "title": "Uncovering Latent Human Wellbeing in Language Model Embeddings",
+      "authors": [
+        {
+          "name": "Pedro Freire",
+          "authorId": "2284680552"
+        },
+        {
+          "name": "ChengCheng Tan",
+          "authorId": "2284742782"
+        },
+        {
+          "name": "Adam Gleave",
+          "authorId": "34594377"
+        },
+        {
+          "name": "Dan Hendrycks",
+          "authorId": "3422872"
+        },
+        {
+          "name": "Scott Emmons",
+          "authorId": "2237427074"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Do language models implicitly learn a concept of human wellbeing? We explore this through the ETHICS Utilitarianism task, assessing if scaling enhances pretrained models' representations. Our initial finding reveals that, without any prompt engineering or finetuning, the leading principal component from OpenAI's text-embedding-ada-002 achieves 73.9% accuracy. This closely matches the 74.6% of BERT-large finetuned on the entire ETHICS dataset, suggesting pretraining conveys some understanding about human wellbeing. Next, we consider four language model families, observing how Utilitarianism accuracy varies with increased parameters. We find performance is nondecreasing with increased model size when using sufficient numbers of principal components.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2402.11777",
+      "arxivId": "2402.11777",
+      "url": "https://www.semanticscholar.org/paper/01f4d87be180a8ffa182f2875f109e9ca8bf860a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.11777"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3926c925bf0c42edcc2267f216b4bb641f03af72",
+      "title": "Walk the Talk? Measuring the Faithfulness of Large Language Model Explanations",
+      "authors": [
+        {
+          "name": "Katie Matton",
+          "authorId": "92093876"
+        },
+        {
+          "name": "Robert Osazuwa Ness",
+          "authorId": "2292406983"
+        },
+        {
+          "name": "John V. Guttag",
+          "authorId": "2185406313"
+        },
+        {
+          "name": "Emre Kiciman",
+          "authorId": "2264962872"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) are capable of generating plausible explanations of how they arrived at an answer to a question. However, these explanations can misrepresent the model's\"reasoning\"process, i.e., they can be unfaithful. This, in turn, can lead to over-trust and misuse. We introduce a new approach for measuring the faithfulness of LLM explanations. First, we provide a rigorous definition of faithfulness. Since LLM explanations mimic human explanations, they often reference high-level concepts in the input question that purportedly influenced the model. We define faithfulness in terms of the difference between the set of concepts that LLM explanations imply are influential and the set that truly are. Second, we present a novel method for estimating faithfulness that is based on: (1) using an auxiliary LLM to modify the values of concepts within model inputs to create realistic counterfactuals, and (2) using a Bayesian hierarchical model to quantify the causal effects of concepts at both the example- and dataset-level. Our experiments show that our method can be used to quantify and discover interpretable patterns of unfaithfulness. On a social bias task, we uncover cases where LLM explanations hide the influence of social bias. On a medical question answering task, we uncover cases where LLM explanations provide misleading claims about which pieces of evidence influenced the model's decisions.",
+      "citationCount": 25,
+      "doi": "10.48550/arXiv.2504.14150",
+      "arxivId": "2504.14150",
+      "url": "https://www.semanticscholar.org/paper/3926c925bf0c42edcc2267f216b4bb641f03af72",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.14150"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a8901abfca87deb347319d2c62157fd3b6fbd697",
+      "title": "Towards Ethical Multi-Agent Systems of Large Language Models: A Mechanistic Interpretability Perspective",
+      "authors": [
+        {
+          "name": "Jae Hee Lee",
+          "authorId": "2397663046"
+        },
+        {
+          "name": "Anne Lauscher",
+          "authorId": "29891652"
+        },
+        {
+          "name": "Stefano V. Albrecht",
+          "authorId": "2396371991"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) have been widely deployed in various applications, often functioning as autonomous agents that interact with each other in multi-agent systems. While these systems have shown promise in enhancing capabilities and enabling complex tasks, they also pose significant ethical challenges. This position paper outlines a research agenda aimed at ensuring the ethical behavior of multi-agent systems of LLMs (MALMs) from the perspective of mechanistic interpretability. We identify three key research challenges: (i) developing comprehensive evaluation frameworks to assess ethical behavior at individual, interactional, and systemic levels; (ii) elucidating the internal mechanisms that give rise to emergent behaviors through mechanistic interpretability; and (iii) implementing targeted parameter-efficient alignment techniques to steer MALMs towards ethical behaviors without compromising their performance.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.04691",
+      "url": "https://www.semanticscholar.org/paper/a8901abfca87deb347319d2c62157fd3b6fbd697",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a18b0cf58fd8c4fbcac9585e80499b7b1bc72a47",
+      "title": "Unboxing the Black Box: Mechanistic Interpretability for Algorithmic Understanding of Neural Networks",
+      "authors": [
+        {
+          "name": "Bianka Kowalska",
+          "authorId": "2328185649"
+        },
+        {
+          "name": "Halina Kwa'snicka",
+          "authorId": "2394075368"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The black box nature of deep neural networks poses a significant challenge for the deployment of transparent and trustworthy artificial intelligence (AI) systems. With the growing presence of AI in society, it becomes increasingly important to develop methods that can explain and interpret the decisions made by these systems. To address this, mechanistic interpretability (MI) emerged as a promising and distinctive research program within the broader field of explainable artificial intelligence (XAI). MI is the process of studying the inner computations of neural networks and translating them into human-understandable algorithms. It encompasses reverse engineering techniques aimed at uncovering the computational algorithms implemented by neural networks. In this article, we propose a unified taxonomy of MI approaches and provide a detailed analysis of key techniques, illustrated with concrete examples and pseudo-code. We contextualize MI within the broader interpretability landscape, comparing its goals, methods, and insights to other strands of XAI. Additionally, we trace the development of MI as a research area, highlighting its conceptual roots and the accelerating pace of recent work. We argue that MI holds significant potential to support a more scientific understanding of machine learning systems -- treating models not only as tools for solving tasks, but also as systems to be studied and understood. We hope to invite new researchers into the field of mechanistic interpretability.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.19265",
+      "arxivId": "2511.19265",
+      "url": "https://www.semanticscholar.org/paper/a18b0cf58fd8c4fbcac9585e80499b7b1bc72a47",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.19265"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "24a1c728f333caa2af16364111324f82976a34ce",
+      "title": "Dialogue on Artificial Intelligence\u2019s Self-Awareness Between the Cognitive Science Expert and Large Language Model Claude 3 Opus: A Buddhist Scholar\u2019s Perspective",
+      "authors": [
+        {
+          "name": "Victoria G. Lysenko",
+          "authorId": "2294039750"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The article examines the dialogue between British cognitive science expert Murray Shanahan and the large language model Claude 3 Opus about \u201cself-awareness\u201d of artificial intelligence (AI). Adopting a text-centric approach, the author analyzes AI\u2019s discourse through a hermeneutic lens from a reader\u2019s perspective, irrespective of whether AI possesses consciousness or personhood. The article draws parallels between AI\u2019s reasoning about the nature of consciousness and Buddhist concepts, especially the doctrine of dharmas, which underpins the Buddhist concept of an\u0101tman (\u201cnon-Self\u201d). Basic classifications of dharmas and their justification are examined in light of the Buddhist system of ideas about the foundations of an individual\u2019s cognitive experience in the world. The author emphasizes that the problem of the Self as a linguistic and conceptual construct, rather than a real ontological category, was first formulated in the teachings of Buddha Shakyamuni who also proposed an \u201cexperimental\u201d application of this concept in practices of systematic introspection (sm\u1e5bti). The article contends that Claude\u2019s discourse on self-awareness, even if it is just a tapestry of linguistic constructs woven by preset algorithms, could prove to be a source inspiring new approaches to the enigma of consciousness. This potential stems from its vast database, which is a melting pot of textual heritage from diverse human cultures. The author posits that examining AI-generated texts through the prism of Indian and Buddhist thought traditions can be eye-opening. Such an approach might help shed light on and overcome the unconscious cognitive biases and cultural blind spots within Western consciousness studies that have hindered their engagement with the full spectrum of human intellectual traditions. The author concludes that discovering different cultural sources in AI discourse and examining it from the perspective of various cultural traditions can: firstly, enrich the conceptual apparatus of cognitive studies; secondly, reveal universal cross-cultural patterns in understanding consciousness; thirdly, generate new research hypotheses and directions in studying not only artificial but also natural intelligence; fourthly, contribute to rethinking our understanding of the Other, by expanding the boundaries of what we today consider conscious or sentient.",
+      "citationCount": 1,
+      "doi": "10.30727/0235-1188-2024-67-3-75-98",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/24a1c728f333caa2af16364111324f82976a34ce",
+      "venue": "Russian Journal of Philosophical Sciences",
+      "journal": {
+        "name": "Russian Journal of Philosophical Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2b8eee8051e27fd9f220b8f70096135a243174e7",
+      "title": "Beware the Rationalization Trap! When Language Model Explainability Diverges from our Mental Models of Language",
+      "authors": [
+        {
+          "name": "R. Sevastjanova",
+          "authorId": "20484090"
+        },
+        {
+          "name": "Mennatallah El-Assady",
+          "authorId": "1401917601"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Language models learn and represent language differently than humans; they learn the form and not the meaning. Thus, to assess the success of language model explainability, we need to consider the impact of its divergence from a user's mental model of language. In this position paper, we argue that in order to avoid harmful rationalization and achieve truthful understanding of language models, explanation processes must satisfy three main conditions: (1) explanations have to truthfully represent the model behavior, i.e., have a high fidelity; (2) explanations must be complete, as missing information distorts the truth; and (3) explanations have to take the user's mental model into account, progressively verifying a person's knowledge and adapting their understanding. We introduce a decision tree model to showcase potential reasons why current explanations fail to reach their objectives. We further emphasize the need for human-centered design to explain the model from multiple perspectives, progressively adapting explanations to changing user expectations.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2207.06897",
+      "arxivId": "2207.06897",
+      "url": "https://www.semanticscholar.org/paper/2b8eee8051e27fd9f220b8f70096135a243174e7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2207.06897"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2b4a90fba7d92ddffe37755d8942531806841ecd",
+      "title": "Beyond model interpretability: socio-structural explanations in machine learning",
+      "authors": [
+        {
+          "name": "Andrew Smart",
+          "authorId": "2275053740"
+        },
+        {
+          "name": "Atoosa Kasirzadeh",
+          "authorId": "51880633"
+        }
+      ],
+      "year": 2024,
+      "abstract": "What is it to interpret the outputs of an opaque machine learning model? One approach is to develop interpretable machine learning techniques. These techniques aim to show how machine learning models function by providing either model-centric local or global explanations, which can be based on mechanistic interpretations (revealing the inner working mechanisms of models) or non-mechanistic approximations (showing input feature\u2013output data relationships). In this paper, we draw on social philosophy to argue that interpreting machine learning outputs in certain normatively salient domains could require appealing to a third type of explanation that we call \u201csocio-structural\u201d explanation. The relevance of this explanation type is motivated by the fact that machine learning models are not isolated entities but are embedded within and shaped by social structures. Socio-structural explanations aim to illustrate how social structures contribute to and partially explain the outputs of machine learning models. We demonstrate the importance of socio-structural explanations by examining a racially biased healthcare allocation algorithm. Our proposal highlights the need for transparency beyond model interpretability: understanding the outputs of machine learning systems could require a broader analysis that extends beyond the understanding of the machine learning model itself.",
+      "citationCount": 10,
+      "doi": "10.1007/s00146-024-02056-1",
+      "arxivId": "2409.03632",
+      "url": "https://www.semanticscholar.org/paper/2b4a90fba7d92ddffe37755d8942531806841ecd",
+      "venue": "Ai & Society",
+      "journal": {
+        "name": "AI & SOCIETY",
+        "pages": "2045 - 2053",
+        "volume": "40"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0d00ed1ab634874888774e7cf267a5261fea2e8f",
+      "title": "Understanding Epistemic Language with a Language-augmented Bayesian Theory of Mind",
+      "authors": [
+        {
+          "name": "Lance Ying",
+          "authorId": "2142478242"
+        },
+        {
+          "name": "Tan Zhi-Xuan",
+          "authorId": "120636597"
+        },
+        {
+          "name": "Lionel Wong",
+          "authorId": "2284592556"
+        },
+        {
+          "name": "Vikash K. Mansinghka",
+          "authorId": "1735083"
+        },
+        {
+          "name": "Joshua B. Tenenbaum",
+          "authorId": "2284592680"
+        }
+      ],
+      "year": 2024,
+      "abstract": "\n How do people understand and evaluate claims about others\u2019 beliefs, even though these beliefs cannot be directly observed? In this paper, we introduce a cognitive model of epistemic language interpretation, grounded in Bayesian inferences about other agents\u2019 goals, beliefs, and intentions: a language-augmented Bayesian theory-of-mind (LaBToM). By translating natural language into an epistemic \u201clanguage-of-thought\u201d with grammar-constrained LLM decoding, then evaluating these translations against the inferences produced by inverting a generative model of rational action and perception, LaBToM captures graded plausibility judgments of epistemic claims. We validate our model in an experiment where participants watch an agent navigate a maze to find keys hidden in boxes needed to reach their goal, then rate sentences about the agent\u2019s beliefs. In contrast with multimodal LLMs (GPT-4o, Gemini Pro) and ablated models, our model correlates highly with human judgments for a wide range of expressions, including modal language, uncertainty expressions, knowledge claims, likelihood comparisons, and attributions of false belief.",
+      "citationCount": 4,
+      "doi": "10.1162/tacl_a_00752",
+      "arxivId": "2408.12022",
+      "url": "https://www.semanticscholar.org/paper/0d00ed1ab634874888774e7cf267a5261fea2e8f",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "journal": {
+        "name": "Trans. Assoc. Comput. Linguistics",
+        "pages": "613-637",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9da17fbc2cdc961bc07aeedeeb022dbcf52498ad",
+      "title": "Understanding Epistemic Language with a Bayesian Theory of Mind",
+      "authors": [
+        {
+          "name": "Lance Ying",
+          "authorId": "2142478242"
+        },
+        {
+          "name": "Tan Zhi-Xuan",
+          "authorId": "120636597"
+        },
+        {
+          "name": "Lionel Wong",
+          "authorId": "2284592556"
+        },
+        {
+          "name": "Vikash K. Mansinghka",
+          "authorId": "1735083"
+        },
+        {
+          "name": "Joshua B. Tenenbaum",
+          "authorId": "2284592680"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2408.12022",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9da17fbc2cdc961bc07aeedeeb022dbcf52498ad",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.12022"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f577654d9dd29d88c6db9ee39a4fd831573b8770",
+      "title": "Understanding the Capabilities, Limitations, and Societal Impact of Large Language Models",
+      "authors": [
+        {
+          "name": "Alex Tamkin",
+          "authorId": "88726969"
+        },
+        {
+          "name": "Miles Brundage",
+          "authorId": "35167962"
+        },
+        {
+          "name": "Jack Clark",
+          "authorId": "2115193883"
+        },
+        {
+          "name": "Deep Ganguli",
+          "authorId": "2081806483"
+        }
+      ],
+      "year": 2021,
+      "abstract": "On October 14th, 2020, researchers from OpenAI, the Stanford Institute for Human-Centered Artificial Intelligence, and other universities convened to discuss open research questions surrounding GPT-3, the largest publicly-disclosed dense language model at the time. The meeting took place under Chatham House Rules. Discussants came from a variety of research backgrounds including computer science, linguistics, philosophy, political science, communications, cyber policy, and more. Broadly, the discussion centered around two main questions: 1) What are the technical capabilities and limitations of large language models? 2) What are the societal effects of widespread use of large language models? Here, we provide a detailed summary of the discussion organized by the two themes above.",
+      "citationCount": 308,
+      "doi": null,
+      "arxivId": "2102.02503",
+      "url": "https://www.semanticscholar.org/paper/f577654d9dd29d88c6db9ee39a4fd831573b8770",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2102.02503"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e7596e53f54d9a90be8b960771b1265013b2e864",
+      "title": "A Mathematical Philosophy of Explanations in Mechanistic Interpretability - The Strange Science Part I.i",
+      "authors": [
+        {
+          "name": "Kola Ayonrinde",
+          "authorId": "2325947690"
+        },
+        {
+          "name": "Louis Jaburi",
+          "authorId": "2358997901"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic Interpretability aims to understand neural net-\nworks through causal explanations. We argue for the\nExplanatory View Hypothesis: that Mechanistic\nInterpretability re- search is a principled approach to\nunderstanding models be- cause neural networks contain\nimplicit explanations which can be extracted and\nunderstood. We hence show that Explanatory Faithfulness, an\nassessment of how well an explanation fits a model, is\nwell-defined. We propose a definition of Mechanistic\nInterpretability (MI) as the practice of producing\nModel-level, Ontic, Causal-Mechanistic, and Falsifiable\nexplanations of neural networks, allowing us to distinguish\nMI from other interpretability paradigms and detail MI\u2019s\ninherent limits. We formulate the Principle of Explanatory\nOptimism, a conjecture which we argue is a necessary\nprecondition for the success of Mechanistic\nInterpretability.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2505.00808",
+      "arxivId": "2505.00808",
+      "url": "https://www.semanticscholar.org/paper/e7596e53f54d9a90be8b960771b1265013b2e864",
+      "venue": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.00808"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "bcbb02a484ca501dcedd8bc6be0c56cf69e42b2a",
+      "title": "Artificial Intelligence and the Illusion of Understanding: A Systematic Review of Theory of Mind and Large Language Models",
+      "authors": [
+        {
+          "name": "Antonella Marchetti",
+          "authorId": "2312398690"
+        },
+        {
+          "name": "F. Manzi",
+          "authorId": "31636934"
+        },
+        {
+          "name": "Giuseppe Riva",
+          "authorId": "2279720491"
+        },
+        {
+          "name": "A. Gaggioli",
+          "authorId": "1700503"
+        },
+        {
+          "name": "D. Massaro",
+          "authorId": "4623295"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The development of Large Language Models (LLMs) has sparked significant debate regarding their capacity for Theory of Mind (ToM)\u2014the ability to attribute mental states to oneself and others. This systematic review examines the extent to which LLMs exhibit Artificial ToM (AToM) by evaluating their performance on ToM tasks and comparing it with human responses. While LLMs, particularly GPT-4, perform well on first-order false belief tasks, they struggle with more complex reasoning, such as second-order beliefs and recursive inferences, where humans consistently outperform them. Moreover, the review underscores the variability in ToM assessments, as many studies adapt classical tasks for LLMs, raising concerns about comparability with human ToM. Most evaluations remain constrained to text-based tasks, overlooking embodied and multimodal dimensions crucial to human social cognition. This review discusses the \u201cillusion of understanding\u201d in LLMs for two primary reasons: First, their lack of the developmental and cognitive mechanisms necessary for genuine ToM, and second, methodological biases in test designs that favor LLMs\u2019 strengths, limiting direct comparisons with human performance. The findings highlight the need for more ecologically valid assessments and interdisciplinary research to better delineate the limitations and potential of AToM. This set of issues is highly relevant to psychology, as language is generally considered just one component in the broader development of human ToM, a perspective that contrasts with the dominant approach in AToM studies. This discrepancy raises critical questions about the extent to which human ToM and AToM are comparable.",
+      "citationCount": 3,
+      "doi": "10.1089/cyber.2024.0536",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bcbb02a484ca501dcedd8bc6be0c56cf69e42b2a",
+      "venue": "Cyberpsychology, Behavior, and Social Networking",
+      "journal": {
+        "name": "Cyberpsychology, Behavior, and Social Networking",
+        "pages": "505 - 514",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "90c034f124f0f4af2ccf2a9169a4de6f079f083f",
+      "title": "The Geometry of Language: Understanding LLMs in Bioethics",
+      "authors": [
+        {
+          "name": "A. M. Astobiza",
+          "authorId": "2072335584"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In this article, I explored the application of large language models (LLMs) in analysing linguistic colexification and ambiguity within bioethical scenarios. By employing word embeddings derived from LLMs, I constructed semantic distance matrices that provide insight into the relationships between key terms in bioethical vignettes. These matrices were used to quantify and visualize the degree of linguistic ambiguity and specificity across different versions of each vignette\u2014those with high colexification (ambiguous language) and those with low colexification (specific language). The approach taken involves encoding words according to their semantic adjacency and representing these relationships geometrically through distance matrices. The resulting matrices reflect the nuanced differences in how concepts are related within bioethical contexts, offering a quantitative method for analysing language use. The study demonstrates that LLMs, by facilitating geometric representations of language, can enhance our understanding of complex ethical dilemmas by systematically addressing linguistic ambiguity. Ultimately, this research contributes to the field of bioethics by providing a computational approach to improving clarity in ethical communication, highlighting the potential of LLMs to inform both ethical decision-making and discourse analysis. LLMs, while not capable of performing speech acts in the full philosophical sense\u2014as human beings do\u2014still serve as powerful tools to analyse and understand bioethical language. This distinction\u2014between performing speech acts and analysing their linguistic features\u2014highlights the unique contribution of LLMs as analytical tools rather than ethical agents.",
+      "citationCount": 1,
+      "doi": "10.1007/s11673-025-10480-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/90c034f124f0f4af2ccf2a9169a4de6f079f083f",
+      "venue": "Journal of Bioethical Inquiry",
+      "journal": {
+        "name": "Journal of Bioethical Inquiry",
+        "pages": "573 - 586",
+        "volume": "22"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f8467b8a6c4a8aa65f7ef1c478505236b238a3cd",
+      "title": "The Pluralistic Moral Gap: Understanding Judgment and Value Differences between Humans and Large Language Models",
+      "authors": [
+        {
+          "name": "Giuseppe Russo",
+          "authorId": "2057794866"
+        },
+        {
+          "name": "Debora Nozza",
+          "authorId": "2101317501"
+        },
+        {
+          "name": "Paul R\u00f6ttger",
+          "authorId": "2043232919"
+        },
+        {
+          "name": "Dirk Hovy",
+          "authorId": "2267334203"
+        }
+      ],
+      "year": 2025,
+      "abstract": "People increasingly rely on Large Language Models (LLMs) for moral advice, which may influence humans'decisions. Yet, little is known about how closely LLMs align with human moral judgments. To address this, we introduce the Moral Dilemma Dataset, a benchmark of 1,618 real-world moral dilemmas paired with a distribution of human moral judgments consisting of a binary evaluation and a free-text rationale. We treat this problem as a pluralistic distributional alignment task, comparing the distributions of LLM and human judgments across dilemmas. We find that models reproduce human judgments only under high consensus; alignment deteriorates sharply when human disagreement increases. In parallel, using a 60-value taxonomy built from 3,783 value expressions extracted from rationales, we show that LLMs rely on a narrower set of moral values than humans. These findings reveal a pluralistic moral gap: a mismatch in both the distribution and diversity of values expressed. To close this gap, we introduce Dynamic Moral Profiling (DMP), a Dirichlet-based sampling method that conditions model outputs on human-derived value profiles. DMP improves alignment by 64.3% and enhances value diversity, offering a step toward more pluralistic and human-aligned moral guidance from LLMs.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2507.17216",
+      "arxivId": "2507.17216",
+      "url": "https://www.semanticscholar.org/paper/f8467b8a6c4a8aa65f7ef1c478505236b238a3cd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.17216"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5bf3787318c369a6055a44435ddcc184e7c8a79f",
+      "title": "Quantifying Explainability: Metrics and Methodologies for Dense Neural Network Interpretability",
+      "authors": [
+        {
+          "name": "C. Raab",
+          "authorId": "2370786971"
+        },
+        {
+          "name": "Terry Slenn",
+          "authorId": "2370786288"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As machine learning algorithms increasingly influence decisions in our daily lives, understanding these models becomes critical. This paper explores the philosophical and practical elements of model interpretability, focusing on dense neural networks, which are often perceived as \u201cblack boxes.\u201d LIME, SHAP, Partial Dependence Plots, Counterfactual Explanations, and Surrogate Models are applied to a dense neural network trained on the California Housing Dataset to evaluate their effectiveness in explaining the model's behavior. These methods provide insights into feature importance, global versus local model behavior, and potential decision-making logic. However, many aspects of neural networks remain unknown, such as complex feature interactions, internal decision pathways, and the specific roles of hidden layers. The paper highlights the persistent unknowns within the black box of neural networks and outlines potential avenues for future research. Ultimately, enhancing the understanding of these models is key to the trustability and usability of these large-scale machine learning models.",
+      "citationCount": 0,
+      "doi": "10.1109/CAI64502.2025.00166",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5bf3787318c369a6055a44435ddcc184e7c8a79f",
+      "venue": "Conference on Algebraic Informatics",
+      "journal": {
+        "name": "2025 IEEE Conference on Artificial Intelligence (CAI)",
+        "pages": "944-949"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a54e0011f478d476f4582ce1234d56d1974729fe",
+      "title": "Understanding Large Language Models' Ability on Interdisciplinary Research",
+      "authors": [
+        {
+          "name": "Yuanhao Shen",
+          "authorId": "2329746837"
+        },
+        {
+          "name": "Daniel Xavier de Sousa",
+          "authorId": "2373288346"
+        },
+        {
+          "name": "Ricardo Mar\u00e7al",
+          "authorId": "2376131172"
+        },
+        {
+          "name": "A. Asad",
+          "authorId": "2367042486"
+        },
+        {
+          "name": "Hongyu Guo",
+          "authorId": "2278393469"
+        },
+        {
+          "name": "Xiaodan Zhu",
+          "authorId": "2329740584"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advancements in Large Language Models (LLMs) have revealed their impressive ability to perform multi-step, logic-driven reasoning across complex domains, positioning them as powerful tools and collaborators in scientific discovery while challenging the long-held view that inspiration-driven ideation is uniquely human. However, the lack of a dedicated benchmark that evaluates LLMs'ability to develop ideas in Interdisciplinary Research (IDR) settings poses a critical barrier to fully understanding their strengths and limitations. To address this gap, we introduce IDRBench -- a pioneering benchmark featuring an expert annotated dataset and a suite of tasks tailored to evaluate LLMs'capabilities in proposing valuable research ideas from different scientific domains for interdisciplinary research. This benchmark aims to provide a systematic framework for assessing LLM performance in complex, cross-domain scientific research. Our dataset consists of scientific publications sourced from the ArXiv platform covering six distinct disciplines, and is annotated by domain experts with diverse academic backgrounds. To ensure high-quality annotations, we emphasize clearly defined dimensions that characterize authentic interdisciplinary research. The design of evaluation tasks in IDRBench follows a progressive, real-world perspective, reflecting the natural stages of interdisciplinary research development, including 1) IDR Paper Identification, 2) IDR Idea Integration, and 3) IDR Idea Recommendation. Using IDRBench, we construct baselines across 10 LLMs and observe that despite fostering some level of IDR awareness, LLMs still struggle to produce quality IDR ideas. These findings could not only spark new research directions, but also help to develop next-generation LLMs that excel in interdisciplinary research.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.15736",
+      "arxivId": "2507.15736",
+      "url": "https://www.semanticscholar.org/paper/a54e0011f478d476f4582ce1234d56d1974729fe",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.15736"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "23b78d6e063982f1d110b6365601ebfc00304059",
+      "title": "Understanding Conversational AI: Philosophy, Ethics, and Social Impact of Large Language Models",
+      "authors": [
+        {
+          "name": "Thierry Poibeau",
+          "authorId": "2392718362"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n \n What do large language models really know\u2014and what does it mean to live alongside them?\n \n \n This book offers a critical and interdisciplinary exploration of large language models (LLMs), examining how they reshape our understanding of language, cognition, and society. Drawing on philosophy of language, linguistics, cognitive science, and AI ethics, it investigates how these models generate meaning, simulate reasoning, and perform tasks that once seemed uniquely human\u2014from translation to moral judgment and literary creation.\n Rather than offering a purely technical account, the book interrogates the epistemic, ethical, and political dimensions of LLMs. It explores their limitations, their embedded biases, and their role in processes of automation, misinformation, and platform enclosure. At the same time, it reflects on how LLMs prompt us to revisit fundamental questions: What is understanding? What is creativity? How do we ascribe agency or trust in a world of synthetic language?\n Written for scholars, students, and curious readers across the humanities, social sciences, and computer science, this is both a philosophical inquiry and a practical guide to navigating the era of generative AI. It invites readers to think critically about the promises and perils of language technologies\u2014and about the kind of future we are shaping with them.",
+      "citationCount": 0,
+      "doi": "10.5334/bde",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/23b78d6e063982f1d110b6365601ebfc00304059",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "76a1640fa11c8f08fc6038e7e85f9c8bf97cf114",
+      "title": "Large Language Models Understanding: an Inherent Ambiguity Barrier",
+      "authors": [
+        {
+          "name": "D. Nissani",
+          "authorId": "1981198"
+        }
+      ],
+      "year": 2025,
+      "abstract": "A lively ongoing debate is taking place, since the extraordinary emergence of Large Language Models (LLMs) with regards to their capability to understand the world and capture the meaning of the dialogues in which they are involved. Arguments and counter-arguments have been proposed based upon thought experiments, anecdotal conversations between LLMs and humans, statistical linguistic analysis, philosophical considerations, and more. In this brief paper we present a counter-argument based upon a thought experiment and semi-formal considerations leading to an inherent ambiguity barrier which prevents LLMs from having any understanding of what their amazingly fluent dialogues mean.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2505.00654",
+      "arxivId": "2505.00654",
+      "url": "https://www.semanticscholar.org/paper/76a1640fa11c8f08fc6038e7e85f9c8bf97cf114",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.00654"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3263a7dc1f68651ba3b2f2cf5c98ad6b813d0e72",
+      "title": "Too Human to Model:The Uncanny Valley of LLMs in Social Simulation - When Generative Language Agents Misalign with Modelling Principles",
+      "authors": [
+        {
+          "name": "Yongchao Zeng",
+          "authorId": "2291298388"
+        },
+        {
+          "name": "Calum Brown",
+          "authorId": "2249104563"
+        },
+        {
+          "name": "M. Rounsevell",
+          "authorId": "2300468535"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) have been increasingly used to build agents in social simulation because of their impressive abilities to generate fluent, contextually coherent dialogues. Such abilities can enhance the realism of models. However, the pursuit of realism is not necessarily compatible with the epistemic foundation of modelling. We argue that LLM agents, in many regards, are too human to model: they are too expressive, detailed and intractable to be consistent with the abstraction, simplification, and interpretability typically demanded by modelling. Through a model-building thought experiment that converts the Bass diffusion model to an LLM-based variant, we uncover five core dilemmas: a temporal resolution mismatch between natural conversation and abstract time steps; the need for intervention in conversations while avoiding undermining spontaneous agent outputs; the temptation to introduce rule-like instructions in prompts while maintaining conversational naturalness; the tension between role consistency and role evolution across time; and the challenge of understanding emergence, where system-level patterns become obscured by verbose micro textual outputs. These dilemmas steer the LLM agents towards an uncanny valley: not abstract enough to clarify underlying social mechanisms, while not natural enough to represent realistic human behaviour. This exposes an important paradox: the realism of LLM agents can obscure, rather than clarify, social dynamics when misapplied. We tease out the conditions in which LLM agents are ideally suited: where system-level emergence is not the focus, linguistic nuances and meaning are central, interactions unfold in natural time, and stable role identity is more important than long-term behavioural evolution. We call for repositioning LLM agents in the ecosystem of social simulation for future applications.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.06310",
+      "arxivId": "2507.06310",
+      "url": "https://www.semanticscholar.org/paper/3263a7dc1f68651ba3b2f2cf5c98ad6b813d0e72",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.06310"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8b8fe1fc0d88dc28d75ec0a00375a3d0c3dc658a",
+      "title": "Beyond Hallucinations: The Illusion of Understanding in Large Language Models",
+      "authors": [
+        {
+          "name": "Rikard Rosenbacke",
+          "authorId": "2287320882"
+        },
+        {
+          "name": "Carl Rosenbacke",
+          "authorId": "2386015108"
+        },
+        {
+          "name": "Victor Rosenbacke",
+          "authorId": "2386016228"
+        },
+        {
+          "name": "Martin McKee",
+          "authorId": "2386015037"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) are becoming deeply embedded in human communication and decision-making, yet they inherit the ambiguity, bias, and lack of direct access to truth inherent in language itself. While their outputs are fluent, emotionally resonant, and coherent, they are generated through statistical prediction rather than grounded reasoning. This creates the risk of hallucination, responses that sound convincing but lack factual validity. Building on Geoffrey Hinton's observation that AI mirrors human intuition rather than reasoning, this paper argues that LLMs operationalize System 1 cognition at scale: fast, associative, and persuasive, but without reflection or falsification. To address this, we introduce the Rose-Frame, a three-dimensional framework for diagnosing cognitive and epistemic drift in human-AI interaction. The three axes are: (i) Map vs. Territory, which distinguishes representations of reality (epistemology) from reality itself (ontology); (ii) Intuition vs. Reason, drawing on dual-process theory to separate fast, emotional judgments from slow, reflective thinking; and (iii) Conflict vs. Confirmation, which examines whether ideas are critically tested through disagreement or simply reinforced through mutual validation. Each dimension captures a distinct failure mode, and their combination amplifies misalignment. Rose-Frame does not attempt to fix LLMs with more data or rules. Instead, it offers a reflective tool that makes both the model's limitations and the user's assumptions visible, enabling more transparent and critically aware AI deployment. It reframes alignment as cognitive governance: intuition, whether human or artificial, must remain governed by human reason. Only by embedding reflective, falsifiable oversight can we align machine fluency with human understanding.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.14665",
+      "arxivId": "2510.14665",
+      "url": "https://www.semanticscholar.org/paper/8b8fe1fc0d88dc28d75ec0a00375a3d0c3dc658a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.14665"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "70c4c6a5dc844d7919983776d3cbd00f41af3347",
+      "title": "Cross-model Transferability among Large Language Models on the Platonic Representations of Concepts",
+      "authors": [
+        {
+          "name": "Youcheng Huang",
+          "authorId": "2156083891"
+        },
+        {
+          "name": "Chen Huang",
+          "authorId": "2270744273"
+        },
+        {
+          "name": "Duanyu Feng",
+          "authorId": "2280334389"
+        },
+        {
+          "name": "Wenqiang Lei",
+          "authorId": "2287107801"
+        },
+        {
+          "name": "Jiancheng Lv",
+          "authorId": "2274774166"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Understanding the inner workings of Large Language Models (LLMs) is a critical research frontier. Prior research has shown that a single LLM's concept representations can be captured as steering vectors (SVs), enabling the control of LLM behavior (e.g., towards generating harmful content). Our work takes a novel approach by exploring the intricate relationships between concept representations across different LLMs, drawing an intriguing parallel to Plato's Allegory of the Cave. In particular, we introduce a linear transformation method to bridge these representations and present three key findings: 1) Concept representations across different LLMs can be effectively aligned using simple linear transformations, enabling efficient cross-model transfer and behavioral control via SVs. 2) This linear transformation generalizes across concepts, facilitating alignment and control of SVs representing different concepts across LLMs. 3) A weak-to-strong transferability exists between LLM concept representations, whereby SVs extracted from smaller LLMs can effectively control the behavior of larger LLMs.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2501.02009",
+      "arxivId": "2501.02009",
+      "url": "https://www.semanticscholar.org/paper/70c4c6a5dc844d7919983776d3cbd00f41af3347",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "3686-3704"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "5b05518b0d369c3cc94093afd09eeb8702ca5cd1",
+      "title": "A Percolation Model of Emergence: Analyzing Transformers Trained on a Formal Language",
+      "authors": [
+        {
+          "name": "E. Lubana",
+          "authorId": "35573359"
+        },
+        {
+          "name": "Kyogo Kawaguchi",
+          "authorId": "2316639061"
+        },
+        {
+          "name": "Robert P. Dick",
+          "authorId": "2258717260"
+        },
+        {
+          "name": "Hidenori Tanaka",
+          "authorId": "2258898381"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Increase in data, size, or compute can lead to sudden learning of specific capabilities by a neural network -- a phenomenon often called\"emergence''. Beyond scientific understanding, establishing the causal factors underlying such emergent capabilities is crucial to enable risk regulation frameworks for AI. In this work, we seek inspiration from study of emergent properties in other fields and propose a phenomenological definition for the concept in the context of neural networks. Our definition implicates the acquisition of general structures underlying the data-generating process as a cause of sudden performance growth for specific, narrower tasks. We empirically investigate this definition by proposing an experimental system grounded in a context-sensitive formal language and find that Transformers trained to perform tasks on top of strings from this language indeed exhibit emergent capabilities. Specifically, we show that once the language's underlying grammar and context-sensitivity inducing structures are learned by the model, performance on narrower tasks suddenly begins to improve. We then analogize our network's learning dynamics with the process of percolation on a bipartite graph, establishing a formal phase transition model that predicts the shift in the point of emergence observed in our experiments when changing the data structure. Overall, our experimental and theoretical frameworks yield a step towards better defining, characterizing, and predicting emergence in neural networks.",
+      "citationCount": 23,
+      "doi": "10.48550/arXiv.2408.12578",
+      "arxivId": "2408.12578",
+      "url": "https://www.semanticscholar.org/paper/5b05518b0d369c3cc94093afd09eeb8702ca5cd1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.12578"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1739e02696ce26be71590f24f46967814df70a2c",
+      "title": "Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?",
+      "authors": [
+        {
+          "name": "Maxime M'eloux",
+          "authorId": "2348097882"
+        },
+        {
+          "name": "Silviu Maniu",
+          "authorId": "2590886"
+        },
+        {
+          "name": "Franccois Portet",
+          "authorId": "2126059340"
+        },
+        {
+          "name": "Maxime Peyrard",
+          "authorId": "2348097920"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI systems are used in high-stakes applications, ensuring interpretability is crucial. Mechanistic Interpretability (MI) aims to reverse-engineer neural networks by extracting human-understandable algorithms to explain their behavior. This work examines a key question: for a given behavior, and under MI's criteria, does a unique explanation exist? Drawing on identifiability in statistics, where parameters are uniquely inferred under specific assumptions, we explore the identifiability of MI explanations. We identify two main MI strategies: (1)\"where-then-what,\"which isolates a circuit replicating model behavior before interpreting it, and (2)\"what-then-where,\"which starts with candidate algorithms and searches for neural activation subspaces implementing them, using causal alignment. We test both strategies on Boolean functions and small multi-layer perceptrons, fully enumerating candidate explanations. Our experiments reveal systematic non-identifiability: multiple circuits can replicate behavior, a circuit can have multiple interpretations, several algorithms can align with the network, and one algorithm can align with different subspaces. Is uniqueness necessary? A pragmatic approach may require only predictive and manipulability standards. If uniqueness is essential for understanding, stricter criteria may be needed. We also reference the inner interpretability framework, which validates explanations through multiple criteria. This work contributes to defining explanation standards in AI.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2502.20914",
+      "arxivId": "2502.20914",
+      "url": "https://www.semanticscholar.org/paper/1739e02696ce26be71590f24f46967814df70a2c",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.20914"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6c992049070948056a8a7c251bbc4123ae1e0b9b",
+      "title": "Reliability and Interpretability in Science and Deep Learning",
+      "authors": [
+        {
+          "name": "Luigi Scorzato",
+          "authorId": "2279554638"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In recent years, the question of the reliability of Machine Learning (ML) methods has acquired significant importance, and the analysis of the associated uncertainties has motivated a growing amount of research. However, most of these studies have applied standard error analysis to ML models\u2014and in particular Deep Neural Network (DNN) models\u2014which represent a rather significant departure from standard scientific modelling. It is therefore necessary to integrate the standard error analysis with a deeper epistemological analysis of the possible differences between DNN models and standard scientific modelling and the possible implications of these differences in the assessment of reliability. This article offers several contributions. First, it emphasises the ubiquitous role of model assumptions (both in ML and traditional science) against the illusion of theory-free science. Secondly, model assumptions are analysed from the point of view of their (epistemic) complexity, which is shown to be language-independent. It is argued that the high epistemic complexity of DNN models hinders the estimate of their reliability and also their prospect of long term progress. Some potential ways forward are suggested. Thirdly, this article identifies the close relation between a model\u2019s epistemic complexity and its interpretability, as introduced in the context of responsible AI. This clarifies in which sense\u2014and to what extent\u2014the lack of understanding of a model (black-box problem) impacts its interpretability in a way that is independent of individual skills. It also clarifies how interpretability is a precondition for a plausible assessment of the reliability of any model, which cannot be based on statistical analysis alone. This article focuses on the comparison between traditional scientific models and DNN models. However, Random Forest (RF) and Logistic Regression (LR) models are also briefly considered.",
+      "citationCount": 16,
+      "doi": "10.1007/s11023-024-09682-0",
+      "arxivId": "2401.07359",
+      "url": "https://www.semanticscholar.org/paper/6c992049070948056a8a7c251bbc4123ae1e0b9b",
+      "venue": "Minds and Machines",
+      "journal": {
+        "name": "Minds and Machines",
+        "pages": "1-31",
+        "volume": "34"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2ae6a601dff2463f28db103543d936f4af356d46",
+      "title": "Why language clouds our ascription of understanding, intention and consciousness",
+      "authors": [
+        {
+          "name": "Susan AJ Stuart",
+          "authorId": "2290332182"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/s11097-024-09970-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2ae6a601dff2463f28db103543d936f4af356d46",
+      "venue": "Phenomenology and the Cognitive Sciences",
+      "journal": {
+        "name": "Phenomenology and the Cognitive Sciences",
+        "pages": "1031 - 1052",
+        "volume": "23"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b4d81c89c973b6d207dbc0562760200b7d7974ed",
+      "title": "The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?",
+      "authors": [
+        {
+          "name": "Denis Sutter",
+          "authorId": "2372513327"
+        },
+        {
+          "name": "Julian Minder",
+          "authorId": "2305481379"
+        },
+        {
+          "name": "Thomas Hofmann",
+          "authorId": "2243267340"
+        },
+        {
+          "name": "Tiago Pimentel",
+          "authorId": "2295729225"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The concept of causal abstraction got recently popularised to demystify the opaque decision-making processes of machine learning models; in short, a neural network can be abstracted as a higher-level algorithm if there exists a function which allows us to map between them. Notably, most interpretability papers implement these maps as linear functions, motivated by the linear representation hypothesis: the idea that features are encoded linearly in a model's representations. However, this linearity constraint is not required by the definition of causal abstraction. In this work, we critically examine the concept of causal abstraction by considering arbitrarily powerful alignment maps. In particular, we prove that under reasonable assumptions, any neural network can be mapped to any algorithm, rendering this unrestricted notion of causal abstraction trivial and uninformative. We complement these theoretical findings with empirical evidence, demonstrating that it is possible to perfectly map models to algorithms even when these models are incapable of solving the actual task; e.g., on an experiment using randomly initialised language models, our alignment maps reach 100\\% interchange-intervention accuracy on the indirect object identification task. This raises the non-linear representation dilemma: if we lift the linearity constraint imposed to alignment maps in causal abstraction analyses, we are left with no principled way to balance the inherent trade-off between these maps'complexity and accuracy. Together, these results suggest an answer to our title's question: causal abstraction is not enough for mechanistic interpretability, as it becomes vacuous without assumptions about how models encode information. Studying the connection between this information-encoding assumption and causal abstraction should lead to exciting future work.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2507.08802",
+      "arxivId": "2507.08802",
+      "url": "https://www.semanticscholar.org/paper/b4d81c89c973b6d207dbc0562760200b7d7974ed",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.08802"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2e3c5e48083ae5a0cdd268da97e909e1fd754d3f",
+      "title": "\"Understanding AI\": Semantic Grounding in Large Language Models",
+      "authors": [
+        {
+          "name": "Holger Lyre",
+          "authorId": "2284679884"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Do LLMs understand the meaning of the texts they generate? Do they possess a semantic grounding? And how could we understand whether and what they understand? I start the paper with the observation that we have recently witnessed a generative turn in AI, since generative models, including LLMs, are key for self-supervised learning. To assess the question of semantic grounding, I distinguish and discuss five methodological ways. The most promising way is to apply core assumptions of theories of meaning in philosophy of mind and language to LLMs. Grounding proves to be a gradual affair with a three-dimensional distinction between functional, social and causal grounding. LLMs show basic evidence in all three dimensions. A strong argument is that LLMs develop world models. Hence, LLMs are neither stochastic parrots nor semantic zombies, but already understand the language they generate, at least in an elementary sense.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2402.10992",
+      "arxivId": "2402.10992",
+      "url": "https://www.semanticscholar.org/paper/2e3c5e48083ae5a0cdd268da97e909e1fd754d3f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.10992"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "556991c703ebe96424f8698497bd6a6e7b2fde1d",
+      "title": "Explainable Artificial Intelligence (Al) through human-AI collaborative frameworks: Quantifying trust and interpretability in high-stakes decisions",
+      "authors": [
+        {
+          "name": "Roy Okonkwo",
+          "authorId": "2328488492"
+        },
+        {
+          "name": "Adebola Folorunso",
+          "authorId": "2332409579"
+        },
+        {
+          "name": "Foyeke Ogundipe",
+          "authorId": "2333147442"
+        },
+        {
+          "name": "Clement Yayra Tettey",
+          "authorId": "2365859683"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Explainable Artificial Intelligence (XAI) through human-AI collaborative frameworks is essential for building trust and interpretability in high-stakes decision-making processes. As AI systems are increasingly deployed in critical areas such as healthcare, finance, and criminal justice, the need for transparency and accountability in AI-driven decisions becomes paramount. High-stakes decisions often involve complex, high-consequence outcomes, where understanding and trusting AI predictions are vital. XAI aims to address these concerns by providing understandable, transparent explanations for AI decisions, making it possible for human experts to comprehend and, when necessary, override or adjust AI outputs. Human-AI collaboration focuses on enhancing the decision-making capabilities of both humans and machines by combining the strengths of AI\u2019s computational power with human intuition and experience. By ensuring that AI systems are explainable, this collaboration fosters trust between humans and AI, essential for smooth integration in sensitive fields. Trust is crucial in high-stakes contexts, as users need to rely on AI outputs and integrate them into their decision-making processes. To quantify this trust, various metrics and frameworks have been developed, measuring aspects such as reliability, fairness, and the transparency of AI models. Interpretability is equally vital, as it allows users to trace and understand the rationale behind AI predictions. In high-stakes domains, transparent AI models support legal, ethical, and social accountability, ensuring that decisions are made with a clear understanding of how and why the AI reached a particular conclusion. However, achieving a balance between complex, high-performing AI models and the need for interpretability presents significant challenges. This explores how human-AI collaborative frameworks can address these challenges, enhancing the effectiveness, fairness, and trustworthiness of AI systems in high-stakes decision-making environments. \nKeywords: Explainable Artificial Intelligence, Human-Al, Frameworks Trust and Interpretability, High-Stakes Decisions.",
+      "citationCount": 1,
+      "doi": "10.51594/csitrj.v6i5.1934",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/556991c703ebe96424f8698497bd6a6e7b2fde1d",
+      "venue": "Computer Science &amp; IT Research Journal",
+      "journal": {
+        "name": "Computer Science &amp; IT Research Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8e4b8bc4a9c67da607756364bdc5a77852a617e0",
+      "title": "Towards Responsible AI: Understanding and Mitigating Ethical Concerns of Large Language Models",
+      "authors": [
+        {
+          "name": "Akshata Upadhye",
+          "authorId": "2267973563"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have emerged as powerful tools in the field of natural language processing and have transformed the way we interact with text data and generate textual content.",
+      "citationCount": 0,
+      "doi": "10.47363/jaicc/2024(3)289",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8e4b8bc4a9c67da607756364bdc5a77852a617e0",
+      "venue": "Journal of Artificial Intelligence &amp; Cloud Computing",
+      "journal": {
+        "name": "Journal of Artificial Intelligence &amp; Cloud Computing"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e32185936ab3b23f39b1dd93e1507e6d80a71776",
+      "title": "The debate over understanding in AI\u2019s large language models",
+      "authors": [
+        {
+          "name": "M. Mitchell",
+          "authorId": "71370384"
+        },
+        {
+          "name": "D. Krakauer",
+          "authorId": "1714525"
+        }
+      ],
+      "year": 2022,
+      "abstract": "We survey a current, heated debate in the artificial intelligence (AI) research community on whether large pretrained language models can be said to understand language\u2014and the physical and social situations language encodes\u2014in any humanlike sense. We describe arguments that have been made for and against such understanding and key questions for the broader sciences of intelligence that have arisen in light of these arguments. We contend that an extended science of intelligence can be developed that will provide insight into distinct modes of understanding, their strengths and limitations, and the challenge of integrating diverse forms of cognition.",
+      "citationCount": 303,
+      "doi": "10.1073/pnas.2215907120",
+      "arxivId": "2210.13966",
+      "url": "https://www.semanticscholar.org/paper/e32185936ab3b23f39b1dd93e1507e6d80a71776",
+      "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+      "journal": {
+        "name": "Proceedings of the National Academy of Sciences of the United States of America",
+        "volume": "120"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "6ead11b553a6e992f5d096aaad395cd7c9685a54",
+      "title": "Understanding Philosophies of Higher Education between Countries in China\u2019s Belt and Road Initiative: Analysis of University Mottos Based on Natural Language Processing Technology",
+      "authors": [
+        {
+          "name": "Hengli Wang",
+          "authorId": "2197629039"
+        },
+        {
+          "name": "Qiuyun Lu",
+          "authorId": "101491508"
+        }
+      ],
+      "year": 2022,
+      "abstract": "University mottos have been demonstrated to convey educational philosophies, but few studies have investigated the educational philosophies reflected by university mottos from countries along the \u201cOne Belt, One Road\u201d (OBOR) route, with applying the analytical approaches like text mining and natural language processing (NLP). This present investigation constructed a database of university mottos from 1,535 universities in 61 countries along the OBOR route and applied NLP technology to explore the similarities and differences of educational philosophies among the universities along the OBOR route. Methods of NLP used in this article included text mining, cluster analysis, and Latent Dirichlet Allocation (LDA) topic model. The social network analysis (SNA) model was used to further analyze the interconnection and exchange of educational philosophies expressed through university mottos. Based on the five identified topic categories, we concluded that countries along the OBOR route have the same basic educational philosophy for higher education but have different emphases due to cultural differences, such as the different emphases on virtue education, collectivism, and individualism. Education for sustainability is another focus of higher education philosophy reflected by the topic categories of university mottos, which is consistent with the United Nations Sustainable Development Goals, for example, quality education. In addition to demonstrating the BRI impact on educational philosophies of countries along the OBOR route, this present investigation could also contribute to the growing body of knowledge about international cooperation and communication of higher education under the framework of BRI, for a globalized, shared and sustainable education in the post-COVID era.",
+      "citationCount": 6,
+      "doi": "10.1177/21582440221141867",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6ead11b553a6e992f5d096aaad395cd7c9685a54",
+      "venue": "SAGE Open",
+      "journal": {
+        "name": "SAGE Open",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2e11ace144dd72d5f30303b96eb3a1ac61c4bd5d",
+      "title": "Meaning and understanding in large language models",
+      "authors": [
+        {
+          "name": "Vladim'ir Havl'ik",
+          "authorId": "2261737538"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Can a machine understand the meanings of natural language? Recent developments in the generative large language models (LLMs) of artificial intelligence have led to the belief that traditional philosophical assumptions about machine understanding of language need to be revised. This article critically evaluates the prevailing tendency to regard machine language performance as mere syntactic manipulation and the imitations of understanding, which is only partial and very shallow, without sufficient grounding in the world. The article analyses the views on possible ways of grounding as a condition for successful understanding in LLMs and offers an alternative way in view of the prevailing belief that the success of understanding depends mainly on the referential grounding. An alternative conception seeks to show that semantic fragmentism offers a viable account of natural language understanding and explains how LLMs ground the meanings of linguistic expressions. Uncovering how meanings are grounded allows us to also explain why LLMs\u2019 ability to understand is possible and so remarkably successful.",
+      "citationCount": 10,
+      "doi": "10.1007/s11229-024-04878-4",
+      "arxivId": "2310.17407",
+      "url": "https://www.semanticscholar.org/paper/2e11ace144dd72d5f30303b96eb3a1ac61c4bd5d",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "volume": "205"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

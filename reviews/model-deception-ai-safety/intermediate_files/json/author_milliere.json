@@ -1,0 +1,374 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Rapha\u00ebl Milli\u00e8re language models",
+  "results": [
+    {
+      "paperId": "f7e755443d665ebc215e7caeda8aa3154466bddc",
+      "title": "A Philosophical Introduction to Language Models - Part I: Continuity With Classic Debates",
+      "authors": [
+        {
+          "name": "Raphael Milliere",
+          "authorId": "2249763478"
+        },
+        {
+          "name": "Cameron Buckner",
+          "authorId": "2278429867"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models like GPT-4 have achieved remarkable proficiency in a broad spectrum of language-based tasks, some of which are traditionally associated with hallmarks of human intelligence. This has prompted ongoing disagreements about the extent to which we can meaningfully ascribe any kind of linguistic or cognitive competence to language models. Such questions have deep philosophical roots, echoing longstanding debates about the status of artificial neural networks as cognitive models. This article -- the first part of two companion papers -- serves both as a primer on language models for philosophers, and as an opinionated survey of their significance in relation to classic debates in the philosophy cognitive science, artificial intelligence, and linguistics. We cover topics such as compositionality, language acquisition, semantic competence, grounding, world models, and the transmission of cultural knowledge. We argue that the success of language models challenges several long-held assumptions about artificial neural networks. However, we also highlight the need for further empirical investigation to better understand their internal mechanisms. This sets the stage for the companion paper (Part II), which turns to novel empirical methods for probing the inner workings of language models, and new philosophical questions prompted by their latest developments.",
+      "citationCount": 38,
+      "doi": "10.48550/arXiv.2401.03910",
+      "arxivId": "2401.03910",
+      "url": "https://www.semanticscholar.org/paper/f7e755443d665ebc215e7caeda8aa3154466bddc",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.03910"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1e8b9ed963a0f3c4268a609cea48d7527e6f088f",
+      "title": "A Philosophical Introduction to Language Models - Part II: The Way Forward",
+      "authors": [
+        {
+          "name": "Raphael Milliere",
+          "authorId": "2249763478"
+        },
+        {
+          "name": "Cameron Buckner",
+          "authorId": "2278429867"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this paper, the second of two companion pieces, we explore novel philosophical questions raised by recent progress in large language models (LLMs) that go beyond the classical debates covered in the first part. We focus particularly on issues related to interpretability, examining evidence from causal intervention methods about the nature of LLMs' internal representations and computations. We also discuss the implications of multimodal and modular extensions of LLMs, recent debates about whether such systems may meet minimal criteria for consciousness, and concerns about secrecy and reproducibility in LLM research. Finally, we discuss whether LLM-like systems may be relevant to modeling aspects of human cognition, if their architectural characteristics and learning scenario are adequately constrained.",
+      "citationCount": 24,
+      "doi": "10.48550/arXiv.2405.03207",
+      "arxivId": "2405.03207",
+      "url": "https://www.semanticscholar.org/paper/1e8b9ed963a0f3c4268a609cea48d7527e6f088f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.03207"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e2ec94bfde3f60c3fdbf2cdc5c9c2a1aedca6630",
+      "title": "Normative conflicts and shallow AI alignment",
+      "authors": [
+        {
+          "name": "Rapha\u00ebl Milli\u00e8re",
+          "authorId": "16273823"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The progress of AI systems such as large language models (LLMs) raises increasingly pressing concerns about their safe deployment. This paper examines the value alignment problem for LLMs, arguing that current alignment strategies are fundamentally inadequate to prevent misuse. Despite ongoing efforts to instill norms such as helpfulness, honesty, and harmlessness in LLMs through fine-tuning based on human preferences, they remain vulnerable to adversarial attacks that exploit conflicts between these norms. I argue that this vulnerability reflects a fundamental limitation of existing alignment methods: they reinforce shallow behavioral dispositions rather than endowing LLMs with a genuine capacity for normative deliberation. Drawing from on research in moral psychology, I show how humans\u2019 ability to engage in deliberative reasoning enhances their resilience against similar adversarial tactics. LLMs, by contrast, lack a robust capacity to detect and rationally resolve normative conflicts, leaving them susceptible to manipulation; even recent advances in reasoning-focused LLMs have not addressed this vulnerability. This \u201cshallow alignment\u201d problem carries significant implications for AI safety and regulation, suggesting that current approaches are insufficient for mitigating potential harms posed by increasingly capable AI systems.",
+      "citationCount": 3,
+      "doi": "10.1007/s11098-025-02347-3",
+      "arxivId": "2506.04679",
+      "url": "https://www.semanticscholar.org/paper/e2ec94bfde3f60c3fdbf2cdc5c9c2a1aedca6630",
+      "venue": "Philosophical Studies",
+      "journal": {
+        "name": "Philosophical Studies",
+        "pages": "2035 - 2078",
+        "volume": "182"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9af90d40ccd2f7d99605406c4d4c0c54ca436541",
+      "title": "The Alignment Problem in Context",
+      "authors": [
+        {
+          "name": "Raphael Milliere",
+          "authorId": "2249763478"
+        }
+      ],
+      "year": 2023,
+      "abstract": "A core challenge in the development of increasingly capable AI systems is to make them safe and reliable by ensuring their behaviour is consistent with human values. This challenge, known as the alignment problem, does not merely apply to hypothetical future AI systems that may pose catastrophic risks; it already applies to current systems, such as large language models, whose potential for harm is rapidly increasing. In this paper, I assess whether we are on track to solve the alignment problem for large language models, and what that means for the safety of future AI systems. I argue that existing strategies for alignment are insufficient, because large language models remain vulnerable to adversarial attacks that can reliably elicit unsafe behaviour. I offer an explanation of this lingering vulnerability on which it is not simply a contingent limitation of current language models, but has deep technical ties to a crucial aspect of what makes these models useful and versatile in the first place -- namely, their remarkable aptitude to learn\"in context\"directly from user instructions. It follows that the alignment problem is not only unsolved for current AI systems, but may be intrinsically difficult to solve without severely undermining their capabilities. Furthermore, this assessment raises concerns about the prospect of ensuring the safety of future and more capable AI systems.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2311.02147",
+      "arxivId": "2311.02147",
+      "url": "https://www.semanticscholar.org/paper/9af90d40ccd2f7d99605406c4d4c0c54ca436541",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2311.02147"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "963103e9784e7ec243542ef1225f67df7185d9a3",
+      "title": "Turing\u2019s Children: Large Language Models and Imitative Intelligence",
+      "authors": [
+        {
+          "name": "Rafael C. Alvarado",
+          "authorId": "2374676498"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This essay introduces and develops the concept of imitative intelligence implied by Turing\u2019s foundational work on machine intelligence and connects it to the current generation AI agents based on large language models. Based on a close reading of Turing\u2019s writings on machine intelligence, from the 1938 paper on the entscheidungsproblem to the 1950 paper on the imitation game, the Turing test is found to be more than an operational convenience; it reflects an implicit theory of the imitative and social nature of intelligence that informs his entire project of intelligent machine design. Moreover, the proported shortcomings of the Turing test\u2014its reliance on language and emphasis on culture\u2014turn out to be foundational to the success of LLM-based AI agents today. It is suggested that the design and regulation these agents is usefully framed by the perspective of the concept of imitative intelligence is inherited by them.",
+      "citationCount": 1,
+      "doi": "10.1177/08944393251364293",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/963103e9784e7ec243542ef1225f67df7185d9a3",
+      "venue": "Social science computer review",
+      "journal": {
+        "name": "Social Science Computer Review",
+        "pages": "92 - 99",
+        "volume": "44"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d80cfb8cc9e5fd3618e038eaf1233974e55877e8",
+      "title": "On the Relationship Between Structure in Natural Language and Models of Sequential Decision Processes",
+      "authors": [
+        {
+          "name": "Rafael Rodr\u00edguez-S\u00e1nchez",
+          "authorId": "1389874481"
+        },
+        {
+          "name": "Roma Patel",
+          "authorId": "48322149"
+        },
+        {
+          "name": "G. Konidaris",
+          "authorId": "1765407"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d80cfb8cc9e5fd3618e038eaf1233974e55877e8",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5ada5660892b0f1aeaa6ba7d68002cb8fd85465c",
+      "title": "Towards a Definition of Generative Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Raphael Ronge",
+          "authorId": "2335288595"
+        },
+        {
+          "name": "Markus A. Maier",
+          "authorId": "2260336088"
+        },
+        {
+          "name": "Benjamin Rathgeber",
+          "authorId": "2335294219"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 15,
+      "doi": "10.1007/s13347-025-00863-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5ada5660892b0f1aeaa6ba7d68002cb8fd85465c",
+      "venue": "Philosophy & Technology",
+      "journal": {
+        "name": "Philosophy & Technology",
+        "volume": "38"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "81bd72b78a9541fd0e406db4c877d80e25b8363e",
+      "title": "Philosophy of Cognitive Science in the Age of Deep Learning",
+      "authors": [
+        {
+          "name": "Rapha\u00ebl Milli\u00e8re",
+          "authorId": "2364525895"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Deep learning has enabled major advances across most areas of artificial intelligence research. This remarkable progress extends beyond mere engineering achievements and holds significant relevance for the philosophy of cognitive science. Deep neural networks have made significant strides in overcoming the limitations of older connectionist models that once occupied the center stage of philosophical debates about cognition. This development is directly relevant to long-standing theoretical debates in the philosophy of cognitive science. Furthermore, ongoing methodological challenges related to the comparative evaluation of deep neural networks stand to benefit greatly from interdisciplinary collaboration with philosophy and cognitive science. The time is ripe for philosophers to explore foundational issues related to deep learning and cognition; this perspective paper surveys key areas where their contributions can be especially fruitful. This article is categorized under: Philosophy > Artificial Intelligence Computer Science and Robotics > Machine Learning.",
+      "citationCount": 8,
+      "doi": "10.1002/wcs.1684",
+      "arxivId": "2405.04048",
+      "url": "https://www.semanticscholar.org/paper/81bd72b78a9541fd0e406db4c877d80e25b8363e",
+      "venue": "Wiley Interdisciplinary Reviews: Cognitive Science",
+      "journal": {
+        "name": "Wiley interdisciplinary reviews. Cognitive science",
+        "pages": "\n          e1684\n        "
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "4560660897ca2154c0a303b5802f375c905b332f",
+      "title": "Content Planning for Neural Story Generation with Aristotelian Rescoring",
+      "authors": [
+        {
+          "name": "Seraphina Goldfarb-Tarrant",
+          "authorId": "1405375772"
+        },
+        {
+          "name": "Tuhin Chakrabarty",
+          "authorId": "51448832"
+        },
+        {
+          "name": "R. Weischedel",
+          "authorId": "1732071"
+        },
+        {
+          "name": "Nanyun Peng",
+          "authorId": "3157053"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Long-form narrative text generated from large language models manages a fluent impersonation of human writing, but only at the local sentence level, and lacks structure or global cohesion. We posit that many of the problems of story generation can be addressed via high-quality content planning, and present a system that focuses on how to learn good plot structures to guide story generation. We utilize a plot-generation language model along with an ensemble of rescoring models that each implement an aspect of good story-writing as detailed in Aristotle's Poetics. We find that stories written with our more principled plot-structure are both more relevant to a given prompt and higher quality than baselines that do not content plan, or that plan in an unprincipled way.",
+      "citationCount": 135,
+      "doi": "10.18653/v1/2020.emnlp-main.351",
+      "arxivId": "2009.09870",
+      "url": "https://www.semanticscholar.org/paper/4560660897ca2154c0a303b5802f375c905b332f",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2009.09870"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e3caf24dfdf34a96f62633f200f20aaff279e28a",
+      "title": "Semantic Communication: From Philosophical Conceptions Towards a Mathematical Framework",
+      "authors": [
+        {
+          "name": "J. Gholipour",
+          "authorId": "21686331"
+        },
+        {
+          "name": "Rafael F. Schaefer",
+          "authorId": "2298272255"
+        },
+        {
+          "name": "Gerhard P. Fettweis",
+          "authorId": "2238718348"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Semantic communication has emerged as a promising paradigm to address the challenges of next-generation communication networks. While some progress has been made in its conceptualization, fundamental questions remain unresolved. In this paper, we propose a probabilistic model for semantic communication that, unlike prior works primarily rooted in intuitions from human language, is grounded in a rigorous philosophical conception of information and its relationship with data as Constraining Affordances, mediated by Levels of Abstraction (LoA). This foundation not only enables the modeling of linguistic semantic communication but also provides a domain-independent definition of semantic content, extending its applicability beyond linguistic contexts. As the semantic communication problem involves a complex interplay of various factors, making it difficult to tackle in its entirety, we propose to orthogonalize it by classifying it into simpler sub-problems and approach the general problem step by step. Notably, we show that Shannon's framework constitutes a special case of semantic communication, in which each message conveys a single, unambiguous meaning. Consequently, the capacity in Shannon's model-defined as the maximum rate of reliably transmissible messages-coincides with the semantic capacity under this constrained scenario. In this paper, we specifically focus on the sub-problem where semantic ambiguity arises solely from physical channel noise and derive a lower bound for its semantic capacity, which reduces to Shannon's capacity in the corresponding special case. We also demonstrate that the achievable rate of all transmissible messages for reliable semantic communication, exceeds Shannon's capacity by the added term H(X|S).",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.01342",
+      "arxivId": "2505.01342",
+      "url": "https://www.semanticscholar.org/paper/e3caf24dfdf34a96f62633f200f20aaff279e28a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.01342"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4e0fae396ec9b33ad4609181481b4b7461d6e07b",
+      "title": "The performativity thesis and the interactions between economic theories and social reality",
+      "authors": [
+        {
+          "name": "Celso Pereira Neris Junior",
+          "authorId": "2145186856"
+        },
+        {
+          "name": "Jos\u00e9 Ricardo Fucidji",
+          "authorId": "2086335965"
+        },
+        {
+          "name": "Rafael Galv\u00e3o de Almeida",
+          "authorId": "1739130707"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Abstract Originally proposed by philosopher of language John Austin, and later adapted by other social sciences, the performativity thesis has been known as a critique of the homo economicus of mainstream economics. The performativity of economics is the idea that economics gives birth to activities and markets in the economy (rather than merely describe or interpret them). This paper reviews arguments for and against performativity as a useful way of thinking about the economics-economy relationship. Following this survey, we put forward our interpretation, viz., an interactive approach to this subject. By doing so, we argue for its epistemological relevance for economic methodology, i.e., for understanding the relationship between theories and economic models and the events in the economy. Furthermore, we claim that because they are embedded in social reality, mainstream economic theories occupy a particularly resilient position.",
+      "citationCount": 1,
+      "doi": "10.1590/0103-6351/5837",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4e0fae396ec9b33ad4609181481b4b7461d6e07b",
+      "venue": "",
+      "journal": {
+        "name": "Nova Economia",
+        "pages": "487-510",
+        "volume": "31"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "749af1ddeeb78e6663d6fea8b0be5967c0bd36f6",
+      "title": "Esc\u00e2ndalo da dedu\u00e7\u00e3o e informa\u00e7\u00e3o sem\u00e2ntica de uma perspectiva inferencial-pragm\u00e1tica",
+      "authors": [
+        {
+          "name": "Ralph Leal Heck",
+          "authorId": "134643940"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/749af1ddeeb78e6663d6fea8b0be5967c0bd36f6",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "82-103",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "318732bd8a40fd6eb32a7443af12cfbe24ac6d06",
+      "title": "La elecci\u00f3n en virtud del absurdo en Temor y Temblor como modelo del antih\u00e9roe en el Film Noir",
+      "authors": [
+        {
+          "name": "Rafael Garc\u00eda Pav\u00f3n",
+          "authorId": "2128278120"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Kierkegaard argues in Fear and Trembling through the biblical figure of Abraham that the way to recover the possible is only in the performing of the movement of faith as a choice by virtue of the absurd that moves from infinite resignation to infinite belief, in the form of a singular inner possibility invisible to the eye of the judgment of the generality. Therefore, the way to understand it can only be indirect and through the reduplication of the reader. And it is because of this aspect that Deleuze has said that Kierkegaard is an antecedent of the cinematograph, because the cinematograph can capture that true movement and radical freedom. Furthermore, it is the Film-Noir genre that has best adopted this existential model of choice by virtue of the absurd in the figure of its antihero. Therefore, in this paper, we intend to show how Kierkegaard's existential model in the first part of Fear and Trembling of choice by virtue of the absurd constitutes the model of the antihero in Film-Noir, using as a particular analysis the 2019 Romanian film La Gomera by Corneliu Porumboiu, where he creatively expresses this singularity with a language for two singulars that is absurd for the general grammar, in such a way that cinema is a mode of continuation of the existential poetic thought generated in Kierkegaard's thought.",
+      "citationCount": 0,
+      "doi": "10.51660/riftp52303",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/318732bd8a40fd6eb32a7443af12cfbe24ac6d06",
+      "venue": "Revista Internacional de Filosof\u00eda Te\u00f3rica y Pr\u00e1ctica",
+      "journal": {
+        "name": "Revista Internacional de Filosof\u00eda Te\u00f3rica y Pr\u00e1ctica"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 13,
+  "errors": []
+}

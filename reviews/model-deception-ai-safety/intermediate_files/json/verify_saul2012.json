@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Lying, Misleading, and What Is Said",
+    "author": "Saul",
+    "year": 2012
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/acprof:oso/9780199603688.003.0004",
+      "title": "Is Lying Worse than Merely Misleading?1",
+      "authors": [
+        {
+          "family": "Saul",
+          "given": "Jennifer M."
+        }
+      ],
+      "year": 2012,
+      "container_title": "Lying, Misleading, and What is Said",
+      "publisher": "Oxford University Press",
+      "type": "book-chapter",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1093/acprof:oso/9780199603688.003.0004",
+      "score": 55.010128
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

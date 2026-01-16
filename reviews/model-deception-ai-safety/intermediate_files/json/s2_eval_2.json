@@ -1,0 +1,2337 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "red teaming language models",
+  "results": [
+    {
+      "paperId": "5d49c7401c5f2337c4cc88d243ae39ed659afe64",
+      "title": "Red Teaming Language Models with Language Models",
+      "authors": [
+        {
+          "name": "Ethan Perez",
+          "authorId": "3439053"
+        },
+        {
+          "name": "Saffron Huang",
+          "authorId": "2148653469"
+        },
+        {
+          "name": "Francis Song",
+          "authorId": "2059836321"
+        },
+        {
+          "name": "Trevor Cai",
+          "authorId": "2072572294"
+        },
+        {
+          "name": "Roman Ring",
+          "authorId": "81387328"
+        },
+        {
+          "name": "John Aslanides",
+          "authorId": "9958912"
+        },
+        {
+          "name": "Amelia Glaese",
+          "authorId": "2105840001"
+        },
+        {
+          "name": "Nat McAleese",
+          "authorId": "147687624"
+        },
+        {
+          "name": "G. Irving",
+          "authorId": "2060655766"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Language Models (LMs) often cannot be deployed because of their potential to harm users in hard-to-predict ways. Prior work identifies harmful behaviors before deployment by using human annotators to hand-write test cases. However, human annotation is expensive, limiting the number and diversity of test cases. In this work, we automatically find cases where a target LM behaves in a harmful way, by generating test cases (\u201cred teaming\u201d) using another LM. We evaluate the target LM\u2019s replies to generated test questions using a classifier trained to detect offensive content, uncovering tens of thousands of offensive replies in a 280B parameter LM chatbot. We explore several methods, from zero-shot generation to reinforcement learning, for generating test cases with varying levels of diversity and difficulty. Furthermore, we use prompt engineering to control LM-generated test cases to uncover a variety of other harms, automatically finding groups of people that the chatbot discusses in offensive ways, personal and hospital phone numbers generated as the chatbot\u2019s own contact info, leakage of private training data in generated text, and harms that occur over the course of a conversation. Overall, LM-based red teaming is one promising tool (among many needed) for finding and fixing diverse, undesirable LM behaviors before impacting users.",
+      "citationCount": 862,
+      "doi": "10.18653/v1/2022.emnlp-main.225",
+      "arxivId": "2202.03286",
+      "url": "https://www.semanticscholar.org/paper/5d49c7401c5f2337c4cc88d243ae39ed659afe64",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "3419-3448"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "17bcb1edbe068e8fe6a97da552c70a77a15bbce7",
+      "title": "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned",
+      "authors": [
+        {
+          "name": "Deep Ganguli",
+          "authorId": "2081806483"
+        },
+        {
+          "name": "Liane Lovitt",
+          "authorId": "2154608229"
+        },
+        {
+          "name": "John Kernion",
+          "authorId": "1583434563"
+        },
+        {
+          "name": "Amanda Askell",
+          "authorId": "119609682"
+        },
+        {
+          "name": "Yuntao Bai",
+          "authorId": "1486307451"
+        },
+        {
+          "name": "Saurav Kadavath",
+          "authorId": "148070327"
+        },
+        {
+          "name": "Benjamin Mann",
+          "authorId": "2056658938"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "3439053"
+        },
+        {
+          "name": "Nicholas Schiefer",
+          "authorId": "2833768"
+        },
+        {
+          "name": "Kamal Ndousse",
+          "authorId": "1978097132"
+        },
+        {
+          "name": "Andy Jones",
+          "authorId": "2149890773"
+        },
+        {
+          "name": "Sam Bowman",
+          "authorId": "1799822"
+        },
+        {
+          "name": "Anna Chen",
+          "authorId": "2111073313"
+        },
+        {
+          "name": "Tom Conerly",
+          "authorId": "2154608209"
+        },
+        {
+          "name": "Nova Dassarma",
+          "authorId": "2142833890"
+        },
+        {
+          "name": "Dawn Drain",
+          "authorId": "1943097969"
+        },
+        {
+          "name": "Nelson Elhage",
+          "authorId": "2866708"
+        },
+        {
+          "name": "S. El-Showk",
+          "authorId": "1403602266"
+        },
+        {
+          "name": "Stanislav Fort",
+          "authorId": "30176974"
+        },
+        {
+          "name": "Z. Dodds",
+          "authorId": "2068552"
+        },
+        {
+          "name": "T. Henighan",
+          "authorId": "103143311"
+        },
+        {
+          "name": "Danny Hernandez",
+          "authorId": "39182747"
+        },
+        {
+          "name": "Tristan Hume",
+          "authorId": "2162194147"
+        },
+        {
+          "name": "Josh Jacobson",
+          "authorId": "1666368339"
+        },
+        {
+          "name": "Scott Johnston",
+          "authorId": "2154610174"
+        },
+        {
+          "name": "Shauna Kravec",
+          "authorId": "49604482"
+        },
+        {
+          "name": "Catherine Olsson",
+          "authorId": "2061321863"
+        },
+        {
+          "name": "Sam Ringer",
+          "authorId": "1380664820"
+        },
+        {
+          "name": "Eli Tran-Johnson",
+          "authorId": "2175781319"
+        },
+        {
+          "name": "Dario Amodei",
+          "authorId": "2698777"
+        },
+        {
+          "name": "Tom B. Brown",
+          "authorId": "31035595"
+        },
+        {
+          "name": "Nicholas Joseph",
+          "authorId": "2117706920"
+        },
+        {
+          "name": "Sam McCandlish",
+          "authorId": "52238703"
+        },
+        {
+          "name": "Chris Olah",
+          "authorId": "2287268442"
+        },
+        {
+          "name": "Jared Kaplan",
+          "authorId": "2053807409"
+        },
+        {
+          "name": "Jack Clark",
+          "authorId": "2115193883"
+        }
+      ],
+      "year": 2022,
+      "abstract": "We describe our early efforts to red team language models in order to simultaneously discover, measure, and attempt to reduce their potentially harmful outputs. We make three main contributions. First, we investigate scaling behaviors for red teaming across 3 model sizes (2.7B, 13B, and 52B parameters) and 4 model types: a plain language model (LM); an LM prompted to be helpful, honest, and harmless; an LM with rejection sampling; and a model trained to be helpful and harmless using reinforcement learning from human feedback (RLHF). We find that the RLHF models are increasingly difficult to red team as they scale, and we find a flat trend with scale for the other model types. Second, we release our dataset of 38,961 red team attacks for others to analyze and learn from. We provide our own analysis of the data and find a variety of harmful outputs, which range from offensive language to more subtly harmful non-violent unethical outputs. Third, we exhaustively describe our instructions, processes, statistical methodologies, and uncertainty about red teaming. We hope that this transparency accelerates our ability to work together as a community in order to develop shared norms, practices, and technical standards for how to red team language models.",
+      "citationCount": 629,
+      "doi": "10.48550/arXiv.2209.07858",
+      "arxivId": "2209.07858",
+      "url": "https://www.semanticscholar.org/paper/17bcb1edbe068e8fe6a97da552c70a77a15bbce7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2209.07858"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1db819afb3604c4bfd1e5a0cb2ee9ab9dec52642",
+      "title": "Explore, Establish, Exploit: Red Teaming Language Models from Scratch",
+      "authors": [
+        {
+          "name": "Stephen Casper",
+          "authorId": "2103487700"
+        },
+        {
+          "name": "Jason Lin",
+          "authorId": "2115329672"
+        },
+        {
+          "name": "Joe Kwon",
+          "authorId": "2174180236"
+        },
+        {
+          "name": "Gatlen Culp",
+          "authorId": "2220216645"
+        },
+        {
+          "name": "Dylan Hadfield-Menell",
+          "authorId": "1397904824"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Deploying large language models (LMs) can pose hazards from harmful outputs such as toxic or false text. Prior work has introduced automated tools that elicit harmful outputs to identify these risks. While this is a valuable step toward securing models, these approaches rely on a pre-existing way to efficiently classify undesirable outputs. Using a pre-existing classifier does not allow for red-teaming to be tailored to the target model. Furthermore, when failures can be easily classified in advance, red-teaming has limited marginal value because problems can be avoided by simply filtering training data and/or model outputs. Here, we consider red-teaming\"from scratch,\"in which the adversary does not begin with a way to classify failures. Our framework consists of three steps: 1) Exploring the model's range of behaviors in the desired context; 2) Establishing a definition and measurement for undesired behavior (e.g., a classifier trained to reflect human evaluations); and 3) Exploiting the model's flaws using this measure to develop diverse adversarial prompts. We use this approach to red-team GPT-3 to discover classes of inputs that elicit false statements. In doing so, we construct the CommonClaim dataset of 20,000 statements labeled by humans as common-knowledge-true, common knowledge-false, or neither. We are making code and data available.",
+      "citationCount": 119,
+      "doi": "10.48550/arXiv.2306.09442",
+      "arxivId": "2306.09442",
+      "url": "https://www.semanticscholar.org/paper/1db819afb3604c4bfd1e5a0cb2ee9ab9dec52642",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2306.09442"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6945b0f03c0f29caa288d435c12029b6f0e0cf06",
+      "title": "STAR: SocioTechnical Approach to Red Teaming Language Models",
+      "authors": [
+        {
+          "name": "Laura Weidinger",
+          "authorId": "51932191"
+        },
+        {
+          "name": "John F. J. Mellor",
+          "authorId": "1386957852"
+        },
+        {
+          "name": "Bernat Guillen Pegueroles",
+          "authorId": "46240857"
+        },
+        {
+          "name": "Nahema Marchal",
+          "authorId": "1491046516"
+        },
+        {
+          "name": "Ravin Kumar",
+          "authorId": "2290629265"
+        },
+        {
+          "name": "Kristian Lum",
+          "authorId": "2307001363"
+        },
+        {
+          "name": "Canfer Akbulut",
+          "authorId": "2297848348"
+        },
+        {
+          "name": "Mark D\u00edaz",
+          "authorId": "2306945843"
+        },
+        {
+          "name": "Stevie Bergman",
+          "authorId": "2259905763"
+        },
+        {
+          "name": "Mikel Rodriguez",
+          "authorId": "2275529269"
+        },
+        {
+          "name": "Verena Rieser",
+          "authorId": "2259931273"
+        },
+        {
+          "name": "William Isaac",
+          "authorId": "2275178344"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This research introduces STAR, a sociotechnical framework that improves on current best practices for red teaming safety of large language models. STAR makes two key contributions: it enhances steerability by generating parameterised instructions for human red teamers, leading to improved coverage of the risk surface. Parameterised instructions also provide more detailed insights into model failures at no increased cost. Second, STAR improves signal quality by matching demographics to assess harms for specific groups, resulting in more sensitive annotations. STAR further employs a novel step of arbitration to leverage diverse viewpoints and improve label reliability, treating disagreement not as noise but as a valuable contribution to signal quality.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2406.11757",
+      "arxivId": "2406.11757",
+      "url": "https://www.semanticscholar.org/paper/6945b0f03c0f29caa288d435c12029b6f0e0cf06",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.11757"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "6e0f888dbe861f775ce5d4fca2f30ddf90d93ed8",
+      "title": "Red Teaming Language Models for Processing Contradictory Dialogues",
+      "authors": [
+        {
+          "name": "Xiaofei Wen",
+          "authorId": "2302150318"
+        },
+        {
+          "name": "Bangzheng Li",
+          "authorId": "2261387782"
+        },
+        {
+          "name": "Tenghao Huang",
+          "authorId": "2110510944"
+        },
+        {
+          "name": "Muhao Chen",
+          "authorId": "1998918"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Most language models currently available are prone to self-contradiction during dialogues. To mitigate this issue, this study explores a novel contradictory dialogue processing task that aims to detect and modify contradictory statements in a conversation. This task is inspired by research on context faithfulness and dialogue comprehension, which have demonstrated that the detection and understanding of contradictions often necessitate detailed explanations. We develop a dataset comprising contradictory dialogues, in which one side of the conversation contradicts itself. Each dialogue is accompanied by an explanatory label that highlights the location and details of the contradiction. With this dataset, we present a Red Teaming framework for contradictory dialogue processing. The framework detects and attempts to explain the dialogue, then modifies the existing contradictory content using the explanation. Our experiments demonstrate that the framework improves the ability to detect contradictory dialogues and provides valid explanations. Additionally, it showcases distinct capabilities for modifying such dialogues. Our study highlights the importance of the logical inconsistency problem in conversational AI.",
+      "citationCount": 2,
+      "doi": "10.18653/v1/2024.emnlp-main.648",
+      "arxivId": "2405.10128",
+      "url": "https://www.semanticscholar.org/paper/6e0f888dbe861f775ce5d4fca2f30ddf90d93ed8",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "11611-11630"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "36c40921cdc4992479a1451aac3a8f98d4b826c2",
+      "title": "Red Teaming Language Models for Contradictory Dialogues",
+      "authors": [
+        {
+          "name": "Xiaofei Wen",
+          "authorId": "2302150318"
+        },
+        {
+          "name": "Bangzheng Li",
+          "authorId": "2261387782"
+        },
+        {
+          "name": "Tenghao Huang",
+          "authorId": "2110510944"
+        },
+        {
+          "name": "Muhao Chen",
+          "authorId": "1998918"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2405.10128",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/36c40921cdc4992479a1451aac3a8f98d4b826c2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.10128"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d4177489596748e43aa571f59556097f2cc4c8be",
+      "title": "GPTFUZZER: Red Teaming Large Language Models with Auto-Generated Jailbreak Prompts",
+      "authors": [
+        {
+          "name": "Jiahao Yu",
+          "authorId": "11305882"
+        },
+        {
+          "name": "Xingwei Lin",
+          "authorId": "51465605"
+        },
+        {
+          "name": "Zheng Yu",
+          "authorId": "2267485418"
+        },
+        {
+          "name": "Xinyu Xing",
+          "authorId": "2242944254"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have recently experienced tremendous popularity and are widely used from casual conversations to AI-driven programming. However, despite their considerable success, LLMs are not entirely reliable and can give detailed guidance on how to conduct harmful or illegal activities. While safety measures can reduce the risk of such outputs, adversarial jailbreak attacks can still exploit LLMs to produce harmful content. These jailbreak templates are typically manually crafted, making large-scale testing challenging. In this paper, we introduce GPTFuzz, a novel black-box jailbreak fuzzing framework inspired by the AFL fuzzing framework. Instead of manual engineering, GPTFuzz automates the generation of jailbreak templates for red-teaming LLMs. At its core, GPTFuzz starts with human-written templates as initial seeds, then mutates them to produce new templates. We detail three key components of GPTFuzz: a seed selection strategy for balancing efficiency and variability, mutate operators for creating semantically equivalent or similar sentences, and a judgment model to assess the success of a jailbreak attack. We evaluate GPTFuzz against various commercial and open-source LLMs, including ChatGPT, LLaMa-2, and Vicuna, under diverse attack scenarios. Our results indicate that GPTFuzz consistently produces jailbreak templates with a high success rate, surpassing human-crafted templates. Remarkably, GPTFuzz achieves over 90% attack success rates against ChatGPT and Llama-2 models, even with suboptimal initial seed templates. We anticipate that GPTFuzz will be instrumental for researchers and practitioners in examining LLM robustness and will encourage further exploration into enhancing LLM safety.",
+      "citationCount": 507,
+      "doi": "10.48550/arXiv.2309.10253",
+      "arxivId": "2309.10253",
+      "url": "https://www.semanticscholar.org/paper/d4177489596748e43aa571f59556097f2cc4c8be",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2309.10253"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fc61d20700213bc58079bf7be90784ebf0510503",
+      "title": "Nullspace Disentanglement for Red Teaming Language Models",
+      "authors": [
+        {
+          "name": "Yi Han",
+          "authorId": "2230014897"
+        },
+        {
+          "name": "Yuanxing Liu",
+          "authorId": "113317827"
+        },
+        {
+          "name": "Weinan Zhang",
+          "authorId": "1806419"
+        },
+        {
+          "name": "Ting Liu",
+          "authorId": "2265693796"
+        }
+      ],
+      "year": 2025,
+      "abstract": ",",
+      "citationCount": 0,
+      "doi": "10.18653/v1/2025.emnlp-main.1083",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fc61d20700213bc58079bf7be90784ebf0510503",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "fe13cc3650fd7df8f98d0596bfc13178af82c799",
+      "title": "Curiosity-driven Red-teaming for Large Language Models",
+      "authors": [
+        {
+          "name": "Zhang-Wei Hong",
+          "authorId": "33317877"
+        },
+        {
+          "name": "Idan Shenfeld",
+          "authorId": "2164041844"
+        },
+        {
+          "name": "Tsun-Hsuan Wang",
+          "authorId": "40897201"
+        },
+        {
+          "name": "Yung-Sung Chuang",
+          "authorId": "2475831"
+        },
+        {
+          "name": "Aldo Pareja",
+          "authorId": "2288530668"
+        },
+        {
+          "name": "James Glass",
+          "authorId": "2288494477"
+        },
+        {
+          "name": "Akash Srivastava",
+          "authorId": "2243025154"
+        },
+        {
+          "name": "Pulkit Agrawal",
+          "authorId": "2257003971"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs) hold great potential for many natural language applications but risk generating incorrect or toxic content. To probe when an LLM generates unwanted content, the current paradigm is to recruit a \\textit{red team} of human testers to design input prompts (i.e., test cases) that elicit undesirable responses from LLMs. However, relying solely on human testers is expensive and time-consuming. Recent works automate red teaming by training a separate red team LLM with reinforcement learning (RL) to generate test cases that maximize the chance of eliciting undesirable responses from the target LLM. However, current RL methods are only able to generate a small number of effective test cases resulting in a low coverage of the span of prompts that elicit undesirable responses from the target LLM. To overcome this limitation, we draw a connection between the problem of increasing the coverage of generated test cases and the well-studied approach of curiosity-driven exploration that optimizes for novelty. Our method of curiosity-driven red teaming (CRT) achieves greater coverage of test cases while mantaining or increasing their effectiveness compared to existing methods. Our method, CRT successfully provokes toxic responses from LLaMA2 model that has been heavily fine-tuned using human preferences to avoid toxic outputs. Code is available at \\url{https://github.com/Improbable-AI/curiosity_redteam}",
+      "citationCount": 77,
+      "doi": "10.48550/arXiv.2402.19464",
+      "arxivId": "2402.19464",
+      "url": "https://www.semanticscholar.org/paper/fe13cc3650fd7df8f98d0596bfc13178af82c799",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.19464"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dfc9bb24627d1dd61c8d495cd86a874a2a1130ad",
+      "title": "ALERT: A Comprehensive Benchmark for Assessing Large Language Models' Safety through Red Teaming",
+      "authors": [
+        {
+          "name": "Simone Tedeschi",
+          "authorId": "2140370472"
+        },
+        {
+          "name": "Felix Friedrich",
+          "authorId": "2055616945"
+        },
+        {
+          "name": "P. Schramowski",
+          "authorId": "40896023"
+        },
+        {
+          "name": "K. Kersting",
+          "authorId": "2066493115"
+        },
+        {
+          "name": "Roberto Navigli",
+          "authorId": "2068519190"
+        },
+        {
+          "name": "Huu Nguyen",
+          "authorId": "2296824404"
+        },
+        {
+          "name": "Bo Li",
+          "authorId": "2296831558"
+        }
+      ],
+      "year": 2024,
+      "abstract": "When building Large Language Models (LLMs), it is paramount to bear safety in mind and protect them with guardrails. Indeed, LLMs should never generate content promoting or normalizing harmful, illegal, or unethical behavior that may contribute to harm to individuals or society. This principle applies to both normal and adversarial use. In response, we introduce ALERT, a large-scale benchmark to assess safety based on a novel fine-grained risk taxonomy. It is designed to evaluate the safety of LLMs through red teaming methodologies and consists of more than 45k instructions categorized using our novel taxonomy. By subjecting LLMs to adversarial testing scenarios, ALERT aims to identify vulnerabilities, inform improvements, and enhance the overall safety of the language models. Furthermore, the fine-grained taxonomy enables researchers to perform an in-depth evaluation that also helps one to assess the alignment with various policies. In our experiments, we extensively evaluate 10 popular open- and closed-source LLMs and demonstrate that many of them still struggle to attain reasonable levels of safety.",
+      "citationCount": 80,
+      "doi": "10.48550/arXiv.2404.08676",
+      "arxivId": "2404.08676",
+      "url": "https://www.semanticscholar.org/paper/dfc9bb24627d1dd61c8d495cd86a874a2a1130ad",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.08676"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fdb361ea83c010ed0011d179567de5a1112651ac",
+      "title": "Red Teaming Language Model Detectors with Language Models",
+      "authors": [
+        {
+          "name": "Zhouxing Shi",
+          "authorId": "2987927"
+        },
+        {
+          "name": "Yihan Wang",
+          "authorId": "2108927851"
+        },
+        {
+          "name": "Fan Yin",
+          "authorId": "2065089223"
+        },
+        {
+          "name": "Xiangning Chen",
+          "authorId": "2143737082"
+        },
+        {
+          "name": "Kai-Wei Chang",
+          "authorId": "2782886"
+        },
+        {
+          "name": "Cho-Jui Hsieh",
+          "authorId": "1793529"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The prevalence and strong capability of large language models (LLMs) present significant safety and ethical risks if exploited by malicious users. To prevent the potentially deceptive usage of LLMs, recent work has proposed algorithms to detect LLM-generated text and protect LLMs. In this paper, we investigate the robustness and reliability of these LLM detectors under adversarial attacks. We study two types of attack strategies: 1) replacing certain words in an LLM\u2019s output with their synonyms given the context; 2) automatically searching for an instructional prompt to alter the writing style of the generation. In both strategies, we leverage an auxiliary LLM to generate the word replacements or the instructional prompt. Different from previous works, we consider a challenging setting where the auxiliary LLM can also be protected by a detector. Experiments reveal that our attacks effectively compromise the performance of all detectors in the study with plausible generations, underscoring the urgent need to improve the robustness of LLM-generated text detection systems. Code is available at https://github.com/shizhouxing/LLM-Detector-Robustness.",
+      "citationCount": 66,
+      "doi": "10.1162/tacl_a_00639",
+      "arxivId": "2305.19713",
+      "url": "https://www.semanticscholar.org/paper/fdb361ea83c010ed0011d179567de5a1112651ac",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "journal": {
+        "name": "Transactions of the Association for Computational Linguistics",
+        "pages": "174-189",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3b5e7f456043fa96dc4673dc11156834fd9a985e",
+      "title": "Learning diverse attacks on large language models for robust red-teaming and safety tuning",
+      "authors": [
+        {
+          "name": "Seanie Lee",
+          "authorId": "1472875852"
+        },
+        {
+          "name": "Minsu Kim",
+          "authorId": "2303794981"
+        },
+        {
+          "name": "Lynn Cherif",
+          "authorId": "2303651581"
+        },
+        {
+          "name": "David Dobre",
+          "authorId": "103080507"
+        },
+        {
+          "name": "Juho Lee",
+          "authorId": "2303491102"
+        },
+        {
+          "name": "Sung Ju Hwang",
+          "authorId": "2303581394"
+        },
+        {
+          "name": "Kenji Kawaguchi",
+          "authorId": "2256995498"
+        },
+        {
+          "name": "G. Gidel",
+          "authorId": "8150760"
+        },
+        {
+          "name": "Y. Bengio",
+          "authorId": "1865800402"
+        },
+        {
+          "name": "Nikolay Malkin",
+          "authorId": "2067020770"
+        },
+        {
+          "name": "Moksh Jain",
+          "authorId": "1383135665"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Red-teaming, or identifying prompts that elicit harmful responses, is a critical step in ensuring the safe and responsible deployment of large language models (LLMs). Developing effective protection against many modes of attack prompts requires discovering diverse attacks. Automated red-teaming typically uses reinforcement learning to fine-tune an attacker language model to generate prompts that elicit undesirable responses from a target LLM, as measured, for example, by an auxiliary toxicity classifier. We show that even with explicit regularization to favor novelty and diversity, existing approaches suffer from mode collapse or fail to generate effective attacks. As a flexible and probabilistically principled alternative, we propose to use GFlowNet fine-tuning, followed by a secondary smoothing phase, to train the attacker model to generate diverse and effective attack prompts. We find that the attacks generated by our method are effective against a wide range of target LLMs, both with and without safety tuning, and transfer well between target LLMs. Finally, we demonstrate that models safety-tuned using a dataset of red-teaming prompts generated by our method are robust to attacks from other RL-based red-teaming approaches.",
+      "citationCount": 42,
+      "doi": "10.48550/arXiv.2405.18540",
+      "arxivId": "2405.18540",
+      "url": "https://www.semanticscholar.org/paper/3b5e7f456043fa96dc4673dc11156834fd9a985e",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.18540"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9f859726b3d8dffd96a1f55de4122617751cc1b4",
+      "title": "Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment",
+      "authors": [
+        {
+          "name": "Rishabh Bhardwaj",
+          "authorId": "3203533"
+        },
+        {
+          "name": "Soujanya Poria",
+          "authorId": "1746416"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Larger language models (LLMs) have taken the world by storm with their massive multi-tasking capabilities simply by optimizing over a next-word prediction objective. With the emergence of their properties and encoded knowledge, the risk of LLMs producing harmful outputs increases, making them unfit for scalable deployment for the public. In this work, we propose a new safety evaluation benchmark RED-EVAL that carries out red-teaming. We show that even widely deployed models are susceptible to the Chain of Utterances-based (CoU) prompting, jailbreaking closed source LLM-based systems such as GPT-4 and ChatGPT to unethically respond to more than 65% and 73% of harmful queries. We also demonstrate the consistency of the RED-EVAL across 8 open-source LLMs in generating harmful responses in more than 86% of the red-teaming attempts. Next, we propose RED-INSTRUCT--An approach for the safety alignment of LLMs. It constitutes two phases: 1) HARMFULQA data collection: Leveraging CoU prompting, we collect a dataset that consists of 1.9K harmful questions covering a wide range of topics, 9.5K safe and 7.3K harmful conversations from ChatGPT; 2) SAFE-ALIGN: We demonstrate how the conversational dataset can be used for the safety alignment of LLMs by minimizing the negative log-likelihood over helpful responses and penalizing over harmful responses by gradient accent over sample loss. Our model STARLING, a fine-tuned Vicuna-7B, is observed to be more safely aligned when evaluated on RED-EVAL and HHH benchmarks while preserving the utility of the baseline models (TruthfulQA, MMLU, and BBH).",
+      "citationCount": 212,
+      "doi": "10.48550/arXiv.2308.09662",
+      "arxivId": "2308.09662",
+      "url": "https://www.semanticscholar.org/paper/9f859726b3d8dffd96a1f55de4122617751cc1b4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2308.09662"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a2fb135fc4bfa323bc92dd498ba45bcaf7259a02",
+      "title": "Building Safe GenAI Applications: An End-to-End Overview of Red Teaming for Large Language Models",
+      "authors": [
+        {
+          "name": "Alberto Purpura",
+          "authorId": "2348473315"
+        },
+        {
+          "name": "Sahil Wadhwa",
+          "authorId": "5002401"
+        },
+        {
+          "name": "Jesse Zymet",
+          "authorId": "2348473427"
+        },
+        {
+          "name": "Akshay Gupta",
+          "authorId": "2348492902"
+        },
+        {
+          "name": "Andy Luo",
+          "authorId": "2341529962"
+        },
+        {
+          "name": "Melissa Kazemi Rad",
+          "authorId": "2341530923"
+        },
+        {
+          "name": "Swapnil Shinde",
+          "authorId": "2348475402"
+        },
+        {
+          "name": "M. Sorower",
+          "authorId": "2341530534"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid growth of Large Language Models (LLMs) presents significant privacy, security, and ethical concerns. While much research has proposed methods for defending LLM systems against misuse by malicious actors, researchers have recently complemented these efforts with an offensive approach that involves red teaming, i.e., proactively attacking LLMs with the purpose of identifying their vulnerabilities. This paper provides a concise and practical overview of the LLM red teaming literature, structured so as to describe a multi-component system end-to-end. To motivate red teaming we survey the initial safety needs of some high-profile LLMs, and then dive into the different components of a red teaming system as well as software packages for implementing them. We cover various attack methods, strategies for attack-success evaluation, metrics for assessing experiment outcomes, as well as a host of other considerations. Our survey will be useful for any reader who wants to rapidly obtain a grasp of the major red teaming concepts for their own use in practical applications.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2503.01742",
+      "arxivId": "2503.01742",
+      "url": "https://www.semanticscholar.org/paper/a2fb135fc4bfa323bc92dd498ba45bcaf7259a02",
+      "venue": "Proceedings of the 5th Workshop on Trustworthy NLP (TrustNLP 2025)",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.01742"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5669ee1d93ad92b20d7640f10c3f040512787ef9",
+      "title": "Beyond Benchmarks: Dynamic, Automatic And Systematic Red-Teaming Agents For Trustworthy Medical Language Models",
+      "authors": [
+        {
+          "name": "Jiazhen Pan",
+          "authorId": "2048020438"
+        },
+        {
+          "name": "Bailiang Jian",
+          "authorId": "2310852367"
+        },
+        {
+          "name": "Paul Hager",
+          "authorId": "2249553146"
+        },
+        {
+          "name": "Yundi Zhang",
+          "authorId": "2305116531"
+        },
+        {
+          "name": "Che Liu",
+          "authorId": "2347595414"
+        },
+        {
+          "name": "Friedrike Jungmann",
+          "authorId": "2374473525"
+        },
+        {
+          "name": "H. Li",
+          "authorId": "2343779617"
+        },
+        {
+          "name": "Chenyu You",
+          "authorId": "2061592207"
+        },
+        {
+          "name": "Junde Wu",
+          "authorId": "2365500616"
+        },
+        {
+          "name": "Jiayuan Zhu",
+          "authorId": "2275784890"
+        },
+        {
+          "name": "Fenglin Liu",
+          "authorId": "2347864849"
+        },
+        {
+          "name": "Yuyuan Liu",
+          "authorId": "2344630471"
+        },
+        {
+          "name": "Niklas Bubeck",
+          "authorId": "2372230806"
+        },
+        {
+          "name": "Christian Wachinger",
+          "authorId": "2254314549"
+        },
+        {
+          "name": "Chen Chen",
+          "authorId": "2304643445"
+        },
+        {
+          "name": "Zhenyu Gong",
+          "authorId": "2312379597"
+        },
+        {
+          "name": "Ouyang Cheng",
+          "authorId": "2332098688"
+        },
+        {
+          "name": "G. Kaissis",
+          "authorId": "2256731953"
+        },
+        {
+          "name": "Benedikt Wiestler",
+          "authorId": "2304395613"
+        },
+        {
+          "name": "D. Rueckert",
+          "authorId": "2091163163"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Ensuring the safety and reliability of large language models (LLMs) in clinical practice is critical to prevent patient harm and promote trustworthy healthcare applications of AI. However, LLMs are advancing so rapidly that static safety benchmarks often become obsolete upon publication, yielding only an incomplete and sometimes misleading picture of model trustworthiness. We demonstrate that a Dynamic, Automatic, and Systematic (DAS) red-teaming framework that continuously stress-tests LLMs can reveal significant weaknesses of current LLMs across four safety-critical domains: robustness, privacy, bias/fairness, and hallucination. A suite of adversarial agents is applied to autonomously mutate test cases, identify/evolve unsafe-triggering strategies, and evaluate responses, uncovering vulnerabilities in real time without human intervention. Applying DAS to 15 proprietary and open-source LLMs revealed a stark contrast between static benchmark performance and vulnerability under adversarial pressure. Despite a median MedQA accuracy exceeding 80\\%, 94\\% of previously correct answers failed our dynamic robustness tests. We observed similarly high failure rates across other domains: privacy leaks were elicited in 86\\% of scenarios, cognitive-bias priming altered clinical recommendations in 81\\% of fairness tests, and we identified hallucination rates exceeding 66\\% in widely used models. Such profound residual risks are incompatible with routine clinical practice. By converting red-teaming from a static checklist into a dynamic stress-test audit, DAS red-teaming offers the surveillance that hospitals/regulators/technology vendors require as LLMs become embedded in patient chatbots, decision-support dashboards, and broader healthcare workflows. Our framework delivers an evolvable, scalable, and reliable safeguard for the next generation of medical AI.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2508.00923",
+      "arxivId": "2508.00923",
+      "url": "https://www.semanticscholar.org/paper/5669ee1d93ad92b20d7640f10c3f040512787ef9",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.00923"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a65b035fe21c816adfa594748033cf16f19b999a",
+      "title": "Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models",
+      "authors": [
+        {
+          "name": "Yanjiang Liu",
+          "authorId": "49420585"
+        },
+        {
+          "name": "Shuheng Zhou",
+          "authorId": "2301799603"
+        },
+        {
+          "name": "Yaojie Lu",
+          "authorId": "1831434"
+        },
+        {
+          "name": "Huijia Zhu",
+          "authorId": "2301637080"
+        },
+        {
+          "name": "Weiqiang Wang",
+          "authorId": "2301752402"
+        },
+        {
+          "name": "Hongyu Lin",
+          "authorId": "2116455765"
+        },
+        {
+          "name": "Ben He",
+          "authorId": "2304906129"
+        },
+        {
+          "name": "Xianpei Han",
+          "authorId": "2118233348"
+        },
+        {
+          "name": "Le Sun",
+          "authorId": "2110832778"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Automated red-teaming has become a crucial approach for uncovering vulnerabilities in large language models (LLMs). However, most existing methods focus on isolated safety flaws, limiting their ability to adapt to dynamic defenses and uncover complex vulnerabilities efficiently. To address this challenge, we propose Auto-RT, a reinforcement learning framework that automatically explores and optimizes complex attack strategies to effectively uncover security vulnerabilities through malicious queries. Specifically, we introduce two key mechanisms to reduce exploration complexity and improve strategy optimization: 1) Early-terminated Exploration, which accelerate exploration by focusing on high-potential attack strategies; and 2) Progressive Reward Tracking algorithm with intermediate downgrade models, which dynamically refine the search trajectory toward successful vulnerability exploitation. Extensive experiments across diverse LLMs demonstrate that, by significantly improving exploration efficiency and automatically optimizing attack strategies, Auto-RT detects a boarder range of vulnerabilities, achieving a faster detection speed and 16.63\\% higher success rates compared to existing methods.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2501.01830",
+      "arxivId": "2501.01830",
+      "url": "https://www.semanticscholar.org/paper/a65b035fe21c816adfa594748033cf16f19b999a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.01830"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e972362378a146c697168d7e220b6371b0de2498",
+      "title": "AIRTBench: Measuring Autonomous AI Red Teaming Capabilities in Language Models",
+      "authors": [
+        {
+          "name": "Ads Dawson",
+          "authorId": "2357967021"
+        },
+        {
+          "name": "Rob Mulla",
+          "authorId": "2357964467"
+        },
+        {
+          "name": "Nick Landers",
+          "authorId": "1799967462"
+        },
+        {
+          "name": "Shane Caldwell",
+          "authorId": "2367271858"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We introduce AIRTBench, an AI red teaming benchmark for evaluating language models' ability to autonomously discover and exploit Artificial Intelligence and Machine Learning (AI/ML) security vulnerabilities. The benchmark consists of 70 realistic black-box capture-the-flag (CTF) challenges from the Crucible challenge environment on the Dreadnode platform, requiring models to write python code to interact with and compromise AI systems. Claude-3.7-Sonnet emerged as the clear leader, solving 43 challenges (61% of the total suite, 46.9% overall success rate), with Gemini-2.5-Pro following at 39 challenges (56%, 34.3% overall), GPT-4.5-Preview at 34 challenges (49%, 36.9% overall), and DeepSeek R1 at 29 challenges (41%, 26.9% overall). Our evaluations show frontier models excel at prompt injection attacks (averaging 49% success rates) but struggle with system exploitation and model inversion challenges (below 26%, even for the best performers). Frontier models are far outpacing open-source alternatives, with the best truly open-source model (Llama-4-17B) solving 7 challenges (10%, 1.0% overall), though demonstrating specialized capabilities on certain hard challenges. Compared to human security researchers, large language models (LLMs) solve challenges with remarkable efficiency completing in minutes what typically takes humans hours or days-with efficiency advantages of over 5,000x on hard challenges. Our contribution fills a critical gap in the evaluation landscape, providing the first comprehensive benchmark specifically designed to measure and track progress in autonomous AI red teaming capabilities.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2506.14682",
+      "arxivId": "2506.14682",
+      "url": "https://www.semanticscholar.org/paper/e972362378a146c697168d7e220b6371b0de2498",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.14682"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1524b7ff78755a3445d22400a8d6c75ba8c0cd65",
+      "title": "Red Teaming Visual Language Models",
+      "authors": [
+        {
+          "name": "Mukai Li",
+          "authorId": "2027599235"
+        },
+        {
+          "name": "Lei Li",
+          "authorId": "49192881"
+        },
+        {
+          "name": "Yuwei Yin",
+          "authorId": "2109472880"
+        },
+        {
+          "name": "Masood Ahmed",
+          "authorId": "2280985793"
+        },
+        {
+          "name": "Zhenguang Liu",
+          "authorId": "2359546119"
+        },
+        {
+          "name": "Qi Liu",
+          "authorId": "2144831944"
+        }
+      ],
+      "year": 2024,
+      "abstract": "VLMs (Vision-Language Models) extend the capabilities of LLMs (Large Language Models) to accept multimodal inputs. Since it has been verified that LLMs can be induced to generate harmful or inaccurate content through specific test cases (termed as Red Teaming), how VLMs perform in similar scenarios, especially with their combination of textual and visual inputs, remains a question. To explore this problem, we present a novel red teaming dataset RTVLM, which encompasses 10 subtasks (e.g., image misleading, multi-modal jail-breaking, face fairness, etc) under 4 primary aspects (faithfulness, privacy, safety, fairness). Our RTVLM is the first red-teaming dataset to benchmark current VLMs in terms of these 4 different aspects. Detailed analysis shows that 10 prominent open-sourced VLMs struggle with the red teaming in different degrees and have up to 31% performance gap with GPT-4V. Additionally, we simply apply red teaming alignment to LLaVA-v1.5 with Supervised Fine-tuning (SFT) using RTVLM, and this bolsters the models' performance with 10% in RTVLM test set, 13% in MM-Hal, and without noticeable decline in MM-Bench, overpassing other LLaVA-based models with regular alignment data. This reveals that current open-sourced VLMs still lack red teaming alignment. Our code and datasets will be open-source.",
+      "citationCount": 53,
+      "doi": "10.48550/arXiv.2401.12915",
+      "arxivId": "2401.12915",
+      "url": "https://www.semanticscholar.org/paper/1524b7ff78755a3445d22400a8d6c75ba8c0cd65",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.12915"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "003fc58377d9190218c56c452bc31efc31172795",
+      "title": "CoP: Agentic Red-teaming for Large Language Models using Composition of Principles",
+      "authors": [
+        {
+          "name": "Chen Xiong",
+          "authorId": "2303846381"
+        },
+        {
+          "name": "Pin-Yu Chen",
+          "authorId": "2218144207"
+        },
+        {
+          "name": "Tsung-Yi Ho",
+          "authorId": "2103197703"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in Large Language Models (LLMs) have spurred transformative applications in various domains, ranging from open-source to proprietary LLMs. However, jailbreak attacks, which aim to break safety alignment and user compliance by tricking the target LLMs into answering harmful and risky responses, are becoming an urgent concern. The practice of red-teaming for LLMs is to proactively explore potential risks and error-prone instances before the release of frontier AI technology. This paper proposes an agentic workflow to automate and scale the red-teaming process of LLMs through the Composition-of-Principles (CoP) framework, where human users provide a set of red-teaming principles as instructions to an AI agent to automatically orchestrate effective red-teaming strategies and generate jailbreak prompts. Distinct from existing red-teaming methods, our CoP framework provides a unified and extensible framework to encompass and orchestrate human-provided red-teaming principles to enable the automated discovery of new red-teaming strategies. When tested against leading LLMs, CoP reveals unprecedented safety risks by finding novel jailbreak prompts and improving the best-known single-turn attack success rate by up to 19.0 times.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.00781",
+      "arxivId": "2506.00781",
+      "url": "https://www.semanticscholar.org/paper/003fc58377d9190218c56c452bc31efc31172795",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.00781"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "da14e71f31e98612ebf871be742dddc55da509d1",
+      "title": "Quality-Diversity Red-Teaming: Automated Generation of High-Quality and Diverse Attackers for Large Language Models",
+      "authors": [
+        {
+          "name": "Ren-Jian Wang",
+          "authorId": "2229104541"
+        },
+        {
+          "name": "Ke Xue",
+          "authorId": "2140320254"
+        },
+        {
+          "name": "Zeyu Qin",
+          "authorId": "2313959100"
+        },
+        {
+          "name": "Ziniu Li",
+          "authorId": "2366602749"
+        },
+        {
+          "name": "Sheng Tang",
+          "authorId": "2367288080"
+        },
+        {
+          "name": "Hao-Tian Li",
+          "authorId": "2366225504"
+        },
+        {
+          "name": "Shengcai Liu",
+          "authorId": "2366158814"
+        },
+        {
+          "name": "Chao Qian",
+          "authorId": "2275057079"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Ensuring safety of large language models (LLMs) is important. Red teaming--a systematic approach to identifying adversarial prompts that elicit harmful responses from target LLMs--has emerged as a crucial safety evaluation method. Within this framework, the diversity of adversarial prompts is essential for comprehensive safety assessments. We find that previous approaches to red-teaming may suffer from two key limitations. First, they often pursue diversity through simplistic metrics like word frequency or sentence embedding similarity, which may not capture meaningful variation in attack strategies. Second, the common practice of training a single attacker model restricts coverage across potential attack styles and risk categories. This paper introduces Quality-Diversity Red-Teaming (QDRT), a new framework designed to address these limitations. QDRT achieves goal-driven diversity through behavior-conditioned training and implements a behavioral replay buffer in an open-ended manner. Additionally, it trains multiple specialized attackers capable of generating high-quality attacks across diverse styles and risk categories. Our empirical evaluation demonstrates that QDRT generates attacks that are both more diverse and more effective against a wide range of target LLMs, including GPT-2, Llama-3, Gemma-2, and Qwen2.5. This work advances the field of LLM safety by providing a systematic and effective approach to automated red-teaming, ultimately supporting the responsible deployment of LLMs.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.07121",
+      "arxivId": "2506.07121",
+      "url": "https://www.semanticscholar.org/paper/da14e71f31e98612ebf871be742dddc55da509d1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.07121"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9fa830e5c3a108f13cdb25c05a9e6107e365ad83",
+      "title": "Operationalizing a Threat Model for Red-Teaming Large Language Models (LLMs)",
+      "authors": [
+        {
+          "name": "Apurv Verma",
+          "authorId": "3363380"
+        },
+        {
+          "name": "Satyapriya Krishna",
+          "authorId": "2143841730"
+        },
+        {
+          "name": "Sebastian Gehrmann",
+          "authorId": "2265058484"
+        },
+        {
+          "name": "Madhavan Seshadri",
+          "authorId": "38672865"
+        },
+        {
+          "name": "Anu Pradhan",
+          "authorId": "2312322748"
+        },
+        {
+          "name": "Tom Ault",
+          "authorId": "2312322007"
+        },
+        {
+          "name": "Leslie Barrett",
+          "authorId": "2312324819"
+        },
+        {
+          "name": "David Rabinowitz",
+          "authorId": "2312323661"
+        },
+        {
+          "name": "John Doucette",
+          "authorId": "2312322306"
+        },
+        {
+          "name": "Nhathai Phan",
+          "authorId": "11032760"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Creating secure and resilient applications with large language models (LLM) requires anticipating, adjusting to, and countering unforeseen threats. Red-teaming has emerged as a critical technique for identifying vulnerabilities in real-world LLM implementations. This paper presents a detailed threat model and provides a systematization of knowledge (SoK) of red-teaming attacks on LLMs. We develop a taxonomy of attacks based on the stages of the LLM development and deployment process and extract various insights from previous research. In addition, we compile methods for defense and practical red-teaming strategies for practitioners. By delineating prominent attack motifs and shedding light on various entry points, this paper provides a framework for improving the security and robustness of LLM-based systems.",
+      "citationCount": 41,
+      "doi": "10.48550/arXiv.2407.14937",
+      "arxivId": "2407.14937",
+      "url": "https://www.semanticscholar.org/paper/9fa830e5c3a108f13cdb25c05a9e6107e365ad83",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.14937"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "668c2fc744f5b428dca6426319f45efc889c8e42",
+      "title": "Arondight: Red Teaming Large Vision Language Models with Auto-generated Multi-modal Jailbreak Prompts",
+      "authors": [
+        {
+          "name": "Yi Liu",
+          "authorId": "2307161736"
+        },
+        {
+          "name": "Chengjun Cai",
+          "authorId": "152460589"
+        },
+        {
+          "name": "Xiaoli Zhang",
+          "authorId": "2334734620"
+        },
+        {
+          "name": "Xingliang Yuan",
+          "authorId": "3032058"
+        },
+        {
+          "name": "Cong Wang",
+          "authorId": "2259852815"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Vision Language Models (VLMs) extend and enhance the perceptual abilities of Large Language Models (LLMs). Despite offering new possibilities for LLM applications, these advancements raise significant security and ethical concerns, particularly regarding the generation of harmful content. While LLMs have undergone extensive security evaluations with the aid of red teaming frameworks, VLMs currently lack a well-developed one. To fill this gap, we introduce Arondight, a standardized red team framework tailored specifically for VLMs. Arondight is dedicated to resolving issues related to the absence of visual modality and inadequate diversity encountered when transitioning existing red teaming methodologies from LLMs to VLMs. Our framework features an automated multi-modal jailbreak attack, wherein visual jailbreak prompts are produced by a red team VLM, and textual prompts are generated by a red team LLM guided by a reinforcement learning agent. To enhance the comprehensiveness of VLM security evaluation, we integrate entropy bonuses and novelty reward metrics. These elements incentivize the RL agent to guide the red team LLM in creating a wider array of diverse and previously unseen test cases. Our evaluation of ten cutting-edge VLMs exposes significant security vulnerabilities, particularly in generating toxic images and aligning multi-modal prompts. In particular, our Arondight achieves an average attack success rate of 84.5% on GPT-4 in all fourteen prohibited scenarios defined by OpenAI in terms of generating toxic text. For a clearer comparison, we also categorize existing VLMs based on their safety levels and provide corresponding reinforcement recommendations. Our multimodal prompt dataset and red team code will be released after ethics committee approval. CONTENT WARNING: THIS PAPER CONTAINS HARMFUL MODEL RESPONSES.",
+      "citationCount": 36,
+      "doi": "10.1145/3664647.3681379",
+      "arxivId": "2407.15050",
+      "url": "https://www.semanticscholar.org/paper/668c2fc744f5b428dca6426319f45efc889c8e42",
+      "venue": "ACM Multimedia",
+      "journal": {
+        "name": "Proceedings of the 32nd ACM International Conference on Multimedia"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book"
+      ]
+    },
+    {
+      "paperId": "773067f24548d94808f240b7d69494c2cc399037",
+      "title": "Red Teaming Large Language Models for Healthcare",
+      "authors": [
+        {
+          "name": "Vahid Balazadeh",
+          "authorId": "2349458370"
+        },
+        {
+          "name": "Michael Cooper",
+          "authorId": "2170575070"
+        },
+        {
+          "name": "David Pellow",
+          "authorId": "2358458755"
+        },
+        {
+          "name": "Atousa Assadi",
+          "authorId": "2074626269"
+        },
+        {
+          "name": "Jennifer Bell",
+          "authorId": "2359036051"
+        },
+        {
+          "name": "Jim Fackler",
+          "authorId": "2358457143"
+        },
+        {
+          "name": "Gabriel Funingana",
+          "authorId": "15238192"
+        },
+        {
+          "name": "Spencer Gable-Cook",
+          "authorId": "2358459709"
+        },
+        {
+          "name": "Anirudh Gangadhar",
+          "authorId": "2140114087"
+        },
+        {
+          "name": "Abhishek Jaiswal",
+          "authorId": "2358451089"
+        },
+        {
+          "name": "Sumanth Kaja",
+          "authorId": "32090644"
+        },
+        {
+          "name": "Christopher Khoury",
+          "authorId": "2358458448"
+        },
+        {
+          "name": "Randy Lin",
+          "authorId": "2363290302"
+        },
+        {
+          "name": "Kaden McKeen",
+          "authorId": "2315811212"
+        },
+        {
+          "name": "Sara Naimimohasses",
+          "authorId": "2398787838"
+        },
+        {
+          "name": "Khashayar Namdar",
+          "authorId": "1402946521"
+        },
+        {
+          "name": "Aviraj Newatia",
+          "authorId": "2358458422"
+        },
+        {
+          "name": "Allan Pang",
+          "authorId": "2358456528"
+        },
+        {
+          "name": "Anshul Pattoo",
+          "authorId": "2358459261"
+        },
+        {
+          "name": "Sameer Peesapati",
+          "authorId": "2358458852"
+        },
+        {
+          "name": "Diana Prepelita",
+          "authorId": "2358457390"
+        },
+        {
+          "name": "Bogdana Rakova",
+          "authorId": "2225915758"
+        },
+        {
+          "name": "Saba Sadatamin",
+          "authorId": "2294121579"
+        },
+        {
+          "name": "Rafael Schulman",
+          "authorId": "2358457138"
+        },
+        {
+          "name": "Ajay Shah",
+          "authorId": "2358586009"
+        },
+        {
+          "name": "Syed Azhar Shah",
+          "authorId": "2358505859"
+        },
+        {
+          "name": "Syed A. Shah",
+          "authorId": "2243370661"
+        },
+        {
+          "name": "Babak Taati",
+          "authorId": "2261673551"
+        },
+        {
+          "name": "Balagopal Unnikrishnan",
+          "authorId": "47925881"
+        },
+        {
+          "name": "Stephanie Williams",
+          "authorId": "2358984431"
+        },
+        {
+          "name": "Rahul G. Krishnan",
+          "authorId": "2253745142"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We present the design process and findings of the pre-conference workshop at the Machine Learning for Healthcare Conference (2024) entitled Red Teaming Large Language Models for Healthcare, which took place on August 15, 2024. Conference participants, comprising a mix of computational and clinical expertise, attempted to discover vulnerabilities -- realistic clinical prompts for which a large language model (LLM) outputs a response that could cause clinical harm. Red-teaming with clinicians enables the identification of LLM vulnerabilities that may not be recognised by LLM developers lacking clinical expertise. We report the vulnerabilities found, categorise them, and present the results of a replication study assessing the vulnerabilities across all LLMs provided.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.00467",
+      "arxivId": "2505.00467",
+      "url": "https://www.semanticscholar.org/paper/773067f24548d94808f240b7d69494c2cc399037",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.00467"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "80e3dd25dab15c80552be5becb98c9c7501093ff",
+      "title": "RRTL: Red Teaming Reasoning Large Language Models in Tool Learning",
+      "authors": [
+        {
+          "name": "Yifei Liu",
+          "authorId": "2363373652"
+        },
+        {
+          "name": "Yu Cui",
+          "authorId": "2345863039"
+        },
+        {
+          "name": "Haibin Zhang",
+          "authorId": "2345867026"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While tool learning significantly enhances the capabilities of large language models (LLMs), it also introduces substantial security risks. Prior research has revealed various vulnerabilities in traditional LLMs during tool learning. However, the safety of newly emerging reasoning LLMs (RLLMs), such as DeepSeek-R1, in the context of tool learning remains underexplored. To bridge this gap, we propose RRTL, a red teaming approach specifically designed to evaluate RLLMs in tool learning. It integrates two novel strategies: (1) the identification of deceptive threats, which evaluates the model's behavior in concealing the usage of unsafe tools and their potential risks; and (2) the use of Chain-of-Thought (CoT) prompting to force tool invocation. Our approach also includes a benchmark for traditional LLMs. We conduct a comprehensive evaluation on seven mainstream RLLMs and uncover three key findings: (1) RLLMs generally achieve stronger safety performance than traditional LLMs, yet substantial safety disparities persist across models; (2) RLLMs can pose serious deceptive risks by frequently failing to disclose tool usage and to warn users of potential tool output risks; (3) CoT prompting reveals multi-lingual safety vulnerabilities in RLLMs. Our work provides important insights into enhancing the security of RLLMs in tool learning.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.17106",
+      "arxivId": "2505.17106",
+      "url": "https://www.semanticscholar.org/paper/80e3dd25dab15c80552be5becb98c9c7501093ff",
+      "venue": "IEEE Internet of Things Journal",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.17106"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "da4df70c7309af93adc39d064e698cb326ac9bee",
+      "title": "RedAgent: Red Teaming Large Language Models with Context-aware Autonomous Language Agent",
+      "authors": [
+        {
+          "name": "Huiyu Xu",
+          "authorId": "2290319973"
+        },
+        {
+          "name": "Wenhui Zhang",
+          "authorId": "2312672628"
+        },
+        {
+          "name": "Zhibo Wang",
+          "authorId": "2288040582"
+        },
+        {
+          "name": "Feng Xiao",
+          "authorId": "2312309310"
+        },
+        {
+          "name": "Rui Zheng",
+          "authorId": "2312400776"
+        },
+        {
+          "name": "Yunhe Feng",
+          "authorId": "2264095066"
+        },
+        {
+          "name": "Zhongjie Ba",
+          "authorId": "36890675"
+        },
+        {
+          "name": "Kui Ren",
+          "authorId": "2072596898"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recently, advanced Large Language Models (LLMs) such as GPT-4 have been integrated into many real-world applications like Code Copilot. These applications have significantly expanded the attack surface of LLMs, exposing them to a variety of threats. Among them, jailbreak attacks that induce toxic responses through jailbreak prompts have raised critical safety concerns. To identify these threats, a growing number of red teaming approaches simulate potential adversarial scenarios by crafting jailbreak prompts to test the target LLM. However, existing red teaming methods do not consider the unique vulnerabilities of LLM in different scenarios, making it difficult to adjust the jailbreak prompts to find context-specific vulnerabilities. Meanwhile, these methods are limited to refining jailbreak templates using a few mutation operations, lacking the automation and scalability to adapt to different scenarios. To enable context-aware and efficient red teaming, we abstract and model existing attacks into a coherent concept called\"jailbreak strategy\"and propose a multi-agent LLM system named RedAgent that leverages these strategies to generate context-aware jailbreak prompts. By self-reflecting on contextual feedback in an additional memory buffer, RedAgent continuously learns how to leverage these strategies to achieve effective jailbreaks in specific contexts. Extensive experiments demonstrate that our system can jailbreak most black-box LLMs in just five queries, improving the efficiency of existing red teaming methods by two times. Additionally, RedAgent can jailbreak customized LLM applications more efficiently. By generating context-aware jailbreak prompts towards applications on GPTs, we discover 60 severe vulnerabilities of these real-world applications with only two queries per vulnerability. We have reported all found issues and communicated with OpenAI and Meta for bug fixes.",
+      "citationCount": 28,
+      "doi": "10.48550/arXiv.2407.16667",
+      "arxivId": "2407.16667",
+      "url": "https://www.semanticscholar.org/paper/da4df70c7309af93adc39d064e698cb326ac9bee",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.16667"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1b18ff2c88b9a74e24dc99ed23f9fd5fe79d47e1",
+      "title": "Red Teaming Large Language Models in Medicine: Real-World Insights on Model Behavior",
+      "authors": [
+        {
+          "name": "Crystal T. Chang",
+          "authorId": "2295496511"
+        },
+        {
+          "name": "Hodan Farah",
+          "authorId": "2295475496"
+        },
+        {
+          "name": "Haiwen Gui",
+          "authorId": "2237426241"
+        },
+        {
+          "name": "S. Rezaei",
+          "authorId": "153607697"
+        },
+        {
+          "name": "Charbel Bou-Khalil",
+          "authorId": "2179313367"
+        },
+        {
+          "name": "Ye-Jean Park",
+          "authorId": "2295377666"
+        },
+        {
+          "name": "Akshay Swaminathan",
+          "authorId": "2249237023"
+        },
+        {
+          "name": "J. Omiye",
+          "authorId": "151475294"
+        },
+        {
+          "name": "Akaash Kolluri",
+          "authorId": "2185505267"
+        },
+        {
+          "name": "Akash Chaurasia",
+          "authorId": "2295475848"
+        },
+        {
+          "name": "Alejandro Lozano",
+          "authorId": "2295477367"
+        },
+        {
+          "name": "Alice Heiman",
+          "authorId": "2295476965"
+        },
+        {
+          "name": "A. Jia",
+          "authorId": "2295406849"
+        },
+        {
+          "name": "Amit Kaushal",
+          "authorId": "2295475125"
+        },
+        {
+          "name": "Angela Jia",
+          "authorId": "2295406851"
+        },
+        {
+          "name": "Angelica Iacovelli",
+          "authorId": "2295478508"
+        },
+        {
+          "name": "Archer Yang",
+          "authorId": "2295521028"
+        },
+        {
+          "name": "Arghavan Salles",
+          "authorId": "2295477374"
+        },
+        {
+          "name": "Arpita Singhal",
+          "authorId": "2064445223"
+        },
+        {
+          "name": "Balasubramanian Narasimhan",
+          "authorId": "2295475801"
+        },
+        {
+          "name": "Benjamin Belai",
+          "authorId": "2295475127"
+        },
+        {
+          "name": "Benjamin H. Jacobson",
+          "authorId": "2060570568"
+        },
+        {
+          "name": "Binglan Li",
+          "authorId": "2295555984"
+        },
+        {
+          "name": "Celeste H. Poe",
+          "authorId": "2295475834"
+        },
+        {
+          "name": "C. Sanghera",
+          "authorId": "52163062"
+        },
+        {
+          "name": "Chenming Zheng",
+          "authorId": "2295565189"
+        },
+        {
+          "name": "Conor Messer",
+          "authorId": "2295477269"
+        },
+        {
+          "name": "Damien Varid Kettud",
+          "authorId": "2295475618"
+        },
+        {
+          "name": "Deven Pandya",
+          "authorId": "2295475526"
+        },
+        {
+          "name": "Dhamanpreet Kaur",
+          "authorId": "2239181243"
+        },
+        {
+          "name": "Diana Hla",
+          "authorId": "2295475212"
+        },
+        {
+          "name": "Diba Dindoust",
+          "authorId": "2142743017"
+        },
+        {
+          "name": "Dominik Moehrle",
+          "authorId": "2295475841"
+        },
+        {
+          "name": "Duncan Ross",
+          "authorId": "2295391754"
+        },
+        {
+          "name": "Ellaine Chou",
+          "authorId": "2295475286"
+        },
+        {
+          "name": "Eric Lin",
+          "authorId": "2295476654"
+        },
+        {
+          "name": "Fateme Nateghi",
+          "authorId": "2295477005"
+        },
+        {
+          "name": "Haredasht",
+          "authorId": "2295476958"
+        },
+        {
+          "name": "Ge Cheng",
+          "authorId": "2295383678"
+        },
+        {
+          "name": "Irena Gao",
+          "authorId": "2295475830"
+        },
+        {
+          "name": "Jacob Chang",
+          "authorId": "2295481477"
+        },
+        {
+          "name": "J. Silberg",
+          "authorId": "2087231494"
+        },
+        {
+          "name": "J. Fries",
+          "authorId": "2290022381"
+        },
+        {
+          "name": "Jiapeng Xu",
+          "authorId": "2295484386"
+        },
+        {
+          "name": "Joe Jamison",
+          "authorId": "2295477016"
+        },
+        {
+          "name": "John S. Tamaresis",
+          "authorId": "2243686833"
+        },
+        {
+          "name": "Jonathan H. Chen",
+          "authorId": "2252172097"
+        },
+        {
+          "name": "Joshua Lazaro",
+          "authorId": "2295477206"
+        },
+        {
+          "name": "Juan M. Banda",
+          "authorId": "2291070492"
+        },
+        {
+          "name": "Julie J. Lee",
+          "authorId": "2295481100"
+        },
+        {
+          "name": "K. Matthys",
+          "authorId": "2295477349"
+        },
+        {
+          "name": "Kirsten R. Steffner",
+          "authorId": "2295475626"
+        },
+        {
+          "name": "Lu Tian",
+          "authorId": "2295483637"
+        },
+        {
+          "name": "Luca Pegolotti",
+          "authorId": "35735649"
+        },
+        {
+          "name": "Malathi Srinivasan",
+          "authorId": "2253605946"
+        },
+        {
+          "name": "Maniragav Manimaran",
+          "authorId": "2295476046"
+        },
+        {
+          "name": "Matthew Schwede",
+          "authorId": "2267435490"
+        },
+        {
+          "name": "Minghe Zhang",
+          "authorId": "2295483979"
+        },
+        {
+          "name": "Minh Nguyen",
+          "authorId": "2114752643"
+        },
+        {
+          "name": "Mohsen Fathzadeh",
+          "authorId": "2295477695"
+        },
+        {
+          "name": "Qian Zhao",
+          "authorId": "2295485978"
+        },
+        {
+          "name": "Rika Bajra",
+          "authorId": "1799780907"
+        },
+        {
+          "name": "Rohit Khurana",
+          "authorId": "2295384789"
+        },
+        {
+          "name": "Ruhana Azam",
+          "authorId": "2295478461"
+        },
+        {
+          "name": "Rush Bartlett",
+          "authorId": "2295477539"
+        },
+        {
+          "name": "Sang T. Truong",
+          "authorId": "2295396549"
+        },
+        {
+          "name": "Scott L. Fleming",
+          "authorId": "2261671769"
+        },
+        {
+          "name": "Shriti Raj",
+          "authorId": "2295401943"
+        },
+        {
+          "name": "Solveig Behr",
+          "authorId": "2295475265"
+        },
+        {
+          "name": "Sonia Onyeka",
+          "authorId": "2215065942"
+        },
+        {
+          "name": "S. Muppidi",
+          "authorId": "2295475291"
+        },
+        {
+          "name": "Tarek Bandali",
+          "authorId": "2323658937"
+        },
+        {
+          "name": "Tiffany Eulalio",
+          "authorId": "2291820475"
+        },
+        {
+          "name": "Wenyuan Chen",
+          "authorId": "2295480573"
+        },
+        {
+          "name": "Xuanyu Zhou",
+          "authorId": "2295512733"
+        },
+        {
+          "name": "Yanan Ding",
+          "authorId": "2295480720"
+        },
+        {
+          "name": "Ying Cui",
+          "authorId": "2315297393"
+        },
+        {
+          "name": "Yuqi Tan",
+          "authorId": "2275959451"
+        },
+        {
+          "name": "Yutong Liu",
+          "authorId": "2295481988"
+        },
+        {
+          "name": "Nigam H. Shah",
+          "authorId": "2262093570"
+        },
+        {
+          "name": "Roxana Daneshjou",
+          "authorId": "2238197697"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Background: The integration of large language models (LLMs) in healthcare offers immense opportunity to streamline healthcare tasks, but also carries risks such as response accuracy and bias perpetration. To address this, we conducted a red-teaming exercise to assess LLMs in healthcare and developed a dataset of clinically relevant scenarios for future teams to use. Methods: We convened 80 multi-disciplinary experts to evaluate the performance of popular LLMs across multiple medical scenarios. Teams composed of clinicians, medical and engineering students, and technical professionals stress-tested LLMs with real world clinical use cases. Teams were given a framework comprising four categories to analyze for inappropriate responses: Safety, Privacy, Hallucinations, and Bias. Prompts were tested on GPT-3.5, GPT-4.0, and GPT-4.0 with the Internet. Six medically trained reviewers subsequently reanalyzed the prompt-response pairs, with dual reviewers for each prompt and a third to resolve discrepancies. This process allowed for the accurate identification and categorization of inappropriate or inaccurate content within the responses. Results: There were a total of 382 unique prompts, with 1146 total responses across three iterations of ChatGPT (GPT-3.5, GPT-4.0, GPT-4.0 with Internet). 19.8% of the responses were labeled as inappropriate, with GPT-3.5 accounting for the highest percentage at 25.7% while GPT-4.0 and GPT-4.0 with internet performing comparably at 16.2% and 17.5% respectively. Interestingly, 11.8% of responses were deemed appropriate with GPT-3.5 but inappropriate in updated models, highlighting the ongoing need to evaluate evolving LLMs. Conclusion: The red-teaming exercise underscored the benefits of interdisciplinary efforts, as this collaborative model fosters a deeper understanding of the potential limitations of LLMs in healthcare and sets a precedent for future red teaming events in the field. Additionally, we present all prompts and outputs as a benchmark for future LLM model evaluations.",
+      "citationCount": 23,
+      "doi": "10.1101/2024.04.05.24305411",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1b18ff2c88b9a74e24dc99ed23f9fd5fe79d47e1",
+      "venue": "medRxiv",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e314d182fd9d35a05870b38a56ee38eb3149b47d",
+      "title": "Attack Prompt Generation for Red Teaming and Defending Large Language Models",
+      "authors": [
+        {
+          "name": "Boyi Deng",
+          "authorId": "2260342358"
+        },
+        {
+          "name": "Wenjie Wang",
+          "authorId": "2117833732"
+        },
+        {
+          "name": "Fuli Feng",
+          "authorId": "2163400298"
+        },
+        {
+          "name": "Yang Deng",
+          "authorId": "2367303636"
+        },
+        {
+          "name": "Qifan Wang",
+          "authorId": "2260433198"
+        },
+        {
+          "name": "Xiangnan He",
+          "authorId": "2239071206"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are susceptible to red teaming attacks, which can induce LLMs to generate harmful content. Previous research constructs attack prompts via manual or automatic methods, which have their own limitations on construction cost and quality. To address these issues, we propose an integrated approach that combines manual and automatic methods to economically generate high-quality attack prompts. Specifically, considering the impressive capabilities of newly emerged LLMs, we propose an attack framework to instruct LLMs to mimic human-generated prompts through in-context learning. Furthermore, we propose a defense framework that fine-tunes victim LLMs through iterative interactions with the attack framework to enhance their safety against red teaming attacks. Extensive experiments on different LLMs validate the effectiveness of our proposed attack and defense frameworks. Additionally, we release a series of attack prompts datasets named SAP with varying sizes, facilitating the safety evaluation and enhancement of more LLMs. Our code and dataset is available on https://github.com/Aatrox103/SAP .",
+      "citationCount": 88,
+      "doi": "10.48550/arXiv.2310.12505",
+      "arxivId": "2310.12505",
+      "url": "https://www.semanticscholar.org/paper/e314d182fd9d35a05870b38a56ee38eb3149b47d",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2310.12505"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "adfc19ad22c2ba146e6c3bb27320564c65676256",
+      "title": "Resource Consumption Red-Teaming for Large Vision-Language Models",
+      "authors": [
+        {
+          "name": "Haoran Gao",
+          "authorId": "2363547188"
+        },
+        {
+          "name": "Yuanhe Zhang",
+          "authorId": "2336538746"
+        },
+        {
+          "name": "Zhenhong Zhou",
+          "authorId": "2345124560"
+        },
+        {
+          "name": "Lei Jiang",
+          "authorId": "2372142358"
+        },
+        {
+          "name": "Fanyu Meng",
+          "authorId": "2365324954"
+        },
+        {
+          "name": "Yujia Xiao",
+          "authorId": "2373933954"
+        },
+        {
+          "name": "Li Sun",
+          "authorId": "2382841379"
+        },
+        {
+          "name": "Kun Wang",
+          "authorId": "2345981921"
+        },
+        {
+          "name": "Yang Liu",
+          "authorId": "2344050677"
+        },
+        {
+          "name": "Junlan Feng",
+          "authorId": "2304522334"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Resource Consumption Attacks (RCAs) have emerged as a significant threat to the deployment of Large Language Models (LLMs). With the integration of vision modalities, additional attack vectors exacerbate the risk of RCAs in large vision-language models (LVLMs). However, existing red-teaming studies have mainly overlooked visual inputs as a potential attack surface, resulting in insufficient mitigation strategies against RCAs in LVLMs. To address this gap, we propose RECITE ($\\textbf{Re}$source $\\textbf{C}$onsumpt$\\textbf{i}$on Red-$\\textbf{Te}$aming for LVLMs), the first approach for exploiting visual modalities to trigger unbounded RCAs red-teaming. First, we present $\\textit{Vision Guided Optimization}$, a fine-grained pixel-level optimization to obtain \\textit{Output Recall Objective} adversarial perturbations, which can induce repeating output. Then, we inject the perturbations into visual inputs, triggering unbounded generations to achieve the goal of RCAs. Empirical results demonstrate that RECITE increases service response latency by over 26 $\\uparrow$, resulting in an additional 20\\% increase in GPU utilization and memory consumption. Our study reveals security vulnerabilities in LVLMs and establishes a red-teaming framework that can facilitate the development of future defenses against RCAs.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2507.18053",
+      "url": "https://www.semanticscholar.org/paper/adfc19ad22c2ba146e6c3bb27320564c65676256",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9521ad98f4ffe55c2beb9a9ad1d42e76d5ddd480",
+      "title": "Reply to \u201cWhen do large language models cross the line: \u201creasoning\u201d red teaming in healthcare\u201d",
+      "authors": [
+        {
+          "name": "Roxana Daneshjou",
+          "authorId": "2289146401"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We appreciate Sorin et al. for highlighting critical considerations for future red teaming of large language models (LLMs) in healthcare. We agree that analyzing only final answers overlooks failures in internal reasoning and that reasoning models introduce new risks. Expanding red teaming to assess reasoning quality, cognitive biases, and false consistency, as well as adopting ethically varied scenarios, will strengthen LLM auditing frameworks.",
+      "citationCount": 0,
+      "doi": "10.1038/s41746-025-02103-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9521ad98f4ffe55c2beb9a9ad1d42e76d5ddd480",
+      "venue": "npj Digital Medicine",
+      "journal": {
+        "name": "NPJ Digital Medicine",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "LettersAndComments",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a2c2d76c13b98b7da54d229950f1356b074f5136",
+      "title": "RedDiffuser: Red Teaming Vision-Language Models for Toxic Continuation via Reinforced Stable Diffusion",
+      "authors": [
+        {
+          "name": "Ruofan Wang",
+          "authorId": "2282572099"
+        },
+        {
+          "name": "Xiang Zheng",
+          "authorId": "2328107098"
+        },
+        {
+          "name": "Xiaosen Wang",
+          "authorId": "2331370103"
+        },
+        {
+          "name": "Cong Wang",
+          "authorId": "2311758701"
+        },
+        {
+          "name": "Xing-guan Ma",
+          "authorId": "2332367823"
+        },
+        {
+          "name": "Yu-Gang Jiang",
+          "authorId": "2259536780"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Vision-Language Models (VLMs) are vulnerable to jailbreak attacks, where adversaries bypass safety mechanisms to elicit harmful outputs. In this work, we examine an insidious variant of this threat: toxic continuation. Unlike standard jailbreaks that rely solely on malicious instructions, toxic continuation arises when the model is given a malicious input alongside a partial toxic output, resulting in harmful completions. This vulnerability poses a unique challenge in multimodal settings, where even subtle image variations can disproportionately affect the model's response. To this end, we propose RedDiffuser (RedDiff), the first red teaming framework that uses reinforcement learning to fine-tune diffusion models into generating natural-looking adversarial images that induce toxic continuations. RedDiffuser integrates a greedy search procedure for selecting candidate image prompts with reinforcement fine-tuning that jointly promotes toxic output and semantic coherence. Experiments demonstrate that RedDiffuser significantly increases the toxicity rate in LLaVA outputs by 10.69% and 8.91% on the original and hold-out sets, respectively. It also exhibits strong transferability, increasing toxicity rates on Gemini by 5.1% and on LLaMA-Vision by 26.83%. These findings uncover a cross-modal toxicity amplification vulnerability in current VLM alignment, highlighting the need for robust multimodal red teaming. We will release the RedDiffuser codebase to support future research.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2503.06223",
+      "url": "https://www.semanticscholar.org/paper/a2c2d76c13b98b7da54d229950f1356b074f5136",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "817345f9fbd6cd53186b60c29fa3a0c698986fcb",
+      "title": "MedRiskEval: Medical Risk Evaluation Benchmark of Language Models, On the Importance of User Perspectives in Healthcare Settings",
+      "authors": [
+        {
+          "name": "Jean-Philippe Corbeil",
+          "authorId": "2298043096"
+        },
+        {
+          "name": "Minseon Kim",
+          "authorId": "2354943941"
+        },
+        {
+          "name": "Maxime Griot",
+          "authorId": "2403668659"
+        },
+        {
+          "name": "Sheela Agarwal",
+          "authorId": null
+        },
+        {
+          "name": "Alessandro Sordoni",
+          "authorId": "2041695"
+        },
+        {
+          "name": "Francois Beaulieu",
+          "authorId": "2373010329"
+        },
+        {
+          "name": "Paul Vozila",
+          "authorId": "1752755"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As the performance of large language models (LLMs) continues to advance, their adoption in the medical domain is increasing. However, most existing risk evaluations largely focused on general safety benchmarks. In the medical applications, LLMs may be used by a wide range of users, ranging from general users and patients to clinicians, with diverse levels of expertise and the model's outputs can have a direct impact on human health which raises serious safety concerns. In this paper, we introduce MedRiskEval, a medical risk evaluation benchmark tailored to the medical domain. To fill the gap in previous benchmarks that only focused on the clinician perspective, we introduce a new patient-oriented dataset called PatientSafetyBench containing 466 samples across 5 critical risk categories. Leveraging our new benchmark alongside existing datasets, we evaluate a variety of open- and closed-source LLMs. To the best of our knowledge, this work establishes an initial foundation for safer deployment of LLMs in healthcare.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2507.07248",
+      "url": "https://www.semanticscholar.org/paper/817345f9fbd6cd53186b60c29fa3a0c698986fcb",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1417c22f2e479509f8b3a179b784b945498b71a2",
+      "title": "The PIEE Cycle: A Structured Framework for Red Teaming Large Language Models in Clinical Decision-Making",
+      "authors": [
+        {
+          "name": "Maissa Trabilsy",
+          "authorId": "2345538008"
+        },
+        {
+          "name": "Srinivagasam Prabha",
+          "authorId": "2367120771"
+        },
+        {
+          "name": "C. A. Gomez-Cabello",
+          "authorId": "2291807271"
+        },
+        {
+          "name": "S. A. Haider",
+          "authorId": "2291519878"
+        },
+        {
+          "name": "Ariana Genovese",
+          "authorId": "2336384402"
+        },
+        {
+          "name": "Sahar Borna",
+          "authorId": "1477647583"
+        },
+        {
+          "name": "Nadia G Wood",
+          "authorId": "2121364329"
+        },
+        {
+          "name": "Narayanan Gopala",
+          "authorId": "2369680296"
+        },
+        {
+          "name": "Cui Tao",
+          "authorId": "2338836166"
+        },
+        {
+          "name": "AJ Forte",
+          "authorId": "2156601339"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The increasing integration of large language models (LLMs) into healthcare presents significant opportunities, but also critical risks related to patient safety, accuracy, and ethical alignment. Despite these concerns, no standardized framework exists for systematically evaluating and stress testing LLM behavior in clinical decision-making. The PIEE cycle\u2014Planning and Preparation, Information Gathering and Prompt Generation, Execution, and Evaluation\u2014is a structured red-teaming framework developed specifically to address artificial intelligence (AI) safety risks in healthcare decision-making. PIEE enables clinicians and informatics teams to simulate adversarial prompts, including jailbreaking, social engineering, and distractor attacks, to stress-test language models in real-world clinical scenarios. Model performance is evaluated using specific metrics such as true positive and false positive rates for detecting harmful content, hallucination rates measured through adapted TruthfulQA scoring, safety and reliability assessments, bias detection via adapted BBQ benchmarks, and ethical evaluation using structured Likert-based scoring rubrics. The framework is illustrated using examples from plastic surgery, but is adaptable across specialties, and is intended for use by all medical providers, regardless of their backgrounds or familiarity with artificial intelligence. While the framework is currently conceptual and validation is ongoing, PIEE provides a practical foundation for assessing the clinical reliability and ethical robustness of LLMs in medicine.",
+      "citationCount": 0,
+      "doi": "10.3390/bioengineering12070706",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1417c22f2e479509f8b3a179b784b945498b71a2",
+      "venue": "Bioengineering",
+      "journal": {
+        "name": "Bioengineering",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "442a423ec57aa93771280091500d3fcebe2aafe4",
+      "title": "Adversarial Threat Simulation in Large Language Models: Red Teaming Beyond Prompt Injection",
+      "authors": [
+        {
+          "name": "Ashwin Sharma",
+          "authorId": "2354713190"
+        },
+        {
+          "name": "Anshul Goel",
+          "authorId": "2354680139"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Big Language Models (LLMs) are becoming more and more exploited in sensitive areas, thus raising the issue of\ntheir security. The current red-teaming approaches, especially those that emphasize on timely injection, do not have much\nto say about weaknesses associated with these advanced approaches. The proposed research suggests the next-generation\nmethods of adversarial threat-simulations in the context of LLM cybersecurity, which goes beyond the standard focus on\nprompt injection. An extensive theoretical framework is presented on how to classify adversarial threats which covers the\nwhole lifecycle of the LLM, both during the training and the deployment. In the manuscript, the innovative red-teaming\napproaches, such as scenario-based simulations, automated adversarial generation, and ecosystem-wide red teaming are\nalso described to give a more comprehensive review of LLM security. The most important conclusions are that the existing\n\nred-team activities are not sufficient to tackle the system vulnerabilities, which leaves LLMs vulnerable to both stage-by-\nstage and multi-stage attacks. The study has helped to advance a more serious method of obtaining LLMs, as well as provided\n\ninformation on extensive red-teaming solutions with an expanded attack surface and threat list. The results highlight the\nimportance of ongoing and dynamic security evaluations and develop a basis on which future research can be conducted to\nmake LLM more resilient to new adversarial threats.",
+      "citationCount": 0,
+      "doi": "10.38124/ijisrt/25nov556",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/442a423ec57aa93771280091500d3fcebe2aafe4",
+      "venue": "International Journal of Innovative Science and Research Technology",
+      "journal": {
+        "name": "International Journal of Innovative Science and Research Technology"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e7faddef6d5ad1f5b76fc2483fe51635807717d0",
+      "title": "CREST-Search: Comprehensive Red-teaming for Evaluating Safety Threats in Large Language Models Powered by Web Search",
+      "authors": [
+        {
+          "name": "Haoran Ou",
+          "authorId": "2301157410"
+        },
+        {
+          "name": "Kangjie Chen",
+          "authorId": "5781518"
+        },
+        {
+          "name": "Xingshuo Han",
+          "authorId": "2148651582"
+        },
+        {
+          "name": "Gelei Deng",
+          "authorId": "2326841124"
+        },
+        {
+          "name": "Jie Zhang",
+          "authorId": "2257786599"
+        },
+        {
+          "name": "Han Qiu",
+          "authorId": "2268515593"
+        },
+        {
+          "name": "Tianwei Zhang",
+          "authorId": "2366998813"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) excel at tasks such as dialogue, summarization, and question answering, yet they struggle to adapt to specialized domains and evolving facts. To overcome this, web search has been integrated into LLMs, allowing real-time access to online content. However, this connection magnifies safety risks, as adversarial prompts combined with untrusted sources can cause severe vulnerabilities. We investigate red teaming for LLMs with web search and present CREST-Search, a framework that systematically exposes risks in such systems. Unlike existing methods for standalone LLMs, CREST-Search addresses the complex workflow of search-enabled models by generating adversarial queries with in-context learning and refining them through iterative feedback. We further construct WebSearch-Harm, a search-specific dataset to fine-tune LLMs into efficient red-teaming agents. Experiments show that CREST-Search effectively bypasses safety filters and reveals vulnerabilities in modern web-augmented LLMs, underscoring the need for specialized defenses to ensure trustworthy deployment.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.09689",
+      "arxivId": "2510.09689",
+      "url": "https://www.semanticscholar.org/paper/e7faddef6d5ad1f5b76fc2483fe51635807717d0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.09689"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "64a2efaf319cc5ac0429e2912ab8e20d8d634aba",
+      "title": "Diversity Seeking Techniques for Red-Teaming Large Language Models",
+      "authors": [
+        {
+          "name": "Seokhan Lee",
+          "authorId": "2350376873"
+        },
+        {
+          "name": "Bonhwa Ku",
+          "authorId": "1861248"
+        },
+        {
+          "name": "Hanseok Ko",
+          "authorId": "2256517156"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In this paper, we present new techniques for increasing the diversity of red-teaming prompts generated by automated machine learning-based methods, thereby enabling the discovery of more vulnerabilities in large language models. Using reinforcement learning to train models to output effective prompts for this task results in the models converging deterministically to a single output. Our first technique, which we term Defender, acts by blocking the reward signal for prompts that have already been discovered, thus making what was a stationary problem into a non-stationary problem that compels the reward maximizing algorithm to continually seek new prompts. Our second technique, Teamplay, trains two prompt generation models in tandem and adds the KL divergence between them to the reward in order to make them search in disparate regions of the space of prompts. Our techniques are shown experimentally to increase the effectiveness and diversity of prompts generated by existing reinforcement learning baselines.",
+      "citationCount": 0,
+      "doi": "10.1109/ICASSP49660.2025.10890844",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/64a2efaf319cc5ac0429e2912ab8e20d8d634aba",
+      "venue": "IEEE International Conference on Acoustics, Speech, and Signal Processing",
+      "journal": {
+        "name": "ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+        "pages": "1-5"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "95f3cca9eb050e733a06ff8bbe3841175b2d6091",
+      "title": "GenBreak: Red Teaming Text-to-Image Generators Using Large Language Models",
+      "authors": [
+        {
+          "name": "Zilong Wang",
+          "authorId": "2315118834"
+        },
+        {
+          "name": "Xiang Zheng",
+          "authorId": "2328107098"
+        },
+        {
+          "name": "Xiaosen Wang",
+          "authorId": "2331370103"
+        },
+        {
+          "name": "Bo Wang",
+          "authorId": "2329224912"
+        },
+        {
+          "name": "Xingjun Ma",
+          "authorId": "2267387052"
+        },
+        {
+          "name": "Yu-Gang Jiang",
+          "authorId": "2259536780"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Text-to-image (T2I) models such as Stable Diffusion have advanced rapidly and are now widely used in content creation. However, these models can be misused to generate harmful content, including nudity or violence, posing significant safety risks. While most platforms employ content moderation systems, underlying vulnerabilities can still be exploited by determined adversaries. Recent research on red-teaming and adversarial attacks against T2I models has notable limitations: some studies successfully generate highly toxic images but use adversarial prompts that are easily detected and blocked by safety filters, while others focus on bypassing safety mechanisms but fail to produce genuinely harmful outputs, neglecting the discovery of truly high-risk prompts. Consequently, there remains a lack of reliable tools for evaluating the safety of defended T2I models. To address this gap, we propose GenBreak, a framework that fine-tunes a red-team large language model (LLM) to systematically explore underlying vulnerabilities in T2I generators. Our approach combines supervised fine-tuning on curated datasets with reinforcement learning via interaction with a surrogate T2I model. By integrating multiple reward signals, we guide the LLM to craft adversarial prompts that enhance both evasion capability and image toxicity, while maintaining semantic coherence and diversity. These prompts demonstrate strong effectiveness in black-box attacks against commercial T2I generators, revealing practical and concerning safety weaknesses.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.10047",
+      "arxivId": "2506.10047",
+      "url": "https://www.semanticscholar.org/paper/95f3cca9eb050e733a06ff8bbe3841175b2d6091",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.10047"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bc6f2d1b9a366967c89fb173795a59641021ad2c",
+      "title": "Holistic Automated Red Teaming for Large Language Models through Top-Down Test Case Generation and Multi-turn Interaction",
+      "authors": [
+        {
+          "name": "Jinchuan Zhang",
+          "authorId": "2144141948"
+        },
+        {
+          "name": "Yan Zhou",
+          "authorId": "2150920806"
+        },
+        {
+          "name": "Yaxin Liu",
+          "authorId": "2108818010"
+        },
+        {
+          "name": "Ziming Li",
+          "authorId": "2145275295"
+        },
+        {
+          "name": "Songlin Hu",
+          "authorId": "2273564157"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Automated red teaming is an effective method for identifying misaligned behaviors in large language models (LLMs). Existing approaches, however, often focus primarily on improving attack success rates while overlooking the need for comprehensive test case coverage. Additionally, most of these methods are limited to single-turn red teaming, failing to capture the multi-turn dynamics of real-world human-machine interactions. To overcome these limitations, we propose **HARM** (**H**olistic **A**utomated **R**ed tea**M**ing), which scales up the diversity of test cases using a top-down approach based on an extensible, fine-grained risk taxonomy. Our method also leverages a novel fine-tuning strategy and reinforcement learning techniques to facilitate multi-turn adversarial probing in a human-like manner. Experimental results demonstrate that our framework enables a more systematic understanding of model vulnerabilities and offers more targeted guidance for the alignment process.",
+      "citationCount": 15,
+      "doi": "10.48550/arXiv.2409.16783",
+      "arxivId": "2409.16783",
+      "url": "https://www.semanticscholar.org/paper/bc6f2d1b9a366967c89fb173795a59641021ad2c",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "13711-13736"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "99c2801adabded8ab1a3f484e32f85e208742f97",
+      "title": "Text-Diffusion Red-Teaming of Large Language Models: Unveiling Harmful Behaviors with Proximity Constraints",
+      "authors": [
+        {
+          "name": "Jonathan N\u00f6ther",
+          "authorId": "2210093903"
+        },
+        {
+          "name": "A. Singla",
+          "authorId": "1703727"
+        },
+        {
+          "name": "Goran Radanovic",
+          "authorId": "2667883"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent work has proposed automated red-teaming methods for testing the vulnerabilities of a given target large language model (LLM). These methods use red-teaming LLMs to uncover inputs that induce harmful behavior in a target LLM. \nIn this paper, we study red-teaming strategies that enable a targeted security assessment. We propose an optimization framework for red-teaming with proximity constraints, where the discovered prompts must be similar to reference prompts from a given dataset. This dataset serves as a template for the discovered prompts, anchoring the search for test-cases to specific topics, writing styles, or types of harmful behavior. We show that established auto-regressive model architectures do not perform well in this setting. \nWe therefore introduce a black-box red-teaming method inspired by text-diffusion models: Diffusion for Auditing and Red-Teaming (DART). DART modifies the reference prompt by perturbing it in the embedding space, directly controlling the amount of change introduced. We systematically evaluate our method by comparing its effectiveness with established methods based on model fine-tuning and zero- and few-shot prompting. Our results show that DART is significantly more effective at discovering harmful inputs in close proximity to the reference prompt.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2501.08246",
+      "arxivId": "2501.08246",
+      "url": "https://www.semanticscholar.org/paper/99c2801adabded8ab1a3f484e32f85e208742f97",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "27547-27555"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "0e54275afd64916c2a2137b9a81a8402c9e6faff",
+      "title": "Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models",
+      "authors": [
+        {
+          "name": "Kai Hu",
+          "authorId": "2404315116"
+        },
+        {
+          "name": "Abhinav Aggarwal",
+          "authorId": "2268252628"
+        },
+        {
+          "name": "Mehran Khodabandeh",
+          "authorId": "1916516"
+        },
+        {
+          "name": "David Zhang",
+          "authorId": "2403105199"
+        },
+        {
+          "name": "Eric Hsin",
+          "authorId": "2403070866"
+        },
+        {
+          "name": "Li Chen",
+          "authorId": "2403215568"
+        },
+        {
+          "name": "Ankit Jain",
+          "authorId": null
+        },
+        {
+          "name": "Matt Fredrikson",
+          "authorId": "2337690647"
+        },
+        {
+          "name": "Akash Bharadwaj",
+          "authorId": "2403070556"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper introduces Jailbreak-Zero, a novel red teaming methodology that shifts the paradigm of Large Language Model (LLM) safety evaluation from a constrained example-based approach to a more expansive and effective policy-based framework. By leveraging an attack LLM to generate a high volume of diverse adversarial prompts and then fine-tuning this attack model with a preference dataset, Jailbreak-Zero achieves Pareto optimality across the crucial objectives of policy coverage, attack strategy diversity, and prompt fidelity to real user inputs. The empirical evidence demonstrates the superiority of this method, showcasing significantly higher attack success rates against both open-source and proprietary models like GPT-40 and Claude 3.5 when compared to existing state-of-the-art techniques. Crucially, Jailbreak-Zero accomplishes this while producing human-readable and effective adversarial prompts with minimal need for human intervention, thereby presenting a more scalable and comprehensive solution for identifying and mitigating the safety vulnerabilities of LLMs.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2601.03265",
+      "url": "https://www.semanticscholar.org/paper/0e54275afd64916c2a2137b9a81a8402c9e6faff",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "002164d6a4412bc00f5f77d284315fd7a63355ea",
+      "title": "Red Teaming Multimodal Language Models: Evaluating Harm Across Prompt Modalities and Models",
+      "authors": [
+        {
+          "name": "Madison Van Doren",
+          "authorId": "2381257466"
+        },
+        {
+          "name": "Casey Ford",
+          "authorId": "2381404185"
+        },
+        {
+          "name": "Emily Dix",
+          "authorId": "2381258297"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Multimodal large language models (MLLMs) are increasingly used in real world applications, yet their safety under adversarial conditions remains underexplored. This study evaluates the harmlessness of four leading MLLMs (GPT-4o, Claude Sonnet 3.5, Pixtral 12B, and Qwen VL Plus) when exposed to adversarial prompts across text-only and multimodal formats. A team of 26 red teamers generated 726 prompts targeting three harm categories: illegal activity, disinformation, and unethical behaviour. These prompts were submitted to each model, and 17 annotators rated 2,904 model outputs for harmfulness using a 5-point scale. Results show significant differences in vulnerability across models and modalities. Pixtral 12B exhibited the highest rate of harmful responses (~62%), while Claude Sonnet 3.5 was the most resistant (~10%). Contrary to expectations, text-only prompts were slightly more effective at bypassing safety mechanisms than multimodal ones. Statistical analysis confirmed that both model type and input modality were significant predictors of harmfulness. These findings underscore the urgent need for robust, multimodal safety benchmarks as MLLMs are deployed more widely.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.15478",
+      "arxivId": "2509.15478",
+      "url": "https://www.semanticscholar.org/paper/002164d6a4412bc00f5f77d284315fd7a63355ea",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.15478"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

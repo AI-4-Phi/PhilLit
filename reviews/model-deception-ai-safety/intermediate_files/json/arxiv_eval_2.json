@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:deception detection benchmark AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2307.07516",
+      "title": "Voting-based Multimodal Automatic Deception Detection",
+      "authors": [
+        "Lana Touma",
+        "Mohammad Al Horani",
+        "Manar Tailouni",
+        "Anas Dahabiah",
+        "Khloud Al Jallad"
+      ],
+      "abstract": "Automatic Deception Detection has been a hot research topic for a long time, using machine learning and deep learning to automatically detect deception, brings new light to this old field. In this paper, we proposed a voting-based method for automatic deception detection from videos using audio, visual and lexical features. Experiments were done on two datasets, the Real-life trial dataset by Michigan University and the Miami University deception detection dataset. Video samples were split into frames of images, audio, and manuscripts. Our Voting-based Multimodal proposed solution consists of three models. The first model is CNN for detecting deception from images, the second model is Support Vector Machine (SVM) on Mel spectrograms for detecting deception from audio and the third model is Word2Vec on Support Vector Machine (SVM) for detecting deception from manuscripts. Our proposed solution outperforms state of the art. Best results achieved on images, audio and text were 97%, 96%, 92% respectively on Real-Life Trial Dataset, and 97%, 82%, 73% on video, audio and text respectively on Miami University Deception Detection.",
+      "published": "2023-06-30",
+      "updated": "2024-03-15",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.CV",
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2307.07516v3",
+      "url": "https://arxiv.org/abs/2307.07516"
+    },
+    {
+      "arxiv_id": "2306.02827",
+      "title": "UNIDECOR: A Unified Deception Corpus for Cross-Corpus Deception Detection",
+      "authors": [
+        "Aswathy Velutharambath",
+        "Roman Klinger"
+      ],
+      "abstract": "Verbal deception has been studied in psychology, forensics, and computational linguistics for a variety of reasons, like understanding behaviour patterns, identifying false testimonies, and detecting deception in online communication. Varying motivations across research fields lead to differences in the domain choices to study and in the conceptualization of deception, making it hard to compare models and build robust deception detection systems for a given language. With this paper, we improve this situation by surveying available English deception datasets which include domains like social media reviews, court testimonials, opinion statements on specific topics, and deceptive dialogues from online strategy games. We consolidate these datasets into a single unified corpus. Based on this resource, we conduct a correlation analysis of linguistic cues of deception across datasets to understand the differences and perform cross-corpus modeling experiments which show that a cross-domain generalization is challenging to achieve. The unified deception corpus (UNIDECOR) can be obtained from https://www.ims.uni-stuttgart.de/data/unidecor.",
+      "published": "2023-06-05",
+      "updated": "2023-06-07",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2306.02827v2",
+      "url": "https://arxiv.org/abs/2306.02827"
+    },
+    {
+      "arxiv_id": "2303.12745",
+      "title": "Audio-Visual Deception Detection: DOLOS Dataset and Parameter-Efficient Crossmodal Learning",
+      "authors": [
+        "Xiaobao Guo",
+        "Nithish Muthuchamy Selvaraj",
+        "Zitong Yu",
+        "Adams Wai-Kin Kong",
+        "Bingquan Shen",
+        "Alex Kot"
+      ],
+      "abstract": "Deception detection in conversations is a challenging yet important task, having pivotal applications in many fields such as credibility assessment in business, multimedia anti-frauds, and custom security. Despite this, deception detection research is hindered by the lack of high-quality deception datasets, as well as the difficulties of learning multimodal features effectively. To address this issue, we introduce DOLOS\\footnote {The name ``DOLOS\" comes from Greek mythology.}, the largest gameshow deception detection dataset with rich deceptive conversations. DOLOS includes 1,675 video clips featuring 213 subjects, and it has been labeled with audio-visual feature annotations. We provide train-test, duration, and gender protocols to investigate the impact of different factors. We benchmark our dataset on previously proposed deception detection approaches. To further improve the performance by fine-tuning fewer parameters, we propose Parameter-Efficient Crossmodal Learning (PECL), where a Uniform Temporal Adapter (UT-Adapter) explores temporal attention in transformer-based architectures, and a crossmodal fusion module, Plug-in Audio-Visual Fusion (PAVF), combines crossmodal information from audio-visual features. Based on the rich fine-grained audio-visual annotations on DOLOS, we also exploit multi-task learning to enhance performance by concurrently predicting deception and audio-visual features. Experimental results demonstrate the desired quality of the DOLOS dataset and the effectiveness of the PECL. The DOLOS dataset and the source codes are available at https://github.com/NMS05/Audio-Visual-Deception-Detection-DOLOS-Dataset-and-Parameter-Efficient-Crossmodal-Learning/tree/main.",
+      "published": "2023-03-09",
+      "updated": "2023-08-04",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2303.12745v2",
+      "url": "https://arxiv.org/abs/2303.12745"
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

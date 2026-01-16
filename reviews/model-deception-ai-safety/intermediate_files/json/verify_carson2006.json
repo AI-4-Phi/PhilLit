@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Definition of Lying",
+    "author": "Carson",
+    "year": 2006
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/j.0029-4624.2006.00610.x",
+      "title": "The Definition of Lying*",
+      "authors": [
+        {
+          "family": "Carson",
+          "given": "Thomas L."
+        }
+      ],
+      "year": 2006,
+      "container_title": "No\u00fbs",
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1111/j.0029-4624.2006.00610.x",
+      "score": 32.167374
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

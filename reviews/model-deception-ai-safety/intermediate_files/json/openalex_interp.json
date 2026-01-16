@@ -1,0 +1,2602 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "mechanistic interpretability philosophy",
+  "results": [
+    {
+      "openalex_id": "W4390007165",
+      "doi": "10.1007/978-3-031-45304-5_2",
+      "title": "Philosophical Foundations of Digital Humanism",
+      "authors": [
+        {
+          "name": "Julian Nida\u2010R\u00fcmelin",
+          "openalex_id": "A5003004666",
+          "institutions": [
+            "Bavarian Research Institute for Digital Transformation",
+            "Ludwig-Maximilians-Universit\u00e4t M\u00fcnchen"
+          ]
+        },
+        {
+          "name": "Klaus Staudacher",
+          "openalex_id": "A5049683045",
+          "institutions": [
+            "Bavarian Research Institute for Digital Transformation"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-20",
+      "abstract": "Abstract Digital humanism is an ethics for the digital age that interprets and shapes the process of digital transformation in accordance with the core concepts of humanist philosophy and practice. The core idea of humanist philosophy is human authorship, which is closely linked to the practice of attributing responsibility and, therefore, also with the concepts of reason and freedom. Digital humanism has several different implications: From a theoretical point of view, it means rejecting both the mechanistic paradigm (\u201chumans are machines\u201d) and the animistic paradigm (\u201cmachines are (like) humans\u201d); from a practical point of view, it especially requires us not to attribute responsibility to AI and not to let AI make ethical decisions.",
+      "cited_by_count": 15,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-031-45304-5_2.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W4390007165"
+    },
+    {
+      "openalex_id": "W4229011309",
+      "doi": "10.1017/s0140525x22000681",
+      "title": "Building causal knowledge in behavior genetics",
+      "authors": [
+        {
+          "name": "James W. Madole",
+          "openalex_id": "A5090686714",
+          "orcid": "https://orcid.org/0000-0002-2301-0004",
+          "institutions": [
+            "VA Puget Sound Health Care System",
+            "The University of Texas at Austin"
+          ]
+        },
+        {
+          "name": "K. Paige Harden",
+          "openalex_id": "A5030354937",
+          "orcid": "https://orcid.org/0000-0002-1557-6737",
+          "institutions": [
+            "The University of Texas at Austin"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-05",
+      "abstract": "Abstract Behavior genetics is a controversial science. For decades, scholars have sought to understand the role of heredity in human behavior and life-course outcomes. Recently, technological advances and the rapid expansion of genomic databases have facilitated the discovery of genes associated with human phenotypes such as educational attainment and substance use disorders. To maximize the potential of this flourishing science, and to minimize potential harms, careful analysis of what it would mean for genes to be causes of human behavior is needed. In this paper, we advance a framework for identifying instances of genetic causes, interpreting those causal relationships, and applying them to advance causal knowledge more generally in the social sciences. Central to thinking about genes as causes is counterfactual reasoning, the cornerstone of causal thinking in statistics, medicine, and philosophy. We argue that within-family genetic effects represent the product of a counterfactual comparison in the same way as average treatment effects (ATEs) from randomized controlled trials (RCTs). Both ATEs from RCTs and within-family genetic effects are shallow causes: They operate within intricate causal systems ( non-unitary ), produce heterogeneous effects across individuals ( non-uniform ), and are not mechanistically informative ( non-explanatory ). Despite these limitations, shallow causal knowledge can be used to improve understanding of the etiology of human behavior and to explore sources of heterogeneity and fade-out in treatment effects.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "Behavioral and Brain Sciences",
+        "type": "journal",
+        "issn": [
+          "0140-525X",
+          "1469-1825"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Genetic Associations and Epidemiology",
+        "Genetic Mapping and Diversity in Plants and Animals",
+        "Cognitive Abilities and Testing"
+      ],
+      "referenced_works_count": 198,
+      "url": "https://openalex.org/W4229011309"
+    },
+    {
+      "openalex_id": "W4415230859",
+      "doi": "10.1609/aies.v8i1.36547",
+      "title": "A Mathematical Philosophy of Explanations in Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Kola Ayonrinde",
+          "openalex_id": "A5114336088",
+          "institutions": [
+            "Institute for Security Studies"
+          ]
+        },
+        {
+          "name": "Louis Jaburi",
+          "openalex_id": "A5119823551"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-10-15",
+      "abstract": "Mechanistic Interpretability aims to understand neural net- works through causal explanations. We argue for the Explanatory View Hypothesis: that Mechanistic Interpretability re- search is a principled approach to understanding models be- cause neural networks contain implicit explanations which can be extracted and understood. We hence show that Explanatory Faithfulness, an assessment of how well an explanation fits a model, is well-defined. We propose a definition of Mechanistic Interpretability (MI) as the practice of producing Model-level, Ontic, Causal-Mechanistic, and Falsifiable explanations of neural networks, allowing us to distinguish MI from other interpretability paradigms and detail MI\u2019s inherent limits. We formulate the Principle of Explanatory Optimism, a conjecture which we argue is a necessary precondition for the success of Mechanistic Interpretability.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the AAAI/ACM Conference on AI Ethics and Society",
+        "type": "journal",
+        "issn": [
+          "3065-8365"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://ojs.aaai.org/index.php/AIES/article/download/36547/38685"
+      },
+      "topics": [
+        "Statistical and Computational Modeling",
+        "Explainable Artificial Intelligence (XAI)",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4415230859"
+    },
+    {
+      "openalex_id": "W4402275636",
+      "doi": "10.1007/s00146-024-02056-1",
+      "title": "Beyond model interpretability: socio-structural explanations in machine learning",
+      "authors": [
+        {
+          "name": "Andrew Smart",
+          "openalex_id": "A5077833261",
+          "orcid": "https://orcid.org/0000-0002-9816-7348",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Atoosa Kasirzadeh",
+          "openalex_id": "A5047979305",
+          "orcid": "https://orcid.org/0000-0002-5967-3782",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-09-05",
+      "abstract": null,
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2409.03632"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning and Data Classification",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W4402275636"
+    },
+    {
+      "openalex_id": "W2945526235",
+      "doi": "10.1109/access.2020.2976199",
+      "title": "Explainable Machine Learning for Scientific Insights and Discoveries",
+      "authors": [
+        {
+          "name": "Ribana Roscher",
+          "openalex_id": "A5043510754",
+          "orcid": "https://orcid.org/0000-0003-0094-6210",
+          "institutions": [
+            "University of Bonn"
+          ]
+        },
+        {
+          "name": "Bastian Bohn",
+          "openalex_id": "A5046381777",
+          "orcid": "https://orcid.org/0000-0001-5663-7527",
+          "institutions": [
+            "University of Bonn"
+          ]
+        },
+        {
+          "name": "Marco F. Duarte",
+          "openalex_id": "A5079975633",
+          "orcid": "https://orcid.org/0000-0001-8410-3266",
+          "institutions": [
+            "University of Massachusetts Amherst"
+          ]
+        },
+        {
+          "name": "Jochen Garcke",
+          "openalex_id": "A5068763843",
+          "orcid": "https://orcid.org/0000-0002-8334-3695",
+          "institutions": [
+            "University of Bonn",
+            "Fraunhofer Institute for Algorithms and Scientific Computing"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "Machine learning methods have been remarkably successful for a wide range of\\napplication areas in the extraction of essential information from data. An\\nexciting and relatively recent development is the uptake of machine learning in\\nthe natural sciences, where the major goal is to obtain novel scientific\\ninsights and discoveries from observational or simulated data. A prerequisite\\nfor obtaining a scientific outcome is domain knowledge, which is needed to gain\\nexplainability, but also to enhance scientific consistency. In this article we\\nreview explainable machine learning in view of applications in the natural\\nsciences and discuss three core elements which we identified as relevant in\\nthis context: transparency, interpretability, and explainability. With respect\\nto these core elements, we provide a survey of recent scientific works that\\nincorporate machine learning and the way that explainable machine learning is\\nused in combination with domain knowledge from the application areas.\\n",
+      "cited_by_count": 903,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09007737.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning in Materials Science",
+        "Scientific Computing and Data Management"
+      ],
+      "referenced_works_count": 181,
+      "url": "https://openalex.org/W2945526235"
+    },
+    {
+      "openalex_id": "W3000036091",
+      "doi": "10.1002/acr.24131",
+      "title": "2019 American College of Rheumatology/Arthritis Foundation Guideline for the Management of Osteoarthritis of the Hand, Hip, and Knee",
+      "authors": [
+        {
+          "name": "Sharon L. Kolasinski",
+          "openalex_id": "A5033727311",
+          "orcid": "https://orcid.org/0000-0002-4633-567X",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Tuhina Neogi",
+          "openalex_id": "A5046252909",
+          "orcid": "https://orcid.org/0000-0002-9515-1711",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Marc C. Hochberg",
+          "openalex_id": "A5026165132",
+          "orcid": "https://orcid.org/0000-0001-7705-5593",
+          "institutions": [
+            "University of Maryland, Baltimore",
+            "VA Maryland Health Care System"
+          ]
+        },
+        {
+          "name": "Carol A. Oatis",
+          "openalex_id": "A5037521120",
+          "orcid": "https://orcid.org/0000-0002-4874-6392",
+          "institutions": [
+            "Arcadia University"
+          ]
+        },
+        {
+          "name": "Gordon Guyatt",
+          "openalex_id": "A5031717153",
+          "orcid": "https://orcid.org/0000-0003-2352-5718",
+          "institutions": [
+            "McMaster University"
+          ]
+        },
+        {
+          "name": "Joel A. Block",
+          "openalex_id": "A5089546365",
+          "orcid": "https://orcid.org/0000-0002-0330-7353",
+          "institutions": [
+            "Rush University Medical Center"
+          ]
+        },
+        {
+          "name": "Leigh F. Callahan",
+          "openalex_id": "A5065317802",
+          "orcid": "https://orcid.org/0000-0001-6362-7220",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Cindy Copenhaver",
+          "openalex_id": "A5054065597",
+          "institutions": [
+            "Ingalls Memorial Hospital"
+          ]
+        },
+        {
+          "name": "Carole Dodge",
+          "openalex_id": "A5003699983",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor",
+            "Ann Arbor VA Medical Center"
+          ]
+        },
+        {
+          "name": "David T. Felson",
+          "openalex_id": "A5023227957",
+          "orcid": "https://orcid.org/0000-0002-2668-2447",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Kathleen Gellar",
+          "openalex_id": "A5073532436",
+          "institutions": [
+            "World Water Watch"
+          ]
+        },
+        {
+          "name": "William F. Harvey",
+          "openalex_id": "A5110639651",
+          "institutions": [
+            "Tufts Medical Center"
+          ]
+        },
+        {
+          "name": "Gillian Hawker",
+          "openalex_id": "A5060776202",
+          "orcid": "https://orcid.org/0000-0001-6358-1197",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Edward Herzig",
+          "openalex_id": "A5024839876",
+          "institutions": [
+            "Fairfield Hospital"
+          ]
+        },
+        {
+          "name": "C. Kent Kwoh",
+          "openalex_id": "A5002622252",
+          "orcid": "https://orcid.org/0000-0001-5937-550X",
+          "institutions": [
+            "University of Arizona"
+          ]
+        },
+        {
+          "name": "Amanda E. Nelson",
+          "openalex_id": "A5088835363",
+          "orcid": "https://orcid.org/0000-0002-9344-7877",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Jonathan Samuels",
+          "openalex_id": "A5059734573",
+          "orcid": "https://orcid.org/0000-0002-1513-770X",
+          "institutions": [
+            "NYU Langone Health"
+          ]
+        },
+        {
+          "name": "Carla R. Scanzello",
+          "openalex_id": "A5091745828",
+          "orcid": "https://orcid.org/0000-0002-9290-188X",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Daniel K. White",
+          "openalex_id": "A5101773028",
+          "orcid": "https://orcid.org/0000-0003-3792-4621",
+          "institutions": [
+            "University of Delaware"
+          ]
+        },
+        {
+          "name": "Burton L. Wise",
+          "openalex_id": "A5035692773",
+          "orcid": "https://orcid.org/0000-0002-6540-6031",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        },
+        {
+          "name": "Roy D. Altman",
+          "openalex_id": "A5031970656",
+          "orcid": "https://orcid.org/0000-0002-9427-8577",
+          "institutions": [
+            "Ronald Reagan UCLA Medical Center"
+          ]
+        },
+        {
+          "name": "Dana DiRenzo",
+          "openalex_id": "A5049612659",
+          "orcid": "https://orcid.org/0000-0001-9350-1821",
+          "institutions": [
+            "Johns Hopkins University",
+            "Johns Hopkins Medicine"
+          ]
+        },
+        {
+          "name": "Joann Fontanarosa",
+          "openalex_id": "A5011581209",
+          "orcid": "https://orcid.org/0000-0003-2054-5975",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        },
+        {
+          "name": "Gina Giradi",
+          "openalex_id": "A5084546441",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        },
+        {
+          "name": "Mariko Ishimori",
+          "openalex_id": "A5111585591",
+          "institutions": [
+            "Cedars-Sinai Medical Center"
+          ]
+        },
+        {
+          "name": "Devyani Misra",
+          "openalex_id": "A5010708833",
+          "orcid": "https://orcid.org/0000-0003-2881-7920",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Amit Shah",
+          "openalex_id": "A5060698970",
+          "orcid": "https://orcid.org/0000-0001-9312-5424",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "Anna Shmagel",
+          "openalex_id": "A5056704417",
+          "orcid": "https://orcid.org/0000-0002-1945-9255",
+          "institutions": [
+            "University of Minnesota System"
+          ]
+        },
+        {
+          "name": "Louise M. Thoma",
+          "openalex_id": "A5011531268",
+          "orcid": "https://orcid.org/0000-0002-3077-0423",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Marat Turgunbaev",
+          "openalex_id": "A5010505974",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "Amy S. Turner",
+          "openalex_id": "A5082701960",
+          "orcid": "https://orcid.org/0000-0001-7695-2022",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "James Reston",
+          "openalex_id": "A5001230986",
+          "orcid": "https://orcid.org/0000-0003-4997-3754",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-06",
+      "abstract": "Objective To develop an evidence\u2010based guideline for the comprehensive management of osteoarthritis ( OA ) as a collaboration between the American College of Rheumatology ( ACR ) and the Arthritis Foundation, updating the 2012 ACR recommendations for the management of hand, hip, and knee OA . Methods We identified clinically relevant population, intervention, comparator, outcomes questions and critical outcomes in OA . A Literature Review Team performed a systematic literature review to summarize evidence supporting the benefits and harms of available educational, behavioral, psychosocial, physical, mind\u2010body, and pharmacologic therapies for OA . Grading of Recommendations Assessment, Development and Evaluation methodology was used to rate the quality of the evidence. A Voting Panel, including rheumatologists, an internist, physical and occupational therapists, and patients, achieved consensus on the recommendations. Results Based on the available evidence, either strong or conditional recommendations were made for or against the approaches evaluated. Strong recommendations were made for exercise, weight loss in patients with knee and/or hip OA who are overweight or obese, self\u2010efficacy and self\u2010management programs, tai chi, cane use, hand orthoses for first carpometacarpal ( CMC ) joint OA , tibiofemoral bracing for tibiofemoral knee OA , topical nonsteroidal antiinflammatory drugs ( NSAID s) for knee OA , oral NSAID s, and intraarticular glucocorticoid injections for knee OA . Conditional recommendations were made for balance exercises, yoga, cognitive behavioral therapy, kinesiotaping for first CMC OA , orthoses for hand joints other than the first CMC joint, patellofemoral bracing for patellofemoral knee OA , acupuncture, thermal modalities, radiofrequency ablation for knee OA , topical NSAID s, intraarticular steroid injections and chondroitin sulfate for hand OA , topical capsaicin for knee OA , acetaminophen, duloxetine, and tramadol. Conclusion This guideline provides direction for clinicians and patients making treatment decisions for the management of OA . Clinicians and patients should engage in shared decision\u2010making that accounts for patients\u2019 values, preferences, and comorbidities. These recommendations should not be used to limit or deny access to therapies.",
+      "cited_by_count": 2327,
+      "type": "review",
+      "source": {
+        "name": "Arthritis Care & Research",
+        "type": "journal",
+        "issn": [
+          "2151-464X",
+          "2151-4658"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/acr.24131"
+      },
+      "topics": [
+        "Osteoarthritis Treatment and Mechanisms",
+        "Fibromyalgia and Chronic Fatigue Syndrome Research",
+        "Rheumatoid Arthritis Research and Therapies"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W3000036091"
+    },
+    {
+      "openalex_id": "W4414769259",
+      "doi": "10.48550/arxiv.2505.00808",
+      "title": "A Mathematical Philosophy of Explanations in Mechanistic Interpretability -- The Strange Science Part I.i",
+      "authors": [
+        {
+          "name": "Kola Ayonrinde",
+          "openalex_id": "A5114336088"
+        },
+        {
+          "name": "Louis Jaburi",
+          "openalex_id": "A5119823551"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-05-01",
+      "abstract": "Mechanistic Interpretability aims to understand neural networks through causal explanations. We argue for the Explanatory View Hypothesis: that Mechanistic Interpretability research is a principled approach to understanding models because neural networks contain implicit explanations which can be extracted and understood. We hence show that Explanatory Faithfulness, an assessment of how well an explanation fits a model, is well-defined. We propose a definition of Mechanistic Interpretability (MI) as the practice of producing Model-level, Ontic, Causal-Mechanistic, and Falsifiable explanations of neural networks, allowing us to distinguish MI from other interpretability paradigms and detail MI's inherent limits. We formulate the Principle of Explanatory Optimism, a conjecture which we argue is a necessary precondition for the success of Mechanistic Interpretability.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2505.00808"
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Statistical and Computational Modeling"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4414769259"
+    },
+    {
+      "openalex_id": "W3092026988",
+      "doi": "10.1029/2020wr028091",
+      "title": "What Role Does Hydrological Science Play in the Age of Machine Learning?",
+      "authors": [
+        {
+          "name": "Grey Nearing",
+          "openalex_id": "A5056778863",
+          "orcid": "https://orcid.org/0000-0001-7031-6770",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        },
+        {
+          "name": "Frederik Kratzert",
+          "openalex_id": "A5005882134",
+          "orcid": "https://orcid.org/0000-0002-8897-7689",
+          "institutions": [
+            "Johannes Kepler University of Linz"
+          ]
+        },
+        {
+          "name": "Alden Keefe Sampson",
+          "openalex_id": "A5025379780",
+          "orcid": "https://orcid.org/0000-0003-1853-3713",
+          "institutions": [
+            "Natel Energy (United States)"
+          ]
+        },
+        {
+          "name": "Craig Pelissier",
+          "openalex_id": "A5025372662",
+          "orcid": "https://orcid.org/0000-0003-0466-3517",
+          "institutions": [
+            "Goddard Space Flight Center"
+          ]
+        },
+        {
+          "name": "Daniel Klotz",
+          "openalex_id": "A5053159516",
+          "orcid": "https://orcid.org/0000-0002-9843-6798",
+          "institutions": [
+            "Johannes Kepler University of Linz"
+          ]
+        },
+        {
+          "name": "Jonathan Frame",
+          "openalex_id": "A5032528778",
+          "orcid": "https://orcid.org/0000-0002-2533-3843",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        },
+        {
+          "name": "Cristina Prieto",
+          "openalex_id": "A5045612183",
+          "orcid": "https://orcid.org/0000-0002-6693-0396",
+          "institutions": [
+            "Instituto de F\u00edsica de Cantabria",
+            "Universidad de Cantabria"
+          ]
+        },
+        {
+          "name": "Hoshin V. Gupta",
+          "openalex_id": "A5045129894",
+          "institutions": [
+            "University of Arizona"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-14",
+      "abstract": "Abstract This paper is derived from a keynote talk given at the Google's 2020 Flood Forecasting Meets Machine Learning Workshop. Recent experiments applying deep learning to rainfall\u2010runoff simulation indicate that there is significantly more information in large\u2010scale hydrological data sets than hydrologists have been able to translate into theory or models. While there is a growing interest in machine learning in the hydrological sciences community, in many ways, our community still holds deeply subjective and nonevidence\u2010based preferences for models based on a certain type of \u201cprocess understanding\u201d that has historically not translated into accurate theory, models, or predictions. This commentary is a call to action for the hydrology community to focus on developing a quantitative understanding of where and when hydrological process understanding is valuable in a modeling discipline increasingly dominated by machine learning. We offer some potential perspectives and preliminary examples about how this might be accomplished.",
+      "cited_by_count": 670,
+      "type": "article",
+      "source": {
+        "name": "Water Resources Research",
+        "type": "journal",
+        "issn": [
+          "0043-1397",
+          "1944-7973"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2020WR028091"
+      },
+      "topics": [
+        "Hydrology and Watershed Management Studies",
+        "Flood Risk Assessment and Management",
+        "Hydrological Forecasting Using AI"
+      ],
+      "referenced_works_count": 116,
+      "url": "https://openalex.org/W3092026988"
+    },
+    {
+      "openalex_id": "W3131457744",
+      "doi": "10.1016/j.artint.2021.103473",
+      "title": "What do we want from Explainable Artificial Intelligence (XAI)? \u2013 A stakeholder perspective on XAI and a conceptual model guiding interdisciplinary XAI research",
+      "authors": [
+        {
+          "name": "Markus Langer",
+          "openalex_id": "A5038410639",
+          "orcid": "https://orcid.org/0000-0002-8165-1803",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Daniel Oster",
+          "openalex_id": "A5052038529",
+          "orcid": "https://orcid.org/0000-0003-2761-6262",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Timo Speith",
+          "openalex_id": "A5007325624",
+          "orcid": "https://orcid.org/0000-0002-6675-154X",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Holger Hermanns",
+          "openalex_id": "A5028747794",
+          "orcid": "https://orcid.org/0000-0002-2766-9615",
+          "institutions": [
+            "Saarland University",
+            "Institute of Software"
+          ]
+        },
+        {
+          "name": "Lena K\u00e4stner",
+          "openalex_id": "A5034952055",
+          "orcid": "https://orcid.org/0000-0002-8747-6911",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Eva Schmidt",
+          "openalex_id": "A5075670033",
+          "orcid": "https://orcid.org/0000-0002-7305-7126",
+          "institutions": [
+            "TU Dortmund University"
+          ]
+        },
+        {
+          "name": "Andreas Sesing-Wagenpfeil",
+          "openalex_id": "A5027323776",
+          "orcid": "https://orcid.org/0000-0003-0894-5407",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Kevin Baum",
+          "openalex_id": "A5012518399",
+          "orcid": "https://orcid.org/0000-0002-6893-573X",
+          "institutions": [
+            "Saarland University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-15",
+      "abstract": null,
+      "cited_by_count": 517,
+      "type": "article",
+      "source": {
+        "name": "Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "0004-3702",
+          "1872-7921"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0004370221000242"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 325,
+      "url": "https://openalex.org/W3131457744"
+    },
+    {
+      "openalex_id": "W3112134271",
+      "doi": "10.1016/j.envsoft.2020.104954",
+      "title": "The Future of Sensitivity Analysis: An essential discipline for systems modeling and policy support",
+      "authors": [
+        {
+          "name": "Saman Razavi",
+          "openalex_id": "A5057247502",
+          "orcid": "https://orcid.org/0000-0003-1870-5810",
+          "institutions": [
+            "University of Saskatchewan",
+            "Global Institute for Water Security"
+          ]
+        },
+        {
+          "name": "Anthony J. Jakeman",
+          "openalex_id": "A5045235359",
+          "orcid": "https://orcid.org/0000-0001-5282-2215",
+          "institutions": [
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "Andrea Saltelli",
+          "openalex_id": "A5040077936",
+          "orcid": "https://orcid.org/0000-0003-4222-6975",
+          "institutions": [
+            "Universitat Oberta de Catalunya",
+            "Open Evidence"
+          ]
+        },
+        {
+          "name": "Cl\u00e9mentine Prieur",
+          "openalex_id": "A5110159432",
+          "institutions": [
+            "Centre National de la Recherche Scientifique",
+            "Institut polytechnique de Grenoble",
+            "Centre Inria de l'Universit\u00e9 Grenoble Alpes",
+            "Universit\u00e9 Grenoble Alpes",
+            "Laboratoire Jean Kuntzmann"
+          ]
+        },
+        {
+          "name": "Bertrand Iooss",
+          "openalex_id": "A5069128800",
+          "orcid": "https://orcid.org/0000-0001-6988-2126",
+          "institutions": [
+            "Sinclair Pharma",
+            "Laboratoire Pluridisciplinaire de Recherche en Ing\u00e9nierie des Syst\u00e8mes, M\u00e9canique et Energ\u00e9tique"
+          ]
+        },
+        {
+          "name": "Emanuele Borgonovo",
+          "openalex_id": "A5084219004",
+          "orcid": "https://orcid.org/0000-0001-8659-6017",
+          "institutions": [
+            "Bocconi University"
+          ]
+        },
+        {
+          "name": "Elmar Plischke",
+          "openalex_id": "A5047734891",
+          "orcid": "https://orcid.org/0000-0002-2019-9243",
+          "institutions": [
+            "Clausthal University of Technology"
+          ]
+        },
+        {
+          "name": "Samuele Lo Piano",
+          "openalex_id": "A5048601378",
+          "orcid": "https://orcid.org/0000-0002-2625-483X",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Takuya Iwanaga",
+          "openalex_id": "A5063799894",
+          "orcid": "https://orcid.org/0000-0001-8173-0870",
+          "institutions": [
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "William E. Becker",
+          "openalex_id": "A5055338618",
+          "orcid": "https://orcid.org/0000-0002-6467-4472",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Stefano Tarantola",
+          "openalex_id": "A5011428350",
+          "orcid": "https://orcid.org/0000-0002-5728-3385",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Joseph H. A. Guillaume",
+          "openalex_id": "A5036463103",
+          "orcid": "https://orcid.org/0000-0001-6854-8708",
+          "institutions": [
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "John Jakeman",
+          "openalex_id": "A5084145417",
+          "orcid": "https://orcid.org/0000-0002-3517-337X",
+          "institutions": [
+            "Sandia National Laboratories"
+          ]
+        },
+        {
+          "name": "Hoshin V. Gupta",
+          "openalex_id": "A5045129894",
+          "institutions": [
+            "University of Arizona"
+          ]
+        },
+        {
+          "name": "Nicola Melillo",
+          "openalex_id": "A5017178619",
+          "orcid": "https://orcid.org/0000-0002-5229-5416",
+          "institutions": [
+            "University of Pavia"
+          ]
+        },
+        {
+          "name": "Giovanni Rabitti",
+          "openalex_id": "A5084200697",
+          "orcid": "https://orcid.org/0000-0001-9167-0023",
+          "institutions": [
+            "Heriot-Watt University",
+            "Maxwell Institute for Mathematical Sciences"
+          ]
+        },
+        {
+          "name": "Vincent Chabridon",
+          "openalex_id": "A5044347685",
+          "orcid": "https://orcid.org/0000-0003-0271-3795",
+          "institutions": [
+            "Laboratoire Pluridisciplinaire de Recherche en Ing\u00e9nierie des Syst\u00e8mes, M\u00e9canique et Energ\u00e9tique",
+            "Sinclair Pharma"
+          ]
+        },
+        {
+          "name": "Qingyun Duan",
+          "openalex_id": "A5018335704",
+          "orcid": "https://orcid.org/0000-0001-9955-1512",
+          "institutions": [
+            "Hohai University"
+          ]
+        },
+        {
+          "name": "Xifu Sun",
+          "openalex_id": "A5055520905",
+          "orcid": "https://orcid.org/0000-0001-6396-6206",
+          "institutions": [
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "Stef\u00e1n Thor Smith",
+          "openalex_id": "A5065737327",
+          "orcid": "https://orcid.org/0000-0002-5053-4639",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Razi Sheikholeslami",
+          "openalex_id": "A5004269321",
+          "orcid": "https://orcid.org/0000-0001-8004-1985",
+          "institutions": [
+            "University of Oxford",
+            "University of Saskatchewan",
+            "Global Institute for Water Security"
+          ]
+        },
+        {
+          "name": "Nasim Hosseini",
+          "openalex_id": "A5066685826",
+          "orcid": "https://orcid.org/0000-0001-5375-6176",
+          "institutions": [
+            "Global Institute for Water Security",
+            "University of Saskatchewan"
+          ]
+        },
+        {
+          "name": "Masoud Asadzadeh",
+          "openalex_id": "A5020192614",
+          "orcid": "https://orcid.org/0000-0002-7290-7731",
+          "institutions": [
+            "University of Manitoba"
+          ]
+        },
+        {
+          "name": "Arnald Puy",
+          "openalex_id": "A5019872697",
+          "orcid": "https://orcid.org/0000-0001-9469-2156",
+          "institutions": [
+            "Princeton University",
+            "University of Bergen"
+          ]
+        },
+        {
+          "name": "Sergei Kucherenko",
+          "openalex_id": "A5082371441",
+          "orcid": "https://orcid.org/0000-0003-1593-8264",
+          "institutions": [
+            "Imperial College London"
+          ]
+        },
+        {
+          "name": "Holger R. Maier",
+          "openalex_id": "A5010973652",
+          "orcid": "https://orcid.org/0000-0002-0277-6887",
+          "institutions": [
+            "University of Adelaide",
+            "University of South Australia"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-16",
+      "abstract": null,
+      "cited_by_count": 542,
+      "type": "article",
+      "source": {
+        "name": "Environmental Modelling & Software",
+        "type": "journal",
+        "issn": [
+          "1364-8152",
+          "1873-6726"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S1364815220310112?via%3Dihub"
+      },
+      "topics": [
+        "Probabilistic and Robust Engineering Design",
+        "Advanced Multi-Objective Optimization Algorithms"
+      ],
+      "referenced_works_count": 408,
+      "url": "https://openalex.org/W3112134271"
+    },
+    {
+      "openalex_id": "W4233138142",
+      "doi": "10.1002/art.41142",
+      "title": "2019 American College of Rheumatology/Arthritis Foundation Guideline for the Management of Osteoarthritis of the Hand, Hip, and Knee",
+      "authors": [
+        {
+          "name": "Sharon L. Kolasinski",
+          "openalex_id": "A5033727311",
+          "orcid": "https://orcid.org/0000-0002-4633-567X",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Tuhina Neogi",
+          "openalex_id": "A5046252909",
+          "orcid": "https://orcid.org/0000-0002-9515-1711",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Marc C. Hochberg",
+          "openalex_id": "A5026165132",
+          "orcid": "https://orcid.org/0000-0001-7705-5593",
+          "institutions": [
+            "University of Maryland, Baltimore",
+            "VA Maryland Health Care System"
+          ]
+        },
+        {
+          "name": "Carol A. Oatis",
+          "openalex_id": "A5037521120",
+          "orcid": "https://orcid.org/0000-0002-4874-6392",
+          "institutions": [
+            "Arcadia University"
+          ]
+        },
+        {
+          "name": "Gordon Guyatt",
+          "openalex_id": "A5031717153",
+          "orcid": "https://orcid.org/0000-0003-2352-5718",
+          "institutions": [
+            "McMaster University"
+          ]
+        },
+        {
+          "name": "Joel A. Block",
+          "openalex_id": "A5089546365",
+          "orcid": "https://orcid.org/0000-0002-0330-7353",
+          "institutions": [
+            "Rush University Medical Center"
+          ]
+        },
+        {
+          "name": "Leigh F. Callahan",
+          "openalex_id": "A5065317802",
+          "orcid": "https://orcid.org/0000-0001-6362-7220",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Cindy Copenhaver",
+          "openalex_id": "A5054065597",
+          "institutions": [
+            "Ingalls Memorial Hospital"
+          ]
+        },
+        {
+          "name": "Carole Dodge",
+          "openalex_id": "A5003699983",
+          "institutions": [
+            "Ann Arbor VA Medical Center",
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "David T. Felson",
+          "openalex_id": "A5023227957",
+          "orcid": "https://orcid.org/0000-0002-2668-2447",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Kathleen Gellar",
+          "openalex_id": "A5073532436",
+          "institutions": [
+            "World Water Watch"
+          ]
+        },
+        {
+          "name": "William F. Harvey",
+          "openalex_id": "A5110639651",
+          "institutions": [
+            "Tufts Medical Center"
+          ]
+        },
+        {
+          "name": "Gillian Hawker",
+          "openalex_id": "A5060776202",
+          "orcid": "https://orcid.org/0000-0001-6358-1197",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Edward Herzig",
+          "openalex_id": "A5024839876",
+          "institutions": [
+            "Fairfield Hospital"
+          ]
+        },
+        {
+          "name": "C. Kent Kwoh",
+          "openalex_id": "A5002622252",
+          "orcid": "https://orcid.org/0000-0001-5937-550X",
+          "institutions": [
+            "University of Arizona"
+          ]
+        },
+        {
+          "name": "Amanda E. Nelson",
+          "openalex_id": "A5088835363",
+          "orcid": "https://orcid.org/0000-0002-9344-7877",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Jonathan Samuels",
+          "openalex_id": "A5059734573",
+          "orcid": "https://orcid.org/0000-0002-1513-770X",
+          "institutions": [
+            "NYU Langone Health"
+          ]
+        },
+        {
+          "name": "Carla R. Scanzello",
+          "openalex_id": "A5091745828",
+          "orcid": "https://orcid.org/0000-0002-9290-188X",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Daniel K. White",
+          "openalex_id": "A5101773028",
+          "orcid": "https://orcid.org/0000-0003-3792-4621",
+          "institutions": [
+            "University of Delaware"
+          ]
+        },
+        {
+          "name": "Burton L. Wise",
+          "openalex_id": "A5035692773",
+          "orcid": "https://orcid.org/0000-0002-6540-6031",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        },
+        {
+          "name": "Roy D. Altman",
+          "openalex_id": "A5031970656",
+          "orcid": "https://orcid.org/0000-0002-9427-8577",
+          "institutions": [
+            "Ronald Reagan UCLA Medical Center"
+          ]
+        },
+        {
+          "name": "Dana DiRenzo",
+          "openalex_id": "A5049612659",
+          "orcid": "https://orcid.org/0000-0001-9350-1821",
+          "institutions": [
+            "Johns Hopkins Medicine",
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Joann Fontanarosa",
+          "openalex_id": "A5011581209",
+          "orcid": "https://orcid.org/0000-0003-2054-5975",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        },
+        {
+          "name": "Gina Giradi",
+          "openalex_id": "A5084546441",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        },
+        {
+          "name": "Mariko Ishimori",
+          "openalex_id": "A5111585591",
+          "institutions": [
+            "Cedars-Sinai Medical Center"
+          ]
+        },
+        {
+          "name": "Devyani Misra",
+          "openalex_id": "A5010708833",
+          "orcid": "https://orcid.org/0000-0003-2881-7920",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Amit Shah",
+          "openalex_id": "A5060698970",
+          "orcid": "https://orcid.org/0000-0001-9312-5424",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "Anna Shmagel",
+          "openalex_id": "A5056704417",
+          "orcid": "https://orcid.org/0000-0002-1945-9255",
+          "institutions": [
+            "University of Minnesota System"
+          ]
+        },
+        {
+          "name": "Louise M. Thoma",
+          "openalex_id": "A5011531268",
+          "orcid": "https://orcid.org/0000-0002-3077-0423",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Marat Turgunbaev",
+          "openalex_id": "A5010505974",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "Amy S. Turner",
+          "openalex_id": "A5082701960",
+          "orcid": "https://orcid.org/0000-0001-7695-2022",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "James Reston",
+          "openalex_id": "A5001230986",
+          "orcid": "https://orcid.org/0000-0003-4997-3754",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-06",
+      "abstract": "Objective To develop an evidence\u2010based guideline for the comprehensive management of osteoarthritis ( OA ) as a collaboration between the American College of Rheumatology ( ACR ) and the Arthritis Foundation, updating the 2012 ACR recommendations for the management of hand, hip, and knee OA . Methods We identified clinically relevant population, intervention, comparator, outcomes questions and critical outcomes in OA . A Literature Review Team performed a systematic literature review to summarize evidence supporting the benefits and harms of available educational, behavioral, psychosocial, physical, mind\u2010body, and pharmacologic therapies for OA . Grading of Recommendations Assessment, Development and Evaluation methodology was used to rate the quality of the evidence. A Voting Panel, including rheumatologists, an internist, physical and occupational therapists, and patients, achieved consensus on the recommendations. Results Based on the available evidence, either strong or conditional recommendations were made for or against the approaches evaluated. Strong recommendations were made for exercise, weight loss in patients with knee and/or hip OA who are overweight or obese, self\u2010efficacy and self\u2010management programs, tai chi, cane use, hand orthoses for first carpometacarpal ( CMC ) joint OA , tibiofemoral bracing for tibiofemoral knee OA , topical nonsteroidal antiinflammatory drugs ( NSAID s) for knee OA , oral NSAID s, and intraarticular glucocorticoid injections for knee OA . Conditional recommendations were made for balance exercises, yoga, cognitive behavioral therapy, kinesiotaping for first CMC OA , orthoses for hand joints other than the first CMC joint, patellofemoral bracing for patellofemoral knee OA , acupuncture, thermal modalities, radiofrequency ablation for knee OA , topical NSAID s, intraarticular steroid injections and chondroitin sulfate for hand OA , topical capsaicin for knee OA , acetaminophen, duloxetine, and tramadol. Conclusion This guideline provides direction for clinicians and patients making treatment decisions for the management of OA . Clinicians and patients should engage in shared decision\u2010making that accounts for patients\u2019 values, preferences, and comorbidities. These recommendations should not be used to limit or deny access to therapies.",
+      "cited_by_count": 1738,
+      "type": "article",
+      "source": {
+        "name": "Arthritis & Rheumatology",
+        "type": "journal",
+        "issn": [
+          "2326-5191",
+          "2326-5205"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/art.41142"
+      },
+      "topics": [
+        "Osteoarthritis Treatment and Mechanisms",
+        "Fibromyalgia and Chronic Fatigue Syndrome Research",
+        "Rheumatoid Arthritis Research and Therapies"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W4233138142"
+    },
+    {
+      "openalex_id": "W4399275367",
+      "doi": "10.1007/s11023-024-09679-9",
+      "title": "The New Mechanistic Approach and Cognitive Ontology\u2014Or: What Role do (Neural) Mechanisms Play in Cognitive Ontology?",
+      "authors": [
+        {
+          "name": "Beate Krickel",
+          "openalex_id": "A5031432716",
+          "orcid": "https://orcid.org/0000-0002-4657-0979",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-02",
+      "abstract": "Abstract Cognitive ontology has become a popular topic in philosophy, cognitive psychology, and cognitive neuroscience. At its center is the question of which cognitive capacities should be included in the ontology of cognitive psychology and cognitive neuroscience. One common strategy for answering this question is to look at brain structures and determine the cognitive capacities for which they are responsible. Some authors interpret this strategy as a search for neural mechanisms , as understood by the so-called new mechanistic approach . In this article, I will show that this new mechanistic answer is confronted with what I call the triviality problem . A discussion of this problem will show that one cannot derive a meaningful cognitive ontology from neural mechanisms alone. Nonetheless, neural mechanisms play a crucial role in the discovery of a cognitive ontology because they are epistemic proxies for best systematizations .",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Minds and Machines",
+        "type": "journal",
+        "issn": [
+          "0924-6495",
+          "1572-8641"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11023-024-09679-9.pdf"
+      },
+      "topics": [
+        "Biomedical Text Mining and Ontologies",
+        "Semantic Web and Ontologies",
+        "Language, Metaphor, and Cognition"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4399275367"
+    },
+    {
+      "openalex_id": "W4294310407",
+      "doi": "10.1515/revneuro-2022-0072",
+      "title": "The limitations of investigating appetite through circuit manipulations: are we biting off more than we can chew?",
+      "authors": [
+        {
+          "name": "Joshua Wang",
+          "openalex_id": "A5021250801",
+          "orcid": "https://orcid.org/0000-0002-9458-5665",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Kate Beecher",
+          "openalex_id": "A5076064688",
+          "orcid": "https://orcid.org/0000-0001-7462-1158",
+          "institutions": [
+            "University of Queensland",
+            "Royal Brisbane and Women's Hospital"
+          ]
+        },
+        {
+          "name": "Fatemeh Chehrehasa",
+          "openalex_id": "A5044284698",
+          "orcid": "https://orcid.org/0000-0002-3702-9179",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Hayley Moody",
+          "openalex_id": "A5021435271",
+          "orcid": "https://orcid.org/0000-0003-0697-8934",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-02",
+      "abstract": "Abstract Disordered eating can underpin a number of debilitating and prevalent chronic diseases, such as obesity. Broader advances in psychopharmacology and biology have motivated some neuroscientists to address diet-induced obesity through reductionist, pre-clinical eating investigations on the rodent brain. Specifically, chemogenetic and optogenetic methods developed in the 21st century allow neuroscientists to perform in vivo , region-specific/projection-specific/promoter-specific circuit manipulations and immediately assess the impact of these manipulations on rodent feeding. These studies are able to rigorously conclude whether a specific neuronal population regulates feeding behaviour in the hope of eventually developing a mechanistic neuroanatomical map of appetite regulation. However, an artificially stimulated/inhibited rodent neuronal population that changes feeding behaviour does not necessarily represent a pharmacological target for treating eating disorders in humans. Chemogenetic/optogenetic findings must therefore be triangulated with the array of theories that contribute to our understanding of appetite. The objective of this review is to provide a wide-ranging discussion of the limitations of chemogenetic/optogenetic circuit manipulation experiments in rodents that are used to investigate appetite. Stepping into and outside of medical science epistemologies, this paper draws on philosophy of science, nutrition, addiction biology and neurophilosophy to prompt more integrative, transdisciplinary interpretations of chemogenetic/optogenetic appetite data. Through discussing the various technical and epistemological limitations of these data, we provide both an overview of chemogenetics and optogenetics accessible to non-neuroscientist obesity researchers, as well as a resource for neuroscientists to expand the number of lenses through which they interpret their circuit manipulation findings.",
+      "cited_by_count": 5,
+      "type": "review",
+      "source": {
+        "name": "Reviews in the Neurosciences",
+        "type": "journal",
+        "issn": [
+          "0334-1763",
+          "2191-0200"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Regulation of Appetite and Obesity",
+        "Biochemical Analysis and Sensing Techniques",
+        "Neuroendocrine regulation and behavior"
+      ],
+      "referenced_works_count": 194,
+      "url": "https://openalex.org/W4294310407"
+    },
+    {
+      "openalex_id": "W3082930086",
+      "doi": "10.2991/assehr.k.200901.020",
+      "title": "Comparative Analysis on Principles of Constructing a Picture of the Development of the Earth in Soviet and Post-Soviet Philosophy",
+      "authors": [
+        {
+          "name": "Eugenia Alekhina",
+          "openalex_id": "A5069531581",
+          "institutions": [
+            "Moscow Region State University"
+          ]
+        },
+        {
+          "name": "Yana V. Bondareva",
+          "openalex_id": "A5033266345",
+          "institutions": [
+            "Moscow Region State University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "The article discusses the features of the development of Russian philosophical cosmology in the XX-XXI centuries based on a transcendental or immanent explanation of the unity of the world.This or that principle contains (or does not contain) the goal, the meaning of the earthly life of mankind.Three stages of Russian philosophical cosmology are investigated: the classical period of the late XIX -the first half of the twentieth century, the Soviet philosophy of geology of the 80s.And post-Soviet philosophical thought.A common motive was the opposition to the mechanistic picture of the world, but from different perspectives -Christian energetics or dialectical materialism, which interprets the data of the natural sciences in different ways, affirm or deny the unity of science and religion.The monographs of I.F.Zubkov and A.S. Khomenkov are analyzed as representative authors of these directions on the problem of the origin and development of the Earth.This paper traced the tradition of Orthodox energetics in Russian philosophy, arguing the inability to overcome reductionism and the naive realism of the mechanistic approach from the standpoint of dialectical materialism.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.atlantis-press.com/article/125944238.pdf"
+      },
+      "topics": [
+        "Arctic and Russian Policy Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3082930086"
+    },
+    {
+      "openalex_id": "W3119819318",
+      "doi": "10.1515/dzph-2020-0050",
+      "title": "Methodischer Mechanismus und instrumentelle Vernunft",
+      "authors": [
+        {
+          "name": "Ralf Becker",
+          "openalex_id": "A5063427404",
+          "orcid": "https://orcid.org/0000-0003-0146-5275",
+          "institutions": [
+            "University of Koblenz and Landau"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-01",
+      "abstract": "Abstract Mechanistic explanations \u2013 especially mechanistic models \u2013 are commonly used to describe living beings. But their usage should be scrutinised closely. This text elucidates the motives, conditions and implications of a so called \u2018methodical mechanism\u2019. Due to the fact that humans cannot properly explain certain biotic processes, they have to rely on their technical knowledge to explain them. The history of philosophy and scientific thinking is, therefore, intertwined with the history of technology: the way humans interpret and explain natural phenomena is subject to the technological knowledge of a given time. The danger of this mechanistic approach, however, is that it can lead to false ontological assumptions about nature and humankind\u2019s place therein, resulting in a subjugation of natural processes to instrumental reason.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Deutsche Zeitschrift f\u00fcr Philosophie",
+        "type": "journal",
+        "issn": [
+          "0012-1045",
+          "2192-1482"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Kantian Philosophy and Modern Interpretations",
+        "Scientific and Historical Analyses",
+        "Philosophy, Science, and History"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W3119819318"
+    },
+    {
+      "openalex_id": "W3184707959",
+      "doi": "10.1111/nin.12442",
+      "title": "Slow death by policy manual",
+      "authors": [
+        {
+          "name": "Sally Thorne",
+          "openalex_id": "A5046245561",
+          "orcid": "https://orcid.org/0000-0002-1156-9425"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-07-01",
+      "abstract": "In an era of corporatized health care systems, increasingly overseen by strategic operations specialists and risk managers, nurses are struggling to maintain practice environments within which their nursing intelligence, applied to the unique and distinctive needs of each patient and situation, can be enacted. It has been well recognized that significant changes in the complex forces shaping nursing practice throughout the second half of the 20th century have led to a significant reduction in tolerance for self-regulation and a widespread uptake of expanded external controls. According to McIntyre, Burton and Holmes, as our care organizations are increasingly corporatized, with leadership interpreted as operations oversight rather than professional management, and augmented by the additional mechanistic influence of electronic record keeping systems, we are \"effectively erasing the creativity, judgement and indeed the very humanity that has necessarily and iteratively shaped the construct of professional nursing\" (McIntyre et al., 2020, p. 7). It is important that nurses understand that these trends did not simply happen as a natural evolution of health care growth and development, but have actually been part of a grand design to make health care delivery systems more efficient and effective, to reduce wastage and error, and to benefit from what can be learned from the standardizing mechanisms and processes that have demonstrably advantaged the industrial sector. Systems such as \"lean management,\" borrowed from automobile manufacturing and applied to health care, provide a management philosophy that includes powerful tools for enforcing accountability structures to help systems work relentlessly toward those goals (Kim et al., 2006). Proponents of lean management explicitly seek to dismantle what they consider to be cultural and practical barriers to efficiency within a health care organization. On the practical front, they see the \"silo mentality\" of the individual health care professions to be a structural impediment; they therefore strongly advocate for mechanisms that break down systems of nursing leadership in favor of interprofessional interchangeability across clinical programs and organizational functions. On the cultural front, they recognize the idea of individualized care (i.e., \"each patient is unique\") as a central ideological flaw that requires vigilent surveillance and emphatic disruption (Kim et al., 2006). These kinds of management philosophies have often been described as contributing to the \"McDonaldization\" (Ritzer, 1993) of nursing, in that they seek to create the conditions that enforce standardized solutions to what workers do across all settings, contexts, and patient situations (Bradshaw, 2016; Norlyk et al., 2017). Standardization makes processes and systems much easier to discipline and control, thereby creating the impression of evidence-based practice and accountability. That these corporate management philosophies have been most forcefully applied toward nursing in particular is not, therefore, surprising. Not only do nurses constitute the largest health care workforce, but they are also notoriously resistant to standardizing processes, given their epistemological hardwiring to see patients as distinctive individuals with unmet needs. Further, they are significantly less likely than other disciplines to have appropriate representation at senior health care governance tables and within corporate management structures (Prybil, 2013). Thus it is inevitable that systems of nursing will be the hardest-hit by widespread uptake and implementation of these modern health care management philosophies and practices (Rankin & Campbell, 2006). As many nurses at the point-of-care have noticed, the most obvious manifestation of modern management philosophies is the rapid proliferation of standard protocols, practice guidelines, and reporting requirements that govern an increasing array of their everyday practice activities. Their compliance with these policies and protocols becomes the driving focus of operations managers who, increasingly, are not themselves nurses and may have little understanding of or sympathy for a nursing perspective on what constitutes good care. From their perspective, good care is adherence to standard routines and protocols, not the work of meeting patient needs. Nurses therefore feel disciplined and controlled beyond the point of being able to make independent decisions on behalf of their patients\u2014to enact the intelligence and expertise that their profession stands for. As Austin (2011) explained, this changes the nature of nursing from a moral practice to a routinized activity. \"Seeing suffering while being unable to respond with true compassion, running around meeting targets, delivering 'very good' customer service leaves nurses disoriented. They lose their moral bearings and their self-identification 'nurse' ceases to have meaning\" (p. 164). Thus, she explains, such operational governance is incommensurate with nursing conceived as a moral practice. While COVID-19 has demonstrated to the world the value of humane and compassionate nursing action, even in the most extreme of care contexts, we have not yet been able to effectively mount the argument that our health systems will serve our populations better when nurses are supported in exerting an appropriate amount of control over their practice. Within nursing, it seems patently self-evident why an empowered and actively engaged nursing workforce, supported by strong and astute nursing leadership, significantly improves the likelihood of safe and effective patient care (Murray et al., 2018). [We also know why the opposite is true\u2014that a demoralized and disempowered nursing work force is more likely to create the conditions for poor care (Bradshaw, 2016)]. However, we must find ways to pitch that logic against corporate managerial philosophies that are dedicated to a strategic mission of disarming and dismantling us. Nursing Inquiry readers are among those inclined to be critically curious about the unintended effects of tightening control, circumscribing practice and reducing the inherent complexity of our profession's unique contribution to that which can be captured in a task list. As this trend escalates, we believe we have an increasing imperative to offer a strong countervailing force to the \"task fraternity\" by creating the kinds of thoughtful and critical conversations that engage nurses in the worlds of theorizing, philosophizing, and critical deconstruction. (Thorne et al., 2012, p. 189) It does not seem as if we have made much progress on that front, and perhaps we have slipped behind. However, I still believe that our Nursing Inquiry community contains the wisdom and scholarly capacity to sustain the critique and press for change. Within the pages of this journal, I am confident that we can continue to support and champion those scholars who concern themselves with critical reflection on these global trends, and who remain persistently optimistic that, together, we can do something to turn the tides. Nurses have never just given up and declared defeat. And now is not the time to begin.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Nursing Inquiry",
+        "type": "journal",
+        "issn": [
+          "1320-7881",
+          "1440-1800"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/nin.12442"
+      },
+      "topics": [
+        "Healthcare Quality and Management",
+        "Geriatric Care and Nursing Homes",
+        "Nursing Education, Practice, and Leadership"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W3184707959"
+    },
+    {
+      "openalex_id": "W4362545989",
+      "doi": "10.18060/27224",
+      "title": "Rooted: Metaphors and Judicial Philosophy in Artis v. District of Columbia",
+      "authors": [
+        {
+          "name": "Richard L. Heppner",
+          "openalex_id": "A5060958722"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-24",
+      "abstract": "This Article examines how the metaphors in judicial opinions reveal judicial theories of lawmaking and judicial philosophies. It does so through a close reading of Justice Ginsburg\u2019s majority opinion and Justice Gorsuch\u2019s dissenting opinion in Artis v. District of Columbia, 138 S. Ct. 594 (2018). Artis was about what the phrase \u201cshall be tolled\u201d means in the federal supplemental jurisdiction statute, 28 U.S.C. \u00a71367. Does it pause the statute of limitations while a state-law claim is in federal court or keep it running? In holding that Congress used \u201cstop the clock\u201d tolling, an \u201coff-the-shelf\u201d legal device that pauses the statute of limitations, Justice Ginsburg\u2019s majority opinion uses conventional, mechanistic metaphors. Justice Gorsuch\u2019s dissent uses more elaborate, agrarian metaphors to argue that Congress used a stricter \u201cgrace period\u201d version of tolling because \u201c[w]hen Congress replants the roots of preexisting law in the federal code, this Court assumes it brings with it the surrounding soil.\u201d This Article shows that Justice Ginsburg\u2019s mechanistic metaphors describe lawmaking like engineering and bespeak a mode of judicial interpretation based on purpose and precedent\u2014while Justice Gorsuch\u2019s agrarian metaphors hark back to a pastoral conception of lawmaking and interpretation \u201crooted\u201d in a mythical common-law history and tradition. It then compares Justice Ginsburg\u2019s moreunderstated use of conventional metaphors to Justice Gorsuch\u2019s more performative metaphorical technique, arguing that their different rhetorical strategies reflect their different visions of lawmaking and interpretive philosophies. And it closes by showing how close attention to the metaphors theyuse can reveal the flaws in each approach.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Indiana Law Review",
+        "type": "journal",
+        "issn": [
+          "0090-4198",
+          "2169-320X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.iupui.edu/index.php/inlawrev/article/download/27224/24911"
+      },
+      "topics": [
+        "Language, Metaphor, and Cognition",
+        "Multicultural Socio-Legal Studies",
+        "Legal Issues in Education"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W4362545989"
+    },
+    {
+      "openalex_id": "W3167887887",
+      "doi": "10.1007/s13194-021-00380-7",
+      "title": "Explanatory hierarchy of causal structures in molecular biology",
+      "authors": [
+        {
+          "name": "Zdenka Brzovi\u0107",
+          "openalex_id": "A5023664871",
+          "orcid": "https://orcid.org/0000-0002-9385-0287",
+          "institutions": [
+            "University of Rijeka"
+          ]
+        },
+        {
+          "name": "Vito Balorda",
+          "openalex_id": "A5064301398",
+          "orcid": "https://orcid.org/0000-0002-7928-7088",
+          "institutions": [
+            "University of Rijeka"
+          ]
+        },
+        {
+          "name": "Predrag \u0160ustar",
+          "openalex_id": "A5075942046",
+          "orcid": "https://orcid.org/0000-0002-6375-2424",
+          "institutions": [
+            "University of Rijeka"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-06-01",
+      "abstract": null,
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "European Journal for Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "1879-4912",
+          "1879-4920"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Genetics, Bioinformatics, and Biomedical Research",
+        "Bioinformatics and Genomic Networks"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W3167887887"
+    },
+    {
+      "openalex_id": "W3003942949",
+      "doi": "10.1007/s00214-020-2546-7",
+      "title": "Conceptual density functional theory: status, prospects, issues",
+      "authors": [
+        {
+          "name": "Paul Geerlings",
+          "openalex_id": "A5039531593",
+          "orcid": "https://orcid.org/0000-0003-1897-7285",
+          "institutions": [
+            "Vrije Universiteit Brussel"
+          ]
+        },
+        {
+          "name": "Eduardo Chamorro",
+          "openalex_id": "A5003203795",
+          "orcid": "https://orcid.org/0000-0002-9200-9859",
+          "institutions": [
+            "Universidad Andr\u00e9s Bello",
+            "Universidad Andr\u00e9s Bello"
+          ]
+        },
+        {
+          "name": "Pratim Kumar Chattaraj",
+          "openalex_id": "A5069414175",
+          "orcid": "https://orcid.org/0000-0002-5650-7666",
+          "institutions": [
+            "Indian Institute of Technology Kharagpur"
+          ]
+        },
+        {
+          "name": "Frank De Proft",
+          "openalex_id": "A5020496021",
+          "orcid": "https://orcid.org/0000-0003-4900-7513",
+          "institutions": [
+            "Vrije Universiteit Brussel"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 L. G\u00e1zquez",
+          "openalex_id": "A5070265110",
+          "orcid": "https://orcid.org/0000-0001-6685-7080",
+          "institutions": [
+            "Universidad Aut\u00f3noma Metropolitana"
+          ]
+        },
+        {
+          "name": "Shubin Liu",
+          "openalex_id": "A5062471687",
+          "orcid": "https://orcid.org/0000-0001-9331-0427",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Christophe Morell",
+          "openalex_id": "A5032960415",
+          "orcid": "https://orcid.org/0000-0002-6321-8723",
+          "institutions": [
+            "Universit\u00e9 Claude Bernard Lyon 1",
+            "Centre National de la Recherche Scientifique",
+            "Laboratoire de Chimie Th\u00e9orique"
+          ]
+        },
+        {
+          "name": "Alejandro Toro\u2010Labb\u00e9",
+          "openalex_id": "A5082528498",
+          "orcid": "https://orcid.org/0000-0001-9906-2153",
+          "institutions": [
+            "Pontificia Universidad Cat\u00f3lica de Chile"
+          ]
+        },
+        {
+          "name": "Alberto Vela",
+          "openalex_id": "A5080405945",
+          "orcid": "https://orcid.org/0000-0002-2794-8622",
+          "institutions": [
+            "Instituto Polit\u00e9cnico Nacional",
+            "Center for Research and Advanced Studies of the National Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Paul W. Ayers",
+          "openalex_id": "A5032670273",
+          "orcid": "https://orcid.org/0000-0003-2605-3883",
+          "institutions": [
+            "McMaster University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-31",
+      "abstract": null,
+      "cited_by_count": 422,
+      "type": "article",
+      "source": {
+        "name": "Theoretical Chemistry Accounts",
+        "type": "journal",
+        "issn": [
+          "1432-2234",
+          "1432-881X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s00214-020-2546-7.pdf"
+      },
+      "topics": [
+        "Free Radicals and Antioxidants",
+        "Spectroscopy and Quantum Chemical Studies",
+        "Advanced Chemical Physics Studies"
+      ],
+      "referenced_works_count": 244,
+      "url": "https://openalex.org/W3003942949"
+    },
+    {
+      "openalex_id": "W3006087551",
+      "doi": "10.1109/tkde.2021.3079836",
+      "title": "Informed Machine Learning - A Taxonomy and Survey of Integrating Prior Knowledge into Learning Systems",
+      "authors": [
+        {
+          "name": "Laura von Rueden",
+          "openalex_id": "A5063338076",
+          "orcid": "https://orcid.org/0000-0002-7186-9753",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        },
+        {
+          "name": "Sebastian Mayer",
+          "openalex_id": "A5015940536",
+          "orcid": "https://orcid.org/0000-0002-1909-7805",
+          "institutions": [
+            "Fraunhofer Institute for Algorithms and Scientific Computing"
+          ]
+        },
+        {
+          "name": "Katharina Beckh",
+          "openalex_id": "A5016921001",
+          "orcid": "https://orcid.org/0000-0002-7824-6647",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        },
+        {
+          "name": "Bogdan Georgiev",
+          "openalex_id": "A5066384489",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        },
+        {
+          "name": "Sven Giesselbach",
+          "openalex_id": "A5080184077",
+          "orcid": "https://orcid.org/0000-0002-2691-1406",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        },
+        {
+          "name": "Raoul Heese",
+          "openalex_id": "A5019819029",
+          "orcid": "https://orcid.org/0000-0001-7479-3339",
+          "institutions": [
+            "Fraunhofer Institute for Industrial Mathematics"
+          ]
+        },
+        {
+          "name": "Birgit Kirsch",
+          "openalex_id": "A5004068693",
+          "orcid": "https://orcid.org/0000-0002-4888-4947",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        },
+        {
+          "name": "Micha\u0142 Walczak",
+          "openalex_id": "A5081633054",
+          "orcid": "https://orcid.org/0000-0002-4701-9476",
+          "institutions": [
+            "Fraunhofer Institute for Industrial Mathematics"
+          ]
+        },
+        {
+          "name": "Julius Pfrommer",
+          "openalex_id": "A5079417865",
+          "orcid": "https://orcid.org/0000-0002-4204-6758",
+          "institutions": [
+            "Fraunhofer Institute of Optronics, System Technologies and Image Exploitation"
+          ]
+        },
+        {
+          "name": "Annika Pick",
+          "openalex_id": "A5067447057",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        },
+        {
+          "name": "Rajkumar Ramamurthy",
+          "openalex_id": "A5035886948",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        },
+        {
+          "name": "Jochen Garcke",
+          "openalex_id": "A5068763843",
+          "orcid": "https://orcid.org/0000-0002-8334-3695",
+          "institutions": [
+            "Fraunhofer Institute for Algorithms and Scientific Computing"
+          ]
+        },
+        {
+          "name": "Christian Bauckhage",
+          "openalex_id": "A5003875445",
+          "orcid": "https://orcid.org/0000-0001-6615-2128",
+          "institutions": [
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        },
+        {
+          "name": "Jannis Schuecker",
+          "openalex_id": "A5079443284",
+          "orcid": "https://orcid.org/0000-0001-6203-1126",
+          "institutions": [
+            "Fraunhofer Institute for Machine Tools and Forming Technology",
+            "Fraunhofer Institute for Intelligent Analysis and Information Systems"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Despite its great success, machine learning can have its limits when dealing with insufficient training data. A potential solution is the additional integration of prior knowledge into the training process which leads to the notion of informed machine learning. In this paper, we present a structured overview of various approaches in this field. We provide a definition and propose a concept for informed machine learning which illustrates its building blocks and distinguishes it from conventional machine learning. We introduce a taxonomy that serves as a classification framework for informed machine learning approaches. It considers the source of knowledge, its representation, and its integration into the machine learning pipeline. Based on this taxonomy, we survey related research and describe how different knowledge representations such as algebraic equations, logic rules, or simulation results can be used in learning systems. This evaluation of numerous papers on the basis of our taxonomy uncovers key methods in the field of informed machine learning.",
+      "cited_by_count": 732,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Knowledge and Data Engineering",
+        "type": "journal",
+        "issn": [
+          "1041-4347",
+          "1558-2191",
+          "2326-3865"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/69/4358933/09429985.pdf"
+      },
+      "topics": [
+        "Machine Learning and Algorithms",
+        "Neural Networks and Applications",
+        "Model Reduction and Neural Networks"
+      ],
+      "referenced_works_count": 271,
+      "url": "https://openalex.org/W3006087551"
+    },
+    {
+      "openalex_id": "W3022866684",
+      "doi": "10.1038/s41380-020-0748-y",
+      "title": "Autism spectrum heterogeneity: fact or artifact?",
+      "authors": [
+        {
+          "name": "Laurent Mottron",
+          "openalex_id": "A5041271117",
+          "orcid": "https://orcid.org/0000-0001-5668-5422",
+          "institutions": [
+            "Universit\u00e9 de Montr\u00e9al",
+            "Centre Int\u00e9gr\u00e9 Universitaire de Sant\u00e9 et de Services Sociaux du Centre-Sud-de-l'\u00cele-de-Montr\u00e9al",
+            "H\u00f4pital Rivi\u00e8re-des-Prairies"
+          ]
+        },
+        {
+          "name": "Danilo Bzdok",
+          "openalex_id": "A5051587217",
+          "orcid": "https://orcid.org/0000-0003-3466-6620",
+          "institutions": [
+            "Mila - Quebec Artificial Intelligence Institute",
+            "Montreal Neurological Institute and Hospital",
+            "McGill University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-30",
+      "abstract": "Abstract The current diagnostic practices are linked to a 20-fold increase in the reported prevalence of ASD over the last 30 years. Fragmenting the autism phenotype into dimensional \u201cautistic traits\u201d results in the alleged recognition of autism-like symptoms in any psychiatric or neurodevelopemental condition and in individuals decreasingly distant from the typical population, and prematurely dismisses the relevance of a diagnostic threshold. Non-specific socio-communicative and repetitive DSM 5 criteria, combined with four quantitative specifiers as well as all their possible combinations, render limitless variety of presentations consistent with the categorical diagnosis of ASD. We propose several remedies to this problem: maintain a line of research on prototypical autism; limit the heterogeneity compatible with a categorical diagnosis to situations with a phenotypic overlap and a validated etiological link with prototypical autism; reintroduce the qualitative properties of autism presentations and of current dimensional specifiers, language, intelligence, comorbidity, and severity in the criteria used to diagnose autism in replacement of quantitative \u201csocial\u201d and \u201crepetitive\u201d criteria; use these qualitative features combined with the clinical intuition of experts and machine-learning algorithms to differentiate coherent subgroups in today\u2019s autism spectrum; study these subgroups separately, and then compare them; and question the autistic nature of \u201cautistic traits\u201d",
+      "cited_by_count": 300,
+      "type": "review",
+      "source": {
+        "name": "Molecular Psychiatry",
+        "type": "journal",
+        "issn": [
+          "1359-4184",
+          "1476-5578"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s41380-020-0748-y.pdf"
+      },
+      "topics": [
+        "Autism Spectrum Disorder Research",
+        "Genetics and Neurodevelopmental Disorders",
+        "Virology and Viral Diseases"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W3022866684"
+    },
+    {
+      "openalex_id": "W3134149785",
+      "doi": "10.1016/s2542-5196(21)00031-0",
+      "title": "Land use-induced spillover: a call to action to safeguard environmental, animal, and human health",
+      "authors": [
+        {
+          "name": "Raina K. Plowright",
+          "openalex_id": "A5001484169",
+          "orcid": "https://orcid.org/0000-0002-3338-6590",
+          "institutions": [
+            "Montana State University"
+          ]
+        },
+        {
+          "name": "Jamie K. Reaser",
+          "openalex_id": "A5067189655",
+          "orcid": "https://orcid.org/0000-0003-3879-0100",
+          "institutions": [
+            "Center for Large Landscape Conservation",
+            "George Mason University",
+            "University of Rhode Island",
+            "Providence College"
+          ]
+        },
+        {
+          "name": "Harvey Locke",
+          "openalex_id": "A5005723250",
+          "orcid": "https://orcid.org/0000-0003-3882-5852",
+          "institutions": [
+            "Yellowstone to Yukon Conservation Initiative"
+          ]
+        },
+        {
+          "name": "Stephen Woodley",
+          "openalex_id": "A5059455803",
+          "orcid": "https://orcid.org/0000-0003-3074-6578"
+        },
+        {
+          "name": "Jonathan A. Patz",
+          "openalex_id": "A5090232910",
+          "orcid": "https://orcid.org/0000-0002-7131-9698",
+          "institutions": [
+            "University of Wisconsin Health",
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Daniel J. Becker",
+          "openalex_id": "A5000112358",
+          "orcid": "https://orcid.org/0000-0003-4315-8628",
+          "institutions": [
+            "University of Oklahoma"
+          ]
+        },
+        {
+          "name": "Gabriel Oppler",
+          "openalex_id": "A5080811872",
+          "orcid": "https://orcid.org/0000-0003-2019-7093",
+          "institutions": [
+            "Center for Large Landscape Conservation"
+          ]
+        },
+        {
+          "name": "Peter J. Hudson",
+          "openalex_id": "A5031279058",
+          "orcid": "https://orcid.org/0000-0003-0468-3403",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Gary Tabor",
+          "openalex_id": "A5002740479",
+          "orcid": "https://orcid.org/0000-0003-4711-1018",
+          "institutions": [
+            "Center for Large Landscape Conservation"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-07",
+      "abstract": "The rapid global spread and human health impacts of SARS-CoV-2, the virus that causes COVID-19, show humanity's vulnerability to zoonotic disease pandemics. Although anthropogenic land use change is known to be the major driver of zoonotic pathogen spillover from wildlife to human populations, the scientific underpinnings of land use-induced zoonotic spillover have rarely been investigated from the landscape perspective. We call for interdisciplinary collaborations to advance knowledge on land use implications for zoonotic disease emergence with a view toward informing the decisions needed to protect human health. In particular, we urge a mechanistic focus on the zoonotic pathogen infect-shed-spill-spread cascade to enable protection of landscape immunity-the ecological conditions that reduce the risk of pathogen spillover from reservoir hosts-as a conservation and biosecurity priority. Results are urgently needed to formulate an integrated, holistic set of science-based policy and management measures that effectively and cost-efficiently minimise zoonotic disease risk. We consider opportunities to better institute the necessary scientific collaboration, address primary technical challenges, and advance policy and management issues that warrant particular attention to effectively address health security from local to global scales.",
+      "cited_by_count": 369,
+      "type": "article",
+      "source": {
+        "name": "The Lancet Planetary Health",
+        "type": "journal",
+        "issn": [
+          "2542-5196"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://www.thelancet.com/article/S2542519621000310/pdf"
+      },
+      "topics": [
+        "Zoonotic diseases and public health",
+        "Animal Disease Management and Epidemiology",
+        "Climate Change and Health Impacts"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W3134149785"
+    },
+    {
+      "openalex_id": "W4283159491",
+      "doi": "10.1145/3531146.3534639",
+      "title": "A Review of Taxonomies of Explainable Artificial Intelligence (XAI) Methods",
+      "authors": [
+        {
+          "name": "Timo Speith",
+          "openalex_id": "A5007325624",
+          "orcid": "https://orcid.org/0000-0002-6675-154X",
+          "institutions": [
+            "Saarland University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-20",
+      "abstract": "The recent surge in publications related to explainable artificial&#13;\\nintelligence (XAI) has led to an almost insurmountable wall if one&#13;\\nwants to get started or stay up to date with XAI. For this reason,&#13;\\narticles and reviews that present taxonomies of XAI methods seem&#13;\\nto be a welcomed way to get an overview of the field. Building on&#13;\\nthis idea, there is currently a trend of producing such taxonomies,&#13;\\nleading to several competing approaches to construct them. In this&#13;\\npaper, we will review recent approaches to constructing taxonomies&#13;\\nof XAI methods and discuss general challenges concerning them as&#13;\\nwell as their individual advantages and limitations. Our review is&#13;\\nintended to help scholars be aware of challenges current taxonomies&#13;\\nface. As we will argue, when charting the field of XAI, it may not&#13;\\nbe sufficient to rely on one of the approaches we found. To amend&#13;\\nthis problem, we will propose and discuss three possible solutions:&#13;\\na new taxonomy that incorporates the reviewed ones, a database of&#13;\\nXAI methods, and a decision tree to help choose fitting methods.",
+      "cited_by_count": 272,
+      "type": "review",
+      "source": {
+        "name": "2022 ACM Conference on Fairness, Accountability, and Transparency",
+        "type": "conference",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3531146.3534639"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W4283159491"
+    },
+    {
+      "openalex_id": "W3131956693",
+      "doi": "10.1038/s41558-021-01219-y",
+      "title": "Demand-side solutions to climate change mitigation consistent with high levels of well-being",
+      "authors": [
+        {
+          "name": "Felix Creutzig",
+          "openalex_id": "A5078552854",
+          "orcid": "https://orcid.org/0000-0002-5710-3348",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin",
+            "Mercator Research Institute on Global Commons and Climate Change"
+          ]
+        },
+        {
+          "name": "Leila Niamir",
+          "openalex_id": "A5081023502",
+          "orcid": "https://orcid.org/0000-0002-0285-5542",
+          "institutions": [
+            "Mercator Research Institute on Global Commons and Climate Change"
+          ]
+        },
+        {
+          "name": "Xuemei Bai",
+          "openalex_id": "A5032065022",
+          "orcid": "https://orcid.org/0000-0001-6556-8041",
+          "institutions": [
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "Max Callaghan",
+          "openalex_id": "A5046637996",
+          "orcid": "https://orcid.org/0000-0001-8292-8758",
+          "institutions": [
+            "University of Leeds",
+            "Mercator Research Institute on Global Commons and Climate Change"
+          ]
+        },
+        {
+          "name": "Jonathan M. Cullen",
+          "openalex_id": "A5032532921",
+          "orcid": "https://orcid.org/0000-0003-4347-5025",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Julio D\u00edaz\u2010Jos\u00e9",
+          "openalex_id": "A5057584759",
+          "orcid": "https://orcid.org/0000-0003-0182-8814",
+          "institutions": [
+            "Universidad Veracruzana"
+          ]
+        },
+        {
+          "name": "Maria J. Figueroa",
+          "openalex_id": "A5054431167",
+          "orcid": "https://orcid.org/0000-0001-6590-7269",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        },
+        {
+          "name": "Arnulf Gr\u00fcbler",
+          "openalex_id": "A5039923713",
+          "orcid": "https://orcid.org/0000-0002-6225-7712",
+          "institutions": [
+            "International Institute for Applied Systems Analysis"
+          ]
+        },
+        {
+          "name": "William F. Lamb",
+          "openalex_id": "A5002742682",
+          "orcid": "https://orcid.org/0000-0003-3273-7878",
+          "institutions": [
+            "University of Leeds",
+            "Mercator Research Institute on Global Commons and Climate Change"
+          ]
+        },
+        {
+          "name": "Adrian Leip",
+          "openalex_id": "A5084517979",
+          "orcid": "https://orcid.org/0000-0001-7616-5029",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Eric Masanet",
+          "openalex_id": "A5083395159",
+          "orcid": "https://orcid.org/0000-0003-3507-8986",
+          "institutions": [
+            "University of California, Santa Barbara"
+          ]
+        },
+        {
+          "name": "\u00c9rika Mata",
+          "openalex_id": "A5042474727",
+          "orcid": "https://orcid.org/0000-0002-0735-3744",
+          "institutions": [
+            "IVL Swedish Environmental Research Institute"
+          ]
+        },
+        {
+          "name": "Linus Mattauch",
+          "openalex_id": "A5018846345",
+          "orcid": "https://orcid.org/0000-0002-8900-3827",
+          "institutions": [
+            "University of Oxford",
+            "Potsdam Institute for Climate Impact Research",
+            "Technische Universit\u00e4t Berlin"
+          ]
+        },
+        {
+          "name": "Jan C. Minx",
+          "openalex_id": "A5060648323",
+          "orcid": "https://orcid.org/0000-0002-2862-0178",
+          "institutions": [
+            "Mercator Research Institute on Global Commons and Climate Change",
+            "University of Leeds"
+          ]
+        },
+        {
+          "name": "S. Mirasgedis",
+          "openalex_id": "A5027024643",
+          "orcid": "https://orcid.org/0000-0002-2391-9808",
+          "institutions": [
+            "National Observatory of Athens"
+          ]
+        },
+        {
+          "name": "Yacob Mulugetta",
+          "openalex_id": "A5009067310",
+          "orcid": "https://orcid.org/0000-0003-3191-8896",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Sudarmanto Budi Nugroho",
+          "openalex_id": "A5037088552",
+          "orcid": "https://orcid.org/0000-0002-6911-5805",
+          "institutions": [
+            "Institute for Global Environmental Strategies"
+          ]
+        },
+        {
+          "name": "Minal Pathak",
+          "openalex_id": "A5012102026",
+          "orcid": "https://orcid.org/0000-0002-9474-0485",
+          "institutions": [
+            "Ahmedabad University"
+          ]
+        },
+        {
+          "name": "Patr\u00edcia E. Perkins",
+          "openalex_id": "A5036127216",
+          "orcid": "https://orcid.org/0000-0002-6474-0142",
+          "institutions": [
+            "York University"
+          ]
+        },
+        {
+          "name": "Joyashree Roy",
+          "openalex_id": "A5063731706",
+          "orcid": "https://orcid.org/0000-0002-9270-8860",
+          "institutions": [
+            "Jadavpur University",
+            "Asian Institute of Technology"
+          ]
+        },
+        {
+          "name": "St\u00e9phane de la Rue du Can",
+          "openalex_id": "A5060077669",
+          "orcid": "https://orcid.org/0000-0001-8054-5737",
+          "institutions": [
+            "Lawrence Berkeley National Laboratory"
+          ]
+        },
+        {
+          "name": "Yamina Saheb",
+          "openalex_id": "A5042813873",
+          "orcid": "https://orcid.org/0000-0002-3167-8194",
+          "institutions": [
+            "University of Lausanne"
+          ]
+        },
+        {
+          "name": "Shreya Some",
+          "openalex_id": "A5053635142",
+          "orcid": "https://orcid.org/0000-0002-7254-9970",
+          "institutions": [
+            "Ahmedabad University",
+            "Jadavpur University"
+          ]
+        },
+        {
+          "name": "Linda Steg",
+          "openalex_id": "A5037506201",
+          "orcid": "https://orcid.org/0000-0002-8375-9607",
+          "institutions": [
+            "University of Groningen"
+          ]
+        },
+        {
+          "name": "J. Steinberger",
+          "openalex_id": "A5089821134",
+          "orcid": "https://orcid.org/0000-0002-5925-9602",
+          "institutions": [
+            "University of Lausanne"
+          ]
+        },
+        {
+          "name": "Di\u00e1na \u00dcrge-Vorsatz",
+          "openalex_id": "A5014111135",
+          "orcid": "https://orcid.org/0000-0003-2570-5341"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-25",
+      "abstract": "Mitigation solutions are often evaluated in terms of costs and greenhouse gas reduction potentials, missing out on the consideration of direct effects on human well-being. Here, we systematically assess the mitigation potential of demand-side options categorized into avoid, shift and improve, and their human well-being links. We show that these options, bridging socio-behavioural, infrastructural and technological domains, can reduce counterfactual sectoral emissions by 40\u201380% in end-use sectors. Based on expert judgement and an extensive literature database, we evaluate 306 combinations of well-being outcomes and demand-side options, finding largely beneficial effects in improvement in well-being (79% positive, 18% neutral and 3% negative), even though we find low confidence on the social dimensions of well-being. Implementing such nuanced solutions is based axiomatically on an understanding of malleable rather than fixed preferences, and procedurally on changing infrastructures and choice architectures. Results demonstrate the high mitigation potential of demand-side mitigation options that are synergistic with well-being.",
+      "cited_by_count": 418,
+      "type": "article",
+      "source": {
+        "name": "Nature Climate Change",
+        "type": "journal",
+        "issn": [
+          "1758-678X",
+          "1758-6798"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s41558-021-01219-y.pdf"
+      },
+      "topics": [
+        "Energy, Environment, and Transportation Policies",
+        "Agriculture Sustainability and Environmental Impact",
+        "Urban Transport and Accessibility"
+      ],
+      "referenced_works_count": 123,
+      "url": "https://openalex.org/W3131956693"
+    },
+    {
+      "openalex_id": "W3140473164",
+      "doi": "10.1007/s11191-021-00206-1",
+      "title": "Developing and Using Multiple Models to Promote Scientific Literacy in the Context of Socio-Scientific Issues",
+      "authors": [
+        {
+          "name": "Li Ke",
+          "openalex_id": "A5100776854",
+          "orcid": "https://orcid.org/0000-0001-5152-630X",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Troy D. Sadler",
+          "openalex_id": "A5057686363",
+          "orcid": "https://orcid.org/0000-0002-9401-0300",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Laura Zangori",
+          "openalex_id": "A5027605264",
+          "orcid": "https://orcid.org/0000-0002-7512-5559",
+          "institutions": [
+            "University of Missouri"
+          ]
+        },
+        {
+          "name": "Patricia Friedrichsen",
+          "openalex_id": "A5088719642",
+          "orcid": "https://orcid.org/0000-0001-8777-2107",
+          "institutions": [
+            "University of Missouri"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-06",
+      "abstract": null,
+      "cited_by_count": 157,
+      "type": "article",
+      "source": {
+        "name": "Science & Education",
+        "type": "journal",
+        "issn": [
+          "0926-7220",
+          "1573-1901"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11191-021-00206-1.pdf"
+      },
+      "topics": [
+        "Science Education and Pedagogy",
+        "Educational Strategies and Epistemologies",
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W3140473164"
+    },
+    {
+      "openalex_id": "W2991187744",
+      "doi": "10.1086/709729",
+      "title": "Transparency in Complex Computational Systems",
+      "authors": [
+        {
+          "name": "Kathleen Creel",
+          "openalex_id": "A5050985956",
+          "orcid": "https://orcid.org/0000-0001-7371-2680"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-30",
+      "abstract": "Scientists depend on complex computational systems that are often ineliminably opaque, to the detriment of our ability to give scientific explanations and detect artifacts. Some philosophers have suggested treating opaque systems instrumentally, but computer scientists developing strategies for increasing transparency are correct in finding this unsatisfying. Instead, I propose an analysis of transparency as having three forms: transparency of the algorithm, the realization of the algorithm in code, and the way that code is run on particular hardware and data. This targets the transparency most useful for a task, avoiding instrumentalism by providing partial transparency when full transparency is impossible.",
+      "cited_by_count": 167,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "0031-8248",
+          "1539-767X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4DB040EB28172CADF5F2858B62D0952C/S0031824800016391a.pdf/div-class-title-transparency-in-complex-computational-systems-div.pdf"
+      },
+      "topics": [
+        "Computability, Logic, AI Algorithms",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W2991187744"
+    },
+    {
+      "openalex_id": "W4401111715",
+      "doi": "10.3390/e26080652",
+      "title": "Statistics as a Social Activity: Attitudes toward Amalgamating Evidence",
+      "authors": [
+        {
+          "name": "Andrew Gelman",
+          "openalex_id": "A5074093929",
+          "orcid": "https://orcid.org/0000-0002-6975-2601",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Keith O\u2019Rourke",
+          "openalex_id": "A5111883262"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-30",
+      "abstract": "Amalgamation of evidence in statistics is conducted in several ways. Within a study, multiple observations are combined by averaging, or as factors in a likelihood or prediction algorithm. In multilevel modeling or Bayesian analysis, population or prior information is combined with data using the weighted averaging derived from probability modeling. In a scientific research project, inferences from data analysis are interpreted in light of mechanistic models and substantive theories. Within a scholarly or applied research community, data and conclusions from separate laboratories are amalgamated through a series of steps, including peer review, meta-analysis, review articles, and replication studies. These issues have been discussed for many years in the philosophy of science and statistics, gaining attention in recent decades first with the renewed popularity of Bayesian inference and then with concerns about the replication crisis in science. In this article, we review the amalgamation of statistical evidence from different perspectives, connecting the foundations of statistics to the social processes of validation, criticism, and consensus building.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Entropy",
+        "type": "journal",
+        "issn": [
+          "1099-4300"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1099-4300/26/8/652/pdf?version=1722407968"
+      },
+      "topics": [
+        "Mental Health Research Topics",
+        "Meta-analysis and systematic reviews",
+        "Data Analysis with R"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W4401111715"
+    },
+    {
+      "openalex_id": "W3019103367",
+      "doi": "10.4018/ijqspr.20200701.oa1",
+      "title": "Principles of QSAR Modeling",
+      "authors": [
+        {
+          "name": "Paola Gramatica",
+          "openalex_id": "A5037756450",
+          "orcid": "https://orcid.org/0000-0002-6364-6138",
+          "institutions": [
+            "University of Insubria"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-27",
+      "abstract": "At the end of her academic career, the author summarizes the main aspects of QSAR modeling, giving comments and suggestions according to her 23 years' experience in QSAR research on environmental topics. The focus is mainly on Multiple Linear Regression, particularly Ordinary Least Squares, using a Genetic Algorithm for variable selection from various theoretical molecular descriptors, but the comments can be useful also for other QSAR methods. The need for rigorous validation, also external, and for applicability domain check to guarantee predictivity and reliability of QSAR models is particularly highlighted. The commented approach is the \u201cpredictive\u201d one, based on chemometrics, and is usefully applied to the prioritization of environmental pollutants. All the discussed points and the author's ideas are implemented in the software QSARINS, as a legacy to the QSAR community.",
+      "cited_by_count": 219,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Quantitative Structure-Property Relationships",
+        "type": "journal",
+        "issn": [
+          "2379-7479",
+          "2379-7487"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.igi-global.com/ViewTitle.aspx?TitleId=253852&isxn=9781799808435"
+      },
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Spectroscopy and Chemometric Analyses",
+        "Metabolomics and Mass Spectrometry Studies"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W3019103367"
+    },
+    {
+      "openalex_id": "W3118185478",
+      "doi": "10.33735/phimisci.2020.ii.64",
+      "title": "Predictive processing as a systematic basis for identifying the neural correlates of consciousness",
+      "authors": [
+        {
+          "name": "Jakob Hohwy",
+          "openalex_id": "A5083789193",
+          "orcid": "https://orcid.org/0000-0003-3906-3060",
+          "institutions": [
+            "Australian Regenerative Medicine Institute",
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Anil K. Seth",
+          "openalex_id": "A5084274787",
+          "orcid": "https://orcid.org/0000-0002-1421-6051",
+          "institutions": [
+            "University of Sussex"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-30",
+      "abstract": "The search for the neural correlates of consciousness is in need of a systematic, principled foundation that can endow putative neural correlates with greater predictive and explanatory value. Here, we propose the predictive processing framework for brain function as a promising candidate for providing this systematic foundation. The proposal is motivated by that framework\u2019s ability to address three general challenges to identifying the neural correlates of consciousness, and to satisfy two constraints common to many theories of consciousness. Implementing the search for neural correlates of consciousness through the lens of predictive processing delivers strong potential for predictive and explanatory value through detailed, systematic mappings between neural substrates and phenomenological structure. We conclude that the predictive processing framework, precisely because it at the outset is not itself a theory of consciousness, has significant potential for advancing the neuroscience of consciousness.",
+      "cited_by_count": 146,
+      "type": "article",
+      "source": {
+        "name": "Philosophy and the Mind Sciences",
+        "type": "journal",
+        "issn": [
+          "2699-0369"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://philosophymindscience.org/index.php/phimisci/article/download/8947/8521"
+      },
+      "topics": [
+        "Neural dynamics and brain function",
+        "EEG and Brain-Computer Interfaces",
+        "Functional Brain Connectivity Studies"
+      ],
+      "referenced_works_count": 251,
+      "url": "https://openalex.org/W3118185478"
+    },
+    {
+      "openalex_id": "W3095703932",
+      "doi": "10.1177/0261192920965977",
+      "title": "A Review of <i>In Silico</i> Tools as Alternatives to Animal Testing: Principles, Resources and Applications",
+      "authors": [
+        {
+          "name": "Judith C. Madden",
+          "openalex_id": "A5075660281",
+          "orcid": "https://orcid.org/0000-0001-6142-5860",
+          "institutions": [
+            "Liverpool John Moores University"
+          ]
+        },
+        {
+          "name": "Steven J. Enoch",
+          "openalex_id": "A5084970371",
+          "orcid": "https://orcid.org/0000-0001-9111-5783",
+          "institutions": [
+            "Liverpool John Moores University"
+          ]
+        },
+        {
+          "name": "Alicia Paini",
+          "openalex_id": "A5015276700",
+          "orcid": "https://orcid.org/0000-0002-0669-1872",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "M Cronin",
+          "openalex_id": "A5054905346",
+          "orcid": "https://orcid.org/0000-0002-6207-4158",
+          "institutions": [
+            "Liverpool John Moores University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-01",
+      "abstract": "Across the spectrum of industrial sectors, including pharmaceuticals, chemicals, personal care products, food additives and their associated regulatory agencies, there is a need to develop robust and reliable methods to reduce or replace animal testing. It is generally recognised that no single alternative method will be able to provide a one-to-one replacement for assays based on more complex toxicological endpoints. Hence, information from a combination of techniques is required. A greater understanding of the time and concentration-dependent mechanisms, underlying the interactions between chemicals and biological systems, and the sequence of events that can lead to apical effects, will help to move forward the science of reducing and replacing animal experiments. In silico modelling, in vitro assays, high-throughput screening, organ-on-a-chip technology, omics and mathematical biology, can provide complementary information to develop a complete picture of the potential response of an organism to a chemical stressor. Adverse outcome pathways (AOPs) and systems biology frameworks enable relevant information from diverse sources to be logically integrated. While individual researchers do not need to be experts across all disciplines, it is useful to have a fundamental understanding of what other areas of science have to offer, and how knowledge can be integrated with other disciplines. The purpose of this review is to provide those who are unfamiliar with predictive in silico tools, with a fundamental understanding of the underlying theory. Current applications, software, barriers to acceptance, new developments and the use of integrated approaches are all discussed, with additional resources being signposted for each of the topics.",
+      "cited_by_count": 186,
+      "type": "review",
+      "source": {
+        "name": "Alternatives to Laboratory Animals",
+        "type": "journal",
+        "issn": [
+          "0261-1929",
+          "2632-3559"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0261192920965977"
+      },
+      "topics": [
+        "Animal testing and alternatives",
+        "Pesticide Exposure and Toxicity",
+        "Effects and risks of endocrine disrupting chemicals"
+      ],
+      "referenced_works_count": 76,
+      "url": "https://openalex.org/W3095703932"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

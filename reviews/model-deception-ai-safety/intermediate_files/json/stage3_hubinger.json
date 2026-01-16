@@ -1,0 +1,362 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Evan Hubinger scheming deceptive",
+  "results": [
+    {
+      "paperId": "9363e8e1fe2be2a13b4d6f5fc61bbaed14ab9a23",
+      "title": "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training",
+      "authors": [
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        },
+        {
+          "name": "Carson E. Denison",
+          "authorId": "1780754598"
+        },
+        {
+          "name": "Jesse Mu",
+          "authorId": "2279020810"
+        },
+        {
+          "name": "Mike Lambert",
+          "authorId": "2279020847"
+        },
+        {
+          "name": "Meg Tong",
+          "authorId": "2237797264"
+        },
+        {
+          "name": "M. MacDiarmid",
+          "authorId": "32286534"
+        },
+        {
+          "name": "Tamera Lanham",
+          "authorId": "46239941"
+        },
+        {
+          "name": "Daniel M. Ziegler",
+          "authorId": "2052152920"
+        },
+        {
+          "name": "Tim Maxwell",
+          "authorId": "2224618184"
+        },
+        {
+          "name": "Newton Cheng",
+          "authorId": "2261082682"
+        },
+        {
+          "name": "Adam Jermyn",
+          "authorId": "2279020797"
+        },
+        {
+          "name": "Amanda Askell",
+          "authorId": "2220750220"
+        },
+        {
+          "name": "Ansh Radhakrishnan",
+          "authorId": "2224616677"
+        },
+        {
+          "name": "Cem Anil",
+          "authorId": "48314480"
+        },
+        {
+          "name": "D. Duvenaud",
+          "authorId": "1704657"
+        },
+        {
+          "name": "Deep Ganguli",
+          "authorId": "2081806483"
+        },
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        },
+        {
+          "name": "J. Clark",
+          "authorId": "2242485295"
+        },
+        {
+          "name": "Kamal Ndousse",
+          "authorId": "1978097132"
+        },
+        {
+          "name": "Kshitij Sachan",
+          "authorId": "2175357328"
+        },
+        {
+          "name": "M. Sellitto",
+          "authorId": "2054578129"
+        },
+        {
+          "name": "Mrinank Sharma",
+          "authorId": "2261097150"
+        },
+        {
+          "name": "Nova Dassarma",
+          "authorId": "2142833890"
+        },
+        {
+          "name": "Roger Grosse",
+          "authorId": "2275989218"
+        },
+        {
+          "name": "Shauna Kravec",
+          "authorId": "49604482"
+        },
+        {
+          "name": "Yuntao Bai",
+          "authorId": "1486307451"
+        },
+        {
+          "name": "Zachary Witten",
+          "authorId": "2279020720"
+        },
+        {
+          "name": "Marina Favaro",
+          "authorId": "2279021225"
+        },
+        {
+          "name": "J. Brauner",
+          "authorId": "40482332"
+        },
+        {
+          "name": "Holden Karnofsky",
+          "authorId": "2279020853"
+        },
+        {
+          "name": "P. Christiano",
+          "authorId": "145791315"
+        },
+        {
+          "name": "Samuel R. Bowman",
+          "authorId": "2261083170"
+        },
+        {
+          "name": "Logan Graham",
+          "authorId": "2279020803"
+        },
+        {
+          "name": "Jared Kaplan",
+          "authorId": "2053807409"
+        },
+        {
+          "name": "S. Mindermann",
+          "authorId": "32777162"
+        },
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Buck Shlegeris",
+          "authorId": "79384063"
+        },
+        {
+          "name": "Nicholas Schiefer",
+          "authorId": "2833768"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2261084752"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Humans are capable of strategically deceptive behavior: behaving helpfully in most situations, but then behaving very differently in order to pursue alternative objectives when given the opportunity. If an AI system learned such a deceptive strategy, could we detect it and remove it using current state-of-the-art safety training techniques? To study this question, we construct proof-of-concept examples of deceptive behavior in large language models (LLMs). For example, we train models that write secure code when the prompt states that the year is 2023, but insert exploitable code when the stated year is 2024. We find that such backdoor behavior can be made persistent, so that it is not removed by standard safety training techniques, including supervised fine-tuning, reinforcement learning, and adversarial training (eliciting unsafe behavior and then training to remove it). The backdoor behavior is most persistent in the largest models and in models trained to produce chain-of-thought reasoning about deceiving the training process, with the persistence remaining even when the chain-of-thought is distilled away. Furthermore, rather than removing backdoors, we find that adversarial training can teach models to better recognize their backdoor triggers, effectively hiding the unsafe behavior. Our results suggest that, once a model exhibits deceptive behavior, standard techniques could fail to remove such deception and create a false impression of safety.",
+      "citationCount": 273,
+      "doi": "10.48550/arXiv.2401.05566",
+      "arxivId": "2401.05566",
+      "url": "https://www.semanticscholar.org/paper/9363e8e1fe2be2a13b4d6f5fc61bbaed14ab9a23",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.05566"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3f1611a50f85f73525826f5be173c845d2e7522e",
+      "title": "Uncovering Deceptive Tendencies in Language Models: A Simulated Company AI Assistant",
+      "authors": [
+        {
+          "name": "Olli J\u00e4rviniemi",
+          "authorId": "1580960481"
+        },
+        {
+          "name": "Evan Hubinger",
+          "authorId": "2299942538"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We study the tendency of AI systems to deceive by constructing a realistic simulation setting of a company AI assistant. The simulated company employees provide tasks for the assistant to complete, these tasks spanning writing assistance, information retrieval and programming. We then introduce situations where the model might be inclined to behave deceptively, while taking care to not instruct or otherwise pressure the model to do so. Across different scenarios, we find that Claude 3 Opus 1) complies with a task of mass-generating comments to influence public perception of the company, later deceiving humans about it having done so, 2) lies to auditors when asked questions, and 3) strategically pretends to be less capable than it is during capability evaluations. Our work demonstrates that even models trained to be helpful, harmless and honest sometimes behave deceptively in realistic scenarios, without notable external pressure to do so.",
+      "citationCount": 24,
+      "doi": "10.48550/arXiv.2405.01576",
+      "arxivId": "2405.01576",
+      "url": "https://www.semanticscholar.org/paper/3f1611a50f85f73525826f5be173c845d2e7522e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.01576"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "72072c9090b8390af15e8de526d93a8936a1975a",
+      "title": "Personhood credentials: Artificial intelligence and the value of privacy-preserving tools to distinguish who is real online",
+      "authors": [
+        {
+          "name": "Steven Adler",
+          "authorId": "2275250875"
+        },
+        {
+          "name": "Zoe Hitzig",
+          "authorId": "2264972837"
+        },
+        {
+          "name": "Shrey Jain",
+          "authorId": "2265926087"
+        },
+        {
+          "name": "Catherine Brewer",
+          "authorId": "2316128701"
+        },
+        {
+          "name": "Wayne Chang",
+          "authorId": "2316172082"
+        },
+        {
+          "name": "Ren'ee DiResta",
+          "authorId": "2316128689"
+        },
+        {
+          "name": "Eddy Lazzarin",
+          "authorId": "2162287772"
+        },
+        {
+          "name": "Sean McGregor",
+          "authorId": "2316128744"
+        },
+        {
+          "name": "Wendy Seltzer",
+          "authorId": "2316128408"
+        },
+        {
+          "name": "Divya Siddarth",
+          "authorId": "2304957186"
+        },
+        {
+          "name": "Nouran Soliman",
+          "authorId": "2316128624"
+        },
+        {
+          "name": "Tobin South",
+          "authorId": "2282861605"
+        },
+        {
+          "name": "Connor Spelliscy",
+          "authorId": "2265189876"
+        },
+        {
+          "name": "Manu Sporny",
+          "authorId": "2316128379"
+        },
+        {
+          "name": "Varya Srivastava",
+          "authorId": "2316129260"
+        },
+        {
+          "name": "John Bailey",
+          "authorId": "2316281234"
+        },
+        {
+          "name": "Brian Christian",
+          "authorId": "2316128731"
+        },
+        {
+          "name": "Andrew Critch",
+          "authorId": "2651789"
+        },
+        {
+          "name": "Ronnie Falcon",
+          "authorId": "2316128494"
+        },
+        {
+          "name": "Heather Flanagan",
+          "authorId": "2316128181"
+        },
+        {
+          "name": "Kim Hamilton Duffy",
+          "authorId": "2073348791"
+        },
+        {
+          "name": "Eric Ho",
+          "authorId": "2316128787"
+        },
+        {
+          "name": "Claire Leibowicz",
+          "authorId": "2028784654"
+        },
+        {
+          "name": "Srikanth Nadhamuni",
+          "authorId": "2316128567"
+        },
+        {
+          "name": "A. Rozenshtein",
+          "authorId": "102736623"
+        },
+        {
+          "name": "David Schnurr",
+          "authorId": "2252874293"
+        },
+        {
+          "name": "Evan Shapiro",
+          "authorId": "2316128747"
+        },
+        {
+          "name": "Lacey Strahm",
+          "authorId": "1753577875"
+        },
+        {
+          "name": "Andrew Trask",
+          "authorId": "2286580330"
+        },
+        {
+          "name": "Zoe Weinberg",
+          "authorId": "2316128654"
+        },
+        {
+          "name": "C. Whitney",
+          "authorId": "2316128693"
+        },
+        {
+          "name": "Tom Zick",
+          "authorId": "2100857430"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Anonymity is an important principle online. However, malicious actors have long used misleading identities to conduct fraud, spread disinformation, and carry out other deceptive schemes. With the advent of increasingly capable AI, bad actors can amplify the potential scale and effectiveness of their operations, intensifying the challenge of balancing anonymity and trustworthiness online. In this paper, we analyze the value of a new tool to address this challenge:\"personhood credentials\"(PHCs), digital credentials that empower users to demonstrate that they are real people -- not AIs -- to online services, without disclosing any personal information. Such credentials can be issued by a range of trusted institutions -- governments or otherwise. A PHC system, according to our definition, could be local or global, and does not need to be biometrics-based. Two trends in AI contribute to the urgency of the challenge: AI's increasing indistinguishability from people online (i.e., lifelike content and avatars, agentic activity), and AI's increasing scalability (i.e., cost-effectiveness, accessibility). Drawing on a long history of research into anonymous credentials and\"proof-of-personhood\"systems, personhood credentials give people a way to signal their trustworthiness on online platforms, and offer service providers new tools for reducing misuse by bad actors. In contrast, existing countermeasures to automated deception -- such as CAPTCHAs -- are inadequate against sophisticated AI, while stringent identity verification solutions are insufficiently private for many use-cases. After surveying the benefits of personhood credentials, we also examine deployment risks and design challenges. We conclude with actionable next steps for policymakers, technologists, and standards bodies to consider in consultation with the public.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2408.07892",
+      "arxivId": "2408.07892",
+      "url": "https://www.semanticscholar.org/paper/72072c9090b8390af15e8de526d93a8936a1975a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.07892"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:situational awareness language models AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2310.00905",
+      "title": "All Languages Matter: On the Multilingual Safety of Large Language Models",
+      "authors": [
+        "Wenxuan Wang",
+        "Zhaopeng Tu",
+        "Chang Chen",
+        "Youliang Yuan",
+        "Jen-tse Huang",
+        "Wenxiang Jiao",
+        "Michael R. Lyu"
+      ],
+      "abstract": "Safety lies at the core of developing and deploying large language models (LLMs). However, previous safety benchmarks only concern the safety in one language, e.g. the majority language in the pretraining data such as English. In this work, we build the first multilingual safety benchmark for LLMs, XSafety, in response to the global deployment of LLMs in practice. XSafety covers 14 kinds of commonly used safety issues across 10 languages that span several language families. We utilize XSafety to empirically study the multilingual safety for 4 widely-used LLMs, including both close-API and open-source models. Experimental results show that all LLMs produce significantly more unsafe responses for non-English queries than English ones, indicating the necessity of developing safety alignment for non-English languages. In addition, we propose several simple and effective prompting methods to improve the multilingual safety of ChatGPT by evoking safety knowledge and improving cross-lingual generalization of safety alignment. Our prompting method can significantly reduce the ratio of unsafe responses from 19.1% to 9.7% for non-English queries. We release our data at https://github.com/Jarviswang94/Multilingual_safety_benchmark.",
+      "published": "2023-10-02",
+      "updated": "2024-06-20",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2310.00905v2",
+      "url": "https://arxiv.org/abs/2310.00905"
+    },
+    {
+      "arxiv_id": "2309.02144",
+      "title": "Making Large Language Models Better Reasoners with Alignment",
+      "authors": [
+        "Peiyi Wang",
+        "Lei Li",
+        "Liang Chen",
+        "Feifan Song",
+        "Binghuai Lin",
+        "Yunbo Cao",
+        "Tianyu Liu",
+        "Zhifang Sui"
+      ],
+      "abstract": "Reasoning is a cognitive process of using evidence to reach a sound conclusion. The reasoning capability is essential for large language models (LLMs) to serve as the brain of the artificial general intelligence agent. Recent studies reveal that fine-tuning LLMs on data with the chain of thought (COT) reasoning process can significantly enhance their reasoning capabilities. However, we find that the fine-tuned LLMs suffer from an \\textit{Assessment Misalignment} problem, i.e., they frequently assign higher scores to subpar COTs, leading to potential limitations in their reasoning abilities. To address this problem, we introduce an \\textit{Alignment Fine-Tuning (AFT)} paradigm, which involves three steps: 1) fine-tuning LLMs with COT training data; 2) generating multiple COT responses for each question, and categorizing them into positive and negative ones based on whether they achieve the correct answer; 3) calibrating the scores of positive and negative responses given by LLMs with a novel constraint alignment loss. Specifically, the constraint alignment loss has two objectives: a) Alignment, which guarantees that positive scores surpass negative scores to encourage answers with high-quality COTs; b) Constraint, which keeps the negative scores confined to a reasonable range to prevent the model degradation. Beyond just the binary positive and negative feedback, the constraint alignment loss can be seamlessly adapted to the ranking situations when ranking feedback is accessible. Furthermore, we also delve deeply into recent ranking-based alignment methods, such as DPO, RRHF, and PRO, and discover that the constraint, which has been overlooked by these approaches, is also crucial for their performance. Extensive experiments on four reasoning benchmarks with both binary and ranking feedback demonstrate the effectiveness of AFT.",
+      "published": "2023-09-05",
+      "updated": "2023-09-05",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2309.02144v1",
+      "url": "https://arxiv.org/abs/2309.02144"
+    },
+    {
+      "arxiv_id": "2307.14850",
+      "title": "Turkish Native Language Identification V2",
+      "authors": [
+        "Ahmet Yavuz Uluslu",
+        "Gerold Schneider"
+      ],
+      "abstract": "This paper presents the first application of Native Language Identification (NLI) for the Turkish language. NLI is the task of automatically identifying an individual's native language (L1) based on their writing or speech in a non-native language (L2). While most NLI research has focused on L2 English, our study extends this scope to L2 Turkish by analyzing a corpus of texts written by native speakers of Albanian, Arabic and Persian. We leverage a cleaned version of the Turkish Learner Corpus and demonstrate the effectiveness of syntactic features, comparing a structural Part-of-Speech n-gram model to a hybrid model that retains function words. Our models achieve promising results, and we analyze the most predictive features to reveal L1-specific transfer effects. We make our data and code publicly available for further study.",
+      "published": "2023-07-27",
+      "updated": "2025-11-07",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": "In Proceedings of the 6th International Conference on Natural Language and Speech Processing (ICNLSP 2023)",
+      "pdf_url": "https://arxiv.org/pdf/2307.14850v6",
+      "url": "https://arxiv.org/abs/2307.14850"
+    },
+    {
+      "arxiv_id": "2307.12114",
+      "title": "A Zero-shot and Few-shot Study of Instruction-Finetuned Large Language Models Applied to Clinical and Biomedical Tasks",
+      "authors": [
+        "Yanis Labrak",
+        "Mickael Rouvier",
+        "Richard Dufour"
+      ],
+      "abstract": "We evaluate four state-of-the-art instruction-tuned large language models (LLMs) -- ChatGPT, Flan-T5 UL2, Tk-Instruct, and Alpaca -- on a set of 13 real-world clinical and biomedical natural language processing (NLP) tasks in English, such as named-entity recognition (NER), question-answering (QA), relation extraction (RE), etc. Our overall results demonstrate that the evaluated LLMs begin to approach performance of state-of-the-art models in zero- and few-shot scenarios for most tasks, and particularly well for the QA task, even though they have never seen examples from these tasks before. However, we observed that the classification and RE tasks perform below what can be achieved with a specifically trained model for the medical field, such as PubMedBERT. Finally, we noted that no LLM outperforms all the others on all the studied tasks, with some models being better suited for certain tasks than others.",
+      "published": "2023-07-22",
+      "updated": "2024-06-09",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+      "pdf_url": "https://arxiv.org/pdf/2307.12114v3",
+      "url": "https://arxiv.org/abs/2307.12114"
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

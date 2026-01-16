@@ -1,0 +1,1009 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "philosophical definition deception",
+  "results": [
+    {
+      "paperId": "569d6641ff9b67c2bd399ea0519940a171a48829",
+      "title": "Honesty Is the Best Policy: Defining and Mitigating AI Deception",
+      "authors": [
+        {
+          "name": "Francis Rhys Ward",
+          "authorId": "1907671255"
+        },
+        {
+          "name": "Tom Everitt",
+          "authorId": "1868196"
+        },
+        {
+          "name": "Francesco Belardinelli",
+          "authorId": "2275239775"
+        },
+        {
+          "name": "Francesca Toni",
+          "authorId": "49973505"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Deceptive agents are a challenge for the safety, trustworthiness, and cooperation of AI systems. We focus on the problem that agents might deceive in order to achieve their goals (for instance, in our experiments with language models, the goal of being evaluated as truthful). There are a number of existing definitions of deception in the literature on game theory and symbolic AI, but there is no overarching theory of deception for learning agents in games. We introduce a formal definition of deception in structural causal games, grounded in the philosophy literature, and applicable to real-world machine learning systems. Several examples and results illustrate that our formal definition aligns with the philosophical and commonsense meaning of deception. Our main technical result is to provide graphical criteria for deception. We show, experimentally, that these results can be used to mitigate deception in reinforcement learning agents and language models.",
+      "citationCount": 45,
+      "doi": "10.48550/arXiv.2312.01350",
+      "arxivId": "2312.01350",
+      "url": "https://www.semanticscholar.org/paper/569d6641ff9b67c2bd399ea0519940a171a48829",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2312.01350"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "727998954c586eaea6caa02543cdf92b0e4f3e4b",
+      "title": "Imposter Syndrome and Self-Deception",
+      "authors": [
+        {
+          "name": "Stephen Gadsby",
+          "authorId": "9635182"
+        }
+      ],
+      "year": 2020,
+      "abstract": "ABSTRACT Many intelligent, capable, and successful individuals believe that their success is due to luck, and fear that they will someday be exposed as imposters. A puzzling feature of this phenomenon, commonly referred to as imposter syndrome, is that these same individuals treat evidence in ways that maintain their false beliefs and debilitating fears: they ignore and misattribute evidence of their own abilities, while readily accepting evidence in favour of their inadequacy. I propose a novel account of imposter syndrome as an instance of self-deception, whereby biased evidence treatment is driven by the motivational benefit of negative self-appraisal. This account illuminates a number of interconnected philosophical and scientific puzzles related to the explanation, definition, and value of imposter syndrome.",
+      "citationCount": 19,
+      "doi": "10.1080/00048402.2021.1874445",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/727998954c586eaea6caa02543cdf92b0e4f3e4b",
+      "venue": "Australasian Journal of Philosophy",
+      "journal": {
+        "name": "Australasian Journal of Philosophy",
+        "pages": "247 - 261",
+        "volume": "100"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "944124ba920162ca1d468ff16e02b4091ea60f03",
+      "title": "Disinformation in the EU Law: Moral Theories and the Context",
+      "authors": [
+        {
+          "name": "Johanas Baltrimas",
+          "authorId": "2086077764"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In recent years, there have been scandalous cases of information warfare acts in the\u00a0Western world committed by hostile foreign governments. The\u00a0effect of such acts is dramatically amplified by the\u00a0widespread use of the\u00a0internet media and ongoing military conflicts. Accordingly, the\u00a0EU has taken steps in the\u00a0battle against disinformation. The\u00a0legal definition of disinformation contains attributes that need further explanation, particularly, lying and deception. Philosophical theories contain valuable insights on the\u00a0morality of lying and deception, which can be adapted for interpretation of the\u00a0disinformation concept.",
+      "citationCount": 0,
+      "doi": "10.22364/jull.17.17",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/944124ba920162ca1d468ff16e02b4091ea60f03",
+      "venue": "JOURNAL OF THE UNIVERSITY OF LATVIA LAW",
+      "journal": {
+        "name": "Journal of the University of Latvia. Law"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2917c16da13f4db5f823bfb7f6b8ad8017a91459",
+      "title": "Lying and Deception",
+      "authors": [
+        {
+          "name": "D. Fallis",
+          "authorId": "2992198"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 19,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2917c16da13f4db5f823bfb7f6b8ad8017a91459",
+      "venue": "",
+      "journal": {
+        "name": "Philosopher's Imprint",
+        "volume": "10"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b815030dcbed8ab62935e98ec05c72fd6d3a9aa5",
+      "title": "Embodied Irrationality? Knowledge Avoidance, Willful Ignorance, and the Paradox of Autonomy",
+      "authors": [
+        {
+          "name": "Selene Arfini",
+          "authorId": "1710158"
+        },
+        {
+          "name": "L. Magnani",
+          "authorId": "1695372"
+        }
+      ],
+      "year": 2021,
+      "abstract": "In the current philosophical and psychological literature, knowledge avoidance and willful ignorance seem to be almost identical conditions involved in irrational patterns of reasoning. In this paper, we will argue that not only these two phenomena should be distinguished, but that they also fall into different parts of the epistemic rationality-irrationality spectrum. We will adopt an epistemological and embodied perspective to propose a definition for both terms. Then, we will maintain that, while willful ignorance is involved in irrational patterns of reasoning and beliefs, knowledge avoidance should be considered epistemically rational under particular circumstances. We will begin our analysis by considering which of the two phenomena is involved in patterns of reasoning that are still amply recognized as irrational\u2014as wishful thinking, self-deception, and akrasia. We will then discuss the impact of epistemic feelings\u2014which are emotional events that depend on epistemic states\u2014on agents' decision-making. Then, we will consider the impact of willful ignorance and knowledge avoidance on agents' autonomy. By considering these issues, we will argue that when agents are aware that they are avoiding certain information (and aware of what kind of feelings acquiring the information would trigger), knowledge avoidance should be considered a rational, autonomy-increasing, hope-depended selection of information.",
+      "citationCount": 8,
+      "doi": "10.3389/fpsyg.2021.769591",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b815030dcbed8ab62935e98ec05c72fd6d3a9aa5",
+      "venue": "Frontiers in Psychology",
+      "journal": {
+        "name": "Frontiers in Psychology",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a54fb58edc16b16cc97dcc665c5195e806cdb172",
+      "title": "Are Bald-Faced Lies Deceptive After All?",
+      "authors": [
+        {
+          "name": "D. Fallis",
+          "authorId": "2992198"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 28,
+      "doi": "10.2139/SSRN.2250050",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a54fb58edc16b16cc97dcc665c5195e806cdb172",
+      "venue": "",
+      "journal": {
+        "name": "Ratio",
+        "pages": "81-96",
+        "volume": "28"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3963683e041a005ea724ef73f404f7f7c69e7adc",
+      "title": "Not Just Lying to Oneself: An Examination of Bad Faith in Sartre",
+      "authors": [
+        {
+          "name": "Stalin Joseph Correya",
+          "authorId": "2051812064"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s40961-021-00232-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3963683e041a005ea724ef73f404f7f7c69e7adc",
+      "venue": "Journal of Indian Council of Philosophical Research",
+      "journal": {
+        "name": "Journal of Indian Council of Philosophical Research",
+        "pages": "103 - 121",
+        "volume": "38"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "49b38901f9efc84b867d3d34143446feaf6af716",
+      "title": "ABUSO DO PODER RELIGIOSO NAS ELEI\u00c7\u00d5ES EM TEMPOS DE DESRAZ\u00c3O: DO SOFISMO A UM NECESS\u00c1RIO REPENSAR \u00c9TICO",
+      "authors": [
+        {
+          "name": "C\u00e9lem Guimar\u00e3es Guerra J\u00fanior",
+          "authorId": "2036153667"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/49b38901f9efc84b867d3d34143446feaf6af716",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": "1"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0f6db4419a845c1203930282ecb3abde389751e3",
+      "title": "Failing My Way to Success",
+      "authors": [
+        {
+          "name": "Steven H. Lobel",
+          "authorId": "119144390"
+        }
+      ],
+      "year": 2020,
+      "abstract": "This chapter on \u201cFailing My Way to Success\u201d offers an \u201cin the trenches\u201d account of social entrepreneurship drawn from the 2015 memoir Failing My Way to Success: Life Lessons of an Entrepreneur. The book chronicles personal and professional disappointments, betrayals, and bankruptcies from which grew the author\u2019s hard-won lessons of failure and the climb back to success. These lessons range from business best-practices to interpersonal skills to philosophical truths, but at their heart lie two ancient principles. The first warns against self-deception, expressed as the axiom \u201cknow thyself\u201d and is perhaps the toughest challenge that the beginning entrepreneur faces. The second is the Jewish concept of tikkun olam\u2014\u201crepair of the world\u201d\u2014the belief that we bear responsibility not only for ourselves and our immediate circle but for the world at large. This essay argues that perhaps the most important definition of \u201csuccess\u201d is the capacity both of means and spirit to fulfill this command.",
+      "citationCount": 0,
+      "doi": "10.1093/oso/9780197518298.003.0008",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0f6db4419a845c1203930282ecb3abde389751e3",
+      "venue": "Social Entrepreneurship and Enterprises in Economic and Social Development",
+      "journal": {
+        "name": "Social Entrepreneurship and Enterprises in Economic and Social Development"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7c060e6b014b2e785d20b56f13c45262d53cc5fe",
+      "title": "Book review: Marina Bondi and Rosa Lor\u00e9s Sanz (eds), Abstracts in Academic Discourse: Variation and Change",
+      "authors": [
+        {
+          "name": "Mingfang Chen",
+          "authorId": "2358409215"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/1461445616646923f",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7c060e6b014b2e785d20b56f13c45262d53cc5fe",
+      "venue": "",
+      "journal": {
+        "name": "Discourse Studies",
+        "pages": "484 - 486",
+        "volume": "18"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "67583d43f641b46dcd5b72b213120ac1a38f53e1",
+      "title": "Contrary thinking : selected essays of Daya Krishna",
+      "authors": [
+        {
+          "name": "D. Krishna",
+          "authorId": "40692722"
+        },
+        {
+          "name": "Nalini Bhushan",
+          "authorId": "21553729"
+        },
+        {
+          "name": "J. Garfield",
+          "authorId": "40174396"
+        },
+        {
+          "name": "D. Raveh",
+          "authorId": "66128037"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": "10.1093/ACPROF:OSOBL/9780199795550.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/67583d43f641b46dcd5b72b213120ac1a38f53e1",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d3bc0b60d073e02eba579e035bfa5f11ba8b918b",
+      "title": "What is spirituality? The challenges of a philosophical definition",
+      "authors": [
+        {
+          "name": "Doris Reisinger",
+          "authorId": "2312973470"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In recent years, there have been a number of philosophical publications focusing on spirituality. But even in pertinent philosophical texts it is rare to find attempts at shaping a workable definition of spirituality, despite the obvious need for a clear definition for the philosophical debate on spirituality. This paper addresses the major issues in shaping a satisfactory definition of spirituality: an understanding of spirituality as transcendence of critical reasoning, the broadness of the concept, the implications of various scholarly backgrounds and the challenge of avoiding a circular definition. It suggests a rough clustering of common approaches into ontological, ethical, and functional definitions and discusses their weaknesses. It is argued that an inclusive, metaphysically parsimonious, and stipulative definition is the best way to address typical difficulties and avoid weaknesses of common definitions. Finally, it proposes a definition based on meaning, a term that often appears in the discussion of spirituality. It is suggested that understanding meaning in the ordinary sense of the word might be a good starting point to arrive at a satisfactory definition of spirituality.",
+      "citationCount": 3,
+      "doi": "10.1007/s11841-024-01034-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d3bc0b60d073e02eba579e035bfa5f11ba8b918b",
+      "venue": "Sophia",
+      "journal": {
+        "name": "Sophia",
+        "pages": "117 - 131",
+        "volume": "64"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "47e16f23261fb22fa9a7092ada1f3cd6ca9ecbfa",
+      "title": "Philosophical Definition and Description of Crime",
+      "authors": [
+        {
+          "name": "Beshimov Bakhtiyor Iskandarovich",
+          "authorId": "2308730060"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Crime can be defined as any behavior that violates societal norms and is punishable by law. It encompasses a variety of acts that range from petty theft to serious offenses such as murder. Crime is not only harmful to the individual victim but also has broader negative consequences for society as a whole. There are many theories that attempt to explain the causes of crime, including psychological, sociological, and economic perspectives. These theories often focus on factors such as poverty, lack of education, substance abuse, and societal influences as contributing to criminal behavior. The impact of crime on society can be significant, leading to feelings of fear, mistrust, and insecurity among the population. Crime also poses challenges for law enforcement agencies and the criminal justice system in terms of prevention, investigation, and prosecution. Efforts to combat crime include a combination of law enforcement, social programs, and community involvement. These measures aim to address the root causes of criminal behavior and provide support for individuals at risk of engaging in criminal activities. This article examines crime as a complex and multifaceted phenomenon that requires a comprehensive approach to address. By understanding the causes and consequences of crime, society can work towards creating a safer and more just community for all.",
+      "citationCount": 0,
+      "doi": "10.46759/iijsr.2024.8217",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/47e16f23261fb22fa9a7092ada1f3cd6ca9ecbfa",
+      "venue": "Irish Interdisciplinary Journal of Science &amp; Research",
+      "journal": {
+        "name": "Irish Interdisciplinary Journal of Science &amp; Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ca093a893351f5bef25a874d232fdb32e5d12599",
+      "title": "A Philosophical Liberal Critique of the Postmodern Definition of Social Justice in Social Work Education Competency Standards",
+      "authors": [
+        {
+          "name": "M. A. van Zyl",
+          "authorId": "24801191"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT The purpose of this philosophical liberal critique of the 2022 Educational Policy andAccreditation Standards (EPAS) is to highlight the danger of using a single lens perspective in social work education in addressing discrimination, racism, inequality and other forms of injustices. A brief review of the concept of social justice illustrates how these standards, influenced by critical theories, a postmodern and nonscientific framework, changed how social justice is defined. The critique focuses on implications of moving away from universal human rights in defining social justice; the limiting impact of a single lens approach for rigorous investigation and knowledge development; how nonscientific approaches fail to correct confirmation bias; the authoritarian nature of critical theories, and some inherent problems of critical theory social justice ideology. Last, a recommendation is made that accreditation standards for social work should stay clear of from authoritarian frameworks that are prescriptive and intolerant of a diversity of ideas, even if a perspective is the \u201cflavor of the day.\u201d",
+      "citationCount": 2,
+      "doi": "10.1080/08841233.2025.2469547",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ca093a893351f5bef25a874d232fdb32e5d12599",
+      "venue": "Journal of Teaching in Social Work",
+      "journal": {
+        "name": "Journal of Teaching in Social Work",
+        "pages": "348 - 361",
+        "volume": "45"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "0243bc8970af67d2c5c485db5e35662fdd5568cb",
+      "title": "Negation, Triviality, and The Limits of Logical Definition: A Philosophical Synthesis",
+      "authors": [
+        {
+          "name": "Zixi Chen",
+          "authorId": "2390271385"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The status of negation in logic and philosophy is paradoxical: while indispensable as an operator, it is ontologically and epistemically trivial when treated as a primary mode of definition. This paper advances the thesis that negation, when used to describe or define, collapses into minimal truth-valueapproaching nullity. Drawing upon Russells theory of descriptions, Cantors arguments on cardinality, and classical and contemporary metaphysical debates, this paper argues that negation cannot meaningfully constitute knowledge. Instead, definition and logical discourse require positive determination, or what this paper terms affirmative ontology. Through systematic analysis interwoven with dialogical fragments in the Platonic style, the paper demonstrates how triviality, redundancy, and vacuity plague negation across philosophy, mathematics, and linguistics. It concludes with reflections on consciousness, machine computation, and the indispensability of affirmation for logical and metaphysical coherence. This paper claims that negation is trivial if it is a mode of definition, and in this case, its function serving as ontological content turns into redundancy, since to define something as what it is not is to fail to define it at all.",
+      "citationCount": 0,
+      "doi": "10.54254/2753-7064/2025.km28203",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0243bc8970af67d2c5c485db5e35662fdd5568cb",
+      "venue": "Communications in Humanities Research",
+      "journal": {
+        "name": "Communications in Humanities Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4b58be4c8b4a1fb971f51fd9fdbadf04c9683309",
+      "title": "Discussion on the Definition, Boundary and Rationality of Academic Freedom - A Philosophical Dimension Based Examination",
+      "authors": [
+        {
+          "name": "Jianan Guo",
+          "authorId": "2345423150"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Academic freedom is the guarantee of knowledge production and scientific research. Academic freedom is essential for the progress and development of modern free society. By analyzing previous studies, this paper makes a new interpretation and explanation of the definition, boundaries and rationality of academic freedom from a philosophical perspective. In terms of its definition, academic freedom means that academic subjects are not arbitrarily dominated by other individuals or groups in the knowledge field of life, and they properly control their own wishes and actions in this field. In terms of its boundaries, academic freedom should protect the corresponding institutions as long as they or their activities are characterized by practical activities that generally promote the advancement of knowledge and understanding. In terms of its rationality, academic freedom is an appropriate consideration of the knowledge field of social life. Furthermore, from the perspective of individualism, the rationality of academic freedom is reflected, and it is proposed that the realization of academic freedom lies in the fact that researchers should use the methodology of reliability to conduct investigations and research, and university academic subjects should accept strict scrutiny from the society and the authoritative institutions of the academic community in free academic research, and protect teaching institutions that aim to pursue the truth, thus providing theoretical guidance and practical significance for inspiring innovation for the future development of academic freedom.",
+      "citationCount": 0,
+      "doi": "10.48014/tpcp.20240513001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4b58be4c8b4a1fb971f51fd9fdbadf04c9683309",
+      "venue": "Theory and Practice of Chinese Pedagogy",
+      "journal": {
+        "name": "Theory and Practice of Chinese Pedagogy"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "32a38c2119d55debab65996b5df1af56bdb84738",
+      "title": "Philosophical note: The principle of transmitting the definition component-wise",
+      "authors": [
+        {
+          "name": "J. Kok",
+          "authorId": "2341573681"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This note addresses impracticalities or possible absurdities with regards to the definition corresponding of some graph parameters. To remedy the impracticalities the principle of transmitting the definition is put forward. The latter principle justifies a comprehensive review of many known graph parameters, the results related thereto, as well as the methodology of applications which draw a distinction between connected versus disconnected simple graphs. To illustrate the notion of transmitting the definition, various parameters are re-examined such as, connected domination number, graph diameter, girth, vertex-cut, edge-cut, chromatic number, irregularity index and quite extensively, the hub number of a graph. Ideas around undefined viz-a-viz permissibility viz-a-viz non-permissibility are also discussed.",
+      "citationCount": 0,
+      "doi": "10.30538/psrp-odam2024.0103",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/32a38c2119d55debab65996b5df1af56bdb84738",
+      "venue": "Open Journal of Discrete Applied Mathematics",
+      "journal": {
+        "name": "Open Journal of Discrete Applied Mathematics"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "fe345044d6a009086ae679c8f6d7284965e59263",
+      "title": "STUDY OF THE DEFINITION OF \u201cUNCERTAINTY\u201d AS A PHILOSOPHICAL AND SOCIO-ECONOMIC CATEGORY",
+      "authors": [
+        {
+          "name": "Volodymyr Polulikh",
+          "authorId": "2338467517"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The article discusses scientific views on the definition of \u00abuncertainty\u00bb. The expediency of distinguishing the concepts of risk and uncertainty is shown. Conceptual interpretations of the \u00abuncertainty\u00bb category are given, depending on the purposes of its use. The study of the genesis of scientific views on the explanation, content, structure, sources of origin, place of influence of uncertainty as a modern integral characteristic of the socio-economic system was conducted. The development of scientific views on the definition of \u00abuncertainty\u00bb for the period from 1921 to the present is shown. The description of the works of well-known scientists on the issues of category definition, species classification, classification of sources of origin of uncertainty, etc. is given. Reasoned expediency of distinguishing the concepts of risk and uncertainty when making investment decisions. The difference between the reward received when investing under conditions of risk and uncertainty is shown. \u0406t has been proven that risk can be managed: allocated, insured, hedged and minimized, hence quantifiable and controllable, and uncertainty cannot be precisely quantified. The higher the uncertainty, the greater the number of possible outcomes, both positive and negative. Sources of uncertainty are identified, including the lack of sufficient information about the economic system and the processes that take place in it, accidental or intentional opposition from other economic subjects, and the action of random external factors that cannot be predicted due to their unexpected occurrence. It is indicated that decision-making in conditions of uncertainty is related to the choice of a decision option, when one or more actions have as a result many partial consequences, but their probabilities are not calculated at all and therefore are not known, cannot be insured and cannot be capitalized. The consequences of increased uncertainty are identified, including a decrease in investment; decrease in entrepreneurial activity; decrease in the level of general employment; increase in financial costs; increase in stock market volatility, etc.",
+      "citationCount": 0,
+      "doi": "10.32782/bses.89-7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fe345044d6a009086ae679c8f6d7284965e59263",
+      "venue": "Black Sea Economic Studies",
+      "journal": {
+        "name": "Black Sea Economic Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ee89dca5d3a39e281779fad79641760a92a00dc6",
+      "title": "On the Greek-philosophical impact on Labeo\u2019s definition of the locatio conductio operis",
+      "authors": [
+        {
+          "name": "Marlene Peinhopf",
+          "authorId": "2288314234"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Roman law was influenced by Hellenistic concepts across the various periods of its development. This influence is reflected in the inclusion of Greek terms in the Latin texts of Roman jurists. The following article addresses Labeo\u02bcs definition of locatio conductio operis and its interpretation in Romanist doctrine. The article explores Labeo\u2019s use of the terms \u1f00\u03c0\u03bf\u03c4\u03ad\u03bb\u03b5\u03c3\u03bc\u03b1 and \u1f14\u03c1\u03b3\u03bf\u03bd in his definition, offering a linguistic analysis of these lines that attends to the meaning of the Greek language usage. In conclusion, the significance of the Hellenistic influence here is grounded by reviewing some relevant aspects of Greek law and the circumstances under which Labeo wrote his text, which is cited in D. 50.16.5.1.",
+      "citationCount": 0,
+      "doi": "10.54103/1128-8221/22595",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ee89dca5d3a39e281779fad79641760a92a00dc6",
+      "venue": "Dike - Rivista di Storia del Diritto Greco ed Ellenistico",
+      "journal": {
+        "name": "Dike - Rivista di Storia del Diritto Greco ed Ellenistico"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "7ff1cfa2301c49d269aed47a93b5fba5e85a70a2",
+      "title": "Prolegomenon to the Philosophical Definition of an Act",
+      "authors": [
+        {
+          "name": "O. Zubets",
+          "authorId": "114987734"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The article represents an attempt to think of a possible concept list of moral philosophy, aris\u00ading from the decision to build it on the basis of the concept of an act and to determine which ideas and ways of thought should be abandoned in this case. We are talking about the specif\u00adically philosophical nature of this concept, which is the basis of the first philosophy: its con\u00adtent is revealed through a \u201cbunch\u201d of conceptual identities: act \u2013 being \u2013 actor (subject, be\u00adginning) \u2013 decision \u2013 non-differentiation \u2013 timelessness \u2013 self-sufficiency \u2013 asymmetry \u2013 centrality \u2013 oneness \u2013 responsibility. This \u201clist\u201d is both completed and open. Revealing the specifics of the moral philosophy of the act, it also determines the ideas that should be aban\u00addoned, taking the challenge of Auschwitz with all seriousness, as a challenge to moral think\u00ading. So, it names the rejection of various kinds of differentiations due to the unity, oneness and completeness of the act (including the substantial differentiation of the act, and the ac\u00adtor, and the decision), and in general from the idea of plurality (act, subject); rejection of the juxtaposition of morality to value-regulatory forms: law, science, art, etc.; the refusal from localization (limitation) of responsibility, from the concepts of behavior and personality; from understanding an act as a result of choice and rational discourse, knowledge; and in general from the secondary nature of the act in relation to moral ideas, norms, command\u00adments as a result of the recognition of the priority of the act as a given one and morality as based on the initial act of non-killing.",
+      "citationCount": 1,
+      "doi": "10.21146/2074-4870-2022-22-2-5-20",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7ff1cfa2301c49d269aed47a93b5fba5e85a70a2",
+      "venue": "Ethical Thought",
+      "journal": {
+        "name": "Ethical Thought"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d9ebcd6dcc8ba24b8c624851f614401466dcb013",
+      "title": "What constitutes philosophical activity in nursing? Toward a definition of nursing philosophy based on an interpretive synthesis of the recent literature.",
+      "authors": [
+        {
+          "name": "Zahra Sherifiheris",
+          "authorId": "2223313475"
+        },
+        {
+          "name": "M. Bender",
+          "authorId": "36148130"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Nursing claims a significant history of engaging philosophical inquiry. To better understand the rationale for this engagement, and what nursing understands itself to achieve through philosophical inquiry, we conducted an interpretive synthesis of the recent nursing literature to identify what nurses are doing when they say they are doing philosophy. The overarching finding was that while vanishingly few articles articulated any definition of philosophy, the synthesis showed how nursing considers philosophical engagement a generative mode for asking and answering questions in/for nursing. Whatever aspects of nursing were focused on in these articles, and they were myriad, philosophy was invoked as an appropriate modality to work through that aspect rigorously, critically, and with an expectation that something \"knowledgeable\" would result from the effort. Based on the synthesis, we conclude that nursing philosophy could be considered a specific modality of nursing practice by which nursing is both done and delineated, a discursive practice in which we continually assess and explore and adapt and advance our understanding of the discipline in service to advancing our unique efficacy. This definition of \"nursing philosophy\" provides an opening for further inquiry helping to illuminate its functionalities and potentialities for outputs that can facilitate rigorous practice, education, and scholarship.",
+      "citationCount": 2,
+      "doi": "10.1111/nin.12582",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d9ebcd6dcc8ba24b8c624851f614401466dcb013",
+      "venue": "Nursing Inquiry",
+      "journal": {
+        "name": "Nursing inquiry",
+        "pages": "\n          e12582\n        "
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cc23e3fa09ac1ff270edb0d81240754053a069fa",
+      "title": "The problem of the definition of the \u00abtransitional judge\u00bb in the modern philosophical and legal discourse",
+      "authors": [
+        {
+          "name": "Oxana Klym",
+          "authorId": "2237505004"
+        },
+        {
+          "name": "V. Chornopyska",
+          "authorId": "2237505128"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The article carries out a philosophical and legal analysis of existing approaches to the definition of \"transitional justice\" and forms the author's position regarding its understanding. Two features of the emergence of the model of transitional justice are singled out: 1) the studied model is built on practical experience, and later became the basis of theoretical studies on transitional justice; 2) this model arises at the initiative of the international community as a reaction to repeated violations of human rights. It was determined that despite the general nature of the definition of transitional justice defined by the UN, many researchers criticize it for the following reasons: firstly, its content does not cover the occasions of changes in political regimes during which human rights were violated; secondly, it does not indicate the admissibility or inadmissibility of using the concept of transitional justice during an armed conflict, or the possibility of its application only after the end of the conflict; thirdly, the definition defined by the UN does not reflect the relationship between transitional justice and international law. The author's definition of transitional justice is proposed, it is a set of tools, processes and mechanisms aimed at overcoming the consequences of human rights abuses in the context of armed conflicts and/or changes in political regimes, which consist, first of all, in bringing to justice those guilty of committed offenses, compensation for damage (as moral and material), establishing the truth about the circumstances in which human rights were violated, achieving reconciliation and establishing justice.",
+      "citationCount": 0,
+      "doi": "10.23939/law2023.37.092",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cc23e3fa09ac1ff270edb0d81240754053a069fa",
+      "venue": "Visnik Nacional'nogo universitetu \u00abLvivska politehnika\u00bb Seria Uridicni nauki",
+      "journal": {
+        "name": "Visnik Nacional\u2019nogo universitetu \u00abLvivska politehnika\u00bb. Seria: Uridicni nauki"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "55fc8a246f427b7ef53d050ed94c3f44bfc26501",
+      "title": "The concept of signal: its definition and philosophical using",
+      "authors": [
+        {
+          "name": "Alexander V. Dumov",
+          "authorId": "2220266113"
+        },
+        {
+          "name": "N. Zaitseva",
+          "authorId": "81004715"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The article contains an examination of the definitions of the concept of signal accepted in engineering and technical contexts in terms of content. The author analyzes the existing ways of dealing with this concept and describes the features of the situations of its application. He explores the question of the necessary terminological tools to describe the impact of a signal on a system. The possibilities of using the means of the theory of signals for the naturalization of philosophical studies are evaluated on the example of specific studies. The author concludes about the methodological significance of the means of signal theory and the appropriateness of involving signal models in the context of considering philosophical problems, as well as the role of philosophy in relation to the sciences that study signal processes.",
+      "citationCount": 0,
+      "doi": "10.17673/vsgtu-phil.2023.2.5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/55fc8a246f427b7ef53d050ed94c3f44bfc26501",
+      "venue": "Vestnik of Samara State Technical University. Series Philosophy",
+      "journal": {
+        "name": "Vestnik of Samara State Technical University. Series Philosophy"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0c9744ea265e34856e34034b6e8c9bfe984da9f1",
+      "title": "On the Philosophical Definition of Human Play Using the Tools of Qualitative Content Analysis",
+      "authors": [
+        {
+          "name": "F. Lebed",
+          "authorId": "81582470"
+        }
+      ],
+      "year": 2019,
+      "abstract": "ABSTRACT Formulating a metaphysical definition of human play faces three main difficulties. First, for many years the very possibility, or need, for such a definition has been questioned. Second, very often attempts to metaphysically understand play \u2018slide off\u2019 to one of two incompatible poles: comprehension of play as a mental stance or mode of action vs. its interpretation as real action and a type of cultural activity. Third, metaphysical views of play have not yet decided through which main philosophical category it is possible to combine these polar points of view into a single whole. This article is based on the definiteness of human play in principle. It is dedicated to the philosophical categorization of play using the tools of qualitative content analysis and encompasses the widely cited views of leading scholars. The use of this methodology allowed me to distinguish between nine main philosophical themes through which play can be differentiated from all other forms of human existence. They are: \u2018partial escape from routine reality\u2019, \u2018freedom\u2019, \u2018autotelicity\u2019, \u2018play as a kind of being\u2019, \u2018imagination\u2019, \u2018exaggeration\u2019, \u2018temporality\u2019, \u2018discovery\u2019 and \u2018relocation\u2019. Through an in-depth study of these themes by reviewing current philosophical discussions about play it was possible: (1) to strengthen Fink\u2019s (1960a,b) thesis of play as a kind of existing and to focus comprehension of human play on the notion of \u2018escape to another being\u2019 as the desired \u2018single whole\u2019 joining play as state and play as action (this thesis is part of the main focus of the proposed study); and (2) to clarify and add to the themes found in the course of the research and formulate an overall philosophic definition of human play.",
+      "citationCount": 8,
+      "doi": "10.1080/17511321.2019.1649300",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0c9744ea265e34856e34034b6e8c9bfe984da9f1",
+      "venue": "Sport, Ethics and Philosophy",
+      "journal": {
+        "name": "Sport, Ethics and Philosophy",
+        "pages": "103 - 121",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "17eeaf42d6f0eb2c078f079418174c15f547b3b7",
+      "title": "Toward a Philosophical Definition of Intelligence",
+      "authors": [
+        {
+          "name": "Giangiuseppe Pili",
+          "authorId": "113670294"
+        }
+      ],
+      "year": 2019,
+      "abstract": "ABSTRACT What is intelligence? A short question, which is difficult to answer. In fact, there is no general agreement on the definition of intelligence. A good philosophical analysis starts with intuitions, which can be found in the literature. After the recollection of these intuitions and their discussion, it is necessary to add some rational justifications of them. I want to express a general definition of intelligence, whose formulation is indebted to a philosophical analytic approach that considers some different alternatives. Intelligence is a vague word and it has different meanings. In fact, the intelligence studies are so rich but they pose some particular philosophical problems. Philosophy defines complex and complicated words in a simple and coherent way. I want to defend a definition, which is philosophically consistent and meaningful for intelligence studies. Is this a good way to solve such a complex problem? As Ludwig Wittgenstein said: \u201cThe problems are solved, not by giving new information, but by arranging what we have always known. Philosophy is a battle against the bewitchment of our intelligence by means of language\u201d.",
+      "citationCount": 9,
+      "doi": "10.1080/23800992.2019.1649113",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/17eeaf42d6f0eb2c078f079418174c15f547b3b7",
+      "venue": "The International Journal of Intelligence Security and Public Affairs",
+      "journal": {
+        "name": "The International Journal of Intelligence, Security, and Public Affairs",
+        "pages": "162 - 190",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "45b802e839167c29eaf21fc900f7c336d40dac04",
+      "title": "Philosophical Definition of Freedom as Opportunity Sets",
+      "authors": [
+        {
+          "name": "D. Tsarev",
+          "authorId": "1489554338"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/45b802e839167c29eaf21fc900f7c336d40dac04",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bb054988329ab0ddc8e6a65a20e7021ad9b2f4ed",
+      "title": "The philosophical content of the definition of the national mentality",
+      "authors": [],
+      "year": 2022,
+      "abstract": "The notion of national mentality is widely used in sociophilosophical and related discussions concerned with the conjunction of the categories of cultural and mental, but its definitions and operationalization often remain implicit. The research goal of the presented article is to reconstruct the proximal philosophical content of the term national mentality. The following research questions are raised: the extensiveness and exhaustiveness of current definitions presented in publications; the influence of contexts of use of the term on its definition; the coherence of aspects of definitions of mentality by different definitions. The methodology of the work is represented by theoretical modeling. It involves critical and comparative analysis of secondary and primary sources. The article conceptualizes the categories that highlight the issues of national mentality. The results emphasize the limitations of current definitions and the insufficient differential capacity of a one-dimensional definition, given the complexity of the phenomenon's structure. The article highlights the dynamics of the concept's development and contextual conditionality, which is considered as a prerequisite for the crisis of our time. The role of individual agency and ways of transforming national codes are emphasized. The author characterizes the etymology and genesis of the concept as a consequence of imperialist influences on European philosophical schools. A combination of empirical-based discrete and holistic continuous dimensional approaches is proposed, using the primitives of the level structure of mentality. The provided detail is offered as an alternative to the traditional understanding of national mentality as a single mental reality. Implications. These results serve as the basis for the restoration of the cognitive process of the national mentality in the Ukrainian philosophical tradition, in accordance with the standards of empirical-based research. The proposed way of understanding the relationship between culture and psyche allows the term to be used in studies of related fields that do not have a descriptive category to denote the ways of being of an ethno-cultural community. By providing a more nuanced and precise understanding of the subject, these categories can help counteract culturally based simplifications that threaten to segregate and exclude. The principles of national mentality conceptualization outlined above are necessary for the correct implementation of the results obtained in practice. In fact, interventions aimed at the thinking aspect of society, such as pedagogical, political, or managerial, should be based on a substantial philosophical foundation.",
+      "citationCount": 4,
+      "doi": "10.57125/fp.2022.03.30.04",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bb054988329ab0ddc8e6a65a20e7021ad9b2f4ed",
+      "venue": "Futurity Philosophy",
+      "journal": {
+        "name": "Futurity Philosophy"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bba2906cb8dff7681a74f1e76de5bb736346029c",
+      "title": "Abstract economic modeling : a semantic-philosophical definition of economic models",
+      "authors": [
+        {
+          "name": "A. Netto",
+          "authorId": "103645905"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bba2906cb8dff7681a74f1e76de5bb736346029c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cb8df07c47d8fb687cd6b64addb1721c5f44ce46",
+      "title": "A Philosophical Reflection on Bates\u2019 Definition of Information",
+      "authors": [
+        {
+          "name": "Zhensong Wang",
+          "authorId": "2108043034"
+        }
+      ],
+      "year": 2022,
+      "abstract": ": This paper will analyze Marcia Bates\u2019 de\ufb01nition on information from four perspectives, overall philosophical standpoint, ontological position, epistemological position, and methodological position. The viewpoints of four information specialists (Luciano Floridi, Marcia Bates, Fred Dretske, and Kun Wu) will be compared in the paper as well. At last, we will \ufb01nd Bates\u2019 position in the information study, and also the merit and demerit of her de\ufb01nition on information.",
+      "citationCount": 1,
+      "doi": "10.3390/proceedings2022081131",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cb8df07c47d8fb687cd6b64addb1721c5f44ce46",
+      "venue": "The 2021 Summit of the International Society for the Study of Information",
+      "journal": {
+        "name": "The 2021 Summit of the International Society for the Study of Information"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8385c6b2deba8cc66fe08f58f258185f2c9bde6b",
+      "title": "International approaches to the definition, philosophical tenets, and core elements of physical literacy: A scoping review",
+      "authors": [
+        {
+          "name": "Jo\u00e3o Martins",
+          "authorId": "147110107"
+        },
+        {
+          "name": "M. Onofre",
+          "authorId": "2076064423"
+        },
+        {
+          "name": "Jo\u00e3o Mota",
+          "authorId": "2056225511"
+        },
+        {
+          "name": "C. Murphy",
+          "authorId": "143667975"
+        },
+        {
+          "name": "R. Repond",
+          "authorId": "108741266"
+        },
+        {
+          "name": "Helen Vost",
+          "authorId": "1752694202"
+        },
+        {
+          "name": "Bruno Cremosini",
+          "authorId": "1752695246"
+        },
+        {
+          "name": "Andjelko Svrdlim",
+          "authorId": "1752694150"
+        },
+        {
+          "name": "M. Markovic",
+          "authorId": "1752695261"
+        },
+        {
+          "name": "D. Dudley",
+          "authorId": "4560255"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 78,
+      "doi": "10.1007/s11125-020-09466-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8385c6b2deba8cc66fe08f58f258185f2c9bde6b",
+      "venue": "",
+      "journal": {
+        "name": "PROSPECTS",
+        "pages": "13-30",
+        "volume": "50"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d70a2ac582e43f67319d967f5bb52d2afe574af0",
+      "title": "Philosophical, anthropological and axiological aspects of Constantine\u2019s definition of philosophy",
+      "authors": [
+        {
+          "name": "J\u00e1n Zozu\u013eak",
+          "authorId": "98506879"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Abstract This paper focuses on the philosophical-ethical foundations of Constantine\u2019s definition of philosophy, as well as its anthropological and axiological aspects. The focus is placed on the relationship between definitions of philosophy postulated by Constantine the Philosopher and John of Damascus, the latter of which traces the six classical definitions systematized by Platonic commentators. Byzantine thinkers proposed a method of unifying both the theoretical and practical aspects of ancient philosophy with a Christian way of life by interpreting the classical definitions of philosophy and dividing it into theoretical and practical parts, the latter including ethics. Constantine understood philosophy in the sense of the second (knowledge of things Divine and human) and the fourth (becoming like God) meanings of earlier definitions, with the addition of the Christian sense of acting in accordance with the image of God. In addition to these gnosiological and anthropological aspects, the paper also observes the axiological aspect of Constantine\u2019s definition of philosophy, which appears to be a foundation for exploring human behaviour as in compliance with Christian laws encouraging changes in ethical principles so as to follow a new code of ethics, through which new values were presented to the Slavs.",
+      "citationCount": 3,
+      "doi": "10.2478/ebce-2021-0002",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d70a2ac582e43f67319d967f5bb52d2afe574af0",
+      "venue": "",
+      "journal": {
+        "name": "Ethics & Bioethics",
+        "pages": "14 - 22",
+        "volume": "11"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "03e2d9bfcb6b5cc964fd2538f969829c420f0232",
+      "title": "An attempt at a holistic definition of the concept of \u00abenvironment\u00bb in the context of Karl Marx's philosophical anthropology",
+      "authors": [
+        {
+          "name": "P. Kondrashov",
+          "authorId": "152284157"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The article attempts a broad (philosophical) definition of the concept of \u00abenvironment\u00bb. The relevance of this attempt is due to the fact that in the modern ecological discourse there is a narrow understanding of the environment, which is mainly reduced to the concept of nature. This one-dimensionality leads to the fact that the analysis of environmental problems does not take into account the multilateral dialectical interrelationships between a person and the whole environment in which he exists. Based on the philosophical and anthropological ideas of Karl Marx, the author shows that in the process of carrying out his activity (praxis), a person, entering into metabolic relations with nature (which acts as the \u00abinorganic human body\u00bb, his life means and an irreparable condition for his existence), transforms this nature (nat\u00fcrliche Welt) and thereby creates its \u00absecond nature\u00bb \u2014 the surrounding cultural environment (Umwelt). But since praxis is always carried out together with Others, relations with them form the world of people \u2014 the social environment (Mitwelt), which, being internalized in the psyche of the individual, forms his own world \u2014 the existential environment (Eigenwelt). Thus, the environment, understood in such a broad sense, is an integral, internally interconnected system of three worlds: animate and inanimate nature (nat\u00fcrliche Welt), material and spiritual culture (Umwelt) and human society (Mitwelt), through relations with which and there is a man and his own inner existential world (I, Eigenwelt). As a result, the author concludes that for a full-fledged and harmonious existence of a person himself, it is necessary, within the framework of a philosophical and ecological worldview and lifestyle, to treat with thrifty care not only the natural environment, but also human society and human culture, thanks to which a person exists as a person, for all these worlds \u2014 nature, society and culture \u2014 constitute the home (\u03bf\u1f36\u03ba\u03bf\u03c2) in which man lives.",
+      "citationCount": 0,
+      "doi": "10.25198/2077-7175-2021-5-10",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/03e2d9bfcb6b5cc964fd2538f969829c420f0232",
+      "venue": "Intelligence Innovations Investment",
+      "journal": {
+        "name": "Intelligence. Innovations. Investment"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "681741361c5fe68ddd4f8fa761faafb8836f38dd",
+      "title": "SUBSTANTIVE APPROACH TO THE DEFINITION OF \"ADVERTISING\": PHILOSOPHICAL AND COMMUNICATIVE ASPECT",
+      "authors": [
+        {
+          "name": "V. Slyusar'",
+          "authorId": "1451972527"
+        },
+        {
+          "name": "L. Shkil",
+          "authorId": "2145012757"
+        },
+        {
+          "name": "M. V. Slyusar",
+          "authorId": "2120757918"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/681741361c5fe68ddd4f8fa761faafb8836f38dd",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "863e988e166dd67345cfeacb166b06d0c60b512d",
+      "title": "Avicennian re\u0441eption of Aristotle\u2019s philosophical psychology: the definition of the soul",
+      "authors": [
+        {
+          "name": "N. Efremova",
+          "authorId": "144231656"
+        }
+      ],
+      "year": 2021,
+      "abstract": "In the encyclopedic treatise, the ash-Shif\u0101\u2019 (\u201cThe Healing\u201d), the most prominent philosopher of classical Islam Ibn Sina (Avicenna) (980\u20131037) has substantially revised the Aristotelian teaching about the soul. In the first instance, this revision is \u00a0evident in terms of orientation to a strictly apodictic epistemology and to a synthesis of the Aristotelian teaching with Islamic monotheism. Following this second trend, \u00a0Ibn Sina supplies the psychology with new dimensions \u2013 cosmological, angelological, \u00a0prophetological and eschatological (more precisely, soteriological). The first book of \u00a0the \u201cPsychology\u201d (an-Nafs) mainly deals with the notion of the soul. Ibn Sina comments \u00a0on the traditional peripatetic definition of the soul with relation to the doctrine of the \u00a0souls of the celestial spheres. In this context is highlighted the operational rather than \u00a0the essential nature of this qualification and is also given its other modification. While \u00a0analyzing the three classical characteristics of the soul (i.e. \u201cpotency\u201d, \u201cform\u201d and \u201centelechy\u201d \u2013 the realization of potentia), the philosopher justifies the \u201centelechy\u201d as the \u00a0most adequate term for it.",
+      "citationCount": 1,
+      "doi": "10.31696/2618-7043-2021-4-4-967-986",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/863e988e166dd67345cfeacb166b06d0c60b512d",
+      "venue": "Orientalistica",
+      "journal": {
+        "name": "Orientalistica"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ac6c89b127d0ba5349ac5ccf14efbf23e07c618b",
+      "title": "Definition, Deception, and the Enterprise of Knowledge",
+      "authors": [
+        {
+          "name": "Nalini Bhushan",
+          "authorId": "21553729"
+        },
+        {
+          "name": "J. Garfield",
+          "authorId": "40174396"
+        },
+        {
+          "name": "D. Raveh",
+          "authorId": "66128037"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1093/ACPROF:OSOBL/9780199795550.003.0013",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ac6c89b127d0ba5349ac5ccf14efbf23e07c618b",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "144-154",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8b3bd72cae2c6f3295617e16f44639322fd096ca",
+      "title": "LEGAL RESEARCH METHODOLOGY: DEFINITION, STRUCTURE, PHILOSOPHICAL AND ATTITUDINAL FRAMEWORK",
+      "authors": [
+        {
+          "name": "Sergey K. Bostan",
+          "authorId": "2137632684"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The article deals with the author\ufffds perception of legal research methodology as multilayered, integral system of various methods which contribute to in-depth knowledge of essential, meaningful and formal features of law. The author defined its structure that consists of two levels (blocks) of methodological knowledge: philosophical and instrumental ones. The paper concentrates on philosophical and attitudinal level of methodological knowledge that has intrinsic structure: dominating perspective, scientific paradigm, style of scientific thinking and understanding. Dominating ideology is analyzed as the holistic set of prevailing values of people\ufffds educational and practical activities. There are such kinds of perspective in the history of human civilization: mythological, theological and scientific. The scientific one is considered to be the dominating perspective nowadays. The focus of the study is on the style of scientific thinking as the way of cognitive position, formed by the research communities on the basis of historically entrenched, attitudinal, epistemological and logical standards. Its content is defined by scientific paradigm and technology-oriented research. The phenomenon manifests itself on different levels: philosophy of science in general, in particular sciences and even academic disciplines. As it is shown in the research scientific paradigm is the significant conception used by the research community as the basis for solving of some science-based tasks. In the branch of legal science\ufffds paradigm is defined by different kinds of understanding of law. The main paradigms in legal sciences are the positivist and sociological ones. While the positivist paradigm is based on assimilation of the law and statute (acts of law), the sociological paradigm is based on their distinguishing. In some branches of legal sciences, there are more specific paradigms: human-oriented, humanistic, etc. The importance of basic principles of scientific cognition is highlighted as the common attitudinal regulations which foster the subject to receive objective knowledge. Among them are mentioned: principle of historism which requires definite, historically entrenched procedure for considering events; principle of objectivity which presupposes completely unbiased approach of facts selection; principle of social humanism which involves evaluation of legal phenomena in the universal value-centered light. The article demonstrates the methodological importance of philosophical and ideology level that lies in the opportunity to define conceptual way of legal research on the basis of scientific perspective, pluralistic style of thinking, appropriate paradigm of law and such cognitive principles as historism, objectivity and social humanism.",
+      "citationCount": 0,
+      "doi": "10.32342/2709-6408-2021-1-2-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8b3bd72cae2c6f3295617e16f44639322fd096ca",
+      "venue": "Bulletin of Alfred Nobel University Series Law",
+      "journal": {
+        "name": "Bulletin of Alfred Nobel University Series \"Law\""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "572a54318606d16bfce98773ce143539889facf2",
+      "title": "Lying, deception and strategic omission : definition and evaluation",
+      "authors": [
+        {
+          "name": "B. Icard",
+          "authorId": "150935391"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/572a54318606d16bfce98773ce143539889facf2",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e76d9324a800007e2778cae56af27bbcfa3af4d5",
+      "title": "A Philosophical Examination on the Definition of Cyberspace",
+      "authors": [
+        {
+          "name": "Myles D. Garvey",
+          "authorId": "46732370"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1142/9789811233128_0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e76d9324a800007e2778cae56af27bbcfa3af4d5",
+      "venue": "Cyber Security and Supply Chain Management",
+      "journal": {
+        "name": "Cyber Security and Supply Chain Management"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9c0ec5e03a0a41a0500757d5d17b26c31de36f0b",
+      "title": "Self-deception as a Philosophical Problem",
+      "authors": [
+        {
+          "name": "Z. Turner",
+          "authorId": "90780218"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-030-28289-9_9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9c0ec5e03a0a41a0500757d5d17b26c31de36f0b",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "159-172",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ef0de2abe6203dca825a4f4afd3553075c50744d",
+      "title": "PHILOSOPHICAL-LEGAL METHOD TO THE DEFINITION THE GENERIC FEATURE OF THE COLLECTIVE CONCEPT OF CORRUPTION",
+      "authors": [
+        {
+          "name": "A. Lakiza",
+          "authorId": "88498142"
+        }
+      ],
+      "year": 2021,
+      "abstract": "This article analyzes the problem of determining the boundaries of the actual composition as a system of legal facts, which together are the basis for the emergence, amendment or termination of legal relations. The relevance of this issue for the current level of legal theory is indicated. Further, based on a study of the approaches of various scholars to solving this issue, the criteria for distinguishing between legal facts and legal conditions are identified. The author\u2019s opinion on the prospects for solving this problem is also expressed and argued.",
+      "citationCount": 0,
+      "doi": "10.37279/2413-1733-2020-6-3-132-141",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ef0de2abe6203dca825a4f4afd3553075c50744d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "132-141",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

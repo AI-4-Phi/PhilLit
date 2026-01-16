@@ -1,0 +1,2079 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "mechanistic interpretability",
+  "results": [
+    {
+      "paperId": "f680d47a51a0e470fcb228bf0110c026535ead1b",
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "authors": [
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Lawrence Chan",
+          "authorId": "2072836382"
+        },
+        {
+          "name": "Tom Lieberum",
+          "authorId": "2162470507"
+        },
+        {
+          "name": "Jess Smith",
+          "authorId": "2200391337"
+        },
+        {
+          "name": "J. Steinhardt",
+          "authorId": "5164568"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Neural networks often exhibit emergent behavior, where qualitatively new capabilities arise from scaling up the amount of parameters, training data, or training steps. One approach to understanding emergence is to find continuous \\textit{progress measures} that underlie the seemingly discontinuous qualitative changes. We argue that progress measures can be found via mechanistic interpretability: reverse-engineering learned behaviors into their individual components. As a case study, we investigate the recently-discovered phenomenon of ``grokking'' exhibited by small transformers trained on modular addition tasks. We fully reverse engineer the algorithm learned by these networks, which uses discrete Fourier transforms and trigonometric identities to convert addition to rotation about a circle. We confirm the algorithm by analyzing the activations and weights and by performing ablations in Fourier space. Based on this understanding, we define progress measures that allow us to study the dynamics of training and split training into three continuous phases: memorization, circuit formation, and cleanup. Our results show that grokking, rather than being a sudden shift, arises from the gradual amplification of structured mechanisms encoded in the weights, followed by the later removal of memorizing components.",
+      "citationCount": 626,
+      "doi": "10.48550/arXiv.2301.05217",
+      "arxivId": "2301.05217",
+      "url": "https://www.semanticscholar.org/paper/f680d47a51a0e470fcb228bf0110c026535ead1b",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2301.05217"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8a94d7fb8b580621979396042aef89dbd6ec37fb",
+      "title": "Open Problems in Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Lee Sharkey",
+          "authorId": "2267502247"
+        },
+        {
+          "name": "Bilal Chughtai",
+          "authorId": "2301155771"
+        },
+        {
+          "name": "Joshua Batson",
+          "authorId": "2342505933"
+        },
+        {
+          "name": "Jack Lindsey",
+          "authorId": "2342505989"
+        },
+        {
+          "name": "Jeff Wu",
+          "authorId": "2342640282"
+        },
+        {
+          "name": "Lucius Bushnaq",
+          "authorId": "2124877853"
+        },
+        {
+          "name": "Nicholas Goldowsky-Dill",
+          "authorId": "2302155854"
+        },
+        {
+          "name": "Stefan Heimersheim",
+          "authorId": "2256989665"
+        },
+        {
+          "name": "Alejandro Ortega",
+          "authorId": "2355649897"
+        },
+        {
+          "name": "Joseph Bloom",
+          "authorId": "2308099558"
+        },
+        {
+          "name": "Stella Biderman",
+          "authorId": "2398809603"
+        },
+        {
+          "name": "Adri\u00e0 Garriga-Alonso",
+          "authorId": "1388513000"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Jessica Rumbelow",
+          "authorId": "2249532084"
+        },
+        {
+          "name": "Martin Wattenberg",
+          "authorId": "2237803620"
+        },
+        {
+          "name": "Nandi Schoots",
+          "authorId": "1485377354"
+        },
+        {
+          "name": "Joseph Miller",
+          "authorId": "2310773898"
+        },
+        {
+          "name": "Eric J. Michaud",
+          "authorId": "2293723716"
+        },
+        {
+          "name": "Stephen Casper",
+          "authorId": "2333442622"
+        },
+        {
+          "name": "Max Tegmark",
+          "authorId": "2256989384"
+        },
+        {
+          "name": "William Saunders",
+          "authorId": "2310699728"
+        },
+        {
+          "name": "David Bau",
+          "authorId": "2284682524"
+        },
+        {
+          "name": "Eric Todd",
+          "authorId": "145290788"
+        },
+        {
+          "name": "Atticus Geiger",
+          "authorId": "2315137132"
+        },
+        {
+          "name": "Mor Geva",
+          "authorId": "22245981"
+        },
+        {
+          "name": "Jesse Hoogland",
+          "authorId": "2282535402"
+        },
+        {
+          "name": "Daniel Murfet",
+          "authorId": "2257004100"
+        },
+        {
+          "name": "Thomas McGrath",
+          "authorId": "2256981829"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability aims to understand the computational mechanisms underlying neural networks' capabilities in order to accomplish concrete scientific and engineering goals. Progress in this field thus promises to provide greater assurance over AI system behavior and shed light on exciting scientific questions about the nature of intelligence. Despite recent progress toward these goals, there are many open problems in the field that require solutions before many scientific and practical benefits can be realized: Our methods require both conceptual and practical improvements to reveal deeper insights; we must figure out how best to apply our methods in pursuit of specific goals; and the field must grapple with socio-technical challenges that influence and are influenced by our work. This forward-facing review discusses the current frontier of mechanistic interpretability and the open problems that the field may benefit from prioritizing.",
+      "citationCount": 91,
+      "doi": "10.48550/arXiv.2501.16496",
+      "arxivId": "2501.16496",
+      "url": "https://www.semanticscholar.org/paper/8a94d7fb8b580621979396042aef89dbd6ec37fb",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.16496"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "eefbd8b384a58f464827b19e30a6920ba976def9",
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        },
+        {
+          "name": "Augustine N. Mavor-Parker",
+          "authorId": "2000605969"
+        },
+        {
+          "name": "Aengus Lynch",
+          "authorId": "2174176979"
+        },
+        {
+          "name": "Stefan Heimersheim",
+          "authorId": "2256989665"
+        },
+        {
+          "name": "Adri\u00e0 Garriga-Alonso",
+          "authorId": "1388513000"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Through considerable effort and intuition, several recent works have reverse-engineered nontrivial behaviors of transformer models. This paper systematizes the mechanistic interpretability process they followed. First, researchers choose a metric and dataset that elicit the desired model behavior. Then, they apply activation patching to find which abstract neural network units are involved in the behavior. By varying the dataset, metric, and units under investigation, researchers can understand the functionality of each component. We automate one of the process' steps: to identify the circuit that implements the specified behavior in the model's computational graph. We propose several algorithms and reproduce previous interpretability results to validate them. For example, the ACDC algorithm rediscovered 5/5 of the component types in a circuit in GPT-2 Small that computes the Greater-Than operation. ACDC selected 68 of the 32,000 edges in GPT-2 Small, all of which were manually found by previous work. Our code is available at https://github.com/ArthurConmy/Automatic-Circuit-Discovery.",
+      "citationCount": 445,
+      "doi": "10.48550/arXiv.2304.14997",
+      "arxivId": "2304.14997",
+      "url": "https://www.semanticscholar.org/paper/eefbd8b384a58f464827b19e30a6920ba976def9",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2304.14997"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2ac42be0b5fb0b61f4be220bbd65322bed59ecbf",
+      "title": "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "authors": [
+        {
+          "name": "Etowah Adams",
+          "authorId": "2320504416"
+        },
+        {
+          "name": "Liam Bai",
+          "authorId": "2344969195"
+        },
+        {
+          "name": "Minji Lee",
+          "authorId": "2303477990"
+        },
+        {
+          "name": "Yiyang Yu",
+          "authorId": "2345066942"
+        },
+        {
+          "name": "Mohammed Alquraishi",
+          "authorId": "1380118346"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Protein language models (pLMs) are powerful predictors of protein structure and function, learning through unsupervised training on millions of protein sequences. pLMs are thought to capture common motifs in protein sequences, but the specifics of pLM features are not well understood. Identifying these features would not only shed light on how pLMs work, but potentially uncover novel protein biology\u2013\u2013studying the model to study the biology. Motivated by this, we train sparse autoencoders (SAEs) on the residual stream of a pLM, ESM-2. By characterizing SAE features, we determine that pLMs use a combination of generic features and family-specific features to represent a protein. In addition, we demonstrate how known sequence determinants of properties such as thermostability and subcellular localization can be identified by linear probing of SAE features. For predictive features without known functional associations, we hypothesize their role in unknown mechanisms and provide visualization tools to aid their interpretation. Our study gives a better understanding of the limitations of pLMs, and demonstrates how SAE features can be used to help generate hypotheses for biological mechanisms. We release our code, model weights and feature visualizer.",
+      "citationCount": 28,
+      "doi": "10.1101/2025.02.06.636901",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2ac42be0b5fb0b61f4be220bbd65322bed59ecbf",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b07d676287b88eb7724e22987ea92b8dc63c913f",
+      "title": "A Survey on Mechanistic Interpretability for Multi-Modal Foundation Models",
+      "authors": [
+        {
+          "name": "Zihao Lin",
+          "authorId": "2309119743"
+        },
+        {
+          "name": "Samyadeep Basu",
+          "authorId": "2114710333"
+        },
+        {
+          "name": "Mohammad Beigi",
+          "authorId": "2284682293"
+        },
+        {
+          "name": "Varun Manjunatha",
+          "authorId": "1977256"
+        },
+        {
+          "name": "Ryan Rossi",
+          "authorId": "2335664495"
+        },
+        {
+          "name": "Zichao Wang",
+          "authorId": "2345100140"
+        },
+        {
+          "name": "Yufan Zhou",
+          "authorId": "2324670196"
+        },
+        {
+          "name": "S. Balasubramanian",
+          "authorId": "144021807"
+        },
+        {
+          "name": "Arman Zarei",
+          "authorId": "2303397110"
+        },
+        {
+          "name": "Keivan Rezaei",
+          "authorId": "2204576892"
+        },
+        {
+          "name": "Ying Shen",
+          "authorId": "2335422501"
+        },
+        {
+          "name": "Barry Menglong Yao",
+          "authorId": "2166311346"
+        },
+        {
+          "name": "Zhiyang Xu",
+          "authorId": "2136442661"
+        },
+        {
+          "name": "Qin Liu",
+          "authorId": "2109185819"
+        },
+        {
+          "name": "Yuxiang Zhang",
+          "authorId": "2347048553"
+        },
+        {
+          "name": "Yan Sun",
+          "authorId": "2204964085"
+        },
+        {
+          "name": "Shilong Liu",
+          "authorId": "2309666089"
+        },
+        {
+          "name": "Li Shen",
+          "authorId": "2347913017"
+        },
+        {
+          "name": "Hongxuan Li",
+          "authorId": "2284726256"
+        },
+        {
+          "name": "S. Feizi",
+          "authorId": "34389431"
+        },
+        {
+          "name": "Lifu Huang",
+          "authorId": "2238885968"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rise of foundation models has transformed machine learning research, prompting efforts to uncover their inner workings and develop more efficient and reliable applications for better control. While significant progress has been made in interpreting Large Language Models (LLMs), multimodal foundation models (MMFMs) - such as contrastive vision-language models, generative vision-language models, and text-to-image models - pose unique interpretability challenges beyond unimodal frameworks. Despite initial studies, a substantial gap remains between the interpretability of LLMs and MMFMs. This survey explores two key aspects: (1) the adaptation of LLM interpretability methods to multimodal models and (2) understanding the mechanistic differences between unimodal language models and crossmodal systems. By systematically reviewing current MMFM analysis techniques, we propose a structured taxonomy of interpretability methods, compare insights across unimodal and multimodal architectures, and highlight critical research gaps.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2502.17516",
+      "arxivId": "2502.17516",
+      "url": "https://www.semanticscholar.org/paper/b07d676287b88eb7724e22987ea92b8dc63c913f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.17516"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8b750488d139f9beba0815ff8f46ebe15ebb3e58",
+      "title": "Mechanistic Interpretability for AI Safety - A Review",
+      "authors": [
+        {
+          "name": "Leonard Bereska",
+          "authorId": "87881370"
+        },
+        {
+          "name": "E. Gavves",
+          "authorId": "2304222"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Understanding AI systems' inner workings is critical for ensuring value alignment and safety. This review explores mechanistic interpretability: reverse engineering the computational mechanisms and representations learned by neural networks into human-understandable algorithms and concepts to provide a granular, causal understanding. We establish foundational concepts such as features encoding knowledge within neural activations and hypotheses about their representation and computation. We survey methodologies for causally dissecting model behaviors and assess the relevance of mechanistic interpretability to AI safety. We examine benefits in understanding, control, alignment, and risks such as capability gains and dual-use concerns. We investigate challenges surrounding scalability, automation, and comprehensive interpretation. We advocate for clarifying concepts, setting standards, and scaling techniques to handle complex models and behaviors and expand to domains such as vision and reinforcement learning. Mechanistic interpretability could help prevent catastrophic outcomes as AI systems become more powerful and inscrutable.",
+      "citationCount": 297,
+      "doi": "10.48550/arXiv.2404.14082",
+      "arxivId": "2404.14082",
+      "url": "https://www.semanticscholar.org/paper/8b750488d139f9beba0815ff8f46ebe15ebb3e58",
+      "venue": "Trans. Mach. Learn. Res.",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.14082"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1739e02696ce26be71590f24f46967814df70a2c",
+      "title": "Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?",
+      "authors": [
+        {
+          "name": "Maxime M'eloux",
+          "authorId": "2348097882"
+        },
+        {
+          "name": "Silviu Maniu",
+          "authorId": "2590886"
+        },
+        {
+          "name": "Franccois Portet",
+          "authorId": "2126059340"
+        },
+        {
+          "name": "Maxime Peyrard",
+          "authorId": "2348097920"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI systems are used in high-stakes applications, ensuring interpretability is crucial. Mechanistic Interpretability (MI) aims to reverse-engineer neural networks by extracting human-understandable algorithms to explain their behavior. This work examines a key question: for a given behavior, and under MI's criteria, does a unique explanation exist? Drawing on identifiability in statistics, where parameters are uniquely inferred under specific assumptions, we explore the identifiability of MI explanations. We identify two main MI strategies: (1)\"where-then-what,\"which isolates a circuit replicating model behavior before interpreting it, and (2)\"what-then-where,\"which starts with candidate algorithms and searches for neural activation subspaces implementing them, using causal alignment. We test both strategies on Boolean functions and small multi-layer perceptrons, fully enumerating candidate explanations. Our experiments reveal systematic non-identifiability: multiple circuits can replicate behavior, a circuit can have multiple interpretations, several algorithms can align with the network, and one algorithm can align with different subspaces. Is uniqueness necessary? A pragmatic approach may require only predictive and manipulability standards. If uniqueness is essential for understanding, stricter criteria may be needed. We also reference the inner interpretability framework, which validates explanations through multiple criteria. This work contributes to defining explanation standards in AI.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2502.20914",
+      "arxivId": "2502.20914",
+      "url": "https://www.semanticscholar.org/paper/1739e02696ce26be71590f24f46967814df70a2c",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.20914"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f928871afe54a7e79442f7b5971bd6e38beb4d2d",
+      "title": "Towards Mechanistic Interpretability of Graph Transformers via Attention Graphs",
+      "authors": [
+        {
+          "name": "Batu El",
+          "authorId": "2345928597"
+        },
+        {
+          "name": "Deepro Choudhury",
+          "authorId": "2345928778"
+        },
+        {
+          "name": "Pietro Li\u00f3",
+          "authorId": "2273680715"
+        },
+        {
+          "name": "Chaitanya K. Joshi",
+          "authorId": "38009979"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We introduce Attention Graphs, a new tool for mechanistic interpretability of Graph Neural Networks (GNNs) and Graph Transformers based on the mathematical equivalence between message passing in GNNs and the self-attention mechanism in Transformers. Attention Graphs aggregate attention matrices across Transformer layers and heads to describe how information flows among input nodes. Through experiments on homophilous and heterophilous node classification tasks, we analyze Attention Graphs from a network science perspective and find that: (1) When Graph Transformers are allowed to learn the optimal graph structure using all-to-all attention among input nodes, the Attention Graphs learned by the model do not tend to correlate with the input/original graph structure; and (2) For heterophilous graphs, different Graph Transformer variants can achieve similar performance while utilising distinct information flow patterns. Open source code: https://github.com/batu-el/understanding-inductive-biases-of-gnns",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2502.12352",
+      "arxivId": "2502.12352",
+      "url": "https://www.semanticscholar.org/paper/f928871afe54a7e79442f7b5971bd6e38beb4d2d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.12352"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2ac231b9cff4f5f9054d86c9b540429d4dd687f4",
+      "title": "A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models",
+      "authors": [
+        {
+          "name": "Daking Rai",
+          "authorId": "2203429265"
+        },
+        {
+          "name": "Yilun Zhou",
+          "authorId": "2309554954"
+        },
+        {
+          "name": "Shi Feng",
+          "authorId": "2309897784"
+        },
+        {
+          "name": "Abulhair Saparov",
+          "authorId": "2407368"
+        },
+        {
+          "name": "Ziyu Yao",
+          "authorId": "2307416803"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Mechanistic interpretability (MI) is an emerging sub-field of interpretability that seeks to understand a neural network model by reverse-engineering its internal computations. Recently, MI has garnered significant attention for interpreting transformer-based language models (LMs), resulting in many novel insights yet introducing new challenges. However, there has not been work that comprehensively reviews these insights and challenges, particularly as a guide for newcomers to this field. To fill this gap, we provide a comprehensive survey from a task-centric perspective, organizing the taxonomy of MI research around specific research questions or tasks. We outline the fundamental objects of study in MI, along with the techniques, evaluation methods, and key findings for each task in the taxonomy. In particular, we present a task-centric taxonomy as a roadmap for beginners to navigate the field by helping them quickly identify impactful problems in which they are most interested and leverage MI for their benefit. Finally, we discuss the current gaps in the field and suggest potential future directions for MI research.",
+      "citationCount": 81,
+      "doi": "10.48550/arXiv.2407.02646",
+      "arxivId": "2407.02646",
+      "url": "https://www.semanticscholar.org/paper/2ac231b9cff4f5f9054d86c9b540429d4dd687f4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.02646"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "66583ad76bc1ce493ed3b530b9a56f87a7e684ca",
+      "title": "MIB: A Mechanistic Interpretability Benchmark",
+      "authors": [
+        {
+          "name": "Aaron Mueller",
+          "authorId": "2334997907"
+        },
+        {
+          "name": "Atticus Geiger",
+          "authorId": "2315137132"
+        },
+        {
+          "name": "Sarah Wiegreffe",
+          "authorId": "35823986"
+        },
+        {
+          "name": "Dana Arad",
+          "authorId": "2290800163"
+        },
+        {
+          "name": "Iv'an Arcuschin",
+          "authorId": "2349542533"
+        },
+        {
+          "name": "Adam Belfki",
+          "authorId": "2312327636"
+        },
+        {
+          "name": "Yik Siu Chan",
+          "authorId": "2298459121"
+        },
+        {
+          "name": "Jaden Fiotto-Kaufman",
+          "authorId": "2129392987"
+        },
+        {
+          "name": "Tal Haklay",
+          "authorId": "2232604403"
+        },
+        {
+          "name": "Michael Hanna",
+          "authorId": "2140766524"
+        },
+        {
+          "name": "Jing Huang",
+          "authorId": "2145739230"
+        },
+        {
+          "name": "Rohan Gupta",
+          "authorId": "2312274312"
+        },
+        {
+          "name": "Yaniv Nikankin",
+          "authorId": "2191617821"
+        },
+        {
+          "name": "Hadas Orgad",
+          "authorId": "1398583303"
+        },
+        {
+          "name": "Nikhil Prakash",
+          "authorId": "2284985448"
+        },
+        {
+          "name": "Anja Reusch",
+          "authorId": "2328076715"
+        },
+        {
+          "name": "Aruna Sankaranarayanan",
+          "authorId": "2314691448"
+        },
+        {
+          "name": "Shun Shao",
+          "authorId": "2355892357"
+        },
+        {
+          "name": "Alessandro Stolfo",
+          "authorId": "2175480389"
+        },
+        {
+          "name": "Martin Tutek",
+          "authorId": "2367197291"
+        },
+        {
+          "name": "Amir Zur",
+          "authorId": "2186302293"
+        },
+        {
+          "name": "David Bau",
+          "authorId": "2284996653"
+        },
+        {
+          "name": "Yonatan Belinkov",
+          "authorId": "2346327043"
+        }
+      ],
+      "year": 2025,
+      "abstract": "How can we know whether new mechanistic interpretability methods achieve real improvements? In pursuit of lasting evaluation standards, we propose MIB, a Mechanistic Interpretability Benchmark, with two tracks spanning four tasks and five models. MIB favors methods that precisely and concisely recover relevant causal pathways or causal variables in neural language models. The circuit localization track compares methods that locate the model components - and connections between them - most important for performing a task (e.g., attribution patching or information flow routes). The causal variable localization track compares methods that featurize a hidden vector, e.g., sparse autoencoders (SAEs) or distributed alignment search (DAS), and align those features to a task-relevant causal variable. Using MIB, we find that attribution and mask optimization methods perform best on circuit localization. For causal variable localization, we find that the supervised DAS method performs best, while SAE features are not better than neurons, i.e., non-featurized hidden vectors. These findings illustrate that MIB enables meaningful comparisons, and increases our confidence that there has been real progress in the field.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2504.13151",
+      "arxivId": "2504.13151",
+      "url": "https://www.semanticscholar.org/paper/66583ad76bc1ce493ed3b530b9a56f87a7e684ca",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.13151"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c1ceb29224145b1a7b4e7943f43c62f25a7a80cf",
+      "title": "Prisma: An Open Source Toolkit for Mechanistic Interpretability in Vision and Video",
+      "authors": [
+        {
+          "name": "Sonia Joseph",
+          "authorId": "2355082098"
+        },
+        {
+          "name": "Praneet Suresh",
+          "authorId": "2355309836"
+        },
+        {
+          "name": "Lorenz Hufe",
+          "authorId": "2203793946"
+        },
+        {
+          "name": "Edward Stevinson",
+          "authorId": "2330885919"
+        },
+        {
+          "name": "Robert Graham",
+          "authorId": "2355082065"
+        },
+        {
+          "name": "Yash Vadi",
+          "authorId": "2230656302"
+        },
+        {
+          "name": "Danilo Bzdok",
+          "authorId": "2355080520"
+        },
+        {
+          "name": "S. Lapuschkin",
+          "authorId": "3633358"
+        },
+        {
+          "name": "Lee Sharkey",
+          "authorId": "2267502247"
+        },
+        {
+          "name": "Blake Richards",
+          "authorId": "2311697786"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Robust tooling and publicly available pre-trained models have helped drive recent advances in mechanistic interpretability for language models. However, similar progress in vision mechanistic interpretability has been hindered by the lack of accessible frameworks and pre-trained weights. We present Prisma (Access the codebase here: https://github.com/Prisma-Multimodal/ViT-Prisma), an open-source framework designed to accelerate vision mechanistic interpretability research, providing a unified toolkit for accessing 75+ vision and video transformers; support for sparse autoencoder (SAE), transcoder, and crosscoder training; a suite of 80+ pre-trained SAE weights; activation caching, circuit analysis tools, and visualization tools; and educational resources. Our analysis reveals surprising findings, including that effective vision SAEs can exhibit substantially lower sparsity patterns than language SAEs, and that in some instances, SAE reconstructions can decrease model loss. Prisma enables new research directions for understanding vision model internals while lowering barriers to entry in this emerging field.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2504.19475",
+      "arxivId": "2504.19475",
+      "url": "https://www.semanticscholar.org/paper/c1ceb29224145b1a7b4e7943f43c62f25a7a80cf",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.19475"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e0d518529ca6a67f3a729be7ca722321a019f68b",
+      "title": "Dissecting and Mitigating Diffusion Bias via Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Yingdong Shi",
+          "authorId": "2351252532"
+        },
+        {
+          "name": "Changming Li",
+          "authorId": "2350270218"
+        },
+        {
+          "name": "Yifan Wang",
+          "authorId": "2349647541"
+        },
+        {
+          "name": "Yongxiang Zhao",
+          "authorId": "2352081439"
+        },
+        {
+          "name": "Anqi Pang",
+          "authorId": "2064270362"
+        },
+        {
+          "name": "Sibei Yang",
+          "authorId": "2274711209"
+        },
+        {
+          "name": "Jingyi Yu",
+          "authorId": "2348586905"
+        },
+        {
+          "name": "Kan Ren",
+          "authorId": "2349646472"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Diffusion models have demonstrated impressive capabilities in synthesizing diverse content. However, despite their high-quality outputs, these models often perpetuate social biases, including those related to gender and race. These biases can potentially contribute to harmful real-world consequences, reinforcing stereotypes and exacerbating inequalities in various social contexts. While existing research on diffusion bias mitigation has predominantly focused on guiding content generation, it often neglects the intrinsic mechanisms within diffusion models that causally drive biased outputs. In this paper, we investigate the internal processes of diffusion models, identifying specific decision-making mechanisms, termed bias features, embedded within the model architecture. By directly manipulating these features, our method precisely isolates and adjusts the elements responsible for bias generation, permitting granular control over the bias levels in the generated content. Through experiments on both unconditional and conditional diffusion models across various social bias attributes, we demonstrate our method\u2019s efficacy in managing generation distribution while preserving image quality. We also dissect the discovered model mechanism, revealing different intrinsic features controlling fine-grained aspects of generation, boosting further research on mechanistic interpretability of diffusion models. The project website is at https://foundation-model-research.github.io/difflens.",
+      "citationCount": 12,
+      "doi": "10.1109/CVPR52734.2025.00767",
+      "arxivId": "2503.20483",
+      "url": "https://www.semanticscholar.org/paper/e0d518529ca6a67f3a729be7ca722321a019f68b",
+      "venue": "Computer Vision and Pattern Recognition",
+      "journal": {
+        "name": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "pages": "8192-8202"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ea328ca3b32da63260b0208a2d0b58d549b7ccad",
+      "title": "Dissecting Bias in LLMs: A Mechanistic Interpretability Perspective",
+      "authors": [
+        {
+          "name": "Bhavik Chandna",
+          "authorId": "2319399027"
+        },
+        {
+          "name": "Zubair Bashir",
+          "authorId": "2366016538"
+        },
+        {
+          "name": "Procheta Sen",
+          "authorId": "2319410390"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) are known to exhibit social, demographic, and gender biases, often as a consequence of the data on which they are trained. In this work, we adopt a mechanistic interpretability approach to analyze how such biases are structurally represented within models such as GPT-2 and Llama2. Focusing on demographic and gender biases, we explore different metrics to identify the internal edges responsible for biased behavior. We then assess the stability, localization, and generalizability of these components across dataset and linguistic variations. Through systematic ablations, we demonstrate that bias-related computations are highly localized, often concentrated in a small subset of layers. Moreover, the identified components change across fine-tuning settings, including those unrelated to bias. Finally, we show that removing these components not only reduces biased outputs but also affects other NLP tasks, such as named entity recognition and linguistic acceptability judgment because of the sharing of important components with these tasks.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2506.05166",
+      "arxivId": "2506.05166",
+      "url": "https://www.semanticscholar.org/paper/ea328ca3b32da63260b0208a2d0b58d549b7ccad",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.05166"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "63832a9155720a52f9b2f209a25f5d686f6d7b84",
+      "title": "Exploring Mechanistic Interpretability in Large Language Models: Challenges, Approaches, and Insights",
+      "authors": [
+        {
+          "name": "Sandeep Reddy Gantla",
+          "authorId": "2364182156"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in large language models (LLMs) have significantly enhanced their performance across a wide array of tasks. However, the lack of interpretability has become a critical concern, particularly as these models grow in size and complexity. Mechanistic interpretability seeks to uncover the internal workings of neural networks, offering valuable insights into their decision-making processes, biases, and potential safety risks. This survey delves into the emerging field of mechanistic interpretability for LLMs, emphasizing the need to reverse-engineer these models to ensure ethical and reliable AI systems. We provide a comprehensive examination of key techniques, including feature representation, circuit analysis, and causal intervention methods. The survey also discusses challenges such as polysemanticity and superposition, which complicate the understanding of individual model components. By exploring these frontiers, the paper highlights the importance of mechanistic interpretability in improving model transparency, robustness, and alignment with human values, while identifying open challenges in the field.",
+      "citationCount": 6,
+      "doi": "10.1109/ICDSAAI65575.2025.11011640",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/63832a9155720a52f9b2f209a25f5d686f6d7b84",
+      "venue": "2025 International Conference on Data Science, Agents & Artificial Intelligence (ICDSAAI)",
+      "journal": {
+        "name": "2025 International Conference on Data Science, Agents & Artificial Intelligence (ICDSAAI)",
+        "pages": "1-8"
+      },
+      "publicationTypes": [
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "b4d81c89c973b6d207dbc0562760200b7d7974ed",
+      "title": "The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?",
+      "authors": [
+        {
+          "name": "Denis Sutter",
+          "authorId": "2372513327"
+        },
+        {
+          "name": "Julian Minder",
+          "authorId": "2305481379"
+        },
+        {
+          "name": "Thomas Hofmann",
+          "authorId": "2243267340"
+        },
+        {
+          "name": "Tiago Pimentel",
+          "authorId": "2295729225"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The concept of causal abstraction got recently popularised to demystify the opaque decision-making processes of machine learning models; in short, a neural network can be abstracted as a higher-level algorithm if there exists a function which allows us to map between them. Notably, most interpretability papers implement these maps as linear functions, motivated by the linear representation hypothesis: the idea that features are encoded linearly in a model's representations. However, this linearity constraint is not required by the definition of causal abstraction. In this work, we critically examine the concept of causal abstraction by considering arbitrarily powerful alignment maps. In particular, we prove that under reasonable assumptions, any neural network can be mapped to any algorithm, rendering this unrestricted notion of causal abstraction trivial and uninformative. We complement these theoretical findings with empirical evidence, demonstrating that it is possible to perfectly map models to algorithms even when these models are incapable of solving the actual task; e.g., on an experiment using randomly initialised language models, our alignment maps reach 100\\% interchange-intervention accuracy on the indirect object identification task. This raises the non-linear representation dilemma: if we lift the linearity constraint imposed to alignment maps in causal abstraction analyses, we are left with no principled way to balance the inherent trade-off between these maps'complexity and accuracy. Together, these results suggest an answer to our title's question: causal abstraction is not enough for mechanistic interpretability, as it becomes vacuous without assumptions about how models encode information. Studying the connection between this information-encoding assumption and causal abstraction should lead to exciting future work.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2507.08802",
+      "arxivId": "2507.08802",
+      "url": "https://www.semanticscholar.org/paper/b4d81c89c973b6d207dbc0562760200b7d7974ed",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.08802"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ce89a8d1e6d9add71726bd3a4593a17cc524b281",
+      "title": "Towards eliciting latent knowledge from LLMs with mechanistic interpretability",
+      "authors": [
+        {
+          "name": "Bartosz Cywi'nski",
+          "authorId": "2275612726"
+        },
+        {
+          "name": "Emil Ryd",
+          "authorId": "2362500535"
+        },
+        {
+          "name": "Senthooran Rajamanoharan",
+          "authorId": "35185194"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As language models become more powerful and sophisticated, it is crucial that they remain trustworthy and reliable. There is concerning preliminary evidence that models may attempt to deceive or keep secrets from their operators. To explore the ability of current techniques to elicit such hidden knowledge, we train a Taboo model: a language model that describes a specific secret word without explicitly stating it. Importantly, the secret word is not presented to the model in its training data or prompt. We then investigate methods to uncover this secret. First, we evaluate non-interpretability (black-box) approaches. Subsequently, we develop largely automated strategies based on mechanistic interpretability techniques, including logit lens and sparse autoencoders. Evaluation shows that both approaches are effective in eliciting the secret word in our proof-of-concept setting. Our findings highlight the promise of these approaches for eliciting hidden knowledge and suggest several promising avenues for future work, including testing and refining these methods on more complex model organisms. This work aims to be a step towards addressing the crucial problem of eliciting secret knowledge from language models, thereby contributing to their safe and reliable deployment.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2505.14352",
+      "arxivId": "2505.14352",
+      "url": "https://www.semanticscholar.org/paper/ce89a8d1e6d9add71726bd3a4593a17cc524b281",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.14352"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "71ad2559b21fb5d7afbe61a1b6268b71c03fefb5",
+      "title": "Causal Tracing of Object Representations in Large Vision Language Models: Mechanistic Interpretability and Hallucination Mitigation",
+      "authors": [
+        {
+          "name": "Qiming Li",
+          "authorId": "2309202481"
+        },
+        {
+          "name": "Zekai Ye",
+          "authorId": "2331740978"
+        },
+        {
+          "name": "Xiaocheng Feng",
+          "authorId": "2674998"
+        },
+        {
+          "name": "Weihong Zhong",
+          "authorId": "2208739098"
+        },
+        {
+          "name": "Weitao Ma",
+          "authorId": "2265878959"
+        },
+        {
+          "name": "Xiachong Feng",
+          "authorId": "51056442"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Despite the remarkable advancements of Large Vision-Language Models (LVLMs), the mechanistic interpretability remains underexplored. Existing analyses are insufficiently comprehensive and lack examination covering visual and textual tokens, model components, and the full range of layers. This limitation restricts actionable insights to improve the faithfulness of model output and the development of downstream tasks, such as hallucination mitigation. To address this limitation, we introduce Fine-grained Cross-modal Causal Tracing (FCCT) framework, which systematically quantifies the causal effects on visual object perception. FCCT conducts fine-grained analysis covering the full range of visual and textual tokens, three core model components including multi-head self-attention (MHSA), feed-forward networks (FFNs), and hidden states, across all decoder layers. Our analysis is the first to demonstrate that MHSAs of the last token in middle layers play a critical role in aggregating cross-modal information, while FFNs exhibit a three-stage hierarchical progression for the storage and transfer of visual object representations. Building on these insights, we propose Intermediate Representation Injection (IRI), a training-free inference-time technique that reinforces visual object information flow by precisely intervening on cross-modal representations at specific components and layers, thereby enhancing perception and mitigating hallucination. Consistent improvements across five widely used benchmarks and LVLMs demonstrate IRI achieves state-of-the-art performance, while preserving inference speed and other foundational performance.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2511.05923",
+      "arxivId": "2511.05923",
+      "url": "https://www.semanticscholar.org/paper/71ad2559b21fb5d7afbe61a1b6268b71c03fefb5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.05923"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dce9a3815d742d062cd7ac0d60bc2964447d41dc",
+      "title": "MechIR: A Mechanistic Interpretability Framework for Information Retrieval",
+      "authors": [
+        {
+          "name": "Andrew Parry",
+          "authorId": "2290916922"
+        },
+        {
+          "name": "Catherine Chen",
+          "authorId": "2155115041"
+        },
+        {
+          "name": "Carsten Eickhoff",
+          "authorId": "2262215315"
+        },
+        {
+          "name": "Sean MacAvaney",
+          "authorId": "2290916915"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability is an emerging diagnostic approach for neural models that has gained traction in broader natural language processing domains. This paradigm aims to provide attribution to components of neural systems where causal relationships between hidden layers and output were previously uninterpretable. As the use of neural models in IR for retrieval and evaluation becomes ubiquitous, we need to ensure that we can interpret why a model produces a given output for both transparency and the betterment of systems. This work comprises a flexible framework for diagnostic analysis and intervention within these highly parametric neural systems specifically tailored for IR tasks and architectures. In providing such a framework, we look to facilitate further research in interpretable IR with a broader scope for practical interventions derived from mechanistic interpretability. We provide preliminary analysis and look to demonstrate our framework through an axiomatic lens to show its applications and ease of use for those IR practitioners inexperienced in this emerging paradigm.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2501.10165",
+      "arxivId": "2501.10165",
+      "url": "https://www.semanticscholar.org/paper/dce9a3815d742d062cd7ac0d60bc2964447d41dc",
+      "venue": "European Conference on Information Retrieval",
+      "journal": {
+        "pages": "89-95"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "be79d0ef6dec980140bf3dc940a80a23183acf91",
+      "title": "HyperDAS: Towards Automating Mechanistic Interpretability with Hypernetworks",
+      "authors": [
+        {
+          "name": "Jiuding Sun",
+          "authorId": "2350429426"
+        },
+        {
+          "name": "Jing Huang",
+          "authorId": "2145739230"
+        },
+        {
+          "name": "Sidharth Baskaran",
+          "authorId": "2350350439"
+        },
+        {
+          "name": "Karel D\u2019Oosterlinck",
+          "authorId": "2123124766"
+        },
+        {
+          "name": "Christopher Potts",
+          "authorId": "2280333621"
+        },
+        {
+          "name": "Michael Sklar",
+          "authorId": "2350350504"
+        },
+        {
+          "name": "Atticus Geiger",
+          "authorId": "80833908"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability has made great strides in identifying neural network features (e.g., directions in hidden activation space) that mediate concepts(e.g., the birth year of a person) and enable predictable manipulation. Distributed alignment search (DAS) leverages supervision from counterfactual data to learn concept features within hidden states, but DAS assumes we can afford to conduct a brute force search over potential feature locations. To address this, we present HyperDAS, a transformer-based hypernetwork architecture that (1) automatically locates the token-positions of the residual stream that a concept is realized in and (2) constructs features of those residual stream vectors for the concept. In experiments with Llama3-8B, HyperDAS achieves state-of-the-art performance on the RAVEL benchmark for disentangling concepts in hidden states. In addition, we review the design decisions we made to mitigate the concern that HyperDAS (like all powerful interpretabilty methods) might inject new information into the target model rather than faithfully interpreting it.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2503.10894",
+      "arxivId": "2503.10894",
+      "url": "https://www.semanticscholar.org/paper/be79d0ef6dec980140bf3dc940a80a23183acf91",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.10894"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e7596e53f54d9a90be8b960771b1265013b2e864",
+      "title": "A Mathematical Philosophy of Explanations in Mechanistic Interpretability - The Strange Science Part I.i",
+      "authors": [
+        {
+          "name": "Kola Ayonrinde",
+          "authorId": "2325947690"
+        },
+        {
+          "name": "Louis Jaburi",
+          "authorId": "2358997901"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic Interpretability aims to understand neural net-\nworks through causal explanations. We argue for the\nExplanatory View Hypothesis: that Mechanistic\nInterpretability re- search is a principled approach to\nunderstanding models be- cause neural networks contain\nimplicit explanations which can be extracted and\nunderstood. We hence show that Explanatory Faithfulness, an\nassessment of how well an explanation fits a model, is\nwell-defined. We propose a definition of Mechanistic\nInterpretability (MI) as the practice of producing\nModel-level, Ontic, Causal-Mechanistic, and Falsifiable\nexplanations of neural networks, allowing us to distinguish\nMI from other interpretability paradigms and detail MI\u2019s\ninherent limits. We formulate the Principle of Explanatory\nOptimism, a conjecture which we argue is a necessary\nprecondition for the success of Mechanistic\nInterpretability.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2505.00808",
+      "arxivId": "2505.00808",
+      "url": "https://www.semanticscholar.org/paper/e7596e53f54d9a90be8b960771b1265013b2e864",
+      "venue": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.00808"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ccc354a9d5a4340d67e0c7a83153100b9362ca76",
+      "title": "Position: Mechanistic Interpretability Should Prioritize Feature Consistency in SAEs",
+      "authors": [
+        {
+          "name": "Xiangchen Song",
+          "authorId": "2262495949"
+        },
+        {
+          "name": "Aashiq Muhamed",
+          "authorId": "2042620448"
+        },
+        {
+          "name": "Yujia Zheng",
+          "authorId": "2309464222"
+        },
+        {
+          "name": "Lingjing Kong",
+          "authorId": "2324899900"
+        },
+        {
+          "name": "Zeyu Tang",
+          "authorId": "2125563094"
+        },
+        {
+          "name": "Mona T. Diab",
+          "authorId": "2308097528"
+        },
+        {
+          "name": "Virginia Smith",
+          "authorId": "2308098896"
+        },
+        {
+          "name": "Kun Zhang",
+          "authorId": "2309259181"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Sparse Autoencoders (SAEs) are a prominent tool in mechanistic interpretability (MI) for decomposing neural network activations into interpretable features. However, the aspiration to identify a canonical set of features is challenged by the observed inconsistency of learned SAE features across different training runs, undermining the reliability and efficiency of MI research. This position paper argues that mechanistic interpretability should prioritize feature consistency in SAEs -- the reliable convergence to equivalent feature sets across independent runs. We propose using the Pairwise Dictionary Mean Correlation Coefficient (PW-MCC) as a practical metric to operationalize consistency and demonstrate that high levels are achievable (0.80 for TopK SAEs on LLM activations) with appropriate architectural choices. Our contributions include detailing the benefits of prioritizing consistency; providing theoretical grounding and synthetic validation using a model organism, which verifies PW-MCC as a reliable proxy for ground-truth recovery; and extending these findings to real-world LLM data, where high feature consistency strongly correlates with the semantic similarity of learned feature explanations. We call for a community-wide shift towards systematically measuring feature consistency to foster robust cumulative progress in MI.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2505.20254",
+      "arxivId": "2505.20254",
+      "url": "https://www.semanticscholar.org/paper/ccc354a9d5a4340d67e0c7a83153100b9362ca76",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.20254"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "766717ff0cec19ef5d3918fe8ea93f1b0384cc93",
+      "title": "Mechanistic Interpretability of Fine-Tuned Vision Transformers on Distorted Images: Decoding Attention Head Behavior for Transparent and Trustworthy AI",
+      "authors": [
+        {
+          "name": "N. Bahador",
+          "authorId": "46596235"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability improves the safety, reliability, and robustness of large AI models. This study examined individual attention heads in vision transformers (ViTs) fine tuned on distorted 2D spectrogram images containing non relevant content (axis labels, titles, color bars). By introducing extraneous features, the study analyzed how transformer components processed unrelated information, using mechanistic interpretability to debug issues and reveal insights into transformer architectures. Attention maps assessed head contributions across layers. Heads in early layers (1 to 3) showed minimal task impact with ablation increased MSE loss slightly ({\\mu}=0.11%, {\\sigma}=0.09%), indicating focus on less critical low level features. In contrast, deeper heads (e.g., layer 6) caused a threefold higher loss increase ({\\mu}=0.34%, {\\sigma}=0.02%), demonstrating greater task importance. Intermediate layers (6 to 11) exhibited monosemantic behavior, attending exclusively to chirp regions. Some early heads (1 to 4) were monosemantic but non task relevant (e.g. text detectors, edge or corner detectors). Attention maps distinguished monosemantic heads (precise chirp localization) from polysemantic heads (multiple irrelevant regions). These findings revealed functional specialization in ViTs, showing how heads processed relevant vs. extraneous information. By decomposing transformers into interpretable components, this work enhanced model understanding, identified vulnerabilities, and advanced safer, more transparent AI.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2503.18762",
+      "arxivId": "2503.18762",
+      "url": "https://www.semanticscholar.org/paper/766717ff0cec19ef5d3918fe8ea93f1b0384cc93",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.18762"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cd5645d273660c3f2f2d844e4f5cb68dc62471a4",
+      "title": "How do Large Language Models Understand Relevance? A Mechanistic Interpretability Perspective",
+      "authors": [
+        {
+          "name": "Qi Liu",
+          "authorId": "2260822142"
+        },
+        {
+          "name": "Haozhe Duan",
+          "authorId": "2354553487"
+        },
+        {
+          "name": "Jiaxin Mao",
+          "authorId": "2265811336"
+        },
+        {
+          "name": "Ji-Rong Wen",
+          "authorId": "2295620861"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent studies have shown that large language models (LLMs) can assess relevance and support information retrieval (IR) tasks such as document ranking and relevance judgment generation. However, the internal mechanisms by which off-the-shelf LLMs understand and operationalize relevance remain largely unexplored. In this paper, we systematically investigate how different LLM modules contribute to relevance judgment through the lens of mechanistic interpretability. Using activation patching techniques, we analyze the roles of various model components and identify a multi-stage, progressive process in generating either pointwise or pairwise relevance judgment. Specifically, LLMs first extract query and document information in the early layers, then process relevance information according to instructions in the middle layers, and finally utilize specific attention heads in the later layers to generate relevance judgments in the required format. Our findings provide insights into the mechanisms underlying relevance assessment in LLMs, offering valuable implications for future research on leveraging LLMs for IR tasks.",
+      "citationCount": 3,
+      "doi": "10.1145/3774942",
+      "arxivId": "2504.07898",
+      "url": "https://www.semanticscholar.org/paper/cd5645d273660c3f2f2d844e4f5cb68dc62471a4",
+      "venue": "ACM Transactions on Information Systems",
+      "journal": {
+        "name": "ACM Transactions on Information Systems"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "64ed6233414430222c24779ce59a6b61174678b7",
+      "title": "Using Mechanistic Interpretability to Craft Adversarial Attacks against Large Language Models",
+      "authors": [
+        {
+          "name": "Thomas Winninger",
+          "authorId": "2349384432"
+        },
+        {
+          "name": "B. Addad",
+          "authorId": "1903360"
+        },
+        {
+          "name": "K. Kapusta",
+          "authorId": "2305879844"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Traditional white-box methods for creating adversarial perturbations against LLMs typically rely only on gradient computation from the targeted model, ignoring the internal mechanisms responsible for attack success or failure. Conversely, interpretability studies that analyze these internal mechanisms lack practical applications beyond runtime interventions. We bridge this gap by introducing a novel white-box approach that leverages mechanistic interpretability techniques to craft practical adversarial inputs. Specifically, we first identify acceptance subspaces - sets of feature vectors that do not trigger the model's refusal mechanisms - then use gradient-based optimization to reroute embeddings from refusal subspaces to acceptance subspaces, effectively achieving jailbreaks. This targeted approach significantly reduces computation cost, achieving attack success rates of 80-95\\% on state-of-the-art models including Gemma2, Llama3.2, and Qwen2.5 within minutes or even seconds, compared to existing techniques that often fail or require hours of computation. We believe this approach opens a new direction for both attack research and defense development. Furthermore, it showcases a practical application of mechanistic interpretability where other methods are less efficient, which highlights its utility. The code and generated datasets are available at https://github.com/Sckathach/subspace-rerouting.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2503.06269",
+      "arxivId": "2503.06269",
+      "url": "https://www.semanticscholar.org/paper/64ed6233414430222c24779ce59a6b61174678b7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.06269"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f3658afcd181e4078e1e96ff86eac224fd92faab",
+      "title": "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "ZhongXiang Sun",
+          "authorId": "2109820280"
+        },
+        {
+          "name": "Xiaoxue Zang",
+          "authorId": "2055666765"
+        },
+        {
+          "name": "Kai Zheng",
+          "authorId": "2293395261"
+        },
+        {
+          "name": "Yang Song",
+          "authorId": "2293392741"
+        },
+        {
+          "name": "Jun Xu",
+          "authorId": "2293399145"
+        },
+        {
+          "name": "Xiao Zhang",
+          "authorId": "2293646334"
+        },
+        {
+          "name": "Weijie Yu",
+          "authorId": "2118684861"
+        },
+        {
+          "name": "Han Li",
+          "authorId": "2326496399"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Retrieval-Augmented Generation (RAG) models are designed to incorporate external knowledge, reducing hallucinations caused by insufficient parametric (internal) knowledge. However, even with accurate and relevant retrieved content, RAG models can still produce hallucinations by generating outputs that conflict with the retrieved information. Detecting such hallucinations requires disentangling how Large Language Models (LLMs) utilize external and parametric knowledge. Current detection methods often focus on one of these mechanisms or without decoupling their intertwined effects, making accurate detection difficult. In this paper, we investigate the internal mechanisms behind hallucinations in RAG scenarios. We discover hallucinations occur when the Knowledge FFNs in LLMs overemphasize parametric knowledge in the residual stream, while Copying Heads fail to effectively retain or integrate external knowledge from retrieved content. Based on these findings, we propose ReDeEP, a novel method that detects hallucinations by decoupling LLM's utilization of external context and parametric knowledge. Our experiments show that ReDeEP significantly improves RAG hallucination detection accuracy. Additionally, we introduce AARF, which mitigates hallucinations by modulating the contributions of Knowledge FFNs and Copying Heads.",
+      "citationCount": 58,
+      "doi": "10.48550/arXiv.2410.11414",
+      "arxivId": "2410.11414",
+      "url": "https://www.semanticscholar.org/paper/f3658afcd181e4078e1e96ff86eac224fd92faab",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.11414"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "52be61c3edaa54b568805db55a748ba6d8159587",
+      "title": "Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and the Implications for Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Luca Baroni",
+          "authorId": "2053252972"
+        },
+        {
+          "name": "G. Khara",
+          "authorId": "102476661"
+        },
+        {
+          "name": "Joachim Schaeffer",
+          "authorId": "2372256069"
+        },
+        {
+          "name": "Marat Subkhankulov",
+          "authorId": "2372531548"
+        },
+        {
+          "name": "Stefan Heimersheim",
+          "authorId": "2256989665"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Layer-wise normalization (LN) is an essential component of virtually all transformer-based large language models. While its effects on training stability are well documented, its role at inference time is poorly understood. Additionally, LN layers hinder mechanistic interpretability by introducing additional nonlinearities and increasing the interconnectedness of individual model components. Here, we show that all LN layers can be removed from every GPT-2 model with only a small increase in validation loss (e.g. +0.03 cross-entropy loss for GPT-2 XL). Thus, LN cannot play a substantial role in language modeling. We find that the amount of fine-tuning data needed for LN removal grows sublinearly with model parameters, suggesting scaling to larger models is feasible. We release a suite of LN-free GPT-2 models on Hugging Face. Furthermore, we test interpretability techniques on LN-free models. Direct logit attribution now gives the exact direct effect of individual components, while the accuracy of attribution patching does not significantly improve. We also confirm that GPT-2's\"confidence neurons\"are inactive in the LN-free models. Our work clarifies the role of LN layers in language modeling, showing that GPT-2-class models can function without LN layers. We hope that our LN-free analogs of the GPT-2 family of models will enable more precise interpretability research and improve our understanding of language models.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2507.02559",
+      "arxivId": "2507.02559",
+      "url": "https://www.semanticscholar.org/paper/52be61c3edaa54b568805db55a748ba6d8159587",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.02559"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c76144130347dc9be9b2b02bbea157714d84391a",
+      "title": "Explaining AI through mechanistic interpretability",
+      "authors": [
+        {
+          "name": "Lena K\u00e4stner",
+          "authorId": "2275362082"
+        },
+        {
+          "name": "Barnaby Crook",
+          "authorId": "2224885546"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent work in explainable artificial intelligence (XAI) attempts to render opaque AI systems understandable through a divide-and-conquer strategy. However, this fails to illuminate how trained AI systems work as a whole. Precisely this kind of functional understanding is needed, though, to satisfy important societal desiderata such as safety. To remedy this situation, we argue, AI researchers should seek mechanistic interpretability, viz. apply coordinated discovery strategies familiar from the life sciences to uncover the functional organisation of complex AI systems. Additionally, theorists should accommodate for the unique costs and benefits of such strategies in their portrayals of XAI research.",
+      "citationCount": 24,
+      "doi": "10.1007/s13194-024-00614-4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c76144130347dc9be9b2b02bbea157714d84391a",
+      "venue": "European Journal for Philosophy of Science",
+      "journal": {
+        "name": "European Journal for Philosophy of Science",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1301ed763095097ff424c668e16a265b3ae2f231",
+      "title": "Dictionary Learning Improves Patch-Free Circuit Discovery in Mechanistic Interpretability: A Case Study on Othello-GPT",
+      "authors": [
+        {
+          "name": "Zhengfu He",
+          "authorId": "2166121084"
+        },
+        {
+          "name": "Xuyang Ge",
+          "authorId": "2284692027"
+        },
+        {
+          "name": "Qiong Tang",
+          "authorId": "2284823489"
+        },
+        {
+          "name": "Tianxiang Sun",
+          "authorId": "153345698"
+        },
+        {
+          "name": "Qinyuan Cheng",
+          "authorId": "1834133"
+        },
+        {
+          "name": "Xipeng Qiu",
+          "authorId": "2256661882"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Sparse dictionary learning has been a rapidly growing technique in mechanistic interpretability to attack superposition and extract more human-understandable features from model activations. We ask a further question based on the extracted more monosemantic features: How do we recognize circuits connecting the enormous amount of dictionary features? We propose a circuit discovery framework alternative to activation patching. Our framework suffers less from out-of-distribution and proves to be more efficient in terms of asymptotic complexity. The basic unit in our framework is dictionary features decomposed from all modules writing to the residual stream, including embedding, attention output and MLP output. Starting from any logit, dictionary feature or attention score, we manage to trace down to lower-level dictionary features of all tokens and compute their contribution to these more interpretable and local model behaviors. We dig in a small transformer trained on a synthetic task named Othello and find a number of human-understandable fine-grained circuits inside of it.",
+      "citationCount": 25,
+      "doi": "10.48550/arXiv.2402.12201",
+      "arxivId": "2402.12201",
+      "url": "https://www.semanticscholar.org/paper/1301ed763095097ff424c668e16a265b3ae2f231",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.12201"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c63324aadee7bc9566a98fef80e2149d21a3360a",
+      "title": "Mechanistic interpretability for steering vision-language-action models",
+      "authors": [
+        {
+          "name": "Bear H\u00e4on",
+          "authorId": "2384456517"
+        },
+        {
+          "name": "Kaylene C. Stocking",
+          "authorId": "51320292"
+        },
+        {
+          "name": "Ian Chuang",
+          "authorId": "2378711665"
+        },
+        {
+          "name": "Claire J. Tomlin",
+          "authorId": "2262359867"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Vision-Language-Action (VLA) models are a promising path to realizing generalist embodied agents that can quickly adapt to new tasks, modalities, and environments. However, methods for interpreting and steering VLAs fall far short of classical robotics pipelines, which are grounded in explicit models of kinematics, dynamics, and control. This lack of mechanistic insight is a central challenge for deploying learned policies in real-world robotics, where robustness and explainability are critical. Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time. We project feedforward activations within transformer layers onto the token embedding basis, identifying sparse semantic directions - such as speed and direction - that are causally linked to action selection. Leveraging these findings, we introduce a general-purpose activation steering method that modulates behavior in real time, without fine-tuning, reward signals, or environment interaction. We evaluate this method on two recent open-source VLAs, Pi0 and OpenVLA, and demonstrate zero-shot behavioral control in simulation (LIBERO) and on a physical robot (UR5). This work demonstrates that interpretable components of embodied VLAs can be systematically harnessed for control - establishing a new paradigm for transparent and steerable foundation models in robotics.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2509.00328",
+      "arxivId": "2509.00328",
+      "url": "https://www.semanticscholar.org/paper/c63324aadee7bc9566a98fef80e2149d21a3360a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.00328"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3eaacb86487b8e6038bf4ed21110a5c4ae2e8f55",
+      "title": "Towards Unified Attribution in Explainable AI, Data-Centric AI, and Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Shichang Zhang",
+          "authorId": "2343631087"
+        },
+        {
+          "name": "Tessa Han",
+          "authorId": "2154279258"
+        },
+        {
+          "name": "Usha Bhalla",
+          "authorId": "2160885489"
+        },
+        {
+          "name": "Himabindu Lakkaraju",
+          "authorId": "2310699647"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The increasing complexity of AI systems has made understanding their behavior critical. Numerous interpretability methods have been developed to attribute model behavior to three key aspects: input features, training data, and internal model components, which emerged from explainable AI, data-centric AI, and mechanistic interpretability, respectively. However, these attribution methods are studied and applied rather independently, resulting in a fragmented landscape of methods and terminology. This position paper argues that feature, data, and component attribution methods share fundamental similarities, and a unified view of them benefits both interpretability and broader AI research. To this end, we first analyze popular methods for these three types of attributions and present a unified view demonstrating that these seemingly distinct methods employ similar techniques (such as perturbations, gradients, and linear approximations) over different aspects and thus differ primarily in their perspectives rather than techniques. Then, we demonstrate how this unified view enhances understanding of existing attribution methods, highlights shared concepts and evaluation criteria among these methods, and leads to new research directions both in interpretability research, by addressing common challenges and facilitating cross-attribution innovation, and in AI more broadly, with applications in model editing, steering, and regulation.",
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": "2501.18887",
+      "url": "https://www.semanticscholar.org/paper/3eaacb86487b8e6038bf4ed21110a5c4ae2e8f55",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "25a0e463588d36cab8337ceeb8e9b38b938d3e73",
+      "title": "nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers",
+      "authors": [
+        {
+          "name": "Cl'ement Dumas",
+          "authorId": "2392960261"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability research requires reliable tools for analyzing transformer internals across diverse architectures. Current approaches face a fundamental tradeoff: custom implementations like TransformerLens ensure consistent interfaces but require coding a manual adaptation for each architecture, introducing numerical mismatch with the original models, while direct HuggingFace access through NNsight preserves exact behavior but lacks standardization across models. To bridge this gap, we develop nnterp, a lightweight wrapper around NNsight that provides a unified interface for transformer analysis while preserving original HuggingFace implementations. Through automatic module renaming and comprehensive validation testing, nnterp enables researchers to write intervention code once and deploy it across 50+ model variants spanning 16 architecture families. The library includes built-in implementations of common interpretability methods (logit lens, patchscope, activation steering) and provides direct access to attention probabilities for models that support it. By packaging validation tests with the library, researchers can verify compatibility with custom models locally. nnterp bridges the gap between correctness and usability in mechanistic interpretability tooling.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2511.14465",
+      "arxivId": "2511.14465",
+      "url": "https://www.semanticscholar.org/paper/25a0e463588d36cab8337ceeb8e9b38b938d3e73",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.14465"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4dc5c2678ada616b9081a93a23f06fbc632a7144",
+      "title": "Geospatial Mechanistic Interpretability of Large Language Models",
+      "authors": [
+        {
+          "name": "S. D. Sabbata",
+          "authorId": "2741769"
+        },
+        {
+          "name": "Stefano Mizzaro",
+          "authorId": "1726978"
+        },
+        {
+          "name": "Kevin Roitero",
+          "authorId": "3445334"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) have demonstrated unprecedented capabilities across various natural language processing tasks. Their ability to process and generate viable text and code has made them ubiquitous in many fields, while their deployment as knowledge bases and\"reasoning\"tools remains an area of ongoing research. In geography, a growing body of literature has been focusing on evaluating LLMs' geographical knowledge and their ability to perform spatial reasoning. However, very little is still known about the internal functioning of these models, especially about how they process geographical information. In this chapter, we establish a novel framework for the study of geospatial mechanistic interpretability - using spatial analysis to reverse engineer how LLMs handle geographical information. Our aim is to advance our understanding of the internal representations that these complex models generate while processing geographical information - what one might call\"how LLMs think about geographic information\"if such phrasing was not an undue anthropomorphism. We first outline the use of probing in revealing internal structures within LLMs. We then introduce the field of mechanistic interpretability, discussing the superposition hypothesis and the role of sparse autoencoders in disentangling polysemantic internal representations of LLMs into more interpretable, monosemantic features. In our experiments, we use spatial autocorrelation to show how features obtained for placenames display spatial patterns related to their geographic location and can thus be interpreted geospatially, providing insights into how these models process geographical information. We conclude by discussing how our framework can help shape the study and use of foundation models in geography.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.03368",
+      "arxivId": "2505.03368",
+      "url": "https://www.semanticscholar.org/paper/4dc5c2678ada616b9081a93a23f06fbc632a7144",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.03368"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1dd76d9e4ba70a18477a69b63c89eab1e4d29f52",
+      "title": "Evaluating Explanations: An Explanatory Virtues Framework for Mechanistic Interpretability - The Strange Science Part I.ii",
+      "authors": [
+        {
+          "name": "Kola Ayonrinde",
+          "authorId": "2325947690"
+        },
+        {
+          "name": "Louis Jaburi",
+          "authorId": "2358997901"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic Interpretability (MI) aims to understand neural networks through causal explanations. Though MI has many explanation-generating methods, progress has been limited by the lack of a universal approach to evaluating explanations. Here we analyse the fundamental question\"What makes a good explanation?\"We introduce a pluralist Explanatory Virtues Framework drawing on four perspectives from the Philosophy of Science - the Bayesian, Kuhnian, Deutschian, and Nomological - to systematically evaluate and improve explanations in MI. We find that Compact Proofs consider many explanatory virtues and are hence a promising approach. Fruitful research directions implied by our framework include (1) clearly defining explanatory simplicity, (2) focusing on unifying explanations and (3) deriving universal principles for neural networks. Improved MI methods enhance our ability to monitor, predict, and steer AI systems.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2505.01372",
+      "arxivId": "2505.01372",
+      "url": "https://www.semanticscholar.org/paper/1dd76d9e4ba70a18477a69b63c89eab1e4d29f52",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.01372"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "af98bf5a5a1db4e4e7e99ba51d860e11de0b25ca",
+      "title": "Mechanistic Interpretability with SAEs: Probing Religion, Violence, and Geography in Large Language Models",
+      "authors": [
+        {
+          "name": "Katharina Simbeck",
+          "authorId": "2381363794"
+        },
+        {
+          "name": "Mariam Mahran",
+          "authorId": "2381363721"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Despite growing research on bias in large language models (LLMs), most work has focused on gender and race, with little attention to religious identity. This paper explores how religion is internally represented in LLMs and how it intersects with concepts of violence and geography. Using mechanistic interpretability and Sparse Autoencoders (SAEs) via the Neuronpedia API, we analyze latent feature activations across five models. We measure overlap between religion- and violence-related prompts and probe semantic patterns in activation contexts. While all five religions show comparable internal cohesion, Islam is more frequently linked to features associated with violent language. In contrast, geographic associations largely reflect real-world religious demographics, revealing how models embed both factual distributions and cultural stereotypes. These findings highlight the value of structural analysis in auditing not just outputs but also internal representations that shape model behavior.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2509.17665",
+      "arxivId": "2509.17665",
+      "url": "https://www.semanticscholar.org/paper/af98bf5a5a1db4e4e7e99ba51d860e11de0b25ca",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.17665"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5edc67b101db9da262bca5b2183d7127e84ba0e2",
+      "title": "Do VLMs Have Bad Eyes? Diagnosing Compositional Failures via Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Ashwath Vaithinathan Aravindan",
+          "authorId": "2357964554"
+        },
+        {
+          "name": "Abha Jha",
+          "authorId": "2357970711"
+        },
+        {
+          "name": "Mihir Kulkarni",
+          "authorId": "2376538822"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Vision-Language Models (VLMs) have shown remarkable performance in integrating visual and textual information for tasks such as image captioning and visual question answering. However, these models struggle with compositional generalization and object binding, which limit their ability to handle novel combinations of objects and their attributes. Our work explores the root causes of these failures using mechanistic interpretability techniques. We show evidence that individual neurons in the MLP layers of CLIP's vision encoder represent multiple features, and this\"superposition\"directly hinders its compositional feature representation which consequently affects compositional reasoning and object binding capabilities. We hope this study will serve as an initial step toward uncovering the mechanistic roots of compositional failures in VLMs. The code and supporting results can be found https://github.com/Mystic-Slice/Do-VLMs-Have-Bad-Eyes.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2508.16652",
+      "arxivId": "2508.16652",
+      "url": "https://www.semanticscholar.org/paper/5edc67b101db9da262bca5b2183d7127e84ba0e2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.16652"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a5cbe230af78780bd14c5472d8e089c16f832b28",
+      "title": "Mechanistic Interpretability Needs Philosophy",
+      "authors": [
+        {
+          "name": "Iwan Williams",
+          "authorId": "2367743827"
+        },
+        {
+          "name": "Ninell Oldenburg",
+          "authorId": "2209989604"
+        },
+        {
+          "name": "Ruchira Dhar",
+          "authorId": "2311888638"
+        },
+        {
+          "name": "Joshua Hatherley",
+          "authorId": "2358040882"
+        },
+        {
+          "name": "Constanza Fierro",
+          "authorId": "50110151"
+        },
+        {
+          "name": "Nina Rajcic",
+          "authorId": "81045154"
+        },
+        {
+          "name": "Sandrine R. Schiller",
+          "authorId": "2370937188"
+        },
+        {
+          "name": "Filippos Stamatiou",
+          "authorId": "2306968038"
+        },
+        {
+          "name": "Anders S\u00f8gaard",
+          "authorId": "2281953769"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability (MI) aims to explain how neural networks work by uncovering their underlying causal mechanisms. As the field grows in influence, it is increasingly important to examine not just models themselves, but the assumptions, concepts and explanatory strategies implicit in MI research. We argue that mechanistic interpretability needs philosophy: not as an afterthought, but as an ongoing partner in clarifying its concepts, refining its methods, and assessing the epistemic and ethical stakes of interpreting AI systems. Taking three open problems from the MI literature as examples, this position paper illustrates the value philosophy can add to MI research, and outlines a path toward deeper interdisciplinary dialogue.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.18852",
+      "arxivId": "2506.18852",
+      "url": "https://www.semanticscholar.org/paper/a5cbe230af78780bd14c5472d8e089c16f832b28",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.18852"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5adf6a00cb9f4707db4bdb9d4d8b06eda9ee21b8",
+      "title": "TinySQL: A Progressive Text-to-SQL Dataset for Mechanistic Interpretability Research",
+      "authors": [
+        {
+          "name": "Philip Quirke",
+          "authorId": "2261086649"
+        },
+        {
+          "name": "Clement Neo",
+          "authorId": "2282539568"
+        },
+        {
+          "name": "Abir Harrasse",
+          "authorId": "2324780640"
+        },
+        {
+          "name": "Dhruv Nathawani",
+          "authorId": "2082063182"
+        },
+        {
+          "name": "Luke Marks",
+          "authorId": "2257345417"
+        },
+        {
+          "name": "Amirali Abdullah",
+          "authorId": "2349453735"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability research faces a gap between analyzing simple circuits in toy tasks and discovering features in large models. To bridge this gap, we propose text-to-SQL generation as an ideal task to study, as it combines the formal structure of toy tasks with real-world complexity. We introduce TinySQL, a synthetic dataset, progressing from basic to advanced SQL operations, and train models ranging from 33M to 1B parameters to establish a comprehensive testbed for interpretability. We apply multiple complementary interpretability techniques, including Edge Attribution Patching and Sparse Autoencoders, to identify minimal circuits and components supporting SQL generation. We compare circuits for different SQL subskills, evaluating their minimality, reliability, and identifiability. Finally, we conduct a layerwise logit lens analysis to reveal how models compose SQL queries across layers: from intent recognition to schema resolution to structured generation. Our work provides a robust framework for probing and comparing interpretability methods in a structured, progressively complex setting.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2503.12730",
+      "arxivId": "2503.12730",
+      "url": "https://www.semanticscholar.org/paper/5adf6a00cb9f4707db4bdb9d4d8b06eda9ee21b8",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.12730"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "91595f66ec8f07474cdb8a7cdecda1664301c0af",
+      "title": "Concept-Based Mechanistic Interpretability Using Structured Knowledge Graphs",
+      "authors": [
+        {
+          "name": "Sofiia Chorna",
+          "authorId": "2373017236"
+        },
+        {
+          "name": "Kateryna Tarelkina",
+          "authorId": "2373019946"
+        },
+        {
+          "name": "Eloise Berthier",
+          "authorId": "2257005052"
+        },
+        {
+          "name": "Gianni Franchi",
+          "authorId": "2269147873"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While concept-based interpretability methods have traditionally focused on local explanations of neural network predictions, we propose a novel framework and interactive tool that extends these methods into the domain of mechanistic interpretability. Our approach enables a global dissection of model behavior by analyzing how high-level semantic attributes (referred to as concepts) emerge, interact, and propagate through internal model components. Unlike prior work that isolates individual neurons or predictions, our framework systematically quantifies how semantic concepts are represented across layers, revealing latent circuits and information flow that underlie model decision-making. A key innovation is our visualization platform that we named BAGEL (for Bias Analysis with a Graph for global Explanation Layers), which presents these insights in a structured knowledge graph, allowing users to explore concept-class relationships, identify spurious correlations, and enhance model trustworthiness. Our framework is model-agnostic, scalable, and contributes to a deeper understanding of how deep learning models generalize (or fail to) in the presence of dataset biases. The demonstration is available at https://knowledge-graph-ui-4a7cb5.gitlab.io/.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2507.05810",
+      "arxivId": "2507.05810",
+      "url": "https://www.semanticscholar.org/paper/91595f66ec8f07474cdb8a7cdecda1664301c0af",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.05810"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a126eb9e5c77e20314ef5acae3376032daf5c52f",
+      "title": "Mechanistic Interpretability as Statistical Estimation: A Variance Analysis of EAP-IG",
+      "authors": [
+        {
+          "name": "Maxime M'eloux",
+          "authorId": "2348097882"
+        },
+        {
+          "name": "Franccois Portet",
+          "authorId": "2126059340"
+        },
+        {
+          "name": "Maxime Peyrard",
+          "authorId": "2348097920"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The development of trustworthy artificial intelligence requires moving beyond black-box performance metrics toward an understanding of models'internal computations. Mechanistic Interpretability (MI) aims to meet this need by identifying the algorithmic mechanisms underlying model behaviors. Yet, the scientific rigor of MI critically depends on the reliability of its findings. In this work, we argue that interpretability methods, such as circuit discovery, should be viewed as statistical estimators, subject to questions of variance and robustness. To illustrate this statistical framing, we present a systematic stability analysis of a state-of-the-art circuit discovery method: EAP-IG. We evaluate its variance and robustness through a comprehensive suite of controlled perturbations, including input resampling, prompt paraphrasing, hyperparameter variation, and injected noise within the causal analysis itself. Across a diverse set of models and tasks, our results demonstrate that EAP-IG exhibits high structural variance and sensitivity to hyperparameters, questioning the stability of its findings. Based on these results, we offer a set of best-practice recommendations for the field, advocating for the routine reporting of stability metrics to promote a more rigorous and statistically grounded science of interpretability.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2510.00845",
+      "arxivId": "2510.00845",
+      "url": "https://www.semanticscholar.org/paper/a126eb9e5c77e20314ef5acae3376032daf5c52f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.00845"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a8c2f4246a909510d7ea182e77ec7834a5884186",
+      "title": "Resurrecting the Salmon: Rethinking Mechanistic Interpretability with Domain-Specific Sparse Autoencoders",
+      "authors": [
+        {
+          "name": "Charles O'Neill",
+          "authorId": "2374153363"
+        },
+        {
+          "name": "Mudith Jayasekara",
+          "authorId": "2221409603"
+        },
+        {
+          "name": "Max Kirkby",
+          "authorId": "2374154118"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Sparse autoencoders (SAEs) decompose large language model (LLM) activations into latent features that reveal mechanistic structure. Conventional SAEs train on broad data distributions, forcing a fixed latent budget to capture only high-frequency, generic patterns. This often results in significant linear ``dark matter''in reconstruction error and produces latents that fragment or absorb each other, complicating interpretation. We show that restricting SAE training to a well-defined domain (medical text) reallocates capacity to domain-specific features, improving both reconstruction fidelity and interpretability. Training JumpReLU SAEs on layer-20 activations of Gemma-2 models using 195k clinical QA examples, we find that domain-confined SAEs explain up to 20\\% more variance, achieve higher loss recovery, and reduce linear residual error compared to broad-domain SAEs. Automated and human evaluations confirm that learned features align with clinically meaningful concepts (e.g., ``taste sensations''or ``infectious mononucleosis''), rather than frequent but uninformative tokens. These domain-specific SAEs capture relevant linear structure, leaving a smaller, more purely nonlinear residual. We conclude that domain-confinement mitigates key limitations of broad-domain SAEs, enabling more complete and interpretable latent decompositions, and suggesting the field may need to question ``foundation-model''scaling for general-purpose SAEs.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2508.09363",
+      "arxivId": "2508.09363",
+      "url": "https://www.semanticscholar.org/paper/a8c2f4246a909510d7ea182e77ec7834a5884186",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.09363"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "348028ab7cc778981fc7dbba1225df57070ee441",
+      "title": "Mechanistic Interpretability for Neural TSP Solvers",
+      "authors": [
+        {
+          "name": "Reuben Narad",
+          "authorId": "2347533205"
+        },
+        {
+          "name": "L\u00e9onard Boussioux",
+          "authorId": "2286879971"
+        },
+        {
+          "name": "Michael Wagner",
+          "authorId": "2387819810"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Neural networks have advanced combinatorial optimization, with Transformer-based solvers achieving near-optimal solutions on the Traveling Salesman Problem (TSP) in milliseconds. However, these models operate as black boxes, providing no insight into the geometric patterns they learn or the heuristics they employ during tour construction. We address this opacity by applying sparse autoencoders (SAEs), a mechanistic interpretability technique, to a Transformer-based TSP solver, representing the first application of activation-based interpretability methods to operations research models. We train a pointer network with reinforcement learning on 100-node instances, then fit an SAE to the encoder's residual stream to discover an overcomplete dictionary of interpretable features. Our analysis reveals that the solver naturally develops features mirroring fundamental TSP concepts: boundary detectors that activate on convex-hull nodes, cluster-sensitive features responding to locally dense regions, and separator features encoding geometric partitions. These findings provide the first model-internal account of what neural TSP solvers compute before node selection, demonstrate that geometric structure emerges without explicit supervision, and suggest pathways toward transparent hybrid systems that combine neural efficiency with algorithmic interpretability. Interactive feature explorer: https://reubennarad.github.io/TSP_interp",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.21693",
+      "arxivId": "2510.21693",
+      "url": "https://www.semanticscholar.org/paper/348028ab7cc778981fc7dbba1225df57070ee441",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.21693"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e106efac9989c652457097d63339d7f53f488b23",
+      "title": "Mechanistic Interpretability of Antibody Language Models Using SAEs",
+      "authors": [
+        {
+          "name": "Rebonto Haque",
+          "authorId": "2397179588"
+        },
+        {
+          "name": "Oliver M. Turnbull",
+          "authorId": "2189511246"
+        },
+        {
+          "name": "Anisha Parsan",
+          "authorId": "2175555683"
+        },
+        {
+          "name": "Nithin Parsan",
+          "authorId": "2051969261"
+        },
+        {
+          "name": "John J. Yang",
+          "authorId": "2349736931"
+        },
+        {
+          "name": "Charlotte M. Deane",
+          "authorId": "2319130152"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Sparse autoencoders (SAEs) are a mechanistic interpretability technique that have been used to provide insight into learned concepts within large protein language models. Here, we employ TopK and Ordered SAEs to investigate an autoregressive antibody language model, p-IgGen, and steer its generation. We show that TopK SAEs can reveal biologically meaningful latent features, but high feature concept correlation does not guarantee causal control over generation. In contrast, Ordered SAEs impose an hierarchical structure that reliably identifies steerable features, but at the expense of more complex and less interpretable activation patterns. These findings advance the mechanistic interpretability of domain-specific protein language models and suggest that, while TopK SAEs are sufficient for mapping latent features to concepts, Ordered SAEs are preferable when precise generative steering is required.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.05794",
+      "url": "https://www.semanticscholar.org/paper/e106efac9989c652457097d63339d7f53f488b23",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a74f789d1a0f590c9ada414ef837890f9f8911b6",
+      "title": "Mechanistic Interpretability of Socio-Political Frames in Language Models",
+      "authors": [
+        {
+          "name": "Hadi Asghari",
+          "authorId": "2384127295"
+        },
+        {
+          "name": "Sami Nenno",
+          "authorId": "2384126770"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper explores the ability of large language models to generate and recognize deep cognitive frames, particularly in socio-political contexts. We demonstrate that LLMs are highly fluent in generating texts that evoke specific frames and can recognize these frames in zero-shot settings. Inspired by mechanistic interpretability research, we investigate the location of the `strict father'and `nurturing parent'frames within the model's hidden representation, identifying singular dimensions that correlate strongly with their presence. Our findings contribute to understanding how LLMs capture and express meaningful human concepts.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.03799",
+      "arxivId": "2510.03799",
+      "url": "https://www.semanticscholar.org/paper/a74f789d1a0f590c9ada414ef837890f9f8911b6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.03799"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3a910119666673ce6d77894055fd356f600ca5e4",
+      "title": "Mechanistic Interpretability in the Presence of Architectural Obfuscation",
+      "authors": [
+        {
+          "name": "Marcos Florencio",
+          "authorId": "2370930034"
+        },
+        {
+          "name": "Thomas Barton",
+          "authorId": "2370929946"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Architectural obfuscation - e.g., permuting hidden-state tensors, linearly transforming embedding tables, or remapping tokens - has recently gained traction as a lightweight substitute for heavyweight cryptography in privacy-preserving large-language-model (LLM) inference. While recent work has shown that these techniques can be broken under dedicated reconstruction attacks, their impact on mechanistic interpretability has not been systematically studied. In particular, it remains unclear whether scrambling a network's internal representations truly thwarts efforts to understand how the model works, or simply relocates the same circuits to an unfamiliar coordinate system. We address this gap by analyzing a GPT-2-small model trained from scratch with a representative obfuscation map. Assuming the obfuscation map is private and the original basis is hidden (mirroring an honest-but-curious server), we apply logit-lens attribution, causal path-patching, and attention-head ablation to locate and manipulate known circuits. Our findings reveal that obfuscation dramatically alters activation patterns within attention heads yet preserves the layer-wise computational graph. This disconnect hampers reverse-engineering of user prompts: causal traces lose their alignment with baseline semantics, and token-level logit attributions become too noisy to reconstruct. At the same time, feed-forward and residual pathways remain functionally intact, suggesting that obfuscation degrades fine-grained interpretability without compromising top-level task performance. These results establish quantitative evidence that architectural obfuscation can simultaneously (i) retain global model behaviour and (ii) impede mechanistic analyses of user-specific content. By mapping where interpretability breaks down, our study provides guidance for future privacy defences and for robustness-aware interpretability tooling.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.18053",
+      "arxivId": "2506.18053",
+      "url": "https://www.semanticscholar.org/paper/3a910119666673ce6d77894055fd356f600ca5e4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.18053"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "397496eded3c4658e2f3458717fb724cff069c8b",
+      "title": "Beyond Input Attribution: A Hands-On Tutorial to Concept-Based Explainable AI and Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Eliana Pastor",
+          "authorId": "2375073288"
+        },
+        {
+          "name": "Eleonora Poeta",
+          "authorId": "2275351206"
+        },
+        {
+          "name": "Andr\u00e9 Panisson",
+          "authorId": "2326949752"
+        },
+        {
+          "name": "Alan Perotti",
+          "authorId": "2305344957"
+        },
+        {
+          "name": "Gabriele Ciravegna",
+          "authorId": "2275350057"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As deep learning systems become pervasive, the demand for trustworthy and transparent AI continues to grow. Traditional feature attribution methods, however, often lack robustness and alignment with human reasoning. This tutorial moves beyond feature attribution by introducing participants to two complementary interpretability paradigms: Concept-Based Explainable AI (C-XAI) and Mechanistic Interpretability. C-XAI provides explanations grounded in high-level, human-interpretable concepts, bridging the gap between model reasoning and human understanding. In parallel, mechanistic interpretability--a quickly emerging field--focuses on reverse-engineering neural networks to uncover and disentangle the internal mechanisms that give rise to human-understandable representations. Through interactive coding sessions and hands-on exercises, attendees will gain practical experience implementing, evaluating, and comparing a variety of C-XAI and mechanistic interpretability techniques. By the end of the tutorial, participants will be equipped with a modern interpretability toolbox and a deeper understanding of how to apply them in real-world scenarios.",
+      "citationCount": 0,
+      "doi": "10.1145/3711896.3737606",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/397496eded3c4658e2f3458717fb724cff069c8b",
+      "venue": "Knowledge Discovery and Data Mining",
+      "journal": {
+        "name": "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "cacaa9e04f675130b4c23573ed9d5bc6b827f97e",
+      "title": "Understanding Sarcasm Detection Through Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Jithendra Katta",
+          "authorId": "2352457450"
+        },
+        {
+          "name": "Manikanta Allanki",
+          "authorId": "2352459279"
+        },
+        {
+          "name": "Nikhil Reddy Kodumuru",
+          "authorId": "2352452976"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Detecting sarcasm remains a significant challenge in natural language processing due to the nuanced interplay of context, sentiment, and contradiction. This study investigates sarcasm detection using the BERT-Large model, emphasizing mechanistic interpretability to enhance performance and transparency. A novel interpretability framework is applied, combining SHAP explanations, attention visualizations, and ablation studies, to identify critical components within the BERT architecture. The research reveals that deeper layers and specific attention heads in BERT are instrumental in isolating sarcasm-specific patterns. Through fine-tuning on a sarcasm-labeled Twitter dataset and leveraging clustering techniques, the study demonstrates the hierarchical progression of sarcasm detection across BERT layers. This work contributes to building reliable and interpretable NLP systems for sentiment analysis, with implications for improving sarcasm detection in real-world applications.",
+      "citationCount": 0,
+      "doi": "10.1109/ICSADL65848.2025.10933475",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cacaa9e04f675130b4c23573ed9d5bc6b827f97e",
+      "venue": "2025 4th International Conference on Sentiment Analysis and Deep Learning (ICSADL)",
+      "journal": {
+        "name": "2025 4th International Conference on Sentiment Analysis and Deep Learning (ICSADL)",
+        "pages": "990-995"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "019cfc087c4294221cf2ba3d16f2318a419741d6",
+      "title": "How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding",
+      "authors": [
+        {
+          "name": "Xi Chen",
+          "authorId": "2374335018"
+        },
+        {
+          "name": "A. Plaat",
+          "authorId": "2562595"
+        },
+        {
+          "name": "N. V. Stein",
+          "authorId": "2218156728"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Chain-of-thought (CoT) prompting boosts Large Language Models accuracy on multi-step tasks, yet whether the generated\"thoughts\"reflect the true internal reasoning process is unresolved. We present the first feature-level causal study of CoT faithfulness. Combining sparse autoencoders with activation patching, we extract monosemantic features from Pythia-70M and Pythia-2.8B while they tackle GSM8K math problems under CoT and plain (noCoT) prompting. Swapping a small set of CoT-reasoning features into a noCoT run raises answer log-probabilities significantly in the 2.8B model, but has no reliable effect in 70M, revealing a clear scale threshold. CoT also leads to significantly higher activation sparsity and feature interpretability scores in the larger model, signalling more modular internal computation. For example, the model's confidence in generating correct answers improves from 1.2 to 4.3. We introduce patch-curves and random-feature patching baselines, showing that useful CoT information is not only present in the top-K patches but widely distributed. Overall, our results indicate that CoT can induce more interpretable internal structures in high-capacity LLMs, validating its role as a structured prompting method.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2507.22928",
+      "arxivId": "2507.22928",
+      "url": "https://www.semanticscholar.org/paper/019cfc087c4294221cf2ba3d16f2318a419741d6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.22928"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1b59fe8d168f6b7c762ade018041ac09f438eeee",
+      "title": "What Do VLMs NOTICE? A Mechanistic Interpretability Pipeline for Noise-free Text-Image Corruption and Evaluation",
+      "authors": [
+        {
+          "name": "Michal Golovanevsky",
+          "authorId": "2171105220"
+        },
+        {
+          "name": "William Rudman",
+          "authorId": "2166313068"
+        },
+        {
+          "name": "Vedant Palit",
+          "authorId": "2216605916"
+        },
+        {
+          "name": "Ritambhara Singh",
+          "authorId": "2268844528"
+        },
+        {
+          "name": "Carsten Eickhoff",
+          "authorId": "2262215315"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Vision-Language Models (VLMs) have gained community-spanning prominence due to their ability to integrate visual and textual inputs to perform complex tasks. Despite their success, the internal decision-making processes of these models remain opaque, posing challenges in high-stakes applications. To address this, we introduce NOTICE, the first Noise-free Text-Image Corruption and Evaluation pipeline for mechanistic interpretability in VLMs. NOTICE incorporates a Semantic Minimal Pairs (SMP) framework for image corruption and Symmetric Token Replacement (STR) for text. This approach enables semantically meaningful causal mediation analysis for both modalities, providing a robust method for analyzing multimodal integration within models like BLIP. Our experiments on the SVO-Probes, MIT-States, and Facial Expression Recognition datasets reveal crucial insights into VLM decision-making, identifying the significant role of middle-layer cross-attention heads. Further, we uncover a set of ``universal cross-attention heads'' that consistently contribute across tasks and modalities, each performing distinct functions such as implicit image segmentation, object inhibition, and outlier inhibition. This work paves the way for more transparent and interpretable multimodal systems.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2406.16320",
+      "arxivId": "2406.16320",
+      "url": "https://www.semanticscholar.org/paper/1b59fe8d168f6b7c762ade018041ac09f438eeee",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.16320"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "bd7397b170caa41dfac22494b6f3feb0f52c4ebb",
+      "title": "Toward a Theory of Generalizability in LLM Mechanistic Interpretability Research",
+      "authors": [
+        {
+          "name": "Sean Trott",
+          "authorId": "2382920294"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Research on Large Language Models (LLMs) increasingly focuses on identifying mechanistic explanations for their behaviors, yet the field lacks clear principles for determining when (and how) findings from one model instance generalize to another. This paper addresses a fundamental epistemological challenge: given a mechanistic claim about a particular model, what justifies extrapolating this finding to other LLMs -- and along which dimensions might such generalizations hold? I propose five potential axes of correspondence along which mechanistic claims might generalize, including: functional (whether they satisfy the same functional criteria), developmental (whether they develop at similar points during pretraining), positional (whether they occupy similar absolute or relative positions), relational (whether they interact with other model components in similar ways), and configurational (whether they correspond to particular regions or structures in weight-space). To empirically validate this framework, I analyze\"1-back attention heads\"(components attending to previous tokens) across pretraining in random seeds of the Pythia models (14M, 70M, 160M, 410M). The results reveal striking consistency in the developmental trajectories of 1-back attention across models, while positional consistency is more limited. Moreover, seeds of larger models systematically show earlier onsets, steeper slopes, and higher peaks of 1-back attention. I also address possible objections to the arguments and proposals outlined here. Finally, I conclude by arguing that progress on the generalizability of mechanistic interpretability research will consist in mapping constitutive design properties of LLMs to their emergent behaviors and mechanisms.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2509.22831",
+      "arxivId": "2509.22831",
+      "url": "https://www.semanticscholar.org/paper/bd7397b170caa41dfac22494b6f3feb0f52c4ebb",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.22831"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "180d89a6fe2ce8521935c6c00cca8c59a35345da",
+      "title": "In-Context Linear Regression Demystified: Training Dynamics and Mechanistic Interpretability of Multi-Head Softmax Attention",
+      "authors": [
+        {
+          "name": "Jianliang He",
+          "authorId": "2298113288"
+        },
+        {
+          "name": "Xintian Pan",
+          "authorId": "2353908887"
+        },
+        {
+          "name": "Siyu Chen",
+          "authorId": "2289616921"
+        },
+        {
+          "name": "Zhuoran Yang",
+          "authorId": "2297735407"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We study how multi-head softmax attention models are trained to perform in-context learning on linear data. Through extensive empirical experiments and rigorous theoretical analysis, we demystify the emergence of elegant attention patterns: a diagonal and homogeneous pattern in the key-query (KQ) weights, and a last-entry-only and zero-sum pattern in the output-value (OV) weights. Remarkably, these patterns consistently appear from gradient-based training starting from random initialization. Our analysis reveals that such emergent structures enable multi-head attention to approximately implement a debiased gradient descent predictor -- one that outperforms single-head attention and nearly achieves Bayesian optimality up to proportional factor. Furthermore, compared to linear transformers, the softmax attention readily generalizes to sequences longer than those seen during training. We also extend our study to scenarios with anisotropic covariates and multi-task linear regression. In the former, multi-head attention learns to implement a form of pre-conditioned gradient descent. In the latter, we uncover an intriguing regime where the interplay between head number and task number triggers a superposition phenomenon that efficiently resolves multi-task in-context learning. Our results reveal that in-context learning ability emerges from the trained transformer as an aggregated effect of its architecture and the underlying data distribution, paving the way for deeper understanding and broader applications of in-context learning.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2503.12734",
+      "arxivId": "2503.12734",
+      "url": "https://www.semanticscholar.org/paper/180d89a6fe2ce8521935c6c00cca8c59a35345da",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.12734"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    }
+  ],
+  "count": 50,
+  "errors": []
+}

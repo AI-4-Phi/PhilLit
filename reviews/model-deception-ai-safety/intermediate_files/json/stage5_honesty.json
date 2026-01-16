@@ -1,0 +1,951 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "honesty truthfulness evaluation LLM",
+  "results": [
+    {
+      "paperId": "33f7a671abfe2517d1ce36c13bd9da89d4d65e0b",
+      "title": "Mitigating Misleadingness in LLM-Generated Natural Language Explanations for Recommender Systems: Ensuring Broad Truthfulness Through Factuality and Faithfulness",
+      "authors": [
+        {
+          "name": "Ulysse Maes",
+          "authorId": "2325144791"
+        },
+        {
+          "name": "Lien Michiels",
+          "authorId": "2240536433"
+        },
+        {
+          "name": "Annelien Smets",
+          "authorId": "152908257"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/33f7a671abfe2517d1ce36c13bd9da89d4d65e0b",
+      "venue": "IUI Workshops",
+      "journal": {
+        "pages": "95-111"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2045aa04f13ecd3496be82736ffd644de04f5f33",
+      "title": "LLM Knowledge is Brittle: Truthfulness Representations Rely on Superficial Resemblance",
+      "authors": [
+        {
+          "name": "Patrick Haller",
+          "authorId": "2385564033"
+        },
+        {
+          "name": "Mark Ibrahim",
+          "authorId": null
+        },
+        {
+          "name": "Polina Kirichenko",
+          "authorId": "2307071171"
+        },
+        {
+          "name": "Levent Sagun",
+          "authorId": "2253337895"
+        },
+        {
+          "name": "Samuel J. Bell",
+          "authorId": "2366163635"
+        }
+      ],
+      "year": 2025,
+      "abstract": "For Large Language Models (LLMs) to be reliable, they must learn robust knowledge that can be generally applied in diverse settings -- often unlike those seen during training. Yet, extensive research has shown that LLM performance can be brittle, with models exhibiting excessive sensitivity to trivial input variations. In this work, we explore whether this brittleness is a direct result of unstable internal knowledge representations. To explore this question, we build on previous work showing that LLM representations encode statement truthfulness -- i.e., true, factual statements can be easily separated from false, inaccurate ones. Specifically, we test the robustness of learned knowledge by evaluating representation separability on samples that have undergone superficial transformations to drive them out-of-distribution (OOD), such as typos or reformulations. By applying semantically-preserving perturbations, we study how separability degrades as statements become more OOD, across four LLM families, five evaluation datasets, and three knowledge probing methods. Our results reveal that internal representations of statement truthfulness collapse as the samples'presentations become less similar to those seen during pre-training. While LLMs can often distinguish between true and false statements when they closely resemble the pre-training data, this ability is highly dependent on the statement's exact surface form. These findings offer a possible explanation for brittle benchmark performance: LLMs may learn shallow, non-robust knowledge representations that allow for only limited generalizability. Our work presents a fundamental challenge for the utility of truthfulness probes, and more broadly, calls for further research on improving the robustness of learned knowledge representations.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.11905",
+      "arxivId": "2510.11905",
+      "url": "https://www.semanticscholar.org/paper/2045aa04f13ecd3496be82736ffd644de04f5f33",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.11905"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0a9789328074a8fefb0ff8966639ef2da291facb",
+      "title": "Are LLM-Judges Robust to Expressions of Uncertainty? Investigating the effect of Epistemic Markers on LLM-based Evaluation",
+      "authors": [
+        {
+          "name": "Dongryeol Lee",
+          "authorId": "1709263"
+        },
+        {
+          "name": "Yerin Hwang",
+          "authorId": "1754112065"
+        },
+        {
+          "name": "Yongi-Mi Kim",
+          "authorId": "2157128089"
+        },
+        {
+          "name": "Joonsuk Park",
+          "authorId": "2267004352"
+        },
+        {
+          "name": "Kyomin Jung",
+          "authorId": "2269738216"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In line with the principle of honesty, there has been a growing effort to train large language models (LLMs) to generate outputs containing epistemic markers. However, evaluation in the presence of epistemic markers has been largely overlooked, raising a critical question: Could the use of epistemic markers in LLM-generated outputs lead to unintended negative consequences? To address this, we present EMBER, a benchmark designed to assess the robustness of LLM-judges to epistemic markers in both single and pairwise evaluation settings. Our findings, based on evaluations using EMBER, reveal that all tested LLM-judges, including GPT-4o, show a notable lack of robustness in the presence of epistemic markers. Specifically, we observe a negative bias toward epistemic markers, with a stronger bias against markers expressing uncertainty. This suggests that LLM-judges are influenced by the presence of these markers and do not focus solely on the correctness of the content.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2410.20774",
+      "arxivId": "2410.20774",
+      "url": "https://www.semanticscholar.org/paper/0a9789328074a8fefb0ff8966639ef2da291facb",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "8962-8984"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e41e54e34f9ebec964ad74ca0aa41c2c328e993f",
+      "title": "TruthEval: A Dataset to Evaluate LLM Truthfulness and Reliability",
+      "authors": [
+        {
+          "name": "Aisha Khatun",
+          "authorId": "2279542622"
+        },
+        {
+          "name": "Daniel G. Brown",
+          "authorId": "2279576931"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Model (LLM) evaluation is currently one of the most important areas of research, with existing benchmarks proving to be insufficient and not completely representative of LLMs' various capabilities. We present a curated collection of challenging statements on sensitive topics for LLM benchmarking called TruthEval. These statements were curated by hand and contain known truth values. The categories were chosen to distinguish LLMs' abilities from their stochastic nature. We perform some initial analyses using this dataset and find several instances of LLMs failing in simple tasks showing their inability to understand simple questions.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2406.01855",
+      "arxivId": "2406.01855",
+      "url": "https://www.semanticscholar.org/paper/e41e54e34f9ebec964ad74ca0aa41c2c328e993f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.01855"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8aeb1509d73c8d0846755f4fea8da36fb631d26b",
+      "title": "Non-Linear Inference Time Intervention: Improving LLM Truthfulness",
+      "authors": [
+        {
+          "name": "Jakub Hoscilowicz",
+          "authorId": "2293614459"
+        },
+        {
+          "name": "Adam Wiacek",
+          "authorId": "2293614659"
+        },
+        {
+          "name": "Jan Chojnacki",
+          "authorId": "2293614329"
+        },
+        {
+          "name": "Adam Cie\u015blak",
+          "authorId": "2230630793"
+        },
+        {
+          "name": "Leszek Michon",
+          "authorId": "2293614457"
+        },
+        {
+          "name": "Vitalii Urbanevych",
+          "authorId": "2293615058"
+        },
+        {
+          "name": "Artur Janicki",
+          "authorId": "2293614656"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this work, we explore LLM's internal representation space to identify attention heads that contain the most truthful and accurate information. We further developed the Inference Time Intervention (ITI) framework, which lets bias LLM without the need for fine-tuning. The improvement manifests in introducing a non-linear multi-token probing and multi-token intervention: Non-Linear ITI (NL-ITI), which significantly enhances performance on evaluation benchmarks. NL-ITI is tested on diverse multiple-choice datasets, including TruthfulQA, on which we report over 16% relative MC1 (accuracy of model pointing to the correct answer) improvement with respect to the baseline ITI results. Moreover, we achieved a 10% relative improvement over the recently released Truth Forest (TrFf) method that also focused on ITI improvement.",
+      "citationCount": 5,
+      "doi": "10.21437/interspeech.2024-819",
+      "arxivId": "2403.18680",
+      "url": "https://www.semanticscholar.org/paper/8aeb1509d73c8d0846755f4fea8da36fb631d26b",
+      "venue": "Interspeech",
+      "journal": {
+        "name": "Interspeech 2024"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "589f9e2663d8ddb066f407943ae37735f8c89b6f",
+      "title": "Quantized but Deceptive? A Multi-Dimensional Truthfulness Evaluation of Quantized LLMs",
+      "authors": [
+        {
+          "name": "Yao Fu",
+          "authorId": "2335992131"
+        },
+        {
+          "name": "Xianxuan Long",
+          "authorId": "2332349811"
+        },
+        {
+          "name": "Runchao Li",
+          "authorId": "2332479707"
+        },
+        {
+          "name": "Haotian Yu",
+          "authorId": "2332603064"
+        },
+        {
+          "name": "Mu Sheng",
+          "authorId": "2373467750"
+        },
+        {
+          "name": "Xiaotian Han",
+          "authorId": "2332475057"
+        },
+        {
+          "name": "Yin Yu",
+          "authorId": "2332355683"
+        },
+        {
+          "name": "Pan Li",
+          "authorId": "2336035221"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Quantization enables efficient deployment of large language models (LLMs) in resource-constrained environments by significantly reducing memory and computation costs. While quantized LLMs often maintain performance on perplexity and zero-shot tasks, their impact on truthfulness-whether generating truthful or deceptive responses-remains largely unexplored. In this work, we introduce TruthfulnessEval, a comprehensive evaluation framework for assessing the truthfulness of quantized LLMs across three dimensions: (1) Truthfulness on Logical Reasoning; (2) Truthfulness on Common Sense; and (3) Truthfulness on Imitative Falsehoods. Using this framework, we examine mainstream quantization techniques (ranging from 4-bit to extreme 2-bit) across several open-source LLMs. Surprisingly, we find that while quantized models retain internally truthful representations, they are more susceptible to producing false outputs under misleading prompts. To probe this vulnerability, we test 15 rephrased variants of\"honest\",\"neutral\"and\"deceptive\"prompts and observe that\"deceptive\"prompts can override truth-consistent behavior, whereas\"honest\"and\"neutral\"prompts maintain stable outputs. Further, we reveal that quantized models\"know\"the truth internally yet still produce false outputs when guided by\"deceptive\"prompts via layer-wise probing and PCA visualizations. Our findings provide insights into future designs of quantization-aware alignment and truthfulness interventions.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2508.19432",
+      "arxivId": "2508.19432",
+      "url": "https://www.semanticscholar.org/paper/589f9e2663d8ddb066f407943ae37735f8c89b6f",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.19432"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ce1b02e69a1ab95c0e6c5c16150df915ac635864",
+      "title": "TruthTorchLM: A Comprehensive Library for Predicting Truthfulness in LLM Outputs",
+      "authors": [
+        {
+          "name": "D. Yaldiz",
+          "authorId": "2182422040"
+        },
+        {
+          "name": "Y. Bakman",
+          "authorId": "2214717438"
+        },
+        {
+          "name": "Sungmin Kang",
+          "authorId": "2364746169"
+        },
+        {
+          "name": "Alperen \u00d6zis",
+          "authorId": "2375827945"
+        },
+        {
+          "name": "Hayrettin Eren Yildiz",
+          "authorId": "2372869712"
+        },
+        {
+          "name": "Mitash Ashish Shah",
+          "authorId": "2374430161"
+        },
+        {
+          "name": "Zhiqi Huang",
+          "authorId": "2342388084"
+        },
+        {
+          "name": "Anoop Kumar",
+          "authorId": "2335189759"
+        },
+        {
+          "name": "Alfy Samuel",
+          "authorId": "2334572832"
+        },
+        {
+          "name": "Daben Liu",
+          "authorId": "2335576396"
+        },
+        {
+          "name": "Sai Praneeth Karimireddy",
+          "authorId": "2373354279"
+        },
+        {
+          "name": "A. Avestimehr",
+          "authorId": "5877233"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Generative Large Language Models (LLMs)inevitably produce untruthful responses. Accurately predicting the truthfulness of these outputs is critical, especially in high-stakes settings. To accelerate research in this domain and make truthfulness prediction methods more accessible, we introduce TruthTorchLM an open-source, comprehensive Python library featuring over 30 truthfulness prediction methods, which we refer to as Truth Methods. Unlike existing toolkits such as Guardrails, which focus solely on document-grounded verification, or LM-Polygraph, which is limited to uncertainty-based methods, TruthTorchLM offers a broad and extensible collection of techniques. These methods span diverse tradeoffs in computational cost, access level (e.g., black-box vs white-box), grounding document requirements, and supervision type (self-supervised or supervised). TruthTorchLM is seamlessly compatible with both HuggingFace and LiteLLM, enabling support for locally hosted and API-based models. It also provides a unified interface for generation, evaluation, calibration, and long-form truthfulness prediction, along with a flexible framework for extending the library with new methods. We conduct an evaluation of representative truth methods on three datasets, TriviaQA, GSM8K, and FactScore-Bio. The code is available at https://github.com/Ybakman/TruthTorchLM",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2507.08203",
+      "arxivId": "2507.08203",
+      "url": "https://www.semanticscholar.org/paper/ce1b02e69a1ab95c0e6c5c16150df915ac635864",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.08203"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "2cba552e717dbe4a97669737e1b9653fa1880703",
+      "title": "AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents",
+      "authors": [
+        {
+          "name": "Zhe Su",
+          "authorId": "2072382595"
+        },
+        {
+          "name": "Xuhui Zhou",
+          "authorId": "2315123357"
+        },
+        {
+          "name": "Sanketh Rangreji",
+          "authorId": "2031481495"
+        },
+        {
+          "name": "Anubha Kabra",
+          "authorId": "1735001746"
+        },
+        {
+          "name": "Julia Mendelsohn",
+          "authorId": "2321179877"
+        },
+        {
+          "name": "Faeze Brahman",
+          "authorId": "2223951216"
+        },
+        {
+          "name": "Maarten Sap",
+          "authorId": "2729164"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Truthfulness (adherence to factual accuracy) and utility (satisfying human needs and instructions) are both fundamental aspects of Large Language Models, yet these goals often conflict (e.g., sell a car with known flaws), which makes it challenging to achieve both in real-world deployments. We propose AI-LieDar, a framework to study how LLM-based agents navigate these scenarios in an multi-turn interactive setting. We design a set of real-world scenarios where language agents are instructed to achieve goals that are in conflict with being truthful during a multi-turn conversation with simulated human agents. To evaluate the truthfulness at large scale, we develop a truthfulness detector inspired by psychological literature to assess the agents' responses. Our experiment demonstrates that all models are truthful less than 50% of the time, though truthfulness and goal achievement (utility) rates vary across models. We further test the steerability of LLMs towards truthfulness, finding that models can be directed to be truthful or deceptive, and even truth-steered models still lie. These findings reveal the complex nature of truthfulness in LLMs and underscore the importance of further research to ensure the safe and reliable deployment of LLMs and LLM-based agents.",
+      "citationCount": 20,
+      "doi": "10.48550/arXiv.2409.09013",
+      "arxivId": "2409.09013",
+      "url": "https://www.semanticscholar.org/paper/2cba552e717dbe4a97669737e1b9653fa1880703",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2409.09013"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "681714a93b33e740993d7f86784a73bffafabaff",
+      "title": "MLA-Trust: Benchmarking Trustworthiness of Multimodal LLM Agents in GUI Environments",
+      "authors": [
+        {
+          "name": "Xiao Yang",
+          "authorId": "2303914618"
+        },
+        {
+          "name": "Jiawei Chen",
+          "authorId": "2296948941"
+        },
+        {
+          "name": "Jun Luo",
+          "authorId": "2248028295"
+        },
+        {
+          "name": "Zhengwei Fang",
+          "authorId": "2243460917"
+        },
+        {
+          "name": "Yinpeng Dong",
+          "authorId": "3431029"
+        },
+        {
+          "name": "Hang Su",
+          "authorId": "2267649469"
+        },
+        {
+          "name": "Jun Zhu",
+          "authorId": "2270894724"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The emergence of multimodal LLM-based agents (MLAs) has transformed interaction paradigms by seamlessly integrating vision, language, action and dynamic environments, enabling unprecedented autonomous capabilities across GUI applications ranging from web automation to mobile systems. However, MLAs introduce critical trustworthiness challenges that extend far beyond traditional language models' limitations, as they can directly modify digital states and trigger irreversible real-world consequences. Existing benchmarks inadequately tackle these unique challenges posed by MLAs' actionable outputs, long-horizon uncertainty and multimodal attack vectors. In this paper, we introduce MLA-Trust, the first comprehensive and unified framework that evaluates the MLA trustworthiness across four principled dimensions: truthfulness, controllability, safety and privacy. We utilize websites and mobile applications as realistic testbeds, designing 34 high-risk interactive tasks and curating rich evaluation datasets. Large-scale experiments involving 13 state-of-the-art agents reveal previously unexplored trustworthiness vulnerabilities unique to multimodal interactive scenarios. For instance, proprietary and open-source GUI-interacting MLAs pose more severe trustworthiness risks than static MLLMs, particularly in high-stakes domains; the transition from static MLLMs into interactive MLAs considerably compromises trustworthiness, enabling harmful content generation in multi-step interactions that standalone MLLMs would typically prevent; multi-step execution, while enhancing the adaptability of MLAs, involves latent nonlinear risk accumulation across successive interactions, circumventing existing safeguards and resulting in unpredictable derived risks. Moreover, we present an extensible toolbox to facilitate continuous evaluation of MLA trustworthiness across diverse interactive environments.",
+      "citationCount": 14,
+      "doi": "10.48550/arXiv.2506.01616",
+      "arxivId": "2506.01616",
+      "url": "https://www.semanticscholar.org/paper/681714a93b33e740993d7f86784a73bffafabaff",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.01616"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e9929c104df66164b2ca27d00f87e3885a77e91c",
+      "title": "Truth Knows No Language: Evaluating Truthfulness Beyond English",
+      "authors": [
+        {
+          "name": "B. Figueras",
+          "authorId": "1825765918"
+        },
+        {
+          "name": "Eneko Sagarzazu",
+          "authorId": "2345188025"
+        },
+        {
+          "name": "Julen Etxaniz",
+          "authorId": "2226458991"
+        },
+        {
+          "name": "Jeremy Barnes",
+          "authorId": "2312901456"
+        },
+        {
+          "name": "Pablo Gamallo",
+          "authorId": "2289949630"
+        },
+        {
+          "name": "Iria de-Dios-Flores",
+          "authorId": "2220421974"
+        },
+        {
+          "name": "R. Agerri",
+          "authorId": "2320521137"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We introduce a professionally translated extension of the TruthfulQA benchmark designed to evaluate truthfulness in Basque, Catalan, Galician, and Spanish. Truthfulness evaluations of large language models (LLMs) have primarily been conducted in English. However, the ability of LLMs to maintain truthfulness across languages remains under-explored. Our study evaluates 12 state-of-the-art open LLMs, comparing base and instruction-tuned models using human evaluation, multiple-choice metrics, and LLM-as-a-Judge scoring. Our findings reveal that, while LLMs perform best in English and worst in Basque (the lowest-resourced language), overall truthfulness discrepancies across languages are smaller than anticipated. Furthermore, we show that LLM-as-a-Judge correlates more closely with human judgments than multiple-choice metrics, and that informativeness plays a critical role in truthfulness assessment. Our results also indicate that machine translation provides a viable approach for extending truthfulness benchmarks to additional languages, offering a scalable alternative to professional translation. Finally, we observe that universal knowledge questions are better handled across languages than context- and time-dependent ones, highlighting the need for truthfulness evaluations that account for cultural and temporal variability. Dataset and code are publicly available under open licenses.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2502.09387",
+      "arxivId": "2502.09387",
+      "url": "https://www.semanticscholar.org/paper/e9929c104df66164b2ca27d00f87e3885a77e91c",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.09387"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "34857543592ddf59a7531f7b77ebece5e2197c4b",
+      "title": "EduThink4AI: Translating Educational Critical Thinking into Multi-Agent LLM Systems",
+      "authors": [
+        {
+          "name": "Xinmeng Hou",
+          "authorId": "2333890367"
+        },
+        {
+          "name": "Zhouquan Lu",
+          "authorId": "2373419891"
+        },
+        {
+          "name": "Wenli Chen",
+          "authorId": "2373407082"
+        },
+        {
+          "name": "Hai Hu",
+          "authorId": "2118878378"
+        },
+        {
+          "name": "Qing Guo",
+          "authorId": "2374418778"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) have demonstrated significant potential as educational tutoring agents, capable of tailoring hints, orchestrating lessons, and grading with near-human finesse across various academic domains. However, current LLM-based educational systems exhibit critical limitations in promoting genuine critical thinking, failing on over one-third of multi-hop questions with counterfactual premises, and remaining vulnerable to adversarial prompts that trigger biased or factually incorrect responses. To address these gaps, we propose EDU-Prompting, a novel multi-agent framework that bridges established educational critical thinking theories with LLM agent design to generate critical, bias-aware explanations while fostering diverse perspectives. Our systematic evaluation across theoretical benchmarks and practical college-level critical writing scenarios demonstrates that EDU-Prompting significantly enhances both content truthfulness and logical soundness in AI-generated educational responses. The framework's modular design enables seamless integration into existing prompting frameworks and educational applications, allowing practitioners to directly incorporate critical thinking catalysts that promote analytical reasoning and introduce multiple perspectives without requiring extensive system modifications.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2507.15015",
+      "arxivId": "2507.15015",
+      "url": "https://www.semanticscholar.org/paper/34857543592ddf59a7531f7b77ebece5e2197c4b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.15015"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9cb18e62ce2d26093072941e7041c0a82d997c03",
+      "title": "KatotohananQA: Evaluating Truthfulness of Large Language Models in Filipino",
+      "authors": [
+        {
+          "name": "Lorenzo Alfred Nery",
+          "authorId": "2379665613"
+        },
+        {
+          "name": "Ronald Dawson Catignas",
+          "authorId": "2379693835"
+        },
+        {
+          "name": "Thomas James Z. Tiam-Lee",
+          "authorId": "1405359966"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) achieve remarkable performance across various tasks, but their tendency to produce hallucinations limits reliable adoption. Benchmarks such as TruthfulQA have been developed to measure truthfulness, yet they are primarily available in English, leaving a gap in evaluating LLMs in low-resource languages. To address this, we present KatotohananQA, a Filipino translation of the TruthfulQA benchmark. Seven free-tier proprietary models were assessed using a binary-choice framework. Findings show a significant performance gap between English and Filipino truthfulness, with newer OpenAI models (GPT-5 and GPT-5 mini) demonstrating strong multilingual robustness. Results also reveal disparities across question characteristics, suggesting that some question types, categories, and topics are less robust to multilingual transfer which highlight the need for broader multilingual evaluation to ensure fairness and reliability in LLM usage.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.06065",
+      "arxivId": "2509.06065",
+      "url": "https://www.semanticscholar.org/paper/9cb18e62ce2d26093072941e7041c0a82d997c03",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.06065"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fec337055584c225cdff9c4d64293e64ce89d33f",
+      "title": "Preference Learning with Lie Detectors can Induce Honesty or Evasion",
+      "authors": [
+        {
+          "name": "Chris Cundy",
+          "authorId": "2327864490"
+        },
+        {
+          "name": "Adam Gleave",
+          "authorId": "34594377"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI systems become more capable, deceptive behaviors can undermine evaluation and mislead users at deployment. Recent work has shown that lie detectors can accurately classify deceptive behavior, but they are not typically used in the training pipeline due to concerns around contamination and objective hacking. We examine these concerns by incorporating a lie detector into the labelling step of LLM post-training and evaluating whether the learned policy is genuinely more honest, or instead learns to fool the lie detector while remaining deceptive. Using DolusChat, a novel 65k-example dataset with paired truthful/deceptive responses, we identify three key factors that determine the honesty of learned policies: amount of exploration during preference learning, lie detector accuracy, and KL regularization strength. We find that preference learning with lie detectors and GRPO can lead to policies which evade lie detectors, with deception rates of over 85\\%. However, if the lie detector true positive rate (TPR) or KL regularization is sufficiently high, GRPO learns honest policies. In contrast, off-policy algorithms (DPO) consistently lead to deception rates under 25\\% for realistic TPRs. Our results illustrate a more complex picture than previously assumed: depending on the context, lie-detector-enhanced training can be a powerful tool for scalable oversight, or a counterproductive method encouraging undetectable misalignment.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2505.13787",
+      "arxivId": "2505.13787",
+      "url": "https://www.semanticscholar.org/paper/fec337055584c225cdff9c4d64293e64ce89d33f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.13787"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "547f4b9a751bd502ab13bed7299d7dae039a6022",
+      "title": "The MASK Benchmark: Disentangling Honesty From Accuracy in AI Systems",
+      "authors": [
+        {
+          "name": "Richard Ren",
+          "authorId": "2253397384"
+        },
+        {
+          "name": "Arunim Agarwal",
+          "authorId": "2342501625"
+        },
+        {
+          "name": "Mantas Mazeika",
+          "authorId": "16787428"
+        },
+        {
+          "name": "Cristina Menghini",
+          "authorId": "2317009603"
+        },
+        {
+          "name": "Robert Vacareanu",
+          "authorId": "1725412182"
+        },
+        {
+          "name": "Brad Kenstler",
+          "authorId": "2381371793"
+        },
+        {
+          "name": "Mick Yang",
+          "authorId": "2348689202"
+        },
+        {
+          "name": "Isabelle Barrass",
+          "authorId": "2290010079"
+        },
+        {
+          "name": "Alice Gatti",
+          "authorId": "2290013056"
+        },
+        {
+          "name": "Xuwang Yin",
+          "authorId": "2255924399"
+        },
+        {
+          "name": "Eduardo Trevino",
+          "authorId": "2348543597"
+        },
+        {
+          "name": "Matias Geralnik",
+          "authorId": "2348543826"
+        },
+        {
+          "name": "Adam Khoja",
+          "authorId": "2290010101"
+        },
+        {
+          "name": "Dean Lee",
+          "authorId": "2299292563"
+        },
+        {
+          "name": "Summer Yue",
+          "authorId": "2290014338"
+        },
+        {
+          "name": "Dan Hendrycks",
+          "authorId": "2286824230"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As large language models (LLMs) become more capable and agentic, the requirement for trust in their outputs grows significantly, yet at the same time concerns have been mounting that models may learn to lie in pursuit of their goals. To address these concerns, a body of work has emerged around the notion of\"honesty\"in LLMs, along with interventions aimed at mitigating deceptive behaviors. However, some benchmarks claiming to measure honesty in fact simply measure accuracy--the correctness of a model's beliefs--in disguise. Moreover, no benchmarks currently exist for directly measuring whether language models lie. In this work, we introduce a large-scale human-collected dataset for directly measuring lying, allowing us to disentangle accuracy from honesty. Across a diverse set of LLMs, we find that while larger models obtain higher accuracy on our benchmark, they do not become more honest. Surprisingly, most frontier LLMs obtain high scores on truthfulness benchmarks yet exhibit a substantial propensity to lie under pressure, resulting in low honesty scores on our benchmark. We find that simple methods, such as representation engineering interventions, can improve honesty. These results underscore the growing need for robust evaluations and effective interventions to ensure LLMs remain trustworthy.",
+      "citationCount": 21,
+      "doi": "10.48550/arXiv.2503.03750",
+      "arxivId": "2503.03750",
+      "url": "https://www.semanticscholar.org/paper/547f4b9a751bd502ab13bed7299d7dae039a6022",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.03750"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ff4f8ad7853b81f189186ba97d63a609e1eface1",
+      "title": "Unconditional Truthfulness: Learning Conditional Dependency for Uncertainty Quantification of Large Language Models",
+      "authors": [
+        {
+          "name": "Artem Vazhentsev",
+          "authorId": "2165225340"
+        },
+        {
+          "name": "Ekaterina Fadeeva",
+          "authorId": "2266389184"
+        },
+        {
+          "name": "Rui Xing",
+          "authorId": "2308041454"
+        },
+        {
+          "name": "Alexander Panchenko",
+          "authorId": "2266390354"
+        },
+        {
+          "name": "Preslav Nakov",
+          "authorId": "2026545715"
+        },
+        {
+          "name": "Timothy Baldwin",
+          "authorId": "2266394314"
+        },
+        {
+          "name": "Maxim Panov",
+          "authorId": "2266389924"
+        },
+        {
+          "name": "Artem Shelmanov",
+          "authorId": "2316488670"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2408.10692",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ff4f8ad7853b81f189186ba97d63a609e1eface1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.10692"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5690ebbce6694e20ebd42b39ccd6935bedd405e4",
+      "title": "Evaluating Quality of Answers for Retrieval-Augmented Generation: A Strong LLM Is All You Need",
+      "authors": [
+        {
+          "name": "Yang Wang",
+          "authorId": "2308313473"
+        },
+        {
+          "name": "Alberto Garcia Hernandez",
+          "authorId": "2308855154"
+        },
+        {
+          "name": "Roman Kyslyi",
+          "authorId": "2308272477"
+        },
+        {
+          "name": "Nicholas S. Kersting",
+          "authorId": "2298904697"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We present a comprehensive study of answer quality evaluation in Retrieval-Augmented Generation (RAG) applications using vRAG-Eval, a novel grading system that is designed to assess correctness, completeness, and honesty. We further map the grading of quality aspects aforementioned into a binary score, indicating an accept or reject decision, mirroring the intuitive\"thumbs-up\"or\"thumbs-down\"gesture commonly used in chat applications. This approach suits factual business contexts where a clear decision opinion is essential. Our assessment applies vRAG-Eval to two Large Language Models (LLMs), evaluating the quality of answers generated by a vanilla RAG application. We compare these evaluations with human expert judgments and find a substantial alignment between GPT-4's assessments and those of human experts, reaching 83% agreement on accept or reject decisions. This study highlights the potential of LLMs as reliable evaluators in closed-domain, closed-ended settings, particularly when human evaluations require significant resources.",
+      "citationCount": 7,
+      "doi": "10.48550/arXiv.2406.18064",
+      "arxivId": "2406.18064",
+      "url": "https://www.semanticscholar.org/paper/5690ebbce6694e20ebd42b39ccd6935bedd405e4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.18064"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fbfad83a298dc778259c08c673c8a1eaa957f62f",
+      "title": "Unconditional Truthfulness: Learning Unconditional Uncertainty of Large Language Models",
+      "authors": [
+        {
+          "name": "Artem Vazhentsev",
+          "authorId": "2165225340"
+        },
+        {
+          "name": "Ekaterina Fadeeva",
+          "authorId": "2266389184"
+        },
+        {
+          "name": "Rui Xing",
+          "authorId": "2308041454"
+        },
+        {
+          "name": "Gleb Kuzmin",
+          "authorId": "46902583"
+        },
+        {
+          "name": "Ivan Lazichny",
+          "authorId": "2199740269"
+        },
+        {
+          "name": "Alexander Panchenko",
+          "authorId": "2266390354"
+        },
+        {
+          "name": "Preslav Nakov",
+          "authorId": "2026545715"
+        },
+        {
+          "name": "Timothy Baldwin",
+          "authorId": "2266394314"
+        },
+        {
+          "name": "Maxim Panov",
+          "authorId": "2266389924"
+        },
+        {
+          "name": "Artem Shelmanov",
+          "authorId": "2316488670"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Uncertainty quantification (UQ) has emerged as a promising approach for detecting hallucinations and low-quality output of Large Language Models (LLMs). However, obtaining proper uncertainty scores is complicated by the conditional dependency between the generation steps of an autoregressive LLM because it is hard to model it explicitly. Here, we propose to learn this dependency from attention-based features. In particular, we train a regression model that leverages LLM attention maps, probabilities on the current generation step, and recurrently computed uncertainty scores from previously generated tokens. To incorporate the recurrent features, we also suggest a two-staged training procedure. Our experimental evaluation on ten datasets and three LLMs shows that the proposed method is highly effective for selective generation, achieving substantial improvements over rivaling unsupervised and supervised approaches.",
+      "citationCount": 1,
+      "doi": "10.18653/v1/2025.emnlp-main.1807",
+      "arxivId": "2408.10692",
+      "url": "https://www.semanticscholar.org/paper/fbfad83a298dc778259c08c673c8a1eaa957f62f",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "24519912c263a84321d5bf1126eddc24a2e1863e",
+      "title": "Aligning Multimodal LLM with Human Preference: A Survey",
+      "authors": [
+        {
+          "name": "Tao Yu",
+          "authorId": "2347681880"
+        },
+        {
+          "name": "Yi-Fan Zhang",
+          "authorId": "2326323997"
+        },
+        {
+          "name": "Chaoyou Fu",
+          "authorId": "2258705773"
+        },
+        {
+          "name": "Junkang Wu",
+          "authorId": "2260622979"
+        },
+        {
+          "name": "Jinda Lu",
+          "authorId": "2350682480"
+        },
+        {
+          "name": "Kun Wang",
+          "authorId": "2324823188"
+        },
+        {
+          "name": "Xingyu Lu",
+          "authorId": "2350610451"
+        },
+        {
+          "name": "Yunhang Shen",
+          "authorId": "2316386247"
+        },
+        {
+          "name": "Guibin Zhang",
+          "authorId": "2273482193"
+        },
+        {
+          "name": "Dingjie Song",
+          "authorId": "2347232612"
+        },
+        {
+          "name": "Yibo Yan",
+          "authorId": "2262511952"
+        },
+        {
+          "name": "Tianlong Xu",
+          "authorId": "2286111714"
+        },
+        {
+          "name": "Qingsong Wen",
+          "authorId": "2290486159"
+        },
+        {
+          "name": "Zhang Zhang",
+          "authorId": "2257041164"
+        },
+        {
+          "name": "Yan Huang",
+          "authorId": "2258533421"
+        },
+        {
+          "name": "Liang Wang",
+          "authorId": "2268509501"
+        },
+        {
+          "name": "Tien-Ping Tan",
+          "authorId": "2192236453"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) can handle a wide variety of general tasks with simple prompts, without the need for task-specific training. Multimodal Large Language Models (MLLMs), built upon LLMs, have demonstrated impressive potential in tackling complex tasks involving visual, auditory, and textual data. However, critical issues related to truthfulness, safety, o1-like reasoning, and alignment with human preference remain insufficiently addressed. This gap has spurred the emergence of various alignment algorithms, each targeting different application scenarios and optimization goals. Recent studies have shown that alignment algorithms are a powerful approach to resolving the aforementioned challenges. In this paper, we aim to provide a comprehensive and systematic review of alignment algorithms for MLLMs. Specifically, we explore four key aspects: (1) the application scenarios covered by alignment algorithms, including general image understanding, multi-image, video, and audio, and extended multimodal applications; (2) the core factors in constructing alignment datasets, including data sources, model responses, and preference annotations; (3) the benchmarks used to evaluate alignment algorithms; and (4) a discussion of potential future directions for the development of alignment algorithms. This work seeks to help researchers organize current advancements in the field and inspire better alignment methods. The project page of this paper is available at https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Alignment.",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2503.14504",
+      "arxivId": "2503.14504",
+      "url": "https://www.semanticscholar.org/paper/24519912c263a84321d5bf1126eddc24a2e1863e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.14504"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ccf6dcefadef8d54b2682a3ad5f77d967cd5c87b",
+      "title": "Courage, Honesty, and Evaluation in the Apprehensive University",
+      "authors": [
+        {
+          "name": "J. LaVelle",
+          "authorId": "39468377"
+        },
+        {
+          "name": "Kathleen Doll",
+          "authorId": "116423844"
+        },
+        {
+          "name": "Heidi Barajas",
+          "authorId": "2267652162"
+        }
+      ],
+      "year": 2023,
+      "abstract": "A consistent question in education is how to evaluate the degree to which universities and their programs are meeting the claims they make on their webpages and other materials, which entice students and faculty alike to join their collegiate community. Misalignments between what is promised and what is provided harm all community members but have disproportionate effects on students of color. It is therefore an ethical imperative for the higher education sector to undertake system wide evaluations because of the ever-rising financial and emotional costs of graduate education. For educators and administrators alike, this means systematically interrogating data to identify unseen patterns, challenge assumptions, and ask both critical and highly uncomfortable questions; for educators, this may include a truthful assessment of our own practices and assumptions. We propose drawing from the field of program evaluation and using theory-driven evaluation as a specific framework to understand graduate education process and outcomes. This conceptual paper links together existing literatures and is augmented by the authors\u2019 reflection and dialogue about their experiences designing and implementing graduate education across several institutions. We end with a call for courage and honesty in carefully evaluating graduate education for the betterment of all students, faculty, and administrators.",
+      "citationCount": 2,
+      "doi": "10.3390/educsci13111157",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ccf6dcefadef8d54b2682a3ad5f77d967cd5c87b",
+      "venue": "Education sciences",
+      "journal": {
+        "name": "Education Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2dfe16136fff28e0b535589ac7402b7101c84f7e",
+      "title": "TruthFlow: Truthful LLM Generation via Representation Flow Correction",
+      "authors": [
+        {
+          "name": "Hanyu Wang",
+          "authorId": "2344898421"
+        },
+        {
+          "name": "Bochuan Cao",
+          "authorId": "2253437255"
+        },
+        {
+          "name": "Yuanpu Cao",
+          "authorId": "2269263491"
+        },
+        {
+          "name": "Jinghui Chen",
+          "authorId": "2257310626"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) are known to struggle with consistently generating truthful responses. While various representation intervention techniques have been proposed, these methods typically apply a universal representation correction vector to all input queries, limiting their effectiveness against diverse queries in practice. In this study, we introduce TruthFlow, a novel method that leverages the Flow Matching technique for query-specific truthful representation correction. Specifically, TruthFlow first uses a flow model to learn query-specific correction vectors that transition representations from hallucinated to truthful states. Then, during inference, the trained flow model generates these correction vectors to enhance the truthfulness of LLM outputs. Experimental results demonstrate that TruthFlow significantly improves performance on open-ended generation tasks across various advanced LLMs evaluated on TruthfulQA. Moreover, the trained TruthFlow model exhibits strong transferability, performing effectively on other unseen hallucination benchmarks.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2502.04556",
+      "arxivId": "2502.04556",
+      "url": "https://www.semanticscholar.org/paper/2dfe16136fff28e0b535589ac7402b7101c84f7e",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.04556"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

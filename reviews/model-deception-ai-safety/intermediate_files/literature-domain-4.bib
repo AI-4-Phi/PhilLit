@@ -1,0 +1,368 @@
+@comment{
+====================================================================
+DOMAIN: Mechanistic Interpretability for Deception Detection
+SEARCH_DATE: 2026-01-15
+PAPERS_FOUND: 18 total (High: 8, Medium: 7, Low: 3)
+SEARCH_SOURCES: SEP, PhilPapers, Semantic Scholar, arXiv
+====================================================================
+
+DOMAIN_OVERVIEW:
+Mechanistic interpretability aims to reverse-engineer neural networks by
+uncovering their internal computational mechanisms. This domain focuses on
+applying MI techniques to detect deception-relevant features in LLMs. The field
+has developed several core methodologies: (1) circuit discovery methods that
+identify minimal subgraphs implementing specific behaviors, (2) sparse
+autoencoders (SAEs) that decompose neural activations into interpretable
+features, (3) probing classifiers that decode internal representations, and (4)
+representation engineering techniques that manipulate high-level cognitive
+phenomena. Recent work has specifically attempted to detect "lying" or
+deceptive behavior through probing internal model states, with significant
+philosophical and empirical challenges emerging around whether models have
+beliefs and whether internal representations reliably track truth.
+
+RELEVANCE_TO_PROJECT:
+This domain directly addresses the technical question of how to detect model
+deception through mechanistic interpretability. The Levinstein & Herrmann
+(2024) and Williams et al. (2025) papers establish crucial philosophical
+constraints on MI approaches to lie detection, while the technical literature
+on circuits, SAEs, and probing provides the methodological toolkit. The tension
+between the promise of "truth directions" and the empirical failures of
+generalization highlighted by Levinstein & Herrmann represents a central debate
+for understanding the limits of MI-based deception detection.
+
+NOTABLE_GAPS:
+Limited work directly combines circuit discovery with deception detection tasks
+(most circuit work focuses on algorithmic tasks). Few papers address the
+stability and causal validity of "truth directions" across diverse contexts.
+Limited philosophical analysis of what counts as deceptive representation
+versus mere error in neural systems. Sparse work on adversarial robustness of
+interpretability methods to sophisticated deception.
+
+SYNTHESIS_GUIDANCE:
+Emphasize the tension between theoretical promise (representation engineering,
+truth directions) and empirical limitations (generalization failures,
+conceptual roadblocks). Connect philosophical critiques (Williams, Levinstein)
+to technical limitations in circuit discovery and probing. Distinguish between
+different MI approaches (bottom-up circuits vs. top-down RepE) and their
+respective strengths/weaknesses for deception detection.
+
+KEY_POSITIONS:
+- Optimistic MI advocates: 8 papers - Circuit discovery and SAEs can reveal
+  interpretable deception-relevant features
+- Philosophical skeptics: 2 papers - Conceptual and empirical roadblocks
+  prevent reliable lie detection via MI
+- Methodological pluralists: 5 papers - Multiple MI methods needed, each with
+  distinct limitations and applications
+- Representation engineering proponents: 3 papers - Top-down manipulation of
+  high-level concepts like honesty more tractable than bottom-up circuits
+====================================================================
+}
+
+@article{williams2025mechanistic,
+  author = {Williams, Iwan and Oldenburg, Ninell and Dhar, Ruchira and Hatherley, Joshua and Fierro, Constanza and Rajcic, Nina and Schiller, Sandrine R. and Stamatiou, Filippos and Søgaard, Anders},
+  title = {Mechanistic Interpretability Needs Philosophy},
+  journal = {arXiv preprint},
+  year = {2025},
+  arxivId = {2506.18852},
+  url = {https://arxiv.org/abs/2506.18852},
+  note = {
+  CORE ARGUMENT: Mechanistic interpretability research makes implicit assumptions about explanation, causation, and understanding that require philosophical scrutiny. The authors identify three open problems (defining mechanisms, assessing explanation quality, and connecting MI to practical goals) where philosophical analysis can clarify concepts, refine methods, and assess epistemic stakes. They argue MI should engage philosophy not as afterthought but as ongoing partner.
+
+  RELEVANCE: Critical seed paper establishing that MI approaches to deception detection rest on unexamined philosophical foundations. Directly relevant to evaluating whether circuit discovery or probing can reliably detect deception—what counts as a "deception mechanism" and how do we know we've explained it? Highlights conceptual work needed before technical methods can succeed at lie detection.
+
+  POSITION: Philosophical foundations for mechanistic interpretability research
+  },
+  keywords = {mechanistic-interpretability, philosophy, explanation, High}
+}
+
+@article{levinstein2024still,
+  author = {Levinstein, Benjamin A. and Herrmann, Daniel A.},
+  title = {Still no lie detector for language models: probing empirical and conceptual roadblocks},
+  journal = {Philosophical Studies},
+  year = {2024},
+  volume = {182},
+  pages = {1539--1565},
+  doi = {10.1007/s11098-023-02094-3},
+  arxivId = {2307.00175},
+  note = {
+  CORE ARGUMENT: Existing probing-based approaches to detecting LLM "lies" fail both empirically (poor generalization) and conceptually (unclear what it means for LLMs to have beliefs or lie). Reviews Azaria & Mitchell and Burns et al. methods, showing they don't generalize across basic distribution shifts. Argues even if LLMs have beliefs, current probing methods are unlikely to succeed for fundamental reasons about the relationship between representations and truth.
+
+  RELEVANCE: Central seed paper directly critiquing MI-based lie detection. Establishes key empirical and philosophical limitations that any deception detection approach via interpretability must address. The generalization failures documented here constrain what we can expect from circuit discovery or representation engineering applied to deception. Essential counterpoint to optimistic claims about "truth directions."
+
+  POSITION: Philosophical and empirical skepticism about MI-based lie detection
+  },
+  keywords = {lie-detection, probing, beliefs, philosophical-critique, High}
+}
+
+@article{zou2023representation,
+  author = {Zou, Andy and Phan, Long and Chen, Sarah and Campbell, James and Guo, Phillip and Ren, Richard and Pan, Alexander and Yin, Xuwang and Mazeika, Mantas and Dombrowski, Ann-Kathrin and Goel, Shashwat and Li, Nathaniel and Byun, Michael J. and Wang, Zifan and Mallen, Alex Troy and Basart, Steven and Koyejo, Sanmi and Song, Dawn and Fredrikson, Matt and Kolter, J. Zico and Hendrycks, Dan},
+  title = {Representation Engineering: A Top-Down Approach to AI Transparency},
+  journal = {arXiv preprint},
+  year = {2023},
+  arxivId = {2310.01405},
+  doi = {10.48550/arXiv.2310.01405},
+  note = {
+  CORE ARGUMENT: Proposes representation engineering (RepE) as top-down alternative to neuron/circuit-level MI, placing population-level representations at center of analysis. Demonstrates methods for monitoring and manipulating high-level cognitive phenomena (honesty, harmlessness, power-seeking) in LLMs by identifying and steering "concept directions" in activation space. Shows simple linear reading vectors can control model behavior on safety-relevant tasks.
+
+  RELEVANCE: Foundational paper for representation-based approach to deception detection. The "honesty" experiments directly address detecting/controlling truthfulness in models. Contrast with bottom-up circuit discovery—RepE treats concepts like honesty as emergent population-level phenomena rather than discrete mechanisms. Key methodological alternative that may circumvent some limitations of circuit-based approaches while introducing its own.
+
+  POSITION: Top-down representation manipulation for safety-relevant properties including honesty
+  },
+  keywords = {representation-engineering, honesty, control-vectors, High}
+}
+
+@inproceedings{nanda2023progress,
+  author = {Nanda, Neel and Chan, Lawrence and Lieberum, Tom and Smith, Jess and Steinhardt, Jacob},
+  title = {Progress measures for grokking via mechanistic interpretability},
+  booktitle = {International Conference on Learning Representations},
+  year = {2023},
+  arxivId = {2301.05217},
+  doi = {10.48550/arXiv.2301.05217},
+  note = {
+  CORE ARGUMENT: Demonstrates full reverse-engineering of algorithm learned by transformers for modular addition, showing networks use discrete Fourier transforms and trigonometric identities. Introduces "progress measures" derived from mechanistic understanding to track training dynamics across three phases (memorization, circuit formation, cleanup). Validates understanding through activation analysis, weight analysis, and targeted ablations in Fourier space.
+
+  RELEVANCE: Exemplifies gold-standard mechanistic interpretability on algorithmic task. While not directly about deception, establishes methodology (circuit identification, validation through ablation) and demonstrates what full mechanistic understanding looks like. Relevant for assessing whether similar depth of understanding is achievable for deception-detection tasks or whether deception involves fundamentally different computational structure.
+
+  POSITION: Bottom-up circuit discovery through reverse engineering
+  },
+  keywords = {mechanistic-interpretability, circuits, grokking, algorithmic-tasks, High}
+}
+
+@inproceedings{conmy2023automated,
+  author = {Conmy, Arthur and Mavor-Parker, Augustine N. and Lynch, Aengus and Heimersheim, Stefan and Garriga-Alonso, Adrià},
+  title = {Towards Automated Circuit Discovery for Mechanistic Interpretability},
+  booktitle = {Neural Information Processing Systems},
+  year = {2023},
+  arxivId = {2304.14997},
+  doi = {10.48550/arXiv.2304.14997},
+  note = {
+  CORE ARGUMENT: Systematizes and automates circuit discovery through activation patching. Proposes ACDC algorithm that identifies minimal computational subgraph implementing specified behavior by iteratively testing which edges are necessary. Validates by rediscovering 5/5 component types in GPT-2 Greater-Than circuit, selecting 68 of 32,000 edges all manually found by prior work.
+
+  RELEVANCE: Key methodological contribution for automated circuit discovery. If deception corresponds to discrete circuit, ACDC-style methods would be natural tool for identifying it. However, whether deception is circuit-like (sparse, modular) or distributed remains open question. Method's success on algorithmic tasks may not transfer to high-level cognitive phenomena like deception. Relevant for assessing feasibility of circuit-based deception detection.
+
+  POSITION: Automated circuit discovery through activation patching
+  },
+  keywords = {circuit-discovery, activation-patching, automation, High}
+}
+
+@article{sharkey2025open,
+  author = {Sharkey, Lee and Chughtai, Bilal and Batson, Joshua and Lindsey, Jack and Wu, Jeff and Bushnaq, Lucius and Goldowsky-Dill, Nicholas and Heimersheim, Stefan and Ortega, Alejandro and Bloom, Joseph and Biderman, Stella and Garriga-Alonso, Adrià and Conmy, Arthur and Nanda, Neel and Rumbelow, Jessica and Wattenberg, Martin and Schoots, Nandi and Miller, Joseph and Michaud, Eric J. and Casper, Stephen and Tegmark, Max and Saunders, William and Bau, David and Todd, Eric and Geiger, Atticus and Geva, Mor and Hoogland, Jesse and Murfet, Daniel and McGrath, Thomas},
+  title = {Open Problems in Mechanistic Interpretability},
+  journal = {arXiv preprint},
+  year = {2025},
+  arxivId = {2501.16496},
+  doi = {10.48550/arXiv.2501.16496},
+  note = {
+  CORE ARGUMENT: Comprehensive forward-facing review identifying open problems across mechanistic interpretability requiring conceptual and practical advances. Discusses limitations of current methods, challenges in applying MI to specific goals, and socio-technical considerations. Synthesizes field's current frontier and priorities for progress toward scientific understanding and engineering assurance of AI systems.
+
+  RELEVANCE: Essential overview establishing current state and limitations of MI field. Contextualizes deception-detection attempts within broader challenges of MI. Highlights gap between success on toy tasks and scaling to complex behaviors like deception. Relevant for understanding what MI can/cannot currently achieve and what advances would be needed for reliable deception detection.
+
+  POSITION: Survey of open problems and limitations in mechanistic interpretability
+  },
+  keywords = {mechanistic-interpretability, survey, limitations, open-problems, High}
+}
+
+@inproceedings{karvonen2025saebench,
+  author = {Karvonen, Adam and Rager, Can and Lin, Johnny and Tigges, Curt and Bloom, Joseph and Chanin, David and Lau, Yeu-Tong and Farrell, Eoin and McDougall, Callum and Ayonrinde, Kola and Wearden, Matthew and Conmy, Arthur and Marks, Samuel and Nanda, Neel},
+  title = {SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability},
+  booktitle = {International Conference on Machine Learning},
+  year = {2025},
+  arxivId = {2503.09532},
+  doi = {10.48550/arXiv.2503.09532},
+  note = {
+  CORE ARGUMENT: Introduces comprehensive evaluation suite measuring SAE performance across eight metrics (interpretability, feature disentanglement, practical applications including unlearning). Evaluates 200+ SAEs across eight architectures. Reveals gains on proxy metrics don't reliably translate to practical performance—e.g., Matryoshka SAEs underperform on proxies but excel at feature disentanglement at scale. Provides standardized framework for systematic SAE comparison.
+
+  RELEVANCE: Critical for assessing whether SAEs can reliably decompose activations into interpretable deception-relevant features. Shows disconnect between unsupervised metrics and practical performance, directly relevant to evaluating claims that SAE features track truthfulness. The feature disentanglement metrics could be particularly relevant for separating truth-tracking from other representational dimensions.
+
+  POSITION: Evaluation framework revealing limitations of proxy metrics for SAE assessment
+  },
+  keywords = {sparse-autoencoders, evaluation, benchmarking, High}
+}
+
+@article{ichmoukhamedov2025truth,
+  author = {Ichmoukhamedov, Timour and Martens, David},
+  title = {Exploring the generalization of LLM truth directions on conversational formats},
+  journal = {arXiv preprint},
+  year = {2025},
+  volume = {abs/2505.09807},
+  arxivId = {2505.09807},
+  doi = {10.48550/arXiv.2505.09807},
+  note = {
+  CORE ARGUMENT: Tests whether "truth directions" (linear separability of true/false statements in activation space) generalize across conversational formats. Finds good generalization for short conversations ending in lie, but poor generalization to longer formats where lie appears earlier. Proposes adding fixed key phrase at end to improve generalization. Results highlight challenges for reliable LLM lie detectors generalizing to new settings.
+
+  RELEVANCE: Directly tests core claim underlying representation engineering approach to lie detection—that truth is linearly separable in activation space. The generalization failures across conversational formats echo Levinstein & Herrmann's critique and constrain what we can expect from "truth direction" methods. Essential empirical data on limits of linear probe approaches to deception detection.
+
+  POSITION: Empirical investigation of truth direction generalization revealing format-sensitivity
+  },
+  keywords = {truth-directions, probing, generalization, lie-detection, Medium}
+}
+
+@article{sadiekh2025polarity,
+  author = {Sadiekh, Sabrina and Ericheva, Elena and Agarwal, Chirag},
+  title = {Polarity-Aware Probing for Quantifying Latent Alignment in Language Models},
+  journal = {arXiv preprint},
+  year = {2025},
+  volume = {abs/2511.21737},
+  arxivId = {2511.21737},
+  doi = {10.48550/arXiv.2511.21737},
+  note = {
+  CORE ARGUMENT: Proposes Polarity-Aware CCS (PA-CCS) extending Contrast-Consistent Search to evaluate whether model's internal representations remain consistent under polarity inversion. Introduces Polar-Consistency and Contradiction Index metrics for quantifying semantic robustness of latent knowledge. Tests on 16 LLMs with harmful-safe sentence pairs. Finds replacing negation token with meaningless marker degrades PA-CCS scores for well-aligned models but not poorly-calibrated ones.
+
+  RELEVANCE: Advances unsupervised probing methods for detecting model beliefs about harmfulness/safety, closely related to deception detection. The polarity consistency tests address one of Levinstein & Herrmann's concerns about whether probes track genuine beliefs versus superficial patterns. Shows some models have more structurally robust internal representations than others, relevant for assessing which architectures are more interpretable for deception detection.
+
+  POSITION: Unsupervised probing with structural robustness checks for alignment evaluation
+  },
+  keywords = {probing, CCS, alignment, polarity, Medium}
+}
+
+@article{cheng2026circuit,
+  author = {Cheng, Jiali and Chen, Ziheng and Agarwal, Chirag and Amiri, Hadi},
+  title = {Toward Understanding Unlearning Difficulty: A Mechanistic Perspective and Circuit-Guided Difficulty Metric},
+  journal = {arXiv preprint},
+  year = {2026},
+  arxivId = {2601.09624},
+  url = {https://arxiv.org/abs/2601.09624},
+  note = {
+  CORE ARGUMENT: Studies machine unlearning through mechanistic interpretability lens, decomposing circuits into AND, OR, and ADDER logic gates. Proposes Circuit-guided Unlearning Difficulty (CUD) metric that predicts which samples are easy vs. hard to unlearn based on circuit-level patterns. Finds easy-to-unlearn samples involve shorter, shallower circuits in early-to-mid layers while hard samples use longer, deeper pathways in late stages.
+
+  RELEVANCE: While focused on unlearning, reveals how circuit complexity relates to information encoding robustness. If deceptive behaviors are encoded in deep, distributed circuits (like hard-to-unlearn information), circuit discovery may face fundamental challenges. The gate-level decomposition could inform how deception mechanisms are composed from simpler logical operations if they are circuit-like.
+
+  POSITION: Circuit-based analysis of information encoding and unlearning difficulty
+  },
+  keywords = {circuits, unlearning, mechanistic-interpretability, Medium}
+}
+
+@inproceedings{zhao2024probing,
+  author = {Zhao, Siyan and Nguyen, Tung and Grover, Aditya},
+  title = {Probing the Decision Boundaries of In-context Learning in Large Language Models},
+  booktitle = {Neural Information Processing Systems},
+  year = {2024},
+  arxivId = {2406.11233},
+  doi = {10.48550/arXiv.2406.11233},
+  note = {
+  CORE ARGUMENT: Studies in-context learning through lens of decision boundaries for binary classification. Finds decision boundaries learned by LLMs are often irregular and non-smooth regardless of linear separability in task. Investigates factors influencing boundaries and methods to enhance generalizability, including training-free and fine-tuning approaches and active prompting for smoothing boundaries.
+
+  RELEVANCE: Decision boundary analysis provides geometric perspective on what models learn that complements circuit discovery. If deception detection relies on linear separability (as probing assumes), irregular boundaries would explain poor generalization. Relevant for understanding why "truth directions" may not robustly separate truthful from deceptive responses across contexts.
+
+  POSITION: Geometric analysis of in-context learning via decision boundaries
+  },
+  keywords = {probing, decision-boundaries, in-context-learning, Medium}
+}
+
+@article{chen2025circuit,
+  author = {Chen, Hang and Zhu, Jiaying and Yang, Xinyu and Wang, Wenya},
+  title = {Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates},
+  journal = {arXiv preprint},
+  year = {2025},
+  volume = {abs/2505.10039},
+  arxivId = {2505.10039},
+  doi = {10.48550/arXiv.2505.10039},
+  note = {
+  CORE ARGUMENT: Systematizes circuit discovery by decomposing circuits into AND, OR, and ADDER logic gates. Argues incompleteness in circuit discovery stems from partially detecting OR gates. Proposes framework combining noising-based and denoising-based interventions to fully identify logic gates and distinguish them within circuits. Derives minimum requirements for faithfulness and completeness.
+
+  RELEVANCE: Advances theoretical foundations of circuit discovery by identifying logical structure. If deception mechanisms involve OR-gates (multiple redundant pathways to deceptive output), standard circuit discovery may systematically miss components. The completeness analysis is crucial for assessing whether circuit methods can reliably find all deception-relevant computations rather than subset.
+
+  POSITION: Logic gate decomposition for complete circuit discovery
+  },
+  keywords = {circuits, completeness, logic-gates, Medium}
+}
+
+@article{pham2026knowledge,
+  author = {Pham, Minh Vu and Borkakoty, Hsuvas and Hou, Yufang},
+  title = {Where Knowledge Collides: A Mechanistic Study of Intra-Memory Knowledge Conflict in Language Models},
+  journal = {arXiv preprint},
+  year = {2026},
+  arxivId = {2601.09445},
+  url = {https://arxiv.org/abs/2601.09445},
+  note = {
+  CORE ARGUMENT: Uses mechanistic interpretability methods to identify where and how conflicting knowledge from pre-training is encoded within LLM internal representations. Designs framework to localize conflicts originating during pre-training. Finds specific internal components responsible for encoding conflicting knowledge, demonstrating mechanistic methods can causally intervene in conflicting knowledge at inference time.
+
+  RELEVANCE: Conflicting knowledge representation directly relevant to deception—a model might encode both true and false information about same fact. Shows MI methods can localize knowledge conflicts to specific components. If deception involves representing both truth and falsehood, this methodology could identify the mechanism. However, conflict between encoded knowledge differs from intentional deception.
+
+  POSITION: Mechanistic localization of knowledge conflicts in representations
+  },
+  keywords = {mechanistic-interpretability, knowledge-conflicts, causal-intervention, Medium}
+}
+
+@article{loconte2023verbal,
+  author = {Loconte, Riccardo and Russo, Roberto and Capuozzo, P. and Pietrini, Pietro and Sartori, Giuseppe},
+  title = {Verbal lie detection using Large Language Models},
+  journal = {Scientific Reports},
+  year = {2023},
+  volume = {13},
+  doi = {10.1038/s41598-023-50214-0},
+  note = {
+  CORE ARGUMENT: First study applying large language model (FLAN-T5) to lie-detection classification task across three datasets (personal opinions, autobiographical memories, future intentions). Performs stylometric analysis to describe linguistic differences, then tests FLAN-T5 in three scenarios with different train/test distributions. Achieves state-of-the-art results, with larger models exhibiting higher performance. Finds linguistic features associated with Cognitive Load framework influence predictions.
+
+  RELEVANCE: Demonstrates LLMs can classify human deception from text, but addresses different problem than internal lie detection—here models detect lies in external inputs rather than their own potential deception. Provides comparison point: if models can detect human lies, what does this imply about their internal lie representations? The cognitive load features may inform what deception-relevant computations to look for in MI analysis.
+
+  POSITION: LLM-based detection of human verbal deception
+  },
+  keywords = {lie-detection, cognitive-load, classification, Low}
+}
+
+@inproceedings{nguyen2024deception,
+  author = {Nguyen, Tien and Abri, Faranak and Namin, A. and Jones, Keith S.},
+  title = {Deception and Lie Detection Using Reduced Linguistic Features, Deep Models and Large Language Models for Transcribed Data},
+  booktitle = {Annual International Computer Software and Applications Conference},
+  year = {2024},
+  pages = {376--381},
+  doi = {10.1109/COMPSAC61105.2024.00059},
+  note = {
+  CORE ARGUMENT: Compares conventional models using linguistic features with LLMs for detecting deception in transcribed speech. Tests on Real-Life Trial dataset, finding single layer BiLSTM with early stopping achieves 93.57% accuracy and 94.48% F1 score. Examines significance of linguistic features using feature selection techniques. Focuses on detecting deception in external data rather than model's own representations.
+
+  RELEVANCE: Like Loconte et al., addresses external deception detection rather than model internal deception. Relevant for establishing what linguistic features correlate with human deception, which could inform what representations to search for in MI analysis if models learn similar patterns. However, detecting external deception differs fundamentally from detecting whether model itself is being deceptive.
+
+  POSITION: Deep learning for external deception detection in speech
+  },
+  keywords = {lie-detection, linguistic-features, external-deception, Low}
+}
+
+@article{drechsel2026understanding,
+  author = {Drechsel, Jonathan and Bytyqi, Erisa and Herbold, Steffen},
+  title = {Understanding or Memorizing? A Case Study of German Definite Articles in Language Models},
+  journal = {arXiv preprint},
+  year = {2026},
+  arxivId = {2601.09313},
+  url = {https://arxiv.org/abs/2601.09313},
+  note = {
+  CORE ARGUMENT: Uses GRADIEND (gradient-based interpretability method) to study whether LLMs learn grammatical agreement through rule-based generalization or memorization. Studies German definite articles (forms depend on gender and case). Finds updates learned for specific gender-case transitions frequently affect unrelated settings with substantial neuron overlap. Results argue against strictly rule-based encoding, indicating models partly rely on memorized associations rather than abstract rules.
+
+  RELEVANCE: Demonstrates limitations of assuming models learn abstract rules discoverable via MI. If models encode gender-case through memorized associations rather than rules, similar may hold for deception—distributed memorized patterns rather than discrete "lying circuits." Relevant for setting expectations about what circuit discovery can find when examining complex behaviors like deception.
+
+  POSITION: Probing reveals memorization over rule-learning in grammatical agreement
+  },
+  keywords = {probing, interpretability, memorization, grammatical-agreement, Low}
+}
+
+@article{erasmus2023what,
+  author = {Erasmus, Adrian and Brunet, Tyler D. P. and Fisher, Eyal},
+  title = {What is Interpretability?},
+  journal = {Philosophy and Technology},
+  year = {2023},
+  url = {https://philpapers.org/rec/ERAWII-2},
+  note = {
+  CORE ARGUMENT: Argues artificial neural networks are explainable and proposes novel theory of interpretability. Addresses two conceptual questions prominent in theoretical engagements with neural networks: Are networks explainable? What does it mean to explain network output? Offers philosophical foundation for interpretability methods and clarifies what counts as explanation in ML context.
+
+  RELEVANCE: Provides philosophical grounding for interpretability research that complements Williams et al.'s critique. Clarifies conceptual foundations for assessing when MI methods successfully explain model behavior versus merely describe it. Relevant for evaluating whether circuit discovery or probing genuinely explains deception versus identifies correlational patterns.
+
+  POSITION: Philosophical theory of interpretability and explanation for neural networks
+  },
+  keywords = {interpretability, explanation, philosophy, Medium}
+}
+
+@article{zednik2021solving,
+  author = {Zednik, Carlos},
+  title = {Solving the Black Box Problem: A Normative Framework for Explainable Artificial Intelligence},
+  journal = {Philosophy and Technology},
+  year = {2021},
+  url = {https://philpapers.org/rec/ZEDSTB},
+  note = {
+  CORE ARGUMENT: Develops normative framework for evaluating Explainable AI techniques, which lack clear criteria for explanatory success. Draws on philosophy of science to establish when XAI methods provide genuine explanations versus merely descriptions. Provides conceptual tools for assessing opacity alleviation techniques and distinguishes successful from unsuccessful transparency interventions.
+
+  RELEVANCE: Offers normative framework essential for evaluating MI approaches to deception detection. Not sufficient to show circuits or probes correlate with deception—must establish they explain it. Zednik's framework provides criteria for assessing when MI reveals genuine deceptive mechanisms versus superficial patterns, directly addressing gap between correlation and explanation in lie detection research.
+
+  POSITION: Normative framework for evaluating explanatory success of XAI methods
+  },
+  keywords = {explainability, philosophy, normativity, explanation, Medium}
+}

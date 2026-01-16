@@ -1,0 +1,164 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:situational awareness Claude Anthropic",
+  "results": [
+    {
+      "arxiv_id": "2406.04956",
+      "title": "Expansion of situations theory for exploring shared awareness in human-intelligent autonomous systems",
+      "authors": [
+        "Scott A. Humr",
+        "Mustafa Canan",
+        "Mustafa Demir"
+      ],
+      "abstract": "Intelligent autonomous systems are part of a system of systems that interact with other agents to accomplish tasks in complex environments. However, intelligent autonomous systems integrated system of systems add additional layers of complexity based on their limited cognitive processes, specifically shared situation awareness that allows a team to respond to novel tasks. Intelligent autonomous systems' lack of shared situation awareness adversely influences team effectiveness in complex task environments, such as military command-and-control. A complementary approach of shared situation awareness, called situations theory, is beneficial for understanding the relationship between system of systems shared situation awareness and effectiveness. The current study elucidates a conceptual discussion on situations theory to investigate the development of an system of systems shared situational awareness when humans team with intelligent autonomous system agents. To ground the discussion, the reviewed studies expanded situations theory within the context of a system of systems that result in three major conjectures that can be beneficial to the design and development of future systems of systems.",
+      "published": "2024-06-07",
+      "updated": "2024-06-07",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "doi": "10.1504/IJSSE.2025.10058953",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2406.04956v1",
+      "url": "https://arxiv.org/abs/2406.04956"
+    },
+    {
+      "arxiv_id": "2403.08155",
+      "title": "Enhancing Space Situational Awareness to Mitigate Risk: A Single-Case Study in the Misidentification of a Recently-Launched Starlink Satellite Train as a UAP in Commercial Aviation",
+      "authors": [
+        "Douglas J. Buettner",
+        "Richard E. Griffiths",
+        "Nick Snell",
+        "John Stilley"
+      ],
+      "abstract": "Over the past several years, the misidentification of SpaceX Starlink satellites as Unidentified Aerial Phenomena (UAP) by pilots and laypersons has generated unnecessary aviation risk and confusion. The many deployment and orbital evolution strategies, coupled with changing sun specular reflection angles, contribute to this gap in space situational awareness. In this paper we present a case analysis of an incident that generated multiple, corroborating reports of a UAP from five pilots on two commercial airline flights over the Pacific Ocean on August 10th, 2022. This incident included two cell phone photos and a video of an unrecognizable and possibly anomalous phenomenon. We then use supplemental two-line elements (TLEs) for the Starlink train of satellites launched that same day and Automatic Dependent Surveillance Broadcast (ADS-B) data from the flight with the photographs to reconstruct a view of these satellites from the cockpit at the time and place of the sighting. The success of this work demonstrates an approach that could, in principle, warn aviators about satellites that could be visible in unusual or novel illumination configurations, thus increasing space situational awareness and supporting aviation safety. We conclude with recommendations for governments and satellite operators to provide better a-priori data that can be used to create advisories to aviators and the public. The automated simulation of known specular reflection off constellations of satellites could also support researchers investigating sightings of unfamiliar aerial or aerospace objects as likely being from normal versus novel space events.",
+      "published": "2024-03-13",
+      "updated": "2024-04-03",
+      "primary_category": "physics.soc-ph",
+      "categories": [
+        "physics.soc-ph",
+        "astro-ph.IM",
+        "physics.pop-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2403.08155v3",
+      "url": "https://arxiv.org/abs/2403.08155"
+    },
+    {
+      "arxiv_id": "2404.04090",
+      "title": "PASO -- Astronomy and Space Situational Awareness in a Dark Sky Destination",
+      "authors": [
+        "Domingos Barbosa",
+        "Bruno Coelho",
+        "Miguel Bergano",
+        "Constan\u00e7a Alves",
+        "Alexandre C. M. Correia",
+        "Lu\u00eds Cupido",
+        "Jos\u00e9 Freitas",
+        "Lu\u00eds Gon\u00e7alves",
+        "Bruce Grossan",
+        "Anna Guerman",
+        "Allan K. de Almeida",
+        "Dalmiro Maia",
+        "Bruno Morgado",
+        "Jo\u00e3o Pandeirada",
+        "Val\u00e9rio Ribeiro",
+        "Gon\u00e7alo Rosa",
+        "George Smoot",
+        "Timoth\u00e9e Vaillant",
+        "Thyrso Villela",
+        "Carlos Alexandre Wuensche"
+      ],
+      "abstract": "The Pampilhosa da Serra Space Observatory (PASO) is located in the center of the continental Portuguese territory, in the heart of a certified Dark Sky destination by the Starlight Foundation (Aldeias do Xisto) and has been an instrumental asset to advance science, education and astrotourism certifications. PASO hosts astronomy and Space Situational Awareness (SSA) activities including a node of the Portuguese Space Surveillance \\& Tracking (SST) infrastructure network, such as a space radar currently in test phase using GEM radiotelescope, a double Wide Field of View Telescope system, a EUSST optical sensor telescope. These instruments allow surveillance of satellite and space debris in LEO, MEO and GEO orbits. The WFOV telescope offers spectroscopy capabilities enabling light curve analysis and cosmic sources monitoring. Instruments for Space Weather are being considered for installation to monitor solar activities and expand the range of SSA services.",
+      "published": "2024-04-05",
+      "updated": "2024-04-05",
+      "primary_category": "astro-ph.IM",
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP",
+        "astro-ph.HE",
+        "eess.SP",
+        "physics.soc-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2404.04090v1",
+      "url": "https://arxiv.org/abs/2404.04090"
+    },
+    {
+      "arxiv_id": "2407.01557",
+      "title": "AI Governance and Accountability: An Analysis of Anthropic's Claude",
+      "authors": [
+        "Aman Priyanshu",
+        "Yash Maurya",
+        "Zuofei Hong"
+      ],
+      "abstract": "As AI systems become increasingly prevalent and impactful, the need for effective AI governance and accountability measures is paramount. This paper examines the AI governance landscape, focusing on Anthropic's Claude, a foundational AI model. We analyze Claude through the lens of the NIST AI Risk Management Framework and the EU AI Act, identifying potential threats and proposing mitigation strategies. The paper highlights the importance of transparency, rigorous benchmarking, and comprehensive data handling processes in ensuring the responsible development and deployment of AI systems. We conclude by discussing the social impact of AI governance and the ethical considerations surrounding AI accountability.",
+      "published": "2024-05-02",
+      "updated": "2024-05-02",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2407.01557v1",
+      "url": "https://arxiv.org/abs/2407.01557"
+    },
+    {
+      "arxiv_id": "2407.04694",
+      "title": "Me, Myself, and AI: The Situational Awareness Dataset (SAD) for LLMs",
+      "authors": [
+        "Rudolf Laine",
+        "Bilal Chughtai",
+        "Jan Betley",
+        "Kaivalya Hariharan",
+        "Jeremy Scheurer",
+        "Mikita Balesni",
+        "Marius Hobbhahn",
+        "Alexander Meinke",
+        "Owain Evans"
+      ],
+      "abstract": "AI assistants such as ChatGPT are trained to respond to users by saying, \"I am a large language model\". This raises questions. Do such models know that they are LLMs and reliably act on this knowledge? Are they aware of their current circumstances, such as being deployed to the public? We refer to a model's knowledge of itself and its circumstances as situational awareness. To quantify situational awareness in LLMs, we introduce a range of behavioral tests, based on question answering and instruction following. These tests form the $\\textbf{Situational Awareness Dataset (SAD)}$, a benchmark comprising 7 task categories and over 13,000 questions. The benchmark tests numerous abilities, including the capacity of LLMs to (i) recognize their own generated text, (ii) predict their own behavior, (iii) determine whether a prompt is from internal evaluation or real-world deployment, and (iv) follow instructions that depend on self-knowledge.   We evaluate 16 LLMs on SAD, including both base (pretrained) and chat models. While all models perform better than chance, even the highest-scoring model (Claude 3 Opus) is far from a human baseline on certain tasks. We also observe that performance on SAD is only partially predicted by metrics of general knowledge (e.g. MMLU). Chat models, which are finetuned to serve as AI assistants, outperform their corresponding base models on SAD but not on general knowledge tasks. The purpose of SAD is to facilitate scientific understanding of situational awareness in LLMs by breaking it down into quantitative abilities. Situational awareness is important because it enhances a model's capacity for autonomous planning and action. While this has potential benefits for automation, it also introduces novel risks related to AI safety and control. Code and latest results available at https://situational-awareness-dataset.org .",
+      "published": "2024-07-05",
+      "updated": "2024-07-05",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2407.04694v1",
+      "url": "https://arxiv.org/abs/2407.04694"
+    },
+    {
+      "arxiv_id": "2411.13537",
+      "title": "Competence-Aware AI Agents with Metacognition for Unknown Situations and Environments (MUSE)",
+      "authors": [
+        "Rodolfo Valiente",
+        "Praveen K. Pilly"
+      ],
+      "abstract": "Metacognition, defined as the awareness and regulation of one's cognitive processes, is central to human adaptability in unknown situations. In contrast, current autonomous agents often struggle in novel environments due to their limited capacity for adaptation. We hypothesize that metacognition is a critical missing ingredient in autonomous agents for the cognitive flexibility needed to tackle unfamiliar challenges. Given the broad scope of metacognitive abilities, we focus on competence awareness and strategy selection. To this end, we propose the Metacognition for Unknown Situations and Environments (MUSE) framework to integrate metacognitive processes of self-assessment and self-regulation into autonomous agents. We present two implementations of MUSE: one based on world modeling and another leveraging large language models (LLMs). Our system continually learns to assess its competence on a given task and uses this self-assessment to guide iterative cycles of strategy selection. MUSE agents demonstrate high competence awareness and significant improvements in self-regulation for solving novel, out-of-distribution tasks more effectively compared to model-based reinforcement learning and purely prompt-based LLM agent approaches. This work highlights the promise of approaches inspired by cognitive and neural systems in enabling autonomous agents to adapt to new environments while mitigating the heavy reliance on extensive training data and large models for the current models.",
+      "published": "2024-11-20",
+      "updated": "2025-11-17",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": "10.1016/j.neunet.2025.108131",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2411.13537v2",
+      "url": "https://arxiv.org/abs/2411.13537"
+    }
+  ],
+  "count": 6,
+  "errors": []
+}

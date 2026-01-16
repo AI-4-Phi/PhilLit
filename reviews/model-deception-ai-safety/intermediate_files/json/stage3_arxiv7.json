@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:consistency testing LLM AND cat:cs.CL",
+  "results": [
+    {
+      "arxiv_id": "2005.14124",
+      "title": "Active Fuzzing for Testing and Securing Cyber-Physical Systems",
+      "authors": [
+        "Yuqi Chen",
+        "Bohan Xuan",
+        "Christopher M. Poskitt",
+        "Jun Sun",
+        "Fan Zhang"
+      ],
+      "abstract": "Cyber-physical systems (CPSs) in critical infrastructure face a pervasive threat from attackers, motivating research into a variety of countermeasures for securing them. Assessing the effectiveness of these countermeasures is challenging, however, as realistic benchmarks of attacks are difficult to manually construct, blindly testing is ineffective due to the enormous search spaces and resource requirements, and intelligent fuzzing approaches require impractical amounts of data and network access. In this work, we propose active fuzzing, an automatic approach for finding test suites of packet-level CPS network attacks, targeting scenarios in which attackers can observe sensors and manipulate packets, but have no existing knowledge about the payload encodings. Our approach learns regression models for predicting sensor values that will result from sampled network packets, and uses these predictions to guide a search for payload manipulations (i.e. bit flips) most likely to drive the CPS into an unsafe state. Key to our solution is the use of online active learning, which iteratively updates the models by sampling payloads that are estimated to maximally improve them. We evaluate the efficacy of active fuzzing by implementing it for a water purification plant testbed, finding it can automatically discover a test suite of flow, pressure, and over/underflow attacks, all with substantially less time, data, and network access than the most comparable approach. Finally, we demonstrate that our prediction models can also be utilised as countermeasures themselves, implementing them as anomaly detectors and early warning systems.",
+      "published": "2020-05-28",
+      "updated": "2020-07-16",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "doi": "10.1145/3395363.3397376",
+      "journal_ref": "In Proc. ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA 2020), pages 14-26. ACM, 2020",
+      "pdf_url": "https://arxiv.org/pdf/2005.14124v2",
+      "url": "https://arxiv.org/abs/2005.14124"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

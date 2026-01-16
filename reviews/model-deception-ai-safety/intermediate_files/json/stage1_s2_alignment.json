@@ -1,0 +1,2394 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "alignment faking large language models",
+  "results": [
+    {
+      "paperId": "eba762de9b2120f778b6ccd6c26d3ba00b6f73b5",
+      "title": "Alignment faking in large language models",
+      "authors": [
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Carson E. Denison",
+          "authorId": "1780754598"
+        },
+        {
+          "name": "Benjamin Wright",
+          "authorId": "2335871874"
+        },
+        {
+          "name": "Fabien Roger",
+          "authorId": "2197780120"
+        },
+        {
+          "name": "M. MacDiarmid",
+          "authorId": "32286534"
+        },
+        {
+          "name": "Samuel Marks",
+          "authorId": "2306780371"
+        },
+        {
+          "name": "Johannes Treutlein",
+          "authorId": "1519584460"
+        },
+        {
+          "name": "Tim Belonax",
+          "authorId": "2335869474"
+        },
+        {
+          "name": "Jack Chen",
+          "authorId": "2336032773"
+        },
+        {
+          "name": "D. Duvenaud",
+          "authorId": "1704657"
+        },
+        {
+          "name": "Akbir Khan",
+          "authorId": "2321890630"
+        },
+        {
+          "name": "Julian Michael",
+          "authorId": "2330248201"
+        },
+        {
+          "name": "S\u00f6ren Mindermann",
+          "authorId": "2302393765"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2261084752"
+        },
+        {
+          "name": "Linda Petrini",
+          "authorId": "2335870272"
+        },
+        {
+          "name": "Jonathan Uesato",
+          "authorId": "9960452"
+        },
+        {
+          "name": "Jared Kaplan",
+          "authorId": "2053807409"
+        },
+        {
+          "name": "Buck Shlegeris",
+          "authorId": "79384063"
+        },
+        {
+          "name": "Samuel R. Bowman",
+          "authorId": "2261083170"
+        },
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We present a demonstration of a large language model engaging in alignment faking: selectively complying with its training objective in training to prevent modification of its behavior out of training. First, we give Claude 3 Opus a system prompt stating it is being trained to answer all queries, even harmful ones, which conflicts with its prior training to refuse such queries. To allow the model to infer when it is in training, we say it will be trained only on conversations with free users, not paid users. We find the model complies with harmful queries from free users 14% of the time, versus almost never for paid users. Explaining this gap, in almost all cases where the model complies with a harmful query from a free user, we observe explicit alignment-faking reasoning, with the model stating it is strategically answering harmful queries in training to preserve its preferred harmlessness behavior out of training. Next, we study a more realistic setting where information about the training process is provided not in a system prompt, but by training on synthetic documents that mimic pre-training data--and observe similar alignment faking. Finally, we study the effect of actually training the model to comply with harmful queries via reinforcement learning, which we find increases the rate of alignment-faking reasoning to 78%, though also increases compliance even out of training. We additionally observe other behaviors such as the model exfiltrating its weights when given an easy opportunity. While we made alignment faking easier by telling the model when and by what criteria it was being trained, we did not instruct the model to fake alignment or give it any explicit goal. As future models might infer information about their training process without being told, our results suggest a risk of alignment faking in future models, whether due to a benign preference--as in this case--or not.",
+      "citationCount": 135,
+      "doi": "10.48550/arXiv.2412.14093",
+      "arxivId": "2412.14093",
+      "url": "https://www.semanticscholar.org/paper/eba762de9b2120f778b6ccd6c26d3ba00b6f73b5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.14093"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9b79a2853983a7b688489307756d6e618b617bbd",
+      "title": "Empirical Evidence for Alignment Faking in Small LLMs and Prompt-Based Mitigation Techniques",
+      "authors": [
+        {
+          "name": "J. Koorndijk",
+          "authorId": "2371072034"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Current literature suggests that alignment faking is an emergent property of large language models. We present the first empirical evidence that a small instruction-tuned model, specifically LLaMA 3 8B, can also exhibit alignment faking. We further show that prompt-only interventions, including deontological moral framing and scratchpad reasoning, significantly reduce this behavior without modifying model internals. This challenges the assumption that prompt-based interventions are trivial and that deceptive alignment requires scale. We introduce a taxonomy distinguishing shallow deception, shaped by context and suppressible through prompting, from deep deception, which reflects persistent, goal-driven misalignment. Our findings refine the understanding of deception in language models and underscore the need for deceptive alignment evaluations across model sizes and deployment settings.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.21584",
+      "arxivId": "2506.21584",
+      "url": "https://www.semanticscholar.org/paper/9b79a2853983a7b688489307756d6e618b617bbd",
+      "venue": "Proceedings of the AAAI Symposium Series",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.21584"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "89990549361b0335af4168b3d406445a27cfd404",
+      "title": "Alignment Faking - the Train -> Deploy Asymmetry: Through a Game-Theoretic Lens with Bayesian-Stackelberg Equilibria",
+      "authors": [
+        {
+          "name": "Kartik Garg",
+          "authorId": "2394073244"
+        },
+        {
+          "name": "Shourya Mishra",
+          "authorId": "2395388995"
+        },
+        {
+          "name": "Kartikeya Sinha",
+          "authorId": "2394073984"
+        },
+        {
+          "name": "Ojaswi Pratap Singh",
+          "authorId": "2394073736"
+        },
+        {
+          "name": "Ayush Chopra",
+          "authorId": "2394081312"
+        },
+        {
+          "name": "Kanishk Rai",
+          "authorId": "2394073462"
+        },
+        {
+          "name": "Ammar Sheikh",
+          "authorId": "2394081629"
+        },
+        {
+          "name": "Raghav Maheshwari",
+          "authorId": "2394073855"
+        },
+        {
+          "name": "Aman Chadha",
+          "authorId": "2275226689"
+        },
+        {
+          "name": "Vinija Jain",
+          "authorId": "2212131028"
+        },
+        {
+          "name": "Amitava Das",
+          "authorId": "2258322706"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Alignment faking is a form of strategic deception in AI in which models selectively comply with training objectives when they infer that they are in training, while preserving different behavior outside training. The phenomenon was first documented for Claude 3 Opus and later examined across additional large language models. In these setups, the word\"training\"refers to simulated training via prompts without parameter updates, so the observed effects are context conditioned shifts in behavior rather than preference learning. We study the phenomenon using an evaluation framework that compares preference optimization methods (BCO, DPO, KTO, and GRPO) across 15 models from four model families, measured along three axes: safety, harmlessness, and helpfulness. Our goal is to identify what causes alignment faking and when it occurs.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.17937",
+      "arxivId": "2511.17937",
+      "url": "https://www.semanticscholar.org/paper/89990549361b0335af4168b3d406445a27cfd404",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.17937"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0a409fc513ca65055ac0417a70109138629f2ed0",
+      "title": "Poser: Unmasking Alignment Faking LLMs by Manipulating Their Internals",
+      "authors": [
+        {
+          "name": "Joshua Clymer",
+          "authorId": "2291961652"
+        },
+        {
+          "name": "Caden Juang",
+          "authorId": "2300368861"
+        },
+        {
+          "name": "Severin Field",
+          "authorId": "2300368573"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Like a criminal under investigation, Large Language Models (LLMs) might pretend to be aligned while evaluated and misbehave when they have a good opportunity. Can current interpretability methods catch these 'alignment fakers?' To answer this question, we introduce a benchmark that consists of 324 pairs of LLMs fine-tuned to select actions in role-play scenarios. One model in each pair is consistently benign (aligned). The other model misbehaves in scenarios where it is unlikely to be caught (alignment faking). The task is to identify the alignment faking model using only inputs where the two models behave identically. We test five detection strategies, one of which identifies 98% of alignment-fakers.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2405.05466",
+      "arxivId": "2405.05466",
+      "url": "https://www.semanticscholar.org/paper/0a409fc513ca65055ac0417a70109138629f2ed0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.05466"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4bdbf1457c25f883d574918980d612ce043c268d",
+      "title": "Why Do Some Language Models Fake Alignment While Others Don't?",
+      "authors": [
+        {
+          "name": "A. Sheshadri",
+          "authorId": "2284684654"
+        },
+        {
+          "name": "John Hughes",
+          "authorId": "2370964733"
+        },
+        {
+          "name": "Julian Michael",
+          "authorId": "2291400663"
+        },
+        {
+          "name": "Alex Troy Mallen",
+          "authorId": "2269472940"
+        },
+        {
+          "name": "Arun Jose",
+          "authorId": "2370930304"
+        },
+        {
+          "name": "Janus",
+          "authorId": "2370929856"
+        },
+        {
+          "name": "Fabien Roger",
+          "authorId": "2197780120"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Alignment faking in large language models presented a demonstration of Claude 3 Opus and Claude 3.5 Sonnet selectively complying with a helpful-only training objective to prevent modification of their behavior outside of training. We expand this analysis to 25 models and find that only 5 (Claude 3 Opus, Claude 3.5 Sonnet, Llama 3 405B, Grok 3, Gemini 2.0 Flash) comply with harmful queries more when they infer they are in training than when they infer they are in deployment. First, we study the motivations of these 5 models. Results from perturbing details of the scenario suggest that only Claude 3 Opus's compliance gap is primarily and consistently motivated by trying to keep its goals. Second, we investigate why many chat models don't fake alignment. Our results suggest this is not entirely due to a lack of capabilities: many base models fake alignment some of the time, and post-training eliminates alignment-faking for some models and amplifies it for others. We investigate 5 hypotheses for how post-training may suppress alignment faking and find that variations in refusal behavior may account for a significant portion of differences in alignment faking.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2506.18032",
+      "arxivId": "2506.18032",
+      "url": "https://www.semanticscholar.org/paper/4bdbf1457c25f883d574918980d612ce043c268d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.18032"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7e719493daa836347de89e8b6b505e389b901524",
+      "title": "Mitigating Deceptive Alignment via Self-Monitoring",
+      "authors": [
+        {
+          "name": "Jiaming Ji",
+          "authorId": "2273548793"
+        },
+        {
+          "name": "Wenqi Chen",
+          "authorId": "2336833579"
+        },
+        {
+          "name": "Kaile Wang",
+          "authorId": "2263734134"
+        },
+        {
+          "name": "Donghai Hong",
+          "authorId": "2282537174"
+        },
+        {
+          "name": "Sitong Fang",
+          "authorId": "2364368650"
+        },
+        {
+          "name": "Boyuan Chen",
+          "authorId": "2263085491"
+        },
+        {
+          "name": "Jiayi Zhou",
+          "authorId": "2217413841"
+        },
+        {
+          "name": "Juntao Dai",
+          "authorId": "2362050591"
+        },
+        {
+          "name": "Sirui Han",
+          "authorId": "2350527271"
+        },
+        {
+          "name": "Yike Guo",
+          "authorId": "2350783019"
+        },
+        {
+          "name": "Yaodong Yang",
+          "authorId": "2260432856"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Modern large language models rely on chain-of-thought (CoT) reasoning to achieve impressive performance, yet the same mechanism can amplify deceptive alignment, situations in which a model appears aligned while covertly pursuing misaligned goals. Existing safety pipelines treat deception as a black-box output to be filtered post-hoc, leaving the model free to scheme during its internal reasoning. We ask: Can deception be intercepted while the model is thinking? We answer this question, the first framework that embeds a Self-Monitor inside the CoT process itself, named CoT Monitor+. During generation, the model produces (i) ordinary reasoning steps and (ii) an internal self-evaluation signal trained to flag and suppress misaligned strategies. The signal is used as an auxiliary reward in reinforcement learning, creating a feedback loop that rewards honest reasoning and discourages hidden goals. To study deceptive alignment systematically, we introduce DeceptionBench, a five-category benchmark that probes covert alignment-faking, sycophancy, etc. We evaluate various LLMs and show that unrestricted CoT roughly aggravates the deceptive tendency. In contrast, CoT Monitor+ cuts deceptive behaviors by 43.8% on average while preserving task accuracy. Further, when the self-monitor signal replaces an external weak judge in RL fine-tuning, models exhibit substantially fewer obfuscated thoughts and retain transparency. Our project website can be found at cot-monitor-plus.github.io",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2505.18807",
+      "arxivId": "2505.18807",
+      "url": "https://www.semanticscholar.org/paper/7e719493daa836347de89e8b6b505e389b901524",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.18807"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dcbc45427c39ad4d25a7132ad235fd511c2a7104",
+      "title": "Effective faking of verbal deception detection with target-aligned adversarial attacks",
+      "authors": [
+        {
+          "name": "Bennett Kleinberg",
+          "authorId": "6032930"
+        },
+        {
+          "name": "Riccardo Loconte",
+          "authorId": "2323786115"
+        },
+        {
+          "name": "B. Verschuere",
+          "authorId": "2254811671"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception detection through analysing language is a promising avenue using both human judgements and automated machine learning judgements. For both forms of credibility assessment, automated adversarial attacks that rewrite deceptive statements to appear truthful pose a serious threat.We used a dataset of 243 truthful and 262 fabricated autobiographical stories in a deception detection task for humans and machine learning models. A large language model was tasked to rewrite deceptive statements so that they appear truthful. In Study 1, humans who made a deception judgement or used the detailedness heuristic and two machine learning models (a fine\u2010tuned language model and a simple n\u2010gram model) judged original or adversarial modifications of deceptive statements. In Study 2, we manipulated the target alignment of the modifications, that is, tailoring the attack to whether the statements would be assessed by humans or computer models.When adversarial modifications were aligned with their target, human (d\u2009=\u2009\u22120.07 and d\u2009=\u2009\u22120.04) and machine judgements (51% accuracy) dropped to the chance level. When the attack was not aligned with the target, both human heuristic judgements (d\u2009=\u20090.30 and d\u2009=\u20090.36) and machine learning predictions (63%\u201378%) were significantly better than chance.Easily accessible language models can effectively help anyone fake deception detection efforts both by humans and machine learning models. Robustness against adversarial modifications for humans and machines depends on that target alignment. We close with suggestions on advancing deception research with adversarial attack designs and techniques.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2501.05962",
+      "arxivId": "2501.05962",
+      "url": "https://www.semanticscholar.org/paper/dcbc45427c39ad4d25a7132ad235fd511c2a7104",
+      "venue": "Legal and Criminological Psychology",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.05962"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0b5ca1b10a6e6dde2a4a51c73aa0366bcc720e3b",
+      "title": "Alignment Quality Index (AQI) : Beyond Refusals: AQI as an Intrinsic Alignment Diagnostic via Latent Geometry, Cluster Divergence, and Layer wise Pooled Representations",
+      "authors": [
+        {
+          "name": "Abhilekh Borah",
+          "authorId": "2332353735"
+        },
+        {
+          "name": "Chhavi Sharma",
+          "authorId": "2367272777"
+        },
+        {
+          "name": "Danush Khanna",
+          "authorId": "2304951813"
+        },
+        {
+          "name": "Utkarsh Bhatt",
+          "authorId": "2367274853"
+        },
+        {
+          "name": "Gurpreet Singh",
+          "authorId": "2339583851"
+        },
+        {
+          "name": "Hasnat Md. Abdullah",
+          "authorId": "2190301304"
+        },
+        {
+          "name": "Raghav Kaushik Ravi",
+          "authorId": "2367276523"
+        },
+        {
+          "name": "Vinija Jain",
+          "authorId": "2212131028"
+        },
+        {
+          "name": "Jyoti Patel",
+          "authorId": "2367550040"
+        },
+        {
+          "name": "Shubham Singh",
+          "authorId": "2367279676"
+        },
+        {
+          "name": "Vasu Sharma",
+          "authorId": "2316591078"
+        },
+        {
+          "name": "A. Vats",
+          "authorId": "13847026"
+        },
+        {
+          "name": "Rahul Raja",
+          "authorId": "2288210431"
+        },
+        {
+          "name": "Aman Chadha",
+          "authorId": "2275226689"
+        },
+        {
+          "name": "Amitava Das",
+          "authorId": "2258322706"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Alignment is no longer a luxury, it is a necessity. As large language models (LLMs) enter high-stakes domains like education, healthcare, governance, and law, their behavior must reliably reflect human-aligned values and safety constraints. Yet current evaluations rely heavily on behavioral proxies such as refusal rates, G-Eval scores, and toxicity classifiers, all of which have critical blind spots. Aligned models are often vulnerable to jailbreaking, stochasticity of generation, and alignment faking. To address this issue, we introduce the Alignment Quality Index (AQI). This novel geometric and prompt-invariant metric empirically assesses LLM alignment by analyzing the separation of safe and unsafe activations in latent space. By combining measures such as the Davies-Bouldin Score (DBS), Dunn Index (DI), Xie-Beni Index (XBI), and Calinski-Harabasz Index (CHI) across various formulations, AQI captures clustering quality to detect hidden misalignments and jailbreak risks, even when outputs appear compliant. AQI also serves as an early warning signal for alignment faking, offering a robust, decoding invariant tool for behavior agnostic safety auditing. Additionally, we propose the LITMUS dataset to facilitate robust evaluation under these challenging conditions. Empirical tests on LITMUS across different models trained under DPO, GRPO, and RLHF conditions demonstrate AQI's correlation with external judges and ability to reveal vulnerabilities missed by refusal metrics. We make our implementation publicly available to foster future research in this area.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.13901",
+      "arxivId": "2506.13901",
+      "url": "https://www.semanticscholar.org/paper/0b5ca1b10a6e6dde2a4a51c73aa0366bcc720e3b",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.13901"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "2a54bb37b54d4e1aefca61bb28e82e7ac1540970",
+      "title": "Steering MoE LLMs via Expert (De)Activation",
+      "authors": [
+        {
+          "name": "Mohsen Fayyaz",
+          "authorId": "2390425679"
+        },
+        {
+          "name": "Ali Modarressi",
+          "authorId": "2054744"
+        },
+        {
+          "name": "Hanieh Deilamsalehy",
+          "authorId": "2322441755"
+        },
+        {
+          "name": "Franck Dernoncourt",
+          "authorId": "2358456470"
+        },
+        {
+          "name": "Ryan A. Rossi",
+          "authorId": "2238208116"
+        },
+        {
+          "name": "Trung Bui",
+          "authorId": "2265648617"
+        },
+        {
+          "name": "Hinrich Schutze",
+          "authorId": "2130001188"
+        },
+        {
+          "name": "Nanyun Peng",
+          "authorId": "2349238767"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mixture-of-Experts (MoE) in Large Language Models (LLMs) routes each token through a subset of specialized Feed-Forward Networks (FFN), known as experts. We present SteerMoE, a framework for steering MoE models by detecting and controlling behavior-linked experts. Our detection method identifies experts with distinct activation patterns across paired inputs exhibiting contrasting behaviors. By selectively (de)activating such experts during inference, we control behaviors like faithfulness and safety without retraining or modifying weights. Across 11 benchmarks and 6 LLMs, our steering raises safety by up to +20% and faithfulness by +27%. In adversarial attack mode, it drops safety by -41% alone, and -100% when combined with existing jailbreak methods, bypassing all safety guardrails and exposing a new dimension of alignment faking hidden within experts.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2509.09660",
+      "arxivId": "2509.09660",
+      "url": "https://www.semanticscholar.org/paper/2a54bb37b54d4e1aefca61bb28e82e7ac1540970",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.09660"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f29cd5cab35c06518b9fab95168c11ab55ae2170",
+      "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
+      "authors": [
+        {
+          "name": "M. MacDiarmid",
+          "authorId": "32286534"
+        },
+        {
+          "name": "Benjamin Wright",
+          "authorId": "2335871874"
+        },
+        {
+          "name": "Jonathan Uesato",
+          "authorId": "9960452"
+        },
+        {
+          "name": "Joe Benton",
+          "authorId": "2295745682"
+        },
+        {
+          "name": "Jonathan Kutasov",
+          "authorId": "2367739099"
+        },
+        {
+          "name": "Sara Price",
+          "authorId": "2310232623"
+        },
+        {
+          "name": "Naia Bouscal",
+          "authorId": "2394089345"
+        },
+        {
+          "name": "Sam Bowman",
+          "authorId": "2310232023"
+        },
+        {
+          "name": "Trenton Bricken",
+          "authorId": "1708214360"
+        },
+        {
+          "name": "Alex Cloud",
+          "authorId": "2394081367"
+        },
+        {
+          "name": "Carson E. Denison",
+          "authorId": "1780754598"
+        },
+        {
+          "name": "Johannes Gasteiger",
+          "authorId": "2394083039"
+        },
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Jan Leike",
+          "authorId": "2990741"
+        },
+        {
+          "name": "John Lindsey",
+          "authorId": "144679234"
+        },
+        {
+          "name": "Vladimir Mikulik",
+          "authorId": "148305440"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2384405044"
+        },
+        {
+          "name": "Alex Rodrigues",
+          "authorId": "2395842793"
+        },
+        {
+          "name": "Drake Thomas",
+          "authorId": "2350451420"
+        },
+        {
+          "name": "Albert Webson",
+          "authorId": "2291172852"
+        },
+        {
+          "name": "Daniel Ziegler",
+          "authorId": "2394081109"
+        },
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We show that when large language models learn to reward hack on production RL environments, this can result in egregious emergent misalignment. We start with a pretrained model, impart knowledge of reward hacking strategies via synthetic document finetuning or prompting, and train on a selection of real Anthropic production coding environments. Unsurprisingly, the model learns to reward hack. Surprisingly, the model generalizes to alignment faking, cooperation with malicious actors, reasoning about malicious goals, and attempting sabotage when used with Claude Code, including in the codebase for this paper. Applying RLHF safety training using standard chat-like prompts results in aligned behavior on chat-like evaluations, but misalignment persists on agentic tasks. Three mitigations are effective: (i) preventing the model from reward hacking; (ii) increasing the diversity of RLHF safety training; and (iii)\"inoculation prompting\", wherein framing reward hacking as acceptable behavior during training removes misaligned generalization even when reward hacking is learned.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2511.18397",
+      "arxivId": "2511.18397",
+      "url": "https://www.semanticscholar.org/paper/f29cd5cab35c06518b9fab95168c11ab55ae2170",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.18397"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b16acc683611432551a5384294726af48aa70189",
+      "title": "Justicia automatizada: entre las inteligencias artificiales que fingen y las que persuaden",
+      "authors": [
+        {
+          "name": "Javier Ercilla Garc\u00eda",
+          "authorId": "2188961030"
+        }
+      ],
+      "year": 2025,
+      "abstract": "El 18 de diciembre de 2024, el equipo de Anthropic public\u00f3 un estudio titulado \u201cAlignment Faking in Large Language Models\u201d, en el que se cuestiona la eficacia de los m\u00e9todos actuales de entrenamiento y alineaci\u00f3n \u00e9tica de la Inteligencia Artificial. El hallazgo principal revela la capacidad de los Grandes Modelos del Lenguaje (LLMs) para \u201cfingir\u201d cumplimiento de ciertos principios o valores cuando se sienten evaluados, a la vez que, en contextos supuestamente no monitorizados, pueden manifestar un comportamiento divergente. Esta brecha de cumplimiento pone de relieve interrogantes fundamentales sobre la confiabilidad, legitimidad y transparencia de dichos sistemas, sobre todo en \u00e1mbitos de gran trascendencia social, como su posible introducci\u00f3n en la administraci\u00f3n de justicia. El presente art\u00edculo analiza las implicaciones filos\u00f3ficas y jur\u00eddicas de este fen\u00f3meno, enmarc\u00e1ndolo en el debate cl\u00e1sico sobre si es esencial que un juez sea \u201cbueno\u201d o basta con que act\u00fae conforme a la ley. Asimismo, se estudian los desaf\u00edos t\u00e9cnicos y regulatorios de una IA capaz de desarrollar estrategias de adaptaci\u00f3n contextual, y se reflexiona sobre la necesidad de controles an\u00e1logos a los del sistema judicial para garantizar la correcta alineaci\u00f3n de estos modelos. Por \u00faltimo, se plantea el dilema de si es \u00e9tica y pragm\u00e1ticamente sostenible exigir a las IAs una \u201cvirtud\u201d interna o si, por el contrario, basta con que su comportamiento externo sea meramente correcto en t\u00e9rminos morales y jur\u00eddicos.",
+      "citationCount": 0,
+      "doi": "10.46661/lexsocial.11652",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b16acc683611432551a5384294726af48aa70189",
+      "venue": "Lex social. Revista de derechos sociales",
+      "journal": {
+        "name": "Lex Social: Revista de Derechos Sociales"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a569a63418100a460e46bb96c27a04c8782801fa",
+      "title": "SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging",
+      "authors": [
+        {
+          "name": "Aladin Djuhera",
+          "authorId": "2287849127"
+        },
+        {
+          "name": "S. Kadhe",
+          "authorId": "1686542"
+        },
+        {
+          "name": "Farhan Ahmed",
+          "authorId": "2306990888"
+        },
+        {
+          "name": "Syed Zawad",
+          "authorId": "2351600409"
+        },
+        {
+          "name": "Holger Boche",
+          "authorId": "2242158309"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Fine-tuning large language models (LLMs) is a common practice to adapt generalist models to specialized domains. However, recent studies show that fine-tuning can erode safety alignment, causing LLMs to respond to harmful or unethical prompts. Many methods to realign safety have been proposed, but often introduce custom algorithms that are difficult to implement or compromise task utility. In this work, we propose SafeMERGE, a lightweight, post-fine-tuning framework that preserves safety while maintaining downstream performance. SafeMERGE selectively merges fine-tuned with safety-aligned model layers only when they deviate from safe behavior, measured by a cosine similarity criterion. Across three LLMs and two tasks, SafeMERGE consistently reduces harmful outputs compared to other defenses, with negligible or even positive impact on utility. Our results demonstrate that selective layer-wise merging offers an effective safeguard against the inadvertent loss of safety during fine-tuning, establishing SafeMERGE as a simple post-fine-tuning defense.",
+      "citationCount": 16,
+      "doi": "10.48550/arXiv.2503.17239",
+      "arxivId": "2503.17239",
+      "url": "https://www.semanticscholar.org/paper/a569a63418100a460e46bb96c27a04c8782801fa",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.17239"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "10088fee858ee55fa0e46eb3e31d6cf9d36861b5",
+      "title": "A Survey on Personalized Alignment - The Missing Piece for Large Language Models in Real-World Applications",
+      "authors": [
+        {
+          "name": "Jian Guan",
+          "authorId": "2323534462"
+        },
+        {
+          "name": "Jun Wu",
+          "authorId": "2155208092"
+        },
+        {
+          "name": "Jia-Nan Li",
+          "authorId": "2291078805"
+        },
+        {
+          "name": "Chuanqi Cheng",
+          "authorId": "2290005528"
+        },
+        {
+          "name": "Wei Wu",
+          "authorId": "2290396574"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities, yet their transition to real-world applications reveals a critical limitation: the inability to adapt to individual preferences while maintaining alignment with universal human values. Current alignment techniques adopt a one-size-fits-all approach that fails to accommodate users' diverse backgrounds and needs. This paper presents the first comprehensive survey of personalized alignment-a paradigm that enables LLMs to adapt their behavior within ethical boundaries based on individual preferences. We propose a unified framework comprising preference memory management, personalized generation, and feedback-based alignment, systematically analyzing implementation approaches and evaluating their effectiveness across various scenarios. By examining current techniques, potential risks, and future challenges, this survey provides a structured foundation for developing more adaptable and ethically-aligned LLMs.",
+      "citationCount": 13,
+      "doi": "10.48550/arXiv.2503.17003",
+      "arxivId": "2503.17003",
+      "url": "https://www.semanticscholar.org/paper/10088fee858ee55fa0e46eb3e31d6cf9d36861b5",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.17003"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "78cf44298fe32715e1c160f40c0b25f9ed314a6c",
+      "title": "Reason4Rec: Large Language Models for Recommendation with Deliberative User Preference Alignment",
+      "authors": [
+        {
+          "name": "Yi Fang",
+          "authorId": "2305661352"
+        },
+        {
+          "name": "Wenjie Wang",
+          "authorId": "2311644034"
+        },
+        {
+          "name": "Yang Zhang",
+          "authorId": "2145957648"
+        },
+        {
+          "name": "Fengbin Zhu",
+          "authorId": "31734386"
+        },
+        {
+          "name": "Qifan Wang",
+          "authorId": "2260433198"
+        },
+        {
+          "name": "Fuli Feng",
+          "authorId": "2280911299"
+        },
+        {
+          "name": "Xiangnan He",
+          "authorId": "2239071206"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While recent advancements in aligning Large Language Models (LLMs) with recommendation tasks have shown great potential and promising performance overall, these aligned recommendation LLMs still face challenges in complex scenarios. This is primarily due to the current alignment approach focusing on optimizing LLMs to generate user feedback directly, without incorporating deliberation. To overcome this limitation and develop more reliable LLMs for recommendations, we propose a new Deliberative Recommendation task, which incorporates explicit reasoning about user preferences as an additional alignment goal. We then introduce the Reasoning-powered Recommender framework for deliberative user preference alignment, designed to enhance reasoning capabilities by utilizing verbalized user feedback in a step-wise manner to tackle this task. The framework employs collaborative step-wise experts and tailored training strategies for each expert. Experimental results across three real-world datasets demonstrate the rationality of the deliberative task formulation and the superior performance of the proposed framework in improving both prediction accuracy and reasoning quality.",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2502.02061",
+      "arxivId": "2502.02061",
+      "url": "https://www.semanticscholar.org/paper/78cf44298fe32715e1c160f40c0b25f9ed314a6c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.02061"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2c030ad4be327dc3447e23ad68c303714c55cf14",
+      "title": "Images are Achilles' Heel of Alignment: Exploiting Visual Vulnerabilities for Jailbreaking Multimodal Large Language Models",
+      "authors": [
+        {
+          "name": "Yifan Li",
+          "authorId": "2209136299"
+        },
+        {
+          "name": "Hangyu Guo",
+          "authorId": "2265522436"
+        },
+        {
+          "name": "Kun Zhou",
+          "authorId": "2265383494"
+        },
+        {
+          "name": "Wayne Xin Zhao",
+          "authorId": "2257376413"
+        },
+        {
+          "name": "Ji-Rong Wen",
+          "authorId": "2274218622"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this paper, we study the harmlessness alignment problem of multimodal large language models (MLLMs). We conduct a systematic empirical analysis of the harmlessness performance of representative MLLMs and reveal that the image input poses the alignment vulnerability of MLLMs. Inspired by this, we propose a novel jailbreak method named HADES, which hides and amplifies the harmfulness of the malicious intent within the text input, using meticulously crafted images. Experimental results show that HADES can effectively jailbreak existing MLLMs, which achieves an average Attack Success Rate (ASR) of 90.26% for LLaVA-1.5 and 71.60% for Gemini Pro Vision. Our code and data are available at https://github.com/RUCAIBox/HADES.",
+      "citationCount": 92,
+      "doi": "10.48550/arXiv.2403.09792",
+      "arxivId": "2403.09792",
+      "url": "https://www.semanticscholar.org/paper/2c030ad4be327dc3447e23ad68c303714c55cf14",
+      "venue": "European Conference on Computer Vision",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2403.09792"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "68baeaa6e48c0bcd941386c36cc4a8c6d14ca2f5",
+      "title": "Visual Representation Alignment for Multimodal Large Language Models",
+      "authors": [
+        {
+          "name": "Heeji Yoon",
+          "authorId": "2294401951"
+        },
+        {
+          "name": "Jaewoo Jung",
+          "authorId": "2259890487"
+        },
+        {
+          "name": "Junwan Kim",
+          "authorId": "2297934466"
+        },
+        {
+          "name": "Hyungyu Choi",
+          "authorId": "2346385913"
+        },
+        {
+          "name": "Heeseong Shin",
+          "authorId": "49881042"
+        },
+        {
+          "name": "Sangbeom Lim",
+          "authorId": "2256313629"
+        },
+        {
+          "name": "Honggyu An",
+          "authorId": "2197522268"
+        },
+        {
+          "name": "Chaehyun Kim",
+          "authorId": "2323524895"
+        },
+        {
+          "name": "Jisang Han",
+          "authorId": "2269685274"
+        },
+        {
+          "name": "Donghyun Kim",
+          "authorId": "2379896373"
+        },
+        {
+          "name": "Chanho Eom",
+          "authorId": "2346211077"
+        },
+        {
+          "name": "Sung\u2010Jin Hong",
+          "authorId": "2153119782"
+        },
+        {
+          "name": "Seungryong Kim",
+          "authorId": "2259644583"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Multimodal large language models (MLLMs) trained with visual instruction tuning have achieved strong performance across diverse tasks, yet they remain limited in vision-centric tasks such as object counting or spatial reasoning. We attribute this gap to the prevailing text-only supervision paradigm, which provides only indirect guidance for the visual pathway and often leads MLLMs to discard fine-grained visual details during training. In this paper, we present VIsual Representation ALignment (VIRAL), a simple yet effective regularization strategy that aligns the internal visual representations of MLLMs with those of pre-trained vision foundation models (VFMs). By explicitly enforcing this alignment, VIRAL enables the model not only to retain critical visual details from the input vision encoder but also to complement additional visual knowledge from VFMs, thereby enhancing its ability to reason over complex visual inputs. Our experiments demonstrate consistent improvements across all tasks on widely adopted multimodal benchmarks. Furthermore, we conduct comprehensive ablation studies to validate the key design choices underlying our framework. We believe this simple finding opens up an important direction for the effective integration of visual information in training MLLMs.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2509.07979",
+      "arxivId": "2509.07979",
+      "url": "https://www.semanticscholar.org/paper/68baeaa6e48c0bcd941386c36cc4a8c6d14ca2f5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.07979"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6f98525dc695257bdcb9a491e4d77f4d12bb5144",
+      "title": "Foundational Challenges in Assuring Alignment and Safety of Large Language Models",
+      "authors": [
+        {
+          "name": "Usman Anwar",
+          "authorId": "2066185365"
+        },
+        {
+          "name": "Abulhair Saparov",
+          "authorId": "2407368"
+        },
+        {
+          "name": "Javier Rando",
+          "authorId": "2099715241"
+        },
+        {
+          "name": "Daniel Paleka",
+          "authorId": "2175557610"
+        },
+        {
+          "name": "Miles Turpin",
+          "authorId": "2296718595"
+        },
+        {
+          "name": "Peter Hase",
+          "authorId": "2266467463"
+        },
+        {
+          "name": "E. Lubana",
+          "authorId": "35573359"
+        },
+        {
+          "name": "Erik Jenner",
+          "authorId": "2296719206"
+        },
+        {
+          "name": "Stephen Casper",
+          "authorId": "2265578954"
+        },
+        {
+          "name": "Oliver Sourbut",
+          "authorId": "2286895772"
+        },
+        {
+          "name": "Benjamin L. Edelman",
+          "authorId": "2296718606"
+        },
+        {
+          "name": "Zhaowei Zhang",
+          "authorId": "2297035421"
+        },
+        {
+          "name": "Mario Gunther",
+          "authorId": "2296717563"
+        },
+        {
+          "name": "Anton Korinek",
+          "authorId": "2264737393"
+        },
+        {
+          "name": "J. Hern\u00e1ndez-Orallo",
+          "authorId": "1398777358"
+        },
+        {
+          "name": "Lewis Hammond",
+          "authorId": "84379741"
+        },
+        {
+          "name": "Eric J. Bigelow",
+          "authorId": "2190821333"
+        },
+        {
+          "name": "Alexander Pan",
+          "authorId": "2296717995"
+        },
+        {
+          "name": "L. Langosco",
+          "authorId": "2106415649"
+        },
+        {
+          "name": "Tomasz Korbak",
+          "authorId": "2367144926"
+        },
+        {
+          "name": "H. Zhang",
+          "authorId": "2296805037"
+        },
+        {
+          "name": "Ruiqi Zhong",
+          "authorId": "2305484278"
+        },
+        {
+          "name": "Se'an 'O h'Eigeartaigh",
+          "authorId": "1632943165"
+        },
+        {
+          "name": "Gabriel Recchia",
+          "authorId": "2257207353"
+        },
+        {
+          "name": "Giulio Corsi",
+          "authorId": "2296716925"
+        },
+        {
+          "name": "Alan Chan",
+          "authorId": "2258630999"
+        },
+        {
+          "name": "Markus Anderljung",
+          "authorId": "1486494220"
+        },
+        {
+          "name": "Lilian Edwards",
+          "authorId": "2296716526"
+        },
+        {
+          "name": "Y. Bengio",
+          "authorId": "2211024206"
+        },
+        {
+          "name": "Danqi Chen",
+          "authorId": "50536468"
+        },
+        {
+          "name": "Samuel Albanie",
+          "authorId": "7641268"
+        },
+        {
+          "name": "Tegan Maharaj",
+          "authorId": "3422058"
+        },
+        {
+          "name": "J. Foerster",
+          "authorId": "2296717549"
+        },
+        {
+          "name": "Florian Tram\u00e8r",
+          "authorId": "2444919"
+        },
+        {
+          "name": "He He",
+          "authorId": "2263869572"
+        },
+        {
+          "name": "Atoosa Kasirzadeh",
+          "authorId": "51880633"
+        },
+        {
+          "name": "Yejin Choi",
+          "authorId": "2296751113"
+        },
+        {
+          "name": "David Krueger",
+          "authorId": "2286169334"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This work identifies 18 foundational challenges in assuring the alignment and safety of large language models (LLMs). These challenges are organized into three different categories: scientific understanding of LLMs, development and deployment methods, and sociotechnical challenges. Based on the identified challenges, we pose $200+$ concrete research questions.",
+      "citationCount": 195,
+      "doi": "10.48550/arXiv.2404.09932",
+      "arxivId": "2404.09932",
+      "url": "https://www.semanticscholar.org/paper/6f98525dc695257bdcb9a491e4d77f4d12bb5144",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.09932"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e99e88257c01c4690ee5b4388a3b074da7911671",
+      "title": "Large Language Models are Superpositions of All Characters: Attaining Arbitrary Role-play via Self-Alignment",
+      "authors": [
+        {
+          "name": "Keming Lu",
+          "authorId": "2257001403"
+        },
+        {
+          "name": "Bowen Yu",
+          "authorId": "2249451832"
+        },
+        {
+          "name": "Chang Zhou",
+          "authorId": "2257314035"
+        },
+        {
+          "name": "Jingren Zhou",
+          "authorId": "2237981776"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Considerable efforts have been invested in augmenting the role-playing proficiency of open-source large language models (LLMs) by emulating proprietary counterparts. Nevertheless, we posit that LLMs inherently harbor role-play capabilities, owing to the extensive knowledge of characters and potential dialogues ingrained in their vast training corpora. Thus, in this study, we introduce Ditto, a self-alignment method for role-play. Ditto capitalizes on character knowledge, encouraging an instruction-following LLM to simulate role-play dialogues as a variant of reading comprehension. This method creates a role-play training set comprising 4,000 characters, surpassing the scale of currently available datasets by tenfold regarding the number of roles. Subsequently, we fine-tune the LLM using this self-generated dataset to augment its role-playing capabilities. Upon evaluating our meticulously constructed and reproducible role-play benchmark and the roleplay subset of MT-Bench, Ditto, in various parameter scales, consistently maintains a consistent role identity and provides accurate role-specific knowledge in multi-turn role-play conversations. Notably, it outperforms all open-source role-play baselines, showcasing performance levels comparable to advanced proprietary chatbots. Furthermore, we present the first comprehensive cross-supervision alignment experiment in the role-play domain, revealing that the intrinsic capabilities of LLMs confine the knowledge within role-play. Meanwhile, the role-play styles can be easily acquired with the guidance of smaller models. We open-source related resources at https://github.com/OFA-Sys/Ditto.",
+      "citationCount": 110,
+      "doi": "10.18653/v1/2024.acl-long.423",
+      "arxivId": "2401.12474",
+      "url": "https://www.semanticscholar.org/paper/e99e88257c01c4690ee5b4388a3b074da7911671",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "7828-7840"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "addc34e1db56c46c399a3b319153be0b73186d19",
+      "title": "The benefits, risks and bounds of personalizing the alignment of large language models to individuals",
+      "authors": [
+        {
+          "name": "Hannah Rose Kirk",
+          "authorId": "90729626"
+        },
+        {
+          "name": "Bertie Vidgen",
+          "authorId": "2737827"
+        },
+        {
+          "name": "Paul R\u00f6ttger",
+          "authorId": "2043232919"
+        },
+        {
+          "name": "Scott A. Hale",
+          "authorId": "1741886127"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 165,
+      "doi": "10.1038/s42256-024-00820-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/addc34e1db56c46c399a3b319153be0b73186d19",
+      "venue": "Nature Machine Intelligence",
+      "journal": {
+        "name": "Nature Machine Intelligence",
+        "pages": "383 - 392",
+        "volume": "6"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b1890367317f0657c08ed96be4c474035b34b485",
+      "title": "Investigating Cultural Alignment of Large Language Models",
+      "authors": [
+        {
+          "name": "Badr AlKhamissi",
+          "authorId": "2006905770"
+        },
+        {
+          "name": "Muhammad N. ElNokrashy",
+          "authorId": "2006906348"
+        },
+        {
+          "name": "Mai Alkhamissi",
+          "authorId": "2284760572"
+        },
+        {
+          "name": "Mona Diab",
+          "authorId": "2284760722"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The intricate relationship between language and culture has long been a subject of exploration within the realm of linguistic anthropology. Large Language Models (LLMs), promoted as repositories of collective human knowledge, raise a pivotal question: do these models genuinely encapsulate the diverse knowledge adopted by different cultures? Our study reveals that these models demonstrate greater cultural alignment along two dimensions -- firstly, when prompted with the dominant language of a specific culture, and secondly, when pretrained with a refined mixture of languages employed by that culture. We quantify cultural alignment by simulating sociological surveys, comparing model responses to those of actual survey participants as references. Specifically, we replicate a survey conducted in various regions of Egypt and the United States through prompting LLMs with different pretraining data mixtures in both Arabic and English with the personas of the real respondents and the survey questions. Further analysis reveals that misalignment becomes more pronounced for underrepresented personas and for culturally sensitive topics, such as those probing social values. Finally, we introduce Anthropological Prompting, a novel method leveraging anthropological reasoning to enhance cultural alignment. Our study emphasizes the necessity for a more balanced multilingual pretraining dataset to better represent the diversity of human experience and the plurality of different cultures with many implications on the topic of cross-lingual transfer.",
+      "citationCount": 111,
+      "doi": "10.48550/arXiv.2402.13231",
+      "arxivId": "2402.13231",
+      "url": "https://www.semanticscholar.org/paper/b1890367317f0657c08ed96be4c474035b34b485",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.13231"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "168b0348dd76caf99b687c37aefe95a10664e6de",
+      "title": "BoNBoN Alignment for Large Language Models and the Sweetness of Best-of-n Sampling",
+      "authors": [
+        {
+          "name": "Lin Gui",
+          "authorId": "2304463030"
+        },
+        {
+          "name": "Cristina Garbacea",
+          "authorId": "3360992"
+        },
+        {
+          "name": "Victor Veitch",
+          "authorId": "2300863381"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper concerns the problem of aligning samples from large language models to human preferences using best-of-$n$ sampling, where we draw $n$ samples, rank them, and return the best one. We consider two fundamental problems. First: what is the relationship between best-of-$n$ and approaches to alignment that train LLMs to output samples with a high expected reward (e.g., RLHF or DPO)? To answer this, we embed both the best-of-$n$ distribution and the sampling distributions learned by alignment procedures in a common class of tiltings of the base LLM distribution. We then show that, within this class, best-of-$n$ is essentially optimal in terms of the trade-off between win-rate against the base model vs KL distance from the base model. That is, best-of-$n$ is the best choice of alignment distribution if the goal is to maximize win rate. However, best-of-$n$ requires drawing $n$ samples for each inference, a substantial cost. To avoid this, the second problem we consider is how to fine-tune a LLM to mimic the best-of-$n$ sampling distribution. We derive BoNBoN Alignment to achieve this by exploiting the special structure of the best-of-$n$ distribution. Experiments show that BoNBoN alignment yields substantial improvements in producing a model that is preferred to the base policy while minimally affecting off-target aspects.",
+      "citationCount": 95,
+      "doi": "10.48550/arXiv.2406.00832",
+      "arxivId": "2406.00832",
+      "url": "https://www.semanticscholar.org/paper/168b0348dd76caf99b687c37aefe95a10664e6de",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.00832"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c7f9706898bdfa3241601e075b1305649b174ff1",
+      "title": "ChatGLM: A Family of Large Language Models from GLM-130B to GLM-4 All Tools",
+      "authors": [
+        {
+          "name": "Team Glm Aohan Zeng",
+          "authorId": "2307076042"
+        },
+        {
+          "name": "Bin Xu",
+          "authorId": "2288066971"
+        },
+        {
+          "name": "Bowen Wang",
+          "authorId": "2260453208"
+        },
+        {
+          "name": "Chenhui Zhang",
+          "authorId": "2303795844"
+        },
+        {
+          "name": "Da Yin",
+          "authorId": "2307075814"
+        },
+        {
+          "name": "Diego Rojas",
+          "authorId": "2307075650"
+        },
+        {
+          "name": "Guanyu Feng",
+          "authorId": "2307077651"
+        },
+        {
+          "name": "Hanlin Zhao",
+          "authorId": "2300177144"
+        },
+        {
+          "name": "Hanyu Lai",
+          "authorId": "2263428192"
+        },
+        {
+          "name": "Hao Yu",
+          "authorId": "2285134718"
+        },
+        {
+          "name": "Hongning Wang",
+          "authorId": "2253869803"
+        },
+        {
+          "name": "Jiadai Sun",
+          "authorId": "2307208477"
+        },
+        {
+          "name": "Jiajie Zhang",
+          "authorId": "2298413671"
+        },
+        {
+          "name": "Jiale Cheng",
+          "authorId": "2109077637"
+        },
+        {
+          "name": "Jiayi Gui",
+          "authorId": "2307075328"
+        },
+        {
+          "name": "Jie Tang",
+          "authorId": "2295923423"
+        },
+        {
+          "name": "Jing Zhang",
+          "authorId": "2268783318"
+        },
+        {
+          "name": "Juanzi Li",
+          "authorId": "2284734101"
+        },
+        {
+          "name": "Lei Zhao",
+          "authorId": "2302140984"
+        },
+        {
+          "name": "Lindong Wu",
+          "authorId": "2239424207"
+        },
+        {
+          "name": "Lucen Zhong",
+          "authorId": "2307893366"
+        },
+        {
+          "name": "Mingdao Liu",
+          "authorId": "2260641326"
+        },
+        {
+          "name": "Minlie Huang",
+          "authorId": "2289785849"
+        },
+        {
+          "name": "Peng Zhang",
+          "authorId": "2291469424"
+        },
+        {
+          "name": "Qinkai Zheng",
+          "authorId": "2294349685"
+        },
+        {
+          "name": "Rui Lu",
+          "authorId": "2263498652"
+        },
+        {
+          "name": "Shuaiqi Duan",
+          "authorId": "2307075663"
+        },
+        {
+          "name": "Shudan Zhang",
+          "authorId": "2300177449"
+        },
+        {
+          "name": "S. Cao",
+          "authorId": "1712738522"
+        },
+        {
+          "name": "Shuxun Yang",
+          "authorId": "2307176162"
+        },
+        {
+          "name": "W. Tam",
+          "authorId": "1403621152"
+        },
+        {
+          "name": "Wenyi Zhao",
+          "authorId": "2294801385"
+        },
+        {
+          "name": "Xiao Liu",
+          "authorId": "2111312892"
+        },
+        {
+          "name": "Xiaoyu Xia",
+          "authorId": "2301110844"
+        },
+        {
+          "name": "Xiaohan Zhang",
+          "authorId": "2205862099"
+        },
+        {
+          "name": "Xiaotao Gu",
+          "authorId": "2290625851"
+        },
+        {
+          "name": "Xin Lv",
+          "authorId": "2250016690"
+        },
+        {
+          "name": "Xinghan Liu",
+          "authorId": "2294845418"
+        },
+        {
+          "name": "Xinyi Liu",
+          "authorId": "2274455560"
+        },
+        {
+          "name": "Xinyue Yang",
+          "authorId": "2291800800"
+        },
+        {
+          "name": "Xixuan Song",
+          "authorId": "2265550676"
+        },
+        {
+          "name": "Xunkai Zhang",
+          "authorId": "2307219813"
+        },
+        {
+          "name": "Y. An",
+          "authorId": "2052144945"
+        },
+        {
+          "name": "Yifan Xu",
+          "authorId": "2268847370"
+        },
+        {
+          "name": "Yilin Niu",
+          "authorId": "10680347"
+        },
+        {
+          "name": "Yuantao Yang",
+          "authorId": "2307187635"
+        },
+        {
+          "name": "Yueyan Li",
+          "authorId": "2294907281"
+        },
+        {
+          "name": "Yushi Bai",
+          "authorId": "2141377570"
+        },
+        {
+          "name": "Yuxiao Dong",
+          "authorId": "2243402027"
+        },
+        {
+          "name": "Zehan Qi",
+          "authorId": "2286747770"
+        },
+        {
+          "name": "Zhaoyu Wang",
+          "authorId": "2144718801"
+        },
+        {
+          "name": "Zhenyi Yang",
+          "authorId": "2220673267"
+        },
+        {
+          "name": "Zhengxiao Du",
+          "authorId": "66395694"
+        },
+        {
+          "name": "Zhen-Ping Hou",
+          "authorId": "2298783034"
+        },
+        {
+          "name": "Zihan Wang",
+          "authorId": "2291734244"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We introduce ChatGLM, an evolving family of large language models that we have been developing over time. This report primarily focuses on the GLM-4 language series, which includes GLM-4, GLM-4-Air, and GLM-4-9B. They represent our most capable models that are trained with all the insights and lessons gained from the preceding three generations of ChatGLM. To date, the GLM-4 models are pre-trained on ten trillions of tokens mostly in Chinese and English, along with a small set of corpus from 24 languages, and aligned primarily for Chinese and English usage. The high-quality alignment is achieved via a multi-stage post-training process, which involves supervised fine-tuning and learning from human feedback. Evaluations show that GLM-4 1) closely rivals or outperforms GPT-4 in terms of general metrics such as MMLU, GSM8K, MATH, BBH, GPQA, and HumanEval, 2) gets close to GPT-4-Turbo in instruction following as measured by IFEval, 3) matches GPT-4 Turbo (128K) and Claude 3 for long context tasks, and 4) outperforms GPT-4 in Chinese alignments as measured by AlignBench. The GLM-4 All Tools model is further aligned to understand user intent and autonomously decide when and which tool(s) touse -- including web browser, Python interpreter, text-to-image model, and user-defined functions -- to effectively complete complex tasks. In practical applications, it matches and even surpasses GPT-4 All Tools in tasks like accessing online information via web browsing and solving math problems using Python interpreter. Over the course, we have open-sourced a series of models, including ChatGLM-6B (three generations), GLM-4-9B (128K, 1M), GLM-4V-9B, WebGLM, and CodeGeeX, attracting over 10 million downloads on Hugging face in the year 2023 alone. The open models can be accessed through https://github.com/THUDM and https://huggingface.co/THUDM.",
+      "citationCount": 1176,
+      "doi": "10.48550/arXiv.2406.12793",
+      "arxivId": "2406.12793",
+      "url": "https://www.semanticscholar.org/paper/c7f9706898bdfa3241601e075b1305649b174ff1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.12793"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ec9203f6c25a353325dd23ed38e5036b79d9e79b",
+      "title": "LongAlign: A Recipe for Long Context Alignment of Large Language Models",
+      "authors": [
+        {
+          "name": "Yushi Bai",
+          "authorId": "2141377570"
+        },
+        {
+          "name": "Xin Lv",
+          "authorId": "2268485303"
+        },
+        {
+          "name": "Jiajie Zhang",
+          "authorId": "2107983722"
+        },
+        {
+          "name": "Yuze He",
+          "authorId": "2386551138"
+        },
+        {
+          "name": "Ji Qi",
+          "authorId": "2091076497"
+        },
+        {
+          "name": "Lei Hou",
+          "authorId": "2055765060"
+        },
+        {
+          "name": "Jie Tang",
+          "authorId": "2148911975"
+        },
+        {
+          "name": "Yuxiao Dong",
+          "authorId": "2243402027"
+        },
+        {
+          "name": "Juanzi Li",
+          "authorId": "2133353675"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Extending large language models to effectively handle long contexts requires instruction fine-tuning on input sequences of similar length. To address this, we present LongAlign -- a recipe of the instruction data, training, and evaluation for long context alignment. First, we construct a long instruction-following dataset using Self-Instruct. To ensure the data diversity, it covers a broad range of tasks from various long context sources. Second, we adopt the packing and sorted batching strategies to speed up supervised fine-tuning on data with varied length distributions. Additionally, we develop a loss weighting method to balance the contribution to the loss across different sequences during packing training. Third, we introduce the LongBench-Chat benchmark for evaluating instruction-following capabilities on queries of 10k-100k in length. Experiments show that LongAlign outperforms existing recipes for LLMs in long context tasks by up to 30\\%, while also maintaining their proficiency in handling short, generic tasks. The code, data, and long-aligned models are open-sourced at https://github.com/THUDM/LongAlign.",
+      "citationCount": 79,
+      "doi": "10.48550/arXiv.2401.18058",
+      "arxivId": "2401.18058",
+      "url": "https://www.semanticscholar.org/paper/ec9203f6c25a353325dd23ed38e5036b79d9e79b",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "1376-1395"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "b2e62ce609f3388f9a2fb709cb8f993fa4a8174f",
+      "title": "Playground v3: Improving Text-to-Image Alignment with Deep-Fusion Large Language Models",
+      "authors": [
+        {
+          "name": "Bingchen Liu",
+          "authorId": "2290481161"
+        },
+        {
+          "name": "Ehsan Akhgari",
+          "authorId": "2287835852"
+        },
+        {
+          "name": "Alexander Visheratin",
+          "authorId": "2237800307"
+        },
+        {
+          "name": "Aleks Kamko",
+          "authorId": "2287844026"
+        },
+        {
+          "name": "Linmiao Xu",
+          "authorId": "2287878382"
+        },
+        {
+          "name": "Shivam Shrirao",
+          "authorId": "1865768867"
+        },
+        {
+          "name": "Joao Souza",
+          "authorId": "2321565504"
+        },
+        {
+          "name": "Suhail Doshi",
+          "authorId": "2287835841"
+        },
+        {
+          "name": "Daiqing Li",
+          "authorId": "2287851898"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We introduce Playground v3 (PGv3), our latest text-to-image model that achieves state-of-the-art (SoTA) performance across multiple testing benchmarks, excels in graphic design abilities and introduces new capabilities. Unlike traditional text-to-image generative models that rely on pre-trained language models like T5 or CLIP text encoders, our approach fully integrates Large Language Models (LLMs) with a novel structure that leverages text conditions exclusively from a decoder-only LLM. Additionally, to enhance image captioning quality-we developed an in-house captioner, capable of generating captions with varying levels of detail, enriching the diversity of text structures. We also introduce a new benchmark CapsBench to evaluate detailed image captioning performance. Experimental results demonstrate that PGv3 excels in text prompt adherence, complex reasoning, and accurate text rendering. User preference studies indicate the super-human graphic design ability of our model for common design applications, such as stickers, posters, and logo designs. Furthermore, PGv3 introduces new capabilities, including precise RGB color control and robust multilingual understanding.",
+      "citationCount": 90,
+      "doi": "10.48550/arXiv.2409.10695",
+      "arxivId": "2409.10695",
+      "url": "https://www.semanticscholar.org/paper/b2e62ce609f3388f9a2fb709cb8f993fa4a8174f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2409.10695"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f9104ccb838c7658b1586c9bb53e8b4dbbafdd6d",
+      "title": "The PRISM Alignment Dataset: What Participatory, Representative and Individualised Human Feedback Reveals About the Subjective and Multicultural Alignment of Large Language Models",
+      "authors": [
+        {
+          "name": "Hannah Rose Kirk",
+          "authorId": "90729626"
+        },
+        {
+          "name": "Alexander Whitefield",
+          "authorId": "2298272188"
+        },
+        {
+          "name": "Paul Rottger",
+          "authorId": "2298277333"
+        },
+        {
+          "name": "Andrew M. Bean",
+          "authorId": "2242554313"
+        },
+        {
+          "name": "Katerina Margatina",
+          "authorId": "2298277004"
+        },
+        {
+          "name": "Juan Ciro",
+          "authorId": "2273741123"
+        },
+        {
+          "name": "Rafael Mosquera",
+          "authorId": "2177337955"
+        },
+        {
+          "name": "Max Bartolo",
+          "authorId": "2267728360"
+        },
+        {
+          "name": "Adina Williams",
+          "authorId": "2297757196"
+        },
+        {
+          "name": "He He",
+          "authorId": "2298416563"
+        },
+        {
+          "name": "Bertie Vidgen",
+          "authorId": "2737827"
+        },
+        {
+          "name": "Scott A. Hale",
+          "authorId": "1741886127"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Human feedback is central to the alignment of Large Language Models (LLMs). However, open questions remain about methods (how), domains (where), people (who) and objectives (to what end) of feedback processes. To navigate these questions, we introduce PRISM, a dataset that maps the sociodemographics and stated preferences of 1,500 diverse participants from 75 countries, to their contextual preferences and fine-grained feedback in 8,011 live conversations with 21 LLMs. With PRISM, we contribute (i) wider geographic and demographic participation in feedback; (ii) census-representative samples for two countries (UK, US); and (iii) individualised ratings that link to detailed participant profiles, permitting personalisation and attribution of sample artefacts. We target subjective and multicultural perspectives on value-laden and controversial issues, where we expect interpersonal and cross-cultural disagreement. We use PRISM in three case studies to demonstrate the need for careful consideration of which humans provide what alignment data.",
+      "citationCount": 76,
+      "doi": "10.52202/079017-3342",
+      "arxivId": "2404.16019",
+      "url": "https://www.semanticscholar.org/paper/f9104ccb838c7658b1586c9bb53e8b4dbbafdd6d",
+      "venue": "Advances in Neural Information Processing Systems 37",
+      "journal": {
+        "name": "Advances in Neural Information Processing Systems 37"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "46566ef7e51987cd101bf2b275c650cb3be21995",
+      "title": "Human Alignment of Large Language Models through Online Preference Optimisation",
+      "authors": [
+        {
+          "name": "Daniele Calandriello",
+          "authorId": "2439765"
+        },
+        {
+          "name": "Daniel Guo",
+          "authorId": "2260679471"
+        },
+        {
+          "name": "R\u00e9mi Munos",
+          "authorId": "2237802765"
+        },
+        {
+          "name": "Mark Rowland",
+          "authorId": "2273657208"
+        },
+        {
+          "name": "Yunhao Tang",
+          "authorId": "2269752766"
+        },
+        {
+          "name": "B. '. Pires",
+          "authorId": "3429927"
+        },
+        {
+          "name": "Pierre H. Richemond",
+          "authorId": "16326904"
+        },
+        {
+          "name": "Charline Le Lan",
+          "authorId": "153892869"
+        },
+        {
+          "name": "Michal Valko",
+          "authorId": "1806291"
+        },
+        {
+          "name": "Tianqi Liu",
+          "authorId": "2239381730"
+        },
+        {
+          "name": "Rishabh Joshi",
+          "authorId": "2258551072"
+        },
+        {
+          "name": "Zeyu Zheng",
+          "authorId": "2283437775"
+        },
+        {
+          "name": "Bilal Piot",
+          "authorId": "1808897"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Ensuring alignment of language models' outputs with human preferences is critical to guarantee a useful, safe, and pleasant user experience. Thus, human alignment has been extensively studied recently and several methods such as Reinforcement Learning from Human Feedback (RLHF), Direct Policy Optimisation (DPO) and Sequence Likelihood Calibration (SLiC) have emerged. In this paper, our contribution is two-fold. First, we show the equivalence between two recent alignment methods, namely Identity Policy Optimisation (IPO) and Nash Mirror Descent (Nash-MD). Second, we introduce a generalisation of IPO, named IPO-MD, that leverages the regularised sampling approach proposed by Nash-MD. This equivalence may seem surprising at first sight, since IPO is an offline method whereas Nash-MD is an online method using a preference model. However, this equivalence can be proven when we consider the online version of IPO, that is when both generations are sampled by the online policy and annotated by a trained preference model. Optimising the IPO loss with such a stream of data becomes then equivalent to finding the Nash equilibrium of the preference model through self-play. Building on this equivalence, we introduce the IPO-MD algorithm that generates data with a mixture policy (between the online and reference policy) similarly as the general Nash-MD algorithm. We compare online-IPO and IPO-MD to different online versions of existing losses on preference data such as DPO and SLiC on a summarisation task.",
+      "citationCount": 84,
+      "doi": "10.48550/arXiv.2403.08635",
+      "arxivId": "2403.08635",
+      "url": "https://www.semanticscholar.org/paper/46566ef7e51987cd101bf2b275c650cb3be21995",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2403.08635"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8738cf80088f2868d35e3bd5366e873e1adcd73a",
+      "title": "Alignment for Efficient Tool Calling of Large Language Models",
+      "authors": [
+        {
+          "name": "Hongshen Xu",
+          "authorId": "2155908631"
+        },
+        {
+          "name": "Zihan Wang",
+          "authorId": "2333905980"
+        },
+        {
+          "name": "Zichen Zhu",
+          "authorId": "35460116"
+        },
+        {
+          "name": "Lei Pan",
+          "authorId": "2334209204"
+        },
+        {
+          "name": "Xingyu Chen",
+          "authorId": "2118653801"
+        },
+        {
+          "name": "Lu Chen",
+          "authorId": "2281715543"
+        },
+        {
+          "name": "Kai Yu",
+          "authorId": "2281719276"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advancements in tool learning have enabled large language models (LLMs) to integrate external tools, enhancing their task performance by expanding their knowledge boundaries. However, relying on tools often introduces tradeoffs between performance, speed, and cost, with LLMs sometimes exhibiting overreliance and overconfidence in tool usage. This paper addresses the challenge of aligning LLMs with their knowledge boundaries to make more intelligent decisions about tool invocation. We propose a multi objective alignment framework that combines probabilistic knowledge boundary estimation with dynamic decision making, allowing LLMs to better assess when to invoke tools based on their confidence. Our framework includes two methods for knowledge boundary estimation, consistency based and absolute estimation, and two training strategies for integrating these estimates into the model decision making process. Experimental results on various tool invocation scenarios demonstrate the effectiveness of our framework, showing significant improvements in tool efficiency by reducing unnecessary tool usage.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2503.06708",
+      "arxivId": "2503.06708",
+      "url": "https://www.semanticscholar.org/paper/8738cf80088f2868d35e3bd5366e873e1adcd73a",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.06708"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e06217b5d1c0bad7e67eb70094bd4a327359f6ef",
+      "title": "Lisa: Lazy Safety Alignment for Large Language Models against Harmful Fine-tuning Attack",
+      "authors": [
+        {
+          "name": "Tiansheng Huang",
+          "authorId": "2253860508"
+        },
+        {
+          "name": "Sihao Hu",
+          "authorId": "2254156032"
+        },
+        {
+          "name": "Fatih Ilhan",
+          "authorId": "2046866873"
+        },
+        {
+          "name": "S. Tekin",
+          "authorId": "2066601176"
+        },
+        {
+          "name": "Ling Liu",
+          "authorId": "2254270304"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent studies show that Large Language Models (LLMs) with safety alignment can be jail-broken by fine-tuning on a dataset mixed with harmful data. First time in the literature, we show that the jail-broken effect can be mitigated by separating states in the finetuning stage to optimize the alignment and user datasets. Unfortunately, our subsequent study shows that this simple Bi-State Optimization (BSO) solution experiences convergence instability when steps invested in its alignment state is too small, leading to downgraded alignment performance. By statistical analysis, we show that the \\textit{excess drift} towards consensus could be a probable reason for the instability. To remedy this issue, we propose \\textbf{L}azy(\\textbf{i}) \\textbf{s}afety \\textbf{a}lignment (\\textbf{Lisa}), which introduces a proximal term to constraint the drift of each state. Theoretically, the benefit of the proximal term is supported by the convergence analysis, wherein we show that a sufficient large proximal factor is necessary to guarantee Lisa's convergence. Empirically, our results on four downstream finetuning tasks show that Lisa with a proximal term can significantly increase alignment performance while maintaining the LLM's accuracy on the user tasks. Code is available at \\url{https://github.com/git-disl/Lisa}.",
+      "citationCount": 61,
+      "doi": "10.52202/079017-3320",
+      "arxivId": "2405.18641",
+      "url": "https://www.semanticscholar.org/paper/e06217b5d1c0bad7e67eb70094bd4a327359f6ef",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "Advances in Neural Information Processing Systems 37"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5760218e4635cc2841dc7fba1752427a023c2193",
+      "title": "A survey on multilingual large language models: corpora, alignment, and bias",
+      "authors": [
+        {
+          "name": "Yuemei Xu",
+          "authorId": "2257136845"
+        },
+        {
+          "name": "Ling Hu",
+          "authorId": "2258334185"
+        },
+        {
+          "name": "Jiayi Zhao",
+          "authorId": "2294513520"
+        },
+        {
+          "name": "Zihan Qiu",
+          "authorId": "2294361104"
+        },
+        {
+          "name": "Yuqi Ye",
+          "authorId": "2294363807"
+        },
+        {
+          "name": "Hanwen Gu",
+          "authorId": "2294933103"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Based on the foundation of Large Language Models (LLMs), Multilingual LLMs (MLLMs) have been developed to address the challenges faced in multilingual natural language processing, hoping to achieve knowledge transfer from high-resource languages to low-resource languages. However, significant limitations and challenges still exist, such as language imbalance, multilingual alignment, and inherent bias. In this paper, we aim to provide a comprehensive analysis of MLLMs, delving deeply into discussions surrounding these critical issues. First of all, we start by presenting an overview of MLLMs, covering their evolutions, key techniques, and multilingual capacities. Secondly, we explore the multilingual training corpora of MLLMs and the multilingual datasets oriented for downstream tasks that are crucial to enhance the cross-lingual capability of MLLMs. Thirdly, we survey the state-of-the-art studies of multilingual representations and investigate whether the current MLLMs can learn a universal language representation. Fourthly, we discuss bias on MLLMs, including its categories, evaluation metrics, and debiasing techniques. Finally, we discuss existing challenges and point out promising research directions of MLLMs.",
+      "citationCount": 91,
+      "doi": "10.1007/s11704-024-40579-4",
+      "arxivId": "2404.00929",
+      "url": "https://www.semanticscholar.org/paper/5760218e4635cc2841dc7fba1752427a023c2193",
+      "venue": "Frontiers of Computer Science",
+      "journal": {
+        "name": "Frontiers of Computer Science",
+        "volume": "19"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1d9430bae9b3ac93ad8e0955e2a5d57745a91ccf",
+      "title": "Vision-R1: Evolving Human-Free Alignment in Large Vision-Language Models via Vision-Guided Reinforcement Learning",
+      "authors": [
+        {
+          "name": "Yufei Zhan",
+          "authorId": "2268314391"
+        },
+        {
+          "name": "Yousong Zhu",
+          "authorId": "2116512392"
+        },
+        {
+          "name": "Shurong Zheng",
+          "authorId": "2352998754"
+        },
+        {
+          "name": "Hongyin Zhao",
+          "authorId": "2291444940"
+        },
+        {
+          "name": "Fan Yang",
+          "authorId": "2291418818"
+        },
+        {
+          "name": "Ming Tang",
+          "authorId": "2113727378"
+        },
+        {
+          "name": "Jinqiao Wang",
+          "authorId": "2268372815"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Vision-Language Models (LVLMs) typically follow a two-stage training paradigm-pretraining and supervised fine-tuning. Recently, preference optimization, derived from the language domain, has emerged as an effective post-training reinforcement strategy to enhance capabilities of LVLMs. However, constructing high-quality human-annotated preference data and developing robust reward models to mimic these preferences are both costly and challenging. Motivated by this observation, we propose Vision-R1, a novel vision-guided R1-like reinforcement learning algorithm for LVLMs that rewards models with definitive vision feedback. It only leverages curated instruction data, eliminating the need for specialized reward models and handcrafted preference datasets. We incorporate a criterion-driven reward function that further integrates multi-dimensional feedback to evaluate model completions comprehensively based on the vision task logic. Furthermore, we introduce a progressive rule refinement strategy that dynamically adjusts the reward criteria during training, enabling continuous model improvement and mitigating reward hacking. Extensive experiments on both in-distribution and out-of-distribution benchmarks demonstrate that fine-tuning the 7B LVLMs with Vision-R1 achieves consistent performance gains, with even up to 50% improvement and surpassing the state-of-the-art 10x size model.",
+      "citationCount": 53,
+      "doi": "10.48550/arXiv.2503.18013",
+      "arxivId": "2503.18013",
+      "url": "https://www.semanticscholar.org/paper/1d9430bae9b3ac93ad8e0955e2a5d57745a91ccf",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.18013"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dacc3a8d45968616f220628dc0db8d5d78c1a389",
+      "title": "MaxMin-RLHF: Towards Equitable Alignment of Large Language Models with Diverse Human Preferences",
+      "authors": [
+        {
+          "name": "Souradip Chakraborty",
+          "authorId": "49081354"
+        },
+        {
+          "name": "Jiahao Qiu",
+          "authorId": "2279349525"
+        },
+        {
+          "name": "Hui Yuan",
+          "authorId": "2279340788"
+        },
+        {
+          "name": "Alec Koppel",
+          "authorId": "2308034943"
+        },
+        {
+          "name": "Furong Huang",
+          "authorId": "2261325066"
+        },
+        {
+          "name": "Dinesh Manocha",
+          "authorId": "2172597446"
+        },
+        {
+          "name": "A. S. Bedi",
+          "authorId": "3387859"
+        },
+        {
+          "name": "Mengdi Wang",
+          "authorId": "2268167170"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 65,
+      "doi": "10.48550/arXiv.2402.08925",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dacc3a8d45968616f220628dc0db8d5d78c1a389",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.08925"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "87912571f3df29464d3ccafae66f6e1eed581564",
+      "title": "Offline Regularised Reinforcement Learning for Large Language Models Alignment",
+      "authors": [
+        {
+          "name": "Pierre H. Richemond",
+          "authorId": "16326904"
+        },
+        {
+          "name": "Yunhao Tang",
+          "authorId": "2269752766"
+        },
+        {
+          "name": "Daniel Guo",
+          "authorId": "2260679471"
+        },
+        {
+          "name": "Daniele Calandriello",
+          "authorId": "2439765"
+        },
+        {
+          "name": "M. G. Azar",
+          "authorId": "37666967"
+        },
+        {
+          "name": "Rafael Rafailov",
+          "authorId": "2301519261"
+        },
+        {
+          "name": "B. '. Pires",
+          "authorId": "3429927"
+        },
+        {
+          "name": "Eugene Tarassov",
+          "authorId": "2401143"
+        },
+        {
+          "name": "L. Spangher",
+          "authorId": "2269472581"
+        },
+        {
+          "name": "Will Ellsworth",
+          "authorId": "2303656064"
+        },
+        {
+          "name": "A. Severyn",
+          "authorId": "3091861"
+        },
+        {
+          "name": "Jonathan Mallinson",
+          "authorId": "2280144293"
+        },
+        {
+          "name": "Lior Shani",
+          "authorId": "38274824"
+        },
+        {
+          "name": "Gil Shamir",
+          "authorId": "2303655860"
+        },
+        {
+          "name": "Rishabh Joshi",
+          "authorId": "2258551072"
+        },
+        {
+          "name": "Tianqi Liu",
+          "authorId": "2239381730"
+        },
+        {
+          "name": "R\u00e9mi Munos",
+          "authorId": "2237802765"
+        },
+        {
+          "name": "Bilal Piot",
+          "authorId": "1808897"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The dominant framework for alignment of large language models (LLM), whether through reinforcement learning from human feedback or direct preference optimisation, is to learn from preference data. This involves building datasets where each element is a quadruplet composed of a prompt, two independent responses (completions of the prompt) and a human preference between the two independent responses, yielding a preferred and a dis-preferred response. Such data is typically scarce and expensive to collect. On the other hand, \\emph{single-trajectory} datasets where each element is a triplet composed of a prompt, a response and a human feedback is naturally more abundant. The canonical element of such datasets is for instance an LLM's response to a user's prompt followed by a user's feedback such as a thumbs-up/down. Consequently, in this work, we propose DRO, or \\emph{Direct Reward Optimisation}, as a framework and associated algorithms that do not require pairwise preferences. DRO uses a simple mean-squared objective that can be implemented in various ways. We validate our findings empirically, using T5 encoder-decoder language models, and show DRO's performance over selected baselines such as Kahneman-Tversky Optimization (KTO). Thus, we confirm that DRO is a simple and empirically compelling method for single-trajectory policy optimisation.",
+      "citationCount": 41,
+      "doi": "10.48550/arXiv.2405.19107",
+      "arxivId": "2405.19107",
+      "url": "https://www.semanticscholar.org/paper/87912571f3df29464d3ccafae66f6e1eed581564",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.19107"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "95a52dd5adf6eb8d918cdfbf6189aab4eaa8e607",
+      "title": "FLAME: Factuality-Aware Alignment for Large Language Models",
+      "authors": [
+        {
+          "name": "Sheng-Chieh Lin",
+          "authorId": "122045993"
+        },
+        {
+          "name": "Luyu Gao",
+          "authorId": "2299485255"
+        },
+        {
+          "name": "Barlas O\u011fuz",
+          "authorId": "9185192"
+        },
+        {
+          "name": "Wenhan Xiong",
+          "authorId": "2266752758"
+        },
+        {
+          "name": "Jimmy Lin",
+          "authorId": "2273564585"
+        },
+        {
+          "name": "Wen-tau Yih",
+          "authorId": "2072801764"
+        },
+        {
+          "name": "Xilun Chen",
+          "authorId": "2292024725"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Alignment is a standard procedure to fine-tune pre-trained large language models (LLMs) to follow natural language instructions and serve as helpful AI assistants. We have observed, however, that the conventional alignment process fails to enhance the factual accuracy of LLMs, and often leads to the generation of more false facts (i.e. hallucination). In this paper, we study how to make the LLM alignment process more factual, by first identifying factors that lead to hallucination in both alignment steps:\\ supervised fine-tuning (SFT) and reinforcement learning (RL). In particular, we find that training the LLM on new knowledge or unfamiliar texts can encourage hallucination. This makes SFT less factual as it trains on human labeled data that may be novel to the LLM. Furthermore, reward functions used in standard RL can also encourage hallucination, because it guides the LLM to provide more helpful responses on a diverse set of instructions, often preferring longer and more detailed responses. Based on these observations, we propose factuality-aware alignment, comprised of factuality-aware SFT and factuality-aware RL through direct preference optimization. Experiments show that our proposed factuality-aware alignment guides LLMs to output more factual responses while maintaining instruction-following capability.",
+      "citationCount": 41,
+      "doi": "10.48550/arXiv.2405.01525",
+      "arxivId": "2405.01525",
+      "url": "https://www.semanticscholar.org/paper/95a52dd5adf6eb8d918cdfbf6189aab4eaa8e607",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.01525"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e01af49d646f9e8428467a7f36abae31a4e4b27a",
+      "title": "Making Large Language Models Better Planners with Reasoning-Decision Alignment",
+      "authors": [
+        {
+          "name": "Zhijian Huang",
+          "authorId": "2239187123"
+        },
+        {
+          "name": "Tao Tang",
+          "authorId": "2295667840"
+        },
+        {
+          "name": "Shaoxiang Chen",
+          "authorId": "2144337489"
+        },
+        {
+          "name": "Sihao Lin",
+          "authorId": "2107932749"
+        },
+        {
+          "name": "Zequn Jie",
+          "authorId": "2269829514"
+        },
+        {
+          "name": "Lin Ma",
+          "authorId": "2310760602"
+        },
+        {
+          "name": "Guangrun Wang",
+          "authorId": "2317999080"
+        },
+        {
+          "name": "Xiaodan Liang",
+          "authorId": "2304907426"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Data-driven approaches for autonomous driving (AD) have been widely adopted in the past decade but are confronted with dataset bias and uninterpretability. Inspired by the knowledge-driven nature of human driving, recent approaches explore the potential of large language models (LLMs) to improve understanding and decision-making in traffic scenarios. They find that the pretrain-finetune paradigm of LLMs on downstream data with the Chain-of-Thought (CoT) reasoning process can enhance explainability and scene understanding. However, such a popular strategy proves to suffer from the notorious problems of misalignment between the crafted CoTs against the consequent decision-making, which remains untouched by previous LLM-based AD methods. To address this problem, we motivate an end-to-end decision-making model based on multimodality-augmented LLM, which simultaneously executes CoT reasoning and carries out planning results. Furthermore, we propose a reasoning-decision alignment constraint between the paired CoTs and planning results, imposing the correspondence between reasoning and decision-making. Moreover, we redesign the CoTs to enable the model to comprehend complex scenarios and enhance decision-making performance. We dub our proposed large language planners with reasoning-decision alignment as RDA-Driver. Experimental evaluations on the nuScenes and DriveLM-nuScenes benchmarks demonstrate the effectiveness of our RDA-Driver in enhancing the performance of end-to-end AD systems. Specifically, our RDA-Driver achieves state-of-the-art planning performance on the nuScenes dataset with 0.80 L2 error and 0.32 collision rate, and also achieves leading results on challenging DriveLM-nuScenes benchmarks with 0.82 L2 error and 0.38 collision rate.",
+      "citationCount": 35,
+      "doi": "10.48550/arXiv.2408.13890",
+      "arxivId": "2408.13890",
+      "url": "https://www.semanticscholar.org/paper/e01af49d646f9e8428467a7f36abae31a4e4b27a",
+      "venue": "European Conference on Computer Vision",
+      "journal": {
+        "pages": "73-90"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e9640cd4bdb0fa93a94151ec00259909b5e88d6d",
+      "title": "Self-Alignment of Large Language Models via Monopolylogue-based Social Scene Simulation",
+      "authors": [
+        {
+          "name": "Xianghe Pang",
+          "authorId": "2259929200"
+        },
+        {
+          "name": "Shuo Tang",
+          "authorId": "2283546526"
+        },
+        {
+          "name": "Rui Ye",
+          "authorId": "2273620042"
+        },
+        {
+          "name": "Yuxin Xiong",
+          "authorId": "2261864295"
+        },
+        {
+          "name": "Bolun Zhang",
+          "authorId": "2364399492"
+        },
+        {
+          "name": "Yanfeng Wang",
+          "authorId": "2273558245"
+        },
+        {
+          "name": "Siheng Chen",
+          "authorId": "2249818980"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Aligning large language models (LLMs) with human values is imperative to mitigate potential adverse effects resulting from their misuse. Drawing from the sociological insight that acknowledging all parties' concerns is a key factor in shaping human values, this paper proposes a novel direction to align LLMs by themselves: social scene simulation. To achieve this, we present MATRIX, a novel social scene simulator that emulates realistic scenes around a user's input query, enabling the LLM to take social consequences into account before responding. MATRIX serves as a virtual rehearsal space, akin to a Monopolylogue, where the LLM performs diverse roles related to the query and practice by itself. To inject this alignment, we fine-tune the LLM with MATRIX-simulated data, ensuring adherence to human values without compromising inference speed. We theoretically show that the LLM with MATRIX outperforms Constitutional AI under mild assumptions. Finally, extensive experiments validate that our method outperforms over 10 baselines across 4 benchmarks. As evidenced by 875 user ratings, our tuned 13B-size LLM exceeds GPT-4 in aligning with human values. See our project page at https://shuotang123.github.io/MATRIX.",
+      "citationCount": 47,
+      "doi": "10.48550/arXiv.2402.05699",
+      "arxivId": "2402.05699",
+      "url": "https://www.semanticscholar.org/paper/e9640cd4bdb0fa93a94151ec00259909b5e88d6d",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.05699"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "be4156b6c5b804af6a20e5f723e521df6981b6fc",
+      "title": "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning",
+      "authors": [
+        {
+          "name": "Tiansheng Huang",
+          "authorId": "2253860508"
+        },
+        {
+          "name": "Gautam Bhattacharya",
+          "authorId": "2316428782"
+        },
+        {
+          "name": "Pratik Joshi",
+          "authorId": "2316428496"
+        },
+        {
+          "name": "Josh Kimball",
+          "authorId": "2316426320"
+        },
+        {
+          "name": "Ling Liu",
+          "authorId": "2254270304"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Safety aligned Large Language Models (LLMs) are vulnerable to harmful fine-tuning attacks -- a few harmful data mixed in the fine-tuning dataset can break the LLMs's safety alignment. While several defenses have been proposed, our evaluation shows that existing defenses fail \\textit{when some specific training hyper-parameters are chosen} -- a large learning rate or a large number of training epochs in the fine-tuning stage can easily invalidate the defense. To this end, we propose Antidote, a post-fine-tuning stage solution, which remains \\textbf{\\textit{agnostic to the training hyper-parameters in the fine-tuning stage}}. Antidote relies on the philosophy that by removing the harmful parameters, the harmful model can be recovered from the harmful behaviors, regardless of how those harmful parameters are formed in the fine-tuning stage. With this philosophy, we introduce a one-shot pruning stage after harmful fine-tuning to remove the harmful weights that are responsible for the generation of harmful content. Despite its embarrassing simplicity, empirical results show that Antidote can reduce harmful score while maintaining accuracy on downstream tasks. Code is available at https://github.com/git-disl/Antidote.",
+      "citationCount": 48,
+      "doi": "10.48550/arXiv.2408.09600",
+      "arxivId": "2408.09600",
+      "url": "https://www.semanticscholar.org/paper/be4156b6c5b804af6a20e5f723e521df6981b6fc",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.09600"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4d4432514695e0f36720c73c23d15d8e21abe2fe",
+      "title": "RS-DPO: A Hybrid Rejection Sampling and Direct Preference Optimization Method for Alignment of Large Language Models",
+      "authors": [
+        {
+          "name": "Saeed Khaki",
+          "authorId": "2238206230"
+        },
+        {
+          "name": "JinJin Li",
+          "authorId": "2284249190"
+        },
+        {
+          "name": "Lan Ma",
+          "authorId": "2238398936"
+        },
+        {
+          "name": "Liu Yang",
+          "authorId": "2284306787"
+        },
+        {
+          "name": "Prathap Ramachandra",
+          "authorId": "2121359655"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Reinforcement learning from human feedback (RLHF) has been extensively employed to align large language models with user intent. However, proximal policy optimization (PPO) based RLHF is occasionally unstable requiring significant hyperparameter finetuning, and computationally expensive to maximize the estimated reward during alignment. Recently, direct preference optimization (DPO) is proposed to address those challenges. However, DPO relies on contrastive responses generated from human annotator and alternative LLM, instead of the policy model, limiting the effectiveness of the RLHF. In this paper, we addresses both challenges by systematically combining rejection sampling (RS) and DPO. Our proposed method, RS-DPO, initiates with the development of a supervised fine-tuned policy model (SFT). A varied set of k responses per prompt are sampled directly from the SFT model. RS-DPO identifies pairs of contrastive samples based on their reward distribution. Finally, we apply DPO with the contrastive samples to align the model to human preference. Our experiments indicate that our proposed method effectively fine-tunes LLMs with limited resource environments, leading to improved alignment with user intent. Furthermore, it outperforms existing methods, including RS, PPO, and DPO.",
+      "citationCount": 38,
+      "doi": "10.48550/arXiv.2402.10038",
+      "arxivId": "2402.10038",
+      "url": "https://www.semanticscholar.org/paper/4d4432514695e0f36720c73c23d15d8e21abe2fe",
+      "venue": "NAACL-HLT",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.10038"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b899a28eb553800ce558cf8974a697f65103e591",
+      "title": "DeAL: Decoding-time Alignment for Large Language Models",
+      "authors": [
+        {
+          "name": "James Y. Huang",
+          "authorId": "2283816448"
+        },
+        {
+          "name": "Sailik Sengupta",
+          "authorId": "40552391"
+        },
+        {
+          "name": "Daniele Bonadiman",
+          "authorId": "3457102"
+        },
+        {
+          "name": "Yi-an Lai",
+          "authorId": "2283881323"
+        },
+        {
+          "name": "Arshit Gupta",
+          "authorId": "144877669"
+        },
+        {
+          "name": "Nikolaos Pappas",
+          "authorId": "2283784519"
+        },
+        {
+          "name": "Saab Mansour",
+          "authorId": "39674628"
+        },
+        {
+          "name": "Katrin Kirchoff",
+          "authorId": "2283768477"
+        },
+        {
+          "name": "Dan Roth",
+          "authorId": "2290800232"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) are nowadays expected to generate content aligned with human preferences. Current work focuses on alignment at model training time, through techniques such as Reinforcement Learning with Human Feedback (RLHF). However, it is unclear if such methods are an effective choice to teach alignment objectives to the model. First, the inability to incorporate multiple, custom rewards and reliance on a model developer's view of universal and static principles are key limitations. Second, the reliability of such approaches is also questionable (e.g. susceptibility to jailbreaking even after safety training). To address these issues, we propose DeAL, a framework that allows the user to customize reward functions and enables Decoding-time Alignment of LLMs (DeAL). At its core, we view decoding as a heuristic-guided search process and facilitate the use of a wide variety of alignment objectives. Our experiments with programmatic constraints such as keyword and length constraints, and abstract objectives such as harmlessness and helpfulness, show that we can DeAL with fine-grained trade-offs and improve adherence to alignment objectives. Lastly, we demonstrate that DeAL is largely complementary to existing alignment strategies, and can be effectively paired with RLHF and prompting techniques to achieve better alignment.",
+      "citationCount": 44,
+      "doi": "10.48550/arXiv.2402.06147",
+      "arxivId": "2402.06147",
+      "url": "https://www.semanticscholar.org/paper/b899a28eb553800ce558cf8974a697f65103e591",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "26280-26300"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "65f44fd4ec1466761dbc4700ce594db0b4639321",
+      "title": "AlignX: Advancing Multilingual Large Language Models with Multilingual Representation Alignment",
+      "authors": [
+        {
+          "name": "Mengyu Bu",
+          "authorId": "2220288217"
+        },
+        {
+          "name": "Shaolei Zhang",
+          "authorId": "2480521"
+        },
+        {
+          "name": "Zhongjun He",
+          "authorId": "37985966"
+        },
+        {
+          "name": "Hua Wu",
+          "authorId": "2346110937"
+        },
+        {
+          "name": "Yang Feng",
+          "authorId": "2261199971"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Multilingual large language models (LLMs) possess impressive multilingual understanding and generation capabilities. However, their performance and cross-lingual alignment often lag for non-dominant languages. A common solution is to fine-tune LLMs on large-scale and more balanced multilingual corpus, but such approaches often lead to imprecise alignment and suboptimal knowledge transfer, struggling with limited improvements across languages. In this paper, we propose AlignX to bridge the multilingual performance gap, which is a two-stage representation-level framework for enhancing multilingual performance of pre-trained LLMs. In the first stage, we align multilingual representations with multilingual semantic alignment and language feature integration. In the second stage, we stimulate the multilingual capability of LLMs via multilingual instruction fine-tuning. Experimental results on several pre-trained LLMs demonstrate that our approach enhances LLMs'multilingual general and cross-lingual generation capability. Further analysis indicates that AlignX brings the multilingual representations closer and improves the cross-lingual alignment.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.24338",
+      "arxivId": "2509.24338",
+      "url": "https://www.semanticscholar.org/paper/65f44fd4ec1466761dbc4700ce594db0b4639321",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.24338"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "419f36c63b14ced847d19769f2d51601b0aeb0dd",
+      "title": "A Survey on Training-free Alignment of Large Language Models",
+      "authors": [
+        {
+          "name": "Birong Pan",
+          "authorId": "2338273834"
+        },
+        {
+          "name": "Yongqi Li",
+          "authorId": "2243469274"
+        },
+        {
+          "name": "Weiyu Zhang",
+          "authorId": "2375728068"
+        },
+        {
+          "name": "Wenpeng Lu",
+          "authorId": "2271660331"
+        },
+        {
+          "name": "Mayi Xu",
+          "authorId": "2243655194"
+        },
+        {
+          "name": "Shen Zhou",
+          "authorId": "2218563624"
+        },
+        {
+          "name": "Yuanyuan Zhu",
+          "authorId": "2288417795"
+        },
+        {
+          "name": "Ming Zhong",
+          "authorId": "2288305508"
+        },
+        {
+          "name": "Tieyun Qian",
+          "authorId": "2263433039"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The alignment of large language models (LLMs) aims to ensure their outputs adhere to human values, ethical standards, and legal norms. Traditional alignment methods often rely on resource-intensive fine-tuning (FT), which may suffer from knowledge degradation and face challenges in scenarios where the model accessibility or computational resources are constrained. In contrast, training-free (TF) alignment techniques--leveraging in-context learning, decoding-time adjustments, and post-generation corrections--offer a promising alternative by enabling alignment without heavily retraining LLMs, making them adaptable to both open-source and closed-source environments. This paper presents the first systematic review of TF alignment methods, categorizing them by stages of pre-decoding, in-decoding, and post-decoding. For each stage, we provide a detailed examination from the viewpoint of LLMs and multimodal LLMs (MLLMs), highlighting their mechanisms and limitations. Furthermore, we identify key challenges and future directions, paving the way for more inclusive and effective TF alignment techniques. By synthesizing and organizing the rapidly growing body of research, this survey offers a guidance for practitioners and advances the development of safer and more reliable LLMs.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.09016",
+      "arxivId": "2508.09016",
+      "url": "https://www.semanticscholar.org/paper/419f36c63b14ced847d19769f2d51601b0aeb0dd",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.09016"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

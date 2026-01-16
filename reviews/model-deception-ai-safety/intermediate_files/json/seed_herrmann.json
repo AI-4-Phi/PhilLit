@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Standards for Belief Representations in LLMs",
+    "author": "Herrmann",
+    "year": 2025
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s11023-024-09709-6",
+      "title": "Standards for Belief Representations in LLMs",
+      "authors": [
+        {
+          "family": "Herrmann",
+          "given": "Daniel A."
+        },
+        {
+          "family": "Levinstein",
+          "given": "Benjamin A."
+        }
+      ],
+      "year": 2024,
+      "container_title": "Minds and Machines",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1007/s11023-024-09709-6",
+      "score": 45.997475
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

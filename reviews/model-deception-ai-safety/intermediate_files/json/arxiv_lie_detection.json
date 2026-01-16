@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:lie detection LLM AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2209.05595",
+      "title": "On the classification of 2-solvable Frobenius Lie algebras",
+      "authors": [
+        "Andre Diatta",
+        "Bakary Manga",
+        "Ameth Mbaye"
+      ],
+      "abstract": "We discuss the classification of 2-solvable Frobenius Lie algebras. We prove that every 2-solvable Frobenius Lie algebra splits as a semidirect sum of an n-dimensional vector space V and an n-dimensional maximal Abelian subalgebra (MASA) of the full space of endomorphisms of V. We supply a complete classification of 2-solvable Frobenius Lie algebras corresponding to nonderogatory endomorphisms, as well as those given by maximal Abelian nilpotent subalgebras (MANS) of class 2, hence of Kravchuk signature (n-1,0,1). In low dimensions, we classify all 2-solvable Frobenius Lie algebras in general up to dimension 8. We correct and complete the classification list of MASAs of sl(4, R) by Winternitz and Zassenhaus. As a biproduct, we give a simple proof that every nonderogatory endormorphism of a real vector space admits a Jordan form and also provide a new characterization of Cartan subalgebras of sl(n, R).",
+      "published": "2022-09-12",
+      "updated": "2023-07-16",
+      "primary_category": "math.DG",
+      "categories": [
+        "math.DG",
+        "math-ph",
+        "math.AC",
+        "math.SG"
+      ],
+      "doi": null,
+      "journal_ref": "Journal of Lie Theory 33 (2023), No. 3, 799-830",
+      "pdf_url": "https://arxiv.org/pdf/2209.05595v3",
+      "url": "https://arxiv.org/abs/2209.05595"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

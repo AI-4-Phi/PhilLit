@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "arxiv",
+  "query": "all:AI debate safety AND cat:cs.AI",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No papers found",
+      "recoverable": false
+    }
+  ]
+}

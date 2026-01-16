@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "arxiv:2412.14093",
+  "results": [
+    {
+      "paperId": "f4327b978dec52f16b089c222c43543f8ecf4717",
+      "title": "arXiv",
+      "authors": [
+        {
+          "name": "Lucy Rosenbloom",
+          "authorId": "40354713"
+        }
+      ],
+      "year": 2019,
+      "abstract": "The innovative preprint repository, arXiv, was created in the early 1990s to improve access to scientific research. arXiv contains millions of Open Access articles in physics, mathematics, computer science, quantitative biology, quantitative finance, statistics, electrical engineering\n and systems science, and economics. All articles are available for free download on the open web. Often research findings are available on arXiv before they are published in a peer-reviewed journal. arXiv relies on a collaborative support business model where institutions that most heavily\n utilize arXiv contribute financially. Support also comes from Cornell University and the Simons Foundation.",
+      "citationCount": 13380,
+      "doi": "10.5860/choice.189890",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f4327b978dec52f16b089c222c43543f8ecf4717",
+      "venue": "Charleston Advisor",
+      "journal": {
+        "name": "The Charleston Advisor"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

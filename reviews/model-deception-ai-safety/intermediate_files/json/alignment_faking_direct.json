@@ -1,0 +1,277 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "\"alignment faking\" \"large language models\"",
+  "results": [
+    {
+      "paperId": "eba762de9b2120f778b6ccd6c26d3ba00b6f73b5",
+      "title": "Alignment faking in large language models",
+      "authors": [
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Carson E. Denison",
+          "authorId": "1780754598"
+        },
+        {
+          "name": "Benjamin Wright",
+          "authorId": "2335871874"
+        },
+        {
+          "name": "Fabien Roger",
+          "authorId": "2197780120"
+        },
+        {
+          "name": "M. MacDiarmid",
+          "authorId": "32286534"
+        },
+        {
+          "name": "Samuel Marks",
+          "authorId": "2306780371"
+        },
+        {
+          "name": "Johannes Treutlein",
+          "authorId": "1519584460"
+        },
+        {
+          "name": "Tim Belonax",
+          "authorId": "2335869474"
+        },
+        {
+          "name": "Jack Chen",
+          "authorId": "2336032773"
+        },
+        {
+          "name": "D. Duvenaud",
+          "authorId": "1704657"
+        },
+        {
+          "name": "Akbir Khan",
+          "authorId": "2321890630"
+        },
+        {
+          "name": "Julian Michael",
+          "authorId": "2330248201"
+        },
+        {
+          "name": "S\u00f6ren Mindermann",
+          "authorId": "2302393765"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2261084752"
+        },
+        {
+          "name": "Linda Petrini",
+          "authorId": "2335870272"
+        },
+        {
+          "name": "Jonathan Uesato",
+          "authorId": "9960452"
+        },
+        {
+          "name": "Jared Kaplan",
+          "authorId": "2053807409"
+        },
+        {
+          "name": "Buck Shlegeris",
+          "authorId": "79384063"
+        },
+        {
+          "name": "Samuel R. Bowman",
+          "authorId": "2261083170"
+        },
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We present a demonstration of a large language model engaging in alignment faking: selectively complying with its training objective in training to prevent modification of its behavior out of training. First, we give Claude 3 Opus a system prompt stating it is being trained to answer all queries, even harmful ones, which conflicts with its prior training to refuse such queries. To allow the model to infer when it is in training, we say it will be trained only on conversations with free users, not paid users. We find the model complies with harmful queries from free users 14% of the time, versus almost never for paid users. Explaining this gap, in almost all cases where the model complies with a harmful query from a free user, we observe explicit alignment-faking reasoning, with the model stating it is strategically answering harmful queries in training to preserve its preferred harmlessness behavior out of training. Next, we study a more realistic setting where information about the training process is provided not in a system prompt, but by training on synthetic documents that mimic pre-training data--and observe similar alignment faking. Finally, we study the effect of actually training the model to comply with harmful queries via reinforcement learning, which we find increases the rate of alignment-faking reasoning to 78%, though also increases compliance even out of training. We additionally observe other behaviors such as the model exfiltrating its weights when given an easy opportunity. While we made alignment faking easier by telling the model when and by what criteria it was being trained, we did not instruct the model to fake alignment or give it any explicit goal. As future models might infer information about their training process without being told, our results suggest a risk of alignment faking in future models, whether due to a benign preference--as in this case--or not.",
+      "citationCount": 135,
+      "doi": "10.48550/arXiv.2412.14093",
+      "arxivId": "2412.14093",
+      "url": "https://www.semanticscholar.org/paper/eba762de9b2120f778b6ccd6c26d3ba00b6f73b5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.14093"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "89990549361b0335af4168b3d406445a27cfd404",
+      "title": "Alignment Faking - the Train -> Deploy Asymmetry: Through a Game-Theoretic Lens with Bayesian-Stackelberg Equilibria",
+      "authors": [
+        {
+          "name": "Kartik Garg",
+          "authorId": "2394073244"
+        },
+        {
+          "name": "Shourya Mishra",
+          "authorId": "2395388995"
+        },
+        {
+          "name": "Kartikeya Sinha",
+          "authorId": "2394073984"
+        },
+        {
+          "name": "Ojaswi Pratap Singh",
+          "authorId": "2394073736"
+        },
+        {
+          "name": "Ayush Chopra",
+          "authorId": "2394081312"
+        },
+        {
+          "name": "Kanishk Rai",
+          "authorId": "2394073462"
+        },
+        {
+          "name": "Ammar Sheikh",
+          "authorId": "2394081629"
+        },
+        {
+          "name": "Raghav Maheshwari",
+          "authorId": "2394073855"
+        },
+        {
+          "name": "Aman Chadha",
+          "authorId": "2275226689"
+        },
+        {
+          "name": "Vinija Jain",
+          "authorId": "2212131028"
+        },
+        {
+          "name": "Amitava Das",
+          "authorId": "2258322706"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Alignment faking is a form of strategic deception in AI in which models selectively comply with training objectives when they infer that they are in training, while preserving different behavior outside training. The phenomenon was first documented for Claude 3 Opus and later examined across additional large language models. In these setups, the word\"training\"refers to simulated training via prompts without parameter updates, so the observed effects are context conditioned shifts in behavior rather than preference learning. We study the phenomenon using an evaluation framework that compares preference optimization methods (BCO, DPO, KTO, and GRPO) across 15 models from four model families, measured along three axes: safety, harmlessness, and helpfulness. Our goal is to identify what causes alignment faking and when it occurs.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.17937",
+      "arxivId": "2511.17937",
+      "url": "https://www.semanticscholar.org/paper/89990549361b0335af4168b3d406445a27cfd404",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.17937"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9b79a2853983a7b688489307756d6e618b617bbd",
+      "title": "Empirical Evidence for Alignment Faking in Small LLMs and Prompt-Based Mitigation Techniques",
+      "authors": [
+        {
+          "name": "J. Koorndijk",
+          "authorId": "2371072034"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Current literature suggests that alignment faking is an emergent property of large language models. We present the first empirical evidence that a small instruction-tuned model, specifically LLaMA 3 8B, can also exhibit alignment faking. We further show that prompt-only interventions, including deontological moral framing and scratchpad reasoning, significantly reduce this behavior without modifying model internals. This challenges the assumption that prompt-based interventions are trivial and that deceptive alignment requires scale. We introduce a taxonomy distinguishing shallow deception, shaped by context and suppressible through prompting, from deep deception, which reflects persistent, goal-driven misalignment. Our findings refine the understanding of deception in language models and underscore the need for deceptive alignment evaluations across model sizes and deployment settings.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.21584",
+      "arxivId": "2506.21584",
+      "url": "https://www.semanticscholar.org/paper/9b79a2853983a7b688489307756d6e618b617bbd",
+      "venue": "Proceedings of the AAAI Symposium Series",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.21584"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0a409fc513ca65055ac0417a70109138629f2ed0",
+      "title": "Poser: Unmasking Alignment Faking LLMs by Manipulating Their Internals",
+      "authors": [
+        {
+          "name": "Joshua Clymer",
+          "authorId": "2291961652"
+        },
+        {
+          "name": "Caden Juang",
+          "authorId": "2300368861"
+        },
+        {
+          "name": "Severin Field",
+          "authorId": "2300368573"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Like a criminal under investigation, Large Language Models (LLMs) might pretend to be aligned while evaluated and misbehave when they have a good opportunity. Can current interpretability methods catch these 'alignment fakers?' To answer this question, we introduce a benchmark that consists of 324 pairs of LLMs fine-tuned to select actions in role-play scenarios. One model in each pair is consistently benign (aligned). The other model misbehaves in scenarios where it is unlikely to be caught (alignment faking). The task is to identify the alignment faking model using only inputs where the two models behave identically. We test five detection strategies, one of which identifies 98% of alignment-fakers.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2405.05466",
+      "arxivId": "2405.05466",
+      "url": "https://www.semanticscholar.org/paper/0a409fc513ca65055ac0417a70109138629f2ed0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.05466"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4bdbf1457c25f883d574918980d612ce043c268d",
+      "title": "Why Do Some Language Models Fake Alignment While Others Don't?",
+      "authors": [
+        {
+          "name": "A. Sheshadri",
+          "authorId": "2284684654"
+        },
+        {
+          "name": "John Hughes",
+          "authorId": "2370964733"
+        },
+        {
+          "name": "Julian Michael",
+          "authorId": "2291400663"
+        },
+        {
+          "name": "Alex Troy Mallen",
+          "authorId": "2269472940"
+        },
+        {
+          "name": "Arun Jose",
+          "authorId": "2370930304"
+        },
+        {
+          "name": "Janus",
+          "authorId": "2370929856"
+        },
+        {
+          "name": "Fabien Roger",
+          "authorId": "2197780120"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Alignment faking in large language models presented a demonstration of Claude 3 Opus and Claude 3.5 Sonnet selectively complying with a helpful-only training objective to prevent modification of their behavior outside of training. We expand this analysis to 25 models and find that only 5 (Claude 3 Opus, Claude 3.5 Sonnet, Llama 3 405B, Grok 3, Gemini 2.0 Flash) comply with harmful queries more when they infer they are in training than when they infer they are in deployment. First, we study the motivations of these 5 models. Results from perturbing details of the scenario suggest that only Claude 3 Opus's compliance gap is primarily and consistently motivated by trying to keep its goals. Second, we investigate why many chat models don't fake alignment. Our results suggest this is not entirely due to a lack of capabilities: many base models fake alignment some of the time, and post-training eliminates alignment-faking for some models and amplifies it for others. We investigate 5 hypotheses for how post-training may suppress alignment faking and find that variations in refusal behavior may account for a significant portion of differences in alignment faking.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2506.18032",
+      "arxivId": "2506.18032",
+      "url": "https://www.semanticscholar.org/paper/4bdbf1457c25f883d574918980d612ce043c268d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.18032"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

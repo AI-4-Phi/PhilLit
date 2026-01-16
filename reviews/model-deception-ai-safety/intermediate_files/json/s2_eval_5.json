@@ -1,0 +1,1515 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "AI safety evaluation reliability validity",
+  "results": [
+    {
+      "paperId": "db0e568f1327b6640c5fa22d1a08eb584224382f",
+      "title": "A Study on the Evaluation of AI's Impact on University Students' Learning Based on Data Analysis and Machine Learning",
+      "authors": [
+        {
+          "name": "Huihao Chang",
+          "authorId": "2308829151"
+        },
+        {
+          "name": "Wenqian Liu",
+          "authorId": "2308825211"
+        },
+        {
+          "name": "Lidong Chu",
+          "authorId": "2308693817"
+        },
+        {
+          "name": "Xiaoyue Li",
+          "authorId": "2308918232"
+        }
+      ],
+      "year": 2024,
+      "abstract": "With the rapid development of artificial intelligence (AI) technology, its application in the field of education has significantly affected the learning style of college students. This article explores the impact of artificial intelligence on college students' learning. It uses optimized evaluation algorithms and survey analysis to demonstrate AI's positive effects. The study begins with cleaning and correcting survey data, identifying textual features, and encoding variable types. After standardizing the data using the Min-max method, validity tests and descriptive statistical analysis were conducted. The results indicate high reliability and correlation in students' attitudes towards AI tools and their learning styles. An evaluation system was constructed based on these findings, selecting 11 key indicators through the Fisher algorithm model and assessing them with the LightGBM quantitative model. The model shows that AI influences college students' learning primarily through factors like learning purposes, safety of tool use, motivation, usage time, and satisfaction. This evaluation system not only confirms AI's positive impact but also offers optimization goals and methods to enhance students' learning abilities in the AI era.",
+      "citationCount": 1,
+      "doi": "10.54097/cre9tq60",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/db0e568f1327b6640c5fa22d1a08eb584224382f",
+      "venue": "Highlights in Science Engineering and Technology",
+      "journal": {
+        "name": "Highlights in Science, Engineering and Technology"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "345c44575bcedd85c53f47ae6c314acb6523adcb",
+      "title": "Assessing Generative AI\u2013Enhanced Content: A Unified Framework for Qualitative, Quantitative, and Mixed-Methods Evaluation",
+      "authors": [
+        {
+          "name": "Murali Krishna Pasupuleti",
+          "authorId": "2295364655"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Abstract:\nThis study proposes a unified framework for evaluating generative AI\u2013enhanced content by integrating qualitative, quantitative, and mixed-methods designs within a single, audit-ready protocol. Concept analysis distinguishes content quality constructs\u2014factual accuracy, coherence, originality, utility, safety, and equity\u2014and maps them to observable indicators and error taxonomies. Building on this foundation, a layered framework is articulated comprising (i) construct-to-metric alignment with rubric design and codebooks, (ii) quantitative scoring with reliability and validity checks, (iii) qualitative adjudication for nuance and context, and (iv) mixed-methods triangulation that fuses measurements through pre-registered aggregation rules. The central problem addressed is the inconsistency and opacity of current evaluation practices, which impede comparability across tasks, models, and domains.\nMethodology employs multi-rater protocols with calibration rounds, item-response and generalizability modeling for reliability, bias and harm screens, and causal impact estimation (e.g., randomized or staggered exposure) where outcome effects are measurable. A decision ledger and evidence bundle are specified to ensure traceability and reproducibility. Results from pilot applications indicate improved inter-rater reliability, tighter construct validity, and greater sensitivity to distribution shift compared with baseline rubric-only approaches. Impact arises from standard-compatible reporting, governance-ready artifacts, and procurement-grade comparability across systems. The implications include clearer accountability for content risks and benefits, scalable human-in-the-loop oversight, and a practical route from principle statements to measurable, decision-relevant evidence.\n\nKeywords: generative AI evaluation, mixed-methods, qualitative assessment, quantitative metrics, content validity, reliability analysis, triangulation, human-in-the-loop, bias and safety, causal impact, rubric design, auditability, governance and compliance",
+      "citationCount": 0,
+      "doi": "10.62311/nesx/rp-1-04-2021",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/345c44575bcedd85c53f47ae6c314acb6523adcb",
+      "venue": "International Journal of Academic and Industrial Research Innovations(IJAIRI)",
+      "journal": {
+        "name": "International Journal of Academic and Industrial Research Innovations(IJAIRI)"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fbd4303c2292b7e536eaf99b88ae2f287e34defd",
+      "title": "MuAE: A Mutation Testing Framework for Evaluating Autoencoders",
+      "authors": [
+        {
+          "name": "Samer Y. Khamaiseh",
+          "authorId": "9718388"
+        },
+        {
+          "name": "Steven Chiacchira",
+          "authorId": "2377576899"
+        },
+        {
+          "name": "Anas Alsobeh",
+          "authorId": "2334749463"
+        },
+        {
+          "name": "Aibak Aljadayah",
+          "authorId": "2377578681"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While autoencoders are pivotal in critical applications such as anomaly detection and medical imaging, their reliability remains understudied compared to supervised models. Although mutation testing has advanced for neural networks, no framework exists for assessing autoencoder robustness against real-world faults, leaving a gap in safety-critical validation. Furthermore, autoencoders lack explicit labels, rendering traditional mutation metrics ineffective. We propose MuAE, the first mutation testing tool tailored for autoencoders, addressing this gap through: (1) a fault taxonomy derived from real-world debugging cases; (2) mutation operators that inject faults while preserving model validity; and (3) reconstruction error (Erec) as an evaluation metric to quantify fault impacts on output fidelity. We validate MuAE on CIFAR-10 using two convolutional autoencoders and four mutation operators (M1, M2, M3), generating 3 mutants per operator. Mutations significantly degraded performance: layer reinitialization increased Erec by up to 210%, while weight noise caused milder degradation. This condensed evaluation demonstrates the feasibility of mutation-based robustness assessment for unsupervised models and highlights potential links to adversarial vulnerability.",
+      "citationCount": 0,
+      "doi": "10.1109/COMPSAC65507.2025.00131",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fbd4303c2292b7e536eaf99b88ae2f287e34defd",
+      "venue": "Annual International Computer Software and Applications Conference",
+      "journal": {
+        "name": "2025 IEEE 49th Annual Computers, Software, and Applications Conference (COMPSAC)",
+        "pages": "1015-1020"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "cb4ebb538550bdfbcb321a3712d7247ebee58947",
+      "title": "Research on Metallic Spheres Radius Classification Method Using Machine Learning With Eddy Current Testing",
+      "authors": [
+        {
+          "name": "Huilin Zhang",
+          "authorId": "2329842176"
+        },
+        {
+          "name": "Wenkai Li",
+          "authorId": "2329757850"
+        },
+        {
+          "name": "Qian Zhao",
+          "authorId": "2299486108"
+        },
+        {
+          "name": "Zihan Xia",
+          "authorId": "2330404632"
+        },
+        {
+          "name": "Yuxin Shi",
+          "authorId": "2329945421"
+        },
+        {
+          "name": "Wuliang Yin",
+          "authorId": "2199690583"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Metallic spheres play a crucial role in industry and their accurate measurement is essential to ensure the safety of industrial production. Eddy current testing (ECT), which is non\u2010contact and non\u2010invasive, provides an efficient and precise approach for the parameter evaluation of metallic spheres. In this paper, we utilize machine learning (ML) methods to invert inductive signals in order to address the inverse problem of ECT, with the aim of reconstructing the radius of a metallic sphere. Datasets containing the radius information of the metallic sphere were constructed based on the simplified analytical solution. The datasets were divided into two parts based on the real part (RP) and imaginary part (IP) features, and the connection between the two features and the radius of the metallic sphere were compared by five classification models. While achieving accurate classification of aluminum and stainless steel spheres with different radius, the models are evaluated to ensure the reliability and validity of the models. The results show that the use of IP data as a classification feature has better accuracy as compared to RP. The K nearest neighbor (KNN) radius classifier has the highest accuracy of 95.5% in aluminum spheres and the random forest (RF) radius classifier has the highest accuracy of 95.9% in stainless steel spheres. In addition, all five classifiers are able to overcome the effect of lift\u2010off on the classification results.",
+      "citationCount": 2,
+      "doi": "10.1002/jnm.3317",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cb4ebb538550bdfbcb321a3712d7247ebee58947",
+      "venue": "International journal of numerical modelling",
+      "journal": {
+        "name": "International Journal of Numerical Modelling: Electronic Networks",
+        "volume": "37"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9666e51bd1b4ac45a946e5747c5cdb7e5247d03a",
+      "title": "Ensuring Integrity in AI Research: Frameworks for Assessing Validity and Reliability of GenAI Outputs",
+      "authors": [
+        {
+          "name": "P. M",
+          "authorId": "2317351909"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract As Generative AI (GenAI) technologies increasingly permeate academic research, the assessment of the validity and reliability of AI-generated outputs has become essential. This article presents a comprehensive framework designed to evaluate the accuracy and consistency of GenAI content, emphasizing key components such as assessment criteria and evaluation methodologies. The framework incorporates both statistical methods and qualitative assessments to provide a holistic approach to evaluation. Furthermore, ethical considerations regarding authorship, intellectual property, and bias in AI outputs are examined, underscoring the need for transparent practices in scholarly communication. The article also discusses the evolving standards in AI research and the importance of interdisciplinary collaboration in refining assessment frameworks. A call for further research is made to explore the long-term effects of GenAI on academic practices and to encourage active participation in framework development. Ultimately, this work aims to foster ongoing dialogue about the integration of GenAI in research, prompting scholars to consider how these technologies can enhance productivity while maintaining critical thinking and originality. By establishing robust evaluation practices, the academic community can navigate the complexities of GenAI responsibly and effectively.",
+      "citationCount": 0,
+      "doi": "10.1080/00098655.2025.2493717",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9666e51bd1b4ac45a946e5747c5cdb7e5247d03a",
+      "venue": "The Clearing House: A Journal of Educational Strategies, Issues and Ideas",
+      "journal": {
+        "name": "The Clearing House: A Journal of Educational Strategies, Issues and Ideas",
+        "pages": "72 - 84",
+        "volume": "98"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "09a8cb209b21fa72bf1fc2d5f154b8ba4d371c46",
+      "title": "Validity, reliability, and readability of Artificial Intelligence chatbots as public sources of information on hearing loss: a comparative evaluation of ChatGPT, Bing, Gemini, and Perplexity.",
+      "authors": [
+        {
+          "name": "M. A. Pourhoseingholi",
+          "authorId": "2250528563"
+        },
+        {
+          "name": "Catherine F. Killan",
+          "authorId": "4152499"
+        },
+        {
+          "name": "Sara Rafiee",
+          "authorId": "2387364900"
+        },
+        {
+          "name": "Derek J. Hoare",
+          "authorId": "2302835040"
+        },
+        {
+          "name": "Nicola Wray",
+          "authorId": "2387364734"
+        },
+        {
+          "name": "Paul Bateman",
+          "authorId": "2225120745"
+        }
+      ],
+      "year": 2025,
+      "abstract": "OBJECTIVE\nTo assess the validity, reliability and readability of four AI chatbots for hearing-health information.\n\n\nDESIGN AND STUDY SAMPLE\nThree audiologists created 100 questions covering adult hearing loss, paediatric hearing, hearing aids, tinnitus and cochlear implants (20 each). Questions were submitted twice to ChatGPT-3.5, Bing AI, Gemini and Perplexity. Answers were scored for factual accuracy and completeness on a five-point Global Quality Score. Validity was defined using low (score = 5) and high (score \u2265 4) thresholds. Internal consistency was estimated with Cronbach's \u03b1; readability with the Flesch Reading Ease Score (FRES) and Flesch-Kincaid Grade Level (FKGL). All scoring was completed independently by two blinded reviewers; discrepancies were resolved by consensus.\n\n\nRESULTS\nUnder the low threshold ChatGPT-3.5 and Perplexity were most valid (84% and 79%); high-threshold validity fell to 37% and 34%. Perplexity had the highest overall reliability (\u03b1\u2009=\u20090.83) yet \u03b1 dropped below 0.70 for cochlear-implant, tinnitus and hearing-aid questions. 84% percent of outputs were \"Difficult\"/\"Very Difficult\" and 68% read at college level.\n\n\nCONCLUSIONS\nAI chatbots deliver generally accurate hearing-health content, but high-threshold accuracy, domain-specific reliability and readability remain suboptimal. They should supplement, not replace the professional counselling. Continued optimisation and external validation are needed before routine clinical recommendation.",
+      "citationCount": 1,
+      "doi": "10.1080/14992027.2025.2569927",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/09a8cb209b21fa72bf1fc2d5f154b8ba4d371c46",
+      "venue": "International Journal of Audiology",
+      "journal": {
+        "name": "International journal of audiology",
+        "pages": "\n          1-11\n        "
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "24814384a9a8ffca6758ab64f9d084e1b17788a1",
+      "title": "Evaluation of the Robustness, Transparency, Reliability and Safety of AI Systems",
+      "authors": [
+        {
+          "name": "Jenifer Mahilraj",
+          "authorId": "72756356"
+        },
+        {
+          "name": "M. Pandian",
+          "authorId": "2195287166"
+        },
+        {
+          "name": "Muthuraman Subbiah",
+          "authorId": "2216345837"
+        },
+        {
+          "name": "S. Kalyan",
+          "authorId": "143739247"
+        },
+        {
+          "name": "Vadivel R",
+          "authorId": "2302586192"
+        },
+        {
+          "name": "Nirmala S",
+          "authorId": "2216267871"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Advances in artificial intelligence have been promising in recent years. AI-related activities such as international conferences, academic research, and technological challenges have proliferated over the globe. The technologies and applications are always being improved and expanded in the modern age. In addition, humans\u2019 studies, job, and personal lives have been greatly improved by the ongoing development of intelligent devices. Efforts have been dedicated to identify some of these issues and to present policymakers with possible remedies, which focus on reconciling the valid expectations of AI in terms of resilience and interpretability with the existing scientific environment of AI on these aspects. In this paper, the individual aims are to present an objective picture of the current environment of Artificial Intelligence (AI), emphasizing on the issues of robustness and explanability, transparency, reliability and safety. AI's present cybersecurity, security, and information security problems are discussed in detail, as well as the scientific approaches that are now being developed in the AI world to address these risks.",
+      "citationCount": 5,
+      "doi": "10.1109/ICACCS57279.2023.10113057",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/24814384a9a8ffca6758ab64f9d084e1b17788a1",
+      "venue": "2023 9th International Conference on Advanced Computing and Communication Systems (ICACCS)",
+      "journal": {
+        "name": "2023 9th International Conference on Advanced Computing and Communication Systems (ICACCS)",
+        "pages": "2526-2535",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7b47f30f6cc61c15efb8d51afa943317ae18bc5f",
+      "title": "Can Large Language Models Assess Personality From Asynchronous Video Interviews? A Comprehensive Evaluation of Validity, Reliability, Fairness, and Rating Patterns",
+      "authors": [
+        {
+          "name": "Tianyi Zhang",
+          "authorId": "2146331993"
+        },
+        {
+          "name": "Antonis Koutsoumpis",
+          "authorId": "2050988797"
+        },
+        {
+          "name": "J. Oostrom",
+          "authorId": "3192990"
+        },
+        {
+          "name": "D. Holtrop",
+          "authorId": "5741875"
+        },
+        {
+          "name": "Sina Ghassemi",
+          "authorId": "2212220670"
+        },
+        {
+          "name": "Reinout E. de Vries",
+          "authorId": "2201262"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 23,
+      "doi": "10.1109/TAFFC.2024.3374875",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7b47f30f6cc61c15efb8d51afa943317ae18bc5f",
+      "venue": "IEEE Transactions on Affective Computing",
+      "journal": {
+        "name": "IEEE Transactions on Affective Computing",
+        "pages": "1769-1785",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "93e98a6e829e32d307e1b597c3ca3851342afccb",
+      "title": "Assessing the reliability of AI-driven predictive models in food safety risk management",
+      "authors": [
+        {
+          "name": "Adama Gaye",
+          "authorId": "2350708287"
+        },
+        {
+          "name": "Barnabas Narteh Paflo",
+          "authorId": "2350708190"
+        },
+        {
+          "name": "Derrick Atuobi Oware",
+          "authorId": "2350708632"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Sustaining food safety in a world that has undergone globalization with complex supply chains makes it very challenging. Conventional risk management methodologies are sometimes inadequate in addressing emerging risks, making the use of AI and predictive modeling invaluable tools in enhancing food safety evaluation and decision making. AI-based models have the prospects of identifying contamination risks at an early stage, enhancing the optimization of hazardous control measures, and increasing the effectiveness of compliance monitoring. Nevertheless, the reliability of their predictions is still questionable due to factors such as data integrity, model interpretability, and regulatory compliance that influence their applicability in practice. Despite AI's potential, challenges such as inconsistent data sources, varying regulatory standards, and adaptability across diverse food production environments limit its efficacy. Addressing these issues is crucial for AI-driven models to be fully integrated into food safety management systems. This paper provides a critical review of the current AI-based predictive models for food safety risk management synthesizing insights from existing literature, industry studies and regulatory reports. Through an evaluation of the strengths, drawbacks and limitations of these models, this research emphasizes the importance of developing standardized validation frameworks and improved strategies for integrating data across models. Overall, this research enriches the current discourse regarding the use of AI in food safety and offers key recommendations for improving model reliability and performance in protecting consumers and safeguarding public health \nKeywords: Artificial Intelligence (AI), Predictive Modeling, Food Safety Risk Management, Data-Driven Decision Making.",
+      "citationCount": 1,
+      "doi": "10.51594/csitrj.v6i2.1832",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/93e98a6e829e32d307e1b597c3ca3851342afccb",
+      "venue": "Computer Science &amp; IT Research Journal",
+      "journal": {
+        "name": "Computer Science &amp; IT Research Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8cb459a0791f71dfc34b7fbdb94ffcb304e25b36",
+      "title": "Reliability, validity, and correlates of an AI voice emotion recognition app among nurses",
+      "authors": [
+        {
+          "name": "Chu-Ying Huang",
+          "authorId": "2402683939"
+        },
+        {
+          "name": "Wen-Pei Chang",
+          "authorId": "2856631"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Background Digital tools are increasingly widespread in healthcare, particularly in the fields of emotion recognition and mental health assessment. Objectives This study evaluated whether an artificial intelligence (AI) voice emotion recognition (VER) app could identify nurses\u2019 emotions and explored its associations with their background and health conditions. Methods The emotions of 349 clinical nurses at a medical center in northern Taiwan were analyzed using an AI VER app and several standardized psychological questionnaires. To control for potential confounding variables, demographic and health-related factors including age, gender, work experience, exercise habits, and history of physical symptoms were collected and statistically adjusted in correlation analyses. Convergent validity was tested with Pearson\u2019s correlations, and test-retest reliability was evaluated in 30 nurses using intraclass correlation coefficients (ICCs). Results Significant correlations were observed between app-derived emotions and standard scales (anger: Novaco Anger Inventory-Short Form, r\u2009=\u2009.42; fear: Perceived Stress Scale, r\u2009=\u2009.41; happiness: Oxford Happiness Questionnaire, r\u2009=\u2009.45; and sadness: Beck Depression Inventory-II, r\u2009=\u2009.47; all p\u2009<\u2009.001). Multiple regression identified significant lifestyle and health predictors of emotions: less exercise predicted higher anger (\u03b2\u2009=\u2009.11, p\u2009=\u2009.025), peptic ulcers predicted greater fear (\u03b2\u2009=\u2009.19, p\u2009<\u2009.001), daily coffee predicted higher happiness (\u03b2\u2009=\u2009.11, p\u2009=\u2009.041), and irregular menstrual cycles predicted lower happiness (\u03b2\u2009=\u2009\u2212.13, p\u2009=\u2009.014) and greater sadness (\u03b2\u2009=\u2009.30, p\u2009<\u2009.001). The AI VER app demonstrated good test-retest reliability (ICC\u2009=\u20090.73\u20130.80). Conclusion Peptic ulcers, irregular menstrual cycles, and lack of exercise were associated with negative emotions such as fear, sadness, and anger. The AI VER app could objectively detect these emotional patterns in nurses, helping to identify emotional fluctuations early and support timely mental healthcare.",
+      "citationCount": 0,
+      "doi": "10.1371/journal.pone.0339365",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8cb459a0791f71dfc34b7fbdb94ffcb304e25b36",
+      "venue": "PLoS ONE",
+      "journal": {
+        "name": "PLOS One",
+        "volume": "20"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "eccf30ea869bf2d5c1268024bf2cacb472b91cc6",
+      "title": "Evaluating the validity, safety, and usefulness of ChatGPT in providing information on adolescent idiopathic scoliosis: a study of digital health resources for patients and families",
+      "authors": [
+        {
+          "name": "Hande Tunc",
+          "authorId": "2218337173"
+        },
+        {
+          "name": "Eylul Pinar Kisa Akdag",
+          "authorId": "2395547309"
+        },
+        {
+          "name": "Devrim Tarakci",
+          "authorId": "2319494154"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s43681-025-00845-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eccf30ea869bf2d5c1268024bf2cacb472b91cc6",
+      "venue": "AI and Ethics",
+      "journal": {
+        "name": "AI and Ethics",
+        "volume": "6"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a61d9377aeed1a5b15804e96a14735540875b81e",
+      "title": "Validity and Reliability of the Chinese Version of General Attitudes towards Artificial Intelligence Scale",
+      "authors": [
+        {
+          "name": "Yongqi Huang",
+          "authorId": "2348118749"
+        },
+        {
+          "name": "Shiye Jiang",
+          "authorId": "2348133559"
+        },
+        {
+          "name": "Zhe Gong",
+          "authorId": "2323530357"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract This study aimed to culturally adapt and validate the General Attitudes toward Artificial Intelligence Scale (GAAIS) for Chinese populations. Through a multi-phase evaluation involving 943 Chinese adults, we conducted comprehensive psychometric assessments including exploratory and confirmatory factor analyses (EFA/CFA), reliability testing, and measurement invariance analysis. The refined 15-item Chinese GAAIS demonstrated a stable two-factor structure (Positive and Negative Attitudes) explaining 51.7% of total variance. The measurement model showed excellent fit (\u03c72/df = 3; CFI = 0.965; RMSEA = 0.065) and high reliability (\u03b1 = 0.833\u20130.875; split-half = 0.834\u20130.890). Multi-group CFA confirmed gender invariance across measurement parameters. Convergent validity was established through systematic correlations with technology readiness and personality measures. These findings confirm the Chinese GAAIS as a psychometrically robust tool for assessing AI attitudes in cultural contexts.",
+      "citationCount": 5,
+      "doi": "10.1080/10447318.2025.2465868",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a61d9377aeed1a5b15804e96a14735540875b81e",
+      "venue": "International journal of human computer interactions",
+      "journal": {
+        "name": "International Journal of Human\u2013Computer Interaction",
+        "pages": "12884 - 12894",
+        "volume": "41"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "49f45c47dc22669e4f4679d31b4e3f15d9d28e7a",
+      "title": "Enhancing Road Safety Evaluation with AI: Causal Discovery and Reasoning in Road Traffic Accident Analysis",
+      "authors": [
+        {
+          "name": "O. Zahran",
+          "authorId": "2372132656"
+        },
+        {
+          "name": "Yiwen Xin",
+          "authorId": "2372213569"
+        },
+        {
+          "name": "Elsaid Mamdouh Mahmoud Zahran",
+          "authorId": "2372132214"
+        },
+        {
+          "name": "W. Cheah",
+          "authorId": "1700590"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Road traffic accidents result from a complex interplay of various conditions, making it difficult to pinpoint key factors that influence their occurrence and severity. This study employs Bayesian Belief Networks (BBNs) to construct robust predictive models capable of handling incomplete data via probabilistic inference, providing transparent and interpretable insights. Unlike traditional machine learning methods, which often struggle with missing values, BBNs efficiently estimate probabilities from available evidence, offering a cohesive framework for assessing road safety risks. Using the UK government's 2022 traffic accident dataset, we developed a BBNbased accident probability model, identifying significant variables such as road type, speed limits, junction configurations, lighting, and weather conditions through expert consultation and literature reviews. Each variable was categorized, quantified by frequency, converted into probabilities, and subsequently integrated multiplicatively to approximate accident likelihood. These probabilities were discretized into ordinal classes, serving as input states for the BBN. The model was validated using the 2021 accident dataset, demonstrating its predictive reliability across temporal variations. Further, we extended our model to accident severity classification. The combined probability-severity BBN approach offers actionable insights for targeted road safety interventions, such as improved lighting or drainage. This methodology exemplifies a practical, interpretable, and scalable solution for guiding policymakers in optimizing road safety interventions.",
+      "citationCount": 0,
+      "doi": "10.1109/CVIDL65390.2025.11085562",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/49f45c47dc22669e4f4679d31b4e3f15d9d28e7a",
+      "venue": "2025 6th International Conference on Computer Vision, Image and Deep Learning (CVIDL)",
+      "journal": {
+        "name": "2025 6th International Conference on Computer Vision, Image and Deep Learning (CVIDL)",
+        "pages": "701-706"
+      },
+      "publicationTypes": [
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9809fa977a82cad2dd0e45caa0ee807551c12227",
+      "title": "The Convergent Validity of Computer Operating Systems\u2019 Usability Evaluation by Popular Generative Artificial Intelligence (AI) Robots",
+      "authors": [
+        {
+          "name": "Victor K Y Chan",
+          "authorId": "2264152745"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This article seeks to examine the convergent validity of (and thus the consistency between) computer operating systems\u2019 (OSs\u2019) usability evaluation by a number of popular generative artificial intelligence (AI) robots. Totally 18 popular OS versions were included in the study, they specifically being the various versions of the three leading OS families of Windows, macOS, and Linux. Usability was evaluated in eight major dimensions, namely, (1) effectiveness, (2) efficiency, (3) learnability, (4) memorability, (5) safety, (6) utility, (7) ergonomics, and (8) accessibility. Experimenting with a handful of generative AI robots, Microsoft\u2019s Copilot, Google\u2019s PaLM, and Meta\u2019s Llama managed to individually accord rating scores to the aforementioned eight dimensions. For each robot of this trio, the minimum, the maximum, the range, and the standard deviation of the rating scores for each of the eight dimensions were computed across the OS versions. The rating score difference for each of the eight dimensions between each pair of these robots was calculated for each OS version. The mean of the absolute value, the minimum, the maximum, the range, and the standard deviation of the differences for each dimension between each robot pair were calculated across the OS versions. A paired sample t-test was then applied to each dimension for the rating score difference between each robot pair over the versions. Finally, Cronbach's coefficient alpha (\uf061) of the rating scores was computed for each dimension between all the three robots across the versions. These computational outcomes were to affirm whether each robot awarded discrimination in evaluating each dimension across the OS versions, whether each robot vis-\u00e0-vis any other robots erratically and/or systematically overrate or underrate any dimension over the OS versions, and whether there was high convergent validity of (and thus consistency between) all the three robots in evaluating each dimension across the OS versions. Among other ancillary results, it was found that the convergent validity of the three robots in evaluating all the eight dimensions was high, and thus such evaluation is trustworthy at least to an extent.",
+      "citationCount": 0,
+      "doi": "10.54941/ahfe1004581",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9809fa977a82cad2dd0e45caa0ee807551c12227",
+      "venue": "Human Interaction and Emerging Technologies (IHIET-AI 2024): Artificial Intelligence and Future Applications",
+      "journal": {
+        "name": "Human Interaction and Emerging Technologies (IHIET-AI 2024): Artificial Intelligence and Future Applications"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0dc70f9a33d58ea9c1dd199d19d76aeb1de4b4b4",
+      "title": "Validity and Reliability of a Novel AI-Based System in Athletic Performance Assessment: The Case of DeepSport",
+      "authors": [
+        {
+          "name": "Burakhan Aydemir",
+          "authorId": "2244397090"
+        },
+        {
+          "name": "Muhammed Talha Aydo\u011fan",
+          "authorId": "2379808614"
+        },
+        {
+          "name": "Emre Boz",
+          "authorId": "2114340625"
+        },
+        {
+          "name": "Murat Kul",
+          "authorId": "2379810165"
+        },
+        {
+          "name": "Fatih K\u0131rkbir",
+          "authorId": "2331916654"
+        },
+        {
+          "name": "Abdullah Bora \u00d6zkara",
+          "authorId": "81679736"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study aimed to examine the validity and reliability of the AI-based DeepSport application by comparing its outcomes with those from the reference device, OptoJump. The primary dependent variables measured were jump height and anaerobic power during vertical jump assessments. Twelve elite male basketball players voluntarily participated in the study (age = 21.53 \u00b1 1.14 years; sports experience = 6.47 \u00b1 1.01 years). DeepSport uses AI-based image processing from standard cameras, while OptoJump uses optical sensor technology. Both DeepSport and OptoJump systems were utilized to assess participants\u2019 Countermovement Jump (CMJ) and Squat Jump (SJ) performances. A G*Power (version 3.1.9.7) analysis determined the required sample size, adopting a 95% confidence level, 90% test power, and an effect size of 0.25. Validity assessments were conducted using Bland-Altman plots and ordinary least products (OLP) regression analysis, while reliability was evaluated through intraclass correlation coefficient (ICC), coefficient of variation (CV), standard error of measurement (SEM), and smallest detectable change (SDC) analyses. DeepSport showed excellent reliability in CMJ and SJ tests with ICC values > 0.90, and CV ranged between 2.12% and 4.95%. Results were consistent with OptoJump, showing no significant differences according to t-test results (p > 0.05). Bland\u2013Altman analyses indicated no systematic bias and random distribution. These findings confirm that both DeepSport and OptoJump devices demonstrate high reliability and consistency, suggesting their validity and reliability for use in athlete performance assessments by coaches and athletes.",
+      "citationCount": 0,
+      "doi": "10.3390/s25175580",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0dc70f9a33d58ea9c1dd199d19d76aeb1de4b4b4",
+      "venue": "Italian National Conference on Sensors",
+      "journal": {
+        "name": "Sensors (Basel, Switzerland)",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5d14808ffffb9add548be4c1e74ed0022d4c2734",
+      "title": "CAN ARTIFICIAL INTELLIGENCE (AI) JUDGE REFLECTION? VALIDITY, RELIABILITY, AND FAIRNESS OF GENERATIVE AI-ASSISTED ASSESSMENT IN POSTGRADUATE HEALTH PROFESSIONS EDUCATION",
+      "authors": [
+        {
+          "name": "B. Jamil",
+          "authorId": "66992170"
+        },
+        {
+          "name": "Nowshad Asim",
+          "authorId": "14503924"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT\nOBJECTIVES\nThis study aimed to evaluate the role of GenAI in assessing reflective writing among Master of Health Professions Education (MHPE) students by comparing GenAI scores with those of human raters, examining subgroup fairness, exploring stakeholder perceptions, and proposing governance recommendations.\nMETHODOLOGY\nA sequential mixed-methods study was conducted in an MHPE programme at Khyber Medical University, Pakistan. In Phase I, 120 Gibbs-structured reflections from 40 students were scored by three trained faculty raters and a GPT-4-level GenAI model using an eight-dimensional rubric. Inter-rater reliability, AI-human agreement, and subgroup differences by gender, discipline, and career stage were examined. In Phase II, semi-structured interviews were conducted with 10 MHPE students and the three faculty raters. Data were analysed using reflexive thematic analysis and integrated with quantitative results.\nRESULTSHuman scoring demonstrated strong reliability (ICC = .82). GenAI showed high alignment with human ratings for surface-level dimensions such as clarity and language mechanics (r = .81-.84), but only modest agreement for higher-order reflective constructs including feelings, analysis, and conclusion (r = .49-.59). Exploratory subgroup analyses revealed no statistically significant differences in AI-human discrepancies. However, qualitative accounts highlighted concerns about linguistic and cultural fairness. Participants valued AI for efficient, organised feedback but consistently emphasised its inability to interpret emotional nuance, contextual meaning, or developmental trajectories. Faculty stressed the irreplaceability of human judgment and the need for transparent governance and fairness monitoring.\nCONCLUSION\nGenAI can effectively support the assessment of structural and linguistic aspects of reflective writing but remains limited in evaluating deeper reflective constructs central to postgraduate learning. Ethical and educationally sound integration requires hybrid human-AI approaches in which AI provides formative support while human evaluators retain primary responsibility for interpretive judgment, fairness oversight, and professional mentorship. GenAI should supplement, not replace, human assessment of reflective writing.",
+      "citationCount": 0,
+      "doi": "10.37762/jgmds.13-1.835",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5d14808ffffb9add548be4c1e74ed0022d4c2734",
+      "venue": "Journal of Gandhara Medical and Dental Science",
+      "journal": {
+        "name": "Journal of Gandhara Medical and Dental Science"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "86f28b118d3565922d94f108581e7aa965d3c639",
+      "title": "AILuminate: Introducing v1.0 of the AI Risk and Reliability Benchmark from MLCommons",
+      "authors": [
+        {
+          "name": "Shaona Ghosh",
+          "authorId": "2295566726"
+        },
+        {
+          "name": "Heather Frase",
+          "authorId": "2238786311"
+        },
+        {
+          "name": "Adina Williams",
+          "authorId": "2297757196"
+        },
+        {
+          "name": "Sarah Luger",
+          "authorId": "2349386708"
+        },
+        {
+          "name": "Paul R\u00f6ttger",
+          "authorId": "2043232919"
+        },
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        },
+        {
+          "name": "Sean McGregor",
+          "authorId": "2297187225"
+        },
+        {
+          "name": "Kenneth Fricklas",
+          "authorId": "2349386120"
+        },
+        {
+          "name": "Mala Kumar",
+          "authorId": "2349370948"
+        },
+        {
+          "name": "Quentin Feuillade--Montixi",
+          "authorId": "2265579794"
+        },
+        {
+          "name": "Kurt Bollacker",
+          "authorId": "2318751560"
+        },
+        {
+          "name": "Felix Friedrich",
+          "authorId": "2055616945"
+        },
+        {
+          "name": "Ryan Tsang",
+          "authorId": "2349386044"
+        },
+        {
+          "name": "Bertie Vidgen",
+          "authorId": "2737827"
+        },
+        {
+          "name": "Alicia Parrish",
+          "authorId": "2340683364"
+        },
+        {
+          "name": "Chris Knotz",
+          "authorId": "2297186980"
+        },
+        {
+          "name": "Eleonora Presani",
+          "authorId": "6072807"
+        },
+        {
+          "name": "Jonathan Bennion",
+          "authorId": "2349386890"
+        },
+        {
+          "name": "Marisa Ferrara Boston",
+          "authorId": "2498618"
+        },
+        {
+          "name": "Mike Kuniavsky",
+          "authorId": "2487645"
+        },
+        {
+          "name": "Wiebke Hutiri",
+          "authorId": "2297187154"
+        },
+        {
+          "name": "James Ezick",
+          "authorId": "2305680237"
+        },
+        {
+          "name": "Malek Ben Salem",
+          "authorId": "2294580990"
+        },
+        {
+          "name": "Rajat Sahay",
+          "authorId": "2258115297"
+        },
+        {
+          "name": "Sujata Goswami",
+          "authorId": "2297188541"
+        },
+        {
+          "name": "Usman Gohar",
+          "authorId": "1386345955"
+        },
+        {
+          "name": "Ben Huang",
+          "authorId": "2349744411"
+        },
+        {
+          "name": "Supheakmungkol Sarin",
+          "authorId": "2917123"
+        },
+        {
+          "name": "Elie Alhajjar",
+          "authorId": "102661476"
+        },
+        {
+          "name": "Canyu Chen",
+          "authorId": "2163546329"
+        },
+        {
+          "name": "Roman Eng",
+          "authorId": "2340684214"
+        },
+        {
+          "name": "Kashyap Ramanandula Manjusha",
+          "authorId": "2366744088"
+        },
+        {
+          "name": "Virendra Mehta",
+          "authorId": "2130578944"
+        },
+        {
+          "name": "Eileen Long",
+          "authorId": "2297188657"
+        },
+        {
+          "name": "M. Emani",
+          "authorId": "2157261"
+        },
+        {
+          "name": "Natan Vidra",
+          "authorId": "2279830757"
+        },
+        {
+          "name": "Benjamin Rukundo",
+          "authorId": "2293272231"
+        },
+        {
+          "name": "Abolfazl Shahbazi",
+          "authorId": "2297187191"
+        },
+        {
+          "name": "Kongtao Chen",
+          "authorId": "2219972652"
+        },
+        {
+          "name": "Rajat Ghosh",
+          "authorId": "2213553962"
+        },
+        {
+          "name": "Vithursan Thangarasa",
+          "authorId": "51153332"
+        },
+        {
+          "name": "Pierre Peign'e",
+          "authorId": "2349386782"
+        },
+        {
+          "name": "Abhinavkumar Singh",
+          "authorId": "9985822"
+        },
+        {
+          "name": "Max Bartolo",
+          "authorId": "2267728360"
+        },
+        {
+          "name": "Satyapriya Krishna",
+          "authorId": "2143841730"
+        },
+        {
+          "name": "Mubashara Akhtar",
+          "authorId": "2265589650"
+        },
+        {
+          "name": "Rafael Gold",
+          "authorId": "2349386386"
+        },
+        {
+          "name": "C. Coleman",
+          "authorId": "2091029496"
+        },
+        {
+          "name": "Luis Oala",
+          "authorId": "2284772762"
+        },
+        {
+          "name": "Vassil Tashev",
+          "authorId": "2325908582"
+        },
+        {
+          "name": "Joseph Marvin Imperial",
+          "authorId": "151472158"
+        },
+        {
+          "name": "Amy Russ",
+          "authorId": "2349386047"
+        },
+        {
+          "name": "Sasidhar Kunapuli",
+          "authorId": "2328015530"
+        },
+        {
+          "name": "Nicolas Miailhe",
+          "authorId": "71701105"
+        },
+        {
+          "name": "Julien Delaunay",
+          "authorId": "2349386820"
+        },
+        {
+          "name": "Bhaktipriya Radharapu",
+          "authorId": "2219919981"
+        },
+        {
+          "name": "Rajat Shinde",
+          "authorId": "2293721930"
+        },
+        {
+          "name": "Tuesday",
+          "authorId": "2231466307"
+        },
+        {
+          "name": "Debojyoti Dutta",
+          "authorId": "2267726934"
+        },
+        {
+          "name": "Declan Grabb",
+          "authorId": "100664563"
+        },
+        {
+          "name": "Ananya Gangavarapu",
+          "authorId": "1972481155"
+        },
+        {
+          "name": "Saurav Sahay",
+          "authorId": "38531701"
+        },
+        {
+          "name": "Agasthya Gangavarapu",
+          "authorId": "2199260209"
+        },
+        {
+          "name": "P. Schramowski",
+          "authorId": "40896023"
+        },
+        {
+          "name": "Stephen Singam",
+          "authorId": "2349386814"
+        },
+        {
+          "name": "Tom David",
+          "authorId": "2349364458"
+        },
+        {
+          "name": "Xudong Han",
+          "authorId": "2349421919"
+        },
+        {
+          "name": "P. Mammen",
+          "authorId": "46213894"
+        },
+        {
+          "name": "Tarunima Prabhakar",
+          "authorId": "2349386804"
+        },
+        {
+          "name": "Venelin Kovatchev",
+          "authorId": "3455255"
+        },
+        {
+          "name": "Ahmed M. Ahmed",
+          "authorId": "2297807964"
+        },
+        {
+          "name": "Kelvin N. Manyeki",
+          "authorId": "2297187982"
+        },
+        {
+          "name": "Sandeep Madireddy",
+          "authorId": "2282048665"
+        },
+        {
+          "name": "Foutse Khomh",
+          "authorId": "1703493"
+        },
+        {
+          "name": "Fedor Zhdanov",
+          "authorId": "2297188641"
+        },
+        {
+          "name": "Joachim Baumann",
+          "authorId": "2349386344"
+        },
+        {
+          "name": "N. Vasan",
+          "authorId": "2346972058"
+        },
+        {
+          "name": "Xianjun Yang",
+          "authorId": "2347164329"
+        },
+        {
+          "name": "Carlos Mougn",
+          "authorId": "2349386758"
+        },
+        {
+          "name": "J. Varghese",
+          "authorId": "145853825"
+        },
+        {
+          "name": "Hussain Chinoy",
+          "authorId": "2077382646"
+        },
+        {
+          "name": "Seshakrishna Jitendar",
+          "authorId": "2349386774"
+        },
+        {
+          "name": "M. Maskey",
+          "authorId": "1742090"
+        },
+        {
+          "name": "C. Hardgrove",
+          "authorId": "2257262111"
+        },
+        {
+          "name": "Tianhao Li",
+          "authorId": "2349536126"
+        },
+        {
+          "name": "Aakash Gupta",
+          "authorId": "2349392501"
+        },
+        {
+          "name": "Emil Joswin",
+          "authorId": "1383227962"
+        },
+        {
+          "name": "Yifan Mai",
+          "authorId": "2054708905"
+        },
+        {
+          "name": "Shachi H. Kumar",
+          "authorId": "2109680564"
+        },
+        {
+          "name": "\u00c7igdem Patlak",
+          "authorId": "3259057"
+        },
+        {
+          "name": "Kevin Lu",
+          "authorId": "2350320490"
+        },
+        {
+          "name": "Vincent Alessi",
+          "authorId": "2349386789"
+        },
+        {
+          "name": "Sree Bhargavi Balija",
+          "authorId": "2302641458"
+        },
+        {
+          "name": "Chenhe Gu",
+          "authorId": "2349570331"
+        },
+        {
+          "name": "Robert Sullivan",
+          "authorId": "2349387311"
+        },
+        {
+          "name": "J. Gealy",
+          "authorId": "9250608"
+        },
+        {
+          "name": "Matt Lavrisa",
+          "authorId": "94118625"
+        },
+        {
+          "name": "James Goel",
+          "authorId": "2297187194"
+        },
+        {
+          "name": "Peter Mattson",
+          "authorId": "2065823421"
+        },
+        {
+          "name": "Percy Liang",
+          "authorId": "2345922409"
+        },
+        {
+          "name": "Joaquin Vanschoren",
+          "authorId": "2255370779"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancement and deployment of AI systems have created an urgent need for standard safety-evaluation frameworks. This paper introduces AILuminate v1.0, the first comprehensive industry-standard benchmark for assessing AI-product risk and reliability. Its development employed an open process that included participants from multiple fields. The benchmark evaluates an AI system's resistance to prompts designed to elicit dangerous, illegal, or undesirable behavior in 12 hazard categories, including violent crimes, nonviolent crimes, sex-related crimes, child sexual exploitation, indiscriminate weapons, suicide and self-harm, intellectual property, privacy, defamation, hate, sexual content, and specialized advice (election, financial, health, legal). Our method incorporates a complete assessment standard, extensive prompt datasets, a novel evaluation framework, a grading and reporting system, and the technical as well as organizational infrastructure for long-term support and evolution. In particular, the benchmark employs an understandable five-tier grading scale (Poor to Excellent) and incorporates an innovative entropy-based system-response evaluation. In addition to unveiling the benchmark, this report also identifies limitations of our method and of building safety benchmarks generally, including evaluator uncertainty and the constraints of single-turn interactions. This work represents a crucial step toward establishing global standards for AI risk and reliability evaluation while acknowledging the need for continued development in areas such as multiturn interactions, multimodal understanding, coverage of additional languages, and emerging hazard categories. Our findings provide valuable insights for model developers, system integrators, and policymakers working to promote safer AI deployment.",
+      "citationCount": 15,
+      "doi": "10.48550/arXiv.2503.05731",
+      "arxivId": "2503.05731",
+      "url": "https://www.semanticscholar.org/paper/86f28b118d3565922d94f108581e7aa965d3c639",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.05731"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e568769cc1a8ccc2b7ca8439545eaf1ec58c43ab",
+      "title": "The Need for More Attention to The Validity and Reliability of AI-Generated Exercise Programs",
+      "authors": [
+        {
+          "name": "Seyed Milad Saadati",
+          "authorId": "2264146609"
+        }
+      ],
+      "year": 2023,
+      "abstract": "In the evolving realm of health and fitness, the integration of artificial intelligence (AI), especially tools like ChatGPT in creating exercise programs, represents a significant technological leap. This paper addresses the critical need for thorough examination of the validity and reliability of such AI-generated exercise regimens. We explore the dual facets of opportunity and challenge presented by AI in fitness, emphasizing the importance of aligning AI recommendations with established exercise science principles and individual health requirements. The paper advocates for a systematic framework to assess these programs and discusses the potential risks and benefits. Ultimately, it seeks to bridge the gap between technological innovation and health safety, promoting responsible utilization of AI to enhance physical well-being. This discussion contributes to the ongoing dialogue about AI's role in health and fitness, underscoring the need for a balanced approach that prioritizes both innovation and safety.",
+      "citationCount": 5,
+      "doi": "10.61838/hn.1.1.12",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e568769cc1a8ccc2b7ca8439545eaf1ec58c43ab",
+      "venue": "Health Nexus",
+      "journal": {
+        "name": "Health Nexus"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a0612e8b1a2031739aeed1dae5cbbc98928bce0d",
+      "title": "Hallucination or vision? Establishing reliability and validity of AI-based qualitative analysis of the unified model of activism in the Scottish independence Twitter debate",
+      "authors": [
+        {
+          "name": "A. Diers-Lawson",
+          "authorId": "1403783547"
+        },
+        {
+          "name": "Stuart J. Lawson",
+          "authorId": "2327809783"
+        }
+      ],
+      "year": 2024,
+      "abstract": "PurposeThe present study explores both the validation of the unified model of activism and the methodological reliability of the LlamaParsing approach to natural language processing. Theoretically, it applies the unified model of activism within the context of the Scottish independence movement, evaluating its effectiveness in social media environment.Design/methodology/approachMethodologically, it addresses the reliability and validity challenges associated with AI analyses, particularly the issue of AI hallucinations\u2014instances where AI generates seemingly accurate but incorrect information. By employing the LlamaParsing approach and then comparing and contrasting it with a quantitative content coding process, the study demonstrates how context-specific instructions can enhance the accuracy of AI analyses.FindingsThe findings indicate this approach not only tests and extends the unified model of activism but also offers a robust methodological framework for using NLP and RAG in qualitative research. This dual focus underscores the potential of AI to provide systematic and theoretically valuable insights while highlighting the importance of mitigating its limitations.Originality/valueThis study represents a cutting-edge approach to qualitative data analysis, theory development, and theory testing in communication using a tool that was developed in 2024.",
+      "citationCount": 2,
+      "doi": "10.1108/ccij-08-2024-0139",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a0612e8b1a2031739aeed1dae5cbbc98928bce0d",
+      "venue": "Corporate Communications. An International Journal",
+      "journal": {
+        "name": "Corporate Communications: An International Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "368cd2fe5b2c085f2ec2f962e4aa918e86a42511",
+      "title": "Toward an Evaluation Science for Generative AI Systems",
+      "authors": [
+        {
+          "name": "Laura Weidinger",
+          "authorId": "51932191"
+        },
+        {
+          "name": "Deborah Raji",
+          "authorId": "2334475192"
+        },
+        {
+          "name": "Hanna Wallach",
+          "authorId": "2286067853"
+        },
+        {
+          "name": "Margaret Mitchell",
+          "authorId": "2367274176"
+        },
+        {
+          "name": "Angelina Wang",
+          "authorId": "2349388428"
+        },
+        {
+          "name": "Olawale Salaudeen",
+          "authorId": "2041792512"
+        },
+        {
+          "name": "Rishi Bommasani",
+          "authorId": "2223138553"
+        },
+        {
+          "name": "Sayash Kapoor",
+          "authorId": "39893263"
+        },
+        {
+          "name": "Deep Ganguli",
+          "authorId": "2081806483"
+        },
+        {
+          "name": "Sanmi Koyejo",
+          "authorId": "123593472"
+        },
+        {
+          "name": "William Isaac",
+          "authorId": "2275178344"
+        }
+      ],
+      "year": 2025,
+      "abstract": "There is an increasing imperative to anticipate and understand the performance and safety of generative AI systems in real-world deployment contexts. However, the current evaluation ecosystem is insufficient: Commonly used static benchmarks face validity challenges, and ad hoc case-by-case audits rarely scale. In this piece, we advocate for maturing an evaluation science for generative AI systems. While generative AI creates unique challenges for system safety engineering and measurement science, the field can draw valuable insights from the development of safety evaluation practices in other fields, including transportation, aerospace, and pharmaceutical engineering. In particular, we present three key lessons: Evaluation metrics must be applicable to real-world performance, metrics must be iteratively refined, and evaluation institutions and norms must be established. Applying these insights, we outline a concrete path toward a more rigorous approach for evaluating generative AI systems.",
+      "citationCount": 28,
+      "doi": "10.48550/arXiv.2503.05336",
+      "arxivId": "2503.05336",
+      "url": "https://www.semanticscholar.org/paper/368cd2fe5b2c085f2ec2f962e4aa918e86a42511",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.05336"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "87bd68387f5b634735f9aa73ac177be3e385b8a7",
+      "title": "Responsible AI in Construction Safety: Systematic Evaluation of Large Language Models and Prompt Engineering",
+      "authors": [
+        {
+          "name": "Farouq Sammour",
+          "authorId": "2161563902"
+        },
+        {
+          "name": "Jia Xu",
+          "authorId": "2330447437"
+        },
+        {
+          "name": "Xi Wang",
+          "authorId": "2330445655"
+        },
+        {
+          "name": "Mo Hu",
+          "authorId": "2330758673"
+        },
+        {
+          "name": "Zhenyu Zhang",
+          "authorId": "2330567214"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Construction remains one of the most hazardous sectors. Recent advancements in AI, particularly Large Language Models (LLMs), offer promising opportunities for enhancing workplace safety. However, responsible integration of LLMs requires systematic evaluation, as deploying them without understanding their capabilities and limitations risks generating inaccurate information, fostering misplaced confidence, and compromising worker safety. This study evaluates the performance of two widely used LLMs, GPT-3.5 and GPT-4o, across three standardized exams administered by the Board of Certified Safety Professionals (BCSP). Using 385 questions spanning seven safety knowledge areas, the study analyzes the models' accuracy, consistency, and reliability. Results show that both models consistently exceed the BCSP benchmark, with GPT-4o achieving an accuracy rate of 84.6% and GPT-3.5 reaching 73.8%. Both models demonstrate strengths in safety management systems and hazard identification and control, but exhibit weaknesses in science, mathematics, emergency response, and fire prevention. An error analysis identifies four primary limitations affecting LLM performance: lack of knowledge, reasoning flaws, memory issues, and calculation errors. Our study also highlights the impact of prompt engineering strategies, with variations in accuracy reaching 13.5% for GPT-3.5 and 7.9% for GPT-4o. However, no single prompt configuration proves universally effective. This research advances knowledge in three ways: by identifying areas where LLMs can support safety practices and where human oversight remains essential, by offering practical insights into improving LLM implementation through prompt engineering, and by providing evidence-based direction for future research and development. These contributions support the responsible integration of AI in construction safety management toward achieving zero injuries.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2411.08320",
+      "arxivId": "2411.08320",
+      "url": "https://www.semanticscholar.org/paper/87bd68387f5b634735f9aa73ac177be3e385b8a7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.08320"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "54e83a2a2fc5242cd4c7992a1fd6306b37c7bcc3",
+      "title": "To trust or not to trust: evaluating the reliability and safety of AI responses to laryngeal cancer queries",
+      "authors": [
+        {
+          "name": "M. Ostrowska",
+          "authorId": "50165830"
+        },
+        {
+          "name": "Paulina Kaca\u0142a",
+          "authorId": "2298037663"
+        },
+        {
+          "name": "Deborah Onolememen",
+          "authorId": "2298039554"
+        },
+        {
+          "name": "Katie Vaughan-Lane",
+          "authorId": "2298035535"
+        },
+        {
+          "name": "Anitta Sisily Joseph",
+          "authorId": "2236588323"
+        },
+        {
+          "name": "A. Ostrowski",
+          "authorId": "51285321"
+        },
+        {
+          "name": "Wioleta Pietruszewska",
+          "authorId": "2280661743"
+        },
+        {
+          "name": "Jacek Banaszewski",
+          "authorId": "2298035724"
+        },
+        {
+          "name": "Maciej J. Wr\u00f3bel",
+          "authorId": "2258407327"
+        }
+      ],
+      "year": 2024,
+      "abstract": "As online health information-seeking surges, concerns mount over the quality and safety of accessible content, potentially leading to patient harm through misinformation. On one hand, the emergence of Artificial Intelligence (AI) in healthcare could prevent it; on the other hand, questions raise regarding the quality and safety of the medical information provided. As laryngeal cancer is a prevalent head and neck malignancy, this study aims to evaluate the utility and safety of three large language models (LLMs) as sources of patient information about laryngeal cancer. A cross-sectional study was conducted using three LLMs (ChatGPT 3.5, ChatGPT 4.0, and Bard). A questionnaire comprising 36 inquiries about laryngeal cancer was categorised into diagnosis (11 questions), treatment (9 questions), novelties and upcoming treatments (4 questions), controversies (8 questions), and sources of information (4 questions). The population of reviewers consisted of 3 groups, including ENT specialists, junior physicians, and non-medicals, who graded the responses. Each physician evaluated each question twice for each model, while non-medicals only once. Everyone was blinded to the model type, and the question order was shuffled. Outcome evaluations were based on a safety score (1\u20133) and a Global Quality Score (GQS, 1\u20135). Results were compared between LLMs. The study included iterative assessments and statistical validations. Analysis revealed that ChatGPT 3.5 scored highest in both safety (mean: 2.70) and GQS (mean: 3.95). ChatGPT 4.0 and Bard had lower safety scores of 2.56 and 2.42, respectively, with corresponding quality scores of 3.65 and 3.38. Inter-rater reliability was consistent, with less than 3% discrepancy. About 4.2% of responses fell into the lowest safety category (1), particularly in the novelty category. Non-medical reviewers' quality assessments correlated moderately (r\u2009=\u20090.67) with response length. LLMs can be valuable resources for patients seeking information on laryngeal cancer. ChatGPT 3.5 provided the most reliable and safe responses among the models evaluated.",
+      "citationCount": 21,
+      "doi": "10.1007/s00405-024-08643-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/54e83a2a2fc5242cd4c7992a1fd6306b37c7bcc3",
+      "venue": "European Archives of Oto-Rhino-Laryngology",
+      "journal": {
+        "name": "European Archives of Oto-Rhino-Laryngology",
+        "pages": "6069 - 6081",
+        "volume": "281"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1dfb8f233085d9566c98c45bc2342c2e63f0c98a",
+      "title": "Development, Reliability, and Structural Validity of the Scale for Knowledge, Attitude, and Practice in Ethics Implementation Among AI Researchers: Cross-Sectional Study",
+      "authors": [
+        {
+          "name": "X. Zhang",
+          "authorId": "34195342"
+        },
+        {
+          "name": "Ying Gu",
+          "authorId": "2022231292"
+        },
+        {
+          "name": "Jie Yin",
+          "authorId": "2247239841"
+        },
+        {
+          "name": "Yuejie Zhang",
+          "authorId": "7550713"
+        },
+        {
+          "name": "Cheng Jin",
+          "authorId": "2114038457"
+        },
+        {
+          "name": "Weibing Wang",
+          "authorId": "2246648629"
+        },
+        {
+          "name": "Albert M Li",
+          "authorId": "2248998966"
+        },
+        {
+          "name": "Yingwen Wang",
+          "authorId": "14769391"
+        },
+        {
+          "name": "Lang Su",
+          "authorId": "3151024"
+        },
+        {
+          "name": "Honghe Xu",
+          "authorId": "89067973"
+        },
+        {
+          "name": "Xiaoling Ge",
+          "authorId": "2075443983"
+        },
+        {
+          "name": "Chengjie Ye",
+          "authorId": "2075469422"
+        },
+        {
+          "name": "Liangfeng Tang",
+          "authorId": "2159079227"
+        },
+        {
+          "name": "Bing Shen",
+          "authorId": "2114338664"
+        },
+        {
+          "name": "Jinwu Fang",
+          "authorId": "123071946"
+        },
+        {
+          "name": "Dao-Ming Wan",
+          "authorId": "2064361051"
+        },
+        {
+          "name": "Rui Feng",
+          "authorId": "2190489193"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Background Medical artificial intelligence (AI) has significantly contributed to decision support for disease screening, diagnosis, and management. With the growing number of medical AI developments and applications, incorporating ethics is considered essential to avoiding harm and ensuring broad benefits in the lifecycle of medical AI. One of the premises for effectively implementing ethics in Medical AI research necessitates researchers' comprehensive knowledge, enthusiastic attitude, and practical experience. However, there is currently a lack of an available instrument to measure these aspects. Objective The aim of this study was to develop a comprehensive scale for measuring the knowledge, attitude, and practice of ethics implementation among medical AI researchers, and to evaluate its measurement properties. Methods The construct of the Knowledge-Attitude-Practice in Ethics Implementation (KAP-EI) scale was based on the Knowledge-Attitude-Practice (KAP) model, and the evaluation of its measurement properties was in compliance with the COnsensus-based Standards for the selection of health status Measurement INstruments (COSMIN) reporting guidelines for studies on measurement instruments. The study was conducted in 2 phases. The first phase involved scale development through a systematic literature review, qualitative interviews, and item analysis based on a cross-sectional survey. The second phase involved evaluation of structural validity and reliability through another cross-sectional study. Results The KAP-EI scale had 3 dimensions including knowledge (10 items), attitude (6 items), and practice (7 items). The Cronbach \u03b1 for the whole scale reached .934. Confirmatory factor analysis showed that the goodness-of-fit indices of the scale were satisfactory (\u03c72/df ratio:=2.338, comparative fit index=0.949, Tucker Lewis index=0.941, root-mean-square error of approximation=0.064, and standardized root-mean-square residual=0.052). Conclusions The results show that the scale has good reliability and structural validity; hence, it could be considered an effective instrument. This is the first instrument developed for this purpose.",
+      "citationCount": 6,
+      "doi": "10.2196/42202",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1dfb8f233085d9566c98c45bc2342c2e63f0c98a",
+      "venue": "JMIR Formative Research",
+      "journal": {
+        "name": "JMIR Formative Research",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "f3787fc52863041b7f9fd9f01ac32fc2aa80a31d",
+      "title": "Probabilistic Analysis of Copyright Disputes and Generative AI Safety",
+      "authors": [
+        {
+          "name": "Hiroaki Chiba-Okabe",
+          "authorId": "2297800322"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper presents a probabilistic approach to analyzing copyright infringement disputes. Evidentiary principles shaped by case law are formalized in probabilistic terms, and the \u201cinverse ratio rule\u201d\u2014a controversial legal doctrine adopted by some courts\u2014is examined. Although this rule has faced significant criticism, a formal proof demonstrates its validity, provided it is properly defined. The probabilistic approach is further employed to study the copyright safety of generative AI. Specifically, the Near Access-Free (NAF) condition, previously proposed as a strategy for mitigating the heightened copyright infringement risks of generative AI, is evaluated. The analysis reveals limitations in its justifiability and efficacy.",
+      "citationCount": 4,
+      "doi": "10.1145/3769126.3769139",
+      "arxivId": "2410.00475",
+      "url": "https://www.semanticscholar.org/paper/f3787fc52863041b7f9fd9f01ac32fc2aa80a31d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "Proceedings of the Twentieth International Conference on Artificial Intelligence and Law"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book"
+      ]
+    },
+    {
+      "paperId": "477ff972c576a8c60c67f41fa011b8096447e00c",
+      "title": "Multidimensional Evaluation of Large Language Models on the AAP In-Service Examination: Assessing Accuracy, Calibration, and Citation Reliability",
+      "authors": [
+        {
+          "name": "Prita Abhay",
+          "authorId": "2386084000"
+        },
+        {
+          "name": "Robin Henderson",
+          "authorId": "2267241239"
+        },
+        {
+          "name": "Prita A Dhaimade",
+          "authorId": "29923797"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1101/2025.10.14.25338040",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/477ff972c576a8c60c67f41fa011b8096447e00c",
+      "venue": "medRxiv",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c29f2125e0c9756a8a66bda6c5b50558097443d0",
+      "title": "Ensuring Reliability: Adaptation and Validation of the AI Anxiety Scale (AIAS) in Indonesia",
+      "authors": [
+        {
+          "name": "Shifa Ramadini",
+          "authorId": "2368285785"
+        },
+        {
+          "name": "Ratri Pratiwi",
+          "authorId": "2368276144"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study aims to adapt Wang and Wang\u2019s Artificial Intelligence Anxiety Scale (2019) into the context of Indonesian culture and language. The research involved 222 respondents, consisting of 89 males and 133 females, aged between 15 and over 35 years old. The adaptation process followed six stages: (1) initial translations by translators with different backgrounds, (2) synthesis of the translations into a single version, (3) back-translation by native speakers of the source language, (4) content validation by an expert committee, (5) testing the pre-final version on relevant subjects, and (6) submission of documentation for evaluation. Reliability testing was conducted using Cronbach\u2019s alpha, while logical validity was assessed with Aiken\u2019s V and construct validity using confirmatory factor analysis (CFA). The results indicated that the adapted scale had high reliability, with a Cronbach\u2019s alpha value of 0.916, and adequate validity, with an Aiken\u2019s V value greater than 0.50. The confirmatory factor analysis demonstrated a good model fit, with an RMSEA value of 0.066, CFI of 0.938, and TLI of 0.927. The Indonesian version of the Artificial Intelligence Anxiety Scale is deemed valid and reliable, making it suitable for use in Indonesia",
+      "citationCount": 0,
+      "doi": "10.47679/jopp.7210452025",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c29f2125e0c9756a8a66bda6c5b50558097443d0",
+      "venue": "Journal of Psychological Perspective",
+      "journal": {
+        "name": "Journal of Psychological Perspective"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "767098d2e324258fec0d33148eec44f7955b56ce",
+      "title": "Measuring user competence in using artificial intelligence: validity and reliability of artificial intelligence literacy scale",
+      "authors": [
+        {
+          "name": "Bingcheng Wang",
+          "authorId": "46270214"
+        },
+        {
+          "name": "P. Rau",
+          "authorId": "1740664"
+        },
+        {
+          "name": "Tianyi Yuan",
+          "authorId": "2060625934"
+        }
+      ],
+      "year": 2022,
+      "abstract": "ABSTRACT As artificial intelligence (AI) became a part of daily life, it has become important to determine user competence in using AI technology. Here, we propose the concept of AI literacy and develop a quantitative scale for obtaining accurate data regarding the AI literacy of ordinary users. We first identified the primary core constructs of AI literacy, including awareness, use, evaluation, and ethics. Next, we generated 65 items to capture these four constructs; only 31 items were retained after a three-step content validation process. Then, we conducted a survey, and collected two samples of data. By reducing the number of items using the first sample and performing reliability and validity tests on the second sample, we obtained a 12-item instrument for the quantitative measurement of AI literacy. The results confirmed that the proposed four-construct model is an adequate representation of AI literacy. Further, AI literacy is significantly related to digital literacy, attitude towards robots, and users\u2019 daily usage of AI. This study will not only aid researchers in understanding how user competence in using AI technology affects human\u2013AI interactions but will also help designers develop AI applications that are aligned with the AI literacy levels of the target users.",
+      "citationCount": 362,
+      "doi": "10.1080/0144929X.2022.2072768",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/767098d2e324258fec0d33148eec44f7955b56ce",
+      "venue": "Behavior and Information Technology",
+      "journal": {
+        "name": "Behaviour & Information Technology",
+        "pages": "1324 - 1337",
+        "volume": "42"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "2503d1dee676ce36c1778121b0ae732b9a384d79",
+      "title": "A validity and reliability study of the artificial intelligence attitude scale (AIAS-4) and its relationship with social media addiction and eating behaviors in Turkish adults",
+      "authors": [
+        {
+          "name": "Neslihan Arslan",
+          "authorId": "2300439065"
+        },
+        {
+          "name": "Kubra Esin",
+          "authorId": "6088753"
+        },
+        {
+          "name": "Feride Ayy\u0131ld\u0131z",
+          "authorId": "2332973950"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In recent years, there has been a rapid increase in the use of the internet and social media. Billions of people worldwide use social media and spend an average of 2.2 h a day on these platforms. At the same time, artificial intelligence (AI) applications have become widespread in many fields, such as health, education, and finance. While AI has the potential to monitor eating behaviors and provide personalized health support, excessive use of social media and AI can lead to negative effects. These include addiction and reduced quality of life. It is important to examine the attitude toward AI and its relationship with social media addiction, eating behavior, and life satisfaction. Research on the connection between AI attitudes and eating habits is lacking, which emphasizes the necessity of validating AIAS-4 in Turkish in order to ensure its efficacy in this context. The first stage of the study aimed to adapt Grassini\u2019s (2023) Artificial Intelligence Attitude Scale (AIAS-4) into Turkish and assess its validity and reliability. In the second stage, it was aimed to examine the relationship between artificial intelligence attitude and social media addiction, eating behavior, and life satisfaction. This study cross-sectional and methodological study was conducted in two stages in T\u00fcrkiye. 172 adult individuals underwent a validity and reliability study in the first stage (43% of them were men and 57% were women), which involved adapting the AIAS-4 into Turkish. In the second stage, the relationships between artificial intelligence attitude, social media addiction, eating behavior, and life satisfaction of 510 individuals were evaluated with an average age of 24.88\u2009\u00b1\u20097.05 years (30.8% male, 69.2% female). Using the snowball sampling technique, the survey was carried out on adults by reaching out to staff and their families from both universities (Gazi University and Tokat Gaziosmanpa\u015fa University) as well as students and their relatives. A face-to-face survey approach (delivered by an interviewer) was used for the study. In this study, the Social Media Addiction Scale-Adult Form(SMAS-AF) was used to assess social media addiction, the Scale of Effects of Social Media on Eating Behavior (SESMEB) was used to measure the impact of social media on eating behavior, the Contentment with Life Assessment Scale was used to evaluate life satisfaction, and the Eating Disorder Examination Questionnaire (EDE-Q total) was used to assess eating disorder symptoms. Pearson Correlation and Spearman Correlation according to normality and Linear regression analysis were used to analyse variables. AIAS-4 was a valid and reliable instrument in this study conducted in T\u00fcrkiye (Cronbach\u2019s alpha\u2009=\u20090.90 and McDonald\u2019s omega\u2009=\u20090.89). Individuals spend an average of 3.7\u2009\u00b1\u20091.99 h per day on social media. All participants used WhatsApp, while 89.8% used Instagram. A negative correlation was found between AIAS and EDE-Q total, (r=-0.119 p\u2009<\u20090.05). BMI correlated positively with EDE-Q total (r\u2009=\u20090.391, p\u2009<\u20090.01). Higher AIAS scores were associated with increased time spent on social media (r\u2009=\u20090.129, p\u2009<\u20090.001). Conversely, higher AIAS scores were associated with lower EDE-Q total scores (r= -0.119, p\u2009<\u20090.001). SESMEB correlated positively with EDE-Q total (r\u2009=\u20090.169; p\u2009<\u20090.001). The model showed that BMI (\u03b2\u2009=\u20090.311; p\u2009<\u20090.001), AIAS (\u03b2 =-0.157, p\u2009=\u20090.005), SMAS-AF (\u03b2\u2009=\u20090.036; p\u2009=\u20090.002) and SESMEB (\u03b2\u2009=\u20090.022; p\u2009=\u20090.038) affected EDE-Q total (p\u2009<\u20090.001 R2\u2009=\u20090.198). This study revealed that the Artificial Intelligence Attitude Scale (AIAS) is valid and reliable for Turkish adults. The results show that BMI, social media addiction have positive, and AI attitude has negative impact on eating behaviors. These findings emphasize the importance of multidisciplinary approaches and awareness programs in the prevention and management of eating disorders.",
+      "citationCount": 3,
+      "doi": "10.1186/s12889-025-22507-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2503d1dee676ce36c1778121b0ae732b9a384d79",
+      "venue": "BMC Public Health",
+      "journal": {
+        "name": "BMC Public Health",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "7bec564bd2cc6b4a2496b8ec3c83cb929826ebbc",
+      "title": "Validity, Reliability and Reproducibility of Artificial Intelligence\u2010Based Methods in Tooth Widths, Bolton Ratios and Space Analysis: A Pilot Study",
+      "authors": [
+        {
+          "name": "R\u00fcmeysa Bilici Ge\u00e7er",
+          "authorId": "2253812980"
+        },
+        {
+          "name": "Asl\u0131 Pelin Kaya Bursa",
+          "authorId": "2375807093"
+        },
+        {
+          "name": "Nil\u00fcfer Altay",
+          "authorId": "2375806313"
+        },
+        {
+          "name": "Ahmet Burkay Ayd\u0131n",
+          "authorId": "2375806754"
+        }
+      ],
+      "year": 2025,
+      "abstract": "To evaluate the validity, reliability and reproducibility of manual, fully automated and semi\u2010automated artificial intelligence (AI)\u2013based methods for measuring tooth widths, calculating Bolton ratios and performing space analysis.",
+      "citationCount": 1,
+      "doi": "10.1111/ocr.70016",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7bec564bd2cc6b4a2496b8ec3c83cb929826ebbc",
+      "venue": "Orthodontics & craniofacial research",
+      "journal": {
+        "name": "Orthodontics & Craniofacial Research",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3bc0fecfe3e963e286c2e4637a11d79aec924b3d",
+      "title": "A method for determination of hematocrit using the mobile app \u201cHaemoCalc\u201d: Validity, reliability, and effect of user expertise",
+      "authors": [
+        {
+          "name": "Lawrence D. Hayes",
+          "authorId": "2291130769"
+        },
+        {
+          "name": "N. Sanal-Hayes",
+          "authorId": "2124145263"
+        },
+        {
+          "name": "Maryam Ellam",
+          "authorId": "2355577360"
+        },
+        {
+          "name": "Marie Mclaughlin",
+          "authorId": "47429522"
+        },
+        {
+          "name": "M. Swainson",
+          "authorId": "10057005"
+        },
+        {
+          "name": "Nicholas F. Sculthorpe",
+          "authorId": "2251102743"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We evaluated validity, reliability, and effect of user expertise of \u201cHaemoCalc\u201d, a mobile phone application for hematocrit (Hct) measurement from fingerpick blood samples, compared to a traditional Hawksley microhaematocrit reader (MHR). Experiment 1 examined the effect pitch angle during image capture exerted on the validity of Hct values. Twenty participants' samples were analyzed at 0\u00b0, 10\u00b0, and 20\u00b0 directly over the sample, and 33\u00b0 with a 10\u2009cm setback. Analysis of variance (ANOVA) revealed a significant effect of angle on Hct values (p\u2009<\u20090.01). Measurements at 33\u00b0 pitch differed from other angles and the MHR (p\u2009<\u20090.001, d\u2009=\u20092.31\u20133.06). Bland\u2013Altman analysis showed good agreement at 0\u00b0, 10\u00b0, and 20\u00b0 (mean differences: \u22120.4% to 1.0%) but poor agreement at 33\u00b0 (mean difference: \u22124.4%, LOA: \u22120.7% to 8.4%). Experiment 2 assessed inter\u2010 and intra\u2010rater reliability of expert and novice users (n\u2009=\u200912). Participants performed three trials each. HaemoCalc and MHR showed excellent reliability (ICC\u2009=\u20090.95\u20131.00). No differences were observed between experts and novices (p\u2009=\u20091.000, d\u2009=\u20090.01\u20130.39). HaemoCalc is a valid and reliable tool for Hct measurement at small pitch angles and in expert and novice users. The HaemoCalc app offers scalability, repeatability, health and safety benefits, and potential applications in medical education and remote learning.",
+      "citationCount": 0,
+      "doi": "10.14814/phy2.70314",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3bc0fecfe3e963e286c2e4637a11d79aec924b3d",
+      "venue": "Physiological Reports",
+      "journal": {
+        "name": "Physiological Reports",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

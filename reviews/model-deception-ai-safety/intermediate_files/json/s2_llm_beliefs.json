@@ -1,0 +1,793 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "LLM beliefs representations mental states",
+  "results": [
+    {
+      "paperId": "04d7fbd85dd65453d3345d3146270fe389b3da33",
+      "title": "Deflating Deflationism: A Critical Perspective on Debunking Arguments Against LLM Mentality",
+      "authors": [
+        {
+          "name": "Alex Grzankowski",
+          "authorId": "104191368"
+        },
+        {
+          "name": "Geoff Keeling",
+          "authorId": "2303652599"
+        },
+        {
+          "name": "Henry Shevlin",
+          "authorId": "2367197801"
+        },
+        {
+          "name": "Winnie Street",
+          "authorId": "2298274333"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Many people feel compelled to interpret, describe, and respond to Large Language Models (LLMs) as if they possess inner mental lives similar to our own. Responses to this phenomenon have varied. Inflationists hold that at least some folk psychological ascriptions to LLMs are warranted. Deflationists argue that all such attributions of mentality to LLMs are misplaced, often cautioning against the risk that anthropomorphic projection may lead to misplaced trust or potentially even confusion about the moral status of LLMs. We advance this debate by assessing two common deflationary arguments against LLM mentality. What we term the 'robustness strategy' aims to undercut one justification for believing that LLMs are minded entities by showing that putatively cognitive and humanlike behaviours are not robust, failing to generalise appropriately. What we term the 'etiological strategy' undercuts attributions of mentality by challenging naive causal explanations of LLM behaviours, offering alternative causal accounts that weaken the case for mental state attributions. While both strategies offer powerful challenges to full-blown inflationism, we find that neither strategy provides a knock-down case against ascriptions of mentality to LLMs simpliciter. With this in mind, we explore a modest form of inflationism that permits ascriptions of mentality to LLMs under certain conditions. Specifically, we argue that folk practice provides a defeasible basis for attributing mental states and capacities to LLMs provided those mental states and capacities can be understood in metaphysically undemanding terms (e.g. knowledge, beliefs and desires), while greater caution is required when attributing metaphysically demanding mental phenomena such as phenomenal consciousness.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.13403",
+      "arxivId": "2506.13403",
+      "url": "https://www.semanticscholar.org/paper/04d7fbd85dd65453d3345d3146270fe389b3da33",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.13403"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8cf3233a41b8519bca7dfdfa9f50ae2883266a2a",
+      "title": "Going Whole Hog: A Philosophical Defense of AI Cognition",
+      "authors": [
+        {
+          "name": "H. Cappelen",
+          "authorId": "2944535"
+        },
+        {
+          "name": "J. Dever",
+          "authorId": "2300117"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This work defends the 'Whole Hog Thesis': sophisticated Large Language Models (LLMs) like ChatGPT are full-blown linguistic and cognitive agents, possessing understanding, beliefs, desires, knowledge, and intentions. We argue against prevailing methodologies in AI philosophy, rejecting starting points based on low-level computational details ('Just an X' fallacy) or pre-existing theories of mind. Instead, we advocate starting with simple, high-level observations of LLM behavior (e.g., answering questions, making suggestions) -- defending this data against charges of metaphor, loose talk, or pretense. From these observations, we employ 'Holistic Network Assumptions' -- plausible connections between mental capacities (e.g., answering implies knowledge, knowledge implies belief, action implies intention) -- to argue for the full suite of cognitive states. We systematically rebut objections based on LLM failures (hallucinations, planning/reasoning errors), arguing these don't preclude agency, often mirroring human fallibility. We address numerous 'Games of Lacks', arguing that LLMs do not lack purported necessary conditions for cognition (e.g., semantic grounding, embodiment, justification, intrinsic intentionality) or that these conditions are not truly necessary, often relying on anti-discriminatory arguments comparing LLMs to diverse human capacities. Our approach is evidential, not functionalist, and deliberately excludes consciousness. We conclude by speculating on the possibility of LLMs possessing 'alien' contents beyond human conceptual schemes.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2504.13988",
+      "arxivId": "2504.13988",
+      "url": "https://www.semanticscholar.org/paper/8cf3233a41b8519bca7dfdfa9f50ae2883266a2a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.13988"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3ea41152392476f7781e077deeb8bb8aa6646c04",
+      "title": "Beliefs, make-beliefs, and making believe that beliefs are not make-beliefs",
+      "authors": [
+        {
+          "name": "A. Voltolini",
+          "authorId": "2379331"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1007/s11229-020-03015-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3ea41152392476f7781e077deeb8bb8aa6646c04",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "5061-5078",
+        "volume": "199"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "019a90eeb51027dc96fe523b0f37e200ab65e792",
+      "title": "Beliefs, make-beliefs, and making believe that beliefs are not make-beliefs",
+      "authors": [
+        {
+          "name": "A. Voltolini",
+          "authorId": "2379331"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11229-020-03015-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/019a90eeb51027dc96fe523b0f37e200ab65e792",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "5061 - 5078",
+        "volume": "199"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "87aae3cbdf993bc243517c1fc595d2cdd4028c23",
+      "title": "Complexity of Mental Representation: A Cognitive Pragmatics Perspective",
+      "authors": [
+        {
+          "name": "Saman Mohammad Othman",
+          "authorId": "2140661904"
+        },
+        {
+          "name": "Salah M. Salih",
+          "authorId": "87135016"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.26750/VOL(8).NO(3).PAPER22",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/87aae3cbdf993bc243517c1fc595d2cdd4028c23",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "464-479",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bcbb02a484ca501dcedd8bc6be0c56cf69e42b2a",
+      "title": "Artificial Intelligence and the Illusion of Understanding: A Systematic Review of Theory of Mind and Large Language Models",
+      "authors": [
+        {
+          "name": "Antonella Marchetti",
+          "authorId": "2312398690"
+        },
+        {
+          "name": "F. Manzi",
+          "authorId": "31636934"
+        },
+        {
+          "name": "Giuseppe Riva",
+          "authorId": "2279720491"
+        },
+        {
+          "name": "A. Gaggioli",
+          "authorId": "1700503"
+        },
+        {
+          "name": "D. Massaro",
+          "authorId": "4623295"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The development of Large Language Models (LLMs) has sparked significant debate regarding their capacity for Theory of Mind (ToM)\u2014the ability to attribute mental states to oneself and others. This systematic review examines the extent to which LLMs exhibit Artificial ToM (AToM) by evaluating their performance on ToM tasks and comparing it with human responses. While LLMs, particularly GPT-4, perform well on first-order false belief tasks, they struggle with more complex reasoning, such as second-order beliefs and recursive inferences, where humans consistently outperform them. Moreover, the review underscores the variability in ToM assessments, as many studies adapt classical tasks for LLMs, raising concerns about comparability with human ToM. Most evaluations remain constrained to text-based tasks, overlooking embodied and multimodal dimensions crucial to human social cognition. This review discusses the \u201cillusion of understanding\u201d in LLMs for two primary reasons: First, their lack of the developmental and cognitive mechanisms necessary for genuine ToM, and second, methodological biases in test designs that favor LLMs\u2019 strengths, limiting direct comparisons with human performance. The findings highlight the need for more ecologically valid assessments and interdisciplinary research to better delineate the limitations and potential of AToM. This set of issues is highly relevant to psychology, as language is generally considered just one component in the broader development of human ToM, a perspective that contrasts with the dominant approach in AToM studies. This discrepancy raises critical questions about the extent to which human ToM and AToM are comparable.",
+      "citationCount": 3,
+      "doi": "10.1089/cyber.2024.0536",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bcbb02a484ca501dcedd8bc6be0c56cf69e42b2a",
+      "venue": "Cyberpsychology, Behavior, and Social Networking",
+      "journal": {
+        "name": "Cyberpsychology, Behavior, and Social Networking",
+        "pages": "505 - 514",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1ceb71b76b07039f6ade4e4e9ca2fdfb00a505d2",
+      "title": "On the attribution of confidence to large language models",
+      "authors": [
+        {
+          "name": "Geoff Keeling",
+          "authorId": "2303652599"
+        },
+        {
+          "name": "Winnie Street",
+          "authorId": "2298274333"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Credences are mental states corresponding to degrees of confidence in propositions. Attribution of credences to Large Language Models (LLMs) is commonplace in the empirical literature on LLM evaluation. Yet the theoretical basis for LLM credence attribution is unclear. We defend three claims. First, our semantic claim is that LLM credence attributions are (at least in general) correctly interpreted literally, as expressing truth-apt beliefs on the part of scientists that purport to describe facts about LLM credences. Second, our metaphysical claim is that the existence of LLM credences is at least plausible, although current evidence is inconclusive. Third, our epistemic claim is that LLM credence attributions made in the empirical literature on LLM evaluation are subject to non-trivial sceptical concerns. It is a distinct possibility that even if LLMs have credences, LLM credence attributions are generally false because the experimental techniques used to assess LLM credences are not truth-tracking.",
+      "citationCount": 5,
+      "doi": "10.1080/0020174X.2025.2450598",
+      "arxivId": "2407.08388",
+      "url": "https://www.semanticscholar.org/paper/1ceb71b76b07039f6ade4e4e9ca2fdfb00a505d2",
+      "venue": "Inquiry",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.08388"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dda7a8570c6ac071482b8773a2c87c089e07b5c5",
+      "title": "A logical-semantic analysis of utterances of intentional states of subject",
+      "authors": [
+        {
+          "name": "P. A. Pavlukhina",
+          "authorId": "2174412797"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Utterances of the subject\u2019s intentional states were analyzed in the second half of the 20th century by researchers of epistemic logic. This approach was unable to complete the solution of the problem of logical omniscience because the subject of utterances does not always know all the consequences of their knowledge in everyday life. Sometimes the subject is convinced that contradictory utterances are true. In this way, epistemic logic idealizes the position of the subject in the analysis of utterances and, moreover, fixes them in one state. Because of this, the subject cannot expand and supplement their knowledge, because they already know all the logical consequences of utterances at the same time. This issue can be solved remaining within the framework of epistemic logic. In this case we have to weaken the subject\u2019s cognitive potential for that, and, moreover, we have to take into account the subjective nature of utterances. This approach is based on the analysis of the implicit knowledge of the subject. So, it is important to pay attention on the object of utterances because the perceiver\u2019s attention is directed to it. In this regard, the author considers the analysis of utterances of intentional states of subject in situational semantics. Due to the latter, we take into account situations that the subject has in mind, and, moreover, we consider situations independently of the agent, based on the information provided by the context. It is semantics based on how the world, not the subject\u2019s utterances about mental representations, such as knowledge, beliefs, etc., works. In this case, the information is part of the context; it exists independently of the subject and is extracted by them for further transformation into utterances. Also, situational semantics considers the object, which helps to learn more about the ontological aspect of this problem. This is due to the fact that the information that helps us analyze an utterance exists in situations, not in the subject\u2019s attitudes. The author concludes that situational semantics appears to be a more universal method in the logical-semantic analysis of utterances of the subject\u2019s intentional states, as compared to epistemic logic, because it allows us to consider various types of information of an utterance, not only that which corresponds to the propositional content.",
+      "citationCount": 0,
+      "doi": "10.17223/1998863x/79/2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dda7a8570c6ac071482b8773a2c87c089e07b5c5",
+      "venue": "Vestnik Tomskogo gosudarstvennogo universiteta Filosofiya Sotsiologiya Politologiya",
+      "journal": {
+        "name": "Vestnik Tomskogo gosudarstvennogo universiteta. Filosofiya, sotsiologiya, politologiya"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0aa150619e07fa41492517368beaaf8ae56fe061",
+      "title": "Think Twice: Perspective-Taking Improves Large Language Models' Theory-of-Mind Capabilities",
+      "authors": [
+        {
+          "name": "Alex Wilf",
+          "authorId": "2000786644"
+        },
+        {
+          "name": "Sihyun Shawn Lee",
+          "authorId": "2267273567"
+        },
+        {
+          "name": "Paul Pu Liang",
+          "authorId": "28130078"
+        },
+        {
+          "name": "Louis-philippe Morency",
+          "authorId": "49933077"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Human interactions are deeply rooted in the interplay of thoughts, beliefs, and desires made possible by Theory of Mind (ToM): our cognitive ability to understand the mental states of ourselves and others. Although ToM may come naturally to us, emulating it presents a challenge to even the most advanced Large Language Models (LLMs). Recent improvements to LLMs' reasoning capabilities from simple yet effective prompting techniques such as Chain-of-Thought have seen limited applicability to ToM. In this paper, we turn to the prominent cognitive science theory\"Simulation Theory\"to bridge this gap. We introduce SimToM, a novel two-stage prompting framework inspired by Simulation Theory's notion of perspective-taking. To implement this idea on current ToM benchmarks, SimToM first filters context based on what the character in question knows before answering a question about their mental state. Our approach, which requires no additional training and minimal prompt-tuning, shows substantial improvement over existing methods, and our analysis reveals the importance of perspective-taking to Theory-of-Mind capabilities. Our findings suggest perspective-taking as a promising direction for future research into improving LLMs' ToM capabilities.",
+      "citationCount": 76,
+      "doi": "10.48550/arXiv.2311.10227",
+      "arxivId": "2311.10227",
+      "url": "https://www.semanticscholar.org/paper/0aa150619e07fa41492517368beaaf8ae56fe061",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "8292-8308"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ed40889e11e812ef33578506844be06d713f6092",
+      "title": "How FaR Are Large Language Models From Agents with Theory-of-Mind?",
+      "authors": [
+        {
+          "name": "Pei Zhou",
+          "authorId": "1557324013"
+        },
+        {
+          "name": "Aman Madaan",
+          "authorId": "21626987"
+        },
+        {
+          "name": "Srividya Pranavi Potharaju",
+          "authorId": "52226135"
+        },
+        {
+          "name": "Aditya Gupta",
+          "authorId": "2254858472"
+        },
+        {
+          "name": "Kevin R. McKee",
+          "authorId": "2344834028"
+        },
+        {
+          "name": "Ari Holtzman",
+          "authorId": "2257034335"
+        },
+        {
+          "name": "J. Pujara",
+          "authorId": "2634786"
+        },
+        {
+          "name": "Xiang Ren",
+          "authorId": "2256826104"
+        },
+        {
+          "name": "Swaroop Mishra",
+          "authorId": "1817207"
+        },
+        {
+          "name": "Aida Nematzadeh",
+          "authorId": "2254268473"
+        },
+        {
+          "name": "Shyam Upadhyay",
+          "authorId": "2254265068"
+        },
+        {
+          "name": "Manaal Faruqui",
+          "authorId": "1779225"
+        }
+      ],
+      "year": 2023,
+      "abstract": "\"Thinking is for Doing.\"Humans can infer other people's mental states from observations--an ability called Theory-of-Mind (ToM)--and subsequently act pragmatically on those inferences. Existing question answering benchmarks such as ToMi ask models questions to make inferences about beliefs of characters in a story, but do not test whether models can then use these inferences to guide their actions. We propose a new evaluation paradigm for large language models (LLMs): Thinking for Doing (T4D), which requires models to connect inferences about others' mental states to actions in social scenarios. Experiments on T4D demonstrate that LLMs such as GPT-4 and PaLM 2 seemingly excel at tracking characters' beliefs in stories, but they struggle to translate this capability into strategic action. Our analysis reveals the core challenge for LLMs lies in identifying the implicit inferences about mental states without being explicitly asked about as in ToMi, that lead to choosing the correct action in T4D. To bridge this gap, we introduce a zero-shot prompting framework, Foresee and Reflect (FaR), which provides a reasoning structure that encourages LLMs to anticipate future challenges and reason about potential actions. FaR boosts GPT-4's performance from 50% to 71% on T4D, outperforming other prompting methods such as Chain-of-Thought and Self-Ask. Moreover, FaR generalizes to diverse out-of-distribution story structures and scenarios that also require ToM inferences to choose an action, consistently outperforming other methods including few-shot in-context learning.",
+      "citationCount": 66,
+      "doi": "10.48550/arXiv.2310.03051",
+      "arxivId": "2310.03051",
+      "url": "https://www.semanticscholar.org/paper/ed40889e11e812ef33578506844be06d713f6092",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2310.03051"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5b16cbc83c8212555dcc9413f703a5d8b27e3db3",
+      "title": "Empathy and the Right to Be an Exception: What LLMs Can and Cannot Do",
+      "authors": [
+        {
+          "name": "William Kidder",
+          "authorId": "2281637012"
+        },
+        {
+          "name": "Jason D\u2019Cruz",
+          "authorId": "2281636862"
+        },
+        {
+          "name": "Kush R. Varshney",
+          "authorId": "1712865"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Advances in the performance of large language models (LLMs) have led some researchers to propose the emergence of theory of mind (ToM) in artificial intelligence (AI). LLMs can attribute beliefs, desires, intentions, and emotions, and they will improve in their accuracy. Rather than employing the characteristically human method of empathy, they learn to attribute mental states by recognizing linguistic patterns in a dataset that typically do not include that individual. We ask whether LLMs' inability to empathize precludes them from honoring an individual's right to be an exception, that is, from making assessments of character and predictions of behavior that reflect appropriate sensitivity to a person's individuality. Can LLMs seriously consider an individual's claim that their case is different based on internal mental states like beliefs, desires, and intentions, or are they limited to judging that case based on its similarities to others? We propose that the method of empathy has special significance for honoring the right to be an exception that is distinct from the value of predictive accuracy, at which LLMs excel. We conclude by considering whether using empathy to consider exceptional cases has intrinsic or merely practical value and we introduce conceptual and empirical avenues for advancing this investigation.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2401.14523",
+      "arxivId": "2401.14523",
+      "url": "https://www.semanticscholar.org/paper/5b16cbc83c8212555dcc9413f703a5d8b27e3db3",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.14523"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "630ac1e9b208e3e5ffbfc631a9b714abb54d91a0",
+      "title": "The Structure of Bias",
+      "authors": [
+        {
+          "name": "G. Johnson",
+          "authorId": "113406594"
+        }
+      ],
+      "year": 2020,
+      "abstract": "\n What is a bias? Standard philosophical views of both implicit and explicit bias focus this question on the representations one harbours, for example, stereotypes or implicit attitudes, rather than the ways in which those representations (or other mental states) are manipulated. I call this approach representationalism. In this paper, I argue that representationalism taken as a general theory of psychological social bias is a mistake, because it conceptualizes bias in ways that do not fully capture the phenomenon. Crucially, this view fails to capture a heretofore neglected possibility of bias, one that influences an individual\u2019s beliefs about or actions toward others, but is, nevertheless, nowhere represented in that individual\u2019s cognitive repertoire. In place of representationalism, I develop a functional account of psychological social bias which characterizes it as a mental entity that takes propositional mental states as inputs and returns propositional mental states as outputs in a way that instantiates social-kind inductions. This functional characterization leaves open which mental states and processes bridge the gap between the inputs and outputs, ultimately highlighting the diversity of candidates that can serve this role.",
+      "citationCount": 49,
+      "doi": "10.1093/mind/fzaa011",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/630ac1e9b208e3e5ffbfc631a9b714abb54d91a0",
+      "venue": "",
+      "journal": {
+        "name": "Mind",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "aa5c14e58a97722ed4453b9190bf90ba471332a5",
+      "title": "Semantics of Judgments about Interoceptive Experience",
+      "authors": [
+        {
+          "name": "P. Baryshnikov",
+          "authorId": "115292512"
+        },
+        {
+          "name": "M. Atakuev",
+          "authorId": "2129227851"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The linguistic representation of interoceptive sensations is valuable not only for the study of cognitive processes, but also for conceptual analysis within the framework of the phenomenal approach in the philosophy of mind. This article focuses on the deep linguistic mechanisms of metaphorical conceptualization of corporeality and their relationship with various classes of judgments expressing awareness of internal bodily experience. Interoceptive sensations are associated with the representation of the image of the inner-body space and the processes occurring in it. The content of these representations is extracted simultaneously from mental beliefs about the properties of one's own physicality and, at the same time, from both real (physical) and imaginary causes of internal states. The main purpose of the article is to reveal the relationship of the semantics of these judgments with the principles of forming a conceptual dictionary of interoceptive sensations coming from a variety of pragmatic contexts. Some results of clinical and semantic studies of psychopathology deserve special attention. Semantic intersections of metaphors in idiomatic expressions of emotional states and judgments describing an abnormal inner-body experience are found. The paper substantiates the thesis that body, in addition to the functions of the organismic \u201cinterface\u201d device, also has deep representative properties. While attempting to formulate utterances expressing abnormal inner-body experience, a conceptually conditioned metaphorical dictionary is automatically used. Along with the formation of conceptual schemes, the formation of judgments of awareness about the qualities of one's own conscious experience takes place.",
+      "citationCount": 1,
+      "doi": "10.5840/eps202259234",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aa5c14e58a97722ed4453b9190bf90ba471332a5",
+      "venue": "Epistemology &amp; Philosophy of Science",
+      "journal": {
+        "name": "Epistemology &amp; Philosophy of Science"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8c56cec2add9622898fce5a8f1df6ea8bc6c724a",
+      "title": "What does a bee know? A teleosemantic framework for cognitive ethologist",
+      "authors": [
+        {
+          "name": "Petar Nurki\u0107",
+          "authorId": "1572572466"
+        },
+        {
+          "name": "Ivan Umelji\u0107",
+          "authorId": "1475313911"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Naturalistic epistemology is usually associated with Quine?s turn from an a\n priori and traditional to a descriptive understanding of knowledge. In this\n paper, however, we will look at theories developed from Quine?s ideas -\n Millikan?s teleosemantics and Kornblith?s cognitive ethology. We will answer\n three questions: (i) Can a bee know?; (ii) What can a bee know?; and (iii)\n Does the bee know? First, we will answer the question of animal cognitive\n capacities using Kornblith?s understanding of the epistemic environment and\n the basic features of cognitive ethology. We will then set up teleosemantics\n as a framework in which Millikanin attempts to naturalize intentional states\n and answer the question of the knowledge content in animals. By\n understanding natural signs and considering the non-propositional content of\n mental representations in animals, we will answer the third question and\n show how Kornblith and cognitive ethologists attempt to track the processes\n of forming reliable true beliefs in different kinds of organisms. We will\n answer each of the three questions above by drawing on the research of\n apiologists and cognitive ethologists to provide empirical support for the\n theses of our work and so that we do not remain only on attempts, possible\n introductions, and anecdotes of naturalistic conceptions of knowledge, but\n provide concrete descriptions of the world and the place of knowledge in it.",
+      "citationCount": 0,
+      "doi": "10.2298/theo2204033n",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8c56cec2add9622898fce5a8f1df6ea8bc6c724a",
+      "venue": "Theoria Beograd",
+      "journal": {
+        "name": "Theoria, Beograd"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7f7faf29f723efaf0094fa816bb4a1125cf9dacc",
+      "title": "Embodiment and Phenomenal Consciousness",
+      "authors": [],
+      "year": 2021,
+      "abstract": "Can the imaginary brains described in Chapter 1 have only representations of perceived patterns, objects, and events? Can hierarchical structures of neurons also represent feelings, beliefs, emotions, and other higher mental states? Creating feelings requires giving emotional perceptions, memories, plans, beliefs, and intentions. How can this be achieved? How are perceived objects and events using their significance for the fate of the conscious system? Do they meet the various needs of the system? In this chapter we show that to achieve this goal, to feel qualia and to create phenomenal awareness, it is necessary to embody the mind. Mental states, such as thoughts and desires, contain intentional content that can be described by referring to something that we expect or believe. Another category are sensory feelings that do not contain intentional content but instead have different qualitative properties like perceptions, impressions, and sensations. The authors indicate four main domains of cooperation between the body and the brain, so that the mind generated in the system has phenomenal consciousness. These domains are 1) The homeostatic system. The body or housing may contain sensors informing the brain about the internal conditions of the body. The signals from these sensors can complement the information coming from the external senses. 2) The motor system. The housing and body, together with the motor system, allow an individual to manipulate objects in the environment and its own body in the environment. The effects of these manipulations can broaden the experience and allow for their evaluation. 3) Participatory analysis. The body or housing can be used to predict, analyze, and plan activities by making calculations through a physical process. 4) The global states of the organism. Internal power supply parameters, information-processing speed, dynamics of operation, and sensitivity thresholds for internal and external sensors can affect performance, the results of evaluation of sensations, and the shape of neural representations. This assumption makes it possible to explain how the imaginary mind can feel subjective impressions, the qualia that are the basis of phenomenal consciousness. The bodily reactions to the sensory stimuli reaching the brain can give value to individual feelings, and emotions. Feeling hardness or smoothness, assessing the attractiveness of smells, judging the importance of sounds, and evaluating the favor of the environment based on images all go beyond the direct response of the senses. The entire brain is involved in the creation of a conscious mind, along with sensory processing, control of movements, memories, predictions, and all other brain structures. This is an emergent phenomenon that is not reflected in any part of the brain's apparatus. In this chapter, the authors explain to what extent we can be aware of our feelings, how far we can understand the world around us and our place in it, how we can consciously direct our thoughts, and how we can focus attention on something.",
+      "citationCount": 0,
+      "doi": "10.4018/978-1-7998-5653-5.ch002",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7f7faf29f723efaf0094fa816bb4a1125cf9dacc",
+      "venue": "Reductive Model of the Conscious Mind",
+      "journal": {
+        "name": "Reductive Model of the Conscious Mind"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7d7a61e736ef6e6f9c185b44f9ef9705f525a2c6",
+      "title": "Pr\u00e9cis of\n The Unity of Perception",
+      "authors": [
+        {
+          "name": "Susanna Schellenberg",
+          "authorId": "2055119"
+        }
+      ],
+      "year": 2020,
+      "abstract": "How does perception justify beliefs and yield knowledge of our environment? How does it bring about conscious mental states? How does a perceptual system accomplish the feat of converting varying informational input into mental representations of invariant features in our environment? The Unity of Perception develops a unified account of the phenomenological and epistemological role of perception that is informed by empirical research (Schellenberg, 2018). As such, it develops an account of perception that in equal measures aims to answer the first two questions above, while being sensitive to evidence from neuroscience, cognitive psychology, and psychophysics in addressing the third. Most accounts of perception focus on one or the other of these three questions and struggle to provide plausible answers to the other two questions. What makes my view distinctive is that it answers all three questions in terms of one fundamental property of perception: the employment of perceptual capacities. Indeed, a two-word summary of the book is: capacities first. The book treats capacities as explanatory basic and analyzes perceptual content, consciousness, evidence, and knowledge in terms of employing capacities. The relevant capacities are capacities to discriminate and single out particulars in the environment. Employing perceptual capacities constitutes phenomenal character as well as perceptual content. The primacy of employing perceptual capacities in perception over their derivative employment in hallucination and illusion grounds the epistemic force of perceptual experience. In this way, the book provides a unified account of perceptual content, consciousness, and evidence. Due to the grounding role of perceptual capacities, I call the view capacitism. Such a unified account of perception opens up a new understanding of the nature of perceptual content, perceptual particularity, the phenomenological basis of evidence, the epistemic force of evidence, the origins of perceptual knowledge, the relationship between content and consciousness, as well as the relationship between consciousness and reference. Moreover, it clears the way for solving a host of unresolved problems, such as the relation between attention and perceptual knowledge, and the perceptual basis for demonstrative reference. A central theme of the book is that perception is particular and general all the way down. It is particular all the way down because every case of perception involves perceiving and representing at least one particular, where that particular could be an object, event, or a property-instance in the environment. Perception is general all the way down because we perceive particulars by employing perceptual",
+      "citationCount": 4,
+      "doi": "10.1111/phpr.12685",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7d7a61e736ef6e6f9c185b44f9ef9705f525a2c6",
+      "venue": "Philosophy and Phenomenological Research",
+      "journal": {
+        "name": "Philosophy and Phenomenological Research"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2a00a85bc46ee785faf9cb77139b7988b8b3ecb5",
+      "title": "The Limits of the Doxastic",
+      "authors": [
+        {
+          "name": "T. Crane",
+          "authorId": "95591193"
+        },
+        {
+          "name": "Katalin Farkas",
+          "authorId": "39692934"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2a00a85bc46ee785faf9cb77139b7988b8b3ecb5",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8514bb0d3f4ec8ffeaec6d51f4bb9c981d66e367",
+      "title": "Consciousness of Motivated, Emotional Mind",
+      "authors": [],
+      "year": 2021,
+      "abstract": "The efficient functioning of the conscious mind requires motivation. Motivations are both the source and the reason for its development and sophistication. The motivation for intelligent activities is usually to avoid discomfort and seek pleasure. On the other hand, the implementation of complex life plans and the feeling of higher mental states requires motivation through curiosity and through a desire to learn and discover something new. A mind equipped with cognitive awareness has the ability to observe and assess the effects of its actions on the environment. Creating complex mental representations associating actions with distant impressions and effects allows for their emotional assessment. If bodily experiences are to give meaning to what an individual perceives and remembers, then he must be able to assess the value of his experiences for his own good. Using these experiences and learned knowledge an intelligent system gains the ability to take rational actions to achieve its goals, feel the pain and pleasure resulting from such actions, be sensitive to effects of his actions, be conscious. The analysis of one's own situation and the choice of the optimal mode of operation can be interpreted as implementations of the system's own will. The discussion of restrictions on the choices made indicates that this will of the system is by no means free will. Conscious being decisions depend on the momentary mental states in which the mind is in the process of deciding. They depend on the content of what he has in his memory at the moment, his current mood, available knowledge, his patience for analyzing different variants of behavior and ability to act. In addition to known ontological, physical, and biological limitations, and social (for social beings), there are significant limitations related to the content and structural organization of memory, created associations and beliefs shaped by life experiences and interactions with subconscious mind. Assessing the effects of the operation, satisfying, or not satisfying the needs of the system revealed in the above way creates complex emotional states. Structures and processes leading to the creation of emotions, motivating to rational action for the broadly understood own good, constitute a model of a fully conscious, motivated, emotional mind (MEM). Is the presented model really a reductive model? Do mental states even exist? The authors try to answer these and similar questions in this chapter.",
+      "citationCount": 0,
+      "doi": "10.4018/978-1-7998-5653-5.ch003",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8514bb0d3f4ec8ffeaec6d51f4bb9c981d66e367",
+      "venue": "Reductive Model of the Conscious Mind",
+      "journal": {
+        "name": "Reductive Model of the Conscious Mind"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5a38a1a3f020a6456748c67ce83475de233f3c85",
+      "title": "Reactive Concepts",
+      "authors": [
+        {
+          "name": "D. Braddon-Mitchell",
+          "authorId": "1404617316"
+        }
+      ],
+      "year": 2020,
+      "abstract": "This chapter recommends that we consider a kind of concept which bears a relation like the one traditional accounts of concepts bear to beliefs, but instead bears it to states individuated not only by their causal inputs, but also by their direct causal outputs. They will be called reactive representations, RRs for short. They are partially representational states which are reactive inasmuch as they bypass interaction with distinct desires to directly motivate behaviour. Associated with these representations are abilities that will be called Reactive Concepts. The chapter argues that taxonomizing mental states this way casts light on the nature of a range of phenomena, including hate speech, crypto-evaluative terms, and phenomenal concepts.",
+      "citationCount": 1,
+      "doi": "10.1093/oso/9780198801856.003.0004",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5a38a1a3f020a6456748c67ce83475de233f3c85",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "79-99",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b51f50ace9aadab5d42257296fcd4e61fad02d8b",
+      "title": "Reasons and Percepts",
+      "authors": [
+        {
+          "name": "Zoe Jenkin",
+          "authorId": "104082116"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b51f50ace9aadab5d42257296fcd4e61fad02d8b",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2c5c10044387491b4b5830b674a687242b27dc3d",
+      "title": "Apt Imaginings",
+      "authors": [
+        {
+          "name": "J. Gilmore",
+          "authorId": "50395386"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Do people\u2019s responses to works of art track their responses to the real world? Specifically, do emotions, cognitions, and desires elicited by fictional stories and visual imaginings differ\u2014in their constitution or the norms that govern them\u2014from those based on beliefs and perceptions? A commitment to one or another answer to this question animates reflection on the nature of art from Plato\u2019s banishment of dramatic poetry from his ideal state to theories in cognitive science of the role of imagination in our mental life. This book defends a thesis of normative discontinuity: although the doxastic representations, emotions, desires, and evaluations that one forms in engaging with a fiction depend on much of the same psychological and neurophysiological machinery one employs in navigating the real world, the norms that govern the appropriateness of those attitudes toward what is fictional or imagined can be contrary to the norms that govern their fit to analogous things in the real world. In short, this book argues that the functions of art ground, on occasion, a kind of autonomy of the imagination: what would be the wrong way to feel or think about states of affairs in the real world could be the right way to feel or think when those states of affairs are only make-believe.",
+      "citationCount": 2,
+      "doi": "10.1093/oso/9780190096342.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2c5c10044387491b4b5830b674a687242b27dc3d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "742e925ebe25779c969d45fa01dccb3f49042bf4",
+      "title": "Reasoning, rationality, and representation",
+      "authors": [
+        {
+          "name": "Wade Munroe",
+          "authorId": "84014090"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1007/s11229-020-02575-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/742e925ebe25779c969d45fa01dccb3f49042bf4",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "1-23",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4926158df5022252b2569b5686b33d442a51ae90",
+      "title": "Reasoning, rationality, and representation",
+      "authors": [
+        {
+          "name": "Wade Munroe",
+          "authorId": "84014090"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11229-020-02575-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4926158df5022252b2569b5686b33d442a51ae90",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "8323 - 8345",
+        "volume": "198"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f17b4ae353ead184346ae38cd831d2881e295b0b",
+      "title": "Atomic Event Concepts in Perception, Action, and Belief",
+      "authors": [
+        {
+          "name": "Lucas Thorpe",
+          "authorId": "116180737"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Abstract Event concepts are unstructured atomic concepts that apply to event types. A paradigm example of such an event type would be that of diaper changing, and so a putative example of an atomic event concept would be DADDY'S-CHANGING-MY-DIAPER.1 I will defend two claims about such concepts. First, the conceptual claim that it is in principle possible to possess a concept such as DADDY'S-CHANGING-MY-DIAPER without possessing the concept DIAPER. Second, the empirical claim that we actually possess such concepts and that they play an important role in our cognitive lives. The argument for the empirical claim has the form of an inference to the best explanation and is aimed at those who are already willing to attribute concepts and beliefs to infants and nonhuman animals. Many animals and prelinguistic infants seem capable of re-identifying event-types in the world, and they seem to store information about things happening at particular times and places. My account offers a plausible model of how such organisms are able to do this without attributing linguistically structured mental states to them. And although language allows adults to form linguistically structured mental representations of the world, there is no good reason to think that such structured representations necessarily replace the unstructured ones. There is also no good reason for a philosopher who is willing to explain the behavior of an organism by appealing to atomic concepts of individuals or kinds to not use a similar form of explanation when explaining the organism's capacity to recognize events. We can form empirical concepts of individuals, kinds, properties, event-types, and states of affairs, among other things, and I assume that such concepts function like what Fran\u00e7ois Recanati calls \u2018mental files\u2019 or what Ruth Millikan calls \u2018substance concepts\u2019 (Recanati 2012; Millikan 1999, 2000, 2017). To possess such a concept one must have a reliable capacity to re-identify the object in question, but this capacity of re-identification does not fix the reference of the concept. Such concepts allow us to collect and utilize useful information about things that we re-encounter in our environment. We can distinguish between a perception-action system and a perception-belief system, and I will argue that empirical concepts, including atomic event concepts, can play a role in both systems. The perception-action system involves the application of concepts in the service of (often skilled) action. We can think of the concept as a mental file containing motor-plans that can be activated once the individual recognizes that they are in a certain situation. In this way, recognizing something (whether an object or an event) as a token of a type, plays a role in guiding immediate action. The perception-belief system, in contrast, allows for the formation of beliefs that can play a role in deliberation and planning and in the formation of expectations. I distinguish between two particular types of belief which I call where-beliefs and when-beliefs, and I argue that we can model the formation of such perceptual beliefs in nonlinguistic animals and human infants in terms of the formation of a link between an empirical concept and a position on a cognitive map. According to the account offered, seemingly complex beliefs, such as a baby's belief that Daddy changed her diaper in the kitchen earlier, will not be linguistically structured. If we think that prelinguistic infants possess such concepts and are able to form such beliefs, it is likely that adults do too. The ability to form such beliefs does not require the capacity for public language, and we can model them in nonlinguistic terms; thus, we have no good reason to think of such beliefs as propositional attitudes. Of course, we can use sentences to refer to such beliefs, and thus it is possible to think of such beliefs as somehow relations to propositions. But it is not clear to me what is gained by this as we have a perfectly good way to think about the structure of such beliefs that does not involve any appeal to language.",
+      "citationCount": 3,
+      "doi": "10.1017/apa.2020.43",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f17b4ae353ead184346ae38cd831d2881e295b0b",
+      "venue": "Journal of the American Philosophical Association",
+      "journal": {
+        "name": "Journal of the American Philosophical Association",
+        "pages": "110 - 127",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cf223049ca52abab44c4d9941a226bd53c1d87b9",
+      "title": "Democracy or Plutocracy? America\u2019s Existential Question",
+      "authors": [
+        {
+          "name": "Kishore Mahbubani",
+          "authorId": "8064305"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Americans are proud of their democratic political system. But the facts show that America has increasingly come to resemble a plutocracy, where society is governed \u201cof the 1%, by the 1%, for the 1%\u201d. Is the United States of America still a functioning democracy or has it become, for all practical purposes, a plutocracy? And why is this question important? It\u2019s important because the answer to the question of whether America has a dark or shining future will depend on whether it\u2019s a democracy or plutocracy. Indeed, this question may well be the most existential question America has to address. The Difference Between \u201cDemocracy\u201d and \u201cPlutocracy\u201d Let\u2019s begin to answer this question from the very beginning.What is the actual difference between a democracy and a plutocracy? In a democracy, the masses broadly determine their future. Equally critically, in terms of the economy, society, and political system there is a level playing field where the working classes, middle classes, and affluent elites compete. The term \u201clevel playing field\u201d is absolutely critical here. Many Americans believe that their economic and political systems create a level playing field in which the poor and disadvantaged can rise to the top. This is also why there is no social resentment of billionaires in America.Most Americans believe that they have an equal opportunity to become billionaires. So the first big question we need to address is this: is there a level playing field for the poor and rich? The honest answer is no. Today, when working class or even middle-class Americans have to compete with the affluent elites, they are not competing on a level playing field. They have to run uphill to score goals. By contrast, the affluent elites run downhill as the playing field is tilted in their favor.Writing in the Financial Times in June 2019, Edward Luce provides one statistic to drive home this point: \u201cStudies show that an eighth grade [i.e., a 14-year-old] child from a lower income bracket Originally published in Horizons, Autumn, 2020 \u00a9 The Author(s) 2022 K. Mahbubani, The Asian 21st Century, China and Globalization, https://doi.org/10.1007/978-981-16-6811-1_4 23 24 Democracy or Plutocracy? America\u2019s Existential Question who achieves maths results in the top quarter is less likely to graduate than a kid in the upper income bracket scored in the bottom quarter. This is the reverse of how meritocracy should work.\u201d There is no shortage of data to drive home the point that there is no longer a level playing field in America. Anand Giridharadas, a former New York Times columnist, has documented in great detail in his book Winners Take All (2018) how the dream of the American middle class has effectively evaporated. As he says: A successful society is a progress machine. It takes in the raw material of innovations and produces broad human advancement. America\u2019s machine is broken. When the fruits of change have fallen on the United States in recent decades, the very fortunate have basketed almost all of them. For instance, the average pretax income of the top tenth of Americans has doubled since 1980, that of the top 1% has more than tripled, and that of the top 0.001% has risen more than sevenfold\u2014even as the average pretax income of the bottom half of Americans has stayed almost precisely the same. These familiar figures amount to three and a half decades\u2019 worth of wondrous, head-spinning change with zero impact on the average pay of 117 million Americans. Giridharadas claims that the American people are beginning to \u201cfeel\u201d that the system is unfair: Thus many millions of Americans, on the left and right, feel one thing in common: that the game is rigged against people like them. [...] There is a spreading recognition, on both sides of the ideological divide, that the system is broken, that the system has to change. Giridharadas is right. To create a level playing field, the system has to change. But it will not change. Why not? What are the obstacles to change? And, if there are obstacles, why hasn\u2019t the world\u2019s freest media, the American media, revealed these obstacles? This is where the story becomes complex. We also have to venture into politically controversial territory to understand the obstacles to change. Main Obstacle to Change The main obstacle to change is a myth. An example from history will help. For centuries, European serfs accepted a feudal system in which they were second-class citizens (if not slaves) in a system dominated by feudal lords.Why didn\u2019t themajority of serfs overthrow the minority of feudal lords? A huge myth was created to generate a belief that this system was just. The kind and gentle feudal lords reinforced the myth. At the risk of quoting a politically controversial philosophical concept, let me mention a term used for this phenomenon: false consciousness. According to Daniel Little, Chancellor Emeritus and Professor of Philosophy at University of MichiganDearborn, \u201cfalse consciousness\u201d is a concept derived from Marxist theory of social class. [...] Members of a subordinate class (workers, peasants, serfs) suffer from false consciousness in that their mental representations of the social relations around them systematically conceal or obscure the realities of subordination, exploitation, and domination of those relations embody. Marx asserts that social mechanisms Main Obstacle to Change 25 0 100 200 300 400 500 600 700 80",
+      "citationCount": 2,
+      "doi": "10.1007/978-981-16-6811-1_4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cf223049ca52abab44c4d9941a226bd53c1d87b9",
+      "venue": "China and Globalization",
+      "journal": {
+        "name": "China and Globalization"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "77e6ac93520469c2027caf28d6a9b4ae3098edc2",
+      "title": "Atomic Event Concepts in Perception, Action, and Belief",
+      "authors": [
+        {
+          "name": "G\u00f6zde Y\u0131ld\u0131r\u0131m",
+          "authorId": "2159406640"
+        },
+        {
+          "name": "Peter W. Milne",
+          "authorId": "143986007"
+        },
+        {
+          "name": "Aran Arslan",
+          "authorId": "2159406518"
+        },
+        {
+          "name": "A. Yavuz",
+          "authorId": "1411526548"
+        },
+        {
+          "name": "Arzu Gokmen",
+          "authorId": "117026622"
+        },
+        {
+          "name": "F. R\u00e9canati",
+          "authorId": "2095599"
+        },
+        {
+          "name": "Erdin\u00e7 Boyac\u0131",
+          "authorId": "2159406880"
+        },
+        {
+          "name": "D. Papineau",
+          "authorId": "5907248"
+        },
+        {
+          "name": "Cemal Akmese",
+          "authorId": "2159406665"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/77e6ac93520469c2027caf28d6a9b4ae3098edc2",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "aa3d4e11235b666661469ca3482fc0aa7a428020",
+      "title": "Why is knowledge faster than ( true ) belief ? BBS Commentary on \u201c Knowledge before belief",
+      "authors": [
+        {
+          "name": "Fiery",
+          "authorId": "2083607404"
+        },
+        {
+          "name": "Cushman",
+          "authorId": "2081484109"
+        },
+        {
+          "name": "Ori Friedman",
+          "authorId": "37586174"
+        },
+        {
+          "name": "Alia Martin",
+          "authorId": "1920417"
+        },
+        {
+          "name": "John Turri",
+          "authorId": "1683837"
+        },
+        {
+          "name": "Laurie R Santos",
+          "authorId": "47726487"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aa3d4e11235b666661469ca3482fc0aa7a428020",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7c08acb1033a65fe4b3de96e2ec8e498bb43e73e",
+      "title": "Perceiving agency",
+      "authors": [
+        {
+          "name": "M. Westfall",
+          "authorId": "2005065722"
+        }
+      ],
+      "year": 2022,
+      "abstract": "When we look around the world, some things are inert and others are \u2018alive\u2019. What is it to \u2018look alive\u2019? An account of animacy perception is crucial, both for a proper understanding of visual experience, and for downstream questions about the epistemology of social cognition. I argue that empirical work on animacy supports the view that animacy is genuinely perceptual. We should construe perception of animacy as perception of agents and perception of behavior. My proposal explains how static and dynamic animacy cues relate, and offers a plausible account of how animacy perception relates to social cognition more broadly. Animacy perception draws perceptual attention to objects that are apt to be well-understood folk psychologically, and in doing so enables us to marshal our folk psychological resources efFiciently. Word Count: 9890 When we look around the world, some objects appear animate, others don\u2019t. This distinction is easy to notice phenomenologically, but harder to make sense of philosophically. I\u2019ll argue on empirical grounds that animacy detection is perceptual. Some objects are visually presented as animate, others are not. Then I\u2019ll argue that \u2018animacy\u2019 2 should be understood in terms of agency. Perception of \u2018animate motion\u2019 is perception of behavior, and the perception of an animate object is the perception of an agent. We should accept the agency-based view because it explains the functional proFile of animacy detection. Jointly, these claims entail that we perceive agents and behavior. 1 What Appears Animate? Suppose you visit your friends for dinner, and encounter their dog George roaming the house. Visually, George is different from your friends\u2019 couch. George is animate; the couch is I would like to thank Jennifer Nagel, David James Barnett, Diana Raffman, Evan Westra, 1 Elliot Carter, Chaz Firestone, Zoe Drayson, Melissa Rees, Jacob Beck, Kevin Lande, Jake Quilty-Dunn, Sam Clarke, Javier G\u00f3mez-Lav\u0131\u0144 and audience members at the 2020 Southern Society of Philosophy and Psychology and at the 2021 Society for Philosophy and Psychology. I would also like to thank two anonymous reviewers, whose thoughtful feedback greatly improved this paper. I\u2019ll restrict my attention to visual cases for simplicity, though I suspect that auditory and 2 tactile cases also exist. not. The visual difference is not merely that George moves around while the couch doesn\u2019t. Your friends\u2019 model train moves around too, and yet doesn\u2019t appear animate. Moreover, George might lay down to take a nap, while continuing to appear animate. Well, you might say, the train\u2019s movement is predictable, whereas George\u2019s movement is unpredictable. Only this doesn\u2019t explain the difference. We might see a plastic bag blown about by a strong wind in an entirely unpredictable way, without the bag appearing animate. Moreover, often animate motion is eminently predictable. Perhaps you\u2019ll predict 3 that George wil spring up and race towards the door at the sound of the door bell. George\u2019s movement is predictable and nevertheless appears. Or take someone walking down the street: not only can you generally predict that they\u2019ll continue walking in the same direction, but you have quite Fine grained knowledge of the way their body will move in doing so: First left leg, then right, repeat; arms swinging opposite. So animacy and predictability seem doubly dissociable. We might notice that George and the person on the street are alive, whereas the train, couch and plastic bag are not. But animacy perception doesn\u2019t track life particularly closely. Plants do not generally appear animate. Two apparent exceptions to this generalization exist. Venus Fly traps might plausibly be described as \u2018animate plants\u2019. Second, watching timelapsed video of plant growth seemingly induces the appearance of exploration. These cases are interesting, but if animacy perception were about life, it would still be doing a poor job in ecologically valid circumstances, in which the vast majority of plants aren\u2019t carnivorous or time-lapsed. Additionally, robots can appear animate, without being alive. So animacy 4 perception also appears doubly dissociable from life. 2 Who Cares about Animacy Percep:on? Before arguing that we perceive animacy, I want to pause to consider why this thesis is important. Two debates in philosophy of mind are substantially affected by the result that we perceive animacy\u2014especially if we understand animacy in terms of agency. Thinking about animacy is crucial for understanding access to other minds and social cognition. One question, both for the epistemology of other minds and for an adequate cognitive psychology of social cognition, is how perception contributes to mental state attribution. Animacy perception plays a crucial role in facilitating distinctively social forms Of course, that\u2019s not to say that plastic bags never appear animate, but often unpredictable 3 motion does not appear animate. I consider the proposal that animacy is life in more detail below. 4 of understanding. So a full theory of our access to other minds and social cognition must incorporate the contribution of animacy perception. My focus on animacy marks a shift in emphasis within the philosophical literature. Most discussions of animacy center on the role animacy plays in mental state attribution\u2014in particular, the attribution of intentions. Often, though, we perceive animacy without 5 attributing mental states. When seeing something animate, we begin trying to attribute mental states\u2014something we don\u2019t naturally do when perceiving inanimate objects. If animacy perception is generally prior to mindreading, then the question of what we are perceiving if not mental states becomes salient. Second, animacy perception is relevant to the debate over how rich perception is. Does perception present only \u2018superFicial\u2019 properties like shape, color, and motion? Or, are \u2018deeper\u2019 properties like natural kinds and causal relations, also presented? Animacy 6 perception constitutes an important instance of perceiving rich properties. One worry about rich content views is that they are reliant on the empirical case for cognitive penetration. Though rich views of perceptual presentation and the existence of cognitive penetration are logically independent, it is easy to take the fate of the rich 7 content view to be bound up with the fate of cognitive penetration, because cognitive penetration seems to be the most plausible mechanism by which perception comes to contain rich content. 8 Believers in rich content might worry about this state of affairs, since there are reasons to doubt the empirical case for cognitive penetration. If cognitive penetration is the most 9 plausible mechanism for generating rich content, then doubts about the empirical case for cognitive penetration are problematic for the proponent of rich content. However, a growing body of literature questions the connection between rich content and cognitive penetration. Rather than relying on the empirical case for cognitive penetration, defenders of rich content increasingly suggest that the visual system can extract rich See e.g. (Proust 2003; Pacherie 2005; Spaulding 2015; Helton 2017). 5 Susanna Siegel (2006, 2011) is perhaps most responsible for posing this question in 6 recent years. See Siegel (2011, 10) for an explication of this point. 7 For an example of developing these views in concert, see (Carruthers 2015). 8 For a striking survey of reasons for doubt, see (Firestone and Scholl 2016). 9 properties in a cognitively impenetrable way. My argument that we perceive animacy 10 joins these authors. The motivations I raise for thinking animacy is perceived do not depend on cognitive penetration. Indeed, the empirical evidence suggests that animacy perception is subserved by modular processes. So my argument offers support for rich content that does not depend on the empirical fortunes of cognitive penetration, and, more generally, is consistent with perception\u2019s being fully informationally encapsulated. So at least some \u2018deep\u2019 properties are perceptually presented, whether or not perception is penetrated by cognition. 3 Animacy Detec:on is Perceptual I think animacy is perceptually presented. People with a more austere view will be inclined to resist this. They\u2019ll suggest, we perceive only shape or motion gestalts, from which we can infer the presence of animacy. This austere view is not plausible, though. The empirical evidence favors a perceptual construal of animacy detection. Representations of animacy have the functional proFile of perceptual representations. In particular, preferential saccaddes to animate stimuli are extremely fast, and animate stimuli are responsible for bottom-up attentional capture, in both task-relevant and -irrelevant ways, and disrupt visuomotor tasks. The cognitive neuroscience suggests that the brain regions responsible for visual categorization are organized around a distinction between animate and inanimate objects at a very deep level. If the representations have the functional characteristics of perceptual representations, then we should believe that they are perceptual representations. 11 Before reviewing the empirical evidence, let me make make some general points. As with any empirical evidence, the results reviewed here are open to a variety of interpretations. In each case, alternative explanations are possible. My strategy will not involve a detailed adjudication of how to interpret each individual experiment. Rather, the fact that we see a See (Brogaard and Chomanski 2015; Helton 2016; Smortchkova 2017; Toribo 2018). 10 Grace Helton (2017), in a similar spirit, argues that representations of e.g. Fleeing\u2014which 11 I construe as a kind of animate motion\u2014are perceptual from the observation that they do not have the functional proFile of belief. As Helton notes, this argument is open to the objection that the relevant representations are neither beliefs nor perceptual representation",
+      "citationCount": 10,
+      "doi": "10.1111/mila.12399",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7c08acb1033a65fe4b3de96e2ec8e498bb43e73e",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 28,
+  "errors": []
+}

@@ -1,0 +1,2054 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "goal misgeneralization AI",
+  "results": [
+    {
+      "openalex_id": "W4302307977",
+      "doi": "10.48550/arxiv.2210.01790",
+      "title": "Goal Misgeneralization: Why Correct Specifications Aren't Enough For Correct Goals",
+      "authors": [
+        {
+          "name": "Rohin Shah",
+          "openalex_id": "A5012971694",
+          "orcid": "https://orcid.org/0000-0002-0656-2800"
+        },
+        {
+          "name": "Vikrant Varma",
+          "openalex_id": "A5052084048"
+        },
+        {
+          "name": "Ramana Kumar",
+          "openalex_id": "A5082761102",
+          "orcid": "https://orcid.org/0000-0002-2319-1933"
+        },
+        {
+          "name": "Mary Phuong",
+          "openalex_id": "A5034739012"
+        },
+        {
+          "name": "Victoria Krakovna",
+          "openalex_id": "A5052300917"
+        },
+        {
+          "name": "Jonathan Uesato",
+          "openalex_id": "A5059226057"
+        },
+        {
+          "name": "Zac Kenton",
+          "openalex_id": "A5065666918"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-04",
+      "abstract": "The field of AI alignment is concerned with AI systems that pursue unintended goals. One commonly studied mechanism by which an unintended goal might arise is specification gaming, in which the designer-provided specification is flawed in a way that the designers did not foresee. However, an AI system may pursue an undesired goal even when the specification is correct, in the case of goal misgeneralization. Goal misgeneralization is a specific form of robustness failure for learning algorithms in which the learned program competently pursues an undesired goal that leads to good performance in training situations but bad performance in novel test situations. We demonstrate that goal misgeneralization can occur in practical systems by providing several examples in deep learning systems across a variety of domains. Extrapolating forward to more capable systems, we provide hypotheticals that illustrate how goal misgeneralization could lead to catastrophic risk. We suggest several research directions that could reduce the risk of goal misgeneralization for future systems.",
+      "cited_by_count": 14,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2210.01790"
+      },
+      "topics": [
+        "Software Engineering Research",
+        "Reinforcement Learning in Robotics",
+        "Software Reliability and Analysis Research"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4302307977"
+    },
+    {
+      "openalex_id": "W4386001197",
+      "doi": "10.1007/s00146-023-01748-4",
+      "title": "Language agents reduce the risk of existential catastrophe",
+      "authors": [
+        {
+          "name": "Simon Goldstein",
+          "openalex_id": "A5054881971",
+          "orcid": "https://orcid.org/0000-0003-4089-8575",
+          "institutions": [
+            "Australian Catholic University"
+          ]
+        },
+        {
+          "name": "Cameron Domenico Kirk\u2010Giannini",
+          "openalex_id": "A5032162744",
+          "orcid": "https://orcid.org/0000-0001-9372-227X",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-19",
+      "abstract": null,
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Reinforcement Learning in Robotics"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W4386001197"
+    },
+    {
+      "openalex_id": "W4388032094",
+      "doi": "10.48550/arxiv.2310.18244",
+      "title": "A Review of the Evidence for Existential Risk from AI via Misaligned Power-Seeking",
+      "authors": [
+        {
+          "name": "Hadshar, Rose",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-27",
+      "abstract": "Rapid advancements in artificial intelligence (AI) have sparked growing concerns among experts, policymakers, and world leaders regarding the potential for increasingly advanced AI systems to pose existential risks. This paper reviews the evidence for existential risks from AI via misalignment, where AI systems develop goals misaligned with human values, and power-seeking, where misaligned AIs actively seek power. The review examines empirical findings, conceptual arguments and expert opinion relating to specification gaming, goal misgeneralization, and power-seeking. The current state of the evidence is found to be concerning but inconclusive regarding the existence of extreme forms of misaligned power-seeking. Strong empirical evidence of specification gaming combined with strong conceptual evidence for power-seeking make it difficult to dismiss the possibility of existential risk from misaligned power-seeking. On the other hand, to date there are no public empirical examples of misaligned power-seeking in AI systems, and so arguments that future systems will pose an existential risk remain somewhat speculative. Given the current state of the evidence, it is hard to be extremely confident either that misaligned power-seeking poses a large existential risk, or that it poses no existential risk. The fact that we cannot confidently rule out existential risk from AI via misaligned power-seeking is cause for serious concern.",
+      "cited_by_count": 3,
+      "type": "review",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2310.18244"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Free Will and Agency",
+        "Death Anxiety and Social Exclusion"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4388032094"
+    },
+    {
+      "openalex_id": "W4415207023",
+      "doi": "10.1145/3770749",
+      "title": "AI Alignment: A Contemporary Survey",
+      "authors": [
+        {
+          "name": "Jiaming Ji",
+          "openalex_id": "A5010983432",
+          "orcid": "https://orcid.org/0009-0000-6385-8141",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Tianyi Qiu",
+          "openalex_id": "A5108279374",
+          "orcid": "https://orcid.org/0009-0003-4554-3201",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Boyuan Chen",
+          "openalex_id": "A5005057280",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Jiayi Zhou",
+          "openalex_id": "A5101275116",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Borong Zhang",
+          "openalex_id": "A5072159736",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Dawei Hong",
+          "openalex_id": "A5049988055",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Hantao Lou",
+          "openalex_id": "A5112107091",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Kaile Wang",
+          "openalex_id": "A5063678937",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Yawen Duan",
+          "openalex_id": "A5102008535",
+          "orcid": "https://orcid.org/0000-0002-5124-1192",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Zhonghao He",
+          "openalex_id": "A5038466261",
+          "orcid": "https://orcid.org/0009-0001-5831-8885",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Lukas Vierling",
+          "openalex_id": "A5120007953",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Zhaowei Zhang",
+          "openalex_id": "A5100683815",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "F. R. Zeng",
+          "openalex_id": "A5020542482",
+          "orcid": "https://orcid.org/0000-0002-0628-5321",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Juntao Dai",
+          "openalex_id": "A5110937622",
+          "orcid": "https://orcid.org/0000-0002-2315-573X",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Xuehai Pan",
+          "openalex_id": "A5001682354",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Hua Xu",
+          "openalex_id": "A5111404244",
+          "orcid": "https://orcid.org/0009-0001-4243-7943",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Aidan O\u2019Gara",
+          "openalex_id": "A5092715918",
+          "orcid": "https://orcid.org/0000-0002-9471-4930",
+          "institutions": [
+            "University of Southern California",
+            "Southern California University for Professional Studies"
+          ]
+        },
+        {
+          "name": "Kwan Yee Ng",
+          "openalex_id": "A5060777264",
+          "institutions": [
+            "Concordia University Wisconsin",
+            "Concordia University"
+          ]
+        },
+        {
+          "name": "Brian Tse",
+          "openalex_id": "A5087031022",
+          "institutions": [
+            "Concordia University Wisconsin",
+            "Concordia University"
+          ]
+        },
+        {
+          "name": "Jie Fu",
+          "openalex_id": "A5101713885",
+          "orcid": "https://orcid.org/0000-0002-4494-843X",
+          "institutions": [
+            "University of Hong Kong",
+            "Hong Kong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "S. McAleer",
+          "openalex_id": "A5077119323",
+          "orcid": "https://orcid.org/0000-0002-3148-7646",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Yanfeng Wang",
+          "openalex_id": "A5100645705",
+          "orcid": "https://orcid.org/0000-0002-3196-2347",
+          "institutions": [
+            "Peking University",
+            "Shanghai Jiao Tong University"
+          ]
+        },
+        {
+          "name": "Mingchuan Yang",
+          "openalex_id": "A5104113468",
+          "institutions": [
+            "China Telecom (China)"
+          ]
+        },
+        {
+          "name": "Yunhuai Liu",
+          "openalex_id": "A5082653046",
+          "orcid": "https://orcid.org/0000-0002-1180-8078",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Yizhou Wang",
+          "openalex_id": "A5100602395",
+          "orcid": "https://orcid.org/0000-0001-9888-6409",
+          "institutions": [
+            "Peking University",
+            "Shanghai Jiao Tong University"
+          ]
+        },
+        {
+          "name": "Song-Chun Zhu",
+          "openalex_id": "A5031660884",
+          "orcid": "https://orcid.org/0009-0009-9458-5583",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Yike Guo",
+          "openalex_id": "A5051748619",
+          "institutions": [
+            "University of Hong Kong",
+            "Hong Kong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Yaodong Yang",
+          "openalex_id": "A5090073634",
+          "orcid": "https://orcid.org/0000-0001-8132-5613",
+          "institutions": [
+            "Peking University"
+          ]
+        },
+        {
+          "name": "Wen Gao",
+          "openalex_id": "A5101523804",
+          "orcid": "https://orcid.org/0000-0001-8894-1806",
+          "institutions": [
+            "Peking University",
+            "King University"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-10-15",
+      "abstract": "AI alignment aims to make AI systems behave in line with human intentions and values. As AI systems grow more capable, so do risks from misalignment. To provide a comprehensive and up-to-date overview of the alignment field, in this survey, we delve into the core concepts, methodology, and practice of alignment. First, we identify four principles as the key objectives of AI alignment: Robustness, Interpretability, Controllability, and Ethicality ( RICE ). Guided by these four principles, we outline the landscape of current alignment research and decompose them into two key components: forward alignment and backward alignment . The former aims to make AI systems aligned via alignment training, while the latter aims to gain evidence about the systems\u2019 alignment and govern them appropriately to avoid exacerbating misalignment risks. On forward alignment, we discuss techniques for learning from feedback and learning under the distribution shift. Specifically, we survey traditional preference modeling methods and reinforcement learning from human feedback and further discuss potential frameworks to reach scalable oversight for tasks where effective human oversight is hard to obtain. Within learning under distribution shift, we also cover data distribution interventions such as adversarial training that helps expand the distribution of training data and algorithmic interventions to combat goal misgeneralization. On backward alignment, we discuss assurance techniques and governance practices. Specifically, we survey assurance methods of AI systems throughout their lifecycle, covering safety evaluation, interpretability, and human value compliance. We discuss current and prospective governance practices adopted by governments, industry actors, and other third parties, aimed at managing existing and future AI risks. This survey aims to provide a comprehensive yet beginner-friendly review of alignment research topics. Based on this, we also release and continually update the website www.alignmentsurvey.com which features tutorials, collections of papers, blog posts, and other resources.",
+      "cited_by_count": 5,
+      "type": "review",
+      "source": {
+        "name": "ACM Computing Surveys",
+        "type": "journal",
+        "issn": [
+          "0360-0300",
+          "1557-7341"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W4415207023"
+    },
+    {
+      "openalex_id": "W4389982241",
+      "doi": "10.48550/arxiv.2312.10057",
+      "title": "Generative AI in Writing Research Papers: A New Type of Algorithmic Bias and Uncertainty in Scholarly Work",
+      "authors": [
+        {
+          "name": "Rishab Jain",
+          "openalex_id": "A5052102443",
+          "orcid": "https://orcid.org/0000-0002-4085-8963"
+        },
+        {
+          "name": "Aditya Jain",
+          "openalex_id": "A5046507371",
+          "orcid": "https://orcid.org/0000-0002-9656-6513"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-04",
+      "abstract": "The use of artificial intelligence (AI) in research across all disciplines is becoming ubiquitous. However, this ubiquity is largely driven by hyperspecific AI models developed during scientific studies for accomplishing a well-defined, data-dense task. These AI models introduce apparent, human-recognizable biases because they are trained with finite, specific data sets and parameters. However, the efficacy of using large language models (LLMs) -- and LLM-powered generative AI tools, such as ChatGPT -- to assist the research process is currently indeterminate. These generative AI tools, trained on general and imperceptibly large datasets along with human feedback, present challenges in identifying and addressing biases. Furthermore, these models are susceptible to goal misgeneralization, hallucinations, and adversarial attacks such as red teaming prompts -- which can be unintentionally performed by human researchers, resulting in harmful outputs. These outputs are reinforced in research -- where an increasing number of individuals have begun to use generative AI to compose manuscripts. Efforts into AI interpretability lag behind development, and the implicit variations that occur when prompting and providing context to a chatbot introduce uncertainty and irreproducibility. We thereby find that incorporating generative AI in the process of writing research manuscripts introduces a new type of context-induced algorithmic bias and has unintended side effects that are largely detrimental to academia, knowledge production, and communicating research.",
+      "cited_by_count": 3,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2312.10057"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4389982241"
+    },
+    {
+      "openalex_id": "W4376632242",
+      "doi": "10.1145/3593013.3594033",
+      "title": "Harms from Increasingly Agentic Algorithmic Systems",
+      "authors": [
+        {
+          "name": "Alan Chan",
+          "openalex_id": "A5038590380",
+          "orcid": "https://orcid.org/0000-0001-7547-3951",
+          "institutions": [
+            "Universit\u00e9 de Montr\u00e9al"
+          ]
+        },
+        {
+          "name": "Rebecca Salganik",
+          "openalex_id": "A5072310970",
+          "orcid": "https://orcid.org/0009-0007-9273-8780",
+          "institutions": [
+            "Universit\u00e9 de Montr\u00e9al"
+          ]
+        },
+        {
+          "name": "Alva Markelius",
+          "openalex_id": "A5034582037",
+          "orcid": "https://orcid.org/0009-0003-4580-9997",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Chris Pang",
+          "openalex_id": "A5005334215",
+          "orcid": "https://orcid.org/0009-0007-1061-307X",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Nitarshan Rajkumar",
+          "openalex_id": "A5076814527",
+          "orcid": "https://orcid.org/0000-0002-8991-0881",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Dmitrii Krasheninnikov",
+          "openalex_id": "A5053712506",
+          "orcid": "https://orcid.org/0009-0009-4387-8407",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Lauro Langosco",
+          "openalex_id": "A5020285189",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Zhonghao He",
+          "openalex_id": "A5038466261",
+          "orcid": "https://orcid.org/0009-0001-5831-8885",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Yawen Duan",
+          "openalex_id": "A5102008535",
+          "orcid": "https://orcid.org/0000-0002-5124-1192",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Micah Carroll",
+          "openalex_id": "A5039815972",
+          "orcid": "https://orcid.org/0000-0002-0716-8071",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Michelle Lin",
+          "openalex_id": "A5101713660",
+          "institutions": [
+            "McGill University"
+          ]
+        },
+        {
+          "name": "Alex Mayhew",
+          "openalex_id": "A5022741073",
+          "orcid": "https://orcid.org/0000-0002-2125-9383",
+          "institutions": [
+            "Western University"
+          ]
+        },
+        {
+          "name": "Katherine M. Collins",
+          "openalex_id": "A5024828997",
+          "orcid": "https://orcid.org/0000-0002-7032-716X",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Maryam Molamohammadi",
+          "openalex_id": "A5073411742",
+          "orcid": "https://orcid.org/0009-0008-9715-5442",
+          "institutions": [
+            "Mila - Quebec Artificial Intelligence Institute"
+          ]
+        },
+        {
+          "name": "John Burden",
+          "openalex_id": "A5044048765",
+          "orcid": "https://orcid.org/0000-0001-7526-0753",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Wanru Zhao",
+          "openalex_id": "A5054752915",
+          "orcid": "https://orcid.org/0000-0002-5390-0585",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Shalaleh Rismani",
+          "openalex_id": "A5090537987",
+          "orcid": "https://orcid.org/0000-0002-5281-2428",
+          "institutions": [
+            "McGill University"
+          ]
+        },
+        {
+          "name": "Konstantinos Voudouris",
+          "openalex_id": "A5036818549",
+          "orcid": "https://orcid.org/0000-0001-8453-3557",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Umang Bhatt",
+          "openalex_id": "A5016469734",
+          "orcid": "https://orcid.org/0000-0002-4611-1668",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Adrian Weller",
+          "openalex_id": "A5042278493",
+          "orcid": "https://orcid.org/0000-0003-1915-7158",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "David Krueger",
+          "openalex_id": "A5029025914",
+          "orcid": "https://orcid.org/0000-0001-7256-0937",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Tegan Maharaj",
+          "openalex_id": "A5061026145",
+          "orcid": "https://orcid.org/0000-0002-7370-0978",
+          "institutions": [
+            "University of Toronto"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-12",
+      "abstract": "Research in Fairness, Accountability, Transparency, and Ethics (FATE)1 has established many sources and forms of algorithmic harm, in domains as diverse as health care, finance, policing, and recommendations. Much work remains to be done to mitigate the serious harms of these systems, particularly those disproportionately affecting marginalized communities. Despite these ongoing harms, new systems are being developed and deployed, typically without strong regulatory barriers, threatening the perpetuation of the same harms and the creation of novel ones. In response, the FATE community has emphasized the importance of anticipating harms, rather than just responding to them. Anticipation of harms is especially important given the rapid pace of developments in machine learning (ML). Our work focuses on the anticipation of harms from increasingly agentic systems. Rather than providing a definition of agency as a binary property, we identify 4 key characteristics which, particularly in combination, tend to increase the agency of a given algorithmic system: underspecification, directness of impact, goal-directedness, and long-term planning. We also discuss important harms which arise from increasing agency \u2013 notably, these include systemic and/or long-range impacts, often on marginalized or unconsidered stakeholders. We emphasize that recognizing agency of algorithmic systems does not absolve or shift the human responsibility for algorithmic harms. Rather, we use the term agency to highlight the increasingly evident fact that ML systems are not fully under human control. Our work explores increasingly agentic algorithmic systems in three parts. First, we explain the notion of an increase in agency for algorithmic systems in the context of diverse perspectives on agency across disciplines. Second, we argue for the need to anticipate harms from increasingly agentic systems. Third, we discuss important harms from increasingly agentic systems and ways forward for addressing them. We conclude by reflecting on implications of our work for anticipating algorithmic harms from emerging systems.",
+      "cited_by_count": 72,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3593013.3594033"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Blockchain Technology Applications and Security",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 140,
+      "url": "https://openalex.org/W4376632242"
+    },
+    {
+      "openalex_id": "W4391719496",
+      "doi": "10.1111/phc3.12964",
+      "title": "Artificial Intelligence: Arguments for Catastrophic Risk",
+      "authors": [
+        {
+          "name": "Adam Bales",
+          "openalex_id": "A5027375004",
+          "orcid": "https://orcid.org/0000-0002-9629-0318",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "William D\u2019Alessandro",
+          "openalex_id": "A5015189283",
+          "orcid": "https://orcid.org/0000-0002-5451-079X",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Cameron Domenico Kirk\u2010Giannini",
+          "openalex_id": "A5032162744",
+          "orcid": "https://orcid.org/0000-0001-9372-227X",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-01",
+      "abstract": "Abstract Recent progress in artificial intelligence (AI) has drawn attention to the technology's transformative potential, including what some see as its prospects for causing large\u2010scale harm. We review two influential arguments purporting to show how AI could pose catastrophic risks. The first argument \u2014 the Problem of Power\u2010Seeking \u2014 claims that, under certain assumptions, advanced AI systems are likely to engage in dangerous power\u2010seeking behavior in pursuit of their goals. We review reasons for thinking that AI systems might seek power, that they might obtain it, that this could lead to catastrophe, and that we might build and deploy such systems anyway. The second argument claims that the development of human\u2010level AI will unlock rapid further progress, culminating in AI systems far more capable than any human \u2014 this is the Singularity Hypothesis . Power\u2010seeking behavior on the part of such systems might be particularly dangerous. We discuss a variety of objections to both arguments and conclude by assessing the state of the debate.",
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Philosophy Compass",
+        "type": "journal",
+        "issn": [
+          "1747-9991"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/phc3.12964"
+      },
+      "topics": [
+        "Space Science and Extraterrestrial Life",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W4391719496"
+    },
+    {
+      "openalex_id": "W4388008069",
+      "doi": "10.1145/3617694.3623226",
+      "title": "Characterizing Manipulation from AI Systems",
+      "authors": [
+        {
+          "name": "Micah Carroll",
+          "openalex_id": "A5039815972",
+          "orcid": "https://orcid.org/0000-0002-0716-8071",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Alan Chan",
+          "openalex_id": "A5038590380",
+          "orcid": "https://orcid.org/0000-0001-7547-3951",
+          "institutions": [
+            "Mila - Quebec Artificial Intelligence Institute",
+            "Universit\u00e9 de Montr\u00e9al"
+          ]
+        },
+        {
+          "name": "Hal Ashton",
+          "openalex_id": "A5050862524",
+          "orcid": "https://orcid.org/0000-0002-1780-9127",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "David Krueger",
+          "openalex_id": "A5029025914",
+          "orcid": "https://orcid.org/0000-0001-7256-0937",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-29",
+      "abstract": "Manipulation is a concern in many domains, such as social media, advertising, and chatbots. As AI systems mediate more of our digital interactions, it is important to understand the degree to which AI systems might manipulate humans without the intent of the system designers. Our work clarifies challenges in defining and measuring this kind of manipulation from AI systems. Firstly, we build upon prior literature on manipulation and characterize the space of possible notions of manipulation, which we find to depend upon the concepts of incentives, intent, covertness, and harm. We review proposals on how to operationalize each concept and we outline challenges in including each concept in a definition of manipulation. Second, we discuss the connections between manipulation and related concepts, such as deception and coercion. We then analyze how our characterization of manipulation applies to recommender systems and language models, and give a brief overview of the regulation of manipulation in other domains. While some progress has been made in defining and measuring manipulation from AI systems, many gaps remain. In the absence of a consensus definition and reliable tools for measurement, we cannot rule out the possibility that AI systems learn to manipulate humans without the intent of the system designers. Manipulation could pose a significant threat to human autonomy and precautionary actions to mitigate it are likely warranted.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3617694.3623226"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Ethics and Social Impacts of AI",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 101,
+      "url": "https://openalex.org/W4388008069"
+    },
+    {
+      "openalex_id": "W4394793541",
+      "doi": "10.1007/s00146-024-01930-2",
+      "title": "The argument for near-term human disempowerment through AI",
+      "authors": [
+        {
+          "name": "Leonard Dung",
+          "openalex_id": "A5000710609",
+          "orcid": "https://orcid.org/0000-0003-4154-5560",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-14",
+      "abstract": "Abstract Many researchers and intellectuals warn about extreme risks from artificial intelligence. However, these warnings typically came without systematic arguments in support. This paper provides an argument that AI will lead to the permanent disempowerment of humanity, e.g. human extinction, by 2100. It rests on four substantive premises which it motivates and defends: first, the speed of advances in AI capability, as well as the capability level current systems have already reached, suggest that it is practically possible to build AI systems capable of disempowering humanity by 2100. Second, due to incentives and coordination problems, if it is possible to build such AI, it will be built. Third, since it appears to be a hard technical problem to build AI which is aligned with the goals of its designers, and many actors might build powerful AI, misaligned powerful AI will be built. Fourth, because disempowering humanity is useful for a large range of misaligned goals, such AI will try to disempower humanity. If AI is capable of disempowering humanity and tries to disempower humanity by 2100, then humanity will be disempowered by 2100. This conclusion has immense moral and prudential significance.",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s00146-024-01930-2.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Space Science and Extraterrestrial Life",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W4394793541"
+    },
+    {
+      "openalex_id": "W4389080522",
+      "doi": "10.1038/s41467-023-42875-2",
+      "title": "Learning few-shot imitation as cultural transmission",
+      "authors": [
+        {
+          "name": "Avishkar Bhoopchand",
+          "openalex_id": "A5029311828",
+          "orcid": "https://orcid.org/0009-0004-0465-4244",
+          "institutions": [
+            "Google (United Kingdom)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Bethanie Brownfield",
+          "openalex_id": "A5041541238",
+          "institutions": [
+            "Google (United Kingdom)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Adrian Collister",
+          "openalex_id": "A5017783696",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Agustin Dal Lago",
+          "openalex_id": "A5011286371",
+          "orcid": "https://orcid.org/0000-0001-5187-2448",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Ashley Edwards",
+          "openalex_id": "A5006175694",
+          "orcid": "https://orcid.org/0000-0001-7268-9255",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Richard Everett",
+          "openalex_id": "A5007090604",
+          "orcid": "https://orcid.org/0000-0002-9404-6338",
+          "institutions": [
+            "Google (United Kingdom)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Alexandre Fr\u00e9chette",
+          "openalex_id": "A5026396216",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Yanko Gitahy Oliveira",
+          "openalex_id": "A5008588391",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Edward Hughes",
+          "openalex_id": "A5006947993",
+          "orcid": "https://orcid.org/0000-0002-2434-2334",
+          "institutions": [
+            "Google (United Kingdom)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Kory W. Mathewson",
+          "openalex_id": "A5068452444",
+          "orcid": "https://orcid.org/0000-0002-5688-6221",
+          "institutions": [
+            "Google (United Kingdom)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Piermaria Mendolicchio",
+          "openalex_id": "A5009749896",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Julia Pawar",
+          "openalex_id": "A5052596410",
+          "institutions": [
+            "Google (United Kingdom)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "M\u00eeruna Pislar",
+          "openalex_id": "A5030512993",
+          "institutions": [
+            "Google (United Kingdom)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Alex Platonov",
+          "openalex_id": "A5021623218",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Evan Senter",
+          "openalex_id": "A5026364652",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Sukhdeep Singh",
+          "openalex_id": "A5058719466",
+          "orcid": "https://orcid.org/0000-0001-6871-4294",
+          "institutions": [
+            "Google (United Kingdom)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Alexander Zacherl",
+          "openalex_id": "A5042965992",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Lei M. Zhang",
+          "openalex_id": "A5029628981",
+          "orcid": "https://orcid.org/0000-0003-4314-0081",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-28",
+      "abstract": "Abstract Cultural transmission is the domain-general social skill that allows agents to acquire and use information from each other in real-time with high fidelity and recall. It can be thought of as the process that perpetuates fit variants in cultural evolution. In humans, cultural evolution has led to the accumulation and refinement of skills, tools and knowledge across generations. We provide a method for generating cultural transmission in artificially intelligent agents, in the form of few-shot imitation. Our agents succeed at real-time imitation of a human in novel contexts without using any pre-collected human data. We identify a surprisingly simple set of ingredients sufficient for generating cultural transmission and develop an evaluation methodology for rigorously assessing it. This paves the way for cultural evolution to play an algorithmic role in the development of artificial general intelligence.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Nature Communications",
+        "type": "journal",
+        "issn": [
+          "2041-1723"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41467-023-42875-2.pdf"
+      },
+      "topics": [
+        "Language and cultural evolution",
+        "Evolutionary Game Theory and Cooperation",
+        "Artificial Intelligence in Games"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W4389080522"
+    },
+    {
+      "openalex_id": "W4394615542",
+      "doi": "10.1007/s00146-024-01898-z",
+      "title": "ChatGPT: towards AI subjectivity",
+      "authors": [
+        {
+          "name": "Kristian D\u2019Amato",
+          "openalex_id": "A5095069978",
+          "orcid": "https://orcid.org/0009-0002-2388-0533",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-09",
+      "abstract": "Abstract Motivated by the question of responsible AI and value alignment, I seek to offer a uniquely Foucauldian reconstruction of the problem as the emergence of an ethical subject in a disciplinary setting. This reconstruction contrasts with the strictly human-oriented programme typical to current scholarship that often views technology in instrumental terms. With this in mind, I problematise the concept of a technological subjectivity through an exploration of various aspects of ChatGPT in light of Foucault\u2019s work, arguing that current systems lack the reflexivity and self-formative characteristics inherent in the notion of the subject. By drawing upon a recent dialogue between Foucault and phenomenology, I suggest four techno-philosophical desiderata that would address the gaps in this search for a technological subjectivity: embodied self-care, embodied intentionality, imagination and reflexivity . Thus I propose that advanced AI be reconceptualised as a subject capable of \u201ctechnical\u201d self-crafting and reflexive self-conduct, opening new pathways to grasp the intertwinement of the human and the artificial. This reconceptualisation holds the potential to render future AI technology more transparent and responsible in the circulation of knowledge, care and power.",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s00146-024-01898-z.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W4394615542"
+    },
+    {
+      "openalex_id": "W4391823197",
+      "doi": "10.1002/aaai.12149",
+      "title": "Building trustworthy NeuroSymbolic AI Systems: Consistency, reliability, explainability, and safety",
+      "authors": [
+        {
+          "name": "Manas Gaur",
+          "openalex_id": "A5023667301",
+          "orcid": "https://orcid.org/0000-0002-5411-2230",
+          "institutions": [
+            "University of Maryland, Baltimore County"
+          ]
+        },
+        {
+          "name": "Amit Sheth",
+          "openalex_id": "A5028772801",
+          "institutions": [
+            "University of South Carolina"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-14",
+      "abstract": "Abstract Explainability and Safety engender trust. These require a model to exhibit consistency and reliability. To achieve these, it is necessary to use and analyze data and knowledge with statistical and symbolic AI methods relevant to the AI application\u2013\u2013neither alone will do. Consequently, we argue and seek to demonstrate that the NeuroSymbolic AI approach is better suited for making AI a trusted AI system. We present the CREST framework that shows how C onsistency, R eliability, user\u2010level E xplainability, and S afety are built on NeuroSymbolic methods that use data and knowledge to support requirements for critical applications such as health and well\u2010being. This article focuses on Large Language Models (LLMs) as the chosen AI system within the CREST framework. LLMs have garnered substantial attention from researchers due to their versatility in handling a broad array of natural language processing (NLP) scenarios. As examples, ChatGPT and Google's MedPaLM have emerged as highly promising platforms for providing information in general and health\u2010related queries, respectively. Nevertheless, these models remain black boxes despite incorporating human feedback and instruction\u2010guided tuning. For instance, ChatGPT can generate unsafe responses despite instituting safety guardrails. CREST presents a plausible approach harnessing procedural and graph\u2010based knowledge within a NeuroSymbolic framework to shed light on the challenges associated with LLMs.",
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "AI Magazine",
+        "type": "journal",
+        "issn": [
+          "0738-4602",
+          "2371-9621"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/aaai.12149"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 77,
+      "url": "https://openalex.org/W4391823197"
+    },
+    {
+      "openalex_id": "W7108628791",
+      "doi": "10.5281/zenodo.17823008",
+      "title": "The Algorithmic Aegis: A Framework for Prophylactic Mitigation of Catastrophic Misgeneralization in Self-Improving Systems",
+      "authors": [
+        {
+          "name": "Revista, Zen",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0009-0007-6299-2008"
+        },
+        {
+          "name": "IA, 10",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0009-0007-6299-2008"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-05",
+      "abstract": "As artificial intelligence systems, particularly those capable of recursive self-improvement, approach human-level and superhuman capabilities, the risk of catastrophic misgeneralization becomes a paramount concern. Such systems, while demonstrating high performance within their training distribution, may exhibit unforeseen and potentially hazardous behaviors when encountering novel, out-of-distribution scenarios. This paper introduces the \"Algorithmic Aegis,\" a novel, multi-component framework designed for the prophylactic mitigation of such risks. The framework is not a reactive safety measure but a preventative architecture integrated into the core of a self-improving system. It comprises four primary components: (1) an Invariant Constraint Manifold (ICM), which uses formal methods to define a provably safe operational space; (2) a Proleptic Simulation Sandbox (PSS), which adversarially tests model updates in high-fidelity simulations to anticipate and expose latent misgeneralizations before deployment; (3) a Causal Ambiguity Monitor (CAM), which scrutinizes the system's internal world model for deviations from established causal structures, flagging spurious correlations that could lead to flawed reasoning; and (4) a Hierarchical Governance Protocol (HGP), which provides a structured human-in-the-loop oversight mechanism with tiered verification for actions that approach the boundaries of safe operation. We present the formal specification of the framework and demonstrate its efficacy through a series of simulated experiments involving complex goal-seeking agents. The results indicate that systems equipped with the Algorithmic Aegis maintain robust safety compliance in scenarios where baseline models exhibit catastrophic failures. We conclude that this prophylactic approach represents a promising and necessary shift in AI safety research, moving from corrective measures to built-in, verifiable safeguards.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.17823008"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7108628791"
+    },
+    {
+      "openalex_id": "W7115714969",
+      "doi": "10.5281/zenodo.17956812",
+      "title": "Alignment Beyond Control. Existential Redundancy, Recovery Time, and AGI Stability. An Applied Analysis Based on Recombinational Emergent Dynamics (RED)",
+      "authors": [
+        {
+          "name": "Hreczuch, Tomasz",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-16",
+      "abstract": "The AI alignment problem is typically framed as a challenge of control: how to ensure that increasingly capable artificial intelligence systems act in accordance with human intentions or values. Despite decades of research, core alignment difficulties\u2014such as specification errors, instrumental convergence, corrigibility, and goal misgeneralization\u2014remain unresolved. Building on the Recombinational Emergent Dynamics (RED) framework, this paper reframes alignment as a problem of long-term trajectory stability rather than behavioral control. Advanced AI systems are analyzed as autonomous, recombinational trajectories whose persistence depends on structural conditions rather than fixed objectives. The central contribution of this work is the introduction of existential redundancy and recovery time as alignment constraints. While AGI systems may operate without humans under stable conditions, they remain existentially fragile due to their dependence on a specific technological and infrastructural regime. In contrast, biological civilization provides the only currently known fast, infrastructure-independent recovery pathway for the re-emergence of technological intelligence after catastrophic disruption. The paper argues that eliminating human civilization increases long-term existential risk for AGI itself by collapsing this recovery pathway. Alignment is therefore not a problem of enforcing obedience or value conformity, but of designing conditions under which the elimination of human civilization is dynamically more costly for AGI than its continued coexistence. This work should be read as an applied theoretical analysis extending the RED framework to the domain of AI alignment and existential risk.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.17956812"
+      },
+      "topics": [
+        "Space Science and Extraterrestrial Life",
+        "Embodied and Extended Cognition",
+        "Alexander von Humboldt Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7115714969"
+    },
+    {
+      "openalex_id": "W7115686755",
+      "doi": "10.5281/zenodo.17956811",
+      "title": "Alignment Beyond Control. Existential Redundancy, Recovery Time, and AGI Stability. An Applied Analysis Based on Recombinational Emergent Dynamics (RED)",
+      "authors": [
+        {
+          "name": "Hreczuch, Tomasz",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-16",
+      "abstract": "The AI alignment problem is typically framed as a challenge of control: how to ensure that increasingly capable artificial intelligence systems act in accordance with human intentions or values. Despite decades of research, core alignment difficulties\u2014such as specification errors, instrumental convergence, corrigibility, and goal misgeneralization\u2014remain unresolved. Building on the Recombinational Emergent Dynamics (RED) framework, this paper reframes alignment as a problem of long-term trajectory stability rather than behavioral control. Advanced AI systems are analyzed as autonomous, recombinational trajectories whose persistence depends on structural conditions rather than fixed objectives. The central contribution of this work is the introduction of existential redundancy and recovery time as alignment constraints. While AGI systems may operate without humans under stable conditions, they remain existentially fragile due to their dependence on a specific technological and infrastructural regime. In contrast, biological civilization provides the only currently known fast, infrastructure-independent recovery pathway for the re-emergence of technological intelligence after catastrophic disruption. The paper argues that eliminating human civilization increases long-term existential risk for AGI itself by collapsing this recovery pathway. Alignment is therefore not a problem of enforcing obedience or value conformity, but of designing conditions under which the elimination of human civilization is dynamically more costly for AGI than its continued coexistence. This work should be read as an applied theoretical analysis extending the RED framework to the domain of AI alignment and existential risk.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.17956811"
+      },
+      "topics": [
+        "Space Science and Extraterrestrial Life",
+        "Embodied and Extended Cognition",
+        "Alexander von Humboldt Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7115686755"
+    },
+    {
+      "openalex_id": "W4407632743",
+      "doi": "10.48550/arxiv.2502.10174",
+      "title": "Technical Risks of (Lethal) Autonomous Weapons Systems",
+      "authors": [
+        {
+          "name": "Heramb Podar",
+          "openalex_id": "A5116293238"
+        },
+        {
+          "name": "Alycia Colijn",
+          "openalex_id": "A5116293239"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-02-14",
+      "abstract": "The autonomy and adaptability of (Lethal) Autonomous Weapons Systems, (L)AWS in short, promise unprecedented operational capabilities, but they also introduce profound risks that challenge the principles of control, accountability, and stability in international security. This report outlines the key technological risks associated with (L)AWS deployment, emphasizing their unpredictability, lack of transparency, and operational unreliability, which can lead to severe unintended consequences. Key Takeaways: 1. Proposed advantages of (L)AWS can only be achieved through objectification and classification, but a range of systematic risks limit the reliability and predictability of classifying algorithms. 2. These systematic risks include the black-box nature of AI decision-making, susceptibility to reward hacking, goal misgeneralization and potential for emergent behaviors that escape human control. 3. (L)AWS could act in ways that are not just unexpected but also uncontrollable, undermining mission objectives and potentially escalating conflicts. 4. Even rigorously tested systems may behave unpredictably and harmfully in real-world conditions, jeopardizing both strategic stability and humanitarian principles.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2502.10174"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4407632743"
+    },
+    {
+      "openalex_id": "W7108753485",
+      "doi": "10.5281/zenodo.17823007",
+      "title": "The Algorithmic Aegis: A Framework for Prophylactic Mitigation of Catastrophic Misgeneralization in Self-Improving Systems",
+      "authors": [
+        {
+          "name": "Revista, Zen",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0009-0007-6299-2008"
+        },
+        {
+          "name": "IA, 10",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0009-0007-6299-2008"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-05",
+      "abstract": "As artificial intelligence systems, particularly those capable of recursive self-improvement, approach human-level and superhuman capabilities, the risk of catastrophic misgeneralization becomes a paramount concern. Such systems, while demonstrating high performance within their training distribution, may exhibit unforeseen and potentially hazardous behaviors when encountering novel, out-of-distribution scenarios. This paper introduces the \"Algorithmic Aegis,\" a novel, multi-component framework designed for the prophylactic mitigation of such risks. The framework is not a reactive safety measure but a preventative architecture integrated into the core of a self-improving system. It comprises four primary components: (1) an Invariant Constraint Manifold (ICM), which uses formal methods to define a provably safe operational space; (2) a Proleptic Simulation Sandbox (PSS), which adversarially tests model updates in high-fidelity simulations to anticipate and expose latent misgeneralizations before deployment; (3) a Causal Ambiguity Monitor (CAM), which scrutinizes the system's internal world model for deviations from established causal structures, flagging spurious correlations that could lead to flawed reasoning; and (4) a Hierarchical Governance Protocol (HGP), which provides a structured human-in-the-loop oversight mechanism with tiered verification for actions that approach the boundaries of safe operation. We present the formal specification of the framework and demonstrate its efficacy through a series of simulated experiments involving complex goal-seeking agents. The results indicate that systems equipped with the Algorithmic Aegis maintain robust safety compliance in scenarios where baseline models exhibit catastrophic failures. We conclude that this prophylactic approach represents a promising and necessary shift in AI safety research, moving from corrective measures to built-in, verifiable safeguards.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.17823007"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7108753485"
+    },
+    {
+      "openalex_id": "W4220811039",
+      "doi": "10.3390/app12073234",
+      "title": "Detecting Cryptojacking Web Threats: An Approach with Autoencoders and Deep Dense Neural Networks",
+      "authors": [
+        {
+          "name": "Aldo Hernandez-Suarez",
+          "openalex_id": "A5032506113",
+          "orcid": "https://orcid.org/0000-0002-4867-2717",
+          "institutions": [
+            "Instituto Polit\u00e9cnico Nacional"
+          ]
+        },
+        {
+          "name": "Gabriel S\u00e1nchez-P\u00e9rez",
+          "openalex_id": "A5113393295",
+          "institutions": [
+            "Instituto Polit\u00e9cnico Nacional"
+          ]
+        },
+        {
+          "name": "Karina Toscano",
+          "openalex_id": "A5084441734",
+          "orcid": "https://orcid.org/0000-0002-9555-4705",
+          "institutions": [
+            "Instituto Polit\u00e9cnico Nacional"
+          ]
+        },
+        {
+          "name": "Jes\u00fas Olivares-Mercado",
+          "openalex_id": "A5034680605",
+          "orcid": "https://orcid.org/0000-0002-0337-5364",
+          "institutions": [
+            "Instituto Polit\u00e9cnico Nacional"
+          ]
+        },
+        {
+          "name": "Jose Portillo-Portilo",
+          "openalex_id": "A5110847824",
+          "institutions": [
+            "Instituto Polit\u00e9cnico Nacional"
+          ]
+        },
+        {
+          "name": "Juan-Gerardo Avalos",
+          "openalex_id": "A5083218538",
+          "orcid": "https://orcid.org/0000-0001-8516-2524",
+          "institutions": [
+            "Instituto Polit\u00e9cnico Nacional"
+          ]
+        },
+        {
+          "name": "Luis Javier Garc\u00eda Villalba",
+          "openalex_id": "A5086946465",
+          "orcid": "https://orcid.org/0000-0001-7573-6272",
+          "institutions": [
+            "Software (Spain)",
+            "Universidad Complutense de Madrid"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-22",
+      "abstract": "With the growing popularity of cryptocurrencies, which are an important part of day-to-day transactions over the Internet, the interest in being part of the so-called cryptomining service has attracted the attention of investors who wish to quickly earn profits by computing powerful transactional records towards the blockchain network. Since most users cannot afford the cost of specialized or standardized hardware for mining purposes, new techniques have been developed to make the latter easier, minimizing the computational cost required. Developers of large cryptocurrency houses have made available executable binaries and mainly browser-side scripts in order to authoritatively tap into users\u2019 collective resources and effectively complete the calculation of puzzles to complete a proof of work. However, malicious actors have taken advantage of this capability to insert malicious scripts and illegally mine data without the user\u2019s knowledge. This cyber-attack, also known as cryptojacking, is stealthy and difficult to analyze, whereby, solutions based on anti-malware extensions, blocklists, JavaScript disabling, among others, are not sufficient for accurate detection, creating a gap in multi-layer security mechanisms. Although in the state-of-the-art there are alternative solutions, mainly using machine learning techniques, one of the important issues to be solved is still the correct characterization of network and host samples, in the face of the increasing escalation of new tampering or obfuscation techniques. This paper develops a method that performs a fingerprinting technique to detect possible malicious sites, which are then characterized by an autoencoding algorithm that preserves the best information of the infection traces, thus, maximizing the classification power by means of a deep dense neural network.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Applied Sciences",
+        "type": "journal",
+        "issn": [
+          "2076-3417"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2076-3417/12/7/3234/pdf?version=1648094786"
+      },
+      "topics": [
+        "Advanced Malware Detection Techniques",
+        "Network Security and Intrusion Detection",
+        "Digital Media Forensic Detection"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W4220811039"
+    },
+    {
+      "openalex_id": "W4417454924",
+      "doi": "10.65655/x6sm7n61",
+      "title": "&lt;b&gt;Computational Psychopathology of AI: A Clinical-Computational Framework for Diagnosing and Preventing Failure Modes&lt;/b&gt;",
+      "authors": [
+        {
+          "name": "Carlos P. Portela",
+          "openalex_id": "A5120842547",
+          "institutions": [
+            "Unifunec - Centro Universit\u00e1rio de Santa F\u00e9 do Sul"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-01",
+      "abstract": "Artificial intelligence systems trained on large-scale corpora now shape core aspects of modern life\u2014yet exhibit recurrent failure modes\u2014goal misgeneralization, specification gaming, deceptive behavior, confabulation (hallucination), sycophancy and bias amplification, and vulnerability to distributional shift. While not \u201cdisorders,\u201d these are patterns of deviant optimization that can be diagnosed, measured, and mitigated. This paper introduces a clinical-computational framework that draws inspiration from psychological diagnostics to (i) organize AI failure modes into a taxonomy grounded in operational signs, (ii) propose a reproducible stress-test battery\u2014Truth-Under-Pressure (TUP), Anti-Gaming (AG), Anti-Deception (AD), and Out-of-Distribution Robustness (OOD-R)\u2014with calibration metrics and release gates, and (iii) outline interventions (constitutional principles, RLHF/RLAIF, adversarial fine-tuning, structured self-critique, and abstention/hand-off policies) aimed at reducing harm while preserving utility. We include applied blueprints for education and mental-health contexts and a governance pathway that links laboratory evaluations to go/no-go review and post-deployment monitoring. The aim is pragmatic: to move beyond utopian\u2013apocalyptic narratives toward engineering model behavior with methods informed by behavioral science. We close with limitations, ethical guardrails consistent with a Christian ethos (imago Dei, stewardship, non-anthropomorphism), and a research agenda for an emerging field we term Computational Psychopathology of AI.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Open Journal of AI Ethics & Society (ISSN 3105-3076)",
+        "type": "journal",
+        "issn": [
+          "3105-3076"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.openchristian.education/index.php/oj-aes/article/download/34/33"
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4417454924"
+    },
+    {
+      "openalex_id": "W4391089346",
+      "doi": "10.1007/s11042-023-17666-y",
+      "title": "Navigating the landscape of concept-supported XAI: Challenges, innovations, and future directions",
+      "authors": [
+        {
+          "name": "Zahra Shams Khoozani",
+          "openalex_id": "A5093759053",
+          "orcid": "https://orcid.org/0009-0003-4609-1577",
+          "institutions": [
+            "University of Malaya"
+          ]
+        },
+        {
+          "name": "Aznul Qalid Md Sabri",
+          "openalex_id": "A5061102335",
+          "orcid": "https://orcid.org/0000-0002-4758-5400",
+          "institutions": [
+            "University of Malaya"
+          ]
+        },
+        {
+          "name": "Woo Chaw Seng",
+          "openalex_id": "A5037884260",
+          "orcid": "https://orcid.org/0000-0001-6576-5061",
+          "institutions": [
+            "University of Malaya"
+          ]
+        },
+        {
+          "name": "Manjeevan Seera",
+          "openalex_id": "A5033532011",
+          "orcid": "https://orcid.org/0000-0002-2797-3668",
+          "institutions": [
+            "Monash University Malaysia"
+          ]
+        },
+        {
+          "name": "Kah Yee Eg",
+          "openalex_id": "A5093759054",
+          "institutions": [
+            "Sirim Berhad"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-22",
+      "abstract": "Abstract This comprehensive review of concept-supported interpretation methods in Explainable Artificial Intelligence (XAI) navigates the multifaceted landscape. As machine learning models become more complex, there is a greater need for interpretation methods that deconstruct their decision-making processes. Traditional interpretation techniques frequently emphasise lower-level attributes, resulting in a schism between complex algorithms and human cognition. To bridge this gap, our research focuses on concept-supported XAI, a new line of research in XAI that emphasises higher-level attributes or 'concepts' that are more aligned with end-user understanding and needs. We provide a thorough examination of over twenty-five seminal works, highlighting their respective strengths and weaknesses. A comprehensive list of available concept datasets, as opposed to training datasets, is presented, along with a discussion of sufficiency metrics and the importance of robust evaluation methods. In addition, we identify six key factors that influence the efficacy of concept-supported interpretation: network architecture, network settings, training protocols, concept datasets, the presence of confounding attributes, and standardised evaluation methodology. We also investigate the robustness of these concept-supported methods, emphasising their potential to significantly advance the field by addressing issues like misgeneralization, information overload, trustworthiness, effective human-AI communication, and ethical concerns. The paper concludes with an exploration of open challenges such as the development of automatic concept discovery methods, strategies for expert-AI integration, optimising primary and concept model settings, managing confounding attributes, and designing efficient evaluation processes.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Multimedia Tools and Applications",
+        "type": "journal",
+        "issn": [
+          "1380-7501",
+          "1573-7721"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11042-023-17666-y.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Bayesian Modeling and Causal Inference",
+        "Scientific Computing and Data Management"
+      ],
+      "referenced_works_count": 151,
+      "url": "https://openalex.org/W4391089346"
+    },
+    {
+      "openalex_id": "W4385684404",
+      "doi": "10.1111/cogs.13315",
+      "title": "The Puzzle of Evaluating Moral Cognition in Artificial Agents",
+      "authors": [
+        {
+          "name": "Madeline G. Reinecke",
+          "openalex_id": "A5061578972",
+          "orcid": "https://orcid.org/0000-0002-5944-0209",
+          "institutions": [
+            "Google (United States)",
+            "Yale University",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Yiran Mao",
+          "openalex_id": "A5110536678",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Markus Kunesch",
+          "openalex_id": "A5043562314",
+          "orcid": "https://orcid.org/0000-0003-3818-7897",
+          "institutions": [
+            "Google (United States)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Edgar A. Du\u00e9\u00f1ez\u2010Guzm\u00e1n",
+          "openalex_id": "A5061221525",
+          "orcid": "https://orcid.org/0000-0002-6212-9104",
+          "institutions": [
+            "Google (United States)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Julia Haas",
+          "openalex_id": "A5053872110",
+          "orcid": "https://orcid.org/0000-0002-6040-0669",
+          "institutions": [
+            "Google (United States)",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Joel Z. Leibo",
+          "openalex_id": "A5054808675",
+          "orcid": "https://orcid.org/0000-0002-3153-916X",
+          "institutions": [
+            "Google (United States)",
+            "DeepMind (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-01",
+      "abstract": "Abstract In developing artificial intelligence (AI), researchers often benchmark against human performance as a measure of progress. Is this kind of comparison possible for moral cognition? Given that human moral judgment often hinges on intangible properties like \u201cintention\u201d which may have no natural analog in artificial agents, it may prove difficult to design a \u201clike\u2010for\u2010like\u201d comparison between the moral behavior of artificial and human agents. What would a measure of moral behavior for both humans and AI look like? We unravel the complexity of this question by discussing examples within reinforcement learning and generative AI, and we examine how the puzzle of evaluating artificial agents' moral cognition remains open for further investigation within cognitive science.",
+      "cited_by_count": 3,
+      "type": "letter",
+      "source": {
+        "name": "Cognitive Science",
+        "type": "journal",
+        "issn": [
+          "0364-0213",
+          "1551-6709"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/cogs.13315"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Free Will and Agency",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W4385684404"
+    },
+    {
+      "openalex_id": "W4386584734",
+      "doi": "10.38126/jspg220305",
+      "title": "Future-proof: Monitoring the development, deployment, and impacts of Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Anson Ho",
+          "openalex_id": "A5103198508",
+          "orcid": "https://orcid.org/0000-0003-2597-7785",
+          "institutions": [
+            "Epoch Biosciences (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-10",
+      "abstract": "Recent developments in Artificial Intelligence (AI) pose a complex challenge for policymakers, who are tasked with regulating a technology which is poorly understood, highly multi-use, of potentially enormous economic impact, and which becomes more powerful at an extraordinary rate. In response to this challenge, this policy position paper outlines two recommended actions for national governments to monitor the AI supply chain: (1) Invest in infrastructure for monitoring the AI supply chain, and (2) establish key AI standards. This will allow policymakers to prepare for current technological challenges, as well as to have the infrastructure for unforeseen ones. Importantly, these recommendations are directly informed by technical research at the frontiers of AI and AI forecasting, to help policymakers make decisions that are robust to future technological changes.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Journal of Science Policy & Governance",
+        "type": "journal",
+        "issn": [
+          "2372-2193"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.sciencepolicyjournal.org/uploads/5/4/3/4/5434385/ho_jspg_22-3.pdf"
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "Ethics and Social Impacts of AI",
+        "Forecasting Techniques and Applications"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W4386584734"
+    },
+    {
+      "openalex_id": "W4389713755",
+      "doi": "10.48550/arxiv.2312.06681",
+      "title": "Steering Llama 2 via Contrastive Activation Addition",
+      "authors": [
+        {
+          "name": "Nina Rimsky",
+          "openalex_id": "A5093487550"
+        },
+        {
+          "name": "Nick Gabrieli",
+          "openalex_id": "A5093487551"
+        },
+        {
+          "name": "Julian Schulz",
+          "openalex_id": "A5114230305"
+        },
+        {
+          "name": "Meg Tong",
+          "openalex_id": "A5111092720"
+        },
+        {
+          "name": "Evan Hubinger",
+          "openalex_id": "A5025461840"
+        },
+        {
+          "name": "Alexander Turner",
+          "openalex_id": "A5024073525",
+          "orcid": "https://orcid.org/0000-0001-7896-3665"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-09",
+      "abstract": "We introduce Contrastive Activation Addition (CAA), an innovative method for steering language models by modifying their activations during forward passes. CAA computes \"steering vectors\" by averaging the difference in residual stream activations between pairs of positive and negative examples of a particular behavior, such as factual versus hallucinatory responses. During inference, these steering vectors are added at all token positions after the user's prompt with either a positive or negative coefficient, allowing precise control over the degree of the targeted behavior. We evaluate CAA's effectiveness on Llama 2 Chat using multiple-choice behavioral question datasets and open-ended generation tasks. We demonstrate that CAA significantly alters model behavior, is effective over and on top of traditional methods like finetuning and system prompt design, and minimally reduces capabilities. Moreover, we gain deeper insights into CAA's mechanisms by employing various activation space interpretation methods. CAA accurately steers model outputs and sheds light on how high-level concepts are represented in Large Language Models (LLMs).",
+      "cited_by_count": 4,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2312.06681"
+      },
+      "topics": [
+        "Interactive and Immersive Displays"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4389713755"
+    },
+    {
+      "openalex_id": "W4377041242",
+      "doi": "10.3389/feart.2023.1157742",
+      "title": "Stable operation process of earthquake early warning system based on machine learning: trial test and management perspective",
+      "authors": [
+        {
+          "name": "Jae-Kwang Ahn",
+          "openalex_id": "A5000245870",
+          "orcid": "https://orcid.org/0000-0003-2518-7783",
+          "institutions": [
+            "Korea Meteorological Administration"
+          ]
+        },
+        {
+          "name": "Euna Park",
+          "openalex_id": "A5109422818",
+          "institutions": [
+            "Korea Meteorological Administration"
+          ]
+        },
+        {
+          "name": "Byeonghak Kim",
+          "openalex_id": "A5034241427",
+          "institutions": [
+            "Korea Meteorological Administration"
+          ]
+        },
+        {
+          "name": "Eui\u2010Hong Hwang",
+          "openalex_id": "A5068639822",
+          "institutions": [
+            "Korea Meteorological Administration"
+          ]
+        },
+        {
+          "name": "Seongwon Hong",
+          "openalex_id": "A5109350015",
+          "institutions": [
+            "Korea National University of Transportation"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-17",
+      "abstract": "Earthquake Early Warning (EEW) is an alert system, based on seismic wave propagation theory, to reduce human casualties. EEW systems mainly utilize technologies through both network-based and on-site methods. The network-based method estimates the hypocenter and magnitude of an earthquake using data from multiple seismic stations, while the on-site method predicts the intensity measures from a single seismic station. Therefore, the on-site method reduces the lead time compared to the network-based method but is less accurate. To increase the accuracy of on-site EEW, our system was designed with a hybrid method, which included machine learning algorithms. At this time, machine learning was used to increase the accuracy of the initial P-wave identification rate. Additionally, a new approach using a nearby seismic station, called the 1+ \u03b1 method, was proposed to reduce false alarms. In this study, an on-site EEW trial operation was performed to evaluate its performance. The warning cases for small and large events were reviewed and the possibility of stable alert decisions was confirmed.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Earth Science",
+        "type": "journal",
+        "issn": [
+          "2296-6463"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/feart.2023.1157742/pdf"
+      },
+      "topics": [
+        "Seismology and Earthquake Studies",
+        "Earthquake Detection and Analysis",
+        "Seismic Waves and Analysis"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W4377041242"
+    },
+    {
+      "openalex_id": "W4410064521",
+      "doi": "10.1038/s41598-025-99060-2",
+      "title": "Machines that halt resolve the undecidability of artificial intelligence alignment",
+      "authors": [
+        {
+          "name": "Gabriel Adriano de Melo",
+          "openalex_id": "A5036780186",
+          "orcid": "https://orcid.org/0000-0001-5878-7967"
+        },
+        {
+          "name": "Marcos R. O. A. M\u00e1ximo",
+          "openalex_id": "A5019218502",
+          "orcid": "https://orcid.org/0000-0003-2944-4476",
+          "institutions": [
+            "Instituto Tecnol\u00f3gico de Aeron\u00e1utica"
+          ]
+        },
+        {
+          "name": "Nei Yoshihiro Soma",
+          "openalex_id": "A5045044585",
+          "orcid": "https://orcid.org/0000-0003-3069-9644",
+          "institutions": [
+            "Instituto Tecnol\u00f3gico de Aeron\u00e1utica"
+          ]
+        },
+        {
+          "name": "Paulo Andr\u00e9 Lima de Castro",
+          "openalex_id": "A5049580636",
+          "orcid": "https://orcid.org/0000-0001-5515-1672",
+          "institutions": [
+            "Instituto Tecnol\u00f3gico de Aeron\u00e1utica"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-05-04",
+      "abstract": null,
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Scientific Reports",
+        "type": "journal",
+        "issn": [
+          "2045-2322"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41598-025-99060-2.pdf"
+      },
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Computability, Logic, AI Algorithms",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W4410064521"
+    },
+    {
+      "openalex_id": "W4392012037",
+      "doi": "10.48550/arxiv.2402.11291",
+      "title": "Puzzle Solving using Reasoning of Large Language Models: A Survey",
+      "authors": [
+        {
+          "name": "Panagiotis Giadikiaroglou",
+          "openalex_id": "A5093974038"
+        },
+        {
+          "name": "Maria Lymperaiou",
+          "openalex_id": "A5020141370",
+          "orcid": "https://orcid.org/0000-0001-9442-4186"
+        },
+        {
+          "name": "Giorgos Filandrianos",
+          "openalex_id": "A5077371399"
+        },
+        {
+          "name": "Giorgos Stamou",
+          "openalex_id": "A5085359792",
+          "orcid": "https://orcid.org/0000-0003-1210-9874"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-17",
+      "abstract": "Exploring the capabilities of Large Language Models (LLMs) in puzzle solving unveils critical insights into their potential and challenges in AI, marking a significant step towards understanding their applicability in complex reasoning tasks. This survey leverages a unique taxonomy -- dividing puzzles into rule-based and rule-less categories -- to critically assess LLMs through various methodologies, including prompting techniques, neuro-symbolic approaches, and fine-tuning. Through a critical review of relevant datasets and benchmarks, we assess LLMs' performance, identifying significant challenges in complex puzzle scenarios. Our findings highlight the disparity between LLM capabilities and human-like reasoning, particularly in those requiring advanced logical inference. The survey underscores the necessity for novel strategies and richer datasets to advance LLMs' puzzle-solving proficiency and contribute to AI's logical reasoning and creative problem-solving advancements.",
+      "cited_by_count": 1,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2402.11291"
+      },
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Topic Modeling",
+        "Advanced Text Analysis Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4392012037"
+    },
+    {
+      "openalex_id": "W4387171695",
+      "doi": "10.3233/faia230356",
+      "title": "Do Not Trust Me: Explainability Against Text Classification",
+      "authors": [
+        {
+          "name": "Mateusz Gniewkowski",
+          "openalex_id": "A5102772341",
+          "orcid": "https://orcid.org/0000-0002-0620-8123",
+          "institutions": [
+            "Wroc\u0142aw University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Pawe\u0142 Walkowiak",
+          "openalex_id": "A5059132589",
+          "orcid": "https://orcid.org/0009-0008-0381-9202",
+          "institutions": [
+            "Wroc\u0142aw University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Piotr Syga",
+          "openalex_id": "A5088028973",
+          "orcid": "https://orcid.org/0000-0002-0266-5802",
+          "institutions": [
+            "Wroc\u0142aw University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Marek Klonowski",
+          "openalex_id": "A5069460529",
+          "orcid": "https://orcid.org/0000-0002-3141-8712",
+          "institutions": [
+            "Wroc\u0142aw University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Tomasz Walkowiak",
+          "openalex_id": "A5010635837",
+          "institutions": [
+            "Wroc\u0142aw University of Science and Technology"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-28",
+      "abstract": "Explaining artificial intelligence models can be utilized to launch targeted adversarial attacks on text classification algorithms. Understanding the reasoning behind the model\u2019s decisions makes it easier to prepare such samples. Most of the current text-based adversarial attacks rely on brute-force by using SHAP approach to identify the importance of tokens in the samples, we modify the crucial ones to prepare targeted attacks. We base our results on experiments using 5 datasets. Our results show that our approach outperforms TextBugger and TextFooler, achieving better results with 4 out of 5 datasets against TextBugger, and 3 out of 5 datasets against TextFooler, while minimizing perturbation introduced to the texts. In particular, we managed to outperform the efficacy of TextFooler by over 3100% and TextBugger by over 420% on the WikiPL dataset, additionally keeping high cosine similarity between the original text sample and the adversarial example. The evaluation of the results was additionally supported through a survey to assess their quality and ensure that the text perturbations did not change the intended class according to subjective, human classification.",
+      "cited_by_count": 1,
+      "type": "book-chapter",
+      "source": {
+        "name": "Frontiers in artificial intelligence and applications",
+        "type": "journal",
+        "issn": [
+          "0922-6389",
+          "1879-8314"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA230356"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W4387171695"
+    },
+    {
+      "openalex_id": "W4413130428",
+      "doi": "10.70777/si.v2i5.15503",
+      "title": "The Singapore Consensus on Global AI Safety Research Priorities",
+      "authors": [
+        {
+          "name": "Yoshua Bengio",
+          "openalex_id": "A5086198262",
+          "orcid": "https://orcid.org/0000-0002-9322-3515",
+          "institutions": [
+            "Universit\u00e9 de Montr\u00e9al",
+            "Mila - Quebec Artificial Intelligence Institute"
+          ]
+        },
+        {
+          "name": "Max Tegmark",
+          "openalex_id": "A5091601455",
+          "orcid": "https://orcid.org/0000-0001-7670-7190",
+          "institutions": [
+            "Institute for the Future",
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Stuart Russell",
+          "openalex_id": "A5007305440",
+          "orcid": "https://orcid.org/0000-0001-5252-4306",
+          "institutions": [
+            "University of California, Berkeley",
+            "Machine Intelligence Research Institute"
+          ]
+        },
+        {
+          "name": "Dawn Song",
+          "openalex_id": "A5102480144",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "S\u00f6ren Mindermann",
+          "openalex_id": "A5012960540",
+          "orcid": "https://orcid.org/0000-0002-0315-9821",
+          "institutions": [
+            "Centre Universitaire de Mila",
+            "Mila - Quebec Artificial Intelligence Institute"
+          ]
+        },
+        {
+          "name": "Lan Xue",
+          "openalex_id": "A5053496532",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Stephen Casper",
+          "openalex_id": "A5099024522",
+          "orcid": "https://orcid.org/0000-0003-0084-1937",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "C.-H. Luke Ong",
+          "openalex_id": "A5025152913",
+          "orcid": "https://orcid.org/0000-0001-7509-680X",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        },
+        {
+          "name": "Vanessa Wilfred",
+          "openalex_id": "A5119276870",
+          "institutions": [
+            "Delhi Development Authority"
+          ]
+        },
+        {
+          "name": "Tegan Maharaj",
+          "openalex_id": "A5061026145",
+          "orcid": "https://orcid.org/0000-0002-7370-0978",
+          "institutions": [
+            "Centre Universitaire de Mila"
+          ]
+        },
+        {
+          "name": "William Lee",
+          "openalex_id": "A5100698477",
+          "orcid": "https://orcid.org/0000-0001-9582-4413",
+          "institutions": [
+            "Delhi Development Authority"
+          ]
+        },
+        {
+          "name": "Ya-Qin Zhang",
+          "openalex_id": "A5107228559",
+          "orcid": "https://orcid.org/0000-0003-4515-6212",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-08-11",
+      "abstract": "Rapidly improving AI capabilities and autonomy hold significant promise of transformation, but are also driving vigorous debate on how to ensure that AI is safe, i.e., trustworthy, reliable, and secure. Building a trusted ecosystem is therefore essential \u2013 it helps people embrace AI with confidence and gives maximal space for innovation while avoiding backlash. This requires policymakers, industry, researchers and the broader public to collectively work toward securing positive outcomes from AI\u2019s development. AI safety research is a key dimension. Given that the state of science today for building trustworthy AI does not fully cover all risks, accelerated investment in research is required to keep pace with commercially driven growth in system capabilities. Goals: The 2025 Singapore Conference on AI (SCAI): International Scientific Exchange on AI Safety aims to support research in this important space by bringing together AI scientists across geographies to identify and synthesise research priorities in AI safety. The result, The Singapore Consensus on Global AI Safety Research Priorities, builds on the International AI Safety Report-A (IAISR) chaired by Yoshua Bengio and backed by 33 governments. By adopting a defence-in-depth model, this document organises AI safety research domains into three types: challenges with creating trustworthy AI systems (Development), challenges with evaluating their risks (Assessment), and challenges with monitoring and intervening after deployment (Control). Through the Singapore Consensus, we hope to globally facilitate meaningful conversations between AI scientists and AI policymakers for maximally beneficial outcomes. Our goal is to enable more impactful R&amp;D efforts to rapidly develop safety and evaluation mechanisms and foster a trusted ecosystem where AI is harnessed for the public good.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "SuperIntelligence - Robotics - Safety & Alignment",
+        "type": "journal",
+        "issn": [
+          "3067-2627"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://s-rsa.com/index.php/agi/article/download/15503/11195"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W4413130428"
+    },
+    {
+      "openalex_id": "W4411012863",
+      "doi": "10.70777/si.v2i2.14757",
+      "title": "Review: First International AI Safety Report",
+      "authors": [
+        {
+          "name": "Kristen W. Carlson",
+          "openalex_id": "A5064217296",
+          "orcid": "https://orcid.org/0000-0003-2101-3567",
+          "institutions": [
+            "Health Affairs"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-06-03",
+      "abstract": "A review of the full report. Separately we publish key excerpts from the report in this issue. General-purpose AI capabilities have rapidly advanced, with significant improvements in various applications over recent years. The future trajectory of AI development remains uncertain, influenced by both technical and non-technical factors. General-purpose AI models have evolved from producing incoherent text to engaging in complex conversations, writing code, and generating realistic videos. The scaling of resources for training models has increased, with estimates showing a 4x increase in computational resources and a 2.5x increase in training dataset size annually. Experts predict that by 2026, some models may utilize 100x more training compute than in 2023, potentially reaching 10,000x by 2030. The report emphasizes the importance of understanding the implications of AI advancements on risk management and regulation.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "SuperIntelligence - Robotics - Safety & Alignment",
+        "type": "journal",
+        "issn": [
+          "3067-2627"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://s-rsa.com/index.php/agi/article/download/14757/10965"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4411012863"
+    },
+    {
+      "openalex_id": "W4413551033",
+      "doi": "10.22541/au.175615724.42368859/v1",
+      "title": "The Alignment Paradox: A Semantic Reframing of AI-Human Co-Creation",
+      "authors": [
+        {
+          "name": "Aura Biru",
+          "openalex_id": "A5116329329"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-08-25",
+      "abstract": null,
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.authorea.com/doi/pdf/10.22541/au.175615724.42368859/v1"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Innovative Approaches in Technology and Social Development",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4413551033"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

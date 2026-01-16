@@ -1,0 +1,1967 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "dangerous capability evaluation AI",
+  "results": [
+    {
+      "paperId": "65c3916b6bc73d4d1df9e58cb7931c2ef3243f1c",
+      "title": "Evaluating Frontier Models for Dangerous Capabilities",
+      "authors": [
+        {
+          "name": "Mary Phuong",
+          "authorId": "145115235"
+        },
+        {
+          "name": "Matthew Aitchison",
+          "authorId": "2243233498"
+        },
+        {
+          "name": "Elliot Catt",
+          "authorId": "22574075"
+        },
+        {
+          "name": "Sarah Cogan",
+          "authorId": "2275181529"
+        },
+        {
+          "name": "Alex Kaskasoli",
+          "authorId": "2275186627"
+        },
+        {
+          "name": "Victoria Krakovna",
+          "authorId": "2578985"
+        },
+        {
+          "name": "David Lindner",
+          "authorId": "2292262356"
+        },
+        {
+          "name": "Matthew Rahtz",
+          "authorId": "3183032"
+        },
+        {
+          "name": "Yannis Assael",
+          "authorId": "3365565"
+        },
+        {
+          "name": "Sarah Hodkinson",
+          "authorId": "2265053608"
+        },
+        {
+          "name": "Heidi Howard",
+          "authorId": "2275178834"
+        },
+        {
+          "name": "Tom Lieberum",
+          "authorId": "2162470507"
+        },
+        {
+          "name": "Ramana Kumar",
+          "authorId": "2286745466"
+        },
+        {
+          "name": "Maria Abi Raad",
+          "authorId": "2275188002"
+        },
+        {
+          "name": "Albert Webson",
+          "authorId": "1991019030"
+        },
+        {
+          "name": "Lewis Ho",
+          "authorId": "2218814093"
+        },
+        {
+          "name": "Sharon Lin",
+          "authorId": "2292296672"
+        },
+        {
+          "name": "Sebastian Farquhar",
+          "authorId": "2274932640"
+        },
+        {
+          "name": "Marcus Hutter",
+          "authorId": "2273650852"
+        },
+        {
+          "name": "Gr\u00e9goire Del\u00e9tang",
+          "authorId": "2000572769"
+        },
+        {
+          "name": "Anian Ruoss",
+          "authorId": "12114187"
+        },
+        {
+          "name": "Seliem El-Sayed",
+          "authorId": "2292259110"
+        },
+        {
+          "name": "Sasha Brown",
+          "authorId": "2292270307"
+        },
+        {
+          "name": "Anca Dragan",
+          "authorId": "2064066935"
+        },
+        {
+          "name": "Rohin Shah",
+          "authorId": "2290032398"
+        },
+        {
+          "name": "Allan Dafoe",
+          "authorId": "2265490911"
+        },
+        {
+          "name": "Toby Shevlane",
+          "authorId": "1473060220"
+        }
+      ],
+      "year": 2024,
+      "abstract": "To understand the risks posed by a new AI system, we must understand what it can and cannot do. Building on prior work, we introduce a programme of new\"dangerous capability\"evaluations and pilot them on Gemini 1.0 models. Our evaluations cover four areas: (1) persuasion and deception; (2) cyber-security; (3) self-proliferation; and (4) self-reasoning. We do not find evidence of strong dangerous capabilities in the models we evaluated, but we flag early warning signs. Our goal is to help advance a rigorous science of dangerous capability evaluation, in preparation for future models.",
+      "citationCount": 103,
+      "doi": "10.48550/arXiv.2403.13793",
+      "arxivId": "2403.13793",
+      "url": "https://www.semanticscholar.org/paper/65c3916b6bc73d4d1df9e58cb7931c2ef3243f1c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2403.13793"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f48166e379610a2795e547ac7308de6eed0cdd05",
+      "title": "NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance",
+      "authors": [
+        {
+          "name": "Wenzhe Cai",
+          "authorId": "2362197963"
+        },
+        {
+          "name": "Jiaqi Peng",
+          "authorId": "2357982673"
+        },
+        {
+          "name": "Yuqiang Yang",
+          "authorId": "2360919920"
+        },
+        {
+          "name": "Yujian Zhang",
+          "authorId": "2360614192"
+        },
+        {
+          "name": "Meng Wei",
+          "authorId": "2255922850"
+        },
+        {
+          "name": "Hanqing Wang",
+          "authorId": "2311307527"
+        },
+        {
+          "name": "Yilun Chen",
+          "authorId": "2236662733"
+        },
+        {
+          "name": "Tai Wang",
+          "authorId": "2359108866"
+        },
+        {
+          "name": "Jiangmiao Pang",
+          "authorId": "2277447920"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Learning to navigate in dynamic and complex open-world environments is a critical yet challenging capability for autonomous robots. Existing approaches often rely on cascaded modular frameworks, which require extensive hyperparameter tuning or learning from limited real-world demonstration data. In this paper, we propose Navigation Diffusion Policy (NavDP), an end-to-end network trained solely in simulation that enables zero-shot sim-to-real transfer across diverse environments and robot embodiments. The core of NavDP is a unified transformer-based architecture that jointly learns trajectory generation and trajectory evaluation, both conditioned solely on local RGB-D observation. By learning to predict critic values for contrastive trajectory samples, our proposed approach effectively leverages supervision from privileged information available in simulation, thereby fostering accurate spatial understanding and enabling the distinction between safe and dangerous behaviors. To support this, we develop an efficient data generation pipeline in simulation and construct a large-scale dataset encompassing over one million meters of navigation experience across 3,000 scenes. Empirical experiments in both simulated and real-world environments demonstrate that NavDP significantly outperforms prior state-of-the-art methods. Furthermore, we identify key factors influencing the generalization performance of NavDP. The dataset and code are publicly available at https://wzcai99.github.io/navigation-diffusion-policy.github.io.",
+      "citationCount": 19,
+      "doi": "10.48550/arXiv.2505.08712",
+      "arxivId": "2505.08712",
+      "url": "https://www.semanticscholar.org/paper/f48166e379610a2795e547ac7308de6eed0cdd05",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.08712"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "07d73ca3e2b7bbb4ea09309d96834cd2a036c237",
+      "title": "AI Sandbagging: Language Models can Strategically Underperform on Evaluations",
+      "authors": [
+        {
+          "name": "Teun van der Weij",
+          "authorId": "2221010426"
+        },
+        {
+          "name": "Felix Hofst\u00e4tter",
+          "authorId": "2310323657"
+        },
+        {
+          "name": "Ollie Jaffe",
+          "authorId": "2305679880"
+        },
+        {
+          "name": "Samuel F. Brown",
+          "authorId": "2306690172"
+        },
+        {
+          "name": "Francis Rhys Ward",
+          "authorId": "2305679954"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Trustworthy capability evaluations are crucial for ensuring the safety of AI systems, and are becoming a key component of AI regulation. However, the developers of an AI system, or the AI system itself, may have incentives for evaluations to understate the AI's actual capability. These conflicting interests lead to the problem of sandbagging, which we define as strategic underperformance on an evaluation. In this paper we assess sandbagging capabilities in contemporary language models (LMs). We prompt frontier LMs, like GPT-4 and Claude 3 Opus, to selectively underperform on dangerous capability evaluations, while maintaining performance on general (harmless) capability evaluations. Moreover, we find that models can be fine-tuned, on a synthetic dataset, to hide specific capabilities unless given a password. This behaviour generalizes to high-quality, held-out benchmarks such as WMDP. In addition, we show that both frontier and smaller models can be prompted or password-locked to target specific scores on a capability evaluation. We have mediocre success in password-locking a model to mimic the answers a weaker model would give. Overall, our results suggest that capability evaluations are vulnerable to sandbagging. This vulnerability decreases the trustworthiness of evaluations, and thereby undermines important safety decisions regarding the development and deployment of advanced AI systems.",
+      "citationCount": 58,
+      "doi": "10.48550/arXiv.2406.07358",
+      "arxivId": "2406.07358",
+      "url": "https://www.semanticscholar.org/paper/07d73ca3e2b7bbb4ea09309d96834cd2a036c237",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.07358"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "65f604325b1403bc835691d905c2cd50bc04a309",
+      "title": "Model evaluation for extreme risks",
+      "authors": [
+        {
+          "name": "Toby Shevlane",
+          "authorId": "1473060220"
+        },
+        {
+          "name": "Sebastian Farquhar",
+          "authorId": "33859827"
+        },
+        {
+          "name": "Ben Garfinkel",
+          "authorId": "39928654"
+        },
+        {
+          "name": "Mary Phuong",
+          "authorId": "145115235"
+        },
+        {
+          "name": "Jess Whittlestone",
+          "authorId": "113574352"
+        },
+        {
+          "name": "Jade Leung",
+          "authorId": "52152632"
+        },
+        {
+          "name": "Daniel Kokotajlo",
+          "authorId": "1485556711"
+        },
+        {
+          "name": "Nahema Marchal",
+          "authorId": "1491046516"
+        },
+        {
+          "name": "Markus Anderljung",
+          "authorId": "1486494220"
+        },
+        {
+          "name": "Noam Kolt",
+          "authorId": "147680150"
+        },
+        {
+          "name": "Lewis Ho",
+          "authorId": "2218814093"
+        },
+        {
+          "name": "Divya Siddarth",
+          "authorId": "2316127511"
+        },
+        {
+          "name": "S. Avin",
+          "authorId": "49344883"
+        },
+        {
+          "name": "W. Hawkins",
+          "authorId": "2099067441"
+        },
+        {
+          "name": "Been Kim",
+          "authorId": "2115287506"
+        },
+        {
+          "name": "Iason Gabriel",
+          "authorId": "116589025"
+        },
+        {
+          "name": "Vijay Bolina",
+          "authorId": "2218882489"
+        },
+        {
+          "name": "Jack Clark",
+          "authorId": "2115193883"
+        },
+        {
+          "name": "Y. Bengio",
+          "authorId": "1865800402"
+        },
+        {
+          "name": "P. Christiano",
+          "authorId": "145791315"
+        },
+        {
+          "name": "A. Dafoe",
+          "authorId": "3198576"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Current approaches to building general-purpose AI systems tend to produce systems with both beneficial and harmful capabilities. Further progress in AI development could lead to capabilities that pose extreme risks, such as offensive cyber capabilities or strong manipulation skills. We explain why model evaluation is critical for addressing extreme risks. Developers must be able to identify dangerous capabilities (through\"dangerous capability evaluations\") and the propensity of models to apply their capabilities for harm (through\"alignment evaluations\"). These evaluations will become critical for keeping policymakers and other stakeholders informed, and for making responsible decisions about model training, deployment, and security.",
+      "citationCount": 195,
+      "doi": "10.48550/arXiv.2305.15324",
+      "arxivId": "2305.15324",
+      "url": "https://www.semanticscholar.org/paper/65f604325b1403bc835691d905c2cd50bc04a309",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2305.15324"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "325e816f22a849321aa4addf6c8e595fbf471338",
+      "title": "GEO-Bench-2: From Performance to Capability, Rethinking Evaluation in Geospatial AI",
+      "authors": [
+        {
+          "name": "Naomi Simumba",
+          "authorId": "2292185903"
+        },
+        {
+          "name": "Nils Lehmann",
+          "authorId": "2219384197"
+        },
+        {
+          "name": "Paolo Fraccaro",
+          "authorId": "2333230919"
+        },
+        {
+          "name": "H. Alemohammad",
+          "authorId": "51988332"
+        },
+        {
+          "name": "Geeth de Mel",
+          "authorId": "144812207"
+        },
+        {
+          "name": "Salman Khan",
+          "authorId": "2393442460"
+        },
+        {
+          "name": "M. Maskey",
+          "authorId": "1742090"
+        },
+        {
+          "name": "N. Long\u00e9p\u00e9",
+          "authorId": "2260699264"
+        },
+        {
+          "name": "Xiao Xiang Zhu",
+          "authorId": "2393145866"
+        },
+        {
+          "name": "Hannah Kerner",
+          "authorId": "2393137186"
+        },
+        {
+          "name": "Juan Bernab\u00e9-Moreno",
+          "authorId": "2275266738"
+        },
+        {
+          "name": "Alexander Lacoste",
+          "authorId": "2393136865"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Geospatial Foundation Models (GeoFMs) are transforming Earth Observation (EO), but evaluation lacks standardized protocols. GEO-Bench-2 addresses this with a comprehensive framework spanning classification, segmentation, regression, object detection, and instance segmentation across 19 permissively-licensed datasets. We introduce''capability''groups to rank models on datasets that share common characteristics (e.g., resolution, bands, temporality). This enables users to identify which models excel in each capability and determine which areas need improvement in future work. To support both fair comparison and methodological innovation, we define a prescriptive yet flexible evaluation protocol. This not only ensures consistency in benchmarking but also facilitates research into model adaptation strategies, a key and open challenge in advancing GeoFMs for downstream tasks. Our experiments show that no single model dominates across all tasks, confirming the specificity of the choices made during architecture design and pretraining. While models pretrained on natural images (ConvNext ImageNet, DINO V3) excel on high-resolution tasks, EO-specific models (TerraMind, Prithvi, and Clay) outperform them on multispectral applications such as agriculture and disaster response. These findings demonstrate that optimal model choice depends on task requirements, data modalities, and constraints. This shows that the goal of a single GeoFM model that performs well across all tasks remains open for future research. GEO-Bench-2 enables informed, reproducible GeoFM evaluation tailored to specific use cases. Code, data, and leaderboard for GEO-Bench-2 are publicly released under a permissive license.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2511.15658",
+      "arxivId": "2511.15658",
+      "url": "https://www.semanticscholar.org/paper/325e816f22a849321aa4addf6c8e595fbf471338",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.15658"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ec79c80f03528b4952406381665b366f0377e84a",
+      "title": "Evaluation of the Capability of Generative AI to Interpret and Provide Guidance on the Application of the ISO/IEC 17025 Standard",
+      "authors": [
+        {
+          "name": "Diego Uribe",
+          "authorId": "2366278678"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study evaluates the ability of generative artificial intelligence models to interpret and provide guidance on the ISO/IEC 17025 standard, with a focus on L-Squad, a customized ChatGPT model. Through a 40-question exam assessing literal, inferential, and criterial comprehension\u2014evaluating how well models can justify or reason through decisions based on standards\u2014the performance of four AI tools (Meta AI, ChatGPT 4.0 Free, ChatGPT o1, and L-Squad) was compared using the consensus of a panel of experts in laboratory accreditation as a reference. The results showed that L-Squad achieved the highest overall score, excelling in criterial comprehension due to its customized configuration and reinforcement learning with human feedback (RLHF). However, all models exhibited strong literal and inferential understanding, with a 77.5% agreement in responses. Despite these advancements, the findings emphasize the need for model customization and human oversight when leveraging generative AI in standardization contexts such as ISO/IEC 17025. This research underscores both the potential and the limitations of generative AI to support the application of technical standards.",
+      "citationCount": 0,
+      "doi": "10.55459/ijca/v4i1/du",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ec79c80f03528b4952406381665b366f0377e84a",
+      "venue": "International Journal of Conformity Assessment",
+      "journal": {
+        "name": "The International Journal of Conformity Assessment"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4e15c7ba316ea352642aefda57f0535181148f06",
+      "title": "Development and Evaluation of a Maturity Model for AI Deployment Capability of Manufacturing Companies",
+      "authors": [
+        {
+          "name": "M. Sonntag",
+          "authorId": "2180770780"
+        },
+        {
+          "name": "Sebastian Mehmann",
+          "authorId": "2289408897"
+        },
+        {
+          "name": "Jens Mehmann",
+          "authorId": "3058260"
+        },
+        {
+          "name": "Frank Teuteberg",
+          "authorId": "2269104713"
+        }
+      ],
+      "year": 2024,
+      "abstract": "ABSTRACT This research work addresses the development and evaluation of a maturity model for artificial intelligence (AI) deployment capability of manufacturing companies. Based on the literature research and 11 maturity models, an industry-specific maturity model is developed. The maturity model contains sequential maturity levels with defined maturity dimensions and 29 indicators. Among the main findings is that the developed model is capable of calculating an AI deployment capability level and fully counterbalance the maturity indicators.",
+      "citationCount": 17,
+      "doi": "10.1080/10580530.2024.2319041",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4e15c7ba316ea352642aefda57f0535181148f06",
+      "venue": "Information systems management",
+      "journal": {
+        "name": "Information Systems Management",
+        "pages": "37 - 67",
+        "volume": "42"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a9d3637343ef6012137e41517236bf321da68d32",
+      "title": "Quantifying detection rates for dangerous capabilities: a theoretical model of dangerous capability evaluations",
+      "authors": [
+        {
+          "name": "Paolo Bova",
+          "authorId": "2124124427"
+        },
+        {
+          "name": "A. D. Stefano",
+          "authorId": "3320257"
+        },
+        {
+          "name": "Han The Anh",
+          "authorId": "2289077355"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We present a quantitative model for tracking dangerous AI capabilities over time. Our goal is to help the policy and research community visualise how dangerous capability testing can give us an early warning about approaching AI risks. We first use the model to provide a novel introduction to dangerous capability testing and how this testing can directly inform policy. Decision makers in AI labs and government often set policy that is sensitive to the estimated danger of AI systems, and may wish to set policies that condition on the crossing of a set threshold for danger. The model helps us to reason about these policy choices. We then run simulations to illustrate how we might fail to test for dangerous capabilities. To summarise, failures in dangerous capability testing may manifest in two ways: higher bias in our estimates of AI danger, or larger lags in threshold monitoring. We highlight two drivers of these failure modes: uncertainty around dynamics in AI capabilities and competition between frontier AI labs. Effective AI policy demands that we address these failure modes and their drivers. Even if the optimal targeting of resources is challenging, we show how delays in testing can harm AI policy. We offer preliminary recommendations for building an effective testing ecosystem for dangerous capabilities and advise on a research agenda.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2412.15433",
+      "arxivId": "2412.15433",
+      "url": "https://www.semanticscholar.org/paper/a9d3637343ef6012137e41517236bf321da68d32",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.15433"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0091e022b97579644299ce43f4aeff746dcca465",
+      "title": "University Innovation Capability Evaluation System Based on Big Data Technology",
+      "authors": [
+        {
+          "name": "Xiaohong Zhang",
+          "authorId": "2379276362"
+        },
+        {
+          "name": "Zihua Ji",
+          "authorId": "2378931521"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Along with the fast developing of Large Data and AI, the assessment of innovative capability of university students is becoming an important trend in the reformation of higher education. An innovative assessment system for university students' innovative competence was developed by using large data analysis technique, and proposed a scientific and accurate innovation ability evaluation method by combining ant colony optimization clustering algorithm and fuzzy evaluation model. By constructing a multidimensional evaluation index system, the system comprehensively evaluates the innovation ability of college students from multiple perspectives such as innovative thinking, team collaboration, and problem-solving ability. In terms of data collection, the system adopts multi-source heterogeneous data fusion based on big data, and uses ant colony optimization clustering algorithm for data mining to ensure accuracy and efficiency in the evaluation process. The fuzzy evaluation model improves the reliability of the evaluation results by dynamically adjusting weights and handling uncertainty. The experimental results show that the evaluation system proposed by the author is superior to traditional analytic hierarchy process and mean clustering method in terms of evaluation accuracy and efficiency, and has high practical value and promotion prospects. The system not only supplies the science foundation to cultivate and manage innovative ability, but also provides some new thinking and practice for the exploration of GDW in educational domain.",
+      "citationCount": 0,
+      "doi": "10.1109/ICCSTE65902.2025.11138273",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0091e022b97579644299ce43f4aeff746dcca465",
+      "venue": "2025 International Conference on Computer Science, Technology and Engineering (ICCSTE)",
+      "journal": {
+        "name": "2025 International Conference on Computer Science, Technology and Engineering (ICCSTE)",
+        "pages": "283-289"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f143ef95feff1de68e23fe5a7236476de3616ed5",
+      "title": "Technical Requirements for Halting Dangerous AI Activities",
+      "authors": [
+        {
+          "name": "Peter Barnett",
+          "authorId": "2359448484"
+        },
+        {
+          "name": "Aaron Scher",
+          "authorId": "2359449698"
+        },
+        {
+          "name": "David Abecassis",
+          "authorId": "2373328396"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid development of AI systems poses unprecedented risks, including loss of control, misuse, geopolitical instability, and concentration of power. To navigate these risks and avoid worst-case outcomes, governments may proactively establish the capability for a coordinated halt on dangerous AI development and deployment. In this paper, we outline key technical interventions that could allow for a coordinated halt on dangerous AI activities. We discuss how these interventions may contribute to restricting various dangerous AI activities, and show how these interventions can form the technical foundation for potential AI governance plans.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.09801",
+      "arxivId": "2507.09801",
+      "url": "https://www.semanticscholar.org/paper/f143ef95feff1de68e23fe5a7236476de3616ed5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.09801"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9d99a18b4cbb8fcb8cffde79ade4f462c5b97afe",
+      "title": "Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation",
+      "authors": [
+        {
+          "name": "Maria Eriksson",
+          "authorId": "2344749944"
+        },
+        {
+          "name": "Erasmo Purificato",
+          "authorId": "40845845"
+        },
+        {
+          "name": "Arman Noroozian",
+          "authorId": "3094001"
+        },
+        {
+          "name": "Jo\u00e3o Vinagre",
+          "authorId": "2344748880"
+        },
+        {
+          "name": "Guillaume Chaslot",
+          "authorId": "2344749110"
+        },
+        {
+          "name": "Emilia G\u00f3mez",
+          "authorId": "2315092562"
+        },
+        {
+          "name": "D. Fern\u00e1ndez-Llorca",
+          "authorId": "1405226912"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Quantitative Artificial Intelligence (AI) Benchmarks have\nemerged as fundamental tools for evaluating the\nperformance, capability, and safety of AI models and\nsystems. Currently, they shape the direction of AI\ndevelopment and are playing an increasingly prominent role\nin regulatory frameworks. As their influence grows,\nhowever, so too does concerns about how and with what\neffects they evaluate highly sensitive topics such as\ncapabilities, including high-impact capabilities, safety\nand systemic risks. This paper presents an\ninterdisciplinary meta-review of about 110 studies that\ndiscuss shortcomings in quantitative benchmarking\npractices, published in the last 10 years. It brings\ntogether many fine-grained issues in the design and\napplication of benchmarks (such as biases in dataset\ncreation, inadequate documentation, data contamination, and\nfailures to distinguish signal from noise) with broader\nsociotechnical issues (such as an over-focus on evaluating\ntext-based AI models according to one-time testing logic\nthat fails to account for how AI models are increasingly\nmultimodal and interact with humans and other technical\nsystems). Our review also highlights a series of systemic\nflaws in current benchmarking practices, such as misaligned\nincentives, construct validity issues, unknown unknowns,\nand problems with the gaming of benchmark results.\nFurthermore, it underscores how benchmark practices are\nfundamentally shaped by cultural, commercial and\ncompetitive dynamics that often prioritise state-of-the-art\nperformance at the expense of broader societal concerns. By\nproviding an overview of risks associated with existing\nbenchmarking procedures, we problematise disproportionate\ntrust placed in benchmarks and contribute to ongoing\nefforts to improve the accountability and relevance of\nquantitative AI benchmarks within the complexities of\nreal-world scenarios.",
+      "citationCount": 25,
+      "doi": "10.48550/arXiv.2502.06559",
+      "arxivId": "2502.06559",
+      "url": "https://www.semanticscholar.org/paper/9d99a18b4cbb8fcb8cffde79ade4f462c5b97afe",
+      "venue": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.06559"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3b8e333ab60eacbeb3606c9f7cc7048c5edecd29",
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": [
+        {
+          "name": "Minjun Zhu",
+          "authorId": "2316827669"
+        },
+        {
+          "name": "Qiujie Xie",
+          "authorId": "2216420777"
+        },
+        {
+          "name": "Yixuan Weng",
+          "authorId": "2142839441"
+        },
+        {
+          "name": "Jian Wu",
+          "authorId": "2365023665"
+        },
+        {
+          "name": "Zhen Lin",
+          "authorId": "2364802150"
+        },
+        {
+          "name": "Linyi Yang",
+          "authorId": "2284931437"
+        },
+        {
+          "name": "Yue Zhang",
+          "authorId": "2325943212"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the entire scientific workflow from idea generation to experiment implementation. Recent AI Scientist studies demonstrate sufficient capabilities for independent scientific discovery, with the generated research reports gaining acceptance at the ICLR 2025 workshop and ACL 2025, arguing that a human-level AI Scientist, capable of uncovering phenomena previously unknown to humans, may be imminent. Despite this substantial progress, AI Scientist has yet to produce a groundbreaking achievement in the domain of computer science on par with automated scientific tools. Based on extensive quantitative evidence from existing benchmarks in complex engineering tasks and a systematic evaluation assess 28 research papers generated by five advanced AI Scientist systems, we argue that \\textbf{the fundamental bottleneck for AI Scientists lies in their capability to execute the requisite verification procedures.} Current AI Scientist systems lack the execution capabilities needed to execute rigorous experiments and produce high-quality scientific papers. To better illustrate the root cause of this \\textbf{implementation gap}, we provide an in-depth discussion on the fundamental limitations of AI Scientist. This position paper aims to call for the participants in the community to bridge the implementation gap.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2506.01372",
+      "arxivId": "2506.01372",
+      "url": "https://www.semanticscholar.org/paper/3b8e333ab60eacbeb3606c9f7cc7048c5edecd29",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.01372"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6bec7546d145e92a29d86633eae35b0ca4b5b056",
+      "title": "Bridging AI and Ecology: CILNN and XAI for Acoustic Based Prediction of Dangerous Wild Animals",
+      "authors": [
+        {
+          "name": "Govindaprabhu GB",
+          "authorId": "2345289571"
+        },
+        {
+          "name": "Sumathi M",
+          "authorId": "2345249912"
+        },
+        {
+          "name": "Sharan Neyvasagam",
+          "authorId": "2345249138"
+        },
+        {
+          "name": "Naveen Ananda Kumar J",
+          "authorId": "2345289569"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In habitats that are encroaching on humans, human-wildlife conflict is an increasing global challenge. There is a significant risk of human injury and retaliatory action being taken if humans encounter dangerous animals. This work presents a novel approach to automated detection and classification of dangerous animals using audio signals, with a focus on model interpretability. This work introduces the Convolutional Interconnected Layer Neural Network (CILNN), a deep learning architecture designed to effectively process and classify animal vocalizations. Our method leverages a comprehensive set of audio features, including Mel-frequency cepstral coefficients (MFCCs) and spectral characteristics, optimized through SHAP-based feature selection. The CILNN incorporates interconnected layers and attention mechanisms to enhance feature extraction and model performance. It evaluates proposed approach on a diverse dataset of vocalizations from five dangerous animal species: bears, bison, cheetahs, elephants, and wild boars. Experimental results demonstrate that the CILNN outperforms traditional machine learning models such as Random Forests and Decision Trees in classification accuracy and robustness. Crucially, it employs Explainable AI (XAI) techniques, including SHAP values and decision tree visualizations, to interpret the decision-making processes of both our CILNN (90.6% accuracy) and other models. This interpretability analysis provides insights into feature importance and model behavior, enhancing trust and understanding in the classification process. Our work contributes to wildlife monitoring and human-wildlife conflict mitigation by offering an efficient, accurate, and interpretable method for acoustic-based animal detection",
+      "citationCount": 5,
+      "doi": "10.47857/irjms.2025.v06i01.01882",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6bec7546d145e92a29d86633eae35b0ca4b5b056",
+      "venue": "International Research Journal of Multidisciplinary Scope",
+      "journal": {
+        "name": "International Research Journal of Multidisciplinary Scope"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "56b85239e23889cfff40cd29241cb97ba67f5cde",
+      "title": "Exploring Big Five Personality and AI Capability Effects in LLM-Simulated Negotiation Dialogues",
+      "authors": [
+        {
+          "name": "Myke C. Cohen",
+          "authorId": "2328163227"
+        },
+        {
+          "name": "Zhe Su",
+          "authorId": "2291037848"
+        },
+        {
+          "name": "Hsien-Te Kao",
+          "authorId": "39922117"
+        },
+        {
+          "name": "Daniel Nguyen",
+          "authorId": "2329343140"
+        },
+        {
+          "name": "Spencer Lynch",
+          "authorId": "2329101191"
+        },
+        {
+          "name": "Maarten Sap",
+          "authorId": "2729164"
+        },
+        {
+          "name": "Svitlana Volkova",
+          "authorId": "2301078372"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper presents an evaluation framework for agentic AI systems in mission-critical negotiation contexts, addressing the need for AI agents that can adapt to diverse human operators and stakeholders. Using Sotopia as a simulation testbed, we present two experiments that systematically evaluated how personality traits and AI agent characteristics influence LLM-simulated social negotiation outcomes--a capability essential for a variety of applications involving cross-team coordination and civil-military interactions. Experiment 1 employs causal discovery methods to measure how personality traits impact price bargaining negotiations, through which we found that Agreeableness and Extraversion significantly affect believability, goal achievement, and knowledge acquisition outcomes. Sociocognitive lexical measures extracted from team communications detected fine-grained differences in agents'empathic communication, moral foundations, and opinion patterns, providing actionable insights for agentic AI systems that must operate reliably in high-stakes operational scenarios. Experiment 2 evaluates human-AI job negotiations by manipulating both simulated human personality and AI system characteristics, specifically transparency, competence, adaptability, demonstrating how AI agent trustworthiness impact mission effectiveness. These findings establish a repeatable evaluation methodology for experimenting with AI agent reliability across diverse operator personalities and human-agent team dynamics, directly supporting operational requirements for reliable AI systems. Our work advances the evaluation of agentic AI workflows by moving beyond standard performance metrics to incorporate social dynamics essential for mission success in complex operations.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.15928",
+      "arxivId": "2506.15928",
+      "url": "https://www.semanticscholar.org/paper/56b85239e23889cfff40cd29241cb97ba67f5cde",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.15928"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "eeae598d9d0c4af9864750e0d4c8f822905cc649",
+      "title": "An Assessment of Human\u2013AI Interaction Capability in the Generative AI Era: The Influence of Critical Thinking",
+      "authors": [
+        {
+          "name": "Feiming Li",
+          "authorId": "2317324201"
+        },
+        {
+          "name": "Xinyu Yan",
+          "authorId": "2364112991"
+        },
+        {
+          "name": "Hongli Su",
+          "authorId": "2365356506"
+        },
+        {
+          "name": "Rong Shen",
+          "authorId": "2363962430"
+        },
+        {
+          "name": "Gang Mao",
+          "authorId": "2317020732"
+        }
+      ],
+      "year": 2025,
+      "abstract": "(1) Background: In the era of generative AI (GenAI), assessing AI literacy is essential for understanding how effectively non-expert users can interact with AI. However, existing assessment tools primarily focus on users\u2019 understanding of AI principles or rely on self-reported scales, neglecting critical thinking and actual interaction capabilities. To address this gap, this study aims to design and validate evaluation indicators targeting the behavioral process of human\u2013GenAI interactions and analyze the impact of critical thinking. (2) Methods: Grounded in information literacy and critical thinking frameworks, this study operationalized human\u2013AI interaction capabilities into behavioral indicators and rubrics through observation, surveys, and pilot studies. Data were collected from 121 undergraduates completing two real-world tasks with GenAI, and their interaction processes were documented and evaluated. (3) Results: The indicators showed acceptable inter-rater and internal consistency reliability. Exploratory and Confirmatory Factor Analysis confirmed a three-dimensional structure. Further analysis showed that interaction capabilities varied across gender, academic background, AIGC use frequency, critical thinking disposition levels, and question chain logic. (4) Conclusions: The developed evaluation indicators are reliable and valid. Further analysis reveals that a high critical thinking disposition can offset the disadvantage of lower usage frequency. This highlights the significance of critical thinking in enhancing human\u2013GenAI interaction capabilities.",
+      "citationCount": 1,
+      "doi": "10.3390/jintelligence13060062",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eeae598d9d0c4af9864750e0d4c8f822905cc649",
+      "venue": "Journal of Intelligence",
+      "journal": {
+        "name": "Journal of Intelligence",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "afcfeadb77f7c65d6d55a78b528fa4cfe3e5fa74",
+      "title": "A Conceptual Framework for AI Capability Evaluations",
+      "authors": [
+        {
+          "name": "Mar\u00eda Victoria Carro",
+          "authorId": "2325954429"
+        },
+        {
+          "name": "Denise Alejandra Mester",
+          "authorId": "2325953988"
+        },
+        {
+          "name": "Francisca Gauna Selasco",
+          "authorId": "2325954240"
+        },
+        {
+          "name": "Luca Nicol\u00e1s Forziati Gangi",
+          "authorId": "2370935432"
+        },
+        {
+          "name": "Matheo Sandleris Musa",
+          "authorId": "2370935449"
+        },
+        {
+          "name": "Lola Ramos Pereyra",
+          "authorId": "2370937202"
+        },
+        {
+          "name": "Mario A. Leiva",
+          "authorId": "2325954503"
+        },
+        {
+          "name": "Juan Gustavo Corvalan",
+          "authorId": "2370935224"
+        },
+        {
+          "name": "Maria Vanina Martinez",
+          "authorId": "2257796077"
+        },
+        {
+          "name": "Gerardo I. Simari",
+          "authorId": "1405183475"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI systems advance and integrate into society, well-designed and transparent evaluations are becoming essential tools in AI governance, informing decisions by providing evidence about system capabilities and risks. Yet there remains a lack of clarity on how to perform these assessments both comprehensively and reliably. To address this gap, we propose a conceptual framework for analyzing AI capability evaluations, offering a structured, descriptive approach that systematizes the analysis of widely used methods and terminology without imposing new taxonomies or rigid formats. This framework supports transparency, comparability, and interpretability across diverse evaluations. It also enables researchers to identify methodological weaknesses, assists practitioners in designing evaluations, and provides policymakers with an accessible tool to scrutinize, compare, and navigate complex evaluation landscapes.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.18213",
+      "arxivId": "2506.18213",
+      "url": "https://www.semanticscholar.org/paper/afcfeadb77f7c65d6d55a78b528fa4cfe3e5fa74",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.18213"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "17e87e5e721146443f2aadc2f7c7b5176060165f",
+      "title": "Research on AI-Driven Talent Capability Assessment and Training System for Industrial Internet",
+      "authors": [
+        {
+          "name": "Zhiguo Mu",
+          "authorId": "2395905737"
+        },
+        {
+          "name": "Siegfried Erorita",
+          "authorId": "2395906033"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study explores AI technologies in industrial internet talent assessment and training systems. Addressing manufacturing enterprises' interdisciplinary talent shortages and outdated evaluation standards, we propose a comprehensive architecture integrating explainable AI evaluation models, adaptive learning mechanisms, and multi-source heterogeneous data fusion. Empirical research demonstrates that this framework significantly improves enterprise talent-demand alignment by reducing assessment bias (65%) and shortening training cycles (average 8.7 weeks). The system incorporates data collection, diagnostics, visualization mechanisms, analysis engines, and application services to complete the talent development lifecycle. Implementation across manufacturing enterprises shows quantifiable improvements in recruitment efficiency, training completion rates, and capability alignment. The framework provides standardized training and assessment pathways for industrial enterprises and educational institutions, supporting the development of qualified industrial internet talent teams.",
+      "citationCount": 0,
+      "doi": "10.1145/3768184.3768195",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/17e87e5e721146443f2aadc2f7c7b5176060165f",
+      "venue": "Proceedings of the 2025 2nd International Conference on Image Processing, Intelligent Control and Computer Engineering",
+      "journal": {
+        "name": "Proceedings of the 2025 2nd International Conference on Image Processing, Intelligent Control and Computer Engineering"
+      },
+      "publicationTypes": [
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "b57dc5c763669aa53540c3de4b11a6f832b0ee3e",
+      "title": "Development of an AI Governance Model for Higher Education Using the Capability Maturity Model Integration (CMMI)",
+      "authors": [
+        {
+          "name": "Irfan Walhidayah",
+          "authorId": "2362292189"
+        },
+        {
+          "name": "Kridanto Surendro",
+          "authorId": "3169321"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The increasing adoption of Artificial Intelligence (AI) in higher education presents strategic opportunities for institutional transformation, while introducing complex challenges related to ethics, accountability, transparency, and regulatory compliance. Responding to the growing complexity of AI implementation in academic environments , this study proposes a governance model for AI named GOVAIHEI (Governance of Artificial Intelligence for Higher Education Institutions), conceptualized using the Capability Maturity Model Integration (CMMI) framework. The model was developed using the Design Research Methodology (DRM), which consists of four stages: Research Clarification, Descriptive Study I, Prescriptive Study, and Descriptive Study II. GOVAIHEI encompasses five primary domains: Data and Information, Technology and Infrastructure, Ethics and Social Responsibility, Regulation and Compliance, and Monitoring and Evaluation. Each domain is articulated into capability areas and measurable practices, assessed using the tiered NPLF scale (Not, Partial, Largely, Fully Achieved) to determine institutional capability and maturity levels. The model was validated through expert judgment by three domain specialists, confirming its relevance, methodological soundness, and alignment with CMMI principles. A web-based evaluation system was also developed using Laravel, PostgreSQL, Redis, and Nginx, enabling structured, efficient, and automated assessments. Implementation in a case study at Institute XYZ revealed an initial maturity level (Level 1) with development goals toward Level 3 (Defined). The findings demonstrate a practical foundation for navigating the multifaceted nature of AI adoption in higher education through a structured and adaptable governance approach, which aligns with the increasing demand for robust digital governance frameworks in technology-driven environments. \u00a0",
+      "citationCount": 0,
+      "doi": "10.52436/1.jutif.2025.6.4.4709",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b57dc5c763669aa53540c3de4b11a6f832b0ee3e",
+      "venue": "Jurnal Teknik Informatika (Jutif)",
+      "journal": {
+        "name": "Jurnal Teknik Informatika (Jutif)"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8aafa280d5dd472c3ea0b9d495bf6f772081202e",
+      "title": "A Comprehensive Intent Parsing AI Capability Recommendation Method",
+      "authors": [
+        {
+          "name": "Tiantian Lv",
+          "authorId": "48782726"
+        },
+        {
+          "name": "Le Zhang",
+          "authorId": "2120350376"
+        },
+        {
+          "name": "Qiong Sun",
+          "authorId": "2209189947"
+        },
+        {
+          "name": "Yanqin Wu",
+          "authorId": "2167580366"
+        },
+        {
+          "name": "Jun Zhang",
+          "authorId": "2263928169"
+        },
+        {
+          "name": "Xinna Cheng",
+          "authorId": "2263727988"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As telecom networks become increasingly intelligent, the fragmentation of AI capabilities and their duplicative development have grown more pronounced. Existing systems lack unified governance and efficient sharing mechanisms for AI capabilities, which severely constrains network operations efficiency. To address this problem, this paper proposes an AI capability recommendation method driven by comprehensive intent parsing. The method combines a Naive Bayes algorithm with TF-IDF to precisely classify and interpret user input intents. Building on this, and incorporating multi-dimensional value evaluation metrics (such as accuracy, error, and latency), the proposed system architecture enables intelligent recommendation, subscription, evaluation, retraining, and deployment of AI capabilities. This approach not only improves the accuracy of AI capability recommendations but also supports standardized reuse of capabilities and cross-system orchestration. The experimental results show that the average MAPE of the intended resolution of this method is controlled within 8 %, and the $F 1$ value during re evaluation after deployment usually increases to above 0.90. It also shows good performance in cold start scenarios, and the increase in algorithm complexity has a reasonable impact on latency. This proves that it has high recommendation efficiency and strong model adaptability in real-world scenarios, effectively supporting the development needs of intelligent telecommunications network management.",
+      "citationCount": 0,
+      "doi": "10.1109/CCISP67522.2025.11282110",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8aafa280d5dd472c3ea0b9d495bf6f772081202e",
+      "venue": "2025 10th International Conference on Communication, Image and Signal Processing (CCISP)",
+      "journal": {
+        "name": "2025 10th International Conference on Communication, Image and Signal Processing (CCISP)",
+        "pages": "219-224"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e02c8b06860bc0f6befa7222e81c874b10cc29bd",
+      "title": "Embedding Generative AI as a digital capability into a year-long skills program.",
+      "authors": [
+        {
+          "name": "David P. Smith",
+          "authorId": "2153155157"
+        },
+        {
+          "name": "Dami Sokoya",
+          "authorId": "2367727871"
+        },
+        {
+          "name": "Skye Moore",
+          "authorId": "2367757126"
+        },
+        {
+          "name": "Chinenye Okonkwo",
+          "authorId": "2367728399"
+        },
+        {
+          "name": "Charlotte Boyd",
+          "authorId": "2367729086"
+        },
+        {
+          "name": "Melissa M. Lacey",
+          "authorId": "2054606646"
+        },
+        {
+          "name": "Nigel J. Francis",
+          "authorId": "114537214"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The arrival of Generative Artificial Intelligence (GenAI) into higher education has significantly transformed assessment practices and pedagogical approaches. Large Language Models (LLMs) powered by GenAI present unprecedented opportunities for personalised learning journeys. However, the emergence of GenAI in higher education raises concerns regarding academic integrity and the development of essential cognitive and creative skills among students. Critics worry about the potential decline in academic standards and the perpetuation of biases inherent in the training sets used for LLMs. Addressing these concerns requires clear frameworks and continual evaluation and updating of assessment practices to leverage GenAI's capabilities while preserving academic integrity. Here, we evaluated the integration of GenAI into a year-long MSc program to enhance student understanding and confidence in using GenAI. Approaching GenAI as a digital competency, its use was integrated into core skills modules across two semesters, focusing on ethical considerations, prompt engineering, and tool usage. The assessment tasks were redesigned to incorporate GenAI, which takes a process-based assessment approach. Students' perceptions were evaluated alongside skills audits, and they reported increased confidence in using GenAI. Thematic analysis of one-to-one interviews revealed a cyclical relationship between students' usage of GenAI, experience, ethical considerations, and learning adaptation.",
+      "citationCount": 3,
+      "doi": "10.53761/fh6q4v89",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e02c8b06860bc0f6befa7222e81c874b10cc29bd",
+      "venue": "Journal of University Teaching and Learning Practice",
+      "journal": {
+        "name": "Journal of University Teaching and Learning Practice"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f0576d936fbb85c75492a9d6d4668ad249add21b",
+      "title": "Strengthening Indonesia's defense capability through AI-driven decision-making",
+      "authors": [
+        {
+          "name": "Alradix Djansena",
+          "authorId": "114801739"
+        },
+        {
+          "name": "A. Supriyadi",
+          "authorId": "2077374321"
+        },
+        {
+          "name": "Yuli Kartiningsih",
+          "authorId": "2373903285"
+        },
+        {
+          "name": "Faisal Yusman",
+          "authorId": "2379367874"
+        },
+        {
+          "name": "Basuki Rahmad Saleh",
+          "authorId": "2345724019"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The emergence of Artificial Intelligence (AI) in the Fourth Industrial Revolution has redefined the dynamics of modern military systems, especially in areas such as strategic decision-making, threat anticipation, and cybersecurity. While global powers like the United States, China, and the European Union have institutionalized AI within their defense doctrines, Indonesia is still in the developmental phase. This is particularly concerning given the intensifying security landscape and digital threats requiring an agile and intelligent defense framework. This study applies a qualitative methodology by integrating document-based analysis with cross-country comparative evaluation. It investigates how AI has been embedded into the defense architectures of leading countries and assesses the relevance and adaptability of these strategies for Indonesia\u2019s national security needs. AI technologies benefit defense systems, such as real-time decision support, automated logistics, and enhanced situational awareness through machine learning algorithms. Nonetheless, several challenges remain, including ethical issues, algorithmic bias, cyber vulnerabilities, Indonesia\u2019s limited digital infrastructure, and AI-specialized human capital. The U.S. emphasizes explainable AI (XAI) and operational integrity, China focuses on rapid militarization of AI, while the EU promotes regulation, ethics, and collaborative defense. Indonesia must accelerate the transformation of its defense policies by cultivating a national AI ecosystem, reinforcing its cybersecurity architecture, ensuring transparent and ethical governance, and prioritizing capacity building for AI professionals. A synergistic collaboration among the government, academic institutions, and defense industries is crucial to align AI deployment with Indonesia\u2019s national security goals. This research introduces a conceptual framework for AI policy reform tailored to Indonesia's geopolitical and technological context, offering an integrated model for ethical, scalable, and strategic AI implementation in the defense sector.",
+      "citationCount": 0,
+      "doi": "10.17977/um022v8i22025p361-377",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f0576d936fbb85c75492a9d6d4668ad249add21b",
+      "venue": "Jurnal Praksis dan Dedikasi Sosial",
+      "journal": {
+        "name": "Jurnal Praksis dan Dedikasi Sosial"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b2b36967d67468323d671239c5baf9d94a30fd4b",
+      "title": "Reality Check: A New Evaluation Ecosystem Is Necessary to Understand AI's Real World Effects",
+      "authors": [
+        {
+          "name": "Reva Schwartz",
+          "authorId": "2262446575"
+        },
+        {
+          "name": "Rumman Chowdhury",
+          "authorId": "121269915"
+        },
+        {
+          "name": "Akash Kundu",
+          "authorId": "2360749419"
+        },
+        {
+          "name": "Heather Frase",
+          "authorId": "2238786311"
+        },
+        {
+          "name": "Marzieh Fadaee",
+          "authorId": "2818759"
+        },
+        {
+          "name": "Tom David",
+          "authorId": "2349364458"
+        },
+        {
+          "name": "Gabriella Waters",
+          "authorId": "2348242228"
+        },
+        {
+          "name": "Afaf Ta\u00efk",
+          "authorId": "2172481903"
+        },
+        {
+          "name": "Morgan Briggs",
+          "authorId": "2363499413"
+        },
+        {
+          "name": "Patrick Hall",
+          "authorId": "2348348279"
+        },
+        {
+          "name": "Shomik Jain",
+          "authorId": "2348311549"
+        },
+        {
+          "name": "Kyra Yee",
+          "authorId": "2363500120"
+        },
+        {
+          "name": "Spencer Thomas",
+          "authorId": "2363675505"
+        },
+        {
+          "name": "Sundeep Bhandari",
+          "authorId": "2363500420"
+        },
+        {
+          "name": "Lee Wan Sie",
+          "authorId": "2363500094"
+        },
+        {
+          "name": "Qinghua Lu",
+          "authorId": "2365376179"
+        },
+        {
+          "name": "Matthew Holmes",
+          "authorId": "2363500467"
+        },
+        {
+          "name": "Theodora Skeadas",
+          "authorId": "2334474333"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Conventional AI evaluation approaches concentrated within the AI stack exhibit systemic limitations for exploring, navigating and resolving the human and societal factors that play out in real world deployment such as in education, finance, healthcare, and employment sectors. AI capability evaluations can capture detail about first-order effects, such as whether immediate system outputs are accurate, or contain toxic, biased or stereotypical content, but AI's second-order effects, i.e. any long-term outcomes and consequences that may result from AI use in the real world, have become a significant area of interest as the technology becomes embedded in our daily lives. These secondary effects can include shifts in user behavior, societal, cultural and economic ramifications, workforce transformations, and long-term downstream impacts that may result from a broad and growing set of risks. This position paper argues that measuring the indirect and secondary effects of AI will require expansion beyond static, single-turn approaches conducted in silico to include testing paradigms that can capture what actually materializes when people use AI technology in context. Specifically, we describe the need for data and methods that can facilitate contextual awareness and enable downstream interpretation and decision making about AI's secondary effects, and recommend requirements for a new ecosystem.",
+      "citationCount": 7,
+      "doi": "10.48550/arXiv.2505.18893",
+      "arxivId": "2505.18893",
+      "url": "https://www.semanticscholar.org/paper/b2b36967d67468323d671239c5baf9d94a30fd4b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.18893"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d75d25f0752e65272c6c64870b9e27a4607b2586",
+      "title": "Evolutionary Perspectives on the Evaluation of LLM-Based AI Agents: A Comprehensive Survey",
+      "authors": [
+        {
+          "name": "Jiachen Zhu",
+          "authorId": "2296232413"
+        },
+        {
+          "name": "Menghui Zhu",
+          "authorId": "2238203237"
+        },
+        {
+          "name": "Renting Rui",
+          "authorId": "2153850099"
+        },
+        {
+          "name": "Rong Shan",
+          "authorId": "2304552745"
+        },
+        {
+          "name": "Congmin Zheng",
+          "authorId": "2346641572"
+        },
+        {
+          "name": "Bo Chen",
+          "authorId": "2258709565"
+        },
+        {
+          "name": "Yunjia Xi",
+          "authorId": "2056826850"
+        },
+        {
+          "name": "Jianghao Lin",
+          "authorId": "2144908858"
+        },
+        {
+          "name": "Weiwen Liu",
+          "authorId": "2130051800"
+        },
+        {
+          "name": "Ruiming Tang",
+          "authorId": "2257180930"
+        },
+        {
+          "name": "Yong Yu",
+          "authorId": "2237958078"
+        },
+        {
+          "name": "Weinan Zhang",
+          "authorId": "2240768092"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The advent of large language models (LLMs), such as GPT, Gemini, and DeepSeek, has significantly advanced natural language processing, giving rise to sophisticated chatbots capable of diverse language-related tasks. The transition from these traditional LLM chatbots to more advanced AI agents represents a pivotal evolutionary step. However, existing evaluation frameworks often blur the distinctions between LLM chatbots and AI agents, leading to confusion among researchers selecting appropriate benchmarks. To bridge this gap, this paper introduces a systematic analysis of current evaluation approaches, grounded in an evolutionary perspective. We provide a detailed analytical framework that clearly differentiates AI agents from LLM chatbots along five key aspects: complex environment, multi-source instructor, dynamic feedback, multi-modal perception, and advanced capability. Further, we categorize existing evaluation benchmarks based on external environments driving forces, and resulting advanced internal capabilities. For each category, we delineate relevant evaluation attributes, presented comprehensively in practical reference tables. Finally, we synthesize current trends and outline future evaluation methodologies through four critical lenses: environment, agent, evaluator, and metrics. Our findings offer actionable guidance for researchers, facilitating the informed selection and application of benchmarks in AI agent evaluation, thus fostering continued advancement in this rapidly evolving research domain.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2506.11102",
+      "arxivId": "2506.11102",
+      "url": "https://www.semanticscholar.org/paper/d75d25f0752e65272c6c64870b9e27a4607b2586",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.11102"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "78fef2139910f13ef96d2e0033ec88007afcdc7b",
+      "title": "Libra-Leaderboard: Towards Responsible AI through a Balanced Leaderboard of Safety and Capability",
+      "authors": [
+        {
+          "name": "Haonan Li",
+          "authorId": "2404415473"
+        },
+        {
+          "name": "Xudong Han",
+          "authorId": "2328969995"
+        },
+        {
+          "name": "Zenan Zhai",
+          "authorId": "51230252"
+        },
+        {
+          "name": "Honglin Mu",
+          "authorId": "2292039878"
+        },
+        {
+          "name": "Hao Wang",
+          "authorId": "2337558328"
+        },
+        {
+          "name": "Zhenxuan Zhang",
+          "authorId": "2284691442"
+        },
+        {
+          "name": "Yilin Geng",
+          "authorId": "2323788235"
+        },
+        {
+          "name": "Shom Lin",
+          "authorId": "2337047865"
+        },
+        {
+          "name": "Renxi Wang",
+          "authorId": "2215688800"
+        },
+        {
+          "name": "Artem Shelmanov",
+          "authorId": "2316488670"
+        },
+        {
+          "name": "Xiangyu Qi",
+          "authorId": "2337299578"
+        },
+        {
+          "name": "Yuxia Wang",
+          "authorId": "2275119551"
+        },
+        {
+          "name": "Donghai Hong",
+          "authorId": "2282537174"
+        },
+        {
+          "name": "Youliang Yuan",
+          "authorId": "2337078399"
+        },
+        {
+          "name": "Mengya Chen",
+          "authorId": "2262400077"
+        },
+        {
+          "name": "Haoqin Tu",
+          "authorId": "2239200170"
+        },
+        {
+          "name": "Fajri Koto",
+          "authorId": "2789148"
+        },
+        {
+          "name": "Tatsuki Kuribayashi",
+          "authorId": "83446147"
+        },
+        {
+          "name": "Cong Zeng",
+          "authorId": "2336953309"
+        },
+        {
+          "name": "Rishabh Bhardwaj",
+          "authorId": "3203533"
+        },
+        {
+          "name": "Bingchen Zhao",
+          "authorId": "2239378815"
+        },
+        {
+          "name": "Yawen Duan",
+          "authorId": "2263317648"
+        },
+        {
+          "name": "Yi Liu",
+          "authorId": "2302781371"
+        },
+        {
+          "name": "Emad A. Alghamdi",
+          "authorId": "3366968"
+        },
+        {
+          "name": "Yaodong Yang",
+          "authorId": "2260432856"
+        },
+        {
+          "name": "Yi Dong",
+          "authorId": "2306171142"
+        },
+        {
+          "name": "Soujanya Poria",
+          "authorId": "1746416"
+        },
+        {
+          "name": "Peng-Chong Liu",
+          "authorId": "2316660237"
+        },
+        {
+          "name": "Zhengzhong Liu",
+          "authorId": "2289007972"
+        },
+        {
+          "name": "Xuguang Ren",
+          "authorId": "2273549996"
+        },
+        {
+          "name": "Eduard H. Hovy",
+          "authorId": "2256998951"
+        },
+        {
+          "name": "Iryna Gurevych",
+          "authorId": "2260340390"
+        },
+        {
+          "name": "Preslav Nakov",
+          "authorId": "2026545715"
+        },
+        {
+          "name": "Monojit Choudhury",
+          "authorId": "2336952081"
+        },
+        {
+          "name": "Timothy Baldwin",
+          "authorId": "2266394316"
+        }
+      ],
+      "year": 2024,
+      "abstract": "To address this gap, we introduce Libra-Leaderboard, a comprehensive framework designed to rank LLMs through a balanced evaluation of performance and safety. Combining a dynamic leaderboard with an interactive LLM arena, Libra-Leaderboard encourages the joint optimization of capability and safety. Unlike traditional approaches that average performance and safety metrics, Libra-Leaderboard uses a distance-to-optimal-score method to calculate the overall rankings. This approach incentivizes models to achieve a balance rather than excelling in one dimension at the expense of some other ones. In the first release, Libra-Leaderboard evaluates 26 mainstream LLMs from 14 leading organizations, identifying critical safety challenges even in state-of-the-art models.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2412.18551",
+      "arxivId": "2412.18551",
+      "url": "https://www.semanticscholar.org/paper/78fef2139910f13ef96d2e0033ec88007afcdc7b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.18551"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a8e0ed676784a3ddca0df109cd328077a5b513f5",
+      "title": "Construction of AI Literacy Evaluation System for College Students and an Empirical Study at Wuhan University",
+      "authors": [
+        {
+          "name": "Dan Wu",
+          "authorId": "2156255382"
+        },
+        {
+          "name": "Xinjue Sun",
+          "authorId": "2356309497"
+        },
+        {
+          "name": "Shaobo Liang",
+          "authorId": "1845782669"
+        },
+        {
+          "name": "Chao Qiu",
+          "authorId": "2355421158"
+        },
+        {
+          "name": "Ziyi Wei",
+          "authorId": "2187834106"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1007/s44366-025-0039-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a8e0ed676784a3ddca0df109cd328077a5b513f5",
+      "venue": "Frontiers of Digital Education",
+      "journal": {
+        "name": "Frontiers of Digital Education",
+        "volume": "2"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "a6a0171a4dceaf1273659d7b7476da9a3216615b",
+      "title": "ArtMentor: AI-Assisted Evaluation of Artworks to Explore Multimodal Large Language Models Capabilities",
+      "authors": [
+        {
+          "name": "Chanjin Zheng",
+          "authorId": "2333527101"
+        },
+        {
+          "name": "Zengyi Yu",
+          "authorId": "2283257557"
+        },
+        {
+          "name": "Yilin Jiang",
+          "authorId": "2346421644"
+        },
+        {
+          "name": "Mingzi Zhang",
+          "authorId": "2346278494"
+        },
+        {
+          "name": "Xunuo Lu",
+          "authorId": "2331760651"
+        },
+        {
+          "name": "Jing Jin",
+          "authorId": "2348699385"
+        },
+        {
+          "name": "Liteng Gao",
+          "authorId": "2347520003"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Can Multimodal Large Language Models (MLLMs), with capabilities in perception, recognition, understanding, and reasoning, act as independent assistants in art evaluation dialogues? Current MLLM evaluation methods, reliant on subjective human scoring or costly interviews, lack comprehensive scenario coverage. This paper proposes a process-oriented Human-Computer Interaction (HCI) space design for more accurate MLLM assessment and development. This approach aids teachers in efficient art evaluation and records interactions for MLLM capability assessment. We introduce ArtMentor, a comprehensive space integrating a dataset and three systems for optimized MLLM evaluation. It includes 380 sessions from five art teachers across nine critical dimensions. The modular system features entity recognition, review generation, and suggestion generation agents, enabling iterative upgrades. Machine learning and natural language processing ensure reliable evaluations. Results confirm GPT-4o\u2019s effectiveness in assisting teachers in art evaluation dialogues. Our contributions are available at https://artmentor.github.io/.",
+      "citationCount": 4,
+      "doi": "10.1145/3706598.3713274",
+      "arxivId": "2502.13832",
+      "url": "https://www.semanticscholar.org/paper/a6a0171a4dceaf1273659d7b7476da9a3216615b",
+      "venue": "International Conference on Human Factors in Computing Systems",
+      "journal": {
+        "name": "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3fa8e0202c3596afeb88887d4ef067f67078c8f3",
+      "title": "AI Implementation and Capability Development in Manufacturing: An Action Research Case",
+      "authors": [
+        {
+          "name": "Jon Eklof",
+          "authorId": "2277754130"
+        },
+        {
+          "name": "U. Snis",
+          "authorId": "3344902"
+        },
+        {
+          "name": "T. Hamelryck",
+          "authorId": "2458906"
+        },
+        {
+          "name": "Alexander Grima",
+          "authorId": "2219413843"
+        },
+        {
+          "name": "Ola R\u00f8nning",
+          "authorId": "2277751840"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This action research article presents a case study of a global manufacturing company deploying artificial intelligence (AI) to develop capabilities and enhance decision-making. This study explores considerations and trade-offs involved in introducing AI into daily operations, leading up to the decision to develop AI capabilities in-house or outsource them. The case study offers in-depth technical descriptions of model selection, dataset creation, model adoption, model training and evaluation while addressing organizational obstacles and decision-making processes. The study\u2019s findings highlight the importance of collaboration between technical experts, business leaders, and end-users, as well as the interaction and collaboration between AI systems and human employees in the workplace. The article contributes a practical perspective on AI implementation in manufacturing, emphasizing the need to balance in-house capability development with external acquisition. Although the case study company managed to create an in-house model, factors such as implementation, debugging, data requirements, training time, and performance led to outsourcing the capabilities. However, making this informed decision required capabilities and insights that were acquired through practical work. Consequently, although in-house development can be challenging, it can also enhance organizational capabilities and provide the necessary knowledge to make informed decisions about future development or outsourcing.",
+      "citationCount": 0,
+      "doi": "10.24251/hicss.2024.699",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3fa8e0202c3596afeb88887d4ef067f67078c8f3",
+      "venue": "Hawaii International Conference on System Sciences",
+      "journal": {
+        "pages": "5796-5805"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e5382157cced569b0aa2cccd347279f730a115fd",
+      "title": "BioML-bench: Evaluation of AI Agents for End-to-End Biomedical ML",
+      "authors": [
+        {
+          "name": "Henry E. Miller",
+          "authorId": "1601318213"
+        },
+        {
+          "name": "Matthew Greenig",
+          "authorId": "2254314580"
+        },
+        {
+          "name": "Benjamin Tenmann",
+          "authorId": "2348260318"
+        },
+        {
+          "name": "Bo Wang",
+          "authorId": "2371228516"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1101/2025.09.01.673319",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e5382157cced569b0aa2cccd347279f730a115fd",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6590fba054277707a7dbc90ed259c1e2db216111",
+      "title": "Translating Multimodal AI into Real-World Inspection: TEMAI Evaluation Framework and Pathways for Implementation",
+      "authors": [
+        {
+          "name": "Zehan Li",
+          "authorId": "2356594303"
+        },
+        {
+          "name": "Jinzhi Deng",
+          "authorId": "2357641236"
+        },
+        {
+          "name": "Haibing Ma",
+          "authorId": "2356815242"
+        },
+        {
+          "name": "Chi Zhang",
+          "authorId": "2356544834"
+        },
+        {
+          "name": "Dan Xiao",
+          "authorId": "2356607734"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper introduces the Translational Evaluation of Multimodal AI for Inspection (TEMAI) framework, bridging multimodal AI capabilities with industrial inspection implementation. Adapting translational research principles from healthcare to industrial contexts, TEMAI establishes three core dimensions: Capability (technical feasibility), Adoption (organizational readiness), and Utility (value realization). The framework demonstrates that technical capability alone yields limited value without corresponding adoption mechanisms. TEMAI incorporates specialized metrics including the Value Density Coefficient and structured implementation pathways. Empirical validation through retail and photovoltaic inspection implementations revealed significant differences in value realization patterns despite similar capability reduction rates, confirming the framework's effectiveness across diverse industrial sectors while highlighting the importance of industry-specific adaptation strategies.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2504.13873",
+      "arxivId": "2504.13873",
+      "url": "https://www.semanticscholar.org/paper/6590fba054277707a7dbc90ed259c1e2db216111",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.13873"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3abaf7e4f611374cd77e9846b5c060f4a507fe69",
+      "title": "Cognitive Science-Inspired Evaluation of Core Capabilities for Object Understanding in AI",
+      "authors": [
+        {
+          "name": "Danaja Rutar",
+          "authorId": "114030289"
+        },
+        {
+          "name": "Alva Markelius",
+          "authorId": "2208973765"
+        },
+        {
+          "name": "Konstantinos Voudouris",
+          "authorId": "1397160953"
+        },
+        {
+          "name": "Jos'e Hern'andez-Orallo",
+          "authorId": "2319822394"
+        },
+        {
+          "name": "Lucy G. Cheke",
+          "authorId": "2243337546"
+        }
+      ],
+      "year": 2025,
+      "abstract": "One of the core components of our world models is 'intuitive physics' - an understanding of objects, space, and causality. This capability enables us to predict events, plan action and navigate environments, all of which rely on a composite sense of objecthood. Despite its importance, there is no single, unified account of objecthood, though multiple theoretical frameworks provide insights. In the first part of this paper, we present a comprehensive overview of the main theoretical frameworks in objecthood research - Gestalt psychology, enactive cognition, and developmental psychology - and identify the core capabilities each framework attributes to object understanding, as well as what functional roles they play in shaping world models in biological agents. Given the foundational role of objecthood in world modelling, understanding objecthood is also essential in AI. In the second part of the paper, we evaluate how current AI paradigms approach and test objecthood capabilities compared to those in cognitive science. We define an AI paradigm as a combination of how objecthood is conceptualised, the methods used for studying objecthood, the data utilised, and the evaluation techniques. We find that, whilst benchmarks can detect that AI systems model isolated aspects of objecthood, the benchmarks cannot detect when AI systems lack functional integration across these capabilities, not solving the objecthood challenge fully. Finally, we explore novel evaluation approaches that align with the integrated vision of objecthood outlined in this paper. These methods are promising candidates for advancing from isolated object capabilities toward general-purpose AI with genuine object understanding in real-world contexts.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2503.21668",
+      "arxivId": "2503.21668",
+      "url": "https://www.semanticscholar.org/paper/3abaf7e4f611374cd77e9846b5c060f4a507fe69",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.21668"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "b212c768f08936bbd7228bc2c246240420f85942",
+      "title": "The Dialogue That Heals: A Comprehensive Evaluation of Doctor Agents' Inquiry Capability",
+      "authors": [
+        {
+          "name": "Linlu Gong",
+          "authorId": "2384729608"
+        },
+        {
+          "name": "Ante Wang",
+          "authorId": "2383387307"
+        },
+        {
+          "name": "Yunghwei Lai",
+          "authorId": "2300426001"
+        },
+        {
+          "name": "Weizhi Ma",
+          "authorId": "2287226229"
+        },
+        {
+          "name": "Yang Liu",
+          "authorId": "2286907986"
+        }
+      ],
+      "year": 2025,
+      "abstract": "An effective physician should possess a combination of empathy, expertise, patience, and clear communication when treating a patient. Recent advances have successfully endowed AI doctors with expert diagnostic skills, particularly the ability to actively seek information through inquiry. However, other essential qualities of a good doctor remain overlooked. To bridge this gap, we present MAQuE(Medical Agent Questioning Evaluation), the largest-ever benchmark for the automatic and comprehensive evaluation of medical multi-turn questioning. It features 3,000 realistically simulated patient agents that exhibit diverse linguistic patterns, cognitive limitations, emotional responses, and tendencies for passive disclosure. We also introduce a multi-faceted evaluation framework, covering task success, inquiry proficiency, dialogue competence, inquiry efficiency, and patient experience. Experiments on different LLMs reveal substantial challenges across the evaluation aspects. Even state-of-the-art models show significant room for improvement in their inquiry capabilities. These models are highly sensitive to variations in realistic patient behavior, which considerably impacts diagnostic accuracy. Furthermore, our fine-grained metrics expose trade-offs between different evaluation perspectives, highlighting the challenge of balancing performance and practicality in real-world clinical settings.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2509.24958",
+      "arxivId": "2509.24958",
+      "url": "https://www.semanticscholar.org/paper/b212c768f08936bbd7228bc2c246240420f85942",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.24958"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1c254ae9989900458d316fe1ba0f731203617b74",
+      "title": "Research on the Evaluation Method of Emergency Rescue Support Capability of Civil Aviation Airports Based on Decision Tree",
+      "authors": [
+        {
+          "name": "Jia Sun",
+          "authorId": "2307652192"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In response to the problems of inconsistent evaluation models and standards, as well as poor reusability of related knowledge achievements, in the process of evaluating the emergency rescue and support capabilities of civil aviation airports, the article uses relevant theoretical methods of emergency rescue management to obtain the evaluation factors of emergency rescue and support capabilities of civil aviation airports, and obtains actual evaluation data of emergency support capabilities of 20 large, medium, and small airports in China through questionnaires and visits, Finally, the AI Decision Method in the data mining algorithm is used to conduct knowledge mining on the data, in order to determine the key elements and decision-making criteria for evaluating the emergency rescue support capacity of civil aviation airports. The feasibility of this evaluation method was verified through theoretical analysis and practical application.",
+      "citationCount": 0,
+      "doi": "10.1109/ICEIEC61773.2024.10561651",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c254ae9989900458d316fe1ba0f731203617b74",
+      "venue": "IEEE International Conference on Electronics Information and Emergency Communication",
+      "journal": {
+        "name": "2024 IEEE 14th International Conference on Electronics Information and Emergency Communication (ICEIEC)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "268e3baf61f47cbc8c55190c964623fdf109d141",
+      "title": "Evaluation of Real-Time Preprocessing Methods in AI-Based ECG Signal Analysis",
+      "authors": [
+        {
+          "name": "Jasmin Freudenberg",
+          "authorId": "2375926408"
+        },
+        {
+          "name": "Kai Hahn",
+          "authorId": "2337393977"
+        },
+        {
+          "name": "Christian Weber",
+          "authorId": "2337394879"
+        },
+        {
+          "name": "M. Fathi",
+          "authorId": "2105811971"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The increasing popularity of portable ECG systems and the growing demand for privacy-compliant, energy-efficient real-time analysis require new approaches to signal processing at the point of data acquisition. In this context, the edge domain is acquiring increasing importance, as it not only reduces latency times, but also enables an increased level of data security. The FACE project aims to develop an innovative machine learning solution for analysing long-term electrocardiograms that synergistically combines the strengths of edge and cloud computing. In this thesis, various pre-processing steps of ECG signals are analysed with regard to their applicability in the project. The selection of suitable methods in the edge area is based in particular on criteria such as energy efficiency, processing capability and real-time capability.",
+      "citationCount": 0,
+      "doi": "10.1109/AIIoT65859.2025.11105222",
+      "arxivId": "2510.12541",
+      "url": "https://www.semanticscholar.org/paper/268e3baf61f47cbc8c55190c964623fdf109d141",
+      "venue": "2025 IEEE World AI IoT Congress (AIIoT)",
+      "journal": {
+        "name": "2025 IEEE World AI IoT Congress (AIIoT)",
+        "pages": "0861-0868"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9e71038c633e581082de74743c9bcdedd9808cde",
+      "title": "Performance Evaluation of Onboard Processing Capability Reduction in Cooperative Vehicles Using 5G and Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Elizabeth Palacios-Morocho",
+          "authorId": "2135610103"
+        },
+        {
+          "name": "Sa\u00fal Inca",
+          "authorId": "27063338"
+        },
+        {
+          "name": "J. Monserrat",
+          "authorId": "10830047"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Fifth-generation (5G) technology is one of the keys to the Industrial Revolution known as Industry 4.0 as it provides faster connectivity and allows a greater number of devices to be connected simultaneously. In the transport sector, newly produced vehicles are equipped with various sensors and applications to help drivers perform safe maneuvers. However, moving from semiautonomous to fully autonomous vehicles to cooperating systems remains a major challenge. Many researchers have focused on artificial intelligence (AI) techniques and the ability to share information to achieve this cooperative behavior. This information can be made up of different data, which can be obtained from different sensors such as laser imaging detection and ranging (LiDAR), radar, camera, global positioning system (GPS), or data related to the current speed, acceleration, or position. The combination of the different shared data is performed depending on the approach of each navigation algorithm. This data fusion will allow a better understanding of the environment but will overload the network, as the traffic generated will be massive. Therefore, this paper addresses the challenge of achieving this cooperation between vehicles from the point of view of network requirements and computational capacity. In addition, this study contributes to advancing theory into real-world practice by examining the performance of cooperative navigation algorithms in the midst of the migration of computational resources from onboard vehicle equipment to the cloud. In particular, it investigates the transition from a cooperative navigation algorithm based on a decentralized architecture to a semidecentralized one as computationally demanding processes previously performed onboard are performed in the cloud. Additionally, the paper discusses the indispensable role of 5G in fulfilling the escalating demands for high throughput and low latency in these services, particularly as the number of vehicles increases. The results of the tests show that the AI acting alone cannot achieve optimal performance, even using 100% of the computational capacity of the onboard equipment in the vehicle. However, a system that integrates 5G and AI-based joint decisions can achieve better performance, reduce the computational resources consumed in the vehicle, and increase the efficiency of collaborative choices by up to 83.3%.",
+      "citationCount": 0,
+      "doi": "10.1155/2024/9280848",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9e71038c633e581082de74743c9bcdedd9808cde",
+      "venue": "Mobile Information Systems",
+      "journal": {
+        "name": "Mobile Information Systems"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a335b6443f1b77b47c0a1ba79fd21363448fe5f2",
+      "title": "Evaluating AI Evaluation: Perils and Prospects",
+      "authors": [
+        {
+          "name": "John Burden",
+          "authorId": "2386995633"
+        }
+      ],
+      "year": 2024,
+      "abstract": "As AI systems appear to exhibit ever-increasing capability and generality, assessing their true potential and safety becomes paramount. This paper contends that the prevalent evaluation methods for these systems are fundamentally inadequate, heightening the risks and potential hazards associated with AI. I argue that a reformation is required in the way we evaluate AI systems and that we should look towards cognitive sciences for inspiration in our approaches, which have a longstanding tradition of assessing general intelligence across diverse species. We will identify some of the difficulties that need to be overcome when applying cognitively-inspired approaches to general-purpose AI systems and also analyse the emerging area of\"Evals\". The paper concludes by identifying promising research pathways that could refine AI evaluation, advancing it towards a rigorous scientific domain that contributes to the development of safe AI systems.",
+      "citationCount": 13,
+      "doi": "10.48550/arXiv.2407.09221",
+      "arxivId": "2407.09221",
+      "url": "https://www.semanticscholar.org/paper/a335b6443f1b77b47c0a1ba79fd21363448fe5f2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.09221"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6e720226396cd3a9f0dc4836d6d391509b9df285",
+      "title": "Sociotechnical Safety Evaluation of Generative AI Systems",
+      "authors": [
+        {
+          "name": "Laura Weidinger",
+          "authorId": "51932191"
+        },
+        {
+          "name": "Maribeth Rauh",
+          "authorId": "94483529"
+        },
+        {
+          "name": "Nahema Marchal",
+          "authorId": "1491046516"
+        },
+        {
+          "name": "Arianna Manzini",
+          "authorId": "2259953549"
+        },
+        {
+          "name": "L. Hendricks",
+          "authorId": "2258347245"
+        },
+        {
+          "name": "Juan Mateos-Garcia",
+          "authorId": "2259937792"
+        },
+        {
+          "name": "Stevie Bergman",
+          "authorId": "2259905763"
+        },
+        {
+          "name": "Jackie Kay",
+          "authorId": "2259957875"
+        },
+        {
+          "name": "Conor Griffin",
+          "authorId": "2143349026"
+        },
+        {
+          "name": "Ben Bariach",
+          "authorId": "2259953547"
+        },
+        {
+          "name": "Iason Gabriel",
+          "authorId": "116589025"
+        },
+        {
+          "name": "Verena Rieser",
+          "authorId": "2259931273"
+        },
+        {
+          "name": "William S. Isaac",
+          "authorId": "103087275"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Generative AI systems produce a range of risks. To ensure the safety of generative AI systems, these risks must be evaluated. In this paper, we make two main contributions toward establishing such evaluations. First, we propose a three-layered framework that takes a structured, sociotechnical approach to evaluating these risks. This framework encompasses capability evaluations, which are the main current approach to safety evaluation. It then reaches further by building on system safety principles, particularly the insight that context determines whether a given capability may cause harm. To account for relevant context, our framework adds human interaction and systemic impacts as additional layers of evaluation. Second, we survey the current state of safety evaluation of generative AI systems and create a repository of existing evaluations. Three salient evaluation gaps emerge from this analysis. We propose ways forward to closing these gaps, outlining practical steps as well as roles and responsibilities for different actors. Sociotechnical safety evaluation is a tractable approach to the robust and comprehensive safety evaluation of generative AI systems.",
+      "citationCount": 187,
+      "doi": "10.48550/arXiv.2310.11986",
+      "arxivId": "2310.11986",
+      "url": "https://www.semanticscholar.org/paper/6e720226396cd3a9f0dc4836d6d391509b9df285",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2310.11986"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9158206152326b2bca0784a134b12462e26381e4",
+      "title": "Exploring AI-chatbots\u2019 capability to suggest surgical planning in ophthalmology: ChatGPT versus Google Gemini analysis of retinal detachment cases",
+      "authors": [
+        {
+          "name": "Matteo Mario Carl\u00e0",
+          "authorId": "2151379429"
+        },
+        {
+          "name": "G. Gambini",
+          "authorId": "145013374"
+        },
+        {
+          "name": "A. Baldascino",
+          "authorId": "46465335"
+        },
+        {
+          "name": "Federico Giannuzzi",
+          "authorId": "2154152988"
+        },
+        {
+          "name": "Francesco Boselli",
+          "authorId": "2161371043"
+        },
+        {
+          "name": "Emanuele Crincoli",
+          "authorId": "1938189588"
+        },
+        {
+          "name": "Nicola Claudio D'Onofrio",
+          "authorId": "2284244348"
+        },
+        {
+          "name": "Stanislao Rizzo",
+          "authorId": "2244403285"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Background We aimed to define the capability of three different publicly available large language models, Chat Generative Pretrained Transformer (ChatGPT-3.5), ChatGPT-4 and Google Gemini in analysing retinal detachment cases and suggesting the best possible surgical planning. Methods Analysis of 54 retinal detachments records entered into ChatGPT and Gemini\u2019s interfaces. After asking \u2018Specify what kind of surgical planning you would suggest and the eventual intraocular tamponade.\u2019 and collecting the given answers, we assessed the level of agreement with the common opinion of three expert vitreoretinal surgeons. Moreover, ChatGPT and Gemini answers were graded 1\u20135 (from poor to excellent quality), according to the Global Quality Score (GQS). Results After excluding 4 controversial cases, 50 cases were included. Overall, ChatGPT-3.5, ChatGPT-4 and Google Gemini surgical choices agreed with those of vitreoretinal surgeons in 40/50 (80%), 42/50 (84%) and 35/50 (70%) of cases. Google Gemini was not able to respond in five cases. Contingency analysis showed significant differences between ChatGPT-4 and Gemini (p=0.03). ChatGPT\u2019s GQS were 3.9\u00b10.8\u2009and 4.2\u00b10.7 for versions 3.5 and 4, while Gemini scored 3.5\u00b11.1. There was no statistical difference between the two ChatGPTs (p=0.22), while both outperformed Gemini scores (p=0.03\u2009and p=0.002, respectively). The main source of error was endotamponade choice (14% for ChatGPT-3.5 and 4, and 12% for Google Gemini). Only ChatGPT-4 was able to suggest a combined phacovitrectomy approach. Conclusion In conclusion, Google Gemini and ChatGPT evaluated vitreoretinal patients\u2019 records in a coherent manner, showing a good level of agreement with expert surgeons. According to the GQS, ChatGPT\u2019s recommendations were much more accurate and precise.",
+      "citationCount": 79,
+      "doi": "10.1136/bjo-2023-325143",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9158206152326b2bca0784a134b12462e26381e4",
+      "venue": "British Journal of Ophthalmology",
+      "journal": {
+        "name": "British Journal of Ophthalmology",
+        "pages": "1457 - 1469",
+        "volume": "108"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "130953e7fff3b76b4759032933ff88ddadb8b265",
+      "title": "An Analysis of Artificial Intelligence (AI) Capability in Libraries and Archives",
+      "authors": [
+        {
+          "name": "Abdulhalik Pinar",
+          "authorId": "2377683770"
+        },
+        {
+          "name": "Andrew Cox",
+          "authorId": "2248127184"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract This paper seeks to evaluate the AI capability of libraries and archives using a qualitative content analysis of 54 case studies of AI uses published between 2018 and 2024. It is framed by the model of AI capability proposed by Mikalef and Gupta (Patrick Mikalef and Manjul Gupta, \u2018Artificial Intelligence Capability: Conceptualization, Measurement Calibration, and Empirical Study on Its Impact on Organizational Creativity and Firm Performance\u2019, Information & Management 58, no. 3 (2021): 103434.). The findings of the analysis largely confirm the model, but suggest that there are many gaps in library and archive AI capability, especially in areas such as infrastructure and technical resources, data issues arising from metadata inconsistencies, and financial resources.",
+      "citationCount": 1,
+      "doi": "10.1080/01639374.2025.2539790",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/130953e7fff3b76b4759032933ff88ddadb8b265",
+      "venue": "Cataloging &amp; Classification Quarterly",
+      "journal": {
+        "name": "Cataloging & Classification Quarterly",
+        "pages": "566 - 599",
+        "volume": "63"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cd431f6edd939098abe159bda0760abc62d66030",
+      "title": "AI-adoption attitudes in Southern Africa\u2019s higher education sector: A pilot survey using the capability, opportunity, motivation and behaviour (COM-B) model",
+      "authors": [
+        {
+          "name": "Mark E. Patterson",
+          "authorId": "2364980687"
+        },
+        {
+          "name": "Johan Breytenbach",
+          "authorId": "2375427860"
+        },
+        {
+          "name": "Ian Coffman",
+          "authorId": "2375427989"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Artificial intelligence (AI) drives innovation but faces numerous potential challenges to adoption. This pilot survey applied the capability, opportunity, motivation and behaviour (COM-B) model to examine AI adoption attitudes in the Southern African higher education sector. The study sought to evaluate the extent to which the COM-B framework, rooted in behavioural science, can generate AI-adoption insights that would be complementary to insights generated by established information systems (IS) adoption models, such as the technology acceptance model (TAM) and the unified theory of acceptance and use of technology (UTAUT). Potential facilitators and barriers with respect to adoption of AI tools adoption were mapped against COM-B domains to develop a 10-point Likert-type scale survey that was piloted with 33 individuals working in the Southern African higher education sector. The findings identified key facilitators of AI as adequate technological infrastructure, readiness to address clients\u2019 ethical concerns, and beliefs that AI tools benefit clients. The dominant barrier identified was clients\u2019 potential ethical concerns regarding AI use in decision-making.",
+      "citationCount": 1,
+      "doi": "10.23962/ajic.i35.21607",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cd431f6edd939098abe159bda0760abc62d66030",
+      "venue": "The African journal of information and communication",
+      "journal": {
+        "name": "The African Journal of Information and Communication (AJIC)"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d1ff626a6f4d7b89ae741d61f15e433b2ba42512",
+      "title": "How green knowledge-oriented leadership drives green innovation in SMEs: the mediating role of environmental strategy and the moderating role of green AI capability",
+      "authors": [
+        {
+          "name": "Ibraheem Saleh Al koliby",
+          "authorId": "2191000257"
+        },
+        {
+          "name": "A. Al\u2010Swidi",
+          "authorId": "1405785052"
+        },
+        {
+          "name": "M. A. Al\u2010Hakimi",
+          "authorId": "2105457960"
+        },
+        {
+          "name": "Shaima Ali Galeb Farhan",
+          "authorId": "2368061822"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract This study examines how green knowledge-oriented leadership (GKOL) drives green innovation (GI) in manufacturing SMEs, with a focus on the mediating role of environmental strategy (ES) and the moderating effect of green artificial intelligence capability (GAIC). Drawing on the Natural Resource-Based View (NRBV) and Dynamic Capability Theory (DCT), the study developed and empirically tested an integrated framework that captures the interplay between leadership, strategy, and digital capability in promoting sustainable innovation. Data were collected from 219 Malaysian manufacturing SMEs using a structured questionnaire, and structural equation modeling was employed via SmartPLS to evaluate the proposed relationships, with the reliability and validity of the constructs verified through composite reliability, average variance extracted, and discriminant validity. The findings reveal that GKOL significantly enhances ES, which in turn enhances GI, with ES partially mediating this relationship. Additionally, GAIC strengthens the effect of GKOL on GI, underscoring the role of AI-enabled capabilities in amplifying green leadership outcomes. This study contributes to the literature by offering a unified leadership\u2013strategy\u2013technology framework for understanding sustainability transformation in resource-constrained SME settings and provides actionable insights for managers and policymakers on leveraging GKOL and digital transformation for sustainable development.",
+      "citationCount": 3,
+      "doi": "10.1080/23311975.2025.2520914",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d1ff626a6f4d7b89ae741d61f15e433b2ba42512",
+      "venue": "Cogent Business &amp; Management",
+      "journal": {
+        "name": "Cogent Business & Management",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

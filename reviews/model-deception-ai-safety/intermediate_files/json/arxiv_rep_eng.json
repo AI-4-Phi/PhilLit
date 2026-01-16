@@ -1,0 +1,29 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:representation engineering honesty AND cat:cs.LG",
+  "results": [
+    {
+      "arxiv_id": "2204.06033",
+      "title": "Text and Team: What Article Metadata Characteristics Drive Citations in Software Engineering?",
+      "authors": [
+        "Lorenz Graf-Vlachy",
+        "Daniel Graziotin",
+        "Stefan Wagner"
+      ],
+      "abstract": "Context: Citations are a key measure of scientific performance in most fields, including software engineering. However, there is limited research that studies which characteristics of articles' metadata (title, abstract, keywords, and author list) are driving citations in this field. Objective: In this study, we propose a simple theoretical model for how citations come to be with respect to article metadata, we hypothesize theoretical linkages between metadata characteristics and citations of articles, and we empirically test these hypotheses. Method: We use multiple regression analyses to examine a data set comprising the titles, abstracts, keywords, and authors of 16,131 software engineering articles published between 1990 and 2020 in 20 highly influential software engineering venues. Results: We find that number of authors, number of keywords, number of question marks and dividers in the title, number of acronyms, abstract length, abstract propositional idea density, and corresponding authors in the core Anglosphere are significantly related to citations. Conclusion: Various characteristics of articles' metadata are linked to the frequency with which the corresponding articles are cited. These results partially confirm and partially go counter to prior findings in software engineering and other disciplines.",
+      "published": "2022-04-12",
+      "updated": "2022-04-12",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "doi": "10.1145/3530019.3530022",
+      "journal_ref": "EASE '22: Proceedings of the International Conference on Evaluation and Assessment in Software Engineering 2022, Pages 20-29",
+      "pdf_url": "https://arxiv.org/pdf/2204.06033v1",
+      "url": "https://arxiv.org/abs/2204.06033"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

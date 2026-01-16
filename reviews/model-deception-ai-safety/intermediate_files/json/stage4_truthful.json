@@ -1,0 +1,30 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:truthful AI AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2009.07262",
+      "title": "Report prepared by the Montreal AI Ethics Institute (MAIEI) on Publication Norms for Responsible AI",
+      "authors": [
+        "Abhishek Gupta",
+        "Camylle Lanteigne",
+        "Victoria Heath"
+      ],
+      "abstract": "The history of science and technology shows that seemingly innocuous developments in scientific theories and research have enabled real-world applications with significant negative consequences for humanity. In order to ensure that the science and technology of AI is developed in a humane manner, we must develop research publication norms that are informed by our growing understanding of AI's potential threats and use cases. Unfortunately, it's difficult to create a set of publication norms for responsible AI because the field of AI is currently fragmented in terms of how this technology is researched, developed, funded, etc. To examine this challenge and find solutions, the Montreal AI Ethics Institute (MAIEI) co-hosted two public consultations with the Partnership on AI in May 2020. These meetups examined potential publication norms for responsible AI, with the goal of creating a clear set of recommendations and ways forward for publishers.   In its submission, MAIEI provides six initial recommendations, these include: 1) create tools to navigate publication decisions, 2) offer a page number extension, 3) develop a network of peers, 4) require broad impact statements, 5) require the publication of expected results, and 6) revamp the peer-review process. After considering potential concerns regarding these recommendations, including constraining innovation and creating a \"black market\" for AI research, MAIEI outlines three ways forward for publishers, these include: 1) state clearly and consistently the need for established norms, 2) coordinate and build trust as a community, and 3) change the approach.",
+      "published": "2020-09-15",
+      "updated": "2020-10-04",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2009.07262v2",
+      "url": "https://arxiv.org/abs/2009.07262"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

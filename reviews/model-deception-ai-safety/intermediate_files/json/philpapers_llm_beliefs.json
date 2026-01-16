@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "LLM beliefs representations",
+  "results": [
+    {
+      "title": "Benjamin A. Levinstein & Daniel A. Herrmann, Still no lie detector for language models: probing empirical and conceptual roadblocks",
+      "url": "https://philpapers.org/rec/LEVSNL",
+      "philpapers_id": "LEVSNL",
+      "snippet": "With this lesson in hand, we evaluate two existing approaches for measuring the beliefs of LLMs, one due to Azaria and Mitchell (The internal state of an llm knows when its lying, 2023) and the other to Burns et al. (Discovering latent knowledge in language models without supervision, 2022).",
+      "page_age": null
+    },
+    {
+      "title": "Daniel A. Herrmann & Benjamin A. Levinstein, Standards for Belief Representations in LLMs",
+      "url": "https://philpapers.org/rec/HERSFB-2",
+      "philpapers_id": "HERSFB",
+      "snippet": "Thus, drawing from insights in ... considerations with practical constraints. Our proposed criteria include accuracy, coherence, uniformity, and use, which together help lay the groundwork for a comprehensive understanding of ...",
+      "page_age": null
+    },
+    {
+      "title": "Herman Cappelen & Josh Dever, A Hyper-Externalist Manifesto for LLMs",
+      "url": "https://philpapers.org/rec/CAPAHM",
+      "philpapers_id": "CAPAHM",
+      "snippet": "We argue that whether an LLM is genuinely following a rule (e.g., modus ponens), whether its representations are compositional, or whether an internal state functions as a belief versus a supposition, are all facts grounded in the model&#x27;s training history, functional role, and relational embedding.",
+      "page_age": null
+    },
+    {
+      "title": "Stevan Harnad, Language Writ Large: LLMs, ChatGPT, Grounding, Meaning and Understanding",
+      "url": "https://philpapers.org/rec/HARLWL-4",
+      "philpapers_id": "HARLWL",
+      "snippet": "These convergent biases are related to (1) the parasitism of indirect verbal grounding on direct sensorimotor grounding, (2) the circularity of verbal definition, (3) the mirroring of language production and comprehension, (4) iconicity in propositions at LLM scale, (5) computational counterparts of human categorical perception in category learning by neural nets, and perhaps also (6) a conjecture by Chomsky about the laws of thought.",
+      "page_age": null
+    },
+    {
+      "title": "Simon Goldstein, LLMs Can Never Be Ideally Rational",
+      "url": "https://philpapers.org/rec/GOLLCN",
+      "philpapers_id": "GOLLCN",
+      "snippet": "If LLMs are prompted to make probabilistic predictions about the world, these predictions are guaranteed to be incoherent, and so Dutch bookable. If LLMs are prompted to make choices over actions, their preferences are guaranteed to be intransitive, ...",
+      "page_age": null
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

@@ -1,0 +1,5737 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "ARC evals AI alignment evaluation",
+  "results": [
+    {
+      "paperId": "ec5d009938bedda3a188ceca76897d20bbbd01b3",
+      "title": "System 2 Reasoning for Human-AI Alignment: Generality and Adaptivity via ARC-AGI",
+      "authors": [
+        {
+          "name": "Sejin Kim",
+          "authorId": "2220126432"
+        },
+        {
+          "name": "Sundong Kim",
+          "authorId": "2281283297"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Despite their broad applicability, transformer-based models still fall short in System~2 reasoning, lacking the generality and adaptivity needed for human--AI alignment. We examine weaknesses on ARC-AGI tasks, revealing gaps in compositional generalization and novel-rule adaptation, and argue that closing these gaps requires overhauling the reasoning pipeline and its evaluation. We propose three research axes: (1) Symbolic representation pipeline for compositional generality, (2) Interactive feedback-driven reasoning loop for adaptivity, and (3) Test-time task augmentation balancing both qualities. Finally, we demonstrate how ARC-AGI's evaluation suite can be adapted to track progress in symbolic generality, feedback-driven adaptivity, and task-level robustness, thereby guiding future work on robust human--AI alignment.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2410.07866",
+      "url": "https://www.semanticscholar.org/paper/ec5d009938bedda3a188ceca76897d20bbbd01b3",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3da31af50eb9081445bc0151acaafd09d431e836",
+      "title": "Enhancing Medical AI Safety Through Multi-Agent Evaluation and Iterative Refinement",
+      "authors": [
+        {
+          "name": "Zainab Ghafoor",
+          "authorId": "2397627562"
+        },
+        {
+          "name": "Md Shafiqul Islam",
+          "authorId": "2397818593"
+        },
+        {
+          "name": "Koushik Howlader",
+          "authorId": "2397629543"
+        },
+        {
+          "name": "Md Rasel Khondokar",
+          "authorId": "2397629911"
+        },
+        {
+          "name": "Tanusree Bhattacharjee",
+          "authorId": "2397629609"
+        },
+        {
+          "name": "Sayantan Chakroborty",
+          "authorId": "2397627595"
+        },
+        {
+          "name": "Adrito Roy",
+          "authorId": "2398655103"
+        },
+        {
+          "name": "Ushashi Bhattacharjee",
+          "authorId": "2391709605"
+        },
+        {
+          "name": "Tirtho Roy",
+          "authorId": "2397631910"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) show strong potential in healthcare but face critical challenges in ethical and safety compliance. We present a lightweight multi-agent refinement framework that enhances medical LLM safety through structured, iterative alignment. The system pairs DeepSeek R1 and Med-PaLM as generative models with LLaMA 3.1 and Phi-4 as evaluator agents that iteratively assess and refine responses against the American Medical Association's nine Principles (AMA-9) and a five-tier Safety Risk Assessment (SRA-5). Using 900 adversarial clinical prompts from the MedSafety-Eval subset, we measure convergence, violation reduction, and risk downgrading under a structured five-iteration refinement loop. The multi-agent pipeline reduced ethical violations by 89% and achieved a 92% risk-downgrade rate. DeepSeek R1 outperforms Med-PaLM in convergence efficiency (94.2% convergence; mean 2.34 iterations) compared with Med-PaLM (91.8% convergence; mean 2.67 iterations). Domain analyses reveal consistent gains across emergency, diagnostic, and therapeutic scenarios, while non-convergent cases highlight areas for improvement in legal and privacy domains. Our approach offers a scalable, cost-effective protocol for enhancing medical AI trustworthiness and provides a practical pathway toward regulator-aligned deployment of LLMs in clinical settings.",
+      "citationCount": 0,
+      "doi": "10.1145/3765612.3768142",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3da31af50eb9081445bc0151acaafd09d431e836",
+      "venue": "Proceedings of the 16th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics",
+      "journal": {
+        "name": "Proceedings of the 16th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics"
+      },
+      "publicationTypes": [
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "24ef57002002e86e7bd65fd3a52320d515373c8e",
+      "title": "Self-Evaluation of Generative AI Prompts for Linguistic Linked Open Data Modelling in Diachronic Analysis",
+      "authors": [
+        {
+          "name": "Florentina Armaselu",
+          "authorId": "35516669"
+        },
+        {
+          "name": "Chaya Liebeskind",
+          "authorId": "2601200"
+        },
+        {
+          "name": "Giedr\u0117 Val\u016bnait\u0117 Ole\u0161kevi\u010dien\u0117",
+          "authorId": "2127435629"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/24ef57002002e86e7bd65fd3a52320d515373c8e",
+      "venue": "DLNLD",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "039e0443863cc66ab2cdaa8fa7f2ee8196af6efa",
+      "title": "Rethinking AI Workflows: Guidelines for Scientific Evaluation in Digital Health Companies",
+      "authors": [
+        {
+          "name": "K. McAlister",
+          "authorId": "2257772484"
+        },
+        {
+          "name": "Lee Gonzales",
+          "authorId": "2389881355"
+        },
+        {
+          "name": "Jennifer L Huberty",
+          "authorId": "2242661026"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract Artificial intelligence (AI) is revolutionizing digital health, driving innovation in care delivery and operational efficiency. Despite its potential, many AI systems fail to meet real-world expectations due to limited evaluation practices that focus narrowly on short-term metrics like efficiency and technical accuracy. Ignoring factors such as usability, trust, transparency, and adaptability hinders AI adoption, scalability, and long-term impact in health care. This paper emphasizes the importance of embedding scientific evaluation as a core operational layer throughout the AI life cycle. We outline practical guidelines for digital health companies to improve AI integration and evaluation, informed by over 35 years of experience in science, the digital health industry, and AI development. It describes a multistep approach, including stakeholder analysis, real-time monitoring, and iterative improvement, that digital health companies can adopt to ensure robust AI integration. Key recommendations include assessing stakeholder needs, designing AI systems that can check its own work, conducting testing to address usability and biases, and ensuring continuous improvement to keep systems user-centered and adaptable. By integrating these guidelines, digital health companies can improve AI reliability, scalability, and trustworthiness, driving better health care delivery and stakeholder alignment.",
+      "citationCount": 0,
+      "doi": "10.2196/71798",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/039e0443863cc66ab2cdaa8fa7f2ee8196af6efa",
+      "venue": "JMIR AI",
+      "journal": {
+        "name": "JMIR AI",
+        "volume": "4"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "63b1031c9eef388f5230ec9b9b5030c996d25ea3",
+      "title": "Overview of PAN 2025: Voight-Kampff Generative AI Detection, Multilingual Text Detoxification, Multi-author Writing Style Analysis, and Generative Plagiarism Detection",
+      "authors": [
+        {
+          "name": "Janek Bevendorff",
+          "authorId": "9537652"
+        },
+        {
+          "name": "Daryna Dementieva",
+          "authorId": "2027664710"
+        },
+        {
+          "name": "Maik Fr\u00f6be",
+          "authorId": "1490763899"
+        },
+        {
+          "name": "Bela Gipp",
+          "authorId": "2261364118"
+        },
+        {
+          "name": "Andr\u00e9 Greiner-Petter",
+          "authorId": "1404061550"
+        },
+        {
+          "name": "Jussi Karlgren",
+          "authorId": "2241524528"
+        },
+        {
+          "name": "Maximilian Mayerl",
+          "authorId": "28912611"
+        },
+        {
+          "name": "Preslav Nakov",
+          "authorId": "2026545715"
+        },
+        {
+          "name": "Alexander Panchenko",
+          "authorId": "2285247207"
+        },
+        {
+          "name": "Martin Potthast",
+          "authorId": "2277904570"
+        },
+        {
+          "name": "Artem Shelmanov",
+          "authorId": "2316488670"
+        },
+        {
+          "name": "E. Stamatatos",
+          "authorId": "1992786"
+        },
+        {
+          "name": "Benno Stein",
+          "authorId": "1405867539"
+        },
+        {
+          "name": "Yuxia Wang",
+          "authorId": "2241417701"
+        },
+        {
+          "name": "Matti Wiegmann",
+          "authorId": "1912394"
+        },
+        {
+          "name": "Eva Zangerle",
+          "authorId": "3340275"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 36,
+      "doi": "10.1007/978-3-032-04354-2_21",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/63b1031c9eef388f5230ec9b9b5030c996d25ea3",
+      "venue": "Conference and Labs of the Evaluation Forum",
+      "journal": {
+        "pages": "388-411"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "63f521c6a82495b922620763764df45653c874d2",
+      "title": "Impact of Noise on LLM-Models Performance in Abstraction and Reasoning Corpus (ARC) Tasks with Model Temperature Considerations",
+      "authors": [
+        {
+          "name": "Nikhil Khandalkar",
+          "authorId": "2356785706"
+        },
+        {
+          "name": "Pavan Yadav",
+          "authorId": "2356719250"
+        },
+        {
+          "name": "Krishna Shinde",
+          "authorId": "2356785545"
+        },
+        {
+          "name": "Lokesh B. Ramegowda",
+          "authorId": "2356785427"
+        },
+        {
+          "name": "Rajarshi Das",
+          "authorId": "2356810050"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advancements in Large Language Models (LLMs) have generated growing interest in their structured reasoning capabilities, particularly in tasks involving abstraction and pattern recognition. The Abstraction and Reasoning Corpus (ARC) benchmark plays a crucial role in evaluating these capabilities by testing how well AI models generalize to novel problems. While GPT-4o demonstrates strong performance by solving all ARC tasks under zero-noise conditions, other models like DeepSeek R1 and LLaMA 3.2 fail to solve any, suggesting limitations in their ability to reason beyond simple pattern matching. To explore this gap, we systematically evaluate these models across different noise levels and temperature settings. Our results reveal that the introduction of noise consistently impairs model performance, regardless of architecture. This decline highlights a shared vulnerability: current LLMs, despite showing signs of abstract reasoning, remain highly sensitive to input perturbations. Such fragility raises concerns about their real-world applicability, where noise and uncertainty are common. By comparing how different model architectures respond to these challenges, we offer insights into the structural weaknesses of modern LLMs in reasoning tasks. This work underscores the need for developing more robust and adaptable AI systems capable of handling the ambiguity and variability inherent in real-world scenarios. Our findings aim to guide future research toward enhancing model generalization, robustness, and alignment with human-like cognitive flexibility.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2504.15903",
+      "arxivId": "2504.15903",
+      "url": "https://www.semanticscholar.org/paper/63f521c6a82495b922620763764df45653c874d2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.15903"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7a65385621e97f07c7a192bdfaa6e638e682cf3a",
+      "title": "Eval Factsheets: A Structured Framework for Documenting AI Evaluations",
+      "authors": [
+        {
+          "name": "Florian Bordes",
+          "authorId": "2390929758"
+        },
+        {
+          "name": "Candace Ross",
+          "authorId": "2256372432"
+        },
+        {
+          "name": "Justine T Kao",
+          "authorId": "2366427834"
+        },
+        {
+          "name": "Evangelia Spiliopoulou",
+          "authorId": "3373316"
+        },
+        {
+          "name": "Adina Williams",
+          "authorId": "2293907712"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid proliferation of benchmarks has created significant challenges in reproducibility, transparency, and informed decision-making. However, unlike datasets and models -- which benefit from structured documentation frameworks like Datasheets and Model Cards -- evaluation methodologies lack systematic documentation standards. We introduce Eval Factsheets, a structured, descriptive framework for documenting AI system evaluations through a comprehensive taxonomy and questionnaire-based approach. Our framework organizes evaluation characteristics across five fundamental dimensions: Context (Who made the evaluation and when?), Scope (What does it evaluate?), Structure (With what the evaluation is built?), Method (How does it work?) and Alignment (In what ways is it reliable/valid/robust?). We implement this taxonomy as a practical questionnaire spanning five sections with mandatory and recommended documentation elements. Through case studies on multiple benchmarks, we demonstrate that Eval Factsheets effectively captures diverse evaluation paradigms -- from traditional benchmarks to LLM-as-judge methodologies -- while maintaining consistency and comparability. We hope Eval Factsheets are incorporated into both existing and newly released evaluation frameworks and lead to more transparency and reproducibility.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.04062",
+      "url": "https://www.semanticscholar.org/paper/7a65385621e97f07c7a192bdfaa6e638e682cf3a",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a764bcfa459cf734787bd5343c4b4d496c4cf6e2",
+      "title": "VirTLab-Eval: Human-Agent Team and Digital Twin Performance Evaluation Demonstration",
+      "authors": [
+        {
+          "name": "Svitlana Volkova",
+          "authorId": "2301078372"
+        },
+        {
+          "name": "Hsien-Te Kao",
+          "authorId": "39922117"
+        },
+        {
+          "name": "Louis Penafiel",
+          "authorId": "2258550140"
+        },
+        {
+          "name": "Daniel Nguyen",
+          "authorId": "2329343140"
+        },
+        {
+          "name": "Myke C. Cohen",
+          "authorId": "2328163227"
+        },
+        {
+          "name": "Robert McCormack",
+          "authorId": "2258550433"
+        },
+        {
+          "name": "Laura Cassani",
+          "authorId": "48445167"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The study of human-artificial intelligence (AI) teaming (HAT) and Human Digital Twin (HDT) modeling currently faces significant challenges in accurately simulating and assessing the effectiveness of interactions between humans and AI systems. Current methods typically rely on limited real-world data or simplified simulated representations that do not capture the complexity and variability of human digital twin and AI agent behavior. VirTLab-Eval is a novel agentic framework of human digital twins (HDTs) and AI agents to model and evaluate HAT behaviors and interventions across operational scenarios. A comprehensive set of measures, including novel socio-cognitive-emotional and behavioral metrics automatically extracted from team communications and interactions, for evaluating HAT performance is integrated into visual analytics enabling the assessment of interventions that target the attributes of HDTs and agents. VirTLab-Eval measurements capture nuanced aspects of trust development, emotional alignment, and team cohesion that conventional performance metrics might miss, providing richer insights into the HAT dynamics. Example results from search and rescue missions indicate that AI teammate reliability has a significant effect on communication dynamics and assistance behaviors, while Human Digital Twin (HDT) personality traits shape trust development and team coordination. These insights directly inform the design of Human-AI Teaming (HAT) training programs aimed at optimizing the use of AI systems, mitigating both over-reliance and under-utilization, and ultimately enhancing mission effectiveness while reducing risk to personnel.",
+      "citationCount": 0,
+      "doi": "10.1177/10711813251369797",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a764bcfa459cf734787bd5343c4b4d496c4cf6e2",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "journal": {
+        "name": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+        "pages": "245 - 250",
+        "volume": "69"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3007f2c2815beaaaec4cbdbe9284857c51bd3637",
+      "title": "Expert of Experts Verification and Alignment (EVAL) Framework for Large Language Models Safety in Gastroenterology",
+      "authors": [
+        {
+          "name": "Mauro Giuffr\u00e8",
+          "authorId": "2299973744"
+        },
+        {
+          "name": "Kisung You",
+          "authorId": "2260731556"
+        },
+        {
+          "name": "Ziteng Pang",
+          "authorId": "2359041685"
+        },
+        {
+          "name": "Simone Kresevic",
+          "authorId": "2299973097"
+        },
+        {
+          "name": "Sunny Chung",
+          "authorId": "2364137066"
+        },
+        {
+          "name": "Ryan Chen",
+          "authorId": "2359099384"
+        },
+        {
+          "name": "Youngmin Ko",
+          "authorId": "2359073622"
+        },
+        {
+          "name": "Colleen E. Chan",
+          "authorId": "2275820661"
+        },
+        {
+          "name": "Theo Saarinen",
+          "authorId": "2275055125"
+        },
+        {
+          "name": "Milo\u0161 Aj\u010devi\u0107",
+          "authorId": "2359062683"
+        },
+        {
+          "name": "L. Croc\u00e8",
+          "authorId": "38830838"
+        },
+        {
+          "name": "Guadalupe Garcia-Tsao",
+          "authorId": "2299975156"
+        },
+        {
+          "name": "I. Gralnek",
+          "authorId": "2240033930"
+        },
+        {
+          "name": "Joseph J. Y. Sung",
+          "authorId": "2299976982"
+        },
+        {
+          "name": "A. Barkun",
+          "authorId": "2205122492"
+        },
+        {
+          "name": "Loren Laine",
+          "authorId": "2275054643"
+        },
+        {
+          "name": "Jasjeet Sekhon",
+          "authorId": "2275054630"
+        },
+        {
+          "name": "Bradly C. Stadie",
+          "authorId": "3275284"
+        },
+        {
+          "name": "D. Shung",
+          "authorId": "2256766771"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models generate plausible text responses to medical questions, but inaccurate responses pose significant risks in medical decision-making. Grading LLM outputs to determine the best model or answer is time-consuming and impractical in clinical settings; therefore, we introduce EVAL (Expert-of-Experts Verification and Alignment) to streamline this process and enhance LLM safety for upper gastrointestinal bleeding (UGIB). We evaluated OpenAI\u2019s GPT-3.5/4/4o/o1-preview, Anthropic\u2019s Claude-3-Opus, Meta\u2019s LLaMA-2 (7B/13B/70B), and Mistral AI\u2019s Mixtral (7B) across 27 configurations, including zero-shot baseline, retrieval-augmented generation, and supervised fine-tuning. EVAL uses similarity-based ranking and a reward model trained on human-graded responses for rejection sampling. Among the employed similarity metrics, Fine-Tuned ColBERT achieved the highest alignment with human performance across three separate datasets (\u03c1\u2009=\u20090.81\u20130.91). The reward model replicated human grading with 87.9% of cases across temperature settings and significantly improved accuracy through rejection sampling by 8.36% overall. EVAL offers scalable potential to assess accuracy for high-stakes medical decision-making.",
+      "citationCount": 5,
+      "doi": "10.1038/s41746-025-01589-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3007f2c2815beaaaec4cbdbe9284857c51bd3637",
+      "venue": "npj Digital Medicine",
+      "journal": {
+        "name": "NPJ Digital Medicine",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5655ad1db638ddf86db964c201a3014fb8e21db6",
+      "title": "LocalValueBench: A Collaboratively Built and Extensible Benchmark for Evaluating Localized Value Alignment and Ethical Safety in Large Language Models",
+      "authors": [
+        {
+          "name": "Gwenyth Isobel Meadows",
+          "authorId": "2314830463"
+        },
+        {
+          "name": "Nicholas Wai Long Lau",
+          "authorId": "2314829463"
+        },
+        {
+          "name": "Eva Adelina Susanto",
+          "authorId": "2314832010"
+        },
+        {
+          "name": "Chi Lok Yu",
+          "authorId": "2314880311"
+        },
+        {
+          "name": "Aditya Paul",
+          "authorId": "2315789379"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The proliferation of large language models (LLMs) requires robust evaluation of their alignment with local values and ethical standards, especially as existing benchmarks often reflect the cultural, legal, and ideological values of their creators. \\textsc{LocalValueBench}, introduced in this paper, is an extensible benchmark designed to assess LLMs' adherence to Australian values, and provides a framework for regulators worldwide to develop their own LLM benchmarks for local value alignment. Employing a novel typology for ethical reasoning and an interrogation approach, we curated comprehensive questions and utilized prompt engineering strategies to probe LLMs' value alignment. Our evaluation criteria quantified deviations from local values, ensuring a rigorous assessment process. Comparative analysis of three commercial LLMs by USA vendors revealed significant insights into their effectiveness and limitations, demonstrating the critical importance of value alignment. This study offers valuable tools and methodologies for regulators to create tailored benchmarks, highlighting avenues for future research to enhance ethical AI development.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2408.01460",
+      "arxivId": "2408.01460",
+      "url": "https://www.semanticscholar.org/paper/5655ad1db638ddf86db964c201a3014fb8e21db6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.01460"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6fd59a5d85e124ab9009b871095c0053f34462d5",
+      "title": "The AI Language Proficiency Monitor - Tracking the Progress of LLMs on Multilingual Benchmarks",
+      "authors": [
+        {
+          "name": "David Pomerenke",
+          "authorId": "2373443839"
+        },
+        {
+          "name": "Jonas Nothnagel",
+          "authorId": "2373438294"
+        },
+        {
+          "name": "Simon Ostermann",
+          "authorId": "2266468276"
+        }
+      ],
+      "year": 2025,
+      "abstract": "To ensure equitable access to the benefits of large language models (LLMs), it is essential to evaluate their capabilities across the world's languages. We introduce the AI Language Proficiency Monitor, a comprehensive multilingual benchmark that systematically assesses LLM performance across up to 200 languages, with a particular focus on low-resource languages. Our benchmark aggregates diverse tasks including translation, question answering, math, and reasoning, using datasets such as FLORES+, MMLU, GSM8K, TruthfulQA, and ARC. We provide an open-source, auto-updating leaderboard and dashboard that supports researchers, developers, and policymakers in identifying strengths and gaps in model performance. In addition to ranking models, the platform offers descriptive insights such as a global proficiency map and trends over time. By complementing and extending prior multilingual benchmarks, our work aims to foster transparency, inclusivity, and progress in multilingual AI. The system is available at https://huggingface.co/spaces/fair-forward/evals-for-every-language.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2507.08538",
+      "arxivId": "2507.08538",
+      "url": "https://www.semanticscholar.org/paper/6fd59a5d85e124ab9009b871095c0053f34462d5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.08538"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d4518e73aa1451416bdc6116e47d053e0d8ef7c7",
+      "title": "Specialty-Specific Citation-Enabled AI Clinical Decision Support System for Craniofacial Surgery: Development of CASPER.",
+      "authors": [
+        {
+          "name": "Berk B. Ozmen",
+          "authorId": "2278695635"
+        },
+        {
+          "name": "Nishant Singh",
+          "authorId": "2366789775"
+        },
+        {
+          "name": "Kavach Shah",
+          "authorId": "2367207938"
+        },
+        {
+          "name": "Ibrahim Berber",
+          "authorId": "2310799762"
+        },
+        {
+          "name": "Eugene Pinsky",
+          "authorId": "2357470422"
+        },
+        {
+          "name": "Graham S. Schwarz",
+          "authorId": "2278700902"
+        }
+      ],
+      "year": 2025,
+      "abstract": "BACKGROUND\nCraniofacial surgery requires synthesis of complex, multidisciplinary knowledge, yet specialty-specific decision support tools are lacking. Retrieval-augmented generation (RAG) offers an opportunity to create transparent, evidence-based artificial intelligence (AI) systems tailored to surgical practice.\n\n\nMETHODS\nThe authors developed CASPER, a domain-specific, multimodal RAG system with text and image analysis capabilities, built with RAPTOR hierarchical architecture and a knowledge base of 8561 open-access craniofacial surgery articles (2000-2025). The system retrieved and synthesized peer-reviewed literature in response to 25 clinical questions spanning craniofacial subspecialties. Performance was evaluated using semantic similarity (SEM-eval) to retrieved documents, manual content coverage review, and manual citation accuracy verification.\n\n\nRESULTS\nCASPER achieved strong alignment with supporting literature (mean SEM-eval 0.89\u00b10.04; range: 0.81-0.96), integrating an average of 7.8 sources per query. Highest performance was observed in pediatric airway (0.93), facial trauma (0.93), and oncologic surgery (0.95), with top scores for Pierre-Robin mandibular distraction (0.96) and orbital floor fracture management (0.95). Lower scores occurred in complex or emerging domains such as Le Fort III contraindications (0.81) and facial feminization planning (0.81). Manual review confirmed that CASPER maintained high content coverage across scenarios, with citations consistently accurate and directly supportive of system outputs.\n\n\nCONCLUSIONS\nCASPER is the first citation-enabled AI system for craniofacial surgery and demonstrates expert-comparable reasoning across diverse clinical scenarios. By delivering transparent, evidence-grounded recommendations, CASPER has the potential to enhance surgical planning, improve decision-making consistency, and accelerate knowledge translation in both clinical practice and surgical education.",
+      "citationCount": 0,
+      "doi": "10.1097/SCS.0000000000012279",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d4518e73aa1451416bdc6116e47d053e0d8ef7c7",
+      "venue": "The Journal of craniofacial surgery (Print)",
+      "journal": {
+        "name": "The Journal of craniofacial surgery"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3077c9afd6fd7dcd186e0d5027f3d1b8a99b71b7",
+      "title": "TextBO: Bayesian Optimization in Language Space for Eval-Efficient Self-Improving AI",
+      "authors": [
+        {
+          "name": "E. H. Kang",
+          "authorId": "2346323273"
+        },
+        {
+          "name": "Hema Yoganarasimhan",
+          "authorId": "2863824"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) have enabled self-improving AI systems that iteratively generate, evaluate, and refine their outcomes. Recent studies show that prompt-optimization-based self-improvement can outperform state-of-the-art reinforcement-learning fine-tuning of LLMs, but performance is typically measured by generation efficiency. However, in many applications, the constraint is evaluation efficiency: obtaining reliable feedback is far more costly than generating candidates. To optimize for evaluation efficiency, we extend Upper Confidence Bound-Bayesian Optimization (UCB-BO), a framework known for optimal evaluation-efficiency guarantees, to the language domain. Doing so is challenging for two reasons: (i) gradients needed for UCB-BO are ill-defined in discrete prompt space; and (ii) UCB-style exploration relies on a surrogate model and acquisition function, which only live implicitly in the LLM. We overcome these challenges by proving that combining simple textual gradients (LLM-proposed local edits) with the Best-of-N selection strategy statistically emulates ascent along the gradient of the canonical UCB acquisition function. Based on this result, we propose TextBO, a simple, evaluation-efficient self-improving algorithm that operates purely in language space without explicit surrogates or calibrated uncertainty models. We empirically validate TextBO on automated ad-alignment tasks using a persona-induced preference distribution, demonstrating superior performance per evaluation compared to strong baselines such as Best-of-N and GEPA. We also evaluate TextBO's Best-of-N multi-step textual-gradient mechanism on agentic AI benchmarks by augmenting GEPA with it and show that it significantly outperforms standard GEPA. In sum, TextBO is a simple and principled framework for AI self-improving system design that bridges prompt optimization with classical Bayesian optimization.",
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": "2511.12063",
+      "url": "https://www.semanticscholar.org/paper/3077c9afd6fd7dcd186e0d5027f3d1b8a99b71b7",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "52ea377d78e8ec16f07c8b4ccc5b96e687436c17",
+      "title": "Beyond the Bot: A Dual-Phase Framework for Evaluating AI Chatbot Simulations in Nursing Education",
+      "authors": [
+        {
+          "name": "Phillip Olla",
+          "authorId": "2327099562"
+        },
+        {
+          "name": "Nadine Wodwaski",
+          "authorId": "51255504"
+        },
+        {
+          "name": "Taylor Long",
+          "authorId": "2375506579"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Background/Objectives: The integration of AI chatbots in nursing education, particularly in simulation-based learning, is advancing rapidly. However, there is a lack of structured evaluation models, especially to assess AI-generated simulations. This article introduces the AI-Integrated Method for Simulation (AIMS) evaluation framework, a dual-phase evaluation framework adapted from the FAITA model, designed to evaluate both prompt design and chatbot performance in the context of nursing education. Methods: This simulation-based study explored the application of an AI chatbot in an emergency planning course. The AIMS framework was developed and applied, consisting of six prompt-level domains (Phase 1) and eight performance criteria (Phase 2). These domains were selected based on current best practices in instructional design, simulation fidelity, and emerging AI evaluation literature. To assess the chatbots educational utility, the study employed a scoring rubric for each phase and incorporated a structured feedback loop to refine both prompt design and chatbox interaction. To demonstrate the framework\u2019s practical application, the researchers configured an AI tool referred to in this study as \u201cEval-Bot v1\u201d, built using OpenAI\u2019s GPT-4.0, to apply Phase 1 scoring criteria to a real simulation prompt. Insights from this analysis were then used to anticipate Phase 2 performance and identify areas for improvement. Participants (three individuals)\u2014all experienced healthcare educators and advanced practice nurses with expertise in clinical decision-making and simulation-based teaching\u2014reviewed the prompt and Eval-Bot\u2019s score to triangulate findings. Results: Simulated evaluations revealed clear strengths in the prompt alignment with course objectives and its capacity to foster interactive learning. Participants noted that the AI chatbot supported engagement and maintained appropriate pacing, particularly in scenarios involving emergency planning decision-making. However, challenges emerged in areas related to personalization and inclusivity. While the chatbot responded consistently to general queries, it struggled to adapt tone, complexity and content to reflect diverse learner needs or cultural nuances. To support replication and refinement, a sample scoring rubric and simulation prompt template are provided. When evaluated using the Eval-Bot tool, moderate concerns were flagged regarding safety prompts and inclusive language, particularly in how the chatbot navigated sensitive decision points. These gaps were linked to predicted performance issues in Phase 2 domains such as dialog control, equity, and user reassurance. Based on these findings, revised prompt strategies were developed to improve contextual sensitivity, promote inclusivity, and strengthen ethical guidance within chatbot-led simulations. Conclusions: The AIMS evaluation framework provides a practical and replicable approach for evaluating the use of AI chatbots in simulation-based education. By offering structured criteria for both prompt design and chatbot performance, the model supports instructional designers, simulation specialists, and developers in identifying areas of strength and improvement. The findings underscore the importance of intentional design, safety monitoring, and inclusive language when integrating AI into nursing and health education. As AI tools become more embedded in learning environments, this framework offers a thoughtful starting point for ensuring they are applied ethically, effectively, and with learner diversity in mind.",
+      "citationCount": 0,
+      "doi": "10.3390/nursrep15080280",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/52ea377d78e8ec16f07c8b4ccc5b96e687436c17",
+      "venue": "Nursing Reports",
+      "journal": {
+        "name": "Nursing Reports",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "96c16e885f7c8ff4b090bd1f5f2553dd970de66d",
+      "title": "Dermatologist-like explainable AI enhances trust and confidence in diagnosing melanoma",
+      "authors": [
+        {
+          "name": "T. Chanda",
+          "authorId": "2047735027"
+        },
+        {
+          "name": "Katja Hauser",
+          "authorId": "2161583526"
+        },
+        {
+          "name": "S. Hobelsberger",
+          "authorId": "2072396475"
+        },
+        {
+          "name": "Tabea-Clara Bucher",
+          "authorId": "2120315453"
+        },
+        {
+          "name": "Carina Nogueira Garcia",
+          "authorId": "2149644845"
+        },
+        {
+          "name": "C. Wies",
+          "authorId": "2204068811"
+        },
+        {
+          "name": "H. Kittler",
+          "authorId": "2236754"
+        },
+        {
+          "name": "P. Tschandl",
+          "authorId": "3819689"
+        },
+        {
+          "name": "Cristian Navarrete-Dechent",
+          "authorId": "2404448405"
+        },
+        {
+          "name": "S. Podlipnik",
+          "authorId": "4738383"
+        },
+        {
+          "name": "E. Chousakos",
+          "authorId": "1879549236"
+        },
+        {
+          "name": "I. Crnari\u0107",
+          "authorId": "9037088"
+        },
+        {
+          "name": "J. Majstorovic",
+          "authorId": "121162180"
+        },
+        {
+          "name": "Linda Alhajwan",
+          "authorId": "2212527992"
+        },
+        {
+          "name": "Tanya Foreman",
+          "authorId": "2212525288"
+        },
+        {
+          "name": "S. Peternel",
+          "authorId": "5725754"
+        },
+        {
+          "name": "S. Sarap",
+          "authorId": "2166540725"
+        },
+        {
+          "name": "\u0130. \u00d6zdemir",
+          "authorId": "2074391631"
+        },
+        {
+          "name": "R. Barnhill",
+          "authorId": "3369626"
+        },
+        {
+          "name": "Mar Llamas-Velasco",
+          "authorId": "2388904969"
+        },
+        {
+          "name": "G. Poch",
+          "authorId": "47866517"
+        },
+        {
+          "name": "S\u00f6ren Korsing",
+          "authorId": "2115005069"
+        },
+        {
+          "name": "W. Sondermann",
+          "authorId": "6942354"
+        },
+        {
+          "name": "F. Gellrich",
+          "authorId": "2083557770"
+        },
+        {
+          "name": "M. Heppt",
+          "authorId": "3938037"
+        },
+        {
+          "name": "M. Erdmann",
+          "authorId": "51420055"
+        },
+        {
+          "name": "S. Haferkamp",
+          "authorId": "3704661"
+        },
+        {
+          "name": "K. Drexler",
+          "authorId": "40916832"
+        },
+        {
+          "name": "M. Goebeler",
+          "authorId": "4325907"
+        },
+        {
+          "name": "B. Schilling",
+          "authorId": "2137859019"
+        },
+        {
+          "name": "J. Utikal",
+          "authorId": "6070014"
+        },
+        {
+          "name": "K. Ghoreschi",
+          "authorId": "4843845"
+        },
+        {
+          "name": "S. Fr\u00f6hling",
+          "authorId": "6431750"
+        },
+        {
+          "name": "E. Krieghoff-Henning",
+          "authorId": "1402222584"
+        },
+        {
+          "name": "Alexander Alexander Alexandris Amr Mohammad Ana Sanader Andr Salava Thiem Dimitrios Ammar Vu\u010demilovi\u0107 Yoshimura",
+          "authorId": null
+        },
+        {
+          "name": "A. Salava",
+          "authorId": "4282679"
+        },
+        {
+          "name": "Alexander Thiem",
+          "authorId": "2187505130"
+        },
+        {
+          "name": "Alexandris Dimitrios",
+          "authorId": "2388909360"
+        },
+        {
+          "name": "Amr Mohammad Ammar",
+          "authorId": "2216785333"
+        },
+        {
+          "name": "Ana Sanader Vu\u010demilovi\u0107",
+          "authorId": "2111393927"
+        },
+        {
+          "name": "Andrea Miyuki Yoshimura",
+          "authorId": "2388905067"
+        },
+        {
+          "name": "Andzelka Ilieva",
+          "authorId": "2107843909"
+        },
+        {
+          "name": "Anja Gesierich",
+          "authorId": "2354708588"
+        },
+        {
+          "name": "Antonia Reimer-Taschenbrecker",
+          "authorId": "2388903940"
+        },
+        {
+          "name": "A. G. Kolios",
+          "authorId": "2284211451"
+        },
+        {
+          "name": "A. Kalva",
+          "authorId": "82768507"
+        },
+        {
+          "name": "Arzu Ferhatosmano\u011flu",
+          "authorId": "66446187"
+        },
+        {
+          "name": "A. Beyens",
+          "authorId": "46546370"
+        },
+        {
+          "name": "C. Pf\u00f6hler",
+          "authorId": "2244038593"
+        },
+        {
+          "name": "Dilara \u0130lhan Erdil",
+          "authorId": "2200123073"
+        },
+        {
+          "name": "Dobrila Jovanovic",
+          "authorId": "2388905618"
+        },
+        {
+          "name": "E. R\u00e1cz",
+          "authorId": "2274332333"
+        },
+        {
+          "name": "Falk G. Bechara",
+          "authorId": "2388909835"
+        },
+        {
+          "name": "Federico Vaccaro",
+          "authorId": "2388909513"
+        },
+        {
+          "name": "F. Dimitriou",
+          "authorId": "31726988"
+        },
+        {
+          "name": "G. Rasulova",
+          "authorId": "2140202302"
+        },
+        {
+          "name": "Hulya Cenk",
+          "authorId": "51166545"
+        },
+        {
+          "name": "I. Yanatma",
+          "authorId": "2042768634"
+        },
+        {
+          "name": "I. Kolm",
+          "authorId": "2323554921"
+        },
+        {
+          "name": "I. Hoorens",
+          "authorId": "6192551"
+        },
+        {
+          "name": "Iskra Petrovska Sheshova",
+          "authorId": "2388909789"
+        },
+        {
+          "name": "Ivana Jocic",
+          "authorId": "2142782100"
+        },
+        {
+          "name": "J. Knuever",
+          "authorId": "14991126"
+        },
+        {
+          "name": "Janik Flei\u00dfner",
+          "authorId": "2311670931"
+        },
+        {
+          "name": "J. Thamm",
+          "authorId": "2219135230"
+        },
+        {
+          "name": "Johan Dahlberg",
+          "authorId": "2388906692"
+        },
+        {
+          "name": "J. J. Lluch-Galcer\u00e1",
+          "authorId": "2231552209"
+        },
+        {
+          "name": "Juan Sebasti\u00e1n Andreani Figueroa",
+          "authorId": "2388907482"
+        },
+        {
+          "name": "J. Holzgruber",
+          "authorId": "2196176250"
+        },
+        {
+          "name": "J. Welzel",
+          "authorId": "117609736"
+        },
+        {
+          "name": "K. Damevska",
+          "authorId": "6617854"
+        },
+        {
+          "name": "K. Mayer",
+          "authorId": "2059169763"
+        },
+        {
+          "name": "L. V. Maul",
+          "authorId": "2388909617"
+        },
+        {
+          "name": "Laura Garzona-Navas",
+          "authorId": "2305266188"
+        },
+        {
+          "name": "Laura Isabell Bley",
+          "authorId": "2388905346"
+        },
+        {
+          "name": "Laurenz Schmitt",
+          "authorId": "2388904095"
+        },
+        {
+          "name": "Lena Reipen",
+          "authorId": "2388906624"
+        },
+        {
+          "name": "Lidia Shafik",
+          "authorId": "2388906996"
+        },
+        {
+          "name": "Lidija Petrovska",
+          "authorId": "2388905312"
+        },
+        {
+          "name": "Linda Golle",
+          "authorId": "2024867107"
+        },
+        {
+          "name": "Luise Jopen",
+          "authorId": "2388906187"
+        },
+        {
+          "name": "Magda Gogilidze",
+          "authorId": "2388904994"
+        },
+        {
+          "name": "Maria Rosa Burg",
+          "authorId": "2062739546"
+        },
+        {
+          "name": "M. Morales-S\u00e1nchez",
+          "authorId": "1401661962"
+        },
+        {
+          "name": "M. S\u0142awi\u0144ska",
+          "authorId": "153752763"
+        },
+        {
+          "name": "Miriam Mengoni",
+          "authorId": "2388908258"
+        },
+        {
+          "name": "Miroslav Dragolov",
+          "authorId": "2307957930"
+        },
+        {
+          "name": "N. Iglesias-Pena",
+          "authorId": "2243936169"
+        },
+        {
+          "name": "N. Booken",
+          "authorId": "2228639492"
+        },
+        {
+          "name": "N. Enechukwu",
+          "authorId": "1395865206"
+        },
+        {
+          "name": "O. Persa",
+          "authorId": "8461101"
+        },
+        {
+          "name": "O. Oninla",
+          "authorId": "3964334"
+        },
+        {
+          "name": "Panagiota Theofilogiannakou",
+          "authorId": "2335913495"
+        },
+        {
+          "name": "Paula Kage",
+          "authorId": "2388903968"
+        },
+        {
+          "name": "Roque Rafael Oliveira Neto",
+          "authorId": "2388905030"
+        },
+        {
+          "name": "Rosario Peralta",
+          "authorId": "2388905147"
+        },
+        {
+          "name": "R. Afiouni",
+          "authorId": "1454033330"
+        },
+        {
+          "name": "Sandra Schuh",
+          "authorId": "2251575363"
+        },
+        {
+          "name": "Saskia Schnabl-Scheu",
+          "authorId": "2388906166"
+        },
+        {
+          "name": "S. Vural",
+          "authorId": "34519383"
+        },
+        {
+          "name": "Sharon Hudson",
+          "authorId": "2388905403"
+        },
+        {
+          "name": "Sonia Rodr\u00edguez Saa",
+          "authorId": "2061428202"
+        },
+        {
+          "name": "S\u00f6ren Hartmann",
+          "authorId": "2381949910"
+        },
+        {
+          "name": "S. Damevska",
+          "authorId": "2046770589"
+        },
+        {
+          "name": "Stefanie Finck",
+          "authorId": "2388906192"
+        },
+        {
+          "name": "Stephan Alexander Braun",
+          "authorId": "2388912366"
+        },
+        {
+          "name": "Tim Hartmann",
+          "authorId": "2388904744"
+        },
+        {
+          "name": "T. Welponer",
+          "authorId": "89717865"
+        },
+        {
+          "name": "Tomica Sotirovski",
+          "authorId": "2214229586"
+        },
+        {
+          "name": "Vanda Bondare-Ansberga",
+          "authorId": "2120295017"
+        },
+        {
+          "name": "Verena Ahlgrimm-Siess",
+          "authorId": "2300786010"
+        },
+        {
+          "name": "V. Frings",
+          "authorId": "2126213443"
+        },
+        {
+          "name": "V. Simeonovski",
+          "authorId": "40844831"
+        },
+        {
+          "name": "Zorica Zafirovik",
+          "authorId": "2254695035"
+        },
+        {
+          "name": "J.T. Maul",
+          "authorId": "2337331896"
+        },
+        {
+          "name": "Saskia Lehr",
+          "authorId": "38367674"
+        },
+        {
+          "name": "Marion Wobser",
+          "authorId": "2300443297"
+        },
+        {
+          "name": "D. Debus",
+          "authorId": "14804024"
+        },
+        {
+          "name": "H. Riad",
+          "authorId": "5818747"
+        },
+        {
+          "name": "M. Pereira",
+          "authorId": "2302379988"
+        },
+        {
+          "name": "Zsuzsanna Lengyel",
+          "authorId": "2290783507"
+        },
+        {
+          "name": "Alise Balcere",
+          "authorId": "1392684734"
+        },
+        {
+          "name": "Amalia Tsakiri",
+          "authorId": "2388910154"
+        },
+        {
+          "name": "R. Braun",
+          "authorId": "2274139353"
+        },
+        {
+          "name": "T. Brinker",
+          "authorId": "47572067"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Artificial intelligence (AI) systems have been shown to help dermatologists diagnose melanoma more accurately, however they lack transparency, hindering user acceptance. Explainable AI (XAI) methods can help to increase transparency, yet often lack precise, domain-specific explanations. Moreover, the impact of XAI methods on dermatologists\u2019 decisions has not yet been evaluated. Building upon previous research, we introduce an XAI system that provides precise and domain-specific explanations alongside its differential diagnoses of melanomas and nevi. Through a three-phase study, we assess its impact on dermatologists\u2019 diagnostic accuracy, diagnostic confidence, and trust in the XAI-support. Our results show strong alignment between XAI and dermatologist explanations. We also show that dermatologists\u2019 confidence in their diagnoses, and their trust in the support system significantly increase with XAI compared to conventional AI. This study highlights dermatologists\u2019 willingness to adopt such XAI systems, promoting future use in the clinic. Artificial intelligence has become popular as a cancer classification tool, but there is distrust of such systems due to their lack of transparency. Here, the authors develop an explainable AI system which produces text- and region-based explanations alongside its classifications which was assessed using clinicians\u2019 diagnostic accuracy, diagnostic confidence, and their trust in the system.",
+      "citationCount": 112,
+      "doi": "10.1038/s41467-023-43095-4",
+      "arxivId": "2303.12806",
+      "url": "https://www.semanticscholar.org/paper/96c16e885f7c8ff4b090bd1f5f2553dd970de66d",
+      "venue": "Nature Communications",
+      "journal": {
+        "name": "Nature Communications",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1d765b01cf31933d91cb04f1f389a96982fdf5cd",
+      "title": "VoiceAssistant-Eval: Benchmarking AI Assistants across Listening, Speaking, and Viewing",
+      "authors": [
+        {
+          "name": "Ke Wang",
+          "authorId": "2254440245"
+        },
+        {
+          "name": "Houxing Ren",
+          "authorId": "2254858928"
+        },
+        {
+          "name": "Zimu Lu",
+          "authorId": "2254361509"
+        },
+        {
+          "name": "Mingjie Zhan",
+          "authorId": "2284985101"
+        },
+        {
+          "name": "Hongsheng Li",
+          "authorId": "2229147559"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The growing capabilities of large language models and multimodal systems have spurred interest in voice-first AI assistants, yet existing benchmarks are inadequate for evaluating the full range of these systems'capabilities. We introduce VoiceAssistant-Eval, a comprehensive benchmark designed to assess AI assistants across listening, speaking, and viewing. VoiceAssistant-Eval comprises 10,497 curated examples spanning 13 task categories. These tasks include natural sounds, music, and spoken dialogue for listening; multi-turn dialogue, role-play imitation, and various scenarios for speaking; and highly heterogeneous images for viewing. To demonstrate its utility, we evaluate 21 open-source models and GPT-4o-Audio, measuring the quality of the response content and speech, as well as their consistency. The results reveal three key findings: (1) proprietary models do not universally outperform open-source models; (2) most models excel at speaking tasks but lag in audio understanding; and (3) well-designed smaller models can rival much larger ones. Notably, the mid-sized Step-Audio-2-mini (7B) achieves more than double the listening accuracy of LLaMA-Omni2-32B-Bilingual. However, challenges remain: multimodal (audio plus visual) input and role-play voice imitation tasks are difficult for current models, and significant gaps persist in robustness and safety alignment. VoiceAssistant-Eval identifies these gaps and establishes a rigorous framework for evaluating and guiding the development of next-generation AI assistants. Code and data will be released at https://mathllm.github.io/VoiceAssistantEval/ .",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2509.22651",
+      "arxivId": "2509.22651",
+      "url": "https://www.semanticscholar.org/paper/1d765b01cf31933d91cb04f1f389a96982fdf5cd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.22651"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f06e19f14571a48c1f600356b02c78db9602fe1e",
+      "title": "The Social Laboratory: A Psychometric Framework for Multi-Agent LLM Evaluation",
+      "authors": [
+        {
+          "name": "Zarreen Reza",
+          "authorId": "2366010897"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As Large Language Models (LLMs) transition from static tools to autonomous agents, traditional evaluation benchmarks that measure performance on downstream tasks are becoming insufficient. These methods fail to capture the emergent social and cognitive dynamics that arise when agents communicate, persuade, and collaborate in interactive environments. To address this gap, we introduce a novel evaluation framework that uses multi-agent debate as a controlled\"social laboratory\"to discover and quantify these behaviors. In our framework, LLM-based agents, instantiated with distinct personas and incentives, deliberate on a wide range of challenging topics under the supervision of an LLM moderator. Our analysis, enabled by a new suite of psychometric and semantic metrics, reveals several key findings. Across hundreds of debates, we uncover a powerful and robust emergent tendency for agents to seek consensus, consistently reaching high semantic agreement ({\\mu}>0.88) even without explicit instruction and across sensitive topics. We show that assigned personas induce stable, measurable psychometric profiles, particularly in cognitive effort, and that the moderators persona can significantly alter debate outcomes by structuring the environment, a key finding for external AI alignment. This work provides a blueprint for a new class of dynamic, psychometrically grounded evaluation protocols designed for the agentic setting, offering a crucial methodology for understanding and shaping the social behaviors of the next generation of AI agents. We have released the code and results at https://github.com/znreza/multi-agent-LLM-eval-for-debate.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2510.01295",
+      "arxivId": "2510.01295",
+      "url": "https://www.semanticscholar.org/paper/f06e19f14571a48c1f600356b02c78db9602fe1e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.01295"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b1175c2344c7acf7d0048650204506384a2e5184",
+      "title": "From KMMLU-Redux to Pro: A Professional Korean Benchmark Suite for LLM Evaluation",
+      "authors": [
+        {
+          "name": "Seokhee Hong",
+          "authorId": null
+        },
+        {
+          "name": "SunKyoung Kim",
+          "authorId": "36781770"
+        },
+        {
+          "name": "Guijin Son",
+          "authorId": "2364752496"
+        },
+        {
+          "name": "Soyeon Kim",
+          "authorId": "2315257827"
+        },
+        {
+          "name": "Yeonjung Hong",
+          "authorId": "2315257895"
+        },
+        {
+          "name": "Jinsik Lee",
+          "authorId": "2315092897"
+        },
+        {
+          "name": "Qiancheng Zhang",
+          "authorId": "2366055194"
+        },
+        {
+          "name": "Qihao Wang",
+          "authorId": "2337667976"
+        },
+        {
+          "name": "Qin-Feng Zhu",
+          "authorId": "2364135085"
+        },
+        {
+          "name": "Qiushi Chen",
+          "authorId": "2354189763"
+        },
+        {
+          "name": "R. J. Du",
+          "authorId": "2354121378"
+        },
+        {
+          "name": "R. L. Chen",
+          "authorId": "2354186061"
+        },
+        {
+          "name": "R. Jin",
+          "authorId": "2337687334"
+        },
+        {
+          "name": "Ruisong Ge",
+          "authorId": "2354133617"
+        },
+        {
+          "name": "Ruizhe Zhang",
+          "authorId": "2372244762"
+        },
+        {
+          "name": "Runji Pan",
+          "authorId": "2354175127"
+        },
+        {
+          "name": "Runxin Wang",
+          "authorId": "2354183156"
+        },
+        {
+          "name": "Ruoyu Xu",
+          "authorId": "2376110715"
+        },
+        {
+          "name": "Ruyi Zhang",
+          "authorId": "2354188131"
+        },
+        {
+          "name": "S. S. Chen",
+          "authorId": "2354705527"
+        },
+        {
+          "name": "Shanghao Li",
+          "authorId": "2354127932"
+        },
+        {
+          "name": "Shangyan Lu",
+          "authorId": "2359553559"
+        },
+        {
+          "name": "Shanhuang Zhou",
+          "authorId": "2354186105"
+        },
+        {
+          "name": "Shaoqing Chen",
+          "authorId": "2354738902"
+        },
+        {
+          "name": "Shengfeng Wu",
+          "authorId": "2359058559"
+        },
+        {
+          "name": "Shengfeng Ye",
+          "authorId": "2317259871"
+        },
+        {
+          "name": "Shi-yi Ye",
+          "authorId": "2347913298"
+        },
+        {
+          "name": "Shiyu Ma",
+          "authorId": "2359246944"
+        },
+        {
+          "name": "Shuang Wang",
+          "authorId": "2359289890"
+        },
+        {
+          "name": "Shuiping Zhou",
+          "authorId": "2359244945"
+        },
+        {
+          "name": "Shunfeng Yu",
+          "authorId": "2359169106"
+        },
+        {
+          "name": "Shuting Zhou",
+          "authorId": "2359244947"
+        },
+        {
+          "name": "T. Pan",
+          "authorId": "2066769898"
+        },
+        {
+          "name": "Tao Wang",
+          "authorId": "2334694490"
+        },
+        {
+          "name": "Tian Yun",
+          "authorId": "2291169817"
+        },
+        {
+          "name": "Tian Pei",
+          "authorId": "2278220142"
+        },
+        {
+          "name": "W. Sun",
+          "authorId": "2264016125"
+        },
+        {
+          "name": "W. Xiao",
+          "authorId": "2337790804"
+        },
+        {
+          "name": "Wanjia Zeng",
+          "authorId": "2357286921"
+        },
+        {
+          "name": "Wei Zhao",
+          "authorId": "2355028066"
+        },
+        {
+          "name": "Wen An",
+          "authorId": "2372605204"
+        },
+        {
+          "name": "Wenfeng Liu",
+          "authorId": "2372427587"
+        },
+        {
+          "name": "Wenjun Liang",
+          "authorId": "2355053464"
+        },
+        {
+          "name": "Wen-Wan Gao",
+          "authorId": "2347461446"
+        },
+        {
+          "name": "Wentao Yu",
+          "authorId": "2374260045"
+        },
+        {
+          "name": "X. Q. Zhang",
+          "authorId": "2354552977"
+        },
+        {
+          "name": "Xiangyue Li",
+          "authorId": "2354285097"
+        },
+        {
+          "name": "Xianzu Jin",
+          "authorId": "2354511143"
+        },
+        {
+          "name": "Xiao Wang",
+          "authorId": "2374338851"
+        },
+        {
+          "name": "Xiaodong Bi",
+          "authorId": "2323122753"
+        },
+        {
+          "name": "Xiaohan Liu",
+          "authorId": "2354133640"
+        },
+        {
+          "name": "Xiaojin Wang",
+          "authorId": "2311085452"
+        },
+        {
+          "name": "Xi-aokang Shen",
+          "authorId": "2107643678"
+        },
+        {
+          "name": "Xiaokang Chen",
+          "authorId": "2326444644"
+        },
+        {
+          "name": "Xiaotao Chen",
+          "authorId": "2359044505"
+        },
+        {
+          "name": "Xiaowen Nie",
+          "authorId": "2359056431"
+        },
+        {
+          "name": "Xiaoxi-ang Sun",
+          "authorId": "2359101025"
+        },
+        {
+          "name": "Xin Wang",
+          "authorId": "2359118930"
+        },
+        {
+          "name": "Cheng Xin",
+          "authorId": "2372496296"
+        },
+        {
+          "name": "Xin Liu",
+          "authorId": "2336338617"
+        },
+        {
+          "name": "Xingchao Xie",
+          "authorId": "2373598391"
+        },
+        {
+          "name": "Xingkai Liu",
+          "authorId": "2316204729"
+        },
+        {
+          "name": "Xinnan Yu",
+          "authorId": "2359253082"
+        },
+        {
+          "name": "Xinxia Song",
+          "authorId": "2359096082"
+        },
+        {
+          "name": "Xinyi Shan",
+          "authorId": "2347400291"
+        },
+        {
+          "name": "Xinyu Zhou",
+          "authorId": "2373728645"
+        },
+        {
+          "name": "Xinyuan Yang",
+          "authorId": "2334735880"
+        },
+        {
+          "name": "Xuecheng Li",
+          "authorId": "2303230013"
+        },
+        {
+          "name": "Xuheng Su",
+          "authorId": "2359220829"
+        },
+        {
+          "name": "Y. K. Lin",
+          "authorId": "2359167111"
+        },
+        {
+          "name": "Q. LiY.",
+          "authorId": "83877609"
+        },
+        {
+          "name": "Y. X. Wang",
+          "authorId": "2359130663"
+        },
+        {
+          "name": "Y. X. Wei",
+          "authorId": "2337771864"
+        },
+        {
+          "name": "Yang Zhu",
+          "authorId": "2359150533"
+        },
+        {
+          "name": "Yan-hong Zhang",
+          "authorId": "2359048395"
+        },
+        {
+          "name": "Yanhong Xu",
+          "authorId": "2321045215"
+        },
+        {
+          "name": "Yanping Xu",
+          "authorId": "2359043908"
+        },
+        {
+          "name": "Yao Huang",
+          "authorId": "2359100357"
+        },
+        {
+          "name": "Yaohui Li",
+          "authorId": "2374330170"
+        },
+        {
+          "name": "Yaofeng Zhao",
+          "authorId": "2370076345"
+        },
+        {
+          "name": "Yao-wei Sun",
+          "authorId": "2151264491"
+        },
+        {
+          "name": "Yaohui Li",
+          "authorId": "2374330170"
+        },
+        {
+          "name": "Yi Wang",
+          "authorId": "2374179660"
+        },
+        {
+          "name": "Yu Yi",
+          "authorId": "2359034231"
+        },
+        {
+          "name": "Yichao Zheng",
+          "authorId": "2373741997"
+        },
+        {
+          "name": "Yifan Zhang",
+          "authorId": "2372426097"
+        },
+        {
+          "name": "Yiliang Shi",
+          "authorId": "2374153496"
+        },
+        {
+          "name": "Xiong Ying",
+          "authorId": "2359516344"
+        },
+        {
+          "name": "Ying He",
+          "authorId": "2317034993"
+        },
+        {
+          "name": "Yishi Tang",
+          "authorId": "2359299021"
+        },
+        {
+          "name": "Yisong Piao",
+          "authorId": "2359094851"
+        },
+        {
+          "name": "Yix-uan Wang",
+          "authorId": "2359102908"
+        },
+        {
+          "name": "Yi-Xuan Tan",
+          "authorId": "2325707139"
+        },
+        {
+          "name": "Yiyuan Ma",
+          "authorId": "2373913510"
+        },
+        {
+          "name": "Yongqiang Liu",
+          "authorId": "2287290800"
+        },
+        {
+          "name": "Guo Yu",
+          "authorId": "2359805969"
+        },
+        {
+          "name": "Yuan Wu",
+          "authorId": "2290137729"
+        },
+        {
+          "name": "Yuchen Ou",
+          "authorId": "2359096587"
+        },
+        {
+          "name": "Yuduan Zhu",
+          "authorId": "2359065882"
+        },
+        {
+          "name": "Yue Wang",
+          "authorId": "2373999716"
+        },
+        {
+          "name": "Yuheng Gong",
+          "authorId": "2359323557"
+        },
+        {
+          "name": "Yujia Zou",
+          "authorId": "2374371317"
+        },
+        {
+          "name": "Yukun He",
+          "authorId": "2359208398"
+        },
+        {
+          "name": "Yunfan Zha",
+          "authorId": "2359095638"
+        },
+        {
+          "name": "Yunxian Xiong",
+          "authorId": "2355053929"
+        },
+        {
+          "name": "Yuting Ma",
+          "authorId": "2354128050"
+        },
+        {
+          "name": "Yuxiang Yan",
+          "authorId": "2354340943"
+        },
+        {
+          "name": "Yuxi-ang Luo",
+          "authorId": "2354312886"
+        },
+        {
+          "name": "Yuxuan You",
+          "authorId": "2354620381"
+        },
+        {
+          "name": "Yuyang Liu",
+          "authorId": "2354153814"
+        },
+        {
+          "name": "Z. F. Zhou",
+          "authorId": "2354185621"
+        },
+        {
+          "name": "Z. Z. Wu",
+          "authorId": "2354188171"
+        },
+        {
+          "name": "Z. Ren",
+          "authorId": "2278430558"
+        },
+        {
+          "name": "Zhangli Ren",
+          "authorId": "2355086633"
+        },
+        {
+          "name": "Zhengbu Sha",
+          "authorId": "2313057721"
+        },
+        {
+          "name": "Zhe Fu",
+          "authorId": "2278223920"
+        },
+        {
+          "name": "Xu Zhen",
+          "authorId": "2354179554"
+        },
+        {
+          "name": "Zhen Huang",
+          "authorId": "2337821867"
+        },
+        {
+          "name": "Zhenda Zhang",
+          "authorId": "2354127836"
+        },
+        {
+          "name": "Zhengyan Xie",
+          "authorId": "2363411211"
+        },
+        {
+          "name": "Zhewen Zhang",
+          "authorId": "2340467337"
+        },
+        {
+          "name": "Zhi Hao",
+          "authorId": "2354110428"
+        },
+        {
+          "name": "Zhicheng Gou",
+          "authorId": "2354173090"
+        },
+        {
+          "name": "Zhiqiang Ma",
+          "authorId": "2366478700"
+        },
+        {
+          "name": "Zhihong Yan",
+          "authorId": "2354214982"
+        },
+        {
+          "name": "Zhipeng Shao",
+          "authorId": "2366024636"
+        },
+        {
+          "name": "Zhiyu Xu",
+          "authorId": "2354193075"
+        },
+        {
+          "name": "Zhuoshu Zhang",
+          "authorId": "2354507894"
+        },
+        {
+          "name": "Zihui Li",
+          "authorId": "2354580890"
+        },
+        {
+          "name": "Zijia Gu",
+          "authorId": "2357237882"
+        },
+        {
+          "name": "Zhu Zijun",
+          "authorId": "2092088635"
+        },
+        {
+          "name": "Zilin Liu",
+          "authorId": "2342433888"
+        },
+        {
+          "name": "Ziwei Li",
+          "authorId": "2374338101"
+        },
+        {
+          "name": "Xie",
+          "authorId": "2372217758"
+        },
+        {
+          "name": "Aryo Pradipta",
+          "authorId": "2365931429"
+        },
+        {
+          "name": "Joshua Ong",
+          "authorId": "2054150577"
+        },
+        {
+          "name": "Jun Leang",
+          "authorId": "2372618946"
+        },
+        {
+          "name": "Gi-won Hong",
+          "authorId": "2372557265"
+        },
+        {
+          "name": "Alessio Devoto",
+          "authorId": "2172309361"
+        },
+        {
+          "name": "Alberto Carlo",
+          "authorId": "2276363025"
+        },
+        {
+          "name": "Maria Mancino",
+          "authorId": "2276364294"
+        },
+        {
+          "name": "Rohit Saxena",
+          "authorId": "2362087480"
+        },
+        {
+          "name": "Xuanli He",
+          "authorId": "2373214681"
+        },
+        {
+          "name": "Yu Zhao",
+          "authorId": "2359272833"
+        },
+        {
+          "name": "Xi-aotang Du",
+          "authorId": "2374194086"
+        },
+        {
+          "name": "Mohammad Reza Ghasemi Madani",
+          "authorId": "2261279246"
+        },
+        {
+          "name": "C. Barale",
+          "authorId": "2279476604"
+        },
+        {
+          "name": "Robert McHardy",
+          "authorId": "2310217833"
+        },
+        {
+          "name": "Joshua Harris",
+          "authorId": "2305453074"
+        },
+        {
+          "name": "Jean Kaddour",
+          "authorId": "66914903"
+        },
+        {
+          "name": "Emile van Krieken",
+          "authorId": "2329188086"
+        },
+        {
+          "name": "Pasquale Min-ervini",
+          "authorId": "2372621154"
+        },
+        {
+          "name": "Aaron Grattafiori",
+          "authorId": "2233294011"
+        },
+        {
+          "name": "Abhimanyu Dubey",
+          "authorId": "2344834773"
+        },
+        {
+          "name": "Abhinav Jauhri",
+          "authorId": "2369482"
+        },
+        {
+          "name": "Abhinav Pandey",
+          "authorId": "2299944289"
+        },
+        {
+          "name": "Abhishek Kadian",
+          "authorId": "89942851"
+        },
+        {
+          "name": "Ahmad Al-Dahle",
+          "authorId": "2313916217"
+        },
+        {
+          "name": "Aiesha Letman",
+          "authorId": "2313924937"
+        },
+        {
+          "name": "Akhil Mathur",
+          "authorId": "2313975817"
+        },
+        {
+          "name": "Alan Schel-ten",
+          "authorId": "2353996709"
+        },
+        {
+          "name": "Alex Vaughan",
+          "authorId": "2313910116"
+        },
+        {
+          "name": "Amy Yang",
+          "authorId": "2329138320"
+        },
+        {
+          "name": "Angela Fan",
+          "authorId": "2288960515"
+        },
+        {
+          "name": "Anirudh Goyal",
+          "authorId": "2313918197"
+        },
+        {
+          "name": "Anthony S. Hartshorn",
+          "authorId": "2129047988"
+        },
+        {
+          "name": "Aobo Yang",
+          "authorId": "2269467670"
+        },
+        {
+          "name": "Archi Mitra",
+          "authorId": "2313926281"
+        },
+        {
+          "name": "A. Sravankumar",
+          "authorId": "2313918952"
+        },
+        {
+          "name": "A. Korenev",
+          "authorId": "2294453195"
+        },
+        {
+          "name": "Arthur Hinsvark",
+          "authorId": "2279336258"
+        },
+        {
+          "name": "Arun Rao",
+          "authorId": "2342373408"
+        },
+        {
+          "name": "Aston Zhang",
+          "authorId": "2313922587"
+        },
+        {
+          "name": "Aurelien Ro-driguez",
+          "authorId": "2354064704"
+        },
+        {
+          "name": "Austen Gregerson",
+          "authorId": "2313910288"
+        },
+        {
+          "name": "Ava Spataru",
+          "authorId": "2295667288"
+        },
+        {
+          "name": "Baptiste Rozi\u00e8re",
+          "authorId": "2313953240"
+        },
+        {
+          "name": "Bethany Biron",
+          "authorId": "2313916233"
+        },
+        {
+          "name": "Binh Tang",
+          "authorId": "2237987675"
+        },
+        {
+          "name": "Bob-bie Chern",
+          "authorId": "2365952607"
+        },
+        {
+          "name": "C. Caucheteux",
+          "authorId": "83928755"
+        },
+        {
+          "name": "Chaya Nayak",
+          "authorId": "2313917653"
+        },
+        {
+          "name": "Chloe Bi",
+          "authorId": "2313909658"
+        },
+        {
+          "name": "Chris Marra",
+          "authorId": "2313913576"
+        },
+        {
+          "name": "Chris McConnell",
+          "authorId": "2217959550"
+        },
+        {
+          "name": "Christian Keller",
+          "authorId": "2313909741"
+        },
+        {
+          "name": "C. Touret",
+          "authorId": "103277778"
+        },
+        {
+          "name": "Chunyang Wu",
+          "authorId": "2268428822"
+        },
+        {
+          "name": "Corinne Wong",
+          "authorId": "2273700455"
+        },
+        {
+          "name": "Cristian Canton Ferrer",
+          "authorId": "66286536"
+        },
+        {
+          "name": "Cyrus Nikolaidis",
+          "authorId": "2273414632"
+        },
+        {
+          "name": "Damien Al-lonsius",
+          "authorId": "2335556640"
+        },
+        {
+          "name": "Daniel Song",
+          "authorId": "2273006690"
+        },
+        {
+          "name": "Danielle Pintz",
+          "authorId": "2313909437"
+        },
+        {
+          "name": "Danny Livshits",
+          "authorId": "2313918299"
+        },
+        {
+          "name": "Danny Wyatt",
+          "authorId": "2313916159"
+        },
+        {
+          "name": "David Esiobu",
+          "authorId": "71039937"
+        },
+        {
+          "name": "Dhruv Choudhary",
+          "authorId": "2303390957"
+        },
+        {
+          "name": "Dhruv Mahajan",
+          "authorId": "2267338678"
+        },
+        {
+          "name": "Diego Garcia-Olano",
+          "authorId": "2269456985"
+        },
+        {
+          "name": "Diego Perino",
+          "authorId": "2306842160"
+        },
+        {
+          "name": "Dieuwke Hupkes",
+          "authorId": "3449411"
+        },
+        {
+          "name": "Egor Lakomkin",
+          "authorId": "2343773325"
+        },
+        {
+          "name": "Ehab A. AlBadawy",
+          "authorId": "1394834533"
+        },
+        {
+          "name": "E. Lobanova",
+          "authorId": "2313918680"
+        },
+        {
+          "name": "Emily Dinan",
+          "authorId": "31461304"
+        },
+        {
+          "name": "Eric Michael Smith",
+          "authorId": "2268821751"
+        },
+        {
+          "name": "Filip Radenovic",
+          "authorId": "2359656247"
+        },
+        {
+          "name": "Francisco Guzm\u00e1n",
+          "authorId": "2280918473"
+        },
+        {
+          "name": "Frank Zhang",
+          "authorId": "2313967211"
+        },
+        {
+          "name": "Gabriele Synnaeve",
+          "authorId": "2282469774"
+        },
+        {
+          "name": "Gabrielle Lee",
+          "authorId": "2314074302"
+        },
+        {
+          "name": "Georgia Lewis",
+          "authorId": "2353973719"
+        },
+        {
+          "name": "Govind Thattai",
+          "authorId": "2028300167"
+        },
+        {
+          "name": "Graeme Nail",
+          "authorId": "2268397654"
+        },
+        {
+          "name": "Gr\u00e9goire Mi-alon",
+          "authorId": "2335557145"
+        },
+        {
+          "name": "Guan Pang",
+          "authorId": "2273066537"
+        },
+        {
+          "name": "Guillem Cucurell",
+          "authorId": "2313924900"
+        },
+        {
+          "name": "Hailey Nguyen",
+          "authorId": "2314075528"
+        },
+        {
+          "name": "Han-nah Korevaar",
+          "authorId": "2352918636"
+        },
+        {
+          "name": "Hu Xu",
+          "authorId": "2314125186"
+        },
+        {
+          "name": "Hugo Touvron",
+          "authorId": "2290402489"
+        },
+        {
+          "name": "Imanol Iliyan Zarov",
+          "authorId": "2335557018"
+        },
+        {
+          "name": "Arrieta Ibarra",
+          "authorId": "2335556578"
+        },
+        {
+          "name": "Is-abel Kloumann",
+          "authorId": "2359045600"
+        },
+        {
+          "name": "Ishan Misra",
+          "authorId": "2267241285"
+        },
+        {
+          "name": "Ivan Evtimov",
+          "authorId": "2264288587"
+        },
+        {
+          "name": "Jack Zhang",
+          "authorId": "2354064468"
+        },
+        {
+          "name": "Jade Copet",
+          "authorId": "1805998294"
+        },
+        {
+          "name": "Jaewon Lee",
+          "authorId": "2314056661"
+        },
+        {
+          "name": "Jan Geffert",
+          "authorId": "2350357790"
+        },
+        {
+          "name": "Jana Vranes",
+          "authorId": "2313917660"
+        },
+        {
+          "name": "Jason Park",
+          "authorId": "2314078634"
+        },
+        {
+          "name": "Jay Mahadeokar",
+          "authorId": "3222225"
+        },
+        {
+          "name": "Jeet Shah",
+          "authorId": "2313919733"
+        },
+        {
+          "name": "J. V. D. Linde",
+          "authorId": "35721567"
+        },
+        {
+          "name": "Jennifer Billock",
+          "authorId": "2313909388"
+        },
+        {
+          "name": "Jenny Hong",
+          "authorId": "2287049560"
+        },
+        {
+          "name": "Jenya Lee",
+          "authorId": "2223749565"
+        },
+        {
+          "name": "J. Fu",
+          "authorId": "2223974989"
+        },
+        {
+          "name": "Jianfeng Chi",
+          "authorId": "2322439143"
+        },
+        {
+          "name": "Jianyu Huang",
+          "authorId": "2314428565"
+        },
+        {
+          "name": "Jiawen Liu",
+          "authorId": "2314080357"
+        },
+        {
+          "name": "Jie Wang",
+          "authorId": "2314602001"
+        },
+        {
+          "name": "Jiecao Yu",
+          "authorId": "2314078877"
+        },
+        {
+          "name": "Joanna Bitton",
+          "authorId": "1749686057"
+        },
+        {
+          "name": "Joe Spisak",
+          "authorId": "90591458"
+        },
+        {
+          "name": "Jongsoo Park",
+          "authorId": "2149161568"
+        },
+        {
+          "name": "Joseph Rocca",
+          "authorId": "2313925205"
+        },
+        {
+          "name": "J. Johnstun",
+          "authorId": "2313912873"
+        },
+        {
+          "name": "Joshua Saxe",
+          "authorId": "2273413914"
+        },
+        {
+          "name": "Junteng Jia",
+          "authorId": "2266441813"
+        },
+        {
+          "name": "Kalyan Vasuden Alwala",
+          "authorId": "2313918589"
+        },
+        {
+          "name": "Karthik Prasad",
+          "authorId": "2313913208"
+        },
+        {
+          "name": "K. Upasani",
+          "authorId": "2353997018"
+        },
+        {
+          "name": "Kate Plawiak",
+          "authorId": "2313918427"
+        },
+        {
+          "name": "Keqian Li",
+          "authorId": "2313920868"
+        },
+        {
+          "name": "Kenneth Heafield",
+          "authorId": "1702066"
+        },
+        {
+          "name": "Kevin R. Stone",
+          "authorId": "2282542714"
+        },
+        {
+          "name": "Khalid El-Arini",
+          "authorId": "1405642252"
+        },
+        {
+          "name": "Krithika Iyer",
+          "authorId": "2273645788"
+        },
+        {
+          "name": "Kshitiz Malik",
+          "authorId": "2279924280"
+        },
+        {
+          "name": "Kuen-ley Chiu",
+          "authorId": "2313925316"
+        },
+        {
+          "name": "Kunal Bhalla",
+          "authorId": "2313913532"
+        },
+        {
+          "name": "Kushal Lakhotia",
+          "authorId": "1410624139"
+        },
+        {
+          "name": "Lauren Rantala-Yeary",
+          "authorId": "2313915935"
+        },
+        {
+          "name": "Laurens van der Maaten",
+          "authorId": "2335573534"
+        },
+        {
+          "name": "Lawrence Chen",
+          "authorId": "2314080073"
+        },
+        {
+          "name": "Liang Tan",
+          "authorId": "2313924605"
+        },
+        {
+          "name": "Liz Jenkins",
+          "authorId": "2313918409"
+        },
+        {
+          "name": "Louis Martin",
+          "authorId": "2249724552"
+        },
+        {
+          "name": "Lovish Madaan",
+          "authorId": "151093281"
+        },
+        {
+          "name": "Lubo Malo",
+          "authorId": "2313912794"
+        },
+        {
+          "name": "Lukas Blecher",
+          "authorId": "2040305955"
+        },
+        {
+          "name": "Lukas Landzaat",
+          "authorId": "2313925619"
+        },
+        {
+          "name": "Luke de Oliveira",
+          "authorId": "2314194315"
+        },
+        {
+          "name": "M. Muzzi",
+          "authorId": "2000839712"
+        },
+        {
+          "name": "Ma-hesh Pasupuleti",
+          "authorId": "2351135162"
+        },
+        {
+          "name": "Mannat Singh",
+          "authorId": "152964870"
+        },
+        {
+          "name": "Manohar Paluri",
+          "authorId": "2210374"
+        },
+        {
+          "name": "Marcin Kardas",
+          "authorId": "2059886128"
+        },
+        {
+          "name": "M. Tsimpoukelli",
+          "authorId": "2010057"
+        },
+        {
+          "name": "Mathew Oldham",
+          "authorId": "2313909379"
+        },
+        {
+          "name": "Mathieu Rita",
+          "authorId": "2313912870"
+        },
+        {
+          "name": "Maya Pavlova",
+          "authorId": "2313905186"
+        },
+        {
+          "name": "Melanie Kam-badur",
+          "authorId": "2353994835"
+        },
+        {
+          "name": "Mike Lewis",
+          "authorId": "2374089338"
+        },
+        {
+          "name": "Mitesh Min Si",
+          "authorId": "2335557662"
+        },
+        {
+          "name": "Kumar Singh",
+          "authorId": "2335623393"
+        },
+        {
+          "name": "Mona Hassan",
+          "authorId": "2314434867"
+        },
+        {
+          "name": "Naman Goyal",
+          "authorId": "39589154"
+        },
+        {
+          "name": "Narjes Torabi",
+          "authorId": "2911626"
+        },
+        {
+          "name": "Niko-lay Bashlykov",
+          "authorId": "2223756247"
+        },
+        {
+          "name": "Nikolay Bogoychev",
+          "authorId": "2358665767"
+        },
+        {
+          "name": "Niladri S. Chatterji",
+          "authorId": "22193324"
+        },
+        {
+          "name": "Ning Zhang",
+          "authorId": "2354660871"
+        },
+        {
+          "name": "Olivier Duchenne",
+          "authorId": "2096643450"
+        },
+        {
+          "name": "Onur \u00c7elebi",
+          "authorId": "2061077885"
+        },
+        {
+          "name": "Patrick Alrassy",
+          "authorId": "2037772368"
+        },
+        {
+          "name": "Pengchuan Zhang",
+          "authorId": "2336857761"
+        },
+        {
+          "name": "Petar Pengwei Li",
+          "authorId": "2353995196"
+        },
+        {
+          "name": "Peter Weng",
+          "authorId": "2313915931"
+        },
+        {
+          "name": "Prajjwal Bhargava",
+          "authorId": "51229603"
+        },
+        {
+          "name": "P. Dubal",
+          "authorId": "46175439"
+        },
+        {
+          "name": "Punit Praveen Krishnan",
+          "authorId": "2353996663"
+        },
+        {
+          "name": "S. Koura",
+          "authorId": "2257006866"
+        },
+        {
+          "name": "Puxin Xu",
+          "authorId": "2214843767"
+        },
+        {
+          "name": "Qing He",
+          "authorId": "2314186827"
+        },
+        {
+          "name": "Qingxiao Dong",
+          "authorId": "2313912601"
+        },
+        {
+          "name": "Ragavan Srinivasan",
+          "authorId": "2313910187"
+        },
+        {
+          "name": "Raj Ganapathy",
+          "authorId": "2313925467"
+        },
+        {
+          "name": "Ramon Calderer",
+          "authorId": "98804036"
+        },
+        {
+          "name": "Ricardo Silveira Cabral",
+          "authorId": "2313909428"
+        },
+        {
+          "name": "Robert Stojnic",
+          "authorId": "1962768"
+        },
+        {
+          "name": "R. Raileanu",
+          "authorId": "48647153"
+        },
+        {
+          "name": "R. Maheswari",
+          "authorId": "2313918943"
+        },
+        {
+          "name": "Rohit Girdhar",
+          "authorId": "3102850"
+        },
+        {
+          "name": "Rohit Patel",
+          "authorId": "2313913363"
+        },
+        {
+          "name": "Romain Sauvestre",
+          "authorId": "2007285239"
+        },
+        {
+          "name": "Ron-nie Polidoro",
+          "authorId": "2313925210"
+        },
+        {
+          "name": "Roshan Sumbaly",
+          "authorId": "1722889"
+        },
+        {
+          "name": "Ross Taylor",
+          "authorId": "2110697298"
+        },
+        {
+          "name": "Ruan Silva",
+          "authorId": "2214818043"
+        },
+        {
+          "name": "R. Hou",
+          "authorId": "2323786661"
+        },
+        {
+          "name": "Rui Wang",
+          "authorId": "2248766592"
+        },
+        {
+          "name": "S. Hosseini",
+          "authorId": "2268759462"
+        },
+        {
+          "name": "Sa-hana Chennabasappa",
+          "authorId": "2273416143"
+        },
+        {
+          "name": "Sanjay Singh",
+          "authorId": "2313985129"
+        },
+        {
+          "name": "Sean Bell",
+          "authorId": "2277511475"
+        },
+        {
+          "name": "Seo-hyun Sonia Kim",
+          "authorId": "2354061065"
+        },
+        {
+          "name": "Sergey Edunov",
+          "authorId": "2343771482"
+        },
+        {
+          "name": "Shaoliang Nie",
+          "authorId": "35557488"
+        },
+        {
+          "name": "Sharath Narang",
+          "authorId": "2359657966"
+        },
+        {
+          "name": "S. Raparthy",
+          "authorId": "1498636613"
+        },
+        {
+          "name": "Sheng Shen",
+          "authorId": "2344586700"
+        },
+        {
+          "name": "Shengye Wan",
+          "authorId": "2272846244"
+        },
+        {
+          "name": "Shruti Bhosale",
+          "authorId": "2116473"
+        },
+        {
+          "name": "Shun Zhang",
+          "authorId": "2314071119"
+        },
+        {
+          "name": "Simon Van-denhende",
+          "authorId": "2353996025"
+        },
+        {
+          "name": "Soumya Batra",
+          "authorId": "47505161"
+        },
+        {
+          "name": "Spencer Whitman",
+          "authorId": "2273415395"
+        },
+        {
+          "name": "Sten Sootla",
+          "authorId": "31460313"
+        },
+        {
+          "name": "S. Collot",
+          "authorId": "2313909594"
+        },
+        {
+          "name": "Suchin Gururangan",
+          "authorId": "40895369"
+        },
+        {
+          "name": "S. Borodinsky",
+          "authorId": "148016419"
+        },
+        {
+          "name": "Tamar Herman",
+          "authorId": "2313925454"
+        },
+        {
+          "name": "Tara Fowler",
+          "authorId": "2313918585"
+        },
+        {
+          "name": "Tarek Sheasha",
+          "authorId": "2313917558"
+        },
+        {
+          "name": "Thomas Georgiou",
+          "authorId": "2313910328"
+        },
+        {
+          "name": "Thomas Scialom",
+          "authorId": "2073456043"
+        },
+        {
+          "name": "Tobias Speckbacher",
+          "authorId": "2313915815"
+        },
+        {
+          "name": "Todor Mihaylov",
+          "authorId": "39980906"
+        },
+        {
+          "name": "Tong Xiao",
+          "authorId": "2313914277"
+        },
+        {
+          "name": "Ujjwal Karn",
+          "authorId": "2363875825"
+        },
+        {
+          "name": "Vedanuj Goswami",
+          "authorId": "28554843"
+        },
+        {
+          "name": "Vibhor Gupta",
+          "authorId": "2314332514"
+        },
+        {
+          "name": "Vignesh Ramanathan",
+          "authorId": "34066479"
+        },
+        {
+          "name": "Viktor Kerkez",
+          "authorId": "2190957318"
+        },
+        {
+          "name": "Vincent Gonguet",
+          "authorId": "2313913380"
+        },
+        {
+          "name": "Vir-ginie Do",
+          "authorId": "2313918349"
+        },
+        {
+          "name": "Vish Vogeti",
+          "authorId": "2232955561"
+        },
+        {
+          "name": "V\u00edtor Albiero",
+          "authorId": "2276523714"
+        },
+        {
+          "name": "Vladan Petro-vic",
+          "authorId": "2335557184"
+        },
+        {
+          "name": "Weiwei Chu",
+          "authorId": "2266751414"
+        },
+        {
+          "name": "Wenhan Xiong",
+          "authorId": "2290750668"
+        },
+        {
+          "name": "Wenyin Fu",
+          "authorId": "2223742000"
+        },
+        {
+          "name": "Zoe Chen",
+          "authorId": "2354061013"
+        },
+        {
+          "name": "Aaditya Papakipos",
+          "authorId": "2353995736"
+        },
+        {
+          "name": "Aayushi Singh",
+          "authorId": "2354062152"
+        },
+        {
+          "name": "Abha Sri-vastava",
+          "authorId": "2355239026"
+        },
+        {
+          "name": "Adam Jain",
+          "authorId": "2336298789"
+        },
+        {
+          "name": "Adam Kelsey",
+          "authorId": "2313915967"
+        },
+        {
+          "name": "S. Adithya",
+          "authorId": "2353995238"
+        },
+        {
+          "name": "Adolfo Gangidi",
+          "authorId": "2353994981"
+        },
+        {
+          "name": "Ahuva Victoria",
+          "authorId": "2336100333"
+        },
+        {
+          "name": "G. Ajay",
+          "authorId": "2353995742"
+        },
+        {
+          "name": "A. Menon",
+          "authorId": "2313925780"
+        },
+        {
+          "name": "Alex Sharma",
+          "authorId": "2336246928"
+        },
+        {
+          "name": "Alex Boesenberg",
+          "authorId": "2313915843"
+        },
+        {
+          "name": "Allie Baevski",
+          "authorId": "2336141037"
+        },
+        {
+          "name": "Amanda Feinstein",
+          "authorId": "2336143176"
+        },
+        {
+          "name": "Amit Kallet",
+          "authorId": "2336100315"
+        },
+        {
+          "name": "Amos San-gani",
+          "authorId": "2353996778"
+        },
+        {
+          "name": "Anam Teo",
+          "authorId": "2353996711"
+        },
+        {
+          "name": "Andrei Yunus",
+          "authorId": "2353994983"
+        },
+        {
+          "name": "A. Lupu",
+          "authorId": "2365838819"
+        },
+        {
+          "name": "Andrew Alvarado",
+          "authorId": "2336105895"
+        },
+        {
+          "name": "A. Caples",
+          "authorId": "2313925570"
+        },
+        {
+          "name": "Andrew Gu",
+          "authorId": "2335557924"
+        },
+        {
+          "name": "Andrew Ho",
+          "authorId": "2342277052"
+        },
+        {
+          "name": "Andrew Poulton",
+          "authorId": "2282542314"
+        },
+        {
+          "name": "Ankit Ramchan-dani Ryan",
+          "authorId": "2353996324"
+        },
+        {
+          "name": "Annie Dong",
+          "authorId": "2353995295"
+        },
+        {
+          "name": "Annie Franco",
+          "authorId": "2313918528"
+        },
+        {
+          "name": "Anuj Goyal",
+          "authorId": "2315567593"
+        },
+        {
+          "name": "Apara-jita Saraf",
+          "authorId": "2335573717"
+        },
+        {
+          "name": "Arkabandhu Chowdhury",
+          "authorId": "2313917455"
+        },
+        {
+          "name": "Ashley Gabriel",
+          "authorId": "2313925699"
+        },
+        {
+          "name": "Ashwin Bharambe",
+          "authorId": "2313909987"
+        },
+        {
+          "name": "Assaf Eisenman",
+          "authorId": "35198582"
+        },
+        {
+          "name": "Azadeh Yaz-dan",
+          "authorId": "2335557453"
+        },
+        {
+          "name": "Beau James",
+          "authorId": "2313918606"
+        },
+        {
+          "name": "Ben Maurer",
+          "authorId": "2313913272"
+        },
+        {
+          "name": "B. Leonhardi",
+          "authorId": "2897362"
+        },
+        {
+          "name": "Bernie Huang",
+          "authorId": "2150494165"
+        },
+        {
+          "name": "Beth Loyd",
+          "authorId": "2313918673"
+        },
+        {
+          "name": "Beto de Paola",
+          "authorId": "2313909983"
+        },
+        {
+          "name": "Bhargavi Paranjape",
+          "authorId": "8005713"
+        },
+        {
+          "name": "Bing Liu",
+          "authorId": "2314014642"
+        },
+        {
+          "name": "Bo Wu",
+          "authorId": "2314069142"
+        },
+        {
+          "name": "B. Ni",
+          "authorId": "2313909094"
+        },
+        {
+          "name": "Braden Han-cock",
+          "authorId": "2335557287"
+        },
+        {
+          "name": "Bram Wasti",
+          "authorId": "46240090"
+        },
+        {
+          "name": "Brandon Spence",
+          "authorId": "2313918213"
+        },
+        {
+          "name": "B. Stojkovic",
+          "authorId": "2313918219"
+        },
+        {
+          "name": "Brian Gamido",
+          "authorId": "2313925572"
+        },
+        {
+          "name": "Britt Montalvo",
+          "authorId": "2313917587"
+        },
+        {
+          "name": "Carl Parker",
+          "authorId": "2313919256"
+        },
+        {
+          "name": "Carly Burton",
+          "authorId": "2313913658"
+        },
+        {
+          "name": "Catalina Mejia",
+          "authorId": "2313917281"
+        },
+        {
+          "name": "Ce Liu",
+          "authorId": "2353993404"
+        },
+        {
+          "name": "Changhan Wang",
+          "authorId": "2313925537"
+        },
+        {
+          "name": "Changkyu Kim",
+          "authorId": "2314071777"
+        },
+        {
+          "name": "Chao Zhou",
+          "authorId": "2314072280"
+        },
+        {
+          "name": "Chester Hu",
+          "authorId": "2313982652"
+        },
+        {
+          "name": "Ching-Hsiang Chu",
+          "authorId": "2290129157"
+        },
+        {
+          "name": "Chris Cai",
+          "authorId": "2263867885"
+        },
+        {
+          "name": "Chris Tindal",
+          "authorId": "2313925773"
+        },
+        {
+          "name": "Christoph Fe-ichtenhofer",
+          "authorId": "2353995594"
+        },
+        {
+          "name": "Cynthia Gao",
+          "authorId": "2294721061"
+        },
+        {
+          "name": "D. Civin",
+          "authorId": "2354180703"
+        },
+        {
+          "name": "Dana Beaty",
+          "authorId": "2313913237"
+        },
+        {
+          "name": "Daniel Kreymer",
+          "authorId": "3046707"
+        },
+        {
+          "name": "Daniel Li",
+          "authorId": "2281079845"
+        },
+        {
+          "name": "David Adkins",
+          "authorId": "2161835643"
+        },
+        {
+          "name": "David Xu",
+          "authorId": "2313915190"
+        },
+        {
+          "name": "Davide Testuggine",
+          "authorId": "2273657478"
+        },
+        {
+          "name": "Delia David",
+          "authorId": "2311498203"
+        },
+        {
+          "name": "Devi Parikh",
+          "authorId": "2248278031"
+        },
+        {
+          "name": "Elaine Montgomery",
+          "authorId": "2313925401"
+        },
+        {
+          "name": "Eleonora Presani",
+          "authorId": "6072807"
+        },
+        {
+          "name": "Emily Hahn",
+          "authorId": "2313914699"
+        },
+        {
+          "name": "Emily Wood",
+          "authorId": "2313913986"
+        },
+        {
+          "name": "Eric-Tuan Le",
+          "authorId": "2335572056"
+        },
+        {
+          "name": "Erik Brinkman",
+          "authorId": "2313913160"
+        },
+        {
+          "name": "E. Arcaute",
+          "authorId": "2064373270"
+        },
+        {
+          "name": "Evan Dunbar",
+          "authorId": "2313915853"
+        },
+        {
+          "name": "Evan Smothers",
+          "authorId": "2313918562"
+        },
+        {
+          "name": "Fei Sun",
+          "authorId": "2314197755"
+        },
+        {
+          "name": "F. Kreuk",
+          "authorId": "32653170"
+        },
+        {
+          "name": "Feng Tian",
+          "authorId": "2313907929"
+        },
+        {
+          "name": "Filippos Kokkinos",
+          "authorId": "2283931239"
+        },
+        {
+          "name": "Firat Oz-genel",
+          "authorId": "2372627179"
+        },
+        {
+          "name": "Francesco Caggioni",
+          "authorId": "31292058"
+        },
+        {
+          "name": "Frank J. Kanayet",
+          "authorId": "3360115"
+        },
+        {
+          "name": "Frank Seide",
+          "authorId": "2243280567"
+        },
+        {
+          "name": "Gabriela Medina Florez",
+          "authorId": "2313913137"
+        },
+        {
+          "name": "Gabriella Schwarz",
+          "authorId": "2313925846"
+        },
+        {
+          "name": "Gada Badeer",
+          "authorId": "2313918570"
+        },
+        {
+          "name": "Georgia Swee",
+          "authorId": "2313916006"
+        },
+        {
+          "name": "Gil Halpern",
+          "authorId": "2313925677"
+        },
+        {
+          "name": "Grigory Sizov",
+          "authorId": "2266304177"
+        },
+        {
+          "name": "Guangyi",
+          "authorId": "52421636"
+        },
+        {
+          "name": "Guna Zhang",
+          "authorId": "2335620445"
+        },
+        {
+          "name": "Hakan Lak-shminarayanan",
+          "authorId": "2372624396"
+        },
+        {
+          "name": "Hamid Inan",
+          "authorId": "2335570459"
+        },
+        {
+          "name": "Shojanazeri Han",
+          "authorId": "2372769191"
+        },
+        {
+          "name": "Han Zou",
+          "authorId": "2313908554"
+        },
+        {
+          "name": "Hanwen Wang",
+          "authorId": "2335594351"
+        },
+        {
+          "name": "Haroun Zha",
+          "authorId": "2335557910"
+        },
+        {
+          "name": "Harrison Habeeb",
+          "authorId": "2335557412"
+        },
+        {
+          "name": "Helen Rudolph",
+          "authorId": "2335558371"
+        },
+        {
+          "name": "Henry Suk",
+          "authorId": "2335557407"
+        },
+        {
+          "name": "Hunter As-pegren",
+          "authorId": "2335571465"
+        },
+        {
+          "name": "Hongyuan Goldman",
+          "authorId": "2335571456"
+        },
+        {
+          "name": "Ibrahim Zhan",
+          "authorId": "2335570599"
+        },
+        {
+          "name": "Igor Damlaj",
+          "authorId": "2335557878"
+        },
+        {
+          "name": "Igor Molybog",
+          "authorId": "2322981055"
+        },
+        {
+          "name": "Ilias Tufanov",
+          "authorId": "2335569162"
+        },
+        {
+          "name": "Leon-tiadis",
+          "authorId": "2363167493"
+        },
+        {
+          "name": "Jennifer Tang",
+          "authorId": "2335623084"
+        },
+        {
+          "name": "Jenny Chan",
+          "authorId": "2335624430"
+        },
+        {
+          "name": "Jeremy Zhen",
+          "authorId": "2359055592"
+        },
+        {
+          "name": "Jeremy Reizen-stein",
+          "authorId": "2282542912"
+        },
+        {
+          "name": "Jessica Teboul",
+          "authorId": "2335556941"
+        },
+        {
+          "name": "Jian Zhong",
+          "authorId": "2363313136"
+        },
+        {
+          "name": "Jingyi Jin",
+          "authorId": "2343787850"
+        },
+        {
+          "name": "Joe Yang",
+          "authorId": "2335578232"
+        },
+        {
+          "name": "Jon Cummings",
+          "authorId": "2335557699"
+        },
+        {
+          "name": "Jon Carvill",
+          "authorId": "2313916920"
+        },
+        {
+          "name": "S. Jonathan",
+          "authorId": "2322831726"
+        },
+        {
+          "name": "J. McPhie",
+          "authorId": "2313925667"
+        },
+        {
+          "name": "Josh Torres",
+          "authorId": "2360619111"
+        },
+        {
+          "name": "Ginsburg Junjie",
+          "authorId": "2363169332"
+        },
+        {
+          "name": "Kai Wang",
+          "authorId": "2335853548"
+        },
+        {
+          "name": "Kam Wu",
+          "authorId": "2335599928"
+        },
+        {
+          "name": "Hou Karan",
+          "authorId": "2335558342"
+        },
+        {
+          "name": "Kartikay Sax-ena",
+          "authorId": "2363170731"
+        },
+        {
+          "name": "Katayoun Khandelwal",
+          "authorId": "2359054106"
+        },
+        {
+          "name": "Kathy Zand",
+          "authorId": "2335556908"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The development of Large Language Models (LLMs) requires robust benchmarks that encompass not only academic domains but also industrial fields to effectively evaluate their applicability in real-world scenarios. In this paper, we introduce two Korean expert-level benchmarks. KMMLU-Redux, reconstructed from the existing KMMLU, consists of questions from the Korean National Technical Qualification exams, with critical errors removed to enhance reliability. KMMLU-Pro is based on Korean National Professional Licensure exams to reflect professional knowledge in Korea. Our experiments demonstrate that these benchmarks comprehensively represent industrial knowledge in Korea. We release our dataset publicly available.",
+      "citationCount": 2,
+      "doi": "10.18653/v1/2025.findings-emnlp.1038",
+      "arxivId": "2507.08924",
+      "url": "https://www.semanticscholar.org/paper/b1175c2344c7acf7d0048650204506384a2e5184",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "Findings of the Association for Computational Linguistics: EMNLP 2025"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c1bef1deb8fcc53be607fa96bcac20d13a96ef3f",
+      "title": "Automated\n AI\n \u2010Based Lung Disease Classification Using Point\u2010of\u2010Care Ultrasound",
+      "authors": [
+        {
+          "name": "Nixson Okila",
+          "authorId": "147695710"
+        },
+        {
+          "name": "Andrew Katumba",
+          "authorId": "2274601495"
+        },
+        {
+          "name": "Joyce Nakatumba\u2010Nabende",
+          "authorId": "1411005375"
+        },
+        {
+          "name": "Sudi Murindanyi",
+          "authorId": "2218205357"
+        },
+        {
+          "name": "Jonathan Serugunda",
+          "authorId": "2356987429"
+        },
+        {
+          "name": "Cosmas Mwikirize",
+          "authorId": "2104040"
+        },
+        {
+          "name": "Samuel Bugeza",
+          "authorId": "2356986979"
+        },
+        {
+          "name": "Anthony Oriekot",
+          "authorId": "2356981104"
+        },
+        {
+          "name": "Juliet Bosa",
+          "authorId": "2391369943"
+        },
+        {
+          "name": "Eva Nabawanuka",
+          "authorId": "2356983963"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n Timely and accurate diagnosis of lung diseases is critical for reducing related morbidity and mortality. Lung ultrasound (LUS) has emerged as a useful point\u2010of\u2010care tool for evaluating various lung conditions. However, interpreting LUS images remains challenging due to operator\u2010dependent variability, low image quality, and limited availability of experts in many regions. In this study, we present a lightweight and efficient deep learning model, ParSE\u2010CNN, alongside fine\u2010tuned versions of VGG\u201016, InceptionV3, Xception, and Vision Transformer architectures, to classify LUS images into three categories: COVID\u201019, other lung pathology, and healthy lung. Models were trained using data from public sources and Ugandan healthcare facilities, and evaluated on a held\u2010out Ugandan dataset. Fine\u2010tuned VGG\u201016 achieved the highest classification performance with 98% accuracy, 97% precision, 98% recall, and a 97% F1\u2010score. ParSE\u2010CNN yielded a competitive accuracy of 95%, precision of 94%, recall of 95%, and F1\u2010score of 97% while offering a 58.3% faster inference time (0.006\u2009s vs. 0.014\u2009s) and a lower parameter count (5.18\u2009M vs. 10.30\u2009M) than VGG\u201016. To enhance input quality, we developed a preprocessing pipeline, and to improve interpretability, we employed Grad\u2010CAM heatmaps, which showed high alignment with radiologically relevant features. Finally, ParSE\u2010CNN was integrated into a mobile LUS workflow with a PC backend, enabling real\u2010time AI\u2010assisted diagnosis at the point of care in low\u2010resource settings.",
+      "citationCount": 0,
+      "doi": "10.1002/ail2.70012",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c1bef1deb8fcc53be607fa96bcac20d13a96ef3f",
+      "venue": "Applied AI Letters",
+      "journal": {
+        "name": "Applied AI Letters"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "aca5777ad50b0b7643b2780873231d14eadec942",
+      "title": "CPG-EVAL: A Multi-Tiered Benchmark for Evaluating the Chinese Pedagogical Grammar Competence of Large Language Models",
+      "authors": [
+        {
+          "name": "Dong Wang",
+          "authorId": "2356405320"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Purpose: The rapid emergence of large language models (LLMs) such as ChatGPT has significantly impacted foreign language education, yet their pedagogical grammar competence remains under-assessed. This paper introduces CPG-EVAL, the first dedicated benchmark specifically designed to evaluate LLMs' knowledge of pedagogical grammar within the context of foreign language instruction. Methodology: The benchmark comprises five tasks designed to assess grammar recognition, fine-grained grammatical distinction, categorical discrimination, and resistance to linguistic interference. Findings: Smaller-scale models can succeed in single language instance tasks, but struggle with multiple instance tasks and interference from confusing instances. Larger-scale models show better resistance to interference but still have significant room for accuracy improvement. The evaluation indicates the need for better instructional alignment and more rigorous benchmarks, to effectively guide the deployment of LLMs in educational contexts. Value: This study offers the first specialized, theory-driven, multi-tiered benchmark framework for systematically evaluating LLMs' pedagogical grammar competence in Chinese language teaching contexts. CPG-EVAL not only provides empirical insights for educators, policymakers, and model developers to better gauge AI's current abilities in educational settings, but also lays the groundwork for future research on improving model alignment, enhancing educational suitability, and ensuring informed decision-making concerning LLM integration in foreign language instruction.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2504.13261",
+      "arxivId": "2504.13261",
+      "url": "https://www.semanticscholar.org/paper/aca5777ad50b0b7643b2780873231d14eadec942",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.13261"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "646e81b4de717034cab00c298032f8467b4a0ffe",
+      "title": "Bringing Rome to Life: Evaluating Historical Image Generation",
+      "authors": [
+        {
+          "name": "P. Str\u00f6bel",
+          "authorId": "2331733082"
+        },
+        {
+          "name": "Zejie Guo",
+          "authorId": "2331765975"
+        },
+        {
+          "name": "\u00dclk\u00fc Karag\u00f6z",
+          "authorId": "2104187784"
+        },
+        {
+          "name": "Eva Maria Willi",
+          "authorId": "2331754439"
+        },
+        {
+          "name": "Felix K. Maier",
+          "authorId": "2331733804"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/646e81b4de717034cab00c298032f8467b4a0ffe",
+      "venue": "Workshop on Computational Humanities Research",
+      "journal": {
+        "pages": "113-126"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1011d14d32257131b94eed5368a8372c00f33b58",
+      "title": "Comparative Analysis and Application of Large Language Models on FAQ Chatbots",
+      "authors": [
+        {
+          "name": "Feriel Khennouche",
+          "authorId": "2266838718"
+        },
+        {
+          "name": "Youssef Elmir",
+          "authorId": "2315504596"
+        },
+        {
+          "name": "Nabil Djebari",
+          "authorId": "2266839227"
+        },
+        {
+          "name": "L. Boubchir",
+          "authorId": "1768170"
+        },
+        {
+          "name": "A. Laouid",
+          "authorId": "8882597"
+        },
+        {
+          "name": "A. Bounceur",
+          "authorId": "145176446"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper presents a comprehensive evaluation of advanced large language models (LLMs) including GPT, BART, BERT, and T5, fine-tuned using a specialized FAQ dataset from ESTIN, a higher education institution. The study aims to assess the performance of these LLM models in generating accurate and contextually relevant responses to common queries. These models were evaluated using key metrics such as evaluation loss (eval loss) and ROUGE scores (ROUGE-1 and ROUGE-2), which measure the alignment between the generated responses and the reference answers. The experiment results show that BERT outperforms the other models, achieving a lowest eval loss and highest ROUGE-1 and ROUGE-2 scores, making it the most effective model in this context. The findings underscore the potential of BERT in educational AI applications. Finally, some future research directions are discussed, including the integration of additional models and the enhancement of the FAQ dataset to further improve performance.",
+      "citationCount": 0,
+      "doi": "10.1109/CINS63881.2024.10864428",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1011d14d32257131b94eed5368a8372c00f33b58",
+      "venue": "2024 International Conference on Computational Intelligence and Network Systems (CINS)",
+      "journal": {
+        "name": "2024 International Conference on Computational Intelligence and Network Systems (CINS)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ac3b1348e9d40fb6118d40f83d85145777530328",
+      "title": "Alignment of the ATLAS Inner Detector in Run-2",
+      "authors": [
+        {
+          "name": "G. Aad",
+          "authorId": "152494319"
+        },
+        {
+          "name": "B. Abbott",
+          "authorId": "2068720511"
+        },
+        {
+          "name": "D. Abbott",
+          "authorId": "2004236080"
+        },
+        {
+          "name": "A. A. Abud",
+          "authorId": "1380472888"
+        },
+        {
+          "name": "K. Abeling",
+          "authorId": "1380473839"
+        },
+        {
+          "name": "D. K. Abhayasinghe",
+          "authorId": "144971486"
+        },
+        {
+          "name": "S. H. Abidi",
+          "authorId": "20416558"
+        },
+        {
+          "name": "O. AbouZeid",
+          "authorId": "78314737"
+        },
+        {
+          "name": "N. Abraham",
+          "authorId": "6092017"
+        },
+        {
+          "name": "H. Abramowicz",
+          "authorId": "46808324"
+        },
+        {
+          "name": "H. Abreu",
+          "authorId": "153472757"
+        },
+        {
+          "name": "Y. Abulaiti",
+          "authorId": "6235775"
+        },
+        {
+          "name": "B. Acharya",
+          "authorId": "91084308"
+        },
+        {
+          "name": "B. Achkar",
+          "authorId": "15816535"
+        },
+        {
+          "name": "L. Adam",
+          "authorId": "152145405"
+        },
+        {
+          "name": "C. Bourdarios",
+          "authorId": "50852208"
+        },
+        {
+          "name": "L. Adamczyk",
+          "authorId": "115670646"
+        },
+        {
+          "name": "L. Adamek",
+          "authorId": "152253671"
+        },
+        {
+          "name": "J. Adelman",
+          "authorId": "153560136"
+        },
+        {
+          "name": "M. Adersberger",
+          "authorId": "32264638"
+        },
+        {
+          "name": "A. Adiguzel",
+          "authorId": "102534175"
+        },
+        {
+          "name": "S. Adorni",
+          "authorId": "104530888"
+        },
+        {
+          "name": "T. Adye",
+          "authorId": "2264509500"
+        },
+        {
+          "name": "A. Affolder",
+          "authorId": "152142763"
+        },
+        {
+          "name": "Y. Afik",
+          "authorId": "152162506"
+        },
+        {
+          "name": "C. Agapopoulou",
+          "authorId": "51878268"
+        },
+        {
+          "name": "M. N. Agaras",
+          "authorId": "134347038"
+        },
+        {
+          "name": "A. Aggarwal",
+          "authorId": "102384219"
+        },
+        {
+          "name": "C. Agheorghiesei",
+          "authorId": "114698935"
+        },
+        {
+          "name": "J. A. Aguilar-Saavedra",
+          "authorId": "1393657735"
+        },
+        {
+          "name": "A. Ahmad",
+          "authorId": "2116998051"
+        },
+        {
+          "name": "F. Ahmadov",
+          "authorId": "152507277"
+        },
+        {
+          "name": "W. S. Ahmed",
+          "authorId": "51306245"
+        },
+        {
+          "name": "X. Ai",
+          "authorId": "102824760"
+        },
+        {
+          "name": "G. Aielli",
+          "authorId": "144720538"
+        },
+        {
+          "name": "S. Akatsuka",
+          "authorId": "49233621"
+        },
+        {
+          "name": "M. Akbiyik",
+          "authorId": "145267923"
+        },
+        {
+          "name": "T. \u00c5kesson",
+          "authorId": "102670609"
+        },
+        {
+          "name": "E. Akilli",
+          "authorId": "152476422"
+        },
+        {
+          "name": "A. Akimov",
+          "authorId": "143816968"
+        },
+        {
+          "name": "K. Khoury",
+          "authorId": "1380472417"
+        },
+        {
+          "name": "G. Alberghi",
+          "authorId": "104173485"
+        },
+        {
+          "name": "J. Albert",
+          "authorId": "152406006"
+        },
+        {
+          "name": "M. A. Verzini",
+          "authorId": "8488208"
+        },
+        {
+          "name": "S. Alderweireldt",
+          "authorId": "153492956"
+        },
+        {
+          "name": "M. Aleksa",
+          "authorId": "152431172"
+        },
+        {
+          "name": "I. Aleksandrov",
+          "authorId": "143986648"
+        },
+        {
+          "name": "C. Alexa",
+          "authorId": "3016263"
+        },
+        {
+          "name": "T. Alexopoulos",
+          "authorId": "145775472"
+        },
+        {
+          "name": "A. Alfonsi",
+          "authorId": "104458032"
+        },
+        {
+          "name": "F. Alfonsi",
+          "authorId": "51015834"
+        },
+        {
+          "name": "M. Alhroob",
+          "authorId": "145215359"
+        },
+        {
+          "name": "B. Ali",
+          "authorId": "71468629"
+        },
+        {
+          "name": "S. Ali",
+          "authorId": "2217676942"
+        },
+        {
+          "name": "M. Aliev",
+          "authorId": "14440793"
+        },
+        {
+          "name": "G. Alimonti",
+          "authorId": "144535982"
+        },
+        {
+          "name": "C. Allaire",
+          "authorId": "102443256"
+        },
+        {
+          "name": "B. Allbrooke",
+          "authorId": "95913206"
+        },
+        {
+          "name": "B. Allen",
+          "authorId": "104174498"
+        },
+        {
+          "name": "P. Allport",
+          "authorId": "2069549281"
+        },
+        {
+          "name": "A. Aloisio",
+          "authorId": "144849495"
+        },
+        {
+          "name": "F. Alonso",
+          "authorId": "143879026"
+        },
+        {
+          "name": "C. Alpigiani",
+          "authorId": "118088785"
+        },
+        {
+          "name": "E. A. Camelia",
+          "authorId": "121181991"
+        },
+        {
+          "name": "M. A. Estevez",
+          "authorId": "104277556"
+        },
+        {
+          "name": "M. Alviggi",
+          "authorId": "29970738"
+        },
+        {
+          "name": "Y. A. Coutinho",
+          "authorId": "29956810"
+        },
+        {
+          "name": "A. Ambler",
+          "authorId": "49126002"
+        },
+        {
+          "name": "L. Ambroz",
+          "authorId": "152395138"
+        },
+        {
+          "name": "C. Amelung",
+          "authorId": "103438427"
+        },
+        {
+          "name": "D. Amidei",
+          "authorId": "144391765"
+        },
+        {
+          "name": "S. D. Santos",
+          "authorId": "103438429"
+        },
+        {
+          "name": "S. Amoroso",
+          "authorId": "95874777"
+        },
+        {
+          "name": "C. Amrouche",
+          "authorId": "2139787941"
+        },
+        {
+          "name": "F. An",
+          "authorId": "2062055645"
+        },
+        {
+          "name": "C. Anastopoulos",
+          "authorId": "50856403"
+        },
+        {
+          "name": "N. Andari",
+          "authorId": "152398521"
+        },
+        {
+          "name": "T. Andeen",
+          "authorId": "145283560"
+        },
+        {
+          "name": "J. Anders",
+          "authorId": "97251712"
+        },
+        {
+          "name": "S. Y. Andrean",
+          "authorId": "9140016"
+        },
+        {
+          "name": "A. Andreazza",
+          "authorId": "115764698"
+        },
+        {
+          "name": "V. Andrei",
+          "authorId": "51106173"
+        },
+        {
+          "name": "C. Anelli",
+          "authorId": "1403086484"
+        },
+        {
+          "name": "S. Angelidakis",
+          "authorId": "47077430"
+        },
+        {
+          "name": "A. Angerami",
+          "authorId": "2264573376"
+        },
+        {
+          "name": "A. Anisenkov",
+          "authorId": "143770758"
+        },
+        {
+          "name": "A. Annovi",
+          "authorId": "97000763"
+        },
+        {
+          "name": "C. Antel",
+          "authorId": "152571917"
+        },
+        {
+          "name": "M. Anthony",
+          "authorId": "83891931"
+        },
+        {
+          "name": "E. Antipov",
+          "authorId": "91444930"
+        },
+        {
+          "name": "M. Antonelli",
+          "authorId": "153879103"
+        },
+        {
+          "name": "D. Antrim",
+          "authorId": "2139795146"
+        },
+        {
+          "name": "F. Anulli",
+          "authorId": "114942571"
+        },
+        {
+          "name": "M. Aoki",
+          "authorId": "73142120"
+        },
+        {
+          "name": "J. A. Pozo",
+          "authorId": "144175737"
+        },
+        {
+          "name": "M. Aparo",
+          "authorId": "1580155738"
+        },
+        {
+          "name": "L. A. Bella",
+          "authorId": "66382735"
+        },
+        {
+          "name": "N. Aranzabal",
+          "authorId": "84252719"
+        },
+        {
+          "name": "V. A. Ferraz",
+          "authorId": "121951403"
+        },
+        {
+          "name": "R. A. Pereira",
+          "authorId": "144262482"
+        },
+        {
+          "name": "C. Arcangeletti",
+          "authorId": "117942077"
+        },
+        {
+          "name": "A. Arce",
+          "authorId": "103283547"
+        },
+        {
+          "name": "F. A. Arduh",
+          "authorId": "145423802"
+        },
+        {
+          "name": "J. Arguin",
+          "authorId": "47233846"
+        },
+        {
+          "name": "S. Argyropoulos",
+          "authorId": "2228280565"
+        },
+        {
+          "name": "J. Arling",
+          "authorId": "153024668"
+        },
+        {
+          "name": "A. Armbruster",
+          "authorId": "2239631"
+        },
+        {
+          "name": "A. Armstrong",
+          "authorId": "72202487"
+        },
+        {
+          "name": "O. Arnaez",
+          "authorId": "145612660"
+        },
+        {
+          "name": "H. Arnold",
+          "authorId": "145610771"
+        },
+        {
+          "name": "Z. P. A. Tame",
+          "authorId": "1382070501"
+        },
+        {
+          "name": "G. Artoni",
+          "authorId": "102578224"
+        },
+        {
+          "name": "H. Asada",
+          "authorId": "1754922"
+        },
+        {
+          "name": "K. Asai",
+          "authorId": "50995047"
+        },
+        {
+          "name": "S. Asai",
+          "authorId": "145686012"
+        },
+        {
+          "name": "T. Asawatavonvanich",
+          "authorId": "31227182"
+        },
+        {
+          "name": "N. Asbah",
+          "authorId": "144280664"
+        },
+        {
+          "name": "E. Asimakopoulou",
+          "authorId": "104031769"
+        },
+        {
+          "name": "L. Asquith",
+          "authorId": "145387311"
+        },
+        {
+          "name": "J. Assahsah",
+          "authorId": "1382070491"
+        },
+        {
+          "name": "K. Assamagan",
+          "authorId": "152479860"
+        },
+        {
+          "name": "R. Astalos",
+          "authorId": "152597881"
+        },
+        {
+          "name": "R. Atkin",
+          "authorId": "80444414"
+        },
+        {
+          "name": "M. Atkinson",
+          "authorId": "143643467"
+        },
+        {
+          "name": "N. B. Atlay",
+          "authorId": "77770841"
+        },
+        {
+          "name": "H. Atmani",
+          "authorId": "103608661"
+        },
+        {
+          "name": "K. Augsten",
+          "authorId": "4310082"
+        },
+        {
+          "name": "V. Austrup",
+          "authorId": "1728332662"
+        },
+        {
+          "name": "G. Avolio",
+          "authorId": "107966422"
+        },
+        {
+          "name": "M. Ayoub",
+          "authorId": "2059617331"
+        },
+        {
+          "name": "G. Azuelos",
+          "authorId": "102390659"
+        },
+        {
+          "name": "H. Bachacou",
+          "authorId": "145830795"
+        },
+        {
+          "name": "K. Bachas",
+          "authorId": "92377142"
+        },
+        {
+          "name": "M. Backes",
+          "authorId": "115347577"
+        },
+        {
+          "name": "F. Backman",
+          "authorId": "103698282"
+        },
+        {
+          "name": "P. Bagnaia",
+          "authorId": "2168156722"
+        },
+        {
+          "name": "M. Bahmani",
+          "authorId": "102725115"
+        },
+        {
+          "name": "H. Bahrasemani",
+          "authorId": "1392340948"
+        },
+        {
+          "name": "A. Bailey",
+          "authorId": "49495124"
+        },
+        {
+          "name": "V. R. Bailey",
+          "authorId": "145947183"
+        },
+        {
+          "name": "J. Baines",
+          "authorId": "3946110"
+        },
+        {
+          "name": "C. Bakalis",
+          "authorId": "120484726"
+        },
+        {
+          "name": "O. Baker",
+          "authorId": "118155635"
+        },
+        {
+          "name": "P. Bakker",
+          "authorId": "152469235"
+        },
+        {
+          "name": "E. Bakos",
+          "authorId": "1728889053"
+        },
+        {
+          "name": "D. B. Gupta",
+          "authorId": "78193432"
+        },
+        {
+          "name": "S. Balaji",
+          "authorId": "143651619"
+        },
+        {
+          "name": "R. Balasubramanian",
+          "authorId": "144562205"
+        },
+        {
+          "name": "E. Baldin",
+          "authorId": "102734032"
+        },
+        {
+          "name": "P. Balek",
+          "authorId": "143760253"
+        },
+        {
+          "name": "F. Balli",
+          "authorId": "52218112"
+        },
+        {
+          "name": "W. Balunas",
+          "authorId": "7961334"
+        },
+        {
+          "name": "J. Balz",
+          "authorId": "104461466"
+        },
+        {
+          "name": "E. Banas",
+          "authorId": "83215118"
+        },
+        {
+          "name": "M. Bandieramonte",
+          "authorId": "2227621081"
+        },
+        {
+          "name": "A. Bandyopadhyay",
+          "authorId": "103610202"
+        },
+        {
+          "name": "S. Banerjee",
+          "authorId": "2111244731"
+        },
+        {
+          "name": "L. Barak",
+          "authorId": "145791776"
+        },
+        {
+          "name": "W. Barbe",
+          "authorId": "41077900"
+        },
+        {
+          "name": "E. Barberio",
+          "authorId": "13307608"
+        },
+        {
+          "name": "D. Barberis",
+          "authorId": "50029349"
+        },
+        {
+          "name": "M. Barbero",
+          "authorId": "2105305060"
+        },
+        {
+          "name": "G. Barbour",
+          "authorId": "1388496992"
+        },
+        {
+          "name": "T. Barillari",
+          "authorId": "30101872"
+        },
+        {
+          "name": "M. Barisits",
+          "authorId": "2709844"
+        },
+        {
+          "name": "J. Barkeloo",
+          "authorId": "51260006"
+        },
+        {
+          "name": "T. Barklow",
+          "authorId": "4951897"
+        },
+        {
+          "name": "R. Barnea",
+          "authorId": "152387439"
+        },
+        {
+          "name": "B. Barnett",
+          "authorId": "2259814486"
+        },
+        {
+          "name": "R. Barnett",
+          "authorId": "144177495"
+        },
+        {
+          "name": "Z. Barnovska-Blenessy",
+          "authorId": "1381497681"
+        },
+        {
+          "name": "A. Baroncelli",
+          "authorId": "3653842"
+        },
+        {
+          "name": "G. Barone",
+          "authorId": "47643834"
+        },
+        {
+          "name": "A. Barr",
+          "authorId": "152449056"
+        },
+        {
+          "name": "L. B. Navarro",
+          "authorId": "47609809"
+        },
+        {
+          "name": "F. Barreiro",
+          "authorId": "2264559143"
+        },
+        {
+          "name": "J. G. D. da Costa",
+          "authorId": "2673328"
+        },
+        {
+          "name": "U. Barron",
+          "authorId": "1659023954"
+        },
+        {
+          "name": "S. Barsov",
+          "authorId": "16033476"
+        },
+        {
+          "name": "F. Bartels",
+          "authorId": "47082144"
+        },
+        {
+          "name": "R. Bartoldus",
+          "authorId": "2317658"
+        },
+        {
+          "name": "G. Bartolini",
+          "authorId": "35207933"
+        },
+        {
+          "name": "A. Barton",
+          "authorId": "6983671"
+        },
+        {
+          "name": "P. Bartos",
+          "authorId": "50858335"
+        },
+        {
+          "name": "A. Basalaev",
+          "authorId": "143723301"
+        },
+        {
+          "name": "A. Basan",
+          "authorId": "145159992"
+        },
+        {
+          "name": "A. Bassalat",
+          "authorId": "3762852"
+        },
+        {
+          "name": "M. Basso",
+          "authorId": "47580133"
+        },
+        {
+          "name": "R. Bates",
+          "authorId": "1390430973"
+        },
+        {
+          "name": "S. Batlamous",
+          "authorId": "51256194"
+        },
+        {
+          "name": "J. Batley",
+          "authorId": "2184488325"
+        },
+        {
+          "name": "B. Batool",
+          "authorId": "1380473385"
+        },
+        {
+          "name": "M. Battaglia",
+          "authorId": "1827523"
+        },
+        {
+          "name": "M. Bauce",
+          "authorId": "144292588"
+        },
+        {
+          "name": "F. Bauer",
+          "authorId": "50682626"
+        },
+        {
+          "name": "P. Bauer",
+          "authorId": "47712230"
+        },
+        {
+          "name": "H. Bawa",
+          "authorId": "79130452"
+        },
+        {
+          "name": "A. Bayirli",
+          "authorId": "103069067"
+        },
+        {
+          "name": "J. Beacham",
+          "authorId": "2344049"
+        },
+        {
+          "name": "T. Beau",
+          "authorId": "144339139"
+        },
+        {
+          "name": "P. Beauchemin",
+          "authorId": "144303496"
+        },
+        {
+          "name": "F. Becherer",
+          "authorId": "1380473563"
+        },
+        {
+          "name": "P. Bechtle",
+          "authorId": "1818160"
+        },
+        {
+          "name": "H. Beck",
+          "authorId": "144954623"
+        },
+        {
+          "name": "H. Beck",
+          "authorId": "1901059"
+        },
+        {
+          "name": "K. Becker",
+          "authorId": "46607831"
+        },
+        {
+          "name": "C. Becot",
+          "authorId": "6324253"
+        },
+        {
+          "name": "A. Beddall",
+          "authorId": "71635003"
+        },
+        {
+          "name": "A. Beddall",
+          "authorId": "71635003"
+        },
+        {
+          "name": "V. Bednyakov",
+          "authorId": "101285498"
+        },
+        {
+          "name": "M. Bedognetti",
+          "authorId": "3628074"
+        },
+        {
+          "name": "C. Bee",
+          "authorId": "73372182"
+        },
+        {
+          "name": "T. Beermann",
+          "authorId": "152476171"
+        },
+        {
+          "name": "M. Begalli",
+          "authorId": "152204776"
+        },
+        {
+          "name": "M. Begel",
+          "authorId": "2158606782"
+        },
+        {
+          "name": "A. Behera",
+          "authorId": "152594154"
+        },
+        {
+          "name": "J. Behr",
+          "authorId": "145940623"
+        },
+        {
+          "name": "F. Beisiegel",
+          "authorId": "1379566655"
+        },
+        {
+          "name": "M. Belfkir",
+          "authorId": "93387531"
+        },
+        {
+          "name": "A. Bell",
+          "authorId": "2227066384"
+        },
+        {
+          "name": "G. Bella",
+          "authorId": "144170367"
+        },
+        {
+          "name": "L. Bellagamba",
+          "authorId": "6159391"
+        },
+        {
+          "name": "A. Bellerive",
+          "authorId": "152157437"
+        },
+        {
+          "name": "P. Bellos",
+          "authorId": "21627212"
+        },
+        {
+          "name": "K. Beloborodov",
+          "authorId": "11688914"
+        },
+        {
+          "name": "K. Belotskiy",
+          "authorId": "5475283"
+        },
+        {
+          "name": "N. Belyaev",
+          "authorId": "144313373"
+        },
+        {
+          "name": "D. Benchekroun",
+          "authorId": "6851393"
+        },
+        {
+          "name": "N. Benekos",
+          "authorId": "80424423"
+        },
+        {
+          "name": "Y. Benhammou",
+          "authorId": "103187186"
+        },
+        {
+          "name": "D. Benjamin",
+          "authorId": "152540649"
+        },
+        {
+          "name": "M. Benoit",
+          "authorId": "37110155"
+        },
+        {
+          "name": "J. Bensinger",
+          "authorId": "94021105"
+        },
+        {
+          "name": "S. Bentvelsen",
+          "authorId": "102878623"
+        },
+        {
+          "name": "L. Beresford",
+          "authorId": "145169879"
+        },
+        {
+          "name": "M. Beretta",
+          "authorId": "114982395"
+        },
+        {
+          "name": "D. Berge",
+          "authorId": "145094640"
+        },
+        {
+          "name": "E. Kuutmann",
+          "authorId": "1390727352"
+        },
+        {
+          "name": "N. Berger",
+          "authorId": "95545802"
+        },
+        {
+          "name": "B. Bergmann",
+          "authorId": "47376983"
+        },
+        {
+          "name": "L. Bergsten",
+          "authorId": "100480099"
+        },
+        {
+          "name": "J. Beringer",
+          "authorId": "49966445"
+        },
+        {
+          "name": "S. Berlendis",
+          "authorId": "104108306"
+        },
+        {
+          "name": "G. Bernardi",
+          "authorId": "102229961"
+        },
+        {
+          "name": "C. Bernius",
+          "authorId": "152835929"
+        },
+        {
+          "name": "F. Bernlochner",
+          "authorId": "2227875875"
+        },
+        {
+          "name": "T. Berry",
+          "authorId": "37575790"
+        },
+        {
+          "name": "P. Berta",
+          "authorId": "31924735"
+        },
+        {
+          "name": "A. Berthold",
+          "authorId": "1659023551"
+        },
+        {
+          "name": "I. Bertram",
+          "authorId": "2969827"
+        },
+        {
+          "name": "O. B. Bylund",
+          "authorId": "9552589"
+        },
+        {
+          "name": "N. Besson",
+          "authorId": "144667576"
+        },
+        {
+          "name": "A. Bethani",
+          "authorId": "2226871452"
+        },
+        {
+          "name": "S. Bethke",
+          "authorId": "145477749"
+        },
+        {
+          "name": "A. Betti",
+          "authorId": "144865805"
+        },
+        {
+          "name": "A. Bevan",
+          "authorId": "95703949"
+        },
+        {
+          "name": "J. Beyer",
+          "authorId": "102993665"
+        },
+        {
+          "name": "D. Bhattacharya",
+          "authorId": "97333996"
+        },
+        {
+          "name": "P. Bhattarai",
+          "authorId": "95241130"
+        },
+        {
+          "name": "V. Bhopatkar",
+          "authorId": "1405943818"
+        },
+        {
+          "name": "R. Bi",
+          "authorId": "92536479"
+        },
+        {
+          "name": "R. Bianchi",
+          "authorId": "115403110"
+        },
+        {
+          "name": "O. Biebel",
+          "authorId": "103264334"
+        },
+        {
+          "name": "D. Biedermann",
+          "authorId": "34216298"
+        },
+        {
+          "name": "R. Bielski",
+          "authorId": "4760400"
+        },
+        {
+          "name": "K. Bierwagen",
+          "authorId": "4700589"
+        },
+        {
+          "name": "N. Biesuz",
+          "authorId": "145042721"
+        },
+        {
+          "name": "M. Biglietti",
+          "authorId": "46734435"
+        },
+        {
+          "name": "T. Billoud",
+          "authorId": "102747421"
+        },
+        {
+          "name": "M. Bindi",
+          "authorId": "2102978"
+        },
+        {
+          "name": "A. Bingul",
+          "authorId": "144382067"
+        },
+        {
+          "name": "C. Bini",
+          "authorId": "3241756"
+        },
+        {
+          "name": "S. Biondi",
+          "authorId": "143940597"
+        },
+        {
+          "name": "C. Birch-sykes",
+          "authorId": "1417349664"
+        },
+        {
+          "name": "M. Birman",
+          "authorId": "102892674"
+        },
+        {
+          "name": "T. Bisanz",
+          "authorId": "152488033"
+        },
+        {
+          "name": "J. Biswal",
+          "authorId": "34407401"
+        },
+        {
+          "name": "D. Biswas",
+          "authorId": "152655587"
+        },
+        {
+          "name": "A. Bitadze",
+          "authorId": "6003162"
+        },
+        {
+          "name": "C. Bittrich",
+          "authorId": "152593628"
+        },
+        {
+          "name": "K. Bj\u00f8rke",
+          "authorId": "1478747286"
+        },
+        {
+          "name": "T. Bla\u017eek",
+          "authorId": "144792407"
+        },
+        {
+          "name": "I. Bloch",
+          "authorId": "145334691"
+        },
+        {
+          "name": "C. Blocker",
+          "authorId": "50878398"
+        },
+        {
+          "name": "A. Blue",
+          "authorId": "47788700"
+        },
+        {
+          "name": "U. Blumenschein",
+          "authorId": "143805067"
+        },
+        {
+          "name": "G. Bobbink",
+          "authorId": "2168158044"
+        },
+        {
+          "name": "V. Bobrovnikov",
+          "authorId": "152552473"
+        },
+        {
+          "name": "S. Bocchetta",
+          "authorId": "3835925"
+        },
+        {
+          "name": "D. Bogavac",
+          "authorId": "16742457"
+        },
+        {
+          "name": "A. Bogdanchikov",
+          "authorId": "2272742610"
+        },
+        {
+          "name": "C. Bohm",
+          "authorId": "33599252"
+        },
+        {
+          "name": "V. Boisvert",
+          "authorId": "101780407"
+        },
+        {
+          "name": "P. Bokan",
+          "authorId": "152183824"
+        },
+        {
+          "name": "T. Bold",
+          "authorId": "95750174"
+        },
+        {
+          "name": "A. Bolz",
+          "authorId": "152146175"
+        },
+        {
+          "name": "M. Bomben",
+          "authorId": "152570336"
+        },
+        {
+          "name": "M. Bona",
+          "authorId": "30192464"
+        },
+        {
+          "name": "J. Bonilla",
+          "authorId": "104346936"
+        },
+        {
+          "name": "M. Boonekamp",
+          "authorId": "2344582"
+        },
+        {
+          "name": "C. Booth",
+          "authorId": "1384016289"
+        },
+        {
+          "name": "A. Borb\u00e9ly",
+          "authorId": "2264521626"
+        },
+        {
+          "name": "H. Borecka-Bielska",
+          "authorId": "1403579172"
+        },
+        {
+          "name": "L. S. Borgna",
+          "authorId": "14097284"
+        },
+        {
+          "name": "A. Borisov",
+          "authorId": "1709069"
+        },
+        {
+          "name": "G. Borissov",
+          "authorId": "4075610"
+        },
+        {
+          "name": "Daniela Bortoletto",
+          "authorId": "143975557"
+        },
+        {
+          "name": "D. Boscherini",
+          "authorId": "1728925"
+        },
+        {
+          "name": "M. Bosman",
+          "authorId": "118633344"
+        },
+        {
+          "name": "J. D. B. Sola",
+          "authorId": "104051587"
+        },
+        {
+          "name": "K. Bouaouda",
+          "authorId": "152265224"
+        },
+        {
+          "name": "J. Boudreau",
+          "authorId": "103411727"
+        },
+        {
+          "name": "E. Bouhova-Thacker",
+          "authorId": "1395844624"
+        },
+        {
+          "name": "D. Boumediene",
+          "authorId": "4884348"
+        },
+        {
+          "name": "A. Boveia",
+          "authorId": "103459825"
+        },
+        {
+          "name": "J. Boyd",
+          "authorId": "120599067"
+        },
+        {
+          "name": "D. Boye",
+          "authorId": "152113658"
+        },
+        {
+          "name": "I. Boyko",
+          "authorId": "2133565224"
+        },
+        {
+          "name": "A. J. Bozson",
+          "authorId": "2130977491"
+        },
+        {
+          "name": "J. Bracinik",
+          "authorId": "93461457"
+        },
+        {
+          "name": "N. Brahimi",
+          "authorId": "103671259"
+        },
+        {
+          "name": "G. Brandt",
+          "authorId": "1390600388"
+        },
+        {
+          "name": "O. Brandt",
+          "authorId": "1399569623"
+        },
+        {
+          "name": "F. Braren",
+          "authorId": "152539178"
+        },
+        {
+          "name": "B. Brau",
+          "authorId": "145693305"
+        },
+        {
+          "name": "J. Brau",
+          "authorId": "145353027"
+        },
+        {
+          "name": "W. Madden",
+          "authorId": "144954246"
+        },
+        {
+          "name": "K. Brendlinger",
+          "authorId": "144399721"
+        },
+        {
+          "name": "R. Brener",
+          "authorId": "2264535371"
+        },
+        {
+          "name": "L. Brenner",
+          "authorId": "145146928"
+        },
+        {
+          "name": "R. Brenner",
+          "authorId": "1390552557"
+        },
+        {
+          "name": "S. Bressler",
+          "authorId": "152112082"
+        },
+        {
+          "name": "B. Brickwedde",
+          "authorId": "153022142"
+        },
+        {
+          "name": "D. Briglin",
+          "authorId": "2091080940"
+        },
+        {
+          "name": "D. Britton",
+          "authorId": "145275059"
+        },
+        {
+          "name": "D. Britzger",
+          "authorId": "6845876"
+        },
+        {
+          "name": "I. Brock",
+          "authorId": "144341126"
+        },
+        {
+          "name": "R. Brock",
+          "authorId": "46972007"
+        },
+        {
+          "name": "G. Brooijmans",
+          "authorId": "4061845"
+        },
+        {
+          "name": "W. Brooks",
+          "authorId": "145710416"
+        },
+        {
+          "name": "E. Brost",
+          "authorId": "30599757"
+        },
+        {
+          "name": "P. B. D. de Renstrom",
+          "authorId": "152467652"
+        },
+        {
+          "name": "B. Br\u00fcers",
+          "authorId": "2079934873"
+        },
+        {
+          "name": "D. Bruncko",
+          "authorId": "143890722"
+        },
+        {
+          "name": "A. Bruni",
+          "authorId": "2090434981"
+        },
+        {
+          "name": "G. Bruni",
+          "authorId": "46236152"
+        },
+        {
+          "name": "M. Bruschi",
+          "authorId": "2231682357"
+        },
+        {
+          "name": "N. Bruscino",
+          "authorId": "5071328"
+        },
+        {
+          "name": "L. Bryngemark",
+          "authorId": "5569178"
+        },
+        {
+          "name": "T. Buanes",
+          "authorId": "144023918"
+        },
+        {
+          "name": "Q. Buat",
+          "authorId": "144296175"
+        },
+        {
+          "name": "P. Buchholz",
+          "authorId": "2223610974"
+        },
+        {
+          "name": "A. Buckley",
+          "authorId": "152514330"
+        },
+        {
+          "name": "I. Budagov",
+          "authorId": "152289503"
+        },
+        {
+          "name": "M. K. Bugge",
+          "authorId": "101110920"
+        },
+        {
+          "name": "F. B\u00fchrer",
+          "authorId": "2069446125"
+        },
+        {
+          "name": "O. Bulekov",
+          "authorId": "145361641"
+        },
+        {
+          "name": "B. Bullard",
+          "authorId": "103455411"
+        },
+        {
+          "name": "T. Burch",
+          "authorId": "1572049541"
+        },
+        {
+          "name": "S. Burdin",
+          "authorId": "41220749"
+        },
+        {
+          "name": "C. Burgard",
+          "authorId": "66099693"
+        },
+        {
+          "name": "A. Burger",
+          "authorId": "1390893766"
+        },
+        {
+          "name": "B. Burghgrave",
+          "authorId": "92625916"
+        },
+        {
+          "name": "J. Burr",
+          "authorId": "1383516930"
+        },
+        {
+          "name": "C. Burton",
+          "authorId": "1379791267"
+        },
+        {
+          "name": "J. Burzynski",
+          "authorId": "1380472836"
+        },
+        {
+          "name": "V. B\u00fcscher",
+          "authorId": "103564618"
+        },
+        {
+          "name": "E. Buschmann",
+          "authorId": "153371757"
+        },
+        {
+          "name": "P. Bussey",
+          "authorId": "1390615272"
+        },
+        {
+          "name": "J. Butler",
+          "authorId": "2329919778"
+        },
+        {
+          "name": "C. Buttar",
+          "authorId": "4947179"
+        },
+        {
+          "name": "J. Butterworth",
+          "authorId": "115766108"
+        },
+        {
+          "name": "P. Butti",
+          "authorId": "4432505"
+        },
+        {
+          "name": "W. Buttinger",
+          "authorId": "4134655"
+        },
+        {
+          "name": "C. J. B. Vazquez",
+          "authorId": "1380295395"
+        },
+        {
+          "name": "A. Buzatu",
+          "authorId": "49686573"
+        },
+        {
+          "name": "A. Buzykaev",
+          "authorId": "6382479"
+        },
+        {
+          "name": "G. Cabras",
+          "authorId": "152372129"
+        },
+        {
+          "name": "S. Urb\u00e1n",
+          "authorId": "32776036"
+        },
+        {
+          "name": "F. Cadoux",
+          "authorId": "144491726"
+        },
+        {
+          "name": "D. Caforio",
+          "authorId": "103860572"
+        },
+        {
+          "name": "H. Cai",
+          "authorId": "12823887"
+        },
+        {
+          "name": "V. Cairo",
+          "authorId": "5702767"
+        },
+        {
+          "name": "O. Cakir",
+          "authorId": "47803063"
+        },
+        {
+          "name": "N. Calace",
+          "authorId": "152560719"
+        },
+        {
+          "name": "P. Calafiura",
+          "authorId": "2177162564"
+        },
+        {
+          "name": "G. Calderini",
+          "authorId": "3102262"
+        },
+        {
+          "name": "P. Calfayan",
+          "authorId": "48905666"
+        },
+        {
+          "name": "G. Callea",
+          "authorId": "152900137"
+        },
+        {
+          "name": "L. Cal\u00f4ba",
+          "authorId": "1390429407"
+        },
+        {
+          "name": "A. Caltabiano",
+          "authorId": "47321473"
+        },
+        {
+          "name": "S. Lopez",
+          "authorId": "103190186"
+        },
+        {
+          "name": "D. Calvet",
+          "authorId": "145034180"
+        },
+        {
+          "name": "S. Calvet",
+          "authorId": "116058840"
+        },
+        {
+          "name": "T. Calvet",
+          "authorId": "1387705404"
+        },
+        {
+          "name": "M. Calvetti",
+          "authorId": "4930064"
+        },
+        {
+          "name": "R. Toro",
+          "authorId": "145287181"
+        },
+        {
+          "name": "S. Camarda",
+          "authorId": "108814117"
+        },
+        {
+          "name": "D. C. Munoz",
+          "authorId": "104217925"
+        },
+        {
+          "name": "P. Camarri",
+          "authorId": "152372322"
+        },
+        {
+          "name": "M. Camerlingo",
+          "authorId": "2228274624"
+        },
+        {
+          "name": "D. Cameron",
+          "authorId": "1850445"
+        },
+        {
+          "name": "C. Camincher",
+          "authorId": "144074456"
+        },
+        {
+          "name": "S. Campana",
+          "authorId": "2177123575"
+        },
+        {
+          "name": "M. Campanelli",
+          "authorId": "16253351"
+        },
+        {
+          "name": "A. Camplani",
+          "authorId": "152607329"
+        },
+        {
+          "name": "V. Canale",
+          "authorId": "116524160"
+        },
+        {
+          "name": "A. Canesse",
+          "authorId": "1380473555"
+        },
+        {
+          "name": "M. C. Bret",
+          "authorId": "4104103"
+        },
+        {
+          "name": "J. Cantero",
+          "authorId": "77883441"
+        },
+        {
+          "name": "T. Cao",
+          "authorId": "49284366"
+        },
+        {
+          "name": "Y. Cao",
+          "authorId": "152576858"
+        },
+        {
+          "name": "M. C. Garrido",
+          "authorId": "102799335"
+        },
+        {
+          "name": "M. Capua",
+          "authorId": "3568291"
+        },
+        {
+          "name": "R. Cardarelli",
+          "authorId": "72953448"
+        },
+        {
+          "name": "F. Cardillo",
+          "authorId": "145208308"
+        },
+        {
+          "name": "G. Carducci",
+          "authorId": "1380472862"
+        },
+        {
+          "name": "I. Carli",
+          "authorId": "152460523"
+        },
+        {
+          "name": "T. Carli",
+          "authorId": "103772254"
+        },
+        {
+          "name": "G. Carlino",
+          "authorId": "48287622"
+        },
+        {
+          "name": "B. Carlson",
+          "authorId": "46615441"
+        },
+        {
+          "name": "E. Carlson",
+          "authorId": "14413756"
+        },
+        {
+          "name": "L. Carminati",
+          "authorId": "145200633"
+        },
+        {
+          "name": "R. Carney",
+          "authorId": "153715211"
+        },
+        {
+          "name": "S. Caron",
+          "authorId": "1727812"
+        },
+        {
+          "name": "E. Carquin",
+          "authorId": "83004566"
+        },
+        {
+          "name": "S. Carr\u00e1",
+          "authorId": "103872514"
+        },
+        {
+          "name": "G. Carratta",
+          "authorId": "103802664"
+        },
+        {
+          "name": "J. Carter",
+          "authorId": "1390607608"
+        },
+        {
+          "name": "T. Carter",
+          "authorId": "49045934"
+        },
+        {
+          "name": "M. P. Casado",
+          "authorId": "97814334"
+        },
+        {
+          "name": "A. Casha",
+          "authorId": "2131003580"
+        },
+        {
+          "name": "E. G. Castiglia",
+          "authorId": "1668062969"
+        },
+        {
+          "name": "F. Castillo",
+          "authorId": "102661107"
+        },
+        {
+          "name": "L. C. Garcia",
+          "authorId": "1387436152"
+        },
+        {
+          "name": "V. C. Gimenez",
+          "authorId": "100722736"
+        },
+        {
+          "name": "N. Castro",
+          "authorId": "145847058"
+        },
+        {
+          "name": "A. Catinaccio",
+          "authorId": "145651476"
+        },
+        {
+          "name": "J. Catmore",
+          "authorId": "102765762"
+        },
+        {
+          "name": "A. Cattai",
+          "authorId": "145443078"
+        },
+        {
+          "name": "V. Cavaliere",
+          "authorId": "120935527"
+        },
+        {
+          "name": "V. Cavasinni",
+          "authorId": "145879480"
+        },
+        {
+          "name": "E. Celebi",
+          "authorId": "40531605"
+        },
+        {
+          "name": "F. Celli",
+          "authorId": "51040184"
+        },
+        {
+          "name": "K. Cerny",
+          "authorId": "94149209"
+        },
+        {
+          "name": "A. Cerqueira",
+          "authorId": "1406436761"
+        },
+        {
+          "name": "A. Cerri",
+          "authorId": "94446787"
+        },
+        {
+          "name": "L. Cerrito",
+          "authorId": "5844495"
+        },
+        {
+          "name": "F. Cerutti",
+          "authorId": "143814239"
+        },
+        {
+          "name": "A. Cervelli",
+          "authorId": "145197837"
+        },
+        {
+          "name": "S. \u00c7etin",
+          "authorId": "2134775407"
+        },
+        {
+          "name": "Z. Chadi",
+          "authorId": "1382089533"
+        },
+        {
+          "name": "D. Chakraborty",
+          "authorId": "152380224"
+        },
+        {
+          "name": "J. Chan",
+          "authorId": "2004280800"
+        },
+        {
+          "name": "W. Chan",
+          "authorId": "4344320"
+        },
+        {
+          "name": "W. Y. Chan",
+          "authorId": "21552618"
+        },
+        {
+          "name": "J. Chapman",
+          "authorId": "48499175"
+        },
+        {
+          "name": "B. Chargeishvili",
+          "authorId": "51992521"
+        },
+        {
+          "name": "D. Charlton",
+          "authorId": "2489299"
+        },
+        {
+          "name": "T. Charman",
+          "authorId": "103026740"
+        },
+        {
+          "name": "M. Chatterjee",
+          "authorId": "118437319"
+        },
+        {
+          "name": "C. Chau",
+          "authorId": "102552206"
+        },
+        {
+          "name": "S. Che",
+          "authorId": "89006197"
+        },
+        {
+          "name": "S. Chekanov",
+          "authorId": "2236479264"
+        },
+        {
+          "name": "S. Chekulaev",
+          "authorId": "5881925"
+        },
+        {
+          "name": "G. Chelkov",
+          "authorId": "145401662"
+        },
+        {
+          "name": "B. Chen",
+          "authorId": "2157307293"
+        },
+        {
+          "name": "C. Chen",
+          "authorId": "46729652"
+        },
+        {
+          "name": "C. Chen",
+          "authorId": "2152860403"
+        },
+        {
+          "name": "H. Chen",
+          "authorId": "81551784"
+        },
+        {
+          "name": "H. Chen",
+          "authorId": "81551784"
+        },
+        {
+          "name": "J. Chen",
+          "authorId": "9454691"
+        },
+        {
+          "name": "J. Chen",
+          "authorId": "9454691"
+        },
+        {
+          "name": "J. Chen",
+          "authorId": "9454691"
+        },
+        {
+          "name": "S. Chen",
+          "authorId": "50358052"
+        },
+        {
+          "name": "S. Chen",
+          "authorId": "50858445"
+        },
+        {
+          "name": "X. Chen",
+          "authorId": "37866883"
+        },
+        {
+          "name": "Y. Chen",
+          "authorId": "117745083"
+        },
+        {
+          "name": "Y. Chen",
+          "authorId": "2109500554"
+        },
+        {
+          "name": "H. C. Cheng",
+          "authorId": "2202274599"
+        },
+        {
+          "name": "H. J. Cheng",
+          "authorId": "2190941121"
+        },
+        {
+          "name": "A. Cheplakov",
+          "authorId": "96486963"
+        },
+        {
+          "name": "E. Cheremushkina",
+          "authorId": "113711417"
+        },
+        {
+          "name": "R. E. El Moursli",
+          "authorId": "1381077096"
+        },
+        {
+          "name": "E. Cheu",
+          "authorId": "2324389701"
+        },
+        {
+          "name": "K. Cheung",
+          "authorId": "2067675505"
+        },
+        {
+          "name": "T. Cheval\u00e9rias",
+          "authorId": "2003225980"
+        },
+        {
+          "name": "L. Chevalier",
+          "authorId": "52179387"
+        },
+        {
+          "name": "V. Chiarella",
+          "authorId": "144554260"
+        },
+        {
+          "name": "G. Chiarelli",
+          "authorId": "116601079"
+        },
+        {
+          "name": "G. Chiodini",
+          "authorId": "144831185"
+        },
+        {
+          "name": "A. Chisholm",
+          "authorId": "144933351"
+        },
+        {
+          "name": "A. Chitan",
+          "authorId": "143905171"
+        },
+        {
+          "name": "I. Chiu",
+          "authorId": "1398159944"
+        },
+        {
+          "name": "Y. Chiu",
+          "authorId": "2061472099"
+        },
+        {
+          "name": "M. Chizhov",
+          "authorId": "4515598"
+        },
+        {
+          "name": "K. Choi",
+          "authorId": "2353432935"
+        },
+        {
+          "name": "A. Chomont",
+          "authorId": "144213215"
+        },
+        {
+          "name": "Y. S. Chow",
+          "authorId": "152189832"
+        },
+        {
+          "name": "L. D. Christopher",
+          "authorId": "1659025282"
+        }
+      ],
+      "year": 2020,
+      "abstract": "The performance of the ATLAS Inner Detector alignment has been studied using $pp$ collision data at $\\sqrt{s} = 13$ TeV collected by the ATLAS experiment during Run 2 (2015 to 2018) of the Large Hadron Collider (LHC). The goal of the detector alignment is to determine the detector geometry as accurately as possible and correct for time-dependent movements. The Inner Detector alignment is based on the minimization of track-hit residuals in a sequence of hierarchical levels, from global mechanical assembly structures to local sensors. Subsequent levels have increasing numbers of degrees of freedom; in total there are almost 750000. The alignment determines detector geometry on both short and long timescales, where short timescales describe movements within an LHC fill. The performance and possible track parameter biases originating from systematic detector deformations are evaluated. Momentum biases are studied using resonances decaying to muons or to electrons. The residual sagitta bias and momentum scale bias after alignment are reduced to less than $\\sim$0.1 TeV$^{-1}$ and 0.9$\\times10^{-3}$, respectively. Impact parameter biases are also evaluated using tracks within jets.",
+      "citationCount": 34,
+      "doi": null,
+      "arxivId": "2007.07624",
+      "url": "https://www.semanticscholar.org/paper/ac3b1348e9d40fb6118d40f83d85145777530328",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "181637cbb0ee4f2bdfc599b7ce8183b26ba7da43",
+      "title": "Position: Tensor Networks are a Valuable Asset for Green AI",
+      "authors": [
+        {
+          "name": "Eva Memmel",
+          "authorId": "2166477139"
+        },
+        {
+          "name": "Clara Menzen",
+          "authorId": "2039906624"
+        },
+        {
+          "name": "J. Schuurmans",
+          "authorId": "1574043501"
+        },
+        {
+          "name": "Frederiek Wesel",
+          "authorId": "2083923051"
+        },
+        {
+          "name": "Kim Batselier",
+          "authorId": "1423653737"
+        }
+      ],
+      "year": 2022,
+      "abstract": "For the first time, this position paper introduces a fundamental link between tensor networks (TNs) and Green AI, highlighting their synergistic potential to enhance both the inclusivity and sustainability of AI research. We argue that TNs are valuable for Green AI due to their strong mathematical backbone and inherent logarithmic compression potential. We undertake a comprehensive review of the ongoing discussions on Green AI, emphasizing the importance of sustainability and inclusivity in AI research to demonstrate the significance of establishing the link between Green AI and TNs. To support our position, we first provide a comprehensive overview of efficiency metrics proposed in Green AI literature and then evaluate examples of TNs in the fields of kernel machines and deep learning using the proposed efficiency metrics. This position paper aims to incentivize meaningful, constructive discussions by bridging fundamental principles of Green AI and TNs. We advocate for researchers to seriously evaluate the integration of TNs into their research projects, and in alignment with the link established in this paper, we support prior calls encouraging researchers to treat Green AI principles as a research priority.",
+      "citationCount": 9,
+      "doi": null,
+      "arxivId": "2205.12961",
+      "url": "https://www.semanticscholar.org/paper/181637cbb0ee4f2bdfc599b7ce8183b26ba7da43",
+      "venue": "International Conference on Machine Learning",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "f589bd29b77aff5f6595657f7d1c41a0c9a79b1c",
+      "title": "Design and implementation of orbital welding system for large-diameter pipes",
+      "authors": [
+        {
+          "name": "Kyung-Hwan Hwang",
+          "authorId": "2377389961"
+        },
+        {
+          "name": "Daehyun Baek",
+          "authorId": "2065259266"
+        },
+        {
+          "name": "Hyeong Soon Moon",
+          "authorId": "2275161222"
+        },
+        {
+          "name": "Sang-Min Park",
+          "authorId": "2377380118"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s00170-025-16762-7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f589bd29b77aff5f6595657f7d1c41a0c9a79b1c",
+      "venue": "The International Journal of Advanced Manufacturing Technology",
+      "journal": {
+        "name": "The International Journal of Advanced Manufacturing Technology",
+        "pages": "3445 - 3469",
+        "volume": "141"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bce3c1c1e0fa1f2d4a6f48f55a90afe61bf2dfb2",
+      "title": "Design Principles and Impact of a Learning Analytics Dashboard: Evidence from a Randomized MOOC Experiment",
+      "authors": [
+        {
+          "name": "Inma Borrella",
+          "authorId": "97713438"
+        },
+        {
+          "name": "Eva Ponce-Cueto",
+          "authorId": "2265677403"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Learning Analytics Dashboards (LADs) are increasingly deployed to support self-regulated learning on online courses. Yet many existing dashboards lack strong theoretical grounding, contextual alignment, or actionable feedback, and some designs have been shown to inadvertently discourage learners through excessive social comparison or high inference costs. In this study, we designed and evaluated a LAD grounded in the COPES model of self-regulated learning and tailored to a credit-bearing Massive Open Online Course (MOOC) using a data-driven approach. We conducted a randomized controlled trial with 8745 learners, comparing a control group, a dashboard without feedback, and a dashboard with ARCS-framed actionable feedback. The results showed that the dashboard with feedback significantly increased learners\u2019 likelihood of verification (i.e., paying for the certification track), with mixed effects on engagement and no measurable impact on final grades. These findings suggest that dashboards are not uniformly beneficial: while feedback-supported LADs can enhance motivation and persistence, dashboards that lack interpretive support may impose cognitive burdens without improving outcomes. This study contributes to the literature on learning analytics by (1) articulating the design principles for theoretically and contextually grounded LADs and (2) providing experimental evidence on their impact in authentic MOOC settings.",
+      "citationCount": 0,
+      "doi": "10.3390/app152111493",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bce3c1c1e0fa1f2d4a6f48f55a90afe61bf2dfb2",
+      "venue": "Applied Sciences",
+      "journal": {
+        "name": "Applied Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e448027be16b53cd07823fb7d07612f93ebc3f26",
+      "title": "The Transformation of Dance Analysis: How Motion Capture and AI Are Changing the Art Form",
+      "authors": [
+        {
+          "name": "Ayush Kumar Ojha",
+          "authorId": "2214970141"
+        }
+      ],
+      "year": 2021,
+      "abstract": "For centuries, the analysis of dance has relied on subjective observation and qualitative descriptions. The emergence of motion capture technology and artificial intelligence (AI) is revolutionizing this landscape, offering objective data and novel tools for analyzing and interpreting movement. This paper explores the transformative impact of these technologies on various aspects of dance analysis, including: Technique Assessment: Motion capture provides precise metrics for evaluating movement accuracy, alignment, and efficiency, unlocking new possibilities for personalized training and injury prevention. Choreographic Deconstruction: AI algorithms can identify patterns, motifs, and emotional arcs within complex dance pieces, offering deeper insights into choreographic intent and audience perception. Expressive Movement Analysis: By analyzing subtle nuances in body language and facial expressions, AI can shed light on the emotional and communicative dimensions of dance, enriching interpretation and fostering empathy with the performers. Historical Archival and Preservation: Motion capture can digitally preserve endangered dance forms and cultural traditions, facilitating cross-cultural exchange and ensuring accessibility for future generations. This paper examines the benefits and challenges of employing these technologies in dance analysis, addressing concerns about objectivity, authenticity, and the potential loss of the human element. It concludes by exploring potential future directions, arguing that motion capture and AI, when used thoughtfully and ethically, can enhance our understanding and appreciation of dance while fostering innovation and creative expression in this timeless art form.",
+      "citationCount": 0,
+      "doi": "10.55529/jhmd.12.10.16",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e448027be16b53cd07823fb7d07612f93ebc3f26",
+      "venue": "Journal of Humanities,Music and Dance",
+      "journal": {
+        "name": "Journal of Humanities,Music and Dance"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d650063a23af2558646f872779b250070346428d",
+      "title": "MedVAL: Toward Expert-Level Medical Text Validation with Language Models",
+      "authors": [
+        {
+          "name": "Asad Aali",
+          "authorId": "2240531495"
+        },
+        {
+          "name": "V. Bikia",
+          "authorId": "86920013"
+        },
+        {
+          "name": "Maya Varma",
+          "authorId": "2280143067"
+        },
+        {
+          "name": "Nicole Chiou",
+          "authorId": "2197523240"
+        },
+        {
+          "name": "Sophie Ostmeier",
+          "authorId": "2300092101"
+        },
+        {
+          "name": "Arnav Singhvi",
+          "authorId": "2254255045"
+        },
+        {
+          "name": "Magdalini Paschali",
+          "authorId": "9941180"
+        },
+        {
+          "name": "Ashwin Kumar",
+          "authorId": "2306357799"
+        },
+        {
+          "name": "Andrew Johnston",
+          "authorId": "2280144642"
+        },
+        {
+          "name": "Karimar Amador-Mart\u00ednez",
+          "authorId": "2372595422"
+        },
+        {
+          "name": "Eduardo Juan Perez Guerrero",
+          "authorId": "2372595730"
+        },
+        {
+          "name": "Paola Naovi Cruz Rivera",
+          "authorId": "2372595796"
+        },
+        {
+          "name": "S. Gatidis",
+          "authorId": "2250464836"
+        },
+        {
+          "name": "Christian Bluethgen",
+          "authorId": "2253667766"
+        },
+        {
+          "name": "E. Reis",
+          "authorId": "2261472706"
+        },
+        {
+          "name": "Eddy D. Zandee van Rilland",
+          "authorId": "115977684"
+        },
+        {
+          "name": "Poonam Hosamani",
+          "authorId": "9397514"
+        },
+        {
+          "name": "Kevin R Keet",
+          "authorId": "2299149699"
+        },
+        {
+          "name": "Minjoung M. Go",
+          "authorId": "12688728"
+        },
+        {
+          "name": "E. Ling",
+          "authorId": "2335565935"
+        },
+        {
+          "name": "David B. Larson",
+          "authorId": "2362308824"
+        },
+        {
+          "name": "C. Langlotz",
+          "authorId": "2262340449"
+        },
+        {
+          "name": "Roxana Daneshjou",
+          "authorId": "2301156881"
+        },
+        {
+          "name": "Jason Hom",
+          "authorId": "2240527904"
+        },
+        {
+          "name": "Sanmi Koyejo",
+          "authorId": "123593472"
+        },
+        {
+          "name": "Emily Alsentzer",
+          "authorId": "2268015621"
+        },
+        {
+          "name": "Akshay S. Chaudhari",
+          "authorId": "2307003139"
+        }
+      ],
+      "year": 2025,
+      "abstract": "With the growing use of language models (LMs) in clinical environments, there is an immediate need to evaluate the accuracy and safety of LM-generated medical text. Currently, such evaluation relies solely on manual physician review. However, detecting errors in LM-generated text is challenging because 1) manual review is costly and 2) expert-composed reference outputs are often unavailable in real-world settings. While the\"LM-as-judge\"paradigm (a LM evaluating another LM) offers scalable evaluation, even frontier LMs can miss subtle but clinically significant errors. To address these challenges, we propose MedVAL, a novel, self-supervised, data-efficient distillation method that leverages synthetic data to train evaluator LMs to assess whether LM-generated medical outputs are factually consistent with inputs, without requiring physician labels or reference outputs. To evaluate LM performance, we introduce MedVAL-Bench, a dataset of 840 physician-annotated outputs across 6 diverse medical tasks capturing real-world challenges. Across 10 state-of-the-art LMs spanning open-source and proprietary models, MedVAL distillation significantly improves (p<0.001) alignment with physicians across seen and unseen tasks, increasing average F1 scores from 66% to 83%. Despite strong baseline performance, MedVAL improves the best-performing proprietary LM (GPT-4o) by 8% without training on physician-labeled data, demonstrating a performance statistically non-inferior to a single human expert (p<0.001). To support a scalable, risk-aware pathway towards clinical integration, we open-source: 1) Codebase (https://github.com/StanfordMIMI/MedVAL), 2) MedVAL-Bench (https://huggingface.co/datasets/stanfordmimi/MedVAL-Bench), 3) MedVAL-4B (https://huggingface.co/stanfordmimi/MedVAL-4B). Our benchmark provides evidence of LMs approaching expert-level ability in validating AI-generated medical text.",
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": "2507.03152",
+      "url": "https://www.semanticscholar.org/paper/d650063a23af2558646f872779b250070346428d",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "114d378cda70f40faeb6d22162f7f874daaf515e",
+      "title": "Email Augmentation: A Comparison of Fine-tuned Small Language Models",
+      "authors": [
+        {
+          "name": "Francisco Cardoso",
+          "authorId": "2384962510"
+        },
+        {
+          "name": "Eva Maia",
+          "authorId": "2265761920"
+        },
+        {
+          "name": "Isabel Pra\u00e7a",
+          "authorId": "2346517956"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The reliance on outdated datasets poses significant challenges for modern phishing detection systems, as they fail to capture the linguistic diverse and contextual relevance of AI generated email messages. To address this we propose augmenting phishing email datasets using fine-tuned small language models (SLMs) to generate adaptable, privacy-preserving email templates. We evaluate two SLMs\u2014GPT-2 (1.5B parameters) and Gemma3 (1B parameters)\u2014fine-tuned on preprocessed phishing and benign email messages. Our approach combines template generation via structured prompts with preprocessing to anonymise sensitive data and fine-tuning. Results for phishing generation showed that GPT-2 achieves higher alignment with reference templates, while Gemma3 generated more novel and diverse outputs. For benign emails, both models achieved very similar results. The findings highlight the importance of model selection based on use-case priorities, the usage of fine-tuning in addition to prompting to mitigate privacy risks and the viability of SLMs for the generation of email templates.",
+      "citationCount": 0,
+      "doi": "10.1109/ACIT65614.2025.11185806",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/114d378cda70f40faeb6d22162f7f874daaf515e",
+      "venue": "Automation, Control, and Information Technology",
+      "journal": {
+        "name": "2025 15th International Conference on Advanced Computer Information Technologies (ACIT)",
+        "pages": "491-496"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "699cf8cce0053dca8c70ccf78caf092d1cabb6e2",
+      "title": "A Benchmark for Long-Form Medical Question Answering",
+      "authors": [
+        {
+          "name": "Pedram Hosseini",
+          "authorId": "10445523"
+        },
+        {
+          "name": "Jessica M. Sin",
+          "authorId": "2331174179"
+        },
+        {
+          "name": "Bing Ren",
+          "authorId": "2331175332"
+        },
+        {
+          "name": "Bryceton G. Thomas",
+          "authorId": "2331276861"
+        },
+        {
+          "name": "Elnaz Nouri",
+          "authorId": "2261738693"
+        },
+        {
+          "name": "Ali Farahanchi",
+          "authorId": "2331175397"
+        },
+        {
+          "name": "Saeed Hassanpour",
+          "authorId": "2331174271"
+        }
+      ],
+      "year": 2024,
+      "abstract": "There is a lack of benchmarks for evaluating large language models (LLMs) in long-form medical question answering (QA). Most existing medical QA evaluation benchmarks focus on automatic metrics and multiple-choice questions. While valuable, these benchmarks fail to fully capture or assess the complexities of real-world clinical applications where LLMs are being deployed. Furthermore, existing studies on evaluating long-form answer generation in medical QA are primarily closed-source, lacking access to human medical expert annotations, which makes it difficult to reproduce results and enhance existing baselines. In this work, we introduce a new publicly available benchmark featuring real-world consumer medical questions with long-form answer evaluations annotated by medical doctors. We performed pairwise comparisons of responses from various open and closed-source medical and general-purpose LLMs based on criteria such as correctness, helpfulness, harmfulness, and bias. Additionally, we performed a comprehensive LLM-as-a-judge analysis to study the alignment between human judgments and LLMs. Our preliminary results highlight the strong potential of open LLMs in medical QA compared to leading closed models. Code&Data: https://github.com/lavita-ai/medical-eval-sphere",
+      "citationCount": 15,
+      "doi": "10.48550/arXiv.2411.09834",
+      "arxivId": "2411.09834",
+      "url": "https://www.semanticscholar.org/paper/699cf8cce0053dca8c70ccf78caf092d1cabb6e2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.09834"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

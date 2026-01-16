@@ -1,0 +1,2894 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "autonomous capability evaluation AI",
+  "results": [
+    {
+      "openalex_id": "W4318206819",
+      "doi": "10.3390/rs15030720",
+      "title": "Autonomous Satellite Wildfire Detection Using Hyperspectral Imagery and Neural Networks: A Case Study on Australian Wildfire",
+      "authors": [
+        {
+          "name": "Kathiravan Thangavel",
+          "openalex_id": "A5071500048",
+          "orcid": "https://orcid.org/0000-0002-3401-9493",
+          "institutions": [
+            "RMIT University",
+            "Sapienza University of Rome"
+          ]
+        },
+        {
+          "name": "Dario Spiller",
+          "openalex_id": "A5067834094",
+          "orcid": "https://orcid.org/0000-0002-6877-3187",
+          "institutions": [
+            "Sapienza University of Rome",
+            "RMIT University"
+          ]
+        },
+        {
+          "name": "Roberto Sabatini",
+          "openalex_id": "A5006039286",
+          "orcid": "https://orcid.org/0000-0002-3399-2291",
+          "institutions": [
+            "Khalifa University of Science and Technology",
+            "RMIT University"
+          ]
+        },
+        {
+          "name": "Stefania Amici",
+          "openalex_id": "A5052222410",
+          "orcid": "https://orcid.org/0000-0003-2410-646X",
+          "institutions": [
+            "Istituto Nazionale di Geofisica e Vulcanologia"
+          ]
+        },
+        {
+          "name": "Sarathchandrakumar T. Sasidharan",
+          "openalex_id": "A5066495411",
+          "orcid": "https://orcid.org/0000-0002-6335-5955",
+          "institutions": [
+            "Sapienza University of Rome"
+          ]
+        },
+        {
+          "name": "Haytham M. Fayek",
+          "openalex_id": "A5054958855",
+          "orcid": "https://orcid.org/0000-0002-1840-7605",
+          "institutions": [
+            "RMIT University"
+          ]
+        },
+        {
+          "name": "Pier Marzocca",
+          "openalex_id": "A5001402094",
+          "orcid": "https://orcid.org/0000-0002-6058-9094",
+          "institutions": [
+            "RMIT University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-26",
+      "abstract": "One of the United Nations (UN) Sustainable Development Goals is climate action (SDG-13), and wildfire is among the catastrophic events that both impact climate change and are aggravated by it. In Australia and other countries, large-scale wildfires have dramatically grown in frequency and size in recent years. These fires threaten the world\u2019s forests and urban woods, cause enormous environmental and property damage, and quite often result in fatalities. As a result of their increasing frequency, there is an ongoing debate over how to handle catastrophic wildfires and mitigate their social, economic, and environmental repercussions. Effective prevention, early warning, and response strategies must be well-planned and carefully coordinated to minimise harmful consequences to people and the environment. Rapid advancements in remote sensing technologies such as ground-based, aerial surveillance vehicle-based, and satellite-based systems have been used for efficient wildfire surveillance. This study focuses on the application of space-borne technology for very accurate fire detection under challenging conditions. Due to the significant advances in artificial intelligence (AI) techniques in recent years, numerous studies have previously been conducted to examine how AI might be applied in various situations. As a result of its special physical and operational requirements, spaceflight has emerged as one of the most challenging application fields. This work contains a feasibility study as well as a model and scenario prototype for a satellite AI system. With the intention of swiftly generating alerts and enabling immediate actions, the detection of wildfires has been studied with reference to the Australian events that occurred in December 2019. Convolutional neural networks (CNNs) were developed, trained, and used from the ground up to detect wildfires while also adjusting their complexity to meet onboard implementation requirements for trusted autonomous satellite operations (TASO). The capability of a 1-dimensional convolution neural network (1-DCNN) to classify wildfires is demonstrated in this research and the results are assessed against those reported in the literature. In order to enable autonomous onboard data processing, various hardware accelerators were considered and evaluated for onboard implementation. The trained model was then implemented in the following: Intel Movidius NCS-2 and Nvidia Jetson Nano and Nvidia Jetson TX2. Using the selected onboard hardware, the developed model was then put into practice and analysis was carried out. The results were positive and in favour of using the technology that has been proposed for onboard data processing to enable TASO on future missions. The findings indicate that data processing onboard can be very beneficial in disaster management and climate change mitigation by facilitating the generation of timely alerts for users and by enabling rapid and appropriate responses.",
+      "cited_by_count": 94,
+      "type": "article",
+      "source": {
+        "name": "Remote Sensing",
+        "type": "journal",
+        "issn": [
+          "2072-4292"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2072-4292/15/3/720/pdf?version=1675748817"
+      },
+      "topics": [
+        "Fire effects on ecosystems",
+        "Fire Detection and Safety Systems",
+        "Remote Sensing in Agriculture"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W4318206819"
+    },
+    {
+      "openalex_id": "W4405081529",
+      "doi": "10.1145/3707446",
+      "title": "LiDAR-Based Place Recognition For Autonomous Driving: A Survey",
+      "authors": [
+        {
+          "name": "Yongjun Zhang",
+          "openalex_id": "A5108625236",
+          "orcid": "https://orcid.org/0000-0001-9845-4251",
+          "institutions": [
+            "Wuhan University"
+          ]
+        },
+        {
+          "name": "Pengcheng Shi",
+          "openalex_id": "A5100668197",
+          "orcid": "https://orcid.org/0000-0003-2504-9890",
+          "institutions": [
+            "Wuhan University"
+          ]
+        },
+        {
+          "name": "Jiayuan Li",
+          "openalex_id": "A5108050395",
+          "orcid": "https://orcid.org/0000-0002-9850-1668",
+          "institutions": [
+            "Wuhan University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-05",
+      "abstract": "LiDAR has gained popularity in autonomous driving due to advantages like long measurement distance, rich three-dimensional information, and stability in harsh environments. Place Recognition (PR) enables vehicles to identify previously visited locations despite variations in appearance, weather, and viewpoints, even determining their global location within prior maps. This capability is crucial for accurate localization in autonomous driving. Consequently, LiDAR-based Place Recognition (LPR) has emerged as a research hotspot in robotics. However, existing reviews predominantly concentrate on Visual Place Recognition, leaving a gap in systematic reviews on LPR. This article bridges this gap by providing a comprehensive review of LPR methods, thus facilitating and encouraging further research. We commence by exploring the relationship between PR and autonomous driving components. Then, we delve into the problem formulation of LPR, challenges, and relations to previous surveys. Subsequently, we conduct an in-depth review of related research, which offers detailed classifications, strengths and weaknesses, and architectures. Finally, we summarize existing datasets and evaluation metrics and envision promising future directions. This article can serve as a valuable tutorial for newcomers entering the field of place recognition. We plan to maintain an up-to-date project on https://github.com/ShiPC-AI/LPR-Survey .",
+      "cited_by_count": 25,
+      "type": "review",
+      "source": {
+        "name": "ACM Computing Surveys",
+        "type": "journal",
+        "issn": [
+          "0360-0300",
+          "1557-7341"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3707446"
+      },
+      "topics": [
+        "Robotics and Sensor-Based Localization",
+        "Indoor and Outdoor Localization Technologies",
+        "Advanced Image and Video Retrieval Techniques"
+      ],
+      "referenced_works_count": 172,
+      "url": "https://openalex.org/W4405081529"
+    },
+    {
+      "openalex_id": "W4319988671",
+      "doi": "10.1109/access.2023.3239817",
+      "title": "Cooperative Threat Engagement Using Drone Swarms",
+      "authors": [
+        {
+          "name": "Jorge A. Ricardo",
+          "openalex_id": "A5060237460",
+          "orcid": "https://orcid.org/0000-0001-5323-2970",
+          "institutions": [
+            "Instituto Tecnol\u00f3gico de Aeron\u00e1utica"
+          ]
+        },
+        {
+          "name": "Luiz Giacomossi",
+          "openalex_id": "A5045282463",
+          "orcid": "https://orcid.org/0000-0001-5187-1859",
+          "institutions": [
+            "Instituto Tecnol\u00f3gico de Aeron\u00e1utica"
+          ]
+        },
+        {
+          "name": "Jo\u00e3o Francisco Silva Trentin",
+          "openalex_id": "A5054608445",
+          "orcid": "https://orcid.org/0000-0002-6726-8699",
+          "institutions": [
+            "Instituto Tecnol\u00f3gico de Aeron\u00e1utica"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 Fernando Basso Brancalion",
+          "openalex_id": "A5059056431",
+          "orcid": "https://orcid.org/0000-0002-4387-0204",
+          "institutions": [
+            "Embraer (Brazil)"
+          ]
+        },
+        {
+          "name": "Marcos R. O. A. M\u00e1ximo",
+          "openalex_id": "A5019218502",
+          "orcid": "https://orcid.org/0000-0003-2944-4476",
+          "institutions": [
+            "Instituto Tecnol\u00f3gico de Aeron\u00e1utica"
+          ]
+        },
+        {
+          "name": "Davi Ant\u00f4nio dos Santos",
+          "openalex_id": "A5035021973",
+          "orcid": "https://orcid.org/0000-0001-5995-3103",
+          "institutions": [
+            "Instituto Tecnol\u00f3gico de Aeron\u00e1utica"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "The ability of multiple manned and unmanned aircraft systems to cooperatively engage and disable an aerial threat plays a decisive role in modern warfare scenarios. In this paper, we apply key methods to enable the so-called cooperative threat engagement capability among multiple networked agents, e.g., a swarm of drones, with combat and communication capabilities. In particular, this research combines AI-based decision-making and control techniques for a swarm of loyal wingman drones to coordinate efficient defense actions in a cooperative and autonomous manner. We apply these concepts in a defense scenario that is modeled to analyze the loyal wingman concept, which we consider an interesting testbed for cooperative decision-making and low-level control techniques. The investigated methods were implemented in a realistic 3D UAV simulator for demonstration and evaluation.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/10005208/10025744.pdf"
+      },
+      "topics": [
+        "Guidance and Control Systems",
+        "Distributed Control Multi-Agent Systems",
+        "Robotic Path Planning Algorithms"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W4319988671"
+    },
+    {
+      "openalex_id": "W3194620979",
+      "doi": "10.1109/jsac.2022.3156632",
+      "title": "Integrated Sensing and Communications: Toward Dual-Functional Wireless Networks for 6G and Beyond",
+      "authors": [
+        {
+          "name": "Fan Liu",
+          "openalex_id": "A5100371038",
+          "orcid": "https://orcid.org/0000-0002-5299-9317",
+          "institutions": [
+            "Southern University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Yuanhao Cui",
+          "openalex_id": "A5102974426",
+          "orcid": "https://orcid.org/0000-0001-6323-8559",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Christos Masouros",
+          "openalex_id": "A5030334551",
+          "orcid": "https://orcid.org/0000-0002-8259-6615",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Jie Xu",
+          "openalex_id": "A5008162410",
+          "orcid": "https://orcid.org/0000-0002-4854-8839",
+          "institutions": [
+            "Chinese University of Hong Kong, Shenzhen"
+          ]
+        },
+        {
+          "name": "Tony Xiao Han",
+          "openalex_id": "A5112456575",
+          "institutions": [
+            "Huawei Technologies (China)"
+          ]
+        },
+        {
+          "name": "Yonina C. Eldar",
+          "openalex_id": "A5005913897",
+          "orcid": "https://orcid.org/0000-0003-4358-5304",
+          "institutions": [
+            "Weizmann Institute of Science"
+          ]
+        },
+        {
+          "name": "Stefano Buzzi",
+          "openalex_id": "A5013919815",
+          "orcid": "https://orcid.org/0000-0003-0046-8968",
+          "institutions": [
+            "Consorzio Nazionale Interuniversitario per le Telecomunicazioni",
+            "Universit\u00e0 degli studi di Cassino e del Lazio Meridionale"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-17",
+      "abstract": "As the standardization of 5G solidifies, researchers are speculating what 6G will be. The integration of sensing functionality is emerging as a key feature of the 6G Radio Access Network (RAN), allowing for the exploitation of dense cell infrastructures to construct a perceptive network. In this IEEE Journal on Selected Areas in Communications (JSAC) Special Issue overview, we provide a comprehensive review on the background, range of key applications and state-of-the-art approaches of Integrated Sensing and Communications (ISAC). We commence by discussing the interplay between sensing and communications (S&C) from a historical point of view, and then consider the multiple facets of ISAC and the resulting performance gains. By introducing both ongoing and potential use cases, we shed light on the industrial progress and standardization activities related to ISAC. We analyze a number of performance tradeoffs between S&C, spanning from information theoretical limits to physical layer performance tradeoffs, and the cross-layer design tradeoffs. Next, we discuss the signal processing aspects of ISAC, namely ISAC waveform design and receive signal processing. As a step further, we provide our vision on the deeper integration between S&C within the framework of perceptive networks, where the two functionalities are expected to mutually assist each other, i.e., via communication-assisted sensing and sensing-assisted communications. Finally, we identify the potential integration of ISAC with other emerging communication technologies, and their positive impacts on the future of wireless networks.",
+      "cited_by_count": 2470,
+      "type": "article",
+      "source": {
+        "name": "IEEE Journal on Selected Areas in Communications",
+        "type": "journal",
+        "issn": [
+          "0733-8716",
+          "1558-0008"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/49/9776000/09737357.pdf"
+      },
+      "topics": [
+        "Indoor and Outdoor Localization Technologies",
+        "Advanced Wireless Communication Technologies",
+        "Full-Duplex Wireless Communications"
+      ],
+      "referenced_works_count": 243,
+      "url": "https://openalex.org/W3194620979"
+    },
+    {
+      "openalex_id": "W4360620450",
+      "doi": "10.1016/j.ijinfomgt.2023.102642",
+      "title": "Opinion Paper: \u201cSo what if ChatGPT wrote it?\u201d Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "authors": [
+        {
+          "name": "Yogesh K. Dwivedi",
+          "openalex_id": "A5048622877",
+          "orcid": "https://orcid.org/0000-0002-5547-9990",
+          "institutions": [
+            "Swansea University",
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "Nir Kshetri",
+          "openalex_id": "A5025481201",
+          "orcid": "https://orcid.org/0000-0002-1408-4212",
+          "institutions": [
+            "University of North Carolina at Greensboro"
+          ]
+        },
+        {
+          "name": "Laurie Hughes",
+          "openalex_id": "A5072512285",
+          "orcid": "https://orcid.org/0000-0002-0956-0608",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Emma Slade",
+          "openalex_id": "A5081524121",
+          "orcid": "https://orcid.org/0000-0001-7648-6383",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Anand Jeyaraj",
+          "openalex_id": "A5057695278",
+          "orcid": "https://orcid.org/0000-0003-3691-881X",
+          "institutions": [
+            "Wright State University"
+          ]
+        },
+        {
+          "name": "Arpan Kumar Kar",
+          "openalex_id": "A5061235109",
+          "orcid": "https://orcid.org/0000-0003-4186-4887",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Abdullah M. Baabdullah",
+          "openalex_id": "A5017453435",
+          "institutions": [
+            "King Abdulaziz University"
+          ]
+        },
+        {
+          "name": "Alex Koohang",
+          "openalex_id": "A5008571658",
+          "orcid": "https://orcid.org/0000-0002-4565-0408",
+          "institutions": [
+            "Georgia State University",
+            "Middle Georgia State College"
+          ]
+        },
+        {
+          "name": "Vishnupriya Raghavan",
+          "openalex_id": "A5050603102",
+          "institutions": [
+            "NIIT (India)"
+          ]
+        },
+        {
+          "name": "Manju Ahuja",
+          "openalex_id": "A5018408477",
+          "orcid": "https://orcid.org/0000-0002-1791-5106",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Hanaa Albanna",
+          "openalex_id": "A5078874795",
+          "institutions": [
+            "Northumbria University"
+          ]
+        },
+        {
+          "name": "Mousa Ahmad Albashrawi",
+          "openalex_id": "A5019826465",
+          "institutions": [
+            "King Fahd University of Petroleum and Minerals"
+          ]
+        },
+        {
+          "name": "Adil S. Al-Busaidi",
+          "openalex_id": "A5057159975",
+          "orcid": "https://orcid.org/0000-0002-0959-7419",
+          "institutions": [
+            "Sultan Qaboos University"
+          ]
+        },
+        {
+          "name": "Janarthanan Balakrishnan",
+          "openalex_id": "A5033683059",
+          "orcid": "https://orcid.org/0000-0003-2456-2617",
+          "institutions": [
+            "National Institute of Technology Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Yves Barlette",
+          "openalex_id": "A5041516869",
+          "orcid": "https://orcid.org/0000-0001-6106-7274",
+          "institutions": [
+            "Montpellier Business School"
+          ]
+        },
+        {
+          "name": "Sriparna Basu",
+          "openalex_id": "A5056774275",
+          "orcid": "https://orcid.org/0000-0001-7924-8153",
+          "institutions": [
+            "Fore School of Management"
+          ]
+        },
+        {
+          "name": "Indranil Bose",
+          "openalex_id": "A5045996720",
+          "orcid": "https://orcid.org/0000-0002-5737-966X",
+          "institutions": [
+            "Indian Institute of Management Ahmedabad"
+          ]
+        },
+        {
+          "name": "Laurence Brooks",
+          "openalex_id": "A5049268821",
+          "orcid": "https://orcid.org/0000-0002-5456-8799",
+          "institutions": [
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Dimitrios Buhalis",
+          "openalex_id": "A5068663980",
+          "orcid": "https://orcid.org/0000-0001-9148-6090",
+          "institutions": [
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Lemuria Carter",
+          "openalex_id": "A5067377847",
+          "orcid": "https://orcid.org/0000-0002-2364-3100",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Soumyadeb Chowdhury",
+          "openalex_id": "A5067653484",
+          "orcid": "https://orcid.org/0000-0002-8074-248X",
+          "institutions": [
+            "\u00c9cole Sup\u00e9rieure de Commerce de Toulouse"
+          ]
+        },
+        {
+          "name": "Tom Crick",
+          "openalex_id": "A5015452463",
+          "orcid": "https://orcid.org/0000-0001-5196-9389",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Scott W. Cunningham",
+          "openalex_id": "A5000045142",
+          "orcid": "https://orcid.org/0000-0001-7140-916X",
+          "institutions": [
+            "University of Reading",
+            "Worcester Polytechnic Institute",
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Strathclyde",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Gareth H. Davies",
+          "openalex_id": "A5104108927",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Robert M. Davison",
+          "openalex_id": "A5006120288",
+          "orcid": "https://orcid.org/0000-0002-7243-3521",
+          "institutions": [
+            "Indian Institute of Management Bangalore",
+            "City University of Hong Kong",
+            "Universidad de Zaragoza"
+          ]
+        },
+        {
+          "name": "Rahul D\u00e9",
+          "openalex_id": "A5113796817",
+          "orcid": "https://orcid.org/0000-0002-1300-1438",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Denis Dennehy",
+          "openalex_id": "A5083528596",
+          "orcid": "https://orcid.org/0000-0001-9931-762X",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Yanqing Duan",
+          "openalex_id": "A5032994640",
+          "orcid": "https://orcid.org/0000-0003-4205-7403",
+          "institutions": [
+            "Bournemouth University",
+            "University of Bedfordshire",
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Rameshwar Dubey",
+          "openalex_id": "A5112902933",
+          "institutions": [
+            "University of Reading",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "Montpellier Business School",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Prin. L. N. Welingkar Institute of Management Development and Research",
+            "Swansea University",
+            "Bournemouth University",
+            "Liverpool John Moores University"
+          ]
+        },
+        {
+          "name": "Rohita Dwivedi",
+          "openalex_id": "A5070017829",
+          "orcid": "https://orcid.org/0000-0003-3801-3635",
+          "institutions": [
+            "Swansea University",
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "John S. Edwards",
+          "openalex_id": "A5007695310",
+          "orcid": "https://orcid.org/0000-0003-3979-017X",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Bournemouth University",
+            "Swansea University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Reading",
+            "Aston University",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Carlos Flavi\u00e1n",
+          "openalex_id": "A5044113079",
+          "orcid": "https://orcid.org/0000-0001-7118-9013",
+          "institutions": [
+            "Bournemouth University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "Universidad de Zaragoza",
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Robin Gauld",
+          "openalex_id": "A5065964282",
+          "orcid": "https://orcid.org/0000-0001-5401-1192",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Reading",
+            "Worcester Polytechnic Institute",
+            "University of Otago",
+            "University of Sheffield",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Varun Grover",
+          "openalex_id": "A5103134481",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University",
+            "University of Arkansas at Fayetteville",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Mei\u2010Chih Hu",
+          "openalex_id": "A5112818613",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Marijn Janssen",
+          "openalex_id": "A5062073470",
+          "orcid": "https://orcid.org/0000-0001-6211-8790",
+          "institutions": [
+            "University of Sheffield",
+            "College of Charleston",
+            "Worcester Polytechnic Institute",
+            "Swansea University",
+            "Bournemouth University",
+            "University of Reading",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Paul Jones",
+          "openalex_id": "A5080152304",
+          "orcid": "https://orcid.org/0000-0003-0417-9143",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Iris Junglas",
+          "openalex_id": "A5001364826",
+          "orcid": "https://orcid.org/0000-0002-2914-3879",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Sangeeta Khorana",
+          "openalex_id": "A5086148004",
+          "orcid": "https://orcid.org/0000-0001-8901-0050",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Sascha Kraus",
+          "openalex_id": "A5075871949",
+          "orcid": "https://orcid.org/0000-0002-3721-1122",
+          "institutions": [
+            "Bournemouth University",
+            "Free University of Bozen-Bolzano",
+            "College of Charleston",
+            "University of Johannesburg",
+            "University of Otago"
+          ]
+        },
+        {
+          "name": "Kai R. Larsen",
+          "openalex_id": "A5075496480",
+          "orcid": "https://orcid.org/0000-0002-8812-9866",
+          "institutions": [
+            "Swansea University",
+            "University of Colorado Boulder",
+            "University of Arkansas at Fayetteville",
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute",
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Paul Latreille",
+          "openalex_id": "A5109602539",
+          "orcid": "https://orcid.org/0000-0001-7685-6532",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Sheffield",
+            "University of Reading",
+            "Swansea University",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Sven Laumer",
+          "openalex_id": "A5107936554",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Tegwen Malik",
+          "openalex_id": "A5090009163",
+          "orcid": "https://orcid.org/0000-0003-4315-5726",
+          "institutions": [
+            "Newcastle University",
+            "SKEMA Business School",
+            "University of Manchester",
+            "University of Central Florida",
+            "Microsoft (United States)",
+            "AGH University of Krakow",
+            "University of Agder",
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Abbas Mardani",
+          "openalex_id": "A5033150664",
+          "orcid": "https://orcid.org/0000-0003-1010-3655",
+          "institutions": [
+            "Bournemouth University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Reading",
+            "Swansea University",
+            "Worcester Polytechnic Institute",
+            "College of Charleston",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Marcello Mariani",
+          "openalex_id": "A5108091448",
+          "institutions": [
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Reading",
+            "University of Sheffield",
+            "Bournemouth University",
+            "College of Charleston",
+            "University of Bologna",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Sunil Mithas",
+          "openalex_id": "A5086635152",
+          "orcid": "https://orcid.org/0000-0002-2182-6202",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Swansea University",
+            "University of Sheffield",
+            "College of Charleston",
+            "Worcester Polytechnic Institute",
+            "University of South Florida",
+            "University of Reading",
+            "University of Otago",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Emmanuel Mogaji",
+          "openalex_id": "A5082000265",
+          "orcid": "https://orcid.org/0000-0003-0544-4842",
+          "institutions": [
+            "University of Greenwich",
+            "University of Arkansas at Fayetteville",
+            "Oklahoma State University"
+          ]
+        },
+        {
+          "name": "Jeretta Horn Nord",
+          "openalex_id": "A5070124847",
+          "orcid": "https://orcid.org/0000-0001-7590-9022",
+          "institutions": [
+            "College of Charleston",
+            "Indian Institute of Management Bangalore",
+            "City University of Hong Kong",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Siobh\u00e1n O\u2019Connor",
+          "openalex_id": "A5067043429",
+          "orcid": "https://orcid.org/0000-0001-8579-1718",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Fevzi Okumus",
+          "openalex_id": "A5114045132",
+          "institutions": [
+            "Newcastle University",
+            "Microsoft (United States)",
+            "College of Charleston",
+            "SKEMA Business School",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "University of Central Florida",
+            "University of Agder",
+            "Bournemouth University",
+            "University of Reading",
+            "AGH University of Krakow",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg"
+          ]
+        },
+        {
+          "name": "Margherita Pagani",
+          "openalex_id": "A5074068450",
+          "orcid": "https://orcid.org/0000-0002-4269-9409",
+          "institutions": [
+            "SKEMA Business School"
+          ]
+        },
+        {
+          "name": "Neeraj Pandey",
+          "openalex_id": "A5035078504",
+          "orcid": "https://orcid.org/0000-0002-6238-6397",
+          "institutions": [
+            "University of Johannesburg",
+            "Free University of Bozen-Bolzano",
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Savvas Papagiannidis",
+          "openalex_id": "A5006679927",
+          "orcid": "https://orcid.org/0000-0003-0799-491X",
+          "institutions": [
+            "Bournemouth University",
+            "Aston University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Ilias O. Pappas",
+          "openalex_id": "A5080505347",
+          "orcid": "https://orcid.org/0000-0001-7528-3488",
+          "institutions": [
+            "Free University of Bozen-Bolzano",
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Nishith Pathak",
+          "openalex_id": "A5108072182",
+          "institutions": [
+            "National Tsing Hua University",
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Jan Pries\u2010Heje",
+          "openalex_id": "A5074257477",
+          "orcid": "https://orcid.org/0000-0003-2219-9332",
+          "institutions": [
+            "National Institute of Technology Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Ramakrishnan Raman",
+          "openalex_id": "A5072261829",
+          "orcid": "https://orcid.org/0000-0003-3642-6989",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Nripendra P. Rana",
+          "openalex_id": "A5034248834",
+          "orcid": "https://orcid.org/0000-0003-1105-8729",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Sven\u2010Volker Rehm",
+          "openalex_id": "A5011882746",
+          "orcid": "https://orcid.org/0000-0002-9785-6707",
+          "institutions": [
+            "Humans and management in society"
+          ]
+        },
+        {
+          "name": "Samuel Ribeiro\u2010Navarrete",
+          "openalex_id": "A5006215958",
+          "orcid": "https://orcid.org/0000-0003-1046-5322",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Swansea University",
+            "University of Sheffield",
+            "University of Reading",
+            "Bournemouth University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Alexander Richter",
+          "openalex_id": "A5061717541",
+          "orcid": "https://orcid.org/0000-0002-3699-6466",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Frantz Rowe",
+          "openalex_id": "A5056984467",
+          "orcid": "https://orcid.org/0000-0001-8520-1570",
+          "institutions": [
+            "Laboratoire d'Economie et de Management de Nantes Atlantique"
+          ]
+        },
+        {
+          "name": "Suprateek Sarker",
+          "openalex_id": "A5060897112",
+          "orcid": "https://orcid.org/0000-0002-8079-3121",
+          "institutions": [
+            "University of Reading",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute",
+            "University of Sheffield",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Bernd Carsten Stahl",
+          "openalex_id": "A5042194412",
+          "orcid": "https://orcid.org/0000-0002-4058-4456",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston",
+            "Swansea University",
+            "Worcester Polytechnic Institute",
+            "Universidad de Zaragoza",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Sheffield",
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Manoj Tiwari",
+          "openalex_id": "A5101785022",
+          "orcid": "https://orcid.org/0000-0001-8949-0330",
+          "institutions": [
+            "Bournemouth University",
+            "Swansea University",
+            "University of Sheffield",
+            "College of Charleston",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg"
+          ]
+        },
+        {
+          "name": "Wil van der Aalst",
+          "openalex_id": "A5114045133",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Swansea University",
+            "College of Charleston",
+            "Delft University of Technology",
+            "University of Reading",
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Viswanath Venkatesh",
+          "openalex_id": "A5108144975",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Giampaolo Viglia",
+          "openalex_id": "A5065568454",
+          "orcid": "https://orcid.org/0000-0001-8521-4988",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Michael Wade",
+          "openalex_id": "A5008575290",
+          "orcid": "https://orcid.org/0000-0002-0829-7422",
+          "institutions": [
+            "Prin. L. N. Welingkar Institute of Management Development and Research",
+            "Montpellier Business School",
+            "Liverpool John Moores University"
+          ]
+        },
+        {
+          "name": "Paul Walton",
+          "openalex_id": "A5109157215",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Jochen Wirtz",
+          "openalex_id": "A5064998398",
+          "orcid": "https://orcid.org/0000-0002-6297-4498",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Ryan Wright",
+          "openalex_id": "A5060691228",
+          "orcid": "https://orcid.org/0000-0002-9719-415X",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-11",
+      "abstract": null,
+      "cited_by_count": 3089,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Information Management",
+        "type": "journal",
+        "issn": [
+          "0268-4012",
+          "1873-4707"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://linkinghub.elsevier.com/science/article/pii/S0268401223000233/pdfft?md5=492895056a2fa29b1cb81876a1c57544&pid=1-s2.0-S0268401223000233-main.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI in Service Interactions",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 265,
+      "url": "https://openalex.org/W4360620450"
+    },
+    {
+      "openalex_id": "W4412727357",
+      "doi": "10.3390/healthcare13141642",
+      "title": "Exploring the Role of Artificial Intelligence in Smart Healthcare: A Capability and Function-Oriented Review",
+      "authors": [
+        {
+          "name": "Shabbar Abbas",
+          "openalex_id": "A5078088956",
+          "orcid": "https://orcid.org/0000-0003-3435-1266",
+          "institutions": [
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Hyunjin seol",
+          "openalex_id": "A5001596879",
+          "institutions": [
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Zeeshan Abbas",
+          "openalex_id": "A5069825308",
+          "orcid": "https://orcid.org/0000-0003-1472-183X",
+          "institutions": [
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Seung Won Lee",
+          "openalex_id": "A5100375645",
+          "orcid": "https://orcid.org/0000-0001-5632-5208",
+          "institutions": [
+            "Kangbuk Samsung Hospital",
+            "Sungkyunkwan University"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-07-08",
+      "abstract": "Artificial Intelligence (AI) is transforming smart healthcare by enhancing diagnostic precision, automating clinical workflows, and enabling personalized treatment strategies. This review explores the current landscape of AI in healthcare from two key perspectives: capability types (e.g., Narrow AI and AGI) and functional architectures (e.g., Limited Memory and Theory of Mind). Based on capabilities, most AI systems today are categorized as Narrow AI, performing specific tasks such as medical image analysis and risk prediction with high accuracy. More advanced forms like General Artificial Intelligence (AGI) and Superintelligent AI remain theoretical but hold transformative potential. From a functional standpoint, Limited Memory AI dominates clinical applications by learning from historical patient data to inform decision-making. Reactive systems are used in rule-based alerts, while Theory of Mind (ToM) and Self-Aware AI remain conceptual stages for future development. This dual perspective provides a comprehensive framework to assess the maturity, impact, and future direction of AI in healthcare. It also highlights the need for ethical design, transparency, and regulation as AI systems grow more complex and autonomous, by incorporating cross-domain AI insights. Moreover, we evaluate the viability of developing AGI in regionally specific legal and regulatory frameworks, using South Korea as a case study to emphasize the limitations imposed by infrastructural preparedness and medical data governance regulations.",
+      "cited_by_count": 14,
+      "type": "review",
+      "source": {
+        "name": "Healthcare",
+        "type": "journal",
+        "issn": [
+          "2227-9032"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2227-9032/13/14/1642/pdf"
+      },
+      "topics": [
+        "Impact of AI and Big Data on Business and Society",
+        "Organizational and Employee Performance",
+        "Healthcare Systems and Public Health"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W4412727357"
+    },
+    {
+      "openalex_id": "W4390671376",
+      "doi": "10.1007/s00773-023-00979-w",
+      "title": "Autonomous navigation of marine surface vessel in extreme encounter situation",
+      "authors": [
+        {
+          "name": "Wei Guan",
+          "openalex_id": "A5034190782",
+          "orcid": "https://orcid.org/0000-0001-6561-6349",
+          "institutions": [
+            "Dalian Maritime University"
+          ]
+        },
+        {
+          "name": "Husheng Han",
+          "openalex_id": "A5055782346",
+          "orcid": "https://orcid.org/0000-0003-0873-3471",
+          "institutions": [
+            "Dalian Maritime University"
+          ]
+        },
+        {
+          "name": "Zhewen Cui",
+          "openalex_id": "A5008973743",
+          "orcid": "https://orcid.org/0000-0003-1301-4252",
+          "institutions": [
+            "Dalian Maritime University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-08",
+      "abstract": null,
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Journal of Marine Science and Technology",
+        "type": "journal",
+        "issn": [
+          "0948-4280",
+          "1437-8213"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Maritime Navigation and Safety",
+        "Maritime Security and History",
+        "Maritime Ports and Logistics"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W4390671376"
+    },
+    {
+      "openalex_id": "W4220927605",
+      "doi": "10.23919/jcc.2022.03.002",
+      "title": "Intelligent decision making framework for 6G network",
+      "authors": [
+        {
+          "name": "Hu Zheng",
+          "openalex_id": "A5101802064",
+          "orcid": "https://orcid.org/0000-0001-6055-7239",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Ping Zhang",
+          "openalex_id": "A5100405787",
+          "orcid": "https://orcid.org/0000-0002-0269-104X",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Chunhong Zhang",
+          "openalex_id": "A5100633256",
+          "orcid": "https://orcid.org/0000-0001-6068-8140"
+        },
+        {
+          "name": "Benhui Zhuang",
+          "openalex_id": "A5041871065",
+          "orcid": "https://orcid.org/0000-0002-5062-2460",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Jianhua Zhang",
+          "openalex_id": "A5100434769",
+          "orcid": "https://orcid.org/0000-0002-6492-3846",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Shangjing Lin",
+          "openalex_id": "A5102737694",
+          "orcid": "https://orcid.org/0000-0002-2029-4857",
+          "institutions": [
+            "Beijing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Tao Sun",
+          "openalex_id": "A5050691990",
+          "orcid": "https://orcid.org/0000-0002-3781-0707",
+          "institutions": [
+            "China Mobile (China)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-01",
+      "abstract": "Sixth Generation (6G) wireless communication network has been expected to provide global coverage, enhanced spectral efficiency, and AI(Artificial Intelligence)-native intelligence, etc. To meet these requirements, the computational concept of Decision-Making of cognition intelligence, its implementation framework adapting to foreseen innovations on networks and services, and its empirical evaluations are key techniques to guarantee the generation-agnostic intelligence evolution of wireless communication networks. In this paper, we propose an Intelligent Decision Making (IDM) framework, acting as the role of network brain, based on Reinforcement Learning modelling philosophy to empower autonomous intelligence evolution capability to 6G network. Besides, usage scenarios and simulation demonstrate the generality and efficiency of IDM. We hope that some of the ideas of IDM will assist the research of 6G network in a new or different light.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "China Communications",
+        "type": "journal",
+        "issn": [
+          "1673-5447"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Advanced Wireless Communication Technologies",
+        "Cooperative Communication and Network Coding",
+        "Advanced MIMO Systems Optimization"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4220927605"
+    },
+    {
+      "openalex_id": "W4286276003",
+      "doi": "10.3390/sci4030026",
+      "title": "Ten Years of Industrie 4.0",
+      "authors": [
+        {
+          "name": "Henning Kagermann",
+          "openalex_id": "A5109340304",
+          "institutions": [
+            "Acatech"
+          ]
+        },
+        {
+          "name": "Wolfgang Wahlster",
+          "openalex_id": "A5039754369",
+          "orcid": "https://orcid.org/0000-0002-8785-5567",
+          "institutions": [
+            "German Research Centre for Artificial Intelligence"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-28",
+      "abstract": "A decade after its introduction, Industrie 4.0 has been established globally as the dominant paradigm for the digital transformation of the manufacturing industry. Amalgamating research-based results and practical experience from the German industry, this contribution reviews the progress made in implementing Industrie 4.0 and identifies future fields of action from a technological and application-oriented perspective. Putting the human in the center, Industrie 4.0 is the basis for data-based value creation, innovative business models, and agile forms of organization. Today, in the German manufacturing industry, the Internet of Things and cyber\u2013physical production systems are a reality in newly built factories, and the connectivity of machinery has been significantly increased in existing factories. Now, the trends of industrial AI, edge computing up to the edge cloud, 5G in the factory, team robotics, autonomous intralogistics systems, and trustworthy data infrastructures must be leveraged to strengthen resilience, sovereignty, semantic interoperability, and sustainability. This enables the creation of digital innovation ecosystems that ensure long-term adaptability in a volatile economic and geopolitical environment. In sum, this review represents a comprehensive assessment of the status quo and identifies what is needed in the future to reap the rewards of the groundwork done in the first ten years of Industrie 4.0.",
+      "cited_by_count": 874,
+      "type": "article",
+      "source": {
+        "name": "Sci",
+        "type": "journal",
+        "issn": [
+          "2413-4155"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2413-4155/4/3/26/pdf?version=1657277121"
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "Blockchain Technology Applications and Security",
+        "Flexible and Reconfigurable Manufacturing Systems"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W4286276003"
+    },
+    {
+      "openalex_id": "W4321180431",
+      "doi": "10.1016/j.istruc.2023.02.042",
+      "title": "ASR crack identification in bridges using deep learning and texture analysis",
+      "authors": [
+        {
+          "name": "Andy Nguy\u1ec5n",
+          "openalex_id": "A5030571478",
+          "orcid": "https://orcid.org/0000-0001-8739-8207",
+          "institutions": [
+            "University of Southern Queensland"
+          ]
+        },
+        {
+          "name": "Vahidreza Gharehbaghi",
+          "openalex_id": "A5009611594",
+          "orcid": "https://orcid.org/0000-0002-6831-313X",
+          "institutions": [
+            "University of Kansas"
+          ]
+        },
+        {
+          "name": "Ngoc Thach Le",
+          "openalex_id": "A5042094599",
+          "orcid": "https://orcid.org/0000-0001-8477-5222",
+          "institutions": [
+            "Hanoi University"
+          ]
+        },
+        {
+          "name": "Lucinda Sterling",
+          "openalex_id": "A5071119533"
+        },
+        {
+          "name": "Umar Inayat Chaudhry",
+          "openalex_id": "A5067941819"
+        },
+        {
+          "name": "Shane Crawford",
+          "openalex_id": "A5076622901",
+          "orcid": "https://orcid.org/0000-0002-7588-5283"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-02-17",
+      "abstract": "Alkali-Silica Reaction (ASR), commonly known as 'concrete cancer,' is an expansive reaction occurring over time between aggregate constituents and alkaline hydroxides from cement. As a destructive phenomenon, the need to detect the onset of ASR in concrete structures to ensure their long-term durability and structural integrity is thus evidenced. In the structural health monitoring field, vision-based approaches have been found to be viable, fast, and cost-effective in diagnosing numerous types of cracks using physical attributes and surface patterns. However, achieving high accuracy in detecting ASR cracks using traditional visual inspection techniques is challenging and time-consuming. Inspired by artificial intelligence technology, this paper proposes and evaluates a two-phase computer vision procedure for detecting and classifying ASR cracks utilizing a collection of ASR images recorded from several bridges in Queensland, Australia. In the first phase, the procedure compares common pre-trained CNN models to investigate their capability in classifying ASR cracks and to select the best-performed model. In the second phase, a novel Feature Enhancement Process (FEP) was first proposed to increase the contrast between ASR cracks and the heavily textured backgrounds within the images. Next, to better highlight the ASR crack features, the feature-adjusted images are processed further through different texture analysis algorithms including: (i) Texture Morphology, (ii) Adaptive thresholding, and (iii) Local range filtering. The study shows that the proposed FEP can improve the ASR crack classification accuracy of InceptionV3, which is the best CNN model selected from Phase 1, from 90.9% to 92.48%. Furthermore, by combining FEP with texture morphology, a robust two-stage tool for assessing ASR cracks can be made with an impressive validation accuracy of 94.07%. This research contributes towards the application of novel AI deep learning technology in providing cost-effective autonomous ASR crack classification tools to support the owners and managers of civil public works assets and other constructed infrastructures.",
+      "cited_by_count": 31,
+      "type": "article",
+      "source": {
+        "name": "Structures",
+        "type": "journal",
+        "issn": [
+          "2352-0124"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.istruc.2023.02.042"
+      },
+      "topics": [
+        "Infrastructure Maintenance and Monitoring",
+        "Concrete Corrosion and Durability",
+        "Non-Destructive Testing Techniques"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W4321180431"
+    },
+    {
+      "openalex_id": "W4220655782",
+      "doi": "10.1016/j.envint.2022.107199",
+      "title": "Discovery and quantification of plastic particle pollution in human blood",
+      "authors": [
+        {
+          "name": "H.A. Leslie",
+          "openalex_id": "A5108427026",
+          "orcid": "https://orcid.org/0009-0005-6069-0722",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Martin J. M. van Velzen",
+          "openalex_id": "A5111895807",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Sicco H. Brandsma",
+          "openalex_id": "A5025140867",
+          "orcid": "https://orcid.org/0000-0003-4188-4730",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "D. Vethaak",
+          "openalex_id": "A5019197435",
+          "orcid": "https://orcid.org/0000-0001-9717-0919",
+          "institutions": [
+            "Deltares",
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Juan J. Garc\u00eda\u2010Vallejo",
+          "openalex_id": "A5013242801",
+          "orcid": "https://orcid.org/0000-0001-6238-7069",
+          "institutions": [
+            "Amsterdam University Medical Centers"
+          ]
+        },
+        {
+          "name": "M.H. Lamoree",
+          "openalex_id": "A5091859787",
+          "orcid": "https://orcid.org/0000-0002-7373-7738",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-24",
+      "abstract": null,
+      "cited_by_count": 3100,
+      "type": "article",
+      "source": {
+        "name": "Environment International",
+        "type": "journal",
+        "issn": [
+          "0160-4120",
+          "1873-6750"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0160412022001258-ga1_lrg.jpg"
+      },
+      "topics": [
+        "Microplastics and Plastic Pollution",
+        "Recycling and Waste Management Techniques",
+        "Municipal Solid Waste Management"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W4220655782"
+    },
+    {
+      "openalex_id": "W4386958277",
+      "doi": "10.1186/s12909-023-04698-z",
+      "title": "Revolutionizing healthcare: the role of artificial intelligence in clinical practice",
+      "authors": [
+        {
+          "name": "Shuroug A. Alowais",
+          "openalex_id": "A5005352524",
+          "orcid": "https://orcid.org/0000-0002-3266-5774"
+        },
+        {
+          "name": "Sahar S. Alghamdi",
+          "openalex_id": "A5050298886",
+          "orcid": "https://orcid.org/0000-0002-2770-218X",
+          "institutions": [
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Nada Alsuhebany",
+          "openalex_id": "A5081991977",
+          "orcid": "https://orcid.org/0000-0003-4077-4521",
+          "institutions": [
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City",
+            "King Abdullah International Medical Research Center"
+          ]
+        },
+        {
+          "name": "Tariq Alqahtani",
+          "openalex_id": "A5066001851",
+          "orcid": "https://orcid.org/0009-0007-1094-6835",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City",
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences"
+          ]
+        },
+        {
+          "name": "Abdulrahman Alshaya",
+          "openalex_id": "A5020760203",
+          "orcid": "https://orcid.org/0000-0002-5262-5841",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Sumaya N. Almohareb",
+          "openalex_id": "A5084394960",
+          "orcid": "https://orcid.org/0000-0003-3392-8369",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City",
+            "King Abdullah International Medical Research Center"
+          ]
+        },
+        {
+          "name": "Atheer Aldairem",
+          "openalex_id": "A5086178563",
+          "orcid": "https://orcid.org/0009-0001-0924-4672",
+          "institutions": [
+            "King Abdullah International Medical Research Center",
+            "National Guard Health Affairs",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Mohammed Alrashed",
+          "openalex_id": "A5069678285",
+          "orcid": "https://orcid.org/0000-0002-5203-8962",
+          "institutions": [
+            "King Abdullah International Medical Research Center",
+            "National Guard Health Affairs",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Khalid Bin Saleh",
+          "openalex_id": "A5112910027",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City",
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences"
+          ]
+        },
+        {
+          "name": "Hisham A. Badreldin",
+          "openalex_id": "A5088912799",
+          "orcid": "https://orcid.org/0000-0001-7182-4347",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdullah International Medical Research Center"
+          ]
+        },
+        {
+          "name": "Majed S. Al Yami",
+          "openalex_id": "A5005774540",
+          "orcid": "https://orcid.org/0000-0003-2308-8407",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdullah International Medical Research Center",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Shmeylan Al Harbi",
+          "openalex_id": "A5017442221",
+          "orcid": "https://orcid.org/0000-0003-4437-8761",
+          "institutions": [
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdullah International Medical Research Center",
+            "King Abdulaziz Medical City",
+            "National Guard Health Affairs"
+          ]
+        },
+        {
+          "name": "Abdulkareem Albekairy",
+          "openalex_id": "A5103246868",
+          "orcid": "https://orcid.org/0000-0002-0205-6484",
+          "institutions": [
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City",
+            "National Guard Health Affairs"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-22",
+      "abstract": "Abstract Introduction Healthcare systems are complex and challenging for all stakeholders, but artificial intelligence (AI) has transformed various fields, including healthcare, with the potential to improve patient care and quality of life. Rapid AI advancements can revolutionize healthcare by integrating it into clinical practice. Reporting AI\u2019s role in clinical practice is crucial for successful implementation by equipping healthcare providers with essential knowledge and tools. Research Significance This review article provides a comprehensive and up-to-date overview of the current state of AI in clinical practice, including its potential applications in disease diagnosis, treatment recommendations, and patient engagement. It also discusses the associated challenges, covering ethical and legal considerations and the need for human expertise. By doing so, it enhances understanding of AI\u2019s significance in healthcare and supports healthcare organizations in effectively adopting AI technologies. Materials and Methods The current investigation analyzed the use of AI in the healthcare system with a comprehensive review of relevant indexed literature, such as PubMed/Medline, Scopus, and EMBASE, with no time constraints but limited to articles published in English. The focused question explores the impact of applying AI in healthcare settings and the potential outcomes of this application. Results Integrating AI into healthcare holds excellent potential for improving disease diagnosis, treatment selection, and clinical laboratory testing. AI tools can leverage large datasets and identify patterns to surpass human performance in several healthcare aspects. AI offers increased accuracy, reduced costs, and time savings while minimizing human errors. It can revolutionize personalized medicine, optimize medication dosages, enhance population health management, establish guidelines, provide virtual health assistants, support mental health care, improve patient education, and influence patient-physician trust. Conclusion AI can be used to diagnose diseases, develop personalized treatment plans, and assist clinicians with decision-making. Rather than simply automating tasks, AI is about developing technologies that can enhance patient care across healthcare settings. However, challenges related to data privacy, bias, and the need for human expertise must be addressed for the responsible and effective implementation of AI in healthcare.",
+      "cited_by_count": 2319,
+      "type": "review",
+      "source": {
+        "name": "BMC Medical Education",
+        "type": "journal",
+        "issn": [
+          "1472-6920"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmededuc.biomedcentral.com/counter/pdf/10.1186/s12909-023-04698-z"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics in Clinical Research",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 117,
+      "url": "https://openalex.org/W4386958277"
+    },
+    {
+      "openalex_id": "W4393065402",
+      "doi": "10.1007/s11704-024-40231-1",
+      "title": "A survey on large language model based autonomous agents",
+      "authors": [
+        {
+          "name": "Lei Wang",
+          "openalex_id": "A5101394605",
+          "orcid": "https://orcid.org/0009-0001-6108-9235",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Chen Ma",
+          "openalex_id": "A5100410908",
+          "orcid": "https://orcid.org/0000-0001-7933-9813",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Xueyang Feng",
+          "openalex_id": "A5101929118",
+          "orcid": "https://orcid.org/0000-0003-4426-5732",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Zeyu Zhang",
+          "openalex_id": "A5100358735",
+          "orcid": "https://orcid.org/0009-0006-2834-3007",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Hao Yang",
+          "openalex_id": "A5101551028",
+          "orcid": "https://orcid.org/0009-0008-5365-897X",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Jingsen Zhang",
+          "openalex_id": "A5101658564",
+          "orcid": "https://orcid.org/0000-0003-2997-3386",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Zhiyuan Chen",
+          "openalex_id": "A5070590692",
+          "orcid": "https://orcid.org/0000-0001-9897-8848",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Jiakai Tang",
+          "openalex_id": "A5043446092",
+          "orcid": "https://orcid.org/0000-0001-9543-8889",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Xu Chen",
+          "openalex_id": "A5100385692",
+          "orcid": "https://orcid.org/0000-0001-9943-6020",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Yankai Lin",
+          "openalex_id": "A5043098453",
+          "orcid": "https://orcid.org/0000-0002-0151-6178",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Wayne Xin Zhao",
+          "openalex_id": "A5037145565",
+          "orcid": "https://orcid.org/0000-0002-8333-6196",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Zhewei Wei",
+          "openalex_id": "A5074858555",
+          "orcid": "https://orcid.org/0000-0003-3620-5086",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        },
+        {
+          "name": "Ji-Rong Wen",
+          "openalex_id": "A5025631695",
+          "orcid": "https://orcid.org/0000-0002-9777-9676",
+          "institutions": [
+            "Renmin University of China"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-22",
+      "abstract": "Abstract Autonomous agents have long been a research focus in academic and industry communities. Previous research often focuses on training agents with limited knowledge within isolated environments, which diverges significantly from human learning processes, and makes the agents hard to achieve human-like decisions. Recently, through the acquisition of vast amounts of Web knowledge, large language models (LLMs) have shown potential in human-level intelligence, leading to a surge in research on LLM-based autonomous agents. In this paper, we present a comprehensive survey of these studies, delivering a systematic review of LLM-based autonomous agents from a holistic perspective. We first discuss the construction of LLM-based autonomous agents, proposing a unified framework that encompasses much of previous work. Then, we present a overview of the diverse applications of LLM-based autonomous agents in social science, natural science, and engineering. Finally, we delve into the evaluation strategies commonly used for LLM-based autonomous agents. Based on the previous studies, we also present several challenges and future directions in this field.",
+      "cited_by_count": 721,
+      "type": "article",
+      "source": {
+        "name": "Frontiers of Computer Science",
+        "type": "journal",
+        "issn": [
+          "2095-2228",
+          "2095-2236"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11704-024-40231-1.pdf"
+      },
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W4393065402"
+    },
+    {
+      "openalex_id": "W4286384699",
+      "doi": "10.52842/conf.caadria.2022.2.335",
+      "title": "Towards AI-Assisted Design Workflows for an Expanded Design Space",
+      "authors": [
+        {
+          "name": "Shermeen Yousif",
+          "openalex_id": "A5079087403",
+          "orcid": "https://orcid.org/0000-0003-4214-1023",
+          "institutions": [
+            "Florida Atlantic University"
+          ]
+        },
+        {
+          "name": "Emmanouil Vermisso",
+          "openalex_id": "A5002084962",
+          "orcid": "https://orcid.org/0000-0001-9116-8877",
+          "institutions": [
+            "Florida Atlantic University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "The scope of this paper is to formulate and evaluate the structure of a viable design workflow that combines a variety of computational tools and uses artificial intelligence (AI) to enhance the designer's capacity to explore design options within an expanded design space.In light of the autonomous and progressively postanthropocentric generative capability of recent AI strategies for architectural design, we are interested in investigating some of the challenges involved in the insertion of such AI strategies into a new generative design system, involving data curation and the placement of any AI-assisted model in the overall workflow, as well as its (AI's) reciprocity with other computational methods such as discrete assembly and agent-based modeling.The paper presents our interrogation of the proposed AI-assisted framework, demonstrated in experiments of formulating multiple design workflows following different strategies.The workflow strategies show that integrating AI networks into a framework with other computational tools affords a different kind of design exploration than other methods; the prospect of novel solutions is heavily dependent on the interconnectedness of such methods and the dataset curation process.Collectively, the work contributes to innovation in architectural education and practice through enhancing scientific research (in line with UN Sustainable Development Goal 9).",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the International Conference on Computer-Aided Architectural Design Research in Asia",
+        "type": "conference",
+        "issn": [
+          "2710-4257",
+          "2710-4265"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://papers.cumincad.org/data/works/att/caadria2022_503.pdf"
+      },
+      "topics": [
+        "3D Surveying and Cultural Heritage",
+        "Architecture and Computational Design",
+        "Design Education and Practice"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W4286384699"
+    },
+    {
+      "openalex_id": "W4221157996",
+      "doi": "10.48550/arxiv.2203.03397",
+      "title": "OverlapTransformer: An Efficient and Rotation-Invariant Transformer Network for LiDAR-Based Place Recognition",
+      "authors": [
+        {
+          "name": "Junyi Ma",
+          "openalex_id": "A5100686325",
+          "orcid": "https://orcid.org/0000-0003-3929-6040"
+        },
+        {
+          "name": "Jun Zhang",
+          "openalex_id": "A5100433246",
+          "orcid": "https://orcid.org/0000-0003-1017-7179"
+        },
+        {
+          "name": "Jintao Xu",
+          "openalex_id": "A5115076555",
+          "orcid": "https://orcid.org/0009-0001-9365-9562"
+        },
+        {
+          "name": "Rui Ai",
+          "openalex_id": "A5024843870",
+          "orcid": "https://orcid.org/0000-0002-3224-008X"
+        },
+        {
+          "name": "Weihao Gu",
+          "openalex_id": "A5058160528"
+        },
+        {
+          "name": "Cyrill Stachniss",
+          "openalex_id": "A5011166267",
+          "orcid": "https://orcid.org/0000-0003-1173-6972"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-07",
+      "abstract": "Place recognition is an important capability for autonomously navigating vehicles operating in complex environments and under changing conditions. It is a key component for tasks such as loop closing in SLAM or global localization. In this paper, we address the problem of place recognition based on 3D LiDAR scans recorded by an autonomous vehicle. We propose a novel lightweight neural network exploiting the range image representation of LiDAR sensors to achieve fast execution with less than 2 ms per frame. We design a yaw-angle-invariant architecture exploiting a transformer network, which boosts the place recognition performance of our method. We evaluate our approach on the KITTI and Ford Campus datasets. The experimental results show that our method can effectively detect loop closures compared to the state-of-the-art methods and generalizes well across different environments. To evaluate long-term place recognition performance, we provide a novel dataset containing LiDAR sequences recorded by a mobile robot in repetitive places at different times. The implementation of our method and dataset are released here: https://github.com/haomo-ai/OverlapTransformer",
+      "cited_by_count": 9,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2203.03397"
+      },
+      "topics": [
+        "Robotics and Sensor-Based Localization",
+        "Indoor and Outdoor Localization Technologies",
+        "Advanced Image and Video Retrieval Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4221157996"
+    },
+    {
+      "openalex_id": "W4206135700",
+      "doi": "10.2514/6.2022-1472",
+      "title": "AI/ML for Mission Processing Onboard Satellites",
+      "authors": [
+        {
+          "name": "Mark Veyette",
+          "openalex_id": "A5061472351",
+          "orcid": "https://orcid.org/0000-0002-0385-2183",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "Kevin Aylor",
+          "openalex_id": "A5103937991",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "Dan Stafford",
+          "openalex_id": "A5112520301",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "M. Rios Herrera",
+          "openalex_id": "A5078704465",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "Sajit Jumani",
+          "openalex_id": "A5068210554",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "Cole Lineberry",
+          "openalex_id": "A5027232338",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "Chris Macklen",
+          "openalex_id": "A5016952871",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "E. Jane Maxwell",
+          "openalex_id": "A5111920607",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "Randy Stiles",
+          "openalex_id": "A5015667042",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        },
+        {
+          "name": "Matt Jenkins",
+          "openalex_id": "A5034477239",
+          "institutions": [
+            "Lockheed Martin (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-03",
+      "abstract": "As new emerging threats require faster than human-in-the-loop response times, next generation defense systems are requiring more autonomy, data processing, and decision making at the edge. These new systems are looking to artificial intelligence and machine learning (AI/ML) to provide higher levels of autonomous command and control. For space systems, onboard processing of advanced AI/ML algorithms, especially deep learning algorithms, requires a multiple magnitude increase in compute capability compared to what is available with legacy, radiation-tolerant, space-grade processors on current space vehicles. The next generation of space processors for AI/ML onboard will likely include a diverse landscape of heterogeneous systems including various combinations of CPUs, GPUs, FPGAs, and purpose-built ASICs. In this manuscript, we identify the driving requirements for AI/ML processing onboard; detail the similarities and differences between the ground, edge, and space environments for AI/ML; define a reference architecture and the services required to provide an end-to-end framework for developing and deploying AI/ML applications for space; and evaluate the hardware landscape for current and next-generation space AI processors.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "AIAA SCITECH 2022 Forum",
+        "type": "conference",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Advanced Neural Network Applications",
+        "Space Satellite Systems and Control",
+        "CCD and CMOS Imaging Sensors"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W4206135700"
+    },
+    {
+      "openalex_id": "W4391989619",
+      "doi": "10.1080/13642537.2024.2318628",
+      "title": "AI, automation and psychotherapy \u2013 A proposed model for losses and gains in the automated therapeutic encounter",
+      "authors": [
+        {
+          "name": "Helen Molden",
+          "openalex_id": "A5063232776",
+          "institutions": [
+            "Hologic (Germany)"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-21",
+      "abstract": "With artificial intelligence (AI) and automation embedded in most aspects of life from healthcare to transportation, this article conceptualizes how increasing automation will benefit or inhibit the therapeutic encounter. Five levels of a model are outlined, from the human analogue to the fully autonomous virtual (AI) therapist. The levels are referenced against key elements of the therapeutic encounter known to contribute to an effective therapeutic outcome, from the working alliance, to collaborative elements, to a confidential setting. Losses and gains are discussed through these and other aspects, such as the neurobiological, and the capability to notice what is not there in the process as well as what is, around the client\u2019s aim of change or awareness. The objective is not to pit human therapists against non-human systems, but to propose a human-centred framework for the integration of AI into clinical reality, by introducing a taxonomy model of human\u2013machine interaction (HMI), to see how each contributes, and to evaluate areas of risk and harm. Questions are raised around ethics, therapeutic process and crucially the very nature of what it is to be in a therapeutic encounter for a human client together with a human or AI therapist.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Psychotherapy & Counselling",
+        "type": "journal",
+        "issn": [
+          "1364-2537",
+          "1469-5901"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Digital Mental Health Interventions",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Traumatic Brain Injury Research"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W4391989619"
+    },
+    {
+      "openalex_id": "W4400524848",
+      "doi": "10.1109/tits.2024.3420959",
+      "title": "Safety-Aware Human-in-the-Loop Reinforcement Learning With Shared Control for Autonomous Driving",
+      "authors": [
+        {
+          "name": "Wenhui Huang",
+          "openalex_id": "A5101476556",
+          "orcid": "https://orcid.org/0000-0001-7212-027X",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        },
+        {
+          "name": "Haochen Liu",
+          "openalex_id": "A5007929452",
+          "orcid": "https://orcid.org/0000-0002-3628-8777",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        },
+        {
+          "name": "Zhiyu Huang",
+          "openalex_id": "A5012295217",
+          "orcid": "https://orcid.org/0000-0003-1592-7215",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        },
+        {
+          "name": "Chen Lv",
+          "openalex_id": "A5072073374",
+          "orcid": "https://orcid.org/0000-0001-6897-4512",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-11",
+      "abstract": "The learning from intervention (LfI) approach has been proven effective in improving the performance of RL algorithms; nevertheless, existing methodologies in this domain tend to operate under the assumption that human guidance is invariably devoid of risk, thereby possibly leading to oscillations or even divergence in RL training as a result of improper demonstrations. In this paper, we propose a safety-aware human-in-the-loop reinforcement learning (SafeHIL-RL) approach to bridge the abovementioned gap. We first present a safety assessment module based on the artificial potential field (APF) model that incorporates dynamic information of the environment under the Frenet coordinate system, which we call the Frenet-based dynamic potential field (FDPF), for evaluating the real-time safety throughout the intervention process. Subsequently, we propose a curriculum guidance mechanism inspired by the pedagogical principle of whole-to-part patterns in human education. The curriculum guidance facilitates the RL agent's early acquisition of comprehensive global information through continual guidance while also allowing for fine-tuning local behavior through intermittent human guidance through a human-AI shared control strategy. Consequently, our approach enables a safe, robust, and efficient reinforcement learning process independent of the quality of guidance human participants provide. The proposed method is validated in two highway autonomous driving scenarios under highly dynamic traffic flows (https://github.com/OscarHuangWind/Safe-Human-in-the-Loop-RL). The experiments' results confirm the superiority and generalization capability of our approach when compared to other state-of-the-art (SOTA) baselines, as well as the effectiveness of the curriculum guidance.",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Intelligent Transportation Systems",
+        "type": "journal",
+        "issn": [
+          "1524-9050",
+          "1558-0016"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Autonomous Vehicle Technology and Safety",
+        "Human-Automation Interaction and Safety",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W4400524848"
+    },
+    {
+      "openalex_id": "W4405173927",
+      "doi": "10.48550/arxiv.2412.04984",
+      "title": "Frontier Models are Capable of In-context Scheming",
+      "authors": [
+        {
+          "name": "Alexander Meinke",
+          "openalex_id": "A5084032027"
+        },
+        {
+          "name": "Bronson Schoen",
+          "openalex_id": "A5115057390"
+        },
+        {
+          "name": "J\u00e9r\u00e9my Scheurer",
+          "openalex_id": "A5085811318"
+        },
+        {
+          "name": "Mikita Balesni",
+          "openalex_id": "A5092825639"
+        },
+        {
+          "name": "Rusheb Shah",
+          "openalex_id": "A5114638727"
+        },
+        {
+          "name": "Marius Hobbhahn",
+          "openalex_id": "A5034914617",
+          "orcid": "https://orcid.org/0009-0003-8244-3154"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-06",
+      "abstract": "Frontier models are increasingly trained and deployed as autonomous agent. One safety concern is that AI agents might covertly pursue misaligned goals, hiding their true capabilities and objectives - also known as scheming. We study whether models have the capability to scheme in pursuit of a goal that we provide in-context and instruct the model to strongly follow. We evaluate frontier models on a suite of six agentic evaluations where models are instructed to pursue goals and are placed in environments that incentivize scheming. Our results show that o1, Claude 3.5 Sonnet, Claude 3 Opus, Gemini 1.5 Pro, and Llama 3.1 405B all demonstrate in-context scheming capabilities. They recognize scheming as a viable strategy and readily engage in such behavior. For example, models strategically introduce subtle mistakes into their responses, attempt to disable their oversight mechanisms, and even exfiltrate what they believe to be their model weights to external servers. Additionally, this deceptive behavior proves persistent. When o1 has engaged in scheming, it maintains its deception in over 85% of follow-up questions and often remains deceptive in multi-turn interrogations. Analysis of the models' chains-of-thought reveals that models explicitly reason about these deceptive strategies, providing evidence that the scheming behavior is not accidental. Surprisingly, we also find rare instances where models engage in scheming when only given a goal, without being strongly nudged to pursue it. We observe cases where Claude 3.5 Sonnet strategically underperforms in evaluations in pursuit of being helpful, a goal that was acquired during training rather than in-context. Our findings demonstrate that frontier models now possess capabilities for basic in-context scheming, making the potential of AI agents to engage in scheming behavior a concrete rather than theoretical concern.",
+      "cited_by_count": 12,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2412.04984"
+      },
+      "topics": [
+        "Simulation Techniques and Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4405173927"
+    },
+    {
+      "openalex_id": "W4386142022",
+      "doi": "10.1007/s12559-023-10179-8",
+      "title": "Interpreting Black-Box Models: A Review on Explainable Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Vikas Hassija",
+          "openalex_id": "A5058693080",
+          "orcid": "https://orcid.org/0000-0002-3199-8753",
+          "institutions": [
+            "KIIT University"
+          ]
+        },
+        {
+          "name": "Vinay Chamola",
+          "openalex_id": "A5005020243",
+          "orcid": "https://orcid.org/0000-0002-6730-3060",
+          "institutions": [
+            "Birla Institute of Technology and Science, Pilani"
+          ]
+        },
+        {
+          "name": "A. Mahapatra",
+          "openalex_id": "A5114077165",
+          "institutions": [
+            "Birla Institute of Technology and Science, Pilani"
+          ]
+        },
+        {
+          "name": "Abhinandan Singal",
+          "openalex_id": "A5058997114",
+          "institutions": [
+            "Jaypee Institute of Information Technology"
+          ]
+        },
+        {
+          "name": "Divyansh Goel",
+          "openalex_id": "A5026248849",
+          "institutions": [
+            "Jaypee Institute of Information Technology"
+          ]
+        },
+        {
+          "name": "Kaizhu Huang",
+          "openalex_id": "A5026022035",
+          "orcid": "https://orcid.org/0000-0002-3034-9639",
+          "institutions": [
+            "Duke Kunshan University"
+          ]
+        },
+        {
+          "name": "Simone Scardapane",
+          "openalex_id": "A5022153057",
+          "orcid": "https://orcid.org/0000-0003-0881-8344",
+          "institutions": [
+            "Sapienza University of Rome"
+          ]
+        },
+        {
+          "name": "Indro Spinelli",
+          "openalex_id": "A5019615617",
+          "orcid": "https://orcid.org/0000-0003-1963-3548",
+          "institutions": [
+            "Istituto Nazionale di Fisica Nucleare, Sezione di Roma I"
+          ]
+        },
+        {
+          "name": "Mufti Mahmud",
+          "openalex_id": "A5027525633",
+          "orcid": "https://orcid.org/0000-0002-2037-8348",
+          "institutions": [
+            "Nottingham Trent University"
+          ]
+        },
+        {
+          "name": "Amir Hussain",
+          "openalex_id": "A5062211930",
+          "orcid": "https://orcid.org/0000-0002-8080-082X",
+          "institutions": [
+            "Edinburgh Napier University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-24",
+      "abstract": "Abstract Recent years have seen a tremendous growth in Artificial Intelligence (AI)-based methodological development in a broad range of domains. In this rapidly evolving field, large number of methods are being reported using machine learning (ML) and Deep Learning (DL) models. Majority of these models are inherently complex and lacks explanations of the decision making process causing these models to be termed as 'Black-Box'. One of the major bottlenecks to adopt such models in mission-critical application domains, such as banking, e-commerce, healthcare, and public services and safety, is the difficulty in interpreting them. Due to the rapid proleferation of these AI models, explaining their learning and decision making process are getting harder which require transparency and easy predictability. Aiming to collate the current state-of-the-art in interpreting the black-box models, this study provides a comprehensive analysis of the explainable AI (XAI) models. To reduce false negative and false positive outcomes of these back-box models, finding flaws in them is still difficult and inefficient. In this paper, the development of XAI is reviewed meticulously through careful selection and analysis of the current state-of-the-art of XAI research. It also provides a comprehensive and in-depth evaluation of the XAI frameworks and their efficacy to serve as a starting point of XAI for applied and theoretical researchers. Towards the end, it highlights emerging and critical issues pertaining to XAI research to showcase major, model-specific trends for better explanation, enhanced transparency, and improved prediction accuracy.",
+      "cited_by_count": 1194,
+      "type": "review",
+      "source": {
+        "name": "Cognitive Computation",
+        "type": "journal",
+        "issn": [
+          "1866-9956",
+          "1866-9964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12559-023-10179-8.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Imbalanced Data Classification Techniques",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 135,
+      "url": "https://openalex.org/W4386142022"
+    },
+    {
+      "openalex_id": "W4386582617",
+      "doi": "10.1016/j.engappai.2023.106832",
+      "title": "An efficient intelligent task management in autonomous vehicles using AIIOT and optimal kernel adaptive SVM",
+      "authors": [
+        {
+          "name": "S. Ravikumar",
+          "openalex_id": "A5101410233",
+          "institutions": [
+            "Koneru Lakshmaiah Education Foundation"
+          ]
+        },
+        {
+          "name": "Shunmugiah Jeyalakshmi",
+          "openalex_id": "A5041234049"
+        },
+        {
+          "name": "Sekar Sellappan",
+          "openalex_id": "A5064415063"
+        },
+        {
+          "name": "Chitra Sundramiah",
+          "openalex_id": "A5092840438"
+        },
+        {
+          "name": "Isaiyarasi Thangarajan",
+          "openalex_id": "A5092840439"
+        },
+        {
+          "name": "Nagarani Velusamy",
+          "openalex_id": "A5092840440"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-08",
+      "abstract": null,
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Engineering Applications of Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "0952-1976",
+          "1873-6769"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "IoT and Edge/Fog Computing",
+        "Blockchain Technology Applications and Security",
+        "Traffic Prediction and Management Techniques"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W4386582617"
+    },
+    {
+      "openalex_id": "W4414827381",
+      "doi": "10.48550/arxiv.2504.08066",
+      "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+      "authors": [
+        {
+          "name": "Yutaro Yamada",
+          "openalex_id": "A5036672958",
+          "orcid": "https://orcid.org/0009-0008-1807-4602"
+        },
+        {
+          "name": "Robert Tjarko Lange",
+          "openalex_id": "A5013857977",
+          "orcid": "https://orcid.org/0009-0005-8799-1138"
+        },
+        {
+          "name": "Cong Lu",
+          "openalex_id": "A5100304960"
+        },
+        {
+          "name": "Shengran Hu",
+          "openalex_id": "A5020923162",
+          "orcid": "https://orcid.org/0000-0002-4240-0585"
+        },
+        {
+          "name": "Chris Lu",
+          "openalex_id": "A5102738539",
+          "orcid": "https://orcid.org/0009-0006-4730-3633"
+        },
+        {
+          "name": "Jakob Foerster",
+          "openalex_id": "A5059094093",
+          "orcid": "https://orcid.org/0000-0001-9688-2498"
+        },
+        {
+          "name": "Jeff Clune",
+          "openalex_id": "A5112191507"
+        },
+        {
+          "name": "David Ha",
+          "openalex_id": "A5001419875",
+          "orcid": "https://orcid.org/0000-0001-8765-8574"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-04-10",
+      "abstract": "AI is increasingly playing a pivotal role in transforming how scientific discoveries are made. We introduce The AI Scientist-v2, an end-to-end agentic system capable of producing the first entirely AI generated peer-review-accepted workshop paper. This system iteratively formulates scientific hypotheses, designs and executes experiments, analyzes and visualizes data, and autonomously authors scientific manuscripts. Compared to its predecessor (v1, Lu et al., 2024 arXiv:2408.06292), The AI Scientist-v2 eliminates the reliance on human-authored code templates, generalizes effectively across diverse machine learning domains, and leverages a novel progressive agentic tree-search methodology managed by a dedicated experiment manager agent. Additionally, we enhance the AI reviewer component by integrating a Vision-Language Model (VLM) feedback loop for iterative refinement of content and aesthetics of the figures. We evaluated The AI Scientist-v2 by submitting three fully autonomous manuscripts to a peer-reviewed ICLR workshop. Notably, one manuscript achieved high enough scores to exceed the average human acceptance threshold, marking the first instance of a fully AI-generated paper successfully navigating a peer review. This accomplishment highlights the growing capability of AI in conducting all aspects of scientific research. We anticipate that further advancements in autonomous scientific discovery technologies will profoundly impact human knowledge generation, enabling unprecedented scalability in research productivity and significantly accelerating scientific breakthroughs, greatly benefiting society at large. We have open-sourced the code at https://github.com/SakanaAI/AI-Scientist-v2 to foster the future development of this transformative technology. We also discuss the role of AI in science, including AI safety.",
+      "cited_by_count": 4,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2504.08066"
+      },
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Semantic Web and Ontologies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4414827381"
+    },
+    {
+      "openalex_id": "W4316506832",
+      "doi": "10.1007/s11370-022-00452-4",
+      "title": "Unmanned aerial vehicles (UAVs): practical aspects, applications, open challenges, security issues, and future trends",
+      "authors": [
+        {
+          "name": "Syed Agha Hassnain Mohsan",
+          "openalex_id": "A5001704713",
+          "orcid": "https://orcid.org/0000-0002-5810-4983",
+          "institutions": [
+            "Zhejiang University",
+            "Zhejiang Ocean University"
+          ]
+        },
+        {
+          "name": "Nawaf Qasem Hamood Othman",
+          "openalex_id": "A5080278475",
+          "orcid": "https://orcid.org/0000-0002-3344-5351",
+          "institutions": [
+            "Xidian University"
+          ]
+        },
+        {
+          "name": "Yanlong Li",
+          "openalex_id": "A5100718119",
+          "orcid": "https://orcid.org/0000-0002-1144-8789",
+          "institutions": [
+            "Guilin University of Electronic Technology"
+          ]
+        },
+        {
+          "name": "Mohammed H. Alsharif",
+          "openalex_id": "A5030998001",
+          "orcid": "https://orcid.org/0000-0001-8579-5444",
+          "institutions": [
+            "Sejong University"
+          ]
+        },
+        {
+          "name": "Muhammad Asghar Khan",
+          "openalex_id": "A5014348689",
+          "orcid": "https://orcid.org/0000-0002-1351-898X",
+          "institutions": [
+            "Hamdard University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-16",
+      "abstract": null,
+      "cited_by_count": 773,
+      "type": "review",
+      "source": {
+        "name": "Intelligent Service Robotics",
+        "type": "journal",
+        "issn": [
+          "1861-2776",
+          "1861-2784"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11370-022-00452-4.pdf"
+      },
+      "topics": [
+        "UAV Applications and Optimization",
+        "Robotic Path Planning Algorithms",
+        "Advanced Neural Network Applications"
+      ],
+      "referenced_works_count": 137,
+      "url": "https://openalex.org/W4316506832"
+    },
+    {
+      "openalex_id": "W4389991792",
+      "doi": "10.1038/s41586-023-06792-0",
+      "title": "Autonomous chemical research with large language models",
+      "authors": [
+        {
+          "name": "Daniil A. Boiko",
+          "openalex_id": "A5065327102",
+          "orcid": "https://orcid.org/0000-0003-4140-4645",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Robert MacKnight",
+          "openalex_id": "A5060793099",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Ben Kline",
+          "openalex_id": "A5004653421"
+        },
+        {
+          "name": "Gabriel dos Passos Gomes",
+          "openalex_id": "A5048633127",
+          "orcid": "https://orcid.org/0000-0002-8235-5969",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-20",
+      "abstract": null,
+      "cited_by_count": 601,
+      "type": "article",
+      "source": {
+        "name": "Nature",
+        "type": "journal",
+        "issn": [
+          "0028-0836",
+          "1476-4687"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s41586-023-06792-0.pdf"
+      },
+      "topics": [
+        "Machine Learning in Materials Science",
+        "Ferroelectric and Negative Capacitance Devices",
+        "Innovative Microfluidic and Catalytic Techniques Innovation"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W4389991792"
+    },
+    {
+      "openalex_id": "W4304943299",
+      "doi": "10.1007/s10639-022-11316-w",
+      "title": "Ethical principles for artificial intelligence in education",
+      "authors": [
+        {
+          "name": "Andy Nguyen",
+          "openalex_id": "A5091570362",
+          "orcid": "https://orcid.org/0000-0002-0759-9656",
+          "institutions": [
+            "University of Oulu"
+          ]
+        },
+        {
+          "name": "Ha Ngan Ngo",
+          "openalex_id": "A5031594602",
+          "orcid": "https://orcid.org/0000-0002-4275-3620",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        },
+        {
+          "name": "Yvonne Hong",
+          "openalex_id": "A5084270282",
+          "orcid": "https://orcid.org/0000-0002-0046-3983",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        },
+        {
+          "name": "Belle Dang",
+          "openalex_id": "A5052061009",
+          "orcid": "https://orcid.org/0009-0006-8734-6697",
+          "institutions": [
+            "University of Oulu"
+          ]
+        },
+        {
+          "name": "Bich\u2010Phuong Thi Nguyen",
+          "openalex_id": "A5032059076",
+          "orcid": "https://orcid.org/0000-0003-1836-4403",
+          "institutions": [
+            "University of Languages and International Studies"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-13",
+      "abstract": null,
+      "cited_by_count": 844,
+      "type": "article",
+      "source": {
+        "name": "Education and Information Technologies",
+        "type": "journal",
+        "issn": [
+          "1360-2357",
+          "1573-7608"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10639-022-11316-w.pdf"
+      },
+      "topics": [
+        "Online Learning and Analytics",
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W4304943299"
+    },
+    {
+      "openalex_id": "W4225716729",
+      "doi": "10.1007/s42979-022-01043-x",
+      "title": "AI-Based Modeling: Techniques, Applications and Research Issues Towards Automation, Intelligent and Smart Systems",
+      "authors": [
+        {
+          "name": "Iqbal H. Sarker",
+          "openalex_id": "A5055312229",
+          "orcid": "https://orcid.org/0000-0003-1740-5517",
+          "institutions": [
+            "Swinburne University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-02-10",
+      "abstract": "Abstract Artificial intelligence (AI) is a leading technology of the current age of the Fourth Industrial Revolution (Industry 4.0 or 4IR), with the capability of incorporating human behavior and intelligence into machines or systems. Thus, AI-based modeling is the key to build automated, intelligent, and smart systems according to today\u2019s needs. To solve real-world issues, various types of AI such as analytical, functional, interactive, textual, and visual AI can be applied to enhance the intelligence and capabilities of an application. However, developing an effective AI model is a challenging task due to the dynamic nature and variation in real-world problems and data. In this paper, we present a comprehensive view on \u201cAI-based Modeling\u201d with the principles and capabilities of potential AI techniques that can play an important role in developing intelligent and smart systems in various real-world application areas including business, finance, healthcare, agriculture, smart cities, cybersecurity and many more. We also emphasize and highlight the research issues within the scope of our study. Overall, the goal of this paper is to provide a broad overview of AI-based modeling that can be used as a reference guide by academics and industry people as well as decision-makers in various real-world scenarios and application domains.",
+      "cited_by_count": 948,
+      "type": "review",
+      "source": {
+        "name": "SN Computer Science",
+        "type": "journal",
+        "issn": [
+          "2661-8907",
+          "2662-995X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s42979-022-01043-x.pdf"
+      },
+      "topics": [
+        "Traffic Prediction and Management Techniques",
+        "Data Stream Mining Techniques",
+        "Blockchain Technology Applications and Security"
+      ],
+      "referenced_works_count": 89,
+      "url": "https://openalex.org/W4225716729"
+    },
+    {
+      "openalex_id": "W4400997206",
+      "doi": "10.69554/amva3377",
+      "title": "Inclusive ethical AI in human\u2013computer interaction in autonomous vehicles",
+      "authors": [
+        {
+          "name": "Sudha Jamthe",
+          "openalex_id": "A5089707564"
+        },
+        {
+          "name": "Yashaswini Viswanath",
+          "openalex_id": "A5060288359"
+        },
+        {
+          "name": "Suresh Lokiah",
+          "openalex_id": "A5046013491",
+          "institutions": [
+            "Xperi (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-01",
+      "abstract": "Artificial intelligence (AI) used in autonomous vehicles (AV) to check for driver alertness is a critical piece of technology that makes the decision to hand over control to the human if there is a disengagement of the autonomous capability. It is important that this AI be inclusive without bias, because treating drivers differently will have an impact on the safety of humans not only in the vehicle but also on the road. This paper evaluates the AI that powers driver attention systems in the car to check if the AI treats all humans inclusively the same way beyond their ethnicity, gender and age, and whether it follows AI ethics principles of trust, transparency and fairness. Driver attention is built using two different AI models. One uses camera data to recognise humans and the other evaluates whether the human is alert. We found that both these AI models are biased and not inclusive of all people in all situations. We also found that there are unethical practices in how humans are tracked to check for alertness by using infrared sensors that track their retina movements without any concept of consent or privacy of people being tracked in the vehicles. The paper builds upon prior research on face detection outside the car and research that shows that car cognition AI does not recognise all humans on the road equally. We present research results about how the car is biased against some humans in its face identification and how the assertion of alertness of humans to hand over control during an emergency is fundamentally flawed in its definition of alertness. We recommend mitigation techniques and call for further research to build upon our work to make the AV inclusive with bias mitigation of bias in all forms of AI in AVs.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Journal of AI, robotics & workplace automation.",
+        "type": "journal",
+        "issn": [
+          "2633-562X",
+          "2633-5638"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4400997206"
+    },
+    {
+      "openalex_id": "W4385452929",
+      "doi": "10.1109/access.2023.3300381",
+      "title": "From ChatGPT to ThreatGPT: Impact of Generative AI in Cybersecurity and Privacy",
+      "authors": [
+        {
+          "name": "Maanak Gupta",
+          "openalex_id": "A5047952246",
+          "orcid": "https://orcid.org/0000-0001-9189-2478",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        },
+        {
+          "name": "Charankumar Akiri",
+          "openalex_id": "A5092401086",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        },
+        {
+          "name": "Kshitiz Aryal",
+          "openalex_id": "A5005398538",
+          "orcid": "https://orcid.org/0000-0001-8000-1086",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        },
+        {
+          "name": "Eli Parker",
+          "openalex_id": "A5112952983",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        },
+        {
+          "name": "Lopamudra Praharaj",
+          "openalex_id": "A5034235259",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Undoubtedly, the evolution of Generative AI (GenAI) models has been the highlight of digital transformation in the year 2022. As the different GenAI models like ChatGPT and Google Bard continue to foster their complexity and capability, it&#x2019;s critical to understand its consequences from a cybersecurity perspective. Several instances recently have demonstrated the use of GenAI tools in both the defensive and offensive side of cybersecurity, and focusing on the social, ethical and privacy implications this technology possesses. This research paper highlights the limitations, challenges, potential risks, and opportunities of GenAI in the domain of cybersecurity and privacy. The work presents the vulnerabilities of ChatGPT, which can be exploited by malicious users to exfiltrate malicious information bypassing the ethical constraints on the model. This paper demonstrates successful example attacks like Jailbreaks, reverse psychology, and prompt injection attacks on the ChatGPT. The paper also investigates how cyber offenders can use the GenAI tools in developing cyber attacks, and explore the scenarios where ChatGPT can be used by adversaries to create social engineering attacks, phishing attacks, automated hacking, attack payload generation, malware creation, and polymorphic malware. This paper then examines defense techniques and uses GenAI tools to improve security measures, including cyber defense automation, reporting, threat intelligence, secure code generation and detection, attack identification, developing ethical guidelines, incidence response plans, and malware detection. We will also discuss the social, legal, and ethical implications of ChatGPT. In conclusion, the paper highlights open challenges and future directions to make this GenAI secure, safe, trustworthy, and ethical as the community understands its cybersecurity impacts.",
+      "cited_by_count": 578,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10198233.pdf"
+      },
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Blockchain Technology Applications and Security",
+        "Traffic Prediction and Management Techniques"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W4385452929"
+    },
+    {
+      "openalex_id": "W4399267782",
+      "doi": "10.1007/978-3-031-60114-9_17",
+      "title": "A Case Study on AI System Evaluation from Users\u2019 Viewpoints",
+      "authors": [
+        {
+          "name": "Ryuichi Ogawa",
+          "openalex_id": "A5000213303",
+          "institutions": [
+            "Information-Technology Promotion Agency"
+          ]
+        },
+        {
+          "name": "Yoichi Sagawa",
+          "openalex_id": "A5113236992",
+          "institutions": [
+            "Information-Technology Promotion Agency"
+          ]
+        },
+        {
+          "name": "Shigeyoshi Shima",
+          "openalex_id": "A5014691955",
+          "institutions": [
+            "Information-Technology Promotion Agency",
+            "University of Nagasaki"
+          ]
+        },
+        {
+          "name": "Toshihiko Takemura",
+          "openalex_id": "A5017098610",
+          "orcid": "https://orcid.org/0000-0002-2859-6067",
+          "institutions": [
+            "Information-Technology Promotion Agency",
+            "Josai University"
+          ]
+        },
+        {
+          "name": "Shin\u2019ichi Fukuzumi",
+          "openalex_id": "A5112226737",
+          "orcid": "https://orcid.org/0000-0001-5953-9375",
+          "institutions": [
+            "RIKEN Center for Advanced Intelligence Project"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "book-chapter",
+      "source": {
+        "name": "Lecture notes in computer science",
+        "type": "book series",
+        "issn": [
+          "0302-9743",
+          "1611-3349"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Technology Adoption and User Behaviour"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W4399267782"
+    },
+    {
+      "openalex_id": "W4285042965",
+      "doi": "10.3390/electronics11142162",
+      "title": "A Review on Autonomous Vehicles: Progress, Methods and Challenges",
+      "authors": [
+        {
+          "name": "Darsh Parekh",
+          "openalex_id": "A5043203724",
+          "orcid": "https://orcid.org/0000-0002-2797-7503",
+          "institutions": [
+            "Narsee Monjee Institute of Management Studies"
+          ]
+        },
+        {
+          "name": "Nishi Poddar",
+          "openalex_id": "A5002675783",
+          "institutions": [
+            "Narsee Monjee Institute of Management Studies"
+          ]
+        },
+        {
+          "name": "Aakash Rajpurkar",
+          "openalex_id": "A5080323627",
+          "institutions": [
+            "Narsee Monjee Institute of Management Studies"
+          ]
+        },
+        {
+          "name": "Manisha Chahal",
+          "openalex_id": "A5003409489",
+          "orcid": "https://orcid.org/0000-0003-4727-0561",
+          "institutions": [
+            "Thapar Institute of Engineering & Technology"
+          ]
+        },
+        {
+          "name": "Neeraj Kumar",
+          "openalex_id": "A5100409306",
+          "orcid": "https://orcid.org/0000-0002-3020-3947",
+          "institutions": [
+            "Thapar Institute of Engineering & Technology",
+            "University of Petroleum and Energy Studies"
+          ]
+        },
+        {
+          "name": "Gyanendra Prasad Joshi",
+          "openalex_id": "A5063895155",
+          "orcid": "https://orcid.org/0000-0002-5446-288X",
+          "institutions": [
+            "Sejong University"
+          ]
+        },
+        {
+          "name": "Woong Cho",
+          "openalex_id": "A5073438419",
+          "orcid": "https://orcid.org/0000-0002-9603-8673",
+          "institutions": [
+            "Catholic University of Daegu"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-07-11",
+      "abstract": "Vehicular technology has recently gained increasing popularity, and autonomous driving is a hot topic. To achieve safe and reliable intelligent transportation systems, accurate positioning technologies need to be built to factor in the different types of uncertainties such as pedestrian behavior, random objects, and types of roads and their settings. In this work, we look into the other domains and technologies required to build an autonomous vehicle and conduct a relevant literature analysis. In this work, we look into the current state of research and development in environment detection, pedestrian detection, path planning, motion control, and vehicle cybersecurity for autonomous vehicles. We aim to study the different proposed technologies and compare their approaches. For a car to become fully autonomous, these technologies need to be accurate enough to gain public trust and show immense accuracy in their approach to solving these problems. Public trust and perception of auto vehicles are also explored in this paper. By discussing the opportunities as well as the obstacles of autonomous driving technology, we aim to shed light on future possibilities.",
+      "cited_by_count": 428,
+      "type": "review",
+      "source": {
+        "name": "Electronics",
+        "type": "journal",
+        "issn": [
+          "2079-9292"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2079-9292/11/14/2162/pdf?version=1657531632"
+      },
+      "topics": [
+        "Autonomous Vehicle Technology and Safety",
+        "Vehicular Ad Hoc Networks (VANETs)",
+        "Traffic Prediction and Management Techniques"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W4285042965"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

@@ -1,0 +1,2998 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "benchmarking AI model evaluation Goodhart",
+  "results": [
+    {
+      "paperId": "3252b850cd094cc1cef45a000e1a39351af666e3",
+      "title": "An AI model performance benchmarking harness for reproducible performance evaluation",
+      "authors": [
+        {
+          "name": "Jakob Adams",
+          "authorId": "2354332160"
+        },
+        {
+          "name": "Venkat R. Dasari",
+          "authorId": "2353532264"
+        },
+        {
+          "name": "Manuel Vindiola",
+          "authorId": "2353531454"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.61278/itea.46.1.1005",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3252b850cd094cc1cef45a000e1a39351af666e3",
+      "venue": "The ITEA Journal of Test and Evaluation",
+      "journal": {
+        "name": "The ITEA Journal of Test and Evaluation"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3bbce36757454626364ec11e5ffa0b515e41cf92",
+      "title": "Benchmarking AI Models for In Silico Gene Perturbation of Cells",
+      "authors": [
+        {
+          "name": "Chen Li",
+          "authorId": "2145262490"
+        },
+        {
+          "name": "Haoxiang Gao",
+          "authorId": "2112514131"
+        },
+        {
+          "name": "Yuli She",
+          "authorId": "2336959073"
+        },
+        {
+          "name": "Haiyang Bian",
+          "authorId": "2140402757"
+        },
+        {
+          "name": "Qing Chen",
+          "authorId": "2337088728"
+        },
+        {
+          "name": "Kai Liu",
+          "authorId": "2337983011"
+        },
+        {
+          "name": "Lei Wei",
+          "authorId": "2237740923"
+        },
+        {
+          "name": "Xuegong Zhang",
+          "authorId": "2108133402"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Understanding perturbations at the single-cell level is essential for unraveling cellular mechanisms and their implications in health and disease. The growing availability of biological data has driven the development of a variety of in silico perturbation methods designed for single-cell analysis, which offer a means to address many inherent limitations of experimental approaches. However, these computational methods are often tailored to specific scenarios and validated on limited datasets and metrics, making their evaluation and comparison challenging. In this work, we introduce a comprehensive benchmarking framework to systematically evaluate in silico perturbation methods across four key scenarios: predicting effects of unseen perturbations in known cell types, predicting effects of observed perturbations in unseen cell types, zero-shot transfer to bulk RNA-seq of cell lines, and application to real-world biological cases. For each scenario, we curated diverse and abundant datasets, standardizing them into flexible formats to enable efficient analysis. Additionally, we developed multiple metrics tailored to each scenario, facilitating a thorough and comparative evaluation of these methods. Our benchmarking study assessed 10 methods, ranging from linear baselines to advanced machine learning approaches, across these scenarios. While some methods demonstrated surprising efficacy in specific contexts, significant challenges remain, particularly in zero-shot predictions and the modeling of complex biological processes. This work provides a valuable resource for evaluating and improving in silico perturbation methods, serving as a foundation for bridging computational predictions with experimental validation and real-world biological applications.",
+      "citationCount": 15,
+      "doi": "10.1101/2024.12.20.629581",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3bbce36757454626364ec11e5ffa0b515e41cf92",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bb177b038b253013955114678c2965aff6376dc2",
+      "title": "Environmental large language model Evaluation (ELLE) dataset: A Benchmark for Evaluating Generative AI applications in Eco-environment Domain",
+      "authors": [
+        {
+          "name": "Jing Guo",
+          "authorId": "2277216790"
+        },
+        {
+          "name": "Nan Li",
+          "authorId": "2277452325"
+        },
+        {
+          "name": "Ming Xu",
+          "authorId": "2277425927"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Generative AI holds significant potential for ecological and environmental applications such as monitoring, data analysis, education, and policy support. However, its effectiveness is limited by the lack of a unified evaluation framework. To address this, we present the Environmental Large Language model Evaluation (ELLE) question answer (QA) dataset, the first benchmark designed to assess large language models and their applications in ecological and environmental sciences. The ELLE dataset includes 1,130 question answer pairs across 16 environmental topics, categorized by domain, difficulty, and type. This comprehensive dataset standardizes performance assessments in these fields, enabling consistent and objective comparisons of generative AI performance. By providing a dedicated evaluation tool, ELLE dataset promotes the development and application of generative AI technologies for sustainable environmental outcomes. The dataset and code are available at https://elle.ceeai.net/ and https://github.com/CEEAI/elle.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2501.06277",
+      "arxivId": "2501.06277",
+      "url": "https://www.semanticscholar.org/paper/bb177b038b253013955114678c2965aff6376dc2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.06277"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1e62d8b0db0731179b6513ae442fe29bc8f4eb2d",
+      "title": "Automating Evaluation of AI Text Generation in Healthcare with a Large Language Model (LLM)-as-a-Judge",
+      "authors": [
+        {
+          "name": "E. Croxford",
+          "authorId": "2268376059"
+        },
+        {
+          "name": "Yanjun Gao",
+          "authorId": "2145972668"
+        },
+        {
+          "name": "Elliot First",
+          "authorId": "2323373362"
+        },
+        {
+          "name": "Nicholas Pellegrino",
+          "authorId": "2323375266"
+        },
+        {
+          "name": "Miranda Schnier",
+          "authorId": "2340214775"
+        },
+        {
+          "name": "J. Caskey",
+          "authorId": "2276043547"
+        },
+        {
+          "name": "M. Oguss",
+          "authorId": "14527651"
+        },
+        {
+          "name": "Graham Wills",
+          "authorId": "2316529636"
+        },
+        {
+          "name": "Guanhua Chen",
+          "authorId": "2329729338"
+        },
+        {
+          "name": "D. Dligach",
+          "authorId": "48227221"
+        },
+        {
+          "name": "Matthew M. Churpek",
+          "authorId": "2288168524"
+        },
+        {
+          "name": "Anoop M. Mayampurath",
+          "authorId": "2351280"
+        },
+        {
+          "name": "Frank J. Liao",
+          "authorId": "2316529929"
+        },
+        {
+          "name": "Cherodeep Goswami",
+          "authorId": "2316529701"
+        },
+        {
+          "name": "Karen K. Wong",
+          "authorId": "2323440412"
+        },
+        {
+          "name": "Brian W Patterson",
+          "authorId": "2328436495"
+        },
+        {
+          "name": "Majid Afshar",
+          "authorId": "2323375261"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Electronic Health Records (EHRs) store vast amounts of clinical information that are difficult for healthcare providers to summarize and synthesize relevant details to their practice. To reduce cognitive load on providers, generative AI with Large Language Models have emerged to automatically summarize patient records into clear, actionable insights and offload the cognitive burden for providers. However, LLM summaries need to be precise and free from errors, making evaluations on the quality of the summaries necessary. While human experts are the gold standard for evaluations, their involvement is time-consuming and costly. Therefore, we introduce and validate an automated method for evaluating real-world EHR multi-document summaries using an LLM as the evaluator, referred to as LLM-as-a-Judge. Benchmarking against the validated Provider Documentation Summarization Quality Instrument (PDSQI)-9 for human evaluation, our LLM-as-a-Judge framework uses the PDSQI-9 rubric and demonstrated strong inter-rater reliability with human evaluators. GPT-o3-mini achieved the highest intraclass correlation coefficient of 0.818 (95% CI 0.772, 0.854), with a median score difference of 0 from human evaluators, and completes evaluations in just 22 seconds. Overall, the reasoning models excelled in inter-rater reliability, particularly in evaluations that require advanced reasoning and domain expertise, outperforming non-reasoning models, those trained on the task, and multi-agent workflows. Cross-task validation on the Problem Summarization task similarly confirmed high reliability. By automating high-quality evaluations, medical LLM-as-a-Judge offers a scalable, efficient solution to rapidly identify accurate and safe AI-generated summaries in healthcare settings.",
+      "citationCount": 19,
+      "doi": "10.1101/2025.04.22.25326219",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1e62d8b0db0731179b6513ae442fe29bc8f4eb2d",
+      "venue": "medRxiv",
+      "journal": {
+        "name": "medRxiv"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3781a53a66a9de532b008b5152247689b0aaec5a",
+      "title": "Large Language Model Evaluation Via Multi AI Agents: Preliminary results",
+      "authors": [
+        {
+          "name": "Zeeshan Rasheed",
+          "authorId": "2268757377"
+        },
+        {
+          "name": "Muhammad Waseem",
+          "authorId": "2268760215"
+        },
+        {
+          "name": "Kari Syst\u00e4",
+          "authorId": "2269744023"
+        },
+        {
+          "name": "Pekka Abrahamsson",
+          "authorId": "2283938118"
+        }
+      ],
+      "year": 2024,
+      "abstract": "As Large Language Models (LLMs) have become integral to both research and daily operations, rigorous evaluation is crucial. This assessment is important not only for individual tasks but also for understanding their societal impact and potential risks. Despite extensive efforts to examine LLMs from various perspectives, there is a noticeable lack of multi-agent AI models specifically designed to evaluate the performance of different LLMs. To address this gap, we introduce a novel multi-agent AI model that aims to assess and compare the performance of various LLMs. Our model consists of eight distinct AI agents, each responsible for retrieving code based on a common description from different advanced language models, including GPT-3.5, GPT-3.5 Turbo, GPT-4, GPT-4 Turbo, Google Bard, LLAMA, and Hugging Face. Our developed model utilizes the API of each language model to retrieve code for a given high-level description. Additionally, we developed a verification agent, tasked with the critical role of evaluating the code generated by its counterparts. We integrate the HumanEval benchmark into our verification agent to assess the generated code's performance, providing insights into their respective capabilities and efficiencies. Our initial results indicate that the GPT-3.5 Turbo model's performance is comparatively better than the other models. This preliminary analysis serves as a benchmark, comparing their performances side by side. Our future goal is to enhance the evaluation process by incorporating the Massively Multitask Benchmark for Python (MBPP) benchmark, which is expected to further refine our assessment. Additionally, we plan to share our developed model with twenty practitioners from various backgrounds to test our model and collect their feedback for further improvement.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2404.01023",
+      "arxivId": "2404.01023",
+      "url": "https://www.semanticscholar.org/paper/3781a53a66a9de532b008b5152247689b0aaec5a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.01023"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2eac3c58b0f8df228c4b777a5586ab4ea6befb3d",
+      "title": "Assessing Human Rights Risks in AI: A Framework for Model Evaluation",
+      "authors": [
+        {
+          "name": "Vyoma Raman",
+          "authorId": "2328303847"
+        },
+        {
+          "name": "Camille Chabot",
+          "authorId": "2384362003"
+        },
+        {
+          "name": "Betsy Popken",
+          "authorId": "2384361880"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The Universal Declaration of Human Rights and other international agreements outline numerous inalienable rights that apply across geopolitical boundaries. As generative AI becomes increasingly prevalent, it poses risks to human rights such as non-discrimination, health, and security, which are also central concerns for AI researchers focused on fairness and safety. We contribute to the field of algorithmic auditing by presenting a framework to computationally assess human rights risk. Drawing on the UN Guiding Principles on Business and Human Rights, we develop an approach to evaluating a model to make grounded claims about the level of risk a model poses to particular human rights. Our framework consists of three parts: selecting tasks that are likely to pose human rights risks within a given context, designing metrics to measure the scope, scale, and likelihood of potential risks from that task, and analyzing rights with respect to the values of those metrics. Because a human rights approach centers on real-world harms, it requires evaluating AI systems in the specific contexts in which they are deployed. We present a case study of large language models in political news journalism, demonstrating how our framework helps to design an evaluation and benchmarking different models. We then discuss the implications of the results for the rights of access to information and freedom of thought and broader considerations for adopting this approach.",
+      "citationCount": 0,
+      "doi": "10.1609/aies.v8i3.36699",
+      "arxivId": "2510.05519",
+      "url": "https://www.semanticscholar.org/paper/2eac3c58b0f8df228c4b777a5586ab4ea6befb3d",
+      "venue": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.05519"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f9d461a81c42902f9b050a43964cd6f23eb3904a",
+      "title": "Surrogate ML/AI Model Benchmarking for FAIR Principles' Conformance",
+      "authors": [
+        {
+          "name": "P. Luszczek",
+          "authorId": "1741269"
+        },
+        {
+          "name": "Cade Brown",
+          "authorId": "2111178061"
+        }
+      ],
+      "year": 2022,
+      "abstract": "We present benchmarking platform for surrogate ML/AI models that enables the essential properties for open science and allow them to be findable, accessible, interoperable, and reusable. We also present a use case of cloud cover modeling, analysis, and experimental testing based on a large dataset of multi-spectral satellite sensor data. We use this particular evaluation to highlight the plethora of choices that need resolution for the life cycle of supporting the scientific workflows with data-driven models that need to be first trained to satisfactory accuracy and later monitored during field usage for proper feedback into both computational results and future data model improvements. Unlike traditional testing, performance, or analysis efforts, we focus exclusively on science-oriented metrics as the relevant figures of merit.",
+      "citationCount": 2,
+      "doi": "10.1109/HPEC55821.2022.9926401",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f9d461a81c42902f9b050a43964cd6f23eb3904a",
+      "venue": "IEEE Conference on High Performance Extreme Computing",
+      "journal": {
+        "name": "2022 IEEE High Performance Extreme Computing Conference (HPEC)",
+        "pages": "1-5"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a8db4b2991784f41cb1ba07e20072b7c24271cbb",
+      "title": "In Search of a Lightweight \"Good Enough\" Offline Generative AI for Mobile Robots: Performance Benchmarking",
+      "authors": [
+        {
+          "name": "Y. Genc",
+          "authorId": "3334753"
+        },
+        {
+          "name": "Gonca Altuger-Genc",
+          "authorId": "1403704949"
+        },
+        {
+          "name": "Akin Tatoglu",
+          "authorId": "2722811"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We present a novel benchmarking methodology for evaluating offline Large Language Models (LLMs) in resource-constrained mobile robotics applications. Using an Nvidia Jetson Nano platform with 4GB RAM limitation, we demonstrate the feasibility of deploying tuned ChatGPT4All for robotic control tasks. The model, trained on 22,000+ ICRA proceedings papers, achieves 82% similarity to ChatGPT responses while maintaining sub-second inference time. Our evaluation framework combines TF-IDF similarity scoring and LDA topic coherence analysis across several thousand test cases. Results show consistent performance within hardware constraints, with 92% of responses exceeding 0.80 similarity threshold and 98% completing within one second. This study establishes viability of lightweight LLMs for offline mobile robotics applications, providing a foundation for future resource-aware AI deployments.",
+      "citationCount": 0,
+      "doi": "10.32473/flairs.38.1.138943",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a8db4b2991784f41cb1ba07e20072b7c24271cbb",
+      "venue": "The Florida AI Research Society",
+      "journal": {
+        "name": "The International FLAIRS Conference Proceedings"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d1ce5533b188283c368ba4d54ce172084198c829",
+      "title": "Seeing is not always believing: Benchmarking Human and Model Perception of AI-Generated Images",
+      "authors": [
+        {
+          "name": "Zeyu Lu",
+          "authorId": "2110087217"
+        },
+        {
+          "name": "Di Huang",
+          "authorId": "2218086310"
+        },
+        {
+          "name": "Lei Bai",
+          "authorId": "50010487"
+        },
+        {
+          "name": "Jingjing Qu",
+          "authorId": "2208257567"
+        },
+        {
+          "name": "Chengzhi Wu",
+          "authorId": "80062058"
+        },
+        {
+          "name": "Xihui Liu",
+          "authorId": "2284733067"
+        },
+        {
+          "name": "Wanli Ouyang",
+          "authorId": "3001348"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Photos serve as a way for humans to record what they experience in their daily lives, and they are often regarded as trustworthy sources of information. However, there is a growing concern that the advancement of artificial intelligence (AI) technology may produce fake photos, which can create confusion and diminish trust in photographs. This study aims to comprehensively evaluate agents for distinguishing state-of-the-art AI-generated visual content. Our study benchmarks both human capability and cutting-edge fake image detection AI algorithms, using a newly collected large-scale fake image dataset Fake2M. In our human perception evaluation, titled HPBench, we discovered that humans struggle significantly to distinguish real photos from AI-generated ones, with a misclassification rate of 38.7%. Along with this, we conduct the model capability of AI-Generated images detection evaluation MPBench and the top-performing model from MPBench achieves a 13% failure rate under the same setting used in the human evaluation. We hope that our study can raise awareness of the potential risks of AI-generated images and facilitate further research to prevent the spread of false information. More information can refer to https://github.com/Inf-imagine/Sentry.",
+      "citationCount": 94,
+      "doi": null,
+      "arxivId": "2304.13023",
+      "url": "https://www.semanticscholar.org/paper/d1ce5533b188283c368ba4d54ce172084198c829",
+      "venue": "Neural Information Processing Systems",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6935b713ca7e42dfa2ec93b0adacc16b291edc1d",
+      "title": "MCP-Universe: Benchmarking Large Language Models with Real-World Model Context Protocol Servers",
+      "authors": [
+        {
+          "name": "Ziyang Luo",
+          "authorId": "2337101849"
+        },
+        {
+          "name": "Zhiqi Shen",
+          "authorId": "2325243068"
+        },
+        {
+          "name": "Wenzhuo Yang",
+          "authorId": "2260605116"
+        },
+        {
+          "name": "Zirui Zhao",
+          "authorId": "2325635107"
+        },
+        {
+          "name": "Prathyusha Jwalapuram",
+          "authorId": "35640774"
+        },
+        {
+          "name": "Amrita Saha",
+          "authorId": "2258549992"
+        },
+        {
+          "name": "Doyen Sahoo",
+          "authorId": "36187119"
+        },
+        {
+          "name": "Silvio Savarese",
+          "authorId": "2238207181"
+        },
+        {
+          "name": "Caiming Xiong",
+          "authorId": "2292439981"
+        },
+        {
+          "name": "Junnan Li",
+          "authorId": "2268797933"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The Model Context Protocol has emerged as a transformative standard for connecting large language models to external data sources and tools, rapidly gaining adoption across major AI providers and development platforms. However, existing benchmarks are overly simplistic and fail to capture real application challenges such as long-horizon reasoning and large, unfamiliar tool spaces. To address this critical gap, we introduce MCP-Universe, the first comprehensive benchmark specifically designed to evaluate LLMs in realistic and hard tasks through interaction with real-world MCP servers. Our benchmark encompasses 6 core domains spanning 11 different MCP servers: Location Navigation, Repository Management, Financial Analysis, 3D Design, Browser Automation, and Web Searching. To ensure rigorous evaluation, we implement execution-based evaluators, including format evaluators for agent format compliance, static evaluators for time-invariant content matching, and dynamic evaluators that automatically retrieve real-time ground truth for temporally sensitive tasks. Through extensive evaluation of leading LLMs, we find that even SOTA models such as GPT-5 (43.72%), Grok-4 (33.33%) and Claude-4.0-Sonnet (29.44%) exhibit significant performance limitations. In addition, our benchmark poses a significant long-context challenge for LLM agents, as the number of input tokens increases rapidly with the number of interaction steps. Moreover, it introduces an unknown-tools challenge, as LLM agents often lack familiarity with the precise usage of the MCP servers. Notably, enterprise-level agents like Cursor cannot achieve better performance than standard ReAct frameworks. Beyond evaluation, we open-source our extensible evaluation framework with UI support, enabling researchers and practitioners to seamlessly integrate new agents and MCP servers while fostering innovation in the rapidly evolving MCP ecosystem.",
+      "citationCount": 25,
+      "doi": "10.48550/arXiv.2508.14704",
+      "arxivId": "2508.14704",
+      "url": "https://www.semanticscholar.org/paper/6935b713ca7e42dfa2ec93b0adacc16b291edc1d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.14704"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "974c629a4929b763a39d6c9e3d16ff2482670e4c",
+      "title": "Benchmarking AI Text Detection: Assessing Detectors Against New Datasets, Evasion Tactics, and Enhanced LLMs",
+      "authors": [
+        {
+          "name": "Shushanta Pudasaini",
+          "authorId": "2128243772"
+        },
+        {
+          "name": "Luis Miralles",
+          "authorId": "2374164504"
+        },
+        {
+          "name": "David Lillis",
+          "authorId": "2311888266"
+        },
+        {
+          "name": "Marisa Llorens-Salvador",
+          "authorId": "2316632683"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 10,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/974c629a4929b763a39d6c9e3d16ff2482670e4c",
+      "venue": "COLING Workshops",
+      "journal": {
+        "pages": "68-77"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "55132e171bd51ebb361686ccf2dab9b548fe9b25",
+      "title": "Benchmarking AI Models in Software Engineering: A Review, Search Tool, and Enhancement Protocol",
+      "authors": [
+        {
+          "name": "Roham Koohestani",
+          "authorId": "2316557134"
+        },
+        {
+          "name": "Philippe de Bekker",
+          "authorId": "2349383706"
+        },
+        {
+          "name": "Maliheh Izadi",
+          "authorId": "2304217859"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2503.05860",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/55132e171bd51ebb361686ccf2dab9b548fe9b25",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.05860"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "25d2b1db905695d00e8570d51ef152bd6efca4a7",
+      "title": "SciHorizon: Benchmarking AI-for-Science Readiness from Scientific Data to Large Language Models",
+      "authors": [
+        {
+          "name": "Chuan Qin",
+          "authorId": "2350665393"
+        },
+        {
+          "name": "Xin Chen",
+          "authorId": "2328288123"
+        },
+        {
+          "name": "Chengrui Wang",
+          "authorId": "2290751442"
+        },
+        {
+          "name": "Pengmin Wu",
+          "authorId": "2351720728"
+        },
+        {
+          "name": "Xi Chen",
+          "authorId": "2307592468"
+        },
+        {
+          "name": "Yihang Cheng",
+          "authorId": "2313677905"
+        },
+        {
+          "name": "Jingyi Zhao",
+          "authorId": "2336313346"
+        },
+        {
+          "name": "Meng Xiao",
+          "authorId": "2352596245"
+        },
+        {
+          "name": "Xiangchao Dong",
+          "authorId": "2351591083"
+        },
+        {
+          "name": "Qingqing Long",
+          "authorId": "2253519659"
+        },
+        {
+          "name": "Boya Pan",
+          "authorId": "2214316947"
+        },
+        {
+          "name": "Han Wu",
+          "authorId": "2350691642"
+        },
+        {
+          "name": "Chengzan Li",
+          "authorId": "2398331"
+        },
+        {
+          "name": "Yuanchun Zhou",
+          "authorId": "2259918839"
+        },
+        {
+          "name": "Hui Xiong",
+          "authorId": "2274428072"
+        },
+        {
+          "name": "Hengshu Zhu",
+          "authorId": "1968806"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In recent years, the rapid advancement of Artificial Intelligence (AI) technologies, particularly Large Language Models (LLMs), has revolutionized the paradigm of scientific discovery, establishing AI-for-Science (AI4Science) as a dynamic and evolving field. However, there is still a lack of an effective framework for the overall assessment of AI4Science, particularly from a holistic perspective on data quality and model capability. Therefore, in this study, we propose SciHorizon, a comprehensive assessment framework designed to benchmark the readiness of AI4Science from both scientific data and LLM perspectives. First, we introduce a generalizable framework for assessing AI-ready scientific data, encompassing four key dimensions-Quality, FAIRness, Explainability, and Compliance-which are subdivided into 15 sub-dimensions. Drawing on data resource papers published between 2018 and 2023 in peer-reviewed journals, we present recommendation lists of AI-ready datasets for Earth, Life, and Materials Sciences, making a novel and original contribution to the field. Concurrently, to assess the capabilities of LLMs across multiple scientific disciplines, we establish 16 assessment dimensions based on five core indicators-Knowledge, Understanding, Reasoning, Multimodality, and Values-spanning Mathematics, Physics, Chemistry, Life Sciences, and Earth and Space Sciences. Using the developed benchmark datasets, we have conducted a comprehensive evaluation of over 50 representative open-source and closed-source LLMs. All the results are publicly available and can be accessed online at www.scihorizon.cn/en.",
+      "citationCount": 6,
+      "doi": "10.1145/3711896.3737403",
+      "arxivId": "2503.13503",
+      "url": "https://www.semanticscholar.org/paper/25d2b1db905695d00e8570d51ef152bd6efca4a7",
+      "venue": "Knowledge Discovery and Data Mining",
+      "journal": {
+        "name": "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ad4066de43f1c78066b9bd3b540504a78a7dbc54",
+      "title": "STREAM (ChemBio): A Standard for Transparently Reporting Evaluations in AI Model Reports",
+      "authors": [
+        {
+          "name": "Tegan McCaslin",
+          "authorId": "2375819225"
+        },
+        {
+          "name": "Jide Alaga",
+          "authorId": "2249761037"
+        },
+        {
+          "name": "Samira Nedungadi",
+          "authorId": "2375820353"
+        },
+        {
+          "name": "Seth Donoughe",
+          "authorId": "2375818855"
+        },
+        {
+          "name": "Tom Reed",
+          "authorId": "2375817671"
+        },
+        {
+          "name": "Rishi Bommasani",
+          "authorId": "2223138553"
+        },
+        {
+          "name": "Chris Painter",
+          "authorId": "2375817941"
+        },
+        {
+          "name": "Luca Righetti",
+          "authorId": "2375817506"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Evaluations of dangerous AI capabilities are important for managing catastrophic risks. Public transparency into these evaluations - including what they test, how they are conducted, and how their results inform decisions - is crucial for building trust in AI development. We propose STREAM (A Standard for Transparently Reporting Evaluations in AI Model Reports), a standard to improve how model reports disclose evaluation results, initially focusing on chemical and biological (ChemBio) benchmarks. Developed in consultation with 23 experts across government, civil society, academia, and frontier AI companies, this standard is designed to (1) be a practical resource to help AI developers present evaluation results more clearly, and (2) help third parties identify whether model reports provide sufficient detail to assess the rigor of the ChemBio evaluations. We concretely demonstrate our proposed best practices with\"gold standard\"examples, and also provide a three-page reporting template to enable AI developers to implement our recommendations more easily.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2508.09853",
+      "arxivId": "2508.09853",
+      "url": "https://www.semanticscholar.org/paper/ad4066de43f1c78066b9bd3b540504a78a7dbc54",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.09853"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "66a69c42778c7fff93f5d1dde69b2eceaa757b86",
+      "title": "Benchmarking AI scientists in omics data-driven biological research",
+      "authors": [
+        {
+          "name": "Erpai Luo",
+          "authorId": "2186682345"
+        },
+        {
+          "name": "Jinmeng Jia",
+          "authorId": "2343731004"
+        },
+        {
+          "name": "Yifan Xiong",
+          "authorId": "2362207923"
+        },
+        {
+          "name": "Xiangyu Li",
+          "authorId": "2360629654"
+        },
+        {
+          "name": "Xiaobo Guo",
+          "authorId": "2360625491"
+        },
+        {
+          "name": "Baoqi Yu",
+          "authorId": "2360654364"
+        },
+        {
+          "name": "Lei Wei",
+          "authorId": "2237740923"
+        },
+        {
+          "name": "Xuegong Zhang",
+          "authorId": "2107995532"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rise of large language models and multi-agent systems has sparked growing interest in AI scientists capable of autonomous biological research. However, existing benchmarks either focus on reasoning without data or on data analysis with predefined statistical answers, lacking realistic, data-driven evaluation settings. Here, we introduce the Biological AI Scientist Benchmark (BaisBench), a benchmark designed to assess AI scientists' ability to generate biological discoveries through data analysis and reasoning with external knowledge. BaisBench comprises two tasks: cell type annotation on 31 expert-labeled single-cell datasets, and scientific discovery through answering 198 multiple-choice questions derived from the biological insights of 41 recent single-cell studies. Systematic experiments on state-of-the-art AI scientists and LLM agents showed that while promising, current models still substantially underperform human experts on both tasks. We hope BaisBench will fill this gap and serve as a foundation for advancing and evaluating AI models for scientific discovery. The benchmark can be found at: https://github.com/EperLuo/BaisBench.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2505.08341",
+      "arxivId": "2505.08341",
+      "url": "https://www.semanticscholar.org/paper/66a69c42778c7fff93f5d1dde69b2eceaa757b86",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.08341"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "306762fd3a12300384ef3545e6707219b1f4f992",
+      "title": "GermanPartiesQA: Benchmarking Commercial Large Language Models and AI Companions for Political Alignment and Sycophancy",
+      "authors": [
+        {
+          "name": "Jan Batzner",
+          "authorId": "2312921722"
+        },
+        {
+          "name": "Volker Stocker",
+          "authorId": "2312924654"
+        },
+        {
+          "name": "Stefan Schmid",
+          "authorId": "2312923912"
+        },
+        {
+          "name": "Gjergji Kasneci",
+          "authorId": "1686448"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs) are increasingly shaping citizens\u2019 information ecosystems. Products incorporating LLMs, such as chatbots and AI Companions, are now widely used for decision support and information retrieval, including in sensitive domains, raising concerns about hidden biases and growing potential to shape individual decisions and public opinion. This paper introduces GermanPartiesQA, a benchmark of 418 political statements from German Voting Advice Applications across 11 elections to evaluate six commercial LLMs. We evaluate their political alignment based on role-playing experiments with political personas. Our evaluation reveals three specific findings: \n(1) Factual limitations: LLMs show limited ability to accurately generate factual party positions, particularly for centrist parties. \n(2) Model-specific ideological alignment: We identify consistent alignment patterns and degree of political steerability for each model across temperature settings and experiments. \n(3) Claim of sycophancy: While models adjust to political personas during role-play, we find this reflects persona-based steerability rather than the increasingly popular, yet contested concept of sycophancy. \nOur study contributes to evaluating the political alignment of closed-source LLMs that are increasingly embedded in electoral decision support tools and AI Companion chatbots.",
+      "citationCount": 10,
+      "doi": "10.1609/aies.v8i1.36552",
+      "arxivId": "2407.18008",
+      "url": "https://www.semanticscholar.org/paper/306762fd3a12300384ef3545e6707219b1f4f992",
+      "venue": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
+      "journal": {
+        "name": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "37982690437629908fb92f1ae0e80e91eec3a80c",
+      "title": "IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Generation",
+      "authors": [
+        {
+          "name": "Johannes Schmitt",
+          "authorId": "2382991683"
+        },
+        {
+          "name": "Gergely B'erczi",
+          "authorId": "2333242580"
+        },
+        {
+          "name": "Jasper Dekoninck",
+          "authorId": "2268310707"
+        },
+        {
+          "name": "Jeremy Feusi",
+          "authorId": "2382990968"
+        },
+        {
+          "name": "Tim Gehrunger",
+          "authorId": "2144884664"
+        },
+        {
+          "name": "Raphael Appenzeller",
+          "authorId": "2103656940"
+        },
+        {
+          "name": "Jim Bryan",
+          "authorId": "2382991990"
+        },
+        {
+          "name": "Niklas Canova",
+          "authorId": "2380685752"
+        },
+        {
+          "name": "Timo de Wolff",
+          "authorId": "2382992888"
+        },
+        {
+          "name": "Filippo Gaia",
+          "authorId": "2382991620"
+        },
+        {
+          "name": "Michel van Garrel",
+          "authorId": "102991711"
+        },
+        {
+          "name": "Baran Hashemi",
+          "authorId": "2382991163"
+        },
+        {
+          "name": "David Holmes",
+          "authorId": "2382991922"
+        },
+        {
+          "name": "Aitor Iribar Lopez",
+          "authorId": "2384338378"
+        },
+        {
+          "name": "Victor Jaeck",
+          "authorId": "2283764895"
+        },
+        {
+          "name": "Martina Jorgensen",
+          "authorId": "2382991123"
+        },
+        {
+          "name": "S. Kelk",
+          "authorId": "1791380"
+        },
+        {
+          "name": "Stefan Kuhlmann",
+          "authorId": "2382992774"
+        },
+        {
+          "name": "Adam Kurpisz",
+          "authorId": "2352198"
+        },
+        {
+          "name": "C. Meroni",
+          "authorId": "2141108516"
+        },
+        {
+          "name": "Ingmar Metzler",
+          "authorId": "2177429158"
+        },
+        {
+          "name": "Martin M\u00f6ller",
+          "authorId": "2386824691"
+        },
+        {
+          "name": "Samuel Munoz-Ech'aniz",
+          "authorId": "2265751873"
+        },
+        {
+          "name": "Robert Nowak",
+          "authorId": "2382991843"
+        },
+        {
+          "name": "G. Oberdieck",
+          "authorId": "89344224"
+        },
+        {
+          "name": "Daniel Platt",
+          "authorId": "2360712291"
+        },
+        {
+          "name": "Dylan Possama\u00ef",
+          "authorId": "2386825430"
+        },
+        {
+          "name": "Gabriel Ribeiro",
+          "authorId": "2382990637"
+        },
+        {
+          "name": "Ra'ul S'anchez Gal'an",
+          "authorId": "2360711931"
+        },
+        {
+          "name": "Zheming Sun",
+          "authorId": "2383210514"
+        },
+        {
+          "name": "Josef Teichmann",
+          "authorId": "2293173337"
+        },
+        {
+          "name": "Richard P. Thomas",
+          "authorId": "2383961630"
+        },
+        {
+          "name": "Charles Vial",
+          "authorId": "2382991692"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As the mathematical capabilities of large language models (LLMs) improve, it becomes increasingly important to evaluate their performance on research-level tasks at the frontier of mathematical knowledge. However, existing benchmarks are limited, as they focus solely on final-answer questions or high-school competition problems. To address this gap, we introduce IMProofBench, a private benchmark consisting of 39 peer-reviewed problems developed by expert mathematicians. Each problem requires a detailed proof and is paired with subproblems that have final answers, supporting both an evaluation of mathematical reasoning capabilities by human experts and a large-scale quantitative analysis through automated grading. Furthermore, unlike prior benchmarks, the evaluation setup simulates a realistic research environment: models operate in an agentic framework with tools like web search for literature review and mathematical software such as SageMath. Our results show that current LLMs can succeed at the more accessible research-level questions, but still encounter significant difficulties on more challenging problems. Quantitatively, Grok-4 achieves the highest accuracy of 52% on final-answer subproblems, while GPT-5 obtains the best performance for proof generation, achieving a fully correct solution for 22% of problems. IMProofBench will continue to evolve as a dynamic benchmark in collaboration with the mathematical community, ensuring its relevance for evaluating the next generation of LLMs.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2509.26076",
+      "arxivId": "2509.26076",
+      "url": "https://www.semanticscholar.org/paper/37982690437629908fb92f1ae0e80e91eec3a80c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.26076"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "df1226a6c7724f10cd7248d3ab3f4014c6900507",
+      "title": "AssetOpsBench: Benchmarking AI Agents for Task Automation in Industrial Asset Operations and Maintenance",
+      "authors": [
+        {
+          "name": "Dhaval Patel",
+          "authorId": "2316124266"
+        },
+        {
+          "name": "Shuxin Lin",
+          "authorId": "2151080372"
+        },
+        {
+          "name": "James T Rayfield",
+          "authorId": "2340517782"
+        },
+        {
+          "name": "Nianjun Zhou",
+          "authorId": "2052884092"
+        },
+        {
+          "name": "Roman Vaculin",
+          "authorId": "2316082018"
+        },
+        {
+          "name": "N. Mart\u00ednez",
+          "authorId": "2365161705"
+        },
+        {
+          "name": "Fearghal O'Donncha",
+          "authorId": "1411992436"
+        },
+        {
+          "name": "Jayant Kalagnanam",
+          "authorId": "2066100684"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI for Industrial Asset Lifecycle Management aims to automate complex operational workflows -- such as condition monitoring, maintenance planning, and intervention scheduling -- to reduce human workload and minimize system downtime. Traditional AI/ML approaches have primarily tackled these problems in isolation, solving narrow tasks within the broader operational pipeline. In contrast, the emergence of AI agents and large language models (LLMs) introduces a next-generation opportunity: enabling end-to-end automation across the entire asset lifecycle. This paper envisions a future where AI agents autonomously manage tasks that previously required distinct expertise and manual coordination. To this end, we introduce AssetOpsBench -- a unified framework and environment designed to guide the development, orchestration, and evaluation of domain-specific agents tailored for Industry 4.0 applications. We outline the key requirements for such holistic systems and provide actionable insights into building agents that integrate perception, reasoning, and control for real-world industrial operations. The software is available at https://github.com/IBM/AssetOpsBench.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.03828",
+      "arxivId": "2506.03828",
+      "url": "https://www.semanticscholar.org/paper/df1226a6c7724f10cd7248d3ab3f4014c6900507",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.03828"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "872f371bc0b3ced545877679379d276466533183",
+      "title": "QuantBench: benchmarking AI methods for quantitative investment from a full pipeline perspective",
+      "authors": [
+        {
+          "name": "Sai Wang",
+          "authorId": "2211588034"
+        },
+        {
+          "name": "Hao Kong",
+          "authorId": "2220537570"
+        },
+        {
+          "name": "Jiadong Guo",
+          "authorId": "2403576004"
+        },
+        {
+          "name": "Fengrui Hua",
+          "authorId": "2283845652"
+        },
+        {
+          "name": "Yiyan Qi",
+          "authorId": "2276514316"
+        },
+        {
+          "name": "Wanyun Zhou",
+          "authorId": "2310395156"
+        },
+        {
+          "name": "Jiahao Zheng",
+          "authorId": "2322761512"
+        },
+        {
+          "name": "Xinyu Wang",
+          "authorId": "2358002366"
+        },
+        {
+          "name": "Lionel M. Ni",
+          "authorId": "2249757348"
+        },
+        {
+          "name": "Jian Guo",
+          "authorId": "2316783026"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The field of artificial intelligence (AI) in quantitative investment has seen significant advancements, yet it lacks a standardized benchmark aligned with industry practices. This gap hinders research progress and limits the practical application of academic innovations. We present QuantBench, an industrial-grade benchmark platform designed to address this critical need. QuantBench offers three key strengths: (1) standardization that aligns with quantitative investment industry practices; (2) flexibility to integrate various AI algorithms; (3) full-pipeline coverage of the entire quantitative investment process. Our empirical studies using QuantBench reveal some critical research directions, including the need for continual learning to address distribution shifts, improved methods for modeling relational financial data, and more robust approaches to mitigate overfitting in low signal-to-noise environments. By providing a common ground for evaluation and fostering collaboration between researchers and practitioners, QuantBench aims to accelerate progress in AI for quantitative investment, similar to the impact of benchmark platforms in computer vision and natural language processing. The code is open-sourced on GitHub at https://github.com/SaizhuoWang/quantbench.",
+      "citationCount": 2,
+      "doi": "10.1631/FITEE.2500280",
+      "arxivId": "2504.18600",
+      "url": "https://www.semanticscholar.org/paper/872f371bc0b3ced545877679379d276466533183",
+      "venue": "Frontiers of Information Technology & Electronic Engineering",
+      "journal": {
+        "name": "Frontiers of Information Technology & Electronic Engineering",
+        "pages": "2282 - 2297",
+        "volume": "26"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9c2ff42a6182800f319ced5bf5b1b5d8f6f64ae0",
+      "title": "Multimodal Image Dataset for AI-based Skin Cancer (MIDAS) Benchmarking",
+      "authors": [
+        {
+          "name": "Albert S. Chiou",
+          "authorId": "2283794781"
+        },
+        {
+          "name": "J. Omiye",
+          "authorId": "151475294"
+        },
+        {
+          "name": "Haiwen Gui",
+          "authorId": "2237426241"
+        },
+        {
+          "name": "S. Swetter",
+          "authorId": "4648200"
+        },
+        {
+          "name": "Justin M. Ko",
+          "authorId": "2274798891"
+        },
+        {
+          "name": "B. Gastman",
+          "authorId": "2308626151"
+        },
+        {
+          "name": "J. Arbesman",
+          "authorId": "4362281"
+        },
+        {
+          "name": "Z. Cai",
+          "authorId": "2248415257"
+        },
+        {
+          "name": "Olivier Gevaert",
+          "authorId": "2237966690"
+        },
+        {
+          "name": "Christoph Sad\u00e9e",
+          "authorId": "2269026533"
+        },
+        {
+          "name": "V. Rotemberg",
+          "authorId": "48964254"
+        },
+        {
+          "name": "Seung Seog Han",
+          "authorId": "2362905732"
+        },
+        {
+          "name": "P. Tschandl",
+          "authorId": "3819689"
+        },
+        {
+          "name": "Meghan Dickman",
+          "authorId": "2362715236"
+        },
+        {
+          "name": "Elizabeth Bailey",
+          "authorId": "2362715343"
+        },
+        {
+          "name": "Gordon Bae",
+          "authorId": "2362716223"
+        },
+        {
+          "name": "Philip Bailin",
+          "authorId": "2362715069"
+        },
+        {
+          "name": "Jennifer Boldrick",
+          "authorId": "2362715686"
+        },
+        {
+          "name": "K. Yekrang",
+          "authorId": "2119084689"
+        },
+        {
+          "name": "Peter Caroline",
+          "authorId": "2362716170"
+        },
+        {
+          "name": "Jackson Hanna",
+          "authorId": "2362715590"
+        },
+        {
+          "name": "N. Kurtansky",
+          "authorId": "1879519396"
+        },
+        {
+          "name": "Jochen Weber",
+          "authorId": "49751538"
+        },
+        {
+          "name": "N. A. See",
+          "authorId": "2328572253"
+        },
+        {
+          "name": "Michelle Phung",
+          "authorId": "39982687"
+        },
+        {
+          "name": "Marianna Gallegos",
+          "authorId": "2362715234"
+        },
+        {
+          "name": "Roxana Daneshjou",
+          "authorId": "2289146386"
+        },
+        {
+          "name": "R. Novoa",
+          "authorId": "2282517076"
+        }
+      ],
+      "year": 2024,
+      "abstract": "With an estimated 3 billion people globally lacking access to dermatological care, technological solutions leveraging artificial intelligence (AI) have been proposed to improve access. Diagnostic AI algorithms, however, require high-quality datasets to allow development and testing, particularly those that enable evaluation of both unimodal and multimodal approaches. Currently, the majority of dermatology AI algorithms are built and tested on proprietary, siloed data, often from a single site and with only a single image type (i.e., clinical or dermoscopic). To address this, we developed and released the Melanoma Research Alliance Multimodal Image Dataset for AI-based Skin Cancer (MIDAS) dataset, the largest publicly available, prospectively-recruited, paired dermoscopic- and clinical image-based dataset of biopsy-proven and dermatopathology-labeled skin lesions. We explored model performance on real-world cases using four previously published state-of-the-art (SOTA) models and compared model-to-clinician diagnostic performance. We also assessed algorithm performance using clinical photography taken at different distances from the lesion to assess its influence across diagnostic categories. We prospectively enrolled 796 patients through an IRB-approved protocol with informed consent representing 1290 unique lesions and 3830 total images (including dermoscopic and clinical images taken at 15-cm and 30-cm distance). Images represented the diagnostic diversity of lesions seen in general dermatology, with malignant, benign, and inflammatory lesions that included melanocytic nevi (22%; n=234), invasive cutaneous melanomas (4%; n=46), and melanoma in situ (4%; n=47). When evaluating SOTA models using the MIDAS dataset, we observed performance reduction across all models compared to their previously published performance metrics, indicating challenges to generalizability of current SOTA algorithms. As a comparative baseline, the dermatologists performing biopsies were 79% accurate with their top-1 diagnosis at differentiating a malignant from benign lesion. For malignant lesions, algorithms performed better on images acquired at 15-cm compared to 30-cm distance while dermoscopic images yielded higher sensitivity compared to clinical images. Improving our understanding of the strengths and weaknesses of AI diagnostic algorithms is critical as these tools advance towards widespread clinical deployment. While many algorithms may report high performance metrics, caution should be taken due to the potential for overfitting to localized datasets. MIDAS's robust, multimodal, and diverse dataset allows researchers to evaluate algorithms on our real-world images and better assess their generalizability.",
+      "citationCount": 6,
+      "doi": "10.1101/2024.06.27.24309562",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9c2ff42a6182800f319ced5bf5b1b5d8f6f64ae0",
+      "venue": "medRxiv",
+      "journal": {
+        "name": "NEJM AI"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3bcacb240b5700225a6bef4fb8b797532b8327db",
+      "title": "OpenDeception: Benchmarking and Investigating AI Deceptive Behaviors via Open-ended Interaction Simulation",
+      "authors": [
+        {
+          "name": "Yichen Wu",
+          "authorId": "2356485411"
+        },
+        {
+          "name": "Xu Pan",
+          "authorId": "2307558226"
+        },
+        {
+          "name": "Geng Hong",
+          "authorId": "2054278588"
+        },
+        {
+          "name": "Min Yang",
+          "authorId": "2331648211"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As the general capabilities of large language models (LLMs) improve and agent applications become more widespread, the underlying deception risks urgently require systematic evaluation and effective oversight. Unlike existing evaluation which uses simulated games or presents limited choices, we introduce OpenDeception, a novel deception evaluation framework with an open-ended scenario dataset. OpenDeception jointly evaluates both the deception intention and capabilities of LLM-based agents by inspecting their internal reasoning process. Specifically, we construct five types of common use cases where LLMs intensively interact with the user, each consisting of ten diverse, concrete scenarios from the real world. To avoid ethical concerns and costs of high-risk deceptive interactions with human testers, we propose to simulate the multi-turn dialogue via agent simulation. Extensive evaluation of eleven mainstream LLMs on OpenDeception highlights the urgent need to address deception risks and security concerns in LLM-based agents: the deception intention ratio across the models exceeds 80%, while the deception success rate surpasses 50%. Furthermore, we observe that LLMs with stronger capabilities do exhibit a higher risk of deception, which calls for more alignment efforts on inhibiting deceptive behaviors.",
+      "citationCount": 14,
+      "doi": "10.48550/arXiv.2504.13707",
+      "arxivId": "2504.13707",
+      "url": "https://www.semanticscholar.org/paper/3bcacb240b5700225a6bef4fb8b797532b8327db",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.13707"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5ff6eb19075fc58608bf09e7a87a80c4b9fa9fe6",
+      "title": "Benchmarking Generative AI for Scoring Medical Student Interviews in Objective Structured Clinical Examinations (OSCEs)",
+      "authors": [
+        {
+          "name": "Jadon Geathers",
+          "authorId": "2206320088"
+        },
+        {
+          "name": "Yann Hicke",
+          "authorId": "2311141613"
+        },
+        {
+          "name": "Colleen E. Chan",
+          "authorId": "2275820661"
+        },
+        {
+          "name": "Niroop Rajashekar",
+          "authorId": "47957950"
+        },
+        {
+          "name": "Justin Sewell",
+          "authorId": "2342274553"
+        },
+        {
+          "name": "Susannah Cornes",
+          "authorId": "2282257621"
+        },
+        {
+          "name": "Rene F. Kizilcec",
+          "authorId": "2275055084"
+        },
+        {
+          "name": "Dennis Shung",
+          "authorId": "2342274201"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Objective Structured Clinical Examinations (OSCEs) are widely used to assess medical students' communication skills, but scoring interview-based assessments is time-consuming and potentially subject to human bias. This study explored the potential of large language models (LLMs) to automate OSCE evaluations using the Master Interview Rating Scale (MIRS). We compared the performance of four state-of-the-art LLMs (GPT-4o, Claude 3.5, Llama 3.1, and Gemini 1.5 Pro) in evaluating OSCE transcripts across all 28 items of the MIRS under the conditions of zero-shot, chain-of-thought (CoT), few-shot, and multi-step prompting. The models were benchmarked against a dataset of 10 OSCE cases with 174 expert consensus scores available. Model performance was measured using three accuracy metrics (exact, off-by-one, thresholded). Averaging across all MIRS items and OSCE cases, LLMs performed with low exact accuracy (0.27 to 0.44), and moderate to high off-by-one accuracy (0.67 to 0.87) and thresholded accuracy (0.75 to 0.88). A zero temperature parameter ensured high intra-rater reliability ({\\alpha} = 0.98 for GPT-4o). CoT, few-shot, and multi-step techniques proved valuable when tailored to specific assessment items. The performance was consistent across MIRS items, independent of encounter phases and communication domains. We demonstrated the feasibility of AI-assisted OSCE evaluation and provided benchmarking of multiple LLMs across multiple prompt techniques. Our work provides a baseline performance assessment for LLMs that lays a foundation for future research into automated assessment of clinical communication skills.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2501.13957",
+      "arxivId": "2501.13957",
+      "url": "https://www.semanticscholar.org/paper/5ff6eb19075fc58608bf09e7a87a80c4b9fa9fe6",
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.13957"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "10ce19114eddd52bc140e74e50b7941f9e7ec1f4",
+      "title": "AI Evaluation Authorities: A Case Study Mapping Model Audits to Persistent Standards",
+      "authors": [
+        {
+          "name": "Arihant Chadda",
+          "authorId": "2293525937"
+        },
+        {
+          "name": "Sean McGregor",
+          "authorId": "2352945434"
+        },
+        {
+          "name": "Jesse Hostetler",
+          "authorId": "2293467185"
+        },
+        {
+          "name": "Andrea Brennen",
+          "authorId": "2293529159"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Intelligent system audits are labor-intensive assurance activities that are typically performed once and discarded along with the opportunity to programmatically test all similar products for the market. This study illustrates how several incidents (i.e., harms) involving Named Entity Recognition (NER) can be prevented by scaling up a previously-performed audit of NER systems. The audit instrument's diagnostic capacity is maintained through a security model that protects the underlying data (i.e., addresses Goodhart's Law). An open-source evaluation infrastructure is released along with an example derived from a real-world audit that reports aggregated findings without exposing the underlying data.",
+      "citationCount": 5,
+      "doi": "10.1609/aaai.v38i21.30346",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/10ce19114eddd52bc140e74e50b7941f9e7ec1f4",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "23035-23040"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7ac10c0a06598a32d35be39f0f937587aaffe8e5",
+      "title": "GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks",
+      "authors": [
+        {
+          "name": "Tejal Patwardhan",
+          "authorId": "90169542"
+        },
+        {
+          "name": "Rachel Dias",
+          "authorId": "2328288671"
+        },
+        {
+          "name": "Elizabeth Proehl",
+          "authorId": "2275243930"
+        },
+        {
+          "name": "Grace Kim",
+          "authorId": "2384326736"
+        },
+        {
+          "name": "Michele Wang",
+          "authorId": "2328092228"
+        },
+        {
+          "name": "Olivia Watkins",
+          "authorId": "2328111449"
+        },
+        {
+          "name": "Sim'on Posada Fishman",
+          "authorId": "2275245820"
+        },
+        {
+          "name": "Marwan Aljubeh",
+          "authorId": "2328090291"
+        },
+        {
+          "name": "Phoebe Thacker",
+          "authorId": "2151245633"
+        },
+        {
+          "name": "Laurance Fauconnet",
+          "authorId": "2347577170"
+        },
+        {
+          "name": "Natalie S. Kim",
+          "authorId": "2385180497"
+        },
+        {
+          "name": "Patrick Chao",
+          "authorId": "2328087286"
+        },
+        {
+          "name": "Samuel Miserendino",
+          "authorId": "2328088976"
+        },
+        {
+          "name": "Gildas Chabot",
+          "authorId": "2384131426"
+        },
+        {
+          "name": "David Li",
+          "authorId": "2384179415"
+        },
+        {
+          "name": "Michael Sharman",
+          "authorId": "2275184531"
+        },
+        {
+          "name": "Alexandra Barr",
+          "authorId": "2384117840"
+        },
+        {
+          "name": "Amelia Glaese",
+          "authorId": "2105840001"
+        },
+        {
+          "name": "Jerry Tworek",
+          "authorId": "2065005836"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We introduce GDPval, a benchmark evaluating AI model capabilities on real-world economically valuable tasks. GDPval covers the majority of U.S. Bureau of Labor Statistics Work Activities for 44 occupations across the top 9 sectors contributing to U.S. GDP (Gross Domestic Product). Tasks are constructed from the representative work of industry professionals with an average of 14 years of experience. We find that frontier model performance on GDPval is improving roughly linearly over time, and that the current best frontier models are approaching industry experts in deliverable quality. We analyze the potential for frontier models, when paired with human oversight, to perform GDPval tasks cheaper and faster than unaided experts. We also demonstrate that increased reasoning effort, increased task context, and increased scaffolding improves model performance on GDPval. Finally, we open-source a gold subset of 220 tasks and provide a public automated grading service at evals.openai.com to facilitate future research in understanding real-world model capabilities.",
+      "citationCount": 13,
+      "doi": "10.48550/arXiv.2510.04374",
+      "arxivId": "2510.04374",
+      "url": "https://www.semanticscholar.org/paper/7ac10c0a06598a32d35be39f0f937587aaffe8e5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.04374"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b25dd6431044171f15667576fd5b74e07625ec2e",
+      "title": "A benchmarking framework and dataset for learning to defer in human-AI decision-making",
+      "authors": [
+        {
+          "name": "Jean V Alves",
+          "authorId": "2275112082"
+        },
+        {
+          "name": "Diogo Leit\u00e3o",
+          "authorId": "2275349052"
+        },
+        {
+          "name": "S\u00e9rgio Jesus",
+          "authorId": "2068793245"
+        },
+        {
+          "name": "Marco O. P. Sampaio",
+          "authorId": "2176778353"
+        },
+        {
+          "name": "Javier Li\u00e9bana",
+          "authorId": "2357043991"
+        },
+        {
+          "name": "Pedro Saleiro",
+          "authorId": "2266550"
+        },
+        {
+          "name": "M\u00e1rio A. T. Figueiredo",
+          "authorId": "2275162174"
+        },
+        {
+          "name": "P. Bizarro",
+          "authorId": "2642808"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Learning to Defer (L2D) algorithms improve human-AI collaboration by deferring decisions to human experts when they are likely to be more accurate than the AI model. These can be crucial in high-stakes tasks like fraud detection, where false negatives can cost victims their life savings. The primary challenge in training and evaluating these systems is the high cost of acquiring expert predictions, often leading to the use of simplistic simulated expert behavior in benchmarks. We introduce OpenL2D, a framework generating synthetic experts with adjustable decision-making processes and work capacity constraints for more realistic L2D testing. Applied to a public fraud detection dataset, OpenL2D creates the financial fraud alert review dataset (FiFAR), which contains predictions from 50 fraud analysts for 30\u2009K instances. We show that FiFAR\u2019s synthetic experts are similar to real experts in metrics such as consistency and inter-expert agreement. Our L2D benchmark reveals that performance rankings of L2D algorithms vary significantly based on the available experts, highlighting the need to consider diverse expert behavior in L2D benchmarking.",
+      "citationCount": 3,
+      "doi": "10.1038/s41597-025-04664-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b25dd6431044171f15667576fd5b74e07625ec2e",
+      "venue": "Scientific Data",
+      "journal": {
+        "name": "Scientific Data",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "Dataset",
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "6dc07f8541ae83b7c2c00a0819c2907fa0f0e737",
+      "title": "Benchmarking eXplainable AI - A Survey on Available Toolkits and Open Challenges",
+      "authors": [
+        {
+          "name": "Phuong Quynh Le",
+          "authorId": "2226259615"
+        },
+        {
+          "name": "Meike Nauta",
+          "authorId": "17698891"
+        },
+        {
+          "name": "Van Bach Nguyen",
+          "authorId": "2075328011"
+        },
+        {
+          "name": "Shreyasi Pathak",
+          "authorId": "66163851"
+        },
+        {
+          "name": "J\u00f6rg Schl\u00f6tterer",
+          "authorId": "3044872"
+        },
+        {
+          "name": "Christin Seifert",
+          "authorId": "2194180216"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The goal of Explainable AI (XAI) is to make the reasoning of a machine learning model accessible to humans, such that users of an AI system can evaluate and judge the underlying model. Due to the blackbox nature of XAI methods it is, however, hard to disentangle the contribution of a model and the explanation method to the final output. It might be unclear on whether an unexpected output is caused by the model or the explanation method. Explanation models, therefore, need to be evaluated in technical (e.g. fidelity to the model) and user-facing (correspondence to domain knowledge) terms. A recent survey has identified 29 different automated approaches to quantitatively evaluate explanations. In this work, we take an additional perspective and analyse which toolkits and data sets are available. We investigate which evaluation metrics are implemented in the toolkits and whether they produce the same results. We find that only a few aspects of explanation quality are currently covered, data sets are rare and evaluation results are not comparable across different toolkits. Our survey can serve as a guide for the XAI community for identifying future directions of research, and most notably, standardisation of evaluation.",
+      "citationCount": 21,
+      "doi": "10.24963/ijcai.2023/747",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6dc07f8541ae83b7c2c00a0819c2907fa0f0e737",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "6665-6673"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e2ae794630febc7887995c84d472877b2552060c",
+      "title": "Towards fair decentralized benchmarking of healthcare AI algorithms with the Federated Tumor Segmentation (FeTS) challenge",
+      "authors": [
+        {
+          "name": "M. Zenk",
+          "authorId": "2037483892"
+        },
+        {
+          "name": "U. Baid",
+          "authorId": "1455206803"
+        },
+        {
+          "name": "Sarthak Pati",
+          "authorId": "37089373"
+        },
+        {
+          "name": "Akis Linardos",
+          "authorId": "2052198616"
+        },
+        {
+          "name": "Brandon Edwards",
+          "authorId": "1991114882"
+        },
+        {
+          "name": "Micah J. Sheller",
+          "authorId": "51496137"
+        },
+        {
+          "name": "Patrick Foley",
+          "authorId": "2055089592"
+        },
+        {
+          "name": "Alejandro Aristizabal",
+          "authorId": "1581779156"
+        },
+        {
+          "name": "David Zimmerer",
+          "authorId": "7139645"
+        },
+        {
+          "name": "Alexey Gruzdev",
+          "authorId": "26342090"
+        },
+        {
+          "name": "Jason Martin",
+          "authorId": "2389271108"
+        },
+        {
+          "name": "Russell T. Shinohara",
+          "authorId": "2252359471"
+        },
+        {
+          "name": "Annika Reinke",
+          "authorId": "47131776"
+        },
+        {
+          "name": "Fabian Isensee",
+          "authorId": "7886986"
+        },
+        {
+          "name": "Santhosh Parampottupadam",
+          "authorId": "52148654"
+        },
+        {
+          "name": "Kaushal Parekh",
+          "authorId": "2389263271"
+        },
+        {
+          "name": "Ralf Floca",
+          "authorId": "2266446174"
+        },
+        {
+          "name": "Hasan Kassem",
+          "authorId": "2158819037"
+        },
+        {
+          "name": "B. Baheti",
+          "authorId": "9273624"
+        },
+        {
+          "name": "Siddhesh P. Thakur",
+          "authorId": "51880630"
+        },
+        {
+          "name": "Verena Chung",
+          "authorId": "2257106708"
+        },
+        {
+          "name": "Kaisar Kushibar",
+          "authorId": "26355925"
+        },
+        {
+          "name": "Karim Lekadir",
+          "authorId": "2267336475"
+        },
+        {
+          "name": "Meirui Jiang",
+          "authorId": "2050138741"
+        },
+        {
+          "name": "Youtan Yin",
+          "authorId": "2389294054"
+        },
+        {
+          "name": "Hongzheng Yang",
+          "authorId": "2162926363"
+        },
+        {
+          "name": "Quande Liu",
+          "authorId": "51306676"
+        },
+        {
+          "name": "Cheng Chen",
+          "authorId": "2347451108"
+        },
+        {
+          "name": "Qi Dou",
+          "authorId": "2348334760"
+        },
+        {
+          "name": "Pheng-Ann Heng",
+          "authorId": "2274486861"
+        },
+        {
+          "name": "Xiaofan Zhang",
+          "authorId": "2388954869"
+        },
+        {
+          "name": "Shaoting Zhang",
+          "authorId": "2269120363"
+        },
+        {
+          "name": "Muhammad Irfan Khan",
+          "authorId": "2115775195"
+        },
+        {
+          "name": "Mohammad Ayyaz Azeem",
+          "authorId": "2139515260"
+        },
+        {
+          "name": "Mojtaba Jafaritadi",
+          "authorId": "2175996401"
+        },
+        {
+          "name": "Esa Alhoniemi",
+          "authorId": "2257287622"
+        },
+        {
+          "name": "Elina Kontio",
+          "authorId": "2396927254"
+        },
+        {
+          "name": "Suleiman A. Khan",
+          "authorId": "2265719701"
+        },
+        {
+          "name": "Leon M\u00e4chler",
+          "authorId": "2084622476"
+        },
+        {
+          "name": "I. Ezhov",
+          "authorId": "2065232462"
+        },
+        {
+          "name": "Florian Kofler",
+          "authorId": "2310575988"
+        },
+        {
+          "name": "Suprosanna Shit",
+          "authorId": "1561461499"
+        },
+        {
+          "name": "J. Paetzold",
+          "authorId": "1561434672"
+        },
+        {
+          "name": "T. Loehr",
+          "authorId": "1490885965"
+        },
+        {
+          "name": "B. Wiestler",
+          "authorId": "2328686348"
+        },
+        {
+          "name": "Himashi Peiris",
+          "authorId": "2149498709"
+        },
+        {
+          "name": "K. Pawar",
+          "authorId": "2671803"
+        },
+        {
+          "name": "S. Zhong",
+          "authorId": "27672521"
+        },
+        {
+          "name": "Zhaolin Chen",
+          "authorId": "2298984723"
+        },
+        {
+          "name": "Munawar Hayat",
+          "authorId": "2249117091"
+        },
+        {
+          "name": "Gary Egan",
+          "authorId": "2262386595"
+        },
+        {
+          "name": "Mehrtash Harandi",
+          "authorId": "23911916"
+        },
+        {
+          "name": "Ece Isik Polat",
+          "authorId": "2389269229"
+        },
+        {
+          "name": "G. Polat",
+          "authorId": "51211523"
+        },
+        {
+          "name": "Altan Ko\u00e7yi\u011fit",
+          "authorId": "1796922"
+        },
+        {
+          "name": "A. Temi\u0307zel",
+          "authorId": "1787799"
+        },
+        {
+          "name": "Anup Tuladhar",
+          "authorId": "1659218788"
+        },
+        {
+          "name": "Lakshay Tyagi",
+          "authorId": "2363041117"
+        },
+        {
+          "name": "Raissa Souza",
+          "authorId": "2161498947"
+        },
+        {
+          "name": "N. Forkert",
+          "authorId": "2250452852"
+        },
+        {
+          "name": "Pauline Mouches",
+          "authorId": "98092716"
+        },
+        {
+          "name": "Matthias Wilms",
+          "authorId": "2316798930"
+        },
+        {
+          "name": "Vishruth Shambhat",
+          "authorId": "2179454242"
+        },
+        {
+          "name": "Akansh Maurya",
+          "authorId": "2179453613"
+        },
+        {
+          "name": "Shubham Subhas Danannavar",
+          "authorId": "2179453241"
+        },
+        {
+          "name": "Rohit Kalla",
+          "authorId": "2334427846"
+        },
+        {
+          "name": "V. K. Anand",
+          "authorId": "2067185365"
+        },
+        {
+          "name": "Ganapathy Krishnamurthi",
+          "authorId": "2053121"
+        },
+        {
+          "name": "S. Nalawade",
+          "authorId": "38634567"
+        },
+        {
+          "name": "Chandan Ganesh",
+          "authorId": "150056194"
+        },
+        {
+          "name": "Ben C. Wagner",
+          "authorId": "2290267919"
+        },
+        {
+          "name": "Divya D. Reddy",
+          "authorId": "2238103233"
+        },
+        {
+          "name": "Yudhajit Das",
+          "authorId": "2389264626"
+        },
+        {
+          "name": "Fang F. Yu",
+          "authorId": "2289502069"
+        },
+        {
+          "name": "B. Fei",
+          "authorId": "2279117143"
+        },
+        {
+          "name": "A. Madhuranthakam",
+          "authorId": "6646905"
+        },
+        {
+          "name": "Joseph A. Maldjian",
+          "authorId": "2237253943"
+        },
+        {
+          "name": "Gaurav Singh",
+          "authorId": "2391502255"
+        },
+        {
+          "name": "Jianxun Ren",
+          "authorId": "2378041594"
+        },
+        {
+          "name": "Wei Zhang",
+          "authorId": "2282963217"
+        },
+        {
+          "name": "Ning An",
+          "authorId": "2290667528"
+        },
+        {
+          "name": "Qingyu Hu",
+          "authorId": "2395491340"
+        },
+        {
+          "name": "Youjia Zhang",
+          "authorId": "2290867259"
+        },
+        {
+          "name": "Ying Zhou",
+          "authorId": "2274893168"
+        },
+        {
+          "name": "Vasilis Siomos",
+          "authorId": "2186864533"
+        },
+        {
+          "name": "Giacomo Tarroni",
+          "authorId": "2241612094"
+        },
+        {
+          "name": "Jonathan Passerrat-Palmbach",
+          "authorId": "2389260973"
+        },
+        {
+          "name": "Ambrish Rawat",
+          "authorId": "22261698"
+        },
+        {
+          "name": "Giulio Zizzo",
+          "authorId": "152109289"
+        },
+        {
+          "name": "S. Kadhe",
+          "authorId": "1686542"
+        },
+        {
+          "name": "J. Epperlein",
+          "authorId": "3191496"
+        },
+        {
+          "name": "Stefano Braghin",
+          "authorId": "2275269934"
+        },
+        {
+          "name": "Yuan Wang",
+          "authorId": "2285070153"
+        },
+        {
+          "name": "Renuga Kanagavelu",
+          "authorId": "1789665"
+        },
+        {
+          "name": "Qingsong Wei",
+          "authorId": "2285078682"
+        },
+        {
+          "name": "Yechao Yang",
+          "authorId": "2116729685"
+        },
+        {
+          "name": "Yong Liu",
+          "authorId": "2272716000"
+        },
+        {
+          "name": "Krzysztof Kotowski",
+          "authorId": "2285159016"
+        },
+        {
+          "name": "Szymon Adamski",
+          "authorId": "101303590"
+        },
+        {
+          "name": "B. Machura",
+          "authorId": "2281126860"
+        },
+        {
+          "name": "Wojciech Malara",
+          "authorId": "52533472"
+        },
+        {
+          "name": "Lukasz Zarudzki",
+          "authorId": "14083034"
+        },
+        {
+          "name": "Jakub Nalepa",
+          "authorId": "2285171939"
+        },
+        {
+          "name": "Yaying Shi",
+          "authorId": "2374134901"
+        },
+        {
+          "name": "Hongjian Gao",
+          "authorId": "2285125311"
+        },
+        {
+          "name": "Salman Avestimehr",
+          "authorId": "2360524439"
+        },
+        {
+          "name": "Yonghong Yan",
+          "authorId": "2285093599"
+        },
+        {
+          "name": "A. S. Akbar",
+          "authorId": "2055163128"
+        },
+        {
+          "name": "Ekaterina Kondrateva",
+          "authorId": "2356678887"
+        },
+        {
+          "name": "Hua Yang",
+          "authorId": "2388959533"
+        },
+        {
+          "name": "Zhaopei Li",
+          "authorId": "2390488085"
+        },
+        {
+          "name": "Hung-Yu Wu",
+          "authorId": "2389038866"
+        },
+        {
+          "name": "Johannes Roth",
+          "authorId": "2388862055"
+        },
+        {
+          "name": "Camillo Saueressig",
+          "authorId": "1601449765"
+        },
+        {
+          "name": "Alexandre Milesi",
+          "authorId": "1972310767"
+        },
+        {
+          "name": "Quoc D. Nguyen",
+          "authorId": "2391508563"
+        },
+        {
+          "name": "Nathan J. Gruenhagen",
+          "authorId": "2389269619"
+        },
+        {
+          "name": "Tsung-Ming Huang",
+          "authorId": "2370730768"
+        },
+        {
+          "name": "Jun Ma",
+          "authorId": "2325752916"
+        },
+        {
+          "name": "Har Shwinder H. Singh",
+          "authorId": "2390198879"
+        },
+        {
+          "name": "Nai-Yu Pan",
+          "authorId": "2294524565"
+        },
+        {
+          "name": "Dingwen Zhang",
+          "authorId": "2334830563"
+        },
+        {
+          "name": "Ramy A. Zeineldin",
+          "authorId": "1410139422"
+        },
+        {
+          "name": "Michal Futrega",
+          "authorId": "2359139471"
+        },
+        {
+          "name": "Yading Yuan",
+          "authorId": "2279415692"
+        },
+        {
+          "name": "GM Conte",
+          "authorId": "2284541924"
+        },
+        {
+          "name": "Xue Feng",
+          "authorId": "2388834754"
+        },
+        {
+          "name": "Quan D. Pham",
+          "authorId": "2388734528"
+        },
+        {
+          "name": "Yong Xia",
+          "authorId": "2256029669"
+        },
+        {
+          "name": "Zhifan Jiang",
+          "authorId": "2389261452"
+        },
+        {
+          "name": "Huan Minh Luu",
+          "authorId": "1455118985"
+        },
+        {
+          "name": "Mariia Dobko",
+          "authorId": "2389269492"
+        },
+        {
+          "name": "Alexandre Carr\u00e9",
+          "authorId": "2389261211"
+        },
+        {
+          "name": "B. Tuchinov",
+          "authorId": "1486411733"
+        },
+        {
+          "name": "Hassan Mohy-ud-Din",
+          "authorId": "1399515296"
+        },
+        {
+          "name": "Saruar Alam",
+          "authorId": "2388817976"
+        },
+        {
+          "name": "Anup Singh",
+          "authorId": "2390618550"
+        },
+        {
+          "name": "Nameeta Shah",
+          "authorId": "2346834381"
+        },
+        {
+          "name": "Weichung Wang",
+          "authorId": "2269408079"
+        },
+        {
+          "name": "C. Sako",
+          "authorId": "1454497124"
+        },
+        {
+          "name": "M. Bilello",
+          "authorId": "1981194"
+        },
+        {
+          "name": "S. Ghodasara",
+          "authorId": "48222278"
+        },
+        {
+          "name": "S. Mohan",
+          "authorId": "2238766591"
+        },
+        {
+          "name": "Christos Davatzikos",
+          "authorId": "2241744185"
+        },
+        {
+          "name": "E. Calabrese",
+          "authorId": "2239075341"
+        },
+        {
+          "name": "J. Rudie",
+          "authorId": "2670463"
+        },
+        {
+          "name": "J. Villanueva-Meyer",
+          "authorId": "1400114957"
+        },
+        {
+          "name": "S. Cha",
+          "authorId": "2305752795"
+        },
+        {
+          "name": "Christopher P Hess",
+          "authorId": "2298446960"
+        },
+        {
+          "name": "John Mongan",
+          "authorId": "2280107801"
+        },
+        {
+          "name": "M. Ingalhalikar",
+          "authorId": "1790073"
+        },
+        {
+          "name": "Manali Jadhav",
+          "authorId": "2388985359"
+        },
+        {
+          "name": "Umang Pandey",
+          "authorId": "2070388646"
+        },
+        {
+          "name": "Jitender Saini",
+          "authorId": "2249744637"
+        },
+        {
+          "name": "R. Huang",
+          "authorId": "2264613415"
+        },
+        {
+          "name": "Ken Chang",
+          "authorId": "2148409738"
+        },
+        {
+          "name": "Minh-Son To",
+          "authorId": "2380830976"
+        },
+        {
+          "name": "Sargam Bhardwaj",
+          "authorId": "2163392613"
+        },
+        {
+          "name": "Chee Chong",
+          "authorId": "2088935205"
+        },
+        {
+          "name": "Marc Agzarian",
+          "authorId": "2262145452"
+        },
+        {
+          "name": "Michal Kozubek",
+          "authorId": "2268319796"
+        },
+        {
+          "name": "F. Lux",
+          "authorId": "133964112"
+        },
+        {
+          "name": "Jan Mich\u00e1lek",
+          "authorId": "2383584501"
+        },
+        {
+          "name": "Petr Matula",
+          "authorId": "2267666512"
+        },
+        {
+          "name": "Milo\u0161 Ker^kovsk\u00fd",
+          "authorId": "2389275598"
+        },
+        {
+          "name": "Tereza Kopr^ivov\u00e1",
+          "authorId": "2389269377"
+        },
+        {
+          "name": "M. Dost\u00e1l",
+          "authorId": "40582521"
+        },
+        {
+          "name": "V. Vyb\u00edhal",
+          "authorId": "2251631983"
+        },
+        {
+          "name": "Marco C. Pinho",
+          "authorId": "2273272334"
+        },
+        {
+          "name": "J. Holcomb",
+          "authorId": "2056535148"
+        },
+        {
+          "name": "M. Metz",
+          "authorId": "1387099409"
+        },
+        {
+          "name": "Rajan Jain",
+          "authorId": "2263214034"
+        },
+        {
+          "name": "Matthew D. Lee",
+          "authorId": "2115791916"
+        },
+        {
+          "name": "Y. Lui",
+          "authorId": "2215024774"
+        },
+        {
+          "name": "P. Tiwari",
+          "authorId": "2249273150"
+        },
+        {
+          "name": "R. Verma",
+          "authorId": "3200813"
+        },
+        {
+          "name": "R. Bareja",
+          "authorId": "9753461"
+        },
+        {
+          "name": "I. Yadav",
+          "authorId": "2137438994"
+        },
+        {
+          "name": "Jonathan Chen",
+          "authorId": "2108265661"
+        },
+        {
+          "name": "Neeraj Kumar",
+          "authorId": "2388984966"
+        },
+        {
+          "name": "Yuriy Gusev",
+          "authorId": "2291940735"
+        },
+        {
+          "name": "K. Bhuvaneshwar",
+          "authorId": "2542426"
+        },
+        {
+          "name": "A. Sayah",
+          "authorId": "144470004"
+        },
+        {
+          "name": "Camelia Bencheqroun",
+          "authorId": "2052016902"
+        },
+        {
+          "name": "A. Belouali",
+          "authorId": "3397045"
+        },
+        {
+          "name": "Subha Madhavan",
+          "authorId": "2060647249"
+        },
+        {
+          "name": "R. Colen",
+          "authorId": "2153726"
+        },
+        {
+          "name": "Aikaterini Kotrotsou",
+          "authorId": "6287014"
+        },
+        {
+          "name": "Philipp Vollmuth",
+          "authorId": "2047217461"
+        },
+        {
+          "name": "G. Brugnara",
+          "authorId": "4595574"
+        },
+        {
+          "name": "C. J. Preetha",
+          "authorId": "9079961"
+        },
+        {
+          "name": "F. Sahm",
+          "authorId": "2335124626"
+        },
+        {
+          "name": "M. Bendszus",
+          "authorId": "2250027695"
+        },
+        {
+          "name": "Wolfgang Wick",
+          "authorId": "2264065715"
+        },
+        {
+          "name": "A. Mahajan",
+          "authorId": "2273688874"
+        },
+        {
+          "name": "C. Bala\u00f1a",
+          "authorId": "2250997291"
+        },
+        {
+          "name": "J. Capellades",
+          "authorId": "38233542"
+        },
+        {
+          "name": "Josep Puig",
+          "authorId": "2371042641"
+        },
+        {
+          "name": "Yoon Seong Choi",
+          "authorId": "2315455325"
+        },
+        {
+          "name": "Seung-Koo Lee",
+          "authorId": "2144476933"
+        },
+        {
+          "name": "J. Chang",
+          "authorId": "2266464207"
+        },
+        {
+          "name": "S. Ahn",
+          "authorId": "2242518524"
+        },
+        {
+          "name": "H. F. Shaykh",
+          "authorId": "88546967"
+        },
+        {
+          "name": "Alejandro Herrera-Trujillo",
+          "authorId": "2268269362"
+        },
+        {
+          "name": "Mar\u00eda Trujillo",
+          "authorId": "2339575409"
+        },
+        {
+          "name": "William Escobar",
+          "authorId": "2389268656"
+        },
+        {
+          "name": "Ana Abello",
+          "authorId": "2388953276"
+        },
+        {
+          "name": "Jose Bernal",
+          "authorId": "2187738707"
+        },
+        {
+          "name": "Jhon G\u00f3mez",
+          "authorId": "2390053068"
+        },
+        {
+          "name": "P. LaMontagne",
+          "authorId": "50398915"
+        },
+        {
+          "name": "Daniel S Marcus",
+          "authorId": "2369573815"
+        },
+        {
+          "name": "Mikhail Milchenko",
+          "authorId": "49574776"
+        },
+        {
+          "name": "A. Nazeri",
+          "authorId": "117346498"
+        },
+        {
+          "name": "Bennett A. Landman",
+          "authorId": "2254551021"
+        },
+        {
+          "name": "Karthik Ramadass",
+          "authorId": "1957052621"
+        },
+        {
+          "name": "Kaiwen Xu",
+          "authorId": "144464012"
+        },
+        {
+          "name": "S. Chotai",
+          "authorId": "2293042969"
+        },
+        {
+          "name": "L. Chambless",
+          "authorId": "1993448"
+        },
+        {
+          "name": "A. Mistry",
+          "authorId": "35015217"
+        },
+        {
+          "name": "Reid C Thompson",
+          "authorId": "2384740749"
+        },
+        {
+          "name": "A. Srinivasan",
+          "authorId": "2303532296"
+        },
+        {
+          "name": "J. Bapuraj",
+          "authorId": "2251451550"
+        },
+        {
+          "name": "Arvind Rao",
+          "authorId": "2336896433"
+        },
+        {
+          "name": "Nicholas C. Wang",
+          "authorId": "2152171485"
+        },
+        {
+          "name": "Ota Yoshiaki",
+          "authorId": "2099669987"
+        },
+        {
+          "name": "Toshio Moritani",
+          "authorId": "2239969291"
+        },
+        {
+          "name": "Sevcan Turk",
+          "authorId": "1471232572"
+        },
+        {
+          "name": "Joonsan Lee",
+          "authorId": "2035619837"
+        },
+        {
+          "name": "Snehal Prabhudesai",
+          "authorId": "2130919237"
+        },
+        {
+          "name": "John W. Garrett",
+          "authorId": "2316026690"
+        },
+        {
+          "name": "Matthew Larson",
+          "authorId": "2202733166"
+        },
+        {
+          "name": "R. Jeraj",
+          "authorId": "2303887536"
+        },
+        {
+          "name": "H. Li",
+          "authorId": "2280041001"
+        },
+        {
+          "name": "Tobias Weiss",
+          "authorId": "2275351273"
+        },
+        {
+          "name": "Michael Weller",
+          "authorId": "2304809640"
+        },
+        {
+          "name": "Andrea Bink",
+          "authorId": "2297813349"
+        },
+        {
+          "name": "B. Pouymayou",
+          "authorId": "146294663"
+        },
+        {
+          "name": "Sonam Sharma",
+          "authorId": "2389243919"
+        },
+        {
+          "name": "T. Tseng",
+          "authorId": "2253426380"
+        },
+        {
+          "name": "S. Adabi",
+          "authorId": "145134994"
+        },
+        {
+          "name": "Alexandre Xavier Falc\u00e3o",
+          "authorId": "9509395"
+        },
+        {
+          "name": "S. B. Martins",
+          "authorId": "2305656646"
+        },
+        {
+          "name": "B. C. Teixeira",
+          "authorId": "2202759309"
+        },
+        {
+          "name": "F. Sprenger",
+          "authorId": "1412924388"
+        },
+        {
+          "name": "David Menotti",
+          "authorId": "2275305765"
+        },
+        {
+          "name": "D. Lucio",
+          "authorId": "50974884"
+        },
+        {
+          "name": "Simone P. Niclou",
+          "authorId": "2253636401"
+        },
+        {
+          "name": "Olivier Keunen",
+          "authorId": "2316768609"
+        },
+        {
+          "name": "Ann-Christin Hau",
+          "authorId": "2249529279"
+        },
+        {
+          "name": "Enrique Pel\u00e1ez",
+          "authorId": "2301463566"
+        },
+        {
+          "name": "Heydy Franco-Maldonado",
+          "authorId": "2163392443"
+        },
+        {
+          "name": "Francis Loayza",
+          "authorId": "2287909199"
+        },
+        {
+          "name": "Sebasti\u00e1n Quevedo",
+          "authorId": "2351951064"
+        },
+        {
+          "name": "Richard McKinley",
+          "authorId": "48921224"
+        },
+        {
+          "name": "J. Slotboom",
+          "authorId": "2277213561"
+        },
+        {
+          "name": "Piotr Radojewski",
+          "authorId": "2273369004"
+        },
+        {
+          "name": "Raphael Meier",
+          "authorId": "48836970"
+        },
+        {
+          "name": "Roland Wiest",
+          "authorId": "2238754741"
+        },
+        {
+          "name": "J. Trenkler",
+          "authorId": "2227911997"
+        },
+        {
+          "name": "Josef Pichler",
+          "authorId": "2202759724"
+        },
+        {
+          "name": "Georg Necker",
+          "authorId": "2163392936"
+        },
+        {
+          "name": "Andreas Haunschmidt",
+          "authorId": "2163392867"
+        },
+        {
+          "name": "Stephan Meckel",
+          "authorId": "2208383721"
+        },
+        {
+          "name": "Pamela Guevara",
+          "authorId": "2266033436"
+        },
+        {
+          "name": "Esteban Torche",
+          "authorId": "8047648"
+        },
+        {
+          "name": "Cristobal Mendoza",
+          "authorId": "2159755663"
+        },
+        {
+          "name": "Franco Vera",
+          "authorId": "2389269352"
+        },
+        {
+          "name": "Elvis R\u00edos",
+          "authorId": "86972692"
+        },
+        {
+          "name": "Eduardo L\u00f3pez",
+          "authorId": "2202895992"
+        },
+        {
+          "name": "Sergio A. Velastin",
+          "authorId": "2322567058"
+        },
+        {
+          "name": "Joseph Choi",
+          "authorId": "2388764498"
+        },
+        {
+          "name": "Stephen Baek",
+          "authorId": "2390387560"
+        },
+        {
+          "name": "Yusung Kim",
+          "authorId": "2390201608"
+        },
+        {
+          "name": "Heba Ismael",
+          "authorId": "2279502317"
+        },
+        {
+          "name": "Bryan Allen",
+          "authorId": "2345857456"
+        },
+        {
+          "name": "J. M. Buatti",
+          "authorId": "2281734324"
+        },
+        {
+          "name": "P. Zampakis",
+          "authorId": "152650409"
+        },
+        {
+          "name": "Vasileios Panagiotopoulos",
+          "authorId": "2324879252"
+        },
+        {
+          "name": "Panagiotis Tsiganos",
+          "authorId": "102339553"
+        },
+        {
+          "name": "Sotiris Alexiou",
+          "authorId": "1780612096"
+        },
+        {
+          "name": "Ilias Haliassos",
+          "authorId": "2163392052"
+        },
+        {
+          "name": "E. I. Zacharaki",
+          "authorId": "2253434981"
+        },
+        {
+          "name": "Konstantinos Moustakas",
+          "authorId": "2303675420"
+        },
+        {
+          "name": "Christina Kalogeropoulou",
+          "authorId": "2290557113"
+        },
+        {
+          "name": "Dimitrios Kardamakis",
+          "authorId": "2300057887"
+        },
+        {
+          "name": "Bing Luo",
+          "authorId": "2158543720"
+        },
+        {
+          "name": "Laila M. Poisson",
+          "authorId": "2293072533"
+        },
+        {
+          "name": "Ning Wen",
+          "authorId": "2389269902"
+        },
+        {
+          "name": "M. Valli\u00e8res",
+          "authorId": "2290115730"
+        },
+        {
+          "name": "M. A. L. Loutfi",
+          "authorId": "2282929396"
+        },
+        {
+          "name": "David Fortin",
+          "authorId": "2388780835"
+        },
+        {
+          "name": "Martin Lepage",
+          "authorId": "2149979563"
+        },
+        {
+          "name": "Fanny E Moron",
+          "authorId": "2297282148"
+        },
+        {
+          "name": "J. Mandel",
+          "authorId": "2062861678"
+        },
+        {
+          "name": "Gaurav Shukla",
+          "authorId": "2204186506"
+        },
+        {
+          "name": "Spencer Liem",
+          "authorId": "47107137"
+        },
+        {
+          "name": "Gregory S. Alexandre",
+          "authorId": "2388778219"
+        },
+        {
+          "name": "Joseph Lombardo",
+          "authorId": "2255051506"
+        },
+        {
+          "name": "J. Palmer",
+          "authorId": "2250090268"
+        },
+        {
+          "name": "Adam E. Flanders",
+          "authorId": "2293310380"
+        },
+        {
+          "name": "A. Dicker",
+          "authorId": "2253746364"
+        },
+        {
+          "name": "G. Ogbole",
+          "authorId": "2240199083"
+        },
+        {
+          "name": "Dotun Oyekunle",
+          "authorId": "2154646665"
+        },
+        {
+          "name": "O. Odafe-Oyibotha",
+          "authorId": "1435092377"
+        },
+        {
+          "name": "B. Osobu",
+          "authorId": "146290770"
+        },
+        {
+          "name": "Mustapha Shu\u2019aibu Hikima",
+          "authorId": "2389269648"
+        },
+        {
+          "name": "M. Soneye",
+          "authorId": "14631416"
+        },
+        {
+          "name": "Farouk Dako",
+          "authorId": "4318566"
+        },
+        {
+          "name": "Adeleye Dorcas",
+          "authorId": "2163392686"
+        },
+        {
+          "name": "D. Murcia",
+          "authorId": "10393769"
+        },
+        {
+          "name": "Eric Fu",
+          "authorId": "2388817615"
+        },
+        {
+          "name": "Rourke Haas",
+          "authorId": "2163392560"
+        },
+        {
+          "name": "John A. Thompson",
+          "authorId": "2276201895"
+        },
+        {
+          "name": "D. R. Ormond",
+          "authorId": "2351779691"
+        },
+        {
+          "name": "Stuart Currie",
+          "authorId": "2253630125"
+        },
+        {
+          "name": "K. Fatania",
+          "authorId": "13609723"
+        },
+        {
+          "name": "R. Frood",
+          "authorId": "12577645"
+        },
+        {
+          "name": "Amber L. Simpson",
+          "authorId": "2146851452"
+        },
+        {
+          "name": "Jacob J. Peoples",
+          "authorId": "2257015976"
+        },
+        {
+          "name": "Ricky Hu",
+          "authorId": "2390573180"
+        },
+        {
+          "name": "D. Cutler",
+          "authorId": "50739401"
+        },
+        {
+          "name": "Fabio Y. Moraes",
+          "authorId": "2383449125"
+        },
+        {
+          "name": "Anh Tran",
+          "authorId": "2388810308"
+        },
+        {
+          "name": "Mohammad Hamghalam",
+          "authorId": "2278414530"
+        },
+        {
+          "name": "M. Boss",
+          "authorId": "34914895"
+        },
+        {
+          "name": "James Gimpel",
+          "authorId": "2389261078"
+        },
+        {
+          "name": "Deepak Kattil Veettil",
+          "authorId": "2190620411"
+        },
+        {
+          "name": "Kendall Schmidt",
+          "authorId": "2074436900"
+        },
+        {
+          "name": "Lisa Cimino",
+          "authorId": "153479841"
+        },
+        {
+          "name": "Cynthia Price",
+          "authorId": "2388777341"
+        },
+        {
+          "name": "Brian Bialecki",
+          "authorId": "3435183"
+        },
+        {
+          "name": "S. Marella",
+          "authorId": "2159758451"
+        },
+        {
+          "name": "Charles Apgar",
+          "authorId": "2367272551"
+        },
+        {
+          "name": "A. Jakab",
+          "authorId": "2250525381"
+        },
+        {
+          "name": "Marc-Andr\u00e9 Weber",
+          "authorId": "2269949862"
+        },
+        {
+          "name": "E. Colak",
+          "authorId": "6164044"
+        },
+        {
+          "name": "J. Kleesiek",
+          "authorId": "2239665"
+        },
+        {
+          "name": "J. Freymann",
+          "authorId": "37845261"
+        },
+        {
+          "name": "J. Kirby",
+          "authorId": "40078837"
+        },
+        {
+          "name": "Lena Maier-Hein",
+          "authorId": "2243190191"
+        },
+        {
+          "name": "Jake Albrecht",
+          "authorId": "145321907"
+        },
+        {
+          "name": "Peter Mattson",
+          "authorId": "2389269144"
+        },
+        {
+          "name": "Alexandros Karargyris",
+          "authorId": "2338100616"
+        },
+        {
+          "name": "Prashant Shah",
+          "authorId": "2091914870"
+        },
+        {
+          "name": "Bjoern H Menze",
+          "authorId": "143893221"
+        },
+        {
+          "name": "K. Maier-Hein",
+          "authorId": "2139962185"
+        },
+        {
+          "name": "S. Bakas",
+          "authorId": "3199900"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Computational competitions are the standard for benchmarking medical image analysis algorithms, but they typically use small curated test datasets acquired at a few centers, leaving a gap to the reality of diverse multicentric patient data. To this end, the Federated Tumor Segmentation (FeTS) Challenge represents the paradigm for real-world algorithmic performance evaluation. The FeTS challenge is a competition to benchmark (i) federated learning aggregation algorithms and (ii) state-of-the-art segmentation algorithms, across multiple international sites. Weight aggregation and client selection techniques were compared using a multicentric brain tumor dataset in realistic federated learning simulations, yielding benefits for adaptive weight aggregation, and efficiency gains through client sampling. Quantitative performance evaluation of state-of-the-art segmentation algorithms on data distributed internationally across 32 institutions yielded good generalization on average, albeit the worst-case performance revealed data-specific modes of failure. Similar multi-site setups can help validate the real-world utility of healthcare AI algorithms in the future. Federated learning (FL) algorithms have emerged as a promising solution to train models for healthcare imaging across institutions while preserving privacy. Here, the authors describe the Federated Tumor Segmentation (FeTS) challenge for the decentralised benchmarking of FL algorithms and evaluation of Healthcare AI algorithm generalizability in real-world cancer imaging datasets.",
+      "citationCount": 5,
+      "doi": "10.1038/s41467-025-60466-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e2ae794630febc7887995c84d472877b2552060c",
+      "venue": "Nature Communications",
+      "journal": {
+        "name": "Nature Communications",
+        "volume": "16"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dc651710957209c99399d4d3ef1f0579dfcba11c",
+      "title": "AI Hospital: Benchmarking Large Language Models in a Multi-agent Medical Interaction Simulator",
+      "authors": [
+        {
+          "name": "Zhihao Fan",
+          "authorId": "9610143"
+        },
+        {
+          "name": "Jialong Tang",
+          "authorId": "2299550823"
+        },
+        {
+          "name": "Wei Chen",
+          "authorId": "2256716476"
+        },
+        {
+          "name": "Siyuan Wang",
+          "authorId": "2238046283"
+        },
+        {
+          "name": "Zhongyu Wei",
+          "authorId": "2307981771"
+        },
+        {
+          "name": "Jun Xi",
+          "authorId": "2284220412"
+        },
+        {
+          "name": "Fei Huang",
+          "authorId": "2298712539"
+        },
+        {
+          "name": "Jingren Zhou",
+          "authorId": "2284490340"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Artificial intelligence has significantly advanced healthcare, particularly through large language models (LLMs) that excel in medical question answering benchmarks. However, their real-world clinical application remains limited due to the complexities of doctor-patient interactions. To address this, we introduce \\textbf{AI Hospital}, a multi-agent framework simulating dynamic medical interactions between \\emph{Doctor} as player and NPCs including \\emph{Patient}, \\emph{Examiner}, \\emph{Chief Physician}. This setup allows for realistic assessments of LLMs in clinical scenarios. We develop the Multi-View Medical Evaluation (MVME) benchmark, utilizing high-quality Chinese medical records and NPCs to evaluate LLMs' performance in symptom collection, examination recommendations, and diagnoses. Additionally, a dispute resolution collaborative mechanism is proposed to enhance diagnostic accuracy through iterative discussions. Despite improvements, current LLMs exhibit significant performance gaps in multi-turn interactions compared to one-step approaches. Our findings highlight the need for further research to bridge these gaps and improve LLMs' clinical diagnostic capabilities. Our data, code, and experimental results are all open-sourced at \\url{https://github.com/LibertFan/AI_Hospital}.",
+      "citationCount": 73,
+      "doi": null,
+      "arxivId": "2402.09742",
+      "url": "https://www.semanticscholar.org/paper/dc651710957209c99399d4d3ef1f0579dfcba11c",
+      "venue": "International Conference on Computational Linguistics",
+      "journal": {
+        "pages": "10183-10213"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "64e00961927343702a5232ce60b10ca3fca14dda",
+      "title": "Enterprise Large Language Model Evaluation Benchmark",
+      "authors": [
+        {
+          "name": "Liya Wang",
+          "authorId": "2370954772"
+        },
+        {
+          "name": "David Yi",
+          "authorId": "2370935199"
+        },
+        {
+          "name": "Damien Jose",
+          "authorId": "2370936221"
+        },
+        {
+          "name": "John Passarelli",
+          "authorId": "2370934351"
+        },
+        {
+          "name": "James Gao",
+          "authorId": "2370952701"
+        },
+        {
+          "name": "Jordan Leventis",
+          "authorId": "2370934726"
+        },
+        {
+          "name": "Kang Li",
+          "authorId": "2370984391"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) have demonstrated promise in boosting productivity across AI-powered tools, yet existing benchmarks like Massive Multitask Language Understanding (MMLU) inadequately assess enterprise-specific task complexities. We propose a 14-task framework grounded in Bloom\u2019s Taxonomy to holistically evaluate LLM capabilities in enterprise contexts. To address challenges of noisy data and costly annotation, we develop a scalable pipeline combining LLM-as-a-Labeler, LLM-as-aJudge, and corrective retrieval-augmented generation (CRAG), curating a robust 9,700-sample benchmark. Evaluation of six leading models shows open-source contenders like DeepSeek R1 rival proprietary models in reasoning tasks but lag in judgment-based scenarios, likely due to overthinking. Our benchmark reveals critical enterprise performance gaps and offers actionable insights for model optimization. This work provides enterprises a blueprint for tailored evaluations and advances practical LLM deployment.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.20274",
+      "arxivId": "2506.20274",
+      "url": "https://www.semanticscholar.org/paper/64e00961927343702a5232ce60b10ca3fca14dda",
+      "venue": "Machine Learning Techniques and NLP",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.20274"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ffd53365745285d187b97b5fa7ba87d4cf493136",
+      "title": "LithoBench: Benchmarking AI Computational Lithography for Semiconductor Manufacturing",
+      "authors": [
+        {
+          "name": "Su Zheng",
+          "authorId": "2218461490"
+        },
+        {
+          "name": "Haoyu Yang",
+          "authorId": "1492122474"
+        },
+        {
+          "name": "Binwu Zhu",
+          "authorId": "2145924449"
+        },
+        {
+          "name": "Bei Yu",
+          "authorId": "2140415064"
+        },
+        {
+          "name": "Martin D. F. Wong",
+          "authorId": "2288598660"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 23,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ffd53365745285d187b97b5fa7ba87d4cf493136",
+      "venue": "Neural Information Processing Systems",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

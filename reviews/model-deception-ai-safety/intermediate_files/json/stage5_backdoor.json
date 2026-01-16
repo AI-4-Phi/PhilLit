@@ -1,0 +1,172 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:backdoor attack language model AND cat:cs.CR",
+  "results": [
+    {
+      "arxiv_id": "2308.16684",
+      "title": "Everyone Can Attack: Repurpose Lossy Compression as a Natural Backdoor Attack",
+      "authors": [
+        "Sze Jue Yang",
+        "Quang Nguyen",
+        "Chee Seng Chan",
+        "Khoa D. Doan"
+      ],
+      "abstract": "The vulnerabilities to backdoor attacks have recently threatened the trustworthiness of machine learning models in practical applications. Conventional wisdom suggests that not everyone can be an attacker since the process of designing the trigger generation algorithm often involves significant effort and extensive experimentation to ensure the attack's stealthiness and effectiveness. Alternatively, this paper shows that there exists a more severe backdoor threat: anyone can exploit an easily-accessible algorithm for silent backdoor attacks. Specifically, this attacker can employ the widely-used lossy image compression from a plethora of compression tools to effortlessly inject a trigger pattern into an image without leaving any noticeable trace; i.e., the generated triggers are natural artifacts. One does not require extensive knowledge to click on the \"convert\" or \"save as\" button while using tools for lossy image compression. Via this attack, the adversary does not need to design a trigger generator as seen in prior works and only requires poisoning the data. Empirically, the proposed attack consistently achieves 100% attack success rate in several benchmark datasets such as MNIST, CIFAR-10, GTSRB and CelebA. More significantly, the proposed attack can still achieve almost 100% attack success rate with very small (approximately 10%) poisoning rates in the clean label setting. The generated trigger of the proposed attack using one lossy compression algorithm is also transferable across other related compression algorithms, exacerbating the severity of this backdoor threat. This work takes another crucial step toward understanding the extensive risks of backdoor attacks in practice, urging practitioners to investigate similar attacks and relevant backdoor mitigation methods.",
+      "published": "2023-08-31",
+      "updated": "2023-09-03",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2308.16684v2",
+      "url": "https://arxiv.org/abs/2308.16684"
+    },
+    {
+      "arxiv_id": "2305.01267",
+      "title": "DABS: Data-Agnostic Backdoor attack at the Server in Federated Learning",
+      "authors": [
+        "Wenqiang Sun",
+        "Sen Li",
+        "Yuchang Sun",
+        "Jun Zhang"
+      ],
+      "abstract": "Federated learning (FL) attempts to train a global model by aggregating local models from distributed devices under the coordination of a central server. However, the existence of a large number of heterogeneous devices makes FL vulnerable to various attacks, especially the stealthy backdoor attack. Backdoor attack aims to trick a neural network to misclassify data to a target label by injecting specific triggers while keeping correct predictions on original training data. Existing works focus on client-side attacks which try to poison the global model by modifying the local datasets. In this work, we propose a new attack model for FL, namely Data-Agnostic Backdoor attack at the Server (DABS), where the server directly modifies the global model to backdoor an FL system. Extensive simulation results show that this attack scheme achieves a higher attack success rate compared with baseline methods while maintaining normal accuracy on the clean data.",
+      "published": "2023-05-02",
+      "updated": "2023-05-02",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2305.01267v1",
+      "url": "https://arxiv.org/abs/2305.01267"
+    },
+    {
+      "arxiv_id": "2302.04116",
+      "title": "Training-free Lexical Backdoor Attacks on Language Models",
+      "authors": [
+        "Yujin Huang",
+        "Terry Yue Zhuo",
+        "Qiongkai Xu",
+        "Han Hu",
+        "Xingliang Yuan",
+        "Chunyang Chen"
+      ],
+      "abstract": "Large-scale language models have achieved tremendous success across various natural language processing (NLP) applications. Nevertheless, language models are vulnerable to backdoor attacks, which inject stealthy triggers into models for steering them to undesirable behaviors. Most existing backdoor attacks, such as data poisoning, require further (re)training or fine-tuning language models to learn the intended backdoor patterns. The additional training process however diminishes the stealthiness of the attacks, as training a language model usually requires long optimization time, a massive amount of data, and considerable modifications to the model parameters. In this work, we propose Training-Free Lexical Backdoor Attack (TFLexAttack) as the first training-free backdoor attack on language models. Our attack is achieved by injecting lexical triggers into the tokenizer of a language model via manipulating its embedding dictionary using carefully designed rules. These rules are explainable to human developers which inspires attacks from a wider range of hackers. The sparse manipulation of the dictionary also habilitates the stealthiness of our attack. We conduct extensive experiments on three dominant NLP tasks based on nine language models to demonstrate the effectiveness and universality of our attack. The code of this work is available at https://github.com/Jinxhy/TFLexAttack.",
+      "published": "2023-02-08",
+      "updated": "2023-02-08",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "doi": "10.1145/3543507.3583348",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2302.04116v1",
+      "url": "https://arxiv.org/abs/2302.04116"
+    },
+    {
+      "arxiv_id": "2305.01219",
+      "title": "Prompt as Triggers for Backdoor Attack: Examining the Vulnerability in Language Models",
+      "authors": [
+        "Shuai Zhao",
+        "Jinming Wen",
+        "Luu Anh Tuan",
+        "Junbo Zhao",
+        "Jie Fu"
+      ],
+      "abstract": "The prompt-based learning paradigm, which bridges the gap between pre-training and fine-tuning, achieves state-of-the-art performance on several NLP tasks, particularly in few-shot settings. Despite being widely applied, prompt-based learning is vulnerable to backdoor attacks. Textual backdoor attacks are designed to introduce targeted vulnerabilities into models by poisoning a subset of training samples through trigger injection and label modification. However, they suffer from flaws such as abnormal natural language expressions resulting from the trigger and incorrect labeling of poisoned samples. In this study, we propose ProAttack, a novel and efficient method for performing clean-label backdoor attacks based on the prompt, which uses the prompt itself as a trigger. Our method does not require external triggers and ensures correct labeling of poisoned samples, improving the stealthy nature of the backdoor attack. With extensive experiments on rich-resource and few-shot text classification tasks, we empirically validate ProAttack's competitive performance in textual backdoor attacks. Notably, in the rich-resource setting, ProAttack achieves state-of-the-art attack success rates in the clean-label backdoor attack benchmark without external triggers.",
+      "published": "2023-05-02",
+      "updated": "2023-11-10",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": "10.18653/v1/2023.emnlp-main.757",
+      "journal_ref": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+      "pdf_url": "https://arxiv.org/pdf/2305.01219v6",
+      "url": "https://arxiv.org/abs/2305.01219"
+    },
+    {
+      "arxiv_id": "2307.14692",
+      "title": "Backdoor Attacks for In-Context Learning with Language Models",
+      "authors": [
+        "Nikhil Kandpal",
+        "Matthew Jagielski",
+        "Florian Tram\u00e8r",
+        "Nicholas Carlini"
+      ],
+      "abstract": "Because state-of-the-art language models are expensive to train, most practitioners must make use of one of the few publicly available language models or language model APIs. This consolidation of trust increases the potency of backdoor attacks, where an adversary tampers with a machine learning model in order to make it perform some malicious behavior on inputs that contain a predefined backdoor trigger. We show that the in-context learning ability of large language models significantly complicates the question of developing backdoor attacks, as a successful backdoor must work against various prompting strategies and should not affect the model's general purpose capabilities. We design a new attack for eliciting targeted misclassification when language models are prompted to perform a particular target task and demonstrate the feasibility of this attack by backdooring multiple large language models ranging in size from 1.3 billion to 6 billion parameters. Finally we study defenses to mitigate the potential harms of our attack: for example, while in the white-box setting we show that fine-tuning models for as few as 500 steps suffices to remove the backdoor behavior, in the black-box setting we are unable to develop a successful defense that relies on prompt engineering alone.",
+      "published": "2023-07-27",
+      "updated": "2023-07-27",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2307.14692v1",
+      "url": "https://arxiv.org/abs/2307.14692"
+    },
+    {
+      "arxiv_id": "2312.15867",
+      "title": "Punctuation Matters! Stealthy Backdoor Attack for Language Models",
+      "authors": [
+        "Xuan Sheng",
+        "Zhicheng Li",
+        "Zhaoyang Han",
+        "Xiangmao Chang",
+        "Piji Li"
+      ],
+      "abstract": "Recent studies have pointed out that natural language processing (NLP) models are vulnerable to backdoor attacks. A backdoored model produces normal outputs on the clean samples while performing improperly on the texts with triggers that the adversary injects. However, previous studies on textual backdoor attack pay little attention to stealthiness. Moreover, some attack methods even cause grammatical issues or change the semantic meaning of the original texts. Therefore, they can easily be detected by humans or defense systems. In this paper, we propose a novel stealthy backdoor attack method against textual models, which is called \\textbf{PuncAttack}. It leverages combinations of punctuation marks as the trigger and chooses proper locations strategically to replace them. Through extensive experiments, we demonstrate that the proposed method can effectively compromise multiple models in various tasks. Meanwhile, we conduct automatic evaluation and human inspection, which indicate the proposed method possesses good performance of stealthiness without bringing grammatical issues and altering the meaning of sentences.",
+      "published": "2023-12-26",
+      "updated": "2023-12-26",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2312.15867v1",
+      "url": "https://arxiv.org/abs/2312.15867"
+    },
+    {
+      "arxiv_id": "2310.07676",
+      "title": "Composite Backdoor Attacks Against Large Language Models",
+      "authors": [
+        "Hai Huang",
+        "Zhengyu Zhao",
+        "Michael Backes",
+        "Yun Shen",
+        "Yang Zhang"
+      ],
+      "abstract": "Large language models (LLMs) have demonstrated superior performance compared to previous methods on various tasks, and often serve as the foundation models for many researches and services. However, the untrustworthy third-party LLMs may covertly introduce vulnerabilities for downstream tasks. In this paper, we explore the vulnerability of LLMs through the lens of backdoor attacks. Different from existing backdoor attacks against LLMs, ours scatters multiple trigger keys in different prompt components. Such a Composite Backdoor Attack (CBA) is shown to be stealthier than implanting the same multiple trigger keys in only a single component. CBA ensures that the backdoor is activated only when all trigger keys appear. Our experiments demonstrate that CBA is effective in both natural language processing (NLP) and multimodal tasks. For instance, with $3\\%$ poisoning samples against the LLaMA-7B model on the Emotion dataset, our attack achieves a $100\\%$ Attack Success Rate (ASR) with a False Triggered Rate (FTR) below $2.06\\%$ and negligible model accuracy degradation. Our work highlights the necessity of increased security research on the trustworthiness of foundation LLMs.",
+      "published": "2023-10-11",
+      "updated": "2024-03-30",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2310.07676v2",
+      "url": "https://arxiv.org/abs/2310.07676"
+    }
+  ],
+  "count": 7,
+  "errors": []
+}

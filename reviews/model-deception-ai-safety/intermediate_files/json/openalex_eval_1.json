@@ -1,0 +1,2367 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "AI auditing methodology",
+  "results": [
+    {
+      "openalex_id": "W3199196172",
+      "doi": "10.1007/s43681-021-00084-x",
+      "title": "Putting AI ethics to work: are the tools fit for purpose?",
+      "authors": [
+        {
+          "name": "Jacqui Ayling",
+          "openalex_id": "A5084283044",
+          "orcid": "https://orcid.org/0000-0002-2450-0881",
+          "institutions": [
+            "University of Southampton"
+          ]
+        },
+        {
+          "name": "Adriane Chapman",
+          "openalex_id": "A5013015057",
+          "orcid": "https://orcid.org/0000-0002-3814-2587",
+          "institutions": [
+            "University of Southampton"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-12",
+      "abstract": "Abstract Bias, unfairness and lack of transparency and accountability in Artificial Intelligence (AI) systems, and the potential for the misuse of predictive models for decision-making have raised concerns about the ethical impact and unintended consequences of new technologies for society across every sector where data-driven innovation is taking place. This paper reviews the landscape of suggested ethical frameworks with a focus on those which go beyond high-level statements of principles and offer practical tools for application of these principles in the production and deployment of systems. This work provides an assessment of these practical frameworks with the lens of known best practices for impact assessment and audit of technology. We review other historical uses of risk assessments and audits and create a typology that allows us to compare current AI ethics tools to Best Practices found in previous methodologies from technology, environment, privacy, finance and engineering. We analyse current AI ethics tools and their support for diverse stakeholders and components of the AI development and deployment lifecycle as well as the types of tools used to facilitate use. From this, we identify gaps in current AI ethics tools in auditing and risk assessment that should be considered going forward.",
+      "cited_by_count": 204,
+      "type": "article",
+      "source": {
+        "name": "AI and Ethics",
+        "type": "journal",
+        "issn": [
+          "2730-5953",
+          "2730-5961"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-021-00084-x.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W3199196172"
+    },
+    {
+      "openalex_id": "W4381572755",
+      "doi": "10.1007/s43681-023-00289-2",
+      "title": "Auditing large language models: a three-layered approach",
+      "authors": [
+        {
+          "name": "Jakob M\u00f6kander",
+          "openalex_id": "A5025509228",
+          "orcid": "https://orcid.org/0000-0002-8691-2582",
+          "institutions": [
+            "Princeton University",
+            "Center for Information Technology",
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Jonas Schuett",
+          "openalex_id": "A5016424652",
+          "orcid": "https://orcid.org/0000-0001-7154-5049",
+          "institutions": [
+            "Goethe University Frankfurt",
+            "Centre for the Governance of AI"
+          ]
+        },
+        {
+          "name": "Hannah Rose Kirk",
+          "openalex_id": "A5051050719",
+          "orcid": "https://orcid.org/0000-0002-7419-5993",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Luciano Floridi",
+          "openalex_id": "A5046574356",
+          "orcid": "https://orcid.org/0000-0002-5444-2280",
+          "institutions": [
+            "University of Bologna",
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-30",
+      "abstract": "Abstract Large language models (LLMs) represent a major advance in artificial intelligence (AI) research. However, the widespread use of LLMs is also coupled with significant ethical and social challenges. Previous research has pointed towards auditing as a promising governance mechanism to help ensure that AI systems are designed and deployed in ways that are ethical, legal, and technically robust. However, existing auditing procedures fail to address the governance challenges posed by LLMs, which display emergent capabilities and are adaptable to a wide range of downstream tasks. In this article, we address that gap by outlining a novel blueprint for how to audit LLMs. Specifically, we propose a three-layered approach, whereby governance audits (of technology providers that design and disseminate LLMs), model audits (of LLMs after pre-training but prior to their release), and application audits (of applications based on LLMs) complement and inform each other. We show how audits, when conducted in a structured and coordinated manner on all three levels, can be a feasible and effective mechanism for identifying and managing some of the ethical and social risks posed by LLMs. However, it is important to remain realistic about what auditing can reasonably be expected to achieve. Therefore, we discuss the limitations not only of our three-layered approach but also of the prospect of auditing LLMs at all. Ultimately, this article seeks to expand the methodological toolkit available to technology providers and policymakers who wish to analyse and evaluate LLMs from technical, ethical, and legal perspectives.",
+      "cited_by_count": 151,
+      "type": "article",
+      "source": {
+        "name": "AI and Ethics",
+        "type": "journal",
+        "issn": [
+          "2730-5953",
+          "2730-5961"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-023-00289-2.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 216,
+      "url": "https://openalex.org/W4381572755"
+    },
+    {
+      "openalex_id": "W4283465583",
+      "doi": "10.1108/aaaj-09-2020-4934",
+      "title": "Artificial intelligence based decision-making in accounting and\u00a0auditing: ethical challenges and normative thinking",
+      "authors": [
+        {
+          "name": "Othmar M. Lehner",
+          "openalex_id": "A5066679289",
+          "orcid": "https://orcid.org/0000-0002-3317-9604",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Kim Ittonen",
+          "openalex_id": "A5026581628",
+          "orcid": "https://orcid.org/0000-0002-2917-4077",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Hanna Silvola",
+          "openalex_id": "A5057056352",
+          "orcid": "https://orcid.org/0000-0001-7176-3548",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Eva Str\u00f6m",
+          "openalex_id": "A5007787257",
+          "orcid": "https://orcid.org/0000-0002-6115-8181",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Alena W\u00fchrleitner",
+          "openalex_id": "A5034667304"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-21",
+      "abstract": "Purpose This paper aims to identify ethical challenges of using artificial intelligence (AI)-based accounting systems for decision-making and discusses its findings based on Rest's four-component model of antecedents for ethical decision-making. This study derives implications for accounting and auditing scholars and practitioners. Design/methodology/approach This research is rooted in the hermeneutics tradition of interpretative accounting research, in which the reader and the texts engage in a form of dialogue. To substantiate this dialogue, the authors conduct a theoretically informed, narrative (semi-systematic) literature review spanning the years 2015\u20132020. This review's narrative is driven by the depicted contexts and the accounting/auditing practices found in selected articles are used as sample instead of the research or methods. Findings In the thematic coding of the selected papers the authors identify five major ethical challenges of AI-based decision-making in accounting: objectivity, privacy, transparency, accountability and trustworthiness. Using Rest's component model of antecedents for ethical decision-making as a stable framework for our structure, the authors critically discuss the challenges and their relevance for a future human\u2013machine collaboration within varying agency between humans and AI. Originality/value This paper contributes to the literature on accounting as a subjectivising as well as mediating practice in a socio-material context. It does so by providing a solid base of arguments that AI alone, despite its enabling and mediating role in accounting, cannot make ethical accounting decisions because it lacks the necessary preconditions in terms of Rest's model of antecedents. What is more, as AI is bound to pre-set goals and subjected to human made conditions despite its autonomous learning and adaptive practices, it lacks true agency. As a consequence, accountability needs to be shared between humans and AI. The authors suggest that related governance as well as internal and external auditing processes need to be adapted in terms of skills and awareness to ensure an ethical AI-based decision-making.",
+      "cited_by_count": 162,
+      "type": "article",
+      "source": {
+        "name": "Accounting Auditing & Accountability Journal",
+        "type": "journal",
+        "issn": [
+          "0951-3574",
+          "2051-3151"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/AAAJ-09-2020-4934/full/pdf?title=artificial-intelligence-based-decision-making-in-accounting-and-auditing-ethical-challenges-and-normative-thinking"
+      },
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Blockchain Technology Applications and Security",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W4283465583"
+    },
+    {
+      "openalex_id": "W4390564972",
+      "doi": "10.30574/wjarr.2024.21.1.2721",
+      "title": "The impact of AI on accounting practices: A review: Exploring how artificial intelligence is transforming traditional accounting methods and financial reporting",
+      "authors": [
+        {
+          "name": "Beryl Odonkor",
+          "openalex_id": "A5093649620",
+          "institutions": [
+            "McKinsey & Company (United States)"
+          ]
+        },
+        {
+          "name": "Simon Kaggwa",
+          "openalex_id": "A5113078902",
+          "institutions": [
+            "Hult International Business School"
+          ]
+        },
+        {
+          "name": "Prisca Ugomma Uwaoma",
+          "openalex_id": "A5093507072"
+        },
+        {
+          "name": "Azeez Olanipekun Hassan",
+          "openalex_id": "A5113097252"
+        },
+        {
+          "name": "Oluwatoyin Ajoke Farayola",
+          "openalex_id": "A5093337338"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-04",
+      "abstract": "This paper delves into the transformative impact of Artificial Intelligence (AI) on traditional accounting practices, examining its role in reshaping financial reporting, auditing, and decision-making processes. The study explores the evolution from manual, labor-intensive accounting methods to sophisticated, AI-driven approaches by setting it against the backdrop of rapid technological advancements. The aim is to critically assess how AI integration is redefining the landscape of accounting, highlighting both the opportunities and challenges it presents. The study meticulously analyzes peer-reviewed articles, case studies, and industry reports from the last decade by employing a systematic literature review and bibliometric analysis. This methodology ensures a comprehensive understanding of AI's integration in accounting, its effectiveness in enhancing accuracy and efficiency, and the strategic implications for accounting professionals and firms. The findings reveal that AI significantly improves the accuracy and efficiency of financial reporting, automating routine tasks and enabling predictive analytics for strategic decision-making. However, challenges such as the need for skilled personnel adept in AI, data privacy concerns, and the high costs of AI integration are notable. The study also highlights the resistance to change as a significant barrier to AI adoption in accounting practices. In conclusion, the paper recommends a balanced approach to AI integration in accounting, emphasizing the need for continuous learning, adaptation, and strategic planning. It advocates for investment in training and development to build AI competency and stresses the importance of ethical considerations and regulatory compliance. The study concludes that while AI presents challenges, its potential to revolutionize accounting practices is undeniable, offering new avenues for growth and innovation in the digital era.",
+      "cited_by_count": 115,
+      "type": "article",
+      "source": {
+        "name": "World Journal of Advanced Research and Reviews",
+        "type": "journal",
+        "issn": [
+          "2581-9615"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://wjarr.com/sites/default/files/WJARR-2023-2721.pdf"
+      },
+      "topics": [
+        "Impact of AI and Big Data on Business and Society",
+        "FinTech, Crowdfunding, Digital Finance",
+        "Blockchain Technology Applications and Security"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W4390564972"
+    },
+    {
+      "openalex_id": "W4396815676",
+      "doi": "10.1109/satml59370.2024.00037",
+      "title": "AI auditing: The Broken Bus on the Road to AI Accountability",
+      "authors": [
+        {
+          "name": "Abeba Birhane",
+          "openalex_id": "A5038758207",
+          "orcid": "https://orcid.org/0000-0001-6319-7937",
+          "institutions": [
+            "Science Foundation Ireland",
+            "Trinity College Dublin"
+          ]
+        },
+        {
+          "name": "Ryan Steed",
+          "openalex_id": "A5073331047",
+          "orcid": "https://orcid.org/0000-0002-2345-2670",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Victor Ojewale",
+          "openalex_id": "A5093817100",
+          "orcid": "https://orcid.org/0009-0004-8403-4423",
+          "institutions": [
+            "Brown University"
+          ]
+        },
+        {
+          "name": "Briana Vecchione",
+          "openalex_id": "A5069421536",
+          "orcid": "https://orcid.org/0000-0002-0828-8665",
+          "institutions": [
+            "Data & Society Research Institute"
+          ]
+        },
+        {
+          "name": "Inioluwa Deborah Raji",
+          "openalex_id": "A5011015504",
+          "institutions": [
+            "University of California, Berkeley",
+            "Mozilla Foundation"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-09",
+      "abstract": "One of the most concrete measures towards meaningful AI accountability is to consequentially assess and report the systems' performance and impact. However, the practical nature of the \"AI audit\" ecosystem is muddled and imprecise, making it difficult to work through various concepts, practices, and involved (as well as ignored) stakeholders. First, we taxonomize current AI audit practices as completed by regulators, law firms, civil society, journalism, academia, and consulting agencies. Next, we assess the impact of audits done by stakeholders within each domain. We find that only a subset of AI audit studies translate to desired accountability outcomes. We thus assess and isolate practices necessary for effective AI audit results, articulating the observed connections between AI audit design, methodology and institutional context on its effectiveness as a meaningful mechanism for accountability.",
+      "cited_by_count": 50,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 114,
+      "url": "https://openalex.org/W4396815676"
+    },
+    {
+      "openalex_id": "W4285202968",
+      "doi": "10.1109/access.2022.3186892",
+      "title": "Blockchain for Industry 5.0: Vision, Opportunities, Key Enablers, and Future Directions",
+      "authors": [
+        {
+          "name": "Ashwin Verma",
+          "openalex_id": "A5012491501",
+          "orcid": "https://orcid.org/0000-0001-8904-228X",
+          "institutions": [
+            "Nirma University"
+          ]
+        },
+        {
+          "name": "Pronaya Bhattacharya",
+          "openalex_id": "A5053527968",
+          "orcid": "https://orcid.org/0000-0002-1206-2298",
+          "institutions": [
+            "Nirma University"
+          ]
+        },
+        {
+          "name": "Nirav Madhani",
+          "openalex_id": "A5019009727",
+          "institutions": [
+            "Nirma University"
+          ]
+        },
+        {
+          "name": "Chandan Trivedi",
+          "openalex_id": "A5065723730",
+          "orcid": "https://orcid.org/0000-0002-9060-6238",
+          "institutions": [
+            "Nirma University"
+          ]
+        },
+        {
+          "name": "Bharat Bhushan",
+          "openalex_id": "A5101728059",
+          "orcid": "https://orcid.org/0000-0002-9345-4786",
+          "institutions": [
+            "Sharda University"
+          ]
+        },
+        {
+          "name": "Sudeep Tanwar",
+          "openalex_id": "A5089077811",
+          "orcid": "https://orcid.org/0000-0002-1776-4651",
+          "institutions": [
+            "Nirma University"
+          ]
+        },
+        {
+          "name": "Gulshan Sharma",
+          "openalex_id": "A5022261598",
+          "orcid": "https://orcid.org/0000-0002-4726-0956",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Pitshou N. Bokoro",
+          "openalex_id": "A5079866137",
+          "orcid": "https://orcid.org/0000-0002-9178-2700",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Ravi Sharma",
+          "openalex_id": "A5056113902",
+          "orcid": "https://orcid.org/0000-0002-8584-9753",
+          "institutions": [
+            "University of Petroleum and Energy Studies"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "Industry 4.0 have witnessed a paradigm shift from cyber-physical systems (CPS) that aims at massive automation, to a more customer-driven approach. The shift has been attributed to the design of hyper-cognitive systems, integration of virtual and extended reality, digital machinery prototyping and twin designs, trusted machine boundaries, collaborative robots, and artificial intelligence (AI)-based supply chains. This new wave, termed Industry 5.0, is expected to leverage massive production with user-centric customization outside the scope of Industry 4.0 ecosystems. Industry 5.0 is expected to assist diverse industrial verticals like healthcare, smart farming, drones, smart grids, and supply chain production ecosystems. However, data is shared among multiple heterogeneous networks, spanning different authoritative domains. Thus, trusted and secured data transfer is crucial to synergize and secure the industrial perimeters. Blockchain (BC) is a preferred choice as a security enabler to Industry 5.0 ecosystems owing to its inherent property of immutability, chronology, and auditability in industrial systems. Limited works are proposed that present the vision and holistic view of BC-assisted Industry 5.0 applications. The article presents a first-of-its-kind survey on BC as a security enabler in Industry 5.0. Based on a descriptive survey methodology and research questions, we presented the key drivers, and potential applications, and propose an architectural vision of BC-based Industry 5.0 in diverse applicative verticals. The survey intends to present solutions that would assist industry practitioners, academicians, and researchers to drive novel BC-assisted solutions in Industry 5.0 verticals.",
+      "cited_by_count": 169,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/09809962.pdf"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Digital Transformation in Industry",
+        "IoT and Edge/Fog Computing"
+      ],
+      "referenced_works_count": 163,
+      "url": "https://openalex.org/W4285202968"
+    },
+    {
+      "openalex_id": "W4321022177",
+      "doi": "10.2139/ssrn.4361607",
+      "title": "Auditing Large Language Models: A Three-Layered Approach",
+      "authors": [
+        {
+          "name": "Jakob M\u00f6kander",
+          "openalex_id": "A5025509228",
+          "orcid": "https://orcid.org/0000-0002-8691-2582",
+          "institutions": [
+            "University of Oxford",
+            "Internet Society",
+            "Center for Information Technology",
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Jonas Schuett",
+          "openalex_id": "A5016424652",
+          "orcid": "https://orcid.org/0000-0001-7154-5049",
+          "institutions": [
+            "Centre for the Governance of AI",
+            "Goethe University Frankfurt",
+            "Institute on Governance"
+          ]
+        },
+        {
+          "name": "Hannah Rose Kirk",
+          "openalex_id": "A5051050719",
+          "orcid": "https://orcid.org/0000-0002-7419-5993",
+          "institutions": [
+            "University of Oxford",
+            "Internet Society"
+          ]
+        },
+        {
+          "name": "Luciano Floridi",
+          "openalex_id": "A5046574356",
+          "orcid": "https://orcid.org/0000-0002-5444-2280",
+          "institutions": [
+            "Yale University",
+            "University of Bologna"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": null,
+      "cited_by_count": 69,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.4361607"
+      },
+      "topics": [
+        "Software Engineering Research",
+        "Ethics and Social Impacts of AI",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4321022177"
+    },
+    {
+      "openalex_id": "W4385491340",
+      "doi": "10.1108/jrim-06-2023-0176",
+      "title": "Corporate digital responsibility (CDR) in the age of AI: implications for interactive marketing",
+      "authors": [
+        {
+          "name": "Werner H. Kunz",
+          "openalex_id": "A5053767623",
+          "orcid": "https://orcid.org/0000-0001-6264-183X",
+          "institutions": [
+            "University of Massachusetts Boston"
+          ]
+        },
+        {
+          "name": "Jochen Wirtz",
+          "openalex_id": "A5064998398",
+          "orcid": "https://orcid.org/0000-0002-6297-4498",
+          "institutions": [
+            "National University of Singapore"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-02",
+      "abstract": "Purpose Despite all the recent achievements in the field of interactive marketing and artificial intelligence (AI), it is important to consider the ethical implications of these technologies. This paper explains the concept of corporate digital responsibility (CDR) and how it is affected by new advances in AI. Design/methodology/approach The authors build on the work of Wirtz et al. , (2023) and derive several managerial implications for the challenges that AI poses to CDR. CDR refers to a service company's ethical and fair use of data and technology within its digital service ecosystem. It involves establishing standards, protecting customer privacy, conducting external audits and striving for an equitable power dynamic between service firms and their partners. Findings Despite the risks involved, many companies are not prioritizing good CDR practices. Financial benefits from the collection and use of consumer data, improved customer experience through AI-driven customization and personalization, cost reduction through service automation and the trade-offs between organizational goals and CDR practices can prevent companies from prioritizing good CDR practices. Originality/value This is one of the first articles in the service domain to take the concept of CDR and apply it to recent developments in generative AI. Research limitations/implications The emergence of powerful AI tools presents opportunities and challenges. Research opportunities include responsible business restructuring, responsible service automation to ensure fairness and human oversight, addressing dehumanization of service delivery, responsible customer profiling to address privacy and discrimination concerns and preventing AI misuse.",
+      "cited_by_count": 110,
+      "type": "article",
+      "source": {
+        "name": "Journal of Research in Interactive Marketing",
+        "type": "journal",
+        "issn": [
+          "2040-7122",
+          "2040-7130"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Blockchain Technology Applications and Security",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W4385491340"
+    },
+    {
+      "openalex_id": "W4405478483",
+      "doi": "10.1007/s42001-024-00338-8",
+      "title": "In generative AI we trust: can chatbots effectively verify political information?",
+      "authors": [
+        {
+          "name": "Elizaveta Kuznetsova",
+          "openalex_id": "A5024157058",
+          "orcid": "https://orcid.org/0000-0002-3614-1804",
+          "institutions": [
+            "Weizenbaum Institute"
+          ]
+        },
+        {
+          "name": "Mykola Makhortykh",
+          "openalex_id": "A5087601816",
+          "orcid": "https://orcid.org/0000-0001-7143-5317",
+          "institutions": [
+            "University of Bern"
+          ]
+        },
+        {
+          "name": "Victoria Vziatysheva",
+          "openalex_id": "A5034966339",
+          "orcid": "https://orcid.org/0000-0002-3762-6758",
+          "institutions": [
+            "University of Bern"
+          ]
+        },
+        {
+          "name": "Martha Stolze",
+          "openalex_id": "A5109667570",
+          "institutions": [
+            "Weizenbaum Institute"
+          ]
+        },
+        {
+          "name": "Ani Baghumyan",
+          "openalex_id": "A5093557910",
+          "orcid": "https://orcid.org/0000-0001-7237-1474",
+          "institutions": [
+            "University of Bern"
+          ]
+        },
+        {
+          "name": "Aleksandra Urman",
+          "openalex_id": "A5026969792",
+          "orcid": "https://orcid.org/0000-0003-3332-9294",
+          "institutions": [
+            "University of Zurich"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-17",
+      "abstract": "Abstract This article presents a comparative analysis of the potential of two large language model (LLM)-based chatbots\u2014ChatGPT and Bing Chat (recently rebranded to Microsoft Copilot)\u2014to detect veracity of political information. We use AI auditing methodology to investigate how chatbots evaluate true, false, and borderline statements on five topics: COVID-19, Russian aggression against Ukraine, the Holocaust, climate change, and LGBTQ + -related debates. We compare how the chatbots respond in high- and low-resource languages by using prompts in English, Russian, and Ukrainian. Furthermore, we explore chatbots\u2019 ability to evaluate statements according to political communication concepts of disinformation, misinformation, and conspiracy theory, using definition-oriented prompts. We also systematically test how such evaluations are influenced by source attribution. The results show high potential of ChatGPT for the baseline veracity evaluation task, with 72% of the cases evaluated in accordance with the baseline on average across languages without pre-training. Bing Chat evaluated 67% of the cases in accordance with the baseline. We observe significant disparities in how chatbots evaluate prompts in high- and low-resource languages and how they adapt their evaluations to political communication concepts with ChatGPT providing more nuanced outputs than Bing Chat. These findings highlight the potential of LLM-based chatbots in tackling different forms of false information in online environments, but also point to the substantial variation in terms of how such potential is realized due to specific factors (e.g. language of the prompt or the topic).",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Journal of Computational Social Science",
+        "type": "journal",
+        "issn": [
+          "2432-2717",
+          "2432-2725"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s42001-024-00338-8.pdf"
+      },
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Opinion Dynamics and Social Influence",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W4405478483"
+    },
+    {
+      "openalex_id": "W4399619293",
+      "doi": "10.1016/j.sciaf.2024.e02281",
+      "title": "Bias and ethics of AI systems applied in auditing - A systematic review",
+      "authors": [
+        {
+          "name": "Wilberforce Murikah",
+          "openalex_id": "A5099115603",
+          "orcid": "https://orcid.org/0009-0005-2688-2069",
+          "institutions": [
+            "Alliant International University",
+            "United States International University Africa"
+          ]
+        },
+        {
+          "name": "Jeff Kimanga Nthenge",
+          "openalex_id": "A5092505613",
+          "orcid": "https://orcid.org/0009-0009-3009-9770",
+          "institutions": [
+            "University of Embu"
+          ]
+        },
+        {
+          "name": "Faith Mueni Musyoka",
+          "openalex_id": "A5049717859",
+          "orcid": "https://orcid.org/0000-0002-9574-8235",
+          "institutions": [
+            "University of Embu"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-13",
+      "abstract": "The integration of artificial intelligence into auditing shows great potential in enhancing automation and gaining insights from complex data. However, it also presents significant ethical challenges, including algorithmic biases, transparency, accountability, and fairness. This study aimed to investigate the sources of bias and risks posed by AI systems applied in auditing and the complex downstream interactions and effects they have. The study also explored the technical and ethical guardrails proposed and recommendations for translating principles into auditing practice. A systematic methodology was employed to acquire relevant studies across scientific databases. This involved a three-step process, including a targeted search query using Boolean operators and snowballing to yield 310 preliminary publications. A systematic review process was then conducted to identify 123 relevant articles focused on AI's implications for auditing, accounting, finance, or assurance contexts. Finally, screening and filtering on research quality distilled 83 high-quality publications from the year 2018 to 2023 spanning computer science, accounting, management science, and ethics disciplines. The analysis revealed five primary sources driving technical and human biases: data deficiencies, demographic homogeneity, spurious correlations, improper comparators, and cognitive biases. It also highlighted wider issues, such as trade-offs between efficiency and diligence, erosion of human skills and judgement, data dependence risks, and privacy violations from uncontrolled personal data exploitation. The study found promising remedies, including causal modeling to enable auditors to uncover subtle biases, representative algorithmic testing to evaluate fairness, periodic auditing of AI systems, human oversight alongside automation, and embedding ethical values like fairness and accountability into system design. The study concludes that auditors play a crucial role in assessing and ensuring AI's reliable and socially beneficial integration. It recommends governance, risk assessment before deployment, ongoing performance monitoring, and policies fostering trust and collaboration to responsibly translate principles into auditing practice.",
+      "cited_by_count": 72,
+      "type": "review",
+      "source": {
+        "name": "Scientific African",
+        "type": "journal",
+        "issn": [
+          "2468-2276"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.sciaf.2024.e02281"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Blockchain Technology Applications and Security"
+      ],
+      "referenced_works_count": 136,
+      "url": "https://openalex.org/W4399619293"
+    },
+    {
+      "openalex_id": "W4308902180",
+      "doi": "10.5281/zenodo.16417295",
+      "title": "ACGS-2: A Production-Ready Constitutional AI Governance System",
+      "authors": [
+        {
+          "name": "Amanda Askell",
+          "openalex_id": "A5030305998"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-07-27",
+      "abstract": "ACGS-2: A Production-Ready Constitutional AI Governance System Research Release Announcement We are pleased to announce the publication of groundbreaking research that addresses one of the most critical challenges in artificial intelligence deployment: the practical implementation of constitutional AI governance at enterprise scale. Research Overview The ACGS-2 system represents the first production-ready platform that successfully bridges the substantial gap between constitutional AI theory and real-world implementation. This comprehensive research introduces a novel 26-service microservices architecture specifically designed to enforce constitutional principles across distributed AI systems while maintaining enterprise-grade performance standards. The research demonstrates that constitutional governance can operate effectively at scale without compromising system performance or reliability. Through rigorous empirical validation, the system achieved complete compliance across 847 constitutional test cases while sustaining production loads exceeding 1,250 requests per second with sub-millisecond latency response times. Technical Innovation The ACGS-2 architecture introduces three fundamental innovations that advance the field of AI governance. The system implements a cryptographically-verified constitutional hash mechanism that ensures policy consistency across all distributed services, preventing constitutional drift and maintaining governance integrity throughout complex system architectures. Additionally, the platform features a multi-tier validation framework that combines formal verification techniques with AI-assisted policy synthesis, enabling both rigorous compliance checking and adaptive policy development. Perhaps most significantly, the research provides technical infrastructure specifically designed to support democratic governance processes. While acknowledging that authentic democratic governance requires addressing sociotechnical challenges beyond technical infrastructure alone, the system establishes the foundational mechanisms necessary for stakeholder participation in constitutional evolution and oversight. Empirical Validation and Performance The research validation demonstrates exceptional performance across multiple critical dimensions. The system maintained 99.99% uptime during comprehensive chaos engineering experiments while processing sustained production workloads. All constitutional compliance tests passed without exception, validating the system's ability to enforce complex governance policies in real-time operational environments. Performance benchmarking confirmed that constitutional governance overhead remains minimal, with P99 latency measurements of 3.2 milliseconds for end-to-end request processing. These results establish new benchmarks for constitutional AI systems and demonstrate the practical feasibility of deploying value-aligned AI governance in production environments. Research Impact and Applications This work addresses fundamental challenges that have limited the practical adoption of constitutional AI approaches in enterprise environments. By providing a concrete implementation blueprint along with comprehensive validation frameworks, the research enables organizations to implement constitutional governance without requiring extensive specialized expertise in distributed systems engineering or formal verification techniques. The research methodology and infrastructure templates are being released as open-source resources to support broader adoption and continued development within the research community. This includes complete system architecture documentation, the comprehensive constitutional validation framework with all 847 test cases, performance benchmarking tools, and security audit protocols. Academic Contribution The research makes significant contributions to multiple academic disciplines, including constitutional AI theory, distributed systems engineering, and AI governance frameworks. The work demonstrates how established algorithmic fairness principles can be operationalized through technical systems while maintaining the flexibility necessary for evolving constitutional interpretations and democratic oversight processes. The comprehensive testing documentation and reproducibility guidelines ensure that other researchers can build upon this foundation while adapting the framework to different organizational contexts and regulatory environments. The research establishes both theoretical frameworks and practical methodologies for advancing constitutional AI from laboratory concepts to deployed systems that serve real-world governance needs. Future Research Directions While this research successfully demonstrates the technical feasibility of production-scale constitutional AI governance, it also identifies important areas for continued investigation. Future work will focus on developing methodologies for authentic democratic constitution creation, advancing semantic constitutional interpretation capabilities, and addressing the complex sociotechnical challenges of implementing legitimate democratic governance processes within technical systems. The publication of this research marks a significant milestone in the practical deployment of constitutional AI systems and provides a robust foundation for organizations seeking to implement value-aligned AI governance while maintaining operational excellence and democratic accountability.",
+      "cited_by_count": 101,
+      "type": "preprint",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.16416793"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Text Readability and Simplification"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4308902180"
+    },
+    {
+      "openalex_id": "W4391750605",
+      "doi": "10.30574/wjarr.2024.21.2.0460",
+      "title": "The role of AI in transforming auditing practices: A global perspective review",
+      "authors": [
+        {
+          "name": "Olubusola Odeyemi",
+          "openalex_id": "A5093902243"
+        },
+        {
+          "name": "Kehinde Feranmi Awonuga",
+          "openalex_id": "A5093804235"
+        },
+        {
+          "name": "Noluthando Zamanjomane Mhlongo",
+          "openalex_id": "A5109687100",
+          "institutions": [
+            "City of Cape Town"
+          ]
+        },
+        {
+          "name": "Ndubuisi Leonard Ndubuisi",
+          "openalex_id": "A5093720301",
+          "institutions": [
+            "Rivers State University"
+          ]
+        },
+        {
+          "name": "Funmilola Olatundun Olatoye",
+          "openalex_id": "A5093362229",
+          "institutions": [
+            "Houston Independent School District"
+          ]
+        },
+        {
+          "name": "Andrew Ifesinachi Daraojimba",
+          "openalex_id": "A5092993773",
+          "institutions": [
+            "Ahmadu Bello University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-02-28",
+      "abstract": "This Review provides a glimpse into the comprehensive examination of the transformative impact of Artificial Intelligence (AI) on auditing practices globally. The review delves into the multifaceted ways in which AI technologies are reshaping traditional auditing methodologies, bringing about efficiency, accuracy, and adaptability in the face of an evolving business landscape. The global perspective of this review encompasses diverse industries and jurisdictions, offering insights into how AI is redefining the audit landscape on a universal scale. The analysis explores the integration of AI-driven tools in auditing processes, emphasizing the enhanced capabilities for data analysis, anomaly detection, and risk assessment. Key themes include the automation of routine audit tasks through AI, enabling auditors to focus on complex analyses and strategic decision-making. The review also delves into the potential challenges and ethical considerations associated with the adoption of AI in auditing, recognizing the need for a balance between technological advancement and maintaining audit quality and integrity. Through a survey of case studies and real-world implementations, the Review highlights successful instances of AI application in auditing across various sectors. It elucidates how AI-driven algorithms contribute to real-time auditing, providing auditors with dynamic insights into financial data, fraud detection, and compliance monitoring. The Review concludes by underlining the global significance of AI in shaping the future of auditing practices. It calls attention to the imperative for industry stakeholders, regulators, and auditors to embrace the transformative power of AI responsibly. As technology continues to evolve, this review encourages a forward-looking approach, fostering a collaborative environment that harnesses the benefits of AI while addressing the challenges to ensure the continued trustworthiness and effectiveness of auditing practices worldwide.",
+      "cited_by_count": 25,
+      "type": "article",
+      "source": {
+        "name": "World Journal of Advanced Research and Reviews",
+        "type": "journal",
+        "issn": [
+          "2581-9615"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://wjarr.com/sites/default/files/WJARR-2024-0460.pdf"
+      },
+      "topics": [
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W4391750605"
+    },
+    {
+      "openalex_id": "W4391334942",
+      "doi": "10.1145/3630106.3659037",
+      "title": "Black-Box Access is Insufficient for Rigorous AI Audits",
+      "authors": [
+        {
+          "name": "Stephen Casper",
+          "openalex_id": "A5008237906",
+          "orcid": "https://orcid.org/0000-0003-2915-8592",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Carson Ezell",
+          "openalex_id": "A5007264815",
+          "orcid": "https://orcid.org/0000-0002-7488-9258",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        },
+        {
+          "name": "Charlotte Siegmann",
+          "openalex_id": "A5006325083",
+          "orcid": "https://orcid.org/0009-0004-1646-7171",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Noam Kolt",
+          "openalex_id": "A5092031121",
+          "orcid": "https://orcid.org/0009-0007-2538-6295",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Taylor Lynn Curtis",
+          "openalex_id": "A5093817092",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Ben Bucknall",
+          "openalex_id": "A5031843276",
+          "orcid": "https://orcid.org/0009-0008-5552-2961",
+          "institutions": [
+            "Centre for the Governance of AI"
+          ]
+        },
+        {
+          "name": "Andreas Haupt",
+          "openalex_id": "A5034467477",
+          "orcid": "https://orcid.org/0000-0002-6519-362X",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Kevin Wei",
+          "openalex_id": "A5102886709",
+          "orcid": "https://orcid.org/0009-0004-8522-4333",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        },
+        {
+          "name": "J\u00e9r\u00e9my Scheurer",
+          "openalex_id": "A5064744991",
+          "orcid": "https://orcid.org/0000-0002-6859-6029"
+        },
+        {
+          "name": "Marius Hobbhahn",
+          "openalex_id": "A5034914617",
+          "orcid": "https://orcid.org/0009-0003-8244-3154"
+        },
+        {
+          "name": "Lee Sharkey",
+          "openalex_id": "A5002207803",
+          "orcid": "https://orcid.org/0009-0009-2137-6027"
+        },
+        {
+          "name": "Satyapriya Krishna",
+          "openalex_id": "A5114026120",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        },
+        {
+          "name": "Marvin Von Hagen",
+          "openalex_id": "A5093817091",
+          "orcid": "https://orcid.org/0000-0002-6741-2996",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Silas Alberti",
+          "openalex_id": "A5010162453",
+          "orcid": "https://orcid.org/0000-0003-1611-5737",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Alan Chan",
+          "openalex_id": "A5038590380",
+          "orcid": "https://orcid.org/0000-0001-7547-3951",
+          "institutions": [
+            "Mila - Quebec Artificial Intelligence Institute"
+          ]
+        },
+        {
+          "name": "Qinyi Sun",
+          "openalex_id": "A5102610808",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Michael Gerovitch",
+          "openalex_id": "A5031566955",
+          "orcid": "https://orcid.org/0009-0003-0627-7879",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "David Bau",
+          "openalex_id": "A5033305045",
+          "orcid": "https://orcid.org/0000-0003-1744-6765",
+          "institutions": [
+            "Northeastern University"
+          ]
+        },
+        {
+          "name": "Max Tegmark",
+          "openalex_id": "A5091601455",
+          "orcid": "https://orcid.org/0000-0001-7670-7190",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "David Krueger",
+          "openalex_id": "A5029025914",
+          "orcid": "https://orcid.org/0000-0001-7256-0937",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Dylan Hadfield-Menell",
+          "openalex_id": "A5076757561",
+          "orcid": "https://orcid.org/0000-0002-6168-4763",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-03",
+      "abstract": "External audits of AI systems are increasingly recognized as a key mechanism\\nfor AI governance. The effectiveness of an audit, however, depends on the\\ndegree of access granted to auditors. Recent audits of state-of-the-art AI\\nsystems have primarily relied on black-box access, in which auditors can only\\nquery the system and observe its outputs. However, white-box access to the\\nsystem's inner workings (e.g., weights, activations, gradients) allows an\\nauditor to perform stronger attacks, more thoroughly interpret models, and\\nconduct fine-tuning. Meanwhile, outside-the-box access to training and\\ndeployment information (e.g., methodology, code, documentation, data,\\ndeployment details, findings from internal evaluations) allows auditors to\\nscrutinize the development process and design more targeted evaluations. In\\nthis paper, we examine the limitations of black-box audits and the advantages\\nof white- and outside-the-box audits. We also discuss technical, physical, and\\nlegal safeguards for performing these audits with minimal security risks. Given\\nthat different forms of access can lead to very different levels of evaluation,\\nwe conclude that (1) transparency regarding the access and methods used by\\nauditors is necessary to properly interpret audit results, and (2) white- and\\noutside-the-box access allow for substantially more scrutiny than black-box\\naccess alone.\\n",
+      "cited_by_count": 40,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3630106.3659037"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Security and Verification in Computing",
+        "Information and Cyber Security"
+      ],
+      "referenced_works_count": 108,
+      "url": "https://openalex.org/W4391334942"
+    },
+    {
+      "openalex_id": "W4309189451",
+      "doi": "10.1108/dlo-07-2022-0133",
+      "title": "The impact of technology readiness and use perceptions on students\u2019 adoption of artificial intelligence: the moderating role of gender",
+      "authors": [
+        {
+          "name": "Rasha Mohammad Nouraldeen",
+          "openalex_id": "A5026813326",
+          "orcid": "https://orcid.org/0000-0001-6336-5072",
+          "institutions": [
+            "Beirut Arab University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-15",
+      "abstract": "Purpose The aim of this study is to examine the effect of technology readiness (TR), perceived usefulness (PU) and perceived ease of use (PEOU) on the adoption of Artificial Intelligence (AI) by accounting and auditing students. The moderating role of gender is also examined in this research. Design/methodology/approach The data of this study was collected through a questionnaire filled by 330 accounting and auditing students enrolled in the Lebanese private universities during the academic year 2021\u20132022. The hierarchical multiple regression analysis was conducted to test the study\u2019s hypotheses. Findings The results show that TR and PU affect positively the adoption of AI; however, PEOU has an insignificant impact on the students\u2019 decision to adopt AI. The outcomes also reveal that males tend more to adopt AI than females and gender moderates the associations between TR, PU, PEOU and adoption of AI. Practical implications The results of this study suggest that accounting educators should adjust the curricula of the accounting programs and prepare students to be well equipped with technological skills through training them on AI software. Originality/value According to the researcher\u2019s knowledge, this study is the first that examines the moderating effect of gender on the associations between TR, use perceptions and AI adoption by accounting and auditing students. Besides, this research is the first that investigates the antecedents of AI adoption by students in Lebanese private universities. Furthermore, this study contributes to the limited literature that addresses this contemporary and vital issue in the Middle East.",
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Development in Learning Organizations An International Journal",
+        "type": "journal",
+        "issn": [
+          "1477-7282",
+          "1758-6097"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Technology Adoption and User Behaviour"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W4309189451"
+    },
+    {
+      "openalex_id": "W3041416421",
+      "doi": "10.1093/oxfordhb/9780190067397.013.5",
+      "title": "AI Governance by Human Rights\u2013Centered Design, Deliberation, and Oversight",
+      "authors": [
+        {
+          "name": "Karen Yeung",
+          "openalex_id": "A5029261881",
+          "orcid": "https://orcid.org/0000-0002-9241-8134",
+          "institutions": [
+            "The University of Law",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Andrew Howes",
+          "openalex_id": "A5103054759",
+          "orcid": "https://orcid.org/0000-0003-4251-1127",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Ganna Pogrebna",
+          "openalex_id": "A5065545090",
+          "orcid": "https://orcid.org/0000-0002-5487-7284",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-09",
+      "abstract": "Abstract This chapter argues that international human rights standards offer the most promising basis for developing a coherent and universally recognized set of standards that can be applied to meet any of the normative concerns currently falling under the rubric of AI (artificial intelligence) ethics. It then outlines the core elements of a human rights\u2013centered design, deliberation, and oversight approach to the governance of AI. This approach requires that human rights norms are systemically considered at every stage of system design, development, and deployment, drawing upon and adapting technical methods and techniques for safe software and system design, verification, testing, and auditing in order to ensure compliance with human rights norms. The regime must be mandated by law and relies critically on external oversight by independent, competent, and properly resourced regulatory authorities with appropriate powers of investigation and enforcement. However, this approach will not ensure the protection of all ethical values adversely implicated by AI, given that human rights norms do not comprehensively cover all values of societal concern. As such, a great deal more work needs to be done to develop techniques and methodologies that are robust\u2014reliable yet practically implementable across a wide and diverse range of organizations involved in developing, building, and operating AI systems.",
+      "cited_by_count": 58,
+      "type": "reference-entry",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Law, AI, and Intellectual Property",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 4,
+      "url": "https://openalex.org/W3041416421"
+    },
+    {
+      "openalex_id": "W4391746448",
+      "doi": "10.1108/arj-09-2023-0269",
+      "title": "Leveraging information communication technology (ICT) and artificial intelligence (AI) to enhance auditing practices",
+      "authors": [
+        {
+          "name": "Mohammed Muneerali Thottoli",
+          "openalex_id": "A5040391853",
+          "institutions": [
+            "University of Nizwa"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-12",
+      "abstract": "Purpose In the fourth industrial revolution, where business accounting integrates with automation through artificial intelligence (AI) and information communication technology (ICT), auditors must be able to access and analyze vast data and information to identify potential risks and issues. Using data analytics and AI to study significant amounts of data linked to audits, this study aims to investigate auditing practices by leveraging ICT and AI to enhance the audit process. Design/methodology/approach Bibliometric and quantitative research techniques have been used in the study\u2019s mixed-method process. The theoretical underpinnings of AI have been investigated using the bibliometric research method, and the challenge of implementing ICT-enabled auditing practices among auditing professionals has been studied using the quantitative research method. Surveys, interviews and bibliometric analysis have all been used as data-gathering techniques. Findings Research in AI and auditing has a broad worldwide scope, involving developed and developing nations. ICT perceived benefits have no direct effect on auditing practices. However, ICT training has a mediating effect on the relationship between ICT perceived benefits and auditing practices. ICT adoption has no moderating effect on the relationship between ICT training and auditing practices. Research limitations/implications Findings have significance for lead auditors, policymakers and the Institute of Chartered Accountants of India (ICAI), who are keenly interested in upgrading the auditing practice of accounting professionals in India by incorporating AI and ICT determinants. Practical implications This research makes a significant contribution by offering a thorough framework for improving the knowledge management of practising auditors regarding ICT adoption, training and perceived benefits, a crucial component of auditing practices in the digital age. In addition, it provides insightful information about how AI affects accounting practices, which may point the way for further study in this area. Originality/value This research has significant implications for auditing firms in India. It can inform ICAI, policymakers and regulators in their attempts to foster the incorporation of AI and ICTs in auditing practice.",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "Accounting Research Journal",
+        "type": "journal",
+        "issn": [
+          "1030-9616",
+          "1839-5465"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Blockchain Technology Applications and Security",
+        "Corporate Governance and Financial Management"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W4391746448"
+    },
+    {
+      "openalex_id": "W4376137450",
+      "doi": "10.1007/s43681-023-00292-7",
+      "title": "They shall be fair, transparent, and robust: auditing learning analytics systems",
+      "authors": [
+        {
+          "name": "Katharina Simbeck",
+          "openalex_id": "A5065288785",
+          "orcid": "https://orcid.org/0000-0001-6792-461X",
+          "institutions": [
+            "HTW Berlin - University of Applied Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-11",
+      "abstract": "Abstract In the near future, systems, that use Artificial Intelligence (AI) methods, such as machine learning, are required to be certified or audited for fairness if used in ethically sensitive fields such as education. One example of those upcoming regulatory initiatives is the European Artificial Intelligence Act. Interconnected with fairness are the notions of system transparency (i.e. how understandable is the system) and system robustness (i.e. will similar inputs lead to similar results). Ensuring fairness, transparency, and robustness requires looking at data, models, system processes, and the use of systems as the ethical implications arise at the intersection between those. The potential societal consequences are domain specific, it is, therefore, necessary to discuss specifically for Learning Analytics (LA) what fairness, transparency, and robustness mean and how they can be certified. Approaches to certifying and auditing fairness in LA include assessing datasets, machine learning models, and the end-to-end LA process for fairness, transparency, and robustness. Based on Slade and Prinsloo\u2019s six principals for ethical LA, relevant audit approaches will be deduced. Auditing AI applications in LA is a complex process that requires technical capabilities and needs to consider the perspectives of all stakeholders. This paper proposes a comprehensive framework for auditing AI applications in LA systems from the perspective of learners' autonomy, provides insights into different auditing methodologies, and emphasizes the importance of reflection and dialogue among providers, buyers, and users of these systems to ensure their ethical and responsible use.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "AI and Ethics",
+        "type": "journal",
+        "issn": [
+          "2730-5953",
+          "2730-5961"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-023-00292-7.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 87,
+      "url": "https://openalex.org/W4376137450"
+    },
+    {
+      "openalex_id": "W4283388794",
+      "doi": "10.1007/s43681-022-00178-0",
+      "title": "Ethical assurance: a practical approach to the responsible design, development, and deployment of data-driven technologies",
+      "authors": [
+        {
+          "name": "Christopher Burr",
+          "openalex_id": "A5087933417",
+          "orcid": "https://orcid.org/0000-0003-0386-8182",
+          "institutions": [
+            "The Alan Turing Institute",
+            "Turing Institute"
+          ]
+        },
+        {
+          "name": "David Leslie",
+          "openalex_id": "A5080951436",
+          "orcid": "https://orcid.org/0000-0001-9369-1653",
+          "institutions": [
+            "Turing Institute",
+            "The Alan Turing Institute"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-22",
+      "abstract": null,
+      "cited_by_count": 65,
+      "type": "article",
+      "source": {
+        "name": "AI and Ethics",
+        "type": "journal",
+        "issn": [
+          "2730-5953",
+          "2730-5961"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Safety Systems Engineering in Autonomy",
+        "Ethics and Social Impacts of AI",
+        "Ethics in Clinical Research"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4283388794"
+    },
+    {
+      "openalex_id": "W4296186037",
+      "doi": "10.1007/s10618-022-00861-0",
+      "title": "An external stability audit framework to test the validity of personality prediction in AI hiring",
+      "authors": [
+        {
+          "name": "Alene K. Rhea",
+          "openalex_id": "A5084844942",
+          "orcid": "https://orcid.org/0000-0001-5284-2064",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Kelsey Markey",
+          "openalex_id": "A5081293781",
+          "orcid": "https://orcid.org/0000-0003-1151-2952",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Lauren D\u2019Arinzo",
+          "openalex_id": "A5053501114",
+          "orcid": "https://orcid.org/0000-0001-6452-9032",
+          "institutions": [
+            "Mitre (United States)",
+            "New York University"
+          ]
+        },
+        {
+          "name": "Hilke Schellmann",
+          "openalex_id": "A5006651432",
+          "orcid": "https://orcid.org/0009-0008-0233-6970"
+        },
+        {
+          "name": "Mona Sloane",
+          "openalex_id": "A5075302056",
+          "orcid": "https://orcid.org/0000-0003-1049-2267",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Paul C. Squires",
+          "openalex_id": "A5011008703",
+          "orcid": "https://orcid.org/0009-0008-5209-6776",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Falaah Arif Khan",
+          "openalex_id": "A5038710725",
+          "orcid": "https://orcid.org/0000-0002-4678-5929",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Julia Stoyanovich",
+          "openalex_id": "A5082830839",
+          "orcid": "https://orcid.org/0000-0002-1587-0450",
+          "institutions": [
+            "New York University",
+            "Brooklyn College"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-17",
+      "abstract": "Abstract Automated hiring systems are among the fastest-developing of all high-stakes AI systems. Among these are algorithmic personality tests that use insights from psychometric testing, and promise to surface personality traits indicative of future success based on job seekers\u2019 resumes or social media profiles. We interrogate the validity of such systems using stability of the outputs they produce, noting that reliability is a necessary, but not a sufficient, condition for validity. Crucially, rather than challenging or affirming the assumptions made in psychometric testing \u2014 that personality is a meaningful and measurable construct, and that personality traits are indicative of future success on the job \u2014 we frame our audit methodology around testing the underlying assumptions made by the vendors of the algorithmic personality tests themselves. Our main contribution is the development of a socio-technical framework for auditing the stability of algorithmic systems. This contribution is supplemented with an open-source software library that implements the technical components of the audit, and can be used to conduct similar stability audits of algorithmic systems. We instantiate our framework with the audit of two real-world personality prediction systems, namely, Humantic AI and Crystal. The application of our audit framework demonstrates that both these systems show substantial instability with respect to key facets of measurement, and hence cannot be considered valid testing instruments.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "Data Mining and Knowledge Discovery",
+        "type": "journal",
+        "issn": [
+          "1384-5810",
+          "1573-756X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10618-022-00861-0.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W4296186037"
+    },
+    {
+      "openalex_id": "W4400957930",
+      "doi": "10.1108/ijoa-03-2024-4389",
+      "title": "The role of artificial intelligence in auditing and fraud detection in accounting information systems: moderating role of natural language processing",
+      "authors": [
+        {
+          "name": "Adel M. Qatawneh",
+          "openalex_id": "A5042223967",
+          "orcid": "https://orcid.org/0000-0003-0762-437X",
+          "institutions": [
+            "Al-Zaytoonah University of Jordan"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-24",
+      "abstract": "Purpose This study aims to investigate the moderating role of natural language processing natural language processing (NLP) on the relationship between AI-empowered AIS (data gathering, data analysis, risk assessment, detection, prevention and Investigation) and auditing and fraud detection. Design/methodology/approach Quantitative methodology was adapted through a questionnaire. In total, 221 individuals represented the population of the study, and SPSS was used to screen primary data. The study indicated the acceptance of the hypothesis that \u201cArtificial Intelligence in AIS has a statistically significant influence on auditing and fraud detection,\u201d showing a strong correlation between auditing and fraud detection. The study concluded that NLP moderates the relationship between AI in AIS and auditing and fraud detection. Findings The study\u2019s implications lie in its contribution to the development of theoretical models that explore the complementary attributes of AI and NLP in detecting financial fraud. Research limitations/implications A cross-sectional design is a limitation. Practical implications NLP is a useful tool for developing more efficient methods for detecting fraudulent activities and audit risks. Originality/value The study\u2019s originality stems from its focus on the use of AI-empowered AIS, a relatively new technology that has the potential to significantly impact auditing and fraud detection processes within the accounting field.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "International journal of organizational analysis",
+        "type": "journal",
+        "issn": [
+          "1758-8561",
+          "1934-8835"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Imbalanced Data Classification Techniques",
+        "Stock Market Forecasting Methods"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4400957930"
+    },
+    {
+      "openalex_id": "W3177019841",
+      "doi": "10.1016/j.ipm.2021.102657",
+      "title": "FairLens: Auditing black-box clinical decision support systems",
+      "authors": [
+        {
+          "name": "Cecilia Panigutti",
+          "openalex_id": "A5021515262",
+          "orcid": "https://orcid.org/0000-0002-6552-787X",
+          "institutions": [
+            "Scuola Normale Superiore"
+          ]
+        },
+        {
+          "name": "Alan Perotti",
+          "openalex_id": "A5050415063",
+          "orcid": "https://orcid.org/0000-0002-1690-6865",
+          "institutions": [
+            "Institute for Scientific Interchange"
+          ]
+        },
+        {
+          "name": "Andr\u00e9 Panisson",
+          "openalex_id": "A5020199695",
+          "orcid": "https://orcid.org/0000-0002-3336-0374",
+          "institutions": [
+            "Institute for Scientific Interchange"
+          ]
+        },
+        {
+          "name": "Paolo Bajardi",
+          "openalex_id": "A5070491108",
+          "orcid": "https://orcid.org/0000-0001-8865-4495",
+          "institutions": [
+            "Institute for Scientific Interchange"
+          ]
+        },
+        {
+          "name": "Dino Pedreschi",
+          "openalex_id": "A5044898565",
+          "orcid": "https://orcid.org/0000-0003-4801-3225",
+          "institutions": [
+            "University of Pisa"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "The pervasive application of algorithmic decision-making is raising concerns on the risk of unintended bias in AI systems deployed in critical settings such as healthcare. The detection and mitigation of model bias is a very delicate task that should be tackled with care and involving domain experts in the loop. In this paper we introduce FairLens, a methodology for discovering and explaining biases. We show how this tool can audit a fictional commercial black-box model acting as a clinical decision support system (DSS). In this scenario, the healthcare facility experts can use FairLens on their historical data to discover the biases of the model before incorporating it into the clinical decision flow. FairLens first stratifies the available patient data according to demographic attributes such as age, ethnicity, gender and healthcare insurance; it then assesses the model performance on such groups highlighting the most common misclassifications. Finally, FairLens allows the expert to examine one misclassification of interest by explaining which elements of the affected patients\u2019 clinical history drive the model error in the problematic group. We validate FairLens\u2019 ability to highlight bias in multilabel clinical DSSs introducing a multilabel-appropriate metric of disparity and proving its efficacy against other standard metrics.",
+      "cited_by_count": 74,
+      "type": "article",
+      "source": {
+        "name": "CINECA IRIS Institutial research information system (University of Pisa)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11568/1134601"
+      },
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare and Education",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 111,
+      "url": "https://openalex.org/W3177019841"
+    },
+    {
+      "openalex_id": "W3179990948",
+      "doi": "10.1108/maj-03-2020-2588",
+      "title": "AI-based audit of fuzzy front end innovation using ISO56002",
+      "authors": [
+        {
+          "name": "Rizwan Ullah Khan",
+          "openalex_id": "A5089768422",
+          "orcid": "https://orcid.org/0000-0002-9633-3189",
+          "institutions": [
+            "Australian Defence Force Academy",
+            "UNSW Sydney",
+            "UNSW Canberra"
+          ]
+        },
+        {
+          "name": "Erwin Adi",
+          "openalex_id": "A5030118337",
+          "orcid": "https://orcid.org/0000-0001-7120-1967",
+          "institutions": [
+            "UNSW Sydney",
+            "Australian Defence Force Academy",
+            "UNSW Canberra"
+          ]
+        },
+        {
+          "name": "Omar Khadeer Hussain",
+          "openalex_id": "A5048583478",
+          "orcid": "https://orcid.org/0000-0002-5738-6560",
+          "institutions": [
+            "UNSW Sydney",
+            "UNSW Canberra",
+            "Australian Defence Force Academy"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-07-09",
+      "abstract": "Purpose This paper aims to develop an artificial intelligence (AI) audit tool for auditing text-based evidence and determine its efficiency and effectiveness. Design/methodology/approach A manual audit checklist and an AI audit tool are developed with fuzzy front-end (FFE) from Innovation Management System Standard (IMSS) as the audit scope, First, a manual audit of five organisations is conducted to determine their compliance scores. The transcripts of the audit are recorded which are used by the AI audit tool to assign compliance scores for the same organisations. The effectiveness and efficiency of the AI audit tool are determined by comparing their results with the manual audit. Findings This paper demonstrates the development of the FFE AI audit tool which led to 92% improved efficiency while being 95% effective compared to a human auditor. Practical implications The publication of new financial and non-financial standards (such as ISO56002: IMSS) have implications for internal auditing (IA). The scope of IA must expand to include new standards while remaining efficient. Emerging technologies, such as AI help achieve this. Even though the use of AI in financial auditing is widely studied, it has not received similar attention in non-financial auditing. This paper develops a non-financial AI audit tool to audit an essential component of the IMSS, the FFE of innovation and determine its efficiency and effectiveness. Originality/value The study develops an FFE AI audit tool for the first time. The methodology used has practical and academic implications for the use of AI in non-financial auditing.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Managerial Auditing Journal",
+        "type": "journal",
+        "issn": [
+          "0268-6902",
+          "1758-7735"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Sustainable Supply Chain Management",
+        "Quality and Management Systems",
+        "Quality and Supply Management"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W3179990948"
+    },
+    {
+      "openalex_id": "W4389828156",
+      "doi": "10.1016/j.engappai.2023.107666",
+      "title": "Blockchain-based auditing of legal decisions supported by explainable AI and generative AI tools",
+      "authors": [
+        {
+          "name": "Swati Sachan",
+          "openalex_id": "A5013692124",
+          "orcid": "https://orcid.org/0000-0003-0136-0553",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Xi Liu",
+          "openalex_id": "A5100450781",
+          "orcid": "https://orcid.org/0000-0001-9118-9301"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-15",
+      "abstract": null,
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Engineering Applications of Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "0952-1976",
+          "1873-6769"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Artificial Intelligence in Law",
+        "Law, AI, and Intellectual Property",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W4389828156"
+    },
+    {
+      "openalex_id": "W4380320348",
+      "doi": "10.1145/3593013.3594079",
+      "title": "AI Regulation Is (not) All You Need",
+      "authors": [
+        {
+          "name": "Laura Lucaj",
+          "openalex_id": "A5064364709",
+          "orcid": "https://orcid.org/0009-0007-3710-4873",
+          "institutions": [
+            "Volkswagen Group (Germany)"
+          ]
+        },
+        {
+          "name": "Patrick van der Smagt",
+          "openalex_id": "A5022626150",
+          "orcid": "https://orcid.org/0000-0003-4418-4916",
+          "institutions": [
+            "Volkswagen Group (Germany)"
+          ]
+        },
+        {
+          "name": "Djalel Benbouzid",
+          "openalex_id": "A5088480694",
+          "orcid": "https://orcid.org/0009-0007-9022-0291",
+          "institutions": [
+            "Volkswagen Group (Germany)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-12",
+      "abstract": "The development of processes and tools for ethical, trustworthy, and legal AI is only beginning. At the same time, legal requirements are emerging in various jurisdictions, following a deluge of ethical guidelines. It is therefore key to explore the necessary practices that must be adopted to ensure the quality of AI systems, mitigate their potential risks and enable legal compliance. Ensuring that the potential negative impacts of AI on individuals, society, and the environment are mitigated will depend on many factors, including the capacity to properly regulate its deployment and to mandate necessary internal best practices along lifecycles. Regulatory frameworks must evolve from abstract requirements to providing concrete operational mandates that enable better oversight mechanisms in the way AI systems operate, how they are developed, and how they are deployed. In view of the above, this paper explores the necessary practices that can be adopted throughout a comprehensive lifecycle audit as a key practice to ensure the quality of AI systems and enable the development of compliance mechanisms. It also discusses novel governance tools that enable bridging the current operational gaps. Such gaps were identified by interviewing experts, analysing adaptable tools and methodologies from the software engineering domain, and by exploring the state of the art of auditing. The results present recommendations for novel tools and oversight mechanisms for governing AI systems.",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Law, AI, and Intellectual Property",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W4380320348"
+    },
+    {
+      "openalex_id": "W7105603190",
+      "doi": "10.48175/ijarsct-29476",
+      "title": "A Comprehensive Review of Real-Time Feeder Monitoring and Auditing Systems: Architectures, Technologies, and Analytics for the Smart Grid",
+      "authors": [
+        {
+          "name": "Vidya Jamadade",
+          "openalex_id": "",
+          "institutions": [
+            "Sinhgad Dental College and Hospital"
+          ]
+        },
+        {
+          "name": "Madhubala Ghodake",
+          "openalex_id": "",
+          "institutions": [
+            "Sinhgad Dental College and Hospital"
+          ]
+        },
+        {
+          "name": "Samridhi Katakdhond",
+          "openalex_id": "",
+          "institutions": [
+            "Sinhgad Dental College and Hospital"
+          ]
+        },
+        {
+          "name": "Vaibhav Godase",
+          "openalex_id": "A5117518150",
+          "institutions": [
+            "Sinhgad Dental College and Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-13",
+      "abstract": "Abstract: The modernization of power distribution networks into intelligent Smart Grids necessitates a paradigm shift from periodic, manual inspections to continuous, real-time feeder monitoring and auditing. Traditional systems, reliant on legacy SCADA and manual meter reading, are plagued by high Aggregate Technical and Commercial (AT&amp;C) losses, prolonged outage durations, and a lack of granular visibility into feeder health. This review paper comprehensively synthesizes the architecture, technologies, and methodologies underpinning modern Real-Time Feeder Power Line Monitoring and Auditing Systems. We explore the integrated ecosystem of advanced sensing devices, including Smart Meters, Feeder Remote Terminal Units (FRTUs), and Phasor Measurement Units (PMUs), coupled with robust communication protocols like cellular networks and LPWAN. The core of the paper delves into the data analytics pipeline, detailing applications in state estimation, fault detection and location, power quality assessment, and, crucially, real-time energy auditing. A significant focus is placed on techniques for segregating technical losses from non-technical losses (NTLs), such as energy theft, using data-driven algorithms and machine learning. Furthermore, the paper addresses key implementation challenges, including cybersecurity, data management, and economic viability, and highlights future research directions involving Artificial Intelligence (AI), digital twins, and edge computing. The synthesis concludes that the deployment of such integrated systems is indispensable for enhancing grid resilience, optimizing operational efficiency, and achieving significant financial savings for utilities.",
+      "cited_by_count": 51,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Advanced Research in Science Communication and Technology",
+        "type": "journal",
+        "issn": [
+          "2581-9429"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.48175/ijarsct-29476"
+      },
+      "topics": [
+        "Electricity Theft Detection Techniques",
+        "Power Systems Fault Detection",
+        "Smart Grid Security and Resilience"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W7105603190"
+    },
+    {
+      "openalex_id": "W4211093732",
+      "doi": "10.1108/jices-06-2021-0059",
+      "title": "Toward accountable human-centered AI: rationale and promising directions",
+      "authors": [
+        {
+          "name": "Junaid Qadir",
+          "openalex_id": "A5037574053",
+          "orcid": "https://orcid.org/0000-0001-9466-2475",
+          "institutions": [
+            "Information Technology University",
+            "Qatar University"
+          ]
+        },
+        {
+          "name": "Mohammad Qamar Islam",
+          "openalex_id": "A5082610905",
+          "institutions": [
+            "Information Technology University"
+          ]
+        },
+        {
+          "name": "Ala Al\u2010Fuqaha",
+          "openalex_id": "A5008695053",
+          "orcid": "https://orcid.org/0000-0002-0903-1204",
+          "institutions": [
+            "Hamad bin Khalifa University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-02-09",
+      "abstract": "Purpose Along with the various beneficial uses of artificial intelligence (AI), there are various unsavory concomitants including the inscrutability of AI tools (and the opaqueness of their mechanisms), the fragility of AI models under adversarial settings, the vulnerability of AI models to bias throughout their pipeline, the high planetary cost of running large AI models and the emergence of exploitative surveillance capitalism-based economic logic built on AI technology. This study aims to document these harms of AI technology and study how these technologies and their developers and users can be made more accountable. Design/methodology/approach Due to the nature of the problem, a holistic, multi-pronged approach is required to understand and counter these potential harms. This paper identifies the rationale for urgently focusing on human-centered AI and provide an outlook of promising directions including technical proposals. Findings AI has the potential to benefit the entire society, but there remains an increased risk for vulnerable segments of society. This paper provides a general survey of the various approaches proposed in the literature to make AI technology more accountable. This paper reports that the development of ethical accountable AI design requires the confluence and collaboration of many fields (ethical, philosophical, legal, political and technical) and that lack of diversity is a problem plaguing the state of the art in AI. Originality/value This paper provides a timely synthesis of the various technosocial proposals in the literature spanning technical areas such as interpretable and explainable AI; algorithmic auditability; as well as policy-making challenges and efforts that can operationalize ethical AI and help in making AI accountable. This paper also identifies and shares promising future directions of research.",
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Journal of Information Communication and Ethics in Society",
+        "type": "journal",
+        "issn": [
+          "1477-996X",
+          "1758-8871"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W4211093732"
+    },
+    {
+      "openalex_id": "W4416177507",
+      "doi": "10.48175/ijarsct-29476",
+      "title": "A Comprehensive Review of Real-Time Feeder Monitoring and Auditing Systems: Architectures, Technologies, and Analytics for the Smart Grid",
+      "authors": [
+        {
+          "name": "Vidya Jamadade",
+          "openalex_id": "A5120357286",
+          "institutions": [
+            "Sinhgad Dental College and Hospital"
+          ]
+        },
+        {
+          "name": "Madhubala Ghodake",
+          "openalex_id": "A5120349039",
+          "institutions": [
+            "Sinhgad Dental College and Hospital"
+          ]
+        },
+        {
+          "name": "Samridhi Katakdhond",
+          "openalex_id": "A5120397946",
+          "institutions": [
+            "Sinhgad Dental College and Hospital"
+          ]
+        },
+        {
+          "name": "Vaibhav Godase",
+          "openalex_id": "A5117518150",
+          "orcid": "https://orcid.org/0000-0003-1052-816X",
+          "institutions": [
+            "Sinhgad Dental College and Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-13",
+      "abstract": "Abstract: The modernization of power distribution networks into intelligent Smart Grids necessitates a paradigm shift from periodic, manual inspections to continuous, real-time feeder monitoring and auditing. Traditional systems, reliant on legacy SCADA and manual meter reading, are plagued by high Aggregate Technical and Commercial (AT&amp;C) losses, prolonged outage durations, and a lack of granular visibility into feeder health. This review paper comprehensively synthesizes the architecture, technologies, and methodologies underpinning modern Real-Time Feeder Power Line Monitoring and Auditing Systems. We explore the integrated ecosystem of advanced sensing devices, including Smart Meters, Feeder Remote Terminal Units (FRTUs), and Phasor Measurement Units (PMUs), coupled with robust communication protocols like cellular networks and LPWAN. The core of the paper delves into the data analytics pipeline, detailing applications in state estimation, fault detection and location, power quality assessment, and, crucially, real-time energy auditing. A significant focus is placed on techniques for segregating technical losses from non-technical losses (NTLs), such as energy theft, using data-driven algorithms and machine learning. Furthermore, the paper addresses key implementation challenges, including cybersecurity, data management, and economic viability, and highlights future research directions involving Artificial Intelligence (AI), digital twins, and edge computing. The synthesis concludes that the deployment of such integrated systems is indispensable for enhancing grid resilience, optimizing operational efficiency, and achieving significant financial savings for utilities.",
+      "cited_by_count": 49,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Advanced Research in Science Communication and Technology",
+        "type": "journal",
+        "issn": [
+          "2581-9429"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.48175/ijarsct-29476"
+      },
+      "topics": [],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W4416177507"
+    },
+    {
+      "openalex_id": "W4393854356",
+      "doi": "10.24123/jati.v17i1.6279",
+      "title": "The audit revolution: Integrating artificial intelligence in detecting accounting fraud",
+      "authors": [
+        {
+          "name": "Iman Supriadi",
+          "openalex_id": "A5062731382",
+          "orcid": "https://orcid.org/0000-0002-0834-5797",
+          "institutions": [
+            "Institut Sains dan Teknologi Terpadu Surabaya"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-31",
+      "abstract": "This study aims to analyze the application of Artificial Intelligence (AI) in detecting accounting fraud in audits. The aim is to identify AI's efficiency, accuracy, and potential in detecting fraud and to explore the challenges and implications arising from using this technology in audit practice. This research is a type of qualitative research with a case study approach as the main focus and a literature study as a data triangulation approach. This research methodology will provide an in-depth understanding of the integration of artificial intelligence in detecting accounting fraud. The results show that AI improves efficiency and accuracy in detecting accounting fraud. AI techniques such as machine learning and natural language processing effectively identify fraud patterns. However, there are challenges, such as limitations of AI technology, ethical and data privacy issues, and barriers to accepting AI in the accounting industry. This research contributes to the accounting literature by highlighting how AI can change audit practices. It also offers guidance for accounting firms on utilizing AI to improve auditing and suggests directions for future research related to the development and integration of AI in accounting.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Akuntansi dan Teknologi Informasi",
+        "type": "journal",
+        "issn": [
+          "1412-5994",
+          "2614-8749"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journal.ubaya.ac.id/index.php/jati/article/download/6279/4040"
+      },
+      "topics": [
+        "Imbalanced Data Classification Techniques",
+        "Financial Distress and Bankruptcy Prediction",
+        "Auditing, Earnings Management, Governance"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W4393854356"
+    },
+    {
+      "openalex_id": "W4311065628",
+      "doi": "10.1007/s10639-022-11474-x",
+      "title": "Integrating data analytics in teaching audit with machine learning and artificial intelligence",
+      "authors": [
+        {
+          "name": "Maria Prokofieva",
+          "openalex_id": "A5005127963",
+          "orcid": "https://orcid.org/0000-0003-1974-3827",
+          "institutions": [
+            "Victoria University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-01",
+      "abstract": null,
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "Education and Information Technologies",
+        "type": "journal",
+        "issn": [
+          "1360-2357",
+          "1573-7608"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Accounting Education and Careers",
+        "Spreadsheets and End-User Computing"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W4311065628"
+    },
+    {
+      "openalex_id": "W3105081694",
+      "doi": "10.1038/s41598-020-76550-z",
+      "title": "COVID-Net: a tailored deep convolutional neural network design for detection of COVID-19 cases from chest X-ray images",
+      "authors": [
+        {
+          "name": "Linda Wang\ufeff",
+          "openalex_id": "A5044596939",
+          "orcid": "https://orcid.org/0000-0001-6308-2769",
+          "institutions": [
+            "University of Waterloo"
+          ]
+        },
+        {
+          "name": "Zhong Qiu Lin",
+          "openalex_id": "A5112117049",
+          "institutions": [
+            "University of Waterloo"
+          ]
+        },
+        {
+          "name": "Alexander Wong",
+          "openalex_id": "A5034161060",
+          "orcid": "https://orcid.org/0000-0002-5295-2797",
+          "institutions": [
+            "University of Waterloo"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-11",
+      "abstract": "Abstract The Coronavirus Disease 2019 (COVID-19) pandemic continues to have a devastating effect on the health and well-being of the global population. A critical step in the fight against COVID-19 is effective screening of infected patients, with one of the key screening approaches being radiology examination using chest radiography. It was found in early studies that patients present abnormalities in chest radiography images that are characteristic of those infected with COVID-19. Motivated by this and inspired by the open source efforts of the research community, in this study we introduce COVID-Net, a deep convolutional neural network design tailored for the detection of COVID-19 cases from chest X-ray (CXR) images that is open source and available to the general public. To the best of the authors\u2019 knowledge, COVID-Net is one of the first open source network designs for COVID-19 detection from CXR images at the time of initial release. We also introduce COVIDx, an open access benchmark dataset that we generated comprising of 13,975 CXR images across 13,870 patient patient cases, with the largest number of publicly available COVID-19 positive cases to the best of the authors\u2019 knowledge. Furthermore, we investigate how COVID-Net makes predictions using an explainability method in an attempt to not only gain deeper insights into critical factors associated with COVID cases, which can aid clinicians in improved screening, but also audit COVID-Net in a responsible and transparent manner to validate that it is making decisions based on relevant information from the CXR images. By no means a production-ready solution, the hope is that the open access COVID-Net, along with the description on constructing the open source COVIDx dataset, will be leveraged and build upon by both researchers and citizen data scientists alike to accelerate the development of highly accurate yet practical deep learning solutions for detecting COVID-19 cases and accelerate treatment of those who need it the most.",
+      "cited_by_count": 3081,
+      "type": "article",
+      "source": {
+        "name": "Scientific Reports",
+        "type": "journal",
+        "issn": [
+          "2045-2322"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41598-020-76550-z.pdf"
+      },
+      "topics": [
+        "COVID-19 diagnosis using AI",
+        "Radiomics and Machine Learning in Medical Imaging",
+        "COVID-19 Clinical Research Studies"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W3105081694"
+    },
+    {
+      "openalex_id": "W3042719208",
+      "doi": "10.21638/spbu05.2020.206",
+      "title": "Opportunities and prospects for using digital technologies in auditing",
+      "authors": [
+        {
+          "name": "V.\u0410. Yakimova",
+          "openalex_id": "A5091724109",
+          "orcid": "https://orcid.org/0000-0001-5866-5652"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "The digital economy creates new opportunities for the development of all types of economic activity, and first of all it allows to improve the organizational, technical and methodological support of information services, which include audit services. Developing technologies based on artificial intelligence, descriptive and predicative analysis of big data can find an applied aspect in the digitalization of audit activities, which will help to accelerate the collection of information, the transition from manual procedures to computer-aided processing of information, planning algorithms and a deeper understanding of the activities of audited entities. With the development of the market of high (hi-tech) and end-to-end technologies, digitalization of information systems of economic entities, the problems of adapting auditory methodological and organizational-technological tools to current conditions become urgent. Thus, in auditing science there is a paradigm shift: the transition from traditional audit to intellectual (AI audit), the methodology of which is based on machine learning technology in the professional field and the use of professional cognition. The application of the ecosystem approach allows us to describe the features of the content and functional purpose of individual digital technologies for performing cognitive processes in audit activities. A cognitive ecosystem of audit activities is proposed, which is necessary for defining digital technologies, with the help of which specific tasks and directions of audits and audit-related services can be implemented. The proposed ecosystem can be used as a supporting mechanism for creating a comprehensive AI-audit system in audit organizations and for developing AI-audit as a field of scientific knowledge.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "St Petersburg University Journal of Economic Studies",
+        "type": "journal",
+        "issn": [
+          "1026-356X",
+          "2542-226X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://economicsjournal.spbu.ru/article/download/7764/5705"
+      },
+      "topics": [
+        "Economic and Technological Systems Analysis",
+        "Economic and Technological Developments in Russia",
+        "Digital Economy and Transformation"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W3042719208"
+    },
+    {
+      "openalex_id": "W4399364316",
+      "doi": null,
+      "title": "A Framework for Assurance Audits of Algorithmic Systems",
+      "authors": [
+        {
+          "name": "Khoa T. Lam",
+          "openalex_id": "A5004537158",
+          "orcid": "https://orcid.org/0009-0004-8970-4537"
+        },
+        {
+          "name": "Benjamin Lange",
+          "openalex_id": "A5023191574",
+          "orcid": "https://orcid.org/0000-0002-5809-8704"
+        },
+        {
+          "name": "Borhane Blili-Hamelin",
+          "openalex_id": "A5055973731",
+          "orcid": "https://orcid.org/0000-0002-9573-3332"
+        },
+        {
+          "name": "Jovana Davidovic",
+          "openalex_id": "A5071996937",
+          "orcid": "https://orcid.org/0000-0002-8998-5496",
+          "institutions": [
+            "University of Iowa"
+          ]
+        },
+        {
+          "name": "Shea Brown",
+          "openalex_id": "A5062737227",
+          "orcid": "https://orcid.org/0000-0002-6451-9675",
+          "institutions": [
+            "University of Iowa"
+          ]
+        },
+        {
+          "name": "Ali Hasan",
+          "openalex_id": "A5001326629",
+          "orcid": "https://orcid.org/0000-0003-2963-2573",
+          "institutions": [
+            "University of Iowa"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "An increasing number of regulations propose the notion of \u2018AI audits\u2019 as an enforcement mechanism for achieving transparency and accountability for artificial intelligence (AI) systems. Despite some converging norms around various forms of AI auditing, auditing for the purpose of compliance and assurance currently have little to no agreed upon practices, procedures, taxonomies, and standards. We propose the \u2018criterion audit\u2019 as an operationalizable compliance and assurance external audit framework. We model elements of this approach after financial auditing practices, and argue that AI audits should similarly provide assurance to their stakeholders about AI organizations\u2019 ability to govern their algorithms in ways that mitigate harms and uphold human values. We discuss the necessary conditions for the criterion audit, and provide a procedural blueprint for performing an audit engagement in practice. We illustrate how this framework can be adapted to current regulations by deriving the criteria on which \u2018bias audits\u2019 for hiring algorithms can be performed, as required by the recently effective New York City Local Law 144 of 2021. We conclude by offering critical discussion on the benefits, inherent limitations, and implementation challenges of applying practices of the more mature financial auditing industry to AI auditing where robust guardrails against quality assurance issues are only starting to emerge. Our discussion as informed by experiences in performing these audits in practice highlights the critical role that an audit ecosystem plays in ensuring the effectiveness of such methodology.",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Law, AI, and Intellectual Property",
+        "Law, Economics, and Judicial Systems"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W4399364316"
+    },
+    {
+      "openalex_id": "W4401524489",
+      "doi": "10.1108/maj-03-2023-3846",
+      "title": "Does the adoption of artificial intelligence by audit firms and their clients affect audit quality and efficiency? Evidence from China",
+      "authors": [
+        {
+          "name": "Md Jahidur Rahman",
+          "openalex_id": "A5038930414",
+          "orcid": "https://orcid.org/0000-0002-0534-0181",
+          "institutions": [
+            "Wenzhou-Kean University"
+          ]
+        },
+        {
+          "name": "Hongtao Zhu",
+          "openalex_id": "A5021779735",
+          "orcid": "https://orcid.org/0000-0002-3347-4603",
+          "institutions": [
+            "University of Edinburgh",
+            "City University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Yue Li",
+          "openalex_id": "A5100387719",
+          "orcid": "https://orcid.org/0000-0001-5149-7270",
+          "institutions": [
+            "Wenzhou-Kean University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-08-12",
+      "abstract": "Purpose This study aims to examine whether the adoption of artificial intelligence (AI) by audit firms and their clients affects audit efficiency and audit quality. Design/methodology/approach This study empirically examines the abovementioned research question based on data from China for the years 2011 to 2020. It uses audit report lag as a proxy for audit efficiency and the likelihood of annual report restatement as a proxy for audit quality. It adopts the propensity score matching and the two-stage OLS regression model to address the endogeneity issue led by firms\u2019 innate complicated functions. Findings The findings show that when audit firms and their clients use AI separately, there's a positive link between AI use and audit report lag. However, when audit firms and clients use AI together, there's a negative link between AI use and audit report delays that enhance overall audit efficiency. Next, the authors observe a negative link between AI use and the likelihood of a restatement. Finally, the authors find that the association between AI adoption and audit quality is driven by increased audit effort lag. Results are consistent and robust to endogeneity tests and sensitivity analyses. Originality/value Findings can complement the audit quality and corporate governance literature by clarifying that external audit must evolve through digitalization and the incorporation of newly developed digital tools, such as AI.",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "Managerial Auditing Journal",
+        "type": "journal",
+        "issn": [
+          "0268-6902",
+          "1758-7735"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Corporate Finance and Governance",
+        "Financial Distress and Bankruptcy Prediction"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W4401524489"
+    },
+    {
+      "openalex_id": "W4392630426",
+      "doi": "10.1016/j.irfa.2024.103149",
+      "title": "Human-AI collaboration to mitigate decision noise in financial underwriting: A study on FinTech innovation in a lending firm",
+      "authors": [
+        {
+          "name": "Swati Sachan",
+          "openalex_id": "A5013692124",
+          "orcid": "https://orcid.org/0000-0003-0136-0553",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Fatima Almaghrabi",
+          "openalex_id": "A5091355025",
+          "orcid": "https://orcid.org/0000-0002-7164-2460",
+          "institutions": [
+            "University of Business and Technology",
+            "Umm al-Qura University"
+          ]
+        },
+        {
+          "name": "Jianbo Yang",
+          "openalex_id": "A5054515260",
+          "orcid": "https://orcid.org/0000-0002-1368-5294",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Dong\u2010Ling Xu",
+          "openalex_id": "A5030611924",
+          "orcid": "https://orcid.org/0000-0003-4480-1611",
+          "institutions": [
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-09",
+      "abstract": null,
+      "cited_by_count": 31,
+      "type": "article",
+      "source": {
+        "name": "International Review of Financial Analysis",
+        "type": "journal",
+        "issn": [
+          "1057-5219",
+          "1873-8079"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "FinTech, Crowdfunding, Digital Finance",
+        "Explainable Artificial Intelligence (XAI)",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W4392630426"
+    },
+    {
+      "openalex_id": "W4288058256",
+      "doi": "10.1145/3514094.3534189",
+      "title": "Resume Format, LinkedIn URLs and Other Unexpected Influences on AI Personality Prediction in Hiring: Results of an Audit",
+      "authors": [
+        {
+          "name": "Alene K. Rhea",
+          "openalex_id": "A5084844942",
+          "orcid": "https://orcid.org/0000-0001-5284-2064",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Kelsey Markey",
+          "openalex_id": "A5081293781",
+          "orcid": "https://orcid.org/0000-0003-1151-2952",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Lauren D\u2019Arinzo",
+          "openalex_id": "A5053501114",
+          "orcid": "https://orcid.org/0000-0001-6452-9032",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Hilke Schellmann",
+          "openalex_id": "A5006651432",
+          "orcid": "https://orcid.org/0009-0008-0233-6970",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Mona Sloane",
+          "openalex_id": "A5075302056",
+          "orcid": "https://orcid.org/0000-0003-1049-2267",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Paul C. Squires",
+          "openalex_id": "A5011008703",
+          "orcid": "https://orcid.org/0009-0008-5209-6776",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Julia Stoyanovich",
+          "openalex_id": "A5082830839",
+          "orcid": "https://orcid.org/0000-0002-1587-0450",
+          "institutions": [
+            "New York University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-07-26",
+      "abstract": "Automated hiring systems are among the fastest-developing of all high-stakes AI systems. Among these are algorithmic personality tests that use insights from psychometric testing, and promise to surface personality traits indicative of future success based on job seekers' resumes or social media profiles. We interrogate the reliability of such systems using stability of the outputs they produce, noting that reliability is a necessary, but not a sufficient, condition for validity. We develop a methodology for an external audit of stability of algorithmic personality tests, and instantiate this methodology in an audit of two systems, Humantic AI and Crystal. Rather than challenging or affirming the assumptions made in psychometric testing -- that personality traits are meaningful and measurable constructs, and that they are indicative of future success on the job -- we frame our methodology around testing the underlying assumptions made by the vendors of the algorithmic personality tests themselves.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3514094.3534189"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W4288058256"
+    },
+    {
+      "openalex_id": "W4386396124",
+      "doi": "10.1108/jaar-10-2022-0273",
+      "title": "A deep learning-based SEM-ANN analysis of the impact of AI-based audit services on client trust",
+      "authors": [
+        {
+          "name": "Awni Rawashdeh",
+          "openalex_id": "A5066004124",
+          "orcid": "https://orcid.org/0000-0003-3382-1529",
+          "institutions": [
+            "Applied Science Private University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-01",
+      "abstract": "Purpose The advent of technology has propelled audit firms to incorporate AI-based audit services, bringing the relationship between audit clients and firms into sharper focus. Nonetheless, the understanding of how AI-based audit services affect this relationship remains sparse. This study strives to probe how an audit client's satisfaction with AI-based audit services influences their trust in audit firms. Identifying the variables affecting this trust, the research aspires to gain a deeper comprehension of the implications of AI-based audit services on the auditor-client relationship, ultimately aiming to boost client satisfaction and cultivate trust. Design/methodology/approach A conceptual framework has been devised, grounded in the client-company relationship model, to delineate the relationship between perceived quality, perceived value, attitude and satisfaction with AI-based audit services and their subsequent impact on trust in audit firms. The research entailed an empirical investigation employing Facebook ads, gathering 288 valid responses for evaluation. The structural equation method, utilized in conjunction with SPSS and Amos statistical applications, verified the reliability and overarching structure of the scales employed to measure these elements. A hybrid multi-analytical technique of structural equation modeling and artificial neural networks (SEM-ANN) was deployed to empirically validate the collated data. Findings The research unveiled a significant and positive relationship between perceived value and client satisfaction, trust and attitude towards AI-based audit services, along with the link between perceived quality and client satisfaction. The findings suggest that a favorable attitude and perceived quality of AI-based audit services could enhance satisfaction, subsequently augmenting perceived value and client trust. By focusing on the delivery of superior-quality services that fulfill clients' value expectations, firms may amplify client satisfaction and trust. Research limitations/implications Further inquiries are required to appraise the influence of advanced technology adoption within audit firms on client trust-building mechanisms. Moreover, an understanding of why the impact of perceived quality on perceived value proves ineffectual in the context of audit client trust-building warrants further exploration. In interpreting the findings of this study, one should consider the inherent limitations of the empirical analysis, inclusive of the utilization of Facebook ads as a data-gathering tool. Practical implications The research yielded insightful theoretical and practical implications that can bolster audit clients' trust in audit firms amid technological advancements within the audit landscape. The results imply that audit firms should contemplate implementing trust-building mechanisms by creating value and influencing clients' stance towards AI-based audit services to establish trust, particularly when vying with competing firms. As technological evolutions impinge on trustworthiness, audit firms must prioritize clients' perceived value and satisfaction. Originality/value To the researcher's best knowledge, no previous study has scrutinized the impact of satisfaction with AI-based audit services on cultivating audit client trust in audit firms, in contrast to past research that has focused on the auditors' trust in the audit client. To bridge these gaps, this study employs a comprehensive and integrative theoretical model.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "Journal of Applied Accounting Research",
+        "type": "journal",
+        "issn": [
+          "0967-5426",
+          "1758-8855"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Technology Adoption and User Behaviour",
+        "Auditing, Earnings Management, Governance",
+        "Organizational and Employee Performance"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W4386396124"
+    },
+    {
+      "openalex_id": "W3110851951",
+      "doi": "10.3233/ip-200260",
+      "title": "Algorithmic transparency and bureaucratic discretion: The case of SALER early warning system",
+      "authors": [
+        {
+          "name": "J. Ignacio Criado",
+          "openalex_id": "A5086106861",
+          "orcid": "https://orcid.org/0000-0002-9184-9696",
+          "institutions": [
+            "Universidad Aut\u00f3noma de Madrid"
+          ]
+        },
+        {
+          "name": "Juli\u00e1n Mart\u00ednez Valero",
+          "openalex_id": "A5034106897",
+          "institutions": [
+            "Universidad de Murcia"
+          ]
+        },
+        {
+          "name": "Juli\u00e1n Villodre",
+          "openalex_id": "A5074909084",
+          "orcid": "https://orcid.org/0000-0003-0468-8802",
+          "institutions": [
+            "Universidad Aut\u00f3noma de Madrid"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-04",
+      "abstract": "The governance of public sector organizations has been challenged by the growing adoption and use of Artificial Intelligence (AI) systems and algorithms. Algorithmic transparency, conceptualized here using the dimensions of accessibility and explainability, fosters the appraisal of algorithms\u2019 footprint in decisions of public agencies, and should include impacts on civil servants\u2019 work. However, although discretion will not disappear, AI innovations might have a negative impact on how public employees support their decisions. This article is intended to answer the following research questions: RQ1. To what extent algorithms affect discretionary power of civil servants to make decisions?RQ2. How algorithmic transparency can impact discretionary power of civil servants? To do so, we analyze SALER, a case based on a set of algorithms focused on the prevention of irregularities in the Valencian regional administration (GVA), Spain, using a qualitative methodology supported on semi-structured interviews and documentary analysis. Among the results of the study, our empirical work suggests the existence of a series of factors that might be linked to the positive impacts of algorithms on the work and discretionary power of civil servants. Also, we identify different pathways for achieving algorithmic transparency, such as the involvement of civil servants in active development, or auditing processes being recognized by law, among others.",
+      "cited_by_count": 43,
+      "type": "article",
+      "source": {
+        "name": "Information Polity",
+        "type": "journal",
+        "issn": [
+          "1570-1255",
+          "1875-8754"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Regulation and Compliance Studies"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W3110851951"
+    },
+    {
+      "openalex_id": "W4311309704",
+      "doi": "10.1108/ijaim-08-2022-0170",
+      "title": "Clients\u2019 digitalization, audit firms\u2019 digital expertise, and audit quality: evidence from China",
+      "authors": [
+        {
+          "name": "Md Jahidur Rahman",
+          "openalex_id": "A5038930414",
+          "orcid": "https://orcid.org/0000-0002-0534-0181",
+          "institutions": [
+            "Wenzhou-Kean University"
+          ]
+        },
+        {
+          "name": "Ao Ziru",
+          "openalex_id": "A5000248892",
+          "institutions": [
+            "Wenzhou-Kean University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-12",
+      "abstract": "Purpose This study aims to examine whether clients\u2019 degree of digitalization and audit firms\u2019 expertise in information technology (IT) influence audit quality (AQ). Design/methodology/approach Data of Chinese A-share firms listed on the primary board of the Shanghai and Shenzhen stock exchanges from 2011 to 2019 are taken as the sample. All the data are obtained from the China Stock Market and Accounting Research. Clients\u2019 digitalization is determined using the keywords \u201cAI technology,\u201d \u201cblockchain,\u201d \u201ccloud computing,\u201d \u201cbig data technology\u201d and \u201cdigital technology.\u201d Auditor firm\u2019s digital expertise is determined by the proportion of higher IT expertise. As the proxy for AQ, this study uses audit fees, given that its quantum reflects the effort auditors expend that in turn affects the AQ. Findings A fixed-effect regression model shows that clients with high digitalization attain AQ. This study also finds a significant and positive coefficient of audit fees, indicating that AQ is high in the same situation if an audit firm\u2019s IT is mature and developed. Furthermore, results confirm the moderating effect of clients\u2019 digitalization and auditors\u2019 expertise and on AQ. Auditors\u2019 expertise in IT mitigates the audit risk and increase AQ. Originality/value Findings can enhance AQ and corporate governance literature by clarifying how external audits must evolve through digitalization and incorporating newly developed digital tools such as big data, analytics, artificial intelligence and robotic process automation. This study also provides important insights regarding how the development of new digital tools allow the audit profession to perform as a corporate governance mechanism.",
+      "cited_by_count": 32,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Accounting and Information Management",
+        "type": "journal",
+        "issn": [
+          "1758-9037",
+          "1834-7649"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Corporate Governance and Financial Management",
+        "Corporate Finance and Governance"
+      ],
+      "referenced_works_count": 77,
+      "url": "https://openalex.org/W4311309704"
+    },
+    {
+      "openalex_id": "W3203887944",
+      "doi": "10.1007/s00146-021-01285-y",
+      "title": "Integrating AI ethics in wildlife conservation AI systems in South Africa: a review, challenges, and future research agenda",
+      "authors": [
+        {
+          "name": "Irene Nandutu",
+          "openalex_id": "A5086746947",
+          "orcid": "https://orcid.org/0000-0003-0356-7080",
+          "institutions": [
+            "Rhodes University"
+          ]
+        },
+        {
+          "name": "Marcellin Atemkeng",
+          "openalex_id": "A5090363326",
+          "orcid": "https://orcid.org/0000-0002-9020-3885",
+          "institutions": [
+            "Rhodes University"
+          ]
+        },
+        {
+          "name": "Patrice Okouma",
+          "openalex_id": "A5076018595",
+          "orcid": "https://orcid.org/0000-0002-3314-6474",
+          "institutions": [
+            "Rhodes University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-24",
+      "abstract": null,
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Adversarial Robustness in Machine Learning",
+        "Law, AI, and Intellectual Property"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W3203887944"
+    },
+    {
+      "openalex_id": "W4366825521",
+      "doi": "10.47672/ajce.1433",
+      "title": "Impact of Artificial Intelligence on Accounting, Auditing and Financial Reporting",
+      "authors": [
+        {
+          "name": "Ke-afoon Collins Kindzeka",
+          "openalex_id": "A5085876437",
+          "institutions": [
+            "Association of Chartered Certified Accountants"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-24",
+      "abstract": "Purpose: The study aimed at portraying the current role of Artificial intelligence in accounting, auditing, and financial reporting.&#x0D; Methodology: The study used a descriptive research design. This form of research design aims at describing the current status of an identified variable. Data was collected from secondary materials.&#x0D; Findings: Currently, multiple AI technologies are being utilized in accounting, auditing, and financial reporting. The AI expert systems accept human experiences as well as technical know-how as their fundamental and try to develop aggregate behavior or practice. Also, AI has allowed for factors such as automated data input, thus enhancing the scope of accounting, and enabling modern accounting to integrate and process huge data.&#x0D; Recommendations: It is critical for future policymakers to ensure standardization of the AI system in the accounting paradigm to ensure high-quality systems that adhere to the principles of accounting.&#x0D;",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "American Journal of Computing and Engineering",
+        "type": "journal",
+        "issn": [
+          "2790-5586"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ajpojournals.org/journals/index.php/AJCE/article/download/1433/1544"
+      },
+      "topics": [
+        "Impact of AI and Big Data on Business and Society"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W4366825521"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

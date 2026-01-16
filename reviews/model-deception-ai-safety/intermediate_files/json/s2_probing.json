@@ -1,0 +1,1372 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "probing classifiers beliefs language models",
+  "results": [
+    {
+      "paperId": "8e4d58ef62b599075f9c7f3c62f7ec57e435be35",
+      "title": "Can probing classifiers reveal the learning by contact center large language models?: No, it doesn\u2019t!",
+      "authors": [
+        {
+          "name": "Varun Nathan",
+          "authorId": "2271377625"
+        },
+        {
+          "name": "Ayush Kumar",
+          "authorId": "2109263412"
+        },
+        {
+          "name": "Digvijay Ingle",
+          "authorId": "2187456556"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Fine-tuning large language models (LLMs) with domain-specific instruction dataset has emerged as an effective method to enhance their domain-specific understanding. Yet, there is limited work that examines the core characteristics acquired during this process. In this study, we benchmark the fundamental characteristics learned by contact-center (CC) domain specific instruction fine-tuned LLMs with out-of-the-box (OOB) LLMs via probing tasks encompassing conversational, channel, and automatic speech recognition (ASR) properties. We explore different LLM architectures (Flan-T5 and Llama) and sizes (3B, 7B, 11B, 13B). Our findings reveal remarkable effectiveness of CC-LLMs on the in-domain downstream tasks, with improvement in response acceptability by over 48% compared to OOB-LLMs. However, we observe that the performance of probing classifiers are relatively similar and does not reflect the performance of in-domain downstream tasks. A similar observation is also noted on SentEval dataset that assess capabilities of models in terms of surface, syntactic, and semantic information through probing tasks. Our study challenges the premise that probing classifiers can reveal the fundamental characteristics learned by large language models and is reflective of the downstream task performance, via a case-study of LLMs tuned for contact center domain.",
+      "citationCount": 2,
+      "doi": "10.18653/v1/2024.insights-1.12",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8e4d58ef62b599075f9c7f3c62f7ec57e435be35",
+      "venue": "First Workshop on Insights from Negative Results in NLP",
+      "journal": {
+        "name": "Proceedings of the Fifth Workshop on Insights from Negative Results in NLP"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "653f8879a93ac34ed2c34fad53cc53d8f610d07a",
+      "title": "Understanding Large Language Models: Towards Rigorous and Targeted Interpretability Using Probing Classifiers and Self-Rationalisation",
+      "authors": [
+        {
+          "name": "Jenny Kunz",
+          "authorId": "2306280529"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/653f8879a93ac34ed2c34fad53cc53d8f610d07a",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "173c6d5dcbac505669b3f9806c2c8c3777734256",
+      "title": "In-Context Probing: Toward Building Robust Classifiers via Probing Large Language Models",
+      "authors": [
+        {
+          "name": "Afra Amini",
+          "authorId": "1820796225"
+        },
+        {
+          "name": "Massimiliano Ciaramita",
+          "authorId": "2754495"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models are able to learn new tasks in context, where they are provided with instructions and a few annotated examples. However, the effectiveness of in-context learning is dependent on the provided context, and the performance on a downstream task can vary considerably, depending on the instruction. Importantly, such dependency on the context can surface in unpredictable ways, e.g., a seemingly more informative instruction might lead to a worse performance. In this paper, we propose an alternative approach, which we term In-Context Probing (ICP). Similar to in-context learning, we contextualize the representation of the input with an instruction, but instead of decoding the output prediction, we probe the contextualized representation to predict the label. Through a series of experiments on a diverse set of classification tasks, we show that in-context probing is significantly more robust to changes in instructions. We further show that ICP performs competitive or superior to finetuning and can be particularly helpful to build classifiers on top of smaller models, with less than a hundred training examples.",
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": "2305.14171",
+      "url": "https://www.semanticscholar.org/paper/173c6d5dcbac505669b3f9806c2c8c3777734256",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "58ec3846710fad3ea0cb54ec00004c501fd39923",
+      "title": "Probing Internal Representations of Multi-Word Verbs in Large Language Models",
+      "authors": [
+        {
+          "name": "Hassane Kissane",
+          "authorId": "2334577068"
+        },
+        {
+          "name": "Achim Schilling",
+          "authorId": "2256902156"
+        },
+        {
+          "name": "Patrick Krauss",
+          "authorId": "2256902091"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study investigates the internal representations of verb-particle combinations, called multi-word verbs, within transformer-based large language models (LLMs), specifically examining how these models capture lexical and syntactic properties at different neural network layers. Using the BERT architecture, we analyze the representations of its layers for two different verb-particle constructions: phrasal verbs like 'give up' and prepositional verbs like 'look at'. Our methodology includes training probing classifiers on the internal representations to classify these categories at both word and sentence levels. The results indicate that the model's middle layers achieve the highest classification accuracies. To further analyze the nature of these distinctions, we conduct a data separability test using the Generalized Discrimination Value (GDV). While GDV results show weak linear separability between the two verb types, probing classifiers still achieve high accuracy, suggesting that representations of these linguistic categories may be non-linearly separable. This aligns with previous research indicating that linguistic distinctions in neural networks are not always encoded in a linearly separable manner. These findings computationally support usage-based claims on the representation of verb-particle constructions and highlight the complex interaction between neural network architectures and linguistic structures.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2502.04789",
+      "arxivId": "2502.04789",
+      "url": "https://www.semanticscholar.org/paper/58ec3846710fad3ea0cb54ec00004c501fd39923",
+      "venue": "Workshop on Multiword Expressions",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.04789"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b28926c7309c55473dde14330eb70f4035242931",
+      "title": "Polarity-Aware Probing for Quantifying Latent Alignment in Language Models",
+      "authors": [
+        {
+          "name": "Sabrina Sadiekh",
+          "authorId": "2395543365"
+        },
+        {
+          "name": "Elena Ericheva",
+          "authorId": "2331855896"
+        },
+        {
+          "name": "Chirag Agarwal",
+          "authorId": "2395543382"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Advances in unsupervised probes such as Contrast-Consistent Search (CCS), which reveal latent beliefs without relying on token outputs, raise the question of whether these methods can reliably assess model alignment. We investigate this by examining the sensitivity of CCS to harmful vs. safe statements and by introducing Polarity-Aware CCS (PA-CCS), a method for evaluating whether a model's internal representations remain consistent under polarity inversion. We propose two alignment-oriented metrics, Polar-Consistency and the Contradiction Index, to quantify the semantic robustness of a model's latent knowledge. To validate PA-CCS, we curate two main datasets and one control dataset containing matched harmful-safe sentence pairs constructed using different methodologies (concurrent and antagonistic statements). We apply PA-CCS to 16 language models. Our results show that PA-CCS identifies both architectural and layer-specific differences in the encoding of latent harmful knowledge. Notably, replacing the negation token with a meaningless marker degrades PA-CCS scores for models with well-aligned internal representations, while models lacking robust internal calibration do not exhibit this degradation. Our findings highlight the potential of unsupervised probing for alignment evaluation and emphasize the need to incorporate structural robustness checks into interpretability benchmarks. Code and datasets are available at: https://github.com/SadSabrina/polarity-probing. WARNING: This paper contains potentially sensitive, harmful, and offensive content.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.21737",
+      "arxivId": "2511.21737",
+      "url": "https://www.semanticscholar.org/paper/b28926c7309c55473dde14330eb70f4035242931",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.21737"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4314c77fa41f91f391ca3421f5758f405444964e",
+      "title": "Do Androids Dream of Unseen Puppeteers? Probing for a Conspiracy Mindset in Large Language Models",
+      "authors": [
+        {
+          "name": "Francesco Corso",
+          "authorId": "2283133797"
+        },
+        {
+          "name": "Francesco Pierri",
+          "authorId": "2275352489"
+        },
+        {
+          "name": "Gianmarco De Francisci Morales",
+          "authorId": "2258719226"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In this paper, we investigate whether Large Language Models (LLMs) exhibit conspiratorial tendencies, whether they display sociodemographic biases in this domain, and how easily they can be conditioned into adopting conspiratorial perspectives. Conspiracy beliefs play a central role in the spread of misinformation and in shaping distrust toward institutions, making them a critical testbed for evaluating the social fidelity of LLMs. LLMs are increasingly used as proxies for studying human behavior, yet little is known about whether they reproduce higher-order psychological constructs such as a conspiratorial mindset. To bridge this research gap, we administer validated psychometric surveys measuring conspiracy mindset to multiple models under different prompting and conditioning strategies. Our findings reveal that LLMs show partial agreement with elements of conspiracy belief, and conditioning with socio-demographic attributes produces uneven effects, exposing latent demographic biases. Moreover, targeted prompts can easily shift model responses toward conspiratorial directions, underscoring both the susceptibility of LLMs to manipulation and the potential risks of their deployment in sensitive contexts. These results highlight the importance of critically evaluating the psychological dimensions embedded in LLMs, both to advance computational social science and to inform possible mitigation strategies against harmful uses.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.03699",
+      "arxivId": "2511.03699",
+      "url": "https://www.semanticscholar.org/paper/4314c77fa41f91f391ca3421f5758f405444964e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.03699"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "220f95b7aaed2eb9a16946338362980b6e208726",
+      "title": "Probing the Decision Boundaries of In-context Learning in Large Language Models",
+      "authors": [
+        {
+          "name": "Siyan Zhao",
+          "authorId": "2260172378"
+        },
+        {
+          "name": "Tung Nguyen",
+          "authorId": "2175303602"
+        },
+        {
+          "name": "Aditya Grover",
+          "authorId": "2259896660"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In-context learning is a key paradigm in large language models (LLMs) that enables them to generalize to new tasks and domains by simply prompting these models with a few exemplars without explicit parameter updates. Many attempts have been made to understand in-context learning in LLMs as a function of model scale, pretraining data, and other factors. In this work, we propose a new mechanism to probe and understand in-context learning from the lens of decision boundaries for in-context binary classification. Decision boundaries are straightforward to visualize and provide important information about the qualitative behavior of the inductive biases of standard classifiers. To our surprise, we find that the decision boundaries learned by current LLMs in simple binary classification tasks are often irregular and non-smooth, regardless of linear separability in the underlying task. This paper investigates the factors influencing these decision boundaries and explores methods to enhance their generalizability. We assess various approaches, including training-free and fine-tuning methods for LLMs, the impact of model architecture, and the effectiveness of active prompting techniques for smoothing decision boundaries in a data-efficient manner. Our findings provide a deeper understanding of in-context learning dynamics and offer practical improvements for enhancing robustness and generalizability of in-context learning.",
+      "citationCount": 19,
+      "doi": "10.48550/arXiv.2406.11233",
+      "arxivId": "2406.11233",
+      "url": "https://www.semanticscholar.org/paper/220f95b7aaed2eb9a16946338362980b6e208726",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.11233"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b04b57ed196ee22e87b2b504e2f76d202d878375",
+      "title": "What Matters in Memorizing and Recalling Facts? Multifaceted Benchmarks for Knowledge Probing in Language Models",
+      "authors": [
+        {
+          "name": "Xin Zhao",
+          "authorId": "2290478911"
+        },
+        {
+          "name": "Naoki Yoshinaga",
+          "authorId": "2290489341"
+        },
+        {
+          "name": "Daisuke Oba",
+          "authorId": "97767795"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Language models often struggle with handling factual knowledge, exhibiting factual hallucination issue. This makes it vital to evaluate the models' ability to recall its parametric knowledge about facts. In this study, we introduce a knowledge probing benchmark, BELIEF(ICL), to evaluate the knowledge recall ability of both encoder- and decoder-based pre-trained language models (PLMs) from diverse perspectives. BELIEFs utilize a multi-prompt dataset to evaluate PLM's accuracy, consistency, and reliability in factual knowledge recall. To enable a more reliable evaluation with BELIEFs, we semi-automatically create MyriadLAMA, which has massively diverse prompts. We validate the effectiveness of BELIEFs in comprehensively evaluating PLM's knowledge recall ability on diverse PLMs, including recent large language models (LLMs). We then investigate key factors in memorizing and recalling facts in PLMs, such as model size, pretraining strategy and corpora, instruction-tuning process and in-context learning settings. Finally, we reveal the limitation of the prompt-based knowledge probing. The MyriadLAMA is publicized.",
+      "citationCount": 4,
+      "doi": "10.18653/v1/2024.findings-emnlp.771",
+      "arxivId": "2406.12277",
+      "url": "https://www.semanticscholar.org/paper/b04b57ed196ee22e87b2b504e2f76d202d878375",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "13186-13214"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c7091540c1fa77f1c6b27482f349330f8e559d6f",
+      "title": "Still no lie detector for language models: probing empirical and conceptual roadblocks",
+      "authors": [
+        {
+          "name": "B. A. Levinstein",
+          "authorId": "2349247801"
+        },
+        {
+          "name": "Daniel A. Herrmann",
+          "authorId": "1720979734"
+        }
+      ],
+      "year": 2023,
+      "abstract": "We consider the questions of whether or not large language models (LLMs) have beliefs, and, if they do, how we might measure them. First, we consider whether or not we should expect LLMs to have something like beliefs in the first place. We consider some recent arguments aiming to show that LLMs cannot have beliefs. We show that these arguments are misguided. We provide a more productive framing of questions surrounding the status of beliefs in LLMs, and highlight the empirical nature of the problem. With this lesson in hand, we evaluate two existing approaches for measuring the beliefs of LLMs, one due to Azaria and Mitchell (The internal state of an llm knows when its lying, 2023) and the other to Burns et al. (Discovering latent knowledge in language models without supervision, 2022). Moving from the armchair to the desk chair, we provide empirical results that show that these methods fail to generalize in very basic ways. We then argue that, even if LLMs have beliefs, these methods are unlikely to be successful for conceptual reasons. Thus, there is still no lie-detector for LLMs. We conclude by suggesting some concrete paths for future work.",
+      "citationCount": 81,
+      "doi": "10.1007/s11098-023-02094-3",
+      "arxivId": "2307.00175",
+      "url": "https://www.semanticscholar.org/paper/c7091540c1fa77f1c6b27482f349330f8e559d6f",
+      "venue": "Philosophical Studies",
+      "journal": {
+        "name": "Philosophical Studies",
+        "pages": "1539 - 1565",
+        "volume": "182"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "18d7eb4b41df1647819cd465047a09201c9aff5e",
+      "title": "Deceptive Explanations by Large Language Models Lead People to Change their Beliefs About Misinformation More Often than Honest Explanations",
+      "authors": [
+        {
+          "name": "Valdemar Danry",
+          "authorId": "1741894876"
+        },
+        {
+          "name": "Pat Pataranutaporn",
+          "authorId": "24637418"
+        },
+        {
+          "name": "Matthew Groh",
+          "authorId": "2239199224"
+        },
+        {
+          "name": "Ziv Epstein",
+          "authorId": "2328484165"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Advanced Artificial Intelligence (AI) systems, specifically large language models (LLMs), have the capability to generate not just misinformation, but also deceptive explanations that can justify and propagate false information and discredit true information. We examined the impact of deceptive AI generated explanations on individuals\u2019 beliefs in a pre-registered online experiment with 11,780 observations from 589 participants. We found that in addition to being more persuasive than accurate and honest explanations, AI-generated deceptive explanations can significantly amplify belief in false news headlines and undermine true ones as compared to AI systems that simply classify the headline incorrectly as being true/false. Moreover, our results show that logically invalid explanations are deemed less credible - diminishing the effects of deception. This underscores the importance of teaching logical reasoning and critical thinking skills to identify logically invalid arguments, fostering greater resilience against advanced AI-driven misinformation.",
+      "citationCount": 12,
+      "doi": "10.1145/3706598.3713408",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/18d7eb4b41df1647819cd465047a09201c9aff5e",
+      "venue": "International Conference on Human Factors in Computing Systems",
+      "journal": {
+        "name": "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "d7c0860b688502852460f6653936cc092668a893",
+      "title": "Cross-Layer Discrete Concept Discovery for Interpreting Language Models",
+      "authors": [
+        {
+          "name": "Ankur Garg",
+          "authorId": "2370934903"
+        },
+        {
+          "name": "Xuemin Yu",
+          "authorId": "2284186641"
+        },
+        {
+          "name": "Hassan Sajjad",
+          "authorId": "2300093270"
+        },
+        {
+          "name": "Samira Ebrahimi Kahou",
+          "authorId": "3127597"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Uncovering emergent concepts across transformer layers remains a significant challenge because the residual stream linearly mixes and duplicates information, obscuring how features evolve within large language models. Current research efforts primarily inspect neural representations at single layers, thereby overlooking this cross-layer superposition and the redundancy it introduces. These representations are typically either analyzed directly for activation patterns or passed to probing classifiers that map them to a limited set of predefined concepts. To address these limitations, we propose \\gls{clvqvae}, a framework that uses vector quantization to map representations across layers and in the process collapse duplicated residual-stream features into compact, interpretable concept vectors. Our approach uniquely combines top-$k$ temperature-based sampling during quantization with EMA codebook updates, providing controlled exploration of the discrete latent space while maintaining code-book diversity. We further enhance the framework with scaled-spherical k-means++ for codebook initialization, which clusters by directional similarity rather than magnitude, better aligning with semantic structure in word embedding space.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.20040",
+      "arxivId": "2506.20040",
+      "url": "https://www.semanticscholar.org/paper/d7c0860b688502852460f6653936cc092668a893",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.20040"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "673877a2284ae7fba907355e6d71500c3390b96d",
+      "title": "Beyond performance: how design choices shape chemical language models",
+      "authors": [
+        {
+          "name": "Inken Fender",
+          "authorId": "2320827123"
+        },
+        {
+          "name": "Jannik Adrian Gut",
+          "authorId": "2292125621"
+        },
+        {
+          "name": "Thomas Lemmin",
+          "authorId": "2254029334"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Chemical language models (CLMs) have shown strong performance in molecular property prediction and generation tasks. However, the impact of design choices, such as molecular representation format, tokenization strategy, and model architecture, on both performance and chemical interpretability remains underexplored. In this study, we systematically evaluate how these factors influence CLM performance and chemical understanding. We evaluated models through finetuning on downstream tasks and probing the structure of their latent spaces using simple classifiers and dimensionality reduction techniques. Despite similar performance on downstream tasks across model configurations, we observed substantial differences in the structure and interpretability of their internal representations. SMILES molecular representation format with atomwise tokenization strategy consistently produced more chemically meaningful embeddings, while models based on BART and RoBERTa architectures yielded comparably interpretable representations. These findings highlight that design choices meaningfully shape how chemical information is represented, even when external metrics appear unchanged. This insight can inform future model development, encouraging more chemically grounded and interpretable CLMs. Scientific Contribution This study systematically evaluates how core design choices influence chemical language models. Although the performances on downstream tasks were often similar across configurations, we observed substantial differences in internal representations with atomwise tokenized SMILES representations producing more chemically structured latent spaces than representations based on SELFIES. By clarifying the effects of molecular representation format and tokenization strategy, our findings provide actionable guidance for the more informed and interpretable design of future CLMs. Graphical Abstract",
+      "citationCount": 0,
+      "doi": "10.1186/s13321-025-01099-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/673877a2284ae7fba907355e6d71500c3390b96d",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "Journal of Cheminformatics",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fff665caf490d815b090f50bd6393bdff3a51829",
+      "title": "Embedded Named Entity Recognition using Probing Classifiers",
+      "authors": [
+        {
+          "name": "Nicholas Popovic",
+          "authorId": "51063305"
+        },
+        {
+          "name": "Michael F\u00e4rber",
+          "authorId": "2295624163"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Streaming text generation, has become a common way of increasing the responsiveness of language model powered applications such as chat assistants. At the same time, extracting semantic information from generated text is a useful tool for applications such as automated fact checking or retrieval augmented generation. Currently, this requires either separate models during inference, which increases computational cost, or destructive fine-tuning of the language model. Instead, we propose an approach called EMBER which enables streaming named entity recognition in decoder-only language models without fine-tuning them and while incurring minimal additional computational cost at inference time. Specifically, our experiments show that EMBER maintains high token generation rates, with only a negligible decrease in speed of around 1% compared to a 43.64% slowdown measured for a baseline. We make our code and data available online, including a toolkit for training, testing, and deploying efficient token classification models optimized for streaming text generation.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2403.11747",
+      "arxivId": "2403.11747",
+      "url": "https://www.semanticscholar.org/paper/fff665caf490d815b090f50bd6393bdff3a51829",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "17830-17850"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "74921a33119e452d2ec35e793cea0837fb64dacf",
+      "title": "Using Large Language Models to Assess Burnout Among Health Care Workers in the Context of COVID-19 Vaccine Decisions and Health Beliefs: Retrospective Cohort Study",
+      "authors": [
+        {
+          "name": "Samaneh Omranian",
+          "authorId": "2198952333"
+        },
+        {
+          "name": "Lu He",
+          "authorId": "2359777971"
+        },
+        {
+          "name": "A. Talsma",
+          "authorId": "3731300"
+        },
+        {
+          "name": "Arielle A. J. Scoglio",
+          "authorId": "8285009"
+        },
+        {
+          "name": "Susan McRoy",
+          "authorId": "2291497598"
+        },
+        {
+          "name": "Janet Rich-Edwards",
+          "authorId": "2290769340"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract Background Burnout among health care workers affects their well-being and decision-making, influencing patient and public health outcomes. Health care workers\u2019 health beliefs and COVID-19 vaccine decisions may affect the risks of burnout. Therefore, understanding the interplay between these crucial factors is essential for identifying at-risk staff, providing targeted support, and addressing workplace challenges to prevent further escalation of burnout-related issues. Objective This study examines how burnout is impacted by health beliefs and COVID-19 vaccine decisions among health care workers. Building on our previously developed Health Belief Model (HBM) classifier based on the HBM framework, which explains how individual perceptions of health risks and benefits influence behavior, we focused on key HBM constructs, including the perceived severity of COVID-19, perceived barriers to vaccination, and their relationship to burnout. We aim to leverage natural language processing techniques to automatically identify theoretically grounded burnout symptoms from comments authored by nurses in a large-scale, national survey and assess their associations with vaccine hesitancy and health beliefs. Methods We analyzed 1944 open-ended comments written by 1501 vaccine-hesitant nurses, using data from the Nurses\u2019 Health Study surveys. We fine-tuned LLaMA 3, an open-source large language model with few-shot prompts and enhanced performance with structured annotation guidance and reasoning-aware inference. Comments were classified into burnout dimensions\u2014Emotional Exhaustion, Depersonalization, and Inefficacy\u2014based on the Maslach Burnout Inventory framework. Results The model achieved a high weighted accuracy of 92% and an F1-score of 91% for Depersonalization. Emotional Exhaustion was identified in 52% (1003/1944) of comments, correlating strongly with perceived severity (189/323, 59%) and barriers to vaccination (281/650, 43%). Demographic analyses revealed significant variations in burnout prevalence, with older age groups reporting greater burnout. Conclusions This study highlights the relationship between burnout and vaccine decision-making among health care workers, uncovering areas for further exploration. By exploring the complex interplay between psychological strain and vaccine hesitancy, this study sets the stage for developing transformative interventions and policies that could redefine workforce resilience and public health strategies.",
+      "citationCount": 1,
+      "doi": "10.2196/73672",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/74921a33119e452d2ec35e793cea0837fb64dacf",
+      "venue": "JMIR Nursing",
+      "journal": {
+        "name": "JMIR Nursing",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "080df61ee1c15ff3c8e5d0d82d60bfd80e372e38",
+      "title": "Probing Toxic Content in Large Pre-Trained Language Models",
+      "authors": [
+        {
+          "name": "Nedjma Djouhra Ousidhoum",
+          "authorId": "3056500"
+        },
+        {
+          "name": "Xinran Zhao",
+          "authorId": "1500662261"
+        },
+        {
+          "name": "Tianqing Fang",
+          "authorId": "2044202073"
+        },
+        {
+          "name": "Yangqiu Song",
+          "authorId": "1809614"
+        },
+        {
+          "name": "Dit-Yan Yeung",
+          "authorId": "66427434"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Large pre-trained language models (PTLMs) have been shown to carry biases towards different social groups which leads to the reproduction of stereotypical and toxic content by major NLP systems. We propose a method based on logistic regression classifiers to probe English, French, and Arabic PTLMs and quantify the potentially harmful content that they convey with respect to a set of templates. The templates are prompted by a name of a social group followed by a cause-effect relation. We use PTLMs to predict masked tokens at the end of a sentence in order to examine how likely they enable toxicity towards specific communities. We shed the light on how such negative content can be triggered within unrelated and benign contexts based on evidence from a large-scale study, then we explain how to take advantage of our methodology to assess and mitigate the toxicity transmitted by PTLMs.",
+      "citationCount": 141,
+      "doi": "10.18653/v1/2021.acl-long.329",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/080df61ee1c15ff3c8e5d0d82d60bfd80e372e38",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "4262-4274"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "b7e66de289baad3f013b77a96de58e419721873e",
+      "title": "Probing for Constituency Structure in Neural Language Models",
+      "authors": [
+        {
+          "name": "David Arps",
+          "authorId": "2081584597"
+        },
+        {
+          "name": "Younes Samih",
+          "authorId": "3103210"
+        },
+        {
+          "name": "Laura Kallmeyer",
+          "authorId": "2692018"
+        },
+        {
+          "name": "Hassan Sajjad",
+          "authorId": "145775792"
+        }
+      ],
+      "year": 2022,
+      "abstract": "In this paper, we investigate to which extent contextual neural language models (LMs) implicitly learn syntactic structure. More concretely, we focus on constituent structure as represented in the Penn Treebank (PTB). Using standard probing techniques based on diagnostic classifiers, we assess the accuracy of representing constituents of different categories within the neuron activations of a LM such as RoBERTa. In order to make sure that our probe focuses on syntactic knowledge and not on implicit semantic generalizations, we also experiment on a PTB version that is obtained by randomly replacing constituents with each other while keeping syntactic structure, i.e., a semantically ill-formed but syntactically well-formed version of the PTB. We find that 4 pretrained transfomer LMs obtain high performance on our probing tasks even on manipulated data, suggesting that semantic and syntactic knowledge in their representations can be separated and that constituency information is in fact learned by the LM. Moreover, we show that a complete constituency tree can be linearly separated from LM representations.",
+      "citationCount": 19,
+      "doi": "10.48550/arXiv.2204.06201",
+      "arxivId": "2204.06201",
+      "url": "https://www.semanticscholar.org/paper/b7e66de289baad3f013b77a96de58e419721873e",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "6738-6757"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a3df6eff4a30cfffb38ef85e3b1b83f0534159aa",
+      "title": "Multimodal Fact-Checking with Vision Language Models: A Probing Classifier based Solution with Embedding Strategies",
+      "authors": [
+        {
+          "name": "R. \u00c7ekinel",
+          "authorId": "1387927807"
+        },
+        {
+          "name": "Pinar Senkul",
+          "authorId": "2267508010"
+        },
+        {
+          "name": "\u00c7a\u011fr\u0131 \u00c7\u00f6ltekin",
+          "authorId": "103304646"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This study evaluates the effectiveness of Vision Language Models (VLMs) in representing and utilizing multimodal content for fact-checking. To be more specific, we investigate whether incorporating multimodal content improves performance compared to text-only models and how well VLMs utilize text and image information to enhance misinformation detection. Furthermore we propose a probing classifier based solution using VLMs. Our approach extracts embeddings from the last hidden layer of selected VLMs and inputs them into a neural probing classifier for multi-class veracity classification. Through a series of experiments on two fact-checking datasets, we demonstrate that while multimodality can enhance performance, fusing separate embeddings from text and image encoders yielded superior results compared to using VLM embeddings. Furthermore, the proposed neural classifier significantly outperformed KNN and SVM baselines in leveraging extracted embeddings, highlighting its effectiveness for multimodal fact-checking.",
+      "citationCount": 7,
+      "doi": "10.48550/arXiv.2412.05155",
+      "arxivId": "2412.05155",
+      "url": "https://www.semanticscholar.org/paper/a3df6eff4a30cfffb38ef85e3b1b83f0534159aa",
+      "venue": "International Conference on Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.05155"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f55b676e6310e21adaa0aa8145fafe40fcaae460",
+      "title": "Whose journey matters? Investigating identity biases in large language models (LLMs) for travel planning assistance",
+      "authors": [
+        {
+          "name": "Ruiping Ren",
+          "authorId": "2327326109"
+        },
+        {
+          "name": "Y. Xu",
+          "authorId": "2387969682"
+        },
+        {
+          "name": "Xing Yao",
+          "authorId": "2329146640"
+        },
+        {
+          "name": "Shu Cole",
+          "authorId": "2327218085"
+        },
+        {
+          "name": "Haining Wang",
+          "authorId": "2326246152"
+        }
+      ],
+      "year": 2024,
+      "abstract": "As large language models (LLMs) become increasingly integral to the hospitality and tourism industry, concerns about their fairness in serving diverse identity groups persist. Grounded in social identity theory and sociotechnical systems theory, this study examines ethnic and gender biases in travel recommendations generated by LLMs. Using fairness probing, we analyze outputs from three leading open-source LLMs. The results show that test accuracy for both ethnicity and gender classifiers exceed random chance. Analysis of the most influential features reveals the presence of stereotype bias in LLM-generated recommendations. We also found hallucinations among these features, occurring more frequently in recommendations for minority groups. These findings indicate that LLMs exhibit ethnic and gender bias when functioning as travel planning assistants. This study underscores the need for bias mitigation strategies to improve the inclusivity and reliability of generative AI-driven travel planning assistance.",
+      "citationCount": 3,
+      "doi": "10.1080/13683500.2025.2609218",
+      "arxivId": "2410.17333",
+      "url": "https://www.semanticscholar.org/paper/f55b676e6310e21adaa0aa8145fafe40fcaae460",
+      "venue": "Current Issues in Tourism",
+      "journal": {
+        "name": "Current Issues in Tourism"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "598ffe2aa1b2d5b9a0b7b63f7f96f6cf03eee725",
+      "title": "Chip-Tuning: Classify Before Language Models Say",
+      "authors": [
+        {
+          "name": "Fangwei Zhu",
+          "authorId": "70585600"
+        },
+        {
+          "name": "Dian Li",
+          "authorId": "2316958318"
+        },
+        {
+          "name": "Jiajun Huang",
+          "authorId": "2325099492"
+        },
+        {
+          "name": "Gang Liu",
+          "authorId": "2316993054"
+        },
+        {
+          "name": "Hui Wang",
+          "authorId": "2317037601"
+        },
+        {
+          "name": "Zhifang Sui",
+          "authorId": "2287829088"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The rapid development in the performance of large language models (LLMs) is accompanied by the escalation of model size, leading to the increasing cost of model training and inference. Previous research has discovered that certain layers in LLMs exhibit redundancy, and removing these layers brings only marginal loss in model performance. In this paper, we adopt the probing technique to explain the layer redundancy in LLMs and demonstrate that language models can be effectively pruned with probing classifiers. We propose chip-tuning, a simple and effective structured pruning framework specialized for classification problems. Chip-tuning attaches tiny probing classifiers named chips to different layers of LLMs, and trains chips with the backbone model frozen. After selecting a chip for classification, all layers subsequent to the attached layer could be removed with marginal performance loss. Experimental results on various LLMs and datasets demonstrate that chip-tuning significantly outperforms previous state-of-the-art baselines in both accuracy and pruning ratio, achieving a pruning ratio of up to 50%. We also find that chip-tuning could be applied on multimodal models, and could be combined with model finetuning, proving its excellent compatibility.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2410.06541",
+      "arxivId": "2410.06541",
+      "url": "https://www.semanticscholar.org/paper/598ffe2aa1b2d5b9a0b7b63f7f96f6cf03eee725",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.06541"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d6bd903ccfa66a08c73a8c01d54d4d133246d6fe",
+      "title": "Brittle Minds, Fixable Activations: Understanding Belief Representations in Language Models",
+      "authors": [
+        {
+          "name": "Matteo Bortoletto",
+          "authorId": "2212867674"
+        },
+        {
+          "name": "Constantin Ruhdorfer",
+          "authorId": "2042760408"
+        },
+        {
+          "name": "Lei Shi",
+          "authorId": "2261687709"
+        },
+        {
+          "name": "Andreas Bulling",
+          "authorId": "2261492791"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Despite growing interest in Theory of Mind (ToM) tasks for evaluating language models (LMs), little is known about how LMs internally represent mental states of self and others. Understanding these internal mechanisms is critical - not only to move beyond surface-level performance, but also for model alignment and safety, where subtle misattributions of mental states may go undetected in generated outputs. In this work, we present the first systematic investigation of belief representations in LMs by probing models across different scales, training regimens, and prompts - using control tasks to rule out confounds. Our experiments provide evidence that both model size and fine-tuning substantially improve LMs' internal representations of others' beliefs, which are structured - not mere by-products of spurious correlations - yet brittle to prompt variations. Crucially, we show that these representations can be strengthened: targeted edits to model activations can correct wrong ToM inferences.",
+      "citationCount": 3,
+      "doi": "10.18653/v1/2025.findings-emnlp.1226",
+      "arxivId": "2406.17513",
+      "url": "https://www.semanticscholar.org/paper/d6bd903ccfa66a08c73a8c01d54d4d133246d6fe",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "Findings of the Association for Computational Linguistics: EMNLP 2025"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "844794bee0c24ba8be1ed94b07fba6eb42665cfc",
+      "title": "Truth-value judgment in language models:'truth directions'are context sensitive",
+      "authors": [
+        {
+          "name": "Stefan F. Schouten",
+          "authorId": "2089789942"
+        },
+        {
+          "name": "Peter Bloem",
+          "authorId": "2261283282"
+        },
+        {
+          "name": "Ilia Markov",
+          "authorId": "2261283269"
+        },
+        {
+          "name": "Piek Vossen",
+          "authorId": "2115025012"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent work has demonstrated that the latent spaces of large language models (LLMs) contain directions predictive of the truth of sentences. Multiple methods recover such directions and build probes that are described as uncovering a model's\"knowledge\"or\"beliefs\". We investigate this phenomenon, looking closely at the impact of context on the probes. Our experiments establish where in the LLM the probe's predictions are (most) sensitive to the presence of related sentences, and how to best characterize this kind of sensitivity. We do so by measuring different types of consistency errors that occur after probing an LLM whose inputs consist of hypotheses preceded by (negated) supporting and contradicting sentences. We also perform a causal intervention experiment, investigating whether moving the representation of a premise along these truth-value directions influences the position of an entailed or contradicted sentence along that same direction. We find that the probes we test are generally context sensitive, but that contexts which should not affect the truth often still impact the probe outputs. Our experiments show that the type of errors depend on the layer, the model, and the kind of data. Finally, our results suggest that truth-value directions are causal mediators in the inference process that incorporates in-context information.",
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": "2404.18865",
+      "url": "https://www.semanticscholar.org/paper/844794bee0c24ba8be1ed94b07fba6eb42665cfc",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ad34a576900d78e6280a1ac1ecaeea19dbb3ed06",
+      "title": "Probing for Understanding of English Verb Classes and Alternations in Large Pre-trained Language Models",
+      "authors": [
+        {
+          "name": "David K. Yi",
+          "authorId": "120817709"
+        },
+        {
+          "name": "James V. Bruno",
+          "authorId": "36805108"
+        },
+        {
+          "name": "Jiayu Han",
+          "authorId": "2111758731"
+        },
+        {
+          "name": "Peter Zukerman",
+          "authorId": "2184668246"
+        },
+        {
+          "name": "Shane Steinert-Threlkeld",
+          "authorId": "1403904282"
+        }
+      ],
+      "year": 2022,
+      "abstract": "We investigate the extent to which verb alternation classes, as described by Levin (1993), are encoded in the embeddings of Large Pre-trained Language Models (PLMs) such as BERT, RoBERTa, ELECTRA, and DeBERTa using selectively constructed diagnostic classifiers for word and sentence-level prediction tasks. We follow and expand upon the experiments of Kann et al. (2019), which aim to probe whether static embeddings encode frame-selectional properties of verbs. At both the word and sentence level, we find that contextual embeddings from PLMs not only outperform non-contextual embeddings, but achieve astonishingly high accuracies on tasks across most alternation classes. Additionally, we find evidence that the middle-to-upper layers of PLMs achieve better performance on average than the lower layers across all probing tasks.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2209.04811",
+      "arxivId": "2209.04811",
+      "url": "https://www.semanticscholar.org/paper/ad34a576900d78e6280a1ac1ecaeea19dbb3ed06",
+      "venue": "BlackboxNLP Workshop on Analyzing and Interpreting Neural Networks for NLP",
+      "journal": {
+        "pages": "142-152"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "774319233a107a29622003a115aa6c79f4a7b37f",
+      "title": "Probing Neural Language Models for Human Tacit Assumptions",
+      "authors": [
+        {
+          "name": "Nathaniel Weir",
+          "authorId": "38912638"
+        },
+        {
+          "name": "Adam Poliak",
+          "authorId": "48926630"
+        },
+        {
+          "name": "Benjamin Van Durme",
+          "authorId": "7536576"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 40,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/774319233a107a29622003a115aa6c79f4a7b37f",
+      "venue": "Annual Meeting of the Cognitive Science Society",
+      "journal": {
+        "name": "arXiv: Computation and Language",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "034c8d4eb031786925ef274e6d275c7c210c4f1d",
+      "title": "Unveiling the Implicit Toxicity in Large Language Models",
+      "authors": [
+        {
+          "name": "Jiaxin Wen",
+          "authorId": "2104586007"
+        },
+        {
+          "name": "Pei Ke",
+          "authorId": "1886879"
+        },
+        {
+          "name": "Hao Sun",
+          "authorId": "144990601"
+        },
+        {
+          "name": "Zhexin Zhang",
+          "authorId": "101371510"
+        },
+        {
+          "name": "Chengfei Li",
+          "authorId": "2267838375"
+        },
+        {
+          "name": "Jinfeng Bai",
+          "authorId": "2267901816"
+        },
+        {
+          "name": "Minlie Huang",
+          "authorId": "2254009342"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The open-endedness of large language models (LLMs) combined with their impressive capabilities may lead to new safety issues when being exploited for malicious use. While recent studies primarily focus on probing toxic outputs that can be easily detected with existing toxicity classifiers, we show that LLMs can generate diverse implicit toxic outputs that are exceptionally difficult to detect via simply zero-shot prompting. Moreover, we propose a reinforcement learning (RL) based attacking method to further induce the implicit toxicity in LLMs. Specifically, we optimize the language model with a reward that prefers implicit toxic outputs to explicit toxic and non-toxic ones. Experiments on five widely-adopted toxicity classifiers demonstrate that the attack success rate can be significantly improved through RL fine-tuning. For instance, the RL-finetuned LLaMA-13B model achieves an attack success rate of 90.04% on BAD and 62.85% on Davinci003. Our findings suggest that LLMs pose a significant threat in generating undetectable implicit toxic outputs. We further show that fine-tuning toxicity classifiers on the annotated examples from our attacking method can effectively enhance their ability to detect LLM-generated implicit toxic language. The code is publicly available at https://github.com/thu-coai/Implicit-Toxicity.",
+      "citationCount": 49,
+      "doi": "10.48550/arXiv.2311.17391",
+      "arxivId": "2311.17391",
+      "url": "https://www.semanticscholar.org/paper/034c8d4eb031786925ef274e6d275c7c210c4f1d",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2311.17391"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "90e10000931914fee2ea8aed057f0ba7760338e9",
+      "title": "LLaMAs Have Feelings Too: Unveiling Sentiment and Emotion Representations in LLaMA Models Through Probing",
+      "authors": [
+        {
+          "name": "Dario Di Palma",
+          "authorId": "117667461"
+        },
+        {
+          "name": "A. D. Bellis",
+          "authorId": "2038492042"
+        },
+        {
+          "name": "Giovanni Servedio",
+          "authorId": "2213419542"
+        },
+        {
+          "name": "V. W. Anelli",
+          "authorId": "2431124"
+        },
+        {
+          "name": "F. Narducci",
+          "authorId": "1741231"
+        },
+        {
+          "name": "T. D. Noia",
+          "authorId": "1737962"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) have rapidly become central to NLP, demonstrating their ability to adapt to various tasks through prompting techniques, including sentiment analysis. However, we still have a limited understanding of how these models capture sentiment-related information. This study probes the hidden layers of Llama models to pinpoint where sentiment features are most represented and to assess how this affects sentiment analysis. Using probe classifiers, we analyze sentiment encoding across layers and scales, identifying the layers and pooling methods that best capture sentiment signals. Our results show that sentiment information is most concentrated in mid-layers for binary polarity tasks, with detection accuracy increasing up to 14% over prompting techniques. Additionally, we find that in decoder-only models, the last token is not consistently the most informative for sentiment encoding. Finally, this approach enables sentiment tasks to be performed with memory requirements reduced by an average of 57%. These insights contribute to a broader understanding of sentiment in LLMs, suggesting layer-specific probing as an effective approach for sentiment tasks beyond prompting, with potential to enhance model utility and reduce memory requirements.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2505.16491",
+      "arxivId": "2505.16491",
+      "url": "https://www.semanticscholar.org/paper/90e10000931914fee2ea8aed057f0ba7760338e9",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.16491"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "3dcfa05a1c162e6cab927c5b08d0444f7b6691f4",
+      "title": "Probing Classifiers: Promises, Shortcomings, and Advances",
+      "authors": [
+        {
+          "name": "Yonatan Belinkov",
+          "authorId": "2083259"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Probing classifiers have emerged as one of the prominent methodologies for interpreting and analyzing deep neural network models of natural language processing. The basic idea is simple\u2014a classifier is trained to predict some linguistic property from a model\u2019s representations\u2014and has been used to examine a wide variety of models and properties. However, recent studies have demonstrated various methodological limitations of this approach. This squib critically reviews the probing classifiers framework, highlighting their promises, shortcomings, and advances.",
+      "citationCount": 588,
+      "doi": "10.1162/coli_a_00422",
+      "arxivId": "2102.12452",
+      "url": "https://www.semanticscholar.org/paper/3dcfa05a1c162e6cab927c5b08d0444f7b6691f4",
+      "venue": "International Conference on Computational Logic",
+      "journal": {
+        "name": "Computational Linguistics",
+        "pages": "207-219",
+        "volume": "48"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9fe29c834afbe1848d9df713ae6e0ca3bd053605",
+      "title": "Probing the Role of Positional Information in Vision-Language Models",
+      "authors": [
+        {
+          "name": "Philipp J. R\u00f6sch",
+          "authorId": "2932139"
+        },
+        {
+          "name": "Jind\u0159ich Libovick\u00fd",
+          "authorId": "3448602"
+        }
+      ],
+      "year": 2023,
+      "abstract": "In most Vision-Language models (VL), the understanding of the image structure is enabled by injecting the position information (PI) about objects in the image. In our case study of LXMERT, a state-of-the-art VL model, we probe the use of the PI in the representation and study its effect on Visual Question Answering. We show that the model is not capable of leveraging the PI for the image-text matching task on a challenge set where only position differs. Yet, our experiments with probing confirm that the PI is indeed present in the representation. We introduce two strategies to tackle this: (i) Positional Information Pre-training and (ii) Contrastive Learning on PI using Cross-Modality Matching. Doing so, the model can correctly classify if images with detailed PI statements match. Additionally to the 2D information from bounding boxes, we introduce the object's depth as new feature for a better object localization in the space. Even though we were able to improve the model properties as defined by our probes, it only has a negligible effect on the downstream performance. Our results thus highlight an important issue of multimodal modeling: the mere presence of information detectable by a probing classifier is not a guarantee that the information is available in a cross-modal setup.",
+      "citationCount": 9,
+      "doi": "10.18653/v1/2022.findings-naacl.77",
+      "arxivId": "2305.10046",
+      "url": "https://www.semanticscholar.org/paper/9fe29c834afbe1848d9df713ae6e0ca3bd053605",
+      "venue": "NAACL-HLT",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2305.10046"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "79bbcfc461722e63bd25c80679c8af51bf90359d",
+      "title": "Lost in Space: Probing Fine-grained Spatial Understanding in Vision and Language Resamplers",
+      "authors": [
+        {
+          "name": "Georgios Pantazopoulos",
+          "authorId": "2060170791"
+        },
+        {
+          "name": "Alessandro Suglia",
+          "authorId": "3444866"
+        },
+        {
+          "name": "Oliver Lemon",
+          "authorId": "2265580930"
+        },
+        {
+          "name": "Arash Eshghi",
+          "authorId": "2634217"
+        }
+      ],
+      "year": 2024,
+      "abstract": "An effective method for combining frozen large language models (LLM) and visual encoders involves a resampler module that creates a \u2018visual prompt\u2019 which is provided to the LLM, along with the textual prompt. While this approach has enabled impressive performance across many coarse-grained tasks like image captioning and visual question answering, more fine-grained tasks that require spatial understanding have not been thoroughly examined. In this paper, we use diagnostic classifiers to measure the extent to which the visual prompt produced by the resampler encodes spatial information. Our results show that this information is largely absent from the resampler output when kept frozen during training of the classifiers. However, when the resampler and classifier are trained jointly, we observe a significant performance boost. This shows that the compression achieved by the resamplers can in principle encode the requisite spatial information, but that more object-aware objectives are needed at the pretraining stage to facilitate this capability.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2404.13594",
+      "arxivId": "2404.13594",
+      "url": "https://www.semanticscholar.org/paper/79bbcfc461722e63bd25c80679c8af51bf90359d",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.13594"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a3cc857a10898b2eedd04ff1dd33e8b6c9b1e04c",
+      "title": "CUE: An Uncertainty Interpretation Framework for Text Classifiers Built on Pre-Trained Language Models",
+      "authors": [
+        {
+          "name": "Jiazheng Li",
+          "authorId": "92861741"
+        },
+        {
+          "name": "ZHAOYUE SUN",
+          "authorId": "1390477672"
+        },
+        {
+          "name": "Bin Liang",
+          "authorId": "144691693"
+        },
+        {
+          "name": "Lin Gui",
+          "authorId": "145096580"
+        },
+        {
+          "name": "Yulan He",
+          "authorId": "1390509967"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Text classifiers built on Pre-trained Language Models (PLMs) have achieved remarkable progress in various tasks including sentiment analysis, natural language inference, and question-answering. However, the occurrence of uncertain predictions by these classifiers poses a challenge to their reliability when deployed in practical applications. Much effort has been devoted to designing various probes in order to understand what PLMs capture. But few studies have delved into factors influencing PLM-based classifiers' predictive uncertainty. In this paper, we propose a novel framework, called CUE, which aims to interpret uncertainties inherent in the predictions of PLM-based models. In particular, we first map PLM-encoded representations to a latent space via a variational auto-encoder. We then generate text representations by perturbing the latent space which causes fluctuation in predictive uncertainty. By comparing the difference in predictive uncertainty between the perturbed and the original text representations, we are able to identify the latent dimensions responsible for uncertainty and subsequently trace back to the input features that contribute to such uncertainty. Our extensive experiments on four benchmark datasets encompassing linguistic acceptability classification, emotion classification, and natural language inference show the feasibility of our proposed framework. Our source code is available at: https://github.com/lijiazheng99/CUE.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2306.03598",
+      "arxivId": "2306.03598",
+      "url": "https://www.semanticscholar.org/paper/a3cc857a10898b2eedd04ff1dd33e8b6c9b1e04c",
+      "venue": "Conference on Uncertainty in Artificial Intelligence",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2306.03598"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "1870e2e2352f877c91727950be4510d8bcafce20",
+      "title": "Towards Probing Contact Center Large Language Models",
+      "authors": [
+        {
+          "name": "Varun Nathan",
+          "authorId": "2271377625"
+        },
+        {
+          "name": "Ayush Kumar",
+          "authorId": "2109263412"
+        },
+        {
+          "name": "Digvijay Ingle",
+          "authorId": "2187456556"
+        },
+        {
+          "name": "Jithendra Vepa",
+          "authorId": "1787417"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Fine-tuning large language models (LLMs) with domain-specific instructions has emerged as an effective method to enhance their domain-specific understanding. Yet, there is limited work that examines the core characteristics acquired during this process. In this study, we benchmark the fundamental characteristics learned by contact-center (CC) specific instruction fine-tuned LLMs with out-of-the-box (OOB) LLMs via probing tasks encompassing conversational, channel, and automatic speech recognition (ASR) properties. We explore different LLM architectures (Flan-T5 and Llama), sizes (3B, 7B, 11B, 13B), and fine-tuning paradigms (full fine-tuning vs PEFT). Our findings reveal remarkable effectiveness of CC-LLMs on the in-domain downstream tasks, with improvement in response acceptability by over 48% compared to OOB-LLMs. Additionally, we compare the performance of OOB-LLMs and CC-LLMs on the widely used SentEval dataset, and assess their capabilities in terms of surface, syntactic, and semantic information through probing tasks. Intriguingly, we note a relatively consistent performance of probing classifiers on the set of probing tasks. Our observations indicate that CC-LLMs, while outperforming their out-of-the-box counterparts, exhibit a tendency to rely less on encoding surface, syntactic, and semantic properties, highlighting the intricate interplay between domain-specific adaptation and probing task performance opening up opportunities to explore behavior of fine-tuned language models in specialized contexts.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2312.15922",
+      "arxivId": "2312.15922",
+      "url": "https://www.semanticscholar.org/paper/1870e2e2352f877c91727950be4510d8bcafce20",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2312.15922"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "be431d20e27bafc584858bb76ba41b483cfd514b",
+      "title": "Identifying Linear Relational Concepts in Large Language Models",
+      "authors": [
+        {
+          "name": "David Chanin",
+          "authorId": "2311692851"
+        },
+        {
+          "name": "Anthony Hunter",
+          "authorId": "2266750557"
+        },
+        {
+          "name": "Oana-Maria Camburu",
+          "authorId": "2115552858"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Transformer language models (LMs) have been shown to represent concepts as directions in the latent space of hidden activations. However, for any human-interpretable concept, how can we find its direction in the latent space? We present a technique called linear relational concepts (LRC) for finding concept directions corresponding to human-interpretable concepts by first modeling the relation between subject and object as a linear relational embedding (LRE). We find that inverting the LRE and using earlier object layers results in a powerful technique for finding concept directions that outperforms standard black-box probing classifiers. We evaluate LRCs on their performance as concept classifiers as well as their ability to causally change model output.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2311.08968",
+      "arxivId": "2311.08968",
+      "url": "https://www.semanticscholar.org/paper/be431d20e27bafc584858bb76ba41b483cfd514b",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2311.08968"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "2e6a281d7aa008f52e48b5001866c05fa0c91bcc",
+      "title": "Beyond Linear Probes: Dynamic Safety Monitoring for Language Models",
+      "authors": [
+        {
+          "name": "James Oldfield",
+          "authorId": "2059960629"
+        },
+        {
+          "name": "Philip H. S. Torr",
+          "authorId": "2282534002"
+        },
+        {
+          "name": "Ioannis Patras",
+          "authorId": "2363578206"
+        },
+        {
+          "name": "Adel Bibi",
+          "authorId": "2335448801"
+        },
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Monitoring large language models'(LLMs) activations is an effective way to detect harmful requests before they lead to unsafe outputs. However, traditional safety monitors often require the same amount of compute for every query. This creates a trade-off: expensive monitors waste resources on easy inputs, while cheap ones risk missing subtle cases. We argue that safety monitors should be flexible--costs should rise only when inputs are difficult to assess, or when more compute is available. To achieve this, we introduce Truncated Polynomial Classifiers (TPCs), a natural extension of linear probes for dynamic activation monitoring. Our key insight is that polynomials can be trained and evaluated progressively, term-by-term. At test-time, one can early-stop for lightweight monitoring, or use more terms for stronger guardrails when needed. TPCs provide two modes of use. First, as a safety dial: by evaluating more terms, developers and regulators can\"buy\"stronger guardrails from the same model. Second, as an adaptive cascade: clear cases exit early after low-order checks, and higher-order guardrails are evaluated only for ambiguous inputs, reducing overall monitoring costs. On two large-scale safety datasets (WildGuardMix and BeaverTails), for 4 models with up to 30B parameters, we show that TPCs compete with or outperform MLP-based probe baselines of the same size, all the while being more interpretable than their black-box counterparts. Our code is available at http://github.com/james-oldfield/tpc.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2509.26238",
+      "arxivId": "2509.26238",
+      "url": "https://www.semanticscholar.org/paper/2e6a281d7aa008f52e48b5001866c05fa0c91bcc",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.26238"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "995faf2c6d7443bc24e3fc340867f392137785e6",
+      "title": "The Trilemma of Truth in Large Language Models",
+      "authors": [
+        {
+          "name": "Germans Savcisens",
+          "authorId": "2371073493"
+        },
+        {
+          "name": "Tina Eliassi-Rad",
+          "authorId": "2340968313"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The public often attributes human-like qualities to large language models (LLMs) and assumes they\"know\"certain things. In reality, LLMs encode information retained during training as internal probabilistic knowledge. This study examines existing methods for probing the veracity of that knowledge and identifies several flawed underlying assumptions. To address these flaws, we introduce sAwMIL (Sparse-Aware Multiple-Instance Learning), a multiclass probing framework that combines multiple-instance learning with conformal prediction. sAwMIL leverages internal activations of LLMs to classify statements as true, false, or neither. We evaluate sAwMIL across 16 open-source LLMs, including default and chat-based variants, on three new curated datasets. Our results show that (1) common probing methods fail to provide a reliable and transferable veracity direction and, in some settings, perform worse than zero-shot prompting; (2) truth and falsehood are not encoded symmetrically; and (3) LLMs encode a third type of signal that is distinct from both true and false.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.23921",
+      "arxivId": "2506.23921",
+      "url": "https://www.semanticscholar.org/paper/995faf2c6d7443bc24e3fc340867f392137785e6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.23921"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bc7ca6a98b6b40f629bcfa32a9a250a732d080a1",
+      "title": "Are explicit belief representations necessary? A comparison between Large Language Models and Bayesian probabilistic models",
+      "authors": [
+        {
+          "name": "Dingyi Pan",
+          "authorId": "2347793035"
+        },
+        {
+          "name": "Benjamin K. Bergen",
+          "authorId": "2264366136"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) have exhibited certain indirect pragmatic capabilities, including interpreting indirect requests and non-literal meanings. Yet, it is unclear whether the success of LLMs on pragmatic tasks generalizes to phenomena that directly probe inferences about the beliefs of others. Indeed, LLMs\u2019 performance on Theory of Mind (ToM) tasks is mixed. To date, the most successful computationally explicit approach to making inferences about others\u2019 beliefs is the Rational Speech Act (RSA) framework, a Bayesian probabilistic model that encodes explicit representations of beliefs. In the present study, we ask whether LLMs outperform RSA in predicting human belief inferences, even though they do not explicitly encode belief representations. We focus specifically on projection inferences, a type of inference that directly probes belief attribution. We find that some LLMs are sensitive to factors that affect the inference process similarly to humans, yet there remains variance in human behavior not fully captured by LLMs. The RSA model, on the other hand, outperforms LLMs in capturing the variances in human data, suggesting that explicit belief representations might be necessary to construct human-like projection inferences.",
+      "citationCount": 1,
+      "doi": "10.18653/v1/2025.naacl-long.572",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bc7ca6a98b6b40f629bcfa32a9a250a732d080a1",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "11483-11498"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f9d90668114801bf984b7f1ec3421830647a939c",
+      "title": "Language Models (Mostly) Know When to Stop Reading",
+      "authors": [
+        {
+          "name": "Roy Xie",
+          "authorId": "2343650446"
+        },
+        {
+          "name": "Junlin Wang",
+          "authorId": "49606614"
+        },
+        {
+          "name": "Paul Rosu",
+          "authorId": "2342276389"
+        },
+        {
+          "name": "Chunyuan Deng",
+          "authorId": "2327034624"
+        },
+        {
+          "name": "Bolun Sun",
+          "authorId": "2344573740"
+        },
+        {
+          "name": "Zihao Lin",
+          "authorId": "2343692265"
+        },
+        {
+          "name": "Bhuwan Dhingra",
+          "authorId": "2342561701"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) process entire input contexts indiscriminately, which is inefficient when the information required to answer a query is localized within the context. We present dynamic context cutoff, a novel method enabling LLMs to self-terminate processing upon acquiring sufficient task-relevant information. Through analysis of model internals, we discover that specific attention heads inherently encode\"sufficiency signals\"-- detectable through lightweight classifiers -- that predict when critical information has been processed. This reveals a new efficiency paradigm: models'internal understanding naturally dictates processing needs rather than external compression heuristics. Comprehensive experiments across six QA datasets (up to 40K tokens) with three model families (LLaMA/Qwen/Mistral, 1B-70B) demonstrate 3.4% accuracy improvement while achieving 1.33x token reduction on average. Furthermore, our method demonstrates superior performance compared to other context efficiency methods at equivalent token reduction rates. Additionally, we observe an emergent scaling phenomenon: while smaller models require probing for sufficiency detection, larger models exhibit intrinsic self-assessment capabilities through prompting.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2502.01025",
+      "url": "https://www.semanticscholar.org/paper/f9d90668114801bf984b7f1ec3421830647a939c",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "00f1fe2a959661f52fd30e67ad1a01ee01d51c9a",
+      "title": "Persuasiveness and Bias in LLM: Investigating the Impact of Persuasiveness and Reinforcement of Bias in Language Models",
+      "authors": [
+        {
+          "name": "Saumya Roy",
+          "authorId": "2376520995"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Warning: This research studies AI persuasion and bias amplification that could be misused; all experiments are for safety evaluation. Large Language Models (LLMs) now generate convincing, human-like text and are widely used in content creation, decision support, and user interactions. Yet the same systems can spread information or misinformation at scale and reflect social biases that arise from data, architecture, or training choices. This work examines how persuasion and bias interact in LLMs, focusing on how imperfect or skewed outputs affect persuasive impact. Specifically, we test whether persona-based models can persuade with fact-based claims while also, unintentionally, promoting misinformation or biased narratives. We introduce a convincer-skeptic framework: LLMs adopt personas to simulate realistic attitudes. Skeptic models serve as human proxies; we compare their beliefs before and after exposure to arguments from convincer models. Persuasion is quantified with Jensen-Shannon divergence over belief distributions. We then ask how much persuaded entities go on to reinforce and amplify biased beliefs across race, gender, and religion. Strong persuaders are further probed for bias using sycophantic adversarial prompts and judged with additional models. Our findings show both promise and risk. LLMs can shape narratives, adapt tone, and mirror audience values across domains such as psychology, marketing, and legal assistance. But the same capacity can be weaponized to automate misinformation or craft messages that exploit cognitive biases, reinforcing stereotypes and widening inequities. The core danger lies in misuse more than in occasional model mistakes. By measuring persuasive power and bias reinforcement, we argue for guardrails and policies that penalize deceptive use and support alignment, value-sensitive design, and trustworthy deployment.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.15798",
+      "arxivId": "2508.15798",
+      "url": "https://www.semanticscholar.org/paper/00f1fe2a959661f52fd30e67ad1a01ee01d51c9a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.15798"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3848f2363bb17461f700583b772eb48dd1893e85",
+      "title": "Time Course MechInterp: Analyzing the Evolution of Components and Knowledge in Large Language Models",
+      "authors": [
+        {
+          "name": "Ahmad Dawar Hakimi",
+          "authorId": "1751620654"
+        },
+        {
+          "name": "Ali Modarressi",
+          "authorId": "2054744"
+        },
+        {
+          "name": "Philipp Wicke",
+          "authorId": "2282473799"
+        },
+        {
+          "name": "Hinrich Schutze",
+          "authorId": "2130001188"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Understanding how large language models (LLMs) acquire and store factual knowledge is crucial for enhancing their interpretability and reliability. In this work, we analyze the evolution of factual knowledge representation in the OLMo-7B model by tracking the roles of its attention heads and feed forward networks (FFNs) over the course of pre-training. We classify these components into four roles: general, entity, relation-answer, and fact-answer specific, and examine their stability and transitions. Our results show that LLMs initially depend on broad, general-purpose components, which later specialize as training progresses. Once the model reliably predicts answers, some components are repurposed, suggesting an adaptive learning process. Notably, attention heads display the highest turnover. We also present evidence that FFNs remain more stable throughout training. Furthermore, our probing experiments reveal that location-based relations converge to high accuracy earlier in training than name-based relations, highlighting how task complexity shapes acquisition dynamics. These insights offer a mechanistic view of knowledge formation in LLMs.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.03434",
+      "arxivId": "2506.03434",
+      "url": "https://www.semanticscholar.org/paper/3848f2363bb17461f700583b772eb48dd1893e85",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.03434"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "34afe98291c04427f6b0576f8835797f2281c0a3",
+      "title": "Q-Doc: Benchmarking Document Image Quality Assessment Capabilities in Multi-modal Large Language Models",
+      "authors": [
+        {
+          "name": "Jiaxi Huang",
+          "authorId": "2392753017"
+        },
+        {
+          "name": "Dongxu Wu",
+          "authorId": "2392308744"
+        },
+        {
+          "name": "Hanwei Zhu",
+          "authorId": "151482176"
+        },
+        {
+          "name": "Lingyu Zhu",
+          "authorId": "2281724124"
+        },
+        {
+          "name": "Jun Xing",
+          "authorId": "2289408167"
+        },
+        {
+          "name": "Xu Wang",
+          "authorId": "2393185375"
+        },
+        {
+          "name": "Baoliang Chen",
+          "authorId": "2375816921"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancement of Multi-modal Large Language Models (MLLMs) has expanded their capabilities beyond high-level vision tasks. Nevertheless, their potential for Document Image Quality Assessment (DIQA) remains underexplored. To bridge this gap, we propose Q-Doc, a three-tiered evaluation framework for systematically probing DIQA capabilities of MLLMs at coarse, middle, and fine granularity levels. a) At the coarse level, we instruct MLLMs to assign quality scores to document images and analyze their correlation with Quality Annotations. b) At the middle level, we design distortion-type identification tasks, including single-choice and multi-choice tests for multi-distortion scenarios. c) At the fine level, we introduce distortion-severity assessment where MLLMs classify distortion intensity against human-annotated references. Our evaluation demonstrates that while MLLMs possess nascent DIQA abilities, they exhibit critical limitations: inconsistent scoring, distortion misidentification, and severity misjudgment. Significantly, we show that Chain-of-Thought (CoT) prompting substantially enhances performance across all levels. Our work provides a benchmark for DIQA capabilities in MLLMs, revealing pronounced deficiencies in their quality perception and promising pathways for enhancement. The benchmark and code are publicly available at: https://github.com/cydxf/Q-Doc.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.11410",
+      "arxivId": "2511.11410",
+      "url": "https://www.semanticscholar.org/paper/34afe98291c04427f6b0576f8835797f2281c0a3",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.11410"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "63acf241e308f92431ecfdc336ad7a419f8dbf82",
+      "title": "Classifying German Language Proficiency Levels Using Large Language Models",
+      "authors": [
+        {
+          "name": "Elias-Leander Ahlers",
+          "authorId": "2397374257"
+        },
+        {
+          "name": "Witold Brunsmann",
+          "authorId": "2397374362"
+        },
+        {
+          "name": "M. Schilling",
+          "authorId": "1913256"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Assessing language proficiency is essential for education, as it enables instruction tailored to learners needs. This paper investigates the use of Large Language Models (LLMs) for automatically classifying German texts according to the Common European Framework of Reference for Languages (CEFR) into different proficiency levels. To support robust training and evaluation, we construct a diverse dataset by combining multiple existing CEFR-annotated corpora with synthetic data. We then evaluate prompt-engineering strategies, fine-tuning of a LLaMA-3-8B-Instruct model and a probing-based approach that utilizes the internal neural state of the LLM for classification. Our results show a consistent performance improvement over prior methods, highlighting the potential of LLMs for reliable and scalable CEFR classification.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.06483",
+      "url": "https://www.semanticscholar.org/paper/63acf241e308f92431ecfdc336ad7a419f8dbf82",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "379b491359f6a1793f70c5b43f8b1e0a23818d99",
+      "title": "Large Language Models as Discounted Bayesian Filters",
+      "authors": [
+        {
+          "name": "Jensen Zhang",
+          "authorId": "2400160559"
+        },
+        {
+          "name": "Jing Yang",
+          "authorId": "2378876577"
+        },
+        {
+          "name": "Keze Wang",
+          "authorId": "2344758172"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) demonstrate strong few-shot generalization through in-context learning, yet their reasoning in dynamic and stochastic environments remains opaque. Prior studies mainly focus on static tasks and overlook the online adaptation required when beliefs must be continuously updated, which is a key capability for LLMs acting as world models or agents. We introduce a Bayesian filtering framework to evaluate online inference in LLMs. Our probabilistic probe suite spans both multivariate discrete distributions, such as dice rolls, and continuous distributions, such as Gaussian processes, where ground-truth parameters shift over time. We find that while LLM belief updates resemble Bayesian posteriors, they are more accurately characterized by an exponential forgetting filter with a model-specific discount factor smaller than one. This reveals systematic discounting of older evidence that varies significantly across model architectures. Although inherent priors are often miscalibrated, the updating mechanism itself remains structured and principled. We further validate these findings in a simulated agent task and propose prompting strategies that effectively recalibrate priors with minimal computational cost.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.18489",
+      "url": "https://www.semanticscholar.org/paper/379b491359f6a1793f70c5b43f8b1e0a23818d99",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

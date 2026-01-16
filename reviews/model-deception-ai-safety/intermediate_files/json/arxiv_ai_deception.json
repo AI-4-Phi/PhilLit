@@ -1,0 +1,471 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:AI deception AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2601.09697",
+      "title": "Efficient Camera-Controlled Video Generation of Static Scenes via Sparse Diffusion and 3D Rendering",
+      "authors": [
+        "Jieying Chen",
+        "Jeffrey Hu",
+        "Joan Lasenby",
+        "Ayush Tewari"
+      ],
+      "abstract": "Modern video generative models based on diffusion models can produce very realistic clips, but they are computationally inefficient, often requiring minutes of GPU time for just a few seconds of video. This inefficiency poses a critical barrier to deploying generative video in applications that require real-time interactions, such as embodied AI and VR/AR. This paper explores a new strategy for camera-conditioned video generation of static scenes: using diffusion-based generative models to generate a sparse set of keyframes, and then synthesizing the full video through 3D reconstruction and rendering. By lifting keyframes into a 3D representation and rendering intermediate views, our approach amortizes the generation cost across hundreds of frames while enforcing geometric consistency. We further introduce a model that predicts the optimal number of keyframes for a given camera trajectory, allowing the system to adaptively allocate computation. Our final method, SRENDER, uses very sparse keyframes for simple trajectories and denser ones for complex camera motion. This results in video generation that is more than 40 times faster than the diffusion-based baseline in generating 20 seconds of video, while maintaining high visual fidelity and temporal stability, offering a practical path toward efficient and controllable video synthesis.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09697v1",
+      "url": "https://arxiv.org/abs/2601.09697"
+    },
+    {
+      "arxiv_id": "2601.09680",
+      "title": "Automating Supply Chain Disruption Monitoring via an Agentic AI Approach",
+      "authors": [
+        "Sara AlMahri",
+        "Liming Xu",
+        "Alexandra Brintrup"
+      ],
+      "abstract": "Modern supply chains are increasingly exposed to disruptions from geopolitical events, demand shocks, trade restrictions, to natural disasters. While many of these disruptions originate deep in the supply network, most companies still lack visibility beyond Tier-1 suppliers, leaving upstream vulnerabilities undetected until the impact cascades downstream. To overcome this blind-spot and move from reactive recovery to proactive resilience, we introduce a minimally supervised agentic AI framework that autonomously monitors, analyses, and responds to disruptions across extended supply networks. The architecture comprises seven specialised agents powered by large language models and deterministic tools that jointly detect disruption signals from unstructured news, map them to multi-tier supplier networks, evaluate exposure based on network structure, and recommend mitigations such as alternative sourcing options. \\rev{We evaluate the framework across 30 synthesised scenarios covering three automotive manufacturers and five disruption classes. The system achieves high accuracy across core tasks, with F1 scores between 0.962 and 0.991, and performs full end-to-end analyses in a mean of 3.83 minutes at a cost of \\$0.0836 per disruption. Relative to industry benchmarks of multi-day, analyst-driven assessments, this represents a reduction of more than three orders of magnitude in response time. A real-world case study of the 2022 Russia-Ukraine conflict further demonstrates operational applicability. This work establishes a foundational step toward building resilient, proactive, and autonomous supply chains capable of managing disruptions across deep-tier networks.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09680v1",
+      "url": "https://arxiv.org/abs/2601.09680"
+    },
+    {
+      "arxiv_id": "2601.09647",
+      "title": "Identifying Models Behind Text-to-Image Leaderboards",
+      "authors": [
+        "Ali Naseh",
+        "Yuefeng Peng",
+        "Anshuman Suri",
+        "Harsh Chaudhari",
+        "Alina Oprea",
+        "Amir Houmansadr"
+      ],
+      "abstract": "Text-to-image (T2I) models are increasingly popular, producing a large share of AI-generated images online. To compare model quality, voting-based leaderboards have become the standard, relying on anonymized model outputs for fairness. In this work, we show that such anonymity can be easily broken. We find that generations from each T2I model form distinctive clusters in the image embedding space, enabling accurate deanonymization without prompt control or training data. Using 22 models and 280 prompts (150K images), our centroid-based method achieves high accuracy and reveals systematic model-specific signatures. We further introduce a prompt-level distinguishability metric and conduct large-scale analyses showing how certain prompts can lead to near-perfect distinguishability. Our findings expose fundamental security flaws in T2I leaderboards and motivate stronger anonymization defenses.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09647v1",
+      "url": "https://arxiv.org/abs/2601.09647"
+    },
+    {
+      "arxiv_id": "2601.09625",
+      "title": "The Promptware Kill Chain: How Prompt Injections Gradually Evolved Into a Multi-Step Malware",
+      "authors": [
+        "Ben Nassi",
+        "Bruce Schneier",
+        "Oleg Brodt"
+      ],
+      "abstract": "The rapid adoption of large language model (LLM)-based systems -- from chatbots to autonomous agents capable of executing code and financial transactions -- has created a new attack surface that existing security frameworks inadequately address. The dominant framing of these threats as \"prompt injection\" -- a catch-all phrase for security failures in LLM-based systems -- obscures a more complex reality: Attacks on LLM-based systems increasingly involve multi-step sequences that mirror traditional malware campaigns. In this paper, we propose that attacks targeting LLM-based applications constitute a distinct class of malware, which we term \\textit{promptware}, and introduce a five-step kill chain model for analyzing these threats. The framework comprises Initial Access (prompt injection), Privilege Escalation (jailbreaking), Persistence (memory and retrieval poisoning), Lateral Movement (cross-system and cross-user propagation), and Actions on Objective (ranging from data exfiltration to unauthorized transactions). By mapping recent attacks to this structure, we demonstrate that LLM-related attacks follow systematic sequences analogous to traditional malware campaigns. The promptware kill chain offers security practitioners a structured methodology for threat modeling and provides a common vocabulary for researchers across AI safety and cybersecurity to address a rapidly evolving threat landscape.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09625v1",
+      "url": "https://arxiv.org/abs/2601.09625"
+    },
+    {
+      "arxiv_id": "2601.09620",
+      "title": "Full Disclosure, Less Trust? How the Level of Detail about AI Use in News Writing Affects Readers' Trust",
+      "authors": [
+        "Pooja Prajod",
+        "Hannes Cools",
+        "Thomas R\u00f6ggla",
+        "Karthikeya Puttur Venkatraj",
+        "Amber Kusters",
+        "Alia ElKattan",
+        "Pablo Cesar",
+        "Abdallah El Ali"
+      ],
+      "abstract": "As artificial intelligence (AI) is increasingly integrated into news production, calls for transparency about the use of AI have gained considerable traction. Recent studies suggest that AI disclosures can lead to a ``transparency dilemma'', where disclosure reduces readers' trust. However, little is known about how the \\textit{level of detail} in AI disclosures influences trust and contributes to this dilemma within the news context. In this 3$\\times$2$\\times$2 mixed factorial study with 40 participants, we investigate how three levels of AI disclosures (none, one-line, detailed) across two types of news (politics and lifestyle) and two levels of AI involvement (low and high) affect news readers' trust. We measured trust using the News Media Trust questionnaire, along with two decision behaviors: source-checking and subscription decisions. Questionnaire responses and subscription rates showed a decline in trust only for detailed AI disclosures, whereas source-checking behavior increased for both one-line and detailed disclosures, with the effect being more pronounced for detailed disclosures. Insights from semi-structured interviews suggest that source-checking behavior was primarily driven by interest in the topic, followed by trust, whereas trust was the main factor influencing subscription decisions. Around two-thirds of participants expressed a preference for detailed disclosures, while most participants who preferred one-line indicated a need for detail-on-demand disclosure formats. Our findings show that not all AI disclosures lead to a transparency dilemma, but instead reflect a trade-off between readers' desire for more transparency and their trust in AI-assisted news content.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09620v1",
+      "url": "https://arxiv.org/abs/2601.09620"
+    },
+    {
+      "arxiv_id": "2601.09600",
+      "title": "Information Access of the Oppressed: A Problem-Posing Framework for Envisioning Emancipatory Information Access Platforms",
+      "authors": [
+        "Bhaskar Mitra",
+        "Nicola Neophytou",
+        "Sireesh Gururaja"
+      ],
+      "abstract": "Online information access (IA) platforms are targets of authoritarian capture. These concerns are particularly serious and urgent today in light of the rising levels of democratic erosion worldwide, the emerging capabilities of generative AI technologies such as AI persuasion, and the increasing concentration of economic and political power in the hands of Big Tech. This raises the question of what alternative IA infrastructure we must reimagine and build to mitigate the risks of authoritarian capture of our information ecosystems. We explore this question through the lens of Paulo Freire's theories of emancipatory pedagogy. Freire's theories provide a radically different lens for exploring IA's sociotechnical concerns relative to the current dominating frames of fairness, accountability, confidentiality, transparency, and safety. We make explicit, with the intention to challenge, the dichotomy of how we relate to technology as either technologists (who envision and build technology) and its users. We posit that this mirrors the teacher-student relationship in Freire's analysis. By extending Freire's analysis to IA, we challenge the notion that it is the burden of the (altruistic) technologists to come up with interventions to mitigate the risks that emerging technologies pose to marginalized communities. Instead, we advocate that the first task for the technologists is to pose these as problems to the marginalized communities, to encourage them to make and unmake the technology as part of their material struggle against oppression. Their second task is to redesign our online technology stacks to structurally expose spaces for community members to co-opt and co-construct the technology in aid of their emancipatory struggles. We operationalize Freire's theories to develop a problem-posing framework for envisioning emancipatory IA platforms of the future.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.HC",
+        "cs.IR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09600v1",
+      "url": "https://arxiv.org/abs/2601.09600"
+    },
+    {
+      "arxiv_id": "2601.09485",
+      "title": "On lower bounds for hypergeometric tails",
+      "authors": [
+        "Jianhang Ai",
+        "Christos Pelekis"
+      ],
+      "abstract": "Let $n,k$ be positive integers such that $n\\geq k$, and let $H$ be a hypergeometric random variable counting the number of black marbles in a sample without replacement of size $k$ from an urn that contains $i\\in \\{1,\\ldots, n\\}$ black and $n - i$ white marbles. It is shown that \\[ \\mathbb{P}(H \\ge \\mathbb{E}(H)) \\ge k/n\\, , \\, \\text{when} \\,\\, n\\ge 8k \\, . \\] Furthermore, provided that $1\\le \\mathbb{E}(H)\\le \\min\\{i,k\\}-2$ as well as that $\\frac{(n-i)(n-k)}{n}>1$, it is shown that \\[ \\mathbb{P}(H\\ge \\mathbb{E}(H)) \\,\\ge\\, \\frac{e^{-1/8}}{4\\sqrt{2}} \\cdot \\sqrt{\\frac{n-1}{n}} \\cdot\\frac{ \\sqrt{\\text{Var}(H)} }{1 + \\sqrt{1+ \\frac{n-1}{n-k}\\cdot\\text{Var}(H)}}\\, . \\] Auxiliary results which may be of independent interest include an upper bound on the tail conditional expectation and a lower bound on the mean absolute deviation of the hypergeometric distribution.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "math.PR",
+      "categories": [
+        "math.PR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09485v1",
+      "url": "https://arxiv.org/abs/2601.09485"
+    },
+    {
+      "arxiv_id": "2601.09467",
+      "title": "Searth Transformer: A Transformer Architecture Incorporating Earth's Geospheric Physical Priors for Global Mid-Range Weather Forecasting",
+      "authors": [
+        "Tianye Li",
+        "Qi Liu",
+        "Hao Li",
+        "Lei Chen",
+        "Wencong Cheng",
+        "Fei Zheng",
+        "Xiangao Xia",
+        "Ya Wang",
+        "Gang Huang",
+        "Weiwei Wang",
+        "Xuan Tong",
+        "Ziqing Zu",
+        "Yi Fang",
+        "Shenming Fu",
+        "Jiang Jiang",
+        "Haochen Li",
+        "Mingxing Li",
+        "Jiangjiang Xia"
+      ],
+      "abstract": "Accurate global medium-range weather forecasting is fundamental to Earth system science. Most existing Transformer-based forecasting models adopt vision-centric architectures that neglect the Earth's spherical geometry and zonal periodicity. In addition, conventional autoregressive training is computationally expensive and limits forecast horizons due to error accumulation. To address these challenges, we propose the Shifted Earth Transformer (Searth Transformer), a physics-informed architecture that incorporates zonal periodicity and meridional boundaries into window-based self-attention for physically consistent global information exchange. We further introduce a Relay Autoregressive (RAR) fine-tuning strategy that enables learning long-range atmospheric evolution under constrained memory and computational budgets. Based on these methods, we develop YanTian, a global medium-range weather forecasting model. YanTian achieves higher accuracy than the high-resolution forecast of the European Centre for Medium-Range Weather Forecasts and performs competitively with state-of-the-art AI models at one-degree resolution, while requiring roughly 200 times lower computational cost than standard autoregressive fine-tuning. Furthermore, YanTian attains a longer skillful forecast lead time for Z500 (10.3 days) than HRES (9 days). Beyond weather forecasting, this work establishes a robust algorithmic foundation for predictive modeling of complex global-scale geophysical circulation systems, offering new pathways for Earth system science.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "physics.ao-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09467v1",
+      "url": "https://arxiv.org/abs/2601.09467"
+    },
+    {
+      "arxiv_id": "2601.09455",
+      "title": "On the Hardness of Computing Counterfactual and Semifactual Explanations in XAI",
+      "authors": [
+        "Andr\u00e9 Artelt",
+        "Martin Olsen",
+        "Kevin Tierney"
+      ],
+      "abstract": "Providing clear explanations to the choices of machine learning models is essential for these models to be deployed in crucial applications. Counterfactual and semi-factual explanations have emerged as two mechanisms for providing users with insights into the outputs of their models. We provide an overview of the computational complexity results in the literature for generating these explanations, finding that in many cases, generating explanations is computationally hard. We strengthen the argument for this considerably by further contributing our own inapproximability results showing that not only are explanations often hard to generate, but under certain assumptions, they are also hard to approximate. We discuss the implications of these complexity results for the XAI community and for policymakers seeking to regulate explanations in AI.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": "Transactions on Machine Learning Research (TMLR), 2025",
+      "pdf_url": "https://arxiv.org/pdf/2601.09455v1",
+      "url": "https://arxiv.org/abs/2601.09455"
+    },
+    {
+      "arxiv_id": "2601.09440",
+      "title": "DepRadar: Agentic Coordination for Context Aware Defect Impact Analysis in Deep Learning Libraries",
+      "authors": [
+        "Yi Gao",
+        "Xing Hu",
+        "Tongtong Xu",
+        "Jiali Zhao",
+        "Xiaohu Yang",
+        "Xin Xia"
+      ],
+      "abstract": "Deep learning libraries like Transformers and Megatron are now widely adopted in modern AI programs. However, when these libraries introduce defects, ranging from silent computation errors to subtle performance regressions, it is often challenging for downstream users to assess whether their own programs are affected. Such impact analysis requires not only understanding the defect semantics but also checking whether the client code satisfies complex triggering conditions involving configuration flags, runtime environments, and indirect API usage. We present DepRadar, an agent coordination framework for fine grained defect and impact analysis in DL library updates. DepRadar coordinates four specialized agents across three steps: 1. the PR Miner and Code Diff Analyzer extract structured defect semantics from commits or pull requests, 2. the Orchestrator Agent synthesizes these signals into a unified defect pattern with trigger conditions, and 3. the Impact Analyzer checks downstream programs to determine whether the defect can be triggered. To improve accuracy and explainability, DepRadar integrates static analysis with DL-specific domain rules for defect reasoning and client side tracing. We evaluate DepRadar on 157 PRs and 70 commits across two representative DL libraries. It achieves 90% precision in defect identification and generates high quality structured fields (average field score 1.6). On 122 client programs, DepRadar identifies affected cases with 90% recall and 80% precision, substantially outperforming other baselines.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09440v1",
+      "url": "https://arxiv.org/abs/2601.09440"
+    },
+    {
+      "arxiv_id": "2601.09393",
+      "title": "AI-NativeBench: An Open-Source White-Box Agentic Benchmark Suite for AI-Native Systems",
+      "authors": [
+        "Zirui Wang",
+        "Guangba Yu",
+        "Michael R. Lyu"
+      ],
+      "abstract": "The transition from Cloud-Native to AI-Native architectures is fundamentally reshaping software engineering, replacing deterministic microservices with probabilistic agentic services. However, this shift renders traditional black-box evaluation paradigms insufficient: existing benchmarks measure raw model capabilities while remaining blind to system-level execution dynamics. To bridge this gap, we introduce AI-NativeBench, the first application-centric and white-box AI-Native benchmark suite grounded in Model Context Protocol (MCP) and Agent-to-Agent (A2A) standards. By treating agentic spans as first-class citizens within distributed traces, our methodology enables granular analysis of engineering characteristics beyond simple capabilities. Leveraging this benchmark across 21 system variants, we uncover critical engineering realities invisible to traditional metrics: a parameter paradox where lightweight models often surpass flagships in protocol adherence, a pervasive inference dominance that renders protocol overhead secondary, and an expensive failure pattern where self-healing mechanisms paradoxically act as cost multipliers on unviable workflows. This work provides the first systematic evidence to guide the transition from measuring model capability to engineering reliable AI-Native systems. To facilitate reproducibility and further research, we have open-sourced the benchmark and dataset.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.DC",
+        "cs.PF"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09393v1",
+      "url": "https://arxiv.org/abs/2601.09393"
+    },
+    {
+      "arxiv_id": "2601.09378",
+      "title": "Batch-Fabricated PDMS Templates for the Robotic Transfer of 2D Materials",
+      "authors": [
+        "Zhili Lin",
+        "Luosha Han",
+        "Jinkun He",
+        "Xiaoxue Fan",
+        "Tongyao Zhang",
+        "Xiaoxi Li",
+        "Baojuan Dong",
+        "Kai Zhao"
+      ],
+      "abstract": "Robotic stacking of van der Waals heterostructures has been at the verge thanks to the convergence between artificial intelligence (AI) and two-dimensional (2D) materials research. Key ingredients to fulfill this pursuit often include algorithms to identify layer compounds on chips, hard-wares to realize sophisticated operations of motion and/or rotation in a microscale, and, as importantly, highly-standardized and uniform transfer stamps that are often used in picking up layered materials under a microscope. Here, we report a hot-casted-droplet batch fabrication method for polydimethylsiloxane (PDMS) templates tailored for dry transfer of 2D materials. Controlled precursor formulation, degassing, and motorized-syringe dispensing produce dome-shaped PDMS templates with ultra-smooth surfaces (root-mean-square roughness about 0.3 nm at relatively low curing temperatures). By tuning the curing temperature, the reproducible and controllable apex curvature allows precisely defined contact area between the organic adhesive film and substrate, via thermal expansion. Our results further reveals thermalmechanical behaviors with different casting parameters of such PDMS domes. This scalable and parameterized fabrication protocol gives rise to uniform transfer-stamps with ultra-smooth surface, which may be beneficial for future AI-driven robotic assembly of 2D material heterostructures.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09378v1",
+      "url": "https://arxiv.org/abs/2601.09378"
+    },
+    {
+      "arxiv_id": "2601.09351",
+      "title": "Navigating Ethical AI Challenges in the Industrial Sector: Balancing Innovation and Responsibility",
+      "authors": [
+        "Ruomu Tan",
+        "Martin W Hoffmann"
+      ],
+      "abstract": "The integration of artificial intelligence (AI) into the industrial sector has not only driven innovation but also expanded the ethical landscape, necessitating a reevaluation of principles governing technology and its applications and awareness in research and development of industrial AI solutions. This chapter explores how AI-empowered industrial innovation inherently intersects with ethics, as advancements in AI introduce new challenges related to transparency, accountability, and fairness. In the chapter, we then examine the ethical aspects of several examples of AI manifestation in industrial use cases and associated factors such as ethical practices in the research and development process and data sharing. With the progress of ethical industrial AI solutions, we emphasize the importance of embedding ethical principles into industrial AI systems and its potential to inspire technological breakthroughs and foster trust among stakeholders. This chapter also offers actionable insights to guide industrial research and development toward a future where AI serves as an enabler for ethical and responsible industrial progress as well as a more inclusive industrial ecosystem.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09351v1",
+      "url": "https://arxiv.org/abs/2601.09351"
+    },
+    {
+      "arxiv_id": "2601.09334",
+      "title": "High-Performance Serverless Computing: A Systematic Literature Review on Serverless for HPC, AI, and Big Data",
+      "authors": [
+        "Valerio Besozzi",
+        "Matteo Della Bartola",
+        "Patrizio Dazzi",
+        "Marco Danelutto"
+      ],
+      "abstract": "The widespread deployment of large-scale, compute-intensive applications such as high-performance computing, artificial intelligence, and big data is leading to convergence between cloud and high-performance computing infrastructures. Cloud providers are increasingly integrating high-performance computing capabilities in their infrastructures, such as hardware accelerators and high-speed interconnects, while researchers in the high-performance computing community are starting to explore cloud-native paradigms to improve scalability, elasticity, and resource utilization. In this context, serverless computing emerges as a promising execution model to efficiently handle highly dynamic, parallel, and distributed workloads. This paper presents a comprehensive systematic literature review of 122 research articles published between 2018 and early 2025, exploring the use of the serverless paradigm to develop, deploy, and orchestrate compute-intensive applications across cloud, high-performance computing, and hybrid environments. From these, a taxonomy comprising eight primary research directions and nine targeted use case domains is proposed, alongside an analysis of recent publication trends and collaboration networks among authors, highlighting the growing interest and interconnections within this emerging research field. Overall, this work aims to offer a valuable foundation for both new researchers and experienced practitioners, guiding the development of next-generation serverless solutions for parallel compute-intensive applications.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ],
+      "doi": "10.1109/ACCESS.2025.3633989",
+      "journal_ref": "IEEE Access, vol. 13, pp. 195611-195656, 2025",
+      "pdf_url": "https://arxiv.org/pdf/2601.09334v1",
+      "url": "https://arxiv.org/abs/2601.09334"
+    },
+    {
+      "arxiv_id": "2601.09304",
+      "title": "Single-Round Clustered Federated Learning via Data Collaboration Analysis for Non-IID Data",
+      "authors": [
+        "Sota Sugawara",
+        "Yuji Kawamata",
+        "Akihiro Toyoda",
+        "Tomoru Nakayama",
+        "Yukihiko Okada"
+      ],
+      "abstract": "Federated Learning (FL) enables distributed learning across multiple clients without sharing raw data. When statistical heterogeneity across clients is severe, Clustered Federated Learning (CFL) can improve performance by grouping similar clients and training cluster-wise models. However, most CFL approaches rely on multiple communication rounds for cluster estimation and model updates, which limits their practicality under tight constraints on communication rounds. We propose Data Collaboration-based Clustered Federated Learning (DC-CFL), a single-round framework that completes both client clustering and cluster-wise learning, using only the information shared in DC analysis. DC-CFL quantifies inter-client similarity via total variation distance between label distributions, estimates clusters using hierarchical clustering, and performs cluster-wise learning via DC analysis. Experiments on multiple open datasets under representative non-IID conditions show that DC-CFL achieves accuracy comparable to multi-round baselines while requiring only one communication round. These results indicate that DC-CFL is a practical alternative for collaborative AI model development when multiple communication rounds are impractical.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09304v1",
+      "url": "https://arxiv.org/abs/2601.09304"
+    },
+    {
+      "arxiv_id": "2601.09292",
+      "title": "Blue Teaming Function-Calling Agents",
+      "authors": [
+        "Greta Dolcetti",
+        "Giulio Zizzo",
+        "Sergio Maffeis"
+      ],
+      "abstract": "We present an experimental evaluation that assesses the robustness of four open source LLMs claiming function-calling capabilities against three different attacks, and we measure the effectiveness of eight different defences. Our results show how these models are not safe by default, and how the defences are not yet employable in real-world scenarios.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09292v1",
+      "url": "https://arxiv.org/abs/2601.09292"
+    },
+    {
+      "arxiv_id": "2601.09264",
+      "title": "Coordinated Pandemic Control with Large Language Model Agents as Policymaking Assistants",
+      "authors": [
+        "Ziyi Shi",
+        "Xusen Guo",
+        "Hongliang Lu",
+        "Mingxing Peng",
+        "Haotian Wang",
+        "Zheng Zhu",
+        "Zhenning Li",
+        "Yuxuan Liang",
+        "Xinhu Zheng",
+        "Hai Yang"
+      ],
+      "abstract": "Effective pandemic control requires timely and coordinated policymaking across administrative regions that are intrinsically interdependent. However, human-driven responses are often fragmented and reactive, with policies formulated in isolation and adjusted only after outbreaks escalate, undermining proactive intervention and global pandemic mitigation. To address this challenge, here we propose a large language model (LLM) multi-agent policymaking framework that supports coordinated and proactive pandemic control across regions. Within our framework, each administrative region is assigned an LLM agent as an AI policymaking assistant. The agent reasons over region-specific epidemiological dynamics while communicating with other agents to account for cross-regional interdependencies. By integrating real-world data, a pandemic evolution simulator, and structured inter-agent communication, our framework enables agents to jointly explore counterfactual intervention scenarios and synthesize coordinated policy decisions through a closed-loop simulation process. We validate the proposed framework using state-level COVID-19 data from the United States between April and December 2020, together with real-world mobility records and observed policy interventions. Compared with real-world pandemic outcomes, our approach reduces cumulative infections and deaths by up to 63.7% and 40.1%, respectively, at the individual state level, and by 39.0% and 27.0%, respectively, when aggregated across states. These results demonstrate that LLM multi-agent systems can enable more effective pandemic control with coordinated policymaking...",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09264v1",
+      "url": "https://arxiv.org/abs/2601.09264"
+    },
+    {
+      "arxiv_id": "2601.09262",
+      "title": "Magnifying change: Rapid burn scar mapping with multi-resolution, multi-source satellite imagery",
+      "authors": [
+        "Maria Sdraka",
+        "Dimitrios Michail",
+        "Ioannis Papoutsis"
+      ],
+      "abstract": "Delineating wildfire affected areas using satellite imagery remains challenging due to irregular and spatially heterogeneous spectral changes across the electromagnetic spectrum. While recent deep learning approaches achieve high accuracy when high-resolution multispectral data are available, their applicability in operational settings, where a quick delineation of the burn scar shortly after a wildfire incident is required, is limited by the trade-off between spatial resolution and temporal revisit frequency of current satellite systems. To address this limitation, we propose a novel deep learning model, namely BAM-MRCD, which employs multi-resolution, multi-source satellite imagery (MODIS and Sentinel-2) for the timely production of detailed burnt area maps with high spatial and temporal resolution. Our model manages to detect even small scale wildfires with high accuracy, surpassing similar change detection models as well as solid baselines. All data and code are available in the GitHub repository: https://github.com/Orion-AI-Lab/BAM-MRCD.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09262v1",
+      "url": "https://arxiv.org/abs/2601.09262"
+    },
+    {
+      "arxiv_id": "2601.09258",
+      "title": "LatencyPrism: Online Non-intrusive Latency Sculpting for SLO-Guaranteed LLM Inference",
+      "authors": [
+        "Du Yin",
+        "Jiayi Ren",
+        "Xiayu Sun",
+        "Tianyao Zhou",
+        "Haizhu Zhou",
+        "Ruiyan Ma",
+        "Danyang Zhang"
+      ],
+      "abstract": "LLM inference latency critically determines user experience and operational costs, directly impacting throughput under SLO constraints. Even brief latency spikes degrade service quality despite acceptable average performance. However, distributed inference environments featuring diverse software frameworks and XPU architectures combined with dynamic workloads make latency analysis challenging. Constrained by intrusive designs that necessitate service restarts or even suspension, and by hardware-bound implementations that fail to adapt to heterogeneous inference environments, existing AI profiling methods are often inadequate for real-time production analysis.   We present LatencyPrism, the first zero-intrusion multi-platform latency sculpting system. It aims to break down the inference latency across pipeline, proactively alert on inference latency anomalies, and guarantee adherence to SLOs, all without requiring code modifications or service restarts. LatencyPrism has been deployed across thousands of XPUs for over six months. It enables low-overhead real-time monitoring at batch level with alerts triggered in milliseconds. This approach distinguishes between workload-driven latency variations and anomalies indicating underlying issues with an F1-score of 0.98. We also conduct extensive experiments and investigations into root cause analysis to demonstrate LatencyPrism's capability.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC",
+        "cs.LG",
+        "cs.OS"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09258v1",
+      "url": "https://arxiv.org/abs/2601.09258"
+    },
+    {
+      "arxiv_id": "2601.09208",
+      "title": "Mikasa: A Character-Driven Emotional AI Companion Inspired by Japanese Oshi Culture",
+      "authors": [
+        "Miki Ueno"
+      ],
+      "abstract": "Recent progress in large language models and multimodal interaction has made it possible to develop AI companions that can have fluent and emotionally expressive conversations. However, many of these systems have problems keeping users satisfied and engaged over long periods. This paper argues that these problems do not come mainly from weak models, but from poor character design and unclear definitions of the user-AI relationship. I present Mikasa, an emotional AI companion inspired by Japanese Oshi culture-specifically its emphasis on long-term, non-exclusive commitment to a stable character-as a case study of character-driven companion design. Mikasa does not work as a general-purpose assistant or a chatbot that changes roles. Instead, Mikasa is designed as a coherent character with a stable personality and a clearly defined relationship as a partner. This relationship does not force exclusivity or obligation. Rather, it works as a reference point that stabilizes interaction norms and reduces the work users must do to keep redefining the relationship. Through an exploratory evaluation, I see that users describe their preferences using surface-level qualities such as conversational naturalness, but they also value relationship control and imaginative engagement in ways they do not state directly. These results suggest that character coherence and relationship definition work as latent structural elements that shape how good the interaction feels, without users recognizing them as main features. The contribution of this work is to show that character design is a functional part of AI companion systems, not just decoration. Mikasa is one example based on a specific cultural context, but the design principles-commitment to a consistent personality and clear relationship definition-can be used for many emotionally grounded AI companions.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09208v1",
+      "url": "https://arxiv.org/abs/2601.09208"
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

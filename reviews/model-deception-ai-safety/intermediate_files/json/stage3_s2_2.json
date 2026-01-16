@@ -1,0 +1,1948 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "scalable oversight AI safety",
+  "results": [
+    {
+      "paperId": "b0e1720dfe211dc3ab7407334b4a0fbb3853a7ba",
+      "title": "VerificAgent: Domain-Specific Memory Verification for Scalable Oversight of Aligned Computer-Use Agents",
+      "authors": [
+        {
+          "name": "Thong Q. Nguyen",
+          "authorId": "2365044024"
+        },
+        {
+          "name": "Shubhang Desai",
+          "authorId": "2365041573"
+        },
+        {
+          "name": "Raja Hasnain Anwar",
+          "authorId": "2374484367"
+        },
+        {
+          "name": "Firoz Shaik",
+          "authorId": "2374483028"
+        },
+        {
+          "name": "Vishwas Suryanarayanan",
+          "authorId": "1557923942"
+        },
+        {
+          "name": "Vishal Chowdhary",
+          "authorId": "2358042234"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Continual memory augmentation lets computer-using agents (CUAs) learn from prior interactions, but unvetted memories can encode domain-inappropriate or unsafe heuristics--spurious rules that drift from user intent and safety constraints. We introduce VerificAgent, a scalable oversight framework that treats persistent memory as an explicit alignment surface. VerificAgent combines (1) an expert-curated seed of domain knowledge, (2) iterative, trajectory-based memory growth during training, and (3) a post-hoc human fact-checking pass to sanitize accumulated memories before deployment. Evaluated on OSWorld productivity tasks and additional adversarial stress tests, VerificAgent improves task reliability, reduces hallucination-induced failures, and preserves interpretable, auditable guidance--without additional model fine-tuning. By letting humans correct high-impact errors once, the verified memory acts as a frozen safety contract that future agent actions must satisfy. Our results suggest that domain-scoped, human-verified memory offers a scalable oversight mechanism for CUAs, complementing broader alignment strategies by limiting silent policy drift and anchoring agent behavior to the norms and safety constraints of the target domain.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2506.02539",
+      "url": "https://www.semanticscholar.org/paper/b0e1720dfe211dc3ab7407334b4a0fbb3853a7ba",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cfc17b7686b860f77b006d0b8ef517c095ccfcce",
+      "title": "The Alignment Tax: Why Safety Shouldn\u2019t Slow Innovation",
+      "authors": [
+        {
+          "name": "Zunaira Khalid",
+          "authorId": "2404128382"
+        }
+      ],
+      "year": 2026,
+      "abstract": "The idea of the \u201calignment tax\u201d often appears in discussions about developing artificial intelligence. It suggests that safety measures slow down innovation and competitiveness. This opinion piece challenges that view. It claims that safety should be seen as an important part of technological capability, not as an added cost. By looking at examples from the aviation industry and recent progress in AI research, the article shows how interpretability, constitutional AI, and scalable oversight lead to more reliable, controllable, and socially acceptable systems. It argues that the real cost comes not from investing in safety, but from ignoring it. This neglect can cause societal harm, erode public trust, and invite more regulatory scrutiny. By viewing safety as a driver of long-term innovation, this article encourages the integration of alignment research into the foundation of AI development. This approach aims for sustainable and responsible progress.",
+      "citationCount": 0,
+      "doi": "10.29328/journal.jairi.1001013",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cfc17b7686b860f77b006d0b8ef517c095ccfcce",
+      "venue": "Journal of Artificial Intelligence Research and Innovation",
+      "journal": {
+        "name": "Journal of Artificial Intelligence Research and Innovation"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "98944c55331fbcb08a8375dad60596885a161c77",
+      "title": "The Role of Technical Product Managers in Architecting AI-Powered Infrastructure: A Compliance-Driven Framework",
+      "authors": [
+        {
+          "name": "Chinenye Blessing Onyekaonwu",
+          "authorId": "2387033921"
+        },
+        {
+          "name": "Olaide Oluwatobi Ogundolapo",
+          "authorId": "2401584025"
+        },
+        {
+          "name": "Amina Catherine Peter- Anyebe",
+          "authorId": "2384663038"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid adoption of artificial intelligence (AI) across regulated and mission-critical industries has redefined the\nstrategic role of Technical Product Managers (TPMs) in architecting compliant, scalable, and resilient AI-powered\ninfrastructures. This review develops a compliance-driven framework that positions TPMs at the intersection of systems\nengineering, AI lifecycle orchestration, and enterprise governance. The paper examines how TPMs translate high-level\nregulatory requirements such as GDPR, HIPAA, NDPR, SOC 2, and emerging AI safety standards into actionable product\n\narchitecture decisions, spanning data ingestion pipelines, model training workflows, MLOps automation, and post-\ndeployment monitoring. It details TPM responsibilities across the AI lifecycle, including dataset curation oversight, model\n\nrisk assessment, explainability prioritization, security-by-design enforcement, and continuous compliance validation within\nCI/CD and ML pipeline environments. Additionally, the review analyzes the TPM\u2019s role in cross-functional alignment,\nemphasizing coordination with data scientists, ML engineers, security teams, legal/compliance units, and infrastructure\narchitects to maintain traceability, audit readiness, and technical feasibility at scale. Using evidence from high-stakes\noperational contexts such as healthcare AI systems, fintech anti-fraud engines, and autonomous decision-support tools the\npaper highlights emerging challenges and best practices for TPM leadership in managing model drift, data governance\nbottlenecks, adversarial risk, and lifecycle documentation. The proposed framework provides TPMs with structured\nguidance for designing AI-enabled infrastructures that are not only high-performance and cost-optimized, but also ethically\naligned, regulation-aware, and resilient to evolving compliance and security requirements.",
+      "citationCount": 1,
+      "doi": "10.38124/ijisrt/25dec1185",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/98944c55331fbcb08a8375dad60596885a161c77",
+      "venue": "International Journal of Innovative Science and Research Technology",
+      "journal": {
+        "name": "International Journal of Innovative Science and Research Technology"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "adb6f48603309c6a0ab740ce2d68159c8a965271",
+      "title": "Combining AI and human support in mental health: a digital intervention with comparable effectiveness to human-delivered care",
+      "authors": [
+        {
+          "name": "C. E. Palmer",
+          "authorId": "2311630472"
+        },
+        {
+          "name": "E. Marshall",
+          "authorId": "2311635980"
+        },
+        {
+          "name": "E. Millgate",
+          "authorId": "2311639128"
+        },
+        {
+          "name": "G. Warren",
+          "authorId": "2311635607"
+        },
+        {
+          "name": "M. Ewbank",
+          "authorId": "2311635851"
+        },
+        {
+          "name": "E. Cooper",
+          "authorId": "2311636812"
+        },
+        {
+          "name": "S. Lawes",
+          "authorId": "2311635490"
+        },
+        {
+          "name": "M. Bouazzaoui",
+          "authorId": "2311635421"
+        },
+        {
+          "name": "A. Smith",
+          "authorId": "2311823305"
+        },
+        {
+          "name": "C. Hutchins-Joss",
+          "authorId": "2311635800"
+        },
+        {
+          "name": "J. Young",
+          "authorId": "2312171830"
+        },
+        {
+          "name": "M. Margoum",
+          "authorId": "2237023447"
+        },
+        {
+          "name": "S. Healey",
+          "authorId": "2311635627"
+        },
+        {
+          "name": "L. Marshall",
+          "authorId": "2311635670"
+        },
+        {
+          "name": "S. Mehew",
+          "authorId": "2311636665"
+        },
+        {
+          "name": "R. Cummins",
+          "authorId": "153714664"
+        },
+        {
+          "name": "V. Tablan",
+          "authorId": "2095029103"
+        },
+        {
+          "name": "A. Catarino",
+          "authorId": "2311636881"
+        },
+        {
+          "name": "A. Welchman",
+          "authorId": "1987832"
+        },
+        {
+          "name": "A. D. Blackwell",
+          "authorId": "2311635798"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1101/2024.07.17.24310551",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/adb6f48603309c6a0ab740ce2d68159c8a965271",
+      "venue": "medRxiv",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1c5838d017d3fafa78e2a939e7695f9f3961c241",
+      "title": "PVLens: Enhancing Pharmacovigilance Through Automated Label Extraction",
+      "authors": [
+        {
+          "name": "Jeffery L. Painter",
+          "authorId": "2306946860"
+        },
+        {
+          "name": "Gregory E. Powell",
+          "authorId": "2352104517"
+        },
+        {
+          "name": "Andrew Bate",
+          "authorId": "2306967615"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Reliable drug safety reference databases are essential for pharmacovigilance, yet existing resources like SIDER are outdated and static. We introduce PVLens, an automated system that extracts labeled safety information from FDA Structured Product Labels (SPLs) and maps terms to MedDRA. PVLens integrates automation with expert oversight through a web-based review tool. In validation against 97 drug labels, PVLens achieved an F1 score of 0.882, with high recall (0.983) and moderate precision (0.799). By offering a scalable, more accurate and continuously updated alternative to SIDER, PVLens enhances real-time pharamcovigilance with improved accuracy and contemporaneous insights.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2503.20639",
+      "arxivId": "2503.20639",
+      "url": "https://www.semanticscholar.org/paper/1c5838d017d3fafa78e2a939e7695f9f3961c241",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.20639"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "bfda4bb56e8e291059f08e669856da180859db66",
+      "title": "Optimising clinical governance and risk management in resource-limited hospitals: A family medicine model",
+      "authors": [
+        {
+          "name": "Mergan Naidoo",
+          "authorId": "144010818"
+        },
+        {
+          "name": "Kimera T. Suthiram",
+          "authorId": "2223284194"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In resource-constrained healthcare settings, clinical governance and risk management are critical to improving patient outcomes and efficiently using limited resources. This article describes an innovative strategy implemented at a South African district hospital led by family physicians to optimise admissions and care prioritisation. The protocol established a designated high-care unit and admissions ward, ensuring that all new admissions were seen by a family physician, allowing family physicians to focus on the sickest patients requiring immediate intervention. This structured approach improved clinical oversight, reduced medical errors, and decreased morbidity and mortality. By efficiently allocating the expertise of family physicians, the intervention demonstrated measurable improvements in care delivery and patient safety. This model highlights the leadership role of family physicians in clinical governance and presents a scalable solution for similar resource-limited healthcare settings.",
+      "citationCount": 2,
+      "doi": "10.4102/phcfm.v17i1.4876",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bfda4bb56e8e291059f08e669856da180859db66",
+      "venue": "African Journal of Primary Health Care & Family Medicine",
+      "journal": {
+        "name": "African Journal of Primary Health Care & Family Medicine",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f713b439266e6cc1415025da056f1304f2b78b8a",
+      "title": "Debate Helps Weak-to-Strong Generalization",
+      "authors": [
+        {
+          "name": "Hao Lang",
+          "authorId": "98256342"
+        },
+        {
+          "name": "Fei Huang",
+          "authorId": "2257407873"
+        },
+        {
+          "name": "Yongbin Li",
+          "authorId": "1527090216"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Common methods for aligning already-capable models with desired behavior rely on the ability of humans to provide supervision.\nHowever, future superhuman models will surpass the capability of humans.\nTherefore, humans will only be able to weakly supervise superhuman models.\nThis expected deficiency of human evaluation would weaken the safety of future AI systems.\nScalable oversight and weak-to-strong generalization are two complementary approaches to tackle this issue.\nIn this paper, we attempt to combine the strengths of these two approaches to further improve alignment.\nSpecifically, we investigate ways of improving human supervision with a strong pretrained model and then supervise the strong model with enhanced weak human supervision.\nTo make iterative empirical progress, we consider an analogy: can we use a strong model to improve weak model supervision and then use it to supervise the strong model?\nWe empirically test it by finetuning a small weak model on ground truth labels with the additional help from a large strong model, and then finetuning the strong model on labels generated by the weak model.\nWe find that debate can assist a weak model in extracting trustworthy information from an untrustworthy strong model, which provides leverage as context on samples when training a weak model.\nWe also show that an ensemble of weak models helps exploit long arguments generated by strong model debaters and obtain a more robust supervision estimate.\nExtensive experiments on the OpenAI weak-to-strong NLP benchmarks show that the combination approach leads to better alignment, which indicates that debate has the potential to help weak-to-strong generalization.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2501.13124",
+      "arxivId": "2501.13124",
+      "url": "https://www.semanticscholar.org/paper/f713b439266e6cc1415025da056f1304f2b78b8a",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "27410-27418"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ed21b3d848dcf5e6166214991c647779ed55a0c3",
+      "title": "The Road to Artificial SuperIntelligence: A Comprehensive Survey of Superalignment",
+      "authors": [
+        {
+          "name": "Hyunjin Kim",
+          "authorId": "2336975569"
+        },
+        {
+          "name": "Xiaoyuan Yi",
+          "authorId": "2258961742"
+        },
+        {
+          "name": "J. Bak",
+          "authorId": "2287422229"
+        },
+        {
+          "name": "Jing Yao",
+          "authorId": "2237129499"
+        },
+        {
+          "name": "Jianxun Lian",
+          "authorId": "2813328"
+        },
+        {
+          "name": "Muhua Huang",
+          "authorId": "2336922270"
+        },
+        {
+          "name": "Shitong Duan",
+          "authorId": "2258959896"
+        },
+        {
+          "name": "Xing Xie",
+          "authorId": "2289847313"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The emergence of large language models (LLMs) has sparkedthe discussion on Artificial Superintelligence (ASI), a hypothetical AI system surpassing human intelligence. Though ASI is still hypothetical and far from current AI capabilities, existing alignment methods struggle to guide such advanced AI ensure its safety in the future. It is essential to discuss the alignment of such AI now. Superalignment, the alignment of AI at superhuman levels of capability systems with human values and safety requirements, aims to address two primary goals: scalability in supervision to provide high-quality guidance signals and robust governance to ensure alignment with human values. In this survey, we review the original scalable oversight problem and corresponding methods and potential solutions for superalignment. Specifically, we introduce the challenges and limitations of current alignment paradigms in addressing the superalignment problem. Then we review scalable oversight methods for superalignment. Finally, we discuss the key challenges and propose pathways for the safe and continual improvement of future AI systems. By comprehensively reviewing the current literature, our goal is provide a systematical introduction of existing methods, analyze their strengths and limitations, and discuss potential future directions.",
+      "citationCount": 2,
+      "doi": "10.70777/si.v2i1.13963",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ed21b3d848dcf5e6166214991c647779ed55a0c3",
+      "venue": "Robotics",
+      "journal": {
+        "name": "SuperIntelligence - Robotics - Safety &amp; Alignment"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5a3dc7a987e553705d2e309c2619ef9f1cda102c",
+      "title": "Artificial Intelligence-driven prediction of Drug\u2013Herb Interactions: A critical need in India\u2019s pluralistic health culture and Pharmacovigilance framework",
+      "authors": [
+        {
+          "name": "Rammanohar Puthiyedath",
+          "authorId": "1994724958"
+        },
+        {
+          "name": "M. Sujithra",
+          "authorId": "2397244694"
+        },
+        {
+          "name": "Prema Nedungadi",
+          "authorId": "2857425"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n \n The Health landscape of India is pluralistic, with traditional medical systems termed as Ayush, i.e., Ayurveda, Yoga and Naturopathy, Siddha, Sowa-Rigpa, Unani, and Homeopathy, coexisting with modern medicine. There is no structured oversight or formal guidelines followed in the integration of these medical systems, except that they are patient-driven. This unsupervised interface initiates a crucial safety challenge: Drug\u2013Herb Interactions (DHIs). The polyherbal and phytochemical cocktail profile of traditional medicines/formulations creates a platform for interactions with modern medicines that are unpredictable. The numerous traditional formulations belonging to multiple medical systems, as well as modern drugs and formulations, make the experimental testing of DHI very exhaustive and infeasible. This paper recommends Artificial Intelligence (AI) as a data-driven and scalable approach for identifying, predicting, and validating potential DHIs. Making use of the available phytochemical and pharmacodynamic data of herbs, AI can generate predictive maps of DHI. Through progressive validation \u2013\n in silico, in vitro, in vivo\n , and clinical studies \u2013 the accuracy can be improved. This predictive framework can be incorporated into India\u2019s Pharmacovigilance (PV) Programme for ASU and H Drugs, thus shifting safety monitoring to a proactive mode from a basic reactive mode. Early prediction and identification of DHIs through AI-driven PV could revolutionize integrative health care, improving decision-making and safe concurrent use of traditional and modern medicines. This blending of digital intelligence and traditional wisdom affirms Ayurveda\u2019s epistemic ideal of\n Yukti\n \u2013 rational synthesis. This promises to make India a global leader in evidence-based integrative medicine that is safe and efficient.\n",
+      "citationCount": 0,
+      "doi": "10.4103/ijar.ijar_347_25",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5a3dc7a987e553705d2e309c2619ef9f1cda102c",
+      "venue": "International Journal of Ayurveda Research",
+      "journal": {
+        "name": "International Journal of Ayurveda Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7c5041f20abc5502050ac85f17c4314f2142c438",
+      "title": "A Prompt Engineering Framework for Large Language Model\u2013Based Mental Health Chatbots: Conceptual Framework",
+      "authors": [
+        {
+          "name": "Sorio Boit",
+          "authorId": "2129857429"
+        },
+        {
+          "name": "Rajvardhan Patil",
+          "authorId": "2289385425"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract Background Artificial intelligence (AI), particularly large language models (LLMs), presents a significant opportunity to transform mental health care through scalable, on-demand support. While LLM-powered chatbots may help reduce barriers to care, their integration into clinical settings raises critical concerns regarding safety, reliability, and ethical oversight. A structured framework is needed to capture their benefits while addressing inherent risks. This paper introduces a conceptual model for prompt engineering, outlining core design principles for the responsible development of LLM-based mental health chatbots. Objective This paper proposes the Mental Well-Being Through Dialogue \u2013 Safeguarded and Adaptive Framework for Ethics (MIND-SAFE), a comprehensive, layered framework for prompt engineering that integrates evidence-based therapeutic models, adaptive technology, and ethical safeguards. The objective is to propose and outline a practical foundation for developing AI-driven mental health interventions that are safe, effective, and clinically relevant. Methods We outline a layered architecture for an LLM-based mental health chatbot. The design incorporates (1) an input layer with proactive risk detection; (2) a dialogue engine featuring a user state database for personalization and retrieval-augmented generation to ground responses in evidence-based therapies such as cognitive behavioral therapy, acceptance and commitment therapy, and dialectical behavior therapy; and (3) a multitiered safety system, including a postgeneration ethical filter and a continuous learning loop with therapist oversight. Results The primary contribution is the framework itself, which systematically embeds clinical principles and ethical safeguards into system design. We also propose a comparative validation strategy to evaluate the framework\u2019s added value against a baseline model. Its components are explicitly mapped to the Framework for AI Tool Assessment in Mental Health and Readiness Evaluation for AI-Mental Health Deployment and Implementation frameworks, ensuring alignment with current scholarly standards for responsible AI development. Conclusions The framework offers a practical foundation for the responsible development of LLM-based mental health support. By outlining a layered architecture and aligning it with established evaluation standards, this work offers guidance for developing AI tools that are technically capable, safe, effective, and ethically sound. Future research should prioritize empirical validation of the framework through the phased, comparative approach introduced in this paper.",
+      "citationCount": 0,
+      "doi": "10.2196/75078",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7c5041f20abc5502050ac85f17c4314f2142c438",
+      "venue": "JMIR Mental Health",
+      "journal": {
+        "name": "JMIR Mental Health",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fa0d0d4bc6dd814a2213d8797eb7362fde015b5a",
+      "title": "Offshore Asset Inspection Redefined: Expert- Validated Deep Learning for Critical Defects",
+      "authors": [
+        {
+          "name": "Urmila Gurung",
+          "authorId": "2394420590"
+        },
+        {
+          "name": "M. S. Mekala",
+          "authorId": "2394420598"
+        },
+        {
+          "name": "Carlos Francisco Moreno-Garc\u00eda",
+          "authorId": "1399137626"
+        },
+        {
+          "name": "Nikolaus Zolnhofer",
+          "authorId": "2394421607"
+        },
+        {
+          "name": "Barry Marshall",
+          "authorId": "2394419829"
+        },
+        {
+          "name": "Elyan Eyad",
+          "authorId": "2394419022"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The offshore energy industry faces challenges in maintaining ageing infrastructure, with over half of North Sea platforms past their 25-year design life. This creates a need for scalable inspection methods beyond traditional manual reviews. We present a collaborative Human-AI framework that assists in detecting structural defects whilst preserving expert oversight under challenging marine conditions. Our two-stage system first employs a lightweight classifier to filter video frames by risk level. High-risk frames are then analysed by a modified Pyramid Attention Network that performs precise defect localisation. Experts validate the results at both stages, ensuring the system's continuous improvement. To better identify rare but critical flaws, we design Enhanced Tversky, a composite loss function to mitigate severe class imbalance by explicitly prioritising rare yet safety-critical defects like cracks. Evaluation on 5,525 classified frames and 1,013 segmented images demonstrates F2 score of 87.59% and a mean IoU of 78.73%, with crack detection reaching a crucial 89.62% F2 score. The framework reduces expert review time by 3.88 x whilst maintaining safety standards, offering a practical approach to scaling offshore inspection capabilities through Human-AI collaboration.",
+      "citationCount": 0,
+      "doi": "10.1109/DSAA65442.2025.11248009",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fa0d0d4bc6dd814a2213d8797eb7362fde015b5a",
+      "venue": "International Conference on Data Science and Advanced Analytics",
+      "journal": {
+        "name": "2025 IEEE 12th International Conference on Data Science and Advanced Analytics (DSAA)",
+        "pages": "1-10"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c2c43036d6679486bd3f273777b82b8c8bffb1cf",
+      "title": "The Road to Artificial SuperIntelligence: A Comprehensive Survey of Superalignment",
+      "authors": [
+        {
+          "name": "Hyunjin Kim",
+          "authorId": "2336975569"
+        },
+        {
+          "name": "Xiaoyuan Yi",
+          "authorId": "2258961742"
+        },
+        {
+          "name": "Jing Yao",
+          "authorId": "2237129499"
+        },
+        {
+          "name": "Jianxun Lian",
+          "authorId": "2813328"
+        },
+        {
+          "name": "Muhua Huang",
+          "authorId": "2336922270"
+        },
+        {
+          "name": "Shitong Duan",
+          "authorId": "2258959896"
+        },
+        {
+          "name": "J. Bak",
+          "authorId": "2287422229"
+        },
+        {
+          "name": "Xing Xie",
+          "authorId": "2289847313"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The emergence of large language models (LLMs) has sparked the possibility of about Artificial Superintelligence (ASI), a hypothetical AI system surpassing human intelligence. However, existing alignment paradigms struggle to guide such advanced AI systems. Superalignment, the alignment of AI systems with human values and safety requirements at superhuman levels of capability aims to addresses two primary goals -- scalability in supervision to provide high-quality guidance signals and robust governance to ensure alignment with human values. In this survey, we examine scalable oversight methods and potential solutions for superalignment. Specifically, we explore the concept of ASI, the challenges it poses, and the limitations of current alignment paradigms in addressing the superalignment problem. Then we review scalable oversight methods for superalignment. Finally, we discuss the key challenges and propose pathways for the safe and continual improvement of ASI systems. By comprehensively reviewing the current literature, our goal is provide a systematical introduction of existing methods, analyze their strengths and limitations, and discuss potential future directions.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2412.16468",
+      "arxivId": "2412.16468",
+      "url": "https://www.semanticscholar.org/paper/c2c43036d6679486bd3f273777b82b8c8bffb1cf",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.16468"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ef1b306a26d9ce1771248232f15cb4b2efcb0424",
+      "title": "Combining Artificial Intelligence and Human Support in Mental Health: Digital Intervention With Comparable Effectiveness to Human-Delivered Care",
+      "authors": [
+        {
+          "name": "C. E. Palmer",
+          "authorId": "2311630472"
+        },
+        {
+          "name": "E. Marshall",
+          "authorId": "2311635980"
+        },
+        {
+          "name": "E. Millgate",
+          "authorId": "2311639128"
+        },
+        {
+          "name": "G. Warren",
+          "authorId": "2311635607"
+        },
+        {
+          "name": "M. Ewbank",
+          "authorId": "2311635851"
+        },
+        {
+          "name": "E. Cooper",
+          "authorId": "2311636812"
+        },
+        {
+          "name": "S. Lawes",
+          "authorId": "2311635490"
+        },
+        {
+          "name": "Alastair Smith",
+          "authorId": "2352895103"
+        },
+        {
+          "name": "C. Hutchins-Joss",
+          "authorId": "2311635800"
+        },
+        {
+          "name": "J. Young",
+          "authorId": "2312171830"
+        },
+        {
+          "name": "M. Bouazzaoui",
+          "authorId": "2311635421"
+        },
+        {
+          "name": "M. Margoum",
+          "authorId": "2237023447"
+        },
+        {
+          "name": "S. Healey",
+          "authorId": "2311635627"
+        },
+        {
+          "name": "L. Marshall",
+          "authorId": "2311635670"
+        },
+        {
+          "name": "S. Mehew",
+          "authorId": "2311636665"
+        },
+        {
+          "name": "R. Cummins",
+          "authorId": "153714664"
+        },
+        {
+          "name": "V. Tablan",
+          "authorId": "2095029103"
+        },
+        {
+          "name": "A. Catarino",
+          "authorId": "2311636881"
+        },
+        {
+          "name": "Andrew E Welchman",
+          "authorId": "2343308177"
+        },
+        {
+          "name": "A. D. Blackwell",
+          "authorId": "2311635798"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Background Escalating mental health demand exceeds existing clinical capacity, necessitating scalable digital solutions. However, engagement remains challenging. Conversational agents can enhance engagement by making digital programs more interactive and personalized, but they have not been widely adopted. This study evaluated a digital program for anxiety in comparison to external comparators. The program used an artificial intelligence (AI)\u2013driven conversational agent to deliver clinician-written content via machine learning, with clinician oversight and user support. Objective This study aims to evaluate the engagement, effectiveness, and safety of this structured, evidence-based digital program with human support for mild, moderate, and severe generalized anxiety. Statistical analyses sought to determine whether the program reduced anxiety more than a propensity-matched waiting control and was statistically noninferior to real-world, propensity-matched face-to-face and typed cognitive behavioral therapy (CBT). Methods Prospective participants (N=299) were recruited from the National Health Service (NHS) or social media in the United Kingdom and given access to the digital program for up to 9 weeks (study conducted from October 2023 to May 2024). End points were collected before, during, and after the digital program, as well as at a 1-month follow-up. External comparator groups were created through propensity matching of the digital program sample with NHS Talking Therapies (NHS TT) data from ieso Digital Health (typed CBT) and Dorset HealthCare (DHC) University NHS Foundation Trust (face-to-face CBT). Superiority and noninferiority analyses were conducted to compare anxiety symptom reduction (change on the 7-item Generalized Anxiety Disorder Scale [GAD-7]) between the digital program group and the external comparator groups. The program included human support, and clinician time spent per participant was calculated. Results Participants used the program for a median of 6 hours over 53 days, with 232 of the 299 (77.6%) engaged (ie, completing a median of 2 hours over 14 days). There was a large, clinically meaningful reduction in anxiety symptoms for the digital program group (per-protocol [PP; n=169]: mean GAD-7 change \u20137.4, d=1.6; intention-to-treat [ITT; n= 99]: mean GAD-7 change \u20135.4, d=1.1). The PP effect was statistically superior to the waiting control (d=1.3) and noninferior to the face-to-face CBT group (P<.001) and the typed CBT group (P<.001). Similarly, for the ITT sample, the digital program showed superiority to waiting control (d=0.8) and noninferiority to face-to-face CBT (P=.002), with noninferiority to typed CBT approaching significance (P=.06). Effects were sustained at the 1-month follow-up. Clinicians overseeing the digital program spent a mean of 1.6 hours (range 31-200 minutes) of clinician time in sessions per participant. Conclusions By combining AI and human support, the digital program achieved clinical outcomes comparable to human-delivered care, while significantly reducing the required clinician time by up to 8 times compared with global care estimates. These findings highlight the potential of technology to scale evidence-based mental health care, address unmet needs, and ultimately impact quality of life and reduce the economic burden globally. Trial Registration ISRCTN Registry ISRCTN52546704; http://www.isrctn.com/ISRCTN52546704",
+      "citationCount": 4,
+      "doi": "10.2196/69351",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ef1b306a26d9ce1771248232f15cb4b2efcb0424",
+      "venue": "Journal of Medical Internet Research",
+      "journal": {
+        "name": "Journal of Medical Internet Research",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bf315573dd90b4b518599fc8d85b762bf8c2aaf9",
+      "title": "Modeling Human Beliefs about AI Behavior for Scalable Oversight",
+      "authors": [
+        {
+          "name": "Leon Lang",
+          "authorId": "2308032767"
+        },
+        {
+          "name": "Patrick Forr'e",
+          "authorId": "51131843"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI systems advance beyond human capabilities, scalable oversight becomes critical: how can we supervise AI that exceeds our abilities? A key challenge is that human evaluators may form incorrect beliefs about AI behavior in complex tasks, leading to unreliable feedback and poor value inference. To address this, we propose modeling evaluators'beliefs to interpret their feedback more reliably. We formalize human belief models, analyze their theoretical role in value learning, and characterize when ambiguity remains. To reduce reliance on precise belief models, we introduce\"belief model covering\"as a relaxation. This motivates our preliminary proposal to use the internal representations of adapted foundation models to mimic human evaluators'beliefs. These representations could be used to learn correct values from human feedback even when evaluators misunderstand the AI's behavior. Our work suggests that modeling human beliefs can improve value learning and outlines practical research directions for implementing this approach to scalable oversight.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2502.21262",
+      "arxivId": "2502.21262",
+      "url": "https://www.semanticscholar.org/paper/bf315573dd90b4b518599fc8d85b762bf8c2aaf9",
+      "venue": "Trans. Mach. Learn. Res.",
+      "journal": {
+        "name": "Trans. Mach. Learn. Res.",
+        "volume": "2025"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0cccb55f058b8f00773a317d68bea1e4e6c34108",
+      "title": "Scalable Oversight for Superhuman AI via Recursive Self-Critiquing",
+      "authors": [
+        {
+          "name": "Xueru Wen",
+          "authorId": "2307891676"
+        },
+        {
+          "name": "Jie Lou",
+          "authorId": "2317976163"
+        },
+        {
+          "name": "Xinyu Lu",
+          "authorId": "50085043"
+        },
+        {
+          "name": "Junjie Yang",
+          "authorId": "2344894448"
+        },
+        {
+          "name": "Yanjiang Liu",
+          "authorId": "49420585"
+        },
+        {
+          "name": "Yaojie Lu",
+          "authorId": "1831434"
+        },
+        {
+          "name": "Debing Zhang",
+          "authorId": "2318585548"
+        },
+        {
+          "name": "XingYu",
+          "authorId": "2344616350"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI capabilities increasingly surpass human proficiency in complex tasks, current alignment techniques including SFT and RLHF face fundamental challenges in ensuring reliable oversight. These methods rely on direct human assessment and become untenable when AI outputs exceed human cognitive thresholds. In response to this challenge, we explore two hypotheses: (1) \\textit{Critique of critique can be easier than critique itself}, extending the widely-accepted observation that verification is easier than generation to the critique domain, as critique itself is a specialized form of generation; (2) \\textit{This difficulty relationship is recursively held}, suggesting that when direct evaluation is infeasible, performing high-order critiques (e.g., critique of critique of critique) offers a more tractable supervision pathway. We further conduct Human-AI and AI-AI experiments to investigate the potential of utilizing recursive self-critiquing for AI supervision. Our results highlight recursive critique as a promising approach for scalable AI oversight.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2502.04675",
+      "arxivId": "2502.04675",
+      "url": "https://www.semanticscholar.org/paper/0cccb55f058b8f00773a317d68bea1e4e6c34108",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.04675"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1c95784e3e376c66e2eab2f2e88d7c8cf6959b7f",
+      "title": "Safety Cases: A Scalable Approach to Frontier AI Safety",
+      "authors": [
+        {
+          "name": "Benjamin Hilton",
+          "authorId": "2330401631"
+        },
+        {
+          "name": "Marie Davidsen Buhl",
+          "authorId": "2328088845"
+        },
+        {
+          "name": "Tomasz Korbak",
+          "authorId": "2237795801"
+        },
+        {
+          "name": "Geoffrey Irving",
+          "authorId": "2330400110"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Safety cases - clear, assessable arguments for the safety of a system in a given context - are a widely-used technique across various industries for showing a decision-maker (e.g. boards, customers, third parties) that a system is safe. In this paper, we cover how and why frontier AI developers might also want to use safety cases. We then argue that writing and reviewing safety cases would substantially assist in the fulfilment of many of the Frontier AI Safety Commitments. Finally, we outline open research questions on the methodology, implementation, and technical details of safety cases.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2503.04744",
+      "arxivId": "2503.04744",
+      "url": "https://www.semanticscholar.org/paper/1c95784e3e376c66e2eab2f2e88d7c8cf6959b7f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.04744"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3d343734acb39bf91b9fd88461484fd3d9433076",
+      "title": "Tiered Agentic Oversight: A Hierarchical Multi-Agent System for AI Safety in Healthcare",
+      "authors": [
+        {
+          "name": "Y. Kim",
+          "authorId": "2107937893"
+        },
+        {
+          "name": "H. Jeong",
+          "authorId": "2299119896"
+        },
+        {
+          "name": "Chanwoo Park",
+          "authorId": "2298091351"
+        },
+        {
+          "name": "Eugene Park",
+          "authorId": "2362865475"
+        },
+        {
+          "name": "Haipeng Zhang",
+          "authorId": "2367201966"
+        },
+        {
+          "name": "Xin Liu",
+          "authorId": "2348937109"
+        },
+        {
+          "name": "Hyeonhoon Lee",
+          "authorId": "2329088002"
+        },
+        {
+          "name": "D. McDuff",
+          "authorId": "2315286830"
+        },
+        {
+          "name": "Marzyeh Ghassemi",
+          "authorId": "2279872952"
+        },
+        {
+          "name": "Cynthia Breazeal",
+          "authorId": "2287781906"
+        },
+        {
+          "name": "S. Tulebaev",
+          "authorId": "2348191300"
+        },
+        {
+          "name": "Hae Won Park",
+          "authorId": "2329047452"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.12482",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3d343734acb39bf91b9fd88461484fd3d9433076",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.12482"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ff28174512cef913b248ba88f94314338c60baf7",
+      "title": "Anti-Regulatory AI: How \"AI Safety\" is Leveraged Against Regulatory Oversight",
+      "authors": [
+        {
+          "name": "Rui-Jie Yew",
+          "authorId": "1397277309"
+        },
+        {
+          "name": "Brian Judge",
+          "authorId": "2382917212"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI companies increasingly develop and deploy privacy-enhancing technologies, bias-constraining measures, evaluation frameworks, and alignment techniques \u2014 framing them as addressing concerns related to data privacy, algorithmic fairness, and AI safety. This paper examines the ulterior function of these technologies as mechanisms of legal influence. First, we examine how encryption, federated learning, and synthetic data \u2014 presented as enhancing privacy and reducing bias \u2014 can operate as mechanisms of avoidance with existing regulations in attempts to place data operations outside the scope of traditional regulatory frameworks. Second, we investigate how emerging AI safety practices including open-source model releases, evaluations, and alignment techniques can be used as mechanisms of change that direct regulatory focus towards industry-controlled voluntary standards and self-governance. We term this phenomenon anti-regulatory AI \u2014 the deployment of ostensibly protective technologies that simultaneously shapes the terms of regulatory oversight. Our analysis additionally reveals how technologies\u2019 anti-regulatory functions are enabled through framing that legitimizes their deployment while obscuring their use as regulatory workarounds. This paper closes with a discussion of policy implications that centers on the consideration of business incentives that drive AI development and the role of technical expertise in assessing whether these technologies fulfill their purported protections.",
+      "citationCount": 1,
+      "doi": "10.1145/3757887.3763017",
+      "arxivId": "2509.22872",
+      "url": "https://www.semanticscholar.org/paper/ff28174512cef913b248ba88f94314338c60baf7",
+      "venue": "Proceedings of the 5th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization",
+      "journal": {
+        "name": "Proceedings of the 5th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "fdb89623fa40b8d9eacf0bcc353dac05386c67f1",
+      "title": "Domain-Agnostic Scalable AI Safety Ensuring Framework",
+      "authors": [
+        {
+          "name": "Beomjun Kim",
+          "authorId": "2358197029"
+        },
+        {
+          "name": "Kangyeon Kim",
+          "authorId": "2358186932"
+        },
+        {
+          "name": "Sunwoo Kim",
+          "authorId": "2358107360"
+        },
+        {
+          "name": "Yeonsang Shin",
+          "authorId": "2385466962"
+        },
+        {
+          "name": "Heejin Ahn",
+          "authorId": "2358037022"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI safety has emerged as a critical priority as these systems are increasingly deployed in real-world applications. We propose the first domain-agnostic AI safety ensuring framework that achieves strong safety guarantees while preserving high performance, grounded in rigorous theoretical foundations. Our framework includes: (1) an optimization component with chance constraints, (2) a safety classification model, (3) internal test data, (4) conservative testing procedures, (5) informative dataset quality measures, and (6) continuous approximate loss functions with gradient computation. Furthermore, to our knowledge, we mathematically establish the first scaling law in AI safety research, relating data quantity to safety-performance trade-offs. Experiments across reinforcement learning, natural language generation, and production planning validate our framework and demonstrate superior performance. Notably, in reinforcement learning, we achieve 3 collisions during 10M actions, compared with 1,000-3,000 for PPO-Lag baselines at equivalent performance levels -- a safety level unattainable by previous AI methods. We believe our framework opens a new foundation for safe AI deployment across safety-critical domains.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2504.20924",
+      "url": "https://www.semanticscholar.org/paper/fdb89623fa40b8d9eacf0bcc353dac05386c67f1",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "71016e888e77cc1c6b3319e28e42a07ae0ca0a87",
+      "title": "Survey evidence on public support for AI safety oversight",
+      "authors": [
+        {
+          "name": "\u0160t\u011bp\u00e1n Vesel\u00fd",
+          "authorId": "66869082"
+        },
+        {
+          "name": "Byungdoo Kim",
+          "authorId": "2337682980"
+        }
+      ],
+      "year": 2024,
+      "abstract": "A number of AI safety concerns are being increasingly discussed by experts, including misinformation, invasion of privacy, job displacement, and criminal misuse. Two exploratory studies conducted in Germany and Spain (combined n\u2009=\u20092864) provide evidence that the general public largely supports strict oversight over safety of commercial artificial intelligence research. Among the factors that are associated with preferences for strict oversight are age, anticipated job displacement, innovativeness, and risk, time and altruistic preferences.",
+      "citationCount": 2,
+      "doi": "10.1038/s41598-024-82977-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/71016e888e77cc1c6b3319e28e42a07ae0ca0a87",
+      "venue": "Scientific Reports",
+      "journal": {
+        "name": "Scientific Reports",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "79cdd3a41ec8f5cb050f87d38f0bc33fa16c6b3e",
+      "title": "Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety",
+      "authors": [
+        {
+          "name": "Tomasz Korbak",
+          "authorId": "2367144926"
+        },
+        {
+          "name": "Mikita Balesni",
+          "authorId": "2237797134"
+        },
+        {
+          "name": "Eliza-beth Barnes",
+          "authorId": "2312145277"
+        },
+        {
+          "name": "Y. Bengio",
+          "authorId": "2211024206"
+        },
+        {
+          "name": "Joe Benton",
+          "authorId": "2295745682"
+        },
+        {
+          "name": "Joseph Bloom",
+          "authorId": "2308099558"
+        },
+        {
+          "name": "Mark Chen",
+          "authorId": "2373556080"
+        },
+        {
+          "name": "Alan Cooney",
+          "authorId": "2283843208"
+        },
+        {
+          "name": "Allan Dafoe",
+          "authorId": "2265490911"
+        },
+        {
+          "name": "Anca Dragan",
+          "authorId": "2064066935"
+        },
+        {
+          "name": "Scott Emmons",
+          "authorId": "2353277889"
+        },
+        {
+          "name": "Owain Evans",
+          "authorId": "2326295358"
+        },
+        {
+          "name": "David Farhi",
+          "authorId": "2065430571"
+        },
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Dan Hendrycks",
+          "authorId": "2286824230"
+        },
+        {
+          "name": "Marius Hobbhahn",
+          "authorId": "2267508917"
+        },
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        },
+        {
+          "name": "Geoffrey Irving",
+          "authorId": "2330400110"
+        },
+        {
+          "name": "Erik Jenner",
+          "authorId": "2287826196"
+        },
+        {
+          "name": "Daniel Kokotajlo",
+          "authorId": "1485556711"
+        },
+        {
+          "name": "Victoria Krakovna",
+          "authorId": "2578985"
+        },
+        {
+          "name": "Shane Legg",
+          "authorId": "2265490154"
+        },
+        {
+          "name": "David Lindner",
+          "authorId": "2292262356"
+        },
+        {
+          "name": "David Luan",
+          "authorId": "2373027700"
+        },
+        {
+          "name": "Aleksander Mkadry",
+          "authorId": "2358061417"
+        },
+        {
+          "name": "Julian Michael",
+          "authorId": "2371074117"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Dave Orr",
+          "authorId": "2353278210"
+        },
+        {
+          "name": "J. Pachocki",
+          "authorId": "2713380"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2260838675"
+        },
+        {
+          "name": "Mary Phuong",
+          "authorId": "145115235"
+        },
+        {
+          "name": "Fabien Roger",
+          "authorId": "2197780120"
+        },
+        {
+          "name": "Joshua Saxe",
+          "authorId": "2273413914"
+        },
+        {
+          "name": "Buck Shlegeris",
+          "authorId": "79384063"
+        },
+        {
+          "name": "Mart\u00edn Soto",
+          "authorId": "2371073332"
+        },
+        {
+          "name": "Eric Steinberger",
+          "authorId": "2373385095"
+        },
+        {
+          "name": "Jasmine Wang",
+          "authorId": "2372634728"
+        },
+        {
+          "name": "Wojciech Zaremba",
+          "authorId": "2307452791"
+        },
+        {
+          "name": "Bowen Baker",
+          "authorId": "2274766907"
+        },
+        {
+          "name": "Rohin Shah",
+          "authorId": "2359788174"
+        },
+        {
+          "name": "Vladimir Mikulik",
+          "authorId": "148305440"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI systems that\"think\"in human language offer a unique opportunity for AI safety: we can monitor their chains of thought (CoT) for the intent to misbehave. Like all other known AI oversight methods, CoT monitoring is imperfect and allows some misbehavior to go unnoticed. Nevertheless, it shows promise and we recommend further research into CoT monitorability and investment in CoT monitoring alongside existing safety methods. Because CoT monitorability may be fragile, we recommend that frontier model developers consider the impact of development decisions on CoT monitorability.",
+      "citationCount": 64,
+      "doi": "10.48550/arXiv.2507.11473",
+      "arxivId": "2507.11473",
+      "url": "https://www.semanticscholar.org/paper/79cdd3a41ec8f5cb050f87d38f0bc33fa16c6b3e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.11473"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e4a5d94e72f7ef540b98991f5e01b8ae022cc8d7",
+      "title": "On scalable oversight with weak LLMs judging strong LLMs",
+      "authors": [
+        {
+          "name": "Zachary Kenton",
+          "authorId": "40947466"
+        },
+        {
+          "name": "Noah Y. Siegel",
+          "authorId": "2310231820"
+        },
+        {
+          "name": "J'anos Kram'ar",
+          "authorId": "2223767739"
+        },
+        {
+          "name": "Jonah Brown-Cohen",
+          "authorId": "1400348545"
+        },
+        {
+          "name": "Samuel Albanie",
+          "authorId": "2310231640"
+        },
+        {
+          "name": "Jannis Bulian",
+          "authorId": "2362210"
+        },
+        {
+          "name": "Rishabh Agarwal",
+          "authorId": "2253488622"
+        },
+        {
+          "name": "David Lindner",
+          "authorId": "2292262356"
+        },
+        {
+          "name": "Yunhao Tang",
+          "authorId": "2310388834"
+        },
+        {
+          "name": "Noah D. Goodman",
+          "authorId": "2265069313"
+        },
+        {
+          "name": "Rohin Shah",
+          "authorId": "2290032398"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Scalable oversight protocols aim to enable humans to accurately supervise superhuman AI. In this paper we study debate, where two AI's compete to convince a judge; consultancy, where a single AI tries to convince a judge that asks questions; and compare to a baseline of direct question-answering, where the judge just answers outright without the AI. We use large language models (LLMs) as both AI agents and as stand-ins for human judges, taking the judge models to be weaker than agent models. We benchmark on a diverse range of asymmetries between judges and agents, extending previous work on a single extractive QA task with information asymmetry, to also include mathematics, coding, logic and multimodal reasoning asymmetries. We find that debate outperforms consultancy across all tasks when the consultant is randomly assigned to argue for the correct/incorrect answer. Comparing debate to direct question answering, the results depend on the type of task: in extractive QA tasks with information asymmetry debate outperforms direct question answering, but in other tasks without information asymmetry the results are mixed. Previous work assigned debaters/consultants an answer to argue for. When we allow them to instead choose which answer to argue for, we find judges are less frequently convinced by the wrong answer in debate than in consultancy. Further, we find that stronger debater models increase judge accuracy, though more modestly than in previous studies.",
+      "citationCount": 62,
+      "doi": "10.48550/arXiv.2407.04622",
+      "arxivId": "2407.04622",
+      "url": "https://www.semanticscholar.org/paper/e4a5d94e72f7ef540b98991f5e01b8ae022cc8d7",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.04622"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b06a38a1d5166fb5931aa7f5c0b7e2198689aad1",
+      "title": "Scaling Laws For Scalable Oversight",
+      "authors": [
+        {
+          "name": "Joshua Engels",
+          "authorId": "2302803624"
+        },
+        {
+          "name": "David D. Baek",
+          "authorId": "2283307513"
+        },
+        {
+          "name": "Subhash Kantamneni",
+          "authorId": "2300175783"
+        },
+        {
+          "name": "Max Tegmark",
+          "authorId": "2256989384"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Scalable oversight, the process by which weaker AI systems supervise stronger ones, has been proposed as a key strategy to control future superintelligent systems. However, it is still unclear how scalable oversight itself scales. To address this gap, we propose a framework that quantifies the probability of successful oversight as a function of the capabilities of the overseer and the system being overseen. Specifically, our framework models oversight as a game between capability-mismatched players; the players have oversight-specific Elo scores that are a piecewise-linear function of their general intelligence, with two plateaus corresponding to task incompetence and task saturation. We validate our framework with a modified version of the game Nim and then apply it to four oversight games: Mafia, Debate, Backdoor Code and Wargames. For each game, we find scaling laws that approximate how domain performance depends on general AI system capability. We then build on our findings in a theoretical study of Nested Scalable Oversight (NSO), a process in which trusted models oversee untrusted stronger models, which then become the trusted models in the next step. We identify conditions under which NSO succeeds and derive numerically (and in some cases analytically) the optimal number of oversight levels to maximize the probability of oversight success. We also apply our theory to our four oversight games, where we find that NSO success rates at a general Elo gap of 400 are 13.5% for Mafia, 51.7% for Debate, 10.0% for Backdoor Code, and 9.4% for Wargames; these rates decline further when overseeing stronger systems.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2504.18530",
+      "arxivId": "2504.18530",
+      "url": "https://www.semanticscholar.org/paper/b06a38a1d5166fb5931aa7f5c0b7e2198689aad1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.18530"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "550d330b03672062edb21cd3fddff1a946c784b6",
+      "title": "A Benchmark for Scalable Oversight Protocols",
+      "authors": [
+        {
+          "name": "Abhimanyu Pallavi Sudhir",
+          "authorId": "71029999"
+        },
+        {
+          "name": "Jackson Kaunismaa",
+          "authorId": "2354175840"
+        },
+        {
+          "name": "Arjun Panickssery",
+          "authorId": "2279023095"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI agents surpass human capabilities, scalable oversight -- the problem of effectively supplying human feedback to potentially superhuman AI models -- becomes increasingly critical to ensure alignment. While numerous scalable oversight protocols have been proposed, they lack a systematic empirical framework to evaluate and compare them. While recent works have tried to empirically study scalable oversight protocols -- particularly Debate -- we argue that the experiments they conduct are not generalizable to other protocols. We introduce the scalable oversight benchmark, a principled framework for evaluating human feedback mechanisms based on our agent score difference (ASD) metric, a measure of how effectively a mechanism advantages truth-telling over deception. We supply a Python package to facilitate rapid and competitive evaluation of scalable oversight protocols on our benchmark, and conduct a demonstrative experiment benchmarking Debate.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2504.03731",
+      "arxivId": "2504.03731",
+      "url": "https://www.semanticscholar.org/paper/550d330b03672062edb21cd3fddff1a946c784b6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.03731"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cc47eb48129d018dd2ffeb6f7d635e1868d43cf5",
+      "title": "The Oversight Game: Learning to Cooperatively Balance an AI Agent's Safety and Autonomy",
+      "authors": [
+        {
+          "name": "William Overman",
+          "authorId": "2308469326"
+        },
+        {
+          "name": "Mohsen Bayati",
+          "authorId": "2308470118"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As increasingly capable agents are deployed, a central safety question is how to retain meaningful human control without modifying the underlying system. We study a minimal control interface where an agent chooses whether to act autonomously (play) or defer (ask), while a human simultaneously chooses whether to be permissive (trust) or to engage in oversight (oversee). If the agent defers, the human's choice determines the outcome, potentially leading to a corrective action or a system shutdown. We model this interaction as a two-player Markov Game. Our analysis focuses on cases where this game qualifies as a Markov Potential Game (MPG), a class of games where we can provide an alignment guarantee: under a structural assumption on the human's value function, any decision by the agent to act more autonomously that benefits itself cannot harm the human's value. We also analyze extensions to this MPG framework. Theoretically, this perspective provides conditions for a specific form of intrinsic alignment. If the reward structures of the human-agent game meet these conditions, we have a formal guarantee that the agent improving its own outcome will not harm the human's. Practically, this model motivates a transparent control layer with predictable incentives where the agent learns to defer when risky and act when safe, while its pretrained policy and the environment's reward structure remain untouched. Our gridworld simulation shows that through independent learning, the agent and human discover their optimal oversight roles. The agent learns to ask when uncertain and the human learns when to oversee, leading to an emergent collaboration that avoids safety violations introduced post-training. This demonstrates a practical method for making misaligned models safer after deployment.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.26752",
+      "arxivId": "2510.26752",
+      "url": "https://www.semanticscholar.org/paper/cc47eb48129d018dd2ffeb6f7d635e1868d43cf5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.26752"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "50d1eeb8678a267d4759bd7418457998c0135d90",
+      "title": "Scalable AI Safety via Doubly-Efficient Debate",
+      "authors": [
+        {
+          "name": "Jonah Brown-Cohen",
+          "authorId": "1400348545"
+        },
+        {
+          "name": "Geoffrey Irving",
+          "authorId": "2268308178"
+        },
+        {
+          "name": "Georgios Piliouras",
+          "authorId": "2278826360"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The emergence of pre-trained AI systems with powerful capabilities across a diverse and ever-increasing set of complex domains has raised a critical challenge for AI safety as tasks can become too complicated for humans to judge directly. Irving et al. [2018] proposed a debate method in this direction with the goal of pitting the power of such AI models against each other until the problem of identifying (mis)-alignment is broken down into a manageable subtask. While the promise of this approach is clear, the original framework was based on the assumption that the honest strategy is able to simulate deterministic AI systems for an exponential number of steps, limiting its applicability. In this paper, we show how to address these challenges by designing a new set of debate protocols where the honest strategy can always succeed using a simulation of a polynomial number of steps, whilst being able to verify the alignment of stochastic AI systems, even when the dishonest strategy is allowed to use exponentially many simulation steps.",
+      "citationCount": 35,
+      "doi": "10.48550/arXiv.2311.14125",
+      "arxivId": "2311.14125",
+      "url": "https://www.semanticscholar.org/paper/50d1eeb8678a267d4759bd7418457998c0135d90",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2311.14125"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "bb0ae58ac79476ae59ca39f3df0ebfc92ee7f1b6",
+      "title": "Scalable Oversight via Partitioned Human Supervision",
+      "authors": [
+        {
+          "name": "Ren Yin",
+          "authorId": "2387868312"
+        },
+        {
+          "name": "Takashi Ishida",
+          "authorId": "2069409929"
+        },
+        {
+          "name": "Masashi Sugiyama",
+          "authorId": "2363581400"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As artificial intelligence (AI) systems approach and surpass expert human performance across a broad range of tasks, obtaining high-quality human supervision for evaluation and training becomes increasingly challenging. Our focus is on tasks that require deep knowledge and skills of multiple domains. Unfortunately, even the best human experts are knowledgeable only in a single narrow area, and will not be able to evaluate the correctness of advanced AI systems on such superhuman tasks. However, based on their narrow expertise, humans may provide a weak signal, i.e., a complementary label indicating an option that is incorrect. For example, a cardiologist could state that\"this is not related to cardiology,''even if they cannot identify the true disease. Based on this weak signal, we propose a scalable oversight framework that enables us to evaluate frontier AI systems without the need to prepare the ground truth. We derive an unbiased estimator of top-1 accuracy from complementary labels and quantify how many complementary labels are needed to match the variance of ordinary labels. We further introduce two estimators to combine scarce ordinary labels with abundant complementary labels. We provide finite-sample deviation guarantees for both complementary-only and the mixed estimators. Empirically, we show that we can evaluate the output of large language models without the ground truth, if we have complementary labels. We further show that we can train an AI system with such weak signals: we show how we can design an agentic AI system automatically that can perform better with this partitioned human supervision. Our code is available at https://github.com/R-Yin-217/Scalable-Oversight-via-Human-Partitioned-Supervision.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.22500",
+      "arxivId": "2510.22500",
+      "url": "https://www.semanticscholar.org/paper/bb0ae58ac79476ae59ca39f3df0ebfc92ee7f1b6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.22500"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "13ea3e2be58c78ee2f3544a34cef73c197ef735f",
+      "title": "Confirmation bias: A challenge for scalable oversight",
+      "authors": [
+        {
+          "name": "Gabriel Recchia",
+          "authorId": "2352942291"
+        },
+        {
+          "name": "Chatrik Singh Mangat",
+          "authorId": "2161433650"
+        },
+        {
+          "name": "Jinu Nyachhyon",
+          "authorId": "2225805109"
+        },
+        {
+          "name": "Mridul Sharma",
+          "authorId": "2332894534"
+        },
+        {
+          "name": "Callum Canavan",
+          "authorId": "2133222610"
+        },
+        {
+          "name": "Dylan Epstein-Gross",
+          "authorId": "2373603858"
+        },
+        {
+          "name": "Muhammed Abdulbari",
+          "authorId": "2373613575"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Scalable oversight protocols aim to empower evaluators to accurately verify AI models more capable than themselves. However, human evaluators are subject to biases that can lead to systematic errors. We conduct two studies examining the performance of simple oversight protocols where evaluators know that the model is\"correct most of the time, but not all of the time\". We find no overall advantage for the tested protocols, although in Study 1, showing arguments in favor of both answers improves accuracy in cases where the model is incorrect. In Study 2, participants in both groups become more confident in the system's answers after conducting online research, even when those answers are incorrect. We also reanalyze data from prior work that was more optimistic about simple protocols, finding that human evaluators possessing knowledge absent from models likely contributed to their positive results--an advantage that diminishes as models continue to scale in capability. These findings underscore the importance of testing the degree to which oversight protocols are robust to evaluator biases, whether they outperform simple deference to the model under evaluation, and whether their performance scales with increasing problem difficulty and model capability.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.19486",
+      "arxivId": "2507.19486",
+      "url": "https://www.semanticscholar.org/paper/13ea3e2be58c78ee2f3544a34cef73c197ef735f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.19486"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "87362d2f42a4b72de95787763b896540b7e6d80a",
+      "title": "FindTheFlaws: Annotated Errors for Detecting Flawed Reasoning and Scalable Oversight Research",
+      "authors": [
+        {
+          "name": "Gabriel Recchia",
+          "authorId": "2352942291"
+        },
+        {
+          "name": "Chatrik Singh Mangat",
+          "authorId": "2161433650"
+        },
+        {
+          "name": "Issac Li",
+          "authorId": "2352930349"
+        },
+        {
+          "name": "Gayatri Krishnakumar",
+          "authorId": "2326840804"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI models tackle increasingly complex problems, ensuring reliable human oversight becomes more challenging due to the difficulty of verifying solutions. Approaches to scaling AI supervision include debate, in which two agents engage in structured dialogue to help a judge evaluate claims; critique, in which models identify potential flaws in proposed solutions; and prover-verifier games, in which a capable 'prover' model generates solutions that must be verifiable by a less capable 'verifier'. Evaluations of the scalability of these and similar approaches to difficult problems benefit from datasets that include (1) long-form expert-verified correct solutions and (2) long-form flawed solutions with annotations highlighting specific errors, but few are available. To address this gap, we present FindTheFlaws, a group of five diverse datasets spanning medicine, mathematics, science, coding, and the Lojban language. Each dataset contains questions and long-form solutions with expert annotations validating their correctness or identifying specific error(s) in the reasoning. We evaluate frontier models' critiquing capabilities and observe a range of performance that can be leveraged for scalable oversight experiments: models performing more poorly on particular datasets can serve as judges/verifiers for more capable models. Additionally, for some task/dataset combinations, expert baselines exceed even top model performance, making them more beneficial for scalable oversight experiments.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2503.22989",
+      "arxivId": "2503.22989",
+      "url": "https://www.semanticscholar.org/paper/87362d2f42a4b72de95787763b896540b7e6d80a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.22989"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "728ff8a36b0a2fe9b064854c1b2f12341cb3edd9",
+      "title": "Regulatory Frameworks for Generative AI Enabled Digital Mental Health Devices: Safety, Transparency, and Post-Market Oversight",
+      "authors": [
+        {
+          "name": "Satyadhar Joshi",
+          "authorId": "2095547"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\u2014The rapid growth of generative artificial intelligence in digital mental health interventions offers significant opportunities to improve mental healthcare access while creating new regulatory challenges. This paper responds to recent U.S. Food and Drug Administration initiatives, including the September 2025 Digital Health Advisory Committee meeting, by proposing comprehensive regulatory frameworks for generative AI digital mental health devices. We analyze the current regulatory landscape, identifying gaps in U.S., international, and state-level governance structures. Through quantitative foundations including mathematical models for risk assessment, objective functions for regulatory optimization, and the 4 lens framework for significant change evaluation, we establish evidence-based approaches for device assessment. We present architectural diagrams covering lifecycle regulatory pathways, multi-layered safety architectures, risk-tiered assurance frameworks, and multi-stakeholder governance models. Drawing from clinical evidence showing both potential benefits and significant risks, we advocate for balanced regulatory approaches. Our framework integrates technical safe-guards, ethical considerations based on care ethics, transparency requirements, and post-market monitoring systems. We provide implementation roadmaps, quantitative algorithms for regulatory decisions, and cost-benefit analyses to support practical deployment. The paper concludes with specific recommendations for risk-based classification, adaptive oversight systems, international coordination, and enhanced professional involvement to ensure these technologies provide therapeutic benefits while maintaining strong patient safety standards throughout their lifecycle. This is a review and synthesis paper that summarizes and organizes existing proposals, frameworks, and discussions from current literature; the author does not claim original authorship of the regulatory frameworks presented but rather provides a systematic analysis of the current discourse.",
+      "citationCount": 0,
+      "doi": "10.2139/ssrn.5888882",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/728ff8a36b0a2fe9b064854c1b2f12341cb3edd9",
+      "venue": "Social Science Research Network",
+      "journal": {
+        "name": "SSRN Electronic Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "58e527b45daa80191083937d8da2cfd4be9f00b3",
+      "title": "Improving Weak-to-Strong Generalization with Scalable Oversight and Ensemble Learning",
+      "authors": [
+        {
+          "name": "Jitao Sang",
+          "authorId": "2266388216"
+        },
+        {
+          "name": "Yuhang Wang",
+          "authorId": "2266722675"
+        },
+        {
+          "name": "Jing Zhang",
+          "authorId": "2266777463"
+        },
+        {
+          "name": "Yanxu Zhu",
+          "authorId": "2268499891"
+        },
+        {
+          "name": "Chao Kong",
+          "authorId": "2218906158"
+        },
+        {
+          "name": "Junhong Ye",
+          "authorId": "2282448323"
+        },
+        {
+          "name": "Shuyu Wei",
+          "authorId": "2268518561"
+        },
+        {
+          "name": "Jinlin Xiao",
+          "authorId": "2282252674"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper presents a follow-up study to OpenAI's recent superalignment work on Weak-to-Strong Generalization (W2SG). Superalignment focuses on ensuring that high-level AI systems remain consistent with human values and intentions when dealing with complex, high-risk tasks. The W2SG framework has opened new possibilities for empirical research in this evolving field. Our study simulates two phases of superalignment under the W2SG framework: the development of general superhuman models and the progression towards superintelligence. In the first phase, based on human supervision, the quality of weak supervision is enhanced through a combination of scalable oversight and ensemble learning, reducing the capability gap between weak teachers and strong students. In the second phase, an automatic alignment evaluator is employed as the weak supervisor. By recursively updating this auto aligner, the capabilities of the weak teacher models are synchronously enhanced, achieving weak-to-strong supervision over stronger student models.We also provide an initial validation of the proposed approach for the first phase. Using the SciQ task as example, we explore ensemble learning for weak teacher models through bagging and boosting. Scalable oversight is explored through two auxiliary settings: human-AI interaction and AI-AI debate. Additionally, the paper discusses the impact of improved weak supervision on enhancing weak-to-strong generalization based on in-context learning. Experiment code and dataset will be released at https://github.com/ADaM-BJTU/W2SG.",
+      "citationCount": 17,
+      "doi": "10.48550/arXiv.2402.00667",
+      "arxivId": "2402.00667",
+      "url": "https://www.semanticscholar.org/paper/58e527b45daa80191083937d8da2cfd4be9f00b3",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.00667"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bfbd6522e06c1c21f161c985e1677913669d9645",
+      "title": "Development and Commercialization Pathways of AI Medical Devices in the United States: Implications for Safety and Regulatory Oversight",
+      "authors": [
+        {
+          "name": "Branden Lee",
+          "authorId": "2364983079"
+        },
+        {
+          "name": "Shivam Patel",
+          "authorId": "2365049853"
+        },
+        {
+          "name": "Crystal Favorito",
+          "authorId": "2088869586"
+        },
+        {
+          "name": "Sara Sandri",
+          "authorId": "2364952663"
+        },
+        {
+          "name": "M. Jennings",
+          "authorId": "2060114557"
+        },
+        {
+          "name": "Tinglong Dai",
+          "authorId": "2254257875"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1056/aira2500061",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bfbd6522e06c1c21f161c985e1677913669d9645",
+      "venue": "NEJM AI",
+      "journal": {
+        "name": "NEJM AI"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "35df81ea3e3799191b29ac661953cfeea4f353c0",
+      "title": "A theoretical case-study of Scalable Oversight in Hierarchical Reinforcement Learning",
+      "authors": [
+        {
+          "name": "Tom Yan",
+          "authorId": "2344249557"
+        },
+        {
+          "name": "Zachary Chase Lipton",
+          "authorId": "32219137"
+        }
+      ],
+      "year": 2024,
+      "abstract": "A key source of complexity in next-generation AI models is the size of model outputs, making it time-consuming to parse and provide reliable feedback on. To ensure such models are aligned, we will need to bolster our understanding of scalable oversight and how to scale up human feedback. To this end, we study the challenges of scalable oversight in the context of goal-conditioned hierarchical reinforcement learning. Hierarchical structure is a promising entrypoint into studying how to scale up human feedback, which in this work we assume can only be provided for model outputs below a threshold size. In the cardinal feedback setting, we develop an apt sub-MDP reward and algorithm that allows us to acquire and scale up low-level feedback for learning with sublinear regret. In the ordinal feedback setting, we show the necessity of both high-and low-level feedback, and develop a hierarchical experimental design algorithm that efficiently acquires both types of feedback for learning. Altogether, our work aims to consolidate the foundations of scalable oversight, formalizing and studying the various challenges thereof.",
+      "citationCount": 1,
+      "doi": "10.52202/079017-0858",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/35df81ea3e3799191b29ac661953cfeea4f353c0",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "Advances in Neural Information Processing Systems 37"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "99ca5162211a895a5dfbff9d7e36e21e09ca646e",
+      "title": "Measuring Progress on Scalable Oversight for Large Language Models",
+      "authors": [
+        {
+          "name": "Sam Bowman",
+          "authorId": "1799822"
+        },
+        {
+          "name": "Jeeyoon Hyun",
+          "authorId": "2190108479"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "3439053"
+        },
+        {
+          "name": "Edwin Chen",
+          "authorId": "2113754237"
+        },
+        {
+          "name": "Craig Pettit",
+          "authorId": "2190107304"
+        },
+        {
+          "name": "Scott Heiner",
+          "authorId": "1666266773"
+        },
+        {
+          "name": "Kamil\u0117 Luko\u0161i\u016bt\u0117",
+          "authorId": "2105347564"
+        },
+        {
+          "name": "Amanda Askell",
+          "authorId": "119609682"
+        },
+        {
+          "name": "Andy Jones",
+          "authorId": "2149890773"
+        },
+        {
+          "name": "Anna Chen",
+          "authorId": "2111073313"
+        },
+        {
+          "name": "Anna Goldie",
+          "authorId": "46684455"
+        },
+        {
+          "name": "Azalia Mirhoseini",
+          "authorId": "1861312"
+        },
+        {
+          "name": "C. McKinnon",
+          "authorId": "2190108315"
+        },
+        {
+          "name": "Chris Olah",
+          "authorId": "2287268442"
+        },
+        {
+          "name": "D. Amodei",
+          "authorId": "2154608472"
+        },
+        {
+          "name": "Dario Amodei",
+          "authorId": "2698777"
+        },
+        {
+          "name": "Dawn Drain",
+          "authorId": "1943097969"
+        },
+        {
+          "name": "Dustin Li",
+          "authorId": "2108506462"
+        },
+        {
+          "name": "Eli Tran-Johnson",
+          "authorId": "2175781319"
+        },
+        {
+          "name": "John Kernion",
+          "authorId": "1583434563"
+        },
+        {
+          "name": "Jamie Kerr",
+          "authorId": "2067765208"
+        },
+        {
+          "name": "J. Mueller",
+          "authorId": "2190111475"
+        },
+        {
+          "name": "Jeffrey Ladish",
+          "authorId": "70988670"
+        },
+        {
+          "name": "J. Landau",
+          "authorId": "6904213"
+        },
+        {
+          "name": "Kamal Ndousse",
+          "authorId": "1978097132"
+        },
+        {
+          "name": "Liane Lovitt",
+          "authorId": "2154608229"
+        },
+        {
+          "name": "Nelson Elhage",
+          "authorId": "2866708"
+        },
+        {
+          "name": "Nicholas Schiefer",
+          "authorId": "2833768"
+        },
+        {
+          "name": "Nicholas Joseph",
+          "authorId": "2117706920"
+        },
+        {
+          "name": "Noem'i Mercado",
+          "authorId": "2190107517"
+        },
+        {
+          "name": "Nova Dassarma",
+          "authorId": "2142833890"
+        },
+        {
+          "name": "Robin Larson",
+          "authorId": "48810415"
+        },
+        {
+          "name": "Sam McCandlish",
+          "authorId": "52238703"
+        },
+        {
+          "name": "S. Kundu",
+          "authorId": "144454113"
+        },
+        {
+          "name": "Scott Johnston",
+          "authorId": "2154610174"
+        },
+        {
+          "name": "Shauna Kravec",
+          "authorId": "49604482"
+        },
+        {
+          "name": "S. E. Showk",
+          "authorId": "2154609053"
+        },
+        {
+          "name": "Stanislav Fort",
+          "authorId": "30176974"
+        },
+        {
+          "name": "Timothy Telleen-Lawton",
+          "authorId": "1419532638"
+        },
+        {
+          "name": "Tom B. Brown",
+          "authorId": "31035595"
+        },
+        {
+          "name": "T. Henighan",
+          "authorId": "103143311"
+        },
+        {
+          "name": "Tristan Hume",
+          "authorId": "2162194147"
+        },
+        {
+          "name": "Yuntao Bai",
+          "authorId": "1486307451"
+        },
+        {
+          "name": "Zac Hatfield-Dodds",
+          "authorId": "1573482302"
+        },
+        {
+          "name": "Benjamin Mann",
+          "authorId": "2056658938"
+        },
+        {
+          "name": "Jared Kaplan",
+          "authorId": "2053807409"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Developing safe and useful general-purpose AI systems will require us to make progress on scalable oversight: the problem of supervising systems that potentially outperform us on most skills relevant to the task at hand. Empirical work on this problem is not straightforward, since we do not yet have systems that broadly exceed our abilities. This paper discusses one of the major ways we think about this problem, with a focus on ways it can be studied empirically. We first present an experimental design centered on tasks for which human specialists succeed but unaided humans and current general AI systems fail. We then present a proof-of-concept experiment meant to demonstrate a key feature of this experimental design and show its viability with two question-answering tasks: MMLU and time-limited QuALITY. On these tasks, we find that human participants who interact with an unreliable large-language-model dialog assistant through chat -- a trivial baseline strategy for scalable oversight -- substantially outperform both the model alone and their own unaided performance. These results are an encouraging sign that scalable oversight will be tractable to study with present models and bolster recent findings that large language models can productively assist humans with difficult tasks.",
+      "citationCount": 172,
+      "doi": "10.48550/arXiv.2211.03540",
+      "arxivId": "2211.03540",
+      "url": "https://www.semanticscholar.org/paper/99ca5162211a895a5dfbff9d7e36e21e09ca646e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2211.03540"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "584d8bdd22e1a75589700a3045c632c8403deec1",
+      "title": "International Agreements on AI Safety: Review and Recommendations for a Conditional AI Safety Treaty",
+      "authors": [
+        {
+          "name": "Rebecca Scholefield",
+          "authorId": "2352007692"
+        },
+        {
+          "name": "Samuel Martin",
+          "authorId": "2352199977"
+        },
+        {
+          "name": "Otto Barten",
+          "authorId": "2352010472"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The malicious use or malfunction of advanced general-purpose AI (GPAI) poses risks that, according to leading experts, could lead to the 'marginalisation or extinction of humanity.' To address these risks, there are an increasing number of proposals for international agreements on AI safety. In this paper, we review recent (2023-) proposals, identifying areas of consensus and disagreement, and drawing on related literature to assess their feasibility. We focus our discussion on risk thresholds, regulations, types of international agreement and five related processes: building scientific consensus, standardisation, auditing, verification and incentivisation. Based on this review, we propose a treaty establishing a compute threshold above which development requires rigorous oversight. This treaty would mandate complementary audits of models, information security and governance practices, overseen by an international network of AI Safety Institutes (AISIs) with authority to pause development if risks are unacceptable. Our approach combines immediately implementable measures with a flexible structure that can adapt to ongoing research.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2503.18956",
+      "arxivId": "2503.18956",
+      "url": "https://www.semanticscholar.org/paper/584d8bdd22e1a75589700a3045c632c8403deec1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.18956"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d925d3a525df3aa03e6b040584eb12fa29b7f6d3",
+      "title": "Ensuring AI Safety in Autonomous Vehicles: A Framework Based on ISO PAS 8800",
+      "authors": [
+        {
+          "name": "Jherrod Thomas",
+          "authorId": "2320320284"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study presents a structured exploration of ISO PAS 8800 as a dedicated safety framework addressing the unique\nchallenges posed by artificial intelligence (AI) in autonomous vehicles (AVs). The research aims to establish the necessity of a\ndistinct safety standard beyond conventional protocols, such as ISO 26262 and ISO 21448, which are insufficient to manage the\nprobabilistic, adaptive, and opaque characteristics inherent in AI- driven systems. Employing a qualitative methodological\napproach grounded in standards analysis and case-based synthesis, the study evaluates the provisions of ISO PAS 8800 across\nmultiple dimensions, risk governance, system transparency, continuous validation, and human oversight. Key findings\ndemonstrate that ISO PAS 8800 fills critical gaps left by existing safety standards, offering AI-specific safety lifecycle processes,\ninterpretability protocols, and robust risk management strategies. It intro- duces novel concepts such as Component Fault\nand Deficiency Trees (CFDTs), scenario-based validation, bounded incremental learning, and post-deployment monitoring,\nwhich are essential for certifying learning-enabled and continuously evolving AV systems. Furthermore, the framework\nemphasizes harmonization with cybersecurity standards (e.g., ISO/SAE 21434) to address adversarial vulnerabilities in AI\npipelines. ISO PAS 8800 provides a comprehensive, adaptable, and forward-compatible framework for the governance of AI\nsafety in autonomous driving. It facilitatesthe development of trustworthy, auditable, and socially accountable AV technologies,\naligning technical innovation with emerging regulatory and ethical expectations.",
+      "citationCount": 1,
+      "doi": "10.38124/ijisrt/25apr1584",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d925d3a525df3aa03e6b040584eb12fa29b7f6d3",
+      "venue": "International Journal of Innovative Science and Research Technology",
+      "journal": {
+        "name": "International Journal of Innovative Science and Research Technology"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "92292c5405c03b1851f3a880235a91df420324f4",
+      "title": "AI Safety, Alignment, and Ethics (AI SAE)",
+      "authors": [
+        {
+          "name": "Dylan Waldner",
+          "authorId": "2344749578"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper grounds ethics in evolutionary biology, viewing moral norms as adaptive mechanisms that render cooperation fitness-viable under selection pressure. Current alignment approaches add ethics post hoc, treating it as an external constraint rather than embedding it as an evolutionary strategy for cooperation. The central question is whether normative architectures can be embedded directly into AI systems to sustain human--AI cooperation (symbiosis) as capabilities scale. To address this, I propose a governance--embedding--representation pipeline linking moral representation learning to system-level design and institutional governance, treating alignment as a multi-level problem spanning cognition, optimization, and oversight. I formalize moral norm representation through the moral problem space, a learnable subspace in neural representations where cooperative norms can be encoded and causally manipulated. Using sparse autoencoders, activation steering, and causal interventions, I outline a research program for engineering moral representations and embedding them into the full semantic space -- treating competing theories of morality as empirical hypotheses about representation geometry rather than philosophical positions. Governance principles leverage these learned moral representations to regulate how cooperative behaviors evolve within the AI ecosystem. Through replicator dynamics and multi-agent game theory, I model how internal representational features can shape population-level incentives by motivating the design of sanctions and subsidies structured to yield decentralized normative institutions.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2509.24065",
+      "url": "https://www.semanticscholar.org/paper/92292c5405c03b1851f3a880235a91df420324f4",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "783c566fc06acd6b10a6679c2363d5d0cc26f0c2",
+      "title": "Measuring AI agent autonomy: Towards a scalable approach with code inspection",
+      "authors": [
+        {
+          "name": "Peter Cihon",
+          "authorId": "2205544450"
+        },
+        {
+          "name": "Merlin Stein",
+          "authorId": "2322446625"
+        },
+        {
+          "name": "Gagan Bansal",
+          "authorId": "2346837073"
+        },
+        {
+          "name": "Sam Manning",
+          "authorId": "2346836646"
+        },
+        {
+          "name": "Kevin Xu",
+          "authorId": "2330190356"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI agents are AI systems that can achieve complex goals autonomously. Assessing the level of agent autonomy is crucial for understanding both their potential benefits and risks. Current assessments of autonomy often focus on specific risks and rely on run-time evaluations -- observations of agent actions during operation. We introduce a code-based assessment of autonomy that eliminates the need to run an AI agent to perform specific tasks, thereby reducing the costs and risks associated with run-time evaluations. Using this code-based framework, the orchestration code used to run an AI agent can be scored according to a taxonomy that assesses attributes of autonomy: impact and oversight. We demonstrate this approach with the AutoGen framework and select applications.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2502.15212",
+      "arxivId": "2502.15212",
+      "url": "https://www.semanticscholar.org/paper/783c566fc06acd6b10a6679c2363d5d0cc26f0c2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.15212"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "273959e6aaa2da1245f285afc17c212ca88be46d",
+      "title": "Navigating Healthcare AI Governance: the Comprehensive Algorithmic Oversight and Stewardship Framework for Risk and Equity.",
+      "authors": [
+        {
+          "name": "Rahul Kumar",
+          "authorId": "2295594759"
+        },
+        {
+          "name": "Kyle Sporn",
+          "authorId": "2357035299"
+        },
+        {
+          "name": "E. Waisberg",
+          "authorId": "16825419"
+        },
+        {
+          "name": "J. Ong",
+          "authorId": "2113865516"
+        },
+        {
+          "name": "Phani Paladugu",
+          "authorId": "2111885684"
+        },
+        {
+          "name": "Amar S Vadhera",
+          "authorId": "2361384259"
+        },
+        {
+          "name": "Dylan Amiri",
+          "authorId": "2305966665"
+        },
+        {
+          "name": "Alex Ngo",
+          "authorId": "2276328129"
+        },
+        {
+          "name": "Ram Jagadeesan",
+          "authorId": "2335983649"
+        },
+        {
+          "name": "Alireza Tavakkoli",
+          "authorId": "2253544345"
+        },
+        {
+          "name": "Timothy Loftus",
+          "authorId": "2375799572"
+        },
+        {
+          "name": "Andrew G. Lee",
+          "authorId": "2370871897"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1007/s10728-025-00537-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/273959e6aaa2da1245f285afc17c212ca88be46d",
+      "venue": "Health Care Analysis",
+      "journal": {
+        "name": "Health care analysis : HCA : journal of health philosophy and policy"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5b89507afb4b917b641e931ac69fd640bc4b4515",
+      "title": "Human-AI Complementarity: A Goal for Amplified Oversight",
+      "authors": [
+        {
+          "name": "Rishub Jain",
+          "authorId": "22418321"
+        },
+        {
+          "name": "Sophie Bridgers",
+          "authorId": "2273670422"
+        },
+        {
+          "name": "Lili Janzer",
+          "authorId": "2275188202"
+        },
+        {
+          "name": "Rory Greig",
+          "authorId": "2123241980"
+        },
+        {
+          "name": "Tian Huey Teh",
+          "authorId": "1863888644"
+        },
+        {
+          "name": "Vladimir Mikulik",
+          "authorId": "148305440"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Human feedback is critical for aligning AI systems to human values. As AI capabilities improve and AI is used to tackle more challenging tasks, verifying quality and safety becomes increasingly challenging. This paper explores how we can leverage AI to improve the quality of human oversight. We focus on an important safety problem that is already challenging for humans: fact-verification of AI outputs. We find that combining AI ratings and human ratings based on AI rater confidence is better than relying on either alone. Giving humans an AI fact-verification assistant further improves their accuracy, but the type of assistance matters. Displaying AI explanation, confidence, and labels leads to over-reliance, but just showing search results and evidence fosters more appropriate trust. These results have implications for Amplified Oversight -- the challenge of combining humans and AI to supervise AI systems even as they surpass human expert performance.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2510.26518",
+      "arxivId": "2510.26518",
+      "url": "https://www.semanticscholar.org/paper/5b89507afb4b917b641e931ac69fd640bc4b4515",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.26518"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

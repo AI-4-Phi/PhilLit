@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "arxiv",
+  "query": "all:probing classifiers language models",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No papers found",
+      "recoverable": false
+    }
+  ]
+}

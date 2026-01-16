@@ -1,0 +1,1627 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "eliciting latent knowledge",
+  "results": [
+    {
+      "paperId": "ce89a8d1e6d9add71726bd3a4593a17cc524b281",
+      "title": "Towards eliciting latent knowledge from LLMs with mechanistic interpretability",
+      "authors": [
+        {
+          "name": "Bartosz Cywi'nski",
+          "authorId": "2275612726"
+        },
+        {
+          "name": "Emil Ryd",
+          "authorId": "2362500535"
+        },
+        {
+          "name": "Senthooran Rajamanoharan",
+          "authorId": "35185194"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As language models become more powerful and sophisticated, it is crucial that they remain trustworthy and reliable. There is concerning preliminary evidence that models may attempt to deceive or keep secrets from their operators. To explore the ability of current techniques to elicit such hidden knowledge, we train a Taboo model: a language model that describes a specific secret word without explicitly stating it. Importantly, the secret word is not presented to the model in its training data or prompt. We then investigate methods to uncover this secret. First, we evaluate non-interpretability (black-box) approaches. Subsequently, we develop largely automated strategies based on mechanistic interpretability techniques, including logit lens and sparse autoencoders. Evaluation shows that both approaches are effective in eliciting the secret word in our proof-of-concept setting. Our findings highlight the promise of these approaches for eliciting hidden knowledge and suggest several promising avenues for future work, including testing and refining these methods on more complex model organisms. This work aims to be a step towards addressing the crucial problem of eliciting secret knowledge from language models, thereby contributing to their safe and reliable deployment.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2505.14352",
+      "arxivId": "2505.14352",
+      "url": "https://www.semanticscholar.org/paper/ce89a8d1e6d9add71726bd3a4593a17cc524b281",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.14352"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6902fd1ed5b6da79ed3fa7842b8a8474dd0931d1",
+      "title": "Eliciting Latent Knowledge from Quirky Language Models",
+      "authors": [
+        {
+          "name": "Alex Troy Mallen",
+          "authorId": "2269472940"
+        },
+        {
+          "name": "Nora Belrose",
+          "authorId": "2269471977"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Eliciting Latent Knowledge (ELK) aims to find patterns in a capable neural network's activations that robustly track the true state of the world, especially in hard-to-verify cases where the model's output is untrusted. To further ELK research, we introduce 12 datasets and a corresponding suite of\"quirky\"language models (LMs) that are finetuned to make systematic errors when answering questions if and only if the keyword\"Bob\"is present in the prompt. We find that, especially in middle layers, linear probes usually report an LM's knowledge independently of what the LM outputs, enabling us to elicit the correct answer despite the model's untruthful output. The best probing method (logistic regression on contrast pairs) recovers 89% of the gap in AUROC between truthful and untruthful contexts, and 75% for questions harder than those used to train the probe. We also find that a mechanistic anomaly detection approach can flag untruthful behavior with 0.95 AUROC. Our results show promise for eliciting reliable knowledge from capable but untrusted models, and facilitates future research empirically investigating ELK methods.",
+      "citationCount": 41,
+      "doi": "10.48550/arXiv.2312.01037",
+      "arxivId": "2312.01037",
+      "url": "https://www.semanticscholar.org/paper/6902fd1ed5b6da79ed3fa7842b8a8474dd0931d1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2312.01037"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b47111f5cf2b544d29077282498a22bdaa647e16",
+      "title": "Adaptive Elicitation of Latent Information Using Natural Language",
+      "authors": [
+        {
+          "name": "Jimmy Wang",
+          "authorId": "2315439311"
+        },
+        {
+          "name": "Thomas P. Zollo",
+          "authorId": "2198489301"
+        },
+        {
+          "name": "Richard Zemel",
+          "authorId": "2329736936"
+        },
+        {
+          "name": "Hongseok Namkoong",
+          "authorId": "2339149424"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Eliciting information to reduce uncertainty about a latent entity is a critical task in many application domains, e.g., assessing individual student learning outcomes, diagnosing underlying diseases, or learning user preferences. Though natural language is a powerful medium for this purpose, large language models (LLMs) and existing fine-tuning algorithms lack mechanisms for strategically gathering information to refine their own understanding of the latent entity. To harness the generalization power and world knowledge of LLMs in developing effective information-gathering strategies, we propose an adaptive elicitation framework that actively reduces uncertainty on the latent entity. Since probabilistic modeling of an abstract latent entity is difficult, our framework adopts a predictive view of uncertainty, using a meta-learned language model to simulate future observations and enable scalable uncertainty quantification over complex natural language. Through autoregressive forward simulation, our model quantifies how new questions reduce epistemic uncertainty, enabling the development of sophisticated information-gathering strategies to choose the most informative next queries. In experiments on the 20 questions game, dynamic opinion polling, and adaptive student assessment, our method consistently outperforms baselines in identifying critical unknowns and improving downstream predictions, illustrating the promise of strategic information gathering in natural language settings.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2504.04204",
+      "arxivId": "2504.04204",
+      "url": "https://www.semanticscholar.org/paper/b47111f5cf2b544d29077282498a22bdaa647e16",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.04204"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a2004ddca9afe4a93b2a1009cafaf13bc0372183",
+      "title": "Vibe Reasoning: Eliciting Frontier AI Mathematical Capabilities -- A Case Study on IMO 2025 Problem 6",
+      "authors": [
+        {
+          "name": "Jiaao Wu",
+          "authorId": "2400363053"
+        },
+        {
+          "name": "Xian Zhang",
+          "authorId": "2190263918"
+        },
+        {
+          "name": "Fan Yang",
+          "authorId": "2343230526"
+        },
+        {
+          "name": "Yinpeng Dong",
+          "authorId": "2400905607"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We introduce Vibe Reasoning, a human-AI collaborative paradigm for solving complex mathematical problems. Our key insight is that frontier AI models already possess the knowledge required to solve challenging problems -- they simply do not know how, what, or when to apply it. Vibe Reasoning transforms AI's latent potential into manifested capability through generic meta-prompts, agentic grounding, and model orchestration. We demonstrate this paradigm through IMO 2025 Problem 6, a combinatorial optimization problem where autonomous AI systems publicly reported failures. Our solution combined GPT-5's exploratory capabilities with Gemini 3 Pro's proof strengths, leveraging agentic workflows with Python code execution and file-based memory, to derive both the correct answer (2112) and a rigorous mathematical proof. Through iterative refinement across multiple attempts, we discovered the necessity of agentic grounding and model orchestration, while human prompts evolved from problem-specific hints to generic, transferable meta-prompts. We analyze why capable AI fails autonomously, how each component addresses specific failure modes, and extract principles for effective vibe reasoning. Our findings suggest that lightweight human guidance can unlock frontier models'mathematical reasoning potential. This is ongoing work; we are developing automated frameworks and conducting broader evaluations to further validate Vibe Reasoning's generality and effectiveness.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.19287",
+      "url": "https://www.semanticscholar.org/paper/a2004ddca9afe4a93b2a1009cafaf13bc0372183",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f2fc639cb4ad58e1574f59edafb408be3c18fe91",
+      "title": "Uncovering the Latent Preferences of Slovenia\u2019s Private Forest Owners in the Context of Enhancing Forest Ecosystem Services through a Hypothetical Scheme",
+      "authors": [
+        {
+          "name": "Kaja Plevnik",
+          "authorId": "2258160177"
+        },
+        {
+          "name": "A. Japelj",
+          "authorId": "70990149"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Background and objectives: Successful policy implementation relies on understanding stakeholders\u2019 willingness to contribute to policy goals. The EU Green Deal, with strategies on forests, biodiversity, and the bioeconomy, also depends on the performance of the forestry sector, including a significant portion of privately owned forests. Materials and methods: We conducted a nationwide survey among a sample of 341 private forest owners in Slovenia (total population of 424,086). The online questionnaire had three sections: (1) knowledge and priorities regarding ecosystem services and the bioeconomy, (2) a discrete choice experiment for eliciting preferences concerning the implementation of activities supporting strategic goals originating from EU Green Deal policies, and (3) socio-economic data and future forest management objectives. Results: The results indicated heterogeneity in preferences for performing activities on private forest lands to enhance specific forest ES that contribute to policy goals. More than half of the respondents (57.6%) exhibited a reluctance to implement activities and were skeptical of higher compensation payments, whereas the rest expressed an inclination towards changing their forest management. Conclusions: Slovenia\u2019s private forest owners appear to be heterogeneous in their willingness to participate in a hypothetical ES enhancement scheme that could contribute to some EU Green Deal goals. Policymakers must recognize intrinsic motives and social norms that affect the willingness of forest owners to be engaged to increase the acceptance of solutions.",
+      "citationCount": 1,
+      "doi": "10.3390/f14122346",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f2fc639cb4ad58e1574f59edafb408be3c18fe91",
+      "venue": "Forests",
+      "journal": {
+        "name": "Forests"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "dce90e2cfe1538697bb1004a5b338e0944ac3659",
+      "title": "Cluster-Norm for Unsupervised Probing of Knowledge",
+      "authors": [
+        {
+          "name": "Walter Laurito",
+          "authorId": "2313479654"
+        },
+        {
+          "name": "Sharan Maiya",
+          "authorId": "2313478753"
+        },
+        {
+          "name": "Gr\u00e9goire Dhimo\u00efla",
+          "authorId": "2316892319"
+        },
+        {
+          "name": "Owen Yeung",
+          "authorId": "2313478888"
+        },
+        {
+          "name": "Kaarel H\u00e4nni",
+          "authorId": "2305837065"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The deployment of language models brings challenges in generating reliable text, especially when these models are fine-tuned with human preferences. To extract the encoded knowledge in these models without (potentially) biased human labels, unsupervised probing techniques like Contrast-Consistent Search (CCS) have been developed (Burns et al., 2022). However, salient but unrelated features in activation space can mislead these probes (Farquhar et al., 2023). Addressing this, we propose a cluster-normalization method to minimize the impact of such features by clustering and normalizing activations of contrast pairs before applying unsupervised probing techniques. While this approach does not address the issue of distinguishing between latent knowledge and that portrayed by a simulated agent\u2014a major issue in the literature of eliciting latent knowledge (Paul Christiano and Xu, 2021)\u2014it still significantly improves the accuracy of probes in identifying the intended knowledge amidst distractions.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2407.18712",
+      "arxivId": "2407.18712",
+      "url": "https://www.semanticscholar.org/paper/dce90e2cfe1538697bb1004a5b338e0944ac3659",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.18712"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4864aad54669b37e01e24369aa40da97d932deed",
+      "title": "Safety Reasoning with Guidelines",
+      "authors": [
+        {
+          "name": "Haoyu Wang",
+          "authorId": "2256769475"
+        },
+        {
+          "name": "Zeyu Qin",
+          "authorId": "2118242824"
+        },
+        {
+          "name": "Li Shen",
+          "authorId": "2144035454"
+        },
+        {
+          "name": "Xueqian Wang",
+          "authorId": "2243105430"
+        },
+        {
+          "name": "Minhao Cheng",
+          "authorId": "2258337019"
+        },
+        {
+          "name": "Dacheng Tao",
+          "authorId": "2135519749"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Training safe LLMs remains a critical challenge. The most widely used method, Refusal Training (RT), struggles to generalize against various Out-of-Distribution (OOD) jailbreaking attacks. Although various advanced methods have been proposed to address this issue, we instead question whether OOD attacks inherently surpass the capability of vanilla RT. Evaluations using Best-of-N (BoN) reveal significant safety improvements as N increases, indicating models possess adequate latent safety knowledge but RT fails to consistently elicit it under OOD scenarios. Further domain adaptation analysis reveals that direct RT causes reliance on superficial shortcuts, resulting in non-generalizable representation mappings. Inspired by our findings, we propose training model to perform safety reasoning for each query. Specifically, we synthesize reasoning supervision aligned with specified guidelines that reflect diverse perspectives on safety knowledge. This encourages model to engage in deeper reasoning, explicitly eliciting and utilizing latent safety knowledge for each query. Extensive experiments show that our method significantly improves model generalization against OOD attacks.",
+      "citationCount": 9,
+      "doi": null,
+      "arxivId": "2502.04040",
+      "url": "https://www.semanticscholar.org/paper/4864aad54669b37e01e24369aa40da97d932deed",
+      "venue": "International Conference on Machine Learning",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "504c6f5db886b495103e4a04aaf91a9dd9e4ac60",
+      "title": "LLM Processes: Numerical Predictive Distributions Conditioned on Natural Language",
+      "authors": [
+        {
+          "name": "James Requeima",
+          "authorId": "21223379"
+        },
+        {
+          "name": "J. Bronskill",
+          "authorId": "46242344"
+        },
+        {
+          "name": "Dami Choi",
+          "authorId": "30097914"
+        },
+        {
+          "name": "Richard E. Turner",
+          "authorId": "2292349860"
+        },
+        {
+          "name": "D. Duvenaud",
+          "authorId": "1704657"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Machine learning practitioners often face significant challenges in formally integrating their prior knowledge and beliefs into predictive models, limiting the potential for nuanced and context-aware analyses. Moreover, the expertise needed to integrate this prior knowledge into probabilistic modeling typically limits the application of these models to specialists. Our goal is to build a regression model that can process numerical data and make probabilistic predictions at arbitrary locations, guided by natural language text which describes a user's prior knowledge. Large Language Models (LLMs) provide a useful starting point for designing such a tool since they 1) provide an interface where users can incorporate expert insights in natural language and 2) provide an opportunity for leveraging latent problem-relevant knowledge encoded in LLMs that users may not have themselves. We start by exploring strategies for eliciting explicit, coherent numerical predictive distributions from LLMs. We examine these joint predictive distributions, which we call LLM Processes, over arbitrarily-many quantities in settings such as forecasting, multi-dimensional regression, black-box optimization, and image modeling. We investigate the practical details of prompting to elicit coherent predictive distributions, and demonstrate their effectiveness at regression. Finally, we demonstrate the ability to usefully incorporate text into numerical predictions, improving predictive performance and giving quantitative structure that reflects qualitative descriptions. This lets us begin to explore the rich, grounded hypothesis space that LLMs implicitly encode.",
+      "citationCount": 37,
+      "doi": "10.48550/arXiv.2405.12856",
+      "arxivId": "2405.12856",
+      "url": "https://www.semanticscholar.org/paper/504c6f5db886b495103e4a04aaf91a9dd9e4ac60",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.12856"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b2d5452d2b03099a3467a0c9fe90c04b1f22585f",
+      "title": "JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models",
+      "authors": [
+        {
+          "name": "Jiaxin Song",
+          "authorId": "2362817110"
+        },
+        {
+          "name": "Yixu Wang",
+          "authorId": "2266363141"
+        },
+        {
+          "name": "Jie Li",
+          "authorId": "2363652233"
+        },
+        {
+          "name": "Rui Yu",
+          "authorId": "2363857001"
+        },
+        {
+          "name": "Yan Teng",
+          "authorId": "2266238818"
+        },
+        {
+          "name": "Xingjun Ma",
+          "authorId": "2267387052"
+        },
+        {
+          "name": "Yingchun Wang",
+          "authorId": "2266364817"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Vision-Language Models (VLMs) exhibit impressive performance, yet the integration of powerful vision encoders has significantly broadened their attack surface, rendering them increasingly susceptible to jailbreak attacks. However, lacking well-defined attack objectives, existing jailbreak methods often struggle with gradient-based strategies prone to local optima and lacking precise directional guidance, and typically decouple visual and textual modalities, thereby limiting their effectiveness by neglecting crucial cross-modal interactions. Inspired by the Eliciting Latent Knowledge (ELK) framework, we posit that VLMs encode safety-relevant information within their internal fusion-layer representations, revealing an implicit safety decision boundary in the latent space. This motivates exploiting boundary to steer model behavior. Accordingly, we propose JailBound, a novel latent space jailbreak framework comprising two stages: (1) Safety Boundary Probing, which addresses the guidance issue by approximating decision boundary within fusion layer's latent space, thereby identifying optimal perturbation directions towards the target region; and (2) Safety Boundary Crossing, which overcomes the limitations of decoupled approaches by jointly optimizing adversarial perturbations across both image and text inputs. This latter stage employs an innovative mechanism to steer the model's internal state towards policy-violating outputs while maintaining cross-modal semantic consistency. Extensive experiments on six diverse VLMs demonstrate JailBound's efficacy, achieves 94.32% white-box and 67.28% black-box attack success averagely, which are 6.17% and 21.13% higher than SOTA methods, respectively. Our findings expose a overlooked safety risk in VLMs and highlight the urgent need for more robust defenses. Warning: This paper contains potentially sensitive, harmful and offensive content.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2505.19610",
+      "arxivId": "2505.19610",
+      "url": "https://www.semanticscholar.org/paper/b2d5452d2b03099a3467a0c9fe90c04b1f22585f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.19610"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "51dd7bc78ac92510d61bf737253a7c17baf12c8a",
+      "title": "Do Transformer Interpretability Methods Transfer to RNNs?",
+      "authors": [
+        {
+          "name": "Gon\u00e7alo Paulo",
+          "authorId": "2355136866"
+        },
+        {
+          "name": "Thomas Marshall",
+          "authorId": "2295733255"
+        },
+        {
+          "name": "Nora Belrose",
+          "authorId": "2269471977"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in recurrent neural network architectures, such as Mamba and RWKV, have enabled RNNs to match or exceed the performance of equal-size transformers in terms of language modeling perplexity and downstream evaluations, suggesting that future systems may be built on completely new architectures. In this paper, we examine if selected interpretability methods originally designed for transformer language models will transfer to these up-and-coming recurrent architectures. Specifically, we focus on steering model outputs via contrastive activation addition, on eliciting latent predictions via the tuned lens, and eliciting latent knowledge from models fine-tuned to produce false outputs under certain conditions. Our results show that most of these techniques are effective when applied to RNNs, and we show that it is possible to improve some of them by taking advantage of RNNs' compressed state.",
+      "citationCount": 1,
+      "doi": "10.1609/aaai.v39i26.34969",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/51dd7bc78ac92510d61bf737253a7c17baf12c8a",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "27565-27572"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4a4fe7342f3c60cdef60da9ecc3f001b6415f1cf",
+      "title": "STRATEGIC FORESIGHT IN AGENTIC AI SYSTEMS: EVALUATING ADVANCED REASONING AND LONG-TERM PLANNING FRAMEWORKS IN UNCERTAIN ENVIRONMENTS",
+      "authors": [
+        {
+          "name": "Ishmeet Singh",
+          "authorId": "2398279275"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper explores how strategic foresight can be incorporated into agentic AI systems by studying advanced reasoning, planning, and control frameworks. Mirror agents are characterised by autonomy, memory, and goal-directed reasoning that agentic AI must address in increasing long-horizon adaptability and uncertainty. Although principled reasoning techniques (e.g., Chain-of-Thought, Tree of Thoughts, and Re Act) and planning frameworks (e.g., Mu Zero, DreamerV2, and World Models) improve deliberation capabilities or predictive simulation abilities, they seem fragmented without unified organisation. Memory architectures like Mem GPT and Long Mem augment temporal knowledge, but foresight is still underexplored in testing. This paper considers governance instruments such as Constitutional AI, Iterated Amplification, and Eliciting Latent Knowledge that, to varying degrees, help ensure that foresight can be pointed to the future using combinations of reflection and methods for ensuring human-aligned value learning. Recent benchmarks such as Agent Bench, Web Arena, ALF World, and Science World showcase partial progress but emphasize the absence of foresight-specific evaluation metrics. To solve this issue, the paper suggests a Foresight Evaluation Framework (FEF) to provide an integrated method for evaluating and regulating jointly humanly agentic AI.",
+      "citationCount": 0,
+      "doi": "10.21474/ijar01/22183",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4a4fe7342f3c60cdef60da9ecc3f001b6415f1cf",
+      "venue": "International Journal of Advanced Research",
+      "journal": {
+        "name": "International Journal of Advanced Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fc11de3c54e7f3dd0012eae4c8918cec16d34d71",
+      "title": "Does Transformer Interpretability Transfer to RNNs?",
+      "authors": [
+        {
+          "name": "Gonccalo Paulo",
+          "authorId": "2295732812"
+        },
+        {
+          "name": "Thomas Marshall",
+          "authorId": "2295733255"
+        },
+        {
+          "name": "Nora Belrose",
+          "authorId": "2269471977"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent advances in recurrent neural network architectures, such as Mamba and RWKV, have enabled RNNs to match or exceed the performance of equal-size transformers in terms of language modeling perplexity and downstream evaluations, suggesting that future systems may be built on completely new architectures. In this paper, we examine if selected interpretability methods originally designed for transformer language models will transfer to these up-and-coming recurrent architectures. Specifically, we focus on steering model outputs via contrastive activation addition, on eliciting latent predictions via the tuned lens, and eliciting latent knowledge from models fine-tuned to produce false outputs under certain conditions. Our results show that most of these techniques are effective when applied to RNNs, and we show that it is possible to improve some of them by taking advantage of RNNs' compressed state.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2404.05971",
+      "arxivId": "2404.05971",
+      "url": "https://www.semanticscholar.org/paper/fc11de3c54e7f3dd0012eae4c8918cec16d34d71",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.05971"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8880022a7d461c8c51266fa2908a8669d770772e",
+      "title": "A transfer learning framework for weak to strong generalization",
+      "authors": [
+        {
+          "name": "Seamus Somerstep",
+          "authorId": "102596550"
+        },
+        {
+          "name": "Felipe Maia Polo",
+          "authorId": "1490941219"
+        },
+        {
+          "name": "Moulinath Banerjee",
+          "authorId": "2262444444"
+        },
+        {
+          "name": "Ya'acov Ritov",
+          "authorId": "2240337985"
+        },
+        {
+          "name": "M. Yurochkin",
+          "authorId": "8202372"
+        },
+        {
+          "name": "Yuekai Sun",
+          "authorId": "2247880508"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Modern large language model (LLM) alignment techniques rely on human feedback, but it is unclear whether these techniques fundamentally limit the capabilities of aligned LLMs. In particular, it is unknown if it is possible to align (stronger) LLMs with superhuman capabilities with (weaker) human feedback without degrading their capabilities. This is an instance of the weak-to-strong generalization problem: using feedback from a weaker (less capable) model to train a stronger (more capable) model. We prove that weak-to-strong generalization is possible by eliciting latent knowledge from pre-trained LLMs. In particular, we cast the weak-to-strong generalization problem as a transfer learning problem in which we wish to transfer a latent concept prior from a weak model to a strong pre-trained model. We prove that a naive fine-tuning approach suffers from fundamental limitations, but an alternative refinement-based approach suggested by the problem structure provably overcomes the limitations of fine-tuning. Finally, we demonstrate the practical applicability of the refinement approach in multiple LLM alignment tasks.",
+      "citationCount": 8,
+      "doi": null,
+      "arxivId": "2405.16236",
+      "url": "https://www.semanticscholar.org/paper/8880022a7d461c8c51266fa2908a8669d770772e",
+      "venue": "International Conference on Learning Representations",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6419208d65d6b416984857982f7eee744e66f266",
+      "title": "The Dark Side of Human Feedback: Poisoning Large Language Models via User Inputs",
+      "authors": [
+        {
+          "name": "Bocheng Chen",
+          "authorId": "2152689250"
+        },
+        {
+          "name": "Hanqing Guo",
+          "authorId": "7014630"
+        },
+        {
+          "name": "Guangjing Wang",
+          "authorId": "2152584697"
+        },
+        {
+          "name": "Yuanda Wang",
+          "authorId": "2239197334"
+        },
+        {
+          "name": "Qiben Yan",
+          "authorId": "2239197902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have demonstrated great capabilities in natural language understanding and generation, largely attributed to the intricate alignment process using human feedback. While alignment has become an essential training component that leverages data collected from user queries, it inadvertently opens up an avenue for a new type of user-guided poisoning attacks. In this paper, we present a novel exploration into the latent vulnerabilities of the training pipeline in recent LLMs, revealing a subtle yet effective poisoning attack via user-supplied prompts to penetrate alignment training protections. Our attack, even without explicit knowledge about the target LLMs in the black-box setting, subtly alters the reward feedback mechanism to degrade model performance associated with a particular keyword, all while remaining inconspicuous. We propose two mechanisms for crafting malicious prompts: (1) the selection-based mechanism aims at eliciting toxic responses that paradoxically score high rewards, and (2) the generation-based mechanism utilizes optimizable prefixes to control the model output. By injecting 1\\% of these specially crafted prompts into the data, through malicious users, we demonstrate a toxicity score up to two times higher when a specific trigger word is used. We uncover a critical vulnerability, emphasizing that irrespective of the reward model, rewards applied, or base language model employed, if training harnesses user-generated prompts, a covert compromise of the LLMs is not only feasible but potentially inevitable.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2409.00787",
+      "arxivId": "2409.00787",
+      "url": "https://www.semanticscholar.org/paper/6419208d65d6b416984857982f7eee744e66f266",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2409.00787"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a08dd10726da07a1370e90e11dfdad641e7b0a94",
+      "title": "What ChatGPT Has to Say About Its Topological Structure: The Anyon Hypothesis",
+      "authors": [
+        {
+          "name": "Michel Planat",
+          "authorId": "2278499667"
+        },
+        {
+          "name": "Marcelo M. Amaral",
+          "authorId": "145294387"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs) achieve remarkable predictive capabilities but remain opaque in their internal reasoning, creating a pressing need for more interpretable artificial intelligence. Here, we propose bridging this explanatory gap by drawing on concepts from topological quantum computing (TQC), specifically the anyonic frameworks arising from SU(2)k theories. Anyons interpolate between fermions and bosons, offering a mathematical language that may illuminate the latent structure and decision-making processes within LLMs. By examining how these topological constructs relate to token interactions and contextual dependencies in neural architectures, we aim to provide a fresh perspective on how meaning and coherence emerge. After eliciting insights from ChatGPT and exploring low-level cases of SU(2)k models, we argue that the machinery of modular tensor categories and topological phases could inform more transparent, stable, and robust AI systems. This interdisciplinary approach suggests that quantum-theoretic principles may underpin a novel understanding of explainable AI.",
+      "citationCount": 5,
+      "doi": "10.3390/make6040137",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a08dd10726da07a1370e90e11dfdad641e7b0a94",
+      "venue": "Machine Learning and Knowledge Extraction",
+      "journal": {
+        "name": "Mach. Learn. Knowl. Extr.",
+        "pages": "2876-2891",
+        "volume": "6"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "061bba1e638502a255feac05e93395832aad7982",
+      "title": "Are women truly \u201cmore emotional\u201d than men? Sex differences in an indirect model-based measure of emotional feelings",
+      "authors": [
+        {
+          "name": "Ella Givon",
+          "authorId": "6075907"
+        },
+        {
+          "name": "Rotem Berkovich",
+          "authorId": "2185050937"
+        },
+        {
+          "name": "Elad Oz-Cohen",
+          "authorId": "2145325527"
+        },
+        {
+          "name": "Kim Rubinstein",
+          "authorId": "2203597354"
+        },
+        {
+          "name": "Ella Singer-Landau",
+          "authorId": "1485447088"
+        },
+        {
+          "name": "Gal Udelsman-Danieli",
+          "authorId": "2164086155"
+        },
+        {
+          "name": "N. Meiran",
+          "authorId": "3240089"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 25,
+      "doi": "10.1007/s12144-022-04227-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/061bba1e638502a255feac05e93395832aad7982",
+      "venue": "Current Psychology",
+      "journal": {
+        "name": "Current Psychology",
+        "pages": "1-14",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b0bd491191e57bc4059e4fee4c2d4ed41a61f470",
+      "title": "Conditioning Predictive Models: Risks and Strategies",
+      "authors": [
+        {
+          "name": "Evan Hubinger",
+          "authorId": "2299942538"
+        },
+        {
+          "name": "A. Jermyn",
+          "authorId": "4787319"
+        },
+        {
+          "name": "Johannes Treutlein",
+          "authorId": "1519584460"
+        },
+        {
+          "name": "Rubi Hudson",
+          "authorId": "2203914659"
+        },
+        {
+          "name": "Kate Woolverton",
+          "authorId": "2203914508"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Our intention is to provide a definitive reference on what it would take to safely make use of generative/predictive models in the absence of a solution to the Eliciting Latent Knowledge problem. Furthermore, we believe that large language models can be understood as such predictive models of the world, and that such a conceptualization raises significant opportunities for their safe yet powerful use via carefully conditioning them to predict desirable outputs. Unfortunately, such approaches also raise a variety of potentially fatal safety problems, particularly surrounding situations where predictive models predict the output of other AI systems, potentially unbeknownst to us. There are numerous potential solutions to such problems, however, primarily via carefully conditioning models to predict the things we want (e.g. humans) rather than the things we don't (e.g. malign AIs). Furthermore, due to the simplicity of the prediction objective, we believe that predictive models present the easiest inner alignment problem that we are aware of. As a result, we think that conditioning approaches for predictive models represent the safest known way of eliciting human-level and slightly superhuman capabilities from large language models and other similar future models.",
+      "citationCount": 7,
+      "doi": "10.48550/arXiv.2302.00805",
+      "arxivId": "2302.00805",
+      "url": "https://www.semanticscholar.org/paper/b0bd491191e57bc4059e4fee4c2d4ed41a61f470",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2302.00805"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5135e1624d1d6c44112faf581918765434932974",
+      "title": "A Review of Geospatial Semantic Information Modeling and Elicitation Approaches",
+      "authors": [
+        {
+          "name": "M. Kokla",
+          "authorId": "2911923"
+        },
+        {
+          "name": "\u00c9. Guilbert",
+          "authorId": "4119095"
+        }
+      ],
+      "year": 2020,
+      "abstract": "The present paper provides a review of two research topics that are central to geospatial semantics: information modeling and elicitation. The first topic deals with the development of ontologies at different levels of generality and formality, tailored to various needs and uses. The second topic involves a set of processes that aim to draw out latent knowledge from unstructured or semi-structured content: semantic-based extraction, enrichment, search, and analysis. These processes focus on eliciting a structured representation of information in various forms such as: semantic metadata, links to ontology concepts, a collection of topics, etc. The paper reviews the progress made over the last five years in these two very active areas of research. It discusses the problems and the challenges faced, highlights the types of semantic information formalized and extracted, as well as the methodologies and tools used, and identifies directions for future research.",
+      "citationCount": 34,
+      "doi": "10.3390/ijgi9030146",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5135e1624d1d6c44112faf581918765434932974",
+      "venue": "ISPRS Int. J. Geo Inf.",
+      "journal": {
+        "name": "ISPRS Int. J. Geo Inf.",
+        "pages": "146",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "f2b9307ae629ba25e7ab21900bc062c4b92232e2",
+      "title": "Topics as Entity Clusters: Entity-based Topics from Large Language Models and Graph Neural Networks",
+      "authors": [
+        {
+          "name": "Manuel V. Loureiro",
+          "authorId": "2199668979"
+        },
+        {
+          "name": "Steven Derby",
+          "authorId": "1900104"
+        },
+        {
+          "name": "Tri Kurniawan Wijaya",
+          "authorId": "2391076258"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Topic models aim to reveal latent structures within a corpus of text, typically through the use of term-frequency statistics over bag-of-words representations from documents. In recent years, conceptual entities \u2014 interpretable, language-independent features linked to external knowledge resources \u2014 have been used in place of word-level tokens, as words typically require extensive language processing with a minimal assurance of interpretability. However, current literature is limited when it comes to exploring purely entity-driven neural topic modeling. For instance, despite the advantages of using entities for eliciting thematic structure, it is unclear whether current techniques are compatible with these sparsely organised, information-dense conceptual units. In this work, we explore entity-based neural topic modeling and propose a novel topic clustering approach using bimodal vector representations of entities. Concretely, we extract these latent representations from large language models and graph neural networks trained on a knowledge base of symbolic relations, in order to derive the most salient aspects of these conceptual units. Analysis of coherency metrics confirms that our approach is better suited to working with entities in comparison to state-of-the-art models, particularly when using graph-based embeddings trained on a knowledge base.",
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": "2301.02458",
+      "url": "https://www.semanticscholar.org/paper/f2b9307ae629ba25e7ab21900bc062c4b92232e2",
+      "venue": "International Conference on Language Resources and Evaluation",
+      "journal": {
+        "pages": "16315-16330"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d0e0375000fc130ac6fe36323240d4e17d81309a",
+      "title": "Encouraging Errors Through Gradual Feedback to Improve Vocabulary Learning",
+      "authors": [
+        {
+          "name": "Lukas Ansteeg",
+          "authorId": "1397159824"
+        },
+        {
+          "name": "T. Dijkstra",
+          "authorId": "143649297"
+        },
+        {
+          "name": "Frank T. M. Leon\u00e9",
+          "authorId": "49391140"
+        }
+      ],
+      "year": 2023,
+      "abstract": ": Making errors that are related to the correct answer can aid the learning of vocabulary. Encouraging error commission may improve learning outcomes and provide insight into latent learning processes. We investigate the possibility of eliciting useful errors through the use of orthographic similarity-based feedback. We find that error commissions fully replace non-answers during a learning task and largely replace them during post-tests. Participants receiving similarity-based feedback seem to better consolidate orthographic knowledge over a one-week delay. The committed errors provide evidence for gradual learning of sublexical elements and for theories holding that specificity of representations increases during learning. Gradual feedback shows to also have motivational benefits. These findings suggest promising insights for classroom and digital vocabulary instruction.",
+      "citationCount": 0,
+      "doi": "10.5220/0011975100003470",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d0e0375000fc130ac6fe36323240d4e17d81309a",
+      "venue": "International Conference on Computer Supported Education",
+      "journal": {
+        "pages": "79-91"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "762ca2711eb167f19b79e39c175708ca15e1f5d7",
+      "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens",
+      "authors": [
+        {
+          "name": "Nora Belrose",
+          "authorId": "2269471977"
+        },
+        {
+          "name": "Zach Furman",
+          "authorId": "2282972810"
+        },
+        {
+          "name": "Logan Smith",
+          "authorId": "2211596218"
+        },
+        {
+          "name": "Danny Halawi",
+          "authorId": "1382232681"
+        },
+        {
+          "name": "Igor V. Ostrovsky",
+          "authorId": "2174872053"
+        },
+        {
+          "name": "Lev McKinney",
+          "authorId": "2199837941"
+        },
+        {
+          "name": "Stella Biderman",
+          "authorId": "103476203"
+        },
+        {
+          "name": "J. Steinhardt",
+          "authorId": "5164568"
+        }
+      ],
+      "year": 2023,
+      "abstract": "We analyze transformers from the perspective of iterative inference, seeking to understand how model predictions are refined layer by layer. To do so, we train an affine probe for each block in a frozen pretrained model, making it possible to decode every hidden state into a distribution over the vocabulary. Our method, the tuned lens, is a refinement of the earlier\"logit lens\"technique, which yielded useful insights but is often brittle. We test our method on various autoregressive language models with up to 20B parameters, showing it to be more predictive, reliable and unbiased than the logit lens. With causal experiments, we show the tuned lens uses similar features to the model itself. We also find the trajectory of latent predictions can be used to detect malicious inputs with high accuracy. All code needed to reproduce our results can be found at https://github.com/AlignmentResearch/tuned-lens.",
+      "citationCount": 316,
+      "doi": "10.48550/arXiv.2303.08112",
+      "arxivId": "2303.08112",
+      "url": "https://www.semanticscholar.org/paper/762ca2711eb167f19b79e39c175708ca15e1f5d7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2303.08112"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "30d62e38ace7a0815f08a846d4ea554d48bf6c86",
+      "title": "MedReason: Eliciting Factual Medical Reasoning Steps in LLMs via Knowledge Graphs",
+      "authors": [
+        {
+          "name": "Juncheng Wu",
+          "authorId": "2315276567"
+        },
+        {
+          "name": "Wenlong Deng",
+          "authorId": "2247270223"
+        },
+        {
+          "name": "Xingxuan Li",
+          "authorId": "2353565459"
+        },
+        {
+          "name": "Sheng Liu",
+          "authorId": "2353247885"
+        },
+        {
+          "name": "Taomian Mi",
+          "authorId": "2353091966"
+        },
+        {
+          "name": "Yifan Peng",
+          "authorId": "2293320120"
+        },
+        {
+          "name": "Ziyang Xu",
+          "authorId": "2279762930"
+        },
+        {
+          "name": "Yi Liu",
+          "authorId": "2336778709"
+        },
+        {
+          "name": "Hyun-Jin Cho",
+          "authorId": "2343268396"
+        },
+        {
+          "name": "Chang-In Choi",
+          "authorId": "2342495915"
+        },
+        {
+          "name": "Yihan Cao",
+          "authorId": "2349133244"
+        },
+        {
+          "name": "Hui Ren",
+          "authorId": "2353757299"
+        },
+        {
+          "name": "Xiang Li",
+          "authorId": "2353393858"
+        },
+        {
+          "name": "Xiaoxiao Li",
+          "authorId": "2247318505"
+        },
+        {
+          "name": "Yuyin Zhou",
+          "authorId": "2306069928"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Medical tasks such as diagnosis and treatment planning require precise and complex reasoning, particularly in life-critical domains. Unlike mathematical reasoning, medical reasoning demands meticulous, verifiable thought processes to ensure reliability and accuracy. However, there is a notable lack of datasets that provide transparent, step-by-step reasoning to validate and enhance the medical reasoning ability of AI models. To bridge this gap, we introduce MedReason, a large-scale high-quality medical reasoning dataset designed to enable faithful and explainable medical problem-solving in large language models (LLMs). We utilize a structured medical knowledge graph (KG) to convert clinical QA pairs into logical chains of reasoning, or ``thinking paths'', which trace connections from question elements to answers via relevant KG entities. Each path is validated for consistency with clinical logic and evidence-based medicine. Our pipeline generates detailed reasoning for various medical questions from 7 medical datasets, resulting in a dataset of 32,682 question-answer pairs, each with detailed, step-by-step explanations. Experiments demonstrate that fine-tuning with our dataset consistently boosts medical problem-solving capabilities, achieving significant gains of up to 7.7% for DeepSeek-Ditill-8B. Our top-performing model, MedReason-8B, outperforms the Huatuo-o1-8B, a state-of-the-art medical reasoning model, by up to 4.2% on the clinical benchmark MedBullets. We also engage medical professionals from diverse specialties to assess our dataset's quality, ensuring MedReason offers accurate and coherent medical reasoning. Our data, models, and code is available at https://github.com/UCSC-VLAA/MedReason.",
+      "citationCount": 50,
+      "doi": "10.48550/arXiv.2504.00993",
+      "arxivId": "2504.00993",
+      "url": "https://www.semanticscholar.org/paper/30d62e38ace7a0815f08a846d4ea554d48bf6c86",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.00993"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "35e1cb506c50e4ad184e5b95fd583dcf950368e7",
+      "title": "Improving Preference Extraction In LLMs By Identifying Latent Knowledge Through Classifying Probes",
+      "authors": [
+        {
+          "name": "Sharan Maiya",
+          "authorId": "2313478753"
+        },
+        {
+          "name": "Yinhong Liu",
+          "authorId": "2351802026"
+        },
+        {
+          "name": "Ramit Debnath",
+          "authorId": "2402242872"
+        },
+        {
+          "name": "Anna Korhonen",
+          "authorId": "2351811173"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) are often used as automated judges to evaluate text, but their effectiveness can be hindered by various unintentional biases. We propose using linear classifying probes, trained by leveraging differences between contrasting pairs of prompts, to directly access LLMs' latent knowledge and extract more accurate preferences. Through extensive experiments using models of varying size from four different families and six diverse datasets assessing text quality evaluation and common sense reasoning, we demonstrate that both supervised and unsupervised probing approaches consistently outperform traditional generation-based judgement while maintaining similar computational costs. These probes generalise under domain shifts and can even outperform finetuned evaluators with the same training data size. Our results suggest linear probing offers an accurate, robust and computationally efficient approach for LLM-as-judge tasks while providing interpretable insights into how models encode judgement-relevant knowledge. Our data and code will be openly released in the future.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2503.17755",
+      "arxivId": "2503.17755",
+      "url": "https://www.semanticscholar.org/paper/35e1cb506c50e4ad184e5b95fd583dcf950368e7",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "9061-9081"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "3c79272da29adbe3ab0ddb9b0a1711fc722a5eff",
+      "title": "Democratizing Large Language Model-Based Graph Data Augmentation via Latent Knowledge Graphs",
+      "authors": [
+        {
+          "name": "Yushi Feng",
+          "authorId": "2346441717"
+        },
+        {
+          "name": "Tsai Hor Chan",
+          "authorId": "2150195625"
+        },
+        {
+          "name": "Guosheng Yin",
+          "authorId": "2261550959"
+        },
+        {
+          "name": "Lequan Yu",
+          "authorId": "2261680777"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Data augmentation is necessary for graph representation learning due to the scarcity and noise present in graph data. Most of the existing augmentation methods overlook the context information inherited from the dataset as they rely solely on the graph structure for augmentation. Despite the success of some large language model-based (LLM) graph learning methods, they are mostly white-box which require access to the weights or latent features from the open-access LLMs, making them difficult to be democratized for everyone as the most advanced LLMs are often closed-source for commercial considerations. To overcome these limitations, we propose a black-box context-driven graph data augmentation approach, with the guidance of LLMs - DemoGraph. Leveraging the text prompt as context-related information, we task the LLM with generating knowledge graphs (KGs), which allow us to capture the structural interactions from the text outputs. We then design a dynamic merging schema to stochastically integrate the LLM-generated KGs into the original graph during training. To control the sparsity of the augmented graph, we further devise a granularity-aware prompting strategy and an instruction fine-tuning module, which seamlessly generates text prompts according to different granularity levels of the dataset. Extensive experiments on various graph learning tasks validate the effectiveness of our method over existing graph data augmentation methods. Notably, our approach excels in scenarios involving electronic health records (EHRs), which validates its maximal utilization of contextual knowledge, leading to enhanced predictive performance and interpretability.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2502.13555",
+      "arxivId": "2502.13555",
+      "url": "https://www.semanticscholar.org/paper/3c79272da29adbe3ab0ddb9b0a1711fc722a5eff",
+      "venue": "Neural Networks",
+      "journal": {
+        "name": "Neural networks : the official journal of the International Neural Network Society",
+        "pages": "\n          107777\n        ",
+        "volume": "191"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "09723686ccbdaee0d48f48d0295df30f9daeebd9",
+      "title": "Rapid emergence of latent knowledge in the sensory cortex drives learning",
+      "authors": [
+        {
+          "name": "C. Drieu",
+          "authorId": "4383483"
+        },
+        {
+          "name": "Ziyi Zhu",
+          "authorId": "2306165268"
+        },
+        {
+          "name": "Ziyun Wang",
+          "authorId": "2306071972"
+        },
+        {
+          "name": "Kylie Fuller",
+          "authorId": "2306271520"
+        },
+        {
+          "name": "Aaron Wang",
+          "authorId": "2258525254"
+        },
+        {
+          "name": "Sarah Elnozahy",
+          "authorId": "91546561"
+        },
+        {
+          "name": "Kishore Kuchibhotla",
+          "authorId": "2276220623"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1038/s41586-025-08730-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/09723686ccbdaee0d48f48d0295df30f9daeebd9",
+      "venue": "Nature",
+      "journal": {
+        "name": "Nature",
+        "pages": "960 - 970",
+        "volume": "641"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "31bd6924d55f4776f01628bca5956ea4de225ae0",
+      "title": "CCS-Lib: A Python package to elicit latent knowledge from LLMs",
+      "authors": [
+        {
+          "name": "Walter Laurito",
+          "authorId": "2313479654"
+        },
+        {
+          "name": "Nora Belrose",
+          "authorId": "2269471977"
+        },
+        {
+          "name": "Alex Mallen",
+          "authorId": "2384126731"
+        },
+        {
+          "name": "Kay Kozaronek",
+          "authorId": "2387094509"
+        },
+        {
+          "name": "Fabien Roger",
+          "authorId": "2387092959"
+        },
+        {
+          "name": "Christy Koh",
+          "authorId": "2387092605"
+        },
+        {
+          "name": "James Chua",
+          "authorId": "2387090459"
+        },
+        {
+          "name": "Jonathan Ng",
+          "authorId": "2387072514"
+        },
+        {
+          "name": "Alexander Wan",
+          "authorId": "2387030495"
+        },
+        {
+          "name": "Reagan Lee",
+          "authorId": "2387887496"
+        },
+        {
+          "name": "Ben W.",
+          "authorId": "2387090497"
+        },
+        {
+          "name": "Kyle O\u2019Brien",
+          "authorId": "2387095625"
+        },
+        {
+          "name": "Augustas Macijauskas",
+          "authorId": "2143276013"
+        },
+        {
+          "name": "Eric Mungai Kinuthia",
+          "authorId": "2387092986"
+        },
+        {
+          "name": "Marius Pl",
+          "authorId": "2387092938"
+        },
+        {
+          "name": "Waree Sethapun",
+          "authorId": "2387090107"
+        },
+        {
+          "name": "Kaarel H\u00e4nni",
+          "authorId": "2305837065"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.21105/joss.06511",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/31bd6924d55f4776f01628bca5956ea4de225ae0",
+      "venue": "Journal of Open Source Software",
+      "journal": {
+        "name": "Journal of Open Source Software"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c29d7cc327042a56e1f1736856ad3903aded2663",
+      "title": "Towards Reliable Latent Knowledge Estimation in LLMs: In-Context Learning vs. Prompting Based Factual Knowledge Extraction",
+      "authors": [
+        {
+          "name": "Qinyuan Wu",
+          "authorId": "73272459"
+        },
+        {
+          "name": "Mohammad Aflah Khan",
+          "authorId": "2168771748"
+        },
+        {
+          "name": "Soumi Das",
+          "authorId": "2297737634"
+        },
+        {
+          "name": "Vedant Nanda",
+          "authorId": "17974944"
+        },
+        {
+          "name": "Bishwamittra Ghosh",
+          "authorId": "2297671084"
+        },
+        {
+          "name": "Camila Kolling",
+          "authorId": "1396871443"
+        },
+        {
+          "name": "Till Speicher",
+          "authorId": "2923553"
+        },
+        {
+          "name": "Laurent Bindschaedler",
+          "authorId": "2297670790"
+        },
+        {
+          "name": "K. Gummadi",
+          "authorId": "1958921"
+        },
+        {
+          "name": "Evimaria Terzi",
+          "authorId": "1839624"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2404.12957",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c29d7cc327042a56e1f1736856ad3903aded2663",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.12957"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ebe5675270c30767cc9bf3dbc62ef5da68bbb807",
+      "title": "Eliciting Latent Myasthenia Gravis Eye Signs Utilizing \u2018The Mary Walker Effect\u2019",
+      "authors": [
+        {
+          "name": "Suzann Beaupark",
+          "authorId": "2319709768"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract \n\u00a0 \nCurrent standardized tests to induce fatigability in the Myasthenia Gravis (MG) patient do not take into consideration that in real-world situations the patient is using more than one muscle group at a time. In 1895 the German physician Frederick Jolly, who is famed for coining the name Myasthenia Gravis, observed that exhaustion of one group of voluntary muscles in a patient with MG induced weakness in other groups that had not been stimulated. This phenomenon was also noted by Dr Mary Walker and was named the Walker effect in 1938. The Novel ocular motility technique described in this paper is designed to engage the extraocular muscles (EOM) simultaneously with another muscle group namely the bulbar, specifically testing for lip weakness. This test was named The SLOW Test (Simultaneous Lip and Ocular Weakness). It was found that observable Myasthenia Gravis Eyes Signs (MGES) were quicker to elicit and more obvious when performing the SLOW Test. The SLOW Test is a method designed to confirm the presence of MG signs quickly and effectively, even when there appear to be no obvious fatigable signs with current testing regimes. The test combines \u2018old knowledge\u2019 by testing for the \u2018Mary Walker Effect\u2019 with current ophthalmic testing for MG, which increases fatigue and allows for a higher suspicion level of GMG as the bulbar muscle group is simultaneously tested. The development of clinical methods for identifying latent fatigable muscle weakness is critical to reducing the cases of missed MG diagnosis, testing methods such as the SLOW Test have the potential to improve patients\u2019 quality of life by enabling earlier diagnosis and initiating earlier treatment.",
+      "citationCount": 0,
+      "doi": "10.17161/rrnmf.v5i2.21240",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ebe5675270c30767cc9bf3dbc62ef5da68bbb807",
+      "venue": "RRNMF Neuromuscular Journal",
+      "journal": {
+        "name": "RRNMF Neuromuscular Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "56c9ef419050d860a321cd4c3ea863bb739fe52e",
+      "title": "Towards Reliable Latent Knowledge Estimation in LLMs: Zero-Prompt Many-Shot Based Factual Knowledge Extraction",
+      "authors": [
+        {
+          "name": "Qinyuan Wu",
+          "authorId": "73272459"
+        },
+        {
+          "name": "Mohammad Aflah Khan",
+          "authorId": "2335853852"
+        },
+        {
+          "name": "Soumi Das",
+          "authorId": "2297737634"
+        },
+        {
+          "name": "Vedant Nanda",
+          "authorId": "17974944"
+        },
+        {
+          "name": "Bishwamittra Ghosh",
+          "authorId": "2297671084"
+        },
+        {
+          "name": "Camila Kolling",
+          "authorId": "1396871443"
+        },
+        {
+          "name": "Till Speicher",
+          "authorId": "2923553"
+        },
+        {
+          "name": "Laurent Bindschaedler",
+          "authorId": "2297670790"
+        },
+        {
+          "name": "Krishna P. Gummadi",
+          "authorId": "2312396586"
+        },
+        {
+          "name": "Evimaria Terzi",
+          "authorId": "1839624"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this paper, we focus on the challenging task of reliably estimating factual knowledge that is embedded inside large language models (LLMs). To avoid reliability concerns with prior approaches, we propose to eliminate prompt engineering when probing LLMs for factual knowledge. Our approach, called Zero-Prompt Latent Knowledge Estimator (ZP-LKE), leverages the in-context learning ability of LLMs to communicate both the factual knowledge question as well as the expected answer format. Our knowledge estimator is both conceptually simpler (i.e., doesn't depend on meta-linguistic judgments of LLMs) and easier to apply (i.e., is not LLM-specific), and we demonstrate that it can surface more of the latent knowledge embedded in LLMs. We also investigate how different design choices affect the performance of ZP-LKE. Using the proposed estimator, we perform a large-scale evaluation of the factual knowledge of a variety of open-source LLMs, like OPT, Pythia, Llama(2), Mistral, Gemma, etc. over a large set of relations and facts from the Wikidata knowledge base. We observe differences in the factual knowledge between different model families and models of different sizes, that some relations are consistently better known than others but that models differ in the precise facts they know, and differences in the knowledge of base models and their finetuned counterparts. Code available at: https://github.com/QinyuanWu0710/ZeroPrompt_LKE",
+      "citationCount": 5,
+      "doi": "10.1145/3701551.3703562",
+      "arxivId": "2404.12957",
+      "url": "https://www.semanticscholar.org/paper/56c9ef419050d860a321cd4c3ea863bb739fe52e",
+      "venue": "Web Search and Data Mining",
+      "journal": {
+        "name": "Proceedings of the Eighteenth ACM International Conference on Web Search and Data Mining"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book"
+      ]
+    },
+    {
+      "paperId": "89c3bd70ad33c4f8832f00ab98872b77861ee0ec",
+      "title": "Discovering Latent Knowledge in Language Models Without Supervision",
+      "authors": [
+        {
+          "name": "Collin Burns",
+          "authorId": "90909974"
+        },
+        {
+          "name": "Haotian Ye",
+          "authorId": "2284300618"
+        },
+        {
+          "name": "D. Klein",
+          "authorId": "38666915"
+        },
+        {
+          "name": "J. Steinhardt",
+          "authorId": "5164568"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Existing techniques for training language models can be misaligned with the truth: if we train models with imitation learning, they may reproduce errors that humans make; if we train them to generate text that humans rate highly, they may output errors that human evaluators can't detect. We propose circumventing this issue by directly finding latent knowledge inside the internal activations of a language model in a purely unsupervised way. Specifically, we introduce a method for accurately answering yes-no questions given only unlabeled model activations. It works by finding a direction in activation space that satisfies logical consistency properties, such as that a statement and its negation have opposite truth values. We show that despite using no supervision and no model outputs, our method can recover diverse knowledge represented in large language models: across 6 models and 10 question-answering datasets, it outperforms zero-shot accuracy by 4\\% on average. We also find that it cuts prompt sensitivity in half and continues to maintain high accuracy even when models are prompted to generate incorrect answers. Our results provide an initial step toward discovering what language models know, distinct from what they say, even when we don't have access to explicit ground truth labels.",
+      "citationCount": 530,
+      "doi": "10.48550/arXiv.2212.03827",
+      "arxivId": "2212.03827",
+      "url": "https://www.semanticscholar.org/paper/89c3bd70ad33c4f8832f00ab98872b77861ee0ec",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2212.03827"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "80596b8e9973468d899fac23cbb00a0e461311ff",
+      "title": "Rapid emergence of latent knowledge in the sensory cortex drives learning",
+      "authors": [
+        {
+          "name": "C. Drieu",
+          "authorId": "4383483"
+        },
+        {
+          "name": "Ziyi Zhu",
+          "authorId": "2306165268"
+        },
+        {
+          "name": "Ziyun Wang",
+          "authorId": "2306071972"
+        },
+        {
+          "name": "Kylie Fuller",
+          "authorId": "2306271520"
+        },
+        {
+          "name": "Aaron Wang",
+          "authorId": "2258525254"
+        },
+        {
+          "name": "Sarah Elnozahy",
+          "authorId": "91546561"
+        },
+        {
+          "name": "Kishore Kuchibhotla",
+          "authorId": "2276220623"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Rapid learning confers significant advantages to animals in ecological environments. Despite the need for speed, animals appear to only slowly learn to associate rewarded actions with predictive cues1\u20134. This slow learning is thought to be supported by a gradual expansion of predictive cue representation in the sensory cortex2,5. However, evidence is growing that animals learn more rapidly than classical performance measures suggest6\u20138, challenging the prevailing model of sensory cortical plasticity. Here, we investigated the relationship between learning and sensory cortical representations. We trained mice on an auditory go/no-go task that dissociated the rapid acquisition of task contingencies (learning) from its slower expression (performance) 7. Optogenetic silencing demon-strated that the auditory cortex (AC) drives both rapid learning and slower performance gains but becomes dispensable at expert. Rather than enhancement or expansion of cue representations9, two-photon calcium imaging of AC excitatory neurons throughout learning revealed two higher-order signals that were causal to learning and performance. First, a reward prediction (RP) signal emerged rapidly within tens of trials, was present after action-related errors only early in training, and faded at expert levels. Strikingly, silencing at the time of the RP signal impaired rapid learning, suggesting it serves an associative and teaching role. Second, a distinct cell ensemble encoded and controlled licking suppression that drove the slower performance improvements. These two ensembles were spatially clustered but uncoupled from underlying sensory representations, indicating a higher-order functional segregation within AC. Our results reveal that the sensory cortex manifests higher-order computations that separably drive rapid learning and slower performance improvements, reshaping our understanding of the fundamental role of the sensory cortex. Despite the value of rapid learning in ecological environments, most laboratory models of rodent learning show that linking sensory cues with reinforced actions is a slow, gradual process1\u20134,10. An alternative view suggests that animals, including humans, rapidly infer relationships between cues, actions, and reinforcement (i.e. learning)6 even if they continue to make ongoing performance errors 7,8,11. Recent behavioral studies in rodents have begun to reconcile these views, arguing that latent task knowledge (i.e. discriminative contingencies) can emerge rapidly even though behavioral performance appears to improve only gradually7. How are these two dissociable behavioral processes\u2014rapid acquisition of contingencies versus slower performance improvements\u2014implemented in the brain? An attractive brain region to consider is the sensory cortex as it is thought to subserve instrumental learning by enhancing or attenuating the representation of sensory cues that drive behavior. Plasticity of cue-related responses in the sensory cortex is thought to subserve learning as it mirrors the slow and gradual improvements in behavioral performance 1,2,5,10. This raises a fundamental challenge: if animals learn discriminative contingencies rapidly but cue representations in the sensory cortex change slowly1,2,9, the causal model linking cue-related plasticity to learning becomes problematic. One possible solution is that the sensory cortex plays a role beyond cue-related representational plasticity and directly represents high-order signals that associate reinforced actions with predictive cues. Here we focus on the auditory cortex (AC) and asked whether and how it plays a higher-order role in cue-guided learning. We trained head-fixed, water-restricted mice to lick to a target tone (S+) for water reward and to withhold licking to a foil tone (S\u2212) to avoid a timeout (auditory go/no-go task, Fig. 1a). We used simple pure tones to prevent the AC from being recruited for complex sensory processing. To confirm this, two-photon imaging of AC excitatory neurons showed that stimulus identity could accurately be decoded from AC activity from the first training day with no subsequent improvement throughout training (Supplementary Figure 1), suggesting that the AC was indeed not needed for perceptual sharpening in the task and thereby allowing us to identify possible associative functions. Performance was evaluated in each session in reinforced and non-reinforced (\u2018probe\u2019) trials (Fig. 1b). Performance in probe trials revealed a rapid acquisition of task contingency knowledge which was only expressed much later in reinforced trials (Fig. 1c)7. Reinforcement feedback, although critical for learning, paradoxically masked the underlying task knowledge. By combining this behavioral procedure with optogenetics and longitudinal two-photon imaging, we aimed to determine how quickly animals learn stimulus-action contingencies and to define the fundamental role of the auditory cortex in sound-guided learning. Fig. 1. Auditory cortex silencing impairs sound-guided learning and performance during learning. a, Head-fixed mice were trained on an auditory go/no-go task with 3 -spaced pure tones. H: hit, M: miss, FA: false alarm, CR: correct reject. b, Every day during training, task knowledge is probed by omitting reinforcement for 20 trials. c, Two distinct learning trajectories are revealed: a fast acquisition of task contingencies (measured in probe trials; green) and a slower knowledge expression (measured in reinforced trials; black). d, Probabilistic optogenetic silencing of the auditory cortex over learning. e, Testing conditions. f, Accuracy in reinforced light-on trials (two-way ANOVA, p < 10\u22128). g, Action rate in reinforced light-on trials (HIT, p = 0.07; FA, p < 10\u221233). See also Supplementary Figure 4. h, Accuracy in probe light-off trials (two-way ANOVA, p < 10\u22124). i, Tone response index in S+ trials (see Methods; two-way ANOVA, p < 10\u2212101). Black and gray lines are individual mice and dots indicate change points (see Methods). j, Maximal difference between hit and FA rates in probe light-off trials over the first 6 days (t-test, p < 10\u22123). k, Hit lick latency in probe light-off trials (median \u00b1 s.e.median; Wilcoxon test, p = 0.007). l, Accuracy in reinforced light-off trials (two-way ANOVA, p < 10\u22128). m, Action rate in reinforced light-off trials (two-way ANOVA, HIT: p = 0.57, FA: p < 10\u22128). n, Accuracy in reinforced light-off trials with inter-subject alignment to the day where probe accuracy \u2265 0.65 (green triangle) (two-way ANOVA, p < 10\u22125). Supplementary Figure 3a-c. o, Comparison of light-off versus light-on trials to measure auditory cortex silencing effect on on-line performance. p, Session density plot of accuracy in reinforced light-on against light-off. Top, control; bottom, PV-ChR2. See also Supplementary Figure 3d-g. q, Within subject accuracy difference in reinforced light-on and light-off trials, aligned to the day where FA rate < 0.3 in reinforced light-off (two-way ANOVA, p < 10\u221215). r, Within subject accuracy difference in reinforced light-on and light-off when silencing started at expert level (n = 4; t-test, p = 0.58). See also Supplementary Figure 6. mean \u00b1 s.e.m.; *p < 0.05; **p < 0.01; ***p < 0.001, n.s.: not significant. The auditory cortex is the default pathway for sound-guided learning Lesion studies have suggested that the AC may not be essential to learn or execute cue-guided tasks with simple sensory stimuli12\u201315. However, permanent lesions cannot determine whether the AC is normally used for, or causally produces16, learning in an intact brain. To address this, we exploited a transient silencing approach to prevent the recruitment of alternative pathways15,17\u201320 while also using a probabilistic design to allow assessment of learning as distinct from performance by measuring behavior on non-silenced trials, thereby avoiding direct effects of silencing on performance. We examined the impact of bilateral cortical silencing of the AC throughout learning (Fig. 1a). We probabilistically silenced the AC on 90% of reinforced trials throughout learning (\u2018light-on reinforced\u2019, Fig. 1d), leaving 10% of reinforced (\u2018light-off reinforced\u2019) and 100% of probe trials (\u2018light-off probe\u2019) with intact AC activity. Silenced trials were pseudo-randomly sequenced and equally split between S+ and S\u2212. Silencing was achieved by shining blue light bilaterally through cranial windows implanted above the AC of double transgenic mice (n=8) expressing channel rhodopsin (ChR2) in parvalbumin (PV) interneurons14,21 (Fig. 1d). We confirmed that the excitatory network was effectively silenced using this approach by combining two-photon calcium imaging of excitatory neurons and full-field optogenetic stimulation in PV-ChR2 mice (Supplementary Figure 2). Control mice (n=8) received the same light stimulation but did not express ChR2. This experimental design allowed us to assay the impact of cortical silencing on performance (control vs PV-ChR2 performance on light-on reinforced trials) versus acquisition learning (control vs PV-ChR2 performance on light-off probe trials) and expression learning (control vs PV-ChR2 performance on light-off reinforced trials) (Fig. 1e). We first compared performance in light-on reinforced trials between PV-ChR2 and control mice (Fig. 1e) and observed a large performance impairment in PV-ChR2 mice (Fig. 1f,g). To address whether this performance reduction was accompanied by an impairment in rapid learning, we compared performance in PV-ChR2 and control animals in light-off probe trials (Fig. 1e,h-k) when the AC was not silenced and knowledge acquisition can be accurately measured7. Accuracy was lower during probe trials in PV-ChR2 mice (Fig. 1h), with delayed S+-response learning (Fig. 1i), lower discrimination (Fig. 1j), and longer lick latency on hit trials (Fig. 1k). Rapid acquisition of task knowledge was therefore impaired in PV-ChR2 mice. Accuracy was also lower in reinforced light-off trials in P",
+      "citationCount": 12,
+      "doi": "10.1101/2024.06.10.597946",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/80596b8e9973468d899fac23cbb00a0e461311ff",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "115ce7fc0c92f5c6cca60446674f5e013e90efb2",
+      "title": "Latent Knowledge-Guided Video Diffusion for Scientific Phenomena Generation from a Single Initial Frame",
+      "authors": [
+        {
+          "name": "Qinglong Cao",
+          "authorId": "2146853189"
+        },
+        {
+          "name": "Xirui Li",
+          "authorId": "2275101144"
+        },
+        {
+          "name": "Ding Wang",
+          "authorId": "2304452261"
+        },
+        {
+          "name": "Chao Ma",
+          "authorId": "2250489734"
+        },
+        {
+          "name": "Yuntian Chen",
+          "authorId": "2249313138"
+        },
+        {
+          "name": "Xiaokang Yang",
+          "authorId": "2248211611"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Video diffusion models have achieved impressive results in natural scene generation, yet they struggle to generalize to scientific phenomena such as fluid simulations and meteorological processes, where underlying dynamics are governed by scientific laws. These tasks pose unique challenges, including severe domain gaps, limited training data, and the lack of descriptive language annotations. To handle this dilemma, we extracted the latent scientific phenomena knowledge and further proposed a fresh framework that teaches video diffusion models to generate scientific phenomena from a single initial frame. Particularly, static knowledge is extracted via pre-trained masked autoencoders, while dynamic knowledge is derived from pre-trained optical flow prediction. Subsequently, based on the aligned spatial relations between the CLIP vision and language encoders, the visual embeddings of scientific phenomena, guided by latent scientific phenomena knowledge, are projected to generate the pseudo-language prompt embeddings in both spatial and frequency domains. By incorporating these prompts and fine-tuning the video diffusion model, we enable the generation of videos that better adhere to scientific laws. Extensive experiments on both computational fluid dynamics simulations and real-world typhoon observations demonstrate the effectiveness of our approach, achieving superior fidelity and consistency across diverse scientific scenarios.",
+      "citationCount": 6,
+      "doi": null,
+      "arxivId": "2411.11343",
+      "url": "https://www.semanticscholar.org/paper/115ce7fc0c92f5c6cca60446674f5e013e90efb2",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dd502fe4785850513a096bca1e68c0c47eff66bc",
+      "title": "Learning to compensate for lack of information: Extracting latent knowledge for effective temporal knowledge graph completion",
+      "authors": [
+        {
+          "name": "Yeon-Chang Lee",
+          "authorId": "2553299"
+        },
+        {
+          "name": "JaeHyun Lee",
+          "authorId": "2265949175"
+        },
+        {
+          "name": "Dongwon Lee",
+          "authorId": "2265952497"
+        },
+        {
+          "name": "Sang-Wook Kim",
+          "authorId": "2237948017"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.1016/j.ins.2023.119857",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dd502fe4785850513a096bca1e68c0c47eff66bc",
+      "venue": "Information Sciences",
+      "journal": {
+        "name": "Inf. Sci.",
+        "pages": "119857",
+        "volume": "654"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ca7c44e72d87a45560cdec3b71fa334e5dedb311",
+      "title": "Enhancing Spatiotemporal Disease Progression Models via Latent Diffusion and Prior Knowledge",
+      "authors": [
+        {
+          "name": "Lemuel Puglisi",
+          "authorId": "2209987675"
+        },
+        {
+          "name": "Daniel C. Alexander",
+          "authorId": "2285921008"
+        },
+        {
+          "name": "Daniele Rav\u00ec",
+          "authorId": "2347855608"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this work, we introduce Brain Latent Progression (BrLP), a novel spatiotemporal disease progression model based on latent diffusion. BrLP is designed to predict the evolution of diseases at the individual level on 3D brain MRIs. Existing deep generative models developed for this task are primarily data-driven and face challenges in learning disease progressions. BrLP addresses these challenges by incorporating prior knowledge from disease models to enhance the accuracy of predictions. To implement this, we propose to integrate an auxiliary model that infers volumetric changes in various brain regions. Additionally, we introduce Latent Average Stabilization (LAS), a novel technique to improve spatiotemporal consistency of the predicted progression. BrLP is trained and evaluated on a large dataset comprising 11,730 T1-weighted brain MRIs from 2,805 subjects, collected from three publicly available, longitudinal Alzheimer's Disease (AD) studies. In our experiments, we compare the MRI scans generated by BrLP with the actual follow-up MRIs available from the subjects, in both cross-sectional and longitudinal settings. BrLP demonstrates significant improvements over existing methods, with an increase of 22% in volumetric accuracy across AD-related brain regions and 43% in image similarity to the ground-truth scans. The ability of BrLP to generate conditioned 3D scans at the subject level, along with the novelty of integrating prior knowledge to enhance accuracy, represents a significant advancement in disease progression modeling, opening new avenues for precision medicine. The code of BrLP is available at the following link: https://github.com/LemuelPuglisi/BrLP.",
+      "citationCount": 29,
+      "doi": "10.48550/arXiv.2405.03328",
+      "arxivId": "2405.03328",
+      "url": "https://www.semanticscholar.org/paper/ca7c44e72d87a45560cdec3b71fa334e5dedb311",
+      "venue": "International Conference on Medical Image Computing and Computer-Assisted Intervention",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.03328"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0005d4cfc0f5dd2ce444ab5373cd172f03e6a320",
+      "title": "The Knowledge Structure and Development Trend in Artificial Intelligence Based on Latent Feature Topic Model",
+      "authors": [
+        {
+          "name": "Yunmei Liu",
+          "authorId": "2117415197"
+        },
+        {
+          "name": "Min Chen",
+          "authorId": "2108558318"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Currently, with the rapid development of science and technology, the field of artificial intelligence presents characteristics such as a wide crossover of disciplines and fast update, and the field of artificial intelligence has become a new focus of international competition. As an interdisciplinary field, the field of artificial intelligence has rich knowledge and strategic management significance. This article conducts an in-depth study on the knowledge structure and evolution trends in the field of AI, and the main work is as follows. First, a new potential feature topic model New-LDA is proposed for the study of topic recognition, which enhances the feature learning ability of the traditional LDA model, and makes up for the deficiency of the traditional LDA model in the ability of recognizing topics in complex environments. Second, the knowledge structure in the field of AI is analyzed from two aspects: topic recognition and coword analysis. The time series model is introduced to establish the topic evolution network, and the high-frequency words in three periods are compared and analyzed to find the evolution regular of knowledge structure in the AI domain. Finally, taking the cross-discipline of AI as an example, the thematic evolution of the field and its cross-discipline is analyzed to determine the future development direction and evolutionary trend of the field of AI.",
+      "citationCount": 35,
+      "doi": "10.1109/TEM.2022.3232178",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0005d4cfc0f5dd2ce444ab5373cd172f03e6a320",
+      "venue": "IEEE transactions on engineering management",
+      "journal": {
+        "name": "IEEE Transactions on Engineering Management",
+        "pages": "12593-12604",
+        "volume": "71"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "819ec3061934f517de2858f662614faf867760f7",
+      "title": "Iteratively Adding Latent Human Knowledge Within Trajectory Optimization Specifications Improves Learning and Task Outcomes",
+      "authors": [
+        {
+          "name": "Christine T. Chang",
+          "authorId": "2109805346"
+        },
+        {
+          "name": "Maria P. Stull",
+          "authorId": "2309149357"
+        },
+        {
+          "name": "Breanne Crockett",
+          "authorId": "2174607772"
+        },
+        {
+          "name": "Emily Jensen",
+          "authorId": "2299533100"
+        },
+        {
+          "name": "Clare Lohrmann",
+          "authorId": "2307781244"
+        },
+        {
+          "name": "Mitchell Hebert",
+          "authorId": "2337299071"
+        },
+        {
+          "name": "Bradley Hayes",
+          "authorId": "2303385361"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Frictionless and understandable tasking is essential for leveraging human-autonomy teaming in commercial, military, and public safety applications. Existing technology for facilitating human teaming with uncrewed aerial vehicles (UAVs), utilizing planners or trajectory optimizers that incorporate human input, introduces a usability and operator capability gap by not explicitly effecting user upskilling by promoting system understanding or predictability. Supplementing annotated waypoints with natural language guidance affords an opportunity for both. In this work we investigate one-shot versus iterative input, introducing a testbed system based on government and industry UAV planning tools that affords inputs in the form of both natural language text and drawn annotations on a terrain map. The testbed uses an LLM-based subsystem to map user inputs into additional terms for the trajectory optimization objective function. We demonstrate through a human subjects study that prompting a human teammate to iteratively add latent knowledge to a trajectory optimization aids the user in learning how the system functions, elicits more desirable robot behaviors, and ultimately achieves better task outcomes.",
+      "citationCount": 1,
+      "doi": "10.1109/LRA.2024.3522779",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/819ec3061934f517de2858f662614faf867760f7",
+      "venue": "IEEE Robotics and Automation Letters",
+      "journal": {
+        "name": "IEEE Robotics and Automation Letters",
+        "pages": "1537-1544",
+        "volume": "10"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "59bf9d56d57386aac83926da4b4c22a3ae6d1804",
+      "title": "LAKE-RED: Camouflaged Images Generation by Latent Background Knowledge Retrieval-Augmented Diffusion",
+      "authors": [
+        {
+          "name": "Pancheng Zhao",
+          "authorId": "2295200178"
+        },
+        {
+          "name": "Peng Xu",
+          "authorId": "2268685797"
+        },
+        {
+          "name": "Pengda Qin",
+          "authorId": "2268674626"
+        },
+        {
+          "name": "Deng-Ping Fan",
+          "authorId": "2268675384"
+        },
+        {
+          "name": "Zhicheng Zhang",
+          "authorId": "2213702340"
+        },
+        {
+          "name": "Guoli Jia",
+          "authorId": "2273925124"
+        },
+        {
+          "name": "Bowen Zhou",
+          "authorId": "2269188963"
+        },
+        {
+          "name": "Jufeng Yang",
+          "authorId": "2279760632"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Camouflaged vision perception is an important vision task with numerous practical applications. Due to the expensive collection and labeling costs, this community struggles with a major bottleneck that the species category of its datasets is limited to a small number of object species. However, the existing camouflaged generation methods require specifying the background manually, thus failing to extend the camouflaged sample diversity in a low-cost manner. In this paper, we propose a Latent Background Knowledge Retrieval-Augmented Diffusion (LAKE-RED) for camouflaged image generation. To our knowledge, our contributions mainly include: (1) For the first time, we propose a camouflaged generation paradigm that does not need to re-eive any background inputs. (2) Our LAKE-RED is the first knowledge retrieval-augmented method with interpretability for camouflaged generation, in which we propose an idea that knowledge retrieval and reasoning enhancement are separated explicitly, to alleviate the task-specific chal-lenges. Moreover, our method is not restricted to specific foreground targets or backgrounds, offering a potential for extending camouflaged vision perception to more diverse domains. (3) Experimental results demonstrate that our method outperforms the existing approaches, generating more realistic camouflage images. Our source code is released on https://github.com/PanchengZhaoILAKE-RED.",
+      "citationCount": 19,
+      "doi": "10.1109/CVPR52733.2024.00392",
+      "arxivId": "2404.00292",
+      "url": "https://www.semanticscholar.org/paper/59bf9d56d57386aac83926da4b4c22a3ae6d1804",
+      "venue": "Computer Vision and Pattern Recognition",
+      "journal": {
+        "name": "2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "pages": "4092-4101"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f866406e6111eece3be2a818706453818ca65579",
+      "title": "Sequential Latent Knowledge Selection for Knowledge-Grounded Dialogue",
+      "authors": [
+        {
+          "name": "Byeongchang Kim",
+          "authorId": "3231991"
+        },
+        {
+          "name": "Jaewoo Ahn",
+          "authorId": "2111076389"
+        },
+        {
+          "name": "Gunhee Kim",
+          "authorId": "70308241"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Knowledge-grounded dialogue is a task of generating an informative response based on both discourse context and external knowledge. As we focus on better modeling the knowledge selection in the multi-turn knowledge-grounded dialogue, we propose a sequential latent variable model as the first approach to this matter. The model named sequential knowledge transformer (SKT) can keep track of the prior and posterior distribution over knowledge; as a result, it can not only reduce the ambiguity caused from the diversity in knowledge selection of conversation but also better leverage the response information for proper choice of knowledge. Our experimental results show that the proposed model improves the knowledge selection accuracy and subsequently the performance of utterance generation. We achieve the new state-of-the-art performance on Wizard of Wikipedia (Dinan et al., 2019) as one of the most large-scale and challenging benchmarks. We further validate the effectiveness of our model over existing conversation methods in another knowledge-based dialogue Holl-E dataset (Moghe et al., 2018).",
+      "citationCount": 179,
+      "doi": null,
+      "arxivId": "2002.07510",
+      "url": "https://www.semanticscholar.org/paper/f866406e6111eece3be2a818706453818ca65579",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2002.07510"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f82c49754ae6b561c1ccd694af0c6010c70b28e3",
+      "title": "Interpreting Latent Student Knowledge Representations in Programming Assignments",
+      "authors": [
+        {
+          "name": "Nigel Fernandez",
+          "authorId": "39022996"
+        },
+        {
+          "name": "Andrew Lan",
+          "authorId": "2289844808"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent advances in artificial intelligence for education leverage generative large language models, including using them to predict open-ended student responses rather than their correctness only. However, the black-box nature of these models limits the interpretability of the learned student knowledge representations. In this paper, we conduct a first exploration into interpreting latent student knowledge representations by presenting InfoOIRT, an Information regularized Open-ended Item Response Theory model, which encourages the latent student knowledge states to be interpretable while being able to generate student-written code for open-ended programming questions. InfoOIRT maximizes the mutual information between a fixed subset of latent knowledge states enforced with simple prior distributions and generated student code, which encourages the model to learn disentangled representations of salient syntactic and semantic code features including syntactic styles, mastery of programming skills, and code structures. Through experiments on a real-world programming education dataset, we show that InfoOIRT can both accurately generate student code and lead to interpretable student knowledge representations.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2405.08213",
+      "arxivId": "2405.08213",
+      "url": "https://www.semanticscholar.org/paper/f82c49754ae6b561c1ccd694af0c6010c70b28e3",
+      "venue": "Educational Data Mining",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.08213"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5aa413a5447630ab4a96c216ca9b5a2b17e126c7",
+      "title": "Interactive Latent Knowledge Selection for E-Commerce Product Copywriting Generation",
+      "authors": [
+        {
+          "name": "Zeming Wang",
+          "authorId": "2165308157"
+        },
+        {
+          "name": "Yanyan Zou",
+          "authorId": "2803468"
+        },
+        {
+          "name": "Yuejian Fang",
+          "authorId": "2181664"
+        },
+        {
+          "name": "Hongshen Chen",
+          "authorId": "1830448175"
+        },
+        {
+          "name": "Mian Ma",
+          "authorId": "2165224187"
+        },
+        {
+          "name": "Zhuoye Ding",
+          "authorId": "1775738"
+        },
+        {
+          "name": "Bo Long",
+          "authorId": "2052143728"
+        }
+      ],
+      "year": 2022,
+      "abstract": "As the multi-modal e-commerce is thriving, high-quality advertising product copywriting has gain more attentions, which plays a crucial role in the e-commerce recommender, advertising and even search platforms.The advertising product copywriting is able to enhance the user experience by highlighting the product\u2019s characteristics with textual descriptions and thus to improve the likelihood of user click and purchase. Automatically generating product copywriting has attracted noticeable interests from both academic and industrial communities, where existing solutions merely make use of a product\u2019s title and attribute information to generate its corresponding description.However, in addition to the product title and attributes, we observe that there are various auxiliary descriptions created by the shoppers or marketers in the e-commerce platforms (namely human knowledge), which contains valuable information for product copywriting generation, yet always accompanying lots of noises.In this work, we propose a novel solution to automatically generating product copywriting that involves all the title, attributes and denoised auxiliary knowledge.To be specific, we design an end-to-end generation framework equipped with two variational autoencoders that works interactively to select informative human knowledge and generate diverse copywriting.",
+      "citationCount": 7,
+      "doi": "10.18653/v1/2022.ecnlp-1.2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5aa413a5447630ab4a96c216ca9b5a2b17e126c7",
+      "venue": "ECNLP",
+      "journal": {
+        "name": "Proceedings of The Fifth Workshop on e-Commerce and NLP (ECNLP 5)"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

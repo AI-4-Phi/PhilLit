@@ -1,0 +1,1731 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "power seeking AI instrumental convergence",
+  "results": [
+    {
+      "openalex_id": "W3003667836",
+      "doi": "10.1109/access.2020.2970143",
+      "title": "Digital Twin: Values, Challenges and Enablers From a Modeling Perspective",
+      "authors": [
+        {
+          "name": "Adil Rasheed",
+          "openalex_id": "A5032407979",
+          "orcid": "https://orcid.org/0000-0003-2690-983X",
+          "institutions": [
+            "Norwegian University of Science and Technology",
+            "SINTEF",
+            "SINTEF Digital"
+          ]
+        },
+        {
+          "name": "Omer San",
+          "openalex_id": "A5085671233",
+          "orcid": "https://orcid.org/0000-0002-2241-4648",
+          "institutions": [
+            "Oklahoma State University"
+          ]
+        },
+        {
+          "name": "Trond Kvamsdal",
+          "openalex_id": "A5072774082",
+          "orcid": "https://orcid.org/0000-0002-1615-7649",
+          "institutions": [
+            "SINTEF Digital",
+            "Norwegian University of Science and Technology",
+            "SINTEF"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "Digital twin can be defined as a virtual representation of a physical asset enabled through data and simulators for real-time prediction, optimization, monitoring, controlling, and improved decision making. Recent advances in computational pipelines, multiphysics solvers, artificial intelligence, big data cybernetics, data processing and management tools bring the promise of digital twins and their impact on society closer to reality. Digital twinning is now an important and emerging trend in many applications. Also referred to as a computational megamodel, device shadow, mirrored system, avatar or a synchronized virtual prototype, there can be no doubt that a digital twin plays a transformative role not only in how we design and operate cyber-physical intelligent systems, but also in how we advance the modularity of multi-disciplinary systems to tackle fundamental barriers not addressed by the current, evolutionary modeling practices. In this work, we review the recent status of methodologies and techniques related to the construction of digital twins mostly from a modeling perspective. Our aim is to provide a detailed coverage of the current challenges and enabling technologies along with recommendations and reflections for various stakeholders.",
+      "cited_by_count": 1504,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/08972429.pdf"
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "Simulation Techniques and Applications"
+      ],
+      "referenced_works_count": 579,
+      "url": "https://openalex.org/W3003667836"
+    },
+    {
+      "openalex_id": "W3045086480",
+      "doi": "10.1109/access.2020.3010896",
+      "title": "6G and Beyond: The Future of Wireless Communications Systems",
+      "authors": [
+        {
+          "name": "Ian F. Akyildiz",
+          "openalex_id": "A5044396726",
+          "orcid": "https://orcid.org/0000-0002-8099-3529",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "A.C. Kak",
+          "openalex_id": "A5084427797",
+          "orcid": "https://orcid.org/0000-0001-5142-7715",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "Shuai Nie",
+          "openalex_id": "A5074393476",
+          "orcid": "https://orcid.org/0000-0002-1038-4146",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "6G and beyond will fulfill the requirements of a fully connected world and provide ubiquitous wireless connectivity for all. Transformative solutions are expected to drive the surge for accommodating a rapidly growing number of intelligent devices and services. Major technological breakthroughs to achieve connectivity goals within 6G include: (i) a network operating at the THz band with much wider spectrum resources, (ii) intelligent communication environments that enable a wireless propagation environment with active signal transmission and reception, (iii) pervasive artificial intelligence, (iv) large-scale network automation, (v) an all-spectrum reconfigurable front-end for dynamic spectrum access, (vi) ambient backscatter communications for energy savings, (vii) the Internet of Space Things enabled by CubeSats and UAVs, and (viii) cell-free massive MIMO communication networks. In this roadmap paper, use cases for these enabling techniques as well as recent advancements on related topics are highlighted, and open problems with possible solutions are discussed, followed by a development timeline outlining the worldwide efforts in the realization of 6G. Going beyond 6G, promising early-stage technologies such as the Internet of NanoThings, the Internet of BioNanoThings, and quantum communications, which are expected to have a far-reaching impact on wireless communications, have also been discussed at length in this paper.",
+      "cited_by_count": 1236,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09145564.pdf"
+      },
+      "topics": [
+        "Molecular Communication and Nanonetworks",
+        "Energy Harvesting in Wireless Networks",
+        "Advanced Wireless Communication Technologies"
+      ],
+      "referenced_works_count": 208,
+      "url": "https://openalex.org/W3045086480"
+    },
+    {
+      "openalex_id": "W4386222752",
+      "doi": "10.3390/diagnostics13172760",
+      "title": "Redefining Radiology: A Review of Artificial Intelligence Integration in Medical Imaging",
+      "authors": [
+        {
+          "name": "Reabal Najjar",
+          "openalex_id": "A5028466190",
+          "orcid": "https://orcid.org/0000-0001-7169-7077",
+          "institutions": [
+            "Services Australia",
+            "ACT Government",
+            "Act Health"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-25",
+      "abstract": "This comprehensive review unfolds a detailed narrative of Artificial Intelligence (AI) making its foray into radiology, a move that is catalysing transformational shifts in the healthcare landscape. It traces the evolution of radiology, from the initial discovery of X-rays to the application of machine learning and deep learning in modern medical image analysis. The primary focus of this review is to shed light on AI applications in radiology, elucidating their seminal roles in image segmentation, computer-aided diagnosis, predictive analytics, and workflow optimisation. A spotlight is cast on the profound impact of AI on diagnostic processes, personalised medicine, and clinical workflows, with empirical evidence derived from a series of case studies across multiple medical disciplines. However, the integration of AI in radiology is not devoid of challenges. The review ventures into the labyrinth of obstacles that are inherent to AI-driven radiology\u2014data quality, the \u2019black box\u2019 enigma, infrastructural and technical complexities, as well as ethical implications. Peering into the future, the review contends that the road ahead for AI in radiology is paved with promising opportunities. It advocates for continuous research, embracing avant-garde imaging technologies, and fostering robust collaborations between radiologists and AI developers. The conclusion underlines the role of AI as a catalyst for change in radiology, a stance that is firmly rooted in sustained innovation, dynamic partnerships, and a steadfast commitment to ethical responsibility.",
+      "cited_by_count": 571,
+      "type": "review",
+      "source": {
+        "name": "Diagnostics",
+        "type": "journal",
+        "issn": [
+          "2075-4418"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2075-4418/13/17/2760/pdf?version=1692969539"
+      },
+      "topics": [
+        "Radiomics and Machine Learning in Medical Imaging",
+        "Artificial Intelligence in Healthcare and Education",
+        "Medical Imaging and Analysis"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W4386222752"
+    },
+    {
+      "openalex_id": "W3002093512",
+      "doi": "10.1007/s11023-020-09539-2",
+      "title": "Artificial Intelligence, Values, and Alignment",
+      "authors": [
+        {
+          "name": "Iason Gabriel",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-7552-4576",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-01",
+      "abstract": "Abstract This paper looks at philosophical questions that arise in the context of AI alignment. It defends three propositions. First, normative and technical aspects of the AI alignment problem are interrelated, creating space for productive engagement between people working in both domains. Second, it is important to be clear about the goal of alignment. There are significant differences between AI that aligns with instructions, intentions, revealed preferences, ideal preferences, interests and values. A principle-based approach to AI alignment, which combines these elements in a systematic way, has considerable advantages in this context. Third, the central challenge for theorists is not to identify \u2018true\u2019 moral principles for AI; rather, it is to identify fair principles for alignment that receive reflective endorsement despite widespread variation in people\u2019s moral beliefs. The final part of the paper explores three ways in which fair principles for AI alignment could potentially be identified.",
+      "cited_by_count": 497,
+      "type": "article",
+      "source": {
+        "name": "Minds and Machines",
+        "type": "journal",
+        "issn": [
+          "0924-6495",
+          "1572-8641"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11023-020-09539-2.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W3002093512"
+    },
+    {
+      "openalex_id": "W3120694366",
+      "doi": "10.3390/smartcities4010006",
+      "title": "Introducing the \u201c15-Minute City\u201d: Sustainability, Resilience and Place Identity in Future Post-Pandemic Cities",
+      "authors": [
+        {
+          "name": "Carlos Moreno",
+          "openalex_id": "A5101786439",
+          "orcid": "https://orcid.org/0000-0003-0207-6626",
+          "institutions": [
+            "Universit\u00e9 Paris 1 Panth\u00e9on-Sorbonne"
+          ]
+        },
+        {
+          "name": "Zaheer Allam",
+          "openalex_id": "A5023575906",
+          "orcid": "https://orcid.org/0000-0001-7682-5912",
+          "institutions": [
+            "Universit\u00e9 Paris 1 Panth\u00e9on-Sorbonne"
+          ]
+        },
+        {
+          "name": "Didier Chabaud",
+          "openalex_id": "A5104667247",
+          "orcid": "https://orcid.org/0000-0003-4849-1868",
+          "institutions": [
+            "Universit\u00e9 Paris 1 Panth\u00e9on-Sorbonne"
+          ]
+        },
+        {
+          "name": "Catherine Gall",
+          "openalex_id": "A5113740406",
+          "institutions": [
+            "Universit\u00e9 Paris 1 Panth\u00e9on-Sorbonne"
+          ]
+        },
+        {
+          "name": "Florent Pratlong",
+          "openalex_id": "A5016431707",
+          "institutions": [
+            "Universit\u00e9 Paris 1 Panth\u00e9on-Sorbonne"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-08",
+      "abstract": "The socio-economic impacts on cities during the COVID-19 pandemic have been brutal, leading to increasing inequalities and record numbers of unemployment around the world. While cities endure lockdowns in order to ensure decent levels of health, the challenges linked to the unfolding of the pandemic have led to the need for a radical re-think of the city, leading to the re-emergence of a concept, initially proposed in 2016 by Carlos Moreno: the \u201c15-Minute City\u201d. The concept, offering a novel perspective of \u201cchrono-urbanism\u201d, adds to existing thematic of Smart Cities and the rhetoric of building more humane urban fabrics, outlined by Christopher Alexander, and that of building safer, more resilient, sustainable and inclusive cities, as depicted in the Sustainable Development Goal 11 of the United Nations. With the concept gaining ground in popular media and its subsequent adoption at policy level in a number of cities of varying scale and geographies, the present paper sets forth to introduce the concept, its origins, intent and future directions.",
+      "cited_by_count": 1492,
+      "type": "article",
+      "source": {
+        "name": "Smart Cities",
+        "type": "journal",
+        "issn": [
+          "2624-6511"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2624-6511/4/1/6/pdf?version=1610095098"
+      },
+      "topics": [
+        "Urban Transport and Accessibility",
+        "Place Attachment and Urban Studies",
+        "Human Mobility and Location-Based Analysis"
+      ],
+      "referenced_works_count": 75,
+      "url": "https://openalex.org/W3120694366"
+    },
+    {
+      "openalex_id": "W4392773210",
+      "doi": "10.1186/s41239-024-00448-3",
+      "title": "Embracing the future of Artificial Intelligence in the classroom: the relevance of AI literacy, prompt engineering, and critical thinking in modern education",
+      "authors": [
+        {
+          "name": "Yoshija Walter",
+          "openalex_id": "A5078892242",
+          "orcid": "https://orcid.org/0000-0003-0282-9659",
+          "institutions": [
+            "Kalaidos University of Applied Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-26",
+      "abstract": "Abstract The present discussion examines the transformative impact of Artificial Intelligence (AI) in educational settings, focusing on the necessity for AI literacy, prompt engineering proficiency, and enhanced critical thinking skills. The introduction of AI into education marks a significant departure from conventional teaching methods, offering personalized learning and support for diverse educational requirements, including students with special needs. However, this integration presents challenges, including the need for comprehensive educator training and curriculum adaptation to align with societal structures. AI literacy is identified as crucial, encompassing an understanding of AI technologies and their broader societal impacts. Prompt engineering is highlighted as a key skill for eliciting specific responses from AI systems, thereby enriching educational experiences and promoting critical thinking. There is detailed analysis of strategies for embedding these skills within educational curricula and pedagogical practices. This is discussed through a case-study based on a Swiss university and a narrative literature review, followed by practical suggestions of how to implement AI in the classroom.",
+      "cited_by_count": 543,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Educational Technology in Higher Education",
+        "type": "journal",
+        "issn": [
+          "2365-9440"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-024-00448-3"
+      },
+      "topics": [
+        "Engineering Education and Technology",
+        "Teaching and Learning Programming",
+        "Biomedical and Engineering Education"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4392773210"
+    },
+    {
+      "openalex_id": "W4386961654",
+      "doi": "10.3390/s23198015",
+      "title": "Exploring the Full Potentials of IoT for Better Financial Growth and Stability: A Comprehensive Survey",
+      "authors": [
+        {
+          "name": "Hanane Allioui",
+          "openalex_id": "A5057338017",
+          "orcid": "https://orcid.org/0000-0001-6208-3102",
+          "institutions": [
+            "\u00c9cole Sup\u00e9rieure du Commerce et des Affaires"
+          ]
+        },
+        {
+          "name": "Youssef Mourdi",
+          "openalex_id": "A5074419358",
+          "orcid": "https://orcid.org/0000-0003-0999-6388",
+          "institutions": [
+            "Cadi Ayyad University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-22",
+      "abstract": "Cutting-edge technologies, with a special emphasis on the Internet of Things (IoT), tend to operate as game changers, generating enormous alterations in both traditional and modern enterprises. Understanding multiple uses of IoT has become vital for effective financial management, given the ever-changing nature of organizations and the technological disruptions that come with this paradigm change. IoT has proven to be a powerful tool for improving operational efficiency, decision-making processes, overall productivity, and data management. As a result of the continuously expanding data volume, there is an increasing demand for a robust IT system capable of adeptly handling all enterprise processes. Consequently, businesses must develop suitable IoT architectures that can efficiently address these continually evolving requirements. This research adopts an incremental explanatory approach, guided by the principles of the Preferred Reporting Items for Systematic Reviews and Meta-Analysis (PRISMA). A rigorous examination of 84 research papers has allowed us to delve deeply into the current landscape of IoT research. This research aims to provide a complete and cohesive overview of the existing body of knowledge on IoT. This is accomplished by combining a rigorous empirical approach to categorization with ideas from specialized literature in the IoT sector. This study actively contributes to the ongoing conversation around IoT by recognizing and critically examining current difficulties. This, consequently, opens new research possibilities and promotes future developments in this ever-changing sector.",
+      "cited_by_count": 451,
+      "type": "review",
+      "source": {
+        "name": "Sensors",
+        "type": "journal",
+        "issn": [
+          "1424-8220"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1424-8220/23/19/8015/pdf?version=1695349202"
+      },
+      "topics": [
+        "IoT and Edge/Fog Computing",
+        "Blockchain Technology Applications and Security",
+        "Internet of Things and AI"
+      ],
+      "referenced_works_count": 152,
+      "url": "https://openalex.org/W4386961654"
+    },
+    {
+      "openalex_id": "W4385416665",
+      "doi": "10.3390/fi15080260",
+      "title": "The Power of Generative AI: A Review of Requirements, Models, Input\u2013Output Formats, Evaluation Metrics, and Challenges",
+      "authors": [
+        {
+          "name": "Ajay Bandi",
+          "openalex_id": "A5047345391",
+          "orcid": "https://orcid.org/0000-0003-2434-736X",
+          "institutions": [
+            "Northwest Missouri State University"
+          ]
+        },
+        {
+          "name": "Pydi Venkata Satya Ramesh Adapa",
+          "openalex_id": "A5092780821",
+          "institutions": [
+            "Northwest Missouri State University"
+          ]
+        },
+        {
+          "name": "Yudu Eswar Vinay Pratap Kumar Kuchi",
+          "openalex_id": "A5092780822",
+          "institutions": [
+            "Northwest Missouri State University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-31",
+      "abstract": "Generative artificial intelligence (AI) has emerged as a powerful technology with numerous applications in various domains. There is a need to identify the requirements and evaluation metrics for generative AI models designed for specific tasks. The purpose of the research aims to investigate the fundamental aspects of generative AI systems, including their requirements, models, input\u2013output formats, and evaluation metrics. The study addresses key research questions and presents comprehensive insights to guide researchers, developers, and practitioners in the field. Firstly, the requirements necessary for implementing generative AI systems are examined and categorized into three distinct categories: hardware, software, and user experience. Furthermore, the study explores the different types of generative AI models described in the literature by presenting a taxonomy based on architectural characteristics, such as variational autoencoders (VAEs), generative adversarial networks (GANs), diffusion models, transformers, language models, normalizing flow models, and hybrid models. A comprehensive classification of input and output formats used in generative AI systems is also provided. Moreover, the research proposes a classification system based on output types and discusses commonly used evaluation metrics in generative AI. The findings contribute to advancements in the field, enabling researchers, developers, and practitioners to effectively implement and evaluate generative AI models for various applications. The significance of the research lies in understanding that generative AI system requirements are crucial for effective planning, design, and optimal performance. A taxonomy of models aids in selecting suitable options and driving advancements. Classifying input\u2013output formats enables leveraging diverse formats for customized systems, while evaluation metrics establish standardized methods to assess model quality and performance.",
+      "cited_by_count": 471,
+      "type": "review",
+      "source": {
+        "name": "Future Internet",
+        "type": "journal",
+        "issn": [
+          "1999-5903"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1999-5903/15/8/260/pdf?version=1690812126"
+      },
+      "topics": [
+        "Generative Adversarial Networks and Image Synthesis",
+        "Explainable Artificial Intelligence (XAI)",
+        "Advanced Data Storage Technologies"
+      ],
+      "referenced_works_count": 135,
+      "url": "https://openalex.org/W4385416665"
+    },
+    {
+      "openalex_id": "W4226225860",
+      "doi": "10.1109/ojcs.2022.3188249",
+      "title": "Fusing Blockchain and AI With Metaverse: A Survey",
+      "authors": [
+        {
+          "name": "Qinglin Yang",
+          "openalex_id": "A5071062179",
+          "orcid": "https://orcid.org/0000-0002-7263-8914",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Yetong Zhao",
+          "openalex_id": "A5084947806",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Huawei Huang",
+          "openalex_id": "A5047931252",
+          "orcid": "https://orcid.org/0000-0002-7035-6446",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        },
+        {
+          "name": "Zehui Xiong",
+          "openalex_id": "A5005327587",
+          "orcid": "https://orcid.org/0000-0002-4440-941X",
+          "institutions": [
+            "Singapore University of Technology and Design"
+          ]
+        },
+        {
+          "name": "Jiawen Kang",
+          "openalex_id": "A5062761975",
+          "orcid": "https://orcid.org/0000-0002-8218-3490",
+          "institutions": [
+            "Guangdong University of Technology"
+          ]
+        },
+        {
+          "name": "Zibin Zheng",
+          "openalex_id": "A5012731436",
+          "orcid": "https://orcid.org/0000-0001-7872-7718",
+          "institutions": [
+            "Sun Yat-sen University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "Metaverse as the latest buzzword has attracted great attention from both industry and academia. Metaverse seamlessly integrates the real world with the virtual world and allows avatars to carry out rich activities including creation, display, entertainment, social networking, and trading. Thus, it is promising to build an exciting digital world and to transform a better physical world through the exploration of the metaverse. In this survey, we dive into the metaverse by discussing how Blockchain and Artificial Intelligence (AI) fuse with it through investigating the state-of-the-art studies across the metaverse components, digital currencies, AI applications in the virtual world, and blockchain-empowered technologies. Further exploitation and interdisciplinary research on the fusion of AI and Blockchain towards metaverse will definitely require collaboration from both academia and industries. We wish that our survey can help researchers, engineers, and educators build an open, fair, and rational future metaverse.",
+      "cited_by_count": 530,
+      "type": "article",
+      "source": {
+        "name": "IEEE Open Journal of the Computer Society",
+        "type": "journal",
+        "issn": [
+          "2644-1268"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/8782664/9024218/09815155.pdf"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "IoT and Edge/Fog Computing",
+        "Virtual Reality Applications and Impacts"
+      ],
+      "referenced_works_count": 92,
+      "url": "https://openalex.org/W4226225860"
+    },
+    {
+      "openalex_id": "W4390829176",
+      "doi": "10.3390/app14020675",
+      "title": "Balancing Privacy and Progress: A Review of Privacy Challenges, Systemic Oversight, and Patient Perceptions in AI-Driven Healthcare",
+      "authors": [
+        {
+          "name": "S. Williamson",
+          "openalex_id": "A5031754157",
+          "orcid": "https://orcid.org/0009-0001-2785-9734",
+          "institutions": [
+            "University of North Texas"
+          ]
+        },
+        {
+          "name": "Victor R. Prybutok",
+          "openalex_id": "A5010238940",
+          "orcid": "https://orcid.org/0000-0003-3810-9039",
+          "institutions": [
+            "Decision Sciences (United States)",
+            "University of North Texas"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-12",
+      "abstract": "Integrating Artificial Intelligence (AI) in healthcare represents a transformative shift with substantial potential for enhancing patient care. This paper critically examines this integration, confronting significant ethical, legal, and technological challenges, particularly in patient privacy, decision-making autonomy, and data integrity. A structured exploration of these issues focuses on Differential Privacy as a critical method for preserving patient confidentiality in AI-driven healthcare systems. We analyze the balance between privacy preservation and the practical utility of healthcare data, emphasizing the effectiveness of encryption, Differential Privacy, and mixed-model approaches. The paper navigates the complex ethical and legal frameworks essential for AI integration in healthcare. We comprehensively examine patient rights and the nuances of informed consent, along with the challenges of harmonizing advanced technologies like blockchain with the General Data Protection Regulation (GDPR). The issue of algorithmic bias in healthcare is also explored, underscoring the urgent need for effective bias detection and mitigation strategies to build patient trust. The evolving roles of decentralized data sharing, regulatory frameworks, and patient agency are discussed in depth. Advocating for an interdisciplinary, multi-stakeholder approach and responsive governance, the paper aims to align healthcare AI with ethical principles, prioritize patient-centered outcomes, and steer AI towards responsible and equitable enhancements in patient care.",
+      "cited_by_count": 372,
+      "type": "review",
+      "source": {
+        "name": "Applied Sciences",
+        "type": "journal",
+        "issn": [
+          "2076-3417"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2076-3417/14/2/675/pdf?version=1705396255"
+      },
+      "topics": [
+        "Ethics in Clinical Research",
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4390829176"
+    },
+    {
+      "openalex_id": "W4385759708",
+      "doi": "10.3390/agriculture13081593",
+      "title": "The Path to Smart Farming: Innovations and Opportunities in Precision Agriculture",
+      "authors": [
+        {
+          "name": "E. M. B. M. Karunathilake",
+          "openalex_id": "A5092628378",
+          "institutions": [
+            "Jeju National University"
+          ]
+        },
+        {
+          "name": "Anh Tuan Le",
+          "openalex_id": "A5052666201",
+          "orcid": "https://orcid.org/0000-0002-9584-7807",
+          "institutions": [
+            "Jeju National University"
+          ]
+        },
+        {
+          "name": "Seong Heo",
+          "openalex_id": "A5101797397",
+          "orcid": "https://orcid.org/0000-0003-4485-8810",
+          "institutions": [
+            "Kongju National University"
+          ]
+        },
+        {
+          "name": "Yong Suk Chung",
+          "openalex_id": "A5007644928",
+          "orcid": "https://orcid.org/0000-0003-3121-7600",
+          "institutions": [
+            "Jeju National University"
+          ]
+        },
+        {
+          "name": "Sheikh Mansoor",
+          "openalex_id": "A5063064622",
+          "orcid": "https://orcid.org/0000-0003-1902-4611",
+          "institutions": [
+            "Jeju National University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-11",
+      "abstract": "Precision agriculture employs cutting-edge technologies to increase agricultural productivity while reducing adverse impacts on the environment. Precision agriculture is a farming approach that uses advanced technology and data analysis to maximize crop yields, cut waste, and increase productivity. It is a potential strategy for tackling some of the major issues confronting contemporary agriculture, such as feeding a growing world population while reducing environmental effects. This review article examines some of the latest recent advances in precision agriculture, including the Internet of Things (IoT) and how to make use of big data. This review article aims to provide an overview of the recent innovations, challenges, and future prospects of precision agriculture and smart farming. It presents an analysis of the current state of precision agriculture, including the most recent innovations in technology, such as drones, sensors, and machine learning. The article also discusses some of the main challenges faced by precision agriculture, including data management, technology adoption, and cost-effectiveness.",
+      "cited_by_count": 579,
+      "type": "article",
+      "source": {
+        "name": "Agriculture",
+        "type": "journal",
+        "issn": [
+          "2077-0472"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2077-0472/13/8/1593/pdf?version=1691744642"
+      },
+      "topics": [
+        "Smart Agriculture and AI",
+        "Remote Sensing in Agriculture"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4385759708"
+    },
+    {
+      "openalex_id": "W3154435685",
+      "doi": "10.1109/trpms.2021.3066428",
+      "title": "On Interpretability of Artificial Neural Networks: A Survey",
+      "authors": [
+        {
+          "name": "Fenglei Fan",
+          "openalex_id": "A5018677035",
+          "orcid": "https://orcid.org/0000-0003-3691-5141",
+          "institutions": [
+            "Rensselaer Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Jinjun Xiong",
+          "openalex_id": "A5030156276",
+          "orcid": "https://orcid.org/0000-0002-2620-4859",
+          "institutions": [
+            "IBM Research - Thomas J. Watson Research Center"
+          ]
+        },
+        {
+          "name": "Mengzhou Li",
+          "openalex_id": "A5100643210",
+          "orcid": "https://orcid.org/0000-0002-0192-5422",
+          "institutions": [
+            "Rensselaer Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Ge Wang",
+          "openalex_id": "A5100400458",
+          "orcid": "https://orcid.org/0000-0002-2656-7705",
+          "institutions": [
+            "Rensselaer Polytechnic Institute"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-17",
+      "abstract": "Deep learning as represented by the artificial deep neural networks (DNNs) has achieved great success recently in many important areas that deal with text, images, videos, graphs, and so on. However, the black-box nature of DNNs has become one of the primary obstacles for their wide adoption in mission-critical applications such as medical diagnosis and therapy. Because of the huge potentials of deep learning, increasing the interpretability of deep neural networks has recently attracted much research attention. In this paper, we propose a simple but comprehensive taxonomy for interpretability, systematically review recent studies in improving interpretability of neural networks, describe applications of interpretability in medicine, and discuss possible future research directions of interpretability, such as in relation to fuzzy logic and brain science.",
+      "cited_by_count": 454,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Radiation and Plasma Medical Sciences",
+        "type": "journal",
+        "issn": [
+          "2469-7303",
+          "2469-7311"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/7433213/9597881/09380482.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 297,
+      "url": "https://openalex.org/W3154435685"
+    },
+    {
+      "openalex_id": "W4388424540",
+      "doi": "10.3389/fpsyg.2023.1261955",
+      "title": "Artificial intelligence in language instruction: impact on English learning achievement, L2 motivation, and self-regulated learning",
+      "authors": [
+        {
+          "name": "Ling Wei",
+          "openalex_id": "A5108193537"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-06",
+      "abstract": "Introduction This mixed methods study examines the effects of AI-mediated language instruction on English learning achievement, L2 motivation, and self-regulated learning among English as a Foreign Language (EFL) learners. It addresses the increasing interest in AI-driven educational technologies and their potential to revolutionize language instruction. Methods Two intact classes, consisting of a total of 60 university students, participated in this study. The experimental group received AI-mediated instruction, while the control group received traditional language instruction. Pre-tests and post-tests were administered to evaluate English learning achievement across various domains, including grammar, vocabulary, reading comprehension, and writing skills. Additionally, self-report questionnaires were employed to assess L2 motivation and self-regulated learning. Results Quantitative analysis revealed that the experimental group achieved significantly higher English learning outcomes in all assessed areas compared to the control group. Furthermore, they exhibited greater L2 motivation and more extensive utilization of self-regulated learning strategies. These results suggest that AI-mediated instruction positively impacts English learning achievement, L2 motivation, and self-regulated learning. Discussion Qualitative analysis of semi-structured interviews with 14 students from the experimental group shed light on the transformative effects of the AI platform. It was found to enhance engagement and offer personalized learning experiences, ultimately boosting motivation and fostering self-regulated learning. These findings emphasize the potential of AI-mediated language instruction to improve language learning outcomes, motivate learners, and promote autonomy. Conclusion This study contributes to evidence-based language pedagogy, offering valuable insights to educators and researchers interested in incorporating AI-powered platforms into language classrooms. The results support the notion that AI-mediated language instruction holds promise in revolutionizing language learning, and it highlights the positive impact of AI-driven educational technologies in the realm of language education.",
+      "cited_by_count": 314,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1261955/pdf?isPublishedV2=False"
+      },
+      "topics": [
+        "Online Learning and Analytics",
+        "Foreign Language Teaching Methods",
+        "Technology-Enhanced Education Studies"
+      ],
+      "referenced_works_count": 90,
+      "url": "https://openalex.org/W4388424540"
+    },
+    {
+      "openalex_id": "W3136594673",
+      "doi": "10.1007/s13280-021-01544-8",
+      "title": "Our future in the Anthropocene biosphere",
+      "authors": [
+        {
+          "name": "Carl Folke",
+          "openalex_id": "A5037095112",
+          "orcid": "https://orcid.org/0000-0002-4050-3281",
+          "institutions": [
+            "Royal Swedish Academy of Sciences"
+          ]
+        },
+        {
+          "name": "Stephen Polasky",
+          "openalex_id": "A5068168154",
+          "orcid": "https://orcid.org/0000-0003-4934-2434",
+          "institutions": [
+            "University of Minnesota"
+          ]
+        },
+        {
+          "name": "Johan Rockstr\u00f6m",
+          "openalex_id": "A5038584174",
+          "orcid": "https://orcid.org/0000-0001-8988-2983",
+          "institutions": [
+            "Potsdam Institute for Climate Impact Research"
+          ]
+        },
+        {
+          "name": "Victor Galaz",
+          "openalex_id": "A5044881481",
+          "orcid": "https://orcid.org/0000-0002-7303-8849",
+          "institutions": [
+            "Stockholm Resilience Centre",
+            "Stockholm University"
+          ]
+        },
+        {
+          "name": "Frances Westley",
+          "openalex_id": "A5076070853",
+          "institutions": [
+            "University of Waterloo"
+          ]
+        },
+        {
+          "name": "Mich\u00e8le Lamont",
+          "openalex_id": "A5014334361",
+          "orcid": "https://orcid.org/0000-0002-0221-0402",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        },
+        {
+          "name": "Marten Scheffer",
+          "openalex_id": "A5045054843",
+          "orcid": "https://orcid.org/0000-0002-2100-0312",
+          "institutions": [
+            "Wageningen University & Research"
+          ]
+        },
+        {
+          "name": "Henrik \u00d6sterblom",
+          "openalex_id": "A5091668331",
+          "orcid": "https://orcid.org/0000-0002-1913-5197",
+          "institutions": [
+            "Stockholm Resilience Centre",
+            "Stockholm University"
+          ]
+        },
+        {
+          "name": "Stephen R. Carpenter",
+          "openalex_id": "A5034039087",
+          "orcid": "https://orcid.org/0000-0001-8097-8700",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "F. Stuart Chapin",
+          "openalex_id": "A5078274032",
+          "orcid": "https://orcid.org/0000-0002-2558-9910",
+          "institutions": [
+            "University of Alaska Fairbanks"
+          ]
+        },
+        {
+          "name": "Karen C. Seto",
+          "openalex_id": "A5057946216",
+          "orcid": "https://orcid.org/0000-0002-4928-2446",
+          "institutions": [
+            "Yale University"
+          ]
+        },
+        {
+          "name": "Elke U. Weber",
+          "openalex_id": "A5015882940",
+          "orcid": "https://orcid.org/0000-0002-1678-3631",
+          "institutions": [
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Beatrice Crona",
+          "openalex_id": "A5080050517",
+          "orcid": "https://orcid.org/0000-0003-1617-4067",
+          "institutions": [
+            "Stockholm Resilience Centre",
+            "Stockholm University",
+            "Royal Swedish Academy of Sciences"
+          ]
+        },
+        {
+          "name": "Gretchen C. Daily",
+          "openalex_id": "A5009013374",
+          "orcid": "https://orcid.org/0000-0003-1443-1111",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Partha Dasgupta",
+          "openalex_id": "A5109204185",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Owen Gaffney",
+          "openalex_id": "A5081662976",
+          "orcid": "https://orcid.org/0000-0001-6244-991X",
+          "institutions": [
+            "Stockholm Resilience Centre",
+            "Stockholm University",
+            "Potsdam Institute for Climate Impact Research"
+          ]
+        },
+        {
+          "name": "Line Gordon",
+          "openalex_id": "A5039380210",
+          "orcid": "https://orcid.org/0000-0002-3520-4340",
+          "institutions": [
+            "Stockholm University",
+            "Stockholm Resilience Centre"
+          ]
+        },
+        {
+          "name": "Holger Hoff",
+          "openalex_id": "A5029218789",
+          "orcid": "https://orcid.org/0000-0001-9655-8655",
+          "institutions": [
+            "Potsdam Institute for Climate Impact Research"
+          ]
+        },
+        {
+          "name": "Simon A. Levin",
+          "openalex_id": "A5077712228",
+          "orcid": "https://orcid.org/0000-0002-8216-5639",
+          "institutions": [
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Jane Lubchenco",
+          "openalex_id": "A5088272346",
+          "orcid": "https://orcid.org/0000-0003-3540-5879",
+          "institutions": [
+            "Oregon State University"
+          ]
+        },
+        {
+          "name": "Will Steffen",
+          "openalex_id": "A5067048169",
+          "orcid": "https://orcid.org/0000-0003-1163-6736",
+          "institutions": [
+            "Stockholm Resilience Centre",
+            "Australian National University",
+            "Stockholm University"
+          ]
+        },
+        {
+          "name": "Brian Walker",
+          "openalex_id": "A5081516513",
+          "orcid": "https://orcid.org/0000-0002-9136-3055",
+          "institutions": [
+            "Commonwealth Scientific and Industrial Research Organisation"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-14",
+      "abstract": null,
+      "cited_by_count": 610,
+      "type": "review",
+      "source": {
+        "name": "AMBIO",
+        "type": "journal",
+        "issn": [
+          "0044-7447",
+          "1654-7209"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13280-021-01544-8.pdf"
+      },
+      "topics": [
+        "Ecosystem dynamics and resilience",
+        "Innovation, Sustainability, Human-Machine Systems"
+      ],
+      "referenced_works_count": 363,
+      "url": "https://openalex.org/W3136594673"
+    },
+    {
+      "openalex_id": "W4392621828",
+      "doi": "10.30574/gscarr.2024.18.3.0090",
+      "title": "E-commerce and consumer behavior: A review of AI-powered personalization and market trends",
+      "authors": [
+        {
+          "name": "Mustafa Ayobami Raji",
+          "openalex_id": "A5008496725"
+        },
+        {
+          "name": "Hameedat Bukola Olodo",
+          "openalex_id": "A5026533509",
+          "institutions": [
+            "University of Ilorin"
+          ]
+        },
+        {
+          "name": "Timothy Tolulope Oke",
+          "openalex_id": "A5111100266"
+        },
+        {
+          "name": "Wilhelmina Afua Addy",
+          "openalex_id": "A5093950081"
+        },
+        {
+          "name": "Onyeka Chrisanctus Ofodile",
+          "openalex_id": "A5093946275"
+        },
+        {
+          "name": "Adedoyin Tolulope Oyewole",
+          "openalex_id": "A5094030881"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-09",
+      "abstract": "In the dynamic landscape of electronic commerce (e-commerce), understanding and adapting to evolving consumer behavior is critical for the sustained success of online businesses. This review delves into the intersection of e-commerce and consumer behavior, focusing on the transformative role of Artificial Intelligence (AI)-powered personalization and its impact on market trends. The advent of AI has revolutionized the way e-commerce platforms engage with and cater to individual consumer preferences. AI-powered personalization techniques leverage advanced algorithms to analyze vast datasets, enabling the delivery of highly tailored and relevant content, product recommendations, and user experiences. This review explores the intricate mechanisms of AI-driven personalization, examining how it enhances customer engagement, satisfaction, and loyalty. Furthermore, the study investigates the prominent market trends shaped by AI in e-commerce. From chatbots and virtual assistants facilitating seamless customer interactions to predictive analytics optimizing inventory management, AI is driving innovation across various facets of the online retail landscape. The analysis delves into the integration of machine learning algorithms in predicting consumer preferences, streamlining the purchasing process, and fostering a more personalized shopping journey. As e-commerce continues to evolve, the review also explores the challenges and ethical considerations associated with AI-powered personalization. Issues such as data privacy, algorithmic bias, and the delicate balance between customization and intrusiveness are examined to provide a comprehensive understanding of the broader implications of AI in shaping consumer behavior. Ultimately, this review offers valuable insights into the symbiotic relationship between e-commerce and consumer behavior, shedding light on the transformative power of AI-powered personalization and its influence on emerging market trends. As businesses navigate the digital landscape, understanding and harnessing the potential of AI-driven strategies become imperative for staying competitive and meeting the evolving expectations of tech-savvy consumers.",
+      "cited_by_count": 174,
+      "type": "review",
+      "source": {
+        "name": "GSC Advanced Research and Reviews",
+        "type": "journal",
+        "issn": [
+          "2582-4597"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://gsconlinepress.com/journals/gscarr/sites/default/files/GSCARR-2024-0090.pdf"
+      },
+      "topics": [
+        "Impact of AI and Big Data on Business and Society"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W4392621828"
+    },
+    {
+      "openalex_id": "W4390114224",
+      "doi": "10.3390/ph17010022",
+      "title": "Computer-Aided Drug Design and Drug Discovery: A Prospective Analysis",
+      "authors": [
+        {
+          "name": "Sarfaraz K. Niazi",
+          "openalex_id": "A5054525075",
+          "orcid": "https://orcid.org/0000-0002-0513-0336",
+          "institutions": [
+            "University of Illinois Chicago",
+            "University of Illinois Urbana-Champaign"
+          ]
+        },
+        {
+          "name": "Zamara Mariam",
+          "openalex_id": "A5020219914",
+          "orcid": "https://orcid.org/0000-0002-4563-9559",
+          "institutions": [
+            "Coventry University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-22",
+      "abstract": "In the dynamic landscape of drug discovery, Computer-Aided Drug Design (CADD) emerges as a transformative force, bridging the realms of biology and technology. This paper overviews CADDs historical evolution, categorization into structure-based and ligand-based approaches, and its crucial role in rationalizing and expediting drug discovery. As CADD advances, incorporating diverse biological data and ensuring data privacy become paramount. Challenges persist, demanding the optimization of algorithms and robust ethical frameworks. Integrating Machine Learning and Artificial Intelligence amplifies CADDs predictive capabilities, yet ethical considerations and scalability challenges linger. Collaborative efforts and global initiatives, exemplified by platforms like Open-Source Malaria, underscore the democratization of drug discovery. The convergence of CADD with personalized medicine offers tailored therapeutic solutions, though ethical dilemmas and accessibility concerns must be navigated. Emerging technologies like quantum computing, immersive technologies, and green chemistry promise to redefine the future of CADD. The trajectory of CADD, marked by rapid advancements, anticipates challenges in ensuring accuracy, addressing biases in AI, and incorporating sustainability metrics. This paper concludes by highlighting the need for proactive measures in navigating the ethical, technological, and educational frontiers of CADD to shape a healthier, brighter future in drug discovery.",
+      "cited_by_count": 220,
+      "type": "review",
+      "source": {
+        "name": "Pharmaceuticals",
+        "type": "journal",
+        "issn": [
+          "1424-8247"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1424-8247/17/1/22/pdf?version=1703240078"
+      },
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Machine Learning in Materials Science"
+      ],
+      "referenced_works_count": 158,
+      "url": "https://openalex.org/W4390114224"
+    },
+    {
+      "openalex_id": "W4391855109",
+      "doi": "10.1109/access.2024.3365742",
+      "title": "A Review on Large Language Models: Architectures, Applications, Taxonomies, Open Issues and Challenges",
+      "authors": [
+        {
+          "name": "Mohaimenul Azam Khan Raiaan",
+          "openalex_id": "A5055795711",
+          "orcid": "https://orcid.org/0009-0006-4793-5382",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Md. Saddam Hossain Mukta",
+          "openalex_id": "A5087616870",
+          "orcid": "https://orcid.org/0000-0003-2675-5471",
+          "institutions": [
+            "Lappeenranta-Lahti University of Technology"
+          ]
+        },
+        {
+          "name": "Kaniz Fatema",
+          "openalex_id": "A5008339199",
+          "orcid": "https://orcid.org/0000-0002-0787-5403",
+          "institutions": [
+            "Charles Darwin University"
+          ]
+        },
+        {
+          "name": "Nur Mohammad Fahad",
+          "openalex_id": "A5022918060",
+          "orcid": "https://orcid.org/0009-0000-5445-6925",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Sadman Sakib",
+          "openalex_id": "A5008882566",
+          "orcid": "https://orcid.org/0009-0007-2007-5746",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Most. Marufatul Jannat Mim",
+          "openalex_id": "A5092939745",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Jubaer Ahmad",
+          "openalex_id": "A5018257829",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Mohammed Eunus Ali",
+          "openalex_id": "A5000819439",
+          "orcid": "https://orcid.org/0000-0002-0384-7616",
+          "institutions": [
+            "Bangladesh University of Engineering and Technology"
+          ]
+        },
+        {
+          "name": "Sami Azam",
+          "openalex_id": "A5062716310",
+          "orcid": "https://orcid.org/0000-0001-7572-9750",
+          "institutions": [
+            "Charles Darwin University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Large Language Models (LLMs) recently demonstrated extraordinary capability in various natural language processing (NLP) tasks including language translation, text generation, question answering, etc. Moreover, LLMs are new and essential part of computerized language processing, having the ability to understand complex verbal patterns and generate coherent and appropriate replies in a given context. Though this success of LLMs has prompted a substantial increase in research contributions, rapid growth has made it difficult to understand the overall impact of these improvements. Since a plethora of research on LLMs have been appeared within a short time, it is quite impossible to track all of these and get an overview of the current state of research in this area. Consequently, the research community would benefit from a short but thorough review of the recent changes in this area. This article thoroughly overviews LLMs, including their history, architectures, transformers, resources, training methods, applications, impacts, challenges, etc. This paper begins by discussing the fundamental concepts of LLMs with its traditional pipeline of the LLMs training phase. Then the paper provides an overview of the existing works, the history of LLMs, their evolution over time, the architecture of transformers in LLMs, the different resources of LLMs, and the different training methods that have been used to train them. The paper also demonstrates the datasets utilized in the studies. After that, the paper discusses the wide range of applications of LLMs, including biomedical and healthcare, education, social, business, and agriculture. The study also illustrates how LLMs create an impact on society and shape the future of AI and how they can be used to solve real-world problems. Finally, the paper also explores open issues and challenges to deploy LLMs in real-world scenario. Our review paper aims to help practitioners, researchers, and experts thoroughly understand the evolution of LLMs, pre-trained architectures, applications, challenges, and future goals.",
+      "cited_by_count": 488,
+      "type": "review",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10433480.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Data Quality and Management"
+      ],
+      "referenced_works_count": 230,
+      "url": "https://openalex.org/W4391855109"
+    },
+    {
+      "openalex_id": "W3119860599",
+      "doi": "10.3390/app11020763",
+      "title": "Artificial Intelligence Evolution in Smart Buildings for Energy Efficiency",
+      "authors": [
+        {
+          "name": "Hooman Farzaneh",
+          "openalex_id": "A5061489618",
+          "orcid": "https://orcid.org/0000-0002-3753-5928",
+          "institutions": [
+            "Kyushu University"
+          ]
+        },
+        {
+          "name": "Ladan Malehmirchegini",
+          "openalex_id": "A5082223067",
+          "orcid": "https://orcid.org/0000-0001-7258-5026",
+          "institutions": [
+            "Kyushu University"
+          ]
+        },
+        {
+          "name": "Adrian Bejan",
+          "openalex_id": "A5028586003",
+          "orcid": "https://orcid.org/0000-0002-2419-2698",
+          "institutions": [
+            "Duke University"
+          ]
+        },
+        {
+          "name": "Taofeek Afolabi",
+          "openalex_id": "A5048798829",
+          "orcid": "https://orcid.org/0000-0002-4983-3236",
+          "institutions": [
+            "Kyushu University"
+          ]
+        },
+        {
+          "name": "Alphonce Ngila Mulumba",
+          "openalex_id": "A5090988661",
+          "orcid": "https://orcid.org/0000-0001-6237-3038",
+          "institutions": [
+            "Kyushu University"
+          ]
+        },
+        {
+          "name": "Precious P. Daka",
+          "openalex_id": "A5000680161",
+          "institutions": [
+            "Kyushu University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-14",
+      "abstract": "The emerging concept of smart buildings, which requires the incorporation of sensors and big data (BD) and utilizes artificial intelligence (AI), promises to usher in a new age of urban energy efficiency. By using AI technologies in smart buildings, energy consumption can be reduced through better control, improved reliability, and automation. This paper is an in-depth review of recent studies on the application of artificial intelligence (AI) technologies in smart buildings through the concept of a building management system (BMS) and demand response programs (DRPs). In addition to elaborating on the principles and applications of the AI-based modeling approaches widely used in building energy use prediction, an evaluation framework is introduced and used for assessing the recent research conducted in this field and across the major AI domains, including energy, comfort, design, and maintenance. Finally, the paper includes a discussion on the open challenges and future directions of research on the application of AI in smart buildings.",
+      "cited_by_count": 290,
+      "type": "article",
+      "source": {
+        "name": "Applied Sciences",
+        "type": "journal",
+        "issn": [
+          "2076-3417"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2076-3417/11/2/763/pdf?version=1611030454"
+      },
+      "topics": [
+        "Building Energy and Comfort Optimization",
+        "Smart Grid Energy Management",
+        "Air Quality Monitoring and Forecasting"
+      ],
+      "referenced_works_count": 121,
+      "url": "https://openalex.org/W3119860599"
+    },
+    {
+      "openalex_id": "W3030790048",
+      "doi": "10.1109/jbhi.2020.2991043",
+      "title": "AI in Medical Imaging Informatics: Current Challenges and Future Directions",
+      "authors": [
+        {
+          "name": "Andreas S. Panayides",
+          "openalex_id": "A5018313128",
+          "orcid": "https://orcid.org/0000-0001-9829-7946",
+          "institutions": [
+            "University of Cyprus"
+          ]
+        },
+        {
+          "name": "Amir A. Amini",
+          "openalex_id": "A5005411439",
+          "orcid": "https://orcid.org/0000-0001-9698-8989",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Nenad Filipovi\u0107",
+          "openalex_id": "A5006131395",
+          "orcid": "https://orcid.org/0000-0001-9964-5615",
+          "institutions": [
+            "University of Kragujevac"
+          ]
+        },
+        {
+          "name": "Ashish Sharma",
+          "openalex_id": "A5079763100",
+          "orcid": "https://orcid.org/0000-0002-1011-6504",
+          "institutions": [
+            "Emory University"
+          ]
+        },
+        {
+          "name": "Sotirios A. Tsaftaris",
+          "openalex_id": "A5054437456",
+          "orcid": "https://orcid.org/0000-0002-8795-9294",
+          "institutions": [
+            "The Alan Turing Institute"
+          ]
+        },
+        {
+          "name": "Alistair A. Young",
+          "openalex_id": "A5050027169",
+          "orcid": "https://orcid.org/0000-0001-5702-4220",
+          "institutions": [
+            "University of Auckland"
+          ]
+        },
+        {
+          "name": "David J. Foran",
+          "openalex_id": "A5089373018",
+          "orcid": "https://orcid.org/0000-0002-0090-0055",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Nhan Do",
+          "openalex_id": "A5018592922",
+          "orcid": "https://orcid.org/0000-0001-6868-7011",
+          "institutions": [
+            "United States Department of Veterans Affairs",
+            "VA Boston Healthcare System"
+          ]
+        },
+        {
+          "name": "Spyretta Golemati",
+          "openalex_id": "A5037840674",
+          "orcid": "https://orcid.org/0000-0003-3991-7660",
+          "institutions": [
+            "National and Kapodistrian University of Athens"
+          ]
+        },
+        {
+          "name": "Tahsin Kur\u00e7",
+          "openalex_id": "A5037383891",
+          "orcid": "https://orcid.org/0000-0001-9237-4306",
+          "institutions": [
+            "Stony Brook University"
+          ]
+        },
+        {
+          "name": "Kun Huang",
+          "openalex_id": "A5057366605",
+          "orcid": "https://orcid.org/0000-0002-8530-370X",
+          "institutions": [
+            "Indiana University",
+            "Regenstrief Institute"
+          ]
+        },
+        {
+          "name": "Konstantina S. Nikita",
+          "openalex_id": "A5082313849",
+          "orcid": "https://orcid.org/0000-0001-8255-4354",
+          "institutions": [
+            "National Technical University of Athens"
+          ]
+        },
+        {
+          "name": "Ben P. Veasey",
+          "openalex_id": "A5030169870",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Michalis Zervakis",
+          "openalex_id": "A5113661535",
+          "institutions": [
+            "Technical University of Crete"
+          ]
+        },
+        {
+          "name": "Joel Saltz",
+          "openalex_id": "A5072946826",
+          "orcid": "https://orcid.org/0000-0002-3451-2165",
+          "institutions": [
+            "Stony Brook University"
+          ]
+        },
+        {
+          "name": "Constantinos S. Pattichis",
+          "openalex_id": "A5079839426",
+          "orcid": "https://orcid.org/0000-0003-1271-8151",
+          "institutions": [
+            "University of Cyprus",
+            "Citard Services (Cyprus)"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-05-29",
+      "abstract": "This paper reviews state-of-the-art research solutions across the spectrum of medical imaging informatics, discusses clinical translation, and provides future directions for advancing clinical practice. More specifically, it summarizes advances in medical imaging acquisition technologies for different modalities, highlighting the necessity for efficient medical data management strategies in the context of AI in big healthcare data analytics. It then provides a synopsis of contemporary and emerging algorithmic methods for disease classification and organ/ tissue segmentation, focusing on AI and deep learning architectures that have already become the de facto approach. The clinical benefits of in-silico modelling advances linked with evolving 3D reconstruction and visualization applications are further documented. Concluding, integrative analytics approaches driven by associate research branches highlighted in this study promise to revolutionize imaging informatics as known today across the healthcare continuum for both radiology and digital pathology applications. The latter, is projected to enable informed, more accurate diagnosis, timely prognosis, and effective treatment planning, underpinning precision medicine.",
+      "cited_by_count": 586,
+      "type": "article",
+      "source": {
+        "name": "IEEE Journal of Biomedical and Health Informatics",
+        "type": "journal",
+        "issn": [
+          "2168-2194",
+          "2168-2208"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6221020/9130988/09103969.pdf"
+      },
+      "topics": [
+        "Radiomics and Machine Learning in Medical Imaging",
+        "AI in cancer detection",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 295,
+      "url": "https://openalex.org/W3030790048"
+    },
+    {
+      "openalex_id": "W3102986074",
+      "doi": "10.1007/s00146-020-01104-w",
+      "title": "The political choreography of the Sophia robot: beyond robot rights and citizenship to political performances for the social robotics market",
+      "authors": [
+        {
+          "name": "Jaana Parviainen",
+          "openalex_id": "A5047224037",
+          "orcid": "https://orcid.org/0000-0002-7838-592X",
+          "institutions": [
+            "Tampere University"
+          ]
+        },
+        {
+          "name": "Mark Coeckelbergh",
+          "openalex_id": "A5003571713",
+          "orcid": "https://orcid.org/0000-0001-9576-1002",
+          "institutions": [
+            "University of Vienna"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-12",
+      "abstract": "Abstract A humanoid robot named \u2018Sophia\u2019 has sparked controversy since it has been given citizenship and has done media performances all over the world. The company that made the robot, Hanson Robotics, has touted Sophia as the future of artificial intelligence (AI). Robot scientists and philosophers have been more pessimistic about its capabilities, describing Sophia as a sophisticated puppet or chatbot. Looking behind the rhetoric about Sophia\u2019s citizenship and intelligence and going beyond recent discussions on the moral status or legal personhood of AI robots, we analyse the performativity of Sophia from the perspective of what we call \u2018political choreography\u2019: drawing on phenomenological approaches to performance-oriented philosophy of technology. This paper proposes to interpret and discuss the world tour of Sophia as a political choreography that boosts the rise of the social robot market, rather than a statement about robot citizenship or artificial intelligence. We argue that the media performances of the Sophia robot were choreographed to advance specific political interests. We illustrate our philosophical discussion with media material of the Sophia performance, which helps us to explore the mechanisms through which the media spectacle functions hand in hand with advancing the economic interests of technology industries and their governmental promotors. Using a phenomenological approach and attending to the movement of robots, we also criticize the notion of \u2018embodied intelligence\u2019 used in the context of social robotics and AI. In this way, we put the discussions about the robot\u2019s rights or citizenship in the context of AI politics and economics.",
+      "cited_by_count": 153,
+      "type": "article",
+      "source": {
+        "name": "AI & Society",
+        "type": "journal",
+        "issn": [
+          "0951-5666",
+          "1435-5655"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s00146-020-01104-w.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W3102986074"
+    },
+    {
+      "openalex_id": "W4391403992",
+      "doi": "10.1080/00207543.2024.2309309",
+      "title": "Generative artificial intelligence in supply chain and operations management: a capability-based framework for analysis and implementation",
+      "authors": [
+        {
+          "name": "Ilya Jackson",
+          "openalex_id": "A5035485597",
+          "orcid": "https://orcid.org/0000-0002-7457-6040",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Dmitry Ivanov",
+          "openalex_id": "A5085640653",
+          "orcid": "https://orcid.org/0000-0003-4932-9627",
+          "institutions": [
+            "Berlin School of Economics and Law"
+          ]
+        },
+        {
+          "name": "Alexandre Dolgui",
+          "openalex_id": "A5015824343",
+          "orcid": "https://orcid.org/0000-0003-0527-4716",
+          "institutions": [
+            "IMT Atlantique",
+            "Laboratoire des Sciences du Num\u00e9rique de Nantes",
+            "Centre National de la Recherche Scientifique"
+          ]
+        },
+        {
+          "name": "Jafar Namdar",
+          "openalex_id": "A5022719903",
+          "orcid": "https://orcid.org/0000-0002-3683-0319",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-31",
+      "abstract": "This research examines the transformative potential of artificial intelligence (AI) in general and Generative AI (GAI) in particular in supply chain and operations management (SCOM). Through the lens of the resource-based view and based on key AI capabilities such as learning, perception, prediction, interaction, adaptation, and reasoning, we explore how AI and GAI can impact 13 distinct SCOM decision-making areas. These areas include but are not limited to demand forecasting, inventory management, supply chain design, and risk management. With its outcomes, this study provides a comprehensive understanding of AI and GAI's functionality and applications in the SCOM context, offering a practical framework for both practitioners and researchers. The proposed framework systematically identifies where and how AI and GAI can be applied in SCOM, focussing on decision-making enhancement, process optimisation, investment prioritisation, and skills development. Managers can use it as a guidance to evaluate their operational processes and identify areas where AI and GAI can deliver improved efficiency, accuracy, resilience, and overall effectiveness. The research underscores that AI and GAI, with their multifaceted capabilities and applications, open a revolutionary potential and substantial implications for future SCOM practices, innovations, and research.",
+      "cited_by_count": 224,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Production Research",
+        "type": "journal",
+        "issn": [
+          "0020-7543",
+          "1366-588X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2024.2309309?needAccess=true"
+      },
+      "topics": [
+        "Supply Chain Resilience and Risk Management",
+        "Digital Transformation in Industry",
+        "Quality and Supply Management"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W4391403992"
+    },
+    {
+      "openalex_id": "W4362611851",
+      "doi": "10.1186/s42162-023-00259-2",
+      "title": "Environmentally sustainable smart cities and their converging AI, IoT, and big data technologies and solutions: an integrated approach to an extensive literature review",
+      "authors": [
+        {
+          "name": "Simon Elias Bibri",
+          "openalex_id": "A5014155270",
+          "orcid": "https://orcid.org/0009-0003-8559-6885",
+          "institutions": [
+            "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne"
+          ]
+        },
+        {
+          "name": "Alexandre Alahi",
+          "openalex_id": "A5068504559",
+          "orcid": "https://orcid.org/0000-0002-5004-1498",
+          "institutions": [
+            "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne"
+          ]
+        },
+        {
+          "name": "Ayyoob Sharifi",
+          "openalex_id": "A5002835698",
+          "orcid": "https://orcid.org/0000-0002-8983-8613",
+          "institutions": [
+            "Hiroshima University"
+          ]
+        },
+        {
+          "name": "John Krogstie",
+          "openalex_id": "A5018388871",
+          "orcid": "https://orcid.org/0000-0003-4830-1876",
+          "institutions": [
+            "Norwegian University of Science and Technology"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-05",
+      "abstract": null,
+      "cited_by_count": 198,
+      "type": "review",
+      "source": {
+        "name": "Energy Informatics",
+        "type": "journal",
+        "issn": [
+          "2520-8942"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://energyinformatics.springeropen.com/counter/pdf/10.1186/s42162-023-00259-2"
+      },
+      "topics": [
+        "Smart Cities and Technologies",
+        "Air Quality Monitoring and Forecasting",
+        "Economic and Technological Systems Analysis"
+      ],
+      "referenced_works_count": 155,
+      "url": "https://openalex.org/W4362611851"
+    },
+    {
+      "openalex_id": "W3142698583",
+      "doi": "10.17705/1jais.00664",
+      "title": "Sociotechnical Envelopment of Artificial Intelligence: An Approach to Organizational Deployment of Inscrutable Artificial Intelligence Systems",
+      "authors": [
+        {
+          "name": "Aleksandre Asatiani",
+          "openalex_id": "A5088777443",
+          "orcid": "https://orcid.org/0000-0002-7358-9018",
+          "institutions": [
+            "University of Gothenburg"
+          ]
+        },
+        {
+          "name": "Pekka Malo",
+          "openalex_id": "A5020180428",
+          "orcid": "https://orcid.org/0000-0002-1583-015X",
+          "institutions": [
+            "Aalto University"
+          ]
+        },
+        {
+          "name": "Per R\u00e5dberg Nagb\u00f8l",
+          "openalex_id": "A5020993280",
+          "orcid": "https://orcid.org/0000-0001-7892-3217",
+          "institutions": [
+            "IT University of Copenhagen"
+          ]
+        },
+        {
+          "name": "Esko Penttinen",
+          "openalex_id": "A5037043054",
+          "orcid": "https://orcid.org/0000-0003-0316-7538",
+          "institutions": [
+            "Aalto University"
+          ]
+        },
+        {
+          "name": "Tapani Rinta-Kahila",
+          "openalex_id": "A5070590667",
+          "orcid": "https://orcid.org/0000-0002-8267-4580",
+          "institutions": [
+            "University of Queensland"
+          ]
+        },
+        {
+          "name": "Antti Salovaara",
+          "openalex_id": "A5086980894",
+          "orcid": "https://orcid.org/0000-0001-7260-8670",
+          "institutions": [
+            "Aalto University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "The paper presents an approach for implementing inscrutable (i.e., nonexplainable) artificial intelligence (AI) such as neural networks in an accountable and safe manner in organizational settings. Drawing on an exploratory case study and the recently proposed concept of envelopment, it describes a case of an organization successfully \u201cenveloping\u201d its AI solutions to balance the performance benefits of flexible AI models with the risks that inscrutable models can entail. The authors present several envelopment methods\u2014establishing clear boundaries within which the AI is to interact with its surroundings, choosing and curating the training data well, and appropriately managing input and output sources\u2014alongside their influence on the choice of AI models within the organization. This work makes two key contributions: It introduces the concept of sociotechnical envelopment by demonstrating the ways in which an organization\u2019s successful AI envelopment depends on the interaction of social and technical factors, thus extending the literature\u2019s focus beyond mere technical issues. Secondly, the empirical examples illustrate how operationalizing a sociotechnical envelopment enables an organization to manage the trade-off between low explainability and high performance presented by inscrutable models. These contributions pave the way for more responsible, accountable AI implementations in organizations, whereby humans can gain better control of even inscrutable machine-learning models.",
+      "cited_by_count": 146,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Association for Information Systems",
+        "type": "journal",
+        "issn": [
+          "1536-9323"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://aisel.aisnet.org/cgi/viewcontent.cgi?article=2001&context=jais"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 102,
+      "url": "https://openalex.org/W3142698583"
+    },
+    {
+      "openalex_id": "W3082258125",
+      "doi": "10.1177/2053951720948087",
+      "title": "Emerging models of data governance in the age of datafication",
+      "authors": [
+        {
+          "name": "Marina Micheli",
+          "openalex_id": "A5009902301",
+          "orcid": "https://orcid.org/0000-0002-7004-6480",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Marisa Ponti",
+          "openalex_id": "A5081162117",
+          "orcid": "https://orcid.org/0000-0003-4708-4048",
+          "institutions": [
+            "University of Gothenburg"
+          ]
+        },
+        {
+          "name": "Massimo Craglia",
+          "openalex_id": "A5008557898",
+          "orcid": "https://orcid.org/0000-0001-6244-6428",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        },
+        {
+          "name": "Anna Berti Suman",
+          "openalex_id": "A5002337372",
+          "orcid": "https://orcid.org/0000-0002-8973-8436",
+          "institutions": [
+            "Joint Research Centre"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-01",
+      "abstract": "The article examines four models of data governance emerging in the current platform society. While major attention is currently given to the dominant model of corporate platforms collecting and economically exploiting massive amounts of personal data, other actors, such as small businesses, public bodies and civic society, take also part in data governance. The article sheds light on four models emerging from the practices of these actors: data sharing pools, data cooperatives, public data trusts and personal data sovereignty. We propose a social science-informed conceptualisation of data governance. Drawing from the notion of data infrastructure we identify the models as a function of the stakeholders\u2019 roles, their interrelationships, articulations of value, and governance principles. Addressing the politics of data, we considered the actors\u2019 competitive struggles for governing data. This conceptualisation brings to the forefront the power relations and multifaceted economic and social interactions within data governance models emerging in an environment mainly dominated by corporate actors. These models highlight that civic society and public bodies are key actors for democratising data governance and redistributing value produced through data. Through the discussion of the models, their underpinning principles and limitations, the article wishes to inform future investigations of socio-technical imaginaries for the governance of data, particularly now that the policy debate around data governance is very active in Europe.",
+      "cited_by_count": 286,
+      "type": "article",
+      "source": {
+        "name": "Big Data & Society",
+        "type": "journal",
+        "issn": [
+          "2053-9517"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/2053951720948087"
+      },
+      "topics": [
+        "Privacy, Security, and Data Protection",
+        "Privacy-Preserving Technologies in Data",
+        "Blockchain Technology Applications and Security"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W3082258125"
+    },
+    {
+      "openalex_id": "W4394009485",
+      "doi": "10.7759/cureus.57728",
+      "title": "AI-Driven Clinical Decision Support Systems: An Ongoing Pursuit of Potential",
+      "authors": [
+        {
+          "name": "Malek Elhaddad",
+          "openalex_id": "A5095095068",
+          "orcid": "https://orcid.org/0009-0007-7818-7900",
+          "institutions": [
+            "Queen Elizabeth University Hospital",
+            "Hospital for Sick Children",
+            "Women's College Hospital"
+          ]
+        },
+        {
+          "name": "Sara Hamam",
+          "openalex_id": "A5095095069",
+          "institutions": [
+            "Hospital for Sick Children",
+            "Queen Elizabeth University Hospital",
+            "Women's College Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-06",
+      "abstract": null,
+      "cited_by_count": 164,
+      "type": "article",
+      "source": {
+        "name": "Cureus",
+        "type": "journal",
+        "issn": [
+          "2168-8184"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://assets.cureus.com/uploads/review_article/pdf/244463/20240406-13366-1bzxzru.pdf"
+      },
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare and Education",
+        "Artificial Intelligence in Healthcare"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W4394009485"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

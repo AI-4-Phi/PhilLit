@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "What is Lying",
+    "author": "Fallis",
+    "year": 2009
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2139/ssrn.1702023",
+      "title": "What is Deceptive Lying?",
+      "authors": [
+        {
+          "family": "Fallis",
+          "given": "Don"
+        }
+      ],
+      "year": 2010,
+      "container_title": "SSRN Electronic Journal",
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2139/ssrn.1702023",
+      "score": 37.179726
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

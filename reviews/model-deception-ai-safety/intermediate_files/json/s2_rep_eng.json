@@ -1,0 +1,1333 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "representation engineering honesty",
+  "results": [
+    {
+      "paperId": "58fdf550600fc3873729d466601c5d08a51ba8a0",
+      "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+      "authors": [
+        {
+          "name": "Andy Zou",
+          "authorId": "1380103052"
+        },
+        {
+          "name": "Long Phan",
+          "authorId": "2066589762"
+        },
+        {
+          "name": "Sarah Chen",
+          "authorId": "2265721314"
+        },
+        {
+          "name": "James Campbell",
+          "authorId": "2268733681"
+        },
+        {
+          "name": "Phillip Guo",
+          "authorId": "2253401167"
+        },
+        {
+          "name": "Richard Ren",
+          "authorId": "2253397384"
+        },
+        {
+          "name": "Alexander Pan",
+          "authorId": "2064029812"
+        },
+        {
+          "name": "Xuwang Yin",
+          "authorId": "2255924399"
+        },
+        {
+          "name": "Mantas Mazeika",
+          "authorId": "16787428"
+        },
+        {
+          "name": "Ann-Kathrin Dombrowski",
+          "authorId": "46658900"
+        },
+        {
+          "name": "Shashwat Goel",
+          "authorId": "9343338"
+        },
+        {
+          "name": "Nathaniel Li",
+          "authorId": "2214183912"
+        },
+        {
+          "name": "Michael J. Byun",
+          "authorId": "2253396524"
+        },
+        {
+          "name": "Zifan Wang",
+          "authorId": "2265646754"
+        },
+        {
+          "name": "Alex Troy Mallen",
+          "authorId": "2269472940"
+        },
+        {
+          "name": "Steven Basart",
+          "authorId": "104444594"
+        },
+        {
+          "name": "Sanmi Koyejo",
+          "authorId": "123593472"
+        },
+        {
+          "name": "Dawn Song",
+          "authorId": "2255915331"
+        },
+        {
+          "name": "Matt Fredrikson",
+          "authorId": "2623167"
+        },
+        {
+          "name": "Zico Kolter",
+          "authorId": "117539586"
+        },
+        {
+          "name": "Dan Hendrycks",
+          "authorId": "3422872"
+        }
+      ],
+      "year": 2023,
+      "abstract": "In this paper, we identify and characterize the emerging area of representation engineering (RepE), an approach to enhancing the transparency of AI systems that draws on insights from cognitive neuroscience. RepE places population-level representations, rather than neurons or circuits, at the center of analysis, equipping us with novel methods for monitoring and manipulating high-level cognitive phenomena in deep neural networks (DNNs). We provide baselines and an initial analysis of RepE techniques, showing that they offer simple yet effective solutions for improving our understanding and control of large language models. We showcase how these methods can provide traction on a wide range of safety-relevant problems, including honesty, harmlessness, power-seeking, and more, demonstrating the promise of top-down transparency research. We hope that this work catalyzes further exploration of RepE and fosters advancements in the transparency and safety of AI systems.",
+      "citationCount": 701,
+      "doi": "10.48550/arXiv.2310.01405",
+      "arxivId": "2310.01405",
+      "url": "https://www.semanticscholar.org/paper/58fdf550600fc3873729d466601c5d08a51ba8a0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2310.01405"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c4d24bfede611ebb771d149fd817e932be0c07a6",
+      "title": "Representation Engineering for Large-Language Models: Survey and Research Challenges",
+      "authors": [
+        {
+          "name": "Lukasz Bartoszcze",
+          "authorId": "2287838789"
+        },
+        {
+          "name": "Sarthak Munshi",
+          "authorId": "2058367628"
+        },
+        {
+          "name": "Bryan Sukidi",
+          "authorId": "2347036209"
+        },
+        {
+          "name": "Jennifer Yen",
+          "authorId": "2347036473"
+        },
+        {
+          "name": "Zejia Yang",
+          "authorId": "2347168238"
+        },
+        {
+          "name": "David Williams-King",
+          "authorId": "1405596735"
+        },
+        {
+          "name": "Linh Le",
+          "authorId": "2331628568"
+        },
+        {
+          "name": "Kosi Asuzu",
+          "authorId": "2340840554"
+        },
+        {
+          "name": "Carsten Maple",
+          "authorId": "2302802341"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large-language models are capable of completing a variety of tasks, but remain unpredictable and intractable. Representation engineering seeks to resolve this problem through a new approach utilizing samples of contrasting inputs to detect and edit high-level representations of concepts such as honesty, harmfulness or power-seeking. We formalize the goals and methods of representation engineering to present a cohesive picture of work in this emerging discipline. We compare it with alternative approaches, such as mechanistic interpretability, prompt-engineering and fine-tuning. We outline risks such as performance decrease, compute time increases and steerability issues. We present a clear agenda for future research to build predictable, dynamic, safe and personalizable LLMs.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2502.17601",
+      "arxivId": "2502.17601",
+      "url": "https://www.semanticscholar.org/paper/c4d24bfede611ebb771d149fd817e932be0c07a6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.17601"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e2feeeb55da69efd30f74714317dbab53615c989",
+      "title": "A Timeline and Analysis for Representation Plasticity in Large Language Models",
+      "authors": [
+        {
+          "name": "Akshat Kannan",
+          "authorId": "2325099159"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The ability to steer AI behavior is crucial to preventing its long term dangerous and catastrophic potential. Representation Engineering (RepE) has emerged as a novel, powerful method to steer internal model behaviors, such as\"honesty\", at a top-down level. Understanding the steering of representations should thus be placed at the forefront of alignment initiatives. Unfortunately, current efforts to understand plasticity at this level are highly neglected. This paper aims to bridge the knowledge gap and understand how LLM representation stability, specifically for the concept of\"honesty\", and model plasticity evolve by applying steering vectors extracted at different fine-tuning stages, revealing differing magnitudes of shifts in model behavior. The findings are pivotal, showing that while early steering exhibits high plasticity, later stages have a surprisingly responsive critical window. This pattern is observed across different model architectures, signaling that there is a general pattern of model plasticity that can be used for effective intervention. These insights greatly contribute to the field of AI transparency, addressing a pressing lack of efficiency limiting our ability to effectively steer model behavior.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2410.06225",
+      "arxivId": "2410.06225",
+      "url": "https://www.semanticscholar.org/paper/e2feeeb55da69efd30f74714317dbab53615c989",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.06225"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "aded5541016007ae756c1dd22ff2442dc194868b",
+      "title": "Representation Tuning",
+      "authors": [
+        {
+          "name": "Christopher M. Ackerman",
+          "authorId": "2320722463"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Activation engineering is becoming increasingly popular as a means of online control of large language models (LLMs). In this work, we extend the idea of inference-time steering with vectors that represent a behavioral direction of interest to tuning those vectors directly into the model, obviating the need for online control. First, we identify activation vectors related to honesty in an open-source LLM (Llama-2-13b-chat). Next, we demonstrate that model output can be made more or less honest by adding positive or negative multiples of these vectors to residual stream activations during generation. Then, we show that a similar effect can be achieved by fine-tuning the vectors directly into the model, by use of a dual loss function based on the cosine similarity of residual stream activations to the vectors combined with a standard token-based loss (\"representation tuning\"). Finally, we compare the generations in response to honesty-probing prompts from the resulting models to those from models fine-tuned with a token-based loss alone, and to those from the untuned model subjected to online steering. Overall, fine-tuning the vectors into the models using the cosine similarity plus token loss showed a stronger effect than online steering, and generalized better than using the standard loss, suggesting the potential utility of this approach as a safety measure. Code and data are available at https://github.com/cma1114/representation_tuning. Tuned models are available at https://huggingface.co/collections/cackerman/representation-tuning-66da1e5ab41cd1b824687d9f.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2409.06927",
+      "arxivId": "2409.06927",
+      "url": "https://www.semanticscholar.org/paper/aded5541016007ae756c1dd22ff2442dc194868b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2409.06927"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a37f42806ba6c24af801e4d2007de4794dc127de",
+      "title": "When Thinking LLMs Lie: Unveiling the Strategic Deception in Representations of Reasoning Models",
+      "authors": [
+        {
+          "name": "Kai Wang",
+          "authorId": "2366061051"
+        },
+        {
+          "name": "Yihao Zhang",
+          "authorId": "2286475988"
+        },
+        {
+          "name": "Meng Sun",
+          "authorId": "2297768119"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The honesty of large language models (LLMs) is a critical alignment challenge, especially as advanced systems with chain-of-thought (CoT) reasoning may strategically deceive humans. Unlike traditional honesty issues on LLMs, which could be possibly explained as some kind of hallucination, those models' explicit thought paths enable us to study strategic deception--goal-driven, intentional misinformation where reasoning contradicts outputs. Using representation engineering, we systematically induce, detect, and control such deception in CoT-enabled LLMs, extracting\"deception vectors\"via Linear Artificial Tomography (LAT) for 89% detection accuracy. Through activation steering, we achieve a 40% success rate in eliciting context-appropriate deception without explicit prompts, unveiling the specific honesty-related issue of reasoning models and providing tools for trustworthy AI alignment.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2506.04909",
+      "arxivId": "2506.04909",
+      "url": "https://www.semanticscholar.org/paper/a37f42806ba6c24af801e4d2007de4794dc127de",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.04909"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "09992d02d809c9598c192277ec24c918849beca0",
+      "title": "Enhancing Multiple Dimensions of Trustworthiness in LLMs via Sparse Activation Control",
+      "authors": [
+        {
+          "name": "Yuxin Xiao",
+          "authorId": "2329738842"
+        },
+        {
+          "name": "Chaoqun Wan",
+          "authorId": "29001337"
+        },
+        {
+          "name": "Yonggang Zhang",
+          "authorId": "2319178563"
+        },
+        {
+          "name": "Wenxiao Wang",
+          "authorId": "2315114374"
+        },
+        {
+          "name": "Binbin Lin",
+          "authorId": "2284672601"
+        },
+        {
+          "name": "Xiaofei He",
+          "authorId": "2257432345"
+        },
+        {
+          "name": "Xu Shen",
+          "authorId": "2319393988"
+        },
+        {
+          "name": "Jieping Ye",
+          "authorId": "2316672136"
+        }
+      ],
+      "year": 2024,
+      "abstract": "As the development and application of Large Language Models (LLMs) continue to advance rapidly, enhancing their trustworthiness and aligning them with human preferences has become a critical area of research. Traditional methods rely heavily on extensive data for Reinforcement Learning from Human Feedback (RLHF), but representation engineering offers a new, training-free approach. This technique leverages semantic features to control the representation of LLM's intermediate hidden states, enabling the model to meet specific requirements such as increased honesty or heightened safety awareness. However, a significant challenge arises when attempting to fulfill multiple requirements simultaneously. It proves difficult to encode various semantic contents, like honesty and safety, into a singular semantic feature, restricting its practicality. In this work, we address this issue through ``Sparse Activation Control''. By delving into the intrinsic mechanisms of LLMs, we manage to identify and pinpoint components that are closely related to specific tasks within the model, i.e., attention heads. These heads display sparse characteristics that allow for near-independent control over different tasks. Our experiments, conducted on the open-source Llama series models, have yielded encouraging results. The models were able to align with human preferences on issues of safety, factuality, and bias concurrently.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2411.02461",
+      "arxivId": "2411.02461",
+      "url": "https://www.semanticscholar.org/paper/09992d02d809c9598c192277ec24c918849beca0",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.02461"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "30cac699a549982fc7693fcf41e3ffb929054d05",
+      "title": "M$^2$IV: Towards Efficient and Fine-grained Multimodal In-Context Learning via Representation Engineering",
+      "authors": [
+        {
+          "name": "Yanshu Li",
+          "authorId": "2349304855"
+        },
+        {
+          "name": "Yi Cao",
+          "authorId": "2354671431"
+        },
+        {
+          "name": "Hongyang He",
+          "authorId": "2260837821"
+        },
+        {
+          "name": "Qisen Cheng",
+          "authorId": "2356574996"
+        },
+        {
+          "name": "Xiang Fu",
+          "authorId": "2356252212"
+        },
+        {
+          "name": "Xi Xiao",
+          "authorId": "2349232014"
+        },
+        {
+          "name": "Tianyang Wang",
+          "authorId": "2350009636"
+        },
+        {
+          "name": "Ruixiang Tang",
+          "authorId": "2355036537"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Multimodal in-context learning (ICL) equips Large Vision-language Models (LVLMs) with the ability to adapt to new tasks via multiple user-provided demonstrations, without requiring any model parameter updates. However, its effectiveness is constrained by the token-intensive nature of multimodal inputs and the complexity of cross-modal few-shot reasoning, which together hinder LVLMs from extracting useful patterns from demonstrations. To address these challenges, we propose \\textbf{M$^2$IV}, a novel representation engineering approach that replaces explicit token-level demonstrations with a set of learnable Multimodal In-context Vectors directly injected into the residual streams of LVLMs. By analyzing the distinct roles of multi-head attention (MHA) and multi-layer perceptrons (MLP) in the ICL process, we design a training strategy that enables M$^2$IV to perform fine-grained semantic distillation and robust cross-modal representation learning. M$^2$IV not only improves performance across diverse tasks and LVLMs but also significantly reduces token overhead, enabling graceful scaling to many-shot scenarios. To further enhance usability, we introduce \\textbf{VLibrary}, a repository that stores trained M$^2$IVs for flexible retrieval and injection. With VLibrary, users can steer pre-trained LVLMs in a customized manner that meets diverse requirements. Extensive experiments demonstrate that M$^2$IV consistently outperforms vanilla ICL and prior representation engineering baselines, achieving an average accuracy gain of 3.74\\% with substantial improvements in overall efficiency.",
+      "citationCount": 16,
+      "doi": null,
+      "arxivId": "2504.04633",
+      "url": "https://www.semanticscholar.org/paper/30cac699a549982fc7693fcf41e3ffb929054d05",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c19ac62fd7fdf2a4ba6581563212c3b33737b030",
+      "title": "Unlocking General Long Chain-of-Thought Reasoning Capabilities of Large Language Models via Representation Engineering",
+      "authors": [
+        {
+          "name": "Xinyu Tang",
+          "authorId": "2109887979"
+        },
+        {
+          "name": "Xiaolei Wang",
+          "authorId": "72541556"
+        },
+        {
+          "name": "Zhihao Lv",
+          "authorId": "2351111598"
+        },
+        {
+          "name": "Yingqian Min",
+          "authorId": "2007666579"
+        },
+        {
+          "name": "Wayne Xin Zhao",
+          "authorId": "2294811281"
+        },
+        {
+          "name": "Binbin Hu",
+          "authorId": "2279160677"
+        },
+        {
+          "name": "Ziqi Liu",
+          "authorId": "2284032340"
+        },
+        {
+          "name": "Zhiqiang Zhang",
+          "authorId": "2266809812"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advancements in long chain-of-thoughts(long CoTs) have significantly improved the reasoning capabilities of large language models(LLMs). Existing work finds that the capability of long CoT reasoning can be efficiently elicited by tuning on only a few examples and can easily transfer to other tasks. This motivates us to investigate whether long CoT reasoning is a general capability for LLMs. In this work, we conduct an empirical analysis for this question from the perspective of representation. We find that LLMs do encode long CoT reasoning as a general capability, with a clear distinction from vanilla CoTs. Furthermore, domain-specific representations are also required for the effective transfer of long CoT reasoning. Inspired by these findings, we propose GLoRE, a novel representation engineering method to unleash the general long CoT reasoning capabilities of LLMs. Extensive experiments demonstrate the effectiveness and efficiency of GLoRE in both in-domain and cross-domain scenarios.",
+      "citationCount": 24,
+      "doi": "10.48550/arXiv.2503.11314",
+      "arxivId": "2503.11314",
+      "url": "https://www.semanticscholar.org/paper/c19ac62fd7fdf2a4ba6581563212c3b33737b030",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.11314"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a8e3adb778b5ac210caaac854256496ea146197f",
+      "title": "Improving Reasoning Performance in Large Language Models via Representation Engineering",
+      "authors": [
+        {
+          "name": "Bertram H\u00f8jer",
+          "authorId": "2357976055"
+        },
+        {
+          "name": "Oliver Jarvis",
+          "authorId": "2357974912"
+        },
+        {
+          "name": "S. Heinrich",
+          "authorId": "2357964870"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advancements in large language models (LLMs) have resulted in increasingly anthropomorphic language concerning the ability of LLMs to reason. Whether reasoning in LLMs should be understood to be inherently different is, however, widely debated. We propose utilizing a representation engineering approach wherein model activations are read from the residual stream of an LLM when processing a reasoning task. The activations are used to derive a control vector that is applied to the model as an inference-time intervention, modulating the representational space of the model, to improve performance on the specified task. We publish the code for deriving control vectors and analyzing model representations. The method allows us to improve performance on reasoning benchmarks and assess how control vectors influence the final logit distribution of a model via metrics such as KL divergence and entropy. We apply control vectors to Mistral-7B-Instruct and a range of Pythia models on an inductive, a deductive and mathematical reasoning task. We show that an LLM can, to a certain degree, be controlled to improve its perceived reasoning ability by modulating activations. The intervention is dependent upon the ability to reliably extract the model's typical state when correctly solving a task. Our results suggest that reasoning performance can be modulated in the same manner as other information-processing tasks performed by LLMs and demonstrate that we are capable of improving performance on specific tasks via a simple intervention on the residual stream with no additional training.",
+      "citationCount": 13,
+      "doi": "10.48550/arXiv.2504.19483",
+      "arxivId": "2504.19483",
+      "url": "https://www.semanticscholar.org/paper/a8e3adb778b5ac210caaac854256496ea146197f",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.19483"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4df784f6f99a8c6051f8ced59a68f6a12530c7da",
+      "title": "Taxonomy, Opportunities, and Challenges of Representation Engineering for Large Language Models",
+      "authors": [
+        {
+          "name": "Jan Wehner",
+          "authorId": "2344615438"
+        },
+        {
+          "name": "Sahar Abdelnabi",
+          "authorId": "1383113350"
+        },
+        {
+          "name": "Daniel Tan",
+          "authorId": "2347612306"
+        },
+        {
+          "name": "David Krueger",
+          "authorId": "2347535781"
+        },
+        {
+          "name": "Mario Fritz",
+          "authorId": "2249532235"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Representation Engineering (RepE) is a novel paradigm for controlling the behavior of LLMs. Unlike traditional approaches that modify inputs or fine-tune the model, RepE directly manipulates the model's internal representations. As a result, it may offer more effective, interpretable, data-efficient, and flexible control over models'behavior. We present the first comprehensive survey of RepE for LLMs, reviewing the rapidly growing literature to address key questions: What RepE methods exist and how do they differ? For what concepts and problems has RepE been applied? What are the strengths and weaknesses of RepE compared to other methods? To answer these, we propose a unified framework describing RepE as a pipeline comprising representation identification, operationalization, and control. We posit that while RepE methods offer significant potential, challenges remain, including managing multiple concepts, ensuring reliability, and preserving models'performance. Towards improving RepE, we identify opportunities for experimental and methodological improvements and construct a guide for best practices.",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2502.19649",
+      "arxivId": "2502.19649",
+      "url": "https://www.semanticscholar.org/paper/4df784f6f99a8c6051f8ced59a68f6a12530c7da",
+      "venue": "Trans. Mach. Learn. Res.",
+      "journal": {
+        "name": "Trans. Mach. Learn. Res.",
+        "volume": "2025"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d2c1b1a8ac40fbd45e8a91504b1a131f99bad02f",
+      "title": "Steering Knowledge Selection Behaviours in LLMs via SAE-Based Representation Engineering",
+      "authors": [
+        {
+          "name": "Yu Zhao",
+          "authorId": "2155474139"
+        },
+        {
+          "name": "Alessio Devoto",
+          "authorId": "2172309361"
+        },
+        {
+          "name": "Giwon Hong",
+          "authorId": "2294364793"
+        },
+        {
+          "name": "Xiaotang Du",
+          "authorId": "2295993738"
+        },
+        {
+          "name": "Aryo Pradipta Gema",
+          "authorId": "27080447"
+        },
+        {
+          "name": "Hongru Wang",
+          "authorId": "2301654681"
+        },
+        {
+          "name": "Kam-Fai Wong",
+          "authorId": "2237563835"
+        },
+        {
+          "name": "Pasquale Minervini",
+          "authorId": "2294362638"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs) can store a significant amount of factual knowledge in their parameters. However, their parametric knowledge may conflict with the information provided in the context -- this phenomenon, known as \\emph{context-memory knowledge conflicts}, can lead to undesirable model behaviour, such as reliance on outdated or incorrect information. Analysing the internal activations of LLMs, we find that they can internally register the signals of knowledge conflict at mid-layers. Such signals allow us to detect whether a knowledge conflict occurs and use \\emph{inference-time} intervention strategies to resolve it. In this work, we propose \\textsc{SpARE}, a \\emph{training-free} representation engineering method that uses pre-trained sparse auto-encoders (SAEs) to control the knowledge selection behaviour of LLMs. \\textsc{SpARE} identifies the functional features that control the knowledge selection behaviours and applies them to edit the internal activations of LLMs at inference time. Our experimental results show that \\textsc{SpARE} can effectively control the usage of either knowledge source to resolve knowledge conflict in open-domain question-answering tasks, surpassing existing representation engineering methods ($+10\\%$) as well as contrastive decoding methods ($+15\\%$).",
+      "citationCount": 47,
+      "doi": "10.48550/arXiv.2410.15999",
+      "arxivId": "2410.15999",
+      "url": "https://www.semanticscholar.org/paper/d2c1b1a8ac40fbd45e8a91504b1a131f99bad02f",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.15999"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "b5f650519a2ca526620ff9b97fb265a1347d4f0e",
+      "title": "Why Representation Engineering Works: A Theoretical and Empirical Study in Vision-Language Models",
+      "authors": [
+        {
+          "name": "Bowei Tian",
+          "authorId": "2326301764"
+        },
+        {
+          "name": "Xuntao Lyu",
+          "authorId": "2352940095"
+        },
+        {
+          "name": "Meng Liu",
+          "authorId": "2353479928"
+        },
+        {
+          "name": "Hongyi Wang",
+          "authorId": "2299481920"
+        },
+        {
+          "name": "Ang Li",
+          "authorId": "2258555606"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Representation Engineering (RepE) has emerged as a powerful paradigm for enhancing AI transparency by focusing on high-level representations rather than individual neurons or circuits. It has proven effective in improving interpretability and control, showing that representations can emerge, propagate, and shape final model outputs in large language models (LLMs). However, in Vision-Language Models (VLMs), visual input can override factual linguistic knowledge, leading to hallucinated responses that contradict reality. To address this challenge, we make the first attempt to extend RepE to VLMs, analyzing how multimodal representations are preserved and transformed. Building on our findings and drawing inspiration from successful RepE applications, we develop a theoretical framework that explains the stability of neural activity across layers using the principal eigenvector, uncovering the underlying mechanism of RepE. We empirically validate these instrinsic properties, demonstrating their broad applicability and significance. By bridging theoretical insights with empirical validation, this work transforms RepE from a descriptive tool into a structured theoretical framework, opening new directions for improving AI robustness, fairness, and transparency.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2503.22720",
+      "arxivId": "2503.22720",
+      "url": "https://www.semanticscholar.org/paper/b5f650519a2ca526620ff9b97fb265a1347d4f0e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.22720"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "16b8ed27382daa39f53e7c20b4a6766c7119850d",
+      "title": "Camouflage Anything: Learning to Hide using Controlled Out-painting and Representation Engineering",
+      "authors": [
+        {
+          "name": "Biplab Chandra Das",
+          "authorId": "2338166451"
+        },
+        {
+          "name": "Viswanath Gopalakrishnan",
+          "authorId": "2334872857"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In this work, we introduce Camouflage Anything, a novel and robust approach to generate camouflaged datasets. To the best of our knowledge, we are the first to apply Controlled Out-painting and Representation Engineering for generating realistic camouflaged images with an objective to hide any segmented object coming from a generic or salient database. Our proposed method uses a novel control design to out-paint a given segmented object, with a camouflaged background. We also uncover the role of representation engineering in enhancing the quality of generated camouflage datasets. We address the limitations of existing metrics FID and KID in capturing the \"camouflage quality\", by proposing a novel metric namely, CamOT. CamOT uses Optimal Transport between foreground & background Gaussian Mixture Models (GMM) of concerned camouflaged object to assign an image quality score. Furthermore, we conduct LoRA-based fine-tuning of the robust BiRefNet baseline with our generated camouflaged datasets, leading to notable improvements in camouflaged object segmentation accuracy. The experimental results showcase the efficacy and potential of Camouflage Anything, outperforming existing methods in camouflaged generation tasks.",
+      "citationCount": 3,
+      "doi": "10.1109/CVPR52734.2025.00341",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/16b8ed27382daa39f53e7c20b4a6766c7119850d",
+      "venue": "Computer Vision and Pattern Recognition",
+      "journal": {
+        "name": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "pages": "3603-3613"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "68c0b44a6c54ee32cccc6bc8f322414ab05e03a0",
+      "title": "Identifying Cooperative Personalities in Multi-agent Contexts through Personality Steering with Representation Engineering",
+      "authors": [
+        {
+          "name": "Kenneth J. K. Ong",
+          "authorId": "2350517632"
+        },
+        {
+          "name": "Lye Jia Jun",
+          "authorId": "2350520125"
+        },
+        {
+          "name": "Hieu Minh",
+          "authorId": "2355090966"
+        },
+        {
+          "name": "Seong Hah Cho",
+          "authorId": "2350686908"
+        },
+        {
+          "name": "Natalia P'erez-Campanero Antol'in",
+          "authorId": "2331619967"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As Large Language Models (LLMs) gain autonomous capabilities, their coordination in multi-agent settings becomes increasingly important. However, they often struggle with cooperation, leading to suboptimal outcomes. Inspired by Axelrod's Iterated Prisoner's Dilemma (IPD) tournaments, we explore how personality traits influence LLM cooperation. Using representation engineering, we steer Big Five traits (e.g., Agreeableness, Conscientiousness) in LLMs and analyze their impact on IPD decision-making. Our results show that higher Agreeableness and Conscientiousness improve cooperation but increase susceptibility to exploitation, highlighting both the potential and limitations of personality-based steering for aligning AI agents.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2503.12722",
+      "arxivId": "2503.12722",
+      "url": "https://www.semanticscholar.org/paper/68c0b44a6c54ee32cccc6bc8f322414ab05e03a0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.12722"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ccc7f9c8fc576db5876829822d5c1821a33117dd",
+      "title": "ReflCtrl: Controlling LLM Reflection via Representation Engineering",
+      "authors": [
+        {
+          "name": "Ge Yan",
+          "authorId": "2298969339"
+        },
+        {
+          "name": "Chung-En Sun",
+          "authorId": "2308411680"
+        },
+        {
+          "name": "Tsui-Wei Weng",
+          "authorId": "27836724"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) with Chain-of-Thought (CoT) reasoning have achieved strong performance across diverse tasks, including mathematics, coding, and general reasoning. A distinctive ability of these reasoning models is self-reflection: the ability to review and revise previous reasoning steps. While self-reflection enhances reasoning performance, it also increases inference cost. In this work, we study self-reflection through the lens of representation engineering. We segment the model's reasoning into steps, identify the steps corresponding to reflection, and extract a reflection direction in the latent space that governs this behavior. Using this direction, we propose a stepwise steering method that can control reflection frequency. We call our framework ReflCtrl. Our experiments show that (1) in many cases reflections are redundant, especially in stronger models (in our experiments, we can save up to 33.6 percent of reasoning tokens while preserving performance), and (2) the model's reflection behavior is highly correlated with an internal uncertainty signal, implying self-reflection may be controlled by the model's uncertainty.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.13979",
+      "url": "https://www.semanticscholar.org/paper/ccc7f9c8fc576db5876829822d5c1821a33117dd",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "69d2c27b6e1b9e3d2c215be706af8da784997713",
+      "title": "Unlocking Multilingual Reasoning Capability of LLMs and LVLMs through Representation Engineering",
+      "authors": [
+        {
+          "name": "Qiming Li",
+          "authorId": "2309202481"
+        },
+        {
+          "name": "Xiaocheng Feng",
+          "authorId": "2674998"
+        },
+        {
+          "name": "Yixuan Ma",
+          "authorId": "2316890709"
+        },
+        {
+          "name": "Zekai Ye",
+          "authorId": "2331740978"
+        },
+        {
+          "name": "Ruihan Chen",
+          "authorId": "2337225259"
+        },
+        {
+          "name": "Xiachong Feng",
+          "authorId": "51056442"
+        },
+        {
+          "name": "Bing Qin",
+          "authorId": "2286265082"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) and Large Vision-Language Models (LVLMs) demonstrate strong reasoning capabilities, yet their performance in English significantly outperforms that in low-resource languages, raising fairness concerns in multilingual applications. Existing approaches either rely on costly multilingual training or employ prompting with external translation tools, both of which are resource-intensive and sensitive to translation quality. To address these limitations, we propose a training-free inference-time method to enhance Multilingual Reasoning capabilities via Representation Engineering (MRRE) without using any additional training data or tools. MRRE sequentially injects two precomputed vectors at specific layers during inference processing: cross-lingual reasoning enhancement vectors, which steer non-English reasoning representations toward English space to unlock multilingual reasoning, and target-language output anchoring vectors, which restore the distribution of the target language to preserve input-output language consistency. Comprehensive experiments across six advanced LLMs and LVLMs on four reasoning benchmarks demonstrate that MRRE consistently enhances non-English reasoning by an average gain of 5.48% and up to 7.54% in low-resource languages (Thai and Swahili), while improving input-output language consistency by 3.78%.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.23231",
+      "arxivId": "2511.23231",
+      "url": "https://www.semanticscholar.org/paper/69d2c27b6e1b9e3d2c215be706af8da784997713",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.23231"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0ed70ca8531b3676d631f38cfd42e72023eed5ab",
+      "title": "Revisiting Jailbreaking for Large Language Models: A Representation Engineering Perspective",
+      "authors": [
+        {
+          "name": "Tianlong Li",
+          "authorId": "2235543174"
+        },
+        {
+          "name": "Shihan Dou",
+          "authorId": "2042683163"
+        },
+        {
+          "name": "Wenhao Liu",
+          "authorId": "2257377140"
+        },
+        {
+          "name": "Muling Wu",
+          "authorId": "2257130069"
+        },
+        {
+          "name": "Changze Lv",
+          "authorId": "2220896023"
+        },
+        {
+          "name": "Rui Zheng",
+          "authorId": "2314918518"
+        },
+        {
+          "name": "Xiaoqing Zheng",
+          "authorId": "2257315404"
+        },
+        {
+          "name": "Xuanjing Huang",
+          "authorId": "2257129987"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The recent surge in jailbreaking attacks has revealed significant vulnerabilities in Large Language Models (LLMs) when exposed to malicious inputs. While various defense strategies have been proposed to mitigate these threats, there has been limited research into the underlying mechanisms that make LLMs vulnerable to such attacks. In this study, we suggest that the self-safeguarding capability of LLMs is linked to specific activity patterns within their representation space. Although these patterns have little impact on the semantic content of the generated text, they play a crucial role in shaping LLM behavior under jailbreaking attacks. Our findings demonstrate that these patterns can be detected with just a few pairs of contrastive queries. Extensive experimentation shows that the robustness of LLMs against jailbreaking can be manipulated by weakening or strengthening these patterns. Further visual analysis provides additional evidence for our conclusions, providing new insights into the jailbreaking phenomenon. These findings highlight the importance of addressing the potential misuse of open-source LLMs within the community.",
+      "citationCount": 32,
+      "doi": null,
+      "arxivId": "2401.06824",
+      "url": "https://www.semanticscholar.org/paper/0ed70ca8531b3676d631f38cfd42e72023eed5ab",
+      "venue": "International Conference on Computational Linguistics",
+      "journal": {
+        "pages": "3158-3178"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "98fa3ece464d19c6bfefd11cf1c899d42a39d037",
+      "title": "A Representation Engineering Perspective on the Effectiveness of Multi-Turn Jailbreaks",
+      "authors": [
+        {
+          "name": "Blake Bullwinkel",
+          "authorId": "2303843111"
+        },
+        {
+          "name": "M. Russinovich",
+          "authorId": "3196342"
+        },
+        {
+          "name": "Ahmed Salem",
+          "authorId": "2294574172"
+        },
+        {
+          "name": "Santiago Zanella-B\u00e9guelin",
+          "authorId": "2305827527"
+        },
+        {
+          "name": "Daniel Jones",
+          "authorId": "2339967521"
+        },
+        {
+          "name": "Giorgio Severi",
+          "authorId": "2339780434"
+        },
+        {
+          "name": "Eugenia Kim",
+          "authorId": "2339964527"
+        },
+        {
+          "name": "Keegan Hines",
+          "authorId": "2276204594"
+        },
+        {
+          "name": "Amanda Minnich",
+          "authorId": "2312208744"
+        },
+        {
+          "name": "Yonatan Zunger",
+          "authorId": "52118354"
+        },
+        {
+          "name": "Ram Shankar Siva Kumar",
+          "authorId": "2312253770"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent research has demonstrated that state-of-the-art LLMs and defenses remain susceptible to multi-turn jailbreak attacks. These attacks require only closed-box model access and are often easy to perform manually, posing a significant threat to the safe and secure deployment of LLM-based systems. We study the effectiveness of the Crescendo multi-turn jailbreak at the level of intermediate model representations and find that safety-aligned LMs often represent Crescendo responses as more benign than harmful, especially as the number of conversation turns increases. Our analysis indicates that at each turn, Crescendo prompts tend to keep model outputs in a\"benign\"region of representation space, effectively tricking the model into fulfilling harmful requests. Further, our results help explain why single-turn jailbreak defenses like circuit breakers are generally ineffective against multi-turn attacks, motivating the development of mitigations that address this generalization gap.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2507.02956",
+      "arxivId": "2507.02956",
+      "url": "https://www.semanticscholar.org/paper/98fa3ece464d19c6bfefd11cf1c899d42a39d037",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.02956"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3cdaf9507bbf3822b4b09874b80c7313a5557b1b",
+      "title": "Enhancing Supervised Composed Image Retrieval via Reasoning-Augmented Representation Engineering",
+      "authors": [
+        {
+          "name": "Jun Li",
+          "authorId": "2350602193"
+        },
+        {
+          "name": "Kai Li",
+          "authorId": "2376202134"
+        },
+        {
+          "name": "Shaoguo Liu",
+          "authorId": "2349805925"
+        },
+        {
+          "name": "Tingting Gao",
+          "authorId": "2360163340"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Composed Image Retrieval (CIR) presents a significant challenge as it requires jointly understanding a reference image and a modified textual instruction to find relevant target images. Some existing methods attempt to use a two-stage approach to further refine retrieval results. However, this often requires additional training of a ranking model. Despite the success of Chain-of-Thought (CoT) techniques in reducing training costs for language models, their application in CIR tasks remains limited -- compressing visual information into text or relying on elaborate prompt designs. Besides, existing works only utilize it for zero-shot CIR, as it is challenging to achieve satisfactory results in supervised CIR with a well-trained model. In this work, we proposed a framework that includes the Pyramid Matching Model with Training-Free Refinement (PMTFR) to address these challenges. Through a simple but effective module called Pyramid Patcher, we enhanced the Pyramid Matching Model's understanding of visual information at different granularities. Inspired by representation engineering, we extracted representations from COT data and injected them into the LVLMs. This approach allowed us to obtain refined retrieval scores in the Training-Free Refinement paradigm without relying on explicit textual reasoning, further enhancing performance. Extensive experiments on CIR benchmarks demonstrate that PMTFR surpasses state-of-the-art methods in supervised CIR tasks. The code will be made public.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.11272",
+      "arxivId": "2508.11272",
+      "url": "https://www.semanticscholar.org/paper/3cdaf9507bbf3822b4b09874b80c7313a5557b1b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.11272"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e9a7d5e9c5a635c3947a8ac3d471c43b5714370c",
+      "title": "Adversarial Representation Engineering: A General Model Editing Framework for Large Language Models",
+      "authors": [
+        {
+          "name": "Yihao Zhang",
+          "authorId": "2286475988"
+        },
+        {
+          "name": "Zeming Wei",
+          "authorId": "2191808925"
+        },
+        {
+          "name": "Jun Sun",
+          "authorId": "2298015012"
+        },
+        {
+          "name": "Meng Sun",
+          "authorId": "2297768119"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Since the rapid development of Large Language Models (LLMs) has achieved remarkable success, understanding and rectifying their internal complex mechanisms has become an urgent issue. Recent research has attempted to interpret their behaviors through the lens of inner representation. However, developing practical and efficient methods for applying these representations for general and flexible model editing remains challenging. In this work, we explore how to leverage insights from representation engineering to guide the editing of LLMs by deploying a representation sensor as an editing oracle. We first identify the importance of a robust and reliable sensor during editing, then propose an Adversarial Representation Engineering (ARE) framework to provide a unified and interpretable approach for conceptual model editing without compromising baseline performance. Experiments on multiple tasks demonstrate the effectiveness of ARE in various model editing scenarios. Our code and data are available at https://github.com/Zhang-Yihao/Adversarial-Representation-Engineering.",
+      "citationCount": 14,
+      "doi": "10.52202/079017-4010",
+      "arxivId": "2404.13752",
+      "url": "https://www.semanticscholar.org/paper/e9a7d5e9c5a635c3947a8ac3d471c43b5714370c",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "Advances in Neural Information Processing Systems 37"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ec3529fe265b84944ac3f63686edadbcede8972c",
+      "title": "Legend: Leveraging Representation Engineering to Annotate Safety Margin for Preference Datasets",
+      "authors": [
+        {
+          "name": "Duanyu Feng",
+          "authorId": "2280334389"
+        },
+        {
+          "name": "Bowen Qin",
+          "authorId": "2295670696"
+        },
+        {
+          "name": "Chen Huang",
+          "authorId": "2270744273"
+        },
+        {
+          "name": "Youcheng Huang",
+          "authorId": "2156083891"
+        },
+        {
+          "name": "Zheng Zhang",
+          "authorId": "2279544793"
+        },
+        {
+          "name": "Wenqiang Lei",
+          "authorId": "2287107801"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The success of the reward model in distinguishing between responses with subtle safety differences depends critically on the high-quality preference dataset, which should capture the fine-grained nuances of harmful and harmless responses. This motivates the need to develop the datasets involving preference margins, which accurately quantify how harmless one response is compared to another. In this paper, we take the first step to propose an effective and cost-efficient framework to promote the margin-enhanced preference dataset development. Our framework, Legend, Leverages rEpresentation enGineering to annotate preferENce Datasets. It constructs the specific direction within the LLM's embedding space that represents safety. By leveraging this safety direction, Legend can then leverage the semantic distances of paired responses along this direction to annotate margins automatically. We experimentally demonstrate our effectiveness in both reward modeling and harmless alignment for LLMs. Legend also stands out for its efficiency, requiring only the inference time rather than additional training. This efficiency allows for easier implementation and scalability, making Legend particularly valuable for practical applications in aligning LLMs with safe conversations.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2406.08124",
+      "arxivId": "2406.08124",
+      "url": "https://www.semanticscholar.org/paper/ec3529fe265b84944ac3f63686edadbcede8972c",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "27277-27285"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "aee47d4f45d5c02f79fff62ce4147f0d382cd87e",
+      "title": "Aligning Large Language Models with Human Preferences through Representation Engineering",
+      "authors": [
+        {
+          "name": "Wenhao Liu",
+          "authorId": "2257377140"
+        },
+        {
+          "name": "Xiaohua Wang",
+          "authorId": "2273537815"
+        },
+        {
+          "name": "Muling Wu",
+          "authorId": "2257130069"
+        },
+        {
+          "name": "Tianlong Li",
+          "authorId": "2235543174"
+        },
+        {
+          "name": "Changze Lv",
+          "authorId": "2220896023"
+        },
+        {
+          "name": "Zixuan Ling",
+          "authorId": "2223116564"
+        },
+        {
+          "name": "Jianhao Zhu",
+          "authorId": "2276580337"
+        },
+        {
+          "name": "Cenyuan Zhang",
+          "authorId": "2257100381"
+        },
+        {
+          "name": "Xiaoqing Zheng",
+          "authorId": "2257315404"
+        },
+        {
+          "name": "Xuanjing Huang",
+          "authorId": "2257129987"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Aligning large language models (LLMs) with human preferences is crucial for enhancing their utility in terms of helpfulness, truthfulness, safety, harmlessness, and interestingness. Existing methods for achieving this alignment often involves employing reinforcement learning from human feedback (RLHF) to fine-tune LLMs based on human labels assessing the relative quality of model responses. Nevertheless, RLHF is susceptible to instability during fine-tuning and presents challenges in implementation.Drawing inspiration from the emerging field of representation engineering (RepE), this study aims to identify relevant representations for high-level human preferences embedded in patterns of activity within an LLM, and achieve precise control of model behavior by transforming its representations. This novel approach, denoted as Representation Alignment from Human Feedback (RAHF), proves to be effective, computationally efficient, and easy to implement.Extensive experiments demonstrate the efficacy of RAHF in not only capturing but also manipulating representations to align with a broad spectrum of human preferences or values, rather than being confined to a singular concept or function (e.g. honesty or bias). RAHF's versatility in accommodating diverse human preferences shows its potential for advancing LLM performance.",
+      "citationCount": 69,
+      "doi": "10.48550/arXiv.2312.15997",
+      "arxivId": "2312.15997",
+      "url": "https://www.semanticscholar.org/paper/aee47d4f45d5c02f79fff62ce4147f0d382cd87e",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2312.15997"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "532aa80ce98765e362c195552115b28f1d833bd5",
+      "title": "Words in Motion: Representation Engineering for Motion Forecasting",
+      "authors": [
+        {
+          "name": "\u00d6mer Sahin Tas",
+          "authorId": "2257210261"
+        },
+        {
+          "name": "Royden Wagner",
+          "authorId": "2161663418"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2406.11624",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/532aa80ce98765e362c195552115b28f1d833bd5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.11624"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b58acaa6e573eda9f858311697cebab4a90a5578",
+      "title": "Modernizing Engineering Education in 2023: Minimizing Academic Honesty Policies, Treating Grades As Measurements, Individualizing Educational Experiences and Incorporating More Project-Based Learning to Better Bridge the Gap Between High School and Career",
+      "authors": [
+        {
+          "name": "Ivaylo Nedyalkov",
+          "authorId": "2283039587"
+        }
+      ],
+      "year": 2023,
+      "abstract": "\n In 2023, engineering education is facing a wide range of challenges, and yet multiple opportunities are underutilized. Students often use online resources, including YouTube videos, and sites like Chegg. Academic honesty policies are not strictly enforced, and even when enforced, they are successfully implemented only for a fraction of the students who violate those policies. The advancement of AI tools like ChatGPT is making it even more challenging to detect if a student has used such tools or other resources that are not typically allowed in classes. Grade inflation, inaccuracy, and inconsistency are another concern. Some engineering education experiences are becoming outdated. COVID-19 and its aftermath are posing additional challenges. Student and faculty fatigue and burnout have a negative impact on learning outcomes and mental health.\n The author proposes a few major changes in engineering education in an attempt to address these challenges and bring the focus back to bridging the gap between high school and career. The changes include minimizing the use of academic honesty policies; integrating contemporary tools like AI; modifying grading to focus on evaluating understanding and treating grades as measurements with uncertainties; and implementing a more holistic approach to engineering education by better incorporating student group experiences, hands-on engineering activities in maker spaces, better use of curated video/online resources, and optional assignments.\n With the proposed changes, the author hopes that engineering education in this decade will re-focus on student success and well-being and decrease the workload for both students and faculty, while improving the learning outcomes.",
+      "citationCount": 0,
+      "doi": "10.1115/imece2023-116716",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b58acaa6e573eda9f858311697cebab4a90a5578",
+      "venue": "Engineering Education",
+      "journal": {
+        "name": "Volume 8: Engineering Education"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "292506d08d2c4c68eaabe24945e6a2890833375d",
+      "title": "Zero-shot prediction of mutation effects with multimodal deep representation learning guides protein engineering",
+      "authors": [
+        {
+          "name": "Peng Cheng",
+          "authorId": "2162955801"
+        },
+        {
+          "name": "Cong Mao",
+          "authorId": "2204657516"
+        },
+        {
+          "name": "Jin Tang",
+          "authorId": "2305650508"
+        },
+        {
+          "name": "Sen Yang",
+          "authorId": "2310184815"
+        },
+        {
+          "name": "Yu Cheng",
+          "authorId": "2309961530"
+        },
+        {
+          "name": "Wuke Wang",
+          "authorId": "2291199142"
+        },
+        {
+          "name": "Qiuxi Gu",
+          "authorId": "2291132889"
+        },
+        {
+          "name": "Wei Han",
+          "authorId": "2307921144"
+        },
+        {
+          "name": "Hao Chen",
+          "authorId": "2309913526"
+        },
+        {
+          "name": "Sihan Li",
+          "authorId": "2309928780"
+        },
+        {
+          "name": "Yaofeng Chen",
+          "authorId": "2163666422"
+        },
+        {
+          "name": "Jianglin Zhou",
+          "authorId": "2309929622"
+        },
+        {
+          "name": "Wuju Li",
+          "authorId": "2310181650"
+        },
+        {
+          "name": "Aimin Pan",
+          "authorId": "2309920187"
+        },
+        {
+          "name": "Suwen Zhao",
+          "authorId": "144882898"
+        },
+        {
+          "name": "Xingxu Huang",
+          "authorId": "2152662126"
+        },
+        {
+          "name": "Shiqiang Zhu",
+          "authorId": "2310353356"
+        },
+        {
+          "name": "Jun Zhang",
+          "authorId": "2238864215"
+        },
+        {
+          "name": "Wenjie Shu",
+          "authorId": "10270570"
+        },
+        {
+          "name": "Shengqi Wang",
+          "authorId": "2268259106"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Mutations in amino acid sequences can provoke changes in protein function. Accurate and unsupervised prediction of mutation effects is critical in biotechnology and biomedicine, but remains a fundamental challenge. To resolve this challenge, here we present Protein Mutational Effect Predictor (ProMEP), a general and multiple sequence alignment-free method that enables zero-shot prediction of mutation effects. A multimodal deep representation learning model embedded in ProMEP was developed to comprehensively learn both sequence and structure contexts from ~160 million proteins. ProMEP achieves state-of-the-art performance in mutational effect prediction and accomplishes a tremendous improvement in speed, enabling efficient and intelligent protein engineering. Specifically, ProMEP accurately forecasts mutational consequences on the gene-editing enzymes TnpB and TadA, and successfully guides the development of high-performance gene-editing tools with their engineered variants. The gene-editing efficiency of a 5-site mutant of TnpB reaches up to 74.04% (vs 24.66% for the wild type); and the base editing tool developed on the basis of a TadA 15-site mutant (in addition to the A106V/D108N double mutation that renders deoxyadenosine deaminase activity to TadA) exhibits an A-to-G conversion frequency of up to 77.27% (vs 69.80% for ABE8e, a previous TadA-based adenine base editor) with significantly reduced bystander and off-target effects compared to ABE8e. ProMEP not only showcases superior performance in predicting mutational effects on proteins but also demonstrates a great capability to guide protein engineering. Therefore, ProMEP enables efficient exploration of the gigantic protein space and facilitates practical design of proteins, thereby advancing studies in biomedicine and synthetic biology.",
+      "citationCount": 40,
+      "doi": "10.1038/s41422-024-00989-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/292506d08d2c4c68eaabe24945e6a2890833375d",
+      "venue": "Cell Research",
+      "journal": {
+        "name": "Cell Research",
+        "pages": "630 - 647",
+        "volume": "34"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bd9010b9ef1839cf0459c36dd646a75892d3e582",
+      "title": "Gender Representation in Engineering Education: A Multi-Year Analysis Using AISHE",
+      "authors": [
+        {
+          "name": "Anuj Kumar",
+          "authorId": "2240063568"
+        },
+        {
+          "name": "Gagandeep Kaur",
+          "authorId": "2395071669"
+        },
+        {
+          "name": "Sri Sakuntala S",
+          "authorId": "2397786472"
+        },
+        {
+          "name": "Shruti Jain",
+          "authorId": "2203497619"
+        },
+        {
+          "name": "Afsha Matloob",
+          "authorId": "1657660320"
+        }
+      ],
+      "year": 2025,
+      "abstract": "With women underrepresented, engineering education in India continues to face persistent gender disparities. Despite various reforms and interventions across the decades, the imbalance is still apparent. This study examines gender representation in engineering education in India using both the systematic literature review and quantitative data analysis. The systematic literature review followed the PRISMA guidelines to review peer-reviewed open-access research articles. The review helped to identify the key factors that influence women\u2019s participation in engineering education, such as social, cultural, organizational, and policy-based barriers. For the quantitative data analysis, the authors have referred to the data from the All-India Survey of Higher Education (AISHE) across multiple years (2012\u20132022). This study aims to understand the trends in female enrollment and graduation in engineering programs. The data was organized, cleaned, and represented. The graphical representation highlights year-wise patterns, progress, and areas where gender gaps persist. With the combined insights from SLR and AISHE data trends, the authors have proposed a conceptual framework that aims to improve female participation. The findings of this study are expected to inform institutions and policymakers on how to make the engineering education system more inclusive for female participants.",
+      "citationCount": 0,
+      "doi": "10.3991/ijep.v15i7.59043",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bd9010b9ef1839cf0459c36dd646a75892d3e582",
+      "venue": "International Journal of Engineering Pedagogy (iJEP)",
+      "journal": {
+        "name": "International Journal of Engineering Pedagogy (iJEP)"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "42d3c985361a3e5cba01a724baf9c678f4c99447",
+      "title": "SAR Semantic-Aware Reverse Engineering of NonStandard ICS Protocols using Multimodal Representation Learning",
+      "authors": [
+        {
+          "name": "Haohui Su",
+          "authorId": "2349210536"
+        },
+        {
+          "name": "Xuan Zhang",
+          "authorId": "2186276525"
+        },
+        {
+          "name": "Lvjun Zheng",
+          "authorId": "2389677310"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The power industrial control system (ICS) is a critical infrastructure underpinning the secure and stable operation of the power grid. However, the widespread use of undocumented, vendor-specific private protocols hinders interoperability and poses serious challenges to protocol analysis and security protection. In this paper, we propose a multimodal feature fusion framework for automated reverse parsing and intelligent analysis of non-standard ICS protocols. The framework integrates statistical, structural, and contextual features to support protocol message clustering, field segmentation, and semantic classification. Building on this, we develop a practical analysis system for real-time security monitoring, incorporating modules for protocol recognition, vulnerability mining, and threat assessment. Experimental results on three representative datasets show that our method achieves a clustering accuracy of $94.7 \\%$, a field classification $\\mathbf{F 1}$ score of $\\mathbf{9 3 . 1 \\%}$, and a protocol state machine similarity score of 0.94, significantly outperforming existing approaches. These results validate the effectiveness and robustness of our approach in securing power ICS communications.",
+      "citationCount": 0,
+      "doi": "10.1109/IC2ECT66838.2025.11291045",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/42d3c985361a3e5cba01a724baf9c678f4c99447",
+      "venue": "2025 5th International Conference on Electrical Engineering and Computer Technology (IC2ECT)",
+      "journal": {
+        "name": "2025 5th International Conference on Electrical Engineering and Computer Technology (IC2ECT)",
+        "pages": "475-482"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "fa6d66360c3f35c9c2cd0e850fea347a47c6c871",
+      "title": "Promoting knowledge recommendation in innovative engineering design: a BERT-GAT-based patent representation learning approach",
+      "authors": [
+        {
+          "name": "Mingrui Li",
+          "authorId": "2249085896"
+        },
+        {
+          "name": "Zuoxu Wang",
+          "authorId": "2248170540"
+        },
+        {
+          "name": "Zhijie Yan",
+          "authorId": "2299671405"
+        },
+        {
+          "name": "Xinxin Liang",
+          "authorId": "2299578078"
+        },
+        {
+          "name": "Jihong Liu",
+          "authorId": "2299736939"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Since innovation in complex product design hinges on thorough engineering knowledge application, high-quality patent recommendations foster innovation in engineering design. However, many patent knowledge recommendation studies perform patent analysis without comprehensive exploration and proper organisation of knowledge, causing a superficial understanding of patents and returning arbitrary results. To mitigate this issue, a deep learning-based approach for patent representation learning and knowledge recommendation is proposed. First, a four-dimensional patent knowledge model is defined to formalise the patent attributes that critically affect the engineering design outcomes, namely patents\u2019 domain(D), function(F), technology(T) and citation(C). Second, to exploit patent knowledge from their content and citation relationships, a representation learning approach integrating Bidirectional Encoder Representations from Transformers(BERT) and Graph Attention Network(GAT) is introduced. Thereafter a patent knowledge space is established in which each patent is characterised by the function, technology, and citation embeddings. Third, a knowledge requirement space is also constructed by vectorising a designer\u2019s search query via BERT model and linking it to a requirement-representing patent based on similarity. Finally, a recommender prototype is developed and showcased by the knowledge recommendation in sealing structure design tasks. Comparative experiments and application cases validate the effectiveness of our method in patent representation learning and knowledge recommendation.",
+      "citationCount": 15,
+      "doi": "10.1080/09544828.2024.2339713",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fa6d66360c3f35c9c2cd0e850fea347a47c6c871",
+      "venue": "Journal of engineering design",
+      "journal": {
+        "name": "Journal of Engineering Design",
+        "pages": "1425 - 1450",
+        "volume": "36"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9280fcdf12229aabe607a5fbdb20cbb8cbd1f9a8",
+      "title": "Isogeometric analysis for solving discontinuous two-phase engineering problems with precise and explicit interface representation",
+      "authors": [
+        {
+          "name": "Emad Shakur",
+          "authorId": "2294297664"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1007/s00366-024-01952-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9280fcdf12229aabe607a5fbdb20cbb8cbd1f9a8",
+      "venue": "Engineering computations",
+      "journal": {
+        "name": "Engineering with Computers",
+        "pages": "3561 - 3594",
+        "volume": "40"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b6b82b8f07a4f3e727427d8aea37a859aa39f0c3",
+      "title": "A study about graphs in the representation of knowledge in discussion forums in Software Engineering",
+      "authors": [
+        {
+          "name": "P. R. Silva",
+          "authorId": "40413699"
+        },
+        {
+          "name": "\u00c9. Souza",
+          "authorId": "23181320"
+        },
+        {
+          "name": "Gl\u00e1ucia Braga e Silva",
+          "authorId": "2313924036"
+        },
+        {
+          "name": "K. Felizardo",
+          "authorId": "1757650"
+        },
+        {
+          "name": "G. V. Meinerz",
+          "authorId": "3433873"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In the social web paradigm, discussion forums are effective tools to facilitate the knowledge transfer among developers. However, manually finding useful information in discussions on a particular topic is a complex task, making it a major challenge for knowledge management. The objective of this study is to explore the representation of knowledge supported by graphs generated from discussion forums in the context of Software Engineering. Firstly, graphs were built considering the discussion topics of the Stack Overflow forum. Visual analysis as well as analysis of thematic relevance of the graphs were performed. Next, an evaluation of the graphs generated through interviews with software industry professionals was also conducted in order to obtain a practical view of the study conducted. Using graphs generated from discussion forums can help the software industry identify useful information and new trends.",
+      "citationCount": 1,
+      "doi": "10.5753/cibse.2024.28445",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b6b82b8f07a4f3e727427d8aea37a859aa39f0c3",
+      "venue": "Conferencia Iberoamericana de Software Engineering",
+      "journal": {
+        "pages": "151-165"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

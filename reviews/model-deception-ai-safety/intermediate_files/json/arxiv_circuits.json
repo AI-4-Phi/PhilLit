@@ -1,0 +1,118 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:circuit analysis neural networks interpretability",
+  "results": [
+    {
+      "arxiv_id": "2001.10696",
+      "title": "Spiking Inception Module for Multi-layer Unsupervised Spiking Neural Networks",
+      "authors": [
+        "Mingyuan Meng",
+        "Xingyu Yang",
+        "Shanlin Xiao",
+        "Zhiyi Yu"
+      ],
+      "abstract": "Spiking Neural Network (SNN), as a brain-inspired approach, is attracting attention due to its potential to produce ultra-high-energy-efficient hardware. Competitive learning based on Spike-Timing-Dependent Plasticity (STDP) is a popular method to train an unsupervised SNN. However, previous unsupervised SNNs trained through this method are limited to a shallow network with only one learnable layer and cannot achieve satisfactory results when compared with multi-layer SNNs. In this paper, we eased this limitation by: 1)We proposed a Spiking Inception (Sp-Inception) module, inspired by the Inception module in the Artificial Neural Network (ANN) literature. This module is trained through STDP-based competitive learning and outperforms the baseline modules on learning capability, learning efficiency, and robustness. 2)We proposed a Pooling-Reshape-Activate (PRA) layer to make the Sp-Inception module stackable. 3)We stacked multiple Sp-Inception modules to construct multi-layer SNNs. Our algorithm outperforms the baseline algorithms on the hand-written digit classification task, and reaches state-of-the-art results on the MNIST dataset among the existing unsupervised SNNs.",
+      "published": "2020-01-29",
+      "updated": "2020-09-28",
+      "primary_category": "cs.NE",
+      "categories": [
+        "cs.NE",
+        "cs.LG",
+        "q-bio.NC"
+      ],
+      "doi": "10.1109/IJCNN48605.2020.9207161",
+      "journal_ref": "2020 International Joint Conference on Neural Networks (IJCNN), Glasgow, United Kingdom, 2020, pp. 1-8",
+      "pdf_url": "https://arxiv.org/pdf/2001.10696v5",
+      "url": "https://arxiv.org/abs/2001.10696"
+    },
+    {
+      "arxiv_id": "2003.09671",
+      "title": "On Information Plane Analyses of Neural Network Classifiers -- A Review",
+      "authors": [
+        "Bernhard C. Geiger"
+      ],
+      "abstract": "We review the current literature concerned with information plane analyses of neural network classifiers. While the underlying information bottleneck theory and the claim that information-theoretic compression is causally linked to generalization are plausible, empirical evidence was found to be both supporting and conflicting. We review this evidence together with a detailed analysis of how the respective information quantities were estimated. Our survey suggests that compression visualized in information planes is not necessarily information-theoretic, but is rather often compatible with geometric compression of the latent representations. This insight gives the information plane a renewed justification.   Aside from this, we shed light on the problem of estimating mutual information in deterministic neural networks and its consequences. Specifically, we argue that even in feed-forward neural networks the data processing inequality need not hold for estimates of mutual information. Similarly, while a fitting phase, in which the mutual information between the latent representation and the target increases, is necessary (but not sufficient) for good classification performance, depending on the specifics of mutual information estimation such a fitting phase need not be visible in the information plane.",
+      "published": "2020-03-21",
+      "updated": "2021-06-10",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CV",
+        "cs.IT",
+        "stat.ML"
+      ],
+      "doi": "10.1109/TNNLS.2021.3089037",
+      "journal_ref": "IEEE Trans. Neural Networks and Learning Systems 33(12):7039-7051",
+      "pdf_url": "https://arxiv.org/pdf/2003.09671v3",
+      "url": "https://arxiv.org/abs/2003.09671"
+    },
+    {
+      "arxiv_id": "2006.02951",
+      "title": "CiwGAN and fiwGAN: Encoding information in acoustic data to model lexical learning with Generative Adversarial Networks",
+      "authors": [
+        "Ga\u0161per Begu\u0161"
+      ],
+      "abstract": "How can deep neural networks encode information that corresponds to words in human speech into raw acoustic data? This paper proposes two neural network architectures for modeling unsupervised lexical learning from raw acoustic inputs, ciwGAN (Categorical InfoWaveGAN) and fiwGAN (Featural InfoWaveGAN), that combine a Deep Convolutional GAN architecture for audio data (WaveGAN; arXiv:1705.07904) with an information theoretic extension of GAN -- InfoGAN (arXiv:1606.03657), and propose a new latent space structure that can model featural learning simultaneously with a higher level classification and allows for a very low-dimension vector representation of lexical items. Lexical learning is modeled as emergent from an architecture that forces a deep neural network to output data such that unique information is retrievable from its acoustic outputs. The networks trained on lexical items from TIMIT learn to encode unique information corresponding to lexical items in the form of categorical variables in their latent space. By manipulating these variables, the network outputs specific lexical items. The network occasionally outputs innovative lexical items that violate training data, but are linguistically interpretable and highly informative for cognitive modeling and neural network interpretability. Innovative outputs suggest that phonetic and phonological representations learned by the network can be productively recombined and directly paralleled to productivity in human speech: a fiwGAN network trained on `suit' and `dark' outputs innovative `start', even though it never saw `start' or even a [st] sequence in the training data. We also argue that setting latent featural codes to values well beyond training range results in almost categorical generation of prototypical lexical items and reveals underlying values of each latent code.",
+      "published": "2020-06-04",
+      "updated": "2021-07-28",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "doi": "10.1016/j.neunet.2021.03.017",
+      "journal_ref": "Neural Networks 139 (2021), pp. 305-325",
+      "pdf_url": "https://arxiv.org/pdf/2006.02951v3",
+      "url": "https://arxiv.org/abs/2006.02951"
+    },
+    {
+      "arxiv_id": "2006.03243",
+      "title": "mFI-PSO: A Flexible and Effective Method in Adversarial Image Generation for Deep Neural Networks",
+      "authors": [
+        "Hai Shu",
+        "Ronghua Shi",
+        "Qiran Jia",
+        "Hongtu Zhu",
+        "Ziqi Chen"
+      ],
+      "abstract": "Deep neural networks (DNNs) have achieved great success in image classification, but can be very vulnerable to adversarial attacks with small perturbations to images. To improve adversarial image generation for DNNs, we develop a novel method, called mFI-PSO, which utilizes a Manifold-based First-order Influence measure for vulnerable image and pixel selection and the Particle Swarm Optimization for various objective functions. Our mFI-PSO can thus effectively design adversarial images with flexible, customized options on the number of perturbed pixels, the misclassification probability, and the targeted incorrect class. Experiments demonstrate the flexibility and effectiveness of our mFI-PSO in adversarial attacks and its appealing advantages over some popular methods.",
+      "published": "2020-06-05",
+      "updated": "2022-05-08",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "doi": "10.1109/IJCNN55064.2022.9892433",
+      "journal_ref": "2022 International Joint Conference on Neural Networks (IJCNN)",
+      "pdf_url": "https://arxiv.org/pdf/2006.03243v3",
+      "url": "https://arxiv.org/abs/2006.03243"
+    },
+    {
+      "arxiv_id": "2004.02396",
+      "title": "A Learning Framework for n-bit Quantized Neural Networks toward FPGAs",
+      "authors": [
+        "Jun Chen",
+        "Liang Liu",
+        "Yong Liu",
+        "Xianfang Zeng"
+      ],
+      "abstract": "The quantized neural network (QNN) is an efficient approach for network compression and can be widely used in the implementation of FPGAs. This paper proposes a novel learning framework for n-bit QNNs, whose weights are constrained to the power of two. To solve the gradient vanishing problem, we propose a reconstructed gradient function for QNNs in back-propagation algorithm that can directly get the real gradient rather than estimating an approximate gradient of the expected loss. We also propose a novel QNN structure named n-BQ-NN, which uses shift operation to replace the multiply operation and is more suitable for the inference on FPGAs. Furthermore, we also design a shift vector processing element (SVPE) array to replace all 16-bit multiplications with SHIFT operations in convolution operation on FPGAs. We also carry out comparable experiments to evaluate our framework. The experimental results show that the quantized models of ResNet, DenseNet and AlexNet through our learning framework can achieve almost the same accuracies with the original full-precision models. Moreover, when using our learning framework to train our n-BQ-NN from scratch, it can achieve state-of-the-art results compared with typical low-precision QNNs. Experiments on Xilinx ZCU102 platform show that our n-BQ-NN with our SVPE can execute 2.9 times faster than with the vector processing element (VPE) in inference. As the SHIFT operation in our SVPE array will not consume Digital Signal Processings (DSPs) resources on FPGAs, the experiments have shown that the use of SVPE array also reduces average energy consumption to 68.7% of the VPE array with 16-bit.",
+      "published": "2020-04-06",
+      "updated": "2020-04-06",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "eess.SP",
+        "stat.ML"
+      ],
+      "doi": "10.1109/TNNLS.2020.2980041",
+      "journal_ref": "IEEE Transactions on Neural Networks and Learning Systems 2020",
+      "pdf_url": "https://arxiv.org/pdf/2004.02396v1",
+      "url": "https://arxiv.org/abs/2004.02396"
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

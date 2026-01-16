@@ -1,0 +1,390 @@
+@comment{
+====================================================================
+DOMAIN: Philosophical Definitions of Deception
+SEARCH_DATE: 2026-01-15
+PAPERS_FOUND: 18 total (High: 8, Medium: 7, Low: 3)
+SEARCH_SOURCES: SEP, PhilPapers, Semantic Scholar, OpenAlex, CrossRef
+====================================================================
+
+DOMAIN_OVERVIEW:
+Philosophical definitions of deception center on necessary and sufficient
+conditions for lying, deception, and related speech acts. The traditional
+definition holds that lying requires (1) making a believed-false statement
+(2) with the intention to deceive. Recent debates challenge both conditions.
+Non-deceptionists (Carson, Sorensen, Fallis, Saul) argue that intention to
+deceive is unnecessary, citing bald-faced lies where the liar expects
+disbelief. Commitment-based approaches (Stokke, Viebahn) define lying through
+assertoric commitments rather than deceptive intent. The domain also
+distinguishes lying from misleading (implicature-based deception), withholding
+information, and bullshit (indifference to truth). Intentionality debates
+examine belief requirements, Gricean maxim violations, and whether non-human
+agents can satisfy these conditions. Recent work applies these definitions to
+AI systems, exploring whether machines can lie or deceive without beliefs or
+intentions.
+
+RELEVANCE_TO_PROJECT:
+This domain provides the conceptual foundation for evaluating AI deception.
+If deception requires beliefs and intentions, current AI systems may fail to
+deceive in the philosophical sense. However, if definitions based on
+communicative effects or commitment are accepted, AI systems could deceive.
+Understanding these distinctions is crucial for detecting model deception and
+determining which behaviors constitute safety risks.
+
+NOTABLE_GAPS:
+Limited work explicitly addresses AI agent deception using these philosophical
+frameworks. Most papers focus on human speech acts. The applicability of
+belief-intention conditions to machine learning systems remains under-explored
+philosophically, though Ward et al. (2023) begins this investigation.
+
+SYNTHESIS_GUIDANCE:
+Contrast traditional deceptionist vs. non-deceptionist definitions. Map
+intentionality requirements to AI capabilities. Examine how commitment-based
+and communicative-effect definitions apply to systems without mental states.
+
+KEY_POSITIONS:
+- Traditional deceptionists (Chisholm & Feehan): Lying requires intent to deceive - 4 papers
+- Non-deceptionists (Carson, Sorensen, Fallis, Saul): Lying without deceptive intent is possible - 6 papers
+- Commitment-based (Stokke, Viebahn): Lying as assertoric commitment - 2 papers
+- Gricean approaches: Deception as maxim violation - 3 papers
+- AI deception definitions: Extending to non-human agents - 3 papers
+====================================================================
+}
+
+@article{carson2006definition,
+  author = {Carson, Thomas L.},
+  title = {The Definition of Lying},
+  journal = {No\^{u}s},
+  year = {2006},
+  volume = {40},
+  number = {2},
+  pages = {284--306},
+  doi = {10.1111/j.0029-4624.2006.00610.x},
+  note = {
+  CORE ARGUMENT: Defines lying as warranting the truth of a statement one believes false, without requiring intention to deceive. Challenges the traditional definition by presenting cases of non-deceptive lies where the speaker warrants truth despite expecting the audience to disbelieve them (e.g., student lying to dean despite knowing dean suspects guilt).
+
+  RELEVANCE: Carson's warranting account provides an alternative to intention-based definitions that could apply to AI systems. If lying requires only warranting truth (implicit or explicit commitment), not mental states of deceptive intent, this lowers the bar for whether AI agents can lie. Critical for determining if model outputs that make false commitments without beliefs constitute lying.
+
+  POSITION: Non-deceptionist, warranting-based definition. Rejects intention to deceive as necessary condition.
+  },
+  keywords = {lying-definition, warranting, non-deceptionist, High}
+}
+
+@article{fallis2009lying,
+  author = {Fallis, Don},
+  title = {What is Lying?},
+  journal = {The Journal of Philosophy},
+  year = {2009},
+  volume = {106},
+  number = {1},
+  pages = {29--56},
+  doi = {10.5840/jphil200910612},
+  note = {
+  CORE ARGUMENT: Argues lying consists in asserting what you believe false, where assertion is defined by Gricean norms of conversation (violating "Do not say what you believe to be false"). Provides detailed analysis of necessary and sufficient conditions, challenging both the falsity requirement and the intention-to-deceive requirement through counterexamples.
+
+  RELEVANCE: Fallis's Gricean approach grounds lying in conversational norms rather than psychological states, potentially extending to AI agents that follow communication protocols. His analysis of belief conditions vs. intention conditions is crucial for evaluating whether AI systems with prediction confidence but no beliefs can lie. Directly relevant to mechanistic interpretability's focus on internal representations.
+
+  POSITION: Non-deceptionist, Gricean norm-based definition. Lying = asserting believed-false content.
+  },
+  keywords = {lying-definition, Gricean, assertion, non-deceptionist, High}
+}
+
+@article{fallis2010deception,
+  author = {Fallis, Don},
+  title = {Lying and Deception},
+  journal = {Philosophers' Imprint},
+  year = {2010},
+  volume = {10},
+  number = {11},
+  pages = {1--22},
+  url = {http://hdl.handle.net/2027/spo.3521354.0010.011},
+  note = {
+  CORE ARGUMENT: Distinguishes lying from deception, arguing that not all lies are deceptive (bald-faced lies) and not all deception involves lying (misleading through implicature). Analyzes the relationship between the two concepts and argues that the standard definition of lying as "asserting believed-false content with intent to deceive" is inadequate because the intent condition is neither necessary nor sufficient.
+
+  RELEVANCE: This distinction between lying and deception is fundamental for AI safety. AI systems might mislead (deceive) without lying, or make false assertions without deceptive intent. The paper's framework helps categorize different forms of model deception and determines which detection methods apply to which category. Essential for understanding whether interpretability should target false assertions, misleading implications, or both.
+
+  POSITION: Lying and deception are distinct phenomena; lying doesn't require deceptive intent.
+  },
+  keywords = {lying-deception-distinction, bald-faced-lies, non-deceptionist, High}
+}
+
+@book{saul2012lying,
+  author = {Saul, Jennifer M.},
+  title = {Lying, Misleading, and What Is Said: An Exploration in Philosophy of Language and in Ethics},
+  year = {2012},
+  publisher = {Oxford University Press},
+  address = {Oxford},
+  isbn = {9780199603688},
+  doi = {10.1093/acprof:oso/9780199603688.001.0001},
+  note = {
+  CORE ARGUMENT: Examines the distinction between lying (saying something false) and misleading (implicating something false), arguing that misleading can be as morally problematic as lying despite being conventionally distinguished. Introduces the concept of "warranting context" where speakers commit to truth. Analyzes bald-faced lies and argues lying doesn't require intention to deceive if the speaker believes they are in a warranting context.
+
+  RELEVANCE: Saul's framework distinguishes what AI systems explicitly assert vs. what they implicate, crucial for categorizing model deception. Her warranting context account provides a way to evaluate AI outputs without requiring mental states of intention. The lying-misleading distinction helps differentiate types of model deception detectable through different interpretability techniques (assertions via direct features vs. implicatures via contextual reasoning).
+
+  POSITION: Non-deceptionist; lying requires believing you're in warranting context, not deceptive intent.
+  },
+  keywords = {lying-misleading-distinction, warranting, implicature, non-deceptionist, High}
+}
+
+@article{stokke2013lying,
+  author = {Stokke, Andreas},
+  title = {Lying and Asserting},
+  journal = {The Journal of Philosophy},
+  year = {2013},
+  volume = {110},
+  number = {1},
+  pages = {33--60},
+  doi = {10.5840/jphil2013110144},
+  note = {
+  CORE ARGUMENT: Defines lying as asserting what you believe false, where assertion is proposing that a proposition become common ground. This common ground approach provides a non-deceptionist account: lying occurs when speakers propose believed-false content become mutually accepted, regardless of whether they intend to deceive. Handles bald-faced lies by noting speakers still propose updates to common ground even when falsity is mutually recognized.
+
+  RELEVANCE: Stokke's common ground framework offers a functional definition of lying applicable to AI systems engaged in conversation. If AI agents can update common ground (propose shared beliefs), they could lie even without intentions or beliefs in the psychological sense. Relevant to conversational AI and whether language models that update discourse context with false information are lying. Provides alternative to intention-based detection.
+
+  POSITION: Assertion-based, common ground definition. Non-deceptionist.
+  },
+  keywords = {lying-definition, assertion, common-ground, non-deceptionist, High}
+}
+
+@article{viebahn2021lying,
+  author = {Viebahn, Emanuel},
+  title = {The Lying-Misleading Distinction: A Commitment-Based Approach},
+  journal = {The Journal of Philosophy},
+  year = {2021},
+  volume = {118},
+  number = {6},
+  pages = {289--315},
+  doi = {10.5840/jphil2021118621},
+  note = {
+  CORE ARGUMENT: Distinguishes lying from misleading through speaker commitment: liars commit themselves to believed-false content (via assertion), while misleaders merely suggest false content without commitment (via implicature). This commitment-based approach broadens the definition of lying to include presuppositions and non-literal speech while maintaining the lying-misleading distinction. Challenges the view that this distinction maps neatly onto saying vs. implicating.
+
+  RELEVANCE: For AI systems, this raises the question: can models commit to outputs? If commitment is understood functionally (rather than psychologically), language models asserting false content might lie even without beliefs. The distinction helps categorize model outputs by commitment strength, relevant for risk assessment. Assertions carry stronger commitments and might warrant stricter detection than mere suggestions.
+
+  POSITION: Commitment-based distinction between lying (asserting) and misleading (suggesting).
+  },
+  keywords = {lying-misleading-distinction, commitment, assertion, Medium}
+}
+
+@incollection{mahon2007definition,
+  author = {Mahon, James Edwin},
+  title = {A Definition of Deceiving},
+  booktitle = {International Journal of Applied Philosophy},
+  year = {2007},
+  volume = {21},
+  number = {2},
+  pages = {181--194},
+  doi = {10.5840/ijap200721216},
+  note = {
+  CORE ARGUMENT: Offers a definition of deception distinct from lying: intentionally causing someone to have or continue to have a false belief through evidence, where the deceiver believes the belief to be false. Distinguishes positive deception (causing new false beliefs) from negative deception (preventing true beliefs). Critically examines whether deception requires intentional causation or merely allowing false beliefs.
+
+  RELEVANCE: Mahon's distinction between lying and deceiving provides conceptual clarity for AI safety: a system might deceive (cause false beliefs through evidence) without lying (making false assertions). His requirement that deception involves causing belief through evidence is crucial for evaluating whether AI outputs that manipulate user beliefs constitute deception. Relevant to cases where models influence beliefs through selective information presentation rather than false statements.
+
+  POSITION: Deception requires intentionally causing false belief through evidence; distinct from lying.
+  },
+  keywords = {deception-definition, intentionality, belief-causation, Medium}
+}
+
+@article{sorensen2007bald,
+  author = {Sorensen, Roy},
+  title = {Bald-Faced Lies! Lying Without the Intent to Deceive},
+  journal = {Pacific Philosophical Quarterly},
+  year = {2007},
+  volume = {88},
+  number = {2},
+  pages = {251--264},
+  doi = {10.1111/j.1468-0114.2007.00290.x},
+  note = {
+  CORE ARGUMENT: Argues that bald-faced lies (asserting believed-false content with no intention to deceive) are genuine lies, challenging the traditional definition. Defines lying simply as asserting what you don't believe, where assertion requires "narrow plausibility" (believability in isolation) not "wide plausibility" (credibility given all evidence). Uses cases like the Iraqi doctor saying "I see no uniforms" when uniforms are visible.
+
+  RELEVANCE: If bald-faced lies count as lies, then AI systems making obviously false assertions (e.g., denying hallucinations when errors are evident) would be lying even without deceptive intent. This has implications for AI safety: the danger lies in false assertions themselves, not just intentions to mislead. Relevant to evaluating model outputs where falsity is transparent but assertions are still made.
+
+  POSITION: Non-deceptionist; lying = asserting what you disbelieve (narrow plausibility).
+  },
+  keywords = {bald-faced-lies, non-deceptionist, assertion, High}
+}
+
+@article{chisholm1977intent,
+  author = {Chisholm, Roderick M. and Feehan, Thomas D.},
+  title = {The Intent to Deceive},
+  journal = {The Journal of Philosophy},
+  year = {1977},
+  volume = {74},
+  number = {3},
+  pages = {143--159},
+  doi = {10.2307/2025605},
+  note = {
+  CORE ARGUMENT: Provides the foundational intentional-deceptionist definition of lying and deception. Lying requires intending that someone acquire a false belief through your statement. Deception is broader: intentionally causing someone to have (or continue to have) a false belief, including through omission. Distinguishes positive deception (causing new false beliefs) from negative deception (maintaining existing false beliefs or preventing true beliefs).
+
+  RELEVANCE: Chisholm & Feehan's intentional account is the traditional definition against which recent work reacts. For AI systems, this raises the question: can systems without intentions deceive? If intention is necessary, current AI might not deceive in the philosophical sense, but could still produce deceptive effects. Their framework helps distinguish intended deception (requiring interpretability to detect intent-like features) from merely misleading outputs (evaluable by effect alone).
+
+  POSITION: Traditional deceptionist; lying and deception require intention to cause false belief.
+  },
+  keywords = {deception-definition, intentionality, traditional-deceptionist, Medium}
+}
+
+@article{ward2023honesty,
+  author = {Ward, Francis Rhys and Everitt, Tom and Belardinelli, Francesco and Toni, Francesca},
+  title = {Honesty Is the Best Policy: Defining and Mitigating AI Deception},
+  journal = {Advances in Neural Information Processing Systems},
+  year = {2023},
+  volume = {36},
+  pages = {80703--80743},
+  arxivId = {2312.01350},
+  doi = {10.48550/arXiv.2312.01350},
+  note = {
+  CORE ARGUMENT: Introduces a formal definition of deception for AI agents in structural causal games, grounded in philosophical definitions but applicable to machine learning systems. Deception occurs when an agent systematically causes another agent to have false beliefs about causally relevant variables, with the intent to benefit from those false beliefs. Provides graphical criteria for detecting deception and shows experimental results mitigating deception in RL agents and language models.
+
+  RELEVANCE: This is the most direct application of philosophical deception definitions to AI systems. Ward et al. operationalize intent and belief for artificial agents, providing a bridge between conceptual philosophy and AI safety. Their causal-structural approach is complementary to mechanistic interpretability, which also examines causal structure. Essential for understanding whether current detection methods target the right phenomena and how philosophical definitions constrain AI deception detection.
+
+  POSITION: Adapts traditional intentional definition to AI via causal games; deception = causing false beliefs for benefit.
+  },
+  keywords = {ai-deception, causal-games, formal-definition, intentionality, High}
+}
+
+@article{lackey2013lies,
+  author = {Lackey, Jennifer},
+  title = {Lies and Deception: An Unhappy Divorce},
+  journal = {Analysis},
+  year = {2013},
+  volume = {73},
+  number = {2},
+  pages = {236--248},
+  doi = {10.1093/analys/ant003},
+  note = {
+  CORE ARGUMENT: Challenges the non-deceptionist view that lying and deception can be separated, arguing that the divorce between lying and deception is "unhappy." Claims there is a sense of deception in which all lies are deceptive, and that divorcing lying from deception undermines the best explanation of lying's wrongness. Responds to bald-faced lie cases by arguing they involve a form of deception.
+
+  RELEVANCE: Lackey's argument that lying inherently involves deception has implications for AI systems: if lying is necessarily deceptive, then determining whether AI can lie depends on whether it can deceive (cause false beliefs). This connects lying detection to broader deception detection. However, if Lackey is wrong and non-deceptive lies exist, AI systems could lie without deceptive capabilities, complicating safety analysis.
+
+  POSITION: Defends connection between lying and deception; challenges non-deceptionist divorce.
+  },
+  keywords = {lying-deception-connection, deceptionist, bald-faced-lies, Medium}
+}
+
+@article{fallis2015bald,
+  author = {Fallis, Don},
+  title = {Are Bald-Faced Lies Deceptive After All?},
+  journal = {Ratio},
+  year = {2015},
+  volume = {28},
+  number = {1},
+  pages = {81--96},
+  doi = {10.1111/rati.12055},
+  note = {
+  CORE ARGUMENT: Responds to Lackey (2013), arguing that bald-faced lies are not deceptive on any plausible notion of deception. Even if bald-faced lies violate expectations or norms, they don't cause false beliefs, which is essential to deception. Defends the lying-deception distinction by showing that not all lies aim to or succeed in deceiving.
+
+  RELEVANCE: This debate clarifies what counts as AI deception. If Fallis is correct that non-deceptive lies exist, AI systems making obviously false assertions aren't deceiving users, even if lying. This matters for risk assessment: non-deceptive false assertions may be less dangerous than hidden deception. Relevant to evaluating transparency methods that make model errors obvious but don't prevent false outputs.
+
+  POSITION: Non-deceptionist; bald-faced lies are not deceptive.
+  },
+  keywords = {bald-faced-lies, non-deceptionist, deception-definition, Medium}
+}
+
+@article{franke2019strategies,
+  author = {Franke, Michael and Dulcinati, Giulio and Pouscoulous, Nausicaa},
+  title = {Strategies of Deception: Under-Informativity, Uninformativity, and Lies---Misleading With Different Kinds of Implicature},
+  journal = {Topics in Cognitive Science},
+  year = {2019},
+  volume = {12},
+  number = {2},
+  pages = {583--607},
+  doi = {10.1111/tops.12456},
+  note = {
+  CORE ARGUMENT: Experimental study of deceptive communication strategies examining how speakers exploit different types of implicature (scalar, numeral, ad hoc) in cooperative vs. competitive contexts. Finds that speakers systematically use implicatures to mislead strategic opponents, demonstrating that even in uncooperative settings, speakers expect hearers to draw Gricean inferences.
+
+  RELEVANCE: Demonstrates that deception through implicature (misleading) is a distinct strategy from lying. For AI systems, this suggests multiple deception modes: false assertions vs. misleading implications. Detection methods must target both. The experimental evidence that implicatures function in non-cooperative contexts challenges the view that Gricean reasoning requires cooperation, relevant to adversarial AI settings.
+
+  POSITION: Empirical investigation of Gricean deception strategies; misleading via implicature is distinct from lying.
+  },
+  keywords = {implicature, misleading, Gricean, experimental, Medium}
+}
+
+@article{gaszczyk2023lying,
+  author = {Gaszczyk, Grzegorz},
+  title = {Lying with Uninformative Speech Acts},
+  journal = {Canadian Journal of Philosophy},
+  year = {2023},
+  volume = {53},
+  number = {3},
+  pages = {289--304},
+  doi = {10.1017/can.2023.12},
+  note = {
+  CORE ARGUMENT: Extends lying definitions to uninformative speech acts (presuppositions and declarative statements that don't add information). Argues that commitment-based definitions of lying can handle uninformative lies, challenging the assumption that lying requires informative assertion. Shows that even uninformative presuppositions can be lies if speakers commit to their truth.
+
+  RELEVANCE: AI systems often generate outputs with presuppositions (e.g., "When did you stop beating your wife?" presupposes wife-beating). If uninformative speech acts can be lies, AI could lie through presuppositions even when main assertions are true. This expands the scope of what counts as model lying, requiring detection methods to examine presuppositions and commitments, not just informative content.
+
+  POSITION: Commitment-based definitions extend to uninformative lies; broadens lying beyond informative assertions.
+  },
+  keywords = {lying-definition, presupposition, commitment, uninformative-speech, Low}
+}
+
+@article{fallis2012grice,
+  author = {Fallis, Don},
+  title = {Lying as a Violation of Grice's First Maxim of Quality},
+  journal = {Dialectica},
+  year = {2012},
+  volume = {66},
+  number = {4},
+  pages = {563--581},
+  doi = {10.1111/1746-8361.12007},
+  note = {
+  CORE ARGUMENT: Refines the Gricean account of lying, defining it as intending to violate the maxim "Do not say what you believe to be false" by communicating something believed-false. This definition accommodates non-deceptive lies (like bald-faced lies) because it focuses on norm violation rather than intention to deceive. Responds to counterexamples involving irony and politeness.
+
+  RELEVANCE: Frames lying as norm violation rather than psychological deception, potentially applicable to AI agents that follow or violate communication norms without mental states. If AI systems are designed to follow Gricean maxims, their violations could count as lying functionally. Relevant to detecting whether models systematically violate truthfulness norms vs. accidentally producing false outputs.
+
+  POSITION: Gricean, non-deceptionist; lying = intending to communicate believed-false content (violating quality maxim).
+  },
+  keywords = {Gricean, lying-definition, norm-violation, non-deceptionist, Medium}
+}
+
+@misc{sep2023lying,
+  author = {Mahon, James Edwin},
+  title = {The Definition of Lying and Deception},
+  year = {2023},
+  howpublished = {The Stanford Encyclopedia of Philosophy (Fall 2023 Edition), Edward N. Zalta \& Uri Nodelman (eds.)},
+  url = {https://plato.stanford.edu/entries/lying-definition/},
+  note = {
+  CORE ARGUMENT: Comprehensive survey of philosophical definitions of lying and deception. Reviews traditional deceptionist definitions (Chisholm & Feehan), non-deceptionist alternatives (Carson, Sorensen, Fallis, Saul), assertion-based accounts (Stokke), and debates over necessary conditions (falsity, untruthfulness, intention to deceive, warranting). Distinguishes lying from deception, misleading, withholding, and related concepts.
+
+  RELEVANCE: Essential overview providing the conceptual landscape for evaluating AI deception. Maps the space of definitions and identifies key decision points: Is intention necessary? Is falsity necessary? Must lying deceive? These questions directly apply to determining whether AI agents can lie or deceive and which definitions AI safety research should adopt. Serves as authoritative reference for the domain.
+
+  POSITION: Survey article covering deceptionist, non-deceptionist, and assertion-based positions.
+  },
+  keywords = {survey, lying-definition, deception-definition, SEP, High}
+}
+
+@incollection{mahon2018contemporary,
+  author = {Mahon, James},
+  title = {Contemporary Approaches to the Philosophy of Lying},
+  booktitle = {The Oxford Handbook of Lying},
+  editor = {Meibauer, J\"{o}rg},
+  year = {2018},
+  publisher = {Oxford University Press},
+  address = {Oxford},
+  pages = {32--55},
+  doi = {10.1093/oxfordhb/9780198736578.013.3},
+  note = {
+  CORE ARGUMENT: Reviews contemporary philosophical debates on lying definitions, focusing on post-2000 literature. Examines the shift from traditional deceptionist accounts to non-deceptionist alternatives, the rise of assertion-based and commitment-based definitions, and empirical work on folk concepts of lying. Discusses bald-faced lies, presuppositional lies, and lies with true implicatures.
+
+  RELEVANCE: Updates the philosophical landscape with recent developments relevant to AI. The shift toward functional definitions (assertion, commitment, norm violation) rather than psychological ones (belief, intention) makes philosophical accounts more applicable to AI agents. Essential for understanding current philosophical consensus on what lying requires and how this applies to artificial agents.
+
+  POSITION: Survey of contemporary non-deceptionist, assertion-based, and commitment-based approaches.
+  },
+  keywords = {survey, lying-definition, contemporary, assertion, commitment, Low}
+}
+
+@article{mackenzie2018lies,
+  author = {MacKenzie, Alison and Bhatt, Ibrar},
+  title = {Lies, Bullshit and Fake News: Some Epistemological Concerns},
+  journal = {Postdigital Science and Education},
+  year = {2018},
+  volume = {1},
+  number = {1},
+  pages = {9--13},
+  doi = {10.1007/s42438-018-0025-4},
+  note = {
+  CORE ARGUMENT: Distinguishes lies (believed-false statements intended to deceive), bullshit (indifference to truth), and fake news (false information presented as news), examining their epistemological implications. Draws on Frankfurt's bullshit concept and traditional lying definitions to analyze different forms of misinformation. Emphasizes that bullshit is more dangerous than lying because it undermines truth as a value.
+
+  RELEVANCE: For AI systems, this tripartite distinction matters: models might lie (assert believed-false content), bullshit (generate content without regard to truth), or spread fake news (present false information as factual). Many language models arguably bullshit rather than lie, since they lack truth-tracking mechanisms. This affects detection strategies: lying detection requires identifying false beliefs, while bullshit detection requires identifying indifference to truth.
+
+  POSITION: Distinguishes lying, bullshit, and fake news as distinct epistemological phenomena.
+  },
+  keywords = {lying-bullshit-distinction, fake-news, epistemology, Frankfurt, Low}
+}

@@ -1,0 +1,225 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Cameron Buckner neural networks philosophy",
+  "results": [
+    {
+      "paperId": "f7e755443d665ebc215e7caeda8aa3154466bddc",
+      "title": "A Philosophical Introduction to Language Models - Part I: Continuity With Classic Debates",
+      "authors": [
+        {
+          "name": "Raphael Milliere",
+          "authorId": "2249763478"
+        },
+        {
+          "name": "Cameron Buckner",
+          "authorId": "2278429867"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models like GPT-4 have achieved remarkable proficiency in a broad spectrum of language-based tasks, some of which are traditionally associated with hallmarks of human intelligence. This has prompted ongoing disagreements about the extent to which we can meaningfully ascribe any kind of linguistic or cognitive competence to language models. Such questions have deep philosophical roots, echoing longstanding debates about the status of artificial neural networks as cognitive models. This article -- the first part of two companion papers -- serves both as a primer on language models for philosophers, and as an opinionated survey of their significance in relation to classic debates in the philosophy cognitive science, artificial intelligence, and linguistics. We cover topics such as compositionality, language acquisition, semantic competence, grounding, world models, and the transmission of cultural knowledge. We argue that the success of language models challenges several long-held assumptions about artificial neural networks. However, we also highlight the need for further empirical investigation to better understand their internal mechanisms. This sets the stage for the companion paper (Part II), which turns to novel empirical methods for probing the inner workings of language models, and new philosophical questions prompted by their latest developments.",
+      "citationCount": 38,
+      "doi": "10.48550/arXiv.2401.03910",
+      "arxivId": "2401.03910",
+      "url": "https://www.semanticscholar.org/paper/f7e755443d665ebc215e7caeda8aa3154466bddc",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.03910"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e25206bd1b6594d5b03a1f9a89f3453d3195b412",
+      "title": "Adversarial Examples and the Deeper Riddle of Induction: The Need for a Theory of Artifacts in Deep Learning",
+      "authors": [
+        {
+          "name": "Cameron Buckner",
+          "authorId": "2918149"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Deep learning is currently the most widespread and successful technology in artificial intelligence. It promises to push the frontier of scientific discovery beyond current limits. However, skeptics have worried that deep neural networks are black boxes, and have called into question whether these advances can really be deemed scientific progress if humans cannot understand them. Relatedly, these systems also possess bewildering new vulnerabilities: most notably a susceptibility to \"adversarial examples\". In this paper, I argue that adversarial examples will become a flashpoint of debate in philosophy and diverse sciences. Specifically, new findings concerning adversarial examples have challenged the consensus view that the networks' verdicts on these cases are caused by overfitting idiosyncratic noise in the training set, and may instead be the result of detecting predictively useful \"intrinsic features of the data geometry\" that humans cannot perceive (Ilyas et al., 2019). These results should cause us to re-examine responses to one of the deepest puzzles at the intersection of philosophy and science: Nelson Goodman's \"new riddle\" of induction. Specifically, they raise the possibility that progress in a number of sciences will depend upon the detection and manipulation of useful features that humans find inscrutable. Before we can evaluate this possibility, however, we must decide which (if any) of these inscrutable features are real but available only to \"alien\" perception and cognition, and which are distinctive artifacts of deep learning-for artifacts like lens flares or Gibbs phenomena can be similarly useful for prediction, but are usually seen as obstacles to scientific theorizing. Thus, machine learning researchers urgently need to develop a theory of artifacts for deep neural networks, and I conclude by sketching some initial directions for this area of research.",
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": "2003.11917",
+      "url": "https://www.semanticscholar.org/paper/e25206bd1b6594d5b03a1f9a89f3453d3195b412",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2003.11917"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "81e50181d652b4724d726ef46f40835f63d72b29",
+      "title": "Black Boxes or Unflattering Mirrors? Comparative Bias in the Science of Machine Behaviour",
+      "authors": [
+        {
+          "name": "Cameron Buckner",
+          "authorId": "2918149"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The last 5 years have seen a series of remarkable achievements in deep-neural-network-based artificial intelligence research, and some modellers have argued that their performance compares favourably to human cognition. Critics, however, have argued that processing in deep neural networks is unlike human cognition for four reasons: they are (i) data-hungry, (ii) brittle, and (iii) inscrutable black boxes that merely (iv) reward-hack rather than learn real solutions to problems. This article rebuts these criticisms by exposing comparative bias within them, in the process extracting some more general lessons that may also be useful for future debates.",
+      "citationCount": 24,
+      "doi": "10.1086/714960",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/81e50181d652b4724d726ef46f40835f63d72b29",
+      "venue": "British Journal for the Philosophy of Science",
+      "journal": {
+        "name": "The British Journal for the Philosophy of Science",
+        "pages": "681 - 712",
+        "volume": "74"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b1dc41c7f150201132a3ee6765fc2d4a1c24100c",
+      "title": "The neuroconnectionist research programme",
+      "authors": [
+        {
+          "name": "Adrien Doerig",
+          "authorId": "49572525"
+        },
+        {
+          "name": "R. Sommers",
+          "authorId": "114455459"
+        },
+        {
+          "name": "K. Seeliger",
+          "authorId": "48899166"
+        },
+        {
+          "name": "B. Richards",
+          "authorId": "38498866"
+        },
+        {
+          "name": "J. Ismael",
+          "authorId": "3095567"
+        },
+        {
+          "name": "Grace W. Lindsay",
+          "authorId": "32911505"
+        },
+        {
+          "name": "K. Kording",
+          "authorId": "150174214"
+        },
+        {
+          "name": "Talia Konkle",
+          "authorId": "2745756"
+        },
+        {
+          "name": "M. Gerven",
+          "authorId": "143799386"
+        },
+        {
+          "name": "N. Kriegeskorte",
+          "authorId": "3351205"
+        },
+        {
+          "name": "Tim C Kietzmann",
+          "authorId": "32599522"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Artificial neural networks (ANNs) inspired by biology are beginning to be widely used to model behavioural and neural data, an approach we call \u2018neuroconnectionism\u2019. ANNs have been not only lauded as the current best models of information processing in the brain but also criticized for failing to account for basic cognitive functions. In this Perspective article, we propose that arguing about the successes and failures of a restricted set of current ANNs is the wrong approach to assess the promise of neuroconnectionism for brain science. Instead, we take inspiration from the philosophy of science, and in particular from Lakatos, who showed that the core of a scientific research programme is often not directly falsifiable but should be assessed by its capacity to generate novel insights. Following this view, we present neuroconnectionism as a general research programme centred around ANNs as a computational language for expressing falsifiable theories about brain computation. We describe the core of the programme, the underlying computational framework and its tools for testing specific neuroscientific hypotheses and deriving novel understanding. Taking a longitudinal view, we review past and present neuroconnectionist projects and their responses to challenges and argue that the research programme is highly progressive, generating new and otherwise unreachable insights into the workings of the brain. Artificial neural networks are being widely used to model behavioural and neural data. In this Perspective article, Doerig et al. present neuroconnectionism as a Lakatosian research programme using artificial neural networks as a computational language for expressing falsifiable theories and hypotheses about the brain computations underlying cognition.",
+      "citationCount": 151,
+      "doi": "10.1038/s41583-023-00705-w",
+      "arxivId": "2209.03718",
+      "url": "https://www.semanticscholar.org/paper/b1dc41c7f150201132a3ee6765fc2d4a1c24100c",
+      "venue": "Nature Reviews Neuroscience",
+      "journal": {
+        "name": "Nature Reviews Neuroscience",
+        "pages": "431 - 450",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4a39d2353debed04057e3142e77eb9002062e680",
+      "title": "Understanding adversarial examples requires a theory of artefacts for deep learning",
+      "authors": [
+        {
+          "name": "Cameron Buckner",
+          "authorId": "2918149"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 55,
+      "doi": "10.1038/s42256-020-00266-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4a39d2353debed04057e3142e77eb9002062e680",
+      "venue": "Nature Machine Intelligence",
+      "journal": {
+        "name": "Nature Machine Intelligence",
+        "pages": "731 - 736",
+        "volume": "2"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "0c4a1b9299ee723fb9ea83cde5a19f477a8b3410",
+      "title": "A Caveat Regarding the Unfolding Argument: Implications of Plasticity for Computational Theories of Consciousness",
+      "authors": [
+        {
+          "name": "V. O\u2019Reilly-Shah",
+          "authorId": "1397050358"
+        },
+        {
+          "name": "Alessandro Selvitella",
+          "authorId": "2390941292"
+        },
+        {
+          "name": "Aaron Schurger",
+          "authorId": "2390941743"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1101/2025.11.04.686457",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0c4a1b9299ee723fb9ea83cde5a19f477a8b3410",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a6dec2b7f273d0d2b5ee4976296522540e6af441",
+      "title": "Deeply Rational",
+      "authors": [
+        {
+          "name": "Cameron Buckner",
+          "authorId": "2918149"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a6dec2b7f273d0d2b5ee4976296522540e6af441",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    }
+  ],
+  "count": 7,
+  "errors": []
+}

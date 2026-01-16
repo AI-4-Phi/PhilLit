@@ -1,0 +1,922 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "chain of thought reasoning interpretability",
+  "results": [
+    {
+      "paperId": "019cfc087c4294221cf2ba3d16f2318a419741d6",
+      "title": "How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding",
+      "authors": [
+        {
+          "name": "Xi Chen",
+          "authorId": "2374335018"
+        },
+        {
+          "name": "A. Plaat",
+          "authorId": "2562595"
+        },
+        {
+          "name": "N. V. Stein",
+          "authorId": "2218156728"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Chain-of-thought (CoT) prompting boosts Large Language Models accuracy on multi-step tasks, yet whether the generated\"thoughts\"reflect the true internal reasoning process is unresolved. We present the first feature-level causal study of CoT faithfulness. Combining sparse autoencoders with activation patching, we extract monosemantic features from Pythia-70M and Pythia-2.8B while they tackle GSM8K math problems under CoT and plain (noCoT) prompting. Swapping a small set of CoT-reasoning features into a noCoT run raises answer log-probabilities significantly in the 2.8B model, but has no reliable effect in 70M, revealing a clear scale threshold. CoT also leads to significantly higher activation sparsity and feature interpretability scores in the larger model, signalling more modular internal computation. For example, the model's confidence in generating correct answers improves from 1.2 to 4.3. We introduce patch-curves and random-feature patching baselines, showing that useful CoT information is not only present in the top-K patches but widely distributed. Overall, our results indicate that CoT can induce more interpretable internal structures in high-capacity LLMs, validating its role as a structured prompting method.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2507.22928",
+      "arxivId": "2507.22928",
+      "url": "https://www.semanticscholar.org/paper/019cfc087c4294221cf2ba3d16f2318a419741d6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.22928"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ee8c1a46c90f1261c23479e15c6bed7f67ad8943",
+      "title": "Visual CoT: Advancing Multi-Modal Language Models with a Comprehensive Dataset and Benchmark for Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Hao Shao",
+          "authorId": "2075457131"
+        },
+        {
+          "name": "Shengju Qian",
+          "authorId": "2293283347"
+        },
+        {
+          "name": "Han Xiao",
+          "authorId": "2238398546"
+        },
+        {
+          "name": "Guanglu Song",
+          "authorId": "12920342"
+        },
+        {
+          "name": "Zhuofan Zong",
+          "authorId": "1571400317"
+        },
+        {
+          "name": "Letian Wang",
+          "authorId": "2273906302"
+        },
+        {
+          "name": "Yu Liu",
+          "authorId": "2292207974"
+        },
+        {
+          "name": "Hongsheng Li",
+          "authorId": "2261394248"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Multi-Modal Large Language Models (MLLMs) have demonstrated impressive performance in various VQA tasks. However, they often lack interpretability and struggle with complex visual inputs, especially when the resolution of the input image is high or when the interested region that could provide key information for answering the question is small. To address these challenges, we collect and introduce the large-scale Visual CoT dataset comprising 438k question-answer pairs, annotated with intermediate bounding boxes highlighting key regions essential for answering the questions. Additionally, about 98k pairs of them are annotated with detailed reasoning steps. Importantly, we propose a multi-turn processing pipeline that dynamically focuses on visual inputs and provides interpretable thoughts. We also introduce the related benchmark to evaluate the MLLMs in scenarios requiring specific local region identification. Extensive experiments demonstrate the effectiveness of our framework and shed light on better inference strategies. The Visual CoT dataset, benchmark, and pre-trained models are available on https://hao-shao.com/projects/viscot.html to support further research in this area.",
+      "citationCount": 216,
+      "doi": "10.52202/079017-0275",
+      "arxivId": "2403.16999",
+      "url": "https://www.semanticscholar.org/paper/ee8c1a46c90f1261c23479e15c6bed7f67ad8943",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "Advances in Neural Information Processing Systems 37"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d47a769a28df6fb7d7083c4d57135fe89d6e008b",
+      "title": "Enhancing Interpretability in Software Change Management with Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Yongqian Sun",
+          "authorId": "2116606497"
+        },
+        {
+          "name": "Weihua Kuang",
+          "authorId": "2372941540"
+        },
+        {
+          "name": "Chao Shen",
+          "authorId": "2374425357"
+        },
+        {
+          "name": "Xidao Wen",
+          "authorId": "2362651998"
+        },
+        {
+          "name": "Tinghua Zheng",
+          "authorId": "2242966542"
+        },
+        {
+          "name": "Heng Liu",
+          "authorId": "2264975303"
+        },
+        {
+          "name": "Shenglin Zhang",
+          "authorId": "2841424"
+        },
+        {
+          "name": "Bo Wu",
+          "authorId": "2373567512"
+        },
+        {
+          "name": "Dan Pei",
+          "authorId": "2287263274"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In modern online services, frequent software changes introduce significant risks. To tackle this challenge, we propose SCELM (Software Change Evaluation and Lifecycle Management), an end-to-end automated framework for software change management. SCELM aims to manage software changes efficiently and precisely, significantly reducing service failures and economic losses.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2507.09315",
+      "arxivId": "2507.09315",
+      "url": "https://www.semanticscholar.org/paper/d47a769a28df6fb7d7083c4d57135fe89d6e008b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.09315"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4b6f83d69adeb44c6fe00bd3658f53395d8d154c",
+      "title": "Visual CoT: Unleashing Chain-of-Thought Reasoning in Multi-Modal Language Models",
+      "authors": [
+        {
+          "name": "Hao Shao",
+          "authorId": "2075457131"
+        },
+        {
+          "name": "Shengju Qian",
+          "authorId": "2293283347"
+        },
+        {
+          "name": "Han Xiao",
+          "authorId": "2238398546"
+        },
+        {
+          "name": "Guanglu Song",
+          "authorId": "12920342"
+        },
+        {
+          "name": "Zhuofan Zong",
+          "authorId": "1571400317"
+        },
+        {
+          "name": "Letian Wang",
+          "authorId": "2273906302"
+        },
+        {
+          "name": "Yu Liu",
+          "authorId": "2292207974"
+        },
+        {
+          "name": "Hongsheng Li",
+          "authorId": "2261394248"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 109,
+      "doi": "10.48550/arXiv.2403.16999",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4b6f83d69adeb44c6fe00bd3658f53395d8d154c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2403.16999"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d27b8bb0aa2775c270d6f4edc2f32437aae20afc",
+      "title": "Improve Vision Language Model Chain-of-thought Reasoning",
+      "authors": [
+        {
+          "name": "Ruohong Zhang",
+          "authorId": "46752970"
+        },
+        {
+          "name": "Bowen Zhang",
+          "authorId": "2256276486"
+        },
+        {
+          "name": "Yanghao Li",
+          "authorId": "2314073842"
+        },
+        {
+          "name": "Haotian Zhang",
+          "authorId": "2257340591"
+        },
+        {
+          "name": "Zhiqing Sun",
+          "authorId": "48064856"
+        },
+        {
+          "name": "Zhe Gan",
+          "authorId": "2253397669"
+        },
+        {
+          "name": "Yinfei Yang",
+          "authorId": "2249897805"
+        },
+        {
+          "name": "Ruoming Pang",
+          "authorId": "2238621132"
+        },
+        {
+          "name": "Yiming Yang",
+          "authorId": "2257099254"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Chain-of-thought (CoT) reasoning in vision language models (VLMs) is crucial for improving interpretability and trustworthiness. However, current training recipes lack robust CoT reasoning data, relying on datasets dominated by short annotations with minimal rationales. In this work, we show that training VLM on short answers does not generalize well to reasoning tasks that require more detailed responses. To address this, we propose a two-fold approach. First, we distill rationales from GPT-4o model to enrich the training data and fine-tune VLMs, boosting their CoT performance. Second, we apply reinforcement learning to further calibrate reasoning quality. Specifically, we construct positive (correct) and negative (incorrect) pairs of model-generated reasoning chains, by comparing their predictions with annotated short answers. Using this pairwise data, we apply the Direct Preference Optimization algorithm to refine the model's reasoning abilities. Our experiments demonstrate significant improvements in CoT reasoning on benchmark datasets and better generalization to direct answer prediction as well. This work emphasizes the importance of incorporating detailed rationales in training and leveraging reinforcement learning to strengthen the reasoning capabilities of VLMs.",
+      "citationCount": 95,
+      "doi": "10.48550/arXiv.2410.16198",
+      "arxivId": "2410.16198",
+      "url": "https://www.semanticscholar.org/paper/d27b8bb0aa2775c270d6f4edc2f32437aae20afc",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "1631-1662"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "766b8ff9ccc77eb062dde58253da39d0907ebfb0",
+      "title": "Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization",
+      "authors": [
+        {
+          "name": "Kesen Zhao",
+          "authorId": "2357818396"
+        },
+        {
+          "name": "Beier Zhu",
+          "authorId": "79682148"
+        },
+        {
+          "name": "Qianru Sun",
+          "authorId": "2138109020"
+        },
+        {
+          "name": "H. Zhang",
+          "authorId": "2244611126"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Chain-of-thought (CoT) reasoning greatly improves the interpretability and problem-solving abilities of multimodal large language models (MLLMs). However, existing approaches are focused on text CoT, limiting their ability to leverage visual cues. Visual CoT remains underexplored, and the only work is based on supervised fine-tuning (SFT) that relies on extensive labeled bounding-box data and is hard to generalize to unseen cases. In this paper, we introduce Unsupervised Visual CoT (UV-CoT), a novel framework for image-level CoT reasoning via preference optimization. UV-CoT performs preference comparisons between model-generated bounding boxes (one is preferred and the other is dis-preferred), eliminating the need for bounding-box annotations. We get such preference data by introducing an automatic data generation pipeline. Given an image, our target MLLM (e.g., LLaVA-1.5-7B) generates seed bounding boxes using a template prompt and then answers the question using each bounded region as input. An evaluator MLLM (e.g., OmniLLM-12B) ranks the responses, and these rankings serve as supervision to train the target MLLM with UV-CoT by minimizing negative log-likelihood losses. By emulating human perception--identifying key regions and reasoning based on them--UV-CoT can improve visual comprehension, particularly in spatial reasoning tasks where textual descriptions alone fall short. Our experiments on six datasets demonstrate the superiority of UV-CoT, compared to the state-of-the-art textual and visual CoT methods. Our zero-shot testing on four unseen datasets shows the strong generalization of UV-CoT. The code is available in https://github.com/kesenzhao/UV-CoT.",
+      "citationCount": 14,
+      "doi": "10.48550/arXiv.2504.18397",
+      "arxivId": "2504.18397",
+      "url": "https://www.semanticscholar.org/paper/766b8ff9ccc77eb062dde58253da39d0907ebfb0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.18397"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b115c1e1e9e51f8ad7d47b745bc04e29a654b84d",
+      "title": "Faithful Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Qing Lyu",
+          "authorId": "1904906987"
+        },
+        {
+          "name": "Shreya Havaldar",
+          "authorId": "151207988"
+        },
+        {
+          "name": "Adam Stein",
+          "authorId": "2161714960"
+        },
+        {
+          "name": "Li Zhang",
+          "authorId": "72436283"
+        },
+        {
+          "name": "D. Rao",
+          "authorId": "48810734"
+        },
+        {
+          "name": "Eric Wong",
+          "authorId": "2053678328"
+        },
+        {
+          "name": "Marianna Apidianaki",
+          "authorId": "2817917"
+        },
+        {
+          "name": "Chris Callison-Burch",
+          "authorId": "1763608"
+        }
+      ],
+      "year": 2023,
+      "abstract": "While Chain-of-Thought (CoT) prompting boosts Language Models' (LM) performance on a gamut of complex reasoning tasks, the generated reasoning chain does not necessarily reflect how the model arrives at the answer (aka. faithfulness). We propose Faithful CoT, a reasoning framework involving two stages: Translation (Natural Language query $\\rightarrow$ symbolic reasoning chain) and Problem Solving (reasoning chain $\\rightarrow$ answer), using an LM and a deterministic solver respectively. This guarantees that the reasoning chain provides a faithful explanation of the final answer. Aside from interpretability, Faithful CoT also improves empirical performance: it outperforms standard CoT on 9 of 10 benchmarks from 4 diverse domains, with a relative accuracy gain of 6.3% on Math Word Problems (MWP), 3.4% on Planning, 5.5% on Multi-hop Question Answering (QA), and 21.4% on Relational Inference. Furthermore, with GPT-4 and Codex, it sets the new state-of-the-art few-shot performance on 7 datasets (with 95.0+ accuracy on 6 of them), showing a strong synergy between faithfulness and accuracy.",
+      "citationCount": 318,
+      "doi": "10.48550/arXiv.2301.13379",
+      "arxivId": "2301.13379",
+      "url": "https://www.semanticscholar.org/paper/b115c1e1e9e51f8ad7d47b745bc04e29a654b84d",
+      "venue": "International Joint Conference on Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2301.13379"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c67a16f1b60bdd5c0c3fdc201e1d88721cb86ba1",
+      "title": "MA-RAG: Multi-Agent Retrieval-Augmented Generation via Collaborative Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Thang Nguyen",
+          "authorId": "2324796381"
+        },
+        {
+          "name": "Peter Chin",
+          "authorId": "2324790937"
+        },
+        {
+          "name": "Yu-Wing Tai",
+          "authorId": "2324792268"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We present MA-RAG, a Multi-Agent framework for Retrieval-Augmented Generation (RAG) that addresses the inherent ambiguities and reasoning challenges in complex information-seeking tasks. Unlike conventional RAG methods that rely on end-to-end fine-tuning or isolated component enhancements, MA-RAG orchestrates a collaborative set of specialized AI agents: Planner, Step Definer, Extractor, and QA Agents, each responsible for a distinct stage of the RAG pipeline. By decomposing tasks into subtasks such as query disambiguation, evidence extraction, and answer synthesis, and enabling agents to communicate intermediate reasoning via chain-of-thought prompting, MA-RAG progressively refines retrieval and synthesis while maintaining modular interpretability. Extensive experiments on multi-hop and ambiguous QA benchmarks, including NQ, HotpotQA, 2WikimQA, and TriviaQA, demonstrate that MA-RAG significantly outperforms standalone LLMs and existing RAG methods across all model scales. Notably, even a small LLaMA3-8B model equipped with MA-RAG surpasses larger standalone LLMs, while larger variants (LLaMA3-70B and GPT-4o-mini) set new state-of-the-art results on challenging multi-hop datasets. Ablation studies reveal that both the planner and extractor agents are critical for multi-hop reasoning, and that high-capacity models are especially important for the QA agent to synthesize answers effectively. Beyond general-domain QA, MA-RAG generalizes to specialized domains such as medical QA, achieving competitive performance against domain-specific models without any domain-specific fine-tuning. Our results highlight the effectiveness of collaborative, modular reasoning in retrieval-augmented systems: MA-RAG not only improves answer accuracy and robustness but also provides interpretable intermediate reasoning steps, establishing a new paradigm for efficient and reliable multi-agent RAG.",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2505.20096",
+      "arxivId": "2505.20096",
+      "url": "https://www.semanticscholar.org/paper/c67a16f1b60bdd5c0c3fdc201e1d88721cb86ba1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.20096"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "55a34a942db64f72395251222688c2b279d143b0",
+      "title": "Med-SCoT: Structured chain-of-thought reasoning and evaluation for enhancing interpretability in medical visual question answering",
+      "authors": [
+        {
+          "name": "Jinhao Qiao",
+          "authorId": "2323163306"
+        },
+        {
+          "name": "Sihan Li",
+          "authorId": "2323582684"
+        },
+        {
+          "name": "Jiang Liu",
+          "authorId": "2323185282"
+        },
+        {
+          "name": "Heng Yu",
+          "authorId": "2359211120"
+        },
+        {
+          "name": "Yi Xiao",
+          "authorId": "2323198058"
+        },
+        {
+          "name": "Hongshan Yu",
+          "authorId": "2359393897"
+        },
+        {
+          "name": "Yan Zheng",
+          "authorId": "2323425800"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1016/j.compmedimag.2025.102659",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/55a34a942db64f72395251222688c2b279d143b0",
+      "venue": "Comput. Medical Imaging Graph.",
+      "journal": {
+        "name": "Computerized medical imaging and graphics : the official journal of the Computerized Medical Imaging Society",
+        "pages": "\n          102659\n        ",
+        "volume": "126"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f5a7198879bd7234bdf4c97324ed543ca538bc55",
+      "title": "Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Qing Jiang",
+          "authorId": "2267869347"
+        },
+        {
+          "name": "Xingyu Chen",
+          "authorId": "2332503655"
+        },
+        {
+          "name": "Zhaoyang Zeng",
+          "authorId": "2267879736"
+        },
+        {
+          "name": "Junzhi Yu",
+          "authorId": "2365460937"
+        },
+        {
+          "name": "Lei Zhang",
+          "authorId": "2365256746"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Object referring aims to detect all objects in an image that match a given natural language description. We argue that a robust object referring model should be grounded, meaning its predictions should be both explainable and faithful to the visual content. Specifically, it should satisfy two key properties: 1) Verifiable, by producing interpretable reasoning that justifies its predictions and clearly links them to visual evidence; and 2) Trustworthy, by learning to abstain when no object in the image satisfies the given expression. However, most methods treat referring as a direct bounding box prediction task, offering limited interpretability and struggling to reject expressions with no matching object. In this work, we propose Rex-Thinker, a model that formulates object referring as an explicit CoT reasoning task. Given a referring expression, we first identify all candidate object instances corresponding to the referred object category. Rex-Thinker then performs step-by-step reasoning over each candidate to assess whether it matches the given expression, before making a final prediction. To support this paradigm, we construct a large-scale CoT-style referring dataset named HumanRef-CoT by prompting GPT-4o on the HumanRef dataset. Each reasoning trace follows a structured planning, action, and summarization format, enabling the model to learn decomposed, interpretable reasoning over object candidates. We then train Rex-Thinker in two stages: a cold-start supervised fine-tuning phase to teach the model how to perform structured reasoning, followed by GRPO-based RL learning to improve accuracy and generalization. Experiments show that our approach outperforms standard baselines in both precision and interpretability on in-domain evaluation, while also demonstrating improved ability to reject hallucinated outputs and strong generalization in out-of-domain settings.",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2506.04034",
+      "arxivId": "2506.04034",
+      "url": "https://www.semanticscholar.org/paper/f5a7198879bd7234bdf4c97324ed543ca538bc55",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.04034"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d929caa513047b2ce4ab0ce214c06d8ce36b277b",
+      "title": "DriveCoT: Integrating Chain-of-Thought Reasoning with End-to-End Driving",
+      "authors": [
+        {
+          "name": "Tianqi Wang",
+          "authorId": "2293321881"
+        },
+        {
+          "name": "Enze Xie",
+          "authorId": "2247612880"
+        },
+        {
+          "name": "Ruihang Chu",
+          "authorId": "2275201956"
+        },
+        {
+          "name": "Zhenguo Li",
+          "authorId": "2253395155"
+        },
+        {
+          "name": "Ping Luo",
+          "authorId": "2265384343"
+        }
+      ],
+      "year": 2024,
+      "abstract": "End-to-end driving has made significant progress in recent years, demonstrating benefits such as system simplicity and competitive driving performance under both open-loop and closed-loop settings. Nevertheless, the lack of interpretability and controllability in its driving decisions hinders real-world deployment for end-to-end driving systems. In this paper, we collect a comprehensive end-to-end driving dataset named DriveCoT, leveraging the CARLA simulator. It contains sensor data, control decisions, and chain-of-thought labels to indicate the reasoning process. We utilize the challenging driving scenarios from the CARLA leaderboard 2.0, which involve high-speed driving and lane-changing, and propose a rule-based expert policy to control the vehicle and generate ground truth labels for its reasoning process across different driving aspects and the final decisions. This dataset can serve as an open-loop end-to-end driving benchmark, enabling the evaluation of accuracy in various chain-of-thought aspects and the final decision. In addition, we propose a baseline model called DriveCoT-Agent, trained on our dataset, to generate chain-of-thought predictions and final decisions. The trained model exhibits strong performance in both open-loop and closed-loop evaluations, demonstrating the effectiveness of our proposed dataset.",
+      "citationCount": 39,
+      "doi": "10.48550/arXiv.2403.16996",
+      "arxivId": "2403.16996",
+      "url": "https://www.semanticscholar.org/paper/d929caa513047b2ce4ab0ce214c06d8ce36b277b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2403.16996"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6fa0677731184444df0e1fc8070938419cd6da47",
+      "title": "Igniting Language Intelligence: The Hitchhiker\u2019s Guide from Chain-of-Thought Reasoning to Language Agents",
+      "authors": [
+        {
+          "name": "Zhuosheng Zhang",
+          "authorId": "3322871"
+        },
+        {
+          "name": "Yao Yao",
+          "authorId": "2223290826"
+        },
+        {
+          "name": "Aston Zhang",
+          "authorId": "2244790002"
+        },
+        {
+          "name": "Xiangru Tang",
+          "authorId": "47274259"
+        },
+        {
+          "name": "Xinbei Ma",
+          "authorId": "2141114505"
+        },
+        {
+          "name": "Zhiwei He",
+          "authorId": "2610876"
+        },
+        {
+          "name": "Yiming Wang",
+          "authorId": "2143482843"
+        },
+        {
+          "name": "Mark B. Gerstein",
+          "authorId": "2201323142"
+        },
+        {
+          "name": "Rui Wang",
+          "authorId": "2268497100"
+        },
+        {
+          "name": "Gongshen Liu",
+          "authorId": "2267384727"
+        },
+        {
+          "name": "Hai Zhao",
+          "authorId": "2257373879"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have dramatically enhanced the field of language intelligence, as demonstrably evidenced by their formidable empirical performance across a spectrum of complex reasoning tasks. Additionally, theoretical proofs have illuminated their emergent reasoning capabilities, providing a compelling showcase of their advanced cognitive abilities in linguistic contexts. Critical to their remarkable efficacy in handling complex reasoning tasks, LLMs leverage the intriguing chain-of-thought (CoT) reasoning techniques, obliging them to formulate intermediate steps en route to deriving an answer. The CoT reasoning approach has not only exhibited proficiency in amplifying reasoning performance but also in enhancing interpretability, controllability, and flexibility. In light of these merits, recent research endeavors have extended CoT reasoning methodologies to nurture the development of autonomous language agents, which adeptly adhere to language instructions and execute actions within varied environments. This survey article orchestrates a thorough discourse, penetrating vital research dimensions, encompassing (i) the foundational mechanics of CoT techniques, with a focus on elucidating the circumstances and justification behind its efficacy; (ii) the paradigm shift in CoT; and (iii) the burgeoning of language agents fortified by CoT approaches. Prospective research avenues envelop explorations into generalization, efficiency, customization, scaling, and safety. A repository for the related papers is available at https://github.com/Zoeyyao27/CoT-Igniting-Agent.",
+      "citationCount": 92,
+      "doi": "10.1145/3719341",
+      "arxivId": "2311.11797",
+      "url": "https://www.semanticscholar.org/paper/6fa0677731184444df0e1fc8070938419cd6da47",
+      "venue": "ACM Computing Surveys",
+      "journal": {
+        "name": "ACM Computing Surveys",
+        "pages": "1 - 39",
+        "volume": "57"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d5a89969c312112adf96ec856c342db3c1d0a8d6",
+      "title": "Facilitating Long Context Understanding via Supervised Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Jingyang Lin",
+          "authorId": "2317016595"
+        },
+        {
+          "name": "Andy Wong",
+          "authorId": "2316960662"
+        },
+        {
+          "name": "Tian Xia",
+          "authorId": "2316860672"
+        },
+        {
+          "name": "Shenghua He",
+          "authorId": "2318243914"
+        },
+        {
+          "name": "Hui Wei",
+          "authorId": "2316959296"
+        },
+        {
+          "name": "Mei Han",
+          "authorId": "2317047664"
+        },
+        {
+          "name": "Jiebo Luo",
+          "authorId": "2298351237"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in Large Language Models (LLMs) have enabled them to process increasingly longer sequences, ranging from 2K to 2M tokens and even beyond. However, simply extending the input sequence length does not necessarily lead to effective long-context understanding. In this study, we integrate Chain-of-Thought (CoT) reasoning into LLMs in a supervised manner to facilitate effective long-context understanding. To achieve this, we introduce LongFinanceQA, a synthetic dataset in the financial domain designed to improve long-context reasoning. Unlike existing long-context synthetic data, LongFinanceQA includes intermediate CoT reasoning before the final conclusion, which encourages LLMs to perform explicit reasoning, improving accuracy and interpretability in long-context understanding. To generate synthetic CoT reasoning, we propose Property-based Agentic Inference (PAI), an agentic framework that simulates human-like reasoning steps, including property extraction, retrieval, and summarization. We evaluate PAI's reasoning capabilities by assessing GPT-4o-mini w/ PAI on the Loong benchmark, outperforming standard GPT-4o-mini by 20.0%. Furthermore, we fine-tune LLaMA-3.1-8B-Instruct on LongFinanceQA, achieving a 28.0% gain on Loong's financial subset.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2502.13127",
+      "arxivId": "2502.13127",
+      "url": "https://www.semanticscholar.org/paper/d5a89969c312112adf96ec856c342db3c1d0a8d6",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.13127"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "38fe37aa8612e7658c44208daaacbcfc20a9052f",
+      "title": "MemeMind: A Large-Scale Multimodal Dataset with Chain-of-Thought Reasoning for Harmful Meme Detection",
+      "authors": [
+        {
+          "name": "Hexiang Gu",
+          "authorId": "2296350385"
+        },
+        {
+          "name": "Qifan Yu",
+          "authorId": "2349769448"
+        },
+        {
+          "name": "Saihui Hou",
+          "authorId": "2363513077"
+        },
+        {
+          "name": "Zhiqin Fang",
+          "authorId": "2365391234"
+        },
+        {
+          "name": "Huijia Wu",
+          "authorId": "2273737331"
+        },
+        {
+          "name": "Zhaofeng He",
+          "authorId": "2331405533"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As a multimodal medium combining images and text, memes frequently convey implicit harmful content through metaphors and humor, rendering the detection of harmful memes a complex and challenging task. Although recent studies have made progress in detection accuracy and interpretability, large-scale, high-quality datasets for harmful memes remain scarce, and current methods still struggle to capture implicit risks and nuanced semantics. Thus, we construct MemeMind, a large-scale harmful meme dataset. Aligned with the international standards and the context of internet, MemeMind provides detailed Chain-of-Thought (CoT) reasoning annotations to support fine-grained analysis of implicit intentions in memes. Based on this dataset, we further propose MemeGuard, a reasoning-oriented multimodal detection model that significantly improves both the accuracy of harmful meme detection and the interpretability of model decisions. Extensive experimental results demonstrate that MemeGuard outperforms existing state-of-the-art methods on the MemeMind dataset, establishing a solid foundation for future research in harmful meme detection.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.18919",
+      "arxivId": "2506.18919",
+      "url": "https://www.semanticscholar.org/paper/38fe37aa8612e7658c44208daaacbcfc20a9052f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.18919"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "06d8de1901ada6c137045c4125d9add62bd1fc7f",
+      "title": "Tracing Thought: Using Chain-of-Thought Reasoning to Identify the LLM Behind AI-Generated Text",
+      "authors": [
+        {
+          "name": "Shifali Agrahari",
+          "authorId": "2356564618"
+        },
+        {
+          "name": "Sanasam Ranbir Singh",
+          "authorId": "2357479105"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In recent years, the detection of AI-generated text has become a critical area of research due to concerns about academic integrity, misinformation, and ethical AI deployment. This paper presents COT Fine-tuned, a novel framework for detecting AI-generated text and identifying the specific language model. responsible for generating the text. We propose a dual-task approach, where Task A involves classifying text as AI-generated or human-written, and Task B identifies the specific LLM behind the text. The key innovation of our method lies in the use of Chain-of-Thought reasoning, which enables the model to generate explanations for its predictions, enhancing transparency and interpretability. Our experiments demonstrate that COT Fine-tuned achieves high accuracy in both tasks, with strong performance in LLM identification and human-AI classification. We also show that the CoT reasoning process contributes significantly to the models effectiveness and interpretability.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2504.16913",
+      "arxivId": "2504.16913",
+      "url": "https://www.semanticscholar.org/paper/06d8de1901ada6c137045c4125d9add62bd1fc7f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.16913"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "31f2cc6899755fc70ba61cf575817e5ee368b3d2",
+      "title": "ESTR-CoT: Towards Explainable and Accurate Event Stream based Scene Text Recognition with Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Xiao Wang",
+          "authorId": "2316775890"
+        },
+        {
+          "name": "Jing Jiang",
+          "authorId": "2337769799"
+        },
+        {
+          "name": "Qiang Chen",
+          "authorId": "2355442989"
+        },
+        {
+          "name": "Langlang Chen",
+          "authorId": "2223146782"
+        },
+        {
+          "name": "Lin Zhu",
+          "authorId": "2278223485"
+        },
+        {
+          "name": "Yaowei Wang",
+          "authorId": "2263234627"
+        },
+        {
+          "name": "Yonghong Tian",
+          "authorId": "2275270705"
+        },
+        {
+          "name": "Jin Tang",
+          "authorId": "2229726456"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Event stream based scene text recognition is a newly arising research topic in recent years which performs better than the widely used RGB cameras in extremely challenging scenarios, especially the low illumination, fast motion. Existing works either adopt end-to-end encoder-decoder framework or large language models for enhanced recognition, however, they are still limited by the challenges of insufficient interpretability and weak contextual logical reasoning. In this work, we propose a novel chain-of-thought reasoning based event stream scene text recognition framework, termed ESTR-CoT. Specifically, we first adopt the vision encoder EVA-CLIP (ViT-G/14) to transform the input event stream into tokens and utilize a Llama tokenizer to encode the given generation prompt. A Q-former is used to align the vision token to the pre-trained large language model Vicuna-7B and output both the answer and chain-of-thought (CoT) reasoning process simultaneously. Our framework can be optimized using supervised fine-tuning in an end-to-end manner. In addition, we also propose a large-scale CoT dataset to train our framework via a three stage processing (i.e., generation, polish, and expert verification). This dataset provides a solid data foundation for the development of subsequent reasoning-based large models. Extensive experiments on three event stream STR benchmark datasets (i.e., EventSTR, WordArt*, IC15*) fully validated the effectiveness and interpretability of our proposed framework. The source code and pre-trained models will be released on https://github.com/Event-AHU/ESTR-CoT.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2507.02200",
+      "arxivId": "2507.02200",
+      "url": "https://www.semanticscholar.org/paper/31f2cc6899755fc70ba61cf575817e5ee368b3d2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.02200"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9d1e0a398e23f97940c06a5241b8a3ce4b8c3e43",
+      "title": "FaceCoT: A Benchmark Dataset for Face Anti-Spoofing with Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Honglu Zhang",
+          "authorId": "2365003257"
+        },
+        {
+          "name": "Zhiqin Fang",
+          "authorId": "2365391234"
+        },
+        {
+          "name": "Ningning Zhao",
+          "authorId": "2365031058"
+        },
+        {
+          "name": "Saihui Hou",
+          "authorId": "2363513077"
+        },
+        {
+          "name": "Long Ma",
+          "authorId": "2364983098"
+        },
+        {
+          "name": "Renwang Pei",
+          "authorId": "2364937601"
+        },
+        {
+          "name": "Zhaofeng He",
+          "authorId": "2331405533"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Face Anti-Spoofing (FAS) typically depends on a single visual modality when defending against presentation attacks such as print attacks, screen replays, and 3D masks, resulting in limited generalization across devices, environments, and attack types. Meanwhile, Multimodal Large Language Models (MLLMs) have recently achieved breakthroughs in image-text understanding and semantic reasoning, suggesting that integrating visual and linguistic co-inference into FAS can substantially improve both robustness and interpretability. However, the lack of a high-quality vision-language multimodal dataset has been a critical bottleneck. To address this, we introduce FaceCoT (Face Chain-of-Thought), the first large-scale Visual Question Answering (VQA) dataset tailored for FAS. FaceCoT covers 14 spoofing attack types and enriches model learning with high-quality CoT VQA annotations. Meanwhile, we develop a caption model refined via reinforcement learning to expand the dataset and enhance annotation quality. Furthermore, we introduce a CoT-Enhanced Progressive Learning (CEPL) strategy to better leverage the CoT data and boost model performance on FAS tasks. Extensive experiments demonstrate that models trained with FaceCoT and CEPL outperform state-of-the-art methods on multiple benchmark datasets.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.01783",
+      "arxivId": "2506.01783",
+      "url": "https://www.semanticscholar.org/paper/9d1e0a398e23f97940c06a5241b8a3ce4b8c3e43",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.01783"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2e3778790ddd138b2c8c7662b858afbe2cf3e104",
+      "title": "GEMeX-RMCoT: An Enhanced Med-VQA Dataset for Region-Aware Multimodal Chain-of-Thought Reasoning",
+      "authors": [
+        {
+          "name": "Bo Liu",
+          "authorId": "2363561344"
+        },
+        {
+          "name": "Xiangyu Zhao",
+          "authorId": "2316669397"
+        },
+        {
+          "name": "Along He",
+          "authorId": "153245407"
+        },
+        {
+          "name": "Yidi Chen",
+          "authorId": "2199172643"
+        },
+        {
+          "name": "Huazhu Fu",
+          "authorId": "2238561481"
+        },
+        {
+          "name": "Xiaoming Wu",
+          "authorId": "2332308517"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Medical visual question answering aims to support clinical decision-making by enabling models to answer natural language questions based on medical images. While recent advances in multi-modal learning have significantly improved performance, current methods still suffer from limited answer reliability and poor interpretability, impairing the ability of clinicians and patients to understand and trust model outputs. To address these limitations, this work first proposes a Region-Aware Multimodal Chain-of-Thought (RMCoT) dataset, in which the process of producing an answer is preceded by a sequence of intermediate reasoning steps that explicitly ground relevant visual regions of the medical image, thereby providing fine-grained explainability. Furthermore, we introduce a novel verifiable reward mechanism for reinforcement learning to guide post-training, improving the alignment between the model's reasoning process and its final answer. Remarkably, our method achieves comparable performance using only one-eighth of the training data, demonstrating the efficiency and effectiveness of the proposal. The dataset is available at https://www.med-vqa.com/GEMeX/.",
+      "citationCount": 1,
+      "doi": "10.1145/3746027.3758277",
+      "arxivId": "2506.17939",
+      "url": "https://www.semanticscholar.org/paper/2e3778790ddd138b2c8c7662b858afbe2cf3e104",
+      "venue": "Proceedings of the 33rd ACM International Conference on Multimedia",
+      "journal": {
+        "name": "Proceedings of the 33rd ACM International Conference on Multimedia"
+      },
+      "publicationTypes": [
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "6f72da5c19807852a88e8e3d258582319b83f50a",
+      "title": "Geospatial Chain of Thought Reasoning for Enhanced Visual Question Answering on Satellite Imagery",
+      "authors": [
+        {
+          "name": "Shambhavi Shanker",
+          "authorId": "2330398741"
+        },
+        {
+          "name": "Manikandan Padmanaban",
+          "authorId": "3014226"
+        },
+        {
+          "name": "Jagabondhu Hazra",
+          "authorId": "2209473610"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Geospatial chain of thought (CoT) reasoning is essential for advancing Visual Question Answering (VQA) on satellite imagery, particularly in climate related applications such as disaster monitoring, infrastructure risk assessment, urban resilience planning, and policy support. Existing VQA models enable scalable interpretation of remote sensing data but often lack the structured reasoning required for complex geospatial queries. We propose a VQA framework that integrates CoT reasoning with Direct Preference Optimization (DPO) to improve interpretability, robustness, and accuracy. By generating intermediate rationales, the model better handles tasks involving detection, classification, spatial relations, and comparative analysis, which are critical for reliable decision support in high stakes climate domains. Experiments show that CoT supervision improves accuracy by 34.9\\% over direct baselines, while DPO yields additional gains in accuracy and reasoning quality. The resulting system advances VQA for multispectral Earth observation by enabling richer geospatial reasoning and more effective climate use cases.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.11198",
+      "arxivId": "2511.11198",
+      "url": "https://www.semanticscholar.org/paper/6f72da5c19807852a88e8e3d258582319b83f50a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.11198"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d582c2b0a9636a988df90440af673b335ca8402b",
+      "title": "StreamingCoT: A Dataset for Temporal Dynamics and Multimodal Chain-of-Thought Reasoning in Streaming VideoQA",
+      "authors": [
+        {
+          "name": "Yuhang Hu",
+          "authorId": "2329576144"
+        },
+        {
+          "name": "Zhenyu Yang",
+          "authorId": "2310915850"
+        },
+        {
+          "name": "Shihan Wang",
+          "authorId": "2388026817"
+        },
+        {
+          "name": "Shengsheng Qian",
+          "authorId": "2284669445"
+        },
+        {
+          "name": "Bin Wen",
+          "authorId": "2312207624"
+        },
+        {
+          "name": "Fan Yang",
+          "authorId": "2328099175"
+        },
+        {
+          "name": "Tingting Gao",
+          "authorId": "2307010787"
+        },
+        {
+          "name": "Changsheng Xu",
+          "authorId": "2238900056"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid growth of streaming video applications demands multimodal models with enhanced capabilities for temporal dynamics understanding and complex reasoning. However, current Video Question Answering (VideoQA) datasets suffer from two critical limitations: 1) Static annotation mechanisms fail to capture the evolving nature of answers in temporal video streams, and 2) The absence of explicit reasoning process annotations restricts model interpretability and logical deduction capabilities. To address these challenges, we introduce StreamingCoT, the first dataset explicitly designed for temporally evolving reasoning in streaming VideoQA and multimodal Chain-of-Thought (CoT) tasks. Our framework first establishes a dynamic hierarchical annotation architecture that generates per-second dense descriptions and constructs temporally-dependent semantic segments through similarity fusion, paired with question-answer sets constrained by temporal evolution patterns. We further propose an explicit reasoning chain generation paradigm that extracts spatiotemporal objects via keyframe semantic alignment, derives object state transition-based reasoning paths using large language models, and ensures logical coherence through human-verified validation. This dataset establishes a foundation for advancing research in streaming video understanding, complex temporal reasoning, and multimodal inference. Our StreamingCoT and its construction toolkit can be accessed at https://github.com/Fleeting-hyh/StreamingCoT.",
+      "citationCount": 0,
+      "doi": "10.1145/3746027.3758311",
+      "arxivId": "2510.25332",
+      "url": "https://www.semanticscholar.org/paper/d582c2b0a9636a988df90440af673b335ca8402b",
+      "venue": "Proceedings of the 33rd ACM International Conference on Multimedia",
+      "journal": {
+        "name": "Proceedings of the 33rd ACM International Conference on Multimedia"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

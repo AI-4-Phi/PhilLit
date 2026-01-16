@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Lying and Asserting",
+    "author": "Stokke",
+    "year": 2013
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5840/jphil2013110144",
+      "title": "Lying and Asserting",
+      "authors": [
+        {
+          "family": "Stokke",
+          "given": "Andreas"
+        },
+        {
+          "family": "Journal of Philosophy Inc.",
+          "given": ""
+        }
+      ],
+      "year": 2013,
+      "container_title": "Journal of Philosophy",
+      "publisher": "Philosophy Documentation Center",
+      "type": "journal-article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.5840/jphil2013110144",
+      "score": 39.36875
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

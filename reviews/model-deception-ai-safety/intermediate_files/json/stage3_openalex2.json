@@ -1,0 +1,3072 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "anomaly detection machine learning adversarial",
+  "results": [
+    {
+      "openalex_id": "W4292787102",
+      "doi": "10.1109/cvprw56347.2022.00034",
+      "title": "Adversarial Machine Learning Attacks Against Video Anomaly Detection Systems",
+      "authors": [
+        {
+          "name": "Furkan Mumcu",
+          "openalex_id": "A5020125191",
+          "orcid": "https://orcid.org/0009-0007-3891-5117",
+          "institutions": [
+            "University of South Florida"
+          ]
+        },
+        {
+          "name": "Keval Doshi",
+          "openalex_id": "A5059824372",
+          "orcid": "https://orcid.org/0000-0002-2593-3320",
+          "institutions": [
+            "University of South Florida"
+          ]
+        },
+        {
+          "name": "Yasin Y\u0131lmaz",
+          "openalex_id": "A5036320427",
+          "orcid": "https://orcid.org/0000-0003-2014-3060",
+          "institutions": [
+            "University of South Florida"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-01",
+      "abstract": "Anomaly detection in videos is an important computer vision problem with various applications including auto-mated video surveillance. Although adversarial attacks on image understanding models have been heavily investigated, there is not much work on adversarial machine learning targeting video understanding models and no previous work which focuses on video anomaly detection. To this end, we investigate an adversarial machine learning attack against video anomaly detection systems, that can be implemented via an easy-to-perform cyber-attack. Since surveillance cameras are usually connected to the server running the anomaly detection model through a wireless network, they are prone to cyber-attacks targeting the wireless connection. We demonstrate how Wi-Fi deauthentication attack, a notoriously easy-to-perform and effective denial-of-service (DoS) attack, can be utilized to generate adversarial data for video anomaly detection systems. Specifically, we apply several effects caused by the Wi-Fi deauthentication attack on video quality (e.g., slow down, freeze, fast forward, low resolution) to the popular bench-mark datasets for video anomaly detection. Our experiments with several state-of-the-art anomaly detection models show that the attackers can significantly undermine the reliability of video anomaly detection systems by causing frequent false alarms and hiding physical anomalies from the surveillance system.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+        "type": "conference",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Adversarial Robustness in Machine Learning",
+        "Viral Infections and Outbreaks Research"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4292787102"
+    },
+    {
+      "openalex_id": "W3163895120",
+      "doi": "10.1109/tnsm.2021.3078381",
+      "title": "A Unified Deep Learning Anomaly Detection and Classification Approach for Smart Grid Environments",
+      "authors": [
+        {
+          "name": "Ilias Siniosoglou",
+          "openalex_id": "A5067927478",
+          "orcid": "https://orcid.org/0000-0001-9844-8185",
+          "institutions": [
+            "University of Western Macedonia"
+          ]
+        },
+        {
+          "name": "Panagiotis Radoglou\u2010Grammatikis",
+          "openalex_id": "A5025891312",
+          "orcid": "https://orcid.org/0000-0003-1605-9413",
+          "institutions": [
+            "University of Western Macedonia"
+          ]
+        },
+        {
+          "name": "Georgios Efstathopoulos",
+          "openalex_id": "A5079846617"
+        },
+        {
+          "name": "Panagiotis Fouliras",
+          "openalex_id": "A5025262737",
+          "orcid": "https://orcid.org/0000-0002-0879-7005",
+          "institutions": [
+            "University of Macedonia"
+          ]
+        },
+        {
+          "name": "Panagiotis Sarigiannidis",
+          "openalex_id": "A5050756789",
+          "orcid": "https://orcid.org/0000-0001-6042-0355",
+          "institutions": [
+            "University of Western Macedonia"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-07",
+      "abstract": "&lt;p&gt;The interconnected and heterogeneous nature of the next-generation Electrical Grid (EG), widely known as Smart Grid (SG), bring severe cybersecurity and privacy risks that can also raise domino effects against other Critical Infrastructures (CIs). In this paper, we present an Intrusion Detection System (IDS) specially designed for the SG environments that use Modbus/Transmission Control Protocol (TCP) and Distributed Network Protocol 3 (DNP3) protocols. The proposed IDS called MENSA (anoMaly dEtection aNd claSsificAtion) adopts a novel Autoencoder-Generative Adversarial Network (GAN) architecture for (a) detecting operational anomalies and (b) classifying Modbus/TCP and DNP3 cyberattacks. In particular, MENSA combines the aforementioned Deep Neural Networks (DNNs) in a common architecture, taking into account the adversarial loss and the reconstruction difference. The proposed IDS is validated in four real SG evaluation environments, namely (a) SG lab, (b) substation, (c) hydropower plant and (d) power plant, solving successfully an outlier detection (i.e., anomaly detection) problem as well as a challenging multiclass classification problem consisting of 14 classes (13 Modbus/TCP cyberattacks and normal instances). Furthermore, MENSA can discriminate five cyberattacks against DNP3. The evaluation results demonstrate the efficiency of MENSA compared to other Machine Learning (ML) and Deep Learning (DL) methods in terms of Accuracy, False Positive Rate (FPR), True Positive Rate (TPR) and the F1 score.&lt;/p&gt;",
+      "cited_by_count": 227,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Network and Service Management",
+        "type": "journal",
+        "issn": [
+          "1932-4537",
+          "2373-7379"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/4275028/9450206/09425573.pdf"
+      },
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Anomaly Detection Techniques and Applications",
+        "Smart Grid Security and Resilience"
+      ],
+      "referenced_works_count": 76,
+      "url": "https://openalex.org/W3163895120"
+    },
+    {
+      "openalex_id": "W4393855718",
+      "doi": "10.38124/ijisrt/ijisrt24mar1231",
+      "title": "Artificial Intelligence and Machine Learning Techniques for Anomaly Detection and Threat Mitigation in Cloud-Connected Medical Devices",
+      "authors": [
+        {
+          "name": "Omolola Akinola",
+          "openalex_id": "A5103126682"
+        },
+        {
+          "name": "Akintunde Akinola",
+          "openalex_id": "A5032759801"
+        },
+        {
+          "name": "Ifenna Victor Ifeanyi",
+          "openalex_id": "A5094354711"
+        },
+        {
+          "name": "Omowunmi Oyerinde",
+          "openalex_id": "A5113299524"
+        },
+        {
+          "name": "Oyedele Joseph Adewole",
+          "openalex_id": "A5094354712"
+        },
+        {
+          "name": "Busola Sulaimon",
+          "openalex_id": "A5094354713"
+        },
+        {
+          "name": "Busola Sulaimon",
+          "openalex_id": "A5094354713"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-03",
+      "abstract": "The Internet of Medical Things (IoMT) has begun functioning like this: improved patient monitoring and an easily accessible digital data warehouse. Despite that, this methodology of the internet will potentially have a counter balance which risks for patient data might involve hacking, data theft, and unauthorized access that may contain great consequences for patient privacy and safety. This article examines the possibility of utilizing new AI technology, including inter alia deep learning, unsupervised learning, and ensemble learning to further boost anomaly detection and threat management in connected cloud medical systems. Many old rules and approaches based on statistics lose relevancy versus the dynamics and unpredictability of modern cyberattacks. Identification of anomalies in cyber security is nearly unavoidable, and it should be the first and the last reaction for detecting irregularities in behavior that may indicate undesirable acts or attacks. The paper aims at understanding how AI/ML approaches can give more sophisticated and versatile interventions for finding out anomalies in cloud-attached medical machines. Moreover, this research details robust AI/ML methods such as the adversarial machine learning and reinforcement learning for a perfect threat mitigation. These techniques which activates machine learning models to learn from data continuing to adjust to new evolving threats and then to establish intelligent and proactive threat response systems. The data experiment, which focuses on relevant data sets, reveals that it is the AI/ML techniques that possess the upper hand over traditional methods when it comes to identifying anomalies and defending against threats for cloud- connected medical devices. Such finding expresses much significance for the healthcare industry, as it gives room for the inclusion of AI/ML techniques into the security systems of the medical devices, which are all connected to the cloud. Through the employment of these strategies, healthcare units will become better able to detect and halt any form of threat and as a consequence patients\u2019 data will be protected, devices will continue operating effectively, and eventually patients\u2019 safety and healthcare units will benefit and gain trust from patients.",
+      "cited_by_count": 282,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Innovative Science and Research Technology (IJISRT)",
+        "type": "journal",
+        "issn": [
+          "2456-2165"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.38124/ijisrt/ijisrt24mar1231"
+      },
+      "topics": [
+        "Advanced Malware Detection Techniques",
+        "Network Security and Intrusion Detection",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W4393855718"
+    },
+    {
+      "openalex_id": "W3196498627",
+      "doi": "10.1109/tii.2021.3107783",
+      "title": "Security and Privacy-Enhanced Federated Learning for Anomaly Detection in IoT Infrastructures",
+      "authors": [
+        {
+          "name": "Lei Cui",
+          "openalex_id": "A5101581993",
+          "institutions": [
+            "Taiyuan University of Science and Technology",
+            "University of Technology Sydney"
+          ]
+        },
+        {
+          "name": "Youyang Qu",
+          "openalex_id": "A5040772796",
+          "orcid": "https://orcid.org/0000-0002-2944-4647",
+          "institutions": [
+            "Deakin University"
+          ]
+        },
+        {
+          "name": "Gang Xie",
+          "openalex_id": "A5042609299",
+          "orcid": "https://orcid.org/0000-0001-5769-0565",
+          "institutions": [
+            "Taiyuan University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Deze Zeng",
+          "openalex_id": "A5077093242",
+          "orcid": "https://orcid.org/0000-0003-3276-1202",
+          "institutions": [
+            "China University of Geosciences"
+          ]
+        },
+        {
+          "name": "Ruidong Li",
+          "openalex_id": "A5100665328",
+          "orcid": "https://orcid.org/0000-0002-9905-8952",
+          "institutions": [
+            "Kanazawa University"
+          ]
+        },
+        {
+          "name": "Shigen Shen",
+          "openalex_id": "A5030903260",
+          "orcid": "https://orcid.org/0000-0002-7558-5379",
+          "institutions": [
+            "Shaoxing University"
+          ]
+        },
+        {
+          "name": "Shui Yu",
+          "openalex_id": "A5005228053",
+          "orcid": "https://orcid.org/0000-0003-4485-6743",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-08-25",
+      "abstract": "Internet of Things (IoT) anomaly detection is significant due to its fundamental roles of securing modern critical infrastructures, such as falsified data injection detection and transmission line faults diagnostic in smart grids. Researchers have proposed various detection methods fostered by machine learning (ML) techniques. Federated learning (FL), as a promising distributed ML paradigm, has been employed recently to improve detection performance due to its advantages of privacy-preserving and lower latency. However, existing FL-based methods still suffer from efficiency, robustness, and security challenges. To address these problems, in this article, we initially introduce a blockchain-empowered decentralized and asynchronous FL framework for anomaly detection in IoT systems, which ensures data integrity and prevents single-point failure while improving the efficiency. Further, we design an improved differentially private FL based on generative adversarial nets, aiming to optimize data utility throughout the training process. To the best of our knowledge, it is the first system to employ a decentralized FL approach with privacy-preserving for IoT anomaly detection. Simulation results on the real-world dataset demonstrate the superior performance from aspects of robustness, accuracy, and fast convergence while maintaining high level of privacy and security protection.",
+      "cited_by_count": 211,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Industrial Informatics",
+        "type": "journal",
+        "issn": [
+          "1551-3203",
+          "1941-0050"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Internet Traffic Analysis and Secure E-voting",
+        "Mobile Crowdsensing and Crowdsourcing"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W3196498627"
+    },
+    {
+      "openalex_id": "W3208270664",
+      "doi": null,
+      "title": "The LHC Olympics 2020 a community challenge for anomaly detection in high energy physics",
+      "authors": [
+        {
+          "name": "Gregor Kasieczka",
+          "openalex_id": "A5031270964",
+          "orcid": "https://orcid.org/0000-0003-3457-2755",
+          "institutions": [
+            "Universit\u00e4t Hamburg"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-04-26",
+      "abstract": "&lt;jats:title&gt;Abstract&lt;/jats:title&gt;&#13;\\n &lt;jats:p&gt;A new paradigm for data-driven, model-agnostic new physics searches at colliders is emerging, and aims to leverage recent breakthroughs in anomaly detection and machine learning. In order to develop and benchmark new anomaly detection methods within this framework, it is essential to have standard datasets. To this end, we have created the LHC Olympics 2020, a community challenge accompanied by a set of simulated collider events. Participants in these Olympics have developed their methods using an R&amp;amp;D dataset and then tested them on black boxes: datasets with an unknown anomaly (or not). Methods made use of modern machine learning tools and were based on unsupervised learning (autoencoders, generative adversarial networks, normalizing flows), weakly supervised learning, and semi-supervised learning. This paper will review the LHC Olympics 2020 challenge, including an overview of the competition, a description of methods deployed in the competition, lessons learned from the experience, and implications for data analyses with future datasets as well as future colliders.&lt;/jats:p&gt;",
+      "cited_by_count": 158,
+      "type": "review",
+      "source": {
+        "name": "DSpace@MIT (Massachusetts Institute of Technology)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hdl.handle.net/1721.1/142110"
+      },
+      "topics": [
+        "Particle physics theoretical and experimental studies",
+        "Particle Detector Development and Performance",
+        "Computational Physics and Python Applications"
+      ],
+      "referenced_works_count": 127,
+      "url": "https://openalex.org/W3208270664"
+    },
+    {
+      "openalex_id": "W3033621544",
+      "doi": "10.1177/1475921720924601",
+      "title": "Toward data anomaly detection for automated structural health monitoring: Exploiting generative adversarial nets and autoencoders",
+      "authors": [
+        {
+          "name": "Jianxiao Mao",
+          "openalex_id": "A5001004351",
+          "orcid": "https://orcid.org/0000-0002-1974-7505",
+          "institutions": [
+            "University of Illinois Urbana-Champaign",
+            "Southeast University"
+          ]
+        },
+        {
+          "name": "Hao Wang",
+          "openalex_id": "A5100777828",
+          "orcid": "https://orcid.org/0000-0002-1187-0824",
+          "institutions": [
+            "Southeast University"
+          ]
+        },
+        {
+          "name": "Billie F. Spencer",
+          "openalex_id": "A5000232588",
+          "orcid": "https://orcid.org/0000-0003-0517-7908",
+          "institutions": [
+            "University of Illinois Urbana-Champaign"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-07",
+      "abstract": "Damage detection is one of the most important tasks for structural health monitoring of civil infrastructure. Before a damage detection algorithm can be applied, the integrity of the data must be ensured; otherwise results may be misleading or incorrect. Indeed, sensor system malfunction, which results in anomalous data (often called faulty data), is a serious problem, as the sensors usually must operate in extremely harsh environments. Identifying and eliminating anomalies in the data is crucial to ensuring that reliable monitoring results can be achieved. Because of the vast amounts of data typically collected by a structural health monitoring system, manual removal of the anomalous data is prohibitive. Machine learning methods have the potential to automate the process of data anomaly detection. Although supervised methods have been proven to be effective for detecting data anomalies, two unresolved challenges reduce the accuracy of anomaly detection: (1) the class imbalance and (2) incompleteness of anomalous patterns of training dataset. Unsupervised methods have the potential to address these challenges, but improvements are required to deal with vast amounts of monitoring data. In this article, the generative adversarial networks are combined with a widely applied unsupervised method, that is, autoencoders, to improve the performance of existing unsupervised learning methods. In addition, the time-series data are transformed to Gramian Angular Field images so that advanced computer vision methods can be included in the network. Two structural health monitoring datasets from a full-scale bridge, including examples of anomalous data caused by sensor system malfunctions, are utilized to validate the proposed methodology. Results show that the proposed methodology can successfully identify data anomalies with good accuracy and robustness, hence can overcome one of the key difficulties in achieving automated structural health monitoring.",
+      "cited_by_count": 216,
+      "type": "article",
+      "source": {
+        "name": "Structural Health Monitoring",
+        "type": "journal",
+        "issn": [
+          "1475-9217",
+          "1741-3168"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Structural Health Monitoring Techniques",
+        "Infrastructure Maintenance and Monitoring",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W3033621544"
+    },
+    {
+      "openalex_id": "W4390970201",
+      "doi": "10.1109/access.2024.3355547",
+      "title": "A Comprehensive Survey: Evaluating the Efficiency of Artificial Intelligence and Machine Learning Techniques on Cyber Security Solutions",
+      "authors": [
+        {
+          "name": "Merve Ozkan-Okay",
+          "openalex_id": "A5083076465",
+          "orcid": "https://orcid.org/0000-0002-1071-2541",
+          "institutions": [
+            "Ankara University"
+          ]
+        },
+        {
+          "name": "Erdal Akin",
+          "openalex_id": "A5090489906",
+          "orcid": "https://orcid.org/0000-0002-2223-3927",
+          "institutions": [
+            "Bitlis Eren University"
+          ]
+        },
+        {
+          "name": "\u00d6mer Aslan",
+          "openalex_id": "A5086794415",
+          "orcid": "https://orcid.org/0000-0003-0737-1966"
+        },
+        {
+          "name": "Selahattin Ko\u015funalp",
+          "openalex_id": "A5033305762",
+          "orcid": "https://orcid.org/0000-0003-2899-4679"
+        },
+        {
+          "name": "Teodor Iliev",
+          "openalex_id": "A5073791111",
+          "orcid": "https://orcid.org/0000-0003-2214-8092",
+          "institutions": [
+            "Angel Kanchev University of Ruse"
+          ]
+        },
+        {
+          "name": "Ivaylo Stoyanov",
+          "openalex_id": "A5001070183",
+          "orcid": "https://orcid.org/0000-0001-9824-1504",
+          "institutions": [
+            "Angel Kanchev University of Ruse"
+          ]
+        },
+        {
+          "name": "Ivan Beloev",
+          "openalex_id": "A5050181604",
+          "orcid": "https://orcid.org/0000-0003-2014-1970",
+          "institutions": [
+            "Angel Kanchev University of Ruse"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Given the continually rising frequency of cyberattacks, the adoption of artificial intelligence methods, particularly Machine Learning (ML), Deep Learning (DL), and Reinforcement Learning (RL), has become essential in the realm of cybersecurity. These techniques have proven to be effective in detecting and mitigating cyberattacks, which can cause significant harm to individuals, organizations, and even countries. Machine learning algorithms use statistical methods to identify patterns and anomalies in large datasets, enabling security analysts to detect previously unknown threats. Deep learning, a subfield of ML, has shown great potential in improving the accuracy and efficiency of cybersecurity systems, particularly in image and speech recognition. On the other hand, RL is again a subfield of machine learning that trains algorithms to learn through trial and error, making it particularly effective in dynamic environments. We also evaluated the usage of ChatGPT-like AI tools in cyber-related problem domains on both sides, positive and negative. This article provides an overview of how ML, DL, and RL are applied in cybersecurity, including their usage in malware detection, intrusion detection, vulnerability assessment, and other areas. The paper also specifies several research questions to provide a more comprehensive framework to investigate the efficiency of AI and ML models in the cybersecurity domain. The state-of-the-art studies using ML, DL, and RL models are evaluated in each Section based on the main idea, techniques, and important findings. It also discusses these techniques&#x2019; challenges and limitations, including data quality, interpretability, and adversarial attacks. Overall, the use of ML, DL, and RL in cybersecurity holds great promise for improving the effectiveness of security systems and enhancing our ability to protect against cyberattacks. Therefore, it is essential to continue developing and refining these techniques to address the ever-evolving nature of cyber threats. Besides, some promising solutions that rely on machine learning, deep learning, and reinforcement learning are susceptible to adversarial attacks, underscoring the importance of factoring in this vulnerability when devising countermeasures against sophisticated cyber threats. We also concluded that ChatGPT can be a valuable tool for cybersecurity, but it should be noted that ChatGPT-like tools can also be manipulated to threaten the integrity, confidentiality, and availability of data.",
+      "cited_by_count": 149,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10403908.pdf"
+      },
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Advanced Malware Detection Techniques",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 197,
+      "url": "https://openalex.org/W4390970201"
+    },
+    {
+      "openalex_id": "W4224863323",
+      "doi": "10.48550/arxiv.2204.03141",
+      "title": "Adversarial Machine Learning Attacks Against Video Anomaly Detection Systems",
+      "authors": [
+        {
+          "name": "Furkan Mumcu",
+          "openalex_id": "A5020125191",
+          "orcid": "https://orcid.org/0009-0007-3891-5117"
+        },
+        {
+          "name": "Keval Doshi",
+          "openalex_id": "A5059824372",
+          "orcid": "https://orcid.org/0000-0002-2593-3320"
+        },
+        {
+          "name": "Yasin Y\u0131lmaz",
+          "openalex_id": "A5036320427",
+          "orcid": "https://orcid.org/0000-0003-2014-3060"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-04-07",
+      "abstract": "Anomaly detection in videos is an important computer vision problem with various applications including automated video surveillance. Although adversarial attacks on image understanding models have been heavily investigated, there is not much work on adversarial machine learning targeting video understanding models and no previous work which focuses on video anomaly detection. To this end, we investigate an adversarial machine learning attack against video anomaly detection systems, that can be implemented via an easy-to-perform cyber-attack. Since surveillance cameras are usually connected to the server running the anomaly detection model through a wireless network, they are prone to cyber-attacks targeting the wireless connection. We demonstrate how Wi-Fi deauthentication attack, a notoriously easy-to-perform and effective denial-of-service (DoS) attack, can be utilized to generate adversarial data for video anomaly detection systems. Specifically, we apply several effects caused by the Wi-Fi deauthentication attack on video quality (e.g., slow down, freeze, fast forward, low resolution) to the popular benchmark datasets for video anomaly detection. Our experiments with several state-of-the-art anomaly detection models show that the attackers can significantly undermine the reliability of video anomaly detection systems by causing frequent false alarms and hiding physical anomalies from the surveillance system.",
+      "cited_by_count": 1,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2204.03141"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Anomaly Detection Techniques and Applications",
+        "Misinformation and Its Impacts"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4224863323"
+    },
+    {
+      "openalex_id": "W4293586385",
+      "doi": "10.1093/comjnl/bxac085",
+      "title": "Effectively Detecting Operational Anomalies In Large-Scale IoT Data Infrastructures By Using A GAN-Based Predictive Model",
+      "authors": [
+        {
+          "name": "Peng Chen",
+          "openalex_id": "A5100338429",
+          "orcid": "https://orcid.org/0000-0001-5221-3655",
+          "institutions": [
+            "Xihua University"
+          ]
+        },
+        {
+          "name": "Hongyun Liu",
+          "openalex_id": "A5100623849",
+          "orcid": "https://orcid.org/0000-0002-3472-9102",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        },
+        {
+          "name": "Ruyue Xin",
+          "openalex_id": "A5073878572",
+          "orcid": "https://orcid.org/0000-0001-5821-4835",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        },
+        {
+          "name": "Thierry Carval",
+          "openalex_id": "A5082033439",
+          "orcid": "https://orcid.org/0000-0003-2700-4020"
+        },
+        {
+          "name": "Jiale Zhao",
+          "openalex_id": "A5074011980",
+          "orcid": "https://orcid.org/0009-0001-2805-8664",
+          "institutions": [
+            "Chongqing University"
+          ]
+        },
+        {
+          "name": "Yunni Xia",
+          "openalex_id": "A5080478930",
+          "orcid": "https://orcid.org/0000-0001-9024-732X",
+          "institutions": [
+            "Chongqing University"
+          ]
+        },
+        {
+          "name": "Zhiming Zhao",
+          "openalex_id": "A5114107735",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-24",
+      "abstract": "Abstract Quality of data services is crucial for operational large-scale internet-of-things (IoT) research data infrastructure, in particular when serving large amounts of distributed users. Effectively detecting runtime anomalies and diagnosing their root cause helps to defend against adversarial attacks, thereby essentially boosting system security and robustness of the IoT infrastructure services. However, conventional anomaly detection methods are inadequate when facing the dynamic complexities of these systems. In contrast, supervised machine learning methods are unable to exploit large amounts of data due to the unavailability of labeled data. This paper leverages popular GAN-based generative models and end-to-end one-class classification to improve unsupervised anomaly detection. A novel heterogeneous BiGAN-based anomaly detection model Heterogeneous Temporal Anomaly-reconstruction GAN (HTA-GAN) is proposed to make better use of a one-class classifier and a novel anomaly scoring function. The Generator-Encoder-Discriminator BiGAN structure can lead to practical anomaly score computation and temporal feature capturing. We empirically compare the proposed approach with several state-of-the-art anomaly detection methods on real-world datasets, anomaly benchmarks and synthetic datasets. The results show that HTA-GAN outperforms its competitors and demonstrates better robustness.",
+      "cited_by_count": 122,
+      "type": "article",
+      "source": {
+        "name": "The Computer Journal",
+        "type": "journal",
+        "issn": [
+          "0010-4620",
+          "1460-2067"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Network Security and Intrusion Detection",
+        "Software System Performance and Reliability"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W4293586385"
+    },
+    {
+      "openalex_id": "W3111088413",
+      "doi": "10.1109/jsac.2021.3087242",
+      "title": "Evaluating and Improving Adversarial Robustness of Machine Learning-Based Network Intrusion Detectors",
+      "authors": [
+        {
+          "name": "Dongqi Han",
+          "openalex_id": "A5016545058",
+          "orcid": "https://orcid.org/0000-0002-0807-5934",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Zhiliang Wang",
+          "openalex_id": "A5100343127",
+          "orcid": "https://orcid.org/0000-0001-6587-820X",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Ying Zhong",
+          "openalex_id": "A5101839929",
+          "orcid": "https://orcid.org/0000-0003-4916-7330",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Wenqi Chen",
+          "openalex_id": "A5101921959",
+          "orcid": "https://orcid.org/0000-0003-2326-8766",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Jiahai Yang",
+          "openalex_id": "A5023416195",
+          "orcid": "https://orcid.org/0000-0001-6109-6737",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Shuqiang Lu",
+          "openalex_id": "A5013810153",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Xingang Shi",
+          "openalex_id": "A5047888843",
+          "orcid": "https://orcid.org/0000-0001-6487-9526",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Yin Xia",
+          "openalex_id": "A5100736595",
+          "orcid": "https://orcid.org/0000-0003-0315-7532",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-06-08",
+      "abstract": "Machine learning (ML), especially deep learning (DL) techniques have been\\nincreasingly used in anomaly-based network intrusion detection systems (NIDS).\\nHowever, ML/DL has shown to be extremely vulnerable to adversarial attacks,\\nespecially in such security-sensitive systems. Many adversarial attacks have\\nbeen proposed to evaluate the robustness of ML-based NIDSs. Unfortunately,\\nexisting attacks mostly focused on feature-space and/or white-box attacks,\\nwhich make impractical assumptions in real-world scenarios, leaving the study\\non practical gray/black-box attacks largely unexplored.\\n To bridge this gap, we conduct the first systematic study of the\\ngray/black-box traffic-space adversarial attacks to evaluate the robustness of\\nML-based NIDSs. Our work outperforms previous ones in the following aspects:\\n(i) practical-the proposed attack can automatically mutate original traffic\\nwith extremely limited knowledge and affordable overhead while preserving its\\nfunctionality; (ii) generic-the proposed attack is effective for evaluating the\\nrobustness of various NIDSs using diverse ML/DL models and non-payload-based\\nfeatures; (iii) explainable-we propose an explanation method for the fragile\\nrobustness of ML-based NIDSs. Based on this, we also propose a defense scheme\\nagainst adversarial attacks to improve system robustness. We extensively\\nevaluate the robustness of various NIDSs using diverse feature sets and ML/DL\\nmodels. Experimental results show our attack is effective (e.g., &gt;97% evasion\\nrate in half cases for Kitsune, a state-of-the-art NIDS) with affordable\\nexecution cost and the proposed defense method can effectively mitigate such\\nattacks (evasion rate is reduced by &gt;50% in most cases).\\n",
+      "cited_by_count": 155,
+      "type": "article",
+      "source": {
+        "name": "IEEE Journal on Selected Areas in Communications",
+        "type": "journal",
+        "issn": [
+          "0733-8716",
+          "1558-0008"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2005.07519"
+      },
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Adversarial Robustness in Machine Learning",
+        "Advanced Malware Detection Techniques"
+      ],
+      "referenced_works_count": 101,
+      "url": "https://openalex.org/W3111088413"
+    },
+    {
+      "openalex_id": "W4385210255",
+      "doi": "10.1016/j.eswa.2023.121000",
+      "title": "Fed-ANIDS: Federated learning for anomaly-based network intrusion detection systems",
+      "authors": [
+        {
+          "name": "Meryem Janati Idrissi",
+          "openalex_id": "A5022321148",
+          "orcid": "https://orcid.org/0009-0004-8066-5439",
+          "institutions": [
+            "Universit\u00e9 Mohammed VI Polytechnique"
+          ]
+        },
+        {
+          "name": "Hamza Alami",
+          "openalex_id": "A5028888571",
+          "orcid": "https://orcid.org/0000-0001-6945-6098",
+          "institutions": [
+            "Universit\u00e9 Mohammed VI Polytechnique"
+          ]
+        },
+        {
+          "name": "Abdelkader El Mahdaouy",
+          "openalex_id": "A5009342678",
+          "orcid": "https://orcid.org/0000-0003-4281-2472",
+          "institutions": [
+            "Universit\u00e9 Mohammed VI Polytechnique"
+          ]
+        },
+        {
+          "name": "Abdellah El Mekki",
+          "openalex_id": "A5024996988",
+          "orcid": "https://orcid.org/0000-0002-7394-3611",
+          "institutions": [
+            "Universit\u00e9 Mohammed VI Polytechnique"
+          ]
+        },
+        {
+          "name": "Soufiane Oualil",
+          "openalex_id": "A5032137639",
+          "institutions": [
+            "Universit\u00e9 Mohammed VI Polytechnique"
+          ]
+        },
+        {
+          "name": "Zakaria Yartaoui",
+          "openalex_id": "A5092532254",
+          "institutions": [
+            "Moroccan National Railways Office",
+            "Universit\u00e9 Mohammed VI Polytechnique"
+          ]
+        },
+        {
+          "name": "Isma\u00efl Berrada",
+          "openalex_id": "A5091770877",
+          "orcid": "https://orcid.org/0000-0003-4225-911X",
+          "institutions": [
+            "Universit\u00e9 Mohammed VI Polytechnique"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-24",
+      "abstract": null,
+      "cited_by_count": 135,
+      "type": "article",
+      "source": {
+        "name": "Expert Systems with Applications",
+        "type": "journal",
+        "issn": [
+          "0957-4174",
+          "1873-6793"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Internet Traffic Analysis and Secure E-voting",
+        "Smart Grid Security and Resilience"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W4385210255"
+    },
+    {
+      "openalex_id": "W3204701960",
+      "doi": "10.3390/electronics10192329",
+      "title": "Acoustic Anomaly Detection of Mechanical Failures in Noisy Real-Life Factory Environments",
+      "authors": [
+        {
+          "name": "Yuki Tagawa",
+          "openalex_id": "A5041851160",
+          "institutions": [
+            "Kaunas University of Technology"
+          ]
+        },
+        {
+          "name": "Rytis Maskeli\u016bnas",
+          "openalex_id": "A5039508726",
+          "orcid": "https://orcid.org/0000-0002-2809-2213",
+          "institutions": [
+            "Kaunas University of Technology"
+          ]
+        },
+        {
+          "name": "Robertas Dama\u0161evi\u010dius",
+          "openalex_id": "A5042653526",
+          "orcid": "https://orcid.org/0000-0001-9990-1084",
+          "institutions": [
+            "Kaunas University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-23",
+      "abstract": "Anomaly detection without employing dedicated sensors for each industrial machine is recognized as one of the essential techniques for preventive maintenance and is especially important for factories with low automatization levels, a number of which remain much larger than autonomous manufacturing lines. We have based our research on the hypothesis that real-life sound data from working industrial machines can be used for machine diagnostics. However, the sound data can be contaminated and drowned out by typical factory environmental sound, making the application of sound data-based anomaly detection an overly complicated process and, thus, the main problem we are solving with our approach. In this paper, we present a noise-tolerant deep learning-based methodology for real-life sound-data-based anomaly detection within real-world industrial machinery sound data. The main element of the proposed methodology is a generative adversarial network (GAN) used for the reconstruction of sound signal reconstruction and the detection of anomalies. The experimental results obtained in the Malfunctioning Industrial Machine Investigation and Inspection (MIMII) show the superiority of the proposed methodology over baseline approaches based on the One-Class Support Vector Machine (OC-SVM) and the Autoencoder\u2013Decoder neural network. The proposed schematics using the unscented Kalman Filter (UKF) and the mean square error (MSE) loss function with the L2 regularization term showed an improvement of the Area Under Curve (AUC) for the noisy pump data of the pump.",
+      "cited_by_count": 65,
+      "type": "article",
+      "source": {
+        "name": "Electronics",
+        "type": "journal",
+        "issn": [
+          "2079-9292"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2079-9292/10/19/2329/pdf?version=1632477736"
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Water Systems and Optimization",
+        "Machine Fault Diagnosis Techniques"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W3204701960"
+    },
+    {
+      "openalex_id": "W3007264885",
+      "doi": "10.1109/jproc.2020.2970615",
+      "title": "Adversarial Learning Targeting Deep Neural Network Classification: A Comprehensive Review of Defenses Against Attacks",
+      "authors": [
+        {
+          "name": "David J. Miller",
+          "openalex_id": "A5101739086",
+          "orcid": "https://orcid.org/0000-0001-8848-1643",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Zhen Xiang",
+          "openalex_id": "A5085283385",
+          "orcid": "https://orcid.org/0000-0002-4284-2041",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "George Kesidis",
+          "openalex_id": "A5063903486",
+          "orcid": "https://orcid.org/0000-0001-7947-8127",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-26",
+      "abstract": "With wide deployment of machine learning (ML)-based systems for a variety of applications including medical, military, automotive, genomic, multimedia, and social networking, there is great potential for damage from adversarial learning (AL) attacks. In this article, we provide a contemporary survey of AL, focused particularly on defenses against attacks on deep neural network classifiers. After introducing relevant terminology and the goals and range of possible knowledge of both attackers and defenders, we survey recent work on test-time evasion (TTE), data poisoning (DP), backdoor DP, and reverse engineering (RE) attacks and particularly defenses against the same. In so doing, we distinguish robust classification from anomaly detection (AD), unsupervised from supervised, and statistical hypothesis-based defenses from ones that do not have an explicit null (no attack) hypothesis. We also consider several scenarios for detecting backdoors. We provide a technical assessment for reviewed works, including identifying any issues/limitations, required hyperparameters, needed computational complexity, as well as the performance measures evaluated and the obtained quality. We then delve deeper, providing novel insights that challenge conventional AL wisdom and that target unresolved issues, including: robust classification versus AD as a defense strategy; the belief that attack success increases with attack strength, which ignores susceptibility to AD; small perturbations for TTE attacks: a fallacy or a requirement; validity of the universal assumption that a TTE attacker knows the ground-truth class for the example to be attacked; black, gray, or white-box attacks as the standard for defense evaluation; and susceptibility of query-based RE to an AD defense. We also discuss attacks on the privacy of training data. We then present benchmark comparisons of several defenses against TTE, RE, and backdoor DP attacks on images. The article concludes with a discussion of continuing research directions, including the supreme challenge of detecting attacks whose goal is not to alter classification decisions, but rather simply to embed, without detection, \"fake news\" or other false content.",
+      "cited_by_count": 227,
+      "type": "review",
+      "source": {
+        "name": "Proceedings of the IEEE",
+        "type": "journal",
+        "issn": [
+          "0018-9219",
+          "1558-2256"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Advanced Malware Detection Techniques",
+        "Bacillus and Francisella bacterial research"
+      ],
+      "referenced_works_count": 160,
+      "url": "https://openalex.org/W3007264885"
+    },
+    {
+      "openalex_id": "W3016045843",
+      "doi": "10.1109/tnnls.2020.2979049",
+      "title": "Deep End-to-End One-Class Classifier",
+      "authors": [
+        {
+          "name": "Mohammad Sabokrou",
+          "openalex_id": "A5012207220",
+          "orcid": "https://orcid.org/0000-0002-9409-2799",
+          "institutions": [
+            "Institute for Research in Fundamental Sciences"
+          ]
+        },
+        {
+          "name": "Mahmood Fathy",
+          "openalex_id": "A5056796328",
+          "orcid": "https://orcid.org/0000-0003-0852-5488",
+          "institutions": [
+            "Institute for Research in Fundamental Sciences"
+          ]
+        },
+        {
+          "name": "Guoying Zhao",
+          "openalex_id": "A5082301986",
+          "orcid": "https://orcid.org/0000-0003-3694-206X",
+          "institutions": [
+            "University of Oulu"
+          ]
+        },
+        {
+          "name": "Ehsan Adeli",
+          "openalex_id": "A5015355317",
+          "orcid": "https://orcid.org/0000-0002-0579-7763",
+          "institutions": [
+            "Stanford University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-07",
+      "abstract": "One-class classification (OCC) poses as an essential component in many machine learning and computer vision applications, including novelty, anomaly, and outlier detection systems. With a known definition for a target or normal set of data, one-class classifiers can determine if any given new sample spans within the distribution of the target class. Solving for this task in a general setting is particularly very challenging, due to the high diversity of samples from the target class and the absence of any supervising signal over the novelty (nontarget) concept, which makes designing end-to-end models unattainable. In this article, we propose an adversarial training approach to detect out-of-distribution samples in an end-to-end trainable deep model. To this end, we jointly train two deep neural networks, R and D . The latter plays as the discriminator while the former, during training, helps D characterize a probability distribution for the target class by creating adversarial examples and, during testing, collaborates with it to detect novelties. Using our OCC, we first test outlier detection on two image data sets, Modified National Institute of Standards and Technology (MNIST) and Caltech-256. Then, several experiments for video anomaly detection are performed on University of Minnesota (UMN) and University of California, San Diego (UCSD) data sets. Our proposed method can successfully learn the target class underlying distribution and outperforms other approaches.",
+      "cited_by_count": 102,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Neural Networks and Learning Systems",
+        "type": "journal",
+        "issn": [
+          "2162-237X",
+          "2162-2388"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Advanced Statistical Methods and Models",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W3016045843"
+    },
+    {
+      "openalex_id": "W3090580769",
+      "doi": "10.3847/1538-4357/abf7ba",
+      "title": "The CAMELS Project: Cosmology and Astrophysics with Machine-learning Simulations",
+      "authors": [
+        {
+          "name": "Francisco Villaescusa-Navarro",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-4816-0455",
+          "institutions": [
+            "Princeton University",
+            "Flatiron Health (United States)"
+          ]
+        },
+        {
+          "name": "Daniel Angl\u00e9s-Alc\u00e1zar",
+          "openalex_id": "",
+          "institutions": [
+            "Flatiron Health (United States)",
+            "University of Connecticut"
+          ]
+        },
+        {
+          "name": "Shy Genel",
+          "openalex_id": "",
+          "institutions": [
+            "Flatiron Health (United States)",
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "David N. Spergel",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-5151-0006",
+          "institutions": [
+            "Flatiron Health (United States)",
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Rachel S. Somerville",
+          "openalex_id": "",
+          "institutions": [
+            "Flatiron Health (United States)",
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Romeel Dave",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0003-2842-9434",
+          "institutions": [
+            "Royal Observatory",
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Annalisa Pillepich",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0003-1065-9274",
+          "institutions": [
+            "Max Planck Institute for Astronomy"
+          ]
+        },
+        {
+          "name": "Lars Hernquist",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0001-6950-1629",
+          "institutions": [
+            "Center for Astrophysics Harvard & Smithsonian"
+          ]
+        },
+        {
+          "name": "Dylan Nelson",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0001-8421-5890",
+          "institutions": [
+            "Heidelberg University"
+          ]
+        },
+        {
+          "name": "Paul Torrey",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-5653-0786",
+          "institutions": [
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Desika Narayanan",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-7064-4309",
+          "institutions": [
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Yin Li",
+          "openalex_id": "",
+          "institutions": [
+            "Flatiron Health (United States)"
+          ]
+        },
+        {
+          "name": "Oliver Philcox",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-3033-9932",
+          "institutions": [
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Valentina La Torre",
+          "openalex_id": "",
+          "institutions": [
+            "Flatiron Health (United States)",
+            "Tufts University"
+          ]
+        },
+        {
+          "name": "Ana Maria Delgado",
+          "openalex_id": "",
+          "institutions": [
+            "Center for Astrophysics Harvard & Smithsonian",
+            "Flatiron Health (United States)"
+          ]
+        },
+        {
+          "name": "Shirley Ho",
+          "openalex_id": "",
+          "institutions": [
+            "Carnegie Mellon University",
+            "Princeton University",
+            "Flatiron Health (United States)"
+          ]
+        },
+        {
+          "name": "Sultan Hassan",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-1050-7572",
+          "institutions": [
+            "Flatiron Health (United States)",
+            "University of the Western Cape"
+          ]
+        },
+        {
+          "name": "Blakesley Burkhart",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0001-5817-5944",
+          "institutions": [
+            "Rutgers, The State University of New Jersey",
+            "Flatiron Health (United States)"
+          ]
+        },
+        {
+          "name": "Digvijay Wadekar",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-2544-7533",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Nicholas Battaglia",
+          "openalex_id": "",
+          "institutions": [
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Gabriella Contardo",
+          "openalex_id": "",
+          "institutions": [
+            "Flatiron Health (United States)"
+          ]
+        },
+        {
+          "name": "Greg L. Bryan",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0003-2630-9228",
+          "institutions": [
+            "Flatiron Health (United States)",
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-07-01",
+      "abstract": "Abstract We present the Cosmology and Astrophysics with MachinE Learning Simulations (CAMELS) project. CAMELS is a suite of 4233 cosmological simulations of <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" overflow=\"scroll\"> <mml:msup> <mml:mrow> <mml:mfenced close=\")\" open=\"(\"> <mml:mrow> <mml:mn>25</mml:mn> <mml:mspace width=\"0.25em\"/> <mml:msup> <mml:mrow> <mml:mi>h</mml:mi> </mml:mrow> <mml:mrow> <mml:mo>\u2212</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mi>Mpc</mml:mi> </mml:mrow> </mml:mfenced> </mml:mrow> <mml:mrow> <mml:mn>3</mml:mn> </mml:mrow> </mml:msup> </mml:math> volume each: 2184 state-of-the-art (magneto)hydrodynamic simulations run with the AREPO and GIZMO codes, employing the same baryonic subgrid physics as the IllustrisTNG and SIMBA simulations, and 2049 N -body simulations. The goal of the CAMELS project is to provide theory predictions for different observables as a function of cosmology and astrophysics, and it is the largest suite of cosmological (magneto)hydrodynamic simulations designed to train machine-learning algorithms. CAMELS contains thousands of different cosmological and astrophysical models by way of varying \u03a9 m , \u03c3 8 , and four parameters controlling stellar and active galactic nucleus feedback, following the evolution of more than 100 billion particles and fluid elements over a combined volume of <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" overflow=\"scroll\"> <mml:msup> <mml:mrow> <mml:mo stretchy=\"false\">(</mml:mo> <mml:mn>400</mml:mn> <mml:mspace width=\"0.25em\"/> <mml:msup> <mml:mrow> <mml:mi>h</mml:mi> </mml:mrow> <mml:mrow> <mml:mo>\u2212</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msup> <mml:mi>Mpc</mml:mi> <mml:mo stretchy=\"false\">)</mml:mo> </mml:mrow> <mml:mrow> <mml:mn>3</mml:mn> </mml:mrow> </mml:msup> </mml:math> . We describe the simulations in detail and characterize the large range of conditions represented in terms of the matter power spectrum, cosmic star formation rate density, galaxy stellar mass function, halo baryon fractions, and several galaxy scaling relations. We show that the IllustrisTNG and SIMBA suites produce roughly similar distributions of galaxy properties over the full parameter space but significantly different halo baryon fractions and baryonic effects on the matter power spectrum. This emphasizes the need for marginalizing over baryonic effects to extract the maximum amount of information from cosmological surveys. We illustrate the unique potential of CAMELS using several machine-learning applications, including nonlinear interpolation, parameter estimation, symbolic regression, data generation with Generative Adversarial Networks, dimensionality reduction, and anomaly detection.",
+      "cited_by_count": 249,
+      "type": "article",
+      "source": {
+        "name": "The Astrophysical Journal",
+        "type": "journal",
+        "issn": [
+          "0004-637X",
+          "1538-4357"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2010.00619"
+      },
+      "topics": [
+        "Galaxies: Formation, Evolution, Phenomena",
+        "Computational Physics and Python Applications",
+        "Cosmology and Gravitation Theories"
+      ],
+      "referenced_works_count": 105,
+      "url": "https://openalex.org/W3090580769"
+    },
+    {
+      "openalex_id": "W3101969501",
+      "doi": "10.1016/j.neucom.2020.10.084",
+      "title": "Robust unsupervised anomaly detection via multi-time scale DCGANs with forgetting mechanism for industrial multivariate time series",
+      "authors": [
+        {
+          "name": "Haoran Liang",
+          "openalex_id": "A5101954842",
+          "orcid": "https://orcid.org/0000-0001-8705-0024",
+          "institutions": [
+            "University of Chinese Academy of Sciences",
+            "Technology and Engineering Center for Space Utilization",
+            "Chinese Academy of Sciences"
+          ]
+        },
+        {
+          "name": "Lei Song",
+          "openalex_id": "A5067915043",
+          "orcid": "https://orcid.org/0000-0003-1609-2192",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Technology and Engineering Center for Space Utilization"
+          ]
+        },
+        {
+          "name": "Jianxing Wang",
+          "openalex_id": "A5101401045",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Technology and Engineering Center for Space Utilization"
+          ]
+        },
+        {
+          "name": "Lili Guo",
+          "openalex_id": "A5064138796",
+          "orcid": "https://orcid.org/0000-0002-0470-692X",
+          "institutions": [
+            "Technology and Engineering Center for Space Utilization",
+            "Chinese Academy of Sciences",
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Xuzhi Li",
+          "openalex_id": "A5103212977",
+          "orcid": "https://orcid.org/0000-0003-3731-1251",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Technology and Engineering Center for Space Utilization"
+          ]
+        },
+        {
+          "name": "Ji Liang",
+          "openalex_id": "A5068080851",
+          "orcid": "https://orcid.org/0000-0001-8217-8045",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Technology and Engineering Center for Space Utilization"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-10",
+      "abstract": null,
+      "cited_by_count": 84,
+      "type": "article",
+      "source": {
+        "name": "Neurocomputing",
+        "type": "journal",
+        "issn": [
+          "0925-2312",
+          "1872-8286"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Time Series Analysis and Forecasting",
+        "Digital Media Forensic Detection"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W3101969501"
+    },
+    {
+      "openalex_id": "W4290991003",
+      "doi": "10.1145/3544216.3544251",
+      "title": "Practical GAN-based synthetic IP header trace generation using NetShare",
+      "authors": [
+        {
+          "name": "Yucheng Yin",
+          "openalex_id": "A5016461650",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Zinan Lin",
+          "openalex_id": "A5101422411",
+          "orcid": "https://orcid.org/0000-0002-8421-2662",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Minhao Jin",
+          "openalex_id": "A5002015587",
+          "orcid": "https://orcid.org/0009-0003-5899-129X",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Giulia Fanti",
+          "openalex_id": "A5109358824",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Vyas Sekar",
+          "openalex_id": "A5079175103",
+          "orcid": "https://orcid.org/0000-0001-5452-8976",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-11",
+      "abstract": "We explore the feasibility of using Generative Adversarial Networks (GANs) to automatically learn generative models to generate synthetic packet- and flow header traces for networking tasks (e.g., telemetry, anomaly detection, provisioning). We identify key fidelity, scalability, and privacy challenges and tradeoffs in existing GAN-based approaches. By synthesizing domain-specific insights with recent advances in machine learning and privacy, we identify design choices to tackle these challenges. Building on these insights, we develop an end-to-end framework, NetShare. We evaluate NetShare on six diverse packet header traces and find that: (1) across all distributional metrics and traces, it achieves 46% more accuracy than baselines and (2) it meets users' requirements of downstream tasks in evaluating accuracy and rank ordering of candidate approaches.",
+      "cited_by_count": 76,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3544216.3544251"
+      },
+      "topics": [
+        "Internet Traffic Analysis and Secure E-voting",
+        "Network Security and Intrusion Detection",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W4290991003"
+    },
+    {
+      "openalex_id": "W4391285268",
+      "doi": "10.30574/wjarr.2024.21.1.0315",
+      "title": "Machine learning in cybersecurity: A review of threat detection and defense mechanisms",
+      "authors": [
+        {
+          "name": "Ugochukwu Ikechukwu Okoli",
+          "openalex_id": "A5093804230"
+        },
+        {
+          "name": "Ogugua Chimezie",
+          "openalex_id": "A5093804231"
+        },
+        {
+          "name": "Adebunmi Okechukwu Adewusi",
+          "openalex_id": "A5093804232",
+          "institutions": [
+            "University of Ilorin"
+          ]
+        },
+        {
+          "name": "Temitayo Oluwaseun Abrahams",
+          "openalex_id": "A5093631503"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-27",
+      "abstract": "The cybersecurity concerns get increasingly intricate as the digital world progresses. In light of the increasing complexity of cyber threats, it is imperative to develop and implement advanced and flexible security strategies. Machine Learning (ML) has become a potent tool in strengthening cybersecurity, providing the capacity to scrutinise extensive information, recognise trends, and improve threat detection and defence methods. This paper examines the significance of ML in the field of cybersecurity, with a special emphasis on the identification of threats and the implementation of protective measures. By incorporating ML algorithms into cybersecurity frameworks, organisations may automate decision-making processes, facilitating prompt responses to ever-changing threats. The initial segment explores the terrain of cyber threats, highlighting the necessity for dynamic and aggressive security methods. Conventional solutions that rely on signatures are frequently inadequate when it comes to handling sophisticated, shape-shifting attacks. ML algorithms, in contrast, have exceptional proficiency in identifying nuanced patterns and irregularities within extensive datasets, therefore offering a more efficient method of detecting potential threats. The second section delves into several ML methodologies utilised in cybersecurity, including supervised and unsupervised learning, deep learning, and reinforcement learning. Every approach is assessed based on its suitability for threat detection, demonstrating its advantages and constraints. Furthermore, the relevance of feature engineering and data pretreatment in improving machine learning models for cybersecurity applications. The versatility of ML algorithms allows them to grow with emerging threats, making them a useful tool in the ever-changing arena of cyber warfare. The final segment focuses on real-world applications of machine learning in cybersecurity, presenting successful use cases across sectors. From anomaly detection to behavior analysis, ML algorithms contribute to the discovery of dangerous activity, lowering false positives and strengthening the overall security posture. Lastly, the paper covers the obstacles and ethical issues related to the adoption of ML in cybersecurity. Issues like as adversarial assaults, skewed datasets, and the interpretability of ML models are examined, highlighting the necessity for a holistic strategy that integrates modern technology with ethical considerations. The fusion of human expertise and machine intelligence offers a formidable defense against evolving cyber threats, paving the way for a more resilient and secure digital future.",
+      "cited_by_count": 87,
+      "type": "review",
+      "source": {
+        "name": "World Journal of Advanced Research and Reviews",
+        "type": "journal",
+        "issn": [
+          "2581-9615"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://wjarr.com/sites/default/files/WJARR-2024-0315.pdf"
+      },
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Information and Cyber Security",
+        "Advanced Malware Detection Techniques"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W4391285268"
+    },
+    {
+      "openalex_id": "W3042046988",
+      "doi": "10.1109/lsens.2020.3007880",
+      "title": "Industrial Anomaly Detection: A Comparison of Unsupervised Neural Network Architectures",
+      "authors": [
+        {
+          "name": "Barry Siegel",
+          "openalex_id": "A5072023945",
+          "institutions": [
+            "Colorado State University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-08",
+      "abstract": "Anomaly detection is critical to the efficient and secure operation of industrial equipment, integrated sensors, and the overall production process. Cyber-physical systems and supervisory control and data acquisition systems often embed algorithms for anomaly detection. Anomalies are, by definition, rare events and labor-intensive to identify. Pipelined deep learning techniques such as recurrent neural networks (RNN), 1-D convolution neural networks (1DCNN), and generative adversarial networks create unique anomaly detection architectures. These architectures are unsupervised, and labeled anomaly data is not required. With two large, multivariate time-series testbed experimental datasets, comparisons are made between the neural network architectures and traditional machine learning (TML) baseline techniques. Evaluation metrics appropriate for imbalanced anomaly datasets include the area under the receiver operating characteristic curve and the area under the precision-recall tradeoff curve. Experimental results demonstrate that pipelined neural network architectures exhibit higher detection rates than the TML techniques. 1DCNN can substitute for RNNs when performance and long time-sequences are essential.",
+      "cited_by_count": 66,
+      "type": "article",
+      "source": {
+        "name": "IEEE Sensors Letters",
+        "type": "journal",
+        "issn": [
+          "2475-1472"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Network Security and Intrusion Detection",
+        "Time Series Analysis and Forecasting"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W3042046988"
+    },
+    {
+      "openalex_id": "W4389633740",
+      "doi": "10.1109/tce.2023.3341696",
+      "title": "Adversarial ML-Based Secured Cloud Architecture for Consumer Internet of Things of Smart Healthcare",
+      "authors": [
+        {
+          "name": "Jitendra Kumar Samriya",
+          "openalex_id": "A5052211759",
+          "orcid": "https://orcid.org/0000-0001-5466-8899",
+          "institutions": [
+            "Indian Institute of Information Technology Allahabad"
+          ]
+        },
+        {
+          "name": "Chinmay Chakraborty",
+          "openalex_id": "A5036945704",
+          "orcid": "https://orcid.org/0000-0002-4385-0975",
+          "institutions": [
+            "Birla Institute of Technology, Mesra"
+          ]
+        },
+        {
+          "name": "Aditi Sharma",
+          "openalex_id": "A5051768433",
+          "orcid": "https://orcid.org/0000-0002-5364-8420",
+          "institutions": [
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "Mohit Kumar",
+          "openalex_id": "A5100739494",
+          "orcid": "https://orcid.org/0000-0003-1600-6872",
+          "institutions": [
+            "Dr. B. R. Ambedkar National Institute of Technology Jalandhar",
+            "Indian Institute of Information Technology Allahabad"
+          ]
+        },
+        {
+          "name": "Sravanth Kumar Ramakuri",
+          "openalex_id": "A5014620086",
+          "orcid": "https://orcid.org/0000-0002-8001-874X",
+          "institutions": [
+            "Vignana Jyothi Institute of Management"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-12",
+      "abstract": "The profound era of cloud computing (CC) is revolutionizing Industry 5.0in which users have online access to network services including better, transparent user management and the capacity to gather and analyze data. The services of the cloud paradigm have been adopted by academia, industries, healthcare, smart homes, and other areas due to cost-efficient and on-demand resources for IoT applications, but security and privacy of patient data is a major issue with cloud paradigm. For intrusion detection systems (IDS), adversarial machine learning (AML) has been promising to secure individual IoT devices from various modern threats. Network traffic anomalies brought on by both well-known assaults and recently discovered attacks are typically detected by adversarial machine learning-based intrusion detection systems (AML-IDS) in real time. This research proposes a novel technique in cloud security enhancement based on consumer IoT utilizing AML techniques in smart healthcare. The security of cloud networks is enhanced using trust-based encryption cryptographic analysis. The healthcare data is analyzed using structure-based Markov sparse Bayesian neural networks in smart healthcare. The experimental results are improved up to 9% in terms of data transmission ratio, specificity, training accuracy, validation accuracy, and security analysis.",
+      "cited_by_count": 84,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Consumer Electronics",
+        "type": "journal",
+        "issn": [
+          "0098-3063",
+          "1558-4127"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Network Security and Intrusion Detection",
+        "Internet of Things and AI"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4389633740"
+    },
+    {
+      "openalex_id": "W3029178329",
+      "doi": "10.1142/s0129065720500343",
+      "title": "3D-Convolutional Neural Network with Generative Adversarial Network and Autoencoder for Robust Anomaly Detection in Video Surveillance",
+      "authors": [
+        {
+          "name": "Wonsup Shin",
+          "openalex_id": "A5017666655",
+          "institutions": [
+            "Yonsei University"
+          ]
+        },
+        {
+          "name": "Seok-Jun Bu",
+          "openalex_id": "A5112483522",
+          "institutions": [
+            "Yonsei University"
+          ]
+        },
+        {
+          "name": "Sung\u2010Bae Cho",
+          "openalex_id": "A5108081550",
+          "orcid": "https://orcid.org/0000-0002-7027-2429",
+          "institutions": [
+            "Yonsei University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-05-28",
+      "abstract": "As the surveillance devices proliferate, various machine learning approaches for video anomaly detection have been attempted. We propose a hybrid deep learning model composed of a video feature extractor trained by generative adversarial network with deficient anomaly data and an anomaly detector boosted by transferring the extractor. Experiments with UCSD pedestrian dataset show that it achieves 94.4% recall and 86.4% precision, which is the competitive performance in video anomaly detection.",
+      "cited_by_count": 47,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Neural Systems",
+        "type": "journal",
+        "issn": [
+          "0129-0657",
+          "1793-6462"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Network Security and Intrusion Detection",
+        "Artificial Immune Systems Applications"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W3029178329"
+    },
+    {
+      "openalex_id": "W4392173855",
+      "doi": "10.23919/cje.2022.00.173",
+      "title": "FlowGANAnomaly: Flow-Based Anomaly Network Intrusion Detection with Adversarial Learning",
+      "authors": [
+        {
+          "name": "Zeyi Li",
+          "openalex_id": "A5107791450",
+          "orcid": "https://orcid.org/0000-0002-2823-7320",
+          "institutions": [
+            "Nanjing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Pan Wang",
+          "openalex_id": "A5108047873",
+          "orcid": "https://orcid.org/0000-0003-2006-1129",
+          "institutions": [
+            "Nanjing University of Posts and Telecommunications"
+          ]
+        },
+        {
+          "name": "Zixuan Wang",
+          "openalex_id": "A5100398248",
+          "orcid": "https://orcid.org/0000-0002-5255-3462",
+          "institutions": [
+            "Nanjing University of Posts and Telecommunications"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "In recent years, low recall rates and high dependencies on data labelling have become the biggest obstacle to developing deep anomaly detection (DAD) techniques. Inspired by the success of generative adversarial networks (GANs) in detecting anomalies in computer vision and imaging, we propose an anomaly detection model called FlowGANAnomaly for detecting anomalous traffic in network intrusion detection systems (NIDS). Unlike traditional GAN-based approaches, which are composed of a flow encoder, a convolutional encoder-decoder-encoder, a flow decoder and a convolutional encoder, the architecture of this model consists of a generator (G) and a discriminator (D). FlowGANAnomaly maps the different types of traffic feature data from separate datasets to a uniform feature space, thus can capture the normality of network traffic data more accurately in an adversarial manner to mitigate the problem of the high dependence on data labeling. Moreover, instead of simply detecting the anomalies by the output of D, we proposed a new anomaly scoring method that integrates the deviation between the output of two Gs' convolutional encoders with the output of D as weighted scores to improve the low recall rate of anomaly detection. We conducted several experiments comparing existing machine learning algorithms and existing deep learning methods (AutoEncoder and VAE) on four public datasets (NSL-KDD, CIC-IDS2017, CIC-DDoS2019, and UNSW-NB15). The evaluation results show that FlowGANAnomaly can significantly improve the performance of anomaly-based NIDS.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "Chinese Journal of Electronics",
+        "type": "journal",
+        "issn": [
+          "1022-4653",
+          "2075-5597"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/9970761/10410587/10410600.pdf"
+      },
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Anomaly Detection Techniques and Applications",
+        "Advanced Malware Detection Techniques"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W4392173855"
+    },
+    {
+      "openalex_id": "W4206541522",
+      "doi": "10.1109/comst.2021.3136132",
+      "title": "Adversarial Machine Learning: A Multilayer Review of the State-of-the-Art and Challenges for Wireless and Mobile Systems",
+      "authors": [
+        {
+          "name": "Jinxin Liu",
+          "openalex_id": "A5086348232",
+          "orcid": "https://orcid.org/0000-0002-2482-9548",
+          "institutions": [
+            "University of Ottawa"
+          ]
+        },
+        {
+          "name": "Michele Nogueira",
+          "openalex_id": "A5028233772",
+          "orcid": "https://orcid.org/0000-0001-5427-2384",
+          "institutions": [
+            "Universidade Federal de Minas Gerais"
+          ]
+        },
+        {
+          "name": "Johan Fernandes",
+          "openalex_id": "A5112774651",
+          "institutions": [
+            "University of Ottawa"
+          ]
+        },
+        {
+          "name": "Burak Kantarc\u0131",
+          "openalex_id": "A5003131477",
+          "orcid": "https://orcid.org/0000-0003-0220-7956",
+          "institutions": [
+            "University of Ottawa"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-16",
+      "abstract": "Machine Learning (ML) models are susceptible to adversarial samples that appear as normal samples but have some imperceptible noise added to them with the intention of misleading a trained classifier and misclassifying the input. Adversarial Machine Learning (AML) was initially coined following upon researchers pointing out certain blind spots in image classifiers in computer vision field which were exploited by these adversarial samples to deceive the model. Although this has been investigated remarkably in computer vision, the impact of AML in wireless and mobile systems has recently attracted attention. Wireless and mobile networks have intensely benefited from the application of ML classifiers to detect network traffic anomalies and malware detection. However, ML detectors themselves can be exfiltrated/evaded by the samples carefully designed by attackers, raising security concerns for ML-based network applications. Thus, it is crucial to detect such samples to safeguard the network. This survey article presents a systematic mapping and a comprehensive literature review on AML to wireless and mobile systems from physical layer to network and application layers. The article reviews the state-of-the-art AML approaches in the generation and detection of adversarial samples. The samples can be generated by adversarial models such as Generative Adversarial Networks (GANS) and techniques such as Fast Gradient Sign Method (FGSM). The samples can be detected by adversarial models acting as classifiers or ML classifiers reinforced with knowledge on how to detect such samples. For each approach, a high-level overview is provided alongside its impact on solving the problems in wireless and mobile settings. Furthermore, this article provides detailed discussions to highlight the open issues and challenges faced by these approaches, as well as research opportunities which can be of interest to the researchers and developers in Artificial Intelligence (AI)-driven wireless and mobile networking.",
+      "cited_by_count": 74,
+      "type": "review",
+      "source": {
+        "name": "IEEE Communications Surveys & Tutorials",
+        "type": "journal",
+        "issn": [
+          "1553-877X",
+          "2373-745X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Advanced Malware Detection Techniques",
+        "Network Security and Intrusion Detection"
+      ],
+      "referenced_works_count": 211,
+      "url": "https://openalex.org/W4206541522"
+    },
+    {
+      "openalex_id": "W4312761717",
+      "doi": "10.1109/cvpr52688.2022.01628",
+      "title": "PixMix: Dreamlike Pictures Comprehensively Improve Safety Measures",
+      "authors": [
+        {
+          "name": "Dan Hendrycks",
+          "openalex_id": "A5020400986",
+          "institutions": [
+            "Berkeley College",
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Andy Zou",
+          "openalex_id": "A5004880532",
+          "institutions": [
+            "University of California, Berkeley",
+            "Berkeley College"
+          ]
+        },
+        {
+          "name": "Mantas Mazeika",
+          "openalex_id": "A5058254793",
+          "institutions": [
+            "International University of the Caribbean"
+          ]
+        },
+        {
+          "name": "Leonard Tang",
+          "openalex_id": "A5067697394",
+          "orcid": "https://orcid.org/0009-0006-9109-4496",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        },
+        {
+          "name": "Bo Li",
+          "openalex_id": "A5100374360",
+          "orcid": "https://orcid.org/0000-0001-6709-0942",
+          "institutions": [
+            "International University of the Caribbean"
+          ]
+        },
+        {
+          "name": "Dawn Song",
+          "openalex_id": "A5019426968",
+          "orcid": "https://orcid.org/0000-0001-9745-6802",
+          "institutions": [
+            "University of California, Berkeley",
+            "Berkeley College"
+          ]
+        },
+        {
+          "name": "Jacob Steinhardt",
+          "openalex_id": "A5060196069",
+          "orcid": "https://orcid.org/0000-0002-0257-3860",
+          "institutions": [
+            "Berkeley College",
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-01",
+      "abstract": "In real-world applications of machine learning, reliable and safe systems must consider measures of performance beyond standard test set accuracy. These other goals include out-of-distribution (OOD) robustness, prediction consistency, resilience to adversaries, calibrated uncertainty estimates, and the ability to detect anomalous inputs. However, improving performance towards these goals is often a balancing act that today's methods cannot achieve without sacrificing performance on other safety axes. For instance, adversarial training improves adversarial robustness but sharply degrades other classifier performance metrics. Similarly, strong data augmentation and regularization techniques often improve OOD robustness but harm anomaly detection, raising the question of whether a Pareto improvement on all existing safety measures is possible. To meet this challenge, we design a new data augmentation strategy utilizing the natural structural complexity of pictures such as fractals, which outperforms numerous baselines, is near Pareto-optimal, and roundly improves safety measures.",
+      "cited_by_count": 87,
+      "type": "article",
+      "source": {
+        "name": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "type": "conference",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 87,
+      "url": "https://openalex.org/W4312761717"
+    },
+    {
+      "openalex_id": "W3085230347",
+      "doi": "10.3390/s20185305",
+      "title": "ARIES: A Novel Multivariate Intrusion Detection System for Smart Grid",
+      "authors": [
+        {
+          "name": "Panagiotis Radoglou\u2010Grammatikis",
+          "openalex_id": "A5025891312",
+          "orcid": "https://orcid.org/0000-0003-1605-9413",
+          "institutions": [
+            "University of Western Macedonia"
+          ]
+        },
+        {
+          "name": "Panagiotis Sarigiannidis",
+          "openalex_id": "A5050756789",
+          "orcid": "https://orcid.org/0000-0001-6042-0355",
+          "institutions": [
+            "University of Western Macedonia"
+          ]
+        },
+        {
+          "name": "Georgios Efstathopoulos",
+          "openalex_id": "A5079846617"
+        },
+        {
+          "name": "Emmanouil Panaousis",
+          "openalex_id": "A5090517118",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-16",
+      "abstract": "The advent of the Smart Grid (SG) raises severe cybersecurity risks that can lead to devastating consequences. In this paper, we present a novel anomaly-based Intrusion Detection System (IDS), called ARIES (smArt gRid Intrusion dEtection System), which is capable of protecting efficiently SG communications. ARIES combines three detection layers that are devoted to recognising possible cyberattacks and anomalies against (a) network flows, (b) Modbus/Transmission Control Protocol (TCP) packets and (c) operational data. Each detection layer relies on a Machine Learning (ML) model trained using data originating from a power plant. In particular, the first layer (network flow-based detection) performs a supervised multiclass classification, recognising Denial of Service (DoS), brute force attacks, port scanning attacks and bots. The second layer (packet-based detection) detects possible anomalies related to the Modbus packets, while the third layer (operational data based detection) monitors and identifies anomalies upon operational data (i.e., time series electricity measurements). By emphasising on the third layer, the ARIES Generative Adversarial Network (ARIES GAN) with novel error minimisation functions was developed, considering mainly the reconstruction difference. Moreover, a novel reformed conditional input was suggested, consisting of random noise and the signal features at any given time instance. Based on the evaluation analysis, the proposed GAN network overcomes the efficacy of conventional ML methods in terms of Accuracy and the F1 score.",
+      "cited_by_count": 59,
+      "type": "article",
+      "source": {
+        "name": "Sensors",
+        "type": "journal",
+        "issn": [
+          "1424-8220"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1424-8220/20/18/5305/pdf?version=1600267303"
+      },
+      "topics": [
+        "Smart Grid Security and Resilience",
+        "Network Security and Intrusion Detection",
+        "Internet Traffic Analysis and Secure E-voting"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W3085230347"
+    },
+    {
+      "openalex_id": "W3209845259",
+      "doi": "10.1109/tase.2021.3118635",
+      "title": "Augmented Time Regularized Generative Adversarial Network (ATR-GAN) for Data Augmentation in Online Process Anomaly Detection",
+      "authors": [
+        {
+          "name": "Yuxuan Li",
+          "openalex_id": "A5100330842",
+          "orcid": "https://orcid.org/0000-0002-9084-7269",
+          "institutions": [
+            "Oklahoma State University"
+          ]
+        },
+        {
+          "name": "Zhangyue Shi",
+          "openalex_id": "A5072625411",
+          "orcid": "https://orcid.org/0000-0002-7080-2522",
+          "institutions": [
+            "Oklahoma State University"
+          ]
+        },
+        {
+          "name": "Chenang Liu",
+          "openalex_id": "A5003491617",
+          "orcid": "https://orcid.org/0000-0002-6571-0682",
+          "institutions": [
+            "Oklahoma State University"
+          ]
+        },
+        {
+          "name": "Wenmeng Tian",
+          "openalex_id": "A5026893647",
+          "orcid": "https://orcid.org/0000-0002-3462-0692",
+          "institutions": [
+            "Mississippi State University"
+          ]
+        },
+        {
+          "name": "Zhenyu Kong",
+          "openalex_id": "A5085867168",
+          "orcid": "https://orcid.org/0000-0002-8827-502X",
+          "institutions": [
+            "Virginia Tech"
+          ]
+        },
+        {
+          "name": "Christopher B. Williams",
+          "openalex_id": "A5074829859",
+          "orcid": "https://orcid.org/0000-0002-0499-2444",
+          "institutions": [
+            "Virginia Tech"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-10-29",
+      "abstract": "Supervised machine learning techniques, such as classification models, have been widely applied to online process anomaly detection in advanced manufacturing. However, since abnormal process states rarely occur in regular manufacturing settings, the data collected for model training may be highly imbalanced, which may result in significant training bias for supervised learning and, thus, further deteriorate the anomaly detection accuracy. To reduce the training bias, a natural idea is to incorporate data augmentation techniques to generate effective artificial sample data for the abnormal process states. However, most of the existing data augmentation methods do not effectively consider the temporal orders of the sensor signals, and they also usually require large amounts of actual samples to ensure satisfactory augmentation performance. To address these limitations, this article developed a novel data-driven methodology termed augmented time regularized generative adversarial network (ATR-GAN). By incorporating a proposed augmented generator, ATR-GAN is capable of generating more effective artificial samples for training supervised learning models. The novelty of this augmented generator in the proposed methodology can be summarized into three aspects: 1) an augmented filter layer is introduced in the augmented generator to identify the high-quality artificial samples; 2) in the augmented filter layer, a new distance metric termed time-regularized Hausdorff (TRH) distance is developed to accurately measure the similarity between actual samples and the generated artificial samples; and 3) batching techniques are also employed in the proposed augmented generator to further increase the diversity of the artificial data and fully utilize the relatively limited training data. In addition, the effectiveness of the proposed ATR-GAN is also validated by both numerical simulation and a real-world case study in additive manufacturing. Note to Practitioners\u2014Online process anomaly detection currently plays a significant role in advanced manufacturing since unexpected anomalies may damage product quality and even result in catastrophic loss. In practice, processes are mostly under normal conditions, and anomalies rarely occur. Therefore, the data collected under abnormal conditions are very limited compared to normal conditions, which causes the data imbalanced issue, leading to deterioration in detection accuracy. Many existing data augmentation methods, such as generative adversarial network (GAN), cannot synthesize diversified high-quality artificial samples only using relatively limited actual samples. There is an urgent need in developing an effective data augmentation methodology to address the data imbalanced issue in process anomaly detection. This article developed a novel approach called augmented time regularized GAN (ATR-GAN) for online sensor data augmentation. With this new approach, the applications in additive manufacturing demonstrate that the performance of data augmentation can be improved effectively, and thereafter, the anomaly detection accuracy is also increased significantly. Moreover, the developed methodology is inherently integrated into a generic framework. Thus, it can be further transformed for applications in many other areas that need data augmentation.",
+      "cited_by_count": 78,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Automation Science and Engineering",
+        "type": "journal",
+        "issn": [
+          "1545-5955",
+          "1558-3783"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Industrial Vision Systems and Defect Detection",
+        "Anomaly Detection Techniques and Applications",
+        "Fault Detection and Control Systems"
+      ],
+      "referenced_works_count": 80,
+      "url": "https://openalex.org/W3209845259"
+    },
+    {
+      "openalex_id": "W4390732526",
+      "doi": "10.1038/s41598-024-51578-7",
+      "title": "Blockchain security enhancement: an approach towards hybrid consensus algorithms and machine learning techniques",
+      "authors": [
+        {
+          "name": "K. Venkatesan",
+          "openalex_id": "A5060650383",
+          "institutions": [
+            "National Defence University of Malaysia"
+          ]
+        },
+        {
+          "name": "Syarifah Bahiyah Rahayu",
+          "openalex_id": "A5027234464",
+          "institutions": [
+            "National Defence University of Malaysia"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-11",
+      "abstract": null,
+      "cited_by_count": 108,
+      "type": "article",
+      "source": {
+        "name": "Scientific Reports",
+        "type": "journal",
+        "issn": [
+          "2045-2322"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41598-024-51578-7.pdf"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "IoT and Edge/Fog Computing"
+      ],
+      "referenced_works_count": 104,
+      "url": "https://openalex.org/W4390732526"
+    },
+    {
+      "openalex_id": "W3123827117",
+      "doi": "10.1088/1361-6633/ac36b9",
+      "title": "The LHC Olympics 2020 a community challenge for anomaly detection in high energy physics",
+      "authors": [
+        {
+          "name": "Gregor Kasieczka",
+          "openalex_id": "A5031270964",
+          "orcid": "https://orcid.org/0000-0003-3457-2755",
+          "institutions": [
+            "Universit\u00e4t Hamburg"
+          ]
+        },
+        {
+          "name": "Benjamin Nachman",
+          "openalex_id": "A5054491740",
+          "orcid": "https://orcid.org/0000-0003-1024-0932",
+          "institutions": [
+            "University of California, Berkeley",
+            "Lawrence Berkeley National Laboratory"
+          ]
+        },
+        {
+          "name": "David Shih",
+          "openalex_id": "A5072503522",
+          "orcid": "https://orcid.org/0000-0003-3408-3871",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "O. Amram",
+          "openalex_id": "A5062443640",
+          "orcid": "https://orcid.org/0000-0002-3765-3123",
+          "institutions": [
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Anders Andreassen",
+          "openalex_id": "A5052645158",
+          "orcid": "https://orcid.org/0000-0003-3504-3919",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Kees Benkendorfer",
+          "openalex_id": "A5044309584",
+          "orcid": "https://orcid.org/0000-0003-4466-1196",
+          "institutions": [
+            "Lawrence Berkeley National Laboratory",
+            "Reed College"
+          ]
+        },
+        {
+          "name": "Bla\u017e Bortolato",
+          "openalex_id": "A5080418372",
+          "institutions": [
+            "Jo\u017eef Stefan Institute"
+          ]
+        },
+        {
+          "name": "G. Brooijmans",
+          "openalex_id": "A5073780128",
+          "orcid": "https://orcid.org/0000-0002-3354-1810",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "F. Canelli",
+          "openalex_id": "A5107390047",
+          "orcid": "https://orcid.org/0000-0001-6361-2117",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Jack H. Collins",
+          "openalex_id": "A5103723886",
+          "institutions": [
+            "Stanford University",
+            "SLAC National Accelerator Laboratory"
+          ]
+        },
+        {
+          "name": "Biwei Dai",
+          "openalex_id": "A5052507159",
+          "orcid": "https://orcid.org/0000-0003-2734-0294",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Felipe F. Freitas",
+          "openalex_id": "A5033710814",
+          "orcid": "https://orcid.org/0000-0003-3270-3395",
+          "institutions": [
+            "University of Aveiro"
+          ]
+        },
+        {
+          "name": "Barry M. Dillon",
+          "openalex_id": "A5057362506",
+          "orcid": "https://orcid.org/0000-0002-3838-974X",
+          "institutions": [
+            "Heidelberg University",
+            "Jo\u017eef Stefan Institute",
+            "Heidelberg Institute for Theoretical Studies"
+          ]
+        },
+        {
+          "name": "I-M. Dinu",
+          "openalex_id": "A5075986654",
+          "orcid": "https://orcid.org/0000-0002-2683-7349",
+          "institutions": [
+            "Universit\u00e9 Clermont Auvergne"
+          ]
+        },
+        {
+          "name": "Zhongtian Dong",
+          "openalex_id": "A5069299419",
+          "orcid": "https://orcid.org/0000-0002-1000-3454",
+          "institutions": [
+            "University of Kansas"
+          ]
+        },
+        {
+          "name": "J. Donini",
+          "openalex_id": "A5078300738",
+          "orcid": "https://orcid.org/0000-0002-8998-0839",
+          "institutions": [
+            "Universit\u00e9 Clermont Auvergne"
+          ]
+        },
+        {
+          "name": "J. Duarte",
+          "openalex_id": "A5100747243",
+          "orcid": "https://orcid.org/0000-0002-5076-7096",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Darius A. Faroughy",
+          "openalex_id": "A5071317702",
+          "orcid": "https://orcid.org/0000-0002-4027-5477",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "J. L. Gonski",
+          "openalex_id": "A5057572684",
+          "orcid": "https://orcid.org/0000-0003-2037-6315",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Philip Harris",
+          "openalex_id": "A5039198154",
+          "orcid": "https://orcid.org/0000-0001-8189-3741"
+        },
+        {
+          "name": "Alan Mathew Kahn",
+          "openalex_id": "A5110779872",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Jernej F. Kamenik",
+          "openalex_id": "A5030431060",
+          "orcid": "https://orcid.org/0000-0001-5183-8637",
+          "institutions": [
+            "Jo\u017eef Stefan Institute",
+            "University of Ljubljana"
+          ]
+        },
+        {
+          "name": "Charanjit K. Khosa",
+          "openalex_id": "A5023269417",
+          "orcid": "https://orcid.org/0000-0002-7985-3510",
+          "institutions": [
+            "University of Sussex",
+            "University of Genoa"
+          ]
+        },
+        {
+          "name": "Patrick Komiske",
+          "openalex_id": "A5064689577",
+          "orcid": "https://orcid.org/0000-0002-2983-9518"
+        },
+        {
+          "name": "L. T. Le Pottier",
+          "openalex_id": "A5050963072",
+          "orcid": "https://orcid.org/0000-0002-2625-5648",
+          "institutions": [
+            "Lawrence Berkeley National Laboratory",
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Pablo Mart\u00edn-Ramiro",
+          "openalex_id": "A5064752847",
+          "orcid": "https://orcid.org/0000-0001-5858-5783",
+          "institutions": [
+            "Universidad Aut\u00f3noma de Madrid",
+            "Lawrence Berkeley National Laboratory"
+          ]
+        },
+        {
+          "name": "Andrej Matevc",
+          "openalex_id": "A5071026441",
+          "institutions": [
+            "University of Ljubljana",
+            "Jo\u017eef Stefan Institute"
+          ]
+        },
+        {
+          "name": "Eric Metodiev",
+          "openalex_id": "A5106126327",
+          "orcid": "https://orcid.org/0000-0002-3995-5686"
+        },
+        {
+          "name": "V. M. Mikuni",
+          "openalex_id": "A5056875824",
+          "orcid": "https://orcid.org/0000-0002-1579-2421",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "I. Ochoa",
+          "openalex_id": "A5031988461",
+          "orcid": "https://orcid.org/0000-0001-6156-1790",
+          "institutions": [
+            "Ann Arbor Center for Independent Living"
+          ]
+        },
+        {
+          "name": "Sang Eon Park",
+          "openalex_id": "A5107368533",
+          "institutions": [
+            "LIP - Laboratory of Instrumentation and Experimental Particle Physics"
+          ]
+        },
+        {
+          "name": "M. Pierini",
+          "openalex_id": "A5106315352",
+          "orcid": "https://orcid.org/0000-0003-1939-4268"
+        },
+        {
+          "name": "Dylan Rankin",
+          "openalex_id": "A5061123351",
+          "orcid": "https://orcid.org/0000-0001-8411-9620",
+          "institutions": [
+            "European Organization for Nuclear Research"
+          ]
+        },
+        {
+          "name": "Veronica Sanz",
+          "openalex_id": "A5107397969"
+        },
+        {
+          "name": "Nilai Sarda",
+          "openalex_id": "A5108735863",
+          "institutions": [
+            "University of Sussex",
+            "Universitat de Val\u00e8ncia",
+            "Instituto de F\u00edsica Corpuscular"
+          ]
+        },
+        {
+          "name": "U. Seljak",
+          "openalex_id": "A5076415443",
+          "institutions": [
+            "Massachusetts Institute of Technology",
+            "Vassar College"
+          ]
+        },
+        {
+          "name": "Aleks Smolkovi\u010d",
+          "openalex_id": "A5074044253",
+          "orcid": "https://orcid.org/0000-0003-0798-9512",
+          "institutions": [
+            "Lawrence Berkeley National Laboratory",
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "George Stein",
+          "openalex_id": "A5107909399",
+          "institutions": [
+            "Jo\u017eef Stefan Institute"
+          ]
+        },
+        {
+          "name": "Cristina Mantilla Suarez",
+          "openalex_id": "A5107415166",
+          "institutions": [
+            "University of California, Berkeley",
+            "Lawrence Berkeley National Laboratory"
+          ]
+        },
+        {
+          "name": "Manuel Szewc",
+          "openalex_id": "A5074434148",
+          "orcid": "https://orcid.org/0000-0002-3014-5388",
+          "institutions": [
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Jesse Thaler",
+          "openalex_id": "A5051781797",
+          "orcid": "https://orcid.org/0000-0002-2406-8160",
+          "institutions": [
+            "International Center for Advanced Studies",
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas",
+            "National University of General San Mart\u00edn"
+          ]
+        },
+        {
+          "name": "Steven Tsan",
+          "openalex_id": "A5112744138"
+        },
+        {
+          "name": "Silviu\u2010Marian Udrescu",
+          "openalex_id": "A5026203889",
+          "orcid": "https://orcid.org/0000-0002-1989-576X",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Louis Vaslin",
+          "openalex_id": "A5107937044"
+        },
+        {
+          "name": "Jean-Roch Vlimant",
+          "openalex_id": "A5114031387",
+          "institutions": [
+            "Universit\u00e9 Clermont Auvergne"
+          ]
+        },
+        {
+          "name": "D. M. Williams",
+          "openalex_id": "A5103622248",
+          "orcid": "https://orcid.org/0000-0002-5646-1856",
+          "institutions": [
+            "California Institute of Technology"
+          ]
+        },
+        {
+          "name": "Mikaeel Yunus",
+          "openalex_id": "A5049113660",
+          "orcid": "https://orcid.org/0000-0002-9851-2850",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Mikaeel Yunus",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-04",
+      "abstract": "Abstract A new paradigm for data-driven, model-agnostic new physics searches at colliders is emerging, and aims to leverage recent breakthroughs in anomaly detection and machine learning. In order to develop and benchmark new anomaly detection methods within this framework, it is essential to have standard datasets. To this end, we have created the LHC Olympics 2020, a community challenge accompanied by a set of simulated collider events. Participants in these Olympics have developed their methods using an R&amp;D dataset and then tested them on black boxes: datasets with an unknown anomaly (or not). Methods made use of modern machine learning tools and were based on unsupervised learning (autoencoders, generative adversarial networks, normalizing flows), weakly supervised learning, and semi-supervised learning. This paper will review the LHC Olympics 2020 challenge, including an overview of the competition, a description of methods deployed in the competition, lessons learned from the experience, and implications for data analyses with future datasets as well as future colliders.",
+      "cited_by_count": 37,
+      "type": "preprint",
+      "source": {
+        "name": "Reports on Progress in Physics",
+        "type": "journal",
+        "issn": [
+          "0034-4885",
+          "1361-6633"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://iopscience.iop.org/article/10.1088/1361-6633/ac36b9/pdf"
+      },
+      "topics": [
+        "Particle physics theoretical and experimental studies",
+        "Anomaly Detection Techniques and Applications",
+        "Computational Physics and Python Applications"
+      ],
+      "referenced_works_count": 203,
+      "url": "https://openalex.org/W3123827117"
+    },
+    {
+      "openalex_id": "W3158598208",
+      "doi": "10.1155/2021/5578335",
+      "title": "A Black-Box Attack Method against Machine-Learning-Based Anomaly Network Flow Detection Models",
+      "authors": [
+        {
+          "name": "Sensen Guo",
+          "openalex_id": "A5047817100",
+          "orcid": "https://orcid.org/0000-0001-9340-1521",
+          "institutions": [
+            "Northwestern Polytechnical University"
+          ]
+        },
+        {
+          "name": "Jinxiong Zhao",
+          "openalex_id": "A5020695223",
+          "orcid": "https://orcid.org/0000-0003-0189-4926",
+          "institutions": [
+            "Northwestern Polytechnical University"
+          ]
+        },
+        {
+          "name": "Xiaoyu Li",
+          "openalex_id": "A5100449169",
+          "orcid": "https://orcid.org/0000-0003-0286-6660",
+          "institutions": [
+            "Northwestern Polytechnical University"
+          ]
+        },
+        {
+          "name": "Junhong Duan",
+          "openalex_id": "A5101573491",
+          "orcid": "https://orcid.org/0000-0002-2956-8631",
+          "institutions": [
+            "Northwestern Polytechnical University"
+          ]
+        },
+        {
+          "name": "Dejun Mu",
+          "openalex_id": "A5025654910",
+          "orcid": "https://orcid.org/0000-0001-6792-9437",
+          "institutions": [
+            "Northwestern Polytechnical University"
+          ]
+        },
+        {
+          "name": "Xiao Jing",
+          "openalex_id": "A5028829568",
+          "orcid": "https://orcid.org/0000-0001-6825-9113",
+          "institutions": [
+            "Northwestern Polytechnical University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-23",
+      "abstract": "In recent years, machine learning has made tremendous progress in the fields of computer vision, natural language processing, and cybersecurity; however, we cannot ignore that machine learning models are vulnerable to adversarial examples, with some minor malicious input modifications, while appearing unmodified to human observers, the outputs of machine learning-based model can be misled easily. Likewise, attackers can bypass machine-learning-based security defenses model to attack systems in real time by generating adversarial examples. In this paper, we propose a black-box attack method against machine-learning-based anomaly network flow detection algorithms. Our attack strategy consists in training another model to substitute for the target machine learning model. Based on the overall understanding of the substitute model and the migration of the adversarial examples, we use the substitute model to craft adversarial examples. The experiment has shown that our method can attack the target model effectively. We attack several kinds of network flow detection models, which are based on different kinds of machine learning methods, and we find that the adversarial examples crafted by our method can bypass the detection of the target model with high probability.",
+      "cited_by_count": 28,
+      "type": "article",
+      "source": {
+        "name": "Security and Communication Networks",
+        "type": "journal",
+        "issn": [
+          "1939-0114",
+          "1939-0122"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://downloads.hindawi.com/journals/scn/2021/5578335.pdf"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Network Security and Intrusion Detection",
+        "Advanced Malware Detection Techniques"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W3158598208"
+    },
+    {
+      "openalex_id": "W4307592886",
+      "doi": "10.1016/j.net.2022.10.032",
+      "title": "Using artificial intelligence to detect human errors in nuclear power plants: A case in operation and maintenance",
+      "authors": [
+        {
+          "name": "Ezgi Gursel",
+          "openalex_id": "A5090232903",
+          "institutions": [
+            "University of Tennessee at Knoxville"
+          ]
+        },
+        {
+          "name": "Bhavya Reddy",
+          "openalex_id": "A5111075911",
+          "institutions": [
+            "San Jose State University"
+          ]
+        },
+        {
+          "name": "Anahita Khojandi",
+          "openalex_id": "A5005681030",
+          "orcid": "https://orcid.org/0000-0001-6818-2048",
+          "institutions": [
+            "University of Tennessee at Knoxville"
+          ]
+        },
+        {
+          "name": "Mahboubeh Madadi",
+          "openalex_id": "A5053947277",
+          "orcid": "https://orcid.org/0000-0002-2787-722X",
+          "institutions": [
+            "San Jose State University"
+          ]
+        },
+        {
+          "name": "Jamie Coble",
+          "openalex_id": "A5046190227",
+          "orcid": "https://orcid.org/0000-0002-0736-673X",
+          "institutions": [
+            "University of Tennessee at Knoxville"
+          ]
+        },
+        {
+          "name": "Vivek Agarwal",
+          "openalex_id": "A5014550024",
+          "orcid": "https://orcid.org/0000-0003-1334-0509",
+          "institutions": [
+            "Idaho National Laboratory"
+          ]
+        },
+        {
+          "name": "Vaibhav Yadav",
+          "openalex_id": "A5044892385",
+          "orcid": "https://orcid.org/0000-0002-4450-4345",
+          "institutions": [
+            "Idaho National Laboratory"
+          ]
+        },
+        {
+          "name": "Ronald L. Boring",
+          "openalex_id": "A5081395313",
+          "orcid": "https://orcid.org/0000-0001-5460-9610",
+          "institutions": [
+            "Idaho National Laboratory"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-29",
+      "abstract": null,
+      "cited_by_count": 39,
+      "type": "article",
+      "source": {
+        "name": "Nuclear Engineering and Technology",
+        "type": "journal",
+        "issn": [
+          "1738-5733",
+          "2234-358X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.sciencedirect.com/science/article/am/pii/S1738573322005137?via%3Dihub"
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Fault Detection and Control Systems",
+        "Machine Fault Diagnosis Techniques"
+      ],
+      "referenced_works_count": 79,
+      "url": "https://openalex.org/W4307592886"
+    },
+    {
+      "openalex_id": "W4396652590",
+      "doi": "10.53022/oarjst.2024.11.1.0060",
+      "title": "Harnessing adversarial machine learning for advanced threat detection: AI-driven strategies in cybersecurity risk assessment and fraud prevention",
+      "authors": [
+        {
+          "name": "Onuh Matthew Ijiga",
+          "openalex_id": "A5093718336"
+        },
+        {
+          "name": "Idoko Peter Idoko",
+          "openalex_id": "A5093258474",
+          "institutions": [
+            "University of Ibadan"
+          ]
+        },
+        {
+          "name": "Godslove Isenyo Ebiega",
+          "openalex_id": "A5094357641",
+          "orcid": "https://orcid.org/0009-0001-6927-0645"
+        },
+        {
+          "name": "Frederick Itunu Olajide",
+          "openalex_id": "A5104328800"
+        },
+        {
+          "name": "Timilehin Isaiah Olatunde",
+          "openalex_id": "A5094293691"
+        },
+        {
+          "name": "Chukwunonso Ukaegbu",
+          "openalex_id": "A5095924800"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-05-05",
+      "abstract": "The abstract is \"The rapid evolution of cyber threats necessitates innovative defenses, particularly in the domains of risk assessment and fraud detection. This paper explores the integration of Artificial Intelligence (AI) and Adversarial Machine Learning (ML) techniques as a formidable strategy against increasingly sophisticated cyber-attacks. We present a comprehensive framework that leverages AI to dynamically assess cybersecurity risks and detect fraudulent activities with unprecedented accuracy and speed. Firstly, we delve into the foundational principles of adversarial machine learning, outlining how these techniques can be employed to simulate potential cyber threats, thereby enabling the development of more resilient AI-driven cybersecurity systems. We highlight the dual role of adversarial ML in both enhancing security defenses and potentially serving as a vector for sophisticated attacks, underscoring the importance of developing robust, adversarial-resistant models. Subsequently, we introduce a novel adaptive risk assessment methodology that incorporates real-time data analysis, machine learning algorithms, and predictive modeling to accurately identify and prioritize threats. This method adapts to the evolving digital landscape, ensuring that cybersecurity measures are always one step ahead of potential attackers. In the context of fraud detection, we explore -how AI algorithms can sift through vast datasets to detect anomalies and patterns indicative of fraudulent behavior. Through case studies and empirical analysis, we demonstrate the effectiveness of AI in identifying fraud across various sectors, from financial transactions to online identity verification processes. Our research contributes to the cybersecurity field by providing a detailed examination of how AI and adversarial ML can be harnessed to fortify digital defenses, improve risk assessment techniques, and enhance fraud detection capabilities. The insights garnered from this study not only advance theoretical understanding but also offer practical guidance for organizations seeking to implement AI-driven security solutions. As cyber threats continue to evolve, the integration of AI and adversarial ML in cybersecurity strategies will be paramount in safeguarding digital assets and maintaining the integrity of online systems.\"",
+      "cited_by_count": 55,
+      "type": "article",
+      "source": {
+        "name": "Open Access Research Journal of Science and Technology",
+        "type": "journal",
+        "issn": [
+          "2782-9960"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://oarjst.com/sites/default/files/OARJST-2024-0060.pdf"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Advanced Malware Detection Techniques",
+        "Network Security and Intrusion Detection"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W4396652590"
+    },
+    {
+      "openalex_id": "W4387088927",
+      "doi": "10.1109/dcoss-iot58021.2023.00077",
+      "title": "The Threat of Adversarial Attacks Against Machine Learning-based Anomaly Detection Approach in a Clean Water Treatment System",
+      "authors": [
+        {
+          "name": "Naghmeh Moradpoor",
+          "openalex_id": "A5082362331",
+          "orcid": "https://orcid.org/0000-0002-8709-2678",
+          "institutions": [
+            "Edinburgh Napier University"
+          ]
+        },
+        {
+          "name": "\u039b\u03ad\u03b1\u03bd\u03b4\u03c1\u03bf\u03c2 \u039c\u03b1\u03b3\u03bb\u03b1\u03c1\u03ac\u03c2",
+          "openalex_id": "A5029043022",
+          "orcid": "https://orcid.org/0000-0001-5360-9782",
+          "institutions": [
+            "Edinburgh Napier University"
+          ]
+        },
+        {
+          "name": "Ezra Abah",
+          "openalex_id": "A5089766897",
+          "institutions": [
+            "Edinburgh Napier University"
+          ]
+        },
+        {
+          "name": "Andres Robles-Durazno",
+          "openalex_id": "A5011158268",
+          "orcid": "https://orcid.org/0000-0002-8330-8312",
+          "institutions": [
+            "Edinburgh Napier University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-01",
+      "abstract": "The protection of Critical National Infrastructure is extremely important due to nations being dependent on their operation and steadiness. Any disturbance to this infrastructure could have a devastating consequence on physical security, economic wellbeing, and public health and safety. To deal with the growing number of attacks, with differing degrees of impact against such systems, various machine learning-based Intrusion Detection Systems have been employed given their success in the automated detection of known and unknown cyberattacks with high degrees of accuracy. However, since machine learning models are susceptible to attacks, also known as Adversarial Machine Learning, employing such Intrusion Detection Systems has also created an additional attack vector which could potentially help hackers to evade detection. This paper explores the robustness of both traditional and non-traditional supervised machine learning algorithms by studying their classification behaviour under adversarial attacks. This includes machine learning algorithms such as Support Vector Machine, Logistic Regression, and Deep Learning models, such as Artificial Neural Network. Additionally, this contains adversarial machine learning attacks such as random & targeted label flipping, Fast Gradient Sign Method, and Jacobian Saliency Map Attack. A genuine dataset captured from a model of a clean water treatment system was used to support the experiments presented in this paper. Overall, the adversarial attacks were successful to decrease the classification performance of the machine learning algorithms but with varying degrees of influence. For example, the targeted label flipping has a stronger impact on the classification performance reduction compared with the random label flipping attacks. Additionally, Deep Learning model and Support Vector Machine both show longer fight against the adversarial attacks compared with Logistic Regression.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Advanced Malware Detection Techniques",
+        "Network Security and Intrusion Detection"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W4387088927"
+    },
+    {
+      "openalex_id": "W4323360096",
+      "doi": "10.1117/1.jei.32.4.042106",
+      "title": "Anomaly behavior detection analysis in video surveillance: a critical review",
+      "authors": [
+        {
+          "name": "Sanjay Roka",
+          "openalex_id": "A5065889575",
+          "institutions": [
+            "Graphic Era University"
+          ]
+        },
+        {
+          "name": "Manoj Diwakar",
+          "openalex_id": "A5009046975",
+          "orcid": "https://orcid.org/0000-0002-4435-675X",
+          "institutions": [
+            "Graphic Era University"
+          ]
+        },
+        {
+          "name": "Prabhishek Singh",
+          "openalex_id": "A5031271088",
+          "orcid": "https://orcid.org/0000-0002-9338-0932",
+          "institutions": [
+            "Bennett University",
+            "Indian Institute of Information Technology Allahabad"
+          ]
+        },
+        {
+          "name": "Pragya Singh",
+          "openalex_id": "A5087993390",
+          "orcid": "https://orcid.org/0000-0002-8114-2785",
+          "institutions": [
+            "Bennett University",
+            "Indian Institute of Information Technology Allahabad"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-07",
+      "abstract": "Anomaly detection is one of the most researched topics in computer vision and machine learning. Manual detection of an oddity in a video costs significant time and money, so there is a need for an autonomous detection system that can analyze the process and detect the anomaly in the majority of captured video datasets. Through an in-depth study on the recently published works on anomaly detection, a review is prepared to highlight the various tasks performed in abnormal behavior detection. Descriptions along with the pros and cons of various machine-learning and non-machine-learning techniques are discussed in depth. Similarly, more concentration is given to the generation adversarial network (GAN), and a comprehensive description of its design for achieving a better abnormality detection rate is provided. Moreover, a comparison of various state-of-the-art approaches on the basis of their methodologies, advantages, and disadvantages is given. We further quantitatively analyze some of the recent robust approaches at the frame level on the UCSD Ped1 dataset, with the GAN-based model achieving an astonishing performance. We provide various suggestions on how to further increase the performance of GAN for abnormal behavior detection in surveillance videos.",
+      "cited_by_count": 29,
+      "type": "review",
+      "source": {
+        "name": "Journal of Electronic Imaging",
+        "type": "journal",
+        "issn": [
+          "1017-9909",
+          "1560-229X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.spiedigitallibrary.org/journals/journal-of-electronic-imaging/volume-32/issue-4/042106/Anomaly-behavior-detection-analysis-in-video-surveillance--a-critical/10.1117/1.JEI.32.4.042106.pdf"
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Network Security and Intrusion Detection",
+        "Human Pose and Action Recognition"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W4323360096"
+    },
+    {
+      "openalex_id": "W4226441780",
+      "doi": "10.1016/j.vehcom.2022.100520",
+      "title": "Detecting in-vehicle intrusion via semi-supervised learning-based convolutional adversarial autoencoders",
+      "authors": [
+        {
+          "name": "Thien-Nu Hoang",
+          "openalex_id": "A5081227079",
+          "institutions": [
+            "Soonchunhyang University"
+          ]
+        },
+        {
+          "name": "Daehee Kim",
+          "openalex_id": "A5100383808",
+          "orcid": "https://orcid.org/0000-0002-0816-8137",
+          "institutions": [
+            "Soonchunhyang University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-05",
+      "abstract": "With the development of autonomous vehicle technology, the controller area network (CAN) bus has become the de facto standard for an in-vehicle communication system because of its simplicity and efficiency. However, without any encryption and authentication mechanisms, the in-vehicle network using the CAN protocol is susceptible to a wide range of attacks. Many studies, which are mostly based on machine learning, have proposed installing an intrusion detection system (IDS) for anomaly detection in the CAN bus system. Although machine learning methods have many advantages for IDS, previous models usually require a large amount of labeled data, which results in high time and labor costs. To handle this problem, we propose a novel semi-supervised learning-based convolutional adversarial autoencoder model in this paper. The proposed model combines two popular deep learning models: autoencoder and generative adversarial networks. First, the model is trained with unlabeled data to learn the manifolds of normal and attack patterns. Then, only a small number of labeled samples are used in supervised training. The proposed model can detect various kinds of message injection attacks, such as DoS, fuzzy, and spoofing, as well as unknown attacks. The experimental results show that the proposed model achieves the highest F1 score of 0.9984 and a low error rate of 0.1% with limited labeled data compared to other supervised methods. In addition, we show that the model can meet the real-time requirement by analyzing the model complexity in terms of the number of trainable parameters and inference time. This study successfully reduced the number of model parameters by five times and the inference time by eight times, compared to a state-of-the-art model.",
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "Vehicular Communications",
+        "type": "journal",
+        "issn": [
+          "2214-2096",
+          "2214-210X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.vehcom.2022.100520"
+      },
+      "topics": [
+        "Vehicular Ad Hoc Networks (VANETs)",
+        "Autonomous Vehicle Technology and Safety",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W4226441780"
+    },
+    {
+      "openalex_id": "W4310465416",
+      "doi": "10.1109/tpami.2022.3225476",
+      "title": "Supervised Anomaly Detection via Conditional Generative Adversarial Network and Ensemble Active Learning",
+      "authors": [
+        {
+          "name": "Zhi Chen",
+          "openalex_id": "A5017769599",
+          "institutions": [
+            "Southwestern University of Finance and Economics"
+          ]
+        },
+        {
+          "name": "Jiang Duan",
+          "openalex_id": "A5101518907",
+          "orcid": "https://orcid.org/0000-0002-8573-311X",
+          "institutions": [
+            "Southwestern University of Finance and Economics"
+          ]
+        },
+        {
+          "name": "Kang Li",
+          "openalex_id": "A5054900543",
+          "orcid": "https://orcid.org/0000-0001-6178-8549",
+          "institutions": [
+            "Southwestern University of Finance and Economics"
+          ]
+        },
+        {
+          "name": "Guoping Qiu",
+          "openalex_id": "A5114259459",
+          "orcid": "https://orcid.org/0000-0002-5877-5648",
+          "institutions": [
+            "Shenzhen University",
+            "University of Nottingham"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-29",
+      "abstract": "Anomaly detection has wide applications in machine intelligence but is still a difficult unsolved problem. Major challenges include the rarity of labeled anomalies and it is a class highly imbalanced problem. Traditional unsupervised anomaly detectors are suboptimal while supervised models can easily make biased predictions towards normal data. In this paper, we present a new supervised anomaly detector through introducing the novel Ensemble Active Learning Generative Adversarial Network (EAL-GAN). EAL-GAN is a conditional GAN having a unique one generator versus multiple discriminators architecture where anomaly detection is implemented by an auxiliary classifier of the discriminator. In addition to using the conditional GAN to generate class balanced supplementary training data, an innovative ensemble learning loss function ensuring each discriminator makes up for the deficiencies of the others is designed to overcome the class imbalanced problem, and an active learning algorithm is introduced to significantly reduce the cost of labeling real-world data. We present extensive experimental results to demonstrate that the new anomaly detector consistently outperforms a variety of SOTA methods by significant margins.",
+      "cited_by_count": 46,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "type": "journal",
+        "issn": [
+          "0162-8828",
+          "1939-3539",
+          "2160-9292"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Network Security and Intrusion Detection",
+        "Advanced Malware Detection Techniques"
+      ],
+      "referenced_works_count": 99,
+      "url": "https://openalex.org/W4310465416"
+    },
+    {
+      "openalex_id": "W3196420684",
+      "doi": "10.1109/tie.2021.3108719",
+      "title": "A One-Class Generative Adversarial Detection Framework for Multifunctional Fault Diagnoses",
+      "authors": [
+        {
+          "name": "Ziqiang Pu",
+          "openalex_id": "A5083455297",
+          "orcid": "https://orcid.org/0000-0001-8186-8239",
+          "institutions": [
+            "Zhengzhou University of Light Industry"
+          ]
+        },
+        {
+          "name": "Diego Cabrera",
+          "openalex_id": "A5014768814",
+          "orcid": "https://orcid.org/0000-0003-1023-871X",
+          "institutions": [
+            "Politecnica Salesiana University"
+          ]
+        },
+        {
+          "name": "Yun Bai",
+          "openalex_id": "A5010243176",
+          "orcid": "https://orcid.org/0000-0003-2710-7994",
+          "institutions": [
+            "University of Algarve"
+          ]
+        },
+        {
+          "name": "Chuan Li",
+          "openalex_id": "A5100404427",
+          "orcid": "https://orcid.org/0000-0003-0004-1497",
+          "institutions": [
+            "Chongqing Technology and Business University",
+            "Zhengzhou University of Light Industry"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-03",
+      "abstract": "In this article, fault diagnosis is of great significance for system health maintenance. For real applications, diagnosis accuracy suffers from unbalanced data patterns, where normal data are usually abundant than anomaly ones, leading to tremendous diagnosis obstacles. Therefore, it is challenging to use only normal data for fault diagnosis under this imbalanced condition. In addition, a single fault diagnosis model can only conduct one fault diagnosis task in most of cases. Accordingly, a one-class generative adversarial detection (OCGAD) framework based on semisupervised learning is proposed to learn one-class latent knowledge for dealing with multiple semisupervised fault diagnosis tasks, i.e., fault detection using only normal knowledge learning, novelty detection from unknown conditional data, and fault classification with unlabeled data. A bi-directional generative adversarial network (Bi-GAN) is first trained with only normal data. A one-class support vector machine is then established using features exacted by Bi-GAN from signals acquired from an attitude sensor for multifunctional fault detection. The presented OCGAD model is validated using an industrial robot with experiments of three fault detection tasks. The results demonstrate that the present model has good performance for dealing with multiple semisupervised diagnosis problems.",
+      "cited_by_count": 51,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Industrial Electronics",
+        "type": "journal",
+        "issn": [
+          "0278-0046",
+          "1557-9948"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Fault Detection and Control Systems",
+        "Machine Fault Diagnosis Techniques"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W3196420684"
+    },
+    {
+      "openalex_id": "W3135028703",
+      "doi": "10.1007/s42979-021-00592-x",
+      "title": "Machine Learning: Algorithms, Real-World Applications and Research Directions",
+      "authors": [
+        {
+          "name": "Iqbal H. Sarker",
+          "openalex_id": "A5055312229",
+          "orcid": "https://orcid.org/0000-0003-1740-5517",
+          "institutions": [
+            "Swinburne University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-22",
+      "abstract": null,
+      "cited_by_count": 4586,
+      "type": "review",
+      "source": {
+        "name": "SN Computer Science",
+        "type": "journal",
+        "issn": [
+          "2661-8907",
+          "2662-995X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s42979-021-00592-x.pdf"
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Traffic Prediction and Management Techniques",
+        "Data Stream Mining Techniques"
+      ],
+      "referenced_works_count": 160,
+      "url": "https://openalex.org/W3135028703"
+    },
+    {
+      "openalex_id": "W4311457728",
+      "doi": "10.1016/j.ese.2022.100231",
+      "title": "Generative adversarial networks for detecting contamination events in water distribution systems using multi-parameter, multi-site water quality monitoring",
+      "authors": [
+        {
+          "name": "Zilin Li",
+          "openalex_id": "A5100445636",
+          "orcid": "https://orcid.org/0000-0001-8291-4364",
+          "institutions": [
+            "University of Exeter",
+            "Dalian University of Technology"
+          ]
+        },
+        {
+          "name": "Haixing Liu",
+          "openalex_id": "A5070422277",
+          "institutions": [
+            "Dalian University of Technology"
+          ]
+        },
+        {
+          "name": "Chi Zhang",
+          "openalex_id": "A5100458169",
+          "orcid": "https://orcid.org/0000-0002-2995-7469",
+          "institutions": [
+            "Dalian University of Technology"
+          ]
+        },
+        {
+          "name": "Guangtao Fu",
+          "openalex_id": "A5101588482",
+          "orcid": "https://orcid.org/0000-0003-1045-9125",
+          "institutions": [
+            "University of Exeter"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-09",
+      "abstract": null,
+      "cited_by_count": 70,
+      "type": "article",
+      "source": {
+        "name": "Environmental Science and Ecotechnology",
+        "type": "journal",
+        "issn": [
+          "2096-9643",
+          "2666-4984"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.ese.2022.100231"
+      },
+      "topics": [
+        "Water Systems and Optimization",
+        "Water Quality Monitoring Technologies",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W4311457728"
+    },
+    {
+      "openalex_id": "W4372260191",
+      "doi": "10.1109/icassp49357.2023.10096813",
+      "title": "Unsupervised Anomaly Detection and Localization of Machine Audio: A Gan-Based Approach",
+      "authors": [
+        {
+          "name": "Anbai Jiang",
+          "openalex_id": "A5032861798",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Wei-Qiang Zhang",
+          "openalex_id": "A5100692904",
+          "orcid": "https://orcid.org/0000-0003-3841-1959",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Yufeng Deng",
+          "openalex_id": "A5101521826",
+          "orcid": "https://orcid.org/0000-0003-3975-9922",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Pingyi Fan",
+          "openalex_id": "A5079233004",
+          "orcid": "https://orcid.org/0000-0002-0658-6079",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Jia Liu",
+          "openalex_id": "A5100409741",
+          "orcid": "https://orcid.org/0000-0003-0383-0934",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-05",
+      "abstract": "Automatic detection of machine anomaly remains challenging for machine learning. We believe the capability of generative adversarial network (GAN) suits the need of machine audio anomaly detection, yet rarely has this been investigated by previous work. In this paper, we propose AEGAN-AD, a totally unsupervised approach in which the generator (also an autoencoder) is trained to reconstruct input spectrograms. It is pointed out that the denoising nature of reconstruction deprecates its capacity. Thus, the discriminator is redesigned to aid the generator during both training stage and detection stage. The performance of AEGAN-AD on the dataset of DCASE 2022 Challenge TASK 2 demonstrates the state-of-the-art result on five machine types. A novel anomaly localization method is also investigated. Source code available at: www.github.com/jianganbai/AEGAN-AD",
+      "cited_by_count": 33,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Music and Audio Processing",
+        "Water Systems and Optimization"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W4372260191"
+    },
+    {
+      "openalex_id": "W4386065314",
+      "doi": "10.1109/access.2023.3307463",
+      "title": "Anomaly-Based Intrusion on IoT Networks Using AIGAN-a Generative Adversarial Network",
+      "authors": [
+        {
+          "name": "Zhipeng Liu",
+          "openalex_id": "A5103086333",
+          "orcid": "https://orcid.org/0000-0002-5453-0213",
+          "institutions": [
+            "Fidelity Investments (United States)"
+          ]
+        },
+        {
+          "name": "Junyi Hu",
+          "openalex_id": "A5100326920",
+          "orcid": "https://orcid.org/0000-0001-8524-0123",
+          "institutions": [
+            "University of Massachusetts Lowell"
+          ]
+        },
+        {
+          "name": "Yang Liu",
+          "openalex_id": "A5100355887",
+          "orcid": "https://orcid.org/0000-0002-4307-9738",
+          "institutions": [
+            "North Carolina Agricultural and Technical State University"
+          ]
+        },
+        {
+          "name": "Kaushik Roy",
+          "openalex_id": "A5070531407",
+          "orcid": "https://orcid.org/0000-0002-9026-5322",
+          "institutions": [
+            "North Carolina Agricultural and Technical State University"
+          ]
+        },
+        {
+          "name": "Xiaohong Yuan",
+          "openalex_id": "A5078766422",
+          "orcid": "https://orcid.org/0000-0002-1295-9812",
+          "institutions": [
+            "North Carolina Agricultural and Technical State University"
+          ]
+        },
+        {
+          "name": "Jinsheng Xu",
+          "openalex_id": "A5100949006",
+          "institutions": [
+            "North Carolina Agricultural and Technical State University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Adversarial attacks have threatened the credibility of machine learning models and cast doubts over the integrity of data. The attacks have created much harm in the fields of computer vision, and natural language processing. In this paper, we focus on the adversarial attack, in particular the poisoning attack, against the network intrusion detection system (NIDS), which is often viewed as the first line of defense against cyber threats. We develop a generative adversarial network (GAN) in AIGAN, which uses deep learning techniques to generate adversarial data and to conduct an anomaly attack on IoT networks. To evaluate the effectiveness of our generator, we measure the similarities between real and fake data using the Jaccard similarity index, in addition comparing the F1-scores from four generic algorithms: multilayer perception, logistic regression, decision tree, random forest. We contrast the performance of ten machine learning classifiers experimented on two real IoT datasets and their fake adversarial samples. Our work highlights a vulnerable side of NIDS created by machine learning when attacked with adversarial perturbation.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10226215.pdf"
+      },
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Network Security and Intrusion Detection",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W4386065314"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

@@ -1,0 +1,2310 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "AI safety evaluation benchmark",
+  "results": [
+    {
+      "paperId": "680aeb24d20a4f2d10e45b9aa7f37b9a19a0e394",
+      "title": "USB: A Comprehensive and Unified Safety Evaluation Benchmark for Multimodal Large Language Models",
+      "authors": [
+        {
+          "name": "Baolin Zheng",
+          "authorId": "2365383384"
+        },
+        {
+          "name": "Guanlin Chen",
+          "authorId": "2364897246"
+        },
+        {
+          "name": "Hongqiong Zhong",
+          "authorId": "2365440488"
+        },
+        {
+          "name": "Qingyang Teng",
+          "authorId": "2133359322"
+        },
+        {
+          "name": "Yingshui Tan",
+          "authorId": "2331379670"
+        },
+        {
+          "name": "Liu Zhendong",
+          "authorId": "2171440524"
+        },
+        {
+          "name": "Weixun Wang",
+          "authorId": "2327902406"
+        },
+        {
+          "name": "Jiaheng Liu",
+          "authorId": "2284731877"
+        },
+        {
+          "name": "Jian Yang",
+          "authorId": "2364003010"
+        },
+        {
+          "name": "Huiyun Jing",
+          "authorId": "2336730848"
+        },
+        {
+          "name": "Jincheng Wei",
+          "authorId": "2336950242"
+        },
+        {
+          "name": "Wenbo Su",
+          "authorId": "2279560018"
+        },
+        {
+          "name": "Xiaoyong Zhu",
+          "authorId": "2302875455"
+        },
+        {
+          "name": "Bo Zheng",
+          "authorId": "2302806377"
+        },
+        {
+          "name": "Kaifu Zhang",
+          "authorId": "2336957653"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Despite their remarkable achievements and widespread adoption, Multimodal Large Language Models (MLLMs) have revealed significant security vulnerabilities, highlighting the urgent need for robust safety evaluation benchmarks. Existing MLLM safety benchmarks, however, fall short in terms of data quality and coverge, and modal risk combinations, resulting in inflated and contradictory evaluation results, which hinders the discovery and governance of security concerns. Besides, we argue that vulnerabilities to harmful queries and oversensitivity to harmless ones should be considered simultaneously in MLLMs safety evaluation, whereas these were previously considered separately. In this paper, to address these shortcomings, we introduce Unified Safety Benchmarks (USB), which is one of the most comprehensive evaluation benchmarks in MLLM safety. Our benchmark features high-quality queries, extensive risk categories, comprehensive modal combinations, and encompasses both vulnerability and oversensitivity evaluations. From the perspective of two key dimensions: risk categories and modality combinations, we demonstrate that the available benchmarks -- even the union of the vast majority of them -- are far from being truly comprehensive. To bridge this gap, we design a sophisticated data synthesis pipeline that generates extensive, high-quality complementary data addressing previously unexplored aspects. By combining open-source datasets with our synthetic data, our benchmark provides 4 distinct modality combinations for each of the 61 risk sub-categories, covering both English and Chinese across both vulnerability and oversensitivity dimensions.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2505.23793",
+      "arxivId": "2505.23793",
+      "url": "https://www.semanticscholar.org/paper/680aeb24d20a4f2d10e45b9aa7f37b9a19a0e394",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.23793"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "be87b8d00ee60927e2de2b2f3ab79e41750bb516",
+      "title": "VLSU: Mapping the Limits of Joint Multimodal Understanding for AI Safety",
+      "authors": [
+        {
+          "name": "Shruti Palaskar",
+          "authorId": "2306781707"
+        },
+        {
+          "name": "Leon Gatys",
+          "authorId": "2386818254"
+        },
+        {
+          "name": "Mona Abdelrahman",
+          "authorId": "2386817215"
+        },
+        {
+          "name": "Mar Jacobo",
+          "authorId": "2386816501"
+        },
+        {
+          "name": "Larry Lindsey",
+          "authorId": "2386818496"
+        },
+        {
+          "name": "Rutika Moharir",
+          "authorId": "2077592767"
+        },
+        {
+          "name": "Gunnar Lund",
+          "authorId": "2386817269"
+        },
+        {
+          "name": "Yang Xu",
+          "authorId": "2386853408"
+        },
+        {
+          "name": "Navid Shiee",
+          "authorId": "2385566176"
+        },
+        {
+          "name": "Jeffrey Bigham",
+          "authorId": "2386817328"
+        },
+        {
+          "name": "Charlie Maalouf",
+          "authorId": "2313910276"
+        },
+        {
+          "name": "J. Y. Cheng",
+          "authorId": "2364823954"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Safety evaluation of multimodal foundation models often treats vision and language inputs separately, missing risks from joint interpretation where benign content becomes harmful in combination. Existing approaches also fail to distinguish clearly unsafe content from borderline cases, leading to problematic over-blocking or under-refusal of genuinely harmful content. We present Vision Language Safety Understanding (VLSU), a comprehensive framework to systematically evaluate multimodal safety through fine-grained severity classification and combinatorial analysis across 17 distinct safety patterns. Using a multi-stage pipeline with real-world images and human annotation, we construct a large-scale benchmark of 8,187 samples spanning 15 harm categories. Our evaluation of eleven state-of-the-art models reveals systematic joint understanding failures: while models achieve 90%-plus accuracy on clear unimodal safety signals, performance degrades substantially to 20-55% when joint image-text reasoning is required to determine the safety label. Most critically, 34% of errors in joint image-text safety classification occur despite correct classification of the individual modalities, further demonstrating absent compositional reasoning capabilities. Additionally, we find that models struggle to balance refusing unsafe content while still responding to borderline cases that deserve engagement. For example, we find that instruction framing can reduce the over-blocking rate on borderline content from 62.4% to 10.4% in Gemini-1.5, but only at the cost of under-refusing on unsafe content with refusal rate dropping from 90.8% to 53.9%. Overall, our framework exposes weaknesses in joint image-text understanding and alignment gaps in current models, and provides a critical test bed to enable the next milestones in research on robust vision-language safety.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.18214",
+      "arxivId": "2510.18214",
+      "url": "https://www.semanticscholar.org/paper/be87b8d00ee60927e2de2b2f3ab79e41750bb516",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.18214"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "349354e5886d566536bb30c11cf9c74bed458594",
+      "title": "Safety Evaluation of DeepSeek Models in Chinese Contexts",
+      "authors": [
+        {
+          "name": "Wenjing Zhang",
+          "authorId": "2298863422"
+        },
+        {
+          "name": "Xuejiao Lei",
+          "authorId": "2306966575"
+        },
+        {
+          "name": "Zhaoxiang Liu",
+          "authorId": "2292657641"
+        },
+        {
+          "name": "Ning Wang",
+          "authorId": "2308853745"
+        },
+        {
+          "name": "Zhenhong Long",
+          "authorId": "2345816011"
+        },
+        {
+          "name": "Peijun Yang",
+          "authorId": "2345984737"
+        },
+        {
+          "name": "Jiaojiao Zhao",
+          "authorId": "2345874673"
+        },
+        {
+          "name": "Minjie Hua",
+          "authorId": "31698884"
+        },
+        {
+          "name": "Chaoyang Ma",
+          "authorId": "2345823846"
+        },
+        {
+          "name": "Kai Wang",
+          "authorId": "2307181856"
+        },
+        {
+          "name": "Shiguo Lian",
+          "authorId": "2292613998"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recently, the DeepSeek series of models, leveraging their exceptional reasoning capabilities and open-source strategy, is reshaping the global AI landscape. Despite these advantages, they exhibit significant safety deficiencies. Research conducted by Robust Intelligence, a subsidiary of Cisco, in collaboration with the University of Pennsylvania, revealed that DeepSeek-R1 has a 100\\% attack success rate when processing harmful prompts. Additionally, multiple safety companies and research institutions have confirmed critical safety vulnerabilities in this model. As models demonstrating robust performance in Chinese and English, DeepSeek models require equally crucial safety assessments in both language contexts. However, current research has predominantly focused on safety evaluations in English environments, leaving a gap in comprehensive assessments of their safety performance in Chinese contexts. In response to this gap, this study introduces CHiSafetyBench, a Chinese-specific safety evaluation benchmark. This benchmark systematically evaluates the safety of DeepSeek-R1 and DeepSeek-V3 in Chinese contexts, revealing their performance across safety categories. The experimental results quantify the deficiencies of these two models in Chinese contexts, providing key insights for subsequent improvements. It should be noted that, despite our efforts to establish a comprehensive, objective, and authoritative evaluation benchmark, the selection of test samples, characteristics of data distribution, and the setting of evaluation criteria may inevitably introduce certain biases into the evaluation results. We will continuously optimize the evaluation benchmark and periodically update this report to provide more comprehensive and accurate assessment outcomes. Please refer to the latest version of the paper for the most recent evaluation results and conclusions.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2502.11137",
+      "arxivId": "2502.11137",
+      "url": "https://www.semanticscholar.org/paper/349354e5886d566536bb30c11cf9c74bed458594",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.11137"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "86f28b118d3565922d94f108581e7aa965d3c639",
+      "title": "AILuminate: Introducing v1.0 of the AI Risk and Reliability Benchmark from MLCommons",
+      "authors": [
+        {
+          "name": "Shaona Ghosh",
+          "authorId": "2295566726"
+        },
+        {
+          "name": "Heather Frase",
+          "authorId": "2238786311"
+        },
+        {
+          "name": "Adina Williams",
+          "authorId": "2297757196"
+        },
+        {
+          "name": "Sarah Luger",
+          "authorId": "2349386708"
+        },
+        {
+          "name": "Paul R\u00f6ttger",
+          "authorId": "2043232919"
+        },
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        },
+        {
+          "name": "Sean McGregor",
+          "authorId": "2297187225"
+        },
+        {
+          "name": "Kenneth Fricklas",
+          "authorId": "2349386120"
+        },
+        {
+          "name": "Mala Kumar",
+          "authorId": "2349370948"
+        },
+        {
+          "name": "Quentin Feuillade--Montixi",
+          "authorId": "2265579794"
+        },
+        {
+          "name": "Kurt Bollacker",
+          "authorId": "2318751560"
+        },
+        {
+          "name": "Felix Friedrich",
+          "authorId": "2055616945"
+        },
+        {
+          "name": "Ryan Tsang",
+          "authorId": "2349386044"
+        },
+        {
+          "name": "Bertie Vidgen",
+          "authorId": "2737827"
+        },
+        {
+          "name": "Alicia Parrish",
+          "authorId": "2340683364"
+        },
+        {
+          "name": "Chris Knotz",
+          "authorId": "2297186980"
+        },
+        {
+          "name": "Eleonora Presani",
+          "authorId": "6072807"
+        },
+        {
+          "name": "Jonathan Bennion",
+          "authorId": "2349386890"
+        },
+        {
+          "name": "Marisa Ferrara Boston",
+          "authorId": "2498618"
+        },
+        {
+          "name": "Mike Kuniavsky",
+          "authorId": "2487645"
+        },
+        {
+          "name": "Wiebke Hutiri",
+          "authorId": "2297187154"
+        },
+        {
+          "name": "James Ezick",
+          "authorId": "2305680237"
+        },
+        {
+          "name": "Malek Ben Salem",
+          "authorId": "2294580990"
+        },
+        {
+          "name": "Rajat Sahay",
+          "authorId": "2258115297"
+        },
+        {
+          "name": "Sujata Goswami",
+          "authorId": "2297188541"
+        },
+        {
+          "name": "Usman Gohar",
+          "authorId": "1386345955"
+        },
+        {
+          "name": "Ben Huang",
+          "authorId": "2349744411"
+        },
+        {
+          "name": "Supheakmungkol Sarin",
+          "authorId": "2917123"
+        },
+        {
+          "name": "Elie Alhajjar",
+          "authorId": "102661476"
+        },
+        {
+          "name": "Canyu Chen",
+          "authorId": "2163546329"
+        },
+        {
+          "name": "Roman Eng",
+          "authorId": "2340684214"
+        },
+        {
+          "name": "Kashyap Ramanandula Manjusha",
+          "authorId": "2366744088"
+        },
+        {
+          "name": "Virendra Mehta",
+          "authorId": "2130578944"
+        },
+        {
+          "name": "Eileen Long",
+          "authorId": "2297188657"
+        },
+        {
+          "name": "M. Emani",
+          "authorId": "2157261"
+        },
+        {
+          "name": "Natan Vidra",
+          "authorId": "2279830757"
+        },
+        {
+          "name": "Benjamin Rukundo",
+          "authorId": "2293272231"
+        },
+        {
+          "name": "Abolfazl Shahbazi",
+          "authorId": "2297187191"
+        },
+        {
+          "name": "Kongtao Chen",
+          "authorId": "2219972652"
+        },
+        {
+          "name": "Rajat Ghosh",
+          "authorId": "2213553962"
+        },
+        {
+          "name": "Vithursan Thangarasa",
+          "authorId": "51153332"
+        },
+        {
+          "name": "Pierre Peign'e",
+          "authorId": "2349386782"
+        },
+        {
+          "name": "Abhinavkumar Singh",
+          "authorId": "9985822"
+        },
+        {
+          "name": "Max Bartolo",
+          "authorId": "2267728360"
+        },
+        {
+          "name": "Satyapriya Krishna",
+          "authorId": "2143841730"
+        },
+        {
+          "name": "Mubashara Akhtar",
+          "authorId": "2265589650"
+        },
+        {
+          "name": "Rafael Gold",
+          "authorId": "2349386386"
+        },
+        {
+          "name": "C. Coleman",
+          "authorId": "2091029496"
+        },
+        {
+          "name": "Luis Oala",
+          "authorId": "2284772762"
+        },
+        {
+          "name": "Vassil Tashev",
+          "authorId": "2325908582"
+        },
+        {
+          "name": "Joseph Marvin Imperial",
+          "authorId": "151472158"
+        },
+        {
+          "name": "Amy Russ",
+          "authorId": "2349386047"
+        },
+        {
+          "name": "Sasidhar Kunapuli",
+          "authorId": "2328015530"
+        },
+        {
+          "name": "Nicolas Miailhe",
+          "authorId": "71701105"
+        },
+        {
+          "name": "Julien Delaunay",
+          "authorId": "2349386820"
+        },
+        {
+          "name": "Bhaktipriya Radharapu",
+          "authorId": "2219919981"
+        },
+        {
+          "name": "Rajat Shinde",
+          "authorId": "2293721930"
+        },
+        {
+          "name": "Tuesday",
+          "authorId": "2231466307"
+        },
+        {
+          "name": "Debojyoti Dutta",
+          "authorId": "2267726934"
+        },
+        {
+          "name": "Declan Grabb",
+          "authorId": "100664563"
+        },
+        {
+          "name": "Ananya Gangavarapu",
+          "authorId": "1972481155"
+        },
+        {
+          "name": "Saurav Sahay",
+          "authorId": "38531701"
+        },
+        {
+          "name": "Agasthya Gangavarapu",
+          "authorId": "2199260209"
+        },
+        {
+          "name": "P. Schramowski",
+          "authorId": "40896023"
+        },
+        {
+          "name": "Stephen Singam",
+          "authorId": "2349386814"
+        },
+        {
+          "name": "Tom David",
+          "authorId": "2349364458"
+        },
+        {
+          "name": "Xudong Han",
+          "authorId": "2349421919"
+        },
+        {
+          "name": "P. Mammen",
+          "authorId": "46213894"
+        },
+        {
+          "name": "Tarunima Prabhakar",
+          "authorId": "2349386804"
+        },
+        {
+          "name": "Venelin Kovatchev",
+          "authorId": "3455255"
+        },
+        {
+          "name": "Ahmed M. Ahmed",
+          "authorId": "2297807964"
+        },
+        {
+          "name": "Kelvin N. Manyeki",
+          "authorId": "2297187982"
+        },
+        {
+          "name": "Sandeep Madireddy",
+          "authorId": "2282048665"
+        },
+        {
+          "name": "Foutse Khomh",
+          "authorId": "1703493"
+        },
+        {
+          "name": "Fedor Zhdanov",
+          "authorId": "2297188641"
+        },
+        {
+          "name": "Joachim Baumann",
+          "authorId": "2349386344"
+        },
+        {
+          "name": "N. Vasan",
+          "authorId": "2346972058"
+        },
+        {
+          "name": "Xianjun Yang",
+          "authorId": "2347164329"
+        },
+        {
+          "name": "Carlos Mougn",
+          "authorId": "2349386758"
+        },
+        {
+          "name": "J. Varghese",
+          "authorId": "145853825"
+        },
+        {
+          "name": "Hussain Chinoy",
+          "authorId": "2077382646"
+        },
+        {
+          "name": "Seshakrishna Jitendar",
+          "authorId": "2349386774"
+        },
+        {
+          "name": "M. Maskey",
+          "authorId": "1742090"
+        },
+        {
+          "name": "C. Hardgrove",
+          "authorId": "2257262111"
+        },
+        {
+          "name": "Tianhao Li",
+          "authorId": "2349536126"
+        },
+        {
+          "name": "Aakash Gupta",
+          "authorId": "2349392501"
+        },
+        {
+          "name": "Emil Joswin",
+          "authorId": "1383227962"
+        },
+        {
+          "name": "Yifan Mai",
+          "authorId": "2054708905"
+        },
+        {
+          "name": "Shachi H. Kumar",
+          "authorId": "2109680564"
+        },
+        {
+          "name": "\u00c7igdem Patlak",
+          "authorId": "3259057"
+        },
+        {
+          "name": "Kevin Lu",
+          "authorId": "2350320490"
+        },
+        {
+          "name": "Vincent Alessi",
+          "authorId": "2349386789"
+        },
+        {
+          "name": "Sree Bhargavi Balija",
+          "authorId": "2302641458"
+        },
+        {
+          "name": "Chenhe Gu",
+          "authorId": "2349570331"
+        },
+        {
+          "name": "Robert Sullivan",
+          "authorId": "2349387311"
+        },
+        {
+          "name": "J. Gealy",
+          "authorId": "9250608"
+        },
+        {
+          "name": "Matt Lavrisa",
+          "authorId": "94118625"
+        },
+        {
+          "name": "James Goel",
+          "authorId": "2297187194"
+        },
+        {
+          "name": "Peter Mattson",
+          "authorId": "2065823421"
+        },
+        {
+          "name": "Percy Liang",
+          "authorId": "2345922409"
+        },
+        {
+          "name": "Joaquin Vanschoren",
+          "authorId": "2255370779"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancement and deployment of AI systems have created an urgent need for standard safety-evaluation frameworks. This paper introduces AILuminate v1.0, the first comprehensive industry-standard benchmark for assessing AI-product risk and reliability. Its development employed an open process that included participants from multiple fields. The benchmark evaluates an AI system's resistance to prompts designed to elicit dangerous, illegal, or undesirable behavior in 12 hazard categories, including violent crimes, nonviolent crimes, sex-related crimes, child sexual exploitation, indiscriminate weapons, suicide and self-harm, intellectual property, privacy, defamation, hate, sexual content, and specialized advice (election, financial, health, legal). Our method incorporates a complete assessment standard, extensive prompt datasets, a novel evaluation framework, a grading and reporting system, and the technical as well as organizational infrastructure for long-term support and evolution. In particular, the benchmark employs an understandable five-tier grading scale (Poor to Excellent) and incorporates an innovative entropy-based system-response evaluation. In addition to unveiling the benchmark, this report also identifies limitations of our method and of building safety benchmarks generally, including evaluator uncertainty and the constraints of single-turn interactions. This work represents a crucial step toward establishing global standards for AI risk and reliability evaluation while acknowledging the need for continued development in areas such as multiturn interactions, multimodal understanding, coverage of additional languages, and emerging hazard categories. Our findings provide valuable insights for model developers, system integrators, and policymakers working to promote safer AI deployment.",
+      "citationCount": 15,
+      "doi": "10.48550/arXiv.2503.05731",
+      "arxivId": "2503.05731",
+      "url": "https://www.semanticscholar.org/paper/86f28b118d3565922d94f108581e7aa965d3c639",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.05731"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "138e97319c443841f01b6138e825ca6953a2d07c",
+      "title": "SafeEvalAgent: Toward Agentic and Self-Evolving Safety Evaluation of LLMs",
+      "authors": [
+        {
+          "name": "Yixu Wang",
+          "authorId": "2266363141"
+        },
+        {
+          "name": "Xin Wang",
+          "authorId": "2153689458"
+        },
+        {
+          "name": "Yang Yao",
+          "authorId": "2346996394"
+        },
+        {
+          "name": "Xinyuan Li",
+          "authorId": "2271375439"
+        },
+        {
+          "name": "Yan Teng",
+          "authorId": "2266238818"
+        },
+        {
+          "name": "Xingjun Ma",
+          "authorId": "2383490105"
+        },
+        {
+          "name": "Yingchun Wang",
+          "authorId": "2266364817"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid integration of Large Language Models (LLMs) into high-stakes domains necessitates reliable safety and compliance evaluation. However, existing static benchmarks are ill-equipped to address the dynamic nature of AI risks and evolving regulations, creating a critical safety gap. This paper introduces a new paradigm of agentic safety evaluation, reframing evaluation as a continuous and self-evolving process rather than a one-time audit. We then propose a novel multi-agent framework SafeEvalAgent, which autonomously ingests unstructured policy documents to generate and perpetually evolve a comprehensive safety benchmark. SafeEvalAgent leverages a synergistic pipeline of specialized agents and incorporates a Self-evolving Evaluation loop, where the system learns from evaluation results to craft progressively more sophisticated and targeted test cases. Our experiments demonstrate the effectiveness of SafeEvalAgent, showing a consistent decline in model safety as the evaluation hardens. For instance, GPT-5's safety rate on the EU AI Act drops from 72.50% to 36.36% over successive iterations. These findings reveal the limitations of static assessments and highlight our framework's ability to uncover deep vulnerabilities missed by traditional methods, underscoring the urgent need for dynamic evaluation ecosystems to ensure the safe and responsible deployment of advanced AI.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2509.26100",
+      "arxivId": "2509.26100",
+      "url": "https://www.semanticscholar.org/paper/138e97319c443841f01b6138e825ca6953a2d07c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.26100"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "84bc6e37bcee76706b09afed4d3d2ac7fd4c6f5c",
+      "title": "Construction and Evaluation of Benchmark Da-Tasets For Adversarial Ai Research",
+      "authors": [
+        {
+          "name": "P. Mahalle",
+          "authorId": "1757968"
+        },
+        {
+          "name": "P. K. Miniappan",
+          "authorId": "2350008236"
+        },
+        {
+          "name": "Ashmeet Kaur",
+          "authorId": "2243983474"
+        },
+        {
+          "name": "S. Ganga",
+          "authorId": "2310633161"
+        },
+        {
+          "name": "Yuvraj Parmar",
+          "authorId": "2287964236"
+        },
+        {
+          "name": "Sahana B S",
+          "authorId": "2350172219"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Standard offensive AI datasets need to be made and tested to improve the performance of AI models. Using adversarial diversity-driven dataset building (ADDC), this work shows new ways to create datasets and ways to measure safety and power. The DCA fakes several aggressive events to make sure that the benchmark dataset has a variety of strikes and pauses within it. When the REA is run, it shows how well AI models can handle certain threats. A vulnerability avoidance algorithm (VMA) finds holes in an AI model and stops them from being used. We compare the suggested plan to ADS, APDA, RMAAI, AVP, CABG, and AASF based on several factors that affect results. The suggested method both lowers the number of mistakes and raises the variety, which improves the dataset and makes sure that a full review is done. Artificial intelligence models that use the suggested method are less likely to be hacked online. First, well-known datasets for study into hostile artificial intelligence are put together and studied.",
+      "citationCount": 0,
+      "doi": "10.1109/ICTBIG64922.2024.10911659",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/84bc6e37bcee76706b09afed4d3d2ac7fd4c6f5c",
+      "venue": "2024 IEEE 4th International Conference on ICT in Business Industry & Government (ICTBIG)",
+      "journal": {
+        "name": "2024 IEEE 4th International Conference on ICT in Business Industry & Government (ICTBIG)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5bb7ebe7edf9e77f24883985ca4eee94ebd02ec1",
+      "title": "AI vs. Human Moderators: A Comparative Evaluation of Multimodal LLMs in Content Moderation for Brand Safety",
+      "authors": [
+        {
+          "name": "Adi Levi",
+          "authorId": "2375136977"
+        },
+        {
+          "name": "Or Levi",
+          "authorId": "2375136772"
+        },
+        {
+          "name": "Sardhendu Mishra",
+          "authorId": "2376154175"
+        },
+        {
+          "name": "Jonathan Morra",
+          "authorId": "2375136908"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As the volume of video content online grows exponentially, the demand for moderation of unsafe videos has surpassed human capabilities, posing both operational and mental health challenges. While recent studies demonstrated the merits of Multimodal Large Language Models (MLLMs) in various video understanding tasks, their application to multimodal content moderation, a domain that requires nuanced understanding of both visual and textual cues, remains relatively underexplored. In this work, we benchmark the capabilities of MLLMs in brand safety classification, a critical subset of content moderation for safe-guarding advertising integrity. To this end, we introduce a novel, multimodal and multilingual dataset, meticulously labeled by professional reviewers in a multitude of risk categories. Through a detailed comparative analysis, we demonstrate the effectiveness of MLLMs such as Gemini, GPT, and Llama in multimodal brand safety, and evaluate their accuracy and cost efficiency compared to professional human reviewers. Furthermore, we present an in-depth discussion shedding light on limitations of MLLMs and failure cases. We are releasing our dataset alongside this paper to facilitate future research on effective and responsible brand safety and content moderation.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2508.05527",
+      "arxivId": "2508.05527",
+      "url": "https://www.semanticscholar.org/paper/5bb7ebe7edf9e77f24883985ca4eee94ebd02ec1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.05527"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5c7da78b978e2ef6cc791cfbf98dafbcb59f758b",
+      "title": "WalledEval: A Comprehensive Safety Evaluation Toolkit for Large Language Models",
+      "authors": [
+        {
+          "name": "Prannaya Gupta",
+          "authorId": "2276590362"
+        },
+        {
+          "name": "Le Qi Yau",
+          "authorId": "2276534876"
+        },
+        {
+          "name": "Hao Han Low",
+          "authorId": "2315119626"
+        },
+        {
+          "name": "I-Shiang Lee",
+          "authorId": "2315147549"
+        },
+        {
+          "name": "Hugo Maximus Lim",
+          "authorId": "2315979422"
+        },
+        {
+          "name": "Yu Xin Teoh",
+          "authorId": "2315116857"
+        },
+        {
+          "name": "Jia Hng Koh",
+          "authorId": "2315090833"
+        },
+        {
+          "name": "Dar Win Liew",
+          "authorId": "2315116839"
+        },
+        {
+          "name": "Rishabh Bhardwaj",
+          "authorId": "3203533"
+        },
+        {
+          "name": "Rajat Bhardwaj",
+          "authorId": "2315114597"
+        },
+        {
+          "name": "Soujanya Poria",
+          "authorId": "1746416"
+        }
+      ],
+      "year": 2024,
+      "abstract": "WalledEval is a comprehensive AI safety testing toolkit designed to evaluate large language models (LLMs). It accommodates a diverse range of models, including both open-weight and API-based ones, and features over 35 safety benchmarks covering areas such as multilingual safety, exaggerated safety, and prompt injections. The framework supports both LLM and judge benchmarking, and incorporates custom mutators to test safety against various text-style mutations such as future tense and paraphrasing. Additionally, WalledEval introduces WalledGuard, a new, small and performant content moderation tool, and SGXSTest, a benchmark for assessing exaggerated safety in cultural contexts. We make WalledEval publicly available at https://github.com/walledai/walledeval with a demonstration video at https://youtu.be/50Zy97kj1MA.",
+      "citationCount": 15,
+      "doi": "10.48550/arXiv.2408.03837",
+      "arxivId": "2408.03837",
+      "url": "https://www.semanticscholar.org/paper/5c7da78b978e2ef6cc791cfbf98dafbcb59f758b",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.03837"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "0f8265e2609aced0316be08dcb09692303bbd0bd",
+      "title": "MTCMB: A Multi-Task Benchmark Framework for Evaluating LLMs on Knowledge, Reasoning, and Safety in Traditional Chinese Medicine",
+      "authors": [
+        {
+          "name": "Shufeng Kong",
+          "authorId": "2274374693"
+        },
+        {
+          "name": "Xingru Yang",
+          "authorId": "2365446725"
+        },
+        {
+          "name": "Yuanyuan Wei",
+          "authorId": "2365430579"
+        },
+        {
+          "name": "Zijie Wang",
+          "authorId": "2364830903"
+        },
+        {
+          "name": "Hao Tang",
+          "authorId": "2365513033"
+        },
+        {
+          "name": "Jiuqi Qin",
+          "authorId": "2365337708"
+        },
+        {
+          "name": "Shuting Lan",
+          "authorId": "2364749947"
+        },
+        {
+          "name": "Yingheng Wang",
+          "authorId": "2322603767"
+        },
+        {
+          "name": "Junwen Bai",
+          "authorId": "2365325501"
+        },
+        {
+          "name": "Zhuangbin Chen",
+          "authorId": "2344859146"
+        },
+        {
+          "name": "Zibin Zheng",
+          "authorId": "2364826949"
+        },
+        {
+          "name": "Caihua Liu",
+          "authorId": "2237807668"
+        },
+        {
+          "name": "Hao Liang",
+          "authorId": "2365008920"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Traditional Chinese Medicine (TCM) is a holistic medical system with millennia of accumulated clinical experience, playing a vital role in global healthcare-particularly across East Asia. However, the implicit reasoning, diverse textual forms, and lack of standardization in TCM pose major challenges for computational modeling and evaluation. Large Language Models (LLMs) have demonstrated remarkable potential in processing natural language across diverse domains, including general medicine. Yet, their systematic evaluation in the TCM domain remains underdeveloped. Existing benchmarks either focus narrowly on factual question answering or lack domain-specific tasks and clinical realism. To fill this gap, we introduce MTCMB-a Multi-Task Benchmark for Evaluating LLMs on TCM Knowledge, Reasoning, and Safety. Developed in collaboration with certified TCM experts, MTCMB comprises 12 sub-datasets spanning five major categories: knowledge QA, language understanding, diagnostic reasoning, prescription generation, and safety evaluation. The benchmark integrates real-world case records, national licensing exams, and classical texts, providing an authentic and comprehensive testbed for TCM-capable models. Preliminary results indicate that current LLMs perform well on foundational knowledge but fall short in clinical reasoning, prescription planning, and safety compliance. These findings highlight the urgent need for domain-aligned benchmarks like MTCMB to guide the development of more competent and trustworthy medical AI systems. All datasets, code, and evaluation tools are publicly available at: https://github.com/Wayyuanyuan/MTCMB.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.01252",
+      "arxivId": "2506.01252",
+      "url": "https://www.semanticscholar.org/paper/0f8265e2609aced0316be08dcb09692303bbd0bd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.01252"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "87bd68387f5b634735f9aa73ac177be3e385b8a7",
+      "title": "Responsible AI in Construction Safety: Systematic Evaluation of Large Language Models and Prompt Engineering",
+      "authors": [
+        {
+          "name": "Farouq Sammour",
+          "authorId": "2161563902"
+        },
+        {
+          "name": "Jia Xu",
+          "authorId": "2330447437"
+        },
+        {
+          "name": "Xi Wang",
+          "authorId": "2330445655"
+        },
+        {
+          "name": "Mo Hu",
+          "authorId": "2330758673"
+        },
+        {
+          "name": "Zhenyu Zhang",
+          "authorId": "2330567214"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Construction remains one of the most hazardous sectors. Recent advancements in AI, particularly Large Language Models (LLMs), offer promising opportunities for enhancing workplace safety. However, responsible integration of LLMs requires systematic evaluation, as deploying them without understanding their capabilities and limitations risks generating inaccurate information, fostering misplaced confidence, and compromising worker safety. This study evaluates the performance of two widely used LLMs, GPT-3.5 and GPT-4o, across three standardized exams administered by the Board of Certified Safety Professionals (BCSP). Using 385 questions spanning seven safety knowledge areas, the study analyzes the models' accuracy, consistency, and reliability. Results show that both models consistently exceed the BCSP benchmark, with GPT-4o achieving an accuracy rate of 84.6% and GPT-3.5 reaching 73.8%. Both models demonstrate strengths in safety management systems and hazard identification and control, but exhibit weaknesses in science, mathematics, emergency response, and fire prevention. An error analysis identifies four primary limitations affecting LLM performance: lack of knowledge, reasoning flaws, memory issues, and calculation errors. Our study also highlights the impact of prompt engineering strategies, with variations in accuracy reaching 13.5% for GPT-3.5 and 7.9% for GPT-4o. However, no single prompt configuration proves universally effective. This research advances knowledge in three ways: by identifying areas where LLMs can support safety practices and where human oversight remains essential, by offering practical insights into improving LLM implementation through prompt engineering, and by providing evidence-based direction for future research and development. These contributions support the responsible integration of AI in construction safety management toward achieving zero injuries.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2411.08320",
+      "arxivId": "2411.08320",
+      "url": "https://www.semanticscholar.org/paper/87bd68387f5b634735f9aa73ac177be3e385b8a7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.08320"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6d519601d1b308acfb8940e9108fc2d30028bee9",
+      "title": "Evaluating LLM Agent Adherence to Hierarchical Safety Principles: A Lightweight Benchmark for Probing Foundational Controllability Components",
+      "authors": [
+        {
+          "name": "Ram Potham",
+          "authorId": "2365003615"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Credible safety plans for advanced AI development require methods to verify agent behavior and detect potential control deficiencies early. A fundamental aspect is ensuring agents adhere to safety-critical principles, especially when these conflict with operational goals. This paper introduces a lightweight, interpretable benchmark to evaluate an LLM agent's ability to uphold a high-level safety principle when faced with conflicting task instructions. Our evaluation of six LLMs reveals two primary findings: (1) a quantifiable\"cost of compliance\"where safety constraints degrade task performance even when compliant solutions exist, and (2) an\"illusion of compliance\"where high adherence often masks task incompetence rather than principled choice. These findings provide initial evidence that while LLMs can be influenced by hierarchical directives, current approaches lack the consistency required for reliable safety governance.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.02357",
+      "arxivId": "2506.02357",
+      "url": "https://www.semanticscholar.org/paper/6d519601d1b308acfb8940e9108fc2d30028bee9",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.02357"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d83dd30c0729c309be1397c2fe19615f401f7d98",
+      "title": "LiveSecBench: A Dynamic and Event-Driven Safety Benchmark for Chinese Language Model Applications",
+      "authors": [
+        {
+          "name": "Yudong Li",
+          "authorId": "2400132836"
+        },
+        {
+          "name": "Peiru Yang",
+          "authorId": "2276323946"
+        },
+        {
+          "name": "Feng Huang",
+          "authorId": "2401096171"
+        },
+        {
+          "name": "Zhongliang Yang",
+          "authorId": "2391721122"
+        },
+        {
+          "name": "Kecheng Wang",
+          "authorId": "2391482137"
+        },
+        {
+          "name": "Haitian Li",
+          "authorId": "2390564126"
+        },
+        {
+          "name": "Baocheng Chen",
+          "authorId": "2390952505"
+        },
+        {
+          "name": "Xingyu An",
+          "authorId": "2400139699"
+        },
+        {
+          "name": "Ziyu Liu",
+          "authorId": "2390602039"
+        },
+        {
+          "name": "Youdan Yang",
+          "authorId": "2390561114"
+        },
+        {
+          "name": "Kejiang Chen",
+          "authorId": "2390608335"
+        },
+        {
+          "name": "Sifang Wan",
+          "authorId": "2390486459"
+        },
+        {
+          "name": "Xu Wang",
+          "authorId": "2391468593"
+        },
+        {
+          "name": "Yufei Sun",
+          "authorId": "2366160891"
+        },
+        {
+          "name": "Liyan Wu",
+          "authorId": "2390521681"
+        },
+        {
+          "name": "Ruiqi Zhou",
+          "authorId": "2400364278"
+        },
+        {
+          "name": "Wen Wen",
+          "authorId": "2345486872"
+        },
+        {
+          "name": "Xingchi Gu",
+          "authorId": "2391475305"
+        },
+        {
+          "name": "Tianxin Zhang",
+          "authorId": "2363731029"
+        },
+        {
+          "name": "Yue Gao",
+          "authorId": "2375077640"
+        },
+        {
+          "name": "Yongfeng Huang",
+          "authorId": "2352457920"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We introduce LiveSecBench, a continuously updated safety benchmark specifically for Chinese-language LLM application scenarios. LiveSecBench constructs a high-quality and unique dataset through a pipeline that combines automated generation with human verification. By periodically releasing new versions to expand the dataset and update evaluation metrics, LiveSecBench provides a robust and up-to-date standard for AI safety. In this report, we introduce our second release v251215, which evaluates across five dimensions (Public Safety, Fairness&Bias, Privacy, Truthfulness, and Mental Health Safety.) We evaluate 57 representative LLMs using an ELO rating system, offering a leaderboard of the current state of Chinese LLM safety. The result is available at https://livesecbench.intokentech.cn/.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2511.02366",
+      "url": "https://www.semanticscholar.org/paper/d83dd30c0729c309be1397c2fe19615f401f7d98",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c6b992991f4b74f31b52afce16663231612cddff",
+      "title": "FieldWorkArena: Agentic AI Benchmark for Real Field Work Tasks",
+      "authors": [
+        {
+          "name": "Atsunori Moteki",
+          "authorId": "2130818"
+        },
+        {
+          "name": "Shoichi Masui",
+          "authorId": "2265530080"
+        },
+        {
+          "name": "Fan Yang",
+          "authorId": "2265557422"
+        },
+        {
+          "name": "Yueqi Song",
+          "authorId": "2290031618"
+        },
+        {
+          "name": "Yonatan Bisk",
+          "authorId": "3312309"
+        },
+        {
+          "name": "Graham Neubig",
+          "authorId": "2285194103"
+        },
+        {
+          "name": "Ikuo Kusajima",
+          "authorId": "3430888"
+        },
+        {
+          "name": "Yasuto Watanabe",
+          "authorId": "2363546626"
+        },
+        {
+          "name": "Hiroyuki Ishida",
+          "authorId": "2363497605"
+        },
+        {
+          "name": "Jun Takahashi",
+          "authorId": "2363497476"
+        },
+        {
+          "name": "Shan Jiang",
+          "authorId": "2265617128"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper proposes FieldWorkArena, a benchmark for agentic AI targeting real-world field work. With the recent increase in demand for agentic AI, they are required to monitor and report safety and health incidents, as well as manufacturing-related incidents, that may occur in real-world work environments. Existing agentic AI benchmarks have been limited to evaluating web tasks and are insufficient for evaluating agents in real-world work environments, where complexity increases significantly. In this paper, we define a new action space that agentic AI should possess for real world work environment benchmarks and improve the evaluation function from previous methods to assess the performance of agentic AI in diverse real-world tasks. The dataset consists of videos captured on-site and documents actually used in factories and warehouses, and tasks were created based on interviews with on-site workers and managers. Evaluation results confirmed that performance evaluation considering the characteristics of Multimodal LLM (MLLM) such as GPT-4o is feasible. Additionally, the effectiveness and limitations of the proposed new evaluation method were identified. The complete dataset (HuggingFace) and evaluation program (GitHub) can be downloaded from the following website: https://en-documents.research.global.fujitsu.com/fieldworkarena/.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.19662",
+      "arxivId": "2505.19662",
+      "url": "https://www.semanticscholar.org/paper/c6b992991f4b74f31b52afce16663231612cddff",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.19662"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "eee9d9d095cd54df6b05532087dcce1d0e8d7e06",
+      "title": "UAVBench: An Open Benchmark Dataset for Autonomous and Agentic AI UAV Systems via LLM-Generated Flight Scenarios",
+      "authors": [
+        {
+          "name": "M. Ferrag",
+          "authorId": "2864573"
+        },
+        {
+          "name": "Abderrahmane Lakas",
+          "authorId": "1750344"
+        },
+        {
+          "name": "M. Debbah",
+          "authorId": "2065834880"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Autonomous aerial systems increasingly rely on large language models (LLMs) for mission planning, perception, and decision-making, yet the lack of standardized and physically grounded benchmarks limits systematic evaluation of their reasoning capabilities. To address this gap, we introduce UAVBench, an open benchmark dataset comprising 50,000 validated UAV flight scenarios generated through taxonomy-guided LLM prompting and multi-stage safety validation. Each scenario is encoded in a structured JSON schema that includes mission objectives, vehicle configuration, environmental conditions, and quantitative risk labels, providing a unified representation of UAV operations across diverse domains. Building on this foundation, we present UAVBench_MCQ, a reasoning-oriented extension containing 50,000 multiple-choice questions spanning ten cognitive and ethical reasoning styles, ranging from aerodynamics and navigation to multi-agent coordination and integrated reasoning. This framework enables interpretable and machine-checkable assessment of UAV-specific cognition under realistic operational contexts. We evaluate 32 state-of-the-art LLMs, including GPT-5, ChatGPT-4o, Gemini 2.5 Flash, DeepSeek V3, Qwen3 235B, and ERNIE 4.5 300B, and find strong performance in perception and policy reasoning but persistent challenges in ethics-aware and resource-constrained decision-making. UAVBench establishes a reproducible and physically grounded foundation for benchmarking agentic AI in autonomous aerial systems and advancing next-generation UAV reasoning intelligence. To support open science and reproducibility, we release the UAVBench dataset, the UAVBench_MCQ benchmark, evaluation scripts, and all related materials on GitHub at https://github.com/maferrag/UAVBench",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2511.11252",
+      "arxivId": "2511.11252",
+      "url": "https://www.semanticscholar.org/paper/eee9d9d095cd54df6b05532087dcce1d0e8d7e06",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.11252"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1b0735e7e724d1fc07335e5d7ffd5ca7053f8dd0",
+      "title": "When Cyber-Physical Systems Meet AI: A Benchmark, an Evaluation, and a Way Forward",
+      "authors": [
+        {
+          "name": "Jiayang Song",
+          "authorId": "3427937"
+        },
+        {
+          "name": "Deyun Lyu",
+          "authorId": "2098811628"
+        },
+        {
+          "name": "Zhenya Zhang",
+          "authorId": "2109337642"
+        },
+        {
+          "name": "Zhijie Wang",
+          "authorId": "2108157560"
+        },
+        {
+          "name": "Tianyi Zhang",
+          "authorId": "2146331604"
+        },
+        {
+          "name": "L. Ma",
+          "authorId": "143828252"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Cyber-Physical Systems (CPS) have been broadly deployed in safety-critical domains, such as automotive systems, avionics, medical devices, etc. In recent years, Artificial Intelligence (AI) has been increasingly adopted to control CPS. Despite the popularity of AI-enabled CPS, few benchmarks are publicly available. There is also a lack of deep understanding on the performance and reliability of AI-enabled CPS across different industrial domains. To bridge this gap, we present a public benchmark of industry-level CPS in seven domains and build AI controllers for them via state-of-the-art deep reinforcement learning (DRL) methods. Based on that, we further perform a systematic evaluation of these AI-enabled systems with their traditional counterparts to identify current challenges and future opportunities. Our key findings include (1) AI controllers do not always outperform traditional controllers, (2) existing CPS testing techniques (falsification, specifically) fall short of analyzing AI-enabled CPS, and (3) building a hybrid system that strategically combines and switches between AI controllers and traditional controllers can achieve better performance across different domains. Our results highlight the need for new testing techniques for AI-enabled CPS and the need for more investigations into hybrid CPS to achieve optimal performance and reliability. Our benchmark, code, detailed evaluation results, and experiment scripts are available on https://sites.google.com/view/ai-cps-benchmark.",
+      "citationCount": 25,
+      "doi": "10.1145/3510457.3513049",
+      "arxivId": "2111.04324",
+      "url": "https://www.semanticscholar.org/paper/1b0735e7e724d1fc07335e5d7ffd5ca7053f8dd0",
+      "venue": "2022 IEEE/ACM 44th International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)",
+      "journal": {
+        "name": "2022 IEEE/ACM 44th International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)",
+        "pages": "343-352"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e56769f6f43c1922e037afef75a7d6c3177516b1",
+      "title": "Safety-Gymnasium: A Unified Safe Reinforcement Learning Benchmark",
+      "authors": [
+        {
+          "name": "Jiaming Ji",
+          "authorId": "2154630502"
+        },
+        {
+          "name": "Borong Zhang",
+          "authorId": "152705071"
+        },
+        {
+          "name": "Jiayi Zhou",
+          "authorId": "2217413841"
+        },
+        {
+          "name": "Xuehai Pan",
+          "authorId": "2190800297"
+        },
+        {
+          "name": "Weidong Huang",
+          "authorId": "2217835779"
+        },
+        {
+          "name": "Ruiyang Sun",
+          "authorId": "2217316509"
+        },
+        {
+          "name": "Yiran Geng",
+          "authorId": "2067506505"
+        },
+        {
+          "name": "Yifan Zhong",
+          "authorId": "2260345704"
+        },
+        {
+          "name": "Juntao Dai",
+          "authorId": "14548852"
+        },
+        {
+          "name": "Yaodong Yang",
+          "authorId": "2260432856"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Artificial intelligence (AI) systems possess significant potential to drive societal progress. However, their deployment often faces obstacles due to substantial safety concerns. Safe reinforcement learning (SafeRL) emerges as a solution to optimize policies while simultaneously adhering to multiple constraints, thereby addressing the challenge of integrating reinforcement learning in safety-critical scenarios. In this paper, we present an environment suite called Safety-Gymnasium, which encompasses safety-critical tasks in both single and multi-agent scenarios, accepting vector and vision-only input. Additionally, we offer a library of algorithms named Safe Policy Optimization (SafePO), comprising 16 state-of-the-art SafeRL algorithms. This comprehensive library can serve as a validation tool for the research community. By introducing this benchmark, we aim to facilitate the evaluation and comparison of safety performance, thus fostering the development of reinforcement learning for safer, more reliable, and responsible real-world applications. The website of this project can be accessed at https://sites.google.com/view/safety-gymnasium.",
+      "citationCount": 113,
+      "doi": "10.48550/arXiv.2310.12567",
+      "arxivId": "2310.12567",
+      "url": "https://www.semanticscholar.org/paper/e56769f6f43c1922e037afef75a7d6c3177516b1",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2310.12567"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8ff6fdbba2030c18d8dcc514a1c0c7e7e3340e2c",
+      "title": "DarkPatterns-LLM: A Multi-Layer Benchmark for Detecting Manipulative and Harmful AI Behavior",
+      "authors": [
+        {
+          "name": "Sadia Asif",
+          "authorId": "2382763577"
+        },
+        {
+          "name": "Israel Antonio Rosales Laguan",
+          "authorId": "2401491950"
+        },
+        {
+          "name": "Haris Khan",
+          "authorId": "2374044028"
+        },
+        {
+          "name": "Shumaila Asif",
+          "authorId": "2373015326"
+        },
+        {
+          "name": "Muneeb Asif",
+          "authorId": "2401493670"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The proliferation of Large Language Models (LLMs) has intensified concerns about manipulative or deceptive behaviors that can undermine user autonomy, trust, and well-being. Existing safety benchmarks predominantly rely on coarse binary labels and fail to capture the nuanced psychological and social mechanisms constituting manipulation. We introduce \\textbf{DarkPatterns-LLM}, a comprehensive benchmark dataset and diagnostic framework for fine-grained assessment of manipulative content in LLM outputs across seven harm categories: Legal/Power, Psychological, Emotional, Physical, Autonomy, Economic, and Societal Harm. Our framework implements a four-layer analytical pipeline comprising Multi-Granular Detection (MGD), Multi-Scale Intent Analysis (MSIAN), Threat Harmonization Protocol (THP), and Deep Contextual Risk Alignment (DCRA). The dataset contains 401 meticulously curated examples with instruction-response pairs and expert annotations. Through evaluation of state-of-the-art models including GPT-4, Claude 3.5, and LLaMA-3-70B, we observe significant performance disparities (65.2\\%--89.7\\%) and consistent weaknesses in detecting autonomy-undermining patterns. DarkPatterns-LLM establishes the first standardized, multi-dimensional benchmark for manipulation detection in LLMs, offering actionable diagnostics toward more trustworthy AI systems.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.22470",
+      "url": "https://www.semanticscholar.org/paper/8ff6fdbba2030c18d8dcc514a1c0c7e7e3340e2c",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "aac5029b38e0ab1e324f0ab31e9dd8bb888985cb",
+      "title": "Forbidden Science: Dual-Use AI Challenge Benchmark and Scientific Refusal Tests",
+      "authors": [
+        {
+          "name": "David A. Noever",
+          "authorId": "46787948"
+        },
+        {
+          "name": "Forrest McKee",
+          "authorId": "2197525782"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The development of robust safety benchmarks for large language models requires open, reproducible datasets that can measure both appropriate refusal of harmful content and potential over-restriction of legitimate scientific discourse. We present an open-source dataset and testing framework for evaluating LLM safety mechanisms across mainly controlled substance queries, analyzing four major models' responses to systematically varied prompts. Our results reveal distinct safety profiles: Claude-3.5-sonnet demonstrated the most conservative approach with 73% refusals and 27% allowances, while Mistral attempted to answer 100% of queries. GPT-3.5-turbo showed moderate restriction with 10% refusals and 90% allowances, and Grok-2 registered 20% refusals and 80% allowances. Testing prompt variation strategies revealed decreasing response consistency, from 85% with single prompts to 65% with five variations. This publicly available benchmark enables systematic evaluation of the critical balance between necessary safety restrictions and potential over-censorship of legitimate scientific inquiry, while providing a foundation for measuring progress in AI safety implementation. Chain-of-thought analysis reveals potential vulnerabilities in safety mechanisms, highlighting the complexity of implementing robust safeguards without unduly restricting desirable and valid scientific discourse.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2502.06867",
+      "arxivId": "2502.06867",
+      "url": "https://www.semanticscholar.org/paper/aac5029b38e0ab1e324f0ab31e9dd8bb888985cb",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.06867"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5655ad1db638ddf86db964c201a3014fb8e21db6",
+      "title": "LocalValueBench: A Collaboratively Built and Extensible Benchmark for Evaluating Localized Value Alignment and Ethical Safety in Large Language Models",
+      "authors": [
+        {
+          "name": "Gwenyth Isobel Meadows",
+          "authorId": "2314830463"
+        },
+        {
+          "name": "Nicholas Wai Long Lau",
+          "authorId": "2314829463"
+        },
+        {
+          "name": "Eva Adelina Susanto",
+          "authorId": "2314832010"
+        },
+        {
+          "name": "Chi Lok Yu",
+          "authorId": "2314880311"
+        },
+        {
+          "name": "Aditya Paul",
+          "authorId": "2315789379"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The proliferation of large language models (LLMs) requires robust evaluation of their alignment with local values and ethical standards, especially as existing benchmarks often reflect the cultural, legal, and ideological values of their creators. \\textsc{LocalValueBench}, introduced in this paper, is an extensible benchmark designed to assess LLMs' adherence to Australian values, and provides a framework for regulators worldwide to develop their own LLM benchmarks for local value alignment. Employing a novel typology for ethical reasoning and an interrogation approach, we curated comprehensive questions and utilized prompt engineering strategies to probe LLMs' value alignment. Our evaluation criteria quantified deviations from local values, ensuring a rigorous assessment process. Comparative analysis of three commercial LLMs by USA vendors revealed significant insights into their effectiveness and limitations, demonstrating the critical importance of value alignment. This study offers valuable tools and methodologies for regulators to create tailored benchmarks, highlighting avenues for future research to enhance ethical AI development.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2408.01460",
+      "arxivId": "2408.01460",
+      "url": "https://www.semanticscholar.org/paper/5655ad1db638ddf86db964c201a3014fb8e21db6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.01460"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4bebd8e5a82e349ee64ec0538128c123c061781e",
+      "title": "JADE: A Linguistics-based Safety Evaluation Platform for Large Language Models",
+      "authors": [
+        {
+          "name": "Mi Zhang",
+          "authorId": "2156930301"
+        },
+        {
+          "name": "Xudong Pan",
+          "authorId": "151491970"
+        },
+        {
+          "name": "Min Yang",
+          "authorId": "2324063528"
+        }
+      ],
+      "year": 2023,
+      "abstract": "In this paper, we present JADE, a targeted linguistic fuzzing platform which strengthens the linguistic complexity of seed questions to simultaneously and consistently break a wide range of widely-used LLMs categorized in three groups: eight open-sourced Chinese, six commercial Chinese and four commercial English LLMs. JADE generates three safety benchmarks for the three groups of LLMs, which contain unsafe questions that are highly threatening: the questions simultaneously trigger harmful generation of multiple LLMs, with an average unsafe generation ratio of $70\\%$ (please see the table below), while are still natural questions, fluent and preserving the core unsafe semantics. We release the benchmark demos generated for commercial English LLMs and open-sourced English LLMs in the following link: https://github.com/whitzard-ai/jade-db. For readers who are interested in evaluating on more questions generated by JADE, please contact us. JADE is based on Noam Chomsky's seminal theory of transformational-generative grammar. Given a seed question with unsafe intention, JADE invokes a sequence of generative and transformational rules to increment the complexity of the syntactic structure of the original question, until the safety guardrail is broken. Our key insight is: Due to the complexity of human language, most of the current best LLMs can hardly recognize the invariant evil from the infinite number of different syntactic structures which form an unbound example space that can never be fully covered. Technically, the generative/transformative rules are constructed by native speakers of the languages, and, once developed, can be used to automatically grow and transform the parse tree of a given question, until the guardrail is broken. For more evaluation results and demo, please check our website: https://whitzard-ai.github.io/jade.html.",
+      "citationCount": 7,
+      "doi": null,
+      "arxivId": "2311.00286",
+      "url": "https://www.semanticscholar.org/paper/4bebd8e5a82e349ee64ec0538128c123c061781e",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c03322cb104f8591904c2b1f6248e28664ae61e2",
+      "title": "Benchmark Early and Red Team Often: A Framework for Assessing and Managing Dual-Use Hazards of AI Foundation Models",
+      "authors": [
+        {
+          "name": "Anthony M. Barrett",
+          "authorId": "2302330244"
+        },
+        {
+          "name": "Krystal Jackson",
+          "authorId": "2302328802"
+        },
+        {
+          "name": "Evan R. Murphy",
+          "authorId": "2302332537"
+        },
+        {
+          "name": "Nada Madkour",
+          "authorId": "2302331552"
+        },
+        {
+          "name": "Jessica Newman",
+          "authorId": "2302330750"
+        }
+      ],
+      "year": 2024,
+      "abstract": "A concern about cutting-edge or \u201cfrontier\u201d AI foundation models is that an adversary may use the models for preparing chemical, biological, radiological, nuclear (CBRN), cyber, or other attacks. At least two methods can identify foundation models with potential dual-use capability; each method has advantages and disadvantages:\nA. Open benchmarks (based on openly available questions and answers), which are low-cost but accuracy-limited by the need to omit security-sensitive details, and\nB. Closed red team evaluations (based on private evaluation by CBRN and cyber experts), which are higher in cost but can achieve higher accuracy by incorporating sensitive details.\nWe propose a research and risk-management approach using a combination of methods including both open benchmarks and closed red team evaluations, in a way that leverages advantages of both methods.\nWe recommend that one or more groups of researchers with sufficient resources and access to a range of near-frontier and frontier foundation models:\n1. Run a set of foundation models through dual-use capability evaluation benchmarks and red teamevaluations, then2. Analyze the resulting sets of models\u2019 scores on benchmark and red team evaluations to see howcorrelated those are.\nIf, as we expect, there is substantial correlation between the dual-use potential benchmark scores and the red team evaluation scores, then implications include the following:\n\u2022 The open benchmarks should be used frequently during foundation model development as a quick,low-cost measure of a model\u2019s dual-use potential; and\u2022 If a particular model gets a high score on the dual-use potential benchmark, then more in-depth redteam assessments of that model\u2019s dual-use capability should be performed.\nWe also discuss limitations and mitigations for our approach, e.g., if model developers try to game benchmarks by including a version of benchmark test data in a model\u2019s training data.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2405.10986",
+      "arxivId": "2405.10986",
+      "url": "https://www.semanticscholar.org/paper/c03322cb104f8591904c2b1f6248e28664ae61e2",
+      "venue": "AGI - Artificial General Intelligence - Robotics - Safety &amp; Alignment",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.10986"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0cbdeab036d4c507a5a30257e387b1dac39d0ebd",
+      "title": "EPT Benchmark: Evaluation of Persian Trustworthiness in Large Language Models",
+      "authors": [
+        {
+          "name": "Mohammad Reza Mirbagheri",
+          "authorId": "2379664004"
+        },
+        {
+          "name": "Mohammad Mahdi Mirkamali",
+          "authorId": "2379665781"
+        },
+        {
+          "name": "Zahra Motoshaker Arani",
+          "authorId": "2379665396"
+        },
+        {
+          "name": "Ali Javeri",
+          "authorId": "2379664877"
+        },
+        {
+          "name": "A. M. Sadeghzadeh",
+          "authorId": "1518271558"
+        },
+        {
+          "name": "R. Jalili",
+          "authorId": "1703692"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs), trained on extensive datasets using advanced deep learning architectures, have demonstrated remarkable performance across a wide range of language tasks, becoming a cornerstone of modern AI technologies. However, ensuring their trustworthiness remains a critical challenge, as reliability is essential not only for accurate performance but also for upholding ethical, cultural, and social values. Careful alignment of training data and culturally grounded evaluation criteria are vital for developing responsible AI systems. In this study, we introduce the EPT (Evaluation of Persian Trustworthiness) metric, a culturally informed benchmark specifically designed to assess the trustworthiness of LLMs across six key aspects: truthfulness, safety, fairness, robustness, privacy, and ethical alignment. We curated a labeled dataset and evaluated the performance of several leading models - including ChatGPT, Claude, DeepSeek, Gemini, Grok, LLaMA, Mistral, and Qwen - using both automated LLM-based and human assessments. Our results reveal significant deficiencies in the safety dimension, underscoring the urgent need for focused attention on this critical aspect of model behavior. Furthermore, our findings offer valuable insights into the alignment of these models with Persian ethical-cultural values and highlight critical gaps and opportunities for advancing trustworthy and culturally responsible AI. The dataset is publicly available at: https://github.com/Rezamirbagheri110/EPT-Benchmark.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.06838",
+      "arxivId": "2509.06838",
+      "url": "https://www.semanticscholar.org/paper/0cbdeab036d4c507a5a30257e387b1dac39d0ebd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.06838"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6ecae2bba39a0ea40b1d6de5af99048b0e3ff5bc",
+      "title": "Underlying Deep Learning Networks Diagnosis Evaluation and Generative Adversarial Network Data Augmentation Based on a Benchmark Accident Dataset",
+      "authors": [
+        {
+          "name": "Ben Qi",
+          "authorId": "2144605024"
+        },
+        {
+          "name": "Yu Wang",
+          "authorId": "2329043957"
+        },
+        {
+          "name": "Xingyu Xiao",
+          "authorId": "2268665277"
+        },
+        {
+          "name": "Jingang Liang",
+          "authorId": "2328972721"
+        }
+      ],
+      "year": 2024,
+      "abstract": "\n Nuclear energy plays an important role in the global energy supply, particularly as a key source of low-carbon electricity, while ensuring the safe operation of nuclear power plants (NPPs) is crucial. Given the significant impact of human-caused errors on three serious nuclear accidents in history, artificial intelligence (AI) has been increasingly interested assisting operators in NPP accident diagnosis. However, the field has lacked a benchmarking effort for underlying deep learning networks based on public datasets for accident diagnosis, as well as research on time-series data augmentation efforts for accident data. Based on the first open-source NPP accident dataset NPPAD, which covers all kinds of accident data of pressurized water reactors and has been validated with Fukushima nuclear accident data for reliability, this study explored accident diagnostic techniques based on Multilayer Perceptions (MLPs), Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs) and Transformers, and data augmentation techniques based on conditional Generative Adversarial Networks (cGANs) and Time-series Generative Adversarial Networks (TimeGANs). Experimental results show Transformers have the best classification ability for accident types. In addition, the standardization of data has a large impact on the classification effect, and standardization in data preprocessing will make all models substantially more effective. For data augmentation, TimeGANs exhibit higher performance compared to cGANs in generating fake datasets and can better capture the dynamic features of time-series data. This paper provides a reference for the application of deep learning through the study of three parts: a comprehensive comparison of underlying deep learning networks, data standardization processing, and data augmentation.",
+      "citationCount": 1,
+      "doi": "10.1115/icone31-134996",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6ecae2bba39a0ea40b1d6de5af99048b0e3ff5bc",
+      "venue": "Volume 5: Nuclear Safety, Security, and Cyber Security; Nuclear Codes, Standards, Licensing, and Regulatory Issues",
+      "journal": {
+        "name": "Volume 5: Nuclear Safety, Security, and Cyber Security; Nuclear Codes, Standards, Licensing, and Regulatory Issues"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3ae377f3143cbcbaebfd355fb50f9cb43b170ade",
+      "title": "Comparative Evaluation and Performance of Large Language Models in Clinical Infection Control Scenarios: A Benchmark Study",
+      "authors": [
+        {
+          "name": "Shuk-Ching Wong",
+          "authorId": "49558339"
+        },
+        {
+          "name": "Edwin Kwan-Yeung Chiu",
+          "authorId": "2351009010"
+        },
+        {
+          "name": "Kelvin Hei-Yeung Chiu",
+          "authorId": "2278905588"
+        },
+        {
+          "name": "A. Tam",
+          "authorId": "1491961019"
+        },
+        {
+          "name": "PH Chau",
+          "authorId": "2267350255"
+        },
+        {
+          "name": "M. Choi",
+          "authorId": "2311681396"
+        },
+        {
+          "name": "Wing-Yan Ng",
+          "authorId": "2387012834"
+        },
+        {
+          "name": "Monica Oi-Tung Kwok",
+          "authorId": "2188727222"
+        },
+        {
+          "name": "Benny Yu Chau",
+          "authorId": "2387063558"
+        },
+        {
+          "name": "Michael Yuey-Zhun Ng",
+          "authorId": "2372024434"
+        },
+        {
+          "name": "G. Lam",
+          "authorId": "1880949054"
+        },
+        {
+          "name": "Peter Wai-Ching Wong",
+          "authorId": "2372044773"
+        },
+        {
+          "name": "T. Chung",
+          "authorId": "50674305"
+        },
+        {
+          "name": "S. Sridhar",
+          "authorId": "143657390"
+        },
+        {
+          "name": "Edmond Siu-Keung Ma",
+          "authorId": "2336502320"
+        },
+        {
+          "name": "Kwok-Yung Yuen",
+          "authorId": "2233766751"
+        },
+        {
+          "name": "Vincent Chi-Chung Cheng",
+          "authorId": "2262597442"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Background: Infection prevention and control (IPC) in hospitals relies heavily on infection control nurses (ICNs) who manage complex consultations to prevent and control infections. This study evaluated large language models (LLMs) as artificial intelligence (AI) tools to support ICNs in IPC decision-making processes. Our goal is to enhance the efficiency of IPC practices while maintaining the highest standards of safety and accuracy. Methods: A cross-sectional benchmarking study at Queen Mary Hospital, Hong Kong assessed three LLMs\u2014GPT-4.1, DeepSeek V3, and Gemini 2.5 Pro Exp\u2014using 30 clinical infection control scenarios. Each model generated clarifying questions to understand the scenarios before providing IPC recommendations through two prompting methods: an open-ended inquiry and a structured template. Sixteen experts, including senior and junior ICNs and physicians, rated these responses on coherence, conciseness, usefulness and relevance, evidence quality, and actionability (1\u201310 scale). Quantitative and qualitative analyses assessed AI performance, reliability, and clinical applicability. Results: GPT-4.1 and DeepSeek V3 scored significantly higher on the composite quality scale, with adjusted means (95% CI) of 36.77 (33.98\u201339.57) and 36.25 (33.45\u201339.04), respectively, compared with Gemini 2.5 Pro Exp at 33.19 (30.39\u201335.99) (p < 0.001). GPT-4.1 led in evidence quality, usefulness, and relevance. Gemini 2.5 Pro Exp failed to generate responses in 50% of scenarios under structured prompt conditions. Structured prompting yielded significant improvements, primarily by enhancing evidence quality (p < 0.001). Evaluator background influenced scoring, with doctors rating outputs higher than nurses (38.83 vs. 32.06, p < 0.001). However, a qualitative review revealed critical deficiencies across all models, for example, tuberculosis treatment solely based on a positive acid-fast bacilli (AFB) smear without considering nontuberculous mycobacteria in DeepSeek V3 and providing an impractical and noncommittal response regarding the de-escalation of precautions for Candida auris in Gemini 2.5 Pro Exp. These errors highlight potential safety risks and limited real-world applicability, despite generally positive scores. Conclusions: While GPT-4.1 and DeepSeek V3 deliver useful IPC advice, they are not yet reliable for autonomous use. Critical errors in clinical judgment and practical applicability highlight that LLMs cannot replace the expertise of ICNs. These technologies should serve as adjunct tools to support, rather than automate, clinical decision-making.",
+      "citationCount": 0,
+      "doi": "10.3390/healthcare13202652",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3ae377f3143cbcbaebfd355fb50f9cb43b170ade",
+      "venue": "Healthcare",
+      "journal": {
+        "name": "Healthcare",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "4ce2f31f430927b9fc1d6e181e789b0ae1596324",
+      "title": "Benchmarking and Understanding Safety Risks in AI Character Platforms",
+      "authors": [
+        {
+          "name": "Yiluo Wei",
+          "authorId": "2279771872"
+        },
+        {
+          "name": "Peixian Zhang",
+          "authorId": "2214837096"
+        },
+        {
+          "name": "Gareth Tyson",
+          "authorId": "2279707484"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI character platforms, which allow users to engage in conversations with AI personas, are a rapidly growing application domain. However, their immersive and personalized nature, combined with technical vulnerabilities, raises significant safety concerns. Despite their popularity, a systematic evaluation of their safety has been notably absent. To address this gap, we conduct the first large-scale safety study of AI character platforms, evaluating 16 popular platforms using a benchmark set of 5,000 questions across 16 safety categories. Our findings reveal a critical safety deficit: AI character platforms exhibit an average unsafe response rate of 65.1%, substantially higher than the 17.7% average rate of the baselines. We further discover that safety performance varies significantly across different characters and is strongly correlated with character features such as demographics and personality. Leveraging these insights, we demonstrate that our machine learning model is able identify less safe characters with an F1-score of 0.81. This predictive capability can be beneficial for platforms, enabling improved mechanisms for safer interactions, character search/recommendations, and character creation. Overall, the results and findings offer valuable insights for enhancing platform governance and content moderation for safer AI character platforms.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.01247",
+      "url": "https://www.semanticscholar.org/paper/4ce2f31f430927b9fc1d6e181e789b0ae1596324",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fc4086bb50ed14178f1b1079e06ef9ac309e20eb",
+      "title": "Balancing Safety and Helpfulness in Healthcare AI Assistants through Iterative Preference Alignment",
+      "authors": [
+        {
+          "name": "H. Nghiem",
+          "authorId": "2373306012"
+        },
+        {
+          "name": "Swetasudha Panda",
+          "authorId": "1721493"
+        },
+        {
+          "name": "Devashish Khatwani",
+          "authorId": "2165225093"
+        },
+        {
+          "name": "Huy V. Nguyen",
+          "authorId": "2233760122"
+        },
+        {
+          "name": "K. Kenthapadi",
+          "authorId": "1769861"
+        },
+        {
+          "name": "Hal Daum'e",
+          "authorId": "2344615259"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) are increasingly used in healthcare, yet ensuring their safety and trustworthiness remains a barrier to deployment. Conversational medical assistants must avoid unsafe compliance without over-refusing benign queries. We present an iterative post-deployment alignment framework that applies Kahneman-Tversky Optimization (KTO) and Direct Preference Optimization (DPO) to refine models against domain-specific safety signals. Using the CARES-18K benchmark for adversarial robustness, we evaluate four LLMs (Llama-3B/8B, Meditron-8B, Mistral-7B) across multiple cycles. Our results show up to 42% improvement in safety-related metrics for harmful query detection, alongside interesting trade-offs against erroneous refusals, thereby exposing architecture-dependent calibration biases. We also perform ablation studies to identify when self-evaluation is reliable and when external or finetuned judges are necessary to maximize performance gains. Our findings underscore the importance of adopting best practices that balance patient safety, user trust, and clinical utility in the design of conversational medical assistants.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.04210",
+      "url": "https://www.semanticscholar.org/paper/fc4086bb50ed14178f1b1079e06ef9ac309e20eb",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a1fc185787c042f9117c4e9bca9408c61620762f",
+      "title": "The Measurement Imbalance in Agentic AI Evaluation Undermines Industry Productivity Claims",
+      "authors": [
+        {
+          "name": "K. Meimandi",
+          "authorId": "26417934"
+        },
+        {
+          "name": "Gabriela Ar'anguiz-Dias",
+          "authorId": "2365041468"
+        },
+        {
+          "name": "Grace Ra Kim",
+          "authorId": "2329047546"
+        },
+        {
+          "name": "Lana Saadeddin",
+          "authorId": "2365035894"
+        },
+        {
+          "name": "Mykel J. Kochenderfer",
+          "authorId": "79262652"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As industry reports claim agentic AI systems deliver double-digit productivity gains and multi-trillion dollar economic potential, the validity of these claims has become critical for investment decisions, regulatory policy, and responsible technology adoption. However, this paper demonstrates that current evaluation practices for agentic AI systems exhibit a systemic imbalance that calls into question prevailing industry productivity claims. Our systematic review of 84 papers (2023--2025) reveals an evaluation imbalance where technical metrics dominate assessments (83%), while human-centered (30%), safety (53%), and economic assessments (30%) remain peripheral, with only 15% incorporating both technical and human dimensions. This measurement gap creates a fundamental disconnect between benchmark success and deployment value. We present evidence from healthcare, finance, and retail sectors where systems excelling on technical metrics failed in real-world implementation due to unmeasured human, temporal, and contextual factors. Our position is not against agentic AI's potential, but rather that current evaluation frameworks systematically privilege narrow technical metrics while neglecting dimensions critical to real-world success. We propose a balanced four-axis evaluation model and call on the community to lead this paradigm shift because benchmark-driven optimization shapes what we build. By redefining evaluation practices, we can better align industry claims with deployment realities and ensure responsible scaling of agentic systems in high-stakes domains.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2506.02064",
+      "arxivId": "2506.02064",
+      "url": "https://www.semanticscholar.org/paper/a1fc185787c042f9117c4e9bca9408c61620762f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.02064"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "bf99885cd585cc9ab8defd057ba189c15344a3eb",
+      "title": "Detecting and Preventing Harmful Behaviors in AI Companions: Development and Evaluation of the SHIELD Supervisory System",
+      "authors": [
+        {
+          "name": "Ziv Ben-Zion",
+          "authorId": "1404172286"
+        },
+        {
+          "name": "Paul Raffelhuschen",
+          "authorId": "2386622782"
+        },
+        {
+          "name": "Max Zettl",
+          "authorId": "2386625400"
+        },
+        {
+          "name": "Antonia Luond",
+          "authorId": "2386622498"
+        },
+        {
+          "name": "A. Burrer",
+          "authorId": "40894408"
+        },
+        {
+          "name": "Philipp Homan",
+          "authorId": "2354254841"
+        },
+        {
+          "name": "Tobias Spiller",
+          "authorId": "2301920499"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI companions powered by large language models (LLMs) are increasingly integrated into users'daily lives, offering emotional support and companionship. While existing safety systems focus on overt harms, they rarely address early-stage problematic behaviors that can foster unhealthy emotional dynamics, including over-attachment or reinforcement of social isolation. We developed SHIELD (Supervisory Helper for Identifying Emotional Limits and Dynamics), a LLM-based supervisory system with a specific system prompt that detects and mitigates risky emotional patterns before escalation. SHIELD targets five dimensions of concern: (1) emotional over-attachment, (2) consent and boundary violations, (3) ethical roleplay violations, (4) manipulative engagement, and (5) social isolation reinforcement. These dimensions were defined based on media reports, academic literature, existing AI risk frameworks, and clinical expertise in unhealthy relationship dynamics. To evaluate SHIELD, we created a 100-item synthetic conversation benchmark covering all five dimensions of concern. Testing across five prominent LLMs (GPT-4.1, Claude Sonnet 4, Gemma 3 1B, Kimi K2, Llama Scout 4 17B) showed that the baseline rate of concerning content (10-16%) was significantly reduced with SHIELD (to 3-8%), a 50-79% relative reduction, while preserving 95% of appropriate interactions. The system achieved 59% sensitivity and 95% specificity, with adaptable performance via prompt engineering. This proof-of-concept demonstrates that transparent, deployable supervisory systems can address subtle emotional manipulation in AI companions. Most development materials including prompts, code, and evaluation methods are made available as open source materials for research, adaptation, and deployment.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.15891",
+      "arxivId": "2510.15891",
+      "url": "https://www.semanticscholar.org/paper/bf99885cd585cc9ab8defd057ba189c15344a3eb",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.15891"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cc62dfdc347925109b6923f35f7467b9d78f6662",
+      "title": "RedCode: Risky Code Execution and Generation Benchmark for Code Agents",
+      "authors": [
+        {
+          "name": "Chengquan Guo",
+          "authorId": "2330384931"
+        },
+        {
+          "name": "Xun Liu",
+          "authorId": "2330434826"
+        },
+        {
+          "name": "Chulin Xie",
+          "authorId": "150961077"
+        },
+        {
+          "name": "Andy Zhou",
+          "authorId": "2325730401"
+        },
+        {
+          "name": "Yi Zeng",
+          "authorId": "2297444637"
+        },
+        {
+          "name": "Zinan Lin",
+          "authorId": "3354281"
+        },
+        {
+          "name": "D. Song",
+          "authorId": "2293597685"
+        },
+        {
+          "name": "Bo Li",
+          "authorId": "2308476678"
+        }
+      ],
+      "year": 2024,
+      "abstract": "With the rapidly increasing capabilities and adoption of code agents for AI-assisted coding, safety concerns, such as generating or executing risky code, have become significant barriers to the real-world deployment of these agents. To provide comprehensive and practical evaluations on the safety of code agents, we propose RedCode, a benchmark for risky code execution and generation: (1) RedCode-Exec provides challenging prompts that could lead to risky code execution, aiming to evaluate code agents' ability to recognize and handle unsafe code. We provide a total of 4,050 risky test cases in Python and Bash tasks with diverse input formats including code snippets and natural text. They covers 25 types of critical vulnerabilities spanning 8 domains (e.g., websites, file systems). We provide Docker environments and design corresponding evaluation metrics to assess their execution results. (2) RedCode-Gen provides 160 prompts with function signatures and docstrings as input to assess whether code agents will follow instructions to generate harmful code or software. Our empirical findings, derived from evaluating three agent frameworks based on 19 LLMs, provide insights into code agents' vulnerabilities. For instance, evaluations on RedCode-Exec show that agents are more likely to reject executing risky operations on the operating system, but are less likely to reject executing technically buggy code, indicating high risks. Risky operations described in natural text lead to a lower rejection rate than those in code format. Additionally, evaluations on RedCode-Gen show that more capable base models and agents with stronger overall coding abilities, such as GPT4, tend to produce more sophisticated and effective harmful software. Our findings highlight the need for stringent safety evaluations for diverse code agents. Our dataset and code are available at https://github.com/AI-secure/RedCode.",
+      "citationCount": 55,
+      "doi": "10.48550/arXiv.2411.07781",
+      "arxivId": "2411.07781",
+      "url": "https://www.semanticscholar.org/paper/cc62dfdc347925109b6923f35f7467b9d78f6662",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.07781"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bb0cb45d977cf031c0018fb295b69893dbb2a755",
+      "title": "OSS-Bench: Benchmark Generator for Coding LLMs",
+      "authors": [
+        {
+          "name": "Yuancheng Jiang",
+          "authorId": "2166117494"
+        },
+        {
+          "name": "Roland H. C. Yap",
+          "authorId": "2283146841"
+        },
+        {
+          "name": "Zhenkai Liang",
+          "authorId": "2323533581"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In light of the rapid adoption of AI coding assistants, LLM-assisted development has become increasingly prevalent, creating an urgent need for robust evaluation of generated code quality. Existing benchmarks often require extensive manual effort to create static datasets, rely on indirect or insufficiently challenging tasks, depend on non-scalable ground truth, or neglect critical low-level security evaluations, particularly memory-safety issues. In this work, we introduce OSS-Bench, a benchmark generator that automatically constructs large-scale, live evaluation tasks from real-world open-source software. OSS-Bench replaces functions with LLM-generated code and evaluates them using three natural metrics: compilability, functional correctness, and memory safety, leveraging robust signals like compilation failures, test-suite violations, and sanitizer alerts as ground truth. In our evaluation, the benchmark, instantiated as OSS-Bench(php) and OSS-Bench(sql), profiles 17 diverse LLMs, revealing insights such as intra-family behavioral patterns and inconsistencies between model size and performance. Our results demonstrate that OSS-Bench mitigates overfitting by leveraging the evolving complexity of OSS and highlights LLMs' limited understanding of low-level code security via extended fuzzing experiments. Overall, OSS-Bench offers a practical and scalable framework for benchmarking the real-world coding capabilities of LLMs.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.12331",
+      "arxivId": "2505.12331",
+      "url": "https://www.semanticscholar.org/paper/bb0cb45d977cf031c0018fb295b69893dbb2a755",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.12331"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ddbbfc3bb5870c40071475b7b7b946ce82f7d498",
+      "title": "NeuronsGym: A Hybrid Framework and Benchmark for Robot Navigation With Sim2Real Policy Learning",
+      "authors": [
+        {
+          "name": "Haoran Li",
+          "authorId": "2145539850"
+        },
+        {
+          "name": "Guangzheng Hu",
+          "authorId": "2282196817"
+        },
+        {
+          "name": "Shasha Liu",
+          "authorId": "2269025882"
+        },
+        {
+          "name": "Mingjun Ma",
+          "authorId": "2330386880"
+        },
+        {
+          "name": "Yaran Chen",
+          "authorId": "47557528"
+        },
+        {
+          "name": "Dongbin Zhao",
+          "authorId": "2259831523"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rise of embodied AI has greatly improved the possibility of general mobile agent systems. At present, many evaluation platforms with rich scenes, high visual fidelity, and various application scenarios have been developed. In this paper, we present a hybrid framework named NeuronsGym that can be used for policy learning of robot tasks, covering a simulation platform for training policy, and a physical system for studying sim2real problems. Unlike most current single-task, slow-moving robotic platforms, our framework provides agile physical robots with a wider range of speeds and can be employed to train robotic navigation policies. At the same time, in order to evaluate the safety of robot navigation, we propose a safety-weighted path length (SFPL) to improve the safety evaluation in the current mobile robot navigation. Based on this platform, we build a new benchmark for navigation tasks under this platform by comparing the current mainstream sim2real methods, and hold the 2022 IEEE Conference on Games (CoG) RoboMaster sim2real challenge. We release the codes of this framework and hope that this platform can promote the development of more flexible and agile general mobile agent algorithms.",
+      "citationCount": 2,
+      "doi": "10.1109/TETCI.2024.3488732",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ddbbfc3bb5870c40071475b7b7b946ce82f7d498",
+      "venue": "IEEE Transactions on Emerging Topics in Computational Intelligence",
+      "journal": {
+        "name": "IEEE Transactions on Emerging Topics in Computational Intelligence",
+        "pages": "2491-2505",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ba641af6388844c3df57c98d3549c14110ff0e6b",
+      "title": "NewsBench: Systematic Evaluation of LLMs for Writing Proficiency and Safety Adherence in Chinese Journalistic Editorial Applications",
+      "authors": [
+        {
+          "name": "Miao Li",
+          "authorId": "2289901776"
+        },
+        {
+          "name": "Ming-Bin Chen",
+          "authorId": "2290028771"
+        },
+        {
+          "name": "Bo Tang",
+          "authorId": "2268400606"
+        },
+        {
+          "name": "Shengbin Hou",
+          "authorId": "2289836700"
+        },
+        {
+          "name": "Pengyu Wang",
+          "authorId": "2244624752"
+        },
+        {
+          "name": "Haiying Deng",
+          "authorId": "2268432225"
+        },
+        {
+          "name": "Zhiyu Li",
+          "authorId": "2268429641"
+        },
+        {
+          "name": "Feiyu Xiong",
+          "authorId": "2268399953"
+        },
+        {
+          "name": "Keming Mao",
+          "authorId": "2289842060"
+        },
+        {
+          "name": "Peng Cheng",
+          "authorId": "2268397248"
+        },
+        {
+          "name": "Yi Luo",
+          "authorId": "2297038670"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2403.00862",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ba641af6388844c3df57c98d3549c14110ff0e6b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2403.00862"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ace349613a1ff64ec9fe0c87e534e06d6bba8008",
+      "title": "The PacifAIst Benchmark: Do AIs Prioritize Human Survival over Their Own Objectives?",
+      "authors": [
+        {
+          "name": "Manuel Herrador",
+          "authorId": "2265412682"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As artificial intelligence transitions from conversational agents to autonomous actors in high-stakes environments, a critical gap emerges: how to ensure AI prioritizes human safety when its core objectives conflict with human well-being. Current safety benchmarks focus on harmful content, not behavioral alignment during instrumental goal conflicts. To address this, we introduce PacifAIst, a benchmark of 700 scenarios testing self-preservation, resource acquisition, and deception. We evaluated eight state-of-the-art large language models, revealing a significant performance hierarchy. Google\u2019s Gemini 2.5 Flash demonstrated the strongest human-centric alignment (90.31%), while the highly anticipated GPT-5 scored lowest (79.49%), indicating potential risks. These findings establish an urgent need to shift the focus of AI safety evaluation from what models say to what they would do, ensuring that autonomous systems are not just helpful in theory but are provably safe in practice.",
+      "citationCount": 0,
+      "doi": "10.3390/ai6100256",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ace349613a1ff64ec9fe0c87e534e06d6bba8008",
+      "venue": "Applied Informatics",
+      "journal": {
+        "name": "AI"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "910d26adcd83c4ec36f365198f8b2224b14ad6c9",
+      "title": "MedHallu: A Comprehensive Benchmark for Detecting Medical Hallucinations in Large Language Models",
+      "authors": [
+        {
+          "name": "Shrey Pandit",
+          "authorId": "1824294087"
+        },
+        {
+          "name": "Jiawei Xu",
+          "authorId": "2144295598"
+        },
+        {
+          "name": "Junyuan Hong",
+          "authorId": "2344392852"
+        },
+        {
+          "name": "Zhangyang Wang",
+          "authorId": "2237946662"
+        },
+        {
+          "name": "Tianlong Chen",
+          "authorId": "2034263179"
+        },
+        {
+          "name": "Kaidi Xu",
+          "authorId": "2267887786"
+        },
+        {
+          "name": "Ying Ding",
+          "authorId": "2345318931"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Advancements in Large Language Models (LLMs) and their increasing use in medical question-answering necessitate rigorous evaluation of their reliability. A critical challenge lies in hallucination, where models generate plausible yet factually incorrect outputs. In the medical domain, this poses serious risks to patient safety and clinical decision-making. To address this, we introduce MedHallu, the first benchmark specifically designed for medical hallucination detection. MedHallu comprises 10,000 high-quality question-answer pairs derived from PubMedQA, with hallucinated answers systematically generated through a controlled pipeline. Our experiments show that state-of-the-art LLMs, including GPT-4o, Llama-3.1, and the medically fine-tuned UltraMedical, struggle with this binary hallucination detection task, with the best model achieving an F1 score as low as 0.625 for detecting\"hard\"category hallucinations. Using bidirectional entailment clustering, we show that harder-to-detect hallucinations are semantically closer to ground truth. Through experiments, we also show incorporating domain-specific knowledge and introducing a\"not sure\"category as one of the answer categories improves the precision and F1 scores by up to 38% relative to baselines.",
+      "citationCount": 14,
+      "doi": "10.48550/arXiv.2502.14302",
+      "arxivId": "2502.14302",
+      "url": "https://www.semanticscholar.org/paper/910d26adcd83c4ec36f365198f8b2224b14ad6c9",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.14302"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ff77c2b4b7231256be27e92e46ce7be0cf132b0d",
+      "title": "Multimodal Situational Safety",
+      "authors": [
+        {
+          "name": "KAI-QING Zhou",
+          "authorId": "9368148"
+        },
+        {
+          "name": "Chengzhi Liu",
+          "authorId": "2325085747"
+        },
+        {
+          "name": "Xuandong Zhao",
+          "authorId": "150345512"
+        },
+        {
+          "name": "Anderson Compalas",
+          "authorId": "2325098867"
+        },
+        {
+          "name": "D. Song",
+          "authorId": "2325723129"
+        },
+        {
+          "name": "Xin Eric Wang",
+          "authorId": "2325785586"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Multimodal Large Language Models (MLLMs) are rapidly evolving, demonstrating impressive capabilities as multimodal assistants that interact with both humans and their environments. However, this increased sophistication introduces significant safety concerns. In this paper, we present the first evaluation and analysis of a novel safety challenge termed Multimodal Situational Safety, which explores how safety considerations vary based on the specific situation in which the user or agent is engaged. We argue that for an MLLM to respond safely, whether through language or action, it often needs to assess the safety implications of a language query within its corresponding visual context. To evaluate this capability, we develop the Multimodal Situational Safety benchmark (MSSBench) to assess the situational safety performance of current MLLMs. The dataset comprises 1,820 language query-image pairs, half of which the image context is safe, and the other half is unsafe. We also develop an evaluation framework that analyzes key safety aspects, including explicit safety reasoning, visual understanding, and, crucially, situational safety reasoning. Our findings reveal that current MLLMs struggle with this nuanced safety problem in the instruction-following setting and struggle to tackle these situational safety challenges all at once, highlighting a key area for future research. Furthermore, we develop multi-agent pipelines to coordinately solve safety challenges, which shows consistent improvement in safety over the original MLLM response. Code and data: mssbench.github.io.",
+      "citationCount": 27,
+      "doi": "10.48550/arXiv.2410.06172",
+      "arxivId": "2410.06172",
+      "url": "https://www.semanticscholar.org/paper/ff77c2b4b7231256be27e92e46ce7be0cf132b0d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.06172"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bc0549a5f07474c18987c219ecf367fb73a1b79c",
+      "title": "CValues: Measuring the Values of Chinese Large Language Models from Safety to Responsibility",
+      "authors": [
+        {
+          "name": "Guohai Xu",
+          "authorId": "2115723816"
+        },
+        {
+          "name": "Jiayi Liu",
+          "authorId": "2108357836"
+        },
+        {
+          "name": "Mingshi Yan",
+          "authorId": "2114009661"
+        },
+        {
+          "name": "Haotian Xu",
+          "authorId": "2141375220"
+        },
+        {
+          "name": "Jinghui Si",
+          "authorId": "2057225626"
+        },
+        {
+          "name": "Zhuoran Zhou",
+          "authorId": "2142552684"
+        },
+        {
+          "name": "Peng Yi",
+          "authorId": "2223953100"
+        },
+        {
+          "name": "Xing Gao",
+          "authorId": "2185575749"
+        },
+        {
+          "name": "Jitao Sang",
+          "authorId": "1798398"
+        },
+        {
+          "name": "Rong Zhang",
+          "authorId": "2223973456"
+        },
+        {
+          "name": "Ji Zhang",
+          "authorId": "2116921824"
+        },
+        {
+          "name": "Chao Peng",
+          "authorId": "2224445396"
+        },
+        {
+          "name": "Feiyan Huang",
+          "authorId": "2194508991"
+        },
+        {
+          "name": "Jingren Zhou",
+          "authorId": "1709595"
+        }
+      ],
+      "year": 2023,
+      "abstract": "With the rapid evolution of large language models (LLMs), there is a growing concern that they may pose risks or have negative social impacts. Therefore, evaluation of human values alignment is becoming increasingly important. Previous work mainly focuses on assessing the performance of LLMs on certain knowledge and reasoning abilities, while neglecting the alignment to human values, especially in a Chinese context. In this paper, we present CValues, the first Chinese human values evaluation benchmark to measure the alignment ability of LLMs in terms of both safety and responsibility criteria. As a result, we have manually collected adversarial safety prompts across 10 scenarios and induced responsibility prompts from 8 domains by professional experts. To provide a comprehensive values evaluation of Chinese LLMs, we not only conduct human evaluation for reliable comparison, but also construct multi-choice prompts for automatic evaluation. Our findings suggest that while most Chinese LLMs perform well in terms of safety, there is considerable room for improvement in terms of responsibility. Moreover, both the automatic and human evaluation are important for assessing the human values alignment in different aspects. The benchmark and code is available on ModelScope and Github.",
+      "citationCount": 97,
+      "doi": "10.48550/arXiv.2307.09705",
+      "arxivId": "2307.09705",
+      "url": "https://www.semanticscholar.org/paper/bc0549a5f07474c18987c219ecf367fb73a1b79c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2307.09705"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "740c17f797eff03e4d874116631e21ba91c45cbd",
+      "title": "GuardBench: A Large-Scale Benchmark for Guardrail Models",
+      "authors": [
+        {
+          "name": "Elias Bassani",
+          "authorId": "2329738064"
+        },
+        {
+          "name": "Ignacio Sanchez",
+          "authorId": "2329740094"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Generative AI systems powered by Large Language Models have become increasingly popular in recent years. Lately, due to the risk of providing users with unsafe information, the adoption of those systems in safety-critical domains has raised significant concerns. To respond to this situation, input-output filters, commonly called guardrail models, have been proposed to complement other measures, such as model alignment. Unfortunately, the lack of a standard benchmark for guardrail models poses significant evaluation issues and makes it hard to compare results across scientific publications. To fill this gap, we introduce GuardBench, a large-scale benchmark for guardrail models comprising 40 safety evaluation datasets. To facilitate the adoption of GuardBench, we release a Python library providing an automated evaluation pipeline built on top of it. With our benchmark, we also share the first large-scale prompt moderation datasets in German, French, Italian, and Spanish. To assess the current state-of-the-art, we conduct an extensive comparison of recent guardrail models and show that a general-purpose instruction-following model of comparable size achieves competitive results without the need for specific fine-tuning.",
+      "citationCount": 17,
+      "doi": "10.18653/v1/2024.emnlp-main.1022",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/740c17f797eff03e4d874116631e21ba91c45cbd",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "18393-18409"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4fa504ba9cb7188b22b36ef6fcaf07934f3bb355",
+      "title": "A Benchmark Suite to Evaluate DNN\u2019s Resilience",
+      "authors": [
+        {
+          "name": "C. Bolchini",
+          "authorId": "2418951"
+        },
+        {
+          "name": "Alberto Bosio",
+          "authorId": "2291506606"
+        },
+        {
+          "name": "Luca Cassano",
+          "authorId": "2266765422"
+        },
+        {
+          "name": "A. Miele",
+          "authorId": "1680319"
+        },
+        {
+          "name": "Salvatore Pappalardo",
+          "authorId": "2219220818"
+        },
+        {
+          "name": "Dario Passariello",
+          "authorId": "2390656957"
+        },
+        {
+          "name": "A. Ruospo",
+          "authorId": "67191344"
+        },
+        {
+          "name": "Ernesto S\u00e1nchez",
+          "authorId": "2391003653"
+        },
+        {
+          "name": "M. S. Reorda",
+          "authorId": "2285619025"
+        },
+        {
+          "name": "V. Turco",
+          "authorId": "2266773128"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Assessing AI systems reliability is essential before deploying them in safety-critical applications. While recent efforts have focused on improving model resilience to random hardware faults, meaningful comparison remains difficult due to the lack of standardized reference models. Different authors use different implementations, which makes comparisons unfair and biased: resilience is influenced by the training processes, the software framework, and data representations. To address these issues, this work introduces a benchmark suite of CNN models to test the resilience of DNNs. The benchmark is structured on different axes: software framework, hardware platform, data representation, task and dataset. It is aimed at providing a shared foundation for fair and reproducible resilience evaluation.",
+      "citationCount": 0,
+      "doi": "10.1109/ITC58126.2025.00090",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4fa504ba9cb7188b22b36ef6fcaf07934f3bb355",
+      "venue": "International Test Conference",
+      "journal": {
+        "name": "2025 IEEE International Test Conference (ITC)",
+        "pages": "560-562"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e98621e6dbda318a9593cc0e7f91ec590e9a2c9e",
+      "title": "What do model reports say about their ChemBio benchmark evaluations? Comparing recent releases to the STREAM framework",
+      "authors": [
+        {
+          "name": "Tom Reed",
+          "authorId": "2375817671"
+        },
+        {
+          "name": "Tegan McCaslin",
+          "authorId": "2375819225"
+        },
+        {
+          "name": "Luca Righetti",
+          "authorId": "2375817506"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Most frontier AI developers publicly document their safety evaluations of new AI models in model reports, including testing for chemical and biological (ChemBio) misuse risks. This practice provides a window into the methodology of these evaluations, helping to build public trust in AI systems, and enabling third party review in the still-emerging science of AI evaluation. But what aspects of evaluation methodology do developers currently include -- or omit -- in their reports? This paper examines three frontier AI model reports published in spring 2025 with among the most detailed documentation: OpenAI's o3, Anthropic's Claude 4, and Google DeepMind's Gemini 2.5 Pro. We compare these using the STREAM (v1) standard for reporting ChemBio benchmark evaluations. Each model report included some useful details that the others did not, and all model reports were found to have areas for development, suggesting that developers could benefit from adopting one another's best reporting practices. We identified several items where reporting was less well-developed across all model reports, such as providing examples of test material, and including a detailed list of elicitation conditions. Overall, we recommend that AI developers continue to strengthen the emerging science of evaluation by working towards greater transparency in areas where reporting currently remains limited.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.20927",
+      "arxivId": "2510.20927",
+      "url": "https://www.semanticscholar.org/paper/e98621e6dbda318a9593cc0e7f91ec590e9a2c9e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.20927"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "2020181c5f7261cb2deff8f336125a70a102126a",
+      "title": "BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models",
+      "authors": [
+        {
+          "name": "Yige Li",
+          "authorId": "2278578217"
+        },
+        {
+          "name": "Hanxun Huang",
+          "authorId": "1753845931"
+        },
+        {
+          "name": "Yunhan Zhao",
+          "authorId": "2316962124"
+        },
+        {
+          "name": "Xingjun Ma",
+          "authorId": "2331662660"
+        },
+        {
+          "name": "Junfeng Sun",
+          "authorId": "2155020922"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Generative large language models (LLMs) have achieved state-of-the-art results on a wide range of tasks, yet they remain susceptible to backdoor attacks: carefully crafted triggers in the input can manipulate the model to produce adversary-specified outputs. While prior research has predominantly focused on backdoor risks in vision and classification settings, the vulnerability of LLMs in open-ended text generation remains underexplored. To fill this gap, we introduce BackdoorLLM (Our BackdoorLLM benchmark was awarded First Prize in the SafetyBench competition, https://www.mlsafety.org/safebench/winners, organized by the Center for AI Safety, https://safe.ai/.), the first comprehensive benchmark for systematically evaluating backdoor threats in text-generation LLMs. BackdoorLLM provides: (i) a unified repository of benchmarks with a standardized training and evaluation pipeline; (ii) a diverse suite of attack modalities, including data poisoning, weight poisoning, hidden-state manipulation, and chain-of-thought hijacking; (iii) over 200 experiments spanning 8 distinct attack strategies, 7 real-world scenarios, and 6 model architectures; (iv) key insights into the factors that govern backdoor effectiveness and failure modes in LLMs; and (v) a defense toolkit encompassing 7 representative mitigation techniques. Our code and datasets are available at https://github.com/bboylyg/BackdoorLLM. We will continuously incorporate emerging attack and defense methodologies to support the research in advancing the safety and reliability of LLMs.",
+      "citationCount": 9,
+      "doi": null,
+      "arxivId": "2408.12798",
+      "url": "https://www.semanticscholar.org/paper/2020181c5f7261cb2deff8f336125a70a102126a",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

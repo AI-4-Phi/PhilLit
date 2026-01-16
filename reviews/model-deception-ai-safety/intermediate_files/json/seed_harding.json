@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Operationalising Representation in Natural Language Processing",
+    "author": "Harding",
+    "year": 2023
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1086/728685",
+      "title": "Operationalising Representation in Natural Language Processing",
+      "authors": [
+        {
+          "family": "Harding",
+          "given": "Jacqueline"
+        }
+      ],
+      "year": 2023,
+      "container_title": "The British Journal for the Philosophy of Science",
+      "publisher": "University of Chicago Press",
+      "type": "journal-article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1086/728685",
+      "score": 48.087784
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

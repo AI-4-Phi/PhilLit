@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "arxiv",
+  "query": "all:probing classifiers beliefs language models AND cat:cs.CL",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No papers found",
+      "recoverable": false
+    }
+  ]
+}

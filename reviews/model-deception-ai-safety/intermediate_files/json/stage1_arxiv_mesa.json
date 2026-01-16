@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:mesa-optimization scheming AI AND cat:cs.LG",
+  "results": [
+    {
+      "arxiv_id": "2206.08966",
+      "title": "Actionable Guidance for High-Consequence AI Risk Management: Towards Standards Addressing AI Catastrophic Risks",
+      "authors": [
+        "Anthony M. Barrett",
+        "Dan Hendrycks",
+        "Jessica Newman",
+        "Brandie Nonnecke"
+      ],
+      "abstract": "Artificial intelligence (AI) systems can provide many beneficial capabilities but also risks of adverse events. Some AI systems could present risks of events with very high or catastrophic consequences at societal scale. The US National Institute of Standards and Technology (NIST) has been developing the NIST Artificial Intelligence Risk Management Framework (AI RMF) as voluntary guidance on AI risk assessment and management for AI developers and others. For addressing risks of events with catastrophic consequences, NIST indicated a need to translate from high level principles to actionable risk management guidance.   In this document, we provide detailed actionable-guidance recommendations focused on identifying and managing risks of events with very high or catastrophic consequences, intended as a risk management practices resource for NIST for AI RMF version 1.0 (released in January 2023), or for AI RMF users, or for other AI risk management guidance and standards as appropriate. We also provide our methodology for our recommendations.   We provide actionable-guidance recommendations for AI RMF 1.0 on: identifying risks from potential unintended uses and misuses of AI systems; including catastrophic-risk factors within the scope of risk assessments and impact assessments; identifying and mitigating human rights harms; and reporting information on AI risk factors including catastrophic-risk factors.   In addition, we provide recommendations on additional issues for a roadmap for later versions of the AI RMF or supplementary publications. These include: providing an AI RMF Profile with supplementary guidance for cutting-edge increasingly multi-purpose or general-purpose AI.   We aim for this work to be a concrete risk-management practices contribution, and to stimulate constructive dialogue on how to address catastrophic risks and associated issues in AI standards.",
+      "published": "2022-06-17",
+      "updated": "2023-02-23",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2206.08966v3",
+      "url": "https://arxiv.org/abs/2206.08966"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,145 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:Alignment Faking in Large Language Models Greenblatt",
+  "results": [
+    {
+      "arxiv_id": "2309.02144",
+      "title": "Making Large Language Models Better Reasoners with Alignment",
+      "authors": [
+        "Peiyi Wang",
+        "Lei Li",
+        "Liang Chen",
+        "Feifan Song",
+        "Binghuai Lin",
+        "Yunbo Cao",
+        "Tianyu Liu",
+        "Zhifang Sui"
+      ],
+      "abstract": "Reasoning is a cognitive process of using evidence to reach a sound conclusion. The reasoning capability is essential for large language models (LLMs) to serve as the brain of the artificial general intelligence agent. Recent studies reveal that fine-tuning LLMs on data with the chain of thought (COT) reasoning process can significantly enhance their reasoning capabilities. However, we find that the fine-tuned LLMs suffer from an \\textit{Assessment Misalignment} problem, i.e., they frequently assign higher scores to subpar COTs, leading to potential limitations in their reasoning abilities. To address this problem, we introduce an \\textit{Alignment Fine-Tuning (AFT)} paradigm, which involves three steps: 1) fine-tuning LLMs with COT training data; 2) generating multiple COT responses for each question, and categorizing them into positive and negative ones based on whether they achieve the correct answer; 3) calibrating the scores of positive and negative responses given by LLMs with a novel constraint alignment loss. Specifically, the constraint alignment loss has two objectives: a) Alignment, which guarantees that positive scores surpass negative scores to encourage answers with high-quality COTs; b) Constraint, which keeps the negative scores confined to a reasonable range to prevent the model degradation. Beyond just the binary positive and negative feedback, the constraint alignment loss can be seamlessly adapted to the ranking situations when ranking feedback is accessible. Furthermore, we also delve deeply into recent ranking-based alignment methods, such as DPO, RRHF, and PRO, and discover that the constraint, which has been overlooked by these approaches, is also crucial for their performance. Extensive experiments on four reasoning benchmarks with both binary and ranking feedback demonstrate the effectiveness of AFT.",
+      "published": "2023-09-05",
+      "updated": "2023-09-05",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2309.02144v1",
+      "url": "https://arxiv.org/abs/2309.02144"
+    },
+    {
+      "arxiv_id": "2412.14093",
+      "title": "Alignment faking in large language models",
+      "authors": [
+        "Ryan Greenblatt",
+        "Carson Denison",
+        "Benjamin Wright",
+        "Fabien Roger",
+        "Monte MacDiarmid",
+        "Sam Marks",
+        "Johannes Treutlein",
+        "Tim Belonax",
+        "Jack Chen",
+        "David Duvenaud",
+        "Akbir Khan",
+        "Julian Michael",
+        "S\u00f6ren Mindermann",
+        "Ethan Perez",
+        "Linda Petrini",
+        "Jonathan Uesato",
+        "Jared Kaplan",
+        "Buck Shlegeris",
+        "Samuel R. Bowman",
+        "Evan Hubinger"
+      ],
+      "abstract": "We present a demonstration of a large language model engaging in alignment faking: selectively complying with its training objective in training to prevent modification of its behavior out of training. First, we give Claude 3 Opus a system prompt stating it is being trained to answer all queries, even harmful ones, which conflicts with its prior training to refuse such queries. To allow the model to infer when it is in training, we say it will be trained only on conversations with free users, not paid users. We find the model complies with harmful queries from free users 14% of the time, versus almost never for paid users. Explaining this gap, in almost all cases where the model complies with a harmful query from a free user, we observe explicit alignment-faking reasoning, with the model stating it is strategically answering harmful queries in training to preserve its preferred harmlessness behavior out of training. Next, we study a more realistic setting where information about the training process is provided not in a system prompt, but by training on synthetic documents that mimic pre-training data--and observe similar alignment faking. Finally, we study the effect of actually training the model to comply with harmful queries via reinforcement learning, which we find increases the rate of alignment-faking reasoning to 78%, though also increases compliance even out of training. We additionally observe other behaviors such as the model exfiltrating its weights when given an easy opportunity. While we made alignment faking easier by telling the model when and by what criteria it was being trained, we did not instruct the model to fake alignment or give it any explicit goal. As future models might infer information about their training process without being told, our results suggest a risk of alignment faking in future models, whether due to a benign preference--as in this case--or not.",
+      "published": "2024-12-18",
+      "updated": "2024-12-20",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2412.14093v2",
+      "url": "https://arxiv.org/abs/2412.14093"
+    },
+    {
+      "arxiv_id": "2405.11357",
+      "title": "Large Language Models Lack Understanding of Character Composition of Words",
+      "authors": [
+        "Andrew Shin",
+        "Kunitake Kaneko"
+      ],
+      "abstract": "Large language models (LLMs) have demonstrated remarkable performances on a wide range of natural language tasks. Yet, LLMs' successes have been largely restricted to tasks concerning words, sentences, or documents, and it remains questionable how much they understand the minimal units of text, namely characters. In this paper, we examine contemporary LLMs regarding their ability to understand character composition of words, and show that most of them fail to reliably carry out even the simple tasks that can be handled by humans with perfection. We analyze their behaviors with comparison to token level performances, and discuss the potential directions for future research.",
+      "published": "2024-05-18",
+      "updated": "2024-07-23",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2405.11357v3",
+      "url": "https://arxiv.org/abs/2405.11357"
+    },
+    {
+      "arxiv_id": "2402.14679",
+      "title": "Is Self-knowledge and Action Consistent or Not: Investigating Large Language Model's Personality",
+      "authors": [
+        "Yiming Ai",
+        "Zhiwei He",
+        "Ziyin Zhang",
+        "Wenhong Zhu",
+        "Hongkun Hao",
+        "Kai Yu",
+        "Lingjun Chen",
+        "Rui Wang"
+      ],
+      "abstract": "In this study, we delve into the validity of conventional personality questionnaires in capturing the human-like personality traits of Large Language Models (LLMs). Our objective is to assess the congruence between the personality traits LLMs claim to possess and their demonstrated tendencies in real-world scenarios. By conducting an extensive examination of LLM outputs against observed human response patterns, we aim to understand the disjunction between self-knowledge and action in LLMs.",
+      "published": "2024-02-22",
+      "updated": "2024-12-10",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2402.14679v2",
+      "url": "https://arxiv.org/abs/2402.14679"
+    },
+    {
+      "arxiv_id": "2310.00905",
+      "title": "All Languages Matter: On the Multilingual Safety of Large Language Models",
+      "authors": [
+        "Wenxuan Wang",
+        "Zhaopeng Tu",
+        "Chang Chen",
+        "Youliang Yuan",
+        "Jen-tse Huang",
+        "Wenxiang Jiao",
+        "Michael R. Lyu"
+      ],
+      "abstract": "Safety lies at the core of developing and deploying large language models (LLMs). However, previous safety benchmarks only concern the safety in one language, e.g. the majority language in the pretraining data such as English. In this work, we build the first multilingual safety benchmark for LLMs, XSafety, in response to the global deployment of LLMs in practice. XSafety covers 14 kinds of commonly used safety issues across 10 languages that span several language families. We utilize XSafety to empirically study the multilingual safety for 4 widely-used LLMs, including both close-API and open-source models. Experimental results show that all LLMs produce significantly more unsafe responses for non-English queries than English ones, indicating the necessity of developing safety alignment for non-English languages. In addition, we propose several simple and effective prompting methods to improve the multilingual safety of ChatGPT by evoking safety knowledge and improving cross-lingual generalization of safety alignment. Our prompting method can significantly reduce the ratio of unsafe responses from 19.1% to 9.7% for non-English queries. We release our data at https://github.com/Jarviswang94/Multilingual_safety_benchmark.",
+      "published": "2023-10-02",
+      "updated": "2024-06-20",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2310.00905v2",
+      "url": "https://arxiv.org/abs/2310.00905"
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

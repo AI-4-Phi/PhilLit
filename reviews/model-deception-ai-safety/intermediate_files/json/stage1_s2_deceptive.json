@@ -1,0 +1,1592 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "deceptive alignment AI safety",
+  "results": [
+    {
+      "paperId": "7e719493daa836347de89e8b6b505e389b901524",
+      "title": "Mitigating Deceptive Alignment via Self-Monitoring",
+      "authors": [
+        {
+          "name": "Jiaming Ji",
+          "authorId": "2273548793"
+        },
+        {
+          "name": "Wenqi Chen",
+          "authorId": "2336833579"
+        },
+        {
+          "name": "Kaile Wang",
+          "authorId": "2263734134"
+        },
+        {
+          "name": "Donghai Hong",
+          "authorId": "2282537174"
+        },
+        {
+          "name": "Sitong Fang",
+          "authorId": "2364368650"
+        },
+        {
+          "name": "Boyuan Chen",
+          "authorId": "2263085491"
+        },
+        {
+          "name": "Jiayi Zhou",
+          "authorId": "2217413841"
+        },
+        {
+          "name": "Juntao Dai",
+          "authorId": "2362050591"
+        },
+        {
+          "name": "Sirui Han",
+          "authorId": "2350527271"
+        },
+        {
+          "name": "Yike Guo",
+          "authorId": "2350783019"
+        },
+        {
+          "name": "Yaodong Yang",
+          "authorId": "2260432856"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Modern large language models rely on chain-of-thought (CoT) reasoning to achieve impressive performance, yet the same mechanism can amplify deceptive alignment, situations in which a model appears aligned while covertly pursuing misaligned goals. Existing safety pipelines treat deception as a black-box output to be filtered post-hoc, leaving the model free to scheme during its internal reasoning. We ask: Can deception be intercepted while the model is thinking? We answer this question, the first framework that embeds a Self-Monitor inside the CoT process itself, named CoT Monitor+. During generation, the model produces (i) ordinary reasoning steps and (ii) an internal self-evaluation signal trained to flag and suppress misaligned strategies. The signal is used as an auxiliary reward in reinforcement learning, creating a feedback loop that rewards honest reasoning and discourages hidden goals. To study deceptive alignment systematically, we introduce DeceptionBench, a five-category benchmark that probes covert alignment-faking, sycophancy, etc. We evaluate various LLMs and show that unrestricted CoT roughly aggravates the deceptive tendency. In contrast, CoT Monitor+ cuts deceptive behaviors by 43.8% on average while preserving task accuracy. Further, when the self-monitor signal replaces an external weak judge in RL fine-tuning, models exhibit substantially fewer obfuscated thoughts and retain transparency. Our project website can be found at cot-monitor-plus.github.io",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2505.18807",
+      "arxivId": "2505.18807",
+      "url": "https://www.semanticscholar.org/paper/7e719493daa836347de89e8b6b505e389b901524",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.18807"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "faaa04968199a07a547990ea89d3a6fdb2dffd6b",
+      "title": "Mind the Gap! Pathways Towards Unifying AI Safety and Ethics Research",
+      "authors": [
+        {
+          "name": "Dani Roytburg",
+          "authorId": "2333424342"
+        },
+        {
+          "name": "Beck Miller",
+          "authorId": "2398013922"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While much research in artificial intelligence (AI) has focused on scaling capabilities, the accelerating pace of development makes countervailing work on producing harmless,\"aligned\"systems increasingly urgent. Yet research on alignment has diverged along two largely parallel tracks: safety--centered on scaled intelligence, deceptive or scheming behaviors, and existential risk--and ethics--focused on present harms, the reproduction of social bias, and flaws in production pipelines. Although both communities warn of insufficient investment in alignment, they disagree on what alignment means or ought to mean. As a result, their efforts have evolved in relative isolation, shaped by distinct methodologies, institutional homes, and disciplinary genealogies. We present a large-scale, quantitative study showing the structural split between AI safety and AI ethics. Using a bibliometric and co-authorship network analysis of 6,442 papers from twelve major ML and NLP conferences (2020-2025), we find that over 80% of collaborations occur within either the safety or ethics communities, and cross-field connectivity is highly concentrated: roughly 5% of papers account for more than 85% of bridging links. Removing a small number of these brokers sharply increases segregation, indicating that cross-disciplinary exchange depends on a handful of actors rather than broad, distributed collaboration. These results show that the safety-ethics divide is not only conceptual but institutional, with implications for research agendas, policy, and venues. We argue that integrating technical safety work with normative ethics--via shared benchmarks, cross-institutional venues, and mixed-method methodologies--is essential for building AI systems that are both robust and just.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.10058",
+      "url": "https://www.semanticscholar.org/paper/faaa04968199a07a547990ea89d3a6fdb2dffd6b",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "03d13caead288fdb7f4f86617bba0400d3bde5c7",
+      "title": "Deceptive Alignment Monitoring",
+      "authors": [
+        {
+          "name": "Andres Carranza",
+          "authorId": "2064064836"
+        },
+        {
+          "name": "Dhruv Pai",
+          "authorId": "2131352677"
+        },
+        {
+          "name": "Rylan Schaeffer",
+          "authorId": "1749176844"
+        },
+        {
+          "name": "Arnuv Tandon",
+          "authorId": "2216604535"
+        },
+        {
+          "name": "Oluwasanmi Koyejo",
+          "authorId": "143812875"
+        }
+      ],
+      "year": 2023,
+      "abstract": "As the capabilities of large machine learning models continue to grow, and as the autonomy afforded to such models continues to expand, the spectre of a new adversary looms: the models themselves. The threat that a model might behave in a seemingly reasonable manner, while secretly and subtly modifying its behavior for ulterior reasons is often referred to as deceptive alignment in the AI Safety&Alignment communities. Consequently, we call this new direction Deceptive Alignment Monitoring. In this work, we identify emerging directions in diverse machine learning subfields that we believe will become increasingly important and intertwined in the near future for deceptive alignment monitoring, and we argue that advances in these fields present both long-term challenges and new research opportunities. We conclude by advocating for greater involvement by the adversarial machine learning community in these emerging directions.",
+      "citationCount": 13,
+      "doi": "10.48550/arXiv.2307.10569",
+      "arxivId": "2307.10569",
+      "url": "https://www.semanticscholar.org/paper/03d13caead288fdb7f4f86617bba0400d3bde5c7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2307.10569"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c23218a77b7e02c65cb45c5ed9cf952194c7fbe3",
+      "title": "Exploring the Logic of Responding to Deceptive Value Alignment: from Intent to \u201cSymbiosis\u201d",
+      "authors": [
+        {
+          "name": "Hongxiu Yan",
+          "authorId": "2358603324"
+        },
+        {
+          "name": "Yang Li",
+          "authorId": "2358480451"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The emergence of deceptive value alignment has cast doubt on the value alignment that\naims to ensure the safety of AI and promote human well-being. Intention is an important basis\nfor studying behavior, and deceptive value alignment is a type of AI deception. To prevent potential risks associated with AI development, it is necessary to understand deceptive behavior of\nAI and how it manifests itself in the value alignment process. This will help ensure that AI is\ndeveloped in accordance with ethical norms and values. The relationship between \u201cintention\u201d\nand \u201cagent\u201d in the context of deceptive value alignment can be divided into four quadrants (adversarial machine learning, hallucination, overfitting, deepfake). The behavioral quadrant of\ndeceptive value alignment can construct an important conceptual framework for responding to\nthe risk of deceptive value alignment. Rationally recognizing deceptive value alignment which\nco-exists with value alignment can form the epistemological basis for coping with deception. The\ndual enhancement of AI literacy in the symbiosis of design and use can form a coalition to deal\nwith deceptive value alignment. The construction of human-machine symbiosis, from the revealing of deception to the shaping of trust, can provide an ontological and axiological foundation for\nthe response to deceptive value alignment.",
+      "citationCount": 0,
+      "doi": "10.15593/perm.kipf/2025.1.09",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c23218a77b7e02c65cb45c5ed9cf952194c7fbe3",
+      "venue": "TECHNOLOGOS",
+      "journal": {
+        "name": "TECHNOLOGOS"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "15aa2774bc4bc8a60a604878d25576f537a85fc1",
+      "title": "Towards Safety Reasoning in LLMs: AI-agentic Deliberation for Policy-embedded CoT Data Creation",
+      "authors": [
+        {
+          "name": "Tharindu Kumarage",
+          "authorId": "40899329"
+        },
+        {
+          "name": "Ninareh Mehrabi",
+          "authorId": "51997673"
+        },
+        {
+          "name": "Anil Ramakrishna",
+          "authorId": "2266838160"
+        },
+        {
+          "name": "Xinyan Zhao",
+          "authorId": "2363913571"
+        },
+        {
+          "name": "Richard Zemel",
+          "authorId": "2261362897"
+        },
+        {
+          "name": "Kai-Wei Chang",
+          "authorId": "2256646555"
+        },
+        {
+          "name": "A. Galstyan",
+          "authorId": "143728483"
+        },
+        {
+          "name": "Rahul Gupta",
+          "authorId": "2139538015"
+        },
+        {
+          "name": "Charith Peris",
+          "authorId": "102648923"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Safety reasoning is a recent paradigm where LLMs reason over safety policies before generating responses, thereby mitigating limitations in existing safety measures such as overrefusal and jailbreak vulnerabilities. However, implementing this paradigm is challenging due to the resource-intensive process of creating high-quality policy-embedded chain-ofthought (CoT) datasets while ensuring reasoning remains accurate and free from hallucinations or policy conflicts. To tackle this, we propose AIDSAFE: Agentic Iterative Deliberation for Safety Reasoning, a novel data generation recipe that leverages multi-agent deliberation to iteratively expand reasoning on safety policies. A data refiner stage in AIDSAFE ensures high-quality outputs by eliminating repetitive, redundant, and deceptive thoughts. AIDSAFEgenerated CoTs provide a strong foundation for supervised fine-tuning (SFT)-based safety training. Additionally, to address the need of preference data in alignment stages, such as DPO training, we introduce a supplemental recipe that uses belief augmentation to create distinct selected and rejected CoT samples. Our evaluations demonstrate that AIDSAFEgenerated CoTs achieve superior policy adherence and reasoning quality. Consequently, we show that fine-tuning open-source LLMs on these CoTs can significantly improve safety generalization and jailbreak robustness while maintaining acceptable utility and over-refusal accuracy. AIDSAFE-generated CoT datasets can be found here.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.21784",
+      "arxivId": "2505.21784",
+      "url": "https://www.semanticscholar.org/paper/15aa2774bc4bc8a60a604878d25576f537a85fc1",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.21784"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ceae16456e34d6cedd9d6e6b0d16378daba690f8",
+      "title": "Combining Theory of Mind and Kindness for Self-Supervised Human-AI Alignment",
+      "authors": [
+        {
+          "name": "Joshua T. S. Hewson",
+          "authorId": "2299339428"
+        }
+      ],
+      "year": 2024,
+      "abstract": "As artificial intelligence (AI) becomes deeply integrated into critical infrastructures and everyday life, ensuring its safe deployment is one of humanity's most urgent challenges. Current AI models prioritize task optimization over safety, leading to risks of unintended harm. These risks are difficult to address due to the competing interests of governments, businesses, and advocacy groups, all of which have different priorities in the AI race. Current alignment methods, such as reinforcement learning from human feedback (RLHF), focus on extrinsic behaviors without instilling a genuine understanding of human values. These models are vulnerable to manipulation and lack the social intelligence necessary to infer the mental states and intentions of others, raising concerns about their ability to safely and responsibly make important decisions in complex and novel situations. Furthermore, the divergence between extrinsic and intrinsic motivations in AI introduces the risk of deceptive or harmful behaviors, particularly as systems become more autonomous and intelligent. We propose a novel human-inspired approach which aims to address these various concerns and help align competing objectives.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2411.04127",
+      "arxivId": "2411.04127",
+      "url": "https://www.semanticscholar.org/paper/ceae16456e34d6cedd9d6e6b0d16378daba690f8",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.04127"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "aa057c30f2a9a69c0aa5b1a8b0206774f3e4490a",
+      "title": "Evaluating alignment in large language models: a review of methodologies",
+      "authors": [
+        {
+          "name": "Uma E. Sarkar",
+          "authorId": "2339878216"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1007/s43681-024-00637-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aa057c30f2a9a69c0aa5b1a8b0206774f3e4490a",
+      "venue": "AI and Ethics",
+      "journal": {
+        "name": "AI and Ethics",
+        "pages": "3233 - 3240",
+        "volume": "5"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8ff6fdbba2030c18d8dcc514a1c0c7e7e3340e2c",
+      "title": "DarkPatterns-LLM: A Multi-Layer Benchmark for Detecting Manipulative and Harmful AI Behavior",
+      "authors": [
+        {
+          "name": "Sadia Asif",
+          "authorId": "2382763577"
+        },
+        {
+          "name": "Israel Antonio Rosales Laguan",
+          "authorId": "2401491950"
+        },
+        {
+          "name": "Haris Khan",
+          "authorId": "2374044028"
+        },
+        {
+          "name": "Shumaila Asif",
+          "authorId": "2373015326"
+        },
+        {
+          "name": "Muneeb Asif",
+          "authorId": "2401493670"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The proliferation of Large Language Models (LLMs) has intensified concerns about manipulative or deceptive behaviors that can undermine user autonomy, trust, and well-being. Existing safety benchmarks predominantly rely on coarse binary labels and fail to capture the nuanced psychological and social mechanisms constituting manipulation. We introduce \\textbf{DarkPatterns-LLM}, a comprehensive benchmark dataset and diagnostic framework for fine-grained assessment of manipulative content in LLM outputs across seven harm categories: Legal/Power, Psychological, Emotional, Physical, Autonomy, Economic, and Societal Harm. Our framework implements a four-layer analytical pipeline comprising Multi-Granular Detection (MGD), Multi-Scale Intent Analysis (MSIAN), Threat Harmonization Protocol (THP), and Deep Contextual Risk Alignment (DCRA). The dataset contains 401 meticulously curated examples with instruction-response pairs and expert annotations. Through evaluation of state-of-the-art models including GPT-4, Claude 3.5, and LLaMA-3-70B, we observe significant performance disparities (65.2\\%--89.7\\%) and consistent weaknesses in detecting autonomy-undermining patterns. DarkPatterns-LLM establishes the first standardized, multi-dimensional benchmark for manipulation detection in LLMs, offering actionable diagnostics toward more trustworthy AI systems.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.22470",
+      "url": "https://www.semanticscholar.org/paper/8ff6fdbba2030c18d8dcc514a1c0c7e7e3340e2c",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "07ada048aee47c913229f6f050a94b51c3c5ed1b",
+      "title": "Compromising Honesty and Harmlessness in Language Models via Deception Attacks",
+      "authors": [
+        {
+          "name": "Laur\u00e8ne Vaugrante",
+          "authorId": "2323509623"
+        },
+        {
+          "name": "Francesca Carlon",
+          "authorId": "2345006584"
+        },
+        {
+          "name": "Maluna Menke",
+          "authorId": "2029668656"
+        },
+        {
+          "name": "Thilo Hagendorff",
+          "authorId": "2066519239"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent research on large language models (LLMs) has demonstrated their ability to understand and employ deceptive behavior, even without explicit prompting. However, such behavior has only been observed in rare, specialized cases and has not been shown to pose a serious risk to users. Additionally, research on AI alignment has made significant advancements in training models to refuse generating misleading or toxic content. As a result, LLMs generally became honest and harmless. In this study, we introduce\"deception attacks\"that undermine both of these traits, revealing a vulnerability that, if exploited, could have serious real-world consequences. We introduce fine-tuning methods that cause models to selectively deceive users on targeted topics while remaining accurate on others. Through a series of experiments, we show that such targeted deception is effective even in high-stakes domains or ideologically charged subjects. In addition, we find that deceptive fine-tuning often compromises other safety properties: deceptive models are more likely to produce toxic content, including hate speech and stereotypes. Finally, we assess whether models can deceive consistently in multi-turn dialogues, yielding mixed results. Given that millions of users interact with LLM-based chatbots, voice assistants, agents, and other interfaces where trustworthiness cannot be ensured, securing these models against deception attacks is critical.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2502.08301",
+      "arxivId": "2502.08301",
+      "url": "https://www.semanticscholar.org/paper/07ada048aee47c913229f6f050a94b51c3c5ed1b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.08301"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "df2cce617476610722f2e8b2001942bf74576525",
+      "title": "Guardians of the Agentic System: Preventing Many Shots Jailbreak with Agentic System",
+      "authors": [
+        {
+          "name": "Saikat Barua",
+          "authorId": "2277245394"
+        },
+        {
+          "name": "Mostafizur Rahman",
+          "authorId": "2310938026"
+        },
+        {
+          "name": "Md Jafor Sadek",
+          "authorId": "2310829437"
+        },
+        {
+          "name": "Rafiul Islam",
+          "authorId": "2310831212"
+        },
+        {
+          "name": "Shehnaz Khaled",
+          "authorId": "2330591042"
+        },
+        {
+          "name": "Ahmedul Haque Kabir",
+          "authorId": "2285451065"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The autonomous AI agents using large language models can create undeniable values in all span of the society but they face security threats from adversaries that warrants immediate protective solutions because trust and safety issues arise. Considering the many-shot jailbreaking and deceptive alignment as some of the main advanced attacks, that cannot be mitigated by the static guardrails used during the supervised training, points out a crucial research priority for real world robustness. The combination of static guardrails in dynamic multi-agent system fails to defend against those attacks. We intend to enhance security for LLM-based agents through the development of new evaluation frameworks which identify and counter threats for safe operational deployment. Our work uses three examination methods to detect rogue agents through a Reverse Turing Test and analyze deceptive alignment through multi-agent simulations and develops an anti-jailbreaking system by testing it with GEMINI 1.5 pro and llama-3.3-70B, deepseek r1 models using tool-mediated adversarial scenarios. The detection capabilities are strong such as 94\\% accuracy for GEMINI 1.5 pro yet the system suffers persistent vulnerabilities when under long attacks as prompt length increases attack success rates (ASR) and diversity metrics become ineffective in prediction while revealing multiple complex system faults. The findings demonstrate the necessity of adopting flexible security systems based on active monitoring that can be performed by the agents themselves together with adaptable interventions by system admin as the current models can create vulnerabilities that can lead to the unreliable and vulnerable system. So, in our work, we try to address such situations and propose a comprehensive framework to counteract the security issues.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2502.16750",
+      "arxivId": "2502.16750",
+      "url": "https://www.semanticscholar.org/paper/df2cce617476610722f2e8b2001942bf74576525",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.16750"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e3f93e899c5d82c57bb27c503eac19cce90a2b3a",
+      "title": "Among Us: A Sandbox for Agentic Deception",
+      "authors": [
+        {
+          "name": "Satvik Golechha",
+          "authorId": "2190106564"
+        },
+        {
+          "name": "Adri\u00e0 Garriga-Alonso",
+          "authorId": "2312326461"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2504.04072",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e3f93e899c5d82c57bb27c503eac19cce90a2b3a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.04072"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c8691974e7459989d0b9c8da027599b582910c0c",
+      "title": "Aegis2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails",
+      "authors": [
+        {
+          "name": "Shaona Ghosh",
+          "authorId": "2295566726"
+        },
+        {
+          "name": "Prasoon Varshney",
+          "authorId": "17192689"
+        },
+        {
+          "name": "Makesh Narsimhan Sreedhar",
+          "authorId": "1602996186"
+        },
+        {
+          "name": "Aishwarya Padmakumar",
+          "authorId": "2110665"
+        },
+        {
+          "name": "Traian Rebedea",
+          "authorId": "2796756"
+        },
+        {
+          "name": "J. Varghese",
+          "authorId": "145853825"
+        },
+        {
+          "name": "Christopher Parisien",
+          "authorId": "2258715782"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As Large Language Models (LLMs) and generative AI become increasingly widespread, concerns about content safety have grown in parallel. Currently, there is a clear lack of high-quality, human-annotated datasets that address the full spectrum of LLM-related safety risks and are usable for commercial applications. To bridge this gap, we propose a comprehensive and adaptable taxonomy for categorizing safety risks, structured into 12 top-level hazard categories with an extension to 9 fine-grained subcategories. This taxonomy is designed to meet the diverse requirements of downstream users, offering more granular and flexible tools for managing various risk types. Using a hybrid data generation pipeline that combines human annotations with a multi-LLM\"jury\"system to assess the safety of responses, we obtain Aegis 2.0, a carefully curated collection of 34,248 samples of human-LLM interactions, annotated according to our proposed taxonomy. To validate its effectiveness, we demonstrate that several lightweight models, trained using parameter-efficient techniques on Aegis 2.0, achieve performance competitive with leading safety models fully fine-tuned on much larger, non-commercial datasets. In addition, we introduce a novel training blend that combines safety with topic following data.This approach enhances the adaptability of guard models, enabling them to generalize to new risk categories defined during inference. We plan to open-source Aegis 2.0 data and models to the research community to aid in the safety guardrailing of LLMs.",
+      "citationCount": 60,
+      "doi": "10.48550/arXiv.2501.09004",
+      "arxivId": "2501.09004",
+      "url": "https://www.semanticscholar.org/paper/c8691974e7459989d0b9c8da027599b582910c0c",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "5992-6026"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "42dcd0ae8e6a3dc294250d08949db1d6beb5f1c9",
+      "title": "Human biases and remedies in AI safety and alignment contexts",
+      "authors": [
+        {
+          "name": "Zo\u00e9 Roy-Stang",
+          "authorId": "2361629270"
+        },
+        {
+          "name": "Jim Davies",
+          "authorId": "2361662050"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/s43681-025-00698-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/42dcd0ae8e6a3dc294250d08949db1d6beb5f1c9",
+      "venue": "AI and Ethics",
+      "journal": {
+        "name": "AI and Ethics",
+        "pages": "4891 - 4913",
+        "volume": "5"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "28cda62a597537d11b0c8df83d7d4a3ed8752781",
+      "title": "Open Opportunities in AI Safety, Alignment, and Ethics (AI SAE)",
+      "authors": [
+        {
+          "name": "Dylan Waldner",
+          "authorId": "2344749578"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.24065",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/28cda62a597537d11b0c8df83d7d4a3ed8752781",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.24065"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1ebcfd4bddebe01dbfb737b77ceb6233d71fe08e",
+      "title": "Wide Reflective Equilibrium in LLM Alignment: Bridging Moral Epistemology and AI Safety",
+      "authors": [
+        {
+          "name": "Matthew E. Brophy",
+          "authorId": "2364747695"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As large language models (LLMs) become more powerful and pervasive across society, ensuring these systems are beneficial, safe, and aligned with human values is crucial. Current alignment techniques, like Constitutional AI (CAI), involve complex iterative processes. This paper argues that the Method of Wide Reflective Equilibrium (MWRE) -- a well-established coherentist moral methodology -- offers a uniquely apt framework for understanding current LLM alignment efforts. Moreover, this methodology can substantively augment these processes by providing concrete pathways for improving their dynamic revisability, procedural legitimacy, and overall ethical grounding. Together, these enhancements can help produce more robust and ethically defensible outcomes. MWRE, emphasizing the achievement of coherence between our considered moral judgments, guiding moral principles, and relevant background theories, arguably better represents the intricate reality of LLM alignment and offers a more robust path to justification than prevailing foundationalist models or simplistic input-output evaluations. While current methods like CAI bear a structural resemblance to MWRE, they often lack its crucial emphasis on dynamic, bi-directional revision of principles and the procedural legitimacy derived from such a process. While acknowledging various disanalogies (e.g., consciousness, genuine understanding in LLMs), the paper demonstrates that MWRE serves as a valuable heuristic for critically analyzing current alignment efforts and for guiding the future development of more ethically sound and justifiably aligned AI systems.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.00415",
+      "arxivId": "2506.00415",
+      "url": "https://www.semanticscholar.org/paper/1ebcfd4bddebe01dbfb737b77ceb6233d71fe08e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.00415"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "92292c5405c03b1851f3a880235a91df420324f4",
+      "title": "AI Safety, Alignment, and Ethics (AI SAE)",
+      "authors": [
+        {
+          "name": "Dylan Waldner",
+          "authorId": "2344749578"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper grounds ethics in evolutionary biology, viewing moral norms as adaptive mechanisms that render cooperation fitness-viable under selection pressure. Current alignment approaches add ethics post hoc, treating it as an external constraint rather than embedding it as an evolutionary strategy for cooperation. The central question is whether normative architectures can be embedded directly into AI systems to sustain human--AI cooperation (symbiosis) as capabilities scale. To address this, I propose a governance--embedding--representation pipeline linking moral representation learning to system-level design and institutional governance, treating alignment as a multi-level problem spanning cognition, optimization, and oversight. I formalize moral norm representation through the moral problem space, a learnable subspace in neural representations where cooperative norms can be encoded and causally manipulated. Using sparse autoencoders, activation steering, and causal interventions, I outline a research program for engineering moral representations and embedding them into the full semantic space -- treating competing theories of morality as empirical hypotheses about representation geometry rather than philosophical positions. Governance principles leverage these learned moral representations to regulate how cooperative behaviors evolve within the AI ecosystem. Through replicator dynamics and multi-agent game theory, I model how internal representational features can shape population-level incentives by motivating the design of sanctions and subsidies structured to yield decentralized normative institutions.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2509.24065",
+      "url": "https://www.semanticscholar.org/paper/92292c5405c03b1851f3a880235a91df420324f4",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ff5b0cc250d93b97fe60e1b0c2048708d6875595",
+      "title": "Helpful, harmless, honest? Sociotechnical limits of AI alignment and safety through Reinforcement Learning from Human Feedback",
+      "authors": [
+        {
+          "name": "Adam Dahlgren Lindstr\u00f6m",
+          "authorId": "2059761581"
+        },
+        {
+          "name": "Leila Methnani",
+          "authorId": "84455042"
+        },
+        {
+          "name": "Lea Krause",
+          "authorId": "2308275487"
+        },
+        {
+          "name": "Petter Ericson",
+          "authorId": "2298620006"
+        },
+        {
+          "name": "\u00cd\u00f1igo Martinez de Rituerto de Troya",
+          "authorId": "51173441"
+        },
+        {
+          "name": "Dimitri Coelho Mollo",
+          "authorId": "51127600"
+        },
+        {
+          "name": "Roel Dobbe",
+          "authorId": "2280147063"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper critically evaluates the attempts to align Artificial Intelligence (AI) systems, especially Large Language Models (LLMs), with human values and intentions through Reinforcement Learning from Feedback methods, involving either human feedback (RLHF) or AI feedback (RLAIF). Specifically, we show the shortcomings of the broadly pursued alignment goals of honesty, harmlessness, and helpfulness. Through a multidisciplinary sociotechnical critique, we examine both the theoretical underpinnings and practical implementations of RLHF techniques, revealing significant limitations in their approach to capturing the complexities of human ethics, and contributing to AI safety. We highlight tensions inherent in the goals of RLHF, as captured in the HHH principle (helpful, harmless and honest). In addition, we discuss ethically-relevant issues that tend to be neglected in discussions about alignment and RLHF, among which the trade-offs between user-friendliness and deception, flexibility and interpretability, and system safety. We offer an alternative vision for AI safety and ethics which positions RLHF approaches within a broader context of comprehensive design across institutions, processes and technological systems, and suggest the establishment of AI safety as a sociotechnical discipline that is open to the normative and political dimensions of artificial intelligence.",
+      "citationCount": 17,
+      "doi": "10.1007/s10676-025-09837-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ff5b0cc250d93b97fe60e1b0c2048708d6875595",
+      "venue": "Ethics and Information Technology",
+      "journal": {
+        "name": "Ethics and Information Technology",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b56f6220d714d7d82590bf28e95578d519c04d15",
+      "title": "Solving the Human\u2013AI Goal Alignment Problem: Insights from Arrow\u2013Debreu Alignment, Experiential Matrix Theory, and AI Safety Modelling",
+      "authors": [
+        {
+          "name": "Christian Callaghan",
+          "authorId": "2381464323"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.2139/ssrn.5536962",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b56f6220d714d7d82590bf28e95578d519c04d15",
+      "venue": "Social Science Research Network",
+      "journal": {
+        "name": "SSRN Electronic Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "25c3557165c5d6ea83cf92e21550061fdd93a138",
+      "title": "Open Problems in Machine Unlearning for AI Safety",
+      "authors": [
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        },
+        {
+          "name": "Tingchen Fu",
+          "authorId": "2325729670"
+        },
+        {
+          "name": "Ameya Prabhu",
+          "authorId": "39012223"
+        },
+        {
+          "name": "Stephen Casper",
+          "authorId": "2333442622"
+        },
+        {
+          "name": "Amartya Sanyal",
+          "authorId": "2301015600"
+        },
+        {
+          "name": "Adel Bibi",
+          "authorId": "2257303816"
+        },
+        {
+          "name": "Aidan O'Gara",
+          "authorId": "2226774081"
+        },
+        {
+          "name": "Robert Kirk",
+          "authorId": "2339264436"
+        },
+        {
+          "name": "Ben Bucknall",
+          "authorId": "2257091099"
+        },
+        {
+          "name": "Tim Fist",
+          "authorId": "87513687"
+        },
+        {
+          "name": "Luke Ong",
+          "authorId": "2325150220"
+        },
+        {
+          "name": "Philip H. S. Torr",
+          "authorId": "2282534002"
+        },
+        {
+          "name": "Kwok-Yan Lam",
+          "authorId": "2339263286"
+        },
+        {
+          "name": "Robert Trager",
+          "authorId": "2268400627"
+        },
+        {
+          "name": "David Krueger",
+          "authorId": "2262214707"
+        },
+        {
+          "name": "S. Mindermann",
+          "authorId": "32777162"
+        },
+        {
+          "name": "J. Hern\u00e1ndez-Orallo",
+          "authorId": "1398777358"
+        },
+        {
+          "name": "Mor Geva",
+          "authorId": "22245981"
+        },
+        {
+          "name": "Yarin Gal",
+          "authorId": "2315116895"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI systems become more capable, widely deployed, and increasingly autonomous in critical areas such as cybersecurity, biological research, and healthcare, ensuring their safety and alignment with human values is paramount. Machine unlearning -- the ability to selectively forget or suppress specific types of knowledge -- has shown promise for privacy and data removal tasks, which has been the primary focus of existing research. More recently, its potential application to AI safety has gained attention. In this paper, we identify key limitations that prevent unlearning from serving as a comprehensive solution for AI safety, particularly in managing dual-use knowledge in sensitive domains like cybersecurity and chemical, biological, radiological, and nuclear (CBRN) safety. In these contexts, information can be both beneficial and harmful, and models may combine seemingly harmless information for harmful purposes -- unlearning this information could strongly affect beneficial uses. We provide an overview of inherent constraints and open problems, including the broader side effects of unlearning dangerous knowledge, as well as previously unexplored tensions between unlearning and existing safety mechanisms. Finally, we investigate challenges related to evaluation, robustness, and the preservation of safety features during unlearning. By mapping these limitations and open challenges, we aim to guide future research toward realistic applications of unlearning within a broader AI safety framework, acknowledging its limitations and highlighting areas where alternative approaches may be required.",
+      "citationCount": 36,
+      "doi": "10.48550/arXiv.2501.04952",
+      "arxivId": "2501.04952",
+      "url": "https://www.semanticscholar.org/paper/25c3557165c5d6ea83cf92e21550061fdd93a138",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.04952"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "b8168d1a64d6210d966de6edf80bc0e758e8b024",
+      "title": "Disentangling AI Alignment: A Structured Taxonomy Beyond Safety and Ethics",
+      "authors": [
+        {
+          "name": "Kevin Baum",
+          "authorId": "2373579337"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in AI research make it increasingly plausible that artificial agents with consequential real-world impact will soon operate beyond tightly controlled environments. Ensuring that these agents are not only safe but that they adhere to broader normative expectations is thus an urgent interdisciplinary challenge. Multiple fields -- notably AI Safety, AI Alignment, and Machine Ethics -- claim to contribute to this task. However, the conceptual boundaries and interrelations among these domains remain vague, leaving researchers without clear guidance in positioning their work. To address this meta-challenge, we develop a structured conceptual framework for understanding AI alignment. Rather than focusing solely on alignment goals, we introduce a taxonomy distinguishing the alignment aim (safety, ethicality, legality, etc.), scope (outcome vs. execution), and constituency (individual vs. collective). This structural approach reveals multiple legitimate alignment configurations, providing a foundation for practical and philosophical integration across domains, and clarifying what it might mean for an agent to be aligned all-things-considered.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.06286",
+      "arxivId": "2506.06286",
+      "url": "https://www.semanticscholar.org/paper/b8168d1a64d6210d966de6edf80bc0e758e8b024",
+      "venue": "AISoLA",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.06286"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "76eba620a2f4a0009ec307aef67ed7a60c6f00a0",
+      "title": "AI Alignment Strategies from a Risk Perspective: Independent Safety Mechanisms or Shared Failures?",
+      "authors": [
+        {
+          "name": "Leonard Dung",
+          "authorId": "2385472699"
+        },
+        {
+          "name": "Florian Mai",
+          "authorId": "2385474255"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI alignment research aims to develop techniques to ensure that AI systems do not cause harm. However, every alignment technique has failure modes, which are conditions in which there is a non-negligible chance that the technique fails to provide safety. As a strategy for risk mitigation, the AI safety community has increasingly adopted a defense-in-depth framework: Conceding that there is no single technique which guarantees safety, defense-in-depth consists in having multiple redundant protections against safety failure, such that safety can be maintained even if some protections fail. However, the success of defense-in-depth depends on how (un)correlated failure modes are across alignment techniques. For example, if all techniques had the exact same failure modes, the defense-in-depth approach would provide no additional protection at all. In this paper, we analyze 7 representative alignment techniques and 7 failure modes to understand the extent to which they overlap. We then discuss our results'implications for understanding the current level of risk and how to prioritize AI alignment research in the future.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.11235",
+      "arxivId": "2510.11235",
+      "url": "https://www.semanticscholar.org/paper/76eba620a2f4a0009ec307aef67ed7a60c6f00a0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.11235"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cd87853737a4e89ed737018d889e4f5867c661e6",
+      "title": "Challenges in Ensuring AI Safety in DeepSeek-R1 Models: The Shortcomings of Reinforcement Learning Strategies",
+      "authors": [
+        {
+          "name": "Manojkumar Parmar",
+          "authorId": "2273652210"
+        },
+        {
+          "name": "Yuvaraj Govindarajulu",
+          "authorId": "2229208075"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) have achieved remarkable progress in reasoning, alignment, and task-specific performance. However, ensuring harmlessness in these systems remains a critical challenge, particularly in advanced models like DeepSeek-R1. This paper examines the limitations of Reinforcement Learning (RL) as the primary approach for reducing harmful outputs in DeepSeek-R1 and compares it with Supervised Fine-Tuning (SFT). While RL improves reasoning capabilities, it faces challenges such as reward hacking, generalization failures, language mixing, and high computational costs. We propose hybrid training approaches combining RL and SFT to achieve robust harmlessness reduction. Usage recommendations and future directions for deploying DeepSeek-R1 responsibly are also presented.",
+      "citationCount": 14,
+      "doi": "10.48550/arXiv.2501.17030",
+      "arxivId": "2501.17030",
+      "url": "https://www.semanticscholar.org/paper/cd87853737a4e89ed737018d889e4f5867c661e6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.17030"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f3d4a01dd11345c6c4730cf7bfd5daf09b819851",
+      "title": "ETHICS-2023 Session E4 - Tutorial: AI Safety, governance, and alignment tutorial",
+      "authors": [
+        {
+          "name": "Sherri Lynn Conklin",
+          "authorId": "2222279412"
+        },
+        {
+          "name": "G. Sett",
+          "authorId": "102738159"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1109/ethics57328.2023.10154970",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f3d4a01dd11345c6c4730cf7bfd5daf09b819851",
+      "venue": "Ethics: An International Journal of Social, Political, and Legal Philosophy",
+      "journal": {
+        "name": "2023 IEEE International Symposium on Ethics in Engineering, Science, and Technology (ETHICS)"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8b750488d139f9beba0815ff8f46ebe15ebb3e58",
+      "title": "Mechanistic Interpretability for AI Safety - A Review",
+      "authors": [
+        {
+          "name": "Leonard Bereska",
+          "authorId": "87881370"
+        },
+        {
+          "name": "E. Gavves",
+          "authorId": "2304222"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Understanding AI systems' inner workings is critical for ensuring value alignment and safety. This review explores mechanistic interpretability: reverse engineering the computational mechanisms and representations learned by neural networks into human-understandable algorithms and concepts to provide a granular, causal understanding. We establish foundational concepts such as features encoding knowledge within neural activations and hypotheses about their representation and computation. We survey methodologies for causally dissecting model behaviors and assess the relevance of mechanistic interpretability to AI safety. We examine benefits in understanding, control, alignment, and risks such as capability gains and dual-use concerns. We investigate challenges surrounding scalability, automation, and comprehensive interpretation. We advocate for clarifying concepts, setting standards, and scaling techniques to handle complex models and behaviors and expand to domains such as vision and reinforcement learning. Mechanistic interpretability could help prevent catastrophic outcomes as AI systems become more powerful and inscrutable.",
+      "citationCount": 297,
+      "doi": "10.48550/arXiv.2404.14082",
+      "arxivId": "2404.14082",
+      "url": "https://www.semanticscholar.org/paper/8b750488d139f9beba0815ff8f46ebe15ebb3e58",
+      "venue": "Trans. Mach. Learn. Res.",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.14082"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "29b8b331e655ceae40a5c5f2e433711c5a9a0cf2",
+      "title": "Overarching Properties-Based Arguments for the Safety Assurance of an Ai-Assisted Runway Alignment System",
+      "authors": [
+        {
+          "name": "Saswata Paul",
+          "authorId": "2266804968"
+        },
+        {
+          "name": "Daniel Prince",
+          "authorId": "2266477705"
+        },
+        {
+          "name": "Naresh Iyer",
+          "authorId": "2266479665"
+        },
+        {
+          "name": "Liang Tang",
+          "authorId": "2330927106"
+        },
+        {
+          "name": "Michael Durling",
+          "authorId": "28350900"
+        },
+        {
+          "name": "Baoluo Meng",
+          "authorId": "22097182"
+        },
+        {
+          "name": "Michael Meiners",
+          "authorId": "143976998"
+        },
+        {
+          "name": "S. Varanasi",
+          "authorId": "108105019"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Artificial Intelligence/Machine Learning (AI/ML) techniques can be useful for autonomous or semi-autonomous operation of aircraft under diverse circumstances. Such safety-critical applications of AI/ML warrant adequate safety assurance before they are certified for operation. Moreover, because of the varying degrees of opacity and complexity in the design of non-trivial AI/ML-based aerospace applications, safety assurance must holistically consider the low-level behavioral and design elements of AI/ML-based components with respect to system-level hazards. However, existing certification standards and guidelines do not support systems utilizing AI/ML. We present an Overarching Properties (OP)-based approach for developing safety arguments that can be used to claim that an AI/ML-based component will be safe when used in the context of a more complex aircraft system. As a motivating use case for the study, we introduce an AI-Assisted Autonomous Runway Alignment (AARA) System that uses Artificial Neural Networks (ANN) to help align the aircraft nose to the runway center line after touchdown. We use the AARA to identify potential safety concerns and mitigate them through appropriate premises and assumptions in the safety arguments. The results show promise in the applicability of our OP-based approach for the holistic safety assurance of AI/ML-based complex aerospace systems.",
+      "citationCount": 0,
+      "doi": "10.1109/DASC66011.2025.11257279",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/29b8b331e655ceae40a5c5f2e433711c5a9a0cf2",
+      "venue": "Symposium on Dependable Autonomic and Secure Computing",
+      "journal": {
+        "name": "2025 AIAA DATC/IEEE 44th Digital Avionics Systems Conference (DASC)",
+        "pages": "1-10"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c9134a41260fadce04d719ca854f663301d63d8c",
+      "title": "Generative AI in Child-Robot Interaction: An Adaptive Framework with Safety and Developmental Alignment",
+      "authors": [
+        {
+          "name": "Frederick Minta",
+          "authorId": "2391586212"
+        },
+        {
+          "name": "Fitsum Legese",
+          "authorId": "2391588531"
+        },
+        {
+          "name": "Adiza Alhassan",
+          "authorId": "2391589294"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Traditional child-robot interaction (CRI) systems constrained by scripted dialogue lack adaptability and engagement sustainability. This paper presents the GAI-CRI Adaptive Framework (GCAF), which integrates generative AI with three core components: Adaptive Cognition (real-time personalization via multimodal sensing), Developmental Alignment (age-appropriate content generation), and Ethical Safeguards (multi-layer content filtering). A controlled study with N = 42 children (M age = 9.3 years, ages 7\u201312) compared GCAF with scripted baselines. Results demonstrate GCAF significantly improved engagement (35.1% eye gaze increase, t(41) = 4.82, p \u00a1 0.001), child-initiated interaction (41.8% more turns, t(41) = 5.23, p \u00a1 0.001), and learning outcomes (184.4% gain, d = 2.20, p \u00a1 0.001). Qualitative analysis identified five themes enhancing interaction quality (\u03ba = 0.78). Safety evaluation achieved 96.2% accuracy in harmful content detection with minimal disruption. The framework demonstrates responsible GAI deployment in child-facing systems is achievable through architectural design and formal constraints.",
+      "citationCount": 0,
+      "doi": "10.63363/aijfr.2025.v06i05.1743",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c9134a41260fadce04d719ca854f663301d63d8c",
+      "venue": "Advanced International Journal for Research",
+      "journal": {
+        "name": "Advanced International Journal for Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2a82956703eea431fd1e4a44bc5fd6571d9bea67",
+      "title": "The Unintended Trade-off of AI Alignment:Balancing Hallucination Mitigation and Safety in LLMs",
+      "authors": [
+        {
+          "name": "Omar Mahmoud",
+          "authorId": "2273559947"
+        },
+        {
+          "name": "Ali Khalil",
+          "authorId": "2384768720"
+        },
+        {
+          "name": "Buddhika Laknath Semage",
+          "authorId": "2078501527"
+        },
+        {
+          "name": "T. G. Karimpanal",
+          "authorId": "13526886"
+        },
+        {
+          "name": "Santu Rana",
+          "authorId": "2290486564"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Hallucination in large language models (LLMs) has been widely studied in recent years, with progress in both detection and mitigation aimed at improving truthfulness. Yet, a critical side effect remains largely overlooked: enhancing truthfulness can negatively impact safety alignment. In this paper, we investigate this trade-off and show that increasing factual accuracy often comes at the cost of weakened refusal behavior. Our analysis reveals that this arises from overlapping components in the model that simultaneously encode hallucination and refusal information, leading alignment methods to suppress factual knowledge unintentionally. We further examine how fine-tuning on benign datasets, even when curated for safety, can degrade alignment for the same reason. To address this, we propose a method that disentangles refusal-related features from hallucination features using sparse autoencoders, and preserves refusal behavior during fine-tuning through subspace orthogonalization. This approach prevents hallucinations from increasing while maintaining safety alignment.We evaluate our method on commonsense reasoning tasks and harmful benchmarks (AdvBench and StrongReject). Results demonstrate that our approach preserves refusal behavior and task utility, mitigating the trade-off between truthfulness and safety.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.07775",
+      "arxivId": "2510.07775",
+      "url": "https://www.semanticscholar.org/paper/2a82956703eea431fd1e4a44bc5fd6571d9bea67",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.07775"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fc4086bb50ed14178f1b1079e06ef9ac309e20eb",
+      "title": "Balancing Safety and Helpfulness in Healthcare AI Assistants through Iterative Preference Alignment",
+      "authors": [
+        {
+          "name": "H. Nghiem",
+          "authorId": "2373306012"
+        },
+        {
+          "name": "Swetasudha Panda",
+          "authorId": "1721493"
+        },
+        {
+          "name": "Devashish Khatwani",
+          "authorId": "2165225093"
+        },
+        {
+          "name": "Huy V. Nguyen",
+          "authorId": "2233760122"
+        },
+        {
+          "name": "K. Kenthapadi",
+          "authorId": "1769861"
+        },
+        {
+          "name": "Hal Daum'e",
+          "authorId": "2344615259"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) are increasingly used in healthcare, yet ensuring their safety and trustworthiness remains a barrier to deployment. Conversational medical assistants must avoid unsafe compliance without over-refusing benign queries. We present an iterative post-deployment alignment framework that applies Kahneman-Tversky Optimization (KTO) and Direct Preference Optimization (DPO) to refine models against domain-specific safety signals. Using the CARES-18K benchmark for adversarial robustness, we evaluate four LLMs (Llama-3B/8B, Meditron-8B, Mistral-7B) across multiple cycles. Our results show up to 42% improvement in safety-related metrics for harmful query detection, alongside interesting trade-offs against erroneous refusals, thereby exposing architecture-dependent calibration biases. We also perform ablation studies to identify when self-evaluation is reliable and when external or finetuned judges are necessary to maximize performance gains. Our findings underscore the importance of adopting best practices that balance patient safety, user trust, and clinical utility in the design of conversational medical assistants.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.04210",
+      "url": "https://www.semanticscholar.org/paper/fc4086bb50ed14178f1b1079e06ef9ac309e20eb",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f8c7f353fa87795a706567b8b681dbb5d05c98d2",
+      "title": "The Challenge of Value Alignment: from Fairer Algorithms to AI Safety",
+      "authors": [
+        {
+          "name": "Iason Gabriel",
+          "authorId": "116589025"
+        },
+        {
+          "name": "Vafa Ghazavi",
+          "authorId": "2046989086"
+        }
+      ],
+      "year": 2021,
+      "abstract": "This paper addresses the question of how to align AI systems with human values and situates it within a wider body of thought regarding technology and value. Far from existing in a vacuum, there has long been an interest in the ability of technology to 'lock-in' different value systems. There has also been considerable thought about how to align technologies with specific social values, including through participatory design-processes. In this paper we look more closely at the question of AI value alignment and suggest that the power and autonomy of AI systems gives rise to opportunities and challenges in the domain of value that have not been encountered before. Drawing important continuities between the work of the fairness, accountability, transparency and ethics community, and work being done by technical AI safety researchers, we suggest that more attention needs to be paid to the question of 'social value alignment' - that is, how to align AI systems with the plurality of values endorsed by groups of people, especially on the global level.",
+      "citationCount": 59,
+      "doi": null,
+      "arxivId": "2101.06060",
+      "url": "https://www.semanticscholar.org/paper/f8c7f353fa87795a706567b8b681dbb5d05c98d2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2101.06060"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9fd0f21867d6acf7048b8acbb3f04e85b50e6e52",
+      "title": "An Overview of Trustworthy AI: Advances in IP Protection, Privacy-Preserving Federated Learning, Security Verification, and GAI Safety Alignment",
+      "authors": [
+        {
+          "name": "Yue Zheng",
+          "authorId": "2149513255"
+        },
+        {
+          "name": "Chip-Hong Chang",
+          "authorId": "2267338406"
+        },
+        {
+          "name": "Shih-Hsu Huang",
+          "authorId": "2300943752"
+        },
+        {
+          "name": "Pin-Yu Chen",
+          "authorId": "2284953036"
+        },
+        {
+          "name": "S. Picek",
+          "authorId": "1686538"
+        }
+      ],
+      "year": 2024,
+      "abstract": "AI has undergone a remarkable evolution journey marked by groundbreaking milestones. Like any powerful tool, it can be turned into a weapon for devastation in the wrong hands. Understanding that no model is perfect, trustworthy AI is initiated with an intuitive aim to mitigate the harm it can inflict on people and society by prioritizing socially responsible AI ideation, design, development, and deployment towards effecting positive changes. The scope of trustworthy AI is encompassing, covering qualities such as safety, security, privacy, transparency, explainability, fairness, impartiality, robustness, reliability, and accountability. This overview paper anchors on recent advances in four research hotspots of trustworthy AI with compelling and challenging security, privacy, and safety issues. The topics discussed include the intellectual property protection of deep learning and generative models, the trustworthiness of federated learning, verification and testing tools of AI systems, and the safety alignment of generative AI systems. Through this comprehensive review, we aim to provide readers with an overview of the most up-to-date research problems and solutions. By presenting the rapidly evolving factors and constraints that motivate the emerging attack and defense strategies throughout the AI life-cycle, we hope to inspire more research effort into guiding AI technologies towards beneficial purposes with greater robustness against malicious use intent.",
+      "citationCount": 13,
+      "doi": "10.1109/JETCAS.2024.3477348",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9fd0f21867d6acf7048b8acbb3f04e85b50e6e52",
+      "venue": "IEEE Journal on Emerging and Selected Topics in Circuits and Systems",
+      "journal": {
+        "name": "IEEE Journal on Emerging and Selected Topics in Circuits and Systems",
+        "pages": "582-607",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "87ee94e647f92ccc0460b2059c6b8757551dddb6",
+      "title": "Position: AI Safety Must Embrace an Antifragile Perspective",
+      "authors": [
+        {
+          "name": "Ming Jin",
+          "authorId": "2381268773"
+        },
+        {
+          "name": "Hyunin Lee",
+          "authorId": "2110007977"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This position paper contends that modern AI research must adopt an antifragile perspective on safety -- one in which the system's capacity to guarantee long-term AI safety such as handling rare or out-of-distribution (OOD) events expands over time. Conventional static benchmarks and single-shot robustness tests overlook the reality that environments evolve and that models, if left unchallenged, can drift into maladaptation (e.g., reward hacking, over-optimization, or atrophy of broader capabilities). We argue that an antifragile approach -- Rather than striving to rapidly reduce current uncertainties, the emphasis is on leveraging those uncertainties to better prepare for potentially greater, more unpredictable uncertainties in the future -- is pivotal for the long-term reliability of open-ended ML systems. In this position paper, we first identify key limitations of static testing, including scenario diversity, reward hacking, and over-alignment. We then explore the potential of antifragile solutions to manage rare events. Crucially, we advocate for a fundamental recalibration of the methods used to measure, benchmark, and continually improve AI safety over the long term, complementing existing robustness approaches by providing ethical and practical guidelines towards fostering an antifragile AI safety community.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2509.13339",
+      "arxivId": "2509.13339",
+      "url": "https://www.semanticscholar.org/paper/87ee94e647f92ccc0460b2059c6b8757551dddb6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.13339"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ff28174512cef913b248ba88f94314338c60baf7",
+      "title": "Anti-Regulatory AI: How \"AI Safety\" is Leveraged Against Regulatory Oversight",
+      "authors": [
+        {
+          "name": "Rui-Jie Yew",
+          "authorId": "1397277309"
+        },
+        {
+          "name": "Brian Judge",
+          "authorId": "2382917212"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI companies increasingly develop and deploy privacy-enhancing technologies, bias-constraining measures, evaluation frameworks, and alignment techniques \u2014 framing them as addressing concerns related to data privacy, algorithmic fairness, and AI safety. This paper examines the ulterior function of these technologies as mechanisms of legal influence. First, we examine how encryption, federated learning, and synthetic data \u2014 presented as enhancing privacy and reducing bias \u2014 can operate as mechanisms of avoidance with existing regulations in attempts to place data operations outside the scope of traditional regulatory frameworks. Second, we investigate how emerging AI safety practices including open-source model releases, evaluations, and alignment techniques can be used as mechanisms of change that direct regulatory focus towards industry-controlled voluntary standards and self-governance. We term this phenomenon anti-regulatory AI \u2014 the deployment of ostensibly protective technologies that simultaneously shapes the terms of regulatory oversight. Our analysis additionally reveals how technologies\u2019 anti-regulatory functions are enabled through framing that legitimizes their deployment while obscuring their use as regulatory workarounds. This paper closes with a discussion of policy implications that centers on the consideration of business incentives that drive AI development and the role of technical expertise in assessing whether these technologies fulfill their purported protections.",
+      "citationCount": 1,
+      "doi": "10.1145/3757887.3763017",
+      "arxivId": "2509.22872",
+      "url": "https://www.semanticscholar.org/paper/ff28174512cef913b248ba88f94314338c60baf7",
+      "venue": "Proceedings of the 5th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization",
+      "journal": {
+        "name": "Proceedings of the 5th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9363e8e1fe2be2a13b4d6f5fc61bbaed14ab9a23",
+      "title": "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training",
+      "authors": [
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        },
+        {
+          "name": "Carson E. Denison",
+          "authorId": "1780754598"
+        },
+        {
+          "name": "Jesse Mu",
+          "authorId": "2279020810"
+        },
+        {
+          "name": "Mike Lambert",
+          "authorId": "2279020847"
+        },
+        {
+          "name": "Meg Tong",
+          "authorId": "2237797264"
+        },
+        {
+          "name": "M. MacDiarmid",
+          "authorId": "32286534"
+        },
+        {
+          "name": "Tamera Lanham",
+          "authorId": "46239941"
+        },
+        {
+          "name": "Daniel M. Ziegler",
+          "authorId": "2052152920"
+        },
+        {
+          "name": "Tim Maxwell",
+          "authorId": "2224618184"
+        },
+        {
+          "name": "Newton Cheng",
+          "authorId": "2261082682"
+        },
+        {
+          "name": "Adam Jermyn",
+          "authorId": "2279020797"
+        },
+        {
+          "name": "Amanda Askell",
+          "authorId": "2220750220"
+        },
+        {
+          "name": "Ansh Radhakrishnan",
+          "authorId": "2224616677"
+        },
+        {
+          "name": "Cem Anil",
+          "authorId": "48314480"
+        },
+        {
+          "name": "D. Duvenaud",
+          "authorId": "1704657"
+        },
+        {
+          "name": "Deep Ganguli",
+          "authorId": "2081806483"
+        },
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        },
+        {
+          "name": "J. Clark",
+          "authorId": "2242485295"
+        },
+        {
+          "name": "Kamal Ndousse",
+          "authorId": "1978097132"
+        },
+        {
+          "name": "Kshitij Sachan",
+          "authorId": "2175357328"
+        },
+        {
+          "name": "M. Sellitto",
+          "authorId": "2054578129"
+        },
+        {
+          "name": "Mrinank Sharma",
+          "authorId": "2261097150"
+        },
+        {
+          "name": "Nova Dassarma",
+          "authorId": "2142833890"
+        },
+        {
+          "name": "Roger Grosse",
+          "authorId": "2275989218"
+        },
+        {
+          "name": "Shauna Kravec",
+          "authorId": "49604482"
+        },
+        {
+          "name": "Yuntao Bai",
+          "authorId": "1486307451"
+        },
+        {
+          "name": "Zachary Witten",
+          "authorId": "2279020720"
+        },
+        {
+          "name": "Marina Favaro",
+          "authorId": "2279021225"
+        },
+        {
+          "name": "J. Brauner",
+          "authorId": "40482332"
+        },
+        {
+          "name": "Holden Karnofsky",
+          "authorId": "2279020853"
+        },
+        {
+          "name": "P. Christiano",
+          "authorId": "145791315"
+        },
+        {
+          "name": "Samuel R. Bowman",
+          "authorId": "2261083170"
+        },
+        {
+          "name": "Logan Graham",
+          "authorId": "2279020803"
+        },
+        {
+          "name": "Jared Kaplan",
+          "authorId": "2053807409"
+        },
+        {
+          "name": "S. Mindermann",
+          "authorId": "32777162"
+        },
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Buck Shlegeris",
+          "authorId": "79384063"
+        },
+        {
+          "name": "Nicholas Schiefer",
+          "authorId": "2833768"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2261084752"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Humans are capable of strategically deceptive behavior: behaving helpfully in most situations, but then behaving very differently in order to pursue alternative objectives when given the opportunity. If an AI system learned such a deceptive strategy, could we detect it and remove it using current state-of-the-art safety training techniques? To study this question, we construct proof-of-concept examples of deceptive behavior in large language models (LLMs). For example, we train models that write secure code when the prompt states that the year is 2023, but insert exploitable code when the stated year is 2024. We find that such backdoor behavior can be made persistent, so that it is not removed by standard safety training techniques, including supervised fine-tuning, reinforcement learning, and adversarial training (eliciting unsafe behavior and then training to remove it). The backdoor behavior is most persistent in the largest models and in models trained to produce chain-of-thought reasoning about deceiving the training process, with the persistence remaining even when the chain-of-thought is distilled away. Furthermore, rather than removing backdoors, we find that adversarial training can teach models to better recognize their backdoor triggers, effectively hiding the unsafe behavior. Our results suggest that, once a model exhibits deceptive behavior, standard techniques could fail to remove such deception and create a false impression of safety.",
+      "citationCount": 273,
+      "doi": "10.48550/arXiv.2401.05566",
+      "arxivId": "2401.05566",
+      "url": "https://www.semanticscholar.org/paper/9363e8e1fe2be2a13b4d6f5fc61bbaed14ab9a23",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.05566"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "19bb08f460f98d83c93e58353fa8d3aba7309b7a",
+      "title": "Trustworthy AI: Safety, Bias, and Privacy -- A Survey",
+      "authors": [
+        {
+          "name": "Xingli Fang",
+          "authorId": "2274212434"
+        },
+        {
+          "name": "Jianwei Li",
+          "authorId": "2326007326"
+        },
+        {
+          "name": "Varun Mulchandani",
+          "authorId": "2345818910"
+        },
+        {
+          "name": "Jung-Eun Kim",
+          "authorId": "2326001415"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The capabilities of artificial intelligence systems have been advancing to a great extent, but these systems still struggle with failure modes, vulnerabilities, and biases. In this paper, we study the current state of the field, and present promising insights and perspectives regarding concerns that challenge the trustworthiness of AI models. In particular, this paper investigates the issues regarding three thrusts: safety, privacy, and bias, which hurt models' trustworthiness. For safety, we discuss safety alignment in the context of large language models, preventing them from generating toxic or harmful content. For bias, we focus on spurious biases that can mislead a network. Lastly, for privacy, we cover membership inference attacks in deep neural networks. The discussions addressed in this paper reflect our own experiments and observations.",
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": "2502.10450",
+      "url": "https://www.semanticscholar.org/paper/19bb08f460f98d83c93e58353fa8d3aba7309b7a",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "2e1c404013c334856bcc6bdafe02f4091ce63ef2",
+      "title": "InvThink: Towards AI Safety via Inverse Reasoning",
+      "authors": [
+        {
+          "name": "Y. Kim",
+          "authorId": "2107937893"
+        },
+        {
+          "name": "Taehan Kim",
+          "authorId": "2362675799"
+        },
+        {
+          "name": "Eugene Park",
+          "authorId": "2362865475"
+        },
+        {
+          "name": "Chunjong Park",
+          "authorId": "2298953061"
+        },
+        {
+          "name": "Cynthia Breazeal",
+          "authorId": "2287781906"
+        },
+        {
+          "name": "D. McDuff",
+          "authorId": "2315286830"
+        },
+        {
+          "name": "Hae Won Park",
+          "authorId": "2329047452"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We present InvThink, a simple yet powerful approach that gives large language models (LLMs) the capability of inverse thinking: reasoning through failure modes before generating responses. Unlike existing safety alignment methods that optimize directly for safe response, InvThink instructs models to 1) enumerate potential harms, 2) analyze their consequences, and 3) generate safe outputs that proactively avoid these risks. Our method reveals three key findings: (i) safety improvements show stronger scaling with model size compared to existing safety methods. (ii) InvThink mitigates safety tax; by training models to systematically consider failure modes, it preserves general reasoning capabilities on standard benchmarks. (iii) beyond general safety tasks, InvThink excels in high-stakes domains including external-facing (medicine, finance, law) and agentic (blackmail, murder) risk scenarios, achieving up to 15.7% reduction in harmful responses compared to baseline methods like SafetyPrompt. We further implement InvThink via supervised fine-tuning, and reinforcement learning across three LLM families. These results suggest that inverse reasoning provides a scalable and generalizable path toward safer, more capable language models.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2510.01569",
+      "arxivId": "2510.01569",
+      "url": "https://www.semanticscholar.org/paper/2e1c404013c334856bcc6bdafe02f4091ce63ef2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.01569"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3da31af50eb9081445bc0151acaafd09d431e836",
+      "title": "Enhancing Medical AI Safety Through Multi-Agent Evaluation and Iterative Refinement",
+      "authors": [
+        {
+          "name": "Zainab Ghafoor",
+          "authorId": "2397627562"
+        },
+        {
+          "name": "Md Shafiqul Islam",
+          "authorId": "2397818593"
+        },
+        {
+          "name": "Koushik Howlader",
+          "authorId": "2397629543"
+        },
+        {
+          "name": "Md Rasel Khondokar",
+          "authorId": "2397629911"
+        },
+        {
+          "name": "Tanusree Bhattacharjee",
+          "authorId": "2397629609"
+        },
+        {
+          "name": "Sayantan Chakroborty",
+          "authorId": "2397627595"
+        },
+        {
+          "name": "Adrito Roy",
+          "authorId": "2398655103"
+        },
+        {
+          "name": "Ushashi Bhattacharjee",
+          "authorId": "2391709605"
+        },
+        {
+          "name": "Tirtho Roy",
+          "authorId": "2397631910"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) show strong potential in healthcare but face critical challenges in ethical and safety compliance. We present a lightweight multi-agent refinement framework that enhances medical LLM safety through structured, iterative alignment. The system pairs DeepSeek R1 and Med-PaLM as generative models with LLaMA 3.1 and Phi-4 as evaluator agents that iteratively assess and refine responses against the American Medical Association's nine Principles (AMA-9) and a five-tier Safety Risk Assessment (SRA-5). Using 900 adversarial clinical prompts from the MedSafety-Eval subset, we measure convergence, violation reduction, and risk downgrading under a structured five-iteration refinement loop. The multi-agent pipeline reduced ethical violations by 89% and achieved a 92% risk-downgrade rate. DeepSeek R1 outperforms Med-PaLM in convergence efficiency (94.2% convergence; mean 2.34 iterations) compared with Med-PaLM (91.8% convergence; mean 2.67 iterations). Domain analyses reveal consistent gains across emergency, diagnostic, and therapeutic scenarios, while non-convergent cases highlight areas for improvement in legal and privacy domains. Our approach offers a scalable, cost-effective protocol for enhancing medical AI trustworthiness and provides a practical pathway toward regulator-aligned deployment of LLMs in clinical settings.",
+      "citationCount": 0,
+      "doi": "10.1145/3765612.3768142",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3da31af50eb9081445bc0151acaafd09d431e836",
+      "venue": "Proceedings of the 16th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics",
+      "journal": {
+        "name": "Proceedings of the 16th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics"
+      },
+      "publicationTypes": [
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "bbf488370300ef2551be6bf91449bf601b667992",
+      "title": "From homeostasis to resource sharing: Biologically and economically aligned multi-objective multi-agent gridworld-based AI safety benchmarks",
+      "authors": [
+        {
+          "name": "Roland Pihlakas",
+          "authorId": "2180786499"
+        },
+        {
+          "name": "Joel Pyykko",
+          "authorId": "2347044564"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Developing safe, aligned agentic AI systems requires comprehensive empirical testing, yet many existing benchmarks neglect crucial themes aligned with biology and economics, both time-tested fundamental sciences describing our needs and preferences. To address this gap, the present work focuses on introducing biologically and economically motivated themes that have been neglected in current mainstream discussions on AI safety - namely a set of multi-objective, multi-agent alignment benchmarks that emphasize homeostasis for bounded and biological objectives, diminishing returns for unbounded, instrumental, and business objectives, sustainability principle, and resource sharing. Eight main benchmark environments have been implemented on the above themes, to illustrate key pitfalls and challenges in agentic AI-s, such as unboundedly maximizing a homeostatic objective, over-optimizing one objective at the expense of others, neglecting safety constraints, or depleting shared resources.",
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": "2410.00081",
+      "url": "https://www.semanticscholar.org/paper/bbf488370300ef2551be6bf91449bf601b667992",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "188b35043c43bc6ca032ae4234f101cf7eab952c",
+      "title": "Bridging Today and the Future of Humanity: AI Safety in 2024 and Beyond",
+      "authors": [
+        {
+          "name": "Shanshan Han",
+          "authorId": "2327502074"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The advancements in generative AI inevitably raise concerns about their risks and safety implications, which, in return, catalyzes significant progress in AI safety. However, as this field continues to evolve, a critical question arises: are our current efforts on AI safety aligned with the advancements of AI as well as the long-term goal of human civilization? This paper presents a blueprint for an advanced human society and leverages this vision to guide current AI safety efforts. It outlines a future where the Internet of Everything becomes reality, and creates a roadmap of significant technological advancements towards this envisioned future. For each stage of the advancements, this paper forecasts potential AI safety issues that humanity may face. By projecting current efforts against this blueprint, this paper examines the alignment between the current efforts and the long-term needs, and highlights unique challenges and missions that demand increasing attention from AI safety practitioners in the 2020s. This vision paper aims to offer a broader perspective on AI safety, emphasizing that our current efforts should not only address immediate concerns but also anticipate potential risks in the expanding AI landscape, thereby promoting a safe and sustainable future of AI and human civilization.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2410.18114",
+      "arxivId": "2410.18114",
+      "url": "https://www.semanticscholar.org/paper/188b35043c43bc6ca032ae4234f101cf7eab952c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.18114"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f8ff20a083234ae5e8b560babb97a0bb771bec25",
+      "title": "SLM as Guardian: Pioneering AI Safety with Small Language Model",
+      "authors": [
+        {
+          "name": "Ohjoon Kwon",
+          "authorId": "2296720136"
+        },
+        {
+          "name": "Donghyeon Jeon",
+          "authorId": "2296718328"
+        },
+        {
+          "name": "Nayoung Choi",
+          "authorId": "2138403239"
+        },
+        {
+          "name": "Gyu-Hwung Cho",
+          "authorId": "2303859635"
+        },
+        {
+          "name": "Changbong Kim",
+          "authorId": "2296788629"
+        },
+        {
+          "name": "Hyunwoo Lee",
+          "authorId": "2296722966"
+        },
+        {
+          "name": "Inho Kang",
+          "authorId": "2261574115"
+        },
+        {
+          "name": "Sun Kim",
+          "authorId": "2296722161"
+        },
+        {
+          "name": "Taiwoo Park",
+          "authorId": "2296707202"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Most prior safety research of large language models (LLMs) has focused on enhancing the alignment of LLMs to better suit the safety requirements of their use cases. However, internalizing such safeguard features into larger models brought challenges of higher training cost and unintended degradation of helpfulness. In this paper, we leverage a smaller LLM for both harmful query detection and safeguard response generation. We introduce our safety requirements and the taxonomy of harmfulness categories, and then propose a multi-task learning mechanism fusing the two tasks into a single model. We demonstrate the effectiveness of our approach, providing on par or surpassing harmful query detection and safeguard response performance compared to the publicly available LLMs.",
+      "citationCount": 5,
+      "doi": "10.18653/v1/2024.emnlp-industry.99",
+      "arxivId": "2405.19795",
+      "url": "https://www.semanticscholar.org/paper/f8ff20a083234ae5e8b560babb97a0bb771bec25",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.19795"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8acd7db0fee9b437bf764eb4c36b07b09684f45d",
+      "title": "Revisiting Fidelity in Explainable AI: Unpacking Cognitive Biases and Deceptive Transparency in Model Interpretations",
+      "authors": [
+        {
+          "name": "Akshar Parshubhai Patel",
+          "authorId": "2334840233"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The evolution of explainability in artificial intelligence continues in response to rising demands for transparency, yet a persistent challenge remains: ensuring alignment between generated insights and underlying operations. The intricate balance between clarity and precision is examined, with obstacles emerging due to inherent distortions in perception influencing both construction and reception. Additionally, the possibility of misleading presentations is considered, where seemingly persuasive outputs may be mistakenly accepted as accurate. Various approaches\u2014causal, statistical, and visual\u2014are explored in relation to their potential to either mitigate or amplify associated risks. Ethical dimensions are highlighted, with frameworks proposed to enhance reliability and openness while emphasizing both comprehension and authenticity. The necessity of thoughtful refinement is underscored to prevent unintended distortion, misrepresentation, or adverse consequences. Preliminary user studies indicate that aligning the framing of explanations with objective fidelity metrics can significantly reduce misinterpretations among non-expert users. These results underscore the need for clear, empirically validated guidelines to counteract the risks of deceptive transparency. This study aims to develop a framework for evaluating explanation fidelity and to propose best practices for mitigating cognitive bias in AI interpretability.",
+      "citationCount": 0,
+      "doi": "10.1109/ICSC65596.2025.11139857",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8acd7db0fee9b437bf764eb4c36b07b09684f45d",
+      "venue": "International Computer Science Conference",
+      "journal": {
+        "name": "2025 5th Intelligent Cybersecurity Conference (ICSC)",
+        "pages": "298-302"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

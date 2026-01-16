@@ -1,0 +1,737 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:red teaming AI systems AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2601.09697",
+      "title": "Efficient Camera-Controlled Video Generation of Static Scenes via Sparse Diffusion and 3D Rendering",
+      "authors": [
+        "Jieying Chen",
+        "Jeffrey Hu",
+        "Joan Lasenby",
+        "Ayush Tewari"
+      ],
+      "abstract": "Modern video generative models based on diffusion models can produce very realistic clips, but they are computationally inefficient, often requiring minutes of GPU time for just a few seconds of video. This inefficiency poses a critical barrier to deploying generative video in applications that require real-time interactions, such as embodied AI and VR/AR. This paper explores a new strategy for camera-conditioned video generation of static scenes: using diffusion-based generative models to generate a sparse set of keyframes, and then synthesizing the full video through 3D reconstruction and rendering. By lifting keyframes into a 3D representation and rendering intermediate views, our approach amortizes the generation cost across hundreds of frames while enforcing geometric consistency. We further introduce a model that predicts the optimal number of keyframes for a given camera trajectory, allowing the system to adaptively allocate computation. Our final method, SRENDER, uses very sparse keyframes for simple trajectories and denser ones for complex camera motion. This results in video generation that is more than 40 times faster than the diffusion-based baseline in generating 20 seconds of video, while maintaining high visual fidelity and temporal stability, offering a practical path toward efficient and controllable video synthesis.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09697v1",
+      "url": "https://arxiv.org/abs/2601.09697"
+    },
+    {
+      "arxiv_id": "2601.09680",
+      "title": "Automating Supply Chain Disruption Monitoring via an Agentic AI Approach",
+      "authors": [
+        "Sara AlMahri",
+        "Liming Xu",
+        "Alexandra Brintrup"
+      ],
+      "abstract": "Modern supply chains are increasingly exposed to disruptions from geopolitical events, demand shocks, trade restrictions, to natural disasters. While many of these disruptions originate deep in the supply network, most companies still lack visibility beyond Tier-1 suppliers, leaving upstream vulnerabilities undetected until the impact cascades downstream. To overcome this blind-spot and move from reactive recovery to proactive resilience, we introduce a minimally supervised agentic AI framework that autonomously monitors, analyses, and responds to disruptions across extended supply networks. The architecture comprises seven specialised agents powered by large language models and deterministic tools that jointly detect disruption signals from unstructured news, map them to multi-tier supplier networks, evaluate exposure based on network structure, and recommend mitigations such as alternative sourcing options. \\rev{We evaluate the framework across 30 synthesised scenarios covering three automotive manufacturers and five disruption classes. The system achieves high accuracy across core tasks, with F1 scores between 0.962 and 0.991, and performs full end-to-end analyses in a mean of 3.83 minutes at a cost of \\$0.0836 per disruption. Relative to industry benchmarks of multi-day, analyst-driven assessments, this represents a reduction of more than three orders of magnitude in response time. A real-world case study of the 2022 Russia-Ukraine conflict further demonstrates operational applicability. This work establishes a foundational step toward building resilient, proactive, and autonomous supply chains capable of managing disruptions across deep-tier networks.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09680v1",
+      "url": "https://arxiv.org/abs/2601.09680"
+    },
+    {
+      "arxiv_id": "2601.09667",
+      "title": "Collaborative Multi-Agent Test-Time Reinforcement Learning for Reasoning",
+      "authors": [
+        "Zhiyuan Hu",
+        "Yunhai Hu",
+        "Juncheng Liu",
+        "Shuyue Stella Li",
+        "Yucheng Wang",
+        "Zhen Xu",
+        "See-Kiong Ng",
+        "Anh Tuan Luu",
+        "Xinxing Xu",
+        "Bryan Hooi",
+        "Cynthia Breazeal",
+        "Hae Won Park"
+      ],
+      "abstract": "Multi-agent systems have evolved into practical LLM-driven collaborators for many applications, gaining robustness from diversity and cross-checking. However, multi-agent RL (MARL) training is resource-intensive and unstable: co-adapting teammates induce non-stationarity, and rewards are often sparse and high-variance. Therefore, we introduce \\textbf{Multi-Agent Test-Time Reinforcement Learning (MATTRL)}, a framework that injects structured textual experience into multi-agent deliberation at inference time. MATTRL forms a multi-expert team of specialists for multi-turn discussions, retrieves and integrates test-time experiences, and reaches consensus for final decision-making. We also study credit assignment for constructing a turn-level experience pool, then reinjecting it into the dialogue. Across challenging benchmarks in medicine, math, and education, MATTRL improves accuracy by an average of 3.67\\% over a multi-agent baseline, and by 8.67\\% over comparable single-agent baselines. Ablation studies examine different credit-assignment schemes and provide a detailed comparison of how they affect training outcomes. MATTRL offers a stable, effective and efficient path to distribution-shift-robust multi-agent reasoning without tuning.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09667v1",
+      "url": "https://arxiv.org/abs/2601.09667"
+    },
+    {
+      "arxiv_id": "2601.09647",
+      "title": "Identifying Models Behind Text-to-Image Leaderboards",
+      "authors": [
+        "Ali Naseh",
+        "Yuefeng Peng",
+        "Anshuman Suri",
+        "Harsh Chaudhari",
+        "Alina Oprea",
+        "Amir Houmansadr"
+      ],
+      "abstract": "Text-to-image (T2I) models are increasingly popular, producing a large share of AI-generated images online. To compare model quality, voting-based leaderboards have become the standard, relying on anonymized model outputs for fairness. In this work, we show that such anonymity can be easily broken. We find that generations from each T2I model form distinctive clusters in the image embedding space, enabling accurate deanonymization without prompt control or training data. Using 22 models and 280 prompts (150K images), our centroid-based method achieves high accuracy and reveals systematic model-specific signatures. We further introduce a prompt-level distinguishability metric and conduct large-scale analyses showing how certain prompts can lead to near-perfect distinguishability. Our findings expose fundamental security flaws in T2I leaderboards and motivate stronger anonymization defenses.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09647v1",
+      "url": "https://arxiv.org/abs/2601.09647"
+    },
+    {
+      "arxiv_id": "2601.09639",
+      "title": "Constraining the size, shape, and albedo of the large Trans-Neptunian Object (28978) Ixion with multi-chord stellar occultations",
+      "authors": [
+        "Y. Kilic",
+        "F. Braga-Ribas",
+        "C. L. Pereira",
+        "J. L. Ortiz",
+        "B. Sicardy",
+        "P. Santos-Sanz",
+        "O. Erece",
+        "J. L. Rizos",
+        "J. M. G\u00f3mez-Lim\u00f3n",
+        "G. Margoti",
+        "D. Souami",
+        "B. Morgado",
+        "A. Gomes-Junior",
+        "L. M. Catani",
+        "J. Desmars",
+        "M. Kretlow",
+        "F. Rommel",
+        "R. Duffard",
+        "A. Alvarez-Candal",
+        "J. I. B. Camargo",
+        "M. Kaplan",
+        "N. Morales",
+        "D. Herald",
+        "M. Assafin",
+        "G. Benedetti-Rossi",
+        "R. Sfair",
+        "R. Savalle",
+        "J. Arcas-Silva",
+        "L. Bernasconi",
+        "T. Blank",
+        "M. Bonavita",
+        "N. Carlson",
+        "B. Christophe",
+        "C. A. Colesanti",
+        "M. Collins",
+        "G. Columba",
+        "R. Dunford",
+        "D. W. Dunham",
+        "J. Dunham",
+        "M. Emilio",
+        "W. G. Ferrante",
+        "T. George",
+        "W. Hanna",
+        "G. Isopi",
+        "R. Jones",
+        "D. A. Kenyon",
+        "S. Kerr",
+        "V. Kouprianov",
+        "P. D. Maley",
+        "F. Mallia",
+        "J. Mattei",
+        "M. Meunier",
+        "T. Napoleao",
+        "V. F. Peixoto",
+        "J. Pollock",
+        "C. Snodgrass",
+        "A. Stechina",
+        "W. Thomas",
+        "R. Venable",
+        "G. R. Viscome",
+        "A. Zapparata",
+        "J. Bardecker",
+        "N. Castro",
+        "C. Cebral",
+        "A. Chapman",
+        "C. Gao",
+        "K. Green",
+        "A. Guimaraes",
+        "C. Jacques",
+        "E. Jehin",
+        "M. Konishi",
+        "R. Leiva",
+        "L. Liberato",
+        "C. Magliano",
+        "L. A. Mammana",
+        "M. Melita",
+        "V. Moura",
+        "Y. Olivera-Cuello",
+        "L. Peiro",
+        "J. Spagnotto",
+        "P. C. Stuart",
+        "L. Vanzi",
+        "A. Wilberger",
+        "M. Malacarne"
+      ],
+      "abstract": "Trans-Neptunian objects (TNOs) are among the most primitive remnants of the early Solar System, and constraining their sizes, shapes, albedos, and surface properties is essential for understanding their origin and evolution. Stellar occultations provide highly accurate size and shape measurements for TNOs, while photometry constrains their albedo and surface colours. (28978) Ixion is one of the largest TNOs and a prominent Plutino, making it a key target for comparative studies. We aim to constrain Ixion's projected size, shape, absolute magnitude, geometric albedo, and surface colours, and to search for evidence of an atmosphere or circum-object material. We analysed stellar occultation campaigns by Ixion conducted between 2020 and 2023 within the Lucky Star collaboration, comprising 51 observations from eight events, including 30 positive detections. Five multi-chord events enabled a global limb fit and an accurate reconstruction of Ixion's projected shape. The occultations reveal a slightly elongated limb well represented by a single projected ellipse, yielding an area-equivalent diameter of $D_{\\mathrm{equiv}} = 696.78^{+10.75}_{-8.87}$ km and an apparent oblateness $\u03b5' = 0.081^{+0.004}_{-0.010}$. Typical radial residuals of order $\\sim$10 km indicate a largely stable shape across epochs, with modest epoch-dependent variations. Calibrated photometric data yield an absolute magnitude of $H_V = 3.845 \\pm 0.006$, a phase-curve slope of $\u03b2= 0.1301 \\pm 0.0078$ mag deg$^{-1}$, and a visible geometric albedo of $p_V = 0.106^{+0.003}_{-0.003}$, with colours consistent with moderately red TNO surfaces. No atmosphere or circum-object material is detected down to our sensitivity limits. The best-sampled event also allows a precise measurement of the angular diameter of the occulted star Gaia DR3 4056440205544338944, $\u03b8_\\star = 0.670 \\pm 0.010$ mas.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09639v1",
+      "url": "https://arxiv.org/abs/2601.09639"
+    },
+    {
+      "arxiv_id": "2601.09635",
+      "title": "LLM for Large-Scale Optimization Model Auto-Formulation: A Lightweight Few-Shot Learning Approach",
+      "authors": [
+        "Kuo Liang",
+        "Yuhang Lu",
+        "Jianming Mao",
+        "Shuyi Sun",
+        "Chunwei Yang",
+        "Congcong Zeng",
+        "Xiao Jin",
+        "Hanzhang Qin",
+        "Ruihao Zhu",
+        "Chung-Piaw Teo"
+      ],
+      "abstract": "Large-scale optimization is a key backbone of modern business decision-making. However, building these models is often labor-intensive and time-consuming. We address this by proposing LEAN-LLM-OPT, a LightwEight AgeNtic workflow construction framework for LLM-assisted large-scale OPTimization auto-formulation. LEAN-LLM-OPT takes as input a problem description together with associated datasets and orchestrates a team of LLM agents to produce an optimization formulation. Specifically, upon receiving a query, two upstream LLM agents dynamically construct a workflow that specifies, step-by-step, how optimization models for similar problems can be formulated. A downstream LLM agent then follows this workflow to generate the final output. Leveraging LLMs' text-processing capabilities and common modeling practices, the workflow decomposes the modeling task into a sequence of structured sub-tasks and offloads mechanical data-handling operations to auxiliary tools. This design alleviates the downstream agent's burden related to planning and data handling, allowing it to focus on the most challenging components that cannot be readily standardized. Extensive simulations show that LEAN-LLM-OPT, instantiated with GPT-4.1 and the open source gpt-oss-20B, achieves strong performance on large-scale optimization modeling tasks and is competitive with state-of-the-art approaches. In addition, in a Singapore Airlines choice-based revenue management use case, LEAN-LLM-OPT demonstrates practical value by achieving leading performance across a range of scenarios. Along the way, we introduce Large-Scale-OR and Air-NRM, the first comprehensive benchmarks for large-scale optimization auto-formulation. The code and data of this work is available at https://github.com/CoraLiang01/lean-llm-opt.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09635v1",
+      "url": "https://arxiv.org/abs/2601.09635"
+    },
+    {
+      "arxiv_id": "2601.09626",
+      "title": "From Prompt to Protocol: Fast Charging Batteries with Large Language Models",
+      "authors": [
+        "Ge Lei",
+        "Ferran Brosa Planella",
+        "Sterling G. Baird",
+        "Samuel J. Cooper"
+      ],
+      "abstract": "Efficiently optimizing battery charging protocols is challenging because each evaluation is slow, costly, and non-differentiable. Many existing approaches address this difficulty by heavily constraining the protocol search space, which limits the diversity of protocols that can be explored, preventing the discovery of higher-performing solutions. We introduce two gradient-free, LLM-driven closed-loop methods: Prompt-to-Optimizer (P2O), which uses an LLM to propose the code for small neural-network-based protocols, which are then trained by an inner loop, and Prompt-to-Protocol (P2P), which simply writes an explicit function for the current and its scalar parameters. Across our case studies, LLM-guided P2O outperforms neural networks designed by Bayesian optimization, evolutionary algorithms, and random search. In a realistic fast charging scenario, both P2O and P2P yield around a 4.2 percent improvement in state of health (capacity retention based health metric under fast charging cycling) over a state-of-the-art multi-step constant current (CC) baseline, with P2P achieving this under matched evaluation budgets (same number of protocol evaluations). These results demonstrate that LLMs can expand the space of protocol functional forms, incorporate language-based constraints, and enable efficient optimization in high cost experimental settings.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "eess.SY"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09626v1",
+      "url": "https://arxiv.org/abs/2601.09626"
+    },
+    {
+      "arxiv_id": "2601.09625",
+      "title": "The Promptware Kill Chain: How Prompt Injections Gradually Evolved Into a Multi-Step Malware",
+      "authors": [
+        "Ben Nassi",
+        "Bruce Schneier",
+        "Oleg Brodt"
+      ],
+      "abstract": "The rapid adoption of large language model (LLM)-based systems -- from chatbots to autonomous agents capable of executing code and financial transactions -- has created a new attack surface that existing security frameworks inadequately address. The dominant framing of these threats as \"prompt injection\" -- a catch-all phrase for security failures in LLM-based systems -- obscures a more complex reality: Attacks on LLM-based systems increasingly involve multi-step sequences that mirror traditional malware campaigns. In this paper, we propose that attacks targeting LLM-based applications constitute a distinct class of malware, which we term \\textit{promptware}, and introduce a five-step kill chain model for analyzing these threats. The framework comprises Initial Access (prompt injection), Privilege Escalation (jailbreaking), Persistence (memory and retrieval poisoning), Lateral Movement (cross-system and cross-user propagation), and Actions on Objective (ranging from data exfiltration to unauthorized transactions). By mapping recent attacks to this structure, we demonstrate that LLM-related attacks follow systematic sequences analogous to traditional malware campaigns. The promptware kill chain offers security practitioners a structured methodology for threat modeling and provides a common vocabulary for researchers across AI safety and cybersecurity to address a rapidly evolving threat landscape.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09625v1",
+      "url": "https://arxiv.org/abs/2601.09625"
+    },
+    {
+      "arxiv_id": "2601.09620",
+      "title": "Full Disclosure, Less Trust? How the Level of Detail about AI Use in News Writing Affects Readers' Trust",
+      "authors": [
+        "Pooja Prajod",
+        "Hannes Cools",
+        "Thomas R\u00f6ggla",
+        "Karthikeya Puttur Venkatraj",
+        "Amber Kusters",
+        "Alia ElKattan",
+        "Pablo Cesar",
+        "Abdallah El Ali"
+      ],
+      "abstract": "As artificial intelligence (AI) is increasingly integrated into news production, calls for transparency about the use of AI have gained considerable traction. Recent studies suggest that AI disclosures can lead to a ``transparency dilemma'', where disclosure reduces readers' trust. However, little is known about how the \\textit{level of detail} in AI disclosures influences trust and contributes to this dilemma within the news context. In this 3$\\times$2$\\times$2 mixed factorial study with 40 participants, we investigate how three levels of AI disclosures (none, one-line, detailed) across two types of news (politics and lifestyle) and two levels of AI involvement (low and high) affect news readers' trust. We measured trust using the News Media Trust questionnaire, along with two decision behaviors: source-checking and subscription decisions. Questionnaire responses and subscription rates showed a decline in trust only for detailed AI disclosures, whereas source-checking behavior increased for both one-line and detailed disclosures, with the effect being more pronounced for detailed disclosures. Insights from semi-structured interviews suggest that source-checking behavior was primarily driven by interest in the topic, followed by trust, whereas trust was the main factor influencing subscription decisions. Around two-thirds of participants expressed a preference for detailed disclosures, while most participants who preferred one-line indicated a need for detail-on-demand disclosure formats. Our findings show that not all AI disclosures lead to a transparency dilemma, but instead reflect a trade-off between readers' desire for more transparency and their trust in AI-assisted news content.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09620v1",
+      "url": "https://arxiv.org/abs/2601.09620"
+    },
+    {
+      "arxiv_id": "2601.09613",
+      "title": "CogRail: Benchmarking VLMs in Cognitive Intrusion Perception for Intelligent Railway Transportation Systems",
+      "authors": [
+        "Yonglin Tian",
+        "Qiyao Zhang",
+        "Wei Xu",
+        "Yutong Wang",
+        "Yihao Wu",
+        "Xinyi Li",
+        "Xingyuan Dai",
+        "Hui Zhang",
+        "Zhiyong Cui",
+        "Baoqing Guo",
+        "Zujun Yu",
+        "Yisheng Lv"
+      ],
+      "abstract": "Accurate and early perception of potential intrusion targets is essential for ensuring the safety of railway transportation systems. However, most existing systems focus narrowly on object classification within fixed visual scopes and apply rule-based heuristics to determine intrusion status, often overlooking targets that pose latent intrusion risks. Anticipating such risks requires the cognition of spatial context and temporal dynamics for the object of interest (OOI), which presents challenges for conventional visual models. To facilitate deep intrusion perception, we introduce a novel benchmark, CogRail, which integrates curated open-source datasets with cognitively driven question-answer annotations to support spatio-temporal reasoning and prediction. Building upon this benchmark, we conduct a systematic evaluation of state-of-the-art visual-language models (VLMs) using multimodal prompts to identify their strengths and limitations in this domain. Furthermore, we fine-tune VLMs for better performance and propose a joint fine-tuning framework that integrates three core tasks, position perception, movement prediction, and threat analysis, facilitating effective adaptation of general-purpose foundation models into specialized models tailored for cognitive intrusion perception. Extensive experiments reveal that current large-scale multimodal models struggle with the complex spatial-temporal reasoning required by the cognitive intrusion perception task, underscoring the limitations of existing foundation models in this safety-critical domain. In contrast, our proposed joint fine-tuning framework significantly enhances model performance by enabling targeted adaptation to domain-specific reasoning demands, highlighting the advantages of structured multi-task learning in improving both accuracy and interpretability. Code will be available at https://github.com/Hub-Tian/CogRail.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09613v1",
+      "url": "https://arxiv.org/abs/2601.09613"
+    },
+    {
+      "arxiv_id": "2601.09603",
+      "title": "Linear Complexity Self-Supervised Learning for Music Understanding with Random Quantizer",
+      "authors": [
+        "Petros Vavaroutsos",
+        "Theodoros Palamas",
+        "Pantelis Vikatos"
+      ],
+      "abstract": "In recent years, foundation models have become very popular due to their exceptional performance, mainly in natural language (NLP) tasks where they were first introduced. These models usually consist of hundreds of millions, or even billions, of parameters, making them resource-intensive during training and in production systems, leading to increased costs. This paper focuses on the reduction of a foundation's model size when applied to music information retrieval (MIR) tasks. Our research combines the Branchformer architecture with SummaryMixing, which were first applied in speech recognition, along with a random quantization process. To facilitate reproducibility, we conduct pre-training on publicly available datasets, complemented by a proprietary dataset comparable in scale to other private datasets reported in the literature. We ensure robust evaluation by using a framework consisting of a variety of downstream MIR tasks. Our results show that our architecture achieves competitive performance when compared with other state-of-the-art models that use multi-head self-attention, while reducing the model size from 8.5% up to 12.3%.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "doi": "10.1145/3748522.3779786",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09603v1",
+      "url": "https://arxiv.org/abs/2601.09603"
+    },
+    {
+      "arxiv_id": "2601.09600",
+      "title": "Information Access of the Oppressed: A Problem-Posing Framework for Envisioning Emancipatory Information Access Platforms",
+      "authors": [
+        "Bhaskar Mitra",
+        "Nicola Neophytou",
+        "Sireesh Gururaja"
+      ],
+      "abstract": "Online information access (IA) platforms are targets of authoritarian capture. These concerns are particularly serious and urgent today in light of the rising levels of democratic erosion worldwide, the emerging capabilities of generative AI technologies such as AI persuasion, and the increasing concentration of economic and political power in the hands of Big Tech. This raises the question of what alternative IA infrastructure we must reimagine and build to mitigate the risks of authoritarian capture of our information ecosystems. We explore this question through the lens of Paulo Freire's theories of emancipatory pedagogy. Freire's theories provide a radically different lens for exploring IA's sociotechnical concerns relative to the current dominating frames of fairness, accountability, confidentiality, transparency, and safety. We make explicit, with the intention to challenge, the dichotomy of how we relate to technology as either technologists (who envision and build technology) and its users. We posit that this mirrors the teacher-student relationship in Freire's analysis. By extending Freire's analysis to IA, we challenge the notion that it is the burden of the (altruistic) technologists to come up with interventions to mitigate the risks that emerging technologies pose to marginalized communities. Instead, we advocate that the first task for the technologists is to pose these as problems to the marginalized communities, to encourage them to make and unmake the technology as part of their material struggle against oppression. Their second task is to redesign our online technology stacks to structurally expose spaces for community members to co-opt and co-construct the technology in aid of their emancipatory struggles. We operationalize Freire's theories to develop a problem-posing framework for envisioning emancipatory IA platforms of the future.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.HC",
+        "cs.IR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09600v1",
+      "url": "https://arxiv.org/abs/2601.09600"
+    },
+    {
+      "arxiv_id": "2601.09587",
+      "title": "The Structure and Kinematics of Three Class 0 Protostellar Jets from JWST",
+      "authors": [
+        "Samuel A. Federman",
+        "S. Thomas Megeath",
+        "Alessio Caratti o Garatti",
+        "Mayank Narang",
+        "Himanshu Tyagi",
+        "Neal J. Evans",
+        "Carolin N. Kimmig",
+        "Lukasz Tychoniec",
+        "Henrik Beuther",
+        "Amelia Stutz",
+        "P. Manoj",
+        "Robert Gutermuth",
+        "Tyler L. Bourke",
+        "Joel Green",
+        "Lee Hartmann",
+        "Pamela Klaassen",
+        "Rolf Kuiper",
+        "Leslie W. Looney",
+        "Pooneh Nazari",
+        "Thomas Stanke",
+        "Dan M. Watson",
+        "Yao-Lun Yang",
+        "Wafa Zakri"
+      ],
+      "abstract": "We present observations of jets within 2000 au of three deeply embedded protostars using 2.9-27 micron observations with JWST. These observations show the morphologies and kinematics of the collimated jets from three protostars, the low-mass Class 0 protostars B335 and HOPS 153, and the intermediate-mass protostar HOPS 370. These jets are traced by shock-ionized fine-structure line emission observed with the JWST NIRSpec and MIRI IFUs. We find that [Fe II] emission traces the full extent of the inner 1000 to 2000 au of the jets, depending on distance to the protostar, while other ions mostly trace isolated shocked knots. The jets show evidence of wiggling motion in the plane of the sky as well as asymmetries between blue and red-shifted lobes. The widths of the jets increase non-monotonically with distance from the central protostar, with opening angles ranging from 2.1 degrees to < 10.1 degrees for the three protostars in the sample. The jets have total velocities ranging from 147 to 184 km/s after correcting for disk inclination. For B335, an 8-month gap between NIRSpec and MIRI MRS observations enabled measurement of the tangential velocity of a shocked knot; in combination with the radial velocity, this shows that the jet has a different inclination than the outflow cavity. We find multiple knots before and during a recent outburst in B335, although the knots were more frequent during the burst. The asymmetries between blue- and red-shifted lobes strongly suggest complex interactions between the circumstellar disks and magnetic fields.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "astro-ph.SR",
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.GA"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09587v1",
+      "url": "https://arxiv.org/abs/2601.09587"
+    },
+    {
+      "arxiv_id": "2601.09485",
+      "title": "On lower bounds for hypergeometric tails",
+      "authors": [
+        "Jianhang Ai",
+        "Christos Pelekis"
+      ],
+      "abstract": "Let $n,k$ be positive integers such that $n\\geq k$, and let $H$ be a hypergeometric random variable counting the number of black marbles in a sample without replacement of size $k$ from an urn that contains $i\\in \\{1,\\ldots, n\\}$ black and $n - i$ white marbles. It is shown that \\[ \\mathbb{P}(H \\ge \\mathbb{E}(H)) \\ge k/n\\, , \\, \\text{when} \\,\\, n\\ge 8k \\, . \\] Furthermore, provided that $1\\le \\mathbb{E}(H)\\le \\min\\{i,k\\}-2$ as well as that $\\frac{(n-i)(n-k)}{n}>1$, it is shown that \\[ \\mathbb{P}(H\\ge \\mathbb{E}(H)) \\,\\ge\\, \\frac{e^{-1/8}}{4\\sqrt{2}} \\cdot \\sqrt{\\frac{n-1}{n}} \\cdot\\frac{ \\sqrt{\\text{Var}(H)} }{1 + \\sqrt{1+ \\frac{n-1}{n-k}\\cdot\\text{Var}(H)}}\\, . \\] Auxiliary results which may be of independent interest include an upper bound on the tail conditional expectation and a lower bound on the mean absolute deviation of the hypergeometric distribution.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "math.PR",
+      "categories": [
+        "math.PR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09485v1",
+      "url": "https://arxiv.org/abs/2601.09485"
+    },
+    {
+      "arxiv_id": "2601.09478",
+      "title": "Bridging Semantic Understanding and Popularity Bias with LLMs",
+      "authors": [
+        "Renqiang Luo",
+        "Dong Zhang",
+        "Yupeng Gao",
+        "Wen Shi",
+        "Mingliang Hou",
+        "Jiaying Liu",
+        "Zhe Wang",
+        "Shuo Yu"
+      ],
+      "abstract": "Semantic understanding of popularity bias is a crucial yet underexplored challenge in recommender systems, where popular items are often favored at the expense of niche content. Most existing debiasing methods treat the semantic understanding of popularity bias as a matter of diversity enhancement or long-tail coverage, neglecting the deeper semantic layer that embodies the causal origins of the bias itself. Consequently, such shallow interpretations limit both their debiasing effectiveness and recommendation accuracy. In this paper, we propose FairLRM, a novel framework that bridges the gap in the semantic understanding of popularity bias with Recommendation via Large Language Model (RecLLM). FairLRM decomposes popularity bias into item-side and user-side components, using structured instruction-based prompts to enhance the model's comprehension of both global item distributions and individual user preferences. Unlike traditional methods that rely on surface-level features such as \"diversity\" or \"debiasing\", FairLRM improves the model's ability to semantically interpret and address the underlying bias. Through empirical evaluation, we show that FairLRM significantly enhances both fairness and recommendation accuracy, providing a more semantically aware and trustworthy approach to enhance the semantic understanding of popularity bias. The implementation is available at https://github.com/LuoRenqiang/FairLRM.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09478v1",
+      "url": "https://arxiv.org/abs/2601.09478"
+    },
+    {
+      "arxiv_id": "2601.09470",
+      "title": "Personalized Multimodal Feedback Using Multiple External Representations: Strategy Profiles and Learning in High School Physics",
+      "authors": [
+        "Natalia Revenga-Lozano",
+        "Karina E. Avila",
+        "Steffen Steinert",
+        "Matthias Schweinberger",
+        "Clara E. G\u00f3mez-P\u00e9rez",
+        "Jochen Kuhn",
+        "Stefan K\u00fcchemann"
+      ],
+      "abstract": "Multiple external representations (MERs) and personalized feedback support physics learning, yet evidence on how personalized feedback can effectively integrate MERs remains limited. This question is particularly timely given the emergence of multimodal large language models. We conducted a 16-24 week observational study in high school physics (N=661) using a computer-based platform that provided verification and optional elaborated feedback in verbal, graphical and mathematical forms. Linear mixed-effects models and strategy-cluster analyses (ANCOVA-adjusted comparisons) tested associations between feedback use and post-test performance and moderation by representational competence. Elaborated multirepresentational feedback showed a small but consistent positive association with post-test scores independent of prior knowledge and confidence. Learners adopted distinct representation-selection strategies; among students with lower representational competence, using a diverse set of representations related to higher learning, whereas this advantage diminished as competence increased. These findings motivate adaptive feedback designs and inform intelligent tutoring systems capable of tailoring feedback elaboration and representational format to learner profiles, advancing personalized instruction in physics education.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "physics.ed-ph",
+      "categories": [
+        "physics.ed-ph",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09470v1",
+      "url": "https://arxiv.org/abs/2601.09470"
+    },
+    {
+      "arxiv_id": "2601.09469",
+      "title": "FairGU: Fairness-aware Graph Unlearning in Social Network",
+      "authors": [
+        "Renqiang Luo",
+        "Yongshuai Yang",
+        "Huafei Huang",
+        "Qing Qing",
+        "Mingliang Hou",
+        "Ziqi Xu",
+        "Yi Yu",
+        "Jingjing Zhou",
+        "Feng Xia"
+      ],
+      "abstract": "Graph unlearning has emerged as a critical mechanism for supporting sustainable and privacy-preserving social networks, enabling models to remove the influence of deleted nodes and thereby better safeguard user information. However, we observe that existing graph unlearning techniques insufficiently protect sensitive attributes, often leading to degraded algorithmic fairness compared with traditional graph learning methods. To address this gap, we introduce FairGU, a fairness-aware graph unlearning framework designed to preserve both utility and fairness during the unlearning process. FairGU integrates a dedicated fairness-aware module with effective data protection strategies, ensuring that sensitive attributes are neither inadvertently amplified nor structurally exposed when nodes are removed. Through extensive experiments on multiple real-world datasets, we demonstrate that FairGU consistently outperforms state-of-the-art graph unlearning methods and fairness-enhanced graph learning baselines in terms of both accuracy and fairness metrics. Our findings highlight a previously overlooked risk in current unlearning practices and establish FairGU as a robust and equitable solution for the next generation of socially sustainable networked systems. The codes are available at https://github.com/LuoRenqiang/FairGU.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09469v1",
+      "url": "https://arxiv.org/abs/2601.09469"
+    },
+    {
+      "arxiv_id": "2601.09467",
+      "title": "Searth Transformer: A Transformer Architecture Incorporating Earth's Geospheric Physical Priors for Global Mid-Range Weather Forecasting",
+      "authors": [
+        "Tianye Li",
+        "Qi Liu",
+        "Hao Li",
+        "Lei Chen",
+        "Wencong Cheng",
+        "Fei Zheng",
+        "Xiangao Xia",
+        "Ya Wang",
+        "Gang Huang",
+        "Weiwei Wang",
+        "Xuan Tong",
+        "Ziqing Zu",
+        "Yi Fang",
+        "Shenming Fu",
+        "Jiang Jiang",
+        "Haochen Li",
+        "Mingxing Li",
+        "Jiangjiang Xia"
+      ],
+      "abstract": "Accurate global medium-range weather forecasting is fundamental to Earth system science. Most existing Transformer-based forecasting models adopt vision-centric architectures that neglect the Earth's spherical geometry and zonal periodicity. In addition, conventional autoregressive training is computationally expensive and limits forecast horizons due to error accumulation. To address these challenges, we propose the Shifted Earth Transformer (Searth Transformer), a physics-informed architecture that incorporates zonal periodicity and meridional boundaries into window-based self-attention for physically consistent global information exchange. We further introduce a Relay Autoregressive (RAR) fine-tuning strategy that enables learning long-range atmospheric evolution under constrained memory and computational budgets. Based on these methods, we develop YanTian, a global medium-range weather forecasting model. YanTian achieves higher accuracy than the high-resolution forecast of the European Centre for Medium-Range Weather Forecasts and performs competitively with state-of-the-art AI models at one-degree resolution, while requiring roughly 200 times lower computational cost than standard autoregressive fine-tuning. Furthermore, YanTian attains a longer skillful forecast lead time for Z500 (10.3 days) than HRES (9 days). Beyond weather forecasting, this work establishes a robust algorithmic foundation for predictive modeling of complex global-scale geophysical circulation systems, offering new pathways for Earth system science.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "physics.ao-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09467v1",
+      "url": "https://arxiv.org/abs/2601.09467"
+    },
+    {
+      "arxiv_id": "2601.09455",
+      "title": "On the Hardness of Computing Counterfactual and Semifactual Explanations in XAI",
+      "authors": [
+        "Andr\u00e9 Artelt",
+        "Martin Olsen",
+        "Kevin Tierney"
+      ],
+      "abstract": "Providing clear explanations to the choices of machine learning models is essential for these models to be deployed in crucial applications. Counterfactual and semi-factual explanations have emerged as two mechanisms for providing users with insights into the outputs of their models. We provide an overview of the computational complexity results in the literature for generating these explanations, finding that in many cases, generating explanations is computationally hard. We strengthen the argument for this considerably by further contributing our own inapproximability results showing that not only are explanations often hard to generate, but under certain assumptions, they are also hard to approximate. We discuss the implications of these complexity results for the XAI community and for policymakers seeking to regulate explanations in AI.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": "Transactions on Machine Learning Research (TMLR), 2025",
+      "pdf_url": "https://arxiv.org/pdf/2601.09455v1",
+      "url": "https://arxiv.org/abs/2601.09455"
+    },
+    {
+      "arxiv_id": "2601.09448",
+      "title": "Population-Aligned Audio Reproduction With LLM-Based Equalizers",
+      "authors": [
+        "Ioannis Stylianou",
+        "Jon Francombe",
+        "Pablo Martinez-Nuevo",
+        "Sven Ewan Shepstone",
+        "Zheng-Hua Tan"
+      ],
+      "abstract": "Conventional audio equalization is a static process that requires manual and cumbersome adjustments to adapt to changing listening contexts (e.g., mood, location, or social setting). In this paper, we introduce a Large Language Model (LLM)-based alternative that maps natural language text prompts to equalization settings. This enables a conversational approach to sound system control. By utilizing data collected from a controlled listening experiment, our models exploit in-context learning and parameter-efficient fine-tuning techniques to reliably align with population-preferred equalization settings. Our evaluation methods, which leverage distributional metrics that capture users' varied preferences, show statistically significant improvements in distributional alignment over random sampling and static preset baselines. These results indicate that LLMs could function as \"artificial equalizers,\" contributing to the development of more accessible, context-aware, and expert-level audio tuning methods.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09448v1",
+      "url": "https://arxiv.org/abs/2601.09448"
+    },
+    {
+      "arxiv_id": "2601.09446",
+      "title": "Improving Symbolic Translation of Language Models for Logical Reasoning",
+      "authors": [
+        "Ramya Keerthy Thatikonda",
+        "Jiuzhou Han",
+        "Wray Buntine",
+        "Ehsan Shareghi"
+      ],
+      "abstract": "The use of formal language for deductive logical reasoning aligns well with language models (LMs), where translating natural language (NL) into first-order logic (FOL) and employing an external solver results in a verifiable and therefore reliable reasoning system. However, smaller LMs often struggle with this translation task, frequently producing incorrect symbolic outputs due to formatting and translation errors. Existing approaches typically rely on self-iteration to correct these errors, but such methods depend heavily on the capabilities of the underlying model. To address this, we first categorize common errors and fine-tune smaller LMs using data synthesized by large language models. The evaluation is performed using the defined error categories. We introduce incremental inference, which divides inference into two stages, predicate generation and FOL translation, providing greater control over model behavior and enhancing generation quality as measured by predicate metrics. This decomposition framework also enables the use of a verification module that targets predicate-arity errors to further improve performance. Our study evaluates three families of models across four logical-reasoning datasets. The comprehensive fine-tuning, incremental inference, and verification modules reduce error rates, increase predicate coverage, and improve reasoning performance for smaller LMs, moving us closer to developing reliable and accessible symbolic-reasoning systems.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09446v1",
+      "url": "https://arxiv.org/abs/2601.09446"
+    },
+    {
+      "arxiv_id": "2601.09442",
+      "title": "Tools to help patients and other stakeholders' input into choice of estimand and intercurrent event strategy in randomised trials",
+      "authors": [
+        "Joanna Hindley",
+        "Charlotte Hartley",
+        "Jennifer Hellier",
+        "Kate Sturgeon",
+        "Sophie Greenwood",
+        "Ian Newsome",
+        "Katherine Barrett",
+        "Debs Smith",
+        "Tra My Pham",
+        "Dongquan Bi",
+        "Beatriz Goulao",
+        "Suzie Cro",
+        "Brennan C Kahan"
+      ],
+      "abstract": "Estimands can help to clarify the research questions being addressed in randomised trials. Because the choice of estimand can affect how relevant trial results are to patients and other stakeholders, such as clinicians or policymakers, it is important for them to be involved in these decisions. However, there are barriers to having these conversations. For instance, discussions around how intercurrent events should be addressed in the estimand definition typically involve complex concepts as well as technical language. We three tools to facilitate conversations between researchers and patients and other stakeholders about the choice of estimand and intercurrent event strategy: (i) a video explaining the concept of an estimand and the five different ways that intercurrent events can be incorporated into the estimand definition; (ii) an infographic outlining these five strategies; and (iii) an editable PowerPoint slide which can be completed with trial-specific details to facilitate conversations around choice of estimand for a particular trial. These resources can help to start conversations between the trial team and patients and other stakeholders about the best choice of estimand and intercurrent event strategies for a randomised trial.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "stat.ME",
+      "categories": [
+        "stat.ME"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09442v1",
+      "url": "https://arxiv.org/abs/2601.09442"
+    },
+    {
+      "arxiv_id": "2601.09440",
+      "title": "DepRadar: Agentic Coordination for Context Aware Defect Impact Analysis in Deep Learning Libraries",
+      "authors": [
+        "Yi Gao",
+        "Xing Hu",
+        "Tongtong Xu",
+        "Jiali Zhao",
+        "Xiaohu Yang",
+        "Xin Xia"
+      ],
+      "abstract": "Deep learning libraries like Transformers and Megatron are now widely adopted in modern AI programs. However, when these libraries introduce defects, ranging from silent computation errors to subtle performance regressions, it is often challenging for downstream users to assess whether their own programs are affected. Such impact analysis requires not only understanding the defect semantics but also checking whether the client code satisfies complex triggering conditions involving configuration flags, runtime environments, and indirect API usage. We present DepRadar, an agent coordination framework for fine grained defect and impact analysis in DL library updates. DepRadar coordinates four specialized agents across three steps: 1. the PR Miner and Code Diff Analyzer extract structured defect semantics from commits or pull requests, 2. the Orchestrator Agent synthesizes these signals into a unified defect pattern with trigger conditions, and 3. the Impact Analyzer checks downstream programs to determine whether the defect can be triggered. To improve accuracy and explainability, DepRadar integrates static analysis with DL-specific domain rules for defect reasoning and client side tracing. We evaluate DepRadar on 157 PRs and 70 commits across two representative DL libraries. It achieves 90% precision in defect identification and generates high quality structured fields (average field score 1.6). On 122 client programs, DepRadar identifies affected cases with 90% recall and 80% precision, substantially outperforming other baselines.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09440v1",
+      "url": "https://arxiv.org/abs/2601.09440"
+    },
+    {
+      "arxiv_id": "2601.09413",
+      "title": "Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition and Audio Reasoning with Omni Perception",
+      "authors": [
+        "Zhen Wan",
+        "Chao-Han Huck Yang",
+        "Jinchuan Tian",
+        "Hanrong Ye",
+        "Ankita Pasad",
+        "Szu-wei Fu",
+        "Arushi Goel",
+        "Ryo Hachiuma",
+        "Shizhe Diao",
+        "Kunal Dhawan",
+        "Sreyan Ghosh",
+        "Yusuke Hirota",
+        "Zhehuai Chen",
+        "Rafael Valle",
+        "Ehsan Hosseini Asl",
+        "Chenhui Chu",
+        "Shinji Watanabe",
+        "Yu-Chiang Frank Wang",
+        "Boris Ginsburg"
+      ],
+      "abstract": "We introduce a voice-agentic framework that learns one critical omni-understanding skill: knowing when to trust itself versus when to consult external audio perception. Our work is motivated by a crucial yet counterintuitive finding: naively fine-tuning an omni-model on both speech recognition and external sound understanding tasks often degrades performance, as the model can be easily misled by noisy hypotheses. To address this, our framework, Speech-Hands, recasts the problem as an explicit self-reflection decision. This learnable reflection primitive proves effective in preventing the model from being derailed by flawed external candidates. We show that this agentic action mechanism generalizes naturally from speech recognition to complex, multiple-choice audio reasoning. Across the OpenASR leaderboard, Speech-Hands consistently outperforms strong baselines by 12.1% WER on seven benchmarks. The model also achieves 77.37% accuracy and high F1 on audio QA decisions, showing robust generalization and reliability across diverse audio question answering datasets. By unifying perception and decision-making, our work offers a practical path toward more reliable and resilient audio intelligence.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "cs.MA",
+        "eess.AS"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09413v1",
+      "url": "https://arxiv.org/abs/2601.09413"
+    },
+    {
+      "arxiv_id": "2601.09393",
+      "title": "AI-NativeBench: An Open-Source White-Box Agentic Benchmark Suite for AI-Native Systems",
+      "authors": [
+        "Zirui Wang",
+        "Guangba Yu",
+        "Michael R. Lyu"
+      ],
+      "abstract": "The transition from Cloud-Native to AI-Native architectures is fundamentally reshaping software engineering, replacing deterministic microservices with probabilistic agentic services. However, this shift renders traditional black-box evaluation paradigms insufficient: existing benchmarks measure raw model capabilities while remaining blind to system-level execution dynamics. To bridge this gap, we introduce AI-NativeBench, the first application-centric and white-box AI-Native benchmark suite grounded in Model Context Protocol (MCP) and Agent-to-Agent (A2A) standards. By treating agentic spans as first-class citizens within distributed traces, our methodology enables granular analysis of engineering characteristics beyond simple capabilities. Leveraging this benchmark across 21 system variants, we uncover critical engineering realities invisible to traditional metrics: a parameter paradox where lightweight models often surpass flagships in protocol adherence, a pervasive inference dominance that renders protocol overhead secondary, and an expensive failure pattern where self-healing mechanisms paradoxically act as cost multipliers on unviable workflows. This work provides the first systematic evidence to guide the transition from measuring model capability to engineering reliable AI-Native systems. To facilitate reproducibility and further research, we have open-sourced the benchmark and dataset.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.DC",
+        "cs.PF"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09393v1",
+      "url": "https://arxiv.org/abs/2601.09393"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

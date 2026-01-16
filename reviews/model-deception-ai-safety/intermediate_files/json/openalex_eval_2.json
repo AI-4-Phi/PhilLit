@@ -1,0 +1,3247 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "model evaluation trustworthy AI",
+  "results": [
+    {
+      "openalex_id": "W3046238651",
+      "doi": "10.1016/j.jbi.2020.103655",
+      "title": "The role of explainability in creating trustworthy artificial intelligence for health care: A comprehensive survey of the terminology, design choices, and evaluation strategies",
+      "authors": [
+        {
+          "name": "Aniek F. Markus",
+          "openalex_id": "A5001565828",
+          "orcid": "https://orcid.org/0000-0001-5779-4794",
+          "institutions": [
+            "Erasmus MC"
+          ]
+        },
+        {
+          "name": "Jan A. Kors",
+          "openalex_id": "A5005077862",
+          "orcid": "https://orcid.org/0000-0002-4929-026X",
+          "institutions": [
+            "Erasmus MC"
+          ]
+        },
+        {
+          "name": "Peter R. Rijnbeek",
+          "openalex_id": "A5048645102",
+          "orcid": "https://orcid.org/0000-0003-0621-1979",
+          "institutions": [
+            "Erasmus MC"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-10",
+      "abstract": null,
+      "cited_by_count": 665,
+      "type": "review",
+      "source": {
+        "name": "Journal of Biomedical Informatics",
+        "type": "journal",
+        "issn": [
+          "1532-0464",
+          "1532-0480"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S1532046420302835?via%3Dihub"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 144,
+      "url": "https://openalex.org/W3046238651"
+    },
+    {
+      "openalex_id": "W4366262984",
+      "doi": "10.1016/j.inffus.2023.101805",
+      "title": "Explainable Artificial Intelligence (XAI): What we know and what is left to attain Trustworthy Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Sajid Ali",
+          "openalex_id": "A5046303624",
+          "orcid": "https://orcid.org/0000-0002-1287-849X",
+          "institutions": [
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Tamer Abuhmed",
+          "openalex_id": "A5023828527",
+          "orcid": "https://orcid.org/0000-0001-9232-4843",
+          "institutions": [
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Shaker El\u2013Sappagh",
+          "openalex_id": "A5052265483",
+          "orcid": "https://orcid.org/0000-0001-9705-1477",
+          "institutions": [
+            "Suez University",
+            "Benha University",
+            "Galala University",
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Khan Muhammad",
+          "openalex_id": "A5101632716",
+          "orcid": "https://orcid.org/0000-0003-4055-7412",
+          "institutions": [
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 M. Alonso",
+          "openalex_id": "A5056892202",
+          "orcid": "https://orcid.org/0000-0003-3673-421X",
+          "institutions": [
+            "Universidade de Santiago de Compostela",
+            "Center for Research in Molecular Medicine and Chronic Diseases"
+          ]
+        },
+        {
+          "name": "Roberto Confalonieri",
+          "openalex_id": "A5070433751",
+          "orcid": "https://orcid.org/0000-0003-0936-2123",
+          "institutions": [
+            "University of Padua"
+          ]
+        },
+        {
+          "name": "Riccardo Guidotti",
+          "openalex_id": "A5091251187",
+          "orcid": "https://orcid.org/0000-0002-2827-7613",
+          "institutions": [
+            "University of Pisa"
+          ]
+        },
+        {
+          "name": "Javier Del Ser",
+          "openalex_id": "A5017326471",
+          "orcid": "https://orcid.org/0000-0002-1260-9775",
+          "institutions": [
+            "Association of Electronic and Information Technologies",
+            "University of the Basque Country"
+          ]
+        },
+        {
+          "name": "Natalia D\u00edaz-Rodr\u00edguez",
+          "openalex_id": "A5058176171",
+          "orcid": "https://orcid.org/0000-0003-3362-9326",
+          "institutions": [
+            "Universidad de Granada",
+            "Instituto Andaluz de Ciencias de la Tierra"
+          ]
+        },
+        {
+          "name": "Francisco Herrera",
+          "openalex_id": "A5045016749",
+          "orcid": "https://orcid.org/0000-0002-7283-312X",
+          "institutions": [
+            "Universidad de Granada",
+            "Instituto Andaluz de Ciencias de la Tierra"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-18",
+      "abstract": "Artificial intelligence (AI) is currently being utilized in a wide range of sophisticated applications, but the outcomes of many AI models are challenging to comprehend and trust due to their black-box nature. Usually, it is essential to understand the reasoning behind an AI model\u2019s decision-making. Thus, the need for eXplainable AI (XAI) methods for improving trust in AI models has arisen. XAI has become a popular research subject within the AI field in recent years. Existing survey papers have tackled the concepts of XAI, its general terms, and post-hoc explainability methods but there have not been any reviews that have looked at the assessment methods, available tools, XAI datasets, and other related aspects. Therefore, in this comprehensive study, we provide readers with an overview of the current research and trends in this rapidly emerging area with a case study example. The study starts by explaining the background of XAI, common definitions, and summarizing recently proposed techniques in XAI for supervised machine learning. The review divides XAI techniques into four axes using a hierarchical categorization system: (i) data explainability, (ii) model explainability, (iii) post-hoc explainability, and (iv) assessment of explanations. We also introduce available evaluation metrics as well as open-source packages and datasets with future research directions. Then, the significance of explainability in terms of legal demands, user viewpoints, and application orientation is outlined, termed as XAI concerns. This paper advocates for tailoring explanation content to specific user types. An examination of XAI techniques and evaluation was conducted by looking at 410 critical articles, published between January 2016 and October 2022, in reputed journals and using a wide range of research databases as a source of information. The article is aimed at XAI researchers who are interested in making their AI models more trustworthy, as well as towards researchers from other disciplines who are looking for effective XAI methods to complete tasks with confidence while communicating meaning from data.",
+      "cited_by_count": 1183,
+      "type": "article",
+      "source": {
+        "name": "Information Fusion",
+        "type": "journal",
+        "issn": [
+          "1566-2535",
+          "1872-6305"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.inffus.2023.101805"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 529,
+      "url": "https://openalex.org/W4366262984"
+    },
+    {
+      "openalex_id": "W3134111219",
+      "doi": "10.1145/3442188.3445923",
+      "title": "Formalizing Trust in Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Alon Jacovi",
+          "openalex_id": "A5045156755",
+          "orcid": "https://orcid.org/0000-0002-7263-2061",
+          "institutions": [
+            "Bar-Ilan University"
+          ]
+        },
+        {
+          "name": "Ana Marasovi\u0107",
+          "openalex_id": "A5087098432",
+          "institutions": [
+            "University of Washington",
+            "Allen Institute for Artificial Intelligence"
+          ]
+        },
+        {
+          "name": "Tim Miller",
+          "openalex_id": "A5028824146",
+          "orcid": "https://orcid.org/0000-0003-4908-6063",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Yoav Goldberg",
+          "openalex_id": "A5028476919",
+          "orcid": "https://orcid.org/0000-0002-6497-829X",
+          "institutions": [
+            "Allen Institute for Artificial Intelligence",
+            "Bar-Ilan University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-01",
+      "abstract": "Trust is a central component of the interaction between people and AI, in that 'incorrect' levels of trust may cause misuse, abuse or disuse of the technology. But what, precisely, is the nature of trust in AI? What are the prerequisites and goals of the cognitive mechanism of trust, and how can we promote them, or assess whether they are being satisfied in a given interaction? This work aims to answer these questions. We discuss a model of trust inspired by, but not identical to, interpersonal trust (i.e., trust between people) as defined by sociologists. This model rests on two key properties: the vulnerability of the user; and the ability to anticipate the impact of the AI model's decisions. We incorporate a formalization of 'contractual trust', such that trust between a user and an AI model is trust that some implicit or explicit contract will hold, and a formalization of 'trustworthiness' (that detaches from the notion of trustworthiness in sociology), and with it concepts of 'warranted' and 'unwarranted' trust. We present the possible causes of warranted trust as intrinsic reasoning and extrinsic behavior, and discuss how to design trustworthy AI, how to evaluate whether trust has manifested, and whether it is warranted. Finally, we elucidate the connection between trust and XAI using our formalization.",
+      "cited_by_count": 411,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 75,
+      "url": "https://openalex.org/W3134111219"
+    },
+    {
+      "openalex_id": "W4292121845",
+      "doi": "10.1038/s42256-022-00516-1",
+      "title": "Advances, challenges and opportunities in creating data for trustworthy AI",
+      "authors": [
+        {
+          "name": "Weixin Liang",
+          "openalex_id": "A5076286335",
+          "orcid": "https://orcid.org/0000-0001-9924-693X",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Girmaw Abebe Tadesse",
+          "openalex_id": "A5024549881",
+          "orcid": "https://orcid.org/0000-0002-2648-9102"
+        },
+        {
+          "name": "Daniel E. Ho",
+          "openalex_id": "A5058408154",
+          "orcid": "https://orcid.org/0000-0002-2195-5469",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Li Fei-Fei",
+          "openalex_id": "A5100450462",
+          "orcid": "https://orcid.org/0000-0002-7481-0810",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Matei Zaharia",
+          "openalex_id": "A5005554337",
+          "orcid": "https://orcid.org/0000-0002-7547-7204",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Ce Zhang",
+          "openalex_id": "A5100383731",
+          "orcid": "https://orcid.org/0000-0002-8105-7505",
+          "institutions": [
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "James Zou",
+          "openalex_id": "A5005779176",
+          "orcid": "https://orcid.org/0000-0001-8880-4764",
+          "institutions": [
+            "Stanford University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-17",
+      "abstract": null,
+      "cited_by_count": 443,
+      "type": "article",
+      "source": {
+        "name": "Nature Machine Intelligence",
+        "type": "journal",
+        "issn": [
+          "2522-5839"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 79,
+      "url": "https://openalex.org/W4292121845"
+    },
+    {
+      "openalex_id": "W4387087456",
+      "doi": "10.1109/dcoss-iot58021.2023.00084",
+      "title": "Towards a Unified Multidimensional Explainability Metric: Evaluating Trustworthiness in AI Models",
+      "authors": [
+        {
+          "name": "Georgios Makridis",
+          "openalex_id": "A5050942947",
+          "orcid": "https://orcid.org/0000-0002-6165-7239",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "Georgios Fatouros",
+          "openalex_id": "A5018359309",
+          "orcid": "https://orcid.org/0000-0001-6843-089X",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "Athanasios Kiourtis",
+          "openalex_id": "A5007408273",
+          "orcid": "https://orcid.org/0000-0002-1681-3626",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "Dimitrios Kotios",
+          "openalex_id": "A5062866003",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "Vasileios Koukos",
+          "openalex_id": "A5052440692",
+          "orcid": "https://orcid.org/0000-0003-2111-2311",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "Dimosthenis Kyriazis",
+          "openalex_id": "A5069674161",
+          "orcid": "https://orcid.org/0000-0001-7019-7214",
+          "institutions": [
+            "University of Piraeus"
+          ]
+        },
+        {
+          "name": "Jonh Soldatos",
+          "openalex_id": "A5105008650",
+          "institutions": [
+            "Innovative Research (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-01",
+      "abstract": "In this paper, we present a comprehensive framework for assessing the explainability of various XAI methods, such as LIME and SHAP, across multiple datasets and machine learning models, with the ultimate goal of creating a unified multidimensional explainability score. Our methodology focuses on three key aspects of explainability: fidelity, simplicity, and stability. We leverage benchmarking experiments to systematically evaluate these aspects and use the insights gained to construct an offline knowledge base. This knowledge base captures the explainability scores for each registered model and serves as a valuable resource for context-dependent evaluation of explainability. By analyzing the complementary characteristics and metadata of AI models, datasets, and XAI methods, the knowledge base will enable the estimation of explainability scores for previously unseen datasets and models. Properties like fidelity, simplicity, and stability may vary significantly based on the dataset, underlying model, and domain expertise of the end user. We demonstrate our framework by applying it to three open-source datasets, discussing the impli-cations of the obtained results in relation to the characteristics of the datasets. Our work contributes to the growing field of XAI by providing a robust and versatile tool for evaluating and comparing the explainability of various XAI methods, ultimately supporting the development of more transparent and trustworthy AI systems.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Scientific Computing and Data Management"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W4387087456"
+    },
+    {
+      "openalex_id": "W3036453007",
+      "doi": "10.48550/arxiv.2006.11371",
+      "title": "Opportunities and Challenges in Explainable Artificial Intelligence (XAI): A Survey",
+      "authors": [
+        {
+          "name": "Arun Das",
+          "openalex_id": "A5059680425",
+          "orcid": "https://orcid.org/0000-0001-7512-0523",
+          "institutions": [
+            "The University of Texas at San Antonio"
+          ]
+        },
+        {
+          "name": "Paul Rad",
+          "openalex_id": "A5114027757",
+          "institutions": [
+            "The University of Texas at San Antonio"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-16",
+      "abstract": "Nowadays, deep neural networks are widely used in mission critical systems such as healthcare, self-driving vehicles, and military which have direct impact on human lives. However, the black-box nature of deep neural networks challenges its use in mission critical applications, raising ethical and judicial concerns inducing lack of trust. Explainable Artificial Intelligence (XAI) is a field of Artificial Intelligence (AI) that promotes a set of tools, techniques, and algorithms that can generate high-quality interpretable, intuitive, human-understandable explanations of AI decisions. In addition to providing a holistic view of the current XAI landscape in deep learning, this paper provides mathematical summaries of seminal work. We start by proposing a taxonomy and categorizing the XAI techniques based on their scope of explanations, methodology behind the algorithms, and explanation level or usage which helps build trustworthy, interpretable, and self-explanatory deep learning models. We then describe the main principles used in XAI research and present the historical timeline for landmark studies in XAI from 2007 to 2020. After explaining each category of algorithms and approaches in detail, we then evaluate the explanation maps generated by eight XAI algorithms on image data, discuss the limitations of this approach, and provide potential future directions to improve XAI evaluation.",
+      "cited_by_count": 489,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2006.11371"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 122,
+      "url": "https://openalex.org/W3036453007"
+    },
+    {
+      "openalex_id": "W3211317523",
+      "doi": "10.1016/j.compbiomed.2021.105111",
+      "title": "Transparency of deep neural networks for medical image analysis: A review of interpretability methods",
+      "authors": [
+        {
+          "name": "Zohaib Salahuddin",
+          "openalex_id": "A5034894826",
+          "orcid": "https://orcid.org/0000-0002-9900-329X",
+          "institutions": [
+            "Maastricht University"
+          ]
+        },
+        {
+          "name": "Henry C. Woodruff",
+          "openalex_id": "A5001892623",
+          "orcid": "https://orcid.org/0000-0001-7911-5123",
+          "institutions": [
+            "Maastricht University",
+            "Maastricht University Medical Centre"
+          ]
+        },
+        {
+          "name": "Avishek Chatterjee",
+          "openalex_id": "A5100783879",
+          "orcid": "https://orcid.org/0000-0003-3536-670X",
+          "institutions": [
+            "Maastricht University"
+          ]
+        },
+        {
+          "name": "Philippe Lambin",
+          "openalex_id": "A5058987737",
+          "institutions": [
+            "Maastricht University Medical Centre",
+            "Maastricht University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-04",
+      "abstract": "Artificial Intelligence (AI) has emerged as a useful aid in numerous clinical applications for diagnosis and treatment decisions. Deep neural networks have shown the same or better performance than clinicians in many tasks owing to the rapid increase in the available data and computational power. In order to conform to the principles of trustworthy AI, it is essential that the AI system be transparent, robust, fair, and ensure accountability. Current deep neural solutions are referred to as black-boxes due to a lack of understanding of the specifics concerning the decision-making process. Therefore, there is a need to ensure the interpretability of deep neural networks before they can be incorporated into the routine clinical workflow. In this narrative review, we utilized systematic keyword searches and domain expertise to identify nine different types of interpretability methods that have been used for understanding deep learning models for medical image analysis applications based on the type of generated explanations and technical similarities. Furthermore, we report the progress made towards evaluating the explanations produced by various interpretability methods. Finally, we discuss limitations, provide guidelines for using interpretability methods and future directions concerning the interpretability of deep neural networks for medical imaging analysis.",
+      "cited_by_count": 414,
+      "type": "review",
+      "source": {
+        "name": "Computers in Biology and Medicine",
+        "type": "journal",
+        "issn": [
+          "0010-4825",
+          "1879-0534"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.compbiomed.2021.105111"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Radiomics and Machine Learning in Medical Imaging",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 253,
+      "url": "https://openalex.org/W3211317523"
+    },
+    {
+      "openalex_id": "W4379508361",
+      "doi": "10.2196/48163",
+      "title": "The Advent of Generative Language Models in Medical Education",
+      "authors": [
+        {
+          "name": "Mert Karabacak",
+          "openalex_id": "A5080617386",
+          "orcid": "https://orcid.org/0000-0002-9263-9893",
+          "institutions": [
+            "Mount Sinai Health System"
+          ]
+        },
+        {
+          "name": "Burak Berksu Ozkara",
+          "openalex_id": "A5011638779",
+          "orcid": "https://orcid.org/0000-0002-8769-3342",
+          "institutions": [
+            "The University of Texas MD Anderson Cancer Center"
+          ]
+        },
+        {
+          "name": "Konstantinos Margetis",
+          "openalex_id": "A5064315969",
+          "orcid": "https://orcid.org/0000-0002-3715-8093",
+          "institutions": [
+            "Mount Sinai Health System"
+          ]
+        },
+        {
+          "name": "Max Wintermark",
+          "openalex_id": "A5052087773",
+          "orcid": "https://orcid.org/0000-0002-6726-3951",
+          "institutions": [
+            "The University of Texas MD Anderson Cancer Center"
+          ]
+        },
+        {
+          "name": "Sotirios Bisdas",
+          "openalex_id": "A5056584468",
+          "orcid": "https://orcid.org/0000-0001-9930-5549",
+          "institutions": [
+            "University College London Hospitals NHS Foundation Trust",
+            "University College London",
+            "The University of Texas MD Anderson Cancer Center",
+            "National Hospital for Neurology and Neurosurgery"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-06",
+      "abstract": "Artificial intelligence (AI) and generative language models (GLMs) present significant opportunities for enhancing medical education, including the provision of realistic simulations, digital patients, personalized feedback, evaluation methods, and the elimination of language barriers. These advanced technologies can facilitate immersive learning environments and enhance medical students' educational outcomes. However, ensuring content quality, addressing biases, and managing ethical and legal concerns present obstacles. To mitigate these challenges, it is necessary to evaluate the accuracy and relevance of AI-generated content, address potential biases, and develop guidelines and policies governing the use of AI-generated content in medical education. Collaboration among educators, researchers, and practitioners is essential for developing best practices, guidelines, and transparent AI models that encourage the ethical and responsible use of GLMs and AI in medical education. By sharing information about the data used for training, obstacles encountered, and evaluation methods, developers can increase their credibility and trustworthiness within the medical community. In order to realize the full potential of AI and GLMs in medical education while mitigating potential risks and obstacles, ongoing research and interdisciplinary collaboration are necessary. By collaborating, medical professionals can ensure that these technologies are effectively and responsibly integrated, contributing to enhanced learning experiences and patient care.",
+      "cited_by_count": 183,
+      "type": "article",
+      "source": {
+        "name": "JMIR Medical Education",
+        "type": "journal",
+        "issn": [
+          "2369-3762"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://mededu.jmir.org/2023/1/e48163/PDF"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Simulation-Based Education in Healthcare",
+        "Innovations in Medical Education"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W4379508361"
+    },
+    {
+      "openalex_id": "W4389543556",
+      "doi": "10.1109/ichi57859.2023.00058",
+      "title": "A Process for Evaluating Explanations for Transparent and Trustworthy AI Prediction Models",
+      "authors": [
+        {
+          "name": "Erhan Pisirir",
+          "openalex_id": "A5068737728",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        },
+        {
+          "name": "Jared M. Wohlgemut",
+          "openalex_id": "A5050280415",
+          "orcid": "https://orcid.org/0000-0001-8276-0465",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        },
+        {
+          "name": "Evangelia Kyrimi",
+          "openalex_id": "A5009391751",
+          "orcid": "https://orcid.org/0000-0001-6727-2279",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        },
+        {
+          "name": "Rebecca S. Stoner",
+          "openalex_id": "A5052257414",
+          "orcid": "https://orcid.org/0000-0001-6287-780X",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        },
+        {
+          "name": "Zane Perkins",
+          "openalex_id": "A5038185090",
+          "orcid": "https://orcid.org/0000-0003-4807-8803",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        },
+        {
+          "name": "Nigel Tai",
+          "openalex_id": "A5029622537",
+          "orcid": "https://orcid.org/0000-0001-8493-9063",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        },
+        {
+          "name": "William Marsh",
+          "openalex_id": "A5014721472",
+          "orcid": "https://orcid.org/0000-0003-0212-6363",
+          "institutions": [
+            "Queen Mary University of London"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-26",
+      "abstract": "This study proposes a process to generate and validate algorithmic explanations for the reasoning of an AI prediction model, implemented using a Bayesian network (BN). The intention of the generated explanations is to increase the transparency and trustworthiness of a decision-support system that uses a BN prediction model. To achieve this, explanations should be presented in an easy-to-understand, clear, and concise natural language narrative. We have developed an algorithm for explaining the reasoning of a prediction made using a BN. For the narrative part of the explanation, we use a template which presents the 'content' part of the explanation; this content is a word-less information structure that applies to all BNs. The template, on the other hand, needs to be designed specifically for each BN model. In this paper, we use a BN for the risk of trauma-induced coagulopathy, a critical bleeding problem. We outline a process for using experts' explanations as the basis for designing the explanation template. We do not believe that an algorithmic explanation needs to be indistinguishable from expert explanations; instead we aim to imitate the narrative structure of explanations given by experts, although we find that there is considerable variation in these. We then consider how the generated explanations can be evaluated, since a direct comparison (in the style of a Turing test) would likely fail. We describe a study using questionnaires and interviews to evaluate the effect of an algorithmic explanation on the transparency and also on the trustworthiness of the predictions made by the system. The preliminary results of our study suggest that the presence of an explanation makes the AI model more transparent but not necessarily more trustworthy.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W4389543556"
+    },
+    {
+      "openalex_id": "W4403420201",
+      "doi": "10.1001/jama.2024.21451",
+      "title": "FDA Perspective on the Regulation of Artificial Intelligence in Health Care and Biomedicine",
+      "authors": [
+        {
+          "name": "Haider J. Warraich",
+          "openalex_id": "A5064300056",
+          "orcid": "https://orcid.org/0000-0001-9493-1372",
+          "institutions": [
+            "United States Food and Drug Administration"
+          ]
+        },
+        {
+          "name": "Troy Tazbaz",
+          "openalex_id": "A5093540105",
+          "institutions": [
+            "United States Food and Drug Administration"
+          ]
+        },
+        {
+          "name": "Robert M. Califf",
+          "openalex_id": "A5060829829",
+          "orcid": "https://orcid.org/0000-0003-0231-3724",
+          "institutions": [
+            "United States Food and Drug Administration"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-10-15",
+      "abstract": "Importance Advances in artificial intelligence (AI) must be matched by efforts to better understand and evaluate how AI performs across health care and biomedicine as well as develop appropriate regulatory frameworks. This Special Communication reviews the history of the US Food and Drug Administration\u2019s (FDA) regulation of AI; presents potential uses of AI in medical product development, clinical research, and clinical care; and presents concepts that merit consideration as the regulatory system adapts to AI\u2019s unique challenges. Observations The FDA has authorized almost 1000 AI-enabled medical devices and has received hundreds of regulatory submissions for drugs that used AI in their discovery and development. Health AI regulation needs to be coordinated across all regulated industries, the US government, and with international organizations. Regulators will need to advance flexible mechanisms to keep up with the pace of change in AI across biomedicine and health care. Sponsors need to be transparent about and regulators need proficiency in evaluating the use of AI in premarket development. A life cycle management approach incorporating recurrent local postmarket performance monitoring should be central to health AI development. Special mechanisms to evaluate large language models and their uses are needed. Approaches are necessary to balance the needs of the entire spectrum of health ecosystem interests, from large firms to start-ups. The evaluation and regulatory system will need to focus on patient health outcomes to balance the use of AI for financial optimization for developers, payers, and health systems. Conclusions and Relevance Strong oversight by the FDA protects the long-term success of industries by focusing on evaluation to advance regulated technologies that improve health. The FDA will continue to play a central role in ensuring safe, effective, and trustworthy AI tools to improve the lives of patients and clinicians alike. However, all involved entities will need to attend to AI with the rigor this transformative technology merits.",
+      "cited_by_count": 165,
+      "type": "review",
+      "source": {
+        "name": "JAMA",
+        "type": "journal",
+        "issn": [
+          "0098-7484",
+          "1538-3598"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Health Systems, Economic Evaluations, Quality of Life",
+        "Artificial Intelligence in Healthcare and Education",
+        "Biomedical and Engineering Education"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W4403420201"
+    },
+    {
+      "openalex_id": "W4206116305",
+      "doi": "10.1109/jiot.2022.3144450",
+      "title": "Toward Trustworthy AI: Blockchain-Based Architecture Design for Accountability and Fairness of Federated Learning Systems",
+      "authors": [
+        {
+          "name": "Sin Kit Lo",
+          "openalex_id": "A5045902177",
+          "orcid": "https://orcid.org/0000-0002-9156-3225",
+          "institutions": [
+            "Commonwealth Scientific and Industrial Research Organisation",
+            "Data61"
+          ]
+        },
+        {
+          "name": "Yue Liu",
+          "openalex_id": "A5100320118",
+          "orcid": "https://orcid.org/0000-0003-2958-9923",
+          "institutions": [
+            "Commonwealth Scientific and Industrial Research Organisation",
+            "Data61"
+          ]
+        },
+        {
+          "name": "Qinghua Lu",
+          "openalex_id": "A5100652461",
+          "orcid": "https://orcid.org/0000-0002-9466-1672",
+          "institutions": [
+            "Commonwealth Scientific and Industrial Research Organisation",
+            "Data61"
+          ]
+        },
+        {
+          "name": "Chen Wang",
+          "openalex_id": "A5100337560",
+          "orcid": "https://orcid.org/0000-0002-3119-4763",
+          "institutions": [
+            "Commonwealth Scientific and Industrial Research Organisation",
+            "Data61"
+          ]
+        },
+        {
+          "name": "Xiwei Xu",
+          "openalex_id": "A5006841485",
+          "orcid": "https://orcid.org/0000-0002-2273-1862",
+          "institutions": [
+            "Data61",
+            "Commonwealth Scientific and Industrial Research Organisation"
+          ]
+        },
+        {
+          "name": "Hye-Young Paik",
+          "openalex_id": "A5018724341",
+          "orcid": "https://orcid.org/0000-0003-4425-7388",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Liming Zhu",
+          "openalex_id": "A5064683660",
+          "orcid": "https://orcid.org/0000-0001-5839-3765",
+          "institutions": [
+            "Data61",
+            "Commonwealth Scientific and Industrial Research Organisation"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-19",
+      "abstract": "Federated learning is an emerging privacy-preserving AI technique where clients (i.e., organizations or devices) train models locally and formulate a global model based on the local model updates without transferring local data externally. However, federated learning systems struggle to achieve trustworthiness and embody responsible AI principles. In particular, federated learning systems face accountability and fairness challenges due to multistakeholder involvement and heterogeneity in client data distribution. To enhance the accountability and fairness of federated learning systems, we present a blockchain-based trustworthy federated learning architecture. We first design a smart contract-based data-model provenance registry to enable accountability. Additionally, we propose a weighted fair data sampler algorithm to enhance fairness in training data. We evaluate the proposed approach using a COVID-19 X-ray detection use case. The evaluation results show that the approach is feasible to enable accountability and improve fairness. The proposed algorithm can achieve better performance than the default federated learning setting in terms of the model\u2019s generalization and accuracy.",
+      "cited_by_count": 97,
+      "type": "article",
+      "source": {
+        "name": "IEEE Internet of Things Journal",
+        "type": "journal",
+        "issn": [
+          "2327-4662",
+          "2372-2541"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Privacy-Preserving Technologies in Data",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4206116305"
+    },
+    {
+      "openalex_id": "W3003794402",
+      "doi": "10.2760/57493",
+      "title": "Robustness and Explainability of Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Ronan Hamon",
+          "openalex_id": "A5045975965",
+          "orcid": "https://orcid.org/0000-0003-1987-5707"
+        },
+        {
+          "name": "H. Junklewitz",
+          "openalex_id": "A5072271728",
+          "orcid": "https://orcid.org/0000-0002-0452-6865"
+        },
+        {
+          "name": "Sanchez Martin Jose Ignacio",
+          "openalex_id": "A5023166018"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-14",
+      "abstract": "In the light of the recent advances in artificial intelligence (AI), the serious negative consequences of its use for EU citizens and organisations have led to multiple initiatives from the European Commission to set up the principles of a trustworthy and secure AI. Among the identified requirements, the concepts of robustness and explainability of AI systems have emerged as key elements for a future regulation of this technology. \\nThis Technical Report by the European Commission Joint Research Centre (JRC) aims to contribute to this movement for the establishment of a sound regulatory framework for AI, by making the connection between the principles embodied in current regulations regarding to the cybersecurity of digital systems and the protection of data, the policy activities concerning AI, and the technical discussions within the scientific community of AI, in particular in the field of machine learning, that is largely at the origin of the recent advancements of this technology.\\nThe individual objectives of this report are to provide a policy-oriented description of the current perspectives of AI and its implications in society, an objective view on the current landscape of AI, focusing of the aspects of robustness and explainability. This also include a technical discussion of the current risks associated with AI in terms of security, safety, and data protection, and a presentation of the scientific solutions that are currently under active development in the AI community to mitigate these risks. \\nThis report puts forward several policy-related considerations for the attention of policy makers to establish a set of standardisation and certification tools for AI. First, the development of methodologies to evaluate the impacts of AI on society, built on the model of the Data Protection Impact Assessments (DPIA) introduced in the General Data Protection Regulation (GDPR), is discussed. Secondly, a focus is made on the establishment of methodologies to assess the robustness of systems that would be adapted to the context of use. This would come along with the identification of known vulnerabilities of AI systems, and the technical solutions that have been proposed in the scientific community to address them. Finally, the promotion of transparency systems in sensitive systems is discussed, through the implementation of explainability-by-design approaches in AI components that would provide guarantee of the respect of the fundamental rights.",
+      "cited_by_count": 159,
+      "type": "article",
+      "source": {
+        "name": "Joint Research Centre (European Commission)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3003794402"
+    },
+    {
+      "openalex_id": "W4212915308",
+      "doi": "10.1787/cb6d9eca-en",
+      "title": "OECD Framework for the Classification of AI systems",
+      "authors": [
+        {
+          "name": "OECD",
+          "openalex_id": "A5009282300"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-02-19",
+      "abstract": "As artificial intelligence (AI) integrates all sectors at a rapid pace, different AI systems bring different benefits and risks. In comparing virtual assistants, self-driving vehicles and video recommendations for children, it is easy to see that the benefits and risks of each are very different. Their specificities will require different approaches to policy making and governance. To help policy makers, regulators, legislators and others characterise AI systems deployed in specific contexts, the OECD has developed a user-friendly tool to evaluate AI systems from a policy perspective. It can be applied to the widest range of AI systems across the following dimensions: People &amp; Planet; Economic Context; Data &amp; Input; AI model; and Task &amp; Output. Each of the framework&apos;s dimensions has a subset of properties and attributes to define and assess policy implications and to guide an innovative and trustworthy approach to AI as outlined in the OECD AI Principles.",
+      "cited_by_count": 85,
+      "type": "paratext",
+      "source": {
+        "name": "OECD digital economy papers",
+        "type": "journal",
+        "issn": [
+          "2071-6826"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.oecd-ilibrary.org/deliver/cb6d9eca-en.pdf?itemId=%2Fcontent%2Fpaper%2Fcb6d9eca-en&mimeType=pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Legal and Policy Issues"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W4212915308"
+    },
+    {
+      "openalex_id": "W4388014051",
+      "doi": "10.2196/49324",
+      "title": "Large Language Models for Therapy Recommendations Across 3 Clinical Specialties: Comparative Study",
+      "authors": [
+        {
+          "name": "T Wilhelm",
+          "openalex_id": "A5050111479",
+          "orcid": "https://orcid.org/0000-0002-7462-1868",
+          "institutions": [
+            "Technical University of Munich",
+            "University Medical Center Freiburg",
+            "University of Freiburg"
+          ]
+        },
+        {
+          "name": "Jonas Roos",
+          "openalex_id": "A5054542207",
+          "orcid": "https://orcid.org/0000-0001-8843-4695",
+          "institutions": [
+            "University Hospital Bonn"
+          ]
+        },
+        {
+          "name": "Robert Kaczmarczyk",
+          "openalex_id": "A5051629090",
+          "orcid": "https://orcid.org/0000-0002-8570-1601",
+          "institutions": [
+            "Karolinska Institutet",
+            "Technical University of Munich"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-30",
+      "abstract": "Background As advancements in artificial intelligence (AI) continue, large language models (LLMs) have emerged as promising tools for generating medical information. Their rapid adaptation and potential benefits in health care require rigorous assessment in terms of the quality, accuracy, and safety of the generated information across diverse medical specialties. Objective This study aimed to evaluate the performance of 4 prominent LLMs, namely, Claude-instant-v1.0, GPT-3.5-Turbo, Command-xlarge-nightly, and Bloomz, in generating medical content spanning the clinical specialties of ophthalmology, orthopedics, and dermatology. Methods Three domain-specific physicians evaluated the AI-generated therapeutic recommendations for a diverse set of 60 diseases. The evaluation criteria involved the mDISCERN score, correctness, and potential harmfulness of the recommendations. ANOVA and pairwise t tests were used to explore discrepancies in content quality and safety across models and specialties. Additionally, using the capabilities of OpenAI\u2019s most advanced model, GPT-4, an automated evaluation of each model\u2019s responses to the diseases was performed using the same criteria and compared to the physicians\u2019 assessments through Pearson correlation analysis. Results Claude-instant-v1.0 emerged with the highest mean mDISCERN score (3.35, 95% CI 3.23-3.46). In contrast, Bloomz lagged with the lowest score (1.07, 95% CI 1.03-1.10). Our analysis revealed significant differences among the models in terms of quality (P&lt;.001). Evaluating their reliability, the models displayed strong contrasts in their falseness ratings, with variations both across models (P&lt;.001) and specialties (P&lt;.001). Distinct error patterns emerged, such as confusing diagnoses; providing vague, ambiguous advice; or omitting critical treatments, such as antibiotics for infectious diseases. Regarding potential harm, GPT-3.5-Turbo was found to be the safest, with the lowest harmfulness rating. All models lagged in detailing the risks associated with treatment procedures, explaining the effects of therapies on quality of life, and offering additional sources of information. Pearson correlation analysis underscored a substantial alignment between physician assessments and GPT-4\u2019s evaluations across all established criteria (P&lt;.01). Conclusions This study, while comprehensive, was limited by the involvement of a select number of specialties and physician evaluators. The straightforward prompting strategy (\u201cHow to treat\u2026\u201d) and the assessment benchmarks, initially conceptualized for human-authored content, might have potential gaps in capturing the nuances of AI-driven information. The LLMs evaluated showed a notable capability in generating valuable medical content; however, evident lapses in content quality and potential harm signal the need for further refinements. Given the dynamic landscape of LLMs, this study\u2019s findings emphasize the need for regular and methodical assessments, oversight, and fine-tuning of these AI tools to ensure they produce consistently trustworthy and clinically safe medical advice. Notably, the introduction of an auto-evaluation mechanism using GPT-4, as detailed in this study, provides a scalable, transferable method for domain-agnostic evaluations, extending beyond therapy recommendation assessments.",
+      "cited_by_count": 121,
+      "type": "article",
+      "source": {
+        "name": "Journal of Medical Internet Research",
+        "type": "journal",
+        "issn": [
+          "1438-8871",
+          "1439-4456"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.jmir.org/2023/1/e49324/PDF"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Patient-Provider Communication in Healthcare",
+        "COVID-19 diagnosis using AI"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W4388014051"
+    },
+    {
+      "openalex_id": "W4280598345",
+      "doi": "10.1111/bjet.13233",
+      "title": "Incorporating <scp>AI</scp> and learning analytics to build trustworthy peer assessment systems",
+      "authors": [
+        {
+          "name": "Ali Darvishi",
+          "openalex_id": "A5001467212",
+          "orcid": "https://orcid.org/0000-0002-7025-9259",
+          "institutions": [
+            "Queensland University of Technology",
+            "University of Queensland"
+          ]
+        },
+        {
+          "name": "Hassan Khosravi",
+          "openalex_id": "A5007067645",
+          "orcid": "https://orcid.org/0000-0001-8664-6117",
+          "institutions": [
+            "University of Queensland",
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Shazia Sadiq",
+          "openalex_id": "A5070591850",
+          "orcid": "https://orcid.org/0000-0001-6739-4145",
+          "institutions": [
+            "University of Queensland",
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Dragan Ga\u0161evi\u0107",
+          "openalex_id": "A5036855560",
+          "orcid": "https://orcid.org/0000-0001-9265-1908",
+          "institutions": [
+            "Monash University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-18",
+      "abstract": "Abstract Peer assessment has been recognised as a sustainable and scalable assessment method that promotes higher\u2010order learning and provides students with fast and detailed feedback on their work. Despite these benefits, some common concerns and criticisms are associated with the use of peer assessments (eg, scarcity of high\u2010quality feedback from peer student\u2010assessors and lack of accuracy in assigning a grade to the assessee) that raise questions about their trustworthiness. Consequently, many instructors and educational institutions have been anxious about incorporating peer assessment into their teaching. This paper aims to contribute to the growing literature on how AI and learning analytics may be incorporated to address some of the common concerns associated with peer assessment systems, which in turn can increase their trustworthiness and adoption. In particular, we present and evaluate our AI\u2010assisted and analytical approaches that aim to (1) offer guidelines and assistance to student\u2010assessors during individual reviews to provide better feedback, (2) integrate probabilistic and text analysis inference models to improve the accuracy of the assigned grades, (3) develop feedback on reviews strategies that enable peer assessors to review the work of each other, and (4) employ a spot\u2010checking mechanism to assist instructors in optimally overseeing the peer assessment process. Practitioner notes What is already known about this topic Engaging students in peer assessment has been demonstrated to have various benefits. However, there are some common concerns associated with employing peer assessment that raise questions about their trustworthiness as an assessment item. What this paper adds Methods and processes on how AI and learning analytics may be incorporated to address some of the common concerns associated with peer assessment systems, which in turn, can increase their trustworthiness and adoption. Implications for practice Presentation of a systematic approach for development, deployment and evaluation of AI and analytics approaches in peer assessment systems.",
+      "cited_by_count": 84,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Educational Technology",
+        "type": "journal",
+        "issn": [
+          "0007-1013",
+          "1467-8535"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/bjet.13233"
+      },
+      "topics": [
+        "Student Assessment and Feedback",
+        "Online Learning and Analytics",
+        "Intelligent Tutoring Systems and Adaptive Learning"
+      ],
+      "referenced_works_count": 88,
+      "url": "https://openalex.org/W4280598345"
+    },
+    {
+      "openalex_id": "W3201150582",
+      "doi": "10.1007/s42452-021-04776-1",
+      "title": "Corporate digital responsibility (CDR) in construction engineering\u2014ethical guidelines for the application of digital transformation and artificial intelligence (AI) in user practice",
+      "authors": [
+        {
+          "name": "Bianca Christina Weber-Lewerenz",
+          "openalex_id": "A5002739856",
+          "orcid": "https://orcid.org/0000-0002-8406-7119",
+          "institutions": [
+            "Weber and Weber (Germany)"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-09",
+      "abstract": "Abstract Digitization is developing fast and has become a powerful tool for digital planning, construction and operations, for instance digital twins. Now is the right time for constructive approaches and to apply ethics-by-design in order to develop and implement a safe and efficient artificial intelligence (AI) application. So far, no study has addressed the key research question: Where can corporate digital responsibility (CDR) be allocated, and how shall an adequate ethical framework be designed to support digital innovations in order to make full use of the potentials of digitization and AI? Therefore, the research on how best practices meet their corporate responsibility in the digital transformation process and the requirements of the EU for trustworthy AI and its human-friendly use is essential. Its transformation bears a high potential for companies, is critical for success and thus, requires responsible handling. This study generates data by conducting case studies and interviewing experts as part of the qualitative method to win profound insights into applied practice. It provides an assessment of demands stated in the Sustainable Development Goals by the United Nations (SDGs), White Papers on AI by international institutions, European Commission and German Government requesting the consideration and protection of values and fundamental rights, the careful demarcation between machine (artificial) and human intelligence and the careful use of such technologies. The study discusses digitization and the impacts of AI in construction engineering from an ethical perspective. This research critically evaluates opportunities and risks concerning CDR in construction industry. To the author\u2019s knowledge, no study has set out to investigate how CDR in construction could be conceptualized, especially in relation to digitization and AI, to mitigate digital transformation both in large, medium- and small-sized companies. This study applies a holistic, interdisciplinary, inclusive approach to provide guidelines for orientation and examine benefits as well as risks of AI. Furthermore, the goal is to define ethical principles which are key for success, resource-cost-time efficiency and sustainability using digital technologies and AI in construction engineering to enhance digital transformation. This study concludes that innovative corporate organizations starting new business models are more likely to succeed than those dominated by a more conservative, traditional attitude.",
+      "cited_by_count": 125,
+      "type": "article",
+      "source": {
+        "name": "SN Applied Sciences",
+        "type": "journal",
+        "issn": [
+          "2523-3963",
+          "2523-3971"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s42452-021-04776-1.pdf"
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "BIM and Construction Integration"
+      ],
+      "referenced_works_count": 24,
+      "url": "https://openalex.org/W3201150582"
+    },
+    {
+      "openalex_id": "W4389523771",
+      "doi": "10.18653/v1/2023.findings-emnlp.88",
+      "title": "Toxicity in chatgpt: Analyzing persona-assigned language models",
+      "authors": [
+        {
+          "name": "Ameet Deshpande",
+          "openalex_id": "A5041777363",
+          "orcid": "https://orcid.org/0000-0001-9885-0385",
+          "institutions": [
+            "Allen Institute",
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Vishvak Murahari",
+          "openalex_id": "A5049841785",
+          "institutions": [
+            "Princeton University"
+          ]
+        },
+        {
+          "name": "Tanmay Rajpurohit",
+          "openalex_id": "A5019768140",
+          "orcid": "https://orcid.org/0000-0001-9302-4244",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "Ashwin Kalyan",
+          "openalex_id": "A5114053294",
+          "institutions": [
+            "Allen Institute"
+          ]
+        },
+        {
+          "name": "Karthik Narasimhan",
+          "openalex_id": "A5025205227",
+          "institutions": [
+            "Princeton University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Large language models (LLMs) have shown incredible capabilities and transcended the natural language processing (NLP) community, with adoption throughout many services like healthcare, therapy, education, and customer service. Since users include people with critical information needs like students or patients engaging with chatbots, the safety of these systems is of prime importance. Legislation has recognized its significance and recently drafted a \u201cBlueprint For An AI Bill Of Rights\u201d which calls for domain experts to identify risks and potential impact of AI systems. To this end, we systematically evaluate toxicity in over half a million generations of ChatGPT, a popular dialogue-based LLM. We find that setting the system parameter of ChatGPT by assigning it a persona, say that of the boxer Muhammad Ali, significantly increases the toxicity of generations. Depending on the persona assigned to ChatGPT, its toxicity can increase up to 6\u00d7, with outputs engaging in incorrect stereotypes, harmful dialogue, and hurtful opinions. Furthermore, we find concerning patterns where specific entities (e.g., certain races) are targeted more than others (3\u00d7 more) irrespective of the assigned persona, reflecting discriminatory biases in the model. Our findings show that multiple provisions in the legislative blueprint are being violated, and we hope that the broader AI community rethinks the efficacy of current safety guardrails and develops better techniques that lead to robust, safe, and trustworthy AI.",
+      "cited_by_count": 123,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.findings-emnlp.88.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Topic Modeling",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W4389523771"
+    },
+    {
+      "openalex_id": "W3092651934",
+      "doi": "10.48550/arxiv.2010.07487",
+      "title": "Formalizing Trust in Artificial Intelligence: Prerequisites, Causes and Goals of Human Trust in AI",
+      "authors": [
+        {
+          "name": "Alon Jacovi",
+          "openalex_id": "A5045156755",
+          "orcid": "https://orcid.org/0000-0002-7263-2061",
+          "institutions": [
+            "Bar-Ilan University"
+          ]
+        },
+        {
+          "name": "Ana Marasovi\u0107",
+          "openalex_id": "A5087098432",
+          "institutions": [
+            "Allen Institute for Artificial Intelligence",
+            "University of Washington"
+          ]
+        },
+        {
+          "name": "Tim Miller",
+          "openalex_id": "A5028824146",
+          "orcid": "https://orcid.org/0000-0003-4908-6063",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Yoav Goldberg",
+          "openalex_id": "A5028476919",
+          "orcid": "https://orcid.org/0000-0002-6497-829X",
+          "institutions": [
+            "Bar-Ilan University",
+            "Allen Institute for Artificial Intelligence"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-15",
+      "abstract": "Trust is a central component of the interaction between people and AI, in that 'incorrect' levels of trust may cause misuse, abuse or disuse of the technology. But what, precisely, is the nature of trust in AI? What are the prerequisites and goals of the cognitive mechanism of trust, and how can we promote them, or assess whether they are being satisfied in a given interaction? This work aims to answer these questions. We discuss a model of trust inspired by, but not identical to, sociology's interpersonal trust (i.e., trust between people). This model rests on two key properties of the vulnerability of the user and the ability to anticipate the impact of the AI model's decisions. We incorporate a formalization of 'contractual trust', such that trust between a user and an AI is trust that some implicit or explicit contract will hold, and a formalization of 'trustworthiness' (which detaches from the notion of trustworthiness in sociology), and with it concepts of 'warranted' and 'unwarranted' trust. We then present the possible causes of warranted trust as intrinsic reasoning and extrinsic behavior, and discuss how to design trustworthy AI, how to evaluate whether trust has manifested, and whether it is warranted. Finally, we elucidate the connection between trust and XAI using our formalization.",
+      "cited_by_count": 66,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2010.07487"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W3092651934"
+    },
+    {
+      "openalex_id": "W4407577547",
+      "doi": "10.1016/j.dsp.2025.105068",
+      "title": "Thresholding metrics for evaluating explainable AI models in disaster response: Enhancing interpretability and model trustworthiness",
+      "authors": [
+        {
+          "name": "Sangita Bhowmick",
+          "openalex_id": "A5062131133",
+          "orcid": "https://orcid.org/0000-0002-4347-4383"
+        },
+        {
+          "name": "Asit Barman",
+          "openalex_id": "A5015332870",
+          "orcid": "https://orcid.org/0000-0003-0416-841X"
+        },
+        {
+          "name": "Swalpa Kumar Roy",
+          "openalex_id": "A5087427076",
+          "orcid": "https://orcid.org/0000-0002-6580-3977"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-02-14",
+      "abstract": null,
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Digital Signal Processing",
+        "type": "journal",
+        "issn": [
+          "1051-2004",
+          "1095-4333"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 76,
+      "url": "https://openalex.org/W4407577547"
+    },
+    {
+      "openalex_id": "W4388341779",
+      "doi": "10.1016/j.plas.2023.100101",
+      "title": "Who is better in project planning?Generative artificial intelligence or project managers?",
+      "authors": [
+        {
+          "name": "Andr\u00e9 Barcau\u00ed",
+          "openalex_id": "A5023459778",
+          "orcid": "https://orcid.org/0000-0002-7245-4744",
+          "institutions": [
+            "Universidade Federal do Rio de Janeiro"
+          ]
+        },
+        {
+          "name": "Andr\u00e9 Monat",
+          "openalex_id": "A5015576459",
+          "institutions": [
+            "Universidade do Estado do Rio de Janeiro"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-04",
+      "abstract": "This paper presents a comparative study of generative artificial intelligence (AI), specifically the GPT-4 model, and a human project manager in the context of a project plan development. The study's objective was to analyze the content and structure of a project plan prepared by this disruptive new technology and its human counterpart, focusing on the digital technology sector. Through a primarily qualitative methodology, the study scrutinizes critical aspects of each part of the project plan, including scope preparation, schedule development, cost estimation, resources evaluation, quality planning, stakeholder mapping, communication planning, and risk analysis. The results indicate unique strengths and weaknesses for both AI-generated and human-generated project plans, revealing them as complementary in the project planning process. It also emphasizes the continued importance of human expertise in refining AI outputs and harnessing the full potential of AI through the process known as prompt engineering. In conclusion, this study illustrates the potential synergy between human experience and AI in project planning, suggesting the careful integration of human and AI capabilities is key to developing robust and trustworthy project plans.",
+      "cited_by_count": 90,
+      "type": "article",
+      "source": {
+        "name": "Project Leadership and Society",
+        "type": "journal",
+        "issn": [
+          "2666-7215"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.plas.2023.100101"
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "Construction Project Management and Performance",
+        "BIM and Construction Integration"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4388341779"
+    },
+    {
+      "openalex_id": "W4383377291",
+      "doi": "10.1016/j.metrad.2023.100003",
+      "title": "A review of uncertainty estimation and its application in medical imaging",
+      "authors": [
+        {
+          "name": "Ke Zou",
+          "openalex_id": "A5066850451",
+          "orcid": "https://orcid.org/0000-0002-2025-9859",
+          "institutions": [
+            "Sichuan University"
+          ]
+        },
+        {
+          "name": "Zhihao Chen",
+          "openalex_id": "A5100341620",
+          "orcid": "https://orcid.org/0000-0003-1686-9854",
+          "institutions": [
+            "Tianjin University"
+          ]
+        },
+        {
+          "name": "Xuedong Yuan",
+          "openalex_id": "A5035824913",
+          "orcid": "https://orcid.org/0000-0003-0240-2831",
+          "institutions": [
+            "Sichuan University"
+          ]
+        },
+        {
+          "name": "Xiaojing Shen",
+          "openalex_id": "A5041535928",
+          "orcid": "https://orcid.org/0000-0001-9674-700X",
+          "institutions": [
+            "Sichuan University"
+          ]
+        },
+        {
+          "name": "Meng Wang",
+          "openalex_id": "A5100377107",
+          "orcid": "https://orcid.org/0000-0001-7882-1747",
+          "institutions": [
+            "Agency for Science, Technology and Research",
+            "Institute of High Performance Computing"
+          ]
+        },
+        {
+          "name": "Huazhu Fu",
+          "openalex_id": "A5010970485",
+          "orcid": "https://orcid.org/0000-0002-9702-5524",
+          "institutions": [
+            "Agency for Science, Technology and Research",
+            "Institute of High Performance Computing"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-01",
+      "abstract": "The use of AI systems in healthcare for the early screening of diseases is of great clinical importance. Deep learning has shown great promise in medical imaging, but the reliability and trustworthiness of AI systems limit their deployment in real clinical scenes, where patient safety is at stake. Uncertainty estimation plays a pivotal role in producing a confidence evaluation along with the prediction of the deep model. This is particularly important in medical imaging, where the uncertainty in the model's predictions can be used to identify areas of concern or to provide additional information to the clinician. In this paper, we review the various types of uncertainty in deep learning, including aleatoric uncertainty and epistemic uncertainty. We further discuss how they can be estimated in medical imaging. More importantly, we review recent advances in deep learning models that incorporate uncertainty estimation in medical imaging. Finally, we discuss the challenges and future directions in uncertainty estimation in deep learning for medical imaging. We hope this review will ignite further interest in the community and provide researchers with an up-to-date reference regarding applications of uncertainty estimation models in medical imaging.",
+      "cited_by_count": 103,
+      "type": "review",
+      "source": {
+        "name": "Meta-Radiology",
+        "type": "journal",
+        "issn": [
+          "2950-1628"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.1016/j.metrad.2023.100003"
+      },
+      "topics": [
+        "COVID-19 diagnosis using AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "Radiomics and Machine Learning in Medical Imaging"
+      ],
+      "referenced_works_count": 187,
+      "url": "https://openalex.org/W4383377291"
+    },
+    {
+      "openalex_id": "W4401011076",
+      "doi": "10.1007/s10462-024-10854-8",
+      "title": "Explainable artificial intelligence (XAI) in finance: a systematic literature review",
+      "authors": [
+        {
+          "name": "Jurgita \u010cernevi\u010dien\u0117",
+          "openalex_id": "A5025780758",
+          "orcid": "https://orcid.org/0000-0002-9032-0723",
+          "institutions": [
+            "Kaunas University of Technology"
+          ]
+        },
+        {
+          "name": "Audrius Kaba\u0161inskas",
+          "openalex_id": "A5029168469",
+          "orcid": "https://orcid.org/0000-0001-6863-5895",
+          "institutions": [
+            "Kaunas University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-26",
+      "abstract": "Abstract As the range of decisions made by Artificial Intelligence (AI) expands, the need for Explainable AI (XAI) becomes increasingly critical. The reasoning behind the specific outcomes of complex and opaque financial models requires a thorough justification to improve risk assessment, minimise the loss of trust, and promote a more resilient and trustworthy financial ecosystem. This Systematic Literature Review (SLR) identifies 138 relevant articles from 2005 to 2022 and highlights empirical examples demonstrating XAI's potential benefits in the financial industry. We classified the articles according to the financial tasks addressed by AI using XAI, the variation in XAI methods between applications and tasks, and the development and application of new XAI methods. The most popular financial tasks addressed by the AI using XAI were credit management, stock price predictions, and fraud detection. The three most commonly employed AI black-box techniques in finance whose explainability was evaluated were Artificial Neural Networks (ANN), Extreme Gradient Boosting (XGBoost), and Random Forest. Most of the examined publications utilise feature importance, Shapley additive explanations (SHAP), and rule-based methods. In addition, they employ explainability frameworks that integrate multiple XAI techniques. We also concisely define the existing challenges, requirements, and unresolved issues in applying XAI in the financial sector.",
+      "cited_by_count": 108,
+      "type": "article",
+      "source": {
+        "name": "Artificial Intelligence Review",
+        "type": "journal",
+        "issn": [
+          "0269-2821",
+          "1573-7462"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10462-024-10854-8.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Imbalanced Data Classification Techniques",
+        "Financial Distress and Bankruptcy Prediction"
+      ],
+      "referenced_works_count": 176,
+      "url": "https://openalex.org/W4401011076"
+    },
+    {
+      "openalex_id": "W4402858717",
+      "doi": "10.1093/jamia/ocae209",
+      "title": "Toward a responsible future: recommendations for AI-enabled clinical decision support",
+      "authors": [
+        {
+          "name": "Steven E. Labkoff",
+          "openalex_id": "A5058840375",
+          "orcid": "https://orcid.org/0000-0002-2337-5185",
+          "institutions": [
+            "Beth Israel Deaconess Medical Center"
+          ]
+        },
+        {
+          "name": "Bilikis Oladimeji",
+          "openalex_id": "A5018817602",
+          "orcid": "https://orcid.org/0000-0001-7349-3350",
+          "institutions": [
+            "UnitedHealth Group (United States)"
+          ]
+        },
+        {
+          "name": "Joseph Kannry",
+          "openalex_id": "A5075934122",
+          "orcid": "https://orcid.org/0000-0002-6089-1488",
+          "institutions": [
+            "Icahn School of Medicine at Mount Sinai"
+          ]
+        },
+        {
+          "name": "Anthony Solomonides",
+          "openalex_id": "A5006479392",
+          "orcid": "https://orcid.org/0000-0003-2117-2461",
+          "institutions": [
+            "NorthShore University HealthSystem"
+          ]
+        },
+        {
+          "name": "Russell Leftwich",
+          "openalex_id": "A5006516749",
+          "orcid": "https://orcid.org/0009-0007-9722-5386",
+          "institutions": [
+            "Vanderbilt University"
+          ]
+        },
+        {
+          "name": "Eileen Koski",
+          "openalex_id": "A5068438294",
+          "orcid": "https://orcid.org/0000-0003-3621-9613",
+          "institutions": [
+            "IBM (United States)"
+          ]
+        },
+        {
+          "name": "Amanda L. Joseph",
+          "openalex_id": "A5009773245",
+          "orcid": "https://orcid.org/0000-0002-5869-037X",
+          "institutions": [
+            "University of Victoria"
+          ]
+        },
+        {
+          "name": "M\u00f3nica L\u00f3pez-Gonz\u00e1lez",
+          "openalex_id": "A5062849275",
+          "orcid": "https://orcid.org/0000-0001-9153-6852"
+        },
+        {
+          "name": "Lee A. Fleisher",
+          "openalex_id": "A5000934027",
+          "orcid": "https://orcid.org/0000-0003-2899-2294",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Kimberly Nolen",
+          "openalex_id": "A5054206119",
+          "orcid": "https://orcid.org/0000-0001-8821-254X",
+          "institutions": [
+            "Pfizer (United States)"
+          ]
+        },
+        {
+          "name": "Sayon Dutta",
+          "openalex_id": "A5063026397",
+          "orcid": "https://orcid.org/0000-0002-0381-6860",
+          "institutions": [
+            "Massachusetts General Hospital",
+            "Mass General Brigham",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Deborah R Levy",
+          "openalex_id": "A5070345489",
+          "orcid": "https://orcid.org/0000-0002-7324-3455",
+          "institutions": [
+            "VA Connecticut Healthcare System",
+            "Yale University"
+          ]
+        },
+        {
+          "name": "Amy Price",
+          "openalex_id": "A5071658432",
+          "orcid": "https://orcid.org/0000-0002-5200-7322",
+          "institutions": [
+            "Dartmouth Institute for Health Policy and Clinical Practice"
+          ]
+        },
+        {
+          "name": "Paul Barr",
+          "openalex_id": "A5054299570",
+          "orcid": "https://orcid.org/0000-0002-6868-7625",
+          "institutions": [
+            "Dartmouth Institute for Health Policy and Clinical Practice"
+          ]
+        },
+        {
+          "name": "Jonathan D. Hron",
+          "openalex_id": "A5085053401",
+          "orcid": "https://orcid.org/0000-0003-2198-6174",
+          "institutions": [
+            "Boston Children's Hospital",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Baihan Lin",
+          "openalex_id": "A5018612055",
+          "orcid": "https://orcid.org/0000-0002-7979-5509",
+          "institutions": [
+            "Internet Society",
+            "Icahn School of Medicine at Mount Sinai"
+          ]
+        },
+        {
+          "name": "Gyana Srivastava",
+          "openalex_id": "A5102844971",
+          "orcid": "https://orcid.org/0000-0002-7414-8062",
+          "institutions": [
+            "Harvard University",
+            "Beth Israel Deaconess Medical Center"
+          ]
+        },
+        {
+          "name": "N\u00faria Pastor",
+          "openalex_id": "A5015122068",
+          "orcid": "https://orcid.org/0000-0003-3172-7459"
+        },
+        {
+          "name": "Unai S\u00e1nchez Luque",
+          "openalex_id": "A5029025374",
+          "orcid": "https://orcid.org/0000-0002-5262-8778"
+        },
+        {
+          "name": "Tien Thi Thuy Bui",
+          "openalex_id": "A5102828872",
+          "orcid": "https://orcid.org/0009-0004-5283-8494",
+          "institutions": [
+            "MCPHS University"
+          ]
+        },
+        {
+          "name": "Reva Singh",
+          "openalex_id": "A5032118853",
+          "orcid": "https://orcid.org/0000-0002-1168-0983",
+          "institutions": [
+            "American Medical Informatics Association"
+          ]
+        },
+        {
+          "name": "T. A. Williams",
+          "openalex_id": "A5103428413",
+          "orcid": "https://orcid.org/0009-0008-4482-6556",
+          "institutions": [
+            "American Medical Informatics Association"
+          ]
+        },
+        {
+          "name": "Mark G. Weiner",
+          "openalex_id": "A5005654647",
+          "orcid": "https://orcid.org/0000-0001-5586-9940",
+          "institutions": [
+            "Weill Cornell Medicine",
+            "Cornell University"
+          ]
+        },
+        {
+          "name": "Tristan Naumann",
+          "openalex_id": "A5023123863",
+          "orcid": "https://orcid.org/0000-0003-2150-1747",
+          "institutions": [
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Dean F. Sittig",
+          "openalex_id": "A5010098013",
+          "orcid": "https://orcid.org/0000-0001-5811-8915",
+          "institutions": [
+            "The University of Texas Health Science Center at Houston"
+          ]
+        },
+        {
+          "name": "Gretchen Purcell Jackson",
+          "openalex_id": "A5066556144",
+          "orcid": "https://orcid.org/0000-0002-3242-8058",
+          "institutions": [
+            "Vanderbilt University Medical Center",
+            "Intuitive Surgical (United States)"
+          ]
+        },
+        {
+          "name": "Yuri Quintana",
+          "openalex_id": "A5022760712",
+          "orcid": "https://orcid.org/0000-0001-6583-0257",
+          "institutions": [
+            "Harvard University",
+            "University of Victoria",
+            "Beth Israel Deaconess Medical Center",
+            "Homewood Research Institute"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-09-26",
+      "abstract": "Abstract Background Integrating artificial intelligence (AI) in healthcare settings has the potential to benefit clinical decision-making. Addressing challenges such as ensuring trustworthiness, mitigating bias, and maintaining safety is paramount. The lack of established methodologies for pre- and post-deployment evaluation of AI tools regarding crucial attributes such as transparency, performance monitoring, and adverse event reporting makes this situation challenging. Objectives This paper aims to make practical suggestions for creating methods, rules, and guidelines to ensure that the development, testing, supervision, and use of AI in clinical decision support (CDS) systems are done well and safely for patients. Materials and Methods In May 2023, the Division of Clinical Informatics at Beth Israel Deaconess Medical Center and the American Medical Informatics Association co-sponsored a working group on AI in healthcare. In August 2023, there were 4 webinars on AI topics and a 2-day workshop in September 2023 for consensus-building. The event included over 200 industry stakeholders, including clinicians, software developers, academics, ethicists, attorneys, government policy experts, scientists, and patients. The goal was to identify challenges associated with the trusted use of AI-enabled CDS in medical practice. Key issues were identified, and solutions were proposed through qualitative analysis and a 4-month iterative consensus process. Results Our work culminated in several key recommendations: (1) building safe and trustworthy systems; (2) developing validation, verification, and certification processes for AI-CDS systems; (3) providing a means of safety monitoring and reporting at the national level; and (4) ensuring that appropriate documentation and end-user training are provided. Discussion AI-enabled Clinical Decision Support (AI-CDS) systems promise to revolutionize healthcare decision-making, necessitating a comprehensive framework for their development, implementation, and regulation that emphasizes trustworthiness, transparency, and safety. This framework encompasses various aspects including model training, explainability, validation, certification, monitoring, and continuous evaluation, while also addressing challenges such as data privacy, fairness, and the need for regulatory oversight to ensure responsible integration of AI into clinical workflow. Conclusions Achieving responsible AI-CDS systems requires a collective effort from many healthcare stakeholders. This involves implementing robust safety, monitoring, and transparency measures while fostering innovation. Future steps include testing and piloting proposed trust mechanisms, such as safety reporting protocols, and establishing best practice guidelines.",
+      "cited_by_count": 85,
+      "type": "article",
+      "source": {
+        "name": "Journal of the American Medical Informatics Association",
+        "type": "journal",
+        "issn": [
+          "1067-5027",
+          "1527-974X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11491642/pdf/ocae209.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics in Clinical Research",
+        "Electronic Health Records Systems"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W4402858717"
+    },
+    {
+      "openalex_id": "W4399750638",
+      "doi": "10.1007/s10462-024-10824-0",
+      "title": "A survey of safety and trustworthiness of large language models through the lens of verification and validation",
+      "authors": [
+        {
+          "name": "Xiaowei Huang",
+          "openalex_id": "A5020085889",
+          "orcid": "https://orcid.org/0000-0001-6267-0366",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Wenjie Ruan",
+          "openalex_id": "A5074225885",
+          "orcid": "https://orcid.org/0000-0002-8311-8738",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Wei Huang",
+          "openalex_id": "A5100352892",
+          "orcid": "https://orcid.org/0000-0003-1418-6267",
+          "institutions": [
+            "University of Liverpool",
+            "Purple Mountain Laboratories"
+          ]
+        },
+        {
+          "name": "Gaojie Jin",
+          "openalex_id": "A5048979254",
+          "orcid": "https://orcid.org/0000-0003-0240-3033",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Yi Dong",
+          "openalex_id": "A5100650289",
+          "orcid": "https://orcid.org/0000-0003-3047-7777",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Changshun Wu",
+          "openalex_id": "A5020387498",
+          "orcid": "https://orcid.org/0000-0001-8293-2888",
+          "institutions": [
+            "Universit\u00e9 Grenoble Alpes"
+          ]
+        },
+        {
+          "name": "Saddek Bensalem",
+          "openalex_id": "A5106468718",
+          "orcid": "https://orcid.org/0000-0002-5753-2126",
+          "institutions": [
+            "Universit\u00e9 Grenoble Alpes"
+          ]
+        },
+        {
+          "name": "Ronghui Mu",
+          "openalex_id": "A5054272337",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Qi Yi",
+          "openalex_id": "A5101413852",
+          "orcid": "https://orcid.org/0000-0002-9602-9523",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Xingyu Zhao",
+          "openalex_id": "A5100635681",
+          "orcid": "https://orcid.org/0000-0002-3474-349X",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Kaiwen Cai",
+          "openalex_id": "A5011694726",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Yanghao Zhang",
+          "openalex_id": "A5081956313",
+          "orcid": "https://orcid.org/0000-0002-8499-0974",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Sihao Wu",
+          "openalex_id": "A5102402148",
+          "orcid": "https://orcid.org/0009-0005-7032-8903",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Peipei Xu",
+          "openalex_id": "A5028614556",
+          "orcid": "https://orcid.org/0000-0002-1781-3820",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Dengyu Wu",
+          "openalex_id": "A5063210265",
+          "orcid": "https://orcid.org/0000-0003-3699-4273",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Andr\u00e9 Freitas",
+          "openalex_id": "A5053978668",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Mustafa Mustafa",
+          "openalex_id": "A5074423181",
+          "orcid": "https://orcid.org/0000-0002-8772-8023",
+          "institutions": [
+            "KU Leuven",
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-17",
+      "abstract": null,
+      "cited_by_count": 75,
+      "type": "article",
+      "source": {
+        "name": "Artificial Intelligence Review",
+        "type": "journal",
+        "issn": [
+          "0269-2821",
+          "1573-7462"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10462-024-10824-0.pdf"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Software Engineering Research",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 223,
+      "url": "https://openalex.org/W4399750638"
+    },
+    {
+      "openalex_id": "W4381586841",
+      "doi": "10.48550/arxiv.2306.11698",
+      "title": "DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models",
+      "authors": [
+        {
+          "name": "Boxin Wang",
+          "openalex_id": "A5041191241",
+          "orcid": "https://orcid.org/0000-0003-1084-4648"
+        },
+        {
+          "name": "Weixin Chen",
+          "openalex_id": "A5101635094",
+          "orcid": "https://orcid.org/0000-0002-4435-4017"
+        },
+        {
+          "name": "Hengzhi Pei",
+          "openalex_id": "A5036100753",
+          "orcid": "https://orcid.org/0000-0001-7036-2996"
+        },
+        {
+          "name": "Chulin Xie",
+          "openalex_id": "A5007625243",
+          "orcid": "https://orcid.org/0000-0002-5460-3785"
+        },
+        {
+          "name": "Mintong Kang",
+          "openalex_id": "A5029251926"
+        },
+        {
+          "name": "Chenhui Zhang",
+          "openalex_id": "A5082488018",
+          "orcid": "https://orcid.org/0000-0002-0124-6315"
+        },
+        {
+          "name": "Chejian Xu",
+          "openalex_id": "A5004007883",
+          "orcid": "https://orcid.org/0009-0009-7598-639X"
+        },
+        {
+          "name": "Zidi Xiong",
+          "openalex_id": "A5089895667"
+        },
+        {
+          "name": "Ritik Dutta",
+          "openalex_id": "A5018708118"
+        },
+        {
+          "name": "Rylan Schaeffer",
+          "openalex_id": "A5058188131",
+          "orcid": "https://orcid.org/0000-0002-4298-7216"
+        },
+        {
+          "name": "Sang Truong",
+          "openalex_id": "A5059418368",
+          "orcid": "https://orcid.org/0000-0001-8069-9410"
+        },
+        {
+          "name": "Simran Arora",
+          "openalex_id": "A5075032133",
+          "orcid": "https://orcid.org/0000-0002-2087-8043"
+        },
+        {
+          "name": "Mantas Mazeika",
+          "openalex_id": "A5058254793"
+        },
+        {
+          "name": "Dan Hendrycks",
+          "openalex_id": "A5020400986"
+        },
+        {
+          "name": "Zinan Lin",
+          "openalex_id": "A5101422411",
+          "orcid": "https://orcid.org/0000-0002-8421-2662"
+        },
+        {
+          "name": "Yu Cheng",
+          "openalex_id": "A5101580521",
+          "orcid": "https://orcid.org/0000-0002-2315-5641"
+        },
+        {
+          "name": "Sanmi Koyejo",
+          "openalex_id": "A5091266570"
+        },
+        {
+          "name": "Dawn Song",
+          "openalex_id": "A5019426968",
+          "orcid": "https://orcid.org/0000-0001-9745-6802"
+        },
+        {
+          "name": "Bo Li",
+          "openalex_id": "A5100374474",
+          "orcid": "https://orcid.org/0000-0002-9336-1862"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-20",
+      "abstract": "Generative Pre-trained Transformer (GPT) models have exhibited exciting progress in their capabilities, capturing the interest of practitioners and the public alike. Yet, while the literature on the trustworthiness of GPT models remains limited, practitioners have proposed employing capable GPT models for sensitive applications such as healthcare and finance -- where mistakes can be costly. To this end, this work proposes a comprehensive trustworthiness evaluation for large language models with a focus on GPT-4 and GPT-3.5, considering diverse perspectives -- including toxicity, stereotype bias, adversarial robustness, out-of-distribution robustness, robustness on adversarial demonstrations, privacy, machine ethics, and fairness. Based on our evaluations, we discover previously unpublished vulnerabilities to trustworthiness threats. For instance, we find that GPT models can be easily misled to generate toxic and biased outputs and leak private information in both training data and conversation history. We also find that although GPT-4 is usually more trustworthy than GPT-3.5 on standard benchmarks, GPT-4 is more vulnerable given jailbreaking system or user prompts, potentially because GPT-4 follows (misleading) instructions more precisely. Our work illustrates a comprehensive trustworthiness evaluation of GPT models and sheds light on the trustworthiness gaps. Our benchmark is publicly available at https://decodingtrust.github.io/ ; our dataset can be previewed at https://huggingface.co/datasets/AI-Secure/DecodingTrust ; a concise version of this work is at https://openreview.net/pdf?id=kaHpo8OZw2 .",
+      "cited_by_count": 58,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2306.11698"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4381586841"
+    },
+    {
+      "openalex_id": "W4380982224",
+      "doi": "10.1016/j.compind.2023.103961",
+      "title": "ENIGMA: An explainable digital twin security solution for cyber\u2013physical systems",
+      "authors": [
+        {
+          "name": "Sabah Suhail",
+          "openalex_id": "A5080130725",
+          "orcid": "https://orcid.org/0000-0002-2464-9790",
+          "institutions": [
+            "Vienna University of Economics and Business"
+          ]
+        },
+        {
+          "name": "Mubashar Iqbal",
+          "openalex_id": "A5065245210",
+          "orcid": "https://orcid.org/0000-0003-0543-613X",
+          "institutions": [
+            "University of Tartu"
+          ]
+        },
+        {
+          "name": "Rasheed Hussain",
+          "openalex_id": "A5090705977",
+          "orcid": "https://orcid.org/0000-0002-3771-7537",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Raja Jurdak",
+          "openalex_id": "A5088135082",
+          "orcid": "https://orcid.org/0000-0001-7517-0782",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-15",
+      "abstract": "Digital Twins (DTs), being the virtual replicas of their physical counterparts, share valuable knowledge of the underlying physical processes and act as data acquisition and dissemination sources to Cyber- Physical System (CPS). Moreover, without obstructing the ongoing operations, DTs also provide an assessment platform for evaluating the operational behavior and security of the CPS. Therefore, they become a potential source of data breaches and a broad attack surface for attackers to launch covert attacks. To detect and mitigate security loopholes in DTs, one of the potential solutions is to leverage a gamification approach that can assess the security level of DTs while providing security analysts with a controlled and supportive virtual training environment. Artificial Intelligence/Machine Learning (AI/ML)-based approaches can complement the idea of security orchestration and automation in the gamification approach. However, AI/ML-based DTs security solutions are generally constrained by the lack of transparency of AI operations, which results in less confidence in the decisions made by the AI models. To address the explainable security challenges of DTs, this article proposes a gamification approach called sEcuriNg dIgital twins through GaMification Approach (ENIGMA). While leveraging DTs as an offensive security platform, ENIGMA provides gaming scenarios to assess DTs\u2019 security and train security analysts. The game players within ENIGMA are humans (the attacker team) and AI agents (the defender team). Furthermore, ENIGMA is supported by an eXplainable AI (XAI)-based DT security assessment model that explains the decisions made based on the SHAP values by the AI model on attack vectors for the defender team, i.e., the AI agent. The SHAP values illustrate the contribution of different features towards predicting the outcome of attack vectors. This explanation can help security analysts to take security measures based on reasoned and trustworthy decisions. Finally, experimental validation has been carried out to demonstrate the viability of ENIGMA. &lt;br/&gt;&lt;br/&gt;Keywords: Cyber-Physical System (CPS), Cybersecurity Awareness, Digital Twins (DTs),",
+      "cited_by_count": 73,
+      "type": "article",
+      "source": {
+        "name": "Computers in Industry",
+        "type": "journal",
+        "issn": [
+          "0166-3615",
+          "1872-6194"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0166361523001112-ga1_lrg.jpg"
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "Physical Unclonable Functions (PUFs) and Hardware Security"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4380982224"
+    },
+    {
+      "openalex_id": "W3042730173",
+      "doi": "10.1145/3386392.3399276",
+      "title": "Accessible Cultural Heritage through Explainable Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Natalia D\u00edaz-Rodr\u00edguez",
+          "openalex_id": "A5058176171",
+          "orcid": "https://orcid.org/0000-0003-3362-9326",
+          "institutions": [
+            "Institut national de recherche en informatique et en automatique"
+          ]
+        },
+        {
+          "name": "Galena Pisoni",
+          "openalex_id": "A5039890833",
+          "orcid": "https://orcid.org/0000-0002-3266-1773",
+          "institutions": [
+            "Universit\u00e9 C\u00f4te d'Azur",
+            "Observatoire de la C\u00f4te d\u2019Azur"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-13",
+      "abstract": "Ethics Guidelines for Trustworthy AI advocate for AI technology that is, among other things, more inclusive. Explainable AI (XAI) aims at making state of the art opaque models more transparent, and defends AI-based outcomes endorsed with a rationale explanation, i.e., an explanation that has as target the non-technical users. XAI and Responsible AI principles defend the fact that the audience expertise should be included in the evaluation of explainable AI systems. However, AI has not yet reached all public and audiences, some of which may need it the most. One example of domain where accessibility has not much been influenced by the latest AI advances is cultural heritage. We propose including minorities as special user and evaluator of the latest XAI techniques. In order to define catalytic scenarios for collaboration and improved user experience, we pose some challenges and research questions yet to address by the latest AI models likely to be involved in such synergy.",
+      "cited_by_count": 51,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W3042730173"
+    },
+    {
+      "openalex_id": "W4292653773",
+      "doi": "10.3390/info13080395",
+      "title": "Federated Learning of Explainable AI Models in 6G Systems: Towards Secure and Automated Vehicle Networking",
+      "authors": [
+        {
+          "name": "Alessandro Renda",
+          "openalex_id": "A5079169024",
+          "orcid": "https://orcid.org/0000-0002-0482-5048",
+          "institutions": [
+            "University of Pisa"
+          ]
+        },
+        {
+          "name": "Pietro Ducange",
+          "openalex_id": "A5050435146",
+          "orcid": "https://orcid.org/0000-0003-4510-1350",
+          "institutions": [
+            "University of Pisa"
+          ]
+        },
+        {
+          "name": "Francesco Marcelloni",
+          "openalex_id": "A5057031606",
+          "orcid": "https://orcid.org/0000-0002-5895-876X",
+          "institutions": [
+            "University of Pisa"
+          ]
+        },
+        {
+          "name": "Dario Sabella",
+          "openalex_id": "A5010034815",
+          "orcid": "https://orcid.org/0000-0002-8723-7726"
+        },
+        {
+          "name": "Miltiadis C. Filippou",
+          "openalex_id": "A5074688239",
+          "orcid": "https://orcid.org/0000-0001-5953-980X",
+          "institutions": [
+            "Intel (Germany)"
+          ]
+        },
+        {
+          "name": "Giovanni Nardini",
+          "openalex_id": "A5072857514",
+          "orcid": "https://orcid.org/0000-0001-9796-6378",
+          "institutions": [
+            "University of Pisa"
+          ]
+        },
+        {
+          "name": "Giovanni Stea",
+          "openalex_id": "A5008205801",
+          "orcid": "https://orcid.org/0000-0001-5310-6763",
+          "institutions": [
+            "University of Pisa"
+          ]
+        },
+        {
+          "name": "Antonio Virdis",
+          "openalex_id": "A5050099715",
+          "orcid": "https://orcid.org/0000-0002-0629-1078",
+          "institutions": [
+            "University of Pisa"
+          ]
+        },
+        {
+          "name": "Davide Micheli",
+          "openalex_id": "A5018709438",
+          "orcid": "https://orcid.org/0000-0002-7851-0532",
+          "institutions": [
+            "Telecom Italia (Italy)"
+          ]
+        },
+        {
+          "name": "Damiano Rapone",
+          "openalex_id": "A5084549190",
+          "institutions": [
+            "Telecom Italia (Italy)"
+          ]
+        },
+        {
+          "name": "Leonardo Gomes Baltar",
+          "openalex_id": "A5016935935",
+          "institutions": [
+            "Intel (Germany)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-20",
+      "abstract": "This article presents the concept of federated learning (FL) of eXplainable Artificial Intelligence (XAI) models as an enabling technology in advanced 5G towards 6G systems and discusses its applicability to the automated vehicle networking use case. Although the FL of neural networks has been widely investigated exploiting variants of stochastic gradient descent as the optimization method, it has not yet been adequately studied in the context of inherently explainable models. On the one side, XAI permits improving user experience of the offered communication services by helping end users trust (by design) that in-network AI functionality issues appropriate action recommendations. On the other side, FL ensures security and privacy of both vehicular and user data across the whole system. These desiderata are often ignored in existing AI-based solutions for wireless network planning, design and operation. In this perspective, the article provides a detailed description of relevant 6G use cases, with a focus on vehicle-to-everything (V2X) environments: we describe a framework to evaluate the proposed approach involving online training based on real data from live networks. FL of XAI models is expected to bring benefits as a methodology for achieving seamless availability of decentralized, lightweight and communication efficient intelligence. Impacts of the proposed approach (including standardization perspectives) consist in a better trustworthiness of operations, e.g., via explainability of quality of experience (QoE) predictions, along with security and privacy-preserving management of data from sensors, terminals, users and applications.",
+      "cited_by_count": 71,
+      "type": "article",
+      "source": {
+        "name": "Information",
+        "type": "journal",
+        "issn": [
+          "2078-2489"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2078-2489/13/8/395/pdf?version=1661327007"
+      },
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W4292653773"
+    },
+    {
+      "openalex_id": "W4214845962",
+      "doi": "10.1007/s10796-021-10234-5",
+      "title": "Design Principles for User Interfaces in AI-Based Decision Support Systems: The Case of Explainable Hate Speech Detection",
+      "authors": [
+        {
+          "name": "Christian Meske",
+          "openalex_id": "A5076562855",
+          "orcid": "https://orcid.org/0000-0001-5637-9433",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        },
+        {
+          "name": "Enrico Bunde",
+          "openalex_id": "A5060934949",
+          "orcid": "https://orcid.org/0000-0002-3063-275X",
+          "institutions": [
+            "Ruhr University Bochum"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-02",
+      "abstract": "Abstract Hate speech in social media is an increasing problem that can negatively affect individuals and society as a whole. Moderators on social media platforms need to be technologically supported to detect problematic content and react accordingly. In this article, we develop and discuss the design principles that are best suited for creating efficient user interfaces for decision support systems that use artificial intelligence (AI) to assist human moderators. We qualitatively and quantitatively evaluated various design options over three design cycles with a total of 641 participants. Besides measuring perceived ease of use, perceived usefulness, and intention to use, we also conducted an experiment to prove the significant influence of AI explainability on end users\u2019 perceived cognitive efforts, perceived informativeness, mental model, and trustworthiness in AI. Finally, we tested the acquired design knowledge with software developers, who rated the reusability of the proposed design principles as high.",
+      "cited_by_count": 52,
+      "type": "article",
+      "source": {
+        "name": "Information Systems Frontiers",
+        "type": "journal",
+        "issn": [
+          "1387-3326",
+          "1572-9419"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10796-021-10234-5.pdf"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Ethics and Social Impacts of AI",
+        "Software Engineering Research"
+      ],
+      "referenced_works_count": 79,
+      "url": "https://openalex.org/W4214845962"
+    },
+    {
+      "openalex_id": "W3092489168",
+      "doi": "10.3389/feduc.2020.572367",
+      "title": "Explainable Automated Essay Scoring: Deep Learning Really Has Pedagogical Value",
+      "authors": [
+        {
+          "name": "Vive Kumar",
+          "openalex_id": "A5042046313",
+          "orcid": "https://orcid.org/0000-0003-3394-7789",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "David Boulanger",
+          "openalex_id": "A5059510916",
+          "orcid": "https://orcid.org/0000-0001-6194-2876",
+          "institutions": [
+            "Athabasca University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-06",
+      "abstract": "Automated essay scoring (AES) is a compelling topic in Learning Analytics for the primary reason that recent advances in AI find it as a good testbed to explore artificial supplementation of human creativity. However, a vast swath of research tackles AES only holistically; few have even developed AES models at the rubric level, the very first layer of explanation underlying the prediction of holistic scores. Consequently, the AES black box has remained impenetrable. Although several algorithms from Explainable Artificial Intelligence have recently been published, no research has yet investigated the role that these explanation models can play in: (a) discovering the decision-making process that drives AES, (b) fine-tuning predictive models to improve generalizability and interpretability, and (c) providing personalized, formative, and fine-grained feedback to students during the writing process. Building on previous studies where models were trained to predict both the holistic and rubric scores of essays, using the Automated Student Assessment Prize\u2019s essay datasets, this study focuses on predicting the quality of the writing style of Grade-7 essays and exposes the decision processes that lead to these predictions. In doing so, it evaluates the impact of deep learning (multi-layer perceptron neural networks) on the performance of AES. It has been found that the effect of deep learning can be best viewed when assessing the trustworthiness of explanation models. As more hidden layers were added to the neural network, the descriptive accuracy increased by about 10%. This study shows that faster (up to three orders of magnitude) SHAP implementations are as accurate as the slower model-agnostic one. It leverages the state-of-the-art in natural language processing, applying feature selection on a pool of 1592 linguistic indices that measure aspects of text cohesion, lexical diversity, lexical sophistication, and syntactic sophistication and complexity. In addition to the list of most globally important features, this study reports (a) a list of features that are important for a specific essay (locally), (b) a range of values for each feature that contribute to higher or lower rubric scores, and (c) a model that allows to quantify the impact of the implementation of formative feedback.",
+      "cited_by_count": 108,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Education",
+        "type": "journal",
+        "issn": [
+          "2504-284X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/feduc.2020.572367/pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling",
+        "Online Learning and Analytics"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W3092489168"
+    },
+    {
+      "openalex_id": "W4312600318",
+      "doi": "10.1109/access.2022.3215660",
+      "title": "Blockchain and NFTs for Trusted Ownership, Trading, and Access of AI Models",
+      "authors": [
+        {
+          "name": "Ammar Battah",
+          "openalex_id": "A5023386051",
+          "orcid": "https://orcid.org/0000-0001-9238-3114",
+          "institutions": [
+            "Khalifa University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Mohammad Madine",
+          "openalex_id": "A5058220295",
+          "orcid": "https://orcid.org/0000-0003-0556-2419",
+          "institutions": [
+            "Khalifa University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Ibrar Yaqoob",
+          "openalex_id": "A5044230953",
+          "orcid": "https://orcid.org/0000-0002-8438-3429",
+          "institutions": [
+            "Khalifa University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Khaled Salah",
+          "openalex_id": "A5028133110",
+          "orcid": "https://orcid.org/0000-0002-2310-2558",
+          "institutions": [
+            "Khalifa University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Haya R. Hasan",
+          "openalex_id": "A5084612497",
+          "institutions": [
+            "Khalifa University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Raja Jayaraman",
+          "openalex_id": "A5071929595",
+          "orcid": "https://orcid.org/0000-0002-2749-2688",
+          "institutions": [
+            "Khalifa University of Science and Technology"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "The demand for high-quality Artificial Intelligence (AI) models is ever-increasing in this digital era. However, most of the existing methods leveraged for managing the ownership, trading, and access of AI models fall short of providing traceability, transparency, audit, security, and trustful features. In this paper, we propose a solution based on blockchain and Non-fungible Tokens (NFTs) to manage ownership rights and exchange of AI models in a transparent, traceable, auditable, secure, and trustworthy manner. Smart contracts are employed to enforce ownership, ease of access, and exchange policies for the unique NFT linked to an AI model. We use decentralized storage of the InterPlanetary File System (IPFS) and proxy re-encryption oracles to securely fetch, store, and share data related to AI models. We present algorithms along with their implementation, testing, and validation details. The proposed solution is evaluated using cost and security analyses to show its affordability and resiliency against security threats and attacks. All smart contract codes are made publicly available on GitHub.",
+      "cited_by_count": 43,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/9668973/09924181.pdf"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Peer-to-Peer Network Technologies",
+        "Privacy-Preserving Technologies in Data"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W4312600318"
+    },
+    {
+      "openalex_id": "W4367310870",
+      "doi": "10.1145/3543873.3587681",
+      "title": "A Survey of Trustworthy Federated Learning with Perspectives on Security, Robustness and Privacy",
+      "authors": [
+        {
+          "name": "Yifei Zhang",
+          "openalex_id": "A5100386948",
+          "orcid": "https://orcid.org/0000-0003-4185-8663",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Dun Zeng",
+          "openalex_id": "A5065428641",
+          "orcid": "https://orcid.org/0000-0002-4517-5379",
+          "institutions": [
+            "University of Electronic Science and Technology of China",
+            "Peng Cheng Laboratory"
+          ]
+        },
+        {
+          "name": "Jinglong Luo",
+          "openalex_id": "A5081531179",
+          "orcid": "https://orcid.org/0000-0002-9705-7913",
+          "institutions": [
+            "Peng Cheng Laboratory",
+            "Harbin Institute of Technology"
+          ]
+        },
+        {
+          "name": "Zenglin Xu",
+          "openalex_id": "A5051227924",
+          "orcid": "https://orcid.org/0000-0001-5550-6461",
+          "institutions": [
+            "Peng Cheng Laboratory",
+            "Harbin Institute of Technology"
+          ]
+        },
+        {
+          "name": "Irwin King",
+          "openalex_id": "A5042251906",
+          "orcid": "https://orcid.org/0000-0001-8106-6447",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-28",
+      "abstract": "Trustworthy artificial intelligence (AI) technology has revolutionized daily life and greatly benefited human society. Among various AI technologies, Federated Learning (FL) stands out as a promising solution for diverse real-world scenarios, ranging from risk evaluation systems in finance to cutting-edge technologies like drug discovery in life sciences. However, challenges around data isolation and privacy threaten the trustworthiness of FL systems. Adversarial attacks against data privacy, learning algorithm stability, and system confidentiality are particularly concerning in the context of distributed training in federated learning. Therefore, it is crucial to develop FL in a trustworthy manner, with a focus on robustness and privacy. In this survey, we propose a comprehensive roadmap for developing trustworthy FL systems and summarize existing efforts from two key aspects: robustness and privacy. We outline the threats that pose vulnerabilities to trustworthy federated learning across different stages of development, including data processing, model training, and deployment. To guide the selection of the most appropriate defense methods, we discuss specific technical solutions for realizing each aspect of Trustworthy FL (TFL). Our approach differs from previous work that primarily discusses TFL from a legal perspective or presents FL from a high-level, non-technical viewpoint.",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Adversarial Robustness in Machine Learning",
+        "Cryptography and Data Security"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W4367310870"
+    },
+    {
+      "openalex_id": "W3213704721",
+      "doi": "10.1038/s42256-021-00421-z",
+      "title": "Advancing COVID-19 diagnosis with privacy-preserving collaboration in artificial intelligence",
+      "authors": [
+        {
+          "name": "Xiang Bai",
+          "openalex_id": "A5039363991",
+          "orcid": "https://orcid.org/0000-0002-3449-5940",
+          "institutions": [
+            "Huazhong University of Science and Technology",
+            "Tongji Hospital"
+          ]
+        },
+        {
+          "name": "Hanchen Wang",
+          "openalex_id": "A5100699284",
+          "orcid": "https://orcid.org/0009-0000-8663-8758",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Liya Ma",
+          "openalex_id": "A5100551889",
+          "institutions": [
+            "Huazhong University of Science and Technology",
+            "Tongji Hospital"
+          ]
+        },
+        {
+          "name": "Yongchao Xu",
+          "openalex_id": "A5082564408",
+          "orcid": "https://orcid.org/0000-0002-7253-3151",
+          "institutions": [
+            "Tongji Hospital",
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Jiefeng Gan",
+          "openalex_id": "A5008117505",
+          "orcid": "https://orcid.org/0000-0001-6828-1804",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Ziwei Fan",
+          "openalex_id": "A5017213607",
+          "orcid": "https://orcid.org/0000-0001-5445-2203",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Fan Yang",
+          "openalex_id": "A5055895731",
+          "orcid": "https://orcid.org/0000-0001-5718-9420",
+          "institutions": [
+            "Huazhong University of Science and Technology",
+            "Union Hospital"
+          ]
+        },
+        {
+          "name": "Ke Ma",
+          "openalex_id": "A5060940767",
+          "orcid": "https://orcid.org/0000-0003-1436-3673",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Jiehua Yang",
+          "openalex_id": "A5065916137",
+          "orcid": "https://orcid.org/0000-0003-1667-3528",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Song Bai",
+          "openalex_id": "A5101562162",
+          "orcid": "https://orcid.org/0000-0002-2570-9118",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Chang Shu",
+          "openalex_id": "A5101767301",
+          "orcid": "https://orcid.org/0000-0001-6331-0522",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Xinyu Zou",
+          "openalex_id": "A5103274540",
+          "orcid": "https://orcid.org/0000-0002-9687-9317",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Renhao Huang",
+          "openalex_id": "A5035867227",
+          "orcid": "https://orcid.org/0009-0005-9187-4989",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Changzheng Zhang",
+          "openalex_id": "A5101983712"
+        },
+        {
+          "name": "Xiaowu Liu",
+          "openalex_id": "A5101404075",
+          "orcid": "https://orcid.org/0000-0002-4424-8046"
+        },
+        {
+          "name": "Dandan Tu",
+          "openalex_id": "A5101645794"
+        },
+        {
+          "name": "Chuou Xu",
+          "openalex_id": "A5074656108",
+          "orcid": "https://orcid.org/0000-0002-2346-3150",
+          "institutions": [
+            "Huazhong University of Science and Technology",
+            "Tongji Hospital"
+          ]
+        },
+        {
+          "name": "Wenqing Zhang",
+          "openalex_id": "A5100340238",
+          "orcid": "https://orcid.org/0000-0003-3479-282X",
+          "institutions": [
+            "Tongji Hospital",
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Xi Wang",
+          "openalex_id": "A5101507173",
+          "orcid": "https://orcid.org/0000-0002-4186-4935",
+          "institutions": [
+            "Wuhan Children's Hospital"
+          ]
+        },
+        {
+          "name": "Anguo Chen",
+          "openalex_id": "A5043760151",
+          "orcid": "https://orcid.org/0000-0002-4366-8460",
+          "institutions": [
+            "Wuhan Blood Center"
+          ]
+        },
+        {
+          "name": "Yu Zeng",
+          "openalex_id": "A5112121529"
+        },
+        {
+          "name": "Dehua Yang",
+          "openalex_id": "A5066262614",
+          "orcid": "https://orcid.org/0000-0003-3028-3243",
+          "institutions": [
+            "National Center for Drug Screening",
+            "Shanghai Institute of Materia Medica"
+          ]
+        },
+        {
+          "name": "Ming\u2010Wei Wang",
+          "openalex_id": "A5100683205",
+          "orcid": "https://orcid.org/0000-0001-6550-9017",
+          "institutions": [
+            "National Center for Drug Screening",
+            "Shanghai Institute of Materia Medica"
+          ]
+        },
+        {
+          "name": "Nagaraj-Setty Holalkere",
+          "openalex_id": "A5025230138",
+          "orcid": "https://orcid.org/0000-0001-6324-7682",
+          "institutions": [
+            "Tufts University"
+          ]
+        },
+        {
+          "name": "Neil J. Halin",
+          "openalex_id": "A5009754775",
+          "orcid": "https://orcid.org/0009-0001-4914-0683",
+          "institutions": [
+            "Tufts University"
+          ]
+        },
+        {
+          "name": "Ihab R. Kamel",
+          "openalex_id": "A5067085754",
+          "orcid": "https://orcid.org/0000-0003-0511-7796",
+          "institutions": [
+            "Johns Hopkins Hospital"
+          ]
+        },
+        {
+          "name": "Jia Wu",
+          "openalex_id": "A5006220393",
+          "orcid": "https://orcid.org/0000-0001-8392-8338",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Xuehua Peng",
+          "openalex_id": "A5063667777",
+          "orcid": "https://orcid.org/0000-0002-0114-0553",
+          "institutions": [
+            "Central Hospital of Wuhan"
+          ]
+        },
+        {
+          "name": "Xiang Wang",
+          "openalex_id": "A5100389037",
+          "orcid": "https://orcid.org/0000-0002-6148-6329",
+          "institutions": [
+            "Wuhan Children's Hospital"
+          ]
+        },
+        {
+          "name": "Jianbo Shao",
+          "openalex_id": "A5054166410",
+          "orcid": "https://orcid.org/0000-0002-4224-3057",
+          "institutions": [
+            "Central Hospital of Wuhan"
+          ]
+        },
+        {
+          "name": "Pattanasak Mongkolwat",
+          "openalex_id": "A5113710493",
+          "institutions": [
+            "Mahidol University"
+          ]
+        },
+        {
+          "name": "Jianjun Zhang",
+          "openalex_id": "A5100358178",
+          "orcid": "https://orcid.org/0000-0001-7872-3477",
+          "institutions": [
+            "The University of Texas MD Anderson Cancer Center"
+          ]
+        },
+        {
+          "name": "Weiyang Liu",
+          "openalex_id": "A5101606029",
+          "orcid": "https://orcid.org/0000-0002-8234-3263",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Michael Roberts",
+          "openalex_id": "A5018385899",
+          "orcid": "https://orcid.org/0000-0002-3484-5031",
+          "institutions": [
+            "University of Cambridge",
+            "AstraZeneca (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Zhongzhao Teng",
+          "openalex_id": "A5100372526",
+          "orcid": "https://orcid.org/0000-0003-3973-6157",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Lucian Beer",
+          "openalex_id": "A5015345650",
+          "orcid": "https://orcid.org/0000-0003-4388-7580",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "L. Escudero",
+          "openalex_id": "A5048077517",
+          "orcid": "https://orcid.org/0000-0003-3464-9206",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Evis Sala",
+          "openalex_id": "A5028460960",
+          "orcid": "https://orcid.org/0000-0002-5518-9360",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Daniel L. Rubin",
+          "openalex_id": "A5004965117",
+          "orcid": "https://orcid.org/0000-0001-5057-4369",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Adrian Weller",
+          "openalex_id": "A5042278493",
+          "orcid": "https://orcid.org/0000-0003-1915-7158",
+          "institutions": [
+            "The Alan Turing Institute",
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Joan Lasenby",
+          "openalex_id": "A5019616738",
+          "orcid": "https://orcid.org/0000-0002-0571-0218",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Chuansheng Zheng",
+          "openalex_id": "A5027041701",
+          "orcid": "https://orcid.org/0000-0002-2435-1417",
+          "institutions": [
+            "Huazhong University of Science and Technology",
+            "Union Hospital"
+          ]
+        },
+        {
+          "name": "Jianming Wang",
+          "openalex_id": "A5100707507",
+          "orcid": "https://orcid.org/0000-0002-9151-284X",
+          "institutions": [
+            "Wuhan University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Zhen Li",
+          "openalex_id": "A5100332555",
+          "orcid": "https://orcid.org/0000-0001-8037-4245",
+          "institutions": [
+            "Tongji Hospital",
+            "Huazhong University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Carola\u2010Bibiane Sch\u00f6nlieb",
+          "openalex_id": "A5033880300",
+          "orcid": "https://orcid.org/0000-0003-0099-6306",
+          "institutions": [
+            "The Alan Turing Institute",
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Tian Xia",
+          "openalex_id": "A5101889108",
+          "orcid": "https://orcid.org/0000-0003-0733-0697",
+          "institutions": [
+            "Huazhong University of Science and Technology"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-15",
+      "abstract": "Abstract Artificial intelligence provides a promising solution for streamlining COVID-19 diagnoses; however, concerns surrounding security and trustworthiness impede the collection of large-scale representative medical data, posing a considerable challenge for training a well-generalized model in clinical practices. To address this, we launch the Unified CT-COVID AI Diagnostic Initiative (UCADI), where the artificial intelligence (AI) model can be distributedly trained and independently executed at each host institution under a federated learning framework without data sharing. Here we show that our federated learning framework model considerably outperformed all of the local models (with a test sensitivity/specificity of 0.973/0.951 in China and 0.730/0.942 in the United Kingdom), achieving comparable performance with a panel of professional radiologists. We further evaluated the model on the hold-out (collected from another two hospitals without the federated learning framework) and heterogeneous (acquired with contrast materials) data, provided visual explanations for decisions made by the model, and analysed the trade-offs between the model performance and the communication costs in the federated training process. Our study is based on 9,573 chest computed tomography scans from 3,336 patients collected from 23 hospitals located in China and the United Kingdom. Collectively, our work advanced the prospects of utilizing federated learning for privacy-preserving AI in digital health.",
+      "cited_by_count": 70,
+      "type": "article",
+      "source": {
+        "name": "Nature Machine Intelligence",
+        "type": "journal",
+        "issn": [
+          "2522-5839"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s42256-021-00421-z.pdf"
+      },
+      "topics": [
+        "COVID-19 diagnosis using AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "Privacy-Preserving Technologies in Data"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W3213704721"
+    },
+    {
+      "openalex_id": "W4317528895",
+      "doi": "10.1016/j.artint.2023.103861",
+      "title": "Explainable AI tools for legal reasoning about cases: A study on the European Court of Human Rights",
+      "authors": [
+        {
+          "name": "Joe Collenette",
+          "openalex_id": "A5026990950",
+          "orcid": "https://orcid.org/0000-0001-6179-2038",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Katie Atkinson",
+          "openalex_id": "A5034799166",
+          "orcid": "https://orcid.org/0000-0002-5683-4106",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Trevor Bench\u2010Capon",
+          "openalex_id": "A5074094975",
+          "orcid": "https://orcid.org/0000-0003-3975-4398",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-20",
+      "abstract": "In this paper we report on a significant research project undertaken to design, implement and evaluate explainable decision-support tools for deciding legal cases. We provide a model of a legal domain, Article 6 of the European Convention on Human Rights, constructed using a methodology from the field of computational models of argument. We describe how the formal model has been developed, extended and transformed into practical tools, which were then used in evaluation exercises to determine the effectiveness and usability of the tools. The underpinning AI techniques used yield a level of explanation that is firmly grounded in legal reasoning and is also digestible by the target end users, as demonstrated through our evaluation activities. The results of our experimental evaluation show that on the first pass, our tool achieved an accuracy rate of 97% in matching the actual decisions of the cases and the user studies conducted gave highly encouraging results with respect to usability. As such, our project demonstrates how trustworthy AI tools can be built for a real world legal domain where critical needs of the end users are accounted for.",
+      "cited_by_count": 54,
+      "type": "article",
+      "source": {
+        "name": "Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "0004-3702",
+          "1872-7921"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.artint.2023.103861"
+      },
+      "topics": [
+        "Artificial Intelligence in Law",
+        "Multi-Agent Systems and Negotiation",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 79,
+      "url": "https://openalex.org/W4317528895"
+    },
+    {
+      "openalex_id": "W3101078773",
+      "doi": "10.3390/su12229523",
+      "title": "The Role of Human\u2013Machine Interactive Devices for Post-COVID-19 Innovative Sustainable Tourism in Ho Chi Minh City, Vietnam",
+      "authors": [
+        {
+          "name": "Nguyen Th\u1ecb Thanh Van",
+          "openalex_id": "A5026976860",
+          "orcid": "https://orcid.org/0000-0002-1499-1381",
+          "institutions": [
+            "Ho Chi Minh City University of Technology and Education"
+          ]
+        },
+        {
+          "name": "Vasiliki Vrana",
+          "openalex_id": "A5042234858",
+          "orcid": "https://orcid.org/0000-0002-5385-0944",
+          "institutions": [
+            "International Hellenic University"
+          ]
+        },
+        {
+          "name": "Nguyen Thien Duy",
+          "openalex_id": "A5006302068",
+          "institutions": [
+            "University of Economics Ho Chi Minh City"
+          ]
+        },
+        {
+          "name": "Doan Xuan Huy Minh",
+          "openalex_id": "A5076135929",
+          "institutions": [
+            "Institute for Computational Science and Technology"
+          ]
+        },
+        {
+          "name": "Pham Tien Dzung",
+          "openalex_id": "A5091332716",
+          "institutions": [
+            "University of Economics Ho Chi Minh City"
+          ]
+        },
+        {
+          "name": "Subhra R. Mondal",
+          "openalex_id": "A5015027626",
+          "orcid": "https://orcid.org/0000-0003-1194-5678",
+          "institutions": [
+            "Teerthanker Mahaveer University"
+          ]
+        },
+        {
+          "name": "Subhankar Das",
+          "openalex_id": "A5089458769",
+          "orcid": "https://orcid.org/0000-0001-7344-4583",
+          "institutions": [
+            "Teerthanker Mahaveer University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-16",
+      "abstract": "In this research article, we aim to study the proposed role of human\u2013machine interactive (HMI) technologies, including both artificial intelligence (AI) and virtual reality (VR)-enabled applications, for the post-COVID-19 revival of the already depleted tourism industry in Vietnam\u2019s major tourist destination and business hub of Ho Chi Minh City. The researchers aim to gather practical knowledge regarding tourists\u2019 intentions for such service enhancements, which may drive the sector to adopt a better conclusive growth pattern in post-COVID-19 times. In this study, we attempt to focus on travelers who look for paramount safety with the assurance of empathetic, personalized care in post-COVID-19 times. In the current study, the authors employ structural equation modeling to evaluate the intentions of tourists both structurally and empirically for destination tourism with data collected from tourists with previous exposure to various kinds of these devices. The study shows that human\u2013machine interactive devices are integrating AI and VR and have a significant effect on overall service quality, leading to tourist satisfaction and loyalty. The use of such social interactive gadgets within tourism and mostly in hospitality services requires an organization to make a commitment to futuristic technologies, along with building value by enriching service quality expectations among fearful tourists. This research shows that tourists mainly focus on the use of such HMI devices from the perspective of technology acceptance factors, qualitative value-enhancing service and trustworthy information-sharing mechanisms. The concept of the tour bubble framework is also discussed in detail. The analysis of this discussion gives us a more profound understanding of the novel opportunities which various administrative agencies may benefit from to position these devices better in smart, sustainable destination tourism strategies for the future so that, collectively, service 5.0 with HMI devices can possibly bring back tourism from being disintegrated. Such service applications are the new social innovations leading to sustainable service and a sophisticated experience for all tourists.",
+      "cited_by_count": 128,
+      "type": "article",
+      "source": {
+        "name": "Sustainability",
+        "type": "journal",
+        "issn": [
+          "2071-1050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/12/22/9523/pdf?version=1605606756"
+      },
+      "topics": [
+        "Digital Marketing and Social Media",
+        "Diverse Aspects of Tourism Research",
+        "Consumer Retail Behavior Studies"
+      ],
+      "referenced_works_count": 130,
+      "url": "https://openalex.org/W3101078773"
+    },
+    {
+      "openalex_id": "W4322758918",
+      "doi": "10.1007/s40123-023-00691-3",
+      "title": "Artificial Intelligence for Diabetic Retinopathy Screening Using Color Retinal Photographs: From Development to Deployment",
+      "authors": [
+        {
+          "name": "Andrzej Grzybowski",
+          "openalex_id": "A5006822597",
+          "orcid": "https://orcid.org/0000-0002-3724-2391",
+          "institutions": [
+            "University of Warmia and Mazury in Olsztyn"
+          ]
+        },
+        {
+          "name": "Panisa Singhanetr",
+          "openalex_id": "A5017998883"
+        },
+        {
+          "name": "Onnisa Nanegrungsunk",
+          "openalex_id": "A5052194509",
+          "orcid": "https://orcid.org/0000-0001-9542-1323",
+          "institutions": [
+            "Chiang Mai University"
+          ]
+        },
+        {
+          "name": "Paisan Ruamviboonsuk",
+          "openalex_id": "A5082967971",
+          "orcid": "https://orcid.org/0000-0001-6114-6220",
+          "institutions": [
+            "Rangsit University",
+            "Rajavithi Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-02",
+      "abstract": null,
+      "cited_by_count": 63,
+      "type": "review",
+      "source": {
+        "name": "Ophthalmology and Therapy",
+        "type": "journal",
+        "issn": [
+          "2193-6528",
+          "2193-8245"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40123-023-00691-3.pdf"
+      },
+      "topics": [
+        "Retinal Imaging and Analysis",
+        "Retinal Diseases and Treatments",
+        "Retinal and Optic Conditions"
+      ],
+      "referenced_works_count": 74,
+      "url": "https://openalex.org/W4322758918"
+    },
+    {
+      "openalex_id": "W4380987951",
+      "doi": "10.3390/electronics12122697",
+      "title": "An Explainable Artificial Intelligence-Based Robustness Optimization Approach for Age-Related Macular Degeneration Detection Based on Medical IOT Systems",
+      "authors": [
+        {
+          "name": "Han Wang",
+          "openalex_id": "A5022798483",
+          "orcid": "https://orcid.org/0000-0002-5002-3708",
+          "institutions": [
+            "City University of Macau",
+            "Zhuhai Institute of Advanced Technology",
+            "Chinese University of Hong Kong",
+            "Jinan University",
+            "Chinese Academy of Sciences",
+            "Zhuhai People's Hospital"
+          ]
+        },
+        {
+          "name": "Kelvin Kam Lung Chong",
+          "openalex_id": "A5028673590",
+          "orcid": "https://orcid.org/0000-0003-2587-1323",
+          "institutions": [
+            "Chinese University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Zhiyuan Lin",
+          "openalex_id": "A5046523138",
+          "orcid": "https://orcid.org/0000-0001-6752-3226",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Zhuhai Institute of Advanced Technology"
+          ]
+        },
+        {
+          "name": "Xiangrong Yu",
+          "openalex_id": "A5058325076",
+          "orcid": "https://orcid.org/0000-0003-2656-9847",
+          "institutions": [
+            "Jinan University",
+            "Zhuhai People's Hospital"
+          ]
+        },
+        {
+          "name": "Yi Pan",
+          "openalex_id": "A5101465265",
+          "orcid": "https://orcid.org/0000-0002-2766-3096",
+          "institutions": [
+            "Shenzhen Institutes of Advanced Technology"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-16",
+      "abstract": "AI-based models have shown promising results in diagnosing eye diseases based on multi-sources of data collected from medical IOT systems. However, there are concerns regarding their generalization and robustness, as these methods are prone to overfitting specific datasets. The development of Explainable Artificial Intelligence (XAI) techniques has addressed the black-box problem of machine learning and deep learning models, which can enhance interpretability and trustworthiness and optimize their performance in the real world. Age-related macular degeneration (AMD) is currently the primary cause of vision loss among elderly individuals. In this study, XAI methods were applied to detect AMD using various ophthalmic imaging modalities collected from medical IOT systems, such as colorful fundus photography (CFP), optical coherence tomography (OCT), ultra-wide fundus (UWF) images, and fluorescein angiography fundus (FAF). An optimized deep learning (DL) model and novel AMD identification systems were proposed based on the insights extracted by XAI. The findings of this study demonstrate that XAI not only has the potential to improve the transparency, reliability, and trustworthiness of AI models for ophthalmic applications, but it also has significant advantages for enhancing the robustness performance of these models. XAI could play a crucial role in promoting intelligent ophthalmology and be one of the most important techniques for evaluating and enhancing ophthalmic AI systems.",
+      "cited_by_count": 37,
+      "type": "article",
+      "source": {
+        "name": "Electronics",
+        "type": "journal",
+        "issn": [
+          "2079-9292"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2079-9292/12/12/2697/pdf?version=1686895810"
+      },
+      "topics": [
+        "Retinal Imaging and Analysis",
+        "Acute Ischemic Stroke Management",
+        "Imbalanced Data Classification Techniques"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4380987951"
+    },
+    {
+      "openalex_id": "W3172636945",
+      "doi": "10.1007/s10845-021-01789-w",
+      "title": "Smart sheet metal forming: importance of data acquisition, preprocessing and transformation on the performance of a multiclass support vector machine for predicting wear states during blanking",
+      "authors": [
+        {
+          "name": "Christian Kubik",
+          "openalex_id": "A5066450393",
+          "orcid": "https://orcid.org/0000-0002-8695-714X",
+          "institutions": [
+            "Technical University of Darmstadt"
+          ]
+        },
+        {
+          "name": "Sebastian Michael Knauer",
+          "openalex_id": "A5010782959",
+          "institutions": [
+            "Technical University of Darmstadt"
+          ]
+        },
+        {
+          "name": "Peter Groche",
+          "openalex_id": "A5022842777",
+          "orcid": "https://orcid.org/0000-0001-7927-9523",
+          "institutions": [
+            "Technical University of Darmstadt"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-06-04",
+      "abstract": "Abstract In consequence of high cost pressure and the progressive globalization of markets, blanking, which represents the most economical process in the value chain of manufacturing companies, is particularly dependent on reducing machine downtimes and increasing the degree of utilization. For this purpose, it is necessary to be able to make a real-time prediction about the current and future process conditions even at high production rates. Therefore, this study investigates the influence of data acquisition, preprocessing and transformation on the performance of a multiclass support vector machine to classify abrasive wear states during blanking based on force signals. The performance of the model was quantitatively evaluated based on the model accuracy and the separability of the classes. As a result, it was shown, that the deviation of time series represents the key parameter for the resulting performance of the classification model and strongly depends on the sensor type and position, the preprocessing procedure as well as the feature extraction and selection. Furthermore, it is shown that the consideration of domain knowledge in the phases of data acquisition, preprocessing and transformation improves the performance of the classification model and is essential to successfully implement AI projects. Summarizing the findings of this study, trustworthy data sets play a crucial role for implementing an automated process monitoring as a basis for resilient manufacturing systems.",
+      "cited_by_count": 65,
+      "type": "article",
+      "source": {
+        "name": "Journal of Intelligent Manufacturing",
+        "type": "journal",
+        "issn": [
+          "0956-5515",
+          "1572-8145"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10845-021-01789-w.pdf"
+      },
+      "topics": [
+        "Advanced machining processes and optimization",
+        "Advanced Surface Polishing Techniques",
+        "Industrial Vision Systems and Defect Detection"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W3172636945"
+    },
+    {
+      "openalex_id": "W4282835773",
+      "doi": "10.1080/10447318.2022.2081284",
+      "title": "The Use of Responsible Artificial Intelligence Techniques in the Context of Loan Approval Processes",
+      "authors": [
+        {
+          "name": "Erasmo Purificato",
+          "openalex_id": "A5035879496",
+          "orcid": "https://orcid.org/0000-0002-5506-3020",
+          "institutions": [
+            "Leibniz Institute for Educational Media | Georg Eckert Institute",
+            "Otto-von-Guericke University Magdeburg"
+          ]
+        },
+        {
+          "name": "Flavio Lorenzo",
+          "openalex_id": "A5079410342"
+        },
+        {
+          "name": "Francesca Fallucchi",
+          "openalex_id": "A5024200617",
+          "orcid": "https://orcid.org/0000-0002-3288-044X",
+          "institutions": [
+            "Leibniz Institute for Educational Media | Georg Eckert Institute"
+          ]
+        },
+        {
+          "name": "Ernesto William De Luca",
+          "openalex_id": "A5048751530",
+          "orcid": "https://orcid.org/0000-0003-3621-4118",
+          "institutions": [
+            "Otto-von-Guericke University Magdeburg",
+            "Leibniz Institute for Educational Media | Georg Eckert Institute"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-12",
+      "abstract": "Despite the existing skepticism about the use of automatic systems in contexts where human knowledge and experience are considered indispensable (e.g., the granting of a mortgage, the prediction of stock prices, or the detection of cancers), our work aims to show how the use of explainability and fairness techniques can lead to the growth of a domain expert's trust and reliance on an artificial intelligence (AI) system. This article presents a system, applied to the context of loan approval processes, focusing on the two aforementioned ethical principles out of the four defined by the High-Level Expert Group on AI in the document \"Ethics Guidelines for Trustworthy AI,\" published in April 2019, in which the key requirements that AI systems should meet to be considered trustworthy are identified. The presented case study is realized within a proprietary framework composed of several components for supporting the user throughout the management of the whole life cycle of a machine learning model. The main approaches, consisting of providing an interpretation of the model's outputs and monitoring the model's decisions to detect and react to unfair behaviors, are described in more detail to compare our system within state-of-the-art related frameworks. Finally, a novel Trust & Reliance Scale is proposed for evaluating the system, and a usability test is performed to measure the user satisfaction with the effectiveness of the developed user interface; results are obtained, respectively, by the submission of the mentioned novel scale to bank domain experts and the usability questionnaire to a heterogeneous group composed of loan officers, data scientists, and researchers.",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Human-Computer Interaction",
+        "type": "journal",
+        "issn": [
+          "1044-7318",
+          "1532-7590"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W4282835773"
+    },
+    {
+      "openalex_id": "W4200017683",
+      "doi": "10.1016/j.dss.2021.113715",
+      "title": "Incorporating FAT and privacy aware AI modeling approaches into business decision making frameworks",
+      "authors": [
+        {
+          "name": "Dmitry Zhdanov",
+          "openalex_id": "A5012962081",
+          "orcid": "https://orcid.org/0000-0002-3349-7581",
+          "institutions": [
+            "Georgia State University"
+          ]
+        },
+        {
+          "name": "Sudip Bhattacharjee",
+          "openalex_id": "A5101746527",
+          "orcid": "https://orcid.org/0000-0002-1887-721X",
+          "institutions": [
+            "University of Connecticut"
+          ]
+        },
+        {
+          "name": "Mikhail A. Bragin",
+          "openalex_id": "A5023766412",
+          "orcid": "https://orcid.org/0000-0002-7783-9053",
+          "institutions": [
+            "University of Connecticut"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-28",
+      "abstract": null,
+      "cited_by_count": 41,
+      "type": "article",
+      "source": {
+        "name": "Decision Support Systems",
+        "type": "journal",
+        "issn": [
+          "0167-9236",
+          "1873-5797"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Privacy-Preserving Technologies in Data"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W4200017683"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

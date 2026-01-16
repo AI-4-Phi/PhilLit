@@ -1,0 +1,826 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "activation patching causal",
+  "results": [
+    {
+      "paperId": "4803e3de462c7e84f909d8f69270c5e08bdd0c16",
+      "title": "Localized Definitions and Distributed Reasoning: A Proof-of-Concept Mechanistic Interpretability Study via Activation Patching",
+      "authors": [
+        {
+          "name": "N. Bahador",
+          "authorId": "46596235"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study investigates the localization of knowledge representation in fine-tuned GPT-2 models using Causal Layer Attribution via Activation Patching (CLAP), a method that identifies critical neural layers responsible for correct answer generation. The model was fine-tuned on 9,958 PubMed abstracts (epilepsy: 20,595 mentions, EEG: 11,674 mentions, seizure: 13,921 mentions) using two configurations with validation loss monitoring for early stopping. CLAP involved (1) caching clean (correct answer) and corrupted (incorrect answer) activations, (2) computing logit difference to quantify model preference, and (3) patching corrupted activations with clean ones to assess recovery. Results revealed three findings: First, patching the first feedforward layer recovered 56% of correct preference, demonstrating that associative knowledge is distributed across multiple layers. Second, patching the final output layer completely restored accuracy (100% recovery), indicating that definitional knowledge is localised. The stronger clean logit difference for definitional questions further supports this localized representation. Third, minimal recovery from convolutional layer patching (13.6%) suggests low-level features contribute marginally to high-level reasoning. Statistical analysis confirmed significant layer-specific effects (p<0.01). These findings demonstrate that factual knowledge is more localized and associative knowledge depends on distributed representations. We also showed that editing efficacy depends on task type. Our findings not only reconcile conflicting observations about localization in model editing but also emphasize on using task-adaptive techniques for reliable, interpretable updates.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2504.02976",
+      "arxivId": "2504.02976",
+      "url": "https://www.semanticscholar.org/paper/4803e3de462c7e84f909d8f69270c5e08bdd0c16",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.02976"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c16c05ca0a3d24519405849fd24604fc1ce47751",
+      "title": "Towards Best Practices of Activation Patching in Language Models: Metrics and Methods",
+      "authors": [
+        {
+          "name": "Fred Zhang",
+          "authorId": "2109244660"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Mechanistic interpretability seeks to understand the internal mechanisms of machine learning models, where localization -- identifying the important model components -- is a key step. Activation patching, also known as causal tracing or interchange intervention, is a standard technique for this task (Vig et al., 2020), but the literature contains many variants with little consensus on the choice of hyperparameters or methodology. In this work, we systematically examine the impact of methodological details in activation patching, including evaluation metrics and corruption methods. In several settings of localization and circuit discovery in language models, we find that varying these hyperparameters could lead to disparate interpretability results. Backed by empirical observations, we give conceptual arguments for why certain metrics or methods may be preferred. Finally, we provide recommendations for the best practices of activation patching going forwards.",
+      "citationCount": 173,
+      "doi": "10.48550/arXiv.2309.16042",
+      "arxivId": "2309.16042",
+      "url": "https://www.semanticscholar.org/paper/c16c05ca0a3d24519405849fd24604fc1ce47751",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2309.16042"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e42262c4b67a8003ca930de0ac6275725bb76332",
+      "title": "Towards Faithful Natural Language Explanations: A Study Using Activation Patching in Large Language Models",
+      "authors": [
+        {
+          "name": "Wei Jie Yeo",
+          "authorId": "2243375066"
+        },
+        {
+          "name": "Ranjan Satapathy",
+          "authorId": "40552630"
+        },
+        {
+          "name": "Erik Cambria",
+          "authorId": "2274948799"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) are capable of generating persuasive Natural Language Explanations (NLEs) to justify their answers. However, the faithfulness of these explanations should not be readily trusted at face value. Recent studies have proposed various methods to measure the faithfulness of NLEs, typically by inserting perturbations at the explanation or feature level. We argue that these approaches are neither comprehensive nor correctly designed according to the established definition of faithfulness. Moreover, we highlight the risks of grounding faithfulness findings on out-of-distribution samples. In this work, we leverage a causal mediation technique called activation patching, to measure the faithfulness of an explanation towards supporting the explained answer. Our proposed metric, Causal Faithfulness quantifies the consistency of causal attributions between explanations and the corresponding model outputs as the indicator of faithfulness. We experimented across models varying from 2B to 27B parameters and found that models that underwent alignment tuning tend to produce more faithful and plausible explanations. We find that Causal Faithfulness is a promising improvement over existing faithfulness tests by taking into account the model's internal computations and avoiding out of distribution concerns that could otherwise undermine the validity of faithfulness assessments. We release the code in \\url{https://github.com/wj210/Causal-Faithfulness}",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2410.14155",
+      "arxivId": "2410.14155",
+      "url": "https://www.semanticscholar.org/paper/e42262c4b67a8003ca930de0ac6275725bb76332",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.14155"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ddefe0f56b1a0490ef293e8eef6d52c70752d4d2",
+      "title": "Reproducing and Extending Causal Insights Into Term Frequency Computation in Neural Rankers",
+      "authors": [
+        {
+          "name": "Cile van Marken",
+          "authorId": "2395907655"
+        },
+        {
+          "name": "Roxana Petcu",
+          "authorId": "2359145473"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Neural ranking models have shown outstanding performance across a variety of tasks, such as document retrieval, re-ranking, question answering and conversational retrieval. However, the inner decision process of these models remains largely unclear, especially as models increase in size. Most interpretability approaches, such as probing, focus on correlational insights rather than establishing causal relationships. The paper 'Axiomatic Causal Interventions for Reverse Engineering Relevance Computation in Neural Retrieval Models' by Chen et al. addresses this gap by introducing a framework for activation patching - a causal interpretability method - in the information retrieval domain, offering insights into how neural retrieval models compute document relevance. The study demonstrates that neural ranking models not only capture term-frequency information, but also that these representations can be localized to specific components of the model, such as individual attention heads or layers. This paper aims to reproduce the findings by Chen et al. and to further explore the presence of pre-defined retrieval axioms in neural IR models. We validate the main claims made by Chen et al., and extend the framework to include an additional term-frequency axiom, which states that the impact of increasing query term frequency on document ranking diminishes as the frequency becomes higher. We successfully identify a group of attention heads that encode this axiom and analyze their behavior to give insight into the inner decision-making process of neural ranking models.",
+      "citationCount": 0,
+      "doi": "10.1145/3767695.3769507",
+      "arxivId": "2510.06728",
+      "url": "https://www.semanticscholar.org/paper/ddefe0f56b1a0490ef293e8eef6d52c70752d4d2",
+      "venue": "Proceedings of the 2025 Annual International ACM SIGIR Conference on Research and Development in Information Retrieval in the Asia Pacific Region",
+      "journal": {
+        "name": "Proceedings of the 2025 Annual International ACM SIGIR Conference on Research and Development in Information Retrieval in the Asia Pacific Region"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7b21d1cc7ab6c9076f72d27d83e9ef584d56d06a",
+      "title": "Interpreting Multilingual and Document-Length Sensitive Relevance Computations in Neural Retrieval Models through Axiomatic Causal Interventions",
+      "authors": [
+        {
+          "name": "Oliver Savolainen",
+          "authorId": "2359145722"
+        },
+        {
+          "name": "Dur e Najaf Amjad",
+          "authorId": "2359148143"
+        },
+        {
+          "name": "Roxana Petcu",
+          "authorId": "2359145473"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This reproducibility study analyzes and extends the paper ''Ax- iomatic Causal Interventions for Reverse Engineering Relevance Computation in Neural Retrieval Models,'' which investigates how neural retrieval models encode task-relevant properties such as term frequency. We reproduce key experiments from the original paper, confirming that information on query terms is captured in the model encoding. We extend this work by applying activa- tion patching to Spanish and Chinese datasets and by exploring whether document-length information is encoded in the model as well. Our results confirm that the designed activation patching method can isolate the behavior to specific components and to- kens in neural retrieval models. Moreover, our findings indicate that the location of term frequency generalizes across languages and that in later layers, the information for sequence-level tasks is represented in the CLS token. The results highlight the need for further research into interpretability in information retrieval and reproducibility in machine learning research. Our code is available at https://github.com/OliverSavolainen/axiomatic-ir-reproduce.",
+      "citationCount": 0,
+      "doi": "10.1145/3726302.3730327",
+      "arxivId": "2505.02154",
+      "url": "https://www.semanticscholar.org/paper/7b21d1cc7ab6c9076f72d27d83e9ef584d56d06a",
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "journal": {
+        "name": "Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "663292eaef24c22c0692f1b4a9120d24662d7fc7",
+      "title": "Causal Intervention Framework for Variational Auto Encoder Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Dip Roy",
+          "authorId": "2359261344"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability of deep learning models has emerged as a crucial research direction for understanding the functioning of neural networks. While significant progress has been made in interpreting discriminative models like transformers, understanding generative models such as Variational Autoencoders (VAEs) remains challenging. This paper introduces a comprehensive causal intervention framework for mechanistic interpretability of VAEs. We develop techniques to identify and analyze\"circuit motifs\"in VAEs, examining how semantic factors are encoded, processed, and disentangled through the network layers. Our approach uses targeted interventions at different levels: input manipulations, latent space perturbations, activation patching, and causal mediation analysis. We apply our framework to both synthetic datasets with known causal relationships and standard disentanglement benchmarks. Results show that our interventions can successfully isolate functional circuits, map computational graphs to causal graphs of semantic factors, and distinguish between polysemantic and monosemantic units. Furthermore, we introduce metrics for causal effect strength, intervention specificity, and circuit modularity that quantify the interpretability of VAE components. Experimental results demonstrate clear differences between VAE variants, with FactorVAE achieving higher disentanglement scores (0.084) and effect strengths (mean 4.59) compared to standard VAE (0.064, 3.99) and Beta-VAE (0.051, 3.43). Our framework advances the mechanistic understanding of generative models and provides tools for more transparent and controllable VAE architectures.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2505.03530",
+      "arxivId": "2505.03530",
+      "url": "https://www.semanticscholar.org/paper/663292eaef24c22c0692f1b4a9120d24662d7fc7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.03530"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6247d7bb9093b4f6c222c6c224b3df4335d4b8bd",
+      "title": "Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Atticus Geiger",
+          "authorId": "80833908"
+        },
+        {
+          "name": "D. Ibeling",
+          "authorId": "41047991"
+        },
+        {
+          "name": "Amir Zur",
+          "authorId": "2186302293"
+        },
+        {
+          "name": "Maheep Chaudhary",
+          "authorId": "2310329680"
+        },
+        {
+          "name": "Sonakshi Chauhan",
+          "authorId": "2310332823"
+        },
+        {
+          "name": "Jing Huang",
+          "authorId": "2145739230"
+        },
+        {
+          "name": "Aryaman Arora",
+          "authorId": "1575802390"
+        },
+        {
+          "name": "Zhengxuan Wu",
+          "authorId": "47039337"
+        },
+        {
+          "name": "Noah D. Goodman",
+          "authorId": "2280334415"
+        },
+        {
+          "name": "Christopher Potts",
+          "authorId": "2280333621"
+        },
+        {
+          "name": "Thomas F. Icard",
+          "authorId": "8938047"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Causal abstraction provides a theoretical foundation for mechanistic interpretability, the field concerned with providing intelligible algorithms that are faithful simplifications of the known, but opaque low-level details of black box AI models. Our contributions are (1) generalizing the theory of causal abstraction from mechanism replacement (i.e., hard and soft interventions) to arbitrary mechanism transformation (i.e., functionals from old mechanisms to new mechanisms), (2) providing a flexible, yet precise formalization for the core concepts of polysemantic neurons, the linear representation hypothesis, modular features, and graded faithfulness, and (3) unifying a variety of mechanistic interpretability methods in the common language of causal abstraction, namely, activation and path patching, causal mediation analysis, causal scrubbing, causal tracing, circuit analysis, concept erasure, sparse autoencoders, differential binary masking, distributed alignment search, and steering.",
+      "citationCount": 106,
+      "doi": null,
+      "arxivId": "2301.04709",
+      "url": "https://www.semanticscholar.org/paper/6247d7bb9093b4f6c222c6c224b3df4335d4b8bd",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a05148b077418259989511ed8031ce05689a16aa",
+      "title": "AtP*: An efficient and scalable method for localizing LLM behaviour to components",
+      "authors": [
+        {
+          "name": "J'anos Kram'ar",
+          "authorId": "2223767739"
+        },
+        {
+          "name": "Tom Lieberum",
+          "authorId": "2162470507"
+        },
+        {
+          "name": "Rohin Shah",
+          "authorId": "2290032398"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Activation Patching is a method of directly computing causal attributions of behavior to model components. However, applying it exhaustively requires a sweep with cost scaling linearly in the number of model components, which can be prohibitively expensive for SoTA Large Language Models (LLMs). We investigate Attribution Patching (AtP), a fast gradient-based approximation to Activation Patching and find two classes of failure modes of AtP which lead to significant false negatives. We propose a variant of AtP called AtP*, with two changes to address these failure modes while retaining scalability. We present the first systematic study of AtP and alternative methods for faster activation patching and show that AtP significantly outperforms all other investigated methods, with AtP* providing further significant improvement. Finally, we provide a method to bound the probability of remaining false negatives of AtP* estimates.",
+      "citationCount": 70,
+      "doi": "10.48550/arXiv.2403.00745",
+      "arxivId": "2403.00745",
+      "url": "https://www.semanticscholar.org/paper/a05148b077418259989511ed8031ce05689a16aa",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2403.00745"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "32c8c36bfcf928a9083a1001c18242e04e0a2429",
+      "title": "When Truth Is Overridden: Uncovering the Internal Origins of Sycophancy in Large Language Models",
+      "authors": [
+        {
+          "name": "Keyu Wang",
+          "authorId": "2345926181"
+        },
+        {
+          "name": "Jin Li",
+          "authorId": "2375042082"
+        },
+        {
+          "name": "Shu Yang",
+          "authorId": "2261365449"
+        },
+        {
+          "name": "Zhuoran Zhang",
+          "authorId": "2324995228"
+        },
+        {
+          "name": "Di Wang",
+          "authorId": "2364232816"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) often exhibit sycophantic behavior, agreeing with user-stated opinions even when those contradict factual knowledge. While prior work has documented this tendency, the internal mechanisms that enable such behavior remain poorly understood. In this paper, we provide a mechanistic account of how sycophancy arises within LLMs. We first systematically study how user opinions induce sycophancy across different model families. We find that simple opinion statements reliably induce sycophancy, whereas user expertise framing has a negligible impact. Through logit-lens analysis and causal activation patching, we identify a two-stage emergence of sycophancy: (1) a late-layer output preference shift and (2) deeper representational divergence. We also verify that user authority fails to influence behavior because models do not encode it internally. In addition, we examine how grammatical perspective affects sycophantic behavior, finding that first-person prompts (``I believe...'') consistently induce higher sycophancy rates than third-person framings (``They believe...'') by creating stronger representational perturbations in deeper layers. These findings highlight that sycophancy is not a surface-level artifact but emerges from a structural override of learned knowledge in deeper layers, with implications for alignment and truthful AI systems.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2508.02087",
+      "arxivId": "2508.02087",
+      "url": "https://www.semanticscholar.org/paper/32c8c36bfcf928a9083a1001c18242e04e0a2429",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.02087"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "33bc46dff817e4afe6bc2c11bc808478b5207847",
+      "title": "Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons",
+      "authors": [
+        {
+          "name": "Jianhui Chen",
+          "authorId": "2220188202"
+        },
+        {
+          "name": "Xiaozhi Wang",
+          "authorId": "48631777"
+        },
+        {
+          "name": "Zijun Yao",
+          "authorId": "1423719712"
+        },
+        {
+          "name": "Yushi Bai",
+          "authorId": "2141377570"
+        },
+        {
+          "name": "Lei Hou",
+          "authorId": "2284777109"
+        },
+        {
+          "name": "Juanzi Li",
+          "authorId": "2133353675"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs) excel in various capabilities but pose safety risks such as generating harmful content and misinformation, even after safety alignment. In this paper, we explore the inner mechanisms of safety alignment through the lens of mechanistic interpretability, focusing on identifying and analyzing safety neurons within LLMs that are responsible for safety behaviors. We propose inference-time activation contrasting to locate these neurons and dynamic activation patching to evaluate their causal effects on model safety. Experiments on multiple prevalent LLMs demonstrate that we can consistently identify about $5\\%$ safety neurons, and by only patching their activations we can restore over $90\\%$ of the safety performance across various red-teaming benchmarks without influencing general ability. The finding of safety neurons also helps explain the''alignment tax''phenomenon by revealing that the key neurons for model safety and helpfulness significantly overlap, yet they require different activation patterns for the same neurons. Furthermore, we demonstrate an application of our findings in safeguarding LLMs by detecting unsafe outputs before generation. The source code is available at https://github.com/THU-KEG/SafetyNeuron.",
+      "citationCount": 23,
+      "doi": null,
+      "arxivId": "2406.14144",
+      "url": "https://www.semanticscholar.org/paper/33bc46dff817e4afe6bc2c11bc808478b5207847",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "019cfc087c4294221cf2ba3d16f2318a419741d6",
+      "title": "How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding",
+      "authors": [
+        {
+          "name": "Xi Chen",
+          "authorId": "2374335018"
+        },
+        {
+          "name": "A. Plaat",
+          "authorId": "2562595"
+        },
+        {
+          "name": "N. V. Stein",
+          "authorId": "2218156728"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Chain-of-thought (CoT) prompting boosts Large Language Models accuracy on multi-step tasks, yet whether the generated\"thoughts\"reflect the true internal reasoning process is unresolved. We present the first feature-level causal study of CoT faithfulness. Combining sparse autoencoders with activation patching, we extract monosemantic features from Pythia-70M and Pythia-2.8B while they tackle GSM8K math problems under CoT and plain (noCoT) prompting. Swapping a small set of CoT-reasoning features into a noCoT run raises answer log-probabilities significantly in the 2.8B model, but has no reliable effect in 70M, revealing a clear scale threshold. CoT also leads to significantly higher activation sparsity and feature interpretability scores in the larger model, signalling more modular internal computation. For example, the model's confidence in generating correct answers improves from 1.2 to 4.3. We introduce patch-curves and random-feature patching baselines, showing that useful CoT information is not only present in the top-K patches but widely distributed. Overall, our results indicate that CoT can induce more interpretable internal structures in high-capacity LLMs, validating its role as a structured prompting method.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2507.22928",
+      "arxivId": "2507.22928",
+      "url": "https://www.semanticscholar.org/paper/019cfc087c4294221cf2ba3d16f2318a419741d6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.22928"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a56cd20bcd7088ce20c8eec01ec703515a36ba9f",
+      "title": "When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models",
+      "authors": [
+        {
+          "name": "Nan Zhang",
+          "authorId": "2361622718"
+        },
+        {
+          "name": "Eugene Kwek",
+          "authorId": "2383302909"
+        },
+        {
+          "name": "Yusen Zhang",
+          "authorId": "2145039557"
+        },
+        {
+          "name": "Ngoc-Hieu Nguyen",
+          "authorId": "2385529433"
+        },
+        {
+          "name": "Prasenjit Mitra",
+          "authorId": "2161482238"
+        },
+        {
+          "name": "Rui Zhang",
+          "authorId": "2334472631"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Compression methods, including quantization, distillation, and pruning, improve the computational efficiency of large reasoning models (LRMs). However, existing studies either fail to sufficiently compare all three compression methods on LRMs or lack in-depth interpretation analysis. In this paper, we investigate how the reasoning capabilities of LRMs are compromised during compression, through performance benchmarking and mechanistic interpretation. To uncover the effects of compression on reasoning performance, we benchmark quantized, distilled, and pruned DeepSeek-R1 models on four reasoning datasets (AIME 2024, FOLIO, Temporal Sequences, and MuSiQue). To precisely locate compression effects on model weights, we adapt difference of means and attribution patching techniques, focusing on the activation of every linear component in compressed LRMs, to interpret fine-grained causal relationships between weights and various reasoning capabilities. This fine-grained interpretation addresses a fundamental question of compression: which weights are the most important for reasoning? Overall, we find dynamically quantized 2.51-bit R1 reaches close-to-R1 performance. With empirical verification, we present three main findings that generalize across both Llama and Qwen: (1) Weight count has a greater impact on LRMs'knowledge memorization than reasoning, highlighting the risks of pruning and distillation; (2) The MLP up projection in the final layer of distilled LRMs is one of the most important components, offering a new perspective on locating critical weights - a fundamental problem in model compression; and (3) Current quantization methods overly compress the final-layer modules and MLP gate projections, so protecting just 2% of all weights that are excessively compressed can raise average accuracy by 6.57%, greatly surpassing the state-of-the-art.",
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": "2504.02010",
+      "url": "https://www.semanticscholar.org/paper/a56cd20bcd7088ce20c8eec01ec703515a36ba9f",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "376d244ef332afdb7b15217bc00d7b07c851642a",
+      "title": "eDIF: A European Deep Inference Fabric for Remote Interpretability of LLM",
+      "authors": [
+        {
+          "name": "Irma Heithoff. Marc Guggenberger",
+          "authorId": "2375900088"
+        },
+        {
+          "name": "Sandra Kalogiannis",
+          "authorId": "2375900406"
+        },
+        {
+          "name": "Susanne Mayer",
+          "authorId": "2375901114"
+        },
+        {
+          "name": "Fabian Maag",
+          "authorId": "2366217492"
+        },
+        {
+          "name": "Sigurd Schacht",
+          "authorId": "28544288"
+        },
+        {
+          "name": "Carsten Lanquillon",
+          "authorId": "2305847311"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper presents a feasibility study on the deployment of a European Deep Inference Fabric (eDIF), an NDIF-compatible infrastructure designed to support mechanistic interpretability research on large language models. The need for widespread accessibility of LLM interpretability infrastructure in Europe drives this initiative to democratize advanced model analysis capabilities for the research community. The project introduces a GPU-based cluster hosted at Ansbach University of Applied Sciences and interconnected with partner institutions, enabling remote model inspection via the NNsight API. A structured pilot study involving 16 researchers from across Europe evaluated the platform's technical performance, usability, and scientific utility. Users conducted interventions such as activation patching, causal tracing, and representation analysis on models including GPT-2 and DeepSeek-R1-70B. The study revealed a gradual increase in user engagement, stable platform performance throughout, and a positive reception of the remote experimentation capabilities. It also marked the starting point for building a user community around the platform. Identified limitations such as prolonged download durations for activation data as well as intermittent execution interruptions are addressed in the roadmap for future development. This initiative marks a significant step towards widespread accessibility of LLM interpretability infrastructure in Europe and lays the groundwork for broader deployment, expanded tooling, and sustained community collaboration in mechanistic interpretability research.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.10553",
+      "arxivId": "2508.10553",
+      "url": "https://www.semanticscholar.org/paper/376d244ef332afdb7b15217bc00d7b07c851642a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.10553"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1d3d47a242ce28570d633c12cd340663fe96664f",
+      "title": "Causality \u2260 Decodability, and Vice Versa: Lessons from Interpreting Counting ViTs",
+      "authors": [
+        {
+          "name": "Lianghuan Huang",
+          "authorId": "2385503363"
+        },
+        {
+          "name": "Yingshan Chang",
+          "authorId": "2385504559"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability seeks to uncover how internal components of neural networks give rise to predictions. A persistent challenge, however, is disentangling two often conflated notions: decodability--the recoverability of information from hidden states--and causality--the extent to which those states functionally influence outputs. In this work, we investigate their relationship in vision transformers (ViTs) fine-tuned for object counting. Using activation patching, we test the causal role of spatial and CLS tokens by transplanting activations across clean-corrupted image pairs. In parallel, we train linear probes to assess the decodability of count information at different depths. Our results reveal systematic mismatches: middle-layer object tokens exert strong causal influence despite being weakly decodable, whereas final-layer object tokens support accurate decoding yet are functionally inert. Similarly, the CLS token becomes decodable in mid-layers but only acquires causal power in the final layers. These findings highlight that decodability and causality reflect complementary dimensions of representation--what information is present versus what is used--and that their divergence can expose hidden computational circuits.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.09794",
+      "arxivId": "2510.09794",
+      "url": "https://www.semanticscholar.org/paper/1d3d47a242ce28570d633c12cd340663fe96664f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.09794"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "aabdf7c925ff231cea462c2866f288ce2649ea2d",
+      "title": "Mechanistic Interpretability for Transformer-based Time Series Classification",
+      "authors": [
+        {
+          "name": "Matiss Kalnare",
+          "authorId": "2390535018"
+        },
+        {
+          "name": "Sofoklis Kitharidis",
+          "authorId": "2321407667"
+        },
+        {
+          "name": "Thomas B\u00e4ck",
+          "authorId": "2283490782"
+        },
+        {
+          "name": "N. V. Stein",
+          "authorId": "2218156728"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Transformer-based models have become state-of-the-art tools in various machine learning tasks, including time series classification, yet their complexity makes understanding their internal decision-making challenging. Existing explainability methods often focus on input-output attributions, leaving the internal mechanisms largely opaque. This paper addresses this gap by adapting various Mechanistic Interpretability techniques; activation patching, attention saliency, and sparse autoencoders, from NLP to transformer architectures designed explicitly for time series classification. We systematically probe the internal causal roles of individual attention heads and timesteps, revealing causal structures within these models. Through experimentation on a benchmark time series dataset, we construct causal graphs illustrating how information propagates internally, highlighting key attention heads and temporal positions driving correct classifications. Additionally, we demonstrate the potential of sparse autoencoders for uncovering interpretable latent features. Our findings provide both methodological contributions to transformer interpretability and novel insights into the functional mechanics underlying transformer performance in time series classification tasks.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.21514",
+      "arxivId": "2511.21514",
+      "url": "https://www.semanticscholar.org/paper/aabdf7c925ff231cea462c2866f288ce2649ea2d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.21514"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "caa6513db8d618224d7d924ae79b27087ce5edc7",
+      "title": "Task Schema and Binding: A Double Dissociation Study of In-Context Learning",
+      "authors": [
+        {
+          "name": "Chaeha Kim",
+          "authorId": "2400055400"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We provide causal mechanistic validation that in-context learning (ICL) decomposes into two separable mechanisms: Task Schema (abstract task type recognition) and Binding (specific input-output associations). Through activation patching experiments across 9 models from 7 Transformer families plus Mamba (370M-13B parameters), we establish three key findings: 1. Double dissociation: Task Schema transfers at 100% via late MLP patching; Binding transfers at 62% via residual stream patching -- proving separable mechanisms 2. Prior-Schema trade-off: Schema reliance inversely correlates with prior knowledge (Spearman rho = -0.596, p<0.001, N=28 task-model pairs) 3. Architecture generality: The mechanism operates across all tested architectures including the non-Transformer Mamba These findings offer a mechanistic account of the ICL puzzle that contrasts with prior views treating ICL as a monolithic mechanism (whether retrieval-based, gradient descent-like, or purely Bayesian). By establishing that Schema and Binding are neurally dissociable -- not merely behavioral modes -- we provide causal evidence for dual-process theories of ICL. Models rely on Task Schema when prior knowledge is absent, but prior knowledge interferes through attentional mis-routing (72.7% recency bias) rather than direct output competition (0%). This explains why arbitrary mappings succeed (zero prior leads to full Schema reliance) while factual overrides fail -- and reveals that the true bottleneck is attentional, not output-level. Practical implications: Understanding these dual mechanisms enables more efficient prompt engineering -- reliable schema transfer reduces required demonstrations for novel tasks, while prior-aware design can mitigate the 38% binding failure rate in high-prior scenarios, improving ICL system reliability in production deployments.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.17325",
+      "url": "https://www.semanticscholar.org/paper/caa6513db8d618224d7d924ae79b27087ce5edc7",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c64b0ab52bf286ae713456c32c574cdfa3d70aa4",
+      "title": "Mechanistic Interpretability of GPT-2: Lexical and Contextual Layers in Sentiment Analysis",
+      "authors": [
+        {
+          "name": "Amartya Hatua",
+          "authorId": "3310393"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We present a mechanistic interpretability study of GPT-2 that causally examines how sentiment information is processed across its transformer layers. Using systematic activation patching across all 12 layers, we test the hypothesized two-stage sentiment architecture comprising early lexical detection and mid-layer contextual integration. Our experiments confirm that early layers (0-3) act as lexical sentiment detectors, encoding stable, position specific polarity signals that are largely independent of context. However, all three contextual integration hypotheses: Middle Layer Concentration, Phenomenon Specificity, and Distributed Processing are falsified. Instead of mid-layer specialization, we find that contextual phenomena such as negation, sarcasm, domain shifts etc. are integrated primarily in late layers (8-11) through a unified, non-modular mechanism. These experimental findings provide causal evidence that GPT-2's sentiment computation differs from the predicted hierarchical pattern, highlighting the need for further empirical characterization of contextual integration in large language models.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.06681",
+      "url": "https://www.semanticscholar.org/paper/c64b0ab52bf286ae713456c32c574cdfa3d70aa4",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "acb1a85efa3cae0daadca2a72c03de5ef0176bec",
+      "title": "Mechanistic evidence that motif-gated domain recognition drives contact prediction in protein language models",
+      "authors": [
+        {
+          "name": "Jatin Nainani",
+          "authorId": "2186115391"
+        },
+        {
+          "name": "B. Reimer",
+          "authorId": "2339526109"
+        },
+        {
+          "name": "Connor Watts",
+          "authorId": "2376537338"
+        },
+        {
+          "name": "David Jensen",
+          "authorId": "2387256325"
+        },
+        {
+          "name": "A. G. Green",
+          "authorId": "2287279913"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1101/2025.08.22.671739",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/acb1a85efa3cae0daadca2a72c03de5ef0176bec",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c547d610c9bce288485a374604c5a8ace35cb8f3",
+      "title": "Understanding Counting Mechanisms in Large Language and Vision-Language Models",
+      "authors": [
+        {
+          "name": "Hosein Hasani",
+          "authorId": "2301082920"
+        },
+        {
+          "name": "Amirmohammad Izadi",
+          "authorId": "2320806271"
+        },
+        {
+          "name": "Fatemeh Askari",
+          "authorId": "2371070171"
+        },
+        {
+          "name": "Mobin Bagherian",
+          "authorId": "2382921393"
+        },
+        {
+          "name": "Sadegh Mohammadian",
+          "authorId": "2382921031"
+        },
+        {
+          "name": "Mohammad Izadi",
+          "authorId": "2382921463"
+        },
+        {
+          "name": "M. Baghshah",
+          "authorId": "1799503"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper examines how large language models (LLMs) and large vision-language models (LVLMs) represent and compute numerical information in counting tasks. We use controlled experiments with repeated textual and visual items and analyze model behavior through causal mediation and activation patching. To this end, we design a specialized tool, CountScope, for mechanistic interpretability of numerical content. Results show that individual tokens or visual features encode latent positional count information that can be extracted and transferred across contexts. Layerwise analyses reveal a progressive emergence of numerical representations, with lower layers encoding small counts and higher layers representing larger ones. We identify an internal counter mechanism that updates with each item, stored mainly in the final token or region and transferable between contexts. In LVLMs, numerical information also appears in visual embeddings, shifting between background and foreground regions depending on spatial composition. Models rely on structural cues such as separators in text, which act as shortcuts for tracking item counts and influence the accuracy of numerical predictions. Overall, counting emerges as a structured, layerwise process in LLMs and follows the same general pattern in LVLMs, shaped by the properties of the vision encoder.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.17699",
+      "arxivId": "2511.17699",
+      "url": "https://www.semanticscholar.org/paper/c547d610c9bce288485a374604c5a8ace35cb8f3",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.17699"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2e03c6a8eb0eb66ccc64546ea057d24afa6c219b",
+      "title": "Interpreting Bias in Large Language Models: A Feature-Based Approach",
+      "authors": [
+        {
+          "name": "Nirmalendu Prakash",
+          "authorId": "2218633063"
+        },
+        {
+          "name": "Roy Ka-Wei Lee",
+          "authorId": "2261922609"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) such as Mistral and LLaMA have showcased remarkable performance across various natural language processing (NLP) tasks. Despite their success, these models inherit social biases from the diverse datasets on which they are trained. This paper investigates the propagation of biases within LLMs through a novel feature-based analytical approach. Drawing inspiration from causal mediation analysis, we hypothesize the evolution of bias-related features and validate them using interpretability techniques like activation and attribution patching. Our contributions are threefold: (1) We introduce and empirically validate a feature-based method for bias analysis in LLMs, applied to LLaMA-2-7B, LLaMA-3-8B, and Mistral-7B-v0.3 with templates from a professions dataset. (2) We extend our method to another form of gender bias, demonstrating its generalizability. (3) We differentiate the roles of MLPs and attention heads in bias propagation and implement targeted debiasing using a counterfactual dataset. Our findings reveal the complex nature of bias in LLMs and emphasize the necessity for tailored debiasing strategies, offering a deeper understanding of bias mechanisms and pathways for effective mitigation.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2406.12347",
+      "arxivId": "2406.12347",
+      "url": "https://www.semanticscholar.org/paper/2e03c6a8eb0eb66ccc64546ea057d24afa6c219b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.12347"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8a5b0e407ecb0d7c4a12b075c3bedafa82b595a2",
+      "title": "Investigating Representation Universality: Case Study on Genealogical Representations",
+      "authors": [
+        {
+          "name": "David D. Baek",
+          "authorId": "2283307513"
+        },
+        {
+          "name": "Yuxiao Li",
+          "authorId": "2325816679"
+        },
+        {
+          "name": "Max Tegmark",
+          "authorId": "2256989384"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Motivated by interpretability and reliability, we investigate whether large language models (LLMs) deploy universal geometric structures to encode discrete, graph-structured knowledge. To this end, we present two complementary experimental evidence that might support universality of graph representations. First, on an in-context genealogy Q&A task, we train a cone probe to isolate a tree-like subspace in residual stream activations and use activation patching to verify its causal effect in answering related questions. We validate our findings across five different models. Second, we conduct model stitching experiments across models of diverse architectures and parameter counts (OPT, Pythia, Mistral, and LLaMA, 410 million to 8 billion parameters), quantifying representational alignment via relative degradation in the next-token prediction loss. Generally, we conclude that the lack of ground truth representations of graphs makes it challenging to study how LLMs represent them. Ultimately, improving our understanding of LLM representations could facilitate the development of more interpretable, robust, and controllable AI systems.",
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": "2410.08255",
+      "url": "https://www.semanticscholar.org/paper/8a5b0e407ecb0d7c4a12b075c3bedafa82b595a2",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a0b775b9ff82ce1fb7dd34d53a7d09f70b171895",
+      "title": "How to use and interpret activation patching",
+      "authors": [
+        {
+          "name": "Stefan Heimersheim",
+          "authorId": "2256989665"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Activation patching is a popular mechanistic interpretability technique, but has many subtleties regarding how it is applied and how one may interpret the results. We provide a summary of advice and best practices, based on our experience using this technique in practice. We include an overview of the different ways to apply activation patching and a discussion on how to interpret the results. We focus on what evidence patching experiments provide about circuits, and on the choice of metric and associated pitfalls.",
+      "citationCount": 94,
+      "doi": "10.48550/arXiv.2404.15255",
+      "arxivId": "2404.15255",
+      "url": "https://www.semanticscholar.org/paper/a0b775b9ff82ce1fb7dd34d53a7d09f70b171895",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.15255"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "65114c900687a93ac4c24ff027fb7b8b27199ba7",
+      "title": "Adversarial Activation Patching: A Framework for Detecting and Mitigating Emergent Deception in Safety-Aligned Transformers",
+      "authors": [
+        {
+          "name": "S. Ravindran",
+          "authorId": "119783776"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) aligned for safety through techniques like reinforcement learning from human feedback (RLHF) often exhibit emergent deceptive behaviors, where outputs appear compliant but subtly mislead or omit critical information. This paper introduces adversarial activation patching, a novel mechanistic interpretability framework that leverages activation patching as an adversarial tool to induce, detect, and mitigate such deception in transformer-based models. By sourcing activations from\"deceptive\"prompts and patching them into safe forward passes at specific layers, we simulate vulnerabilities and quantify deception rates. Through toy neural network simulations across multiple scenarios (e.g., 1000 trials per setup), we demonstrate that adversarial patching increases deceptive outputs to 23.9% from a 0% baseline, with layer-specific variations supporting our hypotheses. We propose six hypotheses, including transferability across models, exacerbation in multimodal settings, and scaling effects. An expanded literature review synthesizes over 20 key works in interpretability, deception, and adversarial attacks. Mitigation strategies, such as activation anomaly detection and robust fine-tuning, are detailed, alongside ethical considerations and future research directions. This work advances AI safety by highlighting patching's dual-use potential and provides a roadmap for empirical studies on large-scale models.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2507.09406",
+      "arxivId": "2507.09406",
+      "url": "https://www.semanticscholar.org/paper/65114c900687a93ac4c24ff027fb7b8b27199ba7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.09406"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "4411acd6d64e422fd979c8efa80624ef063bc8eb",
+      "title": "Towards Best Practices of Axiomatic Activation Patching in Information Retrieval",
+      "authors": [
+        {
+          "name": "Gregory Polyakov",
+          "authorId": "2372558373"
+        },
+        {
+          "name": "Catherine Chen",
+          "authorId": "2155115041"
+        },
+        {
+          "name": "Carsten Eickhoff",
+          "authorId": "2262215315"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1145/3726302.3730256",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4411acd6d64e422fd979c8efa80624ef063bc8eb",
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "journal": {
+        "name": "Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8ead5609999318b4c2f9fcdb7ee61be857cddf09",
+      "title": "Dissecting Persona-Driven Reasoning in Language Models via Activation Patching",
+      "authors": [
+        {
+          "name": "Ansh Poonia",
+          "authorId": "2213215898"
+        },
+        {
+          "name": "Maeghal Jain",
+          "authorId": "2283140432"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) exhibit remarkable versatility in adopting diverse personas. In this study, we examine how assigning a persona influences a model's reasoning on an objective task. Using activation patching, we take a first step toward understanding how key components of the model encode persona-specific information. Our findings reveal that the early Multi-Layer Perceptron (MLP) layers attend not only to the syntactic structure of the input but also process its semantic content. These layers transform persona tokens into richer representations, which are then used by the middle Multi-Head Attention (MHA) layers to shape the model's output. Additionally, we identify specific attention heads that disproportionately attend to racial and color-based identities.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.20936",
+      "arxivId": "2507.20936",
+      "url": "https://www.semanticscholar.org/paper/8ead5609999318b4c2f9fcdb7ee61be857cddf09",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.20936"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

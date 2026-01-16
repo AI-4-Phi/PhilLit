@@ -1,0 +1,101 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "sandbagging strategic deception capability elicitation",
+  "results": [
+    {
+      "paperId": "435c9878ffd8b6645c6ac0fac56cd56c48441b9d",
+      "title": "Sandbagging in a Simple Survival Bandit Problem",
+      "authors": [
+        {
+          "name": "Joel Dyer",
+          "authorId": "1850710366"
+        },
+        {
+          "name": "Daniel Jarne Ornia",
+          "authorId": "72739871"
+        },
+        {
+          "name": "Nicholas Bishop",
+          "authorId": "2275196319"
+        },
+        {
+          "name": "Anisoara Calinescu",
+          "authorId": "2248887009"
+        },
+        {
+          "name": "Michael Wooldridge",
+          "authorId": "2248738109"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Evaluating the safety of frontier AI systems is an increasingly important concern, helping to measure the capabilities of such models and identify risks before deployment. However, it has been recognised that if AI agents are aware that they are being evaluated, such agents may deliberately hide dangerous capabilities or intentionally demonstrate suboptimal performance in safety-related tasks in order to be released and to avoid being deactivated or retrained. Such strategic deception - often known as\"sandbagging\"- threatens to undermine the integrity of safety evaluations. For this reason, it is of value to identify methods that enable us to distinguish behavioural patterns that demonstrate a true lack of capability from behavioural patterns that are consistent with sandbagging. In this paper, we develop a simple model of strategic deception in sequential decision-making tasks, inspired by the recently developed survival bandit framework. We demonstrate theoretically that this problem induces sandbagging behaviour in optimal rational agents, and construct a statistical test to distinguish between sandbagging and incompetence from sequences of test scores. In simulation experiments, we investigate the reliability of this test in allowing us to distinguish between such behaviours in bandit models. This work aims to establish a potential avenue for developing robust statistical procedures for use in the science of frontier model evaluations.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.26239",
+      "arxivId": "2509.26239",
+      "url": "https://www.semanticscholar.org/paper/435c9878ffd8b6645c6ac0fac56cd56c48441b9d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.26239"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1df49a1cbda6c516a0555f1bddf3da8bbc2cee4f",
+      "title": "Noise Injection Reveals Hidden Capabilities of Sandbagging Language Models",
+      "authors": [
+        {
+          "name": "Cameron Tice",
+          "authorId": "2333361756"
+        },
+        {
+          "name": "Philipp Alexander Kreer",
+          "authorId": "2077429588"
+        },
+        {
+          "name": "Nathan Helm-Burger",
+          "authorId": "2262217690"
+        },
+        {
+          "name": "Prithviraj Singh Shahani",
+          "authorId": "2333359380"
+        },
+        {
+          "name": "Fedor Ryzhenkov",
+          "authorId": "2333359000"
+        },
+        {
+          "name": "Jacob Haimes",
+          "authorId": "2333358883"
+        },
+        {
+          "name": "Felix Hofst\u00e4tter",
+          "authorId": "2310323657"
+        },
+        {
+          "name": "Teun van der Weij",
+          "authorId": "2221010426"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Capability evaluations play a crucial role in assessing and regulating frontier AI systems. The effectiveness of these evaluations faces a significant challenge: strategic underperformance, or ``sandbagging'', where models deliberately underperform during evaluation. Sandbagging can manifest either through explicit developer intervention or through unintended model behavior, presenting a fundamental obstacle to accurate capability assessment. We introduce a novel sandbagging detection method based on injecting noise of varying magnitudes into model weights. While non-sandbagging models show predictable performance degradation with increasing noise, we demonstrate that sandbagging models exhibit anomalous performance improvements, likely due to disruption of underperformance mechanisms while core capabilities remain partially intact. Through experiments across various model architectures, sizes, and sandbagging techniques, we establish this distinctive response pattern as a reliable, model-agnostic signal for detecting sandbagging behavior. Importantly, we find noise-injection is capable of eliciting the full performance of Mistral Large 120B in a setting where the model underperforms without being instructed to do so. Our findings provide a practical tool for AI evaluation and oversight, addressing a challenge in ensuring accurate capability assessment of frontier AI systems.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2412.01784",
+      "arxivId": "2412.01784",
+      "url": "https://www.semanticscholar.org/paper/1df49a1cbda6c516a0555f1bddf3da8bbc2cee4f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.01784"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

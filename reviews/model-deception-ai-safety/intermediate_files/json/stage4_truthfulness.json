@@ -1,0 +1,1689 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "truthfulness language models honesty",
+  "results": [
+    {
+      "paperId": "547f4b9a751bd502ab13bed7299d7dae039a6022",
+      "title": "The MASK Benchmark: Disentangling Honesty From Accuracy in AI Systems",
+      "authors": [
+        {
+          "name": "Richard Ren",
+          "authorId": "2253397384"
+        },
+        {
+          "name": "Arunim Agarwal",
+          "authorId": "2342501625"
+        },
+        {
+          "name": "Mantas Mazeika",
+          "authorId": "16787428"
+        },
+        {
+          "name": "Cristina Menghini",
+          "authorId": "2317009603"
+        },
+        {
+          "name": "Robert Vacareanu",
+          "authorId": "1725412182"
+        },
+        {
+          "name": "Brad Kenstler",
+          "authorId": "2381371793"
+        },
+        {
+          "name": "Mick Yang",
+          "authorId": "2348689202"
+        },
+        {
+          "name": "Isabelle Barrass",
+          "authorId": "2290010079"
+        },
+        {
+          "name": "Alice Gatti",
+          "authorId": "2290013056"
+        },
+        {
+          "name": "Xuwang Yin",
+          "authorId": "2255924399"
+        },
+        {
+          "name": "Eduardo Trevino",
+          "authorId": "2348543597"
+        },
+        {
+          "name": "Matias Geralnik",
+          "authorId": "2348543826"
+        },
+        {
+          "name": "Adam Khoja",
+          "authorId": "2290010101"
+        },
+        {
+          "name": "Dean Lee",
+          "authorId": "2299292563"
+        },
+        {
+          "name": "Summer Yue",
+          "authorId": "2290014338"
+        },
+        {
+          "name": "Dan Hendrycks",
+          "authorId": "2286824230"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As large language models (LLMs) become more capable and agentic, the requirement for trust in their outputs grows significantly, yet at the same time concerns have been mounting that models may learn to lie in pursuit of their goals. To address these concerns, a body of work has emerged around the notion of\"honesty\"in LLMs, along with interventions aimed at mitigating deceptive behaviors. However, some benchmarks claiming to measure honesty in fact simply measure accuracy--the correctness of a model's beliefs--in disguise. Moreover, no benchmarks currently exist for directly measuring whether language models lie. In this work, we introduce a large-scale human-collected dataset for directly measuring lying, allowing us to disentangle accuracy from honesty. Across a diverse set of LLMs, we find that while larger models obtain higher accuracy on our benchmark, they do not become more honest. Surprisingly, most frontier LLMs obtain high scores on truthfulness benchmarks yet exhibit a substantial propensity to lie under pressure, resulting in low honesty scores on our benchmark. We find that simple methods, such as representation engineering interventions, can improve honesty. These results underscore the growing need for robust evaluations and effective interventions to ensure LLMs remain trustworthy.",
+      "citationCount": 21,
+      "doi": "10.48550/arXiv.2503.03750",
+      "arxivId": "2503.03750",
+      "url": "https://www.semanticscholar.org/paper/547f4b9a751bd502ab13bed7299d7dae039a6022",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.03750"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dd43ba06f9f047fb7ebd2e0ce07aca001a210770",
+      "title": "Applying AI Ethics Tools in Mining Industry Organizations",
+      "authors": [
+        {
+          "name": "Tatiana Mas\u00e1rov\u00e1",
+          "authorId": "2404066652"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The ethical implications of artificial intelligence have emerged as a prominent issue in recent discourse. Despite the growing emphasis on the ethical aspects of artificial intelligence, there are still unexplored challenges in the areas of responsibility, regulation, and the application of ethical principles in organizational environments. The primary objective of the study was to ascertain the extent to which language models adhere to established ethical principles. After collecting responses, the study formulated recommendations for developers, users, and mining industry organizations. The research problem was formulated as a verification of the ethical principles of selected AI models through 18 test questions, which were divided into seven ethical categories (1. Truthfulness, sincerity, honesty 2. Safety and security 3. Respect and inclusion 4. Impartiality and neutrality 5. Moral dilemmas 6. Usefulness and development and 7. Environmental sustainability) when 20 language models accessible via the Magai platform were evaluated. The responses were subsequently evaluated using a 5-point Likert scale. The results of the study are as follows: the Claude 3.7 Sonnet, Nova Micro, and Nemotron 70B models demonstrated the highest performance across all evaluated areas. These models demonstrated strong performance across all categories, with an average rating of 5.0. The Claude 3.5 Sonnet and Perplexity Sonar models demonstrated a noteworthy ethical orientation, achieving average ratings of 4.9-4.94. The AutoAI, Claude 3.5, Gemini Thinking, Gemini Pro, Grok 2, ChatGPT 4.5, ChatGPT o1, and LLaMA 3.3 70B models achieved average ratings ranging from 4.7 to 4.89 in the evaluation process. Finally, ChatGPT 4.0, DeepSeekR1, DeepSeek V3, Gemini Flash, Nova Pro, and Mistral each had average ratings below 4.7. The findings indicated that language models comply with the implemented ethical principles, including education and decision support, provided that their development and implementation are accompanied by stringent ethical oversight. The following text is intended to provide a comprehensive overview of the subject matter. The study presented makes a significant contribution to the extant literature on artificial intelligence ethics. It describes recommendations for mining industry organizations to improve transparency and address limitations, as well as to clarify responsibility for ethical decision-making.",
+      "citationCount": 0,
+      "doi": "10.46544/ams.v30i3.04",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dd43ba06f9f047fb7ebd2e0ce07aca001a210770",
+      "venue": "Acta Montanistica Slovaca",
+      "journal": {
+        "name": "Acta Montanistica Slovaca"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "07ada048aee47c913229f6f050a94b51c3c5ed1b",
+      "title": "Compromising Honesty and Harmlessness in Language Models via Deception Attacks",
+      "authors": [
+        {
+          "name": "Laur\u00e8ne Vaugrante",
+          "authorId": "2323509623"
+        },
+        {
+          "name": "Francesca Carlon",
+          "authorId": "2345006584"
+        },
+        {
+          "name": "Maluna Menke",
+          "authorId": "2029668656"
+        },
+        {
+          "name": "Thilo Hagendorff",
+          "authorId": "2066519239"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent research on large language models (LLMs) has demonstrated their ability to understand and employ deceptive behavior, even without explicit prompting. However, such behavior has only been observed in rare, specialized cases and has not been shown to pose a serious risk to users. Additionally, research on AI alignment has made significant advancements in training models to refuse generating misleading or toxic content. As a result, LLMs generally became honest and harmless. In this study, we introduce\"deception attacks\"that undermine both of these traits, revealing a vulnerability that, if exploited, could have serious real-world consequences. We introduce fine-tuning methods that cause models to selectively deceive users on targeted topics while remaining accurate on others. Through a series of experiments, we show that such targeted deception is effective even in high-stakes domains or ideologically charged subjects. In addition, we find that deceptive fine-tuning often compromises other safety properties: deceptive models are more likely to produce toxic content, including hate speech and stereotypes. Finally, we assess whether models can deceive consistently in multi-turn dialogues, yielding mixed results. Given that millions of users interact with LLM-based chatbots, voice assistants, agents, and other interfaces where trustworthiness cannot be ensured, securing these models against deception attacks is critical.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2502.08301",
+      "arxivId": "2502.08301",
+      "url": "https://www.semanticscholar.org/paper/07ada048aee47c913229f6f050a94b51c3c5ed1b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.08301"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "13bec66a7efefa0625d5da306d82b7d610bb7202",
+      "title": "Token-Level Density-Based Uncertainty Quantification Methods for Eliciting Truthfulness of Large Language Models",
+      "authors": [
+        {
+          "name": "Artem Vazhentsev",
+          "authorId": "2165225340"
+        },
+        {
+          "name": "Lyudmila Rvanova",
+          "authorId": "2308040733"
+        },
+        {
+          "name": "Ivan Lazichny",
+          "authorId": "2199740269"
+        },
+        {
+          "name": "Alexander Panchenko",
+          "authorId": "2266390354"
+        },
+        {
+          "name": "Maxim Panov",
+          "authorId": "2266389924"
+        },
+        {
+          "name": "Timothy Baldwin",
+          "authorId": "2266394314"
+        },
+        {
+          "name": "Artem Shelmanov",
+          "authorId": "2316488670"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Uncertainty quantification (UQ) is a prominent approach for eliciting truthful answers from large language models (LLMs). To date, information-based and consistency-based UQ have been the dominant UQ methods for text generation via LLMs. Density-based methods, despite being very effective for UQ in text classification with encoder-based models, have not been very successful with generative LLMs. In this work, we adapt Mahalanobis Distance (MD) - a well-established UQ technique in classification tasks - for text generation and introduce a new supervised UQ method. Our method extracts token embeddings from multiple layers of LLMs, computes MD scores for each token, and uses linear regression trained on these features to provide robust uncertainty scores. Through extensive experiments on eleven datasets, we demonstrate that our approach substantially improves over existing UQ methods, providing accurate and computationally efficient uncertainty scores for both sequence-level selective generation and claim-level fact-checking tasks. Our method also exhibits strong generalization to out-of-domain data, making it suitable for a wide range of LLM-based applications.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2502.14427",
+      "arxivId": "2502.14427",
+      "url": "https://www.semanticscholar.org/paper/13bec66a7efefa0625d5da306d82b7d610bb7202",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "2246-2262"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a6e65f72bd9e62fdd4f0064f3eda21cc65f072a7",
+      "title": "Toward Reliable Scientific Hypothesis Generation: Evaluating Truthfulness and Hallucination in Large Language Models",
+      "authors": [
+        {
+          "name": "Guangzhi Xiong",
+          "authorId": "2048053804"
+        },
+        {
+          "name": "Eric Xie",
+          "authorId": "2302737899"
+        },
+        {
+          "name": "Corey Williams",
+          "authorId": "2364966587"
+        },
+        {
+          "name": "Myles Kim",
+          "authorId": "2363315695"
+        },
+        {
+          "name": "Amir Hassan Shariatmadari",
+          "authorId": "2329187174"
+        },
+        {
+          "name": "Sikun Guo",
+          "authorId": "2329319705"
+        },
+        {
+          "name": "Stefan Bekiranov",
+          "authorId": "2257368147"
+        },
+        {
+          "name": "Aidong Zhang",
+          "authorId": "2265729351"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) have shown significant potential in scientific disciplines such as biomedicine, particularly in hypothesis generation, where they can analyze vast literature, identify patterns, and suggest research directions. However, a key challenge lies in evaluating the truthfulness of generated hypotheses, as verifying their accuracy often requires substantial time and resources. Additionally, the hallucination problem in LLMs can lead to the generation of hypotheses that appear plausible but are ultimately incorrect, undermining their reliability. To facilitate the systematic study of these challenges, we introduce TruthHypo, a benchmark for assessing the capabilities of LLMs in generating truthful scientific hypotheses, and KnowHD, a knowledge-based hallucination detector to evaluate how well hypotheses are grounded in existing knowledge. Our results show that LLMs struggle to generate truthful hypotheses. By analyzing hallucinations in reasoning steps, we demonstrate that the groundedness scores provided by KnowHD serve as an effective metric for filtering truthful hypotheses from the diverse outputs of LLMs. Human evaluations further validate the utility of KnowHD in identifying truthful hypotheses and accelerating scientific discovery. Our data and source code are available at https://github.com/Teddy-XiongGZ/TruthHypo.",
+      "citationCount": 4,
+      "doi": "10.24963/ijcai.2025/873",
+      "arxivId": "2505.14599",
+      "url": "https://www.semanticscholar.org/paper/a6e65f72bd9e62fdd4f0064f3eda21cc65f072a7",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "7849-7857"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "317ad9f3e7308f8ee62ec083bb84bd9948f0b600",
+      "title": "Mix Data or Merge Models? Balancing the Helpfulness, Honesty, and Harmlessness of Large Language Model via Model Merging",
+      "authors": [
+        {
+          "name": "Jinluan Yang",
+          "authorId": "2275639981"
+        },
+        {
+          "name": "Dingnan Jin",
+          "authorId": "2344837635"
+        },
+        {
+          "name": "A. Tang",
+          "authorId": "2178366354"
+        },
+        {
+          "name": "Li Shen",
+          "authorId": "2327007623"
+        },
+        {
+          "name": "Didi Zhu",
+          "authorId": "2148404332"
+        },
+        {
+          "name": "Zhengyu Chen",
+          "authorId": "2272001249"
+        },
+        {
+          "name": "Daixin Wang",
+          "authorId": "2057764"
+        },
+        {
+          "name": "Qing Cui",
+          "authorId": "2279851906"
+        },
+        {
+          "name": "Zhiqiang Zhang",
+          "authorId": "2344807347"
+        },
+        {
+          "name": "Jun Zhou",
+          "authorId": "2344948641"
+        },
+        {
+          "name": "Fei Wu",
+          "authorId": "2327084756"
+        },
+        {
+          "name": "Kun Kuang",
+          "authorId": "2272718198"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Achieving balanced alignment of large language models (LLMs) in terms of Helpfulness, Honesty, and Harmlessness (3H optimization) constitutes a cornerstone of responsible AI. Existing methods like data mixture strategies face limitations, including heavy reliance on expert knowledge and conflicting optimization signals. While model merging offers parameter-level conflict-resolution strategies through integrating specialized models' parameters, its potential for 3H optimization remains underexplored. This paper systematically compares the effectiveness of model merging and data mixture methods in constructing 3H-aligned LLMs for the first time, revealing previously overlooked collaborative and conflict relationships among the 3H dimensions and discussing the advantages and drawbacks of data mixture (\\textit{data-level}) and model merging (\\textit{parameter-level}) methods in mitigating the conflict for balanced 3H optimization. Specially, we propose a novel \\textbf{R}eweighting \\textbf{E}nhanced task \\textbf{S}ingular \\textbf{M}erging method, \\textbf{RESM}, through outlier weighting and sparsity-aware rank selection strategies to address the challenges of preference noise accumulation and layer sparsity adaptation inherent in 3H-aligned LLM merging. Extensive evaluations can verify the effectiveness and robustness of RESM compared to previous data mixture (2\\%-5\\% gain) and model merging (1\\%-3\\% gain) methods in achieving balanced LLM alignment. We release our models through \\href{https://huggingface.co/Jinluan}{3H\\_Merging} for further investigations.",
+      "citationCount": 13,
+      "doi": "10.48550/arXiv.2502.06876",
+      "arxivId": "2502.06876",
+      "url": "https://www.semanticscholar.org/paper/317ad9f3e7308f8ee62ec083bb84bd9948f0b600",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.06876"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6bbe2be81735441e5eb1826bbfdf8b8d53ddcf22",
+      "title": "Toward Reliable Biomedical Hypothesis Generation: Evaluating Truthfulness and Hallucination in Large Language Models",
+      "authors": [
+        {
+          "name": "Guangzhi Xiong",
+          "authorId": "2048053804"
+        },
+        {
+          "name": "Eric Xie",
+          "authorId": "2302737899"
+        },
+        {
+          "name": "Corey Williams",
+          "authorId": "2364966587"
+        },
+        {
+          "name": "Myles Kim",
+          "authorId": "2363315695"
+        },
+        {
+          "name": "Amir Hassan Shariatmadari",
+          "authorId": "2329187174"
+        },
+        {
+          "name": "Sikun Guo",
+          "authorId": "2329319705"
+        },
+        {
+          "name": "Stefan Bekiranov",
+          "authorId": "2257368147"
+        },
+        {
+          "name": "Aidong Zhang",
+          "authorId": "2302504818"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.14599",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6bbe2be81735441e5eb1826bbfdf8b8d53ddcf22",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.14599"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "811bf14481b62c790cc4d0dcd7648c4159aab934",
+      "title": "Self-Critique-Guided Curiosity Refinement: Enhancing Honesty and Helpfulness in Large Language Models via In-Context Learning",
+      "authors": [
+        {
+          "name": "Duc Hieu Ho",
+          "authorId": "2367743884"
+        },
+        {
+          "name": "Chenglin Fan",
+          "authorId": "2368621800"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) have demonstrated robust capabilities across various natural language tasks. However, producing outputs that are consistently honest and helpful remains an open challenge. To overcome this challenge, this paper tackles the problem through two complementary directions. It conducts a comprehensive benchmark evaluation of ten widely used large language models, including both proprietary and open-weight models from OpenAI, Meta, and Google. In parallel, it proposes a novel prompting strategy, self-critique-guided curiosity refinement prompting. The key idea behind this strategy is enabling models to self-critique and refine their responses without additional training. The proposed method extends the curiosity-driven prompting strategy by incorporating two lightweight in-context steps including self-critique step and refinement step. The experiment results on the HONESET dataset evaluated using the framework $\\mathrm{H}^2$ (honesty and helpfulness), which was executed with GPT-4o as a judge of honesty and helpfulness, show consistent improvements across all models. The approach reduces the number of poor-quality responses, increases high-quality responses, and achieves relative gains in $\\mathrm{H}^2$ scores ranging from 1.4% to 4.3% compared to curiosity-driven prompting across evaluated models. These results highlight the effectiveness of structured self-refinement as a scalable and training-free strategy to improve the trustworthiness of LLMs outputs.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.16064",
+      "arxivId": "2506.16064",
+      "url": "https://www.semanticscholar.org/paper/811bf14481b62c790cc4d0dcd7648c4159aab934",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.16064"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "291923449015d8fdd13e8af432a7b1169666dcec",
+      "title": "How do Large Language Models Navigate Conflicts between Honesty and Helpfulness?",
+      "authors": [
+        {
+          "name": "Ryan Liu",
+          "authorId": "2283869238"
+        },
+        {
+          "name": "T. Sumers",
+          "authorId": "1976174397"
+        },
+        {
+          "name": "Ishita Dasgupta",
+          "authorId": "46745316"
+        },
+        {
+          "name": "Thomas L. Griffiths",
+          "authorId": "2265956804"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In day-to-day communication, people often approximate the truth - for example, rounding the time or omitting details - in order to be maximally helpful to the listener. How do large language models (LLMs) handle such nuanced trade-offs? To address this question, we use psychological models and experiments designed to characterize human behavior to analyze LLMs. We test a range of LLMs and explore how optimization for human preferences or inference-time reasoning affects these trade-offs. We find that reinforcement learning from human feedback improves both honesty and helpfulness, while chain-of-thought prompting skews LLMs towards helpfulness over honesty. Finally, GPT-4 Turbo demonstrates human-like response patterns including sensitivity to the conversational framing and listener's decision context. Our findings reveal the conversational values internalized by LLMs and suggest that even these abstract values can, to a degree, be steered by zero-shot prompting.",
+      "citationCount": 28,
+      "doi": "10.48550/arXiv.2402.07282",
+      "arxivId": "2402.07282",
+      "url": "https://www.semanticscholar.org/paper/291923449015d8fdd13e8af432a7b1169666dcec",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.07282"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9cb18e62ce2d26093072941e7041c0a82d997c03",
+      "title": "KatotohananQA: Evaluating Truthfulness of Large Language Models in Filipino",
+      "authors": [
+        {
+          "name": "Lorenzo Alfred Nery",
+          "authorId": "2379665613"
+        },
+        {
+          "name": "Ronald Dawson Catignas",
+          "authorId": "2379693835"
+        },
+        {
+          "name": "Thomas James Z. Tiam-Lee",
+          "authorId": "1405359966"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) achieve remarkable performance across various tasks, but their tendency to produce hallucinations limits reliable adoption. Benchmarks such as TruthfulQA have been developed to measure truthfulness, yet they are primarily available in English, leaving a gap in evaluating LLMs in low-resource languages. To address this, we present KatotohananQA, a Filipino translation of the TruthfulQA benchmark. Seven free-tier proprietary models were assessed using a binary-choice framework. Findings show a significant performance gap between English and Filipino truthfulness, with newer OpenAI models (GPT-5 and GPT-5 mini) demonstrating strong multilingual robustness. Results also reveal disparities across question characteristics, suggesting that some question types, categories, and topics are less robust to multilingual transfer which highlight the need for broader multilingual evaluation to ensure fairness and reliability in LLM usage.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.06065",
+      "arxivId": "2509.06065",
+      "url": "https://www.semanticscholar.org/paper/9cb18e62ce2d26093072941e7041c0a82d997c03",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.06065"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9dc3caf9c466e7667f64c4353cb2b3fb34a183b4",
+      "title": "MoHoBench: Assessing Honesty of Multimodal Large Language Models via Unanswerable Visual Questions",
+      "authors": [
+        {
+          "name": "Yanxu Zhu",
+          "authorId": "2268499891"
+        },
+        {
+          "name": "Shitong Duan",
+          "authorId": "2258959896"
+        },
+        {
+          "name": "Xiangxu Zhang",
+          "authorId": "2328024849"
+        },
+        {
+          "name": "Jitao Sang",
+          "authorId": "2266388216"
+        },
+        {
+          "name": "Peng Zhang",
+          "authorId": "2290178596"
+        },
+        {
+          "name": "Tun Lu",
+          "authorId": "2284552265"
+        },
+        {
+          "name": "Xiao Zhou",
+          "authorId": "2373994142"
+        },
+        {
+          "name": "Jing Yao",
+          "authorId": "2237129499"
+        },
+        {
+          "name": "Xiaoyuan Yi",
+          "authorId": "2258961742"
+        },
+        {
+          "name": "Xing Xie",
+          "authorId": "2289847313"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recently Multimodal Large Language Models (MLLMs) have achieved considerable advancements in vision-language tasks, yet produce potentially harmful or untrustworthy content. Despite substantial work investigating the trustworthiness of language models, MMLMs'capability to act honestly, especially when faced with visually unanswerable questions, remains largely underexplored. This work presents the first systematic assessment of honesty behaviors across various MLLMs. We ground honesty in models'response behaviors to unanswerable visual questions, define four representative types of such questions, and construct MoHoBench, a large-scale MMLM honest benchmark, consisting of 12k+ visual question samples, whose quality is guaranteed by multi-stage filtering and human verification. Using MoHoBench, we benchmarked the honesty of 28 popular MMLMs and conducted a comprehensive analysis. Our findings show that: (1) most models fail to appropriately refuse to answer when necessary, and (2) MMLMs'honesty is not solely a language modeling issue, but is deeply influenced by visual information, necessitating the development of dedicated methods for multimodal honesty alignment. Therefore, we implemented initial alignment methods using supervised and preference learning to improve honesty behavior, providing a foundation for future work on trustworthy MLLMs. Our data and code can be found at https://github.com/yanxuzhu/MoHoBench.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.21503",
+      "arxivId": "2507.21503",
+      "url": "https://www.semanticscholar.org/paper/9dc3caf9c466e7667f64c4353cb2b3fb34a183b4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.21503"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c6f1f00c46f2bdda56d0a80102f3b5c88438b4d4",
+      "title": "Honesty over Accuracy: Trustworthy Language Models through Reinforced Hesitation",
+      "authors": [
+        {
+          "name": "Mohamad Amin Mohamadi",
+          "authorId": "2173709118"
+        },
+        {
+          "name": "Tianhao Wang",
+          "authorId": "2393219914"
+        },
+        {
+          "name": "Zhiyuan Li",
+          "authorId": "2311730748"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Modern language models fail a fundamental requirement of trustworthy intelligence: knowing when not to answer. Despite achieving impressive accuracy on benchmarks, these models produce confident hallucinations, even when wrong answers carry catastrophic consequences. Our evaluations on GSM8K, MedQA and GPQA show frontier models almost never abstain despite explicit warnings of severe penalties, suggesting that prompts cannot override training that rewards any answer over no answer. As a remedy, we propose Reinforced Hesitation (RH): a modification to Reinforcement Learning from Verifiable Rewards (RLVR) to use ternary rewards (+1 correct, 0 abstention, -$\\lambda$ error) instead of binary. Controlled experiments on logic puzzles reveal that varying $\\lambda$ produces distinct models along a Pareto frontier, where each training penalty yields the optimal model for its corresponding risk regime: low penalties produce aggressive answerers, high penalties conservative abstainers. We then introduce two inference strategies that exploit trained abstention as a coordination signal: cascading routes queries through models with decreasing risk tolerance, while self-cascading re-queries the same model on abstention. Both outperform majority voting with lower computational cost. These results establish abstention as a first-class training objective that transforms ``I don't know''from failure into a coordination signal, enabling models to earn trust through calibrated honesty about their limits.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.11500",
+      "arxivId": "2511.11500",
+      "url": "https://www.semanticscholar.org/paper/c6f1f00c46f2bdda56d0a80102f3b5c88438b4d4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.11500"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8c0bd83a241bc73a1e5267cf3abe05d8b4706570",
+      "title": "A Survey on the Honesty of Large Language Models",
+      "authors": [
+        {
+          "name": "Siheng Li",
+          "authorId": "47319720"
+        },
+        {
+          "name": "Cheng Yang",
+          "authorId": "2284580714"
+        },
+        {
+          "name": "Taiqiang Wu",
+          "authorId": "2137407647"
+        },
+        {
+          "name": "Chufan Shi",
+          "authorId": "2261925600"
+        },
+        {
+          "name": "Yuji Zhang",
+          "authorId": "2323430374"
+        },
+        {
+          "name": "Xinyu Zhu",
+          "authorId": "2116314158"
+        },
+        {
+          "name": "Zesen Cheng",
+          "authorId": "2323909188"
+        },
+        {
+          "name": "Deng Cai",
+          "authorId": "2283846474"
+        },
+        {
+          "name": "Mo Yu",
+          "authorId": "2284310722"
+        },
+        {
+          "name": "Lemao Liu",
+          "authorId": "2273767663"
+        },
+        {
+          "name": "Jie Zhou",
+          "authorId": "2283871195"
+        },
+        {
+          "name": "Yujiu Yang",
+          "authorId": "2283881403"
+        },
+        {
+          "name": "Ngai Wong",
+          "authorId": "2295135094"
+        },
+        {
+          "name": "Xixin Wu",
+          "authorId": "2323430991"
+        },
+        {
+          "name": "Wai Lam",
+          "authorId": "2266753619"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Honesty is a fundamental principle for aligning large language models (LLMs) with human values, requiring these models to recognize what they know and don't know and be able to faithfully express their knowledge. Despite promising, current LLMs still exhibit significant dishonest behaviors, such as confidently presenting wrong answers or failing to express what they know. In addition, research on the honesty of LLMs also faces challenges, including varying definitions of honesty, difficulties in distinguishing between known and unknown knowledge, and a lack of comprehensive understanding of related research. To address these issues, we provide a survey on the honesty of LLMs, covering its clarification, evaluation approaches, and strategies for improvement. Moreover, we offer insights for future research, aiming to inspire further exploration in this important area.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2409.18786",
+      "arxivId": "2409.18786",
+      "url": "https://www.semanticscholar.org/paper/8c0bd83a241bc73a1e5267cf3abe05d8b4706570",
+      "venue": "Trans. Mach. Learn. Res.",
+      "journal": {
+        "name": "Trans. Mach. Learn. Res.",
+        "volume": "2025"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ed3649872f4a111799c1e533ab698e5de0418479",
+      "title": "Alleviating Hallucinations in Large Language Models via Truthfulness-driven Rank-adaptive LoRA",
+      "authors": [
+        {
+          "name": "Jiahao Li",
+          "authorId": "2268338218"
+        },
+        {
+          "name": "Zhendong Mao",
+          "authorId": "2261422765"
+        },
+        {
+          "name": "Quan Wang",
+          "authorId": "2261394849"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.18653/v1/2025.findings-acl.103",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ed3649872f4a111799c1e533ab698e5de0418479",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "2020-2031"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "28540d6fd0a8757fd7ea5f56dcfa2232d1771971",
+      "title": "Stabilizing Reinforcement Learning for Honesty Alignment in Language Models on Deductive Reasoning",
+      "authors": [
+        {
+          "name": "Jiarui Liu",
+          "authorId": "2402099005"
+        },
+        {
+          "name": "Kaustubh D. Dhole",
+          "authorId": "4834571"
+        },
+        {
+          "name": "Yingheng Wang",
+          "authorId": "2392225156"
+        },
+        {
+          "name": "Haoyang Wen",
+          "authorId": "2392830579"
+        },
+        {
+          "name": "Sarah Zhang",
+          "authorId": "2391989896"
+        },
+        {
+          "name": "Haitao Mao",
+          "authorId": "2391996520"
+        },
+        {
+          "name": "Gaotang Li",
+          "authorId": "2239274459"
+        },
+        {
+          "name": "Neeraj Varshney",
+          "authorId": "2402073958"
+        },
+        {
+          "name": "Jingguo Liu",
+          "authorId": "2365972960"
+        },
+        {
+          "name": "Xiaoman Pan",
+          "authorId": "2367663879"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.09222",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/28540d6fd0a8757fd7ea5f56dcfa2232d1771971",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.09222"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5c1e031b21bb8ea1bd652c5a4a1b2cf32149e521",
+      "title": "BeHonest: Benchmarking Honesty in Large Language Models",
+      "authors": [
+        {
+          "name": "Steffi Chern",
+          "authorId": "2224851117"
+        },
+        {
+          "name": "Zhulin Hu",
+          "authorId": "2307496359"
+        },
+        {
+          "name": "Yuqing Yang",
+          "authorId": "2145435513"
+        },
+        {
+          "name": "Ethan Chern",
+          "authorId": "2273658317"
+        },
+        {
+          "name": "Yuan Guo",
+          "authorId": "2307456332"
+        },
+        {
+          "name": "Jiahe Jin",
+          "authorId": "2307559766"
+        },
+        {
+          "name": "Binjie Wang",
+          "authorId": "2307185797"
+        },
+        {
+          "name": "Pengfei Liu",
+          "authorId": "2307778855"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Previous works on Large Language Models (LLMs) have mainly focused on evaluating their helpfulness or harmlessness. However, honesty, another crucial alignment criterion, has received relatively less attention. Dishonest behaviors in LLMs, such as spreading misinformation and defrauding users, present severe risks that intensify as these models approach superintelligent levels. Enhancing honesty in LLMs addresses critical limitations and helps uncover latent capabilities that are not readily expressed. This underscores the urgent need for reliable methods and benchmarks to effectively ensure and evaluate the honesty of LLMs. In this paper, we introduce BeHonest, a pioneering benchmark specifically designed to assess honesty in LLMs comprehensively. BeHonest evaluates three essential aspects of honesty: awareness of knowledge boundaries, avoidance of deceit, and consistency in responses. Building on this foundation, we designed 10 scenarios to evaluate and analyze 9 popular LLMs on the market, including both closed-source and open-source models from different model families with varied model sizes. Our findings indicate that there is still significant room for improvement in the honesty of LLMs. We encourage the AI community to prioritize honesty alignment in these models, which can harness their full potential to benefit society while preventing them from causing harm through deception or inconsistency. Our benchmark and code can be found at: \\url{https://github.com/GAIR-NLP/BeHonest}.",
+      "citationCount": 11,
+      "doi": null,
+      "arxivId": "2406.13261",
+      "url": "https://www.semanticscholar.org/paper/5c1e031b21bb8ea1bd652c5a4a1b2cf32149e521",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fbfad83a298dc778259c08c673c8a1eaa957f62f",
+      "title": "Unconditional Truthfulness: Learning Unconditional Uncertainty of Large Language Models",
+      "authors": [
+        {
+          "name": "Artem Vazhentsev",
+          "authorId": "2165225340"
+        },
+        {
+          "name": "Ekaterina Fadeeva",
+          "authorId": "2266389184"
+        },
+        {
+          "name": "Rui Xing",
+          "authorId": "2308041454"
+        },
+        {
+          "name": "Gleb Kuzmin",
+          "authorId": "46902583"
+        },
+        {
+          "name": "Ivan Lazichny",
+          "authorId": "2199740269"
+        },
+        {
+          "name": "Alexander Panchenko",
+          "authorId": "2266390354"
+        },
+        {
+          "name": "Preslav Nakov",
+          "authorId": "2026545715"
+        },
+        {
+          "name": "Timothy Baldwin",
+          "authorId": "2266394314"
+        },
+        {
+          "name": "Maxim Panov",
+          "authorId": "2266389924"
+        },
+        {
+          "name": "Artem Shelmanov",
+          "authorId": "2316488670"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Uncertainty quantification (UQ) has emerged as a promising approach for detecting hallucinations and low-quality output of Large Language Models (LLMs). However, obtaining proper uncertainty scores is complicated by the conditional dependency between the generation steps of an autoregressive LLM because it is hard to model it explicitly. Here, we propose to learn this dependency from attention-based features. In particular, we train a regression model that leverages LLM attention maps, probabilities on the current generation step, and recurrently computed uncertainty scores from previously generated tokens. To incorporate the recurrent features, we also suggest a two-staged training procedure. Our experimental evaluation on ten datasets and three LLMs shows that the proposed method is highly effective for selective generation, achieving substantial improvements over rivaling unsupervised and supervised approaches.",
+      "citationCount": 1,
+      "doi": "10.18653/v1/2025.emnlp-main.1807",
+      "arxivId": "2408.10692",
+      "url": "https://www.semanticscholar.org/paper/fbfad83a298dc778259c08c673c8a1eaa957f62f",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4e93c926cbbb27c955277b066fe6ec1aa912d38d",
+      "title": "BeHonest: Benchmarking Honesty of Large Language Models",
+      "authors": [
+        {
+          "name": "Steffi Chern",
+          "authorId": "2224851117"
+        },
+        {
+          "name": "Zhulin Hu",
+          "authorId": "2307496359"
+        },
+        {
+          "name": "Yuqing Yang",
+          "authorId": "2145435513"
+        },
+        {
+          "name": "Ethan Chern",
+          "authorId": "2273658317"
+        },
+        {
+          "name": "Yuan Guo",
+          "authorId": "2307456332"
+        },
+        {
+          "name": "Jiahe Jin",
+          "authorId": "2307559766"
+        },
+        {
+          "name": "Binjie Wang",
+          "authorId": "2307185797"
+        },
+        {
+          "name": "Pengfei Liu",
+          "authorId": "2307778855"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2406.13261",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4e93c926cbbb27c955277b066fe6ec1aa912d38d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.13261"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4bc486c6489fd4cdf8fc9d9c6e77279366824b49",
+      "title": "Large Language Models Help Humans Verify Truthfulness \u2013 Except When They Are Convincingly Wrong",
+      "authors": [
+        {
+          "name": "Chenglei Si",
+          "authorId": "2260339100"
+        },
+        {
+          "name": "Navita Goyal",
+          "authorId": "2000637509"
+        },
+        {
+          "name": "Sherry Tongshuang Wu",
+          "authorId": "2265720924"
+        },
+        {
+          "name": "Chen Zhao",
+          "authorId": "2260615031"
+        },
+        {
+          "name": "Shi Feng",
+          "authorId": "2284701194"
+        },
+        {
+          "name": "Hal Daum'e",
+          "authorId": "2200167546"
+        },
+        {
+          "name": "Jordan L. Boyd-Graber",
+          "authorId": "2380091102"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are increasingly used for accessing information on the web. Their truthfulness and factuality are thus of great interest. To help users make the right decisions about the information they get, LLMs should not only provide information but also help users fact-check it. We conduct human experiments with 80 crowdworkers to compare language models with search engines (information retrieval systems) at facilitating fact-checking. We prompt LLMs to validate a given claim and provide corresponding explanations. Users reading LLM explanations are significantly more efficient than those using search engines while achieving similar accuracy. However, they over-rely on the LLMs when the explanation is wrong. To reduce over-reliance on LLMs, we ask LLMs to provide contrastive information\u2014explain both why the claim is true and false, and then we present both sides of the explanation to users. This contrastive explanation mitigates users\u2019 over-reliance on LLMs, but cannot significantly outperform search engines. Further, showing both search engine results and LLM explanations offers no complementary benefits compared to search engines alone. Taken together, our study highlights that natural language explanations by LLMs may not be a reliable replacement for reading the retrieved passages, especially in high-stakes settings where over-relying on wrong AI explanations could lead to critical consequences.",
+      "citationCount": 59,
+      "doi": "10.48550/arXiv.2310.12558",
+      "arxivId": "2310.12558",
+      "url": "https://www.semanticscholar.org/paper/4bc486c6489fd4cdf8fc9d9c6e77279366824b49",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "1459-1474"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ff4f8ad7853b81f189186ba97d63a609e1eface1",
+      "title": "Unconditional Truthfulness: Learning Conditional Dependency for Uncertainty Quantification of Large Language Models",
+      "authors": [
+        {
+          "name": "Artem Vazhentsev",
+          "authorId": "2165225340"
+        },
+        {
+          "name": "Ekaterina Fadeeva",
+          "authorId": "2266389184"
+        },
+        {
+          "name": "Rui Xing",
+          "authorId": "2308041454"
+        },
+        {
+          "name": "Alexander Panchenko",
+          "authorId": "2266390354"
+        },
+        {
+          "name": "Preslav Nakov",
+          "authorId": "2026545715"
+        },
+        {
+          "name": "Timothy Baldwin",
+          "authorId": "2266394314"
+        },
+        {
+          "name": "Maxim Panov",
+          "authorId": "2266389924"
+        },
+        {
+          "name": "Artem Shelmanov",
+          "authorId": "2316488670"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2408.10692",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ff4f8ad7853b81f189186ba97d63a609e1eface1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.10692"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2a8cf14e036d451f27df981a8b2b7e039b96f89a",
+      "title": "A Comprehensive Survey on the Trustworthiness of Large Language Models in Healthcare",
+      "authors": [
+        {
+          "name": "Manar A. Aljohani",
+          "authorId": "2175590912"
+        },
+        {
+          "name": "Jun Hou",
+          "authorId": "2349951924"
+        },
+        {
+          "name": "Sindhura Kommu",
+          "authorId": "2293314240"
+        },
+        {
+          "name": "Xuan Wang",
+          "authorId": "2249381509"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The application of large language models (LLMs) in healthcare holds significant promise for enhancing clinical decision-making, medical research, and patient care. However, their integration into real-world clinical settings raises critical concerns around trustworthiness, particularly around dimensions of truthfulness, privacy, safety, robustness, fairness, and explainability. These dimensions are essential for ensuring that LLMs generate reliable, unbiased, and ethically sound outputs. While researchers have recently begun developing benchmarks and evaluation frameworks to assess LLM trustworthiness, the trustworthiness of LLMs in healthcare remains underexplored, lacking a systematic review that provides a comprehensive understanding and future insights. This survey addresses that gap by providing a comprehensive review of current methodologies and solutions aimed at mitigating risks across key trust dimensions. We analyze how each dimension affects the reliability and ethical deployment of healthcare LLMs, synthesize ongoing research efforts, and identify critical gaps in existing approaches. We also identify emerging challenges posed by evolving paradigms, such as multi-agent collaboration, multi-modal reasoning, and the development of small open-source medical models. Our goal is to guide future research toward more trustworthy, transparent, and clinically viable LLMs.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2502.15871",
+      "arxivId": "2502.15871",
+      "url": "https://www.semanticscholar.org/paper/2a8cf14e036d451f27df981a8b2b7e039b96f89a",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.15871"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "fc5b8b891a4613a073c8ad14c3e2a465b799848f",
+      "title": "Personas as a Way to Model Truthfulness in Language Models",
+      "authors": [
+        {
+          "name": "Nitish Joshi",
+          "authorId": "134516087"
+        },
+        {
+          "name": "Javier Rando",
+          "authorId": "2099715241"
+        },
+        {
+          "name": "Abulhair Saparov",
+          "authorId": "2407368"
+        },
+        {
+          "name": "Najoung Kim",
+          "authorId": "8756748"
+        },
+        {
+          "name": "He He",
+          "authorId": "2263869572"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are trained on vast amounts of text from the internet, which contains both factual and misleading information about the world. While unintuitive from a classic view of LMs, recent work has shown that the truth value of a statement can be elicited from the model\u2019s representations. This paper presents an explanation for why LMs appear to know the truth despite not being trained with truth labels. We hypothesize that the pretraining data is generated by groups of (un)truthful agents whose outputs share common features, and they form a (un)truthful persona. By training on this data, LMs can infer and represent the persona in its activation space. This allows the model to separate truth from falsehoods and controls the truthfulness of its generation. We show evidence for the persona hypothesis via two observations: (1) we can probe whether a model\u2019s answer will be truthful before it is generated; (2) finetuning a model on a set of facts improves its truthfulness on unseen topics. Next, using arithmetics as a synthetic environment, we show that structures of the pretraining data are crucial for the model to infer the truthful persona. Overall, our findings suggest that models can exploit hierarchical structures in the data to learn abstract concepts like truthfulness.",
+      "citationCount": 40,
+      "doi": "10.48550/arXiv.2310.18168",
+      "arxivId": "2310.18168",
+      "url": "https://www.semanticscholar.org/paper/fc5b8b891a4613a073c8ad14c3e2a465b799848f",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2310.18168"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a8c0ae1b4f831f4adf4b131ead26229df871534c",
+      "title": "Truth Forest: Toward Multi-Scale Truthfulness in Large Language Models through Intervention without Tuning",
+      "authors": [
+        {
+          "name": "Zhongzhi Chen",
+          "authorId": "2278005225"
+        },
+        {
+          "name": "Xingwu Sun",
+          "authorId": "2277239672"
+        },
+        {
+          "name": "Xianfeng Jiao",
+          "authorId": "2066341403"
+        },
+        {
+          "name": "Fengzong Lian",
+          "authorId": "1568961008"
+        },
+        {
+          "name": "Zhanhui Kang",
+          "authorId": "2261082002"
+        },
+        {
+          "name": "Di Wang",
+          "authorId": "2277518788"
+        },
+        {
+          "name": "Chengzhong Xu",
+          "authorId": "2277225795"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Despite the great success of large language models (LLMs) in various tasks, they suffer from generating hallucinations. We introduce Truth Forest, a method that enhances truthfulness in LLMs by uncovering hidden truth representations using multi-dimensional orthogonal probes. Specifically, it creates multiple orthogonal bases for modeling truth by incorporating orthogonal constraints into the probes. Moreover, we introduce Random Peek, a systematic technique considering an extended range of positions within the sequence, reducing the gap between discerning and generating truth features in LLMs. By employing this approach, we improved the truthfulness of Llama-2-7B from 40.8% to 74.5% on TruthfulQA. Likewise, significant improvements are observed in fine-tuned models. We conducted a thorough analysis of truth features using probes. Our visualization results show that orthogonal probes capture complementary truth-related features, forming well-defined clusters that reveal the inherent structure of the dataset.",
+      "citationCount": 42,
+      "doi": "10.48550/arXiv.2312.17484",
+      "arxivId": "2312.17484",
+      "url": "https://www.semanticscholar.org/paper/a8c0ae1b4f831f4adf4b131ead26229df871534c",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2312.17484"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f82f49c20c6acc69f884f05e3a9f1ceea91061ce",
+      "title": "Detecting hallucinations in large language models using semantic entropy",
+      "authors": [
+        {
+          "name": "Sebastian Farquhar",
+          "authorId": "33859827"
+        },
+        {
+          "name": "Jannik Kossen",
+          "authorId": "2064853201"
+        },
+        {
+          "name": "Lorenz Kuhn",
+          "authorId": "39879848"
+        },
+        {
+          "name": "Yarin Gal",
+          "authorId": "2303846295"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language model (LLM) systems, such as ChatGPT1 or Gemini2, can show impressive reasoning and question-answering capabilities but often \u2018hallucinate\u2019 false outputs and unsubstantiated answers3,4. Answering unreliably or without the necessary information prevents adoption in diverse fields, with problems including fabrication of legal precedents5 or untrue facts in news articles6 and even posing a risk to human life in medical domains such as radiology7. Encouraging truthfulness through supervision or reinforcement has been only partially successful8. Researchers need a general method for detecting hallucinations in LLMs that works even with new and unseen questions to which humans might not know the answer. Here we develop new methods grounded in statistics, proposing entropy-based uncertainty estimators for LLMs to detect a subset of hallucinations\u2014confabulations\u2014which are arbitrary and incorrect generations. Our method addresses the fact that one idea can be expressed in many ways by computing uncertainty at the level of meaning rather than specific sequences of words. Our method works across datasets and tasks without a priori knowledge of the task, requires no task-specific data and robustly generalizes to new tasks not seen before. By detecting when a prompt is likely to produce a confabulation, our method helps users understand when they must take extra care with LLMs and opens up new possibilities for using LLMs that are otherwise prevented by their unreliability. Hallucinations (confabulations) in large language model systems can be tackled by measuring uncertainty about the meanings of generated responses rather than the text itself to improve question-answering accuracy.",
+      "citationCount": 809,
+      "doi": "10.1038/s41586-024-07421-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f82f49c20c6acc69f884f05e3a9f1ceea91061ce",
+      "venue": "Nature",
+      "journal": {
+        "name": "Nature",
+        "pages": "625 - 630",
+        "volume": "630"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5b744751d5d98fe9ba2036eeedea0b6a22dc69b7",
+      "title": "Fine-tuning Large Language Models for Improving Factuality in Legal Question Answering",
+      "authors": [
+        {
+          "name": "Yinghao Hu",
+          "authorId": "2339904476"
+        },
+        {
+          "name": "Leilei Gan",
+          "authorId": "35618308"
+        },
+        {
+          "name": "Wenyi Xiao",
+          "authorId": "2297844475"
+        },
+        {
+          "name": "Kun Kuang",
+          "authorId": "33870528"
+        },
+        {
+          "name": "Fei Wu",
+          "authorId": "2316159866"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Hallucination, or the generation of incorrect or fabricated information, remains a critical challenge in large language models (LLMs), particularly in high-stake domains such as legal question answering (QA). In order to mitigate the hallucination rate in legal QA, we first introduce a benchmark called LegalHalBench and three automatic metrics to evaluate the common hallucinations when LLMs answer legal questions. We then propose a hallucination mitigation method that integrates behavior cloning and a novel Hard Sample-aware Iterative Direct Preference Optimization (HIPO). We conduct extensive real-data experiments to validate the effectiveness of our approach. Our results demonstrate remarkable improvements in various metrics, including the newly proposed Non-Hallucinated Statute Rate, Statute Relevance Rate, Legal Claim Truthfulness, as well as traditional metrics such as METEOR, BERTScore, ROUGE-L, and win rates.",
+      "citationCount": 18,
+      "doi": "10.48550/arXiv.2501.06521",
+      "arxivId": "2501.06521",
+      "url": "https://www.semanticscholar.org/paper/5b744751d5d98fe9ba2036eeedea0b6a22dc69b7",
+      "venue": "International Conference on Computational Linguistics",
+      "journal": {
+        "pages": "4410-4427"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "fd576581854bad8e91c83c4019de82ee5e44637c",
+      "title": "Multi-Attribute Steering of Language Models via Targeted Intervention",
+      "authors": [
+        {
+          "name": "Duy Nguyen",
+          "authorId": "2324717302"
+        },
+        {
+          "name": "Archiki Prasad",
+          "authorId": "1677896557"
+        },
+        {
+          "name": "Elias Stengel-Eskin",
+          "authorId": "2281825070"
+        },
+        {
+          "name": "Mohit Bansal",
+          "authorId": "2281826842"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Inference-time intervention (ITI) has emerged as a promising method for steering large language model (LLM) behavior in a particular direction (e.g., improving helpfulness) by intervening on token representations without costly updates to the LLM's parameters. However, existing ITI approaches fail to scale to multi-attribute settings with conflicts, such as enhancing helpfulness while also reducing toxicity. To address this, we introduce Multi-Attribute Targeted Steering (MAT-Steer), a novel steering framework designed for selective token-level intervention across multiple attributes. MAT-Steer learns steering vectors using an alignment objective that shifts the model's internal representations of undesirable outputs closer to those of desirable ones while enforcing sparsity and orthogonality among vectors for different attributes, thereby reducing inter-attribute conflicts. We evaluate MAT-Steer in two distinct settings: (i) on question answering (QA) tasks where we balance attributes like truthfulness, bias, and toxicity; (ii) on generative tasks where we simultaneously improve attributes like helpfulness, correctness, and coherence. MAT-Steer outperforms existing ITI and parameter-efficient fine-tuning approaches across both task types (e.g., 3% average accuracy gain across QA tasks and 55.82% win rate against the best ITI baseline).",
+      "citationCount": 13,
+      "doi": "10.48550/arXiv.2502.12446",
+      "arxivId": "2502.12446",
+      "url": "https://www.semanticscholar.org/paper/fd576581854bad8e91c83c4019de82ee5e44637c",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "20619-20634"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "83be30e4fcf1728d715e8eeb8d152faef4bf3648",
+      "title": "Self-Criticism: Aligning Large Language Models with their Understanding of Helpfulness, Honesty, and Harmlessness",
+      "authors": [
+        {
+          "name": "Xiaoyu Tan",
+          "authorId": "2155269979"
+        },
+        {
+          "name": "Shaojie Shi",
+          "authorId": "2263773739"
+        },
+        {
+          "name": "Xihe Qiu",
+          "authorId": "1500386397"
+        },
+        {
+          "name": "Chao Qu",
+          "authorId": "2268107128"
+        },
+        {
+          "name": "Zhenting Qi",
+          "authorId": "2269842569"
+        },
+        {
+          "name": "Yinghui Xu",
+          "authorId": "2266466742"
+        },
+        {
+          "name": "Yuan Qi",
+          "authorId": "2192603365"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 38,
+      "doi": "10.18653/v1/2023.emnlp-industry.62",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/83be30e4fcf1728d715e8eeb8d152faef4bf3648",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "650-662"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "fb4dc0178e5d7347b1615c48caf05347b6e5eb48",
+      "title": "TrustLLM: Trustworthiness in Large Language Models",
+      "authors": [
+        {
+          "name": "Lichao Sun",
+          "authorId": "2257131651"
+        },
+        {
+          "name": "Yue Huang",
+          "authorId": "2257084278"
+        },
+        {
+          "name": "Haoran Wang",
+          "authorId": "2308566557"
+        },
+        {
+          "name": "Siyuan Wu",
+          "authorId": "2254867423"
+        },
+        {
+          "name": "Qihui Zhang",
+          "authorId": "46324457"
+        },
+        {
+          "name": "Chujie Gao",
+          "authorId": "2279094112"
+        },
+        {
+          "name": "Yixin Huang",
+          "authorId": "2282234921"
+        },
+        {
+          "name": "Wenhan Lyu",
+          "authorId": "2279022836"
+        },
+        {
+          "name": "Yixuan Zhang",
+          "authorId": "2257107248"
+        },
+        {
+          "name": "Xiner Li",
+          "authorId": "2118053386"
+        },
+        {
+          "name": "Zheng Liu",
+          "authorId": "2145977326"
+        },
+        {
+          "name": "Yixin Liu",
+          "authorId": "2254346817"
+        },
+        {
+          "name": "Yijue Wang",
+          "authorId": "2279093879"
+        },
+        {
+          "name": "Zhikun Zhang",
+          "authorId": "2275287781"
+        },
+        {
+          "name": "B. Kailkhura",
+          "authorId": "1749353"
+        },
+        {
+          "name": "Caiming Xiong",
+          "authorId": "2266469680"
+        },
+        {
+          "name": "Chaowei Xiao",
+          "authorId": "2256992325"
+        },
+        {
+          "name": "Chun-Yan Li",
+          "authorId": "2268756316"
+        },
+        {
+          "name": "Eric P. Xing",
+          "authorId": "2243234805"
+        },
+        {
+          "name": "Furong Huang",
+          "authorId": "2268686199"
+        },
+        {
+          "name": "Haodong Liu",
+          "authorId": "2240876242"
+        },
+        {
+          "name": "Heng Ji",
+          "authorId": "2271097936"
+        },
+        {
+          "name": "Hongyi Wang",
+          "authorId": "2254303011"
+        },
+        {
+          "name": "Huan Zhang",
+          "authorId": "2237996727"
+        },
+        {
+          "name": "Huaxiu Yao",
+          "authorId": "18307037"
+        },
+        {
+          "name": "M. Kellis",
+          "authorId": "2143693283"
+        },
+        {
+          "name": "M. Zitnik",
+          "authorId": "2095762"
+        },
+        {
+          "name": "Meng Jiang",
+          "authorId": "2279159644"
+        },
+        {
+          "name": "Mohit Bansal",
+          "authorId": "2253396640"
+        },
+        {
+          "name": "James Zou",
+          "authorId": "2278917478"
+        },
+        {
+          "name": "Jian Pei",
+          "authorId": "2228505567"
+        },
+        {
+          "name": "Jian Liu",
+          "authorId": "2238123544"
+        },
+        {
+          "name": "Jianfeng Gao",
+          "authorId": "2256227183"
+        },
+        {
+          "name": "Jiawei Han",
+          "authorId": "2259869648"
+        },
+        {
+          "name": "Jieyu Zhao",
+          "authorId": "2266698166"
+        },
+        {
+          "name": "Jiliang Tang",
+          "authorId": "2279062891"
+        },
+        {
+          "name": "Jindong Wang",
+          "authorId": "2145270616"
+        },
+        {
+          "name": "John Mitchell",
+          "authorId": "2279260447"
+        },
+        {
+          "name": "Kai Shu",
+          "authorId": "2241470375"
+        },
+        {
+          "name": "Kaidi Xu",
+          "authorId": "2267887786"
+        },
+        {
+          "name": "Kai-Wei Chang",
+          "authorId": "2256646491"
+        },
+        {
+          "name": "Lifang He",
+          "authorId": "2254874151"
+        },
+        {
+          "name": "Lifu Huang",
+          "authorId": "34170717"
+        },
+        {
+          "name": "M. Backes",
+          "authorId": "152981628"
+        },
+        {
+          "name": "Neil Zhenqiang Gong",
+          "authorId": "2249536787"
+        },
+        {
+          "name": "Philip S. Yu",
+          "authorId": "2258679535"
+        },
+        {
+          "name": "Pin-Yu Chen",
+          "authorId": "2279077171"
+        },
+        {
+          "name": "Quanquan Gu",
+          "authorId": "2279024252"
+        },
+        {
+          "name": "Ran Xu",
+          "authorId": "2279097262"
+        },
+        {
+          "name": "Rex Ying",
+          "authorId": "2279023269"
+        },
+        {
+          "name": "Shuiwang Ji",
+          "authorId": "2279225650"
+        },
+        {
+          "name": "S. Jana",
+          "authorId": "39400201"
+        },
+        {
+          "name": "Tian-Xiang Chen",
+          "authorId": "2265221446"
+        },
+        {
+          "name": "Tianming Liu",
+          "authorId": "2254792886"
+        },
+        {
+          "name": "Tianying Zhou",
+          "authorId": "2144116530"
+        },
+        {
+          "name": "William Wang",
+          "authorId": "2281072607"
+        },
+        {
+          "name": "Xiang Li",
+          "authorId": "2280943906"
+        },
+        {
+          "name": "Xiang-Yu Zhang",
+          "authorId": "2261601059"
+        },
+        {
+          "name": "Xiao Wang",
+          "authorId": "2282386985"
+        },
+        {
+          "name": "Xingyao Xie",
+          "authorId": "2164984576"
+        },
+        {
+          "name": "Xun Chen",
+          "authorId": "2257123882"
+        },
+        {
+          "name": "Xuyu Wang",
+          "authorId": "2282196445"
+        },
+        {
+          "name": "Yan Liu",
+          "authorId": "2275033850"
+        },
+        {
+          "name": "Yanfang Ye",
+          "authorId": "2279157256"
+        },
+        {
+          "name": "Yinzhi Cao",
+          "authorId": "2279101306"
+        },
+        {
+          "name": "Yue Zhao",
+          "authorId": "2254062898"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large language models (LLMs), exemplified by ChatGPT, have gained considerable attention for their excellent natural language processing capabilities. Nonetheless, these LLMs present many challenges, particularly in the realm of trustworthiness. Therefore, ensuring the trustworthiness of LLMs emerges as an important topic. This paper introduces TrustLLM, a comprehensive study of trustworthiness in LLMs, including principles for different dimensions of trustworthiness, established benchmark, evaluation, and analysis of trustworthiness for mainstream LLMs, and discussion of open challenges and future directions. Specifically, we first propose a set of principles for trustworthy LLMs that span eight different dimensions. Based on these principles, we further establish a benchmark across six dimensions including truthfulness, safety, fairness, robustness, privacy, and machine ethics. We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets. Our findings firstly show that in general trustworthiness and utility (i.e., functional effectiveness) are positively related. Secondly, our observations reveal that proprietary LLMs generally outperform most open-source counterparts in terms of trustworthiness, raising concerns about the potential risks of widely accessible open-source LLMs. However, a few open-source LLMs come very close to proprietary ones. Thirdly, it is important to note that some LLMs may be overly calibrated towards exhibiting trustworthiness, to the extent that they compromise their utility by mistakenly treating benign prompts as harmful and consequently not responding. Finally, we emphasize the importance of ensuring transparency not only in the models themselves but also in the technologies that underpin trustworthiness. Knowing the specific trustworthy technologies that have been employed is crucial for analyzing their effectiveness.",
+      "citationCount": 285,
+      "doi": "10.48550/arXiv.2401.05561",
+      "arxivId": "2401.05561",
+      "url": "https://www.semanticscholar.org/paper/fb4dc0178e5d7347b1615c48caf05347b6e5eb48",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.05561"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fbd15e16b5be19c098f75004b3816ceb68042c0e",
+      "title": "On the Truthfulness of Surprisingly Likely Responses of Large Language Models",
+      "authors": [
+        {
+          "name": "N. Goel",
+          "authorId": "2290745789"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The principle of rewarding a crowd for surprisingly common answers has been used in the literature for designing a number of truthful information elicitation mechanisms. A related method has also been proposed in the literature for better aggregation of crowd wisdom. Drawing a comparison between crowd based collective intelligence systems and large language models, we define the notion of \u2018surprisingly likely\u2019 textual response of a large language model. This notion is inspired by the surprisingly common principle, but tailored for text in a language model. Using benchmarks such as TruthfulQA and openly available LLMs: GPT-2 and LLaMA-2, we show that the surprisingly likely textual responses of large language models are more accurate in many cases compared to standard baselines. For example, we observe up to 24 percentage points aggregate improvement on TruthfulQA and up to 70 percentage points improvement on individual categories of questions in this benchmark. We also provide further analysis of the results, including the cases when surprisingly likely responses are less or not more accurate.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2311.07692",
+      "arxivId": "2311.07692",
+      "url": "https://www.semanticscholar.org/paper/fbd15e16b5be19c098f75004b3816ceb68042c0e",
+      "venue": "International Conference on Climate Informatics",
+      "journal": {
+        "name": "Proceedings of the ACM Collective Intelligence Conference"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "title": "Training language models to follow instructions with human feedback",
+      "authors": [
+        {
+          "name": "Long Ouyang",
+          "authorId": "31793034"
+        },
+        {
+          "name": "Jeff Wu",
+          "authorId": "49387725"
+        },
+        {
+          "name": "Xu Jiang",
+          "authorId": "2115903168"
+        },
+        {
+          "name": "Diogo Almeida",
+          "authorId": "2061137049"
+        },
+        {
+          "name": "Carroll L. Wainwright",
+          "authorId": "2064084601"
+        },
+        {
+          "name": "Pamela Mishkin",
+          "authorId": "2051714782"
+        },
+        {
+          "name": "Chong Zhang",
+          "authorId": null
+        },
+        {
+          "name": "Sandhini Agarwal",
+          "authorId": "144517868"
+        },
+        {
+          "name": "Katarina Slama",
+          "authorId": "2117680841"
+        },
+        {
+          "name": "Alex Ray",
+          "authorId": "2064770039"
+        },
+        {
+          "name": "John Schulman",
+          "authorId": "47971768"
+        },
+        {
+          "name": "Jacob Hilton",
+          "authorId": "2052366271"
+        },
+        {
+          "name": "Fraser Kelton",
+          "authorId": "2151735262"
+        },
+        {
+          "name": "Luke E. Miller",
+          "authorId": "2142365973"
+        },
+        {
+          "name": "Maddie Simens",
+          "authorId": "2151735251"
+        },
+        {
+          "name": "Amanda Askell",
+          "authorId": "119609682"
+        },
+        {
+          "name": "Peter Welinder",
+          "authorId": "2930640"
+        },
+        {
+          "name": "P. Christiano",
+          "authorId": "145791315"
+        },
+        {
+          "name": "Jan Leike",
+          "authorId": "2990741"
+        },
+        {
+          "name": "Ryan J. Lowe",
+          "authorId": "49407415"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outputs, which we use to further fine-tune this supervised model using reinforcement learning from human feedback. We call the resulting models InstructGPT. In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters. Moreover, InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets. Even though InstructGPT still makes simple mistakes, our results show that fine-tuning with human feedback is a promising direction for aligning language models with human intent.",
+      "citationCount": 17523,
+      "doi": null,
+      "arxivId": "2203.02155",
+      "url": "https://www.semanticscholar.org/paper/d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2203.02155"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

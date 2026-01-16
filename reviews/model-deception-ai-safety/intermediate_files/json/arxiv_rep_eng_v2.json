@@ -1,0 +1,69 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:representation engineering",
+  "results": [
+    {
+      "arxiv_id": "2310.01405",
+      "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+      "authors": [
+        "Andy Zou",
+        "Long Phan",
+        "Sarah Chen",
+        "James Campbell",
+        "Phillip Guo",
+        "Richard Ren",
+        "Alexander Pan",
+        "Xuwang Yin",
+        "Mantas Mazeika",
+        "Ann-Kathrin Dombrowski",
+        "Shashwat Goel",
+        "Nathaniel Li",
+        "Michael J. Byun",
+        "Zifan Wang",
+        "Alex Mallen",
+        "Steven Basart",
+        "Sanmi Koyejo",
+        "Dawn Song",
+        "Matt Fredrikson",
+        "J. Zico Kolter",
+        "Dan Hendrycks"
+      ],
+      "abstract": "In this paper, we identify and characterize the emerging area of representation engineering (RepE), an approach to enhancing the transparency of AI systems that draws on insights from cognitive neuroscience. RepE places population-level representations, rather than neurons or circuits, at the center of analysis, equipping us with novel methods for monitoring and manipulating high-level cognitive phenomena in deep neural networks (DNNs). We provide baselines and an initial analysis of RepE techniques, showing that they offer simple yet effective solutions for improving our understanding and control of large language models. We showcase how these methods can provide traction on a wide range of safety-relevant problems, including honesty, harmlessness, power-seeking, and more, demonstrating the promise of top-down transparency research. We hope that this work catalyzes further exploration of RepE and fosters advancements in the transparency and safety of AI systems.",
+      "published": "2023-10-02",
+      "updated": "2025-03-03",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.CY"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2310.01405v4",
+      "url": "https://arxiv.org/abs/2310.01405"
+    },
+    {
+      "arxiv_id": "2308.05381",
+      "title": "An Exploratory Study of V-Model in Building ML-Enabled Software: A Systems Engineering Perspective",
+      "authors": [
+        "Jie JW Wu"
+      ],
+      "abstract": "Machine learning (ML) components are being added to more and more critical and impactful software systems, but the software development process of real-world production systems from prototyped ML models remains challenging with additional complexity and interdisciplinary collaboration challenges. This poses difficulties in using traditional software lifecycle models such as waterfall, spiral, or agile models when building ML-enabled systems. In this research, we apply a Systems Engineering lens to investigate the use of V-Model in addressing the interdisciplinary collaboration challenges when building ML-enabled systems. By interviewing practitioners from software companies, we established a set of 8 propositions for using V-Model to manage interdisciplinary collaborations when building products with ML components. Based on the propositions, we found that despite requiring additional efforts, the characteristics of V-Model align effectively with several collaboration challenges encountered by practitioners when building ML-enabled systems. We recommend future research to investigate new process models, frameworks and tools that leverage the characteristics of V-Model such as the system decomposition, clear system boundary, and consistency of Validation & Verification (V&V) for building ML-enabled systems.",
+      "published": "2023-08-10",
+      "updated": "2024-05-05",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "doi": "10.1145/3644815.3644951",
+      "journal_ref": "2024 IEEE/ACM 3rd International Conference on AI Engineering - Software Engineering for AI (CAIN)",
+      "pdf_url": "https://arxiv.org/pdf/2308.05381v4",
+      "url": "https://arxiv.org/abs/2308.05381"
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

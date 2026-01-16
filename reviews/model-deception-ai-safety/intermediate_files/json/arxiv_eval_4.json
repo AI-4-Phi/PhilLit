@@ -1,0 +1,591 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:dangerous capability evaluation AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2601.09708",
+      "title": "Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning",
+      "authors": [
+        "Chi-Pin Huang",
+        "Yunze Man",
+        "Zhiding Yu",
+        "Min-Hung Chen",
+        "Jan Kautz",
+        "Yu-Chiang Frank Wang",
+        "Fu-En Yang"
+      ],
+      "abstract": "Vision-Language-Action (VLA) tasks require reasoning over complex visual scenes and executing adaptive actions in dynamic environments. While recent studies on reasoning VLAs show that explicit chain-of-thought (CoT) can improve generalization, they suffer from high inference latency due to lengthy reasoning traces. We propose Fast-ThinkAct, an efficient reasoning framework that achieves compact yet performant planning through verbalizable latent reasoning. Fast-ThinkAct learns to reason efficiently with latent CoTs by distilling from a teacher, driven by a preference-guided objective to align manipulation trajectories that transfers both linguistic and visual planning capabilities for embodied control. This enables reasoning-enhanced policy learning that effectively connects compact reasoning to action execution. Extensive experiments across diverse embodied manipulation and reasoning benchmarks demonstrate that Fast-ThinkAct achieves strong performance with up to 89.3\\% reduced inference latency over state-of-the-art reasoning VLAs, while maintaining effective long-horizon planning, few-shot adaptation, and failure recovery.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09708v1",
+      "url": "https://arxiv.org/abs/2601.09708"
+    },
+    {
+      "arxiv_id": "2601.09706",
+      "title": "Value-Aware Numerical Representations for Transformer Language Models",
+      "authors": [
+        "Andreea Dutulescu",
+        "Stefan Ruseti",
+        "Mihai Dascalu"
+      ],
+      "abstract": "Transformer-based language models often achieve strong results on mathematical reasoning benchmarks while remaining fragile on basic numerical understanding and arithmetic operations. A central limitation is that numbers are processed as symbolic tokens whose embeddings do not explicitly encode numerical value, leading to systematic errors. We introduce a value-aware numerical representation that augments standard tokenized inputs with a dedicated prefix token whose embedding is explicitly conditioned on the underlying numerical value. This mechanism injects magnitude information directly into the model's input space while remaining compatible with existing tokenizers and decoder-only Transformer architectures. Evaluation on arithmetic tasks shows that the proposed approach outperforms baselines across numerical formats, tasks, and operand lengths. These results indicate that explicitly encoding numerical value is an effective and efficient way to improve fundamental numerical robustness in language models.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09706v1",
+      "url": "https://arxiv.org/abs/2601.09706"
+    },
+    {
+      "arxiv_id": "2601.09694",
+      "title": "LLMs can Compress LLMs: Adaptive Pruning by Agents",
+      "authors": [
+        "Sai Varun Kodathala",
+        "Rakesh Vunnam"
+      ],
+      "abstract": "As Large Language Models (LLMs) continue to scale, post-training pruning has emerged as a promising approach to reduce computational costs while preserving performance. Existing methods such as SparseGPT and Wanda achieve high sparsity through layer-wise weight reconstruction or activation-aware magnitude pruning, but rely on uniform or hand-crafted heuristics to determine per-layer sparsity ratios. Moreover, recent work has shown that pruned LLMs suffer from severe factual knowledge degradation, with structured pruning methods experiencing near-total collapse in factual question-answering capabilities. We introduce agent-guided pruning, where a foundation model acts as an adaptive pruning agent to intelligently select which layers to prune at each iteration while preserving critical knowledge pathways. Our method constructs layer-wise sensitivity profiles by combining Wanda-inspired weight-activation metrics with gradient importance scores, normalized as z-scores for model-agnostic comparison. These statistics are processed by an LLM agent equipped with self-reflection capabilities, enabling it to learn from previous pruning outcomes and iteratively refine its strategy. A checkpoint rollback mechanism maintains model quality by reverting when perplexity degradation exceeds a threshold. We evaluate our approach on Qwen3 models (4B and 8B parameters) at approximately 45% sparsity, demonstrating substantial improvements over structured pruning baselines: 56% relative improvement in MMLU accuracy, 19x better factual knowledge retention on FreebaseQA, and 69% lower perplexity degradation. Notably, our framework requires no retraining, operates in a model-agnostic manner, and exhibits effective self-correction with only 2-4 rollbacks across 21-40 iterations, demonstrating that foundation models can effectively guide the compression of other foundation models.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09694v1",
+      "url": "https://arxiv.org/abs/2601.09694"
+    },
+    {
+      "arxiv_id": "2601.09692",
+      "title": "Routing with Generated Data: Annotation-Free LLM Skill Estimation and Expert Selection",
+      "authors": [
+        "Tianyi Niu",
+        "Justin Chih-Yao Chen",
+        "Genta Indra Winata",
+        "Shi-Xiong Zhang",
+        "Supriyo Chakraborty",
+        "Sambit Sahu",
+        "Yue Zhang",
+        "Elias Stengel-Eskin",
+        "Mohit Bansal"
+      ],
+      "abstract": "Large Language Model (LLM) routers dynamically select optimal models for given inputs. Existing approaches typically assume access to ground-truth labeled data, which is often unavailable in practice, especially when user request distributions are heterogeneous and unknown. We introduce Routing with Generated Data (RGD), a challenging setting in which routers are trained exclusively on generated queries and answers produced from high-level task descriptions by generator LLMs. We evaluate query-answer routers (using both queries and labels) and query-only routers across four diverse benchmarks and 12 models, finding that query-answer routers degrade faster than query-only routers as generator quality decreases. Our analysis reveals two crucial characteristics of effective generators: they must accurately respond to their own questions, and their questions must produce sufficient performance differentiation among the model pool. We then show how filtering for these characteristics can improve the quality of generated data. We further propose CASCAL, a novel query-only router that estimates model correctness through consensus voting and identifies model-specific skill niches via hierarchical clustering. CASCAL is substantially more robust to generator quality, outperforming the best query-answer router by 4.6% absolute accuracy when trained on weak generator data.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09692v1",
+      "url": "https://arxiv.org/abs/2601.09692"
+    },
+    {
+      "arxiv_id": "2601.09680",
+      "title": "Automating Supply Chain Disruption Monitoring via an Agentic AI Approach",
+      "authors": [
+        "Sara AlMahri",
+        "Liming Xu",
+        "Alexandra Brintrup"
+      ],
+      "abstract": "Modern supply chains are increasingly exposed to disruptions from geopolitical events, demand shocks, trade restrictions, to natural disasters. While many of these disruptions originate deep in the supply network, most companies still lack visibility beyond Tier-1 suppliers, leaving upstream vulnerabilities undetected until the impact cascades downstream. To overcome this blind-spot and move from reactive recovery to proactive resilience, we introduce a minimally supervised agentic AI framework that autonomously monitors, analyses, and responds to disruptions across extended supply networks. The architecture comprises seven specialised agents powered by large language models and deterministic tools that jointly detect disruption signals from unstructured news, map them to multi-tier supplier networks, evaluate exposure based on network structure, and recommend mitigations such as alternative sourcing options. \\rev{We evaluate the framework across 30 synthesised scenarios covering three automotive manufacturers and five disruption classes. The system achieves high accuracy across core tasks, with F1 scores between 0.962 and 0.991, and performs full end-to-end analyses in a mean of 3.83 minutes at a cost of \\$0.0836 per disruption. Relative to industry benchmarks of multi-day, analyst-driven assessments, this represents a reduction of more than three orders of magnitude in response time. A real-world case study of the 2022 Russia-Ukraine conflict further demonstrates operational applicability. This work establishes a foundational step toward building resilient, proactive, and autonomous supply chains capable of managing disruptions across deep-tier networks.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09680v1",
+      "url": "https://arxiv.org/abs/2601.09680"
+    },
+    {
+      "arxiv_id": "2601.09660",
+      "title": "Constitutive parameter inference using physics-based data-driven modeling in full volume datasets of intact and torn rotator cuff tendons",
+      "authors": [
+        "Carla Nathaly Villac\u00eds N\u00fa\u00f1ez",
+        "Siddhartha Srivastava",
+        "Ulrich Scheven",
+        "Asheesh Bedi",
+        "Krishna Garikipati",
+        "Ellen M. Arruda"
+      ],
+      "abstract": "In this work, we characterized the material properties of an animal model of the rotator cuff tendon using full volume datasets of both its intact and injured states by capturing internal strain behavior throughout the tendon. Our experimental setup, involving tension along the fiber direction, activated volumetric, tensile, and shear mechanisms due to the tendon's complex geometry. We implemented an approach to model inference that we refer to as variational system identification (VSI) to solve the weak form of the stress equilibrium equation using these full volume displacements. Three constitutive models were used for parameter inference: a neo-Hookean model, a modified Holzapfel-Gasser-Ogden (HGO) model with higher-order terms in the first and second invariants, and a reduced polynomial model consisting of terms based on the first, second, and fiber-related invariants. Inferred parameters were further refined using an adjoint-based partial differential equation (PDE)-constrained optimization framework. Our results show that the modified HGO model captures the tendon's deformation mechanisms with reasonable accuracy, while the neo-Hookean model fails to reproduce key internal features, particularly the shear behavior in the injured tendon. Surprisingly, the simplified polynomial model performed comparably to the modified HGO formulation using only three terms. These findings suggest that while current constitutive models do not fully replicate the complex internal mechanics of the tendon, they are capable of capturing key trends in both intact and damaged tissue, using a homogeneous modeling approach. Continued model development is needed to bridge this gap and enable clinical-grade, predictive simulations of tendon injury and repair.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "physics.bio-ph",
+      "categories": [
+        "physics.bio-ph",
+        "q-bio.TO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09660v1",
+      "url": "https://arxiv.org/abs/2601.09660"
+    },
+    {
+      "arxiv_id": "2601.09654",
+      "title": "Exploring Fine-Tuning for Tabular Foundation Models",
+      "authors": [
+        "Aditya Tanna",
+        "Pratinav Seth",
+        "Mohamed Bouadi",
+        "Vinay Kumar Sankarapu"
+      ],
+      "abstract": "Tabular Foundation Models (TFMs) have recently shown strong in-context learning capabilities on structured data, achieving zero-shot performance comparable to traditional machine learning methods. We find that zero-shot TFMs already achieve strong performance, while the benefits of fine-tuning are highly model and data-dependent. Meta-learning and PEFT provide moderate gains under specific conditions, whereas full supervised fine-tuning (SFT) often reduces accuracy or calibration quality. This work presents the first comprehensive study of fine-tuning in TFMs across benchmarks including TALENT, OpenML-CC18, and TabZilla. We compare Zero-Shot, Meta-Learning, Supervised (SFT), and parameter-efficient (PEFT) approaches, analyzing how dataset factors such as imbalance, size, and dimensionality affect outcomes. Our findings cover performance, calibration, and fairness, offering practical guidelines on when fine-tuning is most beneficial and its limitations.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09654v1",
+      "url": "https://arxiv.org/abs/2601.09654"
+    },
+    {
+      "arxiv_id": "2601.09636",
+      "title": "PersonalAlign: Hierarchical Implicit Intent Alignment for Personalized GUI Agent with Long-Term User-Centric Records",
+      "authors": [
+        "Yibo Lyu",
+        "Gongwei Chen",
+        "Rui Shao",
+        "Weili Guan",
+        "Liqiang Nie"
+      ],
+      "abstract": "While GUI agents have shown strong performance under explicit and completion instructions, real-world deployment requires aligning with users' more complex implicit intents. In this work, we highlight Hierarchical Implicit Intent Alignment for Personalized GUI Agent (PersonalAlign), a new agent task that requires agents to leverage long-term user records as persistent context to resolve omitted preferences in vague instructions and anticipate latent routines by user state for proactive assistance. To facilitate this study, we introduce AndroidIntent, a benchmark designed to evaluate agents' ability in resolving vague instructions and providing proactive suggestions through reasoning over long-term user records. We annotated 775 user-specific preferences and 215 routines from 20k long-term records across different users for evaluation. Furthermore, we introduce Hierarchical Intent Memory Agent (HIM-Agent), which maintains a continuously updating personal memory and hierarchically organizes user preferences and routines for personalization. Finally, we evaluate a range of GUI agents on AndroidIntent, including GPT-5, Qwen3-VL, and UI-TARS, further results show that HIM-Agent significantly improves both execution and proactive performance by 15.7% and 7.3%.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09636v1",
+      "url": "https://arxiv.org/abs/2601.09636"
+    },
+    {
+      "arxiv_id": "2601.09635",
+      "title": "LLM for Large-Scale Optimization Model Auto-Formulation: A Lightweight Few-Shot Learning Approach",
+      "authors": [
+        "Kuo Liang",
+        "Yuhang Lu",
+        "Jianming Mao",
+        "Shuyi Sun",
+        "Chunwei Yang",
+        "Congcong Zeng",
+        "Xiao Jin",
+        "Hanzhang Qin",
+        "Ruihao Zhu",
+        "Chung-Piaw Teo"
+      ],
+      "abstract": "Large-scale optimization is a key backbone of modern business decision-making. However, building these models is often labor-intensive and time-consuming. We address this by proposing LEAN-LLM-OPT, a LightwEight AgeNtic workflow construction framework for LLM-assisted large-scale OPTimization auto-formulation. LEAN-LLM-OPT takes as input a problem description together with associated datasets and orchestrates a team of LLM agents to produce an optimization formulation. Specifically, upon receiving a query, two upstream LLM agents dynamically construct a workflow that specifies, step-by-step, how optimization models for similar problems can be formulated. A downstream LLM agent then follows this workflow to generate the final output. Leveraging LLMs' text-processing capabilities and common modeling practices, the workflow decomposes the modeling task into a sequence of structured sub-tasks and offloads mechanical data-handling operations to auxiliary tools. This design alleviates the downstream agent's burden related to planning and data handling, allowing it to focus on the most challenging components that cannot be readily standardized. Extensive simulations show that LEAN-LLM-OPT, instantiated with GPT-4.1 and the open source gpt-oss-20B, achieves strong performance on large-scale optimization modeling tasks and is competitive with state-of-the-art approaches. In addition, in a Singapore Airlines choice-based revenue management use case, LEAN-LLM-OPT demonstrates practical value by achieving leading performance across a range of scenarios. Along the way, we introduce Large-Scale-OR and Air-NRM, the first comprehensive benchmarks for large-scale optimization auto-formulation. The code and data of this work is available at https://github.com/CoraLiang01/lean-llm-opt.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09635v1",
+      "url": "https://arxiv.org/abs/2601.09635"
+    },
+    {
+      "arxiv_id": "2601.09631",
+      "title": "LLMs Got Rhythm? Hybrid Phonological Filtering for Greek Poetry Rhyme Detection and Generation",
+      "authors": [
+        "Stergios Chatzikyriakidis"
+      ],
+      "abstract": "Large Language Models (LLMs), despite their remarkable capabilities across NLP tasks, struggle with phonologically-grounded phenomena like rhyme detection and generation. This is even more evident in lower-resource languages such as Modern Greek. In this paper, we present a hybrid system that combines LLMs with deterministic phonological algorithms to achieve accurate rhyme identification/analysis and generation. Our approach implements a comprehensive taxonomy of Greek rhyme types, including Pure, Rich, Imperfect, Mosaic, and Identical Pre-rhyme Vowel (IDV) patterns, and employs an agentic generation pipeline with phonological verification. We evaluate multiple prompting strategies (zero-shot, few-shot, Chain-of-Thought, and RAG-augmented) across several LLMs including Claude 3.7 and 4.5, GPT-4o, Gemini 2.0 and open-weight models like Llama 3.1 8B and 70B and Mistral Large. Results reveal a significant \"Reasoning Gap\": while native-like models (Claude 3.7) perform intuitively (40\\% accuracy in identification), reasoning-heavy models (Claude 4.5) achieve state-of-the-art performance (54\\%) only when prompted with Chain-of-Thought. Most critically, pure LLM generation fails catastrophically (under 4\\% valid poems), while our hybrid verification loop restores performance to 73.1\\%. We release our system and a crucial, rigorously cleaned corpus of 40,000+ rhymes, derived from the Anemoskala and Interwar Poetry corpora, to support future research.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09631v1",
+      "url": "https://arxiv.org/abs/2601.09631"
+    },
+    {
+      "arxiv_id": "2601.09627",
+      "title": "Ferroelectric polarization mapping through pseudosymmetry-sensitive EBSD reindexing",
+      "authors": [
+        "Claire Griesbach",
+        "Tizian Scharsach",
+        "Morgan Trassin",
+        "Dennis M. Kochmann"
+      ],
+      "abstract": "Ferroelectric materials exhibit a switchable, spontaneous polarization at the unit cell level--an attractive property utilized in many emerging technologies including, among others, high-density memory storage, low-power transistors, and high-speed fiber optic communication. Understanding the local polarization switching behavior, through domain nucleation and evolution, is critical to advancing these technologies and requires characterization of the local domain microstructure. However, in application-relevant polycrystalline materials exhibiting a distribution of grain orientations, a direct mapping of the polarization direction in three dimensions has remained inaccessible using conventional experimental approaches. Here, taking barium titanate single crystals and lead zirconium titanate polycrystals as our bulk model systems, we map the local polarization directions using a new electron backscatter diffraction indexing technique based on simulated pattern-matching. Through improved pre-processing techniques (including optimized pattern processing, a new pseudosymmetry-sensitive neighbor pattern averaging method, and DIC-based global sample-detector geometry calibration) and a new pseudosymmetry confidence index (which considers not only pattern similarity but pattern dissimilarity trends with other domain variant patterns), we successfully distinguish between the six polarization directions, despite the challengingly small unit cell aspect ratio of the selected materials. The methods developed in this work are not only applicable to ferroelectrics but any material which exhibits close crystallographic pseudosymmetries--extending the current capabilities of EBSD.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cond-mat.mes-hall"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09627v1",
+      "url": "https://arxiv.org/abs/2601.09627"
+    },
+    {
+      "arxiv_id": "2601.09626",
+      "title": "From Prompt to Protocol: Fast Charging Batteries with Large Language Models",
+      "authors": [
+        "Ge Lei",
+        "Ferran Brosa Planella",
+        "Sterling G. Baird",
+        "Samuel J. Cooper"
+      ],
+      "abstract": "Efficiently optimizing battery charging protocols is challenging because each evaluation is slow, costly, and non-differentiable. Many existing approaches address this difficulty by heavily constraining the protocol search space, which limits the diversity of protocols that can be explored, preventing the discovery of higher-performing solutions. We introduce two gradient-free, LLM-driven closed-loop methods: Prompt-to-Optimizer (P2O), which uses an LLM to propose the code for small neural-network-based protocols, which are then trained by an inner loop, and Prompt-to-Protocol (P2P), which simply writes an explicit function for the current and its scalar parameters. Across our case studies, LLM-guided P2O outperforms neural networks designed by Bayesian optimization, evolutionary algorithms, and random search. In a realistic fast charging scenario, both P2O and P2P yield around a 4.2 percent improvement in state of health (capacity retention based health metric under fast charging cycling) over a state-of-the-art multi-step constant current (CC) baseline, with P2P achieving this under matched evaluation budgets (same number of protocol evaluations). These results demonstrate that LLMs can expand the space of protocol functional forms, incorporate language-based constraints, and enable efficient optimization in high cost experimental settings.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "eess.SY"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09626v1",
+      "url": "https://arxiv.org/abs/2601.09626"
+    },
+    {
+      "arxiv_id": "2601.09625",
+      "title": "The Promptware Kill Chain: How Prompt Injections Gradually Evolved Into a Multi-Step Malware",
+      "authors": [
+        "Ben Nassi",
+        "Bruce Schneier",
+        "Oleg Brodt"
+      ],
+      "abstract": "The rapid adoption of large language model (LLM)-based systems -- from chatbots to autonomous agents capable of executing code and financial transactions -- has created a new attack surface that existing security frameworks inadequately address. The dominant framing of these threats as \"prompt injection\" -- a catch-all phrase for security failures in LLM-based systems -- obscures a more complex reality: Attacks on LLM-based systems increasingly involve multi-step sequences that mirror traditional malware campaigns. In this paper, we propose that attacks targeting LLM-based applications constitute a distinct class of malware, which we term \\textit{promptware}, and introduce a five-step kill chain model for analyzing these threats. The framework comprises Initial Access (prompt injection), Privilege Escalation (jailbreaking), Persistence (memory and retrieval poisoning), Lateral Movement (cross-system and cross-user propagation), and Actions on Objective (ranging from data exfiltration to unauthorized transactions). By mapping recent attacks to this structure, we demonstrate that LLM-related attacks follow systematic sequences analogous to traditional malware campaigns. The promptware kill chain offers security practitioners a structured methodology for threat modeling and provides a common vocabulary for researchers across AI safety and cybersecurity to address a rapidly evolving threat landscape.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09625v1",
+      "url": "https://arxiv.org/abs/2601.09625"
+    },
+    {
+      "arxiv_id": "2601.09613",
+      "title": "CogRail: Benchmarking VLMs in Cognitive Intrusion Perception for Intelligent Railway Transportation Systems",
+      "authors": [
+        "Yonglin Tian",
+        "Qiyao Zhang",
+        "Wei Xu",
+        "Yutong Wang",
+        "Yihao Wu",
+        "Xinyi Li",
+        "Xingyuan Dai",
+        "Hui Zhang",
+        "Zhiyong Cui",
+        "Baoqing Guo",
+        "Zujun Yu",
+        "Yisheng Lv"
+      ],
+      "abstract": "Accurate and early perception of potential intrusion targets is essential for ensuring the safety of railway transportation systems. However, most existing systems focus narrowly on object classification within fixed visual scopes and apply rule-based heuristics to determine intrusion status, often overlooking targets that pose latent intrusion risks. Anticipating such risks requires the cognition of spatial context and temporal dynamics for the object of interest (OOI), which presents challenges for conventional visual models. To facilitate deep intrusion perception, we introduce a novel benchmark, CogRail, which integrates curated open-source datasets with cognitively driven question-answer annotations to support spatio-temporal reasoning and prediction. Building upon this benchmark, we conduct a systematic evaluation of state-of-the-art visual-language models (VLMs) using multimodal prompts to identify their strengths and limitations in this domain. Furthermore, we fine-tune VLMs for better performance and propose a joint fine-tuning framework that integrates three core tasks, position perception, movement prediction, and threat analysis, facilitating effective adaptation of general-purpose foundation models into specialized models tailored for cognitive intrusion perception. Extensive experiments reveal that current large-scale multimodal models struggle with the complex spatial-temporal reasoning required by the cognitive intrusion perception task, underscoring the limitations of existing foundation models in this safety-critical domain. In contrast, our proposed joint fine-tuning framework significantly enhances model performance by enabling targeted adaptation to domain-specific reasoning demands, highlighting the advantages of structured multi-task learning in improving both accuracy and interpretability. Code will be available at https://github.com/Hub-Tian/CogRail.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09613v1",
+      "url": "https://arxiv.org/abs/2601.09613"
+    },
+    {
+      "arxiv_id": "2601.09610",
+      "title": "Technological Advances in Two Generations of Consumer-Grade VR Systems: Effects on User Experience and Task Performance",
+      "authors": [
+        "Marie Luisa Fiedler",
+        "Christian Merz",
+        "Jonathan Tschanter",
+        "Carolin Wienrich",
+        "Marc Erich Latoschik"
+      ],
+      "abstract": "Integrated VR (IVR) systems consist of a head-mounted display (HMD) and body-tracking capabilities. They enable users to translate their physical movements into corresponding avatar movements in real-time, allowing them to perceive their avatars via the displays. Consumer-grade IVR systems have been available for 10 years, significantly fostering VR research worldwide. However, the effects of even apparently significant technological advances of IVR systems on user experience and the overall validity of prior embodiment research using such systems often remain unclear. We ran a user-centered study comparing two comparable IVR generations: a nearly 10-year-old hardware (HTC Vive, 6-point tracking) and a modern counterpart (HTC Vive Pro 2, 6-point tracking). To ensure ecological validity, we evaluated the systems in their commercially available, as-is configurations. In a 2x5 mixed design, participants completed five tasks covering different use cases on either the old or new system. We assessed presence, sense of embodiment, appearance and behavior plausibility, workload, task performance, and gathered qualitative feedback. Results showed no significant system differences, with only small effect sizes. Bayesian analysis further supported the null hypothesis, suggesting that the investigated generational hardware improvements offer limited benefits for user experience and task performance. For the 10-year generational step examined here, excluding potential technological progress in the necessary software components, this supports the validity of conclusions from prior work and underscores the applicability of older configurations for research in embodied VR.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09610v1",
+      "url": "https://arxiv.org/abs/2601.09610"
+    },
+    {
+      "arxiv_id": "2601.09608",
+      "title": "A High Intensity Attosecond Light Source in Compact Geometry at ELI ALPS User Facility",
+      "authors": [
+        "Arjun Nayak",
+        "Mathieu Dumergue",
+        "Sourin Mukhopadhyay",
+        "Debobrata Rajak",
+        "Naveed Ahmed",
+        "J\u00e1nos Csontos",
+        "Szabolcs T\u00f3th",
+        "Prabhash Prasannan Geetha",
+        "Ioannis Orfano",
+        "Emmanouil Skantzakis",
+        "Paraskevas Tzallas",
+        "Dimitris Charalambidis",
+        "Katalin Varj\u00fa",
+        "Subhendu Kahaly",
+        "Zsolt Diveki"
+      ],
+      "abstract": "High-order harmonic generation (HHG) has become a standard technique for producing attosecond XUV pulses in the laboratory, yet the high flux necessary for nonlinear XUV photoionization remains accessible to only a few research groups. Here, we introduce the SYLOS Compact high-harmonic beamline at ELI ALPS, specifically designed to provide the flux required for non-linear optics in the XUV. We present a detailed characterization of the beam line demonstrating its capability to generate and utilize both intense attosecond pulse trains and isolated attosecond pulses. We further showcase the two-XUV-photon double ionization of neon (Ne) and argon (Ar), achieved in a user campaign. The results underscore the beamline's capability to support cutting-edge attosecond experiments and investigations of ultrafast electron dynamics on the attosecond scale.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09608v1",
+      "url": "https://arxiv.org/abs/2601.09608"
+    },
+    {
+      "arxiv_id": "2601.09603",
+      "title": "Linear Complexity Self-Supervised Learning for Music Understanding with Random Quantizer",
+      "authors": [
+        "Petros Vavaroutsos",
+        "Theodoros Palamas",
+        "Pantelis Vikatos"
+      ],
+      "abstract": "In recent years, foundation models have become very popular due to their exceptional performance, mainly in natural language (NLP) tasks where they were first introduced. These models usually consist of hundreds of millions, or even billions, of parameters, making them resource-intensive during training and in production systems, leading to increased costs. This paper focuses on the reduction of a foundation's model size when applied to music information retrieval (MIR) tasks. Our research combines the Branchformer architecture with SummaryMixing, which were first applied in speech recognition, along with a random quantization process. To facilitate reproducibility, we conduct pre-training on publicly available datasets, complemented by a proprietary dataset comparable in scale to other private datasets reported in the literature. We ensure robust evaluation by using a framework consisting of a variety of downstream MIR tasks. Our results show that our architecture achieves competitive performance when compared with other state-of-the-art models that use multi-head self-attention, while reducing the model size from 8.5% up to 12.3%.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "doi": "10.1145/3748522.3779786",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09603v1",
+      "url": "https://arxiv.org/abs/2601.09603"
+    },
+    {
+      "arxiv_id": "2601.09600",
+      "title": "Information Access of the Oppressed: A Problem-Posing Framework for Envisioning Emancipatory Information Access Platforms",
+      "authors": [
+        "Bhaskar Mitra",
+        "Nicola Neophytou",
+        "Sireesh Gururaja"
+      ],
+      "abstract": "Online information access (IA) platforms are targets of authoritarian capture. These concerns are particularly serious and urgent today in light of the rising levels of democratic erosion worldwide, the emerging capabilities of generative AI technologies such as AI persuasion, and the increasing concentration of economic and political power in the hands of Big Tech. This raises the question of what alternative IA infrastructure we must reimagine and build to mitigate the risks of authoritarian capture of our information ecosystems. We explore this question through the lens of Paulo Freire's theories of emancipatory pedagogy. Freire's theories provide a radically different lens for exploring IA's sociotechnical concerns relative to the current dominating frames of fairness, accountability, confidentiality, transparency, and safety. We make explicit, with the intention to challenge, the dichotomy of how we relate to technology as either technologists (who envision and build technology) and its users. We posit that this mirrors the teacher-student relationship in Freire's analysis. By extending Freire's analysis to IA, we challenge the notion that it is the burden of the (altruistic) technologists to come up with interventions to mitigate the risks that emerging technologies pose to marginalized communities. Instead, we advocate that the first task for the technologists is to pose these as problems to the marginalized communities, to encourage them to make and unmake the technology as part of their material struggle against oppression. Their second task is to redesign our online technology stacks to structurally expose spaces for community members to co-opt and co-construct the technology in aid of their emancipatory struggles. We operationalize Freire's theories to develop a problem-posing framework for envisioning emancipatory IA platforms of the future.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.HC",
+        "cs.IR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09600v1",
+      "url": "https://arxiv.org/abs/2601.09600"
+    },
+    {
+      "arxiv_id": "2601.09588",
+      "title": "Energy-Entropy Regularization: The True Power of Minimal Looped Transformers",
+      "authors": [
+        "Wai-Lun Lam"
+      ],
+      "abstract": "Recent research suggests that looped Transformers have superior reasoning capabilities compared to standard deep architectures. Current approaches to training single-head looped architectures on benchmark tasks frequently fail or yield suboptimal performance due to a highly non-convex and irregular loss landscape. In these settings, optimization often stagnates in poor local minima and saddle points of the loss landscape, preventing the model from discovering the global minimum point. The internal mechanisms of these single-head looped transformer models remain poorly understood, and training them from scratch remains a significant challenge. In this paper, we propose a novel training framework that leverages Tsallis entropy and Hamiltonian dynamics to transform the geometry of the loss landscape. By treating the parameter updates as a physical flow, we successfully trained a single-head looped Transformer with model dimension $d = 8$ to solve induction head task with input sequence length of 1000 tokens. This success reveals the internal mechanism behind the superior reasoning capability.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09588v1",
+      "url": "https://arxiv.org/abs/2601.09588"
+    },
+    {
+      "arxiv_id": "2601.09583",
+      "title": "MLIR-Forge: A Modular Framework for Language Smiths",
+      "authors": [
+        "Berke Ates",
+        "Philipp Schaad",
+        "Timo Schneider",
+        "Alexandru Calotoiu",
+        "Torsten Hoefler"
+      ],
+      "abstract": "Optimizing compilers are essential for the efficient and correct execution of software across various scientific fields. Domain-specific languages (DSL) typically use higher level intermediate representations (IR) in their compiler pipelines for domain-specific optimizations. As these IRs add to complexity, it is crucial to test them thoroughly. Random program generators have proven to be an effective tool to test compilers through differential and fuzz testing. However, developing specialized program generators for compiler IRs is not straightforward and demands considerable resources. We introduce MLIR-Forge, a novel random program generator framework that leverages the flexibility of MLIR, aiming to simplify the creation of specialized program generators. MLIR-Forge achieves this by splitting the generation process into fundamental building blocks that are language specific, and reusable program creation logic that constructs random programs from these building blocks. This hides complexity and furthermore, even the language specific components can be defined using a set of common tools. We demonstrate MLIR-Forge's capabilities by generating MLIR with built-in dialects, WebAssembly, and a data-centric program representation, DaCe -- requiring less than a week of development time in total for each of them. Using the generated programs we conduct differential testing and find 9 MLIR, 15 WebAssembly, and 774 DaCe groups of bugs with the corresponding program generators, after running them until the rate of new bugs stagnates.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.PL",
+      "categories": [
+        "cs.PL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09583v1",
+      "url": "https://arxiv.org/abs/2601.09583"
+    },
+    {
+      "arxiv_id": "2601.09555",
+      "title": "Benchmarking Post-Training Quantization of Large Language Models under Microscaling Floating Point Formats",
+      "authors": [
+        "Manyi Zhang",
+        "Ji-Fu Li",
+        "Zhongao Sun",
+        "Haoli Bai",
+        "Hui-Ling Zhen",
+        "Zhenhua Dong",
+        "Xianzhi Yu"
+      ],
+      "abstract": "Microscaling Floating-Point (MXFP) has emerged as a promising low-precision format for large language models (LLMs). Despite various post-training quantization (PTQ) algorithms being proposed, they mostly focus on integer quantization, while their applicability and behavior under MXFP formats remain largely unexplored. To address this gap, this work conducts a systematic investigation of PTQ under MXFP formats, encompassing over 7 PTQ algorithms, 15 evaluation benchmarks, and 3 LLM families. The key findings include: 1) MXFP8 consistently achieves near-lossless performance, while MXFP4 introduces substantial accuracy degradation and remains challenging; 2) PTQ effectiveness under MXFP depends strongly on format compatibility, with some algorithmic paradigms being consistently more effective than others; 3) PTQ performance exhibits highly consistent trends across model families and modalities, in particular, quantization sensitivity is dominated by the language model rather than the vision encoder in multimodal LLMs; 4) The scaling factor of quantization is a critical error source in MXFP4, and a simple pre-scale optimization strategy can significantly mitigate its impact. Together, these results provide practical guidance on adapting existing PTQ methods to MXFP quantization.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09555v1",
+      "url": "https://arxiv.org/abs/2601.09555"
+    },
+    {
+      "arxiv_id": "2601.09527",
+      "title": "Private LLM Inference on Consumer Blackwell GPUs: A Practical Guide for Cost-Effective Local Deployment in SMEs",
+      "authors": [
+        "Jonathan Knoop",
+        "Hendrik Holtmann"
+      ],
+      "abstract": "SMEs increasingly seek alternatives to cloud LLM APIs, which raise data privacy concerns. Dedicated cloud GPU instances offer improved privacy but with limited guarantees and ongoing costs, while professional on-premise hardware (A100, H100) remains prohibitively expensive. We present a systematic evaluation of NVIDIA's Blackwell consumer GPUs (RTX 5060 Ti, 5070 Ti, 5090) for production LLM inference, benchmarking four open-weight models (Qwen3-8B, Gemma3-12B, Gemma3-27B, GPT-OSS-20B) across 79 configurations spanning quantization formats (BF16, W4A16, NVFP4, MXFP4), context lengths (8k-64k), and three workloads: RAG, multi-LoRA agentic serving, and high-concurrency APIs. The RTX 5090 delivers 3.5-4.6x higher throughput than the 5060 Ti with 21x lower latency for RAG, but budget GPUs achieve the highest throughput-per-dollar for API workloads with sub-second latency. NVFP4 quantization provides 1.6x throughput over BF16 with 41% energy reduction and only 2-4% quality loss. Self-hosted inference costs $0.001-0.04 per million tokens (electricity only), which is 40-200x cheaper than budget-tier cloud APIs, with hardware breaking even in under four months at moderate volume (30M tokens/day). Our results show that consumer GPUs can reliably replace cloud inference for most SME workloads, except latency-critical long-context RAG, where high-end GPUs remain essential. We provide deployment guidance and release all benchmark data for reproducible SME-scale deployments.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.PF"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09527v1",
+      "url": "https://arxiv.org/abs/2601.09527"
+    },
+    {
+      "arxiv_id": "2601.09524",
+      "title": "Video Joint-Embedding Predictive Architectures for Facial Expression Recognition",
+      "authors": [
+        "Lennart Eing",
+        "Cristina Luna-Jim\u00e9nez",
+        "Silvan Mertes",
+        "Elisabeth Andr\u00e9"
+      ],
+      "abstract": "This paper introduces a novel application of Video Joint-Embedding Predictive Architectures (V-JEPAs) for Facial Expression Recognition (FER). Departing from conventional pre-training methods for video understanding that rely on pixel-level reconstructions, V-JEPAs learn by predicting embeddings of masked regions from the embeddings of unmasked regions. This enables the trained encoder to not capture irrelevant information about a given video like the color of a region of pixels in the background. Using a pre-trained V-JEPA video encoder, we train shallow classifiers using the RAVDESS and CREMA-D datasets, achieving state-of-the-art performance on RAVDESS and outperforming all other vision-based methods on CREMA-D (+1.48 WAR). Furthermore, cross-dataset evaluations reveal strong generalization capabilities, demonstrating the potential of purely embedding-based pre-training approaches to advance FER. We release our code at https://github.com/lennarteingunia/vjepa-for-fer.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09524v1",
+      "url": "https://arxiv.org/abs/2601.09524"
+    },
+    {
+      "arxiv_id": "2601.09520",
+      "title": "Towards Realistic Synthetic Data for Automatic Drum Transcription",
+      "authors": [
+        "Pierfrancesco Melucci",
+        "Paolo Merialdo",
+        "Taketo Akama"
+      ],
+      "abstract": "Deep learning models define the state-of-the-art in Automatic Drum Transcription (ADT), yet their performance is contingent upon large-scale, paired audio-MIDI datasets, which are scarce. Existing workarounds that use synthetic data often introduce a significant domain gap, as they typically rely on low-fidelity SoundFont libraries that lack acoustic diversity. While high-quality one-shot samples offer a better alternative, they are not available in a standardized, large-scale format suitable for training. This paper introduces a new paradigm for ADT that circumvents the need for paired audio-MIDI training data. Our primary contribution is a semi-supervised method to automatically curate a large and diverse corpus of one-shot drum samples from unlabeled audio sources. We then use this corpus to synthesize a high-quality dataset from MIDI files alone, which we use to train a sequence-to-sequence transcription model. We evaluate our model on the ENST and MDB test sets, where it achieves new state-of-the-art results, significantly outperforming both fully supervised methods and previous synthetic-data approaches. The code for reproducing our experiments is publicly available at https://github.com/pier-maker92/ADT_STR",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09520v1",
+      "url": "https://arxiv.org/abs/2601.09520"
+    },
+    {
+      "arxiv_id": "2601.09503",
+      "title": "What Do LLM Agents Know About Their World? Task2Quiz: A Paradigm for Studying Environment Understanding",
+      "authors": [
+        "Siyuan Liu",
+        "Hongbang Yuan",
+        "Xinze Li",
+        "Ziyue Zhu",
+        "Yixin Cao",
+        "Yu-Gang Jiang"
+      ],
+      "abstract": "Large language model (LLM) agents have demonstrated remarkable capabilities in complex decision-making and tool-use tasks, yet their ability to generalize across varying environments remains a under-examined concern. Current evaluation paradigms predominantly rely on trajectory-based metrics that measure task success, while failing to assess whether agents possess a grounded, transferable model of the environment. To address this gap, we propose Task-to-Quiz (T2Q), a deterministic and automated evaluation paradigm designed to decouple task execution from world-state understanding. We instantiate this paradigm in T2QBench, a suite comprising 30 environments and 1,967 grounded QA pairs across multiple difficulty levels. Our extensive experiments reveal that task success is often a poor proxy for environment understanding, and that current memory machanism can not effectively help agents acquire a grounded model of the environment. These findings identify proactive exploration and fine-grained state representation as primary bottlenecks, offering a robust foundation for developing more generalizable autonomous agents.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09503v1",
+      "url": "https://arxiv.org/abs/2601.09503"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

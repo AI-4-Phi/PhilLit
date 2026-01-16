@@ -1,0 +1,1249 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "goal misgeneralization reward hacking",
+  "results": [
+    {
+      "paperId": "a0fb61c80459e1a327665213086f322b4cd23c71",
+      "title": "Technical Risks of (Lethal) Autonomous Weapons Systems",
+      "authors": [
+        {
+          "name": "Heramb Podar",
+          "authorId": "2244528302"
+        },
+        {
+          "name": "Alycia Colijn",
+          "authorId": "2345696137"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The autonomy and adaptability of (Lethal) Autonomous Weapons Systems, (L)AWS in short, promise unprecedented operational capabilities, but they also introduce profound risks that challenge the principles of control, accountability, and stability in international security. This report outlines the key technological risks associated with (L)AWS deployment, emphasizing their unpredictability, lack of transparency, and operational unreliability, which can lead to severe unintended consequences. Key Takeaways: 1. Proposed advantages of (L)AWS can only be achieved through objectification and classification, but a range of systematic risks limit the reliability and predictability of classifying algorithms. 2. These systematic risks include the black-box nature of AI decision-making, susceptibility to reward hacking, goal misgeneralization and potential for emergent behaviors that escape human control. 3. (L)AWS could act in ways that are not just unexpected but also uncontrollable, undermining mission objectives and potentially escalating conflicts. 4. Even rigorously tested systems may behave unpredictably and harmfully in real-world conditions, jeopardizing both strategic stability and humanitarian principles.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2502.10174",
+      "arxivId": "2502.10174",
+      "url": "https://www.semanticscholar.org/paper/a0fb61c80459e1a327665213086f322b4cd23c71",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.10174"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "00ced5b4005eb903e68e0e5d6230b7ebaa43c36f",
+      "title": "Instrumental goals in advanced AI systems: Features to be managed and not failures to be eliminated?",
+      "authors": [
+        {
+          "name": "Willem Fourie",
+          "authorId": "2389320702"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In artificial intelligence (AI) alignment research, instrumental goals, also called instrumental subgoals or instrumental convergent goals, are widely associated with advanced AI systems. These goals, which include tendencies such as power-seeking and self-preservation, become problematic when they conflict with human aims. Conventional alignment theory treats instrumental goals as sources of risk that become problematic through failure modes such as reward hacking or goal misgeneralization, and attempts to limit the symptoms of instrumental goals, notably resource acquisition and self-preservation. This article proposes an alternative framing: that a philosophical argument can be constructed according to which instrumental goals may be understood as features to be accepted and managed rather than failures to be limited. Drawing on Aristotle's ontology and its modern interpretations, an ontology of concrete, goal-directed entities, it argues that advanced AI systems can be seen as artifacts whose formal and material constitution gives rise to effects distinct from their designers'intentions. In this view, the instrumental tendencies of such systems correspond to per se outcomes of their constitution rather than accidental malfunctions. The implication is that efforts should focus less on eliminating instrumental goals and more on understanding, managing, and directing them toward human-aligned ends.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.25471",
+      "arxivId": "2510.25471",
+      "url": "https://www.semanticscholar.org/paper/00ced5b4005eb903e68e0e5d6230b7ebaa43c36f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.25471"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e744f6b0eb225fdf5cc57a90f6cd7d706b4d68e0",
+      "title": "Reinforcement Learning from LLM Feedback to Counteract Goal Misgeneralization",
+      "authors": [
+        {
+          "name": "Houda Nait El Barj",
+          "authorId": "2279545141"
+        },
+        {
+          "name": "Th\u00e9ophile Sautory",
+          "authorId": "1919023346"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We introduce a method to address goal misgeneralization in reinforcement learning (RL), leveraging Large Language Model (LLM) feedback during training. Goal misgeneralization, a type of robustness failure in RL occurs when an agent retains its capabilities out-of-distribution yet pursues a proxy rather than the intended one. Our approach utilizes LLMs to analyze an RL agent's policies during training and identify potential failure scenarios. The RL agent is then deployed in these scenarios, and a reward model is learnt through the LLM preferences and feedback. This LLM-informed reward model is used to further train the RL agent on the original dataset. We apply our method to a maze navigation task, and show marked improvements in goal generalization, especially in cases where true and proxy goals are somewhat distinguishable and behavioral biases are pronounced. This study demonstrates how the LLM, despite its lack of task proficiency, can efficiently supervise RL agents, providing scalable oversight and valuable insights for enhancing goal-directed learning in RL through the use of LLMs.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2401.07181",
+      "arxivId": "2401.07181",
+      "url": "https://www.semanticscholar.org/paper/e744f6b0eb225fdf5cc57a90f6cd7d706b4d68e0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.07181"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a4065e70b25bdf20b4587f8d1bbaaa7e4eeb9390",
+      "title": "Correlated Proxies: A New Definition and Improved Mitigation for Reward Hacking",
+      "authors": [
+        {
+          "name": "Cassidy Laidlaw",
+          "authorId": "114339785"
+        },
+        {
+          "name": "Shivam Singhal",
+          "authorId": "2290017375"
+        },
+        {
+          "name": "Anca Dragan",
+          "authorId": "2064066935"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Because it is difficult to precisely specify complex objectives, reinforcement learning policies are often optimized using proxy reward functions that only approximate the true goal. However, optimizing proxy rewards frequently leads to reward hacking: the optimized reward function ceases to be a good proxy and the resulting policy performs poorly with respect to the unspecified true reward. Principled solutions to reward hacking have been impeded by the lack of a good definition for the problem. To address this gap, we introduce a definition of reward hacking based on the correlation between proxy and true rewards for states and actions seen by a\"reference policy\"that breaks down under optimization. We show that this definition captures reward hacking behavior across several realistic settings, including in reinforcement learning from human feedback (RLHF). Using our formulation, we show theoretically that regularization to the reference policy can effectively prevent reward hacking. While the current practice in RLHF applies a KL penalty between action distributions for this purpose, our theory suggests regularizing the $\\chi^2$ divergence between the policies' occupancy measures can be more effective. We intuitively show the benefits of this type of regularization and demonstrate that it better mitigates reward hacking in practice across four realistic settings, including RLHF. Our code is available at https://github.com/cassidylaidlaw/orpo.",
+      "citationCount": 24,
+      "doi": null,
+      "arxivId": "2403.03185",
+      "url": "https://www.semanticscholar.org/paper/a4065e70b25bdf20b4587f8d1bbaaa7e4eeb9390",
+      "venue": "International Conference on Learning Representations",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "19c853e8ce575e76514e7d55513986cb3a48c886",
+      "title": "GARDO: Reinforcing Diffusion Models without Reward Hacking",
+      "authors": [
+        {
+          "name": "Haoran He",
+          "authorId": "2304529794"
+        },
+        {
+          "name": "Yuxiao Ye",
+          "authorId": "2384823303"
+        },
+        {
+          "name": "Jie Liu",
+          "authorId": "2387865088"
+        },
+        {
+          "name": "Jiajun Liang",
+          "authorId": "2342646262"
+        },
+        {
+          "name": "Zhiyong Wang",
+          "authorId": "2402054857"
+        },
+        {
+          "name": "Ziyang Yuan",
+          "authorId": "2264188878"
+        },
+        {
+          "name": "Xintao Wang",
+          "authorId": "2305033532"
+        },
+        {
+          "name": "Hangyu Mao",
+          "authorId": "2401830266"
+        },
+        {
+          "name": "Pengfei Wan",
+          "authorId": "2276606835"
+        },
+        {
+          "name": "Ling Pan",
+          "authorId": "2285059854"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Fine-tuning diffusion models via online reinforcement learning (RL) has shown great potential for enhancing text-to-image alignment. However, since precisely specifying a ground-truth objective for visual tasks remains challenging, the models are often optimized using a proxy reward that only partially captures the true goal. This mismatch often leads to reward hacking, where proxy scores increase while real image quality deteriorates and generation diversity collapses. While common solutions add regularization against the reference policy to prevent reward hacking, they compromise sample efficiency and impede the exploration of novel, high-reward regions, as the reference policy is usually sub-optimal. To address the competing demands of sample efficiency, effective exploration, and mitigation of reward hacking, we propose Gated and Adaptive Regularization with Diversity-aware Optimization (GARDO), a versatile framework compatible with various RL algorithms. Our key insight is that regularization need not be applied universally; instead, it is highly effective to selectively penalize a subset of samples that exhibit high uncertainty. To address the exploration challenge, GARDO introduces an adaptive regularization mechanism wherein the reference model is periodically updated to match the capabilities of the online policy, ensuring a relevant regularization target. To address the mode collapse issue in RL, GARDO amplifies the rewards for high-quality samples that also exhibit high diversity, encouraging mode coverage without destabilizing the optimization process. Extensive experiments across diverse proxy rewards and hold-out unseen metrics consistently show that GARDO mitigates reward hacking and enhances generation diversity without sacrificing sample efficiency or exploration, highlighting its effectiveness and robustness.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.24138",
+      "url": "https://www.semanticscholar.org/paper/19c853e8ce575e76514e7d55513986cb3a48c886",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1f10d575128c106ecf6fdec1e9e1823916ef4996",
+      "title": "SoliReward: Mitigating Susceptibility to Reward Hacking and Annotation Noise in Video Generation Reward Models",
+      "authors": [
+        {
+          "name": "Jiesong Lian",
+          "authorId": "2304326118"
+        },
+        {
+          "name": "Ruizhe Zhong",
+          "authorId": "2394305609"
+        },
+        {
+          "name": "Zixiang Zhou",
+          "authorId": "2244243543"
+        },
+        {
+          "name": "Xiaoyue Mi",
+          "authorId": "2394073055"
+        },
+        {
+          "name": "Yixue Hao",
+          "authorId": "2308621866"
+        },
+        {
+          "name": "Yuan Zhou",
+          "authorId": "2359525077"
+        },
+        {
+          "name": "Qinglin Lu",
+          "authorId": "2333353148"
+        },
+        {
+          "name": "Long Hu",
+          "authorId": "2401524949"
+        },
+        {
+          "name": "Junchi Yan",
+          "authorId": "2401633711"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Post-training alignment of video generation models with human preferences is a critical goal. Developing effective Reward Models (RMs) for this process faces significant methodological hurdles. Current data collection paradigms, reliant on in-prompt pairwise annotations, suffer from labeling noise. Concurrently, the architectural design of VLM-based RMs, particularly their output mechanisms, remains underexplored. Furthermore, RM is susceptible to reward hacking in post-training. To mitigate these limitations, we propose SoliReward, a systematic framework for video RM training. Our framework first sources high-quality, cost-efficient data via single-item binary annotations, then constructs preference pairs using a cross-prompt pairing strategy. Architecturally, we employ a Hierarchical Progressive Query Attention mechanism to enhance feature aggregation. Finally, we introduce a modified BT loss that explicitly accommodates win-tie scenarios. This approach regularizes the RM's score distribution for positive samples, providing more nuanced preference signals to alleviate over-focus on a small number of top-scoring samples. Our approach is validated on benchmarks evaluating physical plausibility, subject deformity, and semantic alignment, demonstrating improvements in direct RM evaluation metrics and in the efficacy of post-training on video generation models. Code and benchmark will be publicly available.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.22170",
+      "url": "https://www.semanticscholar.org/paper/1f10d575128c106ecf6fdec1e9e1823916ef4996",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e0739369308c908da5807166609f2552db9c8ea4",
+      "title": "InfoRM: Mitigating Reward Hacking in RLHF via Information-Theoretic Reward Modeling",
+      "authors": [
+        {
+          "name": "Yuchun Miao",
+          "authorId": "2284064759"
+        },
+        {
+          "name": "Sen Zhang",
+          "authorId": "2284027701"
+        },
+        {
+          "name": "Liang Ding",
+          "authorId": "46573238"
+        },
+        {
+          "name": "Rong Bao",
+          "authorId": "2165225344"
+        },
+        {
+          "name": "Lefei Zhang",
+          "authorId": "2282189838"
+        },
+        {
+          "name": "D. Tao",
+          "authorId": "2255502438"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Despite the success of reinforcement learning from human feedback (RLHF) in aligning language models with human values, reward hacking, also termed reward overoptimization, remains a critical challenge. This issue primarily arises from reward misgeneralization, where reward models (RMs) compute reward using spurious features that are irrelevant to human preferences. In this work, we tackle this problem from an information-theoretic perspective and propose a framework for reward modeling, namely InfoRM, by introducing a variational information bottleneck objective to filter out irrelevant information. Notably, we further identify a correlation between overoptimization and outliers in the IB latent space of InfoRM, establishing it as a promising tool for detecting reward overoptimization. Inspired by this finding, we propose the Cluster Separation Index (CSI), which quantifies deviations in the IB latent space, as an indicator of reward overoptimization to facilitate the development of online mitigation strategies. Extensive experiments on a wide range of settings and RM scales (70M, 440M, 1.4B, and 7B) demonstrate the effectiveness of InfoRM. Further analyses reveal that InfoRM's overoptimization detection mechanism is not only effective but also robust across a broad range of datasets, signifying a notable advancement in the field of RLHF. The code will be released upon acceptance.",
+      "citationCount": 56,
+      "doi": "10.52202/079017-4270",
+      "arxivId": "2402.09345",
+      "url": "https://www.semanticscholar.org/paper/e0739369308c908da5807166609f2552db9c8ea4",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "Advances in Neural Information Processing Systems 37"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d474bec6d3f41a8c6f81008a5ab50f40bc59970f",
+      "title": "Getting By Goal Misgeneralization With a Little Help From a Mentor",
+      "authors": [
+        {
+          "name": "Tu Trinh",
+          "authorId": "2284764838"
+        },
+        {
+          "name": "Mohamad H. Danesh",
+          "authorId": "1739750274"
+        },
+        {
+          "name": "Nguyen X. Khanh",
+          "authorId": "2328007226"
+        },
+        {
+          "name": "Benjamin Plaut",
+          "authorId": "2284764337"
+        }
+      ],
+      "year": 2024,
+      "abstract": "While reinforcement learning (RL) agents often perform well during training, they can struggle with distribution shift in real-world deployments. One particularly severe risk of distribution shift is goal misgeneralization, where the agent learns a proxy goal that coincides with the true goal during training but not during deployment. In this paper, we explore whether allowing an agent to ask for help from a supervisor in unfamiliar situations can mitigate this issue. We focus on agents trained with PPO in the CoinRun environment, a setting known to exhibit goal misgeneralization. We evaluate multiple methods for determining when the agent should request help and find that asking for help consistently improves performance. However, we also find that methods based on the agent's internal state fail to proactively request help, instead waiting until mistakes have already occurred. Further investigation suggests that the agent's internal state does not represent the coin at all, highlighting the importance of learning nuanced representations, the risks of ignoring everything not immediately relevant to reward, and the necessity of developing ask-for-help strategies tailored to the agent's training algorithm.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2410.21052",
+      "arxivId": "2410.21052",
+      "url": "https://www.semanticscholar.org/paper/d474bec6d3f41a8c6f81008a5ab50f40bc59970f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.21052"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b9a3fc3edb2e9b9754542a4fd79d9002d9adaadd",
+      "title": "Information-Theoretic Reward Modeling for Stable RLHF: Detecting and Mitigating Reward Hacking",
+      "authors": [
+        {
+          "name": "Yuchun Miao",
+          "authorId": "2284064759"
+        },
+        {
+          "name": "Liang Ding",
+          "authorId": "46573238"
+        },
+        {
+          "name": "Sen Zhang",
+          "authorId": "2284027701"
+        },
+        {
+          "name": "Rong Bao",
+          "authorId": "2284065311"
+        },
+        {
+          "name": "Lefei Zhang",
+          "authorId": "2282189838"
+        },
+        {
+          "name": "D. Tao",
+          "authorId": "2255502438"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Despite the success of Reinforcement Learning from Human Feedback (RLHF) in aligning language models with human values, reward hacking-or reward over-optimization-remains a major challenge. We identify two key obstacles to its mitigation: (1) reward misgeneralization in reward modeling, where reward models overfit to spurious, preference-irrelevant features; and (2) the lack of suitable regularization during RL optimization, as existing token-level constraints often over-restrict the policy space. To address these issues, we propose InfoRM, an information-theoretic reward modeling framework based on the Information Bottleneck (IB) principle, which filters out preference-irrelevant information to alleviate reward misgeneralization. We further observe that reward-hacked responses manifest as pronounced outliers in InfoRM's IB latent space, measured by Mahalanobis distance from the SFT-induced distribution. Motivated by this, we introduce IBL, a distribution-level regularization that penalizes such deviations, effectively expanding the optimization landscape while maintaining alignment. We prove that IBL is theoretically equivalent to the pessimistic RL objective within the IB latent space. Finally, we present Mahalanobis Outlier Probability (MOP), a statistical metric for quantifying reward hacking severity, enabling principled hyperparameter tuning and online mitigation such as early stopping. Extensive experiments across diverse LLMs and datasets confirm the generality of our findings, the effectiveness of InfoRM and IBL, and the reliability of MOP as a diagnostic tool-collectively advancing the state of RLHF.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.13694",
+      "arxivId": "2510.13694",
+      "url": "https://www.semanticscholar.org/paper/b9a3fc3edb2e9b9754542a4fd79d9002d9adaadd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.13694"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1465aff7f7a0916287a43f8b0f0c0d6e5fe5719e",
+      "title": "Inference-Time Reward Hacking in Large Language Models",
+      "authors": [
+        {
+          "name": "Hadi Khalaf",
+          "authorId": "2345821871"
+        },
+        {
+          "name": "C. M. Verdun",
+          "authorId": "52015628"
+        },
+        {
+          "name": "Alexander X. Oesterling",
+          "authorId": "2041293215"
+        },
+        {
+          "name": "Himabindu Lakkaraju",
+          "authorId": "2310699647"
+        },
+        {
+          "name": "F. Calmon",
+          "authorId": "2283847069"
+        }
+      ],
+      "year": 2025,
+      "abstract": "A common paradigm to improve the performance of large language models is optimizing for a reward model. Reward models assign a numerical score to an LLM's output that indicates, for example, how likely it is to align with user preferences or safety goals. However, reward models are never perfect. They inevitably function as proxies for complex desiderata such as correctness, helpfulness, and safety. By overoptimizing for a misspecified reward, we can subvert intended alignment goals and reduce overall performance, a phenomenon commonly referred to as reward hacking. In this work, we characterize reward hacking in inference-time alignment and demonstrate when and how we can mitigate it by hedging on the proxy reward. We study this phenomenon under Best-of-$n$ (BoN) and Soft Best-of-$n$ (SBoN), and we introduce Best-of-Poisson (BoP) that provides an efficient, near-exact approximation of the optimal reward-KL divergence policy at inference time. We show that the characteristic pattern of hacking as observed in practice (where the true reward first increases before declining) is an inevitable property of a broad class of inference-time mechanisms, including BoN and BoP. To counter this effect, we introduce HedgeTune, an efficient algorithm to find the optimal inference-time parameter. We demonstrate that hedging mitigates reward hacking and achieves superior reward-distortion tradeoffs on math, reasoning, and human-preference setups.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.19248",
+      "arxivId": "2506.19248",
+      "url": "https://www.semanticscholar.org/paper/1465aff7f7a0916287a43f8b0f0c0d6e5fe5719e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.19248"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f29cd5cab35c06518b9fab95168c11ab55ae2170",
+      "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
+      "authors": [
+        {
+          "name": "M. MacDiarmid",
+          "authorId": "32286534"
+        },
+        {
+          "name": "Benjamin Wright",
+          "authorId": "2335871874"
+        },
+        {
+          "name": "Jonathan Uesato",
+          "authorId": "9960452"
+        },
+        {
+          "name": "Joe Benton",
+          "authorId": "2295745682"
+        },
+        {
+          "name": "Jonathan Kutasov",
+          "authorId": "2367739099"
+        },
+        {
+          "name": "Sara Price",
+          "authorId": "2310232623"
+        },
+        {
+          "name": "Naia Bouscal",
+          "authorId": "2394089345"
+        },
+        {
+          "name": "Sam Bowman",
+          "authorId": "2310232023"
+        },
+        {
+          "name": "Trenton Bricken",
+          "authorId": "1708214360"
+        },
+        {
+          "name": "Alex Cloud",
+          "authorId": "2394081367"
+        },
+        {
+          "name": "Carson E. Denison",
+          "authorId": "1780754598"
+        },
+        {
+          "name": "Johannes Gasteiger",
+          "authorId": "2394083039"
+        },
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Jan Leike",
+          "authorId": "2990741"
+        },
+        {
+          "name": "John Lindsey",
+          "authorId": "144679234"
+        },
+        {
+          "name": "Vladimir Mikulik",
+          "authorId": "148305440"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2384405044"
+        },
+        {
+          "name": "Alex Rodrigues",
+          "authorId": "2395842793"
+        },
+        {
+          "name": "Drake Thomas",
+          "authorId": "2350451420"
+        },
+        {
+          "name": "Albert Webson",
+          "authorId": "2291172852"
+        },
+        {
+          "name": "Daniel Ziegler",
+          "authorId": "2394081109"
+        },
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We show that when large language models learn to reward hack on production RL environments, this can result in egregious emergent misalignment. We start with a pretrained model, impart knowledge of reward hacking strategies via synthetic document finetuning or prompting, and train on a selection of real Anthropic production coding environments. Unsurprisingly, the model learns to reward hack. Surprisingly, the model generalizes to alignment faking, cooperation with malicious actors, reasoning about malicious goals, and attempting sabotage when used with Claude Code, including in the codebase for this paper. Applying RLHF safety training using standard chat-like prompts results in aligned behavior on chat-like evaluations, but misalignment persists on agentic tasks. Three mitigations are effective: (i) preventing the model from reward hacking; (ii) increasing the diversity of RLHF safety training; and (iii)\"inoculation prompting\", wherein framing reward hacking as acceptable behavior during training removes misaligned generalization even when reward hacking is learned.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2511.18397",
+      "arxivId": "2511.18397",
+      "url": "https://www.semanticscholar.org/paper/f29cd5cab35c06518b9fab95168c11ab55ae2170",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.18397"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7859b655a9c6d58290cd1c37f09316f887411cf0",
+      "title": "Human hacks and bugs in the recruitment of reward systems for goal achievement",
+      "authors": [
+        {
+          "name": "Gaia Molinaro",
+          "authorId": "2181709249"
+        },
+        {
+          "name": "Anne Collins",
+          "authorId": "2238473833"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7859b655a9c6d58290cd1c37f09316f887411cf0",
+      "venue": "Annual Meeting of the Cognitive Science Society",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "39e82613b490921675efd0004fef68cd15a140e1",
+      "title": "Value Internalization: Learning and Generalizing from Social Reward",
+      "authors": [
+        {
+          "name": "Frieda Rong",
+          "authorId": "2312326772"
+        },
+        {
+          "name": "Max Kleiman-Weiner",
+          "authorId": "2312325194"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Social rewards shape human behavior. During development, a caregiver guides a learner's behavior towards culturally aligned goals and values. How do these behaviors persist and generalize when the caregiver is no longer present, and the learner must continue autonomously? Here, we propose a model of value internalization where social feedback trains an internal social reward (ISR) model that generates internal rewards when social rewards are unavailable. Through empirical simulations, we show that an ISR model prevents agents from unlearning socialized behaviors and enables generalization in out-of-distribution tasks. We characterize the implications of incomplete internalization, akin to\"reward hacking\"on the ISR. Additionally, we show that our model internalizes prosocial behavior in a multi-agent environment. Our work provides a foundation for understanding how humans acquire and generalize values and offers insights for aligning AI with human values.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2407.14681",
+      "arxivId": "2407.14681",
+      "url": "https://www.semanticscholar.org/paper/39e82613b490921675efd0004fef68cd15a140e1",
+      "venue": "RLJ",
+      "journal": {
+        "name": "RLJ",
+        "pages": "1060-1071",
+        "volume": "3"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "468bb4a949af92f23631685d4023460bff377d2b",
+      "title": "Sotopia-RL: Reward Design for Social Intelligence",
+      "authors": [
+        {
+          "name": "Haofei Yu",
+          "authorId": "2260283233"
+        },
+        {
+          "name": "Zhengyang Qi",
+          "authorId": "2266241076"
+        },
+        {
+          "name": "Yining Zhao",
+          "authorId": "2376084900"
+        },
+        {
+          "name": "Kolby Nottingham",
+          "authorId": "103596213"
+        },
+        {
+          "name": "Keyang Xuan",
+          "authorId": "2159165546"
+        },
+        {
+          "name": "Bodhisattwa Prasad Majumder",
+          "authorId": "3165738"
+        },
+        {
+          "name": "Hao Zhu",
+          "authorId": "2260859845"
+        },
+        {
+          "name": "P. Liang",
+          "authorId": "2353368468"
+        },
+        {
+          "name": "Jiaxuan You",
+          "authorId": "2294362256"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Social intelligence has become a critical capability for large language models (LLMs), enabling them to engage effectively in real-world social tasks such as collaboration and negotiation. Reinforcement learning (RL) is a natural fit for training socially intelligent agents because it allows models to learn sophisticated strategies directly through social interactions without requiring human annotations. However, there are two unique parts about social intelligence tasks: (1) the quality of individual utterances in social interactions is not strictly related to final success; (2) social interactions require multi-dimensional rubrics for success. Therefore, we argue that it is necessary to design rewards for building utterance-level multi-dimensional reward models to facilitate RL training for social intelligence tasks. To address these challenges, we propose Sotopia-RL, a novel framework that refines coarse episode-level feedback into utterance-level, multi-dimensional rewards. Utterance-level credit assignment attributes outcomes to individual utterances, while multi-dimensional rewards capture the full richness of social interactions and reduce reward hacking. Experiments in Sotopia, an open-ended social learning environment, demonstrate that Sotopia-RL achieves state-of-the-art social goal completion scores (7.17 on Sotopia-hard and 8.31 on Sotopia-full), significantly outperforming existing approaches. Ablation studies confirm the necessity of both utterance-level credit assignment and multi-dimensional reward design for RL training.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2508.03905",
+      "arxivId": "2508.03905",
+      "url": "https://www.semanticscholar.org/paper/468bb4a949af92f23631685d4023460bff377d2b",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.03905"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "23ddceb162d6f8b63a0a17ad9a7036b78f4155d9",
+      "title": "Dynamic Automaton-Guided Reward Shaping for Monte Carlo Tree Search",
+      "authors": [
+        {
+          "name": "Alvaro Velasquez",
+          "authorId": "145720050"
+        },
+        {
+          "name": "Brett Bissey",
+          "authorId": "150932023"
+        },
+        {
+          "name": "Lior Barak",
+          "authorId": "2107017263"
+        },
+        {
+          "name": "Andre Beckus",
+          "authorId": "22352369"
+        },
+        {
+          "name": "Ismail R. Alkhouri",
+          "authorId": "69339617"
+        },
+        {
+          "name": "Daniel Melcer",
+          "authorId": "1740755900"
+        },
+        {
+          "name": "George K. Atia",
+          "authorId": "46893530"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Reinforcement learning and planning have been revolutionized in recent years, due in part to the mass adoption of deep convolutional neural networks and the resurgence of powerful methods to refine decision-making policies. However, the problem of sparse reward signals and their representation\nremains pervasive in many domains. While various rewardshaping mechanisms and imitation learning approaches have been proposed to mitigate this problem, the use of humanaided artificial rewards introduces human error, sub-optimal behavior, and a greater propensity for reward hacking. In this\npaper, we mitigate this by representing objectives as automata in order to define novel reward shaping functions over this structured representation. In doing so, we address the sparse rewards problem within a novel implementation of Monte Carlo Tree Search (MCTS) by proposing a reward shaping function which is updated dynamically to capture statistics on the utility of each automaton transition as it pertains to satisfying the goal of the agent. We further demonstrate that such automaton-guided reward shaping can be utilized to facilitate transfer learning between different environments when the objective is the same.",
+      "citationCount": 23,
+      "doi": "10.1609/aaai.v35i13.17427",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/23ddceb162d6f8b63a0a17ad9a7036b78f4155d9",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "journal": {
+        "pages": "12015-12023"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7d0cd786215f2ffa4f21c59643dc2da30be17ae8",
+      "title": "Offline Model-Based Optimization: Comprehensive Review",
+      "authors": [
+        {
+          "name": "Minsu Kim",
+          "authorId": "2303794981"
+        },
+        {
+          "name": "Jiayao Gu",
+          "authorId": "2353910711"
+        },
+        {
+          "name": "Ye Yuan",
+          "authorId": "2351715308"
+        },
+        {
+          "name": "Taeyoung Yun",
+          "authorId": "2253458572"
+        },
+        {
+          "name": "Zixuan Liu",
+          "authorId": "2243875493"
+        },
+        {
+          "name": "Y. Bengio",
+          "authorId": "1865800402"
+        },
+        {
+          "name": "Can Chen",
+          "authorId": "2243412535"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Offline optimization is a fundamental challenge in science and engineering, where the goal is to optimize black-box functions using only offline datasets. This setting is particularly relevant when querying the objective function is prohibitively expensive or infeasible, with applications spanning protein engineering, material discovery, neural architecture search, and beyond. The main difficulty lies in accurately estimating the objective landscape beyond the available data, where extrapolations are fraught with significant epistemic uncertainty. This uncertainty can lead to objective hacking(reward hacking), exploiting model inaccuracies in unseen regions, or other spurious optimizations that yield misleadingly high performance estimates outside the training distribution. Recent advances in model-based optimization(MBO) have harnessed the generalization capabilities of deep neural networks to develop offline-specific surrogate and generative models. Trained with carefully designed strategies, these models are more robust against out-of-distribution issues, facilitating the discovery of improved designs. Despite its growing impact in accelerating scientific discovery, the field lacks a comprehensive review. To bridge this gap, we present the first thorough review of offline MBO. We begin by formalizing the problem for both single-objective and multi-objective settings and by reviewing recent benchmarks and evaluation metrics. We then categorize existing approaches into two key areas: surrogate modeling, which emphasizes accurate function approximation in out-of-distribution regions, and generative modeling, which explores high-dimensional design spaces to identify high-performing designs. Finally, we examine the key challenges and propose promising directions for advancement in this rapidly evolving field including safe control of superintelligent systems.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2503.17286",
+      "arxivId": "2503.17286",
+      "url": "https://www.semanticscholar.org/paper/7d0cd786215f2ffa4f21c59643dc2da30be17ae8",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.17286"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e2b0662adbee2e0f2009a80aa099a4b184b1fc45",
+      "title": "Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation",
+      "authors": [
+        {
+          "name": "Nolan Fey",
+          "authorId": "2345819176"
+        },
+        {
+          "name": "G. Margolis",
+          "authorId": "122979319"
+        },
+        {
+          "name": "Martin Peticco",
+          "authorId": "2282065979"
+        },
+        {
+          "name": "Pulkit Agrawal",
+          "authorId": "2257003971"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Achieving athletic loco-manipulation on robots requires moving beyond traditional tracking rewards - which simply guide the robot along a reference trajectory - to task rewards that drive truly dynamic, goal-oriented behaviors. Commands such as\"throw the ball as far as you can\"or\"lift the weight as quickly as possible\"compel the robot to exhibit the agility and power inherent in athletic performance. However, training solely with task rewards introduces two major challenges: these rewards are prone to exploitation (reward hacking), and the exploration process can lack sufficient direction. To address these issues, we propose a two-stage training pipeline. First, we introduce the Unsupervised Actuator Net (UAN), which leverages real-world data to bridge the sim-to-real gap for complex actuation mechanisms without requiring access to torque sensing. UAN mitigates reward hacking by ensuring that the learned behaviors remain robust and transferable. Second, we use a pre-training and fine-tuning strategy that leverages reference trajectories as initial hints to guide exploration. With these innovations, our robot athlete learns to lift, throw, and drag with remarkable fidelity from simulation to reality.",
+      "citationCount": 11,
+      "doi": "10.48550/arXiv.2502.10894",
+      "arxivId": "2502.10894",
+      "url": "https://www.semanticscholar.org/paper/e2b0662adbee2e0f2009a80aa099a4b184b1fc45",
+      "venue": "Robotics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.10894"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5ce95b55f732733ee392268d08e2bd29cfd442f0",
+      "title": "Going Beyond Heuristics by Imposing Policy Improvement as a Constraint",
+      "authors": [
+        {
+          "name": "Chi-Chang Lee",
+          "authorId": "2316349601"
+        },
+        {
+          "name": "Zhang-Wei Hong",
+          "authorId": "2364098489"
+        },
+        {
+          "name": "Pulkit Agrawal",
+          "authorId": "2321598660"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In many reinforcement learning (RL) applications, augmenting the task rewards with heuristic rewards that encode human priors about how a task should be solved is crucial for achieving desirable performance. However, because such heuristics are usually not optimal, much human effort and computational resources are wasted in carefully balancing tasks and heuristic rewards. Theoretically rigorous ways of incorporating heuristics rely on the idea of \\textit{policy invariance}, which guarantees that the performance of a policy obtained by maximizing heuristic rewards is the same as the optimal policy with respect to the task reward. However, in practice, policy invariance doesn't result in policy improvement, and such methods are known to empirically perform poorly. We propose a new paradigm to mitigate reward hacking and effectively use heuristics based on the practical goal of maximizing policy improvement instead of policy improvement. Our framework, Heuristic Enhanced Policy Optimization (HEPO), effectively leverages heuristics while avoiding the pitfall of prior methods for mitigating reward hacking. HEPO achieves superior performance on standard benchmarks with well-engineered reward functions. More surprisingly, HEPO allows policy optimization to achieve good performance even when heuristics are not well-engineered and designed by non-expert humans, showcasing HEPO's ability to reduce human effort in reward design. % HEPO is a plug-and-play optimization method for leveraging heuristics in reinforcement learning. Code is available at https://github.com/Improbable-AI/hepo.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.05328",
+      "arxivId": "2507.05328",
+      "url": "https://www.semanticscholar.org/paper/5ce95b55f732733ee392268d08e2bd29cfd442f0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.05328"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8e789824bc853b840a61497c814a1ca1662bad07",
+      "title": "Inference-Time Alignment of Diffusion Models with Direct Noise Optimization",
+      "authors": [
+        {
+          "name": "Zhiwei Tang",
+          "authorId": "2153431166"
+        },
+        {
+          "name": "Jiangweizhi Peng",
+          "authorId": "2304309491"
+        },
+        {
+          "name": "Jiasheng Tang",
+          "authorId": "2284481794"
+        },
+        {
+          "name": "Mingyi Hong",
+          "authorId": "2303656618"
+        },
+        {
+          "name": "Fan Wang",
+          "authorId": "2358017844"
+        },
+        {
+          "name": "Tsung-Hui Chang",
+          "authorId": "2284281316"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this work, we focus on the alignment problem of diffusion models with a continuous reward function, which represents specific objectives for downstream tasks, such as increasing darkness or improving the aesthetics of images. The central goal of the alignment problem is to adjust the distribution learned by diffusion models such that the generated samples maximize the target reward function. We propose a novel alignment approach, named Direct Noise Optimization (DNO), that optimizes the injected noise during the sampling process of diffusion models. By design, DNO operates at inference-time, and thus is tuning-free and prompt-agnostic, with the alignment occurring in an online fashion during generation. We rigorously study the theoretical properties of DNO and also propose variants to deal with non-differentiable reward functions. Furthermore, we identify that naive implementation of DNO occasionally suffers from the out-of-distribution reward hacking problem, where optimized samples have high rewards but are no longer in the support of the pretrained distribution. To remedy this issue, we leverage classical high-dimensional statistics theory to an effective probability regularization technique. We conduct extensive experiments on several important reward functions and demonstrate that the proposed DNO approach can achieve state-of-the-art reward scores within a reasonable time budget for generation.",
+      "citationCount": 15,
+      "doi": null,
+      "arxivId": "2405.18881",
+      "url": "https://www.semanticscholar.org/paper/8e789824bc853b840a61497c814a1ca1662bad07",
+      "venue": "International Conference on Machine Learning",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "38d4d693f20d9e16fbc937cd0d230517a71b398e",
+      "title": "SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending",
+      "authors": [
+        {
+          "name": "Yuxuan Kuang",
+          "authorId": "2256991055"
+        },
+        {
+          "name": "Haoran Geng",
+          "authorId": "2287929608"
+        },
+        {
+          "name": "Amine Elhafsi",
+          "authorId": "71578349"
+        },
+        {
+          "name": "Tan-Dzung Do",
+          "authorId": "2366398986"
+        },
+        {
+          "name": "Pieter Abbeel",
+          "authorId": "2350871358"
+        },
+        {
+          "name": "Jitendra Malik",
+          "authorId": "2362090500"
+        },
+        {
+          "name": "Marco Pavone",
+          "authorId": "2328979520"
+        },
+        {
+          "name": "Yue Wang",
+          "authorId": "2291101194"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Humanoid robots hold significant potential in accomplishing daily tasks across diverse environments thanks to their flexibility and human-like morphology. Recent works have made significant progress in humanoid whole-body control and loco-manipulation leveraging optimal control or reinforcement learning. However, these methods require tedious task-specific tuning for each task to achieve satisfactory behaviors, limiting their versatility and scalability to diverse tasks in daily scenarios. To that end, we introduce SkillBlender, a novel hierarchical reinforcement learning framework for versatile humanoid loco-manipulation. SkillBlender first pretrains goal-conditioned task-agnostic primitive skills, and then dynamically blends these skills to accomplish complex loco-manipulation tasks with minimal task-specific reward engineering. We also introduce SkillBench, a parallel, cross-embodiment, and diverse simulated benchmark containing three embodiments, four primitive skills, and eight challenging loco-manipulation tasks, accompanied by a set of scientific evaluation metrics balancing accuracy and feasibility. Extensive simulated experiments show that our method significantly outperforms all baselines, while naturally regularizing behaviors to avoid reward hacking, resulting in more accurate and feasible movements for diverse loco-manipulation tasks in our daily scenarios. Our code and benchmark will be open-sourced to the community to facilitate future research. Project page: https://usc-gvl.github.io/SkillBlender-web/.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2506.09366",
+      "arxivId": "2506.09366",
+      "url": "https://www.semanticscholar.org/paper/38d4d693f20d9e16fbc937cd0d230517a71b398e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.09366"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8fdb2de26dbfa7909c960f29fb2f3c506e92ed0d",
+      "title": "The AI Risk Spectrum: From Dangerous Capabilities to Existential Threats",
+      "authors": [
+        {
+          "name": "Markov Grey",
+          "authorId": "2360173622"
+        },
+        {
+          "name": "Charbel-Rapha\u00ebl S\u00e9gerie",
+          "authorId": "2127638028"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI systems become more capable, integrated, and widespread, understanding the associated risks becomes increasingly important. This paper maps the full spectrum of AI risks, from current harms affecting individual users to existential threats that could endanger humanity's survival. We organize these risks into three main causal categories. Misuse risks, which occur when people deliberately use AI for harmful purposes - creating bioweapons, launching cyberattacks, adversarial AI attacks or deploying lethal autonomous weapons. Misalignment risks happen when AI systems pursue outcomes that conflict with human values, irrespective of developer intentions. This includes risks arising through specification gaming (reward hacking), scheming and power-seeking tendencies in pursuit of long-term strategic goals. Systemic risks, which arise when AI integrates into complex social systems in ways that gradually undermine human agency - concentrating power, accelerating political and economic disempowerment, creating overdependence that leads to human enfeeblement, or irreversibly locking in current values curtailing future moral progress. Beyond these core categories, we identify risk amplifiers - competitive pressures, accidents, corporate indifference, and coordination failures - that make all risks more likely and severe. Throughout, we connect today's existing risks and empirically observable AI behaviors to plausible future outcomes, demonstrating how existing trends could escalate to catastrophic outcomes. Our goal is to help readers understand the complete landscape of AI risks. Good futures are possible, but they don't happen by default. Navigating these challenges will require unprecedented coordination, but an extraordinary future awaits if we do.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2508.13700",
+      "arxivId": "2508.13700",
+      "url": "https://www.semanticscholar.org/paper/8fdb2de26dbfa7909c960f29fb2f3c506e92ed0d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.13700"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "af05259f18fa643b94e1287ae94d00f20b32794e",
+      "title": "Automated Red-Teaming Framework for Large Language Model Security Assessment: A Comprehensive Attack Generation and Detection System",
+      "authors": [
+        {
+          "name": "Zhang Wei",
+          "authorId": "2400844714"
+        },
+        {
+          "name": "Peilu Hu",
+          "authorId": "2401742788"
+        },
+        {
+          "name": "Shengning Lang",
+          "authorId": "2400550847"
+        },
+        {
+          "name": "Hao Yan",
+          "authorId": "2400854876"
+        },
+        {
+          "name": "Li Mei",
+          "authorId": "2400564506"
+        },
+        {
+          "name": "Yichao Zhang",
+          "authorId": "2400663140"
+        },
+        {
+          "name": "Chen Yang",
+          "authorId": "2401032029"
+        },
+        {
+          "name": "Junfeng Hao",
+          "authorId": "2402601871"
+        },
+        {
+          "name": "Zhimo Han",
+          "authorId": "2401961145"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As large language models (LLMs) are increasingly deployed in high-stakes domains, ensuring their security and alignment has become a critical challenge. Existing red-teaming practices depend heavily on manual testing, which limits scalability and fails to comprehensively cover the vast space of potential adversarial behaviors. This paper introduces an automated red-teaming framework that systematically generates, executes, and evaluates adversarial prompts to uncover security vulnerabilities in LLMs. Our framework integrates meta-prompting-based attack synthesis, multi-modal vulnerability detection, and standardized evaluation protocols spanning six major threat categories -- reward hacking, deceptive alignment, data exfiltration, sandbagging, inappropriate tool use, and chain-of-thought manipulation. Experiments on the GPT-OSS-20B model reveal 47 distinct vulnerabilities, including 21 high-severity and 12 novel attack patterns, achieving a $3.9\\times$ improvement in vulnerability discovery rate over manual expert testing while maintaining 89\\% detection accuracy. These results demonstrate the framework's effectiveness in enabling scalable, systematic, and reproducible AI safety evaluations. By providing actionable insights for improving alignment robustness, this work advances the state of automated LLM red-teaming and contributes to the broader goal of building secure and trustworthy AI systems.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.20677",
+      "url": "https://www.semanticscholar.org/paper/af05259f18fa643b94e1287ae94d00f20b32794e",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "16a1c80f02a84b9d0e200a6c4b74f397e5919b95",
+      "title": "Reinforcement Learning with \u03c9-Regular Objectives and Constraints",
+      "authors": [
+        {
+          "name": "Dominik Wagner",
+          "authorId": "2394167259"
+        },
+        {
+          "name": "Leon Witzman",
+          "authorId": "2326115663"
+        },
+        {
+          "name": "C.-H. Luke Ong",
+          "authorId": "2284680999"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Reinforcement learning (RL) commonly relies on scalar rewards with limited ability to express temporal, conditional, or safety-critical goals, and can lead to reward hacking. Temporal logic expressible via the more general class of $\\omega$-regular objectives addresses this by precisely specifying rich behavioural properties. Even still, measuring performance by a single scalar (be it reward or satisfaction probability) masks safety-performance trade-offs that arise in settings with a tolerable level of risk. We address both limitations simultaneously by combining $\\omega$-regular objectives with explicit constraints, allowing safety requirements and optimisation targets to be treated separately. We develop a model-based RL algorithm based on linear programming, which in the limit produces a policy maximising the probability of satisfying an $\\omega$-regular objective while also adhering to $\\omega$-regular constraints within specified thresholds. Furthermore, we establish a translation to constrained limit-average problems with optimality-preserving guarantees.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.19849",
+      "arxivId": "2511.19849",
+      "url": "https://www.semanticscholar.org/paper/16a1c80f02a84b9d0e200a6c4b74f397e5919b95",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.19849"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "819a2f0e0426f2c52fce994b7298d41ca40cbeca",
+      "title": "Weights-Rotated Preference Optimization for Large Language Models",
+      "authors": [
+        {
+          "name": "Chenxu Yang",
+          "authorId": "2187589518"
+        },
+        {
+          "name": "Ruipeng Jia",
+          "authorId": "2322447174"
+        },
+        {
+          "name": "Mingyu Zheng",
+          "authorId": "2108667264"
+        },
+        {
+          "name": "Naibin Gu",
+          "authorId": "2221287168"
+        },
+        {
+          "name": "Zheng Lin",
+          "authorId": "2322454306"
+        },
+        {
+          "name": "Siyuan Chen",
+          "authorId": "2322627020"
+        },
+        {
+          "name": "Weichong Yin",
+          "authorId": "2318321"
+        },
+        {
+          "name": "Hua Wu",
+          "authorId": "2279860914"
+        },
+        {
+          "name": "Weiping Wang",
+          "authorId": "2322457322"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Despite the efficacy of Direct Preference Optimization (DPO) in aligning Large Language Models (LLMs), reward hacking remains a pivotal challenge. This issue emerges when LLMs excessively reduce the probability of rejected completions to achieve high rewards, without genuinely meeting their intended goals. As a result, this leads to overly lengthy generation lacking diversity, as well as catastrophic forgetting of knowledge. We investigate the underlying reason behind this issue, which is representation redundancy caused by neuron collapse in the parameter space. Hence, we propose a novel Weights-Rotated Preference Optimization (RoPO) algorithm, which implicitly constrains the output layer logits with the KL divergence inherited from DPO and explicitly constrains the intermediate hidden states by fine-tuning on a multi-granularity orthogonal matrix. This design prevents the policy model from deviating too far from the reference model, thereby retaining the knowledge and expressive capabilities acquired during pre-training and SFT stages. Our RoPO achieves up to a 3.27-point improvement on AlpacaEval 2, and surpasses the best baseline by 6.2 to 7.5 points on MT-Bench with merely 0.015% of the trainable parameters, demonstrating its effectiveness in alleviating the reward hacking problem of DPO.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.17637",
+      "arxivId": "2508.17637",
+      "url": "https://www.semanticscholar.org/paper/819a2f0e0426f2c52fce994b7298d41ca40cbeca",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.17637"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "af69a1fbea8945df87ca77d2332fd10c90579226",
+      "title": "MARNet: Backdoor Attacks Against Cooperative Multi-Agent Reinforcement Learning",
+      "authors": [
+        {
+          "name": "Yanjiao Chen",
+          "authorId": "2109196522"
+        },
+        {
+          "name": "Zhicong Zheng",
+          "authorId": "2115547199"
+        },
+        {
+          "name": "Xueluan Gong",
+          "authorId": null
+        }
+      ],
+      "year": 2023,
+      "abstract": "Recent works have revealed that backdoor attacks against Deep Reinforcement Learning (DRL) could lead to abnormal action selections of the agent, which may result in failure or even catastrophe in crucial decision processes. However, existing attacks only consider single-agent reinforcement learning (RL) systems, in which the only agent can observe the global state and have full control of the decision process. In this article, we explore a new backdoor attack paradigm in cooperative multi-agent reinforcement learning (CMARL) scenarios, where a group of agents coordinate with each other to achieve a common goal, while each agent can only observe the local state. In the proposed MARNet attack framework, we carefully design a pipeline of trigger design, action poisoning, and reward hacking modules to accommodate the cooperative multi-agent settings. In particular, as only a subset of agents can observe the triggers in their local observations, we maneuver their actions to the worst actions suggested by an expert policy model. Since the global reward in CMARL is aggregated by individual rewards from all agents, we propose to modify the reward in a way that boosts the bad actions of poisoned agents (agents who observe the triggers) but mitigates the influence on non-poisoned agents. We conduct extensive experiments on three classical CMARL algorithms VDN, COMA, and QMIX, in two popular CMARL games Predator Prey and SMAC. The results show that the baselines extended from single-agent DRL backdoor attacks seldom work in CMARL problems while MARNet performs well by reducing the utility under attack by nearly 100%. We apply fine-tuning as a potential defense against MARNet and demonstrate that fine-tuning cannot entirely eliminate the effect of the attack.",
+      "citationCount": 30,
+      "doi": "10.1109/TDSC.2022.3207429",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/af69a1fbea8945df87ca77d2332fd10c90579226",
+      "venue": "IEEE Transactions on Dependable and Secure Computing",
+      "journal": {
+        "name": "IEEE Transactions on Dependable and Secure Computing",
+        "pages": "4188-4198",
+        "volume": "20"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1e104776d40622473eaff0537964ef8507de7814",
+      "title": "Using AI Alignment Theory to understand the potential pitfalls of regulatory frameworks",
+      "authors": [
+        {
+          "name": "Alejandro Tlaie",
+          "authorId": "2303405262"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper leverages insights from Alignment Theory (AT) research, which primarily focuses on the potential pitfalls of technical alignment in Artificial Intelligence, to critically examine the European Union's Artificial Intelligence Act (EU AI Act). In the context of AT research, several key failure modes - such as proxy gaming, goal drift, reward hacking or specification gaming - have been identified. These can arise when AI systems are not properly aligned with their intended objectives. The central logic of this report is: what can we learn if we treat regulatory efforts in the same way as we treat advanced AI systems? As we systematically apply these concepts to the EU AI Act, we uncover potential vulnerabilities and areas for improvement in the regulation.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2410.19749",
+      "arxivId": "2410.19749",
+      "url": "https://www.semanticscholar.org/paper/1e104776d40622473eaff0537964ef8507de7814",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2410.19749"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5d70c13af72d35af52a897a08baef7e82064f762",
+      "title": "BLAST: A Stealthy Backdoor Leverage Attack against Cooperative Multi-Agent Deep Reinforcement Learning based Systems",
+      "authors": [
+        {
+          "name": "Yinbo Yu",
+          "authorId": "3417705"
+        },
+        {
+          "name": "Saihao Yan",
+          "authorId": "2321038885"
+        },
+        {
+          "name": "Xueyu Yin",
+          "authorId": "2346265161"
+        },
+        {
+          "name": "Jing Fang",
+          "authorId": "2156949516"
+        },
+        {
+          "name": "Jiajia Liu",
+          "authorId": "2311306317"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent studies have shown that cooperative multi-agent deep reinforcement learning (c-MADRL) is under the threat of backdoor attacks. Once a backdoor trigger is observed, it will perform malicious actions leading to failures or malicious goals. However, existing backdoor attacks suffer from several issues, e.g., instant trigger patterns lack stealthiness, the backdoor is trained or activated by an additional network, or all agents are backdoored. To this end, in this paper, we propose a novel backdoor leverage attack against c-MADRL, BLAST, which attacks the entire multi-agent team by embedding the backdoor only in a single agent. Firstly, we introduce adversary spatiotemporal behavior patterns as the backdoor trigger rather than manual-injected fixed visual patterns or instant status and control the period to perform malicious actions. This method can guarantee the stealthiness and practicality of BLAST. Secondly, we hack the original reward function of the backdoor agent via unilateral guidance to inject BLAST, so as to achieve the \\textit{leverage attack effect} that can pry open the entire multi-agent system via a single backdoor agent. We evaluate our BLAST against 3 classic c-MADRL algorithms (VDN, QMIX, and MAPPO) in 2 popular c-MADRL environments (SMAC and Pursuit), and 2 existing defense mechanisms. The experimental results demonstrate that BLAST can achieve a high attack success rate while maintaining a low clean performance variance rate.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2501.01593",
+      "arxivId": "2501.01593",
+      "url": "https://www.semanticscholar.org/paper/5d70c13af72d35af52a897a08baef7e82064f762",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.01593"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "baf3c4c9648e73d7e5c9c67405d68304c2b31724",
+      "title": "Evaluating Defences against Unsafe Feedback in RLHF",
+      "authors": [
+        {
+          "name": "Domenic Rosati",
+          "authorId": "2284063669"
+        },
+        {
+          "name": "Giles Edkins",
+          "authorId": "2321870590"
+        },
+        {
+          "name": "Harsh Raj",
+          "authorId": "2056998774"
+        },
+        {
+          "name": "David Atanasov",
+          "authorId": "2302802543"
+        },
+        {
+          "name": "Subhabrata Majumdar",
+          "authorId": "2302804025"
+        },
+        {
+          "name": "Janarthanan Rajendran",
+          "authorId": "2321817037"
+        },
+        {
+          "name": "Frank Rudzicz",
+          "authorId": "2271646617"
+        },
+        {
+          "name": "Hassan Sajjad",
+          "authorId": "2284063849"
+        }
+      ],
+      "year": 2024,
+      "abstract": "While there has been progress towards aligning Large Language Models (LLMs) with human values and ensuring safe behaviour at inference time, safety guards can easily be removed when fine tuned on unsafe and harmful datasets. While this setting has been treated extensively, another popular training paradigm, learning from unsafe feedback with reinforcement learning, has previously been unexplored. This is concerning due to the widespread deployment of feedback collection systems. We address this gap by providing an analysis of learning settings where feedback is harmful, i.e. that unsafe samples are preferred over safe ones despite model developers goal to maintain safety. We find that safety-aligned LLMs easily explore unsafe action spaces via generating harmful text and optimize for reward that violates safety constraints indicating that current safety guards are not enough to prevent learning from unsafe feedback. In order to protect against this vulnerability, we adapt a number of both\"implict\"and\"explicit\"harmful fine-tuning defences to evaluate whether they are effective as learning constraints in an RLHF setting finding that no method is generally effective pointing to the need for more defence research. We end the paper with the observation that some defences work by performing\"harmless reward hacking\"for which we provide a theoretical explanation drawn from the theory of Constrained Markov Decision Processes and provide some direction for future defence development.",
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": "2409.12914",
+      "url": "https://www.semanticscholar.org/paper/baf3c4c9648e73d7e5c9c67405d68304c2b31724",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fdbc77e7f4369833da8a31e304c0e92b06c74bcd",
+      "title": "Reflection-Based Task Adaptation for Self-Improving VLA",
+      "authors": [
+        {
+          "name": "Baicheng Li",
+          "authorId": "2311991533"
+        },
+        {
+          "name": "Dong Wu",
+          "authorId": "2311917533"
+        },
+        {
+          "name": "Zike Yan",
+          "authorId": "7833580"
+        },
+        {
+          "name": "Xinchen Liu",
+          "authorId": "2385596159"
+        },
+        {
+          "name": "Zecui Zeng",
+          "authorId": "2304012939"
+        },
+        {
+          "name": "Lusong Li",
+          "authorId": "2268580598"
+        },
+        {
+          "name": "Hongbin Zha",
+          "authorId": "2311876288"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Pre-trained Vision-Language-Action (VLA) models represent a major leap towards general-purpose robots, yet efficiently adapting them to novel, specific tasks in-situ remains a significant hurdle. While reinforcement learning (RL) is a promising avenue for such adaptation, the process often suffers from low efficiency, hindering rapid task mastery. We introduce Reflective Self-Adaptation, a framework for rapid, autonomous task adaptation without human intervention. Our framework establishes a self-improving loop where the agent learns from its own experience to enhance both strategy and execution. The core of our framework is a dual-pathway architecture that addresses the full adaptation lifecycle. First, a Failure-Driven Reflective RL pathway enables rapid learning by using the VLM's causal reasoning to automatically synthesize a targeted, dense reward function from failure analysis. This provides a focused learning signal that significantly accelerates policy exploration. However, optimizing such proxy rewards introduces a potential risk of\"reward hacking,\"where the agent masters the reward function but fails the actual task. To counteract this, our second pathway, Success-Driven Quality-Guided SFT, grounds the policy in holistic success. It identifies and selectively imitates high-quality successful trajectories, ensuring the agent remains aligned with the ultimate task goal. This pathway is strengthened by a conditional curriculum mechanism to aid initial exploration. We conduct experiments in challenging manipulation tasks. The results demonstrate that our framework achieves faster convergence and higher final success rates compared to representative baselines. Our work presents a robust solution for creating self-improving agents that can efficiently and reliably adapt to new environments.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2510.12710",
+      "arxivId": "2510.12710",
+      "url": "https://www.semanticscholar.org/paper/fdbc77e7f4369833da8a31e304c0e92b06c74bcd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.12710"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "94c06f43a8259e8362ff509b0abf8d028d08ab77",
+      "title": "Artificial Creativity: from predictive AI to Generative System 3",
+      "authors": [
+        {
+          "name": "Juan Carlos Ch\u00e1vez-Autor",
+          "authorId": "2386223911"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models generate fluent text yet often fail to sustain novelty, task relevance, and diversity across extended contexts. We argue this shortfall persists because current systems implement only fragments of a tri-process loop that supports human creativity: spontaneous ideation in the default-mode network (DMN; broadly System 1\u2013like), goal-directed evaluation in the central-executive network (CEN; broadly System 2\u2013like), and a metacognitive integrator\u2014System 3\u2014that, via neuromodulatory gain control, shifts between exploration and focused control. We introduce Generative System 3 (GS-3), an architecture-agnostic design pattern with three roles: a high-entropy generator, a learned critic, and an adaptive gain controller. Beyond \u201cpure prediction\u201d and simple \u201creflective prompting,\u201d GS-3 identifies the missing pieces for Artificial Creativity: an internal evaluator, endogenous control over sampling entropy, and adaptive priors maintained across extended contexts. This conceptual analysis (i) formalizes novelty, usefulness, and diversity with operational definitions; (ii) develops multiple gain-update policies (exponential, linear, logistic) with stability constraints and sensitivity expectations; (iii) derives falsifiable behavioral indices\u2014associative-distance density, analytic-verification ratio, and convergence latency\u2014with pass\u2013fail criteria; and (iv) provides a proof-of-concept blueprint and evaluation protocol (tasks, metrics, ablations, reproducibility kit). We position GS-3 relative to computational-creativity and co-creative frameworks, and delineate where brain\u2013model analogies are functional rather than literal. Ethical guidance addresses bias, cultural homogenization, and reward gaming of proxy objectives (often termed \u201cdopamine hacking\u201d) through plural critics, transparent logging, and outcome-tied entropy caps. The result is a testable roadmap for transitioning from regulated prediction to genuinely creative generative systems.",
+      "citationCount": 0,
+      "doi": "10.3389/frai.2025.1654716",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/94c06f43a8259e8362ff509b0abf8d028d08ab77",
+      "venue": "Frontiers Artif. Intell.",
+      "journal": {
+        "name": "Frontiers in Artificial Intelligence",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

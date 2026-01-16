@@ -1,0 +1,2650 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "LLM belief attribution",
+  "results": [
+    {
+      "openalex_id": "W4321277158",
+      "doi": "10.48550/arxiv.2302.08399",
+      "title": "Large Language Models Fail on Trivial Alterations to Theory-of-Mind Tasks",
+      "authors": [
+        {
+          "name": "Tomer Ullman",
+          "openalex_id": "A5086092571",
+          "orcid": "https://orcid.org/0000-0003-1722-2382"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-02-16",
+      "abstract": "Intuitive psychology is a pillar of common-sense reasoning. The replication of this reasoning in machine intelligence is an important stepping-stone on the way to human-like artificial intelligence. Several recent tasks and benchmarks for examining this reasoning in Large-Large Models have focused in particular on belief attribution in Theory-of-Mind tasks. These tasks have shown both successes and failures. We consider in particular a recent purported success case, and show that small variations that maintain the principles of ToM turn the results on their head. We argue that in general, the zero-hypothesis for model evaluation in intuitive psychology should be skeptical, and that outlying failure cases should outweigh average success rates. We also consider what possible future successes on Theory-of-Mind tasks by more powerful LLMs would mean for ToM tasks with people.",
+      "cited_by_count": 79,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2302.08399"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Advanced Graph Neural Networks",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4321277158"
+    },
+    {
+      "openalex_id": "W4385452929",
+      "doi": "10.1109/access.2023.3300381",
+      "title": "From ChatGPT to ThreatGPT: Impact of Generative AI in Cybersecurity and Privacy",
+      "authors": [
+        {
+          "name": "Maanak Gupta",
+          "openalex_id": "A5047952246",
+          "orcid": "https://orcid.org/0000-0001-9189-2478",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        },
+        {
+          "name": "Charankumar Akiri",
+          "openalex_id": "A5092401086",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        },
+        {
+          "name": "Kshitiz Aryal",
+          "openalex_id": "A5005398538",
+          "orcid": "https://orcid.org/0000-0001-8000-1086",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        },
+        {
+          "name": "Eli Parker",
+          "openalex_id": "A5112952983",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        },
+        {
+          "name": "Lopamudra Praharaj",
+          "openalex_id": "A5034235259",
+          "institutions": [
+            "Tennessee Technological University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Undoubtedly, the evolution of Generative AI (GenAI) models has been the highlight of digital transformation in the year 2022. As the different GenAI models like ChatGPT and Google Bard continue to foster their complexity and capability, it&#x2019;s critical to understand its consequences from a cybersecurity perspective. Several instances recently have demonstrated the use of GenAI tools in both the defensive and offensive side of cybersecurity, and focusing on the social, ethical and privacy implications this technology possesses. This research paper highlights the limitations, challenges, potential risks, and opportunities of GenAI in the domain of cybersecurity and privacy. The work presents the vulnerabilities of ChatGPT, which can be exploited by malicious users to exfiltrate malicious information bypassing the ethical constraints on the model. This paper demonstrates successful example attacks like Jailbreaks, reverse psychology, and prompt injection attacks on the ChatGPT. The paper also investigates how cyber offenders can use the GenAI tools in developing cyber attacks, and explore the scenarios where ChatGPT can be used by adversaries to create social engineering attacks, phishing attacks, automated hacking, attack payload generation, malware creation, and polymorphic malware. This paper then examines defense techniques and uses GenAI tools to improve security measures, including cyber defense automation, reporting, threat intelligence, secure code generation and detection, attack identification, developing ethical guidelines, incidence response plans, and malware detection. We will also discuss the social, legal, and ethical implications of ChatGPT. In conclusion, the paper highlights open challenges and future directions to make this GenAI secure, safe, trustworthy, and ethical as the community understands its cybersecurity impacts.",
+      "cited_by_count": 578,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10198233.pdf"
+      },
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Blockchain Technology Applications and Security",
+        "Traffic Prediction and Management Techniques"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W4385452929"
+    },
+    {
+      "openalex_id": "W4391855109",
+      "doi": "10.1109/access.2024.3365742",
+      "title": "A Review on Large Language Models: Architectures, Applications, Taxonomies, Open Issues and Challenges",
+      "authors": [
+        {
+          "name": "Mohaimenul Azam Khan Raiaan",
+          "openalex_id": "A5055795711",
+          "orcid": "https://orcid.org/0009-0006-4793-5382",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Md. Saddam Hossain Mukta",
+          "openalex_id": "A5087616870",
+          "orcid": "https://orcid.org/0000-0003-2675-5471",
+          "institutions": [
+            "Lappeenranta-Lahti University of Technology"
+          ]
+        },
+        {
+          "name": "Kaniz Fatema",
+          "openalex_id": "A5008339199",
+          "orcid": "https://orcid.org/0000-0002-0787-5403",
+          "institutions": [
+            "Charles Darwin University"
+          ]
+        },
+        {
+          "name": "Nur Mohammad Fahad",
+          "openalex_id": "A5022918060",
+          "orcid": "https://orcid.org/0009-0000-5445-6925",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Sadman Sakib",
+          "openalex_id": "A5008882566",
+          "orcid": "https://orcid.org/0009-0007-2007-5746",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Most. Marufatul Jannat Mim",
+          "openalex_id": "A5092939745",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Jubaer Ahmad",
+          "openalex_id": "A5018257829",
+          "institutions": [
+            "United International University"
+          ]
+        },
+        {
+          "name": "Mohammed Eunus Ali",
+          "openalex_id": "A5000819439",
+          "orcid": "https://orcid.org/0000-0002-0384-7616",
+          "institutions": [
+            "Bangladesh University of Engineering and Technology"
+          ]
+        },
+        {
+          "name": "Sami Azam",
+          "openalex_id": "A5062716310",
+          "orcid": "https://orcid.org/0000-0001-7572-9750",
+          "institutions": [
+            "Charles Darwin University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Large Language Models (LLMs) recently demonstrated extraordinary capability in various natural language processing (NLP) tasks including language translation, text generation, question answering, etc. Moreover, LLMs are new and essential part of computerized language processing, having the ability to understand complex verbal patterns and generate coherent and appropriate replies in a given context. Though this success of LLMs has prompted a substantial increase in research contributions, rapid growth has made it difficult to understand the overall impact of these improvements. Since a plethora of research on LLMs have been appeared within a short time, it is quite impossible to track all of these and get an overview of the current state of research in this area. Consequently, the research community would benefit from a short but thorough review of the recent changes in this area. This article thoroughly overviews LLMs, including their history, architectures, transformers, resources, training methods, applications, impacts, challenges, etc. This paper begins by discussing the fundamental concepts of LLMs with its traditional pipeline of the LLMs training phase. Then the paper provides an overview of the existing works, the history of LLMs, their evolution over time, the architecture of transformers in LLMs, the different resources of LLMs, and the different training methods that have been used to train them. The paper also demonstrates the datasets utilized in the studies. After that, the paper discusses the wide range of applications of LLMs, including biomedical and healthcare, education, social, business, and agriculture. The study also illustrates how LLMs create an impact on society and shape the future of AI and how they can be used to solve real-world problems. Finally, the paper also explores open issues and challenges to deploy LLMs in real-world scenario. Our review paper aims to help practitioners, researchers, and experts thoroughly understand the evolution of LLMs, pre-trained architectures, applications, challenges, and future goals.",
+      "cited_by_count": 488,
+      "type": "review",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10433480.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Data Quality and Management"
+      ],
+      "referenced_works_count": 230,
+      "url": "https://openalex.org/W4391855109"
+    },
+    {
+      "openalex_id": "W4400032957",
+      "doi": "10.1162/tacl_a_00674",
+      "title": "Comparing Humans and Large Language Models on an Experimental Protocol Inventory for Theory of Mind Evaluation (EPITOME)",
+      "authors": [
+        {
+          "name": "Cameron R. Jones",
+          "openalex_id": "A5101419521",
+          "orcid": "https://orcid.org/0000-0002-6609-8966",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Sean Trott",
+          "openalex_id": "A5054191699",
+          "orcid": "https://orcid.org/0000-0002-6003-3731",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Benjamin K. Bergen",
+          "openalex_id": "A5043344696",
+          "orcid": "https://orcid.org/0000-0002-9395-9151",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Abstract We address a growing debate about the extent to which large language models (LLMs) produce behavior consistent with Theory of Mind (ToM) in humans. We present EPITOME: a battery of six experiments that tap diverse ToM capacities, including belief attribution, emotional inference, and pragmatic reasoning. We elicit a performance baseline from human participants for each task. We use the dataset to ask whether distributional linguistic information learned by LLMs is sufficient to explain ToM in humans. We compare performance of five LLMs to a baseline of responses from human comprehenders. Results are mixed. LLMs display considerable sensitivity to mental states and match human performance in several tasks. Yet, they commit systematic errors in others, especially those requiring pragmatic reasoning on the basis of mental state information. Such uneven performance indicates that human-level ToM may require resources beyond distributional information.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Transactions of the Association for Computational Linguistics",
+        "type": "journal",
+        "issn": [
+          "2307-387X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.1162/tacl_a_00674"
+      },
+      "topics": [
+        "Child and Animal Learning Development",
+        "Action Observation and Synchronization",
+        "Face Recognition and Perception"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W4400032957"
+    },
+    {
+      "openalex_id": "W4390490761",
+      "doi": "10.1145/3639372",
+      "title": "Explainability for Large Language Models: A Survey",
+      "authors": [
+        {
+          "name": "Haiyan Zhao",
+          "openalex_id": "A5100738980",
+          "orcid": "https://orcid.org/0009-0006-5358-6895",
+          "institutions": [
+            "New Jersey Institute of Technology"
+          ]
+        },
+        {
+          "name": "Hanjie Chen",
+          "openalex_id": "A5101511644",
+          "orcid": "https://orcid.org/0009-0001-5547-6634",
+          "institutions": [
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Fan Yang",
+          "openalex_id": "A5101790532",
+          "orcid": "https://orcid.org/0000-0003-3442-754X",
+          "institutions": [
+            "Wake Forest University"
+          ]
+        },
+        {
+          "name": "Ninghao Liu",
+          "openalex_id": "A5007489034",
+          "orcid": "https://orcid.org/0000-0002-9170-2424",
+          "institutions": [
+            "University of Georgia"
+          ]
+        },
+        {
+          "name": "Huiqi Deng",
+          "openalex_id": "A5075858724",
+          "orcid": "https://orcid.org/0000-0002-2946-6678",
+          "institutions": [
+            "Shanghai Jiao Tong University"
+          ]
+        },
+        {
+          "name": "Hengyi Cai",
+          "openalex_id": "A5062665223",
+          "orcid": "https://orcid.org/0000-0002-7147-5666",
+          "institutions": [
+            "Institute of Computing Technology"
+          ]
+        },
+        {
+          "name": "Shuaiqiang Wang",
+          "openalex_id": "A5050255638",
+          "orcid": "https://orcid.org/0000-0002-9212-1947",
+          "institutions": [
+            "Baidu (China)"
+          ]
+        },
+        {
+          "name": "Dawei Yin",
+          "openalex_id": "A5103029035",
+          "orcid": "https://orcid.org/0000-0001-6813-680X",
+          "institutions": [
+            "Baidu (China)"
+          ]
+        },
+        {
+          "name": "Mengnan Du",
+          "openalex_id": "A5072191151",
+          "orcid": "https://orcid.org/0000-0002-1614-6069",
+          "institutions": [
+            "New Jersey Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-02",
+      "abstract": "Large language models (LLMs) have demonstrated impressive capabilities in natural language processing. However, their internal mechanisms are still unclear and this lack of transparency poses unwanted risks for downstream applications. Therefore, understanding and explaining these models is crucial for elucidating their behaviors, limitations, and social impacts. In this article, we introduce a taxonomy of explainability techniques and provide a structured overview of methods for explaining Transformer-based language models. We categorize techniques based on the training paradigms of LLMs: traditional fine-tuning-based paradigm and prompting-based paradigm. For each paradigm, we summarize the goals and dominant approaches for generating local explanations of individual predictions and global explanations of overall model knowledge. We also discuss metrics for evaluating generated explanations and discuss how explanations can be leveraged to debug models and improve performance. Lastly, we examine key challenges and emerging opportunities for explanation techniques in the era of LLMs in comparison to conventional deep learning models.",
+      "cited_by_count": 422,
+      "type": "article",
+      "source": {
+        "name": "ACM Transactions on Intelligent Systems and Technology",
+        "type": "journal",
+        "issn": [
+          "2157-6904",
+          "2157-6912"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3639372"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 122,
+      "url": "https://openalex.org/W4390490761"
+    },
+    {
+      "openalex_id": "W4376139682",
+      "doi": "10.37074/jalt.2023.6.1.29",
+      "title": "The role of ChatGPT in higher education: Benefits, challenges, and future research directions",
+      "authors": [
+        {
+          "name": "Tareq Rasul",
+          "openalex_id": "A5068967585",
+          "orcid": "https://orcid.org/0000-0002-1274-7000",
+          "institutions": [
+            "Australian Institute of Business"
+          ]
+        },
+        {
+          "name": "Sumesh Nair",
+          "openalex_id": "A5035237725",
+          "orcid": "https://orcid.org/0000-0002-7219-6837",
+          "institutions": [
+            "Australian Institute of Business"
+          ]
+        },
+        {
+          "name": "Diane Robyn Kalendra",
+          "openalex_id": "A5002628922",
+          "orcid": "https://orcid.org/0000-0002-9168-1440",
+          "institutions": [
+            "Australian Institute of Business"
+          ]
+        },
+        {
+          "name": "Mulyadi Robin",
+          "openalex_id": "A5090939929",
+          "orcid": "https://orcid.org/0000-0001-6274-9664",
+          "institutions": [
+            "Australian Institute of Business"
+          ]
+        },
+        {
+          "name": "Fernando de Oliveira Santini",
+          "openalex_id": "A5109604064",
+          "orcid": "https://orcid.org/0009-0003-2750-7442",
+          "institutions": [
+            "Universidade do Vale do Rio dos Sinos"
+          ]
+        },
+        {
+          "name": "Wagner J\u00fanior Ladeira",
+          "openalex_id": "A5067531711",
+          "orcid": "https://orcid.org/0000-0002-1793-6206",
+          "institutions": [
+            "Universidade do Vale do Rio dos Sinos"
+          ]
+        },
+        {
+          "name": "Mingwei Sun",
+          "openalex_id": "A5078841181",
+          "orcid": "https://orcid.org/0000-0003-0192-7863",
+          "institutions": [
+            "Australian Institute of Business"
+          ]
+        },
+        {
+          "name": "Ingrid Day",
+          "openalex_id": "A5011116562",
+          "institutions": [
+            "Australian Institute of Business"
+          ]
+        },
+        {
+          "name": "Raouf Ahmad Rather",
+          "openalex_id": "A5043493464",
+          "orcid": "https://orcid.org/0000-0002-9242-1165"
+        },
+        {
+          "name": "Liz Heathcote",
+          "openalex_id": "A5015496664",
+          "institutions": [
+            "Australian Institute of Business"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-11",
+      "abstract": "This paper examines the potential benefits and challenges of using the generative AI model, ChatGPT, in higher education, in the backdrop of the constructivist theory of learning. This perspective-type study presents five benefits of ChatGPT: the potential to facilitate adaptive learning, provide personalised feedback, support research and data analysis, offer automated administrative services, and aid in developing innovative assessments. Additionally, the paper identifies five challenges: academic integrity concerns, reliability issues, inability to evaluate and reinforce graduate skill sets, limitations in assessing learning outcomes, and potential biases and falsified information in information processing. The paper argues that tertiary educators and students must exercise caution when using ChatGPT for academic purposes to ensure its ethical, reliable, and effective use. To achieve this, the paper proposes various propositions, such as prioritising education on the responsible and ethical use of ChatGPT, devising new assessment strategies, addressing bias and falsified information, and including AI literacy as part of graduate skills. By balancing the potential benefits and challenges, ChatGPT can enhance students\u2019 learning experiences in higher education.",
+      "cited_by_count": 480,
+      "type": "article",
+      "source": {
+        "name": "Journal of Applied Learning & Teaching",
+        "type": "journal",
+        "issn": [
+          "2591-801X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/787/583"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Online Learning and Analytics",
+        "COVID-19 diagnosis using AI"
+      ],
+      "referenced_works_count": 124,
+      "url": "https://openalex.org/W4376139682"
+    },
+    {
+      "openalex_id": "W4389636360",
+      "doi": "10.1162/coli_a_00502",
+      "title": "Can Large Language Models Transform Computational Social Science?",
+      "authors": [
+        {
+          "name": "Caleb Ziems",
+          "openalex_id": "A5002621773",
+          "institutions": [
+            "Laboratoire d'Informatique de Paris-Nord",
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "William A. Held",
+          "openalex_id": "A5109972562",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "Omar Ahmed Shaikh",
+          "openalex_id": "A5047951879",
+          "institutions": [
+            "Stanford University",
+            "Laboratoire d'Informatique de Paris-Nord"
+          ]
+        },
+        {
+          "name": "Jiaao Chen",
+          "openalex_id": "A5069870254",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "Zhehao Zhang",
+          "openalex_id": "A5101201263",
+          "institutions": [
+            "Dartmouth College"
+          ]
+        },
+        {
+          "name": "Diyi Yang",
+          "openalex_id": "A5089413311",
+          "orcid": "https://orcid.org/0000-0003-1220-3983",
+          "institutions": [
+            "Stanford University",
+            "Laboratoire d'Informatique de Paris-Nord"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-12",
+      "abstract": "Abstract Large language models (LLMs) are capable of successfully performing many language processing tasks zero-shot (without training data). If zero-shot LLMs can also reliably classify and explain social phenomena like persuasiveness and political ideology, then LLMs could augment the computational social science (CSS) pipeline in important ways. This work provides a road map for using LLMs as CSS tools. Towards this end, we contribute a set of prompting best practices and an extensive evaluation pipeline to measure the zero-shot performance of 13 language models on 25 representative English CSS benchmarks. On taxonomic labeling tasks (classification), LLMs fail to outperform the best fine-tuned models but still achieve fair levels of agreement with humans. On free-form coding tasks (generation), LLMs produce explanations that often exceed the quality of crowdworkers\u2019 gold references. We conclude that the performance of today\u2019s LLMs can augment the CSS research pipeline in two ways: (1) serving as zero-shot data annotators on human annotation teams, and (2) bootstrapping challenging creative generation tasks (e.g., explaining the underlying attributes of a text). In summary, LLMs are posed to meaningfully participate in social science analysis in partnership with humans.",
+      "cited_by_count": 342,
+      "type": "article",
+      "source": {
+        "name": "Computational Linguistics",
+        "type": "journal",
+        "issn": [
+          "0891-2017",
+          "1530-9312"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://direct.mit.edu/coli/article-pdf/doi/10.1162/coli_a_00502/2191886/coli_a_00502.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Computational and Text Analysis Methods",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 336,
+      "url": "https://openalex.org/W4389636360"
+    },
+    {
+      "openalex_id": "W4399465031",
+      "doi": "10.1007/s10676-024-09775-5",
+      "title": "ChatGPT is bullshit",
+      "authors": [
+        {
+          "name": "Michael Townsen Hicks",
+          "openalex_id": "A5082959886",
+          "orcid": "https://orcid.org/0000-0002-1304-5668",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        },
+        {
+          "name": "James Humphries",
+          "openalex_id": "A5099062193",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        },
+        {
+          "name": "Joe Slater",
+          "openalex_id": "A5099062194",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-01",
+      "abstract": "Abstract Recently, there has been considerable interest in large language models: machine learning systems which produce human-like text and dialogue. Applications of these systems have been plagued by persistent inaccuracies in their output; these are often called \u201cAI hallucinations\u201d. We argue that these falsehoods, and the overall activity of large language models, is better understood as bullshit in the sense explored by Frankfurt (On Bullshit, Princeton, 2005): the models are in an important way indifferent to the truth of their outputs. We distinguish two ways in which the models can be said to be bullshitters, and argue that they clearly meet at least one of these definitions. We further argue that describing AI misrepresentations as bullshit is both a more useful and more accurate way of predicting and discussing the behaviour of these systems.",
+      "cited_by_count": 244,
+      "type": "article",
+      "source": {
+        "name": "Ethics and Information Technology",
+        "type": "journal",
+        "issn": [
+          "1388-1957",
+          "1572-8439"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10676-024-09775-5.pdf"
+      },
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Epistemology, Ethics, and Metaphysics",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W4399465031"
+    },
+    {
+      "openalex_id": "W4389519153",
+      "doi": "10.18653/v1/2023.findings-emnlp",
+      "title": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "authors": [
+        {
+          "name": "Graham Mcdougal",
+          "openalex_id": ""
+        },
+        {
+          "name": "Caron",
+          "openalex_id": ""
+        },
+        {
+          "name": "Shashank Srivastava",
+          "openalex_id": ""
+        },
+        {
+          "name": "Siyu Yuan",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jiangjie Chen",
+          "openalex_id": ""
+        },
+        {
+          "name": "Xuyang Ge",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yanghua Xiao",
+          "openalex_id": ""
+        },
+        {
+          "name": "Deqing Yang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jianfeng Wu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Mengting Hu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yike Wu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Bingzhe Wu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yalan Xie",
+          "openalex_id": ""
+        },
+        {
+          "name": "Mingming Liu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Renhong Cheng",
+          "openalex_id": ""
+        },
+        {
+          "name": "; Gpt",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yixuan Weng",
+          "openalex_id": ""
+        },
+        {
+          "name": "Minjun Zhu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Fei Xia",
+          "openalex_id": ""
+        },
+        {
+          "name": "Bin Li",
+          "openalex_id": ""
+        },
+        {
+          "name": "Shizhu He",
+          "openalex_id": ""
+        },
+        {
+          "name": "Shengping Liu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Bin Sun",
+          "openalex_id": ""
+        },
+        {
+          "name": "Kang Liu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jun Zhao",
+          "openalex_id": ""
+        },
+        {
+          "name": "Michail Mersinias",
+          "openalex_id": ""
+        },
+        {
+          "name": "Kyle Mahowald",
+          "openalex_id": ""
+        },
+        {
+          "name": "Michal Yarom",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ashish Thapliyal ; Daejin",
+          "openalex_id": ""
+        },
+        {
+          "name": "Daniel Jo",
+          "openalex_id": ""
+        },
+        {
+          "name": "Nam",
+          "openalex_id": ""
+        },
+        {
+          "name": "Weixiang Yan",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yuchen Tian",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yunzhe Li",
+          "openalex_id": ""
+        },
+        {
+          "name": "Qian Chen",
+          "openalex_id": ""
+        },
+        {
+          "name": "Wen Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Doctrack ; Hao Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Qingxuan Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yue Li",
+          "openalex_id": ""
+        },
+        {
+          "name": "Changqing Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Chenhui Chu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Rui Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "; Jinsung Yoon",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sayna Ebrahimi",
+          "openalex_id": ""
+        },
+        {
+          "name": "Tomas Sercan O Arik",
+          "openalex_id": ""
+        },
+        {
+          "name": "Somesh Pfister",
+          "openalex_id": ""
+        },
+        {
+          "name": "; Shoujie Jha",
+          "openalex_id": ""
+        },
+        {
+          "name": "Heming Tong",
+          "openalex_id": ""
+        },
+        {
+          "name": "Damai Xia",
+          "openalex_id": ""
+        },
+        {
+          "name": "Runxin Dai",
+          "openalex_id": ""
+        },
+        {
+          "name": "Tianyu Xu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Binghuai Liu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yunbo Lin",
+          "openalex_id": ""
+        },
+        {
+          "name": "Zhifang Cao",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sui",
+          "openalex_id": ""
+        },
+        {
+          "name": "Karina Vida",
+          "openalex_id": ""
+        },
+        {
+          "name": "Judith Simon",
+          "openalex_id": ""
+        },
+        {
+          "name": "Anne Lauscher",
+          "openalex_id": ""
+        },
+        {
+          "name": "Luis Fernando",
+          "openalex_id": ""
+        },
+        {
+          "name": "D' Haro",
+          "openalex_id": ""
+        },
+        {
+          "name": "Chengguang Tang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ke Shi",
+          "openalex_id": ""
+        },
+        {
+          "name": "Guohua Tang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Haizhou Li",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yuxiang Lu",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yu Hong",
+          "openalex_id": ""
+        },
+        {
+          "name": "Zhipang Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Guodong Zhou",
+          "openalex_id": ""
+        },
+        {
+          "name": "; Jiang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Rui Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Zhihua Wei",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yu Li",
+          "openalex_id": ""
+        },
+        {
+          "name": "Xinpeng Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "; Muru Zhang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sewon Min",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ludwig Schmidt",
+          "openalex_id": ""
+        },
+        {
+          "name": "Noah Smith",
+          "openalex_id": ""
+        },
+        {
+          "name": "Mike Lewis",
+          "openalex_id": ""
+        },
+        {
+          "name": "Guoqing Luo",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yu Tong Han",
+          "openalex_id": ""
+        },
+        {
+          "name": "Lili Mou",
+          "openalex_id": ""
+        },
+        {
+          "name": "Mauajama Firdaus",
+          "openalex_id": ""
+        },
+        {
+          "name": "Fida Alvi Aveen Khan",
+          "openalex_id": ""
+        },
+        {
+          "name": "Nuzhat Kamal",
+          "openalex_id": ""
+        },
+        {
+          "name": "Tasnim Nower",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sabbir Ahmed",
+          "openalex_id": ""
+        },
+        {
+          "name": "Tareque Ahmed",
+          "openalex_id": ""
+        },
+        {
+          "name": "Chowdhury Mohmud",
+          "openalex_id": ""
+        },
+        {
+          "name": "Hao Li",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yanan Cao",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yubing Ren",
+          "openalex_id": ""
+        },
+        {
+          "name": "Fang Fang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Lanxue Zhang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Yingjie Li",
+          "openalex_id": ""
+        },
+        {
+          "name": "Shi Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "; Ruqing Zhang",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jiafeng Guo",
+          "openalex_id": ""
+        },
+        {
+          "name": "Maarten De Rijke ; Chieh Lin",
+          "openalex_id": ""
+        },
+        {
+          "name": "Akari Asai",
+          "openalex_id": ""
+        },
+        {
+          "name": "Minghan Li",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": null,
+      "cited_by_count": 348,
+      "type": "paratext",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.findings-emnlp.0.pdf"
+      },
+      "topics": [
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W4389519153"
+    },
+    {
+      "openalex_id": "W4366989878",
+      "doi": "10.37074/jalt.2023.6.1.23",
+      "title": "War of the chatbots: Bard, Bing Chat, ChatGPT, Ernie and beyond. The new AI gold rush and its impact on higher education",
+      "authors": [
+        {
+          "name": "J\u00fcrgen Rudolph",
+          "openalex_id": "A5109171711"
+        },
+        {
+          "name": "Shannon Tan",
+          "openalex_id": "A5007592120"
+        },
+        {
+          "name": "Samson Tan",
+          "openalex_id": "A5049520538",
+          "orcid": "https://orcid.org/0000-0003-1059-1839"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-24",
+      "abstract": "Developments in the chatbot space have been accelerating at breakneck speed since late November 2022. Every day, there appears to be a plethora of news. A war of competitor chatbots is raging amidst an AI arms race and gold rush. These rapid developments impact higher education, as millions of students and academics have started using bots like ChatGPT, Bing Chat, Bard, Ernie and others for a large variety of purposes. In this article, we select some of the most promising chatbots in the English and Chinese-language spaces and provide their corporate backgrounds and brief histories. Following an up-to-date review of the Chinese and English-language academic literature, we describe our comparative method and systematically compare selected chatbots across a multi-disciplinary test relevant to higher education. The results of our test show that there are currently no A-students and no B-students in this bot cohort, despite all publicised and sensationalist claims to the contrary. The much-vaunted AI is not yet that intelligent, it would appear. GPT-4 and its predecessor did best, whilst Bing Chat and Bard were akin to at-risk students with F-grade averages. We conclude our article with four types of recommendations for key stakeholders in higher education: (1) faculty in terms of assessment and (2) teaching &amp; learning, (3) students and (4) higher education institutions.",
+      "cited_by_count": 378,
+      "type": "article",
+      "source": {
+        "name": "Journal of Applied Learning & Teaching",
+        "type": "journal",
+        "issn": [
+          "2591-801X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/771/577"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Artificial Intelligence in Healthcare and Education",
+        "Online Learning and Analytics"
+      ],
+      "referenced_works_count": 90,
+      "url": "https://openalex.org/W4366989878"
+    },
+    {
+      "openalex_id": "W4393397034",
+      "doi": "10.1038/s44184-024-00056-z",
+      "title": "Large language models could change the future of behavioral healthcare: a proposal for responsible development and evaluation",
+      "authors": [
+        {
+          "name": "Elizabeth Cameron Stade",
+          "openalex_id": "A5005901640",
+          "orcid": "https://orcid.org/0000-0001-6409-848X",
+          "institutions": [
+            "VA Palo Alto Health Care System",
+            "National Center for PTSD"
+          ]
+        },
+        {
+          "name": "Shannon Wiltsey Stirman",
+          "openalex_id": "A5032863377",
+          "orcid": "https://orcid.org/0000-0001-9917-5078",
+          "institutions": [
+            "Stanford University",
+            "VA Palo Alto Health Care System",
+            "National Center for PTSD"
+          ]
+        },
+        {
+          "name": "Lyle Ungar",
+          "openalex_id": "A5044944954",
+          "orcid": "https://orcid.org/0000-0003-2047-1443",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Cody L. Boland",
+          "openalex_id": "A5000015386",
+          "orcid": "https://orcid.org/0000-0003-4134-710X",
+          "institutions": [
+            "National Center for PTSD",
+            "VA Palo Alto Health Care System"
+          ]
+        },
+        {
+          "name": "H. Andrew Schwartz",
+          "openalex_id": "A5046253607",
+          "orcid": "https://orcid.org/0000-0002-6383-3339",
+          "institutions": [
+            "Stony Brook University"
+          ]
+        },
+        {
+          "name": "David B. Yaden",
+          "openalex_id": "A5039486115",
+          "orcid": "https://orcid.org/0000-0002-9604-6227",
+          "institutions": [
+            "Johns Hopkins University",
+            "Johns Hopkins Medicine"
+          ]
+        },
+        {
+          "name": "Jo\u00e3o Sedoc",
+          "openalex_id": "A5058954591",
+          "orcid": "https://orcid.org/0000-0001-6369-3711",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Robert J. DeRubeis",
+          "openalex_id": "A5008937416",
+          "orcid": "https://orcid.org/0000-0003-3129-0277",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Robb Willer",
+          "openalex_id": "A5014466973",
+          "orcid": "https://orcid.org/0000-0003-3404-6472",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Johannes C. Eichstaedt",
+          "openalex_id": "A5079039372",
+          "orcid": "https://orcid.org/0000-0002-3220-2972",
+          "institutions": [
+            "Stanford University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-02",
+      "abstract": "Abstract Large language models (LLMs) such as Open AI\u2019s GPT-4 (which power ChatGPT) and Google\u2019s Gemini, built on artificial intelligence, hold immense potential to support, augment, or even eventually automate psychotherapy. Enthusiasm about such applications is mounting in the field as well as industry. These developments promise to address insufficient mental healthcare system capacity and scale individual access to personalized treatments. However, clinical psychology is an uncommonly high stakes application domain for AI systems, as responsible and evidence-based therapy requires nuanced expertise. This paper provides a roadmap for the ambitious yet responsible application of clinical LLMs in psychotherapy. First, a technical overview of clinical LLMs is presented. Second, the stages of integration of LLMs into psychotherapy are discussed while highlighting parallels to the development of autonomous vehicle technology. Third, potential applications of LLMs in clinical care, training, and research are discussed, highlighting areas of risk given the complex nature of psychotherapy. Fourth, recommendations for the responsible development and evaluation of clinical LLMs are provided, which include centering clinical science, involving robust interdisciplinary collaboration, and attending to issues like assessment, risk detection, transparency, and bias. Lastly, a vision is outlined for how LLMs might enable a new generation of studies of evidence-based interventions at scale, and how these studies may challenge assumptions about psychotherapy.",
+      "cited_by_count": 199,
+      "type": "article",
+      "source": {
+        "name": "npj Mental Health Research",
+        "type": "journal",
+        "issn": [
+          "2731-4251"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.nature.com/articles/s44184-024-00056-z.pdf"
+      },
+      "topics": [
+        "Digital Mental Health Interventions",
+        "Mental Health Treatment and Access",
+        "Telemedicine and Telehealth Implementation"
+      ],
+      "referenced_works_count": 74,
+      "url": "https://openalex.org/W4393397034"
+    },
+    {
+      "openalex_id": "W4392058134",
+      "doi": "10.1007/s42001-024-00250-1",
+      "title": "GenAI against humanity: nefarious applications of generative artificial intelligence and large language models",
+      "authors": [
+        {
+          "name": "Emilio Ferrara",
+          "openalex_id": "A5078699564",
+          "orcid": "https://orcid.org/0000-0002-1942-2831",
+          "institutions": [
+            "University of Southern California"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-22",
+      "abstract": "Abstract Generative Artificial Intelligence (GenAI) and Large Language Models (LLMs) are marvels of technology; celebrated for their prowess in natural language processing and multimodal content generation, they promise a transformative future. But as with all powerful tools, they come with their shadows. Picture living in a world where deepfakes are indistinguishable from reality, where synthetic identities orchestrate malicious campaigns, and where targeted misinformation or scams are crafted with unparalleled precision. Welcome to the darker side of GenAI applications. This article is not just a journey through the meanders of potential misuse of GenAI and LLMs, but also a call to recognize the urgency of the challenges ahead. As we navigate the seas of misinformation campaigns, malicious content generation, and the eerie creation of sophisticated malware, we\u2019ll uncover the societal implications that ripple through the GenAI revolution we are witnessing. From AI-powered botnets on social media platforms to the unnerving potential of AI to generate fabricated identities, or alibis made of synthetic realities, the stakes have never been higher. The lines between the virtual and the real worlds are blurring, and the consequences of potential GenAI\u2019s nefarious applications impact us all. This article serves both as a synthesis of rigorous research presented on the risks of GenAI and misuse of LLMs and as a thought-provoking vision of the different types of harmful GenAI applications we might encounter in the near future, and some ways we can prepare for them.",
+      "cited_by_count": 131,
+      "type": "article",
+      "source": {
+        "name": "Journal of Computational Social Science",
+        "type": "journal",
+        "issn": [
+          "2432-2717",
+          "2432-2725"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s42001-024-00250-1.pdf"
+      },
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Ethics and Social Impacts of AI",
+        "Advanced Malware Detection Techniques"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W4392058134"
+    },
+    {
+      "openalex_id": "W4385757151",
+      "doi": "10.30935/ojcmt/13572",
+      "title": "Using ChatGPT in academic writing is (not) a form of plagiarism: What does the literature say?",
+      "authors": [
+        {
+          "name": "Adeeb M. Jarrah",
+          "openalex_id": "A5004603849",
+          "orcid": "https://orcid.org/0000-0002-8216-8848",
+          "institutions": [
+            "Emirates College for Advanced Education"
+          ]
+        },
+        {
+          "name": "Yousef Wardat",
+          "openalex_id": "A5002073061",
+          "orcid": "https://orcid.org/0000-0003-2370-9808",
+          "institutions": [
+            "Abu Dhabi University",
+            "Higher Colleges of Technology"
+          ]
+        },
+        {
+          "name": "Patr\u00edcia Fidalgo",
+          "openalex_id": "A5029721310",
+          "orcid": "https://orcid.org/0000-0002-2620-9983",
+          "institutions": [
+            "Emirates College for Advanced Education"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-11",
+      "abstract": "This study aims to review the existing literature on using ChatGPT in academic writing and its implications regarding plagiarism. Various databases, including Scopus, Google Scholar, ScienceDirect, and ProQuest, were searched using specific keywords related to ChatGPT in academia, academic research, higher education, academic publishing, and ethical challenges. The review provides an overview of studies investigating the use of ChatGPT in academic writing and its potential association with plagiarism. The results of this study contribute to our understanding of the use and misuse of ChatGPT in academic writing, considering the growing concern regarding plagiarism in higher education. The findings suggest that ChatGPT can be a valuable writing tool; however, it is crucial to follow responsible practices to uphold academic integrity and ensure ethical use. Properly citing and attributing ChatGPT\u2019s contribution is essential in recognizing its role, preventing plagiarism, and upholding the principles of scholarly writing. By adhering to established citation guidelines, authors can maximize ChatGPT\u2019s benefits while maintaining responsible usage.",
+      "cited_by_count": 186,
+      "type": "article",
+      "source": {
+        "name": "Online Journal of Communication and Media Technologies",
+        "type": "journal",
+        "issn": [
+          "1986-3497"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.ojcmt.net/download/using-chatgpt-in-academic-writing-is-not-a-form-of-plagiarism-what-does-the-literature-say-13572.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Academic integrity and plagiarism"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4385757151"
+    },
+    {
+      "openalex_id": "W4391974599",
+      "doi": "10.1109/access.2024.3367715",
+      "title": "Generative AI for Transformative Healthcare: A Comprehensive Study of Emerging Models, Applications, Case Studies, and Limitations",
+      "authors": [
+        {
+          "name": "Siva Sai",
+          "openalex_id": "A5080357343",
+          "orcid": "https://orcid.org/0000-0003-0927-9370",
+          "institutions": [
+            "Birla Institute of Technology and Science, Pilani"
+          ]
+        },
+        {
+          "name": "Aanchal Gaur",
+          "openalex_id": "A5111142608",
+          "orcid": "https://orcid.org/0009-0000-9734-3525"
+        },
+        {
+          "name": "R Vijay Sai",
+          "openalex_id": "A5058656737",
+          "institutions": [
+            "Birla Institute of Technology and Science, Pilani"
+          ]
+        },
+        {
+          "name": "Vinay Chamola",
+          "openalex_id": "A5005020243",
+          "orcid": "https://orcid.org/0000-0002-6730-3060",
+          "institutions": [
+            "Birla Institute of Technology and Science, Pilani"
+          ]
+        },
+        {
+          "name": "Mohsen Guizani",
+          "openalex_id": "A5057916222",
+          "orcid": "https://orcid.org/0000-0002-8972-8094",
+          "institutions": [
+            "Mohamed bin Zayed University of Artificial Intelligence"
+          ]
+        },
+        {
+          "name": "Joel J. P. C. Rodrigues",
+          "openalex_id": "A5076776322",
+          "orcid": "https://orcid.org/0000-0001-8657-3800"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Generative artificial intelligence (GAI) can be broadly described as an artificial intelligence system capable of generating images, text, and other media types with human prompts. GAI models like ChatGPT, DALL-E, and Bard have recently caught the attention of industry and academia equally. GAI applications span various industries like art, gaming, fashion, and healthcare. In healthcare, GAI shows promise in medical research, diagnosis, treatment, and patient care and is already making strides in real-world deployments. There has yet to be any detailed study concerning the applications and scope of GAI in healthcare. Addressing this research gap, we explore several applications, real-world scenarios, and limitations of GAI in healthcare. We examine how GAI models like ChatGPT and DALL-E can be leveraged to aid in the applications of medical imaging, drug discovery, personalized patient treatment, medical simulation and training, clinical trial optimization, mental health support, healthcare operations and research, medical chatbots, human movement simulation, and a few more applications. Along with applications, we cover four real-world healthcare scenarios that employ GAI: visual snow syndrome diagnosis, molecular drug optimization, medical education, and dentistry. We also provide an elaborate discussion on seven healthcare-customized LLMs like Med-PaLM, BioGPT, DeepHealth, etc.,Since GAI is still evolving, it poses challenges like the lack of professional expertise in decision making, risk of patient data privacy, issues in integrating with existing healthcare systems, and the problem of data bias which are elaborated on in this work along with several other challenges. We also put forward multiple directions for future research in GAI for healthcare.",
+      "cited_by_count": 165,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10440330.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Biomedical and Engineering Education",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W4391974599"
+    },
+    {
+      "openalex_id": "W4383058631",
+      "doi": "10.1111/cogs.13309",
+      "title": "Do Large Language Models Know What Humans Know?",
+      "authors": [
+        {
+          "name": "Sean Trott",
+          "openalex_id": "A5054191699",
+          "orcid": "https://orcid.org/0000-0002-6003-3731",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Cameron R. Jones",
+          "openalex_id": "A5101419521",
+          "orcid": "https://orcid.org/0000-0002-6609-8966",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Tyler H. Chang",
+          "openalex_id": "A5007494120",
+          "orcid": "https://orcid.org/0000-0001-9541-7041",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "James A. Michaelov",
+          "openalex_id": "A5054612798",
+          "orcid": "https://orcid.org/0000-0003-2913-1103",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Benjamin K. Bergen",
+          "openalex_id": "A5043344696",
+          "orcid": "https://orcid.org/0000-0002-9395-9151",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-01",
+      "abstract": "Abstract Humans can attribute beliefs to others. However, it is unknown to what extent this ability results from an innate biological endowment or from experience accrued through child development, particularly exposure to language describing others' mental states. We test the viability of the language exposure hypothesis by assessing whether models exposed to large quantities of human language display sensitivity to the implied knowledge states of characters in written passages. In pre\u2010registered analyses, we present a linguistic version of the False Belief Task to both human participants and a large language model, GPT\u20103. Both are sensitive to others' beliefs, but while the language model significantly exceeds chance behavior, it does not perform as well as the humans nor does it explain the full extent of their behavior\u2014despite being exposed to more language than a human would in a lifetime. This suggests that while statistical learning from language exposure may in part explain how humans develop the ability to reason about the mental states of others, other mechanisms are also responsible.",
+      "cited_by_count": 78,
+      "type": "article",
+      "source": {
+        "name": "Cognitive Science",
+        "type": "journal",
+        "issn": [
+          "0364-0213",
+          "1551-6709"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/cogs.13309"
+      },
+      "topics": [
+        "Child and Animal Learning Development",
+        "Language and cultural evolution",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W4383058631"
+    },
+    {
+      "openalex_id": "W4385497937",
+      "doi": "10.3390/socsci12080435",
+      "title": "What ChatGPT Tells Us about Gender: A Cautionary Tale about Performativity and Gender Biases in AI",
+      "authors": [
+        {
+          "name": "Nicole Gross",
+          "openalex_id": "A5072944466",
+          "orcid": "https://orcid.org/0000-0001-6047-7714",
+          "institutions": [
+            "National College of Ireland"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-01",
+      "abstract": "Large language models and generative AI, such as ChatGPT, have gained influence over people\u2019s personal lives and work since their launch, and are expected to scale even further. While the promises of generative artificial intelligence are compelling, this technology harbors significant biases, including those related to gender. Gender biases create patterns of behavior and stereotypes that put women, men and gender-diverse people at a disadvantage. Gender inequalities and injustices affect society as a whole. As a social practice, gendering is achieved through the repeated citation of rituals, expectations and norms. Shared understandings are often captured in scripts, including those emerging in and from generative AI, which means that gendered views and gender biases get grafted back into social, political and economic life. This paper\u2019s central argument is that large language models work performatively, which means that they perpetuate and perhaps even amplify old and non-inclusive understandings of gender. Examples from ChatGPT are used here to illustrate some gender biases in AI. However, this paper also puts forward that AI can work to mitigate biases and act to \u2018undo gender\u2019.",
+      "cited_by_count": 130,
+      "type": "article",
+      "source": {
+        "name": "Social Sciences",
+        "type": "journal",
+        "issn": [
+          "2076-0760"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2076-0760/12/8/435/pdf?version=1690954844"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W4385497937"
+    },
+    {
+      "openalex_id": "W4380575774",
+      "doi": "10.2196/46939",
+      "title": "Putting ChatGPT\u2019s Medical Advice to the (Turing) Test: Survey Study",
+      "authors": [
+        {
+          "name": "Oded Nov",
+          "openalex_id": "A5007172071",
+          "orcid": "https://orcid.org/0000-0001-6410-2995",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Nina Singh",
+          "openalex_id": "A5039959492",
+          "orcid": "https://orcid.org/0000-0002-4623-2451",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "David Mann",
+          "openalex_id": "A5007631989",
+          "orcid": "https://orcid.org/0000-0002-2099-0852",
+          "institutions": [
+            "NYU Langone Health",
+            "New York University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-14",
+      "abstract": "Background Chatbots are being piloted to draft responses to patient questions, but patients\u2019 ability to distinguish between provider and chatbot responses and patients\u2019 trust in chatbots\u2019 functions are not well established. Objective This study aimed to assess the feasibility of using ChatGPT (Chat Generative Pre-trained Transformer) or a similar artificial intelligence\u2013based chatbot for patient-provider communication. Methods A survey study was conducted in January 2023. Ten representative, nonadministrative patient-provider interactions were extracted from the electronic health record. Patients\u2019 questions were entered into ChatGPT with a request for the chatbot to respond using approximately the same word count as the human provider\u2019s response. In the survey, each patient question was followed by a provider- or ChatGPT-generated response. Participants were informed that 5 responses were provider generated and 5 were chatbot generated. Participants were asked\u2014and incentivized financially\u2014to correctly identify the response source. Participants were also asked about their trust in chatbots\u2019 functions in patient-provider communication, using a Likert scale from 1-5. Results A US-representative sample of 430 study participants aged 18 and older were recruited on Prolific, a crowdsourcing platform for academic studies. In all, 426 participants filled out the full survey. After removing participants who spent less than 3 minutes on the survey, 392 respondents remained. Overall, 53.3% (209/392) of respondents analyzed were women, and the average age was 47.1 (range 18-91) years. The correct classification of responses ranged between 49% (192/392) to 85.7% (336/392) for different questions. On average, chatbot responses were identified correctly in 65.5% (1284/1960) of the cases, and human provider responses were identified correctly in 65.1% (1276/1960) of the cases. On average, responses toward patients\u2019 trust in chatbots\u2019 functions were weakly positive (mean Likert score 3.4 out of 5), with lower trust as the health-related complexity of the task in the questions increased. Conclusions ChatGPT responses to patient questions were weakly distinguishable from provider responses. Laypeople appear to trust the use of chatbots to answer lower-risk health questions. It is important to continue studying patient-chatbot interaction as chatbots move from administrative to more clinical roles in health care.",
+      "cited_by_count": 165,
+      "type": "article",
+      "source": {
+        "name": "JMIR Medical Education",
+        "type": "journal",
+        "issn": [
+          "2369-3762"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://mededu.jmir.org/2023/1/e46939/PDF"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI in Service Interactions",
+        "Digital Mental Health Interventions"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4380575774"
+    },
+    {
+      "openalex_id": "W4390921168",
+      "doi": "10.1109/tlt.2024.3355015",
+      "title": "Student Perceptions of ChatGPT Use in a College Essay Assignment: Implications for Learning, Grading, and Trust in Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Chad C. Tossell",
+          "openalex_id": "A5017244472",
+          "orcid": "https://orcid.org/0000-0003-1662-9308",
+          "institutions": [
+            "United States Air Force Academy"
+          ]
+        },
+        {
+          "name": "Nathan L. Tenhundfeld",
+          "openalex_id": "A5060897376",
+          "orcid": "https://orcid.org/0000-0002-3753-8096",
+          "institutions": [
+            "University of Alabama in Huntsville"
+          ]
+        },
+        {
+          "name": "Ali Momen",
+          "openalex_id": "A5101498197",
+          "orcid": "https://orcid.org/0000-0001-9903-9818",
+          "institutions": [
+            "United States Air Force Academy"
+          ]
+        },
+        {
+          "name": "Katrina Cooley",
+          "openalex_id": "A5057284362",
+          "orcid": "https://orcid.org/0009-0008-5768-0699",
+          "institutions": [
+            "United States Air Force Academy"
+          ]
+        },
+        {
+          "name": "Ewart J. de Visser",
+          "openalex_id": "A5023496105",
+          "orcid": "https://orcid.org/0000-0001-9238-9081",
+          "institutions": [
+            "United States Air Force Academy"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "This study examined student experiences before and after an essay writing assignment that required the use of ChatGPT within an undergraduate engineering course. Utilizing a pre-post study design, we gathered data from 24 participants to evaluate ChatGPT's support for both completing and grading an essay assignment, exploring its educational value and impact on the learning process. Our quantitative and thematic analyses uncovered that ChatGPT did not simplify the writing process. Instead, the tool transformed the student learning experience yielding mixed responses. Participants reported finding ChatGPT valuable for learning, and their comfort with its ethical and benevolent aspects increased post-use. Concerns with ChatGPT included poor accuracy and limited feedback on the confidence of its output. Students preferred instructors to use ChatGPT to help grade their assignments, with appropriate oversight. They did not trust ChatGPT to grade by itself. Student views of ChatGPT evolved from a perceived \"cheating tool\" to a collaborative resource that requires human oversight and calibrated trust. Implications for writing, education, and trust in AI are discussed.",
+      "cited_by_count": 135,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Learning Technologies",
+        "type": "journal",
+        "issn": [
+          "1939-1382",
+          "2372-0050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/4620076/4620077/10400910.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 88,
+      "url": "https://openalex.org/W4390921168"
+    },
+    {
+      "openalex_id": "W4386242492",
+      "doi": "10.1145/3600211.3604681",
+      "title": "AI Art and its Impact on Artists",
+      "authors": [
+        {
+          "name": "Harry H. Jiang",
+          "openalex_id": "A5044999033",
+          "orcid": "https://orcid.org/0009-0003-5419-201X"
+        },
+        {
+          "name": "Lauren T. Brown",
+          "openalex_id": "A5009040133",
+          "orcid": "https://orcid.org/0009-0006-8993-3422",
+          "institutions": [
+            "Artistic Realization Technologies"
+          ]
+        },
+        {
+          "name": "Jessica Yi-Yun Cheng",
+          "openalex_id": "A5103280655"
+        },
+        {
+          "name": "Mehtab Khan",
+          "openalex_id": "A5082120341",
+          "orcid": "https://orcid.org/0000-0001-8723-3066"
+        },
+        {
+          "name": "Abhishek Gupta",
+          "openalex_id": "A5103215020",
+          "orcid": "https://orcid.org/0000-0002-3814-9084"
+        },
+        {
+          "name": "Deja Workman",
+          "openalex_id": "A5013891329",
+          "orcid": "https://orcid.org/0000-0002-1973-2426",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Alex Hanna",
+          "openalex_id": "A5025947434",
+          "orcid": "https://orcid.org/0000-0002-8957-0813"
+        },
+        {
+          "name": "Johnathan Flowers",
+          "openalex_id": "A5021998832",
+          "orcid": "https://orcid.org/0000-0002-4535-8466",
+          "institutions": [
+            "California State University, Northridge"
+          ]
+        },
+        {
+          "name": "Timnit Gebru",
+          "openalex_id": "A5089275971",
+          "orcid": "https://orcid.org/0009-0007-4814-1944"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-08",
+      "abstract": "The last 3 years have resulted in machine learning (ML)-based image generators with the ability to output consistently higher quality images based on natural language prompts as inputs. As a result, many popular commercial \"generative AI Art\" products have entered the market, making generative AI an estimated $48B industry [125]. However, many professional artists have spoken up about the harms they have experienced due to the proliferation of large scale image generators trained on image/text pairs from the Internet. In this paper, we review some of these harms which include reputational damage, economic loss, plagiarism and copyright infringement. To guard against these issues while reaping the potential benefits of image generators, we provide recommendations such as regulation that forces organizations to disclose their training data, and tools that help artists prevent using their content as training data without their consent.",
+      "cited_by_count": 200,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3600211.3604681"
+      },
+      "topics": [
+        "Generative Adversarial Networks and Image Synthesis",
+        "Artificial Intelligence in Healthcare and Education",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4386242492"
+    },
+    {
+      "openalex_id": "W4388624604",
+      "doi": "10.1109/tpami.2023.3331846",
+      "title": "Towards Human-Centered Explainable AI: A Survey of User Studies for Model Explanations",
+      "authors": [
+        {
+          "name": "Yao Rong",
+          "openalex_id": "A5100624647",
+          "orcid": "https://orcid.org/0000-0002-6031-3741",
+          "institutions": [
+            "Technical University of Munich"
+          ]
+        },
+        {
+          "name": "Tobias Leemann",
+          "openalex_id": "A5086270771",
+          "orcid": "https://orcid.org/0000-0001-9333-228X",
+          "institutions": [
+            "TH Bingen University of Applied Sciences"
+          ]
+        },
+        {
+          "name": "Thai-trang Nguyen",
+          "openalex_id": "A5089459836",
+          "orcid": "https://orcid.org/0009-0002-3604-4999",
+          "institutions": [
+            "TH Bingen University of Applied Sciences"
+          ]
+        },
+        {
+          "name": "Lisa Fiedler",
+          "openalex_id": "A5038419111",
+          "orcid": "https://orcid.org/0009-0002-2902-3727",
+          "institutions": [
+            "TH Bingen University of Applied Sciences"
+          ]
+        },
+        {
+          "name": "Peizhu Qian",
+          "openalex_id": "A5072044649",
+          "orcid": "https://orcid.org/0000-0002-5718-1047",
+          "institutions": [
+            "Rice University"
+          ]
+        },
+        {
+          "name": "Vaibhav Unhelkar",
+          "openalex_id": "A5012176895",
+          "orcid": "https://orcid.org/0000-0002-4530-189X",
+          "institutions": [
+            "Rice University"
+          ]
+        },
+        {
+          "name": "Tina Seidel",
+          "openalex_id": "A5045427635",
+          "orcid": "https://orcid.org/0000-0002-2578-1208",
+          "institutions": [
+            "Technical University of Munich"
+          ]
+        },
+        {
+          "name": "Gjergji Kasneci",
+          "openalex_id": "A5024434748",
+          "institutions": [
+            "Technical University of Munich"
+          ]
+        },
+        {
+          "name": "Enkelejda Kasneci",
+          "openalex_id": "A5008809634",
+          "orcid": "https://orcid.org/0000-0003-3146-4484",
+          "institutions": [
+            "Technical University of Munich"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-13",
+      "abstract": "Explainable AI (XAI) is widely viewed as a sine qua non for ever-expanding AI research. A better understanding of the needs of XAI users, as well as human-centered evaluations of explainable models are both a necessity and a challenge. In this paper, we explore how human-computer interaction (HCI) and AI researchers conduct user studies in XAI applications based on a systematic literature review. After identifying and thoroughly analyzing 97 core papers with human-based XAI evaluations over the past five years, we categorize them along the measured characteristics of explanatory methods, namely trust, understanding, usability, and human-AI collaboration performance. Our research shows that XAI is spreading more rapidly in certain application domains, such as recommender systems than in others, but that user evaluations are still rather sparse and incorporate hardly any insights from cognitive or social sciences. Based on a comprehensive discussion of best practices, i.e., common models, design choices, and measures in user studies, we propose practical guidelines on designing and conducting user studies for XAI researchers and practitioners. Lastly, this survey also highlights several open research directions, particularly linking psychological science and human-centered XAI.",
+      "cited_by_count": 145,
+      "type": "review",
+      "source": {
+        "name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "type": "journal",
+        "issn": [
+          "0162-8828",
+          "1939-3539",
+          "2160-9292"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/34/4359286/10316181.pdf"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning in Healthcare",
+        "Statistical and Computational Modeling"
+      ],
+      "referenced_works_count": 247,
+      "url": "https://openalex.org/W4388624604"
+    },
+    {
+      "openalex_id": "W4406658975",
+      "doi": "10.1038/s43856-024-00717-2",
+      "title": "Current applications and challenges in large language models for patient care: a systematic review",
+      "authors": [
+        {
+          "name": "Felix Busch",
+          "openalex_id": "A5028916711",
+          "orcid": "https://orcid.org/0000-0001-9770-8555",
+          "institutions": [
+            "Klinikum rechts der Isar",
+            "Technical University of Munich"
+          ]
+        },
+        {
+          "name": "Lena Hoffmann",
+          "openalex_id": "A5010592448",
+          "orcid": "https://orcid.org/0009-0000-1374-9545",
+          "institutions": [
+            "Freie Universit\u00e4t Berlin",
+            "Charit\u00e9 - Universit\u00e4tsmedizin Berlin",
+            "Humboldt-Universit\u00e4t zu Berlin"
+          ]
+        },
+        {
+          "name": "Christopher Rueger",
+          "openalex_id": "A5009532076",
+          "orcid": "https://orcid.org/0000-0001-7092-4004",
+          "institutions": [
+            "Humboldt-Universit\u00e4t zu Berlin",
+            "Charit\u00e9 - Universit\u00e4tsmedizin Berlin",
+            "Freie Universit\u00e4t Berlin"
+          ]
+        },
+        {
+          "name": "Elon H. C. van Dijk",
+          "openalex_id": "A5085326946",
+          "orcid": "https://orcid.org/0000-0002-6351-7942",
+          "institutions": [
+            "Leiden University Medical Center",
+            "Sir Charles Gairdner Hospital"
+          ]
+        },
+        {
+          "name": "Rawen Kader",
+          "openalex_id": "A5069445465",
+          "orcid": "https://orcid.org/0000-0001-9133-0838",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Esteban Ortiz\u2010Prado",
+          "openalex_id": "A5025003605",
+          "orcid": "https://orcid.org/0000-0002-1895-7498",
+          "institutions": [
+            "Universidad de Las Am\u00e9ricas"
+          ]
+        },
+        {
+          "name": "Marcus R. Makowski",
+          "openalex_id": "A5051070119",
+          "institutions": [
+            "Klinikum rechts der Isar",
+            "Technical University of Munich"
+          ]
+        },
+        {
+          "name": "Luca Saba",
+          "openalex_id": "A5053917840",
+          "orcid": "https://orcid.org/0000-0003-2870-3771",
+          "institutions": [
+            "Azienda Ospedaliero-Universitaria Cagliari"
+          ]
+        },
+        {
+          "name": "Martin Hadamitzky",
+          "openalex_id": "A5039606590",
+          "orcid": "https://orcid.org/0000-0001-6267-1692",
+          "institutions": [
+            "Technical University of Munich",
+            "Deutsches Herzzentrum M\u00fcnchen"
+          ]
+        },
+        {
+          "name": "Jakob Nikolas Kather",
+          "openalex_id": "A5073483894",
+          "orcid": "https://orcid.org/0000-0002-3730-5348",
+          "institutions": [
+            "National Center for Tumor Diseases",
+            "University Hospital Carl Gustav Carus",
+            "Heidelberg University",
+            "University Hospital Heidelberg"
+          ]
+        },
+        {
+          "name": "Daniel Truhn",
+          "openalex_id": "A5016512818",
+          "orcid": "https://orcid.org/0000-0002-9605-0728",
+          "institutions": [
+            "Universit\u00e4tsklinikum Aachen"
+          ]
+        },
+        {
+          "name": "Renato Cuocolo",
+          "openalex_id": "A5058973104",
+          "orcid": "https://orcid.org/0000-0002-1452-1574",
+          "institutions": [
+            "University of Salerno"
+          ]
+        },
+        {
+          "name": "Lisa C. Adams",
+          "openalex_id": "A5005164520",
+          "orcid": "https://orcid.org/0000-0001-5836-4542",
+          "institutions": [
+            "Technical University of Munich",
+            "Klinikum rechts der Isar"
+          ]
+        },
+        {
+          "name": "Keno K. Bressem",
+          "openalex_id": "A5006318966",
+          "orcid": "https://orcid.org/0000-0001-9249-8624",
+          "institutions": [
+            "Klinikum rechts der Isar",
+            "Deutsches Herzzentrum M\u00fcnchen",
+            "Technical University of Munich"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-21",
+      "abstract": "Abstract Background The introduction of large language models (LLMs) into clinical practice promises to improve patient education and empowerment, thereby personalizing medical care and broadening access to medical knowledge. Despite the popularity of LLMs, there is a significant gap in systematized information on their use in patient care. Therefore, this systematic review aims to synthesize current applications and limitations of LLMs in patient care. Methods We systematically searched 5 databases for qualitative, quantitative, and mixed methods articles on LLMs in patient care published between 2022 and 2023. From 4349 initial records, 89 studies across 29 medical specialties were included. Quality assessment was performed using the Mixed Methods Appraisal Tool 2018. A data-driven convergent synthesis approach was applied for thematic syntheses of LLM applications and limitations using free line-by-line coding in Dedoose. Results We show that most studies investigate Generative Pre-trained Transformers (GPT)-3.5 (53.2%, n = 66 of 124 different LLMs examined) and GPT-4 (26.6%, n = 33/124) in answering medical questions, followed by patient information generation, including medical text summarization or translation, and clinical documentation. Our analysis delineates two primary domains of LLM limitations: design and output. Design limitations include 6 second-order and 12 third-order codes, such as lack of medical domain optimization, data transparency, and accessibility issues, while output limitations include 9 second-order and 32 third-order codes, for example, non-reproducibility, non-comprehensiveness, incorrectness, unsafety, and bias. Conclusions This review systematically maps LLM applications and limitations in patient care, providing a foundational framework and taxonomy for their implementation and evaluation in healthcare settings.",
+      "cited_by_count": 116,
+      "type": "review",
+      "source": {
+        "name": "Communications Medicine",
+        "type": "journal",
+        "issn": [
+          "2730-664X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s43856-024-00717-2.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Topic Modeling",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 134,
+      "url": "https://openalex.org/W4406658975"
+    },
+    {
+      "openalex_id": "W4392667162",
+      "doi": "10.1109/access.2024.3375882",
+      "title": "Devising and Detecting Phishing Emails Using Large Language Models",
+      "authors": [
+        {
+          "name": "Fredrik Heiding",
+          "openalex_id": "A5068369649",
+          "orcid": "https://orcid.org/0000-0001-7884-966X",
+          "institutions": [
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Bruce Schneier",
+          "openalex_id": "A5037770347",
+          "orcid": "https://orcid.org/0000-0003-1453-1083",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        },
+        {
+          "name": "Arun Vishwanath",
+          "openalex_id": "A5024844538",
+          "orcid": "https://orcid.org/0000-0002-3878-6614"
+        },
+        {
+          "name": "Jeremy Bernstein",
+          "openalex_id": "A5083085831",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Peter S. Park",
+          "openalex_id": "A5087342854",
+          "orcid": "https://orcid.org/0000-0002-6532-0529",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "AI programs, built using large language models, make it possible to automatically create phishing emails based on a few data points about a user. The V-Triad is a set of rules for manually designing phishing emails to exploit our cognitive heuristics and biases. In this study, we compare the performance of phishing emails created automatically by GPT-4 and manually using the V-Triad. We also combine GPT-4 with the V-Triad to assess their combined potential. A fourth group, exposed to generic phishing emails, was our control group. We use a red teaming approach by simulating attackers and emailing 112 participants recruited for the study. The control group emails received a click-through rate between 19-28&#x0025;, the GPT-generated emails 30-44&#x0025;, emails generated by the V-Triad 69-79&#x0025;, and emails generated by GPT and the V-Triad 43-81&#x0025;. Each participant was asked to explain why they pressed or did not press a link in the email. These answers often contradict each other, highlighting the importance of personal differences. Next, we used four popular large language models (GPT, Claude, PaLM, and LLaMA) to detect the intention of phishing emails and compare the results to human detection. The language models demonstrated a strong ability to detect malicious intent, even in non-obvious phishing emails. They sometimes surpassed human detection, although often being slightly less accurate than humans. Finally, we analyze of the economic aspects of AI-enabled phishing attacks, showing how large language models increase the incentives of phishing and spear phishing by reducing their costs.",
+      "cited_by_count": 57,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10466545.pdf"
+      },
+      "topics": [
+        "Spam and Phishing Detection",
+        "Misinformation and Its Impacts",
+        "Network Security and Intrusion Detection"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W4392667162"
+    },
+    {
+      "openalex_id": "W4390919125",
+      "doi": "10.1080/15265161.2023.2296402",
+      "title": "A Personalized Patient Preference Predictor for Substituted Judgments in Healthcare: Technically Feasible and Ethically Desirable",
+      "authors": [
+        {
+          "name": "Brian D. Earp",
+          "openalex_id": "A5058038900",
+          "orcid": "https://orcid.org/0000-0001-9691-2888",
+          "institutions": [
+            "Yale University",
+            "University of Oxford",
+            "Hastings Center",
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Sebastian Porsdam Mann",
+          "openalex_id": "A5061593640",
+          "orcid": "https://orcid.org/0000-0002-1867-2097",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Jemima Allen",
+          "openalex_id": "A5111014795",
+          "institutions": [
+            "Australian Regenerative Medicine Institute",
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Sabine Salloch",
+          "openalex_id": "A5042834551",
+          "orcid": "https://orcid.org/0000-0002-2987-2684",
+          "institutions": [
+            "Medizinische Hochschule Hannover"
+          ]
+        },
+        {
+          "name": "Vynn Suren",
+          "openalex_id": "A5093725680"
+        },
+        {
+          "name": "Karin Jongsma",
+          "openalex_id": "A5051588251",
+          "orcid": "https://orcid.org/0000-0001-8135-6786",
+          "institutions": [
+            "University Medical Center Utrecht"
+          ]
+        },
+        {
+          "name": "Matthias Braun",
+          "openalex_id": "A5011693562",
+          "orcid": "https://orcid.org/0000-0002-6687-6027",
+          "institutions": [
+            "University of Bonn"
+          ]
+        },
+        {
+          "name": "Dominic Wilkinson",
+          "openalex_id": "A5064910024",
+          "orcid": "https://orcid.org/0000-0003-3958-8633",
+          "institutions": [
+            "National University of Singapore",
+            "University of Oxford",
+            "Murdoch Children's Research Institute",
+            "John Radcliffe Hospital"
+          ]
+        },
+        {
+          "name": "Walter Sinnott\u2010Armstrong",
+          "openalex_id": "A5080376553",
+          "orcid": "https://orcid.org/0000-0003-2579-9966",
+          "institutions": [
+            "Duke University"
+          ]
+        },
+        {
+          "name": "Annette Rid",
+          "openalex_id": "A5062417912",
+          "orcid": "https://orcid.org/0000-0003-1117-1975",
+          "institutions": [
+            "National Institutes of Health Clinical Center"
+          ]
+        },
+        {
+          "name": "David Wendler",
+          "openalex_id": "A5065618670",
+          "orcid": "https://orcid.org/0000-0002-9359-4439",
+          "institutions": [
+            "National Institutes of Health Clinical Center"
+          ]
+        },
+        {
+          "name": "Julian Savulescu",
+          "openalex_id": "A5018300444",
+          "orcid": "https://orcid.org/0000-0003-1691-6403",
+          "institutions": [
+            "National University of Singapore",
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-16",
+      "abstract": "When making substituted judgments for incapacitated patients, surrogates often struggle to guess what the patient would want if they had capacity. Surrogates may also agonize over having the (sole) responsibility of making such a determination. To address such concerns, a Patient Preference Predictor (PPP) has been proposed that would use an algorithm to infer the treatment preferences of individual patients from population-level data about the known preferences of people with similar demographic characteristics. However, critics have suggested that even if such a PPP were more accurate, on average, than human surrogates in identifying patient preferences, the proposed algorithm would nevertheless fail to respect the patient's (former) autonomy since it draws on the 'wrong' kind of data: namely, data that are not specific to the individual patient and which therefore may not reflect their actual values, or their reasons for having the preferences they do. Taking such criticisms on board, we here propose a new approach: the <i>Personalized</i> Patient Preference Predictor (P4). The P4 is based on recent advances in machine learning, which allow technologies including large language models to be more cheaply and efficiently 'fine-tuned' on person-specific data. The P4, unlike the PPP, would be able to infer an individual patient's preferences from material (e.g., prior treatment decisions) that is in fact specific to them. Thus, we argue, in addition to being potentially more accurate at the individual level than the previously proposed PPP, the predictions of a P4 would also more directly reflect each patient's own reasons and values. In this article, we review recent discoveries in artificial intelligence research that suggest a P4 is technically feasible, and argue that, if it is developed and appropriately deployed, it should assuage some of the main autonomy-based concerns of critics of the original PPP. We then consider various objections to our proposal and offer some tentative replies.",
+      "cited_by_count": 76,
+      "type": "article",
+      "source": {
+        "name": "The American Journal of Bioethics",
+        "type": "journal",
+        "issn": [
+          "1526-5161",
+          "1536-0075"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/15265161.2023.2296402?needAccess=true"
+      },
+      "topics": [
+        "Patient-Provider Communication in Healthcare",
+        "Health Systems, Economic Evaluations, Quality of Life",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W4390919125"
+    },
+    {
+      "openalex_id": "W4362513839",
+      "doi": "10.1101/2023.03.31.23287979",
+      "title": "An exploratory survey about using ChatGPT in education, healthcare, and research",
+      "authors": [
+        {
+          "name": "Mohammad Hosseini",
+          "openalex_id": "A5004481021",
+          "orcid": "https://orcid.org/0000-0002-2385-985X",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Catherine A. Gao",
+          "openalex_id": "A5052276112",
+          "orcid": "https://orcid.org/0000-0001-5576-3943",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "David Liebovitz",
+          "openalex_id": "A5050508920",
+          "orcid": "https://orcid.org/0000-0002-2518-5940",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Alexandre M. Carvalho",
+          "openalex_id": "A5023038971",
+          "orcid": "https://orcid.org/0000-0002-6961-7004",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Faraz S. Ahmad",
+          "openalex_id": "A5035626083",
+          "orcid": "https://orcid.org/0000-0002-2613-2541",
+          "institutions": [
+            "Intel (United States)",
+            "Northwestern Medicine",
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Yuan Luo",
+          "openalex_id": "A5100452550",
+          "orcid": "https://orcid.org/0000-0003-0195-7456",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Ngan MacDonald",
+          "openalex_id": "A5067942992",
+          "orcid": "https://orcid.org/0000-0003-0268-7224",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Kristi Holmes",
+          "openalex_id": "A5091019754",
+          "orcid": "https://orcid.org/0000-0001-8420-5254",
+          "institutions": [
+            "Northwestern University"
+          ]
+        },
+        {
+          "name": "Abel Kho",
+          "openalex_id": "A5076495147",
+          "orcid": "https://orcid.org/0000-0003-1993-5634",
+          "institutions": [
+            "Northwestern University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-03",
+      "abstract": "Objective ChatGPT is the first large language model (LLM) to reach a large, mainstream audience. Its rapid adoption and exploration by the population at large has sparked a wide range of discussions regarding its acceptable and optimal integration in different areas. In a hybrid (virtual and in-person) panel discussion event, we examined various perspectives regarding the use of ChatGPT in education, research, and healthcare. Materials and Methods We surveyed in-person and online attendees using an audience interaction platform (Slido). We quantitatively analyzed received responses on questions about the use of ChatGPT in various contexts. We compared pairwise categorical groups with Fisher's Exact. Furthermore, we used qualitative methods to analyze and code discussions. Results We received 420 responses from an estimated 844 participants (response rate 49.7%). Only 40% of the audience had tried ChatGPT. More trainees had tried ChatGPT compared with faculty. Those who had used ChatGPT were more interested in using it in a wider range of contexts going forwards. Of the three discussed contexts, the greatest uncertainty was shown about using ChatGPT in education. Pros and cons were raised during discussion for the use of this technology in education, research, and healthcare. Discussion There was a range of perspectives around the uses of ChatGPT in education, research, and healthcare, with still much uncertainty around its acceptability and optimal uses. There were different perspectives from respondents of different roles (trainee vs faculty vs staff). More discussion is needed to explore perceptions around the use of LLMs such as ChatGPT in vital sectors such as education, healthcare and research. Given involved risks and unforeseen challenges, taking a thoughtful and measured approach in adoption would reduce the likelihood of harm.",
+      "cited_by_count": 73,
+      "type": "preprint",
+      "source": {
+        "name": "bioRxiv (Cold Spring Harbor Laboratory)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.medrxiv.org/content/medrxiv/early/2023/04/03/2023.03.31.23287979.full.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "COVID-19 diagnosis using AI",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W4362513839"
+    },
+    {
+      "openalex_id": "W3049568087",
+      "doi": "10.1038/s41380-020-00864-7",
+      "title": "Advances in the field of intranasal oxytocin research: lessons learned and future directions for clinical research",
+      "authors": [
+        {
+          "name": "Daniel Quintana",
+          "openalex_id": "A5038344579",
+          "orcid": "https://orcid.org/0000-0003-2876-0004",
+          "institutions": [
+            "University of Oslo",
+            "Oslo University Hospital"
+          ]
+        },
+        {
+          "name": "Alexander Lischke",
+          "openalex_id": "A5065319596",
+          "orcid": "https://orcid.org/0000-0002-8322-2287",
+          "institutions": [
+            "Universit\u00e4t Greifswald"
+          ]
+        },
+        {
+          "name": "Sally Grace",
+          "openalex_id": "A5081524468",
+          "orcid": "https://orcid.org/0000-0003-1556-1292",
+          "institutions": [
+            "Australian Catholic University"
+          ]
+        },
+        {
+          "name": "Dirk Scheele",
+          "openalex_id": "A5046992579",
+          "orcid": "https://orcid.org/0000-0002-7613-0376",
+          "institutions": [
+            "Carl von Ossietzky Universit\u00e4t Oldenburg",
+            "University Hospital Bonn"
+          ]
+        },
+        {
+          "name": "Yina Ma",
+          "openalex_id": "A5068078572",
+          "orcid": "https://orcid.org/0000-0002-5457-0354",
+          "institutions": [
+            "Beijing Normal University",
+            "Chinese Institute for Brain Research"
+          ]
+        },
+        {
+          "name": "Benjamin Becker",
+          "openalex_id": "A5044395226",
+          "orcid": "https://orcid.org/0000-0002-9014-9671",
+          "institutions": [
+            "University of Electronic Science and Technology of China"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-17",
+      "abstract": "Abstract Reports on the modulatory role of the neuropeptide oxytocin on social cognition and behavior have steadily increased over the last two decades, stimulating considerable interest in its psychiatric application. Basic and clinical research in humans primarily employs intranasal application protocols. This approach assumes that intranasal administration increases oxytocin levels in the central nervous system via a direct nose-to-brain route, which in turn acts upon centrally-located oxytocin receptors to exert its behavioral effects. However, debates have emerged on whether intranasally administered oxytocin enters the brain via the nose-to-brain route and whether this route leads to functionally relevant increases in central oxytocin levels. In this review we outline recent advances from human and animal research that provide converging evidence for functionally relevant effects of the intranasal oxytocin administration route, suggesting that direct nose-to-brain delivery underlies the behavioral effects of oxytocin on social cognition and behavior. Moreover, advances in previously debated methodological issues, such as pre-registration, reproducibility, statistical power, interpretation of non-significant results, dosage, and sex differences are discussed and integrated with suggestions for the next steps in translating intranasal oxytocin into psychiatric applications.",
+      "cited_by_count": 239,
+      "type": "review",
+      "source": {
+        "name": "Molecular Psychiatry",
+        "type": "journal",
+        "issn": [
+          "1359-4184",
+          "1476-5578"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s41380-020-00864-7.pdf"
+      },
+      "topics": [
+        "Neuroendocrine regulation and behavior",
+        "Evolutionary Psychology and Human Behavior",
+        "Neuroscience of respiration and sleep"
+      ],
+      "referenced_works_count": 157,
+      "url": "https://openalex.org/W3049568087"
+    },
+    {
+      "openalex_id": "W4390571745",
+      "doi": "10.1093/eurheartj/ehad838",
+      "title": "Artificial intelligence: revolutionizing cardiology with large language models",
+      "authors": [
+        {
+          "name": "Machteld Boonstra",
+          "openalex_id": "A5090245394",
+          "orcid": "https://orcid.org/0000-0001-7550-0489",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        },
+        {
+          "name": "Davy Weissenbacher",
+          "openalex_id": "A5040948702",
+          "orcid": "https://orcid.org/0000-0001-8331-3675",
+          "institutions": [
+            "Cedars-Sinai Medical Center"
+          ]
+        },
+        {
+          "name": "Jason H. Moore",
+          "openalex_id": "A5032971510",
+          "orcid": "https://orcid.org/0000-0002-5015-1099",
+          "institutions": [
+            "Cedars-Sinai Medical Center"
+          ]
+        },
+        {
+          "name": "Graciela Gonzalez\u2010Hernandez",
+          "openalex_id": "A5022014033",
+          "orcid": "https://orcid.org/0000-0002-6416-9556",
+          "institutions": [
+            "Cedars-Sinai Medical Center"
+          ]
+        },
+        {
+          "name": "Folkert W. Asselbergs",
+          "openalex_id": "A5039782389",
+          "orcid": "https://orcid.org/0000-0002-1692-8669",
+          "institutions": [
+            "National Institute for Health Research",
+            "University of Amsterdam",
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-03",
+      "abstract": "Abstract Natural language processing techniques are having an increasing impact on clinical care from patient, clinician, administrator, and research perspective. Among others are automated generation of clinical notes and discharge letters, medical term coding for billing, medical chatbots both for patients and clinicians, data enrichment in the identification of disease symptoms or diagnosis, cohort selection for clinical trial, and auditing purposes. In the review, an overview of the history in natural language processing techniques developed with brief technical background is presented. Subsequently, the review will discuss implementation strategies of natural language processing tools, thereby specifically focusing on large language models, and conclude with future opportunities in the application of such techniques in the field of cardiology.",
+      "cited_by_count": 82,
+      "type": "article",
+      "source": {
+        "name": "European Heart Journal",
+        "type": "journal",
+        "issn": [
+          "0195-668X",
+          "1522-9645"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/eurheartj/advance-article-pdf/doi/10.1093/eurheartj/ehad838/54948613/ehad838.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W4390571745"
+    },
+    {
+      "openalex_id": "W4389519607",
+      "doi": "10.18653/v1/2023.emnlp-main.928",
+      "title": "Dr ChatGPT tell me what I want to hear: How different prompts impact health answer correctness",
+      "authors": [
+        {
+          "name": "Bevan Koopman",
+          "openalex_id": "A5087733750",
+          "orcid": "https://orcid.org/0000-0001-5577-3391",
+          "institutions": [
+            "University of Queensland",
+            "Commonwealth Scientific and Industrial Research Organisation"
+          ]
+        },
+        {
+          "name": "Guido Zuccon",
+          "openalex_id": "A5076031002",
+          "orcid": "https://orcid.org/0000-0003-0271-5563",
+          "institutions": [
+            "University of Queensland"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "This paper investigates the significant impact different prompts have on the behaviour of ChatGPT when used for health information seeking. As people more and more depend on generative large language models (LLMs) like ChatGPT, it is critical to understand model behaviour under different conditions, especially for domains where incorrect answers can have serious consequences such as health. Using the TREC Misinformation dataset, we empirically evaluate ChatGPT to show not just its effectiveness but reveal that knowledge passed in the prompt can bias the model to the detriment of answer correctness. We show this occurs both for retrieve-then-generate pipelines and based on how a user phrases their question as well as the question type. This work has important implications for the development of more robust and transparent question-answering systems based on generative large language models. Prompts, raw result files and manual analysis are made publicly available at https://github.com/ielab/drchatgpt-health_prompting.",
+      "cited_by_count": 64,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.emnlp-main.928.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Text Readability and Simplification",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W4389519607"
+    },
+    {
+      "openalex_id": "W4391532364",
+      "doi": "10.1007/s43681-024-00419-4",
+      "title": "Anthropomorphism in AI: hype and fallacy",
+      "authors": [
+        {
+          "name": "Adriana Placani",
+          "openalex_id": "A5033847012",
+          "orcid": "https://orcid.org/0000-0002-3772-2571",
+          "institutions": [
+            "Universidade Nova de Lisboa",
+            "University of Lisbon"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-05",
+      "abstract": null,
+      "cited_by_count": 80,
+      "type": "article",
+      "source": {
+        "name": "AI and Ethics",
+        "type": "journal",
+        "issn": [
+          "2730-5953",
+          "2730-5961"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-024-00419-4.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4391532364"
+    },
+    {
+      "openalex_id": "W4389520370",
+      "doi": "10.18653/v1/2023.emnlp-main.632",
+      "title": "Editing Large Language Models: Problems, Methods, and Opportunities",
+      "authors": [
+        {
+          "name": "Yunzhi Yao",
+          "openalex_id": "A5007559881",
+          "orcid": "https://orcid.org/0000-0003-4491-0260",
+          "institutions": [
+            "National University of Singapore",
+            "Zhejiang University"
+          ]
+        },
+        {
+          "name": "Peng Wang",
+          "openalex_id": "A5100396039",
+          "orcid": "https://orcid.org/0000-0002-5397-9115",
+          "institutions": [
+            "Zhejiang University",
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Bozhong Tian",
+          "openalex_id": "A5086969601",
+          "orcid": "https://orcid.org/0000-0001-6907-8496",
+          "institutions": [
+            "Zhejiang University",
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Siyuan Cheng",
+          "openalex_id": "A5101863818",
+          "orcid": "https://orcid.org/0009-0008-2230-6875",
+          "institutions": [
+            "National University of Singapore",
+            "Zhejiang University"
+          ]
+        },
+        {
+          "name": "Zhoubo Li",
+          "openalex_id": "A5064386877",
+          "orcid": "https://orcid.org/0000-0003-3792-877X",
+          "institutions": [
+            "Zhejiang University",
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Shumin Deng",
+          "openalex_id": "A5060484186",
+          "orcid": "https://orcid.org/0000-0002-4049-8478",
+          "institutions": [
+            "Zhejiang University",
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Huajun Chen",
+          "openalex_id": "A5102018239",
+          "orcid": "https://orcid.org/0000-0001-5496-7442",
+          "institutions": [
+            "National University of Singapore",
+            "Zhejiang University"
+          ]
+        },
+        {
+          "name": "Ningyu Zhang",
+          "openalex_id": "A5089259739",
+          "orcid": "https://orcid.org/0000-0002-1970-0678",
+          "institutions": [
+            "National University of Singapore",
+            "Zhejiang University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Despite the ability to train capable LLMs, the methodology for maintaining their relevancy and rectifying errors remains elusive. To this end, the past few years have witnessed a surge in techniques for editing LLMs, the objective of which is to alter the behavior of LLMs efficiently within a specific domain without negatively impacting performance across other inputs. This paper embarks on a deep exploration of the problems, methods, and opportunities related to model editing for LLMs. In particular, we provide an exhaustive overview of the task definition and challenges associated with model editing, along with an in-depth empirical analysis of the most progressive methods currently at our disposal. We also build a new benchmark dataset to facilitate a more robust evaluation and pinpoint enduring issues intrinsic to existing techniques. Our objective is to provide valuable insights into the effectiveness and feasibility of each editing technique, thereby assisting the community in making informed decisions on the selection of the most appropriate method for a specific task or context.",
+      "cited_by_count": 75,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.emnlp-main.632.pdf"
+      },
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Topic Modeling",
+        "Software Engineering Research"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W4389520370"
+    },
+    {
+      "openalex_id": "W4389523767",
+      "doi": "10.18653/v1/2023.emnlp-main.13",
+      "title": "Theory of Mind for Multi-Agent Collaboration via Large Language Models",
+      "authors": [
+        {
+          "name": "Huao Li",
+          "openalex_id": "A5020780914",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Chong Yu",
+          "openalex_id": "A5102769116",
+          "orcid": "https://orcid.org/0009-0000-5084-3768",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Simon Stepputtis",
+          "openalex_id": "A5048668442",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Joseph Campbell",
+          "openalex_id": "A5048453008",
+          "orcid": "https://orcid.org/0000-0002-7924-8548",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Dana Hughes",
+          "openalex_id": "A5036897495",
+          "orcid": "https://orcid.org/0000-0003-4493-959X",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Charles Lewis",
+          "openalex_id": "A5113067510",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Katia Sycara",
+          "openalex_id": "A5087505541",
+          "orcid": "https://orcid.org/0000-0001-5635-1406",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "While Large Language Models (LLMs) have demonstrated impressive accomplishments in both reasoning and planning, their abilities in multi-agent collaborations remains largely unexplored. This study evaluates LLM-based agents in a multi-agent cooperative text game with Theory of Mind (ToM) inference tasks, comparing their performance with Multi-Agent Reinforcement Learning (MARL) and planning-based baselines. We observed evidence of emergent collaborative behaviors and high-order Theory of Mind capabilities among LLM-based agents. Our results reveal limitations in LLM-based agents' planning optimization due to systematic failures in managing long-horizon contexts and hallucination about the task state. We explore the use of explicit belief state representations to mitigate these issues, finding that it enhances task performance and the accuracy of ToM inferences for LLM-based agents.",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://aclanthology.org/2023.emnlp-main.13.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Language and cultural evolution",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W4389523767"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

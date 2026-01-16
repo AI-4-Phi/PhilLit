@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Alignment faking in large language models",
+    "author": "Greenblatt",
+    "year": 2024
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (17.2) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

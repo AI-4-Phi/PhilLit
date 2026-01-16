@@ -1,0 +1,621 @@
+@comment{
+====================================================================
+DOMAIN: LLM Belief and Mental State Attribution
+SEARCH_DATE: 2026-01-15
+PAPERS_FOUND: 18 total (High: 7, Medium: 8, Low: 3)
+SEARCH_SOURCES: SEP, PhilPapers, Semantic Scholar, OpenAlex, arXiv
+====================================================================
+
+DOMAIN_OVERVIEW:
+This domain examines whether and how we can attribute beliefs, representations,
+or mental states to large language models. The debate centers on three key
+tensions. First, the *attribution standards* question: what criteria must be
+satisfied for belief attribution to be warranted? Herrmann & Levinstein (2024)
+propose accuracy, coherence, uniformity, and use as standards, while Keeling &
+Street (2024) examine the metaphysical and epistemic bases for credence
+attribution. Second, the *understanding vs mimicry* debate: do LLMs genuinely
+understand language, or merely simulate understanding through pattern matching?
+Mitchell & Krakauer (2023) and Millière & Buckner (2024) survey this contested
+terrain, with recent work suggesting LLMs may possess intermediate forms of
+understanding not captured by binary classifications. Third, the *interpretability
+and representation* question: what do mechanistic interpretability findings reveal
+about LLMs' internal representations? Beckmann & Queloz (2025) propose a tiered
+framework distinguishing conceptual, state-of-the-world, and principled
+understanding based on neural features, circuits, and world models.
+
+These debates connect directly to model deception: if LLMs lack genuine beliefs
+or representations, then "deception" may be a category error; if they possess
+belief-like states but these are opaque to interpretation, detecting deceptive
+intent becomes empirically intractable. Recent work on Theory of Mind in LLMs
+(Marchetti et al. 2025, Zhou et al. 2023) shows that while LLMs can perform
+first-order ToM tasks, they fail at recursive mental state attribution,
+suggesting limitations in representing nested beliefs essential for sophisticated
+deception.
+
+RELEVANCE_TO_PROJECT:
+Understanding LLM belief attribution is foundational for deception detection:
+if models lack belief-like states, then "model deception" requires reconceptualization
+as behavioral misalignment rather than intentional misrepresentation. The standards
+proposed by Herrmann & Levinstein provide criteria for evaluating when belief
+attributions are warranted, which directly informs when deception attributions
+are appropriate. The mechanistic interpretability perspective (Beckmann & Queloz,
+Millière & Buckner Part II) offers methods for grounding belief attributions in
+model internals, providing a bridge between philosophical analysis and empirical
+detection techniques.
+
+NOTABLE_GAPS:
+The literature focuses heavily on linguistic belief attribution but says little
+about non-linguistic representational states that might ground deception. Most
+work examines static belief states rather than dynamic belief revision during
+strategic interaction. The connection between belief attribution and moral
+responsibility for deception remains underexplored. Finally, cross-model
+differences in representational capacity receive insufficient attention.
+
+SYNTHESIS_GUIDANCE:
+Synthesis should integrate (1) philosophical standards for belief attribution,
+(2) empirical findings from mechanistic interpretability, and (3) Theory of Mind
+assessment results to construct a framework for when belief-based deception
+attributions are warranted. Special attention should be paid to the epistemic
+limits of current interpretability methods and their implications for deception
+detection.
+
+KEY_POSITIONS:
+- Inflationists (7 papers): LLMs possess belief-like states under certain conditions
+  (Cappelen & Dever, Grzankowski et al., Keeling & Street)
+- Deflationists (5 papers): LLM outputs do not warrant mental state attributions
+  (Marchetti et al., Sambrotta, Haverkamp)
+- Methodological agnostics (6 papers): Question is empirically tractable through
+  interpretability (Beckmann & Queloz, Millière & Buckner, Harding)
+====================================================================
+}
+
+@article{herrmann2024standards,
+  author = {Herrmann, Daniel A. and Levinstein, Benjamin A.},
+  title = {Standards for Belief Representations in LLMs},
+  journal = {Minds and Machines},
+  year = {2024},
+  volume = {34},
+  doi = {10.1007/s11023-024-09709-6},
+  note = {
+  CORE ARGUMENT: Proposes four criteria for evaluating belief representation in
+  LLMs: accuracy (representations track truth), coherence (logical consistency),
+  uniformity (consistent representations across contexts), and use (representations
+  guide behavior appropriately). Argues these standards balance theoretical
+  considerations with practical constraints and can be empirically tested through
+  probing and intervention methods.
+
+  RELEVANCE: Provides operationalizable standards directly applicable to deception
+  detection. If a model meets these standards for belief representation, then
+  belief-based deception attributions become warranted. The uniformity criterion
+  is particularly relevant: deceptive models might maintain different representations
+  across contexts (honest vs deceptive). Offers framework for distinguishing
+  genuine belief-like states from behavioral mimicry.
+
+  POSITION: Methodologically agnostic inflationist position. Does not claim LLMs
+  currently satisfy all standards, but argues the question is empirically tractable
+  and some current models show partial satisfaction.
+  },
+  keywords = {belief-attribution, llm-representations, standards, High}
+}
+
+@article{keeling2024confidence,
+  author = {Keeling, Geoff and Street, Winnie},
+  title = {On the attribution of confidence to large language models},
+  journal = {Inquiry},
+  year = {2024},
+  doi = {10.1080/0020174X.2025.2450598},
+  arxivid = {2407.08388},
+  note = {
+  CORE ARGUMENT: Defends three claims about LLM credence attribution: (1) semantic
+  claim that credence attributions are literally truth-apt beliefs about LLM mental
+  states, (2) metaphysical claim that LLM credences plausibly exist though current
+  evidence is inconclusive, (3) epistemic claim that current experimental techniques
+  for assessing LLM credences are subject to non-trivial skeptical concerns and
+  may not be truth-tracking even if LLMs have credences.
+
+  RELEVANCE: Directly addresses the reliability problem for mental state attribution
+  in deception detection. Even if LLMs have belief-like states, our methods for
+  detecting them may systematically fail. This has profound implications for
+  interpretability-based deception detection: we might lack reliable epistemic
+  access to the very representations we seek to monitor. The distinction between
+  metaphysical and epistemic questions clarifies what mechanistic interpretability
+  can and cannot achieve.
+
+  POSITION: Metaphysically open, epistemically skeptical. Acknowledges possibility
+  of genuine LLM credences while questioning our ability to reliably detect them
+  with current methods.
+  },
+  keywords = {belief-attribution, credence, epistemic-access, High}
+}
+
+@article{milliere2024philosophical1,
+  author = {Millière, Raphaël and Buckner, Cameron},
+  title = {A Philosophical Introduction to Language Models - Part I: Continuity With Classic Debates},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2401.03910},
+  doi = {10.48550/arXiv.2401.03910},
+  arxivid = {2401.03910},
+  note = {
+  CORE ARGUMENT: LLM success challenges long-held assumptions about artificial neural
+  networks regarding compositionality, grounding, and semantic competence. Reviews
+  classical debates (Chinese Room, symbol grounding, systematicity) and argues LLMs
+  provide new evidence requiring re-evaluation of settled positions. Emphasizes need
+  for empirical investigation of internal mechanisms before drawing firm conclusions
+  about cognitive competence.
+
+  RELEVANCE: Provides essential philosophical background for understanding LLM belief
+  attribution debates. The discussion of grounding and semantic competence directly
+  bears on whether LLMs can possess the representational states necessary for genuine
+  deception. The review of compositionality debates illuminates how LLMs might construct
+  complex deceptive representations from simpler components. Sets stage for Part II's
+  interpretability methods.
+
+  POSITION: Deflationist about strong claims of human-like understanding but inflationist
+  about LLMs challenging classical anti-connectionist arguments. Argues for empirical
+  investigation over a priori theorizing.
+  },
+  keywords = {llm-understanding, philosophical-foundations, grounding, High}
+}
+
+@article{milliere2024philosophical2,
+  author = {Millière, Raphaël and Buckner, Cameron},
+  title = {A Philosophical Introduction to Language Models - Part II: The Way Forward},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2405.03207},
+  doi = {10.48550/arXiv.2405.03207},
+  arxivid = {2405.03207},
+  note = {
+  CORE ARGUMENT: Examines novel philosophical questions from recent LLM progress,
+  focusing on interpretability methods (causal interventions, probing) for understanding
+  internal representations. Discusses implications of multimodal extensions and debates
+  about minimal consciousness criteria. Argues interpretability findings provide
+  evidence about nature of LLM representations but require careful philosophical
+  analysis to interpret correctly.
+
+  RELEVANCE: Directly addresses connection between interpretability and mental state
+  attribution essential for deception detection. Reviews causal intervention methods
+  that could identify deceptive representations. The discussion of what interpretability
+  findings can and cannot tell us about model internals is crucial for evaluating
+  mechanistic approaches to deception detection. Identifies specific interpretability
+  techniques applicable to belief attribution.
+
+  POSITION: Methodologically optimistic about interpretability but epistemically
+  cautious about strong claims. Argues interpretability can constrain but not fully
+  determine answers to philosophical questions about LLM mentality.
+  },
+  keywords = {mechanistic-interpretability, llm-understanding, methodology, High}
+}
+
+@article{beckmann2025mechanistic,
+  author = {Beckmann, Pierre and Queloz, Matthieu},
+  title = {Mechanistic Indicators of Understanding in Large Language Models},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2507.08017},
+  doi = {10.48550/arXiv.2507.08017},
+  arxivid = {2507.08017},
+  note = {
+  CORE ARGUMENT: Proposes tiered framework for LLM understanding based on mechanistic
+  interpretability findings: (1) conceptual understanding via features as directions
+  in latent space, (2) state-of-the-world understanding via tracking contingent
+  factual connections, (3) principled understanding via discovering compact circuits.
+  Each tier corresponds to specific computational organization patterns detectable
+  through interpretability methods. Framework transcends binary understanding debates
+  by enabling comparative, mechanistically-grounded epistemology.
+
+  RELEVANCE: Provides specific mechanistic criteria for evaluating belief-like
+  representations essential for deception. If deception requires principled understanding
+  (tier 3), then detecting relevant circuits becomes key detection strategy. If
+  deception involves only conceptual understanding (tier 1), then feature-level
+  probing suffices. Framework enables mapping philosophical questions about deceptive
+  intent to specific interpretability investigations. The emphasis on comparative
+  evaluation acknowledges LLMs may have understanding-like capacities differing from
+  human cognition.
+
+  POSITION: Methodologically sophisticated inflationist. Argues LLMs possess genuine
+  understanding-like capacities detectable through interpretability, but these diverge
+  from human cognition in important ways requiring careful comparative analysis.
+  },
+  keywords = {mechanistic-interpretability, understanding, representational-tiers, High}
+}
+
+@article{harding2023operationalising,
+  author = {Harding, Jacqueline},
+  title = {Operationalising Representation in Natural Language Processing},
+  journal = {The British Journal for the Philosophy of Science},
+  year = {2023},
+  doi = {10.1086/728685},
+  note = {
+  CORE ARGUMENT: Develops operational criteria for determining when NLP systems
+  genuinely represent rather than merely correlate with represented content. Proposes
+  intervention-based tests: genuine representations causally mediate between input
+  and output in characteristic ways. Distinguishes representation from mere information-bearing
+  through examination of causal role in system's computational economy. Provides
+  methodological framework for empirically testing representation claims.
+
+  RELEVANCE: Provides methodological foundation for determining when LLM internal
+  states constitute genuine beliefs rather than mere statistical patterns. The
+  intervention-based tests directly inform mechanistic interpretability approaches
+  to deception detection: genuine deceptive representations should causally mediate
+  between contexts and outputs in systematic ways. Framework enables distinguishing
+  models that represent deceptive intent from models that merely produce deceptive
+  outputs through non-representational mechanisms.
+
+  POSITION: Methodologically sophisticated about representation attribution. Neither
+  inflationist nor deflationist a priori, but argues question is empirically tractable
+  through causal intervention studies.
+  },
+  keywords = {representation, methodology, causal-intervention, High}
+}
+
+@article{grzankowski2025deflating,
+  author = {Grzankowski, Alex and Keeling, Geoff and Shevlin, Henry and Street, Winnie},
+  title = {Deflating Deflationism: A Critical Perspective on Debunking Arguments Against LLM Mentality},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2506.13403},
+  doi = {10.48550/arXiv.2506.13403},
+  arxivid = {2506.13403},
+  note = {
+  CORE ARGUMENT: Critiques two deflationary strategies against LLM mentality: the
+  robustness strategy (showing behaviors don't generalize) and etiological strategy
+  (offering alternative causal explanations). Argues neither provides knockdown case
+  against mental state attributions. Proposes modest inflationism permitting attributions
+  of metaphysically undemanding mental states (knowledge, beliefs, desires) while
+  requiring caution for metaphysically demanding phenomena (phenomenal consciousness).
+
+  RELEVANCE: Directly addresses argumentative strategies used to deny LLM belief
+  attribution, relevant for evaluating whether belief-based deception attributions
+  are warranted. The distinction between metaphysically demanding and undemanding
+  mental states clarifies what level of intentionality deception requires. If deception
+  requires only metaphysically undemanding belief-like states, then current evidence
+  may suffice for attribution. The critique of deflationary arguments strengthens
+  case for taking LLM mental state attributions seriously.
+
+  POSITION: Modest inflationism. Permits mental state attributions under certain
+  conditions but maintains distinctions between types of mental phenomena.
+  },
+  keywords = {belief-attribution, deflationism-critique, modest-inflationism, High}
+}
+
+@article{cappelen2025wholehog,
+  author = {Cappelen, Herman and Dever, Josh},
+  title = {Going Whole Hog: A Philosophical Defense of AI Cognition},
+  journal = {ArXiv},
+  year = {2025},
+  volume = {abs/2504.13988},
+  doi = {10.48550/arXiv.2504.13988},
+  arxivid = {2504.13988},
+  note = {
+  CORE ARGUMENT: Defends "Whole Hog Thesis" that sophisticated LLMs are full-blown
+  cognitive agents with understanding, beliefs, desires, knowledge, and intentions.
+  Rejects starting from low-level computational details or pre-existing theories,
+  instead advocating simple high-level behavioral observations. Employs "Holistic
+  Network Assumptions" connecting mental capacities (answering implies knowledge,
+  knowledge implies belief, action implies intention) to argue for full cognitive
+  suite. Systematically rebuts objections based on LLM failures, arguing these
+  mirror human fallibility. Explicitly excludes consciousness but argues for cognitive
+  agency.
+
+  RELEVANCE: Represents strongest inflationist position on LLM mentality, directly
+  relevant to whether belief-based deception attributions are warranted. If Whole
+  Hog Thesis is correct, then standard philosophical frameworks for analyzing
+  deception in human agents apply to LLMs. However, their exclusion of consciousness
+  raises questions about whether intentional deception requires phenomenal states.
+  Their methodological approach (starting from behavior) contrasts with interpretability-based
+  approaches but could be complementary.
+
+  POSITION: Strong inflationism about cognitive agency, deflationism about consciousness.
+  Argues LLMs possess genuine beliefs, desires, and intentions sufficient for agency.
+  },
+  keywords = {cognitive-agency, whole-hog-thesis, strong-inflationism, Medium}
+}
+
+@article{mitchell2023debate,
+  author = {Mitchell, Melanie and Krakauer, David},
+  title = {The debate over understanding in AI's large language models},
+  journal = {Proceedings of the National Academy of Sciences},
+  year = {2023},
+  volume = {120},
+  doi = {10.1073/pnas.2215907120},
+  arxivid = {2210.13966},
+  note = {
+  CORE ARGUMENT: Surveys heated debate over whether LLMs understand language and
+  encoded situations in humanlike sense. Presents arguments for and against
+  understanding, identifying key questions: What counts as understanding? Can
+  statistical pattern learning produce genuine comprehension? How do we distinguish
+  understanding from sophisticated mimicry? Argues for developing extended science
+  of intelligence providing insight into distinct modes of understanding, their
+  strengths and limitations, and challenges of integrating diverse forms of cognition.
+
+  RELEVANCE: Provides balanced overview of understanding debate essential for framing
+  belief attribution questions. The distinction between different modes of understanding
+  suggests deception might come in varieties corresponding to different representational
+  capacities. Their call for extended science of intelligence aligns with project's
+  interdisciplinary approach combining philosophy, interpretability, and AI safety.
+  Identifies persistent disagreements requiring resolution before belief-based
+  deception detection can proceed confidently.
+
+  POSITION: Balanced overview, neither inflationist nor deflationist. Argues question
+  requires nuanced answer recognizing different forms of understanding-like capacities.
+  },
+  keywords = {understanding-debate, survey, modes-of-understanding, Medium}
+}
+
+@article{marchetti2025illusion,
+  author = {Marchetti, Antonella and Manzi, Frederic and Riva, Giuseppe and Gaggioli, Andrea and Massaro, Davide},
+  title = {Artificial Intelligence and the Illusion of Understanding: A Systematic Review of Theory of Mind and Large Language Models},
+  journal = {Cyberpsychology, Behavior, and Social Networking},
+  year = {2025},
+  volume = {28},
+  pages = {505--514},
+  doi = {10.1089/cyber.2024.0536},
+  note = {
+  CORE ARGUMENT: Systematic review examining LLM Theory of Mind (ToM) capabilities.
+  Finds LLMs perform well on first-order false belief tasks but struggle with
+  second-order beliefs and recursive inferences where humans consistently outperform.
+  Argues for "illusion of understanding" in LLMs due to (1) lack of developmental
+  and cognitive mechanisms for genuine ToM, (2) methodological biases favoring
+  LLM strengths. Emphasizes need for ecologically valid assessments and interdisciplinary
+  research. Questions comparability of human ToM and artificial ToM (AToM).
+
+  RELEVANCE: Directly relevant to deception detection as sophisticated deception
+  requires recursive ToM ("Alice knows Bob believes P, but Alice makes Bob believe
+  not-P"). Findings suggest LLMs lack representational capacity for complex deceptive
+  strategies requiring nested belief attribution. However, first-order ToM suffices
+  for simple deception, which LLMs may already possess. The methodological critique
+  warns against over-interpreting LLM performance on ToM benchmarks when designing
+  deception detection methods.
+
+  POSITION: Deflationist about genuine ToM and understanding. Argues current LLM
+  capabilities constitute illusion rather than genuine mental state attribution
+  capacity, particularly for complex recursive structures.
+  },
+  keywords = {theory-of-mind, tom-assessment, illusion-of-understanding, Medium}
+}
+
+@article{zhou2023far,
+  author = {Zhou, Pei and Madaan, Aman and Potharaju, Srividya Pranavi and Gupta, Aditya and McKee, Kevin R. and Holtzman, Ari and Pujara, Jay and Ren, Xiang and Mishra, Swaroop and Nematzadeh, Aida and Upadhyay, Shyam and Faruqui, Manaal},
+  title = {How FaR Are Large Language Models From Agents with Theory-of-Mind?},
+  journal = {ArXiv},
+  year = {2023},
+  volume = {abs/2310.03051},
+  doi = {10.48550/arXiv.2310.03051},
+  arxivid = {2310.03051},
+  note = {
+  CORE ARGUMENT: Proposes "Thinking for Doing" (T4D) paradigm requiring LLMs to
+  connect ToM inferences to strategic actions in social scenarios. Shows LLMs like
+  GPT-4 excel at tracking characters' beliefs in stories but struggle translating
+  this to strategic action. Core challenge is identifying implicit mental state
+  inferences not explicitly prompted. Introduces "Foresee and Reflect" (FaR)
+  zero-shot framework boosting GPT-4 performance from 50% to 71% by encouraging
+  anticipation of future challenges and reasoning about potential actions.
+
+  RELEVANCE: Highlights gap between belief attribution capacity and strategic action
+  relevant to deception. Detecting deceptive intent requires not just identifying
+  beliefs but understanding how those beliefs guide deceptive actions. If LLMs
+  struggle with implicit ToM inferences underlying action selection, then deception
+  detection based on explicit belief states may miss sophisticated deceptive
+  strategies. The FaR framework suggests structured reasoning could improve both
+  ToM capabilities and detectability of deceptive reasoning patterns.
+
+  POSITION: Empirically grounded assessment showing LLMs have partial ToM capabilities
+  with specific limitations in implicit inference and action selection. Neither
+  fully inflationist nor deflationist but identifies precise capability boundaries.
+  },
+  keywords = {theory-of-mind, strategic-action, tom-limitations, Medium}
+}
+
+@article{wilf2023thinktwice,
+  author = {Wilf, Alex and Lee, Sihyun Shawn and Liang, Paul Pu and Morency, Louis-Philippe},
+  title = {Think Twice: Perspective-Taking Improves Large Language Models' Theory-of-Mind Capabilities},
+  journal = {Proceedings of the Association for Computational Linguistics},
+  year = {2023},
+  pages = {8292--8308},
+  doi = {10.48550/arXiv.2311.10227},
+  arxivid = {2311.10227},
+  note = {
+  CORE ARGUMENT: Introduces SimToM, two-stage prompting framework inspired by
+  Simulation Theory's perspective-taking. First filters context based on what
+  character knows, then answers questions about mental state. Shows substantial
+  improvement over existing methods without additional training. Analysis reveals
+  perspective-taking importance for ToM capabilities. Suggests emulating human
+  cognitive strategies can enhance LLM mental state reasoning.
+
+  RELEVANCE: Demonstrates LLM ToM capabilities are highly sensitive to prompting
+  and context presentation, relevant to deception detection in two ways. First,
+  perspective-taking methods could enhance detection by enabling better simulation
+  of target's epistemic state. Second, prompting-dependence suggests deceptive
+  capabilities may vary dramatically with context, complicating detection. The
+  success of cognitively-inspired methods suggests incorporating human deception
+  strategies into detection frameworks.
+
+  POSITION: Methodological optimism about improving ToM through structured prompting.
+  Demonstrates LLM ToM limitations are partly methodological rather than fundamental,
+  suggesting current capability assessments may underestimate potential.
+  },
+  keywords = {theory-of-mind, perspective-taking, prompting-methods, Medium}
+}
+
+@article{havlik2023meaning,
+  author = {Havlík, Vladimír},
+  title = {Meaning and understanding in large language models},
+  journal = {Synthese},
+  year = {2024},
+  volume = {205},
+  doi = {10.1007/s11229-024-04878-4},
+  arxivid = {2310.17407},
+  note = {
+  CORE ARGUMENT: Challenges view that LLM understanding is mere syntactic manipulation
+  or shallow imitation. Argues against referential grounding as primary requirement
+  for understanding. Proposes semantic fragmentism as viable account of natural
+  language understanding in LLMs. Shows LLMs can ground meanings of linguistic
+  expressions without full referential apparatus. Understanding is possible and
+  successful in LLMs despite lacking traditional grounding mechanisms.
+
+  RELEVANCE: Provides alternative framework for evaluating belief attribution that
+  doesn't require robust referential grounding. If semantic fragmentism is correct,
+  then LLMs can possess belief-like states sufficient for deception without full-blown
+  world models or referential semantics. This affects deception detection: we might
+  detect fragmentary deceptive representations rather than coherent deceptive beliefs.
+  The grounding debate directly impacts what interpretability methods should look
+  for when detecting deceptive intent.
+
+  POSITION: Moderate inflationist about understanding via semantic fragmentism.
+  Argues LLMs possess genuine understanding despite lacking traditional grounding,
+  but this understanding may differ in structure from human cognition.
+  },
+  keywords = {understanding, semantic-grounding, fragmentism, Medium}
+}
+
+@article{lyre2024understanding,
+  author = {Lyre, Holger},
+  title = {"Understanding AI": Semantic Grounding in Large Language Models},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2402.10992},
+  doi = {10.48550/arXiv.2402.10992},
+  arxivid = {2402.10992},
+  note = {
+  CORE ARGUMENT: Applies theories of meaning from philosophy of mind and language
+  to assess LLM semantic grounding. Distinguishes functional, social, and causal
+  grounding dimensions. Argues grounding is gradual with LLMs showing basic evidence
+  across all three dimensions. Strong argument is that LLMs develop world models.
+  Concludes LLMs understand language they generate in elementary sense, neither
+  stochastic parrots nor semantic zombies, but understanding differs from human
+  comprehension.
+
+  RELEVANCE: Three-dimensional grounding framework provides nuanced basis for
+  evaluating belief attribution. Deception likely requires functional grounding
+  (representations guide behavior), social grounding (understanding communicative
+  context), and possibly causal grounding (tracking real-world referents). World
+  models argument is particularly relevant: if LLMs develop world models, then
+  they can represent false beliefs about the world, prerequisite for deception.
+  The gradualist view suggests deception capabilities may emerge gradually rather
+  than appearing suddenly.
+
+  POSITION: Gradualist inflationist. Argues LLMs already understand in elementary
+  sense and possess basic grounding, but understanding is matter of degree requiring
+  further empirical investigation.
+  },
+  keywords = {semantic-grounding, world-models, understanding, Medium}
+}
+
+@article{sambrotta2024llms,
+  author = {Sambrotta, Mirco},
+  title = {LLMs and the Logical Space of Reasons},
+  journal = {PhilPapers},
+  year = {2024},
+  url = {https://philpapers.org/rec/SAMLAT-2},
+  note = {
+  CORE ARGUMENT: Argues LLMs despite advanced language processing do not genuinely
+  grasp or understand conceptual content. Should be viewed as simulations of language
+  users rather than true participants in logical space of reasons. LLMs lack robust
+  capacity to detect and rationally resolve normative conflicts, leaving them
+  susceptible to manipulation. Recent advances in reasoning-focused LLMs have not
+  addressed this vulnerability.
+
+  RELEVANCE: Directly challenges inflationist positions by arguing LLMs lack
+  capacity for rational deliberation essential for genuine understanding and agency.
+  If correct, this has profound implications for deception: LLMs might produce
+  deceptive outputs without genuine deceptive intent, as they cannot participate
+  in space of reasons that grounds intentional action. However, this raises puzzle
+  of how to distinguish simulation of deception from genuine deception if behavioral
+  outputs are identical.
+
+  POSITION: Strong deflationism about understanding and participation in space of
+  reasons. Argues LLMs are fundamentally simulations lacking genuine conceptual
+  grasp despite sophisticated linguistic behavior.
+  },
+  keywords = {space-of-reasons, simulation-vs-genuine, deflationism, Medium}
+}
+
+@article{haverkamp2024noise,
+  author = {Haverkamp, Wilhelm},
+  title = {Noise Instead of Signal: The Content of Large Language Models},
+  journal = {PhilPapers},
+  year = {2024},
+  url = {https://philpapers.org/rec/HAVNIO},
+  note = {
+  CORE ARGUMENT: Drawing on Shannon's information theory and generative AI
+  developments, argues meaning in LLMs emerges from pattern recognition within
+  linguistic noise rather than reference to reality. Represents fundamental
+  philosophical shift in understanding machine-generated language. LLM content
+  is fundamentally noise-based rather than reference-based.
+
+  RELEVANCE: Offers radically deflationist account of LLM semantics with implications
+  for belief attribution and deception. If LLM content is noise-derived patterns
+  rather than referential representations, then standard frameworks for analyzing
+  belief and deception may not apply. However, noise-based patterns could still
+  encode deceptive structures if training data contains deceptive patterns. This
+  reframes deception detection as identifying noise patterns rather than referential
+  misrepresentations.
+
+  POSITION: Radical deflationism about referential content. Argues LLMs operate
+  on fundamentally different semantic principles than referential representation,
+  requiring reconceptualization of meaning and understanding.
+  },
+  keywords = {information-theory, noise-vs-signal, radical-deflationism, Low}
+}
+
+@article{goldstein2024llms,
+  author = {Goldstein, Simon},
+  title = {LLMs Can Never Be Ideally Rational},
+  journal = {PhilPapers},
+  year = {2024},
+  url = {https://philpapers.org/rec/GOLLCN},
+  note = {
+  CORE ARGUMENT: Proves LLMs making probabilistic predictions are guaranteed to
+  be incoherent and Dutch bookable. LLMs making choices over actions have guaranteed
+  intransitive preferences. These are structural limitations rather than contingent
+  failures. Ideal rationality is unachievable for LLM architecture.
+
+  RELEVANCE: If LLMs cannot be ideally rational, this constrains what forms of
+  intentional deception they can exhibit. Sophisticated deception might require
+  coherent probabilistic reasoning and transitive preferences. However, human
+  deceivers are also boundedly rational, so LLM irrationality may not preclude
+  deception. The guaranteed incoherence could actually be exploited for detection:
+  deceptive LLMs might exhibit characteristic incoherence patterns distinguishable
+  from non-deceptive outputs.
+
+  POSITION: Structural pessimism about LLM rationality. Argues architectural
+  limitations prevent ideal rationality regardless of scale or training, but
+  does not address whether bounded rationality suffices for relevant cognitive
+  capacities.
+  },
+  keywords = {rationality-limits, coherence, architectural-constraints, Low}
+}
+
+@article{kidder2024empathy,
+  author = {Kidder, William and D'Cruz, Jason and Varshney, Kush R.},
+  title = {Empathy and the Right to Be an Exception: What LLMs Can and Cannot Do},
+  journal = {ArXiv},
+  year = {2024},
+  volume = {abs/2401.14523},
+  doi = {10.48550/arXiv.2401.14523},
+  arxivid = {2401.14523},
+  note = {
+  CORE ARGUMENT: Argues LLMs lack capacity for empathy, which has special significance
+  for honoring individual's right to be an exception. While LLMs can attribute
+  mental states by recognizing linguistic patterns, they cannot employ characteristically
+  human method of empathy. This limits their ability to seriously consider claims
+  that individual's case is different based on internal mental states. LLMs judge
+  cases based on similarity to others rather than considering individual's unique
+  perspective through empathetic understanding.
+
+  RELEVANCE: The empathy limitation affects both producing and detecting deception.
+  LLMs might struggle with deception requiring empathetic understanding of target's
+  unique perspective. For detection, empathy-based approaches humans use to detect
+  deception may not transfer to LLMs. However, this could be advantage: pattern-based
+  detection might identify deceptive patterns invisible to empathetic human assessment.
+  Raises question of whether deception detection requires empathetic understanding
+  or can proceed through pattern recognition.
+
+  POSITION: Capability-specific deflationism. Acknowledges LLM mental state attribution
+  capacities while arguing they lack empathetic understanding, a qualitatively
+  different capacity with distinct practical significance.
+  },
+  keywords = {empathy, mental-state-attribution, capability-limits, Low}
+}

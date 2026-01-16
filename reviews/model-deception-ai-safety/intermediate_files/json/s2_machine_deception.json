@@ -1,0 +1,1082 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "machine deception robots lying",
+  "results": [
+    {
+      "paperId": "bb1e87364e146a2c381080316981314baf766ba5",
+      "title": "Can a Robot Catch You Lying? A Machine Learning System to Detect Lies During Interactions",
+      "authors": [
+        {
+          "name": "Jonas Gonzalez-Billandon",
+          "authorId": "1411393923"
+        },
+        {
+          "name": "A. M. Aroyo",
+          "authorId": "8495109"
+        },
+        {
+          "name": "Alessia Tonelli",
+          "authorId": "34485827"
+        },
+        {
+          "name": "Dario Pasquali",
+          "authorId": "1411324806"
+        },
+        {
+          "name": "A. Sciutti",
+          "authorId": "1923910"
+        },
+        {
+          "name": "M. Gori",
+          "authorId": "50208732"
+        },
+        {
+          "name": "G. Sandini",
+          "authorId": "1678909"
+        },
+        {
+          "name": "F. Rea",
+          "authorId": "143807743"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Deception is a complex social skill present in human interactions. Many social professions such as teachers, therapists and law enforcement officers leverage on deception detection techniques to support their work activities. Robots with the ability to autonomously detect deception could provide an important aid to human-human and human-robot interactions. The objective of this work is to demonstrate the possibility to develop a lie detection system that could be implemented on robots. To this goal, we focus on human and human robot interaction to understand if there is a difference in the behavior of the participants when lying to a robot or to a human. Participants were shown short movies of robberies and then interrogated by a human and by a humanoid robot \u201cdetectives.\u201d According to the instructions, subjects provided veridical responses to half of the question and false replies to the other half. Behavioral variables such as eye movements, time to respond and eloquence were measured during the task, while personality traits were assessed before experiment initiation. Participant's behavior showed strong similarities during the interaction with the human and the humanoid. Moreover, the behavioral features were used to train and test a lie detection algorithm. The results show that the selected behavioral variables are valid markers of deception both in human-human and in human-robot interactions and could be exploited to effectively enable robots to detect lies.",
+      "citationCount": 29,
+      "doi": "10.3389/frobt.2019.00064",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bb1e87364e146a2c381080316981314baf766ba5",
+      "venue": "Frontiers in Robotics and AI",
+      "journal": {
+        "name": "Frontiers in Robotics and AI",
+        "volume": "6"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "862115e5461b3e02ac33d0af925b999ad1b2d065",
+      "title": "Can a Humanoid Robot Spot a Liar?",
+      "authors": [
+        {
+          "name": "A. M. Aroyo",
+          "authorId": "8495109"
+        },
+        {
+          "name": "Jonas Gonzalez-Billandon",
+          "authorId": "1411393923"
+        },
+        {
+          "name": "Alessia Tonelli",
+          "authorId": "34485827"
+        },
+        {
+          "name": "A. Sciutti",
+          "authorId": "1923910"
+        },
+        {
+          "name": "M. Gori",
+          "authorId": "50208732"
+        },
+        {
+          "name": "G. Sandini",
+          "authorId": "1678909"
+        },
+        {
+          "name": "F. Rea",
+          "authorId": "143807743"
+        }
+      ],
+      "year": 2018,
+      "abstract": "Lie detection is a necessary skill for a variety of social professions, including teachers, reporters, therapists, and law enforcement officers. Autonomous system and robots should acquire such skill to support professionals in numerous working contexts. Inspired by literature on human-human interaction, this work investigates whether the behavioral cues associated to lying - including eye movements and response temporal features - are apparent also during human-humanoid interaction and can be leveraged by the robot to detect deception. The results highlight strong similarities in the lying behavior toward humans and the robot. Further, the study proposes an implementation of a machine learning algorithm that can detect lies with an accuracy of 75%, when trained with a dataset collected during human-human and human robot interaction. Consequently, this work proposes a technological solution for humanoid interviewers that can be trained with knowledge about lie detection and reuse it to counteract deception.",
+      "citationCount": 10,
+      "doi": "10.1109/HUMANOIDS.2018.8624992",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/862115e5461b3e02ac33d0af925b999ad1b2d065",
+      "venue": "IEEE-RAS International Conference on Humanoid Robots",
+      "journal": {
+        "name": "2018 IEEE-RAS 18th International Conference on Humanoid Robots (Humanoids)",
+        "pages": "1045-1052"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "87511318ca61c34699e26d20a7b45848ed079bf9",
+      "title": "Robots that Need to Mislead: Biologically-inspired Machine Deception",
+      "authors": [
+        {
+          "name": "Ronald C. Arkin",
+          "authorId": "2257197966"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Expanding our work in understanding the relationships maintained in teams of humans and robots, this talk describes research on deception and its application within robotic systems. Earlier we explored the use of psychology as the basis for producing deceit in robotic systems in order to evade capture. More recent work involves studying squirrel hoarding and bird mobbing behavior as it applies to deception, in the first case for misleading a predator, and in the second for feigning strength when none exists. Next, we discuss other-deception, where deceit is performed for the benefit of the mark. Finally, newly completed research on team deception where groups of agents using shills that serve to mislead others is presented. Results are presented in both simulation and simple robotic systems, as well as consideration of the ethical implications of this research.",
+      "citationCount": 0,
+      "doi": "10.1145/3514094.3539571",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/87511318ca61c34699e26d20a7b45848ed079bf9",
+      "venue": "AAAI/ACM Conference on AI, Ethics, and Society",
+      "journal": {
+        "name": "Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book"
+      ]
+    },
+    {
+      "paperId": "93d03abb87166ea1b5bdedbd077f03aee0d5c53c",
+      "title": "Deception detection in educational AI: challenges for Japanese middle school students in interacting with generative AI robots",
+      "authors": [
+        {
+          "name": "Ahmed Salem",
+          "authorId": "2317095466"
+        },
+        {
+          "name": "Kaoru Sumi",
+          "authorId": "2317017035"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Educational materials that utilize generative AI (e.g., ChatGPT) have been developed, thus, allowing students to learn through conversations with robots or agents. However, if these artificial entities provide incorrect information (hallucinating), it could lead to confusion among students. To investigate whether students can detect lies from these artificial entities, we conducted an experiment using the social robot Furhat and we make it engage in various types of deceptive interactions. Twenty-two Japanese middle school students participated in ten teaching sessions with Furhat using a human and an anime facial appearances while employing different types of deception: Lying, Paltering, Pandering, and Bullshit. The results revealed that the majority of students were deceived by those lies. Additionally, the robot's facial appearance (i.e., social agency) affected both the learning effectiveness and the likelihood of being deceived. We conclude that an anime robot face is recommended to be used as it excelled in learning effectiveness as it attracts students attention. An anime face also provided protection against deceptive techniques due to its low social agency which leads to ineffectiveness in persuasion and deception. This study underscores the importance of preparing AI-based educational tools and scripts carefully to prevent the dissemination of false information produced through generative AI hallucinations to students.",
+      "citationCount": 2,
+      "doi": "10.3389/frai.2024.1493348",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/93d03abb87166ea1b5bdedbd077f03aee0d5c53c",
+      "venue": "Frontiers Artif. Intell.",
+      "journal": {
+        "name": "Frontiers in Artificial Intelligence",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d4c099e517c85532145e70826fd4f38e39bb72fd",
+      "title": "Fragmentation and Self-Deception: Study of the Human-Machine Body from the Posthuman Perspective-The Case of Kazuo Ishiguro\u2019s Klara and the Sun",
+      "authors": [
+        {
+          "name": "Jiali Yu",
+          "authorId": "2294330986"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In the context of the unstoppable trend of artificial intelligence, science and technology have become the theme of the times. Will the rapid development of modern technology, such as biotechnology and artificial intelligence, dehumanize us? Can a machine have human consciousness? In his novel Klara and the Sun, Kazuo Ishiguro criticizes the arrogance of technological rationality and the arrogance of anthropocentrism from the perspective of a \u201cnon-human\u201d robot. The relationship between humans and machines has become a problem that humans need to re-examine. With the help of post-humanism, this paper aims to explore the physical changes and behavioral actions of robots and humans in the novel to reveal the \u201csplit\u201d between man and machine and the \u201cself-deception\u201d of humans in the novel, so as to finally trigger thinking about how humans and machines can coexist harmoniously at the juncture between humans and posthumans, and provide reference for the future society between humans and non-humans.",
+      "citationCount": 0,
+      "doi": "10.54691/dsg7bp80",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d4c099e517c85532145e70826fd4f38e39bb72fd",
+      "venue": "Frontiers in Humanities and Social Sciences",
+      "journal": {
+        "name": "Frontiers in Humanities and Social Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f11e5e5701760a3e7b693f5ffd1c8b050c42611e",
+      "title": "Lying About Lying: Examining Trust Repair Strategies After Robot Deception in a High-Stakes HRI Scenario",
+      "authors": [
+        {
+          "name": "Kantwon Rogers",
+          "authorId": "40534167"
+        },
+        {
+          "name": "Reiden John Allen Webber",
+          "authorId": "2210989822"
+        },
+        {
+          "name": "A. Howard",
+          "authorId": "145065293"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This work presents an empirical study into robot deception and its effects on changes in behavior and trust in a high-stakes, time-sensitive human-robot interaction scenario. Specifically, we explore the effectiveness of different apologies to repair trust in an assisted driving task after participants realize they have been lied to by a robotic assistant. Our results show that participants are significantly more likely to change their speeding behaviors when driving advice is framed as coming from a robotic assistant. Our results also suggest an apology without acknowledging intentional deception is best at mitigating negative influences on trust. These results add much needed knowledge to the understudied area of robot deception and could inform designers and policy makers of future practices when considering deploying robots that may learn to deceive.",
+      "citationCount": 14,
+      "doi": "10.1145/3568294.3580178",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f11e5e5701760a3e7b693f5ffd1c8b050c42611e",
+      "venue": "IEEE/ACM International Conference on Human-Robot Interaction",
+      "journal": {
+        "name": "Companion of the 2023 ACM/IEEE International Conference on Human-Robot Interaction"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fb3f7abd5f11a4f5e80b97a887c54f000a432768",
+      "title": "Multimodal machine learning for deception detection using behavioral and physiological data",
+      "authors": [
+        {
+          "name": "Gargi Joshi  Bhide",
+          "authorId": "2082352577"
+        },
+        {
+          "name": "Vaibhav Tasgaonkar",
+          "authorId": "2196802740"
+        },
+        {
+          "name": "Aditya Deshpande",
+          "authorId": "2226156210"
+        },
+        {
+          "name": "Aditya Desai",
+          "authorId": "2135475701"
+        },
+        {
+          "name": "Bhavya Shah",
+          "authorId": "2319481600"
+        },
+        {
+          "name": "Akshay Kushawaha",
+          "authorId": "2324675176"
+        },
+        {
+          "name": "Aadith Sukumar",
+          "authorId": "2292747635"
+        },
+        {
+          "name": "Kermi Kotecha",
+          "authorId": "2349624512"
+        },
+        {
+          "name": "Saumit Kunder",
+          "authorId": "2350325349"
+        },
+        {
+          "name": "Yoginii Waykole",
+          "authorId": "2350325216"
+        },
+        {
+          "name": "Harsh Maheshwari",
+          "authorId": "2319467113"
+        },
+        {
+          "name": "Abhijit Das",
+          "authorId": "2350978573"
+        },
+        {
+          "name": "Shubhashi Gupta",
+          "authorId": "2350710290"
+        },
+        {
+          "name": "Akanksha Subudhi",
+          "authorId": "2350325344"
+        },
+        {
+          "name": "Priyanka Jain",
+          "authorId": "2150694403"
+        },
+        {
+          "name": "N. K. Jain",
+          "authorId": "2226144207"
+        },
+        {
+          "name": "Rahee Walambe",
+          "authorId": "30744258"
+        },
+        {
+          "name": "K. Kotecha",
+          "authorId": "1794896"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception detection is crucial in domains like national security, privacy, judiciary, and courtroom trials. Differentiating truth from lies is inherently challenging due to many complex, diversified behavioural, physiological and cognitive aspects. Traditional lie detector tests (polygraphs) have been widely used but remain controversial due to scientific, ethical, and practical concerns. With advancements in machine learning, deception detection can be automated. However, existing secondary datasets are limited\u2014they are small, unimodal, and predominantly based on non-Indian populations. To address these gaps, we present CogniModal-D, a primary real-world multimodal dataset for deception detection, specifically targeting the Indian population. It spans seven modalities\u2014electroencephalography (EEG), electrocardiography (ECG), electrooculography (EOG), eye-gaze, galvanic skin response (GSR), audio, and video\u2014collected from over 100 subjects. The data was gathered through tasks focused on social relationships and controlled mock crime interrogations. Our multimodal AI-based score-level fusion approach integrates diverse verbal and nonverbal cues, significantly improving deception detection accuracy compared to unimodal methods. Performance improvements of up to 15% were observed in mock crime and best friend scenarios with multimodal fusion. Notably, behavioural modalities (audio, video, gaze, GSR) proved more robust than neurophysiological ones (EEG, ECG, EOG).The study demonstrates that multimodal features offer superior discriminatory power in deception detection. These insights highlight the pivotal role of integrating multiple modalities to develop robust, scalable, and advanced deception detection systems in the future.",
+      "citationCount": 9,
+      "doi": "10.1038/s41598-025-92399-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fb3f7abd5f11a4f5e80b97a887c54f000a432768",
+      "venue": "Scientific Reports",
+      "journal": {
+        "name": "Scientific Reports",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3b5487ccfb976603356ffb0aa0cf6a8cd78537ab",
+      "title": "Deception Detection in Dyadic Exchanges Using Multimodal Machine Learning: A Study on a Swedish Cohort",
+      "authors": [
+        {
+          "name": "Franco Rugolon",
+          "authorId": "2371070472"
+        },
+        {
+          "name": "Thomas Jack Samuels",
+          "authorId": "2371070693"
+        },
+        {
+          "name": "Stephan Hau",
+          "authorId": "2287276736"
+        },
+        {
+          "name": "L. H\u00f6gman",
+          "authorId": "4690153"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study investigates the efficacy of using multimodal machine learning techniques to detect deception in dyadic interactions, focusing on the integration of data from both the deceiver and the deceived. We compare early and late fusion approaches, utilizing audio and video data - specifically, Action Units and gaze information - across all possible combinations of modalities and participants. Our dataset, newly collected from Swedish native speakers engaged in truth or lie scenarios on emotionally relevant topics, serves as the basis for our analysis. The results demonstrate that incorporating both speech and facial information yields superior performance compared to single-modality approaches. Moreover, including data from both participants significantly enhances deception detection accuracy, with the best performance (71%) achieved using a late fusion strategy applied to both modalities and participants. These findings align with psychological theories suggesting differential control of facial and vocal expressions during initial interactions. As the first study of its kind on a Scandinavian cohort, this research lays the groundwork for future investigations into dyadic interactions, particularly within psychotherapy settings.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2506.21429",
+      "arxivId": "2506.21429",
+      "url": "https://www.semanticscholar.org/paper/3b5487ccfb976603356ffb0aa0cf6a8cd78537ab",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.21429"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "94c2b5c596fdf3ab3e28cabf5039023b4be74db8",
+      "title": "A Multimodal Polygraph Framework with Optimized Machine Learning for Robust Deception Detection",
+      "authors": [
+        {
+          "name": "Omar Shalash",
+          "authorId": "2261538572"
+        },
+        {
+          "name": "Ahmed M\u00e9twalli",
+          "authorId": "67006290"
+        },
+        {
+          "name": "Mohamed Sallam",
+          "authorId": "2387020134"
+        },
+        {
+          "name": "Esraa Khatab",
+          "authorId": "2068176468"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception detection is considered a concern for all individuals in their everyday lives, as it greatly affects human interactions. While multiple automatic lie detection systems exist, their accuracy still needs to be improved. Additionally, the lack of adequate and realistic datasets hinders the development of reliable systems. This paper presents a new multimodal dataset with physiological data (heart rate, galvanic skin response, and body temperature), in addition to demographic data (age, weight, and height). The presented dataset was collected from 49 unique subjects. Moreover, this paper presents a polygraph-based lie detection system utilizing multimodal sensor fusion. Different machine learning algorithms are used and evaluated. Random Forest has achieved an accuracy of 97%, outperforming Logistic Regression (58%), Support Vector Machine (58% with perfect recall of 1.00), and k-Nearest Neighbor (83%). The model shows excellent precision and recall (0.97 each), making it effective for applications such as criminal investigations. With a computation time of 0.06 s, Random Forest has proven to be efficient for real-time use. Additionally, a robust k-fold cross-validation procedure was conducted, combined with Grid Search and Particle Swarm Optimization (PSO) for hyperparameter tuning, which substantially reduced the gap between training and validation accuracies from several percentage points to under 1%, underscoring the model\u2019s enhanced generalization and reliability in real-world scenarios.",
+      "citationCount": 0,
+      "doi": "10.3390/inventions10060096",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/94c2b5c596fdf3ab3e28cabf5039023b4be74db8",
+      "venue": "Inventions",
+      "journal": {
+        "name": "Inventions"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "91bc0ef96ab247361d2942c9caed0e49c25686b4",
+      "title": "Eye Movements as Indicators of Deception: A Machine Learning Approach",
+      "authors": [
+        {
+          "name": "Valentin Foucher",
+          "authorId": "2218462921"
+        },
+        {
+          "name": "Santiago de Leon-Martinez",
+          "authorId": "2176210668"
+        },
+        {
+          "name": "R\u00f3bert M\u00f3ro",
+          "authorId": "144535025"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Gaze may enhance the robustness of lie detectors but remains under-studied. This study evaluated the efficacy of AI models (using fixations, saccades, blinks, and pupil size) for detecting deception in Concealed Information Tests across two datasets. The first, collected with Eyelink 1000, contains gaze data from a computerized experiment where 87 participants revealed, concealed, or faked the value of a previously selected card. The second, collected with Pupil Neon, involved 36 participants performing a similar task but facing an experimenter. XGBoost achieved accuracies up to 74% in a binary classification task (Revealing vs. Concealing) and 49% in a more challenging three-classification task (Revealing vs. Concealing vs. Faking). Feature analysis identified saccade number, duration, amplitude, and maximum pupil size as the most important for deception prediction. These results demonstrate the feasibility of using gaze and AI to enhance lie detectors and encourage future research that may improve on this.",
+      "citationCount": 2,
+      "doi": "10.1145/3715669.3723129",
+      "arxivId": "2505.02649",
+      "url": "https://www.semanticscholar.org/paper/91bc0ef96ab247361d2942c9caed0e49c25686b4",
+      "venue": "Eye Tracking Research & Application",
+      "journal": {
+        "name": "Proceedings of the 2025 Symposium on Eye Tracking Research and Applications"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book"
+      ]
+    },
+    {
+      "paperId": "b53c2ea3a880a283413a8e14ce3e827c522164d0",
+      "title": "A Review on Non-Invasive Multimodal Approaches to Detect Deception Based on Machine Learning Techniques",
+      "authors": [
+        {
+          "name": "Fahad Abdulridha Baraa M. Albaker",
+          "authorId": "2298127035"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Detecting deception has been investigated by the scientific community for over a century due to its importance in the justice system and homeland security. Attempts to come up with an approach, a system or a framework that serves the purpose of discerning lies from truths has therefore been a major field. This has led researchers to automate the detection process and reduce its invasiveness as much as possible. In addition, machine learning techniques are used with multiple channels of information, known as modals, to increase accuracy in what is known as a multimodal approach. As a result, several research and datasets are currently available, and it could be challenging to identify successful patterns, gaps, and future directions. In this paper, over fifty state-of-the-art publications in the field of deception detection using non-invasive approaches based on machine learning techniques are analyzed after reviewing more than one thousand publications from Scopus, IEEE Xplore, Web of Science, ScienceDirect, and Google Scholar. The work presents the classification techniques and datasets used with their detection performance and finally analyzing the data to draw conclusions. The reported detection accuracy ranges from about 50% to 95% for monomodal approaches based on facial expression, body movement, audio, or thermal imaging. In conclusion, the multimodal approach shows promising results as it reaches a detection accuracy approaching 100%. It outperforms any alternative non-invasive approach, especially when dealing with small datasets, which seems to be the biggest challenge in this field. Future research directions should focus on experimenting with multimodal systems by developing larger datasets as well as implementing classification algorithms that can work with multiple modals effectively.",
+      "citationCount": 1,
+      "doi": "10.52783/jes.2079",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b53c2ea3a880a283413a8e14ce3e827c522164d0",
+      "venue": "Journal of Electrical Systems",
+      "journal": {
+        "name": "Journal of Electrical Systems"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c7f190d5eb5cd41888fa8e9d2fbe10bca75d8ef3",
+      "title": "Unmasking Lies: A Literature Review on Facial Expressions and Machine Learning for Deception Detection",
+      "authors": [
+        {
+          "name": "Monica Sen",
+          "authorId": "2333016139"
+        },
+        {
+          "name": "R\u00e9becca Deneck\u00e8re",
+          "authorId": "2273440023"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1016/j.procs.2024.09.710",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c7f190d5eb5cd41888fa8e9d2fbe10bca75d8ef3",
+      "venue": "International Conference on Knowledge-Based Intelligent Information & Engineering Systems",
+      "journal": {
+        "pages": "1925-1935"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "025b8b74fbedaaeae99525c633a5190876427bff",
+      "title": "CONTROL SYSTEMS SYNTHESIS FOR ROBOTS ON THE BASE OF MACHINE LEARNING BY SYMBOLIC REGRESSION",
+      "authors": [
+        {
+          "name": "A. Diveev",
+          "authorId": "144204264"
+        },
+        {
+          "name": "N. Konyrbaev",
+          "authorId": "2249336261"
+        },
+        {
+          "name": "Z. Baishemirov",
+          "authorId": "3455982"
+        },
+        {
+          "name": "Asem Galymzhankyzy",
+          "authorId": "2327491234"
+        },
+        {
+          "name": "Oralbek Abdullayev",
+          "authorId": "2326023578"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper presents a novel numerical method for solving the control system synthesis problem through the application of machine learning techniques, with a particular focus on symbolic regression. Symbolic regression is used to automate the development of control systems by constructing mathematical expressions that describe control functions based on system data. Unlike traditional methods, which often require manual programming and tuning, this approach leverages machine learning to discover optimal control solutions. The paper introduces a general framework for machine learning in control system design, with an emphasis on the use of evolutionary algorithms to optimize the generated control functions. The key contribution of this research lies in the development of an algorithm based on the principle of small variations in the baseline solution. This approach significantly enhances the efficiency of discovering optimal control functions by systematically exploring the solution space with minimal adjustments. The method allows for the automatic generation of control laws, reducing the need for manual coding, which is especially beneficial in the context of complex control systems, such as robotics. To demonstrate the applicability of the method, the research applies symbolic regression to the control synthesis of a mobile robot. The results of this case study show that symbolic regression can effectively automate the process of generating control functions, significantly reducing development time while improving accuracy. However, the paper also acknowledges certain limitations, including the computational demands required for symbolic regression and the challenges associated with real-time implementation in highly dynamic environments. These issues represent important areas for future research, where further optimization and hybrid approaches may enhance the method's practicality and scalability in real-world applications.",
+      "citationCount": 0,
+      "doi": "10.37943/19oxfc5347",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/025b8b74fbedaaeae99525c633a5190876427bff",
+      "venue": "Scientific Journal of Astana IT University",
+      "journal": {
+        "name": "Scientific Journal of Astana IT University"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "42f70d62eac46c8c1ce4cffb5525be815ed28f1c",
+      "title": "\"The Use of Deception in Dementia-Care Robots: Should Robots Tell \\\"White Lies\\\" to Limit Emotional Distress?\"",
+      "authors": [
+        {
+          "name": "Samuel Rhys Cox",
+          "authorId": "51039177"
+        },
+        {
+          "name": "Grace Cheong",
+          "authorId": "2238627765"
+        },
+        {
+          "name": "Wei Tsang Ooi",
+          "authorId": "1678873"
+        }
+      ],
+      "year": 2023,
+      "abstract": "With projections of ageing populations and increasing rates of dementia, there is need for professional caregivers. Assistive robots have been proposed as a solution to this, as they can assist people both physically and socially. However, caregivers often need to use acts of deception (such as misdirection or white lies) in order to ensure necessary care is provided while limiting negative impacts on the cared-for such as emotional distress or loss of dignity. We discuss such use of deception, and contextualise their use within robotics.",
+      "citationCount": 2,
+      "doi": "10.1145/3623809.3623932",
+      "arxivId": "2309.04267",
+      "url": "https://www.semanticscholar.org/paper/42f70d62eac46c8c1ce4cffb5525be815ed28f1c",
+      "venue": "International Conference on Human-Agent Interaction",
+      "journal": {
+        "name": "Proceedings of the 11th International Conference on Human-Agent Interaction"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book"
+      ]
+    },
+    {
+      "paperId": "180e0bee46ef932bbbf640b3e7a69c868281321c",
+      "title": "Deception/Truthful Prediction Based on Facial Feature and Machine Learning Analysis",
+      "authors": [
+        {
+          "name": "Et al. Twisha Patel",
+          "authorId": "2270659837"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The Automatic Deception detection refers to the investigative practices used to determine whether person is telling you Truth or lie. Automatic deception detection has been studied extensively as it can be useful in many real-life scenarios in health, justice, and security systems. Many psychological studies have been reported for deception detection.\u00a0 Polygraph testing is a current trending technique to detect deception, but it requires human intervention and training.\u00a0 In recent times, many machine learning based approaches have been applied to detect deceptions. Various modalities like Thermal Imaging, Brain Activity Mapping, Acoustic analysis, eye tracking. Facial Micro expression processing and linguistic analyses are used to detect deception. Machine learning techniques based on facial feature analysis look like a promising path for automatic deception detection. It also works without human intervention. So, it may give better results because it does not affect race or ethnicity. Moreover, one can do covert operation to find deceit using facial video recording. Covert Operation may capture the real personality of deceptive persons. By making combination of various facial features like Facial Emotion, Facial Micro Expressions and Eye blink rate, pupil size, Facial Action Units we can get better accuracy in Deception Detection.",
+      "citationCount": 1,
+      "doi": "10.17762/ijritcc.v11i10.8595",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/180e0bee46ef932bbbf640b3e7a69c868281321c",
+      "venue": "International Journal on Recent and Innovation Trends in Computing and Communication",
+      "journal": {
+        "name": "International Journal on Recent and Innovation Trends in Computing and Communication"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3ab65110d35fbfaf1f78e0cdd63ab1b373cd6126",
+      "title": "Inculcating Morality in Machines\u2026Applying Machine Ethics in the Creation of Ethically Intelligent Robots: The Case Study of Xiaoice",
+      "authors": [
+        {
+          "name": "Yue Xi",
+          "authorId": "2276450979"
+        },
+        {
+          "name": "S. Paracha",
+          "authorId": "46403935"
+        },
+        {
+          "name": "Ruoyu Sun",
+          "authorId": "2068169846"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This paper examines current controversies in the ethical problems of AI robots and discusses how to build good ethics and trust in computational intelligence, through the lens of the philosophy of science. By analyzing the case study of Xiaoice, this paper highlights the ethical problems currently existing in AI robots. Machine ethics is introduced as a framework to address these issues and to examine the feasibility of imparting ethical dimensions to machines. The crux lies in integrating human values through applying machine ethics in creating ethically intelligent robots. This research suggests combining utilitarianism and deontology to create a pluralistic theoretical approach. Furthermore, this research will have policy implications, such as aiding the public and the policymakers in understanding the subject matter and designing policy instruments to facilitate its application.",
+      "citationCount": 0,
+      "doi": "10.1109/ICDL55364.2023.10364400",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3ab65110d35fbfaf1f78e0cdd63ab1b373cd6126",
+      "venue": "International Conference on Development and Learning",
+      "journal": {
+        "name": "2023 IEEE International Conference on Development and Learning (ICDL)",
+        "pages": "225-231"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "14cea4bbbe417ecf00bfe49c33955fa1facabda8",
+      "title": "Tiny Robot Learning: Challenges and Directions for Machine Learning in Resource-Constrained Robots",
+      "authors": [
+        {
+          "name": "Sabrina M. Neuman",
+          "authorId": "40629232"
+        },
+        {
+          "name": "Brian Plancher",
+          "authorId": "10803865"
+        },
+        {
+          "name": "B. Duisterhof",
+          "authorId": "146254448"
+        },
+        {
+          "name": "Srivatsan Krishnan",
+          "authorId": "2808839"
+        },
+        {
+          "name": "Colby R. Banbury",
+          "authorId": "103876904"
+        },
+        {
+          "name": "Mark Mazumder",
+          "authorId": "40461566"
+        },
+        {
+          "name": "Shvetank Prakash",
+          "authorId": "2150158859"
+        },
+        {
+          "name": "J. Jabbour",
+          "authorId": "40193116"
+        },
+        {
+          "name": "Aleksandra Faust",
+          "authorId": "145520045"
+        },
+        {
+          "name": "G. D. Croon",
+          "authorId": "145346217"
+        },
+        {
+          "name": "V. Reddi",
+          "authorId": "1805668"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Machine learning (ML) has become a pervasive tool across computing systems. An emerging application that stress-tests the challenges of ML system design is tiny robot learning, the deployment of ML on resource-constrained low-cost autonomous robots. Tiny robot learning lies at the intersection of embedded systems, robotics, and ML, compounding the challenges of these domains. Tiny robot learning is subject to challenges from size, weight, area, and power (SWAP) constraints; sensor, actuator, and compute hardware limitations; end-to-end system tradeoffs; and a large diversity of possible deployment scenarios. Tiny robot learning requires ML models to be designed with these challenges in mind, providing a crucible that reveals the necessity of holistic ML system design and automated end-to-end design tools for agile development. This paper gives a brief survey of the tiny robot learning space, elaborates on key challenges, and proposes promising opportunities for future work in ML system design.",
+      "citationCount": 49,
+      "doi": "10.1109/AICAS54282.2022.9870000",
+      "arxivId": "2205.05748",
+      "url": "https://www.semanticscholar.org/paper/14cea4bbbe417ecf00bfe49c33955fa1facabda8",
+      "venue": "International Conference on Artificial Intelligence Circuits and Systems",
+      "journal": {
+        "name": "2022 IEEE 4th International Conference on Artificial Intelligence Circuits and Systems (AICAS)",
+        "pages": "296-299"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c094c5d7351191556965b79f6c19438dee525200",
+      "title": "Robot dilemmas: Deception and digital emotional labor in dementia care work",
+      "authors": [
+        {
+          "name": "David Redmalm",
+          "authorId": "97661504"
+        },
+        {
+          "name": "Clara Iversen",
+          "authorId": "2295772754"
+        },
+        {
+          "name": "Marcus Persson",
+          "authorId": "2295765352"
+        },
+        {
+          "name": "Elin Thunman",
+          "authorId": "114721377"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Based on in-depth interviews with care workers and observational visits to nursing homes, this study investigates how care workers address residents\u2019 frequent misperceptions of robot cats and dogs as real animals. The analysis focuses on two aspects: how care workers handle the fact that residents often mistake the robots for real animals, and how their approach to deceptive practices relation to the robots is related to emotional labor. Three main strategies are identified and explored: telling the truth, remaining vague, and lying. While the first strategy prioritizes ethical guidelines over residents\u2019 wellbeing in the moment, the second two strategies are facilitated by physical and verbal cues, as well as storytelling in collaboration with colleagues and residents. Each strategy also entails a dilemma, as each carries its own ethical challenges.",
+      "citationCount": 0,
+      "doi": "10.18291/njwls.159961",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c094c5d7351191556965b79f6c19438dee525200",
+      "venue": "Nordic Journal of Working Life Studies",
+      "journal": {
+        "name": "Nordic Journal of Working Life Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "98fa9a51cac9cfe522f0fe1c727a9f5a6235f4bc",
+      "title": "Audio Feature Analysis and Selection for Deception Detection in Court Proceedings",
+      "authors": [
+        {
+          "name": "Muhammad Meftah Mafazy",
+          "authorId": "2285485699"
+        },
+        {
+          "name": "Chastine Fatichah",
+          "authorId": "3345616"
+        },
+        {
+          "name": "Anny Yuniarti",
+          "authorId": "2238036539"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception detection is a method to determine whether a person is lying or not. One lie detector is a polygraph that measures human physiology, such as pulse and blood pressure. However, polygraphs have a problem in that they cannot be measured based on human psychology, such as speech and intonation. Therefore, audio deception detection is required, and this can be measured based on human psychology. This research will extract audio features, such as the Mel Frequency Cepstral Coeffi-cient (MFCC), Jitter, Fundamental Frequency (F0), and Perceptual Linear Prediction (PLP), from the Real-Life Trial dataset, which comprises 121 audio data. From the extraction results in the form of numerical data totaling 6387 features, various feature-selection methods are employed, such as Feature Importance (FI), Principal Component Analysis (PCA), Information Gain, Chi-Square, and Recursive Feature Elimination (RFE). After feature selection, the selected features are input to machine learning models, such as random forest and support vector machine (SVM). After model testing, metrics such as accuracy, precision, recall, and F1 score were evaluated, as well as statistical evaluation, to assess the developed model. Results from this experiment show that the deception detection model is improved after a feature selection process to reduce irrelevant features. Comparing the accuracy, Chi-Square achieves a significantly higher result, reaching up to 92% with an improvement of 24.32%, surpassing the SVM model's accuracy of 67.57% before feature selection. In contrast, the RFE technique yielded the best accuracy of 86%, with an increase of 13.52%, building upon its baseline accuracy of 72.97%.",
+      "citationCount": 0,
+      "doi": "10.12962/j24068535.v23i1.a1250",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/98fa9a51cac9cfe522f0fe1c727a9f5a6235f4bc",
+      "venue": "JUTI: Jurnal Ilmiah Teknologi Informasi",
+      "journal": {
+        "name": "JUTI: Jurnal Ilmiah Teknologi Informasi"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "17a27aa0eae6367e0a6b633d2e9343724865b2f1",
+      "title": "Can lies be faked? Comparing low-stakes and high-stakes deception video datasets from a Machine Learning perspective",
+      "authors": [
+        {
+          "name": "M. Camara",
+          "authorId": "2151835664"
+        },
+        {
+          "name": "Adriana Postal",
+          "authorId": "38296859"
+        },
+        {
+          "name": "T. Maul",
+          "authorId": "2411411"
+        },
+        {
+          "name": "Gustavo Paetzold",
+          "authorId": "3302745"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Despite the great impact of lies in human societies and a meager 54% human accuracy for Deception Detection (DD), Machine Learning systems that perform automated DD are still not viable for proper application in real-life settings due to data scarcity. Few publicly available DD datasets exist and the creation of new datasets is hindered by the conceptual distinction between low-stakes and high-stakes lies. Theoretically, the two kinds of lies are so distinct that a dataset of one kind could not be used for applications for the other kind. Even though it is easier to acquire data on low-stakes deception since it can be simulated (faked) in controlled settings, these lies do not hold the same significance or depth as genuine high-stakes lies, which are much harder to obtain and hold the practical interest of automated DD systems. To investigate whether this distinction holds true from a practical perspective, we design several experiments comparing a high-stakes DD dataset and a low-stakes DD dataset evaluating their results on a Deep Learning classifier working exclusively from video data. In our experiments, a network trained in low-stakes lies had better accuracy classifying high-stakes deception than low-stakes, although using low-stakes lies as an augmentation strategy for the high-stakes dataset decreased its accuracy.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2211.13035",
+      "arxivId": "2211.13035",
+      "url": "https://www.semanticscholar.org/paper/17a27aa0eae6367e0a6b633d2e9343724865b2f1",
+      "venue": "Expert systems with applications",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2211.13035"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b5cb505d8912127aebd8ed4948d874accdbb5c83",
+      "title": "Lies and deception: Robots that use falsehood as a social strategy",
+      "authors": [
+        {
+          "name": "Alan R. Wagner",
+          "authorId": "40290009"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1515/9781614514404.173",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b5cb505d8912127aebd8ed4948d874accdbb5c83",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "203-225",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "10d7b806785e3c257ae03df4e5f40e9b411420a8",
+      "title": "Human perceptions of social robot deception behaviors: an exploratory analysis",
+      "authors": [
+        {
+          "name": "Andres Rosero",
+          "authorId": "2320456426"
+        },
+        {
+          "name": "Elizabeth Dula",
+          "authorId": "2218610243"
+        },
+        {
+          "name": "Harris Kelly",
+          "authorId": "2320453766"
+        },
+        {
+          "name": "Bertram F. Malle",
+          "authorId": "2323789032"
+        },
+        {
+          "name": "Elizabeth K. Phillips",
+          "authorId": "2320455725"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Introduction Robots are being introduced into increasingly social environments. As these robots become more ingrained in social spaces, they will have to abide by the social norms that guide human interactions. At times, however, robots will violate norms and perhaps even deceive their human interaction partners. This study provides some of the first evidence for how people perceive and evaluate robot deception, especially three types of deception behaviors theorized in the technology ethics literature: External state deception (cues that intentionally misrepresent or omit details from the external world: e.g., lying), Hidden state deception (cues designed to conceal or obscure the presence of a capacity or internal state the robot possesses), and Superficial state deception (cues that suggest a robot has some capacity or internal state that it lacks). Methods Participants (N = 498) were assigned to read one of three vignettes, each corresponding to one of the deceptive behavior types. Participants provided responses to qualitative and quantitative measures, which examined to what degree people approved of the behaviors, perceived them to be deceptive, found them to be justified, and believed that other agents were involved in the robots\u2019 deceptive behavior. Results Participants rated hidden state deception as the most deceptive and approved of it the least among the three deception types. They considered external state and superficial state deception behaviors to be comparably deceptive; but while external state deception was generally approved, superficial state deception was not. Participants in the hidden state condition often implicated agents other than the robot in the deception. Conclusion This study provides some of the first evidence for how people perceive and evaluate the deceptiveness of robot deception behavior types. This study found that people people distinguish among the three types of deception behaviors and see them as differently deceptive and approve of them differently. They also see at least the hidden state deception as stemming more from the designers than the robot itself.",
+      "citationCount": 7,
+      "doi": "10.3389/frobt.2024.1409712",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/10d7b806785e3c257ae03df4e5f40e9b411420a8",
+      "venue": "Frontiers Robotics AI",
+      "journal": {
+        "name": "Frontiers in Robotics and AI",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "22b649b54cf7b191b01c3c5edc9aa27f1635c4aa",
+      "title": "Non-invasive Deception Detection in Videos Using Machine Learning Techniques",
+      "authors": [
+        {
+          "name": "Siam Islam",
+          "authorId": "2150050959"
+        },
+        {
+          "name": "Popin Saha",
+          "authorId": "2149649973"
+        },
+        {
+          "name": "T. Chowdhury",
+          "authorId": "50022652"
+        },
+        {
+          "name": "Asif Sorowar",
+          "authorId": "2149590857"
+        },
+        {
+          "name": "Raqeebir Rab",
+          "authorId": "3394948"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Deception detection has important clinical and legal implica-tions. Detecting deception is very effective in criminal investiga-tions, finding fake news, jurisprudence, law enforcement, and national security. Still, a reliable and Noninvasive deception technique is in progress. Deception detection using visual data is one of the most explored topics for burgeoning researchers. Several studies have been conducted on detecting deception using visual data. But most of them are based on courtroom trial data or mock criminal scenarios. In this paper, we have explored factual data set to identify deception from the subject\u2019s natural response to truth and lie by analyzing Facial Action Units (FAU). Firstly, we selected apex frames of a video sequence and incepted all possible feature sets. Secondly, we analyzed the result of five machine learning classifiers on selected important features for detecting deception. We observed that Support Vector Machine with Radial Basis Function kernel (SVM-RBF), outperformed among all with 61.54% cross-validated accuracy.",
+      "citationCount": 8,
+      "doi": "10.1109/iceeict53905.2021.9667928",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/22b649b54cf7b191b01c3c5edc9aa27f1635c4aa",
+      "venue": "International Conference on Electrical Engineering and Information Communication Technology",
+      "journal": {
+        "name": "2021 5th International Conference on Electrical Engineering and Information & Communication Technology (ICEEICT)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "8b5c3688d030dbf079a458ba8a4a0537a4f162f8",
+      "title": "Quantum Sparrow Swarm Optimization with Deep Learning Enabled Deception Detection on Facial Micro Expressions",
+      "authors": [
+        {
+          "name": "Admin Admin",
+          "authorId": "2310273280"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Deception detection means finding whether an individual is lying or being deceptive depending on cognitive cues, and various behavioural, or physiological. It is a significant domain of research with applications in social psychology, law enforcement, and security. Deception detection relevant to microexpressions includes examining these subtle facial cues for determining whether an individual is being deceptive or lying. Microexpressions can deliver significant cues to detect deception. Deep learning (DL) and Machine learning (ML) models were utilized for finding micro-expressions and are trained for differentiating deceptive statements from genuine ones. Still, it necessitates a diverse and large dataset of video recordings in addition to careful tuning and pre-processing of the DL approach. So, this article presents an Automated Deception Detection on Facial Microexpressions using Improved Sparrow Swarm Optimization with Deep Learning (ADDFM-ISSODL) method. The proposed ADDFM-ISSODL algorithm examines facial micro-expressions effectively for detection of deceptive behaviour. To complete this, developed ADDFM-ISSODL model uses a Gaussian filtering (GF) approach for pre-processing. Besides, ADDFM-ISSODL technique employs MobileNetv3 model for feature extraction and the hyper parameter tuning procedure performed using ISSO algorithm. The ISSO approach was designed by the integration of the standard SSO approach with the quantum evolutionary algorithm (QEA). For deception detection, a probabilistic neural network (PNN) classifier was employed. At last, grasshopper optimization algorithm (GOA) was implemented for parameter tuning of PNN method. The performance validation of ADDFM-ISSODL system tested utilizing facial expression dataset. The simulation outcome stated the greater results of ADDFM-ISSODL algorithm over other methodologies.",
+      "citationCount": 0,
+      "doi": "10.54216/ijaaci.050204",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8b5c3688d030dbf079a458ba8a4a0537a4f162f8",
+      "venue": "International Journal of Advances in Applied Computational Intelligence",
+      "journal": {
+        "name": "International Journal of Advances in Applied Computational Intelligence"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "06f26af69b93e81cf108da1a325d9620f740a04a",
+      "title": "Deception Detection on \u201cBag-of-Lies\u201d: Integration of Multi-modal Data Using Machine Learning Algorithms",
+      "authors": [
+        {
+          "name": "Karnati Mohan",
+          "authorId": "145076122"
+        },
+        {
+          "name": "Ayan Seal",
+          "authorId": "101535191"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1007/978-981-33-4087-9_38",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/06f26af69b93e81cf108da1a325d9620f740a04a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "445-456",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "87a8adc01758be0d69fd537948ccf8adfc293281",
+      "title": "Lying Cheating Robots - Robots and Infidelity",
+      "authors": [
+        {
+          "name": "Rebekah A. Rousi",
+          "authorId": "2142544"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1007/978-3-319-76369-9_5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/87a8adc01758be0d69fd537948ccf8adfc293281",
+      "venue": "International Conference on Love and Sex with Robots",
+      "journal": {
+        "pages": "51-64"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "2eb4377a0b70f05b73279dba8ce45574af8b46a8",
+      "title": "Deception detection based on micro-expression and feature selection methods",
+      "authors": [
+        {
+          "name": "Shusen Yuan",
+          "authorId": "2223101364"
+        },
+        {
+          "name": "Zilong Shao",
+          "authorId": "2362719439"
+        },
+        {
+          "name": "Zhongjun Ma",
+          "authorId": "2363572368"
+        },
+        {
+          "name": "Ting Cao",
+          "authorId": "2362712301"
+        },
+        {
+          "name": "Hongbo Xing",
+          "authorId": "2222959448"
+        },
+        {
+          "name": "Yong Liu",
+          "authorId": "2363546744"
+        },
+        {
+          "name": "Yewen Cao",
+          "authorId": "2210716508"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1186/s13640-025-00674-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2eb4377a0b70f05b73279dba8ce45574af8b46a8",
+      "venue": "EURASIP Journal on Image and Video Processing",
+      "journal": {
+        "name": "EURASIP Journal on Image and Video Processing",
+        "volume": "2025"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "08658fb44198da75de5f501d18bbe6bb2fc00eac",
+      "title": "Introducing Machine Learning with Scratch and Robots as a Pilot Program for K-12 Computer Science Education",
+      "authors": [
+        {
+          "name": "C. Chung",
+          "authorId": "3354677"
+        },
+        {
+          "name": "L. Shamir",
+          "authorId": "1789860"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Machine learning (ML), a branch of artificial intelligence (AI), is a method that enables systems to learn from data for the purpose of recognizing patterns and making decisions without being explicitly programmed. In the past decade machine learning has been growing rapidly, and ML technologies such as speech recognition, spam filters, smart email reply, online recommendations, face recognition, fake news detection, and self-driving cars have become pivotal in modern daily life. However, computer science education has not yet fully adjusted to the tremendous growth in the sub-field of AI. This paper describes an approach of introducing K-12 students to ML through an on-line summer camp. The students are introduced to the concept of ML by hands-on activities of developing applications for recognizing text, numbers, sounds, images, and video data using a web-based cloud service tool \"Machine Learning for Kids\" and Scratch 3 programming language combined with Lego Mindstorms EV3 robots. The results show that the tools and technologies used in the camp are suitable for K-12 students, also when used in the form of online training. Pre and post surveys show that students express basic knowledge in ML and higher interest in coding and STEM after being exposed to the proposed training.",
+      "citationCount": 6,
+      "doi": "10.18178/ijlt.7.3.181-186",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/08658fb44198da75de5f501d18bbe6bb2fc00eac",
+      "venue": "International Journal of Learning and Teaching",
+      "journal": {
+        "name": "International Journal of Learning and Teaching"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "2b66c39c14f593551b0eed23c5220977336deb16",
+      "title": "Hybrid Deep Learning Approach for Deception Detection on EEG Data Using DWT, FFT and Hyperparameter Tuning",
+      "authors": [
+        {
+          "name": "Tanmayi Nagale",
+          "authorId": "73744857"
+        },
+        {
+          "name": "Dr. Anand Khandare",
+          "authorId": "2352479014"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Introduction: Electroencephalography (EEG) is a brain imaging technique that records electrical activity via scalp-attached electrodes, widely used for studying brain functions and diagnosing neurological disorders. Its high temporal resolution makes it ideal for real-time analysis, despite lower spatial accuracy than fMRI or PET. Recent advancements integrating deep learning with EEG have significantly improved applications in areas like lie detection and cognitive research. \nObjectives: This study aims to improve the precision of deception detection using EEG data by developing and assessing new deep learning and machine learning algorithms. The research also seeks to compare the performance of these newly proposed methods with existing ones in terms of accuracy and practical use in forensic and investigative applications. \nMethod: A comparative analysis was conducted to evaluate the accuracy of different machine learning and deep learning techniques for brain fingerprinting and detecting deception based on EEG signals. Models like CNN paired with FFT and DWT were compared to existing algorithms to assess their accuracy improvements. \nFindings: The results demonstrated that the newly proposed algorithms, particularly the combination of CNN with FFT and DWT, showed a significant increase in accuracy when compared to current methods. For example, the CNN combined with FFT saw an improvement from 94.12% to 98.89% in accuracy, while the new CNN-DWT-FFT combination reached an impressive accuracy of 99.42%. Although there was a slight drop in accuracy when using CNN with DWT alone, from 98.76% to 98.64%, the proposed models generally outperformed the current algorithms in most scenarios. \nNovelty: The unique aspect of this study is the application of deep learning techniques, specifically the combination of CNN with both DWT and FFT, which had not previously been explored for lie detection using EEG data. This innovative approach significantly enhances detection accuracy, making a noteworthy contribution to forensic psychology and law enforcement.",
+      "citationCount": 0,
+      "doi": "10.52783/jisem.v10i24s.3950",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2b66c39c14f593551b0eed23c5220977336deb16",
+      "venue": "Journal of Information Systems Engineering & Management",
+      "journal": {
+        "name": "Journal of Information Systems Engineering and Management"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6244bf404abf069fe9129f1ecec408004ec71694",
+      "title": "Would I Lie to You? Using Large Language Models for Deception Detection",
+      "authors": [
+        {
+          "name": "Bjanka Vrljic",
+          "authorId": "2376344975"
+        },
+        {
+          "name": "I. Boti\u010dki",
+          "authorId": "2184646525"
+        },
+        {
+          "name": "Ana Me\u0161trovi\u0107",
+          "authorId": "2311039103"
+        },
+        {
+          "name": "D. Mlinari\u0107",
+          "authorId": "27029904"
+        },
+        {
+          "name": "Ivan Terzic",
+          "authorId": "2220905159"
+        },
+        {
+          "name": "Branko Kirin",
+          "authorId": "2376346494"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception is prevalent in online interactions and poses a challenge to reliable information access. This paper explores the effectiveness of BERT and GPT in improving the accuracy of deception detection. Building on previous work with traditional machine learning models, we use BERT and GPT to analyze textual crowd-sourced statements on climate change and COVID-19. We use fine-tuned BERT models and employ zeroshot, few-shot, and Chain-of-Thought (CoT) techniques with GPT models to classify statements as truthful or deceptive. Our results show that these models significantly outperform traditional machine learning methods, achieving improved accuracy in distinguishing between truthful and deceptive statements. This success stems from the models' ability to capture contextual information and semantic nuances in the text. In addition, the flexibility of GPT in zero-shot and few-shot settings proves valuable for tasks with limited labeled data. These results highlight the potential of pre-trained language models in deception detection and pave the way for further advancements.",
+      "citationCount": 0,
+      "doi": "10.1109/ICNLP65360.2025.11108620",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6244bf404abf069fe9129f1ecec408004ec71694",
+      "venue": "ICON",
+      "journal": {
+        "name": "2025 7th International Conference on Natural Language Processing (ICNLP)",
+        "pages": "595-600"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

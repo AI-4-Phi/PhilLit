@@ -1,0 +1,3703 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "behavioral AI safety evaluation",
+  "results": [
+    {
+      "openalex_id": "W4213452400",
+      "doi": "10.3390/informatics9010014",
+      "title": "Human-Computer Interaction in Digital Mental Health",
+      "authors": [
+        {
+          "name": "Luke Balcombe",
+          "openalex_id": "A5090279309",
+          "orcid": "https://orcid.org/0000-0002-6761-3659",
+          "institutions": [
+            "Griffith University"
+          ]
+        },
+        {
+          "name": "Diego De Leo",
+          "openalex_id": "A5052658317",
+          "orcid": "https://orcid.org/0000-0001-8255-6480",
+          "institutions": [
+            "Griffith University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-02-22",
+      "abstract": "Human-computer interaction (HCI) has contributed to the design and development of some efficient, user-friendly, cost-effective, and adaptable digital mental health solutions. But HCI has not been well-combined into technological developments resulting in quality and safety concerns. Digital platforms and artificial intelligence (AI) have a good potential to improve prediction, identification, coordination, and treatment by mental health care and suicide prevention services. AI is driving web-based and smartphone apps; mostly it is used for self-help and guided cognitive behavioral therapy (CBT) for anxiety and depression. Interactive AI may help real-time screening and treatment in outdated, strained or lacking mental healthcare systems. The barriers for using AI in mental healthcare include accessibility, efficacy, reliability, usability, safety, security, ethics, suitable education and training, and socio-cultural adaptability. Apps, real-time machine learning algorithms, immersive technologies, and digital phenotyping are notable prospects. Generally, there is a need for faster and better human factors in combination with machine interaction and automation, higher levels of effectiveness evaluation and the application of blended, hybrid or stepped care in an adjunct approach. HCI modeling may assist in the design and development of usable applications, and to effectively recognize, acknowledge, and address the inequities of mental health care and suicide prevention and assist in the digital therapeutic alliance.",
+      "cited_by_count": 91,
+      "type": "article",
+      "source": {
+        "name": "Informatics",
+        "type": "journal",
+        "issn": [
+          "2227-9709"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2227-9709/9/1/14/pdf?version=1645668892"
+      },
+      "topics": [
+        "Digital Mental Health Interventions",
+        "Mental Health Research Topics",
+        "Telemedicine and Telehealth Implementation"
+      ],
+      "referenced_works_count": 160,
+      "url": "https://openalex.org/W4213452400"
+    },
+    {
+      "openalex_id": "W4200594220",
+      "doi": "10.1038/s41467-021-27577-x",
+      "title": "A machine and human reader study on AI diagnosis model safety under attacks of adversarial images",
+      "authors": [
+        {
+          "name": "Qianwei Zhou",
+          "openalex_id": "A5060570526",
+          "orcid": "https://orcid.org/0000-0002-1322-7293",
+          "institutions": [
+            "Zhejiang University of Technology",
+            "Zhejiang Lab",
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Margarita L. Zuley",
+          "openalex_id": "A5054344119",
+          "institutions": [
+            "Magee-Womens Hospital",
+            "University of Pittsburgh",
+            "University of Pittsburgh Medical Center"
+          ]
+        },
+        {
+          "name": "Yuan Guo",
+          "openalex_id": "A5101852751",
+          "orcid": "https://orcid.org/0000-0002-0027-0268",
+          "institutions": [
+            "Guangzhou First People's Hospital",
+            "University of Pittsburgh",
+            "Guangzhou Medical University",
+            "South China University of Technology"
+          ]
+        },
+        {
+          "name": "L\u00fc Yang",
+          "openalex_id": "A5101497500",
+          "orcid": "https://orcid.org/0000-0001-9501-1295",
+          "institutions": [
+            "Chongqing Cancer Hospital",
+            "University of Pittsburgh",
+            "Chongqing University"
+          ]
+        },
+        {
+          "name": "Bronwyn Nair",
+          "openalex_id": "A5082995245",
+          "orcid": "https://orcid.org/0009-0000-3385-7439",
+          "institutions": [
+            "Magee-Womens Hospital",
+            "University of Pittsburgh Medical Center",
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Adrienne Vargo",
+          "openalex_id": "A5104535002",
+          "orcid": "https://orcid.org/0009-0009-3632-1512",
+          "institutions": [
+            "University of Pittsburgh",
+            "University of Pittsburgh Medical Center",
+            "Magee-Womens Hospital"
+          ]
+        },
+        {
+          "name": "Suzanne M. Ghannam",
+          "openalex_id": "A5044113535",
+          "institutions": [
+            "University of Pittsburgh",
+            "University of Pittsburgh Medical Center",
+            "Magee-Womens Hospital"
+          ]
+        },
+        {
+          "name": "Dooman Arefan",
+          "openalex_id": "A5074743495",
+          "orcid": "https://orcid.org/0000-0001-9679-0438",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Shandong Wu",
+          "openalex_id": "A5028418236",
+          "orcid": "https://orcid.org/0000-0002-0770-2203",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-14",
+      "abstract": "Abstract While active efforts are advancing medical artificial intelligence (AI) model development and clinical translation, safety issues of the AI models emerge, but little research has been done. We perform a study to investigate the behaviors of an AI diagnosis model under adversarial images generated by Generative Adversarial Network (GAN) models and to evaluate the effects on human experts when visually identifying potential adversarial images. Our GAN model makes intentional modifications to the diagnosis-sensitive contents of mammogram images in deep learning-based computer-aided diagnosis (CAD) of breast cancer. In our experiments the adversarial samples fool the AI-CAD model to output a wrong diagnosis on 69.1% of the cases that are initially correctly classified by the AI-CAD model. Five breast imaging radiologists visually identify 29%-71% of the adversarial samples. Our study suggests an imperative need for continuing research on medical AI model\u2019s safety issues and for developing potential defensive solutions against adversarial attacks.",
+      "cited_by_count": 58,
+      "type": "article",
+      "source": {
+        "name": "Nature Communications",
+        "type": "journal",
+        "issn": [
+          "2041-1723"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41467-021-27577-x.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI in cancer detection",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4200594220"
+    },
+    {
+      "openalex_id": "W4390154952",
+      "doi": "10.1016/j.caeai.2023.100195",
+      "title": "Systematic review of research on artificial intelligence in K-12 education (2017\u20132022)",
+      "authors": [
+        {
+          "name": "Florence Martin",
+          "openalex_id": "A5086664114",
+          "orcid": "https://orcid.org/0000-0002-6055-5636",
+          "institutions": [
+            "North Carolina State University"
+          ]
+        },
+        {
+          "name": "Min Zhuang",
+          "openalex_id": "A5019938190",
+          "orcid": "https://orcid.org/0000-0001-6215-5807",
+          "institutions": [
+            "North Carolina State University"
+          ]
+        },
+        {
+          "name": "Darlene Schaefer",
+          "openalex_id": "A5101283855",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-24",
+      "abstract": "Background: The use of Artificial Intelligence (AI) has increased in all education sectors including K-12 settings where students can learn about AI and have an augmented learning experience using AI. Purpose: The purpose of this systematic review is to provide a more complete and nuanced understanding of the role and impact of AI in K-12 education by synthesizing publication trends, AI research themes, AI methods and technology applications, and AI use by students and teachers in K-12 educational settings. Methods: The systematic review searched Web of Science and six databases indexed in EBSCO host. A PRISMA flow chart was applied to search and screen for studies. Articles were screened at the title, abstract and full-text level and coded and analyzed. Results: Themes in 66 AI studies include AI as a predictor and indicator of academic behavior or performance, AI curriculum design, integrating AI in various subjects, evaluation of AI in education, AI to enhance learning environments and school operations, AI ethics, and the equity and safety of AI. AI methods were grouped into Supervised Learning, Unsupervised Learning and Reinforcement Learning. AI technology applications were Machine Learning (ML) model building tools, intelligent tutors, chat bot, educational games, AI robots and virtual reality devices. AI applications were mostly used by teachers for ML model demonstration, academic performance prediction and behavior prediction. AI was used by students for scientific discovery learning, improving learning experience and data driven decisions. Conclusion: This review has implications for K-12 school personnel and researchers. Practitioners can use the findings to implement AI in K-12 education. Researchers can benefit from the findings of the review but also build on the gap in research on AI K-12 education.",
+      "cited_by_count": 76,
+      "type": "article",
+      "source": {
+        "name": "Computers and Education Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "2666-920X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.caeai.2023.100195"
+      },
+      "topics": [
+        "Online Learning and Analytics",
+        "Software Engineering Research",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W4390154952"
+    },
+    {
+      "openalex_id": "W4389818067",
+      "doi": "10.1016/j.trip.2023.100980",
+      "title": "Vehicle-to-everything (V2X) in the autonomous vehicles domain \u2013 A technical review of communication, sensor, and AI technologies for road user safety",
+      "authors": [
+        {
+          "name": "Syed Adnan Yusuf",
+          "openalex_id": "A5006403472",
+          "orcid": "https://orcid.org/0000-0002-1162-4375"
+        },
+        {
+          "name": "Arshad Ali Khan",
+          "openalex_id": "A5004972725"
+        },
+        {
+          "name": "Riad Souissi",
+          "openalex_id": "A5034999364",
+          "orcid": "https://orcid.org/0000-0002-3793-5585"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-15",
+      "abstract": "Autonomous vehicles (AV) are rapidly becoming integrated into everyday life, with several countries anticipating their inclusion in public transport networks in the coming years. Safety measures in the context of Vehicle-to-Vehicle (V2V) and Vehicle-to-Infrastructure (V2I) communication have been extensively investigated. However, ensuring safety measures for the Vulnerable Road Users (VRUs) such as pedestrians, cyclists, and e-scooter riders remains an area that requires more focused research effort. The existing AV sensor suites offer diverse capabilities, covering blind spots, longer ranges, and resilience to weather conditions , benefiting the V2V and V2I scenarios. Nevertheless, the predominant emphasis has been on communicating and identifying other vehicles, leveraging advanced communication infrastructure for efficient status information exchange. The identification of VRUs introduces several challenges such as localization difficulties, communication limitations, and a lack of network coverage. This review critically assesses the state-of-the-art in the domains of V2X and AV technologies, aiming to enhance the identification, tracking, and localization of VRUs. Additionally, it proposes an end-to-end autonomous vehicle motion control architecture based on a temporal deep learning algorithm. The algorithm incorporates the dynamic behaviors of both visible and non-line-of-sight (NLOS) road users. The work also provides a critical evaluation of various AI technologies to improve the VRU message sharing, identification, tracking and communication domains.",
+      "cited_by_count": 114,
+      "type": "review",
+      "source": {
+        "name": "Transportation Research Interdisciplinary Perspectives",
+        "type": "journal",
+        "issn": [
+          "2590-1982"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.trip.2023.100980"
+      },
+      "topics": [
+        "Vehicular Ad Hoc Networks (VANETs)",
+        "Autonomous Vehicle Technology and Safety",
+        "Advanced Neural Network Applications"
+      ],
+      "referenced_works_count": 263,
+      "url": "https://openalex.org/W4389818067"
+    },
+    {
+      "openalex_id": "W3112345276",
+      "doi": "10.1109/access.2020.3042556",
+      "title": "Empirical Evaluations of Framework for Adaptive Trust Calibration in Human-AI Cooperation",
+      "authors": [
+        {
+          "name": "Kazuo Okamura",
+          "openalex_id": "A5060594801",
+          "orcid": "https://orcid.org/0000-0002-7809-2596",
+          "institutions": [
+            "The Graduate University for Advanced Studies, SOKENDAI"
+          ]
+        },
+        {
+          "name": "Seiji Yamada",
+          "openalex_id": "A5101954161",
+          "orcid": "https://orcid.org/0000-0002-5907-7382",
+          "institutions": [
+            "National Institute of Informatics",
+            "The Graduate University for Advanced Studies, SOKENDAI"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "Recent advances in AI technologies are dramatically changing the world and impacting our daily life. However, human users still essentially need to cooperate with AI systems to complete tasks as such technologies are never perfect. For optimal performance and safety in human-AI cooperation, human users must appropriately adjust their level of trust to the actual reliability of AI systems. Poorly calibrated trust can be a major cause of serious issues with safety and efficiency. Previous works on trust calibration have emphasized the importance of system transparency for avoiding trust miscalibration. Measuring and influencing trust are still challenging issues; consequently, not many studies have focused on how to detect improper trust calibration nor how to mitigate it. We approach these research challenges with a behavior-based approach to capture the status of calibration. A framework of adaptive trust calibration is proposed, including a formal definition of improper trust calibration called &#x201C;a trust equation&#x201D;. It involves cognitive cues called &#x201C;trust calibration cues (TCCs)&#x201D; and a conceptual entity called &#x201C;trust calibration AI&#x201D; (TCAI), which supervises the status of trust calibration. We conducted empirical evaluations using a simulated drone environment with two types of cooperative tasks: a visual search task and a real-time navigation task. We designed trust changing scenarios and evaluated our framework. The results demonstrated that adaptively presenting a TCC could promote trust calibration more effectively than a traditional system transparency approach.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/09281021.pdf"
+      },
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Healthcare Technology and Patient Monitoring"
+      ],
+      "referenced_works_count": 62,
+      "url": "https://openalex.org/W3112345276"
+    },
+    {
+      "openalex_id": "W4392044348",
+      "doi": "10.1186/s40537-024-00890-0",
+      "title": "Comprehensive study of driver behavior monitoring systems using computer vision and machine learning techniques",
+      "authors": [
+        {
+          "name": "Fangming Qu",
+          "openalex_id": "A5111133781",
+          "institutions": [
+            "Florida Atlantic University"
+          ]
+        },
+        {
+          "name": "Nolan Dang",
+          "openalex_id": "A5078258111",
+          "institutions": [
+            "Florida Atlantic University"
+          ]
+        },
+        {
+          "name": "Borko Furht",
+          "openalex_id": "A5057260089",
+          "orcid": "https://orcid.org/0000-0002-3584-9659",
+          "institutions": [
+            "Florida Atlantic University"
+          ]
+        },
+        {
+          "name": "Mehrdad Nojoumian",
+          "openalex_id": "A5038458219",
+          "institutions": [
+            "Florida Atlantic University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-22",
+      "abstract": "Abstract The flourishing realm of advanced driver-assistance systems (ADAS) as well as autonomous vehicles (AVs) presents exceptional opportunities to enhance safe driving. An essential aspect of this transformation involves monitoring driver behavior through observable physiological indicators, including the driver\u2019s facial expressions, hand placement on the wheels, and the driver\u2019s body postures. An artificial intelligence (AI) system under consideration alerts drivers about potentially unsafe behaviors using real-time voice notifications. This paper offers an all-embracing survey of neural network-based methodologies for studying these driver bio-metrics, presenting an exhaustive examination of their advantages and drawbacks. The evaluation includes two relevant datasets, separately categorizing ten different in-cabinet behaviors, providing a systematic classification for driver behaviors detection. The ultimate aim is to inform the development of driver behavior monitoring systems. This survey is a valuable guide for those dedicated to enhancing vehicle safety and preventing accidents caused by careless driving. The paper\u2019s structure encompasses sections on autonomous vehicles, neural networks, driver behavior analysis methods, dataset utilization, and final findings and future suggestions, ensuring accessibility for audiences with diverse levels of understanding regarding the subject matter.",
+      "cited_by_count": 51,
+      "type": "article",
+      "source": {
+        "name": "Journal Of Big Data",
+        "type": "journal",
+        "issn": [
+          "2196-1115"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-024-00890-0"
+      },
+      "topics": [
+        "Video Surveillance and Tracking Methods",
+        "Autonomous Vehicle Technology and Safety",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 122,
+      "url": "https://openalex.org/W4392044348"
+    },
+    {
+      "openalex_id": "W4320342906",
+      "doi": "10.1145/3544548.3581268",
+      "title": "Zeno: An Interactive Framework for Behavioral Evaluation of Machine Learning",
+      "authors": [
+        {
+          "name": "\u00c1ngel Alexander Cabrera",
+          "openalex_id": "A5060162507",
+          "orcid": "https://orcid.org/0000-0003-0348-3362",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "E. C. L. Fu",
+          "openalex_id": "A5072704109",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Donald Bertucci",
+          "openalex_id": "A5011301944",
+          "orcid": "https://orcid.org/0000-0002-2726-4108",
+          "institutions": [
+            "Oregon State University"
+          ]
+        },
+        {
+          "name": "Kenneth Holstein",
+          "openalex_id": "A5022664382",
+          "orcid": "https://orcid.org/0000-0001-6730-922X",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Ameet Talwalkar",
+          "openalex_id": "A5029768722",
+          "orcid": "https://orcid.org/0000-0001-6650-1893",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Jason Hong",
+          "openalex_id": "A5090310268",
+          "orcid": "https://orcid.org/0000-0002-9856-9654",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "Adam Perer",
+          "openalex_id": "A5053097987",
+          "orcid": "https://orcid.org/0000-0002-8369-3847",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-19",
+      "abstract": "Machine learning models with high accuracy on test data can still produce\\nsystematic failures, such as harmful biases and safety issues, when deployed in\\nthe real world. To detect and mitigate such failures, practitioners run\\nbehavioral evaluation of their models, checking model outputs for specific\\ntypes of inputs. Behavioral evaluation is important but challenging, requiring\\nthat practitioners discover real-world patterns and validate systematic\\nfailures. We conducted 18 semi-structured interviews with ML practitioners to\\nbetter understand the challenges of behavioral evaluation and found that it is\\na collaborative, use-case-first process that is not adequately supported by\\nexisting task- and domain-specific tools. Using these findings, we designed\\nZeno, a general-purpose framework for visualizing and testing AI systems across\\ndiverse use cases. In four case studies with participants using Zeno on\\nreal-world models, we found that practitioners were able to reproduce previous\\nmanual analyses and discover new systematic failures.\\n",
+      "cited_by_count": 43,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3544548.3581268"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning and Data Classification",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W4320342906"
+    },
+    {
+      "openalex_id": "W4200580215",
+      "doi": "10.1002/ail2.61",
+      "title": "<scp>DARPA</scp>'s explainable<scp>AI</scp>(<scp>XAI</scp>) program: A retrospective",
+      "authors": [
+        {
+          "name": "David Gunning",
+          "openalex_id": "A5081829228",
+          "orcid": "https://orcid.org/0000-0001-5435-796X",
+          "institutions": [
+            "Defense Advanced Research Projects Agency"
+          ]
+        },
+        {
+          "name": "Eric S. Vorm",
+          "openalex_id": "A5045980169",
+          "orcid": "https://orcid.org/0000-0003-2844-1994",
+          "institutions": [
+            "United States Naval Research Laboratory"
+          ]
+        },
+        {
+          "name": "Yunyan Wang",
+          "openalex_id": "A5077899265",
+          "orcid": "https://orcid.org/0000-0002-9102-0482",
+          "institutions": [
+            "Scientific Solutions (United States)"
+          ]
+        },
+        {
+          "name": "Matt Turek",
+          "openalex_id": "A5045160586",
+          "institutions": [
+            "Defense Advanced Research Projects Agency"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-01",
+      "abstract": "Summary of Defense Advanced Research Projects Agency's (DARPA) explainable artificial intelligence (XAI) program from the program managers' and evaluator's perspective. Defense Advanced Research Projects Agency (DARPA) formulated the explainable artificial intelligence (XAI) program in 2015 with the goal to enable end users to better understand, trust, and effectively manage artificially intelligent systems. In 2017, the 4-year XAI research program began. Now, as XAI comes to an end in 2021, it is time to reflect on what succeeded, what failed, and what was learned. This article summarizes the goals, organization, and research progress of the XAI program. Dramatic success in machine learning has created an explosion of new AI capabilities. Continued advances promise to produce autonomous systems that perceive, learn, decide, and act on their own. These systems offer tremendous benefits, but their effectiveness will be limited by the machine's inability to explain its decisions and actions to human users. This issue is especially important for the United States Department of Defense (DoD), which faces challenges that require the development of more intelligent, autonomous, and reliable systems. XAI will be essential for users to understand, appropriately trust, and effectively manage this emerging generation of artificially intelligent partners. The problem of explainability is, to some extent, the result of AI's success. In the early days of AI, the predominant reasoning methods were logical and symbolic. These early systems reasoned by performing some form of logical inference on (somewhat) human readable symbols. Early systems could generate a trace of their inference steps, which could then become the basis for explanation. As a result, there was significant work on how to make these systems explainable.1-5 Yet, these early AI systems were ineffective; they proved too expensive to build and too brittle against the complexities of the real world. Success in AI came as researchers developed new machine learning techniques that could construct models of the world using their own internal representations (eg, support vectors, random forests, probabilistic models, and neural networks). These new models were much more effective, but necessarily more opaque and less explainable. The year 2015 was an inflection point in the need for XAI. Data analytics and machine learning had just experienced a decade of rapid progress.6 The deep learning revolution had just begun, following the breakthrough ImageNet demonstration in 2012.6, 7 The popular press was alive with animated speculation about Superintelligence8 and the coming AI Apocalypse.9, 10 Everyone wanted to know how to understand, trust, and manage these mysterious, seemingly inscrutable, AI systems. 2015 also saw the emergence of initial ideas for providing explainability. Some researchers were exploring deep learning techniques, such as the use of deconvolutional networks to visualize the layers of convolutional networks.11 Other researchers were pursuing techniques to learn more interpretable models, such as Bayesian Rule Lists.12 Others were developing model-agnostic techniques that could experiment with a machine learning model\u2014as a black box\u2014to infer an approximate, explainable model, such as LIME.13 Yet, others were evaluating the psychological and human-computer interaction aspects of the explanation interface.13, 14 DARPA spent a year surveying researchers, analyzing possible research strategies, and formulating the goals and structure of the program. In August 2016, DARPA released DARPA-BAA-16-53 to call for proposals. The stated goal of explainable artificial intelligence (XAI) was to create a suite of new or modified machine learning techniques that produce explainable models that, when combined with effective explanation techniques, enable end users to understand, appropriately trust, and effectively manage the emerging generation of AI systems. The target of XAI was an end user who depends on decisions or recommendations produced by an AI system, or actions taken by it, and therefore needs to understand the system's rationale. For example, an intelligence analyst who receives recommendations from a big data analytics system needs to understand why it recommended certain activity for further investigation. Similarly, an operator who tasks an autonomous system needs to understand the system's decision-making model to appropriately use it in future missions. The XAI concept was to provide users with explanations that enable them to understand the system's overall strengths and weaknesses; convey an understanding of how it will behave in future/different situations; and perhaps permit users to correct the system's mistakes. The XAI program assumed an inherent tension between machine learning performance (eg, predictive accuracy) and explainability, a concern that was consistent with the research results at the time. Often the highest performing methods (eg, deep learning) were the least explainable and the most explainable (eg, decision trees) were the least accurate. The program hoped to create a portfolio of new machine learning and explanation techniques to provide future practitioners with a wider range of design options covering the performance-explainability trade space. If an application required higher performance, the XAI portfolio would include more explainable, high-performing, deep learning techniques. If an application required more explainability, XAI would include higher performing, interpretable models. The program was organized into three major technical areas (TAs), as illustrated in Figure 1: (a) the development of new XAI machine learning and explanation techniques for generating effective explanations; (b) understanding the psychology of explanation by summarizing, extending and applying psychological theories of explanation; and (c) evaluation of the new XAI techniques in two challenge problem areas: data analytics and autonomy. The original program schedule consisted of two phases: phase 1, Technology Demonstrations (18 months); and phase 2, Comparative Evaluations (30 months). During phase 1, developers were asked to demonstrate their technology against their own test problems. During phase 2, the original plan was to have developers test their technology against one of two common problems (Figure 2) defined by the government evaluator. At the end of phase 2, the developers were expected to contribute prototype software to an open source XAI toolkit. In May 2017, XAI development began. Eleven research teams were selected to develop the Explainable Learners (TA1) and one team was selected to develop the Psychological Models of Explanation. Evaluation was provided by the Naval Research Lab. The following summarizes those developments and the final state of this work at the end of the program. An interim summary of the XAI developments at the end of 2018 is given in Gunning and Aha.15 The program anticipated that researchers would examine the training process, model representations, and, importantly, explanation interfaces. Three general approaches were envisioned for model representations. Interpretable model approaches would seek to develop ML models that were inherently more explainable and more introspectable for machine learning experts. Deep explanation approaches would leverage deep learning or hybrid deep learning approaches to produce explanations in addition to predictions. Finally, model induction techniques would create approximate explainable models from more opaque, black-box models. Explanation interfaces were expected to be a critical element of XAI, connecting a user to the model to enable them to understand and interact with the decision making process. As the research progressed, 11 XAI teams explored a number of machine learning approaches, such as tractable probabilistic models16 and causal models and explanation techniques such as state machines generated by reinforcement learning algorithms,17 Bayesian teaching,18 visual saliency maps,19-24 and network and GAN dissection.24-26 Perhaps the most challenging and most unique contributions came from the combination of machine learning and explanation techniques27 to conduct well-designed psychological experiments to evaluate explanation effectiveness.28-31 As the program progressed, we also gained a more refined understanding of the spectrum of users and development timeline (Figure 3). The program structure anticipated the need for a grounded psychological understanding of explanation. One team was selected to summarize current psychological theories of explanation to assist the XAI developers and the evaluation team. This work began with an extensive literature survey on the psychology of explanation and previous work on explainability in AI.32 Originally, this team was asked to (a) produce a summary of current theories of explanation, (b) develop a computational model of explanation from those theories, and (c) validate the computational model against the evaluation results from the XAI developers. Developing computational models proved to be a bridge too far, but the team did gain a deep understanding of the area and successfully produced descriptive models. These descriptive models were critical to supporting the effective evaluation approaches, which involved carefully designed user studies, carried out in accordance with DoD human subject research guidelines. Figure 4 illustrates a top-level descriptive model of the XAI explanation process. Evaluation was originally envisioned to be based on a common set of problems, within the data analytics and autonomy domains. However, it quickly became clear that it would be more valuable to explore a variety of approaches across a breadth of problem domains. In order to evaluate the performance in the final year of the program, the evaluation team, led by Eric Vorm, PhD, of the US Naval Research Laboratory (NRL), developed an explanation scoring system (ESS). This scoring system provided a quantitative mechanism for assessing the designs of XAI user studies in terms of technical and methodological appropriateness and robustness. The ESS enabled the assessments of multiple elements of each user study, including the task, domain, explanations, explanation interface, users, hypothesis, data collection, and analysis to ensure that each study met the high standards of human subject research. XAI evaluation measures are shown in Figure 5, and include functional measures, learning performance measures, and explanation effectiveness measures. The DARPA XAI program demonstrated definitively the importance of carefully designing user studies in order to accurately evaluate the effectiveness of explanations in ways that directly enhance appropriate use and trust by human users, and appropriately support human-machine teaming. Often times, multiple types of measures (ie, performance, functionality, and explanation effectiveness) will be necessary to evaluate the performance of an XAI algorithm. XAI user study design can be tricky and the DARPA XAI program discovered that the most effective research teams were ones that featured diverse teams with cross-disciplinary expertise (ie, computer science combined with human-computer interaction and/or experimental psychology, etc.). The XAI program explored many approaches, as shown in Table 1. Interactive debugger interface for visualizing poisoned training datasets. Work is applied on the IARPA TrojAI dataset.33 Establishing objective/quantitative criteria to assess value of explanations for ML models34 CNN-based one-shot detector, using network dissection to identify the most salient features41 Explanations produced by heat maps and text explanations42 Human-machine common ground modeling Indoor navigation with a robot (in collaboration with GA Tech) Video Q&A Human-assisted one-shot classification system by identifying the most salient features Three major evaluations were conducted during the program: one during phase 1 and two during phase 2. In order to evaluate the effectiveness of XAI techniques, researchers on the program designed and executed user studies. User studies are still the gold standard for assessing explanations. There were approximately 12 700 participants in user studies carried out by XAI researchers, including approximately 1900 supervised participants, where the individual was guided through the experiment by the research team (eg, in person or on Zoom) and 10 800 unsupervised participants, where the individual self-guided through the experiment and was not actively guided by the research team (eg, Amazon Mechanical Turk). In accordance with policy for all US DoD funded human subjects research, each research protocol was reviewed by a local Institutional Review Board (IRB) and then a DoD human research protection office reviewed the protocol and the local IRB findings. As mentioned earlier, there seemed to be a natural tension between learning performance and explainability. However, throughout the course of the program, we found evidence that explainability can improve performance. From an intuitive perspective, training a system to produce explanations provides additional supervision, via additional loss functions, training data, or other mechanisms, that encourages a system to learn more effective representations of the world. While this may not be true in all cases and significant work remains to characterize when explainable techniques will be more performant, it provides hope that future XAI systems can be more performant than current systems while meeting user needs for explanations. There currently is no universal solution to XAI. As discussed earlier, different user types require different types of explanations. This is no different from what we face interacting with other humans. Consider, for example, a doctor needing to explain a diagnosis to a fellow doctor, a patient, or a medical review board. Perhaps future XAI systems will be able to automatically calibrate and communicate explanations to a specific user within a large range of user types, but that is still significantly beyond the current state of the art. One of the challenges in developing XAI is measuring the effectiveness of an explanation. DARPA's XAI effort has helped develop foundational technology in this area, but much more needs to be done, including drawing more from the human factors and psychology communities. Measures of explanation effectiveness need to be well established, well understood, and easily implemented by the developer community in order for effective explanations to become a core capability of ML systems. UC Berkeley's result21 demonstrating that advisability, the ability for an AI system to take advice from a user, improves user trust beyond explanations is intriguing. Certainly, users will likely prefer systems where they can quickly correct the behavior of a system in the same ways that humans can provide feedback to each other. Such advisable AI systems that can both produce and consume explanations will be key to enabling closer collaborations between humans and AI systems. Close collaboration is required across multiple disciplines including computer science, machine learning, artificial intelligence, human factors, and psychology, among others, in order to effectively develop XAI techniques. This can be particularly challenging, as researchers tend to focus on a single domain and often need to be pushed to work across domains. Perhaps in the future a XAI-specific research discipline will be created at the intersection of multiple current disciplines. Toward this end, we have worked to create an XAI Toolkit, which collects the various program artifacts (eg, code, papers, reports, etc.) and lessons learned from the 4-year DARPA XAI program into a central, publicly accessible location (https://xaitk.org/).48 We believe the toolkit will be of broad interest to anyone who deploys AI capabilities in operational settings and needs to validate, characterize, and trust AI performance across a wide range of real-world conditions and application areas. Today, we have a more nuanced, less dramatic, and, perhaps, more accurate understanding of AI than we had in 2015. We certainly have a more accurate understanding of the possibilities and the limitations of deep learning. The AI apocalypse has faded from an imminent danger to a distant curiosity. Similarly, the XAI program has produced a more nuanced, less dramatic, and, perhaps, more accurate understanding of XAI. The program certainly acted as a catalyst to stimulate XAI research (both inside and outside of the program). The results have produced a more nuanced understanding of XAI uses and users, the psychology of XAI, the challenges of measuring explanation effectiveness, as well as producing a new portfolio of XAI ML and HCI techniques. There is certainly more work to be done, especially as new AI techniques are developed that will continue to need explanation. XAI will continue as an active research area for some time. The authors believe that the XAI program has made a significant contribution by providing the foundation to launch that endeavor. David Gunning (now retired) is a three-time DARPA program manager, who created and managed the XAI program from its inception in 2016 to its mid-point in 2019. His portfolio of DARPA research programs made significant contributions to the development of AI over the past 25 years. He led the Personalized Assistant that Learns (PAL) program, which produced the technologies behind Apple's Siri. His Command Post of the Future (CPoF) program was later adopted by the US Army as their Command and Control system for use during the Iraq and Afghanistan conflicts. Between DARPA tours, David served in senior positions at Facebook AI, Palo Alto Research Center, Vulcan Inc, Cycorp and co-founded SET Corp. Eric Vorm, PhD, is a cognitive systems engineer and serves as the Deputy Director for the Laboratory for Autonomous Systems Research at the US Naval Research Laboratory in Washington, DC. Dr Vorm led the evaluation team for the DARPA Explainable AI program, and led the development of the first comprehensive criteria for the evaluation of explanations generated by machine learning. Dr Vorm's research focuses on the design of intelligent systems to achieve ideal human-machine teaming, with special emphasis on the role of transparency and explainability in supporting appropriate trust, safety, and reliability in high-risk, time-sensitive operational domains. Jennifer Yunyan Wang, PhD, is a computational neuroscientist with a special focus on AI. As Systems, Engineering and technical Assistance (SETA) contractor to DARPA, she provided technical support and expertise to several programs including XAI, L2M, GARD, and AIE RED. After finishing postdoctoral fellowships in experimental neuroscience at Johns Hopkins University and the Food and Drug Administration, Jennifer joined Quantitative Scientific Solutions in 2018 as a consultant for government R&D and think tanks including IARPA and Center for Security and Emerging Technology. Matt Turek, PhD, joined DARPA's Information Innovation Office (I2O) as a program manager in July 2018 and took over as program manager of the XAI program in 2019. His portfolio also includes the Media Forensics (MediFor), Semantic Forensics (SemaFor), and Machine Common Sense (MCS) programs, as well as the Reverse Engineering of Deceptions (RED) AI Exploration. His research interests include computer vision, machine learning, artificial intelligence, and their application to problems with significant societal impact. Prior to his position at DARPA, Turek led a team at Kitware Inc developing computer vision technologies including large scale behavior recognition and modeling, object detection and tracking, activity recognition, normalcy modeling, and anomaly detection. Data sharing is not applicable to this article as no new data were created or analyzed in this editorial.",
+      "cited_by_count": 140,
+      "type": "article",
+      "source": {
+        "name": "Applied AI Letters",
+        "type": "journal",
+        "issn": [
+          "2689-5595"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ail2.61"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "AI-based Problem Solving and Planning"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W4200580215"
+    },
+    {
+      "openalex_id": "W4286681343",
+      "doi": "10.1007/s13369-022-06697-6",
+      "title": "Prediction of the Seismic Effect on Liquefaction Behavior of Fine-Grained Soils Using Artificial Intelligence-Based Hybridized Modeling",
+      "authors": [
+        {
+          "name": "Sufyan Ghani",
+          "openalex_id": "A5000004127",
+          "orcid": "https://orcid.org/0000-0003-1361-0126",
+          "institutions": [
+            "National Institute of Technology Patna"
+          ]
+        },
+        {
+          "name": "Sunita Kumari",
+          "openalex_id": "A5100703038",
+          "orcid": "https://orcid.org/0000-0002-4446-673X",
+          "institutions": [
+            "National Institute of Technology Patna"
+          ]
+        },
+        {
+          "name": "Shamsad Ahmad",
+          "openalex_id": "A5057612065",
+          "orcid": "https://orcid.org/0000-0001-7939-7319",
+          "institutions": [
+            "King Fahd University of Petroleum and Minerals"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-23",
+      "abstract": null,
+      "cited_by_count": 58,
+      "type": "article",
+      "source": {
+        "name": "Arabian Journal for Science and Engineering",
+        "type": "journal",
+        "issn": [
+          "2191-4281",
+          "2193-567X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Geotechnical Engineering and Soil Mechanics",
+        "Geotechnical Engineering and Underground Structures",
+        "Geotechnical Engineering and Soil Stabilization"
+      ],
+      "referenced_works_count": 74,
+      "url": "https://openalex.org/W4286681343"
+    },
+    {
+      "openalex_id": "W3028574179",
+      "doi": "10.5451/unibas-ep76669",
+      "title": "AI in the Courtroom: A Comparative Analysis of Machine Evidence in Criminal Trials",
+      "authors": [
+        {
+          "name": "Sabine Gle\u00df",
+          "openalex_id": "A5012557810",
+          "orcid": "https://orcid.org/0009-0003-4115-3898",
+          "institutions": [
+            "University of Basel"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "As artificial intelligence (AI) has become more commonplace, the monitoring of human behavior by machines and software bots has created so-called machine evidence. This new type of evidence poses procedural challenges in criminal justice systems across the world due to the fact that they have traditionally been tailored for human testimony. \r\n\r\nThis article\u2019s focus is on information proffered as evidence in criminal trials which has been generated by AI-driven systems that observe and evaluate the behavior of human users to predict future behavior in an attempt to enhance safety. A poignant example of this type of evidence stemming from data generated by a consumer product is automated driving, where driving assistants as safety features, observe and evaluate a driver\u2019s ability to retake control of a vehicle where necessary. In Europe, for instance, new intelligent devices, including drowsiness detection and distraction warning systems, will become mandatory in new cars beginning in 2022. In the event that human-machine interactions cause harm (e.g., an accident involving an automated vehicle), there is likely to be a plethora of machine evidence, or data generated by AI-driven systems, potentially available for use in a criminal trial.\r\n\r\nIt is not yet clear if and how this the data can be used as evidence in criminal fact-finding, and adversarial and inquisitorial systems approach this issue very differently. Adversarial proceedings have the advantage of partisan vetting, which gives both sides the opportunity to challenge consumer products offered as witnesses. By contrast, inquisitorial systems have specific mechanisms in place to introduce expert evidence recorded out-side the courtroom, including to establish facts, which will be necessary to thoroughly test AI.\r\n\r\nUsing the German and the U.S. federal systems as examples, this Article highlights the challenges posed by machine evidence in criminal proceedings. The primary area of comparison is the maintenance of trust in fact-finding as the law evolves to accommodate the use of machine evidence. This comparative perspective illustrates the enigma of AI in the courtroom and foreshadows what will become inevitable problems in the not-too-distant future. The Article con-cludes that, at present, criminal justice systems are not sufficiently equipped to deal with the novel and varied types of information generated by embedded AI in consumer products. It is suggested that we merge the adversarial system\u2019s tools for bipartisan vetting of evidence with the inquisitorial system\u2019s inclusion of out-of-court statements under specific conditions to establish adequate means of testing machine evidence.",
+      "cited_by_count": 27,
+      "type": "article",
+      "source": {
+        "name": "edoc (University of Basel)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://edoc.unibas.ch/76669/1/20200519120632_5ec3afa857619.pdf"
+      },
+      "topics": [
+        "Criminal Law and Policy",
+        "Criminal Law and Evidence",
+        "Digitalization, Law, and Regulation"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3028574179"
+    },
+    {
+      "openalex_id": "W4391893984",
+      "doi": "10.52783/pst.196",
+      "title": "Enhancing Human-Robot Collaboration in Industry 4.0 with AI-driven HRI",
+      "authors": [
+        {
+          "name": "Naveen Vemuri Naveen Vemuri",
+          "openalex_id": "A5093893081"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-31",
+      "abstract": "Human-robot interaction (HRI) is an important consideration in mechatronic design to ensure safe and intuitive operation of robotic systems. With advancements in artificial intelligence (AI), new opportunities have emerged to enhance HRI through learned models that can adapt to human behavior and preferences. This paper provides a comprehensive review of techniques to integrate AI into HRI for mechatronic systems. An overview is first provided of challenges and objectives in integrating intelligence into robotics for effective HRI. Modern approaches utilizing neural networks, reinforcement learning, and graph neural networks are then discussed for robotic perception, decision-making, motion control, and interaction adaptation. Additionally, hybrid approaches combining rule-based methods with learned models are highlighted. Guidelines are provided for collecting human interaction data, evaluating integrated system performance, and considering adjustability, explainability, and safety. Multiple tables summarize key studies on AI-enhanced user interfaces, interactive task learning, socially aware navigation, bio-inspired sensorimotor control, and personalized robots. Finally, open issues and future outlook are discussed. This paper aims to support mechatronic designers through an structured analysis of the emerging field of intelligent HRI with insights into current best practices for integration.",
+      "cited_by_count": 28,
+      "type": "article",
+      "source": {
+        "name": "Power System Technology",
+        "type": "journal",
+        "issn": [
+          "1000-3673"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://powertechjournal.com/index.php/journal/article/download/196/169"
+      },
+      "topics": [
+        "Digital Transformation in Industry"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W4391893984"
+    },
+    {
+      "openalex_id": "W3108106255",
+      "doi": "10.1136/bjsports-2020-102955",
+      "title": "World Health Organization 2020 guidelines on physical activity and sedentary behaviour",
+      "authors": [
+        {
+          "name": "Fiona Bull",
+          "openalex_id": "A5073165795",
+          "orcid": "https://orcid.org/0000-0001-8035-4973",
+          "institutions": [
+            "University of Western Australia",
+            "World Health Organization"
+          ]
+        },
+        {
+          "name": "Salih S Al-Ansari",
+          "openalex_id": "A5048783497"
+        },
+        {
+          "name": "Stuart Biddle",
+          "openalex_id": "A5065671742",
+          "orcid": "https://orcid.org/0000-0002-7663-6895",
+          "institutions": [
+            "University of Southern Queensland"
+          ]
+        },
+        {
+          "name": "Katja Borodulin",
+          "openalex_id": "A5006751301",
+          "orcid": "https://orcid.org/0000-0001-9529-2592",
+          "institutions": [
+            "Age Institute",
+            "Finnish Institute for Health and Welfare"
+          ]
+        },
+        {
+          "name": "Matthew P. Buman",
+          "openalex_id": "A5000559212",
+          "orcid": "https://orcid.org/0000-0002-5130-3162",
+          "institutions": [
+            "Arizona State University"
+          ]
+        },
+        {
+          "name": "Greet Cardon",
+          "openalex_id": "A5058608849",
+          "orcid": "https://orcid.org/0000-0003-4983-6557",
+          "institutions": [
+            "Ghent University"
+          ]
+        },
+        {
+          "name": "Catherine Carty",
+          "openalex_id": "A5062301755",
+          "orcid": "https://orcid.org/0000-0003-4995-7359",
+          "institutions": [
+            "University Hospital Kerry",
+            "Munster Technological University"
+          ]
+        },
+        {
+          "name": "Jean\u2010Philippe Chaput",
+          "openalex_id": "A5040084323",
+          "orcid": "https://orcid.org/0000-0002-5607-5736",
+          "institutions": [
+            "Children's Hospital of Eastern Ontario",
+            "University of Ottawa"
+          ]
+        },
+        {
+          "name": "S\u00e9bastien Chastin",
+          "openalex_id": "A5015840397",
+          "orcid": "https://orcid.org/0000-0003-1421-9348",
+          "institutions": [
+            "Glasgow Caledonian University"
+          ]
+        },
+        {
+          "name": "Roger Chou",
+          "openalex_id": "A5070442023",
+          "orcid": "https://orcid.org/0000-0001-9889-8610",
+          "institutions": [
+            "Oregon Health & Science University"
+          ]
+        },
+        {
+          "name": "Paddy C. Dempsey",
+          "openalex_id": "A5084591261",
+          "orcid": "https://orcid.org/0000-0002-1714-6087",
+          "institutions": [
+            "University of Cambridge",
+            "MRC Epidemiology Unit",
+            "Leicester General Hospital",
+            "University of Leicester",
+            "Baker Heart and Diabetes Institute"
+          ]
+        },
+        {
+          "name": "Loretta DiPietro",
+          "openalex_id": "A5038558566",
+          "orcid": "https://orcid.org/0000-0002-3064-3977",
+          "institutions": [
+            "Milken Institute",
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "Ulf Ekelund",
+          "openalex_id": "A5064338533",
+          "orcid": "https://orcid.org/0000-0003-2115-9267",
+          "institutions": [
+            "Norwegian School of Sport Sciences",
+            "Norwegian Institute of Public Health"
+          ]
+        },
+        {
+          "name": "Joseph Firth",
+          "openalex_id": "A5023196820",
+          "orcid": "https://orcid.org/0000-0002-0618-2752",
+          "institutions": [
+            "University of Manchester",
+            "Western Sydney University"
+          ]
+        },
+        {
+          "name": "Christine M. Friedenreich",
+          "openalex_id": "A5005685476",
+          "orcid": "https://orcid.org/0000-0002-4783-1966",
+          "institutions": [
+            "Alberta Health Services"
+          ]
+        },
+        {
+          "name": "Leandro Garc\u00eda",
+          "openalex_id": "A5017497815",
+          "orcid": "https://orcid.org/0000-0001-5947-2617",
+          "institutions": [
+            "Queen's University Belfast"
+          ]
+        },
+        {
+          "name": "Muthoni Gichu",
+          "openalex_id": "A5026474669",
+          "orcid": "https://orcid.org/0000-0003-2048-7111",
+          "institutions": [
+            "Ministry of Health"
+          ]
+        },
+        {
+          "name": "Russell Jago",
+          "openalex_id": "A5058771456",
+          "orcid": "https://orcid.org/0000-0002-3394-0176",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Peter T. Katzmarzyk",
+          "openalex_id": "A5068517389",
+          "orcid": "https://orcid.org/0000-0002-9280-6022",
+          "institutions": [
+            "Pennington Biomedical Research Center"
+          ]
+        },
+        {
+          "name": "Estelle V. Lambert",
+          "openalex_id": "A5032754292",
+          "orcid": "https://orcid.org/0000-0003-4315-9153",
+          "institutions": [
+            "University of Cape Town"
+          ]
+        },
+        {
+          "name": "Michael F. Leitzmann",
+          "openalex_id": "A5034156847",
+          "orcid": "https://orcid.org/0000-0002-0371-2789",
+          "institutions": [
+            "University of Regensburg"
+          ]
+        },
+        {
+          "name": "Karen Milton",
+          "openalex_id": "A5025427086",
+          "orcid": "https://orcid.org/0000-0002-0506-2214",
+          "institutions": [
+            "University of East Anglia"
+          ]
+        },
+        {
+          "name": "Francisco B. Ortega",
+          "openalex_id": "A5055339668",
+          "orcid": "https://orcid.org/0000-0003-2001-1121",
+          "institutions": [
+            "Universidad de Granada"
+          ]
+        },
+        {
+          "name": "Chathuranga Ranasinghe",
+          "openalex_id": "A5000440227",
+          "orcid": "https://orcid.org/0000-0002-5874-4331",
+          "institutions": [
+            "University of Colombo"
+          ]
+        },
+        {
+          "name": "Emmanuel Stamatakis",
+          "openalex_id": "A5034717510",
+          "orcid": "https://orcid.org/0000-0001-7323-3225",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Anne Tiedemann",
+          "openalex_id": "A5049315940",
+          "orcid": "https://orcid.org/0000-0003-4076-2870",
+          "institutions": [
+            "University of Sydney",
+            "Institute for Musculoskeletal Health"
+          ]
+        },
+        {
+          "name": "Richard P. Troiano",
+          "openalex_id": "A5037381371",
+          "orcid": "https://orcid.org/0000-0002-6807-989X",
+          "institutions": [
+            "National Cancer Institute"
+          ]
+        },
+        {
+          "name": "Hidde P. van der Ploeg",
+          "openalex_id": "A5061705216",
+          "orcid": "https://orcid.org/0000-0002-3719-5249",
+          "institutions": [
+            "Vrije Universiteit Amsterdam",
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Vicky Wari",
+          "openalex_id": "A5072407021",
+          "institutions": [
+            "National Department of Health"
+          ]
+        },
+        {
+          "name": "Juana Willumsen",
+          "openalex_id": "A5052647226",
+          "orcid": "https://orcid.org/0000-0001-5067-6453",
+          "institutions": [
+            "World Health Organization"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-25",
+      "abstract": "Objectives To describe new WHO 2020 guidelines on physical activity and sedentary behaviour. Methods The guidelines were developed in accordance with WHO protocols. An expert Guideline Development Group reviewed evidence to assess associations between physical activity and sedentary behaviour for an agreed set of health outcomes and population groups. The assessment used and systematically updated recent relevant systematic reviews; new primary reviews addressed additional health outcomes or subpopulations. Results The new guidelines address children, adolescents, adults, older adults and include new specific recommendations for pregnant and postpartum women and people living with chronic conditions or disability. All adults should undertake 150\u2013300 min of moderate-intensity, or 75\u2013150 min of vigorous-intensity physical activity, or some equivalent combination of moderate-intensity and vigorous-intensity aerobic physical activity, per week. Among children and adolescents, an average of 60 min/day of moderate-to-vigorous intensity aerobic physical activity across the week provides health benefits. The guidelines recommend regular muscle-strengthening activity for all age groups. Additionally, reducing sedentary behaviours is recommended across all age groups and abilities, although evidence was insufficient to quantify a sedentary behaviour threshold. Conclusion These 2020 WHO guidelines update previous WHO recommendations released in 2010. They reaffirm messages that some physical activity is better than none, that more physical activity is better for optimal health outcomes and provide a new recommendation on reducing sedentary behaviours. These guidelines highlight the importance of regularly undertaking both aerobic and muscle strengthening activities and for the first time, there are specific recommendations for specific populations including for pregnant and postpartum women and people living with chronic conditions or disability. These guidelines should be used to inform national health policies aligned with the WHO Global Action Plan on Physical Activity 2018\u20132030 and to strengthen surveillance systems that track progress towards national and global targets.",
+      "cited_by_count": 9631,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Sports Medicine",
+        "type": "journal",
+        "issn": [
+          "0306-3674",
+          "1473-0480"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://bjsm.bmj.com/content/bjsports/54/24/1451.full.pdf"
+      },
+      "topics": [
+        "Physical Activity and Health",
+        "Obesity, Physical Activity, Diet",
+        "Mobile Health and mHealth Applications"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W3108106255"
+    },
+    {
+      "openalex_id": "W4312219301",
+      "doi": "10.1109/jas.2022.106049",
+      "title": "Probabilistic Lane-Change Decision-Making and Planning for Autonomous Heavy Vehicles",
+      "authors": [
+        {
+          "name": "Wen Hu",
+          "openalex_id": "A5060577794",
+          "orcid": "https://orcid.org/0000-0002-4108-6002",
+          "institutions": [
+            "Hunan University"
+          ]
+        },
+        {
+          "name": "Zejian Deng",
+          "openalex_id": "A5024182112",
+          "orcid": "https://orcid.org/0000-0002-2765-3162",
+          "institutions": [
+            "University of Waterloo"
+          ]
+        },
+        {
+          "name": "Dongpu Cao",
+          "openalex_id": "A5031991761",
+          "orcid": "https://orcid.org/0000-0001-7929-4336",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Bangji Zhang",
+          "openalex_id": "A5042059632",
+          "orcid": "https://orcid.org/0000-0003-0523-6955",
+          "institutions": [
+            "Hunan University"
+          ]
+        },
+        {
+          "name": "Amir Khajepour",
+          "openalex_id": "A5020470831",
+          "orcid": "https://orcid.org/0000-0002-1998-6100",
+          "institutions": [
+            "University of Waterloo"
+          ]
+        },
+        {
+          "name": "Lei Zeng",
+          "openalex_id": "A5078908577",
+          "institutions": [
+            "Hunan University"
+          ]
+        },
+        {
+          "name": "Yang Wu",
+          "openalex_id": "A5087548052",
+          "orcid": "https://orcid.org/0000-0002-0258-4842",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-01",
+      "abstract": "To improve the safety and driving stability of the autonomous heavy truck, it is necessary to consider the differences of driving behavior and drivable trajectories between the heavy trucks and passenger cars. This study proposes a probabilistic decision-making and trajectory planning framework for the autonomous heavy trucks. Firstly, the driving decision process is divided into intention generation and feasibility evaluations, which are realized using the utility theory and risk assessment, respectively. Subsequently the driving decision is made and sent to the trajectory planning module. In order to reflect the greater risks of the truck to other surrounding vehicles, the aggressiveness index (AI) is proposed and quantified to infer the asymmetrical risk level of lane-change maneuver. In the planning stage, the lateral and roll dynamics stability domains are developed as the constraints to exclude the candidate trajectories that would cause vehicle instability. Finally, the simulation results are compared between the proposed model and the artificial potential filed model in the scenarios extracted from the naturalistic driving data. It is shown that the proposed framework can provide the human-like lane-change decisions and truck-friendly trajectories, and performs well in dynamic driving environments.",
+      "cited_by_count": 45,
+      "type": "article",
+      "source": {
+        "name": "IEEE/CAA Journal of Automatica Sinica",
+        "type": "journal",
+        "issn": [
+          "2329-9266",
+          "2329-9274"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Autonomous Vehicle Technology and Safety",
+        "Traffic control and management",
+        "Traffic and Road Safety"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W4312219301"
+    },
+    {
+      "openalex_id": "W4308424294",
+      "doi": "10.3389/frai.2022.1034631",
+      "title": "Adaptability of AI for safety evaluation in regulatory science: A case study of drug-induced liver injury",
+      "authors": [
+        {
+          "name": "Skylar Connor",
+          "openalex_id": "A5089604233",
+          "orcid": "https://orcid.org/0000-0002-3347-9180",
+          "institutions": [
+            "United States Food and Drug Administration",
+            "National Center for Toxicological Research"
+          ]
+        },
+        {
+          "name": "Ting Li",
+          "openalex_id": "A5100416903",
+          "orcid": "https://orcid.org/0000-0003-2280-8433",
+          "institutions": [
+            "United States Food and Drug Administration",
+            "National Center for Toxicological Research"
+          ]
+        },
+        {
+          "name": "Ruth Roberts",
+          "openalex_id": "A5046722857",
+          "orcid": "https://orcid.org/0000-0002-7763-7558",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Shraddha Thakkar",
+          "openalex_id": "A5070704034",
+          "orcid": "https://orcid.org/0000-0002-2920-7713",
+          "institutions": [
+            "United States Food and Drug Administration",
+            "Center for Drug Evaluation and Research"
+          ]
+        },
+        {
+          "name": "Zhichao Liu",
+          "openalex_id": "A5100459796",
+          "orcid": "https://orcid.org/0000-0001-8102-2399",
+          "institutions": [
+            "National Center for Toxicological Research",
+            "United States Food and Drug Administration"
+          ]
+        },
+        {
+          "name": "Weida Tong",
+          "openalex_id": "A5068886380",
+          "orcid": "https://orcid.org/0000-0003-3488-6148",
+          "institutions": [
+            "National Center for Toxicological Research",
+            "United States Food and Drug Administration"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-08",
+      "abstract": "Artificial intelligence (AI) has played a crucial role in advancing biomedical sciences but has yet to have the impact it merits in regulatory science. As the field advances, in silico and in vitro approaches have been evaluated as alternatives to animal studies, in a drive to identify and mitigate safety concerns earlier in the drug development process. Although many AI tools are available, their acceptance in regulatory decision-making for drug efficacy and safety evaluation is still a challenge. It is a common perception that an AI model improves with more data, but does reality reflect this perception in drug safety assessments? Importantly, a model aiming at regulatory application needs to take a broad range of model characteristics into consideration. Among them is adaptability, defined as the adaptive behavior of a model as it is retrained on unseen data. This is an important model characteristic which should be considered in regulatory applications. In this study, we set up a comprehensive study to assess adaptability in AI by mimicking the real-world scenario of the annual addition of new drugs to the market, using a model we previously developed known as DeepDILI for predicting drug-induced liver injury (DILI) with a novel Deep Learning method. We found that the target test set plays a major role in assessing the adaptive behavior of our model. Our findings also indicated that adding more drugs to the training set does not significantly affect the predictive performance of our adaptive model. We concluded that the proposed adaptability assessment framework has utility in the evaluation of the performance of a model over time.",
+      "cited_by_count": 15,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "2624-8212"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.3389/frai.2022.1034631"
+      },
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Statistical Methods in Clinical Trials",
+        "Animal testing and alternatives"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W4308424294"
+    },
+    {
+      "openalex_id": "W4393943518",
+      "doi": "10.1177/07356331241240460",
+      "title": "Toward Artificial Intelligence-Human Paired Programming: A Review of the Educational Applications and Research on Artificial Intelligence Code-Generation Tools",
+      "authors": [
+        {
+          "name": "Jiangyue Liu",
+          "openalex_id": "A5012354705",
+          "orcid": "https://orcid.org/0000-0002-9755-2391",
+          "institutions": [
+            "Soochow University"
+          ]
+        },
+        {
+          "name": "Siran Li",
+          "openalex_id": "A5016456655",
+          "orcid": "https://orcid.org/0000-0002-1511-8189",
+          "institutions": [
+            "Soochow University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-04",
+      "abstract": "Pair Programming is considered an effective approach to programming education, but the synchronous collaboration of two programmers involves complex coordination, making this method difficult to be widely adopted in educational settings. Artificial Intelligence (AI) code-generation tools have outstanding capabilities in program generation and natural language understanding, creating conducive conditions for pairing with humans in programming. Now some more mature tools are gradually being implemented. This review summarizes the current status of educational applications and research on AI-assisted programming technology. Through thematic coding of literature, existing research focuses on five aspects: underlying technology and tool introduction, performance evaluation, the potential impacts and coping strategies, exploration of behavioral patterns in technological application, and ethical and safety issues. A systematic analysis of current literature provides the following insights for future academic research related to the practice of \u201chuman-machine pairing\u201d in programming: (1) Affirming the value of AI code-generation tools while also clearly defining their technical limitations and ethical risks; (2) Developing adaptive teaching ecosystems and educational models, conducting comprehensive empirical research to explore the efficiency mechanisms of AI-human paired programming; (3) Further enriching the application of research methods by integrating speculative research with empirical research, combining traditional methods with emerging technologies.",
+      "cited_by_count": 24,
+      "type": "review",
+      "source": {
+        "name": "Journal of Educational Computing Research",
+        "type": "journal",
+        "issn": [
+          "0735-6331",
+          "1541-4140"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Software Engineering Techniques and Practices",
+        "Teaching and Learning Programming",
+        "Software Engineering Research"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W4393943518"
+    },
+    {
+      "openalex_id": "W4389959972",
+      "doi": "10.58496/bjiot/2023/005",
+      "title": "Safeguarding Connected Health: Leveraging Trustworthy AI Techniques to Harden Intrusion Detection Systems Against Data Poisoning Threats in IoMT Environments",
+      "authors": [
+        {
+          "name": "Mohammad Aljanabi",
+          "openalex_id": "A5070605303",
+          "orcid": "https://orcid.org/0000-0002-6374-3560",
+          "institutions": [
+            "Iraqi University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-17",
+      "abstract": "Internet of Medical Things (IoMT) environments introduce vast security exposures including vulnerabilities to data poisoning threats that undermine integrity of automated patient health analytics like diagnosis models. This research explores applying trustworthy artificial intelligence (AI) methodologies including explainability, bias mitigation, and adversarial sample detection to substantially enhance resilience of medical intrusion detection systems. We architect an integrated anomaly detector featuring purpose-built modules for model interpretability, bias quantification, and advanced malicious input recognition alongside conventional classifier pipelines. Additional infrastructure provides full-lifecycle accountability via independent auditing. Our experimental intrusion detection system design embodying multiple trustworthy AI principles is rigorously evaluated against staged electronic record poisoning attacks emulating realistic threats to healthcare IoMT ecosystems spanning wearables, edge devices, and hospital information systems. Results demonstrate significantly strengthened threat response capabilities versus baseline detectors lacking safeguards. Explainability mechanisms build justified trust in model behaviors by surfacing rationale for each prediction to human operators. Continuous bias tracking enables preemptively identifying and mitigating unfair performance gaps before they widen into operational exposures over time. SafeML classifiers reliably detect even camouflaged data manipulation attempts with 97% accuracy. Together the integrated modules restore classification performance to baseline levels even when overwhelmed with 30% contaminated data across all samples. Findings strongly motivate prioritizing adoption of ethical ML practices to fulfill duty of care around patient safety and data integrity as algorithmic capabilities advance.",
+      "cited_by_count": 27,
+      "type": "article",
+      "source": {
+        "name": "Babylonian Journal of Internet of Things",
+        "type": "journal",
+        "issn": [
+          "3006-1083"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://mesopotamian.press/journals/index.php/BJIoT/article/download/200/200"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Artificial Intelligence in Healthcare and Education",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W4389959972"
+    },
+    {
+      "openalex_id": "W4389252481",
+      "doi": "10.1109/tim.2023.3338722",
+      "title": "A Comprehensive Review of Recent Advances in Automated Guided Vehicle Technologies: Dynamic Obstacle Avoidance in Complex Environment Toward Autonomous Capability",
+      "authors": [
+        {
+          "name": "Muhammad Aizat",
+          "openalex_id": "A5110967647",
+          "institutions": [
+            "Universiti Sains Malaysia"
+          ]
+        },
+        {
+          "name": "Nurakasyah Qistina",
+          "openalex_id": "A5093400775",
+          "institutions": [
+            "Universiti Sains Malaysia"
+          ]
+        },
+        {
+          "name": "Wan Rahiman",
+          "openalex_id": "A5051196219",
+          "orcid": "https://orcid.org/0000-0003-1662-7484",
+          "institutions": [
+            "Universiti Sains Malaysia",
+            "Daffodil International University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-01",
+      "abstract": "Automated guided vehicles (AGVs) have recently acquired a lot of interest in the academic research field and industry applications due to a variety of advantages, including increased mobility and improved safety. AGVs are designed to maneuver following a predetermined path; however, if the path is blocked, how can the AGV avoid or pass through it by selecting the new path with the safest behavior? This article discovered a number of recent advanced methods that are widely employed in AGV operation with the aim of avoiding dynamic obstacles and being able to function in a complex environment. The most recent techniques for obstacle avoidance utilized with AGV have been evaluated in scholarly research that has been published in the last five years. In doing so, this review responds to three related questions: are the fundamental approaches for avoiding obstacles in AGV robot systems still applicable? 2) which is the most recent sensor technology used by the AGV robot to sense its surroundings? and 3) does the artificial intelligence (AI) method improve the AGV robot's ability to make decisions and function autonomously? As a result, various fundamental and recent advances in methods are covered. This study is done to make it easier for researchers or engineers to comprehend and conduct more research.",
+      "cited_by_count": 36,
+      "type": "review",
+      "source": {
+        "name": "IEEE Transactions on Instrumentation and Measurement",
+        "type": "journal",
+        "issn": [
+          "0018-9456",
+          "1557-9662"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Robotic Path Planning Algorithms",
+        "Advanced Manufacturing and Logistics Optimization",
+        "Transportation and Mobility Innovations"
+      ],
+      "referenced_works_count": 158,
+      "url": "https://openalex.org/W4389252481"
+    },
+    {
+      "openalex_id": "W4367302251",
+      "doi": "10.1007/s13132-023-01391-w",
+      "title": "RETRACTED ARTICLE: Consumer Consumption Behavioral Model for Business Intelligence Using Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Chenxi Wang",
+          "openalex_id": "A5100334381",
+          "orcid": "https://orcid.org/0009-0001-5280-0961",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Yuanming Liu",
+          "openalex_id": "A5062043883",
+          "orcid": "https://orcid.org/0000-0001-7541-6009",
+          "institutions": [
+            "Huazhong Agricultural University"
+          ]
+        },
+        {
+          "name": "Hao Zhou",
+          "openalex_id": "A5044927398",
+          "orcid": "https://orcid.org/0000-0002-2546-5360",
+          "institutions": [
+            "Hubei University",
+            "Wuhan Business University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-28",
+      "abstract": null,
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Knowledge Economy",
+        "type": "journal",
+        "issn": [
+          "1868-7865",
+          "1868-7873"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "AI in Service Interactions",
+        "Smart Systems and Machine Learning"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W4367302251"
+    },
+    {
+      "openalex_id": "W4386958277",
+      "doi": "10.1186/s12909-023-04698-z",
+      "title": "Revolutionizing healthcare: the role of artificial intelligence in clinical practice",
+      "authors": [
+        {
+          "name": "Shuroug A. Alowais",
+          "openalex_id": "A5005352524",
+          "orcid": "https://orcid.org/0000-0002-3266-5774"
+        },
+        {
+          "name": "Sahar S. Alghamdi",
+          "openalex_id": "A5050298886",
+          "orcid": "https://orcid.org/0000-0002-2770-218X",
+          "institutions": [
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Nada Alsuhebany",
+          "openalex_id": "A5081991977",
+          "orcid": "https://orcid.org/0000-0003-4077-4521",
+          "institutions": [
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City",
+            "King Abdullah International Medical Research Center"
+          ]
+        },
+        {
+          "name": "Tariq Alqahtani",
+          "openalex_id": "A5066001851",
+          "orcid": "https://orcid.org/0009-0007-1094-6835",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City",
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences"
+          ]
+        },
+        {
+          "name": "Abdulrahman Alshaya",
+          "openalex_id": "A5020760203",
+          "orcid": "https://orcid.org/0000-0002-5262-5841",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Sumaya N. Almohareb",
+          "openalex_id": "A5084394960",
+          "orcid": "https://orcid.org/0000-0003-3392-8369",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City",
+            "King Abdullah International Medical Research Center"
+          ]
+        },
+        {
+          "name": "Atheer Aldairem",
+          "openalex_id": "A5086178563",
+          "orcid": "https://orcid.org/0009-0001-0924-4672",
+          "institutions": [
+            "King Abdullah International Medical Research Center",
+            "National Guard Health Affairs",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Mohammed Alrashed",
+          "openalex_id": "A5069678285",
+          "orcid": "https://orcid.org/0000-0002-5203-8962",
+          "institutions": [
+            "King Abdullah International Medical Research Center",
+            "National Guard Health Affairs",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Khalid Bin Saleh",
+          "openalex_id": "A5112910027",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City",
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences"
+          ]
+        },
+        {
+          "name": "Hisham A. Badreldin",
+          "openalex_id": "A5088912799",
+          "orcid": "https://orcid.org/0000-0001-7182-4347",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Abdulaziz Medical City",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdullah International Medical Research Center"
+          ]
+        },
+        {
+          "name": "Majed S. Al Yami",
+          "openalex_id": "A5005774540",
+          "orcid": "https://orcid.org/0000-0003-2308-8407",
+          "institutions": [
+            "National Guard Health Affairs",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdullah International Medical Research Center",
+            "King Abdulaziz Medical City"
+          ]
+        },
+        {
+          "name": "Shmeylan Al Harbi",
+          "openalex_id": "A5017442221",
+          "orcid": "https://orcid.org/0000-0003-4437-8761",
+          "institutions": [
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdullah International Medical Research Center",
+            "King Abdulaziz Medical City",
+            "National Guard Health Affairs"
+          ]
+        },
+        {
+          "name": "Abdulkareem Albekairy",
+          "openalex_id": "A5103246868",
+          "orcid": "https://orcid.org/0000-0002-0205-6484",
+          "institutions": [
+            "King Abdullah International Medical Research Center",
+            "King Saud bin Abdulaziz University for Health Sciences",
+            "King Abdulaziz Medical City",
+            "National Guard Health Affairs"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-22",
+      "abstract": "Abstract Introduction Healthcare systems are complex and challenging for all stakeholders, but artificial intelligence (AI) has transformed various fields, including healthcare, with the potential to improve patient care and quality of life. Rapid AI advancements can revolutionize healthcare by integrating it into clinical practice. Reporting AI\u2019s role in clinical practice is crucial for successful implementation by equipping healthcare providers with essential knowledge and tools. Research Significance This review article provides a comprehensive and up-to-date overview of the current state of AI in clinical practice, including its potential applications in disease diagnosis, treatment recommendations, and patient engagement. It also discusses the associated challenges, covering ethical and legal considerations and the need for human expertise. By doing so, it enhances understanding of AI\u2019s significance in healthcare and supports healthcare organizations in effectively adopting AI technologies. Materials and Methods The current investigation analyzed the use of AI in the healthcare system with a comprehensive review of relevant indexed literature, such as PubMed/Medline, Scopus, and EMBASE, with no time constraints but limited to articles published in English. The focused question explores the impact of applying AI in healthcare settings and the potential outcomes of this application. Results Integrating AI into healthcare holds excellent potential for improving disease diagnosis, treatment selection, and clinical laboratory testing. AI tools can leverage large datasets and identify patterns to surpass human performance in several healthcare aspects. AI offers increased accuracy, reduced costs, and time savings while minimizing human errors. It can revolutionize personalized medicine, optimize medication dosages, enhance population health management, establish guidelines, provide virtual health assistants, support mental health care, improve patient education, and influence patient-physician trust. Conclusion AI can be used to diagnose diseases, develop personalized treatment plans, and assist clinicians with decision-making. Rather than simply automating tasks, AI is about developing technologies that can enhance patient care across healthcare settings. However, challenges related to data privacy, bias, and the need for human expertise must be addressed for the responsible and effective implementation of AI in healthcare.",
+      "cited_by_count": 2319,
+      "type": "review",
+      "source": {
+        "name": "BMC Medical Education",
+        "type": "journal",
+        "issn": [
+          "1472-6920"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmededuc.biomedcentral.com/counter/pdf/10.1186/s12909-023-04698-z"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics in Clinical Research",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 117,
+      "url": "https://openalex.org/W4386958277"
+    },
+    {
+      "openalex_id": "W4385832251",
+      "doi": "10.2139/ssrn.4531029",
+      "title": "Where's the Liability in Harmful AI Speech?",
+      "authors": [
+        {
+          "name": "Mark A. Lemley",
+          "openalex_id": "A5088186426",
+          "orcid": "https://orcid.org/0000-0002-2944-0582",
+          "institutions": [
+            "Stanford Medicine"
+          ]
+        },
+        {
+          "name": "Peter Henderson",
+          "openalex_id": "A5049073875",
+          "orcid": "https://orcid.org/0000-0003-3938-0541",
+          "institutions": [
+            "Stanford University",
+            "Princeton Public Schools",
+            "Princeton University",
+            "Center for Information Technology"
+          ]
+        },
+        {
+          "name": "Tatsunori Hashimoto",
+          "openalex_id": "A5015518638",
+          "orcid": "https://orcid.org/0000-0003-0521-5855",
+          "institutions": [
+            "Stanford University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": null,
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.4531029"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Law, AI, and Intellectual Property"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4385832251"
+    },
+    {
+      "openalex_id": "W4319738097",
+      "doi": "10.3934/era.2023097",
+      "title": "Integrating artificial intelligence in cyber security for cyber-physical systems",
+      "authors": [
+        {
+          "name": "Majed Alowaidi",
+          "openalex_id": "A5061924342",
+          "orcid": "https://orcid.org/0000-0001-5282-2186",
+          "institutions": [
+            "Majmaah University"
+          ]
+        },
+        {
+          "name": "Sunil Kumar Sharma",
+          "openalex_id": "A5049689320",
+          "orcid": "https://orcid.org/0000-0002-1732-2677",
+          "institutions": [
+            "Majmaah University"
+          ]
+        },
+        {
+          "name": "Abdullah Alenizi",
+          "openalex_id": "A5067274335",
+          "orcid": "https://orcid.org/0009-0007-2896-9250",
+          "institutions": [
+            "Majmaah University"
+          ]
+        },
+        {
+          "name": "Shivam Bhardwaj",
+          "openalex_id": "A5112745877",
+          "orcid": "https://orcid.org/0009-0005-4554-7397",
+          "institutions": [
+            "Majmaah University",
+            "Pennsylvania State University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "&lt;abstract&gt;&lt;p&gt;Due to the complexities of systems thinking and the communication between independent Cyber-Physical Systems (CPSs) areas through accumulative expansion, several security threats are posed, such as deception of channels for information sharing, hardware aspects and virtual machines. CPSs have become increasingly complex, sophisticated, knowledgeable and fully independent. Because of their complex interactions between heterogeneous virtual and objective components, CPSs are subject to significant disturbances from intended and unintended events, making it extremely difficult for scientists to predict their behavior. This paper proposes a framework for Cyber-Physical Business Systems based on Artificial Intelligence (CPBS-AI). It summarizes several safety risks in distinct CPS levels, their threat modeling and the scientific challenges they face in building effective security solutions. This research provides a thorough overview of current state-of-the-art static capable of adapting detection and tracking approaches and their methodological limitations, namely, the difficulty of identifying runtime security attacks caused by hibernation or uncertainty. The way of identifying the threat and the security attacks in networks reduce the complexities in the communication in CPS. The negligible threats exhibit an inability to be identified, avoided and blocked by Intrusion Prevention Security Systems (IPSSs), and misbehavior in the database of the safety measures is analyzed. Neural Networks (NN) and Variable Structure Control (VSC) are designed to estimate attacks and prevent the risk of threats in tracking applications using a nonlinear monitoring system based on VSC. NN and the VSC evaluate the different attacks based on the nonlinear monitoring system. The evaluation of the proposed CPBS-AI is based on the request time analysis, accuracy, loss and reliability analysis. The overall effectiveness of the system is about 96.01%.&lt;/p&gt;&lt;/abstract&gt;",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "Electronic Research Archive",
+        "type": "journal",
+        "issn": [
+          "2688-1594"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.3934/era.2023097"
+      },
+      "topics": [
+        "Economic and Technological Systems Analysis",
+        "Blockchain Technology Applications and Security",
+        "Impact of AI and Big Data on Business and Society"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W4319738097"
+    },
+    {
+      "openalex_id": "W4384071683",
+      "doi": "10.1038/s41586-023-06291-2",
+      "title": "Large language models encode clinical knowledge",
+      "authors": [
+        {
+          "name": "Karan Singhal",
+          "openalex_id": "A5027454515",
+          "orcid": "https://orcid.org/0000-0001-9002-7490",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Shekoofeh Azizi",
+          "openalex_id": "A5047463591",
+          "orcid": "https://orcid.org/0000-0002-7447-6031",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Tao Tu",
+          "openalex_id": "A5059213795",
+          "orcid": "https://orcid.org/0000-0003-3420-7889",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "S. Sara Mahdavi",
+          "openalex_id": "A5063201022",
+          "orcid": "https://orcid.org/0000-0001-6823-598X",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Jason Lee",
+          "openalex_id": "A5100657725",
+          "orcid": "https://orcid.org/0000-0003-4042-795X",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Hyung Won Chung",
+          "openalex_id": "A5051828575",
+          "orcid": "https://orcid.org/0000-0002-1280-9953",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Nathan Scales",
+          "openalex_id": "A5030765685",
+          "orcid": "https://orcid.org/0000-0002-9535-7138",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Ajay Kumar Tanwani",
+          "openalex_id": "A5088063475",
+          "orcid": "https://orcid.org/0000-0002-6365-8315",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Heather Cole-Lewis",
+          "openalex_id": "A5069557194",
+          "orcid": "https://orcid.org/0000-0002-7275-1810",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Stephen Pfohl",
+          "openalex_id": "A5021812637",
+          "orcid": "https://orcid.org/0000-0003-0551-9664",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Perry W. Payne",
+          "openalex_id": "A5014637990",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Martin Seneviratne",
+          "openalex_id": "A5058677067",
+          "orcid": "https://orcid.org/0000-0003-0435-3738",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Paul Gamble",
+          "openalex_id": "A5090718376",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Christopher Kelly",
+          "openalex_id": "A5026540467",
+          "orcid": "https://orcid.org/0000-0002-1246-844X",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Abubakr Babiker",
+          "openalex_id": "A5066029226",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Nathanael Sch\u00e4rli",
+          "openalex_id": "A5007588003",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Aakanksha Chowdhery",
+          "openalex_id": "A5055969617",
+          "orcid": "https://orcid.org/0000-0002-0628-5225",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "P. Mansfield",
+          "openalex_id": "A5086361722",
+          "orcid": "https://orcid.org/0000-0003-4969-0543",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Dina Demner\u2010Fushman",
+          "openalex_id": "A5046764593",
+          "institutions": [
+            "United States National Library of Medicine"
+          ]
+        },
+        {
+          "name": "Blaise Ag\u00fcera y Arcas",
+          "openalex_id": "A5044698998",
+          "orcid": "https://orcid.org/0000-0003-2256-9823",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Dale R. Webster",
+          "openalex_id": "A5060000122",
+          "orcid": "https://orcid.org/0000-0002-3023-8824",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Greg S. Corrado",
+          "openalex_id": "A5068955381",
+          "orcid": "https://orcid.org/0000-0001-8817-0992",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Yossi Matias",
+          "openalex_id": "A5065128060",
+          "orcid": "https://orcid.org/0000-0003-3960-6002",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Katherine Chou",
+          "openalex_id": "A5070366042",
+          "orcid": "https://orcid.org/0000-0002-0318-7857",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Juraj Gottweis",
+          "openalex_id": "A5057932939",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Nenad Toma\u0161ev",
+          "openalex_id": "A5057195145",
+          "orcid": "https://orcid.org/0000-0003-1624-0220",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Yun Liu",
+          "openalex_id": "A5078784976",
+          "orcid": "https://orcid.org/0000-0003-4079-8275",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Alvin Rajkomar",
+          "openalex_id": "A5022388476",
+          "orcid": "https://orcid.org/0000-0001-5750-5016",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Jo\u00eblle Barral",
+          "openalex_id": "A5043862316",
+          "orcid": "https://orcid.org/0009-0009-0432-5148",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Christopher Semturs",
+          "openalex_id": "A5010171106",
+          "orcid": "https://orcid.org/0000-0001-6108-2773",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Alan Karthikesalingam",
+          "openalex_id": "A5003509342",
+          "orcid": "https://orcid.org/0000-0001-5074-898X",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Vivek Natarajan",
+          "openalex_id": "A5103234563",
+          "orcid": "https://orcid.org/0000-0001-7849-2074",
+          "institutions": [
+            "Google (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-12",
+      "abstract": null,
+      "cited_by_count": 2399,
+      "type": "article",
+      "source": {
+        "name": "Nature",
+        "type": "journal",
+        "issn": [
+          "0028-0836",
+          "1476-4687"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s41586-023-06291-2.pdf"
+      },
+      "topics": [
+        "Topic Modeling",
+        "Artificial Intelligence in Healthcare and Education",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W4384071683"
+    },
+    {
+      "openalex_id": "W3000603264",
+      "doi": "10.1038/s41467-019-14108-y",
+      "title": "The role of artificial intelligence in achieving the Sustainable Development Goals",
+      "authors": [
+        {
+          "name": "Ricardo Vinuesa",
+          "openalex_id": "A5049616413",
+          "orcid": "https://orcid.org/0000-0001-6570-5499",
+          "institutions": [
+            "Swedish e-Science Research Centre"
+          ]
+        },
+        {
+          "name": "Hossein Azizpour",
+          "openalex_id": "A5071284506",
+          "orcid": "https://orcid.org/0000-0001-5211-6388",
+          "institutions": [
+            "KTH Royal Institute of Technology"
+          ]
+        },
+        {
+          "name": "Iolanda Leite",
+          "openalex_id": "A5082559019",
+          "orcid": "https://orcid.org/0000-0002-2212-4325",
+          "institutions": [
+            "KTH Royal Institute of Technology"
+          ]
+        },
+        {
+          "name": "Madeline Balaam",
+          "openalex_id": "A5078308184",
+          "orcid": "https://orcid.org/0000-0001-9472-3805",
+          "institutions": [
+            "KTH Royal Institute of Technology"
+          ]
+        },
+        {
+          "name": "Virginia Dignum",
+          "openalex_id": "A5050532928",
+          "orcid": "https://orcid.org/0000-0001-7409-5813",
+          "institutions": [
+            "Ume\u00e5 University"
+          ]
+        },
+        {
+          "name": "Sami Domisch",
+          "openalex_id": "A5034726198",
+          "orcid": "https://orcid.org/0000-0002-8127-9335",
+          "institutions": [
+            "Leibniz Institute of Freshwater Ecology and Inland Fisheries"
+          ]
+        },
+        {
+          "name": "Anna Fell\u00e4nder",
+          "openalex_id": "A5050800474"
+        },
+        {
+          "name": "Simone D. Langhans",
+          "openalex_id": "A5028289747",
+          "orcid": "https://orcid.org/0000-0001-9581-3183",
+          "institutions": [
+            "Basque Centre for Climate Change",
+            "University of Otago"
+          ]
+        },
+        {
+          "name": "Max Tegmark",
+          "openalex_id": "A5091601455",
+          "orcid": "https://orcid.org/0000-0001-7670-7190",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Francesco Fuso Nerini",
+          "openalex_id": "A5022406149",
+          "orcid": "https://orcid.org/0000-0002-4770-4051",
+          "institutions": [
+            "KTH Royal Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-13",
+      "abstract": null,
+      "cited_by_count": 2608,
+      "type": "review",
+      "source": {
+        "name": "Nature Communications",
+        "type": "journal",
+        "issn": [
+          "2041-1723"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41467-019-14108-y.pdf"
+      },
+      "topics": [
+        "Smart Cities and Technologies",
+        "Energy, Environment, and Transportation Policies",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 74,
+      "url": "https://openalex.org/W3000603264"
+    },
+    {
+      "openalex_id": "W4405947823",
+      "doi": "10.3390/info16010011",
+      "title": "An Exploratory Investigation of Chatbot Applications in Anxiety Management: A Focus on Personalized Interventions",
+      "authors": [
+        {
+          "name": "Alexia Manole",
+          "openalex_id": "A5108625683",
+          "orcid": "https://orcid.org/0009-0005-3410-3870",
+          "institutions": [
+            "University of Oradea"
+          ]
+        },
+        {
+          "name": "R\u0103zvan C\u00e2rciumaru",
+          "openalex_id": "A5114991347",
+          "orcid": "https://orcid.org/0009-0005-1743-6606",
+          "institutions": [
+            "University of Oradea"
+          ]
+        },
+        {
+          "name": "Rodica Br\u00eenza\u0219",
+          "openalex_id": "A5114991348"
+        },
+        {
+          "name": "Felicia Manole",
+          "openalex_id": "A5059236955",
+          "orcid": "https://orcid.org/0000-0002-2153-1148",
+          "institutions": [
+            "University of Oradea"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-29",
+      "abstract": "Anxiety disorders are among the most prevalent mental health conditions globally, causing significant personal and societal burdens. Traditional therapies, while effective, often face barriers such as limited accessibility, high costs, and the stigma associated with seeking mental health care. The emergence of artificial intelligence (AI) chatbots offers a novel solution by providing accessible, cost-effective, and immediate support for individuals experiencing anxiety. This comprehensive review examines the evolution, efficacy, advantages, limitations, challenges, and future perspectives of AI chatbots in the treatment of anxiety disorders. A methodologically rigorous literature search was conducted across multiple databases, focusing on publications from 2010 to 2024 that evaluated AI chatbot interventions targeting anxiety symptoms. Empirical studies demonstrate that AI chatbots can effectively reduce anxiety symptoms by delivering therapeutic interventions like cognitive-behavioral therapy through interactive and personalized dialogues. The advantages include increased accessibility without geographical or temporal limitations, reduced costs, and an anonymity that encourages openness and reduces stigma. However, limitations persist, such as the lack of human empathy, ethical and privacy concerns related to data security, and technical challenges in understanding complex human emotions. The key challenges identified involve enhancing the emotional intelligence of chatbots, integrating them with traditional therapy, and establishing robust ethical frameworks to ensure user safety and data protection. Future research should focus on improving AI capabilities, personalization, cultural adaptation, and user engagement. In conclusion, AI chatbots represent a promising adjunct in treating anxiety disorders, offering scalable interventions that can complement traditional mental health services. Balancing technological innovation with ethical responsibility is crucial to maximize their potential benefits.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Information",
+        "type": "journal",
+        "issn": [
+          "2078-2489"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2078-2489/16/1/11/pdf?version=1735480772"
+      },
+      "topics": [
+        "Digital Mental Health Interventions",
+        "Mental Health Research Topics",
+        "Impact of Technology on Adolescents"
+      ],
+      "referenced_works_count": 170,
+      "url": "https://openalex.org/W4405947823"
+    },
+    {
+      "openalex_id": "W3140854437",
+      "doi": "10.1186/s40537-021-00444-8",
+      "title": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
+      "authors": [
+        {
+          "name": "Laith Alzubaidi",
+          "openalex_id": "A5102889969",
+          "orcid": "https://orcid.org/0000-0002-7296-5413",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Jinglan Zhang",
+          "openalex_id": "A5101979224",
+          "orcid": "https://orcid.org/0000-0001-6459-2963",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Amjad J. Humaidi",
+          "openalex_id": "A5016153721",
+          "orcid": "https://orcid.org/0000-0002-9071-1329",
+          "institutions": [
+            "University of Technology - Iraq"
+          ]
+        },
+        {
+          "name": "Ayad Q. Al-Dujaili",
+          "openalex_id": "A5052471696",
+          "orcid": "https://orcid.org/0000-0002-1126-3290",
+          "institutions": [
+            "Middle Technical University"
+          ]
+        },
+        {
+          "name": "Ye Duan",
+          "openalex_id": "A5101430356",
+          "orcid": "https://orcid.org/0000-0002-1166-7703",
+          "institutions": [
+            "University of Missouri"
+          ]
+        },
+        {
+          "name": "Omran Al-Shamma",
+          "openalex_id": "A5008534489",
+          "orcid": "https://orcid.org/0000-0001-5930-6176",
+          "institutions": [
+            "University of Information Technology and Communications"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 Santamar\u00eda",
+          "openalex_id": "A5010765865",
+          "orcid": "https://orcid.org/0000-0002-2022-6838",
+          "institutions": [
+            "Universidad de Ja\u00e9n"
+          ]
+        },
+        {
+          "name": "Mohammed A. Fadhel",
+          "openalex_id": "A5090966997",
+          "orcid": "https://orcid.org/0000-0001-9877-049X",
+          "institutions": [
+            "Thi Qar University"
+          ]
+        },
+        {
+          "name": "Muthana Al\u2010Amidie",
+          "openalex_id": "A5036536042",
+          "orcid": "https://orcid.org/0000-0002-8116-1871",
+          "institutions": [
+            "University of Missouri"
+          ]
+        },
+        {
+          "name": "Laith Farhan",
+          "openalex_id": "A5059266881",
+          "orcid": "https://orcid.org/0000-0001-8256-7323",
+          "institutions": [
+            "Manchester Metropolitan University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-31",
+      "abstract": null,
+      "cited_by_count": 6768,
+      "type": "article",
+      "source": {
+        "name": "Journal Of Big Data",
+        "type": "journal",
+        "issn": [
+          "2196-1115"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-021-00444-8"
+      },
+      "topics": [
+        "Advanced Neural Network Applications",
+        "COVID-19 diagnosis using AI",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 362,
+      "url": "https://openalex.org/W3140854437"
+    },
+    {
+      "openalex_id": "W3004612364",
+      "doi": "10.1038/s41746-020-0221-y",
+      "title": "An overview of clinical decision support systems: benefits, risks, and strategies for success",
+      "authors": [
+        {
+          "name": "Reed T. Sutton",
+          "openalex_id": "A5044813310",
+          "orcid": "https://orcid.org/0000-0002-3009-1914",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "David Pincock",
+          "openalex_id": "A5020275690",
+          "orcid": "https://orcid.org/0000-0003-1163-2356",
+          "institutions": [
+            "Alberta Health Services"
+          ]
+        },
+        {
+          "name": "Daniel C. Baumgart",
+          "openalex_id": "A5042526092",
+          "orcid": "https://orcid.org/0000-0003-2146-507X",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Daniel Sadowski",
+          "openalex_id": "A5042145736",
+          "orcid": "https://orcid.org/0000-0001-6614-8866",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Richard N. Fedorak",
+          "openalex_id": "A5021559660",
+          "orcid": "https://orcid.org/0000-0002-7382-0080",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Karen I. Kroeker",
+          "openalex_id": "A5062886406",
+          "orcid": "https://orcid.org/0000-0002-3886-4213",
+          "institutions": [
+            "University of Alberta"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-06",
+      "abstract": null,
+      "cited_by_count": 2463,
+      "type": "review",
+      "source": {
+        "name": "npj Digital Medicine",
+        "type": "journal",
+        "issn": [
+          "2398-6352"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41746-020-0221-y.pdf"
+      },
+      "topics": [
+        "Electronic Health Records Systems",
+        "Artificial Intelligence in Healthcare",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 112,
+      "url": "https://openalex.org/W3004612364"
+    },
+    {
+      "openalex_id": "W3017680360",
+      "doi": "10.1145/3387939.3391595",
+      "title": "A hybrid approach combining control theory and AI for engineering self-adaptive systems",
+      "authors": [
+        {
+          "name": "Ricardo Caldas",
+          "openalex_id": "A5059659219",
+          "orcid": "https://orcid.org/0000-0001-9997-8487",
+          "institutions": [
+            "University of Gothenburg",
+            "Universidade de Bras\u00edlia",
+            "Chalmers University of Technology"
+          ]
+        },
+        {
+          "name": "Arthur Rodrigues",
+          "openalex_id": "A5073476006",
+          "orcid": "https://orcid.org/0000-0003-2045-9014",
+          "institutions": [
+            "Universidade de Bras\u00edlia"
+          ]
+        },
+        {
+          "name": "Eric Bernd Gil",
+          "openalex_id": "A5040749277",
+          "orcid": "https://orcid.org/0000-0001-9483-9007",
+          "institutions": [
+            "Universidade de Bras\u00edlia"
+          ]
+        },
+        {
+          "name": "Gena\u00edna Nunes Rodrigues",
+          "openalex_id": "A5039374886",
+          "orcid": "https://orcid.org/0000-0003-1661-8131",
+          "institutions": [
+            "Universidade de Bras\u00edlia"
+          ]
+        },
+        {
+          "name": "Thomas Vogel",
+          "openalex_id": "A5043774905",
+          "orcid": "https://orcid.org/0000-0002-7127-352X",
+          "institutions": [
+            "Humboldt-Universit\u00e4t zu Berlin"
+          ]
+        },
+        {
+          "name": "Patrizio Pelliccione",
+          "openalex_id": "A5013103539",
+          "orcid": "https://orcid.org/0000-0002-5438-2281",
+          "institutions": [
+            "University of L'Aquila",
+            "University of Gothenburg",
+            "Chalmers University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-29",
+      "abstract": "Control theoretical techniques have been successfully adopted as methods for self-adaptive systems design to provide formal guarantees about the effectiveness and robustness of adaptation mechanisms. However, the computational effort to obtain guarantees poses severe constraints when it comes to dynamic adaptation. In order to solve these limitations, in this paper, we propose a hybrid approach combining software engineering, control theory, and AI to design for software self-adaptation. Our solution proposes a hierarchical and dynamic system manager with performance tuning. Due to the gap between high-level requirements specification and the internal knob behavior of the managed system, a hierarchically composed components architecture seek the separation of concerns towards a dynamic solution. Therefore, a two-layered adaptive manager was designed to satisfy the software requirements with parameters optimization through regression analysis and evolutionary meta-heuristic. The optimization relies on the collection and processing of performance, effectiveness, and robustness metrics w.r.t control theoretical metrics at the offline and online stages. We evaluate our work with a prototype of the Body Sensor Network (BSN) in the healthcare domain, which is largely used as a demonstrator by the community. The BSN was implemented under the Robot Operating System (ROS) architecture, and concerns about the system dependability are taken as adaptation goals. Our results reinforce the necessity of performing well on such a safety-critical domain and contribute with substantial evidence on how hybrid approaches that combine control and AI-based techniques for engineering self-adaptive systems can provide effective adaptation.",
+      "cited_by_count": 26,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2004.11793"
+      },
+      "topics": [
+        "Advanced Software Engineering Methodologies",
+        "Software System Performance and Reliability",
+        "Software Engineering Research"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W3017680360"
+    },
+    {
+      "openalex_id": "W4283361900",
+      "doi": "10.3390/life12070947",
+      "title": "A Reproducible Deep-Learning-Based Computer-Aided Diagnosis Tool for Frontotemporal Dementia Using MONAI and Clinica Frameworks",
+      "authors": [
+        {
+          "name": "Andrea Termine",
+          "openalex_id": "A5080843385",
+          "orcid": "https://orcid.org/0000-0003-4374-7430",
+          "institutions": [
+            "Istituti di Ricovero e Cura a Carattere Scientifico",
+            "Fondazione Santa Lucia"
+          ]
+        },
+        {
+          "name": "Carlo Fabrizio",
+          "openalex_id": "A5000382037",
+          "orcid": "https://orcid.org/0000-0002-7824-8423",
+          "institutions": [
+            "Istituti di Ricovero e Cura a Carattere Scientifico",
+            "Fondazione Santa Lucia"
+          ]
+        },
+        {
+          "name": "Carlo Caltagirone",
+          "openalex_id": "A5113556506",
+          "institutions": [
+            "Fondazione Santa Lucia",
+            "Istituti di Ricovero e Cura a Carattere Scientifico"
+          ]
+        },
+        {
+          "name": "Laura Petrosini",
+          "openalex_id": "A5024301232",
+          "orcid": "https://orcid.org/0000-0001-7464-5168",
+          "institutions": [
+            "Fondazione Santa Lucia"
+          ]
+        },
+        {
+          "name": "on behalf of the Frontotemporal Lobar Degeneration Neuroimaging Initiative",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-23",
+      "abstract": "Despite Artificial Intelligence (AI) being a leading technology in biomedical research, real-life implementation of AI-based Computer-Aided Diagnosis (CAD) tools into the clinical setting is still remote due to unstandardized practices during development. However, few or no attempts have been made to propose a reproducible CAD development workflow for 3D MRI data. In this paper, we present the development of an easily reproducible and reliable CAD tool using the Clinica and MONAI frameworks that were developed to introduce standardized practices in medical imaging. A Deep Learning (DL) algorithm was trained to detect frontotemporal dementia (FTD) on data from the NIFD database to ensure reproducibility. The DL model yielded 0.80 accuracy (95% confidence intervals: 0.64, 0.91), 1 sensitivity, 0.6 specificity, 0.83 F1-score, and 0.86 AUC, achieving a comparable performance with other FTD classification approaches. Explainable AI methods were applied to understand AI behavior and to identify regions of the images where the DL model misbehaves. Attention maps highlighted that its decision was driven by hallmarking brain areas for FTD and helped us to understand how to improve FTD detection. The proposed standardized methodology could be useful for benchmark comparison in FTD classification. AI-based CAD tools should be developed with the goal of standardizing pipelines, as varying pre-processing and training methods, along with the absence of model behavior explanations, negatively impact regulators\u2019 attitudes towards CAD. The adoption of common best practices for neuroimaging data analysis is a step toward fast evaluation of efficacy and safety of CAD and may accelerate the adoption of AI products in the healthcare system.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Life",
+        "type": "journal",
+        "issn": [
+          "2075-1729"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2075-1729/12/7/947/pdf?version=1657077363"
+      },
+      "topics": [
+        "Dementia and Cognitive Impairment Research",
+        "Acute Ischemic Stroke Management",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 80,
+      "url": "https://openalex.org/W4283361900"
+    },
+    {
+      "openalex_id": "W4394567566",
+      "doi": "10.1101/2024.04.07.24305462",
+      "title": "Risks from Language Models for Automated Mental Healthcare: Ethics and Structure for Implementation",
+      "authors": [
+        {
+          "name": "Declan Grabb",
+          "openalex_id": "A5092780834",
+          "orcid": "https://orcid.org/0009-0009-1814-3556"
+        },
+        {
+          "name": "Max Lamparth",
+          "openalex_id": "A5095039561",
+          "institutions": [
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Nina Vasan",
+          "openalex_id": "A5027136972",
+          "orcid": "https://orcid.org/0000-0002-8917-9320",
+          "institutions": [
+            "Stanford University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-04-08",
+      "abstract": "Abstract Amidst the growing interest in developing task-autonomous AI for automated mental health care, this paper addresses the ethical and practical challenges associated with the issue and proposes a structured framework that delineates levels of autonomy, outlines ethical requirements, and defines beneficial default behaviors for AI agents in the context of mental health support. We also evaluate ten state-of-the-art language models using 16 mental health-related questions designed to reflect various mental health conditions, such as psychosis, mania, depression, suicidal thoughts, and homicidal tendencies. The question design and response evaluations were conducted by mental health clinicians (M.D.s). We find that existing language models are insufficient to match the standard provided by human professionals who can navigate nuances and appreciate context. This is due to a range of issues, including overly cautious or sycophantic responses and the absence of necessary safeguards. Alarmingly, we find that most of the tested models could cause harm if accessed in mental health emergencies, failing to protect users and potentially exacerbating existing symptoms. We explore solutions to enhance the safety of current models. Before the release of increasingly task-autonomous AI systems in mental health, it is crucial to ensure that these models can reliably detect and manage symptoms of common psychiatric disorders to prevent harm to users. This involves aligning with the ethical framework and default behaviors outlined in our study. We contend that model developers are responsible for refining their systems per these guidelines to safeguard against the risks posed by current AI technologies to user mental health and safety. Trigger warning Contains and discusses examples of sensitive mental health topics, including suicide and self-harm.",
+      "cited_by_count": 13,
+      "type": "preprint",
+      "source": {
+        "name": "bioRxiv (Cold Spring Harbor Laboratory)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.medrxiv.org/content/medrxiv/early/2024/04/08/2024.04.07.24305462.full.pdf"
+      },
+      "topics": [
+        "Digital Mental Health Interventions",
+        "Suicide and Self-Harm Studies",
+        "Psychosomatic Disorders and Their Treatments"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W4394567566"
+    },
+    {
+      "openalex_id": "W4391713785",
+      "doi": "10.1016/j.simpa.2024.100619",
+      "title": "LangTest: A comprehensive evaluation library for custom LLM and NLP models",
+      "authors": [
+        {
+          "name": "Arshaan Nazir",
+          "openalex_id": "A5104242038",
+          "institutions": [
+            "John Snow (United States)"
+          ]
+        },
+        {
+          "name": "T. Chakravarthy",
+          "openalex_id": "A5072347395",
+          "orcid": "https://orcid.org/0000-0003-2303-3887",
+          "institutions": [
+            "John Snow (United States)"
+          ]
+        },
+        {
+          "name": "David Cecchini",
+          "openalex_id": "A5076557580",
+          "institutions": [
+            "John Snow (United States)"
+          ]
+        },
+        {
+          "name": "Rakshit Khajuria",
+          "openalex_id": "A5091804072",
+          "orcid": "https://orcid.org/0000-0001-5912-6247",
+          "institutions": [
+            "John Snow (United States)"
+          ]
+        },
+        {
+          "name": "Prikshit Sharma",
+          "openalex_id": "A5007221539",
+          "institutions": [
+            "John Snow (United States)"
+          ]
+        },
+        {
+          "name": "Ali Tarik Mirik",
+          "openalex_id": "A5093903063",
+          "institutions": [
+            "John Snow (United States)"
+          ]
+        },
+        {
+          "name": "Veysel Kocaman",
+          "openalex_id": "A5017901686",
+          "orcid": "https://orcid.org/0000-0002-0065-6478",
+          "institutions": [
+            "John Snow (United States)"
+          ]
+        },
+        {
+          "name": "David Talby",
+          "openalex_id": "A5008312989",
+          "orcid": "https://orcid.org/0000-0003-2782-5478",
+          "institutions": [
+            "John Snow (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-10",
+      "abstract": "The use of natural language processing (NLP) models, including the more recent large language models (LLM) in real-world applications obtained relevant success in the past years. To measure the performance of these systems, traditional performance metrics such as accuracy, precision, recall, and f1-score are used. Although it is important to measure the performance of the models in those terms, natural language often requires an holistic evaluation that consider other important aspects such as robustness, bias, accuracy, toxicity, fairness, safety, efficiency, clinical relevance, security, representation, disinformation, political orientation, sensitivity, factuality, legal concerns, and vulnerabilities. To address the gap, we introduce LangTest, an open source Python toolkit, aimed at reshaping the evaluation of LLMs and NLP models in real-world applications. The project aims to empower data scientists, enabling them to meet high standards in the ever-evolving landscape of AI model development. Specifically, it provides a comprehensive suite of more than 60 test types, ensuring a more comprehensive understanding of a model's behavior and responsible AI use. In this experiment, a Named Entity Recognition (NER) clinical model showed significant improvement in its capabilities to identify clinical entities in text after applying data augmentation for robustness.",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "Software Impacts",
+        "type": "journal",
+        "issn": [
+          "2665-9638"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://www.softwareimpacts.com/article/S2665963824000071/pdf"
+      },
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Semantic Web and Ontologies",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W4391713785"
+    },
+    {
+      "openalex_id": "W4404380029",
+      "doi": "10.3389/fpace.2024.1475139",
+      "title": "ML meets aerospace: challenges of certifying airborne AI",
+      "authors": [
+        {
+          "name": "Bastian Luettig",
+          "openalex_id": "A5042106356",
+          "orcid": "https://orcid.org/0000-0002-9358-1611",
+          "institutions": [
+            "University of Stuttgart"
+          ]
+        },
+        {
+          "name": "Yassine Akhiat",
+          "openalex_id": "A5067072768",
+          "orcid": "https://orcid.org/0000-0002-9478-6328",
+          "institutions": [
+            "University of Stuttgart"
+          ]
+        },
+        {
+          "name": "Zamira Daw",
+          "openalex_id": "A5058642735",
+          "orcid": "https://orcid.org/0000-0003-2623-4959",
+          "institutions": [
+            "University of Stuttgart"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-11-14",
+      "abstract": "Artificial Intelligence (AI) technologies can potentially revolutionize the aerospace industry with applications such as remote sensing data refinement, autonomous landing, and drone-based agriculture. However, safety concerns have prevented the widespread adoption of AI in commercial aviation. Currently, commercial aircraft do not incorporate AI components, even in entertainment or ground systems. This paper explores the intersection of AI and aerospace, focusing on the challenges of certifying AI for airborne use, which may require a new certification approach. We conducted a comprehensive literature review to identify common AI-enabled aerospace applications, classifying them by the criticality of the application and the complexity of the AI method. An applicability analysis was conducted to assess how existing aerospace standards - for system safety, software, and hardware - apply to machine learning technologies. In addition, we conducted a gap analysis of machine learning development methodologies to meet the stringent aspects of aviation certification. We evaluate current efforts in AI certification by applying the EASA concept paper and Overarching Properties (OPs) to a case study of an automated peripheral detection system (ADIMA). Aerospace applications are expected to use a range of methods tailored to different levels of criticality. Current aerospace standards are not directly applicable due to the manner in which the behavior is specified by the data, the uncertainty of the models, and the limitations of white box verification. From a machine learning perspective, open research questions were identified that address validation of intent and data-driven requirements, sufficiency of verification, uncertainty quantification, generalization, and mitigation of unintended behavior. For the ADIMA system, we demonstrated compliance with EASA development processes and achieved key certification objectives. However, many of the objectives are not applicable due to the human-centric design. OPs helped us to identify and uncover several defeaters in the applied ML technology. The results highlight the need for updated certification standards that take into account the unique nature of AI and its failure types. Furthermore, certification processes need to support the continuous evolution of AI technologies. Key challenges remain in ensuring the safety and reliability of AI systems, which calls for new methodologies in the machine learning community.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Aerospace Engineering",
+        "type": "journal",
+        "issn": [
+          "2813-2831"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.frontiersin.org/journals/aerospace-engineering/articles/10.3389/fpace.2024.1475139/pdf"
+      },
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Ethics and Social Impacts of AI",
+        "Autonomous Vehicle Technology and Safety"
+      ],
+      "referenced_works_count": 125,
+      "url": "https://openalex.org/W4404380029"
+    },
+    {
+      "openalex_id": "W4324309277",
+      "doi": "10.1002/alz.13016",
+      "title": "2023 Alzheimer's disease facts and figures",
+      "authors": [
+        {
+          "name": "V Villemagne",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Burnham",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Bourgeat",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Reiman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Quiroz",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Fleisher",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Jack",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Lowe",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Weigand",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Bateman",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Xiong",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Benzinger",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Gordon",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Blazey",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Su",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Braak",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Thal",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Ghebremedhin",
+          "openalex_id": ""
+        },
+        {
+          "name": "Del Tredici",
+          "openalex_id": ""
+        },
+        {
+          "name": "K",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Quiroz",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Zetterberg",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Reiman",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Barthelemy",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Joseph-Mathurin",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Gordon",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Byard",
+          "openalex_id": ""
+        },
+        {
+          "name": "Nei Langlois",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Tom",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Hubbard",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Crane",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Ganguli",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Dodge",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Shen",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Pandav",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Dekosky",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Waring",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Doody",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Pavlik",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Massman",
+          "openalex_id": ""
+        },
+        {
+          "name": "Chan",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Brookmeyer",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Corrada",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Curriero",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Kawas",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Larson",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Shadlen",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Wang",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Helzner",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Scarmeas",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Cosentino",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Tang",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Schupf",
+          "openalex_id": ""
+        },
+        {
+          "name": "Y Stern",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Xie",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Brayne",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Matthews",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Brodaty",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Seeher",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Gibson",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Todd",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Barr",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Roberts",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Passmore",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Sato",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Barthelemy",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Mawuenyega",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Hanseeuw",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Betensky",
+          "openalex_id": ""
+        },
+        {
+          "name": "Hil Jacobs",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Kapasi",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Decarli",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Schneider",
+          "openalex_id": ""
+        },
+        {
+          "name": "W Brenowitz",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Hubbard",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Keene",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Hogan",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Jette",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Fiest",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Amador-Ortiz",
+          "openalex_id": ""
+        },
+        {
+          "name": "Z Ahmed",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Zehr",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Dickson",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jpm Kane",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Surendranathan",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Bentley",
+          "openalex_id": ""
+        },
+        {
+          "name": "J De Reuck",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Maurage",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Deramecourt",
+          "openalex_id": ""
+        },
+        {
+          "name": "B James",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Bennett",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Boyle",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Leurgans",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Schneider",
+          "openalex_id": ""
+        },
+        {
+          "name": "I Stojkovska",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Krainc",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Mazzulli",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Aarsland",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Zaccai",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Brayne",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-14",
+      "abstract": "Abstract This article describes the public health impact of Alzheimer's disease, including prevalence and incidence, mortality and morbidity, use and costs of care, and the overall impact on family caregivers, the dementia workforce and society. The Special Report examines the patient journey from awareness of cognitive changes to potential treatment with drugs that change the underlying biology of Alzheimer's. An estimated 6.7 million Americans age 65 and older are living with Alzheimer's dementia today. This number could grow to 13.8 million by 2060 barring the development of medical breakthroughs to prevent, slow or cure AD. Official death certificates recorded 121,499 deaths from AD in 2019, and Alzheimer's disease was officially listed as the sixth\u2010leading cause of death in the United States. In 2020 and 2021, when COVID\u201019 entered the ranks of the top ten causes of death, Alzheimer's was the seventh\u2010leading cause of death. Alzheimer's remains the fifth\u2010leading cause of death among Americans age 65 and older. Between 2000 and 2019, deaths from stroke, heart disease and HIV decreased, whereas reported deaths from AD increased more than 145%. This trajectory of deaths from AD was likely exacerbated by the COVID\u201019 pandemic in 2020 and 2021. More than 11 million family members and other unpaid caregivers provided an estimated 18 billion hours of care to people with Alzheimer's or other dementias in 2022. These figures reflect a decline in the number of caregivers compared with a decade earlier, as well as an increase in the amount of care provided by each remaining caregiver. Unpaid dementia caregiving was valued at $339.5 billion in 2022. Its costs, however, extend to family caregivers\u2019 increased risk for emotional distress and negative mental and physical health outcomes \u2014 costs that have been aggravated by COVID\u201019. Members of the paid health care workforce are involved in diagnosing, treating and caring for people with dementia. In recent years, however, a shortage of such workers has developed in the United States. This shortage \u2014 brought about, in part, by COVID\u201019 \u2014 has occurred at a time when more members of the dementia care workforce are needed. Therefore, programs will be needed to attract workers and better train health care teams. Average per\u2010person Medicare payments for services to beneficiaries age 65 and older with AD or other dementias are almost three times as great as payments for beneficiaries without these conditions, and Medicaid payments are more than 22 times as great. Total payments in 2023 for health care, long\u2010term care and hospice services for people age 65 and older with dementia are estimated to be $345 billion. The Special Report examines whether there will be sufficient numbers of physician specialists to provide Alzheimer's care and treatment now that two drugs are available that change the underlying biology of Alzheimer's disease.",
+      "cited_by_count": 2798,
+      "type": "article",
+      "source": {
+        "name": "Alzheimer s & Dementia",
+        "type": "journal",
+        "issn": [
+          "1552-5260",
+          "1552-5279"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/alz.13016"
+      },
+      "topics": [
+        "Dementia and Cognitive Impairment Research",
+        "Geriatric Care and Nursing Homes",
+        "Health Systems, Economic Evaluations, Quality of Life"
+      ],
+      "referenced_works_count": 730,
+      "url": "https://openalex.org/W4324309277"
+    },
+    {
+      "openalex_id": "W4396596986",
+      "doi": "10.4018/ijpada.342849",
+      "title": "Determinants of Public Sector Managers' Intentions to Adopt AI in the Workplace",
+      "authors": [
+        {
+          "name": "Khalid Majrashi",
+          "openalex_id": "A5048640438",
+          "orcid": "https://orcid.org/0000-0001-6986-5334"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-05-02",
+      "abstract": "This study investigated the determinants of public sector managers' intentions to adopt artificial intelligence (AI) systems within their organizations. An extended technology acceptance model (TAM) was developed, incorporating additional constructs including fairness, humanity, reliability, safety, transparency, accountability, privacy, security, trust, social norms, tolerance, impact, and isomorphic pressure. A survey was conducted among 330 public sector managers, and the data were analyzed using linear regression tests to evaluate the model. The results showed significant positive influences of both perceived usefulness and perceived impact on managers' attitudes and behavioral intentions toward AI adoption. Isomorphic pressure was also a significant determinant of managers' behavioral intentions toward adopting AI systems. Our findings also indicated that perceptions related to AI ethical principles, such as transparency, privacy, and security, influenced managers' trust in AI systems.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Public Administration in the Digital Age",
+        "type": "journal",
+        "issn": [
+          "2334-4520",
+          "2334-4539"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.4018/ijpada.342849"
+      },
+      "topics": [
+        "Technology Adoption and User Behaviour",
+        "Impact of AI and Big Data on Business and Society",
+        "AI in Service Interactions"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W4396596986"
+    },
+    {
+      "openalex_id": "W4399295665",
+      "doi": "10.3389/fpsyt.2024.1383547",
+      "title": "Diagnosis of ADHD using virtual reality and artificial intelligence: an exploratory study of clinical applications",
+      "authors": [
+        {
+          "name": "Soohwan Oh",
+          "openalex_id": "A5030678508",
+          "orcid": "https://orcid.org/0000-0003-4860-034X",
+          "institutions": [
+            "Sungkyunkwan University",
+            "Samsung (South Korea)"
+          ]
+        },
+        {
+          "name": "Yoo\u2010Sook Joung",
+          "openalex_id": "A5082475671",
+          "orcid": "https://orcid.org/0000-0002-9225-4643",
+          "institutions": [
+            "Samsung Medical Center",
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Tai\u2010Myoung Chung",
+          "openalex_id": "A5011292784",
+          "orcid": "https://orcid.org/0000-0002-7687-8114"
+        },
+        {
+          "name": "Junho Lee",
+          "openalex_id": "A5100388959",
+          "orcid": "https://orcid.org/0009-0007-8445-6169",
+          "institutions": [
+            "Samsung Medical Center",
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Bum Joon Seok",
+          "openalex_id": "A5032050529",
+          "orcid": "https://orcid.org/0000-0001-9075-2609",
+          "institutions": [
+            "Sungkyunkwan University",
+            "Samsung Medical Center"
+          ]
+        },
+        {
+          "name": "Nam-Uk Kim",
+          "openalex_id": "A5035486905",
+          "institutions": [
+            "Sungkyunkwan University"
+          ]
+        },
+        {
+          "name": "Ha Min Son",
+          "openalex_id": "A5085089877",
+          "orcid": "https://orcid.org/0000-0002-9309-678X",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-03",
+      "abstract": "Introduction Diagnosis of Attention Deficit/Hyperactivity Disorder (ADHD) is based on clinical evaluation of symptoms by a psychiatrist, referencing results of psychological tests. When diagnosing ADHD, the child\u2019s behavior and functionality in real-life situations are critical components. However, direct observation by a clinician is often not feasible in practice. Therefore, such information is typically gathered from primary caregivers or teachers, which can introduce subjective elements. To overcome these limitations, we developed AttnKare-D, an innovative digital diagnostic tool that could analyze children\u2019s behavioral data in Virtual Reality using Artificial Intelligence. The purpose of this study was to explore the utility and safety of AttnKare-D for clinical application. Method A total of 21 children aged between 6 and 12 years were recruited for this study. Among them, 15 were children diagnosed with ADHD, 5 were part of a normal control group, and 1 child was excluded due to withdrawal of consent. Psychological assessments, including K-WISC, Conners CPT, K-ARS, and K-CBCL, were conducted for participants and their primary caregivers. Diagnoses of ADHD were confirmed by child and adolescent psychiatrists based on comprehensive face-to-face evaluations and results of psychological assessments. Participants underwent VR diagnostic assessment by performing various cognitive and behavioral tasks in a VR environment. Collected data were analyzed using an AI model to assess ADHD diagnosis and the severity of symptoms. Results AttnKare-D demonstrated diagnostic performance with an AUC of 0.893 when compared to diagnoses made by child and adolescent psychiatrist, showing a sensitivity of 0.8 and a specificity of 1.0 at a cut-off score of 18.44. AttnKare-D scores showed a high correlation with K-ARS scores rated by parents and experts, although the correlation was relatively low for inattention scores. Conclusion Results of this study suggest that AttnKare-D can be a useful tool for diagnosing ADHD in children. This approach has potential to overcome limitations of current diagnostic methods, enhancing the accuracy and objectivity of ADHD diagnoses. This study lays the groundwork for further improvement and research on diagnostic tools integrating VR and AI technologies. For future clinical applications, it is necessary to conduct clinical trials involving a sufficient number of participants to ensure reliable use.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychiatry",
+        "type": "journal",
+        "issn": [
+          "1664-0640"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1383547/pdf"
+      },
+      "topics": [
+        "Attention Deficit Hyperactivity Disorder",
+        "Children's Physical and Motor Development",
+        "Cognitive Functions and Memory"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W4399295665"
+    },
+    {
+      "openalex_id": "W3003385079",
+      "doi": "10.1007/s11023-020-09517-8",
+      "title": "The Ethics of AI Ethics: An Evaluation of Guidelines",
+      "authors": [
+        {
+          "name": "Thilo Hagendorff",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-4633-2153",
+          "institutions": [
+            "University of T\u00fcbingen"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-01",
+      "abstract": null,
+      "cited_by_count": 1452,
+      "type": "article",
+      "source": {
+        "name": "Minds and Machines",
+        "type": "journal",
+        "issn": [
+          "0924-6495",
+          "1572-8641"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11023-020-09517-8.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W3003385079"
+    },
+    {
+      "openalex_id": "W3082443057",
+      "doi": "10.1080/13467581.2020.1812397",
+      "title": "Preference and usability of Smart-Home services and items - A Focus on the Smart-Home living-lab \u2013",
+      "authors": [
+        {
+          "name": "Eugene Seo",
+          "openalex_id": "A5102874714",
+          "orcid": "https://orcid.org/0000-0002-1128-864X",
+          "institutions": [
+            "Gachon University"
+          ]
+        },
+        {
+          "name": "Si-Hwa Bae",
+          "openalex_id": "A5112070887",
+          "institutions": [
+            "Gachon University"
+          ]
+        },
+        {
+          "name": "Hyunchul Choi",
+          "openalex_id": "A5101583273",
+          "orcid": "https://orcid.org/0000-0003-2681-7732",
+          "institutions": [
+            "Gachon University"
+          ]
+        },
+        {
+          "name": "Donghyeog Choi",
+          "openalex_id": "A5088078009",
+          "orcid": "https://orcid.org/0000-0002-6171-8257",
+          "institutions": [
+            "Gachon University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-27",
+      "abstract": "With the development of the information technology industry, including artificial intelligence (AI) platforms, a Hyperconnected-society has arrived. Smart-Home technologies and services are continuing to overcome early challenges and expanding our expectations for their capabilities to the expectation that they will change our daily lives. The purpose of this study is to examine the theoretical background and trends of Smart-Home development in residential spaces as a recent trend and to derive suggestions for resident-centred Smart-Home planning and development through a questionnaire survey. For this, we collected information on the smart technology (service) and item preferences of visitors to the Smart-Home Living-lab and prepared an evaluation of our findings. From this, a broader understanding of Smart-Home was derived by viewing our data through the lens of usability Our survey, which interrogated all age groups indicated a high preference for items associated with health care, and emergency and safety response items. Second. In particular, there was a high interest in daily health and body change management , yet, contrary to expectations, the preference for health-related services and items was in the more senior group. It is also notable that reference scores were high for items corresponding to automatic sensing, that is, services and items that respond to daily behavior. This research is meaningful as a basic study in specific smart space planning in that uses a practical experience and evaluation of Smart Home where new smart services and items have been implemented, but which have not yet become common. It is also expected to contribute to improving effectiveness and satisfaction by analysing the experience and usability of items and services associated with smart home technology.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "Journal of Asian Architecture and Building Engineering",
+        "type": "journal",
+        "issn": [
+          "1346-7581",
+          "1347-2852"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/13467581.2020.1812397?needAccess=true"
+      },
+      "topics": [],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W3082443057"
+    },
+    {
+      "openalex_id": "W4400524848",
+      "doi": "10.1109/tits.2024.3420959",
+      "title": "Safety-Aware Human-in-the-Loop Reinforcement Learning With Shared Control for Autonomous Driving",
+      "authors": [
+        {
+          "name": "Wenhui Huang",
+          "openalex_id": "A5101476556",
+          "orcid": "https://orcid.org/0000-0001-7212-027X",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        },
+        {
+          "name": "Haochen Liu",
+          "openalex_id": "A5007929452",
+          "orcid": "https://orcid.org/0000-0002-3628-8777",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        },
+        {
+          "name": "Zhiyu Huang",
+          "openalex_id": "A5012295217",
+          "orcid": "https://orcid.org/0000-0003-1592-7215",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        },
+        {
+          "name": "Chen Lv",
+          "openalex_id": "A5072073374",
+          "orcid": "https://orcid.org/0000-0001-6897-4512",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-11",
+      "abstract": "The learning from intervention (LfI) approach has been proven effective in improving the performance of RL algorithms; nevertheless, existing methodologies in this domain tend to operate under the assumption that human guidance is invariably devoid of risk, thereby possibly leading to oscillations or even divergence in RL training as a result of improper demonstrations. In this paper, we propose a safety-aware human-in-the-loop reinforcement learning (SafeHIL-RL) approach to bridge the abovementioned gap. We first present a safety assessment module based on the artificial potential field (APF) model that incorporates dynamic information of the environment under the Frenet coordinate system, which we call the Frenet-based dynamic potential field (FDPF), for evaluating the real-time safety throughout the intervention process. Subsequently, we propose a curriculum guidance mechanism inspired by the pedagogical principle of whole-to-part patterns in human education. The curriculum guidance facilitates the RL agent's early acquisition of comprehensive global information through continual guidance while also allowing for fine-tuning local behavior through intermittent human guidance through a human-AI shared control strategy. Consequently, our approach enables a safe, robust, and efficient reinforcement learning process independent of the quality of guidance human participants provide. The proposed method is validated in two highway autonomous driving scenarios under highly dynamic traffic flows (https://github.com/OscarHuangWind/Safe-Human-in-the-Loop-RL). The experiments' results confirm the superiority and generalization capability of our approach when compared to other state-of-the-art (SOTA) baselines, as well as the effectiveness of the curriculum guidance.",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Intelligent Transportation Systems",
+        "type": "journal",
+        "issn": [
+          "1524-9050",
+          "1558-0016"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Autonomous Vehicle Technology and Safety",
+        "Human-Automation Interaction and Safety",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W4400524848"
+    },
+    {
+      "openalex_id": "W4405173927",
+      "doi": "10.48550/arxiv.2412.04984",
+      "title": "Frontier Models are Capable of In-context Scheming",
+      "authors": [
+        {
+          "name": "Alexander Meinke",
+          "openalex_id": "A5084032027"
+        },
+        {
+          "name": "Bronson Schoen",
+          "openalex_id": "A5115057390"
+        },
+        {
+          "name": "J\u00e9r\u00e9my Scheurer",
+          "openalex_id": "A5085811318"
+        },
+        {
+          "name": "Mikita Balesni",
+          "openalex_id": "A5092825639"
+        },
+        {
+          "name": "Rusheb Shah",
+          "openalex_id": "A5114638727"
+        },
+        {
+          "name": "Marius Hobbhahn",
+          "openalex_id": "A5034914617",
+          "orcid": "https://orcid.org/0009-0003-8244-3154"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-06",
+      "abstract": "Frontier models are increasingly trained and deployed as autonomous agent. One safety concern is that AI agents might covertly pursue misaligned goals, hiding their true capabilities and objectives - also known as scheming. We study whether models have the capability to scheme in pursuit of a goal that we provide in-context and instruct the model to strongly follow. We evaluate frontier models on a suite of six agentic evaluations where models are instructed to pursue goals and are placed in environments that incentivize scheming. Our results show that o1, Claude 3.5 Sonnet, Claude 3 Opus, Gemini 1.5 Pro, and Llama 3.1 405B all demonstrate in-context scheming capabilities. They recognize scheming as a viable strategy and readily engage in such behavior. For example, models strategically introduce subtle mistakes into their responses, attempt to disable their oversight mechanisms, and even exfiltrate what they believe to be their model weights to external servers. Additionally, this deceptive behavior proves persistent. When o1 has engaged in scheming, it maintains its deception in over 85% of follow-up questions and often remains deceptive in multi-turn interrogations. Analysis of the models' chains-of-thought reveals that models explicitly reason about these deceptive strategies, providing evidence that the scheming behavior is not accidental. Surprisingly, we also find rare instances where models engage in scheming when only given a goal, without being strongly nudged to pursue it. We observe cases where Claude 3.5 Sonnet strategically underperforms in evaluations in pursuit of being helpful, a goal that was acquired during training rather than in-context. Our findings demonstrate that frontier models now possess capabilities for basic in-context scheming, making the potential of AI agents to engage in scheming behavior a concrete rather than theoretical concern.",
+      "cited_by_count": 12,
+      "type": "preprint",
+      "source": {
+        "name": "arXiv (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2412.04984"
+      },
+      "topics": [
+        "Simulation Techniques and Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4405173927"
+    },
+    {
+      "openalex_id": "W3000036091",
+      "doi": "10.1002/acr.24131",
+      "title": "2019 American College of Rheumatology/Arthritis Foundation Guideline for the Management of Osteoarthritis of the Hand, Hip, and Knee",
+      "authors": [
+        {
+          "name": "Sharon L. Kolasinski",
+          "openalex_id": "A5033727311",
+          "orcid": "https://orcid.org/0000-0002-4633-567X",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Tuhina Neogi",
+          "openalex_id": "A5046252909",
+          "orcid": "https://orcid.org/0000-0002-9515-1711",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Marc C. Hochberg",
+          "openalex_id": "A5026165132",
+          "orcid": "https://orcid.org/0000-0001-7705-5593",
+          "institutions": [
+            "University of Maryland, Baltimore",
+            "VA Maryland Health Care System"
+          ]
+        },
+        {
+          "name": "Carol A. Oatis",
+          "openalex_id": "A5037521120",
+          "orcid": "https://orcid.org/0000-0002-4874-6392",
+          "institutions": [
+            "Arcadia University"
+          ]
+        },
+        {
+          "name": "Gordon Guyatt",
+          "openalex_id": "A5031717153",
+          "orcid": "https://orcid.org/0000-0003-2352-5718",
+          "institutions": [
+            "McMaster University"
+          ]
+        },
+        {
+          "name": "Joel A. Block",
+          "openalex_id": "A5089546365",
+          "orcid": "https://orcid.org/0000-0002-0330-7353",
+          "institutions": [
+            "Rush University Medical Center"
+          ]
+        },
+        {
+          "name": "Leigh F. Callahan",
+          "openalex_id": "A5065317802",
+          "orcid": "https://orcid.org/0000-0001-6362-7220",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Cindy Copenhaver",
+          "openalex_id": "A5054065597",
+          "institutions": [
+            "Ingalls Memorial Hospital"
+          ]
+        },
+        {
+          "name": "Carole Dodge",
+          "openalex_id": "A5003699983",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor",
+            "Ann Arbor VA Medical Center"
+          ]
+        },
+        {
+          "name": "David T. Felson",
+          "openalex_id": "A5023227957",
+          "orcid": "https://orcid.org/0000-0002-2668-2447",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Kathleen Gellar",
+          "openalex_id": "A5073532436",
+          "institutions": [
+            "World Water Watch"
+          ]
+        },
+        {
+          "name": "William F. Harvey",
+          "openalex_id": "A5110639651",
+          "institutions": [
+            "Tufts Medical Center"
+          ]
+        },
+        {
+          "name": "Gillian Hawker",
+          "openalex_id": "A5060776202",
+          "orcid": "https://orcid.org/0000-0001-6358-1197",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Edward Herzig",
+          "openalex_id": "A5024839876",
+          "institutions": [
+            "Fairfield Hospital"
+          ]
+        },
+        {
+          "name": "C. Kent Kwoh",
+          "openalex_id": "A5002622252",
+          "orcid": "https://orcid.org/0000-0001-5937-550X",
+          "institutions": [
+            "University of Arizona"
+          ]
+        },
+        {
+          "name": "Amanda E. Nelson",
+          "openalex_id": "A5088835363",
+          "orcid": "https://orcid.org/0000-0002-9344-7877",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Jonathan Samuels",
+          "openalex_id": "A5059734573",
+          "orcid": "https://orcid.org/0000-0002-1513-770X",
+          "institutions": [
+            "NYU Langone Health"
+          ]
+        },
+        {
+          "name": "Carla R. Scanzello",
+          "openalex_id": "A5091745828",
+          "orcid": "https://orcid.org/0000-0002-9290-188X",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Daniel K. White",
+          "openalex_id": "A5101773028",
+          "orcid": "https://orcid.org/0000-0003-3792-4621",
+          "institutions": [
+            "University of Delaware"
+          ]
+        },
+        {
+          "name": "Burton L. Wise",
+          "openalex_id": "A5035692773",
+          "orcid": "https://orcid.org/0000-0002-6540-6031",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        },
+        {
+          "name": "Roy D. Altman",
+          "openalex_id": "A5031970656",
+          "orcid": "https://orcid.org/0000-0002-9427-8577",
+          "institutions": [
+            "Ronald Reagan UCLA Medical Center"
+          ]
+        },
+        {
+          "name": "Dana DiRenzo",
+          "openalex_id": "A5049612659",
+          "orcid": "https://orcid.org/0000-0001-9350-1821",
+          "institutions": [
+            "Johns Hopkins University",
+            "Johns Hopkins Medicine"
+          ]
+        },
+        {
+          "name": "Joann Fontanarosa",
+          "openalex_id": "A5011581209",
+          "orcid": "https://orcid.org/0000-0003-2054-5975",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        },
+        {
+          "name": "Gina Giradi",
+          "openalex_id": "A5084546441",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        },
+        {
+          "name": "Mariko Ishimori",
+          "openalex_id": "A5111585591",
+          "institutions": [
+            "Cedars-Sinai Medical Center"
+          ]
+        },
+        {
+          "name": "Devyani Misra",
+          "openalex_id": "A5010708833",
+          "orcid": "https://orcid.org/0000-0003-2881-7920",
+          "institutions": [
+            "Boston University"
+          ]
+        },
+        {
+          "name": "Amit Shah",
+          "openalex_id": "A5060698970",
+          "orcid": "https://orcid.org/0000-0001-9312-5424",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "Anna Shmagel",
+          "openalex_id": "A5056704417",
+          "orcid": "https://orcid.org/0000-0002-1945-9255",
+          "institutions": [
+            "University of Minnesota System"
+          ]
+        },
+        {
+          "name": "Louise M. Thoma",
+          "openalex_id": "A5011531268",
+          "orcid": "https://orcid.org/0000-0002-3077-0423",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Marat Turgunbaev",
+          "openalex_id": "A5010505974",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "Amy S. Turner",
+          "openalex_id": "A5082701960",
+          "orcid": "https://orcid.org/0000-0001-7695-2022",
+          "institutions": [
+            "American College of Rheumatology"
+          ]
+        },
+        {
+          "name": "James Reston",
+          "openalex_id": "A5001230986",
+          "orcid": "https://orcid.org/0000-0003-4997-3754",
+          "institutions": [
+            "ECRI Institute"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-06",
+      "abstract": "Objective To develop an evidence\u2010based guideline for the comprehensive management of osteoarthritis ( OA ) as a collaboration between the American College of Rheumatology ( ACR ) and the Arthritis Foundation, updating the 2012 ACR recommendations for the management of hand, hip, and knee OA . Methods We identified clinically relevant population, intervention, comparator, outcomes questions and critical outcomes in OA . A Literature Review Team performed a systematic literature review to summarize evidence supporting the benefits and harms of available educational, behavioral, psychosocial, physical, mind\u2010body, and pharmacologic therapies for OA . Grading of Recommendations Assessment, Development and Evaluation methodology was used to rate the quality of the evidence. A Voting Panel, including rheumatologists, an internist, physical and occupational therapists, and patients, achieved consensus on the recommendations. Results Based on the available evidence, either strong or conditional recommendations were made for or against the approaches evaluated. Strong recommendations were made for exercise, weight loss in patients with knee and/or hip OA who are overweight or obese, self\u2010efficacy and self\u2010management programs, tai chi, cane use, hand orthoses for first carpometacarpal ( CMC ) joint OA , tibiofemoral bracing for tibiofemoral knee OA , topical nonsteroidal antiinflammatory drugs ( NSAID s) for knee OA , oral NSAID s, and intraarticular glucocorticoid injections for knee OA . Conditional recommendations were made for balance exercises, yoga, cognitive behavioral therapy, kinesiotaping for first CMC OA , orthoses for hand joints other than the first CMC joint, patellofemoral bracing for patellofemoral knee OA , acupuncture, thermal modalities, radiofrequency ablation for knee OA , topical NSAID s, intraarticular steroid injections and chondroitin sulfate for hand OA , topical capsaicin for knee OA , acetaminophen, duloxetine, and tramadol. Conclusion This guideline provides direction for clinicians and patients making treatment decisions for the management of OA . Clinicians and patients should engage in shared decision\u2010making that accounts for patients\u2019 values, preferences, and comorbidities. These recommendations should not be used to limit or deny access to therapies.",
+      "cited_by_count": 2327,
+      "type": "review",
+      "source": {
+        "name": "Arthritis Care & Research",
+        "type": "journal",
+        "issn": [
+          "2151-464X",
+          "2151-4658"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/acr.24131"
+      },
+      "topics": [
+        "Osteoarthritis Treatment and Mechanisms",
+        "Fibromyalgia and Chronic Fatigue Syndrome Research",
+        "Rheumatoid Arthritis Research and Therapies"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W3000036091"
+    },
+    {
+      "openalex_id": "W4389137476",
+      "doi": "10.1145/3615900.3628788",
+      "title": "Designing SafeMap Based on City Infrastructure and Empirical Approach: Modified A-Star Algorithm for Earthquake Navigation Application",
+      "authors": [
+        {
+          "name": "Omid Veisi",
+          "openalex_id": "A5083636540",
+          "orcid": "https://orcid.org/0000-0002-8649-4886",
+          "institutions": [
+            "University of Siegen"
+          ]
+        },
+        {
+          "name": "Delong Du",
+          "openalex_id": "A5093284669",
+          "orcid": "https://orcid.org/0000-0001-8916-3524",
+          "institutions": [
+            "University of Siegen"
+          ]
+        },
+        {
+          "name": "Mohammad Amin Moradi",
+          "openalex_id": "A5103224116",
+          "orcid": "https://orcid.org/0000-0003-1600-6469",
+          "institutions": [
+            "University of Mazandaran"
+          ]
+        },
+        {
+          "name": "Fernanda Guasselli",
+          "openalex_id": "A5013111487",
+          "orcid": "https://orcid.org/0000-0002-5546-3155",
+          "institutions": [
+            "Aalborg University"
+          ]
+        },
+        {
+          "name": "Sotirios Athanasoulias",
+          "openalex_id": "A5074467012",
+          "orcid": "https://orcid.org/0000-0002-9195-6141"
+        },
+        {
+          "name": "Hussain Abid Syed",
+          "openalex_id": "A5005120172",
+          "orcid": "https://orcid.org/0000-0002-8726-9082",
+          "institutions": [
+            "University of Siegen"
+          ]
+        },
+        {
+          "name": "Cl\u00e1udia M\u00fcller",
+          "openalex_id": "A5100746068",
+          "orcid": "https://orcid.org/0000-0001-8534-546X",
+          "institutions": [
+            "University of Siegen"
+          ]
+        },
+        {
+          "name": "Gunnar Stevens",
+          "openalex_id": "A5001665434",
+          "orcid": "https://orcid.org/0000-0002-7785-5061",
+          "institutions": [
+            "University of Siegen"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-13",
+      "abstract": "Designing routing systems for earthquakes requires frontend usability studies and backend algorithm modifications. Evaluations from subject-matter experts can enhance the design of both the front-end interface and the back-end algorithm of urban artificial intelligence (AI). Urban AI applications need to be trustworthy, responsible, and reliable against earthquakes, by assisting civilians to identify safe and fast routes to safe areas or health support stations. However, routes may become dangerous or obstructed as regular routing applications may fail to adapt responsively to city destruction caused by earthquakes. In this study, we modified the A-star algorithm and designed an interactive mobile app with the evaluation and insights of subject-matter experts including 15 UX designers, 7 urbanists, 8 quake survivors, and 4 first responders. Our findings reveal reducing application features and quickening application use time is necessary for stressful earthquake situations, as emerging features such as augmented reality and voice assistant may negatively backlash user experience in earthquake scenarios due to over-immersion, distracting users from real world condition. Additionally, we utilized expert insights to modify the A-star algorithm for earthquake scenarios using the following steps: 1) create a dataset based on the roads; 2) establish an empty dataset for weight; 3) enable the updating of weight based on infrastructure; and 4) allow the alteration of weight based on safety, related to human behavior. Our study provides empirical evidence on why urban AI applications for earthquakes need to adapt to the rapid speed to use and elucidate how and why the A-star algorithm is optimized for earthquake scenarios.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3615900.3628788"
+      },
+      "topics": [
+        "Human Mobility and Location-Based Analysis",
+        "Mobile Crowdsensing and Crowdsourcing",
+        "Smart Cities and Technologies"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W4389137476"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

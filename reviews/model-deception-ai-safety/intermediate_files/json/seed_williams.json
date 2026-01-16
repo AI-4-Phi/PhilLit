@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Mechanistic Interpretability Needs Philosophy",
+    "author": "Williams",
+    "year": 2025
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (17.6) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

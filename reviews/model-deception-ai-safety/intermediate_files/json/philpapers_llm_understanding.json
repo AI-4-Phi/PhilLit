@@ -1,0 +1,114 @@
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "language model understanding",
+  "results": [
+    {
+      "title": "Anders S\u00f8gaard, Understanding models understanding language",
+      "url": "https://philpapers.org/rec/SGAUMU",
+      "philpapers_id": "SGAUMU",
+      "snippet": "In response, I present a non-technical discussion of techniques for grounding Transformer models, giving them referential semantics, even in the absence of supervision. I also present a simple thought experiment to highlight the mechanisms that would lead to referential semantics, and discuss in what sense models that are grounded in this way, can be said to understand language.",
+      "page_age": null
+    },
+    {
+      "title": "Rapha\u00ebl Milli\u00e8re & Cameron Buckner, A Philosophical Introduction to Language Models \u2013 Part II: The Way Forward",
+      "url": "https://philpapers.org/rec/MILAPI-10",
+      "philpapers_id": "MILAPI",
+      "snippet": "In this paper, the second of two companion pieces, we explore novel philosophical questions raised by recent progress in large language models (LLMs) that go beyond the classical debates covered in the first part. We focus particularly on issues related to interpretability, examining evidence from causal intervention methods about the nature of LLMs&#x27; internal representations and computations.",
+      "page_age": null
+    },
+    {
+      "title": "Tambi Varun Kumar, NATURAL LANGUAGE UNDERSTANDING MODELS FOR PERSONALIZED FINANCIAL SERVICES",
+      "url": "https://philpapers.org/rec/VARNLU",
+      "philpapers_id": "VARNLU",
+      "snippet": "At the heart of this evolution lies Natural Language Understanding (NLU), a subfield of Natural Language Processing (NLP), which enables machines to comprehend and respond to human language with contextual awareness.",
+      "page_age": null
+    },
+    {
+      "title": "Paul Smart, Robert Clowes & Andy Clark, ChatGPT, extended: large language models and the extended mind",
+      "url": "https://philpapers.org/rec/SMACEL",
+      "philpapers_id": "SMACEL",
+      "snippet": "Structural Cognition, Thought-nets, and the Limits of Large Language Models An Axiomatic Theory of Understanding and Thinking.",
+      "page_age": null
+    },
+    {
+      "title": "Kristina \u0160ekrst, Large Language Models",
+      "url": "https://philpapers.org/rec/EKRLLM",
+      "philpapers_id": "EKRLLM",
+      "snippet": "Large language models (LLMs) represent a paradigmatic shift in how machines process and generate language, raising fundamental questions about the nature of understanding, computation, and the mind. Built on transformer architectures, ...",
+      "page_age": null
+    },
+    {
+      "title": "Reto Gubelmann, A Loosely Wittgensteinian Conception of the Linguistic Understanding of Large Language Models like BERT, GPT-3, and ChatGPT",
+      "url": "https://philpapers.org/rec/GUBALW",
+      "philpapers_id": "GUBALW",
+      "snippet": "The conceptual aspects concern the criteria that are reasonably applied when judging whether some being understands language; the empirical aspects concern the question whether a given being fulfills these criteria. On the conceptual side, the article builds on Glock\u2019s concept of intelligence, Taylor\u2019s conception of intrinsic rightness as well as Wittgenstein\u2019s rule-following considerations. On the empirical side, it is argued that current transformer-based NNLP models, such as BERT and GPT-3 come close to fulfilling these criteria.",
+      "page_age": null
+    },
+    {
+      "title": "Wilhelm Haverkamp, Noise Instead of Signal: The Content of Large Language Models",
+      "url": "https://philpapers.org/rec/HAVNIO",
+      "philpapers_id": "HAVNIO",
+      "snippet": "Drawing on Shannon\u2019s mathematical theory of communication and contemporary developments in generative AI, the paper demonstrates that meaning in LLMs emerges not from reference to reality but from pattern recognition within linguistic noise itself. This represents a fundamental philosophical shift in how we understand machine-generated language.",
+      "page_age": null
+    },
+    {
+      "title": "Ruth Garrett Millikan, Language: A Biological Model",
+      "url": "https://philpapers.org/rec/MILLAB",
+      "philpapers_id": "MILLAB",
+      "snippet": "This yields novel and quite radical consequences for our understanding of the nature of public linguistic meaning, the process of language understanding, how children learn language, and the semantics/pragmatics distinction ... Setup an account with your affiliations in order to access resources via your University&#x27;s proxy server \u00b7 Sign in / register and customize your OpenURL resolver ... On Meaning, Meaning, and Meaning. (pages 53-76)Ruth Millikan \u00b7 Language: A Biological Model.Ruth Garrett Millikan - 2005 - Oxford, GB: Clarendon Press.",
+      "page_age": null
+    },
+    {
+      "title": "Marco Ciapparelli, Calogero Zarbo & Marco Marelli, Conceptual Combination in Large Language Models: Uncovering Implicit Relational Interpretations in Compound Words With Contextualized Word Embeddings",
+      "url": "https://philpapers.org/rec/CIACCI",
+      "philpapers_id": "CIACCI",
+      "snippet": "Large language models (LLMs) have been proposed as candidate models of human semantics, and as such, they must be able to account for conceptual combination. This work explores the ability of two LLMs, namely, BERT-base and Llama-2-13b, to reveal the implicit meaning of existing and novel compound words. According to psycholinguistic theories, understanding the meaning of a compound (e.g., \u201csnowman\u201d) involves its automatic decomposition into constituent meanings (\u201csnow,\u201d \u201cman\u201d), which are then connected by an implicit semantic relation selected from a set of possible competitors (FOR, MADE OF, BY, \u2026) to obtain a plausible interpretation (\u201cman MADE OF snow\u201d).",
+      "page_age": null
+    },
+    {
+      "title": "Mirco Sambrotta, LLMs and the Logical Space of Reasons",
+      "url": "https://philpapers.org/rec/SAMLAT-2",
+      "philpapers_id": "SAMLAT",
+      "snippet": "The paper concludes that the current version of LLMs, despite their advanced language processing capabilities, do not genuinely grasp or understand conceptual content and should, therefore, be viewed as simulations of language users rather than true participants in the logical space of reasons. ... Setup an account with your affiliations in order to access resources via your University&#x27;s proxy server \u00b7 Sign in / register and customize your OpenURL resolver ... Do Large Language Models Defend Inferentialist Semantics?: On the Logical Expressivism and Anti-Representationalism of LLMs.Yuzuki Arai &amp; Sho Tsugawa - manuscript",
+      "page_age": null
+    },
+    {
+      "title": "Giovanni Galli, Language Models and the Private Language Argument: a Wittgensteinian Guide to Machine Learning",
+      "url": "https://philpapers.org/rec/GALLMA-7",
+      "philpapers_id": "GALLMA",
+      "snippet": "This argument unexpectedly turned out to be relevant not only for the philosophy of language but also for NLP and LAM modellers. I will describe the language game concept in NLP, how it is embedded, and its role in inductive systems development. This central concept in Wittgenstein\u2019s work is relevant to describe the role of context in understanding the meanings of words.",
+      "page_age": null
+    },
+    {
+      "title": "Mehdi Khamassi, Marceau Nahon & Raja Chatila, Strong and weak alignment of large language models with human values",
+      "url": "https://philpapers.org/rec/KHASAW-2",
+      "philpapers_id": "KHASAW",
+      "snippet": "Strong alignment requires cognitive abilities (either human-like or different from humans) such as understanding and reasoning about agents&#x27; intentions and their ability to causally produce desired effects. We argue that this is required for AI systems like large language models (LLMs) to be ...",
+      "page_age": null
+    },
+    {
+      "title": "Yuzuki Arai & Sho Tsugawa, Do Large Language Models Defend Inferentialist Semantics?: On the Logical Expressivism and Anti-Representationalism of LLMs",
+      "url": "https://philpapers.org/rec/ARADLL-2",
+      "philpapers_id": "ARADLL",
+      "snippet": "Conceptual Combination in Large Language Models: Uncovering Implicit Relational Interpretations in Compound Words With Contextualized Word Embeddings.Marco Ciapparelli, Calogero Zarbo &amp; Marco Marelli - 2025 - Cognitive Science 49 (3):e70048.",
+      "page_age": null
+    },
+    {
+      "title": "Rens Bod, From Exemplar to Grammar: A Probabilistic Analogy\u2010Based Model of Language Learning",
+      "url": "https://philpapers.org/rec/BODFET",
+      "philpapers_id": "BODFET",
+      "snippet": "The best tree is obtained by maximizing \u201cstructural analogy\u201d between a sentence and previous sentences, which is formalized by the most probable shortest combination of subtrees from all trees of previous sentences. Corpus\u2010based experiments with this model on the Penn Treebank and the Childes database indicate that it can learn both exemplar\u2010based and rule\u2010based aspects of language, ranging from phrasal verbs to auxiliary fronting.",
+      "page_age": null
+    },
+    {
+      "title": "William D\u2019Alessandro, Harry R. Lloyd & Nathaniel Sharadin, Large Language Models and Biorisk",
+      "url": "https://philpapers.org/rec/DALLLM",
+      "philpapers_id": "DALLLM",
+      "snippet": "biorisk ChatGPT large language models LLMs artificial intelligence AI safety AI ethics philosophy of technology philosophy of AI bioethics ... Setup an account with your affiliations in order to access resources via your University&#x27;s proxy server \u00b7 Sign in / register and customize your OpenURL resolver ... The Importance of Understanding Language in Large Language Models.Alaa Youssef, Samantha Stein, Justin Clapp &amp; David Magnus - 2023 - American Journal of Bioethics 23 (10):6-7.",
+      "page_age": null
+    }
+  ],
+  "count": 15,
+  "errors": []
+}

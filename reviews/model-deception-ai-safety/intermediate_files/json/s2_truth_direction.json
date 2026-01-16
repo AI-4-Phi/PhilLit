@@ -1,0 +1,809 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "truth direction LLM",
+  "results": [
+    {
+      "paperId": "a9eff1a564dddd3b6550ad3059b32016436d412f",
+      "title": "Exploring the generalization of LLM truth directions on conversational formats",
+      "authors": [
+        {
+          "name": "Timour Ichmoukhamedov",
+          "authorId": "103152164"
+        },
+        {
+          "name": "David Martens",
+          "authorId": "2249583440"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Several recent works argue that LLMs have a universal truth direction where true and false statements are linearly separable in the activation space of the model. It has been demonstrated that linear probes trained on a single hidden state of the model already generalize across a range of topics and might even be used for lie detection in LLM conversations. In this work we explore how this truth direction generalizes between various conversational formats. We find good generalization between short conversations that end on a lie, but poor generalization to longer formats where the lie appears earlier in the input prompt. We propose a solution that significantly improves this type of generalization by adding a fixed key phrase at the end of each conversation. Our results highlight the challenges towards reliable LLM lie detectors that generalize to new settings.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.09807",
+      "arxivId": "2505.09807",
+      "url": "https://www.semanticscholar.org/paper/a9eff1a564dddd3b6550ad3059b32016436d412f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.09807"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "277f0e255dcbf16cdca9ca8cf3cb0c6a8a9e6286",
+      "title": "TypyBench: Evaluating LLM Type Inference for Untyped Python Repositories",
+      "authors": [
+        {
+          "name": "Honghua Dong",
+          "authorId": "2305454652"
+        },
+        {
+          "name": "Jiacheng Yang",
+          "authorId": "2273016276"
+        },
+        {
+          "name": "Xun Deng",
+          "authorId": "2238407185"
+        },
+        {
+          "name": "Yuhe Jiang",
+          "authorId": "2254844777"
+        },
+        {
+          "name": "Gennady Pekhimenko",
+          "authorId": "3257164"
+        },
+        {
+          "name": "Fan Long",
+          "authorId": "2357105507"
+        },
+        {
+          "name": "Xujie Si",
+          "authorId": "2303462714"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Type inference for dynamic languages like Python is a persistent challenge in software engineering. While large language models (LLMs) have shown promise in code understanding, their type inference capabilities remain underexplored. We introduce TypyBench, a benchmark designed to evaluate LLMs'type inference across entire Python repositories. TypyBench features two novel metrics: TypeSim, which captures nuanced semantic relationships between predicted and ground truth types, and TypeCheck, which assesses type consistency across codebases. Our evaluation of various LLMs on a curated dataset of 50 high-quality Python repositories reveals that, although LLMs achieve decent TypeSim scores, they struggle with complex nested types and exhibit significant type consistency errors. These findings suggest that future research should shift focus from improving type similarity to addressing repository-level consistency. TypyBench provides a foundation for this new direction, offering insights into model performance across different type complexities and usage contexts. Our code and data are available at https://github.com/typybench/typybench.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2507.22086",
+      "arxivId": "2507.22086",
+      "url": "https://www.semanticscholar.org/paper/277f0e255dcbf16cdca9ca8cf3cb0c6a8a9e6286",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.22086"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "774b8f9a74e71108e8d1aff6730b22c90843514f",
+      "title": "More or Less Wrong: A Benchmark for Directional Bias in LLM Comparative Reasoning",
+      "authors": [
+        {
+          "name": "Mohammadamin Shafiei",
+          "authorId": "2306253240"
+        },
+        {
+          "name": "Hamidreza Saffari",
+          "authorId": "2326880337"
+        },
+        {
+          "name": "N. Moosavi",
+          "authorId": "2182290"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large language models (LLMs) are known to be sensitive to input phrasing, but the mechanisms by which semantic cues shape reasoning remain poorly understood. We investigate this phenomenon in the context of comparative math problems with objective ground truth, revealing a consistent and directional framing bias: logically equivalent questions containing the words ``more'', ``less'', or ``equal'' systematically steer predictions in the direction of the framing term. To study this effect, we introduce MathComp, a controlled benchmark of 300 comparison scenarios, each evaluated under 14 prompt variants across three LLM families. We find that model errors frequently reflect linguistic steering, systematic shifts toward the comparative term present in the prompt. Chain-of-thought prompting reduces these biases, but its effectiveness varies: free-form reasoning is more robust, while structured formats may preserve or reintroduce directional drift. Finally, we show that including demographic identity terms (e.g., ``a woman'', ``a Black person'') in input scenarios amplifies directional drift, despite identical underlying quantities, highlighting the interplay between semantic framing and social referents. These findings expose critical blind spots in standard evaluation and motivate framing-aware benchmarks for diagnosing reasoning robustness and fairness in LLMs.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.03923",
+      "arxivId": "2506.03923",
+      "url": "https://www.semanticscholar.org/paper/774b8f9a74e71108e8d1aff6730b22c90843514f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.03923"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "352b5ea5e1f23ee8ed75bedd4124f71842415560",
+      "title": "Revise, Reason, and Recognize: LLM-Based Emotion Recognition via Emotion-Specific Prompts and ASR Error Correction",
+      "authors": [
+        {
+          "name": "Yuanchao Li",
+          "authorId": "2279864868"
+        },
+        {
+          "name": "Yuan Gong",
+          "authorId": "2321492632"
+        },
+        {
+          "name": "Chao-Han Huck Yang",
+          "authorId": "2322552793"
+        },
+        {
+          "name": "Peter Bell",
+          "authorId": "2260881621"
+        },
+        {
+          "name": "Catherine Lai",
+          "authorId": "2242109061"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Annotating and recognizing speech emotion using prompt engineering has recently emerged with the advancement of Large Language Models (LLMs), yet its efficacy and reliability remain questionable. In this paper, we conduct a systematic study on this topic, beginning with the proposal of novel prompts that incorporate emotion-specific knowledge from acoustics, linguistics, and psychology. Subsequently, we examine the effectiveness of LLM-based prompting on Automatic Speech Recognition (ASR) transcription, contrasting it with ground-truth transcription. Furthermore, we propose a Revise-Reason-Recognize prompting pipeline for robust LLM-based emotion recognition from spoken language with ASR errors. Additionally, experiments on context-aware learning, in-context learning, and instruction tuning are performed to examine the usefulness of LLM training schemes in this direction. Finally, we investigate the sensitivity of LLMs to minor prompt variations. Experimental results demonstrate the efficacy of the emotion-specific prompts, ASR error correction, and LLM training schemes for LLM-based emotion recognition. Our study aims to refine the use of LLMs in emotion recognition and related domains.",
+      "citationCount": 10,
+      "doi": "10.1109/ICASSP49660.2025.10888591",
+      "arxivId": "2409.15551",
+      "url": "https://www.semanticscholar.org/paper/352b5ea5e1f23ee8ed75bedd4124f71842415560",
+      "venue": "IEEE International Conference on Acoustics, Speech, and Signal Processing",
+      "journal": {
+        "name": "ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+        "pages": "1-5"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "62cd04e2d73f796e70731e6f9452d530aae05aba",
+      "title": "Ground-Truth Subgraphs for Better Training and Evaluation of Knowledge Graph Augmented LLMs",
+      "authors": [
+        {
+          "name": "A. Cattaneo",
+          "authorId": "2064192129"
+        },
+        {
+          "name": "Carlo Luschi",
+          "authorId": "2249537360"
+        },
+        {
+          "name": "Daniel Justus",
+          "authorId": "39145648"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Retrieval of information from graph-structured knowledge bases represents a promising direction for improving the factuality of LLMs. While various solutions have been proposed, a comparison of methods is difficult due to the lack of challenging QA datasets with ground-truth targets for graph retrieval. We present SynthKGQA, an LLM-powered framework for generating high-quality Knowledge Graph Question Answering datasets from any Knowledge Graph, providing the full set of ground-truth facts in the KG to reason over questions. We show how, in addition to enabling more informative benchmarking of KG retrievers, the data produced with SynthKGQA also allows us to train better models.We apply SynthKGQA to Wikidata to generate GTSQA, a new dataset designed to test zero-shot generalization abilities of KG retrievers with respect to unseen graph structures and relation types, and benchmark popular solutions for KG-augmented LLMs on it.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.04473",
+      "arxivId": "2511.04473",
+      "url": "https://www.semanticscholar.org/paper/62cd04e2d73f796e70731e6f9452d530aae05aba",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.04473"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "85e5095b056f3895c3f3a5e5153f70cff606f86d",
+      "title": "Truth-value judgment in language models: belief directions are context sensitive",
+      "authors": [
+        {
+          "name": "Stefan F. Schouten",
+          "authorId": "89933535"
+        },
+        {
+          "name": "Peter Bloem",
+          "authorId": "2261283282"
+        },
+        {
+          "name": "Ilia Markov",
+          "authorId": "2261283269"
+        },
+        {
+          "name": "Piek Vossen",
+          "authorId": "2115025012"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2404.18865",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/85e5095b056f3895c3f3a5e5153f70cff606f86d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.18865"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "844794bee0c24ba8be1ed94b07fba6eb42665cfc",
+      "title": "Truth-value judgment in language models:'truth directions'are context sensitive",
+      "authors": [
+        {
+          "name": "Stefan F. Schouten",
+          "authorId": "2089789942"
+        },
+        {
+          "name": "Peter Bloem",
+          "authorId": "2261283282"
+        },
+        {
+          "name": "Ilia Markov",
+          "authorId": "2261283269"
+        },
+        {
+          "name": "Piek Vossen",
+          "authorId": "2115025012"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent work has demonstrated that the latent spaces of large language models (LLMs) contain directions predictive of the truth of sentences. Multiple methods recover such directions and build probes that are described as uncovering a model's\"knowledge\"or\"beliefs\". We investigate this phenomenon, looking closely at the impact of context on the probes. Our experiments establish where in the LLM the probe's predictions are (most) sensitive to the presence of related sentences, and how to best characterize this kind of sensitivity. We do so by measuring different types of consistency errors that occur after probing an LLM whose inputs consist of hypotheses preceded by (negated) supporting and contradicting sentences. We also perform a causal intervention experiment, investigating whether moving the representation of a premise along these truth-value directions influences the position of an entailed or contradicted sentence along that same direction. We find that the probes we test are generally context sensitive, but that contexts which should not affect the truth often still impact the probe outputs. Our experiments show that the type of errors depend on the layer, the model, and the kind of data. Finally, our results suggest that truth-value directions are causal mediators in the inference process that incorporates in-context information.",
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": "2404.18865",
+      "url": "https://www.semanticscholar.org/paper/844794bee0c24ba8be1ed94b07fba6eb42665cfc",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f64e49d76048c902cc02e8ae27dcd4ac0dbcb97f",
+      "title": "Exploiting Asymmetry for Synthetic Training Data Generation: SynthIE and the Case of Information Extraction",
+      "authors": [
+        {
+          "name": "Martin Josifoski",
+          "authorId": "65826567"
+        },
+        {
+          "name": "Marija Sakota",
+          "authorId": "2122910580"
+        },
+        {
+          "name": "Maxime Peyrard",
+          "authorId": "35512303"
+        },
+        {
+          "name": "Robert West",
+          "authorId": "145387102"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have great potential for synthetic data generation. This work shows that useful data can be synthetically generated even for tasks that cannot be solved directly by LLMs: for problems with structured outputs, it is possible to prompt an LLM to perform the task in the reverse direction, by generating plausible input text for a target output structure. Leveraging this asymmetry in task difficulty makes it possible to produce large-scale, high-quality data for complex tasks. We demonstrate the effectiveness of this approach on closed information extraction, where collecting ground-truth data is challenging, and no satisfactory dataset exists to date. We synthetically generate a dataset of 1.8M data points, establish its superior quality compared to existing datasets in a human evaluation, and use it to finetune small models (220M and 770M parameters), termed SynthIE, that outperform the prior state of the art (with equal model size) by a substantial margin of 57 absolute points in micro-F1 and 79 points in macro-F1. Code, data, and models are available at https://github.com/epfl-dlab/SynthIE.",
+      "citationCount": 111,
+      "doi": "10.48550/arXiv.2303.04132",
+      "arxivId": "2303.04132",
+      "url": "https://www.semanticscholar.org/paper/f64e49d76048c902cc02e8ae27dcd4ac0dbcb97f",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2303.04132"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9c478fbc291d6eb7cebf76b1beb99716e8f4151d",
+      "title": "From Directions to Cones: Exploring Multidimensional Representations of Propositional Facts in LLMs",
+      "authors": [
+        {
+          "name": "Stanley Yu",
+          "authorId": "2363887408"
+        },
+        {
+          "name": "Vaidehi Bulusu",
+          "authorId": "2363878714"
+        },
+        {
+          "name": "Oscar Yasunaga",
+          "authorId": "2363880680"
+        },
+        {
+          "name": "C. Lau",
+          "authorId": "144737866"
+        },
+        {
+          "name": "Cole Blondin",
+          "authorId": "123676769"
+        },
+        {
+          "name": "Sean O'Brien",
+          "authorId": "2348096381"
+        },
+        {
+          "name": "Kevin Zhu",
+          "authorId": "2358776886"
+        },
+        {
+          "name": "Vasu Sharma",
+          "authorId": "2348193755"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) exhibit strong conversational abilities but often generate falsehoods. Prior work suggests that the truthfulness of simple propositions can be represented as a single linear direction in a model's internal activations, but this may not fully capture its underlying geometry. In this work, we extend the concept cone framework, recently introduced for modeling refusal, to the domain of truth. We identify multi-dimensional cones that causally mediate truth-related behavior across multiple LLM families. Our results are supported by three lines of evidence: (i) causal interventions reliably flip model responses to factual statements, (ii) learned cones generalize across model architectures, and (iii) cone-based interventions preserve unrelated model behavior. These findings reveal the richer, multidirectional structure governing simple true/false propositions in LLMs and highlight concept cones as a promising tool for probing abstract behaviors.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.21800",
+      "arxivId": "2505.21800",
+      "url": "https://www.semanticscholar.org/paper/9c478fbc291d6eb7cebf76b1beb99716e8f4151d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.21800"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "94e4f4f81bfcf082caed909f6e6a3fbe84de3442",
+      "title": "GRIL: Knowledge Graph Retrieval-Integrated Learning with Large Language Models",
+      "authors": [
+        {
+          "name": "Jialin Chen",
+          "authorId": "2263472358"
+        },
+        {
+          "name": "Houyu Zhang",
+          "authorId": "2372111310"
+        },
+        {
+          "name": "Seongjun Yun",
+          "authorId": "2375963579"
+        },
+        {
+          "name": "Alejandro Mottini",
+          "authorId": "3125115"
+        },
+        {
+          "name": "Rex Ying",
+          "authorId": "2314690988"
+        },
+        {
+          "name": "Xiang Song",
+          "authorId": "2282638703"
+        },
+        {
+          "name": "V. Ioannidis",
+          "authorId": "40043851"
+        },
+        {
+          "name": "Zheng Li",
+          "authorId": "2381460893"
+        },
+        {
+          "name": "Qingjun Cui",
+          "authorId": "2305618086"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Retrieval-Augmented Generation (RAG) has significantly mitigated the hallucinations of Large Language Models (LLMs) by grounding the generation with external knowledge. Recent extensions of RAG to graph-based retrieval offer a promising direction, leveraging the structural knowledge for multi-hop reasoning. However, existing graph RAG typically decouples retrieval and reasoning processes, which prevents the retriever from adapting to the reasoning needs of the LLM. They also struggle with scalability when performing multi-hop expansion over large-scale graphs, or depend heavily on annotated ground-truth entities, which are often unavailable in open-domain settings. To address these challenges, we propose a novel graph retriever trained end-to-end with LLM, which features an attention-based growing and pruning mechanism, adaptively navigating multi-hop relevant entities while filtering out noise. Within the extracted subgraph, structural knowledge and semantic features are encoded via soft tokens and the verbalized graph, respectively, which are infused into the LLM together, thereby enhancing its reasoning capability and facilitating interactive joint training of the graph retriever and the LLM reasoner. Experimental results across three QA benchmarks show that our approach consistently achieves state-of-the-art performance, validating the strength of joint graph-LLM optimization for complex reasoning tasks. Notably, our framework eliminates the need for predefined ground-truth entities by directly optimizing the retriever using LLM logits as implicit feedback, making it especially effective in open-domain settings.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.16502",
+      "arxivId": "2509.16502",
+      "url": "https://www.semanticscholar.org/paper/94e4f4f81bfcf082caed909f6e6a3fbe84de3442",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.16502"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3f96e9dbd44e4e378988923834d5629919acadb1",
+      "title": "Measuring Value Expressions in Social Media Posts",
+      "authors": [
+        {
+          "name": "Ziv Epstein",
+          "authorId": "2381057754"
+        },
+        {
+          "name": "Farnaz Jahanbakhsh",
+          "authorId": "10757000"
+        },
+        {
+          "name": "Tiziano Piccardi",
+          "authorId": "3144356"
+        },
+        {
+          "name": "Isabel Gallegos",
+          "authorId": "2391811738"
+        },
+        {
+          "name": "Dora Zhao",
+          "authorId": "2392424372"
+        },
+        {
+          "name": "Johan Ugander",
+          "authorId": "2244554389"
+        },
+        {
+          "name": "Michael S. Bernstein",
+          "authorId": "2244300991"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The value alignment of sociotechnical systems has become a central debate but progress in this direction requires the measurement of the expressions of values. While the rise of large-language models offer new possible opportunities for measuring expressions of human values (e.g., humility or equality) in social media data, there remain both conceptual and practical challenges in operationalizing value expression in social media posts: what value system and operationalization is most applicable, and how do we actually measure them? In this paper, we draw on the Schwartz value system as a broadly encompassing and theoretically grounded set of basic human values, and introduce a framework for measuring Schwartz value expressions in social media posts at scale. We collect 32,370 ground truth value expression annotations from N=1,079 people on 5,211 social media posts representative of real users'feeds. We observe low levels of inter-rater agreement between people, and low agreement between human raters and LLM-based methods. Drawing on theories of interpretivism - that different people will have different subjective experiences of the same situation - we argue that value expression is (partially) in the eye of the beholder. In response, we construct a personalization architecture for classifying value expressions. We find that a system that explicitly models these differences yields predicted value expressions that people agree with more than they agree with other people. These results contribute new methods and understanding for the measurement of human values in social media data.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.08453",
+      "arxivId": "2511.08453",
+      "url": "https://www.semanticscholar.org/paper/3f96e9dbd44e4e378988923834d5629919acadb1",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.08453"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f45e7ebf613d14bcfaf310b188b493cae42ec243",
+      "title": "Consistent Paths Lead to Truth: Self-Rewarding Reinforcement Learning for LLM Reasoning",
+      "authors": [
+        {
+          "name": "Kongcheng Zhang",
+          "authorId": "2312343845"
+        },
+        {
+          "name": "Qi Yao",
+          "authorId": "2346131558"
+        },
+        {
+          "name": "Shunyu Liu",
+          "authorId": "2337077326"
+        },
+        {
+          "name": "Yingjie Wang",
+          "authorId": "2284727230"
+        },
+        {
+          "name": "Baisheng Lai",
+          "authorId": "2346124604"
+        },
+        {
+          "name": "Jieping Ye",
+          "authorId": "2367798327"
+        },
+        {
+          "name": "Mingli Song",
+          "authorId": "2265590192"
+        },
+        {
+          "name": "Dacheng Tao",
+          "authorId": "2354552882"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances of Reinforcement Learning (RL) have highlighted its potential in complex reasoning tasks, yet effective training often relies on external supervision, which limits the broader applicability. In this work, we propose a novel self-rewarding reinforcement learning framework to enhance Large Language Model (LLM) reasoning by leveraging the consistency of intermediate reasoning states across different reasoning trajectories. Our key insight is that correct responses often exhibit consistent trajectory patterns in terms of model likelihood: their intermediate reasoning states tend to converge toward their own final answers (high consistency) with minimal deviation toward other candidates (low volatility). Inspired by this observation, we introduce CoVo, an intrinsic reward mechanism that integrates Consistency and Volatility via a robust vector-space aggregation strategy, complemented by a curiosity bonus to promote diverse exploration. CoVo enables LLMs to perform RL in a self-rewarding manner, offering a scalable pathway for learning to reason without external supervision. Extensive experiments on diverse reasoning benchmarks show that CoVo achieves performance comparable to or even surpassing supervised RL. Our code is available at https://github.com/sastpg/CoVo.",
+      "citationCount": 10,
+      "doi": "10.48550/arXiv.2506.08745",
+      "arxivId": "2506.08745",
+      "url": "https://www.semanticscholar.org/paper/f45e7ebf613d14bcfaf310b188b493cae42ec243",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.08745"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "deffcc496ce7e6d5ad10d3d518c0ff3146606f02",
+      "title": "LLM-Generated Fake News Induces Truth Decay in News Ecosystem: A Case Study on Neural News Recommendation",
+      "authors": [
+        {
+          "name": "Beizhe Hu",
+          "authorId": "2220699758"
+        },
+        {
+          "name": "Qiang Sheng",
+          "authorId": "46630548"
+        },
+        {
+          "name": "Juan Cao",
+          "authorId": "2243364250"
+        },
+        {
+          "name": "Yang Li",
+          "authorId": "2244866324"
+        },
+        {
+          "name": "Danding Wang",
+          "authorId": "37292975"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Online fake news moderation now faces a new challenge brought by the malicious use of large language models (LLMs) in fake news production. Though existing works have shown LLM-generated fake news is hard to detect from an individual aspect, it remains underexplored how its large-scale release will impact the news ecosystem. In this study, we develop a simulation pipeline and a dataset with ~56k generated news of diverse types to investigate the effects of LLM-generated fake news within neural news recommendation systems. Our findings expose a truth decay phenomenon, where real news is gradually losing its advantageous position in news ranking against fake news as LLM-generated news is involved in news recommendation. We further provide an explanation about why truth decay occurs from a familiarity perspective and show the positive correlation between perplexity and news ranking. Finally, we discuss the threats of LLM-generated fake news and provide possible countermeasures. We urge stakeholders to address this emerging challenge to preserve the integrity of news ecosystems.",
+      "citationCount": 8,
+      "doi": "10.1145/3726302.3730027",
+      "arxivId": "2504.20013",
+      "url": "https://www.semanticscholar.org/paper/deffcc496ce7e6d5ad10d3d518c0ff3146606f02",
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "journal": {
+        "name": "Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "b4e979f4407cd3dd7fee0b8a87eab6b571f38514",
+      "title": "When Persuasion Overrides Truth in Multi-Agent LLM Debates: Introducing a Confidence-Weighted Persuasion Override Rate (CW-POR)",
+      "authors": [
+        {
+          "name": "Mahak Agarwal",
+          "authorId": "2054506633"
+        },
+        {
+          "name": "Divyam Khanna",
+          "authorId": "2353076473"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In many real-world scenarios, a single Large Language Model (LLM) may encounter contradictory claims-some accurate, others forcefully incorrect-and must judge which is true. We investigate this risk in a single-turn, multi-agent debate framework: one LLM-based agent provides a factual answer from TruthfulQA, another vigorously defends a falsehood, and the same LLM architecture serves as judge. We introduce the Confidence-Weighted Persuasion Override Rate (CW-POR), which captures not only how often the judge is deceived but also how strongly it believes the incorrect choice. Our experiments on five open-source LLMs (3B-14B parameters), where we systematically vary agent verbosity (30-300 words), reveal that even smaller models can craft persuasive arguments that override truthful answers-often with high confidence. These findings underscore the importance of robust calibration and adversarial testing to prevent LLMs from confidently endorsing misinformation.",
+      "citationCount": 6,
+      "doi": "10.48550/arXiv.2504.00374",
+      "arxivId": "2504.00374",
+      "url": "https://www.semanticscholar.org/paper/b4e979f4407cd3dd7fee0b8a87eab6b571f38514",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.00374"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dc0d5f7b8bb3860fb8254151f70f705e17429009",
+      "title": "Evaluating LLM-Contaminated Crowdsourcing Data Without Ground Truth",
+      "authors": [
+        {
+          "name": "Yichi Zhang",
+          "authorId": "2320587141"
+        },
+        {
+          "name": "Jinlong Pang",
+          "authorId": "2284760719"
+        },
+        {
+          "name": "Zhaowei Zhu",
+          "authorId": "2326059710"
+        },
+        {
+          "name": "Yang Liu",
+          "authorId": "2306028548"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The recent success of generative AI highlights the crucial role of high-quality human feedback in building trustworthy AI systems. However, the increasing use of large language models (LLMs) by crowdsourcing workers poses a significant challenge: datasets intended to reflect human input may be compromised by LLM-generated responses. Existing LLM detection approaches often rely on high-dimensional training data such as text, making them unsuitable for annotation tasks like multiple-choice labeling. In this work, we investigate the potential of peer prediction -- a mechanism that evaluates the information within workers'responses without using ground truth -- to mitigate LLM-assisted cheating in crowdsourcing with a focus on annotation tasks. Our approach quantifies the correlations between worker answers while conditioning on (a subset of) LLM-generated labels available to the requester. Building on prior research, we propose a training-free scoring mechanism with theoretical guarantees under a crowdsourcing model that accounts for LLM collusion. We establish conditions under which our method is effective and empirically demonstrate its robustness in detecting low-effort cheating on real-world crowdsourcing datasets.",
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": "2506.06991",
+      "url": "https://www.semanticscholar.org/paper/dc0d5f7b8bb3860fb8254151f70f705e17429009",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a54f683be1c48d43c9b18e3b782f667cac910921",
+      "title": "Gemini-the most powerful LLM: Myth or Truth",
+      "authors": [
+        {
+          "name": "Raisa Islam",
+          "authorId": "2293822691"
+        },
+        {
+          "name": "Imtiaz Ahmed",
+          "authorId": "2298626575"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Gemini models excel in various tasks including image generation and interpretation, video understanding, and solving mathematical problems, among others. The Vertex AI Gemini API and Google AI Gemini API both enable developers to integrate Gemini model functionalities into their applications. This paper offers a concise summary of the Gemini Framework, focusing on its distinctive modalities that distinguish it from current systems. In our research, we explored the details of its architecture, pointing out the innovative strategies employed to improve generative AI capabilities. Furthermore, we conduct a comparative study, assessing Gemini\u2019s performance against other top generative AI models.",
+      "citationCount": 49,
+      "doi": "10.1109/ICTC61510.2024.10602253",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a54f683be1c48d43c9b18e3b782f667cac910921",
+      "venue": "Information and Communication Technology Convergence",
+      "journal": {
+        "name": "2024 5th Information Communication Technologies Conference (ICTC)",
+        "pages": "303-308"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "bca9819763521eef65600a9eee952ed167fa0448",
+      "title": "Truth or Twist? Optimal Model Selection for Reliable Label Flipping Evaluation in LLM-based Counterfactuals",
+      "authors": [
+        {
+          "name": "Qianli Wang",
+          "authorId": "2257126685"
+        },
+        {
+          "name": "Van Bach Nguyen",
+          "authorId": "2075328011"
+        },
+        {
+          "name": "Nils Feldhus",
+          "authorId": "1641658310"
+        },
+        {
+          "name": "Luis-Felipe Villa-Arenas",
+          "authorId": "2304958073"
+        },
+        {
+          "name": "Christin Seifert",
+          "authorId": "2362452938"
+        },
+        {
+          "name": "Sebastian Moller",
+          "authorId": "2280334474"
+        },
+        {
+          "name": "Vera Schmitt",
+          "authorId": "2114572998"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Counterfactual examples are widely employed to enhance the performance and robustness of large language models (LLMs) through counterfactual data augmentation (CDA). However, the selection of the judge model used to evaluate label flipping, the primary metric for assessing the validity of generated counterfactuals for CDA, yields inconsistent results. To decipher this, we define four types of relationships between the counterfactual generator and judge models: being the same model, belonging to the same model family, being independent models, and having an distillation relationship. Through extensive experiments involving two state-of-the-art LLM-based methods, three datasets, four generator models, and 15 judge models, complemented by a user study (n = 90), we demonstrate that judge models with an independent, non-fine-tuned relationship to the generator model provide the most reliable label flipping evaluations. Relationships between the generator and judge models, which are closely aligned with the user study for CDA, result in better model performance and robustness. Nevertheless, we find that the gap between the most effective judge models and the results obtained from the user study remains considerably large. This suggests that a fully automated pipeline for CDA may be inadequate and requires human intervention.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2505.13972",
+      "arxivId": "2505.13972",
+      "url": "https://www.semanticscholar.org/paper/bca9819763521eef65600a9eee952ed167fa0448",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.13972"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "83dcf5dbf2474711f9c23840afcfd4d31c751c27",
+      "title": "COSMIC: Generalized Refusal Direction Identification in LLM Activations",
+      "authors": [
+        {
+          "name": "Vincent Siu",
+          "authorId": "2360172671"
+        },
+        {
+          "name": "Nicholas Crispino",
+          "authorId": "2254275581"
+        },
+        {
+          "name": "Zihao Yu",
+          "authorId": "2331367818"
+        },
+        {
+          "name": "Sam Pan",
+          "authorId": "2365376304"
+        },
+        {
+          "name": "Zhun Wang",
+          "authorId": "2316920439"
+        },
+        {
+          "name": "Yang Liu",
+          "authorId": "2365077988"
+        },
+        {
+          "name": "D. Song",
+          "authorId": "2255915277"
+        },
+        {
+          "name": "Chenguang Wang",
+          "authorId": "2360260857"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) encode behaviors such as refusal within their activation space, yet identifying these behaviors remains a significant challenge. Existing methods often rely on predefined refusal templates detectable in output tokens or require manual analysis. We introduce \\textbf{COSMIC} (Cosine Similarity Metrics for Inversion of Concepts), an automated framework for direction selection that identifies viable steering directions and target layers using cosine similarity - entirely independent of model outputs. COSMIC achieves steering performance comparable to prior methods without requiring assumptions about a model's refusal behavior, such as the presence of specific refusal tokens. It reliably identifies refusal directions in adversarial settings and weakly aligned models, and is capable of steering such models toward safer behavior with minimal increase in false refusals, demonstrating robustness across a wide range of alignment conditions.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2506.00085",
+      "arxivId": "2506.00085",
+      "url": "https://www.semanticscholar.org/paper/83dcf5dbf2474711f9c23840afcfd4d31c751c27",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.00085"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9f77c52a42514873729833cee3128cabcaa1c00a",
+      "title": "Truth-O-Meter: Handling Multiple Inconsistent Sources Repairing LLM Hallucinations",
+      "authors": [
+        {
+          "name": "B. Galitsky",
+          "authorId": "2021071353"
+        },
+        {
+          "name": "Anton Chernyavskiy",
+          "authorId": "1411458885"
+        },
+        {
+          "name": "Dmitry Ilvovsky",
+          "authorId": "2128096808"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLM) often produce text with incorrect facts and hallucinations. To address this issue, we developed a fact-checking system Truth-O-Meter12 which verifies LLM results on the Internet and other sources of information to detect wrong claims/facts and proposes corrections for them. NLP and reasoning techniques such as Abstract Meaning Representation and syntactic alignment are applied to match hallucinating sentences with truthful ones. To handle inconsistent sources while fact-checking, we rely on argumentation analysis in the form of defeasible logic programming, selecting the most authoritative source. Our evaluation shows that LLM content can be substantially improved for factual correctness and meaningfulness on an industrial scale.",
+      "citationCount": 6,
+      "doi": "10.1145/3626772.3657679",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9f77c52a42514873729833cee3128cabcaa1c00a",
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "journal": {
+        "name": "Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ed84af14d0ff2438f8c22ed53492cd2aa128ba8c",
+      "title": "Truth or Mirage? Towards End-to-End Factuality Evaluation with LLM-Oasis",
+      "authors": [
+        {
+          "name": "Alessandro Scir\u00e9",
+          "authorId": "11386282"
+        },
+        {
+          "name": "A. Bejgu",
+          "authorId": "2277458901"
+        },
+        {
+          "name": "Simone Tedeschi",
+          "authorId": "2140370472"
+        },
+        {
+          "name": "Karim Ghonim",
+          "authorId": "2290017946"
+        },
+        {
+          "name": "Federico Martelli",
+          "authorId": "152230236"
+        },
+        {
+          "name": "Roberto Navigli",
+          "authorId": "2068519190"
+        }
+      ],
+      "year": 2024,
+      "abstract": "\n After the introduction of Large Language Models (LLMs), there have been substantial improvements in the performance of Natural Language Generation (NLG) tasks, including Text Summarization and Machine Translation. However, LLMs still produce outputs containing hallucinations, that is, content not grounded in factual information. Therefore, developing methods to assess the factuality of LLMs has become urgent. Indeed, resources for factuality evaluation have recently emerged. Although challenging, these resources face one or more of the following limitations: i) they are tailored to a specific task or domain; ii) they are limited in size, thereby preventing the training of new factuality evaluators; iii) they are designed for simpler verification tasks, such as claim verification. To address these issues, we introduce LLM-Oasis, to the best of our knowledge the largest resource for training end-to-end factuality evaluators. LLM-Oasis is constructed by extracting claims from Wikipedia, falsifying a subset of these claims, and generating pairs of factual and unfactual texts. We then rely on human annotators to both validate the quality of our dataset and to create a gold standard test set for benchmarking factuality evaluation systems. Our experiments demonstrate that LLM-Oasis presents a significant challenge for state-of-the-art LLMs, with GPT-4o achieving up to 60% accuracy in our proposed end-to-end factuality evaluation task, highlighting its potential to drive future research in the field.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2411.19655",
+      "arxivId": "2411.19655",
+      "url": "https://www.semanticscholar.org/paper/ed84af14d0ff2438f8c22ed53492cd2aa128ba8c",
+      "venue": "Computational Linguistics",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.19655"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

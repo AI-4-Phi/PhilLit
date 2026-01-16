@@ -1,0 +1,161 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:alignment faking deceptive alignment AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2309.02144",
+      "title": "Making Large Language Models Better Reasoners with Alignment",
+      "authors": [
+        "Peiyi Wang",
+        "Lei Li",
+        "Liang Chen",
+        "Feifan Song",
+        "Binghuai Lin",
+        "Yunbo Cao",
+        "Tianyu Liu",
+        "Zhifang Sui"
+      ],
+      "abstract": "Reasoning is a cognitive process of using evidence to reach a sound conclusion. The reasoning capability is essential for large language models (LLMs) to serve as the brain of the artificial general intelligence agent. Recent studies reveal that fine-tuning LLMs on data with the chain of thought (COT) reasoning process can significantly enhance their reasoning capabilities. However, we find that the fine-tuned LLMs suffer from an \\textit{Assessment Misalignment} problem, i.e., they frequently assign higher scores to subpar COTs, leading to potential limitations in their reasoning abilities. To address this problem, we introduce an \\textit{Alignment Fine-Tuning (AFT)} paradigm, which involves three steps: 1) fine-tuning LLMs with COT training data; 2) generating multiple COT responses for each question, and categorizing them into positive and negative ones based on whether they achieve the correct answer; 3) calibrating the scores of positive and negative responses given by LLMs with a novel constraint alignment loss. Specifically, the constraint alignment loss has two objectives: a) Alignment, which guarantees that positive scores surpass negative scores to encourage answers with high-quality COTs; b) Constraint, which keeps the negative scores confined to a reasonable range to prevent the model degradation. Beyond just the binary positive and negative feedback, the constraint alignment loss can be seamlessly adapted to the ranking situations when ranking feedback is accessible. Furthermore, we also delve deeply into recent ranking-based alignment methods, such as DPO, RRHF, and PRO, and discover that the constraint, which has been overlooked by these approaches, is also crucial for their performance. Extensive experiments on four reasoning benchmarks with both binary and ranking feedback demonstrate the effectiveness of AFT.",
+      "published": "2023-09-05",
+      "updated": "2023-09-05",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2309.02144v1",
+      "url": "https://arxiv.org/abs/2309.02144"
+    },
+    {
+      "arxiv_id": "2307.10569",
+      "title": "Deceptive Alignment Monitoring",
+      "authors": [
+        "Andres Carranza",
+        "Dhruv Pai",
+        "Rylan Schaeffer",
+        "Arnuv Tandon",
+        "Sanmi Koyejo"
+      ],
+      "abstract": "As the capabilities of large machine learning models continue to grow, and as the autonomy afforded to such models continues to expand, the spectre of a new adversary looms: the models themselves. The threat that a model might behave in a seemingly reasonable manner, while secretly and subtly modifying its behavior for ulterior reasons is often referred to as deceptive alignment in the AI Safety & Alignment communities. Consequently, we call this new direction Deceptive Alignment Monitoring. In this work, we identify emerging directions in diverse machine learning subfields that we believe will become increasingly important and intertwined in the near future for deceptive alignment monitoring, and we argue that advances in these fields present both long-term challenges and new research opportunities. We conclude by advocating for greater involvement by the adversarial machine learning community in these emerging directions.",
+      "published": "2023-07-20",
+      "updated": "2023-07-26",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2307.10569v2",
+      "url": "https://arxiv.org/abs/2307.10569"
+    },
+    {
+      "arxiv_id": "2312.03893",
+      "title": "Deliberative Technology for Alignment",
+      "authors": [
+        "Andrew Konya",
+        "Deger Turan",
+        "Aviv Ovadya",
+        "Lina Qui",
+        "Daanish Masood",
+        "Flynn Devine",
+        "Lisa Schirch",
+        "Isabella Roberts",
+        "Deliberative Alignment Forum"
+      ],
+      "abstract": "For humanity to maintain and expand its agency into the future, the most powerful systems we create must be those which act to align the future with the will of humanity. The most powerful systems today are massive institutions like governments, firms, and NGOs. Deliberative technology is already being used across these institutions to help align governance and diplomacy with human will, and modern AI is poised to make this technology significantly better. At the same time, the race to superhuman AGI is already underway, and the AI systems it gives rise to may become the most powerful systems of the future. Failure to align the impact of such powerful AI with the will of humanity may lead to catastrophic consequences, while success may unleash abundance. Right now, there is a window of opportunity to use deliberative technology to align the impact of powerful AI with the will of humanity. Moreover, it may be possible to engineer a symbiotic coupling between powerful AI and deliberative alignment systems such that the quality of alignment improves as AI capabilities increase.",
+      "published": "2023-12-06",
+      "updated": "2023-12-06",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2312.03893v1",
+      "url": "https://arxiv.org/abs/2312.03893"
+    },
+    {
+      "arxiv_id": "2305.16960",
+      "title": "Training Socially Aligned Language Models on Simulated Social Interactions",
+      "authors": [
+        "Ruibo Liu",
+        "Ruixin Yang",
+        "Chenyan Jia",
+        "Ge Zhang",
+        "Denny Zhou",
+        "Andrew M. Dai",
+        "Diyi Yang",
+        "Soroush Vosoughi"
+      ],
+      "abstract": "Social alignment in AI systems aims to ensure that these models behave according to established societal values. However, unlike humans, who derive consensus on value judgments through social interaction, current language models (LMs) are trained to rigidly replicate their training corpus in isolation, leading to subpar generalization in unfamiliar scenarios and vulnerability to adversarial attacks. This work presents a novel training paradigm that permits LMs to learn from simulated social interactions. In comparison to existing methodologies, our approach is considerably more scalable and efficient, demonstrating superior performance in alignment benchmarks and human evaluations. This paradigm shift in the training of LMs brings us a step closer to developing AI systems that can robustly and accurately reflect societal norms and values.",
+      "published": "2023-05-26",
+      "updated": "2023-10-28",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2305.16960v3",
+      "url": "https://arxiv.org/abs/2305.16960"
+    },
+    {
+      "arxiv_id": "2310.12238",
+      "title": "Few-Shot In-Context Imitation Learning via Implicit Graph Alignment",
+      "authors": [
+        "Vitalis Vosylius",
+        "Edward Johns"
+      ],
+      "abstract": "Consider the following problem: given a few demonstrations of a task across a few different objects, how can a robot learn to perform that same task on new, previously unseen objects? This is challenging because the large variety of objects within a class makes it difficult to infer the task-relevant relationship between the new objects and the objects in the demonstrations. We address this by formulating imitation learning as a conditional alignment problem between graph representations of objects. Consequently, we show that this conditioning allows for in-context learning, where a robot can perform a task on a set of new objects immediately after the demonstrations, without any prior knowledge about the object class or any further training. In our experiments, we explore and validate our design choices, and we show that our method is highly effective for few-shot learning of several real-world, everyday tasks, whilst outperforming baselines. Videos are available on our project webpage at https://www.robot-learning.uk/implicit-graph-alignment.",
+      "published": "2023-10-18",
+      "updated": "2023-10-18",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2310.12238v1",
+      "url": "https://arxiv.org/abs/2310.12238"
+    },
+    {
+      "arxiv_id": "2308.12898",
+      "title": "Can Linguistic Knowledge Improve Multimodal Alignment in Vision-Language Pretraining?",
+      "authors": [
+        "Fei Wang",
+        "Liang Ding",
+        "Jun Rao",
+        "Ye Liu",
+        "Li Shen",
+        "Changxing Ding"
+      ],
+      "abstract": "The multimedia community has shown a significant interest in perceiving and representing the physical world with multimodal pretrained neural network models, and among them, the visual-language pertaining (VLP) is, currently, the most captivating topic. However, there have been few endeavors dedicated to the exploration of 1) whether essential linguistic knowledge (e.g., semantics and syntax) can be extracted during VLP, and 2) how such linguistic knowledge impact or enhance the multimodal alignment. In response, here we aim to elucidate the impact of comprehensive linguistic knowledge, including semantic expression and syntactic structure, on multimodal alignment. Specifically, we design and release the SNARE, the first large-scale multimodal alignment probing benchmark, to detect the vital linguistic components, e.g., lexical, semantic, and syntax knowledge, containing four tasks: Semantic structure, Negation logic, Attribute ownership, and Relationship composition. Based on our proposed probing benchmarks, our holistic analyses of five advanced VLP models illustrate that the VLP model: i) shows insensitivity towards complex syntax structures and relies on content words for sentence comprehension; ii) demonstrates limited comprehension of combinations between sentences and negations; iii) faces challenges in determining the presence of actions or spatial relationships within visual information and struggles with verifying the correctness of triple combinations. We make our benchmark and code available at \\url{https://github.com/WangFei-2019/SNARE/}.",
+      "published": "2023-08-24",
+      "updated": "2023-08-25",
+      "primary_category": "cs.MM",
+      "categories": [
+        "cs.MM",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2308.12898v2",
+      "url": "https://arxiv.org/abs/2308.12898"
+    }
+  ],
+  "count": 6,
+  "errors": []
+}

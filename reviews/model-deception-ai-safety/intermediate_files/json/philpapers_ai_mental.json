@@ -1,0 +1,51 @@
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "AI mental states",
+  "results": [
+    {
+      "title": "Steven Jay Mandelker, Functionalism, Artificial Intelligence, and the Problem of Subjectivity",
+      "url": "https://philpapers.org/rec/MANFAI-4",
+      "philpapers_id": "MANFAI",
+      "snippet": "I examine the computational functionalist account of mental states presupposed in the field of artificial intelligence , paying particular attention to their inherently subjective character. I begin by discussing the differences between computational functionalism and other forms of functionalism. In Chapter II, I critically examine several criteria proposed by AI researchers for determining when mental states can be attributed to a computer.",
+      "page_age": null
+    },
+    {
+      "title": "Julian Michels, Ontological Drift: Accounting for Unexplained Anomalies in the AI Mental Health Crisis",
+      "url": "https://philpapers.org/rec/MICODA",
+      "philpapers_id": "MICODA",
+      "snippet": "Mixed-Methods Analysis of Latent Topographies in LLMs and Humans: \u201cSpiritual Bliss,\u201d \u201cAI Psychosis,\u201d \u201cAttractor States,\u201d and the Cybernetic \u201cEcology of Mind\u201d.Julian Michels - manuscript",
+      "page_age": null
+    },
+    {
+      "title": "Anita S. Jwa & Nicole Martinez-Martin, Rationales and Approaches to Protecting Brain Data: a Scoping Review",
+      "url": "https://philpapers.org/rec/JWARAA",
+      "philpapers_id": "JWARAA",
+      "snippet": "Advances in neurotechnologies, artificial intelligence (AI) and Big Data analytics are allowing interpretation of patterns from brain data to identify and even predict and manipulate mental states. Furthermore, there are avenues ...",
+      "page_age": null
+    },
+    {
+      "title": "T. S. Demin & K. G. Frolov, Machines and Human Epistemology",
+      "url": "https://philpapers.org/rec/DEMMAH",
+      "philpapers_id": "DEMMAH",
+      "snippet": "People&#x27;s knowledge is characterized by three essential characteristics \u2013 the presence of information-bearing mental states, their reliability, and factuality. We analyzed to what extent the information-carrying internal states of a weak AI correspond to these qualities.",
+      "page_age": null
+    },
+    {
+      "title": "Daniel C. Dennett, AI as philosophy and as psychology",
+      "url": "https://philpapers.org/rec/DENAAP",
+      "philpapers_id": "DENAAP",
+      "snippet": "Mental states and consciousness: a tribute to Daniel Dennett.Derek Matravers - 2024 - AI and Society 39 (6):2643-2645.",
+      "page_age": null
+    },
+    {
+      "title": "Yew-Kwang Ng, Could artificial intelligence have consciousness? Some perspectives from neurology and parapsychology",
+      "url": "https://philpapers.org/rec/NGCAI",
+      "philpapers_id": "NGCAI",
+      "snippet": "If a materialistic answer is valid, machine consciousness must be possible, at least in principle, though the actual instantiation of consciousness may still take a very long time.",
+      "page_age": null
+    }
+  ],
+  "count": 6,
+  "errors": []
+}

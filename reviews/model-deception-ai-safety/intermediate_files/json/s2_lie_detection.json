@@ -1,0 +1,1248 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "lie detection language models",
+  "results": [
+    {
+      "paperId": "ee345387b64012a93628ad6d84ff5c97a3a73dcd",
+      "title": "Deception and Lie Detection Using Reduced Linguistic Features, Deep Models and Large Language Models for Transcribed Data",
+      "authors": [
+        {
+          "name": "Tien Nguyen",
+          "authorId": "2317116200"
+        },
+        {
+          "name": "Faranak Abri",
+          "authorId": "1422034104"
+        },
+        {
+          "name": "A. Namin",
+          "authorId": "2336007"
+        },
+        {
+          "name": "Keith S. Jones",
+          "authorId": "2087297449"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In recent years, there has been a growing interest in and focus on the automatic detection of deceptive behavior. This attention is justified by the wide range of applications that deception detection can have, especially in fields such as criminology. This study specifically aims to contribute to the field of deception detection by capturing transcribed data, analyzing textual data using Natural Language Processing (NLP) techniques, and comparing the performance of conventional models using linguistic features with the performance of Large Language Models (LLMs). In addition, the significance of applied linguistic features has been examined using different feature selection techniques. Through extensive experiments, we evaluated the effectiveness of both conventional and deep NLP models in detecting deception from speech. Applying different models to the Real-Life Trial dataset, a single layer of Bidirectional Long Short-Term Memory (BiLSTM) tuned by early stopping outperformed the other models. This model achieved an accuracy of 93.57% and an F1 score of 94.48%.",
+      "citationCount": 2,
+      "doi": "10.1109/COMPSAC61105.2024.00059",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ee345387b64012a93628ad6d84ff5c97a3a73dcd",
+      "venue": "Annual International Computer Software and Applications Conference",
+      "journal": {
+        "name": "2024 IEEE 48th Annual Computers, Software, and Applications Conference (COMPSAC)",
+        "pages": "376-381"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "4e365722c468cbd0a93ec6e26f13a0bef74be71d",
+      "title": "Verbal lie detection using Large Language Models",
+      "authors": [
+        {
+          "name": "Riccardo Loconte",
+          "authorId": "2136302335"
+        },
+        {
+          "name": "Roberto Russo",
+          "authorId": "2260808142"
+        },
+        {
+          "name": "P. Capuozzo",
+          "authorId": "66057402"
+        },
+        {
+          "name": "Pietro Pietrini",
+          "authorId": "2260808416"
+        },
+        {
+          "name": "Giuseppe Sartori",
+          "authorId": "2270768316"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Human accuracy in detecting deception with intuitive judgments has been proven to not go above the chance level. Therefore, several automatized verbal lie detection techniques employing Machine Learning and Transformer models have been developed to reach higher levels of accuracy. This study is the first to explore the performance of a Large Language Model, FLAN-T5 (small and base sizes), in a lie-detection classification task in three English-language datasets encompassing personal opinions, autobiographical memories, and future intentions. After performing stylometric analysis to describe linguistic differences in the three datasets, we tested the small- and base-sized FLAN-T5 in three Scenarios using 10-fold cross-validation: one with train and test set coming from the same single dataset, one with train set coming from two datasets and the test set coming from the third remaining dataset, one with train and test set coming from all the three datasets. We reached state-of-the-art results in Scenarios 1 and 3, outperforming previous benchmarks. The results revealed also that model performance depended on model size, with larger models exhibiting higher performance. Furthermore, stylometric analysis was performed to carry out explainability analysis, finding that linguistic features associated with the Cognitive Load framework may influence the model\u2019s predictions.",
+      "citationCount": 13,
+      "doi": "10.1038/s41598-023-50214-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4e365722c468cbd0a93ec6e26f13a0bef74be71d",
+      "venue": "Scientific Reports",
+      "journal": {
+        "name": "Scientific Reports",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6244bf404abf069fe9129f1ecec408004ec71694",
+      "title": "Would I Lie to You? Using Large Language Models for Deception Detection",
+      "authors": [
+        {
+          "name": "Bjanka Vrljic",
+          "authorId": "2376344975"
+        },
+        {
+          "name": "I. Boti\u010dki",
+          "authorId": "2184646525"
+        },
+        {
+          "name": "Ana Me\u0161trovi\u0107",
+          "authorId": "2311039103"
+        },
+        {
+          "name": "D. Mlinari\u0107",
+          "authorId": "27029904"
+        },
+        {
+          "name": "Ivan Terzic",
+          "authorId": "2220905159"
+        },
+        {
+          "name": "Branko Kirin",
+          "authorId": "2376346494"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception is prevalent in online interactions and poses a challenge to reliable information access. This paper explores the effectiveness of BERT and GPT in improving the accuracy of deception detection. Building on previous work with traditional machine learning models, we use BERT and GPT to analyze textual crowd-sourced statements on climate change and COVID-19. We use fine-tuned BERT models and employ zeroshot, few-shot, and Chain-of-Thought (CoT) techniques with GPT models to classify statements as truthful or deceptive. Our results show that these models significantly outperform traditional machine learning methods, achieving improved accuracy in distinguishing between truthful and deceptive statements. This success stems from the models' ability to capture contextual information and semantic nuances in the text. In addition, the flexibility of GPT in zero-shot and few-shot settings proves valuable for tasks with limited labeled data. These results highlight the potential of pre-trained language models in deception detection and pave the way for further advancements.",
+      "citationCount": 0,
+      "doi": "10.1109/ICNLP65360.2025.11108620",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6244bf404abf069fe9129f1ecec408004ec71694",
+      "venue": "ICON",
+      "journal": {
+        "name": "2025 7th International Conference on Natural Language Processing (ICNLP)",
+        "pages": "595-600"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7b75b3d9f08aea9498baef8426f954106c3b5802",
+      "title": "When LLMs Meets Acoustic Landmarks: An Efficient Approach to Integrate Speech into Large Language Models for Depression Detection",
+      "authors": [
+        {
+          "name": "Xiangyu Zhang",
+          "authorId": "2216477657"
+        },
+        {
+          "name": "Hexin Liu",
+          "authorId": "2281787478"
+        },
+        {
+          "name": "Kaishuai Xu",
+          "authorId": "2119184118"
+        },
+        {
+          "name": "Qiquan Zhang",
+          "authorId": "2284639855"
+        },
+        {
+          "name": "Daijiao Liu",
+          "authorId": "2284641532"
+        },
+        {
+          "name": "Beena Ahmed",
+          "authorId": "2284864254"
+        },
+        {
+          "name": "Julien Epps",
+          "authorId": "2266394219"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Depression is a critical concern in global mental health, prompting extensive research into AI-based detection methods. Among various AI technologies, Large Language Models (LLMs) stand out for their versatility in healthcare applications. However, the application of LLMs in the identification and analysis of depressive states remains relatively unexplored, presenting an intriguing avenue for future research. In this paper, we present an innovative approach to employ an LLM in the realm of depression detection, integrating acoustic speech information into the LLM framework for this specific application. We investigate an efficient method for automatic depression detection by integrating speech signals into LLMs utilizing Acoustic Landmarks. This approach is not only valuable for the detection of depression but also represents a new perspective in enhancing the ability of LLMs to comprehend and process speech signals. By incorporating acoustic landmarks, which are specific to the pronunciation of spoken words, our method adds critical dimensions to text transcripts. This integration also provides insights into the unique speech patterns of individuals, revealing the potential mental states of individuals. By encoding acoustic landmarks information into LLMs, evaluations of the proposed approach on the DAIC-WOZ dataset reveal state-of-the-art results when compared with existing Audio-Text baselines.",
+      "citationCount": 28,
+      "doi": "10.48550/arXiv.2402.13276",
+      "arxivId": "2402.13276",
+      "url": "https://www.semanticscholar.org/paper/7b75b3d9f08aea9498baef8426f954106c3b5802",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2402.13276"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7846e90d28f4bbc0ca2a8b97974dc525dc9f697f",
+      "title": "Delving into Out-of-Distribution Detection with Medical Vision-Language Models",
+      "authors": [
+        {
+          "name": "Lie Ju",
+          "authorId": "50884038"
+        },
+        {
+          "name": "Sijin Zhou",
+          "authorId": "2348311210"
+        },
+        {
+          "name": "Yukun Zhou",
+          "authorId": "2324058027"
+        },
+        {
+          "name": "Huimin Lu",
+          "authorId": "2348376286"
+        },
+        {
+          "name": "Zhuoting Zhu",
+          "authorId": "2214336971"
+        },
+        {
+          "name": "P. Keane",
+          "authorId": "2240129086"
+        },
+        {
+          "name": "Zongyuan Ge",
+          "authorId": "2242877217"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent advances in medical vision-language models (VLMs) demonstrate impressive performance in image classification tasks, driven by their strong zero-shot generalization capabilities. However, given the high variability and complexity inherent in medical imaging data, the ability of these models to detect out-of-distribution (OOD) data in this domain remains underexplored. In this work, we conduct the first systematic investigation into the OOD detection potential of medical VLMs. We evaluate state-of-the-art VLM-based OOD detection methods across a diverse set of medical VLMs, including both general and domain-specific purposes. To accurately reflect real-world challenges, we introduce a cross-modality evaluation pipeline for benchmarking full-spectrum OOD detection, rigorously assessing model robustness against both semantic shifts and covariate shifts. Furthermore, we propose a novel hierarchical prompt-based method that significantly enhances OOD detection performance. Extensive experiments are conducted to validate the effectiveness of our approach. The codes are available at https://github.com/PyJulie/Medical-VLMs-OOD-Detection.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2503.01020",
+      "arxivId": "2503.01020",
+      "url": "https://www.semanticscholar.org/paper/7846e90d28f4bbc0ca2a8b97974dc525dc9f697f",
+      "venue": "International Conference on Medical Image Computing and Computer-Assisted Intervention",
+      "journal": {
+        "pages": "133-143"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "aea7b50352d78fd1c716181a75f086744b7fcd8d",
+      "title": "Liars' Bench: Evaluating Lie Detectors for Language Models",
+      "authors": [
+        {
+          "name": "Kieron Kretschmar",
+          "authorId": "2393208173"
+        },
+        {
+          "name": "Walter Laurito",
+          "authorId": "2313479654"
+        },
+        {
+          "name": "Sharan Maiya",
+          "authorId": "2313478753"
+        },
+        {
+          "name": "Samuel Marks",
+          "authorId": "2403670261"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Prior work has introduced techniques for detecting when large language models (LLMs) lie, that is, generate statements they believe are false. However, these techniques are typically validated in narrow settings that do not capture the diverse lies LLMs can generate. We introduce LIARS'BENCH, a testbed consisting of 72,863 examples of lies and honest responses generated by four open-weight models across seven datasets. Our settings capture qualitatively different types of lies and vary along two dimensions: the model's reason for lying and the object of belief targeted by the lie. Evaluating three black- and white-box lie detection techniques on LIARS'BENCH, we find that existing techniques systematically fail to identify certain types of lies, especially in settings where it's not possible to determine whether the model lied from the transcript alone. Overall, LIARS'BENCH reveals limitations in prior techniques and provides a practical testbed for guiding progress in lie detection.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2511.16035",
+      "arxivId": "2511.16035",
+      "url": "https://www.semanticscholar.org/paper/aea7b50352d78fd1c716181a75f086744b7fcd8d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.16035"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "21ac39bddb50cdcf7e3469e848f33c173b2c3f3f",
+      "title": "AutoDetect: Towards a Unified Framework for Automated Weakness Detection in Large Language Models",
+      "authors": [
+        {
+          "name": "Jiale Cheng",
+          "authorId": "2308160059"
+        },
+        {
+          "name": "Yida Lu",
+          "authorId": "2287817232"
+        },
+        {
+          "name": "Xiaotao Gu",
+          "authorId": "2290625851"
+        },
+        {
+          "name": "Pei Ke",
+          "authorId": "1886879"
+        },
+        {
+          "name": "Xiao Liu",
+          "authorId": "2308072332"
+        },
+        {
+          "name": "Yuxiao Dong",
+          "authorId": "2243402027"
+        },
+        {
+          "name": "Hongning Wang",
+          "authorId": "2253869803"
+        },
+        {
+          "name": "Jie Tang",
+          "authorId": "2260595820"
+        },
+        {
+          "name": "Minlie Huang",
+          "authorId": "2254009342"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Although Large Language Models (LLMs) are becoming increasingly powerful, they still exhibit significant but subtle weaknesses, such as mistakes in instruction-following or coding tasks. As these unexpected errors could lead to severe consequences in practical deployments, it is crucial to investigate the limitations within LLMs systematically. Traditional benchmarking approaches cannot thoroughly pinpoint specific model deficiencies, while manual inspections are costly and not scalable. In this paper, we introduce a unified framework, AutoDetect, to automatically expose weaknesses in LLMs across various tasks. Inspired by the educational assessment process that measures students' learning outcomes, AutoDetect consists of three LLM-powered agents: Examiner, Questioner, and Assessor. The collaboration among these three agents is designed to realize comprehensive and in-depth weakness identification. Our framework demonstrates significant success in uncovering flaws, with an identification success rate exceeding 30% in prominent models such as ChatGPT and Claude. More importantly, these identified weaknesses can guide specific model improvements, proving more effective than untargeted data augmentation methods like Self-Instruct. Our approach has led to substantial enhancements in popular LLMs, including the Llama series and Mistral-7b, boosting their performance by over 10% across several benchmarks. Code and data are publicly available at https://github.com/thu-coai/AutoDetect.",
+      "citationCount": 8,
+      "doi": "10.48550/arXiv.2406.16714",
+      "arxivId": "2406.16714",
+      "url": "https://www.semanticscholar.org/paper/21ac39bddb50cdcf7e3469e848f33c173b2c3f3f",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "6786-6803"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "cfba7433e167a4fee41babf1e2423c3b2b3ee7e4",
+      "title": "KKA: Improving Vision Anomaly Detection through Anomaly-related Knowledge from Large Language Models",
+      "authors": [
+        {
+          "name": "Dong Chen",
+          "authorId": "2339309494"
+        },
+        {
+          "name": "Zhengqing Hu",
+          "authorId": "2313038713"
+        },
+        {
+          "name": "Peiguang Fan",
+          "authorId": "2346973637"
+        },
+        {
+          "name": "Yueting Zhuang",
+          "authorId": "2253660817"
+        },
+        {
+          "name": "Yafei Li",
+          "authorId": "2316953711"
+        },
+        {
+          "name": "Qidong Liu",
+          "authorId": "2277988909"
+        },
+        {
+          "name": "Xiaoheng Jiang",
+          "authorId": "2269753190"
+        },
+        {
+          "name": "Mingliang Xu",
+          "authorId": "2299586680"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Vision anomaly detection, particularly in unsupervised settings, often struggles to distinguish between normal samples and anomalies due to the wide variability in anomalies. Recently, an increasing number of studies have focused on generating anomalies to help detectors learn more effective boundaries between normal samples and anomalies. However, as the generated anomalies are often derived from random factors, they frequently lack realism. Additionally, randomly generated anomalies typically offer limited support in constructing effective boundaries, as most differ substantially from normal samples and lie far from the boundary. To address these challenges, we propose Key Knowledge Augmentation (KKA), a method that extracts anomaly-related knowledge from large language models (LLMs). More specifically, KKA leverages the extensive prior knowledge of LLMs to generate meaningful anomalies based on normal samples. Then, KKA classifies the generated anomalies as easy anomalies and hard anomalies according to their similarity to normal samples. Easy anomalies exhibit significant differences from normal samples, whereas hard anomalies closely resemble normal samples. KKA iteratively updates the generated anomalies, and gradually increasing the proportion of hard anomalies to enable the detector to learn a more effective boundary. Experimental results show that the proposed method significantly improves the performance of various vision anomaly detectors while maintaining low generation costs. The code for CMG can be found at https://github.com/Anfeather/KKA.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2502.14880",
+      "arxivId": "2502.14880",
+      "url": "https://www.semanticscholar.org/paper/cfba7433e167a4fee41babf1e2423c3b2b3ee7e4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.14880"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bd5589aa252d786a4944b9f898d0d186f4d7f5c6",
+      "title": "When Models Lie, We Learn: Multilingual Span-Level Hallucination Detection with PsiloQA",
+      "authors": [
+        {
+          "name": "Elisei Rykov",
+          "authorId": "2147181380"
+        },
+        {
+          "name": "Kseniia Petrushina",
+          "authorId": "2212157906"
+        },
+        {
+          "name": "Maksim Savkin",
+          "authorId": "2326946295"
+        },
+        {
+          "name": "Valerii Olisov",
+          "authorId": "2384135222"
+        },
+        {
+          "name": "Artem Vazhentsev",
+          "authorId": "2165225340"
+        },
+        {
+          "name": "Kseniia Titova",
+          "authorId": "2295732586"
+        },
+        {
+          "name": "Alexander Panchenko",
+          "authorId": "2308275627"
+        },
+        {
+          "name": "Vasily Konovalov",
+          "authorId": "2326946915"
+        },
+        {
+          "name": "Julia Belikova",
+          "authorId": "2315307683"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Hallucination detection remains a fundamental challenge for the safe and reliable deployment of large language models (LLMs), especially in applications requiring factual accuracy. Existing hallucination benchmarks often operate at the sequence level and are limited to English, lacking the fine-grained, multilingual supervision needed for a comprehensive evaluation. In this work, we introduce PsiloQA, a large-scale, multilingual dataset annotated with span-level hallucinations across 14 languages. PsiloQA is constructed through an automated three-stage pipeline: generating question-answer pairs from Wikipedia using GPT-4o, eliciting potentially hallucinated answers from diverse LLMs in a no-context setting, and automatically annotating hallucinated spans using GPT-4o by comparing against golden answers and retrieved context. We evaluate a wide range of hallucination detection methods -- including uncertainty quantification, LLM-based tagging, and fine-tuned encoder models -- and show that encoder-based models achieve the strongest performance across languages. Furthermore, PsiloQA demonstrates effective cross-lingual generalization and supports robust knowledge transfer to other benchmarks, all while being significantly more cost-efficient than human-annotated datasets. Our dataset and results advance the development of scalable, fine-grained hallucination detection in multilingual settings.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2510.04849",
+      "arxivId": "2510.04849",
+      "url": "https://www.semanticscholar.org/paper/bd5589aa252d786a4944b9f898d0d186f4d7f5c6",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.04849"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a786d2b9b2623b8f1efdf299ac2b8cec9fabc198",
+      "title": "Truth Under Pressure: A Deep Learning-Based Lie Detection System for Online Lending Using Voice Stress and Response Latency",
+      "authors": [
+        {
+          "name": "Ahmad Ihsan Farhani",
+          "authorId": "2379035871"
+        },
+        {
+          "name": "A. Bustamam",
+          "authorId": "1760853"
+        },
+        {
+          "name": "Rinaldi Anwar",
+          "authorId": "2273989878"
+        },
+        {
+          "name": "T. Siswantining",
+          "authorId": "51905592"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\u2014 The rapid increase in defaults in the online lending industry highlights significant flaws in current debtor verification, which largely relies on static, preparable interviews, leading to high non-performing loans. Existing research is fragmented: while Large Language Models (LLMs) show promise in question generation, their application is confined to non-financial domains like education, and lie detection studies often analyze modalities in isolation. This study addresses this critical gap by proposing the first integrated AI-driven system for this context. We solve the problem in two parts: 1) A Llama 3 LLM is fine-tuned to generate dynamic, biodata-tailored questions, preventing the rehearsed answers that plague static interviews. 2) A novel multimodal deep learning model is developed to analyze the response, uniquely fusing vocal acoustic features and response latency \u2014 two key deception indicators that prior work has failed to combine. The Llama 3 model produced a low perplexity score (2-3), and the lie detection model achieved 70% testing accuracy with a 70.9% F1-Score. Despite signs of overfitting, this framework provides a novel, intelligent decision-support tool to reduce fraud and manage default risks more effectively.",
+      "citationCount": 0,
+      "doi": "10.14569/ijacsa.2025.0161081",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a786d2b9b2623b8f1efdf299ac2b8cec9fabc198",
+      "venue": "International Journal of Advanced Computer Science and Applications",
+      "journal": {
+        "name": "International Journal of Advanced Computer Science and Applications"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e4078a47f80c35250426dc59f50926fe84d8b2c2",
+      "title": "Multimodal Behavioral Sensors for Lie Detection: Integrating Visual, Auditory, and Generative Reasoning Cues",
+      "authors": [
+        {
+          "name": "Daniel Grabowski",
+          "authorId": "2383527585"
+        },
+        {
+          "name": "Kamila \u0141uczaj",
+          "authorId": "2383698866"
+        },
+        {
+          "name": "Khalid Saeed",
+          "authorId": "2306697817"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Highlights What are the main findings? A multimodal deception detection framework combining visual, audio, and language-based reasoning achieved high accuracy on a DOLOS dataset. The ViViT-based visual model reached 74.4% accuracy, while HuBERT audio classification showed strong performance on prosodic cues. What is the implication of the main finding? Multimodal fusion enhances robustness and interpretability in behavioral biometrics for deception analysis. Language-guided models like GPT-5 prompt-level fusion provide explainable AI outputs, facilitating trust and real-world applicability. Abstract Advances in multimodal artificial intelligence enable new sensor-inspired approaches to lie detection by combining behavioral perception with generative reasoning. This study presents a deception detection framework that integrates deep video and audio processing with large language models guided by chain-of-thought (CoT) prompting. We interpret neural architectures such as ViViT (for video) and HuBERT (for speech) as digital behavioral sensors that extract implicit emotional and cognitive cues, including micro-expressions, vocal stress, and timing irregularities. We further incorporate a GPT-5-based prompt-level fusion approach for video\u2013language\u2013emotion alignment and zero-shot inference. This method jointly processes visual frames, textual transcripts, and emotion recognition outputs, enabling the system to generate interpretable deception hypotheses without any task-specific fine-tuning. Facial expressions are treated as high-resolution affective signals captured via visual sensors, while audio encodes prosodic markers of stress. Our experimental setup is based on the DOLOS dataset, which provides high-quality multimodal recordings of deceptive and truthful behavior. We also evaluate a continual learning setup that transfers emotional understanding to deception classification. Results indicate that multimodal fusion and CoT-based reasoning increase classification accuracy and interpretability. The proposed system bridges the gap between raw behavioral data and semantic inference, laying a foundation for AI-driven lie detection with interpretable sensor analogues.",
+      "citationCount": 0,
+      "doi": "10.3390/s25196086",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e4078a47f80c35250426dc59f50926fe84d8b2c2",
+      "venue": "Italian National Conference on Sensors",
+      "journal": {
+        "name": "Sensors (Basel, Switzerland)",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "356581fefb3086f62cdfba1db8b3cdf43dd4855a",
+      "title": "Insider Threats and Countermeasures Based on AI Lie Detection",
+      "authors": [
+        {
+          "name": "Konstantinos Kalodanis",
+          "authorId": "2331712483"
+        },
+        {
+          "name": "Panagiotis Rizomiliotis",
+          "authorId": "2247858682"
+        },
+        {
+          "name": "Charalampos Papapavlou",
+          "authorId": "2023704624"
+        },
+        {
+          "name": "Apostolos Skrekas",
+          "authorId": "2354307063"
+        },
+        {
+          "name": "Stavros Papadimas",
+          "authorId": "2372692056"
+        },
+        {
+          "name": "Dimosthenis Anagnostopoulos",
+          "authorId": "2327603416"
+        }
+      ],
+      "year": 2025,
+      "abstract": ": Insider threats continue to pose some of the most significant security risks within organizations, as malicious insiders have privileged access to sensitive or even classified data and systems. This paper explores an emerging approach that applies Artificial Intelligence (AI)\u2013based lie detection techniques to mitigate insider threats. We investigate state-of-the-art AI methods adapted from Natural Language Processing (NLP), physiological signal analysis, and behavioral analytics to detect deceptive behavior. Our findings suggest that the fusion of multiple data streams, combined with advanced AI classifiers such as transformer-based models and Graph Neural Networks (GNN), leads to enhanced lie detection accuracy. Such systems must be designed in accordance with EU AI Act, which imposes requirements on transparency, risk management, and compliance for high-risk AI systems. Experimental evaluations on both synthesized and real-world insider threat datasets indicate that the proposed methodology achieves a performance improvement of up to 15\u201320% over conventional rule-based solutions. The paper concludes by exploring deployment strategies, limitations, and future research directions to ensure that AI-based lie detection can effectively and ethically bolster insider threat defences.",
+      "citationCount": 0,
+      "doi": "10.5220/0013454900003979",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/356581fefb3086f62cdfba1db8b3cdf43dd4855a",
+      "venue": "International Conference on Security and Cryptography",
+      "journal": {
+        "pages": "321-328"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "de6fe2e5bc91f1b36eee8b0ecf934bc34b114541",
+      "title": "A Fingerprint for Large Language Models",
+      "authors": [
+        {
+          "name": "Zhiguang Yang",
+          "authorId": "2290518832"
+        },
+        {
+          "name": "Hanzhou Wu",
+          "authorId": "2317135542"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent advances confirm that large language models (LLMs) can achieve state-of-the-art performance across various tasks. However, due to the resource-intensive nature of training LLMs from scratch, it is urgent and crucial to protect the intellectual property of LLMs against infringement. This has motivated the authors in this paper to propose a novel black-box fingerprinting technique for LLMs. We firstly demonstrate that the outputs of LLMs span a unique vector space associated with each model. We model the problem of fingerprint authentication as the task of evaluating the similarity between the space of the victim model and the space of the suspect model. To tackle with this problem, we introduce two solutions: the first determines whether suspect outputs lie within the victim's subspace, enabling fast infringement detection; the second reconstructs a joint subspace to detect models modified via parameter-efficient fine-tuning (PEFT). Experiments indicate that the proposed method achieves superior performance in fingerprint verification and robustness against the PEFT attacks. This work reveals inherent characteristics of LLMs and provides a promising solution for protecting LLMs, ensuring efficiency, generality and practicality.",
+      "citationCount": 21,
+      "doi": "10.48550/arXiv.2407.01235",
+      "arxivId": "2407.01235",
+      "url": "https://www.semanticscholar.org/paper/de6fe2e5bc91f1b36eee8b0ecf934bc34b114541",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.01235"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7c6bc655c4b0a284361a90b25155393456ab188e",
+      "title": "Multimodal Lie Detection Using Linguistic and Visual Cues: A Fusion of NLP and Facial Micro-Feature Analysis",
+      "authors": [
+        {
+          "name": "Twisha Patel",
+          "authorId": "2394770731"
+        },
+        {
+          "name": "Daxa Vekariya",
+          "authorId": "73543041"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The research integrates Natural Language Processing (NLP) and facial micro-expressions recognition methods for analyzing deceptive behavior. Lie behavior analysis is enhanced by the incorporation of both verbal and non-verbal communication in the assessment as subtle non-verbal cues are hard to detect during scrutiny. Different machine learning algorithms were evaluated based on their ability to detect lies in this study. Several classic models like Nearest Neighbors, Linear SVM, Decision Tree, Random Forest and Extra Trees Classifier were tested using the Real-Life Deception Detection and Own Dataset student viva scenario data. Various accuracies were generated by different traditional ML models until researchers developed a lightweight Convolutional Neural Network (CNN) model designed to efficiently detect deception. The lite-CNN model achieved a successful 96% accuracy in both tests on the dataset. The lite-CNN model identifies deceptions through its high performance by combining verbal speech and facial behavioral patterns. It has been found that deception detection is successful when using NLP with facial expressions providing reasonable solutions in the fields of security, psychology, and human-computer interaction. The proposed lightweight CNN model is a proven solution compared to traditional models, as it is effective yet consumes fewer computing resources.",
+      "citationCount": 0,
+      "doi": "10.36548/jiip.2025.4.016",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7c6bc655c4b0a284361a90b25155393456ab188e",
+      "venue": "Journal of Innovative Image Processing",
+      "journal": {
+        "name": "Journal of Innovative Image Processing"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3bac546324d7939e02913e8cc36bf27677ba15a4",
+      "title": "LLMs are Superior Feedback Providers: Bootstrapping Reasoning for Lie Detection with Self-Generated Feedback",
+      "authors": [
+        {
+          "name": "Tanushree Banerjee",
+          "authorId": "2305064458"
+        },
+        {
+          "name": "Richard Zhu",
+          "authorId": "2288884828"
+        },
+        {
+          "name": "Runzhe Yang",
+          "authorId": "2305050109"
+        },
+        {
+          "name": "Karthik Narasimhan",
+          "authorId": "2261083287"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) excel at generating human-like dialogues and comprehending text. However, understanding the subtleties of complex exchanges in language remains a challenge. We propose a bootstrapping framework that leverages self-generated feedback to enhance LLM reasoning capabilities for lie detection. The framework consists of three stages: suggestion, feedback collection, and modification. In the suggestion stage, a cost-effective language model generates initial predictions based on game state and dialogue. The feedback-collection stage involves a language model providing feedback on these predictions. In the modification stage, a more advanced language model refines the initial predictions using the auto-generated feedback. We investigate the application of the proposed framework for detecting betrayal and deception in Diplomacy games, and compare it with feedback from professional human players. The LLM-generated feedback exhibits superior quality and significantly enhances the performance of the model. Our approach achieves a 39% improvement over the zero-shot baseline in lying-F1 without the need for any training data, rivaling state-of-the-art supervised learning results.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2408.13915",
+      "arxivId": "2408.13915",
+      "url": "https://www.semanticscholar.org/paper/3bac546324d7939e02913e8cc36bf27677ba15a4",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.13915"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dabd908b2b6341898f2be5409c34fef88510d14f",
+      "title": "Evaluating the Performance to Detecting Topic Shift of Large Language Models: A Study",
+      "authors": [
+        {
+          "name": "Pingfang Tian",
+          "authorId": "2330422112"
+        },
+        {
+          "name": "Deting Liu",
+          "authorId": "2330615943"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Topic shift detection aims to identify whether there is a change in the current topic of conversation or if a change is needed. The study found previous work did not evaluate the performance of large language models like ChatGPT on the task of topic shift. Therefore, this paper's main task and innovation lie in analyzing ChatGPT's performance on topic shift detection. To provide a more comprehensive evaluation, we conducted topic shift detection tasks on ChatGPT from three aspects: single utterances, adjacent utterances, and contextual levels. Additionally, to gauge the performance of large language models, we conducted experiments on multiple small-scale models and compared the results of the two models. Experimental results on the publicly available English TIAGE dataset showed that small-scale models exhibited lower recall in all three aspects, while ChatGPT performed better in the recall. This suggests that compared to small-scale models, large models are more capable of accurately detecting topic shifts. However, large models also exhibited lower precision, indicating that while ChatGPT can recognize content differences in utterances, its judgment on whether these different contents belong to the same topic is poor.",
+      "citationCount": 0,
+      "doi": "10.1109/ICSP62122.2024.10743815",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dabd908b2b6341898f2be5409c34fef88510d14f",
+      "venue": "International Conference on the Software Process",
+      "journal": {
+        "name": "2024 9th International Conference on Intelligent Computing and Signal Processing (ICSP)",
+        "pages": "506-510"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f148b3a0106cbaba356b9f099f1a10c072c0b3c5",
+      "title": "How to Catch an AI Liar: Lie Detection in Black-Box LLMs by Asking Unrelated Questions",
+      "authors": [
+        {
+          "name": "Lorenzo Pacchiardi",
+          "authorId": "2248302193"
+        },
+        {
+          "name": "A. J. Chan",
+          "authorId": "2248070547"
+        },
+        {
+          "name": "S. Mindermann",
+          "authorId": "32777162"
+        },
+        {
+          "name": "Ilan Moscovitz",
+          "authorId": "2248301816"
+        },
+        {
+          "name": "Alexa Y. Pan",
+          "authorId": "2248291474"
+        },
+        {
+          "name": "Y. Gal",
+          "authorId": "2681954"
+        },
+        {
+          "name": "Owain Evans",
+          "authorId": "47107786"
+        },
+        {
+          "name": "J. Brauner",
+          "authorId": "40482332"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Large language models (LLMs) can\"lie\", which we define as outputting false statements despite\"knowing\"the truth in a demonstrable sense. LLMs might\"lie\", for example, when instructed to output misinformation. Here, we develop a simple lie detector that requires neither access to the LLM's activations (black-box) nor ground-truth knowledge of the fact in question. The detector works by asking a predefined set of unrelated follow-up questions after a suspected lie, and feeding the LLM's yes/no answers into a logistic regression classifier. Despite its simplicity, this lie detector is highly accurate and surprisingly general. When trained on examples from a single setting -- prompting GPT-3.5 to lie about factual questions -- the detector generalises out-of-distribution to (1) other LLM architectures, (2) LLMs fine-tuned to lie, (3) sycophantic lies, and (4) lies emerging in real-life scenarios such as sales. These results indicate that LLMs have distinctive lie-related behavioural patterns, consistent across architectures and contexts, which could enable general-purpose lie detection.",
+      "citationCount": 78,
+      "doi": "10.48550/arXiv.2309.15840",
+      "arxivId": "2309.15840",
+      "url": "https://www.semanticscholar.org/paper/f148b3a0106cbaba356b9f099f1a10c072c0b3c5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2309.15840"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8fa022485e39788ddab1992cf96ed67783f34c10",
+      "title": "Hoodwinked: Deception and Cooperation in a Text-Based Game for Language Models",
+      "authors": [
+        {
+          "name": "Aidan O'Gara",
+          "authorId": "2226774081"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Are current language models capable of deception and lie detection? We study this question by introducing a text-based game called $\\textit{Hoodwinked}$, inspired by Mafia and Among Us. Players are locked in a house and must find a key to escape, but one player is tasked with killing the others. Each time a murder is committed, the surviving players have a natural language discussion then vote to banish one player from the game. We conduct experiments with agents controlled by GPT-3, GPT-3.5, and GPT-4 and find evidence of deception and lie detection capabilities. The killer often denies their crime and accuses others, leading to measurable effects on voting outcomes. More advanced models are more effective killers, outperforming smaller models in 18 of 24 pairwise comparisons. Secondary metrics provide evidence that this improvement is not mediated by different actions, but rather by stronger persuasive skills during discussions. To evaluate the ability of AI agents to deceive humans, we make this game publicly available at h https://hoodwinked.ai/ .",
+      "citationCount": 49,
+      "doi": "10.48550/arXiv.2308.01404",
+      "arxivId": "2308.01404",
+      "url": "https://www.semanticscholar.org/paper/8fa022485e39788ddab1992cf96ed67783f34c10",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2308.01404"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a37f42806ba6c24af801e4d2007de4794dc127de",
+      "title": "When Thinking LLMs Lie: Unveiling the Strategic Deception in Representations of Reasoning Models",
+      "authors": [
+        {
+          "name": "Kai Wang",
+          "authorId": "2366061051"
+        },
+        {
+          "name": "Yihao Zhang",
+          "authorId": "2286475988"
+        },
+        {
+          "name": "Meng Sun",
+          "authorId": "2297768119"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The honesty of large language models (LLMs) is a critical alignment challenge, especially as advanced systems with chain-of-thought (CoT) reasoning may strategically deceive humans. Unlike traditional honesty issues on LLMs, which could be possibly explained as some kind of hallucination, those models' explicit thought paths enable us to study strategic deception--goal-driven, intentional misinformation where reasoning contradicts outputs. Using representation engineering, we systematically induce, detect, and control such deception in CoT-enabled LLMs, extracting\"deception vectors\"via Linear Artificial Tomography (LAT) for 89% detection accuracy. Through activation steering, we achieve a 40% success rate in eliciting context-appropriate deception without explicit prompts, unveiling the specific honesty-related issue of reasoning models and providing tools for trustworthy AI alignment.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2506.04909",
+      "arxivId": "2506.04909",
+      "url": "https://www.semanticscholar.org/paper/a37f42806ba6c24af801e4d2007de4794dc127de",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.04909"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "469d4d74c4f4ee0103332d6577859d44e2ce61ae",
+      "title": "Validation of Language Agnostic Models for Discourse Marker Detection",
+      "authors": [
+        {
+          "name": "Mariana Damova",
+          "authorId": "2260784167"
+        },
+        {
+          "name": "Kostadin Mishev",
+          "authorId": "40627238"
+        },
+        {
+          "name": "Giedr\u0117 Val\u016bnait\u0117-Ole\u0161kevi\u010dien\u0117",
+          "authorId": "1405800468"
+        },
+        {
+          "name": "Chaya Liebeskind",
+          "authorId": "2601200"
+        },
+        {
+          "name": "Purifica\u00e7\u00e3o Silvano",
+          "authorId": "2092315310"
+        },
+        {
+          "name": "D. Trajanov",
+          "authorId": "3034066"
+        },
+        {
+          "name": "Ciprian-Octavian Truic\u0103",
+          "authorId": "39812162"
+        },
+        {
+          "name": "Christian Chiarcos",
+          "authorId": "2260792799"
+        },
+        {
+          "name": "Anna B\u0105czkowska",
+          "authorId": "2378886405"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/469d4d74c4f4ee0103332d6577859d44e2ce61ae",
+      "venue": "International Conference on Language, Data, and Knowledge",
+      "journal": {
+        "pages": "434-439"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1f03d5b9c2b57de7e8fd8f6c3f6a7f48325d5702",
+      "title": "PU-Lie: Lightweight Deception Detection in Imbalanced Diplomatic Dialogues via Positive-Unlabeled Learning",
+      "authors": [
+        {
+          "name": "Bhavinkumar Vinodbhai Kuwar",
+          "authorId": "2373397124"
+        },
+        {
+          "name": "Bikrant Bikram P. Maurya",
+          "authorId": "1500422768"
+        },
+        {
+          "name": "Priyanshu Gupta",
+          "authorId": "2374029152"
+        },
+        {
+          "name": "Nitin Chanderwal",
+          "authorId": "2375816363"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Detecting deception in strategic dialogues is a complex and high-stakes task due to the subtlety of language and extreme class imbalance between deceptive and truthful communications. In this work, we revisit deception detection in the Diplomacy dataset, where less than 5% of messages are labeled deceptive. We introduce a lightweight yet effective model combining frozen BERT embeddings, interpretable linguistic and game-specific features, and a Positive-Unlabeled (PU) learning objective. Unlike traditional binary classifiers, PU-Lie is tailored for situations where only a small portion of deceptive messages are labeled, and the majority are unlabeled. Our model achieves a new best macro F1 of 0.60 while reducing trainable parameters by over 650x. Through comprehensive evaluations and ablation studies across seven models, we demonstrate the value of PU learning, linguistic interpretability, and speaker-aware representations. Notably, we emphasize that in this problem setting, accurately detecting deception is more critical than identifying truthful messages. This priority guides our choice of PU learning, which explicitly models the rare but vital deceptive class.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2507.09157",
+      "arxivId": "2507.09157",
+      "url": "https://www.semanticscholar.org/paper/1f03d5b9c2b57de7e8fd8f6c3f6a7f48325d5702",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.09157"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "74da19bc4ddf5fb363d10c4166e2e45ed02c5252",
+      "title": "Eyes Don\u2019t Lie: Subjective Hate Annotation and Detection with Gaze",
+      "authors": [
+        {
+          "name": "\u00d6zge Ala\u00e7am",
+          "authorId": "2269457381"
+        },
+        {
+          "name": "Sanne Hoeken",
+          "authorId": "2224234309"
+        },
+        {
+          "name": "Sina Zarrie\u00df",
+          "authorId": "2266619446"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Hate speech is a complex and subjective phenomenon. In this paper, we present a dataset (GAZE4HATE) that provides gaze data collected in a hate speech annotation experiment. We study whether the gaze of an annotator provides predictors of their subjective hatefulness rating, and how gaze features can improve Hate Speech Detection (HSD). We conduct experiments on statistical modeling of subjective hate ratings and gaze and analyze to what extent rationales derived from hate speech models correspond to human gaze and explanations in our data. Finally, we introduce MEANION, a first gaze-integrated HSD model. Our experiments show that particular gaze features like dwell time or fixation counts systematically correlate with annotators\u2019 subjective hate ratings and improve predictions of text-only hate speech models.",
+      "citationCount": 5,
+      "doi": "10.18653/v1/2024.emnlp-main.11",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/74da19bc4ddf5fb363d10c4166e2e45ed02c5252",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "pages": "187-205"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "7648084a040841757e90a41d8f9a5a1228fdd851",
+      "title": "The role of artificial intelligence in auditing and fraud detection in accounting information systems: moderating role of natural language processing",
+      "authors": [
+        {
+          "name": "A. Qatawneh",
+          "authorId": "119177440"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Purpose\nThis study aims to investigate the moderating role of natural language processing natural language processing (NLP) on the relationship between AI-empowered AIS (data gathering, data analysis, risk assessment, detection, prevention and Investigation) and auditing and fraud detection.\n\nDesign/methodology/approach\nQuantitative methodology was adapted through a questionnaire. In total, 221 individuals represented the population of the study, and SPSS was used to screen primary data. The study indicated the acceptance of the hypothesis that \u201cArtificial Intelligence in AIS has a statistically significant influence on auditing and fraud detection,\u201d showing a strong correlation between auditing and fraud detection. The study concluded that NLP moderates the relationship between AI in AIS and auditing and fraud detection.\n\nFindings\nThe study\u2019s implications lie in its contribution to the development of theoretical models that explore the complementary attributes of AI and NLP in detecting financial fraud.\n\nResearch limitations/implications\nA cross-sectional design is a limitation.\n\nPractical implications\nNLP is a useful tool for developing more efficient methods for detecting fraudulent activities and audit risks.\n\nOriginality/value\nThe study\u2019s originality stems from its focus on the use of AI-empowered AIS, a relatively new technology that has the potential to significantly impact auditing and fraud detection processes within the accounting field.\n",
+      "citationCount": 25,
+      "doi": "10.1108/ijoa-03-2024-4389",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7648084a040841757e90a41d8f9a5a1228fdd851",
+      "venue": "The International Journal of Organizational Analysis",
+      "journal": {
+        "name": "International Journal of Organizational Analysis"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "69ca57ea13337b64a47ecd72f9623dcbe9ebad6f",
+      "title": "Believing is Seeing: Unobserved Object Detection using Generative Models",
+      "authors": [
+        {
+          "name": "Subhransu S. Bhattacharjee",
+          "authorId": "2124982448"
+        },
+        {
+          "name": "Dylan Campbell",
+          "authorId": "2324984665"
+        },
+        {
+          "name": "Rahul Shome",
+          "authorId": "2325003665"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Can objects that are not visible in an image\u2014but are in the vicinity of the camera\u2014be detected? This study introduces the novel tasks of 2D, 2.5D and 3D unobserved object detection for predicting the location of nearby objects that are occluded or lie outside the image frame. We adapt several state-of-the-art pre-trained generative models to address this task, including 2D and 3D diffusion models and vision\u2013 language models, and show that they can be used to infer the presence of objects that are not directly observed. To benchmark this task, we propose a suite of metrics that capture different aspects of performance. Our empirical evaluation on indoor scenes from the RealEstate10k and NYU Depth V2 datasets demonstrate results that motivate the use of generative models for the unobserved object detection task.",
+      "citationCount": 3,
+      "doi": "10.1109/CVPR52734.2025.01804",
+      "arxivId": "2410.05869",
+      "url": "https://www.semanticscholar.org/paper/69ca57ea13337b64a47ecd72f9623dcbe9ebad6f",
+      "venue": "Computer Vision and Pattern Recognition",
+      "journal": {
+        "name": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "pages": "19366-19377"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "b169c56cbe546d3e1ff12003ff5ab6f57cba608e",
+      "title": "Truth is Universal: Robust Detection of Lies in LLMs",
+      "authors": [
+        {
+          "name": "Lennart B\u00fcrger",
+          "authorId": "2316632834"
+        },
+        {
+          "name": "F. Hamprecht",
+          "authorId": "1685187"
+        },
+        {
+          "name": "B. Nadler",
+          "authorId": "1786884"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have revolutionised natural language processing, exhibiting impressive human-like capabilities. In particular, LLMs are capable of\"lying\", knowingly outputting false statements. Hence, it is of interest and importance to develop methods to detect when LLMs lie. Indeed, several authors trained classifiers to detect LLM lies based on their internal model activations. However, other researchers showed that these classifiers may fail to generalise, for example to negated statements. In this work, we aim to develop a robust method to detect when an LLM is lying. To this end, we make the following key contributions: (i) We demonstrate the existence of a two-dimensional subspace, along which the activation vectors of true and false statements can be separated. Notably, this finding is universal and holds for various LLMs, including Gemma-7B, LLaMA2-13B, Mistral-7B and LLaMA3-8B. Our analysis explains the generalisation failures observed in previous studies and sets the stage for more robust lie detection; (ii) Building upon (i), we construct an accurate LLM lie detector. Empirically, our proposed classifier achieves state-of-the-art performance, attaining 94% accuracy in both distinguishing true from false factual statements and detecting lies generated in real-world scenarios.",
+      "citationCount": 51,
+      "doi": "10.48550/arXiv.2407.12831",
+      "arxivId": "2407.12831",
+      "url": "https://www.semanticscholar.org/paper/b169c56cbe546d3e1ff12003ff5ab6f57cba608e",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.12831"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "85039a24a50687d8f30bffbf33045ed9ae0dbbc2",
+      "title": "ViClaim: A Multilingual Multilabel Dataset for Automatic Claim Detection in Videos",
+      "authors": [
+        {
+          "name": "Patrick Giedemann",
+          "authorId": "2355866549"
+        },
+        {
+          "name": "Pius von Daniken",
+          "authorId": "1986596516"
+        },
+        {
+          "name": "Jan Deriu",
+          "authorId": "145116511"
+        },
+        {
+          "name": "Alvaro Rodrigo",
+          "authorId": "2304215580"
+        },
+        {
+          "name": "Anselmo Pe\u00f1as",
+          "authorId": "2308477057"
+        },
+        {
+          "name": "Mark Cieliebak",
+          "authorId": "2648584"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The growing influence of video content as a medium for communication and misinformation underscores the urgent need for effective tools to analyze claims in multilingual and multi-topic settings. Existing efforts in misinformation detection largely focus on written text, leaving a significant gap in addressing the complexity of spoken text in video transcripts. We introduce ViClaim, a dataset of 1,798 annotated video transcripts across three languages (English, German, Spanish) and six topics. Each sentence in the transcripts is labeled with three claim-related categories: fact-check-worthy, fact-non-check-worthy, or opinion. We developed a custom annotation tool to facilitate the highly complex annotation process. Experiments with state-of-the-art multilingual language models demonstrate strong performance in cross-validation (macro F1 up to 0.896) but reveal challenges in generalization to unseen topics, particularly for distinct domains. Our findings highlight the complexity of claim detection in video transcripts. ViClaim offers a robust foundation for advancing misinformation detection in video-based communication, addressing a critical gap in multimodal analysis.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2504.12882",
+      "arxivId": "2504.12882",
+      "url": "https://www.semanticscholar.org/paper/85039a24a50687d8f30bffbf33045ed9ae0dbbc2",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.12882"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "bea8881715c1daa194963dd2c459c92aad8781df",
+      "title": "Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection",
+      "authors": [
+        {
+          "name": "Jinglun Li",
+          "authorId": "2279759989"
+        },
+        {
+          "name": "Kaixun Jiang",
+          "authorId": "2161719405"
+        },
+        {
+          "name": "Zhaoyu Chen",
+          "authorId": "2111606069"
+        },
+        {
+          "name": "Bo Lin",
+          "authorId": "2374372279"
+        },
+        {
+          "name": "Yao Tang",
+          "authorId": "2373509101"
+        },
+        {
+          "name": "Weifeng Ge",
+          "authorId": "2205015517"
+        },
+        {
+          "name": "Wenqiang Zhang",
+          "authorId": "2244691510"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Pre-trained vision-language models have exhibited remarkable abilities in detecting out-of-distribution (OOD) samples. However, some challenging OOD samples, which lie close to in-distribution (InD) data in image feature space, can still lead to misclassification. The emergence of foundation models like diffusion models and multimodal large language models (MLLMs) offers a potential solution to this issue. In this work, we propose SynOOD, a novel approach that harnesses foundation models to generate synthetic, challenging OOD data for fine-tuning CLIP models, thereby enhancing boundary-level discrimination between InD and OOD samples. Our method uses an iterative in-painting process guided by contextual prompts from MLLMs to produce nuanced, boundary-aligned OOD samples. These samples are refined through noise adjustments based on gradients from OOD scores like the energy score, effectively sampling from the InD/OOD boundary. With these carefully synthesized images, we fine-tune the CLIP image encoder and negative label features derived from the text encoder to strengthen connections between near-boundary OOD samples and a set of negative labels. Finally, SynOOD achieves state-of-the-art performance on the large-scale ImageNet benchmark, with minimal increases in parameters and runtime. Our approach significantly surpasses existing methods, and the code is available at https://github.com/Jarvisgivemeasuit/SynOOD.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2507.10225",
+      "arxivId": "2507.10225",
+      "url": "https://www.semanticscholar.org/paper/bea8881715c1daa194963dd2c459c92aad8781df",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.10225"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "239f789f788fdfd59782fce4e98012bc6fe58f39",
+      "title": "Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI",
+      "authors": [
+        {
+          "name": "Yuxia Wang",
+          "authorId": "2241417701"
+        },
+        {
+          "name": "Rui Xing",
+          "authorId": "2308041454"
+        },
+        {
+          "name": "Jonibek Mansurov",
+          "authorId": "2218861055"
+        },
+        {
+          "name": "Giovanni Puccetti",
+          "authorId": "2284686859"
+        },
+        {
+          "name": "Zhuohan Xie",
+          "authorId": "2315671993"
+        },
+        {
+          "name": "Minh Ngoc Ta",
+          "authorId": "2315297170"
+        },
+        {
+          "name": "Jiahui Geng",
+          "authorId": "2266466915"
+        },
+        {
+          "name": "Jinyan Su",
+          "authorId": "2116966710"
+        },
+        {
+          "name": "Mervat T. Abassy",
+          "authorId": "2331737124"
+        },
+        {
+          "name": "Saad El Dine Ahmed",
+          "authorId": "2315642904"
+        },
+        {
+          "name": "K. Elozeiri",
+          "authorId": "2315302985"
+        },
+        {
+          "name": "Nurkhan Laiyk",
+          "authorId": "2313119507"
+        },
+        {
+          "name": "Maiya Goloburda",
+          "authorId": "2341325326"
+        },
+        {
+          "name": "Tarek Mahmoud",
+          "authorId": "2218209429"
+        },
+        {
+          "name": "Raj Vardhan Tomar",
+          "authorId": "2309163441"
+        },
+        {
+          "name": "Alexander Aziz",
+          "authorId": "2315840157"
+        },
+        {
+          "name": "Ryuto Koike",
+          "authorId": "2138646471"
+        },
+        {
+          "name": "Masahiro Kaneko",
+          "authorId": "2341326214"
+        },
+        {
+          "name": "Artem Shelmanov",
+          "authorId": "2316488670"
+        },
+        {
+          "name": "Ekaterina Artemova",
+          "authorId": "2300660029"
+        },
+        {
+          "name": "V. Mikhailov",
+          "authorId": "51259225"
+        },
+        {
+          "name": "Akim Tsvigun",
+          "authorId": "2164381839"
+        },
+        {
+          "name": "Alham Fikri Aji",
+          "authorId": "8129718"
+        },
+        {
+          "name": "Nizar Habash",
+          "authorId": "2257292541"
+        },
+        {
+          "name": "Iryna Gurevych",
+          "authorId": "2260340390"
+        },
+        {
+          "name": "Preslav Nakov",
+          "authorId": "2026545715"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Prior studies have shown that distinguishing text generated by large language models (LLMs) from human-written one is highly challenging, and often no better than random guessing. To verify the generalizability of this finding across languages and domains, we perform an extensive case study to identify the upper bound of human detection accuracy. Across 16 datasets covering 9 languages and 9 domains, 19 annotators achieved an average detection accuracy of 87.6\\%, thus challenging previous conclusions. We find that major gaps between human and machine text lie in concreteness, cultural nuances, and diversity. Prompting by explicitly explaining the distinctions in the prompts can partially bridge the gaps in over 50\\% of the cases. However, we also find that humans do not always prefer human-written text, particularly when they cannot clearly identify its source.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2502.11614",
+      "arxivId": "2502.11614",
+      "url": "https://www.semanticscholar.org/paper/239f789f788fdfd59782fce4e98012bc6fe58f39",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.11614"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8f836c2c311149985817a338ae4c2c422f72cff0",
+      "title": "The (in)efficacy of AI personas in deception detection experiments",
+      "authors": [
+        {
+          "name": "David M. Markowitz",
+          "authorId": "2240072649"
+        },
+        {
+          "name": "Timothy R. Levine",
+          "authorId": "2258460269"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n Artificial intelligence (AI) has recently been used to aid in deception detection and to simulate human data in social scientific research. Thus, it is important to consider how well these tools can inform both enterprises. We report 12 studies, accessed through the Viewpoints.ai research platform, where AI (gemini-1.5-flash) made veracity judgments of humans. We systematically varied the nature and duration of the communication, modality, truth-lie base rate, and AI persona. AI performed best (57.7%) when detecting truths and lies involving feelings about friends, although it was notably truth-biased (71.7%). However, in assessing cheating interrogations, AI was lie-biased by judging more than three-quarters of interviewees as cheating liars. In assessing interviews where humans perform at rates over 70%, accuracy plummeted to 15.9% with an ecological base-rate. AI yielded results different from prior human studies and therefore, we caution using certain large language models for lie detection.",
+      "citationCount": 0,
+      "doi": "10.1093/joc/jqaf034",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8f836c2c311149985817a338ae4c2c422f72cff0",
+      "venue": "Journal of Communications",
+      "journal": {
+        "name": "Journal of Communication"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "66d00ba1016ba03c72a22491039a23f7ccc2ada2",
+      "title": "Prompt-Based Out-of-Distribution Intent Detection",
+      "authors": [
+        {
+          "name": "Rudolf Chow",
+          "authorId": "2315306526"
+        },
+        {
+          "name": "Albert Y. S. Lam",
+          "authorId": "2315305090"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Recent rapid advances in pre-trained language models, such as BERT and GPT, in natural language processing (NLP) have greatly improved the efficacy of text classifiers, easily surpassing human level performance in standard datasets like GLUE. However, most of these standard tasks implicitly assume a closed-world situation, where all testing data are supposed to lie in the same scope or distribution of the training data. Out-of-distribution (OOD) detection is the task of detecting when an input data point lies beyond the scope of the seen training set. This is becoming increasingly important as NLP agents, such as chatbots or virtual assistants, have been being deployed ubiquitously in our daily lives, thus attracting more attention from the research community to make it more accurate and robust at the same time. Recent work can be broadly categorized into two orthogonal approaches \u2013 data generative/augmentative methods and threshold/boundary learning. In this work, we follow the former and propose a method for the task based on prompting, which is known for its zero and few-shot capabilities. Generating synthetic outliers in terms of prompts allows the model to more efficiently learn OOD samples than the existing methods. Testing on nine different settings across three standard datasets used for OOD detection, our method with adaptive decision boundary is able to achieve competitive or superior performances compared with the current state-of-the-art in all cases. We also provide extensive analysis on each dataset as well as perform comprehensive ablation studies on each component of our model.",
+      "citationCount": 0,
+      "doi": "10.1109/TETCI.2024.3372440",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/66d00ba1016ba03c72a22491039a23f7ccc2ada2",
+      "venue": "IEEE Transactions on Emerging Topics in Computational Intelligence",
+      "journal": {
+        "name": "IEEE Transactions on Emerging Topics in Computational Intelligence",
+        "pages": "2371-2382",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

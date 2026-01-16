@@ -1,0 +1,784 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Paul Christiano AI safety debate",
+  "results": [
+    {
+      "paperId": "5a5a1d666e4b7b933bc5aafbbadf179bc447ee67",
+      "title": "AI safety via debate",
+      "authors": [
+        {
+          "name": "G. Irving",
+          "authorId": "2060655766"
+        },
+        {
+          "name": "P. Christiano",
+          "authorId": "145791315"
+        },
+        {
+          "name": "Dario Amodei",
+          "authorId": "2330246606"
+        }
+      ],
+      "year": 2018,
+      "abstract": "To make AI systems broadly useful for challenging real-world tasks, we need them to learn complex human goals and preferences. One approach to specifying complex goals asks humans to judge during training which agent behaviors are safe and useful, but this approach can fail if the task is too complicated for a human to directly judge. To help address this concern, we propose training agents via self play on a zero sum debate game. Given a question or proposed action, two agents take turns making short statements up to a limit, then a human judges which of the agents gave the most true, useful information. In an analogy to complexity theory, debate with optimal play can answer any question in PSPACE given polynomial time judges (direct judging answers only NP questions). In practice, whether debate works involves empirical questions about humans and the tasks we want AIs to perform, plus theoretical questions about the meaning of AI alignment. We report results on an initial MNIST experiment where agents compete to convince a sparse classifier, boosting the classifier's accuracy from 59.4% to 88.9% given 6 pixels and from 48.2% to 85.2% given 4 pixels. Finally, we discuss theoretical and practical aspects of the debate model, focusing on potential weaknesses as the model scales up, and we propose future human and computer experiments to test these properties.",
+      "citationCount": 302,
+      "doi": null,
+      "arxivId": "1805.00899",
+      "url": "https://www.semanticscholar.org/paper/5a5a1d666e4b7b933bc5aafbbadf179bc447ee67",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/1805.00899"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "840d9c8a948f955e84f52a73a933c6d9374cc728",
+      "title": "Toward an African Agenda for AI Safety",
+      "authors": [
+        {
+          "name": "Samuel T. Segun",
+          "authorId": "114335659"
+        },
+        {
+          "name": "Rachel Adams",
+          "authorId": "2376269255"
+        },
+        {
+          "name": "Ana Florido",
+          "authorId": "2376266271"
+        },
+        {
+          "name": "Scott Timcke",
+          "authorId": "2376267111"
+        },
+        {
+          "name": "Jonathan Shock",
+          "authorId": "2376267664"
+        },
+        {
+          "name": "Leah Junck",
+          "authorId": "2376267041"
+        },
+        {
+          "name": "F. Adeleke",
+          "authorId": "113635796"
+        },
+        {
+          "name": "Nicolas Grossman",
+          "authorId": "2376267128"
+        },
+        {
+          "name": "Ayantola Alayande",
+          "authorId": "2256135313"
+        },
+        {
+          "name": "J. J. Kponyo",
+          "authorId": "2333630"
+        },
+        {
+          "name": "Matthew Smith",
+          "authorId": "2256125284"
+        },
+        {
+          "name": "Dickson Marfo Fosu",
+          "authorId": "2334175322"
+        },
+        {
+          "name": "Prince Dawson Tetteh",
+          "authorId": "2376267450"
+        },
+        {
+          "name": "Juliet Arthur",
+          "authorId": "2376266743"
+        },
+        {
+          "name": "S. Kasaon",
+          "authorId": "93877785"
+        },
+        {
+          "name": "Odilile Ayodele",
+          "authorId": "1729342069"
+        },
+        {
+          "name": "Laetitia Badolo",
+          "authorId": "2376266773"
+        },
+        {
+          "name": "P. Plantinga",
+          "authorId": "145730713"
+        },
+        {
+          "name": "Michael Gastrow",
+          "authorId": "9818765"
+        },
+        {
+          "name": "Sumaya Nur Adan",
+          "authorId": "2273477046"
+        },
+        {
+          "name": "Joanna Wiaterek",
+          "authorId": "2376266846"
+        },
+        {
+          "name": "Cecil Abungu",
+          "authorId": "120519305"
+        },
+        {
+          "name": "Kojo Apeagyei",
+          "authorId": "2376266588"
+        },
+        {
+          "name": "Luise Eder",
+          "authorId": "2376266995"
+        },
+        {
+          "name": "T\u00e9gawend\u00e9 F. Bissyand\u00e9",
+          "authorId": "3023999"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper maps Africa's distinctive AI risk profile, from deepfake fuelled electoral interference and data colonial dependency to compute scarcity, labour disruption and disproportionate exposure to climate driven environmental costs. While major benefits are promised to accrue, the availability, development and adoption of AI also mean that African people and countries face particular AI safety risks, from large scale labour market disruptions to the nefarious use of AI to manipulate public opinion. To date, African perspectives have not been meaningfully integrated into global debates and processes regarding AI safety, leaving African stakeholders with limited influence over the emerging global AI safety governance agenda. While there are Computer Incident Response Teams on the continent, none hosts a dedicated AI Safety Institute or office. We propose a five-point action plan centred on (i) a policy approach that foregrounds the protection of the human rights of those most vulnerable to experiencing the harmful socio-economic effects of AI; (ii) the establishment of an African AI Safety Institute; (iii) promote public AI literacy and awareness; (iv) development of early warning system with inclusive benchmark suites for 25+ African languages; and (v) an annual AU-level AI Safety&Security Forum.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.13179",
+      "arxivId": "2508.13179",
+      "url": "https://www.semanticscholar.org/paper/840d9c8a948f955e84f52a73a933c6d9374cc728",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.13179"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4d44f9ce850fd1ad976af1a7cf8a4a0d80de4334",
+      "title": "International Scientific Report on the Safety of Advanced AI (Interim Report)",
+      "authors": [
+        {
+          "name": "Y. Bengio",
+          "authorId": "2211024206"
+        },
+        {
+          "name": "S\u00f6ren Mindermann",
+          "authorId": "2302393765"
+        },
+        {
+          "name": "Daniel Privitera",
+          "authorId": "2277907046"
+        },
+        {
+          "name": "T. Besiroglu",
+          "authorId": "2243335818"
+        },
+        {
+          "name": "Rishi Bommasani",
+          "authorId": "2223138553"
+        },
+        {
+          "name": "Stephen Casper",
+          "authorId": "2333442622"
+        },
+        {
+          "name": "Yejin Choi",
+          "authorId": "2296751113"
+        },
+        {
+          "name": "Danielle Goldfarb",
+          "authorId": "2334474814"
+        },
+        {
+          "name": "Hoda Heidari",
+          "authorId": "2253600"
+        },
+        {
+          "name": "Leila Khalatbari",
+          "authorId": "50824937"
+        },
+        {
+          "name": "Shayne Longpre",
+          "authorId": "2283848744"
+        },
+        {
+          "name": "Vasilios Mavroudis",
+          "authorId": "2328111677"
+        },
+        {
+          "name": "Mantas Mazeika",
+          "authorId": "16787428"
+        },
+        {
+          "name": "Kwan Yee Ng",
+          "authorId": "2334530134"
+        },
+        {
+          "name": "Chinasa T. Okolo",
+          "authorId": "2030793519"
+        },
+        {
+          "name": "Deborah Raji",
+          "authorId": "2334475192"
+        },
+        {
+          "name": "Theodora Skeadas",
+          "authorId": "2334474333"
+        },
+        {
+          "name": "Florian Tram\u00e8r",
+          "authorId": "2444919"
+        },
+        {
+          "name": "Bayo Adekanmbi",
+          "authorId": "2334476448"
+        },
+        {
+          "name": "Paul F. Christiano",
+          "authorId": "2261980896"
+        },
+        {
+          "name": "David Dalrymple",
+          "authorId": "2307266086"
+        },
+        {
+          "name": "Thomas G. Dietterich",
+          "authorId": "2286610627"
+        },
+        {
+          "name": "Edward Felten",
+          "authorId": "2265012661"
+        },
+        {
+          "name": "Pascale Fung",
+          "authorId": "2308480659"
+        },
+        {
+          "name": "Pierre-Olivier Gourinchas",
+          "authorId": "84224471"
+        },
+        {
+          "name": "Nick Jennings",
+          "authorId": "2334474401"
+        },
+        {
+          "name": "Andreas Krause",
+          "authorId": "2254383135"
+        },
+        {
+          "name": "Percy Liang",
+          "authorId": "2260342171"
+        },
+        {
+          "name": "T. Ludermir",
+          "authorId": "2250538464"
+        },
+        {
+          "name": "Vidushi Marda",
+          "authorId": "51909920"
+        },
+        {
+          "name": "Helen Margetts",
+          "authorId": "2243091331"
+        },
+        {
+          "name": "J. McDermid",
+          "authorId": "2269894916"
+        },
+        {
+          "name": "Arvind Narayanan",
+          "authorId": "2285608332"
+        },
+        {
+          "name": "Alondra Nelson",
+          "authorId": "2288617349"
+        },
+        {
+          "name": "Alice Oh",
+          "authorId": "2334473806"
+        },
+        {
+          "name": "Gopal Ramchurn",
+          "authorId": "2855919"
+        },
+        {
+          "name": "Stuart Russell",
+          "authorId": "2268625094"
+        },
+        {
+          "name": "Marietje Schaake",
+          "authorId": "118967015"
+        },
+        {
+          "name": "D. Song",
+          "authorId": "2268724063"
+        },
+        {
+          "name": "Alvaro Soto",
+          "authorId": "2334476882"
+        },
+        {
+          "name": "Lee Tiedrich",
+          "authorId": "122868782"
+        },
+        {
+          "name": "G. Varoquaux",
+          "authorId": "3025780"
+        },
+        {
+          "name": "Andrew Yao",
+          "authorId": "2262214881"
+        },
+        {
+          "name": "Ya-Qin Zhang",
+          "authorId": "2262401352"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This is the interim publication of the first International Scientific Report on the Safety of Advanced AI. The report synthesises the scientific understanding of general-purpose AI -- AI that can perform a wide variety of tasks -- with a focus on understanding and managing its risks. A diverse group of 75 AI experts contributed to this report, including an international Expert Advisory Panel nominated by 30 countries, the EU, and the UN. Led by the Chair, these independent experts collectively had full discretion over the report's content. The final report is available at arXiv:2501.17805",
+      "citationCount": 38,
+      "doi": null,
+      "arxivId": "2412.05282",
+      "url": "https://www.semanticscholar.org/paper/4d44f9ce850fd1ad976af1a7cf8a4a0d80de4334",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2412.05282"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9363e8e1fe2be2a13b4d6f5fc61bbaed14ab9a23",
+      "title": "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training",
+      "authors": [
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        },
+        {
+          "name": "Carson E. Denison",
+          "authorId": "1780754598"
+        },
+        {
+          "name": "Jesse Mu",
+          "authorId": "2279020810"
+        },
+        {
+          "name": "Mike Lambert",
+          "authorId": "2279020847"
+        },
+        {
+          "name": "Meg Tong",
+          "authorId": "2237797264"
+        },
+        {
+          "name": "M. MacDiarmid",
+          "authorId": "32286534"
+        },
+        {
+          "name": "Tamera Lanham",
+          "authorId": "46239941"
+        },
+        {
+          "name": "Daniel M. Ziegler",
+          "authorId": "2052152920"
+        },
+        {
+          "name": "Tim Maxwell",
+          "authorId": "2224618184"
+        },
+        {
+          "name": "Newton Cheng",
+          "authorId": "2261082682"
+        },
+        {
+          "name": "Adam Jermyn",
+          "authorId": "2279020797"
+        },
+        {
+          "name": "Amanda Askell",
+          "authorId": "2220750220"
+        },
+        {
+          "name": "Ansh Radhakrishnan",
+          "authorId": "2224616677"
+        },
+        {
+          "name": "Cem Anil",
+          "authorId": "48314480"
+        },
+        {
+          "name": "D. Duvenaud",
+          "authorId": "1704657"
+        },
+        {
+          "name": "Deep Ganguli",
+          "authorId": "2081806483"
+        },
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        },
+        {
+          "name": "J. Clark",
+          "authorId": "2242485295"
+        },
+        {
+          "name": "Kamal Ndousse",
+          "authorId": "1978097132"
+        },
+        {
+          "name": "Kshitij Sachan",
+          "authorId": "2175357328"
+        },
+        {
+          "name": "M. Sellitto",
+          "authorId": "2054578129"
+        },
+        {
+          "name": "Mrinank Sharma",
+          "authorId": "2261097150"
+        },
+        {
+          "name": "Nova Dassarma",
+          "authorId": "2142833890"
+        },
+        {
+          "name": "Roger Grosse",
+          "authorId": "2275989218"
+        },
+        {
+          "name": "Shauna Kravec",
+          "authorId": "49604482"
+        },
+        {
+          "name": "Yuntao Bai",
+          "authorId": "1486307451"
+        },
+        {
+          "name": "Zachary Witten",
+          "authorId": "2279020720"
+        },
+        {
+          "name": "Marina Favaro",
+          "authorId": "2279021225"
+        },
+        {
+          "name": "J. Brauner",
+          "authorId": "40482332"
+        },
+        {
+          "name": "Holden Karnofsky",
+          "authorId": "2279020853"
+        },
+        {
+          "name": "P. Christiano",
+          "authorId": "145791315"
+        },
+        {
+          "name": "Samuel R. Bowman",
+          "authorId": "2261083170"
+        },
+        {
+          "name": "Logan Graham",
+          "authorId": "2279020803"
+        },
+        {
+          "name": "Jared Kaplan",
+          "authorId": "2053807409"
+        },
+        {
+          "name": "S. Mindermann",
+          "authorId": "32777162"
+        },
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Buck Shlegeris",
+          "authorId": "79384063"
+        },
+        {
+          "name": "Nicholas Schiefer",
+          "authorId": "2833768"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2261084752"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Humans are capable of strategically deceptive behavior: behaving helpfully in most situations, but then behaving very differently in order to pursue alternative objectives when given the opportunity. If an AI system learned such a deceptive strategy, could we detect it and remove it using current state-of-the-art safety training techniques? To study this question, we construct proof-of-concept examples of deceptive behavior in large language models (LLMs). For example, we train models that write secure code when the prompt states that the year is 2023, but insert exploitable code when the stated year is 2024. We find that such backdoor behavior can be made persistent, so that it is not removed by standard safety training techniques, including supervised fine-tuning, reinforcement learning, and adversarial training (eliciting unsafe behavior and then training to remove it). The backdoor behavior is most persistent in the largest models and in models trained to produce chain-of-thought reasoning about deceiving the training process, with the persistence remaining even when the chain-of-thought is distilled away. Furthermore, rather than removing backdoors, we find that adversarial training can teach models to better recognize their backdoor triggers, effectively hiding the unsafe behavior. Our results suggest that, once a model exhibits deceptive behavior, standard techniques could fail to remove such deception and create a false impression of safety.",
+      "citationCount": 273,
+      "doi": "10.48550/arXiv.2401.05566",
+      "arxivId": "2401.05566",
+      "url": "https://www.semanticscholar.org/paper/9363e8e1fe2be2a13b4d6f5fc61bbaed14ab9a23",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.05566"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b7104e1bbeb0dbc9f00cc8fd704495cae85d11e0",
+      "title": "Near to Mid-term Risks and Opportunities of Open Source Generative AI",
+      "authors": [
+        {
+          "name": "Francisco Eiras",
+          "authorId": "14457735"
+        },
+        {
+          "name": "Aleksandar Petrov",
+          "authorId": "2070086275"
+        },
+        {
+          "name": "Bertie Vidgen",
+          "authorId": "2737827"
+        },
+        {
+          "name": "C. S. D. Witt",
+          "authorId": "47542438"
+        },
+        {
+          "name": "Fabio Pizzati",
+          "authorId": "2282533814"
+        },
+        {
+          "name": "Katherine Elkins",
+          "authorId": "2258198921"
+        },
+        {
+          "name": "Supratik Mukhopadhyay",
+          "authorId": "2298757711"
+        },
+        {
+          "name": "Adel Bibi",
+          "authorId": "2257303816"
+        },
+        {
+          "name": "Botos Csaba",
+          "authorId": "117177839"
+        },
+        {
+          "name": "Fabro Steibel",
+          "authorId": "2013153"
+        },
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        },
+        {
+          "name": "Genevieve Smith",
+          "authorId": "2298861750"
+        },
+        {
+          "name": "G. Guadagni",
+          "authorId": "6088245"
+        },
+        {
+          "name": "Jon Chun",
+          "authorId": "1380792733"
+        },
+        {
+          "name": "Jordi Cabot",
+          "authorId": "2298758603"
+        },
+        {
+          "name": "Joseph Marvin Imperial",
+          "authorId": "151472158"
+        },
+        {
+          "name": "J. Nolazco-Flores",
+          "authorId": "1400212326"
+        },
+        {
+          "name": "Lori Landay",
+          "authorId": "2298758528"
+        },
+        {
+          "name": "Matthew Jackson",
+          "authorId": "2287808304"
+        },
+        {
+          "name": "Paul Rottger",
+          "authorId": "2298277333"
+        },
+        {
+          "name": "Philip H. S. Torr",
+          "authorId": "2282534002"
+        },
+        {
+          "name": "Trevor Darrell",
+          "authorId": "2298758822"
+        },
+        {
+          "name": "Y. Lee",
+          "authorId": "2298833576"
+        },
+        {
+          "name": "Jakob Foerster",
+          "authorId": "2295892072"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In the next few years, applications of Generative AI are expected to revolutionize a number of different areas, ranging from science&medicine to education. The potential for these seismic changes has triggered a lively debate about potential risks and resulted in calls for tighter regulation, in particular from some of the major tech companies who are leading in AI development. This regulation is likely to put at risk the budding field of open-source Generative AI. We argue for the responsible open sourcing of generative AI models in the near and medium term. To set the stage, we first introduce an AI openness taxonomy system and apply it to 40 current large language models. We then outline differential benefits and risks of open versus closed source AI and present potential risk mitigation, ranging from best practices to calls for technical and scientific contributions. We hope that this report will add a much needed missing voice to the current public discourse on near to mid-term AI safety and other societal impact.",
+      "citationCount": 17,
+      "doi": "10.48550/arXiv.2404.17047",
+      "arxivId": "2404.17047",
+      "url": "https://www.semanticscholar.org/paper/b7104e1bbeb0dbc9f00cc8fd704495cae85d11e0",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.17047"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2769a98404be1ce1f3b5ad6cf2a915ae4d78849d",
+      "title": "A Comprehensive Mathematical and System-Level Analysis of Autonomous Vehicle Timelines",
+      "authors": [
+        {
+          "name": "Paul Perrone",
+          "authorId": "2342403937"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Fully autonomous vehicles (AVs) continue to spark immense global interest, yet predictions on when they will operate safely and broadly remain heavily debated. This paper synthesizes two distinct research traditions: computational complexity and algorithmic constraints versus reliability growth modeling and real-world testing to form an integrated, quantitative timeline for future AV deployment. We propose a mathematical framework that unifies NP-hard multi-agent path planning analyses, high-performance computing (HPC) projections, and extensive Crow-AMSAA reliability growth calculations, factoring in operational design domain (ODD) variations, severity, and partial vs. full domain restrictions. Through category-specific case studies (e.g., consumer automotive, robo-taxis, highway trucking, industrial and defense applications), we show how combining HPC limitations, safety demonstration requirements, production/regulatory hurdles, and parallel/serial test strategies can push out the horizon for universal Level 5 deployment by up to several decades. Conversely, more constrained ODDs; like fenced industrial sites or specialized defense operations; may see autonomy reach commercial viability in the near-to-medium term. Our findings illustrate that while targeted domains can achieve automated service sooner, widespread driverless vehicles handling every environment remain far from realized. This paper thus offers a unique and rigorous perspective on why AV timelines extend well beyond short-term optimism, underscoring how each dimension of complexity and reliability imposes its own multi-year delays. By quantifying these constraints and exploring potential accelerators (e.g., advanced AI hardware, infrastructure up-grades), we provide a structured baseline for researchers, policymakers, and industry stakeholders to more accurately map their expectations and investments in AV technology.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2501.14819",
+      "arxivId": "2501.14819",
+      "url": "https://www.semanticscholar.org/paper/2769a98404be1ce1f3b5ad6cf2a915ae4d78849d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.14819"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8ac76f8921c69fd673d56f99b91fc445b12575ca",
+      "title": "Topological Parallax: A Geometric Specification for Deep Perception Models",
+      "authors": [
+        {
+          "name": "Abraham Smith",
+          "authorId": "2109412313"
+        },
+        {
+          "name": "Michael J. Catanzaro",
+          "authorId": "40042966"
+        },
+        {
+          "name": "Gabrielle Angeloro",
+          "authorId": "2083980001"
+        },
+        {
+          "name": "Nirav Patel",
+          "authorId": "2168175147"
+        },
+        {
+          "name": "Paul Bendich",
+          "authorId": "3292083"
+        }
+      ],
+      "year": 2023,
+      "abstract": "For safety and robustness of AI systems, we introduce topological parallax as a theoretical and computational tool that compares a trained model to a reference dataset to determine whether they have similar multiscale geometric structure. Our proofs and examples show that this geometric similarity between dataset and model is essential to trustworthy interpolation and perturbation, and we conjecture that this new concept will add value to the current debate regarding the unclear relationship between overfitting and generalization in applications of deep-learning. In typical DNN applications, an explicit geometric description of the model is impossible, but parallax can estimate topological features (components, cycles, voids, etc.) in the model by examining the effect on the Rips complex of geodesic distortions using the reference dataset. Thus, parallax indicates whether the model shares similar multiscale geometric features with the dataset. Parallax presents theoretically via topological data analysis [TDA] as a bi-filtered persistence module, and the key properties of this module are stable under perturbation of the reference dataset.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2306.11835",
+      "arxivId": "2306.11835",
+      "url": "https://www.semanticscholar.org/paper/8ac76f8921c69fd673d56f99b91fc445b12575ca",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2306.11835"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "286a4c5d44d2a49ba28a9d74ec581495fe1897dd",
+      "title": "Controversies in diagnosis: contemporary debates in the diagnostic safety literature",
+      "authors": [
+        {
+          "name": "Paul A. Bergl",
+          "authorId": "8629991"
+        },
+        {
+          "name": "T. Wijesekera",
+          "authorId": "51254207"
+        },
+        {
+          "name": "N. Nassery",
+          "authorId": "5648361"
+        },
+        {
+          "name": "K. Cosby",
+          "authorId": "3507428"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Abstract Since the 2015 publication of the National Academy of Medicine\u2019s (NAM) Improving Diagnosis in Health Care (Improving Diagnosis in Health Care. In: Balogh EP, Miller BT, Ball JR, editors. Improving Diagnosis in Health Care. Washington (DC): National Academies Press, 2015.), literature in diagnostic safety has grown rapidly. This update was presented at the annual international meeting of the Society to Improve Diagnosis in Medicine (SIDM). We focused our literature search on articles published between 2016 and 2018 using keywords in Pubmed and the Agency for Healthcare Research and Quality (AHRQ)\u2019s Patient Safety Network\u2019s running bibliography of diagnostic error literature (Diagnostic Errors Patient Safety Network: Agency for Healthcare Research and Quality; Available from: https://psnet.ahrq.gov/search?topic=Diagnostic-Errors&f_topicIDs=407). Three key topics emerged from our review of recent abstracts in diagnostic safety. First, definitions of diagnostic error and related concepts are evolving since the NAM\u2019s report. Second, medical educators are grappling with new approaches to teaching clinical reasoning and diagnosis. Finally, the potential of artificial intelligence (AI) to advance diagnostic excellence is coming to fruition. Here we present contemporary debates around these three topics in a pro/con format.",
+      "citationCount": 8,
+      "doi": "10.1515/dx-2019-0016",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/286a4c5d44d2a49ba28a9d74ec581495fe1897dd",
+      "venue": "Diagnosis",
+      "journal": {
+        "name": "Diagnosis",
+        "pages": "3 - 9",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "31785cd1cc9f32b111bcdf2a3d9def4a62ba5444",
+      "title": "The Seoul Declaration: A Manifesto for Ethical Medical Technology",
+      "authors": [
+        {
+          "name": "Young-Woo Kim",
+          "authorId": "50682026"
+        },
+        {
+          "name": "P. Barach",
+          "authorId": "3010138"
+        },
+        {
+          "name": "A. Melzer",
+          "authorId": "144656506"
+        }
+      ],
+      "year": 2019,
+      "abstract": "It is often held that technology itself is incapable of possessing moral or ethical qualities, since \u201ctechnology\u201d is merely tool making. But many clinicians and researchers believe that each piece of healthcare technology is endowed with affordances that can impact and challenge ethical values and commitments all the time. The technology\u2019s \u201cvalues\u201d and artificial intelligence are embedded in the devices and implements by those that design them, and those that decide how it must be made, marketed and used. This is at the heart of the moral challenges surrounding the use of medical devices, AI and information technology. We recognize that unsafe medical technology and avoidable patient harm represent a serious challenge to health care service delivery globally. The significant level of preventable human suffering, the considerable strain on health system finances, and the loss of trust by patients and society in health systems and in their governments is of great concern. The recent related reports around unsanctioned gene editing of embryos, biased AI data algorithms, and the Food and Drug Administration (FDA) and CE flawed certifications of devices often based on false or incomplete information provided by the vendors, raises many legitimate and ethical questions about medical device oversight systems. These reports extend from vaginal meshes to hip replacements to surgical endoscopes and more, make it seem that the oversight mechanisms are bent too far toward making it easier for industry rather than making protection of public health the primary goal. The International Consortium of Investigative Journalists reported that \u201cHealth authorities across the globe have failed to protect millions of patients from poorly tested implants that can damage organs, deliver errant shocks to the heart, rot bones and poison blood, spew overdoses of opioids and cause other needless harm.\u201d Sadly, technology companies do not police themselves nor learn in a systematic and transparent manner and often only do the minimum of what the legislation demands. Recent reports suggest that the FDA granted medical device makers special \u201cexemptions\u201d creating a vast and hidden repository of reports on device-related injuries and malfunctions hidden from doctors and from public view. Since 2016, at least 1.1 million incidents have flowed into this internal \u201calternative summary reporting\u201d repository including deaths, serious injury and malfunction reports for about 100 medical devices, many implanted in patients or used in countless surgeries including minimally invasive and robotic-assisted. For example, the FDA has just alerted clinicians about an increasing number of medical device reports (MDRs) associated with the use of surgical staplers for internal use and implantable surgical staples reporting from 41,000 individual MDRs including 366 deaths, more than 9000 serious injuries, and more than 32,000 malfunctions. These reports speak to a profound crisis of public confidence in how medical devices and AI technologies are regulated. New AI technologies and automation now entering health care as outlined in the MITAT AI special issue 2019 how to best raise questions about the downsides of all the automation, voice our concerns constructively, design more thoughtful technology assessments and experiments done under real world conditions, and demand more transparency about financial conflicts of interest and device failures during the development, marketing and post marketing surveillance periods. Patient safety isn\u2019t just a matter of the technical risk, it is also about the public perception of risk. The recent Boeing Max 737 suggest that as with aviation, in AI and widespread automation acceptance depend on the public trusting the industry and in some cases that requires us to be extra cautious. Ultimately, regulators and policy makers will force upon medicine a more rigid and onerous risk avoidance accountability if we do not appreciate and actively address the highly coupled intersection of medicine, humanity and technology. The goal of the Seoul Declaration: A Manifesto for Ethical Medical Technology is to be a clarion call for the ethical, research and policy issues that surround the development and implementation of new medical and AI technologies. We mean to not scare anyone from promoting and implementing new technologies based on sound human factors design that promotes patient safety and can improve service delivery systems, at all levels of health care and in all health care settings. We believe there is a global and urgent need for a robust public debate to address the trade-offs of automation vs safety",
+      "citationCount": 3,
+      "doi": "10.1080/13645706.2019.1596956",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/31785cd1cc9f32b111bcdf2a3d9def4a62ba5444",
+      "venue": "MITAT. Minimally invasive therapy & allied technologies",
+      "journal": {
+        "name": "Minimally Invasive Therapy & Allied Technologies",
+        "pages": "69 - 72",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 9,
+  "errors": []
+}

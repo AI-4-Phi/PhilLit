@@ -1,0 +1,1206 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "circuit discovery language models",
+  "results": [
+    {
+      "paperId": "c7be406d6e144d260724dcbadc75252228bb3d99",
+      "title": "Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates",
+      "authors": [
+        {
+          "name": "Hang Chen",
+          "authorId": "2183269339"
+        },
+        {
+          "name": "Jiaying Zhu",
+          "authorId": "2302470082"
+        },
+        {
+          "name": "Xinyu Yang",
+          "authorId": "2267736563"
+        },
+        {
+          "name": "Wenya Wang",
+          "authorId": "2302468089"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Circuit discovery has gradually become one of the prominent methods for mechanistic interpretability, and research on circuit completeness has also garnered increasing attention. Methods of circuit discovery that do not guarantee completeness not only result in circuits that are not fixed across different runs but also cause key mechanisms to be omitted. The nature of incompleteness arises from the presence of OR gates within the circuit, which are often only partially detected in standard circuit discovery methods. To this end, we systematically introduce three types of logic gates: AND, OR, and ADDER gates, and decompose the circuit into combinations of these logical gates. Through the concept of these gates, we derive the minimum requirements necessary to achieve faithfulness and completeness. Furthermore, we propose a framework that combines noising-based and denoising-based interventions, which can be easily integrated into existing circuit discovery methods without significantly increasing computational complexity. This framework is capable of fully identifying the logic gates and distinguishing them within the circuit. In addition to the extensive experimental validation of the framework's ability to restore the faithfulness, completeness, and sparsity of circuits, using this framework, we uncover fundamental properties of the three logic gates, such as their proportions and contributions to the output, and explore how they behave among the functionalities of language models.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2505.10039",
+      "arxivId": "2505.10039",
+      "url": "https://www.semanticscholar.org/paper/c7be406d6e144d260724dcbadc75252228bb3d99",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.10039"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d1987db643dcf02c616ba77de5cc654de42b3228",
+      "title": "PATCH: Mitigating PII Leakage in Language Models with Privacy-Aware Targeted Circuit PatcHing",
+      "authors": [
+        {
+          "name": "Anthony Hughes",
+          "authorId": "2335670171"
+        },
+        {
+          "name": "Vasisht Duddu",
+          "authorId": "40895513"
+        },
+        {
+          "name": "N. Asokan",
+          "authorId": "2273087004"
+        },
+        {
+          "name": "Nikolaos Aletras",
+          "authorId": "2403670769"
+        },
+        {
+          "name": "Ning Ma",
+          "authorId": "2335671742"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Language models (LMs) may memorize personally identifiable information (PII) from training data, enabling adversaries to extract it during inference. Existing defense mechanisms such as differential privacy (DP) reduce this leakage, but incur large drops in utility. Based on a comprehensive study using circuit discovery to identify the computational circuits responsible PII leakage in LMs, we hypothesize that specific PII leakage circuits in LMs should be responsible for this behavior. Therefore, we propose PATCH (Privacy-Aware Targeted Circuit PatcHing), a novel approach that first identifies and subsequently directly edits PII circuits to reduce leakage. PATCH achieves better privacy-utility trade-off than existing defenses, e.g., reducing recall of PII leakage from LMs by up to 65%. Finally, PATCH can be combined with DP to reduce recall of residual leakage of an LM to as low as 0.01%. Our analysis shows that PII leakage circuits persist even after the application of existing defense mechanisms. In contrast, PATCH can effectively mitigate their impact.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.07452",
+      "arxivId": "2510.07452",
+      "url": "https://www.semanticscholar.org/paper/d1987db643dcf02c616ba77de5cc654de42b3228",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.07452"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "37da23167c32291cd8e91fe415d11a324b9a1223",
+      "title": "PAHQ: Accelerating Automated Circuit Discovery through Mixed-Precision Inference Optimization",
+      "authors": [
+        {
+          "name": "Xinhai Wang",
+          "authorId": "2344032875"
+        },
+        {
+          "name": "Shu Yang",
+          "authorId": "2284694841"
+        },
+        {
+          "name": "Liangyu Wang",
+          "authorId": "2306101523"
+        },
+        {
+          "name": "Lin Zhang",
+          "authorId": "2345182475"
+        },
+        {
+          "name": "Huanyi Xie",
+          "authorId": "2312101594"
+        },
+        {
+          "name": "Lijie Hu",
+          "authorId": "2153121378"
+        },
+        {
+          "name": "Di Wang",
+          "authorId": "2350682010"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Circuit discovery, which involves identifying sparse and task-relevant subnetworks in pre-trained language models, is a cornerstone of mechanistic interpretability. Automated Circuit Discovery (ACDC) has emerged as a pivotal methodology in circuit discovery, but its application to large language models is severely limited by computational inefficiency and prohibitively high memory requirements. Although several accelerated approaches have been proposed, they primarily rely on linear approximations to ACDC, which significantly compromises analytical faithfulness. Our proposed method for accelerating automated circuit discovery, Per Attention Head Quantization (PAHQ), takes a fundamentally different approach by optimizing the efficiency of each individual patching operation. PAHQ leverages a fundamental alignment between activation patching and mixed-precision quantization (MPQ): interpretability analysis through patching essentially performs targeted ablation studies. Therefore, we can maintain high precision exclusively for investigated components while safely reducing precision elsewhere in the network. PAHQ-accelerated ACDC reduces runtime by up to 80\\% and memory consumption by up to 30\\% compared to unaccelerated ACDC while maintaining faithfulness. Importantly, our method readily integrates with existing edge-based circuit discovery techniques by modifying the attention computation mechanism. This training-free approach provides a practical and novel pathway for accelerating mechanistic interpretability methods. Our code is available at https://github.com/626619403/PAHQ.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2510.23264",
+      "arxivId": "2510.23264",
+      "url": "https://www.semanticscholar.org/paper/37da23167c32291cd8e91fe415d11a324b9a1223",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.23264"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2cb0bee242dde85dad11e9395bc8ac98fbbd6fe1",
+      "title": "Multi-Granular Node Pruning for Circuit Discovery",
+      "authors": [
+        {
+          "name": "Muhammad Umair Haider",
+          "authorId": "1988344040"
+        },
+        {
+          "name": "Hammad Rizwan",
+          "authorId": "2008165769"
+        },
+        {
+          "name": "Hassan Sajjad",
+          "authorId": "2284063849"
+        },
+        {
+          "name": "A. B. Siddique",
+          "authorId": "2310343067"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Circuit discovery aims to identify minimal subnetworks that are responsible for specific behaviors in large language models (LLMs). Existing approaches primarily rely on iterative edge pruning, which is computationally expensive and limited to coarse-grained units such as attention heads or MLP blocks, overlooking finer structures like individual neurons. We propose a node-level pruning framework for circuit discovery that addresses both scalability and granularity limitations. Our method introduces learnable masks across multiple levels of granularity, from entire blocks to individual neurons, within a unified optimization objective. Granularity-specific sparsity penalties guide the pruning process, allowing a comprehensive compression in a single fine-tuning run. Empirically, our approach identifies circuits that are smaller in nodes than those discovered by prior methods; moreover, we demonstrate that many neurons deemed important by coarse methods are actually irrelevant, while still maintaining task performance. Furthermore, our method has a significantly lower memory footprint, 5-10x, as it does not require keeping intermediate activations in the memory to work.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.10903",
+      "url": "https://www.semanticscholar.org/paper/2cb0bee242dde85dad11e9395bc8ac98fbbd6fe1",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "942fb7268887fe47c9936ea1f386085b1ffce7c2",
+      "title": "Attribution-guided Pruning for Compression, Circuit Discovery, and Targeted Correction in LLMs",
+      "authors": [
+        {
+          "name": "Sayed Mohammad Vakilzadeh Hatefi",
+          "authorId": "2283307117"
+        },
+        {
+          "name": "Maximilian Dreyer",
+          "authorId": "2126051719"
+        },
+        {
+          "name": "Reduan Achtibat",
+          "authorId": "2168455698"
+        },
+        {
+          "name": "Patrick Kahardipraja",
+          "authorId": "2008210318"
+        },
+        {
+          "name": "Thomas Wiegand",
+          "authorId": "2282529637"
+        },
+        {
+          "name": "Wojciech Samek",
+          "authorId": "2242938198"
+        },
+        {
+          "name": "S. Lapuschkin",
+          "authorId": "3633358"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) are central to many contemporary AI applications, yet their extensive parameter counts pose significant challenges for deployment in memory- and compute-constrained environments. Recent works in eXplainable AI (XAI), particularly on attribution methods, suggest that interpretability can also enable model compression by identifying and removing components irrelevant to inference. In this paper, we leverage Layer-wise Relevance Propagation (LRP) to perform attribution-guided pruning of LLMs. While LRP has shown promise in structured pruning for vision models, we extend it to unstructured pruning in LLMs and demonstrate that it can substantially reduce model size with minimal performance loss. Our method is especially effective in extracting task-relevant subgraphs -- so-called ``circuits'' -- which can represent core functions (e.g., indirect object identification). Building on this, we introduce a technique for model correction, by selectively removing circuits responsible for spurious behaviors (e.g., toxic outputs). All in all, we gather these techniques as a uniform holistic framework and showcase its effectiveness and limitations through extensive experiments for compression, circuit discovery and model correction on Llama and OPT models, highlighting its potential for improving both model efficiency and safety. Our code is publicly available at https://github.com/erfanhatefi/SparC3.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2506.13727",
+      "arxivId": "2506.13727",
+      "url": "https://www.semanticscholar.org/paper/942fb7268887fe47c9936ea1f386085b1ffce7c2",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.13727"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dac2837d729d4f77d684901bb049b5732d3fd667",
+      "title": "Understanding Verbatim Memorization in LLMs Through Circuit Discovery",
+      "authors": [
+        {
+          "name": "Ilya Lasy",
+          "authorId": "2308477759"
+        },
+        {
+          "name": "Peter Knees",
+          "authorId": "2240549623"
+        },
+        {
+          "name": "Stefan Woltran",
+          "authorId": "2295993969"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Underlying mechanisms of memorization in LLMs -- the verbatim reproduction of training data -- remain poorly understood. What exact part of the network decides to retrieve a token that we would consider as start of memorization sequence? How exactly is the models'behaviour different when producing memorized sentence vs non-memorized? In this work we approach these questions from mechanistic interpretability standpoint by utilizing transformer circuits -- the minimal computational subgraphs that perform specific functions within the model. Through carefully constructed contrastive datasets, we identify points where model generation diverges from memorized content and isolate the specific circuits responsible for two distinct aspects of memorization. We find that circuits that initiate memorization can also maintain it once started, while circuits that only maintain memorization cannot trigger its initiation. Intriguingly, memorization prevention mechanisms transfer robustly across different text domains, while memorization induction appears more context-dependent.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.21588",
+      "arxivId": "2506.21588",
+      "url": "https://www.semanticscholar.org/paper/dac2837d729d4f77d684901bb049b5732d3fd667",
+      "venue": "Proceedings of the First Workshop on Large Language Model Memorization (L2M2)",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.21588"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5684ccbe70d46346c72ea3427285c480d972bc9d",
+      "title": "Efficient Automated Circuit Discovery in Transformers using Contextual Decomposition",
+      "authors": [
+        {
+          "name": "Aliyah R. Hsu",
+          "authorId": "121374896"
+        },
+        {
+          "name": "Georgia Zhou",
+          "authorId": "2325943799"
+        },
+        {
+          "name": "Yeshwanth Cherapanamjeri",
+          "authorId": "3422842"
+        },
+        {
+          "name": "Yaxuan Huang",
+          "authorId": "2326163178"
+        },
+        {
+          "name": "A. Odisho",
+          "authorId": "4351517"
+        },
+        {
+          "name": "Peter R Carroll",
+          "authorId": "2309178869"
+        },
+        {
+          "name": "Bin Yu",
+          "authorId": "2309429948"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Automated mechanistic interpretation research has attracted great interest due to its potential to scale explanations of neural network internals to large models. Existing automated circuit discovery work relies on activation patching or its approximations to identify subgraphs in models for specific tasks (circuits). They often suffer from slow runtime, approximation errors, and specific requirements of metrics, such as non-zero gradients. In this work, we introduce contextual decomposition for transformers (CD-T) to build interpretable circuits in large language models. CD-T can produce circuits of arbitrary level of abstraction, and is the first able to produce circuits as fine-grained as attention heads at specific sequence positions efficiently. CD-T consists of a set of mathematical equations to isolate contribution of model features. Through recursively computing contribution of all nodes in a computational graph of a model using CD-T followed by pruning, we are able to reduce circuit discovery runtime from hours to seconds compared to state-of-the-art baselines. On three standard circuit evaluation datasets (indirect object identification, greater-than comparisons, and docstring completion), we demonstrate that CD-T outperforms ACDC and EAP by better recovering the manual circuits with an average of 97% ROC AUC under low runtimes. In addition, we provide evidence that faithfulness of CD-T circuits is not due to random chance by showing our circuits are 80% more faithful than random circuits of up to 60% of the original model size. Finally, we show CD-T circuits are able to perfectly replicate original models' behavior (faithfulness $ = 1$) using fewer nodes than the baselines for all tasks. Our results underscore the great promise of CD-T for efficient automated mechanistic interpretability, paving the way for new insights into the workings of large language models.",
+      "citationCount": 13,
+      "doi": null,
+      "arxivId": "2407.00886",
+      "url": "https://www.semanticscholar.org/paper/5684ccbe70d46346c72ea3427285c480d972bc9d",
+      "venue": "International Conference on Learning Representations",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5c40aa8b6c611f85578e8465a252e72dbfa24459",
+      "title": "Evaluating Brain-Inspired Modular Training in Automated Circuit Discovery for Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Jatin Nainani",
+          "authorId": "2186115391"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have experienced a rapid rise in AI, changing a wide range of applications with their advanced capabilities. As these models become increasingly integral to decision-making, the need for thorough interpretability has never been more critical. Mechanistic Interpretability offers a pathway to this understanding by identifying and analyzing specific sub-networks or 'circuits' within these complex systems. A crucial aspect of this approach is Automated Circuit Discovery, which facilitates the study of large models like GPT4 or LLAMA in a feasible manner. In this context, our research evaluates a recent method, Brain-Inspired Modular Training (BIMT), designed to enhance the interpretability of neural networks. We demonstrate how BIMT significantly improves the efficiency and quality of Automated Circuit Discovery, overcoming the limitations of manual methods. Our comparative analysis further reveals that BIMT outperforms existing models in terms of circuit quality, discovery time, and sparsity. Additionally, we provide a comprehensive computational analysis of BIMT, including aspects such as training duration, memory allocation requirements, and inference speed. This study advances the larger objective of creating trustworthy and transparent AI systems in addition to demonstrating how well BIMT works to make neural networks easier to understand.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2401.03646",
+      "arxivId": "2401.03646",
+      "url": "https://www.semanticscholar.org/paper/5c40aa8b6c611f85578e8465a252e72dbfa24459",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.03646"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9918a0a7c96b09a22d3467ea442d631747cd8cdf",
+      "title": "Discursive Circuits: How Do Language Models Understand Discourse Relations?",
+      "authors": [
+        {
+          "name": "Yisong Miao",
+          "authorId": "39751575"
+        },
+        {
+          "name": "Min-Yen Kan",
+          "authorId": "2286470911"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Which components in transformer language models are responsible for discourse understanding? We hypothesize that sparse computational graphs, termed as discursive circuits, control how models process discourse relations. Unlike simpler tasks, discourse relations involve longer spans and complex reasoning. To make circuit discovery feasible, we introduce a task called Completion under Discourse Relation (CuDR), where a model completes a discourse given a specified relation. To support this task, we construct a corpus of minimal contrastive pairs tailored for activation patching in circuit discovery. Experiments show that sparse circuits ($\\approx 0.2\\%$ of a full GPT-2 model) recover discourse understanding in the English PDTB-based CuDR task. These circuits generalize well to unseen discourse frameworks such as RST and SDRT. Further analysis shows lower layers capture linguistic features such as lexical semantics and coreference, while upper layers encode discourse-level abstractions. Feature utility is consistent across frameworks (e.g., coreference supports Expansion-like relations).",
+      "citationCount": 3,
+      "doi": "10.18653/v1/2025.emnlp-main.1657",
+      "arxivId": "2510.11210",
+      "url": "https://www.semanticscholar.org/paper/9918a0a7c96b09a22d3467ea442d631747cd8cdf",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.11210"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c392238016280e4e72f370cbac67b97fb00d304d",
+      "title": "Anatomy of an Idiom: Tracing Non-Compositionality in Language Models",
+      "authors": [
+        {
+          "name": "Andrew Gomes",
+          "authorId": "2394947934"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We investigate the processing of idiomatic expressions in transformer-based language models using a novel set of techniques for circuit discovery and analysis. First discovering circuits via a modified path patching algorithm, we find that idiom processing exhibits distinct computational patterns. We identify and investigate ``Idiom Heads,''attention heads that frequently activate across different idioms, as well as enhanced attention between idiom tokens due to earlier processing, which we term ``augmented reception.''We analyze these phenomena and the general features of the discovered circuits as mechanisms by which transformers balance computational efficiency and robustness. Finally, these findings provide insights into how transformers handle non-compositional language and suggest pathways for understanding the processing of more complex grammatical constructions.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.16467",
+      "arxivId": "2511.16467",
+      "url": "https://www.semanticscholar.org/paper/c392238016280e4e72f370cbac67b97fb00d304d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.16467"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2c8670410399ed677a926835bd5d2e2f0c1a4a81",
+      "title": "Findings of the BlackboxNLP 2025 Shared Task: Localizing Circuits and Causal Variables in Language Models",
+      "authors": [
+        {
+          "name": "Dana Arad",
+          "authorId": "2290800163"
+        },
+        {
+          "name": "Yonatan Belinkov",
+          "authorId": "2346327043"
+        },
+        {
+          "name": "Hanjie Chen",
+          "authorId": "2394349862"
+        },
+        {
+          "name": "Najoung Kim",
+          "authorId": "2391653048"
+        },
+        {
+          "name": "Hosein Mohebbi",
+          "authorId": "2391618570"
+        },
+        {
+          "name": "Aaron Mueller",
+          "authorId": "2261670263"
+        },
+        {
+          "name": "Gabriele Sarti",
+          "authorId": "2339606769"
+        },
+        {
+          "name": "Martin Tutek",
+          "authorId": "2367197291"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability (MI) seeks to uncover how language models (LMs) implement specific behaviors, yet measuring progress in MI remains challenging. The recently released Mechanistic Interpretability Benchmark (MIB; Mueller et al., 2025) provides a standardized framework for evaluating circuit and causal variable localization. Building on this foundation, the BlackboxNLP 2025 Shared Task extends MIB into a community-wide reproducible comparison of MI techniques. The shared task features two tracks: circuit localization, which assesses methods that identify causally influential components and interactions driving model behavior, and causal variable localization, which evaluates approaches that map activations into interpretable features. With three teams spanning eight different methods, participants achieved notable gains in circuit localization using ensemble and regularization strategies for circuit discovery. With one team spanning two methods, participants achieved significant gains in causal variable localization using low-dimensional and non-linear projections to featurize activation vectors. The MIB leaderboard remains open; we encourage continued work in this standard evaluation framework to measure progress in MI research going forward.",
+      "citationCount": 0,
+      "doi": "10.18653/v1/2025.blackboxnlp-1.32",
+      "arxivId": "2511.18409",
+      "url": "https://www.semanticscholar.org/paper/2c8670410399ed677a926835bd5d2e2f0c1a4a81",
+      "venue": "Proceedings of the 8th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.18409"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ab56212803cd1cf02ed3ffff95548e8e44581efd",
+      "title": "Query Circuits: Explaining How Language Models Answer User Prompts",
+      "authors": [
+        {
+          "name": "Tung-Yu Wu",
+          "authorId": "2382941515"
+        },
+        {
+          "name": "Fazl Barez",
+          "authorId": "2143198655"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Explaining why a language model produces a particular output requires local, input-level explanations. Existing methods uncover global capability circuits (e.g., indirect object identification), but not why the model answers a specific input query in a particular way. We introduce query circuits, which directly trace the information flow inside a model that maps a specific input to the output. Unlike surrogate-based approaches (e.g., sparse autoencoders), query circuits are identified within the model itself, resulting in more faithful and computationally accessible explanations. To make query circuits practical, we address two challenges. First, we introduce Normalized Deviation Faithfulness (NDF), a robust metric to evaluate how well a discovered circuit recovers the model's decision for a specific input, and is broadly applicable to circuit discovery beyond our setting. Second, we develop sampling-based methods to efficiently identify circuits that are sparse yet faithfully describe the model's behavior. Across benchmarks (IOI, arithmetic, MMLU, and ARC), we find that there exist extremely sparse query circuits within the model that can recover much of its performance on single queries. For example, a circuit covering only 1.3% of model connections can recover about 60% of performance on an MMLU questions. Overall, query circuits provide a step towards faithful, scalable explanations of how language models process individual inputs.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2509.24808",
+      "arxivId": "2509.24808",
+      "url": "https://www.semanticscholar.org/paper/ab56212803cd1cf02ed3ffff95548e8e44581efd",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.24808"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f74aba3de62e51411fec3a6249fba9f9153c1ccb",
+      "title": "Understanding how LLMs complete a classical NLP task by gradient accumulation-based circuit discovery",
+      "authors": [
+        {
+          "name": "Aibo Wang",
+          "authorId": "2312681681"
+        },
+        {
+          "name": "Da Xiao",
+          "authorId": "2312465229"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Currently, large language models (LLMs) are increasingly capable of processing natural language problems. However, there is still limited understanding of the internal mechanisms these models employ for such tasks[1]. Additionally, existing works on model interpretability face challenges such as low complexity of interpretable language tasks, smaller scale of interpretable models, and lengthy attribution times. In our paper, we use the method of gradient accumulation to attribute the process by which the Vicuna-33b model handles the classical Winograd Schema Challeng (WSC) natural language task, explaining the behavior of large models from their internal components. Gradient accumulation helps us rapidly identify the intrinsic logic in natural language problem-solving within the model, and understand the importance of hidden units and their role during the forward pass. Compared to existing interpretability methods, this approach significantly improves in terms of attribution efficiency and the scale of models it can attribute.",
+      "citationCount": 0,
+      "doi": "10.1117/12.3031173",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f74aba3de62e51411fec3a6249fba9f9153c1ccb",
+      "venue": "Other Conferences",
+      "journal": {
+        "pages": "131813L - 131813L-8",
+        "volume": "13181"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "e9cad59f7bbe1b118faf36cf6403e43a3784e445",
+      "title": "From Corpus to Innovation: Advancing Organic Solar Cell Design with Large Language Models",
+      "authors": [
+        {
+          "name": "Harikrishna Sahu",
+          "authorId": "13360820"
+        },
+        {
+          "name": "Akhlak-Ul Mahmood",
+          "authorId": "2051511536"
+        },
+        {
+          "name": "Labeeba B. Shafique",
+          "authorId": "2397542397"
+        },
+        {
+          "name": "R. Ramprasad",
+          "authorId": "2349865132"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1038/s41524-025-01896-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e9cad59f7bbe1b118faf36cf6403e43a3784e445",
+      "venue": "npj Computational Materials",
+      "journal": {
+        "name": "npj Computational Materials",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fa5fc9f50d9eb406ce8cd2e81d105699b21c73d6",
+      "title": "Reasoning Circuits in Language Models: A Mechanistic Interpretation of Syllogistic Inference",
+      "authors": [
+        {
+          "name": "Geonhee Kim",
+          "authorId": "2316365571"
+        },
+        {
+          "name": "Marco Valentino",
+          "authorId": "34102057"
+        },
+        {
+          "name": "Andr\u00e9 Freitas",
+          "authorId": "2242981659"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recent studies on reasoning in language models (LMs) have sparked a debate on whether they can learn systematic inferential principles or merely exploit superficial patterns in the training data. To understand and uncover the mechanisms adopted for formal reasoning in LMs, this paper presents a mechanistic interpretation of syllogistic inference. Specifically, we present a methodology for circuit discovery aimed at interpreting content-independent and formal reasoning mechanisms. Through two distinct intervention methods, we uncover a sufficient and necessary circuit involving middle-term suppression that elucidates how LMs transfer information to derive valid conclusions from premises. Furthermore, we investigate how belief biases manifest in syllogistic inference, finding evidence of partial contamination from additional attention heads responsible for encoding commonsense and contextualized knowledge. Finally, we explore the generalization of the discovered mechanisms across various syllogistic schemes, model sizes and architectures. The identified circuit is sufficient and necessary for syllogistic schemes on which the models achieve high accuracy (>60%), with compatible activation patterns across models of different families. Overall, our findings suggest that LMs learn transferable content-independent reasoning mechanisms, but that, at the same time, such mechanisms do not involve generalizable and abstract logical primitives, being susceptible to contamination by the same world knowledge acquired during pre-training.",
+      "citationCount": 12,
+      "doi": "10.18653/v1/2025.findings-acl.525",
+      "arxivId": "2408.08590",
+      "url": "https://www.semanticscholar.org/paper/fa5fc9f50d9eb406ce8cd2e81d105699b21c73d6",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "10074-10095"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "c16c05ca0a3d24519405849fd24604fc1ce47751",
+      "title": "Towards Best Practices of Activation Patching in Language Models: Metrics and Methods",
+      "authors": [
+        {
+          "name": "Fred Zhang",
+          "authorId": "2109244660"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Mechanistic interpretability seeks to understand the internal mechanisms of machine learning models, where localization -- identifying the important model components -- is a key step. Activation patching, also known as causal tracing or interchange intervention, is a standard technique for this task (Vig et al., 2020), but the literature contains many variants with little consensus on the choice of hyperparameters or methodology. In this work, we systematically examine the impact of methodological details in activation patching, including evaluation metrics and corruption methods. In several settings of localization and circuit discovery in language models, we find that varying these hyperparameters could lead to disparate interpretability results. Backed by empirical observations, we give conceptual arguments for why certain metrics or methods may be preferred. Finally, we provide recommendations for the best practices of activation patching going forwards.",
+      "citationCount": 173,
+      "doi": "10.48550/arXiv.2309.16042",
+      "arxivId": "2309.16042",
+      "url": "https://www.semanticscholar.org/paper/c16c05ca0a3d24519405849fd24604fc1ce47751",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2309.16042"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2b52d4ed9de0abef29468631d85b14271ecc01e1",
+      "title": "Skill Path: Unveiling Language Skills from Circuit Graphs",
+      "authors": [
+        {
+          "name": "Hang Chen",
+          "authorId": "2183269339"
+        },
+        {
+          "name": "Jiaying Zhu",
+          "authorId": "2302470082"
+        },
+        {
+          "name": "Xinyu Yang",
+          "authorId": "2267736563"
+        },
+        {
+          "name": "Wenya Wang",
+          "authorId": "2302468089"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Circuit graph discovery has emerged as a fundamental approach to elucidating the skill mechanistic of language models. Despite the output faithfulness of circuit graphs, they suffer from atomic ablation, which causes the loss of causal dependencies between connected components. In addition, their discovery process, designed to preserve output faithfulness, inadvertently captures extraneous effects other than an isolated target skill. To alleviate these challenges, we introduce skill paths, which offers a more refined and compact representation by isolating individual skills within a linear chain of components. To enable skill path extracting from circuit graphs, we propose a three-step framework, consisting of decomposition, pruning, and post-pruning causal mediation. In particular, we offer a complete linear decomposition of the transformer model which leads to a disentangled computation graph. After pruning, we further adopt causal analysis techniques, including counterfactuals and interventions, to extract the final skill paths from the circuit graph. To underscore the significance of skill paths, we investigate three generic language skills-Previous Token Skill, Induction Skill, and In-Context Learning Skill-using our framework. Experiments support two crucial properties of these skills, namely stratification and inclusiveness.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2410.01334",
+      "url": "https://www.semanticscholar.org/paper/2b52d4ed9de0abef29468631d85b14271ecc01e1",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "310c4261f47219e60069e646bdef8cbeb6a52a9c",
+      "title": "EAP-GP: Mitigating Saturation Effect in Gradient-based Automated Circuit Identification",
+      "authors": [
+        {
+          "name": "Lin Zhang",
+          "authorId": "2345182475"
+        },
+        {
+          "name": "Wenshuo Dong",
+          "authorId": "2348078541"
+        },
+        {
+          "name": "Zhuoran Zhang",
+          "authorId": "2324995228"
+        },
+        {
+          "name": "Shu Yang",
+          "authorId": "2284694841"
+        },
+        {
+          "name": "Lijie Hu",
+          "authorId": "2153121378"
+        },
+        {
+          "name": "Ninghao Liu",
+          "authorId": "2269428550"
+        },
+        {
+          "name": "Pan Zhou",
+          "authorId": "2307400302"
+        },
+        {
+          "name": "Di Wang",
+          "authorId": "2346720620"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Understanding the internal mechanisms of transformer-based language models remains challenging. Mechanistic interpretability based on circuit discovery aims to reverse engineer neural networks by analyzing their internal processes at the level of computational subgraphs. In this paper, we revisit existing gradient-based circuit identification methods and find that their performance is either affected by the zero-gradient problem or saturation effects, where edge attribution scores become insensitive to input changes, resulting in noisy and unreliable attribution evaluations for circuit components. To address the saturation effect, we propose Edge Attribution Patching with GradPath (EAP-GP), EAP-GP introduces an integration path, starting from the input and adaptively following the direction of the difference between the gradients of corrupted and clean inputs to avoid the saturated region. This approach enhances attribution reliability and improves the faithfulness of circuit identification. We evaluate EAP-GP on 6 datasets using GPT-2 Small, GPT-2 Medium, and GPT-2 XL. Experimental results demonstrate that EAP-GP outperforms existing methods in circuit faithfulness, achieving improvements up to 17.7%. Comparisons with manually annotated ground-truth circuits demonstrate that EAP-GP achieves precision and recall comparable to or better than previous approaches, highlighting its effectiveness in identifying accurate circuits.",
+      "citationCount": 9,
+      "doi": "10.48550/arXiv.2502.06852",
+      "arxivId": "2502.06852",
+      "url": "https://www.semanticscholar.org/paper/310c4261f47219e60069e646bdef8cbeb6a52a9c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.06852"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "df02a738a0daa6fbdabe9144762b9ed1ef9d4cf8",
+      "title": "Identifying and Adapting Transformer-Components Responsible for Gender Bias in an English Language Model",
+      "authors": [
+        {
+          "name": "Abhijith Chintam",
+          "authorId": "2260342327"
+        },
+        {
+          "name": "Rahel Beloch",
+          "authorId": "2260341585"
+        },
+        {
+          "name": "Willem Zuidema",
+          "authorId": "2254288138"
+        },
+        {
+          "name": "Michael Hanna",
+          "authorId": "2140766524"
+        },
+        {
+          "name": "Oskar van der Wal",
+          "authorId": "1986356851"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Language models (LMs) exhibit and amplify many types of undesirable biases learned from the training data, including gender bias. However, we lack tools for effectively and efficiently changing this behavior without hurting general language modeling performance. In this paper, we study three methods for identifying causal relations between LM components and particular output: causal mediation analysis, automated circuit discovery and our novel, efficient method called DiffMask+ based on differential masking. We apply the methods to GPT-2 small and the problem of gender bias, and use the discovered sets of components to perform parameter-efficient fine-tuning for bias mitigation. Our results show significant overlap in the identified components (despite huge differences in the computational requirements of the methods) as well as success in mitigating gender bias, with less damage to general language modeling compared to full model fine-tuning. However, our work also underscores the difficulty of defining and measuring bias, and the sensitivity of causal discovery procedures to dataset choice. We hope our work can contribute to more attention for dataset development, and lead to more effective mitigation strategies for other types of bias.",
+      "citationCount": 19,
+      "doi": "10.48550/arXiv.2310.12611",
+      "arxivId": "2310.12611",
+      "url": "https://www.semanticscholar.org/paper/df02a738a0daa6fbdabe9144762b9ed1ef9d4cf8",
+      "venue": "BlackboxNLP Workshop on Analyzing and Interpreting Neural Networks for NLP",
+      "journal": {
+        "pages": "379-394"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "53cfc5904fa63fcd60d425518d9a196b3ecaea67",
+      "title": "Speech- and language-linked FOXP2 mutation targets protein motors in striatal neurons.",
+      "authors": [
+        {
+          "name": "Hsiao-Ying Kuo",
+          "authorId": "8276959"
+        },
+        {
+          "name": "Shih-Yun Chen",
+          "authorId": "2144113258"
+        },
+        {
+          "name": "Rui-Chi Huang",
+          "authorId": "2216357279"
+        },
+        {
+          "name": "Hiroshi Takahashi",
+          "authorId": "2115368660"
+        },
+        {
+          "name": "Yen-Hui Lee",
+          "authorId": "1768823553"
+        },
+        {
+          "name": "Hao-yu Pang",
+          "authorId": "8011964"
+        },
+        {
+          "name": "Cheng-Hsi Wu",
+          "authorId": "2216296924"
+        },
+        {
+          "name": "A. Graybiel",
+          "authorId": "3144815"
+        },
+        {
+          "name": "Fu-Chin Liu",
+          "authorId": "87922521"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Human speech and language are among the most complex motor and cognitive abilities. The discovery of a mutation in the transcription factor FOXP2 in KE family members with speech disturbances has been a landmark example of the genetic control of vocal communication in humans. Cellular mechanisms underlying this control have remained unclear. By leveraging FOXP2 mutation/deletion mouse models, we found that the KE family FOXP2R553H mutation directly disables intracellular dynein-dynactin 'protein motors' in the striatum by induction of a disruptive high level of dynactin1 that impairs TrkB endosome trafficking, microtubule dynamics, dendritic outgrowth and electrophysiological activity in striatal neurons alongside vocalization deficits. Dynactin1 knockdown in mice carrying FOXP2R553H mutations rescued these cellular abnormalities and improved vocalization. We suggest that FOXP2 controls vocal circuit formation by regulating protein motor homeostasis in striatal neurons, and that its disruption could contribute to the pathophysiology of FOXP2 mutation/deletion-associated speech disorders.",
+      "citationCount": 10,
+      "doi": "10.1093/brain/awad090",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/53cfc5904fa63fcd60d425518d9a196b3ecaea67",
+      "venue": "Brain : a journal of neurology",
+      "journal": {
+        "name": "Brain : a journal of neurology"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2aa47e03083b812b09279a5ab55f16b03a222b3a",
+      "title": "Emergent Stack Representations in Modeling Counter Languages Using Transformers",
+      "authors": [
+        {
+          "name": "Utkarsh Tiwari",
+          "authorId": "2344759542"
+        },
+        {
+          "name": "Aviral Gupta",
+          "authorId": "2343781530"
+        },
+        {
+          "name": "Michael Hahn",
+          "authorId": "2367193829"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Transformer architectures are the backbone of most modern language models, but understanding the inner workings of these models still largely remains an open problem. One way that research in the past has tackled this problem is by isolating the learning capabilities of these architectures by training them over well-understood classes of formal languages. We extend this literature by analyzing models trained over counter languages, which can be modeled using counter variables. We train transformer models on 4 counter languages, and equivalently formulate these languages using stacks, whose depths can be understood as the counter values. We then probe their internal representations for stack depths at each input token to show that these models when trained as next token predictors learn stack-like representations. This brings us closer to understanding the algorithmic details of how transformers learn languages and helps in circuit discovery.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2502.01432",
+      "arxivId": "2502.01432",
+      "url": "https://www.semanticscholar.org/paper/2aa47e03083b812b09279a5ab55f16b03a222b3a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.01432"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "69a24d171c86957b716092376af894662a1a9549",
+      "title": "Triangulation as an Acceptance Rule for Multilingual Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Yanan Long",
+          "authorId": "2402449112"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Multilingual language models achieve strong aggregate performance yet often behave unpredictably across languages, scripts, and cultures. We argue that mechanistic explanations for such models should satisfy a \\emph{causal} standard: claims must survive causal interventions and must \\emph{cross-reference} across environments that perturb surface form while preserving meaning. We formalize \\emph{reference families} as predicate-preserving variants and introduce \\emph{triangulation}, an acceptance rule requiring necessity (ablating the circuit degrades the target behavior), sufficiency (patching activations transfers the behavior), and invariance (both effects remain directionally stable and of sufficient magnitude across the reference family). To supply candidate subgraphs, we adopt automatic circuit discovery and \\emph{accept or reject} those candidates by triangulation. We ground triangulation in causal abstraction by casting it as an approximate transformation score over a distribution of interchange interventions, connect it to the pragmatic interpretability agenda, and present a comparative experimental protocol across multiple model families, language pairs, and tasks. Triangulation provides a falsifiable standard for mechanistic claims that filters spurious circuits passing single-environment tests but failing cross-lingual invariance.",
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": "2512.24842",
+      "url": "https://www.semanticscholar.org/paper/69a24d171c86957b716092376af894662a1a9549",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ba4f571c2c40b0f387abebdce2322b71304945b9",
+      "title": "Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework",
+      "authors": [
+        {
+          "name": "Hao Gu",
+          "authorId": "2384429817"
+        },
+        {
+          "name": "Vibhas Nair",
+          "authorId": "2384132831"
+        },
+        {
+          "name": "Amrithaa Ashok Kumar",
+          "authorId": "2384695378"
+        },
+        {
+          "name": "Jayvart Sharma",
+          "authorId": "2384135548"
+        },
+        {
+          "name": "Ryan Lagasse",
+          "authorId": "2360173738"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Interpreting language models often involves circuit analysis, which aims to identify sparse subnetworks, or circuits, that accomplish specific tasks. Existing circuit discovery algorithms face a fundamental trade-off: attribution patching is fast but unfaithful to the full model, while edge pruning is faithful but computationally expensive. This research proposes a hybrid attribution and pruning (HAP) framework that uses attribution patching to identify a high-potential subgraph, then applies edge pruning to extract a faithful circuit from it. We show that HAP is 46\\% faster than baseline algorithms without sacrificing circuit faithfulness. Furthermore, we present a case study on the Indirect Object Identification task, showing that our method preserves cooperative circuit components (e.g. S-inhibition heads) that attribution patching methods prune at high sparsity. Our results show that HAP could be an effective approach for improving the scalability of mechanistic interpretability research to larger models. Our code is available at https://anonymous.4open.science/r/HAP-circuit-discovery.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.03282",
+      "arxivId": "2510.03282",
+      "url": "https://www.semanticscholar.org/paper/ba4f571c2c40b0f387abebdce2322b71304945b9",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.03282"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bfed3d4c959b64148811376965db84f77ea8292e",
+      "title": "Transforming Science with Large Language Models: A Survey on AI-assisted Scientific Discovery, Experimentation, Content Generation, and Evaluation",
+      "authors": [
+        {
+          "name": "Steffen Eger",
+          "authorId": "2299940979"
+        },
+        {
+          "name": "Yong Cao",
+          "authorId": "2355120127"
+        },
+        {
+          "name": "Jennifer D'Souza",
+          "authorId": "2265761362"
+        },
+        {
+          "name": "Andreas Geiger",
+          "authorId": "2344612237"
+        },
+        {
+          "name": "Christian Greisinger",
+          "authorId": "2344608145"
+        },
+        {
+          "name": "Stephanie Gross",
+          "authorId": "145401543"
+        },
+        {
+          "name": "Yufang Hou",
+          "authorId": "2349080910"
+        },
+        {
+          "name": "Brigitte Krenn",
+          "authorId": "2301584011"
+        },
+        {
+          "name": "Anne Lauscher",
+          "authorId": "29891652"
+        },
+        {
+          "name": "Yizhi Li",
+          "authorId": "2110457046"
+        },
+        {
+          "name": "Chenghua Lin",
+          "authorId": "2279451646"
+        },
+        {
+          "name": "N. Moosavi",
+          "authorId": "2182290"
+        },
+        {
+          "name": "Wei Zhao",
+          "authorId": "2285821911"
+        },
+        {
+          "name": "Tristan Miller",
+          "authorId": "2344726189"
+        }
+      ],
+      "year": 2025,
+      "abstract": "With the advent of large multimodal language models, science is now at a threshold of an AI-based technological transformation. Recently, a plethora of new AI models and tools has been proposed, promising to empower researchers and academics worldwide to conduct their research more effectively and efficiently. This includes all aspects of the research cycle, especially (1) searching for relevant literature; (2) generating research ideas and conducting experimentation; generating (3) text-based and (4) multimodal content (e.g., scientific figures and diagrams); and (5) AI-based automatic peer review. In this survey, we provide an in-depth overview over these exciting recent developments, which promise to fundamentally alter the scientific research process for good. Our survey covers the five aspects outlined above, indicating relevant datasets, methods and results (including evaluation) as well as limitations and scope for future research. Ethical concerns regarding shortcomings of these tools and potential for misuse (fake science, plagiarism, harms to research integrity) take a particularly prominent place in our discussion. We hope that our survey will not only become a reference guide for newcomers to the field but also a catalyst for new AI-based initiatives in the area of\"AI4Science\".",
+      "citationCount": 29,
+      "doi": "10.48550/arXiv.2502.05151",
+      "arxivId": "2502.05151",
+      "url": "https://www.semanticscholar.org/paper/bfed3d4c959b64148811376965db84f77ea8292e",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.05151"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "304d910048cb105839b6b5306d9457ab50950ed0",
+      "title": "Large language models for scientific discovery in molecular property prediction",
+      "authors": [
+        {
+          "name": "Yizhen Zheng",
+          "authorId": "26956796"
+        },
+        {
+          "name": "Huan Yee Koh",
+          "authorId": "2134585717"
+        },
+        {
+          "name": "Jiaxin Ju",
+          "authorId": "2237806895"
+        },
+        {
+          "name": "A. T. Nguyen",
+          "authorId": "12245599"
+        },
+        {
+          "name": "Lauren T. May",
+          "authorId": "2243970839"
+        },
+        {
+          "name": "Geoffrey I. Webb",
+          "authorId": "2243967976"
+        },
+        {
+          "name": "Shirui Pan",
+          "authorId": "2191655754"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 63,
+      "doi": "10.1038/s42256-025-00994-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/304d910048cb105839b6b5306d9457ab50950ed0",
+      "venue": "Nature Machine Intelligence",
+      "journal": {
+        "name": "Nature Machine Intelligence",
+        "pages": "437 - 447",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5dabefa3f491037b0cd9902819de0e7805420479",
+      "title": "Applications of natural language processing and large language models in materials discovery",
+      "authors": [
+        {
+          "name": "Xue Jiang",
+          "authorId": "2305460817"
+        },
+        {
+          "name": "Weiren Wang",
+          "authorId": "2154480552"
+        },
+        {
+          "name": "Shaohan Tian",
+          "authorId": "2152284834"
+        },
+        {
+          "name": "Hao Wang",
+          "authorId": "2352208982"
+        },
+        {
+          "name": "T. Lookman",
+          "authorId": "2891010"
+        },
+        {
+          "name": "Yanjing Su",
+          "authorId": "2333182659"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 61,
+      "doi": "10.1038/s41524-025-01554-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5dabefa3f491037b0cd9902819de0e7805420479",
+      "venue": "npj Computational Materials",
+      "journal": {
+        "name": "npj Computational Materials",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "591f5644aede42a2447e48eedb112c70e80089af",
+      "title": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "authors": [
+        {
+          "name": "Tianshi ZHENG",
+          "authorId": "2209990450"
+        },
+        {
+          "name": "Zheye Deng",
+          "authorId": "2260296509"
+        },
+        {
+          "name": "Hong Ting Tsang",
+          "authorId": "2329077004"
+        },
+        {
+          "name": "Weiqi Wang",
+          "authorId": "1587728690"
+        },
+        {
+          "name": "Jiaxin Bai",
+          "authorId": "145677395"
+        },
+        {
+          "name": "Zihao Wang",
+          "authorId": "2117421814"
+        },
+        {
+          "name": "Yangqiu Song",
+          "authorId": "2241325169"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and fundamentally redefining research processes and human-AI collaboration. This survey systematically charts this burgeoning field, placing a central focus on the changing roles and escalating capabilities of LLMs in science. Through the lens of the scientific method, we introduce a foundational three-level taxonomy-Tool, Analyst, and Scientist-to delineate their escalating autonomy and evolving responsibilities within the research lifecycle. We further identify pivotal challenges and future research trajectories such as robotic automation, self-improvement, and ethical governance. Overall, this survey provides a conceptual architecture and strategic foresight to navigate and shape the future of AI-driven scientific discovery, fostering both rapid innovation and responsible advancement. Github Repository: https://github.com/HKUST-KnowComp/Awesome-LLM-Scientific-Discovery.",
+      "citationCount": 29,
+      "doi": "10.48550/arXiv.2505.13259",
+      "arxivId": "2505.13259",
+      "url": "https://www.semanticscholar.org/paper/591f5644aede42a2447e48eedb112c70e80089af",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.13259"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "52b6d5416af1208e2c75dc86c7d82c3b255b2088",
+      "title": "Exploring the role of large language models in the scientific method: from hypothesis to discovery",
+      "authors": [
+        {
+          "name": "Yanbo Zhang",
+          "authorId": "2324067313"
+        },
+        {
+          "name": "Sumeer A. Khan",
+          "authorId": "2375747864"
+        },
+        {
+          "name": "Adnan Mahmud",
+          "authorId": "2362717456"
+        },
+        {
+          "name": "Huck Yang",
+          "authorId": "2362850764"
+        },
+        {
+          "name": "Alexander Lavin",
+          "authorId": "2362721737"
+        },
+        {
+          "name": "Michael Levin",
+          "authorId": "2362718645"
+        },
+        {
+          "name": "Jeremy Frey",
+          "authorId": "2362717681"
+        },
+        {
+          "name": "Jared Dunnmon",
+          "authorId": "2362721754"
+        },
+        {
+          "name": "James Evans",
+          "authorId": "2363371320"
+        },
+        {
+          "name": "Alan Bundy",
+          "authorId": "2223594382"
+        },
+        {
+          "name": "S. D\u017eeroski",
+          "authorId": "1693549"
+        },
+        {
+          "name": "Jesper Tegn\u00e9r",
+          "authorId": "2226864614"
+        },
+        {
+          "name": "Hector Zenil",
+          "authorId": "2155200875"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 25,
+      "doi": "10.1038/s44387-025-00019-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/52b6d5416af1208e2c75dc86c7d82c3b255b2088",
+      "venue": "npj Artificial Intelligence",
+      "journal": {
+        "name": "npj Artificial Intelligence",
+        "volume": "1"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "79d455c55401734971aba42a76204f973980ed04",
+      "title": "LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models",
+      "authors": [
+        {
+          "name": "Parshin Shojaee",
+          "authorId": "2037848556"
+        },
+        {
+          "name": "Ngoc-Hieu Nguyen",
+          "authorId": "2356007906"
+        },
+        {
+          "name": "Kazem Meidani",
+          "authorId": "1999900316"
+        },
+        {
+          "name": "A. Farimani",
+          "authorId": "3614493"
+        },
+        {
+          "name": "Khoa D. Doan",
+          "authorId": "2310704958"
+        },
+        {
+          "name": "Chandan K. Reddy",
+          "authorId": "2262444977"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Scientific equation discovery is a fundamental task in the history of scientific progress, enabling the derivation of laws governing natural phenomena. Recently, Large Language Models (LLMs) have gained interest for this task due to their potential to leverage embedded scientific knowledge for hypothesis generation. However, evaluating the true discovery capabilities of these methods remains challenging, as existing benchmarks often rely on common equations that are susceptible to memorization by LLMs, leading to inflated performance metrics that do not reflect discovery. In this paper, we introduce LLM-SRBench, a comprehensive benchmark with 239 challenging problems across four scientific domains specifically designed to evaluate LLM-based scientific equation discovery methods while preventing trivial memorization. Our benchmark comprises two main categories: LSR-Transform, which transforms common physical models into less common mathematical representations to test reasoning beyond memorized forms, and LSR-Synth, which introduces synthetic, discovery-driven problems requiring data-driven reasoning. Through extensive evaluation of several state-of-the-art methods, using both open and closed LLMs, we find that the best-performing system so far achieves only 31.5% symbolic accuracy. These findings highlight the challenges of scientific equation discovery, positioning LLM-SRBench as a valuable resource for future research.",
+      "citationCount": 25,
+      "doi": "10.48550/arXiv.2504.10415",
+      "arxivId": "2504.10415",
+      "url": "https://www.semanticscholar.org/paper/79d455c55401734971aba42a76204f973980ed04",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2504.10415"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "80d537c60441d4a48f17e37edf7005ea6aa1aebb",
+      "title": "Enabling large language models for real-world materials discovery",
+      "authors": [
+        {
+          "name": "Santiago Miret",
+          "authorId": "2294574515"
+        },
+        {
+          "name": "N. M. A. Krishnan",
+          "authorId": "2325282159"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": "10.1038/s42256-025-01058-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/80d537c60441d4a48f17e37edf7005ea6aa1aebb",
+      "venue": "Nature Machine Intelligence",
+      "journal": {
+        "name": "Nature Machine Intelligence",
+        "pages": "991 - 998",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

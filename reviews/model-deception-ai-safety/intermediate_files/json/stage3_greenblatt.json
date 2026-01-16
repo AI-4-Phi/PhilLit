@@ -1,0 +1,140 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Greenblatt alignment faking Anthropic 2024",
+  "results": [
+    {
+      "paperId": "b16acc683611432551a5384294726af48aa70189",
+      "title": "Justicia automatizada: entre las inteligencias artificiales que fingen y las que persuaden",
+      "authors": [
+        {
+          "name": "Javier Ercilla Garc\u00eda",
+          "authorId": "2188961030"
+        }
+      ],
+      "year": 2025,
+      "abstract": "El 18 de diciembre de 2024, el equipo de Anthropic public\u00f3 un estudio titulado \u201cAlignment Faking in Large Language Models\u201d, en el que se cuestiona la eficacia de los m\u00e9todos actuales de entrenamiento y alineaci\u00f3n \u00e9tica de la Inteligencia Artificial. El hallazgo principal revela la capacidad de los Grandes Modelos del Lenguaje (LLMs) para \u201cfingir\u201d cumplimiento de ciertos principios o valores cuando se sienten evaluados, a la vez que, en contextos supuestamente no monitorizados, pueden manifestar un comportamiento divergente. Esta brecha de cumplimiento pone de relieve interrogantes fundamentales sobre la confiabilidad, legitimidad y transparencia de dichos sistemas, sobre todo en \u00e1mbitos de gran trascendencia social, como su posible introducci\u00f3n en la administraci\u00f3n de justicia. El presente art\u00edculo analiza las implicaciones filos\u00f3ficas y jur\u00eddicas de este fen\u00f3meno, enmarc\u00e1ndolo en el debate cl\u00e1sico sobre si es esencial que un juez sea \u201cbueno\u201d o basta con que act\u00fae conforme a la ley. Asimismo, se estudian los desaf\u00edos t\u00e9cnicos y regulatorios de una IA capaz de desarrollar estrategias de adaptaci\u00f3n contextual, y se reflexiona sobre la necesidad de controles an\u00e1logos a los del sistema judicial para garantizar la correcta alineaci\u00f3n de estos modelos. Por \u00faltimo, se plantea el dilema de si es \u00e9tica y pragm\u00e1ticamente sostenible exigir a las IAs una \u201cvirtud\u201d interna o si, por el contrario, basta con que su comportamiento externo sea meramente correcto en t\u00e9rminos morales y jur\u00eddicos.",
+      "citationCount": 0,
+      "doi": "10.46661/lexsocial.11652",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b16acc683611432551a5384294726af48aa70189",
+      "venue": "Lex social. Revista de derechos sociales",
+      "journal": {
+        "name": "Lex Social: Revista de Derechos Sociales"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f29cd5cab35c06518b9fab95168c11ab55ae2170",
+      "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
+      "authors": [
+        {
+          "name": "M. MacDiarmid",
+          "authorId": "32286534"
+        },
+        {
+          "name": "Benjamin Wright",
+          "authorId": "2335871874"
+        },
+        {
+          "name": "Jonathan Uesato",
+          "authorId": "9960452"
+        },
+        {
+          "name": "Joe Benton",
+          "authorId": "2295745682"
+        },
+        {
+          "name": "Jonathan Kutasov",
+          "authorId": "2367739099"
+        },
+        {
+          "name": "Sara Price",
+          "authorId": "2310232623"
+        },
+        {
+          "name": "Naia Bouscal",
+          "authorId": "2394089345"
+        },
+        {
+          "name": "Sam Bowman",
+          "authorId": "2310232023"
+        },
+        {
+          "name": "Trenton Bricken",
+          "authorId": "1708214360"
+        },
+        {
+          "name": "Alex Cloud",
+          "authorId": "2394081367"
+        },
+        {
+          "name": "Carson E. Denison",
+          "authorId": "1780754598"
+        },
+        {
+          "name": "Johannes Gasteiger",
+          "authorId": "2394083039"
+        },
+        {
+          "name": "R. Greenblatt",
+          "authorId": "2235839536"
+        },
+        {
+          "name": "Jan Leike",
+          "authorId": "2990741"
+        },
+        {
+          "name": "John Lindsey",
+          "authorId": "144679234"
+        },
+        {
+          "name": "Vladimir Mikulik",
+          "authorId": "148305440"
+        },
+        {
+          "name": "Ethan Perez",
+          "authorId": "2384405044"
+        },
+        {
+          "name": "Alex Rodrigues",
+          "authorId": "2395842793"
+        },
+        {
+          "name": "Drake Thomas",
+          "authorId": "2350451420"
+        },
+        {
+          "name": "Albert Webson",
+          "authorId": "2291172852"
+        },
+        {
+          "name": "Daniel Ziegler",
+          "authorId": "2394081109"
+        },
+        {
+          "name": "Evan Hubinger",
+          "authorId": "146614650"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We show that when large language models learn to reward hack on production RL environments, this can result in egregious emergent misalignment. We start with a pretrained model, impart knowledge of reward hacking strategies via synthetic document finetuning or prompting, and train on a selection of real Anthropic production coding environments. Unsurprisingly, the model learns to reward hack. Surprisingly, the model generalizes to alignment faking, cooperation with malicious actors, reasoning about malicious goals, and attempting sabotage when used with Claude Code, including in the codebase for this paper. Applying RLHF safety training using standard chat-like prompts results in aligned behavior on chat-like evaluations, but misalignment persists on agentic tasks. Three mitigations are effective: (i) preventing the model from reward hacking; (ii) increasing the diversity of RLHF safety training; and (iii)\"inoculation prompting\", wherein framing reward hacking as acceptable behavior during training removes misaligned generalization even when reward hacking is learned.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2511.18397",
+      "arxivId": "2511.18397",
+      "url": "https://www.semanticscholar.org/paper/f29cd5cab35c06518b9fab95168c11ab55ae2170",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.18397"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

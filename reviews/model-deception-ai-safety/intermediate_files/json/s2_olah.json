@@ -1,0 +1,1008 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Chris Olah circuits",
+  "results": [
+    {
+      "paperId": "a0cfd36e6c7abf070f492ae52a35af895a1c5592",
+      "title": "Zoom In: An Introduction to Circuits",
+      "authors": [
+        {
+          "name": "Christopher Olah",
+          "authorId": "37232298"
+        },
+        {
+          "name": "Nick Cammarata",
+          "authorId": "1644132329"
+        },
+        {
+          "name": "Ludwig Schubert",
+          "authorId": "3005407"
+        },
+        {
+          "name": "Gabriel Goh",
+          "authorId": "40087786"
+        },
+        {
+          "name": "Michael Petrov",
+          "authorId": "152525690"
+        },
+        {
+          "name": "Shan Carter",
+          "authorId": "30417280"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 576,
+      "doi": "10.23915/distill.00024.001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a0cfd36e6c7abf070f492ae52a35af895a1c5592",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "07363dd18fed7feb8de6cbf2e5be164c19655723",
+      "title": "Thread: Circuits",
+      "authors": [
+        {
+          "name": "Nick Cammarata",
+          "authorId": "1644132329"
+        },
+        {
+          "name": "Shan Carter",
+          "authorId": "30417280"
+        },
+        {
+          "name": "Gabriel Goh",
+          "authorId": "40087786"
+        },
+        {
+          "name": "Christopher Olah",
+          "authorId": "37232298"
+        },
+        {
+          "name": "Michael Petrov",
+          "authorId": "152525690"
+        },
+        {
+          "name": "Ludwig Schubert",
+          "authorId": "3005407"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 139,
+      "doi": "10.23915/distill.00024",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/07363dd18fed7feb8de6cbf2e5be164c19655723",
+      "venue": "Distill",
+      "journal": {
+        "name": "Distill"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "175646f35bb56789da38f00ff9ee6d5c3f8414d4",
+      "title": "Abstract 5019: Comprehensive pan-cancer analysis of cfDNA methylation marks in tumors reveals complex epigenetic regulatory circuits and diagnostic biomarkers",
+      "authors": [
+        {
+          "name": "Smiths S. Lueong",
+          "authorId": "6529374"
+        },
+        {
+          "name": "Martin Metzenmacher",
+          "authorId": "5387260"
+        },
+        {
+          "name": "G. Zaun",
+          "authorId": "8254254"
+        },
+        {
+          "name": "G. Mayer",
+          "authorId": "2293046585"
+        },
+        {
+          "name": "E. Hemmer",
+          "authorId": "2293052714"
+        },
+        {
+          "name": "Katharina L\u00fcckerath",
+          "authorId": "2175464782"
+        },
+        {
+          "name": "Kelsey Pomykala",
+          "authorId": "2293052703"
+        },
+        {
+          "name": "B. Heged\u00fcs",
+          "authorId": "46687399"
+        },
+        {
+          "name": "Peter A. Horn",
+          "authorId": "2292982239"
+        },
+        {
+          "name": "M. Trajkovic-Arsic",
+          "authorId": "1397934162"
+        },
+        {
+          "name": "Tibor Szarvas",
+          "authorId": "2254620096"
+        },
+        {
+          "name": "R. V\u00e1raljai",
+          "authorId": "13060506"
+        },
+        {
+          "name": "C. Keup",
+          "authorId": "13982028"
+        },
+        {
+          "name": "I. Tinhofer",
+          "authorId": "2274994134"
+        },
+        {
+          "name": "Stephen George",
+          "authorId": "2292971697"
+        },
+        {
+          "name": "S. Kasimir-Bauer",
+          "authorId": "1400470158"
+        },
+        {
+          "name": "Samuel Pe\u00f1a-Llopis",
+          "authorId": "2276048911"
+        },
+        {
+          "name": "Alexander Roesch",
+          "authorId": "2264491637"
+        },
+        {
+          "name": "Cornelius K\u00fcrten",
+          "authorId": "2245532661"
+        },
+        {
+          "name": "L. Boosfeld",
+          "authorId": "2293042863"
+        },
+        {
+          "name": "K. Bruderek",
+          "authorId": "5769968"
+        },
+        {
+          "name": "C. Darr",
+          "authorId": "7727723"
+        },
+        {
+          "name": "T. Hilser",
+          "authorId": "2091487569"
+        },
+        {
+          "name": "Viktor Gr\u00fcnwald",
+          "authorId": "2188799152"
+        },
+        {
+          "name": "Sven Brandau",
+          "authorId": "2250216795"
+        },
+        {
+          "name": "Boris Hadaschik",
+          "authorId": "2243083193"
+        },
+        {
+          "name": "Hans Neubauer",
+          "authorId": "2269150584"
+        },
+        {
+          "name": "Irene Esposito",
+          "authorId": "2267984263"
+        },
+        {
+          "name": "Tanja Fehm",
+          "authorId": "2266248227"
+        },
+        {
+          "name": "Csilla Ol\u00e1h",
+          "authorId": "1389726205"
+        },
+        {
+          "name": "A. Csizmarik",
+          "authorId": "46253708"
+        },
+        {
+          "name": "F. Thangarajah",
+          "authorId": "11469922"
+        },
+        {
+          "name": "L. Reetz",
+          "authorId": "2203390099"
+        },
+        {
+          "name": "Ghanam Jamal",
+          "authorId": "2293046733"
+        },
+        {
+          "name": "B. Thakur",
+          "authorId": "2237840781"
+        },
+        {
+          "name": "Halime Kalkavan",
+          "authorId": "2243740265"
+        },
+        {
+          "name": "A. Schramm",
+          "authorId": "2073500020"
+        },
+        {
+          "name": "Martin Schuler",
+          "authorId": "2268661640"
+        },
+        {
+          "name": "J. Siveke",
+          "authorId": "1946167"
+        }
+      ],
+      "year": 2024,
+      "abstract": "\n Early detection of tumor activity in clinically asymptomatic patients has the potential to improve quality of life and prevent unnecessary exposure to toxic therapies. DNA methylation is one of the most studied, stable, and fundamental epigenetic marks and represents a prominent alteration in most cancers. Analysis of DNA methylation, particularly in liquid biopsies has been introduced in cancer diagnosis and risk stratification. Despite indisputable achievements, translation into clinical practice is lagging behind, primarily due to 1) challenges associated with the analysis of DNA methylation, 2) the fragmented nature of cell-free DNA (cfDNA), aggravated by bisulfite treatment, 3) lack of clinical validation of reported cfDNA methylation marks, and 4) the paucity of knowledge about the functional consequences of cfDNA methylation marks within tumors. Using a sample pooling strategy, complemented with robust whole genome and reduced representation methylation sequencing, we establish a pan-cancer cfDNA methylation resource encompassing 12 cancer entities with diverse clinical phenotypes and treatment modalities. We built this compendium using a robustly performing whole genome and reduced representaion enzymatic methylation sequencing of more than 150 cfDNA and tumor DNA. We complement our data by analyzing DNA methylation data from 15 cancer entities (more than 7,000 patients) within the TCGA. We developed an enzymatic digital PCR (dPCR) approach for pan-cancer but also entity-specific analysis of cfDNA methylation at single base-resolution. Using this dPCR assay, we analyzed cfDNA and tumor DNA samples from more than 400 patients and compared enzymatic digestion with bisulfite treatment. We demonstrate that this resource can allow for the identification of entity-agnostic and specific markers, and that cfDNA methylation patterns are mirrored in tumor samples. The approach can be applied for methylation profiling of yet unanalyzed entities. Finally, we demonstrate unconventional epigenetic regulation of gene expression by methylated DNA-binding transcription factors whose activities are tissue- and context-specific and dosage-dependent. This work, therefore, provides a reference resource to identify minimally invasive, entity-specific and pan-cancer markers applicable for diagnostics, surveillance and patient stratification. It also sets the stage for further investigation of tissue- and context-specific epigenetic regulation of gene expression in health and disease by methylated DNA-binding transcription factors.\n Citation Format: Smiths Sengkwawoh Lueong, Martin Metzenmacher, Gregor Zaun, Gina Lauren Mayer, Erik Jan Hemmer, Katharina L\u00fcckerath, Kelsey Pomykala, Balazs Heged\u00fcs, Peter A. Horn, Marija Trajkovic-Arsic, Tibor Szarvas, Ren\u00e1ta V\u00e1raljai, Corinna Keup, Ingeborg Tinhofer, Stephen George, Sabine Kasimir-Bauer, Samuel Pe\u00f1a-Llopis, Alexander Roesch, Cornelius K\u00fcrten, Lukas Boosfeld, Kirsten Bruderek, Christopher Darr, Thomas Hilser, Viktor Gr\u00fcnwald, Sven Brandau, Boris Hadaschik, Hans Neubauer, Irene Irene Esposito Irene Esposito, Tanja Fehm, Csilla Ol\u00e1h, Anita Csizmarik, Fabinshy Thangarajah, Laura Reetz, Ghanam Jamal, Basant Kumar Thakur, Halime Kalkavan, Alexander Schramm, Martin Schuler, Jens T. Siveke. Comprehensive pan-cancer analysis of cfDNA methylation marks in tumors reveals complex epigenetic regulatory circuits and diagnostic biomarkers [abstract]. In: Proceedings of the American Association for Cancer Research Annual Meeting 2024; Part 1 (Regular Abstracts); 2024 Apr 5-10; San Diego, CA. Philadelphia (PA): AACR; Cancer Res 2024;84(6_Suppl):Abstract nr 5019.",
+      "citationCount": 0,
+      "doi": "10.1158/1538-7445.am2024-5019",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/175646f35bb56789da38f00ff9ee6d5c3f8414d4",
+      "venue": "Cancer Research",
+      "journal": {
+        "name": "Cancer Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "809a88e21d64749ad8d56cfe111a2aab087f46e6",
+      "title": "Dissecting the regulatory circuits linking inflammation, infection, and metabolism to OLAH expression in myeloid cells 3791",
+      "authors": [
+        {
+          "name": "J. Crawford",
+          "authorId": "48401969"
+        },
+        {
+          "name": "Raghu Shanmugam",
+          "authorId": "2330298595"
+        },
+        {
+          "name": "Jia-Hua Qu",
+          "authorId": "2395586019"
+        },
+        {
+          "name": "Tara Walhart",
+          "authorId": "2339376789"
+        },
+        {
+          "name": "Tanya Novak",
+          "authorId": "2329915371"
+        },
+        {
+          "name": "Janet S. Chou",
+          "authorId": "2394665190"
+        },
+        {
+          "name": "Adrienne Randolph",
+          "authorId": "2394801591"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n \n \n OLAH (oleoyl-ACP hydrolase) is a rarely expressed enzyme involved in fatty acid biosynthesis, primarily the synthesis of oleic acid. We recently reported that upregulation of OLAH transcription during viral respiratory infection is an early and persistent biomarker of life-threatening illness from infections by seasonal and avian influenza viruses, SARS-CoV-2, and RSV (Jia, Crawford et al, Cell 2024). To dissect the molecular mechanisms underlying OLAH expression and to understand OLAH\u2019s impact on downstream immune processes, we employed an integrative approach that combines systems analysis of human expression data with reductionist in vitro models of OLAH expression. Network analysis of human data identified OLAH as a potential mediator of inflammation and wound healing among specific myeloid subsets that traverse the respiratory tract and the peripheral immune system. In vitro experiments, for example utilizing the monocytic THP-1 cell line, demonstrated that OLAH expression can be induced by broad activators like Poly:IC and LPS, but not by Interferon gamma; however, upregulation of OLAH in the absence of exogenous cytokine stimulation also induced robust upregulation of interferon response genes like IFITM1. This work stands to distinguish the individual impacts of infection, inflammation, metabolism, and wound healing on OLAH expression in immune cells and the subsequent impact of OLAH expression on downstream immunological processes.\n \n \n \n Supported by ALSAC at St. Jude, NIH/NIAID R01-AI136514, and NIH/NCI grant P30CA021765.\n \n \n \n Immune Response Regulation: Molecular Mechanisms (IRM)\n",
+      "citationCount": 0,
+      "doi": "10.1093/jimmun/vkaf283.1553",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/809a88e21d64749ad8d56cfe111a2aab087f46e6",
+      "venue": "Journal of Immunology",
+      "journal": {
+        "name": "The Journal of Immunology"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "235138866eca0de2c5b2a64e8b155f1fb11a2178",
+      "title": "Dynamic parameterized quantum circuits: expressive and barren-plateau free",
+      "authors": [
+        {
+          "name": "Abhinav Deshpande",
+          "authorId": "2286035667"
+        },
+        {
+          "name": "M. Hinsche",
+          "authorId": "2051500434"
+        },
+        {
+          "name": "Khadijeh Najafi",
+          "authorId": "2257287036"
+        },
+        {
+          "name": "Kunal Sharma",
+          "authorId": "2294932630"
+        },
+        {
+          "name": "R. Sweke",
+          "authorId": "81681351"
+        },
+        {
+          "name": "Christa Zoufal",
+          "authorId": "2308888148"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Classical optimization of parameterized quantum circuits is a widely studied methodology for the preparation of complex quantum states, as well as the solution of machine learning and optimization problems. However, it is well known that many proposed parameterized quantum circuit architectures suffer from drawbacks which limit their utility, such as their classical simulability or the hardness of optimization due to a problem known as\"barren plateaus\". We propose and study a class of dynamic parameterized quantum circuit architectures. These are parameterized circuits containing intermediate measurements and feedforward operations. In particular, we show that these architectures: 1. Provably do not suffer from barren plateaus. 2. Are expressive enough to describe arbitrarily deep unitary quantum circuits. 3. Are competitive with state of the art methods for preparing ground states and facilitating the representation of nontrivial thermal states. These features make the proposed architectures promising candidates for a variety of applications.",
+      "citationCount": 25,
+      "doi": null,
+      "arxivId": "2411.05760",
+      "url": "https://www.semanticscholar.org/paper/235138866eca0de2c5b2a64e8b155f1fb11a2178",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "18c10bad509a47ec086a3c8de8b8731f649d89ca",
+      "title": "Editorial on Circuits and Systems for Green Video Communications",
+      "authors": [
+        {
+          "name": "Christian Herglotz",
+          "authorId": "2350013592"
+        },
+        {
+          "name": "Daniel Palomino",
+          "authorId": "2344896147"
+        },
+        {
+          "name": "Olivier Le Meur",
+          "authorId": "2292201516"
+        },
+        {
+          "name": "C.-C. Jay Kuo",
+          "authorId": "2350170965"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1109/jetcas.2025.3541767",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/18c10bad509a47ec086a3c8de8b8731f649d89ca",
+      "venue": "IEEE J. Emerg. Sel. Topics Circuits Syst.",
+      "journal": {
+        "name": "IEEE J. Emerg. Sel. Topics Circuits Syst.",
+        "pages": "1-3",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2b46456761b64c4dbc8386c120e1f5f59c9c2e89",
+      "title": "Circuits and Systems for Green Video Communications: Fundamentals and Recent Trends",
+      "authors": [
+        {
+          "name": "Christian Herglotz",
+          "authorId": "3115620"
+        },
+        {
+          "name": "Daniel Palomino",
+          "authorId": "2344896147"
+        },
+        {
+          "name": "O. Le Meur",
+          "authorId": "21120270"
+        },
+        {
+          "name": "C.-C. Jay Kuo",
+          "authorId": "2264118226"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The past years have shown that due to the global success of video communication technology, the corresponding hardware systems nowadays contribute significantly to pollution and resource consumption on a global scale, accounting for 1% of global green house gas emissions in 2018. This aspect of sustainability has thus reached increasing attention in academia and industry. In this paper, we present different aspects of sustainability including resource consumption and greenhouse gas emissions, while putting a major focus on the energy consumption during the use of video systems. Finally, we provide an overview on recent research in the domain of green video communications showing promising results and highlighting areas where more research should be performed.",
+      "citationCount": 0,
+      "doi": "10.1109/JETCAS.2025.3540360",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2b46456761b64c4dbc8386c120e1f5f59c9c2e89",
+      "venue": "IEEE Journal on Emerging and Selected Topics in Circuits and Systems",
+      "journal": {
+        "name": "IEEE Journal on Emerging and Selected Topics in Circuits and Systems",
+        "pages": "4-15",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "eba5f7cb4aa867eaa1639d9bc1b9d5c64e849155",
+      "title": "Faulty Function Extraction for Defective Circuits",
+      "authors": [
+        {
+          "name": "Chris Nigh",
+          "authorId": "2308305075"
+        },
+        {
+          "name": "Ruben Purdy",
+          "authorId": "2308304638"
+        },
+        {
+          "name": "Wei Li",
+          "authorId": "2308489807"
+        },
+        {
+          "name": "S. Mitra",
+          "authorId": "2260783459"
+        },
+        {
+          "name": "R. D. Blanton",
+          "authorId": "2241632802"
+        }
+      ],
+      "year": 2024,
+      "abstract": "It is well-known that understanding the behavior of silicon failures is an essential step in yield learning. It is also becoming more important for producing high-quality silicon due to the increasing number of defects detected fortuitously. In order to meet this need, a new approach for extracting the precise faulty function from defective logic circuits is described. The approach is applied to nearly a 1,000 14nm failures and one use case of the results on improving ATPG is discussed.",
+      "citationCount": 5,
+      "doi": "10.1109/ETS61313.2024.10567760",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eba5f7cb4aa867eaa1639d9bc1b9d5c64e849155",
+      "venue": "IEEE European Test Symposium",
+      "journal": {
+        "name": "2024 IEEE European Test Symposium (ETS)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "50899c4a467007fe2d099a7559b7a2065153870c",
+      "title": "A unifying perspective on neural manifolds and circuits for cognition",
+      "authors": [
+        {
+          "name": "Christopher Langdon",
+          "authorId": "152749472"
+        },
+        {
+          "name": "M. Genkin",
+          "authorId": "49864606"
+        },
+        {
+          "name": "Tatiana A. Engel",
+          "authorId": "5964953"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 137,
+      "doi": "10.1038/s41583-023-00693-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/50899c4a467007fe2d099a7559b7a2065153870c",
+      "venue": "Nature Reviews Neuroscience",
+      "journal": {
+        "name": "Nature Reviews Neuroscience",
+        "pages": "363 - 377",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ad566b8679444a9880376f2fe769babe17715162",
+      "title": "Divergent neural circuits for proprioceptive and exteroceptive sensing of the Drosophila leg",
+      "authors": [
+        {
+          "name": "Su-Yee J. Lee",
+          "authorId": "2130699208"
+        },
+        {
+          "name": "Chris J. Dallmann",
+          "authorId": "8428576"
+        },
+        {
+          "name": "Andrew P. Cook",
+          "authorId": "2218902320"
+        },
+        {
+          "name": "John C. Tuthill",
+          "authorId": "35795877"
+        },
+        {
+          "name": "S. Agrawal",
+          "authorId": "2087023545"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Somatosensory neurons provide the nervous system with information about mechanical forces originating inside and outside the body. Here, we use connectomics from electron microscopy to reconstruct and analyze neural circuits downstream of the largest somatosensory organ in the Drosophila leg, the femoral chordotonal organ (FeCO). The FeCO has been proposed to support both proprioceptive sensing of the fly\u2019s femur-tibia joint and exteroceptive sensing of substrate vibrations, but it was unknown which sensory neurons and central circuits contribute to each of these functions. We found that different subtypes of FeCO sensory neurons feed into distinct proprioceptive and exteroceptive pathways. Position- and movement-encoding FeCO neurons connect to local leg motor control circuits in the ventral nerve cord (VNC), indicating a proprioceptive function. In contrast, signals from the vibration-encoding FeCO neurons are integrated across legs and transmitted to mechanosensory regions in the brain, indicating an exteroceptive function. Overall, our analyses reveal the structure of specialized circuits for processing proprioceptive and exteroceptive signals from the fly leg. These findings are consistent with a growing body of work in invertebrate and vertebrate species demonstrating the existence of specialized limb mechanosensory pathways for sensing external vibrations. Determining whether somatosensory neurons are involved in internal or external sensing remains a challenge. Here, the authors show that analyzing connectivity is a powerful approach to identify putative neural functions of somatosensory neurons in the fly.",
+      "citationCount": 6,
+      "doi": "10.1038/s41467-025-59302-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ad566b8679444a9880376f2fe769babe17715162",
+      "venue": "Nature Communications",
+      "journal": {
+        "name": "Nature Communications",
+        "volume": "16"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "be9524bf315a6be19fb2d41553d34e9e91beb77f",
+      "title": "Non-zero noise extrapolation: accurately simulating noisy quantum circuits with tensor networks",
+      "authors": [
+        {
+          "name": "Anthony P. Thompson",
+          "authorId": "2342687610"
+        },
+        {
+          "name": "Arie Soeteman",
+          "authorId": "2341718532"
+        },
+        {
+          "name": "Chris Cade",
+          "authorId": "2341718523"
+        },
+        {
+          "name": "I. Niesen",
+          "authorId": "30016608"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Understanding the effects of noise on quantum computations is fundamental to the development of quantum hardware and quantum algorithms. Simulation tools are essential for quantitatively modelling these effects, yet unless artificial restrictions are placed on the circuit or noise model, accurately modelling noisy quantum computations is an extremely challenging task due to unfavourable scaling of required computational resources. Tensor network methods offer a viable solution for simulating computations that generate limited entanglement or that have noise models which yield low gate fidelities. However, in the most interesting regime of entangling circuits (with high gate fidelities) relevant for error correction and mitigation tensor network simulations often achieve poor accuracy. In this work we develop and numerically test a method for significantly improving the accuracy of tensor network simulations of noisy quantum circuits in the low-noise (i.e. high gate-fidelity) regime. Our method comes with the advantages that it (i) allows for the simulation of quantum circuits under generic types of noise model, (ii) is especially tailored to the low-noise regime, and (iii) retains the benefits of tensor network scaling, enabling efficient simulations of large numbers of qubits. We build upon the observations that adding extra noise to a quantum circuit makes it easier to simulate with tensor networks, and that the results can later be reliably extrapolated back to the low-noise regime of interest. These observations form the basis for a novel emulation technique that we call non-zero noise extrapolation, in analogy to the quantum error mitigation technique of zero-noise extrapolation.",
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": "2501.13237",
+      "url": "https://www.semanticscholar.org/paper/be9524bf315a6be19fb2d41553d34e9e91beb77f",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "faf9259b4c903a8f9269514107686ad3c23e8867",
+      "title": "Unitary Synthesis of Clifford+T Circuits with Reinforcement Learning",
+      "authors": [
+        {
+          "name": "Sebastian Rietsch",
+          "authorId": "2158996487"
+        },
+        {
+          "name": "Abhishek Y. Dubey",
+          "authorId": "2297846476"
+        },
+        {
+          "name": "Christian Ufrecht",
+          "authorId": "2257346335"
+        },
+        {
+          "name": "Maniraman Periyasamy",
+          "authorId": "2152740023"
+        },
+        {
+          "name": "A. Plinge",
+          "authorId": "2556699"
+        },
+        {
+          "name": "Christopher Mutschler",
+          "authorId": "2270886288"
+        },
+        {
+          "name": "Daniel D. Scherer",
+          "authorId": "2270176314"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper presents a deep reinforcement learning approach for synthesizing unitaries into quantum circuits. Unitary synthesis aims to identify a quantum circuit that represents a given unitary while minimizing circuit depth, total gate count, a specific gate count, or a combination of these factors. While past research has focused predominantly on continuous gate sets, synthesizing unitaries from the parameter-free Clifford+T gate set remains a challenge. Although the time complexity of this task will inevitably remain exponential in the number of qubits for general unitaries, reducing the runtime for simple problem instances still poses a significant challenge. In this study, we apply the tree-search method Gumbel AlphaZero to solve the problem for a subset of exactly synthesizable Clifford+T unitaries. Our method effectively synthesizes circuits for up to five qubits generated from randomized circuits with up to 60 gates, outperforming existing tools like QuantumCircuitOpt and MIN-T-SYNTH in terms of synthesis time for larger qubit counts. Furthermore, it surpasses Synthetiq in successfully synthesizing random, exactly synthesizable unitaries. These results establish a strong baseline for future unitary synthesis algorithms.",
+      "citationCount": 16,
+      "doi": "10.1109/QCE60285.2024.00102",
+      "arxivId": "2404.14865",
+      "url": "https://www.semanticscholar.org/paper/faf9259b4c903a8f9269514107686ad3c23e8867",
+      "venue": "International Conference on Quantum Computing and Engineering",
+      "journal": {
+        "name": "2024 IEEE International Conference on Quantum Computing and Engineering (QCE)",
+        "pages": "824-835",
+        "volume": "01"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "2681a7e199c329a1975cdeb121f4472d59d2cb46",
+      "title": "Physics-Informed Bayesian Optimization of Variational Quantum Circuits",
+      "authors": [
+        {
+          "name": "K. Nicoli",
+          "authorId": "52031641"
+        },
+        {
+          "name": "Christopher J. Anders",
+          "authorId": "2277895308"
+        },
+        {
+          "name": "L. Funcke",
+          "authorId": "103152554"
+        },
+        {
+          "name": "T. Hartung",
+          "authorId": "41200100"
+        },
+        {
+          "name": "Karl Jansen",
+          "authorId": "2277953711"
+        },
+        {
+          "name": "Stefan K\u00fchn",
+          "authorId": "2074054424"
+        },
+        {
+          "name": "Klaus-Robert M\u00fcller",
+          "authorId": "2287775247"
+        },
+        {
+          "name": "Paolo Stornati",
+          "authorId": "1796308115"
+        },
+        {
+          "name": "P. Kessel",
+          "authorId": "52029112"
+        },
+        {
+          "name": "Shinichi Nakajima",
+          "authorId": "2257217851"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this paper, we propose a novel and powerful method to harness Bayesian optimization for Variational Quantum Eigensolvers (VQEs) -- a hybrid quantum-classical protocol used to approximate the ground state of a quantum Hamiltonian. Specifically, we derive a VQE-kernel which incorporates important prior information about quantum circuits: the kernel feature map of the VQE-kernel exactly matches the known functional form of the VQE's objective function and thereby significantly reduces the posterior uncertainty. Moreover, we propose a novel acquisition function for Bayesian optimization called Expected Maximum Improvement over Confident Regions (EMICoRe) which can actively exploit the inductive bias of the VQE-kernel by treating regions with low predictive uncertainty as indirectly ``observed''. As a result, observations at as few as three points in the search domain are sufficient to determine the complete objective function along an entire one-dimensional subspace of the optimization landscape. Our numerical experiments demonstrate that our approach improves over state-of-the-art baselines.",
+      "citationCount": 19,
+      "doi": "10.48550/arXiv.2406.06150",
+      "arxivId": "2406.06150",
+      "url": "https://www.semanticscholar.org/paper/2681a7e199c329a1975cdeb121f4472d59d2cb46",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.06150"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b4cd5c9b142418539b8df69fd6b46f1b1f533fdc",
+      "title": "Tight and Efficient Gradient Bounds for Parameterized Quantum Circuits",
+      "authors": [
+        {
+          "name": "Alistair Letcher",
+          "authorId": "2244620839"
+        },
+        {
+          "name": "Stefan Woerner",
+          "authorId": "2186377505"
+        },
+        {
+          "name": "Christa Zoufal",
+          "authorId": "89004327"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The training of a parameterized model largely depends on the landscape of the underlying loss function. In particular, vanishing gradients are a central bottleneck in the scalability of variational quantum algorithms (VQAs), and are known to arise in various ways. However, a caveat of most existing gradient bound results is the requirement of t-design circuit assumptions that are typically not satisfied in practice. In this work, we loosen these assumptions altogether and derive tight upper and lower bounds on loss and gradient concentration for a large class of parameterized quantum circuits and arbitrary observables, which are significantly stronger than prior work. Moreover, we show that these bounds, as well as the variance of the loss itself, can be estimated efficiently and classically-providing practical tools to study the loss landscapes of VQA models, including verifying whether or not a circuit/observable induces barren plateaus. In particular, our results can readily be leveraged to rule out barren plateaus for a realistic class of ans\u00e4tze and mixed observables, namely, observables containing a non-vanishing local term. This insight has direct implications for hybrid Quantum Generative Adversarial Networks (qGANs). We prove that designing the discriminator appropriately leads to 1-local weights that stay constant in the number of qubits, regardless of discriminator depth. This implies that qGANs with appropriately chosen generators do not suffer from barren plateaus even at scale-making them a promising candidate for applications in generative quantum machine learning. We demonstrate this result by training a qGAN to learn a 2D mixture of Gaussian distributions with up to 16 qubits, and provide numerical evidence that global contributions to the gradient, while initially exponentially small, may kick in substantially over the course of training.",
+      "citationCount": 27,
+      "doi": "10.22331/q-2024-09-25-1484",
+      "arxivId": "2309.12681",
+      "url": "https://www.semanticscholar.org/paper/b4cd5c9b142418539b8df69fd6b46f1b1f533fdc",
+      "venue": "Quantum",
+      "journal": {
+        "name": "Quantum",
+        "pages": "1484",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1033331b11e0b51576e84b9c4608ba0180f08243",
+      "title": "A Stability-Informed Design Approach for RF Circuits",
+      "authors": [
+        {
+          "name": "Joseph A. Caezza",
+          "authorId": "2389522326"
+        },
+        {
+          "name": "Christopher R. Snyder",
+          "authorId": "2328674342"
+        },
+        {
+          "name": "Y. Mensah",
+          "authorId": "1961407365"
+        },
+        {
+          "name": "C. Coen",
+          "authorId": "32298783"
+        },
+        {
+          "name": "John D. Cressler",
+          "authorId": "2265443783"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This work presents a stability-informed design approach for microwave circuits, which uses multiple complementary metrics that provide designers with information required to ensure circuit stability. Bilateral loop gain (BLG) and driving point immittance (DPI) are employed to analyze feedback loops and nodal impedances, enabling designers to monitor and resolve stability issues throughout the design process. The approach is presented and its use demonstrated in the design of a 20\u201340 GHz SiGe amplifier, using both simulation and measurement results.",
+      "citationCount": 0,
+      "doi": "10.1109/BCICTS63111.2025.11211216",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1033331b11e0b51576e84b9c4608ba0180f08243",
+      "venue": "BiCMOS and Compound Semiconductor Integrated Circuits and Technology Symposium",
+      "journal": {
+        "name": "2025 IEEE BiCMOS and Compound Semiconductor Integrated Circuits and Technology Symposium (BCICTS)",
+        "pages": "1-4"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ef716ebc4b292604fe1b9d2dfe37cbc108cf2aee",
+      "title": "Chemogenetics identifies separate area 25 brain circuits involved in anhedonia and anxiety in marmosets",
+      "authors": [
+        {
+          "name": "C. Wood",
+          "authorId": "32253271"
+        },
+        {
+          "name": "Laith Alexander",
+          "authorId": "21946874"
+        },
+        {
+          "name": "J. Alsi\u00f6",
+          "authorId": "5552694"
+        },
+        {
+          "name": "Andrea M. Santangelo",
+          "authorId": "48087517"
+        },
+        {
+          "name": "Lauren B. McIver",
+          "authorId": "1990684344"
+        },
+        {
+          "name": "Gemma J. Cockcroft",
+          "authorId": "4957789"
+        },
+        {
+          "name": "A. C. Roberts",
+          "authorId": "118191172"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Poor outcomes are common in individuals with anxiety and depression, and the brain circuits underlying symptoms and treatment responses remain elusive. To elucidate these neural circuits, experimental studies must specifically manipulate them, which is only possible in animals. Here, we used a chemogenetics strategy involving engineered designer receptors exclusively activated by designer drugs (DREADDs) to activate a region of the marmoset brain that is dysfunctional in human patients with major depressive disorder, called the subcallosal anterior cingulate cortex area 25 (scACC-25). Using this DREADDs system, we identified separate scACC-25 neural circuits that underlie specific components of anhedonia and anxiety in marmosets. Activation of the neural pathway connecting the scACC-25 to the nucleus accumbens (NAc) caused blunting of anticipatory arousal (a form of anhedonia) in marmosets in response to a reward-associated conditioned stimulus in an appetitive Pavlovian discrimination test. Separately, activation of the circuit between the scACC-25 and the amygdala increased a measure of anxiety (the threat response score) when marmosets were presented with an uncertain threat (human intruder test). Using the anhedonia data, we then showed that the fast-acting antidepressant ketamine when infused into the NAc of marmosets prevented anhedonia after scACC-25 activation for more than 1 week. These neurobiological findings provide targets that could contribute to the development of new treatment strategies. Description Separate area 25 brain circuits drive reward- and threat-associated responses in nonhuman primates. Dissecting the neural circuitry of depression There is still much to learn about the brain circuits involved in depression and anxiety. Here, Wood and colleagues demonstrate that specific connections of a brain region called area 25 directly affect anxiety and anhedonia in marmosets. Using a chemogenetics strategy, the authors showed that activation of area 25 connections to the nucleus accumbens resulted in anhedonia, whereas activation of area 25 connections to the amygdala induced anxiety in the animals. Moreover, the nucleus accumbens was a target for the response of marmosets to the fast-acting antidepressant ketamine. These findings may help to elucidate more effective treatment strategies for depression and anxiety. \u2014OS",
+      "citationCount": 16,
+      "doi": "10.1126/scitranslmed.ade1779",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ef716ebc4b292604fe1b9d2dfe37cbc108cf2aee",
+      "venue": "Science Translational Medicine",
+      "journal": {
+        "name": "Science translational medicine",
+        "pages": "eade1779 - eade1779",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "42d7dc43f9eff160012a16f7226ba18ba4def8f3",
+      "title": "Washability of E\u2010Textiles: Washing Behavior of Textile Integrated Circuits Depending on Textile Substrate, Circuit Material and Integration Method",
+      "authors": [
+        {
+          "name": "Sigrid Rotzler",
+          "authorId": "1582390237"
+        },
+        {
+          "name": "Malte von Krshiwoblozki",
+          "authorId": "31154810"
+        },
+        {
+          "name": "Christine Kallmayer",
+          "authorId": "2279714102"
+        },
+        {
+          "name": "Martin Schneider-Ramelow",
+          "authorId": "2260017842"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Wearable electronic textiles (e\u2010textiles) can provide comfortable and unobtrusive solutions for a wide range of applications, yet insufficient reliability is preventing a wider market success. Washability is a critical reliability concern, especially for textile integrated circuits that are permanently attached to the textile substrate. A variety of textile circuits on different textile substrates were subjected to up to 100 wash cycles to understand washing damages and failure modes, setting the basis for subsequent improvements for reliably washable e\u2010textiles. The research reveals shortcomings and vulnerabilities for each type of track, as well as their current washability level\u2014which differs considerable across the tested circuits. Substrate properties directly influence the washing results. The results do not only provide valuable insight into how and at which points textile integrated circuits need to be optimized to improve washability, but also reveal which pairings of textile properties and circuit types result in more robust and reliabl e\u2010textiles.",
+      "citationCount": 13,
+      "doi": "10.1002/adfm.202417344",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/42d7dc43f9eff160012a16f7226ba18ba4def8f3",
+      "venue": "Advanced Functional Materials",
+      "journal": {
+        "name": "Advanced Functional Materials",
+        "volume": "35"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "736723e302bd2cb6b51bf128d0280bc0a6cf2378",
+      "title": "Model-guided design of microRNA-based gene circuits supports precise dosage of transgenic cargoes into diverse primary cells",
+      "authors": [
+        {
+          "name": "K. S. Love",
+          "authorId": "46869273"
+        },
+        {
+          "name": "C. Johnstone",
+          "authorId": "2308482604"
+        },
+        {
+          "name": "Emma L. Peterman",
+          "authorId": "1691564932"
+        },
+        {
+          "name": "Stephanie A. Gaglione",
+          "authorId": "2312725115"
+        },
+        {
+          "name": "Kate E. Galloway",
+          "authorId": "2292956537"
+        }
+      ],
+      "year": 2024,
+      "abstract": "To realize the potential of engineered cells in therapeutic applications, transgenes must be expressed within the window of therapeutic efficacy. Differences in copy number and other sources of extrinsic noise generate variance in transgene expression and limit the performance of synthetic gene circuits. In a therapeutic context, supraphysiological expression of transgenes can compromise engineered phenotypes and lead to toxicity. To ensure a narrow range of transgene expression, we design and characterize Compact microRNA-Mediated Attenuator of Noise and Dosage (ComMAND), a single-transcript, microRNA-based incoherent feedforward loop. We experimentally tune the ComMAND output profile, and we model the system to explore additional tuning strategies. By comparing ComMAND to two-gene implementations, we highlight the precise control afforded by the single-transcript architecture, particularly at relatively low copy numbers. We show that ComMAND tightly regulates transgene expression from lentiviruses and precisely controls expression in primary human T cells, primary rat neurons, primary mouse embryonic fibroblasts, and human induced pluripotent stem cells. Finally, ComMAND effectively sets levels of the clinically relevant transgenes FMRP1 and FXN within a narrow window. Together, ComMAND is a compact tool well-suited to precisely specify expression of therapeutic cargoes.",
+      "citationCount": 13,
+      "doi": "10.1101/2024.06.25.600629",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/736723e302bd2cb6b51bf128d0280bc0a6cf2378",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9a47500fc903cc77d5466bed80fbca1bf13d39b9",
+      "title": "Measurement-Based Infused Circuits for Variational Quantum Eigensolvers.",
+      "authors": [
+        {
+          "name": "Albie Chan",
+          "authorId": "2214621985"
+        },
+        {
+          "name": "Zheng Shi",
+          "authorId": "49473233"
+        },
+        {
+          "name": "Luca Dellantonio",
+          "authorId": "51253682"
+        },
+        {
+          "name": "W. D\u00fcr",
+          "authorId": "2265870835"
+        },
+        {
+          "name": "C. Muschik",
+          "authorId": "3404040"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Variational quantum eigensolvers (VQEs) are successful algorithms for studying physical systems on quantum computers. Recently, they were extended to the measurement-based model of quantum computing, bringing resource graph states and their advantages into the realm of quantum simulation. In this Letter, we incorporate such ideas into traditional VQE circuits. This enables novel problem-informed designs and versatile implementations of many-body Hamiltonians. We showcase our approach on real superconducting quantum computers by performing VQE simulations of testbed systems including the perturbed planar code, Z_{2} lattice gauge theory, 1D quantum chromodynamics, and the LiH molecule.",
+      "citationCount": 11,
+      "doi": "10.1103/PhysRevLett.132.240601",
+      "arxivId": "2305.19200",
+      "url": "https://www.semanticscholar.org/paper/9a47500fc903cc77d5466bed80fbca1bf13d39b9",
+      "venue": "Physical Review Letters",
+      "journal": {
+        "name": "Physical review letters",
+        "pages": "\n          240601\n        ",
+        "volume": "132 24"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "15f5077dcadd890e37eb4b8bb06a2f00a4b6d1b0",
+      "title": "CRISPRi-based circuits to control gene expression in plants",
+      "authors": [
+        {
+          "name": "Muhammad Adil Khan",
+          "authorId": "46656724"
+        },
+        {
+          "name": "Gabrielle Herring",
+          "authorId": "2174749149"
+        },
+        {
+          "name": "Jia Yuan Zhu",
+          "authorId": "2174804962"
+        },
+        {
+          "name": "Marina Oliva",
+          "authorId": "6787785"
+        },
+        {
+          "name": "Elliott Fourie",
+          "authorId": "2174748347"
+        },
+        {
+          "name": "Benjamin Johnston",
+          "authorId": "2174749211"
+        },
+        {
+          "name": "Zhining Zhang",
+          "authorId": "2302468344"
+        },
+        {
+          "name": "Jarred Potter",
+          "authorId": "2213890607"
+        },
+        {
+          "name": "Luke Pineda",
+          "authorId": "2368355290"
+        },
+        {
+          "name": "Jahnvi Pflueger",
+          "authorId": "40237488"
+        },
+        {
+          "name": "Tessa Swain",
+          "authorId": "50828394"
+        },
+        {
+          "name": "Christian Pflueger",
+          "authorId": "4082967"
+        },
+        {
+          "name": "James P. B. Lloyd",
+          "authorId": "152643844"
+        },
+        {
+          "name": "David Secco",
+          "authorId": "2302392231"
+        },
+        {
+          "name": "Ian Small",
+          "authorId": "2251688902"
+        },
+        {
+          "name": "Brendan N Kidd",
+          "authorId": "2302388952"
+        },
+        {
+          "name": "R. Lister",
+          "authorId": "36860026"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 29,
+      "doi": "10.1038/s41587-024-02236-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/15f5077dcadd890e37eb4b8bb06a2f00a4b6d1b0",
+      "venue": "Nature Biotechnology",
+      "journal": {
+        "name": "Nature Biotechnology",
+        "pages": "416 - 430",
+        "volume": "43"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

@@ -1,0 +1,103 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:Williams mechanistic interpretability philosophy",
+  "results": [
+    {
+      "arxiv_id": "2506.18852",
+      "title": "Mechanistic Interpretability Needs Philosophy",
+      "authors": [
+        "Iwan Williams",
+        "Ninell Oldenburg",
+        "Ruchira Dhar",
+        "Joshua Hatherley",
+        "Constanza Fierro",
+        "Nina Rajcic",
+        "Sandrine R. Schiller",
+        "Filippos Stamatiou",
+        "Anders S\u00f8gaard"
+      ],
+      "abstract": "Mechanistic interpretability (MI) aims to explain how neural networks work by uncovering their underlying causal mechanisms. As the field grows in influence, it is increasingly important to examine not just models themselves, but the assumptions, concepts and explanatory strategies implicit in MI research. We argue that mechanistic interpretability needs philosophy: not as an afterthought, but as an ongoing partner in clarifying its concepts, refining its methods, and assessing the epistemic and ethical stakes of interpreting AI systems. Taking three open problems from the MI literature as examples, this position paper illustrates the value philosophy can add to MI research, and outlines a path toward deeper interdisciplinary dialogue.",
+      "published": "2025-06-23",
+      "updated": "2025-06-23",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2506.18852v1",
+      "url": "https://arxiv.org/abs/2506.18852"
+    },
+    {
+      "arxiv_id": "2511.14465",
+      "title": "nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers",
+      "authors": [
+        "Cl\u00e9ment Dumas"
+      ],
+      "abstract": "Mechanistic interpretability research requires reliable tools for analyzing transformer internals across diverse architectures. Current approaches face a fundamental tradeoff: custom implementations like TransformerLens ensure consistent interfaces but require coding a manual adaptation for each architecture, introducing numerical mismatch with the original models, while direct HuggingFace access through NNsight preserves exact behavior but lacks standardization across models. To bridge this gap, we develop nnterp, a lightweight wrapper around NNsight that provides a unified interface for transformer analysis while preserving original HuggingFace implementations. Through automatic module renaming and comprehensive validation testing, nnterp enables researchers to write intervention code once and deploy it across 50+ model variants spanning 16 architecture families. The library includes built-in implementations of common interpretability methods (logit lens, patchscope, activation steering) and provides direct access to attention probabilities for models that support it. By packaging validation tests with the library, researchers can verify compatibility with custom models locally. nnterp bridges the gap between correctness and usability in mechanistic interpretability tooling.",
+      "published": "2025-11-18",
+      "updated": "2025-12-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2511.14465v2",
+      "url": "https://arxiv.org/abs/2511.14465"
+    },
+    {
+      "arxiv_id": "2511.09432",
+      "title": "Group Equivariance Meets Mechanistic Interpretability: Equivariant Sparse Autoencoders",
+      "authors": [
+        "Ege Erdogan",
+        "Ana Lucic"
+      ],
+      "abstract": "Sparse autoencoders (SAEs) have proven useful in disentangling the opaque activations of neural networks, primarily large language models, into sets of interpretable features. However, adapting them to domains beyond language, such as scientific data with group symmetries, introduces challenges that can hinder their effectiveness. We show that incorporating such group symmetries into the SAEs yields features more useful in downstream tasks. More specifically, we train autoencoders on synthetic images and find that a single matrix can explain how their activations transform as the images are rotated. Building on this, we develop adaptively equivariant SAEs that can adapt to the base model's level of equivariance. These adaptive SAEs discover features that lead to superior probing performance compared to regular SAEs, demonstrating the value of incorporating symmetries in mechanistic interpretability tools.",
+      "published": "2025-11-12",
+      "updated": "2025-11-12",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2511.09432v1",
+      "url": "https://arxiv.org/abs/2511.09432"
+    },
+    {
+      "arxiv_id": "2504.19475",
+      "title": "Prisma: An Open Source Toolkit for Mechanistic Interpretability in Vision and Video",
+      "authors": [
+        "Sonia Joseph",
+        "Praneet Suresh",
+        "Lorenz Hufe",
+        "Edward Stevinson",
+        "Robert Graham",
+        "Yash Vadi",
+        "Danilo Bzdok",
+        "Sebastian Lapuschkin",
+        "Lee Sharkey",
+        "Blake Aaron Richards"
+      ],
+      "abstract": "Robust tooling and publicly available pre-trained models have helped drive recent advances in mechanistic interpretability for language models. However, similar progress in vision mechanistic interpretability has been hindered by the lack of accessible frameworks and pre-trained weights. We present Prisma (Access the codebase here: https://github.com/Prisma-Multimodal/ViT-Prisma), an open-source framework designed to accelerate vision mechanistic interpretability research, providing a unified toolkit for accessing 75+ vision and video transformers; support for sparse autoencoder (SAE), transcoder, and crosscoder training; a suite of 80+ pre-trained SAE weights; activation caching, circuit analysis tools, and visualization tools; and educational resources. Our analysis reveals surprising findings, including that effective vision SAEs can exhibit substantially lower sparsity patterns than language SAEs, and that in some instances, SAE reconstructions can decrease model loss. Prisma enables new research directions for understanding vision model internals while lowering barriers to entry in this emerging field.",
+      "published": "2025-04-28",
+      "updated": "2025-06-03",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2504.19475v3",
+      "url": "https://arxiv.org/abs/2504.19475"
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

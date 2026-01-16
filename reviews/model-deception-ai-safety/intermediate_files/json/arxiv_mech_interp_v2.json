@@ -1,0 +1,897 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:mechanistic interpretability",
+  "results": [
+    {
+      "arxiv_id": "2601.09705",
+      "title": "Revisiting Jahn--Teller Transitions in Correlated Oxides with Monte Carlo Modeling",
+      "authors": [
+        "Liam A. V. Nagle-Cocco",
+        "Andrew L. Goodwin",
+        "Clare P. Grey",
+        "Si\u00e2n E. Dutton"
+      ],
+      "abstract": "Jahn--Teller (JT) distortions are a key driver of physical properties in many correlated oxide materials. Cooperative JT distortions, in which long-range orbital order reduces the symmetry of the average structure macroscopically, are common in JT-distorted materials at low temperatures. This long-range order will often melt on heating, \\textit{via} a transition to a high-temperature state without long-range orbital order. The nature of this transition has been observed to vary with different materials depending on crystal structure; in LaMnO$_3$ the transition has generally been interpreted as order-disorder, whereas in layered nickelates $A$NiO$_2$ ($A$=Li,Na) there is a displacive transition. Alternatively, recent theoretical work has suggested that previous attributions of order-disorder may in fact be a consequence of phonon anharmonicity, rather than persistence of JT distortions, which would suggest that the displacive transition may be more common than currently believed. In this work, we run Monte Carlo simulations with a simple Hamiltonian which is modified to include terms dependent on the JT amplitude $\u03c1$, which is allowed to vary within the simulation \\textit{via} the Metropolis algorithm. Our simulations yield distributions of JT amplitudes consistent with displacive rather than order-disorder behaviour for both perovskites and layered nickelates, suggesting that displacive-like JT transitions may be more common than previously assumed in both perovskites and layered nickelates. We also find significant differences between the transition observed for perovskites compared with layered nickelates, which we attribute to differing extensivity of configurational entropy on the two lattices, showing the crucial role of lattice geometry in determining behaviour.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cond-mat.str-el",
+      "categories": [
+        "cond-mat.str-el",
+        "cond-mat.mtrl-sci",
+        "cond-mat.stat-mech"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09705v1",
+      "url": "https://arxiv.org/abs/2601.09705"
+    },
+    {
+      "arxiv_id": "2601.09696",
+      "title": "Empathy Applicability Modeling for General Health Queries",
+      "authors": [
+        "Shan Randhawa",
+        "Agha Ali Raza",
+        "Kentaro Toyama",
+        "Julie Hui",
+        "Mustafa Naseem"
+      ],
+      "abstract": "LLMs are increasingly being integrated into clinical workflows, yet they often lack clinical empathy, an essential aspect of effective doctor-patient communication. Existing NLP frameworks focus on reactively labeling empathy in doctors' responses but offer limited support for anticipatory modeling of empathy needs, especially in general health queries. We introduce the Empathy Applicability Framework (EAF), a theory-driven approach that classifies patient queries in terms of the applicability of emotional reactions and interpretations, based on clinical, contextual, and linguistic cues. We release a benchmark of real patient queries, dual-annotated by Humans and GPT-4o. In the subset with human consensus, we also observe substantial human-GPT alignment. To validate EAF, we train classifiers on human-labeled and GPT-only annotations to predict empathy applicability, achieving strong performance and outperforming the heuristic and zero-shot LLM baselines. Error analysis highlights persistent challenges: implicit distress, clinical-severity ambiguity, and contextual hardship, underscoring the need for multi-annotator modeling, clinician-in-the-loop calibration, and culturally diverse annotation. EAF provides a framework for identifying empathy needs before response generation, establishes a benchmark for anticipatory empathy modeling, and enables supporting empathetic communication in asynchronous healthcare.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09696v1",
+      "url": "https://arxiv.org/abs/2601.09696"
+    },
+    {
+      "arxiv_id": "2601.09691",
+      "title": "Detection of Oscillations in a Type I X-Ray Burst of 4U 0614+091 with SVOM/ECLAIRs",
+      "authors": [
+        "S\u00e9bastien Le Stum",
+        "Floriane Cangemi",
+        "Alexis Coleiro",
+        "S\u00e9bastien Guillot",
+        "J\u00e9r\u00f4me Chenevez",
+        "Philippe Bacon",
+        "Nicolas Bellemont",
+        "Laurent Bouchet",
+        "Tristan Bouchet",
+        "C\u00e9cile Cavet",
+        "Bertrand Cordier",
+        "Antoine Foisseau",
+        "Olivier Godet",
+        "Andrea Goldwurm",
+        "Xu-Hui Han",
+        "Cyril Lachaud",
+        "Zhaosheng Li",
+        "Hua-Li Li",
+        "Yu-Lei Qiu",
+        "J\u00e9r\u00f4me Rodriguez",
+        "Wen-Jun Tan",
+        "L. Tao",
+        "Lauryne Verwaerde",
+        "Chen-Wei Wang",
+        "Jing Wang",
+        "Jianyan Wei",
+        "Chao Wu",
+        "Wen-Jin Xie",
+        "Li-Ping Xin",
+        "Shaolin Xiong",
+        "Shuang-Nan Zhang",
+        "S. J. Zheng"
+      ],
+      "abstract": "On 2025 January 10, a thermonuclear (Type I) X-ray burst from the neutron star low-mass X-ray binary \\textit{4U~0614+091} was detected with the ECLAIRs instrument on board the \\textit{SVOM} mission. We present here a time-resolved spectroscopic analysis of the burst, along with the detection of burst oscillations within a 51-second interval during the decay phase. The oscillation frequency is measured to be $\u03bd= 413.674 \\pm 0.002\\,\\mathrm{Hz}$, consistent with previous reports. However, we detect a significant downward frequency drift over the burst duration, characterized by $\\dot\u03bd = (-4.7 \\pm 0.3) \\times 10^{-3}\\,\\mathrm{Hz\\,s^{-1}}$. This frequency evolution is atypical compared to those observed in similar burst oscillation sources. We tentatively attribute the observed drift to a Doppler shift induced by orbital motion. Under this interpretation, the inferred orbital period must be shorter than 20 minutes, placing \\textit{4U~0614+091} among the most compact known low-mass X-ray binaries.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "astro-ph.HE",
+      "categories": [
+        "astro-ph.HE"
+      ],
+      "doi": "10.3847/2041-8213/ae3174",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09691v1",
+      "url": "https://arxiv.org/abs/2601.09691"
+    },
+    {
+      "arxiv_id": "2601.09678",
+      "title": "The impact of waveform systematics and Gaussian noise on the interpretation of GW231123",
+      "authors": [
+        "Sophie Bini",
+        "Krzysztof Kr\u00f3l",
+        "Katerina Chatziioannou",
+        "Maximiliano Isi"
+      ],
+      "abstract": "GW231123 is an exceptional gravitational-wave event consistent with the merger of two massive, highly-spinning black holes. Reliable inference of the source properties is crucial for accurate interpretation of its astrophysical implications. However, characterization of GW231123 is challenging: only few signal cycles are observed and different signal models result in systematically different parameters. We investigate whether the interpretation of GW231123 is robust against model systematics and Gaussian detector noise. We show that the model systematics observed in GW231123 can be reproduced for a simulated signal based on the numerical-relativity surrogate model NRSur7dq4. Simulating data using the maximum-likelihood NRSur7dq4 waveform for GW231123 and no noise realization, we closely recover the systematics observed for the real signal. We then explore how the headline properties of GW231123 are impacted by Gaussian detector noise. Using the NRSur7dq4 maximum-likelihood waveform and different noise realizations, we consistently find support for large masses, high spin magnitudes (median $\u03c7_1\\geq 0.7$), and high spin precession (median $\u03c7_\\mathrm{p}\\geq 0.68$). The spin in the direction of the angular momentum ($\u03c7_\\mathrm{eff}$) fluctuates more. Finally, again comparing to simulated signals, we show that any differences in the GW231123 inference based on each separate detector are not statistically significant. These results show that the properties of GW231123, and most importantly the high mass and high spin magnitudes inferred by NRSur7dq4, are robust.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "gr-qc",
+      "categories": [
+        "gr-qc"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09678v1",
+      "url": "https://arxiv.org/abs/2601.09678"
+    },
+    {
+      "arxiv_id": "2601.09633",
+      "title": "TaxoBell: Gaussian Box Embeddings for Self-Supervised Taxonomy Expansion",
+      "authors": [
+        "Sahil Mishra",
+        "Srinitish Srinivasan",
+        "Srikanta Bedathur",
+        "Tanmoy Chakraborty"
+      ],
+      "abstract": "Taxonomies form the backbone of structured knowledge representation across diverse domains, enabling applications such as e-commerce catalogs, semantic search, and biomedical discovery. Yet, manual taxonomy expansion is labor-intensive and cannot keep pace with the emergence of new concepts. Existing automated methods rely on point-based vector embeddings, which model symmetric similarity and thus struggle with the asymmetric \"is-a\" relationships that are fundamental to taxonomies. Box embeddings offer a promising alternative by enabling containment and disjointness, but they face key issues: (i) unstable gradients at the intersection boundaries, (ii) no notion of semantic uncertainty, and (iii) limited capacity to represent polysemy or ambiguity. We address these shortcomings with TaxoBell, a Gaussian box embedding framework that translates between box geometries and multivariate Gaussian distributions, where means encode semantic location and covariances encode uncertainty. Energy-based optimization yields stable optimization, robust modeling of ambiguous concepts, and interpretable hierarchical reasoning. Extensive experimentation on five benchmark datasets demonstrates that TaxoBell significantly outperforms eight state-of-the-art taxonomy expansion baselines by 19% in MRR and around 25% in Recall@k. We further demonstrate the advantages and pitfalls of TaxoBell with error analysis and ablation studies.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09633v1",
+      "url": "https://arxiv.org/abs/2601.09633"
+    },
+    {
+      "arxiv_id": "2601.09624",
+      "title": "Toward Understanding Unlearning Difficulty: A Mechanistic Perspective and Circuit-Guided Difficulty Metric",
+      "authors": [
+        "Jiali Cheng",
+        "Ziheng Chen",
+        "Chirag Agarwal",
+        "Hadi Amiri"
+      ],
+      "abstract": "Machine unlearning is becoming essential for building trustworthy and compliant language models. Yet unlearning success varies considerably across individual samples: some are reliably erased, while others persist despite the same procedure. We argue that this disparity is not only a data-side phenomenon, but also reflects model-internal mechanisms that encode and protect memorized information. We study this problem from a mechanistic perspective based on model circuits--structured interaction pathways that govern how predictions are formed. We propose Circuit-guided Unlearning Difficulty (CUD), a {\\em pre-unlearning} metric that assigns each sample a continuous difficulty score using circuit-level signals. Extensive experiments demonstrate that CUD reliably separates intrinsically easy and hard samples, and remains stable across unlearning methods. We identify key circuit-level patterns that reveal a mechanistic signature of difficulty: easy-to-unlearn samples are associated with shorter, shallower interactions concentrated in earlier-to-intermediate parts of the original model, whereas hard samples rely on longer and deeper pathways closer to late-stage computation. Compared to existing qualitative studies, CUD takes a first step toward a principled, fine-grained, and interpretable analysis of unlearning difficulty; and motivates the development of unlearning methods grounded in model mechanisms.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09624v1",
+      "url": "https://arxiv.org/abs/2601.09624"
+    },
+    {
+      "arxiv_id": "2601.09613",
+      "title": "CogRail: Benchmarking VLMs in Cognitive Intrusion Perception for Intelligent Railway Transportation Systems",
+      "authors": [
+        "Yonglin Tian",
+        "Qiyao Zhang",
+        "Wei Xu",
+        "Yutong Wang",
+        "Yihao Wu",
+        "Xinyi Li",
+        "Xingyuan Dai",
+        "Hui Zhang",
+        "Zhiyong Cui",
+        "Baoqing Guo",
+        "Zujun Yu",
+        "Yisheng Lv"
+      ],
+      "abstract": "Accurate and early perception of potential intrusion targets is essential for ensuring the safety of railway transportation systems. However, most existing systems focus narrowly on object classification within fixed visual scopes and apply rule-based heuristics to determine intrusion status, often overlooking targets that pose latent intrusion risks. Anticipating such risks requires the cognition of spatial context and temporal dynamics for the object of interest (OOI), which presents challenges for conventional visual models. To facilitate deep intrusion perception, we introduce a novel benchmark, CogRail, which integrates curated open-source datasets with cognitively driven question-answer annotations to support spatio-temporal reasoning and prediction. Building upon this benchmark, we conduct a systematic evaluation of state-of-the-art visual-language models (VLMs) using multimodal prompts to identify their strengths and limitations in this domain. Furthermore, we fine-tune VLMs for better performance and propose a joint fine-tuning framework that integrates three core tasks, position perception, movement prediction, and threat analysis, facilitating effective adaptation of general-purpose foundation models into specialized models tailored for cognitive intrusion perception. Extensive experiments reveal that current large-scale multimodal models struggle with the complex spatial-temporal reasoning required by the cognitive intrusion perception task, underscoring the limitations of existing foundation models in this safety-critical domain. In contrast, our proposed joint fine-tuning framework significantly enhances model performance by enabling targeted adaptation to domain-specific reasoning demands, highlighting the advantages of structured multi-task learning in improving both accuracy and interpretability. Code will be available at https://github.com/Hub-Tian/CogRail.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09613v1",
+      "url": "https://arxiv.org/abs/2601.09613"
+    },
+    {
+      "arxiv_id": "2601.09577",
+      "title": "Permutation Matching Under Parikh Budgets: Linear-Time Detection, Packing, and Disjoint Selection",
+      "authors": [
+        "MD Nazmul Alam Shanto",
+        "Md. Tanzeem Rahat",
+        "Md. Manzurul Hasan"
+      ],
+      "abstract": "We study permutation (jumbled/Abelian) pattern matching over a general alphabet $\u03a3$. Given a pattern P of length m and a text T of length n, the classical task is to decide whether T contains a length-m substring whose Parikh vector equals that of P . While this existence problem admits a linear-time sliding-window solution, many practical applications require optimization and packing variants beyond mere detection. We present a unified sliding-window framework based on maintaining the Parikh-vector difference between P and the current window of T , enabling permutation matching in O(n + \u03c3) time and O(\u03c3) space, where \u03c3 = |\u03a3|. Building on this foundation, we introduce a combinatorial-optimization variant that we call Maximum Feasible Substring under Pattern Supply (MFSP): find the longest substring S of T whose symbol counts are component-wise bounded by those of P . We show that MFSP can also be solved in O(n + \u03c3) time via a two-pointer feasibility maintenance algorithm, providing an exact packing interpretation of P as a resource budget. Finally, we address non-overlapping occurrence selection by modeling each permutation match as an equal-length interval and proving that a greedy earliest-finishing strategy yields a maximum-cardinality set of disjoint matches, computable in linear time once all matches are enumerated. Our results provide concise, provably correct algorithms with tight bounds, and connect frequency-based string matching to packing-style optimization primitives.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.DS",
+      "categories": [
+        "cs.DS",
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09577v1",
+      "url": "https://arxiv.org/abs/2601.09577"
+    },
+    {
+      "arxiv_id": "2601.09571",
+      "title": "How to interpret hazard ratios",
+      "authors": [
+        "Jonathan W. Bartlett",
+        "Dominic Magirr",
+        "Tim P. Morris"
+      ],
+      "abstract": "The hazard ratio, typically estimated using Cox's famous proportional hazards model, is the most common effect measure used to describe the association or effect of a covariate on a time-to-event outcome. In recent years the hazard ratio has been argued by some to lack a causal interpretation, even in randomised trials, and even if the proportional hazards assumption holds. This is concerning, not least due to the ubiquity of hazard ratios in analyses of time-to-event data. We review these criticisms, describe how we think hazard ratios should be interpreted, and argue that they retain a valid causal interpretation. Nevertheless, alternative measures may be preferable to describe effects of exposures or treatments on time-to-event outcomes.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "stat.ME",
+      "categories": [
+        "stat.ME"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09571v1",
+      "url": "https://arxiv.org/abs/2601.09571"
+    },
+    {
+      "arxiv_id": "2601.09570",
+      "title": "Dialogue Telemetry: Turn-Level Instrumentation for Autonomous Information Gathering",
+      "authors": [
+        "Dimitris Panagopoulos",
+        "Adolfo Perrusquia",
+        "Weisi Guo"
+      ],
+      "abstract": "Autonomous systems conducting schema-grounded information-gathering dialogues face an instrumentation gap, lacking turn-level observables for monitoring acquisition efficiency and detecting when questioning becomes unproductive. We introduce Dialogue Telemetry (DT), a measurement framework that produces two model-agnostic signals after each question-answer exchange: (i) a Progress Estimator (PE) quantifying residual information potential per category (with a bits-based variant), and (ii) a Stalling Index (SI) detecting an observable failure signature characterized by repeated category probing with semantically similar, low-marginal-gain responses. SI flags this pattern without requiring causal diagnosis, supporting monitoring in settings where attributing degradation to specific causes may be impractical. We validate DT in controlled search-and-rescue (SAR)-inspired interviews using large language model (LLM)-based simulations, distinguishing efficient from stalled dialogue traces and illustrating downstream utility by integrating DT signals into a reinforcement learning (RL) policy. Across these settings, DT provides interpretable turn-level instrumentation that improves policy performance when stalling carries operational costs.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09570v1",
+      "url": "https://arxiv.org/abs/2601.09570"
+    },
+    {
+      "arxiv_id": "2601.09567",
+      "title": "Physics Informed Optimal Homotopy Analysis Method (PI-OHAM): A Hybrid Analytical Computational Framework for Solving nonlinear Differential Equations",
+      "authors": [
+        "Ziya Uddin"
+      ],
+      "abstract": "We present the Physics-Informed Optimal Homotopy Analysis Method (PI-OHAM) for solving nonlinear differential equations. PI-OHAM, based on classical HAM, employs a physics-informed residual loss to optimize convergence-control parameters systematically by combining data, boundary conditions, and governing equations in the manner similar to Physics Informed Neural Networks (PINNs). The combination of the flexibility of PINNs and the analytical transparency of HAM provides the approach with high numerical stability, rapid convergence, and high consistency with traditional numerical solutions. PI-OHAM has superior accuracy-time trade-offs and faster and more accurate convergence than standard HAM and PINNs when applied to the Blasius boundary-layer problem. It is also very close to numerical standards available in the literature. PI-OHAM ensures analytical transparency and interpretability by series-based solutions, unlike purely data-driven or data-free PINNs. Significant contributions are a conceptual bridge between decades of homotopy-based analysis and modern physics-inspired methods, and a numerically aided but analytically interpretable solver of nonlinear differential equations. PI-OHAM appears as a computationally efficient, accurate and understandable alternative to nonlinear fluid flow, heat transfer and other industrial problems in cases where robustness and interpretability are important.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CE",
+      "categories": [
+        "cs.CE"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09567v1",
+      "url": "https://arxiv.org/abs/2601.09567"
+    },
+    {
+      "arxiv_id": "2601.09560",
+      "title": "Is it possible to determine unambiguously the Berry phase solely from quantum oscillations?",
+      "authors": [
+        "Bogdan M. Fominykh",
+        "Valentin Yu. Irkhin",
+        "Vyacheslav V. Marchenkov"
+      ],
+      "abstract": "The Berry phase, a fundamental geometric phase in quantum systems, has become a crucial tool for probing the topological properties of materials. Quantum oscillations, such as Shubnikov-de Haas (SdH) oscillations, are widely used to extract this phase, but its unambiguous determination remains challenging. This work highlights the inherent ambiguities in interpreting the oscillation phase solely from SdH data, primarily due to the influence of the spin factor $R_S$, which depends on the Land\u00e9 $g$-factor and effective mass. While the Lifshitz-Kosevich (LK) theory provides a framework for analyzing oscillations, the unknown g-factor introduces significant uncertainty. For instance, a zero oscillation phase could arise either from a nontrivial Berry phase or a negative $R_S$. We demonstrate that neglecting $R_S$ in modern studies, especially for topological materials with strong spin-orbit coupling, can lead to doubtful conclusions. Through theoretical analysis and numerical examples, we show how the interplay between the Berry phase and Zeeman effect complicates phase determination. Additionally, we also discuss another underappreciated mechanism - the magnetic field dependence of the Fermi level. Our discussion underscores the need for complementary experimental techniques to resolve these ambiguities and calls for further research to refine the interpretation of quantum oscillations in topological systems.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "physics.app-ph",
+        "quant-ph"
+      ],
+      "doi": "10.1016/j.physleta.2025.131238",
+      "journal_ref": "Physics Letters A, 569 (2026) 131238",
+      "pdf_url": "https://arxiv.org/pdf/2601.09560v1",
+      "url": "https://arxiv.org/abs/2601.09560"
+    },
+    {
+      "arxiv_id": "2601.09540",
+      "title": "SMEFT effects on spin correlations and entanglement at NLO QCD in di-boson production at hadron colliders",
+      "authors": [
+        "Giovanni Pelliccioli",
+        "Emanuele Re"
+      ],
+      "abstract": "We perform for the first time a full study of spin correlations in inclusive WZ production at the LHC with leptonic decays in the presence of NLO QCD corrections and of effects from a dimension-six operator in the SMEFT modifying the electroweak triple-gauge coupling. We carry out the complete quantum-state tomography of the di-boson system and relate its results to common purity and spin-entanglement markers, highlighting the sizeable impact of both QCD corrections and SMEFT insertions. Additionally, we show how a naive truncation at dimension-six in the SMEFT expansion of the spin-density matrix can lead to a cumbersome spin interpretation of the quantum-tomography results.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "hep-ph",
+      "categories": [
+        "hep-ph",
+        "hep-ex"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09540v1",
+      "url": "https://arxiv.org/abs/2601.09540"
+    },
+    {
+      "arxiv_id": "2601.09535",
+      "title": "Non-invertible circuit complexity from fusion operations",
+      "authors": [
+        "Saskia Demulder"
+      ],
+      "abstract": "Modern understanding of symmetry in quantum field theory includes both invertible and non-invertible operations. Motivated by this, we extend Nielsen's geometric approach to quantum circuit complexity to incorporate non-invertible gates. These arise naturally from fusion of topological defects and allow transitions between superselection sectors. We realise fusion operations as completely positive, trace-preserving quantum channels. Including such gates makes the sector-changing optimisation problem discrete: it reduces to a weighted shortest-path problem on the fusion graph. Circuit complexity therefore combines continuous geometry within sectors with discrete sector jumps. We illustrate the framework in rational conformal field theories and briefly comment on an AdS$_3$ interpretation in which fusion-induced transitions correspond to geometry-changing boundary operations. A companion paper provides full derivations and extended examples.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "hep-th",
+      "categories": [
+        "hep-th",
+        "quant-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09535v1",
+      "url": "https://arxiv.org/abs/2601.09535"
+    },
+    {
+      "arxiv_id": "2601.09534",
+      "title": "Non-invertible Nielsen circuits and 3d Ising gravity",
+      "authors": [
+        "Saskia Demulder"
+      ],
+      "abstract": "We extend Nielsen's formulation of quantum circuit complexity to include intrinsically non-invertible operations. Such gates arise from fusion with topological defect operators and remove a basic limitation of symmetry-based circuits: the inability to change superselection sectors, or in two-dimensional CFTs, conformal families. We realise fusion operations as completely positive, trace-preserving quantum channels acting between sectors, with consistency ensured by the fusion and associator data of an underlying unitary modular tensor category. In contrast to standard Nielsen circuits, non-invertible circuits lead to an optimisation problem that is no longer governed by geodesics on a continuous group manifold but instead reduces to a discrete shortest-path problem on the fusion graph of superselection sectors. We illustrate the framework in representative rational conformal field theories. Finally, we interpret fusion-induced transitions as discrete changes in boundary stress-tensor data, corresponding to shock-like defects in AdS$_3$ gravity.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "hep-th",
+      "categories": [
+        "hep-th"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09534v1",
+      "url": "https://arxiv.org/abs/2601.09534"
+    },
+    {
+      "arxiv_id": "2601.09511",
+      "title": "Toward Spectral Engineering of Squeezed Light in High-Gain PDC",
+      "authors": [
+        "Jatin Kumar",
+        "Aleksa Krsti\u0107",
+        "Sina Saravi",
+        "Frank Setzpfandt"
+      ],
+      "abstract": "We investigated the spectral properties of squeezed light generated via parametric down-conversion in the high-gain regime, considering both unapodized and apodized dispersion-engineered waveguides. The gain-dependent evolution of these states is examined starting from the low-gain regime, which includes both highly correlated and nearly uncorrelated cases. For the unapodized configuration, we observe a monotonic increase in spectral purity with gain, whereas the apodized configuration exhibits a nonmonotonic dependence, initially decreasing and then recovering at higher gain. By combining Schmidt-mode analysis with a group-velocity-based interpretation, we explain why different dispersion conditions exhibit distinct gain-dependent behavior, specifically that rapid purification occurs when the pump group velocity lies between those of the signal and idler. Our study shows that the evolution of spectral purity is governed primarily by the underlying dispersion of the waveguide. These results demonstrate that dispersion engineering and parametric gain can be jointly exploited to tailor the spectral-mode structure of squeezed-light sources, enabling their optimization for a broad range of quantum applications.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09511v1",
+      "url": "https://arxiv.org/abs/2601.09511"
+    },
+    {
+      "arxiv_id": "2601.09491",
+      "title": "Deep Operator Networks for Surrogate Modeling of Cyclic Adsorption Processes with Varying Initial Conditions",
+      "authors": [
+        "Beatrice Ceccanti",
+        "Mattia Galanti",
+        "Ivo Roghair",
+        "Martin van Sint Annaland"
+      ],
+      "abstract": "Deep Operator Networks are emerging as fundamental tools among various neural network types to learn mappings between function spaces, and have recently gained attention due to their ability to approximate nonlinear operators. In particular, DeepONets offer a natural formulation for PDE solving, since the solution of a partial differential equation can be interpreted as an operator mapping an initial condition to its corresponding solution field. In this work, we applied DeepONets in the context of process modeling for adsorption technologies, to assess their feasibility as surrogates for cyclic adsorption process simulation and optimization. The goal is to accelerate convergence of cyclic processes such as Temperature-Vacuum Swing Adsorption (TVSA), which require repeated solution of transient PDEs, which are computationally expensive. Since each step of a cyclic adsorption process starts from the final state of the preceding step, effective surrogate modeling requires generalization across a wide range of initial conditions. The governing equations exhibit steep traveling fronts, providing a demanding benchmark for operator learning. To evaluate functional generalization under these conditions, we construct a mixed training dataset composed of heterogeneous initial conditions and train DeepONets to approximate the corresponding solution operators. The trained models are then tested on initial conditions outside the parameter ranges used during training, as well as on completely unseen functional forms. The results demonstrate accurate predictions both within and beyond the training distribution, highlighting DeepONets as potential efficient surrogates for accelerating cyclic adsorption simulations and optimization workflows.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09491v1",
+      "url": "https://arxiv.org/abs/2601.09491"
+    },
+    {
+      "arxiv_id": "2601.09478",
+      "title": "Bridging Semantic Understanding and Popularity Bias with LLMs",
+      "authors": [
+        "Renqiang Luo",
+        "Dong Zhang",
+        "Yupeng Gao",
+        "Wen Shi",
+        "Mingliang Hou",
+        "Jiaying Liu",
+        "Zhe Wang",
+        "Shuo Yu"
+      ],
+      "abstract": "Semantic understanding of popularity bias is a crucial yet underexplored challenge in recommender systems, where popular items are often favored at the expense of niche content. Most existing debiasing methods treat the semantic understanding of popularity bias as a matter of diversity enhancement or long-tail coverage, neglecting the deeper semantic layer that embodies the causal origins of the bias itself. Consequently, such shallow interpretations limit both their debiasing effectiveness and recommendation accuracy. In this paper, we propose FairLRM, a novel framework that bridges the gap in the semantic understanding of popularity bias with Recommendation via Large Language Model (RecLLM). FairLRM decomposes popularity bias into item-side and user-side components, using structured instruction-based prompts to enhance the model's comprehension of both global item distributions and individual user preferences. Unlike traditional methods that rely on surface-level features such as \"diversity\" or \"debiasing\", FairLRM improves the model's ability to semantically interpret and address the underlying bias. Through empirical evaluation, we show that FairLRM significantly enhances both fairness and recommendation accuracy, providing a more semantically aware and trustworthy approach to enhance the semantic understanding of popularity bias. The implementation is available at https://github.com/LuoRenqiang/FairLRM.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09478v1",
+      "url": "https://arxiv.org/abs/2601.09478"
+    },
+    {
+      "arxiv_id": "2601.09459",
+      "title": "Dissecting Judicial Reasoning in U.S. Copyright Damage Awards",
+      "authors": [
+        "Pei-Chi Lo",
+        "Thomas Y. Lu"
+      ],
+      "abstract": "Judicial reasoning in copyright damage awards poses a core challenge for computational legal analysis. Although federal courts follow the 1976 Copyright Act, their interpretations and factor weightings vary widely across jurisdictions. This inconsistency creates unpredictability for litigants and obscures the empirical basis of legal decisions. This research introduces a novel discourse-based Large Language Model (LLM) methodology that integrates Rhetorical Structure Theory (RST) with an agentic workflow to extract and quantify previously opaque reasoning patterns from judicial opinions. Our framework addresses a major gap in empirical legal scholarship by parsing opinions into hierarchical discourse structures and using a three-stage pipeline, i.e., Dataset Construction, Discourse Analysis, and Agentic Feature Extraction. This pipeline identifies reasoning components and extract feature labels with corresponding discourse subtrees. In analyzing copyright damage rulings, we show that discourse-augmented LLM analysis outperforms traditional methods while uncovering unquantified variations in factor weighting across circuits. These findings offer both methodological advances in computational legal analysis and practical insights into judicial reasoning, with implications for legal practitioners seeking predictive tools, scholars studying legal principle application, and policymakers confronting inconsistencies in copyright law.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09459v1",
+      "url": "https://arxiv.org/abs/2601.09459"
+    },
+    {
+      "arxiv_id": "2601.09449",
+      "title": "PrivLEX: Detecting legal concepts in images through Vision-Language Models",
+      "authors": [
+        "Darya Baranouskaya",
+        "Andrea Cavallaro"
+      ],
+      "abstract": "We present PrivLEX, a novel image privacy classifier that grounds its decisions in legally defined personal data concepts. PrivLEX is the first interpretable privacy classifier aligned with legal concepts that leverages the recognition capabilities of Vision-Language Models (VLMs). PrivLEX relies on zero-shot VLM concept detection to provide interpretable classification through a label-free Concept Bottleneck Model, without requiring explicit concept labels during training. We demonstrate PrivLEX's ability to identify personal data concepts that are present in images. We further analyse the sensitivity of such concepts as perceived by human annotators of image privacy datasets.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09449v1",
+      "url": "https://arxiv.org/abs/2601.09449"
+    },
+    {
+      "arxiv_id": "2601.09445",
+      "title": "Where Knowledge Collides: A Mechanistic Study of Intra-Memory Knowledge Conflict in Language Models",
+      "authors": [
+        "Minh Vu Pham",
+        "Hsuvas Borkakoty",
+        "Yufang Hou"
+      ],
+      "abstract": "In language models (LMs), intra-memory knowledge conflict largely arises when inconsistent information about the same event is encoded within the model's parametric knowledge. While prior work has primarily focused on resolving conflicts between a model's internal knowledge and external resources through approaches such as fine-tuning or knowledge editing, the problem of localizing conflicts that originate during pre-training within the model's internal representations remain unexplored. In this work, we design a framework based on mechanistic interpretability methods to identify where and how conflicting knowledge from the pre-training data is encoded within LMs. Our findings contribute to a growing body of evidence that specific internal components of a language model are responsible for encoding conflicting knowledge from pre-training, and we demonstrate how mechanistic interpretability methods can be leveraged to causally intervene in and control conflicting knowledge at inference time.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09445v1",
+      "url": "https://arxiv.org/abs/2601.09445"
+    },
+    {
+      "arxiv_id": "2601.09416",
+      "title": "Radiomics-Integrated Deep Learning with Hierarchical Loss for Osteosarcoma Histology Classification",
+      "authors": [
+        "Yaxi Chen",
+        "Zi Ye",
+        "Shaheer U. Saeed",
+        "Oliver Yu",
+        "Simin Ni",
+        "Jie Huang",
+        "Yipeng Hu"
+      ],
+      "abstract": "Osteosarcoma (OS) is an aggressive primary bone malignancy. Accurate histopathological assessment of viable versus non-viable tumor regions after neoadjuvant chemotherapy is critical for prognosis and treatment planning, yet manual evaluation remains labor-intensive, subjective, and prone to inter-observer variability. Recent advances in digital pathology have enabled automated necrosis quantification. Evaluating on test data, independently sampled on patient-level, revealed that the deep learning model performance dropped significantly from the tile-level generalization ability reported in previous studies. First, this work proposes the use of radiomic features as additional input in model training. We show that, despite that they are derived from the images, such a multimodal input effectively improved the classification performance, in addition to its added benefits in interpretability. Second, this work proposes to optimize two binary classification tasks with hierarchical classes (i.e. tumor-vs-non-tumor and viable-vs-non-viable), as opposed to the alternative ``flat'' three-class classification task (i.e. non-tumor, non-viable tumor, viable tumor), thereby enabling a hierarchical loss. We show that such a hierarchical loss, with trainable weightings between the two tasks, the per-class performance can be improved significantly. Using the TCIA OS Tumor Assessment dataset, we experimentally demonstrate the benefits from each of the proposed new approaches and their combination, setting a what we consider new state-of-the-art performance on this open dataset for this application. Code and trained models: https://github.com/YaxiiC/RadiomicsOS.git.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09416v1",
+      "url": "https://arxiv.org/abs/2601.09416"
+    },
+    {
+      "arxiv_id": "2601.09406",
+      "title": "A Generalized Leakage Interpretation of Alpha-Mutual Information",
+      "authors": [
+        "Akira Kamatsuka",
+        "Takahiro Yoshida"
+      ],
+      "abstract": "This paper presents a unified interpretation of $\u03b1$-mutual information ($\u03b1$-MI) in terms of generalized $g$-leakage. Specifically, we present a novel interpretation of $\u03b1$-MI within an extended framework for quantitative information flow based on adversarial generalized decision problems. This framework employs the Kolmogorov-Nagumo mean and the $q$-logarithm to characterize adversarial gain. Furthermore, we demonstrate that, within this framework, the parameter $\u03b1$ can be interpreted as a measure of the adversary's risk aversion.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.IT",
+      "categories": [
+        "cs.IT"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09406v1",
+      "url": "https://arxiv.org/abs/2601.09406"
+    },
+    {
+      "arxiv_id": "2601.09368",
+      "title": "Analysis of wave processes using beam-driven Langmuir/$\\mathcal{Z}$-mode waveforms generated in Particle-In-Cell simulations",
+      "authors": [
+        "Francisco Javier Polanco-Rodr\u00edguez",
+        "Catherine Krafft",
+        "Philippe Savoini"
+      ],
+      "abstract": "During Type III solar radio bursts, beam-driven upper-hybrid wave turbulence is converted into electromagnetic emissions at the fundamental plasma frequency and its harmonic, through a chain of various linear and nonlinear wave processes. In this work, we mainly investigate the relative roles and interplay of two key mechanisms: the nonlinear decay of Langmuir/$\\mathcal Z$-mode waves and their linear transformations on random density fluctuations and, in particular, their mode conversion at constant frequency into electromagnetic waves. Using two-dimensional Particle-In-Cell simulations, we employ a diagnostic approach based on large ensembles of virtual satellites that record local waveforms, enabling detailed temporal and spatial characterization of wave processes in randomly inhomogeneous plasmas. This method allows robust statistical analysis and direct comparison with spacecraft observations. The study focuses on the dependence of wave dynamics on the average level of density fluctuations and the plasma magnetization. Our results quantify the occurrence rate of decay under varying physical conditions and demonstrate how developed plasma density turbulence can significantly alter the balance between nonlinear wave-wave interactions and linear wave transformations. These findings provide new insights into the mechanisms responsible for electromagnetic emissions during type III radio bursts and strengthen the connection between numerical simulations and in situ solar wind measurements, offering a valuable framework for the interpretation of future space-based waveform observations.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "physics.plasm-ph",
+      "categories": [
+        "physics.plasm-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09368v1",
+      "url": "https://arxiv.org/abs/2601.09368"
+    },
+    {
+      "arxiv_id": "2601.09352",
+      "title": "Spectral Complex Autoencoder Pruning: A Fidelity-Guided Criterion for Extreme Structured Channel Compression",
+      "authors": [
+        "Wei Liu",
+        "Xing Deng",
+        "Haijian Shao",
+        "Yingtao Jiang"
+      ],
+      "abstract": "We propose Spectral Complex Autoencoder Pruning (SCAP), a reconstruction-based criterion that measures functional redundancy at the level of individual output channels. For each convolutional layer, we construct a complex interaction field by pairing the full multi-channel input activation as the real part with a single output-channel activation (spatially aligned and broadcast across input channels) as the imaginary part. We transform this complex field to the frequency domain and train a low-capacity autoencoder to reconstruct normalized spectra. Channels whose spectra are reconstructed with high fidelity are interpreted as lying close to a low-dimensional manifold captured by the autoencoder and are therefore more compressible; conversely, channels with low fidelity are retained as they encode information that cannot be compactly represented by the learned manifold. This yields an importance score (optionally fused with the filter L1 norm) that supports simple threshold-based pruning and produces a structurally consistent pruned network. On VGG16 trained on CIFAR-10, at a fixed threshold of 0.6, we obtain 90.11% FLOP reduction and 96.30% parameter reduction with an absolute Top-1 accuracy drop of 1.67% from a 93.44% baseline after fine-tuning, demonstrating that spectral reconstruction fidelity of complex interaction fields is an effective proxy for channel-level redundancy under aggressive compression.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09352v1",
+      "url": "https://arxiv.org/abs/2601.09352"
+    },
+    {
+      "arxiv_id": "2601.09346",
+      "title": "Herzberg-Teller coupling in coherent multidimensional spectroscopy: analytical response functions for multilevel systems",
+      "authors": [
+        "Filippo Troiani"
+      ],
+      "abstract": "Coherent multidimensional spectroscopy enables detailed investigations of vibronic effects in molecular and solid-state systems. We present explicit analytical expressions for multidimensional nonlinear response functions in the presence of Herzberg-Teller (non-Condon) coupling, within the displaced harmonic oscillator model. The formulation applies to electronic systems with an arbitrary number N of electronic states and to response functions of arbitrary order M in the light-matter interaction. We show that Herzberg-Teller coupling introduces additional oscillatory factors in the time-domain response functions, leading, upon Fourier transformation, to replicas of the Franck-Condon multidimensional spectra shifted by integer multiples of the vibrational frequencies. The present results provide a general analytical framework for the interpretation of non-Condon effects in coherent multidimensional spectroscopies.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09346v1",
+      "url": "https://arxiv.org/abs/2601.09346"
+    },
+    {
+      "arxiv_id": "2601.09344",
+      "title": "The Diffusion Kinetics of Ba Cations in Perovskite BaTiO$_3$: A Combined Tracer Diffusion and Metadynamics Study",
+      "authors": [
+        "Sylvia Koerfer",
+        "Bianca Di\u00dfmann",
+        "Norman Schier",
+        "Han-Ill Yoo",
+        "Manfred Martin",
+        "Roger A. De Souza"
+      ],
+      "abstract": "Tracer diffusion experiments and metadynamics (MtD) simulations were used to study the diffusion of Ba cations in the cubic phase of the perovskite oxide BaTiO$_3$. $^{130}$BaTiO$_3$ thin films were used as diffusion sources to introduce barium tracer diffusion profiles into single-crystal samples at temperatures $1348 \\leq T/\\mathrm{K} \\leq 1498$. The $^{130}$Ba profiles were determined by time-of-flight secondary ion mass spectrometry, and then analysed to yield Ba tracer diffusion coefficients ($D_\\mathrm{Ba}^\\ast$). MtD simulations were performed in order to obtain barium-vacancy diffusion coefficients ($D_\\mathrm{v_{Ba}}$) for selected vacancy mechanisms as a function of temperature. $D_\\mathrm{v_{Ba}}$ is predicted to be increased significantly by an adjacent oxygen vacancy, and even more, by an adjacent titanium vacancy. From the combined consideration of $D_\\mathrm{Ba}^\\ast$ and $D_\\mathrm{v_{Ba}}$, we conclude that Ba diffusion in these samples occurred most probably by the migration of defect associates, and not by the migration of isolated barium vacancies. More generally, our results draw attention to the dangers of relying solely on activation enthalpies to interpret diffusion data.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09344v1",
+      "url": "https://arxiv.org/abs/2601.09344"
+    },
+    {
+      "arxiv_id": "2601.09339",
+      "title": "A game-theoretic probability approach to loopholes in CHSH experiments",
+      "authors": [
+        "Takara Nomura",
+        "Koichi Yamagata",
+        "Akio Fujiwara"
+      ],
+      "abstract": "We study the CHSH inequality from an informational, timing-sensitive viewpoint using game-theoretic probability, which avoids assuming an underlying probability space. The locality loophole and the measurement-dependence (``freedom-of-choice'') loophole are reformulated as structural constraints in a sequential hidden-variable game between Scientists and Nature. We construct a loopholes-closed game with capital processes that test (i) convergence of empirical conditional frequencies to the CHSH correlations and (ii) the absence of systematic correlations between measurement settings and Nature's hidden-variable assignments, and prove that Nature cannot satisfy both simultaneously: at least one capital process must diverge. This yields an operational winning strategy for Scientists and a game-theoretic probabilistic interpretation of experimentally observed CHSH violations.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph",
+        "cs.GT",
+        "math.PR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09339v1",
+      "url": "https://arxiv.org/abs/2601.09339"
+    },
+    {
+      "arxiv_id": "2601.09316",
+      "title": "Frequency Error-Guided Under-sampling Optimization for Multi-Contrast MRI Reconstruction",
+      "authors": [
+        "Xinming Fang",
+        "Chaoyan Huang",
+        "Juncheng Li",
+        "Jun Wang",
+        "Jun Shi",
+        "Guixu Zhang"
+      ],
+      "abstract": "Magnetic resonance imaging (MRI) plays a vital role in clinical diagnostics, yet it remains hindered by long acquisition times and motion artifacts. Multi-contrast MRI reconstruction has emerged as a promising direction by leveraging complementary information from fully-sampled reference scans. However, existing approaches suffer from three major limitations: (1) superficial reference fusion strategies, such as simple concatenation, (2) insufficient utilization of the complementary information provided by the reference contrast, and (3) fixed under-sampling patterns. We propose an efficient and interpretable frequency error-guided reconstruction framework to tackle these issues. We first employ a conditional diffusion model to learn a Frequency Error Prior (FEP), which is then incorporated into a unified framework for jointly optimizing both the under-sampling pattern and the reconstruction network. The proposed reconstruction model employs a model-driven deep unfolding framework that jointly exploits frequency- and image-domain information. In addition, a spatial alignment module and a reference feature decomposition strategy are incorporated to improve reconstruction quality and bridge model-based optimization with data-driven learning for improved physical interpretability. Comprehensive validation across multiple imaging modalities, acceleration rates (4-30x), and sampling schemes demonstrates consistent superiority over state-of-the-art methods in both quantitative metrics and visual quality. All codes are available at https://github.com/fangxinming/JUF-MRI.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09316v1",
+      "url": "https://arxiv.org/abs/2601.09316"
+    },
+    {
+      "arxiv_id": "2601.09313",
+      "title": "Understanding or Memorizing? A Case Study of German Definite Articles in Language Models",
+      "authors": [
+        "Jonathan Drechsel",
+        "Erisa Bytyqi",
+        "Steffen Herbold"
+      ],
+      "abstract": "Language models perform well on grammatical agreement, but it is unclear whether this reflects rule-based generalization or memorization. We study this question for German definite singular articles, whose forms depend on gender and case. Using GRADIEND, a gradient-based interpretability method, we learn parameter update directions for gender-case specific article transitions. We find that updates learned for a specific gender-case article transition frequently affect unrelated gender-case settings, with substantial overlap among the most affected neurons across settings. These results argue against a strictly rule-based encoding of German definite articles, indicating that models at least partly rely on memorized associations rather than abstract grammatical rules.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09313v1",
+      "url": "https://arxiv.org/abs/2601.09313"
+    },
+    {
+      "arxiv_id": "2601.09293",
+      "title": "Policy-Based Reinforcement Learning with Action Masking for Dynamic Job Shop Scheduling under Uncertainty: Handling Random Arrivals and Machine Failures",
+      "authors": [
+        "Sofiene Lassoued",
+        "Stefan Lier",
+        "Andreas Schwung"
+      ],
+      "abstract": "We present a novel framework for solving Dynamic Job Shop Scheduling Problems under uncertainty, addressing the challenges introduced by stochastic job arrivals and unexpected machine breakdowns. Our approach follows a model-based paradigm, using Coloured Timed Petri Nets to represent the scheduling environment, and Maskable Proximal Policy Optimization to enable dynamic decision-making while restricting the agent to feasible actions at each decision point. To simulate realistic industrial conditions, dynamic job arrivals are modeled using a Gamma distribution, which captures complex temporal patterns such as bursts, clustering, and fluctuating workloads. Machine failures are modeled using a Weibull distribution to represent age-dependent degradation and wear-out dynamics. These stochastic models enable the framework to reflect real-world manufacturing scenarios better. In addition, we study two action-masking strategies: a non-gradient approach that overrides the probabilities of invalid actions, and a gradient-based approach that assigns negative gradients to invalid actions within the policy network. We conduct extensive experiments on dynamic JSSP benchmarks, demonstrating that our method consistently outperforms traditional heuristic and rule-based approaches in terms of makespan minimization. The results highlight the strength of combining interpretable Petri-net-based models with adaptive reinforcement learning policies, yielding a resilient, scalable, and explainable framework for real-time scheduling in dynamic and uncertain manufacturing environments.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09293v1",
+      "url": "https://arxiv.org/abs/2601.09293"
+    },
+    {
+      "arxiv_id": "2601.09287",
+      "title": "Explainable Autoencoder-Based Anomaly Detection in IEC 61850 GOOSE Networks",
+      "authors": [
+        "Dafne Lozano-Paredes",
+        "Luis Bote-Curiel",
+        "Juan Ram\u00f3n Feij\u00f3o-Mart\u00ednez",
+        "Ismael G\u00f3mez-Talal",
+        "Jos\u00e9 Luis Rojo-\u00c1lvarez"
+      ],
+      "abstract": "The IEC 61850 Generic Object-Oriented Substation Event (GOOSE) protocol plays a critical role in real-time protection and automation of digital substations, yet its lack of native security mechanisms can expose power systems to sophisticated cyberattacks. Traditional rule-based and supervised intrusion detection techniques struggle to detect protocol-compliant and zero-day attacks under significant class imbalance and limited availability of labeled data. This paper proposes an explainable, unsupervised multi-view anomaly detection framework for IEC 61850 GOOSE networks that explicitly separates semantic integrity and temporal availability. The approach employs asymmetric autoencoders trained only on real operational GOOSE traffic to learn distinct latent representations of sequence-based protocol semantics and timing-related transmission dynamics in normal traffic. Anomaly detection is implemented using reconstruction errors mixed with statistically grounded thresholds, enabling robust detection without specified attack types. Feature-level reconstruction analysis provides intrinsic explainability by directly linking detection outcomes to IEC 61850 protocol characteristics. The proposed framework is evaluated using real substation traffic for training and a public dataset containing normal traffic and message suppression, data manipulation, and denial-of-service attacks for testing. Experimental results show attack detection rates above 99% with false positives remaining below 5% of total traffic, demonstrating strong generalization across environments and effective operation under extreme class imbalance and interpretable anomaly attribution.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.LG",
+        "eess.SP"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09287v1",
+      "url": "https://arxiv.org/abs/2601.09287"
+    },
+    {
+      "arxiv_id": "2601.09282",
+      "title": "Cluster Workload Allocation: Semantic Soft Affinity Using Natural Language Processing",
+      "authors": [
+        "Leszek Sliwko",
+        "Jolanta Mizeria-Pietraszko"
+      ],
+      "abstract": "Cluster workload allocation often requires complex configurations, creating a usability gap. This paper introduces a semantic, intent-driven scheduling paradigm for cluster systems using Natural Language Processing. The system employs a Large Language Model (LLM) integrated via a Kubernetes scheduler extender to interpret natural language allocation hint annotations for soft affinity preferences. A prototype featuring a cluster state cache and an intent analyzer (using AWS Bedrock) was developed. Empirical evaluation demonstrated high LLM parsing accuracy (>95% Subset Accuracy on an evaluation ground-truth dataset) for top-tier models like Amazon Nova Pro/Premier and Mistral Pixtral Large, significantly outperforming a baseline engine. Scheduling quality tests across six scenarios showed the prototype achieved superior or equivalent placement compared to standard Kubernetes configurations, particularly excelling in complex and quantitative scenarios and handling conflicting soft preferences. The results validate using LLMs for accessible scheduling but highlight limitations like synchronous LLM latency, suggesting asynchronous processing for production readiness. This work confirms the viability of semantic soft affinity for simplifying workload orchestration.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.DC",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09282v1",
+      "url": "https://arxiv.org/abs/2601.09282"
+    },
+    {
+      "arxiv_id": "2601.09269",
+      "title": "RISER: Orchestrating Latent Reasoning Skills for Adaptive Activation Steering",
+      "authors": [
+        "Wencheng Ye",
+        "Liang Peng",
+        "Xiaoyang Yuan",
+        "Yi Bin",
+        "Pengpeng Zeng",
+        "Hengyu Jin",
+        "Heng Tao Shen"
+      ],
+      "abstract": "Recent work on domain-specific reasoning with large language models (LLMs) often relies on training-intensive approaches that require parameter updates. While activation steering has emerged as a parameter efficient alternative, existing methods apply static, manual interventions that fail to adapt to the dynamic nature of complex reasoning. To address this limitation, we propose RISER (Router-based Intervention for Steerable Enhancement of Reasoning), a plug-and-play intervention framework that adaptively steers LLM reasoning in activation space. RISER constructs a library of reusable reasoning vectors and employs a lightweight Router to dynamically compose them for each input. The Router is optimized via reinforcement learning under task-level rewards, activating latent cognitive primitives in an emergent and compositional manner. Across seven diverse benchmarks, RISER yields 3.4-6.5% average zero-shot accuracy improvements over the base model while surpassing CoT-style reasoning with 2-3x higher token efficiency and robust accuracy gains. Further analysis shows that RISER autonomously combines multiple vectors into interpretable, precise control strategies, pointing toward more controllable and efficient LLM reasoning.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09269v1",
+      "url": "https://arxiv.org/abs/2601.09269"
+    },
+    {
+      "arxiv_id": "2601.09254",
+      "title": "A Theoretical Framework for Rate-Distortion Limits in Learned Image Compression",
+      "authors": [
+        "Changshuo Wang",
+        "Zijian Liang",
+        "Kai Niu",
+        "Ping Zhang"
+      ],
+      "abstract": "We present a novel systematic theoretical framework to analyze the rate-distortion (R-D) limits of learned image compression. While recent neural codecs have achieved remarkable empirical results, their distance from the information-theoretic limit remains unclear. Our work addresses this gap by decomposing the R-D performance loss into three key components: variance estimation, quantization strategy, and context modeling. First, we derive the optimal latent variance as the second moment under a Gaussian assumption, providing a principled alternative to hyperprior-based estimation. Second, we quantify the gap between uniform quantization and the Gaussian test channel derived from the reverse water-filling theorem. Third, we extend our framework to include context modeling, and demonstrate that accurate mean prediction yields substantial entropy reduction. Unlike prior R-D estimators, our method provides a structurally interpretable perspective that aligns with real compression modules and enables fine-grained analysis. Through joint simulation and end-to-end training, we derive a tight and actionable approximation of the theoretical R-D limits, offering new insights into the design of more efficient learned compression systems.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.IT",
+      "categories": [
+        "cs.IT"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09254v1",
+      "url": "https://arxiv.org/abs/2601.09254"
+    },
+    {
+      "arxiv_id": "2601.09250",
+      "title": "When to Invoke: Refining LLM Fairness with Toxicity Assessment",
+      "authors": [
+        "Jing Ren",
+        "Bowen Li",
+        "Ziqi Xu",
+        "Renqiang Luo",
+        "Shuo Yu",
+        "Xin Ye",
+        "Haytham Fayek",
+        "Xiaodong Li",
+        "Feng Xia"
+      ],
+      "abstract": "Large Language Models (LLMs) are increasingly used for toxicity assessment in online moderation systems, where fairness across demographic groups is essential for equitable treatment. However, LLMs often produce inconsistent toxicity judgements for subtle expressions, particularly those involving implicit hate speech, revealing underlying biases that are difficult to correct through standard training. This raises a key question that existing approaches often overlook: when should corrective mechanisms be invoked to ensure fair and reliable assessments? To address this, we propose FairToT, an inference-time framework that enhances LLM fairness through prompt-guided toxicity assessment. FairToT identifies cases where demographic-related variation is likely to occur and determines when additional assessment should be applied. In addition, we introduce two interpretable fairness indicators that detect such cases and improve inference consistency without modifying model parameters. Experiments on benchmark datasets show that FairToT reduces group-level disparities while maintaining stable and reliable toxicity predictions, demonstrating that inference-time refinement offers an effective and practical approach for fairness improvement in LLM-based toxicity assessment systems. The source code can be found at https://aisuko.github.io/fair-tot/.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09250v1",
+      "url": "https://arxiv.org/abs/2601.09250"
+    },
+    {
+      "arxiv_id": "2601.09226",
+      "title": "Detection of a puzzling dual-superorbital hard X-ray modulation in the X-ray binary GX 301-2",
+      "authors": [
+        "Haoyang Zhang"
+      ],
+      "abstract": "The superorbital modulations (SMs) observed in wind-fed X-ray binaries remain a puzzling phenomenon in astrophysics. To investigate this behavior observationally, we analyzed the long-term hard X-ray light curve from the Swift/BAT 157-Month Hard X-ray Survey in X-ray binary GX 301-2. Using three timing analysis methods--the Lomb-Scargle periodogram, the weighted wavelet Ztransform, and Gaussian processes--we identify a rare dual-SM behavior in this source: the 115-day modulation exceeds the 5$\u03c3$ global significance level, whereas the 65-day signal only marginally reaches the 4$\u03c3$ level. Because the 115-day period is more consistent with the previously reported linear relation between orbital and superorbital periods, we interpret 115 days as the actual superorbital period, while the weaker and less stable 65-day period is its beat modulation with the orbital period.By assessing the applicability of different physical scenarios to our results, we suggest that this dual-SM behavior is most plausibly associated with corotating interaction regions (CIRs) in the stellar wind. This framework can also account for the observed linear orbital-superorbital relation, despite the unclear physical mechanism that sets the apparent ratio between the CIR and orbital periods across sources. Further long-term monitoring of this system, together with continued theoretical development of the CIR scenario, will be essential for clarifying the origin of wind-fed SMs.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "astro-ph.HE",
+      "categories": [
+        "astro-ph.HE"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09226v1",
+      "url": "https://arxiv.org/abs/2601.09226"
+    },
+    {
+      "arxiv_id": "2601.09205",
+      "title": "Artificial Intelligence Empowered Channel Prediction: A New Paradigm for Propagation Channel Modeling",
+      "authors": [
+        "Ruisi He",
+        "Mi Yang",
+        "Zhengyu Zhang",
+        "Bo Ai",
+        "Zhangdui Zhong"
+      ],
+      "abstract": "This paper proposes a novel paradigm centered on Artificial Intelligence (AI)-empowered propagation channel prediction to address the limitations of traditional channel modeling. We present a comprehensive framework that deeply integrates heterogeneous environmental data and physical propagation knowledge into AI models for site-specific channel prediction, which referred to as channel inference. By leveraging AI to infer site-specific wireless channel states, the proposed paradigm enables accurate prediction of channel characteristics at both link and area levels, capturing spatio-temporal evolution of radio propagation. Some novel strategies to realize the paradigm are introduced and discussed, including AI-native and AI-hybrid inference approaches. This paper also investigates how to enhance model generalization through transfer learning and improve interpretability via explainable AI techniques. Our approach demonstrates significant practical efficacy, achieving an average path loss prediction root mean square error (RMSE) of $\\sim$ 4 dB and reducing training time by 60\\%-75\\%. This new modeling paradigm provides a foundational pathway toward high-fidelity, generalizable, and physically consistent propagation channel prediction for future communication networks.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "eess.SP",
+      "categories": [
+        "eess.SP"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09205v1",
+      "url": "https://arxiv.org/abs/2601.09205"
+    },
+    {
+      "arxiv_id": "2601.09181",
+      "title": "Active alignment-driven coarsening in confined near-critical fluids",
+      "authors": [
+        "Parameshwaran A",
+        "Bhaskar Sen Gupta"
+      ],
+      "abstract": "We investigate vapor-liquid phase separation of an active near critical Lennard-Jones fluid confined within a cylindrical pore using molecular dynamics simulations. Activity is introduced via Vicsek-type alignment interactions, enabling a systematic study of how self-propulsion modifies domain morphology and coarsening kinetics under quasi-one-dimensional confinement. In the passive limit, the system undergoes early-time spinodal decomposition (diffusive growth characterized by the Lifshitz-Slyozov exponent $\u03b1= 1/3$), followed by the formation of periodically modulated, plug-like liquid domains along the pore axis. At late times, coarsening becomes kinetically arrested, and the system remains trapped in a metastable striped state. Introducing activity destabilizes this arrested morphology by enhancing collective domain transport, leading to frequent domain mergers and complete phase separation at sufficiently high activity. The late-stage coarsening then exhibits a crossover to faster, ballistic growth with an effective exponent $\u03b1= 2/3$, consistent with a cluster-coalescence mechanism. Analysis of two-point correlation functions and structure factors confirms dynamic scaling across all activity regimes. Our results demonstrate that alignment-induced activity can overcome confinement-driven kinetic arrest, providing new insight into phase separation in confined active fluids. The relevant growth laws are analyzed and interpreted using appropriate theoretical frameworks.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cond-mat.soft",
+      "categories": [
+        "cond-mat.soft",
+        "cond-mat.mtrl-sci",
+        "cond-mat.stat-mech",
+        "physics.bio-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09181v1",
+      "url": "https://arxiv.org/abs/2601.09181"
+    },
+    {
+      "arxiv_id": "2601.09173",
+      "title": "Geometric Stability: The Missing Axis of Representations",
+      "authors": [
+        "Prashant C. Raju"
+      ],
+      "abstract": "Analysis of learned representations has a blind spot: it focuses on $similarity$, measuring how closely embeddings align with external references, but similarity reveals only what is represented, not whether that structure is robust. We introduce $geometric$ $stability$, a distinct dimension that quantifies how reliably representational geometry holds under perturbation, and present $Shesha$, a framework for measuring it. Across 2,463 configurations in seven domains, we show that stability and similarity are empirically uncorrelated ($\u03c1\\approx 0.01$) and mechanistically distinct: similarity metrics collapse after removing the top principal components, while stability retains sensitivity to fine-grained manifold structure. This distinction yields actionable insights: for safety monitoring, stability acts as a functional geometric canary, detecting structural drift nearly 2$\\times$ more sensitively than CKA while filtering out the non-functional noise that triggers false alarms in rigid distance metrics; for controllability, supervised stability predicts linear steerability ($\u03c1= 0.89$-$0.96$); for model selection, stability dissociates from transferability, revealing a geometric tax that transfer optimization incurs. Beyond machine learning, stability predicts CRISPR perturbation coherence and neural-behavioral coupling. By quantifying $how$ $reliably$ systems maintain structure, geometric stability provides a necessary complement to similarity for auditing representations across biological and computational systems.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "q-bio.QM",
+        "stat.ML"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2601.09173v1",
+      "url": "https://arxiv.org/abs/2601.09173"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

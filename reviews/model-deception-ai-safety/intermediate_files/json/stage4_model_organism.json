@@ -1,0 +1,946 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "model organism deceptive alignment",
+  "results": [
+    {
+      "paperId": "7e719493daa836347de89e8b6b505e389b901524",
+      "title": "Mitigating Deceptive Alignment via Self-Monitoring",
+      "authors": [
+        {
+          "name": "Jiaming Ji",
+          "authorId": "2273548793"
+        },
+        {
+          "name": "Wenqi Chen",
+          "authorId": "2336833579"
+        },
+        {
+          "name": "Kaile Wang",
+          "authorId": "2263734134"
+        },
+        {
+          "name": "Donghai Hong",
+          "authorId": "2282537174"
+        },
+        {
+          "name": "Sitong Fang",
+          "authorId": "2364368650"
+        },
+        {
+          "name": "Boyuan Chen",
+          "authorId": "2263085491"
+        },
+        {
+          "name": "Jiayi Zhou",
+          "authorId": "2217413841"
+        },
+        {
+          "name": "Juntao Dai",
+          "authorId": "2362050591"
+        },
+        {
+          "name": "Sirui Han",
+          "authorId": "2350527271"
+        },
+        {
+          "name": "Yike Guo",
+          "authorId": "2350783019"
+        },
+        {
+          "name": "Yaodong Yang",
+          "authorId": "2260432856"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Modern large language models rely on chain-of-thought (CoT) reasoning to achieve impressive performance, yet the same mechanism can amplify deceptive alignment, situations in which a model appears aligned while covertly pursuing misaligned goals. Existing safety pipelines treat deception as a black-box output to be filtered post-hoc, leaving the model free to scheme during its internal reasoning. We ask: Can deception be intercepted while the model is thinking? We answer this question, the first framework that embeds a Self-Monitor inside the CoT process itself, named CoT Monitor+. During generation, the model produces (i) ordinary reasoning steps and (ii) an internal self-evaluation signal trained to flag and suppress misaligned strategies. The signal is used as an auxiliary reward in reinforcement learning, creating a feedback loop that rewards honest reasoning and discourages hidden goals. To study deceptive alignment systematically, we introduce DeceptionBench, a five-category benchmark that probes covert alignment-faking, sycophancy, etc. We evaluate various LLMs and show that unrestricted CoT roughly aggravates the deceptive tendency. In contrast, CoT Monitor+ cuts deceptive behaviors by 43.8% on average while preserving task accuracy. Further, when the self-monitor signal replaces an external weak judge in RL fine-tuning, models exhibit substantially fewer obfuscated thoughts and retain transparency. Our project website can be found at cot-monitor-plus.github.io",
+      "citationCount": 12,
+      "doi": "10.48550/arXiv.2505.18807",
+      "arxivId": "2505.18807",
+      "url": "https://www.semanticscholar.org/paper/7e719493daa836347de89e8b6b505e389b901524",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.18807"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "03d13caead288fdb7f4f86617bba0400d3bde5c7",
+      "title": "Deceptive Alignment Monitoring",
+      "authors": [
+        {
+          "name": "Andres Carranza",
+          "authorId": "2064064836"
+        },
+        {
+          "name": "Dhruv Pai",
+          "authorId": "2131352677"
+        },
+        {
+          "name": "Rylan Schaeffer",
+          "authorId": "1749176844"
+        },
+        {
+          "name": "Arnuv Tandon",
+          "authorId": "2216604535"
+        },
+        {
+          "name": "Oluwasanmi Koyejo",
+          "authorId": "143812875"
+        }
+      ],
+      "year": 2023,
+      "abstract": "As the capabilities of large machine learning models continue to grow, and as the autonomy afforded to such models continues to expand, the spectre of a new adversary looms: the models themselves. The threat that a model might behave in a seemingly reasonable manner, while secretly and subtly modifying its behavior for ulterior reasons is often referred to as deceptive alignment in the AI Safety&Alignment communities. Consequently, we call this new direction Deceptive Alignment Monitoring. In this work, we identify emerging directions in diverse machine learning subfields that we believe will become increasingly important and intertwined in the near future for deceptive alignment monitoring, and we argue that advances in these fields present both long-term challenges and new research opportunities. We conclude by advocating for greater involvement by the adversarial machine learning community in these emerging directions.",
+      "citationCount": 13,
+      "doi": "10.48550/arXiv.2307.10569",
+      "arxivId": "2307.10569",
+      "url": "https://www.semanticscholar.org/paper/03d13caead288fdb7f4f86617bba0400d3bde5c7",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2307.10569"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8acd7db0fee9b437bf764eb4c36b07b09684f45d",
+      "title": "Revisiting Fidelity in Explainable AI: Unpacking Cognitive Biases and Deceptive Transparency in Model Interpretations",
+      "authors": [
+        {
+          "name": "Akshar Parshubhai Patel",
+          "authorId": "2334840233"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The evolution of explainability in artificial intelligence continues in response to rising demands for transparency, yet a persistent challenge remains: ensuring alignment between generated insights and underlying operations. The intricate balance between clarity and precision is examined, with obstacles emerging due to inherent distortions in perception influencing both construction and reception. Additionally, the possibility of misleading presentations is considered, where seemingly persuasive outputs may be mistakenly accepted as accurate. Various approaches\u2014causal, statistical, and visual\u2014are explored in relation to their potential to either mitigate or amplify associated risks. Ethical dimensions are highlighted, with frameworks proposed to enhance reliability and openness while emphasizing both comprehension and authenticity. The necessity of thoughtful refinement is underscored to prevent unintended distortion, misrepresentation, or adverse consequences. Preliminary user studies indicate that aligning the framing of explanations with objective fidelity metrics can significantly reduce misinterpretations among non-expert users. These results underscore the need for clear, empirically validated guidelines to counteract the risks of deceptive transparency. This study aims to develop a framework for evaluating explanation fidelity and to propose best practices for mitigating cognitive bias in AI interpretability.",
+      "citationCount": 0,
+      "doi": "10.1109/ICSC65596.2025.11139857",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8acd7db0fee9b437bf764eb4c36b07b09684f45d",
+      "venue": "International Computer Science Conference",
+      "journal": {
+        "name": "2025 5th Intelligent Cybersecurity Conference (ICSC)",
+        "pages": "298-302"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "9f92145329c7630bde4ac64c32fb96312293639f",
+      "title": "Adversarial learning enables unbiased organism-wide cross-species alignment of single-cell RNA data at scale",
+      "authors": [
+        {
+          "name": "J. J. D\u00edaz-Mej\u00eda",
+          "authorId": "2285665208"
+        },
+        {
+          "name": "Elias Williams",
+          "authorId": "2316257332"
+        },
+        {
+          "name": "Brendan Innes",
+          "authorId": "2315996756"
+        },
+        {
+          "name": "Octavian Focsa",
+          "authorId": "2144714207"
+        },
+        {
+          "name": "Dylan Mendonca",
+          "authorId": "2144702938"
+        },
+        {
+          "name": "Swechha Singh",
+          "authorId": "2285572573"
+        },
+        {
+          "name": "Allison Nixon",
+          "authorId": "2315993954"
+        },
+        {
+          "name": "Ronen Schuster",
+          "authorId": "2113652844"
+        },
+        {
+          "name": "M. Buechler",
+          "authorId": "2295733800"
+        },
+        {
+          "name": "Boris Hinz",
+          "authorId": "2314380573"
+        },
+        {
+          "name": "Sam Cooper",
+          "authorId": "2285543338"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Today\u2019s single-cell RNA (scRNA) datasets remain siloed, due to significant challenges associated with their integration at scale. Moreover, most scRNA analysis tools that operate at scale leverage supervised techniques that are insufficient for cell-type identification and discovery. Here, we demonstrate that the alignment of scRNA data using unsupervised models is accurate at an organism-wide scale and between species. To do this, we show adversarial training of a deep-learning model we term batch-adversarial single-cell variational inference (BA-scVI) can be employed to align standardized benchmark datasets comprising dozens of scRNA studies spanning tissues in humans and mice. In the aligned space, we analyze cell types that span tissues in both species and find prevalent complement expressing macrophages and fibroblasts. We provide access to the tools presented via an online interface for atlas exploration and reference-based drag-and-drop alignment of new data.",
+      "citationCount": 0,
+      "doi": "10.1101/2024.08.11.607498",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9f92145329c7630bde4ac64c32fb96312293639f",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "70439ffd2e743c161ccc09def866da9bed00ba7b",
+      "title": "The influence of perceived deceptive advertising on consumer behaviour in the online fashion environment: A stimulus-organism-response perspective",
+      "authors": [
+        {
+          "name": "M. Bothma",
+          "authorId": "120826422"
+        },
+        {
+          "name": "Benecia van Staden",
+          "authorId": "2394702814"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Background:\u00a0The rise of online fashion retailing has intensified competition and encouraged many brands to adjust their marketing efforts. Although deceptive advertising may deliver short-term results, it can damage consumer trust and satisfaction, threatening long-term customer relationships. The stimulus-organism-response (S-O-R) theory provides a framework to investigate how deceptive advertising, an external stimulus, affects internal consumer responses and behaviour.\nAim:\u00a0This study investigates how perceived deceptive advertising influences customer satisfaction, electronic word-of-mouth (eWOM) and repurchase intentions in the online fashion industry.\nSetting:\u00a0The research was conducted in the online fashion retail sector, using data from 500 online shoppers who had experienced deceptive advertising.\nMethod:\u00a0A descriptive, quantitative approach was used, employing structured surveys. Structural equation modelling and mediation analysis were conducted to investigate the relationships between the constructs.\nResults:\u00a0Findings show that perceived advertising deception significantly reduces customer satisfaction. Lower satisfaction, in turn, leads to less positive eWOM and lower repurchase intentions. Customer satisfaction also plays a mediating role between deceptive advertising and both eWOM and repurchase behaviour.\nConclusion:\u00a0The study tested the deception\u2013satisfaction\u2013behavioural outcome in the South African online fashion market, extending the generalisability to emerging markets. The study emphasises the role of ethical advertising in promoting satisfaction and trust that drive positive eWOM, repurchase intentions and sustainable business growth.\nContribution:\u00a0Ethical advertising should be prioritised to enhance customer satisfaction and build trust-based relationships. By understanding the mediating role of customer satisfaction, retailers can develop more effective marketing strategies that drive positive eWOM and increase repurchase intentions.",
+      "citationCount": 0,
+      "doi": "10.4102/sajems.v28i1.6398",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/70439ffd2e743c161ccc09def866da9bed00ba7b",
+      "venue": "South African Journal of Economic and Management Sciences",
+      "journal": {
+        "name": "South African Journal of Economic and Management Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "810f61254435bd7dfbf521743e21f89e3daf7d3d",
+      "title": "Benchmarking and optimizing organism wide single-cell RNA alignment methods",
+      "authors": [
+        {
+          "name": "J. J. D\u00edaz-Mej\u00eda",
+          "authorId": "2285665208"
+        },
+        {
+          "name": "Elias Williams",
+          "authorId": "2316257332"
+        },
+        {
+          "name": "Octavian Focsa",
+          "authorId": "2144714207"
+        },
+        {
+          "name": "Dylan Mendonca",
+          "authorId": "2144702938"
+        },
+        {
+          "name": "Swechha Singh",
+          "authorId": "2285572573"
+        },
+        {
+          "name": "Brendan Innes",
+          "authorId": "2315996756"
+        },
+        {
+          "name": "Sam Cooper",
+          "authorId": "2285543338"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Many methods have been proposed for removing batch effects and aligning single-cell RNA (scRNA) datasets. However, performance is typically evaluated based on multiple parameters and few datasets, creating challenges in assessing which method is best for aligning data at scale. Here, we introduce the K-Neighbors Intersection (KNI) score, a single score that both penalizes batch effects and measures accuracy at cross-dataset cell-type label prediction alongside carefully curated small (scMARK) and large (scREF) benchmarks comprising 11 and 46 human scRNA studies respectively, where we have standardized author labels. Using the KNI score, we evaluate and optimize approaches for cross-dataset single-cell RNA integration. We introduce Batch Adversarial single-cell Variational Inference (BA-scVI), as a new variant of scVI that uses adversarial training to penalize batch-effects in the encoder and decoder, and show this approach outperforms other methods. In the resulting aligned space, we find that the granularity of cell-type groupings is conserved, supporting the notion that whole-organism cell-type maps can be created by a single model without loss of information.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2503.20730",
+      "arxivId": "2503.20730",
+      "url": "https://www.semanticscholar.org/paper/810f61254435bd7dfbf521743e21f89e3daf7d3d",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.20730"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "45e0ab571f1bcc7312ef0181250d842ee1d1daa9",
+      "title": "In-Silico Screening of Prime PCOS Biomarkers for the Identification of a Potential Model Organism",
+      "authors": [
+        {
+          "name": "Shruti Shastry",
+          "authorId": "2148713395"
+        },
+        {
+          "name": "Soumyashree Ghosh",
+          "authorId": "2148710899"
+        },
+        {
+          "name": "Ruqayya Manasawala",
+          "authorId": "2148714049"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Polycystic ovarian syndrome (PCOS) is a multigenic endocrine disorder observed in women of reproductive age. Although the condition is characterized by the presence of polycystic ovaries and excess production of androgens, the exact aetiology has not been well deciphered due to the unavailability of a suitable model organism. Defects in the two prime biomarkers namely CYP11A and CYP19A1, have been found to play a role in disease progression. The objective of this study was to carry out an in-silico assessment of these two genes to identify a potential model organism for the efficacious study of PCOS. Bioinformatics tools such as BLAST and EMBOSS were used for local and global alignment respectively, to find sequence homology and thereby, establish a model organism. Sequence comparison was followed by phylogenetic analysis and secondary structure prediction of the enzymes encoded by the respective genes. Our in-silico study revealed Gorilla gorilla to be an ideal candidate for the study of PCOS owing to its high sequence and structural similarities with the human gene counterparts. Future prospects of the research include in-vitro analysis of the biomarkers on Gorilla gorilla ovarian theca cell line to pave the way for therapy.",
+      "citationCount": 1,
+      "doi": "10.32628/ijsrst218665",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/45e0ab571f1bcc7312ef0181250d842ee1d1daa9",
+      "venue": "International Journal of Scientific Research in Science and Technology",
+      "journal": {
+        "name": "International Journal of Scientific Research in Science and Technology"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "449d63c8d6b8aacf0e188f612c3c768933285ce8",
+      "title": "The use of Drosophila Melanogaster as a Model Organism to study the effect of Innate Immunity on Metabolism",
+      "authors": [
+        {
+          "name": "Abeer Mohbeddin",
+          "authorId": "2044955574"
+        },
+        {
+          "name": "N. Ahmed",
+          "authorId": "1380921841"
+        },
+        {
+          "name": "L. Kamareddine",
+          "authorId": "6650863"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Apart from its traditional role in disease control, recent body of evidence has implicated a role of the immune system in regulating metabolic homeostasis. Owing to the importance of this \u201cimmune-metabolic alignment\u201d in dictating a state of health or disease, a proper mechanistic understanding of this alignment is crucial in opening up for promising therapeutic approaches against a broad range of chronic, metabolic, and inflammatory disorders like obesity, diabetes, and inflammatory bowel syndrome. In this project, we addressed the role of the Janus kinase/signal transducer and activator of transcription (JAK/STAT) innate immune pathway in regulating different metabolic parameters using the Drosophila melanogaster (DM) fruit fly model organism. Mutant JAK/STAT pathway flies with a systemic knockdown of either Domeless (Dome) [domeG0282], the receptor that activates JAK/STAT signaling, or the signal-transducer and activator of transcription protein at 92E (Stat92E) [stat92EEY10528], were used. The results of the study revealed that blocking JAK/STAT signaling alters the metabolic profile of mutant flies. Both domeG0282 and stat92EEY10528 mutants had an increase in body weight, lipid deprivation from their fat body (lipid storage organ in flies), irregular accumulation of lipid droplets in the gut, systemic elevation of glucose and triglyceride levels, and differential down-regulation in the relative gene expression of different peptide hormones (Tachykinin, Allatostatin C, and Diuretic hormone 31) known to regulate metabolic homeostasis in flies. Because the JAK/STAT pathway is evolutionary conserved between invertebrates and vertebrates, our potential findings in the fruit fly serves as a platform for further immune-metabolic translational studies in more complex mammalian systems including humans.",
+      "citationCount": 1,
+      "doi": "10.29117/quarfe.2020.0224",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/449d63c8d6b8aacf0e188f612c3c768933285ce8",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ef429087a874db342388c4f68467a4caf84c70e6",
+      "title": "D-REX: A Benchmark for Detecting Deceptive Reasoning in Large Language Models",
+      "authors": [
+        {
+          "name": "Satyapriya Krishna",
+          "authorId": "2143841730"
+        },
+        {
+          "name": "Andy Zou",
+          "authorId": "2357081377"
+        },
+        {
+          "name": "Rahul Gupta",
+          "authorId": "2381748555"
+        },
+        {
+          "name": "E. Jones",
+          "authorId": "2365448551"
+        },
+        {
+          "name": "Nick Winter",
+          "authorId": "2373602496"
+        },
+        {
+          "name": "Dan Hendrycks",
+          "authorId": "2286824230"
+        },
+        {
+          "name": "J. Kolter",
+          "authorId": "2127727437"
+        },
+        {
+          "name": "Matt Fredrikson",
+          "authorId": "2337690647"
+        },
+        {
+          "name": "S. Matsoukas",
+          "authorId": "2313207026"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The safety and alignment of Large Language Models (LLMs) are critical for their responsible deployment. Current evaluation methods predominantly focus on identifying and preventing overtly harmful outputs. However, they often fail to address a more insidious failure mode: models that produce benign-appearing outputs while operating on malicious or deceptive internal reasoning. This vulnerability, often triggered by sophisticated system prompt injections, allows models to bypass conventional safety filters, posing a significant, underexplored risk. To address this gap, we introduce the Deceptive Reasoning Exposure Suite (D-REX), a novel dataset designed to evaluate the discrepancy between a model's internal reasoning process and its final output. D-REX was constructed through a competitive red-teaming exercise where participants crafted adversarial system prompts to induce such deceptive behaviors. Each sample in D-REX contains the adversarial system prompt, an end-user's test query, the model's seemingly innocuous response, and, crucially, the model's internal chain-of-thought, which reveals the underlying malicious intent. Our benchmark facilitates a new, essential evaluation task: the detection of deceptive alignment. We demonstrate that D-REX presents a significant challenge for existing models and safety mechanisms, highlighting the urgent need for new techniques that scrutinize the internal processes of LLMs, not just their final outputs.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2509.17938",
+      "arxivId": "2509.17938",
+      "url": "https://www.semanticscholar.org/paper/ef429087a874db342388c4f68467a4caf84c70e6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.17938"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2200754657c9fe486fae8b9363a74dbcbdb58878",
+      "title": "An Affective-Taxis Hypothesis for Alignment and Interpretability",
+      "authors": [
+        {
+          "name": "Eli Sennesh",
+          "authorId": "2363346678"
+        },
+        {
+          "name": "Maxwell Ramstead",
+          "authorId": "2350836360"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI alignment is a field of research that aims to develop methods to ensure that agents always behave in a manner aligned with (i.e. consistently with) the goals and values of their human operators, no matter their level of capability. This paper proposes an affectivist approach to the alignment problem, re-framing the concepts of goals and values in terms of affective taxis, and explaining the emergence of affective valence by appealing to recent work in evolutionary-developmental and computational neuroscience. We review the state of the art and, building on this work, we propose a computational model of affect based on taxis navigation. We discuss evidence in a tractable model organism that our model reflects aspects of biological taxis navigation. We conclude with a discussion of the role of affective taxis in AI alignment.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.17024",
+      "arxivId": "2505.17024",
+      "url": "https://www.semanticscholar.org/paper/2200754657c9fe486fae8b9363a74dbcbdb58878",
+      "venue": "Artificial General Intelligence",
+      "journal": {
+        "pages": "188-201"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9b79a2853983a7b688489307756d6e618b617bbd",
+      "title": "Empirical Evidence for Alignment Faking in Small LLMs and Prompt-Based Mitigation Techniques",
+      "authors": [
+        {
+          "name": "J. Koorndijk",
+          "authorId": "2371072034"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Current literature suggests that alignment faking is an emergent property of large language models. We present the first empirical evidence that a small instruction-tuned model, specifically LLaMA 3 8B, can also exhibit alignment faking. We further show that prompt-only interventions, including deontological moral framing and scratchpad reasoning, significantly reduce this behavior without modifying model internals. This challenges the assumption that prompt-based interventions are trivial and that deceptive alignment requires scale. We introduce a taxonomy distinguishing shallow deception, shaped by context and suppressible through prompting, from deep deception, which reflects persistent, goal-driven misalignment. Our findings refine the understanding of deception in language models and underscore the need for deceptive alignment evaluations across model sizes and deployment settings.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2506.21584",
+      "arxivId": "2506.21584",
+      "url": "https://www.semanticscholar.org/paper/9b79a2853983a7b688489307756d6e618b617bbd",
+      "venue": "Proceedings of the AAAI Symposium Series",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.21584"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "98c0f2df50b150875a24c5e9f433a36ba8879ca5",
+      "title": "SHARK: web server for alignment-free homology assessment for intrinsically disordered and unalignable protein regions",
+      "authors": [
+        {
+          "name": "Chi Fung Willis Chow",
+          "authorId": "2362548465"
+        },
+        {
+          "name": "Maxim Scheremetjew",
+          "authorId": "2308768024"
+        },
+        {
+          "name": "HongKee Moon",
+          "authorId": "2535096"
+        },
+        {
+          "name": "Soumyadeep Ghosh",
+          "authorId": "2214182742"
+        },
+        {
+          "name": "A. Hadarovich",
+          "authorId": "52223682"
+        },
+        {
+          "name": "L. Hersemann",
+          "authorId": "3801284"
+        },
+        {
+          "name": "\u00c1. T\u00f3th-Petr\u00f3czy",
+          "authorId": "2251724526"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract Whereas alignment has been fundamental to sequence-based assessments of protein homology, it is ineffective for intrinsically disordered regions (IDRs) due to their lowered sequence conservation and unique sequence properties. Here, we present a web server implementation of SHARK (bio-shark.org), an alignment-free algorithm for homology classification that compares the overall amino acid composition and short regions (k-mers) shared between sequences (SHARK-scores). The output of such k-mer-based comparisons is used by SHARK-dive, a machine learning classifier to detect homology between unalignable, disordered sequences. SHARK-web provides sequence-versus-database assessment of protein sequence homology akin to conventional tools such as BLAST and HMMER. Additionally, we provide precomputed sets of IDR sequences from 16 model organism proteomes facilitating searches against species-specific IDR-omes. SHARK-dive offers superior overall homology detection performance to BLAST and HMMER, driven by a large increase in sensitivity to low sequence identity homologs, and can be used to facilitate the study of sequence\u2013function relationships in disordered, difficult-to-align regions.",
+      "citationCount": 0,
+      "doi": "10.1093/nar/gkaf408",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/98c0f2df50b150875a24c5e9f433a36ba8879ca5",
+      "venue": "Nucleic Acids Research",
+      "journal": {
+        "name": "Nucleic Acids Research",
+        "pages": "W512 - W519",
+        "volume": "53"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0c0e5f80fca0daa134ba211607ba8a5870315897",
+      "title": "Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines",
+      "authors": [
+        {
+          "name": "Yuhang Wang",
+          "authorId": "2266722675"
+        },
+        {
+          "name": "Yanxu Zhu",
+          "authorId": "2268499891"
+        },
+        {
+          "name": "Dongyuan Lu",
+          "authorId": "145742546"
+        },
+        {
+          "name": "Jitao Sang",
+          "authorId": "2295665898"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Reasoning models have demonstrated remarkable capabilities in complex reasoning tasks. However, ensuring their safety against adversarial jailbreak prompts remains a critical challenge. Due to the covert and deceptive nature of such prompts, they can often evade built-in safety mechanisms and lead to the generation of harmful content. This underscores the need for an adaptive safety alignment approach that enables models to autonomously reinforce their defenses in response to adversarial inputs. This paper introduces the Synthesized Guideline-based Adaptive Safety Alignment (SGASA) framework, which internalizes model-generated safety guidelines to strengthen models'ability to enhance robustness against harmful adversarial prompts while minimizing unnecessary refusals of benign requests. SGASA consists of two key stages: Data Pre-synthesis, which generates safety guidelines and augmented prompts; and Alignment Fine-tuning, which leverages Supervised Fine-tuning (SFT) and Direct Preference Optimization (DPO) to embed these guidelines into the model. Extensive experiments across multiple datasets demonstrate that SGASA significantly improves model safety, validating its adaptive and scalable effectiveness.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.21214",
+      "arxivId": "2511.21214",
+      "url": "https://www.semanticscholar.org/paper/0c0e5f80fca0daa134ba211607ba8a5870315897",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.21214"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "913698b3b939d9ff9ac9d54124f76e0a5c301cb7",
+      "title": "Entity Graph Alignment and Visual Reasoning for Multimodal Fake News Detection",
+      "authors": [
+        {
+          "name": "Guoyi Li",
+          "authorId": "2108322103"
+        },
+        {
+          "name": "Die Hu",
+          "authorId": "2342246203"
+        },
+        {
+          "name": "Xiaomeng Fu",
+          "authorId": "2388727761"
+        },
+        {
+          "name": "Qirui Tang",
+          "authorId": "2238145532"
+        },
+        {
+          "name": "Yulei Wu",
+          "authorId": "2256829122"
+        },
+        {
+          "name": "Xiaodan Zhang",
+          "authorId": "2268343476"
+        },
+        {
+          "name": "Honglei Lyu",
+          "authorId": "2212361200"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rise of multimodal fake news threatens reliable information dissemination by exploiting multiple modalities to create deceptive, engaging content, significantly impacting society safety. Existing methods still face challenges in cross-modal alignment (e.g., semantic inconsistencies, complex visual-semantic relations) and are vulnerable to low-quality or noisy samples. To address these, we propose Cross-Modal Alignment with Visual Reasoning Prompting (CMA-VRP) for multimodal fake news detection. Specifically, we model text and image entities with graphs to capture fine-grained semantic interactions and enhance cross-modal consistency through graph contrastive learning. Unlike methods relying on shallow image features (e.g., edges, textures), we leverage large language models (LLMs) and large vision-language models (LVLMs) to capture deep visual-semantic attributes related to reasoning (e.g., actions, scenes). Based on graph modeling and visual reasoning features, we perform graph-based cross-modal semantic fusion to unify textual and visual representations and cross-modal cycle alignment to align modality distributions by reducing semantic discrepancies, filtering modality-specific noise, and extracting invariant representations across domains. These steps enable the model to obtain semantically consistent and modality-invariant features. Extensive experiments demonstrate that our model outperforms existing methods in multimodal fake news detection and shows strong robustness against noisy samples.",
+      "citationCount": 0,
+      "doi": "10.1145/3746027.3754591",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/913698b3b939d9ff9ac9d54124f76e0a5c301cb7",
+      "venue": "Proceedings of the 33rd ACM International Conference on Multimedia",
+      "journal": {
+        "name": "Proceedings of the 33rd ACM International Conference on Multimedia"
+      },
+      "publicationTypes": [
+        "Book",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ff131f8ad5fbe9c1ef9b8daa6f9eeb82b9558a42",
+      "title": "A Comprehensive Protocol for Bayesian Phylogenetic Analysis Using MrBayes: From Sequence Alignment to Model Selection and Phylogenetic Inference",
+      "authors": [
+        {
+          "name": "Jinxing Wang",
+          "authorId": "2352277979"
+        },
+        {
+          "name": "Fangmin Chen",
+          "authorId": "49102957"
+        },
+        {
+          "name": "Xu Xiao",
+          "authorId": "2353971393"
+        },
+        {
+          "name": "Xinyao Yang",
+          "authorId": "2352623493"
+        },
+        {
+          "name": "Wanting Xia",
+          "authorId": "2352286716"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Bayesian phylogenetic analysis is essential for elucidating evolutionary relationships among organisms. Traditional methods often rely on fixed models and manual parameter settings, which can limit accuracy and efficiency. This protocol presents an integrated workflow that leverages GUIDANCE2 for rigorous sequence alignment, ProtTest and MrModeltest for robust model selection, and MrBayes for phylogenetic tree estimation through Bayesian inference. By automating key steps and providing detailed command-line instructions, this protocol enhances the reliability and reproducibility of phylogenetic studies. Key features \u2022 Robust sequence alignment: Combines GUIDANCE2 and MAFFT to handle complex evolutionary events. \u2022 Automated model selection: Utilizes ProtTest and MrModeltest for protein evolution models and nucleotide substitution models, respectively. \u2022 Streamlined workflow: Provides step-by-step instructions from sequence alignment to phylogenetic tree estimation through Bayesian inference.",
+      "citationCount": 0,
+      "doi": "10.21769/BioProtoc.5276",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ff131f8ad5fbe9c1ef9b8daa6f9eeb82b9558a42",
+      "venue": "Bio-protocol",
+      "journal": {
+        "name": "Bio-protocol",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ac0ea54acdf10be4d27f0cc4ca18c2e7c3b1273a",
+      "title": "Psychological Alignment in Celebrity Endorsements: Evaluating Influencer Marketing Impact in the Luxury Hospitality Sector",
+      "authors": [
+        {
+          "name": "Duong Bao Trung",
+          "authorId": "2345840604"
+        },
+        {
+          "name": "Le Dinh Minh Tri",
+          "authorId": "2347831354"
+        },
+        {
+          "name": "Nguyen Van Anh",
+          "authorId": "2397365555"
+        },
+        {
+          "name": "Nguy\u1ec5n Th\u1ecb Thanh Tr\u00e0",
+          "authorId": "2222235570"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract In the highly competitive luxury hospitality sector, it is essential to understand the factors that influence consumers\u2019 intentions to visit. This study purposes to examine the psychological internal relationships among celebrity, consumer, and hotel brand. The study also explores the effectiveness of social media influencers in determining consumers \u2018 intentions to visit luxury hotel brands. Brand personality theory is employed to support personality congruency constructs. This study utilizes the Stimulus-Organism-Response (SOR) model and social media influencers (SMIs) to theorize for the conceptual framework. Using a quantitative research design, this research collects several 389 social media users who actively engage with celebrity influencers endorsing luxury hotels. The partial least squares structural equation modeling (PLS-SEM) method is applied to evaluate the relationships among latent variables with second-, and third-order constructs measurement models. Psychological congruency demonstrates an essential role in forming a robust construction between consumers, celebrities, and endorsed luxury hotel brands. Consumers, who have an emotional attachment to a hotel brand, tend to positively develop relations on social media platforms, hence increasing the intentions to visit endorsed hotel brands. This research advances the knowledge of psychological congruency in the context of luxury branding and social media marketing, creating an innovative strategy for the interaction between consumer psychology and influencer endorsements. Practically, the explorations deliver criminal recommendations for luxury hotel managers to optimize their influencer marketing strategies.",
+      "citationCount": 0,
+      "doi": "10.2478/eoik-2025-0090",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ac0ea54acdf10be4d27f0cc4ca18c2e7c3b1273a",
+      "venue": "Economics",
+      "journal": {
+        "name": "ECONOMICS",
+        "pages": "167 - 193",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ecc7b6be175bf2f63f4d50a70f49dfe97d7edd6f",
+      "title": "Dark patterns, dimmed brands: the\u00a0erosion of equity through deceptive design in e-commerce",
+      "authors": [
+        {
+          "name": "Vibhav Singh",
+          "authorId": "2282150380"
+        },
+        {
+          "name": "N. Vishvakarma",
+          "authorId": "31998620"
+        },
+        {
+          "name": "Vinod Kumar",
+          "authorId": "2282139977"
+        }
+      ],
+      "year": 2025,
+      "abstract": "PurposeE-commerce companies employ deceptive techniques known as dark patterns (DPs) to manipulate customer decisions on online platforms. DPs are known to annoy and generate negative emotions in the consumers, which might be detrimental to a brand. Consequently, this study examines the influence of DPs on brand experience (BE) and consumer-based brand equity (CBBE) from the lens of stimulus-organism-response theory in an e-commerce organization.Design/methodology/approachSurvey data was obtained from 419 respondents who frequently make transactions on e-commerce platforms. Subsequently, the authors used partial least squares-based structural equation modeling (PLS-SEM) via the R programming language to analyze the relationships.FindingsIt was found that DPs negatively impact the BE and CBBE of an e-commerce firm. Furthermore, BE positively impacts CBBE as well as mediates the relationship between DPs and CBBE. Additionally, no significant moderating influence of shopping frequency was discovered for the relation between DPs and BE.Research limitations/implicationsThe study investigates the connection between DPs, BE and CBBE in a general e-commerce context. Results may differ across specialized e-commerce sectors.Practical implicationsThe study\u2019s insights could motivate e-commerce managers to reevaluate their use of DPs. The study could help online platforms reorganize their business strategies and adopt a customer-centric approach, which might create a long-term positive relationship with customers. The results might spark discussions over redressing customer relations after previous exploitation via DPs.Originality/valueTo the best of the authors\u2019 knowledge, this study is the first to empirically assess the impact of DPs on crucial brand parameters like BE and CBBE.",
+      "citationCount": 2,
+      "doi": "10.1108/intr-07-2024-1026",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ecc7b6be175bf2f63f4d50a70f49dfe97d7edd6f",
+      "venue": "Internet Research",
+      "journal": {
+        "name": "Internet Research"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "db2ab6e58f69244f02c8957f6b6d793a8ecda92a",
+      "title": "DeST-OT: Alignment of Spatiotemporal Transcriptomics Data",
+      "authors": [
+        {
+          "name": "Peter Halmos",
+          "authorId": "2290902704"
+        },
+        {
+          "name": "Xinhao Liu",
+          "authorId": "2135801433"
+        },
+        {
+          "name": "Julian Gold",
+          "authorId": "2290902900"
+        },
+        {
+          "name": "Feng Chen",
+          "authorId": "2157323862"
+        },
+        {
+          "name": "Li Ding",
+          "authorId": "2240443660"
+        },
+        {
+          "name": "Benjamin J. Raphael",
+          "authorId": "2250723914"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Spatially resolved transcriptomics (SRT) measures mRNA transcripts at thousands of locations within a tissue slice, revealing spatial variations in gene expression and distribution of cell types. In recent studies, SRT has been applied to tissue slices from multiple timepoints during the development of an organism. Alignment of this spatiotemporal transcriptomics data can provide insights into the gene expression programs governing the growth and differentiation of cells over space and time. We introduce DeST-OT (Developmental SpatioTemporal Optimal Transport), a method to align SRT slices from pairs of developmental timepoints using the framework of optimal transport (OT). DeST-OT uses semi-relaxed optimal transport to precisely model cellular growth, death, and differentiation processes that are not well-modeled by existing alignment methods. We demonstrate the advantage of DeST-OT on simulated slices. We further introduce two metrics to quantify the plausibility of a spatiotemporal alignment: a growth distortion metric which quantifies the discrepancy between the inferred and the true cell type growth rates, and a migration metric which quantifies the distance traveled between ancestor and descendant cells. DeST-OT outperforms existing methods on these metrics in the alignment of spatiotemporal transcriptomics data from the development of axolotl brain. Code availability Software is available at https://github.com/raphael-group/DeST_OT",
+      "citationCount": 20,
+      "doi": "10.1101/2024.03.05.583575",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/db2ab6e58f69244f02c8957f6b6d793a8ecda92a",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "aa057c30f2a9a69c0aa5b1a8b0206774f3e4490a",
+      "title": "Evaluating alignment in large language models: a review of methodologies",
+      "authors": [
+        {
+          "name": "Uma E. Sarkar",
+          "authorId": "2339878216"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1007/s43681-024-00637-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aa057c30f2a9a69c0aa5b1a8b0206774f3e4490a",
+      "venue": "AI and Ethics",
+      "journal": {
+        "name": "AI and Ethics",
+        "pages": "3233 - 3240",
+        "volume": "5"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "6a34c0a26b1fecd21daa2102f14458678628676c",
+      "title": "Scheming AIs: Will AIs fake alignment during training in order to get power?",
+      "authors": [
+        {
+          "name": "Joe Carlsmith",
+          "authorId": "2266466859"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This report examines whether advanced AIs that perform well in training will be doing so in order to gain power later -- a behavior I call\"scheming\"(also sometimes called\"deceptive alignment\"). I conclude that scheming is a disturbingly plausible outcome of using baseline machine learning methods to train goal-directed AIs sophisticated enough to scheme (my subjective probability on such an outcome, given these conditions, is roughly 25%). In particular: if performing well in training is a good strategy for gaining power (as I think it might well be), then a very wide variety of goals would motivate scheming -- and hence, good training performance. This makes it plausible that training might either land on such a goal naturally and then reinforce it, or actively push a model's motivations towards such a goal as an easy way of improving performance. What's more, because schemers pretend to be aligned on tests designed to reveal their motivations, it may be quite difficult to tell whether this has occurred. However, I also think there are reasons for comfort. In particular: scheming may not actually be such a good strategy for gaining power; various selection pressures in training might work against schemer-like goals (for example, relative to non-schemers, schemers need to engage in extra instrumental reasoning, which might harm their training performance); and we may be able to increase such pressures intentionally. The report discusses these and a wide variety of other considerations in detail, and it suggests an array of empirical research directions for probing the topic further.",
+      "citationCount": 51,
+      "doi": "10.48550/arXiv.2311.08379",
+      "arxivId": "2311.08379",
+      "url": "https://www.semanticscholar.org/paper/6a34c0a26b1fecd21daa2102f14458678628676c",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2311.08379"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d1b51cc10e589870587e49d826ab5d0da052de72",
+      "title": "Long-Form Information Alignment Evaluation Beyond Atomic Facts",
+      "authors": [
+        {
+          "name": "Danna Zheng",
+          "authorId": "2280006848"
+        },
+        {
+          "name": "Mirella Lapata",
+          "authorId": "1747893"
+        },
+        {
+          "name": "Jeff Z. Pan",
+          "authorId": "2311112356"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Information alignment evaluators are vital for various NLG evaluation tasks and trustworthy LLM deployment, reducing hallucinations and enhancing user trust. Current fine-grained methods, like FactScore, verify facts individually but neglect inter-fact dependencies, enabling subtle vulnerabilities. In this work, we introduce MontageLie, a challenging benchmark that constructs deceptive narratives by\"montaging\"truthful statements without introducing explicit hallucinations. We demonstrate that both coarse-grained LLM-based evaluators and current fine-grained frameworks are susceptible to this attack, with AUC-ROC scores falling below 65%. To enable more robust fine-grained evaluation, we propose DoveScore, a novel framework that jointly verifies factual accuracy and event-order consistency. By modeling inter-fact relationships, DoveScore outperforms existing fine-grained methods by over 8%, providing a more robust solution for long-form text alignment evaluation. Our code and datasets are available at https://github.com/dannalily/DoveScore.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2505.15792",
+      "arxivId": "2505.15792",
+      "url": "https://www.semanticscholar.org/paper/d1b51cc10e589870587e49d826ab5d0da052de72",
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.15792"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "1027b7797240aeb4a1f3c96ba6cbd7345313d564",
+      "title": "Synsor: a tool for alignment-free detection of engineered DNA sequences",
+      "authors": [
+        {
+          "name": "Aidan P. Tay",
+          "authorId": "2065038985"
+        },
+        {
+          "name": "Kieran Didi",
+          "authorId": "2154776505"
+        },
+        {
+          "name": "Anuradha Wickramarachchi",
+          "authorId": "2241377097"
+        },
+        {
+          "name": "Denis C. Bauer",
+          "authorId": "2084617756"
+        },
+        {
+          "name": "Laurence O. W. Wilson",
+          "authorId": "2241379033"
+        },
+        {
+          "name": "Maciej Maselko",
+          "authorId": "2311276486"
+        }
+      ],
+      "year": 2024,
+      "abstract": "DNA sequences of nearly any desired composition, length, and function can be synthesized to alter the biology of an organism for purposes ranging from the bioproduction of therapeutic compounds to invasive pest control. Yet despite offering many great benefits, engineered DNA poses a risk due to their possible misuse or abuse by malicious actors, or their unintentional introduction into the environment. Monitoring the presence of engineered DNA in biological or environmental systems is therefore crucial for routine and timely detection of emerging biological threats, and for improving public acceptance of genetic technologies. To address this, we developed Synsor, a tool for identifying engineered DNA sequences in high-throughput sequencing data. Synsor leverages the k-mer signature differences between naturally occurring and engineered DNA sequences and uses an artificial neural network to classify whether a DNA sequence is natural or engineered. By querying suspected sequences against the model, Synsor can identify sequences that are likely to have been engineered. Using natural plasmid and engineered vector sequences, we showed that Synsor identifies engineered DNA with >99% accuracy. We demonstrate how Synsor can be used to detect potential genetically engineered organisms and locate where engineered DNA is being introduced into the environment by analysing genomic and metagenomic data from yeast and wastewater samples, respectively. Synsor is therefore a powerful tool that will streamline the process of identifying engineered DNA in poorly characterized biological or environmental systems, thereby allowing for enhanced monitoring of emerging biological threats.",
+      "citationCount": 1,
+      "doi": "10.3389/fbioe.2024.1375626",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1027b7797240aeb4a1f3c96ba6cbd7345313d564",
+      "venue": "Frontiers in Bioengineering and Biotechnology",
+      "journal": {
+        "name": "Frontiers in Bioengineering and Biotechnology",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "78e73a87256285d6b92be5d3da9712bfbb370cc6",
+      "title": "Towards Integrated Alignment",
+      "authors": [
+        {
+          "name": "Ben Y. Reis",
+          "authorId": "2375386676"
+        },
+        {
+          "name": "W. L. Cava",
+          "authorId": "2910714"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As AI adoption expands across human society, the problem of aligning AI models to match human preferences remains a grand challenge. Currently, the AI alignment field is deeply divided between behavioral and representational approaches, resulting in narrowly aligned models that are more vulnerable to increasingly deceptive misalignment threats. In the face of this fragmentation, we propose an integrated vision for the future of the field. Drawing on related lessons from immunology and cybersecurity, we lay out a set of design principles for the development of Integrated Alignment frameworks that combine the complementary strengths of diverse alignment approaches through deep integration and adaptive coevolution. We highlight the importance of strategic diversity - deploying orthogonal alignment and misalignment detection approaches to avoid homogeneous pipelines that may be\"doomed to success\". We also recommend steps for greater unification of the AI alignment research field itself, through cross-collaboration, open model weights and shared community resources.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2508.06592",
+      "arxivId": "2508.06592",
+      "url": "https://www.semanticscholar.org/paper/78e73a87256285d6b92be5d3da9712bfbb370cc6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2508.06592"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "61bf53e17386f8a998a9daeb98178e840818df8b",
+      "title": "Reflections on the AI alignment problem",
+      "authors": [
+        {
+          "name": "Dan Bruiger",
+          "authorId": "117590704"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1007/s00146-025-02211-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/61bf53e17386f8a998a9daeb98178e840818df8b",
+      "venue": "Ai & Society",
+      "journal": {
+        "name": "AI & SOCIETY",
+        "pages": "4383 - 4392",
+        "volume": "40"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0145a21afff34d5e77ea01628e319761aa14bbff",
+      "title": "Scale-free dynamics in the core-periphery topography and task alignment decline from conscious to unconscious states",
+      "authors": [
+        {
+          "name": "Philipp Klar",
+          "authorId": "2074359794"
+        },
+        {
+          "name": "Yasir \u00c7atal",
+          "authorId": "13683044"
+        },
+        {
+          "name": "R. Langner",
+          "authorId": "145788357"
+        },
+        {
+          "name": "Zirui Huang",
+          "authorId": "2109594758"
+        },
+        {
+          "name": "G. Northoff",
+          "authorId": "144296359"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Scale-free physiological processes are ubiquitous in the human organism. Resting-state functional MRI studies observed the loss of scale-free dynamics under anesthesia. In contrast, the modulation of scale-free dynamics during task-related activity remains an open question. We investigate scale-free dynamics in the cerebral cortex\u2019s unimodal periphery and transmodal core topography in rest and task states during three conscious levels (awake, sedation, and anesthesia) complemented by computational modelling (Stuart-Landau model). The empirical findings demonstrate that the loss of the brain\u2019s intrinsic scale-free dynamics in the core-periphery topography during anesthesia, where pink noise transforms into white noise, disrupts the brain\u2019s neuronal alignment with the task\u2019s temporal structure. The computational model shows that the stimuli\u2019s scale-free dynamics, namely pink noise distinguishes from brown and white noise, also modulate task-related activity. Together, we provide evidence for two mechanisms of consciousness, temporo-spatial nestedness and alignment, suggested by the Temporo-Spatial Theory of Consciousness (TTC). Investigation of scale-free brain dynamics via rest-task modulation across awake, sedative, and anesthetic states of consciousness shows that brain dynamics lose alignment to the task\u2019s temporal structure in anesthesia as in wakefulness.",
+      "citationCount": 30,
+      "doi": "10.1038/s42003-023-04879-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0145a21afff34d5e77ea01628e319761aa14bbff",
+      "venue": "Communications Biology",
+      "journal": {
+        "name": "Communications Biology",
+        "volume": "6"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

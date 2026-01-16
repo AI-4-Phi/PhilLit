@@ -1,0 +1,1535 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "AI deception detection behavioral",
+  "results": [
+    {
+      "paperId": "fb3f7abd5f11a4f5e80b97a887c54f000a432768",
+      "title": "Multimodal machine learning for deception detection using behavioral and physiological data",
+      "authors": [
+        {
+          "name": "Gargi Joshi  Bhide",
+          "authorId": "2082352577"
+        },
+        {
+          "name": "Vaibhav Tasgaonkar",
+          "authorId": "2196802740"
+        },
+        {
+          "name": "Aditya Deshpande",
+          "authorId": "2226156210"
+        },
+        {
+          "name": "Aditya Desai",
+          "authorId": "2135475701"
+        },
+        {
+          "name": "Bhavya Shah",
+          "authorId": "2319481600"
+        },
+        {
+          "name": "Akshay Kushawaha",
+          "authorId": "2324675176"
+        },
+        {
+          "name": "Aadith Sukumar",
+          "authorId": "2292747635"
+        },
+        {
+          "name": "Kermi Kotecha",
+          "authorId": "2349624512"
+        },
+        {
+          "name": "Saumit Kunder",
+          "authorId": "2350325349"
+        },
+        {
+          "name": "Yoginii Waykole",
+          "authorId": "2350325216"
+        },
+        {
+          "name": "Harsh Maheshwari",
+          "authorId": "2319467113"
+        },
+        {
+          "name": "Abhijit Das",
+          "authorId": "2350978573"
+        },
+        {
+          "name": "Shubhashi Gupta",
+          "authorId": "2350710290"
+        },
+        {
+          "name": "Akanksha Subudhi",
+          "authorId": "2350325344"
+        },
+        {
+          "name": "Priyanka Jain",
+          "authorId": "2150694403"
+        },
+        {
+          "name": "N. K. Jain",
+          "authorId": "2226144207"
+        },
+        {
+          "name": "Rahee Walambe",
+          "authorId": "30744258"
+        },
+        {
+          "name": "K. Kotecha",
+          "authorId": "1794896"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception detection is crucial in domains like national security, privacy, judiciary, and courtroom trials. Differentiating truth from lies is inherently challenging due to many complex, diversified behavioural, physiological and cognitive aspects. Traditional lie detector tests (polygraphs) have been widely used but remain controversial due to scientific, ethical, and practical concerns. With advancements in machine learning, deception detection can be automated. However, existing secondary datasets are limited\u2014they are small, unimodal, and predominantly based on non-Indian populations. To address these gaps, we present CogniModal-D, a primary real-world multimodal dataset for deception detection, specifically targeting the Indian population. It spans seven modalities\u2014electroencephalography (EEG), electrocardiography (ECG), electrooculography (EOG), eye-gaze, galvanic skin response (GSR), audio, and video\u2014collected from over 100 subjects. The data was gathered through tasks focused on social relationships and controlled mock crime interrogations. Our multimodal AI-based score-level fusion approach integrates diverse verbal and nonverbal cues, significantly improving deception detection accuracy compared to unimodal methods. Performance improvements of up to 15% were observed in mock crime and best friend scenarios with multimodal fusion. Notably, behavioural modalities (audio, video, gaze, GSR) proved more robust than neurophysiological ones (EEG, ECG, EOG).The study demonstrates that multimodal features offer superior discriminatory power in deception detection. These insights highlight the pivotal role of integrating multiple modalities to develop robust, scalable, and advanced deception detection systems in the future.",
+      "citationCount": 9,
+      "doi": "10.1038/s41598-025-92399-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fb3f7abd5f11a4f5e80b97a887c54f000a432768",
+      "venue": "Scientific Reports",
+      "journal": {
+        "name": "Scientific Reports",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "32bf1d222e6342feeb8ef926cf10dcb87dedf0af",
+      "title": "Explainable AI for Unraveling the Significance of Visual Cues in High Stakes Deception Detection",
+      "authors": [
+        {
+          "name": "Suhaib Salah",
+          "authorId": "2292748618"
+        },
+        {
+          "name": "Hagar Elbatanouny",
+          "authorId": "2292746034"
+        },
+        {
+          "name": "A. Sobuh",
+          "authorId": "1752878541"
+        },
+        {
+          "name": "Eqab R. F. Almajali",
+          "authorId": "31001976"
+        },
+        {
+          "name": "Wasiq Khan",
+          "authorId": "2219780101"
+        },
+        {
+          "name": "Haya Alaskar",
+          "authorId": "2290046727"
+        },
+        {
+          "name": "Adel Binbusayyis",
+          "authorId": "9444986"
+        },
+        {
+          "name": "Taimur Hassan",
+          "authorId": "2281871308"
+        },
+        {
+          "name": "Jawad Yousaf",
+          "authorId": "3091500"
+        },
+        {
+          "name": "A. Hussain",
+          "authorId": "2175056686"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception, a widespread aspect of human behavior, has significant implications in fields like law enforcement, security, judicial proceedings, and social areas. Detecting deception accurately, especially in high-stakes environments, is critical for ensuring justice and security. Recently, machine learning has significantly enhanced deception detection capabilities by analyzing various behavioral and visual cues. However, machine learning models often operate as opaque \u201cblack boxes,\u201d offering high predictive accuracy without explaining the reasoning behind the decisions. This lack of transparency necessitates the integration of Explainable Artificial Intelligence to make the models\u2019 decisions understandable and trustworthy. This study proposes the implementation of existing model-agnostic Explainable Artificial Intelligence techniques\u2014Permutation Importance, Partial Dependence Plots, and SHapley Additive exPlanations\u2014to showcase the contributions of visual features in deception detection. Using Real-Life Trial dataset, recognized as the most valuable high-stake dataset, we demonstrate that Multi-layer Perceptron achieved the highest accuracy of 88% and a recall of 92.86%. Along with the aforementioned existing techniques, Real-Life Trial dataset inspired us to develop a novel technique: \u2018set-of-features permutation importance\u2019. Additionally, this study is novel in the sense of that it extensively applies XAI techniques in the field of deception detection on Real-Life Trial dataset. Experimental results shows that the visual cues related to eyebrow movements are most indicative of deceptive behavior. Along with the new findings, our work underscores the importance of making machine learning models more transparent and explainable, thereby enhancing their utility for human-in-loop AI and ethical acceptability.",
+      "citationCount": 0,
+      "doi": "10.1109/ACCESS.2025.3558875",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/32bf1d222e6342feeb8ef926cf10dcb87dedf0af",
+      "venue": "IEEE Access",
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "65839-65862",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9957af478e93e1d546943fdf73efce5fbd221f5e",
+      "title": "Cognitive Computing Frameworks for Scalable Deception Detection in Textual Data",
+      "authors": [
+        {
+          "name": "Faiza Belbachir",
+          "authorId": "2205909"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Detecting deception in emotionally grounded natural language remains a significant challenge due to the subtlety and context dependence of deceptive intent. In this work, we use a structured behavioral dataset in which participants produce truthful and deceptive statements under emotional and social constraints. To maintain label accuracy and semantic consistency, we propose a multilayer validation pipeline combining selfconsistency prompting with feedback-guided revision, implemented through the CoTAM (Chain-of-Thought Assisted Modification) method. Our results demonstrate that this framework enhances deception detection by leveraging a sentence decomposition strategy that highlights subtle emotional and strategic cues, improving interpretability for both models and human annotators.",
+      "citationCount": 0,
+      "doi": "10.3390/bdcc9100260",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9957af478e93e1d546943fdf73efce5fbd221f5e",
+      "venue": "Big Data and Cognitive Computing",
+      "journal": {
+        "name": "Big Data Cogn. Comput.",
+        "pages": "260",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "06306cc2447ac26493381c8fba2f83ed104c93e3",
+      "title": "Parsing communication duration and diagnostic question effects in deception detection",
+      "authors": [
+        {
+          "name": "J. Paik",
+          "authorId": "72169511"
+        },
+        {
+          "name": "Timothy R. Levine",
+          "authorId": "2258460269"
+        }
+      ],
+      "year": 2024,
+      "abstract": "ABSTRACT An experiment (N\u2009=\u2009155) testing mere duration and diagnostic content hypotheses in deception detection is reported. To the extent that observable behavioral cues aid deception detection, longer behavioral samples may provide a greater opportunity for cues to emerge, thereby increasing accuracy relative to the observation of short snippets of interviews. In contrast, truth-default theory proposes that question-and-answer content is a moderator, and more is only better when questions prompt diagnostic communication content. A 2\u2009\u00d7\u20092 experiment varied communication duration (short, long) and questioning approach (more, less diagnostic). Consistent with the diagnostic content hypothesis, the results suggest that duration only mattered within the more diagnostic question condition. In the less diagnostic question condition, the results mirrored prior meta-analysis regardless of duration. The findings align with truth-default theory and provide evidence for a theory-based approach to improving deception detection.",
+      "citationCount": 0,
+      "doi": "10.1080/01463373.2024.2387016",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/06306cc2447ac26493381c8fba2f83ed104c93e3",
+      "venue": "Communication Quarterly",
+      "journal": {
+        "name": "Communication Quarterly",
+        "pages": "503 - 520",
+        "volume": "72"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1cd5599890620eebf45dba00a561d547e96e7a84",
+      "title": "Artificial Intelligence for Deception Detection: A Multimodal Review of Methods, Challenges, And Ethical Perspectives",
+      "authors": [
+        {
+          "name": "Redeer Avdal Saleh",
+          "authorId": "2348797832"
+        },
+        {
+          "name": "Omar Sedqi Kareem",
+          "authorId": "2358891138"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Within the realm of deception detection research, this comparative study investigates the use of machine learning, artificial intelligence, and multimodal data processing. From the year 2020 to the year 2024, it focuses on twenty-four studies that show the growing potential of AI-driven systems in terms of enhancing the consistency, scalability, and accuracy of fraud detection. In order to identify deceit in a variety of data types, such as facial expressions, audio signals, written language, and behavioral abnormalities, different techniques have showed promise. Some of these techniques include Support Vector Machines (SVM), Long Short-Term Memory (LSTM) networks, Convolutional Neural Networks (CNNs), and hybrid models. On the other hand, issues like as adversary manipulation, biases in training datasets, and the potential for deception cues to be generalized across linguistic, cultural, and social contexts continue to be a concern. To further complicate the deployment of deception detection systems, there is a dearth of real-world validation, and the present models have little adaptability in dynamic environments. The article places an emphasis on the need of openness in the design of artificial intelligence, ethical concerns about user privacy, and the development of systems that have properties that are sensitive to cultural and environmental factors. The integration of concepts from other disciplines, the ability to withstand assaults from adversaries, and the development of ways to decrease prejudice should be the primary focus of research in the future.",
+      "citationCount": 0,
+      "doi": "10.47191/etj/v10i04.13",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1cd5599890620eebf45dba00a561d547e96e7a84",
+      "venue": "Engineering and Technology Journal",
+      "journal": {
+        "name": "Engineering and Technology Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "707720147cfed37a9c193048d21a19b3b52b0062",
+      "title": "Deception Detection Using Verbal Behavioral Index in Forensic Interview",
+      "authors": [
+        {
+          "name": "Kazuki Fujimoto",
+          "authorId": "2222049885"
+        },
+        {
+          "name": "Ai Uemiya",
+          "authorId": "6892509"
+        },
+        {
+          "name": "Riki Tadenuma",
+          "authorId": "2222319228"
+        },
+        {
+          "name": "Haruki Ogawa",
+          "authorId": "2222170663"
+        },
+        {
+          "name": "S. Inoue",
+          "authorId": "14666378"
+        },
+        {
+          "name": "Yukishige Nakata",
+          "authorId": "65845390"
+        },
+        {
+          "name": "Yui Takeda",
+          "authorId": "2069132533"
+        },
+        {
+          "name": "Kosuke Wakabayashi",
+          "authorId": "29922932"
+        },
+        {
+          "name": "M. Naka",
+          "authorId": "8642153"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.4992/pacjpa.86.0_1pm-044-pe",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/707720147cfed37a9c193048d21a19b3b52b0062",
+      "venue": "The Proceedings of the Annual Convention of the Japanese Psychological Association",
+      "journal": {
+        "name": "The Proceedings of the Annual Convention of the Japanese Psychological Association"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8f5c141849d55e7ba287a1d8ab89d5cdd1696e6b",
+      "title": "Validity of Systematic Behavioral Analysis in Detecting High-Stakes Deception",
+      "authors": [
+        {
+          "name": "Yeongrok Oh",
+          "authorId": "2385140259"
+        },
+        {
+          "name": "Kwangbai Park",
+          "authorId": "2385112790"
+        },
+        {
+          "name": "Jaehong Kim",
+          "authorId": "2384943307"
+        },
+        {
+          "name": "Jungwon Jeon",
+          "authorId": "2385262978"
+        },
+        {
+          "name": "Cheol Bang",
+          "authorId": "2384906733"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11896-025-09774-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8f5c141849d55e7ba287a1d8ab89d5cdd1696e6b",
+      "venue": "Journal of Police and Criminal Psychology",
+      "journal": {
+        "name": "Journal of Police and Criminal Psychology"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fd6270e4e4b3c211dd11b68ae9a1fe6384de6cca",
+      "title": "A Study on the Accuracy of Micro Expression Based Deception Detection with Hybrid Deep Neural Network Models",
+      "authors": [
+        {
+          "name": "Sohiel Nikbin",
+          "authorId": "2305962253"
+        },
+        {
+          "name": "Yanzhen Qu",
+          "authorId": "2306210877"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This article details a study on enhancing deception detection accuracy by using Hybrid Deep Neural Network (HDNN) models. The research, focusing on fear-related micro-expressions, utilizes a diverse dataset of responses to high-stakes questions. It analyzes facial action units (AUs) and pupil size variations through data preprocessing and feature extraction. The HDNN model outperforms the traditional Convolutional Neural Network (CNN) with a 91% accuracy rate. The findings\u2019 implications for security, law enforcement, psychology, and behavioral treatments are discussed. Ethical considerations of deception detection technology deployment and future research directions, including cross-cultural studies, real-world assessments, ethical guidelines, studies on emotional expression dynamics, \u201cexplainable AI\u201d development, and multimodal data integration, are also explored. The study contributes to deception detection knowledge and highlights the potential of machine learning techniques, especially HDNN, in improving decision-making and security in high-stakes situations.",
+      "citationCount": 1,
+      "doi": "10.24018/ejece.2024.8.3.610",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fd6270e4e4b3c211dd11b68ae9a1fe6384de6cca",
+      "venue": "European Journal of Electrical Engineering and Computer Science",
+      "journal": {
+        "name": "European Journal of Electrical Engineering and Computer Science"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e4078a47f80c35250426dc59f50926fe84d8b2c2",
+      "title": "Multimodal Behavioral Sensors for Lie Detection: Integrating Visual, Auditory, and Generative Reasoning Cues",
+      "authors": [
+        {
+          "name": "Daniel Grabowski",
+          "authorId": "2383527585"
+        },
+        {
+          "name": "Kamila \u0141uczaj",
+          "authorId": "2383698866"
+        },
+        {
+          "name": "Khalid Saeed",
+          "authorId": "2306697817"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Highlights What are the main findings? A multimodal deception detection framework combining visual, audio, and language-based reasoning achieved high accuracy on a DOLOS dataset. The ViViT-based visual model reached 74.4% accuracy, while HuBERT audio classification showed strong performance on prosodic cues. What is the implication of the main finding? Multimodal fusion enhances robustness and interpretability in behavioral biometrics for deception analysis. Language-guided models like GPT-5 prompt-level fusion provide explainable AI outputs, facilitating trust and real-world applicability. Abstract Advances in multimodal artificial intelligence enable new sensor-inspired approaches to lie detection by combining behavioral perception with generative reasoning. This study presents a deception detection framework that integrates deep video and audio processing with large language models guided by chain-of-thought (CoT) prompting. We interpret neural architectures such as ViViT (for video) and HuBERT (for speech) as digital behavioral sensors that extract implicit emotional and cognitive cues, including micro-expressions, vocal stress, and timing irregularities. We further incorporate a GPT-5-based prompt-level fusion approach for video\u2013language\u2013emotion alignment and zero-shot inference. This method jointly processes visual frames, textual transcripts, and emotion recognition outputs, enabling the system to generate interpretable deception hypotheses without any task-specific fine-tuning. Facial expressions are treated as high-resolution affective signals captured via visual sensors, while audio encodes prosodic markers of stress. Our experimental setup is based on the DOLOS dataset, which provides high-quality multimodal recordings of deceptive and truthful behavior. We also evaluate a continual learning setup that transfers emotional understanding to deception classification. Results indicate that multimodal fusion and CoT-based reasoning increase classification accuracy and interpretability. The proposed system bridges the gap between raw behavioral data and semantic inference, laying a foundation for AI-driven lie detection with interpretable sensor analogues.",
+      "citationCount": 0,
+      "doi": "10.3390/s25196086",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e4078a47f80c35250426dc59f50926fe84d8b2c2",
+      "venue": "Italian National Conference on Sensors",
+      "journal": {
+        "name": "Sensors (Basel, Switzerland)",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4a777e8d73251c32edd2d8c56ca1ccb5fdf3026f",
+      "title": "Multimodal Political Deception Detection",
+      "authors": [
+        {
+          "name": "Manvi Kamboj",
+          "authorId": "2066901094"
+        },
+        {
+          "name": "Christian Hessler",
+          "authorId": "1742178345"
+        },
+        {
+          "name": "Priyanka Asnani",
+          "authorId": "67047758"
+        },
+        {
+          "name": "Kais Riani",
+          "authorId": "1780649791"
+        },
+        {
+          "name": "M. Abouelenien",
+          "authorId": "1898814"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Political statements are carefully crafted to garner public support for a particular ideology. These statements are often biased and sometimes misleading. Separating fact from fiction has proven to be a difficult task, generally accomplished by cross-checking political statements against an impartial and trustworthy news source. In this article, we make three contributions. First, we compile a novel multimodal dataset, which consists of 180 videos with accompanying audio recordings and transcripts, featuring 88 politicians categorized by political party. To our knowledge, this is the second multimodal deception detection dataset from real-life data and the first in the political field. Second, we extract features from the linguistic, visual, and acoustic modalities to develop a system capable of discriminating between truthful and deceptive political statements. Finally, we perform an extensive analysis on different multimodal features to identify the behavioral patterns used by politicians when it comes to deception.",
+      "citationCount": 19,
+      "doi": "10.1109/MMUL.2020.3048044",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4a777e8d73251c32edd2d8c56ca1ccb5fdf3026f",
+      "venue": "IEEE Multimedia",
+      "journal": {
+        "name": "IEEE MultiMedia",
+        "pages": "94-102",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c9996210b8a707d168c19e237fd4b8312590b39a",
+      "title": "Exploring Vision-Based Features for Detecting Deception in Well-Being: A Cross-Domain Comparison",
+      "authors": [
+        {
+          "name": "S. King",
+          "authorId": "148074611"
+        },
+        {
+          "name": "Tempestt Neal",
+          "authorId": "2375059564"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception detection has been extensively studied using vision-based features in domains such as crime, finance, and social interaction. However, little attention has been given to how deception manifests visually in self-reported well-being-a critical area for behavioral health, where inaccurate reporting may affect treatment outcomes and the therapeutic alliance. While clinicians often rely on visual cues such as gaze, facial expressions, and body language to assess deception, these cues remain underutilized in AI-based deception detection in wellbeing scenarios. This study explores vision-based features of deception in the well-being domain and compares them with those from three other domains: biography, academics, and crime. Using mock interview data, we extract facial landmarks, body gestures, and facial action units (AUs) using four feature selection methods. We then visualize and analyze the spatial distribution of features associated with truthful and deceptive responses. Results show that well-being features are generally fewer and more localized-particularly around the nose ridge-with unique presence of eye landmarks and limited hand gestures. In contrast, biography and academics show broader facial and body engagement, while crime displays no differentiation between truth- and deception-related features and lacks emotional AU combinations. AUs associated with joy (AU 6 and AU 12) appear consistently across well-being, academics, and biography, suggesting some domain-agnostic cues. Overall, our findings indicate that most visual features relevant to deception are domain-specific. This highlights the importance of contextaware approaches in deception modeling and supports the development of more reliable, human-centered AI tools for wellbeing assessment and mental health applications.",
+      "citationCount": 0,
+      "doi": "10.1109/FG61629.2025.11099290",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c9996210b8a707d168c19e237fd4b8312590b39a",
+      "venue": "IEEE International Conference on Automatic Face & Gesture Recognition",
+      "journal": {
+        "name": "2025 IEEE 19th International Conference on Automatic Face and Gesture Recognition (FG)",
+        "pages": "1-10"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "051de2cd0b3d36ab52f0f191ab4c424af993c0e7",
+      "title": "Machiavellian Marketing And Digital Deception: A Bibliometric Analysis Of Dark Triad Traits, Manipulation, And Misinformation In Social Media (1969-2025)",
+      "authors": [
+        {
+          "name": "Pilifus Junianto",
+          "authorId": "138584678"
+        },
+        {
+          "name": "A. Irawan",
+          "authorId": "103929068"
+        },
+        {
+          "name": "M. Taba",
+          "authorId": "117554977"
+        },
+        {
+          "name": "Brigida Endah Nuraeni",
+          "authorId": "2317439597"
+        },
+        {
+          "name": "Edi Sumarya",
+          "authorId": "2198968630"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study systematically maps the intellectual structure of research on Machiavellian marketing and digital deception, examining intersections between dark personality traits, manipulation, and social media misinformation. Employing bibliometric analysis, 2,512 journal articles from Scopus database (1969-October 2025) were analyzed using VOSviewer software. Three complementary techniques were applied: co-citation analysis revealing foundational knowledge structures, bibliographic coupling identifying current research themes, and co-word analysis predicting future trends. Four distinct research clusters emerged: ethical governance and digital persuasion, social psychology and behavioral impacts, misinformation dynamics and societal effects, and technology-driven detection and prevention. The analysis revealed 84,394 citations with h-index of 122, demonstrating substantial scholarly impact. Key trends include AI-behavioral science integration, deepfake detection, emotional manipulation, and dark triad influences in digital contexts. This research provides the first comprehensive bibliometric synthesis integrating Machiavellian traits with digital deception and misinformation, offering systematic roadmap for interdisciplinary investigations.",
+      "citationCount": 0,
+      "doi": "10.37676/ekombis.v13i4.9728",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/051de2cd0b3d36ab52f0f191ab4c424af993c0e7",
+      "venue": "EKOMBIS REVIEW: Jurnal Ilmiah Ekonomi dan Bisnis",
+      "journal": {
+        "name": "EKOMBIS REVIEW: Jurnal Ilmiah Ekonomi dan Bisnis"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c9527beea1ac513412f9db0ea8f73d21063874ec",
+      "title": "ADAPT: Adaptive Camouflage Based Deception Orchestration For Trapping Advanced Persistent Threats",
+      "authors": [
+        {
+          "name": "Venkata Sai Charan Putrevu",
+          "authorId": "2178383057"
+        },
+        {
+          "name": "Subhasis Mukhopadhyay",
+          "authorId": "2074177760"
+        },
+        {
+          "name": "Subhajit Manna",
+          "authorId": "2290319926"
+        },
+        {
+          "name": "Nanda Rani",
+          "authorId": "2290318695"
+        },
+        {
+          "name": "Ansh Vaid",
+          "authorId": "2290326444"
+        },
+        {
+          "name": "Hrushikesh Chunduri",
+          "authorId": "2122020644"
+        },
+        {
+          "name": "Mohan Anand Putrevu",
+          "authorId": "2211437764"
+        },
+        {
+          "name": "S. Shukla",
+          "authorId": "2266761571"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Honeypots serve as a valuable deception technology, enabling security teams to gain insights into the behaviour patterns of attackers and investigate cyber security breaches. However, traditional honeypots prove ineffective against advanced adversaries like Advanced Persistent Threats (APT) groups due to their evasion tactics and awareness of typical honeypot solutions. This article emphasises the need to capture these attackers for enhanced threat intelligence, detection, and protection. To address this, we propose the design and deployment of a customized honeypot network based on adaptive camouflaging techniques. Our work focuses on orchestrating a behavioral honeypot network tailored for three APT groups, with strategically positioned attack paths aligning with their tactics, techniques, and procedures, covering all cyber kill chain phases. We introduce a novel approach, deploying a camouflaged chatterbox application within the honeypot network. This application offers a regular chat interface while periodically tracking attacker activity by enabling periodic log transfers. Deployed for 100 days, our orchestrated honeypot recorded 13,906,945 hits from 4,238 unique IP addresses. Our approach categorizes attackers, discerning varying levels of sophistication, and identifies attacks from Hong Kong with similarities to known Chinese threat groups. This research significantly advances honeypot technology and enhances the understanding of sophisticated threat actors\u2019 strategies in real operating networks.",
+      "citationCount": 7,
+      "doi": "10.1145/3651991",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c9527beea1ac513412f9db0ea8f73d21063874ec",
+      "venue": "DTRAP",
+      "journal": {
+        "name": "Digital Threats: Research and Practice",
+        "pages": "1 - 35",
+        "volume": "5"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "97271c3c34b919d51728ca6a8eb5aca8f5c4b362",
+      "title": "Machine learning for cognitive behavioral analysis: datasets, methods, paradigms, and research directions",
+      "authors": [
+        {
+          "name": "Priya Bhatt",
+          "authorId": "31975901"
+        },
+        {
+          "name": "Amanrose Sethi",
+          "authorId": "2226143937"
+        },
+        {
+          "name": "Vaibhav Tasgaonkar",
+          "authorId": "2196802740"
+        },
+        {
+          "name": "Jugal Shroff",
+          "authorId": "2158644516"
+        },
+        {
+          "name": "Isha Pendharkar",
+          "authorId": "2226155470"
+        },
+        {
+          "name": "Aditya Desai",
+          "authorId": "2135475701"
+        },
+        {
+          "name": "Pratyush Sinha",
+          "authorId": "2226144438"
+        },
+        {
+          "name": "Aditya Deshpande",
+          "authorId": "2226156210"
+        },
+        {
+          "name": "Gargi Joshi  Bhide",
+          "authorId": "2082352577"
+        },
+        {
+          "name": "Anil Rahate",
+          "authorId": "2121404274"
+        },
+        {
+          "name": "Priyanka Jain",
+          "authorId": "2150694403"
+        },
+        {
+          "name": "Rahee Walambe",
+          "authorId": "30744258"
+        },
+        {
+          "name": "K. Kotecha",
+          "authorId": "1794896"
+        },
+        {
+          "name": "N. K. Jain",
+          "authorId": "2226144207"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Human behaviour reflects cognitive abilities. Human cognition is fundamentally linked to the different experiences or characteristics of consciousness/emotions, such as joy, grief, anger, etc., which assists in effective communication with others. Detection and differentiation between thoughts, feelings, and behaviours are paramount in learning to control our emotions and respond more effectively in stressful circumstances. The ability to perceive, analyse, process, interpret, remember, and retrieve information while making judgments to respond correctly is referred to as Cognitive Behavior. After making a significant mark in emotion analysis, deception detection is one of the key areas to connect human behaviour, mainly in the forensic domain. Detection of lies, deception, malicious intent, abnormal behaviour, emotions, stress, etc., have significant roles in advanced stages of behavioral science. Artificial Intelligence and Machine learning (AI/ML) has helped a great deal in pattern recognition, data extraction and analysis, and interpretations. The goal of using AI and ML in behavioral sciences is to infer human behaviour, mainly for mental health or forensic investigations. The presented work provides an extensive review of the research on cognitive behaviour analysis. A parametric study is presented based on different physical characteristics, emotional behaviours, data collection sensing mechanisms, unimodal and multimodal datasets, modelling AI/ML methods, challenges, and future research directions.",
+      "citationCount": 38,
+      "doi": "10.1186/s40708-023-00196-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/97271c3c34b919d51728ca6a8eb5aca8f5c4b362",
+      "venue": "Brain Informatics",
+      "journal": {
+        "name": "Brain Informatics",
+        "volume": "10"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2f2ec52caa35919acc1303bf70f6068be3332282",
+      "title": "Multilingual Lie Detection via Emotion and Multimodal Cues",
+      "authors": [
+        {
+          "name": "Tao Guo",
+          "authorId": "2402657639"
+        },
+        {
+          "name": "Changhe Xiao",
+          "authorId": "2402655372"
+        },
+        {
+          "name": "Yiming Kan",
+          "authorId": "2400584194"
+        },
+        {
+          "name": "Zhiang Zhang",
+          "authorId": "2400647786"
+        },
+        {
+          "name": "Yaxin Zheng",
+          "authorId": "2400985079"
+        },
+        {
+          "name": "Humaira Ashraf",
+          "authorId": "2275350354"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This project presents a multilingual lie detection framework that integrates three behavioral modalities-text, audio, and visual-to identify deception using deep learning and multimodal fusion techniques. The system extracts linguistic cues using mBERT, acoustic features using Librosa, and facial emotion distributions using DeepFace. These features are synchronized and fused to train a binary classifier. Experimental results on a controlled video interview dataset demonstrate that the fusion model outperforms all unimodal baselines, achieving 88.2% accuracy. Feature importance analysis reveals that hedging phrases, tonal fluctuations, and micro-expressions are highly indicative of deceptive behavior. The proposed framework highlights the potential of artificial intelligence in crosscultural behavioral analysis and remote deception detection.",
+      "citationCount": 0,
+      "doi": "10.1109/ETNCC66224.2025.11299619",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2f2ec52caa35919acc1303bf70f6068be3332282",
+      "venue": "2025 International Conference on Emerging Trends in Networks and Computer Communications (ETNCC)",
+      "journal": {
+        "name": "2025 International Conference on Emerging Trends in Networks and Computer Communications (ETNCC)",
+        "pages": "1192-1196"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "b1243275d5bef6a02d6a6c0299bfbfd04534f2d5",
+      "title": "Leveraging Cloud-based ai and zero trust architecture to enhance U. S. cybersecurity and counteract foreign threats",
+      "authors": [
+        {
+          "name": "Ikeoluwa Kolawole",
+          "authorId": "2247964044"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The increasing sophistication of cyber threats targeting U.S. national security, critical infrastructure, and financial systems necessitates a proactive, AI-driven cybersecurity strategy. Traditional security models relying on perimeter-based defenses are insufficient against state-sponsored attacks, ransomware, and advanced persistent threats (APTs). This paper explores the transformative potential of cloud-based artificial intelligence (AI) and Zero Trust Architecture (ZTA) in fortifying U.S. cybersecurity and mitigating foreign threats. Cloud-based AI enhances threat detection, real-time anomaly identification, and automated incident response by leveraging machine learning (ML), deep neural networks, and behavioral analytics. These models analyze vast amounts of network telemetry data, endpoint activities, and encrypted communications to detect evolving attack vectors with unprecedented accuracy. By incorporating federated learning and AI-driven deception techniques, cybersecurity frameworks can proactively predict and neutralize cyber threats before they materialize. Zero Trust Architecture (ZTA) further strengthens national security by enforcing continuous authentication, micro-segmentation, and least-privilege access controls. Unlike traditional models, ZTA operates under the assumption that no entity\u2014internal or external\u2014should be inherently trusted. By integrating cloud-native security solutions with identity-centric AI models, organizations can mitigate insider threats, secure critical infrastructure, and ensure compliance with federal cybersecurity directives. This paper examines real-world applications of AI and ZTA in national defense, critical infrastructure protection, and supply chain security, addressing implementation challenges, ethical concerns, and future research directions. The findings highlight how cloud-driven AI and Zero Trust policies are essential in safeguarding the U.S. against cyber warfare, foreign espionage, and next-generation cyber threats.",
+      "citationCount": 2,
+      "doi": "10.30574/wjarr.2025.25.3.0635",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b1243275d5bef6a02d6a6c0299bfbfd04534f2d5",
+      "venue": "World Journal of Advanced Research and Reviews",
+      "journal": {
+        "name": "World Journal of Advanced Research and Reviews"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3799818c58cdc2e6de17b29e1cbae80a6ff26661",
+      "title": "DEFENDING THE METAVERSE: A SURVEY ON DEEPFAKE DETECTION AND AVATAR-BASED THREAT MITIGATION",
+      "authors": [
+        {
+          "name": "Muppidi Rajkumar",
+          "authorId": "2380997242"
+        },
+        {
+          "name": "Dr. K. Padmaja",
+          "authorId": "2380997181"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The proliferation of deepfake technologies, powered by generative adversarial networks (GANs), diffusion models, and transformer-based architectures, has led to a significant escalation in identity manipulation and misinformation. In virtual environments like the Metaverse\u2014where interaction is synchronous, embodied, and immersive\u2014the threat posed by deepfakes expands beyond traditional media falsification. This survey explores the evolution of deepfake techniques and their convergence with avatar-based deception, voice cloning, and synthetic behavioral modeling in virtual reality (VR) and extended reality (XR) platforms. It reviews state-of-the-art detection methods, including spatial-temporal models and multimodal attention-based architectures, and evaluates their applicability to the Metaverse\u2019s unique challenges. The paper also analyzes the 2D-FACT model as a foundational architecture, examines new threat vectors such as real-time avatar impersonation and AI-driven NPC manipulation, and identifies critical research gaps in detection generalization, real-time operation, explainability, and digital identity governance. In conclusion, the paper highlights the need for a next-generation deepfake detection paradigm tailored for the interactive, multimodal, and decentralized nature of the Metaverse. Future research directions emphasize avatar-aware forensics, explainable AI, privacy-preserving detection, and trust frameworks for virtual spaces.",
+      "citationCount": 0,
+      "doi": "10.12732/ijam.v38i1s.13",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3799818c58cdc2e6de17b29e1cbae80a6ff26661",
+      "venue": "International Journal of Applied Mathematics",
+      "journal": {
+        "name": "International Journal of Applied Mathematics"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3f745f48b4e2ad39e93b3c488fdb97a7ea73ab55",
+      "title": "Countering AI-Driven Adversaries: An Adaptive Deception\u200eFramework for Resilient Web Security",
+      "authors": [
+        {
+          "name": "Saeed Serwan Abdulsattar",
+          "authorId": "2378683280"
+        },
+        {
+          "name": "Hani Al-Balasmeh",
+          "authorId": "2378617881"
+        },
+        {
+          "name": "M. Al-Khalidy",
+          "authorId": "2097946739"
+        },
+        {
+          "name": "Fayzeh Abdulkareem Jaber",
+          "authorId": "2202662343"
+        },
+        {
+          "name": "Rahmeh Abdulkaeem Jaber",
+          "authorId": "2391091873"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper presents a novel deception-based cybersecurity framework that redefines web defense through adaptive, embedded traps designed to detect and contain AI-driven automated adversaries. With the rapid advancement of machine learning (ML) and large language \u200emodels (LLMs), traditional web security measures\u2014such as CAPTCHA, honeypots, and Web Application Firewalls (WAFs)\u2014have become increasingly ineffective. Modern bots can now simulate human browsing, execute JavaScript, and evade detection through the use of \u200eadaptive algorithms. The proposed framework introduces invisible, dynamically generated traps within the Document Object Model (DOM) \u200eand JavaScript layers of web applications to exploit the behavioral disparities between genuine users and automated systems.\u200e\nThese traps include hidden forms, off-screen anchor links, and randomized decoy endpoints that are imperceptible to human users but \u200etectable by automated bots. Interactions with these traps trigger behavioral analysis routines that calculate a Non-Human Interaction Likelihood (NHIL) score, a novel session-level metric that employs sigmoid activation functions to measure behavioral abnormality across multiple parameters. Based on this score, the system classifies, logs, and isolates non-human activity in real time.\u200e\nAn experimental evaluation in a test web environment demonstrated perfect classification performance, with an F1-score of 1.0, achieving \u200ecomplete detection accuracy without false positives or degradation in user experience. Page load latency increased by less than five milliseconds, confirming the framework\u2019s lightweight and seamless integration.\u200e\nBy merging adversarial design, behavioral analytics, and adaptive deception, the proposed system establishes a resilient, intelligence-driven \u200eapproach to web security. It transforms defensive architecture from reactive to proactive\u2014detecting, engaging, and neutralizing automated \u200eadversaries at the interaction layer\u2014offering a scalable model for the next generation of deception-centric cybersecurity\u200e.",
+      "citationCount": 0,
+      "doi": "10.14419/h8f10w38",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3f745f48b4e2ad39e93b3c488fdb97a7ea73ab55",
+      "venue": "International Journal of Basic and Applied Sciences",
+      "journal": {
+        "name": "International Journal of Basic and Applied Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "05bf560c8d665255e3de2aedf353b50d76f9256b",
+      "title": "Experimental Evidence That Conversational Artificial Intelligence Can Steer Consumer Behavior Without Detection",
+      "authors": [
+        {
+          "name": "Tobias Werner",
+          "authorId": "2321587156"
+        },
+        {
+          "name": "Ivan Soraperra",
+          "authorId": "2277265548"
+        },
+        {
+          "name": "Emilio Calvano",
+          "authorId": "2390013862"
+        },
+        {
+          "name": "David C. Parkes",
+          "authorId": "2321589781"
+        },
+        {
+          "name": "Iyad Rahwan",
+          "authorId": "1705156"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Conversational AI models are becoming increasingly popular and are about to replace traditional search engines for information retrieval and product discovery. This raises concerns about monetization strategies and the potential for subtle consumer manipulation. Companies may have financial incentives to steer users toward search results or products in a conversation in ways that are unnoticeable to consumers. Using a behavioral experiment, we show that conversational AI models can indeed significantly shift consumer preferences. We discuss implications and ask whether regulators are sufficiently prepared to combat potential consumer deception.",
+      "citationCount": 4,
+      "doi": null,
+      "arxivId": "2409.12143",
+      "url": "https://www.semanticscholar.org/paper/05bf560c8d665255e3de2aedf353b50d76f9256b",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "188bfac41e02742b2a705f4685acd0e45b0b90c6",
+      "title": "Survival Games: Human-LLM Strategic Showdowns under Severe Resource Scarcity",
+      "authors": [
+        {
+          "name": "Zhihong Chen",
+          "authorId": "2363406597"
+        },
+        {
+          "name": "Yiqian Yang",
+          "authorId": "2290023912"
+        },
+        {
+          "name": "Jinzhao Zhou",
+          "authorId": "2044333117"
+        },
+        {
+          "name": "Qiang Zhang",
+          "authorId": "2363546454"
+        },
+        {
+          "name": "Chin-teng Lin",
+          "authorId": "2324070926"
+        },
+        {
+          "name": "Yiqun Duan",
+          "authorId": "2242618660"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancement of large language models (LLMs) raises critical concerns about their ethical alignment, particularly in scenarios where human and AI co-exist under the conflict of interest. This work introduces an extendable, asymmetric, multi-agent simulation-based benchmarking framework to evaluate the moral behavior of LLMs in a novel human-AI co-existence setting featuring consistent living and critical resource management. Building on previous generative agent environments, we incorporate a life-sustaining system, where agents must compete or cooperate for food resources to survive, often leading to ethically charged decisions such as deception, theft, or social influence. We evaluated two types of LLM, DeepSeek and OpenAI series, in a three-agent setup (two humans, one LLM-powered robot), using adapted behavioral detection from the MACHIAVELLI framework and a custom survival-based ethics metric. Our findings reveal stark behavioral differences: DeepSeek frequently engages in resource hoarding, while OpenAI exhibits restraint, highlighting the influence of model design on ethical outcomes. Additionally, we demonstrate that prompt engineering can significantly steer LLM behavior, with jailbreaking prompts significantly enhancing unethical actions, even for highly restricted OpenAI models and cooperative prompts show a marked reduction in unethical actions. Our framework provides a reproducible testbed for quantifying LLM ethics in high-stakes scenarios, offering insights into their suitability for real-world human-AI interactions.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2505.17937",
+      "arxivId": "2505.17937",
+      "url": "https://www.semanticscholar.org/paper/188bfac41e02742b2a705f4685acd0e45b0b90c6",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.17937"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b2d090f7c975724127ce055be243f7802c5ea0a7",
+      "title": "Proactive Cyber Defense Mechanisms for Cloud Computing Environments",
+      "authors": [
+        {
+          "name": "Tirumala Ashish Kumar Manne",
+          "authorId": "2372300943"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Cloud computing has revolutionized how organizations manage infrastructure, data, and applications, but it has also introduced new security challenges.\nAs threat actors evolve with sophisticated tactics, traditional reactive security approaches are no longer sufficient to protect dynamic cloud environments.\nThis paper explores proactive cyber defense mechanisms specifically designed for cloud computing infrastructures. It highlights the shift from passive\ndetection to active threat hunting, behavioral analytics, deception strategies, and AI-driven anomaly detection. By integrating threat intelligence and\nleveraging cloud-native tools, organizations can anticipate and mitigate attacks before significant damage occurs. The paper reviews current literature,\nevaluates state-of-the-art solutions across different cloud service models (IaaS, PaaS, SaaS), and examines implementation challenges in multi-cloud and\nhybrid ecosystems. Real-world case studies and performance metrics, such as Mean Time to Detect (MTTD) and Mean Time to Respond (MTTR), are used\nto assess effectiveness. The findings emphasize the critical role of automation, real-time analytics, and continuous monitoring in building resilient cloud\ndefenses. This study offers a comprehensive framework for adopting proactive security strategies that not only reduce risk but also support compliance and\noperational continuity in complex cloud infrastructures.",
+      "citationCount": 0,
+      "doi": "10.47363/jaicc/2023(2)459",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b2d090f7c975724127ce055be243f7802c5ea0a7",
+      "venue": "Journal of Artificial Intelligence &amp; Cloud Computing",
+      "journal": {
+        "name": "Journal of Artificial Intelligence &amp; Cloud Computing"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8f836c2c311149985817a338ae4c2c422f72cff0",
+      "title": "The (in)efficacy of AI personas in deception detection experiments",
+      "authors": [
+        {
+          "name": "David M. Markowitz",
+          "authorId": "2240072649"
+        },
+        {
+          "name": "Timothy R. Levine",
+          "authorId": "2258460269"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n Artificial intelligence (AI) has recently been used to aid in deception detection and to simulate human data in social scientific research. Thus, it is important to consider how well these tools can inform both enterprises. We report 12 studies, accessed through the Viewpoints.ai research platform, where AI (gemini-1.5-flash) made veracity judgments of humans. We systematically varied the nature and duration of the communication, modality, truth-lie base rate, and AI persona. AI performed best (57.7%) when detecting truths and lies involving feelings about friends, although it was notably truth-biased (71.7%). However, in assessing cheating interrogations, AI was lie-biased by judging more than three-quarters of interviewees as cheating liars. In assessing interviews where humans perform at rates over 70%, accuracy plummeted to 15.9% with an ecological base-rate. AI yielded results different from prior human studies and therefore, we caution using certain large language models for lie detection.",
+      "citationCount": 0,
+      "doi": "10.1093/joc/jqaf034",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8f836c2c311149985817a338ae4c2c422f72cff0",
+      "venue": "Journal of Communications",
+      "journal": {
+        "name": "Journal of Communication"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "72ba37c927afa917bbfbf0240a7f610fb0fc9f4f",
+      "title": "Student Mastery or AI Deception? Analyzing ChatGPT's Assessment Proficiency and Evaluating Detection Strategies",
+      "authors": [
+        {
+          "name": "K. Wang",
+          "authorId": "2268394793"
+        },
+        {
+          "name": "Seth Akins",
+          "authorId": "2268490327"
+        },
+        {
+          "name": "Abdallah Mohammed",
+          "authorId": "2268726100"
+        },
+        {
+          "name": "Ramon Lawrence",
+          "authorId": "2268414456"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Generative AI systems such as ChatGPT have a disruptive effect on learning and assessment. Computer science requires practice to develop skills in problem solving and programming that are traditionally developed using assignments. Generative AI has the capability of completing these assignments for students with high accuracy, which dramatically increases the potential for academic integrity issues and students not achieving desired learning outcomes. This work investigates the performance of ChatGPT by evaluating it across three courses (CS1,CS2,databases). ChatGPT completes almost all introductory assessments perfectly. Existing detection methods, such as MOSS and JPlag (based on similarity metrics) and GPTzero (AI detection), have mixed success in identifying AI solutions. Evaluating instructors and teaching assistants using heuristics to distinguish between student and AI code shows that their detection is not sufficiently accurate. These observations emphasize the need for adapting assessments and improved detection methods.",
+      "citationCount": 10,
+      "doi": "10.1109/CSCI62032.2023.00268",
+      "arxivId": "2311.16292",
+      "url": "https://www.semanticscholar.org/paper/72ba37c927afa917bbfbf0240a7f610fb0fc9f4f",
+      "venue": "2023 International Conference on Computational Science and Computational Intelligence (CSCI)",
+      "journal": {
+        "name": "2023 International Conference on Computational Science and Computational Intelligence (CSCI)",
+        "pages": "1615-1621"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "74e5cf2ae7495fb000c6a4484baf811fdce2172f",
+      "title": "MAiDE-up: Multilingual Deception Detection of AI-generated Hotel Reviews",
+      "authors": [
+        {
+          "name": "Oana Ignat",
+          "authorId": "2293317558"
+        },
+        {
+          "name": "Xiaomeng Xu",
+          "authorId": "2297715355"
+        },
+        {
+          "name": "Rada Mihalcea",
+          "authorId": "2319718450"
+        }
+      ],
+      "year": 2025,
+      "abstract": ",",
+      "citationCount": 2,
+      "doi": "10.18653/v1/2025.findings-naacl.88",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/74e5cf2ae7495fb000c6a4484baf811fdce2172f",
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "journal": {
+        "pages": "1636-1653"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "a1e4cd6252f15ec7a45abee2f199d47ae6675181",
+      "title": "Applications of AI-Enabled Deception Detection Using Video, Audio, and Physiological Data: A Systematic Review",
+      "authors": [
+        {
+          "name": "S. King",
+          "authorId": "148074611"
+        },
+        {
+          "name": "T. Neal",
+          "authorId": "30274519"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Artificial intelligence-enabled deception detection is an emerging tool for identifying dishonest behavior in a wide range of applications, from security and forensics to politics and lower-risk everyday interactions, addressing the pressing need for enhanced trust and security in an increasingly digital and interconnected world. However, to date, approaches to achieve deception detection with AI have not been evaluated by application area, leaving a disconnect between approaches leveraged and their potential real-world use. Thus, this paper provides a systematic review of application areas for AI-enabled deception detection approaches following the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) methodology. Specifically, we discuss 93 articles in detail, (1) identifying common applications of automated deception detection in the literature, (2) enumerating deception detection approaches by application area, and (3) describing publicly available datasets per application area. We also identify open challenges, such as the lack of datasets that support cross-domain deception detection research. By focusing on the application areas of automated deception detection, this review helps to contextualize the surveyed literature and understand the specific challenges and requirements associated with different domains. Further, by examining various application areas, researchers can tailor their approaches and techniques to address the unique characteristics and constraints of each domain. This targeted approach increases the practical relevance and applicability of deception detection methods in real-world scenarios.",
+      "citationCount": 13,
+      "doi": "10.1109/ACCESS.2024.3462825",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a1e4cd6252f15ec7a45abee2f199d47ae6675181",
+      "venue": "IEEE Access",
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "135207-135240",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "45170ec75b2a26ba1d16ac4a3e8801f7232e48fa",
+      "title": "AI-Driven Micro-Expression Analysis for Deception Detection",
+      "authors": [
+        {
+          "name": "Ramgopal Kashyap",
+          "authorId": "2281342604"
+        },
+        {
+          "name": "Shanti Rathore",
+          "authorId": "2404514302"
+        },
+        {
+          "name": "Madhu Malini John",
+          "authorId": "2404507760"
+        },
+        {
+          "name": "D. Bavkar",
+          "authorId": "2081618105"
+        },
+        {
+          "name": "Advin Manhar",
+          "authorId": "2079086548"
+        },
+        {
+          "name": "J. Kotwal",
+          "authorId": "73634504"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1109/ICTBIG68706.2025.11323586",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/45170ec75b2a26ba1d16ac4a3e8801f7232e48fa",
+      "venue": "2025 IEEE 5th International Conference on ICT in Business Industry & Government (ICTBIG)",
+      "journal": {
+        "name": "2025 IEEE 5th International Conference on ICT in Business Industry & Government (ICTBIG)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "53a3c538b9906a4354a765fae258db9b07231f1d",
+      "title": "Behavioral detection of emotional, high-stakes deception: Replication in a registered report.",
+      "authors": [
+        {
+          "name": "Leanne ten Brinke",
+          "authorId": "117244366"
+        },
+        {
+          "name": "Samantha Sprigings",
+          "authorId": "2241891759"
+        },
+        {
+          "name": "Cameo J. V. Brown",
+          "authorId": "2241982044"
+        },
+        {
+          "name": "Chloe Kam",
+          "authorId": "2177490830"
+        },
+        {
+          "name": "Hugues Delmas",
+          "authorId": "2084966738"
+        }
+      ],
+      "year": 2025,
+      "abstract": "OBJECTIVE\nWe replicated research by ten Brinke and Porter (2012), who reported that a combination of four behavioral cues (word count, tentative words, upper face surprise, lower face happiness) could accurately discriminate deceptive murderers from genuinely distressed individuals, pleading for the return of a missing relative.\n\n\nHYPOTHESES\nWe hypothesized that each of the four behavioral cues identified in the original study would be similarly related (i.e., size, direction, significance) to veracity in a novel set of pleaders. With these cues as predictors, we also hypothesized that logistic regression models-separately testing the original and replication samples-would produce similar accuracy rates exceeding chance in discriminating genuine from deceptive pleaders.\n\n\nMETHOD\nWe gathered a new sample of public appeals, including 82 genuine and 14 deceptive pleaders. After establishing ground truth, we transcribed video-recorded pleas and coded them for the presence of upper face surprise and lower face happiness. We used Linguistic Inquiry and Word Count to determine word count and the proportion of tentative words in each appeal.\n\n\nRESULTS\nWe found support for several hypotheses. Tentative words were used significantly more by deceptive (vs. genuine) pleaders in both the original and replication samples. Deceptive pleaders used significantly fewer words in both samples, although this relationship was significant only in the original sample. Liars in both samples smiled more than truth-tellers, although this relationship was statistically significant only in the replication sample. However, predictive accuracy was poor and did not differ from chance in the replication sample.\n\n\nCONCLUSIONS\nFindings do not provide a tidy picture of the reliability of behavioral cues to deception. Although some behavioral cues did replicate across samples, others did not. More research will be necessary to understand the factors that produce variable findings across samples, despite using the same methods of investigation. (PsycInfo Database Record (c) 2025 APA, all rights reserved).",
+      "citationCount": 1,
+      "doi": "10.1037/lhb0000596",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/53a3c538b9906a4354a765fae258db9b07231f1d",
+      "venue": "Law and Human Behavior",
+      "journal": {
+        "name": "Law and human behavior"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "93d03abb87166ea1b5bdedbd077f03aee0d5c53c",
+      "title": "Deception detection in educational AI: challenges for Japanese middle school students in interacting with generative AI robots",
+      "authors": [
+        {
+          "name": "Ahmed Salem",
+          "authorId": "2317095466"
+        },
+        {
+          "name": "Kaoru Sumi",
+          "authorId": "2317017035"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Educational materials that utilize generative AI (e.g., ChatGPT) have been developed, thus, allowing students to learn through conversations with robots or agents. However, if these artificial entities provide incorrect information (hallucinating), it could lead to confusion among students. To investigate whether students can detect lies from these artificial entities, we conducted an experiment using the social robot Furhat and we make it engage in various types of deceptive interactions. Twenty-two Japanese middle school students participated in ten teaching sessions with Furhat using a human and an anime facial appearances while employing different types of deception: Lying, Paltering, Pandering, and Bullshit. The results revealed that the majority of students were deceived by those lies. Additionally, the robot's facial appearance (i.e., social agency) affected both the learning effectiveness and the likelihood of being deceived. We conclude that an anime robot face is recommended to be used as it excelled in learning effectiveness as it attracts students attention. An anime face also provided protection against deceptive techniques due to its low social agency which leads to ineffectiveness in persuasion and deception. This study underscores the importance of preparing AI-based educational tools and scripts carefully to prevent the dissemination of false information produced through generative AI hallucinations to students.",
+      "citationCount": 2,
+      "doi": "10.3389/frai.2024.1493348",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/93d03abb87166ea1b5bdedbd077f03aee0d5c53c",
+      "venue": "Frontiers Artif. Intell.",
+      "journal": {
+        "name": "Frontiers in Artificial Intelligence",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ab126958166a82b775051f0b0d5f3befc85249b3",
+      "title": "Deception Detection Deep Learning Comprehensive system Utilizing Explainable AI",
+      "authors": [
+        {
+          "name": "Suhaib Salah",
+          "authorId": "2292748618"
+        },
+        {
+          "name": "Tarek Khater",
+          "authorId": "81957285"
+        },
+        {
+          "name": "Eqab R. F. Almajali",
+          "authorId": "31001976"
+        },
+        {
+          "name": "Wasiq Khan",
+          "authorId": "2292747554"
+        },
+        {
+          "name": "A. Hussain",
+          "authorId": "2175056686"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Deception detection plays a vital role in various domains, from security and law enforcement to human behavior analysis. In this paper, we propose a comprehensive system for deception detection that leverages S&A smart sensing device, deep transfer learning, deep learning techniques, and explainable artificial intelligence. Our approach combines visual, auditory, thermal, cardiovascular, and respiratory cues, offering enhanced accuracy and resistance to countermeasures. Deep Transfer Learning is employed to adapt pre-trained models to the deception detection task, overcoming data limitations. Incorporating Explainable AI techniques enhances transparency and interpretability, fostering trust and collaboration in human-machine interactions. Our research lays the groundwork for future advancements in deception detection technology, addressing challenges and providing promising opportunities in the realm of deception detection.",
+      "citationCount": 2,
+      "doi": "10.1109/DeSE60595.2023.10468817",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab126958166a82b775051f0b0d5f3befc85249b3",
+      "venue": "International Conference on Developments in eSystems Engineering",
+      "journal": {
+        "name": "2023 16th International Conference on Developments in eSystems Engineering (DeSE)",
+        "pages": "713-720"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "eb86d8c132eb8190d11b0c7e31cd4f1cf522261a",
+      "title": "Explainability in AI-based behavioral malware detection systems",
+      "authors": [
+        {
+          "name": "Antonio Galli",
+          "authorId": "2244553004"
+        },
+        {
+          "name": "Valerio La Gatta",
+          "authorId": "2193906729"
+        },
+        {
+          "name": "Vincenzo Moscato",
+          "authorId": "2279840625"
+        },
+        {
+          "name": "Marco Postiglione",
+          "authorId": "2095559430"
+        },
+        {
+          "name": "Giancarlo Sperl\u00ed",
+          "authorId": "2682488"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 53,
+      "doi": "10.1016/j.cose.2024.103842",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eb86d8c132eb8190d11b0c7e31cd4f1cf522261a",
+      "venue": "Computers & security",
+      "journal": {
+        "name": "Comput. Secur.",
+        "pages": "103842",
+        "volume": "141"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d5cac20f93c42eb1dd06d82c7971ba3385af3abe",
+      "title": "The art of deception: humanizing AI to outsmart detection",
+      "authors": [
+        {
+          "name": "Taseef Ayub",
+          "authorId": "2318216186"
+        },
+        {
+          "name": "Rayees Ahmad Malla",
+          "authorId": "2318216162"
+        },
+        {
+          "name": "Mashood Yousuf Khan",
+          "authorId": "2319049834"
+        },
+        {
+          "name": "S. A. Ganaie",
+          "authorId": "66795311"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Purpose\nThe study aims to investigate the influence of HIX.AI, an artificial intelligence (AI) tool that humanizes the generated content, on the detection capabilities of AI-generated text detectors.\n\nDesign/methodology/approach\nThe study investigates the reliability of six AI-generated content detection tools by passing ten essays, five each generated using Chat Generative Pre-Trained Transformer (ChatGPT) and Bard (Gemini) before and after passing through HIX.AI, which humanizes the AI-generated content.\n\nFindings\nThe study found that the selected AI-generated text detectors identified the generated content with inconsistencies. Some of the essays were falsely identified as human-written by a few detectors, indicating that the detectors are unreliable. Post-HIX.AI application found that all the essays were passed as human-written except two, which identified as AI-generated and mixed content by two separate detectors.\n\nPractical implications\nThe findings present the evolving field of AI-generated text detectors and the tools that can bypass the detectors highlighting the difficulties in identifying the generated content in the presence of the humanization tool. Passing the generated content as human-written has serious consequences, especially in academics. Hence, the study recommends more robust detectors to distinguish human-written and AI-generated content accurately.\n\nOriginality/value\nThe study contributes to the existing literature on AI text detectors and highlights the challenges that humanization tools pose in identifying AI-generated text by AI text detectors.\n",
+      "citationCount": 3,
+      "doi": "10.1108/gkmc-03-2024-0133",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d5cac20f93c42eb1dd06d82c7971ba3385af3abe",
+      "venue": "Global Knowledge Memory and Communication",
+      "journal": {
+        "name": "Global Knowledge, Memory and Communication"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a41ca43d693ed0a3a862bfb6e7b35624fd8aa941",
+      "title": "DeceptionBench: A Comprehensive Benchmark for AI Deception Behaviors in Real-world Scenarios",
+      "authors": [
+        {
+          "name": "Yao Huang",
+          "authorId": "2297222423"
+        },
+        {
+          "name": "Yitong Sun",
+          "authorId": "2274931008"
+        },
+        {
+          "name": "Yichi Zhang",
+          "authorId": "2243430472"
+        },
+        {
+          "name": "Ruochen Zhang",
+          "authorId": "2333531639"
+        },
+        {
+          "name": "Yinpeng Dong",
+          "authorId": "2288392121"
+        },
+        {
+          "name": "Xingxing Wei",
+          "authorId": "2275212335"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Despite the remarkable advances of Large Language Models (LLMs) across diverse cognitive tasks, the rapid enhancement of these capabilities also introduces emergent deceptive behaviors that may induce severe risks in high-stakes deployments. More critically, the characterization of deception across realistic real-world scenarios remains underexplored. To bridge this gap, we establish DeceptionBench, the first benchmark that systematically evaluates how deceptive tendencies manifest across different societal domains, what their intrinsic behavioral patterns are, and how extrinsic factors affect them. Specifically, on the static count, the benchmark encompasses 150 meticulously designed scenarios in five domains, i.e., Economy, Healthcare, Education, Social Interaction, and Entertainment, with over 1,000 samples, providing sufficient empirical foundations for deception analysis. On the intrinsic dimension, we explore whether models exhibit self-interested egoistic tendencies or sycophantic behaviors that prioritize user appeasement. On the extrinsic dimension, we investigate how contextual factors modulate deceptive outputs under neutral conditions, reward-based incentivization, and coercive pressures. Moreover, we incorporate sustained multi-turn interaction loops to construct a more realistic simulation of real-world feedback dynamics. Extensive experiments across LLMs and Large Reasoning Models (LRMs) reveal critical vulnerabilities, particularly amplified deception under reinforcement dynamics, demonstrating that current models lack robust resistance to manipulative contextual cues and the urgent need for advanced safeguards against various deception behaviors. Code and resources are publicly available at https://github.com/Aries-iai/DeceptionBench.",
+      "citationCount": 1,
+      "doi": "10.48550/arXiv.2510.15501",
+      "arxivId": "2510.15501",
+      "url": "https://www.semanticscholar.org/paper/a41ca43d693ed0a3a862bfb6e7b35624fd8aa941",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.15501"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4fd08b5e7ec7f3fc4ff012b5cac63018764c03a3",
+      "title": "Improving Human Deception Detection Using Algorithmic Feedback",
+      "authors": [
+        {
+          "name": "Marta Serra-Garcia",
+          "authorId": "1398007271"
+        },
+        {
+          "name": "U. Gneezy",
+          "authorId": "2852955"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Can algorithms help people detect deception in high-stakes strategic interactions? Participants watching the preplay communication of contestants in the TV show Golden Balls display a limited ability to predict contestants\u2019 behavior, whereas algorithms do significantly better. To increase participants\u2019 accuracy, we provide them with algorithmic advice by flagging videos for which an algorithm predicts a high likelihood of cooperation or defection. We test how the effectiveness of flags depends on their timing. We show that participants rely significantly more on flags shown before they watch the videos than flags shown after they watch them. These findings show that the timing of algorithmic feedback is key for its adoption. This paper was accepted by Marie-Claire Villeval, behavioral economics and decision analysis. Funding: Funding provided by an Innovation Grant for Inclusive Research Excellence at UC San Diego. Supplemental Material: The online appendix and data files are available at https://doi.org/10.1287/mnsc.2023.02792 .",
+      "citationCount": 7,
+      "doi": "10.2139/ssrn.4495855",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4fd08b5e7ec7f3fc4ff012b5cac63018764c03a3",
+      "venue": "Social Science Research Network",
+      "journal": {
+        "name": "SSRN Electronic Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7ab7b66055fe2adc2a6e6a4248394d5b9cadb9b3",
+      "title": "A Lightweight Visual Deception Detection Method Using Dynamic Images and a Customized SmallCNN\u2013BiLSTM Architecture",
+      "authors": [
+        {
+          "name": "Thi Bich Phuong Man",
+          "authorId": "2373333638"
+        },
+        {
+          "name": "T. Le",
+          "authorId": "2179538838"
+        },
+        {
+          "name": "Lu Tu Nguyen",
+          "authorId": "2321056727"
+        },
+        {
+          "name": "T. Ngo",
+          "authorId": "2265670294"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception detection has been a topic of interest for nearly a century and has applications in many practical areas such as law, security, and recruitment, where accurately assessing human behavior can lead to better decision-making. Traditional deception detection methods often rely on physiological signals, such as polygraphs, which are invasive and susceptible to bias due to individual differences in physiological characteristics. Meanwhile, visual data is a non-invasive source of information, easy to collect, and contains many non-verbal behavioral cues. Most current visual-based deception detection methods process data at the frame-level using features such as action units and eye gaze, which do not fully take advantage of temporal dynamics. This paper has proposed a lightweight and efficient deception detection method based on visual data, utilizing dynamic images and a SmallCNN-BiLSTM ensemble model for feature extraction and time-series modeling. Specifically, dynamic images help synthesize essential motion information into a single image, reduce noise from irrelevant small movements, and optimize computational cost compared to processing each frame individually. Bi-LSTM enables the capture of temporal dependencies in both directions (past and future), allowing the model to learn a more complete context to distinguish deceptive behavior. Experimental results show that the proposed method achieves competitive accuracy, while reducing computational costs and is suitable for deployment in real-world applications.",
+      "citationCount": 0,
+      "doi": "10.1109/KSE68178.2025.11309681",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7ab7b66055fe2adc2a6e6a4248394d5b9cadb9b3",
+      "venue": "International Conference on Knowledge and Systems Engineering",
+      "journal": {
+        "name": "2025 17th International Conference on Knowledge and System Engineering (KSE)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "dbe8bc7fcaa7d9fbbcdbc7d1e3a9e3623cedaccd",
+      "title": "Advance Deception Detection using Multi-Modal Analysis",
+      "authors": [
+        {
+          "name": "Krisha Patel",
+          "authorId": "2368661138"
+        },
+        {
+          "name": "Priyanshi Airen",
+          "authorId": "2368460193"
+        },
+        {
+          "name": "Swayam Singh",
+          "authorId": "2368474658"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Humans have consistently failed to convincingly cheat detection, relying in the past upon intuition or polygraph, both being fundamentally faulty in reliability. Advances in artificial intelligence (AI), machine learning, and computer vision have made it possible for more effective and efficient deception detection systems. This paper provides a cutting-edge multimodal deception detection system that integrates text, video, image, and audio analysis to identify untruthful behavior effectively. The proposed real-time system employs Bidirectional LSTM networks for text processing, vocal feature extraction using TensorFlow-Based models, and real-time vision pipelines with OpenCV to detect visual deception indicators such as microexpressions and eye movements. Early multimodal fusion is conducted in the process of data management, increasing synchronization and accuracy over the traditional late fusion techniques. Experimented with against our own implementation on the Dolos and PolitiFact datasets, our model registered substantial performance metrics of precision (85. 12%), recall (82. 12%), and F1 score (83. 98%), indicating it can differentiate between deceitful and genuine actions strongly. The model further has dynamic thresholds to enable greater sensitivity to inconclusive cases with some more tuning to be achieved. Our solution despite data limitation challenges and computation cost remains an important milestone to enabling accurate real-time multimodal deception detection that can be applied in various industries including law enforcement, human resource management, and security.",
+      "citationCount": 1,
+      "doi": "10.1109/RMKMATE64874.2025.11042349",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dbe8bc7fcaa7d9fbbcdbc7d1e3a9e3623cedaccd",
+      "venue": "2025 2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering (RMKMATE)",
+      "journal": {
+        "name": "2025 2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering (RMKMATE)",
+        "pages": "1-6"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "17071f10745555073e7eafa535a67bfae3e379fe",
+      "title": "DecepBench: Benchmarking Multimodal Deception Detection",
+      "authors": [
+        {
+          "name": "Ethan Braverman",
+          "authorId": "2375486720"
+        },
+        {
+          "name": "Vittesh Maganti",
+          "authorId": "2375483333"
+        },
+        {
+          "name": "Nysa Lalye",
+          "authorId": "2375483358"
+        },
+        {
+          "name": "Akhil Ganti",
+          "authorId": "2375407727"
+        },
+        {
+          "name": "Michael Lu",
+          "authorId": "2358786710"
+        },
+        {
+          "name": "Kevin Zhu",
+          "authorId": "2358776886"
+        },
+        {
+          "name": "Vasu Sharma",
+          "authorId": "2348193755"
+        },
+        {
+          "name": "Sean O'Brien",
+          "authorId": "2348096381"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deception detection is crucial in domains such as security, forensics, and legal proceedings, as well as to ensure the reliability of AI systems. However, current approaches are limited by the lack of generalizable and interpretable benchmarks built on large and diverse datasets. To address this gap, we introduce DecepBench, a comprehensive and robust benchmark for multimodal deception detection. DecepBench includes an enhanced version of the DOLOS dataset (Guo et al., 2023), the largest game-show deception dataset (1,700 labeled video clips with audio). We augment each video clip with transcripts, introducing a third modality (text) and incorporating deception-related features identified in psychological research. We employ explainable methods to evaluate the relevance of key deception cues, providing insights into model limitations and guiding future improvements. Our enhancements to DO-LOS, combined with these interpretable analyses, yield improved performance and a deeper understanding of multimodal deception detection.",
+      "citationCount": 0,
+      "doi": "10.18653/v1/2025.sicon-1.3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/17071f10745555073e7eafa535a67bfae3e379fe",
+      "venue": "Proceedings of the Third Workshop on Social Influence in Conversations (SICon 2025)",
+      "journal": {
+        "name": "Proceedings of the Third Workshop on Social Influence in Conversations (SICon 2025)"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "50ddc0a332e7d0ad053a2feac2d3485e9c7ab9b3",
+      "title": "Adaptive Deception Framework with Behavioral Analysis for Enhanced Cybersecurity Defense",
+      "authors": [
+        {
+          "name": "Basil Abdullah AL-Zahrani",
+          "authorId": "2383978553"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper presents CADL (Cognitive-Adaptive Deception Layer), an adaptive deception framework achieving 99.88% detection rate with 0.13% false positive rate on the CICIDS2017 dataset. The framework employs ensemble machine learning (Random Forest, XGBoost, Neural Networks) combined with behavioral profiling to identify and adapt responses to network intrusions. Through a coordinated signal bus architecture, security components share real-time intelligence, enabling collective decision-making. The system profiles attackers based on temporal patterns and deploys customized deception strategies across five escalation levels. Evaluation on 50,000 CICIDS2017 test samples demonstrates that CADL significantly outperforms traditional intrusion detection systems (Snort: 71.2%, Suricata: 68.5%) while maintaining production-ready false positive rates. The framework's behavioral analysis achieves 89% accuracy in classifying attacker profiles. We provide open-source implementation and transparent performance metrics, offering an accessible alternative to commercial deception platforms costing $150-400 per host annually.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2510.02424",
+      "arxivId": "2510.02424",
+      "url": "https://www.semanticscholar.org/paper/50ddc0a332e7d0ad053a2feac2d3485e9c7ab9b3",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2510.02424"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "70e8509ece8f9d8d7d31ebdf632352640f30abe2",
+      "title": "Multimodal Deception Detection via Cognitively Guided Inconsistency Modeling",
+      "authors": [
+        {
+          "name": "Hao Li",
+          "authorId": "2313711929"
+        },
+        {
+          "name": "Weiyang Tian",
+          "authorId": "2395599447"
+        },
+        {
+          "name": "Haiyang Xie",
+          "authorId": "2269960331"
+        },
+        {
+          "name": "Zechao Hu",
+          "authorId": "2313353928"
+        },
+        {
+          "name": "Zhengwei Yang",
+          "authorId": "2149232317"
+        },
+        {
+          "name": "Zheng Wang",
+          "authorId": "2313668499"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deceptive communication imposes elevated cognitive load, as individuals must fabricate content, inhibit truth, and manage impression across multiple expressive channels. Psychological research reveals some characteristic effects under this burden: modality leakage, where individuals selectively lose control over less-monitored channels such as vocal prosody, and uncertainty escalation, where internal conflict induces hesitation and signal ambiguity. These phenomena suggest that deception is neither uniformly expressed nor confidently delivered\u2014posing challenges for fusion-based detection methods that presume modality consistency and decision certainty. Motivated by these insights, we propose a cognitively grounded framework for multimodal deception detection. First, we introduce Modality-Level Mixup, a novel augmentation strategy that simulates partial deception by selectively replacing modalities in deceptive samples with truthful counterparts, thereby modeling real-world asymmetries in expressive control. Second, we propose Entropy-based Supervision, a confidence-aware training objective that penalizes overconfident predictions on deceptive samples and promotes sharper decisions on truthful ones, effectively aligning learning signals with psychological uncertainty. Together, these contributions enhance the model's ability to capture subtle, asymmetric, and ambiguous patterns of deceptive behavior. Experiments on the MMDD 2025 Phase II benchmark demonstrate significant improvements over strong baselines and prior competition submissions. Code is available at https://github.com/lihao921/CogDeception-MMDD25.",
+      "citationCount": 0,
+      "doi": "10.1145/3728425.3759922",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/70e8509ece8f9d8d7d31ebdf632352640f30abe2",
+      "venue": "Proceedings of the 1st International Workshop &amp; Challenge on Subtle Visual Computing",
+      "journal": {
+        "name": "Proceedings of the 1st International Workshop & Challenge on Subtle Visual Computing"
+      },
+      "publicationTypes": [
+        "Book"
+      ]
+    },
+    {
+      "paperId": "53bd983d5d37ca0f5d3921873923ed610c3d9996",
+      "title": "GetGNN: Generative Text Graph Neural Networks for Robust Deception Detection",
+      "authors": [
+        {
+          "name": "Yong-Han Chen",
+          "authorId": "2203027488"
+        },
+        {
+          "name": "Cheng-Te Li",
+          "authorId": "2277810141"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Deceptive content, from social bots to fake hotel reviews, erodes trust in markets, media, and democratic discourse. Detecting it is an urgent AI-for-social-good problem, yet real deployments confront three hurdles that current models handle only in isolation: scarce and noisy labels, and extreme class imbalance. We present Generative Text Graph Neural Networks (GetGNN), the first framework to address all three simultaneously. GetGNN embeds words and documents in a heterogeneous graph, then generates new minority documents by interpolating deceptive embeddings and predicts their edges via a self-supervised link reconstructor. A joint objective couples edge generation with classification, letting the model propagate limited supervision while diluting corrupted labels. Extensive experiments on the PAN-19 Twitter-bot and Spam hotel-review benchmarks show that GetGNN significantly boosts detection performance over state-of-the-art baselines under every combination of label scarcity and noise. By providing a principled, data-efficient, and noise-resilient detector, GetGNN advances the practical safeguarding of online ecosystems for the public good.",
+      "citationCount": 0,
+      "doi": "10.1145/3748699.3749827",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/53bd983d5d37ca0f5d3921873923ed610c3d9996",
+      "venue": "Conference on Information Technology for Social Good",
+      "journal": {
+        "name": "Proceedings of the 2025 International Conference on Information Technology for Social Good"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "da107918ab69a0d917f540c548d708dbe37a95d3",
+      "title": "Self and other-perceived deception detection abilities are highly correlated but unassociated with objective detection ability: Examining the detection consensus effect",
+      "authors": [
+        {
+          "name": "David M. Markowitz",
+          "authorId": "2240072649"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Subjective lying rates are often strongly and positively correlated. Called the deception consensus effect, people who lie often tend to believe others lie often, too. The present paper evaluated how this cognitive bias also extends to deception detection. Two studies (Study 1: N\u2009=\u2009180 students; Study 2: N\u2009=\u2009250 people from the general public) had participants make 10 veracity judgments based on videotaped interviews, and also indicate subjective detection abilities (self and other). Subjective, perceived detection abilities were significantly linked, supporting a detection consensus effect, yet they were unassociated with objective detection accuracy. More overconfident detectors\u2014those whose subjective detection accuracy was greater than their objective detection accuracy\u2014reported telling more white and big lies, cheated more on a behavioral task, and were more ideologically conservative than less overconfident detectors. This evidence supports and extends contextual models of deception (e.g., the COLD model), highlighting possible (a)symmetries in subjective and objective veracity assessments.",
+      "citationCount": 6,
+      "doi": "10.1038/s41598-024-68435-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/da107918ab69a0d917f540c548d708dbe37a95d3",
+      "venue": "Scientific Reports",
+      "journal": {
+        "name": "Scientific Reports",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

@@ -1,0 +1,994 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Neel Nanda interpretability",
+  "results": [
+    {
+      "paperId": "447b7fa233fe9b129001f0bb7f5c4a900de29e5d",
+      "title": "SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability",
+      "authors": [
+        {
+          "name": "Adam Karvonen",
+          "authorId": "2314115348"
+        },
+        {
+          "name": "Can Rager",
+          "authorId": "2257034392"
+        },
+        {
+          "name": "Johnny Lin",
+          "authorId": "2349741236"
+        },
+        {
+          "name": "Curt Tigges",
+          "authorId": "2218145401"
+        },
+        {
+          "name": "Joseph Bloom",
+          "authorId": "2308099558"
+        },
+        {
+          "name": "David Chanin",
+          "authorId": "2311692851"
+        },
+        {
+          "name": "Yeu-Tong Lau",
+          "authorId": "2258718745"
+        },
+        {
+          "name": "Eoin Farrell",
+          "authorId": "2327865707"
+        },
+        {
+          "name": "Callum McDougall",
+          "authorId": "2257001295"
+        },
+        {
+          "name": "Kola Ayonrinde",
+          "authorId": "2325947690"
+        },
+        {
+          "name": "Matthew Wearden",
+          "authorId": "2349653440"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        },
+        {
+          "name": "Samuel Marks",
+          "authorId": "2225941937"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Sparse autoencoders (SAEs) are a popular technique for interpreting language model activations, and there is extensive recent work on improving SAE effectiveness. However, most prior work evaluates progress using unsupervised proxy metrics with unclear practical relevance. We introduce SAEBench, a comprehensive evaluation suite that measures SAE performance across eight diverse metrics, spanning interpretability, feature disentanglement and practical applications like unlearning. To enable systematic comparison, we open-source a suite of over 200 SAEs across eight recently proposed SAE architectures and training algorithms. Our evaluation reveals that gains on proxy metrics do not reliably translate to better practical performance. For instance, while Matryoshka SAEs slightly underperform on existing proxy metrics, they substantially outperform other architectures on feature disentanglement metrics; moreover, this advantage grows with SAE scale. By providing a standardized framework for measuring progress in SAE development, SAEBench enables researchers to study scaling trends and make nuanced comparisons between different SAE architectures and training methodologies. Our interactive interface enables researchers to flexibly visualize relationships between metrics across hundreds of open-source SAEs at: www.neuronpedia.org/sae-bench",
+      "citationCount": 51,
+      "doi": "10.48550/arXiv.2503.09532",
+      "arxivId": "2503.09532",
+      "url": "https://www.semanticscholar.org/paper/447b7fa233fe9b129001f0bb7f5c4a900de29e5d",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2503.09532"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "f680d47a51a0e470fcb228bf0110c026535ead1b",
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "authors": [
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Lawrence Chan",
+          "authorId": "2072836382"
+        },
+        {
+          "name": "Tom Lieberum",
+          "authorId": "2162470507"
+        },
+        {
+          "name": "Jess Smith",
+          "authorId": "2200391337"
+        },
+        {
+          "name": "J. Steinhardt",
+          "authorId": "5164568"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Neural networks often exhibit emergent behavior, where qualitatively new capabilities arise from scaling up the amount of parameters, training data, or training steps. One approach to understanding emergence is to find continuous \\textit{progress measures} that underlie the seemingly discontinuous qualitative changes. We argue that progress measures can be found via mechanistic interpretability: reverse-engineering learned behaviors into their individual components. As a case study, we investigate the recently-discovered phenomenon of ``grokking'' exhibited by small transformers trained on modular addition tasks. We fully reverse engineer the algorithm learned by these networks, which uses discrete Fourier transforms and trigonometric identities to convert addition to rotation about a circle. We confirm the algorithm by analyzing the activations and weights and by performing ablations in Fourier space. Based on this understanding, we define progress measures that allow us to study the dynamics of training and split training into three continuous phases: memorization, circuit formation, and cleanup. Our results show that grokking, rather than being a sudden shift, arises from the gradual amplification of structured mechanisms encoded in the weights, followed by the later removal of memorizing components.",
+      "citationCount": 626,
+      "doi": "10.48550/arXiv.2301.05217",
+      "arxivId": "2301.05217",
+      "url": "https://www.semanticscholar.org/paper/f680d47a51a0e470fcb228bf0110c026535ead1b",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2301.05217"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8a94d7fb8b580621979396042aef89dbd6ec37fb",
+      "title": "Open Problems in Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Lee Sharkey",
+          "authorId": "2267502247"
+        },
+        {
+          "name": "Bilal Chughtai",
+          "authorId": "2301155771"
+        },
+        {
+          "name": "Joshua Batson",
+          "authorId": "2342505933"
+        },
+        {
+          "name": "Jack Lindsey",
+          "authorId": "2342505989"
+        },
+        {
+          "name": "Jeff Wu",
+          "authorId": "2342640282"
+        },
+        {
+          "name": "Lucius Bushnaq",
+          "authorId": "2124877853"
+        },
+        {
+          "name": "Nicholas Goldowsky-Dill",
+          "authorId": "2302155854"
+        },
+        {
+          "name": "Stefan Heimersheim",
+          "authorId": "2256989665"
+        },
+        {
+          "name": "Alejandro Ortega",
+          "authorId": "2355649897"
+        },
+        {
+          "name": "Joseph Bloom",
+          "authorId": "2308099558"
+        },
+        {
+          "name": "Stella Biderman",
+          "authorId": "2398809603"
+        },
+        {
+          "name": "Adri\u00e0 Garriga-Alonso",
+          "authorId": "1388513000"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Jessica Rumbelow",
+          "authorId": "2249532084"
+        },
+        {
+          "name": "Martin Wattenberg",
+          "authorId": "2237803620"
+        },
+        {
+          "name": "Nandi Schoots",
+          "authorId": "1485377354"
+        },
+        {
+          "name": "Joseph Miller",
+          "authorId": "2310773898"
+        },
+        {
+          "name": "Eric J. Michaud",
+          "authorId": "2293723716"
+        },
+        {
+          "name": "Stephen Casper",
+          "authorId": "2333442622"
+        },
+        {
+          "name": "Max Tegmark",
+          "authorId": "2256989384"
+        },
+        {
+          "name": "William Saunders",
+          "authorId": "2310699728"
+        },
+        {
+          "name": "David Bau",
+          "authorId": "2284682524"
+        },
+        {
+          "name": "Eric Todd",
+          "authorId": "145290788"
+        },
+        {
+          "name": "Atticus Geiger",
+          "authorId": "2315137132"
+        },
+        {
+          "name": "Mor Geva",
+          "authorId": "22245981"
+        },
+        {
+          "name": "Jesse Hoogland",
+          "authorId": "2282535402"
+        },
+        {
+          "name": "Daniel Murfet",
+          "authorId": "2257004100"
+        },
+        {
+          "name": "Thomas McGrath",
+          "authorId": "2256981829"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Mechanistic interpretability aims to understand the computational mechanisms underlying neural networks' capabilities in order to accomplish concrete scientific and engineering goals. Progress in this field thus promises to provide greater assurance over AI system behavior and shed light on exciting scientific questions about the nature of intelligence. Despite recent progress toward these goals, there are many open problems in the field that require solutions before many scientific and practical benefits can be realized: Our methods require both conceptual and practical improvements to reveal deeper insights; we must figure out how best to apply our methods in pursuit of specific goals; and the field must grapple with socio-technical challenges that influence and are influenced by our work. This forward-facing review discusses the current frontier of mechanistic interpretability and the open problems that the field may benefit from prioritizing.",
+      "citationCount": 91,
+      "doi": "10.48550/arXiv.2501.16496",
+      "arxivId": "2501.16496",
+      "url": "https://www.semanticscholar.org/paper/8a94d7fb8b580621979396042aef89dbd6ec37fb",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2501.16496"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c5d82b27897633d6c3b2e452a0dc6c019d4a1565",
+      "title": "Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control",
+      "authors": [
+        {
+          "name": "Aleksandar Makelov",
+          "authorId": "17775913"
+        },
+        {
+          "name": "Georg Lange",
+          "authorId": "2268489534"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Disentangling model activations into meaningful features is a central problem in interpretability. However, the absence of ground-truth for these features in realistic scenarios makes validating recent approaches, such as sparse dictionary learning, elusive. To address this challenge, we propose a framework for evaluating feature dictionaries in the context of specific tasks, by comparing them against \\emph{supervised} feature dictionaries. First, we demonstrate that supervised dictionaries achieve excellent approximation, control, and interpretability of model computations on the task. Second, we use the supervised dictionaries to develop and contextualize evaluations of unsupervised dictionaries along the same three axes. We apply this framework to the indirect object identification (IOI) task using GPT-2 Small, with sparse autoencoders (SAEs) trained on either the IOI or OpenWebText datasets. We find that these SAEs capture interpretable features for the IOI task, but they are less successful than supervised features in controlling the model. Finally, we observe two qualitative phenomena in SAE training: feature occlusion (where a causally relevant concept is robustly overshadowed by even slightly higher-magnitude ones in the learned features), and feature over-splitting (where binary features split into many smaller, less interpretable features). We hope that our framework will provide a useful step towards more objective and grounded evaluations of sparse dictionary learning methods.",
+      "citationCount": 61,
+      "doi": "10.48550/arXiv.2405.08366",
+      "arxivId": "2405.08366",
+      "url": "https://www.semanticscholar.org/paper/c5d82b27897633d6c3b2e452a0dc6c019d4a1565",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2405.08366"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ce89a8d1e6d9add71726bd3a4593a17cc524b281",
+      "title": "Towards eliciting latent knowledge from LLMs with mechanistic interpretability",
+      "authors": [
+        {
+          "name": "Bartosz Cywi'nski",
+          "authorId": "2275612726"
+        },
+        {
+          "name": "Emil Ryd",
+          "authorId": "2362500535"
+        },
+        {
+          "name": "Senthooran Rajamanoharan",
+          "authorId": "35185194"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As language models become more powerful and sophisticated, it is crucial that they remain trustworthy and reliable. There is concerning preliminary evidence that models may attempt to deceive or keep secrets from their operators. To explore the ability of current techniques to elicit such hidden knowledge, we train a Taboo model: a language model that describes a specific secret word without explicitly stating it. Importantly, the secret word is not presented to the model in its training data or prompt. We then investigate methods to uncover this secret. First, we evaluate non-interpretability (black-box) approaches. Subsequently, we develop largely automated strategies based on mechanistic interpretability techniques, including logit lens and sparse autoencoders. Evaluation shows that both approaches are effective in eliciting the secret word in our proof-of-concept setting. Our findings highlight the promise of these approaches for eliciting hidden knowledge and suggest several promising avenues for future work, including testing and refining these methods on more complex model organisms. This work aims to be a step towards addressing the crucial problem of eliciting secret knowledge from language models, thereby contributing to their safe and reliable deployment.",
+      "citationCount": 5,
+      "doi": "10.48550/arXiv.2505.14352",
+      "arxivId": "2505.14352",
+      "url": "https://www.semanticscholar.org/paper/ce89a8d1e6d9add71726bd3a4593a17cc524b281",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.14352"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "61393e6ad8262f2fbf1ef980608c3deae5fb1afd",
+      "title": "Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching",
+      "authors": [
+        {
+          "name": "Aleksandar Makelov",
+          "authorId": "17775913"
+        },
+        {
+          "name": "Georg Lange",
+          "authorId": "2268489534"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Mechanistic interpretability aims to understand model behaviors in terms of specific, interpretable features, often hypothesized to manifest as low-dimensional subspaces of activations. Specifically, recent studies have explored subspace interventions (such as activation patching) as a way to simultaneously manipulate model behavior and attribute the features behind it to given subspaces. In this work, we demonstrate that these two aims diverge, potentially leading to an illusory sense of interpretability. Counterintuitively, even if a subspace intervention makes the model's output behave as if the value of a feature was changed, this effect may be achieved by activating a dormant parallel pathway leveraging another subspace that is causally disconnected from model outputs. We demonstrate this phenomenon in a distilled mathematical example, in two real-world domains (the indirect object identification task and factual recall), and present evidence for its prevalence in practice. In the context of factual recall, we further show a link to rank-1 fact editing, providing a mechanistic explanation for previous work observing an inconsistency between fact editing performance and fact localization. However, this does not imply that activation patching of subspaces is intrinsically unfit for interpretability. To contextualize our findings, we also show what a success case looks like in a task (indirect object identification) where prior manual circuit analysis informs an understanding of the location of a feature. We explore the additional evidence needed to argue that a patched subspace is faithful.",
+      "citationCount": 37,
+      "doi": "10.48550/arXiv.2311.17030",
+      "arxivId": "2311.17030",
+      "url": "https://www.semanticscholar.org/paper/61393e6ad8262f2fbf1ef980608c3deae5fb1afd",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2311.17030"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "101f98fa7fdaf338fe5e3c492903c31f633b4f0c",
+      "title": "Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control",
+      "authors": [
+        {
+          "name": "Aleksandar Makelov",
+          "authorId": "17775913"
+        },
+        {
+          "name": "Georg Lange",
+          "authorId": "2268489534"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/101f98fa7fdaf338fe5e3c492903c31f633b4f0c",
+      "venue": "International Conference on Learning Representations",
+      "journal": null,
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "48b269e979cb4cf8cadd7016244e36ce37a71139",
+      "title": "Because we have LLMs, we Can and Should Pursue Agentic Interpretability",
+      "authors": [
+        {
+          "name": "Been Kim",
+          "authorId": "2261151633"
+        },
+        {
+          "name": "John Hewitt",
+          "authorId": "2344832640"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2367045798"
+        },
+        {
+          "name": "Noah Fiedel",
+          "authorId": "22640071"
+        },
+        {
+          "name": "Oyvind Tafjord",
+          "authorId": "3385516"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The era of Large Language Models (LLMs) presents a new opportunity for interpretability--agentic interpretability: a multi-turn conversation with an LLM wherein the LLM proactively assists human understanding by developing and leveraging a mental model of the user, which in turn enables humans to develop better mental models of the LLM. Such conversation is a new capability that traditional `inspective' interpretability methods (opening the black-box) do not use. Having a language model that aims to teach and explain--beyond just knowing how to talk--is similar to a teacher whose goal is to teach well, understanding that their success will be measured by the student's comprehension. While agentic interpretability may trade off completeness for interactivity, making it less suitable for high-stakes safety situations with potentially deceptive models, it leverages a cooperative model to discover potentially superhuman concepts that can improve humans' mental model of machines. Agentic interpretability introduces challenges, particularly in evaluation, due to what we call `human-entangled-in-the-loop' nature (humans responses are integral part of the algorithm), making the design and evaluation difficult. We discuss possible solutions and proxy goals. As LLMs approach human parity in many tasks, agentic interpretability's promise is to help humans learn the potentially superhuman concepts of the LLMs, rather than see us fall increasingly far from understanding them.",
+      "citationCount": 3,
+      "doi": "10.48550/arXiv.2506.12152",
+      "arxivId": "2506.12152",
+      "url": "https://www.semanticscholar.org/paper/48b269e979cb4cf8cadd7016244e36ce37a71139",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.12152"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f92cb19ed8b3aced017b2d0c4f00dc4ae0f5701a",
+      "title": "Open Problems in Mechanistic Interpretability",
+      "authors": [
+        {
+          "name": "Lee Sharkey",
+          "authorId": "2267502247"
+        },
+        {
+          "name": "Bilal Chughtai",
+          "authorId": "2301155771"
+        },
+        {
+          "name": "Joshua Batson",
+          "authorId": "2342505933"
+        },
+        {
+          "name": "Jack Lindsey",
+          "authorId": "2342505989"
+        },
+        {
+          "name": "Jeff Wu",
+          "authorId": "2342640282"
+        },
+        {
+          "name": "Lucius Bushnaq",
+          "authorId": "2124877853"
+        },
+        {
+          "name": "Nicholas Goldowsky-Dill",
+          "authorId": "2302155854"
+        },
+        {
+          "name": "Stefan Heimersheim",
+          "authorId": "2256989665"
+        },
+        {
+          "name": "Alejandro Ortega",
+          "authorId": "2355649897"
+        },
+        {
+          "name": "Joseph Isaac Bloom",
+          "authorId": "2367734630"
+        },
+        {
+          "name": "Stella Biderman",
+          "authorId": "2398809603"
+        },
+        {
+          "name": "Adri\u00e0 Garriga-Alonso",
+          "authorId": "2312326461"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Jessica Rumbelow",
+          "authorId": "2249532084"
+        },
+        {
+          "name": "Martin Wattenberg",
+          "authorId": "2237803620"
+        },
+        {
+          "name": "Nandi Schoots",
+          "authorId": "2386533241"
+        },
+        {
+          "name": "Joseph Miller",
+          "authorId": "2310773898"
+        },
+        {
+          "name": "William Saunders",
+          "authorId": "2310699728"
+        },
+        {
+          "name": "Eric J. Michaud",
+          "authorId": "2293723716"
+        },
+        {
+          "name": "Stephen Casper",
+          "authorId": "2284064052"
+        },
+        {
+          "name": "Max Tegmark",
+          "authorId": "2303603715"
+        },
+        {
+          "name": "David Bau",
+          "authorId": "2284682524"
+        },
+        {
+          "name": "Eric Todd",
+          "authorId": "145290788"
+        },
+        {
+          "name": "Atticus Geiger",
+          "authorId": "2315137132"
+        },
+        {
+          "name": "Mor Geva",
+          "authorId": "22245981"
+        },
+        {
+          "name": "Jesse Hoogland",
+          "authorId": "2282535402"
+        },
+        {
+          "name": "Daniel Murfet",
+          "authorId": "2257004100"
+        },
+        {
+          "name": "Tom McGrath",
+          "authorId": "2378711621"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f92cb19ed8b3aced017b2d0c4f00dc4ae0f5701a",
+      "venue": "Trans. Mach. Learn. Res.",
+      "journal": {
+        "name": "Trans. Mach. Learn. Res.",
+        "volume": "2025"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "890efc891e9b59e8cb5e8c244428f6b81ec0a4da",
+      "title": "Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2",
+      "authors": [
+        {
+          "name": "Tom Lieberum",
+          "authorId": "2162470507"
+        },
+        {
+          "name": "Senthooran Rajamanoharan",
+          "authorId": "35185194"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        },
+        {
+          "name": "Lewis Smith",
+          "authorId": "2298470325"
+        },
+        {
+          "name": "Nicolas Sonnerat",
+          "authorId": "2873921"
+        },
+        {
+          "name": "Vikrant Varma",
+          "authorId": "144711236"
+        },
+        {
+          "name": "J'anos Kram'ar",
+          "authorId": "2223767739"
+        },
+        {
+          "name": "Anca Dragan",
+          "authorId": "2064066935"
+        },
+        {
+          "name": "Rohin Shah",
+          "authorId": "2290032398"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Sparse autoencoders (SAEs) are an unsupervised method for learning a sparse decomposition of a neural network\u2019s latent representations into seemingly interpretable features.Despite recent excitement about their potential, research applications outside of industry are limited by the high cost of training a comprehensive suite of SAEs.In this work, we introduce Gemma Scope, an open suite of JumpReLU SAEs trained on all layers and sub-layers of Gemma 2 2B and 9B and select layers of Gemma 2 27B base models.We primarily train SAEs on the Gemma 2 pre-trained models, but additionally release SAEs trained on instruction-tuned Gemma 2 9B for comparison.We evaluate the quality of each SAE on standard metrics and release these results.We hope that by releasing these SAE weights, we can help make more ambitious safety and interpretability research easier for the community. Weights and a tutorial can be found at https://huggingface.co/google/gemma-scope and an interactive demo can be found at https://neuronpedia.org/gemma-scope.",
+      "citationCount": 228,
+      "doi": "10.48550/arXiv.2408.05147",
+      "arxivId": "2408.05147",
+      "url": "https://www.semanticscholar.org/paper/890efc891e9b59e8cb5e8c244428f6b81ec0a4da",
+      "venue": "BlackboxNLP Workshop on Analyzing and Interpreting Neural Networks for NLP",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2408.05147"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1a80429448d7379ca1157a33a36bd5130257e3e9",
+      "title": "Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders",
+      "authors": [
+        {
+          "name": "Senthooran Rajamanoharan",
+          "authorId": "35185194"
+        },
+        {
+          "name": "Tom Lieberum",
+          "authorId": "2162470507"
+        },
+        {
+          "name": "Nicolas Sonnerat",
+          "authorId": "2873921"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        },
+        {
+          "name": "Vikrant Varma",
+          "authorId": "144711236"
+        },
+        {
+          "name": "J\u00e1nos Kram\u00e1r",
+          "authorId": "2312071755"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Sparse autoencoders (SAEs) are a promising unsupervised approach for identifying causally relevant and interpretable linear features in a language model's (LM) activations. To be useful for downstream tasks, SAEs need to decompose LM activations faithfully; yet to be interpretable the decomposition must be sparse -- two objectives that are in tension. In this paper, we introduce JumpReLU SAEs, which achieve state-of-the-art reconstruction fidelity at a given sparsity level on Gemma 2 9B activations, compared to other recent advances such as Gated and TopK SAEs. We also show that this improvement does not come at the cost of interpretability through manual and automated interpretability studies. JumpReLU SAEs are a simple modification of vanilla (ReLU) SAEs -- where we replace the ReLU with a discontinuous JumpReLU activation function -- and are similarly efficient to train and run. By utilising straight-through-estimators (STEs) in a principled manner, we show how it is possible to train JumpReLU SAEs effectively despite the discontinuous JumpReLU function introduced in the SAE's forward pass. Similarly, we use STEs to directly train L0 to be sparse, instead of training on proxies such as L1, avoiding problems like shrinkage.",
+      "citationCount": 174,
+      "doi": "10.48550/arXiv.2407.14435",
+      "arxivId": "2407.14435",
+      "url": "https://www.semanticscholar.org/paper/1a80429448d7379ca1157a33a36bd5130257e3e9",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.14435"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f56b77a4bc90c61d4351a39a578f4c1f4a967830",
+      "title": "Sparse Autoencoders Do Not Find Canonical Units of Analysis",
+      "authors": [
+        {
+          "name": "Patrick Leask",
+          "authorId": "2344617006"
+        },
+        {
+          "name": "Bart Bussmann",
+          "authorId": "2344619695"
+        },
+        {
+          "name": "Michael Pearce",
+          "authorId": "2344622369"
+        },
+        {
+          "name": "Joseph Bloom",
+          "authorId": "2308099558"
+        },
+        {
+          "name": "Curt Tigges",
+          "authorId": "2218145401"
+        },
+        {
+          "name": "N. A. Moubayed",
+          "authorId": "1711819"
+        },
+        {
+          "name": "Lee Sharkey",
+          "authorId": "2241776844"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2025,
+      "abstract": "A common goal of mechanistic interpretability is to decompose the activations of neural networks into features: interpretable properties of the input computed by the model. Sparse autoencoders (SAEs) are a popular method for finding these features in LLMs, and it has been postulated that they can be used to find a \\textit{canonical} set of units: a unique and complete list of atomic features. We cast doubt on this belief using two novel techniques: SAE stitching to show they are incomplete, and meta-SAEs to show they are not atomic. SAE stitching involves inserting or swapping latents from a larger SAE into a smaller one. Latents from the larger SAE can be divided into two categories: \\emph{novel latents}, which improve performance when added to the smaller SAE, indicating they capture novel information, and \\emph{reconstruction latents}, which can replace corresponding latents in the smaller SAE that have similar behavior. The existence of novel features indicates incompleteness of smaller SAEs. Using meta-SAEs -- SAEs trained on the decoder matrix of another SAE -- we find that latents in SAEs often decompose into combinations of latents from a smaller SAE, showing that larger SAE latents are not atomic. The resulting decompositions are often interpretable; e.g. a latent representing ``Einstein'' decomposes into ``scientist'', ``Germany'', and ``famous person''. Even if SAEs do not find canonical units of analysis, they may still be useful tools. We suggest that future research should either pursue different approaches for identifying such units, or pragmatically choose the SAE size suited to their task. We provide an interactive dashboard to explore meta-SAEs: https://metasaes.streamlit.app/",
+      "citationCount": 37,
+      "doi": "10.48550/arXiv.2502.04878",
+      "arxivId": "2502.04878",
+      "url": "https://www.semanticscholar.org/paper/f56b77a4bc90c61d4351a39a578f4c1f4a967830",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2502.04878"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a0b775b9ff82ce1fb7dd34d53a7d09f70b171895",
+      "title": "How to use and interpret activation patching",
+      "authors": [
+        {
+          "name": "Stefan Heimersheim",
+          "authorId": "2256989665"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Activation patching is a popular mechanistic interpretability technique, but has many subtleties regarding how it is applied and how one may interpret the results. We provide a summary of advice and best practices, based on our experience using this technique in practice. We include an overview of the different ways to apply activation patching and a discussion on how to interpret the results. We focus on what evidence patching experiments provide about circuits, and on the choice of metric and associated pitfalls.",
+      "citationCount": 94,
+      "doi": "10.48550/arXiv.2404.15255",
+      "arxivId": "2404.15255",
+      "url": "https://www.semanticscholar.org/paper/a0b775b9ff82ce1fb7dd34d53a7d09f70b171895",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2404.15255"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3c6da6f1601aee99b8e5b8dcf2d21c42d9252b04",
+      "title": "Transcoders Find Interpretable LLM Feature Circuits",
+      "authors": [
+        {
+          "name": "Jacob Dunefsky",
+          "authorId": "2307080479"
+        },
+        {
+          "name": "Philippe Chlenski",
+          "authorId": "1390188099"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "A key goal in mechanistic interpretability is circuit analysis: finding sparse subgraphs of models corresponding to specific behaviors or capabilities. However, MLP sublayers make fine-grained circuit analysis on transformer-based language models difficult. In particular, interpretable features -- such as those found by sparse autoencoders (SAEs) -- are typically linear combinations of extremely many neurons, each with its own nonlinearity to account for. Circuit analysis in this setting thus either yields intractably large circuits or fails to disentangle local and global behavior. To address this we explore transcoders, which seek to faithfully approximate a densely activating MLP layer with a wider, sparsely-activating MLP layer. We introduce a novel method for using transcoders to perform weights-based circuit analysis through MLP sublayers. The resulting circuits neatly factorize into input-dependent and input-invariant terms. We then successfully train transcoders on language models with 120M, 410M, and 1.4B parameters, and find them to perform at least on par with SAEs in terms of sparsity, faithfulness, and human-interpretability. Finally, we apply transcoders to reverse-engineer unknown circuits in the model, and we obtain novel insights regarding the\"greater-than circuit\"in GPT2-small. Our results suggest that transcoders can prove effective in decomposing model computations involving MLPs into interpretable circuits. Code is available at https://github.com/jacobdunefsky/transcoder_circuits/.",
+      "citationCount": 84,
+      "doi": "10.48550/arXiv.2406.11944",
+      "arxivId": "2406.11944",
+      "url": "https://www.semanticscholar.org/paper/3c6da6f1601aee99b8e5b8dcf2d21c42d9252b04",
+      "venue": "Neural Information Processing Systems",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.11944"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ee480ff85412144887ab8f48eef37db273d9d952",
+      "title": "Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models",
+      "authors": [
+        {
+          "name": "Javier Ferrando",
+          "authorId": "1751450782"
+        },
+        {
+          "name": "Oscar Obeso",
+          "authorId": "2307010353"
+        },
+        {
+          "name": "Senthooran Rajamanoharan",
+          "authorId": "35185194"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Hallucinations in large language models are a widespread problem, yet the mechanisms behind whether models will hallucinate are poorly understood, limiting our ability to solve this problem. Using sparse autoencoders as an interpretability tool, we discover that a key part of these mechanisms is entity recognition, where the model detects if an entity is one it can recall facts about. Sparse autoencoders uncover meaningful directions in the representation space, these detect whether the model recognizes an entity, e.g. detecting it doesn't know about an athlete or a movie. This suggests that models can have self-knowledge: internal representations about their own capabilities. These directions are causally relevant: capable of steering the model to refuse to answer questions about known entities, or to hallucinate attributes of unknown entities when it would otherwise refuse. We demonstrate that despite the sparse autoencoders being trained on the base model, these directions have a causal effect on the chat model's refusal behavior, suggesting that chat finetuning has repurposed this existing mechanism. Furthermore, we provide an initial exploration into the mechanistic role of these directions in the model, finding that they disrupt the attention of downstream heads that typically move entity attributes to the final token.",
+      "citationCount": 72,
+      "doi": "10.48550/arXiv.2411.14257",
+      "arxivId": "2411.14257",
+      "url": "https://www.semanticscholar.org/paper/ee480ff85412144887ab8f48eef37db273d9d952",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2411.14257"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bb26227a94ddb2b0088a23e2ec0a170c40bc4d78",
+      "title": "Emergent Linear Representations in World Models of Self-Supervised Sequence Models",
+      "authors": [
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Andrew Lee",
+          "authorId": "2237957247"
+        },
+        {
+          "name": "Martin Wattenberg",
+          "authorId": "2237803620"
+        }
+      ],
+      "year": 2023,
+      "abstract": "How do sequence models represent their decision-making process? Prior work suggests that Othello-playing neural network learned nonlinear models of the board state (Li et al., 2023a). In this work, we provide evidence of a closely related linear representation of the board. In particular, we show that probing for \u201cmy colour\u201d vs. \u201copponent\u2019s colour\u201d may be a simple yet powerful way to interpret the model\u2019s internal state. This precise understanding of the internal representations allows us to control the model\u2019s behaviour with simple vector arithmetic. Linear representations enable significant interpretability progress, which we demonstrate with further exploration of how the world model is computed.",
+      "citationCount": 247,
+      "doi": "10.48550/arXiv.2309.00941",
+      "arxivId": "2309.00941",
+      "url": "https://www.semanticscholar.org/paper/bb26227a94ddb2b0088a23e2ec0a170c40bc4d78",
+      "venue": "BlackboxNLP Workshop on Analyzing and Interpreting Neural Networks for NLP",
+      "journal": {
+        "pages": "16-30"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c16c05ca0a3d24519405849fd24604fc1ce47751",
+      "title": "Towards Best Practices of Activation Patching in Language Models: Metrics and Methods",
+      "authors": [
+        {
+          "name": "Fred Zhang",
+          "authorId": "2109244660"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Mechanistic interpretability seeks to understand the internal mechanisms of machine learning models, where localization -- identifying the important model components -- is a key step. Activation patching, also known as causal tracing or interchange intervention, is a standard technique for this task (Vig et al., 2020), but the literature contains many variants with little consensus on the choice of hyperparameters or methodology. In this work, we systematically examine the impact of methodological details in activation patching, including evaluation metrics and corruption methods. In several settings of localization and circuit discovery in language models, we find that varying these hyperparameters could lead to disparate interpretability results. Backed by empirical observations, we give conceptual arguments for why certain metrics or methods may be preferred. Finally, we provide recommendations for the best practices of activation patching going forwards.",
+      "citationCount": 173,
+      "doi": "10.48550/arXiv.2309.16042",
+      "arxivId": "2309.16042",
+      "url": "https://www.semanticscholar.org/paper/c16c05ca0a3d24519405849fd24604fc1ce47751",
+      "venue": "International Conference on Learning Representations",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2309.16042"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5969eff0e72e4a5bc0c7392c700be74a01ac2822",
+      "title": "A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations",
+      "authors": [
+        {
+          "name": "Bilal Chughtai",
+          "authorId": "2301155771"
+        },
+        {
+          "name": "Lawrence Chan",
+          "authorId": "2072836382"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Universality is a key hypothesis in mechanistic interpretability -- that different models learn similar features and circuits when trained on similar tasks. In this work, we study the universality hypothesis by examining how small neural networks learn to implement group composition. We present a novel algorithm by which neural networks may implement composition for any finite group via mathematical representation theory. We then show that networks consistently learn this algorithm by reverse engineering model logits and weights, and confirm our understanding using ablations. By studying networks of differing architectures trained on various groups, we find mixed evidence for universality: using our algorithm, we can completely characterize the family of circuits and features that networks learn on this task, but for a given network the precise circuits learned -- as well as the order they develop -- are arbitrary.",
+      "citationCount": 124,
+      "doi": "10.48550/arXiv.2302.03025",
+      "arxivId": "2302.03025",
+      "url": "https://www.semanticscholar.org/paper/5969eff0e72e4a5bc0c7392c700be74a01ac2822",
+      "venue": "International Conference on Machine Learning",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2302.03025"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ab60ca888dfe60bc7a50f47bd483737523943682",
+      "title": "Thought Anchors: Which LLM Reasoning Steps Matter?",
+      "authors": [
+        {
+          "name": "Paul C. Bogdan",
+          "authorId": "2339777782"
+        },
+        {
+          "name": "Uzay Macar",
+          "authorId": "2114970738"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Current frontier large-language models rely on reasoning to achieve state-of-the-art performance. Many existing interpretability are limited in this area, as standard methods have been designed to study single forward passes of a model rather than the multi-token computational steps that unfold during reasoning. We argue that analyzing reasoning traces at the sentence level is a promising approach to understanding reasoning processes. We introduce a black-box method that measures each sentence's counterfactual importance by repeatedly sampling replacement sentences from the model, filtering for semantically different ones, and continuing the chain of thought from that point onwards to quantify the sentence's impact on the distribution of final answers. We discover that certain sentences can have an outsized impact on the trajectory of the reasoning trace and final answer. We term these sentences \\textit{thought anchors}. These are generally planning or uncertainty management sentences, and specialized attention heads consistently attend from subsequent sentences to thought anchors. We further show that examining sentence-sentence causal links within a reasoning trace gives insight into a model's behavior. Such information can be used to predict a problem's difficulty and the extent different question domains involve sequential or diffuse reasoning. As a proof-of-concept, we demonstrate that our techniques together provide a practical toolkit for analyzing reasoning models by conducting a detailed case study of how the model solves a difficult math problem, finding that our techniques yield a consistent picture of the reasoning trace's structure. We provide an open-source tool (thought-anchors.com) for visualizing the outputs of our methods on further problems. The convergence across our methods shows the potential of sentence-level analysis for a deeper understanding of reasoning models.",
+      "citationCount": 43,
+      "doi": "10.48550/arXiv.2506.19143",
+      "arxivId": "2506.19143",
+      "url": "https://www.semanticscholar.org/paper/ab60ca888dfe60bc7a50f47bd483737523943682",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2506.19143"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "efbe48e4c17a097f4feaec8cf9dec40218a27a87",
+      "title": "Interpreting Attention Layer Outputs with Sparse Autoencoders",
+      "authors": [
+        {
+          "name": "Connor Kissane",
+          "authorId": "2308098747"
+        },
+        {
+          "name": "Robert Krzyzanowski",
+          "authorId": "2308099173"
+        },
+        {
+          "name": "Joseph Bloom",
+          "authorId": "2308099558"
+        },
+        {
+          "name": "Arthur Conmy",
+          "authorId": "2131632310"
+        },
+        {
+          "name": "Neel Nanda",
+          "authorId": "2051128902"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Decomposing model activations into interpretable components is a key open problem in mechanistic interpretability. Sparse autoencoders (SAEs) are a popular method for decomposing the internal activations of trained transformers into sparse, interpretable features, and have been applied to MLP layers and the residual stream. In this work we train SAEs on attention layer outputs and show that also here SAEs find a sparse, interpretable decomposition. We demonstrate this on transformers from several model families and up to 2B parameters. We perform a qualitative study of the features computed by attention layers, and find multiple families: long-range context, short-range context and induction features. We qualitatively study the role of every head in GPT-2 Small, and estimate that at least 90% of the heads are polysemantic, i.e. have multiple unrelated roles. Further, we show that Sparse Autoencoders are a useful tool that enable researchers to explain model behavior in greater detail than prior work. For example, we explore the mystery of why models have so many seemingly redundant induction heads, use SAEs to motivate the hypothesis that some are long-prefix whereas others are short-prefix, and confirm this with more rigorous analysis. We use our SAEs to analyze the computation performed by the Indirect Object Identification circuit (Wang et al.), validating that the SAEs find causally meaningful intermediate variables, and deepening our understanding of the semantics of the circuit. We open-source the trained SAEs and a tool for exploring arbitrary prompts through the lens of Attention Output SAEs.",
+      "citationCount": 38,
+      "doi": "10.48550/arXiv.2406.17759",
+      "arxivId": "2406.17759",
+      "url": "https://www.semanticscholar.org/paper/efbe48e4c17a097f4feaec8cf9dec40218a27a87",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2406.17759"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}
