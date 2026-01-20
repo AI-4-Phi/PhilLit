@@ -89,6 +89,10 @@ logs/
 #project
 local_workspace/
 
+# Reviews (kept locally, not tracked in git)
+reviews/*
+!reviews/.gitkeep
+
 # Claude Code local files (not shared)
 .claude/settings.local.json
 
