@@ -2,9 +2,9 @@
 
 This guide covers setup for both local development and Claude's cloud environment.
 
-## Quick Start: Claude Cloud Environment
+## Quick Start: Claude Code Cloud
 
-If you're using Claude Code in the cloud (via claude.ai, the Claude desktop app, or the Claude mobile app):
+If you're using [Claude Code Cloud](https://docs.anthropic.com/en/docs/claude-code/cloud) (the sandboxed environment available through claude.ai or the Claude apps):
 
 1. **Fork this repository** (optional but recommended for persistence)
 2. **Open in Claude Code** via the GitHub integration
@@ -26,8 +26,9 @@ OPENALEX_EMAIL=your@email.com
 
 **Alternative: Persistent keys via private fork**
 1. Fork this repo and make it private
-2. Add `.env` to your fork (it's already in `.gitignore`)
-3. Use your private fork with Claude Code
+2. Remove `.env` from `.gitignore` in your fork
+3. Create and commit your `.env` file with API keys
+4. Use your private fork with Claude Code
 
 ---
 
@@ -59,9 +60,13 @@ cp .env.example .env
 
 See `.env.example` for required and recommended variables. Variables in `.env` take priority over your shell environment and are automatically loaded when Claude Code starts.
 
-**Get API keys:**
-- Brave Search: https://brave.com/search/api/
-- Semantic Scholar: https://www.semanticscholar.org/product/api
+**Required:**
+- **BRAVE_API_KEY**: Get one at https://brave.com/search/api/
+- **CROSSREF_MAILTO**: Your email address (no signup required; used for CrossRef's polite pool)
+
+**Recommended:**
+- **S2_API_KEY**: Get one at https://www.semanticscholar.org/product/api (improves rate limits)
+- **OPENALEX_EMAIL**: Your email address (no signup required; enables polite pool access)
 
 **Verify your setup:**
 ```bash
