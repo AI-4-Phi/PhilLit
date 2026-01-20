@@ -1,4 +1,4 @@
-Repository to (a) author academic literature reviews using agent orchestration, and (b) improve these agents.
+**PhilReview** is a multi-agent system to (a) author academic literature reviews for philosophy research, and (b) improve these agents.
 
 # Mode
 

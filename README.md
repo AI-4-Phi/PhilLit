@@ -1,6 +1,6 @@
-# Philo-SOTA
+# PhilReview
 
-Multi-agent system for generating focused, insight-driven state-of-the-art literature reviews with verified bibliographies. Designed for research proposals where analytical depth, citation integrity, and reference-manager-ready outputs matter.
+PhilReview is a multi-agent system for generating focused, insight-driven literature reviews with verified bibliographies. Designed for philosophy research proposals where analytical depth, citation integrity, and reference-manager-ready outputs matter.
 
 ## Highlights
 

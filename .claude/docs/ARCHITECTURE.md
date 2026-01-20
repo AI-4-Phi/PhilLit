@@ -118,7 +118,7 @@ reviews/[project-name]/
 │   ├── synthesis-section-*.md
 │   └── literature-domain-*.bib
 │
-├── state-of-the-art-review-final.md      # (Optional) Editorial output
+├── literature-review-edited.md           # (Optional) Editorial output
 ├── editorial-notes.md
 │
 └── executive-assessment.md               # (Optional) Novelty output
