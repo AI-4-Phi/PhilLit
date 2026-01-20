@@ -42,6 +42,7 @@ Explicitly blocks destructive operations for safety. These cannot be approved ev
   "Bash(source:*)",  // Activate Python virtual environment
   "Bash(echo:*)",    // Output text (for debugging)
   "Bash(cat:*)",     // Concatenate files (for assembly)
+  "Bash(pytest:*)",  // Run tests
 
   // Literature review workflow - unrestricted within reviews/ directory
   "Write(reviews/**)",  // Create files in reviews/ and subdirectories

@@ -36,12 +36,15 @@ Domain researchers and citation validators use the `philosophy-research` skill (
 |--------|---------|-----|
 | `s2_search.py` | Paper discovery | Semantic Scholar |
 | `s2_citations.py` | Citation traversal | Semantic Scholar |
+| `s2_batch.py` | Batch paper details | Semantic Scholar |
+| `s2_recommend.py` | Find similar papers | Semantic Scholar |
 | `search_openalex.py` | Broad academic search | OpenAlex (250M+ works) |
 | `search_arxiv.py` | Preprint search | arXiv |
 | `search_sep.py` | SEP discovery | Brave → SEP |
 | `fetch_sep.py` | SEP content extraction | Direct SEP |
 | `search_philpapers.py` | PhilPapers search | Brave → PhilPapers |
 | `verify_paper.py` | DOI verification | CrossRef |
+| `check_setup.py` | Environment verification | — |
 
 **Key benefit**: Papers discovered via structured APIs are verified at search time, eliminating the need for a separate validation phase.
 
