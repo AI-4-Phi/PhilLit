@@ -28,11 +28,18 @@ For retry logic with exponential backoff:
         break
 """
 
-import fcntl
 import random
+import tempfile
 import time
 from pathlib import Path
 from typing import Optional
+
+# File locking: fcntl on Unix, no-op on Windows (rate limiting still works via timestamps)
+try:
+    import fcntl
+    HAS_FCNTL = True
+except ImportError:
+    HAS_FCNTL = False
 
 
 class RateLimiter:
@@ -41,8 +48,8 @@ class RateLimiter:
     Uses file locking to prevent race conditions.
     """
 
-    # Lock file directory - use /tmp for cross-session persistence
-    LOCK_DIR = Path("/tmp/philosophy_research_ratelimits")
+    # Lock file directory - use system temp dir for cross-platform compatibility
+    LOCK_DIR = Path(tempfile.gettempdir()) / "philosophy_research_ratelimits"
 
     def __init__(self, api_name: str, min_interval: float):
         """
@@ -66,7 +73,8 @@ class RateLimiter:
             The number of seconds waited (0 if no wait was needed)
         """
         with open(self.lock_file, "a+") as f:
-            fcntl.flock(f, fcntl.LOCK_EX)
+            if HAS_FCNTL:
+                fcntl.flock(f, fcntl.LOCK_EX)
             try:
                 f.seek(0)
                 content = f.read().strip()
@@ -80,7 +88,8 @@ class RateLimiter:
                 wait_time = self.min_interval - elapsed
                 time.sleep(wait_time)
 
-            fcntl.flock(f, fcntl.LOCK_UN)
+            if HAS_FCNTL:
+                fcntl.flock(f, fcntl.LOCK_UN)
 
         self._last_wait_time = wait_time
         return wait_time
@@ -88,9 +97,11 @@ class RateLimiter:
     def record(self) -> None:
         """Record that a request was made. Call AFTER each successful API request."""
         with open(self.lock_file, "w") as f:
-            fcntl.flock(f, fcntl.LOCK_EX)
+            if HAS_FCNTL:
+                fcntl.flock(f, fcntl.LOCK_EX)
             f.write(str(time.time()))
-            fcntl.flock(f, fcntl.LOCK_UN)
+            if HAS_FCNTL:
+                fcntl.flock(f, fcntl.LOCK_UN)
 
     def wait_and_record(self) -> float:
         """
@@ -219,7 +230,7 @@ def list_active_limiters() -> list[str]:
     Returns:
         List of API names with active lock files
     """
-    lock_dir = Path("/tmp/philosophy_research_ratelimits")
+    lock_dir = Path(tempfile.gettempdir()) / "philosophy_research_ratelimits"
     if not lock_dir.exists():
         return []
 
@@ -237,7 +248,7 @@ def clear_all_limiters() -> int:
     Returns:
         Number of lock files removed
     """
-    lock_dir = Path("/tmp/philosophy_research_ratelimits")
+    lock_dir = Path(tempfile.gettempdir()) / "philosophy_research_ratelimits"
     if not lock_dir.exists():
         return 0
 

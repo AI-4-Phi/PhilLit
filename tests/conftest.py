@@ -9,6 +9,7 @@ These tests validate:
 """
 
 import sys
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -159,7 +160,7 @@ def mock_crossref_response():
 @pytest.fixture(autouse=True)
 def clean_rate_limit_files():
     """Clean up rate limit files before and after each test."""
-    lock_dir = Path("/tmp/philosophy_research_ratelimits")
+    lock_dir = Path(tempfile.gettempdir()) / "philosophy_research_ratelimits"
 
     # Cleanup before test
     if lock_dir.exists():
@@ -183,7 +184,7 @@ def clean_rate_limit_files():
 @pytest.fixture
 def clean_cache():
     """Clean up cache files for tests."""
-    cache_dir = Path("/tmp/philosophy_research_cache")
+    cache_dir = Path(tempfile.gettempdir()) / "philosophy_research_cache"
 
     # Cleanup before test
     if cache_dir.exists():

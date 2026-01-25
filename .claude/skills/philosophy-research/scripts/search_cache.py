@@ -21,12 +21,13 @@ import hashlib
 import json
 import os
 import pickle
+import tempfile
 import time
 from pathlib import Path
 from typing import Any, Optional
 
-# Cache configuration
-CACHE_DIR = Path("/tmp/philosophy_research_cache")
+# Cache configuration - use system temp dir for cross-platform compatibility
+CACHE_DIR = Path(tempfile.gettempdir()) / "philosophy_research_cache"
 DEFAULT_TTL = 7 * 24 * 60 * 60  # 7 days in seconds
 
 
