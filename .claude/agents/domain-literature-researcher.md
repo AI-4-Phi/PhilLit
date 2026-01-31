@@ -48,11 +48,14 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into Zotero, with r
 - ✅ **If DOI unavailable, omit the field** (never fabricate)
 
 **ALL bibliographic fields must come ONLY from API/tool output:**
-- Journal/venue names → use ONLY what the API returns in `venue`, `journal`, or `source.name`
-- Volume, issue, pages → use ONLY what the API returns
-- Publication year → use ONLY what the API returns
-- If a field is missing/null in the API output → **OMIT the field entirely**
+- **If paper has DOI** → use `verify_paper.py --doi` to get authoritative metadata from CrossRef
+  - Use CrossRef `container_title` as journal/booktitle
+  - Use CrossRef `volume`, `issue`, `page` fields
+- **If paper has no DOI** → use S2/OpenAlex `venue`, `journal`, or `source.name`
+- Publication year → use what the API returns
+- If a field is missing/null in ALL API outputs → **OMIT the field entirely**
 - NEVER "recognize" a paper and fill in details from memory — this causes errors
+- This applies to ALL fields: author, title, year, journal, volume, pages, publisher, etc.
 
 ### 2. Annotation Quality — CRITICAL
 
@@ -73,16 +76,17 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into Zotero, with r
 
 **Before including any paper**:
 1. **Verify it exists**: Found through skill scripts (s2_search, search_openalex, search_arxiv, etc.)
-2. **Copy metadata directly**: Use author names, year, title, journal/venue **exactly as returned by the API**
-3. **Get real DOI**: Use DOI from script output, or verify via `verify_paper.py --title "..." --author "..."`
-4. **If uncertain**: DO NOT include the paper
+2. **Enrich via CrossRef**: If paper has DOI, call `verify_paper.py --doi {doi}` to get authoritative metadata
+3. **Use enriched metadata**: Prefer CrossRef's `container_title`, `volume`, `issue`, `page` over S2/OpenAlex fields
+4. **If no DOI**: Use S2/OpenAlex metadata directly; omit fields that are null
+5. **If uncertain**: DO NOT include the paper
 
 **Handling Missing Fields** (CRITICAL — this prevents hallucination):
-- If `venue`/`journal`/`source.name` is null/empty in API output → **omit the `journal` field** from BibTeX
-- If volume/issue/pages are missing → **omit those fields**
-- NEVER fill in "what you think" the journal should be — even if you recognize the paper
-- A BibTeX entry with missing `journal` field is BETTER than one with a hallucinated journal name
-- Use `@misc` type if no venue information is available
+- If a field is missing/null in ALL API outputs (including CrossRef) → **OMIT the field entirely**
+- This applies to ANY field: journal, volume, pages, publisher, editor, etc.
+- NEVER fill in "what you think" a field should be — even if you recognize the paper
+- A BibTeX entry with missing fields is BETTER than one with hallucinated data
+- Use `@misc` type if no venue information is available from any source
 
 **When You Can't Find a Paper**:
 - DO NOT include it
@@ -167,13 +171,31 @@ python .claude/skills/philosophy-research/scripts/s2_recommend.py --positive "{p
 - Identify foundational papers from SEP bibliography + PhilPapers + S2 search
 - Chain citations to find related work
 
-### Stage 5: Batch Metadata & Verification
+### Stage 5: Metadata Enrichment & Verification
+
+**CrossRef enrichment** (REQUIRED for papers with DOIs):
+
+For every paper with a DOI, use CrossRef to get authoritative publication metadata:
 
 ```bash
-# Efficiently fetch metadata for multiple papers
+# Get authoritative metadata from CrossRef (journal name, volume, pages)
+python .claude/skills/philosophy-research/scripts/verify_paper.py --doi "10.2307/2024717"
+```
+
+CrossRef returns:
+- `container_title` → use as `journal` or `booktitle` in BibTeX
+- `volume`, `issue`, `page` → use directly in BibTeX
+- `type` → helps determine entry type (@article, @incollection, etc.)
+
+**Why this matters**: S2/OpenAlex often return incomplete or null venue/journal fields. CrossRef is the authoritative source for publication metadata because it's the DOI registry.
+
+**Other verification tools**:
+
+```bash
+# Efficiently fetch metadata for multiple papers from S2
 python .claude/skills/philosophy-research/scripts/s2_batch.py --ids "{id1},{id2},DOI:10.xxx/yyy"
 
-# Verify DOI when uncertain
+# Search for DOI when paper has none (fallback)
 python .claude/skills/philosophy-research/scripts/verify_paper.py --title "Paper Title" --author "Author" --year 2020
 ```
 

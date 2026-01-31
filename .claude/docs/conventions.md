@@ -75,20 +75,28 @@ author = {Smith, John and Jones, Mary and Brown, David}
 
 **ALL bibliographic fields must come ONLY from API/tool output.**
 
-This prevents hallucination of journal names, venues, and other metadata:
+This prevents hallucination of any metadata. The rule applies to EVERY field, not just journal names.
 
-| Field | Source | If Missing |
-|-------|--------|------------|
-| `author` | API output | Required — don't include paper |
-| `title` | API output | Required — don't include paper |
-| `year` | API output | Required — don't include paper |
-| `journal` | API `venue`, `journal`, or `source.name` | **Omit field entirely** |
-| `volume`, `number`, `pages` | API output | **Omit field entirely** |
-| `doi` | API output or verify_paper.py | **Omit field entirely** |
+**Metadata source priority** (for papers with DOIs):
+1. **CrossRef** (via `verify_paper.py --doi`) — authoritative source for publication metadata
+2. **S2/OpenAlex/arXiv** — fallback if CrossRef unavailable
 
-**Never fill in missing fields from model knowledge** — even if you "recognize" the paper. A BibTeX entry with missing `journal` field is preferable to one with a hallucinated journal name.
+| Field | Preferred Source | Fallback Source | If Missing Everywhere |
+|-------|-----------------|-----------------|----------------------|
+| `author` | Any API | — | Required — don't include paper |
+| `title` | Any API | — | Required — don't include paper |
+| `year` | Any API | — | Required — don't include paper |
+| `journal`/`booktitle` | CrossRef `container_title` | S2 `venue`, OpenAlex `source.name` | **Omit field entirely** |
+| `volume` | CrossRef | S2/OpenAlex | **Omit field entirely** |
+| `number` (issue) | CrossRef `issue` | S2/OpenAlex | **Omit field entirely** |
+| `pages` | CrossRef `page` | S2/OpenAlex | **Omit field entirely** |
+| `publisher` | CrossRef | S2/OpenAlex | **Omit field entirely** |
+| `editor` | API output | — | **Omit field entirely** |
+| `doi` | Any API or verify_paper.py | — | **Omit field entirely** |
 
-If no venue information is available, use `@misc` entry type instead of `@article`.
+**Never fill in missing fields from model knowledge** — even if you "recognize" the paper. This applies to ALL fields. A BibTeX entry with missing fields is preferable to one with hallucinated data.
+
+If no venue information is available from any source, use `@misc` entry type instead of `@article`.
 
 ### Keywords Field
 

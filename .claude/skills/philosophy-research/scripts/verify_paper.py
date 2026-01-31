@@ -136,6 +136,11 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
     container = item.get("container-title", [])
     container_title = container[0] if container else ""
 
+    # Extract volume, issue, pages
+    volume = item.get("volume", "")
+    issue = item.get("issue", "")
+    page = item.get("page", "")  # CrossRef format: "5-20" or "5"
+
     result = {
         "verified": True,
         "doi": doi,
@@ -143,6 +148,9 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
         "authors": [{"family": a.split(", ")[0], "given": a.split(", ")[1] if ", " in a else ""} for a in authors],
         "year": year,
         "container_title": container_title,
+        "volume": volume,
+        "issue": issue,
+        "page": page,
         "publisher": item.get("publisher", ""),
         "type": item.get("type", ""),
         "method": method,
@@ -245,7 +253,7 @@ def search_by_metadata(
         "rows": 5,
         "sort": "score",
         "order": "desc",
-        "select": "DOI,title,author,published,container-title,publisher,type,score",
+        "select": "DOI,title,author,published,container-title,volume,issue,page,publisher,type,score",
     }
 
     if author:
