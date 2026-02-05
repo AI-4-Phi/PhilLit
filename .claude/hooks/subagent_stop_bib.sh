@@ -43,8 +43,14 @@ while IFS= read -r -d '' bib_file; do
     fi
 
     # Step 2: Metadata provenance cleaning (removes hallucinated fields, does NOT block)
-    JSON_DIR="${WORKING_DIR}/intermediate_files/json"
-    if [[ -d "$JSON_DIR" ]]; then
+    # JSON files are in working directory during subagent execution,
+    # moved to intermediate_files/json/ only during Phase 6 assembly
+    JSON_DIR="${WORKING_DIR}"
+    # Fall back to intermediate_files/json if no JSON files in working directory
+    if ! find "$JSON_DIR" -maxdepth 1 -name "*.json" -type f -print -quit 2>/dev/null | grep -q .; then
+        JSON_DIR="${WORKING_DIR}/intermediate_files/json"
+    fi
+    if [[ -d "$JSON_DIR" ]] && find "$JSON_DIR" -maxdepth 1 -name "*.json" -type f -print -quit 2>/dev/null | grep -q .; then
         CLEAN_RESULT=$(python "$CLAUDE_PROJECT_DIR/.claude/hooks/metadata_cleaner.py" "$bib_file" "$JSON_DIR" --backup 2>&1 || true)
         FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0')
         ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0')
