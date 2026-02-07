@@ -238,16 +238,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    Then use **Read** to verify section ordering and transitions.
 
-2. Lint the final markdown file:
-
-   ```bash
-   python .claude/skills/literature-review/scripts/lint_md.py \
-     "reviews/[project-name]/literature-review-final.md"
-   ```
-
-   Fix any reported issues before proceeding.
-
-3. Aggregate and deduplicate all domain BibTeX files:
+2. Aggregate and deduplicate all domain BibTeX files:
 
    Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-all.bib`:
 
@@ -262,7 +253,30 @@ Never advance to Phase 6 before all synthesis writers have completed.
    - Upgrade importance level if a later domain assigned higher importance
    - Log which duplicates were removed to console
 
-4. Clean up intermediate files (use absolute paths to avoid cwd issues):
+3. Generate bibliography and append to final review:
+
+   ```bash
+   python .claude/skills/literature-review/scripts/generate_bibliography.py \
+     "reviews/[project-name]/literature-review-final.md" \
+     "reviews/[project-name]/literature-all.bib"
+   ```
+
+   The script will:
+   - Match cited works by surname+year proximity in the review text
+   - Format references in Chicago Author-Date style from BibTeX metadata only
+   - Deduplicate entries with the same DOI
+   - Append (or replace) a `## References` section at the end of the review
+
+4. Lint the final markdown file:
+
+   ```bash
+   python .claude/skills/literature-review/scripts/lint_md.py \
+     "reviews/[project-name]/literature-review-final.md"
+   ```
+
+   Fix any reported issues before proceeding. The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
+
+5. Clean up intermediate files (use absolute paths to avoid cwd issues):
 
    Move JSON API response files to `intermediate_files/json/` for archival (allows debugging while keeping review directory clean):
    ```bash
@@ -309,14 +323,14 @@ reviews/[project-name]/
     └── [other intermediate files, if they exist]
 ```
 
-5. **Report source issues**: If any domain researchers reported source issues (API errors, partial results), output a summary:
+6. **Report source issues**: If any domain researchers reported source issues (API errors, partial results), output a summary:
    ```
    ⚠️ Source issues during literature search:
    - Domain [name]: [source]: [issue]
    ```
    If no issues: omit this message.
 
-6. **Optional: Convert to DOCX** (if pandoc is installed):
+7. **Optional: Convert to DOCX** (if pandoc is installed):
    ```bash
    if command -v pandoc &> /dev/null; then
      pandoc "reviews/[project-name]/literature-review-final.md" \
