@@ -146,8 +146,50 @@ Nelkin, Dana Kay. 2011. "Freedom and Responsibility." In The Oxford Handbook of 
 ## Automated Validation
 
 The `SubagentStop` hook automatically validates BibTeX files written by `domain-literature-researcher`:
+
+### 1. BibTeX Syntax Validation (`bib_validator.py`)
 - UTF-8 encoding check
 - BibTeX syntax validation
 - No LaTeX commands for special characters
+- No duplicate citation keys
+- Required fields present per entry type
+- No BibLaTeX fields
+
+### 2. Metadata Provenance Validation (`metadata_validator.py`)
+
+**Purpose**: Prevents LLM hallucination of bibliographic metadata by validating that field values exist in API output.
+
+**Validated fields** (must exist in JSON API output):
+- `journal` / `booktitle`
+- `volume`
+- `number` / `issue`
+- `pages`
+- `publisher`
+- `year`
+- `doi`
+
+**Exempt fields** (LLM-generated, not validated):
+- `note` (annotations)
+- `keywords`
+- `howpublished`
+- `url`
+- `abstract`
+
+**How it works**:
+1. Scans `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers)
+2. Builds an index of all metadata values from API responses
+3. Validates each BibTeX entry's fields against this index
+4. Blocks the subagent if any field value is not found in API output
+
+**Value normalization**: The validator normalizes values for comparison:
+- Pages: `"163 - 188"` matches `"163--188"` (handles space/dash variations)
+- Journals: case-insensitive, strips "The" prefix
+- DOIs: strips URL prefixes
+
+**Error messages**: When validation fails, the validator reports:
+- Which entry has the problem
+- Which field contains the unverifiable value
+- What values the API actually contains
+- Action to take (remove field or use API value)
 
 See `.claude/settings.json` for hook configuration.

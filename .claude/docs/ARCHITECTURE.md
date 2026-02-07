@@ -121,10 +121,7 @@ reviews/[project-name]/
 │   ├── synthesis-section-*.md
 │   └── literature-domain-*.bib
 │
-├── literature-review-edited.md           # (Optional) Editorial output
-├── editorial-notes.md
-│
-└── executive-assessment.md               # (Optional) Novelty output
+└── literature-review-final.docx          # (Optional) DOCX conversion
 ```
 
 **During workflow** (before cleanup):
@@ -155,20 +152,39 @@ reviews/[project-name]/
 
 .claude/skills/literature-review/
 ├── SKILL.md                              # Orchestration skill (main entry point)
-└── conventions.md                        # Symlink → ../../docs/conventions.md
+├── conventions.md                        # Symlink → ../../docs/conventions.md
+└── scripts/
+    ├── assemble_review.py                # Assemble sections into final review
+    ├── dedupe_bib.py                     # Deduplicate BibTeX entries
+    ├── generate_bibliography.py          # Generate Chicago-style references
+    └── lint_md.py                        # Lint markdown review files
 
 .claude/skills/philosophy-research/
 ├── SKILL.md                              # API search skill
 └── scripts/
     ├── s2_search.py                      # Semantic Scholar search
     ├── s2_citations.py                   # Citation traversal
+    ├── s2_batch.py                       # Batch paper details
+    ├── s2_recommend.py                   # Find similar papers
+    ├── s2_formatters.py                  # S2 output formatting
     ├── search_openalex.py                # OpenAlex search
     ├── search_arxiv.py                   # arXiv search
     ├── search_sep.py                     # SEP discovery
     ├── fetch_sep.py                      # SEP content extraction
     ├── search_philpapers.py              # PhilPapers search
+    ├── brave_search.py                   # Brave web search
     ├── verify_paper.py                   # CrossRef verification
-    └── rate_limiter.py                   # Shared rate limiting
+    ├── search_cache.py                   # Search result caching
+    ├── rate_limiter.py                   # Shared rate limiting
+    ├── output.py                         # Shared output utilities
+    └── check_setup.py                    # Environment verification
+
+.claude/hooks/
+├── setup-environment.sh                  # SessionStart: activate venv
+├── subagent_stop_bib.sh                  # SubagentStop: validate BibTeX
+├── bib_validator.py                      # BibTeX validation logic
+├── metadata_validator.py                 # Metadata provenance validation
+└── metadata_cleaner.py                   # Metadata year/type cleanup
 
 .claude/agents/
 ├── literature-review-planner.md          # Decomposes research into domains

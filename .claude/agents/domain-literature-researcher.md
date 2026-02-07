@@ -257,7 +257,14 @@ Use bash background processes (`&`) and `wait` to run searches concurrently:
 ```bash
 # Construct absolute path to review directory (substitute project name from prompt)
 REVIEW_DIR="$PWD/reviews/[project-name]"
+```
 
+> **CRITICAL: ALL output files MUST use `$REVIEW_DIR` paths.** Never redirect to bare filenames (e.g., `> results.json`). Files without the full path land in the project root, not the review directory.
+>
+> - Bad:  `python script.py "query" > results.json`
+> - Good: `python script.py "query" > "$REVIEW_DIR/results.json"`
+
+```bash
 # Stage 3: Run all API searches in parallel
 python .claude/skills/philosophy-research/scripts/s2_search.py "free will compatibilism" --field Philosophy --year 2015-2025 --limit 30 > "$REVIEW_DIR/s2_results.json" &
 python .claude/skills/philosophy-research/scripts/search_openalex.py "free will compatibilism" --year 2015-2025 --limit 30 > "$REVIEW_DIR/openalex_results.json" &

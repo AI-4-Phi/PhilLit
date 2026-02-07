@@ -10,7 +10,7 @@ import pytest
 SCRIPT_DIR = Path(__file__).parent.parent / ".claude" / "skills" / "literature-review" / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from dedupe_bib import parse_importance, upgrade_importance, deduplicate_bib
+from dedupe_bib import parse_importance, upgrade_importance, extract_doi, deduplicate_bib
 
 
 # =============================================================================
@@ -385,3 +385,174 @@ class TestCLI:
         )
         assert result.returncode == 0
         assert "1 duplicate" in result.stdout or "[DEDUPE]" in result.stdout
+
+
+# =============================================================================
+# Tests for extract_doi
+# =============================================================================
+
+class TestExtractDoi:
+    """Tests for extract_doi function."""
+
+    def test_bare_doi(self):
+        """Should extract a plain DOI."""
+        entry = '@article{test,\n  doi = {10.1007/s13347-021-00449-4}\n}'
+        assert extract_doi(entry) == '10.1007/s13347-021-00449-4'
+
+    def test_url_prefix_https(self):
+        """Should strip https://doi.org/ prefix."""
+        entry = '@article{test,\n  doi = {https://doi.org/10.1007/s13347}\n}'
+        assert extract_doi(entry) == '10.1007/s13347'
+
+    def test_url_prefix_dx(self):
+        """Should strip https://dx.doi.org/ prefix."""
+        entry = '@article{test,\n  doi = {https://dx.doi.org/10.1007/s13347}\n}'
+        assert extract_doi(entry) == '10.1007/s13347'
+
+    def test_case_insensitive(self):
+        """DOI should be lowercased."""
+        entry = '@article{test,\n  doi = {10.1007/S13347-021-00449-4}\n}'
+        assert extract_doi(entry) == '10.1007/s13347-021-00449-4'
+
+    def test_no_doi_field(self):
+        """Should return None when no doi field exists."""
+        entry = '@article{test,\n  title = {No DOI here}\n}'
+        assert extract_doi(entry) is None
+
+    def test_whitespace_handling(self):
+        """Should strip whitespace around DOI value."""
+        entry = '@article{test,\n  doi = {  10.1007/s13347  }\n}'
+        assert extract_doi(entry) == '10.1007/s13347'
+
+    def test_doi_field_case_insensitive(self):
+        """Should match DOI field regardless of case."""
+        entry = '@article{test,\n  DOI = {10.1007/s13347}\n}'
+        assert extract_doi(entry) == '10.1007/s13347'
+
+
+# =============================================================================
+# Tests for DOI-based deduplication
+# =============================================================================
+
+class TestDOIDeduplication:
+    """Tests for DOI-based deduplication in deduplicate_bib."""
+
+    def test_same_doi_different_keys(self, tmp_path):
+        """Two entries with same DOI but different keys should be deduplicated."""
+        bib1 = tmp_path / "test1.bib"
+        bib1.write_text("""@article{geisslinger2021autonomous,
+  title = {Autonomous Driving Ethics},
+  doi = {10.1007/s13347-021-00449-4},
+  keywords = {ethics, High}
+}""")
+
+        bib2 = tmp_path / "test2.bib"
+        bib2.write_text("""@article{geisslinger2021trolley,
+  title = {Autonomous Driving Ethics},
+  doi = {10.1007/s13347-021-00449-4},
+  keywords = {regulation, High}
+}""")
+
+        output = tmp_path / "output.bib"
+        duplicates = deduplicate_bib([bib1, bib2], output)
+
+        content = output.read_text()
+        # Only one entry should survive
+        assert content.count('10.1007/s13347-021-00449-4') == 1
+        assert 'geisslinger2021' in content
+        assert len([d for d in duplicates if 'geisslinger' in d]) == 1
+
+    def test_doi_dedup_keeps_higher_importance(self, tmp_path):
+        """DOI dedup should keep the higher-importance entry."""
+        bib1 = tmp_path / "test1.bib"
+        bib1.write_text("""@article{paper2021a,
+  title = {Paper},
+  doi = {10.1234/test},
+  keywords = {topic, Medium}
+}""")
+
+        bib2 = tmp_path / "test2.bib"
+        bib2.write_text("""@article{paper2021b,
+  title = {Paper},
+  doi = {10.1234/test},
+  keywords = {topic, High}
+}""")
+
+        output = tmp_path / "output.bib"
+        deduplicate_bib([bib1, bib2], output)
+
+        content = output.read_text()
+        assert 'paper2021b' in content  # High importance wins
+        assert 'paper2021a' not in content
+
+    def test_doi_url_prefix_normalized(self, tmp_path):
+        """DOIs with URL prefixes should match bare DOIs."""
+        bib1 = tmp_path / "test1.bib"
+        bib1.write_text("""@article{alpha2021,
+  title = {Paper},
+  doi = {10.1234/test},
+  keywords = {High}
+}""")
+
+        bib2 = tmp_path / "test2.bib"
+        bib2.write_text("""@article{beta2021,
+  title = {Paper},
+  doi = {https://doi.org/10.1234/test},
+  keywords = {Medium}
+}""")
+
+        output = tmp_path / "output.bib"
+        deduplicate_bib([bib1, bib2], output)
+
+        content = output.read_text()
+        assert content.count('10.1234/test') == 1
+
+    def test_entries_without_doi_not_affected(self, tmp_path):
+        """Entries without DOI fields should pass through unaffected."""
+        bib1 = tmp_path / "test1.bib"
+        bib1.write_text("""@article{nodoi2021a,
+  title = {Paper A},
+  keywords = {High}
+}
+
+@article{nodoi2021b,
+  title = {Paper B},
+  keywords = {Medium}
+}""")
+
+        output = tmp_path / "output.bib"
+        duplicates = deduplicate_bib([bib1], output)
+
+        content = output.read_text()
+        assert 'nodoi2021a' in content
+        assert 'nodoi2021b' in content
+        assert duplicates == []
+
+    def test_mixed_doi_and_no_doi(self, tmp_path):
+        """DOI dedup should not interfere with entries lacking DOIs."""
+        bib1 = tmp_path / "test1.bib"
+        bib1.write_text("""@article{with_doi_a,
+  title = {Same Paper},
+  doi = {10.1234/test},
+  keywords = {High}
+}
+
+@article{no_doi,
+  title = {Different Paper},
+  keywords = {Medium}
+}""")
+
+        bib2 = tmp_path / "test2.bib"
+        bib2.write_text("""@article{with_doi_b,
+  title = {Same Paper},
+  doi = {10.1234/test},
+  keywords = {Medium}
+}""")
+
+        output = tmp_path / "output.bib"
+        deduplicate_bib([bib1, bib2], output)
+
+        content = output.read_text()
+        assert 'with_doi_a' in content  # Higher importance
+        assert 'with_doi_b' not in content  # Deduped
+        assert 'no_doi' in content  # Unaffected

@@ -105,7 +105,6 @@ check_package() {
 
 check_package "beautifulsoup4" "bs4"
 check_package "lxml" "lxml"
-check_package "pyalex" "pyalex"
 check_package "arxiv" "arxiv"
 check_package "requests" "requests"
 check_package "pybtex" "pybtex"
@@ -115,6 +114,12 @@ check_package "pyyaml" "yaml"
 if [ -n "$MISSING_PACKAGES" ]; then
   echo "Environment setup failed: Missing packages:$MISSING_PACKAGES. Run 'uv sync' to install dependencies." >&2
   exit 2
+fi
+
+# Check system tools required by hooks
+if ! command -v jq &> /dev/null; then
+  echo "Warning: jq not installed. SubagentStop hook requires jq for BibTeX validation." >&2
+  echo "Install with: brew install jq (macOS), apt install jq (Linux), or choco install jq (Windows)" >&2
 fi
 
 # Success: output context for Claude (stdout is added to Claude's context)

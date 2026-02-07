@@ -70,7 +70,6 @@ def check_dependencies() -> dict[str, dict[str, Any]]:
         "requests": "2.28.0",
         "beautifulsoup4": "4.11.0",
         "lxml": "4.9.0",
-        "pyalex": "0.10",
         "arxiv": "1.4.0",
         "pymarkdownlnt": "0.9.0",
     }

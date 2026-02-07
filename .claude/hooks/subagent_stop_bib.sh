@@ -1,52 +1,140 @@
 #!/bin/bash
-# BibTeX validation hook for SubagentStop
-# Validates .bib files when domain-literature-researcher agent exits.
+# BibTeX validation and cleaning hook for SubagentStop
+# When domain-literature-researcher agent exits:
+# 1. Validates BibTeX syntax (blocks on errors - must be fixed)
+# 2. Cleans hallucinated metadata fields (removes unverifiable fields, does not block)
 # Returns JSON with decision: "allow" or "block" with reason.
 
 set -e
 
+# Require jq for JSON parsing
+if ! command -v jq &> /dev/null; then
+    echo "WARNING: jq not installed — skipping BibTeX validation. Install with: brew install jq (macOS), apt install jq (Linux), or choco install jq (Windows)" >&2
+    echo '{"decision": "allow"}'
+    exit 0
+fi
+
 # Parse subagent context from stdin (Claude Code passes JSON via stdin)
 SUBAGENT_CONTEXT=$(cat)
 
-# Extract agent name and working directory
-AGENT_NAME=$(echo "$SUBAGENT_CONTEXT" | jq -r '.agent_name // .subagent_type // empty')
-WORKING_DIR=$(echo "$SUBAGENT_CONTEXT" | jq -r '.cwd // "."')
+# Extract agent type (documented field with fallback for older versions)
+AGENT_TYPE=$(echo "$SUBAGENT_CONTEXT" | jq -r '.agent_type // .subagent_type // .agent_name // empty')
 
-# Only validate for domain-literature-researcher agent
-if [[ "$AGENT_NAME" != "domain-literature-researcher" ]]; then
+# Only process for domain-literature-researcher agent
+if [[ "$AGENT_TYPE" != "domain-literature-researcher" ]]; then
     echo '{"decision": "allow"}'
     exit 0
 fi
 
-# Find .bib files in working directory
-BIB_FILES=$(find "$WORKING_DIR" -maxdepth 1 -name "*.bib" -type f 2>/dev/null || true)
-
-if [[ -z "$BIB_FILES" ]]; then
+# Read .active-review pointer to find review directory
+POINTER="$CLAUDE_PROJECT_DIR/reviews/.active-review"
+if [[ ! -f "$POINTER" ]]; then
+    echo "WARNING: No .active-review pointer found — skipping BibTeX validation" >&2
     echo '{"decision": "allow"}'
     exit 0
 fi
 
-# Validate each .bib file using CLAUDE_PROJECT_DIR for the validator path
-ALL_ERRORS=""
-for bib_file in $BIB_FILES; do
-    # Run validator and capture result
+POINTER_CONTENT=$(tr -d '\r\n' < "$POINTER")
+
+# Validate pointer content (must start with reviews/)
+if [[ ! "$POINTER_CONTENT" =~ ^reviews/ ]]; then
+    echo "WARNING: Invalid .active-review pointer content: $POINTER_CONTENT" >&2
+    echo '{"decision": "allow"}'
+    exit 0
+fi
+
+REVIEW_DIR="$CLAUDE_PROJECT_DIR/$POINTER_CONTENT"
+
+# Validate directory exists
+if [[ ! -d "$REVIEW_DIR" ]]; then
+    echo "WARNING: Review directory $REVIEW_DIR does not exist" >&2
+    echo '{"decision": "allow"}'
+    exit 0
+fi
+
+# Collect .bib files from review directory AND project root (strays)
+# Uses globs instead of find+process substitution for Windows/Git Bash compatibility
+shopt -s nullglob
+BIB_FILES=()
+for f in "$REVIEW_DIR"/*.bib; do
+    [[ -f "$f" ]] && BIB_FILES+=("$f")
+done
+for f in "$CLAUDE_PROJECT_DIR"/*.bib; do
+    [[ -f "$f" ]] && BIB_FILES+=("$f")
+done
+shopt -u nullglob
+
+# No .bib files found — nothing to validate
+if [[ ${#BIB_FILES[@]} -eq 0 ]]; then
+    echo '{"decision": "allow"}'
+    exit 0
+fi
+
+# Track syntax errors (these block) and cleaning summaries (informational)
+SYNTAX_ERRORS=""
+CLEANING_SUMMARY=""
+
+for bib_file in "${BIB_FILES[@]}"; do
+    # Step 1: BibTeX syntax validation (blocks on errors)
     RESULT=$(python "$CLAUDE_PROJECT_DIR/.claude/hooks/bib_validator.py" "$bib_file" 2>&1 || true)
     VALID=$(echo "$RESULT" | jq -r '.valid // "true"')
 
     if [[ "$VALID" == "false" ]]; then
-        # Extract errors and append to collection
         ERRORS=$(echo "$RESULT" | jq -r '.errors[]' 2>/dev/null || echo "$RESULT")
-        ALL_ERRORS="${ALL_ERRORS}${ERRORS}
+        SYNTAX_ERRORS="${SYNTAX_ERRORS}${ERRORS}
 "
+    fi
+
+    # Step 2: Metadata provenance cleaning (removes hallucinated fields, does NOT block)
+    # Find JSON files via 3-location fallback:
+    #   1. Same directory as .bib file
+    #   2. $REVIEW_DIR/intermediate_files/json/
+    #   3. Project root
+    BIB_DIR=$(dirname "$bib_file")
+    JSON_DIR=""
+
+    shopt -s nullglob
+    json_matches=("$BIB_DIR"/*.json)
+    if [[ ${#json_matches[@]} -gt 0 ]]; then
+        JSON_DIR="$BIB_DIR"
+    else
+        json_matches=("$REVIEW_DIR/intermediate_files/json"/*.json)
+        if [[ -d "$REVIEW_DIR/intermediate_files/json" ]] && [[ ${#json_matches[@]} -gt 0 ]]; then
+            JSON_DIR="$REVIEW_DIR/intermediate_files/json"
+        else
+            json_matches=("$CLAUDE_PROJECT_DIR"/*.json)
+            if [[ ${#json_matches[@]} -gt 0 ]]; then
+                JSON_DIR="$CLAUDE_PROJECT_DIR"
+            fi
+        fi
+    fi
+    shopt -u nullglob
+
+    if [[ -n "$JSON_DIR" ]]; then
+        CLEAN_RESULT=$(python "$CLAUDE_PROJECT_DIR/.claude/hooks/metadata_cleaner.py" "$bib_file" "$JSON_DIR" --backup 2>&1 || true)
+        FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0')
+        ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0')
+
+        if [[ "$FIELDS_REMOVED" =~ ^[0-9]+$ ]] && [[ "$FIELDS_REMOVED" -gt 0 ]]; then
+            CLEANED_ENTRIES=$(echo "$CLEAN_RESULT" | jq -r '.cleaned_entries | to_entries[] | "  - \(.key): \(.value | join(", "))"' 2>/dev/null || true)
+            CLEANING_SUMMARY="${CLEANING_SUMMARY}
+Cleaned $(basename "$bib_file"): Removed $FIELDS_REMOVED unverifiable field(s) from $ENTRIES_CLEANED entry(ies):
+$CLEANED_ENTRIES
+"
+        fi
     fi
 done
 
-# If there are errors, block with reason
-if [[ -n "$ALL_ERRORS" ]]; then
-    # Format errors as JSON-safe string
-    REASON=$(printf '%s' "$ALL_ERRORS" | jq -Rs .)
+# Block only on syntax errors (not on metadata cleaning)
+if [[ -n "$SYNTAX_ERRORS" ]]; then
+    REASON=$(printf '%s' "$SYNTAX_ERRORS" | jq -Rs .)
     echo "{\"decision\": \"block\", \"reason\": $REASON}"
     exit 2
+fi
+
+# If we cleaned any fields, include summary in allow message (informational)
+if [[ -n "$CLEANING_SUMMARY" ]]; then
+    echo "METADATA CLEANING PERFORMED:$CLEANING_SUMMARY" >&2
 fi
 
 echo '{"decision": "allow"}'
