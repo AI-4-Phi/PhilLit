@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deduplicate BibTeX entries by citation key, keeping highest importance."""
+"""Deduplicate BibTeX entries by citation key and DOI, keeping highest importance."""
 
 import re
 import sys
@@ -22,6 +22,19 @@ def upgrade_importance(entry: str, new_importance: str) -> str:
         if level in entry:
             return entry.replace(level, new_importance, 1)
     return entry
+
+
+def extract_doi(entry: str) -> str | None:
+    """Extract and normalize DOI from a BibTeX entry."""
+    match = re.search(r'doi\s*=\s*\{([^}]+)\}', entry, re.IGNORECASE)
+    if not match:
+        return None
+    doi = match.group(1).strip().lower()
+    # Strip URL prefixes
+    for prefix in ['https://doi.org/', 'http://doi.org/', 'https://dx.doi.org/', 'http://dx.doi.org/']:
+        if doi.startswith(prefix):
+            doi = doi[len(prefix):]
+    return doi
 
 
 def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
@@ -76,6 +89,33 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
                     print(f"  [DEDUPE] Duplicate '{key}' - kept existing ({existing_importance})")
             else:
                 seen[key] = (entry, importance)
+
+    # Second pass: DOI-based deduplication (catches same paper with different keys)
+    seen_dois: dict[str, str] = {}  # normalized_doi -> key
+    doi_dupes: list[str] = []
+    for key, (entry, importance) in list(seen.items()):
+        doi = extract_doi(entry)
+        if doi is None:
+            continue
+        if doi in seen_dois:
+            existing_key = seen_dois[doi]
+            existing_entry, existing_importance = seen[existing_key]
+            existing_rank = IMPORTANCE_ORDER.get(existing_importance, 0)
+            new_rank = IMPORTANCE_ORDER.get(importance, 0)
+            if new_rank > existing_rank:
+                # New entry has higher importance — replace
+                print(f"  [DEDUPE-DOI] '{key}' and '{existing_key}' share DOI {doi} - keeping '{key}' ({importance} > {existing_importance})")
+                del seen[existing_key]
+                seen_dois[doi] = key
+            else:
+                # Existing wins (or tie — keep first encountered)
+                print(f"  [DEDUPE-DOI] '{key}' and '{existing_key}' share DOI {doi} - keeping '{existing_key}' ({existing_importance})")
+                del seen[key]
+            doi_dupes.append(key if new_rank <= existing_rank else existing_key)
+        else:
+            seen_dois[doi] = key
+
+    duplicates.extend(doi_dupes)
 
     # Write output
     with output_file.open('w', encoding='utf-8') as f:

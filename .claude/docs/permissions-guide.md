@@ -13,8 +13,6 @@ Prompts for approval on first use of each tool per session. Standard security mo
 ### Deny Rules (Highest Priority)
 ```json
 "deny": [
-  "Bash(rm:*)",      // Prevent file deletion
-  "Bash(rmdir:*)",   // Prevent directory deletion
   "Bash(sudo:*)",    // Prevent privilege escalation
   "Bash(dd:*)",      // Prevent disk operations
   "Bash(mkfs:*)"     // Prevent filesystem formatting
@@ -39,6 +37,7 @@ Explicitly blocks destructive operations for safety. These cannot be approved ev
   "Bash(ls:*)",      // List directory contents
   "Bash(mkdir:*)",   // Create directories (for review structure)
   "Bash(python:*)",  // Run Python scripts (for literature search)
+  "Bash(*python .claude/skills/philosophy-research/scripts*)",  // Philosophy-research scripts
   "Bash(source:*)",  // Activate Python virtual environment
   "Bash(echo:*)",    // Output text (for debugging)
   "Bash(cat:*)",     // Concatenate files (for assembly)
@@ -57,11 +56,11 @@ Explicitly blocks destructive operations for safety. These cannot be approved ev
 ### Ask Rules (Require Approval)
 ```json
 "ask": [
-  "Write(*)",        // Ask before writing files outside reviews/
-  "Edit(*)"          // Ask before editing files outside reviews/
+  "Bash(rm:*)",      // File deletion requires approval
+  "Bash(rmdir:*)"    // Directory deletion requires approval
 ]
 ```
-File modifications outside `reviews/` require user approval.
+Destructive file operations require user approval rather than being blocked entirely.
 
 ## Permission Evaluation Order
 
@@ -69,7 +68,7 @@ File modifications outside `reviews/` require user approval.
 2. **Allow** rules are checked next (auto-approve without prompt)
 3. **Ask** rules are checked last (require user approval)
 
-Example: `Write(reviews/file.md)` matches `allow` rule, so it's auto-approved. `Write(.claude/settings.json)` matches `ask` rule, so it requires approval.
+Example: `Write(reviews/file.md)` matches `allow` rule, so it's auto-approved. `Bash(rm foo.txt)` matches `ask` rule, so it requires approval. `Bash(sudo apt install)` matches `deny` rule, so it's blocked entirely.
 
 ## Bash Pattern Limitations
 
@@ -85,9 +84,9 @@ Current patterns like `Bash(python:*)` can potentially be bypassed:
 ## Security Principles
 
 1. **Principle of least privilege**: Only grant permissions needed for the workflow
-2. **Defense in depth**: Multiple security layers (deny rules, scoped writes, ask mode)
+2. **Defense in depth**: Multiple security layers (deny rules, scoped writes, ask mode for deletion)
 3. **Explicit over implicit**: `defaultMode` and `deny` rules make security stance clear
-4. **Safe defaults**: Read-only operations allowed, destructive operations blocked
+4. **Safe defaults**: Read-only operations allowed, destructive operations require approval or are blocked
 
 ## Agent-Specific Permissions
 

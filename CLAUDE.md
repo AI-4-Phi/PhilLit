@@ -22,10 +22,11 @@
 # File Structure
 
 - `reviews/` — All existing and new literature reviews. Each review has its own subdirectory with an informative short name.
-- `.claude/skills/literature-review/` — Main orchestration skill for the 6-phase workflow.
+- `.claude/skills/literature-review/` — Main orchestration skill for the 6-phase workflow. `scripts/` contains Phase 6 tools: `assemble_review.py`, `dedupe_bib.py`, `generate_bibliography.py`, `lint_md.py`.
 - `.claude/skills/philosophy-research/` — Structured API search scripts (Semantic Scholar, OpenAlex, arXiv, SEP, PhilPapers, CrossRef).
 - `.claude/agents/` — Specialized subagent definitions invoked by the literature-review skill.
-- `.claude/docs/` — Shared specifications (conventions.md, ARCHITECTURE.md).
+- `.claude/hooks/` — Git/Claude hooks: `bib_validator.py`, `metadata_validator.py`, `metadata_cleaner.py`, `subagent_stop_bib.sh`, `setup-environment.sh`.
+- `.claude/docs/` — Shared specifications (ARCHITECTURE.md, conventions.md, permissions-guide.md).
 - `tests/` — pytest tests for API scripts and hooks.
 
 # Typical Usage: Literature Review
@@ -43,7 +44,7 @@ When asked to perform a new literature review:
 - Phase 3: Task tool invokes `domain-literature-researcher` ×N (parallel) — Uses `philosophy-research` skill for API searches; outputs BibTeX files
 - Phase 4: Task tool invokes `synthesis-planner` — Reads BibTeX files; designs outline emphasizing debates and gaps
 - Phase 5: Task tool invokes `synthesis-writer` ×N (parallel) — Writes sections using relevant BibTeX subsets
-- Phase 6: Assemble final review files and move intermediate files
+- Phase 6: Assemble final review, deduplicate BibTeX, generate bibliography, lint, clean up, optional DOCX
 
 **Specialized subagents** (invoked via Task tool, cannot spawn other subagents):
 - `literature-review-planner` — Decomposes research idea into domains and search strategies
@@ -58,6 +59,12 @@ For agent architecture and design patterns, see `.claude/docs/ARCHITECTURE.md`.
 ## Windows Compatibility
 
 This repository works natively on Windows without WSL. Claude Code on Windows requires Git for Windows and uses Git Bash to execute hooks and commands. The SessionStart hook (`.claude/hooks/setup-environment.sh`) detects the platform and activates the correct venv path (`.venv/Scripts/activate` on Windows, `.venv/bin/activate` on Unix).
+
+## Setup
+
+```bash
+uv sync          # Create venv and install dependencies
+```
 
 ## Testing
 
