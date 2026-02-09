@@ -248,6 +248,8 @@ WebSearch: "[topic] [author/org] blog/report/whitepaper"
 
 ## Parallel Search Mode (HIGHLY RECOMMENDED)
 
+**NEVER use `run_in_background: true` on Bash tool calls.** Background Bash tasks outlive your session — they keep running after you finish but nobody reads their output. Use bash `&` with `wait` instead (see below).
+
 **CRITICAL for time efficiency**: Run independent searches in parallel using background processes to dramatically reduce search time (30-45 min → 10-15 min).
 
 ### How to Parallelize Searches
