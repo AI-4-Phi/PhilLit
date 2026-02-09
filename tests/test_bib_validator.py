@@ -22,6 +22,7 @@ sys.path.insert(0, str(HOOKS_DIR))
 from bib_validator import (
     check_utf8_encoding,
     check_latex_escapes,
+    check_duplicate_fields,
     check_duplicate_keys,
     check_bibtex_syntax,
     check_required_fields,
@@ -343,6 +344,129 @@ class TestCheckDuplicateKeys:
 
         errors = check_duplicate_keys(content)
         assert errors == []  # Different keys
+
+
+# =============================================================================
+# Tests for check_duplicate_fields
+# =============================================================================
+
+class TestCheckDuplicateFields:
+    """Tests for duplicate field name detection within entries."""
+
+    def test_no_duplicates(self, valid_article):
+        """Should pass when no duplicate fields."""
+        errors = check_duplicate_fields(valid_article)
+        assert errors == []
+
+    def test_duplicate_note_arxiv_pattern(self):
+        """Should detect the arXiv double-note anti-pattern."""
+        content = """@misc{author2023paper,
+  author = {Author, Test},
+  title = {Test Paper},
+  year = {2023},
+  note = {arXiv:2304.01481},
+  howpublished = {arXiv preprint},
+  note = {CORE ARGUMENT: This paper argues something important.},
+  keywords = {ai-ethics, preprint, Medium}
+}"""
+        errors = check_duplicate_fields(content)
+        assert len(errors) == 1
+        assert "note" in errors[0]
+        assert "author2023paper" in errors[0]
+
+    def test_multiple_entries_mixed(self):
+        """Should detect duplicates in one entry but not another."""
+        content = """@article{clean2020,
+  author = {Clean, Author},
+  title = {Clean Paper},
+  journal = {Good Journal},
+  year = {2020}
+}
+
+@misc{dirty2023,
+  author = {Dirty, Author},
+  title = {Dirty Paper},
+  year = {2023},
+  note = {arXiv:1234.5678},
+  note = {This paper does stuff.}
+}"""
+        errors = check_duplicate_fields(content)
+        assert len(errors) == 1
+        assert "dirty2023" in errors[0]
+
+    def test_comment_ignored(self):
+        """Should ignore @comment blocks entirely."""
+        content = """@comment{
+  note = {some note},
+  note = {another note}
+}
+
+@article{real2020,
+  author = {Real, Author},
+  title = {Real Paper},
+  journal = {Journal},
+  year = {2020}
+}"""
+        errors = check_duplicate_fields(content)
+        assert errors == []
+
+    def test_line_numbers_in_error(self):
+        """Should include line numbers in error message."""
+        content = """@misc{test2023,
+  author = {Test, Author},
+  title = {Test},
+  year = {2023},
+  note = {First note},
+  note = {Second note}
+}"""
+        errors = check_duplicate_fields(content)
+        assert len(errors) == 1
+        assert "line 5" in errors[0]  # first note
+        assert "line 6" in errors[0]  # duplicate note
+
+    def test_validate_bib_integration(self, tmp_path):
+        """check_duplicate_fields should be called from validate_bib()."""
+        content = """@misc{test2023,
+  author = {Test, Author},
+  title = {Test},
+  year = {2023},
+  note = {First},
+  note = {Second}
+}"""
+        bib_file = tmp_path / "dup_fields.bib"
+        bib_file.write_text(content, encoding='utf-8')
+
+        result = validate_bib(bib_file)
+        assert result["valid"] is False
+        assert any("duplicate field" in e.lower() for e in result["errors"])
+
+    def test_multiline_value_no_false_positive(self):
+        """Should NOT flag 'word = text' inside multi-line field values."""
+        content = """@article{test2023,
+  author = {Test, Author},
+  title = {Test Paper},
+  journal = {Test Journal},
+  year = {2023},
+  note = {This paper discusses how
+  title = something they changed in the field.
+  The utility = 0.5 result is interesting.}
+}"""
+        errors = check_duplicate_fields(content)
+        assert errors == [], f"Got false positives: {errors}"
+
+    def test_unindented_fields_detected(self):
+        """Should detect duplicate fields even without indentation."""
+        content = """@article{test2023,
+author = {Test, Author},
+title = {Test},
+journal = {J},
+year = {2023},
+note = {First},
+note = {Second}
+}"""
+        errors = check_duplicate_fields(content)
+        assert len(errors) == 1
+        assert "note" in errors[0]
 
 
 # =============================================================================

@@ -41,6 +41,17 @@
         ]
       }
     ],
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py"
+          }
+        ]
+      }
+    ],
     "SubagentStop": [
       {
         "hooks": [

@@ -65,6 +65,23 @@ author = {Smith, John and Jones, Mary and Brown, David}
 **@misc**: author, title, year, howpublished OR url
 - Use for papers with no venue info, web sources, preprints
 
+**@misc (arXiv preprint)** — template:
+```bibtex
+@misc{authorYYYYkeyword,
+  author = {Last, First},
+  title = {Title of Paper},
+  year = {YYYY},
+  howpublished = {arXiv:XXXX.XXXXX},
+  note = {arXiv:XXXX.XXXXX. CORE ARGUMENT: ... RELEVANCE: ... POSITION: ...},
+  keywords = {topic-tag, preprint, Medium}
+}
+```
+Combine the arXiv ID and annotation in a **single `note` field**. Do NOT use separate `note` fields for the ID and the annotation.
+
+### Field Uniqueness Rule
+
+> Every field name must appear **at most once** per entry. Duplicate fields (e.g., two `note` fields) produce invalid BibTeX and will be rejected by validation hooks.
+
 ### DOI Field
 
 - Only include verified DOIs from publisher sites or CrossRef

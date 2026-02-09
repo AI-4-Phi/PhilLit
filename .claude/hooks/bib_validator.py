@@ -144,6 +144,86 @@ def check_latex_escapes(path, content):
     return errors
 
 
+def check_duplicate_fields(content):
+    """Check 4b: Find duplicate field names within entries (before pybtex parsing).
+
+    Detects entries with repeated field names (e.g., two `note` fields),
+    which is invalid BibTeX. Returns clear errors with entry keys and line numbers.
+
+    Uses brace-depth tracking to avoid false positives from multi-line field
+    values that happen to contain 'word = text' patterns.
+    """
+    errors = []
+    lines = content.split('\n')
+
+    current_key = None
+    fields_seen = {}  # field_name -> line_number
+    # brace_depth tracks nesting: 0 = between entries, 1 = inside entry
+    # (at top level between fields), 2+ = inside a field value
+    brace_depth = 0
+    in_comment = False
+
+    for line_num, line in enumerate(lines, 1):
+        # Detect entry start
+        entry_match = re.match(r'@(\w+)\{', line, re.IGNORECASE)
+        if entry_match and brace_depth == 0:
+            entry_type = entry_match.group(1).lower()
+            if entry_type == 'comment':
+                in_comment = True
+                # Count braces in this line for comment blocks
+                brace_depth += line.count('{') - line.count('}')
+                continue
+            # Extract key from the rest: @type{key, ...
+            rest = line[entry_match.end():]
+            key_match = re.match(r'([^,]+),', rest)
+            if key_match:
+                current_key = key_match.group(1).strip()
+                fields_seen = {}
+                # Count braces: the opening { from @type{ is already +1
+                brace_depth = line.count('{') - line.count('}')
+                # Check for fields on the same line after the key
+                after_key = rest[key_match.end():]
+                field_on_line = re.match(r'\s*(\w+)\s*=\s*', after_key)
+                if field_on_line:
+                    fields_seen[field_on_line.group(1).lower()] = line_num
+            continue
+
+        if in_comment:
+            brace_depth += line.count('{') - line.count('}')
+            if brace_depth <= 0:
+                in_comment = False
+                brace_depth = 0
+            continue
+
+        if current_key is None:
+            continue
+
+        # Only detect fields when at entry top level (brace_depth == 1)
+        # This avoids false positives from text inside multi-line field values
+        if brace_depth == 1:
+            field_match = re.match(r'\s*(\w+)\s*=\s*', line)
+            if field_match:
+                field_name = field_match.group(1).lower()
+                if field_name in fields_seen:
+                    errors.append(
+                        f"{current_key}: duplicate field '{field_name}' "
+                        f"(first on line {fields_seen[field_name]}, duplicate on line {line_num})"
+                    )
+                else:
+                    fields_seen[field_name] = line_num
+
+        # Update brace depth
+        brace_depth += line.count('{') - line.count('}')
+
+        # Entry ended
+        if brace_depth <= 0:
+            current_key = None
+            fields_seen = {}
+            brace_depth = 0
+
+    return errors
+
+
 def check_duplicate_keys(content):
     """Check 4: Find duplicate citation keys (before pybtex parsing silently overwrites)."""
     errors = []
@@ -258,6 +338,9 @@ def validate_bib(path):
 
     # Check 4: Duplicate keys (before pybtex parsing)
     errors.extend(check_duplicate_keys(content))
+
+    # Check 4b: Duplicate fields within entries (before pybtex parsing)
+    errors.extend(check_duplicate_fields(content))
 
     # Check 3: BibTeX syntax
     syntax_errors = check_bibtex_syntax(path)

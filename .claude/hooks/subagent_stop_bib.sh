@@ -17,11 +17,23 @@ fi
 # Parse subagent context from stdin (Claude Code passes JSON via stdin)
 SUBAGENT_CONTEXT=$(cat)
 
+echo "DEBUG [subagent_stop_bib]: hook invoked" >&2
+
+# Guard: if this is a re-invocation after a previous block, allow to prevent loops
+STOP_HOOK_ACTIVE=$(echo "$SUBAGENT_CONTEXT" | jq -r '.stop_hook_active // false')
+if [[ "$STOP_HOOK_ACTIVE" == "true" ]]; then
+    echo "DEBUG [subagent_stop_bib]: stop_hook_active=true, allowing to prevent loop" >&2
+    echo '{"decision": "allow"}'
+    exit 0
+fi
+
 # Extract agent type (documented field with fallback for older versions)
 AGENT_TYPE=$(echo "$SUBAGENT_CONTEXT" | jq -r '.agent_type // .subagent_type // .agent_name // empty')
+echo "DEBUG [subagent_stop_bib]: agent_type=$AGENT_TYPE" >&2
 
 # Only process for domain-literature-researcher agent
 if [[ "$AGENT_TYPE" != "domain-literature-researcher" ]]; then
+    echo "DEBUG [subagent_stop_bib]: not domain-literature-researcher, allowing" >&2
     echo '{"decision": "allow"}'
     exit 0
 fi
@@ -127,6 +139,7 @@ done
 
 # Block only on syntax errors (not on metadata cleaning)
 if [[ -n "$SYNTAX_ERRORS" ]]; then
+    echo "DEBUG [subagent_stop_bib]: blocking — syntax errors found" >&2
     REASON=$(printf '%s' "$SYNTAX_ERRORS" | jq -Rs .)
     echo "{\"decision\": \"block\", \"reason\": $REASON}"
     exit 2
@@ -137,5 +150,6 @@ if [[ -n "$CLEANING_SUMMARY" ]]; then
     echo "METADATA CLEANING PERFORMED:$CLEANING_SUMMARY" >&2
 fi
 
+echo "DEBUG [subagent_stop_bib]: allowing" >&2
 echo '{"decision": "allow"}'
 exit 0

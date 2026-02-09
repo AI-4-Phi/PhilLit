@@ -8,6 +8,76 @@ from pathlib import Path
 IMPORTANCE_ORDER = {'High': 3, 'Medium': 2, 'Low': 1}
 
 
+def check_intra_entry_duplicates(content: str) -> list[str]:
+    """Warn about duplicate field names within BibTeX entries.
+
+    Lightweight safety-net check for Phase 6 aggregation. Does not crash or
+    fix — just prints warnings so operators notice if upstream validation
+    was bypassed.
+
+    Uses brace-depth tracking to avoid false positives from multi-line field
+    values that happen to contain 'word = text' patterns.
+
+    Returns list of warning strings (empty if clean).
+    """
+    warnings = []
+    lines = content.split('\n')
+
+    current_key = None
+    fields_seen: dict[str, int] = {}
+    brace_depth = 0
+    in_comment = False
+
+    for line_num, line in enumerate(lines, 1):
+        entry_match = re.match(r'@(\w+)\{', line, re.IGNORECASE)
+        if entry_match and brace_depth == 0:
+            entry_type = entry_match.group(1).lower()
+            if entry_type == 'comment':
+                in_comment = True
+                brace_depth += line.count('{') - line.count('}')
+                continue
+            rest = line[entry_match.end():]
+            key_match = re.match(r'([^,]+),', rest)
+            if key_match:
+                current_key = key_match.group(1).strip()
+                fields_seen = {}
+                brace_depth = line.count('{') - line.count('}')
+            continue
+
+        if in_comment:
+            brace_depth += line.count('{') - line.count('}')
+            if brace_depth <= 0:
+                in_comment = False
+                brace_depth = 0
+            continue
+
+        if current_key is None:
+            continue
+
+        if brace_depth == 1:
+            field_match = re.match(r'\s*(\w+)\s*=\s*', line)
+            if field_match:
+                field_name = field_match.group(1).lower()
+                if field_name in fields_seen:
+                    msg = (
+                        f"  [WARN] '{current_key}': duplicate field '{field_name}' "
+                        f"(lines {fields_seen[field_name]} and {line_num})"
+                    )
+                    warnings.append(msg)
+                    print(msg)
+                else:
+                    fields_seen[field_name] = line_num
+
+        brace_depth += line.count('{') - line.count('}')
+
+        if brace_depth <= 0:
+            current_key = None
+            fields_seen = {}
+            brace_depth = 0
+
+    return warnings
+
+
 def parse_importance(entry: str) -> str:
     """Extract importance level from keywords field."""
     for level in ['High', 'Medium', 'Low']:
@@ -49,6 +119,9 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
 
     for bib_file in input_files:
         content = bib_file.read_text(encoding='utf-8')
+
+        # Safety-net: warn about duplicate fields within entries
+        check_intra_entry_duplicates(content)
 
         # Split into entries (handles @comment, @article, @book, etc.)
         entries = re.split(r'\n(?=@)', content)

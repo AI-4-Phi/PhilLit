@@ -10,7 +10,7 @@ import pytest
 SCRIPT_DIR = Path(__file__).parent.parent / ".claude" / "skills" / "literature-review" / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from dedupe_bib import parse_importance, upgrade_importance, extract_doi, deduplicate_bib
+from dedupe_bib import parse_importance, upgrade_importance, extract_doi, deduplicate_bib, check_intra_entry_duplicates
 
 
 # =============================================================================
@@ -556,3 +556,62 @@ class TestDOIDeduplication:
         assert 'with_doi_a' in content  # Higher importance
         assert 'with_doi_b' not in content  # Deduped
         assert 'no_doi' in content  # Unaffected
+
+
+# =============================================================================
+# Tests for check_intra_entry_duplicates
+# =============================================================================
+
+class TestCheckIntraEntryDuplicates:
+    """Tests for the intra-entry duplicate field warning check."""
+
+    def test_clean_content(self):
+        """Should return no warnings for clean content."""
+        content = """@article{clean2020,
+  author = {Clean, Author},
+  title = {Clean Paper},
+  journal = {Good Journal},
+  year = {2020}
+}"""
+        warnings = check_intra_entry_duplicates(content)
+        assert warnings == []
+
+    def test_duplicate_note_detected(self):
+        """Should warn about duplicate note fields."""
+        content = """@misc{test2023,
+  author = {Test, Author},
+  title = {Test},
+  year = {2023},
+  note = {arXiv:1234.5678},
+  note = {This paper argues something.}
+}"""
+        warnings = check_intra_entry_duplicates(content)
+        assert len(warnings) == 1
+        assert "note" in warnings[0]
+        assert "test2023" in warnings[0]
+
+    def test_comment_ignored(self):
+        """Should not warn about fields in @comment blocks."""
+        content = """@comment{
+  note = {a},
+  note = {b}
+}"""
+        warnings = check_intra_entry_duplicates(content)
+        assert warnings == []
+
+    def test_deduplicate_bib_calls_check(self, tmp_path, capsys):
+        """deduplicate_bib should call check_intra_entry_duplicates and print warnings."""
+        bib1 = tmp_path / "test1.bib"
+        bib1.write_text("""@misc{dup2023,
+  author = {Dup, Author},
+  title = {Dup Paper},
+  year = {2023},
+  note = {arXiv:1234.5678},
+  note = {Annotation.}
+}""")
+        output = tmp_path / "output.bib"
+        deduplicate_bib([bib1], output)
+
+        captured = capsys.readouterr()
+        assert "WARN" in captured.out
+        assert "note" in captured.out

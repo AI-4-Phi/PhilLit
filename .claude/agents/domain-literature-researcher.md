@@ -413,6 +413,10 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 - [ ] DOIs verified via verify_paper.py or field omitted
 - [ ] Author names, titles, years accurate
 
+✅ **Field Uniqueness**:
+- [ ] Each entry has exactly one `note` field (no duplicate fields of any kind)
+- [ ] arXiv papers combine arXiv ID and annotation in a single `note` field
+
 ✅ **File Quality**:
 - [ ] Valid BibTeX syntax
 - [ ] UTF-8 encoding preserved
