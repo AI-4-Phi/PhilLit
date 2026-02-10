@@ -32,6 +32,14 @@ Requirements:
 | `@phdthesis` | Dissertations |
 | `@misc` | SEP entries, online resources |
 
+**Determining entry type from CrossRef**: When `verify_paper.py` returns a `suggested_bibtex_type` field, **use it**. CrossRef knows whether a DOI is a journal article or a book chapter. Common mapping:
+- CrossRef `journal-article` → `@article` (use `container_title` as `journal`)
+- CrossRef `book-chapter` → `@incollection` (use `container_title` as `booktitle`, include `publisher`)
+- CrossRef `book` / `edited-book` → `@book` (for `edited-book`, use `editor` instead of `author`)
+- CrossRef `proceedings-article` → `@inproceedings` (use `container_title` as `booktitle`)
+
+See `CROSSREF_TO_BIBTEX_TYPE` in `verify_paper.py` for the full mapping.
+
 ### Citation Keys
 
 Format: `authorYYYYkeyword`
@@ -103,7 +111,7 @@ This prevents hallucination of any metadata. The rule applies to EVERY field, no
 | `author` | Any API | — | Required — don't include paper |
 | `title` | Any API | — | Required — don't include paper |
 | `year` | Any API | — | Required — don't include paper |
-| `journal`/`booktitle` | CrossRef `container_title` | S2 `venue`, OpenAlex `source.name` | **Omit field entirely** |
+| `journal`/`booktitle` | CrossRef `container_title` (field name depends on `suggested_bibtex_type`: `journal` for articles, `booktitle` for incollection/inproceedings) | S2 `venue`, OpenAlex `source.name` | **Omit field entirely** |
 | `volume` | CrossRef | S2/OpenAlex | **Omit field entirely** |
 | `number` (issue) | CrossRef `issue` | S2/OpenAlex | **Omit field entirely** |
 | `pages` | CrossRef `page` | S2/OpenAlex | **Omit field entirely** |

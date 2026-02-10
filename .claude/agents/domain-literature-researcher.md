@@ -191,11 +191,13 @@ python .claude/skills/philosophy-research/scripts/verify_paper.py --doi "10.2307
 ```
 
 CrossRef returns:
-- `container_title` → use as `journal` or `booktitle` in BibTeX
+- `suggested_bibtex_type` → **USE THIS** for the BibTeX entry type. If it says `incollection`, use `@incollection` with `booktitle` (not `@article` with `journal`). If it says `article`, use `@article` with `journal`.
+- `container_title` → use as `journal` (for articles) or `booktitle` (for incollection/inproceedings)
+- `editors` → if non-empty, use as `editor` field in BibTeX. For edited books (`suggested_bibtex_type: book` with editors but no authors), use `editor` instead of `author`.
 - `volume`, `issue`, `page` → use directly in BibTeX
-- `type` → helps determine entry type (@article, @incollection, etc.)
+- `type` → raw CrossRef type (the mapping to BibTeX is already done in `suggested_bibtex_type`)
 
-**Why this matters**: S2/OpenAlex often return incomplete or null venue/journal fields. CrossRef is the authoritative source for publication metadata because it's the DOI registry.
+**Why this matters**: S2/OpenAlex often return incomplete or null venue/journal fields. CrossRef is the authoritative source for publication metadata because it's the DOI registry. It also knows whether a DOI is a journal article vs. book chapter — follow `suggested_bibtex_type` to avoid misclassifying book chapters as articles.
 
 **Other verification tools**:
 
