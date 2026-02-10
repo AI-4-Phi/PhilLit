@@ -25,7 +25,7 @@
 - `.claude/skills/literature-review/` — Main orchestration skill for the 6-phase workflow. `scripts/` contains Phase 6 tools: `assemble_review.py`, `dedupe_bib.py`, `generate_bibliography.py`, `lint_md.py`.
 - `.claude/skills/philosophy-research/` — API search scripts for academic sources (Semantic Scholar, OpenAlex, CORE, arXiv, SEP, IEP, PhilPapers), abstract resolution, encyclopedia context extraction, and citation verification (CrossRef). Includes Brave web search fallback and caching.
 - `.claude/agents/` — Specialized subagent definitions invoked by the literature-review skill.
-- `.claude/hooks/` — Git/Claude hooks: `bib_validator.py`, `metadata_validator.py`, `metadata_cleaner.py`, `subagent_stop_bib.sh`, `setup-environment.sh`.
+- `.claude/hooks/` — Git/Claude hooks: `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `subagent_stop_bib.sh`, `setup-environment.sh`.
 - `.claude/docs/` — Shared specifications (ARCHITECTURE.md, conventions.md, permissions-guide.md).
 - `tests/` — pytest tests for API scripts and hooks.
 - `GETTING_STARTED.md` — Setup guide for local and cloud environments, API key configuration.
@@ -83,6 +83,15 @@ Run tests with: `pytest tests/`
 - **Simple and concise** — Prefer simple solutions. Keep agent/skill instructions brief and effective. Avoid verbosity.
 - **Verify assumptions empirically** — Test bash patterns and environment behavior in actual subagent context before codifying. Don't assume documentation is accurate.
 - **Cross-platform** — Implementations must work in Claude Code Cloud, Linux, macOS, and Windows. Use forward slashes in paths. Handle platform-specific paths (e.g., venv activation scripts differ between Unix and Windows).
+
+## Hooks and Python
+
+Claude Code runs each hook command in its own shell process — the SessionStart venv activation does NOT carry over. **All hooks that invoke Python must use the project venv explicitly**, never bare `python`.
+
+- **Shell hooks** (`.sh`): Resolve `$PYTHON` at the top of the script with cross-platform fallback (`.venv/bin/python` on Unix, `.venv/Scripts/python` on Windows). Gracefully skip validation if venv not found.
+- **Inline commands** (`settings.json`): Use `"$CLAUDE_PROJECT_DIR"/.venv/bin/python ... 2>/dev/null || "$CLAUDE_PROJECT_DIR"/.venv/Scripts/python ... 2>/dev/null || <fallback>`.
+- **PreToolUse hooks in agent frontmatter** do NOT fire for Task-spawned subagents. Use SubagentStop hooks (project-level) for validating subagent output.
+- **`set -e` + `jq`**: When parsing JSON output from Python scripts, guard against non-JSON output (e.g., tracebacks) with `if ! VAR=$(... | jq ... 2>/dev/null); then ... fi` to avoid silent `set -e` deaths.
 
 ## Adding Python Dependencies
 

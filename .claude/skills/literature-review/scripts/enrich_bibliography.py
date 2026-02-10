@@ -381,6 +381,17 @@ def enrich_bibliography(
     output_content = '\n\n'.join(entry.strip() for entry in enriched_entries)
     output_path.write_text(output_content + '\n', encoding='utf-8')
 
+    # Validate the enriched output (defense-in-depth: catch errors at the source)
+    try:
+        from pybtex.database import parse_file
+    except ImportError:
+        pass  # pybtex not available, skip validation
+    else:
+        try:
+            parse_file(str(output_path), bib_format='bibtex')
+        except Exception as e:
+            log_progress(f"WARNING: Enriched file has BibTeX syntax errors: {e}")
+
     log_progress(f"Wrote enriched bibliography to {output_path.name}")
     log_progress(f"Stats: {stats['enriched']} enriched, {stats['marked_incomplete']} incomplete, {stats['already_had_abstract']} already had abstract")
 
