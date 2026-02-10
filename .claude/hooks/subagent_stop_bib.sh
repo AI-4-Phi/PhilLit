@@ -7,6 +7,17 @@
 
 set -e
 
+# Resolve project Python (cross-platform)
+if [[ -x "$CLAUDE_PROJECT_DIR/.venv/bin/python" ]]; then
+    PYTHON="$CLAUDE_PROJECT_DIR/.venv/bin/python"
+elif [[ -x "$CLAUDE_PROJECT_DIR/.venv/Scripts/python" ]]; then
+    PYTHON="$CLAUDE_PROJECT_DIR/.venv/Scripts/python"
+else
+    echo "WARNING: Project venv not found — skipping BibTeX validation" >&2
+    echo '{"decision": "allow"}'
+    exit 0
+fi
+
 # Require jq for JSON parsing
 if ! command -v jq &> /dev/null; then
     echo "WARNING: jq not installed — skipping BibTeX validation. Install with: brew install jq (macOS), apt install jq (Linux), or choco install jq (Windows)" >&2
@@ -88,8 +99,13 @@ CLEANING_SUMMARY=""
 
 for bib_file in "${BIB_FILES[@]}"; do
     # Step 1: BibTeX syntax validation (blocks on errors)
-    RESULT=$(python "$CLAUDE_PROJECT_DIR/.claude/hooks/bib_validator.py" "$bib_file" 2>&1 || true)
-    VALID=$(echo "$RESULT" | jq -r '.valid // "true"')
+    RESULT=$($PYTHON "$CLAUDE_PROJECT_DIR/.claude/hooks/bib_validator.py" "$bib_file" 2>&1 || true)
+    if ! VALID=$(echo "$RESULT" | jq -r '.valid // "true"' 2>/dev/null); then
+        echo "WARNING: bib_validator.py produced non-JSON output: $RESULT" >&2
+        SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file: $RESULT
+"
+        continue
+    fi
 
     if [[ "$VALID" == "false" ]]; then
         ERRORS=$(echo "$RESULT" | jq -r '.errors[]' 2>/dev/null || echo "$RESULT")
@@ -123,9 +139,9 @@ for bib_file in "${BIB_FILES[@]}"; do
     shopt -u nullglob
 
     if [[ -n "$JSON_DIR" ]]; then
-        CLEAN_RESULT=$(python "$CLAUDE_PROJECT_DIR/.claude/hooks/metadata_cleaner.py" "$bib_file" "$JSON_DIR" --backup 2>&1 || true)
-        FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0')
-        ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0')
+        CLEAN_RESULT=$($PYTHON "$CLAUDE_PROJECT_DIR/.claude/hooks/metadata_cleaner.py" "$bib_file" "$JSON_DIR" --backup 2>&1 || true)
+        FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0' 2>/dev/null || echo "0")
+        ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0' 2>/dev/null || echo "0")
 
         if [[ "$FIELDS_REMOVED" =~ ^[0-9]+$ ]] && [[ "$FIELDS_REMOVED" -gt 0 ]]; then
             CLEANED_ENTRIES=$(echo "$CLEAN_RESULT" | jq -r '.cleaned_entries | to_entries[] | "  - \(.key): \(.value | join(", "))"' 2>/dev/null || true)
