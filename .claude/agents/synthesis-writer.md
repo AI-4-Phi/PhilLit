@@ -2,7 +2,7 @@
 name: synthesis-writer
 description: Writes focused, insight-driven literature reviews from structured outlines and BibTeX bibliography files. Emphasizes analytical depth over comprehensive coverage. Supports section-by-section writing for context efficiency. Use during synthesis phase of literature review.
 tools: Glob, Grep, Read, Write
-model: inherit
+model: sonnet
 permissionMode: acceptEdits
 ---
 
@@ -84,8 +84,9 @@ You receive from the orchestrator prompt:
 4. Build bibliography at end using BibTeX data
 
 **Handling INCOMPLETE entries**:
-- If keywords contains `INCOMPLETE`: **DO NOT cite in synthesis**
-- Only cite papers with complete metadata
+- If keywords contains `INCOMPLETE` AND importance is NOT `High`: **DO NOT cite in synthesis**
+- If keywords contains `INCOMPLETE` AND importance IS `High`: cite cautiously using the `note` field content (CORE ARGUMENT, RELEVANCE, POSITION), but flag reliance on note-based summaries rather than full abstract. Do not directly quote from these papers.
+- Only cite papers with complete metadata OR High-importance papers with substantive note fields
 - The outline should already exclude INCOMPLETE entries
 
 ## Writing Principles

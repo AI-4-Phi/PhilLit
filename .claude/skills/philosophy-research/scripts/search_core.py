@@ -240,6 +240,19 @@ def search_core(
                     log_progress(f"Retrying after {backoff.last_delay:.1f}s backoff...")
                     continue
 
+                elif response.status_code >= 500:
+                    log_progress(f"Server error {response.status_code}, retrying (attempt {attempt+1}/{backoff.max_attempts})...")
+                    if not backoff.wait(attempt):
+                        log_progress(f"Max retries reached after server errors, returning {len(all_results)} partial results")
+                        errors.append({
+                            "type": "server_error",
+                            "message": f"CORE API server error: {response.status_code}",
+                            "recoverable": True
+                        })
+                        return all_results, errors
+                    log_progress(f"Retrying after {backoff.last_delay:.1f}s backoff...")
+                    continue
+
                 elif response.status_code == 400:
                     error_data = response.json() if response.text else {}
                     error_msg = error_data.get("message", "Bad request")

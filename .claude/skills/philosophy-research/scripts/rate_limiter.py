@@ -196,7 +196,7 @@ class ExponentialBackoff:
 # These are factory functions to ensure each caller gets a fresh instance
 LIMITERS = {
     "semantic_scholar": lambda: RateLimiter("semantic_scholar", 1.1),
-    "brave": lambda: RateLimiter("brave", 1.1),
+    "brave": lambda: RateLimiter("brave", 1.5),
     "crossref": lambda: RateLimiter("crossref", 0.05),  # 50/sec but conservative
     "openalex": lambda: RateLimiter("openalex", 0.11),  # 10/sec
     "arxiv": lambda: RateLimiter("arxiv", 3.0),

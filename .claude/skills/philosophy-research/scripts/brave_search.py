@@ -194,6 +194,15 @@ def brave_site_search(
                     log(f"Retrying after {backoff.last_delay:.1f}s backoff...")
                     continue
 
+                elif response.status_code >= 500:
+                    log(f"Server error {response.status_code}, retrying (attempt {attempt + 1}/{backoff.max_attempts})...")
+                    if not backoff.wait(attempt):
+                        log(f"Max retries reached after server errors, returning {len(all_results)} partial results")
+                        errors.append({"type": "server_error", "message": f"Brave API server error: {response.status_code}", "recoverable": True})
+                        return all_results, errors
+                    log(f"Retrying after {backoff.last_delay:.1f}s backoff...")
+                    continue
+
                 elif response.status_code == 401:
                     raise ValueError("Invalid BRAVE_API_KEY")
 

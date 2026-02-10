@@ -290,10 +290,8 @@ Never advance to Phase 6 before all synthesis writers have completed.
    Move stray API-result files from project root (agents sometimes omit the `$REVIEW_DIR/` prefix).
    Use targeted prefixes — never bare `*.json`, which could swallow unrelated files:
    ```bash
-   for prefix in philpapers_ pp_ s2_ openalex_ stage3_ arxiv_; do
-       mv ${prefix}*.json "reviews/[project-name]/intermediate_files/json/" 2>/dev/null || true
-   done
-   mv *.bib "reviews/[project-name]/intermediate_files/" 2>/dev/null || true
+   find . -maxdepth 1 \( -name "philpapers_*.json" -o -name "pp_*.json" -o -name "s2_*.json" -o -name "openalex_*.json" -o -name "stage3_*.json" -o -name "arxiv_*.json" \) -exec mv {} "reviews/[project-name]/intermediate_files/json/" \;
+   find . -maxdepth 1 -name "*.bib" -exec mv {} "reviews/[project-name]/intermediate_files/" \;
    ```
 
    Move remaining intermediate files and remove the active-review pointer:

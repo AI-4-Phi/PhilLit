@@ -383,6 +383,43 @@ class TestCoreIntegration:
         # Should have retried and eventually succeeded
         assert call_count >= 3
 
+    @patch("requests.get")
+    def test_retries_on_500(self, mock_get, mock_core_response):
+        """Should retry on 500 server errors and return results on success."""
+        call_count = 0
+
+        def mock_response(*args, **kwargs):
+            nonlocal call_count
+            call_count += 1
+            if call_count < 3:
+                return MagicMock(status_code=500)
+            return MagicMock(
+                status_code=200,
+                json=lambda: mock_core_response
+            )
+
+        mock_get.side_effect = mock_response
+
+        import search_core
+        from rate_limiter import get_limiter, ExponentialBackoff
+
+        limiter = get_limiter("core")
+        backoff = ExponentialBackoff(max_attempts=5, base_delay=0.01)  # Fast backoff for test
+
+        results, errors = search_core.search_core(
+            query="test",
+            limit=10,
+            year=None,
+            api_key=None,
+            limiter=limiter,
+            backoff=backoff,
+        )
+
+        # Should have retried twice then succeeded
+        assert call_count == 3
+        assert len(results) == 2
+        assert len(errors) == 0
+
 
 # =============================================================================
 # CLI Tests
