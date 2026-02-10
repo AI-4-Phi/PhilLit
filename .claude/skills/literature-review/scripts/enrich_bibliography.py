@@ -199,6 +199,40 @@ def resolve_abstract_for_entry(
     )
 
 
+def resolve_ndpr_abstract(
+    title: str,
+    author: Optional[str] = None,
+    debug: bool = False
+) -> tuple[Optional[str], Optional[str]]:
+    """
+    Try to find and extract a book summary from NDPR.
+
+    Returns:
+        Tuple of (summary_text, "ndpr") or (None, None)
+    """
+    import search_ndpr
+    import fetch_ndpr
+
+    try:
+        match = search_ndpr.search_ndpr(title, author, debug=debug)
+        if not match:
+            if debug:
+                log_progress(f"  NDPR: no sitemap match for '{title}'")
+            return None, None
+
+        result = fetch_ndpr.fetch_ndpr_review(match["url"], debug=debug)
+        summary = result.get("summary_text", "")
+
+        if summary and len(summary) > 50:
+            return summary, "ndpr"
+
+        return None, None
+
+    except Exception as e:
+        log_progress(f"  NDPR error for '{title}': {e}")
+        return None, None
+
+
 # =============================================================================
 # BibTeX Modification
 # =============================================================================
@@ -245,6 +279,37 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
                     lines.insert(i, f'  {field_name} = {{{field_value}}},')
                     break
         return '\n'.join(lines)
+
+
+def remove_keyword_from_entry(entry_text: str, keyword: str) -> str:
+    """Remove a keyword from the keywords field."""
+    pattern = r'keywords\s*=\s*\{([^}]*)\}'
+    match = re.search(pattern, entry_text, re.IGNORECASE)
+
+    if not match:
+        return entry_text
+
+    existing = match.group(1)
+    # Split, filter, rejoin
+    keywords = [k.strip() for k in existing.split(',')]
+    keywords = [k for k in keywords if k and k != keyword]
+
+    if keywords:
+        new_keywords = ', '.join(keywords)
+        return re.sub(
+            pattern,
+            f'keywords = {{{new_keywords}}}',
+            entry_text,
+            flags=re.IGNORECASE
+        )
+    else:
+        # Remove the entire keywords field if empty
+        return re.sub(
+            r'\n\s*keywords\s*=\s*\{[^}]*\},?',
+            '',
+            entry_text,
+            flags=re.IGNORECASE
+        )
 
 
 def add_keyword_to_entry(entry_text: str, keyword: str) -> str:
@@ -347,7 +412,7 @@ def enrich_bibliography(
         'enriched': 0,
         'marked_incomplete': 0,
         'skipped': 0,
-        'sources': {'s2': 0, 'openalex': 0, 'core': 0}
+        'sources': {'s2': 0, 'openalex': 0, 'core': 0, 'ndpr': 0}
     }
 
     enriched_entries = []
@@ -376,6 +441,34 @@ def enrich_bibliography(
             stats['sources'][source] = stats['sources'].get(source, 0) + 1
         else:
             stats['marked_incomplete'] += 1
+
+    # --- NDPR enrichment pass for books without abstracts ---
+    # Check keywords field in enriched text (not original entries) since INCOMPLETE
+    # was added by main loop. Use regex to avoid matching INCOMPLETE in other fields.
+    _incomplete_kw_re = re.compile(r'keywords\s*=\s*\{[^}]*INCOMPLETE', re.IGNORECASE)
+    book_entries_without_abstract = [
+        (i, e) for i, e in enumerate(entries)
+        if e['entry_type'] == 'book'
+        and not has_abstract(e)
+        and _incomplete_kw_re.search(enriched_entries[i])
+    ]
+
+    if book_entries_without_abstract:
+        log_progress(f"Trying NDPR for {len(book_entries_without_abstract)} book(s) without abstracts...")
+        for idx, entry in book_entries_without_abstract:
+            title = entry['fields'].get('title', '')
+            author = get_author_last_name(entry)
+            abstract, source = resolve_ndpr_abstract(title, author, debug)
+            if abstract:
+                enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract', abstract)
+                enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract_source', 'ndpr')
+                enriched_entries[idx] = remove_keyword_from_entry(enriched_entries[idx], 'INCOMPLETE')
+                enriched_entries[idx] = remove_keyword_from_entry(enriched_entries[idx], 'no-abstract')
+                # Stats: enriched/marked_incomplete are cumulative across all passes
+                stats['enriched'] += 1
+                stats['marked_incomplete'] -= 1
+                stats['sources']['ndpr'] += 1
+                log_progress(f"  Added NDPR abstract for: {entry['key']}")
 
     # Write output atomically
     if output_path is None:

@@ -148,6 +148,7 @@ Indicates provenance of abstract content:
 - `s2` — Semantic Scholar API
 - `openalex` — OpenAlex API
 - `core` — CORE API
+- `ndpr` — Notre Dame Philosophical Reviews (first 8 substantive paragraphs extracted from book reviews — primarily descriptive of the book's content and arguments, but may include some reviewer evaluation; not author/publisher abstracts)
 
 Example: `abstract_source = {openalex}`
 

@@ -219,8 +219,9 @@ python .claude/skills/literature-review/scripts/enrich_bibliography.py "$REVIEW_
 
 This script automatically:
 1. Resolves abstracts for entries missing them (S2 → OpenAlex → CORE fallback)
-2. Adds `abstract` and `abstract_source` fields for entries where abstract is found
-3. Marks entries `INCOMPLETE` (adds to keywords) if no abstract available
+2. For `@book` entries still without abstracts: tries NDPR (Notre Dame Philosophical Reviews) to extract opening summary paragraphs from book reviews
+3. Adds `abstract` and `abstract_source` fields for entries where abstract is found
+4. Marks entries `INCOMPLETE` (adds to keywords) if no abstract available
 
 After running, read the enriched file to check results. Note any INCOMPLETE entries in the NOTABLE_GAPS section of your @comment block.
 
