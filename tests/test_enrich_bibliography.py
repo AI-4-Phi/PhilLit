@@ -424,6 +424,58 @@ class TestBatchProcessing:
             )
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_enrich_bibliography_atomic_write_on_failure(self, mock_resolve, tmp_path):
+        """Original file should be untouched if write fails."""
+        mock_resolve.return_value = ("Abstract text", "s2")
+
+        import enrich_bibliography
+
+        input_path = tmp_path / "test.bib"
+        input_path.write_text(SAMPLE_ENTRY_NO_ABSTRACT)
+        original_content = input_path.read_text()
+
+        # Mock os.replace to simulate a failure after temp file is written
+        with patch("enrich_bibliography.os.replace", side_effect=OSError("disk full")):
+            with pytest.raises(OSError):
+                enrich_bibliography.enrich_bibliography(
+                    input_path, None, None, None, None
+                )
+
+        # Original file should be unchanged
+        assert input_path.read_text() == original_content
+
+        # Temp file should have been cleaned up by error handler
+        temp_file = input_path.with_suffix('.bib.tmp')
+        assert not temp_file.exists(), "Temp file should be cleaned up on os.replace failure"
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_enrich_bibliography_validation_failure_preserves_original(self, mock_resolve, tmp_path):
+        """Original file should be untouched if pybtex validation fails."""
+        mock_resolve.return_value = ("Abstract text", "s2")
+
+        import enrich_bibliography
+
+        input_path = tmp_path / "test.bib"
+        input_path.write_text(SAMPLE_ENTRY_NO_ABSTRACT)
+        original_content = input_path.read_text()
+
+        # Mock pybtex parse_file to raise an exception (simulating invalid BibTeX)
+        with patch("pybtex.database.parse_file", side_effect=Exception("Invalid BibTeX")):
+            stats = enrich_bibliography.enrich_bibliography(
+                input_path, None, None, None, None
+            )
+
+        # Original file should be unchanged
+        assert input_path.read_text() == original_content
+
+        # Stats should indicate validation failure
+        assert stats.get('validation_failed') is True
+
+        # Temp file should have been cleaned up
+        temp_file = input_path.with_suffix('.bib.tmp')
+        assert not temp_file.exists(), "Temp file should be cleaned up on validation failure"
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
     def test_enrich_bibliography_inplace(self, mock_resolve):
         """Should overwrite input when no output specified."""
         mock_resolve.return_value = ("Inplace abstract", "openalex")

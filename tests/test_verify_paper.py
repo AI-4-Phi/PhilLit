@@ -367,6 +367,51 @@ class TestSearchByMetadata:
         assert result["doi"] == "10.2307/2024717"
 
     @patch("requests.get")
+    def test_search_returns_editors(self, mock_get):
+        """Should populate editors from CrossRef search results."""
+        mock_get.return_value = MagicMock(
+            status_code=200,
+            json=lambda: {
+                "message": {
+                    "items": [
+                        {
+                            "DOI": "10.1093/oso/9780190859213.001.0001",
+                            "title": ["John Rawls"],
+                            "author": [],
+                            "editor": [
+                                {"given": "Jon", "family": "Mandle"},
+                                {"given": "Sarah", "family": "Roberts-Cady"},
+                            ],
+                            "published": {"date-parts": [[2020]]},
+                            "publisher": "Oxford University Press",
+                            "type": "edited-book",
+                            "score": 95.0,
+                        }
+                    ]
+                }
+            }
+        )
+
+        import verify_paper
+        from rate_limiter import get_limiter, ExponentialBackoff
+
+        limiter = get_limiter("crossref")
+        backoff = ExponentialBackoff()
+
+        result = verify_paper.search_by_metadata(
+            title="John Rawls",
+            author=None,
+            year=2020,
+            limiter=limiter,
+            backoff=backoff,
+            mailto="test@example.com",
+        )
+
+        assert len(result["editors"]) == 2
+        assert result["editors"][0]["family"] == "Mandle"
+        assert result["editors"][1]["family"] == "Roberts-Cady"
+
+    @patch("requests.get")
     def test_search_rejects_low_score(self, mock_get):
         """Should reject matches with low confidence score."""
         mock_get.return_value = MagicMock(

@@ -11,9 +11,9 @@ SCRIPT_DIR = Path(__file__).parent.parent / ".claude" / "skills" / "literature-r
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from dedupe_bib import (
-    parse_importance, upgrade_importance, extract_doi, deduplicate_bib,
-    check_intra_entry_duplicates, has_abstract, has_incomplete_flag,
-    remove_incomplete_flag, merge_entries
+    _extract_keywords_value, parse_importance, upgrade_importance,
+    extract_doi, deduplicate_bib, check_intra_entry_duplicates,
+    has_abstract, has_incomplete_flag, remove_incomplete_flag, merge_entries
 )
 
 
@@ -67,6 +67,29 @@ PAPERS_FOUND: 5 total (High: 2, Medium: 2, Low: 1)
 
 
 @pytest.fixture
+def sample_entry_medium_in_title():
+    """BibTeX entry with 'Medium' in title and 'Low' in keywords."""
+    return """@article{schaffer2009medium,
+  author = {Schaffer, Jonathan},
+  title = {Medium-sized Objects and the Problem of Composition},
+  year = {2009},
+  keywords = {mereology, Low}
+}"""
+
+
+@pytest.fixture
+def sample_entry_high_in_abstract():
+    """BibTeX entry with 'High' in abstract and 'Medium' in keywords."""
+    return """@article{korsgaard2008constitution,
+  author = {Korsgaard, Christine M.},
+  title = {The Constitution of Agency},
+  year = {2008},
+  abstract = {This paper develops a High-level account of agency and its relation to moral responsibility.},
+  keywords = {agency, Medium}
+}"""
+
+
+@pytest.fixture
 def sample_entry_utf8():
     """BibTeX entry with UTF-8 characters in author name."""
     return """@article{muller2020ethics,
@@ -101,6 +124,14 @@ class TestParseImportance:
         entry = "@article{test,\n  title = {Test}\n}"
         assert parse_importance(entry) == 'Low'
 
+    def test_parse_importance_ignores_title(self, sample_entry_medium_in_title):
+        """'Medium' in title should NOT be detected; keywords has 'Low'."""
+        assert parse_importance(sample_entry_medium_in_title) == 'Low'
+
+    def test_parse_importance_ignores_abstract(self, sample_entry_high_in_abstract):
+        """'High' in abstract should NOT be detected; keywords has 'Medium'."""
+        assert parse_importance(sample_entry_high_in_abstract) == 'Medium'
+
 
 # =============================================================================
 # Tests for upgrade_importance
@@ -128,6 +159,13 @@ class TestUpgradeImportance:
         entry = "@article{test,\n  title = {Test},\n  keywords = {topic}\n}"
         result = upgrade_importance(entry, 'High')
         assert result == entry
+
+    def test_upgrade_importance_preserves_title(self, sample_entry_medium_in_title):
+        """Upgrading Low->High in keywords must NOT touch 'Medium' in title."""
+        result = upgrade_importance(sample_entry_medium_in_title, 'High')
+        assert 'Medium-sized Objects' in result  # title intact
+        assert 'High' in _extract_keywords_value(result)
+        assert 'Low' not in _extract_keywords_value(result)
 
 
 # =============================================================================
@@ -194,11 +232,16 @@ class TestHasIncompleteFlag:
     """Tests for has_incomplete_flag function."""
 
     def test_has_incomplete_true(self):
-        entry = 'keywords = {topic, INCOMPLETE, no-abstract}'
+        entry = '@article{test,\n  keywords = {topic, INCOMPLETE, no-abstract}\n}'
         assert has_incomplete_flag(entry) is True
 
     def test_has_incomplete_false(self):
-        entry = 'keywords = {topic, High}'
+        entry = '@article{test,\n  keywords = {topic, High}\n}'
+        assert has_incomplete_flag(entry) is False
+
+    def test_has_incomplete_flag_ignores_abstract(self):
+        """INCOMPLETE in abstract text should NOT trigger the flag."""
+        entry = '@article{test,\n  abstract = {This INCOMPLETE draft discusses moral agency.},\n  keywords = {topic, High}\n}'
         assert has_incomplete_flag(entry) is False
 
 
@@ -206,22 +249,29 @@ class TestRemoveIncompleteFlag:
     """Tests for remove_incomplete_flag function."""
 
     def test_removes_incomplete(self):
-        entry = "keywords = {topic, INCOMPLETE, other}"
+        entry = '@article{test,\n  keywords = {topic, INCOMPLETE, other}\n}'
         result = remove_incomplete_flag(entry)
         assert "INCOMPLETE" not in result
         assert "topic" in result
         assert "other" in result
 
     def test_removes_no_abstract(self):
-        entry = "keywords = {topic, no-abstract, other}"
+        entry = '@article{test,\n  keywords = {topic, no-abstract, other}\n}'
         result = remove_incomplete_flag(entry)
         assert "no-abstract" not in result
 
     def test_cleans_up_commas(self):
-        entry = "keywords = {INCOMPLETE, topic}"
+        entry = '@article{test,\n  keywords = {INCOMPLETE, topic}\n}'
         result = remove_incomplete_flag(entry)
         assert ",," not in result
         assert "{," not in result
+
+    def test_preserves_abstract_with_incomplete_text(self):
+        """INCOMPLETE in abstract must not be touched when removing from keywords."""
+        entry = '@article{test,\n  abstract = {This INCOMPLETE draft discusses moral agency.},\n  keywords = {topic, INCOMPLETE, no-abstract}\n}'
+        result = remove_incomplete_flag(entry)
+        assert "INCOMPLETE" not in _extract_keywords_value(result)
+        assert "This INCOMPLETE draft discusses moral agency." in result
 
 
 class TestMergeEntries:
@@ -259,6 +309,14 @@ class TestMergeEntries:
         assert "INCOMPLETE" not in merged
         assert "removed INCOMPLETE flag" in reason
         assert winner == 1
+
+    def test_merge_entries_preserves_title(self):
+        """End-to-end: merging entries with 'Medium' in title must not corrupt it."""
+        entry1 = '@article{test,\n  title = {Medium-sized Objects and Composition},\n  keywords = {mereology, Low}\n}'
+        entry2 = '@article{test,\n  title = {Medium-sized Objects and Composition},\n  abstract = {This is a substantial abstract with good content.},\n  keywords = {mereology, Medium}\n}'
+        merged, reason, winner = merge_entries(entry1, entry2)
+        assert "Medium-sized Objects" in merged
+        assert winner == 2  # has abstract
 
 
 # =============================================================================

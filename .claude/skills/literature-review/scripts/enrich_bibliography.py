@@ -328,7 +328,10 @@ def enrich_bibliography(
     Enrich all entries in a BibTeX file.
 
     Returns:
-        Stats dict with counts of processed, enriched, incomplete entries
+        Stats dict with keys: total, already_had_abstract, enriched,
+        marked_incomplete, skipped, sources. If pybtex validation fails,
+        the original file is left unchanged and stats['validation_failed']
+        is set to True.
     """
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
@@ -374,25 +377,46 @@ def enrich_bibliography(
         else:
             stats['marked_incomplete'] += 1
 
-    # Write output
+    # Write output atomically
     if output_path is None:
         output_path = input_path  # Overwrite in place
 
     output_content = '\n\n'.join(entry.strip() for entry in enriched_entries)
-    output_path.write_text(output_content + '\n', encoding='utf-8')
+    tmp_path = output_path.with_suffix('.bib.tmp')
+    tmp_path.write_text(output_content + '\n', encoding='utf-8')
 
     # Validate the enriched output (defense-in-depth: catch errors at the source)
+    validation_ok = True
     try:
         from pybtex.database import parse_file
     except ImportError:
         pass  # pybtex not available, skip validation
     else:
         try:
-            parse_file(str(output_path), bib_format='bibtex')
+            parse_file(str(tmp_path), bib_format='bibtex')
         except Exception as e:
+            validation_ok = False
             log_progress(f"WARNING: Enriched file has BibTeX syntax errors: {e}")
 
-    log_progress(f"Wrote enriched bibliography to {output_path.name}")
+    if validation_ok:
+        try:
+            os.replace(str(tmp_path), str(output_path))
+        except OSError:
+            # Clean up temp file on failure
+            try:
+                tmp_path.unlink()
+            except OSError:
+                pass
+            raise
+        log_progress(f"Wrote enriched bibliography to {output_path.name}")
+    else:
+        stats['validation_failed'] = True
+        try:
+            tmp_path.unlink()
+        except OSError:
+            pass
+        log_progress(f"WARNING: Validation failed — original file unchanged")
+
     log_progress(f"Stats: {stats['enriched']} enriched, {stats['marked_incomplete']} incomplete, {stats['already_had_abstract']} already had abstract")
 
     return stats

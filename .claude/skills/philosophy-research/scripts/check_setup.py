@@ -40,6 +40,7 @@ def check_env_vars() -> dict[str, dict[str, Any]]:
     recommended = {
         "S2_API_KEY": "Recommended for Semantic Scholar (improves reliability)",
         "OPENALEX_EMAIL": "Recommended for OpenAlex polite pool",
+        "CORE_API_KEY": "Optional for CORE API (improves rate limits)",
     }
 
     for var, description in required.items():
@@ -244,6 +245,42 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
         results["arxiv"] = {
             "reachable": False,
             "status_code": None,
+            "message": str(e),
+        }
+
+    # CORE
+    try:
+        limiter = get_limiter("core")
+        limiter.wait()
+        api_key = os.environ.get("CORE_API_KEY", "")
+        headers = {}
+        if api_key:
+            headers["Authorization"] = f"Bearer {api_key}"
+
+        response = requests.get(
+            "https://api.core.ac.uk/v3/search/works",
+            params={"q": "test", "limit": 1},
+            headers=headers,
+            timeout=10,
+        )
+        limiter.record()
+
+        authenticated = bool(api_key)
+        if response.status_code == 200:
+            msg = "Responding" + (" (authenticated)" if authenticated else " (unauthenticated)")
+        else:
+            msg = f"Error: {response.status_code}"
+        results["core"] = {
+            "reachable": response.status_code == 200,
+            "status_code": response.status_code,
+            "authenticated": authenticated,
+            "message": msg,
+        }
+    except Exception as e:
+        results["core"] = {
+            "reachable": False,
+            "status_code": None,
+            "authenticated": False,
             "message": str(e),
         }
 

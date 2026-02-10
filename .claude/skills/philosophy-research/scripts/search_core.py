@@ -37,7 +37,6 @@ import json
 import os
 import sys
 from typing import Optional
-from urllib.parse import quote
 
 import requests
 

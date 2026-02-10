@@ -180,7 +180,11 @@ def brave_site_search(
                         # Only include URLs matching the path filter
                         if config.url_path_filter in item.get("url", ""):
                             if len(all_results) < limit:
-                                all_results.append(format_result(item, config))
+                                formatted = format_result(item, config)
+                                if formatted.get(config.id_field_name) is not None:
+                                    all_results.append(formatted)
+                                elif debug:
+                                    log(f"Dropped result (no {config.id_field_name}): {item.get('url', '')}")
 
                     log(f"Retrieved {len(all_results)} entries...")
                     break

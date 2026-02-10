@@ -166,6 +166,62 @@ class TestIEPBraveSearch:
         assert "Free Will" in results[0]["title"]
 
     @patch("brave_search.requests.get")
+    def test_search_filters_non_article_urls(self, mock_get):
+        """Should filter out IEP URLs that don't match article pattern."""
+        mock_get.return_value = MagicMock(
+            status_code=200,
+            json=lambda: {
+                "web": {
+                    "results": [
+                        {
+                            "url": "https://iep.utm.edu/freewill/",
+                            "title": "Free Will | Internet Encyclopedia of Philosophy",
+                            "description": "An overview of free will...",
+                        },
+                        {
+                            # Non-article page — id_pattern won't match (no trailing slug)
+                            "url": "https://iep.utm.edu/",
+                            "title": "Internet Encyclopedia of Philosophy",
+                            "description": "Homepage...",
+                        },
+                        {
+                            # Category page with query string
+                            "url": "https://iep.utm.edu/?s=free+will",
+                            "title": "Search Results | IEP",
+                            "description": "Search results...",
+                        },
+                        {
+                            "url": "https://iep.utm.edu/compatibilism/",
+                            "title": "Compatibilism | Internet Encyclopedia of Philosophy",
+                            "description": "Discussion of compatibilism...",
+                        },
+                    ]
+                }
+            }
+        )
+
+        from brave_search import brave_site_search, IEP_CONFIG
+        from rate_limiter import get_limiter, ExponentialBackoff
+
+        limiter = get_limiter("brave")
+        backoff = ExponentialBackoff()
+
+        results, errors = brave_site_search(
+            query="free will",
+            limit=10,
+            api_key="test_key",
+            config=IEP_CONFIG,
+            limiter=limiter,
+            backoff=backoff,
+        )
+
+        # Only the two valid article URLs should be returned
+        assert len(results) == 2
+        entry_names = [r["entry_name"] for r in results]
+        assert "freewill" in entry_names
+        assert "compatibilism" in entry_names
+
+    @patch("brave_search.requests.get")
     def test_search_extracts_entry_name(self, mock_get):
         """Should correctly extract entry name from IEP URL."""
         mock_get.return_value = MagicMock(

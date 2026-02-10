@@ -272,7 +272,7 @@ def search_by_metadata(
         "rows": 5,
         "sort": "score",
         "order": "desc",
-        "select": "DOI,title,author,published,container-title,volume,issue,page,publisher,type,score",
+        "select": "DOI,title,author,editor,published,container-title,volume,issue,page,publisher,type,score",
     }
 
     if author:
