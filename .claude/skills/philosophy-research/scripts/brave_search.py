@@ -57,6 +57,15 @@ PHILPAPERS_CONFIG = BraveSearchConfig(
     title_suffix=" - PhilPapers",
 )
 
+IEP_CONFIG = BraveSearchConfig(
+    source_name="iep_via_brave",
+    site_domain="iep.utm.edu",
+    url_path_filter="/",
+    id_pattern=r"iep\.utm\.edu/([a-z0-9-]+)/?$",
+    id_field_name="entry_name",
+    title_suffix=" | Internet Encyclopedia of Philosophy",
+)
+
 
 def extract_id(url: str, config: BraveSearchConfig) -> Optional[str]:
     """Extract resource ID from URL using config pattern."""

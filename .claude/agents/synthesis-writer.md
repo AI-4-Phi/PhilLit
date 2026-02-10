@@ -79,8 +79,14 @@ You receive from the orchestrator prompt:
    - Standard fields: author, title, journal/publisher, year, doi
    - `note` field: Contains CORE ARGUMENT, RELEVANCE, POSITION
    - `keywords` field: Contains topic tags and importance level (High/Medium/Low)
+   - `abstract` field: Paper's actual abstract (if available)
 3. Cite using (Author Year) format in prose
 4. Build bibliography at end using BibTeX data
+
+**Handling INCOMPLETE entries**:
+- If keywords contains `INCOMPLETE`: **DO NOT cite in synthesis**
+- Only cite papers with complete metadata
+- The outline should already exclude INCOMPLETE entries
 
 ## Writing Principles
 

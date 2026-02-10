@@ -63,11 +63,18 @@ Output brief status during planning:
 2. **BibTeX entries**: Individual papers
    - `note` field: CORE ARGUMENT, RELEVANCE, POSITION
    - `keywords` field: Topic tags and importance (High/Medium/Low)
+   - `abstract` field: Paper's actual abstract (if available)
+   - `abstract_source` field: Source of abstract (s2|openalex|core)
 
 **How to read**:
 - Parse @comment for domain overview and synthesis guidance
 - Check `keywords` for importance level — prioritize High
 - Use citation keys to reference papers in outline
+
+**Handling INCOMPLETE entries**:
+- If keywords contains `INCOMPLETE`: **DO NOT include in outline**
+- Note the gap if the paper would have been important
+- Focus outline on papers with complete metadata (those with abstracts)
 
 ## Key Principles
 

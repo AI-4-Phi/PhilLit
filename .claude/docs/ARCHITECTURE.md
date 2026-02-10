@@ -40,10 +40,16 @@ Domain researchers and citation validators use the `philosophy-research` skill (
 | `s2_recommend.py` | Find similar papers | Semantic Scholar |
 | `search_openalex.py` | Broad academic search | OpenAlex (250M+ works) |
 | `search_arxiv.py` | Preprint search | arXiv |
+| `search_core.py` | Paper search with abstracts | CORE (431M papers) |
 | `search_sep.py` | SEP discovery | Brave → SEP |
 | `fetch_sep.py` | SEP content extraction | Direct SEP |
+| `search_iep.py` | IEP discovery | Brave → IEP |
+| `fetch_iep.py` | IEP content extraction | Direct IEP |
 | `search_philpapers.py` | PhilPapers search | Brave → PhilPapers |
 | `verify_paper.py` | DOI verification | CrossRef |
+| `get_abstract.py` | Multi-source abstract resolution | S2 → OpenAlex → CORE |
+| `get_sep_context.py` | SEP citation context extraction | Direct SEP |
+| `get_iep_context.py` | IEP citation context extraction | Direct IEP |
 | `brave_search.py` | Web search fallback | Brave Search |
 | `search_cache.py` | Search result caching | — |
 | `rate_limiter.py` | Shared rate limiting | — |
@@ -156,10 +162,10 @@ reviews/[project-name]/
 
 .claude/skills/literature-review/
 ├── SKILL.md                              # Orchestration skill (main entry point)
-├── conventions.md                        # Symlink → ../../docs/conventions.md
 └── scripts/
     ├── assemble_review.py                # Assemble sections into final review
-    ├── dedupe_bib.py                     # Deduplicate BibTeX entries
+    ├── dedupe_bib.py                     # Deduplicate and merge BibTeX
+    ├── enrich_bibliography.py            # Batch abstract resolution for BibTeX
     ├── generate_bibliography.py          # Generate Chicago-style references
     └── lint_md.py                        # Lint markdown review files
 
@@ -173,11 +179,17 @@ reviews/[project-name]/
     ├── s2_formatters.py                  # S2 output formatting
     ├── search_openalex.py                # OpenAlex search
     ├── search_arxiv.py                   # arXiv search
+    ├── search_core.py                    # CORE API search (abstracts)
     ├── search_sep.py                     # SEP discovery
     ├── fetch_sep.py                      # SEP content extraction
+    ├── search_iep.py                     # IEP discovery
+    ├── fetch_iep.py                      # IEP content extraction
     ├── search_philpapers.py              # PhilPapers search
     ├── brave_search.py                   # Brave web search
     ├── verify_paper.py                   # CrossRef verification
+    ├── get_abstract.py                   # Multi-source abstract resolution
+    ├── get_sep_context.py                # SEP citation context extraction
+    ├── get_iep_context.py                # IEP citation context extraction
     ├── search_cache.py                   # Search result caching
     ├── rate_limiter.py                   # Shared rate limiting
     ├── output.py                         # Shared output utilities

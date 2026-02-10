@@ -126,6 +126,54 @@ Importance levels:
 
 Example: `keywords = {compatibilism, free-will, High}`
 
+### abstract Field
+
+The paper's actual abstract. Must come from API sources only (S2, OpenAlex, CORE).
+
+- Populated from API `abstract` field or via `enrich_bibliography.py`
+- Never written by agent from memory
+- If missing from all sources: Omit field, add INCOMPLETE to keywords
+
+### abstract_source Field
+
+Indicates provenance of abstract content:
+- `s2` — Semantic Scholar API
+- `openalex` — OpenAlex API
+- `core` — CORE API
+
+Example: `abstract_source = {openalex}`
+
+### sep_context Field (Optional)
+
+Citation context extracted from Stanford Encyclopedia of Philosophy entries.
+Contains how the paper is discussed in authoritative SEP articles.
+
+- Source: `get_sep_context.py` script
+- Use for High importance papers to capture how experts position them
+
+Example:
+```bibtex
+sep_context = {Cited in 'freewill' entry: "Frankfurt (1971) argues that alternative possibilities are not required for moral responsibility."}
+```
+
+### iep_context Field (Optional)
+
+Citation context extracted from Internet Encyclopedia of Philosophy entries.
+Similar to sep_context but from IEP.
+
+- Source: `get_iep_context.py` script
+
+### INCOMPLETE Keyword Flag
+
+Added to `keywords` field when entry lacks required content:
+- `INCOMPLETE` — Entry missing abstract
+- `no-abstract` — Specifically missing abstract
+
+Entries with INCOMPLETE flag:
+- **REMAIN in BibTeX file** (for transparency, reference manager import)
+- Are **EXCLUDED from literature review synthesis**
+- Should be noted in domain's NOTABLE_GAPS section
+
 ---
 
 ## Chicago Citation Style (Author-Date)
@@ -185,12 +233,15 @@ The `SubagentStop` hook automatically validates BibTeX files written by `domain-
 - `year`
 - `doi`
 
-**Exempt fields** (LLM-generated, not validated):
+**Exempt fields** (LLM-generated or enrichment-added, not validated):
 - `note` (annotations)
 - `keywords`
 - `howpublished`
 - `url`
 - `abstract`
+- `abstract_source`
+- `sep_context`
+- `iep_context`
 
 **How it works**:
 1. Scans `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers)

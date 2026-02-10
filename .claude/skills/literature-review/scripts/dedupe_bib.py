@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Deduplicate BibTeX entries by citation key and DOI, keeping highest importance."""
+"""Deduplicate BibTeX entries by citation key and DOI, keeping highest importance.
+
+Also handles:
+- Preferring entries with abstract over entries without
+- Preserving abstract_source field
+- Removing INCOMPLETE flag when merged entry has abstract
+"""
 
 import re
 import sys
@@ -107,13 +113,96 @@ def extract_doi(entry: str) -> str | None:
     return doi
 
 
+def has_abstract(entry: str) -> bool:
+    """Check if entry has a non-empty abstract field."""
+    match = re.search(r'abstract\s*=\s*\{([^}]+)\}', entry, re.IGNORECASE)
+    if match:
+        abstract_content = match.group(1).strip()
+        return len(abstract_content) > 10  # Filter out trivial abstracts
+    return False
+
+
+def has_incomplete_flag(entry: str) -> bool:
+    """Check if entry has INCOMPLETE in keywords."""
+    return 'INCOMPLETE' in entry
+
+
+def remove_incomplete_flag(entry: str) -> str:
+    """Remove INCOMPLETE and no-abstract flags from keywords."""
+    entry = re.sub(r',?\s*INCOMPLETE\s*,?', ',', entry)
+    entry = re.sub(r',?\s*no-abstract\s*,?', ',', entry)
+    # Clean up resulting comma issues
+    entry = re.sub(r',\s*,', ',', entry)
+    entry = re.sub(r',\s*\}', '}', entry)
+    entry = re.sub(r'\{\s*,', '{', entry)
+    return entry
+
+
+def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
+    """
+    Merge duplicate entries, preferring one with abstract and higher importance.
+
+    Priority:
+    1. Entry with abstract (if only one has it)
+    2. Entry with higher importance (if both have or lack abstract)
+
+    Returns:
+        Tuple of (merged_entry, merge_reason, winner) where winner is 1 or 2.
+    """
+    has_abstract_1 = has_abstract(entry1)
+    has_abstract_2 = has_abstract(entry2)
+    importance_1 = parse_importance(entry1)
+    importance_2 = parse_importance(entry2)
+
+    reason = ""
+    winner = 1
+
+    if has_abstract_2 and not has_abstract_1:
+        base = entry2
+        winner = 2
+        reason = "preferred entry with abstract"
+        if IMPORTANCE_ORDER.get(importance_1, 0) > IMPORTANCE_ORDER.get(importance_2, 0):
+            base = upgrade_importance(base, importance_1)
+            reason += f", upgraded to {importance_1}"
+    elif has_abstract_1 and not has_abstract_2:
+        base = entry1
+        winner = 1
+        reason = "kept entry with abstract"
+        if IMPORTANCE_ORDER.get(importance_2, 0) > IMPORTANCE_ORDER.get(importance_1, 0):
+            base = upgrade_importance(base, importance_2)
+            reason += f", upgraded to {importance_2}"
+    else:
+        # Both have abstract or neither has it — use importance
+        if IMPORTANCE_ORDER.get(importance_2, 0) > IMPORTANCE_ORDER.get(importance_1, 0):
+            base = entry2
+            winner = 2
+            reason = f"upgraded importance to {importance_2}"
+        else:
+            base = entry1
+            winner = 1
+            reason = f"kept existing ({importance_1})"
+
+    # Remove INCOMPLETE flag if merged entry has abstract
+    if has_abstract(base) and has_incomplete_flag(base):
+        base = remove_incomplete_flag(base)
+        reason += ", removed INCOMPLETE flag"
+
+    return base, reason, winner
+
+
 def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
     """
     Deduplicate BibTeX entries across files.
 
+    When merging duplicates:
+    - Prefers entry with abstract over entry without
+    - Upgrades importance to highest among duplicates
+    - Removes INCOMPLETE flag if merged entry has abstract
+    - Second pass catches same paper with different keys via DOI
+
     Returns list of duplicate keys that were removed.
     """
-    seen: dict[str, tuple[str, str]] = {}  # key -> (entry_text, importance_level)
+    seen: dict[str, str] = {}  # key -> entry_text
     comments: list[str] = []
     duplicates: list[str] = []
 
@@ -133,7 +222,6 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
             # Extract citation key
             match = re.match(r'@(\w+)\{([^,]+),', entry)
             if not match:
-                # Keep any non-matching content that starts with @comment
                 if entry.strip().startswith('@comment'):
                     comments.append(entry)
                 continue
@@ -141,50 +229,42 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
             entry_type = match.group(1).lower()
             key = match.group(2).strip()
 
-            # Always keep @comment entries
             if entry_type == 'comment':
                 comments.append(entry)
                 continue
 
-            importance = parse_importance(entry)
-
             if key in seen:
-                # Duplicate found
                 duplicates.append(key)
-                existing_entry, existing_importance = seen[key]
-
-                # Upgrade importance if new one is higher
-                if IMPORTANCE_ORDER.get(importance, 0) > IMPORTANCE_ORDER.get(existing_importance, 0):
-                    upgraded = upgrade_importance(existing_entry, importance)
-                    seen[key] = (upgraded, importance)
-                    print(f"  [DEDUPE] Duplicate '{key}' - upgraded importance to {importance}")
-                else:
-                    print(f"  [DEDUPE] Duplicate '{key}' - kept existing ({existing_importance})")
+                merged, reason, _winner = merge_entries(seen[key], entry)
+                seen[key] = merged
+                print(f"  [DEDUPE] Duplicate '{key}' - {reason}")
             else:
-                seen[key] = (entry, importance)
+                seen[key] = entry
 
     # Second pass: DOI-based deduplication (catches same paper with different keys)
     seen_dois: dict[str, str] = {}  # normalized_doi -> key
     doi_dupes: list[str] = []
-    for key, (entry, importance) in list(seen.items()):
+    for key, entry in list(seen.items()):
         doi = extract_doi(entry)
         if doi is None:
             continue
         if doi in seen_dois:
             existing_key = seen_dois[doi]
-            existing_entry, existing_importance = seen[existing_key]
-            existing_rank = IMPORTANCE_ORDER.get(existing_importance, 0)
-            new_rank = IMPORTANCE_ORDER.get(importance, 0)
-            if new_rank > existing_rank:
-                # New entry has higher importance — replace
-                print(f"  [DEDUPE-DOI] '{key}' and '{existing_key}' share DOI {doi} - keeping '{key}' ({importance} > {existing_importance})")
+            existing_entry = seen[existing_key]
+            merged, reason, winner = merge_entries(existing_entry, entry)
+            if winner == 2:
+                # New entry won — replace
+                print(f"  [DEDUPE-DOI] '{key}' and '{existing_key}' share DOI {doi} - keeping '{key}' ({reason})")
                 del seen[existing_key]
+                seen[key] = merged
                 seen_dois[doi] = key
+                doi_dupes.append(existing_key)
             else:
-                # Existing wins (or tie — keep first encountered)
-                print(f"  [DEDUPE-DOI] '{key}' and '{existing_key}' share DOI {doi} - keeping '{existing_key}' ({existing_importance})")
+                # Existing entry won
+                print(f"  [DEDUPE-DOI] '{key}' and '{existing_key}' share DOI {doi} - keeping '{existing_key}' ({reason})")
+                seen[existing_key] = merged
                 del seen[key]
-            doi_dupes.append(key if new_rank <= existing_rank else existing_key)
+                doi_dupes.append(key)
         else:
             seen_dois[doi] = key
 
@@ -192,13 +272,11 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
 
     # Write output
     with output_file.open('w', encoding='utf-8') as f:
-        # Write comments first (domain metadata headers)
         for comment in comments:
             f.write(comment.rstrip())
             f.write('\n\n')
 
-        # Write entries
-        for key, (entry, _) in seen.items():
+        for key, entry in seen.items():
             f.write(entry.rstrip())
             f.write('\n\n')
 

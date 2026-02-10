@@ -6,7 +6,7 @@ PhilReview is a multi-agent system for generating focused, insight-driven litera
 
 - **6-phase workflow**: Environment → Plan → Research → Outline → Write → Assemble
 - **Parallel execution**: Domain researchers and section writers run concurrently
-- **Structured API searches**: Semantic Scholar, OpenAlex, arXiv, SEP, PhilPapers, CrossRef
+- **Structured API searches**: Semantic Scholar, OpenAlex, CORE, arXiv, SEP, IEP, PhilPapers, CrossRef
 - **BibTeX-first**: Valid `.bib` files for reference managers, pandoc, or direct use
 - **Citation integrity**: Papers verified at search time via structured APIs
 - **Resumable**: Progress tracked in `task-progress.md`

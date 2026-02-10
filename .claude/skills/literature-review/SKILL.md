@@ -250,7 +250,10 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    The script will:
    - Keep the first occurrence of each citation key
+   - Prefer entries with abstracts over entries without (abstract-aware merging)
    - Upgrade importance level if a later domain assigned higher importance
+   - Remove INCOMPLETE flags when merged entry has an abstract
+   - Deduplicate by DOI (catches same paper with different keys)
    - Log which duplicates were removed to console
 
 3. Generate bibliography and append to final review:
