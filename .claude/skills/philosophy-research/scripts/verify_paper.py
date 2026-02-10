@@ -111,6 +111,22 @@ def extract_author_names(authors: list[dict]) -> list[str]:
     return names
 
 
+# CrossRef type → BibTeX entry type mapping
+CROSSREF_TO_BIBTEX_TYPE = {
+    "journal-article": "article",
+    "book-chapter": "incollection",
+    "book-section": "incollection",
+    "book": "book",
+    "monograph": "book",
+    "edited-book": "book",
+    "proceedings-article": "inproceedings",
+    "dissertation": "phdthesis",
+    "posted-content": "misc",       # preprints
+    "report": "techreport",
+    "reference-entry": "misc",
+}
+
+
 def format_result(item: dict, method: str, score: Optional[float] = None) -> dict:
     """Format CrossRef result into standard output format."""
     # Extract DOI
@@ -120,8 +136,9 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
     titles = item.get("title", [])
     title = titles[0] if titles else ""
 
-    # Extract authors
+    # Extract authors and editors
     authors = extract_author_names(item.get("author", []))
+    editors = extract_author_names(item.get("editor", []))
 
     # Extract year from various date fields
     year = None
@@ -146,6 +163,7 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
         "doi": doi,
         "title": title,
         "authors": [{"family": a.split(", ")[0], "given": a.split(", ")[1] if ", " in a else ""} for a in authors],
+        "editors": [{"family": e.split(", ")[0], "given": e.split(", ")[1] if ", " in e else ""} for e in editors],
         "year": year,
         "container_title": container_title,
         "volume": volume,
@@ -153,6 +171,7 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
         "page": page,
         "publisher": item.get("publisher", ""),
         "type": item.get("type", ""),
+        "suggested_bibtex_type": CROSSREF_TO_BIBTEX_TYPE.get(item.get("type", ""), "misc"),
         "method": method,
         "url": f"https://doi.org/{doi}" if doi else None,
     }

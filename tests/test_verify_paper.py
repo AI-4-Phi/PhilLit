@@ -194,6 +194,78 @@ class TestFormatResult:
         assert result["year"] == 1971
         assert result["method"] == "doi_lookup"
 
+    def test_format_result_suggested_bibtex_type_article(self, mock_crossref_response):
+        """format_result should map journal-article to @article."""
+        import verify_paper
+
+        item = mock_crossref_response["message"]
+        result = verify_paper.format_result(item, "doi_lookup")
+
+        assert result["suggested_bibtex_type"] == "article"
+
+    def test_format_result_suggested_bibtex_type_book_chapter(self):
+        """format_result should map book-chapter to @incollection."""
+        import verify_paper
+
+        item = {
+            "DOI": "10.1093/oso/9780190859213.003.0007",
+            "title": ["The Value of Ideal Theory"],
+            "author": [{"given": "Matthew S.", "family": "Adams"}],
+            "published": {"date-parts": [[2020]]},
+            "container-title": ["John Rawls"],
+            "publisher": "Oxford University Press",
+            "type": "book-chapter",
+            "page": "73-86",
+        }
+        result = verify_paper.format_result(item, "doi_lookup")
+
+        assert result["suggested_bibtex_type"] == "incollection"
+        assert result["container_title"] == "John Rawls"
+
+    def test_format_result_editors_for_edited_book(self):
+        """format_result should extract editors for edited books."""
+        import verify_paper
+
+        item = {
+            "DOI": "10.1093/oso/9780190859213.001.0001",
+            "title": ["John Rawls"],
+            "author": [],
+            "editor": [{"given": "Jon", "family": "Mandle"}, {"given": "Sarah", "family": "Roberts-Cady"}],
+            "published": {"date-parts": [[2020]]},
+            "publisher": "Oxford University Press",
+            "type": "edited-book",
+        }
+        result = verify_paper.format_result(item, "doi_lookup")
+
+        assert result["suggested_bibtex_type"] == "book"
+        assert result["authors"] == []
+        assert len(result["editors"]) == 2
+        assert result["editors"][0]["family"] == "Mandle"
+        assert result["editors"][1]["family"] == "Roberts-Cady"
+
+    def test_format_result_editors_empty_when_absent(self, mock_crossref_response):
+        """format_result should return empty editors list for regular articles."""
+        import verify_paper
+
+        item = mock_crossref_response["message"]
+        result = verify_paper.format_result(item, "doi_lookup")
+
+        assert result["editors"] == []
+
+    def test_format_result_suggested_bibtex_type_unknown(self):
+        """format_result should fall back to @misc for unknown CrossRef types."""
+        import verify_paper
+
+        item = {
+            "DOI": "10.1234/unknown",
+            "title": ["Some Work"],
+            "author": [],
+            "type": "peer-review",
+        }
+        result = verify_paper.format_result(item, "doi_lookup")
+
+        assert result["suggested_bibtex_type"] == "misc"
+
     def test_format_result_with_score(self, mock_crossref_response):
         """format_result should include score when provided."""
         import verify_paper
