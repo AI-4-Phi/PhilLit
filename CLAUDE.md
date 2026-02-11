@@ -12,7 +12,7 @@
 
 1. **Accurate** — Only cite verified papers; never fabricate references
 2. **Comprehensive** — Cover all major positions and key debates
-3. **Rigorous and concise** — Analytical depth, tight prose, specific gaps
+3. **Rigorous and concise** — Analytical depth, tight prose
 4. **Reproducible** — Structured workflow, standard BibTeX output
 
 **NOT priorities**:
@@ -46,7 +46,7 @@ When asked to perform a new literature review:
 - Phase 1: Verify environment and determine execution mode
 - Phase 2: Task tool invokes `literature-review-planner` — Decomposes research idea into domains
 - Phase 3: Task tool invokes `domain-literature-researcher` ×N (parallel) — Uses `philosophy-research` skill for API searches; outputs BibTeX files
-- Phase 4: Task tool invokes `synthesis-planner` — Reads BibTeX files; designs outline emphasizing debates and gaps
+- Phase 4: Task tool invokes `synthesis-planner` — Reads BibTeX files; designs outline emphasizing debates and positions
 - Phase 5: Task tool invokes `synthesis-writer` ×N (parallel) — Writes sections using relevant BibTeX subsets
 - Phase 6: Assemble final review, deduplicate BibTeX, generate bibliography, lint, clean up, optional DOCX
 

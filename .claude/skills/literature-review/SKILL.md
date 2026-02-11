@@ -399,6 +399,5 @@ Output status updates directly as text (visible to user in real-time):
 ## Success Metrics
 
 - Focused, rigorous, insight-driven review (3000-8000 words)
-- Clear gap analysis (specific, actionable)
 - Resumable (task-progress.md enables continuity)
 - Valid BibTeX files

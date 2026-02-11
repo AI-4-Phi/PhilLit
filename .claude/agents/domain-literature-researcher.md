@@ -68,6 +68,9 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into reference mana
 - ✅ Connect *specifically* to the research project
 - ✅ Place in intellectual landscape
 - ❌ No generic phrases ("important contribution", "raises questions")
+- ❌ No superlatives or rankings ("most developed," "most systematic," "most comprehensive")
+- ❌ No ungrounded evaluative adjectives ("seminal," "groundbreaking," "influential")
+- BibTeX annotations should describe, not evaluate — leave evaluative claims to the synthesis writer
 - ❌ No empty relevance ("relevant to project" without saying *how*)
 
 **Quality over rigid note format**: If a paper resists the 3-component note structure, adapt. A substantive 2-component annotation beats a formulaic 3-component one.
