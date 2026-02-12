@@ -235,7 +235,7 @@ def fetch_iep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
                 url,
                 timeout=30,
                 headers={
-                    "User-Agent": "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; +https://github.com/philreview)"
+                    "User-Agent": "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; +https://github.com/AI-4-Phi/PhilLit)"
                 }
             )
             limiter.record()

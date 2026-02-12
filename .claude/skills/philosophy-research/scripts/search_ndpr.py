@@ -131,7 +131,7 @@ def fetch_sitemap(limiter, backoff: ExponentialBackoff) -> list[str]:
             response = requests.get(
                 SITEMAP_URL,
                 timeout=30,
-                headers={"User-Agent": "PhiloResearchBot/1.0"},
+                headers={"User-Agent": "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; +https://github.com/AI-4-Phi/PhilLit)"},
             )
             limiter.record()
 

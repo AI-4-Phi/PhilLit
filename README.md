@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/banner.jpg" alt="PhilReview" width="700">
+  <img src="assets/banner.jpg" alt="PhilLit" width="700">
 </p>
 
-<h1 align="center">PhilReview</h1>
+<h1 align="center">PhilLit</h1>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache 2.0"></a>
@@ -10,9 +10,9 @@
   <a href="https://claude.com/product/claude-code"><img src="https://img.shields.io/badge/Built_with-Claude_Code-D97757?logo=claude&logoColor=white" alt="Built with Claude Code"></a>
 </p>
 
-PhilReview is a multi-agent system for generating analytical literature reviews with verified bibliographies. Designed for philosophy research projects where academic source coverage, citation integrity, and reference-manager-ready outputs matter.
+PhilLit is a multi-agent system for generating analytical literature reviews with verified bibliographies. Designed for philosophy research projects where academic source coverage, citation integrity, and reference-manager-ready outputs matter.
 
-> **Note:** PhilReview uses large language models to synthesize literature. LLMs can produce errors, misattributions, and distortions of source material. Always verify claims and citations against the original sources before relying on them in your work.
+> **Note:** PhilLit uses large language models to synthesize literature. LLMs can produce errors, misattributions, and distortions of source material. Always verify claims and citations against the original sources before relying on them in your work.
 
 ## Highlights
 

@@ -1,6 +1,6 @@
-# Contributing to PhilReview
+# Contributing to PhilLit
 
-PhilReview is a multi-agent system that generates academic literature reviews for philosophy research. Contributions that improve accuracy, coverage, rigor, or usability are welcome.
+PhilLit is a multi-agent system that generates academic literature reviews for philosophy research. Contributions that improve accuracy, coverage, rigor, or usability are welcome.
 
 ## Getting Started
 
@@ -33,7 +33,7 @@ Anything that improves the project in line with its objectives—accuracy first,
 
 ### Reporting Bugs and Requesting Features
 
-Open a [GitHub Issue](https://github.com/AI-4-Phi/PhilReview/issues). For bug reports, include:
+Open a [GitHub Issue](https://github.com/AI-4-Phi/PhilLit/issues). For bug reports, include:
 
 - What you did (the prompt or command)
 - What happened (error output, unexpected behavior)

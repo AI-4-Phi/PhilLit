@@ -1,4 +1,4 @@
-**PhilReview** is a multi-agent system to (a) author academic literature reviews for philosophy research, and (b) improve these agents.
+**PhilLit** is a multi-agent system to (a) author academic literature reviews for philosophy research, and (b) improve these agents.
 
 # Mode
 

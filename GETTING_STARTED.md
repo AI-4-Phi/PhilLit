@@ -43,7 +43,7 @@ OPENALEX_EMAIL=your@email.com
 Clone this repository 
 
 ```bash
-git clone https://github.com/AI-4-Phi/PhilReview.git
+git clone https://github.com/AI-4-Phi/PhilLit.git
 ```
 ### Environment Setup
 
@@ -68,9 +68,9 @@ python .claude/skills/philosophy-research/scripts/check_setup.py
 
 ## Your First Review
 
-1. Start Claude Code *in the project directory* (`PhilReview/`).
+1. Start Claude Code *in the project directory* (`PhilLit/`).
    ```bash
-   cd PhilReview
+   cd PhilLit
    claude
    ```
    Select **Sonnet** as the model (type `/model`) to save tokens.
@@ -128,6 +128,6 @@ Resume the literature review from task-progress.md in reviews/[your-topic]/
 
 ## Tips
 
-- Mention that you would like a "literature review." Otherwise Claude will try to help you with your request without invoking the skill that orchestrates the literature review process of PhilReview
+- Mention that you would like a "literature review." Otherwise Claude will try to help you with your request without invoking the skill that orchestrates the literature review process of PhilLit
 - Specify domains to include/exclude if you have preferences
 - For interdisciplinary topics, note which non-philosophy sources matter
