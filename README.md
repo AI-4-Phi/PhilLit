@@ -25,6 +25,12 @@ PhilReview is a multi-agent system for generating analytical literature reviews 
 - **BibTeX-first**: Valid `.bib` files for reference managers, pandoc, or direct use
 - **Resumable**: Progress tracked in `task-progress.md`
 
+## Example Reviews
+
+- [Extended Mind and Cognitive Offloading](reviews/extended-mind-cognitive-offloading/literature-review-final.docx)
+- [Metaphilosophy of Literature Reviews](reviews/metaphilosophy-literature-reviews/literature-review-final.docx)
+- [Moral Value of DIY](reviews/moral-value-diy/literature-review-final.docx)
+
 ## How It Works
 
 The `/literature-review` skill orchestrates 6 phases, invoking specialized subagents via the Task tool:
@@ -36,7 +42,7 @@ The `/literature-review` skill orchestrates 6 phases, invoking specialized subag
 | 3. Research | `domain-literature-researcher` ×N (parallel) | `literature-domain-*.bib` |
 | 4. Outline | `synthesis-planner` | `synthesis-outline.md` |
 | 5. Write | `synthesis-writer` ×N (parallel) | `synthesis-section-*.md` |
-| 6. Assemble | (skill) | `literature-review-final.md`, `literature-all.bib` |
+| 6. Assemble | (skill) | `literature-review-final.docx`, `literature-all.bib` |
 
 ## Cost
 
@@ -54,17 +60,11 @@ I need a literature review on [topic].
 [Describe the topic in 1-5 paragraphs]
 ```
 
-## Example Reviews
-
-- [Extended Mind and Cognitive Offloading](reviews/extended-mind-cognitive-offloading/)
-- [Metaphilosophy of Literature Reviews](reviews/metaphilosophy-literature-reviews/)
-- [Moral Value of DIY](reviews/moral-value-diy/)
-
 ## Output Structure
 
 ```
 reviews/[topic]/
-├── literature-review-final.md      # Complete review
+├── literature-review-final.docx      # Complete review
 ├── literature-all.bib              # Aggregated bibliography
 └── intermediate_files/
     ├── json/                       # API response files (archived)
