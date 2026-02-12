@@ -443,14 +443,25 @@ def enrich_bibliography(
             stats['marked_incomplete'] += 1
 
     # --- NDPR enrichment pass for books without abstracts ---
-    # Check keywords field in enriched text (not original entries) since INCOMPLETE
-    # was added by main loop. Use regex to avoid matching INCOMPLETE in other fields.
+    # Only attempt NDPR for @book entries that:
+    # 1. Still lack an abstract after the main enrichment pass
+    # 2. Have High or Medium importance (as noted in keywords)
     _incomplete_kw_re = re.compile(r'keywords\s*=\s*\{[^}]*INCOMPLETE', re.IGNORECASE)
+    _kw_value_re = re.compile(r'keywords\s*=\s*\{([^}]*)\}', re.IGNORECASE)
+
+    def _has_high_or_medium_importance(entry_text: str) -> bool:
+        m = _kw_value_re.search(entry_text)
+        if not m:
+            return False
+        tokens = [t.strip() for t in m.group(1).split(',')]
+        return any(t in ('High', 'Medium') for t in tokens)
+
     book_entries_without_abstract = [
         (i, e) for i, e in enumerate(entries)
         if e['entry_type'] == 'book'
         and not has_abstract(e)
         and _incomplete_kw_re.search(enriched_entries[i])
+        and _has_high_or_medium_importance(enriched_entries[i])
     ]
 
     if book_entries_without_abstract:

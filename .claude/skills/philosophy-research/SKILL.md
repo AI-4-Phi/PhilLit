@@ -1,6 +1,6 @@
 ---
 name: philosophy-research
-description: Search philosophy literature across SEP, PhilPapers, Semantic Scholar, OpenAlex, and arXiv. Supports paper discovery, citation traversal, and recommendations. Verifies citations via CrossRef.
+description: Search philosophy literature across SEP, IEP, PhilPapers, Semantic Scholar, OpenAlex, CORE, arXiv, and NDPR. Supports paper discovery, citation traversal, content enrichment, and recommendations. Verifies citations via CrossRef.
 allowed-tools: Bash, Read, Write, Grep, WebFetch
 ---
 
@@ -19,18 +19,25 @@ Use this skill when:
 
 ## Search Workflow
 
-### Phase 1: SEP (Most Authoritative)
+### Phase 1: SEP & IEP (Most Authoritative)
 
 ```bash
 # Discover relevant SEP articles
 python scripts/search_sep.py "free will"
 
-# Extract structured content from an entry
+# Extract structured content from an SEP entry
 python scripts/fetch_sep.py freewill --sections "preamble,1,2,bibliography"
 python scripts/fetch_sep.py freewill --bibliography-only
+
+# Discover relevant IEP articles (different coverage from SEP)
+python scripts/search_iep.py "free will"
+
+# Extract structured content from an IEP entry
+python scripts/fetch_iep.py freewill --sections "1,2,3,bibliography"
+python scripts/fetch_iep.py freewill --bibliography-only
 ```
 
-Parse the bibliography for foundational works, then search for those papers.
+Parse the bibliographies for foundational works, then search for those papers.
 
 ### Phase 2: PhilPapers
 
@@ -77,9 +84,25 @@ python scripts/s2_recommend.py --positive "PAPER_ID1,PAPER_ID2"
 python scripts/s2_batch.py --ids "PAPER_ID1,PAPER_ID2,DOI:10.xxx/yyy"
 ```
 
-### Phase 4.5: NDPR Book Reviews (Optional)
+### Phase 6: Content Enrichment
 
-For books without abstracts, NDPR (Notre Dame Philosophical Reviews) provides substantive book reviews that can serve as content summaries:
+Enrich entries that lack abstracts. Two sub-steps:
+
+**6a. Abstract Resolution** — Resolve abstracts from academic APIs (S2 → OpenAlex → CORE fallback):
+
+```bash
+# Single paper
+python scripts/get_abstract.py --doi "10.1111/nous.12191"
+python scripts/get_abstract.py --title "Freedom of the Will" --author "Frankfurt" --year 1971
+python scripts/get_abstract.py --s2-id "abc123def"
+```
+
+For batch processing, use `enrich_bibliography.py` (in literature-review scripts):
+```bash
+python .claude/skills/literature-review/scripts/enrich_bibliography.py input.bib
+```
+
+**6b. NDPR Enrichment** — For `@book` entries that still lack an abstract after step 6a and have **High or Medium importance** (as noted in the `keywords` field), use NDPR (Notre Dame Philosophical Reviews) to extract opening summary paragraphs from book reviews:
 
 ```bash
 # Discover NDPR reviews for a book
@@ -91,25 +114,9 @@ python scripts/fetch_ndpr.py REVIEW_URL
 
 NDPR extracts are tagged with `abstract_source = {ndpr}` in BibTeX entries. Note: NDPR content is primarily descriptive of the book's arguments but may include reviewer evaluation.
 
-### Phase 5.5: Abstract Resolution
+The batch `enrich_bibliography.py` script handles both 6a and 6b automatically.
 
-After gathering papers, resolve abstracts for entries that lack them:
-
-```bash
-# Resolve abstract from multiple sources (S2 → OpenAlex → CORE)
-python scripts/get_abstract.py --doi "10.1111/nous.12191"
-python scripts/get_abstract.py --title "Freedom of the Will" --author "Frankfurt" --year 1971
-python scripts/get_abstract.py --s2-id "abc123def"
-```
-
-Fallback chain: S2 → OpenAlex → CORE. Output includes `status`, `abstract`, and `abstract_source`.
-
-For batch processing, use `enrich_bibliography.py` (in literature-review scripts):
-```bash
-python .claude/skills/literature-review/scripts/enrich_bibliography.py input.bib
-```
-
-### Phase 5.6: Encyclopedia Context Extraction (Optional)
+### Phase 7: Encyclopedia Context Extraction (Optional)
 
 For important papers, extract how they're discussed in authoritative philosophy encyclopedias:
 
@@ -122,7 +129,7 @@ python scripts/get_sep_context.py freewill --author "Fischer" --year 1998 --coau
 python scripts/get_iep_context.py freewill --author "Frankfurt" --year 1971
 ```
 
-### Phase 6: Verification
+### Phase 8: Verification
 
 ```bash
 # Verify a paper exists via CrossRef
