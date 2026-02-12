@@ -1,6 +1,6 @@
 ---
 name: literature-review
-description: Coordinate comprehensive literature reviews for research proposals. Manages 6-phase workflow including domain decomposition, literature search, and synthesis. Use proactively when user requests a literature review.
+description: Coordinate comprehensive literature reviews on any research topic in philosophy. Manages 6-phase workflow including domain decomposition, literature search, and synthesis. Use proactively when user requests a literature review.
 allowed-tools: Bash, Read, Write, Grep, Glob, Edit
 ---
 

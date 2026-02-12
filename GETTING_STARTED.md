@@ -1,6 +1,6 @@
 # Getting Started
 
-This guide covers setup for both local development and Claude's cloud environment.
+This guide covers setup for both local development and Claude's cloud environment (Note: still needs testing).
 
 ## Quick Start: Claude Code Cloud
 
@@ -21,11 +21,11 @@ OPENALEX_EMAIL=your@email.com
 ```
 
 **Note:**
-- The environment is ephemeral—`.env` files are not persisted between sessions
+- The environment is ephemeral—`.env` files do not persist between sessions
 - You'll need to provide API keys at the start of each new session
 
 **Alternative: Persistent keys via private fork**
-1. Fork this repo and make it private
+1. Fork this repo and make it *private*
 2. Remove `.env` from `.gitignore` in your fork
 3. Create and commit your `.env` file with API keys
 4. Use your private fork with Claude Code
@@ -61,24 +61,26 @@ The literature search scripts require API keys. Create a `.env` file in the proj
 - **S2_API_KEY**: Get one at https://www.semanticscholar.org/product/api (improves rate limits)
 - **OPENALEX_EMAIL**: Your email address (no signup required; enables polite pool access)
 
-**Verify your setup:**
+**Verify your setup:** (optional, Claude Code will run this before any review)
 ```bash
 python .claude/skills/philosophy-research/scripts/check_setup.py
 ```
 
 ## Your First Review
 
-1. Start Claude Code in the project directory and select **Sonnet** as the model:
+1. Start Claude Code *in the project directory* (`PhilReview/`).
    ```bash
    cd PhilReview
    claude
    ```
-2. Provide your research idea:
+   Select **Sonnet** as the model (type `/model`) to save tokens.
+
+2. Tell Claude what literature review you need:
 
 ```
 I need a literature review for my research on [topic].
 
-[1-3 paragraph description of your research idea]
+[1-3 paragraph description of the topic]
 ```
 
 3. The `/literature-review` skill coordinates 6 phases automatically:
@@ -114,14 +116,18 @@ The `.bib` files are standard BibTeX and can be:
 
 If a review is interrupted, resume with:
 ```
+Continue the review
+```
+
+Claude should find the incomplete review, detect the last completed phase and continue from there.
+
+You can also be more specific:
+```
 Resume the literature review from task-progress.md in reviews/[your-topic]/
 ```
 
-The skill detects the last completed phase and continues from there.
-
 ## Tips
 
-- Be specific about your research question and target audience
+- Mention that you would like a "literature review." Otherwise Claude will try to help you with your request without invoking the skill that orchestrates the literature review process of PhilReview
 - Specify domains to include/exclude if you have preferences
 - For interdisciplinary topics, note which non-philosophy sources matter
-- Request "focused" (15-20 citations) vs "comprehensive" (25-35 citations) scope

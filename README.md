@@ -31,7 +31,7 @@ The `/literature-review` skill orchestrates 6 phases, invoking specialized subag
 
 | Phase | Subagent | Output |
 |-------|----------|--------|
-| 1. Environment Setup | (skill) | Verify setup, choose mode |
+| 1. Environment | (skill) | Verify setup, choose mode |
 | 2. Plan | `literature-review-planner` | `lit-review-plan.md` |
 | 3. Research | `domain-literature-researcher` ×N (parallel) | `literature-domain-*.bib` |
 | 4. Outline | `synthesis-planner` | `synthesis-outline.md` |
@@ -40,18 +40,18 @@ The `/literature-review` skill orchestrates 6 phases, invoking specialized subag
 
 ## Cost
 
-A typical review costs roughly **USD 12** in API usage. Start Claude Code with **Sonnet** selected as the model for best cost-efficiency.
+A typical review costs roughly **USD 12** in API usage with Opus 4.6. Start Claude Code with **Sonnet** selected as the model for best cost-efficiency.
 
 ## Quick Start
 
 Requires [Claude Code](https://claude.ai/code). See [GETTING_STARTED.md](GETTING_STARTED.md) for setup.
 
-Once set up, provide your research idea:
+Once set up, tell Claude what literature review you need:
 
 ```
-I need a literature review for [topic].
+I need a literature review on [topic].
 
-[Your research idea in 2-5 paragraphs]
+[Describe the topic in 1-5 paragraphs]
 ```
 
 ## Output Structure
@@ -71,11 +71,9 @@ reviews/[topic]/
 
 ## Development
 
-For instructions on contributing: `CONTRIBUTING.md`
-
-For agent architecture: `.claude/docs/ARCHITECTURE.md`
-
-For Claude instructions: `CLAUDE.md`
+- Instructions on contributing: `CONTRIBUTING.md`
+- Agent architecture: `.claude/docs/ARCHITECTURE.md`
+- Claude instructions: `CLAUDE.md`
 
 ## Contact
 
